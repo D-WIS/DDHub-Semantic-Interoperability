@@ -19,6 +19,9 @@ From [Schlumberger Oilfield Glossary](https://www.glossary.oilfield.slb.com/en/t
 - Common units are
   - sg
 
+## Data representation
+Mud density is a scalar and therefore represented as such. 
+If dependency to pressure and/or temperature were represented, tabular versions would exist but it is never available. 
 ## Information
 
 ### Mud report density
@@ -48,4 +51,52 @@ From [Schlumberger Oilfield Glossary](https://www.glossary.oilfield.slb.com/en/t
 - Processing: temperature corrections
 - Comments
 
-###
+### Differential pressure 
+- Sensor type: differential pressure sensors
+  - Vertical pipes
+  - Coil
+- Accuracy / uncertainty: 
+- Physical location: active pit
+- Logical location:
+- Validity:
+- Maintenance / calibration:
+- Refresh-rate: 
+- Dependencies:
+- Processing: Flow-rate corrections
+- Comments
+
+### Buoyancy measurements
+- Sensor type: 
+- Accuracy / uncertainty: 
+- Physical location: 
+- Logical location:
+- Validity:
+- Maintenance / calibration:
+- Refresh-rate: 
+- Dependencies:
+- Processing: 
+- Comments
+
+### Pipe total weight
+- Sensor type: weight sensor. pipe + mud
+- Accuracy / uncertainty: 
+- Physical location: flow-line
+- Logical location:
+- Validity:
+- Maintenance / calibration: cuttings accumulation
+- Refresh-rate: 
+- Dependencies:
+- Processing: 
+- Comments
+
+### Sensor type 1
+- Sensor type: 
+- Accuracy / uncertainty: 
+- Physical location: 
+- Logical location:
+- Validity:
+- Maintenance / calibration:
+- Refresh-rate: 
+- Dependencies:
+- Processing: 
+- Comments
