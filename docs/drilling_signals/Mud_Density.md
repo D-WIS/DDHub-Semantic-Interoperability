@@ -3,7 +3,7 @@
 - Eric Cayeux
 - Fred Florence
 - Dimitrios Pirovolou
-- Benoît Daireaux
+- BenoÃ®t Daireaux
 
 ## Modifications
 - 15.04.2021: creation
@@ -61,7 +61,7 @@ If dependency to pressure and/or temperature were represented, tabular versions 
 - Validity:
 - Maintenance / calibration:
 - Refresh-rate: 
-- Dependencies:
+- Dependencies: the measurement depends on the flow-rate
 - Processing: Flow-rate corrections
 - Comments
 
