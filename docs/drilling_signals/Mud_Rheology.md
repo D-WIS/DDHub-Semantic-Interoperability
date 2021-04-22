@@ -1,7 +1,8 @@
 # Mud rheology
 ## Authors: 
-- Author 1
-- Author 2
+- Eric Cayeux
+- Fred Florence
+- Benoît Daireaux
 
 ## Modifications
 - 22.04.2021: creation
@@ -27,9 +28,50 @@ Alternative representations refer to parameters of rheological models:
 - Herschel-Bulkley: yield stress, consistency index and exponent. 
 
 ## Data representation
+Given that mud rheology can be expressed in several ways, one can find many representations. 
+- Rheometer measurements. 
+The most standard way is to report rheometer readings: shear stresses for different shear rates. 
+Typical shear rates are: 
+- 3, 6, 100, 200, 300, 600
 
 
 ## Information
+
+### Mud report rheology
+- Sensor type: Fann35 rheometer
+- Accuracy / uncertainty: 
+- Physical location: 
+- Logical location:
+- Validity:
+- Maintenance / calibration:
+- Refresh-rate: 
+- Dependencies:
+- Processing: 
+- Comments
+
+### Sensor type 1
+- Sensor type: 
+- Accuracy / uncertainty: 
+- Physical location: 
+- Logical location:
+- Validity:
+- Maintenance / calibration:
+- Refresh-rate: 
+- Dependencies:
+- Processing: 
+- Comments
+
+### Sensor type 1
+- Sensor type: 
+- Accuracy / uncertainty: 
+- Physical location: 
+- Logical location:
+- Validity:
+- Maintenance / calibration:
+- Refresh-rate: 
+- Dependencies:
+- Processing: 
+- Comments
 
 ### Sensor type 1
 - Sensor type: 
