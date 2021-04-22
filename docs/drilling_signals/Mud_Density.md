@@ -2,39 +2,50 @@
 ## Authors: 
 - Eric Cayeux
 - Fred Florence
-- Dimitrios P
+- Dimitrios Pirovolou
 - Benoît Daireaux
 
 ## Modifications
 - 15.04.2021: creation
 
 ## Signal definition
+From [Schlumberger Oilfield Glossary](https://www.glossary.oilfield.slb.com/en/terms/m/mud_density)
+
+> The mass per unit volume of a drilling fluid, synonymous with mud weight. Weight is reported in lbm/gal (also known as ppg), kg/m3 or g/cm3 (also called specific gravity or SG), lb/ft3 or in hydrostatic gradient, lb/in2/ft (psi/ft) or pptf (psi/1000 ft). Mud weight controls hydrostatic pressure in a wellbore and prevents unwanted flow into the well. The weight of the mud also prevents collapse of casing and the openhole. Excessive mud weight can cause lost circulation by propagating, and then filling, fractures in the rock. Mud weight (density) test procedures using a mud balance have been standardized and published by the API.
 
 ## Quantity
-The fluid density quantity is M L-3.
-
-SI unit is kg/m3.
-
-Common units are
-- sg
+- The fluid density quantity is M L-3.
+- SI unit is kg/m3.
+- Common units are
+  - sg
 
 ## Information
 
 ### Mud report density
-- Sensor type: mud balance
+- Sensor type: mud balance 
 - Accuracy / uncertainty: 50 kg/m3
 - Physical location: main pit
+- Logical location:
+- Validity:
+- Maintenance / calibration:
 - Refresh-rate: 
   - North-sea: 6h
   - GOM: 6h
   - US Landrig: 12h
-  - Dependencies: sample temperature different from pit temperature. Reported temperature can be another one. Slightly higher than atmosperic to get rid of air bubbles
+- Dependencies: sample temperature different from pit temperature. Reported temperature can be another one. Slightly higher than atmosperic to get rid of air bubbles
+- Processing
+- Comments
 
 ### Coriolis
-- Sensor type: Coriolis flow-meter
-- Pysical location: before charge pump, does not tolerate high pressures
-- Refresh rate: ca 1Hz
-- Validity conditions: Gas presence
+- Sensor type: coriolis flow-meter 
+- Accuracy / uncertainty: 50 kg/m3
+- Physical location: before charge pump, does not tolerate high pressures
+- Logical location:
+- Validity: Gas presence
+- Maintenance / calibration:
+- Refresh-rate: approx. 1Hz 
+- Dependencies: sample temperature different from pit temperature. Reported temperature can be another one. Slightly higher than atmosperic to get rid of air bubbles
 - Processing: temperature corrections
+- Comments
 
 ###
