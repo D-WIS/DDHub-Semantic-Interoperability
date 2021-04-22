@@ -6,4 +6,4 @@ The DDHub scope can be found [here](docs/DDHub_semantic_model.md).
 
 Some uses cases can be found [here](docs/use_cases/Use_cases.md). 
 
-Some descriptions of typical drilling signals used for creating the semantical model can be found [here](docs/use_cases/home.md). 
+Some descriptions of typical drilling signals used for creating the semantical model can be found [here](docs/drilling_signals/home.md). 
