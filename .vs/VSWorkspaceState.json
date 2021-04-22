@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\docs",
+    "\\docs\\drilling_signals",
+    "\\docs\\use_cases"
   ],
+  "SelectedNode": "\\docs\\drilling_signals\\home.md",
   "PreviewInSolutionExplorer": false
 }
