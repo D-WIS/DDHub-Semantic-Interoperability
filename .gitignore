@@ -1,0 +1,10 @@
+# visual studio
+/**/packages
+/**/bin
+/**/obj
+/**/Debug/
+/**/Release/
+*.suo
+*.user
+.vs/
+UpgradeLog*.htm
