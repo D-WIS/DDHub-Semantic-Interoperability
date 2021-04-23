@@ -3,7 +3,7 @@
 - Eric Cayeux
 - Fred Florence
 - Dimitrios Pirovolou
-- Benoît Daireaux
+- BenoÃ®t Daireaux
 
 ## Modifications
 - 15.04.2021: creation
@@ -61,7 +61,7 @@ If dependency to pressure and/or temperature were represented, tabular versions 
 - Validity:
 - Maintenance / calibration:
 - Refresh-rate: 
-- Dependencies:
+- Dependencies: the measurement depends on the flow-rate
 - Processing: Flow-rate corrections
 - Comments
 
@@ -89,14 +89,26 @@ If dependency to pressure and/or temperature were represented, tabular versions 
 - Processing: 
 - Comments
 
-### Sensor type 1
-- Sensor type: 
+### Gamma ray
+- Sensor type: gamma ray sensor 
 - Accuracy / uncertainty: 
-- Physical location: 
+- Physical location: stand-pipe
 - Logical location:
 - Validity:
-- Maintenance / calibration:
+- Maintenance / calibration: manual calibration, usually not reported
 - Refresh-rate: 
 - Dependencies:
 - Processing: 
+- Comments
+
+### Vibrating tube
+- Sensor type: vibrating tube
+- Accuracy / uncertainty: 0.01 kg/m3
+- Physical location: 
+- Logical location:
+- Validity:
+- Maintenance / calibration: mud coating on tube. Cleaning of tubes
+- Refresh-rate: 
+- Dependencies:
+- Processing: temperature corrections
 - Comments
