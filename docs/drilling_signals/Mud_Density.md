@@ -12,6 +12,10 @@
 From [Schlumberger Oilfield Glossary](https://www.glossary.oilfield.slb.com/en/terms/m/mud_density)
 
 > The mass per unit volume of a drilling fluid, synonymous with mud weight. Weight is reported in lbm/gal (also known as ppg), kg/m3 or g/cm3 (also called specific gravity or SG), lb/ft3 or in hydrostatic gradient, lb/in2/ft (psi/ft) or pptf (psi/1000 ft). Mud weight controls hydrostatic pressure in a wellbore and prevents unwanted flow into the well. The weight of the mud also prevents collapse of casing and the openhole. Excessive mud weight can cause lost circulation by propagating, and then filling, fractures in the rock. Mud weight (density) test procedures using a mud balance have been standardized and published by the API.
+ 
+### Formal definition
+- mud density is a property of the **drilling fluid**
+- mud density is measured between the active pit and the drillstring inlet
 
 ## Quantity
 - The fluid density quantity is M L-3.
