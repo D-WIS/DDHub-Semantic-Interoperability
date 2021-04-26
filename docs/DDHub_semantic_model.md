@@ -23,9 +23,11 @@ We use our own definitions of interoperability, and introduce the **_Levels of D
 4. *Dynamic*: New drilling data information can be added on the fly and drilling systems can interpret the meaning the data, e.g. DDHub allows to describe new signals or configurations that have never been thought earlier.
 5. *Organizational*: Different disciplines can exchange drilling data regardless of their different domain perspectives, e.g.  geologists, geo-physicists, reservoir engineers, petro-physicists, geo-mechanics have all different views on drilling data than drilling engineers and all of them are equally valid.
 
+The DDHub's ambition is to enable interoperability levels 3 and 4, namely *Semantic* and *Dynamic* interoperability. Levels 1 and 2 are therefore assumed.
+
 ## Requirement scenarios
 
-The DDHub's ambition is to enable interoperability levels 3 and 4, namely *Semantic* and *Dynamic* interoperability. Levels 1 and 2 are therefore assumed. Among the many scenarios encountered on a drilling rig, the following generic ones serve as main drivers for the development. They can be interpreted as general requirements for the DDHub's functionalities:
+ Among the many scenarios encountered on a drilling rig, the following generic ones serve as main drivers for the development. They can be interpreted as general requirements for the DDHub's functionalities:
 - a DAS connects to the rig's real-time data. The identification of the available signals has to be done automatically, as well as the eventual choice between multiple signals representing the same type of data. 
 - a DAS is informed when new data is made avalable by other participants. It can then reconfigure itself if the newly arrived data is relevant. 
 - a DAS can correctly interpret unexpected information, such as measurements of a type never encountered before, and use it if relevant to its own purpose. 
