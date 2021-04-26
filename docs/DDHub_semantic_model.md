@@ -17,14 +17,23 @@ Distinction is made between *syntactic, semantic and cross-domain* interoperabil
 
 We use our own definitions of interoperability, and introduce the **_Levels of Drilling interoperability_**:
 
-- Technical: drilling systems can exchange binary signals with each other’s but there are no requirements that the systems are capable to make sense of the binary data, e.g. data are transmitted through high speed telemetry, yet the provider of the high speed telemetry is unable to decipher the information that passes through its network.
-- Syntactical: there is a protocol that allows to send/receive numerical values between drilling systems under access control, e.g. OPC-UA used in a key/tag structure, WITSML log objects allow to exchange Booleans, enumerations, integers, floating-point values, yet without human interpretation to connect to the right tag or mnemonics, it is not possible to interpret the meaning of the data.
-- Semantic: There is an agreement about the meaning of exchanged data between drilling systems, e.g. WITS0, OPC-UA’s RIM & DIM, WITSML’s drilling data model (except logs), DDHub semantic network allow to exchange drilling data either based on an pre-agreed static data model description (WITS0, RIM DIM, WITSML) or a dynamic description (DDHub).
-- Dynamic: New drilling data information can be added on the fly and drilling systems can interpret the meaning the data, e.g. DDHub allows to describe new signals or configurations that have never been thought earlier.
-- Organizational: Different disciplines can exchange drilling data regardless of their different domain perspectives, e.g.  geologists, geo-physicists, reservoir engineers, petro-physicists, geo-mechanics have all different views on drilling data than drilling engineers and all of them are equally valid.
+1. *Technical*: drilling systems can exchange binary signals with each other’s but there are no requirements that the systems are capable to make sense of the binary data, e.g. data are transmitted through high speed telemetry, yet the provider of the high speed telemetry is unable to decipher the information that passes through its network.
+2. *Syntactical*: there is a protocol that allows to send/receive numerical values between drilling systems under access control, e.g. OPC-UA used in a key/tag structure, WITSML log objects allow to exchange Booleans, enumerations, integers, floating-point values, yet without human interpretation to connect to the right tag or mnemonics, it is not possible to interpret the meaning of the data.
+3. *Semantic*: There is an agreement about the meaning of exchanged data between drilling systems, e.g. WITS0, OPC-UA’s RIM & DIM, WITSML’s drilling data model (except logs), DDHub semantic network allow to exchange drilling data either based on an pre-agreed static data model description (WITS0, RIM DIM, WITSML) or a dynamic description (DDHub).
+4. *Dynamic*: New drilling data information can be added on the fly and drilling systems can interpret the meaning the data, e.g. DDHub allows to describe new signals or configurations that have never been thought earlier.
+5. *Organizational*: Different disciplines can exchange drilling data regardless of their different domain perspectives, e.g.  geologists, geo-physicists, reservoir engineers, petro-physicists, geo-mechanics have all different views on drilling data than drilling engineers and all of them are equally valid.
+
+## Requirement scenarios
+
+The DDHub's ambition is to enable interoperability levels 3 and 4, namely *Semantic* and *Dynamic* interoperability. Levels 1 and 2 are therefore assumed. Among the many scenarios encountered on a drilling rig, the following generic ones serve as main drivers for the development. They can be interpreted as general requirements for the DDHub's functionalities:
+- a DAS connects to the rig's real-time data. The identification of the available signals has to be done automatically, as well as the eventual choice between multiple signals representing the same type of data. 
+- a DAS is informed when new data is made avalable by other participants. It can then reconfigure itself if the newly arrived data is relevant. 
+- a DAS can correctly interpret unexpected information, such as measurements of a type never encountered before, and use it if relevant to its own purpose. 
+
+## Focus on drilling data
+
+The DDHub provides standardized ways of representing the meaning of the various signals involved in drilling operations, enabling DAS to interpret them correctly, without ambiguity. It it therefore *signal-centered*:
+- it **does not** intend to describe the rig, wellbore, fluids or trajectory. This function is left to wellbore configuration storage systems, based on WitsML data models for example. It may nevertheless refer to such configruation elements. 
+- Its role is **not** to store and/or provide the signals themselves. This function is left to existing data exchange technologies such as Wits, WitsML, OPC-UA... There is nevertheless a connection between the DDHub and the real-time data management systems: the DDHub aims to provide contextual information about the data available via those systems, and need to be properly integrated in the real-time data ecosystem. 
 
 
-It provides standardized ways of representing the meaning of the various signals involved in drilling operations, enabling DAS to interpret them correctly, without ambiguity. 
-
-It it *signal-centered*, meaning that it **does not** intend to describe the rig, wellbore, fluids or trajectory. 
-The role of the DDHub is **not** to store and/or provide the signals themselves. This function is left to existing data exchange technologies such as Wits, WitsML, OPC-UA... There is nevertheless a connection between the DDHub and the real-time data management systems: the DDHub aims to provide contextual information about the data available via those systems, and need to be properly integrated in the real-time data ecosystem. 
