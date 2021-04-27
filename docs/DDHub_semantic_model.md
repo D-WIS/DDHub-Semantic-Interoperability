@@ -16,13 +16,13 @@ Distinction is made between *syntactic, semantic and cross-domain* interoperabil
 >Cross-domain interoperability involves multiple social, organizational, political, legal entities working together for a common interest and/or information exchange.
 
 We use our own definitions of interoperability, and introduce the **_Levels of Drilling interoperability_**:
-
+<span style="color:blue">
 1. *Technical*: drilling systems can exchange binary signals with each other’s but there are no requirements that the systems are capable to make sense of the binary data, e.g. data are transmitted through high speed telemetry, yet the provider of the high speed telemetry is unable to decipher the information that passes through its network.
 2. *Syntactical*: there is a protocol that allows to send/receive numerical values between drilling systems under access control, e.g. OPC-UA used in a key/tag structure, WITSML log objects allow to exchange Booleans, enumerations, integers, floating-point values, yet without human interpretation to connect to the right tag or mnemonics, it is not possible to interpret the meaning of the data.
 3. *Semantic*: There is an agreement about the meaning of exchanged data between drilling systems, e.g. WITS0, OPC-UA’s RIM & DIM, WITSML’s drilling data model (except logs), DDHub semantic network allow to exchange drilling data either based on an pre-agreed static data model description (WITS0, RIM DIM, WITSML) or a dynamic description (DDHub).
 4. *Dynamic*: New drilling data information can be added on the fly and drilling systems can interpret the meaning the data, e.g. DDHub allows to describe new signals or configurations that have never been thought earlier.
 5. *Organizational*: Different disciplines can exchange drilling data regardless of their different domain perspectives, e.g.  geologists, geo-physicists, reservoir engineers, petro-physicists, geo-mechanics have all different views on drilling data than drilling engineers and all of them are equally valid.
-
+</span>
 The DDHub's ambition is to enable interoperability levels 3 and 4, namely *Semantic* and *Dynamic* interoperability. Levels 1 and 2 are therefore assumed.
 
 ## Interoperability requirements
@@ -57,12 +57,15 @@ This is done by a distinction between the following concepts:
 - *Unit system*: a unit system is a set of associations between *measurable quantities* and units. For example, the SI unit system associate to any measurable quantity the SI unit corresponding to the base quantity. One can consider for example a unit system that associates  bar to pump-pressures, mega-pascal to formation strength and pascal to fluid shear stress.  
 
 ### Uncertainties
+Uncertainties are ubiquitous in the drilling industry. Sensor readings, wellbore positioning, geological prognosis, real-time simulations are all associated to specific types of uncertainties. This topic will provide the necessary data structure to represent the different forms that uncertainties can take. 
+
+Proper representation of uncertainties requires to link drilling data together: indeed, while one can associate to most sensor values a fixed precision and accuracy, this is not necessarily the case for calculated signals. The uncertainty associated with a simulated pump-pressure will typically depend on the flow-rate and the current depth, and will therefore be dynamic. The components of the uncertainty description will then be drilling signals themselves. 
 
 ### Data validity
 
 ### Time management
 
-### Data flow andprocessing
+### Data flow and processing
 
 ### Physical locations
 
