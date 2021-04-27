@@ -70,7 +70,7 @@ Knowing when a given signal is reliable and when it is not is essential to guara
 - it should be possible to express the validity of specific signals. For example, downhole signals transmitted via mud-pulse telemetry should be disregarded when the circulation rate is below a given threshold. Consumer application can therefore evaluate themselves the validity of the signals
 - it should be possible to notify to the consumer applications that a signal suddenly became invalid. 
 
-The *data validity* topic will provide the necessary semantical model to fulfill those requirements. 
+The *data validity* topic will provide the necessary semantical model to fulfill those requirements. Note that, just as for the uncertainties, cross-references between drilling signals will be necessary. 
 
 
 ### Time management
@@ -79,6 +79,14 @@ It is in most existing system impossible to provide all the information that ena
 
 
 ### Data flow and processing
+Drilling signals can be different in nature: very few are raw measurements, most are processed to some extent. The processing can be limited to a simple sensor transfer function, but can also imply conversions, corrections, derivations, filtering... 
+Simulated signals are also of course processed by nature, although the nature of the processing is quite different and involves more advanced computations. 
+
+It can be important for a consumer application to know the nature of the corrections made to a specific measurement. For example, knowing that a default block weight is added to a hookload measured from a sub attached to the top-drive, so that the resulting value ressembles a classical dead-line hookload is of primary importance for any application analysing the hookload. 
+
+All this information can be made available via data flow *charts*, that represent, under the form of processing graphs, the relations between the different components of the rig data ecosystem. Such graphs will form the basis of our representation. Note that this allows to also infer the signal's role in terms of control. 
+
+## Dependencies
 
 ### Physical locations
 
