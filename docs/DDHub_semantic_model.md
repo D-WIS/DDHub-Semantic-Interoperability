@@ -25,7 +25,7 @@ We use our own definitions of interoperability, and introduce the **_Levels of D
 
 The DDHub's ambition is to enable interoperability levels 3 and 4, namely *Semantic* and *Dynamic* interoperability. Levels 1 and 2 are therefore assumed.
 
-## Requirement scenarios
+## Interoperability requirements
 
  Among the many scenarios encountered on a drilling rig, the following generic ones serve as main drivers for the development. They can be interpreted as general requirements for the DDHub's functionalities:
 - a DAS connects to the rig's real-time data. The identification of the available signals has to be done automatically, as well as the eventual choice between multiple signals representing the same type of data. 
@@ -36,6 +36,36 @@ The DDHub's ambition is to enable interoperability levels 3 and 4, namely *Seman
 
 The DDHub provides standardized ways of representing the meaning of the various signals involved in drilling operations, enabling DAS to interpret them correctly, without ambiguity. It it therefore *signal-centered*:
 - it **does not** intend to describe the rig, wellbore, fluids or trajectory. This function is left to wellbore configuration storage systems, based on WitsML data models for example. It may nevertheless refer to such configruation elements. 
-- Its role is **not** to store and/or provide the signals themselves. This function is left to existing data exchange technologies such as Wits, WitsML, OPC-UA... There is nevertheless a connection between the DDHub and the real-time data management systems: the DDHub aims to provide contextual information about the data available via those systems, and need to be properly integrated in the real-time data ecosystem. 
+- Its role is **not** to store and/or provide the signals themselves. This function is left to existing data exchange technologies such as OPC-UA, Wits, WitsML... There is nevertheless a connection between the DDHub and the real-time data management systems: the DDHub aims to provide contextual information about the data available via those systems, and need to be properly integrated in the real-time data ecosystem. 
+
+## Drilling data semantics
+
+In order to fullfill the interoperability requirements several aspects attached to drilling data need to be covered by the semantical model. 
+
+### Data structure
+Any signal available from a drilling rig has a special structure. Its type (integer, boolean, floating point) is an element of the structure. The other aspect relates to its dimensions. Scalar quantities are typically represented as single elements, but multi-dimensional quantities require the use of arrays of possibly high dimensions. When using arrays it is important to interpret the various dimensions correctly. For example an array with 3 velocity entries can be interpreted as the tridimensional velocity vector attached to a single point in the wellbore or as three independent uniaxial velocities of three different points. 
+
+The *data structure* topic will provide means to facilitate the interpretation of the data's structure. 
+
+### Quantities and units
+Unit management is often a source of human errors, because of the constant case needed for potential conversions. In this topic, we will expose the necessary information to render transparent the conversion mechanisms. 
+
+This is done by a distinction between the following concepts:
+- *Quantity*: a combination of exponents attached to the fundamental base quantities that are mass, length, time, electric current, thermodynamic temperature, amount of substance and luminous intensity. All physical quantities are derived from those: for example, a velocity has a length exponent of 1 and a time exponent of -1, while a pressure has a length exponent of -1, a mass exponent of 1 and a time exponent of -2.
+- *Measurable quantity*: this is nothing more than a quantity enriched with a meaningful precision value, expressed in SI. This variable guides the comparison between values. Indeed, pressures on a drilling rig can be used in many different contexts. Pump pressures, formation strength or shear stresses are all pressures but differ by several order of magnitudes. One cannot use a single comparison accuracy for all of them, and we therefore distinguish between pump pressure quantity, formation strength quantity and drilling fluid shear stress quantity by providing different meaningful precisions. 
+- *Unit*: when associated to a quantity, any value has a default unit, given by the SI units associated to the base quantities. However, one can chose alternative units: those are characterized by two factors *a* and *b* that control the conversion from the SI value *x*: *ax+b*.  
+- *Unit system*: a unit system is a set of associations between *measurable quantities* and units. For example, the SI unit system associate to any measurable quantity the SI unit corresponding to the base quantity. One can consider for example a unit system that associates  bar to pump-pressures, mega-pascal to formation strength and pascal to fluid shear stress.  
+
+### Uncertainties
+
+### Data validity
+
+### Time management
+
+### Data flow andprocessing
+
+### Physical locations
+
+### Logical positions
 
 
