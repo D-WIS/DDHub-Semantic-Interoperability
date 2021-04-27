@@ -66,8 +66,17 @@ Uncertainties are ubiquitous in the drilling industry. Sensor readings, wellbore
 Proper representation of uncertainties requires to link drilling data together: indeed, while one can associate to most sensor values a fixed precision and accuracy, this is not necessarily the case for calculated signals. The uncertainty associated with a simulated pump-pressure will typically depend on the flow-rate and the current depth, and will therefore be dynamic. The components of the uncertainty description will then be drilling signals themselves. 
 
 ### Data validity
+Knowing when a given signal is reliable and when it is not is essential to guarantee robustness of autoamtion systems. There ar at least two requirements related to the estimation of data validity:
+- it should be possible to express the validity of specific signals. For example, downhole signals transmitted via mud-pulse telemetry should be disregarded when the circulation rate is below a given threshold. Consumer application can therefore evaluate themselves the validity of the signals
+- it should be possible to notify to the consumer applications that a signal suddenly became invalid. 
+
+The *data validity* topic will provide the necessary semantical model to fulfill those requirements. 
+
 
 ### Time management
+Time management is a central thematic when consuming real-time drilling data. Because of the multiplicity of sources of a drilling rig, signals are often not synchronized, different clocks can be used for time stamping and various transmission delays can be observed. 
+It is in most existing system impossible to provide all the information that enables adequate interpretation of the signal's time behaviour. This will be treated in this topic. 
+
 
 ### Data flow and processing
 
