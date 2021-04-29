@@ -117,6 +117,18 @@ Typical shear rates are:
 - Processing: 
 - Comments
 
+### NOV
+- Sensor type: TT100
+- Accuracy / uncertainty: 
+- Physical location: 
+- Logical location:
+- Validity:
+- Maintenance / calibration:
+- Refresh-rate: 
+- Dependencies:
+- Processing: 
+- Comments
+
 ## Relevant Vocabulary
 
 ## Use-cases
