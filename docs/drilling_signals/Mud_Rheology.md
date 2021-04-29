@@ -74,12 +74,14 @@ Typical shear rates are:
   - pressure drop
   - enough points: HB 
   - Reconstruct Fann35 data
+  - Extrapolates at 50C
 - Comments: 
   - provide only equivalent Fann35 measurements (3,6,*10,20*,30,60,100,200,300,600).
   - One tag per equivalent shear stress
   - They also report the temperature
+  - provides extrapolated Fann35 readings at 50C. 
 
-### Sensor type 1
+### Baker tool (find another name)
 - Sensor type: 
 - Accuracy / uncertainty: 
 - Physical location: 
@@ -91,7 +93,19 @@ Typical shear rates are:
 - Processing: 
 - Comments
 
-### Sensor type 1
+### Baralogix
+- Sensor type: 
+- Accuracy / uncertainty: 
+- Physical location: 
+- Logical location:
+- Validity:
+- Maintenance / calibration:
+- Refresh-rate: 
+- Dependencies:
+- Processing: 
+- Comments
+
+### MI-Swacco
 - Sensor type: 
 - Accuracy / uncertainty: 
 - Physical location: 
