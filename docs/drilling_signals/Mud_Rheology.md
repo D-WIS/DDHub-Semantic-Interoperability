@@ -49,7 +49,39 @@ Typical shear rates are:
 - Processing: 
 - Comments
 
-### Sensor type 1
+### Intelligent Mud Systems
+- Sensor type: diffential pressure sensors
+  -  2 pipes, vertical and horizontal. 
+  -  Horizontal pipe: Several flow-rates -> several pressures, estimation of HB parameters
+  -  Vertical pipe: deduce density from pressure difference and vertical pressure losses
+- Accuracy / uncertainty: 
+  - Density
+  - Rheology  
+- Physical location: 
+  - Standard from the pit
+  - Can measure mud out properties  
+- Logical location:
+- Validity: during transient changes (changes in properties) HB fitting can look strange
+- Maintenance / calibration: after reset results unaccurate
+- Refresh-rate: 
+  - initial measurement 30 minutes
+  - subsequent measurements: continuous, but still 30 minutes to cover flow-rate range
+- Dependencies:
+  - temperature: pit temperature
+  - pressure: low
+- Processing: 
+  - Coriolis -> flow-rate, density
+  - pressure drop
+  - enough points: HB 
+  - Reconstruct Fann35 data
+  - Extrapolates at 50C
+- Comments: 
+  - provide only equivalent Fann35 measurements (3,6,*10,20*,30,60,100,200,300,600).
+  - One tag per equivalent shear stress
+  - They also report the temperature
+  - provides extrapolated Fann35 readings at 50C. 
+
+### Baker tool (find another name)
 - Sensor type: 
 - Accuracy / uncertainty: 
 - Physical location: 
@@ -61,7 +93,7 @@ Typical shear rates are:
 - Processing: 
 - Comments
 
-### Sensor type 1
+### Baralogix
 - Sensor type: 
 - Accuracy / uncertainty: 
 - Physical location: 
@@ -73,8 +105,20 @@ Typical shear rates are:
 - Processing: 
 - Comments
 
-### Sensor type 1
+### MI-Swacco
 - Sensor type: 
+- Accuracy / uncertainty: 
+- Physical location: 
+- Logical location:
+- Validity:
+- Maintenance / calibration:
+- Refresh-rate: 
+- Dependencies:
+- Processing: 
+- Comments
+
+### NOV
+- Sensor type: TT100
 - Accuracy / uncertainty: 
 - Physical location: 
 - Logical location:
