@@ -32,6 +32,9 @@ For downhole monitoring purposes, mainly the first contribution is of interest.
   - the signal is derived from the current consumed by the electric driving system (typically a vfd).
   - The current is measured by hall effect sensors. 
   - It is assumed that torque is proportional to this current. 
+  - Two main equations can be used for the torque
+    - $\tau = I \dot{\omega}$ where $I$ is the moment of inertia
+    - $\tau = \vec{r}   \times \vec {F}$
   - Possible forms:
     - continuous 4mA - 20mA: calibration of end-points and linear interpolation thereafter
     - discrete (calculation by drive based on pre-set parameters)
