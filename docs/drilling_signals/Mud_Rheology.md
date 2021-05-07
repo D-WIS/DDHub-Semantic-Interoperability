@@ -6,6 +6,7 @@
 
 ## Modifications
 - 22.04.2021: creation
+- 29.04.2021: edition
 
 ## Signal definition
 From [Schlumberger Oilfield Glossary](https://www.glossary.oilfield.slb.com/en/terms/r/rheology), the definition of rheology for drilling fluids
@@ -82,7 +83,7 @@ Typical shear rates are:
   - provides extrapolated Fann35 readings at 50C. 
 
 ### Baker tool (find another name)
-- Sensor type: 
+- Sensor type: differential pressure, at least horizontal pipe. 
 - Accuracy / uncertainty: 
 - Physical location: 
 - Logical location:
@@ -95,15 +96,30 @@ Typical shear rates are:
 
 ### Baralogix
 - Sensor type: 
+  - Couette type. 
+  - Anton Paar rheometer.  
+  - Rotate the bob and measure torque on bob (not exactly Fann35 functioning). Air bearings are used for the bob. 
 - Accuracy / uncertainty: 
+  - torque measurements: very precise...
 - Physical location: 
+  - Small ca 2x2x2ft 
+  - Easy to place anywhere...
+  - Example: close to charge pump 
 - Logical location:
 - Validity:
 - Maintenance / calibration:
 - Refresh-rate: 
-- Dependencies:
+- Dependencies: 
+  - mud is temperature controlled, 50C. 120 F. 
+  - Any speed can be used (no predefined shear rates). 
 - Processing: 
-- Comments
+  - Measures torque 
+  - Conversions rpm -> rate and torque stress assume constant conversion factors, only valid for newtonian fluids... 
+- Comments: 
+  - provided by Halliburton, here is a [link](https://www.halliburton.com/en/products/baralogix)
+  - Need to wash the cup between each measure. 
+  - Provide by default the standard Fann35
+  - Can provide HB, BP and Power law parameters. 
 
 ### MI-Swacco
 - Sensor type: 
@@ -118,7 +134,9 @@ Typical shear rates are:
 - Comments
 
 ### NOV
-- Sensor type: TT100
+- Sensor type: 
+  - Couette rheometer
+  - TT100
 - Accuracy / uncertainty: 
 - Physical location: 
 - Logical location:
