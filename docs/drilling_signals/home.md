@@ -2,3 +2,4 @@
 
 - [Mud density](Mud_Density.md)
 - [Mud rheology](Mud_Rheology.md)
+- [Rotary torque](RotaryTorque.md)
