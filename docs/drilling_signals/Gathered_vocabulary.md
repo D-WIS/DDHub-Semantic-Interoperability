@@ -7,6 +7,10 @@
 - [Uncertainties](#uncertainties)
 - [Data validity](#data-validity)
 - [Time management](#time-management)
+  - [Refresh rates](#refresh-rates)
+  - [Clocks](#clocks)
+  - [Delays](#delays)
+  - [Synchronization](#synchronization)
 - [Data processing](#data-processing)
   - [Downhole ECD](#downhole-ecd)
   - [Positions and velocities](#positions-and-velocities)
@@ -17,6 +21,9 @@
 - [Dependencies](#dependencies)
 - [Physical Position](#physical-position)
 - [Logical positions](#logical-positions)
+
+
+The vocabulary will be introduced by informal examples, all of the form `Subject Verb Object`. The verbs and objects are all to be considered as **instances**, and not class definitions. In these sentences, all instances are uniquely identified by their display name. 
 
 
 # Data structure
@@ -76,6 +83,14 @@ FormationStrengthAssociation HasUnit MegaPascal
 
 # Time management
 
+## Refresh rates
+
+## Clocks
+
+## Delays
+
+## Synchronization
+
 # Data processing
 
 Show the different types of procesing that can be involved in classical drilling data. 
@@ -85,6 +100,14 @@ As some processing requires parametrization, it is simpler to treat each process
 Signal1 IsProcessingOutputOf ProcessingUnit
 ProcessingUnit HasInput Signal2
 ```
+
+When treating classical signal processing functions, this approach implies to represent signals whose values are not available on the rig: `LowFrequencySignal IsResampledBy ResamplingUnit` coupled with `ResamplingUnit HasInput HighFrequencySignal` and `HighFrequencySignal IsMeasuredBy Sensor1`. In that case, the `HighFrequencySignal` is not made available. Those two sentences can therefore be condensed into 
+
+```
+LowFrequencySignal IsResampledBy ResamplingUnit
+ResamplingUnit IsMeasuredBy Sensor1
+```
+
 
 ## Downhole ECD
 ```
@@ -164,6 +187,29 @@ HookLoadFDIR HasControlVariable Hookload
 
 # Dependencies
 
+```
+ContinuousDensity HasTemperatureDependence ContinuousTemperature
+ContinuousDensity HasPressureDependence AtmosphericPressure
+AtmosphericPressure HasConstantValue 101325
+```
+
 # Physical Position
+
+In the following we work with *Locations*: a combination of coordinates and reference frame. One could consider more abstract locations, where several of those combinations are possible. This would facilitate the comparisons between two locations (there is only one location for the bit, but in the 1D curvilinear frame starting from the drill-floor it has coordinates *BitDepth* while in the frame starting from the block it has coordinates *BitDepth + BlockPosition*). 
+
+```
+PWD IsPhysicallyLocatedAt PWDLocation
+PWDLocation HasCoordinates PWDDistanceToBit
+PWDDistanceToBit HasStaticValue 15
+PWDLocation HasReferenceFrame BitCurviLinearReferenceFrame
+
+BitCurviLinearReferenceFrame HasOrigin BitLocation
+
+BitLocation HasCoordinates BitDepth
+BitLocation HasReferenceFrame DrillFloorCurviLinearReferenceFrame
+DrillFloorCurviLinearReferenceFrame HasOrigin DrillFloorLocation
+
+
+```
 
 # Logical positions
