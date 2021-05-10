@@ -1,33 +1,27 @@
-- [Gathered vocabulary](#gathered-vocabulary)
-  - [Data structure](#data-structure)
-  - [Quantities and units](#quantities-and-units)
-    - [Base quantities](#base-quantities)
-    - [Observable quantities](#observable-quantities)
-    - [Units and unit systems](#units-and-unit-systems)
-  - [Uncertainties](#uncertainties)
-  - [Data validity](#data-validity)
-  - [Time management](#time-management)
-  - [Data processing](#data-processing)
-    - [Downhole ECD](#downhole-ecd)
-    - [Positions](#positions)
-  - [Dependencies](#dependencies)
-  - [Physical Position](#physical-position)
-  - [Logical positions](#logical-positions)
+
+- [Data structure](#data-structure)
+- [Quantities and units](#quantities-and-units)
+  - [Base quantities](#base-quantities)
+  - [Observable quantities](#observable-quantities)
+  - [Units and unit systems](#units-and-unit-systems)
+- [Uncertainties](#uncertainties)
+- [Data validity](#data-validity)
+- [Time management](#time-management)
+- [Data processing](#data-processing)
+  - [Downhole ECD](#downhole-ecd)
+  - [Positions](#positions)
+- [Dependencies](#dependencies)
+- [Physical Position](#physical-position)
+- [Logical positions](#logical-positions)
 
 
-# Gathered vocabulary
-This document summaries the various words used during the DWIS session of the workstream 1. 
+# Data structure
 
-It covers the main semantical thematics.  
-
-
-## Data structure
-
-## Quantities and units
+# Quantities and units
 
 The following shows the main concepts illustrated via a pressure example.
 
-### Base quantities
+## Base quantities
 
 ```
 PressureQuantity HasMassExponent 1
@@ -35,7 +29,7 @@ PressureQuantity HasLengthExponent -1
 PressureQuantity HasTimeExponent -2
 ```
 
-### Observable quantities
+## Observable quantities
 ```
 PumpPressureQuantity HasBaseQuantity PressureQuantity
 PumpPressureQuantity HasMeaningFulPrecision 1000
@@ -44,7 +38,7 @@ FormationStrengthQuantity HasBaseQuantity PressureQuantity
 FormationStrengthQuantity HasMeaningFulPrecision 100000
 ```
 
-### Units and unit systems
+## Units and unit systems
 
 ```
 PressureQuantity HasSIUnit Pascal
@@ -72,15 +66,15 @@ FormationStrengthAssociation HasUnit MegaPascal
 
 
 
-## Uncertainties
+# Uncertainties
 
-## Data validity
+# Data validity
 
-## Time management
+# Time management
 
-## Data processing
+# Data processing
 
-### Downhole ECD
+## Downhole ECD
 ```
 DownholeECD IsConvertedBy PressureToDensityConversion
 PressureToDensityConversion HasPressureInput DownholePressure
@@ -92,10 +86,10 @@ DownholePressureAveraging HasInput HighFrequencyDownholePressure
 DownholePressureAveraging HasTimeWindow 30
 ```
 
-### Positions
+## Positions
 
-## Dependencies
+# Dependencies
 
-## Physical Position
+# Physical Position
 
-## Logical positions
+# Logical positions
