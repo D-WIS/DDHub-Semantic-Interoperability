@@ -9,7 +9,11 @@
 - [Time management](#time-management)
 - [Data processing](#data-processing)
   - [Downhole ECD](#downhole-ecd)
-  - [Positions](#positions)
+  - [Positions and velocities](#positions-and-velocities)
+  - [Simulations](#simulations)
+  - [Control and automation](#control-and-automation)
+    - [Mud pumps:](#mud-pumps)
+    - [FDIR](#fdir)
 - [Dependencies](#dependencies)
 - [Physical Position](#physical-position)
 - [Logical positions](#logical-positions)
@@ -74,19 +78,89 @@ FormationStrengthAssociation HasUnit MegaPascal
 
 # Data processing
 
+Show the different types of procesing that can be involved in classical drilling data. 
+As some processing requires parametrization, it is simpler to treat each processing step as a entity in the graph. The general structure then applies
+
+```
+Signal1 IsProcessingOutputOf ProcessingUnit
+ProcessingUnit HasInput Signal2
+```
+
 ## Downhole ECD
 ```
 DownholeECD IsConvertedBy PressureToDensityConversion
 PressureToDensityConversion HasPressureInput DownholePressure
 PressureToDensityConversion HasElevationInput PWDTVD
 
-DownholePressure IsMeasuredBy PWD
 DownholePressure IsTimeAveragedBy DownholePressureAveraging
 DownholePressureAveraging HasInput HighFrequencyDownholePressure
 DownholePressureAveraging HasTimeWindow 30
+
+HighFrequencyDownholePressure IsMeasuredBy PWD
 ```
 
-## Positions
+## Positions and velocities
+
+```
+BlockVelocity IsDerivedBy BlockDerivation
+BlockDerivation HasTimeInterval 1
+BlockDerivation HasInput BlockPosition
+
+BitDepth IsTranslatedBy BitDepthTranslation
+BitDepthTranslation HasTranslationAmplitude CurrentStringLength
+BitDepthTranslation HasInput TopOfStringPosition
+
+TopOfStringPosition IsProcessingOutputOf TOSPosCalculation
+TOSPosCalculation HasInput BlockPosition
+TOSPosCalculation HasInput StringConnected
+
+HoleDepth IsMaximumBy HoleDepthComputation
+HoleDepthComputation HasInput InitialHoleDepth
+HoleDepthComputation HasInput HoleDepth
+HoleDepthComputation HasInput BitDepth
+
+InstantaneousROP1 IsDerivedBy InstROPDerivation
+InstROPDerivation HasTimeInterval .5
+InstROPDerivation HasInput HoleDepth
+
+InstantaneousROP2 IsDuplicatedFrom BlockVelocity
+
+AverageROP IsDerivedBy AvROPDerivation
+
+```
+
+## Simulations
+
+```
+Hookload1 IsCalculatedBy HooklaodFDIRCalculation
+```
+
+## Control and automation
+
+### Mud pumps:
+```
+MP1RateCommand IsCommandFrom MP1Controller
+MP1Controller HasInput MP1SetPoint
+
+MP2RateCommand IsCommandFrom MP2Controller
+MP2Controller HasInput MP2SetPoint
+
+MP1SetPoint IsSetPointFrom MPControlSystem
+MP2SetPoint IsSetPointFrom MPControlSystem
+MPControlSystem HasInput MPSetPoint
+
+MPSetPoint IsProcessingOutputOf DSCControlPanel
+```
+
+### FDIR
+```
+Hookload1 IsFDIRMaxThresholdFor HookLoadFDIR
+Hookload1 IsValidWhen SteadyHookloadValidityCondition
+Hookload1 IsValidWhen OffBottomValidityCondition
+Hookload1 IsValidWhen StringConnectedValidityCondition
+
+HookLoadFDIR HasControlVariable Hookload
+```
 
 # Dependencies
 
