@@ -1,5 +1,6 @@
 
 - [Data structure](#data-structure)
+  - [Generalities](#generalities)
 - [Quantities and units](#quantities-and-units)
   - [Base quantities](#base-quantities)
   - [Observable quantities](#observable-quantities)
@@ -23,10 +24,56 @@
 - [Logical positions](#logical-positions)
 
 
-The vocabulary will be introduced by informal examples, all of the form `Subject Verb Object`. The verbs and objects are all to be considered as **instances**, and not class definitions. In these sentences, all instances are uniquely identified by their display name. 
+The vocabulary will be introduced by informal examples, all of the form `Subject Verb Object`. The verbs and objects in the examples are all to be considered as **instances**, and not class definitions. In these sentences, all instances are uniquely identified by some display name. 
 
 
 # Data structure
+
+## Generalities
+
+Real-time signals can in all generality be dsecribed by their *shape* (inspired from Python, TensorFlow...). A shape in a sequence of integers $(j_1, \dots, j_n)$, such that:
+- $n$ is the number of indices necessary to specify the data. It is the dimension of the multi-index $I = [i_1, \dots, i_k]$
+- the index $i_k$, $1\leq k \leq n$, takes value between $0$ and $j_k -1$. 
+
+We call:
+- *axis* the array $[\alpha_1, \dots , \alpha_{j_k}]$,
+- *rank* the number $n$, i.e. the number of axis,
+- *dimension* of the $k$-th axis the number $j_k$.
+
+Those considerations should enable the representation of most signals, as stored in a real-time server:
+- a scalar has by convention the empty shape $()$,
+```
+s = 3.1459
+shape(s) = ()
+rank(s) = 0
+```
+- a one-dimensional vector with $k$ elements has shape $(k)$. 
+```
+v = [1.0, 2.0, 3.0, 4.0]
+shape(v) = (4)
+rank(v) = 1
+v[2] = 3.0
+```
+- a $m\times n$ matrix has shape $(m,n)$
+```
+v = [[1.0, 2.0, 3.0, 4.0], [2.0, 4.0, 6.0, 8.0], [3.0, 6.0, 9.0, 12.0]]
+shape(v) = (3,4)
+rank(v) = 2
+v[2] = [3.0, 6.0, 9.0, 12.0]
+v[2,1] = 6.0
+```
+ 
+ However, additional information is necessary to provide enough useful meaning to the data.
+
+To treat:
+- simple hookload, SPP
+- hookload tables (safety triggers)
+- rheology (different representations)
+- 3-dimensional velocities, accelerations
+- ASM 3-dimensional data
+- ASM pressures
+- computed profiles
+- PVT tables
 
 # Quantities and units
 
@@ -70,9 +117,13 @@ MegaPascal HasConversionFactorB 0
 MetricUnitSystem HasUnitAssociation PumpPressureAssociation
 PumpPressureAssociation HasObservableQuantity PumpPressureQuantity
 PumpPressureAssociation HasUnit Bar
+
 MetricUnitSystem HasUnitAssociation FormationStrengthAssociation
 FormationStrengthAssociation HasObservableQuantity FormationStrengthQuantity
 FormationStrengthAssociation HasUnit MegaPascal
+
+PumpPressure HasObservableQuantity PumpPressureQuantity
+EstimatedUCS HasObservableQuantity FormationStrengthQuantity
 ```
 
 
@@ -101,7 +152,7 @@ Signal1 IsProcessingOutputOf ProcessingUnit
 ProcessingUnit HasInput Signal2
 ```
 
-When treating classical signal processing functions, this approach implies to represent signals whose values are not available on the rig: `LowFrequencySignal IsResampledBy ResamplingUnit` coupled with `ResamplingUnit HasInput HighFrequencySignal` and `HighFrequencySignal IsMeasuredBy Sensor1`. In that case, the `HighFrequencySignal` is not made available. Those two sentences can therefore be condensed into 
+When treating classical signal processing functions, this approach implies to represent signals whose values are not available on the rig: `LowFrequencySignal IsResampledBy ResamplingUnit` coupled with `ResamplingUnit HasInput HighFrequencySignal` and `HighFrequencySignal IsMeasuredBy Sensor1`. In that case, the `HighFrequencySignal` is not made available. Those three sentences can therefore be condensed into 
 
 ```
 LowFrequencySignal IsResampledBy ResamplingUnit
@@ -149,7 +200,6 @@ InstROPDerivation HasInput HoleDepth
 InstantaneousROP2 IsDuplicatedFrom BlockVelocity
 
 AverageROP IsDerivedBy AvROPDerivation
-
 ```
 
 ## Simulations
@@ -208,8 +258,6 @@ BitCurviLinearReferenceFrame HasOrigin BitLocation
 BitLocation HasCoordinates BitDepth
 BitLocation HasReferenceFrame DrillFloorCurviLinearReferenceFrame
 DrillFloorCurviLinearReferenceFrame HasOrigin DrillFloorLocation
-
-
 ```
 
 # Logical positions
