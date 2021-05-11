@@ -35,30 +35,30 @@ The vocabulary will be introduced by informal examples, all of the form `Subject
 
 ### Data shape
 
-Real-time signals can in all generality be dsecribed by their *shape* (inspired from Python, TensorFlow...). A shape in a sequence of integers <!-- $(j_1, \dots, j_n)$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\b5vsOqQhdL.svg">, such that:
-- $n$ is the number of indices necessary to specify the data. It is the dimension of the multi-index <!-- $I = [i_1, \dots, i_k]$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\QVWZgCCWdn.svg">
-- the index <!-- $i_k$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\opy3dpvY2d.svg">, <!-- $1\leq k \leq n$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\4g2evqSN4e.svg">, takes value between $0$ and $j_k -1$. 
+Real-time signals can in all generality be dsecribed by their *shape* (inspired from Python, TensorFlow...). A shape in a sequence of integers <!-- $(j_1, \dots, j_n)$ --> <img style="transform: translateY(0.3em); background: white;" src="svg\b5vsOqQhdL.svg">, such that:
+- $n$ is the number of indices necessary to specify the data. It is the dimension of the multi-index <!-- $I = [i_1, \dots, i_k]$ --> <img style="transform: translateY(0.3em); background: white;" src="svg\QVWZgCCWdn.svg">
+- the index <!-- $i_k$ --> <img style="transform: translateY(0.3em); background: white;" src="svg\opy3dpvY2d.svg">, <!-- $1\leq k \leq n$ --> <img style="transform: translateY(0.3em); background: white;" src="svg\4g2evqSN4e.svg">, takes value between $0$ and <!-- $j_k -1$ --> <img style="transform: translateY(0.3em); background: white;" src="svg\xQIbdHBtJB.svg">. 
 
 We call:
-- *axis* the array <!-- $[\alpha_1, \dots , \alpha_{j_k}]$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\yWppYzLnBW.svg">,
-- *rank* the number $n$, i.e. the number of axis,
-- *dimension* of the $k$-th axis the number $j_k$.
+- *axis* the array <!-- $[\alpha_1, \dots , \alpha_{j_k}]$ --> <img style="transform: translateY(0.3em); background: white;" src="svg\yWppYzLnBW.svg">,
+- *rank* the number <!-- $n$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\lhOr9JHZ8D.svg">, i.e. the number of axis,
+- *dimension* of the <!-- $k$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\mJAz4sBqDK.svg">-th axis the number <!-- $j_k$ --> <img style="transform: translateY(0.3em); background: white;" src="svg\Yv2Uu3aEm3.svg">.
 
 Those considerations should enable the representation of most signals, as stored in a real-time server:
-- a scalar has by convention the empty shape $()$,
+- a scalar has by convention the empty shape <!-- $()$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\TDmz8VRIGl.svg">,
 ```
 s = 3.1459
 shape(s) = ()
 rank(s) = 0
 ```
-- a one-dimensional vector with $k$ elements has shape $(k)$. 
+- a one-dimensional vector with <!-- $k$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\7MbLoT67Yd.svg"> elements has shape <!-- $(k)$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\2DtN4AycIm.svg">. 
 ```
 v = [1.0, 2.0, 3.0, 4.0]
 shape(v) = (4)
 rank(v) = 1
 v[2] = 3.0
 ```
-- a $m\times n$ matrix has shape $(m,n)$
+- a <!-- $m\times n$ --> <img style="transform: translateY(0.em); background: white;" src="svg\hl2N9bCxKr.svg"> matrix has shape $(m,n)$
 ```
 v = [[1.0, 2.0, 3.0, 4.0], [2.0, 4.0, 6.0, 8.0], [3.0, 6.0, 9.0, 12.0]]
 shape(v) = (3,4)
@@ -72,8 +72,10 @@ v[2,1] = 6.0
 
  However, additional information is necessary to provide enough useful meaning to the data. Mathematically speaking, a signal can be seen as a map
 
-$$ t\times D \xRightarrow{} R $$
-where $t$ denotes the time, $D$ and $R$ the domain and range of the signal. For example:
+$$t\times D \xRightarrow{} R$$
+
+
+where <!-- $t$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\69SmqIBnpX.svg"> denotes the time, <!-- $D$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\x5Zbuh1kVY.svg"> and <!-- $R$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\lmS0oMufX3.svg"> the domain and range of the signal. For example:
  - a single three-dimensional velocity vector has domain $D = \empty$ and range $R = \R^3$. 
  - a computed profile of drill-string center displacements would have domain $D = \R$ and range $\R^3$: the domain corresponds to the linear abscissa of the considered point and the range to the coordinates of the displacement in a Serret-Frenet frame centered at that point. 
  - a table of predicted hookloads, as function of the block velocity, the flow-rate and the top-drive RPM will have domain $D = \R^3$ and range $R = \R$. 
