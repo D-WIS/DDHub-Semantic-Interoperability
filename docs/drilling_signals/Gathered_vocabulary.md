@@ -35,12 +35,12 @@ The vocabulary will be introduced by informal examples, all of the form `Subject
 
 ### Data shape
 
-Real-time signals can in all generality be dsecribed by their *shape* (inspired from Python, TensorFlow...). A shape in a sequence of integers $(j_1, \dots, j_n)$, such that:
-- $n$ is the number of indices necessary to specify the data. It is the dimension of the multi-index $I = [i_1, \dots, i_k]$
-- the index $i_k$, $1\leq k \leq n$, takes value between $0$ and $j_k -1$. 
+Real-time signals can in all generality be dsecribed by their *shape* (inspired from Python, TensorFlow...). A shape in a sequence of integers <!-- $(j_1, \dots, j_n)$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\b5vsOqQhdL.svg">, such that:
+- $n$ is the number of indices necessary to specify the data. It is the dimension of the multi-index <!-- $I = [i_1, \dots, i_k]$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\QVWZgCCWdn.svg">
+- the index <!-- $i_k$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\opy3dpvY2d.svg">, <!-- $1\leq k \leq n$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\4g2evqSN4e.svg">, takes value between $0$ and $j_k -1$. 
 
 We call:
-- *axis* the array $[\alpha_1, \dots , \alpha_{j_k}]$,
+- *axis* the array <!-- $[\alpha_1, \dots , \alpha_{j_k}]$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\yWppYzLnBW.svg">,
 - *rank* the number $n$, i.e. the number of axis,
 - *dimension* of the $k$-th axis the number $j_k$.
 
