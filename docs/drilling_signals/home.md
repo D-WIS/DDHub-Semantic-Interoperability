@@ -6,4 +6,4 @@
 
 # Associated vocabulary
 
-[Gathered vocabulary](Gathered_vocabulary.md)
+[Gathered vocabulary](Gathered_vocabulary.tex.md)
