@@ -1,6 +1,8 @@
 
 - [Data structure](#data-structure)
   - [Generalities](#generalities)
+    - [Data shape](#data-shape)
+    - [Signal mapping](#signal-mapping)
 - [Quantities and units](#quantities-and-units)
   - [Base quantities](#base-quantities)
   - [Observable quantities](#observable-quantities)
@@ -30,6 +32,8 @@ The vocabulary will be introduced by informal examples, all of the form `Subject
 # Data structure
 
 ## Generalities
+
+### Data shape
 
 Real-time signals can in all generality be dsecribed by their *shape* (inspired from Python, TensorFlow...). A shape in a sequence of integers $(j_1, \dots, j_n)$, such that:
 - $n$ is the number of indices necessary to specify the data. It is the dimension of the multi-index $I = [i_1, \dots, i_k]$
@@ -62,8 +66,21 @@ rank(v) = 2
 v[2] = [3.0, 6.0, 9.0, 12.0]
 v[2,1] = 6.0
 ```
- 
- However, additional information is necessary to provide enough useful meaning to the data.
+ Note that in the latter example, jagged arrays are used. We should also find a way to distinguish and represent jagged arrays and multi-dimensional arrays (where the difference in typically in the access `v[i,j]` vs `v[i][j]`).
+
+### Signal mapping
+
+ However, additional information is necessary to provide enough useful meaning to the data. Mathematically speaking, a signal can be seen as a map
+
+$$ t\times D \xRightarrow{} R $$
+where $t$ denotes the time, $D$ and $R$ the domain and range of the signal. For example:
+ - a single three-dimensional velocity vector has domain $D = \empty$ and range $R = \R^3$. 
+ - a computed profile of drill-string center displacements would have domain $D = \R$ and range $\R^3$: the domain corresponds to the linear abscissa of the considered point and the range to the coordinates of the displacement in a Serret-Frenet frame centered at that point. 
+ - a table of predicted hookloads, as function of the block velocity, the flow-rate and the top-drive RPM will have domain $D = \R^3$ and range $R = \R$. 
+ - a single pressure (SPP for example) has domain $D = \empty$ and range $R= \R$
+ - a series of along-string pressure measurements has domain $D = \R$ and range  $R= \R$
+ - a base-oil PVT table has domain $D= \R^2$ (pressure and temperature) and range $R = \R$ (the mass density)
+
 
 To treat:
 - simple hookload, SPP
