@@ -3,6 +3,7 @@
   - [Generalities](#generalities)
     - [Data shape](#data-shape)
     - [Signal mapping](#signal-mapping)
+    - [Combined representations](#combined-representations)
 - [Quantities and units](#quantities-and-units)
   - [Base quantities](#base-quantities)
   - [Observable quantities](#observable-quantities)
@@ -35,30 +36,30 @@ The vocabulary will be introduced by informal examples, all of the form `Subject
 
 ### Data shape
 
-Real-time signals can in all generality be dsecribed by their *shape* (inspired from Python, TensorFlow...). A shape in a sequence of integers <!-- $(j_1, \dots, j_n)$ --> <img style="transform: translateY(0.3em); background: white;" src="svg\b5vsOqQhdL.svg">, such that:
-- $n$ is the number of indices necessary to specify the data. It is the dimension of the multi-index <!-- $I = [i_1, \dots, i_k]$ --> <img style="transform: translateY(0.3em); background: white;" src="svg\QVWZgCCWdn.svg">
-- the index <!-- $i_k$ --> <img style="transform: translateY(0.3em); background: white;" src="svg\opy3dpvY2d.svg">, <!-- $1\leq k \leq n$ --> <img style="transform: translateY(0.3em); background: white;" src="svg\4g2evqSN4e.svg">, takes value between $0$ and <!-- $j_k -1$ --> <img style="transform: translateY(0.3em); background: white;" src="svg\xQIbdHBtJB.svg">. 
+Real-time signals can in all generality be dsecribed by their *shape* (inspired from Python, TensorFlow...). A shape in a sequence of integers $(j_1, \dots, j_n)$, such that:
+- $n$ is the number of indices necessary to specify the data. It is the dimension of the multi-index $I = [i_1, \dots, i_k]$ 
+- the index$i_k$, $1\leq k \leq n$, takes value between $0$ and $j_k -1$. 
 
 We call:
-- *axis* the array <!-- $[\alpha_1, \dots , \alpha_{j_k}]$ --> <img style="transform: translateY(0.em); background: white;" src="svg\yWppYzLnBW.svg">,
-- *rank* the number <!-- $n$ --> <img style="transform: translateY(0.em); background: white;" src="svg\lhOr9JHZ8D.svg">, i.e. the number of axis,
-- *dimension* of the <!-- $k$ --> <img style="transform: translateY(0.em); background: white;" src="svg\mJAz4sBqDK.svg">-th axis the number <!-- $j_k$ --> <img style="transform: translateY(0.em); background: white;" src="svg\Yv2Uu3aEm3.svg">.
+- *axis* the array $[\alpha_1, \dots , \alpha_{j_k}]$,
+- *rank* the number $n$, i.e. the number of axis,
+- *dimension* of the $k$-th axis the number $j_k$.
 
 Those considerations should enable the representation of most signals, as stored in a real-time server:
-- a scalar has by convention the empty shape <!-- $()$ --> <img style="transform: translateY(0.em); background: white;" src="svg\TDmz8VRIGl.svg">,
+- a scalar has by convention the empty shape $()$,
 ```
-s = 3.1459
+s = 3.1415926
 shape(s) = ()
 rank(s) = 0
 ```
-- a one-dimensional vector with <!-- $k$ --> <img style="transform: translateY(0.em); background: white;" src="svg\7MbLoT67Yd.svg"> elements has shape <!-- $(k)$ --> <img style="transform: translateY(0.em); background: white;" src="svg\2DtN4AycIm.svg">. 
+- a one-dimensional vector with $k$ elements has shape $(k)$. 
 ```
 v = [1.0, 2.0, 3.0, 4.0]
 shape(v) = (4)
 rank(v) = 1
 v[2] = 3.0
 ```
-- a <!-- $m\times n$ --> <img style="transform: translateY(0.em); background: white;" src="svg\hl2N9bCxKr.svg"> matrix has shape $(m,n)$
+- a $m\times n$ matrix has shape $(m,n)$
 ```
 v = [[1.0, 2.0, 3.0, 4.0], [2.0, 4.0, 6.0, 8.0], [3.0, 6.0, 9.0, 12.0]]
 shape(v) = (3,4)
@@ -72,16 +73,31 @@ v[2,1] = 6.0
 
  However, additional information is necessary to provide enough useful meaning to the data. Mathematically speaking, a signal can be seen as a map
 
-$$t\times D \xRightarrow{} R$$
+$$t\times D \rightarrow R$$
 
 
-where <!-- $t$ --> <img style="transform: translateY(0.em); background: white;" src="svg\69SmqIBnpX.svg"> denotes the time, <!-- $D$ --> <img style="transform: translateY(0.em); background: white;" src="svg\x5Zbuh1kVY.svg"> and <!-- $R$ --> <img style="transform: translateY(0.em); background: white;" src="svg\lmS0oMufX3.svg"> the domain and range of the signal. For example:
+where $t$ denotes the time, $D$ and $R$ the domain and range of the signal. For example:
  - a single three-dimensional velocity vector has domain $D = \empty$ and range $R = \R^3$. 
+ - alternatively, seeing the three-dimensional velocity vector as three independent velocity values, one gets $D = \R^3$ and $R = \R$. 
  - a computed profile of drill-string center displacements would have domain $D = \R$ and range $\R^3$: the domain corresponds to the linear abscissa of the considered point and the range to the coordinates of the displacement in a Serret-Frenet frame centered at that point. 
  - a table of predicted hookloads, as function of the block velocity, the flow-rate and the top-drive RPM will have domain $D = \R^3$ and range $R = \R$. 
+ - a simplified table of predicted hookloads, function of the block velocity, the flow-rate and a boolean indicating whether there is rotation or not would have domain $D = \R^2 \times \{0,1\}$ and range $R = \R$. 
  - a single pressure (SPP for example) has domain $D = \empty$ and range $R= \R$
  - a series of along-string pressure measurements has domain $D = \R$ and range  $R= \R$
  - a base-oil PVT table has domain $D= \R^2$ (pressure and temperature) and range $R = \R$ (the mass density)
+
+### Combined representations
+
+Both the signal mapping and data shapes approach are important. The data shape describes the structure of the signal as stored on a real-time data server. The signal mapping describes the meaning of the data itself. In the DDHub context, it is then important to associate the two views, since we want to associate meaning to copmuter stored signals. 
+
+One may encounter (at least) two situations:
+- the signal contains the domain information. This is the case in the following cases
+  - data sets: in data science context, where one manipulates "self-contained" data sets, the domain information is represented. Typically, a data sets is made of several columns where the first ones contain the domain data and the latter ones the range data. Then the objective is to perform regression or classification of the range data against the domain one. In this context, one wants to specify that the domain is described by some of the axes of the global shape.
+  - computed profiles: when using numerical models to evaluate the state of the drilling process, it is common to manipulate and publish profiles, such as the pressure profile in the annular. For example, a pressure profile is nothing more than a series of points (pressures, the range data) associated to a series of measured depth (the domain). Due to the dynamic nature of the computations, the measured depths are often themselves dynamic and stored as real-time signals, and both pressures and depths are usually stored together. The following structure are commonly encountered:
+```
+. [[0, 101325], [30, 102325], ... , [1984, 201325]] // the signal is an array of smaller arrays containing (domain, range) data
+. [[0, 30, ... , 1984], [101325, 102325, ... , 201325]] // the signal is an array made of two arrays: a domain array and a range array
+```
 
 
 To treat:
