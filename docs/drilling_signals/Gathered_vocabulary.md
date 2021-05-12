@@ -39,7 +39,7 @@ The vocabulary will be introduced by informal examples, all of the form `Subject
 
 Real-time signals can in all generality be dsecribed by their *shape* (inspired from Python, TensorFlow...). A shape in a sequence of integers $(j_1, \dots, j_n)$, such that:
 - $n$ is the number of indices necessary to specify the data. It is the dimension of the multi-index $I = [i_1, \dots, i_k]$ 
-- the index$i_k$, $1\leq k \leq n$, takes value between $0$ and $j_k -1$. 
+- the index $i_k$, $1\leq k \leq n$, takes value between $0$ and $j_k -1$. 
 
 We call:
 - *axis* the array $[\alpha_1, \dots , \alpha_{j_k}]$,
@@ -74,10 +74,10 @@ v[2,1] = 6.0
 
  However, additional information is necessary to provide enough useful meaning to the data. Mathematically speaking, a signal can be seen as a map
 
-$$t\times D \rightarrow R$$
+$$T\times D \rightarrow R$$
 
 
-where $t$ denotes the time, $D$ and $R$ the domain and range of the signal. For example:
+where $T$ denotes the time "set", $D$ and $R$ the domain and range of the signal. For example:
  - a single three-dimensional velocity vector has domain $D = \empty$ and range $R = \R^3$. 
  - alternatively, seeing the three-dimensional velocity vector as three independent velocity values, one gets $D = \R^3$ and $R = \R$. 
  - a computed profile of drill-string center displacements would have domain $D = \R$ and range $\R^3$: the domain corresponds to the linear abscissa of the considered point and the range to the coordinates of the displacement in a Serret-Frenet frame centered at that point. 
@@ -96,6 +96,7 @@ Both the signal mapping and data shapes approach are important. The data shape d
 One may encounter (at least) two situations:
 1. the signal contains the domain information. This occurs in the following cases
    - data sets: in data science context, where one manipulates "self-contained" data sets, the domain information is represented. Typically, a data sets is made of several columns where the first ones contain the domain data and the latter ones the range data. Then the objective is to perform regression or classification of the range data against the domain one. In this context, one wants to specify that the domain is described by some of the axes of the global shape.
+   - burst data: high frequency downhole signals are sometimes transmitted to the surface during the operations. However, they are often transmitted in packets containing a full interval of data. In that case, the transmitted data is multidimensional, where the first axis contains the date at which the measurement has been taken. The domain is therefore contained in the data itself. The same holds for retrieved WitsML logs. 
    - computed profiles: when using numerical models to evaluate the state of the drilling process, it is common to manipulate and publish profiles, such as the pressure profile in the annular. For example, a pressure profile is nothing more than a series of points (pressures, the range data) associated to a series of measured depth (the domain). Due to the dynamic nature of the computations, the measured depths are often themselves dynamic and stored as real-time signals, and both pressures and depths are usually stored together. The following structure are commonly encountered:
 ```
 // the signal is an array of smaller arrays containing (domain, range) data
@@ -104,7 +105,11 @@ One may encounter (at least) two situations:
 // the signal is an array made of two arrays: a domain array and a range array
  [[0, 30, ... , 1984], [101325, 102325, ... , 201325]] 
 ```
-2. the signal only contains the range data. This is the most common case. 
+2. the signal only contains the range data. This is the most common case. For data stored as scalar values, this goes without saying. However, one can differentiate two sub-cases
+   - The domain data is static, and not stored as a real-time signal. 
+     - this will be the case for a series of continuous rheology mesurement for example. The measurement is stored as an array of shear stresses. The corresponding shear rates are pre-defined and not available as real-time signals. 
+   - The domain is dynamic, but represented in another signal:
+     - expected hookloads as a function of block velocity, rpm and flow-rate: the stored data only contains the 3-dimensional table. The values defining the corresponding flow-rates, rpms and velocities are dynamic, stored in arrays in the real-time server. In this situation, the link between the 3-dimensional table and the three axis arrays is a link between drilling datas. 
 
 To treat:
 - simple hookload, SPP
