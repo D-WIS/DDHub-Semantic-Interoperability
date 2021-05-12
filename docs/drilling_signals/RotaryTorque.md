@@ -9,8 +9,8 @@
 ## Signal definition
 
 ## Quantity
-- The torque quantity is $M\ L^2\ S^{-2}$.
-- SI unit is $kg\ m\ s^{-2}$.
+- The torque quantity is <!-- $M\ L^2\ S^{-2}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\vcB0R5IqlK.svg">.
+- SI unit is <!-- $kg\ m\ s^{-2}$ --> <img style="transform: translateY(0.3em); background: white;" src="svg\TIWMFjmW7L.svg">.
 - Common units are
   - mN in metric system
 
@@ -33,8 +33,8 @@ For downhole monitoring purposes, mainly the first contribution is of interest.
   - The current is measured by hall effect sensors. 
   - It is assumed that torque is proportional to this current. 
   - Two main equations can be used for the torque
-    - $\tau = I \dot{\omega}$ where $I$ is the moment of inertia
-    - $\tau = \vec{r}   \times \vec {F}$
+    - <!-- $\tau = I \dot{\omega}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\MXUyuopky3.svg"> where $I$ is the moment of inertia
+    - <!-- $\tau = \vec{r}   \times \vec {F}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\JscC2LmZue.svg">
   - Possible forms:
     - continuous 4mA - 20mA: calibration of end-points and linear interpolation thereafter
     - discrete (calculation by drive based on pre-set parameters)

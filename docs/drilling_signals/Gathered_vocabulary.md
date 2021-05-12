@@ -4,6 +4,10 @@
     - [Data shape](#data-shape)
     - [Signal mapping](#signal-mapping)
     - [Combined representations](#combined-representations)
+  - [Examples](#examples)
+    - [Standard scalars measurements](#standard-scalars-measurements)
+    - [Hookload tables](#hookload-tables)
+    - [Downhole pressures](#downhole-pressures)
 - [Quantities and units](#quantities-and-units)
   - [Base quantities](#base-quantities)
   - [Observable quantities](#observable-quantities)
@@ -110,10 +114,54 @@ One may encounter (at least) two situations:
      - this will be the case for a series of continuous rheology mesurement for example. The measurement is stored as an array of shear stresses. The corresponding shear rates are pre-defined and not available as real-time signals. 
    - The domain is dynamic, but represented in another signal:
      - expected hookloads as a function of block velocity, rpm and flow-rate: the stored data only contains the 3-dimensional table. The values defining the corresponding flow-rates, rpms and velocities are dynamic, stored in arrays in the real-time server. In this situation, the link between the 3-dimensional table and the three axis arrays is a link between drilling datas. 
+     - continuous rheology measurement made at unusual and dynamic shear rates. Then, one can imagine that the stress and rates arrays are stored as two separate items. The rate array can be interpreted as the domain of the stress array. 
+
+## Examples
+
+### Standard scalars measurements
+```
+Hookload HasShape ()
+SPP HasShape ()
+```
+
+### Hookload tables
+
+```
+Hookloadtable HasShape (10,8,5)
+
+HookloadTable HasExternalDomainAxis BlockVelocityDomainAxis
+BlockVelocityDomainAxis HasIndex 0
+BlockVelocityDomainAxis HasAxisData BlockVelocities
+BlockVelocities HasShape (10)
+
+HookloadTable HasExternalDomainAxis TopDriveRPMDomainAxis
+TopDriveRPMDomainAxis HasIndex 1
+TopDriveRPMDomainAxis HasAxisData TopDriveRPMs
+TopDriveRPMs HasShape (8)
+
+HookloadTable HasExternalDomainAxis FlowRatesDomainAxis
+FlowRatesDomainAxis HasIndex 2
+FlowRatesDomainAxis HasAxisData FlowRates
+FlowRates HasShape (5)
+```
+
+### Downhole pressures
+```
+// standard
+DownholePressure1 HasShape ()
+
+// ASM
+DownholePressure2 HasShape (10)
+DownholePressure2 HasExternalDomainAxis DistancesToBit
+DistancesToBit HasShape (10)
+
+// Calculated
+CalculatedPressures HasShape (2,100)
+CalculatedPressures HasInternalDomainAxis DepthAxis
+DepthAxis HasIndex 0
+```
 
 To treat:
-- simple hookload, SPP
-- hookload tables (safety triggers)
 - rheology (different representations)
 - 3-dimensional velocities, accelerations
 - ASM 3-dimensional data
