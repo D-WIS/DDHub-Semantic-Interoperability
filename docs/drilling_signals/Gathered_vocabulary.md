@@ -11,6 +11,7 @@
 - [Uncertainties](#uncertainties)
 - [Data validity](#data-validity)
 - [Time management](#time-management)
+  - [Time stamps](#time-stamps)
   - [Refresh rates](#refresh-rates)
   - [Clocks](#clocks)
   - [Delays](#delays)
@@ -48,7 +49,7 @@ We call:
 Those considerations should enable the representation of most signals, as stored in a real-time server:
 - a scalar has by convention the empty shape $()$,
 ```
-s = 3.1415926
+s = 2.71828
 shape(s) = ()
 rank(s) = 0
 ```
@@ -82,23 +83,28 @@ where $t$ denotes the time, $D$ and $R$ the domain and range of the signal. For 
  - a computed profile of drill-string center displacements would have domain $D = \R$ and range $\R^3$: the domain corresponds to the linear abscissa of the considered point and the range to the coordinates of the displacement in a Serret-Frenet frame centered at that point. 
  - a table of predicted hookloads, as function of the block velocity, the flow-rate and the top-drive RPM will have domain $D = \R^3$ and range $R = \R$. 
  - a simplified table of predicted hookloads, function of the block velocity, the flow-rate and a boolean indicating whether there is rotation or not would have domain $D = \R^2 \times \{0,1\}$ and range $R = \R$. 
+ - an incident status table, function of flow-rate, top-drive RPM and block velocity, containing the estimated status of the wellbore with respect to some incident (such as exceeding fracturing pressure). The domain would be $D = \R^3$ while the range would be $R = \{0,1\}$. 
  - a single pressure (SPP for example) has domain $D = \empty$ and range $R= \R$
  - a series of along-string pressure measurements has domain $D = \R$ and range  $R= \R$
  - a base-oil PVT table has domain $D= \R^2$ (pressure and temperature) and range $R = \R$ (the mass density)
+ - an estimated lithology profile, associating to each depth a lithology type. The domain would be $D = \R$ and the range an enumeration of $L$ lithologies, mathematically expressed as $R = \{1, \dots, L\}$. 
 
 ### Combined representations
 
 Both the signal mapping and data shapes approach are important. The data shape describes the structure of the signal as stored on a real-time data server. The signal mapping describes the meaning of the data itself. In the DDHub context, it is then important to associate the two views, since we want to associate meaning to copmuter stored signals. 
 
 One may encounter (at least) two situations:
-- the signal contains the domain information. This is the case in the following cases
-  - data sets: in data science context, where one manipulates "self-contained" data sets, the domain information is represented. Typically, a data sets is made of several columns where the first ones contain the domain data and the latter ones the range data. Then the objective is to perform regression or classification of the range data against the domain one. In this context, one wants to specify that the domain is described by some of the axes of the global shape.
-  - computed profiles: when using numerical models to evaluate the state of the drilling process, it is common to manipulate and publish profiles, such as the pressure profile in the annular. For example, a pressure profile is nothing more than a series of points (pressures, the range data) associated to a series of measured depth (the domain). Due to the dynamic nature of the computations, the measured depths are often themselves dynamic and stored as real-time signals, and both pressures and depths are usually stored together. The following structure are commonly encountered:
+1. the signal contains the domain information. This occurs in the following cases
+   - data sets: in data science context, where one manipulates "self-contained" data sets, the domain information is represented. Typically, a data sets is made of several columns where the first ones contain the domain data and the latter ones the range data. Then the objective is to perform regression or classification of the range data against the domain one. In this context, one wants to specify that the domain is described by some of the axes of the global shape.
+   - computed profiles: when using numerical models to evaluate the state of the drilling process, it is common to manipulate and publish profiles, such as the pressure profile in the annular. For example, a pressure profile is nothing more than a series of points (pressures, the range data) associated to a series of measured depth (the domain). Due to the dynamic nature of the computations, the measured depths are often themselves dynamic and stored as real-time signals, and both pressures and depths are usually stored together. The following structure are commonly encountered:
 ```
-. [[0, 101325], [30, 102325], ... , [1984, 201325]] // the signal is an array of smaller arrays containing (domain, range) data
-. [[0, 30, ... , 1984], [101325, 102325, ... , 201325]] // the signal is an array made of two arrays: a domain array and a range array
-```
+// the signal is an array of smaller arrays containing (domain, range) data
+ [[0, 101325], [30, 102325], ... , [1984, 201325]] 
 
+// the signal is an array made of two arrays: a domain array and a range array
+ [[0, 30, ... , 1984], [101325, 102325, ... , 201325]] 
+```
+2. the signal only contains the range data. This is the most common case. 
 
 To treat:
 - simple hookload, SPP
@@ -169,6 +175,8 @@ EstimatedUCS HasObservableQuantity FormationStrengthQuantity
 
 # Time management
 
+## Time stamps
+
 ## Refresh rates
 
 ## Clocks
@@ -179,7 +187,9 @@ EstimatedUCS HasObservableQuantity FormationStrengthQuantity
 
 # Data processing
 
-Show the different types of procesing that can be involved in classical drilling data. 
+Show the different types of processing that can be involved in classical drilling data. 
+
+**Modelling remark** We use a *data flow* approach to
 As some processing requires parametrization, it is simpler to treat each processing step as a entity in the graph. The general structure then applies
 
 ```
