@@ -1,4 +1,6 @@
 
+![DDHub](../img/ddhubLogo.png)
+
 - [Data structure](#data-structure)
   - [Generalities](#generalities)
     - [Data shape](#data-shape)
@@ -8,6 +10,8 @@
     - [Standard scalars measurements](#standard-scalars-measurements)
     - [Hookload tables](#hookload-tables)
     - [Downhole pressures](#downhole-pressures)
+    - [Calculated lateral displacements](#calculated-lateral-displacements)
+    - [Continuous rheology](#continuous-rheology)
 - [Quantities and units](#quantities-and-units)
   - [Base quantities](#base-quantities)
   - [Observable quantities](#observable-quantities)
@@ -155,19 +159,50 @@ DownholePressure2 HasShape (10)
 DownholePressure2 HasExternalDomainAxis DistancesToBit
 DistancesToBit HasShape (10)
 
-// Calculated
-CalculatedPressures HasShape (2,100)
-CalculatedPressures HasInternalDomainAxis DepthAxis
-DepthAxis HasIndex 0
+// Calculated profile1  
+//    [[0, 30, ... , 1984], [101325, 102325, ... , 201325]] 
+//    depth[i] = p[0,i]
+CalculatedPressures1 HasShape (2,100)
+CalculatedPressures1 HasInternalDomainAxis DepthAxis1
+DepthAxis1 HasIndexLocation 0
+DepthAxis1 HasIndex 0 //write index 0 at location 0 to access the depth
+
+//Calculated profile2
+//    [[0, 101325], [30, 102325], ... , [1984, 201325]] 
+//    depth[i] = p[i,0] 
+CalculatedPressures2 HasShape (100, 2)
+CalculatedPressures2 HasInternalDomainAxis DepthAxis2
+DepthAxis2 HasIndexLocation 1
+DepthAxis2 HasIndex 0 //write index 0 at index location 1 to access the depth
 ```
 
-To treat:
-- rheology (different representations)
-- 3-dimensional velocities, accelerations
-- ASM 3-dimensional data
-- ASM pressures
-- computed profiles
-- PVT tables
+### Calculated lateral displacements
+```
+Displacements HasShape(1000, 3) //a row in the table is Displacements[i]  = [depth, polar angle, radial distance]
+Displacements HasInternalDomainAxis DepthAxis1
+DepthAxis1 HasIndexLocation 1
+DepthAxis1 HasIndex 0 //Displacements[i,0] = depth[i]
+```
+
+### Continuous rheology
+```
+//Predefined shear rates, each reading stored in separate signal
+ContinuousRheology1_3 HasShape ()
+ContinuousRheology1_6 HasShape ()
+...
+ContinuousRheology1_600 HasShape ()
+
+//Predefined shear rates, all reading stored in single array
+ContinuousRheology2 HasShape (6)
+ContinuousRheology2 HasExternalDomainAxis ShearRates
+ShearRates HasShape (6) // ShearRates = [3, 6, 30, 60, 300, 600]
+
+//rates are stored in the same signal
+ContinuousRheology3 HasShape (6,2)
+ContinuousRheology3 HasInternalDomainAxis ShearRateAxis
+ShearRateAxis HasIndexLocation 1
+ShearRateAxis HasIndex 0 
+```
 
 # Quantities and units
 
