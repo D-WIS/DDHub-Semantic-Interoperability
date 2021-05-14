@@ -1,3 +1,5 @@
+![DDHub](./img/ddhubLogo.png)
+
 # DDHub semantic model
 The DDHub semantical model is intended to facilitate semantic interoperability between drilling applications, in particular *drilling automation systems* (DAS). 
 
