@@ -48,6 +48,8 @@ The DDHub provides standardized ways of representing the meaning of the various 
 
 In order to fullfill the interoperability requirements several aspects attached to drilling data need to be covered by the semantical model. 
 
+### **Addressing**
+
 ### **Data structure**
 Any signal available from a drilling rig has a special structure: Its type (integer, boolean, floating point) is an element of the structure. The other aspect relates to its dimensions. Scalar quantities are typically represented as single elements, but multi-dimensional quantities require the use of arrays of possibly high dimensions. When using arrays it is important to interpret the various dimensions correctly. For example an array with 3 velocity entries can be interpreted as the tridimensional velocity vector attached to a single point in the wellbore or as three independent uniaxial velocities of three different points. 
 
