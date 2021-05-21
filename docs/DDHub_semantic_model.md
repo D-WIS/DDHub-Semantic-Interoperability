@@ -89,6 +89,8 @@ It can be important for a consumer application to know the nature of the correct
 All this information can be made available via data flow *charts*, that represent, under the form of processing graphs, the relations between the different components of the rig data ecosystem. Such graphs will form the basis of our representation. Note that this allows to also infer the signal's nature (measured, derived, calculated...) and its role in the drilling process control. 
 
 ### **Dependencies**
+Remark: the name is ambiguous, something like *contextual dependencies* should be used instead. 
+
 Many signals only have meaning when associated with contextual information. Often, this information consists in other signals. This creates strong dependencies between drilling signals. For example, the correct interpretation of a fluid density requires the knowledge of the pressure and temperature associated to the measurement. 
 This topic provides the necessary structures to express the different types of inter-dependencies between drilling datas.  
 
