@@ -1,0 +1,4544 @@
+Prefix: : <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#>
+Prefix: dds: <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#>
+Prefix: de: <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingEquipment#>
+Prefix: dfl: <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DataFlow#>
+Prefix: dtr: <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DataTransmission#>
+Prefix: dval: <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DataValidity#>
+Prefix: hyd: <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/Hydraulics#>
+Prefix: mcs: <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/Mechanics#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: phloc: <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/PhysicalLocation#>
+Prefix: quant: <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/Quantities#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: tmana: <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/TimeManagement#>
+Prefix: unc: <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/Uncertainty#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+
+Ontology: <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub>
+
+
+Datatype: xsd:boolean
+
+    
+Datatype: xsd:datetime
+
+    
+Datatype: xsd:double
+
+    
+Datatype: xsd:integer
+
+    
+Datatype: xsd:string
+
+    
+ObjectProperty: AssociatesMeasurableQuantity
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        MeasurableQuantityUnitAssociation
+    
+    Range: 
+        MeasurableQuantity
+    
+    
+ObjectProperty: AssociatesUnit
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        MeasurableQuantityUnitAssociation
+    
+    Range: 
+        Unit
+    
+    
+ObjectProperty: BelongsToSynchronizationGroup
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        Resampling
+    
+    Range: 
+        SynchronizationGroup
+    
+    
+ObjectProperty: Controls
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: DDHubRelation
+
+    
+ObjectProperty: EndsHydraulicBranchDecomposition
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        HydraulicBranch
+    
+    Range: 
+        HydraulicBranch
+    
+    
+ObjectProperty: HasAcquisitionClock
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        Clock
+    
+    
+ObjectProperty: HasBranchComponent
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        HydraulicNetwork
+    
+    Range: 
+        HydraulicBranch
+    
+    
+ObjectProperty: HasBranchCoordinateSystem
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        HydraulicBranch
+    
+    Range: 
+        ReferenceFrame
+    
+    
+ObjectProperty: HasCoordinates
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        DrillingData
+    
+    
+ObjectProperty: HasDomain
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        DrillingData
+    
+    
+ObjectProperty: HasDynamicValue
+
+    SubPropertyOf: 
+        HasValue
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        DynamicDrillingSignal
+    
+    
+ObjectProperty: HasEndJunction
+
+    SubPropertyOf: 
+        IsHydraulicConnectedTo
+    
+    Domain: 
+        HydraulicBranch
+    
+    Range: 
+        HydraulicJunction
+    
+    
+ObjectProperty: HasEndPoint
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DrillingSignal
+    
+    Range: 
+        DataEndPoint
+    
+    
+ObjectProperty: HasFunction
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        DataFlowNode
+    
+    
+ObjectProperty: HasHydraulicState
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        HydraulicJunction
+    
+    Range: 
+        HydraulicElementState
+    
+    
+ObjectProperty: HasHydraulicStateValueFrom
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: HasLeftBranch
+
+    SubPropertyOf: 
+        IsHydraulicConnectedTo
+    
+    Domain: 
+        HydraulicJunction
+    
+    Range: 
+        HydraulicBranch
+    
+    
+ObjectProperty: HasLeftBranchCoordinates
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        HydraulicJunction
+    
+    Range: 
+        DrillingData
+    
+    
+ObjectProperty: HasMechanicalState
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        MechanicalLogicalElement
+    
+    Range: 
+        MechanicalElementState
+    
+    
+ObjectProperty: HasMechanicalStateValueFrom
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        MechanicalLogicalElement
+    
+    Range: 
+        DrillingData
+    
+    
+ObjectProperty: HasPressureReference
+
+    SubPropertyOf: 
+        IsDependentOn
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        DrillingData
+    
+    
+ObjectProperty: HasReferenceFrame
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        Location
+    
+    Range: 
+        ReferenceFrame
+    
+    
+ObjectProperty: HasReferenceFrameOrigin
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: HasRightBranch
+
+    SubPropertyOf: 
+        IsHydraulicConnectedTo
+    
+    Domain: 
+        HydraulicJunction
+    
+    Range: 
+        HydraulicBranch
+    
+    
+ObjectProperty: HasRightBranchCoordinates
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        HydraulicJunction
+    
+    Range: 
+        DrillingData
+    
+    
+ObjectProperty: HasSIUnit
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        Quantity
+    
+    Range: 
+        Unit
+    
+    
+ObjectProperty: HasSourceClock
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        Clock
+    
+    
+ObjectProperty: HasStartJunction
+
+    SubPropertyOf: 
+        IsHydraulicConnectedTo
+    
+    Domain: 
+        HydraulicBranch
+    
+    Range: 
+        HydraulicJunction
+    
+    
+ObjectProperty: HasStaticValue
+
+    SubPropertyOf: 
+        HasValue
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        DrillingSignal
+    
+    
+ObjectProperty: HasTemperatureReference
+
+    SubPropertyOf: 
+        IsDependentOn
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        DrillingData
+    
+    
+ObjectProperty: HasTimeIntervalDomain
+
+    SubPropertyOf: 
+        HasDomain
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        DrillingData
+    
+    
+ObjectProperty: HasTransmissionDelay
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        DrillingData
+    
+    
+ObjectProperty: HasUncertainty
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        SignalUncertainty
+    
+    
+ObjectProperty: HasUncertaintyAccuracy
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        SensorUncertainty
+    
+    Range: 
+        DrillingData
+    
+    
+ObjectProperty: HasUncertaintyMax
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: HasUncertaintyMean
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: HasUncertaintyMin
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: HasUncertaintyPrecision
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        SensorUncertainty
+    
+    Range: 
+        DrillingData
+    
+    
+ObjectProperty: HasUncertaintyRelativeValue
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: HasUncertaintyStandardDeviation
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: HasUnitAssociation
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        UnitSystem
+    
+    Range: 
+        MeasurableQuantityUnitAssociation
+    
+    
+ObjectProperty: HasValue
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        DrillingSignal
+    
+    
+ObjectProperty: IsBufferingInput
+
+    SubPropertyOf: 
+        IsTransformationInput
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        Buffering
+    
+    
+ObjectProperty: IsBufferingOutput
+
+    SubPropertyOf: 
+        IsTransformationOutput
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        Buffering
+    
+    
+ObjectProperty: IsCommandFor
+
+    SubPropertyOf: 
+        HasFunction
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsComputationInput
+
+    SubPropertyOf: 
+        HasFunction
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        ComputationUnit
+    
+    
+ObjectProperty: IsComputedBy
+
+    SubPropertyOf: 
+        IsGeneratedBy
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsConditionInput
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        ValidityCondition
+    
+    
+ObjectProperty: IsConditionLeft
+
+    SubPropertyOf: 
+        IsConditionInput
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsConditionRight
+
+    SubPropertyOf: 
+        IsConditionInput
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsConditionedBy
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        ValidityCondition
+    
+    
+ObjectProperty: IsDependentOn
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        DrillingData
+    
+    
+ObjectProperty: IsDerivationInput
+
+    SubPropertyOf: 
+        IsTransformationInput
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsDerivedFrom
+
+    SubPropertyOf: 
+        IsTransformationOutput
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsEquivalentCirculationDensityAt
+
+    SubPropertyOf: 
+        IsHydraulicallyLocatedAt
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsFluidDensityAt
+
+    SubPropertyOf: 
+        IsHydraulicallyLocatedAt
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsFluidTemperatureAt
+
+    SubPropertyOf: 
+        IsHydraulicallyLocatedAt
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsFluidVelocityAt
+
+    SubPropertyOf: 
+        IsHydraulicallyLocatedAt
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsGeneratedBy
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        DataFlowNode
+    
+    
+ObjectProperty: IsHydraulicConnectedTo
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        HydraulicLogicalElement
+    
+    Range: 
+        HydraulicLogicalElement
+    
+    
+ObjectProperty: IsHydraulicEstimationAt
+
+    SubPropertyOf: 
+        IsHydraulicallyLocatedAt
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsHydraulicMaximumAllowedRateOfChangeAt
+
+    SubPropertyOf: 
+        IsHydraulicallyLocatedAt
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsHydraulicMaximumAllowedValueAt
+
+    SubPropertyOf: 
+        IsHydraulicallyLocatedAt
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsHydraulicMeasurementAt
+
+    SubPropertyOf: 
+        IsHydraulicallyLocatedAt
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsHydraulicallyLocatedAt
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        HydraulicLogicalElement
+    
+    
+ObjectProperty: IsIntegratedFrom
+
+    SubPropertyOf: 
+        IsTransformationOutput
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsLimitFor
+
+    SubPropertyOf: 
+        HasFunction
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        ControlSystem
+    
+    
+ObjectProperty: IsMassFlowRateAt
+
+    SubPropertyOf: 
+        IsHydraulicallyLocatedAt
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsMeasuredBy
+
+    SubPropertyOf: 
+        IsGeneratedBy
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsMechanicallyConnectTo
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsMechanicallyLocatedAt
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsObservableFrom
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsOfBaseQuantity
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsOfMeasurableQuantity
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsPhysicallyLocatedAt
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsPressureAt
+
+    SubPropertyOf: 
+        IsHydraulicallyLocatedAt
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsPressureGradientAt
+
+    SubPropertyOf: 
+        IsHydraulicallyLocatedAt
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsProcessedBy
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsProvidedBy
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DataProvider
+    
+    
+ObjectProperty: IsRecordedFrom
+
+    SubPropertyOf: 
+        IsGeneratedBy
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsResampledBy
+
+    SubPropertyOf: 
+        IsTransformationOutput
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        Resampling
+    
+    
+ObjectProperty: IsResamplingInput
+
+    SubPropertyOf: 
+        IsTransformationInput
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        Resampling
+    
+    
+ObjectProperty: IsSetPointFor
+
+    SubPropertyOf: 
+        HasFunction
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        Controller
+    
+    
+ObjectProperty: IsSetPointRecommendationFor
+
+    SubPropertyOf: 
+        HasFunction
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        ControlSystem
+    
+    
+ObjectProperty: IsSynchronizationGroupInput
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        SynchronizationGroup
+    
+    
+ObjectProperty: IsSynchronizationGroupOutput
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        SynchronizationGroup
+    
+    
+ObjectProperty: IsTransformationInput
+
+    SubPropertyOf: 
+        HasFunction
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        Transformation
+    
+    
+ObjectProperty: IsTransformationOutput
+
+    SubPropertyOf: 
+        IsGeneratedBy
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        DataFlowNode
+    
+    
+ObjectProperty: IsTransmissionInput
+
+    SubPropertyOf: 
+        HasFunction
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        TransmissionLine
+    
+    
+ObjectProperty: IsTransmissionOutput
+
+    SubPropertyOf: 
+        IsGeneratedBy
+    
+    Domain: 
+        DrillingData
+    
+    Range: 
+        TransmissionLine
+    
+    
+ObjectProperty: IsTransmittedBy
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsUnitForQuantity
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        Unit
+    
+    Range: 
+        Quantity
+    
+    
+ObjectProperty: IsValidBy
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: IsVolumetricFlowRateAt
+
+    SubPropertyOf: 
+        IsHydraulicallyLocatedAt
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+ObjectProperty: StartsHydraulicBranchDecomposition
+
+    SubPropertyOf: 
+        DDHubRelation
+    
+    Domain: 
+        DDHubNode
+    
+    Range: 
+        DDHubNode
+    
+    
+DataProperty: dds:DataType
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        ActiveVolume,
+        BitDepth,
+        DensityIn,
+        DensityOut,
+        DownholeECD,
+        DownholePressure,
+        DownholeRPM,
+        DownholeTemperature,
+        DownholeTorque,
+        DrillingData,
+        FlowRateIn,
+        FlowRateOut,
+        HoleDepth,
+        HookLoad,
+        HookPosition,
+        HookVelocity,
+        PumpRate,
+        ROP,
+        SPP,
+        SurfaceRPM,
+        SurfaceTorque,
+        TemperatureIn,
+        TemperatureOut,
+        TopOfStringPosition,
+        WOB
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dds:Description
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        AccelerationQuantity,
+        ActiveLine,
+        ActivePit,
+        ActiveVolume,
+        Aggregation,
+        Annular,
+        AreaQuantity,
+        BHAAnnular,
+        BHAInner,
+        BandPassFilter,
+        BellNipple,
+        Bit,
+        BitDepth,
+        BitReferenceLocation,
+        BitTorqueQuantity,
+        BlockAccelerationQuantity,
+        BlockPositionQuantity,
+        BlockVelocityQuantity,
+        Buffering,
+        CartesianThreeDimensionalReferenceFrame,
+        CartesianTwoDimensionalReferenceFrame,
+        CasingShoeLocation,
+        CementPump,
+        Clock,
+        ComputationUnit,
+        ConnectedCondition,
+        ControlSystem,
+        Controller,
+        CrownBlock,
+        CurviLinearFrenetSerretReferenceFrame,
+        CylindricalReferenceFrame,
+        DataEndPoint,
+        DataFlowNode,
+        DataProvider,
+        DeadLine,
+        DeadLineAnchor,
+        DensityIn,
+        DensityOut,
+        DepthAndAngleFrame,
+        DepthQuantity,
+        Derivation,
+        DirectTransformation,
+        Dolly,
+        DollyRail,
+        DownHoleTelemetry,
+        DownholeECD,
+        DownholeHydraulicNetwork,
+        DownholePressure,
+        DownholePressureQuantity,
+        DownholeRPM,
+        DownholeTemperature,
+        DownholeTorque,
+        DrawWorks,
+        DrawWorksControlSystem,
+        DrillFloorReferenceLocation,
+        DrillLine,
+        DrillLineFastener,
+        DrillPipesAnnular,
+        DrillPipesInner,
+        DrillString,
+        DrillStringCenterLineFrame,
+        DrillingData,
+        DrillingEquipment,
+        DrillingSignal,
+        DynamicDrillingSignal,
+        EMWQuantity,
+        EQ,
+        ElectricResistivityQuantity,
+        Elevator,
+        EndPointMapping,
+        Filter,
+        FlowRateIn,
+        FlowRateOut,
+        FlowRateQuantity,
+        FluidDensityInQuantity,
+        FluidTemperatureInQuantity,
+        ForceFromLoadPinsTransformation,
+        ForceQuantity,
+        ForceToLoadTransformation,
+        FormationPorosityQuantity,
+        FourDimensionalReferenceFrame,
+        FrenetSerretReferenceFrame,
+        FrequencyQuantity,
+        GT,
+        GateValve,
+        GaussianUncertainty,
+        GenericUncertainty,
+        HighPassFilter,
+        HoleBottomLocation,
+        HoleDepth,
+        HookLoad,
+        HookPosition,
+        HookVelocity,
+        HookloadQuantity,
+        HydraulicBranch,
+        HydraulicConnectedState,
+        HydraulicElementState,
+        HydraulicJunction,
+        HydraulicLogicalElement,
+        HydraulicNetwork,
+        Integration,
+        LT,
+        LWDLocation,
+        LengthQuantity,
+        Location,
+        LowPassFilter,
+        MassDensityQuantity,
+        MassQuantity,
+        MassRate,
+        MeasurableQuantity,
+        MeasurableQuantityUnitAssociation,
+        MeasuredDepthToTrueVerticalDepthTransformation,
+        MeasuredDepthTranslation,
+        MeasurementDevice,
+        MechanicalBlock,
+        MechanicalElementState,
+        MechanicalLogicalElement,
+        MechanicallyClosedState,
+        MechanicallyConnectedState,
+        MinMaxUncertainty,
+        MovingAverage,
+        MudMixing,
+        MudPulseTelemetry,
+        MudPump,
+        MudPumpsControlSystem,
+        NorthEastFrame,
+        NorthEastTVDFrame,
+        NumberOfItemsRangeExtraction,
+        NumberOfSampleMovingAverage,
+        OneDimensionalCartesianReferenceFrame,
+        OneDimensionalCurviLinearReferenceFrame,
+        OneDimensionalReferenceFrame,
+        OpenChannel,
+        OpenHole,
+        OpenHoleCenterLineFrame,
+        Pipe,
+        PolarReferenceFrame,
+        PowerQuantity,
+        PressureQuantity,
+        PressureToEquivalentDensityTransformation,
+        PressureToForceTransformation,
+        ProportionQuantity,
+        Pump,
+        PumpRate,
+        PumpRateQuantity,
+        Quantity,
+        ROP,
+        RangeExtraction,
+        RectangularChannel,
+        ReferenceFrame,
+        ReferenceLocation,
+        RelativeUncertainty,
+        Resampling,
+        Resistivity,
+        ReturnFlowLine,
+        RockDensityQuantity,
+        SPP,
+        SPPQuantity,
+        SemiCircularChannel,
+        SensorUncertainty,
+        ShaleShakers,
+        SignalProcessingUnit,
+        SignalUncertainty,
+        Slips,
+        SphericalReferenceFrame,
+        StandPipe,
+        SupportLine,
+        SurfaceRPM,
+        SurfaceRPMQuantity,
+        SurfaceTorque,
+        SurfaceTorqueQuantity,
+        SynchronizationGroup,
+        TVDQuantity,
+        Telemetry,
+        TemperatureIn,
+        TemperatureOut,
+        TemperatureQuantity,
+        ThreeDimensionalReferenceFrame,
+        ThreeWayManifold,
+        ThreeWayValve,
+        ThreeWayValveInternalValve,
+        TimeBasedTransformation,
+        TimeWindowMovingAverage,
+        TimeWindowRangeExtraction,
+        TopDrive,
+        TopDriveBody,
+        TopDriveControlSystem,
+        TopDriveHook,
+        TopDriveShaft,
+        TopOfStringForceQuantity,
+        TopOfStringPosition,
+        TopSideTelemetry,
+        TopsideHydraulicNetwork,
+        TorqueQuantity,
+        TorqueToForceTransformation,
+        Transformation,
+        TransmissionLine,
+        TravellingBlock,
+        TwoDimensionalReferenceFrame,
+        UnderReamer,
+        Unit,
+        UnitSystem,
+        UserInterface,
+        ValidityCondition,
+        VelocityQuantity,
+        VerticalDepthFrame,
+        VolumeQuantity,
+        VolumetricRateQuantity,
+        WOB,
+        WOBQuantity,
+        WellboreCenterLineFrame,
+        WiredPipeTelemetry,
+        WitsMLTimeBasedLogEndPoint
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dds:Dimensions
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        ActiveVolume,
+        BitDepth,
+        DensityIn,
+        DensityOut,
+        DownholeECD,
+        DownholePressure,
+        DownholeRPM,
+        DownholeTemperature,
+        DownholeTorque,
+        DrillingData,
+        FlowRateIn,
+        FlowRateOut,
+        HoleDepth,
+        HookLoad,
+        HookPosition,
+        HookVelocity,
+        PumpRate,
+        ROP,
+        SPP,
+        SurfaceRPM,
+        SurfaceTorque,
+        TemperatureIn,
+        TemperatureOut,
+        TopOfStringPosition,
+        WOB
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dds:DomainDimensions
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        ActiveVolume,
+        BitDepth,
+        DensityIn,
+        DensityOut,
+        DownholeECD,
+        DownholePressure,
+        DownholeRPM,
+        DownholeTemperature,
+        DownholeTorque,
+        DrillingData,
+        FlowRateIn,
+        FlowRateOut,
+        HoleDepth,
+        HookLoad,
+        HookPosition,
+        HookVelocity,
+        PumpRate,
+        ROP,
+        SPP,
+        SurfaceRPM,
+        SurfaceTorque,
+        TemperatureIn,
+        TemperatureOut,
+        TopOfStringPosition,
+        WOB
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dds:DomainOrder
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        ActiveVolume,
+        BitDepth,
+        DensityIn,
+        DensityOut,
+        DownholeECD,
+        DownholePressure,
+        DownholeRPM,
+        DownholeTemperature,
+        DownholeTorque,
+        DrillingData,
+        FlowRateIn,
+        FlowRateOut,
+        HoleDepth,
+        HookLoad,
+        HookPosition,
+        HookVelocity,
+        PumpRate,
+        ROP,
+        SPP,
+        SurfaceRPM,
+        SurfaceTorque,
+        TemperatureIn,
+        TemperatureOut,
+        TopOfStringPosition,
+        WOB
+    
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: dds:EndPoint
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        ActiveVolume,
+        BitDepth,
+        DensityIn,
+        DensityOut,
+        DownholeECD,
+        DownholePressure,
+        DownholeRPM,
+        DownholeTemperature,
+        DownholeTorque,
+        DrillingData,
+        FlowRateIn,
+        FlowRateOut,
+        HoleDepth,
+        HookLoad,
+        HookPosition,
+        HookVelocity,
+        PumpRate,
+        ROP,
+        SPP,
+        SurfaceRPM,
+        SurfaceTorque,
+        TemperatureIn,
+        TemperatureOut,
+        TopOfStringPosition,
+        WOB
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dds:EndPointDescription
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        DataEndPoint,
+        WitsMLTimeBasedLogEndPoint
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dds:FixedIndices
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        EndPointMapping
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dds:ID
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        AccelerationQuantity,
+        ActiveLine,
+        ActivePit,
+        ActiveVolume,
+        Aggregation,
+        Annular,
+        AreaQuantity,
+        BHAAnnular,
+        BHAInner,
+        BandPassFilter,
+        BellNipple,
+        Bit,
+        BitDepth,
+        BitReferenceLocation,
+        BitTorqueQuantity,
+        BlockAccelerationQuantity,
+        BlockPositionQuantity,
+        BlockVelocityQuantity,
+        Buffering,
+        CartesianThreeDimensionalReferenceFrame,
+        CartesianTwoDimensionalReferenceFrame,
+        CasingShoeLocation,
+        CementPump,
+        Clock,
+        ComputationUnit,
+        ConnectedCondition,
+        ControlSystem,
+        Controller,
+        CrownBlock,
+        CurviLinearFrenetSerretReferenceFrame,
+        CylindricalReferenceFrame,
+        DataEndPoint,
+        DataFlowNode,
+        DataProvider,
+        DeadLine,
+        DeadLineAnchor,
+        DensityIn,
+        DensityOut,
+        DepthAndAngleFrame,
+        DepthQuantity,
+        Derivation,
+        DirectTransformation,
+        Dolly,
+        DollyRail,
+        DownHoleTelemetry,
+        DownholeECD,
+        DownholeHydraulicNetwork,
+        DownholePressure,
+        DownholePressureQuantity,
+        DownholeRPM,
+        DownholeTemperature,
+        DownholeTorque,
+        DrawWorks,
+        DrawWorksControlSystem,
+        DrillFloorReferenceLocation,
+        DrillLine,
+        DrillLineFastener,
+        DrillPipesAnnular,
+        DrillPipesInner,
+        DrillString,
+        DrillStringCenterLineFrame,
+        DrillingData,
+        DrillingEquipment,
+        DrillingSignal,
+        DynamicDrillingSignal,
+        EMWQuantity,
+        EQ,
+        ElectricResistivityQuantity,
+        Elevator,
+        EndPointMapping,
+        Filter,
+        FlowRateIn,
+        FlowRateOut,
+        FlowRateQuantity,
+        FluidDensityInQuantity,
+        FluidTemperatureInQuantity,
+        ForceFromLoadPinsTransformation,
+        ForceQuantity,
+        ForceToLoadTransformation,
+        FormationPorosityQuantity,
+        FourDimensionalReferenceFrame,
+        FrenetSerretReferenceFrame,
+        FrequencyQuantity,
+        GT,
+        GateValve,
+        GaussianUncertainty,
+        GenericUncertainty,
+        HighPassFilter,
+        HoleBottomLocation,
+        HoleDepth,
+        HookLoad,
+        HookPosition,
+        HookVelocity,
+        HookloadQuantity,
+        HydraulicBranch,
+        HydraulicConnectedState,
+        HydraulicElementState,
+        HydraulicJunction,
+        HydraulicLogicalElement,
+        HydraulicNetwork,
+        Integration,
+        LT,
+        LWDLocation,
+        LengthQuantity,
+        Location,
+        LowPassFilter,
+        MassDensityQuantity,
+        MassQuantity,
+        MassRate,
+        MeasurableQuantity,
+        MeasurableQuantityUnitAssociation,
+        MeasuredDepthToTrueVerticalDepthTransformation,
+        MeasuredDepthTranslation,
+        MeasurementDevice,
+        MechanicalBlock,
+        MechanicalElementState,
+        MechanicalLogicalElement,
+        MechanicallyClosedState,
+        MechanicallyConnectedState,
+        MinMaxUncertainty,
+        MovingAverage,
+        MudMixing,
+        MudPulseTelemetry,
+        MudPump,
+        MudPumpsControlSystem,
+        NorthEastFrame,
+        NorthEastTVDFrame,
+        NumberOfItemsRangeExtraction,
+        NumberOfSampleMovingAverage,
+        OneDimensionalCartesianReferenceFrame,
+        OneDimensionalCurviLinearReferenceFrame,
+        OneDimensionalReferenceFrame,
+        OpenChannel,
+        OpenHole,
+        OpenHoleCenterLineFrame,
+        Pipe,
+        PolarReferenceFrame,
+        PowerQuantity,
+        PressureQuantity,
+        PressureToEquivalentDensityTransformation,
+        PressureToForceTransformation,
+        ProportionQuantity,
+        Pump,
+        PumpRate,
+        PumpRateQuantity,
+        Quantity,
+        ROP,
+        RangeExtraction,
+        RectangularChannel,
+        ReferenceFrame,
+        ReferenceLocation,
+        RelativeUncertainty,
+        Resampling,
+        Resistivity,
+        ReturnFlowLine,
+        RockDensityQuantity,
+        SPP,
+        SPPQuantity,
+        SemiCircularChannel,
+        SensorUncertainty,
+        ShaleShakers,
+        SignalProcessingUnit,
+        SignalUncertainty,
+        Slips,
+        SphericalReferenceFrame,
+        StandPipe,
+        SupportLine,
+        SurfaceRPM,
+        SurfaceRPMQuantity,
+        SurfaceTorque,
+        SurfaceTorqueQuantity,
+        SynchronizationGroup,
+        TVDQuantity,
+        Telemetry,
+        TemperatureIn,
+        TemperatureOut,
+        TemperatureQuantity,
+        ThreeDimensionalReferenceFrame,
+        ThreeWayManifold,
+        ThreeWayValve,
+        ThreeWayValveInternalValve,
+        TimeBasedTransformation,
+        TimeWindowMovingAverage,
+        TimeWindowRangeExtraction,
+        TopDrive,
+        TopDriveBody,
+        TopDriveControlSystem,
+        TopDriveHook,
+        TopDriveShaft,
+        TopOfStringForceQuantity,
+        TopOfStringPosition,
+        TopSideTelemetry,
+        TopsideHydraulicNetwork,
+        TorqueQuantity,
+        TorqueToForceTransformation,
+        Transformation,
+        TransmissionLine,
+        TravellingBlock,
+        TwoDimensionalReferenceFrame,
+        UnderReamer,
+        Unit,
+        UnitSystem,
+        UserInterface,
+        ValidityCondition,
+        VelocityQuantity,
+        VerticalDepthFrame,
+        VolumeQuantity,
+        VolumetricRateQuantity,
+        WOB,
+        WOBQuantity,
+        WellboreCenterLineFrame,
+        WiredPipeTelemetry,
+        WitsMLTimeBasedLogEndPoint
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dds:IsValid
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        ActiveVolume,
+        BitDepth,
+        DensityIn,
+        DensityOut,
+        DownholeECD,
+        DownholePressure,
+        DownholeRPM,
+        DownholeTemperature,
+        DownholeTorque,
+        DrillingData,
+        FlowRateIn,
+        FlowRateOut,
+        HoleDepth,
+        HookLoad,
+        HookPosition,
+        HookVelocity,
+        PumpRate,
+        ROP,
+        SPP,
+        SurfaceRPM,
+        SurfaceTorque,
+        TemperatureIn,
+        TemperatureOut,
+        TopOfStringPosition,
+        WOB
+    
+    Range: 
+        xsd:boolean
+    
+    
+DataProperty: dds:LogName
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        WitsMLTimeBasedLogEndPoint
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dds:LogUID
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        WitsMLTimeBasedLogEndPoint
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dds:MeasurementIndex
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        EndPointMapping
+    
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: dds:Mnemonic
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        WitsMLTimeBasedLogEndPoint
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dds:Name
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        AccelerationQuantity,
+        ActiveLine,
+        ActivePit,
+        ActiveVolume,
+        Aggregation,
+        Annular,
+        AreaQuantity,
+        BHAAnnular,
+        BHAInner,
+        BandPassFilter,
+        BellNipple,
+        Bit,
+        BitDepth,
+        BitReferenceLocation,
+        BitTorqueQuantity,
+        BlockAccelerationQuantity,
+        BlockPositionQuantity,
+        BlockVelocityQuantity,
+        Buffering,
+        CartesianThreeDimensionalReferenceFrame,
+        CartesianTwoDimensionalReferenceFrame,
+        CasingShoeLocation,
+        CementPump,
+        Clock,
+        ComputationUnit,
+        ConnectedCondition,
+        ControlSystem,
+        Controller,
+        CrownBlock,
+        CurviLinearFrenetSerretReferenceFrame,
+        CylindricalReferenceFrame,
+        DataEndPoint,
+        DataFlowNode,
+        DataProvider,
+        DeadLine,
+        DeadLineAnchor,
+        DensityIn,
+        DensityOut,
+        DepthAndAngleFrame,
+        DepthQuantity,
+        Derivation,
+        DirectTransformation,
+        Dolly,
+        DollyRail,
+        DownHoleTelemetry,
+        DownholeECD,
+        DownholeHydraulicNetwork,
+        DownholePressure,
+        DownholePressureQuantity,
+        DownholeRPM,
+        DownholeTemperature,
+        DownholeTorque,
+        DrawWorks,
+        DrawWorksControlSystem,
+        DrillFloorReferenceLocation,
+        DrillLine,
+        DrillLineFastener,
+        DrillPipesAnnular,
+        DrillPipesInner,
+        DrillString,
+        DrillStringCenterLineFrame,
+        DrillingData,
+        DrillingEquipment,
+        DrillingSignal,
+        DynamicDrillingSignal,
+        EMWQuantity,
+        EQ,
+        ElectricResistivityQuantity,
+        Elevator,
+        EndPointMapping,
+        Filter,
+        FlowRateIn,
+        FlowRateOut,
+        FlowRateQuantity,
+        FluidDensityInQuantity,
+        FluidTemperatureInQuantity,
+        ForceFromLoadPinsTransformation,
+        ForceQuantity,
+        ForceToLoadTransformation,
+        FormationPorosityQuantity,
+        FourDimensionalReferenceFrame,
+        FrenetSerretReferenceFrame,
+        FrequencyQuantity,
+        GT,
+        GateValve,
+        GaussianUncertainty,
+        GenericUncertainty,
+        HighPassFilter,
+        HoleBottomLocation,
+        HoleDepth,
+        HookLoad,
+        HookPosition,
+        HookVelocity,
+        HookloadQuantity,
+        HydraulicBranch,
+        HydraulicConnectedState,
+        HydraulicElementState,
+        HydraulicJunction,
+        HydraulicLogicalElement,
+        HydraulicNetwork,
+        Integration,
+        LT,
+        LWDLocation,
+        LengthQuantity,
+        Location,
+        LowPassFilter,
+        MassDensityQuantity,
+        MassQuantity,
+        MassRate,
+        MeasurableQuantity,
+        MeasurableQuantityUnitAssociation,
+        MeasuredDepthToTrueVerticalDepthTransformation,
+        MeasuredDepthTranslation,
+        MeasurementDevice,
+        MechanicalBlock,
+        MechanicalElementState,
+        MechanicalLogicalElement,
+        MechanicallyClosedState,
+        MechanicallyConnectedState,
+        MinMaxUncertainty,
+        MovingAverage,
+        MudMixing,
+        MudPulseTelemetry,
+        MudPump,
+        MudPumpsControlSystem,
+        NorthEastFrame,
+        NorthEastTVDFrame,
+        NumberOfItemsRangeExtraction,
+        NumberOfSampleMovingAverage,
+        OneDimensionalCartesianReferenceFrame,
+        OneDimensionalCurviLinearReferenceFrame,
+        OneDimensionalReferenceFrame,
+        OpenChannel,
+        OpenHole,
+        OpenHoleCenterLineFrame,
+        Pipe,
+        PolarReferenceFrame,
+        PowerQuantity,
+        PressureQuantity,
+        PressureToEquivalentDensityTransformation,
+        PressureToForceTransformation,
+        ProportionQuantity,
+        Pump,
+        PumpRate,
+        PumpRateQuantity,
+        Quantity,
+        ROP,
+        RangeExtraction,
+        RectangularChannel,
+        ReferenceFrame,
+        ReferenceLocation,
+        RelativeUncertainty,
+        Resampling,
+        Resistivity,
+        ReturnFlowLine,
+        RockDensityQuantity,
+        SPP,
+        SPPQuantity,
+        SemiCircularChannel,
+        SensorUncertainty,
+        ShaleShakers,
+        SignalProcessingUnit,
+        SignalUncertainty,
+        Slips,
+        SphericalReferenceFrame,
+        StandPipe,
+        SupportLine,
+        SurfaceRPM,
+        SurfaceRPMQuantity,
+        SurfaceTorque,
+        SurfaceTorqueQuantity,
+        SynchronizationGroup,
+        TVDQuantity,
+        Telemetry,
+        TemperatureIn,
+        TemperatureOut,
+        TemperatureQuantity,
+        ThreeDimensionalReferenceFrame,
+        ThreeWayManifold,
+        ThreeWayValve,
+        ThreeWayValveInternalValve,
+        TimeBasedTransformation,
+        TimeWindowMovingAverage,
+        TimeWindowRangeExtraction,
+        TopDrive,
+        TopDriveBody,
+        TopDriveControlSystem,
+        TopDriveHook,
+        TopDriveShaft,
+        TopOfStringForceQuantity,
+        TopOfStringPosition,
+        TopSideTelemetry,
+        TopsideHydraulicNetwork,
+        TorqueQuantity,
+        TorqueToForceTransformation,
+        Transformation,
+        TransmissionLine,
+        TravellingBlock,
+        TwoDimensionalReferenceFrame,
+        UnderReamer,
+        Unit,
+        UnitSystem,
+        UserInterface,
+        ValidityCondition,
+        VelocityQuantity,
+        VerticalDepthFrame,
+        VolumeQuantity,
+        VolumetricRateQuantity,
+        WOB,
+        WOBQuantity,
+        WellboreCenterLineFrame,
+        WiredPipeTelemetry,
+        WitsMLTimeBasedLogEndPoint
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dds:Order
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        ActiveVolume,
+        BitDepth,
+        DensityIn,
+        DensityOut,
+        DownholeECD,
+        DownholePressure,
+        DownholeRPM,
+        DownholeTemperature,
+        DownholeTorque,
+        DrillingData,
+        FlowRateIn,
+        FlowRateOut,
+        HoleDepth,
+        HookLoad,
+        HookPosition,
+        HookVelocity,
+        PumpRate,
+        ROP,
+        SPP,
+        SurfaceRPM,
+        SurfaceTorque,
+        TemperatureIn,
+        TemperatureOut,
+        TopOfStringPosition,
+        WOB
+    
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: dds:ProviderName
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        DataProvider
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dds:RefreshRate
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        ActiveVolume,
+        BitDepth,
+        DensityIn,
+        DensityOut,
+        DownholeECD,
+        DownholePressure,
+        DownholeRPM,
+        DownholeTemperature,
+        DownholeTorque,
+        DrillingData,
+        FlowRateIn,
+        FlowRateOut,
+        HoleDepth,
+        HookLoad,
+        HookPosition,
+        HookVelocity,
+        PumpRate,
+        ROP,
+        SPP,
+        SurfaceRPM,
+        SurfaceTorque,
+        TemperatureIn,
+        TemperatureOut,
+        TopOfStringPosition,
+        WOB
+    
+    Range: 
+        xsd:double
+    
+    
+DataProperty: dds:TimeStampAcquisition
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        DynamicDrillingSignal
+    
+    Range: 
+        xsd:datetime
+    
+    
+DataProperty: dds:TimeStampModified
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        AccelerationQuantity,
+        ActiveLine,
+        ActivePit,
+        ActiveVolume,
+        Aggregation,
+        Annular,
+        AreaQuantity,
+        BHAAnnular,
+        BHAInner,
+        BandPassFilter,
+        BellNipple,
+        Bit,
+        BitDepth,
+        BitReferenceLocation,
+        BitTorqueQuantity,
+        BlockAccelerationQuantity,
+        BlockPositionQuantity,
+        BlockVelocityQuantity,
+        Buffering,
+        CartesianThreeDimensionalReferenceFrame,
+        CartesianTwoDimensionalReferenceFrame,
+        CasingShoeLocation,
+        CementPump,
+        Clock,
+        ComputationUnit,
+        ConnectedCondition,
+        ControlSystem,
+        Controller,
+        CrownBlock,
+        CurviLinearFrenetSerretReferenceFrame,
+        CylindricalReferenceFrame,
+        DataEndPoint,
+        DataFlowNode,
+        DataProvider,
+        DeadLine,
+        DeadLineAnchor,
+        DensityIn,
+        DensityOut,
+        DepthAndAngleFrame,
+        DepthQuantity,
+        Derivation,
+        DirectTransformation,
+        Dolly,
+        DollyRail,
+        DownHoleTelemetry,
+        DownholeECD,
+        DownholeHydraulicNetwork,
+        DownholePressure,
+        DownholePressureQuantity,
+        DownholeRPM,
+        DownholeTemperature,
+        DownholeTorque,
+        DrawWorks,
+        DrawWorksControlSystem,
+        DrillFloorReferenceLocation,
+        DrillLine,
+        DrillLineFastener,
+        DrillPipesAnnular,
+        DrillPipesInner,
+        DrillString,
+        DrillStringCenterLineFrame,
+        DrillingData,
+        DrillingEquipment,
+        DrillingSignal,
+        DynamicDrillingSignal,
+        EMWQuantity,
+        EQ,
+        ElectricResistivityQuantity,
+        Elevator,
+        EndPointMapping,
+        Filter,
+        FlowRateIn,
+        FlowRateOut,
+        FlowRateQuantity,
+        FluidDensityInQuantity,
+        FluidTemperatureInQuantity,
+        ForceFromLoadPinsTransformation,
+        ForceQuantity,
+        ForceToLoadTransformation,
+        FormationPorosityQuantity,
+        FourDimensionalReferenceFrame,
+        FrenetSerretReferenceFrame,
+        FrequencyQuantity,
+        GT,
+        GateValve,
+        GaussianUncertainty,
+        GenericUncertainty,
+        HighPassFilter,
+        HoleBottomLocation,
+        HoleDepth,
+        HookLoad,
+        HookPosition,
+        HookVelocity,
+        HookloadQuantity,
+        HydraulicBranch,
+        HydraulicConnectedState,
+        HydraulicElementState,
+        HydraulicJunction,
+        HydraulicLogicalElement,
+        HydraulicNetwork,
+        Integration,
+        LT,
+        LWDLocation,
+        LengthQuantity,
+        Location,
+        LowPassFilter,
+        MassDensityQuantity,
+        MassQuantity,
+        MassRate,
+        MeasurableQuantity,
+        MeasurableQuantityUnitAssociation,
+        MeasuredDepthToTrueVerticalDepthTransformation,
+        MeasuredDepthTranslation,
+        MeasurementDevice,
+        MechanicalBlock,
+        MechanicalElementState,
+        MechanicalLogicalElement,
+        MechanicallyClosedState,
+        MechanicallyConnectedState,
+        MinMaxUncertainty,
+        MovingAverage,
+        MudMixing,
+        MudPulseTelemetry,
+        MudPump,
+        MudPumpsControlSystem,
+        NorthEastFrame,
+        NorthEastTVDFrame,
+        NumberOfItemsRangeExtraction,
+        NumberOfSampleMovingAverage,
+        OneDimensionalCartesianReferenceFrame,
+        OneDimensionalCurviLinearReferenceFrame,
+        OneDimensionalReferenceFrame,
+        OpenChannel,
+        OpenHole,
+        OpenHoleCenterLineFrame,
+        Pipe,
+        PolarReferenceFrame,
+        PowerQuantity,
+        PressureQuantity,
+        PressureToEquivalentDensityTransformation,
+        PressureToForceTransformation,
+        ProportionQuantity,
+        Pump,
+        PumpRate,
+        PumpRateQuantity,
+        Quantity,
+        ROP,
+        RangeExtraction,
+        RectangularChannel,
+        ReferenceFrame,
+        ReferenceLocation,
+        RelativeUncertainty,
+        Resampling,
+        Resistivity,
+        ReturnFlowLine,
+        RockDensityQuantity,
+        SPP,
+        SPPQuantity,
+        SemiCircularChannel,
+        SensorUncertainty,
+        ShaleShakers,
+        SignalProcessingUnit,
+        SignalUncertainty,
+        Slips,
+        SphericalReferenceFrame,
+        StandPipe,
+        SupportLine,
+        SurfaceRPM,
+        SurfaceRPMQuantity,
+        SurfaceTorque,
+        SurfaceTorqueQuantity,
+        SynchronizationGroup,
+        TVDQuantity,
+        Telemetry,
+        TemperatureIn,
+        TemperatureOut,
+        TemperatureQuantity,
+        ThreeDimensionalReferenceFrame,
+        ThreeWayManifold,
+        ThreeWayValve,
+        ThreeWayValveInternalValve,
+        TimeBasedTransformation,
+        TimeWindowMovingAverage,
+        TimeWindowRangeExtraction,
+        TopDrive,
+        TopDriveBody,
+        TopDriveControlSystem,
+        TopDriveHook,
+        TopDriveShaft,
+        TopOfStringForceQuantity,
+        TopOfStringPosition,
+        TopSideTelemetry,
+        TopsideHydraulicNetwork,
+        TorqueQuantity,
+        TorqueToForceTransformation,
+        Transformation,
+        TransmissionLine,
+        TravellingBlock,
+        TwoDimensionalReferenceFrame,
+        UnderReamer,
+        Unit,
+        UnitSystem,
+        UserInterface,
+        ValidityCondition,
+        VelocityQuantity,
+        VerticalDepthFrame,
+        VolumeQuantity,
+        VolumetricRateQuantity,
+        WOB,
+        WOBQuantity,
+        WellboreCenterLineFrame,
+        WiredPipeTelemetry,
+        WitsMLTimeBasedLogEndPoint
+    
+    Range: 
+        xsd:datetime
+    
+    
+DataProperty: dds:Value
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        DrillingSignal,
+        DynamicDrillingSignal
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dds:ValuesIndices
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        EndPointMapping
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dds:WellName
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        WitsMLTimeBasedLogEndPoint
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dds:WellUID
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        WitsMLTimeBasedLogEndPoint
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dds:WellboreName
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        WitsMLTimeBasedLogEndPoint
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dds:WellboreUID
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        WitsMLTimeBasedLogEndPoint
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dfl:BufferingInterval
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Buffering
+    
+    Range: 
+        xsd:double
+    
+    
+DataProperty: dfl:CutOffFrequency
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        HighPassFilter,
+        LowPassFilter
+    
+    Range: 
+        xsd:double
+    
+    
+DataProperty: dfl:MaxFrequency
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        BandPassFilter
+    
+    Range: 
+        xsd:double
+    
+    
+DataProperty: dfl:MinFrequency
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        BandPassFilter
+    
+    Range: 
+        xsd:double
+    
+    
+DataProperty: dfl:NumberOfItems
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        NumberOfItemsRangeExtraction
+    
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: dfl:NumberOfSamples
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        NumberOfSampleMovingAverage
+    
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: dfl:ResamplingDelay
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Resampling
+    
+    Range: 
+        xsd:double
+    
+    
+DataProperty: dfl:ResamplingRate
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Resampling
+    
+    Range: 
+        xsd:double
+    
+    
+DataProperty: dfl:TimeWindow
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        TimeWindowMovingAverage,
+        TimeWindowRangeExtraction
+    
+    Range: 
+        xsd:double
+    
+    
+DataProperty: dfl:Validity
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Resampling
+    
+    Range: 
+        xsd:double
+    
+    
+DataProperty: dtr:AverageDelayByRepeaters
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        DownHoleTelemetry,
+        MudPulseTelemetry,
+        Telemetry,
+        TopSideTelemetry,
+        WiredPipeTelemetry
+    
+    Range: 
+        xsd:double
+    
+    
+DataProperty: dtr:NumberOfRepeaters
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        DownHoleTelemetry,
+        MudPulseTelemetry,
+        Telemetry,
+        TopSideTelemetry,
+        WiredPipeTelemetry
+    
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: dtr:RefreshRate
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        DownHoleTelemetry,
+        MudPulseTelemetry,
+        Telemetry,
+        TopSideTelemetry,
+        WiredPipeTelemetry
+    
+    Range: 
+        xsd:double
+    
+    
+DataProperty: hyd:LeftToRight
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        HydraulicJunction,
+        MudMixing
+    
+    Range: 
+        xsd:boolean
+    
+    
+DataProperty: hyd:RightToLeft
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        HydraulicJunction,
+        MudMixing
+    
+    Range: 
+        xsd:boolean
+    
+    
+DataProperty: hyd:Value
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        HydraulicConnectedState
+    
+    Range: 
+        xsd:boolean
+    
+    
+DataProperty: mcs:Value
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        MechanicallyClosedState,
+        MechanicallyConnectedState
+    
+    Range: 
+        xsd:boolean
+    
+    
+DataProperty: phloc:PositiveUpward
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        DrillStringCenterLineFrame,
+        WellboreCenterLineFrame
+    
+    Range: 
+        xsd:boolean
+    
+    
+DataProperty: quant:ConversionFactorA
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Unit
+    
+    Range: 
+        xsd:double
+    
+    
+DataProperty: quant:ConversionFactorB
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Unit
+    
+    Range: 
+        xsd:double
+    
+    
+DataProperty: quant:I
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        AccelerationQuantity,
+        AreaQuantity,
+        ElectricResistivityQuantity,
+        ForceQuantity,
+        FrequencyQuantity,
+        LengthQuantity,
+        MassDensityQuantity,
+        MassQuantity,
+        MassRate,
+        PowerQuantity,
+        PressureQuantity,
+        ProportionQuantity,
+        Quantity,
+        TemperatureQuantity,
+        TorqueQuantity,
+        VelocityQuantity,
+        VolumeQuantity,
+        VolumetricRateQuantity
+    
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: quant:J
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        AccelerationQuantity,
+        AreaQuantity,
+        ElectricResistivityQuantity,
+        ForceQuantity,
+        FrequencyQuantity,
+        LengthQuantity,
+        MassDensityQuantity,
+        MassQuantity,
+        MassRate,
+        PowerQuantity,
+        PressureQuantity,
+        ProportionQuantity,
+        Quantity,
+        TemperatureQuantity,
+        TorqueQuantity,
+        VelocityQuantity,
+        VolumeQuantity,
+        VolumetricRateQuantity
+    
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: quant:L
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        AccelerationQuantity,
+        AreaQuantity,
+        ElectricResistivityQuantity,
+        ForceQuantity,
+        FrequencyQuantity,
+        LengthQuantity,
+        MassDensityQuantity,
+        MassQuantity,
+        MassRate,
+        PowerQuantity,
+        PressureQuantity,
+        ProportionQuantity,
+        Quantity,
+        TemperatureQuantity,
+        TorqueQuantity,
+        VelocityQuantity,
+        VolumeQuantity,
+        VolumetricRateQuantity
+    
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: quant:M
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        AccelerationQuantity,
+        AreaQuantity,
+        ElectricResistivityQuantity,
+        ForceQuantity,
+        FrequencyQuantity,
+        LengthQuantity,
+        MassDensityQuantity,
+        MassQuantity,
+        MassRate,
+        PowerQuantity,
+        PressureQuantity,
+        ProportionQuantity,
+        Quantity,
+        TemperatureQuantity,
+        TorqueQuantity,
+        VelocityQuantity,
+        VolumeQuantity,
+        VolumetricRateQuantity
+    
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: quant:MeaningfulPrecision
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        BitTorqueQuantity,
+        BlockAccelerationQuantity,
+        BlockPositionQuantity,
+        BlockVelocityQuantity,
+        DepthQuantity,
+        DownholePressureQuantity,
+        EMWQuantity,
+        FlowRateQuantity,
+        FluidDensityInQuantity,
+        FluidTemperatureInQuantity,
+        FormationPorosityQuantity,
+        HookloadQuantity,
+        MeasurableQuantity,
+        PumpRateQuantity,
+        Resistivity,
+        RockDensityQuantity,
+        SPPQuantity,
+        SurfaceRPMQuantity,
+        SurfaceTorqueQuantity,
+        TVDQuantity,
+        TopOfStringForceQuantity,
+        WOBQuantity
+    
+    Range: 
+        xsd:double
+    
+    
+DataProperty: quant:N
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        AccelerationQuantity,
+        AreaQuantity,
+        ElectricResistivityQuantity,
+        ForceQuantity,
+        FrequencyQuantity,
+        LengthQuantity,
+        MassDensityQuantity,
+        MassQuantity,
+        MassRate,
+        PowerQuantity,
+        PressureQuantity,
+        ProportionQuantity,
+        Quantity,
+        TemperatureQuantity,
+        TorqueQuantity,
+        VelocityQuantity,
+        VolumeQuantity,
+        VolumetricRateQuantity
+    
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: quant:SIUnit
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        AccelerationQuantity,
+        AreaQuantity,
+        ElectricResistivityQuantity,
+        ForceQuantity,
+        FrequencyQuantity,
+        LengthQuantity,
+        MassDensityQuantity,
+        MassQuantity,
+        MassRate,
+        PowerQuantity,
+        PressureQuantity,
+        ProportionQuantity,
+        Quantity,
+        TemperatureQuantity,
+        TorqueQuantity,
+        VelocityQuantity,
+        VolumeQuantity,
+        VolumetricRateQuantity
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: quant:Symbol
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Unit
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: quant:T
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        AccelerationQuantity,
+        AreaQuantity,
+        ElectricResistivityQuantity,
+        ForceQuantity,
+        FrequencyQuantity,
+        LengthQuantity,
+        MassDensityQuantity,
+        MassQuantity,
+        MassRate,
+        PowerQuantity,
+        PressureQuantity,
+        ProportionQuantity,
+        Quantity,
+        TemperatureQuantity,
+        TorqueQuantity,
+        VelocityQuantity,
+        VolumeQuantity,
+        VolumetricRateQuantity
+    
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: quant:ThT
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        AccelerationQuantity,
+        AreaQuantity,
+        ElectricResistivityQuantity,
+        ForceQuantity,
+        FrequencyQuantity,
+        LengthQuantity,
+        MassDensityQuantity,
+        MassQuantity,
+        MassRate,
+        PowerQuantity,
+        PressureQuantity,
+        ProportionQuantity,
+        Quantity,
+        TemperatureQuantity,
+        TorqueQuantity,
+        VelocityQuantity,
+        VolumeQuantity,
+        VolumetricRateQuantity
+    
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: tmana:LeapSeconds
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Clock
+    
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: tmana:MaximumFluctuations
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Clock
+    
+    Range: 
+        xsd:double
+    
+    
+DataProperty: tmana:NetworkSynchronizationLatencyAverage
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Clock
+    
+    Range: 
+        xsd:double
+    
+    
+DataProperty: tmana:NetworkSynchronizationLatencyStandardDeviation
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Clock
+    
+    Range: 
+        xsd:double
+    
+    
+DataProperty: tmana:Resolution
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Clock
+    
+    Range: 
+        xsd:double
+    
+    
+DataProperty: tmana:SamplingRate
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        SynchronizationGroup
+    
+    Range: 
+        xsd:double
+    
+    
+DataProperty: tmana:Stratum
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        Clock
+    
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: tmana:SynchronizationDelay
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        SynchronizationGroup
+    
+    Range: 
+        xsd:double
+    
+    
+Class: AccelerationQuantity
+
+    SubClassOf: 
+        Quantity
+    
+    
+Class: ActiveLine
+
+    SubClassOf: 
+        DrillLine
+    
+    
+Class: ActivePit
+
+    SubClassOf: 
+        DrillingEquipment
+    
+    
+Class: ActiveVolume
+
+    SubClassOf: 
+        DrillingData
+    
+    
+Class: Aggregation
+
+    SubClassOf: 
+        DirectTransformation
+    
+    
+Class: Annular
+
+    SubClassOf: 
+        HydraulicBranch
+    
+    
+Class: AreaQuantity
+
+    SubClassOf: 
+        Quantity
+    
+    
+Class: BHAAnnular
+
+    SubClassOf: 
+        Annular
+    
+    
+Class: BHAInner
+
+    SubClassOf: 
+        Pipe
+    
+    
+Class: BandPassFilter
+
+    SubClassOf: 
+        Filter
+    
+    
+Class: BellNipple
+
+    SubClassOf: 
+        DrillingEquipment
+    
+    
+Class: Bit
+
+    SubClassOf: 
+        DrillingEquipment
+    
+    
+Class: BitDepth
+
+    SubClassOf: 
+        DrillingData
+    
+    
+Class: BitReferenceLocation
+
+    SubClassOf: 
+        Location
+    
+    
+Class: BitTorqueQuantity
+
+    SubClassOf: 
+        MeasurableQuantity
+    
+    
+Class: BlockAccelerationQuantity
+
+    SubClassOf: 
+        MeasurableQuantity
+    
+    
+Class: BlockPositionQuantity
+
+    SubClassOf: 
+        MeasurableQuantity
+    
+    
+Class: BlockVelocityQuantity
+
+    SubClassOf: 
+        MeasurableQuantity
+    
+    
+Class: Buffering
+
+    SubClassOf: 
+        TimeBasedTransformation
+    
+    
+Class: CartesianThreeDimensionalReferenceFrame
+
+    SubClassOf: 
+        ThreeDimensionalReferenceFrame
+    
+    
+Class: CartesianTwoDimensionalReferenceFrame
+
+    SubClassOf: 
+        TwoDimensionalReferenceFrame
+    
+    
+Class: CasingShoeLocation
+
+    SubClassOf: 
+        Location
+    
+    
+Class: CementPump
+
+    SubClassOf: 
+        Pump
+    
+    
+Class: Clock
+
+    SubClassOf: 
+        DDHubNode
+    
+    
+Class: ComputationUnit
+
+    SubClassOf: 
+        DataFlowNode
+    
+    
+Class: ConnectedCondition
+
+    SubClassOf: 
+        ValidityCondition
+    
+    
+Class: ControlSystem
+
+    SubClassOf: 
+        DataFlowNode
+    
+    
+Class: Controller
+
+    SubClassOf: 
+        DataFlowNode
+    
+    
+Class: CrownBlock
+
+    SubClassOf: 
+        MechanicalBlock
+    
+    
+Class: CurviLinearFrenetSerretReferenceFrame
+
+    SubClassOf: 
+        FourDimensionalReferenceFrame
+    
+    
+Class: CylindricalReferenceFrame
+
+    SubClassOf: 
+        ThreeDimensionalReferenceFrame
+    
+    
+Class: DDHubNode
+
+    SubClassOf: 
+        Controls max 2147483647 DDHubNode,
+        HasHydraulicStateValueFrom max 2147483647 DDHubNode,
+        HasReferenceFrameOrigin max 2147483647 DDHubNode,
+        HasUncertaintyMax max 2147483647 DDHubNode,
+        HasUncertaintyMean max 2147483647 DDHubNode,
+        HasUncertaintyMin max 2147483647 DDHubNode,
+        HasUncertaintyRelativeValue max 2147483647 DDHubNode,
+        HasUncertaintyStandardDeviation max 2147483647 DDHubNode,
+        IsComputedBy max 2147483647 DDHubNode,
+        IsConditionLeft max 2147483647 DDHubNode,
+        IsConditionRight max 2147483647 DDHubNode,
+        IsDerivationInput max 2147483647 DDHubNode,
+        IsDerivedFrom max 2147483647 DDHubNode,
+        IsEquivalentCirculationDensityAt max 2147483647 DDHubNode,
+        IsFluidDensityAt max 2147483647 DDHubNode,
+        IsFluidTemperatureAt max 2147483647 DDHubNode,
+        IsFluidVelocityAt max 2147483647 DDHubNode,
+        IsHydraulicEstimationAt max 2147483647 DDHubNode,
+        IsHydraulicMaximumAllowedRateOfChangeAt max 2147483647 DDHubNode,
+        IsHydraulicMaximumAllowedValueAt max 2147483647 DDHubNode,
+        IsHydraulicMeasurementAt max 2147483647 DDHubNode,
+        IsIntegratedFrom max 2147483647 DDHubNode,
+        IsMassFlowRateAt max 2147483647 DDHubNode,
+        IsMeasuredBy max 2147483647 DDHubNode,
+        IsMechanicallyConnectTo max 2147483647 DDHubNode,
+        IsMechanicallyLocatedAt max 2147483647 DDHubNode,
+        IsObservableFrom max 2147483647 DDHubNode,
+        IsOfBaseQuantity max 2147483647 DDHubNode,
+        IsOfMeasurableQuantity max 2147483647 DDHubNode,
+        IsPhysicallyLocatedAt max 2147483647 DDHubNode,
+        IsPressureAt max 2147483647 DDHubNode,
+        IsPressureGradientAt max 2147483647 DDHubNode,
+        IsProcessedBy max 2147483647 DDHubNode,
+        IsProvidedBy max 2147483647 DataProvider,
+        IsRecordedFrom max 2147483647 DDHubNode,
+        IsTransmittedBy max 2147483647 DDHubNode,
+        IsValidBy max 2147483647 DDHubNode,
+        IsVolumetricFlowRateAt max 2147483647 DDHubNode,
+        StartsHydraulicBranchDecomposition max 2147483647 DDHubNode
+    
+    
+Class: DataEndPoint
+
+    SubClassOf: 
+        DDHubNode
+    
+    
+Class: DataFlowNode
+
+    SubClassOf: 
+        DDHubNode
+    
+    
+Class: DataProvider
+
+    SubClassOf: 
+        DDHubNode
+    
+    
+Class: DeadLine
+
+    SubClassOf: 
+        DrillLine
+    
+    
+Class: DeadLineAnchor
+
+    SubClassOf: 
+        DrillLineFastener
+    
+    
+Class: DensityIn
+
+    SubClassOf: 
+        DrillingData
+    
+    
+Class: DensityOut
+
+    SubClassOf: 
+        DrillingData
+    
+    
+Class: DepthAndAngleFrame
+
+    SubClassOf: 
+        ReferenceFrame
+    
+    
+Class: DepthQuantity
+
+    SubClassOf: 
+        MeasurableQuantity
+    
+    
+Class: Derivation
+
+    SubClassOf: 
+        TimeBasedTransformation
+    
+    
+Class: DirectTransformation
+
+    SubClassOf: 
+        Transformation
+    
+    
+Class: Dolly
+
+    SubClassOf: 
+        DrillingEquipment
+    
+    
+Class: DollyRail
+
+    SubClassOf: 
+        DrillingEquipment
+    
+    
+Class: DownHoleTelemetry
+
+    SubClassOf: 
+        Telemetry
+    
+    
+Class: DownholeECD
+
+    SubClassOf: 
+        DrillingData
+    
+    
+Class: DownholeHydraulicNetwork
+
+    SubClassOf: 
+        HydraulicNetwork
+    
+    
+Class: DownholePressure
+
+    SubClassOf: 
+        DrillingData
+    
+    
+Class: DownholePressureQuantity
+
+    SubClassOf: 
+        MeasurableQuantity
+    
+    
+Class: DownholeRPM
+
+    SubClassOf: 
+        DrillingData
+    
+    
+Class: DownholeTemperature
+
+    SubClassOf: 
+        DrillingData
+    
+    
+Class: DownholeTorque
+
+    SubClassOf: 
+        DrillingData
+    
+    
+Class: DrawWorks
+
+    SubClassOf: 
+        DrillLineFastener
+    
+    
+Class: DrawWorksControlSystem
+
+    SubClassOf: 
+        ControlSystem
+    
+    
+Class: DrillFloorReferenceLocation
+
+    SubClassOf: 
+        Location
+    
+    
+Class: DrillLine
+
+    SubClassOf: 
+        DrillingEquipment
+    
+    
+Class: DrillLineFastener
+
+    SubClassOf: 
+        DrillingEquipment
+    
+    
+Class: DrillPipesAnnular
+
+    SubClassOf: 
+        Annular
+    
+    
+Class: DrillPipesInner
+
+    SubClassOf: 
+        Pipe
+    
+    
+Class: DrillString
+
+    SubClassOf: 
+        DrillingEquipment
+    
+    
+Class: DrillStringCenterLineFrame
+
+    SubClassOf: 
+        OneDimensionalCurviLinearReferenceFrame
+    
+    
+Class: DrillingData
+
+    SubClassOf: 
+        DDHubNode,
+        HasAcquisitionClock max 2147483647 Clock,
+        HasCoordinates max 2147483647 DrillingData,
+        HasDomain max 1 DrillingData,
+        HasDynamicValue max 2147483647 DynamicDrillingSignal,
+        HasFunction max 2147483647 DataFlowNode,
+        HasPressureReference max 2147483647 DrillingData,
+        HasSourceClock max 2147483647 Clock,
+        HasStaticValue max 2147483647 DrillingSignal,
+        HasTemperatureReference max 2147483647 DrillingData,
+        HasTimeIntervalDomain max 1 DrillingData,
+        HasTransmissionDelay max 1 DrillingData,
+        HasUncertainty max 2147483647 SignalUncertainty,
+        HasValue max 2147483647 DrillingSignal,
+        IsBufferingInput max 2147483647 Buffering,
+        IsBufferingOutput max 2147483647 Buffering,
+        IsCommandFor max 2147483647 DDHubNode,
+        IsComputationInput max 2147483647 ComputationUnit,
+        IsConditionInput max 2147483647 ValidityCondition,
+        IsConditionedBy max 2147483647 ValidityCondition,
+        IsDependentOn max 2147483647 DrillingData,
+        IsGeneratedBy max 2147483647 DataFlowNode,
+        IsHydraulicallyLocatedAt max 2147483647 HydraulicLogicalElement,
+        IsLimitFor max 2147483647 ControlSystem,
+        IsResampledBy max 2147483647 Resampling,
+        IsResamplingInput max 2147483647 Resampling,
+        IsSetPointFor max 2147483647 Controller,
+        IsSetPointRecommendationFor max 2147483647 ControlSystem,
+        IsSynchronizationGroupInput max 2147483647 SynchronizationGroup,
+        IsSynchronizationGroupOutput max 1 SynchronizationGroup,
+        IsTransformationInput max 2147483647 Transformation,
+        IsTransformationOutput max 2147483647 DataFlowNode,
+        IsTransmissionInput max 2147483647 TransmissionLine,
+        IsTransmissionOutput max 2147483647 TransmissionLine
+    
+    
+Class: DrillingEquipment
+
+    SubClassOf: 
+        DDHubNode
+    
+    
+Class: DrillingSignal
+
+    SubClassOf: 
+        DDHubNode,
+        HasEndPoint max 2147483647 DataEndPoint
+    
+    
+Class: DynamicDrillingSignal
+
+    SubClassOf: 
+        DrillingSignal
+    
+    
+Class: EMWQuantity
+
+    SubClassOf: 
+        MeasurableQuantity
+    
+    
+Class: EQ
+
+    SubClassOf: 
+        ValidityCondition
+    
+    
+Class: ElectricResistivityQuantity
+
+    SubClassOf: 
+        Quantity
+    
+    
+Class: Elevator
+
+    SubClassOf: 
+        DrillingEquipment
+    
+    
+Class: EndPointMapping
+
+    SubClassOf: 
+        DDHubNode
+    
+    
+Class: Filter
+
+    SubClassOf: 
+        SignalProcessingUnit
+    
+    
+Class: FlowRateIn
+
+    SubClassOf: 
+        DrillingData
+    
+    
+Class: FlowRateOut
+
+    SubClassOf: 
+        DrillingData
+    
+    
+Class: FlowRateQuantity
+
+    SubClassOf: 
+        MeasurableQuantity
+    
+    
+Class: FluidDensityInQuantity
+
+    SubClassOf: 
+        MeasurableQuantity
+    
+    
+Class: FluidTemperatureInQuantity
+
+    SubClassOf: 
+        MeasurableQuantity
+    
+    
+Class: ForceFromLoadPinsTransformation
+
+    SubClassOf: 
+        DirectTransformation
+    
+    
+Class: ForceQuantity
+
+    SubClassOf: 
+        Quantity
+    
+    
+Class: ForceToLoadTransformation
+
+    SubClassOf: 
+        DirectTransformation
+    
+    
+Class: FormationPorosityQuantity
+
+    SubClassOf: 
+        MeasurableQuantity
+    
+    
+Class: FourDimensionalReferenceFrame
+
+    SubClassOf: 
+        ReferenceFrame
+    
+    
+Class: FrenetSerretReferenceFrame
+
+    SubClassOf: 
+        CartesianThreeDimensionalReferenceFrame
+    
+    
+Class: FrequencyQuantity
+
+    SubClassOf: 
+        Quantity
+    
+    
+Class: GT
+
+    SubClassOf: 
+        ValidityCondition
+    
+    
+Class: GateValve
+
+    SubClassOf: 
+        DrillingEquipment
+    
+    
+Class: GaussianUncertainty
+
+    SubClassOf: 
+        SignalUncertainty
+    
+    
+Class: GenericUncertainty
+
+    SubClassOf: 
+        SignalUncertainty
+    
+    
+Class: HighPassFilter
+
+    SubClassOf: 
+        Filter
+    
+    
+Class: HoleBottomLocation
+
+    SubClassOf: 
+        Location
+    
+    
+Class: HoleDepth
+
+    SubClassOf: 
+        DrillingData
+    
+    
+Class: HookLoad
+
+    SubClassOf: 
+        DrillingData
+    
+    
+Class: HookPosition
+
+    SubClassOf: 
+        DrillingData
+    
+    
+Class: HookVelocity
+
+    SubClassOf: 
+        DrillingData
+    
+    
+Class: HookloadQuantity
+
+    SubClassOf: 
+        MeasurableQuantity
+    
+    
+Class: HydraulicBranch
+
+    SubClassOf: 
+        HydraulicLogicalElement,
+        EndsHydraulicBranchDecomposition max 2147483647 HydraulicBranch,
+        HasBranchCoordinateSystem max 2147483647 ReferenceFrame,
+        HasEndJunction max 2147483647 HydraulicJunction,
+        HasStartJunction max 2147483647 HydraulicJunction
+    
+    
+Class: HydraulicConnectedState
+
+    SubClassOf: 
+        HydraulicElementState
+    
+    
+Class: HydraulicElementState
+
+    SubClassOf: 
+        DDHubNode
+    
+    
+Class: HydraulicJunction
+
+    SubClassOf: 
+        HydraulicLogicalElement,
+        HasHydraulicState max 2147483647 HydraulicElementState,
+        HasLeftBranch max 2147483647 HydraulicBranch,
+        HasLeftBranchCoordinates max 2147483647 DrillingData,
+        HasRightBranch max 2147483647 HydraulicBranch,
+        HasRightBranchCoordinates max 2147483647 DrillingData
+    
+    
+Class: HydraulicLogicalElement
+
+    SubClassOf: 
+        DDHubNode,
+        IsHydraulicConnectedTo max 2147483647 HydraulicLogicalElement
+    
+    
+Class: HydraulicNetwork
+
+    SubClassOf: 
+        HydraulicLogicalElement,
+        HasBranchComponent max 2147483647 HydraulicBranch
+    
+    
+Class: Integration
+
+    SubClassOf: 
+        TimeBasedTransformation
+    
+    
+Class: LT
+
+    SubClassOf: 
+        ValidityCondition
+    
+    
+Class: LWDLocation
+
+    SubClassOf: 
+        Location
+    
+    
+Class: LengthQuantity
+
+    SubClassOf: 
+        Quantity
+    
+    
+Class: Location
+
+    SubClassOf: 
+        DDHubNode,
+        HasReferenceFrame max 2147483647 ReferenceFrame
+    
+    
+Class: LowPassFilter
+
+    SubClassOf: 
+        Filter
+    
+    
+Class: MassDensityQuantity
+
+    SubClassOf: 
+        Quantity
+    
+    
+Class: MassQuantity
+
+    SubClassOf: 
+        Quantity
+    
+    
+Class: MassRate
+
+    SubClassOf: 
+        Quantity
+    
+    
+Class: MeasurableQuantity
+
+    SubClassOf: 
+        DDHubNode
+    
+    
+Class: MeasurableQuantityUnitAssociation
+
+    SubClassOf: 
+        DDHubNode,
+        AssociatesMeasurableQuantity max 2147483647 MeasurableQuantity,
+        AssociatesUnit max 2147483647 Unit
+    
+    
+Class: MeasuredDepthToTrueVerticalDepthTransformation
+
+    SubClassOf: 
+        DirectTransformation
+    
+    
+Class: MeasuredDepthTranslation
+
+    SubClassOf: 
+        DirectTransformation
+    
+    
+Class: MeasurementDevice
+
+    SubClassOf: 
+        DataFlowNode
+    
+    
+Class: MechanicalBlock
+
+    SubClassOf: 
+        DrillingEquipment
+    
+    
+Class: MechanicalElementState
+
+    SubClassOf: 
+        DDHubNode
+    
+    
+Class: MechanicalLogicalElement
+
+    SubClassOf: 
+        DDHubNode,
+        HasMechanicalState max 2147483647 MechanicalElementState,
+        HasMechanicalStateValueFrom max 2147483647 DrillingData
+    
+    
+Class: MechanicallyClosedState
+
+    SubClassOf: 
+        MechanicalElementState
+    
+    
+Class: MechanicallyConnectedState
+
+    SubClassOf: 
+        MechanicalElementState
+    
+    
+Class: MinMaxUncertainty
+
+    SubClassOf: 
+        SignalUncertainty
+    
+    
+Class: MovingAverage
+
+    SubClassOf: 
+        Filter
+    
+    
+Class: MudMixing
+
+    SubClassOf: 
+        HydraulicJunction
+    
+    
+Class: MudPulseTelemetry
+
+    SubClassOf: 
+        DownHoleTelemetry
+    
+    
+Class: MudPump
+
+    SubClassOf: 
+        Pump
+    
+    
+Class: MudPumpsControlSystem
+
+    SubClassOf: 
+        ControlSystem
+    
+    
+Class: NorthEastFrame
+
+    SubClassOf: 
+        CartesianTwoDimensionalReferenceFrame
+    
+    
+Class: NorthEastTVDFrame
+
+    SubClassOf: 
+        CartesianThreeDimensionalReferenceFrame
+    
+    
+Class: NumberOfItemsRangeExtraction
+
+    SubClassOf: 
+        RangeExtraction
+    
+    
+Class: NumberOfSampleMovingAverage
+
+    SubClassOf: 
+        MovingAverage
+    
+    
+Class: OneDimensionalCartesianReferenceFrame
+
+    SubClassOf: 
+        OneDimensionalReferenceFrame
+    
+    
+Class: OneDimensionalCurviLinearReferenceFrame
+
+    SubClassOf: 
+        OneDimensionalReferenceFrame
+    
+    
+Class: OneDimensionalReferenceFrame
+
+    SubClassOf: 
+        ReferenceFrame
+    
+    
+Class: OpenChannel
+
+    SubClassOf: 
+        HydraulicBranch
+    
+    
+Class: OpenHole
+
+    SubClassOf: 
+        Pipe
+    
+    
+Class: OpenHoleCenterLineFrame
+
+    SubClassOf: 
+        OneDimensionalCurviLinearReferenceFrame
+    
+    
+Class: Pipe
+
+    SubClassOf: 
+        HydraulicBranch
+    
+    
+Class: PolarReferenceFrame
+
+    SubClassOf: 
+        TwoDimensionalReferenceFrame
+    
+    
+Class: PowerQuantity
+
+    SubClassOf: 
+        Quantity
+    
+    
+Class: PressureQuantity
+
+    SubClassOf: 
+        Quantity
+    
+    
+Class: PressureToEquivalentDensityTransformation
+
+    SubClassOf: 
+        DirectTransformation
+    
+    
+Class: PressureToForceTransformation
+
+    SubClassOf: 
+        DirectTransformation
+    
+    
+Class: ProportionQuantity
+
+    SubClassOf: 
+        Quantity
+    
+    
+Class: Pump
+
+    SubClassOf: 
+        DrillingEquipment
+    
+    
+Class: PumpRate
+
+    SubClassOf: 
+        DrillingData
+    
+    
+Class: PumpRateQuantity
+
+    SubClassOf: 
+        MeasurableQuantity
+    
+    
+Class: Quantity
+
+    SubClassOf: 
+        DDHubNode,
+        HasSIUnit max 2147483647 Unit
+    
+    
+Class: ROP
+
+    SubClassOf: 
+        DrillingData
+    
+    
+Class: RangeExtraction
+
+    SubClassOf: 
+        TimeBasedTransformation
+    
+    
+Class: RectangularChannel
+
+    SubClassOf: 
+        OpenChannel
+    
+    
+Class: ReferenceFrame
+
+    SubClassOf: 
+        DDHubNode
+    
+    
+Class: ReferenceLocation
+
+    SubClassOf: 
+        Location
+    
+    
+Class: RelativeUncertainty
+
+    SubClassOf: 
+        SignalUncertainty
+    
+    
+Class: Resampling
+
+    SubClassOf: 
+        TimeBasedTransformation,
+        BelongsToSynchronizationGroup max 2147483647 SynchronizationGroup
+    
+    
+Class: Resistivity
+
+    SubClassOf: 
+        MeasurableQuantity
+    
+    
+Class: ReturnFlowLine
+
+    SubClassOf: 
+        Pipe
+    
+    
+Class: RockDensityQuantity
+
+    SubClassOf: 
+        MeasurableQuantity
+    
+    
+Class: SPP
+
+    SubClassOf: 
+        DrillingData
+    
+    
+Class: SPPQuantity
+
+    SubClassOf: 
+        MeasurableQuantity
+    
+    
+Class: SemiCircularChannel
+
+    SubClassOf: 
+        OpenChannel
+    
+    
+Class: SensorUncertainty
+
+    SubClassOf: 
+        SignalUncertainty,
+        HasUncertaintyAccuracy max 2147483647 DrillingData,
+        HasUncertaintyPrecision max 2147483647 DrillingData
+    
+    
+Class: ShaleShakers
+
+    SubClassOf: 
+        DrillingEquipment
+    
+    
+Class: SignalProcessingUnit
+
+    SubClassOf: 
+        Transformation
+    
+    
+Class: SignalUncertainty
+
+    SubClassOf: 
+        DDHubNode
+    
+    
+Class: Slips
+
+    SubClassOf: 
+        DrillingEquipment
+    
+    
+Class: SphericalReferenceFrame
+
+    SubClassOf: 
+        ThreeDimensionalReferenceFrame
+    
+    
+Class: StandPipe
+
+    SubClassOf: 
+        DrillingEquipment
+    
+    
+Class: SupportLine
+
+    SubClassOf: 
+        DrillLine
+    
+    
+Class: SurfaceRPM
+
+    SubClassOf: 
+        DrillingData
+    
+    
+Class: SurfaceRPMQuantity
+
+    SubClassOf: 
+        MeasurableQuantity
+    
+    
+Class: SurfaceTorque
+
+    SubClassOf: 
+        DrillingData
+    
+    
+Class: SurfaceTorqueQuantity
+
+    SubClassOf: 
+        MeasurableQuantity
+    
+    
+Class: SynchronizationGroup
+
+    SubClassOf: 
+        DDHubNode
+    
+    
+Class: TVDQuantity
+
+    SubClassOf: 
+        MeasurableQuantity
+    
+    
+Class: Telemetry
+
+    SubClassOf: 
+        DDHubNode
+    
+    
+Class: TemperatureIn
+
+    SubClassOf: 
+        DrillingData
+    
+    
+Class: TemperatureOut
+
+    SubClassOf: 
+        DrillingData
+    
+    
+Class: TemperatureQuantity
+
+    SubClassOf: 
+        Quantity
+    
+    
+Class: ThreeDimensionalReferenceFrame
+
+    SubClassOf: 
+        ReferenceFrame
+    
+    
+Class: ThreeWayManifold
+
+    SubClassOf: 
+        DrillingEquipment
+    
+    
+Class: ThreeWayValve
+
+    SubClassOf: 
+        DrillingEquipment
+    
+    
+Class: ThreeWayValveInternalValve
+
+    SubClassOf: 
+        DrillingEquipment
+    
+    
+Class: TimeBasedTransformation
+
+    SubClassOf: 
+        Transformation
+    
+    
+Class: TimeWindowMovingAverage
+
+    SubClassOf: 
+        MovingAverage
+    
+    
+Class: TimeWindowRangeExtraction
+
+    SubClassOf: 
+        RangeExtraction
+    
+    
+Class: TopDrive
+
+    SubClassOf: 
+        DrillingEquipment
+    
+    
+Class: TopDriveBody
+
+    SubClassOf: 
+        DrillingEquipment
+    
+    
+Class: TopDriveControlSystem
+
+    SubClassOf: 
+        ControlSystem
+    
+    
+Class: TopDriveHook
+
+    SubClassOf: 
+        DrillingEquipment
+    
+    
+Class: TopDriveShaft
+
+    SubClassOf: 
+        DrillingEquipment
+    
+    
+Class: TopOfStringForceQuantity
+
+    SubClassOf: 
+        MeasurableQuantity
+    
+    
+Class: TopOfStringPosition
+
+    SubClassOf: 
+        DrillingData
+    
+    
+Class: TopSideTelemetry
+
+    SubClassOf: 
+        Telemetry
+    
+    
+Class: TopsideHydraulicNetwork
+
+    SubClassOf: 
+        HydraulicNetwork
+    
+    
+Class: TorqueQuantity
+
+    SubClassOf: 
+        Quantity
+    
+    
+Class: TorqueToForceTransformation
+
+    SubClassOf: 
+        DirectTransformation
+    
+    
+Class: Transformation
+
+    SubClassOf: 
+        DataFlowNode
+    
+    
+Class: TransmissionLine
+
+    SubClassOf: 
+        DataFlowNode
+    
+    
+Class: TravellingBlock
+
+    SubClassOf: 
+        MechanicalBlock
+    
+    
+Class: TwoDimensionalReferenceFrame
+
+    SubClassOf: 
+        ReferenceFrame
+    
+    
+Class: UnderReamer
+
+    SubClassOf: 
+        DrillingEquipment
+    
+    
+Class: Unit
+
+    SubClassOf: 
+        DDHubNode,
+        IsUnitForQuantity max 2147483647 Quantity
+    
+    
+Class: UnitSystem
+
+    SubClassOf: 
+        DDHubNode,
+        HasUnitAssociation max 2147483647 MeasurableQuantityUnitAssociation
+    
+    
+Class: UserInterface
+
+    SubClassOf: 
+        DataFlowNode
+    
+    
+Class: ValidityCondition
+
+    SubClassOf: 
+        DDHubNode
+    
+    
+Class: VelocityQuantity
+
+    SubClassOf: 
+        Quantity
+    
+    
+Class: VerticalDepthFrame
+
+    SubClassOf: 
+        OneDimensionalCartesianReferenceFrame
+    
+    
+Class: VolumeQuantity
+
+    SubClassOf: 
+        Quantity
+    
+    
+Class: VolumetricRateQuantity
+
+    SubClassOf: 
+        Quantity
+    
+    
+Class: WOB
+
+    SubClassOf: 
+        DrillingData
+    
+    
+Class: WOBQuantity
+
+    SubClassOf: 
+        MeasurableQuantity
+    
+    
+Class: WellboreCenterLineFrame
+
+    SubClassOf: 
+        OneDimensionalCurviLinearReferenceFrame
+    
+    
+Class: WiredPipeTelemetry
+
+    SubClassOf: 
+        DownHoleTelemetry
+    
+    
+Class: WitsMLTimeBasedLogEndPoint
+
+    SubClassOf: 
+        DataEndPoint
+    
+    

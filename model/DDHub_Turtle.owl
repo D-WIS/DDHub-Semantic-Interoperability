@@ -1,0 +1,3920 @@
+@prefix : <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#> .
+@prefix de: <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingEquipment#> .
+@prefix dds: <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#> .
+@prefix dfl: <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DataFlow#> .
+@prefix dtr: <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DataTransmission#> .
+@prefix hyd: <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/Hydraulics#> .
+@prefix mcs: <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/Mechanics#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix unc: <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/Uncertainty#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dval: <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DataValidity#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix phloc: <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/PhysicalLocation#> .
+@prefix quant: <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/Quantities#> .
+@prefix tmana: <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/TimeManagement#> .
+@base <http://www.ddhub.no/ontologies/2019/1/ontology/DDHub> .
+
+<http://www.ddhub.no/ontologies/2019/1/ontology/DDHub> rdf:type owl:Ontology .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#datetime
+xsd:datetime rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#AssociatesMeasurableQuantity
+:AssociatesMeasurableQuantity rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf :DDHubRelation ;
+                              rdfs:domain :MeasurableQuantityUnitAssociation ;
+                              rdfs:range :MeasurableQuantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#AssociatesUnit
+:AssociatesUnit rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :DDHubRelation ;
+                rdfs:domain :MeasurableQuantityUnitAssociation ;
+                rdfs:range :Unit .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#BelongsToSynchronizationGroup
+:BelongsToSynchronizationGroup rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf :DDHubRelation ;
+                               rdfs:domain :Resampling ;
+                               rdfs:range :SynchronizationGroup .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#Controls
+:Controls rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :DDHubRelation ;
+          rdfs:domain :DDHubNode ;
+          rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DDHubRelation
+:DDHubRelation rdf:type owl:ObjectProperty .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#EndsHydraulicBranchDecomposition
+:EndsHydraulicBranchDecomposition rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf :DDHubRelation ;
+                                  rdfs:domain :HydraulicBranch ;
+                                  rdfs:range :HydraulicBranch .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasAcquisitionClock
+:HasAcquisitionClock rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :DDHubRelation ;
+                     rdfs:domain :DrillingData ;
+                     rdfs:range :Clock .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasBranchComponent
+:HasBranchComponent rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :DDHubRelation ;
+                    rdfs:domain :HydraulicNetwork ;
+                    rdfs:range :HydraulicBranch .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasBranchCoordinateSystem
+:HasBranchCoordinateSystem rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf :DDHubRelation ;
+                           rdfs:domain :HydraulicBranch ;
+                           rdfs:range :ReferenceFrame .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasCoordinates
+:HasCoordinates rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :DDHubRelation ;
+                rdfs:domain :DrillingData ;
+                rdfs:range :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasDomain
+:HasDomain rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :DDHubRelation ;
+           rdfs:domain :DrillingData ;
+           rdfs:range :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasDynamicValue
+:HasDynamicValue rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :HasValue ;
+                 rdfs:domain :DrillingData ;
+                 rdfs:range :DynamicDrillingSignal .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasEndJunction
+:HasEndJunction rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :IsHydraulicConnectedTo ;
+                rdfs:domain :HydraulicBranch ;
+                rdfs:range :HydraulicJunction .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasEndPoint
+:HasEndPoint rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :DDHubRelation ;
+             rdfs:domain :DrillingSignal ;
+             rdfs:range :DataEndPoint .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasFunction
+:HasFunction rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :DDHubRelation ;
+             rdfs:domain :DrillingData ;
+             rdfs:range :DataFlowNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasHydraulicState
+:HasHydraulicState rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :DDHubRelation ;
+                   rdfs:domain :HydraulicJunction ;
+                   rdfs:range :HydraulicElementState .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasHydraulicStateValueFrom
+:HasHydraulicStateValueFrom rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf :DDHubRelation ;
+                            rdfs:domain :DDHubNode ;
+                            rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasLeftBranch
+:HasLeftBranch rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :IsHydraulicConnectedTo ;
+               rdfs:domain :HydraulicJunction ;
+               rdfs:range :HydraulicBranch .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasLeftBranchCoordinates
+:HasLeftBranchCoordinates rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf :DDHubRelation ;
+                          rdfs:domain :HydraulicJunction ;
+                          rdfs:range :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasMechanicalState
+:HasMechanicalState rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :DDHubRelation ;
+                    rdfs:domain :MechanicalLogicalElement ;
+                    rdfs:range :MechanicalElementState .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasMechanicalStateValueFrom
+:HasMechanicalStateValueFrom rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf :DDHubRelation ;
+                             rdfs:domain :MechanicalLogicalElement ;
+                             rdfs:range :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasPressureReference
+:HasPressureReference rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :IsDependentOn ;
+                      rdfs:domain :DrillingData ;
+                      rdfs:range :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasReferenceFrame
+:HasReferenceFrame rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :DDHubRelation ;
+                   rdfs:domain :Location ;
+                   rdfs:range :ReferenceFrame .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasReferenceFrameOrigin
+:HasReferenceFrameOrigin rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :DDHubRelation ;
+                         rdfs:domain :DDHubNode ;
+                         rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasRightBranch
+:HasRightBranch rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :IsHydraulicConnectedTo ;
+                rdfs:domain :HydraulicJunction ;
+                rdfs:range :HydraulicBranch .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasRightBranchCoordinates
+:HasRightBranchCoordinates rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf :DDHubRelation ;
+                           rdfs:domain :HydraulicJunction ;
+                           rdfs:range :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasSIUnit
+:HasSIUnit rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :DDHubRelation ;
+           rdfs:domain :Quantity ;
+           rdfs:range :Unit .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasSourceClock
+:HasSourceClock rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :DDHubRelation ;
+                rdfs:domain :DrillingData ;
+                rdfs:range :Clock .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasStartJunction
+:HasStartJunction rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :IsHydraulicConnectedTo ;
+                  rdfs:domain :HydraulicBranch ;
+                  rdfs:range :HydraulicJunction .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasStaticValue
+:HasStaticValue rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :HasValue ;
+                rdfs:domain :DrillingData ;
+                rdfs:range :DrillingSignal .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasTemperatureReference
+:HasTemperatureReference rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :IsDependentOn ;
+                         rdfs:domain :DrillingData ;
+                         rdfs:range :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasTimeIntervalDomain
+:HasTimeIntervalDomain rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :HasDomain ;
+                       rdfs:domain :DrillingData ;
+                       rdfs:range :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasTransmissionDelay
+:HasTransmissionDelay rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :DDHubRelation ;
+                      rdfs:domain :DrillingData ;
+                      rdfs:range :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasUncertainty
+:HasUncertainty rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :DDHubRelation ;
+                rdfs:domain :DrillingData ;
+                rdfs:range :SignalUncertainty .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasUncertaintyAccuracy
+:HasUncertaintyAccuracy rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :DDHubRelation ;
+                        rdfs:domain :SensorUncertainty ;
+                        rdfs:range :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasUncertaintyMax
+:HasUncertaintyMax rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :DDHubRelation ;
+                   rdfs:domain :DDHubNode ;
+                   rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasUncertaintyMean
+:HasUncertaintyMean rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :DDHubRelation ;
+                    rdfs:domain :DDHubNode ;
+                    rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasUncertaintyMin
+:HasUncertaintyMin rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :DDHubRelation ;
+                   rdfs:domain :DDHubNode ;
+                   rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasUncertaintyPrecision
+:HasUncertaintyPrecision rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :DDHubRelation ;
+                         rdfs:domain :SensorUncertainty ;
+                         rdfs:range :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasUncertaintyRelativeValue
+:HasUncertaintyRelativeValue rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf :DDHubRelation ;
+                             rdfs:domain :DDHubNode ;
+                             rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasUncertaintyStandardDeviation
+:HasUncertaintyStandardDeviation rdf:type owl:ObjectProperty ;
+                                 rdfs:subPropertyOf :DDHubRelation ;
+                                 rdfs:domain :DDHubNode ;
+                                 rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasUnitAssociation
+:HasUnitAssociation rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :DDHubRelation ;
+                    rdfs:domain :UnitSystem ;
+                    rdfs:range :MeasurableQuantityUnitAssociation .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HasValue
+:HasValue rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :DDHubRelation ;
+          rdfs:domain :DrillingData ;
+          rdfs:range :DrillingSignal .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsBufferingInput
+:IsBufferingInput rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :IsTransformationInput ;
+                  rdfs:domain :DrillingData ;
+                  rdfs:range :Buffering .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsBufferingOutput
+:IsBufferingOutput rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :IsTransformationOutput ;
+                   rdfs:domain :DrillingData ;
+                   rdfs:range :Buffering .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsCommandFor
+:IsCommandFor rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :HasFunction ;
+              rdfs:domain :DrillingData ;
+              rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsComputationInput
+:IsComputationInput rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :HasFunction ;
+                    rdfs:domain :DrillingData ;
+                    rdfs:range :ComputationUnit .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsComputedBy
+:IsComputedBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :IsGeneratedBy ;
+              rdfs:domain :DDHubNode ;
+              rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsConditionInput
+:IsConditionInput rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :DDHubRelation ;
+                  rdfs:domain :DrillingData ;
+                  rdfs:range :ValidityCondition .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsConditionLeft
+:IsConditionLeft rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :IsConditionInput ;
+                 rdfs:domain :DDHubNode ;
+                 rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsConditionRight
+:IsConditionRight rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :IsConditionInput ;
+                  rdfs:domain :DDHubNode ;
+                  rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsConditionedBy
+:IsConditionedBy rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :DDHubRelation ;
+                 rdfs:domain :DrillingData ;
+                 rdfs:range :ValidityCondition .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsDependentOn
+:IsDependentOn rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :DDHubRelation ;
+               rdfs:domain :DrillingData ;
+               rdfs:range :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsDerivationInput
+:IsDerivationInput rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :IsTransformationInput ;
+                   rdfs:domain :DDHubNode ;
+                   rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsDerivedFrom
+:IsDerivedFrom rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :IsTransformationOutput ;
+               rdfs:domain :DDHubNode ;
+               rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsEquivalentCirculationDensityAt
+:IsEquivalentCirculationDensityAt rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf :IsHydraulicallyLocatedAt ;
+                                  rdfs:domain :DDHubNode ;
+                                  rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsFluidDensityAt
+:IsFluidDensityAt rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :IsHydraulicallyLocatedAt ;
+                  rdfs:domain :DDHubNode ;
+                  rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsFluidTemperatureAt
+:IsFluidTemperatureAt rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :IsHydraulicallyLocatedAt ;
+                      rdfs:domain :DDHubNode ;
+                      rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsFluidVelocityAt
+:IsFluidVelocityAt rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :IsHydraulicallyLocatedAt ;
+                   rdfs:domain :DDHubNode ;
+                   rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsGeneratedBy
+:IsGeneratedBy rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :DDHubRelation ;
+               rdfs:domain :DrillingData ;
+               rdfs:range :DataFlowNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsHydraulicConnectedTo
+:IsHydraulicConnectedTo rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :DDHubRelation ;
+                        rdfs:domain :HydraulicLogicalElement ;
+                        rdfs:range :HydraulicLogicalElement .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsHydraulicEstimationAt
+:IsHydraulicEstimationAt rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :IsHydraulicallyLocatedAt ;
+                         rdfs:domain :DDHubNode ;
+                         rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsHydraulicMaximumAllowedRateOfChangeAt
+:IsHydraulicMaximumAllowedRateOfChangeAt rdf:type owl:ObjectProperty ;
+                                         rdfs:subPropertyOf :IsHydraulicallyLocatedAt ;
+                                         rdfs:domain :DDHubNode ;
+                                         rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsHydraulicMaximumAllowedValueAt
+:IsHydraulicMaximumAllowedValueAt rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf :IsHydraulicallyLocatedAt ;
+                                  rdfs:domain :DDHubNode ;
+                                  rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsHydraulicMeasurementAt
+:IsHydraulicMeasurementAt rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf :IsHydraulicallyLocatedAt ;
+                          rdfs:domain :DDHubNode ;
+                          rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsHydraulicallyLocatedAt
+:IsHydraulicallyLocatedAt rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf :DDHubRelation ;
+                          rdfs:domain :DrillingData ;
+                          rdfs:range :HydraulicLogicalElement .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsIntegratedFrom
+:IsIntegratedFrom rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :IsTransformationOutput ;
+                  rdfs:domain :DDHubNode ;
+                  rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsLimitFor
+:IsLimitFor rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :HasFunction ;
+            rdfs:domain :DrillingData ;
+            rdfs:range :ControlSystem .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsMassFlowRateAt
+:IsMassFlowRateAt rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :IsHydraulicallyLocatedAt ;
+                  rdfs:domain :DDHubNode ;
+                  rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsMeasuredBy
+:IsMeasuredBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :IsGeneratedBy ;
+              rdfs:domain :DDHubNode ;
+              rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsMechanicallyConnectTo
+:IsMechanicallyConnectTo rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :DDHubRelation ;
+                         rdfs:domain :DDHubNode ;
+                         rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsMechanicallyLocatedAt
+:IsMechanicallyLocatedAt rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :DDHubRelation ;
+                         rdfs:domain :DDHubNode ;
+                         rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsObservableFrom
+:IsObservableFrom rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :DDHubRelation ;
+                  rdfs:domain :DDHubNode ;
+                  rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsOfBaseQuantity
+:IsOfBaseQuantity rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :DDHubRelation ;
+                  rdfs:domain :DDHubNode ;
+                  rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsOfMeasurableQuantity
+:IsOfMeasurableQuantity rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :DDHubRelation ;
+                        rdfs:domain :DDHubNode ;
+                        rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsPhysicallyLocatedAt
+:IsPhysicallyLocatedAt rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :DDHubRelation ;
+                       rdfs:domain :DDHubNode ;
+                       rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsPressureAt
+:IsPressureAt rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :IsHydraulicallyLocatedAt ;
+              rdfs:domain :DDHubNode ;
+              rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsPressureGradientAt
+:IsPressureGradientAt rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :IsHydraulicallyLocatedAt ;
+                      rdfs:domain :DDHubNode ;
+                      rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsProcessedBy
+:IsProcessedBy rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :DDHubRelation ;
+               rdfs:domain :DDHubNode ;
+               rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsProvidedBy
+:IsProvidedBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :DDHubRelation ;
+              rdfs:domain :DDHubNode ;
+              rdfs:range :DataProvider .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsRecordedFrom
+:IsRecordedFrom rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :IsGeneratedBy ;
+                rdfs:domain :DDHubNode ;
+                rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsResampledBy
+:IsResampledBy rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :IsTransformationOutput ;
+               rdfs:domain :DrillingData ;
+               rdfs:range :Resampling .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsResamplingInput
+:IsResamplingInput rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :IsTransformationInput ;
+                   rdfs:domain :DrillingData ;
+                   rdfs:range :Resampling .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsSetPointFor
+:IsSetPointFor rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :HasFunction ;
+               rdfs:domain :DrillingData ;
+               rdfs:range :Controller .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsSetPointRecommendationFor
+:IsSetPointRecommendationFor rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf :HasFunction ;
+                             rdfs:domain :DrillingData ;
+                             rdfs:range :ControlSystem .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsSynchronizationGroupInput
+:IsSynchronizationGroupInput rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf :DDHubRelation ;
+                             rdfs:domain :DrillingData ;
+                             rdfs:range :SynchronizationGroup .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsSynchronizationGroupOutput
+:IsSynchronizationGroupOutput rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf :DDHubRelation ;
+                              rdfs:domain :DrillingData ;
+                              rdfs:range :SynchronizationGroup .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsTransformationInput
+:IsTransformationInput rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :HasFunction ;
+                       rdfs:domain :DrillingData ;
+                       rdfs:range :Transformation .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsTransformationOutput
+:IsTransformationOutput rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :IsGeneratedBy ;
+                        rdfs:domain :DrillingData ;
+                        rdfs:range :DataFlowNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsTransmissionInput
+:IsTransmissionInput rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :HasFunction ;
+                     rdfs:domain :DrillingData ;
+                     rdfs:range :TransmissionLine .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsTransmissionOutput
+:IsTransmissionOutput rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :IsGeneratedBy ;
+                      rdfs:domain :DrillingData ;
+                      rdfs:range :TransmissionLine .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsTransmittedBy
+:IsTransmittedBy rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :DDHubRelation ;
+                 rdfs:domain :DDHubNode ;
+                 rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsUnitForQuantity
+:IsUnitForQuantity rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :DDHubRelation ;
+                   rdfs:domain :Unit ;
+                   rdfs:range :Quantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsValidBy
+:IsValidBy rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :DDHubRelation ;
+           rdfs:domain :DDHubNode ;
+           rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#IsVolumetricFlowRateAt
+:IsVolumetricFlowRateAt rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :IsHydraulicallyLocatedAt ;
+                        rdfs:domain :DDHubNode ;
+                        rdfs:range :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#StartsHydraulicBranchDecomposition
+:StartsHydraulicBranchDecomposition rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf :DDHubRelation ;
+                                    rdfs:domain :DDHubNode ;
+                                    rdfs:range :DDHubNode .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DataFlow#BufferingInterval
+dfl:BufferingInterval rdf:type owl:DatatypeProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:domain :Buffering ;
+                      rdfs:range xsd:double .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DataFlow#CutOffFrequency
+dfl:CutOffFrequency rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain :HighPassFilter ,
+                                :LowPassFilter ;
+                    rdfs:range xsd:double .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DataFlow#MaxFrequency
+dfl:MaxFrequency rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain :BandPassFilter ;
+                 rdfs:range xsd:double .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DataFlow#MinFrequency
+dfl:MinFrequency rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain :BandPassFilter ;
+                 rdfs:range xsd:double .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DataFlow#NumberOfItems
+dfl:NumberOfItems rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain :NumberOfItemsRangeExtraction ;
+                  rdfs:range xsd:integer .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DataFlow#NumberOfSamples
+dfl:NumberOfSamples rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain :NumberOfSampleMovingAverage ;
+                    rdfs:range xsd:integer .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DataFlow#ResamplingDelay
+dfl:ResamplingDelay rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain :Resampling ;
+                    rdfs:range xsd:double .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DataFlow#ResamplingRate
+dfl:ResamplingRate rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain :Resampling ;
+                   rdfs:range xsd:double .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DataFlow#TimeWindow
+dfl:TimeWindow rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :TimeWindowMovingAverage ,
+                           :TimeWindowRangeExtraction ;
+               rdfs:range xsd:double .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DataFlow#Validity
+dfl:Validity rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Resampling ;
+             rdfs:range xsd:double .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DataTransmission#AverageDelayByRepeaters
+dtr:AverageDelayByRepeaters rdf:type owl:DatatypeProperty ,
+                                     owl:FunctionalProperty ;
+                            rdfs:domain :DownHoleTelemetry ,
+                                        :MudPulseTelemetry ,
+                                        :Telemetry ,
+                                        :TopSideTelemetry ,
+                                        :WiredPipeTelemetry ;
+                            rdfs:range xsd:double .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DataTransmission#NumberOfRepeaters
+dtr:NumberOfRepeaters rdf:type owl:DatatypeProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:domain :DownHoleTelemetry ,
+                                  :MudPulseTelemetry ,
+                                  :Telemetry ,
+                                  :TopSideTelemetry ,
+                                  :WiredPipeTelemetry ;
+                      rdfs:range xsd:integer .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DataTransmission#RefreshRate
+dtr:RefreshRate rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :DownHoleTelemetry ,
+                            :MudPulseTelemetry ,
+                            :Telemetry ,
+                            :TopSideTelemetry ,
+                            :WiredPipeTelemetry ;
+                rdfs:range xsd:double .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#DataType
+dds:DataType rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :ActiveVolume ,
+                         :BitDepth ,
+                         :DensityIn ,
+                         :DensityOut ,
+                         :DownholeECD ,
+                         :DownholePressure ,
+                         :DownholeRPM ,
+                         :DownholeTemperature ,
+                         :DownholeTorque ,
+                         :DrillingData ,
+                         :FlowRateIn ,
+                         :FlowRateOut ,
+                         :HoleDepth ,
+                         :HookLoad ,
+                         :HookPosition ,
+                         :HookVelocity ,
+                         :PumpRate ,
+                         :ROP ,
+                         :SPP ,
+                         :SurfaceRPM ,
+                         :SurfaceTorque ,
+                         :TemperatureIn ,
+                         :TemperatureOut ,
+                         :TopOfStringPosition ,
+                         :WOB ;
+             rdfs:range xsd:string .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#Description
+dds:Description rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :AccelerationQuantity ,
+                            :ActiveLine ,
+                            :ActivePit ,
+                            :ActiveVolume ,
+                            :Aggregation ,
+                            :Annular ,
+                            :AreaQuantity ,
+                            :BHAAnnular ,
+                            :BHAInner ,
+                            :BandPassFilter ,
+                            :BellNipple ,
+                            :Bit ,
+                            :BitDepth ,
+                            :BitReferenceLocation ,
+                            :BitTorqueQuantity ,
+                            :BlockAccelerationQuantity ,
+                            :BlockPositionQuantity ,
+                            :BlockVelocityQuantity ,
+                            :Buffering ,
+                            :CartesianThreeDimensionalReferenceFrame ,
+                            :CartesianTwoDimensionalReferenceFrame ,
+                            :CasingShoeLocation ,
+                            :CementPump ,
+                            :Clock ,
+                            :ComputationUnit ,
+                            :ConnectedCondition ,
+                            :ControlSystem ,
+                            :Controller ,
+                            :CrownBlock ,
+                            :CurviLinearFrenetSerretReferenceFrame ,
+                            :CylindricalReferenceFrame ,
+                            :DataEndPoint ,
+                            :DataFlowNode ,
+                            :DataProvider ,
+                            :DeadLine ,
+                            :DeadLineAnchor ,
+                            :DensityIn ,
+                            :DensityOut ,
+                            :DepthAndAngleFrame ,
+                            :DepthQuantity ,
+                            :Derivation ,
+                            :DirectTransformation ,
+                            :Dolly ,
+                            :DollyRail ,
+                            :DownHoleTelemetry ,
+                            :DownholeECD ,
+                            :DownholeHydraulicNetwork ,
+                            :DownholePressure ,
+                            :DownholePressureQuantity ,
+                            :DownholeRPM ,
+                            :DownholeTemperature ,
+                            :DownholeTorque ,
+                            :DrawWorks ,
+                            :DrawWorksControlSystem ,
+                            :DrillFloorReferenceLocation ,
+                            :DrillLine ,
+                            :DrillLineFastener ,
+                            :DrillPipesAnnular ,
+                            :DrillPipesInner ,
+                            :DrillString ,
+                            :DrillStringCenterLineFrame ,
+                            :DrillingData ,
+                            :DrillingEquipment ,
+                            :DrillingSignal ,
+                            :DynamicDrillingSignal ,
+                            :EMWQuantity ,
+                            :EQ ,
+                            :ElectricResistivityQuantity ,
+                            :Elevator ,
+                            :EndPointMapping ,
+                            :Filter ,
+                            :FlowRateIn ,
+                            :FlowRateOut ,
+                            :FlowRateQuantity ,
+                            :FluidDensityInQuantity ,
+                            :FluidTemperatureInQuantity ,
+                            :ForceFromLoadPinsTransformation ,
+                            :ForceQuantity ,
+                            :ForceToLoadTransformation ,
+                            :FormationPorosityQuantity ,
+                            :FourDimensionalReferenceFrame ,
+                            :FrenetSerretReferenceFrame ,
+                            :FrequencyQuantity ,
+                            :GT ,
+                            :GateValve ,
+                            :GaussianUncertainty ,
+                            :GenericUncertainty ,
+                            :HighPassFilter ,
+                            :HoleBottomLocation ,
+                            :HoleDepth ,
+                            :HookLoad ,
+                            :HookPosition ,
+                            :HookVelocity ,
+                            :HookloadQuantity ,
+                            :HydraulicBranch ,
+                            :HydraulicConnectedState ,
+                            :HydraulicElementState ,
+                            :HydraulicJunction ,
+                            :HydraulicLogicalElement ,
+                            :HydraulicNetwork ,
+                            :Integration ,
+                            :LT ,
+                            :LWDLocation ,
+                            :LengthQuantity ,
+                            :Location ,
+                            :LowPassFilter ,
+                            :MassDensityQuantity ,
+                            :MassQuantity ,
+                            :MassRate ,
+                            :MeasurableQuantity ,
+                            :MeasurableQuantityUnitAssociation ,
+                            :MeasuredDepthToTrueVerticalDepthTransformation ,
+                            :MeasuredDepthTranslation ,
+                            :MeasurementDevice ,
+                            :MechanicalBlock ,
+                            :MechanicalElementState ,
+                            :MechanicalLogicalElement ,
+                            :MechanicallyClosedState ,
+                            :MechanicallyConnectedState ,
+                            :MinMaxUncertainty ,
+                            :MovingAverage ,
+                            :MudMixing ,
+                            :MudPulseTelemetry ,
+                            :MudPump ,
+                            :MudPumpsControlSystem ,
+                            :NorthEastFrame ,
+                            :NorthEastTVDFrame ,
+                            :NumberOfItemsRangeExtraction ,
+                            :NumberOfSampleMovingAverage ,
+                            :OneDimensionalCartesianReferenceFrame ,
+                            :OneDimensionalCurviLinearReferenceFrame ,
+                            :OneDimensionalReferenceFrame ,
+                            :OpenChannel ,
+                            :OpenHole ,
+                            :OpenHoleCenterLineFrame ,
+                            :Pipe ,
+                            :PolarReferenceFrame ,
+                            :PowerQuantity ,
+                            :PressureQuantity ,
+                            :PressureToEquivalentDensityTransformation ,
+                            :PressureToForceTransformation ,
+                            :ProportionQuantity ,
+                            :Pump ,
+                            :PumpRate ,
+                            :PumpRateQuantity ,
+                            :Quantity ,
+                            :ROP ,
+                            :RangeExtraction ,
+                            :RectangularChannel ,
+                            :ReferenceFrame ,
+                            :ReferenceLocation ,
+                            :RelativeUncertainty ,
+                            :Resampling ,
+                            :Resistivity ,
+                            :ReturnFlowLine ,
+                            :RockDensityQuantity ,
+                            :SPP ,
+                            :SPPQuantity ,
+                            :SemiCircularChannel ,
+                            :SensorUncertainty ,
+                            :ShaleShakers ,
+                            :SignalProcessingUnit ,
+                            :SignalUncertainty ,
+                            :Slips ,
+                            :SphericalReferenceFrame ,
+                            :StandPipe ,
+                            :SupportLine ,
+                            :SurfaceRPM ,
+                            :SurfaceRPMQuantity ,
+                            :SurfaceTorque ,
+                            :SurfaceTorqueQuantity ,
+                            :SynchronizationGroup ,
+                            :TVDQuantity ,
+                            :Telemetry ,
+                            :TemperatureIn ,
+                            :TemperatureOut ,
+                            :TemperatureQuantity ,
+                            :ThreeDimensionalReferenceFrame ,
+                            :ThreeWayManifold ,
+                            :ThreeWayValve ,
+                            :ThreeWayValveInternalValve ,
+                            :TimeBasedTransformation ,
+                            :TimeWindowMovingAverage ,
+                            :TimeWindowRangeExtraction ,
+                            :TopDrive ,
+                            :TopDriveBody ,
+                            :TopDriveControlSystem ,
+                            :TopDriveHook ,
+                            :TopDriveShaft ,
+                            :TopOfStringForceQuantity ,
+                            :TopOfStringPosition ,
+                            :TopSideTelemetry ,
+                            :TopsideHydraulicNetwork ,
+                            :TorqueQuantity ,
+                            :TorqueToForceTransformation ,
+                            :Transformation ,
+                            :TransmissionLine ,
+                            :TravellingBlock ,
+                            :TwoDimensionalReferenceFrame ,
+                            :UnderReamer ,
+                            :Unit ,
+                            :UnitSystem ,
+                            :UserInterface ,
+                            :ValidityCondition ,
+                            :VelocityQuantity ,
+                            :VerticalDepthFrame ,
+                            :VolumeQuantity ,
+                            :VolumetricRateQuantity ,
+                            :WOB ,
+                            :WOBQuantity ,
+                            :WellboreCenterLineFrame ,
+                            :WiredPipeTelemetry ,
+                            :WitsMLTimeBasedLogEndPoint ;
+                rdfs:range xsd:string .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#Dimensions
+dds:Dimensions rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :ActiveVolume ,
+                           :BitDepth ,
+                           :DensityIn ,
+                           :DensityOut ,
+                           :DownholeECD ,
+                           :DownholePressure ,
+                           :DownholeRPM ,
+                           :DownholeTemperature ,
+                           :DownholeTorque ,
+                           :DrillingData ,
+                           :FlowRateIn ,
+                           :FlowRateOut ,
+                           :HoleDepth ,
+                           :HookLoad ,
+                           :HookPosition ,
+                           :HookVelocity ,
+                           :PumpRate ,
+                           :ROP ,
+                           :SPP ,
+                           :SurfaceRPM ,
+                           :SurfaceTorque ,
+                           :TemperatureIn ,
+                           :TemperatureOut ,
+                           :TopOfStringPosition ,
+                           :WOB ;
+               rdfs:range xsd:string .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#DomainDimensions
+dds:DomainDimensions rdf:type owl:DatatypeProperty ,
+                              owl:FunctionalProperty ;
+                     rdfs:domain :ActiveVolume ,
+                                 :BitDepth ,
+                                 :DensityIn ,
+                                 :DensityOut ,
+                                 :DownholeECD ,
+                                 :DownholePressure ,
+                                 :DownholeRPM ,
+                                 :DownholeTemperature ,
+                                 :DownholeTorque ,
+                                 :DrillingData ,
+                                 :FlowRateIn ,
+                                 :FlowRateOut ,
+                                 :HoleDepth ,
+                                 :HookLoad ,
+                                 :HookPosition ,
+                                 :HookVelocity ,
+                                 :PumpRate ,
+                                 :ROP ,
+                                 :SPP ,
+                                 :SurfaceRPM ,
+                                 :SurfaceTorque ,
+                                 :TemperatureIn ,
+                                 :TemperatureOut ,
+                                 :TopOfStringPosition ,
+                                 :WOB ;
+                     rdfs:range xsd:string .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#DomainOrder
+dds:DomainOrder rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :ActiveVolume ,
+                            :BitDepth ,
+                            :DensityIn ,
+                            :DensityOut ,
+                            :DownholeECD ,
+                            :DownholePressure ,
+                            :DownholeRPM ,
+                            :DownholeTemperature ,
+                            :DownholeTorque ,
+                            :DrillingData ,
+                            :FlowRateIn ,
+                            :FlowRateOut ,
+                            :HoleDepth ,
+                            :HookLoad ,
+                            :HookPosition ,
+                            :HookVelocity ,
+                            :PumpRate ,
+                            :ROP ,
+                            :SPP ,
+                            :SurfaceRPM ,
+                            :SurfaceTorque ,
+                            :TemperatureIn ,
+                            :TemperatureOut ,
+                            :TopOfStringPosition ,
+                            :WOB ;
+                rdfs:range xsd:integer .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#EndPoint
+dds:EndPoint rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :ActiveVolume ,
+                         :BitDepth ,
+                         :DensityIn ,
+                         :DensityOut ,
+                         :DownholeECD ,
+                         :DownholePressure ,
+                         :DownholeRPM ,
+                         :DownholeTemperature ,
+                         :DownholeTorque ,
+                         :DrillingData ,
+                         :FlowRateIn ,
+                         :FlowRateOut ,
+                         :HoleDepth ,
+                         :HookLoad ,
+                         :HookPosition ,
+                         :HookVelocity ,
+                         :PumpRate ,
+                         :ROP ,
+                         :SPP ,
+                         :SurfaceRPM ,
+                         :SurfaceTorque ,
+                         :TemperatureIn ,
+                         :TemperatureOut ,
+                         :TopOfStringPosition ,
+                         :WOB ;
+             rdfs:range xsd:string .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#EndPointDescription
+dds:EndPointDescription rdf:type owl:DatatypeProperty ,
+                                 owl:FunctionalProperty ;
+                        rdfs:domain :DataEndPoint ,
+                                    :WitsMLTimeBasedLogEndPoint ;
+                        rdfs:range xsd:string .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#FixedIndices
+dds:FixedIndices rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain :EndPointMapping ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#ID
+dds:ID rdf:type owl:DatatypeProperty ,
+                owl:FunctionalProperty ;
+       rdfs:domain :AccelerationQuantity ,
+                   :ActiveLine ,
+                   :ActivePit ,
+                   :ActiveVolume ,
+                   :Aggregation ,
+                   :Annular ,
+                   :AreaQuantity ,
+                   :BHAAnnular ,
+                   :BHAInner ,
+                   :BandPassFilter ,
+                   :BellNipple ,
+                   :Bit ,
+                   :BitDepth ,
+                   :BitReferenceLocation ,
+                   :BitTorqueQuantity ,
+                   :BlockAccelerationQuantity ,
+                   :BlockPositionQuantity ,
+                   :BlockVelocityQuantity ,
+                   :Buffering ,
+                   :CartesianThreeDimensionalReferenceFrame ,
+                   :CartesianTwoDimensionalReferenceFrame ,
+                   :CasingShoeLocation ,
+                   :CementPump ,
+                   :Clock ,
+                   :ComputationUnit ,
+                   :ConnectedCondition ,
+                   :ControlSystem ,
+                   :Controller ,
+                   :CrownBlock ,
+                   :CurviLinearFrenetSerretReferenceFrame ,
+                   :CylindricalReferenceFrame ,
+                   :DataEndPoint ,
+                   :DataFlowNode ,
+                   :DataProvider ,
+                   :DeadLine ,
+                   :DeadLineAnchor ,
+                   :DensityIn ,
+                   :DensityOut ,
+                   :DepthAndAngleFrame ,
+                   :DepthQuantity ,
+                   :Derivation ,
+                   :DirectTransformation ,
+                   :Dolly ,
+                   :DollyRail ,
+                   :DownHoleTelemetry ,
+                   :DownholeECD ,
+                   :DownholeHydraulicNetwork ,
+                   :DownholePressure ,
+                   :DownholePressureQuantity ,
+                   :DownholeRPM ,
+                   :DownholeTemperature ,
+                   :DownholeTorque ,
+                   :DrawWorks ,
+                   :DrawWorksControlSystem ,
+                   :DrillFloorReferenceLocation ,
+                   :DrillLine ,
+                   :DrillLineFastener ,
+                   :DrillPipesAnnular ,
+                   :DrillPipesInner ,
+                   :DrillString ,
+                   :DrillStringCenterLineFrame ,
+                   :DrillingData ,
+                   :DrillingEquipment ,
+                   :DrillingSignal ,
+                   :DynamicDrillingSignal ,
+                   :EMWQuantity ,
+                   :EQ ,
+                   :ElectricResistivityQuantity ,
+                   :Elevator ,
+                   :EndPointMapping ,
+                   :Filter ,
+                   :FlowRateIn ,
+                   :FlowRateOut ,
+                   :FlowRateQuantity ,
+                   :FluidDensityInQuantity ,
+                   :FluidTemperatureInQuantity ,
+                   :ForceFromLoadPinsTransformation ,
+                   :ForceQuantity ,
+                   :ForceToLoadTransformation ,
+                   :FormationPorosityQuantity ,
+                   :FourDimensionalReferenceFrame ,
+                   :FrenetSerretReferenceFrame ,
+                   :FrequencyQuantity ,
+                   :GT ,
+                   :GateValve ,
+                   :GaussianUncertainty ,
+                   :GenericUncertainty ,
+                   :HighPassFilter ,
+                   :HoleBottomLocation ,
+                   :HoleDepth ,
+                   :HookLoad ,
+                   :HookPosition ,
+                   :HookVelocity ,
+                   :HookloadQuantity ,
+                   :HydraulicBranch ,
+                   :HydraulicConnectedState ,
+                   :HydraulicElementState ,
+                   :HydraulicJunction ,
+                   :HydraulicLogicalElement ,
+                   :HydraulicNetwork ,
+                   :Integration ,
+                   :LT ,
+                   :LWDLocation ,
+                   :LengthQuantity ,
+                   :Location ,
+                   :LowPassFilter ,
+                   :MassDensityQuantity ,
+                   :MassQuantity ,
+                   :MassRate ,
+                   :MeasurableQuantity ,
+                   :MeasurableQuantityUnitAssociation ,
+                   :MeasuredDepthToTrueVerticalDepthTransformation ,
+                   :MeasuredDepthTranslation ,
+                   :MeasurementDevice ,
+                   :MechanicalBlock ,
+                   :MechanicalElementState ,
+                   :MechanicalLogicalElement ,
+                   :MechanicallyClosedState ,
+                   :MechanicallyConnectedState ,
+                   :MinMaxUncertainty ,
+                   :MovingAverage ,
+                   :MudMixing ,
+                   :MudPulseTelemetry ,
+                   :MudPump ,
+                   :MudPumpsControlSystem ,
+                   :NorthEastFrame ,
+                   :NorthEastTVDFrame ,
+                   :NumberOfItemsRangeExtraction ,
+                   :NumberOfSampleMovingAverage ,
+                   :OneDimensionalCartesianReferenceFrame ,
+                   :OneDimensionalCurviLinearReferenceFrame ,
+                   :OneDimensionalReferenceFrame ,
+                   :OpenChannel ,
+                   :OpenHole ,
+                   :OpenHoleCenterLineFrame ,
+                   :Pipe ,
+                   :PolarReferenceFrame ,
+                   :PowerQuantity ,
+                   :PressureQuantity ,
+                   :PressureToEquivalentDensityTransformation ,
+                   :PressureToForceTransformation ,
+                   :ProportionQuantity ,
+                   :Pump ,
+                   :PumpRate ,
+                   :PumpRateQuantity ,
+                   :Quantity ,
+                   :ROP ,
+                   :RangeExtraction ,
+                   :RectangularChannel ,
+                   :ReferenceFrame ,
+                   :ReferenceLocation ,
+                   :RelativeUncertainty ,
+                   :Resampling ,
+                   :Resistivity ,
+                   :ReturnFlowLine ,
+                   :RockDensityQuantity ,
+                   :SPP ,
+                   :SPPQuantity ,
+                   :SemiCircularChannel ,
+                   :SensorUncertainty ,
+                   :ShaleShakers ,
+                   :SignalProcessingUnit ,
+                   :SignalUncertainty ,
+                   :Slips ,
+                   :SphericalReferenceFrame ,
+                   :StandPipe ,
+                   :SupportLine ,
+                   :SurfaceRPM ,
+                   :SurfaceRPMQuantity ,
+                   :SurfaceTorque ,
+                   :SurfaceTorqueQuantity ,
+                   :SynchronizationGroup ,
+                   :TVDQuantity ,
+                   :Telemetry ,
+                   :TemperatureIn ,
+                   :TemperatureOut ,
+                   :TemperatureQuantity ,
+                   :ThreeDimensionalReferenceFrame ,
+                   :ThreeWayManifold ,
+                   :ThreeWayValve ,
+                   :ThreeWayValveInternalValve ,
+                   :TimeBasedTransformation ,
+                   :TimeWindowMovingAverage ,
+                   :TimeWindowRangeExtraction ,
+                   :TopDrive ,
+                   :TopDriveBody ,
+                   :TopDriveControlSystem ,
+                   :TopDriveHook ,
+                   :TopDriveShaft ,
+                   :TopOfStringForceQuantity ,
+                   :TopOfStringPosition ,
+                   :TopSideTelemetry ,
+                   :TopsideHydraulicNetwork ,
+                   :TorqueQuantity ,
+                   :TorqueToForceTransformation ,
+                   :Transformation ,
+                   :TransmissionLine ,
+                   :TravellingBlock ,
+                   :TwoDimensionalReferenceFrame ,
+                   :UnderReamer ,
+                   :Unit ,
+                   :UnitSystem ,
+                   :UserInterface ,
+                   :ValidityCondition ,
+                   :VelocityQuantity ,
+                   :VerticalDepthFrame ,
+                   :VolumeQuantity ,
+                   :VolumetricRateQuantity ,
+                   :WOB ,
+                   :WOBQuantity ,
+                   :WellboreCenterLineFrame ,
+                   :WiredPipeTelemetry ,
+                   :WitsMLTimeBasedLogEndPoint ;
+       rdfs:range xsd:string .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#IsValid
+dds:IsValid rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :ActiveVolume ,
+                        :BitDepth ,
+                        :DensityIn ,
+                        :DensityOut ,
+                        :DownholeECD ,
+                        :DownholePressure ,
+                        :DownholeRPM ,
+                        :DownholeTemperature ,
+                        :DownholeTorque ,
+                        :DrillingData ,
+                        :FlowRateIn ,
+                        :FlowRateOut ,
+                        :HoleDepth ,
+                        :HookLoad ,
+                        :HookPosition ,
+                        :HookVelocity ,
+                        :PumpRate ,
+                        :ROP ,
+                        :SPP ,
+                        :SurfaceRPM ,
+                        :SurfaceTorque ,
+                        :TemperatureIn ,
+                        :TemperatureOut ,
+                        :TopOfStringPosition ,
+                        :WOB ;
+            rdfs:range xsd:boolean .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#LogName
+dds:LogName rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :WitsMLTimeBasedLogEndPoint ;
+            rdfs:range xsd:string .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#LogUID
+dds:LogUID rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :WitsMLTimeBasedLogEndPoint ;
+           rdfs:range xsd:string .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#MeasurementIndex
+dds:MeasurementIndex rdf:type owl:DatatypeProperty ,
+                              owl:FunctionalProperty ;
+                     rdfs:domain :EndPointMapping ;
+                     rdfs:range xsd:integer .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#Mnemonic
+dds:Mnemonic rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :WitsMLTimeBasedLogEndPoint ;
+             rdfs:range xsd:string .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#Name
+dds:Name rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :AccelerationQuantity ,
+                     :ActiveLine ,
+                     :ActivePit ,
+                     :ActiveVolume ,
+                     :Aggregation ,
+                     :Annular ,
+                     :AreaQuantity ,
+                     :BHAAnnular ,
+                     :BHAInner ,
+                     :BandPassFilter ,
+                     :BellNipple ,
+                     :Bit ,
+                     :BitDepth ,
+                     :BitReferenceLocation ,
+                     :BitTorqueQuantity ,
+                     :BlockAccelerationQuantity ,
+                     :BlockPositionQuantity ,
+                     :BlockVelocityQuantity ,
+                     :Buffering ,
+                     :CartesianThreeDimensionalReferenceFrame ,
+                     :CartesianTwoDimensionalReferenceFrame ,
+                     :CasingShoeLocation ,
+                     :CementPump ,
+                     :Clock ,
+                     :ComputationUnit ,
+                     :ConnectedCondition ,
+                     :ControlSystem ,
+                     :Controller ,
+                     :CrownBlock ,
+                     :CurviLinearFrenetSerretReferenceFrame ,
+                     :CylindricalReferenceFrame ,
+                     :DataEndPoint ,
+                     :DataFlowNode ,
+                     :DataProvider ,
+                     :DeadLine ,
+                     :DeadLineAnchor ,
+                     :DensityIn ,
+                     :DensityOut ,
+                     :DepthAndAngleFrame ,
+                     :DepthQuantity ,
+                     :Derivation ,
+                     :DirectTransformation ,
+                     :Dolly ,
+                     :DollyRail ,
+                     :DownHoleTelemetry ,
+                     :DownholeECD ,
+                     :DownholeHydraulicNetwork ,
+                     :DownholePressure ,
+                     :DownholePressureQuantity ,
+                     :DownholeRPM ,
+                     :DownholeTemperature ,
+                     :DownholeTorque ,
+                     :DrawWorks ,
+                     :DrawWorksControlSystem ,
+                     :DrillFloorReferenceLocation ,
+                     :DrillLine ,
+                     :DrillLineFastener ,
+                     :DrillPipesAnnular ,
+                     :DrillPipesInner ,
+                     :DrillString ,
+                     :DrillStringCenterLineFrame ,
+                     :DrillingData ,
+                     :DrillingEquipment ,
+                     :DrillingSignal ,
+                     :DynamicDrillingSignal ,
+                     :EMWQuantity ,
+                     :EQ ,
+                     :ElectricResistivityQuantity ,
+                     :Elevator ,
+                     :EndPointMapping ,
+                     :Filter ,
+                     :FlowRateIn ,
+                     :FlowRateOut ,
+                     :FlowRateQuantity ,
+                     :FluidDensityInQuantity ,
+                     :FluidTemperatureInQuantity ,
+                     :ForceFromLoadPinsTransformation ,
+                     :ForceQuantity ,
+                     :ForceToLoadTransformation ,
+                     :FormationPorosityQuantity ,
+                     :FourDimensionalReferenceFrame ,
+                     :FrenetSerretReferenceFrame ,
+                     :FrequencyQuantity ,
+                     :GT ,
+                     :GateValve ,
+                     :GaussianUncertainty ,
+                     :GenericUncertainty ,
+                     :HighPassFilter ,
+                     :HoleBottomLocation ,
+                     :HoleDepth ,
+                     :HookLoad ,
+                     :HookPosition ,
+                     :HookVelocity ,
+                     :HookloadQuantity ,
+                     :HydraulicBranch ,
+                     :HydraulicConnectedState ,
+                     :HydraulicElementState ,
+                     :HydraulicJunction ,
+                     :HydraulicLogicalElement ,
+                     :HydraulicNetwork ,
+                     :Integration ,
+                     :LT ,
+                     :LWDLocation ,
+                     :LengthQuantity ,
+                     :Location ,
+                     :LowPassFilter ,
+                     :MassDensityQuantity ,
+                     :MassQuantity ,
+                     :MassRate ,
+                     :MeasurableQuantity ,
+                     :MeasurableQuantityUnitAssociation ,
+                     :MeasuredDepthToTrueVerticalDepthTransformation ,
+                     :MeasuredDepthTranslation ,
+                     :MeasurementDevice ,
+                     :MechanicalBlock ,
+                     :MechanicalElementState ,
+                     :MechanicalLogicalElement ,
+                     :MechanicallyClosedState ,
+                     :MechanicallyConnectedState ,
+                     :MinMaxUncertainty ,
+                     :MovingAverage ,
+                     :MudMixing ,
+                     :MudPulseTelemetry ,
+                     :MudPump ,
+                     :MudPumpsControlSystem ,
+                     :NorthEastFrame ,
+                     :NorthEastTVDFrame ,
+                     :NumberOfItemsRangeExtraction ,
+                     :NumberOfSampleMovingAverage ,
+                     :OneDimensionalCartesianReferenceFrame ,
+                     :OneDimensionalCurviLinearReferenceFrame ,
+                     :OneDimensionalReferenceFrame ,
+                     :OpenChannel ,
+                     :OpenHole ,
+                     :OpenHoleCenterLineFrame ,
+                     :Pipe ,
+                     :PolarReferenceFrame ,
+                     :PowerQuantity ,
+                     :PressureQuantity ,
+                     :PressureToEquivalentDensityTransformation ,
+                     :PressureToForceTransformation ,
+                     :ProportionQuantity ,
+                     :Pump ,
+                     :PumpRate ,
+                     :PumpRateQuantity ,
+                     :Quantity ,
+                     :ROP ,
+                     :RangeExtraction ,
+                     :RectangularChannel ,
+                     :ReferenceFrame ,
+                     :ReferenceLocation ,
+                     :RelativeUncertainty ,
+                     :Resampling ,
+                     :Resistivity ,
+                     :ReturnFlowLine ,
+                     :RockDensityQuantity ,
+                     :SPP ,
+                     :SPPQuantity ,
+                     :SemiCircularChannel ,
+                     :SensorUncertainty ,
+                     :ShaleShakers ,
+                     :SignalProcessingUnit ,
+                     :SignalUncertainty ,
+                     :Slips ,
+                     :SphericalReferenceFrame ,
+                     :StandPipe ,
+                     :SupportLine ,
+                     :SurfaceRPM ,
+                     :SurfaceRPMQuantity ,
+                     :SurfaceTorque ,
+                     :SurfaceTorqueQuantity ,
+                     :SynchronizationGroup ,
+                     :TVDQuantity ,
+                     :Telemetry ,
+                     :TemperatureIn ,
+                     :TemperatureOut ,
+                     :TemperatureQuantity ,
+                     :ThreeDimensionalReferenceFrame ,
+                     :ThreeWayManifold ,
+                     :ThreeWayValve ,
+                     :ThreeWayValveInternalValve ,
+                     :TimeBasedTransformation ,
+                     :TimeWindowMovingAverage ,
+                     :TimeWindowRangeExtraction ,
+                     :TopDrive ,
+                     :TopDriveBody ,
+                     :TopDriveControlSystem ,
+                     :TopDriveHook ,
+                     :TopDriveShaft ,
+                     :TopOfStringForceQuantity ,
+                     :TopOfStringPosition ,
+                     :TopSideTelemetry ,
+                     :TopsideHydraulicNetwork ,
+                     :TorqueQuantity ,
+                     :TorqueToForceTransformation ,
+                     :Transformation ,
+                     :TransmissionLine ,
+                     :TravellingBlock ,
+                     :TwoDimensionalReferenceFrame ,
+                     :UnderReamer ,
+                     :Unit ,
+                     :UnitSystem ,
+                     :UserInterface ,
+                     :ValidityCondition ,
+                     :VelocityQuantity ,
+                     :VerticalDepthFrame ,
+                     :VolumeQuantity ,
+                     :VolumetricRateQuantity ,
+                     :WOB ,
+                     :WOBQuantity ,
+                     :WellboreCenterLineFrame ,
+                     :WiredPipeTelemetry ,
+                     :WitsMLTimeBasedLogEndPoint ;
+         rdfs:range xsd:string .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#Order
+dds:Order rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :ActiveVolume ,
+                      :BitDepth ,
+                      :DensityIn ,
+                      :DensityOut ,
+                      :DownholeECD ,
+                      :DownholePressure ,
+                      :DownholeRPM ,
+                      :DownholeTemperature ,
+                      :DownholeTorque ,
+                      :DrillingData ,
+                      :FlowRateIn ,
+                      :FlowRateOut ,
+                      :HoleDepth ,
+                      :HookLoad ,
+                      :HookPosition ,
+                      :HookVelocity ,
+                      :PumpRate ,
+                      :ROP ,
+                      :SPP ,
+                      :SurfaceRPM ,
+                      :SurfaceTorque ,
+                      :TemperatureIn ,
+                      :TemperatureOut ,
+                      :TopOfStringPosition ,
+                      :WOB ;
+          rdfs:range xsd:integer .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#ProviderName
+dds:ProviderName rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain :DataProvider ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#RefreshRate
+dds:RefreshRate rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :ActiveVolume ,
+                            :BitDepth ,
+                            :DensityIn ,
+                            :DensityOut ,
+                            :DownholeECD ,
+                            :DownholePressure ,
+                            :DownholeRPM ,
+                            :DownholeTemperature ,
+                            :DownholeTorque ,
+                            :DrillingData ,
+                            :FlowRateIn ,
+                            :FlowRateOut ,
+                            :HoleDepth ,
+                            :HookLoad ,
+                            :HookPosition ,
+                            :HookVelocity ,
+                            :PumpRate ,
+                            :ROP ,
+                            :SPP ,
+                            :SurfaceRPM ,
+                            :SurfaceTorque ,
+                            :TemperatureIn ,
+                            :TemperatureOut ,
+                            :TopOfStringPosition ,
+                            :WOB ;
+                rdfs:range xsd:double .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#TimeStampAcquisition
+dds:TimeStampAcquisition rdf:type owl:DatatypeProperty ,
+                                  owl:FunctionalProperty ;
+                         rdfs:domain :DynamicDrillingSignal ;
+                         rdfs:range xsd:datetime .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#TimeStampModified
+dds:TimeStampModified rdf:type owl:DatatypeProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:domain :AccelerationQuantity ,
+                                  :ActiveLine ,
+                                  :ActivePit ,
+                                  :ActiveVolume ,
+                                  :Aggregation ,
+                                  :Annular ,
+                                  :AreaQuantity ,
+                                  :BHAAnnular ,
+                                  :BHAInner ,
+                                  :BandPassFilter ,
+                                  :BellNipple ,
+                                  :Bit ,
+                                  :BitDepth ,
+                                  :BitReferenceLocation ,
+                                  :BitTorqueQuantity ,
+                                  :BlockAccelerationQuantity ,
+                                  :BlockPositionQuantity ,
+                                  :BlockVelocityQuantity ,
+                                  :Buffering ,
+                                  :CartesianThreeDimensionalReferenceFrame ,
+                                  :CartesianTwoDimensionalReferenceFrame ,
+                                  :CasingShoeLocation ,
+                                  :CementPump ,
+                                  :Clock ,
+                                  :ComputationUnit ,
+                                  :ConnectedCondition ,
+                                  :ControlSystem ,
+                                  :Controller ,
+                                  :CrownBlock ,
+                                  :CurviLinearFrenetSerretReferenceFrame ,
+                                  :CylindricalReferenceFrame ,
+                                  :DataEndPoint ,
+                                  :DataFlowNode ,
+                                  :DataProvider ,
+                                  :DeadLine ,
+                                  :DeadLineAnchor ,
+                                  :DensityIn ,
+                                  :DensityOut ,
+                                  :DepthAndAngleFrame ,
+                                  :DepthQuantity ,
+                                  :Derivation ,
+                                  :DirectTransformation ,
+                                  :Dolly ,
+                                  :DollyRail ,
+                                  :DownHoleTelemetry ,
+                                  :DownholeECD ,
+                                  :DownholeHydraulicNetwork ,
+                                  :DownholePressure ,
+                                  :DownholePressureQuantity ,
+                                  :DownholeRPM ,
+                                  :DownholeTemperature ,
+                                  :DownholeTorque ,
+                                  :DrawWorks ,
+                                  :DrawWorksControlSystem ,
+                                  :DrillFloorReferenceLocation ,
+                                  :DrillLine ,
+                                  :DrillLineFastener ,
+                                  :DrillPipesAnnular ,
+                                  :DrillPipesInner ,
+                                  :DrillString ,
+                                  :DrillStringCenterLineFrame ,
+                                  :DrillingData ,
+                                  :DrillingEquipment ,
+                                  :DrillingSignal ,
+                                  :DynamicDrillingSignal ,
+                                  :EMWQuantity ,
+                                  :EQ ,
+                                  :ElectricResistivityQuantity ,
+                                  :Elevator ,
+                                  :EndPointMapping ,
+                                  :Filter ,
+                                  :FlowRateIn ,
+                                  :FlowRateOut ,
+                                  :FlowRateQuantity ,
+                                  :FluidDensityInQuantity ,
+                                  :FluidTemperatureInQuantity ,
+                                  :ForceFromLoadPinsTransformation ,
+                                  :ForceQuantity ,
+                                  :ForceToLoadTransformation ,
+                                  :FormationPorosityQuantity ,
+                                  :FourDimensionalReferenceFrame ,
+                                  :FrenetSerretReferenceFrame ,
+                                  :FrequencyQuantity ,
+                                  :GT ,
+                                  :GateValve ,
+                                  :GaussianUncertainty ,
+                                  :GenericUncertainty ,
+                                  :HighPassFilter ,
+                                  :HoleBottomLocation ,
+                                  :HoleDepth ,
+                                  :HookLoad ,
+                                  :HookPosition ,
+                                  :HookVelocity ,
+                                  :HookloadQuantity ,
+                                  :HydraulicBranch ,
+                                  :HydraulicConnectedState ,
+                                  :HydraulicElementState ,
+                                  :HydraulicJunction ,
+                                  :HydraulicLogicalElement ,
+                                  :HydraulicNetwork ,
+                                  :Integration ,
+                                  :LT ,
+                                  :LWDLocation ,
+                                  :LengthQuantity ,
+                                  :Location ,
+                                  :LowPassFilter ,
+                                  :MassDensityQuantity ,
+                                  :MassQuantity ,
+                                  :MassRate ,
+                                  :MeasurableQuantity ,
+                                  :MeasurableQuantityUnitAssociation ,
+                                  :MeasuredDepthToTrueVerticalDepthTransformation ,
+                                  :MeasuredDepthTranslation ,
+                                  :MeasurementDevice ,
+                                  :MechanicalBlock ,
+                                  :MechanicalElementState ,
+                                  :MechanicalLogicalElement ,
+                                  :MechanicallyClosedState ,
+                                  :MechanicallyConnectedState ,
+                                  :MinMaxUncertainty ,
+                                  :MovingAverage ,
+                                  :MudMixing ,
+                                  :MudPulseTelemetry ,
+                                  :MudPump ,
+                                  :MudPumpsControlSystem ,
+                                  :NorthEastFrame ,
+                                  :NorthEastTVDFrame ,
+                                  :NumberOfItemsRangeExtraction ,
+                                  :NumberOfSampleMovingAverage ,
+                                  :OneDimensionalCartesianReferenceFrame ,
+                                  :OneDimensionalCurviLinearReferenceFrame ,
+                                  :OneDimensionalReferenceFrame ,
+                                  :OpenChannel ,
+                                  :OpenHole ,
+                                  :OpenHoleCenterLineFrame ,
+                                  :Pipe ,
+                                  :PolarReferenceFrame ,
+                                  :PowerQuantity ,
+                                  :PressureQuantity ,
+                                  :PressureToEquivalentDensityTransformation ,
+                                  :PressureToForceTransformation ,
+                                  :ProportionQuantity ,
+                                  :Pump ,
+                                  :PumpRate ,
+                                  :PumpRateQuantity ,
+                                  :Quantity ,
+                                  :ROP ,
+                                  :RangeExtraction ,
+                                  :RectangularChannel ,
+                                  :ReferenceFrame ,
+                                  :ReferenceLocation ,
+                                  :RelativeUncertainty ,
+                                  :Resampling ,
+                                  :Resistivity ,
+                                  :ReturnFlowLine ,
+                                  :RockDensityQuantity ,
+                                  :SPP ,
+                                  :SPPQuantity ,
+                                  :SemiCircularChannel ,
+                                  :SensorUncertainty ,
+                                  :ShaleShakers ,
+                                  :SignalProcessingUnit ,
+                                  :SignalUncertainty ,
+                                  :Slips ,
+                                  :SphericalReferenceFrame ,
+                                  :StandPipe ,
+                                  :SupportLine ,
+                                  :SurfaceRPM ,
+                                  :SurfaceRPMQuantity ,
+                                  :SurfaceTorque ,
+                                  :SurfaceTorqueQuantity ,
+                                  :SynchronizationGroup ,
+                                  :TVDQuantity ,
+                                  :Telemetry ,
+                                  :TemperatureIn ,
+                                  :TemperatureOut ,
+                                  :TemperatureQuantity ,
+                                  :ThreeDimensionalReferenceFrame ,
+                                  :ThreeWayManifold ,
+                                  :ThreeWayValve ,
+                                  :ThreeWayValveInternalValve ,
+                                  :TimeBasedTransformation ,
+                                  :TimeWindowMovingAverage ,
+                                  :TimeWindowRangeExtraction ,
+                                  :TopDrive ,
+                                  :TopDriveBody ,
+                                  :TopDriveControlSystem ,
+                                  :TopDriveHook ,
+                                  :TopDriveShaft ,
+                                  :TopOfStringForceQuantity ,
+                                  :TopOfStringPosition ,
+                                  :TopSideTelemetry ,
+                                  :TopsideHydraulicNetwork ,
+                                  :TorqueQuantity ,
+                                  :TorqueToForceTransformation ,
+                                  :Transformation ,
+                                  :TransmissionLine ,
+                                  :TravellingBlock ,
+                                  :TwoDimensionalReferenceFrame ,
+                                  :UnderReamer ,
+                                  :Unit ,
+                                  :UnitSystem ,
+                                  :UserInterface ,
+                                  :ValidityCondition ,
+                                  :VelocityQuantity ,
+                                  :VerticalDepthFrame ,
+                                  :VolumeQuantity ,
+                                  :VolumetricRateQuantity ,
+                                  :WOB ,
+                                  :WOBQuantity ,
+                                  :WellboreCenterLineFrame ,
+                                  :WiredPipeTelemetry ,
+                                  :WitsMLTimeBasedLogEndPoint ;
+                      rdfs:range xsd:datetime .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#Value
+dds:Value rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :DrillingSignal ,
+                      :DynamicDrillingSignal ;
+          rdfs:range xsd:string .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#ValuesIndices
+dds:ValuesIndices rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain :EndPointMapping ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#WellName
+dds:WellName rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :WitsMLTimeBasedLogEndPoint ;
+             rdfs:range xsd:string .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#WellUID
+dds:WellUID rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :WitsMLTimeBasedLogEndPoint ;
+            rdfs:range xsd:string .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#WellboreName
+dds:WellboreName rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain :WitsMLTimeBasedLogEndPoint ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/DrillingDataSemantics#WellboreUID
+dds:WellboreUID rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :WitsMLTimeBasedLogEndPoint ;
+                rdfs:range xsd:string .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/Hydraulics#LeftToRight
+hyd:LeftToRight rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :HydraulicJunction ,
+                            :MudMixing ;
+                rdfs:range xsd:boolean .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/Hydraulics#RightToLeft
+hyd:RightToLeft rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :HydraulicJunction ,
+                            :MudMixing ;
+                rdfs:range xsd:boolean .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/Hydraulics#Value
+hyd:Value rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :HydraulicConnectedState ;
+          rdfs:range xsd:boolean .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/Mechanics#Value
+mcs:Value rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :MechanicallyClosedState ,
+                      :MechanicallyConnectedState ;
+          rdfs:range xsd:boolean .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/PhysicalLocation#PositiveUpward
+phloc:PositiveUpward rdf:type owl:DatatypeProperty ,
+                              owl:FunctionalProperty ;
+                     rdfs:domain :DrillStringCenterLineFrame ,
+                                 :WellboreCenterLineFrame ;
+                     rdfs:range xsd:boolean .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/Quantities#ConversionFactorA
+quant:ConversionFactorA rdf:type owl:DatatypeProperty ,
+                                 owl:FunctionalProperty ;
+                        rdfs:domain :Unit ;
+                        rdfs:range xsd:double .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/Quantities#ConversionFactorB
+quant:ConversionFactorB rdf:type owl:DatatypeProperty ,
+                                 owl:FunctionalProperty ;
+                        rdfs:domain :Unit ;
+                        rdfs:range xsd:double .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/Quantities#I
+quant:I rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :AccelerationQuantity ,
+                    :AreaQuantity ,
+                    :ElectricResistivityQuantity ,
+                    :ForceQuantity ,
+                    :FrequencyQuantity ,
+                    :LengthQuantity ,
+                    :MassDensityQuantity ,
+                    :MassQuantity ,
+                    :MassRate ,
+                    :PowerQuantity ,
+                    :PressureQuantity ,
+                    :ProportionQuantity ,
+                    :Quantity ,
+                    :TemperatureQuantity ,
+                    :TorqueQuantity ,
+                    :VelocityQuantity ,
+                    :VolumeQuantity ,
+                    :VolumetricRateQuantity ;
+        rdfs:range xsd:integer .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/Quantities#J
+quant:J rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :AccelerationQuantity ,
+                    :AreaQuantity ,
+                    :ElectricResistivityQuantity ,
+                    :ForceQuantity ,
+                    :FrequencyQuantity ,
+                    :LengthQuantity ,
+                    :MassDensityQuantity ,
+                    :MassQuantity ,
+                    :MassRate ,
+                    :PowerQuantity ,
+                    :PressureQuantity ,
+                    :ProportionQuantity ,
+                    :Quantity ,
+                    :TemperatureQuantity ,
+                    :TorqueQuantity ,
+                    :VelocityQuantity ,
+                    :VolumeQuantity ,
+                    :VolumetricRateQuantity ;
+        rdfs:range xsd:integer .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/Quantities#L
+quant:L rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :AccelerationQuantity ,
+                    :AreaQuantity ,
+                    :ElectricResistivityQuantity ,
+                    :ForceQuantity ,
+                    :FrequencyQuantity ,
+                    :LengthQuantity ,
+                    :MassDensityQuantity ,
+                    :MassQuantity ,
+                    :MassRate ,
+                    :PowerQuantity ,
+                    :PressureQuantity ,
+                    :ProportionQuantity ,
+                    :Quantity ,
+                    :TemperatureQuantity ,
+                    :TorqueQuantity ,
+                    :VelocityQuantity ,
+                    :VolumeQuantity ,
+                    :VolumetricRateQuantity ;
+        rdfs:range xsd:integer .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/Quantities#M
+quant:M rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :AccelerationQuantity ,
+                    :AreaQuantity ,
+                    :ElectricResistivityQuantity ,
+                    :ForceQuantity ,
+                    :FrequencyQuantity ,
+                    :LengthQuantity ,
+                    :MassDensityQuantity ,
+                    :MassQuantity ,
+                    :MassRate ,
+                    :PowerQuantity ,
+                    :PressureQuantity ,
+                    :ProportionQuantity ,
+                    :Quantity ,
+                    :TemperatureQuantity ,
+                    :TorqueQuantity ,
+                    :VelocityQuantity ,
+                    :VolumeQuantity ,
+                    :VolumetricRateQuantity ;
+        rdfs:range xsd:integer .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/Quantities#MeaningfulPrecision
+quant:MeaningfulPrecision rdf:type owl:DatatypeProperty ,
+                                   owl:FunctionalProperty ;
+                          rdfs:domain :BitTorqueQuantity ,
+                                      :BlockAccelerationQuantity ,
+                                      :BlockPositionQuantity ,
+                                      :BlockVelocityQuantity ,
+                                      :DepthQuantity ,
+                                      :DownholePressureQuantity ,
+                                      :EMWQuantity ,
+                                      :FlowRateQuantity ,
+                                      :FluidDensityInQuantity ,
+                                      :FluidTemperatureInQuantity ,
+                                      :FormationPorosityQuantity ,
+                                      :HookloadQuantity ,
+                                      :MeasurableQuantity ,
+                                      :PumpRateQuantity ,
+                                      :Resistivity ,
+                                      :RockDensityQuantity ,
+                                      :SPPQuantity ,
+                                      :SurfaceRPMQuantity ,
+                                      :SurfaceTorqueQuantity ,
+                                      :TVDQuantity ,
+                                      :TopOfStringForceQuantity ,
+                                      :WOBQuantity ;
+                          rdfs:range xsd:double .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/Quantities#N
+quant:N rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :AccelerationQuantity ,
+                    :AreaQuantity ,
+                    :ElectricResistivityQuantity ,
+                    :ForceQuantity ,
+                    :FrequencyQuantity ,
+                    :LengthQuantity ,
+                    :MassDensityQuantity ,
+                    :MassQuantity ,
+                    :MassRate ,
+                    :PowerQuantity ,
+                    :PressureQuantity ,
+                    :ProportionQuantity ,
+                    :Quantity ,
+                    :TemperatureQuantity ,
+                    :TorqueQuantity ,
+                    :VelocityQuantity ,
+                    :VolumeQuantity ,
+                    :VolumetricRateQuantity ;
+        rdfs:range xsd:integer .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/Quantities#SIUnit
+quant:SIUnit rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :AccelerationQuantity ,
+                         :AreaQuantity ,
+                         :ElectricResistivityQuantity ,
+                         :ForceQuantity ,
+                         :FrequencyQuantity ,
+                         :LengthQuantity ,
+                         :MassDensityQuantity ,
+                         :MassQuantity ,
+                         :MassRate ,
+                         :PowerQuantity ,
+                         :PressureQuantity ,
+                         :ProportionQuantity ,
+                         :Quantity ,
+                         :TemperatureQuantity ,
+                         :TorqueQuantity ,
+                         :VelocityQuantity ,
+                         :VolumeQuantity ,
+                         :VolumetricRateQuantity ;
+             rdfs:range xsd:string .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/Quantities#Symbol
+quant:Symbol rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Unit ;
+             rdfs:range xsd:string .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/Quantities#T
+quant:T rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :AccelerationQuantity ,
+                    :AreaQuantity ,
+                    :ElectricResistivityQuantity ,
+                    :ForceQuantity ,
+                    :FrequencyQuantity ,
+                    :LengthQuantity ,
+                    :MassDensityQuantity ,
+                    :MassQuantity ,
+                    :MassRate ,
+                    :PowerQuantity ,
+                    :PressureQuantity ,
+                    :ProportionQuantity ,
+                    :Quantity ,
+                    :TemperatureQuantity ,
+                    :TorqueQuantity ,
+                    :VelocityQuantity ,
+                    :VolumeQuantity ,
+                    :VolumetricRateQuantity ;
+        rdfs:range xsd:integer .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/Quantities#ThT
+quant:ThT rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :AccelerationQuantity ,
+                      :AreaQuantity ,
+                      :ElectricResistivityQuantity ,
+                      :ForceQuantity ,
+                      :FrequencyQuantity ,
+                      :LengthQuantity ,
+                      :MassDensityQuantity ,
+                      :MassQuantity ,
+                      :MassRate ,
+                      :PowerQuantity ,
+                      :PressureQuantity ,
+                      :ProportionQuantity ,
+                      :Quantity ,
+                      :TemperatureQuantity ,
+                      :TorqueQuantity ,
+                      :VelocityQuantity ,
+                      :VolumeQuantity ,
+                      :VolumetricRateQuantity ;
+          rdfs:range xsd:integer .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/TimeManagement#LeapSeconds
+tmana:LeapSeconds rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain :Clock ;
+                  rdfs:range xsd:integer .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/TimeManagement#MaximumFluctuations
+tmana:MaximumFluctuations rdf:type owl:DatatypeProperty ,
+                                   owl:FunctionalProperty ;
+                          rdfs:domain :Clock ;
+                          rdfs:range xsd:double .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/TimeManagement#NetworkSynchronizationLatencyAverage
+tmana:NetworkSynchronizationLatencyAverage rdf:type owl:DatatypeProperty ,
+                                                    owl:FunctionalProperty ;
+                                           rdfs:domain :Clock ;
+                                           rdfs:range xsd:double .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/TimeManagement#NetworkSynchronizationLatencyStandardDeviation
+tmana:NetworkSynchronizationLatencyStandardDeviation rdf:type owl:DatatypeProperty ,
+                                                              owl:FunctionalProperty ;
+                                                     rdfs:domain :Clock ;
+                                                     rdfs:range xsd:double .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/TimeManagement#Resolution
+tmana:Resolution rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain :Clock ;
+                 rdfs:range xsd:double .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/TimeManagement#SamplingRate
+tmana:SamplingRate rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain :SynchronizationGroup ;
+                   rdfs:range xsd:double .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/TimeManagement#Stratum
+tmana:Stratum rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :Clock ;
+              rdfs:range xsd:integer .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/TimeManagement#SynchronizationDelay
+tmana:SynchronizationDelay rdf:type owl:DatatypeProperty ,
+                                    owl:FunctionalProperty ;
+                           rdfs:domain :SynchronizationGroup ;
+                           rdfs:range xsd:double .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#AccelerationQuantity
+:AccelerationQuantity rdf:type owl:Class ;
+                      rdfs:subClassOf :Quantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#ActiveLine
+:ActiveLine rdf:type owl:Class ;
+            rdfs:subClassOf :DrillLine .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#ActivePit
+:ActivePit rdf:type owl:Class ;
+           rdfs:subClassOf :DrillingEquipment .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#ActiveVolume
+:ActiveVolume rdf:type owl:Class ;
+              rdfs:subClassOf :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#Aggregation
+:Aggregation rdf:type owl:Class ;
+             rdfs:subClassOf :DirectTransformation .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#Annular
+:Annular rdf:type owl:Class ;
+         rdfs:subClassOf :HydraulicBranch .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#AreaQuantity
+:AreaQuantity rdf:type owl:Class ;
+              rdfs:subClassOf :Quantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#BHAAnnular
+:BHAAnnular rdf:type owl:Class ;
+            rdfs:subClassOf :Annular .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#BHAInner
+:BHAInner rdf:type owl:Class ;
+          rdfs:subClassOf :Pipe .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#BandPassFilter
+:BandPassFilter rdf:type owl:Class ;
+                rdfs:subClassOf :Filter .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#BellNipple
+:BellNipple rdf:type owl:Class ;
+            rdfs:subClassOf :DrillingEquipment .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#Bit
+:Bit rdf:type owl:Class ;
+     rdfs:subClassOf :DrillingEquipment .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#BitDepth
+:BitDepth rdf:type owl:Class ;
+          rdfs:subClassOf :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#BitReferenceLocation
+:BitReferenceLocation rdf:type owl:Class ;
+                      rdfs:subClassOf :Location .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#BitTorqueQuantity
+:BitTorqueQuantity rdf:type owl:Class ;
+                   rdfs:subClassOf :MeasurableQuantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#BlockAccelerationQuantity
+:BlockAccelerationQuantity rdf:type owl:Class ;
+                           rdfs:subClassOf :MeasurableQuantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#BlockPositionQuantity
+:BlockPositionQuantity rdf:type owl:Class ;
+                       rdfs:subClassOf :MeasurableQuantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#BlockVelocityQuantity
+:BlockVelocityQuantity rdf:type owl:Class ;
+                       rdfs:subClassOf :MeasurableQuantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#Buffering
+:Buffering rdf:type owl:Class ;
+           rdfs:subClassOf :TimeBasedTransformation .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#CartesianThreeDimensionalReferenceFrame
+:CartesianThreeDimensionalReferenceFrame rdf:type owl:Class ;
+                                         rdfs:subClassOf :ThreeDimensionalReferenceFrame .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#CartesianTwoDimensionalReferenceFrame
+:CartesianTwoDimensionalReferenceFrame rdf:type owl:Class ;
+                                       rdfs:subClassOf :TwoDimensionalReferenceFrame .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#CasingShoeLocation
+:CasingShoeLocation rdf:type owl:Class ;
+                    rdfs:subClassOf :Location .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#CementPump
+:CementPump rdf:type owl:Class ;
+            rdfs:subClassOf :Pump .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#Clock
+:Clock rdf:type owl:Class ;
+       rdfs:subClassOf :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#ComputationUnit
+:ComputationUnit rdf:type owl:Class ;
+                 rdfs:subClassOf :DataFlowNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#ConnectedCondition
+:ConnectedCondition rdf:type owl:Class ;
+                    rdfs:subClassOf :ValidityCondition .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#ControlSystem
+:ControlSystem rdf:type owl:Class ;
+               rdfs:subClassOf :DataFlowNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#Controller
+:Controller rdf:type owl:Class ;
+            rdfs:subClassOf :DataFlowNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#CrownBlock
+:CrownBlock rdf:type owl:Class ;
+            rdfs:subClassOf :MechanicalBlock .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#CurviLinearFrenetSerretReferenceFrame
+:CurviLinearFrenetSerretReferenceFrame rdf:type owl:Class ;
+                                       rdfs:subClassOf :FourDimensionalReferenceFrame .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#CylindricalReferenceFrame
+:CylindricalReferenceFrame rdf:type owl:Class ;
+                           rdfs:subClassOf :ThreeDimensionalReferenceFrame .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DDHubNode
+:DDHubNode rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :Controls ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :HasHydraulicStateValueFrom ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :HasReferenceFrameOrigin ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :HasUncertaintyMax ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :HasUncertaintyMean ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :HasUncertaintyMin ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :HasUncertaintyRelativeValue ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :HasUncertaintyStandardDeviation ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsComputedBy ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsConditionLeft ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsConditionRight ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsDerivationInput ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsDerivedFrom ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsEquivalentCirculationDensityAt ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsFluidDensityAt ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsFluidTemperatureAt ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsFluidVelocityAt ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsHydraulicEstimationAt ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsHydraulicMaximumAllowedRateOfChangeAt ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsHydraulicMaximumAllowedValueAt ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsHydraulicMeasurementAt ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsIntegratedFrom ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsMassFlowRateAt ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsMeasuredBy ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsMechanicallyConnectTo ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsMechanicallyLocatedAt ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsObservableFrom ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsOfBaseQuantity ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsOfMeasurableQuantity ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsPhysicallyLocatedAt ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsPressureAt ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsPressureGradientAt ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsProcessedBy ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsProvidedBy ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DataProvider
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsRecordedFrom ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsTransmittedBy ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsValidBy ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :IsVolumetricFlowRateAt ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :StartsHydraulicBranchDecomposition ;
+                             owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DDHubNode
+                           ] .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DataEndPoint
+:DataEndPoint rdf:type owl:Class ;
+              rdfs:subClassOf :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DataFlowNode
+:DataFlowNode rdf:type owl:Class ;
+              rdfs:subClassOf :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DataProvider
+:DataProvider rdf:type owl:Class ;
+              rdfs:subClassOf :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DeadLine
+:DeadLine rdf:type owl:Class ;
+          rdfs:subClassOf :DrillLine .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DeadLineAnchor
+:DeadLineAnchor rdf:type owl:Class ;
+                rdfs:subClassOf :DrillLineFastener .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DensityIn
+:DensityIn rdf:type owl:Class ;
+           rdfs:subClassOf :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DensityOut
+:DensityOut rdf:type owl:Class ;
+            rdfs:subClassOf :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DepthAndAngleFrame
+:DepthAndAngleFrame rdf:type owl:Class ;
+                    rdfs:subClassOf :ReferenceFrame .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DepthQuantity
+:DepthQuantity rdf:type owl:Class ;
+               rdfs:subClassOf :MeasurableQuantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#Derivation
+:Derivation rdf:type owl:Class ;
+            rdfs:subClassOf :TimeBasedTransformation .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DirectTransformation
+:DirectTransformation rdf:type owl:Class ;
+                      rdfs:subClassOf :Transformation .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#Dolly
+:Dolly rdf:type owl:Class ;
+       rdfs:subClassOf :DrillingEquipment .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DollyRail
+:DollyRail rdf:type owl:Class ;
+           rdfs:subClassOf :DrillingEquipment .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DownHoleTelemetry
+:DownHoleTelemetry rdf:type owl:Class ;
+                   rdfs:subClassOf :Telemetry .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DownholeECD
+:DownholeECD rdf:type owl:Class ;
+             rdfs:subClassOf :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DownholeHydraulicNetwork
+:DownholeHydraulicNetwork rdf:type owl:Class ;
+                          rdfs:subClassOf :HydraulicNetwork .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DownholePressure
+:DownholePressure rdf:type owl:Class ;
+                  rdfs:subClassOf :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DownholePressureQuantity
+:DownholePressureQuantity rdf:type owl:Class ;
+                          rdfs:subClassOf :MeasurableQuantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DownholeRPM
+:DownholeRPM rdf:type owl:Class ;
+             rdfs:subClassOf :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DownholeTemperature
+:DownholeTemperature rdf:type owl:Class ;
+                     rdfs:subClassOf :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DownholeTorque
+:DownholeTorque rdf:type owl:Class ;
+                rdfs:subClassOf :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DrawWorks
+:DrawWorks rdf:type owl:Class ;
+           rdfs:subClassOf :DrillLineFastener .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DrawWorksControlSystem
+:DrawWorksControlSystem rdf:type owl:Class ;
+                        rdfs:subClassOf :ControlSystem .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DrillFloorReferenceLocation
+:DrillFloorReferenceLocation rdf:type owl:Class ;
+                             rdfs:subClassOf :Location .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DrillLine
+:DrillLine rdf:type owl:Class ;
+           rdfs:subClassOf :DrillingEquipment .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DrillLineFastener
+:DrillLineFastener rdf:type owl:Class ;
+                   rdfs:subClassOf :DrillingEquipment .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DrillPipesAnnular
+:DrillPipesAnnular rdf:type owl:Class ;
+                   rdfs:subClassOf :Annular .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DrillPipesInner
+:DrillPipesInner rdf:type owl:Class ;
+                 rdfs:subClassOf :Pipe .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DrillString
+:DrillString rdf:type owl:Class ;
+             rdfs:subClassOf :DrillingEquipment .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DrillStringCenterLineFrame
+:DrillStringCenterLineFrame rdf:type owl:Class ;
+                            rdfs:subClassOf :OneDimensionalCurviLinearReferenceFrame .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DrillingData
+:DrillingData rdf:type owl:Class ;
+              rdfs:subClassOf :DDHubNode ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :HasAcquisitionClock ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Clock
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :HasCoordinates ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :DrillingData
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :HasDomain ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :DrillingData
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :HasDynamicValue ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :DynamicDrillingSignal
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :HasFunction ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :DataFlowNode
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :HasPressureReference ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :DrillingData
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :HasSourceClock ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Clock
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :HasStaticValue ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :DrillingSignal
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :HasTemperatureReference ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :DrillingData
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :HasTimeIntervalDomain ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :DrillingData
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :HasTransmissionDelay ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :DrillingData
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :HasUncertainty ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :SignalUncertainty
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :HasValue ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :DrillingSignal
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :IsBufferingInput ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Buffering
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :IsBufferingOutput ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Buffering
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :IsCommandFor ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :DDHubNode
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :IsComputationInput ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :ComputationUnit
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :IsConditionInput ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :ValidityCondition
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :IsConditionedBy ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :ValidityCondition
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :IsDependentOn ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :DrillingData
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :IsGeneratedBy ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :DataFlowNode
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :IsHydraulicallyLocatedAt ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :HydraulicLogicalElement
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :IsLimitFor ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :ControlSystem
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :IsResampledBy ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Resampling
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :IsResamplingInput ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Resampling
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :IsSetPointFor ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Controller
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :IsSetPointRecommendationFor ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :ControlSystem
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :IsSynchronizationGroupInput ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :SynchronizationGroup
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :IsSynchronizationGroupOutput ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :SynchronizationGroup
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :IsTransformationInput ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Transformation
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :IsTransformationOutput ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :DataFlowNode
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :IsTransmissionInput ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :TransmissionLine
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :IsTransmissionOutput ;
+                                owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                owl:onClass :TransmissionLine
+                              ] .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DrillingEquipment
+:DrillingEquipment rdf:type owl:Class ;
+                   rdfs:subClassOf :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DrillingSignal
+:DrillingSignal rdf:type owl:Class ;
+                rdfs:subClassOf :DDHubNode ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :HasEndPoint ;
+                                  owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :DataEndPoint
+                                ] .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#DynamicDrillingSignal
+:DynamicDrillingSignal rdf:type owl:Class ;
+                       rdfs:subClassOf :DrillingSignal .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#EMWQuantity
+:EMWQuantity rdf:type owl:Class ;
+             rdfs:subClassOf :MeasurableQuantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#EQ
+:EQ rdf:type owl:Class ;
+    rdfs:subClassOf :ValidityCondition .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#ElectricResistivityQuantity
+:ElectricResistivityQuantity rdf:type owl:Class ;
+                             rdfs:subClassOf :Quantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#Elevator
+:Elevator rdf:type owl:Class ;
+          rdfs:subClassOf :DrillingEquipment .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#EndPointMapping
+:EndPointMapping rdf:type owl:Class ;
+                 rdfs:subClassOf :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#Filter
+:Filter rdf:type owl:Class ;
+        rdfs:subClassOf :SignalProcessingUnit .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#FlowRateIn
+:FlowRateIn rdf:type owl:Class ;
+            rdfs:subClassOf :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#FlowRateOut
+:FlowRateOut rdf:type owl:Class ;
+             rdfs:subClassOf :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#FlowRateQuantity
+:FlowRateQuantity rdf:type owl:Class ;
+                  rdfs:subClassOf :MeasurableQuantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#FluidDensityInQuantity
+:FluidDensityInQuantity rdf:type owl:Class ;
+                        rdfs:subClassOf :MeasurableQuantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#FluidTemperatureInQuantity
+:FluidTemperatureInQuantity rdf:type owl:Class ;
+                            rdfs:subClassOf :MeasurableQuantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#ForceFromLoadPinsTransformation
+:ForceFromLoadPinsTransformation rdf:type owl:Class ;
+                                 rdfs:subClassOf :DirectTransformation .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#ForceQuantity
+:ForceQuantity rdf:type owl:Class ;
+               rdfs:subClassOf :Quantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#ForceToLoadTransformation
+:ForceToLoadTransformation rdf:type owl:Class ;
+                           rdfs:subClassOf :DirectTransformation .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#FormationPorosityQuantity
+:FormationPorosityQuantity rdf:type owl:Class ;
+                           rdfs:subClassOf :MeasurableQuantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#FourDimensionalReferenceFrame
+:FourDimensionalReferenceFrame rdf:type owl:Class ;
+                               rdfs:subClassOf :ReferenceFrame .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#FrenetSerretReferenceFrame
+:FrenetSerretReferenceFrame rdf:type owl:Class ;
+                            rdfs:subClassOf :CartesianThreeDimensionalReferenceFrame .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#FrequencyQuantity
+:FrequencyQuantity rdf:type owl:Class ;
+                   rdfs:subClassOf :Quantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#GT
+:GT rdf:type owl:Class ;
+    rdfs:subClassOf :ValidityCondition .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#GateValve
+:GateValve rdf:type owl:Class ;
+           rdfs:subClassOf :DrillingEquipment .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#GaussianUncertainty
+:GaussianUncertainty rdf:type owl:Class ;
+                     rdfs:subClassOf :SignalUncertainty .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#GenericUncertainty
+:GenericUncertainty rdf:type owl:Class ;
+                    rdfs:subClassOf :SignalUncertainty .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HighPassFilter
+:HighPassFilter rdf:type owl:Class ;
+                rdfs:subClassOf :Filter .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HoleBottomLocation
+:HoleBottomLocation rdf:type owl:Class ;
+                    rdfs:subClassOf :Location .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HoleDepth
+:HoleDepth rdf:type owl:Class ;
+           rdfs:subClassOf :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HookLoad
+:HookLoad rdf:type owl:Class ;
+          rdfs:subClassOf :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HookPosition
+:HookPosition rdf:type owl:Class ;
+              rdfs:subClassOf :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HookVelocity
+:HookVelocity rdf:type owl:Class ;
+              rdfs:subClassOf :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HookloadQuantity
+:HookloadQuantity rdf:type owl:Class ;
+                  rdfs:subClassOf :MeasurableQuantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HydraulicBranch
+:HydraulicBranch rdf:type owl:Class ;
+                 rdfs:subClassOf :HydraulicLogicalElement ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :EndsHydraulicBranchDecomposition ;
+                                   owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                   owl:onClass :HydraulicBranch
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :HasBranchCoordinateSystem ;
+                                   owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                   owl:onClass :ReferenceFrame
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :HasEndJunction ;
+                                   owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                   owl:onClass :HydraulicJunction
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :HasStartJunction ;
+                                   owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                   owl:onClass :HydraulicJunction
+                                 ] .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HydraulicConnectedState
+:HydraulicConnectedState rdf:type owl:Class ;
+                         rdfs:subClassOf :HydraulicElementState .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HydraulicElementState
+:HydraulicElementState rdf:type owl:Class ;
+                       rdfs:subClassOf :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HydraulicJunction
+:HydraulicJunction rdf:type owl:Class ;
+                   rdfs:subClassOf :HydraulicLogicalElement ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :HasHydraulicState ;
+                                     owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :HydraulicElementState
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :HasLeftBranch ;
+                                     owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :HydraulicBranch
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :HasLeftBranchCoordinates ;
+                                     owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :DrillingData
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :HasRightBranch ;
+                                     owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :HydraulicBranch
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :HasRightBranchCoordinates ;
+                                     owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :DrillingData
+                                   ] .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HydraulicLogicalElement
+:HydraulicLogicalElement rdf:type owl:Class ;
+                         rdfs:subClassOf :DDHubNode ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :IsHydraulicConnectedTo ;
+                                           owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                           owl:onClass :HydraulicLogicalElement
+                                         ] .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#HydraulicNetwork
+:HydraulicNetwork rdf:type owl:Class ;
+                  rdfs:subClassOf :HydraulicLogicalElement ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :HasBranchComponent ;
+                                    owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :HydraulicBranch
+                                  ] .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#Integration
+:Integration rdf:type owl:Class ;
+             rdfs:subClassOf :TimeBasedTransformation .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#LT
+:LT rdf:type owl:Class ;
+    rdfs:subClassOf :ValidityCondition .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#LWDLocation
+:LWDLocation rdf:type owl:Class ;
+             rdfs:subClassOf :Location .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#LengthQuantity
+:LengthQuantity rdf:type owl:Class ;
+                rdfs:subClassOf :Quantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#Location
+:Location rdf:type owl:Class ;
+          rdfs:subClassOf :DDHubNode ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :HasReferenceFrame ;
+                            owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                            owl:onClass :ReferenceFrame
+                          ] .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#LowPassFilter
+:LowPassFilter rdf:type owl:Class ;
+               rdfs:subClassOf :Filter .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#MassDensityQuantity
+:MassDensityQuantity rdf:type owl:Class ;
+                     rdfs:subClassOf :Quantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#MassQuantity
+:MassQuantity rdf:type owl:Class ;
+              rdfs:subClassOf :Quantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#MassRate
+:MassRate rdf:type owl:Class ;
+          rdfs:subClassOf :Quantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#MeasurableQuantity
+:MeasurableQuantity rdf:type owl:Class ;
+                    rdfs:subClassOf :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#MeasurableQuantityUnitAssociation
+:MeasurableQuantityUnitAssociation rdf:type owl:Class ;
+                                   rdfs:subClassOf :DDHubNode ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :AssociatesMeasurableQuantity ;
+                                                     owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                                     owl:onClass :MeasurableQuantity
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :AssociatesUnit ;
+                                                     owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                                     owl:onClass :Unit
+                                                   ] .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#MeasuredDepthToTrueVerticalDepthTransformation
+:MeasuredDepthToTrueVerticalDepthTransformation rdf:type owl:Class ;
+                                                rdfs:subClassOf :DirectTransformation .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#MeasuredDepthTranslation
+:MeasuredDepthTranslation rdf:type owl:Class ;
+                          rdfs:subClassOf :DirectTransformation .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#MeasurementDevice
+:MeasurementDevice rdf:type owl:Class ;
+                   rdfs:subClassOf :DataFlowNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#MechanicalBlock
+:MechanicalBlock rdf:type owl:Class ;
+                 rdfs:subClassOf :DrillingEquipment .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#MechanicalElementState
+:MechanicalElementState rdf:type owl:Class ;
+                        rdfs:subClassOf :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#MechanicalLogicalElement
+:MechanicalLogicalElement rdf:type owl:Class ;
+                          rdfs:subClassOf :DDHubNode ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :HasMechanicalState ;
+                                            owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                            owl:onClass :MechanicalElementState
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :HasMechanicalStateValueFrom ;
+                                            owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                            owl:onClass :DrillingData
+                                          ] .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#MechanicallyClosedState
+:MechanicallyClosedState rdf:type owl:Class ;
+                         rdfs:subClassOf :MechanicalElementState .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#MechanicallyConnectedState
+:MechanicallyConnectedState rdf:type owl:Class ;
+                            rdfs:subClassOf :MechanicalElementState .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#MinMaxUncertainty
+:MinMaxUncertainty rdf:type owl:Class ;
+                   rdfs:subClassOf :SignalUncertainty .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#MovingAverage
+:MovingAverage rdf:type owl:Class ;
+               rdfs:subClassOf :Filter .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#MudMixing
+:MudMixing rdf:type owl:Class ;
+           rdfs:subClassOf :HydraulicJunction .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#MudPulseTelemetry
+:MudPulseTelemetry rdf:type owl:Class ;
+                   rdfs:subClassOf :DownHoleTelemetry .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#MudPump
+:MudPump rdf:type owl:Class ;
+         rdfs:subClassOf :Pump .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#MudPumpsControlSystem
+:MudPumpsControlSystem rdf:type owl:Class ;
+                       rdfs:subClassOf :ControlSystem .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#NorthEastFrame
+:NorthEastFrame rdf:type owl:Class ;
+                rdfs:subClassOf :CartesianTwoDimensionalReferenceFrame .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#NorthEastTVDFrame
+:NorthEastTVDFrame rdf:type owl:Class ;
+                   rdfs:subClassOf :CartesianThreeDimensionalReferenceFrame .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#NumberOfItemsRangeExtraction
+:NumberOfItemsRangeExtraction rdf:type owl:Class ;
+                              rdfs:subClassOf :RangeExtraction .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#NumberOfSampleMovingAverage
+:NumberOfSampleMovingAverage rdf:type owl:Class ;
+                             rdfs:subClassOf :MovingAverage .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#OneDimensionalCartesianReferenceFrame
+:OneDimensionalCartesianReferenceFrame rdf:type owl:Class ;
+                                       rdfs:subClassOf :OneDimensionalReferenceFrame .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#OneDimensionalCurviLinearReferenceFrame
+:OneDimensionalCurviLinearReferenceFrame rdf:type owl:Class ;
+                                         rdfs:subClassOf :OneDimensionalReferenceFrame .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#OneDimensionalReferenceFrame
+:OneDimensionalReferenceFrame rdf:type owl:Class ;
+                              rdfs:subClassOf :ReferenceFrame .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#OpenChannel
+:OpenChannel rdf:type owl:Class ;
+             rdfs:subClassOf :HydraulicBranch .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#OpenHole
+:OpenHole rdf:type owl:Class ;
+          rdfs:subClassOf :Pipe .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#OpenHoleCenterLineFrame
+:OpenHoleCenterLineFrame rdf:type owl:Class ;
+                         rdfs:subClassOf :OneDimensionalCurviLinearReferenceFrame .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#Pipe
+:Pipe rdf:type owl:Class ;
+      rdfs:subClassOf :HydraulicBranch .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#PolarReferenceFrame
+:PolarReferenceFrame rdf:type owl:Class ;
+                     rdfs:subClassOf :TwoDimensionalReferenceFrame .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#PowerQuantity
+:PowerQuantity rdf:type owl:Class ;
+               rdfs:subClassOf :Quantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#PressureQuantity
+:PressureQuantity rdf:type owl:Class ;
+                  rdfs:subClassOf :Quantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#PressureToEquivalentDensityTransformation
+:PressureToEquivalentDensityTransformation rdf:type owl:Class ;
+                                           rdfs:subClassOf :DirectTransformation .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#PressureToForceTransformation
+:PressureToForceTransformation rdf:type owl:Class ;
+                               rdfs:subClassOf :DirectTransformation .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#ProportionQuantity
+:ProportionQuantity rdf:type owl:Class ;
+                    rdfs:subClassOf :Quantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#Pump
+:Pump rdf:type owl:Class ;
+      rdfs:subClassOf :DrillingEquipment .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#PumpRate
+:PumpRate rdf:type owl:Class ;
+          rdfs:subClassOf :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#PumpRateQuantity
+:PumpRateQuantity rdf:type owl:Class ;
+                  rdfs:subClassOf :MeasurableQuantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#Quantity
+:Quantity rdf:type owl:Class ;
+          rdfs:subClassOf :DDHubNode ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :HasSIUnit ;
+                            owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Unit
+                          ] .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#ROP
+:ROP rdf:type owl:Class ;
+     rdfs:subClassOf :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#RangeExtraction
+:RangeExtraction rdf:type owl:Class ;
+                 rdfs:subClassOf :TimeBasedTransformation .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#RectangularChannel
+:RectangularChannel rdf:type owl:Class ;
+                    rdfs:subClassOf :OpenChannel .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#ReferenceFrame
+:ReferenceFrame rdf:type owl:Class ;
+                rdfs:subClassOf :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#ReferenceLocation
+:ReferenceLocation rdf:type owl:Class ;
+                   rdfs:subClassOf :Location .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#RelativeUncertainty
+:RelativeUncertainty rdf:type owl:Class ;
+                     rdfs:subClassOf :SignalUncertainty .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#Resampling
+:Resampling rdf:type owl:Class ;
+            rdfs:subClassOf :TimeBasedTransformation ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :BelongsToSynchronizationGroup ;
+                              owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                              owl:onClass :SynchronizationGroup
+                            ] .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#Resistivity
+:Resistivity rdf:type owl:Class ;
+             rdfs:subClassOf :MeasurableQuantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#ReturnFlowLine
+:ReturnFlowLine rdf:type owl:Class ;
+                rdfs:subClassOf :Pipe .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#RockDensityQuantity
+:RockDensityQuantity rdf:type owl:Class ;
+                     rdfs:subClassOf :MeasurableQuantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#SPP
+:SPP rdf:type owl:Class ;
+     rdfs:subClassOf :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#SPPQuantity
+:SPPQuantity rdf:type owl:Class ;
+             rdfs:subClassOf :MeasurableQuantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#SemiCircularChannel
+:SemiCircularChannel rdf:type owl:Class ;
+                     rdfs:subClassOf :OpenChannel .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#SensorUncertainty
+:SensorUncertainty rdf:type owl:Class ;
+                   rdfs:subClassOf :SignalUncertainty ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :HasUncertaintyAccuracy ;
+                                     owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :DrillingData
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :HasUncertaintyPrecision ;
+                                     owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :DrillingData
+                                   ] .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#ShaleShakers
+:ShaleShakers rdf:type owl:Class ;
+              rdfs:subClassOf :DrillingEquipment .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#SignalProcessingUnit
+:SignalProcessingUnit rdf:type owl:Class ;
+                      rdfs:subClassOf :Transformation .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#SignalUncertainty
+:SignalUncertainty rdf:type owl:Class ;
+                   rdfs:subClassOf :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#Slips
+:Slips rdf:type owl:Class ;
+       rdfs:subClassOf :DrillingEquipment .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#SphericalReferenceFrame
+:SphericalReferenceFrame rdf:type owl:Class ;
+                         rdfs:subClassOf :ThreeDimensionalReferenceFrame .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#StandPipe
+:StandPipe rdf:type owl:Class ;
+           rdfs:subClassOf :DrillingEquipment .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#SupportLine
+:SupportLine rdf:type owl:Class ;
+             rdfs:subClassOf :DrillLine .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#SurfaceRPM
+:SurfaceRPM rdf:type owl:Class ;
+            rdfs:subClassOf :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#SurfaceRPMQuantity
+:SurfaceRPMQuantity rdf:type owl:Class ;
+                    rdfs:subClassOf :MeasurableQuantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#SurfaceTorque
+:SurfaceTorque rdf:type owl:Class ;
+               rdfs:subClassOf :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#SurfaceTorqueQuantity
+:SurfaceTorqueQuantity rdf:type owl:Class ;
+                       rdfs:subClassOf :MeasurableQuantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#SynchronizationGroup
+:SynchronizationGroup rdf:type owl:Class ;
+                      rdfs:subClassOf :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#TVDQuantity
+:TVDQuantity rdf:type owl:Class ;
+             rdfs:subClassOf :MeasurableQuantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#Telemetry
+:Telemetry rdf:type owl:Class ;
+           rdfs:subClassOf :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#TemperatureIn
+:TemperatureIn rdf:type owl:Class ;
+               rdfs:subClassOf :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#TemperatureOut
+:TemperatureOut rdf:type owl:Class ;
+                rdfs:subClassOf :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#TemperatureQuantity
+:TemperatureQuantity rdf:type owl:Class ;
+                     rdfs:subClassOf :Quantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#ThreeDimensionalReferenceFrame
+:ThreeDimensionalReferenceFrame rdf:type owl:Class ;
+                                rdfs:subClassOf :ReferenceFrame .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#ThreeWayManifold
+:ThreeWayManifold rdf:type owl:Class ;
+                  rdfs:subClassOf :DrillingEquipment .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#ThreeWayValve
+:ThreeWayValve rdf:type owl:Class ;
+               rdfs:subClassOf :DrillingEquipment .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#ThreeWayValveInternalValve
+:ThreeWayValveInternalValve rdf:type owl:Class ;
+                            rdfs:subClassOf :DrillingEquipment .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#TimeBasedTransformation
+:TimeBasedTransformation rdf:type owl:Class ;
+                         rdfs:subClassOf :Transformation .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#TimeWindowMovingAverage
+:TimeWindowMovingAverage rdf:type owl:Class ;
+                         rdfs:subClassOf :MovingAverage .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#TimeWindowRangeExtraction
+:TimeWindowRangeExtraction rdf:type owl:Class ;
+                           rdfs:subClassOf :RangeExtraction .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#TopDrive
+:TopDrive rdf:type owl:Class ;
+          rdfs:subClassOf :DrillingEquipment .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#TopDriveBody
+:TopDriveBody rdf:type owl:Class ;
+              rdfs:subClassOf :DrillingEquipment .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#TopDriveControlSystem
+:TopDriveControlSystem rdf:type owl:Class ;
+                       rdfs:subClassOf :ControlSystem .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#TopDriveHook
+:TopDriveHook rdf:type owl:Class ;
+              rdfs:subClassOf :DrillingEquipment .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#TopDriveShaft
+:TopDriveShaft rdf:type owl:Class ;
+               rdfs:subClassOf :DrillingEquipment .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#TopOfStringForceQuantity
+:TopOfStringForceQuantity rdf:type owl:Class ;
+                          rdfs:subClassOf :MeasurableQuantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#TopOfStringPosition
+:TopOfStringPosition rdf:type owl:Class ;
+                     rdfs:subClassOf :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#TopSideTelemetry
+:TopSideTelemetry rdf:type owl:Class ;
+                  rdfs:subClassOf :Telemetry .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#TopsideHydraulicNetwork
+:TopsideHydraulicNetwork rdf:type owl:Class ;
+                         rdfs:subClassOf :HydraulicNetwork .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#TorqueQuantity
+:TorqueQuantity rdf:type owl:Class ;
+                rdfs:subClassOf :Quantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#TorqueToForceTransformation
+:TorqueToForceTransformation rdf:type owl:Class ;
+                             rdfs:subClassOf :DirectTransformation .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#Transformation
+:Transformation rdf:type owl:Class ;
+                rdfs:subClassOf :DataFlowNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#TransmissionLine
+:TransmissionLine rdf:type owl:Class ;
+                  rdfs:subClassOf :DataFlowNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#TravellingBlock
+:TravellingBlock rdf:type owl:Class ;
+                 rdfs:subClassOf :MechanicalBlock .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#TwoDimensionalReferenceFrame
+:TwoDimensionalReferenceFrame rdf:type owl:Class ;
+                              rdfs:subClassOf :ReferenceFrame .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#UnderReamer
+:UnderReamer rdf:type owl:Class ;
+             rdfs:subClassOf :DrillingEquipment .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#Unit
+:Unit rdf:type owl:Class ;
+      rdfs:subClassOf :DDHubNode ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :IsUnitForQuantity ;
+                        owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Quantity
+                      ] .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#UnitSystem
+:UnitSystem rdf:type owl:Class ;
+            rdfs:subClassOf :DDHubNode ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :HasUnitAssociation ;
+                              owl:maxQualifiedCardinality "2147483647"^^xsd:nonNegativeInteger ;
+                              owl:onClass :MeasurableQuantityUnitAssociation
+                            ] .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#UserInterface
+:UserInterface rdf:type owl:Class ;
+               rdfs:subClassOf :DataFlowNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#ValidityCondition
+:ValidityCondition rdf:type owl:Class ;
+                   rdfs:subClassOf :DDHubNode .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#VelocityQuantity
+:VelocityQuantity rdf:type owl:Class ;
+                  rdfs:subClassOf :Quantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#VerticalDepthFrame
+:VerticalDepthFrame rdf:type owl:Class ;
+                    rdfs:subClassOf :OneDimensionalCartesianReferenceFrame .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#VolumeQuantity
+:VolumeQuantity rdf:type owl:Class ;
+                rdfs:subClassOf :Quantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#VolumetricRateQuantity
+:VolumetricRateQuantity rdf:type owl:Class ;
+                        rdfs:subClassOf :Quantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#WOB
+:WOB rdf:type owl:Class ;
+     rdfs:subClassOf :DrillingData .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#WOBQuantity
+:WOBQuantity rdf:type owl:Class ;
+             rdfs:subClassOf :MeasurableQuantity .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#WellboreCenterLineFrame
+:WellboreCenterLineFrame rdf:type owl:Class ;
+                         rdfs:subClassOf :OneDimensionalCurviLinearReferenceFrame .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#WiredPipeTelemetry
+:WiredPipeTelemetry rdf:type owl:Class ;
+                    rdfs:subClassOf :DownHoleTelemetry .
+
+
+###  http://www.ddhub.no/ontologies/2019/1/ontology/DDHub/#WitsMLTimeBasedLogEndPoint
+:WitsMLTimeBasedLogEndPoint rdf:type owl:Class ;
+                            rdfs:subClassOf :DataEndPoint .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
