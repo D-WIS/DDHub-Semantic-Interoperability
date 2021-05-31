@@ -4,6 +4,7 @@
 - [Mud rheology](Mud_Rheology.md)
 - [Rotary torque](RotaryTorque.md)
 - [Hookload](Hookload.md)
+- [SPP](SPP.md)
 
 # Associated vocabulary
 
