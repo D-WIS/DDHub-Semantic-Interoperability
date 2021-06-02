@@ -11,3 +11,5 @@ Some uses cases can be found [here](docs/use_cases/Use_cases.md).
 Some descriptions of typical drilling signals used for creating the semantical model can be found [here](docs/drilling_signals/home.md). 
 
 Some early architecture can be found [here](docs/architecture/DDHub_architecture.md). 
+
+The DDHub ontology can be found [here for the xml serialization](model/DDHub_xml.owl). Auto-generated documentation is [there](model/html/documentation/index-en.html).
