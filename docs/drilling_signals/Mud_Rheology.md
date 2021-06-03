@@ -20,8 +20,8 @@ From [Schlumberger Oilfield Glossary](https://www.glossary.oilfield.slb.com/en/t
 
 ## Quantity
 The rheology is often represented by a series of measurements that associate a shear stress to a shear rate. 
-- Shear stress in a pressure, in Pascal
-- Shear rate in expressed in reciprocal seconds (1/s). 
+- Shear stress is a pressure, in Pascal
+- Shear rate is expressed in reciprocal seconds (1/s). 
 
 Alternative representations refer to parameters of rheological models:
 - Bingham plastic: plastic viscosity and yield point
