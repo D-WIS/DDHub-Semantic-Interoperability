@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Collections.Generic;
 using System.Net;
 using Topshelf;
 
@@ -33,6 +34,12 @@ namespace WebApi
             public WebApiService(IConfiguration configuration)
             {
                 Host = ConfigureHost(configuration);
+                Console.WriteLine("Printing host:\r\n\t" + Host);
+
+                Console.WriteLine(Host.ServerFeatures);                
+                Console.WriteLine(Host.Services);
+
+
             }
 
             private static IWebHost ConfigureHost(IConfiguration configuration)

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace WebApi
 {
@@ -10,6 +11,9 @@ namespace WebApi
         public override void ConfigureServices(IServiceCollection services)
         {
             services.AddMvcCore();
+
+
+           
         }
 
         public override void Configure(IApplicationBuilder app)

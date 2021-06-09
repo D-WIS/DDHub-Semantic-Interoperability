@@ -13,4 +13,8 @@
     <PackageReference Include="Topshelf" Version="4.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\InMemoryDDHubServer\InMemoryDDHubServer.csproj" />
+  </ItemGroup>
+
 </Project>

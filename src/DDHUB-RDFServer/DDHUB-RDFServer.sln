@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1433
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.Tests", "WebApi.Tests\WebApi.Tests.csproj", "{8929EAC8-1802-4747-A0AB-1EA69045A6C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.Tests", "WebApi.Tests\WebApi.Tests.csproj", "{8929EAC8-1802-4747-A0AB-1EA69045A6C3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{80414A3F-7D0E-4313-B94C-9027836189F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemoryDDHubServer", "InMemoryDDHubServer\InMemoryDDHubServer.csproj", "{2E18DC31-D52D-480B-80AF-7252309C6FAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{80414A3F-7D0E-4313-B94C-9027836189F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80414A3F-7D0E-4313-B94C-9027836189F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80414A3F-7D0E-4313-B94C-9027836189F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E18DC31-D52D-480B-80AF-7252309C6FAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E18DC31-D52D-480B-80AF-7252309C6FAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E18DC31-D52D-480B-80AF-7252309C6FAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E18DC31-D52D-480B-80AF-7252309C6FAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
