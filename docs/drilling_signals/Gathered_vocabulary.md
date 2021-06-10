@@ -1,6 +1,8 @@
 
 ![DDHub](../img/ddhubLogo.png)
 
+<img src="../img/ddhubLogo.png" width="200" height="200" />
+
 - [Data structure](#data-structure)
   - [Generalities](#generalities)
     - [Data shape](#data-shape)
