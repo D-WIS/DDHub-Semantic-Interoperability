@@ -39,6 +39,8 @@
 
 The vocabulary will be introduced by informal examples, all of the form `Subject Verb Object`. The verbs and objects in the examples are all to be considered as **instances**, and not class definitions. In these sentences, all instances are uniquely identified by some display name. 
 
+> Remark: This document contains mathematical symbols. Standard Latex syntax is used. Unfortunately, GitHub does not render such symbols, they just appear as plain text. Better results are achieved by using Visual Studio Code for editing the .md files. The preview window correctly displays mathematical symbols and equations. 
+
 
 # Data structure
 
@@ -46,7 +48,7 @@ The vocabulary will be introduced by informal examples, all of the form `Subject
 
 ### Data shape
 
-Real-time signals can in all generality be dsecribed by their *shape* (inspired from Python, TensorFlow...). A shape in a sequence of integers $(j_1, \dots, j_n)$, such that:
+Real-time signals can in all generality be described by their *shape* (inspired from Python, TensorFlow...). A shape in a sequence of integers $(j_1, \dots, j_n)$, such that:
 - $n$ is the number of indices necessary to specify the data. It is the dimension of the multi-index $I = [i_1, \dots, i_k]$ 
 - the index $i_k$, $1\leq k \leq n$, takes value between $0$ and $j_k -1$. 
 
