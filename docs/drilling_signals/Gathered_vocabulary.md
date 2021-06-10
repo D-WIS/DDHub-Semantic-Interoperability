@@ -3,7 +3,7 @@
   ![DDHub](../img/ddhubLogo.png)
 )
 
-<p style="text-align:center;"><img src="../img/ddhubLogo.png" width="400" height="400" /></p>
+<p align="center"><img src="../img/ddhubLogo.png" width="400" height="400" /></p>
 
 - [Data structure](#data-structure)
   - [Generalities](#generalities)
