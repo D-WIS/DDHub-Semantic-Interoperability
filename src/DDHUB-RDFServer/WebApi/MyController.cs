@@ -34,6 +34,16 @@ namespace WebApi
             }
         }
 
-       
+        [HttpGet("graph")]
+        public IActionResult GetGraph()
+        {
+            string graph = _server.Serialize();
+            if (!string.IsNullOrEmpty(graph))
+            {
+                return Ok(graph);
+            }
+            else return base.NotFound();
+        }
+
     }
 }

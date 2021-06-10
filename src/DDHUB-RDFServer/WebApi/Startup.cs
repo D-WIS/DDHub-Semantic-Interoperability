@@ -18,7 +18,8 @@ namespace WebApi
 
         public override void Configure(IApplicationBuilder app)
         {
-            app.UseMvc();
+            app.UseMvc();         
+
             System.Threading.Tasks.Task handler(HttpContext context) =>
                 context.Response.WriteAsync("hello world. the server is running but no controllers are recognized.");
             app.Run(handler);
