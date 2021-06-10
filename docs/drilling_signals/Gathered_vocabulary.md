@@ -13,6 +13,15 @@
     - [Calculated lateral displacements](#calculated-lateral-displacements)
     - [Continuous rheology](#continuous-rheology)
 - [Addressing](#addressing)
+  - [Wits](#wits)
+  - [WitsML](#witsml)
+  - [UDP stream](#udp-stream)
+  - [OPC-UA](#opc-ua)
+  - [Messaging](#messaging)
+    - [Kafka](#kafka)
+    - [MQTT](#mqtt)
+    - [RabbitMQ](#rabbitmq)
+    - [gRPC](#grpc)
 - [Quantities and units](#quantities-and-units)
   - [Base quantities](#base-quantities)
   - [Observable quantities](#observable-quantities)
@@ -208,6 +217,26 @@ ShearRateAxis HasIndex 0
 ```
 
 # Addressing
+
+## Wits
+
+## WitsML
+
+## UDP stream
+
+## OPC-UA
+
+## Messaging
+
+### Kafka
+
+### MQTT
+
+### RabbitMQ
+
+### gRPC
+
+
 
 # Quantities and units
 
