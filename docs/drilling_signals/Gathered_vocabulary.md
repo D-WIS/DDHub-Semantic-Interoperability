@@ -48,6 +48,9 @@
 
 The vocabulary will be introduced by informal examples, all of the form `Subject Verb Object`. The verbs and objects in the examples are all to be considered as **instances**, and not class definitions. In these sentences, all instances are uniquely identified by some display name. 
 
+> Remark: This is a **living** document. It will be modified, revised, amended continuously during the course of the project. In particular, the vocabulary used in the examples will change significantly with time. The *verbs* used are as per today not consistent with those defined in the current ontology. Consistency will be achieved iteratively, hopefully. 
+ 
+
 > Remark: This document contains mathematical symbols. Standard Latex syntax is used. Unfortunately, GitHub does not render such symbols, they just appear as plain text. Better results are achieved by using Visual Studio Code for editing the .md files. The preview window correctly displays mathematical symbols and equations. 
 
 
