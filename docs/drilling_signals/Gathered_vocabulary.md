@@ -1,7 +1,9 @@
 
-![DDHub](../img/ddhubLogo.png)
+[](
+  ![DDHub](../img/ddhubLogo.png)
+)
 
-<img src="../img/ddhubLogo.png" width="200" height="200" />
+<img src="../img/ddhubLogo.png" width="400" height="400" />
 
 - [Data structure](#data-structure)
   - [Generalities](#generalities)
