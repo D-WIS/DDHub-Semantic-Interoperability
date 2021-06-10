@@ -57,6 +57,7 @@ The vocabulary will be introduced by informal examples, all of the form `Subject
 
 > Remark: This document contains mathematical symbols. Standard Latex syntax is used. Unfortunately, GitHub does not render such symbols, they just appear as plain text. Better results are achieved by using Visual Studio Code for editing the .md files. The preview window correctly displays mathematical symbols and equations. 
 
+> Remark: This document contains figures. Mardown does not provide centering or resizing capabilities for figures. One can use html for this purpose. Unfortunately, html is not rendered correctly in Visual Studio Code, although it is rendered correctly in GitHub. This remark therefore contradicts the previous one. 
 
 # Data structure
 
