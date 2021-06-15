@@ -119,7 +119,7 @@ where $T$ denotes the time "set", $D$ and $R$ the domain and range of the signal
 
 ### Combined representations
 
-Both the signal mapping and data shapes approach are important. The data shape describes the structure of the signal as stored on a real-time data server. The signal mapping describes the meaning of the data itself. In the DDHub context, it is then important to associate the two views, since we want to associate meaning to copmuter stored signals. 
+Both the signal mapping and data shapes approach are important. The data shape describes the structure of the signal as stored on a real-time data server. The signal mapping describes the meaning of the data itself. In the DDHub context, it is then important to associate the two views, since we want to associate meaning to computer stored signals. 
 
 One may encounter (at least) two situations:
 1. the signal contains the domain information. This occurs in the following cases
