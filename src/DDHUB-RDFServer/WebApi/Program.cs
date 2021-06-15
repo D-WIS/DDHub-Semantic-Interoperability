@@ -13,7 +13,7 @@ namespace WebApi
         public static int Main(string[] _)
         {
             var configuration = new ConfigurationBuilder().Build();
-
+            
             return (int)HostFactory.Run(host =>
             {
                 host.RunAsLocalSystem();

@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.Tests", "WebApi.Test
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{80414A3F-7D0E-4313-B94C-9027836189F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemoryDDHubServer", "InMemoryDDHubServer\InMemoryDDHubServer.csproj", "{2E18DC31-D52D-480B-80AF-7252309C6FAF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDHubServer", "DDHubServer\DDHubServer.csproj", "{2E18DC31-D52D-480B-80AF-7252309C6FAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VDS.RDF;
@@ -9,9 +8,9 @@ using VDS.RDF.Parsing;
 using VDS.RDF.Query;
 using VDS.RDF.Writing;
 
-namespace InMemoryDDHubServer
+namespace DDHubServer
 {
-    public class InMemoryDDHubServer
+    public class InMemoryDDHubServer : IDDHubServer
     {
 
         private OntologyGraph _ontologyGraph = new OntologyGraph();
@@ -32,7 +31,7 @@ namespace InMemoryDDHubServer
             string s = SerializeAsync().Result;
             System.IO.File.WriteAllText(GetLoggingFileName(date), s);
         }
-        private InMemoryDDHubServer()
+        public InMemoryDDHubServer()
         {
             _tripleStore.Add(_ontologyGraph);
         }
@@ -49,6 +48,7 @@ namespace InMemoryDDHubServer
 
         private bool LoadFromFile(string fileName)
         {
+            Console.WriteLine("Load from file");
             try
             {
                 VDS.RDF.Parsing.FileLoader.Load(_ontologyGraph, fileName, new TurtleParser());
@@ -62,6 +62,21 @@ namespace InMemoryDDHubServer
                 Log(DateTime.Now);
             }
             return true;
+        }
+
+        public bool GetGraph(out string graph)
+        {
+            graph = string.Empty;
+            try
+            {
+                graph = Serialize();
+            }
+            catch (Exception serializationException)
+            {
+                graph = serializationException.ToString();
+                return false;                
+            }
+            return !string.IsNullOrEmpty(graph);
         }
 
         public async Task<bool> AddAsync(IEnumerable<Triple> triples)
@@ -86,6 +101,7 @@ namespace InMemoryDDHubServer
             return res;
         }
 
+
         public async Task<bool> RemoveAsync(IEnumerable<Triple> triples)
         {
             return await Task.Run(() => Remove(triples));
@@ -107,24 +123,9 @@ namespace InMemoryDDHubServer
             }
             return res;
         }
-        public async Task<string> SerializeAsync()
-        {
-            return await Task.Run(() => Serialize());
-        }
-        public string Serialize()
-        {
-            string result = string.Empty;
-            lock (_lock)
-            {
-                RdfXmlWriter rdfxmlwriter = new RdfXmlWriter();
-                using (System.IO.StringWriter writer = new System.IO.StringWriter())
-                {
-                    _ontologyGraph.SaveToStream(writer, rdfxmlwriter);
-                    result = writer.ToString();
-                }
-            }
-            return result;
-        }
+
+
+
 
         public async Task<IGraph> GetQueryResultsAsync(SparqlQuery query)
         {
@@ -139,30 +140,53 @@ namespace InMemoryDDHubServer
 
         public bool GetQueryResults(string query, out string results)
         {
+            results = string.Empty;
             SparqlQueryParser sparqlparser = new SparqlQueryParser();
-            results = PrintGraph(GetQueryResults(sparqlparser.ParseFromString(query)));
+            SparqlQuery sparqlQuery = null;
+            try
+            {
+                sparqlQuery = sparqlparser.ParseFromString(query);
+            }
+            catch (Exception parsingException)
+            {
+                results = parsingException.ToString();
+                return false;
+            }
+
+            try
+            {
+                var queryResults = GetQueryResults(query);
+                results = PrintGraph(queryResults);
+            }
+            catch (Exception sparqlExcepetion)
+            {
+                results = sparqlExcepetion.ToString();
+                return false;                
+            }           
             return results != string.Empty;
         }
 
         public IGraph GetQueryResults(SparqlQuery query)
         {
             IGraph res = null;
-
-            lock (_lock)
+            if (query != null)
             {
-                ISparqlQueryProcessor processor = new LeviathanQueryProcessor(_tripleStore);
-
-                //Use the SparqlQueryParser to give us a SparqlQuery object
-                //Should get a Graph back from a CONSTRUCT query
-                object v = processor.ProcessQuery(query);
-                if (v is IGraph)
+                lock (_lock)
                 {
-                    res = (IGraph)v;
+                    ISparqlQueryProcessor processor = new LeviathanQueryProcessor(_tripleStore);
+
+                    //Use the SparqlQueryParser to give us a SparqlQuery object
+                    //Should get a Graph back from a CONSTRUCT query
+                    object v = processor.ProcessQuery(query);
+                    if (v is IGraph)
+                    {
+                        res = (IGraph)v;
+                    }
                 }
             }
-
             return res;
         }
+
 
         public static string PrintGraph(IGraph graph)
         {
@@ -173,6 +197,28 @@ namespace InMemoryDDHubServer
             }
             return stringBuilder.ToString();
         }
+
+        public async Task<string> SerializeAsync()
+        {
+            return await Task.Run(() => Serialize());
+        }
+        public string Serialize()
+        {
+            System.Diagnostics.Stopwatch stopwatch = System.Diagnostics.Stopwatch.StartNew();
+            string result = string.Empty;
+            lock (_lock)
+            {
+                RdfXmlWriter rdfxmlwriter = new RdfXmlWriter();
+                using (System.IO.StringWriter writer = new System.IO.StringWriter())
+                {
+                    _ontologyGraph.SaveToStream(writer, rdfxmlwriter);
+                    result = writer.ToString();
+                }
+            }
+            Console.WriteLine($"Serialization performed in {stopwatch.ElapsedMilliseconds} ms");
+            return result;
+        }
+
 
         //public static void PrintGraph(IGraph graph)
         //{
