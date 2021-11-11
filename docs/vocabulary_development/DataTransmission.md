@@ -1,7 +1,7 @@
 # NOUNS
 ## Telemetry <!-- NOUN -->
 - Display name: Telemetry
-- Parent class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
+- Parent class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
 - Attributes:
   - RefreshRate
     - Type: double
@@ -17,28 +17,28 @@
 - Examples:
 ## DownHoleTelemetry <!-- NOUN -->
 - Display name: DownHoleTelemetry
-- Parent class: [Telemetry](#C:\temp\ddhubMD\DataTransmission.md#Telemetry)
+- Parent class: [Telemetry](./DataTransmission.md#Telemetry-)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## MudPulseTelemetry <!-- NOUN -->
 - Display name: MudPulseTelemetry
-- Parent class: [DownHoleTelemetry](#C:\temp\ddhubMD\DataTransmission.md#DownHoleTelemetry)
+- Parent class: [DownHoleTelemetry](./DataTransmission.md#DownHoleTelemetry-)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## WiredPipeTelemetry <!-- NOUN -->
 - Display name: WiredPipeTelemetry
-- Parent class: [DownHoleTelemetry](#C:\temp\ddhubMD\DataTransmission.md#DownHoleTelemetry)
+- Parent class: [DownHoleTelemetry](./DataTransmission.md#DownHoleTelemetry-)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## TopSideTelemetry <!-- NOUN -->
 - Display name: TopSideTelemetry
-- Parent class: [Telemetry](#C:\temp\ddhubMD\DataTransmission.md#Telemetry)
+- Parent class: [Telemetry](./DataTransmission.md#Telemetry-)
 - Attributes:
 - Specialization:
 - Description: 
@@ -48,7 +48,7 @@
 # VERBS
 ## IsTransmittedBy <!-- VERB -->
 - Display name: IsTransmittedBy
-- Subject class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
-- Object class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
+- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
 - Description: 
 - Examples: 
