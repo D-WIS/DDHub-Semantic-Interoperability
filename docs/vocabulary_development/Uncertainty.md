@@ -1,82 +1,92 @@
-# SignalUncertainty <!-- NOUN -->
+# NOUNS
+## SignalUncertainty <!-- NOUN -->
 - Display name: SignalUncertainty
 - Parent class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Attributes:
+- Specialization:
 - Description: Represent the uncertainty associated to a signal. 
 - Examples:
-# GaussianUncertainty <!-- NOUN -->
+## GaussianUncertainty <!-- NOUN -->
 - Display name: GaussianUncertainty
 - Parent class: [SignalUncertainty](#C:\temp\ddhubMD\Uncertainty.md#SignalUncertainty)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# GenericUncertainty <!-- NOUN -->
+## GenericUncertainty <!-- NOUN -->
 - Display name: GenericUncertainty
 - Parent class: [SignalUncertainty](#C:\temp\ddhubMD\Uncertainty.md#SignalUncertainty)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# MinMaxUncertainty <!-- NOUN -->
+## MinMaxUncertainty <!-- NOUN -->
 - Display name: MinMaxUncertainty
 - Parent class: [SignalUncertainty](#C:\temp\ddhubMD\Uncertainty.md#SignalUncertainty)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# RelativeUncertainty <!-- NOUN -->
+## RelativeUncertainty <!-- NOUN -->
 - Display name: RelativeUncertainty
 - Parent class: [SignalUncertainty](#C:\temp\ddhubMD\Uncertainty.md#SignalUncertainty)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# SensorUncertainty <!-- NOUN -->
+## SensorUncertainty <!-- NOUN -->
 - Display name: SensorUncertainty
 - Parent class: [SignalUncertainty](#C:\temp\ddhubMD\Uncertainty.md#SignalUncertainty)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# HasUncertainty <!-- VERB -->
+
+
+# VERBS
+## HasUncertainty <!-- VERB -->
 - Display name: HasUncertainty
 - Subject class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Object class: [SignalUncertainty](#C:\temp\ddhubMD\Uncertainty.md#SignalUncertainty)
 - Description: 
 - Examples: 
-# HasUncertaintyAccuracy <!-- VERB -->
+## HasUncertaintyAccuracy <!-- VERB -->
 - Display name: HasUncertaintyAccuracy
 - Subject class: [SensorUncertainty](#C:\temp\ddhubMD\Uncertainty.md#SensorUncertainty)
 - Object class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Description: 
 - Examples: 
-# HasUncertaintyMax <!-- VERB -->
+## HasUncertaintyMax <!-- VERB -->
 - Display name: HasUncertaintyMax
 - Subject class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Object class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Description: 
 - Examples: 
-# HasUncertaintyMean <!-- VERB -->
+## HasUncertaintyMean <!-- VERB -->
 - Display name: HasUncertaintyMean
 - Subject class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Object class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Description: 
 - Examples: 
-# HasUncertaintyMin <!-- VERB -->
+## HasUncertaintyMin <!-- VERB -->
 - Display name: HasUncertaintyMin
 - Subject class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Object class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Description: 
 - Examples: 
-# HasUncertaintyPrecision <!-- VERB -->
+## HasUncertaintyPrecision <!-- VERB -->
 - Display name: HasUncertaintyPrecision
 - Subject class: [SensorUncertainty](#C:\temp\ddhubMD\Uncertainty.md#SensorUncertainty)
 - Object class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Description: 
 - Examples: 
-# HasUncertaintyRelativeValue <!-- VERB -->
+## HasUncertaintyRelativeValue <!-- VERB -->
 - Display name: HasUncertaintyRelativeValue
 - Subject class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Object class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Description: 
 - Examples: 
-# HasUncertaintyStandardDeviation <!-- VERB -->
+## HasUncertaintyStandardDeviation <!-- VERB -->
 - Display name: HasUncertaintyStandardDeviation
 - Subject class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Object class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)

@@ -1,13 +1,15 @@
-# DataEndPoint <!-- NOUN -->
+# NOUNS
+## DataEndPoint <!-- NOUN -->
 - Display name: DataEndPoint
 - Parent class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Attributes:
   - EndPointDescription
     - Type: string
     - Description: 
+- Specialization:
 - Description: 
 - Examples:
-# WitsMLTimeBasedLogEndPoint <!-- NOUN -->
+## WitsMLTimeBasedLogEndPoint <!-- NOUN -->
 - Display name: WitsMLTimeBasedLogEndPoint
 - Parent class: [DataEndPoint](#C:\temp\ddhubMD\DrillingDataSemantics.md#DataEndPoint)
 - Attributes:
@@ -32,18 +34,20 @@
   - Mnemonic
     - Type: string
     - Description: 
+- Specialization:
 - Description: 
 - Examples:
-# DataProvider <!-- NOUN -->
+## DataProvider <!-- NOUN -->
 - Display name: DataProvider
 - Parent class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Attributes:
   - ProviderName
     - Type: string
     - Description: 
+- Specialization:
 - Description: 
 - Examples:
-# DrillingData <!-- NOUN -->
+## DrillingData <!-- NOUN -->
 - Display name: DrillingData
 - Parent class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Attributes:
@@ -71,172 +75,202 @@
   - EndPoint
     - Type: string
     - Description: 
+- Specialization:
+  - DataType = double
+  - Order = 0
+  - DomainOrder = 0
 - Description: Main type of DDHub data. Represents a drilling signal.
 Can be a dynamic signal (linked to a ValueNode) or a static parameter. 
 - Examples:
-# ActiveVolume <!-- NOUN -->
+## ActiveVolume <!-- NOUN -->
 - Display name: ActiveVolume
 - Parent class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# BitDepth <!-- NOUN -->
+## BitDepth <!-- NOUN -->
 - Display name: BitDepth
 - Parent class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# DensityIn <!-- NOUN -->
+## DensityIn <!-- NOUN -->
 - Display name: DensityIn
 - Parent class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# DensityOut <!-- NOUN -->
+## DensityOut <!-- NOUN -->
 - Display name: DensityOut
 - Parent class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# DownholeECD <!-- NOUN -->
+## DownholeECD <!-- NOUN -->
 - Display name: DownholeECD
 - Parent class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# DownholePressure <!-- NOUN -->
+## DownholePressure <!-- NOUN -->
 - Display name: DownholePressure
 - Parent class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# DownholeRPM <!-- NOUN -->
+## DownholeRPM <!-- NOUN -->
 - Display name: DownholeRPM
 - Parent class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# DownholeTemperature <!-- NOUN -->
+## DownholeTemperature <!-- NOUN -->
 - Display name: DownholeTemperature
 - Parent class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# DownholeTorque <!-- NOUN -->
+## DownholeTorque <!-- NOUN -->
 - Display name: DownholeTorque
 - Parent class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# FlowRateIn <!-- NOUN -->
+## FlowRateIn <!-- NOUN -->
 - Display name: FlowRateIn
 - Parent class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# FlowRateOut <!-- NOUN -->
+## FlowRateOut <!-- NOUN -->
 - Display name: FlowRateOut
 - Parent class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# HoleDepth <!-- NOUN -->
+## HoleDepth <!-- NOUN -->
 - Display name: HoleDepth
 - Parent class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# HookLoad <!-- NOUN -->
+## HookLoad <!-- NOUN -->
 - Display name: HookLoad
 - Parent class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# HookPosition <!-- NOUN -->
+## HookPosition <!-- NOUN -->
 - Display name: HookPosition
 - Parent class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# HookVelocity <!-- NOUN -->
+## HookVelocity <!-- NOUN -->
 - Display name: HookVelocity
 - Parent class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# PumpRate <!-- NOUN -->
+## PumpRate <!-- NOUN -->
 - Display name: PumpRate
 - Parent class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# ROP <!-- NOUN -->
+## ROP <!-- NOUN -->
 - Display name: ROP
 - Parent class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# SPP <!-- NOUN -->
+## SPP <!-- NOUN -->
 - Display name: SPP
 - Parent class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# SurfaceRPM <!-- NOUN -->
+## SurfaceRPM <!-- NOUN -->
 - Display name: SurfaceRPM
 - Parent class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# SurfaceTorque <!-- NOUN -->
+## SurfaceTorque <!-- NOUN -->
 - Display name: SurfaceTorque
 - Parent class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# TemperatureIn <!-- NOUN -->
+## TemperatureIn <!-- NOUN -->
 - Display name: TemperatureIn
 - Parent class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# TemperatureOut <!-- NOUN -->
+## TemperatureOut <!-- NOUN -->
 - Display name: TemperatureOut
 - Parent class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# TopOfStringPosition <!-- NOUN -->
+## TopOfStringPosition <!-- NOUN -->
 - Display name: TopOfStringPosition
 - Parent class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# WOB <!-- NOUN -->
+## WOB <!-- NOUN -->
 - Display name: WOB
 - Parent class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# DrillingSignal <!-- NOUN -->
+## DrillingSignal <!-- NOUN -->
 - Display name: DrillingSignal
 - Parent class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Attributes:
   - Value
     - Type: object
     - Description: 
+- Specialization:
 - Description: Data structure used to store the steaming drilling data. 
 - Examples:
-# DynamicDrillingSignal <!-- NOUN -->
+## DynamicDrillingSignal <!-- NOUN -->
 - Display name: DynamicDrillingSignal
 - Parent class: [DrillingSignal](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingSignal)
 - Attributes:
   - TimeStampAcquisition
     - Type: DateTime
     - Description: 
+- Specialization:
 - Description: 
 - Examples:
-# EndPointMapping <!-- NOUN -->
+## EndPointMapping <!-- NOUN -->
 - Display name: EndPointMapping
 - Parent class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Attributes:
@@ -249,69 +283,73 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
   - MeasurementIndex
     - Type: int
     - Description: 
+- Specialization:
 - Description: 
 - Examples:
-# HasDomain <!-- VERB -->
+
+
+# VERBS
+## HasDomain <!-- VERB -->
 - Display name: HasDomain
 - Subject class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Object class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Description: 
 - Examples: 
-# HasTimeIntervalDomain <!-- VERB -->
+## HasTimeIntervalDomain <!-- VERB -->
 - Display name: HasTimeIntervalDomain
 - Subject class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Object class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Description: 
 - Examples: 
-# HasEndPoint <!-- VERB -->
+## HasEndPoint <!-- VERB -->
 - Display name: HasEndPoint
 - Subject class: [DrillingSignal](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingSignal)
 - Object class: [DataEndPoint](#C:\temp\ddhubMD\DrillingDataSemantics.md#DataEndPoint)
 - Description: 
 - Examples: 
-# HasSIUnit <!-- VERB -->
+## HasSIUnit <!-- VERB -->
 - Display name: HasSIUnit
 - Subject class: [Quantity](#C:\temp\ddhubMD\Quantities.md#Quantity)
 - Object class: [Unit](#C:\temp\ddhubMD\Quantities.md#Unit)
 - Description: 
 - Examples: 
-# HasValue <!-- VERB -->
+## HasValue <!-- VERB -->
 - Display name: HasValue
 - Subject class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Object class: [DrillingSignal](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingSignal)
 - Description: 
 - Examples: 
-# HasDynamicValue <!-- VERB -->
+## HasDynamicValue <!-- VERB -->
 - Display name: HasDynamicValue
 - Subject class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Object class: [DynamicDrillingSignal](#C:\temp\ddhubMD\DrillingDataSemantics.md#DynamicDrillingSignal)
 - Description: 
 - Examples: 
-# HasStaticValue <!-- VERB -->
+## HasStaticValue <!-- VERB -->
 - Display name: HasStaticValue
 - Subject class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Object class: [DrillingSignal](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingSignal)
 - Description: 
 - Examples: 
-# IsDependentOn <!-- VERB -->
+## IsDependentOn <!-- VERB -->
 - Display name: IsDependentOn
 - Subject class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Object class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Description: 
 - Examples: 
-# HasPressureReference <!-- VERB -->
+## HasPressureReference <!-- VERB -->
 - Display name: HasPressureReference
 - Subject class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Object class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Description: 
 - Examples: 
-# HasTemperatureReference <!-- VERB -->
+## HasTemperatureReference <!-- VERB -->
 - Display name: HasTemperatureReference
 - Subject class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Object class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Description: 
 - Examples: 
-# IsProvidedBy <!-- VERB -->
+## IsProvidedBy <!-- VERB -->
 - Display name: IsProvidedBy
 - Subject class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Object class: [DataProvider](#C:\temp\ddhubMD\DrillingDataSemantics.md#DataProvider)

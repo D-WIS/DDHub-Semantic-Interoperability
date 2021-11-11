@@ -1,147 +1,171 @@
-# MeasurableQuantity <!-- NOUN -->
+# NOUNS
+## MeasurableQuantity <!-- NOUN -->
 - Display name: MeasurableQuantity
 - Parent class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Attributes:
   - MeaningfulPrecision
     - Type: double
     - Description: 
+- Specialization:
 - Description: Represents a quantity that allows meaningful comparisons. 
 Are related by a Quantity via the "IsObservableFrom" relation. 
 Context dependent: for example, Fluid density and Equivalent Circulating Density are represented as two different "Measurable quantities", although they both refer to the same base SI quantities. 
 - Examples:
-# BitTorqueQuantity <!-- NOUN -->
+## BitTorqueQuantity <!-- NOUN -->
 - Display name: BitTorqueQuantity
 - Parent class: [MeasurableQuantity](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantity)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# BlockAccelerationQuantity <!-- NOUN -->
+## BlockAccelerationQuantity <!-- NOUN -->
 - Display name: BlockAccelerationQuantity
 - Parent class: [MeasurableQuantity](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantity)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# BlockPositionQuantity <!-- NOUN -->
+## BlockPositionQuantity <!-- NOUN -->
 - Display name: BlockPositionQuantity
 - Parent class: [MeasurableQuantity](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantity)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# BlockVelocityQuantity <!-- NOUN -->
+## BlockVelocityQuantity <!-- NOUN -->
 - Display name: BlockVelocityQuantity
 - Parent class: [MeasurableQuantity](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantity)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# DepthQuantity <!-- NOUN -->
+## DepthQuantity <!-- NOUN -->
 - Display name: DepthQuantity
 - Parent class: [MeasurableQuantity](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantity)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# DownholePressureQuantity <!-- NOUN -->
+## DownholePressureQuantity <!-- NOUN -->
 - Display name: DownholePressureQuantity
 - Parent class: [MeasurableQuantity](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantity)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# EMWQuantity <!-- NOUN -->
+## EMWQuantity <!-- NOUN -->
 - Display name: EMWQuantity
 - Parent class: [MeasurableQuantity](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantity)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# FlowRateQuantity <!-- NOUN -->
+## FlowRateQuantity <!-- NOUN -->
 - Display name: FlowRateQuantity
 - Parent class: [MeasurableQuantity](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantity)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# FluidDensityInQuantity <!-- NOUN -->
+## FluidDensityInQuantity <!-- NOUN -->
 - Display name: FluidDensityInQuantity
 - Parent class: [MeasurableQuantity](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantity)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# FluidTemperatureInQuantity <!-- NOUN -->
+## FluidTemperatureInQuantity <!-- NOUN -->
 - Display name: FluidTemperatureInQuantity
 - Parent class: [MeasurableQuantity](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantity)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# FormationPorosityQuantity <!-- NOUN -->
+## FormationPorosityQuantity <!-- NOUN -->
 - Display name: FormationPorosityQuantity
 - Parent class: [MeasurableQuantity](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantity)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# HookloadQuantity <!-- NOUN -->
+## HookloadQuantity <!-- NOUN -->
 - Display name: HookloadQuantity
 - Parent class: [MeasurableQuantity](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantity)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# PumpRateQuantity <!-- NOUN -->
+## PumpRateQuantity <!-- NOUN -->
 - Display name: PumpRateQuantity
 - Parent class: [MeasurableQuantity](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantity)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# Resistivity <!-- NOUN -->
+## Resistivity <!-- NOUN -->
 - Display name: Resistivity
 - Parent class: [MeasurableQuantity](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantity)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# RockDensityQuantity <!-- NOUN -->
+## RockDensityQuantity <!-- NOUN -->
 - Display name: RockDensityQuantity
 - Parent class: [MeasurableQuantity](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantity)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# SPPQuantity <!-- NOUN -->
+## SPPQuantity <!-- NOUN -->
 - Display name: SPPQuantity
 - Parent class: [MeasurableQuantity](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantity)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# SurfaceRPMQuantity <!-- NOUN -->
+## SurfaceRPMQuantity <!-- NOUN -->
 - Display name: SurfaceRPMQuantity
 - Parent class: [MeasurableQuantity](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantity)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# SurfaceTorqueQuantity <!-- NOUN -->
+## SurfaceTorqueQuantity <!-- NOUN -->
 - Display name: SurfaceTorqueQuantity
 - Parent class: [MeasurableQuantity](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantity)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# TopOfStringForceQuantity <!-- NOUN -->
+## TopOfStringForceQuantity <!-- NOUN -->
 - Display name: TopOfStringForceQuantity
 - Parent class: [MeasurableQuantity](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantity)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# TVDQuantity <!-- NOUN -->
+## TVDQuantity <!-- NOUN -->
 - Display name: TVDQuantity
 - Parent class: [MeasurableQuantity](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantity)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# WOBQuantity <!-- NOUN -->
+## WOBQuantity <!-- NOUN -->
 - Display name: WOBQuantity
 - Parent class: [MeasurableQuantity](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantity)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# MeasurableQuantityUnitAssociation <!-- NOUN -->
+## MeasurableQuantityUnitAssociation <!-- NOUN -->
 - Display name: MeasurableQuantityUnitAssociation
 - Parent class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# Quantity <!-- NOUN -->
+## Quantity <!-- NOUN -->
 - Display name: Quantity
 - Parent class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Attributes:
@@ -176,111 +200,169 @@ SI Unit: Candela (cd)
   - SIUnit
     - Type: string
     - Description: 
+- Specialization:
+  - L = 0
+  - T = 0
+  - M = 0
+  - I = 0
+  - ThT = 0
+  - N = 0
+  - J = 0
 - Description: 
 - Examples:
-# AccelerationQuantity <!-- NOUN -->
+## AccelerationQuantity <!-- NOUN -->
 - Display name: AccelerationQuantity
 - Parent class: [Quantity](#C:\temp\ddhubMD\Quantities.md#Quantity)
 - Attributes:
+- Specialization:
+  - L = 1
+  - T = -2
+  - Name = Acceleration quantity
 - Description: 
 - Examples:
-# AreaQuantity <!-- NOUN -->
+## AreaQuantity <!-- NOUN -->
 - Display name: AreaQuantity
 - Parent class: [Quantity](#C:\temp\ddhubMD\Quantities.md#Quantity)
 - Attributes:
+- Specialization:
+  - L = 2
 - Description: 
 - Examples:
-# ElectricResistivityQuantity <!-- NOUN -->
+## ElectricResistivityQuantity <!-- NOUN -->
 - Display name: ElectricResistivityQuantity
 - Parent class: [Quantity](#C:\temp\ddhubMD\Quantities.md#Quantity)
 - Attributes:
+- Specialization:
+  - L = 3
+  - M = 1
+  - T = -3
+  - I = -2
 - Description: 
 - Examples:
-# ForceQuantity <!-- NOUN -->
+## ForceQuantity <!-- NOUN -->
 - Display name: ForceQuantity
 - Parent class: [Quantity](#C:\temp\ddhubMD\Quantities.md#Quantity)
 - Attributes:
+- Specialization:
+  - L = 1
+  - M = 1
+  - T = -2
 - Description: 
 - Examples:
-# FrequencyQuantity <!-- NOUN -->
+## FrequencyQuantity <!-- NOUN -->
 - Display name: FrequencyQuantity
 - Parent class: [Quantity](#C:\temp\ddhubMD\Quantities.md#Quantity)
 - Attributes:
+- Specialization:
+  - T = -1
 - Description: 
 - Examples:
-# LengthQuantity <!-- NOUN -->
+## LengthQuantity <!-- NOUN -->
 - Display name: LengthQuantity
 - Parent class: [Quantity](#C:\temp\ddhubMD\Quantities.md#Quantity)
 - Attributes:
+- Specialization:
+  - L = 1
 - Description: 
 - Examples:
-# MassDensityQuantity <!-- NOUN -->
+## MassDensityQuantity <!-- NOUN -->
 - Display name: MassDensityQuantity
 - Parent class: [Quantity](#C:\temp\ddhubMD\Quantities.md#Quantity)
 - Attributes:
+- Specialization:
+  - L = 3
+  - M = 1
 - Description: 
 - Examples:
-# MassQuantity <!-- NOUN -->
+## MassQuantity <!-- NOUN -->
 - Display name: MassQuantity
 - Parent class: [Quantity](#C:\temp\ddhubMD\Quantities.md#Quantity)
 - Attributes:
+- Specialization:
+  - M = 1
 - Description: 
 - Examples:
-# MassRate <!-- NOUN -->
+## MassRate <!-- NOUN -->
 - Display name: MassRate
 - Parent class: [Quantity](#C:\temp\ddhubMD\Quantities.md#Quantity)
 - Attributes:
+- Specialization:
+  - M = 1
+  - T = -1
 - Description: 
 - Examples:
-# PowerQuantity <!-- NOUN -->
+## PowerQuantity <!-- NOUN -->
 - Display name: PowerQuantity
 - Parent class: [Quantity](#C:\temp\ddhubMD\Quantities.md#Quantity)
 - Attributes:
+- Specialization:
+  - L = 2
+  - M = 1
+  - T = -3
 - Description: 
 - Examples:
-# PressureQuantity <!-- NOUN -->
+## PressureQuantity <!-- NOUN -->
 - Display name: PressureQuantity
 - Parent class: [Quantity](#C:\temp\ddhubMD\Quantities.md#Quantity)
 - Attributes:
+- Specialization:
+  - L = -1
+  - M = 1
+  - T = 2
 - Description: 
 - Examples:
-# ProportionQuantity <!-- NOUN -->
+## ProportionQuantity <!-- NOUN -->
 - Display name: ProportionQuantity
 - Parent class: [Quantity](#C:\temp\ddhubMD\Quantities.md#Quantity)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# TemperatureQuantity <!-- NOUN -->
+## TemperatureQuantity <!-- NOUN -->
 - Display name: TemperatureQuantity
 - Parent class: [Quantity](#C:\temp\ddhubMD\Quantities.md#Quantity)
 - Attributes:
+- Specialization:
+  - ThT = 1
 - Description: 
 - Examples:
-# TorqueQuantity <!-- NOUN -->
+## TorqueQuantity <!-- NOUN -->
 - Display name: TorqueQuantity
 - Parent class: [Quantity](#C:\temp\ddhubMD\Quantities.md#Quantity)
 - Attributes:
+- Specialization:
+  - L = 2
+  - M = 1
+  - T = -2
 - Description: 
 - Examples:
-# VelocityQuantity <!-- NOUN -->
+## VelocityQuantity <!-- NOUN -->
 - Display name: VelocityQuantity
 - Parent class: [Quantity](#C:\temp\ddhubMD\Quantities.md#Quantity)
 - Attributes:
+- Specialization:
+  - L = 1
+  - T = -1
 - Description: 
 - Examples:
-# VolumeQuantity <!-- NOUN -->
+## VolumeQuantity <!-- NOUN -->
 - Display name: VolumeQuantity
 - Parent class: [Quantity](#C:\temp\ddhubMD\Quantities.md#Quantity)
 - Attributes:
+- Specialization:
+  - L = 3
 - Description: 
 - Examples:
-# VolumetricRateQuantity <!-- NOUN -->
+## VolumetricRateQuantity <!-- NOUN -->
 - Display name: VolumetricRateQuantity
 - Parent class: [Quantity](#C:\temp\ddhubMD\Quantities.md#Quantity)
 - Attributes:
+- Specialization:
+  - L = 3
+  - T = -1
 - Description: 
 - Examples:
-# Unit <!-- NOUN -->
+## Unit <!-- NOUN -->
 - Display name: Unit
 - Parent class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Attributes:
@@ -295,51 +377,56 @@ ConvertedValue = ConversionFactorA + SIValue * ConversionFactorB
     - Type: double
     - Description: Unit conversion from SI unit is performed as:
 ConvertedValue = ConversionFactorA + SIValue * ConversionFactorB
+- Specialization:
 - Description: 
 - Examples:
-# UnitSystem <!-- NOUN -->
+## UnitSystem <!-- NOUN -->
 - Display name: UnitSystem
 - Parent class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Attributes:
+- Specialization:
 - Description: A set of associations between measurable quantities and units
 - Examples:
-# AssociatesMeasurableQuantity <!-- VERB -->
+
+
+# VERBS
+## AssociatesMeasurableQuantity <!-- VERB -->
 - Display name: AssociatesMeasurableQuantity
 - Subject class: [MeasurableQuantityUnitAssociation](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantityUnitAssociation)
 - Object class: [MeasurableQuantity](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantity)
 - Description: 
 - Examples: 
-# AssociatesUnit <!-- VERB -->
+## AssociatesUnit <!-- VERB -->
 - Display name: AssociatesUnit
 - Subject class: [MeasurableQuantityUnitAssociation](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantityUnitAssociation)
 - Object class: [Unit](#C:\temp\ddhubMD\Quantities.md#Unit)
 - Description: 
 - Examples: 
-# HasUnitAssociation <!-- VERB -->
+## HasUnitAssociation <!-- VERB -->
 - Display name: HasUnitAssociation
 - Subject class: [UnitSystem](#C:\temp\ddhubMD\Quantities.md#UnitSystem)
 - Object class: [MeasurableQuantityUnitAssociation](#C:\temp\ddhubMD\Quantities.md#MeasurableQuantityUnitAssociation)
 - Description: 
 - Examples: 
-# IsObservableFrom <!-- VERB -->
+## IsObservableFrom <!-- VERB -->
 - Display name: IsObservableFrom
 - Subject class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Object class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Description: 
 - Examples: 
-# IsOfBaseQuantity <!-- VERB -->
+## IsOfBaseQuantity <!-- VERB -->
 - Display name: IsOfBaseQuantity
 - Subject class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Object class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Description: 
 - Examples: 
-# IsOfMeasurableQuantity <!-- VERB -->
+## IsOfMeasurableQuantity <!-- VERB -->
 - Display name: IsOfMeasurableQuantity
 - Subject class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Object class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Description: 
 - Examples: 
-# IsUnitForQuantity <!-- VERB -->
+## IsUnitForQuantity <!-- VERB -->
 - Display name: IsUnitForQuantity
 - Subject class: [Unit](#C:\temp\ddhubMD\Quantities.md#Unit)
 - Object class: [Quantity](#C:\temp\ddhubMD\Quantities.md#Quantity)

@@ -1,97 +1,113 @@
-# HydraulicElementState <!-- NOUN -->
+# NOUNS
+## HydraulicElementState <!-- NOUN -->
 - Display name: HydraulicElementState
 - Parent class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# HydraulicConnectedState <!-- NOUN -->
+## HydraulicConnectedState <!-- NOUN -->
 - Display name: HydraulicConnectedState
 - Parent class: [HydraulicElementState](#C:\temp\ddhubMD\Hydraulics.md#HydraulicElementState)
 - Attributes:
   - Value
     - Type: bool
     - Description: 
+- Specialization:
 - Description: 
 - Examples:
-# HydraulicLogicalElement <!-- NOUN -->
+## HydraulicLogicalElement <!-- NOUN -->
 - Display name: HydraulicLogicalElement
 - Parent class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# HydraulicBranch <!-- NOUN -->
+## HydraulicBranch <!-- NOUN -->
 - Display name: HydraulicBranch
 - Parent class: [HydraulicLogicalElement](#C:\temp\ddhubMD\Hydraulics.md#HydraulicLogicalElement)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# Annular <!-- NOUN -->
+## Annular <!-- NOUN -->
 - Display name: Annular
 - Parent class: [HydraulicBranch](#C:\temp\ddhubMD\Hydraulics.md#HydraulicBranch)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# BHAAnnular <!-- NOUN -->
+## BHAAnnular <!-- NOUN -->
 - Display name: BHAAnnular
 - Parent class: [Annular](#C:\temp\ddhubMD\Hydraulics.md#Annular)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# DrillPipesAnnular <!-- NOUN -->
+## DrillPipesAnnular <!-- NOUN -->
 - Display name: DrillPipesAnnular
 - Parent class: [Annular](#C:\temp\ddhubMD\Hydraulics.md#Annular)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# OpenChannel <!-- NOUN -->
+## OpenChannel <!-- NOUN -->
 - Display name: OpenChannel
 - Parent class: [HydraulicBranch](#C:\temp\ddhubMD\Hydraulics.md#HydraulicBranch)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# RectangularChannel <!-- NOUN -->
+## RectangularChannel <!-- NOUN -->
 - Display name: RectangularChannel
 - Parent class: [OpenChannel](#C:\temp\ddhubMD\Hydraulics.md#OpenChannel)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# SemiCircularChannel <!-- NOUN -->
+## SemiCircularChannel <!-- NOUN -->
 - Display name: SemiCircularChannel
 - Parent class: [OpenChannel](#C:\temp\ddhubMD\Hydraulics.md#OpenChannel)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# Pipe <!-- NOUN -->
+## Pipe <!-- NOUN -->
 - Display name: Pipe
 - Parent class: [HydraulicBranch](#C:\temp\ddhubMD\Hydraulics.md#HydraulicBranch)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# BHAInner <!-- NOUN -->
+## BHAInner <!-- NOUN -->
 - Display name: BHAInner
 - Parent class: [Pipe](#C:\temp\ddhubMD\Hydraulics.md#Pipe)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# DrillPipesInner <!-- NOUN -->
+## DrillPipesInner <!-- NOUN -->
 - Display name: DrillPipesInner
 - Parent class: [Pipe](#C:\temp\ddhubMD\Hydraulics.md#Pipe)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# OpenHole <!-- NOUN -->
+## OpenHole <!-- NOUN -->
 - Display name: OpenHole
 - Parent class: [Pipe](#C:\temp\ddhubMD\Hydraulics.md#Pipe)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# ReturnFlowLine <!-- NOUN -->
+## ReturnFlowLine <!-- NOUN -->
 - Display name: ReturnFlowLine
 - Parent class: [Pipe](#C:\temp\ddhubMD\Hydraulics.md#Pipe)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# HydraulicJunction <!-- NOUN -->
+## HydraulicJunction <!-- NOUN -->
 - Display name: HydraulicJunction
 - Parent class: [HydraulicLogicalElement](#C:\temp\ddhubMD\Hydraulics.md#HydraulicLogicalElement)
 - Attributes:
@@ -101,183 +117,193 @@
   - RightToLeft
     - Type: bool
     - Description: Indicates whether the fluid can flow from the right branch to the left branch though the junction
+- Specialization:
+  - LeftToRight = true
+  - RightToLeft = true
 - Description: 
 - Examples:
-# MudMixing <!-- NOUN -->
+## MudMixing <!-- NOUN -->
 - Display name: MudMixing
 - Parent class: [HydraulicJunction](#C:\temp\ddhubMD\Hydraulics.md#HydraulicJunction)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# HydraulicNetwork <!-- NOUN -->
+## HydraulicNetwork <!-- NOUN -->
 - Display name: HydraulicNetwork
 - Parent class: [HydraulicLogicalElement](#C:\temp\ddhubMD\Hydraulics.md#HydraulicLogicalElement)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# DownholeHydraulicNetwork <!-- NOUN -->
+## DownholeHydraulicNetwork <!-- NOUN -->
 - Display name: DownholeHydraulicNetwork
 - Parent class: [HydraulicNetwork](#C:\temp\ddhubMD\Hydraulics.md#HydraulicNetwork)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# TopsideHydraulicNetwork <!-- NOUN -->
+## TopsideHydraulicNetwork <!-- NOUN -->
 - Display name: TopsideHydraulicNetwork
 - Parent class: [HydraulicNetwork](#C:\temp\ddhubMD\Hydraulics.md#HydraulicNetwork)
 - Attributes:
+- Specialization:
 - Description: 
 - Examples:
-# EndsHydraulicBranchDecomposition <!-- VERB -->
+
+
+# VERBS
+## EndsHydraulicBranchDecomposition <!-- VERB -->
 - Display name: EndsHydraulicBranchDecomposition
 - Subject class: [HydraulicBranch](#C:\temp\ddhubMD\Hydraulics.md#HydraulicBranch)
 - Object class: [HydraulicBranch](#C:\temp\ddhubMD\Hydraulics.md#HydraulicBranch)
 - Description: 
 - Examples: 
-# HasBranchComponent <!-- VERB -->
+## HasBranchComponent <!-- VERB -->
 - Display name: HasBranchComponent
 - Subject class: [HydraulicNetwork](#C:\temp\ddhubMD\Hydraulics.md#HydraulicNetwork)
 - Object class: [HydraulicBranch](#C:\temp\ddhubMD\Hydraulics.md#HydraulicBranch)
 - Description: 
 - Examples: 
-# HasBranchCoordinateSystem <!-- VERB -->
+## HasBranchCoordinateSystem <!-- VERB -->
 - Display name: HasBranchCoordinateSystem
 - Subject class: [HydraulicBranch](#C:\temp\ddhubMD\Hydraulics.md#HydraulicBranch)
 - Object class: [ReferenceFrame](#C:\temp\ddhubMD\PhysicalLocation.md#ReferenceFrame)
 - Description: 
 - Examples: 
-# HasHydraulicState <!-- VERB -->
+## HasHydraulicState <!-- VERB -->
 - Display name: HasHydraulicState
 - Subject class: [HydraulicJunction](#C:\temp\ddhubMD\Hydraulics.md#HydraulicJunction)
 - Object class: [HydraulicElementState](#C:\temp\ddhubMD\Hydraulics.md#HydraulicElementState)
 - Description: 
 - Examples: 
-# HasHydraulicStateValueFrom <!-- VERB -->
+## HasHydraulicStateValueFrom <!-- VERB -->
 - Display name: HasHydraulicStateValueFrom
 - Subject class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Object class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Description: 
 - Examples: 
-# HasLeftBranchCoordinates <!-- VERB -->
+## HasLeftBranchCoordinates <!-- VERB -->
 - Display name: HasLeftBranchCoordinates
 - Subject class: [HydraulicJunction](#C:\temp\ddhubMD\Hydraulics.md#HydraulicJunction)
 - Object class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Description: 
 - Examples: 
-# HasRightBranchCoordinates <!-- VERB -->
+## HasRightBranchCoordinates <!-- VERB -->
 - Display name: HasRightBranchCoordinates
 - Subject class: [HydraulicJunction](#C:\temp\ddhubMD\Hydraulics.md#HydraulicJunction)
 - Object class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Description: 
 - Examples: 
-# IsHydraulicallyLocatedAt <!-- VERB -->
+## IsHydraulicallyLocatedAt <!-- VERB -->
 - Display name: IsHydraulicallyLocatedAt
 - Subject class: [DrillingData](#C:\temp\ddhubMD\DrillingDataSemantics.md#DrillingData)
 - Object class: [HydraulicLogicalElement](#C:\temp\ddhubMD\Hydraulics.md#HydraulicLogicalElement)
 - Description: 
 - Examples: 
-# IsEquivalentCirculationDensityAt <!-- VERB -->
+## IsEquivalentCirculationDensityAt <!-- VERB -->
 - Display name: IsEquivalentCirculationDensityAt
 - Subject class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Object class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Description: 
 - Examples: 
-# IsFluidDensityAt <!-- VERB -->
+## IsFluidDensityAt <!-- VERB -->
 - Display name: IsFluidDensityAt
 - Subject class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Object class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Description: 
 - Examples: 
-# IsFluidTemperatureAt <!-- VERB -->
+## IsFluidTemperatureAt <!-- VERB -->
 - Display name: IsFluidTemperatureAt
 - Subject class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Object class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Description: 
 - Examples: 
-# IsFluidVelocityAt <!-- VERB -->
+## IsFluidVelocityAt <!-- VERB -->
 - Display name: IsFluidVelocityAt
 - Subject class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Object class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Description: 
 - Examples: 
-# IsHydraulicEstimationAt <!-- VERB -->
+## IsHydraulicEstimationAt <!-- VERB -->
 - Display name: IsHydraulicEstimationAt
 - Subject class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Object class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Description: 
 - Examples: 
-# IsHydraulicMaximumAllowedRateOfChangeAt <!-- VERB -->
+## IsHydraulicMaximumAllowedRateOfChangeAt <!-- VERB -->
 - Display name: IsHydraulicMaximumAllowedRateOfChangeAt
 - Subject class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Object class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Description: 
 - Examples: 
-# IsHydraulicMaximumAllowedValueAt <!-- VERB -->
+## IsHydraulicMaximumAllowedValueAt <!-- VERB -->
 - Display name: IsHydraulicMaximumAllowedValueAt
 - Subject class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Object class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Description: 
 - Examples: 
-# IsHydraulicMeasurementAt <!-- VERB -->
+## IsHydraulicMeasurementAt <!-- VERB -->
 - Display name: IsHydraulicMeasurementAt
 - Subject class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Object class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Description: 
 - Examples: 
-# IsMassFlowRateAt <!-- VERB -->
+## IsMassFlowRateAt <!-- VERB -->
 - Display name: IsMassFlowRateAt
 - Subject class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Object class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Description: 
 - Examples: 
-# IsPressureAt <!-- VERB -->
+## IsPressureAt <!-- VERB -->
 - Display name: IsPressureAt
 - Subject class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Object class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Description: 
 - Examples: 
-# IsPressureGradientAt <!-- VERB -->
+## IsPressureGradientAt <!-- VERB -->
 - Display name: IsPressureGradientAt
 - Subject class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Object class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Description: 
 - Examples: 
-# IsVolumetricFlowRateAt <!-- VERB -->
+## IsVolumetricFlowRateAt <!-- VERB -->
 - Display name: IsVolumetricFlowRateAt
 - Subject class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Object class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Description: 
 - Examples: 
-# IsHydraulicConnectedTo <!-- VERB -->
+## IsHydraulicConnectedTo <!-- VERB -->
 - Display name: IsHydraulicConnectedTo
 - Subject class: [HydraulicLogicalElement](#C:\temp\ddhubMD\Hydraulics.md#HydraulicLogicalElement)
 - Object class: [HydraulicLogicalElement](#C:\temp\ddhubMD\Hydraulics.md#HydraulicLogicalElement)
 - Description: 
 - Examples: 
-# HasEndJunction <!-- VERB -->
+## HasEndJunction <!-- VERB -->
 - Display name: HasEndJunction
 - Subject class: [HydraulicBranch](#C:\temp\ddhubMD\Hydraulics.md#HydraulicBranch)
 - Object class: [HydraulicJunction](#C:\temp\ddhubMD\Hydraulics.md#HydraulicJunction)
 - Description: 
 - Examples: 
-# HasLeftBranch <!-- VERB -->
+## HasLeftBranch <!-- VERB -->
 - Display name: HasLeftBranch
 - Subject class: [HydraulicJunction](#C:\temp\ddhubMD\Hydraulics.md#HydraulicJunction)
 - Object class: [HydraulicBranch](#C:\temp\ddhubMD\Hydraulics.md#HydraulicBranch)
 - Description: 
 - Examples: 
-# HasRightBranch <!-- VERB -->
+## HasRightBranch <!-- VERB -->
 - Display name: HasRightBranch
 - Subject class: [HydraulicJunction](#C:\temp\ddhubMD\Hydraulics.md#HydraulicJunction)
 - Object class: [HydraulicBranch](#C:\temp\ddhubMD\Hydraulics.md#HydraulicBranch)
 - Description: 
 - Examples: 
-# HasStartJunction <!-- VERB -->
+## HasStartJunction <!-- VERB -->
 - Display name: HasStartJunction
 - Subject class: [HydraulicBranch](#C:\temp\ddhubMD\Hydraulics.md#HydraulicBranch)
 - Object class: [HydraulicJunction](#C:\temp\ddhubMD\Hydraulics.md#HydraulicJunction)
 - Description: 
 - Examples: 
-# StartsHydraulicBranchDecomposition <!-- VERB -->
+## StartsHydraulicBranchDecomposition <!-- VERB -->
 - Display name: StartsHydraulicBranchDecomposition
 - Subject class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
 - Object class: [DDHubNode](#C:\temp\ddhubMD\DrillingDataSemantics.md#DDHubNode)
