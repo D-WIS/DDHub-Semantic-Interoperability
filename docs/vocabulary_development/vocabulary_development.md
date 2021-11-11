@@ -65,3 +65,18 @@ Below is an empty template that can be used to define a new noun.
 - Description: 
 - Examples: 
 ```
+
+
+## Categories
+
+- [DataFlow](DataFlow.md)
+- [DataTransmission](DataTransmission.md)
+- [DataValidity](DataValidity.md)
+- [DrillingDataSemantics](DrillingDataSemantics.md)
+- [DrillingEquipment](DrillingEquipment.md)
+- [Hydraulics](Hydraulics.md)
+- [Mechanics](Mechanics.md)
+- [PhysicalLocation](PhysicalLocation.md)
+- [Quantities](Quantities.md)
+- [TimeManagement](TimeManagement.md)
+- [Uncertainty](Uncertainty.md)
