@@ -1,5 +1,5 @@
 # Use cases
-Below is a list of relevant use-cases for the DDHub. 
+Below is a list of relevant use-cases for the D-WIS project. 
 
 ## Accelerometer data
 ### Application side: 
