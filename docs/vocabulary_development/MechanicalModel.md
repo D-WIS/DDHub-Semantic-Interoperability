@@ -10,26 +10,26 @@
 - Display name: Mechanical stiffness type
 - Parent class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
 - Attributes:
-- Specialization: [MechanicalSoftModel], [MechanicalStiffModel]
+- Specialization: [MechanicalSoftModel](./MechanicalModel.md#MechanicalSoftModel-), [MechanicalStiffModel](./MechanicalModel.md#MechanicalStiffModel-)
 - Description: A description of how the drill-stem stiffness is modelled.
 - Examples:
 ## MechanicalSoftModel <!-- NOUN -->
 - Display name: Mechanical soft model
-- Parent class: MechanicalStiffnessType (./MechanicalModel.md#MechanicalModelType-)
+- Parent class: [MechanicalStiffnessType](./MechanicalModel.md#MechanicalModelType-)
 - Attributes:
 - Specialization: An infinitively soft model assumes that the drill-stem deforms without any resistance when compressive loads are applied.
 - Description: 
 - Examples:
 ## MechanicalStiffModel <!-- NOUN -->
 - Display name: Mechanical stiff model
-- Parent class: MechanicalStiffnessType (./MechanicalModel.md#MechanicalModelType-)
+- Parent class: [MechanicalStiffnessType](./MechanicalModel.md#MechanicalModelType-)
 - Attributes:
-- Specialization: [MechanicalStiffModelAssumedContacts],[MechanicalStiffModelEstimatedContacts]
+- Specialization: [MechanicalStiffModelAssumedContacts](./MechanicalModel.md#MechanicalStiffModelAssumedContacts-), [MechanicalStiffModelEstimatedContacts](./MechanicalModel.md#MechanicalStiffModelEstimatedContacts-)
 - Description: A stiff mechanical model considers that the drill-stem can deform laterally when put in compression.
 - Examples:
 ## MechanicalStiffModelAssumedContacts<!-- NOUN -->
 - Display name: Mechanical stiff model with assumed contacts
-- Parent class: [MechanicalStiffModel](./echanicalModel.md#MechanicalStiffModel-)
+- Parent class: [MechanicalStiffModel](./MechanicalModel.md#MechanicalStiffModel-)
 - Attributes:
 - Specialization:
 - Description: Such a stiff mechanical model presuposes the position of the contact points.
