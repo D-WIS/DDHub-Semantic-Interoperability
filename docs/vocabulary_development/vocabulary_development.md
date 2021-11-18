@@ -9,9 +9,9 @@ As seen from a graph perspective:
 ## Nouns
 
 A noun is fully characterized by:
-- a name
-- a display name
-- a parent noun
+- a *name*: the identification name of the noun. It should ideally follow some notational convention. 
+- a *display name*: a variant of the name used for pretty printing of the noun. It can have a more human friendly syntax. 
+- a *parent noun*: each noun is associated to a (unique) parent. Circular parenting is not permitted. There is a common ancestor to all nouns: DWISNode. One can therefore derive a tree structure from the nouns. The parent relation should be consistent with the *is a* relation. For example, if the DeadlineHookload noun has parent the Hookload noun, then consistency is in place. When asserting that a signal *s* is a DeadlineHookload, one implicitely asserts that *s* is a Hookload, which is true. A contrario, stating the the noun TopDriveShaft has parent noun TopDrive is erroneous: if an element *e* is a TopDriveShaft, then one implicitely asserts that *e* is also a TopDrive, which is false. In this example, using the parent relation between TopDriveShaft and TopDrive is not correct. One should instead use a *is made of* relation, or something similar.    
 - an attribute list:
   - attribute name, type and description
 - some specialization values:
