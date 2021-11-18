@@ -1,7 +1,7 @@
 # NOUNS
 ## DrillStemMechanicalModel <!-- NOUN -->
 - Display name: Drill-stem mechanical model
-- Parent class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Parent class: [MathematcialModel](./Model.md#MathematcialModel-)
 - Attributes:
 - Specialization: 
 - Description: A mechanical model for a drill-stem. Another name for drill-stem mechanical models is a torque and drag model.
