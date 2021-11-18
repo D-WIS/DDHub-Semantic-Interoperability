@@ -48,5 +48,5 @@
 - Display name: Is of mechanical stiffness type
 - Subject class: [MechanicalModel](./MechanicalModel.md#MechanicalModel-)
 - Object class: [MechanicalStiffnessType](./MechanicalModel.md#MechanicalStiffModel-)
-- Description: A relation to describes how the drill-stem mechanical model manage stiffness.
+- Description: A relation to describe how the drill-stem mechanical model manage stiffness.
 - Examples: 
