@@ -9,10 +9,13 @@ The models [MechanicalSoftModel](./definitions/MechanicalModel.md#MechanicalSoft
 
 This seems to be invalid according to the 'is_a' rule, and i would think it more logical to subclass these from a MechanicalModel again subclassing Model, but it may be my understanding is lacking. 
 
-![Mechanical Model](./img/Mechanical_Model.png)
+Current interpretation:
+
+<img src="./img/Mechanical_Model.png" width="600" />
 
 Proposal:
-![Mechanical Model Proposal](./img/Mechanical_Model_proposal.png)
+
+<img src="./img/Mechanical_Model_proposal.png" width="600" />
 
 ### Questions
 
