@@ -1,11 +1,11 @@
 strict digraph  {
-DDHubNode;
 MechanicalElementState;
-MechanicallyConnectedState;
-MechanicallyClosedState;
 MechanicalLogicalElement;
+MechanicallyClosedState;
+MechanicallyConnectedState;
+DDHubNode;
 MechanicalElementState -> DDHubNode  [label=SUBCLASS_OF];
-MechanicallyConnectedState -> MechanicalElementState  [label=SUBCLASS_OF];
-MechanicallyClosedState -> MechanicalElementState  [label=SUBCLASS_OF];
 MechanicalLogicalElement -> DDHubNode  [label=SUBCLASS_OF];
+MechanicallyClosedState -> MechanicalElementState  [label=SUBCLASS_OF];
+MechanicallyConnectedState -> MechanicalElementState  [label=SUBCLASS_OF];
 }

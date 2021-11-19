@@ -1,15 +1,15 @@
 strict digraph  {
-DDHubNode;
-GaussianUncertainty;
-MinMaxUncertainty;
 RelativeUncertainty;
-GenericUncertainty;
-SignalUncertainty;
+GaussianUncertainty;
 SensorUncertainty;
-GaussianUncertainty -> SignalUncertainty  [label=SUBCLASS_OF];
-MinMaxUncertainty -> SignalUncertainty  [label=SUBCLASS_OF];
+GenericUncertainty;
+DDHubNode;
+SignalUncertainty;
+MinMaxUncertainty;
 RelativeUncertainty -> SignalUncertainty  [label=SUBCLASS_OF];
+GaussianUncertainty -> SignalUncertainty  [label=SUBCLASS_OF];
+SensorUncertainty -> SignalUncertainty  [label=SUBCLASS_OF];
 GenericUncertainty -> SignalUncertainty  [label=SUBCLASS_OF];
 SignalUncertainty -> DDHubNode  [label=SUBCLASS_OF];
-SensorUncertainty -> SignalUncertainty  [label=SUBCLASS_OF];
+MinMaxUncertainty -> SignalUncertainty  [label=SUBCLASS_OF];
 }
