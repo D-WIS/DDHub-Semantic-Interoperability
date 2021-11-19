@@ -95,3 +95,8 @@ Below is an empty template that can be used to define a new noun.
 - [Quantities](Quantities.md): quantities and units. 
 - [TimeManagement](TimeManagement.md): this category referes mostly to the description of the various clocks that can be encoutered on a rig, and their synchronization status with respect to each other. 
 - [Uncertainty](Uncertainty.md): this category contains the nouns and verbs required to describe the various types of uncertainty attached to drilling signals. Uncertainties can be related to sensor characteristics, calculations, model calibration, data assimilation.
+
+
+## Open Questions
+
+Questions are discussed [here](./OpenQuestions.md)
