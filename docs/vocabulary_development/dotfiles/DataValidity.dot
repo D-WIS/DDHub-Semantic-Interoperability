@@ -1,0 +1,13 @@
+strict digraph  {
+EQ;
+ValidityCondition;
+DDHubNode;
+LT;
+ConnectedCondition;
+GT;
+EQ -> ValidityCondition  [label=SUBCLASS_OF];
+ValidityCondition -> DDHubNode  [label=SUBCLASS_OF];
+LT -> ValidityCondition  [label=SUBCLASS_OF];
+ConnectedCondition -> ValidityCondition  [label=SUBCLASS_OF];
+GT -> ValidityCondition  [label=SUBCLASS_OF];
+}

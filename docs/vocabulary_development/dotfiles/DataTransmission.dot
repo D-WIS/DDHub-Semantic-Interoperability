@@ -1,0 +1,13 @@
+strict digraph  {
+TopSideTelemetry;
+DDHubNode;
+MudPulseTelemetry;
+WiredPipeTelemetry;
+Telemetry;
+DownHoleTelemetry;
+TopSideTelemetry -> Telemetry  [label=SUBCLASS_OF];
+MudPulseTelemetry -> DownHoleTelemetry  [label=SUBCLASS_OF];
+WiredPipeTelemetry -> DownHoleTelemetry  [label=SUBCLASS_OF];
+Telemetry -> DDHubNode  [label=SUBCLASS_OF];
+DownHoleTelemetry -> Telemetry  [label=SUBCLASS_OF];
+}

@@ -1,5 +1,5 @@
 # NOUNS
-## MathematcialModel <!-- NOUN -->
+## MathematicalModel <!-- NOUN -->
 - Display name: a mathematical model
 - Parent class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
 - Attributes:

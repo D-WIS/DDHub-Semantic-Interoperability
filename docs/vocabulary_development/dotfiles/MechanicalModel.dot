@@ -1,0 +1,17 @@
+strict digraph  {
+MechanicalStiffnessType;
+DDHubNode;
+MechanicalSoftModel;
+MathematicalModel;
+MechanicalStiffModelAssumedContacts;
+MechanicalStiffModelEstimatedContacts;
+MechanicalStiffModel;
+DrillStemMechanicalModel;
+MechanicalStiffnessType -> DDHubNode  [label=SUBCLASS_OF];
+MechanicalSoftModel -> MechanicalStiffnessType  [label=SUBCLASS_OF];
+MathematicalModel -> DDHubNode  [label=SUBCLASS_OF];
+MechanicalStiffModelAssumedContacts -> MechanicalStiffModel  [label=SUBCLASS_OF];
+MechanicalStiffModelEstimatedContacts -> MechanicalStiffModel  [label=SUBCLASS_OF];
+MechanicalStiffModel -> MechanicalStiffnessType  [label=SUBCLASS_OF];
+DrillStemMechanicalModel -> MathematicalModel  [label=SUBCLASS_OF];
+}
