@@ -73,6 +73,7 @@ def parseContents(contents):
             if noun not in nodes:
                 nodes.append(noun)
         elif line.startswith("- Parent class:") and noun!=None:
+            # found the parent relationship
             parentClass = line[line.find("[")+1:line.find("]")]
             if parentClass not in nodes:
                 nodes.append(parentClass)
@@ -82,6 +83,7 @@ def parseContents(contents):
                 relationships.append(r)
             
         elif line.startswith("##") and line.endswith("<!-- VERB -->"):
+            # Found start of a verb
             noun = None
             parentClass = None
 
@@ -119,7 +121,7 @@ def parseContents(contents):
         #print(line)
     return nodes,relationships,ignoredRels
             
-
+# construct empty graph
 G = nx.MultiDiGraph()
 graphs = {}
 fileNodes = {}
@@ -128,6 +130,7 @@ allNodes = []
 allRels = []
 allIgnoredRels = []
 
+# Read all the md files
 filenames = glob.glob(folder+"/*.md")
 for filename in filenames:
     with open(filename,"r") as fp:
@@ -143,45 +146,36 @@ for filename in filenames:
 
 print("Populate Graph")
 
+# try to make unique to prevent duplication of nodes and edges
 allNodes = list(set(allNodes))
 allNodes.sort()
 
-#allIgnoredRels.sort()
 allIgnoredRels = list(k for k,_ in itertools.groupby(allIgnoredRels))
-#allRels = list(set(allRels))
-#allIgnoredRels = list(set(allIgnoredRels))
 
 G.add_nodes_from(allNodes)
 G.add_edges_from(allRels)
 
-
-# print("neightbours of MathematicalModel")
-# for n in G.neighbors("MathematicalModel"):
-#     print(n)
-
-# for n in G.neighbors("MathematicalModel"):
-#     print(n)
-
 print("Generate files")
 
-generatedReadmeContents = []
+
+generatedReadmeContents = []    # used to hold contents of README.md
 generatedReadmeContents.append("# Generated Diagrams")
 generatedReadmeContents.append("")
 
 for filename in filenames:
+    # Construct diagrams that "include nodes from each md file"
     nodes = fileNodes[filename]
     graphs[filename] = G.subgraph(nodes)
 
-    #print(len(nodes),len(graphs[filename]))
-        
     filenameFirstPart = os.path.basename(filename).replace(".md","")
     dotFileName = filenameFirstPart+".dot"
     pngFileName = filenameFirstPart+".png"
-    #write_dot(graphs[filename],dotfolder + "/" + dotFileName)
+    #write_dot(graphs[filename],dotfolder + "/" + dotFileName)  # Ignoring dot files for now
 
     graph = to_pydot(graphs[filename])
     graph.write_png(pngFolder+"/"+pngFileName)
 
+    # update readme
     generatedReadmeContents.append("[{}]({})".format(os.path.basename(filename),filename))
     generatedReadmeContents.append("")
     generatedReadmeContents.append('[<img src="generated/{}" width="600px">](./generated/{})'.format(pngFileName,pngFileName))
@@ -189,6 +183,7 @@ for filename in filenames:
     generatedReadmeContents.append("---")
 
 
+# Add any ignored top level verbs
 if len(allIgnoredRels)>0:
     generatedReadmeContents.append("")
     generatedReadmeContents.append("## Ingored Relationships")
@@ -202,6 +197,8 @@ if len(allIgnoredRels)>0:
 with open(pngFolder.replace("/generated","")+"/README.md","w") as fp:
     fp.write("\n".join(generatedReadmeContents))
 
+
+# create one diagram for 'everything'. Currently not included in the readme
 filename = "everything"
 dotFileName = filename+".dot"
 pngFileName = filename+".png"
