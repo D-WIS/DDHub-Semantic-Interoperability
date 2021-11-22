@@ -128,14 +128,14 @@ for filename in filenames:
     graph = to_pydot(graphs[filename])
     graph.write_png(pngFolder+"/"+pngFileName)
 
-    generatedReadmeContents.append("[{}](../{})".format(os.path.basename(filename),filename))
+    generatedReadmeContents.append("[{}]({})".format(os.path.basename(filename),filename))
     generatedReadmeContents.append("")
-    generatedReadmeContents.append('<img src="{}", width="200px">'.format(pngFileName))
+    generatedReadmeContents.append('[<img src="generated/{}" width="600px">](./generated/{})'.format(pngFileName,pngFileName))
     generatedReadmeContents.append("")
     generatedReadmeContents.append("---")
 
 
-with open(pngFolder+"/README.md","w") as fp:
+with open(pngFolder.replace("/generated","")+"/README.md","w") as fp:
     fp.write("\n".join(generatedReadmeContents))
 
 filename = "everything"
