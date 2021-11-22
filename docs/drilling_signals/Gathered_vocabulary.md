@@ -106,17 +106,26 @@ $$T\times D \rightarrow R$$
 
 
 where $T$ denotes the time "set", $D$ and $R$ the domain and range of the signal. For example:
- - a single three-dimensional velocity vector has domain $D = \empty$ and range $R = \R^3$. 
- - alternatively, seeing the three-dimensional velocity vector as three independent velocity values, one gets $D = \R^3$ and $R = \R$. 
- - a computed profile of drill-string center displacements would have domain $D = \R$ and range $\R^3$: the domain corresponds to the linear abscissa of the considered point and the range to the coordinates of the displacement in a Serret-Frenet frame centered at that point. 
+ - single three-dimensional velocity vector:
+  $$D = \empty,\  R = \R^3$$ 
+ - seeing the three-dimensional velocity vector as three independent velocity values, one gets 
+ $$D = \R^3, R = \R$$
+ - a computed profile of drill-string center displacements would have domain $D = \R$ and range $\R^3$: the domain corresponds to the linear abscissa of the considered point and the range to the coordinates of the displacement in a Serret-Frenet frame centered at that point:
+ $$D = \R,\ R = \R^3$$
  - a table of predicted hookloads, as function of the block velocity, the flow-rate and the top-drive RPM will have domain $D = \R^3$ and range $R = \R$. 
+  $$D = \R^3,\ R = \R$$
  - a simplified table of predicted hookloads, function of the block velocity, the flow-rate and a boolean indicating whether there is rotation or not would have domain $D = \R^2 \times \{0,1\}$ and range $R = \R$. 
+ $$D = \R^2 \times \{0,1\},\ R = \R$$
  - an incident status table, function of flow-rate, top-drive RPM and block velocity, containing the estimated status of the wellbore with respect to some incident (such as exceeding fracturing pressure). The domain would be $D = \R^3$ while the range would be $R = \{0,1\}$. 
- - a single pressure (SPP for example) has domain $D = \empty$ and range $R= \R$
+ $$D = \R^3 ,\ R = \{0,1\}$$
+ - a single pressure (SPP for example) has domain $D = \empty$ and range $R= \R$ 
+  $$D = \empty,\  R = \R$$ 
  - a series of along-string pressure measurements has domain $D = \R$ and range  $R= \R$
+   $$D = \R,\  R = \R$$ 
  - a base-oil PVT table has domain $D= \R^2$ (pressure and temperature) and range $R = \R$ (the mass density)
+   $$D = \R^2,\  R = \R$$ 
  - an estimated lithology profile, associating to each depth a lithology type. The domain would be $D = \R$ and the range an enumeration of $L$ lithologies, mathematically expressed as $R = \{1, \dots, L\}$. 
-
+  $$D = \R,\  R = \{1, \dots, L\}$$ 
 ### Combined representations
 
 Both the signal mapping and data shapes approach are important. The data shape describes the structure of the signal as stored on a real-time data server. The signal mapping describes the meaning of the data itself. In the DDHub context, it is then important to associate the two views, since we want to associate meaning to computer stored signals. 
