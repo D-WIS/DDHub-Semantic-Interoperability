@@ -1,7 +1,0 @@
-strict digraph  {
-Clock;
-DDHubNode;
-SynchronizationGroup;
-Clock -> DDHubNode  [label=SUBCLASS_OF];
-SynchronizationGroup -> DDHubNode  [label=SUBCLASS_OF];
-}

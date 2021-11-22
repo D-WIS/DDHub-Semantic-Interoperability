@@ -1,9 +1,0 @@
-strict digraph  {
-SteadyStateModel;
-DDHubNode;
-MathematicalModel;
-TransientModel;
-SteadyStateModel -> DDHubNode  [label=SUBCLASS_OF];
-MathematicalModel -> DDHubNode  [label=SUBCLASS_OF];
-TransientModel -> DDHubNode  [label=SUBCLASS_OF];
-}

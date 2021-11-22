@@ -55,11 +55,13 @@ def parseContents(contents):
     nodes = []
     relationships = []
     noun = None
+    verb = None
     lines = contents.split("\n")
     for line in lines:
         #print(line)
         if line.startswith("##") and line.endswith("<!-- NOUN -->"):
             noun = line.replace("##","").replace("<!-- NOUN -->","").strip()
+            verb = None
             if noun not in nodes:
                 nodes.append(noun)
         elif line.startswith("- Parent class:") and noun!=None:
@@ -68,12 +70,40 @@ def parseContents(contents):
                 nodes.append(parentClass)
             r = [noun,parentClass,{'label':"SUBCLASS_OF"}]
             relationships.append(r)
+        elif line.startswith("##") and line.endswith("<!-- VERB -->"):
+            noun = None
+            subjectClass = None
+            objectClass = None
+            verb = line[line.find(" ")+1:line.find(" <")]
+            #print("Relationship: '{}'".format(verb))
+        elif line.startswith("- Subject class:") and verb!=None:
+            subjectClass = line[line.find("[")+1:line.find("]")]
+        elif line.startswith("- Object class:") and verb!=None:
+            objectClass = line[line.find("[")+1:line.find("]")]
+        
+        if verb!=None and subjectClass!=None and objectClass!=None:
+            r = [subjectClass,objectClass,{'label':verb}]
+            if objectClass not in nodes:
+                nodes.append(objectClass)
+            if subjectClass not in nodes:
+                nodes.append(subjectClass)
+            if r not in relationships:
+                print("{} {} {}".format(subjectClass,verb,objectClass))
+                if subjectClass=="DDHubNode" and objectClass=="DDHubNode":
+                    pass
+                else:
+                    relationships.append(r)
+            
+            
+            
+            
+
             
         #print(line)
     return nodes,relationships
             
 
-G = nx.DiGraph()
+G = nx.MultiDiGraph()
 graphs = {}
 fileNodes = {}
 
@@ -123,7 +153,7 @@ for filename in filenames:
     filenameFirstPart = os.path.basename(filename).replace(".md","")
     dotFileName = filenameFirstPart+".dot"
     pngFileName = filenameFirstPart+".png"
-    write_dot(graphs[filename],dotfolder + "/" + dotFileName)
+    #write_dot(graphs[filename],dotfolder + "/" + dotFileName)
 
     graph = to_pydot(graphs[filename])
     graph.write_png(pngFolder+"/"+pngFileName)
