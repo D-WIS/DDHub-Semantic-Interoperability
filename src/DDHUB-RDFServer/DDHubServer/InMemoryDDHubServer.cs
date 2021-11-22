@@ -64,6 +64,11 @@ namespace DDHubServer
             return true;
         }
 
+  
+
+
+
+
         public bool GetGraph(out string graph)
         {
             graph = string.Empty;
@@ -127,16 +132,12 @@ namespace DDHubServer
 
 
 
-        public async Task<IGraph> GetQueryResultsAsync(SparqlQuery query)
+        public async Task<string> GetQueryResultsAsync(SparqlQuery query)
         {
             return await Task.Run(() => GetQueryResults(query));
         }
 
-        public IGraph GetQueryResults(string query)
-        {
-            SparqlQueryParser sparqlparser = new SparqlQueryParser();
-            return GetQueryResults(sparqlparser.ParseFromString(query));
-        }
+  
 
         public bool GetQueryResults(string query, out string results)
         {
@@ -155,8 +156,7 @@ namespace DDHubServer
 
             try
             {
-                var queryResults = GetQueryResults(query);
-                results = PrintGraph(queryResults);
+                results = GetQueryResults(sparqlQuery);
             }
             catch (Exception sparqlExcepetion)
             {
@@ -166,9 +166,8 @@ namespace DDHubServer
             return results != string.Empty;
         }
 
-        public IGraph GetQueryResults(SparqlQuery query)
+        public string GetQueryResults(SparqlQuery query)
         {
-            IGraph res = null;
             if (query != null)
             {
                 lock (_lock)
@@ -177,14 +176,31 @@ namespace DDHubServer
 
                     //Use the SparqlQueryParser to give us a SparqlQuery object
                     //Should get a Graph back from a CONSTRUCT query
+                    
                     object v = processor.ProcessQuery(query);
                     if (v is IGraph)
                     {
-                        res = (IGraph)v;
+                        return PrintGraph((IGraph)v);
                     }
+                    else if (v is SparqlResultSet)
+                    {
+                        SparqlResultSet srs = (SparqlResultSet)v;
+                        string res = string.Empty;
+
+                        foreach (var t in srs)
+                        {
+                            foreach (var st in t.Variables)
+                            {
+                                res += st.ToString() + " " + t.Value(st).ToString() + "\r\n";
+                            }
+                        }
+                        return res;
+                    }
+
+                    
                 }
             }
-            return res;
+            return string.Empty;
         }
 
 

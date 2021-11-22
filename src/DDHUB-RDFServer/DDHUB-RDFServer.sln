@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDHubServer", "DDHubServer\DDHubServer.csproj", "{2E18DC31-D52D-480B-80AF-7252309C6FAF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DDHubBlazorApp", "DDHubBlazorApp\DDHubBlazorApp.csproj", "{2CBDC5DC-3E71-4F18-A93F-950BA048E626}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2E18DC31-D52D-480B-80AF-7252309C6FAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E18DC31-D52D-480B-80AF-7252309C6FAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E18DC31-D52D-480B-80AF-7252309C6FAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CBDC5DC-3E71-4F18-A93F-950BA048E626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CBDC5DC-3E71-4F18-A93F-950BA048E626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CBDC5DC-3E71-4F18-A93F-950BA048E626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CBDC5DC-3E71-4F18-A93F-950BA048E626}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
