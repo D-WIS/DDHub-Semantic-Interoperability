@@ -1,7 +1,7 @@
 # NOUNS
 ## MeasurableQuantity <!-- NOUN -->
 - Display name: MeasurableQuantity
-- Parent class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Attributes:
   - MeaningfulPrecision
     - Type: double
@@ -160,14 +160,14 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
 - Examples:
 ## MeasurableQuantityUnitAssociation <!-- NOUN -->
 - Display name: MeasurableQuantityUnitAssociation
-- Parent class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## Quantity <!-- NOUN -->
 - Display name: Quantity
-- Parent class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Attributes:
   - L
     - Type: int
@@ -364,7 +364,7 @@ SI Unit: Candela (cd)
 - Examples:
 ## Unit <!-- NOUN -->
 - Display name: Unit
-- Parent class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Attributes:
   - Symbol
     - Type: string
@@ -382,7 +382,7 @@ ConvertedValue = ConversionFactorA + SIValue * ConversionFactorB
 - Examples:
 ## UnitSystem <!-- NOUN -->
 - Display name: UnitSystem
-- Parent class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Attributes:
 - Specialization:
 - Description: A set of associations between measurable quantities and units
@@ -410,20 +410,20 @@ ConvertedValue = ConversionFactorA + SIValue * ConversionFactorB
 - Examples: 
 ## IsObservableFrom <!-- VERB -->
 - Display name: IsObservableFrom
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## IsOfBaseQuantity <!-- VERB -->
 - Display name: IsOfBaseQuantity
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## IsOfMeasurableQuantity <!-- VERB -->
 - Display name: IsOfMeasurableQuantity
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## IsUnitForQuantity <!-- VERB -->

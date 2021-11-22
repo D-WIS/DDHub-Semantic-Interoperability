@@ -1,7 +1,7 @@
 # NOUNS
 ## Telemetry <!-- NOUN -->
 - Display name: Telemetry
-- Parent class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Attributes:
   - RefreshRate
     - Type: double
@@ -48,7 +48,7 @@
 # VERBS
 ## IsTransmittedBy <!-- VERB -->
 - Display name: IsTransmittedBy
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 

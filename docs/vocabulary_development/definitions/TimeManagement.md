@@ -1,7 +1,7 @@
 # NOUNS
 ## Clock <!-- NOUN -->
 - Display name: Clock
-- Parent class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Attributes:
   - LeapSeconds
     - Type: int
@@ -26,7 +26,7 @@
 - Examples:
 ## SynchronizationGroup <!-- NOUN -->
 - Display name: SynchronizationGroup
-- Parent class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Attributes:
   - SynchronizationDelay
     - Type: double

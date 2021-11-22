@@ -1,7 +1,7 @@
 # NOUNS
 ## DataEndPoint <!-- NOUN -->
 - Display name: DataEndPoint
-- Parent class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Attributes:
   - EndPointDescription
     - Type: string
@@ -39,7 +39,7 @@
 - Examples:
 ## DataProvider <!-- NOUN -->
 - Display name: DataProvider
-- Parent class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Attributes:
   - ProviderName
     - Type: string
@@ -49,7 +49,7 @@
 - Examples:
 ## DrillingData <!-- NOUN -->
 - Display name: DrillingData
-- Parent class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Attributes:
   - IsValid
     - Type: bool
@@ -252,7 +252,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Examples:
 ## DrillingSignal <!-- NOUN -->
 - Display name: DrillingSignal
-- Parent class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Attributes:
   - Value
     - Type: object
@@ -272,7 +272,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Examples:
 ## EndPointMapping <!-- NOUN -->
 - Display name: EndPointMapping
-- Parent class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Attributes:
   - FixedIndices
     - Type: int[]
@@ -351,7 +351,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Examples: 
 ## IsProvidedBy <!-- VERB -->
 - Display name: IsProvidedBy
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Object class: [DataProvider](./DrillingDataSemantics.md#DataProvider-)
 - Description: 
 - Examples: 

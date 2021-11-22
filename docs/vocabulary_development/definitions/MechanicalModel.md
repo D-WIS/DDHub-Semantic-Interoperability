@@ -8,7 +8,7 @@
 - Examples:
 ## MechanicalStiffnessType <!-- NOUN -->
 - Display name: Mechanical stiffness type
-- Parent class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Attributes:
 - Specialization: [MechanicalSoftModel](./MechanicalModel.md#MechanicalSoftModel-), [MechanicalStiffModel](./MechanicalModel.md#MechanicalStiffModel-)
 - Description: A description of how the drill-stem stiffness is modelled.
