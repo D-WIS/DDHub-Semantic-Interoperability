@@ -6,6 +6,7 @@ from networkx.drawing.nx_pydot import write_dot
 import pydot
 from networkx.drawing.nx_pydot import to_pydot
 from networkx.drawing.nx_pydot import pydot_layout
+import itertools
 
 
 #####################################################################
@@ -54,6 +55,7 @@ print(folder)
 def parseContents(contents):
     nodes = []
     relationships = []
+    ignoredRels = []
     noun = None
     verb = None
     lines = contents.split("\n")
@@ -90,7 +92,7 @@ def parseContents(contents):
             if r not in relationships:
                 print("{} {} {}".format(subjectClass,verb,objectClass))
                 if subjectClass=="DDHubNode" and objectClass=="DDHubNode":
-                    pass
+                    ignoredRels.append(r)
                 else:
                     relationships.append(r)
             
@@ -100,7 +102,7 @@ def parseContents(contents):
 
             
         #print(line)
-    return nodes,relationships
+    return nodes,relationships,ignoredRels
             
 
 G = nx.MultiDiGraph()
@@ -109,23 +111,30 @@ fileNodes = {}
 
 allNodes = []
 allRels = []
+allIgnoredRels = []
 
 filenames = glob.glob(folder+"/*.md")
 for filename in filenames:
     with open(filename,"r") as fp:
         print("Reading '{}'".format(filename))
         fileContent = fp.read()
-        nodes, relationships = parseContents(fileContent)
+        nodes, relationships,ignoredRels = parseContents(fileContent)
 
         #print(relationships)
         fileNodes[filename] = nodes
         allNodes.extend(nodes)
         allRels.extend(relationships)
+        allIgnoredRels.extend(ignoredRels)
 
 print("Populate Graph")
 
 allNodes = list(set(allNodes))
 allNodes.sort()
+
+#allIgnoredRels.sort()
+allIgnoredRels = list(k for k,_ in itertools.groupby(allIgnoredRels))
+#allRels = list(set(allRels))
+#allIgnoredRels = list(set(allIgnoredRels))
 
 G.add_nodes_from(allNodes)
 G.add_edges_from(allRels)
@@ -165,12 +174,22 @@ for filename in filenames:
     generatedReadmeContents.append("---")
 
 
+if len(allIgnoredRels)>0:
+    generatedReadmeContents.append("")
+    generatedReadmeContents.append("## Ingored Relationships")
+    generatedReadmeContents.append("")
+    generatedReadmeContents.append("The following top level relationships have been omitted from the diagrams due to preserve clarity:\n")
+    generatedReadmeContents.append("| SubjectClass | Relationship | ObjectClass |")
+    generatedReadmeContents.append("| ------------ | ------------ | ----------- |")
+    for r in allIgnoredRels:
+        generatedReadmeContents.append("| {} | {} | {} |".format(r[0],r[2]["label"],r[1]))
+
 with open(pngFolder.replace("/generated","")+"/README.md","w") as fp:
     fp.write("\n".join(generatedReadmeContents))
 
 filename = "everything"
 dotFileName = filename+".dot"
 pngFileName = filename+".png"
-write_dot(G,dotfolder + "/" + dotFileName)
+#write_dot(G,dotfolder + "/" + dotFileName)
 graph = to_pydot(G)
 graph.write_png(pngFolder+"/"+pngFileName)
