@@ -49,6 +49,8 @@ if os.getenv("DOTFILE_FOLDER")!=None:
 if os.getenv("PNGFILE_FOLDER")!=None:
     pngFolder = os.getenv("PNGFILE_FOLDER")
 
+topLevelNode = "DDHubNode"
+
 print(folder)
 
 
@@ -60,28 +62,40 @@ def parseContents(contents):
     verb = None
     lines = contents.split("\n")
     for line in lines:
-        #print(line)
         if line.startswith("##") and line.endswith("<!-- NOUN -->"):
+            # found start of a noun
             noun = line.replace("##","").replace("<!-- NOUN -->","").strip()
             verb = None
+            parentClass = None
+            subjectClass = None
+            objectClass = None
+
             if noun not in nodes:
                 nodes.append(noun)
         elif line.startswith("- Parent class:") and noun!=None:
             parentClass = line[line.find("[")+1:line.find("]")]
             if parentClass not in nodes:
                 nodes.append(parentClass)
-            r = [noun,parentClass,{'label':"SUBCLASS_OF"}]
-            relationships.append(r)
+            
+            if noun!=None and parentClass!=None:
+                r = [noun,parentClass,{'label':"SUBCLASS_OF"}]
+                relationships.append(r)
+            
         elif line.startswith("##") and line.endswith("<!-- VERB -->"):
             noun = None
+            parentClass = None
+
             subjectClass = None
             objectClass = None
+
             verb = line[line.find(" ")+1:line.find(" <")]
-            #print("Relationship: '{}'".format(verb))
         elif line.startswith("- Subject class:") and verb!=None:
             subjectClass = line[line.find("[")+1:line.find("]")]
         elif line.startswith("- Object class:") and verb!=None:
             objectClass = line[line.find("[")+1:line.find("]")]
+
+
+        
         
         if verb!=None and subjectClass!=None and objectClass!=None:
             r = [subjectClass,objectClass,{'label':verb}]
@@ -90,8 +104,9 @@ def parseContents(contents):
             if subjectClass not in nodes:
                 nodes.append(subjectClass)
             if r not in relationships:
-                print("{} {} {}".format(subjectClass,verb,objectClass))
-                if subjectClass=="DDHubNode" and objectClass=="DDHubNode":
+                #print("{} {} {}".format(subjectClass,verb,objectClass))
+                if subjectClass==topLevelNode and objectClass==topLevelNode: 
+                    # These top level relationships clutter the diagrams, we will ignore these
                     ignoredRels.append(r)
                 else:
                     relationships.append(r)
