@@ -1,7 +1,7 @@
 # NOUNS
 ## DataFlowNode <!-- NOUN -->
 - Display name: DataFlowNode
-- Parent class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Attributes:
 - Specialization:
 - Description: 
@@ -292,8 +292,8 @@
 # VERBS
 ## Controls <!-- VERB -->
 - Display name: Controls
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## HasFunction <!-- VERB -->
@@ -305,7 +305,7 @@
 ## IsCommandFor <!-- VERB -->
 - Display name: IsCommandFor
 - Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## IsComputationInput <!-- VERB -->
@@ -346,8 +346,8 @@
 - Examples: 
 ## IsDerivationInput <!-- VERB -->
 - Display name: IsDerivationInput
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## IsResamplingInput <!-- VERB -->
@@ -370,20 +370,20 @@
 - Examples: 
 ## IsComputedBy <!-- VERB -->
 - Display name: IsComputedBy
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## IsMeasuredBy <!-- VERB -->
 - Display name: IsMeasuredBy
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## IsRecordedFrom <!-- VERB -->
 - Display name: IsRecordedFrom
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## IsTransformationOutput <!-- VERB -->
@@ -400,14 +400,14 @@
 - Examples: 
 ## IsDerivedFrom <!-- VERB -->
 - Display name: IsDerivedFrom
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## IsIntegratedFrom <!-- VERB -->
 - Display name: IsIntegratedFrom
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## IsResampledBy <!-- VERB -->
@@ -424,7 +424,7 @@
 - Examples: 
 ## IsProcessedBy <!-- VERB -->
 - Display name: IsProcessedBy
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 

@@ -12,8 +12,8 @@ namespace WebApi
     {
         public override void ConfigureServices(IServiceCollection services)
         {
-            string model = @"C:\Users\beda\source\repos\D-WIS\DDHub-Semantic-Interoperability\model\DDHub_Turtle.owl";
-            services.AddSingleton<IDDHubServer, InMemoryDDHubServer>(sp =>InMemoryDDHubServer.CreateFromFile(model));
+            string model = @"C:\Users\beda\source\repos\D-WIS\DDHub-Semantic-Interoperability\examples\Demo\RigOntThirdQuery_turtle.owl";
+            services.AddSingleton<IDDHubServer, InMemoryDDHubServer>(sp => InMemoryDDHubServer.CreateFromFile(model));
 
             services.AddCors(options => options.AddPolicy("Cors", builder =>
             {

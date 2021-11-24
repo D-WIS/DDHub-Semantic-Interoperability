@@ -1,7 +1,7 @@
 # NOUNS
 ## HydraulicElementState <!-- NOUN -->
 - Display name: HydraulicElementState
-- Parent class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Attributes:
 - Specialization:
 - Description: 
@@ -18,7 +18,7 @@
 - Examples:
 ## HydraulicLogicalElement <!-- NOUN -->
 - Display name: HydraulicLogicalElement
-- Parent class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Attributes:
 - Specialization:
 - Description: 
@@ -179,8 +179,8 @@
 - Examples: 
 ## HasHydraulicStateValueFrom <!-- VERB -->
 - Display name: HasHydraulicStateValueFrom
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## HasLeftBranchCoordinates <!-- VERB -->
@@ -203,74 +203,74 @@
 - Examples: 
 ## IsEquivalentCirculationDensityAt <!-- VERB -->
 - Display name: IsEquivalentCirculationDensityAt
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## IsFluidDensityAt <!-- VERB -->
 - Display name: IsFluidDensityAt
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## IsFluidTemperatureAt <!-- VERB -->
 - Display name: IsFluidTemperatureAt
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## IsFluidVelocityAt <!-- VERB -->
 - Display name: IsFluidVelocityAt
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## IsHydraulicEstimationAt <!-- VERB -->
 - Display name: IsHydraulicEstimationAt
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## IsHydraulicMaximumAllowedRateOfChangeAt <!-- VERB -->
 - Display name: IsHydraulicMaximumAllowedRateOfChangeAt
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## IsHydraulicMaximumAllowedValueAt <!-- VERB -->
 - Display name: IsHydraulicMaximumAllowedValueAt
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## IsHydraulicMeasurementAt <!-- VERB -->
 - Display name: IsHydraulicMeasurementAt
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## IsMassFlowRateAt <!-- VERB -->
 - Display name: IsMassFlowRateAt
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## IsPressureAt <!-- VERB -->
 - Display name: IsPressureAt
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## IsPressureGradientAt <!-- VERB -->
 - Display name: IsPressureGradientAt
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## IsVolumetricFlowRateAt <!-- VERB -->
 - Display name: IsVolumetricFlowRateAt
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## IsHydraulicConnectedTo <!-- VERB -->
@@ -305,7 +305,7 @@
 - Examples: 
 ## StartsHydraulicBranchDecomposition <!-- VERB -->
 - Display name: StartsHydraulicBranchDecomposition
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 

@@ -1,0 +1,103 @@
+Prefix(:=<http://ddhub.no/demo1#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://ddhub.no/demo1#>
+
+Declaration(Class(:DeadLine))
+Declaration(Class(:DrillingSignal))
+Declaration(Class(:HoistingSystem))
+Declaration(Class(:HoistingSystemElement))
+Declaration(Class(:Hookload))
+Declaration(Class(:MechanicalElement))
+Declaration(Class(:Rig))
+Declaration(Class(:StandardDrillingSignal))
+Declaration(ObjectProperty(:HasMechanicalPosition))
+Declaration(ObjectProperty(:HoistingSystemPartOf))
+Declaration(ObjectProperty(:PartOfMechanicalCircuit))
+Declaration(NamedIndividual(:deadline1))
+Declaration(NamedIndividual(:h1))
+Declaration(NamedIndividual(:h2))
+Declaration(NamedIndividual(:hoistingSystem1))
+
+############################
+#   Object Properties
+############################
+
+# Object Property: :HasMechanicalPosition (:HasMechanicalPosition)
+
+ObjectPropertyDomain(:HasMechanicalPosition :DrillingSignal)
+ObjectPropertyRange(:HasMechanicalPosition :MechanicalElement)
+
+# Object Property: :HoistingSystemPartOf (:HoistingSystemPartOf)
+
+SubObjectPropertyOf(:HoistingSystemPartOf :PartOfMechanicalCircuit)
+ObjectPropertyDomain(:HoistingSystemPartOf :HoistingSystemElement)
+ObjectPropertyRange(:HoistingSystemPartOf :HoistingSystem)
+
+# Object Property: :PartOfMechanicalCircuit (:PartOfMechanicalCircuit)
+
+ObjectPropertyDomain(:PartOfMechanicalCircuit :MechanicalElement)
+ObjectPropertyRange(:PartOfMechanicalCircuit :MechanicalElement)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: :DeadLine (:DeadLine)
+
+SubClassOf(:DeadLine :MechanicalElement)
+
+# Class: :DrillingSignal (DrillingSignal)
+
+AnnotationAssertion(rdfs:label :DrillingSignal "DrillingSignal"@en)
+
+# Class: :HoistingSystem (:HoistingSystem)
+
+SubClassOf(:HoistingSystem :MechanicalElement)
+
+# Class: :HoistingSystemElement (:HoistingSystemElement)
+
+EquivalentClasses(:HoistingSystemElement ObjectUnionOf(:HoistingSystem ObjectSomeValuesFrom(:PartOfMechanicalCircuit :HoistingSystem)))
+SubClassOf(:HoistingSystemElement :MechanicalElement)
+
+# Class: :Hookload (:Hookload)
+
+EquivalentClasses(:Hookload ObjectSomeValuesFrom(:HasMechanicalPosition :HoistingSystemElement))
+SubClassOf(:Hookload :StandardDrillingSignal)
+
+# Class: :StandardDrillingSignal (:StandardDrillingSignal)
+
+SubClassOf(:StandardDrillingSignal :DrillingSignal)
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: :deadline1 (:deadline1)
+
+ClassAssertion(:DeadLine :deadline1)
+ObjectPropertyAssertion(:PartOfMechanicalCircuit :deadline1 :hoistingSystem1)
+
+# Individual: :h1 (:h1)
+
+ClassAssertion(:Hookload :h1)
+
+# Individual: :h2 (:h2)
+
+ClassAssertion(:DrillingSignal :h2)
+ObjectPropertyAssertion(:HasMechanicalPosition :h2 :hoistingSystem1)
+
+# Individual: :hoistingSystem1 (:hoistingSystem1)
+
+ClassAssertion(:HoistingSystem :hoistingSystem1)
+
+
+)

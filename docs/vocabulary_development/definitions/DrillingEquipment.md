@@ -1,7 +1,7 @@
 # NOUNS
 ## DrillingEquipment <!-- NOUN -->
 - Display name: DrillingEquipment
-- Parent class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Attributes:
 - Specialization:
 - Description: 

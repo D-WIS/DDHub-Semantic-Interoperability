@@ -1,7 +1,7 @@
 # NOUNS
 ## ValidityCondition <!-- NOUN -->
 - Display name: ValidityCondition
-- Parent class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Attributes:
 - Specialization:
 - Description: 
@@ -51,19 +51,19 @@
 - Examples: 
 ## IsConditionLeft <!-- VERB -->
 - Display name: IsConditionLeft
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## IsConditionRight <!-- VERB -->
 - Display name: IsConditionRight
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## IsValidBy <!-- VERB -->
 - Display name: IsValidBy
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 

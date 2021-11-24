@@ -1,7 +1,7 @@
 # NOUNS
 ## SignalUncertainty <!-- NOUN -->
 - Display name: SignalUncertainty
-- Parent class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Attributes:
 - Specialization:
 - Description: Represent the uncertainty associated to a signal. 
@@ -58,20 +58,20 @@
 - Examples: 
 ## HasUncertaintyMax <!-- VERB -->
 - Display name: HasUncertaintyMax
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## HasUncertaintyMean <!-- VERB -->
 - Display name: HasUncertaintyMean
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## HasUncertaintyMin <!-- VERB -->
 - Display name: HasUncertaintyMin
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## HasUncertaintyPrecision <!-- VERB -->
@@ -82,13 +82,13 @@
 - Examples: 
 ## HasUncertaintyRelativeValue <!-- VERB -->
 - Display name: HasUncertaintyRelativeValue
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 
 ## HasUncertaintyStandardDeviation <!-- VERB -->
 - Display name: HasUncertaintyStandardDeviation
-- Subject class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
-- Object class: [DDHubNode](./DrillingDataSemantics.md#DDHubNode-)
+- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Description: 
 - Examples: 

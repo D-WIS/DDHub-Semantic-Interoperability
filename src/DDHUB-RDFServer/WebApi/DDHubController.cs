@@ -55,7 +55,7 @@ namespace WebApi
         [HttpGet("graph/{type}")]
         public IActionResult GetGraph(string type)
         {
-            string query = "CONSTRUCT { ?s } WHERE {?s :SubClassOf " + type +"}";
+            string query = "CONSTRUCT { ?s } WHERE {?s :SubClassOf " + type + " }";
 
             if (_server.GetQueryResults(query, out string results))
             {
