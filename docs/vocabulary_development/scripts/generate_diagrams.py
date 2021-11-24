@@ -49,7 +49,7 @@ if os.getenv("DOTFILE_FOLDER")!=None:
 if os.getenv("PNGFILE_FOLDER")!=None:
     pngFolder = os.getenv("PNGFILE_FOLDER")
 
-topLevelNode = "DDHubNode"
+topLevelNode = "DWISNoun"
 
 print(folder)
 
