@@ -66,7 +66,7 @@
 
 ---
 
-## Ingored Relationships
+# Ignored Relationships
 
 The following top level relationships have been omitted from the diagrams due to preserve clarity:
 
