@@ -1,5 +1,5 @@
 # NOUNS
-## MathematcialModel <!-- NOUN -->
+## MathematicalModel <!-- NOUN -->
 - Display name: a mathematical model
 - Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
 - Attributes:

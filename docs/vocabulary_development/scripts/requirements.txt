@@ -1,0 +1,3 @@
+python-dotenv
+networkx[default]
+pydot
