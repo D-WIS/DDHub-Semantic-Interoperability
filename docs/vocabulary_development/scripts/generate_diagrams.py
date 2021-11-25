@@ -186,13 +186,33 @@ for filename in filenames:
 # Add any ignored top level verbs
 if len(allIgnoredRels)>0:
     generatedReadmeContents.append("")
-    generatedReadmeContents.append("## Ingored Relationships")
+    generatedReadmeContents.append("# Ignored Relationships")
     generatedReadmeContents.append("")
     generatedReadmeContents.append("The following top level relationships have been omitted from the diagrams due to preserve clarity:\n")
     generatedReadmeContents.append("| SubjectClass | Relationship | ObjectClass |")
     generatedReadmeContents.append("| ------------ | ------------ | ----------- |")
     for r in allIgnoredRels:
         generatedReadmeContents.append("| {} | {} | {} |".format(r[0],r[2]["label"],r[1]))
+
+
+
+disconnectedNodes = []
+for node in G:
+    hasPath = nx.has_path(G,node,topLevelNode)
+    if hasPath == False:
+        disconnectedNodes.append(node)
+        print("{} is missing path to {}".format(node,topLevelNode))
+
+if len(disconnectedNodes)>0:
+    generatedReadmeContents.append("")
+    generatedReadmeContents.append("# Disconnected Nodes")
+    generatedReadmeContents.append("")
+    generatedReadmeContents.append("The following nodes do not have links to the toplevel node ({}):".format(topLevelNode))
+    for node in disconnectedNodes:
+        generatedReadmeContents.append("* {}".format(node))
+
+
+
 
 with open(pngFolder.replace("/generated","")+"/README.md","w") as fp:
     fp.write("\n".join(generatedReadmeContents))
