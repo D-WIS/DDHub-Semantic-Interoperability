@@ -207,7 +207,22 @@ namespace VocabularyUtils
             {
                 verb.RangeNounName = header.Split('[', ']')[1];
             }
-
+            else if (header.StartsWith("- Min cardinality:"))
+            {
+                string card = header.Remove(0, "- Min cardinality: ".Length).Trim().TrimEnd();
+                if (int.TryParse(card, out int temp))
+                {
+                    verb.MinCardinality = temp;
+                }
+            }
+            else if (header.StartsWith("- Max cardinality:"))
+            {
+                string card = header.Remove(0, "- Max cardinality: ".Length).Trim().TrimEnd();
+                if (int.TryParse(card, out int temp))
+                {
+                    verb.MaxCardinality = temp;
+                }
+            }
             return true;
         }
 
@@ -235,29 +250,7 @@ namespace VocabularyUtils
             }
         }
 
-        private static void NounToMD(StringBuilder nounBuilder,  Noun dDHubClass)
-        {
-            if (dDHubClass is Noun)
-            {
-                nounBuilder.AppendLine("## " + dDHubClass.Name + " <!-- NOUN -->");
-                nounBuilder.AppendLine("- Display name: " + dDHubClass.Name);
-                nounBuilder.AppendLine("- Parent class: [" + dDHubClass.ParentNounName + "]");// (./" + GetDetailedFileName(dDHubClass.ParentClass, folderName) + ")");
-                nounBuilder.AppendLine("- Attributes:");
-                foreach (var att in dDHubClass.NounAttributes)
-                {
-                    nounBuilder.AppendLine("  - " + att.Name);
-                    nounBuilder.AppendLine("    - Type: " + att.Type);
-                    nounBuilder.AppendLine("    - Description: " + att.Description);
-                }
-                nounBuilder.AppendLine("- Specialization:");
-                foreach (var att in dDHubClass.SpecializedNounAttributes)
-                {
-                    nounBuilder.AppendLine("  - " + att.AttributeName + " = " + att.SpecializedValue);
-                }
-                nounBuilder.AppendLine("- Description: " + dDHubClass.Description);
-                nounBuilder.AppendLine("- Examples:");
-            }          
-        }
+
 
 
         public static bool FromMDSnippet(string[] allSnippetLines,out Verb verb)

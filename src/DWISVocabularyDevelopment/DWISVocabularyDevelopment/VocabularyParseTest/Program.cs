@@ -25,6 +25,9 @@ namespace VocabularyParseTest
                 Console.WriteLine(s);
             }
 
+
+            MDWriting.ToMDFile(vocabulary, @"C:\temp\voc.md");
+
             Console.Read();
         }
     }
