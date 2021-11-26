@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DWISVocabularyDevelopment", "DWISVocabularyDevelopment\DWISVocabularyDevelopment.csproj", "{D1EC2752-B58D-489D-97E6-0DCE99F45639}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWISVocabularyDevelopment", "DWISVocabularyDevelopment\DWISVocabularyDevelopment.csproj", "{D1EC2752-B58D-489D-97E6-0DCE99F45639}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocabularyParseTest", "VocabularyParseTest\VocabularyParseTest.csproj", "{9515E3F5-97E8-4763-B993-9E916E94E0CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VocabularyParseTest", "VocabularyParseTest\VocabularyParseTest.csproj", "{9515E3F5-97E8-4763-B993-9E916E94E0CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VocabularyUtils", "VocabularyUtils\VocabularyUtils.csproj", "{28A1B3A6-C24B-4FDE-969A-CDE42786E857}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{9515E3F5-97E8-4763-B993-9E916E94E0CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9515E3F5-97E8-4763-B993-9E916E94E0CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9515E3F5-97E8-4763-B993-9E916E94E0CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28A1B3A6-C24B-4FDE-969A-CDE42786E857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28A1B3A6-C24B-4FDE-969A-CDE42786E857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28A1B3A6-C24B-4FDE-969A-CDE42786E857}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28A1B3A6-C24B-4FDE-969A-CDE42786E857}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
