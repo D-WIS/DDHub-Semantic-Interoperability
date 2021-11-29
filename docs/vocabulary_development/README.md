@@ -6,7 +6,12 @@ As seen from a graph perspective:
 - Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a "is a" relation between the node and the noun. 
 - Verbs refer to labels placed on the edges of the graph. 
 
+
+**Remark**: The templates have been slightly modified: we don't edit the links anymore. They are now edited automatically. The results ofthe automatic edition can be found under the *auto-generated* folder. 
+
 We use markdown to write the documents. Information about the langage can be found [there](https://docs.github.com/en/github/writing-on-github)
+
+
 
 ## Nouns
 
@@ -50,7 +55,7 @@ Below is an empty template that can be used to define a new noun.
 ```
 ## NounName <!-- NOUN -->
 - Display name: MechanicalElementState
-- Parent class: [Node name](./FileName.md#Node Name-)
+- Parent class: Noun name
 - Attributes:
   - AttributeName
     - Type: bool
@@ -65,6 +70,7 @@ Below is an empty template that can be used to define a new noun.
  Verbs are used to connect nodes in the graph. Verbs are identified by their name, and do not support parametrization. A verb is characterized by:
 - a name
 - a display name
+- a parent verb
 - a subject type (domain)
 - an object class (range)
 - a description
@@ -75,8 +81,9 @@ Below is an empty template that can be used to define a new noun.
 ```
 ## VerbName <!-- VERB -->
 - Display name: verb display name
-- Subject class: [Noun name](./File name.md#noun name-)
-- Object class: [Noun name](./File name.md#noun name-)
+- Parent verb: verb name
+- Subject class: Noun name
+- Object class: Noun name
 - Description: 
 - Examples: 
 ```
