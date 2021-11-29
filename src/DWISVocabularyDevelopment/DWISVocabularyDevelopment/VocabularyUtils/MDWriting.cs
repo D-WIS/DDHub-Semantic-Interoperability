@@ -57,7 +57,7 @@ namespace VocabularyUtils
                         definitionSet = verb.DefinitionSetName;
                     }
                 }
-                return "(#./" + definitionSet + ".md#" + name + ")";
+                return "(#../" + definitionSet + ".md#" + name + ")";
             }
         }
 

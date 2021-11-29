@@ -3,7 +3,7 @@
 # Nouns
 ## DataFlowNode <!-- NOUN -->
 - Display name: DataFlowNode
-- Parent class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
+- Parent class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
 - Attributes:
 - Specialization:
 - Description: 
@@ -11,7 +11,7 @@
 - Definition set: DataFlow
 ## ComputationUnit <!-- NOUN -->
 - Display name: ComputationUnit
-- Parent class: [DataFlowNode](#./DataFlow.md#DataFlowNode)
+- Parent class: [DataFlowNode](#../DataFlow.md#DataFlowNode)
 - Attributes:
 - Specialization:
 - Description: Denotes a complex computation unit, typically based on advanced numerical modeling
@@ -19,7 +19,7 @@
 - Definition set: DataFlow
 ## Controller <!-- NOUN -->
 - Display name: Controller
-- Parent class: [DataFlowNode](#./DataFlow.md#DataFlowNode)
+- Parent class: [DataFlowNode](#../DataFlow.md#DataFlowNode)
 - Attributes:
 - Specialization:
 - Description: 
@@ -27,7 +27,7 @@
 - Definition set: DataFlow
 ## ControlSystem <!-- NOUN -->
 - Display name: ControlSystem
-- Parent class: [DataFlowNode](#./DataFlow.md#DataFlowNode)
+- Parent class: [DataFlowNode](#../DataFlow.md#DataFlowNode)
 - Attributes:
 - Specialization:
 - Description: 
@@ -35,7 +35,7 @@
 - Definition set: DataFlow
 ## DrawWorksControlSystem <!-- NOUN -->
 - Display name: DrawWorksControlSystem
-- Parent class: [ControlSystem](#./DataFlow.md#ControlSystem)
+- Parent class: [ControlSystem](#../DataFlow.md#ControlSystem)
 - Attributes:
 - Specialization:
 - Description: 
@@ -43,7 +43,7 @@
 - Definition set: DataFlow
 ## MudPumpsControlSystem <!-- NOUN -->
 - Display name: MudPumpsControlSystem
-- Parent class: [ControlSystem](#./DataFlow.md#ControlSystem)
+- Parent class: [ControlSystem](#../DataFlow.md#ControlSystem)
 - Attributes:
 - Specialization:
 - Description: 
@@ -51,7 +51,7 @@
 - Definition set: DataFlow
 ## TopDriveControlSystem <!-- NOUN -->
 - Display name: TopDriveControlSystem
-- Parent class: [ControlSystem](#./DataFlow.md#ControlSystem)
+- Parent class: [ControlSystem](#../DataFlow.md#ControlSystem)
 - Attributes:
 - Specialization:
 - Description: 
@@ -59,7 +59,7 @@
 - Definition set: DataFlow
 ## MeasurementDevice <!-- NOUN -->
 - Display name: MeasurementDevice
-- Parent class: [DataFlowNode](#./DataFlow.md#DataFlowNode)
+- Parent class: [DataFlowNode](#../DataFlow.md#DataFlowNode)
 - Attributes:
 - Specialization:
 - Description: Denotes a physical sensor
@@ -67,7 +67,7 @@
 - Definition set: DataFlow
 ## Transformation <!-- NOUN -->
 - Display name: Transformation
-- Parent class: [DataFlowNode](#./DataFlow.md#DataFlowNode)
+- Parent class: [DataFlowNode](#../DataFlow.md#DataFlowNode)
 - Attributes:
 - Specialization:
 - Description: Represents a transformation applied to some signals that produces other signals
@@ -75,7 +75,7 @@
 - Definition set: DataFlow
 ## DirectTransformation <!-- NOUN -->
 - Display name: DirectTransformation
-- Parent class: [Transformation](#./DataFlow.md#Transformation)
+- Parent class: [Transformation](#../DataFlow.md#Transformation)
 - Attributes:
 - Specialization:
 - Description: Direct transformations are performed using only the current value of their inputs, time is not involved
@@ -83,7 +83,7 @@
 - Definition set: DataFlow
 ## Aggregation <!-- NOUN -->
 - Display name: Aggregation
-- Parent class: [DirectTransformation](#./DataFlow.md#DirectTransformation)
+- Parent class: [DirectTransformation](#../DataFlow.md#DirectTransformation)
 - Attributes:
 - Specialization:
 - Description: 
@@ -91,7 +91,7 @@
 - Definition set: DataFlow
 ## ForceFromLoadPinsTransformation <!-- NOUN -->
 - Display name: ForceFromLoadPinsTransformation
-- Parent class: [DirectTransformation](#./DataFlow.md#DirectTransformation)
+- Parent class: [DirectTransformation](#../DataFlow.md#DirectTransformation)
 - Attributes:
 - Specialization:
 - Description: 
@@ -99,7 +99,7 @@
 - Definition set: DataFlow
 ## ForceToLoadTransformation <!-- NOUN -->
 - Display name: ForceToLoadTransformation
-- Parent class: [DirectTransformation](#./DataFlow.md#DirectTransformation)
+- Parent class: [DirectTransformation](#../DataFlow.md#DirectTransformation)
 - Attributes:
 - Specialization:
 - Description: 
@@ -107,7 +107,7 @@
 - Definition set: DataFlow
 ## MeasuredDepthToTrueVerticalDepthTransformation <!-- NOUN -->
 - Display name: MeasuredDepthToTrueVerticalDepthTransformation
-- Parent class: [DirectTransformation](#./DataFlow.md#DirectTransformation)
+- Parent class: [DirectTransformation](#../DataFlow.md#DirectTransformation)
 - Attributes:
 - Specialization:
 - Description: 
@@ -115,7 +115,7 @@
 - Definition set: DataFlow
 ## MeasuredDepthTranslation <!-- NOUN -->
 - Display name: MeasuredDepthTranslation
-- Parent class: [DirectTransformation](#./DataFlow.md#DirectTransformation)
+- Parent class: [DirectTransformation](#../DataFlow.md#DirectTransformation)
 - Attributes:
 - Specialization:
 - Description: 
@@ -123,7 +123,7 @@
 - Definition set: DataFlow
 ## PressureToEquivalentDensityTransformation <!-- NOUN -->
 - Display name: PressureToEquivalentDensityTransformation
-- Parent class: [DirectTransformation](#./DataFlow.md#DirectTransformation)
+- Parent class: [DirectTransformation](#../DataFlow.md#DirectTransformation)
 - Attributes:
 - Specialization:
 - Description: 
@@ -131,7 +131,7 @@
 - Definition set: DataFlow
 ## PressureToForceTransformation <!-- NOUN -->
 - Display name: PressureToForceTransformation
-- Parent class: [DirectTransformation](#./DataFlow.md#DirectTransformation)
+- Parent class: [DirectTransformation](#../DataFlow.md#DirectTransformation)
 - Attributes:
 - Specialization:
 - Description: 
@@ -139,7 +139,7 @@
 - Definition set: DataFlow
 ## TorqueToForceTransformation <!-- NOUN -->
 - Display name: TorqueToForceTransformation
-- Parent class: [DirectTransformation](#./DataFlow.md#DirectTransformation)
+- Parent class: [DirectTransformation](#../DataFlow.md#DirectTransformation)
 - Attributes:
 - Specialization:
 - Description: 
@@ -147,7 +147,7 @@
 - Definition set: DataFlow
 ## SignalProcessingUnit <!-- NOUN -->
 - Display name: SignalProcessingUnit
-- Parent class: [Transformation](#./DataFlow.md#Transformation)
+- Parent class: [Transformation](#../DataFlow.md#Transformation)
 - Attributes:
 - Specialization:
 - Description: Represent any signal processing applied prior to the distribution of the considered signal. Signal processing refers to e.g. noise removal, filtering,..
@@ -155,7 +155,7 @@
 - Definition set: DataFlow
 ## Filter <!-- NOUN -->
 - Display name: Filter
-- Parent class: [SignalProcessingUnit](#./DataFlow.md#SignalProcessingUnit)
+- Parent class: [SignalProcessingUnit](#../DataFlow.md#SignalProcessingUnit)
 - Attributes:
 - Specialization:
 - Description: 
@@ -163,7 +163,7 @@
 - Definition set: DataFlow
 ## BandPassFilter <!-- NOUN -->
 - Display name: BandPassFilter
-- Parent class: [Filter](#./DataFlow.md#Filter)
+- Parent class: [Filter](#../DataFlow.md#Filter)
 - Attributes:
   - MinFrequency
     - Type: double
@@ -177,7 +177,7 @@
 - Definition set: DataFlow
 ## HighPassFilter <!-- NOUN -->
 - Display name: HighPassFilter
-- Parent class: [Filter](#./DataFlow.md#Filter)
+- Parent class: [Filter](#../DataFlow.md#Filter)
 - Attributes:
   - CutOffFrequency
     - Type: double
@@ -188,7 +188,7 @@
 - Definition set: DataFlow
 ## LowPassFilter <!-- NOUN -->
 - Display name: LowPassFilter
-- Parent class: [Filter](#./DataFlow.md#Filter)
+- Parent class: [Filter](#../DataFlow.md#Filter)
 - Attributes:
   - CutOffFrequency
     - Type: double
@@ -199,7 +199,7 @@
 - Definition set: DataFlow
 ## MovingAverage <!-- NOUN -->
 - Display name: MovingAverage
-- Parent class: [Filter](#./DataFlow.md#Filter)
+- Parent class: [Filter](#../DataFlow.md#Filter)
 - Attributes:
 - Specialization:
 - Description: 
@@ -207,7 +207,7 @@
 - Definition set: DataFlow
 ## NumberOfSampleMovingAverage <!-- NOUN -->
 - Display name: NumberOfSampleMovingAverage
-- Parent class: [MovingAverage](#./DataFlow.md#MovingAverage)
+- Parent class: [MovingAverage](#../DataFlow.md#MovingAverage)
 - Attributes:
   - NumberOfSamples
     - Type: int
@@ -218,7 +218,7 @@
 - Definition set: DataFlow
 ## TimeWindowMovingAverage <!-- NOUN -->
 - Display name: TimeWindowMovingAverage
-- Parent class: [MovingAverage](#./DataFlow.md#MovingAverage)
+- Parent class: [MovingAverage](#../DataFlow.md#MovingAverage)
 - Attributes:
   - TimeWindow
     - Type: double
@@ -229,7 +229,7 @@
 - Definition set: DataFlow
 ## TimeBasedTransformation <!-- NOUN -->
 - Display name: TimeBasedTransformation
-- Parent class: [Transformation](#./DataFlow.md#Transformation)
+- Parent class: [Transformation](#../DataFlow.md#Transformation)
 - Attributes:
 - Specialization:
 - Description: Transformations that apply only to time series: time derivations, time integration, averaging...
@@ -237,7 +237,7 @@
 - Definition set: DataFlow
 ## Buffering <!-- NOUN -->
 - Display name: Buffering
-- Parent class: [TimeBasedTransformation](#./DataFlow.md#TimeBasedTransformation)
+- Parent class: [TimeBasedTransformation](#../DataFlow.md#TimeBasedTransformation)
 - Attributes:
   - BufferingInterval
     - Type: double
@@ -248,7 +248,7 @@
 - Definition set: DataFlow
 ## Derivation <!-- NOUN -->
 - Display name: Derivation
-- Parent class: [TimeBasedTransformation](#./DataFlow.md#TimeBasedTransformation)
+- Parent class: [TimeBasedTransformation](#../DataFlow.md#TimeBasedTransformation)
 - Attributes:
 - Specialization:
 - Description: 
@@ -256,7 +256,7 @@
 - Definition set: DataFlow
 ## Integration <!-- NOUN -->
 - Display name: Integration
-- Parent class: [TimeBasedTransformation](#./DataFlow.md#TimeBasedTransformation)
+- Parent class: [TimeBasedTransformation](#../DataFlow.md#TimeBasedTransformation)
 - Attributes:
 - Specialization:
 - Description: 
@@ -264,7 +264,7 @@
 - Definition set: DataFlow
 ## RangeExtraction <!-- NOUN -->
 - Display name: RangeExtraction
-- Parent class: [TimeBasedTransformation](#./DataFlow.md#TimeBasedTransformation)
+- Parent class: [TimeBasedTransformation](#../DataFlow.md#TimeBasedTransformation)
 - Attributes:
 - Specialization:
 - Description: 
@@ -272,7 +272,7 @@
 - Definition set: DataFlow
 ## NumberOfItemsRangeExtraction <!-- NOUN -->
 - Display name: NumberOfItemsRangeExtraction
-- Parent class: [RangeExtraction](#./DataFlow.md#RangeExtraction)
+- Parent class: [RangeExtraction](#../DataFlow.md#RangeExtraction)
 - Attributes:
   - NumberOfItems
     - Type: int
@@ -283,7 +283,7 @@
 - Definition set: DataFlow
 ## TimeWindowRangeExtraction <!-- NOUN -->
 - Display name: TimeWindowRangeExtraction
-- Parent class: [RangeExtraction](#./DataFlow.md#RangeExtraction)
+- Parent class: [RangeExtraction](#../DataFlow.md#RangeExtraction)
 - Attributes:
   - TimeWindow
     - Type: double
@@ -294,7 +294,7 @@
 - Definition set: DataFlow
 ## Resampling <!-- NOUN -->
 - Display name: Resampling
-- Parent class: [TimeBasedTransformation](#./DataFlow.md#TimeBasedTransformation)
+- Parent class: [TimeBasedTransformation](#../DataFlow.md#TimeBasedTransformation)
 - Attributes:
   - ResamplingRate
     - Type: double
@@ -311,7 +311,7 @@
 - Definition set: DataFlow
 ## TransmissionLine <!-- NOUN -->
 - Display name: TransmissionLine
-- Parent class: [DataFlowNode](#./DataFlow.md#DataFlowNode)
+- Parent class: [DataFlowNode](#../DataFlow.md#DataFlowNode)
 - Attributes:
 - Specialization:
 - Description: 
@@ -319,7 +319,7 @@
 - Definition set: DataFlow
 ## UserInterface <!-- NOUN -->
 - Display name: UserInterface
-- Parent class: [DataFlowNode](#./DataFlow.md#DataFlowNode)
+- Parent class: [DataFlowNode](#../DataFlow.md#DataFlowNode)
 - Attributes:
 - Specialization:
 - Description: 
@@ -328,9 +328,9 @@
 # Verbs
 ## Controls <!-- VERB -->
 - Display name: Controls
-- Parent verb: [DWISVerb](#./.md#DWISVerb)
-- Subject class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
+- Parent verb: [DWISVerb](#../.md#DWISVerb)
+- Subject class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
+- Object class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -338,9 +338,9 @@
 - Definition set: DataFlow
 ## HasFunction <!-- VERB -->
 - Display name: HasFunction
-- Parent verb: [DWISVerb](#./.md#DWISVerb)
-- Subject class: [DrillingData](#./DrillingDataSemantics.md#DrillingData)
-- Object class: [DataFlowNode](#./DataFlow.md#DataFlowNode)
+- Parent verb: [DWISVerb](#../.md#DWISVerb)
+- Subject class: [DrillingData](#../DrillingDataSemantics.md#DrillingData)
+- Object class: [DataFlowNode](#../DataFlow.md#DataFlowNode)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -348,9 +348,9 @@
 - Definition set: DataFlow
 ## IsCommandFor <!-- VERB -->
 - Display name: IsCommandFor
-- Parent verb: [HasFunction](#./DataFlow.md#HasFunction)
-- Subject class: [DrillingData](#./DrillingDataSemantics.md#DrillingData)
-- Object class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
+- Parent verb: [HasFunction](#../DataFlow.md#HasFunction)
+- Subject class: [DrillingData](#../DrillingDataSemantics.md#DrillingData)
+- Object class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -358,9 +358,9 @@
 - Definition set: DataFlow
 ## IsComputationInput <!-- VERB -->
 - Display name: IsComputationInput
-- Parent verb: [HasFunction](#./DataFlow.md#HasFunction)
-- Subject class: [DrillingData](#./DrillingDataSemantics.md#DrillingData)
-- Object class: [ComputationUnit](#./DataFlow.md#ComputationUnit)
+- Parent verb: [HasFunction](#../DataFlow.md#HasFunction)
+- Subject class: [DrillingData](#../DrillingDataSemantics.md#DrillingData)
+- Object class: [ComputationUnit](#../DataFlow.md#ComputationUnit)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -368,9 +368,9 @@
 - Definition set: DataFlow
 ## IsLimitFor <!-- VERB -->
 - Display name: IsLimitFor
-- Parent verb: [HasFunction](#./DataFlow.md#HasFunction)
-- Subject class: [DrillingData](#./DrillingDataSemantics.md#DrillingData)
-- Object class: [ControlSystem](#./DataFlow.md#ControlSystem)
+- Parent verb: [HasFunction](#../DataFlow.md#HasFunction)
+- Subject class: [DrillingData](#../DrillingDataSemantics.md#DrillingData)
+- Object class: [ControlSystem](#../DataFlow.md#ControlSystem)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -378,9 +378,9 @@
 - Definition set: DataFlow
 ## IsSetPointFor <!-- VERB -->
 - Display name: IsSetPointFor
-- Parent verb: [HasFunction](#./DataFlow.md#HasFunction)
-- Subject class: [DrillingData](#./DrillingDataSemantics.md#DrillingData)
-- Object class: [Controller](#./DataFlow.md#Controller)
+- Parent verb: [HasFunction](#../DataFlow.md#HasFunction)
+- Subject class: [DrillingData](#../DrillingDataSemantics.md#DrillingData)
+- Object class: [Controller](#../DataFlow.md#Controller)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -388,9 +388,9 @@
 - Definition set: DataFlow
 ## IsSetPointRecommendationFor <!-- VERB -->
 - Display name: IsSetPointRecommendationFor
-- Parent verb: [HasFunction](#./DataFlow.md#HasFunction)
-- Subject class: [DrillingData](#./DrillingDataSemantics.md#DrillingData)
-- Object class: [ControlSystem](#./DataFlow.md#ControlSystem)
+- Parent verb: [HasFunction](#../DataFlow.md#HasFunction)
+- Subject class: [DrillingData](#../DrillingDataSemantics.md#DrillingData)
+- Object class: [ControlSystem](#../DataFlow.md#ControlSystem)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -398,9 +398,9 @@
 - Definition set: DataFlow
 ## IsTransformationInput <!-- VERB -->
 - Display name: IsTransformationInput
-- Parent verb: [HasFunction](#./DataFlow.md#HasFunction)
-- Subject class: [DrillingData](#./DrillingDataSemantics.md#DrillingData)
-- Object class: [Transformation](#./DataFlow.md#Transformation)
+- Parent verb: [HasFunction](#../DataFlow.md#HasFunction)
+- Subject class: [DrillingData](#../DrillingDataSemantics.md#DrillingData)
+- Object class: [Transformation](#../DataFlow.md#Transformation)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -408,9 +408,9 @@
 - Definition set: DataFlow
 ## IsBufferingInput <!-- VERB -->
 - Display name: IsBufferingInput
-- Parent verb: [IsTransformationInput](#./DataFlow.md#IsTransformationInput)
-- Subject class: [DrillingData](#./DrillingDataSemantics.md#DrillingData)
-- Object class: [Buffering](#./DataFlow.md#Buffering)
+- Parent verb: [IsTransformationInput](#../DataFlow.md#IsTransformationInput)
+- Subject class: [DrillingData](#../DrillingDataSemantics.md#DrillingData)
+- Object class: [Buffering](#../DataFlow.md#Buffering)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -418,9 +418,9 @@
 - Definition set: DataFlow
 ## IsDerivationInput <!-- VERB -->
 - Display name: IsDerivationInput
-- Parent verb: [IsTransformationInput](#./DataFlow.md#IsTransformationInput)
-- Subject class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
+- Parent verb: [IsTransformationInput](#../DataFlow.md#IsTransformationInput)
+- Subject class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
+- Object class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -428,9 +428,9 @@
 - Definition set: DataFlow
 ## IsResamplingInput <!-- VERB -->
 - Display name: IsResamplingInput
-- Parent verb: [IsTransformationInput](#./DataFlow.md#IsTransformationInput)
-- Subject class: [DrillingData](#./DrillingDataSemantics.md#DrillingData)
-- Object class: [Resampling](#./DataFlow.md#Resampling)
+- Parent verb: [IsTransformationInput](#../DataFlow.md#IsTransformationInput)
+- Subject class: [DrillingData](#../DrillingDataSemantics.md#DrillingData)
+- Object class: [Resampling](#../DataFlow.md#Resampling)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -438,9 +438,9 @@
 - Definition set: DataFlow
 ## IsTransmissionInput <!-- VERB -->
 - Display name: IsTransmissionInput
-- Parent verb: [HasFunction](#./DataFlow.md#HasFunction)
-- Subject class: [DrillingData](#./DrillingDataSemantics.md#DrillingData)
-- Object class: [TransmissionLine](#./DataFlow.md#TransmissionLine)
+- Parent verb: [HasFunction](#../DataFlow.md#HasFunction)
+- Subject class: [DrillingData](#../DrillingDataSemantics.md#DrillingData)
+- Object class: [TransmissionLine](#../DataFlow.md#TransmissionLine)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -448,9 +448,9 @@
 - Definition set: DataFlow
 ## IsGeneratedBy <!-- VERB -->
 - Display name: IsGeneratedBy
-- Parent verb: [DWISVerb](#./.md#DWISVerb)
-- Subject class: [DrillingData](#./DrillingDataSemantics.md#DrillingData)
-- Object class: [DataFlowNode](#./DataFlow.md#DataFlowNode)
+- Parent verb: [DWISVerb](#../.md#DWISVerb)
+- Subject class: [DrillingData](#../DrillingDataSemantics.md#DrillingData)
+- Object class: [DataFlowNode](#../DataFlow.md#DataFlowNode)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -458,9 +458,9 @@
 - Definition set: DataFlow
 ## IsComputedBy <!-- VERB -->
 - Display name: IsComputedBy
-- Parent verb: [IsGeneratedBy](#./DataFlow.md#IsGeneratedBy)
-- Subject class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
+- Parent verb: [IsGeneratedBy](#../DataFlow.md#IsGeneratedBy)
+- Subject class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
+- Object class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -468,9 +468,9 @@
 - Definition set: DataFlow
 ## IsMeasuredBy <!-- VERB -->
 - Display name: IsMeasuredBy
-- Parent verb: [IsGeneratedBy](#./DataFlow.md#IsGeneratedBy)
-- Subject class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
+- Parent verb: [IsGeneratedBy](#../DataFlow.md#IsGeneratedBy)
+- Subject class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
+- Object class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -478,9 +478,9 @@
 - Definition set: DataFlow
 ## IsRecordedFrom <!-- VERB -->
 - Display name: IsRecordedFrom
-- Parent verb: [IsGeneratedBy](#./DataFlow.md#IsGeneratedBy)
-- Subject class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
+- Parent verb: [IsGeneratedBy](#../DataFlow.md#IsGeneratedBy)
+- Subject class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
+- Object class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -488,9 +488,9 @@
 - Definition set: DataFlow
 ## IsTransformationOutput <!-- VERB -->
 - Display name: IsTransformationOutput
-- Parent verb: [IsGeneratedBy](#./DataFlow.md#IsGeneratedBy)
-- Subject class: [DrillingData](#./DrillingDataSemantics.md#DrillingData)
-- Object class: [DataFlowNode](#./DataFlow.md#DataFlowNode)
+- Parent verb: [IsGeneratedBy](#../DataFlow.md#IsGeneratedBy)
+- Subject class: [DrillingData](#../DrillingDataSemantics.md#DrillingData)
+- Object class: [DataFlowNode](#../DataFlow.md#DataFlowNode)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -498,9 +498,9 @@
 - Definition set: DataFlow
 ## IsBufferingOutput <!-- VERB -->
 - Display name: IsBufferingOutput
-- Parent verb: [IsTransformationOutput](#./DataFlow.md#IsTransformationOutput)
-- Subject class: [DrillingData](#./DrillingDataSemantics.md#DrillingData)
-- Object class: [Buffering](#./DataFlow.md#Buffering)
+- Parent verb: [IsTransformationOutput](#../DataFlow.md#IsTransformationOutput)
+- Subject class: [DrillingData](#../DrillingDataSemantics.md#DrillingData)
+- Object class: [Buffering](#../DataFlow.md#Buffering)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -508,9 +508,9 @@
 - Definition set: DataFlow
 ## IsDerivedFrom <!-- VERB -->
 - Display name: IsDerivedFrom
-- Parent verb: [IsTransformationOutput](#./DataFlow.md#IsTransformationOutput)
-- Subject class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
+- Parent verb: [IsTransformationOutput](#../DataFlow.md#IsTransformationOutput)
+- Subject class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
+- Object class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -518,9 +518,9 @@
 - Definition set: DataFlow
 ## IsIntegratedFrom <!-- VERB -->
 - Display name: IsIntegratedFrom
-- Parent verb: [IsTransformationOutput](#./DataFlow.md#IsTransformationOutput)
-- Subject class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
+- Parent verb: [IsTransformationOutput](#../DataFlow.md#IsTransformationOutput)
+- Subject class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
+- Object class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -528,9 +528,9 @@
 - Definition set: DataFlow
 ## IsResampledBy <!-- VERB -->
 - Display name: IsResampledBy
-- Parent verb: [IsTransformationOutput](#./DataFlow.md#IsTransformationOutput)
-- Subject class: [DrillingData](#./DrillingDataSemantics.md#DrillingData)
-- Object class: [Resampling](#./DataFlow.md#Resampling)
+- Parent verb: [IsTransformationOutput](#../DataFlow.md#IsTransformationOutput)
+- Subject class: [DrillingData](#../DrillingDataSemantics.md#DrillingData)
+- Object class: [Resampling](#../DataFlow.md#Resampling)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -538,9 +538,9 @@
 - Definition set: DataFlow
 ## IsTransmissionOutput <!-- VERB -->
 - Display name: IsTransmissionOutput
-- Parent verb: [IsGeneratedBy](#./DataFlow.md#IsGeneratedBy)
-- Subject class: [DrillingData](#./DrillingDataSemantics.md#DrillingData)
-- Object class: [TransmissionLine](#./DataFlow.md#TransmissionLine)
+- Parent verb: [IsGeneratedBy](#../DataFlow.md#IsGeneratedBy)
+- Subject class: [DrillingData](#../DrillingDataSemantics.md#DrillingData)
+- Object class: [TransmissionLine](#../DataFlow.md#TransmissionLine)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 

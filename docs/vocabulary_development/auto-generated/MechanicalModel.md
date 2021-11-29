@@ -3,7 +3,7 @@
 # Nouns
 ## DrillStemMechanicalModel <!-- NOUN -->
 - Display name: DrillStemMechanicalModel
-- Parent class: [MathematicalModel](#./Model.md#MathematicalModel)
+- Parent class: [MathematicalModel](#../Model.md#MathematicalModel)
 - Attributes:
 - Specialization:
 - Description: A mechanical model for a drill-stem. Another name for drill-stem mechanical models is a torque and drag model.
@@ -11,7 +11,7 @@
 - Definition set: MechanicalModel
 ## MechanicalStiffnessType <!-- NOUN -->
 - Display name: MechanicalStiffnessType
-- Parent class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
+- Parent class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
 - Attributes:
 - Specialization:
 - Description: A description of how the drill-stem stiffness is modelled.
@@ -19,7 +19,7 @@
 - Definition set: MechanicalModel
 ## MechanicalSoftModel <!-- NOUN -->
 - Display name: MechanicalSoftModel
-- Parent class: [MechanicalStiffnessType](#./MechanicalModel.md#MechanicalStiffnessType)
+- Parent class: [MechanicalStiffnessType](#../MechanicalModel.md#MechanicalStiffnessType)
 - Attributes:
 - Specialization:
 - Description: An infinitively soft model assumes that the drill-stem deforms without any resistance when compressive loads are applied.
@@ -27,7 +27,7 @@
 - Definition set: MechanicalModel
 ## MechanicalStiffModel <!-- NOUN -->
 - Display name: MechanicalStiffModel
-- Parent class: [MechanicalStiffnessType](#./MechanicalModel.md#MechanicalStiffnessType)
+- Parent class: [MechanicalStiffnessType](#../MechanicalModel.md#MechanicalStiffnessType)
 - Attributes:
 - Specialization:
 - Description: A stiff mechanical model considers that the drill-stem can deform laterally when put in compression.
@@ -35,7 +35,7 @@
 - Definition set: MechanicalModel
 ## MechanicalStiffModelAssumedContacts <!-- NOUN -->
 - Display name: MechanicalStiffModelAssumedContacts
-- Parent class: [MechanicalStiffModel](#./MechanicalModel.md#MechanicalStiffModel)
+- Parent class: [MechanicalStiffModel](#../MechanicalModel.md#MechanicalStiffModel)
 - Attributes:
 - Specialization:
 - Description: Such a stiff mechanical model presuposes the position of the contact points.
@@ -43,7 +43,7 @@
 - Definition set: MechanicalModel
 ## MechanicalStiffModelEstimatedContacts <!-- NOUN -->
 - Display name: MechanicalStiffModelEstimatedContacts
-- Parent class: [MechanicalStiffModel](#./MechanicalModel.md#MechanicalStiffModel)
+- Parent class: [MechanicalStiffModel](#../MechanicalModel.md#MechanicalStiffModel)
 - Attributes:
 - Specialization:
 - Description: Such a stiff mechanical model estimates the position of the contact points.

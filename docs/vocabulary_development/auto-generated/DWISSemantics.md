@@ -3,7 +3,7 @@
 # Nouns
 ## DWISNoun <!-- NOUN -->
 - Display name: DWISNoun
-- Parent class: [](#./.md#)
+- Parent class: [](#../.md#)
 - Attributes:
 - Specialization:
 - Description: 

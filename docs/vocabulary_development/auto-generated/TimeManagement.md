@@ -3,7 +3,7 @@
 # Nouns
 ## Clock <!-- NOUN -->
 - Display name: Clock
-- Parent class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
+- Parent class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
 - Attributes:
   - LeapSeconds
     - Type: int
@@ -29,7 +29,7 @@
 - Definition set: TimeManagement
 ## SynchronizationGroup <!-- NOUN -->
 - Display name: SynchronizationGroup
-- Parent class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
+- Parent class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
 - Attributes:
   - SynchronizationDelay
     - Type: double
@@ -44,9 +44,9 @@
 # Verbs
 ## BelongsToSynchronizationGroup <!-- VERB -->
 - Display name: BelongsToSynchronizationGroup
-- Parent verb: [DWISVerb](#./.md#DWISVerb)
-- Subject class: [Resampling](#./DataFlow.md#Resampling)
-- Object class: [SynchronizationGroup](#./TimeManagement.md#SynchronizationGroup)
+- Parent verb: [DWISVerb](#../.md#DWISVerb)
+- Subject class: [Resampling](#../DataFlow.md#Resampling)
+- Object class: [SynchronizationGroup](#../TimeManagement.md#SynchronizationGroup)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -54,9 +54,9 @@
 - Definition set: TimeManagement
 ## HasAcquisitionClock <!-- VERB -->
 - Display name: HasAcquisitionClock
-- Parent verb: [DWISVerb](#./.md#DWISVerb)
-- Subject class: [DrillingData](#./DrillingDataSemantics.md#DrillingData)
-- Object class: [Clock](#./TimeManagement.md#Clock)
+- Parent verb: [DWISVerb](#../.md#DWISVerb)
+- Subject class: [DrillingData](#../DrillingDataSemantics.md#DrillingData)
+- Object class: [Clock](#../TimeManagement.md#Clock)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -64,9 +64,9 @@
 - Definition set: TimeManagement
 ## HasSourceClock <!-- VERB -->
 - Display name: HasSourceClock
-- Parent verb: [DWISVerb](#./.md#DWISVerb)
-- Subject class: [DrillingData](#./DrillingDataSemantics.md#DrillingData)
-- Object class: [Clock](#./TimeManagement.md#Clock)
+- Parent verb: [DWISVerb](#../.md#DWISVerb)
+- Subject class: [DrillingData](#../DrillingDataSemantics.md#DrillingData)
+- Object class: [Clock](#../TimeManagement.md#Clock)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -74,9 +74,9 @@
 - Definition set: TimeManagement
 ## HasTransmissionDelay <!-- VERB -->
 - Display name: HasTransmissionDelay
-- Parent verb: [DWISVerb](#./.md#DWISVerb)
-- Subject class: [DrillingData](#./DrillingDataSemantics.md#DrillingData)
-- Object class: [DrillingData](#./DrillingDataSemantics.md#DrillingData)
+- Parent verb: [DWISVerb](#../.md#DWISVerb)
+- Subject class: [DrillingData](#../DrillingDataSemantics.md#DrillingData)
+- Object class: [DrillingData](#../DrillingDataSemantics.md#DrillingData)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -84,9 +84,9 @@
 - Definition set: TimeManagement
 ## IsSynchronizationGroupInput <!-- VERB -->
 - Display name: IsSynchronizationGroupInput
-- Parent verb: [DWISVerb](#./.md#DWISVerb)
-- Subject class: [DrillingData](#./DrillingDataSemantics.md#DrillingData)
-- Object class: [SynchronizationGroup](#./TimeManagement.md#SynchronizationGroup)
+- Parent verb: [DWISVerb](#../.md#DWISVerb)
+- Subject class: [DrillingData](#../DrillingDataSemantics.md#DrillingData)
+- Object class: [SynchronizationGroup](#../TimeManagement.md#SynchronizationGroup)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
