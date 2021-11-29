@@ -3,7 +3,7 @@
 # Nouns
 ## Telemetry <!-- NOUN -->
 - Display name: Telemetry
-- Parent class: [DWISNoun](#./DWISSemantics.md)
+- Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Attributes:
   - RefreshRate
     - Type: double
@@ -20,7 +20,7 @@
 - Definition set: DataTransmission
 ## DownHoleTelemetry <!-- NOUN -->
 - Display name: DownHoleTelemetry
-- Parent class: [Telemetry](#./DataTransmission.md)
+- Parent class: [Telemetry](./DataTransmission.md#Telemetry)
 - Attributes:
 - Specialization:
 - Description: 
@@ -28,7 +28,7 @@
 - Definition set: DataTransmission
 ## MudPulseTelemetry <!-- NOUN -->
 - Display name: MudPulseTelemetry
-- Parent class: [DownHoleTelemetry](#./DataTransmission.md)
+- Parent class: [DownHoleTelemetry](./DataTransmission.md#DownHoleTelemetry)
 - Attributes:
 - Specialization:
 - Description: 
@@ -36,7 +36,7 @@
 - Definition set: DataTransmission
 ## WiredPipeTelemetry <!-- NOUN -->
 - Display name: WiredPipeTelemetry
-- Parent class: [DownHoleTelemetry](#./DataTransmission.md)
+- Parent class: [DownHoleTelemetry](./DataTransmission.md#DownHoleTelemetry)
 - Attributes:
 - Specialization:
 - Description: 
@@ -44,7 +44,7 @@
 - Definition set: DataTransmission
 ## TopSideTelemetry <!-- NOUN -->
 - Display name: TopSideTelemetry
-- Parent class: [Telemetry](#./DataTransmission.md)
+- Parent class: [Telemetry](./DataTransmission.md#Telemetry)
 - Attributes:
 - Specialization:
 - Description: 

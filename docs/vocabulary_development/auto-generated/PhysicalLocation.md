@@ -3,7 +3,7 @@
 # Nouns
 ## Location <!-- NOUN -->
 - Display name: Location
-- Parent class: [DWISNoun](#./DWISSemantics.md)
+- Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Attributes:
 - Specialization:
 - Description: Physical location for a signal.
@@ -11,7 +11,7 @@
 - Definition set: PhysicalLocation
 ## BitReferenceLocation <!-- NOUN -->
 - Display name: BitReferenceLocation
-- Parent class: [Location](#./PhysicalLocation.md)
+- Parent class: [Location](./PhysicalLocation.md#Location)
 - Attributes:
 - Specialization:
 - Description: 
@@ -19,7 +19,7 @@
 - Definition set: PhysicalLocation
 ## CasingShoeLocation <!-- NOUN -->
 - Display name: CasingShoeLocation
-- Parent class: [Location](#./PhysicalLocation.md)
+- Parent class: [Location](./PhysicalLocation.md#Location)
 - Attributes:
 - Specialization:
 - Description: 
@@ -27,7 +27,7 @@
 - Definition set: PhysicalLocation
 ## DrillFloorReferenceLocation <!-- NOUN -->
 - Display name: DrillFloorReferenceLocation
-- Parent class: [Location](#./PhysicalLocation.md)
+- Parent class: [Location](./PhysicalLocation.md#Location)
 - Attributes:
 - Specialization:
 - Description: 
@@ -35,7 +35,7 @@
 - Definition set: PhysicalLocation
 ## HoleBottomLocation <!-- NOUN -->
 - Display name: HoleBottomLocation
-- Parent class: [Location](#./PhysicalLocation.md)
+- Parent class: [Location](./PhysicalLocation.md#Location)
 - Attributes:
 - Specialization:
 - Description: 
@@ -43,7 +43,7 @@
 - Definition set: PhysicalLocation
 ## LWDLocation <!-- NOUN -->
 - Display name: LWDLocation
-- Parent class: [Location](#./PhysicalLocation.md)
+- Parent class: [Location](./PhysicalLocation.md#Location)
 - Attributes:
 - Specialization:
 - Description: 
@@ -51,7 +51,7 @@
 - Definition set: PhysicalLocation
 ## ReferenceLocation <!-- NOUN -->
 - Display name: ReferenceLocation
-- Parent class: [Location](#./PhysicalLocation.md)
+- Parent class: [Location](./PhysicalLocation.md#Location)
 - Attributes:
 - Specialization:
 - Description: 
@@ -59,7 +59,7 @@
 - Definition set: PhysicalLocation
 ## ReferenceFrame <!-- NOUN -->
 - Display name: ReferenceFrame
-- Parent class: [DWISNoun](#./DWISSemantics.md)
+- Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Attributes:
 - Specialization:
 - Description: Represents a system of coordinates
@@ -67,7 +67,7 @@
 - Definition set: PhysicalLocation
 ## DepthAndAngleFrame <!-- NOUN -->
 - Display name: DepthAndAngleFrame
-- Parent class: [ReferenceFrame](#./PhysicalLocation.md)
+- Parent class: [ReferenceFrame](./PhysicalLocation.md#ReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
@@ -75,7 +75,7 @@
 - Definition set: PhysicalLocation
 ## FourDimensionalReferenceFrame <!-- NOUN -->
 - Display name: FourDimensionalReferenceFrame
-- Parent class: [ReferenceFrame](#./PhysicalLocation.md)
+- Parent class: [ReferenceFrame](./PhysicalLocation.md#ReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
@@ -83,7 +83,7 @@
 - Definition set: PhysicalLocation
 ## CurviLinearFrenetSerretReferenceFrame <!-- NOUN -->
 - Display name: CurviLinearFrenetSerretReferenceFrame
-- Parent class: [FourDimensionalReferenceFrame](#./PhysicalLocation.md)
+- Parent class: [FourDimensionalReferenceFrame](./PhysicalLocation.md#FourDimensionalReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
@@ -91,7 +91,7 @@
 - Definition set: PhysicalLocation
 ## OneDimensionalReferenceFrame <!-- NOUN -->
 - Display name: OneDimensionalReferenceFrame
-- Parent class: [ReferenceFrame](#./PhysicalLocation.md)
+- Parent class: [ReferenceFrame](./PhysicalLocation.md#ReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
@@ -99,7 +99,7 @@
 - Definition set: PhysicalLocation
 ## OneDimensionalCartesianReferenceFrame <!-- NOUN -->
 - Display name: OneDimensionalCartesianReferenceFrame
-- Parent class: [OneDimensionalReferenceFrame](#./PhysicalLocation.md)
+- Parent class: [OneDimensionalReferenceFrame](./PhysicalLocation.md#OneDimensionalReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
@@ -107,7 +107,7 @@
 - Definition set: PhysicalLocation
 ## VerticalDepthFrame <!-- NOUN -->
 - Display name: VerticalDepthFrame
-- Parent class: [OneDimensionalCartesianReferenceFrame](#./PhysicalLocation.md)
+- Parent class: [OneDimensionalCartesianReferenceFrame](./PhysicalLocation.md#OneDimensionalCartesianReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
@@ -115,7 +115,7 @@
 - Definition set: PhysicalLocation
 ## OneDimensionalCurviLinearReferenceFrame <!-- NOUN -->
 - Display name: OneDimensionalCurviLinearReferenceFrame
-- Parent class: [OneDimensionalReferenceFrame](#./PhysicalLocation.md)
+- Parent class: [OneDimensionalReferenceFrame](./PhysicalLocation.md#OneDimensionalReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
@@ -123,7 +123,7 @@
 - Definition set: PhysicalLocation
 ## DrillStringCenterLineFrame <!-- NOUN -->
 - Display name: DrillStringCenterLineFrame
-- Parent class: [OneDimensionalCurviLinearReferenceFrame](#./PhysicalLocation.md)
+- Parent class: [OneDimensionalCurviLinearReferenceFrame](./PhysicalLocation.md#OneDimensionalCurviLinearReferenceFrame)
 - Attributes:
   - PositiveUpward
     - Type: bool
@@ -134,7 +134,7 @@
 - Definition set: PhysicalLocation
 ## OpenHoleCenterLineFrame <!-- NOUN -->
 - Display name: OpenHoleCenterLineFrame
-- Parent class: [OneDimensionalCurviLinearReferenceFrame](#./PhysicalLocation.md)
+- Parent class: [OneDimensionalCurviLinearReferenceFrame](./PhysicalLocation.md#OneDimensionalCurviLinearReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
@@ -142,7 +142,7 @@
 - Definition set: PhysicalLocation
 ## WellboreCenterLineFrame <!-- NOUN -->
 - Display name: WellboreCenterLineFrame
-- Parent class: [OneDimensionalCurviLinearReferenceFrame](#./PhysicalLocation.md)
+- Parent class: [OneDimensionalCurviLinearReferenceFrame](./PhysicalLocation.md#OneDimensionalCurviLinearReferenceFrame)
 - Attributes:
   - PositiveUpward
     - Type: bool
@@ -153,7 +153,7 @@
 - Definition set: PhysicalLocation
 ## ThreeDimensionalReferenceFrame <!-- NOUN -->
 - Display name: ThreeDimensionalReferenceFrame
-- Parent class: [ReferenceFrame](#./PhysicalLocation.md)
+- Parent class: [ReferenceFrame](./PhysicalLocation.md#ReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
@@ -161,7 +161,7 @@
 - Definition set: PhysicalLocation
 ## CartesianThreeDimensionalReferenceFrame <!-- NOUN -->
 - Display name: CartesianThreeDimensionalReferenceFrame
-- Parent class: [ThreeDimensionalReferenceFrame](#./PhysicalLocation.md)
+- Parent class: [ThreeDimensionalReferenceFrame](./PhysicalLocation.md#ThreeDimensionalReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
@@ -169,7 +169,7 @@
 - Definition set: PhysicalLocation
 ## FrenetSerretReferenceFrame <!-- NOUN -->
 - Display name: FrenetSerretReferenceFrame
-- Parent class: [CartesianThreeDimensionalReferenceFrame](#./PhysicalLocation.md)
+- Parent class: [CartesianThreeDimensionalReferenceFrame](./PhysicalLocation.md#CartesianThreeDimensionalReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
@@ -177,7 +177,7 @@
 - Definition set: PhysicalLocation
 ## NorthEastTVDFrame <!-- NOUN -->
 - Display name: NorthEastTVDFrame
-- Parent class: [CartesianThreeDimensionalReferenceFrame](#./PhysicalLocation.md)
+- Parent class: [CartesianThreeDimensionalReferenceFrame](./PhysicalLocation.md#CartesianThreeDimensionalReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
@@ -185,7 +185,7 @@
 - Definition set: PhysicalLocation
 ## CylindricalReferenceFrame <!-- NOUN -->
 - Display name: CylindricalReferenceFrame
-- Parent class: [ThreeDimensionalReferenceFrame](#./PhysicalLocation.md)
+- Parent class: [ThreeDimensionalReferenceFrame](./PhysicalLocation.md#ThreeDimensionalReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
@@ -193,7 +193,7 @@
 - Definition set: PhysicalLocation
 ## SphericalReferenceFrame <!-- NOUN -->
 - Display name: SphericalReferenceFrame
-- Parent class: [ThreeDimensionalReferenceFrame](#./PhysicalLocation.md)
+- Parent class: [ThreeDimensionalReferenceFrame](./PhysicalLocation.md#ThreeDimensionalReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
@@ -201,7 +201,7 @@
 - Definition set: PhysicalLocation
 ## TwoDimensionalReferenceFrame <!-- NOUN -->
 - Display name: TwoDimensionalReferenceFrame
-- Parent class: [ReferenceFrame](#./PhysicalLocation.md)
+- Parent class: [ReferenceFrame](./PhysicalLocation.md#ReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
@@ -209,7 +209,7 @@
 - Definition set: PhysicalLocation
 ## CartesianTwoDimensionalReferenceFrame <!-- NOUN -->
 - Display name: CartesianTwoDimensionalReferenceFrame
-- Parent class: [TwoDimensionalReferenceFrame](#./PhysicalLocation.md)
+- Parent class: [TwoDimensionalReferenceFrame](./PhysicalLocation.md#TwoDimensionalReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
@@ -217,7 +217,7 @@
 - Definition set: PhysicalLocation
 ## NorthEastFrame <!-- NOUN -->
 - Display name: NorthEastFrame
-- Parent class: [CartesianTwoDimensionalReferenceFrame](#./PhysicalLocation.md)
+- Parent class: [CartesianTwoDimensionalReferenceFrame](./PhysicalLocation.md#CartesianTwoDimensionalReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
@@ -225,7 +225,7 @@
 - Definition set: PhysicalLocation
 ## PolarReferenceFrame <!-- NOUN -->
 - Display name: PolarReferenceFrame
-- Parent class: [TwoDimensionalReferenceFrame](#./PhysicalLocation.md)
+- Parent class: [TwoDimensionalReferenceFrame](./PhysicalLocation.md#TwoDimensionalReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
@@ -234,9 +234,9 @@
 # Verbs
 ## HasCoordinates <!-- VERB -->
 - Display name: HasCoordinates
-- Parent verb: [DWISVerb](#./.md)
-- Subject class: [DrillingData](#./DrillingDataSemantics.md)
-- Object class: [DrillingData](#./DrillingDataSemantics.md)
+- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Object class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -244,9 +244,9 @@
 - Definition set: PhysicalLocation
 ## HasReferenceFrame <!-- VERB -->
 - Display name: HasReferenceFrame
-- Parent verb: [DWISVerb](#./.md)
-- Subject class: [Location](#./PhysicalLocation.md)
-- Object class: [ReferenceFrame](#./PhysicalLocation.md)
+- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Subject class: [Location](./PhysicalLocation.md#Location)
+- Object class: [ReferenceFrame](./PhysicalLocation.md#ReferenceFrame)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -254,9 +254,9 @@
 - Definition set: PhysicalLocation
 ## HasReferenceFrameOrigin <!-- VERB -->
 - Display name: HasReferenceFrameOrigin
-- Parent verb: [DWISVerb](#./.md)
-- Subject class: [DWISNoun](#./DWISSemantics.md)
-- Object class: [DWISNoun](#./DWISSemantics.md)
+- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
