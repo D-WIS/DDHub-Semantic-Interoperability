@@ -3,7 +3,7 @@
 # Nouns
 ## MathematicalModel <!-- NOUN -->
 - Display name: MathematicalModel
-- Parent class: [[DWISNoun](./DrillingDataSemantics.md#DWISNoun-)](#../.md#[DWISNoun](./DrillingDataSemantics.md#DWISNoun-))
+- Parent class: [[DWISNoun](./DrillingDataSemantics.md#DWISNoun-)](#./.md)
 - Attributes:
 - Specialization:
 - Description: A model for which the state variables do not change with time.
@@ -11,7 +11,7 @@
 - Definition set: Model
 ## SteadyStateModel <!-- NOUN -->
 - Display name: SteadyStateModel
-- Parent class: [[DWISNoun](./DrillingDataSemantics.md#DWISNoun-)](#../.md#[DWISNoun](./DrillingDataSemantics.md#DWISNoun-))
+- Parent class: [[DWISNoun](./DrillingDataSemantics.md#DWISNoun-)](#./.md)
 - Attributes:
 - Specialization:
 - Description: A model for which the state variables do not change with time.

@@ -3,7 +3,7 @@
 # Nouns
 ## HydraulicElementState <!-- NOUN -->
 - Display name: HydraulicElementState
-- Parent class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
+- Parent class: [DWISNoun](#./DWISSemantics.md)
 - Attributes:
 - Specialization:
 - Description: 
@@ -11,7 +11,7 @@
 - Definition set: Hydraulics
 ## HydraulicConnectedState <!-- NOUN -->
 - Display name: HydraulicConnectedState
-- Parent class: [HydraulicElementState](#../Hydraulics.md#HydraulicElementState)
+- Parent class: [HydraulicElementState](#./Hydraulics.md)
 - Attributes:
   - Value
     - Type: bool
@@ -22,7 +22,7 @@
 - Definition set: Hydraulics
 ## HydraulicLogicalElement <!-- NOUN -->
 - Display name: HydraulicLogicalElement
-- Parent class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
+- Parent class: [DWISNoun](#./DWISSemantics.md)
 - Attributes:
 - Specialization:
 - Description: 
@@ -30,7 +30,7 @@
 - Definition set: Hydraulics
 ## HydraulicBranch <!-- NOUN -->
 - Display name: HydraulicBranch
-- Parent class: [HydraulicLogicalElement](#../Hydraulics.md#HydraulicLogicalElement)
+- Parent class: [HydraulicLogicalElement](#./Hydraulics.md)
 - Attributes:
 - Specialization:
 - Description: 
@@ -38,7 +38,7 @@
 - Definition set: Hydraulics
 ## Annular <!-- NOUN -->
 - Display name: Annular
-- Parent class: [HydraulicBranch](#../Hydraulics.md#HydraulicBranch)
+- Parent class: [HydraulicBranch](#./Hydraulics.md)
 - Attributes:
 - Specialization:
 - Description: 
@@ -46,7 +46,7 @@
 - Definition set: Hydraulics
 ## BHAAnnular <!-- NOUN -->
 - Display name: BHAAnnular
-- Parent class: [Annular](#../Hydraulics.md#Annular)
+- Parent class: [Annular](#./Hydraulics.md)
 - Attributes:
 - Specialization:
 - Description: 
@@ -54,7 +54,7 @@
 - Definition set: Hydraulics
 ## DrillPipesAnnular <!-- NOUN -->
 - Display name: DrillPipesAnnular
-- Parent class: [Annular](#../Hydraulics.md#Annular)
+- Parent class: [Annular](#./Hydraulics.md)
 - Attributes:
 - Specialization:
 - Description: 
@@ -62,7 +62,7 @@
 - Definition set: Hydraulics
 ## OpenChannel <!-- NOUN -->
 - Display name: OpenChannel
-- Parent class: [HydraulicBranch](#../Hydraulics.md#HydraulicBranch)
+- Parent class: [HydraulicBranch](#./Hydraulics.md)
 - Attributes:
 - Specialization:
 - Description: 
@@ -70,7 +70,7 @@
 - Definition set: Hydraulics
 ## RectangularChannel <!-- NOUN -->
 - Display name: RectangularChannel
-- Parent class: [OpenChannel](#../Hydraulics.md#OpenChannel)
+- Parent class: [OpenChannel](#./Hydraulics.md)
 - Attributes:
 - Specialization:
 - Description: 
@@ -78,7 +78,7 @@
 - Definition set: Hydraulics
 ## SemiCircularChannel <!-- NOUN -->
 - Display name: SemiCircularChannel
-- Parent class: [OpenChannel](#../Hydraulics.md#OpenChannel)
+- Parent class: [OpenChannel](#./Hydraulics.md)
 - Attributes:
 - Specialization:
 - Description: 
@@ -86,7 +86,7 @@
 - Definition set: Hydraulics
 ## Pipe <!-- NOUN -->
 - Display name: Pipe
-- Parent class: [HydraulicBranch](#../Hydraulics.md#HydraulicBranch)
+- Parent class: [HydraulicBranch](#./Hydraulics.md)
 - Attributes:
 - Specialization:
 - Description: 
@@ -94,7 +94,7 @@
 - Definition set: Hydraulics
 ## BHAInner <!-- NOUN -->
 - Display name: BHAInner
-- Parent class: [Pipe](#../Hydraulics.md#Pipe)
+- Parent class: [Pipe](#./Hydraulics.md)
 - Attributes:
 - Specialization:
 - Description: 
@@ -102,7 +102,7 @@
 - Definition set: Hydraulics
 ## DrillPipesInner <!-- NOUN -->
 - Display name: DrillPipesInner
-- Parent class: [Pipe](#../Hydraulics.md#Pipe)
+- Parent class: [Pipe](#./Hydraulics.md)
 - Attributes:
 - Specialization:
 - Description: 
@@ -110,7 +110,7 @@
 - Definition set: Hydraulics
 ## OpenHole <!-- NOUN -->
 - Display name: OpenHole
-- Parent class: [Pipe](#../Hydraulics.md#Pipe)
+- Parent class: [Pipe](#./Hydraulics.md)
 - Attributes:
 - Specialization:
 - Description: 
@@ -118,7 +118,7 @@
 - Definition set: Hydraulics
 ## ReturnFlowLine <!-- NOUN -->
 - Display name: ReturnFlowLine
-- Parent class: [Pipe](#../Hydraulics.md#Pipe)
+- Parent class: [Pipe](#./Hydraulics.md)
 - Attributes:
 - Specialization:
 - Description: 
@@ -126,7 +126,7 @@
 - Definition set: Hydraulics
 ## HydraulicJunction <!-- NOUN -->
 - Display name: HydraulicJunction
-- Parent class: [HydraulicLogicalElement](#../Hydraulics.md#HydraulicLogicalElement)
+- Parent class: [HydraulicLogicalElement](#./Hydraulics.md)
 - Attributes:
   - LeftToRight
     - Type: bool
@@ -142,7 +142,7 @@
 - Definition set: Hydraulics
 ## MudMixing <!-- NOUN -->
 - Display name: MudMixing
-- Parent class: [HydraulicJunction](#../Hydraulics.md#HydraulicJunction)
+- Parent class: [HydraulicJunction](#./Hydraulics.md)
 - Attributes:
 - Specialization:
 - Description: 
@@ -150,7 +150,7 @@
 - Definition set: Hydraulics
 ## HydraulicNetwork <!-- NOUN -->
 - Display name: HydraulicNetwork
-- Parent class: [HydraulicLogicalElement](#../Hydraulics.md#HydraulicLogicalElement)
+- Parent class: [HydraulicLogicalElement](#./Hydraulics.md)
 - Attributes:
 - Specialization:
 - Description: 
@@ -158,7 +158,7 @@
 - Definition set: Hydraulics
 ## DownholeHydraulicNetwork <!-- NOUN -->
 - Display name: DownholeHydraulicNetwork
-- Parent class: [HydraulicNetwork](#../Hydraulics.md#HydraulicNetwork)
+- Parent class: [HydraulicNetwork](#./Hydraulics.md)
 - Attributes:
 - Specialization:
 - Description: 
@@ -166,7 +166,7 @@
 - Definition set: Hydraulics
 ## TopsideHydraulicNetwork <!-- NOUN -->
 - Display name: TopsideHydraulicNetwork
-- Parent class: [HydraulicNetwork](#../Hydraulics.md#HydraulicNetwork)
+- Parent class: [HydraulicNetwork](#./Hydraulics.md)
 - Attributes:
 - Specialization:
 - Description: 
@@ -175,9 +175,9 @@
 # Verbs
 ## EndsHydraulicBranchDecomposition <!-- VERB -->
 - Display name: EndsHydraulicBranchDecomposition
-- Parent verb: [DWISVerb](#../.md#DWISVerb)
-- Subject class: [HydraulicBranch](#../Hydraulics.md#HydraulicBranch)
-- Object class: [HydraulicBranch](#../Hydraulics.md#HydraulicBranch)
+- Parent verb: [DWISVerb](#./.md)
+- Subject class: [HydraulicBranch](#./Hydraulics.md)
+- Object class: [HydraulicBranch](#./Hydraulics.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -185,9 +185,9 @@
 - Definition set: Hydraulics
 ## HasBranchComponent <!-- VERB -->
 - Display name: HasBranchComponent
-- Parent verb: [DWISVerb](#../.md#DWISVerb)
-- Subject class: [HydraulicNetwork](#../Hydraulics.md#HydraulicNetwork)
-- Object class: [HydraulicBranch](#../Hydraulics.md#HydraulicBranch)
+- Parent verb: [DWISVerb](#./.md)
+- Subject class: [HydraulicNetwork](#./Hydraulics.md)
+- Object class: [HydraulicBranch](#./Hydraulics.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -195,9 +195,9 @@
 - Definition set: Hydraulics
 ## HasBranchCoordinateSystem <!-- VERB -->
 - Display name: HasBranchCoordinateSystem
-- Parent verb: [DWISVerb](#../.md#DWISVerb)
-- Subject class: [HydraulicBranch](#../Hydraulics.md#HydraulicBranch)
-- Object class: [ReferenceFrame](#../PhysicalLocation.md#ReferenceFrame)
+- Parent verb: [DWISVerb](#./.md)
+- Subject class: [HydraulicBranch](#./Hydraulics.md)
+- Object class: [ReferenceFrame](#./PhysicalLocation.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -205,9 +205,9 @@
 - Definition set: Hydraulics
 ## HasHydraulicState <!-- VERB -->
 - Display name: HasHydraulicState
-- Parent verb: [DWISVerb](#../.md#DWISVerb)
-- Subject class: [HydraulicJunction](#../Hydraulics.md#HydraulicJunction)
-- Object class: [HydraulicElementState](#../Hydraulics.md#HydraulicElementState)
+- Parent verb: [DWISVerb](#./.md)
+- Subject class: [HydraulicJunction](#./Hydraulics.md)
+- Object class: [HydraulicElementState](#./Hydraulics.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -215,9 +215,9 @@
 - Definition set: Hydraulics
 ## HasHydraulicStateValueFrom <!-- VERB -->
 - Display name: HasHydraulicStateValueFrom
-- Parent verb: [DWISVerb](#../.md#DWISVerb)
-- Subject class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
+- Parent verb: [DWISVerb](#./.md)
+- Subject class: [DWISNoun](#./DWISSemantics.md)
+- Object class: [DWISNoun](#./DWISSemantics.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -225,9 +225,9 @@
 - Definition set: Hydraulics
 ## HasLeftBranchCoordinates <!-- VERB -->
 - Display name: HasLeftBranchCoordinates
-- Parent verb: [DWISVerb](#../.md#DWISVerb)
-- Subject class: [HydraulicJunction](#../Hydraulics.md#HydraulicJunction)
-- Object class: [DrillingData](#../DrillingDataSemantics.md#DrillingData)
+- Parent verb: [DWISVerb](#./.md)
+- Subject class: [HydraulicJunction](#./Hydraulics.md)
+- Object class: [DrillingData](#./DrillingDataSemantics.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -235,9 +235,9 @@
 - Definition set: Hydraulics
 ## HasRightBranchCoordinates <!-- VERB -->
 - Display name: HasRightBranchCoordinates
-- Parent verb: [DWISVerb](#../.md#DWISVerb)
-- Subject class: [HydraulicJunction](#../Hydraulics.md#HydraulicJunction)
-- Object class: [DrillingData](#../DrillingDataSemantics.md#DrillingData)
+- Parent verb: [DWISVerb](#./.md)
+- Subject class: [HydraulicJunction](#./Hydraulics.md)
+- Object class: [DrillingData](#./DrillingDataSemantics.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -245,9 +245,9 @@
 - Definition set: Hydraulics
 ## IsHydraulicallyLocatedAt <!-- VERB -->
 - Display name: IsHydraulicallyLocatedAt
-- Parent verb: [DWISVerb](#../.md#DWISVerb)
-- Subject class: [DrillingData](#../DrillingDataSemantics.md#DrillingData)
-- Object class: [HydraulicLogicalElement](#../Hydraulics.md#HydraulicLogicalElement)
+- Parent verb: [DWISVerb](#./.md)
+- Subject class: [DrillingData](#./DrillingDataSemantics.md)
+- Object class: [HydraulicLogicalElement](#./Hydraulics.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -255,9 +255,9 @@
 - Definition set: Hydraulics
 ## IsEquivalentCirculationDensityAt <!-- VERB -->
 - Display name: IsEquivalentCirculationDensityAt
-- Parent verb: [IsHydraulicallyLocatedAt](#../Hydraulics.md#IsHydraulicallyLocatedAt)
-- Subject class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
+- Parent verb: [IsHydraulicallyLocatedAt](#./Hydraulics.md)
+- Subject class: [DWISNoun](#./DWISSemantics.md)
+- Object class: [DWISNoun](#./DWISSemantics.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -265,9 +265,9 @@
 - Definition set: Hydraulics
 ## IsFluidDensityAt <!-- VERB -->
 - Display name: IsFluidDensityAt
-- Parent verb: [IsHydraulicallyLocatedAt](#../Hydraulics.md#IsHydraulicallyLocatedAt)
-- Subject class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
+- Parent verb: [IsHydraulicallyLocatedAt](#./Hydraulics.md)
+- Subject class: [DWISNoun](#./DWISSemantics.md)
+- Object class: [DWISNoun](#./DWISSemantics.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -275,9 +275,9 @@
 - Definition set: Hydraulics
 ## IsFluidTemperatureAt <!-- VERB -->
 - Display name: IsFluidTemperatureAt
-- Parent verb: [IsHydraulicallyLocatedAt](#../Hydraulics.md#IsHydraulicallyLocatedAt)
-- Subject class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
+- Parent verb: [IsHydraulicallyLocatedAt](#./Hydraulics.md)
+- Subject class: [DWISNoun](#./DWISSemantics.md)
+- Object class: [DWISNoun](#./DWISSemantics.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -285,9 +285,9 @@
 - Definition set: Hydraulics
 ## IsFluidVelocityAt <!-- VERB -->
 - Display name: IsFluidVelocityAt
-- Parent verb: [IsHydraulicallyLocatedAt](#../Hydraulics.md#IsHydraulicallyLocatedAt)
-- Subject class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
+- Parent verb: [IsHydraulicallyLocatedAt](#./Hydraulics.md)
+- Subject class: [DWISNoun](#./DWISSemantics.md)
+- Object class: [DWISNoun](#./DWISSemantics.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -295,9 +295,9 @@
 - Definition set: Hydraulics
 ## IsHydraulicEstimationAt <!-- VERB -->
 - Display name: IsHydraulicEstimationAt
-- Parent verb: [IsHydraulicallyLocatedAt](#../Hydraulics.md#IsHydraulicallyLocatedAt)
-- Subject class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
+- Parent verb: [IsHydraulicallyLocatedAt](#./Hydraulics.md)
+- Subject class: [DWISNoun](#./DWISSemantics.md)
+- Object class: [DWISNoun](#./DWISSemantics.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -305,9 +305,9 @@
 - Definition set: Hydraulics
 ## IsHydraulicMaximumAllowedRateOfChangeAt <!-- VERB -->
 - Display name: IsHydraulicMaximumAllowedRateOfChangeAt
-- Parent verb: [IsHydraulicallyLocatedAt](#../Hydraulics.md#IsHydraulicallyLocatedAt)
-- Subject class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
+- Parent verb: [IsHydraulicallyLocatedAt](#./Hydraulics.md)
+- Subject class: [DWISNoun](#./DWISSemantics.md)
+- Object class: [DWISNoun](#./DWISSemantics.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -315,9 +315,9 @@
 - Definition set: Hydraulics
 ## IsHydraulicMaximumAllowedValueAt <!-- VERB -->
 - Display name: IsHydraulicMaximumAllowedValueAt
-- Parent verb: [IsHydraulicallyLocatedAt](#../Hydraulics.md#IsHydraulicallyLocatedAt)
-- Subject class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
+- Parent verb: [IsHydraulicallyLocatedAt](#./Hydraulics.md)
+- Subject class: [DWISNoun](#./DWISSemantics.md)
+- Object class: [DWISNoun](#./DWISSemantics.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -325,9 +325,9 @@
 - Definition set: Hydraulics
 ## IsHydraulicMeasurementAt <!-- VERB -->
 - Display name: IsHydraulicMeasurementAt
-- Parent verb: [IsHydraulicallyLocatedAt](#../Hydraulics.md#IsHydraulicallyLocatedAt)
-- Subject class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
+- Parent verb: [IsHydraulicallyLocatedAt](#./Hydraulics.md)
+- Subject class: [DWISNoun](#./DWISSemantics.md)
+- Object class: [DWISNoun](#./DWISSemantics.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -335,9 +335,9 @@
 - Definition set: Hydraulics
 ## IsMassFlowRateAt <!-- VERB -->
 - Display name: IsMassFlowRateAt
-- Parent verb: [IsHydraulicallyLocatedAt](#../Hydraulics.md#IsHydraulicallyLocatedAt)
-- Subject class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
+- Parent verb: [IsHydraulicallyLocatedAt](#./Hydraulics.md)
+- Subject class: [DWISNoun](#./DWISSemantics.md)
+- Object class: [DWISNoun](#./DWISSemantics.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -345,9 +345,9 @@
 - Definition set: Hydraulics
 ## IsPressureAt <!-- VERB -->
 - Display name: IsPressureAt
-- Parent verb: [IsHydraulicallyLocatedAt](#../Hydraulics.md#IsHydraulicallyLocatedAt)
-- Subject class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
+- Parent verb: [IsHydraulicallyLocatedAt](#./Hydraulics.md)
+- Subject class: [DWISNoun](#./DWISSemantics.md)
+- Object class: [DWISNoun](#./DWISSemantics.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -355,9 +355,9 @@
 - Definition set: Hydraulics
 ## IsPressureGradientAt <!-- VERB -->
 - Display name: IsPressureGradientAt
-- Parent verb: [IsHydraulicallyLocatedAt](#../Hydraulics.md#IsHydraulicallyLocatedAt)
-- Subject class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
+- Parent verb: [IsHydraulicallyLocatedAt](#./Hydraulics.md)
+- Subject class: [DWISNoun](#./DWISSemantics.md)
+- Object class: [DWISNoun](#./DWISSemantics.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -365,9 +365,9 @@
 - Definition set: Hydraulics
 ## IsVolumetricFlowRateAt <!-- VERB -->
 - Display name: IsVolumetricFlowRateAt
-- Parent verb: [IsHydraulicallyLocatedAt](#../Hydraulics.md#IsHydraulicallyLocatedAt)
-- Subject class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
+- Parent verb: [IsHydraulicallyLocatedAt](#./Hydraulics.md)
+- Subject class: [DWISNoun](#./DWISSemantics.md)
+- Object class: [DWISNoun](#./DWISSemantics.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -375,9 +375,9 @@
 - Definition set: Hydraulics
 ## IsHydraulicConnectedTo <!-- VERB -->
 - Display name: IsHydraulicConnectedTo
-- Parent verb: [DWISVerb](#../.md#DWISVerb)
-- Subject class: [HydraulicLogicalElement](#../Hydraulics.md#HydraulicLogicalElement)
-- Object class: [HydraulicLogicalElement](#../Hydraulics.md#HydraulicLogicalElement)
+- Parent verb: [DWISVerb](#./.md)
+- Subject class: [HydraulicLogicalElement](#./Hydraulics.md)
+- Object class: [HydraulicLogicalElement](#./Hydraulics.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -385,9 +385,9 @@
 - Definition set: Hydraulics
 ## HasEndJunction <!-- VERB -->
 - Display name: HasEndJunction
-- Parent verb: [IsHydraulicConnectedTo](#../Hydraulics.md#IsHydraulicConnectedTo)
-- Subject class: [HydraulicBranch](#../Hydraulics.md#HydraulicBranch)
-- Object class: [HydraulicJunction](#../Hydraulics.md#HydraulicJunction)
+- Parent verb: [IsHydraulicConnectedTo](#./Hydraulics.md)
+- Subject class: [HydraulicBranch](#./Hydraulics.md)
+- Object class: [HydraulicJunction](#./Hydraulics.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -395,9 +395,9 @@
 - Definition set: Hydraulics
 ## HasLeftBranch <!-- VERB -->
 - Display name: HasLeftBranch
-- Parent verb: [IsHydraulicConnectedTo](#../Hydraulics.md#IsHydraulicConnectedTo)
-- Subject class: [HydraulicJunction](#../Hydraulics.md#HydraulicJunction)
-- Object class: [HydraulicBranch](#../Hydraulics.md#HydraulicBranch)
+- Parent verb: [IsHydraulicConnectedTo](#./Hydraulics.md)
+- Subject class: [HydraulicJunction](#./Hydraulics.md)
+- Object class: [HydraulicBranch](#./Hydraulics.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -405,9 +405,9 @@
 - Definition set: Hydraulics
 ## HasRightBranch <!-- VERB -->
 - Display name: HasRightBranch
-- Parent verb: [IsHydraulicConnectedTo](#../Hydraulics.md#IsHydraulicConnectedTo)
-- Subject class: [HydraulicJunction](#../Hydraulics.md#HydraulicJunction)
-- Object class: [HydraulicBranch](#../Hydraulics.md#HydraulicBranch)
+- Parent verb: [IsHydraulicConnectedTo](#./Hydraulics.md)
+- Subject class: [HydraulicJunction](#./Hydraulics.md)
+- Object class: [HydraulicBranch](#./Hydraulics.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -415,9 +415,9 @@
 - Definition set: Hydraulics
 ## HasStartJunction <!-- VERB -->
 - Display name: HasStartJunction
-- Parent verb: [IsHydraulicConnectedTo](#../Hydraulics.md#IsHydraulicConnectedTo)
-- Subject class: [HydraulicBranch](#../Hydraulics.md#HydraulicBranch)
-- Object class: [HydraulicJunction](#../Hydraulics.md#HydraulicJunction)
+- Parent verb: [IsHydraulicConnectedTo](#./Hydraulics.md)
+- Subject class: [HydraulicBranch](#./Hydraulics.md)
+- Object class: [HydraulicJunction](#./Hydraulics.md)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
