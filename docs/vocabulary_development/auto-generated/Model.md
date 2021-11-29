@@ -17,4 +17,12 @@
 - Description: A model for which the state variables do not change with time.
 - Examples:
 - Definition set: Model
+## TransientModel <!-- NOUN -->
+- Display name: TransientModel
+- Parent class: [[DWISNoun](./DrillingDataSemantics.md#DWISNoun-)](./.md#[DWISNoun](./DrillingDataSemantics.md#DWISNoun-))
+- Attributes:
+- Specialization:
+- Description: A model for which the state variables changes with time.
+- Examples:
+- Definition set: Model
 # Verbs

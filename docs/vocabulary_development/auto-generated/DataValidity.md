@@ -44,7 +44,7 @@
 # Verbs
 ## IsConditionedBy <!-- VERB -->
 - Display name: IsConditionedBy
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
 - Object class: [ValidityCondition](./DataValidity.md#ValidityCondition)
 - Min cardinality: -1
@@ -54,7 +54,7 @@
 - Definition set: DataValidity
 ## IsConditionInput <!-- VERB -->
 - Display name: IsConditionInput
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
 - Object class: [ValidityCondition](./DataValidity.md#ValidityCondition)
 - Min cardinality: -1
@@ -75,6 +75,16 @@
 ## IsConditionRight <!-- VERB -->
 - Display name: IsConditionRight
 - Parent verb: [IsConditionInput](./DataValidity.md#IsConditionInput)
+- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataValidity
+## IsValidBy <!-- VERB -->
+- Display name: IsValidBy
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Min cardinality: -1

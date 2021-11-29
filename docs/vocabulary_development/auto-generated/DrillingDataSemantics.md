@@ -321,7 +321,7 @@
 # Verbs
 ## HasDomain <!-- VERB -->
 - Display name: HasDomain
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
 - Object class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
 - Min cardinality: -1
@@ -341,7 +341,7 @@
 - Definition set: DrillingDataSemantics
 ## HasEndPoint <!-- VERB -->
 - Display name: HasEndPoint
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingSignal](./DrillingDataSemantics.md#DrillingSignal)
 - Object class: [DataEndPoint](./DrillingDataSemantics.md#DataEndPoint)
 - Min cardinality: -1
@@ -351,7 +351,7 @@
 - Definition set: DrillingDataSemantics
 ## HasSIUnit <!-- VERB -->
 - Display name: HasSIUnit
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [Quantity](./Quantities.md#Quantity)
 - Object class: [Unit](./Quantities.md#Unit)
 - Min cardinality: -1
@@ -361,7 +361,7 @@
 - Definition set: DrillingDataSemantics
 ## HasValue <!-- VERB -->
 - Display name: HasValue
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
 - Object class: [DrillingSignal](./DrillingDataSemantics.md#DrillingSignal)
 - Min cardinality: -1
@@ -391,7 +391,7 @@
 - Definition set: DrillingDataSemantics
 ## IsDependentOn <!-- VERB -->
 - Display name: IsDependentOn
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
 - Object class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
 - Min cardinality: -1
@@ -414,6 +414,16 @@
 - Parent verb: [IsDependentOn](./DrillingDataSemantics.md#IsDependentOn)
 - Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
 - Object class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DrillingDataSemantics
+## IsProvidedBy <!-- VERB -->
+- Display name: IsProvidedBy
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Object class: [DataProvider](./DrillingDataSemantics.md#DataProvider)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 

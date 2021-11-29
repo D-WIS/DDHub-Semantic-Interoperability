@@ -52,7 +52,7 @@
 # Verbs
 ## HasUncertainty <!-- VERB -->
 - Display name: HasUncertainty
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
 - Object class: [SignalUncertainty](./Uncertainty.md#SignalUncertainty)
 - Min cardinality: -1
@@ -62,7 +62,7 @@
 - Definition set: Uncertainty
 ## HasUncertaintyAccuracy <!-- VERB -->
 - Display name: HasUncertaintyAccuracy
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [SensorUncertainty](./Uncertainty.md#SensorUncertainty)
 - Object class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
 - Min cardinality: -1
@@ -72,7 +72,7 @@
 - Definition set: Uncertainty
 ## HasUncertaintyMax <!-- VERB -->
 - Display name: HasUncertaintyMax
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Min cardinality: -1
@@ -82,7 +82,7 @@
 - Definition set: Uncertainty
 ## HasUncertaintyMean <!-- VERB -->
 - Display name: HasUncertaintyMean
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Min cardinality: -1
@@ -92,7 +92,7 @@
 - Definition set: Uncertainty
 ## HasUncertaintyMin <!-- VERB -->
 - Display name: HasUncertaintyMin
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Min cardinality: -1
@@ -102,7 +102,7 @@
 - Definition set: Uncertainty
 ## HasUncertaintyPrecision <!-- VERB -->
 - Display name: HasUncertaintyPrecision
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [SensorUncertainty](./Uncertainty.md#SensorUncertainty)
 - Object class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
 - Min cardinality: -1
@@ -112,7 +112,17 @@
 - Definition set: Uncertainty
 ## HasUncertaintyRelativeValue <!-- VERB -->
 - Display name: HasUncertaintyRelativeValue
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Uncertainty
+## HasUncertaintyStandardDeviation <!-- VERB -->
+- Display name: HasUncertaintyStandardDeviation
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Min cardinality: -1

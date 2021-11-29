@@ -175,7 +175,7 @@
 # Verbs
 ## EndsHydraulicBranchDecomposition <!-- VERB -->
 - Display name: EndsHydraulicBranchDecomposition
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [HydraulicBranch](./Hydraulics.md#HydraulicBranch)
 - Object class: [HydraulicBranch](./Hydraulics.md#HydraulicBranch)
 - Min cardinality: -1
@@ -185,7 +185,7 @@
 - Definition set: Hydraulics
 ## HasBranchComponent <!-- VERB -->
 - Display name: HasBranchComponent
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [HydraulicNetwork](./Hydraulics.md#HydraulicNetwork)
 - Object class: [HydraulicBranch](./Hydraulics.md#HydraulicBranch)
 - Min cardinality: -1
@@ -195,7 +195,7 @@
 - Definition set: Hydraulics
 ## HasBranchCoordinateSystem <!-- VERB -->
 - Display name: HasBranchCoordinateSystem
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [HydraulicBranch](./Hydraulics.md#HydraulicBranch)
 - Object class: [ReferenceFrame](./PhysicalLocation.md#ReferenceFrame)
 - Min cardinality: -1
@@ -205,7 +205,7 @@
 - Definition set: Hydraulics
 ## HasHydraulicState <!-- VERB -->
 - Display name: HasHydraulicState
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [HydraulicJunction](./Hydraulics.md#HydraulicJunction)
 - Object class: [HydraulicElementState](./Hydraulics.md#HydraulicElementState)
 - Min cardinality: -1
@@ -215,7 +215,7 @@
 - Definition set: Hydraulics
 ## HasHydraulicStateValueFrom <!-- VERB -->
 - Display name: HasHydraulicStateValueFrom
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Min cardinality: -1
@@ -225,7 +225,7 @@
 - Definition set: Hydraulics
 ## HasLeftBranchCoordinates <!-- VERB -->
 - Display name: HasLeftBranchCoordinates
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [HydraulicJunction](./Hydraulics.md#HydraulicJunction)
 - Object class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
 - Min cardinality: -1
@@ -235,7 +235,7 @@
 - Definition set: Hydraulics
 ## HasRightBranchCoordinates <!-- VERB -->
 - Display name: HasRightBranchCoordinates
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [HydraulicJunction](./Hydraulics.md#HydraulicJunction)
 - Object class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
 - Min cardinality: -1
@@ -245,7 +245,7 @@
 - Definition set: Hydraulics
 ## IsHydraulicallyLocatedAt <!-- VERB -->
 - Display name: IsHydraulicallyLocatedAt
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
 - Object class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement)
 - Min cardinality: -1
@@ -375,7 +375,7 @@
 - Definition set: Hydraulics
 ## IsHydraulicConnectedTo <!-- VERB -->
 - Display name: IsHydraulicConnectedTo
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement)
 - Object class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement)
 - Min cardinality: -1
@@ -418,6 +418,16 @@
 - Parent verb: [IsHydraulicConnectedTo](./Hydraulics.md#IsHydraulicConnectedTo)
 - Subject class: [HydraulicBranch](./Hydraulics.md#HydraulicBranch)
 - Object class: [HydraulicJunction](./Hydraulics.md#HydraulicJunction)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## StartsHydraulicBranchDecomposition <!-- VERB -->
+- Display name: StartsHydraulicBranchDecomposition
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 

@@ -42,7 +42,7 @@
 # Verbs
 ## HasMechanicalState <!-- VERB -->
 - Display name: HasMechanicalState
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [MechanicalLogicalElement](./Mechanics.md#MechanicalLogicalElement)
 - Object class: [MechanicalElementState](./Mechanics.md#MechanicalElementState)
 - Min cardinality: -1
@@ -52,7 +52,7 @@
 - Definition set: Mechanics
 ## HasMechanicalStateValueFrom <!-- VERB -->
 - Display name: HasMechanicalStateValueFrom
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [MechanicalLogicalElement](./Mechanics.md#MechanicalLogicalElement)
 - Object class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
 - Min cardinality: -1
@@ -62,7 +62,17 @@
 - Definition set: Mechanics
 ## IsMechanicallyConnectTo <!-- VERB -->
 - Display name: IsMechanicallyConnectTo
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Mechanics
+## IsMechanicallyLocatedAt <!-- VERB -->
+- Display name: IsMechanicallyLocatedAt
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Min cardinality: -1

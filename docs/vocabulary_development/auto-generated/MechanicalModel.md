@@ -50,3 +50,13 @@
 - Examples:
 - Definition set: MechanicalModel
 # Verbs
+## IsOfMechanicalStiffnessType <!-- VERB -->
+- Display name: IsOfMechanicalStiffnessType
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [MechanicalModel](./.md#MechanicalModel)
+- Object class: [MechanicalStiffnessType](./MechanicalModel.md#MechanicalStiffnessType)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: A relation to describe how the drill-stem mechanical model manage stiffness.
+- Examples: 
+- Definition set: MechanicalModel

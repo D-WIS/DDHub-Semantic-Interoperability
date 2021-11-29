@@ -234,7 +234,7 @@
 # Verbs
 ## HasCoordinates <!-- VERB -->
 - Display name: HasCoordinates
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
 - Object class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
 - Min cardinality: -1
@@ -244,7 +244,7 @@
 - Definition set: PhysicalLocation
 ## HasReferenceFrame <!-- VERB -->
 - Display name: HasReferenceFrame
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [Location](./PhysicalLocation.md#Location)
 - Object class: [ReferenceFrame](./PhysicalLocation.md#ReferenceFrame)
 - Min cardinality: -1
@@ -254,7 +254,17 @@
 - Definition set: PhysicalLocation
 ## HasReferenceFrameOrigin <!-- VERB -->
 - Display name: HasReferenceFrameOrigin
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: PhysicalLocation
+## IsPhysicallyLocatedAt <!-- VERB -->
+- Display name: IsPhysicallyLocatedAt
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Min cardinality: -1

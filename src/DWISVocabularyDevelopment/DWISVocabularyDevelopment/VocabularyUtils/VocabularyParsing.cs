@@ -253,6 +253,10 @@ namespace VocabularyUtils
                     current.Add(fileLines[i]);
                 }
             }
+            if (current.Count > 0)
+            {
+                allSnippets.Add(current.ToArray());
+            }
         }
 
 

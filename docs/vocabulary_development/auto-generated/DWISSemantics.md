@@ -10,3 +10,13 @@
 - Examples:
 - Definition set: DWISSemantics
 # Verbs
+## DWISVerb <!-- VERB -->
+- Display name: DWISVerb
+- Parent verb: [](./.md#)
+- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DWISSemantics

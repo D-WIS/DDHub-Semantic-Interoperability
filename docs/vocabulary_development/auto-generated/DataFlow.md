@@ -328,7 +328,7 @@
 # Verbs
 ## Controls <!-- VERB -->
 - Display name: Controls
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Min cardinality: -1
@@ -338,7 +338,7 @@
 - Definition set: DataFlow
 ## HasFunction <!-- VERB -->
 - Display name: HasFunction
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
 - Object class: [DataFlowNode](./DataFlow.md#DataFlowNode)
 - Min cardinality: -1
@@ -448,7 +448,7 @@
 - Definition set: DataFlow
 ## IsGeneratedBy <!-- VERB -->
 - Display name: IsGeneratedBy
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
 - Object class: [DataFlowNode](./DataFlow.md#DataFlowNode)
 - Min cardinality: -1
@@ -541,6 +541,16 @@
 - Parent verb: [IsGeneratedBy](./DataFlow.md#IsGeneratedBy)
 - Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
 - Object class: [TransmissionLine](./DataFlow.md#TransmissionLine)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsProcessedBy <!-- VERB -->
+- Display name: IsProcessedBy
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 

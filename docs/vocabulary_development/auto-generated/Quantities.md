@@ -424,7 +424,7 @@
 # Verbs
 ## AssociatesMeasurableQuantity <!-- VERB -->
 - Display name: AssociatesMeasurableQuantity
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [MeasurableQuantityUnitAssociation](./Quantities.md#MeasurableQuantityUnitAssociation)
 - Object class: [MeasurableQuantity](./Quantities.md#MeasurableQuantity)
 - Min cardinality: -1
@@ -434,7 +434,7 @@
 - Definition set: Quantities
 ## AssociatesUnit <!-- VERB -->
 - Display name: AssociatesUnit
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [MeasurableQuantityUnitAssociation](./Quantities.md#MeasurableQuantityUnitAssociation)
 - Object class: [Unit](./Quantities.md#Unit)
 - Min cardinality: -1
@@ -444,7 +444,7 @@
 - Definition set: Quantities
 ## HasUnitAssociation <!-- VERB -->
 - Display name: HasUnitAssociation
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [UnitSystem](./Quantities.md#UnitSystem)
 - Object class: [MeasurableQuantityUnitAssociation](./Quantities.md#MeasurableQuantityUnitAssociation)
 - Min cardinality: -1
@@ -454,7 +454,7 @@
 - Definition set: Quantities
 ## IsObservableFrom <!-- VERB -->
 - Display name: IsObservableFrom
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Min cardinality: -1
@@ -464,7 +464,7 @@
 - Definition set: Quantities
 ## IsOfBaseQuantity <!-- VERB -->
 - Display name: IsOfBaseQuantity
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Min cardinality: -1
@@ -474,9 +474,19 @@
 - Definition set: Quantities
 ## IsOfMeasurableQuantity <!-- VERB -->
 - Display name: IsOfMeasurableQuantity
-- Parent verb: [DWISVerb](./.md#DWISVerb)
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Quantities
+## IsUnitForQuantity <!-- VERB -->
+- Display name: IsUnitForQuantity
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [Unit](./Quantities.md#Unit)
+- Object class: [Quantity](./Quantities.md#Quantity)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 

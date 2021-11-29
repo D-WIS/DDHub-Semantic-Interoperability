@@ -257,4 +257,12 @@
 - Description: 
 - Examples:
 - Definition set: DrillingEquipment
+## UnderReamer <!-- NOUN -->
+- Display name: UnderReamer
+- Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
 # Verbs

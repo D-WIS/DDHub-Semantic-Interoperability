@@ -11,7 +11,7 @@
 
 # VERBS
 ## DWISVerb <!-- VERB -->
-- Display name: DWis verb
+- Display name: DWIS verb
 - Parent verb: 
 - Subject class: DWISNoun
 - Object class: DWISNoun
