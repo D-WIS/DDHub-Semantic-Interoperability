@@ -7,8 +7,8 @@ namespace VocabularyParseTest
     {
         static void Main(string[] args)
         {
-            string fileName = 
-                @"C:\Users\beda\source\repos\D-WIS\DDHub-Semantic-Interoperability\docs\vocabulary_development\definitions\DataFlow.md";
+            //string fileName = 
+            //    @"C:\Users\beda\source\repos\D-WIS\DDHub-Semantic-Interoperability\docs\vocabulary_development\definitions\DataFlow.md";
 
 
             string folderName = @"C:\Users\beda\source\repos\D-WIS\DDHub-Semantic-Interoperability\docs\vocabulary_development\definitions\";
@@ -27,7 +27,7 @@ namespace VocabularyParseTest
 
 
             MDWriting.ToMDFile(vocabulary, @"C:\temp\voc.md");
-
+            MDWriting.ToMDFiles(vocabulary, @"C:\Temp\individualSets");
             Console.Read();
         }
     }

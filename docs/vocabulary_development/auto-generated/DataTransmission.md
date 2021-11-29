@@ -1,7 +1,9 @@
-# NOUNS
+# DataTransmission<!-- DEFINITION SET HEADER -->
+- Description: 
+# Nouns
 ## Telemetry <!-- NOUN -->
 - Display name: Telemetry
-- Parent class: DWISNoun
+- Parent class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
 - Attributes:
   - RefreshRate
     - Type: double
@@ -13,43 +15,39 @@
     - Type: double
     - Description: 
 - Specialization:
-- Description: Technology used for transferring the data from its main origin. 
+- Description: Technology used for transferring the data from its main origin.
 - Examples:
+- Definition set: DataTransmission
 ## DownHoleTelemetry <!-- NOUN -->
 - Display name: DownHoleTelemetry
-- Parent class: Telemetry
+- Parent class: [Telemetry](#./DataTransmission.md#Telemetry)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: DataTransmission
 ## MudPulseTelemetry <!-- NOUN -->
 - Display name: MudPulseTelemetry
-- Parent class: DownHoleTelemetry
+- Parent class: [DownHoleTelemetry](#./DataTransmission.md#DownHoleTelemetry)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: DataTransmission
 ## WiredPipeTelemetry <!-- NOUN -->
 - Display name: WiredPipeTelemetry
-- Parent class: DownHoleTelemetry
+- Parent class: [DownHoleTelemetry](#./DataTransmission.md#DownHoleTelemetry)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: DataTransmission
 ## TopSideTelemetry <!-- NOUN -->
 - Display name: TopSideTelemetry
-- Parent class: Telemetry
+- Parent class: [Telemetry](#./DataTransmission.md#Telemetry)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
-
-
-# VERBS
-## IsTransmittedBy <!-- VERB -->
-- Display name: IsTransmittedBy
-- Parent verb: DWISVerb
-- Subject class: DWISNoun
-- Object class: DWISNoun
-- Description: 
-- Examples: 
+- Definition set: DataTransmission
+# Verbs

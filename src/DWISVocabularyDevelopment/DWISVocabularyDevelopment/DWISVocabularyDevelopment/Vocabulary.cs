@@ -5,8 +5,8 @@ namespace DWISVocabularyDevelopment
 {
     public class Vocabulary
     {
-        public IList<Noun> Nouns { get; set; } = new List<Noun>();
-        public IList<Verb> Verbs { get; set; } = new List<Verb>();
+        public List<Noun> Nouns { get; set; } = new List<Noun>();
+        public List<Verb> Verbs { get; set; } = new List<Verb>();
 
         public void Add(Vocabulary other)
         {

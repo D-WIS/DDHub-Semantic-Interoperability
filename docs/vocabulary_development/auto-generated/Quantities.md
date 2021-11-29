@@ -1,202 +1,218 @@
-# NOUNS
+# Quantities<!-- DEFINITION SET HEADER -->
+- Description: 
+# Nouns
 ## MeasurableQuantity <!-- NOUN -->
 - Display name: MeasurableQuantity
-- Parent class: DWISNoun
+- Parent class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
 - Attributes:
   - MeaningfulPrecision
     - Type: double
     - Description: 
 - Specialization:
-- Description: Represents a quantity that allows meaningful comparisons. 
-Are related by a Quantity via the "IsObservableFrom" relation. 
-Context dependent: for example, Fluid density and Equivalent Circulating Density are represented as two different "Measurable quantities", although they both refer to the same base SI quantities. 
+- Description: Represents a quantity that allows meaningful comparisons.
 - Examples:
+- Definition set: Quantities
 ## BitTorqueQuantity <!-- NOUN -->
 - Display name: BitTorqueQuantity
-- Parent class: MeasurableQuantity
+- Parent class: [MeasurableQuantity](#./Quantities.md#MeasurableQuantity)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## BlockAccelerationQuantity <!-- NOUN -->
 - Display name: BlockAccelerationQuantity
-- Parent class: MeasurableQuantity
+- Parent class: [MeasurableQuantity](#./Quantities.md#MeasurableQuantity)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## BlockPositionQuantity <!-- NOUN -->
 - Display name: BlockPositionQuantity
-- Parent class: MeasurableQuantity
+- Parent class: [MeasurableQuantity](#./Quantities.md#MeasurableQuantity)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## BlockVelocityQuantity <!-- NOUN -->
 - Display name: BlockVelocityQuantity
-- Parent class: MeasurableQuantity
+- Parent class: [MeasurableQuantity](#./Quantities.md#MeasurableQuantity)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## DepthQuantity <!-- NOUN -->
 - Display name: DepthQuantity
-- Parent class: MeasurableQuantity
+- Parent class: [MeasurableQuantity](#./Quantities.md#MeasurableQuantity)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## DownholePressureQuantity <!-- NOUN -->
 - Display name: DownholePressureQuantity
-- Parent class: MeasurableQuantity
+- Parent class: [MeasurableQuantity](#./Quantities.md#MeasurableQuantity)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## EMWQuantity <!-- NOUN -->
 - Display name: EMWQuantity
-- Parent class: MeasurableQuantity
+- Parent class: [MeasurableQuantity](#./Quantities.md#MeasurableQuantity)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## FlowRateQuantity <!-- NOUN -->
 - Display name: FlowRateQuantity
-- Parent class: MeasurableQuantity
+- Parent class: [MeasurableQuantity](#./Quantities.md#MeasurableQuantity)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## FluidDensityInQuantity <!-- NOUN -->
 - Display name: FluidDensityInQuantity
-- Parent class: MeasurableQuantity
+- Parent class: [MeasurableQuantity](#./Quantities.md#MeasurableQuantity)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## FluidTemperatureInQuantity <!-- NOUN -->
 - Display name: FluidTemperatureInQuantity
-- Parent class: MeasurableQuantity
+- Parent class: [MeasurableQuantity](#./Quantities.md#MeasurableQuantity)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## FormationPorosityQuantity <!-- NOUN -->
 - Display name: FormationPorosityQuantity
-- Parent class: MeasurableQuantity
+- Parent class: [MeasurableQuantity](#./Quantities.md#MeasurableQuantity)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## HookloadQuantity <!-- NOUN -->
 - Display name: HookloadQuantity
-- Parent class: MeasurableQuantity
+- Parent class: [MeasurableQuantity](#./Quantities.md#MeasurableQuantity)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## PumpRateQuantity <!-- NOUN -->
 - Display name: PumpRateQuantity
-- Parent class: MeasurableQuantity
+- Parent class: [MeasurableQuantity](#./Quantities.md#MeasurableQuantity)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## Resistivity <!-- NOUN -->
 - Display name: Resistivity
-- Parent class: MeasurableQuantity
+- Parent class: [MeasurableQuantity](#./Quantities.md#MeasurableQuantity)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## RockDensityQuantity <!-- NOUN -->
 - Display name: RockDensityQuantity
-- Parent class: MeasurableQuantity
+- Parent class: [MeasurableQuantity](#./Quantities.md#MeasurableQuantity)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## SPPQuantity <!-- NOUN -->
 - Display name: SPPQuantity
-- Parent class: MeasurableQuantity
+- Parent class: [MeasurableQuantity](#./Quantities.md#MeasurableQuantity)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## SurfaceRPMQuantity <!-- NOUN -->
 - Display name: SurfaceRPMQuantity
-- Parent class: MeasurableQuantity
+- Parent class: [MeasurableQuantity](#./Quantities.md#MeasurableQuantity)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## SurfaceTorqueQuantity <!-- NOUN -->
 - Display name: SurfaceTorqueQuantity
-- Parent class: MeasurableQuantity
+- Parent class: [MeasurableQuantity](#./Quantities.md#MeasurableQuantity)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## TopOfStringForceQuantity <!-- NOUN -->
 - Display name: TopOfStringForceQuantity
-- Parent class: MeasurableQuantity
+- Parent class: [MeasurableQuantity](#./Quantities.md#MeasurableQuantity)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## TVDQuantity <!-- NOUN -->
 - Display name: TVDQuantity
-- Parent class: MeasurableQuantity
+- Parent class: [MeasurableQuantity](#./Quantities.md#MeasurableQuantity)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## WOBQuantity <!-- NOUN -->
 - Display name: WOBQuantity
-- Parent class: MeasurableQuantity
+- Parent class: [MeasurableQuantity](#./Quantities.md#MeasurableQuantity)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## MeasurableQuantityUnitAssociation <!-- NOUN -->
 - Display name: MeasurableQuantityUnitAssociation
-- Parent class: DWISNoun
+- Parent class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## Quantity <!-- NOUN -->
 - Display name: Quantity
-- Parent class: DWISNoun
+- Parent class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
 - Attributes:
   - L
     - Type: int
-    - Description: Length exponent. 
-SI Unit: meter (m)
+    - Description: Length exponent.
   - M
     - Type: int
-    - Description: Mass exponent. 
-SI Unit: Kilogram (kg)
+    - Description: Mass exponent.
   - T
     - Type: int
     - Description: Time exponent.
-SI Unit: Second (s)
   - I
     - Type: int
-    - Description: Electric current exponent. 
-SI Unit: Ampere (A)
+    - Description: Electric current exponent.
   - ThT
     - Type: int
     - Description: Thermodynamic temperature exponent.
-SI Unit: Kelvin (K)
   - N
     - Type: int
     - Description: Amount of substance exponent.
-SI Unit: Mole (N)
   - J
     - Type: int
-    - Description: Luminous intensity exponent. 
-SI Unit: Candela (cd)
+    - Description: Luminous intensity exponent.
   - SIUnit
     - Type: string
     - Description: 
@@ -210,9 +226,10 @@ SI Unit: Candela (cd)
   - J = 0
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## AccelerationQuantity <!-- NOUN -->
 - Display name: AccelerationQuantity
-- Parent class: Quantity
+- Parent class: [Quantity](#./Quantities.md#Quantity)
 - Attributes:
 - Specialization:
   - L = 1
@@ -220,17 +237,19 @@ SI Unit: Candela (cd)
   - Name = Acceleration quantity
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## AreaQuantity <!-- NOUN -->
 - Display name: AreaQuantity
-- Parent class: Quantity
+- Parent class: [Quantity](#./Quantities.md#Quantity)
 - Attributes:
 - Specialization:
   - L = 2
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## ElectricResistivityQuantity <!-- NOUN -->
 - Display name: ElectricResistivityQuantity
-- Parent class: Quantity
+- Parent class: [Quantity](#./Quantities.md#Quantity)
 - Attributes:
 - Specialization:
   - L = 3
@@ -239,9 +258,10 @@ SI Unit: Candela (cd)
   - I = -2
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## ForceQuantity <!-- NOUN -->
 - Display name: ForceQuantity
-- Parent class: Quantity
+- Parent class: [Quantity](#./Quantities.md#Quantity)
 - Attributes:
 - Specialization:
   - L = 1
@@ -249,51 +269,57 @@ SI Unit: Candela (cd)
   - T = -2
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## FrequencyQuantity <!-- NOUN -->
 - Display name: FrequencyQuantity
-- Parent class: Quantity
+- Parent class: [Quantity](#./Quantities.md#Quantity)
 - Attributes:
 - Specialization:
   - T = -1
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## LengthQuantity <!-- NOUN -->
 - Display name: LengthQuantity
-- Parent class: Quantity
+- Parent class: [Quantity](#./Quantities.md#Quantity)
 - Attributes:
 - Specialization:
   - L = 1
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## MassDensityQuantity <!-- NOUN -->
 - Display name: MassDensityQuantity
-- Parent class: Quantity
+- Parent class: [Quantity](#./Quantities.md#Quantity)
 - Attributes:
 - Specialization:
   - L = 3
   - M = 1
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## MassQuantity <!-- NOUN -->
 - Display name: MassQuantity
-- Parent class: Quantity
+- Parent class: [Quantity](#./Quantities.md#Quantity)
 - Attributes:
 - Specialization:
   - M = 1
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## MassRate <!-- NOUN -->
 - Display name: MassRate
-- Parent class: Quantity
+- Parent class: [Quantity](#./Quantities.md#Quantity)
 - Attributes:
 - Specialization:
   - M = 1
   - T = -1
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## PowerQuantity <!-- NOUN -->
 - Display name: PowerQuantity
-- Parent class: Quantity
+- Parent class: [Quantity](#./Quantities.md#Quantity)
 - Attributes:
 - Specialization:
   - L = 2
@@ -301,9 +327,10 @@ SI Unit: Candela (cd)
   - T = -3
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## PressureQuantity <!-- NOUN -->
 - Display name: PressureQuantity
-- Parent class: Quantity
+- Parent class: [Quantity](#./Quantities.md#Quantity)
 - Attributes:
 - Specialization:
   - L = -1
@@ -311,24 +338,27 @@ SI Unit: Candela (cd)
   - T = 2
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## ProportionQuantity <!-- NOUN -->
 - Display name: ProportionQuantity
-- Parent class: Quantity
+- Parent class: [Quantity](#./Quantities.md#Quantity)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## TemperatureQuantity <!-- NOUN -->
 - Display name: TemperatureQuantity
-- Parent class: Quantity
+- Parent class: [Quantity](#./Quantities.md#Quantity)
 - Attributes:
 - Specialization:
   - ThT = 1
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## TorqueQuantity <!-- NOUN -->
 - Display name: TorqueQuantity
-- Parent class: Quantity
+- Parent class: [Quantity](#./Quantities.md#Quantity)
 - Attributes:
 - Specialization:
   - L = 2
@@ -336,35 +366,39 @@ SI Unit: Candela (cd)
   - T = -2
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## VelocityQuantity <!-- NOUN -->
 - Display name: VelocityQuantity
-- Parent class: Quantity
+- Parent class: [Quantity](#./Quantities.md#Quantity)
 - Attributes:
 - Specialization:
   - L = 1
   - T = -1
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## VolumeQuantity <!-- NOUN -->
 - Display name: VolumeQuantity
-- Parent class: Quantity
+- Parent class: [Quantity](#./Quantities.md#Quantity)
 - Attributes:
 - Specialization:
   - L = 3
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## VolumetricRateQuantity <!-- NOUN -->
 - Display name: VolumetricRateQuantity
-- Parent class: Quantity
+- Parent class: [Quantity](#./Quantities.md#Quantity)
 - Attributes:
 - Specialization:
   - L = 3
   - T = -1
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## Unit <!-- NOUN -->
 - Display name: Unit
-- Parent class: DWISNoun
+- Parent class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
 - Attributes:
   - Symbol
     - Type: string
@@ -372,70 +406,79 @@ SI Unit: Candela (cd)
   - ConversionFactorA
     - Type: double
     - Description: Unit conversion from SI unit is performed as:
-ConvertedValue = ConversionFactorA + SIValue * ConversionFactorB
   - ConversionFactorB
     - Type: double
     - Description: Unit conversion from SI unit is performed as:
-ConvertedValue = ConversionFactorA + SIValue * ConversionFactorB
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: Quantities
 ## UnitSystem <!-- NOUN -->
 - Display name: UnitSystem
-- Parent class: DWISNoun
+- Parent class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
 - Attributes:
 - Specialization:
 - Description: A set of associations between measurable quantities and units
 - Examples:
-
-
-# VERBS
+- Definition set: Quantities
+# Verbs
 ## AssociatesMeasurableQuantity <!-- VERB -->
 - Display name: AssociatesMeasurableQuantity
-- Parent verb: DWISVerb
-- Subject class: MeasurableQuantityUnitAssociation
-- Object class: MeasurableQuantity
+- Parent verb: [DWISVerb](#./.md#DWISVerb)
+- Subject class: [MeasurableQuantityUnitAssociation](#./Quantities.md#MeasurableQuantityUnitAssociation)
+- Object class: [MeasurableQuantity](#./Quantities.md#MeasurableQuantity)
+- Min cardinality: -1
+- Max cardinality: -1
 - Description: 
 - Examples: 
+- Definition set: Quantities
 ## AssociatesUnit <!-- VERB -->
 - Display name: AssociatesUnit
-- Parent verb: DWISVerb
-- Subject class: MeasurableQuantityUnitAssociation
-- Object class: Unit
+- Parent verb: [DWISVerb](#./.md#DWISVerb)
+- Subject class: [MeasurableQuantityUnitAssociation](#./Quantities.md#MeasurableQuantityUnitAssociation)
+- Object class: [Unit](#./Quantities.md#Unit)
+- Min cardinality: -1
+- Max cardinality: -1
 - Description: 
 - Examples: 
+- Definition set: Quantities
 ## HasUnitAssociation <!-- VERB -->
 - Display name: HasUnitAssociation
-- Parent verb: DWISVerb
-- Subject class: UnitSystem
-- Object class: MeasurableQuantityUnitAssociation
+- Parent verb: [DWISVerb](#./.md#DWISVerb)
+- Subject class: [UnitSystem](#./Quantities.md#UnitSystem)
+- Object class: [MeasurableQuantityUnitAssociation](#./Quantities.md#MeasurableQuantityUnitAssociation)
+- Min cardinality: -1
+- Max cardinality: -1
 - Description: 
 - Examples: 
+- Definition set: Quantities
 ## IsObservableFrom <!-- VERB -->
 - Display name: IsObservableFrom
-- Parent verb: DWISVerb
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Parent verb: [DWISVerb](#./.md#DWISVerb)
+- Subject class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
+- Object class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
 - Description: 
 - Examples: 
+- Definition set: Quantities
 ## IsOfBaseQuantity <!-- VERB -->
 - Display name: IsOfBaseQuantity
-- Parent verb: DWISVerb
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Parent verb: [DWISVerb](#./.md#DWISVerb)
+- Subject class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
+- Object class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
 - Description: 
 - Examples: 
+- Definition set: Quantities
 ## IsOfMeasurableQuantity <!-- VERB -->
 - Display name: IsOfMeasurableQuantity
-- Parent verb: DWISVerb
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Parent verb: [DWISVerb](#./.md#DWISVerb)
+- Subject class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
+- Object class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
 - Description: 
 - Examples: 
-## IsUnitForQuantity <!-- VERB -->
-- Display name: IsUnitForQuantity
-- Parent verb: DWISVerb
-- Subject class: Unit
-- Object class: Quantity
-- Description: 
-- Examples: 
+- Definition set: Quantities

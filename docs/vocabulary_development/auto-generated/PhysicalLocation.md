@@ -1,116 +1,129 @@
-# NOUNS
+# PhysicalLocation<!-- DEFINITION SET HEADER -->
+- Description: 
+# Nouns
 ## Location <!-- NOUN -->
 - Display name: Location
-- Parent class: DWISNoun
+- Parent class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
 - Attributes:
 - Specialization:
-- Description: Physical location for a signal. 
-Refers to:
- - a reference frame (via the HasReferenceFrame relation), that works as a system of coordinates
- - an origin (of type Location) via the HasReferenceFrameOrigin relation. 
- - some coordinates
+- Description: Physical location for a signal.
 - Examples:
+- Definition set: PhysicalLocation
 ## BitReferenceLocation <!-- NOUN -->
 - Display name: BitReferenceLocation
-- Parent class: Location
+- Parent class: [Location](#./PhysicalLocation.md#Location)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## CasingShoeLocation <!-- NOUN -->
 - Display name: CasingShoeLocation
-- Parent class: Location
+- Parent class: [Location](#./PhysicalLocation.md#Location)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## DrillFloorReferenceLocation <!-- NOUN -->
 - Display name: DrillFloorReferenceLocation
-- Parent class: Location
+- Parent class: [Location](#./PhysicalLocation.md#Location)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## HoleBottomLocation <!-- NOUN -->
 - Display name: HoleBottomLocation
-- Parent class: Location
+- Parent class: [Location](#./PhysicalLocation.md#Location)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## LWDLocation <!-- NOUN -->
 - Display name: LWDLocation
-- Parent class: Location
+- Parent class: [Location](#./PhysicalLocation.md#Location)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## ReferenceLocation <!-- NOUN -->
 - Display name: ReferenceLocation
-- Parent class: Location
+- Parent class: [Location](#./PhysicalLocation.md#Location)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## ReferenceFrame <!-- NOUN -->
 - Display name: ReferenceFrame
-- Parent class: DWISNoun
+- Parent class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
 - Attributes:
 - Specialization:
 - Description: Represents a system of coordinates
 - Examples:
+- Definition set: PhysicalLocation
 ## DepthAndAngleFrame <!-- NOUN -->
 - Display name: DepthAndAngleFrame
-- Parent class: ReferenceFrame
+- Parent class: [ReferenceFrame](#./PhysicalLocation.md#ReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## FourDimensionalReferenceFrame <!-- NOUN -->
 - Display name: FourDimensionalReferenceFrame
-- Parent class: ReferenceFrame
+- Parent class: [ReferenceFrame](#./PhysicalLocation.md#ReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## CurviLinearFrenetSerretReferenceFrame <!-- NOUN -->
 - Display name: CurviLinearFrenetSerretReferenceFrame
-- Parent class: FourDimensionalReferenceFrame
+- Parent class: [FourDimensionalReferenceFrame](#./PhysicalLocation.md#FourDimensionalReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## OneDimensionalReferenceFrame <!-- NOUN -->
 - Display name: OneDimensionalReferenceFrame
-- Parent class: ReferenceFrame
+- Parent class: [ReferenceFrame](#./PhysicalLocation.md#ReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## OneDimensionalCartesianReferenceFrame <!-- NOUN -->
 - Display name: OneDimensionalCartesianReferenceFrame
-- Parent class: OneDimensionalReferenceFrame
+- Parent class: [OneDimensionalReferenceFrame](#./PhysicalLocation.md#OneDimensionalReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## VerticalDepthFrame <!-- NOUN -->
 - Display name: VerticalDepthFrame
-- Parent class: OneDimensionalCartesianReferenceFrame
+- Parent class: [OneDimensionalCartesianReferenceFrame](#./PhysicalLocation.md#OneDimensionalCartesianReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## OneDimensionalCurviLinearReferenceFrame <!-- NOUN -->
 - Display name: OneDimensionalCurviLinearReferenceFrame
-- Parent class: OneDimensionalReferenceFrame
+- Parent class: [OneDimensionalReferenceFrame](#./PhysicalLocation.md#OneDimensionalReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## DrillStringCenterLineFrame <!-- NOUN -->
 - Display name: DrillStringCenterLineFrame
-- Parent class: OneDimensionalCurviLinearReferenceFrame
+- Parent class: [OneDimensionalCurviLinearReferenceFrame](#./PhysicalLocation.md#OneDimensionalCurviLinearReferenceFrame)
 - Attributes:
   - PositiveUpward
     - Type: bool
@@ -118,16 +131,18 @@ Refers to:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## OpenHoleCenterLineFrame <!-- NOUN -->
 - Display name: OpenHoleCenterLineFrame
-- Parent class: OneDimensionalCurviLinearReferenceFrame
+- Parent class: [OneDimensionalCurviLinearReferenceFrame](#./PhysicalLocation.md#OneDimensionalCurviLinearReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## WellboreCenterLineFrame <!-- NOUN -->
 - Display name: WellboreCenterLineFrame
-- Parent class: OneDimensionalCurviLinearReferenceFrame
+- Parent class: [OneDimensionalCurviLinearReferenceFrame](#./PhysicalLocation.md#OneDimensionalCurviLinearReferenceFrame)
 - Attributes:
   - PositiveUpward
     - Type: bool
@@ -135,104 +150,115 @@ Refers to:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## ThreeDimensionalReferenceFrame <!-- NOUN -->
 - Display name: ThreeDimensionalReferenceFrame
-- Parent class: ReferenceFrame
+- Parent class: [ReferenceFrame](#./PhysicalLocation.md#ReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## CartesianThreeDimensionalReferenceFrame <!-- NOUN -->
 - Display name: CartesianThreeDimensionalReferenceFrame
-- Parent class: ThreeDimensionalReferenceFrame
+- Parent class: [ThreeDimensionalReferenceFrame](#./PhysicalLocation.md#ThreeDimensionalReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## FrenetSerretReferenceFrame <!-- NOUN -->
 - Display name: FrenetSerretReferenceFrame
-- Parent class: CartesianThreeDimensionalReferenceFrame
+- Parent class: [CartesianThreeDimensionalReferenceFrame](#./PhysicalLocation.md#CartesianThreeDimensionalReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## NorthEastTVDFrame <!-- NOUN -->
 - Display name: NorthEastTVDFrame
-- Parent class: CartesianThreeDimensionalReferenceFrame
+- Parent class: [CartesianThreeDimensionalReferenceFrame](#./PhysicalLocation.md#CartesianThreeDimensionalReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## CylindricalReferenceFrame <!-- NOUN -->
 - Display name: CylindricalReferenceFrame
-- Parent class: ThreeDimensionalReferenceFrame
+- Parent class: [ThreeDimensionalReferenceFrame](#./PhysicalLocation.md#ThreeDimensionalReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## SphericalReferenceFrame <!-- NOUN -->
 - Display name: SphericalReferenceFrame
-- Parent class: ThreeDimensionalReferenceFrame
+- Parent class: [ThreeDimensionalReferenceFrame](#./PhysicalLocation.md#ThreeDimensionalReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## TwoDimensionalReferenceFrame <!-- NOUN -->
 - Display name: TwoDimensionalReferenceFrame
-- Parent class: ReferenceFrame
+- Parent class: [ReferenceFrame](#./PhysicalLocation.md#ReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## CartesianTwoDimensionalReferenceFrame <!-- NOUN -->
 - Display name: CartesianTwoDimensionalReferenceFrame
-- Parent class: TwoDimensionalReferenceFrame
+- Parent class: [TwoDimensionalReferenceFrame](#./PhysicalLocation.md#TwoDimensionalReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## NorthEastFrame <!-- NOUN -->
 - Display name: NorthEastFrame
-- Parent class: CartesianTwoDimensionalReferenceFrame
+- Parent class: [CartesianTwoDimensionalReferenceFrame](#./PhysicalLocation.md#CartesianTwoDimensionalReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
+- Definition set: PhysicalLocation
 ## PolarReferenceFrame <!-- NOUN -->
 - Display name: PolarReferenceFrame
-- Parent class: TwoDimensionalReferenceFrame
+- Parent class: [TwoDimensionalReferenceFrame](#./PhysicalLocation.md#TwoDimensionalReferenceFrame)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
-
-
-# VERBS
+- Definition set: PhysicalLocation
+# Verbs
 ## HasCoordinates <!-- VERB -->
 - Display name: HasCoordinates
-- Parent verb: DWISVerb
-- Subject class: DrillingData
-- Object class: DrillingData
+- Parent verb: [DWISVerb](#./.md#DWISVerb)
+- Subject class: [DrillingData](#./DrillingDataSemantics.md#DrillingData)
+- Object class: [DrillingData](#./DrillingDataSemantics.md#DrillingData)
+- Min cardinality: -1
+- Max cardinality: -1
 - Description: 
 - Examples: 
+- Definition set: PhysicalLocation
 ## HasReferenceFrame <!-- VERB -->
 - Display name: HasReferenceFrame
-- Parent verb: DWISVerb
-- Subject class: Location
-- Object class: ReferenceFrame
+- Parent verb: [DWISVerb](#./.md#DWISVerb)
+- Subject class: [Location](#./PhysicalLocation.md#Location)
+- Object class: [ReferenceFrame](#./PhysicalLocation.md#ReferenceFrame)
+- Min cardinality: -1
+- Max cardinality: -1
 - Description: 
 - Examples: 
+- Definition set: PhysicalLocation
 ## HasReferenceFrameOrigin <!-- VERB -->
 - Display name: HasReferenceFrameOrigin
-- Parent verb: DWISVerb
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Parent verb: [DWISVerb](#./.md#DWISVerb)
+- Subject class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
+- Object class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
 - Description: 
 - Examples: 
-## IsPhysicallyLocatedAt <!-- VERB -->
-- Display name: IsPhysicallyLocatedAt
-- Parent verb: DWISVerb
-- Subject class: DWISNoun
-- Object class: DWISNoun
-- Description: 
-- Examples: 
+- Definition set: PhysicalLocation

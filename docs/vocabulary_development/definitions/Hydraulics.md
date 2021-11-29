@@ -1,14 +1,14 @@
 # NOUNS
 ## HydraulicElementState <!-- NOUN -->
 - Display name: HydraulicElementState
-- Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Parent class: DWISNoun
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## HydraulicConnectedState <!-- NOUN -->
 - Display name: HydraulicConnectedState
-- Parent class: [HydraulicElementState](./Hydraulics.md#HydraulicElementState-)
+- Parent class: HydraulicElementState
 - Attributes:
   - Value
     - Type: bool
@@ -18,98 +18,98 @@
 - Examples:
 ## HydraulicLogicalElement <!-- NOUN -->
 - Display name: HydraulicLogicalElement
-- Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Parent class: DWISNoun
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## HydraulicBranch <!-- NOUN -->
 - Display name: HydraulicBranch
-- Parent class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement-)
+- Parent class: HydraulicLogicalElement
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## Annular <!-- NOUN -->
 - Display name: Annular
-- Parent class: [HydraulicBranch](./Hydraulics.md#HydraulicBranch-)
+- Parent class: HydraulicBranch
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## BHAAnnular <!-- NOUN -->
 - Display name: BHAAnnular
-- Parent class: [Annular](./Hydraulics.md#Annular-)
+- Parent class: Annular
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## DrillPipesAnnular <!-- NOUN -->
 - Display name: DrillPipesAnnular
-- Parent class: [Annular](./Hydraulics.md#Annular-)
+- Parent class: Annular
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## OpenChannel <!-- NOUN -->
 - Display name: OpenChannel
-- Parent class: [HydraulicBranch](./Hydraulics.md#HydraulicBranch-)
+- Parent class: HydraulicBranch
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## RectangularChannel <!-- NOUN -->
 - Display name: RectangularChannel
-- Parent class: [OpenChannel](./Hydraulics.md#OpenChannel-)
+- Parent class: OpenChannel
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## SemiCircularChannel <!-- NOUN -->
 - Display name: SemiCircularChannel
-- Parent class: [OpenChannel](./Hydraulics.md#OpenChannel-)
+- Parent class: OpenChannel
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## Pipe <!-- NOUN -->
 - Display name: Pipe
-- Parent class: [HydraulicBranch](./Hydraulics.md#HydraulicBranch-)
+- Parent class: HydraulicBranch
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## BHAInner <!-- NOUN -->
 - Display name: BHAInner
-- Parent class: [Pipe](./Hydraulics.md#Pipe-)
+- Parent class: Pipe
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## DrillPipesInner <!-- NOUN -->
 - Display name: DrillPipesInner
-- Parent class: [Pipe](./Hydraulics.md#Pipe-)
+- Parent class: Pipe
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## OpenHole <!-- NOUN -->
 - Display name: OpenHole
-- Parent class: [Pipe](./Hydraulics.md#Pipe-)
+- Parent class: Pipe
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## ReturnFlowLine <!-- NOUN -->
 - Display name: ReturnFlowLine
-- Parent class: [Pipe](./Hydraulics.md#Pipe-)
+- Parent class: Pipe
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## HydraulicJunction <!-- NOUN -->
 - Display name: HydraulicJunction
-- Parent class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement-)
+- Parent class: HydraulicLogicalElement
 - Attributes:
   - LeftToRight
     - Type: bool
@@ -124,28 +124,28 @@
 - Examples:
 ## MudMixing <!-- NOUN -->
 - Display name: MudMixing
-- Parent class: [HydraulicJunction](./Hydraulics.md#HydraulicJunction-)
+- Parent class: HydraulicJunction
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## HydraulicNetwork <!-- NOUN -->
 - Display name: HydraulicNetwork
-- Parent class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement-)
+- Parent class: HydraulicLogicalElement
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## DownholeHydraulicNetwork <!-- NOUN -->
 - Display name: DownholeHydraulicNetwork
-- Parent class: [HydraulicNetwork](./Hydraulics.md#HydraulicNetwork-)
+- Parent class: HydraulicNetwork
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## TopsideHydraulicNetwork <!-- NOUN -->
 - Display name: TopsideHydraulicNetwork
-- Parent class: [HydraulicNetwork](./Hydraulics.md#HydraulicNetwork-)
+- Parent class: HydraulicNetwork
 - Attributes:
 - Specialization:
 - Description: 
@@ -155,157 +155,183 @@
 # VERBS
 ## EndsHydraulicBranchDecomposition <!-- VERB -->
 - Display name: EndsHydraulicBranchDecomposition
-- Subject class: [HydraulicBranch](./Hydraulics.md#HydraulicBranch-)
-- Object class: [HydraulicBranch](./Hydraulics.md#HydraulicBranch-)
+- Parent verb: DWISVerb
+- Subject class: HydraulicBranch
+- Object class: HydraulicBranch
 - Description: 
 - Examples: 
 ## HasBranchComponent <!-- VERB -->
 - Display name: HasBranchComponent
-- Subject class: [HydraulicNetwork](./Hydraulics.md#HydraulicNetwork-)
-- Object class: [HydraulicBranch](./Hydraulics.md#HydraulicBranch-)
+- Parent verb: DWISVerb
+- Subject class: HydraulicNetwork
+- Object class: HydraulicBranch
 - Description: 
 - Examples: 
 ## HasBranchCoordinateSystem <!-- VERB -->
 - Display name: HasBranchCoordinateSystem
-- Subject class: [HydraulicBranch](./Hydraulics.md#HydraulicBranch-)
-- Object class: [ReferenceFrame](./PhysicalLocation.md#ReferenceFrame-)
+- Parent verb: DWISVerb
+- Subject class: HydraulicBranch
+- Object class: ReferenceFrame
 - Description: 
 - Examples: 
 ## HasHydraulicState <!-- VERB -->
 - Display name: HasHydraulicState
-- Subject class: [HydraulicJunction](./Hydraulics.md#HydraulicJunction-)
-- Object class: [HydraulicElementState](./Hydraulics.md#HydraulicElementState-)
+- Parent verb: DWISVerb
+- Subject class: HydraulicJunction
+- Object class: HydraulicElementState
 - Description: 
 - Examples: 
 ## HasHydraulicStateValueFrom <!-- VERB -->
 - Display name: HasHydraulicStateValueFrom
-- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
-- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Parent verb: DWISVerb
+- Subject class: DWISNoun
+- Object class: DWISNoun
 - Description: 
 - Examples: 
 ## HasLeftBranchCoordinates <!-- VERB -->
 - Display name: HasLeftBranchCoordinates
-- Subject class: [HydraulicJunction](./Hydraulics.md#HydraulicJunction-)
-- Object class: [DrillingData](./DrillingDataSemantics.md#DrillingData-)
+- Parent verb: DWISVerb
+- Subject class: HydraulicJunction
+- Object class: DrillingData
 - Description: 
 - Examples: 
 ## HasRightBranchCoordinates <!-- VERB -->
 - Display name: HasRightBranchCoordinates
-- Subject class: [HydraulicJunction](./Hydraulics.md#HydraulicJunction-)
-- Object class: [DrillingData](./DrillingDataSemantics.md#DrillingData-)
+- Parent verb: DWISVerb
+- Subject class: HydraulicJunction
+- Object class: DrillingData
 - Description: 
 - Examples: 
 ## IsHydraulicallyLocatedAt <!-- VERB -->
 - Display name: IsHydraulicallyLocatedAt
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData-)
-- Object class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement-)
+- Parent verb: DWISVerb
+- Subject class: DrillingData
+- Object class: HydraulicLogicalElement
 - Description: 
 - Examples: 
 ## IsEquivalentCirculationDensityAt <!-- VERB -->
 - Display name: IsEquivalentCirculationDensityAt
-- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
-- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Parent verb: IsHydraulicallyLocatedAt
+- Subject class: DWISNoun
+- Object class: DWISNoun
 - Description: 
 - Examples: 
 ## IsFluidDensityAt <!-- VERB -->
 - Display name: IsFluidDensityAt
-- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
-- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Parent verb: IsHydraulicallyLocatedAt
+- Subject class: DWISNoun
+- Object class: DWISNoun
 - Description: 
 - Examples: 
 ## IsFluidTemperatureAt <!-- VERB -->
 - Display name: IsFluidTemperatureAt
-- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
-- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Parent verb: IsHydraulicallyLocatedAt
+- Subject class: DWISNoun
+- Object class: DWISNoun
 - Description: 
 - Examples: 
 ## IsFluidVelocityAt <!-- VERB -->
 - Display name: IsFluidVelocityAt
-- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
-- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Parent verb: IsHydraulicallyLocatedAt
+- Subject class: DWISNoun
+- Object class: DWISNoun
 - Description: 
 - Examples: 
 ## IsHydraulicEstimationAt <!-- VERB -->
 - Display name: IsHydraulicEstimationAt
-- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
-- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Parent verb: IsHydraulicallyLocatedAt
+- Subject class: DWISNoun
+- Object class: DWISNoun
 - Description: 
 - Examples: 
 ## IsHydraulicMaximumAllowedRateOfChangeAt <!-- VERB -->
 - Display name: IsHydraulicMaximumAllowedRateOfChangeAt
-- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
-- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Parent verb: IsHydraulicallyLocatedAt
+- Subject class: DWISNoun
+- Object class: DWISNoun
 - Description: 
 - Examples: 
 ## IsHydraulicMaximumAllowedValueAt <!-- VERB -->
 - Display name: IsHydraulicMaximumAllowedValueAt
-- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
-- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Parent verb: IsHydraulicallyLocatedAt
+- Subject class: DWISNoun
+- Object class: DWISNoun
 - Description: 
 - Examples: 
 ## IsHydraulicMeasurementAt <!-- VERB -->
 - Display name: IsHydraulicMeasurementAt
-- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
-- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Parent verb: IsHydraulicallyLocatedAt
+- Subject class: DWISNoun
+- Object class: DWISNoun
 - Description: 
 - Examples: 
 ## IsMassFlowRateAt <!-- VERB -->
 - Display name: IsMassFlowRateAt
-- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
-- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Parent verb: IsHydraulicallyLocatedAt
+- Subject class: DWISNoun
+- Object class: DWISNoun
 - Description: 
 - Examples: 
 ## IsPressureAt <!-- VERB -->
 - Display name: IsPressureAt
-- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
-- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Parent verb: IsHydraulicallyLocatedAt
+- Subject class: DWISNoun
+- Object class: DWISNoun
 - Description: 
 - Examples: 
 ## IsPressureGradientAt <!-- VERB -->
 - Display name: IsPressureGradientAt
-- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
-- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Parent verb: IsHydraulicallyLocatedAt
+- Subject class: DWISNoun
+- Object class: DWISNoun
 - Description: 
 - Examples: 
 ## IsVolumetricFlowRateAt <!-- VERB -->
 - Display name: IsVolumetricFlowRateAt
-- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
-- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Parent verb: IsHydraulicallyLocatedAt
+- Subject class: DWISNoun
+- Object class: DWISNoun
 - Description: 
 - Examples: 
 ## IsHydraulicConnectedTo <!-- VERB -->
 - Display name: IsHydraulicConnectedTo
-- Subject class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement-)
-- Object class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement-)
+- Parent verb: DWISVerb
+- Subject class: HydraulicLogicalElement
+- Object class: HydraulicLogicalElement
 - Description: 
 - Examples: 
 ## HasEndJunction <!-- VERB -->
 - Display name: HasEndJunction
-- Subject class: [HydraulicBranch](./Hydraulics.md#HydraulicBranch-)
-- Object class: [HydraulicJunction](./Hydraulics.md#HydraulicJunction-)
+- Parent verb: IsHydraulicConnectedTo
+- Subject class: HydraulicBranch
+- Object class: HydraulicJunction
 - Description: 
 - Examples: 
 ## HasLeftBranch <!-- VERB -->
 - Display name: HasLeftBranch
-- Subject class: [HydraulicJunction](./Hydraulics.md#HydraulicJunction-)
-- Object class: [HydraulicBranch](./Hydraulics.md#HydraulicBranch-)
+- Parent verb: IsHydraulicConnectedTo
+- Subject class: HydraulicJunction
+- Object class: HydraulicBranch
 - Description: 
 - Examples: 
 ## HasRightBranch <!-- VERB -->
 - Display name: HasRightBranch
-- Subject class: [HydraulicJunction](./Hydraulics.md#HydraulicJunction-)
-- Object class: [HydraulicBranch](./Hydraulics.md#HydraulicBranch-)
+- Parent verb: IsHydraulicConnectedTo
+- Subject class: HydraulicJunction
+- Object class: HydraulicBranch
 - Description: 
 - Examples: 
 ## HasStartJunction <!-- VERB -->
 - Display name: HasStartJunction
-- Subject class: [HydraulicBranch](./Hydraulics.md#HydraulicBranch-)
-- Object class: [HydraulicJunction](./Hydraulics.md#HydraulicJunction-)
+- Parent verb: IsHydraulicConnectedTo
+- Subject class: HydraulicBranch
+- Object class: HydraulicJunction
 - Description: 
 - Examples: 
 ## StartsHydraulicBranchDecomposition <!-- VERB -->
 - Display name: StartsHydraulicBranchDecomposition
-- Subject class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
-- Object class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Parent verb: DWISVerb
+- Subject class: DWISNoun
+- Object class: DWISNoun
 - Description: 
 - Examples: 

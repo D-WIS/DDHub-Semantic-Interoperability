@@ -7,11 +7,11 @@ namespace VocabularyUtils
 {
     public static class MDWriting
     {
-        public static void NounToMD(StringBuilder nounBuilder, Noun noun)
+        public static void NounToMD(StringBuilder nounBuilder, Noun noun, bool singleFile = true, Vocabulary vocabulary = null)
         {
             nounBuilder.AppendLine("## " + noun.Name + " <!-- NOUN -->");
             nounBuilder.AppendLine("- Display name: " + noun.Name);
-            nounBuilder.AppendLine("- Parent class: [" + noun.ParentNounName + "](#" + noun.ParentNounName + ")");
+            nounBuilder.AppendLine("- Parent class: [" + noun.ParentNounName + "]" + GetLink(noun.ParentNounName, singleFile, vocabulary));//    (#" + noun.ParentNounName + ")");
             nounBuilder.AppendLine("- Attributes:");
             if (noun.NounAttributes != null)
             {
@@ -35,12 +35,40 @@ namespace VocabularyUtils
             nounBuilder.AppendLine("- Definition set: " + noun.DefinitionSetName);
         }
 
-        public static void VerbToMD(StringBuilder verbBuilder, Verb verb)
+        private static string GetLink(string name, bool singleFile = true, Vocabulary vocabulary = null)
+        {
+            if (singleFile)
+            {
+                return "(#" + name + ")";
+            }
+            else
+            {
+                string definitionSet = string.Empty;
+                var noun = vocabulary.Nouns.Find(n => n.Name == name);
+                if (noun != null)
+                {
+                    definitionSet = noun.DefinitionSetName;
+                }
+                else 
+                {
+                    var verb = vocabulary.Verbs.Find(v => v.Name == name);
+                    if (verb != null)
+                    {
+                        definitionSet = verb.DefinitionSetName;
+                    }
+                }
+                return "(#./" + definitionSet + ".md#" + name + ")";
+            }
+        }
+
+
+        public static void VerbToMD(StringBuilder verbBuilder, Verb verb, bool singleFile = true, Vocabulary vocabulary = null)
         {
             verbBuilder.AppendLine("## " + verb.Name + " <!-- VERB -->");
             verbBuilder.AppendLine("- Display name: " + verb.Name);
-            verbBuilder.AppendLine("- Subject class: [" + verb.DomainNounName + "]");//(./" + GetDetailedFileName(((DDHubRelationClass)dDHubClass).Domain, folderName) + ")");
-            verbBuilder.AppendLine("- Object class: [" + verb.RangeNounName + "]");//(./" + GetDetailedFileName(((DDHubRelationClass)dDHubClass).Range, folderName) + ")");
+            verbBuilder.AppendLine("- Parent verb: [" + verb.ParentVerbName + "]" + GetLink(verb.ParentVerbName, singleFile, vocabulary));// 
+            verbBuilder.AppendLine("- Subject class: [" + verb.DomainNounName + "]" + GetLink(verb.DomainNounName, singleFile, vocabulary));// 
+            verbBuilder.AppendLine("- Object class: [" + verb.RangeNounName + "]" + GetLink(verb.RangeNounName, singleFile, vocabulary));// 
             verbBuilder.AppendLine("- Min cardinality: " + verb.MinCardinality);
             verbBuilder.AppendLine("- Max cardinality: " + verb.MaxCardinality);
             verbBuilder.AppendLine("- Description: " + verb.Description);
@@ -48,9 +76,16 @@ namespace VocabularyUtils
             verbBuilder.AppendLine("- Definition set: " + verb.DefinitionSetName);
         }
 
-        public static void DefinitionSetHeaderToMD(StringBuilder builder, DefinitionSetHeader header)
+        public static void DefinitionSetHeaderToMD(StringBuilder builder, DefinitionSetHeader header, bool singleFile = true)
         {
-            builder.AppendLine("## " + header.Name + "<!-- DEFINITION SET HEADER -->");
+            if (singleFile)
+            {
+                builder.AppendLine("## " + header.Name + "<!-- DEFINITION SET HEADER -->");
+            }
+            else
+            {
+                builder.AppendLine("# " + header.Name + "<!-- DEFINITION SET HEADER -->");
+            }
             builder.AppendLine("- Description: " + header.SetDescription);
         }
 
@@ -81,6 +116,65 @@ namespace VocabularyUtils
                 VerbToMD(builder, v);
             }
             System.IO.File.WriteAllText(fileName, builder.ToString());
+        }
+
+
+        public static void ToMDFiles(DWISVocabulary vocabulary, string folderName)
+        {
+            List<DefinitionSet> definitionSets = new List<DefinitionSet>();
+            foreach (var h in vocabulary.DefinitionSetHeaders)
+            {
+                definitionSets.Add(new DefinitionSet() { DefinitionSetHeader = h });
+            }
+
+            foreach (Noun n in vocabulary.Nouns)
+            {
+                DefinitionSet definitionSet = definitionSets.Find(d => d.Name == n.DefinitionSetName);
+                if (definitionSet != null)
+                {
+                    definitionSet.Add(n);
+                }
+            }
+            foreach (Verb v in vocabulary.Verbs)
+            {
+                DefinitionSet definitionSet = definitionSets.Find(d => d.Name == v.DefinitionSetName);
+                if (definitionSet != null)
+                {
+                    definitionSet.Add(v);
+                }
+            }
+
+            foreach (DefinitionSet set in definitionSets)
+            {
+                ToMDFile(set, folderName, vocabulary);
+            }
+
+        }
+
+
+        public static void ToMDFile(DefinitionSet definitionSet, string folderName, Vocabulary vocabulary)
+        {
+            StringBuilder builder = new StringBuilder();
+            DefinitionSetHeaderToMD(builder, definitionSet.DefinitionSetHeader, singleFile:false);           
+
+            builder.AppendLine("# Nouns");
+
+
+            foreach (var n in definitionSet.Nouns)
+            {
+                NounToMD(builder, n,singleFile:false, vocabulary:vocabulary );
+            }
+
+            builder.AppendLine("# Verbs");
+
+
+            foreach (var v in definitionSet.Verbs)
+            {
+                VerbToMD(builder, v, singleFile: false, vocabulary: vocabulary);
+            }
+
+            System.IO.File.WriteAllText(folderName + System.IO.Path.DirectorySeparatorChar + definitionSet.Name + ".md", builder.ToString());
+
         }
     }
 }

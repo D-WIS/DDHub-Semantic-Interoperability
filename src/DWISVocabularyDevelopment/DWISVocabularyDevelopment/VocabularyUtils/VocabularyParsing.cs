@@ -80,6 +80,11 @@ namespace VocabularyUtils
                         UpdateFromSnippetItem(snippetItem, noun);
                     }
 
+                    if (noun.Name!= "DWISNoun" && string.IsNullOrEmpty(noun.ParentNounName))
+                    {
+                        noun.ParentNounName = "DWISNoun";
+                    }
+
                     return true;
                 }
             }
@@ -95,7 +100,7 @@ namespace VocabularyUtils
             }
             else if (header.StartsWith("- Parent class:"))
             {
-                noun.ParentNounName = header.Split('[', ']')[1];
+                noun.ParentNounName = header.Remove(0, "- Parent class: ".Length).Trim().TrimEnd();
             }
             else if (header.StartsWith("- Description:"))
             {
@@ -189,7 +194,7 @@ namespace VocabularyUtils
             }
             else if (header.StartsWith("- Parent verb:"))
             {
-                verb.ParentVerbName = header.Split('[', ']')[1];
+                verb.ParentVerbName = header.Remove(0, "- Parent verb: ".Length).Trim().TrimEnd();
             }
             else if (header.StartsWith("- Description:"))
             {
@@ -201,11 +206,11 @@ namespace VocabularyUtils
             }
             else if (header.StartsWith("- Subject class:"))
             {
-                verb.DomainNounName = header.Split('[', ']')[1];
+                verb.DomainNounName = header.Remove(0, "- Subject class: ".Length).Trim().TrimEnd();
             }
             else if (header.StartsWith("- Object class:"))
             {
-                verb.RangeNounName = header.Split('[', ']')[1];
+                verb.RangeNounName = header.Remove(0, "- Object class: ".Length).Trim().TrimEnd();
             }
             else if (header.StartsWith("- Min cardinality:"))
             {
@@ -274,6 +279,18 @@ namespace VocabularyUtils
                         UpdateFromSnippetItem(snippetItem, verb);
                     }
 
+                    if (verb.Name!= "DWISVerb" && string.IsNullOrEmpty(verb.ParentVerbName))
+                    {
+                        verb.ParentVerbName = "DWISVerb";
+                    }
+                    if (string.IsNullOrEmpty(verb.DomainNounName))
+                    {
+                        verb.DomainNounName = "DWISNoun";
+                    }
+                    if (string.IsNullOrEmpty(verb.RangeNounName))
+                    {
+                        verb.RangeNounName = "DWISNoun";
+                    }
                     return true;
                 }
             }

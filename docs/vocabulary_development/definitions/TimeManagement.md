@@ -1,7 +1,7 @@
 # NOUNS
 ## Clock <!-- NOUN -->
 - Display name: Clock
-- Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Parent class: DWISNoun
 - Attributes:
   - LeapSeconds
     - Type: int
@@ -26,7 +26,7 @@
 - Examples:
 ## SynchronizationGroup <!-- NOUN -->
 - Display name: SynchronizationGroup
-- Parent class: [DWISNoun](./DrillingDataSemantics.md#DWISNoun-)
+- Parent class: DWISNoun
 - Attributes:
   - SynchronizationDelay
     - Type: double
@@ -42,37 +42,43 @@
 # VERBS
 ## BelongsToSynchronizationGroup <!-- VERB -->
 - Display name: BelongsToSynchronizationGroup
-- Subject class: [Resampling](./DataFlow.md#Resampling-)
-- Object class: [SynchronizationGroup](./TimeManagement.md#SynchronizationGroup-)
+- Parent verb: DWISVerb
+- Subject class: Resampling
+- Object class: SynchronizationGroup
 - Description: 
 - Examples: 
 ## HasAcquisitionClock <!-- VERB -->
 - Display name: HasAcquisitionClock
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData-)
-- Object class: [Clock](./TimeManagement.md#Clock-)
+- Parent verb: DWISVerb
+- Subject class: DrillingData
+- Object class: Clock
 - Description: 
 - Examples: 
 ## HasSourceClock <!-- VERB -->
 - Display name: HasSourceClock
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData-)
-- Object class: [Clock](./TimeManagement.md#Clock-)
+- Parent verb: DWISVerb
+- Subject class: DrillingData
+- Object class: Clock
 - Description: 
 - Examples: 
 ## HasTransmissionDelay <!-- VERB -->
 - Display name: HasTransmissionDelay
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData-)
-- Object class: [DrillingData](./DrillingDataSemantics.md#DrillingData-)
+- Parent verb: DWISVerb
+- Subject class: DrillingData
+- Object class: DrillingData
 - Description: 
 - Examples: 
 ## IsSynchronizationGroupInput <!-- VERB -->
 - Display name: IsSynchronizationGroupInput
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData-)
-- Object class: [SynchronizationGroup](./TimeManagement.md#SynchronizationGroup-)
+- Parent verb: DWISVerb
+- Subject class: DrillingData
+- Object class: SynchronizationGroup
 - Description: 
 - Examples: 
 ## IsSynchronizationGroupOutput <!-- VERB -->
 - Display name: IsSynchronizationGroupOutput
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData-)
-- Object class: [SynchronizationGroup](./TimeManagement.md#SynchronizationGroup-)
+- Parent verb: DWISVerb
+- Subject class: DrillingData
+- Object class: SynchronizationGroup
 - Description: 
 - Examples: 
