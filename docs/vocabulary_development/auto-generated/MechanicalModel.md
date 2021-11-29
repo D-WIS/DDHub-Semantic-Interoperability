@@ -1,5 +1,5 @@
 # MechanicalModel<!-- DEFINITION SET HEADER -->
-- Description: 
+- Description: specialized vocabulary for the modelling of the drilling mechanics. Covers in particular the so-called torque and drag models
 # Nouns
 ## DrillStemMechanicalModel <!-- NOUN -->
 - Display name: DrillStemMechanicalModel

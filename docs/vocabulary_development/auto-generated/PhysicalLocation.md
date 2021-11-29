@@ -1,5 +1,5 @@
 # PhysicalLocation<!-- DEFINITION SET HEADER -->
-- Description: 
+- Description: this category contains the vocabulary necessary to specify the location of various items on a rig. Coordinate systems are the main element here.
 # Nouns
 ## Location <!-- NOUN -->
 - Display name: Location

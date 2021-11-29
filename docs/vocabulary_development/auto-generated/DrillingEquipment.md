@@ -1,5 +1,5 @@
 # DrillingEquipment<!-- DEFINITION SET HEADER -->
-- Description: 
+- Description: in this category fall all the standard equipment encountered on a drilling rig. Note that the goal of the vocabulary is not to provide a detailed description of the rig. Therefore we only consider nouns that can help providing a signal context.
 # Nouns
 ## DrillingEquipment <!-- NOUN -->
 - Display name: DrillingEquipment

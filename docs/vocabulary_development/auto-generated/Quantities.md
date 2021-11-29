@@ -1,5 +1,5 @@
 # Quantities<!-- DEFINITION SET HEADER -->
-- Description: 
+- Description: quantities and units
 # Nouns
 ## MeasurableQuantity <!-- NOUN -->
 - Display name: MeasurableQuantity

@@ -1,5 +1,5 @@
 # DrillingDataSemantics<!-- DEFINITION SET HEADER -->
-- Description: 
+- Description: this is the part associated to the signal's description themselves. Dimensionality, data type are the main items to be described.
 # Nouns
 ## DataEndPoint <!-- NOUN -->
 - Display name: DataEndPoint

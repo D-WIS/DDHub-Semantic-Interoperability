@@ -1,5 +1,5 @@
 # TimeManagement<!-- DEFINITION SET HEADER -->
-- Description: 
+- Description: this category referes mostly to the description of the various clocks that can be encoutered on a rig, and their synchronization status with respect to each other.
 # Nouns
 ## Clock <!-- NOUN -->
 - Display name: Clock

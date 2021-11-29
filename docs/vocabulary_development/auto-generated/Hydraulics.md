@@ -1,5 +1,5 @@
 # Hydraulics<!-- DEFINITION SET HEADER -->
-- Description: 
+- Description: this part refers to the hydraulic circuit, and should only contain the "abstract" or conceptual part of the vocabulary. Additional nouns coming from the drilling equipment category will be used when constructing the semantic graphs.
 # Nouns
 ## HydraulicElementState <!-- NOUN -->
 - Display name: HydraulicElementState

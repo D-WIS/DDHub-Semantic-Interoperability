@@ -1,9 +1,9 @@
 # Model<!-- DEFINITION SET HEADER -->
-- Description: 
+- Description: high level and generic vocabulary for mathematical models of the drilling process
 # Nouns
 ## MathematicalModel <!-- NOUN -->
 - Display name: MathematicalModel
-- Parent class: [[DWISNoun](./DrillingDataSemantics.md#DWISNoun-)](./.md#[DWISNoun](./DrillingDataSemantics.md#DWISNoun-))
+- Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Attributes:
 - Specialization:
 - Description: A model for which the state variables do not change with time.
@@ -11,7 +11,7 @@
 - Definition set: Model
 ## SteadyStateModel <!-- NOUN -->
 - Display name: SteadyStateModel
-- Parent class: [[DWISNoun](./DrillingDataSemantics.md#DWISNoun-)](./.md#[DWISNoun](./DrillingDataSemantics.md#DWISNoun-))
+- Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Attributes:
 - Specialization:
 - Description: A model for which the state variables do not change with time.
@@ -19,7 +19,7 @@
 - Definition set: Model
 ## TransientModel <!-- NOUN -->
 - Display name: TransientModel
-- Parent class: [[DWISNoun](./DrillingDataSemantics.md#DWISNoun-)](./.md#[DWISNoun](./DrillingDataSemantics.md#DWISNoun-))
+- Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Attributes:
 - Specialization:
 - Description: A model for which the state variables changes with time.

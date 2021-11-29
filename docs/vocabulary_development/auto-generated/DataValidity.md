@@ -1,5 +1,5 @@
 # DataValidity<!-- DEFINITION SET HEADER -->
-- Description: 
+- Description: this category contains all the nouns and verbs used to described the validity of signals. Some signals are for example only valid while off-slips, downhole signals transmitted via mud-pulse telemetry require circulation.
 # Nouns
 ## ValidityCondition <!-- NOUN -->
 - Display name: ValidityCondition

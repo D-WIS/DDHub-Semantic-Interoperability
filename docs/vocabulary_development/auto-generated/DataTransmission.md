@@ -1,5 +1,5 @@
 # DataTransmission<!-- DEFINITION SET HEADER -->
-- Description: 
+- Description: this category contains all nouns and verbs used to describe the rig's telemetry, for each signal. Downhole telemetry has focus.
 # Nouns
 ## Telemetry <!-- NOUN -->
 - Display name: Telemetry

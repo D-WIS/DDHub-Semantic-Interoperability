@@ -1,5 +1,5 @@
 # Uncertainty<!-- DEFINITION SET HEADER -->
-- Description: 
+- Description: this category contains the nouns and verbs required to describe the various types of uncertainty attached to drilling signals. Uncertainties can be related to sensor characteristics, calculations, model calibration, data assimilation.
 # Nouns
 ## SignalUncertainty <!-- NOUN -->
 - Display name: SignalUncertainty
