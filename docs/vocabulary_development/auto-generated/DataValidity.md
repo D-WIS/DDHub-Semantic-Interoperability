@@ -3,7 +3,7 @@
 # Nouns
 ## ValidityCondition <!-- NOUN -->
 - Display name: ValidityCondition
-- Parent class: [DWISNoun](#../DWISSemantics.md#DWISNoun)
+- Parent class: [DWISNoun](#./DWISSemantics.md#DWISNoun)
 - Attributes:
 - Specialization:
 - Description: 
