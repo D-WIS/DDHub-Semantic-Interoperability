@@ -1,3 +1,5 @@
+- Description: specialized vocabulary for the modelling of the drilling mechanics. Covers in particular the so-called torque and drag models
+
 # NOUNS
 ## DrillStemMechanicalModel <!-- NOUN -->
 - Display name: Drill-stem mechanical model

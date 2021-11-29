@@ -1,3 +1,5 @@
+- Description:  this category contains all nouns and verbs used to describe the rig's telemetry, for each signal. Downhole telemetry has focus.
+
 # NOUNS
 ## Telemetry <!-- NOUN -->
 - Display name: Telemetry

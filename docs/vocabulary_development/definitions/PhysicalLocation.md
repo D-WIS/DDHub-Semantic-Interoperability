@@ -1,3 +1,5 @@
+- Description: this category contains the vocabulary necessary to specify the location of various items on a rig. Coordinate systems are the main element here.
+
 # NOUNS
 ## Location <!-- NOUN -->
 - Display name: Location
