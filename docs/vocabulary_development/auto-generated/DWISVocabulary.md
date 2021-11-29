@@ -1,0 +1,3022 @@
+# Definition sets
+## DataFlow<!-- DEFINITION SET HEADER -->
+- Description: this category refers to the data processing. It should probably be renamed accordingly. It should define and organize the different types of processing encountered during drilling operations. A Thursday session was devoted to those items. Note that in the current version, control flow is also included: a controller is seen as a special type of processing unit, that generates commands based on measurements and set-points. This can of course be modified if deemed necessary. Note also that transmission is included there as well. A telemetry system is seen as a processing unit that only duplicates a signal, and a delay is associated to the duplication process. While this is a useful way of looking at telemetry, it is probably not intuitive enough.
+## DataTransmission<!-- DEFINITION SET HEADER -->
+- Description: this category contains all nouns and verbs used to describe the rig's telemetry, for each signal. Downhole telemetry has focus.
+## DataValidity<!-- DEFINITION SET HEADER -->
+- Description: this category contains all the nouns and verbs used to described the validity of signals. Some signals are for example only valid while off-slips, downhole signals transmitted via mud-pulse telemetry require circulation.
+## DrillingDataSemantics<!-- DEFINITION SET HEADER -->
+- Description: this is the part associated to the signal's description themselves. Dimensionality, data type are the main items to be described.
+## DrillingEquipment<!-- DEFINITION SET HEADER -->
+- Description: in this category fall all the standard equipment encountered on a drilling rig. Note that the goal of the vocabulary is not to provide a detailed description of the rig. Therefore we only consider nouns that can help providing a signal context.
+## DWISSemantics<!-- DEFINITION SET HEADER -->
+- Description: definitions of the base noun and verb. All verbs and nouns in the DWIS vocabulary are children of those.
+## Hydraulics<!-- DEFINITION SET HEADER -->
+- Description: this part refers to the hydraulic circuit, and should only contain the "abstract" or conceptual part of the vocabulary. Additional nouns coming from the drilling equipment category will be used when constructing the semantic graphs.
+## MechanicalModel<!-- DEFINITION SET HEADER -->
+- Description: specialized vocabulary for the modelling of the drilling mechanics. Covers in particular the so-called torque and drag models
+## Mechanics<!-- DEFINITION SET HEADER -->
+- Description: this part refers to the mechanical circuit, and should only contain the "abstract" or conceptual part of the vocabulary. Additional nouns coming from the drilling equipment category will be used when constructing the semantic graphs.
+## Model<!-- DEFINITION SET HEADER -->
+- Description: high level and generic vocabulary for mathematical models of the drilling process
+## PhysicalLocation<!-- DEFINITION SET HEADER -->
+- Description: this category contains the vocabulary necessary to specify the location of various items on a rig. Coordinate systems are the main element here.
+## Quantities<!-- DEFINITION SET HEADER -->
+- Description: quantities and units
+## TimeManagement<!-- DEFINITION SET HEADER -->
+- Description: this category referes mostly to the description of the various clocks that can be encoutered on a rig, and their synchronization status with respect to each other.
+## Uncertainty<!-- DEFINITION SET HEADER -->
+- Description: this category contains the nouns and verbs required to describe the various types of uncertainty attached to drilling signals. Uncertainties can be related to sensor characteristics, calculations, model calibration, data assimilation.
+# Nouns
+## DataFlowNode <!-- NOUN -->
+- Display name: DataFlowNode
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## ComputationUnit <!-- NOUN -->
+- Display name: ComputationUnit
+- Parent class: [DataFlowNode](#DataFlowNode)
+- Attributes:
+- Specialization:
+- Description: Denotes a complex computation unit, typically based on advanced numerical modeling
+- Examples:
+- Definition set: DataFlow
+## Controller <!-- NOUN -->
+- Display name: Controller
+- Parent class: [DataFlowNode](#DataFlowNode)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## ControlSystem <!-- NOUN -->
+- Display name: ControlSystem
+- Parent class: [DataFlowNode](#DataFlowNode)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## DrawWorksControlSystem <!-- NOUN -->
+- Display name: DrawWorksControlSystem
+- Parent class: [ControlSystem](#ControlSystem)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## MudPumpsControlSystem <!-- NOUN -->
+- Display name: MudPumpsControlSystem
+- Parent class: [ControlSystem](#ControlSystem)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## TopDriveControlSystem <!-- NOUN -->
+- Display name: TopDriveControlSystem
+- Parent class: [ControlSystem](#ControlSystem)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## MeasurementDevice <!-- NOUN -->
+- Display name: MeasurementDevice
+- Parent class: [DataFlowNode](#DataFlowNode)
+- Attributes:
+- Specialization:
+- Description: Denotes a physical sensor
+- Examples:
+- Definition set: DataFlow
+## Transformation <!-- NOUN -->
+- Display name: Transformation
+- Parent class: [DataFlowNode](#DataFlowNode)
+- Attributes:
+- Specialization:
+- Description: Represents a transformation applied to some signals that produces other signals
+- Examples:
+- Definition set: DataFlow
+## DirectTransformation <!-- NOUN -->
+- Display name: DirectTransformation
+- Parent class: [Transformation](#Transformation)
+- Attributes:
+- Specialization:
+- Description: Direct transformations are performed using only the current value of their inputs, time is not involved
+- Examples:
+- Definition set: DataFlow
+## Aggregation <!-- NOUN -->
+- Display name: Aggregation
+- Parent class: [DirectTransformation](#DirectTransformation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## ForceFromLoadPinsTransformation <!-- NOUN -->
+- Display name: ForceFromLoadPinsTransformation
+- Parent class: [DirectTransformation](#DirectTransformation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## ForceToLoadTransformation <!-- NOUN -->
+- Display name: ForceToLoadTransformation
+- Parent class: [DirectTransformation](#DirectTransformation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## MeasuredDepthToTrueVerticalDepthTransformation <!-- NOUN -->
+- Display name: MeasuredDepthToTrueVerticalDepthTransformation
+- Parent class: [DirectTransformation](#DirectTransformation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## MeasuredDepthTranslation <!-- NOUN -->
+- Display name: MeasuredDepthTranslation
+- Parent class: [DirectTransformation](#DirectTransformation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## PressureToEquivalentDensityTransformation <!-- NOUN -->
+- Display name: PressureToEquivalentDensityTransformation
+- Parent class: [DirectTransformation](#DirectTransformation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## PressureToForceTransformation <!-- NOUN -->
+- Display name: PressureToForceTransformation
+- Parent class: [DirectTransformation](#DirectTransformation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## TorqueToForceTransformation <!-- NOUN -->
+- Display name: TorqueToForceTransformation
+- Parent class: [DirectTransformation](#DirectTransformation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## SignalProcessingUnit <!-- NOUN -->
+- Display name: SignalProcessingUnit
+- Parent class: [Transformation](#Transformation)
+- Attributes:
+- Specialization:
+- Description: Represent any signal processing applied prior to the distribution of the considered signal. Signal processing refers to e.g. noise removal, filtering,..
+- Examples:
+- Definition set: DataFlow
+## Filter <!-- NOUN -->
+- Display name: Filter
+- Parent class: [SignalProcessingUnit](#SignalProcessingUnit)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## BandPassFilter <!-- NOUN -->
+- Display name: BandPassFilter
+- Parent class: [Filter](#Filter)
+- Attributes:
+  - MinFrequency
+    - Type: double
+    - Description: 
+  - MaxFrequency
+    - Type: double
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## HighPassFilter <!-- NOUN -->
+- Display name: HighPassFilter
+- Parent class: [Filter](#Filter)
+- Attributes:
+  - CutOffFrequency
+    - Type: double
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## LowPassFilter <!-- NOUN -->
+- Display name: LowPassFilter
+- Parent class: [Filter](#Filter)
+- Attributes:
+  - CutOffFrequency
+    - Type: double
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## MovingAverage <!-- NOUN -->
+- Display name: MovingAverage
+- Parent class: [Filter](#Filter)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## NumberOfSampleMovingAverage <!-- NOUN -->
+- Display name: NumberOfSampleMovingAverage
+- Parent class: [MovingAverage](#MovingAverage)
+- Attributes:
+  - NumberOfSamples
+    - Type: int
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## TimeWindowMovingAverage <!-- NOUN -->
+- Display name: TimeWindowMovingAverage
+- Parent class: [MovingAverage](#MovingAverage)
+- Attributes:
+  - TimeWindow
+    - Type: double
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## TimeBasedTransformation <!-- NOUN -->
+- Display name: TimeBasedTransformation
+- Parent class: [Transformation](#Transformation)
+- Attributes:
+- Specialization:
+- Description: Transformations that apply only to time series: time derivations, time integration, averaging...
+- Examples:
+- Definition set: DataFlow
+## Buffering <!-- NOUN -->
+- Display name: Buffering
+- Parent class: [TimeBasedTransformation](#TimeBasedTransformation)
+- Attributes:
+  - BufferingInterval
+    - Type: double
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## Derivation <!-- NOUN -->
+- Display name: Derivation
+- Parent class: [TimeBasedTransformation](#TimeBasedTransformation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## Integration <!-- NOUN -->
+- Display name: Integration
+- Parent class: [TimeBasedTransformation](#TimeBasedTransformation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## RangeExtraction <!-- NOUN -->
+- Display name: RangeExtraction
+- Parent class: [TimeBasedTransformation](#TimeBasedTransformation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## NumberOfItemsRangeExtraction <!-- NOUN -->
+- Display name: NumberOfItemsRangeExtraction
+- Parent class: [RangeExtraction](#RangeExtraction)
+- Attributes:
+  - NumberOfItems
+    - Type: int
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## TimeWindowRangeExtraction <!-- NOUN -->
+- Display name: TimeWindowRangeExtraction
+- Parent class: [RangeExtraction](#RangeExtraction)
+- Attributes:
+  - TimeWindow
+    - Type: double
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## Resampling <!-- NOUN -->
+- Display name: Resampling
+- Parent class: [TimeBasedTransformation](#TimeBasedTransformation)
+- Attributes:
+  - ResamplingRate
+    - Type: double
+    - Description: 
+  - ResamplingDelay
+    - Type: double
+    - Description: 
+  - Validity
+    - Type: double
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## TransmissionLine <!-- NOUN -->
+- Display name: TransmissionLine
+- Parent class: [DataFlowNode](#DataFlowNode)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## UserInterface <!-- NOUN -->
+- Display name: UserInterface
+- Parent class: [DataFlowNode](#DataFlowNode)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## Telemetry <!-- NOUN -->
+- Display name: Telemetry
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+  - RefreshRate
+    - Type: double
+    - Description: 
+  - NumberOfRepeaters
+    - Type: int
+    - Description: 
+  - AverageDelayByRepeaters
+    - Type: double
+    - Description: 
+- Specialization:
+- Description: Technology used for transferring the data from its main origin.
+- Examples:
+- Definition set: DataTransmission
+## DownHoleTelemetry <!-- NOUN -->
+- Display name: DownHoleTelemetry
+- Parent class: [Telemetry](#Telemetry)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataTransmission
+## MudPulseTelemetry <!-- NOUN -->
+- Display name: MudPulseTelemetry
+- Parent class: [DownHoleTelemetry](#DownHoleTelemetry)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataTransmission
+## WiredPipeTelemetry <!-- NOUN -->
+- Display name: WiredPipeTelemetry
+- Parent class: [DownHoleTelemetry](#DownHoleTelemetry)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataTransmission
+## TopSideTelemetry <!-- NOUN -->
+- Display name: TopSideTelemetry
+- Parent class: [Telemetry](#Telemetry)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataTransmission
+## ValidityCondition <!-- NOUN -->
+- Display name: ValidityCondition
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataValidity
+## ConnectedCondition <!-- NOUN -->
+- Display name: ConnectedCondition
+- Parent class: [ValidityCondition](#ValidityCondition)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataValidity
+## EQ <!-- NOUN -->
+- Display name: EQ
+- Parent class: [ValidityCondition](#ValidityCondition)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataValidity
+## GT <!-- NOUN -->
+- Display name: GT
+- Parent class: [ValidityCondition](#ValidityCondition)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataValidity
+## LT <!-- NOUN -->
+- Display name: LT
+- Parent class: [ValidityCondition](#ValidityCondition)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataValidity
+## DataEndPoint <!-- NOUN -->
+- Display name: DataEndPoint
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+  - EndPointDescription
+    - Type: string
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## WitsMLTimeBasedLogEndPoint <!-- NOUN -->
+- Display name: WitsMLTimeBasedLogEndPoint
+- Parent class: [DataEndPoint](#DataEndPoint)
+- Attributes:
+  - WellUID
+    - Type: string
+    - Description: 
+  - WellName
+    - Type: string
+    - Description: 
+  - WellboreUID
+    - Type: string
+    - Description: 
+  - WellboreName
+    - Type: string
+    - Description: 
+  - LogUID
+    - Type: string
+    - Description: 
+  - LogName
+    - Type: string
+    - Description: 
+  - Mnemonic
+    - Type: string
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## DataProvider <!-- NOUN -->
+- Display name: DataProvider
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+  - ProviderName
+    - Type: string
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## DrillingData <!-- NOUN -->
+- Display name: DrillingData
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+  - IsValid
+    - Type: bool
+    - Description: 
+  - RefreshRate
+    - Type: double
+    - Description: 
+  - DomainOrder
+    - Type: int
+    - Description: 
+  - DataType
+    - Type: string
+    - Description: 
+  - Dimensions
+    - Type: int[]
+    - Description: 
+  - Order
+    - Type: int
+    - Description: 
+  - DomainDimensions
+    - Type: int[]
+    - Description: 
+  - EndPoint
+    - Type: string
+    - Description: 
+- Specialization:
+  - DataType = double
+  - Order = 0
+  - DomainOrder = 0
+- Description: Main type of DDHub data. Represents a drilling signal.
+- Examples:
+- Definition set: DrillingDataSemantics
+## ActiveVolume <!-- NOUN -->
+- Display name: ActiveVolume
+- Parent class: [DrillingData](#DrillingData)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## BitDepth <!-- NOUN -->
+- Display name: BitDepth
+- Parent class: [DrillingData](#DrillingData)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## DensityIn <!-- NOUN -->
+- Display name: DensityIn
+- Parent class: [DrillingData](#DrillingData)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## DensityOut <!-- NOUN -->
+- Display name: DensityOut
+- Parent class: [DrillingData](#DrillingData)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## DownholeECD <!-- NOUN -->
+- Display name: DownholeECD
+- Parent class: [DrillingData](#DrillingData)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## DownholePressure <!-- NOUN -->
+- Display name: DownholePressure
+- Parent class: [DrillingData](#DrillingData)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## DownholeRPM <!-- NOUN -->
+- Display name: DownholeRPM
+- Parent class: [DrillingData](#DrillingData)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## DownholeTemperature <!-- NOUN -->
+- Display name: DownholeTemperature
+- Parent class: [DrillingData](#DrillingData)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## DownholeTorque <!-- NOUN -->
+- Display name: DownholeTorque
+- Parent class: [DrillingData](#DrillingData)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## FlowRateIn <!-- NOUN -->
+- Display name: FlowRateIn
+- Parent class: [DrillingData](#DrillingData)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## FlowRateOut <!-- NOUN -->
+- Display name: FlowRateOut
+- Parent class: [DrillingData](#DrillingData)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## HoleDepth <!-- NOUN -->
+- Display name: HoleDepth
+- Parent class: [DrillingData](#DrillingData)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## HookLoad <!-- NOUN -->
+- Display name: HookLoad
+- Parent class: [DrillingData](#DrillingData)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## HookPosition <!-- NOUN -->
+- Display name: HookPosition
+- Parent class: [DrillingData](#DrillingData)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## HookVelocity <!-- NOUN -->
+- Display name: HookVelocity
+- Parent class: [DrillingData](#DrillingData)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## PumpRate <!-- NOUN -->
+- Display name: PumpRate
+- Parent class: [DrillingData](#DrillingData)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## ROP <!-- NOUN -->
+- Display name: ROP
+- Parent class: [DrillingData](#DrillingData)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## SPP <!-- NOUN -->
+- Display name: SPP
+- Parent class: [DrillingData](#DrillingData)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## SurfaceRPM <!-- NOUN -->
+- Display name: SurfaceRPM
+- Parent class: [DrillingData](#DrillingData)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## SurfaceTorque <!-- NOUN -->
+- Display name: SurfaceTorque
+- Parent class: [DrillingData](#DrillingData)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## TemperatureIn <!-- NOUN -->
+- Display name: TemperatureIn
+- Parent class: [DrillingData](#DrillingData)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## TemperatureOut <!-- NOUN -->
+- Display name: TemperatureOut
+- Parent class: [DrillingData](#DrillingData)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## TopOfStringPosition <!-- NOUN -->
+- Display name: TopOfStringPosition
+- Parent class: [DrillingData](#DrillingData)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## WOB <!-- NOUN -->
+- Display name: WOB
+- Parent class: [DrillingData](#DrillingData)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## DrillingSignal <!-- NOUN -->
+- Display name: DrillingSignal
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+  - Value
+    - Type: object
+    - Description: 
+- Specialization:
+- Description: Data structure used to store the steaming drilling data.
+- Examples:
+- Definition set: DrillingDataSemantics
+## DynamicDrillingSignal <!-- NOUN -->
+- Display name: DynamicDrillingSignal
+- Parent class: [DrillingSignal](#DrillingSignal)
+- Attributes:
+  - TimeStampAcquisition
+    - Type: DateTime
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## EndPointMapping <!-- NOUN -->
+- Display name: EndPointMapping
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+  - FixedIndices
+    - Type: int[]
+    - Description: 
+  - ValuesIndices
+    - Type: int[]
+    - Description: 
+  - MeasurementIndex
+    - Type: int
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## DrillingEquipment <!-- NOUN -->
+- Display name: DrillingEquipment
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## ActivePit <!-- NOUN -->
+- Display name: ActivePit
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## BellNipple <!-- NOUN -->
+- Display name: BellNipple
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## Bit <!-- NOUN -->
+- Display name: Bit
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## Dolly <!-- NOUN -->
+- Display name: Dolly
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## DollyRail <!-- NOUN -->
+- Display name: DollyRail
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## DrillLine <!-- NOUN -->
+- Display name: DrillLine
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## ActiveLine <!-- NOUN -->
+- Display name: ActiveLine
+- Parent class: [DrillLine](#DrillLine)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## DeadLine <!-- NOUN -->
+- Display name: DeadLine
+- Parent class: [DrillLine](#DrillLine)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## SupportLine <!-- NOUN -->
+- Display name: SupportLine
+- Parent class: [DrillLine](#DrillLine)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## DrillLineFastener <!-- NOUN -->
+- Display name: DrillLineFastener
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## DeadLineAnchor <!-- NOUN -->
+- Display name: DeadLineAnchor
+- Parent class: [DrillLineFastener](#DrillLineFastener)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## DrawWorks <!-- NOUN -->
+- Display name: DrawWorks
+- Parent class: [DrillLineFastener](#DrillLineFastener)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## DrillString <!-- NOUN -->
+- Display name: DrillString
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## Elevator <!-- NOUN -->
+- Display name: Elevator
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## GateValve <!-- NOUN -->
+- Display name: GateValve
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## MechanicalBlock <!-- NOUN -->
+- Display name: MechanicalBlock
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## CrownBlock <!-- NOUN -->
+- Display name: CrownBlock
+- Parent class: [MechanicalBlock](#MechanicalBlock)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## TravellingBlock <!-- NOUN -->
+- Display name: TravellingBlock
+- Parent class: [MechanicalBlock](#MechanicalBlock)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## Pump <!-- NOUN -->
+- Display name: Pump
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## CementPump <!-- NOUN -->
+- Display name: CementPump
+- Parent class: [Pump](#Pump)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## MudPump <!-- NOUN -->
+- Display name: MudPump
+- Parent class: [Pump](#Pump)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## ShaleShakers <!-- NOUN -->
+- Display name: ShaleShakers
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## Slips <!-- NOUN -->
+- Display name: Slips
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## StandPipe <!-- NOUN -->
+- Display name: StandPipe
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## ThreeWayManifold <!-- NOUN -->
+- Display name: ThreeWayManifold
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## ThreeWayValve <!-- NOUN -->
+- Display name: ThreeWayValve
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## ThreeWayValveInternalValve <!-- NOUN -->
+- Display name: ThreeWayValveInternalValve
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## TopDrive <!-- NOUN -->
+- Display name: TopDrive
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## TopDriveBody <!-- NOUN -->
+- Display name: TopDriveBody
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## TopDriveHook <!-- NOUN -->
+- Display name: TopDriveHook
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## TopDriveShaft <!-- NOUN -->
+- Display name: TopDriveShaft
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## UnderReamer <!-- NOUN -->
+- Display name: UnderReamer
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## DWISNoun <!-- NOUN -->
+- Display name: DWISNoun
+- Parent class: [](#)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DWISSemantics
+## HydraulicElementState <!-- NOUN -->
+- Display name: HydraulicElementState
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## HydraulicConnectedState <!-- NOUN -->
+- Display name: HydraulicConnectedState
+- Parent class: [HydraulicElementState](#HydraulicElementState)
+- Attributes:
+  - Value
+    - Type: bool
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## HydraulicLogicalElement <!-- NOUN -->
+- Display name: HydraulicLogicalElement
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## HydraulicBranch <!-- NOUN -->
+- Display name: HydraulicBranch
+- Parent class: [HydraulicLogicalElement](#HydraulicLogicalElement)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## Annular <!-- NOUN -->
+- Display name: Annular
+- Parent class: [HydraulicBranch](#HydraulicBranch)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## BHAAnnular <!-- NOUN -->
+- Display name: BHAAnnular
+- Parent class: [Annular](#Annular)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## DrillPipesAnnular <!-- NOUN -->
+- Display name: DrillPipesAnnular
+- Parent class: [Annular](#Annular)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## OpenChannel <!-- NOUN -->
+- Display name: OpenChannel
+- Parent class: [HydraulicBranch](#HydraulicBranch)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## RectangularChannel <!-- NOUN -->
+- Display name: RectangularChannel
+- Parent class: [OpenChannel](#OpenChannel)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## SemiCircularChannel <!-- NOUN -->
+- Display name: SemiCircularChannel
+- Parent class: [OpenChannel](#OpenChannel)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## Pipe <!-- NOUN -->
+- Display name: Pipe
+- Parent class: [HydraulicBranch](#HydraulicBranch)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## BHAInner <!-- NOUN -->
+- Display name: BHAInner
+- Parent class: [Pipe](#Pipe)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## DrillPipesInner <!-- NOUN -->
+- Display name: DrillPipesInner
+- Parent class: [Pipe](#Pipe)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## OpenHole <!-- NOUN -->
+- Display name: OpenHole
+- Parent class: [Pipe](#Pipe)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## ReturnFlowLine <!-- NOUN -->
+- Display name: ReturnFlowLine
+- Parent class: [Pipe](#Pipe)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## HydraulicJunction <!-- NOUN -->
+- Display name: HydraulicJunction
+- Parent class: [HydraulicLogicalElement](#HydraulicLogicalElement)
+- Attributes:
+  - LeftToRight
+    - Type: bool
+    - Description: Indicates whether the fluid can flow from the left branch to the right branch though the junction
+  - RightToLeft
+    - Type: bool
+    - Description: Indicates whether the fluid can flow from the right branch to the left branch though the junction
+- Specialization:
+  - LeftToRight = true
+  - RightToLeft = true
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## MudMixing <!-- NOUN -->
+- Display name: MudMixing
+- Parent class: [HydraulicJunction](#HydraulicJunction)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## HydraulicNetwork <!-- NOUN -->
+- Display name: HydraulicNetwork
+- Parent class: [HydraulicLogicalElement](#HydraulicLogicalElement)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## DownholeHydraulicNetwork <!-- NOUN -->
+- Display name: DownholeHydraulicNetwork
+- Parent class: [HydraulicNetwork](#HydraulicNetwork)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## TopsideHydraulicNetwork <!-- NOUN -->
+- Display name: TopsideHydraulicNetwork
+- Parent class: [HydraulicNetwork](#HydraulicNetwork)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## DrillStemMechanicalModel <!-- NOUN -->
+- Display name: DrillStemMechanicalModel
+- Parent class: [MathematicalModel](#MathematicalModel)
+- Attributes:
+- Specialization:
+- Description: A mechanical model for a drill-stem. Another name for drill-stem mechanical models is a torque and drag model.
+- Examples:
+- Definition set: MechanicalModel
+## MechanicalStiffnessType <!-- NOUN -->
+- Display name: MechanicalStiffnessType
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: A description of how the drill-stem stiffness is modelled.
+- Examples:
+- Definition set: MechanicalModel
+## MechanicalSoftModel <!-- NOUN -->
+- Display name: MechanicalSoftModel
+- Parent class: [MechanicalStiffnessType](#MechanicalStiffnessType)
+- Attributes:
+- Specialization:
+- Description: An infinitively soft model assumes that the drill-stem deforms without any resistance when compressive loads are applied.
+- Examples:
+- Definition set: MechanicalModel
+## MechanicalStiffModel <!-- NOUN -->
+- Display name: MechanicalStiffModel
+- Parent class: [MechanicalStiffnessType](#MechanicalStiffnessType)
+- Attributes:
+- Specialization:
+- Description: A stiff mechanical model considers that the drill-stem can deform laterally when put in compression.
+- Examples:
+- Definition set: MechanicalModel
+## MechanicalStiffModelAssumedContacts <!-- NOUN -->
+- Display name: MechanicalStiffModelAssumedContacts
+- Parent class: [MechanicalStiffModel](#MechanicalStiffModel)
+- Attributes:
+- Specialization:
+- Description: Such a stiff mechanical model presuposes the position of the contact points.
+- Examples:
+- Definition set: MechanicalModel
+## MechanicalStiffModelEstimatedContacts <!-- NOUN -->
+- Display name: MechanicalStiffModelEstimatedContacts
+- Parent class: [MechanicalStiffModel](#MechanicalStiffModel)
+- Attributes:
+- Specialization:
+- Description: Such a stiff mechanical model estimates the position of the contact points.
+- Examples:
+- Definition set: MechanicalModel
+## MechanicalElementState <!-- NOUN -->
+- Display name: MechanicalElementState
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Mechanics
+## MechanicallyClosedState <!-- NOUN -->
+- Display name: MechanicallyClosedState
+- Parent class: [MechanicalElementState](#MechanicalElementState)
+- Attributes:
+  - Value
+    - Type: bool
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Mechanics
+## MechanicallyConnectedState <!-- NOUN -->
+- Display name: MechanicallyConnectedState
+- Parent class: [MechanicalElementState](#MechanicalElementState)
+- Attributes:
+  - Value
+    - Type: bool
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Mechanics
+## MechanicalLogicalElement <!-- NOUN -->
+- Display name: MechanicalLogicalElement
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Mechanics
+## MathematicalModel <!-- NOUN -->
+- Display name: MathematicalModel
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: A model for which the state variables do not change with time.
+- Examples:
+- Definition set: Model
+## SteadyStateModel <!-- NOUN -->
+- Display name: SteadyStateModel
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: A model for which the state variables do not change with time.
+- Examples:
+- Definition set: Model
+## TransientModel <!-- NOUN -->
+- Display name: TransientModel
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: A model for which the state variables changes with time.
+- Examples:
+- Definition set: Model
+## Location <!-- NOUN -->
+- Display name: Location
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: Physical location for a signal.
+- Examples:
+- Definition set: PhysicalLocation
+## BitReferenceLocation <!-- NOUN -->
+- Display name: BitReferenceLocation
+- Parent class: [Location](#Location)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## CasingShoeLocation <!-- NOUN -->
+- Display name: CasingShoeLocation
+- Parent class: [Location](#Location)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## DrillFloorReferenceLocation <!-- NOUN -->
+- Display name: DrillFloorReferenceLocation
+- Parent class: [Location](#Location)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## HoleBottomLocation <!-- NOUN -->
+- Display name: HoleBottomLocation
+- Parent class: [Location](#Location)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## LWDLocation <!-- NOUN -->
+- Display name: LWDLocation
+- Parent class: [Location](#Location)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## ReferenceLocation <!-- NOUN -->
+- Display name: ReferenceLocation
+- Parent class: [Location](#Location)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## ReferenceFrame <!-- NOUN -->
+- Display name: ReferenceFrame
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: Represents a system of coordinates
+- Examples:
+- Definition set: PhysicalLocation
+## DepthAndAngleFrame <!-- NOUN -->
+- Display name: DepthAndAngleFrame
+- Parent class: [ReferenceFrame](#ReferenceFrame)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## FourDimensionalReferenceFrame <!-- NOUN -->
+- Display name: FourDimensionalReferenceFrame
+- Parent class: [ReferenceFrame](#ReferenceFrame)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## CurviLinearFrenetSerretReferenceFrame <!-- NOUN -->
+- Display name: CurviLinearFrenetSerretReferenceFrame
+- Parent class: [FourDimensionalReferenceFrame](#FourDimensionalReferenceFrame)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## OneDimensionalReferenceFrame <!-- NOUN -->
+- Display name: OneDimensionalReferenceFrame
+- Parent class: [ReferenceFrame](#ReferenceFrame)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## OneDimensionalCartesianReferenceFrame <!-- NOUN -->
+- Display name: OneDimensionalCartesianReferenceFrame
+- Parent class: [OneDimensionalReferenceFrame](#OneDimensionalReferenceFrame)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## VerticalDepthFrame <!-- NOUN -->
+- Display name: VerticalDepthFrame
+- Parent class: [OneDimensionalCartesianReferenceFrame](#OneDimensionalCartesianReferenceFrame)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## OneDimensionalCurviLinearReferenceFrame <!-- NOUN -->
+- Display name: OneDimensionalCurviLinearReferenceFrame
+- Parent class: [OneDimensionalReferenceFrame](#OneDimensionalReferenceFrame)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## DrillStringCenterLineFrame <!-- NOUN -->
+- Display name: DrillStringCenterLineFrame
+- Parent class: [OneDimensionalCurviLinearReferenceFrame](#OneDimensionalCurviLinearReferenceFrame)
+- Attributes:
+  - PositiveUpward
+    - Type: bool
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## OpenHoleCenterLineFrame <!-- NOUN -->
+- Display name: OpenHoleCenterLineFrame
+- Parent class: [OneDimensionalCurviLinearReferenceFrame](#OneDimensionalCurviLinearReferenceFrame)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## WellboreCenterLineFrame <!-- NOUN -->
+- Display name: WellboreCenterLineFrame
+- Parent class: [OneDimensionalCurviLinearReferenceFrame](#OneDimensionalCurviLinearReferenceFrame)
+- Attributes:
+  - PositiveUpward
+    - Type: bool
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## ThreeDimensionalReferenceFrame <!-- NOUN -->
+- Display name: ThreeDimensionalReferenceFrame
+- Parent class: [ReferenceFrame](#ReferenceFrame)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## CartesianThreeDimensionalReferenceFrame <!-- NOUN -->
+- Display name: CartesianThreeDimensionalReferenceFrame
+- Parent class: [ThreeDimensionalReferenceFrame](#ThreeDimensionalReferenceFrame)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## FrenetSerretReferenceFrame <!-- NOUN -->
+- Display name: FrenetSerretReferenceFrame
+- Parent class: [CartesianThreeDimensionalReferenceFrame](#CartesianThreeDimensionalReferenceFrame)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## NorthEastTVDFrame <!-- NOUN -->
+- Display name: NorthEastTVDFrame
+- Parent class: [CartesianThreeDimensionalReferenceFrame](#CartesianThreeDimensionalReferenceFrame)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## CylindricalReferenceFrame <!-- NOUN -->
+- Display name: CylindricalReferenceFrame
+- Parent class: [ThreeDimensionalReferenceFrame](#ThreeDimensionalReferenceFrame)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## SphericalReferenceFrame <!-- NOUN -->
+- Display name: SphericalReferenceFrame
+- Parent class: [ThreeDimensionalReferenceFrame](#ThreeDimensionalReferenceFrame)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## TwoDimensionalReferenceFrame <!-- NOUN -->
+- Display name: TwoDimensionalReferenceFrame
+- Parent class: [ReferenceFrame](#ReferenceFrame)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## CartesianTwoDimensionalReferenceFrame <!-- NOUN -->
+- Display name: CartesianTwoDimensionalReferenceFrame
+- Parent class: [TwoDimensionalReferenceFrame](#TwoDimensionalReferenceFrame)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## NorthEastFrame <!-- NOUN -->
+- Display name: NorthEastFrame
+- Parent class: [CartesianTwoDimensionalReferenceFrame](#CartesianTwoDimensionalReferenceFrame)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## PolarReferenceFrame <!-- NOUN -->
+- Display name: PolarReferenceFrame
+- Parent class: [TwoDimensionalReferenceFrame](#TwoDimensionalReferenceFrame)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## MeasurableQuantity <!-- NOUN -->
+- Display name: MeasurableQuantity
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+  - MeaningfulPrecision
+    - Type: double
+    - Description: 
+- Specialization:
+- Description: Represents a quantity that allows meaningful comparisons.
+- Examples:
+- Definition set: Quantities
+## BitTorqueQuantity <!-- NOUN -->
+- Display name: BitTorqueQuantity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Quantities
+## BlockAccelerationQuantity <!-- NOUN -->
+- Display name: BlockAccelerationQuantity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Quantities
+## BlockPositionQuantity <!-- NOUN -->
+- Display name: BlockPositionQuantity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Quantities
+## BlockVelocityQuantity <!-- NOUN -->
+- Display name: BlockVelocityQuantity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Quantities
+## DepthQuantity <!-- NOUN -->
+- Display name: DepthQuantity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Quantities
+## DownholePressureQuantity <!-- NOUN -->
+- Display name: DownholePressureQuantity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Quantities
+## EMWQuantity <!-- NOUN -->
+- Display name: EMWQuantity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Quantities
+## FlowRateQuantity <!-- NOUN -->
+- Display name: FlowRateQuantity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Quantities
+## FluidDensityInQuantity <!-- NOUN -->
+- Display name: FluidDensityInQuantity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Quantities
+## FluidTemperatureInQuantity <!-- NOUN -->
+- Display name: FluidTemperatureInQuantity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Quantities
+## FormationPorosityQuantity <!-- NOUN -->
+- Display name: FormationPorosityQuantity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Quantities
+## HookloadQuantity <!-- NOUN -->
+- Display name: HookloadQuantity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Quantities
+## PumpRateQuantity <!-- NOUN -->
+- Display name: PumpRateQuantity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Quantities
+## Resistivity <!-- NOUN -->
+- Display name: Resistivity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Quantities
+## RockDensityQuantity <!-- NOUN -->
+- Display name: RockDensityQuantity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Quantities
+## SPPQuantity <!-- NOUN -->
+- Display name: SPPQuantity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Quantities
+## SurfaceRPMQuantity <!-- NOUN -->
+- Display name: SurfaceRPMQuantity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Quantities
+## SurfaceTorqueQuantity <!-- NOUN -->
+- Display name: SurfaceTorqueQuantity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Quantities
+## TopOfStringForceQuantity <!-- NOUN -->
+- Display name: TopOfStringForceQuantity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Quantities
+## TVDQuantity <!-- NOUN -->
+- Display name: TVDQuantity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Quantities
+## WOBQuantity <!-- NOUN -->
+- Display name: WOBQuantity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Quantities
+## MeasurableQuantityUnitAssociation <!-- NOUN -->
+- Display name: MeasurableQuantityUnitAssociation
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Quantities
+## Quantity <!-- NOUN -->
+- Display name: Quantity
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+  - L
+    - Type: int
+    - Description: Length exponent.
+  - M
+    - Type: int
+    - Description: Mass exponent.
+  - T
+    - Type: int
+    - Description: Time exponent.
+  - I
+    - Type: int
+    - Description: Electric current exponent.
+  - ThT
+    - Type: int
+    - Description: Thermodynamic temperature exponent.
+  - N
+    - Type: int
+    - Description: Amount of substance exponent.
+  - J
+    - Type: int
+    - Description: Luminous intensity exponent.
+  - SIUnit
+    - Type: string
+    - Description: 
+- Specialization:
+  - L = 0
+  - T = 0
+  - M = 0
+  - I = 0
+  - ThT = 0
+  - N = 0
+  - J = 0
+- Description: 
+- Examples:
+- Definition set: Quantities
+## AccelerationQuantity <!-- NOUN -->
+- Display name: AccelerationQuantity
+- Parent class: [Quantity](#Quantity)
+- Attributes:
+- Specialization:
+  - L = 1
+  - T = -2
+  - Name = Acceleration quantity
+- Description: 
+- Examples:
+- Definition set: Quantities
+## AreaQuantity <!-- NOUN -->
+- Display name: AreaQuantity
+- Parent class: [Quantity](#Quantity)
+- Attributes:
+- Specialization:
+  - L = 2
+- Description: 
+- Examples:
+- Definition set: Quantities
+## ElectricResistivityQuantity <!-- NOUN -->
+- Display name: ElectricResistivityQuantity
+- Parent class: [Quantity](#Quantity)
+- Attributes:
+- Specialization:
+  - L = 3
+  - M = 1
+  - T = -3
+  - I = -2
+- Description: 
+- Examples:
+- Definition set: Quantities
+## ForceQuantity <!-- NOUN -->
+- Display name: ForceQuantity
+- Parent class: [Quantity](#Quantity)
+- Attributes:
+- Specialization:
+  - L = 1
+  - M = 1
+  - T = -2
+- Description: 
+- Examples:
+- Definition set: Quantities
+## FrequencyQuantity <!-- NOUN -->
+- Display name: FrequencyQuantity
+- Parent class: [Quantity](#Quantity)
+- Attributes:
+- Specialization:
+  - T = -1
+- Description: 
+- Examples:
+- Definition set: Quantities
+## LengthQuantity <!-- NOUN -->
+- Display name: LengthQuantity
+- Parent class: [Quantity](#Quantity)
+- Attributes:
+- Specialization:
+  - L = 1
+- Description: 
+- Examples:
+- Definition set: Quantities
+## MassDensityQuantity <!-- NOUN -->
+- Display name: MassDensityQuantity
+- Parent class: [Quantity](#Quantity)
+- Attributes:
+- Specialization:
+  - L = 3
+  - M = 1
+- Description: 
+- Examples:
+- Definition set: Quantities
+## MassQuantity <!-- NOUN -->
+- Display name: MassQuantity
+- Parent class: [Quantity](#Quantity)
+- Attributes:
+- Specialization:
+  - M = 1
+- Description: 
+- Examples:
+- Definition set: Quantities
+## MassRate <!-- NOUN -->
+- Display name: MassRate
+- Parent class: [Quantity](#Quantity)
+- Attributes:
+- Specialization:
+  - M = 1
+  - T = -1
+- Description: 
+- Examples:
+- Definition set: Quantities
+## PowerQuantity <!-- NOUN -->
+- Display name: PowerQuantity
+- Parent class: [Quantity](#Quantity)
+- Attributes:
+- Specialization:
+  - L = 2
+  - M = 1
+  - T = -3
+- Description: 
+- Examples:
+- Definition set: Quantities
+## PressureQuantity <!-- NOUN -->
+- Display name: PressureQuantity
+- Parent class: [Quantity](#Quantity)
+- Attributes:
+- Specialization:
+  - L = -1
+  - M = 1
+  - T = 2
+- Description: 
+- Examples:
+- Definition set: Quantities
+## ProportionQuantity <!-- NOUN -->
+- Display name: ProportionQuantity
+- Parent class: [Quantity](#Quantity)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Quantities
+## TemperatureQuantity <!-- NOUN -->
+- Display name: TemperatureQuantity
+- Parent class: [Quantity](#Quantity)
+- Attributes:
+- Specialization:
+  - ThT = 1
+- Description: 
+- Examples:
+- Definition set: Quantities
+## TorqueQuantity <!-- NOUN -->
+- Display name: TorqueQuantity
+- Parent class: [Quantity](#Quantity)
+- Attributes:
+- Specialization:
+  - L = 2
+  - M = 1
+  - T = -2
+- Description: 
+- Examples:
+- Definition set: Quantities
+## VelocityQuantity <!-- NOUN -->
+- Display name: VelocityQuantity
+- Parent class: [Quantity](#Quantity)
+- Attributes:
+- Specialization:
+  - L = 1
+  - T = -1
+- Description: 
+- Examples:
+- Definition set: Quantities
+## VolumeQuantity <!-- NOUN -->
+- Display name: VolumeQuantity
+- Parent class: [Quantity](#Quantity)
+- Attributes:
+- Specialization:
+  - L = 3
+- Description: 
+- Examples:
+- Definition set: Quantities
+## VolumetricRateQuantity <!-- NOUN -->
+- Display name: VolumetricRateQuantity
+- Parent class: [Quantity](#Quantity)
+- Attributes:
+- Specialization:
+  - L = 3
+  - T = -1
+- Description: 
+- Examples:
+- Definition set: Quantities
+## Unit <!-- NOUN -->
+- Display name: Unit
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+  - Symbol
+    - Type: string
+    - Description: 
+  - ConversionFactorA
+    - Type: double
+    - Description: Unit conversion from SI unit is performed as:
+  - ConversionFactorB
+    - Type: double
+    - Description: Unit conversion from SI unit is performed as:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Quantities
+## UnitSystem <!-- NOUN -->
+- Display name: UnitSystem
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: A set of associations between measurable quantities and units
+- Examples:
+- Definition set: Quantities
+## Clock <!-- NOUN -->
+- Display name: Clock
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+  - LeapSeconds
+    - Type: int
+    - Description: 
+  - Stratum
+    - Type: int
+    - Description: 
+  - NetworkSynchronizationLatencyAverage
+    - Type: double
+    - Description: 
+  - NetworkSynchronizationLatencyStandardDeviation
+    - Type: double
+    - Description: 
+  - Resolution
+    - Type: double
+    - Description: 
+  - MaximumFluctuations
+    - Type: double
+    - Description: 
+- Specialization:
+- Description: Represents a clock
+- Examples:
+- Definition set: TimeManagement
+## SynchronizationGroup <!-- NOUN -->
+- Display name: SynchronizationGroup
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+  - SynchronizationDelay
+    - Type: double
+    - Description: 
+  - SamplingRate
+    - Type: double
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: TimeManagement
+## SignalUncertainty <!-- NOUN -->
+- Display name: SignalUncertainty
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: Represent the uncertainty associated to a signal.
+- Examples:
+- Definition set: Uncertainty
+## GaussianUncertainty <!-- NOUN -->
+- Display name: GaussianUncertainty
+- Parent class: [SignalUncertainty](#SignalUncertainty)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Uncertainty
+## GenericUncertainty <!-- NOUN -->
+- Display name: GenericUncertainty
+- Parent class: [SignalUncertainty](#SignalUncertainty)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Uncertainty
+## MinMaxUncertainty <!-- NOUN -->
+- Display name: MinMaxUncertainty
+- Parent class: [SignalUncertainty](#SignalUncertainty)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Uncertainty
+## RelativeUncertainty <!-- NOUN -->
+- Display name: RelativeUncertainty
+- Parent class: [SignalUncertainty](#SignalUncertainty)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Uncertainty
+## SensorUncertainty <!-- NOUN -->
+- Display name: SensorUncertainty
+- Parent class: [SignalUncertainty](#SignalUncertainty)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Uncertainty
+# Verbs
+## Controls <!-- VERB -->
+- Display name: Controls
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## HasFunction <!-- VERB -->
+- Display name: HasFunction
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [DataFlowNode](#DataFlowNode)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsCommandFor <!-- VERB -->
+- Display name: IsCommandFor
+- Parent verb: [HasFunction](#HasFunction)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsComputationInput <!-- VERB -->
+- Display name: IsComputationInput
+- Parent verb: [HasFunction](#HasFunction)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [ComputationUnit](#ComputationUnit)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsLimitFor <!-- VERB -->
+- Display name: IsLimitFor
+- Parent verb: [HasFunction](#HasFunction)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [ControlSystem](#ControlSystem)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsSetPointFor <!-- VERB -->
+- Display name: IsSetPointFor
+- Parent verb: [HasFunction](#HasFunction)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [Controller](#Controller)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsSetPointRecommendationFor <!-- VERB -->
+- Display name: IsSetPointRecommendationFor
+- Parent verb: [HasFunction](#HasFunction)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [ControlSystem](#ControlSystem)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsTransformationInput <!-- VERB -->
+- Display name: IsTransformationInput
+- Parent verb: [HasFunction](#HasFunction)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [Transformation](#Transformation)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsBufferingInput <!-- VERB -->
+- Display name: IsBufferingInput
+- Parent verb: [IsTransformationInput](#IsTransformationInput)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [Buffering](#Buffering)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsDerivationInput <!-- VERB -->
+- Display name: IsDerivationInput
+- Parent verb: [IsTransformationInput](#IsTransformationInput)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsResamplingInput <!-- VERB -->
+- Display name: IsResamplingInput
+- Parent verb: [IsTransformationInput](#IsTransformationInput)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [Resampling](#Resampling)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsTransmissionInput <!-- VERB -->
+- Display name: IsTransmissionInput
+- Parent verb: [HasFunction](#HasFunction)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [TransmissionLine](#TransmissionLine)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsGeneratedBy <!-- VERB -->
+- Display name: IsGeneratedBy
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [DataFlowNode](#DataFlowNode)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsComputedBy <!-- VERB -->
+- Display name: IsComputedBy
+- Parent verb: [IsGeneratedBy](#IsGeneratedBy)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsMeasuredBy <!-- VERB -->
+- Display name: IsMeasuredBy
+- Parent verb: [IsGeneratedBy](#IsGeneratedBy)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsRecordedFrom <!-- VERB -->
+- Display name: IsRecordedFrom
+- Parent verb: [IsGeneratedBy](#IsGeneratedBy)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsTransformationOutput <!-- VERB -->
+- Display name: IsTransformationOutput
+- Parent verb: [IsGeneratedBy](#IsGeneratedBy)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [DataFlowNode](#DataFlowNode)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsBufferingOutput <!-- VERB -->
+- Display name: IsBufferingOutput
+- Parent verb: [IsTransformationOutput](#IsTransformationOutput)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [Buffering](#Buffering)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsDerivedFrom <!-- VERB -->
+- Display name: IsDerivedFrom
+- Parent verb: [IsTransformationOutput](#IsTransformationOutput)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsIntegratedFrom <!-- VERB -->
+- Display name: IsIntegratedFrom
+- Parent verb: [IsTransformationOutput](#IsTransformationOutput)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsResampledBy <!-- VERB -->
+- Display name: IsResampledBy
+- Parent verb: [IsTransformationOutput](#IsTransformationOutput)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [Resampling](#Resampling)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsTransmissionOutput <!-- VERB -->
+- Display name: IsTransmissionOutput
+- Parent verb: [IsGeneratedBy](#IsGeneratedBy)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [TransmissionLine](#TransmissionLine)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsProcessedBy <!-- VERB -->
+- Display name: IsProcessedBy
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsTransmittedBy <!-- VERB -->
+- Display name: IsTransmittedBy
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataTransmission
+## IsConditionedBy <!-- VERB -->
+- Display name: IsConditionedBy
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [ValidityCondition](#ValidityCondition)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataValidity
+## IsConditionInput <!-- VERB -->
+- Display name: IsConditionInput
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [ValidityCondition](#ValidityCondition)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataValidity
+## IsConditionLeft <!-- VERB -->
+- Display name: IsConditionLeft
+- Parent verb: [IsConditionInput](#IsConditionInput)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataValidity
+## IsConditionRight <!-- VERB -->
+- Display name: IsConditionRight
+- Parent verb: [IsConditionInput](#IsConditionInput)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataValidity
+## IsValidBy <!-- VERB -->
+- Display name: IsValidBy
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataValidity
+## HasDomain <!-- VERB -->
+- Display name: HasDomain
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [DrillingData](#DrillingData)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DrillingDataSemantics
+## HasTimeIntervalDomain <!-- VERB -->
+- Display name: HasTimeIntervalDomain
+- Parent verb: [HasDomain](#HasDomain)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [DrillingData](#DrillingData)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DrillingDataSemantics
+## HasEndPoint <!-- VERB -->
+- Display name: HasEndPoint
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingSignal](#DrillingSignal)
+- Object class: [DataEndPoint](#DataEndPoint)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DrillingDataSemantics
+## HasSIUnit <!-- VERB -->
+- Display name: HasSIUnit
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [Quantity](#Quantity)
+- Object class: [Unit](#Unit)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DrillingDataSemantics
+## HasValue <!-- VERB -->
+- Display name: HasValue
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [DrillingSignal](#DrillingSignal)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DrillingDataSemantics
+## HasDynamicValue <!-- VERB -->
+- Display name: HasDynamicValue
+- Parent verb: [HasValue](#HasValue)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [DynamicDrillingSignal](#DynamicDrillingSignal)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DrillingDataSemantics
+## HasStaticValue <!-- VERB -->
+- Display name: HasStaticValue
+- Parent verb: [HasValue](#HasValue)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [DrillingSignal](#DrillingSignal)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DrillingDataSemantics
+## IsDependentOn <!-- VERB -->
+- Display name: IsDependentOn
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [DrillingData](#DrillingData)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DrillingDataSemantics
+## HasPressureReference <!-- VERB -->
+- Display name: HasPressureReference
+- Parent verb: [IsDependentOn](#IsDependentOn)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [DrillingData](#DrillingData)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DrillingDataSemantics
+## HasTemperatureReference <!-- VERB -->
+- Display name: HasTemperatureReference
+- Parent verb: [IsDependentOn](#IsDependentOn)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [DrillingData](#DrillingData)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DrillingDataSemantics
+## IsProvidedBy <!-- VERB -->
+- Display name: IsProvidedBy
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DataProvider](#DataProvider)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DrillingDataSemantics
+## DWISVerb <!-- VERB -->
+- Display name: DWISVerb
+- Parent verb: [](#)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DWISSemantics
+## EndsHydraulicBranchDecomposition <!-- VERB -->
+- Display name: EndsHydraulicBranchDecomposition
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [HydraulicBranch](#HydraulicBranch)
+- Object class: [HydraulicBranch](#HydraulicBranch)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## HasBranchComponent <!-- VERB -->
+- Display name: HasBranchComponent
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [HydraulicNetwork](#HydraulicNetwork)
+- Object class: [HydraulicBranch](#HydraulicBranch)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## HasBranchCoordinateSystem <!-- VERB -->
+- Display name: HasBranchCoordinateSystem
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [HydraulicBranch](#HydraulicBranch)
+- Object class: [ReferenceFrame](#ReferenceFrame)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## HasHydraulicState <!-- VERB -->
+- Display name: HasHydraulicState
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [HydraulicJunction](#HydraulicJunction)
+- Object class: [HydraulicElementState](#HydraulicElementState)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## HasHydraulicStateValueFrom <!-- VERB -->
+- Display name: HasHydraulicStateValueFrom
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## HasLeftBranchCoordinates <!-- VERB -->
+- Display name: HasLeftBranchCoordinates
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [HydraulicJunction](#HydraulicJunction)
+- Object class: [DrillingData](#DrillingData)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## HasRightBranchCoordinates <!-- VERB -->
+- Display name: HasRightBranchCoordinates
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [HydraulicJunction](#HydraulicJunction)
+- Object class: [DrillingData](#DrillingData)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## IsHydraulicallyLocatedAt <!-- VERB -->
+- Display name: IsHydraulicallyLocatedAt
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [HydraulicLogicalElement](#HydraulicLogicalElement)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## IsEquivalentCirculationDensityAt <!-- VERB -->
+- Display name: IsEquivalentCirculationDensityAt
+- Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## IsFluidDensityAt <!-- VERB -->
+- Display name: IsFluidDensityAt
+- Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## IsFluidTemperatureAt <!-- VERB -->
+- Display name: IsFluidTemperatureAt
+- Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## IsFluidVelocityAt <!-- VERB -->
+- Display name: IsFluidVelocityAt
+- Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## IsHydraulicEstimationAt <!-- VERB -->
+- Display name: IsHydraulicEstimationAt
+- Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## IsHydraulicMaximumAllowedRateOfChangeAt <!-- VERB -->
+- Display name: IsHydraulicMaximumAllowedRateOfChangeAt
+- Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## IsHydraulicMaximumAllowedValueAt <!-- VERB -->
+- Display name: IsHydraulicMaximumAllowedValueAt
+- Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## IsHydraulicMeasurementAt <!-- VERB -->
+- Display name: IsHydraulicMeasurementAt
+- Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## IsMassFlowRateAt <!-- VERB -->
+- Display name: IsMassFlowRateAt
+- Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## IsPressureAt <!-- VERB -->
+- Display name: IsPressureAt
+- Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## IsPressureGradientAt <!-- VERB -->
+- Display name: IsPressureGradientAt
+- Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## IsVolumetricFlowRateAt <!-- VERB -->
+- Display name: IsVolumetricFlowRateAt
+- Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## IsHydraulicConnectedTo <!-- VERB -->
+- Display name: IsHydraulicConnectedTo
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [HydraulicLogicalElement](#HydraulicLogicalElement)
+- Object class: [HydraulicLogicalElement](#HydraulicLogicalElement)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## HasEndJunction <!-- VERB -->
+- Display name: HasEndJunction
+- Parent verb: [IsHydraulicConnectedTo](#IsHydraulicConnectedTo)
+- Subject class: [HydraulicBranch](#HydraulicBranch)
+- Object class: [HydraulicJunction](#HydraulicJunction)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## HasLeftBranch <!-- VERB -->
+- Display name: HasLeftBranch
+- Parent verb: [IsHydraulicConnectedTo](#IsHydraulicConnectedTo)
+- Subject class: [HydraulicJunction](#HydraulicJunction)
+- Object class: [HydraulicBranch](#HydraulicBranch)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## HasRightBranch <!-- VERB -->
+- Display name: HasRightBranch
+- Parent verb: [IsHydraulicConnectedTo](#IsHydraulicConnectedTo)
+- Subject class: [HydraulicJunction](#HydraulicJunction)
+- Object class: [HydraulicBranch](#HydraulicBranch)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## HasStartJunction <!-- VERB -->
+- Display name: HasStartJunction
+- Parent verb: [IsHydraulicConnectedTo](#IsHydraulicConnectedTo)
+- Subject class: [HydraulicBranch](#HydraulicBranch)
+- Object class: [HydraulicJunction](#HydraulicJunction)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## StartsHydraulicBranchDecomposition <!-- VERB -->
+- Display name: StartsHydraulicBranchDecomposition
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## IsOfMechanicalStiffnessType <!-- VERB -->
+- Display name: IsOfMechanicalStiffnessType
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [MechanicalModel](#MechanicalModel)
+- Object class: [MechanicalStiffnessType](#MechanicalStiffnessType)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: A relation to describe how the drill-stem mechanical model manage stiffness.
+- Examples: 
+- Definition set: MechanicalModel
+## HasMechanicalState <!-- VERB -->
+- Display name: HasMechanicalState
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [MechanicalLogicalElement](#MechanicalLogicalElement)
+- Object class: [MechanicalElementState](#MechanicalElementState)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Mechanics
+## HasMechanicalStateValueFrom <!-- VERB -->
+- Display name: HasMechanicalStateValueFrom
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [MechanicalLogicalElement](#MechanicalLogicalElement)
+- Object class: [DrillingData](#DrillingData)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Mechanics
+## IsMechanicallyConnectTo <!-- VERB -->
+- Display name: IsMechanicallyConnectTo
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Mechanics
+## IsMechanicallyLocatedAt <!-- VERB -->
+- Display name: IsMechanicallyLocatedAt
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Mechanics
+## HasCoordinates <!-- VERB -->
+- Display name: HasCoordinates
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [DrillingData](#DrillingData)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: PhysicalLocation
+## HasReferenceFrame <!-- VERB -->
+- Display name: HasReferenceFrame
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [Location](#Location)
+- Object class: [ReferenceFrame](#ReferenceFrame)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: PhysicalLocation
+## HasReferenceFrameOrigin <!-- VERB -->
+- Display name: HasReferenceFrameOrigin
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: PhysicalLocation
+## IsPhysicallyLocatedAt <!-- VERB -->
+- Display name: IsPhysicallyLocatedAt
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: PhysicalLocation
+## AssociatesMeasurableQuantity <!-- VERB -->
+- Display name: AssociatesMeasurableQuantity
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [MeasurableQuantityUnitAssociation](#MeasurableQuantityUnitAssociation)
+- Object class: [MeasurableQuantity](#MeasurableQuantity)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Quantities
+## AssociatesUnit <!-- VERB -->
+- Display name: AssociatesUnit
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [MeasurableQuantityUnitAssociation](#MeasurableQuantityUnitAssociation)
+- Object class: [Unit](#Unit)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Quantities
+## HasUnitAssociation <!-- VERB -->
+- Display name: HasUnitAssociation
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [UnitSystem](#UnitSystem)
+- Object class: [MeasurableQuantityUnitAssociation](#MeasurableQuantityUnitAssociation)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Quantities
+## IsObservableFrom <!-- VERB -->
+- Display name: IsObservableFrom
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Quantities
+## IsOfBaseQuantity <!-- VERB -->
+- Display name: IsOfBaseQuantity
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Quantities
+## IsOfMeasurableQuantity <!-- VERB -->
+- Display name: IsOfMeasurableQuantity
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Quantities
+## IsUnitForQuantity <!-- VERB -->
+- Display name: IsUnitForQuantity
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [Unit](#Unit)
+- Object class: [Quantity](#Quantity)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Quantities
+## BelongsToSynchronizationGroup <!-- VERB -->
+- Display name: BelongsToSynchronizationGroup
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [Resampling](#Resampling)
+- Object class: [SynchronizationGroup](#SynchronizationGroup)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: TimeManagement
+## HasAcquisitionClock <!-- VERB -->
+- Display name: HasAcquisitionClock
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [Clock](#Clock)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: TimeManagement
+## HasSourceClock <!-- VERB -->
+- Display name: HasSourceClock
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [Clock](#Clock)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: TimeManagement
+## HasTransmissionDelay <!-- VERB -->
+- Display name: HasTransmissionDelay
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [DrillingData](#DrillingData)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: TimeManagement
+## IsSynchronizationGroupInput <!-- VERB -->
+- Display name: IsSynchronizationGroupInput
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [SynchronizationGroup](#SynchronizationGroup)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: TimeManagement
+## IsSynchronizationGroupOutput <!-- VERB -->
+- Display name: IsSynchronizationGroupOutput
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [SynchronizationGroup](#SynchronizationGroup)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: TimeManagement
+## HasUncertainty <!-- VERB -->
+- Display name: HasUncertainty
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingData](#DrillingData)
+- Object class: [SignalUncertainty](#SignalUncertainty)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Uncertainty
+## HasUncertaintyAccuracy <!-- VERB -->
+- Display name: HasUncertaintyAccuracy
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [SensorUncertainty](#SensorUncertainty)
+- Object class: [DrillingData](#DrillingData)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Uncertainty
+## HasUncertaintyMax <!-- VERB -->
+- Display name: HasUncertaintyMax
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Uncertainty
+## HasUncertaintyMean <!-- VERB -->
+- Display name: HasUncertaintyMean
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Uncertainty
+## HasUncertaintyMin <!-- VERB -->
+- Display name: HasUncertaintyMin
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Uncertainty
+## HasUncertaintyPrecision <!-- VERB -->
+- Display name: HasUncertaintyPrecision
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [SensorUncertainty](#SensorUncertainty)
+- Object class: [DrillingData](#DrillingData)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Uncertainty
+## HasUncertaintyRelativeValue <!-- VERB -->
+- Display name: HasUncertaintyRelativeValue
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Uncertainty
+## HasUncertaintyStandardDeviation <!-- VERB -->
+- Display name: HasUncertaintyStandardDeviation
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Uncertainty
