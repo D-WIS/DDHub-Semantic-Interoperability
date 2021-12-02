@@ -2773,7 +2773,7 @@
 ## HasCoordinates <!-- VERB -->
 - Display name: HasCoordinates
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Subject class: [Location](#Location)
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2793,8 +2793,8 @@
 ## HasReferenceFrameOrigin <!-- VERB -->
 - Display name: HasReferenceFrameOrigin
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DWISNoun](#DWISNoun)
-- Object class: [DWISNoun](#DWISNoun)
+- Subject class: [ReferenceFrame](#ReferenceFrame)
+- Object class: [Location](#Location)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -2803,8 +2803,8 @@
 ## IsPhysicallyLocatedAt <!-- VERB -->
 - Display name: IsPhysicallyLocatedAt
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DWISNoun](#DWISNoun)
-- Object class: [DWISNoun](#DWISNoun)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [Location](#Location)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 

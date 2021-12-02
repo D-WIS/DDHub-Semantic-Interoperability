@@ -235,7 +235,7 @@
 ## HasCoordinates <!-- VERB -->
 - Display name: HasCoordinates
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Subject class: [Location](./PhysicalLocation.md#Location)
 - Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -255,8 +255,8 @@
 ## HasReferenceFrameOrigin <!-- VERB -->
 - Display name: HasReferenceFrameOrigin
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Subject class: [ReferenceFrame](./PhysicalLocation.md#ReferenceFrame)
+- Object class: [Location](./PhysicalLocation.md#Location)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -265,8 +265,8 @@
 ## IsPhysicallyLocatedAt <!-- VERB -->
 - Display name: IsPhysicallyLocatedAt
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [Location](./PhysicalLocation.md#Location)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 

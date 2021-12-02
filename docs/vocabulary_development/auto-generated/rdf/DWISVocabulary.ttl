@@ -549,7 +549,7 @@
 
 <http://ddhub.no/HasCoordinates> a owl:ObjectProperty; 
                                  rdfs:comment ""@EN; 
-                                 rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
+                                 rdfs:domain <http://ddhub.no/Location>; 
                                  rdfs:range <http://ddhub.no/DrillingDataPoint>; 
                                  rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
 
@@ -633,8 +633,8 @@
 
 <http://ddhub.no/HasReferenceFrameOrigin> a owl:ObjectProperty; 
                                           rdfs:comment ""@EN; 
-                                          rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                          rdfs:range <http://ddhub.no/DWISNoun>; 
+                                          rdfs:domain <http://ddhub.no/ReferenceFrame>; 
+                                          rdfs:range <http://ddhub.no/Location>; 
                                           rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
 
 <http://ddhub.no/HasRightBranch> a owl:ObjectProperty; 
@@ -1027,8 +1027,8 @@
 
 <http://ddhub.no/IsPhysicallyLocatedAt> a owl:ObjectProperty; 
                                         rdfs:comment ""@EN; 
-                                        rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                        rdfs:range <http://ddhub.no/DWISNoun>; 
+                                        rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
+                                        rdfs:range <http://ddhub.no/Location>; 
                                         rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
 
 <http://ddhub.no/IsPressureAt> a owl:ObjectProperty; 
