@@ -54,7 +54,7 @@
 - Display name: HasMechanicalStateValueFrom
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [MechanicalLogicalElement](./Mechanics.md#MechanicalLogicalElement)
-- Object class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 

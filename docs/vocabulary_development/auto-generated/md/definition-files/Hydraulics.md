@@ -227,7 +227,7 @@
 - Display name: HasLeftBranchCoordinates
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [HydraulicJunction](./Hydraulics.md#HydraulicJunction)
-- Object class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -237,7 +237,7 @@
 - Display name: HasRightBranchCoordinates
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [HydraulicJunction](./Hydraulics.md#HydraulicJunction)
-- Object class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -246,7 +246,7 @@
 ## IsHydraulicallyLocatedAt <!-- VERB -->
 - Display name: IsHydraulicallyLocatedAt
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement)
 - Min cardinality: -1
 - Max cardinality: -1

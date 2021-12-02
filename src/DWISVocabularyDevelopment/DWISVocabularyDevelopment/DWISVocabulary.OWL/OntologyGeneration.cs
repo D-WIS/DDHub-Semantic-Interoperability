@@ -12,7 +12,7 @@ namespace DWISVocabulary.OWL
     {
         static string prefix = "http://ddhub.no/";
 
-        public static RDFOntology GenerateOntology()
+        public static RDFOntology GenerateOntology(string fileName)
         {
             string folderName = @"C:\Users\beda\source\repos\D-WIS\DDHub-Semantic-Interoperability\docs\vocabulary_development\definitions\";
 
@@ -43,7 +43,9 @@ namespace DWISVocabulary.OWL
             AddClass(nounTree, null, ontology);
             AddVerb(verbTree, null, ontology);
 
-            ontology.ToRDFGraph(RDFSemanticsEnums.RDFOntologyInferenceExportBehavior.None).ToFile(RDFModelEnums.RDFFormats.Turtle, @"C:/temp/dwis.tt");
+            ontology.ToRDFGraph(RDFSemanticsEnums.RDFOntologyInferenceExportBehavior.None).ToFile(RDFModelEnums.RDFFormats.Turtle, fileName + ".ttl");
+            ontology.ToRDFGraph(RDFSemanticsEnums.RDFOntologyInferenceExportBehavior.None).ToFile(RDFModelEnums.RDFFormats.NTriples, fileName + ".nt");
+            ontology.ToRDFGraph(RDFSemanticsEnums.RDFOntologyInferenceExportBehavior.None).ToFile(RDFModelEnums.RDFFormats.RdfXml, fileName+ ".xml");
 
             return ontology;
         }

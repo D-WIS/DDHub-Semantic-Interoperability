@@ -42,14 +42,14 @@
 ## IsConditionedBy <!-- VERB -->
 - Display name: IsConditionedBy
 - Parent verb: DWISVerb
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: ValidityCondition
 - Description: 
 - Examples: 
 ## IsConditionInput <!-- VERB -->
 - Display name: IsConditionInput
 - Parent verb: DWISVerb
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: ValidityCondition
 - Description: 
 - Examples: 

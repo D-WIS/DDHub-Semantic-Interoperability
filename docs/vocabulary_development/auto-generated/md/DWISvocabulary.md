@@ -492,8 +492,8 @@
 - Description: 
 - Examples:
 - Definition set: DrillingDataSemantics
-## DrillingData <!-- NOUN -->
-- Display name: DrillingData
+## DrillingDataPoint <!-- NOUN -->
+- Display name: DrillingDataPoint
 - Parent class: [DWISNoun](#DWISNoun)
 - Attributes:
   - IsValid
@@ -529,7 +529,7 @@
 - Definition set: DrillingDataSemantics
 ## ActiveVolume <!-- NOUN -->
 - Display name: ActiveVolume
-- Parent class: [DrillingData](#DrillingData)
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -537,7 +537,7 @@
 - Definition set: DrillingDataSemantics
 ## BitDepth <!-- NOUN -->
 - Display name: BitDepth
-- Parent class: [DrillingData](#DrillingData)
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -545,7 +545,7 @@
 - Definition set: DrillingDataSemantics
 ## DensityIn <!-- NOUN -->
 - Display name: DensityIn
-- Parent class: [DrillingData](#DrillingData)
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -553,7 +553,7 @@
 - Definition set: DrillingDataSemantics
 ## DensityOut <!-- NOUN -->
 - Display name: DensityOut
-- Parent class: [DrillingData](#DrillingData)
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -561,7 +561,7 @@
 - Definition set: DrillingDataSemantics
 ## DownholeECD <!-- NOUN -->
 - Display name: DownholeECD
-- Parent class: [DrillingData](#DrillingData)
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -569,7 +569,7 @@
 - Definition set: DrillingDataSemantics
 ## DownholePressure <!-- NOUN -->
 - Display name: DownholePressure
-- Parent class: [DrillingData](#DrillingData)
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -577,7 +577,7 @@
 - Definition set: DrillingDataSemantics
 ## DownholeRPM <!-- NOUN -->
 - Display name: DownholeRPM
-- Parent class: [DrillingData](#DrillingData)
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -585,7 +585,7 @@
 - Definition set: DrillingDataSemantics
 ## DownholeTemperature <!-- NOUN -->
 - Display name: DownholeTemperature
-- Parent class: [DrillingData](#DrillingData)
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -593,7 +593,7 @@
 - Definition set: DrillingDataSemantics
 ## DownholeTorque <!-- NOUN -->
 - Display name: DownholeTorque
-- Parent class: [DrillingData](#DrillingData)
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -601,7 +601,7 @@
 - Definition set: DrillingDataSemantics
 ## FlowRateIn <!-- NOUN -->
 - Display name: FlowRateIn
-- Parent class: [DrillingData](#DrillingData)
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -609,7 +609,7 @@
 - Definition set: DrillingDataSemantics
 ## FlowRateOut <!-- NOUN -->
 - Display name: FlowRateOut
-- Parent class: [DrillingData](#DrillingData)
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -617,7 +617,7 @@
 - Definition set: DrillingDataSemantics
 ## HoleDepth <!-- NOUN -->
 - Display name: HoleDepth
-- Parent class: [DrillingData](#DrillingData)
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -625,7 +625,7 @@
 - Definition set: DrillingDataSemantics
 ## HookLoad <!-- NOUN -->
 - Display name: HookLoad
-- Parent class: [DrillingData](#DrillingData)
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -633,7 +633,7 @@
 - Definition set: DrillingDataSemantics
 ## HookPosition <!-- NOUN -->
 - Display name: HookPosition
-- Parent class: [DrillingData](#DrillingData)
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -641,7 +641,7 @@
 - Definition set: DrillingDataSemantics
 ## HookVelocity <!-- NOUN -->
 - Display name: HookVelocity
-- Parent class: [DrillingData](#DrillingData)
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -649,7 +649,7 @@
 - Definition set: DrillingDataSemantics
 ## PumpRate <!-- NOUN -->
 - Display name: PumpRate
-- Parent class: [DrillingData](#DrillingData)
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -657,7 +657,7 @@
 - Definition set: DrillingDataSemantics
 ## ROP <!-- NOUN -->
 - Display name: ROP
-- Parent class: [DrillingData](#DrillingData)
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -665,7 +665,7 @@
 - Definition set: DrillingDataSemantics
 ## SPP <!-- NOUN -->
 - Display name: SPP
-- Parent class: [DrillingData](#DrillingData)
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -673,7 +673,7 @@
 - Definition set: DrillingDataSemantics
 ## SurfaceRPM <!-- NOUN -->
 - Display name: SurfaceRPM
-- Parent class: [DrillingData](#DrillingData)
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -681,7 +681,7 @@
 - Definition set: DrillingDataSemantics
 ## SurfaceTorque <!-- NOUN -->
 - Display name: SurfaceTorque
-- Parent class: [DrillingData](#DrillingData)
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -689,7 +689,7 @@
 - Definition set: DrillingDataSemantics
 ## TemperatureIn <!-- NOUN -->
 - Display name: TemperatureIn
-- Parent class: [DrillingData](#DrillingData)
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -697,7 +697,7 @@
 - Definition set: DrillingDataSemantics
 ## TemperatureOut <!-- NOUN -->
 - Display name: TemperatureOut
-- Parent class: [DrillingData](#DrillingData)
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -705,7 +705,7 @@
 - Definition set: DrillingDataSemantics
 ## TopOfStringPosition <!-- NOUN -->
 - Display name: TopOfStringPosition
-- Parent class: [DrillingData](#DrillingData)
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -713,7 +713,7 @@
 - Definition set: DrillingDataSemantics
 ## WOB <!-- NOUN -->
 - Display name: WOB
-- Parent class: [DrillingData](#DrillingData)
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -2063,7 +2063,7 @@
 ## HasFunction <!-- VERB -->
 - Display name: HasFunction
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DataFlowNode](#DataFlowNode)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2073,7 +2073,7 @@
 ## IsCommandFor <!-- VERB -->
 - Display name: IsCommandFor
 - Parent verb: [HasFunction](#HasFunction)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DWISNoun](#DWISNoun)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2083,7 +2083,7 @@
 ## IsComputationInput <!-- VERB -->
 - Display name: IsComputationInput
 - Parent verb: [HasFunction](#HasFunction)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [ComputationUnit](#ComputationUnit)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2093,7 +2093,7 @@
 ## IsLimitFor <!-- VERB -->
 - Display name: IsLimitFor
 - Parent verb: [HasFunction](#HasFunction)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [ControlSystem](#ControlSystem)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2103,7 +2103,7 @@
 ## IsSetPointFor <!-- VERB -->
 - Display name: IsSetPointFor
 - Parent verb: [HasFunction](#HasFunction)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [Controller](#Controller)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2113,7 +2113,7 @@
 ## IsSetPointRecommendationFor <!-- VERB -->
 - Display name: IsSetPointRecommendationFor
 - Parent verb: [HasFunction](#HasFunction)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [ControlSystem](#ControlSystem)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2123,7 +2123,7 @@
 ## IsTransformationInput <!-- VERB -->
 - Display name: IsTransformationInput
 - Parent verb: [HasFunction](#HasFunction)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [Transformation](#Transformation)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2133,7 +2133,7 @@
 ## IsBufferingInput <!-- VERB -->
 - Display name: IsBufferingInput
 - Parent verb: [IsTransformationInput](#IsTransformationInput)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [Buffering](#Buffering)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2153,7 +2153,7 @@
 ## IsResamplingInput <!-- VERB -->
 - Display name: IsResamplingInput
 - Parent verb: [IsTransformationInput](#IsTransformationInput)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [Resampling](#Resampling)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2163,7 +2163,7 @@
 ## IsTransmissionInput <!-- VERB -->
 - Display name: IsTransmissionInput
 - Parent verb: [HasFunction](#HasFunction)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [TransmissionLine](#TransmissionLine)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2173,7 +2173,7 @@
 ## IsGeneratedBy <!-- VERB -->
 - Display name: IsGeneratedBy
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DataFlowNode](#DataFlowNode)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2213,7 +2213,7 @@
 ## IsTransformationOutput <!-- VERB -->
 - Display name: IsTransformationOutput
 - Parent verb: [IsGeneratedBy](#IsGeneratedBy)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DataFlowNode](#DataFlowNode)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2223,7 +2223,7 @@
 ## IsBufferingOutput <!-- VERB -->
 - Display name: IsBufferingOutput
 - Parent verb: [IsTransformationOutput](#IsTransformationOutput)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [Buffering](#Buffering)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2253,7 +2253,7 @@
 ## IsResampledBy <!-- VERB -->
 - Display name: IsResampledBy
 - Parent verb: [IsTransformationOutput](#IsTransformationOutput)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [Resampling](#Resampling)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2263,7 +2263,7 @@
 ## IsTransmissionOutput <!-- VERB -->
 - Display name: IsTransmissionOutput
 - Parent verb: [IsGeneratedBy](#IsGeneratedBy)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [TransmissionLine](#TransmissionLine)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2293,7 +2293,7 @@
 ## IsConditionedBy <!-- VERB -->
 - Display name: IsConditionedBy
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [ValidityCondition](#ValidityCondition)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2303,7 +2303,7 @@
 ## IsConditionInput <!-- VERB -->
 - Display name: IsConditionInput
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [ValidityCondition](#ValidityCondition)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2343,8 +2343,8 @@
 ## HasDomain <!-- VERB -->
 - Display name: HasDomain
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DrillingData](#DrillingData)
-- Object class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -2353,8 +2353,8 @@
 ## HasTimeIntervalDomain <!-- VERB -->
 - Display name: HasTimeIntervalDomain
 - Parent verb: [HasDomain](#HasDomain)
-- Subject class: [DrillingData](#DrillingData)
-- Object class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -2383,7 +2383,7 @@
 ## HasValue <!-- VERB -->
 - Display name: HasValue
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DrillingSignal](#DrillingSignal)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2393,7 +2393,7 @@
 ## HasDynamicValue <!-- VERB -->
 - Display name: HasDynamicValue
 - Parent verb: [HasValue](#HasValue)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DynamicDrillingSignal](#DynamicDrillingSignal)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2403,7 +2403,7 @@
 ## HasStaticValue <!-- VERB -->
 - Display name: HasStaticValue
 - Parent verb: [HasValue](#HasValue)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DrillingSignal](#DrillingSignal)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2413,8 +2413,8 @@
 ## IsDependentOn <!-- VERB -->
 - Display name: IsDependentOn
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DrillingData](#DrillingData)
-- Object class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -2423,8 +2423,8 @@
 ## HasPressureReference <!-- VERB -->
 - Display name: HasPressureReference
 - Parent verb: [IsDependentOn](#IsDependentOn)
-- Subject class: [DrillingData](#DrillingData)
-- Object class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -2433,8 +2433,8 @@
 ## HasTemperatureReference <!-- VERB -->
 - Display name: HasTemperatureReference
 - Parent verb: [IsDependentOn](#IsDependentOn)
-- Subject class: [DrillingData](#DrillingData)
-- Object class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -2514,7 +2514,7 @@
 - Display name: HasLeftBranchCoordinates
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [HydraulicJunction](#HydraulicJunction)
-- Object class: [DrillingData](#DrillingData)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -2524,7 +2524,7 @@
 - Display name: HasRightBranchCoordinates
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [HydraulicJunction](#HydraulicJunction)
-- Object class: [DrillingData](#DrillingData)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -2533,7 +2533,7 @@
 ## IsHydraulicallyLocatedAt <!-- VERB -->
 - Display name: IsHydraulicallyLocatedAt
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [HydraulicLogicalElement](#HydraulicLogicalElement)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2744,7 +2744,7 @@
 - Display name: HasMechanicalStateValueFrom
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [MechanicalLogicalElement](#MechanicalLogicalElement)
-- Object class: [DrillingData](#DrillingData)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -2773,8 +2773,8 @@
 ## HasCoordinates <!-- VERB -->
 - Display name: HasCoordinates
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DrillingData](#DrillingData)
-- Object class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -2893,7 +2893,7 @@
 ## HasAcquisitionClock <!-- VERB -->
 - Display name: HasAcquisitionClock
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [Clock](#Clock)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2903,7 +2903,7 @@
 ## HasSourceClock <!-- VERB -->
 - Display name: HasSourceClock
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [Clock](#Clock)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2913,8 +2913,8 @@
 ## HasTransmissionDelay <!-- VERB -->
 - Display name: HasTransmissionDelay
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DrillingData](#DrillingData)
-- Object class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -2923,7 +2923,7 @@
 ## IsSynchronizationGroupInput <!-- VERB -->
 - Display name: IsSynchronizationGroupInput
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [SynchronizationGroup](#SynchronizationGroup)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2933,7 +2933,7 @@
 ## IsSynchronizationGroupOutput <!-- VERB -->
 - Display name: IsSynchronizationGroupOutput
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [SynchronizationGroup](#SynchronizationGroup)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2943,7 +2943,7 @@
 ## HasUncertainty <!-- VERB -->
 - Display name: HasUncertainty
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DrillingData](#DrillingData)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [SignalUncertainty](#SignalUncertainty)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -2954,7 +2954,7 @@
 - Display name: HasUncertaintyAccuracy
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [SensorUncertainty](#SensorUncertainty)
-- Object class: [DrillingData](#DrillingData)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -2994,7 +2994,7 @@
 - Display name: HasUncertaintyPrecision
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [SensorUncertainty](#SensorUncertainty)
-- Object class: [DrillingData](#DrillingData)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 

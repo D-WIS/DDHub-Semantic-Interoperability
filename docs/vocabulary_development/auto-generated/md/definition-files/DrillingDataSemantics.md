@@ -52,8 +52,8 @@
 - Description: 
 - Examples:
 - Definition set: DrillingDataSemantics
-## DrillingData <!-- NOUN -->
-- Display name: DrillingData
+## DrillingDataPoint <!-- NOUN -->
+- Display name: DrillingDataPoint
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Attributes:
   - IsValid
@@ -89,7 +89,7 @@
 - Definition set: DrillingDataSemantics
 ## ActiveVolume <!-- NOUN -->
 - Display name: ActiveVolume
-- Parent class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -97,7 +97,7 @@
 - Definition set: DrillingDataSemantics
 ## BitDepth <!-- NOUN -->
 - Display name: BitDepth
-- Parent class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -105,7 +105,7 @@
 - Definition set: DrillingDataSemantics
 ## DensityIn <!-- NOUN -->
 - Display name: DensityIn
-- Parent class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -113,7 +113,7 @@
 - Definition set: DrillingDataSemantics
 ## DensityOut <!-- NOUN -->
 - Display name: DensityOut
-- Parent class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -121,7 +121,7 @@
 - Definition set: DrillingDataSemantics
 ## DownholeECD <!-- NOUN -->
 - Display name: DownholeECD
-- Parent class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -129,7 +129,7 @@
 - Definition set: DrillingDataSemantics
 ## DownholePressure <!-- NOUN -->
 - Display name: DownholePressure
-- Parent class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -137,7 +137,7 @@
 - Definition set: DrillingDataSemantics
 ## DownholeRPM <!-- NOUN -->
 - Display name: DownholeRPM
-- Parent class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -145,7 +145,7 @@
 - Definition set: DrillingDataSemantics
 ## DownholeTemperature <!-- NOUN -->
 - Display name: DownholeTemperature
-- Parent class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -153,7 +153,7 @@
 - Definition set: DrillingDataSemantics
 ## DownholeTorque <!-- NOUN -->
 - Display name: DownholeTorque
-- Parent class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -161,7 +161,7 @@
 - Definition set: DrillingDataSemantics
 ## FlowRateIn <!-- NOUN -->
 - Display name: FlowRateIn
-- Parent class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -169,7 +169,7 @@
 - Definition set: DrillingDataSemantics
 ## FlowRateOut <!-- NOUN -->
 - Display name: FlowRateOut
-- Parent class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -177,7 +177,7 @@
 - Definition set: DrillingDataSemantics
 ## HoleDepth <!-- NOUN -->
 - Display name: HoleDepth
-- Parent class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -185,7 +185,7 @@
 - Definition set: DrillingDataSemantics
 ## HookLoad <!-- NOUN -->
 - Display name: HookLoad
-- Parent class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -193,7 +193,7 @@
 - Definition set: DrillingDataSemantics
 ## HookPosition <!-- NOUN -->
 - Display name: HookPosition
-- Parent class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -201,7 +201,7 @@
 - Definition set: DrillingDataSemantics
 ## HookVelocity <!-- NOUN -->
 - Display name: HookVelocity
-- Parent class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -209,7 +209,7 @@
 - Definition set: DrillingDataSemantics
 ## PumpRate <!-- NOUN -->
 - Display name: PumpRate
-- Parent class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -217,7 +217,7 @@
 - Definition set: DrillingDataSemantics
 ## ROP <!-- NOUN -->
 - Display name: ROP
-- Parent class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -225,7 +225,7 @@
 - Definition set: DrillingDataSemantics
 ## SPP <!-- NOUN -->
 - Display name: SPP
-- Parent class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -233,7 +233,7 @@
 - Definition set: DrillingDataSemantics
 ## SurfaceRPM <!-- NOUN -->
 - Display name: SurfaceRPM
-- Parent class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -241,7 +241,7 @@
 - Definition set: DrillingDataSemantics
 ## SurfaceTorque <!-- NOUN -->
 - Display name: SurfaceTorque
-- Parent class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -249,7 +249,7 @@
 - Definition set: DrillingDataSemantics
 ## TemperatureIn <!-- NOUN -->
 - Display name: TemperatureIn
-- Parent class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -257,7 +257,7 @@
 - Definition set: DrillingDataSemantics
 ## TemperatureOut <!-- NOUN -->
 - Display name: TemperatureOut
-- Parent class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -265,7 +265,7 @@
 - Definition set: DrillingDataSemantics
 ## TopOfStringPosition <!-- NOUN -->
 - Display name: TopOfStringPosition
-- Parent class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -273,7 +273,7 @@
 - Definition set: DrillingDataSemantics
 ## WOB <!-- NOUN -->
 - Display name: WOB
-- Parent class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
 - Description: 
@@ -322,8 +322,8 @@
 ## HasDomain <!-- VERB -->
 - Display name: HasDomain
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
-- Object class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -332,8 +332,8 @@
 ## HasTimeIntervalDomain <!-- VERB -->
 - Display name: HasTimeIntervalDomain
 - Parent verb: [HasDomain](./DrillingDataSemantics.md#HasDomain)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
-- Object class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -362,7 +362,7 @@
 ## HasValue <!-- VERB -->
 - Display name: HasValue
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [DrillingSignal](./DrillingDataSemantics.md#DrillingSignal)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -372,7 +372,7 @@
 ## HasDynamicValue <!-- VERB -->
 - Display name: HasDynamicValue
 - Parent verb: [HasValue](./DrillingDataSemantics.md#HasValue)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [DynamicDrillingSignal](./DrillingDataSemantics.md#DynamicDrillingSignal)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -382,7 +382,7 @@
 ## HasStaticValue <!-- VERB -->
 - Display name: HasStaticValue
 - Parent verb: [HasValue](./DrillingDataSemantics.md#HasValue)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [DrillingSignal](./DrillingDataSemantics.md#DrillingSignal)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -392,8 +392,8 @@
 ## IsDependentOn <!-- VERB -->
 - Display name: IsDependentOn
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
-- Object class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -402,8 +402,8 @@
 ## HasPressureReference <!-- VERB -->
 - Display name: HasPressureReference
 - Parent verb: [IsDependentOn](./DrillingDataSemantics.md#IsDependentOn)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
-- Object class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -412,8 +412,8 @@
 ## HasTemperatureReference <!-- VERB -->
 - Display name: HasTemperatureReference
 - Parent verb: [IsDependentOn](./DrillingDataSemantics.md#IsDependentOn)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
-- Object class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 

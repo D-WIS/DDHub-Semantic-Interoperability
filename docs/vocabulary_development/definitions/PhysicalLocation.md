@@ -213,8 +213,8 @@ Refers to:
 ## HasCoordinates <!-- VERB -->
 - Display name: HasCoordinates
 - Parent verb: DWISVerb
-- Subject class: DrillingData
-- Object class: DrillingData
+- Subject class: DrillingDataPoint
+- Object class: DrillingDataPoint
 - Description: 
 - Examples: 
 ## HasReferenceFrame <!-- VERB -->

@@ -53,7 +53,7 @@
 ## HasUncertainty <!-- VERB -->
 - Display name: HasUncertainty
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [SignalUncertainty](./Uncertainty.md#SignalUncertainty)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -64,7 +64,7 @@
 - Display name: HasUncertaintyAccuracy
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [SensorUncertainty](./Uncertainty.md#SensorUncertainty)
-- Object class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -104,7 +104,7 @@
 - Display name: HasUncertaintyPrecision
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [SensorUncertainty](./Uncertainty.md#SensorUncertainty)
-- Object class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 

@@ -45,7 +45,7 @@
 ## IsConditionedBy <!-- VERB -->
 - Display name: IsConditionedBy
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [ValidityCondition](./DataValidity.md#ValidityCondition)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -55,7 +55,7 @@
 ## IsConditionInput <!-- VERB -->
 - Display name: IsConditionInput
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [ValidityCondition](./DataValidity.md#ValidityCondition)
 - Min cardinality: -1
 - Max cardinality: -1

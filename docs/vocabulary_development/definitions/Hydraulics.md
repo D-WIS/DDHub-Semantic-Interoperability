@@ -194,20 +194,20 @@
 - Display name: HasLeftBranchCoordinates
 - Parent verb: DWISVerb
 - Subject class: HydraulicJunction
-- Object class: DrillingData
+- Object class: DrillingDataPoint
 - Description: 
 - Examples: 
 ## HasRightBranchCoordinates <!-- VERB -->
 - Display name: HasRightBranchCoordinates
 - Parent verb: DWISVerb
 - Subject class: HydraulicJunction
-- Object class: DrillingData
+- Object class: DrillingDataPoint
 - Description: 
 - Examples: 
 ## IsHydraulicallyLocatedAt <!-- VERB -->
 - Display name: IsHydraulicallyLocatedAt
 - Parent verb: DWISVerb
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: HydraulicLogicalElement
 - Description: 
 - Examples: 

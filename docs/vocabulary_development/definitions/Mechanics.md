@@ -49,7 +49,7 @@
 - Display name: HasMechanicalStateValueFrom
 - Parent verb: DWISVerb
 - Subject class: MechanicalLogicalElement
-- Object class: DrillingData
+- Object class: DrillingDataPoint
 - Description: 
 - Examples: 
 ## IsMechanicallyConnectTo <!-- VERB -->

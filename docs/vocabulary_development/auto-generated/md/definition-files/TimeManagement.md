@@ -55,7 +55,7 @@
 ## HasAcquisitionClock <!-- VERB -->
 - Display name: HasAcquisitionClock
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [Clock](./TimeManagement.md#Clock)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -65,7 +65,7 @@
 ## HasSourceClock <!-- VERB -->
 - Display name: HasSourceClock
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [Clock](./TimeManagement.md#Clock)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -75,8 +75,8 @@
 ## HasTransmissionDelay <!-- VERB -->
 - Display name: HasTransmissionDelay
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
-- Object class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -85,7 +85,7 @@
 ## IsSynchronizationGroupInput <!-- VERB -->
 - Display name: IsSynchronizationGroupInput
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [SynchronizationGroup](./TimeManagement.md#SynchronizationGroup)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -95,7 +95,7 @@
 ## IsSynchronizationGroupOutput <!-- VERB -->
 - Display name: IsSynchronizationGroupOutput
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [SynchronizationGroup](./TimeManagement.md#SynchronizationGroup)
 - Min cardinality: -1
 - Max cardinality: -1

@@ -49,7 +49,7 @@
 ## HasUncertainty <!-- VERB -->
 - Display name: HasUncertainty
 - Parent verb: DWISVerb
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: SignalUncertainty
 - Description: 
 - Examples: 
@@ -57,7 +57,7 @@
 - Display name: HasUncertaintyAccuracy
 - Parent verb: DWISVerb
 - Subject class: SensorUncertainty
-- Object class: DrillingData
+- Object class: DrillingDataPoint
 - Description: 
 - Examples: 
 ## HasUncertaintyMax <!-- VERB -->
@@ -85,7 +85,7 @@
 - Display name: HasUncertaintyPrecision
 - Parent verb: DWISVerb
 - Subject class: SensorUncertainty
-- Object class: DrillingData
+- Object class: DrillingDataPoint
 - Description: 
 - Examples: 
 ## HasUncertaintyRelativeValue <!-- VERB -->

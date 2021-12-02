@@ -339,7 +339,7 @@
 ## HasFunction <!-- VERB -->
 - Display name: HasFunction
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [DataFlowNode](./DataFlow.md#DataFlowNode)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -349,7 +349,7 @@
 ## IsCommandFor <!-- VERB -->
 - Display name: IsCommandFor
 - Parent verb: [HasFunction](./DataFlow.md#HasFunction)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -359,7 +359,7 @@
 ## IsComputationInput <!-- VERB -->
 - Display name: IsComputationInput
 - Parent verb: [HasFunction](./DataFlow.md#HasFunction)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [ComputationUnit](./DataFlow.md#ComputationUnit)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -369,7 +369,7 @@
 ## IsLimitFor <!-- VERB -->
 - Display name: IsLimitFor
 - Parent verb: [HasFunction](./DataFlow.md#HasFunction)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [ControlSystem](./DataFlow.md#ControlSystem)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -379,7 +379,7 @@
 ## IsSetPointFor <!-- VERB -->
 - Display name: IsSetPointFor
 - Parent verb: [HasFunction](./DataFlow.md#HasFunction)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [Controller](./DataFlow.md#Controller)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -389,7 +389,7 @@
 ## IsSetPointRecommendationFor <!-- VERB -->
 - Display name: IsSetPointRecommendationFor
 - Parent verb: [HasFunction](./DataFlow.md#HasFunction)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [ControlSystem](./DataFlow.md#ControlSystem)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -399,7 +399,7 @@
 ## IsTransformationInput <!-- VERB -->
 - Display name: IsTransformationInput
 - Parent verb: [HasFunction](./DataFlow.md#HasFunction)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [Transformation](./DataFlow.md#Transformation)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -409,7 +409,7 @@
 ## IsBufferingInput <!-- VERB -->
 - Display name: IsBufferingInput
 - Parent verb: [IsTransformationInput](./DataFlow.md#IsTransformationInput)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [Buffering](./DataFlow.md#Buffering)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -429,7 +429,7 @@
 ## IsResamplingInput <!-- VERB -->
 - Display name: IsResamplingInput
 - Parent verb: [IsTransformationInput](./DataFlow.md#IsTransformationInput)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [Resampling](./DataFlow.md#Resampling)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -439,7 +439,7 @@
 ## IsTransmissionInput <!-- VERB -->
 - Display name: IsTransmissionInput
 - Parent verb: [HasFunction](./DataFlow.md#HasFunction)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [TransmissionLine](./DataFlow.md#TransmissionLine)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -449,7 +449,7 @@
 ## IsGeneratedBy <!-- VERB -->
 - Display name: IsGeneratedBy
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [DataFlowNode](./DataFlow.md#DataFlowNode)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -489,7 +489,7 @@
 ## IsTransformationOutput <!-- VERB -->
 - Display name: IsTransformationOutput
 - Parent verb: [IsGeneratedBy](./DataFlow.md#IsGeneratedBy)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [DataFlowNode](./DataFlow.md#DataFlowNode)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -499,7 +499,7 @@
 ## IsBufferingOutput <!-- VERB -->
 - Display name: IsBufferingOutput
 - Parent verb: [IsTransformationOutput](./DataFlow.md#IsTransformationOutput)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [Buffering](./DataFlow.md#Buffering)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -529,7 +529,7 @@
 ## IsResampledBy <!-- VERB -->
 - Display name: IsResampledBy
 - Parent verb: [IsTransformationOutput](./DataFlow.md#IsTransformationOutput)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [Resampling](./DataFlow.md#Resampling)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -539,7 +539,7 @@
 ## IsTransmissionOutput <!-- VERB -->
 - Display name: IsTransmissionOutput
 - Parent verb: [IsGeneratedBy](./DataFlow.md#IsGeneratedBy)
-- Subject class: [DrillingData](./DrillingDataSemantics.md#DrillingData)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [TransmissionLine](./DataFlow.md#TransmissionLine)
 - Min cardinality: -1
 - Max cardinality: -1

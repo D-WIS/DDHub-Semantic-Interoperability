@@ -49,8 +49,8 @@
 - Specialization:
 - Description: 
 - Examples:
-## DrillingData <!-- NOUN -->
-- Display name: DrillingData
+## DrillingDataPoint <!-- NOUN -->
+- Display name: DrillingDataPoint
 - Parent class: DWISNoun
 - Attributes:
   - IsValid
@@ -86,168 +86,168 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Examples:
 ## ActiveVolume <!-- NOUN -->
 - Display name: ActiveVolume
-- Parent class: DrillingData
+- Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## BitDepth <!-- NOUN -->
 - Display name: BitDepth
-- Parent class: DrillingData
+- Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## DensityIn <!-- NOUN -->
 - Display name: DensityIn
-- Parent class: DrillingData
+- Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## DensityOut <!-- NOUN -->
 - Display name: DensityOut
-- Parent class: DrillingData
+- Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## DownholeECD <!-- NOUN -->
 - Display name: DownholeECD
-- Parent class: DrillingData
+- Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## DownholePressure <!-- NOUN -->
 - Display name: DownholePressure
-- Parent class: DrillingData
+- Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## DownholeRPM <!-- NOUN -->
 - Display name: DownholeRPM
-- Parent class: DrillingData
+- Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## DownholeTemperature <!-- NOUN -->
 - Display name: DownholeTemperature
-- Parent class: DrillingData
+- Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## DownholeTorque <!-- NOUN -->
 - Display name: DownholeTorque
-- Parent class: DrillingData
+- Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## FlowRateIn <!-- NOUN -->
 - Display name: FlowRateIn
-- Parent class: DrillingData
+- Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## FlowRateOut <!-- NOUN -->
 - Display name: FlowRateOut
-- Parent class: DrillingData
+- Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## HoleDepth <!-- NOUN -->
 - Display name: HoleDepth
-- Parent class: DrillingData
+- Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## HookLoad <!-- NOUN -->
 - Display name: HookLoad
-- Parent class: DrillingData
+- Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## HookPosition <!-- NOUN -->
 - Display name: HookPosition
-- Parent class: DrillingData
+- Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## HookVelocity <!-- NOUN -->
 - Display name: HookVelocity
-- Parent class: DrillingData
+- Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## PumpRate <!-- NOUN -->
 - Display name: PumpRate
-- Parent class: DrillingData
+- Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## ROP <!-- NOUN -->
 - Display name: ROP
-- Parent class: DrillingData
+- Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## SPP <!-- NOUN -->
 - Display name: SPP
-- Parent class: DrillingData
+- Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## SurfaceRPM <!-- NOUN -->
 - Display name: SurfaceRPM
-- Parent class: DrillingData
+- Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## SurfaceTorque <!-- NOUN -->
 - Display name: SurfaceTorque
-- Parent class: DrillingData
+- Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## TemperatureIn <!-- NOUN -->
 - Display name: TemperatureIn
-- Parent class: DrillingData
+- Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## TemperatureOut <!-- NOUN -->
 - Display name: TemperatureOut
-- Parent class: DrillingData
+- Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## TopOfStringPosition <!-- NOUN -->
 - Display name: TopOfStringPosition
-- Parent class: DrillingData
+- Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## WOB <!-- NOUN -->
 - Display name: WOB
-- Parent class: DrillingData
+- Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
 - Description: 
@@ -294,15 +294,15 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 ## HasDomain <!-- VERB -->
 - Display name: HasDomain
 - Parent verb: DWISVerb
-- Subject class: DrillingData
-- Object class: DrillingData
+- Subject class: DrillingDataPoint
+- Object class: DrillingDataPoint
 - Description: 
 - Examples: 
 ## HasTimeIntervalDomain <!-- VERB -->
 - Display name: HasTimeIntervalDomain
 - Parent verb: HasDomain
-- Subject class: DrillingData
-- Object class: DrillingData
+- Subject class: DrillingDataPoint
+- Object class: DrillingDataPoint
 - Description: 
 - Examples: 
 ## HasEndPoint <!-- VERB -->
@@ -322,43 +322,43 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 ## HasValue <!-- VERB -->
 - Display name: HasValue
 - Parent verb: DWISVerb
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: DrillingSignal
 - Description: 
 - Examples: 
 ## HasDynamicValue <!-- VERB -->
 - Display name: HasDynamicValue
 - Parent verb: HasValue
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: DynamicDrillingSignal
 - Description: 
 - Examples: 
 ## HasStaticValue <!-- VERB -->
 - Display name: HasStaticValue
 - Parent verb: HasValue
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: DrillingSignal
 - Description: 
 - Examples: 
 ## IsDependentOn <!-- VERB -->
 - Display name: IsDependentOn
 - Parent verb: DWISVerb
-- Subject class: DrillingData
-- Object class: DrillingData
+- Subject class: DrillingDataPoint
+- Object class: DrillingDataPoint
 - Description: 
 - Examples: 
 ## HasPressureReference <!-- VERB -->
 - Display name: HasPressureReference
 - Parent verb: IsDependentOn
-- Subject class: DrillingData
-- Object class: DrillingData
+- Subject class: DrillingDataPoint
+- Object class: DrillingDataPoint
 - Description: 
 - Examples: 
 ## HasTemperatureReference <!-- VERB -->
 - Display name: HasTemperatureReference
 - Parent verb: IsDependentOn
-- Subject class: DrillingData
-- Object class: DrillingData
+- Subject class: DrillingDataPoint
+- Object class: DrillingDataPoint
 - Description: 
 - Examples: 
 ## IsProvidedBy <!-- VERB -->

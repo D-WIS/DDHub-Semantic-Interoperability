@@ -302,56 +302,56 @@
 ## HasFunction <!-- VERB -->
 - Display name: HasFunction
 - Parent verb: DWISVerb
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: DataFlowNode
 - Description: 
 - Examples: 
 ## IsCommandFor <!-- VERB -->
 - Display name: IsCommandFor
 - Parent verb: HasFunction
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: DWISNoun
 - Description: 
 - Examples: 
 ## IsComputationInput <!-- VERB -->
 - Display name: IsComputationInput
 - Parent verb: HasFunction
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: ComputationUnit
 - Description: 
 - Examples: 
 ## IsLimitFor <!-- VERB -->
 - Display name: IsLimitFor
 - Parent verb: HasFunction
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: ControlSystem
 - Description: 
 - Examples: 
 ## IsSetPointFor <!-- VERB -->
 - Display name: IsSetPointFor
 - Parent verb: HasFunction
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: Controller
 - Description: 
 - Examples: 
 ## IsSetPointRecommendationFor <!-- VERB -->
 - Display name: IsSetPointRecommendationFor
 - Parent verb: HasFunction
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: ControlSystem
 - Description: 
 - Examples: 
 ## IsTransformationInput <!-- VERB -->
 - Display name: IsTransformationInput
 - Parent verb: HasFunction
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: Transformation
 - Description: 
 - Examples: 
 ## IsBufferingInput <!-- VERB -->
 - Display name: IsBufferingInput
 - Parent verb: IsTransformationInput
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: Buffering
 - Description: 
 - Examples: 
@@ -365,21 +365,21 @@
 ## IsResamplingInput <!-- VERB -->
 - Display name: IsResamplingInput
 - Parent verb: IsTransformationInput
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: Resampling
 - Description: 
 - Examples: 
 ## IsTransmissionInput <!-- VERB -->
 - Display name: IsTransmissionInput
 - Parent verb: HasFunction
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: TransmissionLine
 - Description: 
 - Examples: 
 ## IsGeneratedBy <!-- VERB -->
 - Display name: IsGeneratedBy
 - Parent verb: DWISVerb
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: DataFlowNode
 - Description: 
 - Examples: 
@@ -407,14 +407,14 @@
 ## IsTransformationOutput <!-- VERB -->
 - Display name: IsTransformationOutput
 - Parent verb: IsGeneratedBy
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: DataFlowNode
 - Description: 
 - Examples: 
 ## IsBufferingOutput <!-- VERB -->
 - Display name: IsBufferingOutput
 - Parent verb: IsTransformationOutput
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: Buffering
 - Description: 
 - Examples: 
@@ -435,14 +435,14 @@
 ## IsResampledBy <!-- VERB -->
 - Display name: IsResampledBy
 - Parent verb: IsTransformationOutput
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: Resampling
 - Description: 
 - Examples: 
 ## IsTransmissionOutput <!-- VERB -->
 - Display name: IsTransmissionOutput
 - Parent verb: IsGeneratedBy
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: TransmissionLine
 - Description: 
 - Examples: 

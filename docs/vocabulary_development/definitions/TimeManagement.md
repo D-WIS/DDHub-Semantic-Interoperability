@@ -52,35 +52,35 @@
 ## HasAcquisitionClock <!-- VERB -->
 - Display name: HasAcquisitionClock
 - Parent verb: DWISVerb
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: Clock
 - Description: 
 - Examples: 
 ## HasSourceClock <!-- VERB -->
 - Display name: HasSourceClock
 - Parent verb: DWISVerb
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: Clock
 - Description: 
 - Examples: 
 ## HasTransmissionDelay <!-- VERB -->
 - Display name: HasTransmissionDelay
 - Parent verb: DWISVerb
-- Subject class: DrillingData
-- Object class: DrillingData
+- Subject class: DrillingDataPoint
+- Object class: DrillingDataPoint
 - Description: 
 - Examples: 
 ## IsSynchronizationGroupInput <!-- VERB -->
 - Display name: IsSynchronizationGroupInput
 - Parent verb: DWISVerb
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: SynchronizationGroup
 - Description: 
 - Examples: 
 ## IsSynchronizationGroupOutput <!-- VERB -->
 - Display name: IsSynchronizationGroupOutput
 - Parent verb: DWISVerb
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: SynchronizationGroup
 - Description: 
 - Examples: 
