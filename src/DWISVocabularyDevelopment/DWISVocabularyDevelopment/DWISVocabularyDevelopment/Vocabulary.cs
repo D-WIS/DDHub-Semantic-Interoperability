@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace DWISVocabularyDevelopment
@@ -36,5 +37,85 @@ namespace DWISVocabularyDevelopment
             return Verbs.Contains(verb);
         }
 
+        public bool CheckForDuplicates(out ICollection<Noun> duplicatedNouns,out ICollection<Verb> duplicatedVerbs)
+        {
+            duplicatedNouns = new List<Noun>();
+            duplicatedVerbs = new List<Verb>();
+            bool ok = true;
+            foreach (Noun n in Nouns)
+            {
+                var all = Nouns.FindAll(noun => noun.Name == n.Name);
+                if (all.Count > 1)
+                {
+                    ok = false;
+                    duplicatedNouns.Add(n);
+                }
+            }
+            foreach (Verb v in Verbs)
+            {
+                var all = Verbs.FindAll(verb => verb.Name == v.Name);
+                if (all.Count > 1)
+                {
+                    ok = false;
+                    duplicatedVerbs.Add(v);
+                }
+            }
+            return ok;
+        }
+
+
+
+        public void ToTrees(out Tree<Noun> nounTree, out Tree<Verb> verbTree)
+        {
+            nounTree = new Tree<Noun>();
+            foreach (Noun n in Nouns)
+            {
+                if (nounTree.GetOrDefault(n) == null)
+                {
+                    Tree<Noun> local = new Tree<Noun>(n);
+                    AddToTree(local, nounTree, Nouns, n1 => Nouns.Find(n2 => n2.Name == n1.ParentNounName));
+                }
+            }
+            verbTree = new Tree<Verb>();
+            foreach (Verb v in Verbs)
+            {
+                if (verbTree.GetOrDefault(v) == null)
+                {
+                    Tree<Verb> local = new Tree<Verb>(v);
+                    AddToTree(local, verbTree, Verbs, n1 => Verbs.Find(n2 => n2.Name == n1.ParentVerbName));
+                }
+            }
+        }
+
+        private static void AddToTree<T>(Tree<T> nodeItem, Tree<T> tree, List<T> allItems, Func<T, T> getParent)
+        {
+            Tree<T> toAttach = nodeItem;
+            Tree<T> treeNode = null;
+            while (treeNode == null)
+            {
+                T parent = getParent(toAttach.RootItem);
+                if (parent == null)
+                {
+                    tree.RootItem = toAttach.RootItem;
+                    tree.Children = toAttach.Children;
+                    treeNode = tree;
+                }
+                else
+                {
+                    treeNode = tree.GetOrDefault(parent);
+                    if (treeNode != null)
+                    {
+                        toAttach.AttachToParent(treeNode);
+                        toAttach = treeNode;
+                    }
+                    else
+                    {
+                        Tree<T> newTree = new Tree<T>(parent);
+                        toAttach.AttachToParent(newTree);
+                        toAttach = newTree;
+                    }
+                }
+            }     
+        }
     }
 }

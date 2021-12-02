@@ -1,6 +1,7 @@
 ﻿using System;
 using DWISVocabularyDevelopment;
 using VocabularyUtils;
+using System.Collections.Generic;
 namespace VocabularyParseTest
 {
     class Program
@@ -11,11 +12,23 @@ namespace VocabularyParseTest
             //    @"C:\Users\beda\source\repos\D-WIS\DDHub-Semantic-Interoperability\docs\vocabulary_development\definitions\DataFlow.md";
 
 
+           var ont =  DWISVocabulary.OWL.OntologyGeneration.GenerateOntology();
+
+
+
             string folderName = @"C:\Users\beda\source\repos\D-WIS\DDHub-Semantic-Interoperability\docs\vocabulary_development\definitions\";
 
 
-            VocabularyParsing.FromFolder(folderName, out DWISVocabulary vocabulary);
+            VocabularyParsing.FromFolder(folderName, out DWISVocabularyDevelopment.DWISVocabulary vocabulary);
 
+
+            vocabulary.CheckForDuplicates(out ICollection<Noun> duplicatedNouns, out ICollection<Verb> duplicatedVerbs);
+
+            vocabulary.ToTrees(out Tree<Noun> nounTree, out Tree<Verb> verbTree);
+
+            int nounTreeCount = nounTree.Count();
+
+            int verbTreeCount = verbTree.Count();
 
            // VocabularyParsing.FromMDFile(fileName, out DefinitionSet definitionSet);
 
