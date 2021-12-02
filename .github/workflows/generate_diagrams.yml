@@ -9,7 +9,7 @@ jobs:
   generate-diagrams-for-generated-mds:
     runs-on: ubuntu-latest
     env:
-      DEFINITION_FOLDER: "${{ github.workspace }}/docs/vocabulary_development/auto-generated"
+      DEFINITION_FOLDER: "${{ github.workspace }}/docs/vocabulary_development/auto-generated/md/definition-files"
       OUTPUT_FOLDER: "${{ github.workspace }}/docs/vocabulary_development/diagrams"
       PNGFILE_FOLDER: "${{ github.workspace }}/docs/vocabulary_development/diagrams/generated"
       SCRIPT_PATH: "${{ github.workspace }}/docs/vocabulary_development/scripts"
