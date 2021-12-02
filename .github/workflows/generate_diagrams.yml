@@ -15,7 +15,9 @@ jobs:
     
     steps:
       - uses: actions/checkout@v2
-      - name: generate-diagrams
+      - name: Setup Graphviz
+        uses: ts-graphviz/setup-graphviz@v1
+      - name: Generate diagrams
         run: |
           cd $SCRIPT_PATH
           pip install -r requirements.txt
