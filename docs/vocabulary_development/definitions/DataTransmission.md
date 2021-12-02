@@ -7,7 +7,10 @@
 - Attributes:
   - RefreshRate
     - Type: double
-    - Description: 
+    - Description: Expected maximum refresh rate for individual signals transmitted by a telemetry instance in hz
+  - Latency
+    - Type: double
+    - Description: Expected latency added to signals transmitted by a telemetry instance in seconds. Note that this does not include latency added by Refresh rate
   - NumberOfRepeaters
     - Type: int
     - Description: 
@@ -23,35 +26,42 @@
 - Attributes:
 - Specialization:
 - Description: 
-- Examples:
+- Examples: Technology that allows transfer of downhole data to the surface.
 ## MudPulseTelemetry <!-- NOUN -->
 - Display name: MudPulseTelemetry
 - Parent class: DownHoleTelemetry
 - Attributes:
 - Specialization:
-- Description: 
-- Examples:
+- Description: A method that allows transfer of downhole data to the surface via pressure pulses sent trough the drilling fluid.
+- Examples: NOV BlackStar II dual-telemetry MWD
+## ElectromagneticTelemetry <!-- NOUN -->
+- Display name: ElectromagneticTelemetry
+- Parent class: DownHoleTelemetry
+- Attributes:
+- Specialization:
+- Description: A method that allows transfer of downhole data to the surface via electromagnetic waves sent trough the drilling formation.
+- Examples: APS SureShot-EM, NOV BlackStar II EM MWD
 ## WiredPipeTelemetry <!-- NOUN -->
 - Display name: WiredPipeTelemetry
 - Parent class: DownHoleTelemetry
 - Attributes:
 - Specialization:
-- Description: 
-- Examples:
+- Description: A method that allows transfer of downhole data to the surface via electrical connections through the drill string.
+- Examples: Intelliserv Wired Drill Pipe, Reelwell DualLink
 ## TopSideTelemetry <!-- NOUN -->
 - Display name: TopSideTelemetry
 - Parent class: Telemetry
 - Attributes:
 - Specialization:
-- Description: 
-- Examples:
+- Description: Method that allows transfer of data from surface systems.
+- Examples: NOVOS, Cyberbase, DEAL
 
 
 # VERBS
 ## IsTransmittedBy <!-- VERB -->
 - Display name: IsTransmittedBy
 - Parent verb: DWISVerb
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Subject class: DrillingData
+- Object class: Telemetry
 - Description: 
-- Examples: 
+- Examples: EMS DWOB is transmitted by WiredPipeTelemetry
