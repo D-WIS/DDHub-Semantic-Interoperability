@@ -213,7 +213,7 @@ Refers to:
 ## HasCoordinates <!-- VERB -->
 - Display name: HasCoordinates
 - Parent verb: DWISVerb
-- Subject class: DrillingDataPoint
+- Subject class: Location
 - Object class: DrillingDataPoint
 - Description: 
 - Examples: 
@@ -227,14 +227,14 @@ Refers to:
 ## HasReferenceFrameOrigin <!-- VERB -->
 - Display name: HasReferenceFrameOrigin
 - Parent verb: DWISVerb
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Subject class: ReferenceFrame
+- Object class: Location
 - Description: 
 - Examples: 
 ## IsPhysicallyLocatedAt <!-- VERB -->
 - Display name: IsPhysicallyLocatedAt
 - Parent verb: DWISVerb
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Subject class: DrillingDataPoint
+- Object class: Location
 - Description: 
 - Examples: 
