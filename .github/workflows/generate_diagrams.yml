@@ -1,0 +1,26 @@
+name: Generate Diagrams
+on: 
+  workflow_dispatch:
+  push: # push must be changed to trigger after md's have been generated (workflow trigger)
+
+
+
+jobs:
+  generate-diagrams-for-generated-mds:
+    runs-on: ubuntu-latest
+    env:
+      DEFINITION_FOLDER: "${{ github.workspace }}/docs/vocabulary_development/auto-generated"
+      PNGFILE_FOLDER: "${{ github.workspace }}/docs/vocabulary_development/diagrams/generated"
+      SCRIPT_PATH: "${{ github.workspace }}/docs/vocabulary_development/scripts"
+    steps:
+      - uses: actions/checkout@v2
+      - name: generate-diagrams
+        run: |
+          cd $SCRIPT_PATH
+          pip -r requirements.txt
+          python generate_diagrams.py
+      #also upload the generated files as artifacts. possibly not strictly neccessary
+       - uses: actions/upload-artifact@v2 
+        with:
+          name: generated-diagrams
+          path: ${{ env.PNGFILE_FOLDER }}
