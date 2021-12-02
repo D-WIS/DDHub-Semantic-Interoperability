@@ -18,7 +18,7 @@ jobs:
       - name: generate-diagrams
         run: |
           cd $SCRIPT_PATH
-          pip -r requirements.txt
+          pip install -r requirements.txt
           python generate_diagrams.py
       #also upload the generated files as artifacts. possibly not strictly neccessary
       - uses: actions/upload-artifact@v2 
