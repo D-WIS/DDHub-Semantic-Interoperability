@@ -53,6 +53,20 @@ topLevelNode = "DWISNoun"
 
 print(folder)
 
+def getClassName(line):
+    """
+    Added to allow the use of both Alt text for links, and unlinked class references
+    """
+    if line.find("[")>-1:
+        c = line[line.find("[")+1:line.find("]")]
+    else:
+        c = line[line.find(":")+1:].strip()
+
+    if c!="":
+        return c
+    else:
+        return None
+
 
 def parseContents(contents):
     nodes = []
@@ -70,13 +84,17 @@ def parseContents(contents):
             subjectClass = None
             objectClass = None
 
-            if noun not in nodes:
+            if noun != None and noun not in nodes:
                 nodes.append(noun)
         elif line.startswith("- Parent class:") and noun!=None:
             # found the parent relationship
-            parentClass = line[line.find("[")+1:line.find("]")]
-            if parentClass not in nodes:
+            #parentClass = line[line.find("[")+1:line.find("]")]
+            parentClass = getClassName(line)
+            if parentClass!=None and parentClass not in nodes:
                 nodes.append(parentClass)
+
+            # if parentClass!=None:
+            #     print("ParentClass: '{}'".format(parentClass))
             
             if noun!=None and parentClass!=None:
                 r = [noun,parentClass,{'label':"SUBCLASS_OF"}]
@@ -92,18 +110,20 @@ def parseContents(contents):
 
             verb = line[line.find(" ")+1:line.find(" <")]
         elif line.startswith("- Subject class:") and verb!=None:
-            subjectClass = line[line.find("[")+1:line.find("]")]
+            #subjectClass = line[line.find("[")+1:line.find("]")]
+            subjectClass = getClassName(line)
         elif line.startswith("- Object class:") and verb!=None:
-            objectClass = line[line.find("[")+1:line.find("]")]
+            #objectClass = line[line.find("[")+1:line.find("]")]
+            objectClass = getClassName(line)
 
 
         
         
         if verb!=None and subjectClass!=None and objectClass!=None:
             r = [subjectClass,objectClass,{'label':verb}]
-            if objectClass not in nodes:
+            if objectClass != None and objectClass not in nodes:
                 nodes.append(objectClass)
-            if subjectClass not in nodes:
+            if subjectClass != None and subjectClass not in nodes:
                 nodes.append(subjectClass)
             if r not in relationships:
                 #print("{} {} {}".format(subjectClass,verb,objectClass))
@@ -119,6 +139,7 @@ def parseContents(contents):
 
             
         #print(line)
+        
     return nodes,relationships,ignoredRels
             
 # construct empty graph
@@ -173,7 +194,14 @@ for filename in filenames:
     #write_dot(graphs[filename],dotfolder + "/" + dotFileName)  # Ignoring dot files for now
 
     graph = to_pydot(graphs[filename])
-    graph.write_png(pngFolder+"/"+pngFileName)
+
+    thePngFileName = "{}/{}".format(pngFolder,pngFileName)
+    print("Write file {}".format(thePngFileName))
+    try:
+        graph.write_png(thePngFileName)
+    except:
+        print("Writing {} failed!!!".format(thePngFileName))
+
 
     # update readme
     generatedReadmeContents.append("[{}]({})".format(os.path.basename(filename),filename))
@@ -224,4 +252,7 @@ dotFileName = filename+".dot"
 pngFileName = filename+".png"
 #write_dot(G,dotfolder + "/" + dotFileName)
 graph = to_pydot(G)
-graph.write_png(pngFolder+"/"+pngFileName)
+try:
+    graph.write_png(pngFolder+"/"+pngFileName)
+except:
+    print("Writing everything.png failed!!!")
