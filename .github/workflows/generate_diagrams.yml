@@ -12,6 +12,7 @@ jobs:
       DEFINITION_FOLDER: "${{ github.workspace }}/docs/vocabulary_development/auto-generated"
       PNGFILE_FOLDER: "${{ github.workspace }}/docs/vocabulary_development/diagrams/generated"
       SCRIPT_PATH: "${{ github.workspace }}/docs/vocabulary_development/scripts"
+    
     steps:
       - uses: actions/checkout@v2
       - name: generate-diagrams
@@ -20,7 +21,7 @@ jobs:
           pip -r requirements.txt
           python generate_diagrams.py
       #also upload the generated files as artifacts. possibly not strictly neccessary
-       - uses: actions/upload-artifact@v2 
+      - uses: actions/upload-artifact@v2 
         with:
           name: generated-diagrams
           path: ${{ env.PNGFILE_FOLDER }}
