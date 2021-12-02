@@ -150,6 +150,50 @@ Below is an example:
 - Examples: 
 ```
 
+## Examples
+It ispossible to write down example, to illustrate the intended usage of the introduced nouns and verbs. Both verbs and nouns templates have an example field, and the syntax will be similar. 
+An example is characterized by:
+- the example name
+- a list of instance declarations. An instance declaration is the combination of the instance name and of its declaration noun
+- a list of sentences. A sentence is a triplet of the form:
+  - subject: an instance
+  - verb: a verb...
+  - object: an instance. 
+The template for examples is as follows:
+
+```
+- Examples:
+  - Example name
+    - NounName1:instanceName1 //declaration of the first instance
+    - NounName2:instanceName2 //declaration of the second instance    
+    - NounName3:instanceName3 //declaration of the third instance
+    - ...
+    - instanceName1 verbs1 instanceName1 //the first sentence
+    - instanceName2 verb2 instanceName2 //the second sentence
+```
+
+For example:
+
+```
+- Examples:
+  - Downhole ECD example
+    - DrillingDataPoint:downholeECD 
+    - PressureToEquivalentDensityTransformation:trans 
+    - DrillingDataPoint:downholePressure 
+    - downholePressure isTransformationInput trans 
+    - downholeECD isTransformationOutput trans 
+  - Downhole ECD example with TVD
+    - DrillingDataPoint:downholeECD 
+    - DrillingDataPoint:TVD
+    - PressureToEquivalentDensityTransformation:trans 
+    - DrillingDataPoint:downholePressure 
+    - downholePressure isTransformationInput trans 
+    - TVD isTransformationInput trans 
+    - downholeECD isTransformationOutput trans 
+```
+
+
+
 ## Categories
 
 - [DataFlow](definitions/DataFlow.md): this category refers to the data processing. It should probably be renamed accordingly. It should define and organize the different types of processing encountered during drilling operations. A Thursday session was devoted to those items. Note that in the current version, control flow is also included: a controller is seen as a special type of processing unit, that generates commands based on measurements and set-points. This can of course be modified if deemed necessary. Note also that transmission is included there as well. A telemetry system is seen as a processing unit that only duplicates a signal, and a delay is associated to the duplication process. While this is a useful way of looking at telemetry, it is probably not intuitive enough. 
