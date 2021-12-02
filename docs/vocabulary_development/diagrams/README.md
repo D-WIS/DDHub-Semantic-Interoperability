@@ -25,6 +25,11 @@
 [<img src="generated/DrillingEquipment.png" width="600px">](./generated/DrillingEquipment.png)
 
 ---
+[DWISSemantics.md](../definitions/DWISSemantics.md)
+
+[<img src="generated/DWISSemantics.png" width="600px">](./generated/DWISSemantics.png)
+
+---
 [Hydraulics.md](../definitions/Hydraulics.md)
 
 [<img src="generated/Hydraulics.png" width="600px">](./generated/Hydraulics.png)
@@ -80,10 +85,10 @@ The following top level relationships have been omitted from the diagrams due to
 | DWISNoun | IsDerivedFrom | DWISNoun |
 | DWISNoun | IsIntegratedFrom | DWISNoun |
 | DWISNoun | IsProcessedBy | DWISNoun |
-| DWISNoun | IsTransmittedBy | DWISNoun |
 | DWISNoun | IsConditionLeft | DWISNoun |
 | DWISNoun | IsConditionRight | DWISNoun |
 | DWISNoun | IsValidBy | DWISNoun |
+| DWISNoun | DWISVerb | DWISNoun |
 | DWISNoun | HasHydraulicStateValueFrom | DWISNoun |
 | DWISNoun | IsEquivalentCirculationDensityAt | DWISNoun |
 | DWISNoun | IsFluidDensityAt | DWISNoun |
