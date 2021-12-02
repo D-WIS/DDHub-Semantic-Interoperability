@@ -1,7 +1,7 @@
 name: Generate Diagrams
 on: 
   workflow_dispatch:
-  push: # push must be changed to trigger after md's have been generated (workflow trigger)
+  #push: # push must be changed to trigger after md's have been generated (workflow trigger)
 
 
 

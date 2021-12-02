@@ -55,7 +55,7 @@
 ## IsTransmittedBy <!-- VERB -->
 - Display name: IsTransmittedBy
 - Parent verb: DWISVerb
-- Subject class: DrillingData
+- Subject class: DrillingDataPoint
 - Object class: Telemetry
 - Description: 
 - Examples: EMS DWOB is transmitted by WiredPipeTelemetry
