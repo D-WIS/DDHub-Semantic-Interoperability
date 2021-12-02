@@ -9,7 +9,11 @@ As seen from a graph perspective:
 
 **Remark**: The templates have been slightly modified: we don't edit the links anymore. They are now edited automatically. The results ofthe automatic edition can be found under the *auto-generated* folder. 
 
-We use markdown to write the documents. Information about the langage can be found [there](https://docs.github.com/en/github/writing-on-github)
+We use markdown to write the documents. Information about the langage can be found [there](https://docs.github.com/en/github/writing-on-github). Inclusion of figures is dones using the following template: 
+```
+![Label](relative path to the image)
+```
+
 
 ## Definition set files
 
