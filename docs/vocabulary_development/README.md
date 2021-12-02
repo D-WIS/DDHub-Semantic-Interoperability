@@ -11,7 +11,41 @@ As seen from a graph perspective:
 
 We use markdown to write the documents. Information about the langage can be found [there](https://docs.github.com/en/github/writing-on-github)
 
+## Definition set files
 
+The vocabulary definitions are split among several files, to facilitate the edition. Each file is called a Definition set file. It is possible to provide an overall description of the topic covered by a single file. The name of the topic is extracted from the file name. The overall structure of such a file is as follows:
+
+```
+- Description:
+
+# NOUNS
+
+# VERBS
+```
+
+Below is an example, taken from the DWISSemantics.md file:
+
+```
+- Description: definitions of the base noun and verb. All verbs and nouns in the DWIS vocabulary are children of those. 
+
+# NOUNS
+## DWISNoun <!-- NOUN -->
+- Display name: DWIS noun
+- Parent class: 
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+
+# VERBS
+## DWISVerb <!-- VERB -->
+- Display name: DWIS verb
+- Parent verb: 
+- Subject class: DWISNoun
+- Object class: DWISNoun
+- Description: 
+- Examples: 
+```
 
 ## Nouns
 
@@ -66,6 +100,20 @@ Below is an empty template that can be used to define a new noun.
 - Examples:
 ```
 
+Below is an example: 
+```
+## HighPassFilter <!-- NOUN -->
+- Display name: HighPassFilter
+- Parent class: Filter
+- Attributes:
+  - CutOffFrequency
+    - Type: double
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+```
+
  ## Verbs
  Verbs are used to connect nodes in the graph. Verbs are identified by their name, and do not support parametrization. A verb is characterized by:
 - a name
@@ -87,7 +135,16 @@ Below is an empty template that can be used to define a new noun.
 - Description: 
 - Examples: 
 ```
-
+Below is an example:
+```
+## IsResampledBy <!-- VERB -->
+- Display name: IsResampledBy
+- Parent verb: IsTransformationOutput
+- Subject class: DrillingDataPoint
+- Object class: Resampling
+- Description: 
+- Examples: 
+```
 
 ## Categories
 
