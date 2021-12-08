@@ -4,6 +4,18 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @base <http://ddhub.no/DWISVocabulary>.
 
+<http://ddhub.no/1DModelling> a owl:Class; 
+                              rdfs:comment "The model only accounts for one dimension"@EN; 
+                              rdfs:subClassOf <http://ddhub.no/ModellingDimensions>. 
+
+<http://ddhub.no/2DModelling> a owl:Class; 
+                              rdfs:comment "The model only accounts for two dimensions"@EN; 
+                              rdfs:subClassOf <http://ddhub.no/ModellingDimensions>. 
+
+<http://ddhub.no/3DModelling> a owl:Class; 
+                              rdfs:comment "The model only accounts for three dimensions"@EN; 
+                              rdfs:subClassOf <http://ddhub.no/ModellingDimensions>. 
+
 <http://ddhub.no/AccelerationQuantity> a owl:Class; 
                                        rdfs:comment ""@EN; 
                                        rdfs:subClassOf <http://ddhub.no/Quantity>. 
@@ -24,6 +36,10 @@
                               rdfs:comment ""@EN; 
                               rdfs:subClassOf <http://ddhub.no/DirectTransformation>. 
 
+<http://ddhub.no/AngularLateralModelling> a owl:Class; 
+                                          rdfs:comment "The model accounts for the angular lateral movement of some parts of the physical system."@EN; 
+                                          rdfs:subClassOf <http://ddhub.no/LateralModelling>. 
+
 <http://ddhub.no/Annular> a owl:Class; 
                           rdfs:comment ""@EN; 
                           rdfs:subClassOf <http://ddhub.no/HydraulicBranch>. 
@@ -43,6 +59,10 @@
                                  rdfs:domain <http://ddhub.no/MeasurableQuantityUnitAssociation>; 
                                  rdfs:range <http://ddhub.no/Unit>; 
                                  rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
+
+<http://ddhub.no/AxialModelling> a owl:Class; 
+                                 rdfs:comment "The model accounts for the axial movement of some parts of the physical system."@EN; 
+                                 rdfs:subClassOf <http://ddhub.no/ModelledDegreeOfFreedom>. 
 
 <http://ddhub.no/BandPassFilter> a owl:Class; 
                                  rdfs:comment ""@EN; 
@@ -103,6 +123,10 @@
 <http://ddhub.no/BlockVelocityQuantity> a owl:Class; 
                                         rdfs:comment ""@EN; 
                                         rdfs:subClassOf <http://ddhub.no/MeasurableQuantity>. 
+
+<http://ddhub.no/BoundaryDiscretization> a owl:Class; 
+                                         rdfs:comment "A model only considers the bounds of the physical system and does not apply any intermediate discretization."@EN; 
+                                         rdfs:subClassOf <http://ddhub.no/ModellingDiscretization>. 
 
 <http://ddhub.no/Buffering> a owl:Class; 
                             rdfs:comment ""@EN; 
@@ -307,45 +331,10 @@
                                     rdfs:comment "Main type of DDHub data. Represents a drilling signal."@EN; 
                                     rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
 
-<http://ddhub.no/DrillingDataPoint.DataType> a owl:DatatypeProperty, owl:FunctionalProperty; 
-                                             rdfs:comment ""@EN; 
-                                             rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                             rdfs:range xsd:float. 
-
-<http://ddhub.no/DrillingDataPoint.Dimensions> a owl:DatatypeProperty, owl:FunctionalProperty; 
-                                               rdfs:comment ""@EN; 
-                                               rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                               rdfs:range xsd:float. 
-
-<http://ddhub.no/DrillingDataPoint.DomainDimensions> a owl:DatatypeProperty, owl:FunctionalProperty; 
-                                                     rdfs:comment ""@EN; 
-                                                     rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                                     rdfs:range xsd:float. 
-
-<http://ddhub.no/DrillingDataPoint.DomainOrder> a owl:DatatypeProperty, owl:FunctionalProperty; 
-                                                rdfs:comment ""@EN; 
-                                                rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                                rdfs:range xsd:float. 
-
-<http://ddhub.no/DrillingDataPoint.EndPoint> a owl:DatatypeProperty, owl:FunctionalProperty; 
-                                             rdfs:comment ""@EN; 
-                                             rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                             rdfs:range xsd:float. 
-
 <http://ddhub.no/DrillingDataPoint.IsValid> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                             rdfs:comment ""@EN; 
                                             rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
                                             rdfs:range xsd:float. 
-
-<http://ddhub.no/DrillingDataPoint.Order> a owl:DatatypeProperty, owl:FunctionalProperty; 
-                                          rdfs:comment ""@EN; 
-                                          rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                          rdfs:range xsd:float. 
-
-<http://ddhub.no/DrillingDataPoint.RefreshRate> a owl:DatatypeProperty, owl:FunctionalProperty; 
-                                                rdfs:comment ""@EN; 
-                                                rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                                rdfs:range xsd:float. 
 
 <http://ddhub.no/DrillingEquipment> a owl:Class; 
                                     rdfs:comment ""@EN; 
@@ -423,6 +412,10 @@
 <http://ddhub.no/ElectricResistivityQuantity> a owl:Class; 
                                               rdfs:comment ""@EN; 
                                               rdfs:subClassOf <http://ddhub.no/Quantity>. 
+
+<http://ddhub.no/ElectromagneticTelemetry> a owl:Class; 
+                                           rdfs:comment "A method that allows transfer of downhole data to the surface via electromagnetic waves sent trough the drilling formation."@EN; 
+                                           rdfs:subClassOf <http://ddhub.no/DownHoleTelemetry>. 
 
 <http://ddhub.no/Elevator> a owl:Class; 
                            rdfs:comment ""@EN; 
@@ -784,6 +777,10 @@
                                rdfs:comment ""@EN; 
                                rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
 
+<http://ddhub.no/HorizontalOndulationModelling> a owl:Class; 
+                                                rdfs:comment "The model accounts for the change of azimuth of some parts of the physical system."@EN; 
+                                                rdfs:subClassOf <http://ddhub.no/TangentialModelling>. 
+
 <http://ddhub.no/HydraulicBranch> a owl:Class; 
                                   rdfs:comment ""@EN; 
                                   rdfs:subClassOf <http://ddhub.no/HydraulicLogicalElement>. 
@@ -1123,8 +1120,8 @@
 
 <http://ddhub.no/IsTransmittedBy> a owl:ObjectProperty; 
                                   rdfs:comment ""@EN; 
-                                  rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                  rdfs:range <http://ddhub.no/DWISNoun>; 
+                                  rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
+                                  rdfs:range <http://ddhub.no/Telemetry>; 
                                   rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
 
 <http://ddhub.no/IsUnitForQuantity> a owl:ObjectProperty; 
@@ -1144,6 +1141,10 @@
                                          rdfs:domain <http://ddhub.no/DWISNoun>; 
                                          rdfs:range <http://ddhub.no/DWISNoun>; 
                                          rdfs:subPropertyOf <http://ddhub.no/IsHydraulicallyLocatedAt>. 
+
+<http://ddhub.no/LateralModelling> a owl:Class; 
+                                   rdfs:comment "The model accounts for the lateral movement of some parts of the physical system."@EN; 
+                                   rdfs:subClassOf <http://ddhub.no/ModelledDegreeOfFreedom>. 
 
 <http://ddhub.no/LengthQuantity> a owl:Class; 
                                  rdfs:comment ""@EN; 
@@ -1181,6 +1182,10 @@
 <http://ddhub.no/MassRate> a owl:Class; 
                            rdfs:comment ""@EN; 
                            rdfs:subClassOf <http://ddhub.no/Quantity>. 
+
+<http://ddhub.no/MassTransferBasedDiscretization> a owl:Class; 
+                                                  rdfs:comment "A model can properly estimate values at the level of mass transfer propagation."@EN; 
+                                                  rdfs:subClassOf <http://ddhub.no/ModellingDiscretization>. 
 
 <http://ddhub.no/MathematicalModel> a owl:Class; 
                                     rdfs:comment "A model for which the state variables do not change with time."@EN; 
@@ -1265,6 +1270,18 @@
                                     rdfs:comment ""@EN; 
                                     rdfs:subClassOf <http://ddhub.no/SignalUncertainty>. 
 
+<http://ddhub.no/ModelledDegreeOfFreedom> a owl:Class; 
+                                          rdfs:comment "In physics and chemistry, a degree of freedom is an independent physical parameter in the formal description of the state of a physical system. A model may account for some or all of the degrees of freedom of the physical system."@EN; 
+                                          rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
+
+<http://ddhub.no/ModellingDimensions> a owl:Class; 
+                                      rdfs:comment "The number of dimensions that are accounted by the model"@EN; 
+                                      rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
+
+<http://ddhub.no/ModellingDiscretization> a owl:Class; 
+                                          rdfs:comment "A characteristic of the discretization made by the model."@EN; 
+                                          rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
+
 <http://ddhub.no/MovingAverage> a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf <http://ddhub.no/Filter>. 
@@ -1274,7 +1291,7 @@
                             rdfs:subClassOf <http://ddhub.no/HydraulicJunction>. 
 
 <http://ddhub.no/MudPulseTelemetry> a owl:Class; 
-                                    rdfs:comment ""@EN; 
+                                    rdfs:comment "A method that allows transfer of downhole data to the surface via pressure pulses sent trough the drilling fluid."@EN; 
                                     rdfs:subClassOf <http://ddhub.no/DownHoleTelemetry>. 
 
 <http://ddhub.no/MudPump> a owl:Class; 
@@ -1419,6 +1436,10 @@
                                rdfs:domain <http://ddhub.no/Quantity>; 
                                rdfs:range xsd:float. 
 
+<http://ddhub.no/RadialModelling> a owl:Class; 
+                                  rdfs:comment "The model accounts for the radial movement of some parts of the physical system."@EN; 
+                                  rdfs:subClassOf <http://ddhub.no/LateralModelling>. 
+
 <http://ddhub.no/RangeExtraction> a owl:Class; 
                                   rdfs:comment ""@EN; 
                                   rdfs:subClassOf <http://ddhub.no/TimeBasedTransformation>. 
@@ -1474,6 +1495,10 @@
                       rdfs:comment ""@EN; 
                       rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
 
+<http://ddhub.no/RotationalModelling> a owl:Class; 
+                                      rdfs:comment "The model accounts for the rotational movement of some parts of the physical system."@EN; 
+                                      rdfs:subClassOf <http://ddhub.no/ModelledDegreeOfFreedom>. 
+
 <http://ddhub.no/SemiCircularChannel> a owl:Class; 
                                       rdfs:comment ""@EN; 
                                       rdfs:subClassOf <http://ddhub.no/OpenChannel>. 
@@ -1522,7 +1547,11 @@
 
 <http://ddhub.no/SteadyStateModel> a owl:Class; 
                                    rdfs:comment "A model for which the state variables do not change with time."@EN; 
-                                   rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
+                                   rdfs:subClassOf <http://ddhub.no/MathematicalModel>. 
+
+<http://ddhub.no/StrainWaveBasedDiscretization> a owl:Class; 
+                                                rdfs:comment "A model can properly estimate values at the level of strain wave propagation."@EN; 
+                                                rdfs:subClassOf <http://ddhub.no/ModellingDiscretization>. 
 
 <http://ddhub.no/SupportLine> a owl:Class; 
                               rdfs:comment ""@EN; 
@@ -1558,6 +1587,14 @@
                                                             rdfs:domain <http://ddhub.no/SynchronizationGroup>; 
                                                             rdfs:range xsd:float. 
 
+<http://ddhub.no/TangencyLength> a owl:Class; 
+                                 rdfs:comment "the position along the drill-string, counted from the bit, from which we can consider that the pipes direction is tangential with the borehole direction."@EN; 
+                                 rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
+
+<http://ddhub.no/TangentialModelling> a owl:Class; 
+                                      rdfs:comment "The model accounts for the change of tangential direction of some parts of the physical system."@EN; 
+                                      rdfs:subClassOf <http://ddhub.no/LateralModelling>. 
+
 <http://ddhub.no/Telemetry> a owl:Class; 
                             rdfs:comment "Technology used for transferring the data from its main origin."@EN; 
                             rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
@@ -1571,11 +1608,6 @@
                                               rdfs:comment ""@EN; 
                                               rdfs:domain <http://ddhub.no/Telemetry>; 
                                               rdfs:range xsd:float. 
-
-<http://ddhub.no/Telemetry.RefreshRate> a owl:DatatypeProperty, owl:FunctionalProperty; 
-                                        rdfs:comment ""@EN; 
-                                        rdfs:domain <http://ddhub.no/Telemetry>; 
-                                        rdfs:range xsd:float. 
 
 <http://ddhub.no/TemperatureIn> a owl:Class; 
                                 rdfs:comment ""@EN; 
@@ -1660,7 +1692,7 @@
                                           rdfs:subClassOf <http://ddhub.no/HydraulicNetwork>. 
 
 <http://ddhub.no/TopSideTelemetry> a owl:Class; 
-                                   rdfs:comment ""@EN; 
+                                   rdfs:comment "Method that allows transfer of data from surface systems."@EN; 
                                    rdfs:subClassOf <http://ddhub.no/Telemetry>. 
 
 <http://ddhub.no/TorqueQuantity> a owl:Class; 
@@ -1677,7 +1709,7 @@
 
 <http://ddhub.no/TransientModel> a owl:Class; 
                                  rdfs:comment "A model for which the state variables changes with time."@EN; 
-                                 rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
+                                 rdfs:subClassOf <http://ddhub.no/MathematicalModel>. 
 
 <http://ddhub.no/TransmissionLine> a owl:Class; 
                                    rdfs:comment ""@EN; 
@@ -1738,6 +1770,10 @@
                                      rdfs:comment ""@EN; 
                                      rdfs:subClassOf <http://ddhub.no/OneDimensionalCartesianReferenceFrame>. 
 
+<http://ddhub.no/VerticalOndulationModelling> a owl:Class; 
+                                              rdfs:comment "The model accounts for the change of inclination of some parts of the physical system."@EN; 
+                                              rdfs:subClassOf <http://ddhub.no/TangentialModelling>. 
+
 <http://ddhub.no/VolumeQuantity> a owl:Class; 
                                  rdfs:comment ""@EN; 
                                  rdfs:subClassOf <http://ddhub.no/Quantity>. 
@@ -1756,7 +1792,7 @@
                                                          rdfs:range xsd:float. 
 
 <http://ddhub.no/WiredPipeTelemetry> a owl:Class; 
-                                     rdfs:comment ""@EN; 
+                                     rdfs:comment "A method that allows transfer of downhole data to the surface via electrical connections through the drill string."@EN; 
                                      rdfs:subClassOf <http://ddhub.no/DownHoleTelemetry>. 
 
 <http://ddhub.no/WitsMLTimeBasedLogEndPoint> a owl:Class; 

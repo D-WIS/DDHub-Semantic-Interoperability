@@ -46,6 +46,7 @@
 <http://ddhub.no/Telemetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/DownHoleTelemetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/MudPulseTelemetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ElectromagneticTelemetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/WiredPipeTelemetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/TopSideTelemetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ValidityCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -139,17 +140,35 @@
 <http://ddhub.no/TopsideHydraulicNetwork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/MathematicalModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/DrillStemMechanicalModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/SteadyStateModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/TransientModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/MechanicalStiffnessType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/MechanicalSoftModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/MechanicalStiffModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/MechanicalStiffModelAssumedContacts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/MechanicalStiffModelEstimatedContacts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/TangencyLength> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/MechanicalElementState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/MechanicallyClosedState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/MechanicallyConnectedState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/MechanicalLogicalElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://ddhub.no/SteadyStateModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://ddhub.no/TransientModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ModelledDegreeOfFreedom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/AxialModelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/RotationalModelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/LateralModelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/RadialModelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/AngularLateralModelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/TangentialModelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/VerticalOndulationModelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/HorizontalOndulationModelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ModellingDimensions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/1DModelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/2DModelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/3DModelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ModellingDiscretization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/BoundaryDiscretization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/StrainWaveBasedDiscretization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/MassTransferBasedDiscretization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/Location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/BitReferenceLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/CasingShoeLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -268,6 +287,7 @@
 <http://ddhub.no/Telemetry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/DownHoleTelemetry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Telemetry> .
 <http://ddhub.no/MudPulseTelemetry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownHoleTelemetry> .
+<http://ddhub.no/ElectromagneticTelemetry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownHoleTelemetry> .
 <http://ddhub.no/WiredPipeTelemetry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownHoleTelemetry> .
 <http://ddhub.no/TopSideTelemetry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Telemetry> .
 <http://ddhub.no/ValidityCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
@@ -361,17 +381,35 @@
 <http://ddhub.no/TopsideHydraulicNetwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/HydraulicNetwork> .
 <http://ddhub.no/MathematicalModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/DrillStemMechanicalModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/MathematicalModel> .
+<http://ddhub.no/SteadyStateModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/MathematicalModel> .
+<http://ddhub.no/TransientModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/MathematicalModel> .
 <http://ddhub.no/MechanicalStiffnessType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/MechanicalSoftModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/MechanicalStiffnessType> .
 <http://ddhub.no/MechanicalStiffModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/MechanicalStiffnessType> .
 <http://ddhub.no/MechanicalStiffModelAssumedContacts> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/MechanicalStiffModel> .
 <http://ddhub.no/MechanicalStiffModelEstimatedContacts> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/MechanicalStiffModel> .
+<http://ddhub.no/TangencyLength> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/MechanicalElementState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/MechanicallyClosedState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/MechanicalElementState> .
 <http://ddhub.no/MechanicallyConnectedState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/MechanicalElementState> .
 <http://ddhub.no/MechanicalLogicalElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
-<http://ddhub.no/SteadyStateModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
-<http://ddhub.no/TransientModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/ModelledDegreeOfFreedom> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/AxialModelling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModelledDegreeOfFreedom> .
+<http://ddhub.no/RotationalModelling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModelledDegreeOfFreedom> .
+<http://ddhub.no/LateralModelling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModelledDegreeOfFreedom> .
+<http://ddhub.no/RadialModelling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/LateralModelling> .
+<http://ddhub.no/AngularLateralModelling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/LateralModelling> .
+<http://ddhub.no/TangentialModelling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/LateralModelling> .
+<http://ddhub.no/VerticalOndulationModelling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/TangentialModelling> .
+<http://ddhub.no/HorizontalOndulationModelling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/TangentialModelling> .
+<http://ddhub.no/ModellingDimensions> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/1DModelling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingDimensions> .
+<http://ddhub.no/2DModelling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingDimensions> .
+<http://ddhub.no/3DModelling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingDimensions> .
+<http://ddhub.no/ModellingDiscretization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/BoundaryDiscretization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingDiscretization> .
+<http://ddhub.no/StrainWaveBasedDiscretization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingDiscretization> .
+<http://ddhub.no/MassTransferBasedDiscretization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingDiscretization> .
 <http://ddhub.no/Location> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/BitReferenceLocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Location> .
 <http://ddhub.no/CasingShoeLocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Location> .
@@ -490,9 +528,10 @@
 <http://ddhub.no/UserInterface> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/Telemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "Technology used for transferring the data from its main origin."@EN .
 <http://ddhub.no/DownHoleTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/MudPulseTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/WiredPipeTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/TopSideTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/MudPulseTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "A method that allows transfer of downhole data to the surface via pressure pulses sent trough the drilling fluid."@EN .
+<http://ddhub.no/ElectromagneticTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "A method that allows transfer of downhole data to the surface via electromagnetic waves sent trough the drilling formation."@EN .
+<http://ddhub.no/WiredPipeTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "A method that allows transfer of downhole data to the surface via electrical connections through the drill string."@EN .
+<http://ddhub.no/TopSideTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "Method that allows transfer of data from surface systems."@EN .
 <http://ddhub.no/ValidityCondition> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/ConnectedCondition> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/EQ> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
@@ -584,17 +623,35 @@
 <http://ddhub.no/TopsideHydraulicNetwork> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/MathematicalModel> <http://www.w3.org/2000/01/rdf-schema#comment> "A model for which the state variables do not change with time."@EN .
 <http://ddhub.no/DrillStemMechanicalModel> <http://www.w3.org/2000/01/rdf-schema#comment> "A mechanical model for a drill-stem. Another name for drill-stem mechanical models is a torque and drag model."@EN .
+<http://ddhub.no/SteadyStateModel> <http://www.w3.org/2000/01/rdf-schema#comment> "A model for which the state variables do not change with time."@EN .
+<http://ddhub.no/TransientModel> <http://www.w3.org/2000/01/rdf-schema#comment> "A model for which the state variables changes with time."@EN .
 <http://ddhub.no/MechanicalStiffnessType> <http://www.w3.org/2000/01/rdf-schema#comment> "A description of how the drill-stem stiffness is modelled."@EN .
 <http://ddhub.no/MechanicalSoftModel> <http://www.w3.org/2000/01/rdf-schema#comment> "An infinitively soft model assumes that the drill-stem deforms without any resistance when compressive loads are applied."@EN .
 <http://ddhub.no/MechanicalStiffModel> <http://www.w3.org/2000/01/rdf-schema#comment> "A stiff mechanical model considers that the drill-stem can deform laterally when put in compression."@EN .
 <http://ddhub.no/MechanicalStiffModelAssumedContacts> <http://www.w3.org/2000/01/rdf-schema#comment> "Such a stiff mechanical model presuposes the position of the contact points."@EN .
 <http://ddhub.no/MechanicalStiffModelEstimatedContacts> <http://www.w3.org/2000/01/rdf-schema#comment> "Such a stiff mechanical model estimates the position of the contact points."@EN .
+<http://ddhub.no/TangencyLength> <http://www.w3.org/2000/01/rdf-schema#comment> "the position along the drill-string, counted from the bit, from which we can consider that the pipes direction is tangential with the borehole direction."@EN .
 <http://ddhub.no/MechanicalElementState> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/MechanicallyClosedState> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/MechanicallyConnectedState> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/MechanicalLogicalElement> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/SteadyStateModel> <http://www.w3.org/2000/01/rdf-schema#comment> "A model for which the state variables do not change with time."@EN .
-<http://ddhub.no/TransientModel> <http://www.w3.org/2000/01/rdf-schema#comment> "A model for which the state variables changes with time."@EN .
+<http://ddhub.no/ModelledDegreeOfFreedom> <http://www.w3.org/2000/01/rdf-schema#comment> "In physics and chemistry, a degree of freedom is an independent physical parameter in the formal description of the state of a physical system. A model may account for some or all of the degrees of freedom of the physical system."@EN .
+<http://ddhub.no/AxialModelling> <http://www.w3.org/2000/01/rdf-schema#comment> "The model accounts for the axial movement of some parts of the physical system."@EN .
+<http://ddhub.no/RotationalModelling> <http://www.w3.org/2000/01/rdf-schema#comment> "The model accounts for the rotational movement of some parts of the physical system."@EN .
+<http://ddhub.no/LateralModelling> <http://www.w3.org/2000/01/rdf-schema#comment> "The model accounts for the lateral movement of some parts of the physical system."@EN .
+<http://ddhub.no/RadialModelling> <http://www.w3.org/2000/01/rdf-schema#comment> "The model accounts for the radial movement of some parts of the physical system."@EN .
+<http://ddhub.no/AngularLateralModelling> <http://www.w3.org/2000/01/rdf-schema#comment> "The model accounts for the angular lateral movement of some parts of the physical system."@EN .
+<http://ddhub.no/TangentialModelling> <http://www.w3.org/2000/01/rdf-schema#comment> "The model accounts for the change of tangential direction of some parts of the physical system."@EN .
+<http://ddhub.no/VerticalOndulationModelling> <http://www.w3.org/2000/01/rdf-schema#comment> "The model accounts for the change of inclination of some parts of the physical system."@EN .
+<http://ddhub.no/HorizontalOndulationModelling> <http://www.w3.org/2000/01/rdf-schema#comment> "The model accounts for the change of azimuth of some parts of the physical system."@EN .
+<http://ddhub.no/ModellingDimensions> <http://www.w3.org/2000/01/rdf-schema#comment> "The number of dimensions that are accounted by the model"@EN .
+<http://ddhub.no/1DModelling> <http://www.w3.org/2000/01/rdf-schema#comment> "The model only accounts for one dimension"@EN .
+<http://ddhub.no/2DModelling> <http://www.w3.org/2000/01/rdf-schema#comment> "The model only accounts for two dimensions"@EN .
+<http://ddhub.no/3DModelling> <http://www.w3.org/2000/01/rdf-schema#comment> "The model only accounts for three dimensions"@EN .
+<http://ddhub.no/ModellingDiscretization> <http://www.w3.org/2000/01/rdf-schema#comment> "A characteristic of the discretization made by the model."@EN .
+<http://ddhub.no/BoundaryDiscretization> <http://www.w3.org/2000/01/rdf-schema#comment> "A model only considers the bounds of the physical system and does not apply any intermediate discretization."@EN .
+<http://ddhub.no/StrainWaveBasedDiscretization> <http://www.w3.org/2000/01/rdf-schema#comment> "A model can properly estimate values at the level of strain wave propagation."@EN .
+<http://ddhub.no/MassTransferBasedDiscretization> <http://www.w3.org/2000/01/rdf-schema#comment> "A model can properly estimate values at the level of mass transfer propagation."@EN .
 <http://ddhub.no/Location> <http://www.w3.org/2000/01/rdf-schema#comment> "Physical location for a signal."@EN .
 <http://ddhub.no/BitReferenceLocation> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/CasingShoeLocation> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
@@ -722,10 +779,6 @@
 <http://ddhub.no/Resampling.Validity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <http://ddhub.no/Resampling.Validity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/Resampling> .
 <http://ddhub.no/Resampling.Validity> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
-<http://ddhub.no/Telemetry.RefreshRate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://ddhub.no/Telemetry.RefreshRate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<http://ddhub.no/Telemetry.RefreshRate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/Telemetry> .
-<http://ddhub.no/Telemetry.RefreshRate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
 <http://ddhub.no/Telemetry.NumberOfRepeaters> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://ddhub.no/Telemetry.NumberOfRepeaters> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <http://ddhub.no/Telemetry.NumberOfRepeaters> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/Telemetry> .
@@ -774,34 +827,6 @@
 <http://ddhub.no/DrillingDataPoint.IsValid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <http://ddhub.no/DrillingDataPoint.IsValid> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
 <http://ddhub.no/DrillingDataPoint.IsValid> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
-<http://ddhub.no/DrillingDataPoint.RefreshRate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://ddhub.no/DrillingDataPoint.RefreshRate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<http://ddhub.no/DrillingDataPoint.RefreshRate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/DrillingDataPoint.RefreshRate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
-<http://ddhub.no/DrillingDataPoint.DomainOrder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://ddhub.no/DrillingDataPoint.DomainOrder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<http://ddhub.no/DrillingDataPoint.DomainOrder> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/DrillingDataPoint.DomainOrder> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
-<http://ddhub.no/DrillingDataPoint.DataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://ddhub.no/DrillingDataPoint.DataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<http://ddhub.no/DrillingDataPoint.DataType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/DrillingDataPoint.DataType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
-<http://ddhub.no/DrillingDataPoint.Dimensions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://ddhub.no/DrillingDataPoint.Dimensions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<http://ddhub.no/DrillingDataPoint.Dimensions> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/DrillingDataPoint.Dimensions> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
-<http://ddhub.no/DrillingDataPoint.Order> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://ddhub.no/DrillingDataPoint.Order> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<http://ddhub.no/DrillingDataPoint.Order> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/DrillingDataPoint.Order> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
-<http://ddhub.no/DrillingDataPoint.DomainDimensions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://ddhub.no/DrillingDataPoint.DomainDimensions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<http://ddhub.no/DrillingDataPoint.DomainDimensions> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/DrillingDataPoint.DomainDimensions> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
-<http://ddhub.no/DrillingDataPoint.EndPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://ddhub.no/DrillingDataPoint.EndPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<http://ddhub.no/DrillingDataPoint.EndPoint> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/DrillingDataPoint.EndPoint> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
 <http://ddhub.no/DrillingSignal.Value> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://ddhub.no/DrillingSignal.Value> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <http://ddhub.no/DrillingSignal.Value> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingSignal> .
@@ -1003,8 +1028,8 @@
 <http://ddhub.no/IsProcessedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/IsProcessedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/IsTransmittedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsTransmittedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
-<http://ddhub.no/IsTransmittedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsTransmittedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsTransmittedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Telemetry> .
 <http://ddhub.no/IsConditionedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://ddhub.no/IsConditionedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
 <http://ddhub.no/IsConditionedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ValidityCondition> .
@@ -1329,7 +1354,6 @@
 <http://ddhub.no/Resampling.ResamplingRate> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/Resampling.ResamplingDelay> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/Resampling.Validity> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/Telemetry.RefreshRate> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/Telemetry.NumberOfRepeaters> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/Telemetry.AverageDelayByRepeaters> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/DataEndPoint.EndPointDescription> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
@@ -1342,13 +1366,6 @@
 <http://ddhub.no/WitsMLTimeBasedLogEndPoint.Mnemonic> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/DataProvider.ProviderName> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/DrillingDataPoint.IsValid> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/DrillingDataPoint.RefreshRate> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/DrillingDataPoint.DomainOrder> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/DrillingDataPoint.DataType> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/DrillingDataPoint.Dimensions> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/DrillingDataPoint.Order> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/DrillingDataPoint.DomainDimensions> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/DrillingDataPoint.EndPoint> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/DrillingSignal.Value> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/DynamicDrillingSignal.TimeStampAcquisition> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/EndPointMapping.FixedIndices> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .

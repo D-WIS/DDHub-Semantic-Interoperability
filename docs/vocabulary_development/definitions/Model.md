@@ -2,22 +2,22 @@
 
 # NOUNS
 ## MathematicalModel <!-- NOUN -->
-- Display name: a mathematical model
+- Display name: Mathematical model
 - Parent class: DWISNoun
 - Attributes:
 - Specialization: 
 - Description: A model for which the state variables do not change with time.
 - Examples:
 ## SteadyStateModel <!-- NOUN -->
-- Display name: steady state model
-- Parent class: DWISNoun
+- Display name: Steady state model
+- Parent class: MathematicalModel
 - Attributes:
 - Specialization: 
 - Description: A model for which the state variables do not change with time.
 - Examples:
 ## TransientModel <!-- NOUN -->
 - Display name: Transient model
-- Parent class: DWISNoun
+- Parent class: MathematicalModel
 - Attributes:
 - Specialization: 
 - Description: A model for which the state variables changes with time.
@@ -31,28 +31,28 @@
 - Examples:Axial, rotational...
 ## AxialModelling <!-- NOUN -->
 - Display name: Axial modelling
-- Parent class: DegreeOfFreedom
+- Parent class: ModelledDegreeOfFreedom
 - Attributes:
 - Specialization: 
 - Description: The model accounts for the axial movement of some parts of the physical system.
 - Examples:A hydraulic model accounts for the axial velocity of fluid inside a pipe or an annulus. A torque and drag model accounts for the axial displacement of a drill-stem.
 ## RotationalModelling <!-- NOUN -->
 - Display name: Rotational modelling
-- Parent class: DegreeOfFreedom
+- Parent class: ModelledDegreeOfFreedom
 - Attributes:
 - Specialization: 
 - Description: The model accounts for the rotational movement of some parts of the physical system.
 - Examples:A hydraulic model accounts for the effect of pipe rotation on the fluid velocity in an annulus. A torque and drag model accounts for the rotational movement of a drill-stem.
 ## LateralModelling <!-- NOUN -->
 - Display name: Lateral modelling
-- Parent class: DegreeOfFreedom
+- Parent class: ModelledDegreeOfFreedom
 - Attributes:
 - Specialization: 
 - Description: The model accounts for the lateral movement of some parts of the physical system.
 - Examples:A hydraulic model accounts for the effect of the lateral pipe displacement on the fluid velocity in an annulus. A torque and drag model accounts for the lateral  movement of a drill-stem.
 ## LateralModelling <!-- NOUN -->
 - Display name: Lateral modelling
-- Parent class: DegreeOfFreedom
+- Parent class: ModelledDegreeOfFreedom
 - Attributes:
 - Specialization: 
 - Description: The model accounts for the lateral movement of some parts of the physical system.

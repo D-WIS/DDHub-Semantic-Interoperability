@@ -241,20 +241,22 @@
   <rdf:Description rdf:about="http://ddhub.no/MudPulseTelemetry">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DownHoleTelemetry" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+    <rdfs:comment xml:lang="EN">A method that allows transfer of downhole data to the surface via pressure pulses sent trough the drilling fluid.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ElectromagneticTelemetry">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DownHoleTelemetry" />
+    <rdfs:comment xml:lang="EN">A method that allows transfer of downhole data to the surface via electromagnetic waves sent trough the drilling formation.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/WiredPipeTelemetry">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DownHoleTelemetry" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+    <rdfs:comment xml:lang="EN">A method that allows transfer of downhole data to the surface via electrical connections through the drill string.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/TopSideTelemetry">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Telemetry" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+    <rdfs:comment xml:lang="EN">Method that allows transfer of data from surface systems.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ValidityCondition">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
@@ -798,6 +800,16 @@
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MathematicalModel" />
     <rdfs:comment xml:lang="EN">A mechanical model for a drill-stem. Another name for drill-stem mechanical models is a torque and drag model.</rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SteadyStateModel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MathematicalModel" />
+    <rdfs:comment xml:lang="EN">A model for which the state variables do not change with time.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TransientModel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MathematicalModel" />
+    <rdfs:comment xml:lang="EN">A model for which the state variables changes with time.</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/MechanicalStiffnessType">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
@@ -823,6 +835,11 @@
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MechanicalStiffModel" />
     <rdfs:comment xml:lang="EN">Such a stiff mechanical model estimates the position of the contact points.</rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TangencyLength">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:comment xml:lang="EN">the position along the drill-string, counted from the bit, from which we can consider that the pipes direction is tangential with the borehole direction.</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/MechanicalElementState">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
@@ -847,15 +864,90 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SteadyStateModel">
+  <rdf:Description rdf:about="http://ddhub.no/ModelledDegreeOfFreedom">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:comment xml:lang="EN">A model for which the state variables do not change with time.</rdfs:comment>
+    <rdfs:comment xml:lang="EN">In physics and chemistry, a degree of freedom is an independent physical parameter in the formal description of the state of a physical system. A model may account for some or all of the degrees of freedom of the physical system.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/TransientModel">
+  <rdf:Description rdf:about="http://ddhub.no/AxialModelling">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ModelledDegreeOfFreedom" />
+    <rdfs:comment xml:lang="EN">The model accounts for the axial movement of some parts of the physical system.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RotationalModelling">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ModelledDegreeOfFreedom" />
+    <rdfs:comment xml:lang="EN">The model accounts for the rotational movement of some parts of the physical system.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/LateralModelling">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ModelledDegreeOfFreedom" />
+    <rdfs:comment xml:lang="EN">The model accounts for the lateral movement of some parts of the physical system.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RadialModelling">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/LateralModelling" />
+    <rdfs:comment xml:lang="EN">The model accounts for the radial movement of some parts of the physical system.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AngularLateralModelling">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/LateralModelling" />
+    <rdfs:comment xml:lang="EN">The model accounts for the angular lateral movement of some parts of the physical system.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TangentialModelling">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/LateralModelling" />
+    <rdfs:comment xml:lang="EN">The model accounts for the change of tangential direction of some parts of the physical system.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/VerticalOndulationModelling">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/TangentialModelling" />
+    <rdfs:comment xml:lang="EN">The model accounts for the change of inclination of some parts of the physical system.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HorizontalOndulationModelling">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/TangentialModelling" />
+    <rdfs:comment xml:lang="EN">The model accounts for the change of azimuth of some parts of the physical system.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ModellingDimensions">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:comment xml:lang="EN">A model for which the state variables changes with time.</rdfs:comment>
+    <rdfs:comment xml:lang="EN">The number of dimensions that are accounted by the model</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/1DModelling">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ModellingDimensions" />
+    <rdfs:comment xml:lang="EN">The model only accounts for one dimension</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/2DModelling">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ModellingDimensions" />
+    <rdfs:comment xml:lang="EN">The model only accounts for two dimensions</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/3DModelling">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ModellingDimensions" />
+    <rdfs:comment xml:lang="EN">The model only accounts for three dimensions</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ModellingDiscretization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:comment xml:lang="EN">A characteristic of the discretization made by the model.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/BoundaryDiscretization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ModellingDiscretization" />
+    <rdfs:comment xml:lang="EN">A model only considers the bounds of the physical system and does not apply any intermediate discretization.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/StrainWaveBasedDiscretization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ModellingDiscretization" />
+    <rdfs:comment xml:lang="EN">A model can properly estimate values at the level of strain wave propagation.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MassTransferBasedDiscretization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ModellingDiscretization" />
+    <rdfs:comment xml:lang="EN">A model can properly estimate values at the level of mass transfer propagation.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Location">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
@@ -1421,14 +1513,6 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Telemetry.RefreshRate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/Telemetry" />
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Telemetry.NumberOfRepeaters">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
@@ -1518,62 +1602,6 @@
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DrillingDataPoint.IsValid">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DrillingDataPoint.RefreshRate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DrillingDataPoint.DomainOrder">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DrillingDataPoint.DataType">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DrillingDataPoint.Dimensions">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DrillingDataPoint.Order">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DrillingDataPoint.DomainDimensions">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DrillingDataPoint.EndPoint">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
@@ -2019,8 +2047,8 @@
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsTransmittedBy">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/Telemetry" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
