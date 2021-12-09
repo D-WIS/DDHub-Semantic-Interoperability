@@ -1,0 +1,71 @@
+# EndPoints<!-- DEFINITION SET HEADER -->
+- Description: this is the part associated to the description of external end-points.
+# Nouns
+## DataEndPoint <!-- NOUN -->
+- Display name: DataEndPoint
+- Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Attributes:
+  - EndPointDescription
+    - Type: string
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: EndPoints
+## WitsMLTimeBasedLogEndPoint <!-- NOUN -->
+- Display name: WitsMLTimeBasedLogEndPoint
+- Parent class: [DataEndPoint](./EndPoints.md#DataEndPoint)
+- Attributes:
+  - WellUID
+    - Type: string
+    - Description: 
+  - WellName
+    - Type: string
+    - Description: 
+  - WellboreUID
+    - Type: string
+    - Description: 
+  - WellboreName
+    - Type: string
+    - Description: 
+  - LogUID
+    - Type: string
+    - Description: 
+  - LogName
+    - Type: string
+    - Description: 
+  - Mnemonic
+    - Type: string
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: EndPoints
+## EndPointMapping <!-- NOUN -->
+- Display name: EndPointMapping
+- Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Attributes:
+  - FixedIndices
+    - Type: int[]
+    - Description: 
+  - ValuesIndices
+    - Type: int[]
+    - Description: 
+  - MeasurementIndex
+    - Type: int
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: EndPoints
+# Verbs
+## HasEndPoint <!-- VERB -->
+- Display name: HasEndPoint
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [DrillingSignal](./DrillingDataSemantics.md#DrillingSignal)
+- Object class: [DataEndPoint](./EndPoints.md#DataEndPoint)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: EndPoints

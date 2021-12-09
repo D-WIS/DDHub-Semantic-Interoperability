@@ -11,6 +11,8 @@
 - Description: in this category fall all the standard equipment encountered on a drilling rig. Note that the goal of the vocabulary is not to provide a detailed description of the rig. Therefore we only consider nouns that can help providing a signal context.
 ## DWISSemantics<!-- DEFINITION SET HEADER -->
 - Description: definitions of the base noun and verb. All verbs and nouns in the DWIS vocabulary are children of those.
+## EndPoints<!-- DEFINITION SET HEADER -->
+- Description: this is the part associated to the description of external end-points.
 ## Hydraulics<!-- DEFINITION SET HEADER -->
 - Description: this part refers to the hydraulic circuit, and should only contain the "abstract" or conceptual part of the vocabulary. Additional nouns coming from the drilling equipment category will be used when constructing the semantic graphs.
 ## MechanicalModel<!-- DEFINITION SET HEADER -->
@@ -446,46 +448,6 @@
 - Description: 
 - Examples:
 - Definition set: DataValidity
-## DataEndPoint <!-- NOUN -->
-- Display name: DataEndPoint
-- Parent class: [DWISNoun](#DWISNoun)
-- Attributes:
-  - EndPointDescription
-    - Type: string
-    - Description: 
-- Specialization:
-- Description: 
-- Examples:
-- Definition set: DrillingDataSemantics
-## WitsMLTimeBasedLogEndPoint <!-- NOUN -->
-- Display name: WitsMLTimeBasedLogEndPoint
-- Parent class: [DataEndPoint](#DataEndPoint)
-- Attributes:
-  - WellUID
-    - Type: string
-    - Description: 
-  - WellName
-    - Type: string
-    - Description: 
-  - WellboreUID
-    - Type: string
-    - Description: 
-  - WellboreName
-    - Type: string
-    - Description: 
-  - LogUID
-    - Type: string
-    - Description: 
-  - LogName
-    - Type: string
-    - Description: 
-  - Mnemonic
-    - Type: string
-    - Description: 
-- Specialization:
-- Description: 
-- Examples:
-- Definition set: DrillingDataSemantics
 ## DataProvider <!-- NOUN -->
 - Display name: DataProvider
 - Parent class: [DWISNoun](#DWISNoun)
@@ -717,23 +679,6 @@
 - Attributes:
   - TimeStampAcquisition
     - Type: DateTime
-    - Description: 
-- Specialization:
-- Description: 
-- Examples:
-- Definition set: DrillingDataSemantics
-## EndPointMapping <!-- NOUN -->
-- Display name: EndPointMapping
-- Parent class: [DWISNoun](#DWISNoun)
-- Attributes:
-  - FixedIndices
-    - Type: int[]
-    - Description: 
-  - ValuesIndices
-    - Type: int[]
-    - Description: 
-  - MeasurementIndex
-    - Type: int
     - Description: 
 - Specialization:
 - Description: 
@@ -1011,6 +956,63 @@
 - Description: 
 - Examples:
 - Definition set: DWISSemantics
+## DataEndPoint <!-- NOUN -->
+- Display name: DataEndPoint
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+  - EndPointDescription
+    - Type: string
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: EndPoints
+## WitsMLTimeBasedLogEndPoint <!-- NOUN -->
+- Display name: WitsMLTimeBasedLogEndPoint
+- Parent class: [DataEndPoint](#DataEndPoint)
+- Attributes:
+  - WellUID
+    - Type: string
+    - Description: 
+  - WellName
+    - Type: string
+    - Description: 
+  - WellboreUID
+    - Type: string
+    - Description: 
+  - WellboreName
+    - Type: string
+    - Description: 
+  - LogUID
+    - Type: string
+    - Description: 
+  - LogName
+    - Type: string
+    - Description: 
+  - Mnemonic
+    - Type: string
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: EndPoints
+## EndPointMapping <!-- NOUN -->
+- Display name: EndPointMapping
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+  - FixedIndices
+    - Type: int[]
+    - Description: 
+  - ValuesIndices
+    - Type: int[]
+    - Description: 
+  - MeasurementIndex
+    - Type: int
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: EndPoints
 ## HydraulicElementState <!-- NOUN -->
 - Display name: HydraulicElementState
 - Parent class: [DWISNoun](#DWISNoun)
@@ -2485,16 +2487,6 @@
 - Description: 
 - Examples: 
 - Definition set: DrillingDataSemantics
-## HasEndPoint <!-- VERB -->
-- Display name: HasEndPoint
-- Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DrillingSignal](#DrillingSignal)
-- Object class: [DataEndPoint](#DataEndPoint)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: 
-- Examples: 
-- Definition set: DrillingDataSemantics
 ## HasSIUnit <!-- VERB -->
 - Display name: HasSIUnit
 - Parent verb: [DWISVerb](#DWISVerb)
@@ -2585,6 +2577,16 @@
 - Description: 
 - Examples: 
 - Definition set: DWISSemantics
+## HasEndPoint <!-- VERB -->
+- Display name: HasEndPoint
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingSignal](#DrillingSignal)
+- Object class: [DataEndPoint](#DataEndPoint)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: EndPoints
 ## EndsHydraulicBranchDecomposition <!-- VERB -->
 - Display name: EndsHydraulicBranchDecomposition
 - Parent verb: [DWISVerb](#DWISVerb)
