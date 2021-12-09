@@ -1,44 +1,6 @@
 - Description: this is the part associated to the signal's description themselves. Dimensionality, data type are the main items to be described.
 
 # NOUNS
-## DataEndPoint <!-- NOUN -->
-- Display name: DataEndPoint
-- Parent class: DWISNoun
-- Attributes:
-  - EndPointDescription
-    - Type: string
-    - Description: 
-- Specialization:
-- Description: 
-- Examples:
-## WitsMLTimeBasedLogEndPoint <!-- NOUN -->
-- Display name: WitsMLTimeBasedLogEndPoint
-- Parent class: DataEndPoint
-- Attributes:
-  - WellUID
-    - Type: string
-    - Description: 
-  - WellName
-    - Type: string
-    - Description: 
-  - WellboreUID
-    - Type: string
-    - Description: 
-  - WellboreName
-    - Type: string
-    - Description: 
-  - LogUID
-    - Type: string
-    - Description: 
-  - LogName
-    - Type: string
-    - Description: 
-  - Mnemonic
-    - Type: string
-    - Description: 
-- Specialization:
-- Description: 
-- Examples:
 ## DataProvider <!-- NOUN -->
 - Display name: DataProvider
 - Parent class: DWISNoun
@@ -248,22 +210,6 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Specialization:
 - Description: 
 - Examples:
-## EndPointMapping <!-- NOUN -->
-- Display name: EndPointMapping
-- Parent class: DWISNoun
-- Attributes:
-  - FixedIndices
-    - Type: int[]
-    - Description: 
-  - ValuesIndices
-    - Type: int[]
-    - Description: 
-  - MeasurementIndex
-    - Type: int
-    - Description: 
-- Specialization:
-- Description: 
-- Examples:
 
 
 # VERBS
@@ -281,13 +227,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Object class: DrillingDataPoint
 - Description: 
 - Examples: 
-## HasEndPoint <!-- VERB -->
-- Display name: HasEndPoint
-- Parent verb: DWISVerb
-- Subject class: DrillingSignal
-- Object class: DataEndPoint
-- Description: 
-- Examples: 
+
 ## HasSIUnit <!-- VERB -->
 - Display name: HasSIUnit
 - Parent verb: DWISVerb
