@@ -31,8 +31,10 @@ namespace DWISVocabulary.OWL
             string iri = "https://github.com/D-WIS/DDHub-Semantic-Interoperability/tree/main/docs/vocabulary_development/auto-generated/dwis.owl";
 
 
+            RDFNamespaceRegister.AddNamespace(new RDFNamespace("ddhub", prefix));
 
             RDFOntology ontology = new RDFOntology(new RDFResource(prefix+ ontologyName));
+            
             ontology.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.Comment, new RDFOntologyLiteral(new RDFPlainLiteral(comment, "En")));
             ontology.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.VersionInfo, new RDFOntologyLiteral(new RDFTypedLiteral(versionInfo, RDFModelEnums.RDFDatatypes.XSD_STRING)));
             ontology.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.Label, new RDFOntologyLiteral(new RDFTypedLiteral(label, RDFModelEnums.RDFDatatypes.XSD_STRING)));
@@ -43,6 +45,8 @@ namespace DWISVocabulary.OWL
             AddClass(nounTree, null, ontology);
             AddVerb(verbTree, null, ontology);
 
+            var gr = ontology.ToRDFGraph(RDFSemanticsEnums.RDFOntologyInferenceExportBehavior.None);
+         
             ontology.ToRDFGraph(RDFSemanticsEnums.RDFOntologyInferenceExportBehavior.None).ToFile(RDFModelEnums.RDFFormats.Turtle, fileName + ".ttl");
             ontology.ToRDFGraph(RDFSemanticsEnums.RDFOntologyInferenceExportBehavior.None).ToFile(RDFModelEnums.RDFFormats.NTriples, fileName + ".nt");
             ontology.ToRDFGraph(RDFSemanticsEnums.RDFOntologyInferenceExportBehavior.None).ToFile(RDFModelEnums.RDFFormats.RdfXml, fileName+ ".xml");
@@ -67,7 +71,7 @@ namespace DWISVocabulary.OWL
             {
                 foreach (var attribute in currentTree.RootItem.NounAttributes)
                 {
-                    RDFOntologyDatatypeProperty prop = new RDFOntologyDatatypeProperty(new RDFResource(prefix + currentTree.RootItem.Name + "." + attribute.Name));
+                    RDFOntologyDatatypeProperty prop = new RDFOntologyDatatypeProperty(new RDFResource(prefix + currentTree.RootItem.Name + "/" + attribute.Name));
                     ontology.Model.PropertyModel.AddProperty(prop);
                     prop.SetDomain(current);
                     prop.SetRange(RDFSharp.Model.RDFVocabulary.XSD.FLOAT.ToRDFOntologyClass());

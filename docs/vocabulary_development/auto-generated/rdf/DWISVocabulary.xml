@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:base="http://ddhub.no/DWISVocabulary">
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:ddhub="http://ddhub.no/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:base="http://ddhub.no/DWISVocabulary">
   <rdf:Description rdf:about="http://ddhub.no/DWISVocabulary">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology" />
     <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.1</owl:versionInfo>
@@ -135,7 +135,7 @@
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DWISAttributeCardinalityRestriction">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
-    <owl:onProperty rdf:resource="http://ddhub.no/BandPassFilter.MinFrequency" />
+    <owl:onProperty rdf:resource="http://ddhub.no/BandPassFilter/MinFrequency" />
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/HighPassFilter">
@@ -1325,7 +1325,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/BandPassFilter.MinFrequency">
+  <rdf:Description rdf:about="http://ddhub.no/BandPassFilter/MinFrequency">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/BandPassFilter" />
@@ -1333,7 +1333,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/BandPassFilter.MaxFrequency">
+  <rdf:Description rdf:about="http://ddhub.no/BandPassFilter/MaxFrequency">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/BandPassFilter" />
@@ -1341,7 +1341,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/HighPassFilter.CutOffFrequency">
+  <rdf:Description rdf:about="http://ddhub.no/HighPassFilter/CutOffFrequency">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/HighPassFilter" />
@@ -1349,7 +1349,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/LowPassFilter.CutOffFrequency">
+  <rdf:Description rdf:about="http://ddhub.no/LowPassFilter/CutOffFrequency">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/LowPassFilter" />
@@ -1357,7 +1357,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/NumberOfSampleMovingAverage.NumberOfSamples">
+  <rdf:Description rdf:about="http://ddhub.no/NumberOfSampleMovingAverage/NumberOfSamples">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/NumberOfSampleMovingAverage" />
@@ -1365,7 +1365,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/TimeWindowMovingAverage.TimeWindow">
+  <rdf:Description rdf:about="http://ddhub.no/TimeWindowMovingAverage/TimeWindow">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/TimeWindowMovingAverage" />
@@ -1373,7 +1373,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Buffering.BufferingInterval">
+  <rdf:Description rdf:about="http://ddhub.no/Buffering/BufferingInterval">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Buffering" />
@@ -1381,7 +1381,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/NumberOfItemsRangeExtraction.NumberOfItems">
+  <rdf:Description rdf:about="http://ddhub.no/NumberOfItemsRangeExtraction/NumberOfItems">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/NumberOfItemsRangeExtraction" />
@@ -1389,7 +1389,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/TimeWindowRangeExtraction.TimeWindow">
+  <rdf:Description rdf:about="http://ddhub.no/TimeWindowRangeExtraction/TimeWindow">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/TimeWindowRangeExtraction" />
@@ -1397,7 +1397,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Resampling.ResamplingRate">
+  <rdf:Description rdf:about="http://ddhub.no/Resampling/ResamplingRate">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Resampling" />
@@ -1405,7 +1405,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Resampling.ResamplingDelay">
+  <rdf:Description rdf:about="http://ddhub.no/Resampling/ResamplingDelay">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Resampling" />
@@ -1413,7 +1413,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Resampling.Validity">
+  <rdf:Description rdf:about="http://ddhub.no/Resampling/Validity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Resampling" />
@@ -1421,7 +1421,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Telemetry.RefreshRate">
+  <rdf:Description rdf:about="http://ddhub.no/Telemetry/RefreshRate">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Telemetry" />
@@ -1429,7 +1429,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Telemetry.NumberOfRepeaters">
+  <rdf:Description rdf:about="http://ddhub.no/Telemetry/NumberOfRepeaters">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Telemetry" />
@@ -1437,7 +1437,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Telemetry.AverageDelayByRepeaters">
+  <rdf:Description rdf:about="http://ddhub.no/Telemetry/AverageDelayByRepeaters">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Telemetry" />
@@ -1445,7 +1445,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DataEndPoint.EndPointDescription">
+  <rdf:Description rdf:about="http://ddhub.no/DataEndPoint/EndPointDescription">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DataEndPoint" />
@@ -1453,7 +1453,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/WitsMLTimeBasedLogEndPoint.WellUID">
+  <rdf:Description rdf:about="http://ddhub.no/WitsMLTimeBasedLogEndPoint/WellUID">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/WitsMLTimeBasedLogEndPoint" />
@@ -1461,7 +1461,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/WitsMLTimeBasedLogEndPoint.WellName">
+  <rdf:Description rdf:about="http://ddhub.no/WitsMLTimeBasedLogEndPoint/WellName">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/WitsMLTimeBasedLogEndPoint" />
@@ -1469,7 +1469,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/WitsMLTimeBasedLogEndPoint.WellboreUID">
+  <rdf:Description rdf:about="http://ddhub.no/WitsMLTimeBasedLogEndPoint/WellboreUID">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/WitsMLTimeBasedLogEndPoint" />
@@ -1477,7 +1477,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/WitsMLTimeBasedLogEndPoint.WellboreName">
+  <rdf:Description rdf:about="http://ddhub.no/WitsMLTimeBasedLogEndPoint/WellboreName">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/WitsMLTimeBasedLogEndPoint" />
@@ -1485,7 +1485,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/WitsMLTimeBasedLogEndPoint.LogUID">
+  <rdf:Description rdf:about="http://ddhub.no/WitsMLTimeBasedLogEndPoint/LogUID">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/WitsMLTimeBasedLogEndPoint" />
@@ -1493,7 +1493,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/WitsMLTimeBasedLogEndPoint.LogName">
+  <rdf:Description rdf:about="http://ddhub.no/WitsMLTimeBasedLogEndPoint/LogName">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/WitsMLTimeBasedLogEndPoint" />
@@ -1501,7 +1501,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/WitsMLTimeBasedLogEndPoint.Mnemonic">
+  <rdf:Description rdf:about="http://ddhub.no/WitsMLTimeBasedLogEndPoint/Mnemonic">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/WitsMLTimeBasedLogEndPoint" />
@@ -1509,7 +1509,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DataProvider.ProviderName">
+  <rdf:Description rdf:about="http://ddhub.no/DataProvider/ProviderName">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DataProvider" />
@@ -1517,7 +1517,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DrillingDataPoint.IsValid">
+  <rdf:Description rdf:about="http://ddhub.no/DrillingDataPoint/IsValid">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
@@ -1525,7 +1525,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DrillingDataPoint.RefreshRate">
+  <rdf:Description rdf:about="http://ddhub.no/DrillingDataPoint/RefreshRate">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
@@ -1533,7 +1533,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DrillingDataPoint.DomainOrder">
+  <rdf:Description rdf:about="http://ddhub.no/DrillingDataPoint/DomainOrder">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
@@ -1541,7 +1541,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DrillingDataPoint.DataType">
+  <rdf:Description rdf:about="http://ddhub.no/DrillingDataPoint/DataType">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
@@ -1549,7 +1549,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DrillingDataPoint.Dimensions">
+  <rdf:Description rdf:about="http://ddhub.no/DrillingDataPoint/Dimensions">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
@@ -1557,7 +1557,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DrillingDataPoint.Order">
+  <rdf:Description rdf:about="http://ddhub.no/DrillingDataPoint/Order">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
@@ -1565,7 +1565,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DrillingDataPoint.DomainDimensions">
+  <rdf:Description rdf:about="http://ddhub.no/DrillingDataPoint/DomainDimensions">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
@@ -1573,7 +1573,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DrillingDataPoint.EndPoint">
+  <rdf:Description rdf:about="http://ddhub.no/DrillingDataPoint/EndPoint">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
@@ -1581,7 +1581,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DrillingSignal.Value">
+  <rdf:Description rdf:about="http://ddhub.no/DrillingSignal/Value">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DrillingSignal" />
@@ -1589,7 +1589,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DynamicDrillingSignal.TimeStampAcquisition">
+  <rdf:Description rdf:about="http://ddhub.no/DynamicDrillingSignal/TimeStampAcquisition">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DynamicDrillingSignal" />
@@ -1597,7 +1597,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/EndPointMapping.FixedIndices">
+  <rdf:Description rdf:about="http://ddhub.no/EndPointMapping/FixedIndices">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/EndPointMapping" />
@@ -1605,7 +1605,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/EndPointMapping.ValuesIndices">
+  <rdf:Description rdf:about="http://ddhub.no/EndPointMapping/ValuesIndices">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/EndPointMapping" />
@@ -1613,7 +1613,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/EndPointMapping.MeasurementIndex">
+  <rdf:Description rdf:about="http://ddhub.no/EndPointMapping/MeasurementIndex">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/EndPointMapping" />
@@ -1621,7 +1621,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/HydraulicConnectedState.Value">
+  <rdf:Description rdf:about="http://ddhub.no/HydraulicConnectedState/Value">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/HydraulicConnectedState" />
@@ -1629,21 +1629,21 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/HydraulicJunction.LeftToRight">
+  <rdf:Description rdf:about="http://ddhub.no/HydraulicJunction/LeftToRight">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/HydraulicJunction" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
     <rdfs:comment xml:lang="EN">Indicates whether the fluid can flow from the left branch to the right branch though the junction</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/HydraulicJunction.RightToLeft">
+  <rdf:Description rdf:about="http://ddhub.no/HydraulicJunction/RightToLeft">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/HydraulicJunction" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
     <rdfs:comment xml:lang="EN">Indicates whether the fluid can flow from the right branch to the left branch though the junction</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MechanicallyClosedState.Value">
+  <rdf:Description rdf:about="http://ddhub.no/MechanicallyClosedState/Value">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/MechanicallyClosedState" />
@@ -1651,7 +1651,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MechanicallyConnectedState.Value">
+  <rdf:Description rdf:about="http://ddhub.no/MechanicallyConnectedState/Value">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/MechanicallyConnectedState" />
@@ -1659,7 +1659,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DrillStringCenterLineFrame.PositiveUpward">
+  <rdf:Description rdf:about="http://ddhub.no/DrillStringCenterLineFrame/PositiveUpward">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DrillStringCenterLineFrame" />
@@ -1667,7 +1667,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/WellboreCenterLineFrame.PositiveUpward">
+  <rdf:Description rdf:about="http://ddhub.no/WellboreCenterLineFrame/PositiveUpward">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/WellboreCenterLineFrame" />
@@ -1675,7 +1675,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MeasurableQuantity.MeaningfulPrecision">
+  <rdf:Description rdf:about="http://ddhub.no/MeasurableQuantity/MeaningfulPrecision">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/MeasurableQuantity" />
@@ -1683,56 +1683,56 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Quantity.L">
+  <rdf:Description rdf:about="http://ddhub.no/Quantity/L">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
     <rdfs:comment xml:lang="EN">Length exponent.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Quantity.M">
+  <rdf:Description rdf:about="http://ddhub.no/Quantity/M">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
     <rdfs:comment xml:lang="EN">Mass exponent.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Quantity.T">
+  <rdf:Description rdf:about="http://ddhub.no/Quantity/T">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
     <rdfs:comment xml:lang="EN">Time exponent.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Quantity.I">
+  <rdf:Description rdf:about="http://ddhub.no/Quantity/I">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
     <rdfs:comment xml:lang="EN">Electric current exponent.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Quantity.ThT">
+  <rdf:Description rdf:about="http://ddhub.no/Quantity/ThT">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
     <rdfs:comment xml:lang="EN">Thermodynamic temperature exponent.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Quantity.N">
+  <rdf:Description rdf:about="http://ddhub.no/Quantity/N">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
     <rdfs:comment xml:lang="EN">Amount of substance exponent.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Quantity.J">
+  <rdf:Description rdf:about="http://ddhub.no/Quantity/J">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
     <rdfs:comment xml:lang="EN">Luminous intensity exponent.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Quantity.SIUnit">
+  <rdf:Description rdf:about="http://ddhub.no/Quantity/SIUnit">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Quantity" />
@@ -1740,7 +1740,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Unit.Symbol">
+  <rdf:Description rdf:about="http://ddhub.no/Unit/Symbol">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Unit" />
@@ -1748,21 +1748,21 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Unit.ConversionFactorA">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
-    <rdfs:comment xml:lang="EN">Unit conversion from SI unit is performed as:</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Unit.ConversionFactorB">
+  <rdf:Description rdf:about="http://ddhub.no/Unit/ConversionFactorA">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Unit" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
     <rdfs:comment xml:lang="EN">Unit conversion from SI unit is performed as:</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Clock.LeapSeconds">
+  <rdf:Description rdf:about="http://ddhub.no/Unit/ConversionFactorB">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
+    <rdfs:comment xml:lang="EN">Unit conversion from SI unit is performed as:</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Clock/LeapSeconds">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Clock" />
@@ -1770,7 +1770,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Clock.Stratum">
+  <rdf:Description rdf:about="http://ddhub.no/Clock/Stratum">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Clock" />
@@ -1778,7 +1778,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Clock.NetworkSynchronizationLatencyAverage">
+  <rdf:Description rdf:about="http://ddhub.no/Clock/NetworkSynchronizationLatencyAverage">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Clock" />
@@ -1786,7 +1786,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Clock.NetworkSynchronizationLatencyStandardDeviation">
+  <rdf:Description rdf:about="http://ddhub.no/Clock/NetworkSynchronizationLatencyStandardDeviation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Clock" />
@@ -1794,7 +1794,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Clock.Resolution">
+  <rdf:Description rdf:about="http://ddhub.no/Clock/Resolution">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Clock" />
@@ -1802,7 +1802,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Clock.MaximumFluctuations">
+  <rdf:Description rdf:about="http://ddhub.no/Clock/MaximumFluctuations">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Clock" />
@@ -1810,7 +1810,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SynchronizationGroup.SynchronizationDelay">
+  <rdf:Description rdf:about="http://ddhub.no/SynchronizationGroup/SynchronizationDelay">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/SynchronizationGroup" />
@@ -1818,7 +1818,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SynchronizationGroup.SamplingRate">
+  <rdf:Description rdf:about="http://ddhub.no/SynchronizationGroup/SamplingRate">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/SynchronizationGroup" />

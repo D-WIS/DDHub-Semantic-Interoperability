@@ -1,1807 +1,1808 @@
-﻿@prefix owl: <http://www.w3.org/2002/07/owl#>.
+﻿@prefix ddhub: <http://ddhub.no/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @base <http://ddhub.no/DWISVocabulary>.
 
-<http://ddhub.no/AccelerationQuantity> a owl:Class; 
-                                       rdfs:comment ""@EN; 
-                                       rdfs:subClassOf <http://ddhub.no/Quantity>. 
+ddhub:AccelerationQuantity a owl:Class; 
+                           rdfs:comment ""@EN; 
+                           rdfs:subClassOf ddhub:Quantity. 
 
-<http://ddhub.no/ActiveLine> a owl:Class; 
-                             rdfs:comment ""@EN; 
-                             rdfs:subClassOf <http://ddhub.no/DrillLine>. 
+ddhub:ActiveLine a owl:Class; 
+                 rdfs:comment ""@EN; 
+                 rdfs:subClassOf ddhub:DrillLine. 
 
-<http://ddhub.no/ActivePit> a owl:Class; 
-                            rdfs:comment ""@EN; 
-                            rdfs:subClassOf <http://ddhub.no/DrillingEquipment>. 
+ddhub:ActivePit a owl:Class; 
+                rdfs:comment ""@EN; 
+                rdfs:subClassOf ddhub:DrillingEquipment. 
 
-<http://ddhub.no/ActiveVolume> a owl:Class; 
-                               rdfs:comment ""@EN; 
-                               rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
+ddhub:ActiveVolume a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:DrillingDataPoint. 
 
-<http://ddhub.no/Aggregation> a owl:Class; 
-                              rdfs:comment ""@EN; 
-                              rdfs:subClassOf <http://ddhub.no/DirectTransformation>. 
+ddhub:Aggregation a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:DirectTransformation. 
 
-<http://ddhub.no/Annular> a owl:Class; 
-                          rdfs:comment ""@EN; 
-                          rdfs:subClassOf <http://ddhub.no/HydraulicBranch>. 
+ddhub:Annular a owl:Class; 
+              rdfs:comment ""@EN; 
+              rdfs:subClassOf ddhub:HydraulicBranch. 
 
-<http://ddhub.no/AreaQuantity> a owl:Class; 
-                               rdfs:comment ""@EN; 
-                               rdfs:subClassOf <http://ddhub.no/Quantity>. 
+ddhub:AreaQuantity a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:Quantity. 
 
-<http://ddhub.no/AssociatesMeasurableQuantity> a owl:ObjectProperty; 
-                                               rdfs:comment ""@EN; 
-                                               rdfs:domain <http://ddhub.no/MeasurableQuantityUnitAssociation>; 
-                                               rdfs:range <http://ddhub.no/MeasurableQuantity>; 
-                                               rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
+ddhub:AssociatesMeasurableQuantity a owl:ObjectProperty; 
+                                   rdfs:comment ""@EN; 
+                                   rdfs:domain ddhub:MeasurableQuantityUnitAssociation; 
+                                   rdfs:range ddhub:MeasurableQuantity; 
+                                   rdfs:subPropertyOf ddhub:DWISVerb. 
 
-<http://ddhub.no/AssociatesUnit> a owl:ObjectProperty; 
-                                 rdfs:comment ""@EN; 
-                                 rdfs:domain <http://ddhub.no/MeasurableQuantityUnitAssociation>; 
-                                 rdfs:range <http://ddhub.no/Unit>; 
-                                 rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
+ddhub:AssociatesUnit a owl:ObjectProperty; 
+                     rdfs:comment ""@EN; 
+                     rdfs:domain ddhub:MeasurableQuantityUnitAssociation; 
+                     rdfs:range ddhub:Unit; 
+                     rdfs:subPropertyOf ddhub:DWISVerb. 
 
-<http://ddhub.no/BandPassFilter> a owl:Class; 
-                                 rdfs:comment ""@EN; 
-                                 rdfs:subClassOf <http://ddhub.no/Filter>. 
+ddhub:BandPassFilter a owl:Class; 
+                     rdfs:comment ""@EN; 
+                     rdfs:subClassOf ddhub:Filter. 
 
-<http://ddhub.no/BandPassFilter.MaxFrequency> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/BandPassFilter/MaxFrequency> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                               rdfs:comment ""@EN; 
-                                              rdfs:domain <http://ddhub.no/BandPassFilter>; 
+                                              rdfs:domain ddhub:BandPassFilter; 
                                               rdfs:range xsd:float. 
 
-<http://ddhub.no/BandPassFilter.MinFrequency> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/BandPassFilter/MinFrequency> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                               rdfs:comment ""@EN; 
-                                              rdfs:domain <http://ddhub.no/BandPassFilter>; 
+                                              rdfs:domain ddhub:BandPassFilter; 
                                               rdfs:range xsd:float. 
 
-<http://ddhub.no/BellNipple> a owl:Class; 
-                             rdfs:comment ""@EN; 
-                             rdfs:subClassOf <http://ddhub.no/DrillingEquipment>. 
+ddhub:BellNipple a owl:Class; 
+                 rdfs:comment ""@EN; 
+                 rdfs:subClassOf ddhub:DrillingEquipment. 
 
-<http://ddhub.no/BelongsToSynchronizationGroup> a owl:ObjectProperty; 
-                                                rdfs:comment ""@EN; 
-                                                rdfs:domain <http://ddhub.no/Resampling>; 
-                                                rdfs:range <http://ddhub.no/SynchronizationGroup>; 
-                                                rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/BHAAnnular> a owl:Class; 
-                             rdfs:comment ""@EN; 
-                             rdfs:subClassOf <http://ddhub.no/Annular>. 
-
-<http://ddhub.no/BHAInner> a owl:Class; 
-                           rdfs:comment ""@EN; 
-                           rdfs:subClassOf <http://ddhub.no/Pipe>. 
-
-<http://ddhub.no/Bit> a owl:Class; 
-                      rdfs:comment ""@EN; 
-                      rdfs:subClassOf <http://ddhub.no/DrillingEquipment>. 
-
-<http://ddhub.no/BitDepth> a owl:Class; 
-                           rdfs:comment ""@EN; 
-                           rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
-
-<http://ddhub.no/BitReferenceLocation> a owl:Class; 
-                                       rdfs:comment ""@EN; 
-                                       rdfs:subClassOf <http://ddhub.no/Location>. 
-
-<http://ddhub.no/BitTorqueQuantity> a owl:Class; 
+ddhub:BelongsToSynchronizationGroup a owl:ObjectProperty; 
                                     rdfs:comment ""@EN; 
-                                    rdfs:subClassOf <http://ddhub.no/MeasurableQuantity>. 
+                                    rdfs:domain ddhub:Resampling; 
+                                    rdfs:range ddhub:SynchronizationGroup; 
+                                    rdfs:subPropertyOf ddhub:DWISVerb. 
 
-<http://ddhub.no/BlockAccelerationQuantity> a owl:Class; 
+ddhub:BHAAnnular a owl:Class; 
+                 rdfs:comment ""@EN; 
+                 rdfs:subClassOf ddhub:Annular. 
+
+ddhub:BHAInner a owl:Class; 
+               rdfs:comment ""@EN; 
+               rdfs:subClassOf ddhub:Pipe. 
+
+ddhub:Bit a owl:Class; 
+          rdfs:comment ""@EN; 
+          rdfs:subClassOf ddhub:DrillingEquipment. 
+
+ddhub:BitDepth a owl:Class; 
+               rdfs:comment ""@EN; 
+               rdfs:subClassOf ddhub:DrillingDataPoint. 
+
+ddhub:BitReferenceLocation a owl:Class; 
+                           rdfs:comment ""@EN; 
+                           rdfs:subClassOf ddhub:Location. 
+
+ddhub:BitTorqueQuantity a owl:Class; 
+                        rdfs:comment ""@EN; 
+                        rdfs:subClassOf ddhub:MeasurableQuantity. 
+
+ddhub:BlockAccelerationQuantity a owl:Class; 
+                                rdfs:comment ""@EN; 
+                                rdfs:subClassOf ddhub:MeasurableQuantity. 
+
+ddhub:BlockPositionQuantity a owl:Class; 
+                            rdfs:comment ""@EN; 
+                            rdfs:subClassOf ddhub:MeasurableQuantity. 
+
+ddhub:BlockVelocityQuantity a owl:Class; 
+                            rdfs:comment ""@EN; 
+                            rdfs:subClassOf ddhub:MeasurableQuantity. 
+
+ddhub:Buffering a owl:Class; 
+                rdfs:comment ""@EN; 
+                rdfs:subClassOf ddhub:TimeBasedTransformation. 
+
+<http://ddhub.no/Buffering/BufferingInterval> a owl:DatatypeProperty, owl:FunctionalProperty; 
+                                              rdfs:comment ""@EN; 
+                                              rdfs:domain ddhub:Buffering; 
+                                              rdfs:range xsd:float. 
+
+ddhub:CartesianThreeDimensionalReferenceFrame a owl:Class; 
+                                              rdfs:comment ""@EN; 
+                                              rdfs:subClassOf ddhub:ThreeDimensionalReferenceFrame. 
+
+ddhub:CartesianTwoDimensionalReferenceFrame a owl:Class; 
                                             rdfs:comment ""@EN; 
-                                            rdfs:subClassOf <http://ddhub.no/MeasurableQuantity>. 
+                                            rdfs:subClassOf ddhub:TwoDimensionalReferenceFrame. 
 
-<http://ddhub.no/BlockPositionQuantity> a owl:Class; 
-                                        rdfs:comment ""@EN; 
-                                        rdfs:subClassOf <http://ddhub.no/MeasurableQuantity>. 
+ddhub:CasingShoeLocation a owl:Class; 
+                         rdfs:comment ""@EN; 
+                         rdfs:subClassOf ddhub:Location. 
 
-<http://ddhub.no/BlockVelocityQuantity> a owl:Class; 
-                                        rdfs:comment ""@EN; 
-                                        rdfs:subClassOf <http://ddhub.no/MeasurableQuantity>. 
+ddhub:CementPump a owl:Class; 
+                 rdfs:comment ""@EN; 
+                 rdfs:subClassOf ddhub:Pump. 
 
-<http://ddhub.no/Buffering> a owl:Class; 
-                            rdfs:comment ""@EN; 
-                            rdfs:subClassOf <http://ddhub.no/TimeBasedTransformation>. 
+ddhub:Clock a owl:Class; 
+            rdfs:comment "Represents a clock"@EN; 
+            rdfs:subClassOf ddhub:DWISNoun. 
 
-<http://ddhub.no/Buffering.BufferingInterval> a owl:DatatypeProperty, owl:FunctionalProperty; 
-                                              rdfs:comment ""@EN; 
-                                              rdfs:domain <http://ddhub.no/Buffering>; 
-                                              rdfs:range xsd:float. 
-
-<http://ddhub.no/CartesianThreeDimensionalReferenceFrame> a owl:Class; 
-                                                          rdfs:comment ""@EN; 
-                                                          rdfs:subClassOf <http://ddhub.no/ThreeDimensionalReferenceFrame>. 
-
-<http://ddhub.no/CartesianTwoDimensionalReferenceFrame> a owl:Class; 
-                                                        rdfs:comment ""@EN; 
-                                                        rdfs:subClassOf <http://ddhub.no/TwoDimensionalReferenceFrame>. 
-
-<http://ddhub.no/CasingShoeLocation> a owl:Class; 
-                                     rdfs:comment ""@EN; 
-                                     rdfs:subClassOf <http://ddhub.no/Location>. 
-
-<http://ddhub.no/CementPump> a owl:Class; 
-                             rdfs:comment ""@EN; 
-                             rdfs:subClassOf <http://ddhub.no/Pump>. 
-
-<http://ddhub.no/Clock> a owl:Class; 
-                        rdfs:comment "Represents a clock"@EN; 
-                        rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
-
-<http://ddhub.no/Clock.LeapSeconds> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/Clock/LeapSeconds> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                     rdfs:comment ""@EN; 
-                                    rdfs:domain <http://ddhub.no/Clock>; 
+                                    rdfs:domain ddhub:Clock; 
                                     rdfs:range xsd:float. 
 
-<http://ddhub.no/Clock.MaximumFluctuations> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/Clock/MaximumFluctuations> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                             rdfs:comment ""@EN; 
-                                            rdfs:domain <http://ddhub.no/Clock>; 
+                                            rdfs:domain ddhub:Clock; 
                                             rdfs:range xsd:float. 
 
-<http://ddhub.no/Clock.NetworkSynchronizationLatencyAverage> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/Clock/NetworkSynchronizationLatencyAverage> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                              rdfs:comment ""@EN; 
-                                                             rdfs:domain <http://ddhub.no/Clock>; 
+                                                             rdfs:domain ddhub:Clock; 
                                                              rdfs:range xsd:float. 
 
-<http://ddhub.no/Clock.NetworkSynchronizationLatencyStandardDeviation> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/Clock/NetworkSynchronizationLatencyStandardDeviation> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                                        rdfs:comment ""@EN; 
-                                                                       rdfs:domain <http://ddhub.no/Clock>; 
+                                                                       rdfs:domain ddhub:Clock; 
                                                                        rdfs:range xsd:float. 
 
-<http://ddhub.no/Clock.Resolution> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/Clock/Resolution> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                    rdfs:comment ""@EN; 
-                                   rdfs:domain <http://ddhub.no/Clock>; 
+                                   rdfs:domain ddhub:Clock; 
                                    rdfs:range xsd:float. 
 
-<http://ddhub.no/Clock.Stratum> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/Clock/Stratum> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                 rdfs:comment ""@EN; 
-                                rdfs:domain <http://ddhub.no/Clock>; 
+                                rdfs:domain ddhub:Clock; 
                                 rdfs:range xsd:float. 
 
-<http://ddhub.no/ComputationUnit> a owl:Class; 
-                                  rdfs:comment "Denotes a complex computation unit, typically based on advanced numerical modeling"@EN; 
-                                  rdfs:subClassOf <http://ddhub.no/DataFlowNode>. 
+ddhub:ComputationUnit a owl:Class; 
+                      rdfs:comment "Denotes a complex computation unit, typically based on advanced numerical modeling"@EN; 
+                      rdfs:subClassOf ddhub:DataFlowNode. 
 
-<http://ddhub.no/ConnectedCondition> a owl:Class; 
-                                     rdfs:comment ""@EN; 
-                                     rdfs:subClassOf <http://ddhub.no/ValidityCondition>. 
+ddhub:ConnectedCondition a owl:Class; 
+                         rdfs:comment ""@EN; 
+                         rdfs:subClassOf ddhub:ValidityCondition. 
 
-<http://ddhub.no/Controller> a owl:Class; 
-                             rdfs:comment ""@EN; 
-                             rdfs:subClassOf <http://ddhub.no/DataFlowNode>. 
+ddhub:Controller a owl:Class; 
+                 rdfs:comment ""@EN; 
+                 rdfs:subClassOf ddhub:DataFlowNode. 
 
-<http://ddhub.no/Controls> a owl:ObjectProperty; 
-                           rdfs:comment ""@EN; 
-                           rdfs:domain <http://ddhub.no/DWISNoun>; 
-                           rdfs:range <http://ddhub.no/DWISNoun>; 
-                           rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
+ddhub:Controls a owl:ObjectProperty; 
+               rdfs:comment ""@EN; 
+               rdfs:domain ddhub:DWISNoun; 
+               rdfs:range ddhub:DWISNoun; 
+               rdfs:subPropertyOf ddhub:DWISVerb. 
 
-<http://ddhub.no/ControlSystem> a owl:Class; 
-                                rdfs:comment ""@EN; 
-                                rdfs:subClassOf <http://ddhub.no/DataFlowNode>. 
+ddhub:ControlSystem a owl:Class; 
+                    rdfs:comment ""@EN; 
+                    rdfs:subClassOf ddhub:DataFlowNode. 
 
-<http://ddhub.no/CrownBlock> a owl:Class; 
-                             rdfs:comment ""@EN; 
-                             rdfs:subClassOf <http://ddhub.no/MechanicalBlock>. 
+ddhub:CrownBlock a owl:Class; 
+                 rdfs:comment ""@EN; 
+                 rdfs:subClassOf ddhub:MechanicalBlock. 
 
-<http://ddhub.no/CurviLinearFrenetSerretReferenceFrame> a owl:Class; 
-                                                        rdfs:comment ""@EN; 
-                                                        rdfs:subClassOf <http://ddhub.no/FourDimensionalReferenceFrame>. 
-
-<http://ddhub.no/CylindricalReferenceFrame> a owl:Class; 
+ddhub:CurviLinearFrenetSerretReferenceFrame a owl:Class; 
                                             rdfs:comment ""@EN; 
-                                            rdfs:subClassOf <http://ddhub.no/ThreeDimensionalReferenceFrame>. 
+                                            rdfs:subClassOf ddhub:FourDimensionalReferenceFrame. 
 
-<http://ddhub.no/DataEndPoint> a owl:Class; 
-                               rdfs:comment ""@EN; 
-                               rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
+ddhub:CylindricalReferenceFrame a owl:Class; 
+                                rdfs:comment ""@EN; 
+                                rdfs:subClassOf ddhub:ThreeDimensionalReferenceFrame. 
 
-<http://ddhub.no/DataEndPoint.EndPointDescription> a owl:DatatypeProperty, owl:FunctionalProperty; 
+ddhub:DataEndPoint a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:DWISNoun. 
+
+<http://ddhub.no/DataEndPoint/EndPointDescription> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                    rdfs:comment ""@EN; 
-                                                   rdfs:domain <http://ddhub.no/DataEndPoint>; 
+                                                   rdfs:domain ddhub:DataEndPoint; 
                                                    rdfs:range xsd:float. 
 
-<http://ddhub.no/DataFlowNode> a owl:Class; 
-                               rdfs:comment ""@EN; 
-                               rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
+ddhub:DataFlowNode a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:DWISNoun. 
 
-<http://ddhub.no/DataProvider> a owl:Class; 
-                               rdfs:comment ""@EN; 
-                               rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
+ddhub:DataProvider a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:DWISNoun. 
 
-<http://ddhub.no/DataProvider.ProviderName> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/DataProvider/ProviderName> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                             rdfs:comment ""@EN; 
-                                            rdfs:domain <http://ddhub.no/DataProvider>; 
+                                            rdfs:domain ddhub:DataProvider; 
                                             rdfs:range xsd:float. 
 
-<http://ddhub.no/DeadLine> a owl:Class; 
-                           rdfs:comment ""@EN; 
-                           rdfs:subClassOf <http://ddhub.no/DrillLine>. 
+ddhub:DeadLine a owl:Class; 
+               rdfs:comment ""@EN; 
+               rdfs:subClassOf ddhub:DrillLine. 
 
-<http://ddhub.no/DeadLineAnchor> a owl:Class; 
-                                 rdfs:comment ""@EN; 
-                                 rdfs:subClassOf <http://ddhub.no/DrillLineFastener>. 
+ddhub:DeadLineAnchor a owl:Class; 
+                     rdfs:comment ""@EN; 
+                     rdfs:subClassOf ddhub:DrillLineFastener. 
 
-<http://ddhub.no/DensityIn> a owl:Class; 
-                            rdfs:comment ""@EN; 
-                            rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
+ddhub:DensityIn a owl:Class; 
+                rdfs:comment ""@EN; 
+                rdfs:subClassOf ddhub:DrillingDataPoint. 
 
-<http://ddhub.no/DensityOut> a owl:Class; 
-                             rdfs:comment ""@EN; 
-                             rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
+ddhub:DensityOut a owl:Class; 
+                 rdfs:comment ""@EN; 
+                 rdfs:subClassOf ddhub:DrillingDataPoint. 
 
-<http://ddhub.no/DepthAndAngleFrame> a owl:Class; 
-                                     rdfs:comment ""@EN; 
-                                     rdfs:subClassOf <http://ddhub.no/ReferenceFrame>. 
+ddhub:DepthAndAngleFrame a owl:Class; 
+                         rdfs:comment ""@EN; 
+                         rdfs:subClassOf ddhub:ReferenceFrame. 
 
-<http://ddhub.no/DepthQuantity> a owl:Class; 
-                                rdfs:comment ""@EN; 
-                                rdfs:subClassOf <http://ddhub.no/MeasurableQuantity>. 
+ddhub:DepthQuantity a owl:Class; 
+                    rdfs:comment ""@EN; 
+                    rdfs:subClassOf ddhub:MeasurableQuantity. 
 
-<http://ddhub.no/Derivation> a owl:Class; 
-                             rdfs:comment ""@EN; 
-                             rdfs:subClassOf <http://ddhub.no/TimeBasedTransformation>. 
+ddhub:Derivation a owl:Class; 
+                 rdfs:comment ""@EN; 
+                 rdfs:subClassOf ddhub:TimeBasedTransformation. 
 
-<http://ddhub.no/DirectTransformation> a owl:Class; 
-                                       rdfs:comment "Direct transformations are performed using only the current value of their inputs, time is not involved"@EN; 
-                                       rdfs:subClassOf <http://ddhub.no/Transformation>. 
+ddhub:DirectTransformation a owl:Class; 
+                           rdfs:comment "Direct transformations are performed using only the current value of their inputs, time is not involved"@EN; 
+                           rdfs:subClassOf ddhub:Transformation. 
 
-<http://ddhub.no/Dolly> a owl:Class; 
+ddhub:Dolly a owl:Class; 
+            rdfs:comment ""@EN; 
+            rdfs:subClassOf ddhub:DrillingEquipment. 
+
+ddhub:DollyRail a owl:Class; 
+                rdfs:comment ""@EN; 
+                rdfs:subClassOf ddhub:DrillingEquipment. 
+
+ddhub:DownholeECD a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:DrillingDataPoint. 
+
+ddhub:DownholeHydraulicNetwork a owl:Class; 
+                               rdfs:comment ""@EN; 
+                               rdfs:subClassOf ddhub:HydraulicNetwork. 
+
+ddhub:DownholePressure a owl:Class; 
+                       rdfs:comment ""@EN; 
+                       rdfs:subClassOf ddhub:DrillingDataPoint. 
+
+ddhub:DownholePressureQuantity a owl:Class; 
+                               rdfs:comment ""@EN; 
+                               rdfs:subClassOf ddhub:MeasurableQuantity. 
+
+ddhub:DownholeRPM a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:DrillingDataPoint. 
+
+ddhub:DownHoleTelemetry a owl:Class; 
                         rdfs:comment ""@EN; 
-                        rdfs:subClassOf <http://ddhub.no/DrillingEquipment>. 
+                        rdfs:subClassOf ddhub:Telemetry. 
 
-<http://ddhub.no/DollyRail> a owl:Class; 
-                            rdfs:comment ""@EN; 
-                            rdfs:subClassOf <http://ddhub.no/DrillingEquipment>. 
+ddhub:DownholeTemperature a owl:Class; 
+                          rdfs:comment ""@EN; 
+                          rdfs:subClassOf ddhub:DrillingDataPoint. 
 
-<http://ddhub.no/DownholeECD> a owl:Class; 
-                              rdfs:comment ""@EN; 
-                              rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
+ddhub:DownholeTorque a owl:Class; 
+                     rdfs:comment ""@EN; 
+                     rdfs:subClassOf ddhub:DrillingDataPoint. 
 
-<http://ddhub.no/DownholeHydraulicNetwork> a owl:Class; 
-                                           rdfs:comment ""@EN; 
-                                           rdfs:subClassOf <http://ddhub.no/HydraulicNetwork>. 
+ddhub:DrawWorks a owl:Class; 
+                rdfs:comment ""@EN; 
+                rdfs:subClassOf ddhub:DrillLineFastener. 
 
-<http://ddhub.no/DownholePressure> a owl:Class; 
-                                   rdfs:comment ""@EN; 
-                                   rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
+ddhub:DrawWorksControlSystem a owl:Class; 
+                             rdfs:comment ""@EN; 
+                             rdfs:subClassOf ddhub:ControlSystem. 
 
-<http://ddhub.no/DownholePressureQuantity> a owl:Class; 
-                                           rdfs:comment ""@EN; 
-                                           rdfs:subClassOf <http://ddhub.no/MeasurableQuantity>. 
+ddhub:DrillFloorReferenceLocation a owl:Class; 
+                                  rdfs:comment ""@EN; 
+                                  rdfs:subClassOf ddhub:Location. 
 
-<http://ddhub.no/DownholeRPM> a owl:Class; 
-                              rdfs:comment ""@EN; 
-                              rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
+ddhub:DrillingDataPoint a owl:Class; 
+                        rdfs:comment "Main type of DDHub data. Represents a drilling signal."@EN; 
+                        rdfs:subClassOf ddhub:DWISNoun. 
 
-<http://ddhub.no/DownHoleTelemetry> a owl:Class; 
-                                    rdfs:comment ""@EN; 
-                                    rdfs:subClassOf <http://ddhub.no/Telemetry>. 
-
-<http://ddhub.no/DownholeTemperature> a owl:Class; 
-                                      rdfs:comment ""@EN; 
-                                      rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
-
-<http://ddhub.no/DownholeTorque> a owl:Class; 
-                                 rdfs:comment ""@EN; 
-                                 rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
-
-<http://ddhub.no/DrawWorks> a owl:Class; 
-                            rdfs:comment ""@EN; 
-                            rdfs:subClassOf <http://ddhub.no/DrillLineFastener>. 
-
-<http://ddhub.no/DrawWorksControlSystem> a owl:Class; 
-                                         rdfs:comment ""@EN; 
-                                         rdfs:subClassOf <http://ddhub.no/ControlSystem>. 
-
-<http://ddhub.no/DrillFloorReferenceLocation> a owl:Class; 
-                                              rdfs:comment ""@EN; 
-                                              rdfs:subClassOf <http://ddhub.no/Location>. 
-
-<http://ddhub.no/DrillingDataPoint> a owl:Class; 
-                                    rdfs:comment "Main type of DDHub data. Represents a drilling signal."@EN; 
-                                    rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
-
-<http://ddhub.no/DrillingDataPoint.DataType> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/DrillingDataPoint/DataType> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                              rdfs:comment ""@EN; 
-                                             rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
+                                             rdfs:domain ddhub:DrillingDataPoint; 
                                              rdfs:range xsd:float. 
 
-<http://ddhub.no/DrillingDataPoint.Dimensions> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/DrillingDataPoint/Dimensions> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                rdfs:comment ""@EN; 
-                                               rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
+                                               rdfs:domain ddhub:DrillingDataPoint; 
                                                rdfs:range xsd:float. 
 
-<http://ddhub.no/DrillingDataPoint.DomainDimensions> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/DrillingDataPoint/DomainDimensions> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                      rdfs:comment ""@EN; 
-                                                     rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
+                                                     rdfs:domain ddhub:DrillingDataPoint; 
                                                      rdfs:range xsd:float. 
 
-<http://ddhub.no/DrillingDataPoint.DomainOrder> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/DrillingDataPoint/DomainOrder> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                 rdfs:comment ""@EN; 
-                                                rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
+                                                rdfs:domain ddhub:DrillingDataPoint; 
                                                 rdfs:range xsd:float. 
 
-<http://ddhub.no/DrillingDataPoint.EndPoint> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/DrillingDataPoint/EndPoint> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                              rdfs:comment ""@EN; 
-                                             rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
+                                             rdfs:domain ddhub:DrillingDataPoint; 
                                              rdfs:range xsd:float. 
 
-<http://ddhub.no/DrillingDataPoint.IsValid> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/DrillingDataPoint/IsValid> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                             rdfs:comment ""@EN; 
-                                            rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
+                                            rdfs:domain ddhub:DrillingDataPoint; 
                                             rdfs:range xsd:float. 
 
-<http://ddhub.no/DrillingDataPoint.Order> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/DrillingDataPoint/Order> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                           rdfs:comment ""@EN; 
-                                          rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
+                                          rdfs:domain ddhub:DrillingDataPoint; 
                                           rdfs:range xsd:float. 
 
-<http://ddhub.no/DrillingDataPoint.RefreshRate> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/DrillingDataPoint/RefreshRate> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                 rdfs:comment ""@EN; 
-                                                rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
+                                                rdfs:domain ddhub:DrillingDataPoint; 
                                                 rdfs:range xsd:float. 
 
-<http://ddhub.no/DrillingEquipment> a owl:Class; 
-                                    rdfs:comment ""@EN; 
-                                    rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
+ddhub:DrillingEquipment a owl:Class; 
+                        rdfs:comment ""@EN; 
+                        rdfs:subClassOf ddhub:DWISNoun. 
 
-<http://ddhub.no/DrillingSignal> a owl:Class; 
-                                 rdfs:comment "Data structure used to store the steaming drilling data."@EN; 
-                                 rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
+ddhub:DrillingSignal a owl:Class; 
+                     rdfs:comment "Data structure used to store the steaming drilling data."@EN; 
+                     rdfs:subClassOf ddhub:DWISNoun. 
 
-<http://ddhub.no/DrillingSignal.Value> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/DrillingSignal/Value> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                        rdfs:comment ""@EN; 
-                                       rdfs:domain <http://ddhub.no/DrillingSignal>; 
+                                       rdfs:domain ddhub:DrillingSignal; 
                                        rdfs:range xsd:float. 
 
-<http://ddhub.no/DrillLine> a owl:Class; 
-                            rdfs:comment ""@EN; 
-                            rdfs:subClassOf <http://ddhub.no/DrillingEquipment>. 
+ddhub:DrillLine a owl:Class; 
+                rdfs:comment ""@EN; 
+                rdfs:subClassOf ddhub:DrillingEquipment. 
 
-<http://ddhub.no/DrillLineFastener> a owl:Class; 
-                                    rdfs:comment ""@EN; 
-                                    rdfs:subClassOf <http://ddhub.no/DrillingEquipment>. 
+ddhub:DrillLineFastener a owl:Class; 
+                        rdfs:comment ""@EN; 
+                        rdfs:subClassOf ddhub:DrillingEquipment. 
 
-<http://ddhub.no/DrillPipesAnnular> a owl:Class; 
-                                    rdfs:comment ""@EN; 
-                                    rdfs:subClassOf <http://ddhub.no/Annular>. 
+ddhub:DrillPipesAnnular a owl:Class; 
+                        rdfs:comment ""@EN; 
+                        rdfs:subClassOf ddhub:Annular. 
 
-<http://ddhub.no/DrillPipesInner> a owl:Class; 
-                                  rdfs:comment ""@EN; 
-                                  rdfs:subClassOf <http://ddhub.no/Pipe>. 
+ddhub:DrillPipesInner a owl:Class; 
+                      rdfs:comment ""@EN; 
+                      rdfs:subClassOf ddhub:Pipe. 
 
-<http://ddhub.no/DrillStemMechanicalModel> a owl:Class; 
-                                           rdfs:comment "A mechanical model for a drill-stem. Another name for drill-stem mechanical models is a torque and drag model."@EN; 
-                                           rdfs:subClassOf <http://ddhub.no/MathematicalModel>. 
+ddhub:DrillStemMechanicalModel a owl:Class; 
+                               rdfs:comment "A mechanical model for a drill-stem. Another name for drill-stem mechanical models is a torque and drag model."@EN; 
+                               rdfs:subClassOf ddhub:MathematicalModel. 
 
-<http://ddhub.no/DrillString> a owl:Class; 
-                              rdfs:comment ""@EN; 
-                              rdfs:subClassOf <http://ddhub.no/DrillingEquipment>. 
+ddhub:DrillString a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:DrillingEquipment. 
 
-<http://ddhub.no/DrillStringCenterLineFrame> a owl:Class; 
-                                             rdfs:comment ""@EN; 
-                                             rdfs:subClassOf <http://ddhub.no/OneDimensionalCurviLinearReferenceFrame>. 
+ddhub:DrillStringCenterLineFrame a owl:Class; 
+                                 rdfs:comment ""@EN; 
+                                 rdfs:subClassOf ddhub:OneDimensionalCurviLinearReferenceFrame. 
 
-<http://ddhub.no/DrillStringCenterLineFrame.PositiveUpward> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/DrillStringCenterLineFrame/PositiveUpward> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                             rdfs:comment ""@EN; 
-                                                            rdfs:domain <http://ddhub.no/DrillStringCenterLineFrame>; 
+                                                            rdfs:domain ddhub:DrillStringCenterLineFrame; 
                                                             rdfs:range xsd:float. 
 
-<http://ddhub.no/DWISAttributeCardinalityRestriction> a owl:Restriction; 
-                                                      owl:cardinality "1"^^xsd:nonNegativeInteger; 
-                                                      owl:onProperty <http://ddhub.no/BandPassFilter.MinFrequency>. 
+ddhub:DWISAttributeCardinalityRestriction a owl:Restriction; 
+                                          owl:cardinality "1"^^xsd:nonNegativeInteger; 
+                                          owl:onProperty <http://ddhub.no/BandPassFilter/MinFrequency>. 
 
-<http://ddhub.no/DWISNoun> a owl:Class; 
-                           rdfs:comment ""@EN. 
+ddhub:DWISNoun a owl:Class; 
+               rdfs:comment ""@EN. 
 
-<http://ddhub.no/DWISVerb> a owl:ObjectProperty; 
-                           rdfs:comment ""@EN; 
-                           rdfs:domain <http://ddhub.no/DWISNoun>; 
-                           rdfs:range <http://ddhub.no/DWISNoun>. 
+ddhub:DWISVerb a owl:ObjectProperty; 
+               rdfs:comment ""@EN; 
+               rdfs:domain ddhub:DWISNoun; 
+               rdfs:range ddhub:DWISNoun. 
 
-<http://ddhub.no/DWISVocabulary> a owl:Ontology; 
-                                 rdfs:comment "This is the ontology generated by the D-WIS WG1: Semantics of Real-time signals. It has been automatically generated from the vocabulary defined at https://github.com/D-WIS/DDHub-Semantic-Interoperability/tree/main/docs/vocabulary_development/auto-generated"@EN; 
-                                 rdfs:isDefinedBy "D-WIS WG1: Semantics of Real-time signals"^^xsd:string; 
-                                 rdfs:label "D-WIS vocabulary"^^xsd:string; 
-                                 owl:versionInfo "0.1"^^xsd:string. 
+ddhub:DWISVocabulary a owl:Ontology; 
+                     rdfs:comment "This is the ontology generated by the D-WIS WG1: Semantics of Real-time signals. It has been automatically generated from the vocabulary defined at https://github.com/D-WIS/DDHub-Semantic-Interoperability/tree/main/docs/vocabulary_development/auto-generated"@EN; 
+                     rdfs:isDefinedBy "D-WIS WG1: Semantics of Real-time signals"^^xsd:string; 
+                     rdfs:label "D-WIS vocabulary"^^xsd:string; 
+                     owl:versionInfo "0.1"^^xsd:string. 
 
-<http://ddhub.no/DynamicDrillingSignal> a owl:Class; 
-                                        rdfs:comment ""@EN; 
-                                        rdfs:subClassOf <http://ddhub.no/DrillingSignal>. 
+ddhub:DynamicDrillingSignal a owl:Class; 
+                            rdfs:comment ""@EN; 
+                            rdfs:subClassOf ddhub:DrillingSignal. 
 
-<http://ddhub.no/DynamicDrillingSignal.TimeStampAcquisition> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/DynamicDrillingSignal/TimeStampAcquisition> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                              rdfs:comment ""@EN; 
-                                                             rdfs:domain <http://ddhub.no/DynamicDrillingSignal>; 
+                                                             rdfs:domain ddhub:DynamicDrillingSignal; 
                                                              rdfs:range xsd:float. 
 
-<http://ddhub.no/ElectricResistivityQuantity> a owl:Class; 
-                                              rdfs:comment ""@EN; 
-                                              rdfs:subClassOf <http://ddhub.no/Quantity>. 
-
-<http://ddhub.no/Elevator> a owl:Class; 
-                           rdfs:comment ""@EN; 
-                           rdfs:subClassOf <http://ddhub.no/DrillingEquipment>. 
-
-<http://ddhub.no/EMWQuantity> a owl:Class; 
-                              rdfs:comment ""@EN; 
-                              rdfs:subClassOf <http://ddhub.no/MeasurableQuantity>. 
-
-<http://ddhub.no/EndPointMapping> a owl:Class; 
+ddhub:ElectricResistivityQuantity a owl:Class; 
                                   rdfs:comment ""@EN; 
-                                  rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
+                                  rdfs:subClassOf ddhub:Quantity. 
 
-<http://ddhub.no/EndPointMapping.FixedIndices> a owl:DatatypeProperty, owl:FunctionalProperty; 
+ddhub:Elevator a owl:Class; 
+               rdfs:comment ""@EN; 
+               rdfs:subClassOf ddhub:DrillingEquipment. 
+
+ddhub:EMWQuantity a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:MeasurableQuantity. 
+
+ddhub:EndPointMapping a owl:Class; 
+                      rdfs:comment ""@EN; 
+                      rdfs:subClassOf ddhub:DWISNoun. 
+
+<http://ddhub.no/EndPointMapping/FixedIndices> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                rdfs:comment ""@EN; 
-                                               rdfs:domain <http://ddhub.no/EndPointMapping>; 
+                                               rdfs:domain ddhub:EndPointMapping; 
                                                rdfs:range xsd:float. 
 
-<http://ddhub.no/EndPointMapping.MeasurementIndex> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/EndPointMapping/MeasurementIndex> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                    rdfs:comment ""@EN; 
-                                                   rdfs:domain <http://ddhub.no/EndPointMapping>; 
+                                                   rdfs:domain ddhub:EndPointMapping; 
                                                    rdfs:range xsd:float. 
 
-<http://ddhub.no/EndPointMapping.ValuesIndices> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/EndPointMapping/ValuesIndices> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                 rdfs:comment ""@EN; 
-                                                rdfs:domain <http://ddhub.no/EndPointMapping>; 
+                                                rdfs:domain ddhub:EndPointMapping; 
                                                 rdfs:range xsd:float. 
 
-<http://ddhub.no/EndsHydraulicBranchDecomposition> a owl:ObjectProperty; 
-                                                   rdfs:comment ""@EN; 
-                                                   rdfs:domain <http://ddhub.no/HydraulicBranch>; 
-                                                   rdfs:range <http://ddhub.no/HydraulicBranch>; 
-                                                   rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
+ddhub:EndsHydraulicBranchDecomposition a owl:ObjectProperty; 
+                                       rdfs:comment ""@EN; 
+                                       rdfs:domain ddhub:HydraulicBranch; 
+                                       rdfs:range ddhub:HydraulicBranch; 
+                                       rdfs:subPropertyOf ddhub:DWISVerb. 
 
-<http://ddhub.no/EQ> a owl:Class; 
-                     rdfs:comment ""@EN; 
-                     rdfs:subClassOf <http://ddhub.no/ValidityCondition>. 
+ddhub:EQ a owl:Class; 
+         rdfs:comment ""@EN; 
+         rdfs:subClassOf ddhub:ValidityCondition. 
 
-<http://ddhub.no/Filter> a owl:Class; 
-                         rdfs:comment ""@EN; 
-                         rdfs:subClassOf <http://ddhub.no/SignalProcessingUnit>. 
+ddhub:Filter a owl:Class; 
+             rdfs:comment ""@EN; 
+             rdfs:subClassOf ddhub:SignalProcessingUnit. 
 
-<http://ddhub.no/FlowRateIn> a owl:Class; 
+ddhub:FlowRateIn a owl:Class; 
+                 rdfs:comment ""@EN; 
+                 rdfs:subClassOf ddhub:DrillingDataPoint. 
+
+ddhub:FlowRateOut a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:DrillingDataPoint. 
+
+ddhub:FlowRateQuantity a owl:Class; 
+                       rdfs:comment ""@EN; 
+                       rdfs:subClassOf ddhub:MeasurableQuantity. 
+
+ddhub:FluidDensityInQuantity a owl:Class; 
                              rdfs:comment ""@EN; 
-                             rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
+                             rdfs:subClassOf ddhub:MeasurableQuantity. 
 
-<http://ddhub.no/FlowRateOut> a owl:Class; 
-                              rdfs:comment ""@EN; 
-                              rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
+ddhub:FluidTemperatureInQuantity a owl:Class; 
+                                 rdfs:comment ""@EN; 
+                                 rdfs:subClassOf ddhub:MeasurableQuantity. 
 
-<http://ddhub.no/FlowRateQuantity> a owl:Class; 
-                                   rdfs:comment ""@EN; 
-                                   rdfs:subClassOf <http://ddhub.no/MeasurableQuantity>. 
-
-<http://ddhub.no/FluidDensityInQuantity> a owl:Class; 
-                                         rdfs:comment ""@EN; 
-                                         rdfs:subClassOf <http://ddhub.no/MeasurableQuantity>. 
-
-<http://ddhub.no/FluidTemperatureInQuantity> a owl:Class; 
-                                             rdfs:comment ""@EN; 
-                                             rdfs:subClassOf <http://ddhub.no/MeasurableQuantity>. 
-
-<http://ddhub.no/ForceFromLoadPinsTransformation> a owl:Class; 
-                                                  rdfs:comment ""@EN; 
-                                                  rdfs:subClassOf <http://ddhub.no/DirectTransformation>. 
-
-<http://ddhub.no/ForceQuantity> a owl:Class; 
-                                rdfs:comment ""@EN; 
-                                rdfs:subClassOf <http://ddhub.no/Quantity>. 
-
-<http://ddhub.no/ForceToLoadTransformation> a owl:Class; 
-                                            rdfs:comment ""@EN; 
-                                            rdfs:subClassOf <http://ddhub.no/DirectTransformation>. 
-
-<http://ddhub.no/FormationPorosityQuantity> a owl:Class; 
-                                            rdfs:comment ""@EN; 
-                                            rdfs:subClassOf <http://ddhub.no/MeasurableQuantity>. 
-
-<http://ddhub.no/FourDimensionalReferenceFrame> a owl:Class; 
-                                                rdfs:comment ""@EN; 
-                                                rdfs:subClassOf <http://ddhub.no/ReferenceFrame>. 
-
-<http://ddhub.no/FrenetSerretReferenceFrame> a owl:Class; 
-                                             rdfs:comment ""@EN; 
-                                             rdfs:subClassOf <http://ddhub.no/CartesianThreeDimensionalReferenceFrame>. 
-
-<http://ddhub.no/FrequencyQuantity> a owl:Class; 
-                                    rdfs:comment ""@EN; 
-                                    rdfs:subClassOf <http://ddhub.no/Quantity>. 
-
-<http://ddhub.no/GateValve> a owl:Class; 
-                            rdfs:comment ""@EN; 
-                            rdfs:subClassOf <http://ddhub.no/DrillingEquipment>. 
-
-<http://ddhub.no/GaussianUncertainty> a owl:Class; 
+ddhub:ForceFromLoadPinsTransformation a owl:Class; 
                                       rdfs:comment ""@EN; 
-                                      rdfs:subClassOf <http://ddhub.no/SignalUncertainty>. 
+                                      rdfs:subClassOf ddhub:DirectTransformation. 
 
-<http://ddhub.no/GenericUncertainty> a owl:Class; 
-                                     rdfs:comment ""@EN; 
-                                     rdfs:subClassOf <http://ddhub.no/SignalUncertainty>. 
+ddhub:ForceQuantity a owl:Class; 
+                    rdfs:comment ""@EN; 
+                    rdfs:subClassOf ddhub:Quantity. 
 
-<http://ddhub.no/GT> a owl:Class; 
+ddhub:ForceToLoadTransformation a owl:Class; 
+                                rdfs:comment ""@EN; 
+                                rdfs:subClassOf ddhub:DirectTransformation. 
+
+ddhub:FormationPorosityQuantity a owl:Class; 
+                                rdfs:comment ""@EN; 
+                                rdfs:subClassOf ddhub:MeasurableQuantity. 
+
+ddhub:FourDimensionalReferenceFrame a owl:Class; 
+                                    rdfs:comment ""@EN; 
+                                    rdfs:subClassOf ddhub:ReferenceFrame. 
+
+ddhub:FrenetSerretReferenceFrame a owl:Class; 
+                                 rdfs:comment ""@EN; 
+                                 rdfs:subClassOf ddhub:CartesianThreeDimensionalReferenceFrame. 
+
+ddhub:FrequencyQuantity a owl:Class; 
+                        rdfs:comment ""@EN; 
+                        rdfs:subClassOf ddhub:Quantity. 
+
+ddhub:GateValve a owl:Class; 
+                rdfs:comment ""@EN; 
+                rdfs:subClassOf ddhub:DrillingEquipment. 
+
+ddhub:GaussianUncertainty a owl:Class; 
+                          rdfs:comment ""@EN; 
+                          rdfs:subClassOf ddhub:SignalUncertainty. 
+
+ddhub:GenericUncertainty a owl:Class; 
+                         rdfs:comment ""@EN; 
+                         rdfs:subClassOf ddhub:SignalUncertainty. 
+
+ddhub:GT a owl:Class; 
+         rdfs:comment ""@EN; 
+         rdfs:subClassOf ddhub:ValidityCondition. 
+
+ddhub:HasAcquisitionClock a owl:ObjectProperty; 
+                          rdfs:comment ""@EN; 
+                          rdfs:domain ddhub:DrillingDataPoint; 
+                          rdfs:range ddhub:Clock; 
+                          rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:HasBranchComponent a owl:ObjectProperty; 
+                         rdfs:comment ""@EN; 
+                         rdfs:domain ddhub:HydraulicNetwork; 
+                         rdfs:range ddhub:HydraulicBranch; 
+                         rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:HasBranchCoordinateSystem a owl:ObjectProperty; 
+                                rdfs:comment ""@EN; 
+                                rdfs:domain ddhub:HydraulicBranch; 
+                                rdfs:range ddhub:ReferenceFrame; 
+                                rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:HasCoordinates a owl:ObjectProperty; 
                      rdfs:comment ""@EN; 
-                     rdfs:subClassOf <http://ddhub.no/ValidityCondition>. 
+                     rdfs:domain ddhub:Location; 
+                     rdfs:range ddhub:DrillingDataPoint; 
+                     rdfs:subPropertyOf ddhub:DWISVerb. 
 
-<http://ddhub.no/HasAcquisitionClock> a owl:ObjectProperty; 
-                                      rdfs:comment ""@EN; 
-                                      rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                      rdfs:range <http://ddhub.no/Clock>; 
-                                      rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
+ddhub:HasDomain a owl:ObjectProperty; 
+                rdfs:comment ""@EN; 
+                rdfs:domain ddhub:DrillingDataPoint; 
+                rdfs:range ddhub:DrillingDataPoint; 
+                rdfs:subPropertyOf ddhub:DWISVerb. 
 
-<http://ddhub.no/HasBranchComponent> a owl:ObjectProperty; 
-                                     rdfs:comment ""@EN; 
-                                     rdfs:domain <http://ddhub.no/HydraulicNetwork>; 
-                                     rdfs:range <http://ddhub.no/HydraulicBranch>; 
-                                     rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
+ddhub:HasDynamicValue a owl:ObjectProperty; 
+                      rdfs:comment ""@EN; 
+                      rdfs:domain ddhub:DrillingDataPoint; 
+                      rdfs:range ddhub:DynamicDrillingSignal; 
+                      rdfs:subPropertyOf ddhub:HasValue. 
 
-<http://ddhub.no/HasBranchCoordinateSystem> a owl:ObjectProperty; 
-                                            rdfs:comment ""@EN; 
-                                            rdfs:domain <http://ddhub.no/HydraulicBranch>; 
-                                            rdfs:range <http://ddhub.no/ReferenceFrame>; 
-                                            rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
+ddhub:HasEndJunction a owl:ObjectProperty; 
+                     rdfs:comment ""@EN; 
+                     rdfs:domain ddhub:HydraulicBranch; 
+                     rdfs:range ddhub:HydraulicJunction; 
+                     rdfs:subPropertyOf ddhub:IsHydraulicConnectedTo. 
 
-<http://ddhub.no/HasCoordinates> a owl:ObjectProperty; 
+ddhub:HasEndPoint a owl:ObjectProperty; 
+                  rdfs:comment ""@EN; 
+                  rdfs:domain ddhub:DrillingSignal; 
+                  rdfs:range ddhub:DataEndPoint; 
+                  rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:HasFunction a owl:ObjectProperty; 
+                  rdfs:comment ""@EN; 
+                  rdfs:domain ddhub:DrillingDataPoint; 
+                  rdfs:range ddhub:DataFlowNode; 
+                  rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:HasHydraulicState a owl:ObjectProperty; 
+                        rdfs:comment ""@EN; 
+                        rdfs:domain ddhub:HydraulicJunction; 
+                        rdfs:range ddhub:HydraulicElementState; 
+                        rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:HasHydraulicStateValueFrom a owl:ObjectProperty; 
                                  rdfs:comment ""@EN; 
-                                 rdfs:domain <http://ddhub.no/Location>; 
-                                 rdfs:range <http://ddhub.no/DrillingDataPoint>; 
-                                 rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
+                                 rdfs:domain ddhub:DWISNoun; 
+                                 rdfs:range ddhub:DWISNoun; 
+                                 rdfs:subPropertyOf ddhub:DWISVerb. 
 
-<http://ddhub.no/HasDomain> a owl:ObjectProperty; 
-                            rdfs:comment ""@EN; 
-                            rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                            rdfs:range <http://ddhub.no/DrillingDataPoint>; 
-                            rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
+ddhub:HasLeftBranch a owl:ObjectProperty; 
+                    rdfs:comment ""@EN; 
+                    rdfs:domain ddhub:HydraulicJunction; 
+                    rdfs:range ddhub:HydraulicBranch; 
+                    rdfs:subPropertyOf ddhub:IsHydraulicConnectedTo. 
 
-<http://ddhub.no/HasDynamicValue> a owl:ObjectProperty; 
+ddhub:HasLeftBranchCoordinates a owl:ObjectProperty; 
+                               rdfs:comment ""@EN; 
+                               rdfs:domain ddhub:HydraulicJunction; 
+                               rdfs:range ddhub:DrillingDataPoint; 
+                               rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:HasMechanicalState a owl:ObjectProperty; 
+                         rdfs:comment ""@EN; 
+                         rdfs:domain ddhub:MechanicalLogicalElement; 
+                         rdfs:range ddhub:MechanicalElementState; 
+                         rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:HasMechanicalStateValueFrom a owl:ObjectProperty; 
                                   rdfs:comment ""@EN; 
-                                  rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                  rdfs:range <http://ddhub.no/DynamicDrillingSignal>; 
-                                  rdfs:subPropertyOf <http://ddhub.no/HasValue>. 
+                                  rdfs:domain ddhub:MechanicalLogicalElement; 
+                                  rdfs:range ddhub:DrillingDataPoint; 
+                                  rdfs:subPropertyOf ddhub:DWISVerb. 
 
-<http://ddhub.no/HasEndJunction> a owl:ObjectProperty; 
-                                 rdfs:comment ""@EN; 
-                                 rdfs:domain <http://ddhub.no/HydraulicBranch>; 
-                                 rdfs:range <http://ddhub.no/HydraulicJunction>; 
-                                 rdfs:subPropertyOf <http://ddhub.no/IsHydraulicConnectedTo>. 
-
-<http://ddhub.no/HasEndPoint> a owl:ObjectProperty; 
-                              rdfs:comment ""@EN; 
-                              rdfs:domain <http://ddhub.no/DrillingSignal>; 
-                              rdfs:range <http://ddhub.no/DataEndPoint>; 
-                              rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/HasFunction> a owl:ObjectProperty; 
-                              rdfs:comment ""@EN; 
-                              rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                              rdfs:range <http://ddhub.no/DataFlowNode>; 
-                              rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/HasHydraulicState> a owl:ObjectProperty; 
-                                    rdfs:comment ""@EN; 
-                                    rdfs:domain <http://ddhub.no/HydraulicJunction>; 
-                                    rdfs:range <http://ddhub.no/HydraulicElementState>; 
-                                    rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/HasHydraulicStateValueFrom> a owl:ObjectProperty; 
-                                             rdfs:comment ""@EN; 
-                                             rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                             rdfs:range <http://ddhub.no/DWISNoun>; 
-                                             rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/HasLeftBranch> a owl:ObjectProperty; 
-                                rdfs:comment ""@EN; 
-                                rdfs:domain <http://ddhub.no/HydraulicJunction>; 
-                                rdfs:range <http://ddhub.no/HydraulicBranch>; 
-                                rdfs:subPropertyOf <http://ddhub.no/IsHydraulicConnectedTo>. 
-
-<http://ddhub.no/HasLeftBranchCoordinates> a owl:ObjectProperty; 
-                                           rdfs:comment ""@EN; 
-                                           rdfs:domain <http://ddhub.no/HydraulicJunction>; 
-                                           rdfs:range <http://ddhub.no/DrillingDataPoint>; 
-                                           rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/HasMechanicalState> a owl:ObjectProperty; 
-                                     rdfs:comment ""@EN; 
-                                     rdfs:domain <http://ddhub.no/MechanicalLogicalElement>; 
-                                     rdfs:range <http://ddhub.no/MechanicalElementState>; 
-                                     rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/HasMechanicalStateValueFrom> a owl:ObjectProperty; 
-                                              rdfs:comment ""@EN; 
-                                              rdfs:domain <http://ddhub.no/MechanicalLogicalElement>; 
-                                              rdfs:range <http://ddhub.no/DrillingDataPoint>; 
-                                              rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/HasPressureReference> a owl:ObjectProperty; 
-                                       rdfs:comment ""@EN; 
-                                       rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                       rdfs:range <http://ddhub.no/DrillingDataPoint>; 
-                                       rdfs:subPropertyOf <http://ddhub.no/IsDependentOn>. 
-
-<http://ddhub.no/HasReferenceFrame> a owl:ObjectProperty; 
-                                    rdfs:comment ""@EN; 
-                                    rdfs:domain <http://ddhub.no/Location>; 
-                                    rdfs:range <http://ddhub.no/ReferenceFrame>; 
-                                    rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/HasReferenceFrameOrigin> a owl:ObjectProperty; 
-                                          rdfs:comment ""@EN; 
-                                          rdfs:domain <http://ddhub.no/ReferenceFrame>; 
-                                          rdfs:range <http://ddhub.no/Location>; 
-                                          rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/HasRightBranch> a owl:ObjectProperty; 
-                                 rdfs:comment ""@EN; 
-                                 rdfs:domain <http://ddhub.no/HydraulicJunction>; 
-                                 rdfs:range <http://ddhub.no/HydraulicBranch>; 
-                                 rdfs:subPropertyOf <http://ddhub.no/IsHydraulicConnectedTo>. 
-
-<http://ddhub.no/HasRightBranchCoordinates> a owl:ObjectProperty; 
-                                            rdfs:comment ""@EN; 
-                                            rdfs:domain <http://ddhub.no/HydraulicJunction>; 
-                                            rdfs:range <http://ddhub.no/DrillingDataPoint>; 
-                                            rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/HasSIUnit> a owl:ObjectProperty; 
-                            rdfs:comment ""@EN; 
-                            rdfs:domain <http://ddhub.no/Quantity>; 
-                            rdfs:range <http://ddhub.no/Unit>; 
-                            rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/HasSourceClock> a owl:ObjectProperty; 
-                                 rdfs:comment ""@EN; 
-                                 rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                 rdfs:range <http://ddhub.no/Clock>; 
-                                 rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/HasStartJunction> a owl:ObjectProperty; 
-                                   rdfs:comment ""@EN; 
-                                   rdfs:domain <http://ddhub.no/HydraulicBranch>; 
-                                   rdfs:range <http://ddhub.no/HydraulicJunction>; 
-                                   rdfs:subPropertyOf <http://ddhub.no/IsHydraulicConnectedTo>. 
-
-<http://ddhub.no/HasStaticValue> a owl:ObjectProperty; 
-                                 rdfs:comment ""@EN; 
-                                 rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                 rdfs:range <http://ddhub.no/DrillingSignal>; 
-                                 rdfs:subPropertyOf <http://ddhub.no/HasValue>. 
-
-<http://ddhub.no/HasTemperatureReference> a owl:ObjectProperty; 
-                                          rdfs:comment ""@EN; 
-                                          rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                          rdfs:range <http://ddhub.no/DrillingDataPoint>; 
-                                          rdfs:subPropertyOf <http://ddhub.no/IsDependentOn>. 
-
-<http://ddhub.no/HasTimeIntervalDomain> a owl:ObjectProperty; 
-                                        rdfs:comment ""@EN; 
-                                        rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                        rdfs:range <http://ddhub.no/DrillingDataPoint>; 
-                                        rdfs:subPropertyOf <http://ddhub.no/HasDomain>. 
-
-<http://ddhub.no/HasTransmissionDelay> a owl:ObjectProperty; 
-                                       rdfs:comment ""@EN; 
-                                       rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                       rdfs:range <http://ddhub.no/DrillingDataPoint>; 
-                                       rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/HasUncertainty> a owl:ObjectProperty; 
-                                 rdfs:comment ""@EN; 
-                                 rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                 rdfs:range <http://ddhub.no/SignalUncertainty>; 
-                                 rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/HasUncertaintyAccuracy> a owl:ObjectProperty; 
-                                         rdfs:comment ""@EN; 
-                                         rdfs:domain <http://ddhub.no/SensorUncertainty>; 
-                                         rdfs:range <http://ddhub.no/DrillingDataPoint>; 
-                                         rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/HasUncertaintyMax> a owl:ObjectProperty; 
-                                    rdfs:comment ""@EN; 
-                                    rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                    rdfs:range <http://ddhub.no/DWISNoun>; 
-                                    rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/HasUncertaintyMean> a owl:ObjectProperty; 
-                                     rdfs:comment ""@EN; 
-                                     rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                     rdfs:range <http://ddhub.no/DWISNoun>; 
-                                     rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/HasUncertaintyMin> a owl:ObjectProperty; 
-                                    rdfs:comment ""@EN; 
-                                    rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                    rdfs:range <http://ddhub.no/DWISNoun>; 
-                                    rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/HasUncertaintyPrecision> a owl:ObjectProperty; 
-                                          rdfs:comment ""@EN; 
-                                          rdfs:domain <http://ddhub.no/SensorUncertainty>; 
-                                          rdfs:range <http://ddhub.no/DrillingDataPoint>; 
-                                          rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/HasUncertaintyRelativeValue> a owl:ObjectProperty; 
-                                              rdfs:comment ""@EN; 
-                                              rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                              rdfs:range <http://ddhub.no/DWISNoun>; 
-                                              rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/HasUncertaintyStandardDeviation> a owl:ObjectProperty; 
-                                                  rdfs:comment ""@EN; 
-                                                  rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                                  rdfs:range <http://ddhub.no/DWISNoun>; 
-                                                  rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/HasUnitAssociation> a owl:ObjectProperty; 
-                                     rdfs:comment ""@EN; 
-                                     rdfs:domain <http://ddhub.no/UnitSystem>; 
-                                     rdfs:range <http://ddhub.no/MeasurableQuantityUnitAssociation>; 
-                                     rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/HasValue> a owl:ObjectProperty; 
+ddhub:HasPressureReference a owl:ObjectProperty; 
                            rdfs:comment ""@EN; 
-                           rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                           rdfs:range <http://ddhub.no/DrillingSignal>; 
-                           rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
+                           rdfs:domain ddhub:DrillingDataPoint; 
+                           rdfs:range ddhub:DrillingDataPoint; 
+                           rdfs:subPropertyOf ddhub:IsDependentOn. 
 
-<http://ddhub.no/HighPassFilter> a owl:Class; 
-                                 rdfs:comment ""@EN; 
-                                 rdfs:subClassOf <http://ddhub.no/Filter>. 
+ddhub:HasReferenceFrame a owl:ObjectProperty; 
+                        rdfs:comment ""@EN; 
+                        rdfs:domain ddhub:Location; 
+                        rdfs:range ddhub:ReferenceFrame; 
+                        rdfs:subPropertyOf ddhub:DWISVerb. 
 
-<http://ddhub.no/HighPassFilter.CutOffFrequency> a owl:DatatypeProperty, owl:FunctionalProperty; 
+ddhub:HasReferenceFrameOrigin a owl:ObjectProperty; 
+                              rdfs:comment ""@EN; 
+                              rdfs:domain ddhub:ReferenceFrame; 
+                              rdfs:range ddhub:Location; 
+                              rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:HasRightBranch a owl:ObjectProperty; 
+                     rdfs:comment ""@EN; 
+                     rdfs:domain ddhub:HydraulicJunction; 
+                     rdfs:range ddhub:HydraulicBranch; 
+                     rdfs:subPropertyOf ddhub:IsHydraulicConnectedTo. 
+
+ddhub:HasRightBranchCoordinates a owl:ObjectProperty; 
+                                rdfs:comment ""@EN; 
+                                rdfs:domain ddhub:HydraulicJunction; 
+                                rdfs:range ddhub:DrillingDataPoint; 
+                                rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:HasSIUnit a owl:ObjectProperty; 
+                rdfs:comment ""@EN; 
+                rdfs:domain ddhub:Quantity; 
+                rdfs:range ddhub:Unit; 
+                rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:HasSourceClock a owl:ObjectProperty; 
+                     rdfs:comment ""@EN; 
+                     rdfs:domain ddhub:DrillingDataPoint; 
+                     rdfs:range ddhub:Clock; 
+                     rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:HasStartJunction a owl:ObjectProperty; 
+                       rdfs:comment ""@EN; 
+                       rdfs:domain ddhub:HydraulicBranch; 
+                       rdfs:range ddhub:HydraulicJunction; 
+                       rdfs:subPropertyOf ddhub:IsHydraulicConnectedTo. 
+
+ddhub:HasStaticValue a owl:ObjectProperty; 
+                     rdfs:comment ""@EN; 
+                     rdfs:domain ddhub:DrillingDataPoint; 
+                     rdfs:range ddhub:DrillingSignal; 
+                     rdfs:subPropertyOf ddhub:HasValue. 
+
+ddhub:HasTemperatureReference a owl:ObjectProperty; 
+                              rdfs:comment ""@EN; 
+                              rdfs:domain ddhub:DrillingDataPoint; 
+                              rdfs:range ddhub:DrillingDataPoint; 
+                              rdfs:subPropertyOf ddhub:IsDependentOn. 
+
+ddhub:HasTimeIntervalDomain a owl:ObjectProperty; 
+                            rdfs:comment ""@EN; 
+                            rdfs:domain ddhub:DrillingDataPoint; 
+                            rdfs:range ddhub:DrillingDataPoint; 
+                            rdfs:subPropertyOf ddhub:HasDomain. 
+
+ddhub:HasTransmissionDelay a owl:ObjectProperty; 
+                           rdfs:comment ""@EN; 
+                           rdfs:domain ddhub:DrillingDataPoint; 
+                           rdfs:range ddhub:DrillingDataPoint; 
+                           rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:HasUncertainty a owl:ObjectProperty; 
+                     rdfs:comment ""@EN; 
+                     rdfs:domain ddhub:DrillingDataPoint; 
+                     rdfs:range ddhub:SignalUncertainty; 
+                     rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:HasUncertaintyAccuracy a owl:ObjectProperty; 
+                             rdfs:comment ""@EN; 
+                             rdfs:domain ddhub:SensorUncertainty; 
+                             rdfs:range ddhub:DrillingDataPoint; 
+                             rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:HasUncertaintyMax a owl:ObjectProperty; 
+                        rdfs:comment ""@EN; 
+                        rdfs:domain ddhub:DWISNoun; 
+                        rdfs:range ddhub:DWISNoun; 
+                        rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:HasUncertaintyMean a owl:ObjectProperty; 
+                         rdfs:comment ""@EN; 
+                         rdfs:domain ddhub:DWISNoun; 
+                         rdfs:range ddhub:DWISNoun; 
+                         rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:HasUncertaintyMin a owl:ObjectProperty; 
+                        rdfs:comment ""@EN; 
+                        rdfs:domain ddhub:DWISNoun; 
+                        rdfs:range ddhub:DWISNoun; 
+                        rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:HasUncertaintyPrecision a owl:ObjectProperty; 
+                              rdfs:comment ""@EN; 
+                              rdfs:domain ddhub:SensorUncertainty; 
+                              rdfs:range ddhub:DrillingDataPoint; 
+                              rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:HasUncertaintyRelativeValue a owl:ObjectProperty; 
+                                  rdfs:comment ""@EN; 
+                                  rdfs:domain ddhub:DWISNoun; 
+                                  rdfs:range ddhub:DWISNoun; 
+                                  rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:HasUncertaintyStandardDeviation a owl:ObjectProperty; 
+                                      rdfs:comment ""@EN; 
+                                      rdfs:domain ddhub:DWISNoun; 
+                                      rdfs:range ddhub:DWISNoun; 
+                                      rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:HasUnitAssociation a owl:ObjectProperty; 
+                         rdfs:comment ""@EN; 
+                         rdfs:domain ddhub:UnitSystem; 
+                         rdfs:range ddhub:MeasurableQuantityUnitAssociation; 
+                         rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:HasValue a owl:ObjectProperty; 
+               rdfs:comment ""@EN; 
+               rdfs:domain ddhub:DrillingDataPoint; 
+               rdfs:range ddhub:DrillingSignal; 
+               rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:HighPassFilter a owl:Class; 
+                     rdfs:comment ""@EN; 
+                     rdfs:subClassOf ddhub:Filter. 
+
+<http://ddhub.no/HighPassFilter/CutOffFrequency> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                  rdfs:comment ""@EN; 
-                                                 rdfs:domain <http://ddhub.no/HighPassFilter>; 
+                                                 rdfs:domain ddhub:HighPassFilter; 
                                                  rdfs:range xsd:float. 
 
-<http://ddhub.no/HoleBottomLocation> a owl:Class; 
-                                     rdfs:comment ""@EN; 
-                                     rdfs:subClassOf <http://ddhub.no/Location>. 
+ddhub:HoleBottomLocation a owl:Class; 
+                         rdfs:comment ""@EN; 
+                         rdfs:subClassOf ddhub:Location. 
 
-<http://ddhub.no/HoleDepth> a owl:Class; 
-                            rdfs:comment ""@EN; 
-                            rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
+ddhub:HoleDepth a owl:Class; 
+                rdfs:comment ""@EN; 
+                rdfs:subClassOf ddhub:DrillingDataPoint. 
 
-<http://ddhub.no/HookLoad> a owl:Class; 
-                           rdfs:comment ""@EN; 
-                           rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
+ddhub:HookLoad a owl:Class; 
+               rdfs:comment ""@EN; 
+               rdfs:subClassOf ddhub:DrillingDataPoint. 
 
-<http://ddhub.no/HookloadQuantity> a owl:Class; 
-                                   rdfs:comment ""@EN; 
-                                   rdfs:subClassOf <http://ddhub.no/MeasurableQuantity>. 
+ddhub:HookloadQuantity a owl:Class; 
+                       rdfs:comment ""@EN; 
+                       rdfs:subClassOf ddhub:MeasurableQuantity. 
 
-<http://ddhub.no/HookPosition> a owl:Class; 
-                               rdfs:comment ""@EN; 
-                               rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
+ddhub:HookPosition a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:DrillingDataPoint. 
 
-<http://ddhub.no/HookVelocity> a owl:Class; 
-                               rdfs:comment ""@EN; 
-                               rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
+ddhub:HookVelocity a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:DrillingDataPoint. 
 
-<http://ddhub.no/HydraulicBranch> a owl:Class; 
-                                  rdfs:comment ""@EN; 
-                                  rdfs:subClassOf <http://ddhub.no/HydraulicLogicalElement>. 
+ddhub:HydraulicBranch a owl:Class; 
+                      rdfs:comment ""@EN; 
+                      rdfs:subClassOf ddhub:HydraulicLogicalElement. 
 
-<http://ddhub.no/HydraulicConnectedState> a owl:Class; 
-                                          rdfs:comment ""@EN; 
-                                          rdfs:subClassOf <http://ddhub.no/HydraulicElementState>. 
+ddhub:HydraulicConnectedState a owl:Class; 
+                              rdfs:comment ""@EN; 
+                              rdfs:subClassOf ddhub:HydraulicElementState. 
 
-<http://ddhub.no/HydraulicConnectedState.Value> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/HydraulicConnectedState/Value> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                 rdfs:comment ""@EN; 
-                                                rdfs:domain <http://ddhub.no/HydraulicConnectedState>; 
+                                                rdfs:domain ddhub:HydraulicConnectedState; 
                                                 rdfs:range xsd:float. 
 
-<http://ddhub.no/HydraulicElementState> a owl:Class; 
-                                        rdfs:comment ""@EN; 
-                                        rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
+ddhub:HydraulicElementState a owl:Class; 
+                            rdfs:comment ""@EN; 
+                            rdfs:subClassOf ddhub:DWISNoun. 
 
-<http://ddhub.no/HydraulicJunction> a owl:Class; 
-                                    rdfs:comment ""@EN; 
-                                    rdfs:subClassOf <http://ddhub.no/HydraulicLogicalElement>. 
+ddhub:HydraulicJunction a owl:Class; 
+                        rdfs:comment ""@EN; 
+                        rdfs:subClassOf ddhub:HydraulicLogicalElement. 
 
-<http://ddhub.no/HydraulicJunction.LeftToRight> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/HydraulicJunction/LeftToRight> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                 rdfs:comment "Indicates whether the fluid can flow from the left branch to the right branch though the junction"@EN; 
-                                                rdfs:domain <http://ddhub.no/HydraulicJunction>; 
+                                                rdfs:domain ddhub:HydraulicJunction; 
                                                 rdfs:range xsd:float. 
 
-<http://ddhub.no/HydraulicJunction.RightToLeft> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/HydraulicJunction/RightToLeft> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                 rdfs:comment "Indicates whether the fluid can flow from the right branch to the left branch though the junction"@EN; 
-                                                rdfs:domain <http://ddhub.no/HydraulicJunction>; 
+                                                rdfs:domain ddhub:HydraulicJunction; 
                                                 rdfs:range xsd:float. 
 
-<http://ddhub.no/HydraulicLogicalElement> a owl:Class; 
-                                          rdfs:comment ""@EN; 
-                                          rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
-
-<http://ddhub.no/HydraulicNetwork> a owl:Class; 
-                                   rdfs:comment ""@EN; 
-                                   rdfs:subClassOf <http://ddhub.no/HydraulicLogicalElement>. 
-
-<http://ddhub.no/Integration> a owl:Class; 
+ddhub:HydraulicLogicalElement a owl:Class; 
                               rdfs:comment ""@EN; 
-                              rdfs:subClassOf <http://ddhub.no/TimeBasedTransformation>. 
+                              rdfs:subClassOf ddhub:DWISNoun. 
 
-<http://ddhub.no/IsBufferingInput> a owl:ObjectProperty; 
-                                   rdfs:comment ""@EN; 
-                                   rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                   rdfs:range <http://ddhub.no/Buffering>; 
-                                   rdfs:subPropertyOf <http://ddhub.no/IsTransformationInput>. 
+ddhub:HydraulicNetwork a owl:Class; 
+                       rdfs:comment ""@EN; 
+                       rdfs:subClassOf ddhub:HydraulicLogicalElement. 
 
-<http://ddhub.no/IsBufferingOutput> a owl:ObjectProperty; 
-                                    rdfs:comment ""@EN; 
-                                    rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                    rdfs:range <http://ddhub.no/Buffering>; 
-                                    rdfs:subPropertyOf <http://ddhub.no/IsTransformationOutput>. 
+ddhub:Integration a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:TimeBasedTransformation. 
 
-<http://ddhub.no/IsCommandFor> a owl:ObjectProperty; 
-                               rdfs:comment ""@EN; 
-                               rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                               rdfs:range <http://ddhub.no/DWISNoun>; 
-                               rdfs:subPropertyOf <http://ddhub.no/HasFunction>. 
+ddhub:IsBufferingInput a owl:ObjectProperty; 
+                       rdfs:comment ""@EN; 
+                       rdfs:domain ddhub:DrillingDataPoint; 
+                       rdfs:range ddhub:Buffering; 
+                       rdfs:subPropertyOf ddhub:IsTransformationInput. 
 
-<http://ddhub.no/IsComputationInput> a owl:ObjectProperty; 
-                                     rdfs:comment ""@EN; 
-                                     rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                     rdfs:range <http://ddhub.no/ComputationUnit>; 
-                                     rdfs:subPropertyOf <http://ddhub.no/HasFunction>. 
+ddhub:IsBufferingOutput a owl:ObjectProperty; 
+                        rdfs:comment ""@EN; 
+                        rdfs:domain ddhub:DrillingDataPoint; 
+                        rdfs:range ddhub:Buffering; 
+                        rdfs:subPropertyOf ddhub:IsTransformationOutput. 
 
-<http://ddhub.no/IsComputedBy> a owl:ObjectProperty; 
-                               rdfs:comment ""@EN; 
-                               rdfs:domain <http://ddhub.no/DWISNoun>; 
-                               rdfs:range <http://ddhub.no/DWISNoun>; 
-                               rdfs:subPropertyOf <http://ddhub.no/IsGeneratedBy>. 
+ddhub:IsCommandFor a owl:ObjectProperty; 
+                   rdfs:comment ""@EN; 
+                   rdfs:domain ddhub:DrillingDataPoint; 
+                   rdfs:range ddhub:DWISNoun; 
+                   rdfs:subPropertyOf ddhub:HasFunction. 
 
-<http://ddhub.no/IsConditionedBy> a owl:ObjectProperty; 
-                                  rdfs:comment ""@EN; 
-                                  rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                  rdfs:range <http://ddhub.no/ValidityCondition>; 
-                                  rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
+ddhub:IsComputationInput a owl:ObjectProperty; 
+                         rdfs:comment ""@EN; 
+                         rdfs:domain ddhub:DrillingDataPoint; 
+                         rdfs:range ddhub:ComputationUnit; 
+                         rdfs:subPropertyOf ddhub:HasFunction. 
 
-<http://ddhub.no/IsConditionInput> a owl:ObjectProperty; 
-                                   rdfs:comment ""@EN; 
-                                   rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                   rdfs:range <http://ddhub.no/ValidityCondition>; 
-                                   rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
+ddhub:IsComputedBy a owl:ObjectProperty; 
+                   rdfs:comment ""@EN; 
+                   rdfs:domain ddhub:DWISNoun; 
+                   rdfs:range ddhub:DWISNoun; 
+                   rdfs:subPropertyOf ddhub:IsGeneratedBy. 
 
-<http://ddhub.no/IsConditionLeft> a owl:ObjectProperty; 
-                                  rdfs:comment ""@EN; 
-                                  rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                  rdfs:range <http://ddhub.no/DWISNoun>; 
-                                  rdfs:subPropertyOf <http://ddhub.no/IsConditionInput>. 
+ddhub:IsConditionedBy a owl:ObjectProperty; 
+                      rdfs:comment ""@EN; 
+                      rdfs:domain ddhub:DrillingDataPoint; 
+                      rdfs:range ddhub:ValidityCondition; 
+                      rdfs:subPropertyOf ddhub:DWISVerb. 
 
-<http://ddhub.no/IsConditionRight> a owl:ObjectProperty; 
-                                   rdfs:comment ""@EN; 
-                                   rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                   rdfs:range <http://ddhub.no/DWISNoun>; 
-                                   rdfs:subPropertyOf <http://ddhub.no/IsConditionInput>. 
+ddhub:IsConditionInput a owl:ObjectProperty; 
+                       rdfs:comment ""@EN; 
+                       rdfs:domain ddhub:DrillingDataPoint; 
+                       rdfs:range ddhub:ValidityCondition; 
+                       rdfs:subPropertyOf ddhub:DWISVerb. 
 
-<http://ddhub.no/IsDependentOn> a owl:ObjectProperty; 
-                                rdfs:comment ""@EN; 
-                                rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                rdfs:range <http://ddhub.no/DrillingDataPoint>; 
-                                rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
+ddhub:IsConditionLeft a owl:ObjectProperty; 
+                      rdfs:comment ""@EN; 
+                      rdfs:domain ddhub:DWISNoun; 
+                      rdfs:range ddhub:DWISNoun; 
+                      rdfs:subPropertyOf ddhub:IsConditionInput. 
 
-<http://ddhub.no/IsDerivationInput> a owl:ObjectProperty; 
-                                    rdfs:comment ""@EN; 
-                                    rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                    rdfs:range <http://ddhub.no/DWISNoun>; 
-                                    rdfs:subPropertyOf <http://ddhub.no/IsTransformationInput>. 
+ddhub:IsConditionRight a owl:ObjectProperty; 
+                       rdfs:comment ""@EN; 
+                       rdfs:domain ddhub:DWISNoun; 
+                       rdfs:range ddhub:DWISNoun; 
+                       rdfs:subPropertyOf ddhub:IsConditionInput. 
 
-<http://ddhub.no/IsDerivedFrom> a owl:ObjectProperty; 
-                                rdfs:comment ""@EN; 
-                                rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                rdfs:range <http://ddhub.no/DWISNoun>; 
-                                rdfs:subPropertyOf <http://ddhub.no/IsTransformationOutput>. 
+ddhub:IsDependentOn a owl:ObjectProperty; 
+                    rdfs:comment ""@EN; 
+                    rdfs:domain ddhub:DrillingDataPoint; 
+                    rdfs:range ddhub:DrillingDataPoint; 
+                    rdfs:subPropertyOf ddhub:DWISVerb. 
 
-<http://ddhub.no/IsEquivalentCirculationDensityAt> a owl:ObjectProperty; 
-                                                   rdfs:comment ""@EN; 
-                                                   rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                                   rdfs:range <http://ddhub.no/DWISNoun>; 
-                                                   rdfs:subPropertyOf <http://ddhub.no/IsHydraulicallyLocatedAt>. 
+ddhub:IsDerivationInput a owl:ObjectProperty; 
+                        rdfs:comment ""@EN; 
+                        rdfs:domain ddhub:DWISNoun; 
+                        rdfs:range ddhub:DWISNoun; 
+                        rdfs:subPropertyOf ddhub:IsTransformationInput. 
 
-<http://ddhub.no/IsFluidDensityAt> a owl:ObjectProperty; 
-                                   rdfs:comment ""@EN; 
-                                   rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                   rdfs:range <http://ddhub.no/DWISNoun>; 
-                                   rdfs:subPropertyOf <http://ddhub.no/IsHydraulicallyLocatedAt>. 
+ddhub:IsDerivedFrom a owl:ObjectProperty; 
+                    rdfs:comment ""@EN; 
+                    rdfs:domain ddhub:DWISNoun; 
+                    rdfs:range ddhub:DWISNoun; 
+                    rdfs:subPropertyOf ddhub:IsTransformationOutput. 
 
-<http://ddhub.no/IsFluidTemperatureAt> a owl:ObjectProperty; 
+ddhub:IsEquivalentCirculationDensityAt a owl:ObjectProperty; 
                                        rdfs:comment ""@EN; 
-                                       rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                       rdfs:range <http://ddhub.no/DWISNoun>; 
-                                       rdfs:subPropertyOf <http://ddhub.no/IsHydraulicallyLocatedAt>. 
+                                       rdfs:domain ddhub:DWISNoun; 
+                                       rdfs:range ddhub:DWISNoun; 
+                                       rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 
-<http://ddhub.no/IsFluidVelocityAt> a owl:ObjectProperty; 
-                                    rdfs:comment ""@EN; 
-                                    rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                    rdfs:range <http://ddhub.no/DWISNoun>; 
-                                    rdfs:subPropertyOf <http://ddhub.no/IsHydraulicallyLocatedAt>. 
+ddhub:IsFluidDensityAt a owl:ObjectProperty; 
+                       rdfs:comment ""@EN; 
+                       rdfs:domain ddhub:DWISNoun; 
+                       rdfs:range ddhub:DWISNoun; 
+                       rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 
-<http://ddhub.no/IsGeneratedBy> a owl:ObjectProperty; 
-                                rdfs:comment ""@EN; 
-                                rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                rdfs:range <http://ddhub.no/DataFlowNode>; 
-                                rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/IsHydraulicallyLocatedAt> a owl:ObjectProperty; 
-                                           rdfs:comment ""@EN; 
-                                           rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                           rdfs:range <http://ddhub.no/HydraulicLogicalElement>; 
-                                           rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/IsHydraulicConnectedTo> a owl:ObjectProperty; 
-                                         rdfs:comment ""@EN; 
-                                         rdfs:domain <http://ddhub.no/HydraulicLogicalElement>; 
-                                         rdfs:range <http://ddhub.no/HydraulicLogicalElement>; 
-                                         rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/IsHydraulicEstimationAt> a owl:ObjectProperty; 
-                                          rdfs:comment ""@EN; 
-                                          rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                          rdfs:range <http://ddhub.no/DWISNoun>; 
-                                          rdfs:subPropertyOf <http://ddhub.no/IsHydraulicallyLocatedAt>. 
-
-<http://ddhub.no/IsHydraulicMaximumAllowedRateOfChangeAt> a owl:ObjectProperty; 
-                                                          rdfs:comment ""@EN; 
-                                                          rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                                          rdfs:range <http://ddhub.no/DWISNoun>; 
-                                                          rdfs:subPropertyOf <http://ddhub.no/IsHydraulicallyLocatedAt>. 
-
-<http://ddhub.no/IsHydraulicMaximumAllowedValueAt> a owl:ObjectProperty; 
-                                                   rdfs:comment ""@EN; 
-                                                   rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                                   rdfs:range <http://ddhub.no/DWISNoun>; 
-                                                   rdfs:subPropertyOf <http://ddhub.no/IsHydraulicallyLocatedAt>. 
-
-<http://ddhub.no/IsHydraulicMeasurementAt> a owl:ObjectProperty; 
-                                           rdfs:comment ""@EN; 
-                                           rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                           rdfs:range <http://ddhub.no/DWISNoun>; 
-                                           rdfs:subPropertyOf <http://ddhub.no/IsHydraulicallyLocatedAt>. 
-
-<http://ddhub.no/IsIntegratedFrom> a owl:ObjectProperty; 
-                                   rdfs:comment ""@EN; 
-                                   rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                   rdfs:range <http://ddhub.no/DWISNoun>; 
-                                   rdfs:subPropertyOf <http://ddhub.no/IsTransformationOutput>. 
-
-<http://ddhub.no/IsLimitFor> a owl:ObjectProperty; 
-                             rdfs:comment ""@EN; 
-                             rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                             rdfs:range <http://ddhub.no/ControlSystem>; 
-                             rdfs:subPropertyOf <http://ddhub.no/HasFunction>. 
-
-<http://ddhub.no/IsMassFlowRateAt> a owl:ObjectProperty; 
-                                   rdfs:comment ""@EN; 
-                                   rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                   rdfs:range <http://ddhub.no/DWISNoun>; 
-                                   rdfs:subPropertyOf <http://ddhub.no/IsHydraulicallyLocatedAt>. 
-
-<http://ddhub.no/IsMeasuredBy> a owl:ObjectProperty; 
-                               rdfs:comment ""@EN; 
-                               rdfs:domain <http://ddhub.no/DWISNoun>; 
-                               rdfs:range <http://ddhub.no/DWISNoun>; 
-                               rdfs:subPropertyOf <http://ddhub.no/IsGeneratedBy>. 
-
-<http://ddhub.no/IsMechanicallyConnectTo> a owl:ObjectProperty; 
-                                          rdfs:comment ""@EN; 
-                                          rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                          rdfs:range <http://ddhub.no/DWISNoun>; 
-                                          rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/IsMechanicallyLocatedAt> a owl:ObjectProperty; 
-                                          rdfs:comment ""@EN; 
-                                          rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                          rdfs:range <http://ddhub.no/DWISNoun>; 
-                                          rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/IsObservableFrom> a owl:ObjectProperty; 
-                                   rdfs:comment ""@EN; 
-                                   rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                   rdfs:range <http://ddhub.no/DWISNoun>; 
-                                   rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/IsOfBaseQuantity> a owl:ObjectProperty; 
-                                   rdfs:comment ""@EN; 
-                                   rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                   rdfs:range <http://ddhub.no/DWISNoun>; 
-                                   rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/IsOfMeasurableQuantity> a owl:ObjectProperty; 
-                                         rdfs:comment ""@EN; 
-                                         rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                         rdfs:range <http://ddhub.no/DWISNoun>; 
-                                         rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/IsOfMechanicalStiffnessType> a owl:ObjectProperty; 
-                                              rdfs:comment "A relation to describe how the drill-stem mechanical model manage stiffness."@EN; 
-                                              rdfs:domain <http://ddhub.no/MechanicalModel>; 
-                                              rdfs:range <http://ddhub.no/MechanicalStiffnessType>; 
-                                              rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/IsPhysicallyLocatedAt> a owl:ObjectProperty; 
-                                        rdfs:comment ""@EN; 
-                                        rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                        rdfs:range <http://ddhub.no/Location>; 
-                                        rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/IsPressureAt> a owl:ObjectProperty; 
-                               rdfs:comment ""@EN; 
-                               rdfs:domain <http://ddhub.no/DWISNoun>; 
-                               rdfs:range <http://ddhub.no/DWISNoun>; 
-                               rdfs:subPropertyOf <http://ddhub.no/IsHydraulicallyLocatedAt>. 
-
-<http://ddhub.no/IsPressureGradientAt> a owl:ObjectProperty; 
-                                       rdfs:comment ""@EN; 
-                                       rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                       rdfs:range <http://ddhub.no/DWISNoun>; 
-                                       rdfs:subPropertyOf <http://ddhub.no/IsHydraulicallyLocatedAt>. 
-
-<http://ddhub.no/IsProcessedBy> a owl:ObjectProperty; 
-                                rdfs:comment ""@EN; 
-                                rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                rdfs:range <http://ddhub.no/DWISNoun>; 
-                                rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/IsProvidedBy> a owl:ObjectProperty; 
-                               rdfs:comment ""@EN; 
-                               rdfs:domain <http://ddhub.no/DWISNoun>; 
-                               rdfs:range <http://ddhub.no/DataProvider>; 
-                               rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/IsRecordedFrom> a owl:ObjectProperty; 
-                                 rdfs:comment ""@EN; 
-                                 rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                 rdfs:range <http://ddhub.no/DWISNoun>; 
-                                 rdfs:subPropertyOf <http://ddhub.no/IsGeneratedBy>. 
-
-<http://ddhub.no/IsResampledBy> a owl:ObjectProperty; 
-                                rdfs:comment ""@EN; 
-                                rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                rdfs:range <http://ddhub.no/Resampling>; 
-                                rdfs:subPropertyOf <http://ddhub.no/IsTransformationOutput>. 
-
-<http://ddhub.no/IsResamplingInput> a owl:ObjectProperty; 
-                                    rdfs:comment ""@EN; 
-                                    rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                    rdfs:range <http://ddhub.no/Resampling>; 
-                                    rdfs:subPropertyOf <http://ddhub.no/IsTransformationInput>. 
-
-<http://ddhub.no/IsSetPointFor> a owl:ObjectProperty; 
-                                rdfs:comment ""@EN; 
-                                rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                rdfs:range <http://ddhub.no/Controller>; 
-                                rdfs:subPropertyOf <http://ddhub.no/HasFunction>. 
-
-<http://ddhub.no/IsSetPointRecommendationFor> a owl:ObjectProperty; 
-                                              rdfs:comment ""@EN; 
-                                              rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                              rdfs:range <http://ddhub.no/ControlSystem>; 
-                                              rdfs:subPropertyOf <http://ddhub.no/HasFunction>. 
-
-<http://ddhub.no/IsSynchronizationGroupInput> a owl:ObjectProperty; 
-                                              rdfs:comment ""@EN; 
-                                              rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                              rdfs:range <http://ddhub.no/SynchronizationGroup>; 
-                                              rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/IsSynchronizationGroupOutput> a owl:ObjectProperty; 
-                                               rdfs:comment ""@EN; 
-                                               rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                               rdfs:range <http://ddhub.no/SynchronizationGroup>; 
-                                               rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/IsTransformationInput> a owl:ObjectProperty; 
-                                        rdfs:comment ""@EN; 
-                                        rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                        rdfs:range <http://ddhub.no/Transformation>; 
-                                        rdfs:subPropertyOf <http://ddhub.no/HasFunction>. 
-
-<http://ddhub.no/IsTransformationOutput> a owl:ObjectProperty; 
-                                         rdfs:comment ""@EN; 
-                                         rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                         rdfs:range <http://ddhub.no/DataFlowNode>; 
-                                         rdfs:subPropertyOf <http://ddhub.no/IsGeneratedBy>. 
-
-<http://ddhub.no/IsTransmissionInput> a owl:ObjectProperty; 
-                                      rdfs:comment ""@EN; 
-                                      rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                      rdfs:range <http://ddhub.no/TransmissionLine>; 
-                                      rdfs:subPropertyOf <http://ddhub.no/HasFunction>. 
-
-<http://ddhub.no/IsTransmissionOutput> a owl:ObjectProperty; 
-                                       rdfs:comment ""@EN; 
-                                       rdfs:domain <http://ddhub.no/DrillingDataPoint>; 
-                                       rdfs:range <http://ddhub.no/TransmissionLine>; 
-                                       rdfs:subPropertyOf <http://ddhub.no/IsGeneratedBy>. 
-
-<http://ddhub.no/IsTransmittedBy> a owl:ObjectProperty; 
-                                  rdfs:comment ""@EN; 
-                                  rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                  rdfs:range <http://ddhub.no/DWISNoun>; 
-                                  rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/IsUnitForQuantity> a owl:ObjectProperty; 
-                                    rdfs:comment ""@EN; 
-                                    rdfs:domain <http://ddhub.no/Unit>; 
-                                    rdfs:range <http://ddhub.no/Quantity>; 
-                                    rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/IsValidBy> a owl:ObjectProperty; 
-                            rdfs:comment ""@EN; 
-                            rdfs:domain <http://ddhub.no/DWISNoun>; 
-                            rdfs:range <http://ddhub.no/DWISNoun>; 
-                            rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
-
-<http://ddhub.no/IsVolumetricFlowRateAt> a owl:ObjectProperty; 
-                                         rdfs:comment ""@EN; 
-                                         rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                         rdfs:range <http://ddhub.no/DWISNoun>; 
-                                         rdfs:subPropertyOf <http://ddhub.no/IsHydraulicallyLocatedAt>. 
-
-<http://ddhub.no/LengthQuantity> a owl:Class; 
-                                 rdfs:comment ""@EN; 
-                                 rdfs:subClassOf <http://ddhub.no/Quantity>. 
-
-<http://ddhub.no/Location> a owl:Class; 
-                           rdfs:comment "Physical location for a signal."@EN; 
-                           rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
-
-<http://ddhub.no/LowPassFilter> a owl:Class; 
-                                rdfs:comment ""@EN; 
-                                rdfs:subClassOf <http://ddhub.no/Filter>. 
-
-<http://ddhub.no/LowPassFilter.CutOffFrequency> a owl:DatatypeProperty, owl:FunctionalProperty; 
-                                                rdfs:comment ""@EN; 
-                                                rdfs:domain <http://ddhub.no/LowPassFilter>; 
-                                                rdfs:range xsd:float. 
-
-<http://ddhub.no/LT> a owl:Class; 
-                     rdfs:comment ""@EN; 
-                     rdfs:subClassOf <http://ddhub.no/ValidityCondition>. 
-
-<http://ddhub.no/LWDLocation> a owl:Class; 
-                              rdfs:comment ""@EN; 
-                              rdfs:subClassOf <http://ddhub.no/Location>. 
-
-<http://ddhub.no/MassDensityQuantity> a owl:Class; 
-                                      rdfs:comment ""@EN; 
-                                      rdfs:subClassOf <http://ddhub.no/Quantity>. 
-
-<http://ddhub.no/MassQuantity> a owl:Class; 
-                               rdfs:comment ""@EN; 
-                               rdfs:subClassOf <http://ddhub.no/Quantity>. 
-
-<http://ddhub.no/MassRate> a owl:Class; 
+ddhub:IsFluidTemperatureAt a owl:ObjectProperty; 
                            rdfs:comment ""@EN; 
-                           rdfs:subClassOf <http://ddhub.no/Quantity>. 
+                           rdfs:domain ddhub:DWISNoun; 
+                           rdfs:range ddhub:DWISNoun; 
+                           rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 
-<http://ddhub.no/MathematicalModel> a owl:Class; 
-                                    rdfs:comment "A model for which the state variables do not change with time."@EN; 
-                                    rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
+ddhub:IsFluidVelocityAt a owl:ObjectProperty; 
+                        rdfs:comment ""@EN; 
+                        rdfs:domain ddhub:DWISNoun; 
+                        rdfs:range ddhub:DWISNoun; 
+                        rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 
-<http://ddhub.no/MeasurableQuantity> a owl:Class; 
-                                     rdfs:comment "Represents a quantity that allows meaningful comparisons."@EN; 
-                                     rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
+ddhub:IsGeneratedBy a owl:ObjectProperty; 
+                    rdfs:comment ""@EN; 
+                    rdfs:domain ddhub:DrillingDataPoint; 
+                    rdfs:range ddhub:DataFlowNode; 
+                    rdfs:subPropertyOf ddhub:DWISVerb. 
 
-<http://ddhub.no/MeasurableQuantity.MeaningfulPrecision> a owl:DatatypeProperty, owl:FunctionalProperty; 
+ddhub:IsHydraulicallyLocatedAt a owl:ObjectProperty; 
+                               rdfs:comment ""@EN; 
+                               rdfs:domain ddhub:DrillingDataPoint; 
+                               rdfs:range ddhub:HydraulicLogicalElement; 
+                               rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:IsHydraulicConnectedTo a owl:ObjectProperty; 
+                             rdfs:comment ""@EN; 
+                             rdfs:domain ddhub:HydraulicLogicalElement; 
+                             rdfs:range ddhub:HydraulicLogicalElement; 
+                             rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:IsHydraulicEstimationAt a owl:ObjectProperty; 
+                              rdfs:comment ""@EN; 
+                              rdfs:domain ddhub:DWISNoun; 
+                              rdfs:range ddhub:DWISNoun; 
+                              rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
+
+ddhub:IsHydraulicMaximumAllowedRateOfChangeAt a owl:ObjectProperty; 
+                                              rdfs:comment ""@EN; 
+                                              rdfs:domain ddhub:DWISNoun; 
+                                              rdfs:range ddhub:DWISNoun; 
+                                              rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
+
+ddhub:IsHydraulicMaximumAllowedValueAt a owl:ObjectProperty; 
+                                       rdfs:comment ""@EN; 
+                                       rdfs:domain ddhub:DWISNoun; 
+                                       rdfs:range ddhub:DWISNoun; 
+                                       rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
+
+ddhub:IsHydraulicMeasurementAt a owl:ObjectProperty; 
+                               rdfs:comment ""@EN; 
+                               rdfs:domain ddhub:DWISNoun; 
+                               rdfs:range ddhub:DWISNoun; 
+                               rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
+
+ddhub:IsIntegratedFrom a owl:ObjectProperty; 
+                       rdfs:comment ""@EN; 
+                       rdfs:domain ddhub:DWISNoun; 
+                       rdfs:range ddhub:DWISNoun; 
+                       rdfs:subPropertyOf ddhub:IsTransformationOutput. 
+
+ddhub:IsLimitFor a owl:ObjectProperty; 
+                 rdfs:comment ""@EN; 
+                 rdfs:domain ddhub:DrillingDataPoint; 
+                 rdfs:range ddhub:ControlSystem; 
+                 rdfs:subPropertyOf ddhub:HasFunction. 
+
+ddhub:IsMassFlowRateAt a owl:ObjectProperty; 
+                       rdfs:comment ""@EN; 
+                       rdfs:domain ddhub:DWISNoun; 
+                       rdfs:range ddhub:DWISNoun; 
+                       rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
+
+ddhub:IsMeasuredBy a owl:ObjectProperty; 
+                   rdfs:comment ""@EN; 
+                   rdfs:domain ddhub:DWISNoun; 
+                   rdfs:range ddhub:DWISNoun; 
+                   rdfs:subPropertyOf ddhub:IsGeneratedBy. 
+
+ddhub:IsMechanicallyConnectTo a owl:ObjectProperty; 
+                              rdfs:comment ""@EN; 
+                              rdfs:domain ddhub:DWISNoun; 
+                              rdfs:range ddhub:DWISNoun; 
+                              rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:IsMechanicallyLocatedAt a owl:ObjectProperty; 
+                              rdfs:comment ""@EN; 
+                              rdfs:domain ddhub:DWISNoun; 
+                              rdfs:range ddhub:DWISNoun; 
+                              rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:IsObservableFrom a owl:ObjectProperty; 
+                       rdfs:comment ""@EN; 
+                       rdfs:domain ddhub:DWISNoun; 
+                       rdfs:range ddhub:DWISNoun; 
+                       rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:IsOfBaseQuantity a owl:ObjectProperty; 
+                       rdfs:comment ""@EN; 
+                       rdfs:domain ddhub:DWISNoun; 
+                       rdfs:range ddhub:DWISNoun; 
+                       rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:IsOfMeasurableQuantity a owl:ObjectProperty; 
+                             rdfs:comment ""@EN; 
+                             rdfs:domain ddhub:DWISNoun; 
+                             rdfs:range ddhub:DWISNoun; 
+                             rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:IsOfMechanicalStiffnessType a owl:ObjectProperty; 
+                                  rdfs:comment "A relation to describe how the drill-stem mechanical model manage stiffness."@EN; 
+                                  rdfs:domain ddhub:MechanicalModel; 
+                                  rdfs:range ddhub:MechanicalStiffnessType; 
+                                  rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:IsPhysicallyLocatedAt a owl:ObjectProperty; 
+                            rdfs:comment ""@EN; 
+                            rdfs:domain ddhub:DrillingDataPoint; 
+                            rdfs:range ddhub:Location; 
+                            rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:IsPressureAt a owl:ObjectProperty; 
+                   rdfs:comment ""@EN; 
+                   rdfs:domain ddhub:DWISNoun; 
+                   rdfs:range ddhub:DWISNoun; 
+                   rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
+
+ddhub:IsPressureGradientAt a owl:ObjectProperty; 
+                           rdfs:comment ""@EN; 
+                           rdfs:domain ddhub:DWISNoun; 
+                           rdfs:range ddhub:DWISNoun; 
+                           rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
+
+ddhub:IsProcessedBy a owl:ObjectProperty; 
+                    rdfs:comment ""@EN; 
+                    rdfs:domain ddhub:DWISNoun; 
+                    rdfs:range ddhub:DWISNoun; 
+                    rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:IsProvidedBy a owl:ObjectProperty; 
+                   rdfs:comment ""@EN; 
+                   rdfs:domain ddhub:DWISNoun; 
+                   rdfs:range ddhub:DataProvider; 
+                   rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:IsRecordedFrom a owl:ObjectProperty; 
+                     rdfs:comment ""@EN; 
+                     rdfs:domain ddhub:DWISNoun; 
+                     rdfs:range ddhub:DWISNoun; 
+                     rdfs:subPropertyOf ddhub:IsGeneratedBy. 
+
+ddhub:IsResampledBy a owl:ObjectProperty; 
+                    rdfs:comment ""@EN; 
+                    rdfs:domain ddhub:DrillingDataPoint; 
+                    rdfs:range ddhub:Resampling; 
+                    rdfs:subPropertyOf ddhub:IsTransformationOutput. 
+
+ddhub:IsResamplingInput a owl:ObjectProperty; 
+                        rdfs:comment ""@EN; 
+                        rdfs:domain ddhub:DrillingDataPoint; 
+                        rdfs:range ddhub:Resampling; 
+                        rdfs:subPropertyOf ddhub:IsTransformationInput. 
+
+ddhub:IsSetPointFor a owl:ObjectProperty; 
+                    rdfs:comment ""@EN; 
+                    rdfs:domain ddhub:DrillingDataPoint; 
+                    rdfs:range ddhub:Controller; 
+                    rdfs:subPropertyOf ddhub:HasFunction. 
+
+ddhub:IsSetPointRecommendationFor a owl:ObjectProperty; 
+                                  rdfs:comment ""@EN; 
+                                  rdfs:domain ddhub:DrillingDataPoint; 
+                                  rdfs:range ddhub:ControlSystem; 
+                                  rdfs:subPropertyOf ddhub:HasFunction. 
+
+ddhub:IsSynchronizationGroupInput a owl:ObjectProperty; 
+                                  rdfs:comment ""@EN; 
+                                  rdfs:domain ddhub:DrillingDataPoint; 
+                                  rdfs:range ddhub:SynchronizationGroup; 
+                                  rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:IsSynchronizationGroupOutput a owl:ObjectProperty; 
+                                   rdfs:comment ""@EN; 
+                                   rdfs:domain ddhub:DrillingDataPoint; 
+                                   rdfs:range ddhub:SynchronizationGroup; 
+                                   rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:IsTransformationInput a owl:ObjectProperty; 
+                            rdfs:comment ""@EN; 
+                            rdfs:domain ddhub:DrillingDataPoint; 
+                            rdfs:range ddhub:Transformation; 
+                            rdfs:subPropertyOf ddhub:HasFunction. 
+
+ddhub:IsTransformationOutput a owl:ObjectProperty; 
+                             rdfs:comment ""@EN; 
+                             rdfs:domain ddhub:DrillingDataPoint; 
+                             rdfs:range ddhub:DataFlowNode; 
+                             rdfs:subPropertyOf ddhub:IsGeneratedBy. 
+
+ddhub:IsTransmissionInput a owl:ObjectProperty; 
+                          rdfs:comment ""@EN; 
+                          rdfs:domain ddhub:DrillingDataPoint; 
+                          rdfs:range ddhub:TransmissionLine; 
+                          rdfs:subPropertyOf ddhub:HasFunction. 
+
+ddhub:IsTransmissionOutput a owl:ObjectProperty; 
+                           rdfs:comment ""@EN; 
+                           rdfs:domain ddhub:DrillingDataPoint; 
+                           rdfs:range ddhub:TransmissionLine; 
+                           rdfs:subPropertyOf ddhub:IsGeneratedBy. 
+
+ddhub:IsTransmittedBy a owl:ObjectProperty; 
+                      rdfs:comment ""@EN; 
+                      rdfs:domain ddhub:DWISNoun; 
+                      rdfs:range ddhub:DWISNoun; 
+                      rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:IsUnitForQuantity a owl:ObjectProperty; 
+                        rdfs:comment ""@EN; 
+                        rdfs:domain ddhub:Unit; 
+                        rdfs:range ddhub:Quantity; 
+                        rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:IsValidBy a owl:ObjectProperty; 
+                rdfs:comment ""@EN; 
+                rdfs:domain ddhub:DWISNoun; 
+                rdfs:range ddhub:DWISNoun; 
+                rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:IsVolumetricFlowRateAt a owl:ObjectProperty; 
+                             rdfs:comment ""@EN; 
+                             rdfs:domain ddhub:DWISNoun; 
+                             rdfs:range ddhub:DWISNoun; 
+                             rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
+
+ddhub:LengthQuantity a owl:Class; 
+                     rdfs:comment ""@EN; 
+                     rdfs:subClassOf ddhub:Quantity. 
+
+ddhub:Location a owl:Class; 
+               rdfs:comment "Physical location for a signal."@EN; 
+               rdfs:subClassOf ddhub:DWISNoun. 
+
+ddhub:LowPassFilter a owl:Class; 
+                    rdfs:comment ""@EN; 
+                    rdfs:subClassOf ddhub:Filter. 
+
+<http://ddhub.no/LowPassFilter/CutOffFrequency> a owl:DatatypeProperty, owl:FunctionalProperty; 
+                                                rdfs:comment ""@EN; 
+                                                rdfs:domain ddhub:LowPassFilter; 
+                                                rdfs:range xsd:float. 
+
+ddhub:LT a owl:Class; 
+         rdfs:comment ""@EN; 
+         rdfs:subClassOf ddhub:ValidityCondition. 
+
+ddhub:LWDLocation a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:Location. 
+
+ddhub:MassDensityQuantity a owl:Class; 
+                          rdfs:comment ""@EN; 
+                          rdfs:subClassOf ddhub:Quantity. 
+
+ddhub:MassQuantity a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:Quantity. 
+
+ddhub:MassRate a owl:Class; 
+               rdfs:comment ""@EN; 
+               rdfs:subClassOf ddhub:Quantity. 
+
+ddhub:MathematicalModel a owl:Class; 
+                        rdfs:comment "A model for which the state variables do not change with time."@EN; 
+                        rdfs:subClassOf ddhub:DWISNoun. 
+
+ddhub:MeasurableQuantity a owl:Class; 
+                         rdfs:comment "Represents a quantity that allows meaningful comparisons."@EN; 
+                         rdfs:subClassOf ddhub:DWISNoun. 
+
+<http://ddhub.no/MeasurableQuantity/MeaningfulPrecision> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                          rdfs:comment ""@EN; 
-                                                         rdfs:domain <http://ddhub.no/MeasurableQuantity>; 
+                                                         rdfs:domain ddhub:MeasurableQuantity; 
                                                          rdfs:range xsd:float. 
 
-<http://ddhub.no/MeasurableQuantityUnitAssociation> a owl:Class; 
-                                                    rdfs:comment ""@EN; 
-                                                    rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
+ddhub:MeasurableQuantityUnitAssociation a owl:Class; 
+                                        rdfs:comment ""@EN; 
+                                        rdfs:subClassOf ddhub:DWISNoun. 
 
-<http://ddhub.no/MeasuredDepthToTrueVerticalDepthTransformation> a owl:Class; 
-                                                                 rdfs:comment ""@EN; 
-                                                                 rdfs:subClassOf <http://ddhub.no/DirectTransformation>. 
+ddhub:MeasuredDepthToTrueVerticalDepthTransformation a owl:Class; 
+                                                     rdfs:comment ""@EN; 
+                                                     rdfs:subClassOf ddhub:DirectTransformation. 
 
-<http://ddhub.no/MeasuredDepthTranslation> a owl:Class; 
-                                           rdfs:comment ""@EN; 
-                                           rdfs:subClassOf <http://ddhub.no/DirectTransformation>. 
+ddhub:MeasuredDepthTranslation a owl:Class; 
+                               rdfs:comment ""@EN; 
+                               rdfs:subClassOf ddhub:DirectTransformation. 
 
-<http://ddhub.no/MeasurementDevice> a owl:Class; 
-                                    rdfs:comment "Denotes a physical sensor"@EN; 
-                                    rdfs:subClassOf <http://ddhub.no/DataFlowNode>. 
+ddhub:MeasurementDevice a owl:Class; 
+                        rdfs:comment "Denotes a physical sensor"@EN; 
+                        rdfs:subClassOf ddhub:DataFlowNode. 
 
-<http://ddhub.no/MechanicalBlock> a owl:Class; 
-                                  rdfs:comment ""@EN; 
-                                  rdfs:subClassOf <http://ddhub.no/DrillingEquipment>. 
+ddhub:MechanicalBlock a owl:Class; 
+                      rdfs:comment ""@EN; 
+                      rdfs:subClassOf ddhub:DrillingEquipment. 
 
-<http://ddhub.no/MechanicalElementState> a owl:Class; 
-                                         rdfs:comment ""@EN; 
-                                         rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
+ddhub:MechanicalElementState a owl:Class; 
+                             rdfs:comment ""@EN; 
+                             rdfs:subClassOf ddhub:DWISNoun. 
 
-<http://ddhub.no/MechanicalLogicalElement> a owl:Class; 
-                                           rdfs:comment ""@EN; 
-                                           rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
+ddhub:MechanicalLogicalElement a owl:Class; 
+                               rdfs:comment ""@EN; 
+                               rdfs:subClassOf ddhub:DWISNoun. 
 
-<http://ddhub.no/MechanicallyClosedState> a owl:Class; 
-                                          rdfs:comment ""@EN; 
-                                          rdfs:subClassOf <http://ddhub.no/MechanicalElementState>. 
+ddhub:MechanicallyClosedState a owl:Class; 
+                              rdfs:comment ""@EN; 
+                              rdfs:subClassOf ddhub:MechanicalElementState. 
 
-<http://ddhub.no/MechanicallyClosedState.Value> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/MechanicallyClosedState/Value> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                 rdfs:comment ""@EN; 
-                                                rdfs:domain <http://ddhub.no/MechanicallyClosedState>; 
+                                                rdfs:domain ddhub:MechanicallyClosedState; 
                                                 rdfs:range xsd:float. 
 
-<http://ddhub.no/MechanicallyConnectedState> a owl:Class; 
-                                             rdfs:comment ""@EN; 
-                                             rdfs:subClassOf <http://ddhub.no/MechanicalElementState>. 
+ddhub:MechanicallyConnectedState a owl:Class; 
+                                 rdfs:comment ""@EN; 
+                                 rdfs:subClassOf ddhub:MechanicalElementState. 
 
-<http://ddhub.no/MechanicallyConnectedState.Value> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/MechanicallyConnectedState/Value> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                    rdfs:comment ""@EN; 
-                                                   rdfs:domain <http://ddhub.no/MechanicallyConnectedState>; 
+                                                   rdfs:domain ddhub:MechanicallyConnectedState; 
                                                    rdfs:range xsd:float. 
 
-<http://ddhub.no/MechanicalSoftModel> a owl:Class; 
-                                      rdfs:comment "An infinitively soft model assumes that the drill-stem deforms without any resistance when compressive loads are applied."@EN; 
-                                      rdfs:subClassOf <http://ddhub.no/MechanicalStiffnessType>. 
+ddhub:MechanicalSoftModel a owl:Class; 
+                          rdfs:comment "An infinitively soft model assumes that the drill-stem deforms without any resistance when compressive loads are applied."@EN; 
+                          rdfs:subClassOf ddhub:MechanicalStiffnessType. 
 
-<http://ddhub.no/MechanicalStiffModel> a owl:Class; 
-                                       rdfs:comment "A stiff mechanical model considers that the drill-stem can deform laterally when put in compression."@EN; 
-                                       rdfs:subClassOf <http://ddhub.no/MechanicalStiffnessType>. 
+ddhub:MechanicalStiffModel a owl:Class; 
+                           rdfs:comment "A stiff mechanical model considers that the drill-stem can deform laterally when put in compression."@EN; 
+                           rdfs:subClassOf ddhub:MechanicalStiffnessType. 
 
-<http://ddhub.no/MechanicalStiffModelAssumedContacts> a owl:Class; 
-                                                      rdfs:comment "Such a stiff mechanical model presuposes the position of the contact points."@EN; 
-                                                      rdfs:subClassOf <http://ddhub.no/MechanicalStiffModel>. 
+ddhub:MechanicalStiffModelAssumedContacts a owl:Class; 
+                                          rdfs:comment "Such a stiff mechanical model presuposes the position of the contact points."@EN; 
+                                          rdfs:subClassOf ddhub:MechanicalStiffModel. 
 
-<http://ddhub.no/MechanicalStiffModelEstimatedContacts> a owl:Class; 
-                                                        rdfs:comment "Such a stiff mechanical model estimates the position of the contact points."@EN; 
-                                                        rdfs:subClassOf <http://ddhub.no/MechanicalStiffModel>. 
+ddhub:MechanicalStiffModelEstimatedContacts a owl:Class; 
+                                            rdfs:comment "Such a stiff mechanical model estimates the position of the contact points."@EN; 
+                                            rdfs:subClassOf ddhub:MechanicalStiffModel. 
 
-<http://ddhub.no/MechanicalStiffnessType> a owl:Class; 
-                                          rdfs:comment "A description of how the drill-stem stiffness is modelled."@EN; 
-                                          rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
+ddhub:MechanicalStiffnessType a owl:Class; 
+                              rdfs:comment "A description of how the drill-stem stiffness is modelled."@EN; 
+                              rdfs:subClassOf ddhub:DWISNoun. 
 
-<http://ddhub.no/MinMaxUncertainty> a owl:Class; 
-                                    rdfs:comment ""@EN; 
-                                    rdfs:subClassOf <http://ddhub.no/SignalUncertainty>. 
+ddhub:MinMaxUncertainty a owl:Class; 
+                        rdfs:comment ""@EN; 
+                        rdfs:subClassOf ddhub:SignalUncertainty. 
 
-<http://ddhub.no/MovingAverage> a owl:Class; 
-                                rdfs:comment ""@EN; 
-                                rdfs:subClassOf <http://ddhub.no/Filter>. 
+ddhub:MovingAverage a owl:Class; 
+                    rdfs:comment ""@EN; 
+                    rdfs:subClassOf ddhub:Filter. 
 
-<http://ddhub.no/MudMixing> a owl:Class; 
+ddhub:MudMixing a owl:Class; 
+                rdfs:comment ""@EN; 
+                rdfs:subClassOf ddhub:HydraulicJunction. 
+
+ddhub:MudPulseTelemetry a owl:Class; 
+                        rdfs:comment ""@EN; 
+                        rdfs:subClassOf ddhub:DownHoleTelemetry. 
+
+ddhub:MudPump a owl:Class; 
+              rdfs:comment ""@EN; 
+              rdfs:subClassOf ddhub:Pump. 
+
+ddhub:MudPumpsControlSystem a owl:Class; 
                             rdfs:comment ""@EN; 
-                            rdfs:subClassOf <http://ddhub.no/HydraulicJunction>. 
+                            rdfs:subClassOf ddhub:ControlSystem. 
 
-<http://ddhub.no/MudPulseTelemetry> a owl:Class; 
-                                    rdfs:comment ""@EN; 
-                                    rdfs:subClassOf <http://ddhub.no/DownHoleTelemetry>. 
+ddhub:NorthEastFrame a owl:Class; 
+                     rdfs:comment ""@EN; 
+                     rdfs:subClassOf ddhub:CartesianTwoDimensionalReferenceFrame. 
 
-<http://ddhub.no/MudPump> a owl:Class; 
-                          rdfs:comment ""@EN; 
-                          rdfs:subClassOf <http://ddhub.no/Pump>. 
+ddhub:NorthEastTVDFrame a owl:Class; 
+                        rdfs:comment ""@EN; 
+                        rdfs:subClassOf ddhub:CartesianThreeDimensionalReferenceFrame. 
 
-<http://ddhub.no/MudPumpsControlSystem> a owl:Class; 
-                                        rdfs:comment ""@EN; 
-                                        rdfs:subClassOf <http://ddhub.no/ControlSystem>. 
+ddhub:NumberOfItemsRangeExtraction a owl:Class; 
+                                   rdfs:comment ""@EN; 
+                                   rdfs:subClassOf ddhub:RangeExtraction. 
 
-<http://ddhub.no/NorthEastFrame> a owl:Class; 
-                                 rdfs:comment ""@EN; 
-                                 rdfs:subClassOf <http://ddhub.no/CartesianTwoDimensionalReferenceFrame>. 
-
-<http://ddhub.no/NorthEastTVDFrame> a owl:Class; 
-                                    rdfs:comment ""@EN; 
-                                    rdfs:subClassOf <http://ddhub.no/CartesianThreeDimensionalReferenceFrame>. 
-
-<http://ddhub.no/NumberOfItemsRangeExtraction> a owl:Class; 
-                                               rdfs:comment ""@EN; 
-                                               rdfs:subClassOf <http://ddhub.no/RangeExtraction>. 
-
-<http://ddhub.no/NumberOfItemsRangeExtraction.NumberOfItems> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/NumberOfItemsRangeExtraction/NumberOfItems> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                              rdfs:comment ""@EN; 
-                                                             rdfs:domain <http://ddhub.no/NumberOfItemsRangeExtraction>; 
+                                                             rdfs:domain ddhub:NumberOfItemsRangeExtraction; 
                                                              rdfs:range xsd:float. 
 
-<http://ddhub.no/NumberOfSampleMovingAverage> a owl:Class; 
-                                              rdfs:comment ""@EN; 
-                                              rdfs:subClassOf <http://ddhub.no/MovingAverage>. 
+ddhub:NumberOfSampleMovingAverage a owl:Class; 
+                                  rdfs:comment ""@EN; 
+                                  rdfs:subClassOf ddhub:MovingAverage. 
 
-<http://ddhub.no/NumberOfSampleMovingAverage.NumberOfSamples> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/NumberOfSampleMovingAverage/NumberOfSamples> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                               rdfs:comment ""@EN; 
-                                                              rdfs:domain <http://ddhub.no/NumberOfSampleMovingAverage>; 
+                                                              rdfs:domain ddhub:NumberOfSampleMovingAverage; 
                                                               rdfs:range xsd:float. 
 
-<http://ddhub.no/OneDimensionalCartesianReferenceFrame> a owl:Class; 
-                                                        rdfs:comment ""@EN; 
-                                                        rdfs:subClassOf <http://ddhub.no/OneDimensionalReferenceFrame>. 
+ddhub:OneDimensionalCartesianReferenceFrame a owl:Class; 
+                                            rdfs:comment ""@EN; 
+                                            rdfs:subClassOf ddhub:OneDimensionalReferenceFrame. 
 
-<http://ddhub.no/OneDimensionalCurviLinearReferenceFrame> a owl:Class; 
-                                                          rdfs:comment ""@EN; 
-                                                          rdfs:subClassOf <http://ddhub.no/OneDimensionalReferenceFrame>. 
+ddhub:OneDimensionalCurviLinearReferenceFrame a owl:Class; 
+                                              rdfs:comment ""@EN; 
+                                              rdfs:subClassOf ddhub:OneDimensionalReferenceFrame. 
 
-<http://ddhub.no/OneDimensionalReferenceFrame> a owl:Class; 
-                                               rdfs:comment ""@EN; 
-                                               rdfs:subClassOf <http://ddhub.no/ReferenceFrame>. 
+ddhub:OneDimensionalReferenceFrame a owl:Class; 
+                                   rdfs:comment ""@EN; 
+                                   rdfs:subClassOf ddhub:ReferenceFrame. 
 
-<http://ddhub.no/OpenChannel> a owl:Class; 
+ddhub:OpenChannel a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:HydraulicBranch. 
+
+ddhub:OpenHole a owl:Class; 
+               rdfs:comment ""@EN; 
+               rdfs:subClassOf ddhub:Pipe. 
+
+ddhub:OpenHoleCenterLineFrame a owl:Class; 
                               rdfs:comment ""@EN; 
-                              rdfs:subClassOf <http://ddhub.no/HydraulicBranch>. 
+                              rdfs:subClassOf ddhub:OneDimensionalCurviLinearReferenceFrame. 
 
-<http://ddhub.no/OpenHole> a owl:Class; 
-                           rdfs:comment ""@EN; 
-                           rdfs:subClassOf <http://ddhub.no/Pipe>. 
+ddhub:Pipe a owl:Class; 
+           rdfs:comment ""@EN; 
+           rdfs:subClassOf ddhub:HydraulicBranch. 
 
-<http://ddhub.no/OpenHoleCenterLineFrame> a owl:Class; 
-                                          rdfs:comment ""@EN; 
-                                          rdfs:subClassOf <http://ddhub.no/OneDimensionalCurviLinearReferenceFrame>. 
+ddhub:PolarReferenceFrame a owl:Class; 
+                          rdfs:comment ""@EN; 
+                          rdfs:subClassOf ddhub:TwoDimensionalReferenceFrame. 
 
-<http://ddhub.no/Pipe> a owl:Class; 
+ddhub:PowerQuantity a owl:Class; 
+                    rdfs:comment ""@EN; 
+                    rdfs:subClassOf ddhub:Quantity. 
+
+ddhub:PressureQuantity a owl:Class; 
                        rdfs:comment ""@EN; 
-                       rdfs:subClassOf <http://ddhub.no/HydraulicBranch>. 
+                       rdfs:subClassOf ddhub:Quantity. 
 
-<http://ddhub.no/PolarReferenceFrame> a owl:Class; 
-                                      rdfs:comment ""@EN; 
-                                      rdfs:subClassOf <http://ddhub.no/TwoDimensionalReferenceFrame>. 
-
-<http://ddhub.no/PowerQuantity> a owl:Class; 
-                                rdfs:comment ""@EN; 
-                                rdfs:subClassOf <http://ddhub.no/Quantity>. 
-
-<http://ddhub.no/PressureQuantity> a owl:Class; 
-                                   rdfs:comment ""@EN; 
-                                   rdfs:subClassOf <http://ddhub.no/Quantity>. 
-
-<http://ddhub.no/PressureToEquivalentDensityTransformation> a owl:Class; 
-                                                            rdfs:comment ""@EN; 
-                                                            rdfs:subClassOf <http://ddhub.no/DirectTransformation>. 
-
-<http://ddhub.no/PressureToForceTransformation> a owl:Class; 
+ddhub:PressureToEquivalentDensityTransformation a owl:Class; 
                                                 rdfs:comment ""@EN; 
-                                                rdfs:subClassOf <http://ddhub.no/DirectTransformation>. 
+                                                rdfs:subClassOf ddhub:DirectTransformation. 
 
-<http://ddhub.no/ProportionQuantity> a owl:Class; 
-                                     rdfs:comment ""@EN; 
-                                     rdfs:subClassOf <http://ddhub.no/Quantity>. 
+ddhub:PressureToForceTransformation a owl:Class; 
+                                    rdfs:comment ""@EN; 
+                                    rdfs:subClassOf ddhub:DirectTransformation. 
 
-<http://ddhub.no/Pump> a owl:Class; 
+ddhub:ProportionQuantity a owl:Class; 
+                         rdfs:comment ""@EN; 
+                         rdfs:subClassOf ddhub:Quantity. 
+
+ddhub:Pump a owl:Class; 
+           rdfs:comment ""@EN; 
+           rdfs:subClassOf ddhub:DrillingEquipment. 
+
+ddhub:PumpRate a owl:Class; 
+               rdfs:comment ""@EN; 
+               rdfs:subClassOf ddhub:DrillingDataPoint. 
+
+ddhub:PumpRateQuantity a owl:Class; 
                        rdfs:comment ""@EN; 
-                       rdfs:subClassOf <http://ddhub.no/DrillingEquipment>. 
+                       rdfs:subClassOf ddhub:MeasurableQuantity. 
 
-<http://ddhub.no/PumpRate> a owl:Class; 
-                           rdfs:comment ""@EN; 
-                           rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
+ddhub:Quantity a owl:Class; 
+               rdfs:comment ""@EN; 
+               rdfs:subClassOf ddhub:DWISNoun. 
 
-<http://ddhub.no/PumpRateQuantity> a owl:Class; 
-                                   rdfs:comment ""@EN; 
-                                   rdfs:subClassOf <http://ddhub.no/MeasurableQuantity>. 
-
-<http://ddhub.no/Quantity> a owl:Class; 
-                           rdfs:comment ""@EN; 
-                           rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
-
-<http://ddhub.no/Quantity.I> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/Quantity/I> a owl:DatatypeProperty, owl:FunctionalProperty; 
                              rdfs:comment "Electric current exponent."@EN; 
-                             rdfs:domain <http://ddhub.no/Quantity>; 
+                             rdfs:domain ddhub:Quantity; 
                              rdfs:range xsd:float. 
 
-<http://ddhub.no/Quantity.J> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/Quantity/J> a owl:DatatypeProperty, owl:FunctionalProperty; 
                              rdfs:comment "Luminous intensity exponent."@EN; 
-                             rdfs:domain <http://ddhub.no/Quantity>; 
+                             rdfs:domain ddhub:Quantity; 
                              rdfs:range xsd:float. 
 
-<http://ddhub.no/Quantity.L> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/Quantity/L> a owl:DatatypeProperty, owl:FunctionalProperty; 
                              rdfs:comment "Length exponent."@EN; 
-                             rdfs:domain <http://ddhub.no/Quantity>; 
+                             rdfs:domain ddhub:Quantity; 
                              rdfs:range xsd:float. 
 
-<http://ddhub.no/Quantity.M> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/Quantity/M> a owl:DatatypeProperty, owl:FunctionalProperty; 
                              rdfs:comment "Mass exponent."@EN; 
-                             rdfs:domain <http://ddhub.no/Quantity>; 
+                             rdfs:domain ddhub:Quantity; 
                              rdfs:range xsd:float. 
 
-<http://ddhub.no/Quantity.N> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/Quantity/N> a owl:DatatypeProperty, owl:FunctionalProperty; 
                              rdfs:comment "Amount of substance exponent."@EN; 
-                             rdfs:domain <http://ddhub.no/Quantity>; 
+                             rdfs:domain ddhub:Quantity; 
                              rdfs:range xsd:float. 
 
-<http://ddhub.no/Quantity.SIUnit> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/Quantity/SIUnit> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                   rdfs:comment ""@EN; 
-                                  rdfs:domain <http://ddhub.no/Quantity>; 
+                                  rdfs:domain ddhub:Quantity; 
                                   rdfs:range xsd:float. 
 
-<http://ddhub.no/Quantity.T> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/Quantity/T> a owl:DatatypeProperty, owl:FunctionalProperty; 
                              rdfs:comment "Time exponent."@EN; 
-                             rdfs:domain <http://ddhub.no/Quantity>; 
+                             rdfs:domain ddhub:Quantity; 
                              rdfs:range xsd:float. 
 
-<http://ddhub.no/Quantity.ThT> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/Quantity/ThT> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                rdfs:comment "Thermodynamic temperature exponent."@EN; 
-                               rdfs:domain <http://ddhub.no/Quantity>; 
+                               rdfs:domain ddhub:Quantity; 
                                rdfs:range xsd:float. 
 
-<http://ddhub.no/RangeExtraction> a owl:Class; 
-                                  rdfs:comment ""@EN; 
-                                  rdfs:subClassOf <http://ddhub.no/TimeBasedTransformation>. 
+ddhub:RangeExtraction a owl:Class; 
+                      rdfs:comment ""@EN; 
+                      rdfs:subClassOf ddhub:TimeBasedTransformation. 
 
-<http://ddhub.no/RectangularChannel> a owl:Class; 
-                                     rdfs:comment ""@EN; 
-                                     rdfs:subClassOf <http://ddhub.no/OpenChannel>. 
+ddhub:RectangularChannel a owl:Class; 
+                         rdfs:comment ""@EN; 
+                         rdfs:subClassOf ddhub:OpenChannel. 
 
-<http://ddhub.no/ReferenceFrame> a owl:Class; 
-                                 rdfs:comment "Represents a system of coordinates"@EN; 
-                                 rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
+ddhub:ReferenceFrame a owl:Class; 
+                     rdfs:comment "Represents a system of coordinates"@EN; 
+                     rdfs:subClassOf ddhub:DWISNoun. 
 
-<http://ddhub.no/ReferenceLocation> a owl:Class; 
-                                    rdfs:comment ""@EN; 
-                                    rdfs:subClassOf <http://ddhub.no/Location>. 
+ddhub:ReferenceLocation a owl:Class; 
+                        rdfs:comment ""@EN; 
+                        rdfs:subClassOf ddhub:Location. 
 
-<http://ddhub.no/RelativeUncertainty> a owl:Class; 
-                                      rdfs:comment ""@EN; 
-                                      rdfs:subClassOf <http://ddhub.no/SignalUncertainty>. 
+ddhub:RelativeUncertainty a owl:Class; 
+                          rdfs:comment ""@EN; 
+                          rdfs:subClassOf ddhub:SignalUncertainty. 
 
-<http://ddhub.no/Resampling> a owl:Class; 
-                             rdfs:comment ""@EN; 
-                             rdfs:subClassOf <http://ddhub.no/TimeBasedTransformation>. 
+ddhub:Resampling a owl:Class; 
+                 rdfs:comment ""@EN; 
+                 rdfs:subClassOf ddhub:TimeBasedTransformation. 
 
-<http://ddhub.no/Resampling.ResamplingDelay> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/Resampling/ResamplingDelay> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                              rdfs:comment ""@EN; 
-                                             rdfs:domain <http://ddhub.no/Resampling>; 
+                                             rdfs:domain ddhub:Resampling; 
                                              rdfs:range xsd:float. 
 
-<http://ddhub.no/Resampling.ResamplingRate> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/Resampling/ResamplingRate> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                             rdfs:comment ""@EN; 
-                                            rdfs:domain <http://ddhub.no/Resampling>; 
+                                            rdfs:domain ddhub:Resampling; 
                                             rdfs:range xsd:float. 
 
-<http://ddhub.no/Resampling.Validity> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/Resampling/Validity> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                       rdfs:comment ""@EN; 
-                                      rdfs:domain <http://ddhub.no/Resampling>; 
+                                      rdfs:domain ddhub:Resampling; 
                                       rdfs:range xsd:float. 
 
-<http://ddhub.no/Resistivity> a owl:Class; 
-                              rdfs:comment ""@EN; 
-                              rdfs:subClassOf <http://ddhub.no/MeasurableQuantity>. 
+ddhub:Resistivity a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:MeasurableQuantity. 
 
-<http://ddhub.no/ReturnFlowLine> a owl:Class; 
-                                 rdfs:comment ""@EN; 
-                                 rdfs:subClassOf <http://ddhub.no/Pipe>. 
+ddhub:ReturnFlowLine a owl:Class; 
+                     rdfs:comment ""@EN; 
+                     rdfs:subClassOf ddhub:Pipe. 
 
-<http://ddhub.no/RockDensityQuantity> a owl:Class; 
-                                      rdfs:comment ""@EN; 
-                                      rdfs:subClassOf <http://ddhub.no/MeasurableQuantity>. 
+ddhub:RockDensityQuantity a owl:Class; 
+                          rdfs:comment ""@EN; 
+                          rdfs:subClassOf ddhub:MeasurableQuantity. 
 
-<http://ddhub.no/ROP> a owl:Class; 
-                      rdfs:comment ""@EN; 
-                      rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
+ddhub:ROP a owl:Class; 
+          rdfs:comment ""@EN; 
+          rdfs:subClassOf ddhub:DrillingDataPoint. 
 
-<http://ddhub.no/SemiCircularChannel> a owl:Class; 
-                                      rdfs:comment ""@EN; 
-                                      rdfs:subClassOf <http://ddhub.no/OpenChannel>. 
+ddhub:SemiCircularChannel a owl:Class; 
+                          rdfs:comment ""@EN; 
+                          rdfs:subClassOf ddhub:OpenChannel. 
 
-<http://ddhub.no/SensorUncertainty> a owl:Class; 
-                                    rdfs:comment ""@EN; 
-                                    rdfs:subClassOf <http://ddhub.no/SignalUncertainty>. 
-
-<http://ddhub.no/ShaleShakers> a owl:Class; 
-                               rdfs:comment ""@EN; 
-                               rdfs:subClassOf <http://ddhub.no/DrillingEquipment>. 
-
-<http://ddhub.no/SignalProcessingUnit> a owl:Class; 
-                                       rdfs:comment "Represent any signal processing applied prior to the distribution of the considered signal. Signal processing refers to e.g. noise removal, filtering,.."@EN; 
-                                       rdfs:subClassOf <http://ddhub.no/Transformation>. 
-
-<http://ddhub.no/SignalUncertainty> a owl:Class; 
-                                    rdfs:comment "Represent the uncertainty associated to a signal."@EN; 
-                                    rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
-
-<http://ddhub.no/Slips> a owl:Class; 
+ddhub:SensorUncertainty a owl:Class; 
                         rdfs:comment ""@EN; 
-                        rdfs:subClassOf <http://ddhub.no/DrillingEquipment>. 
+                        rdfs:subClassOf ddhub:SignalUncertainty. 
 
-<http://ddhub.no/SphericalReferenceFrame> a owl:Class; 
-                                          rdfs:comment ""@EN; 
-                                          rdfs:subClassOf <http://ddhub.no/ThreeDimensionalReferenceFrame>. 
+ddhub:ShaleShakers a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:DrillingEquipment. 
 
-<http://ddhub.no/SPP> a owl:Class; 
-                      rdfs:comment ""@EN; 
-                      rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
+ddhub:SignalProcessingUnit a owl:Class; 
+                           rdfs:comment "Represent any signal processing applied prior to the distribution of the considered signal. Signal processing refers to e.g. noise removal, filtering,.."@EN; 
+                           rdfs:subClassOf ddhub:Transformation. 
 
-<http://ddhub.no/SPPQuantity> a owl:Class; 
+ddhub:SignalUncertainty a owl:Class; 
+                        rdfs:comment "Represent the uncertainty associated to a signal."@EN; 
+                        rdfs:subClassOf ddhub:DWISNoun. 
+
+ddhub:Slips a owl:Class; 
+            rdfs:comment ""@EN; 
+            rdfs:subClassOf ddhub:DrillingEquipment. 
+
+ddhub:SphericalReferenceFrame a owl:Class; 
                               rdfs:comment ""@EN; 
-                              rdfs:subClassOf <http://ddhub.no/MeasurableQuantity>. 
+                              rdfs:subClassOf ddhub:ThreeDimensionalReferenceFrame. 
 
-<http://ddhub.no/StandPipe> a owl:Class; 
+ddhub:SPP a owl:Class; 
+          rdfs:comment ""@EN; 
+          rdfs:subClassOf ddhub:DrillingDataPoint. 
+
+ddhub:SPPQuantity a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:MeasurableQuantity. 
+
+ddhub:StandPipe a owl:Class; 
+                rdfs:comment ""@EN; 
+                rdfs:subClassOf ddhub:DrillingEquipment. 
+
+ddhub:StartsHydraulicBranchDecomposition a owl:ObjectProperty; 
+                                         rdfs:comment ""@EN; 
+                                         rdfs:domain ddhub:DWISNoun; 
+                                         rdfs:range ddhub:DWISNoun; 
+                                         rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:SteadyStateModel a owl:Class; 
+                       rdfs:comment "A model for which the state variables do not change with time."@EN; 
+                       rdfs:subClassOf ddhub:DWISNoun. 
+
+ddhub:SupportLine a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:DrillLine. 
+
+ddhub:SurfaceRPM a owl:Class; 
+                 rdfs:comment ""@EN; 
+                 rdfs:subClassOf ddhub:DrillingDataPoint. 
+
+ddhub:SurfaceRPMQuantity a owl:Class; 
+                         rdfs:comment ""@EN; 
+                         rdfs:subClassOf ddhub:MeasurableQuantity. 
+
+ddhub:SurfaceTorque a owl:Class; 
+                    rdfs:comment ""@EN; 
+                    rdfs:subClassOf ddhub:DrillingDataPoint. 
+
+ddhub:SurfaceTorqueQuantity a owl:Class; 
                             rdfs:comment ""@EN; 
-                            rdfs:subClassOf <http://ddhub.no/DrillingEquipment>. 
+                            rdfs:subClassOf ddhub:MeasurableQuantity. 
 
-<http://ddhub.no/StartsHydraulicBranchDecomposition> a owl:ObjectProperty; 
-                                                     rdfs:comment ""@EN; 
-                                                     rdfs:domain <http://ddhub.no/DWISNoun>; 
-                                                     rdfs:range <http://ddhub.no/DWISNoun>; 
-                                                     rdfs:subPropertyOf <http://ddhub.no/DWISVerb>. 
+ddhub:SynchronizationGroup a owl:Class; 
+                           rdfs:comment ""@EN; 
+                           rdfs:subClassOf ddhub:DWISNoun. 
 
-<http://ddhub.no/SteadyStateModel> a owl:Class; 
-                                   rdfs:comment "A model for which the state variables do not change with time."@EN; 
-                                   rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
-
-<http://ddhub.no/SupportLine> a owl:Class; 
-                              rdfs:comment ""@EN; 
-                              rdfs:subClassOf <http://ddhub.no/DrillLine>. 
-
-<http://ddhub.no/SurfaceRPM> a owl:Class; 
-                             rdfs:comment ""@EN; 
-                             rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
-
-<http://ddhub.no/SurfaceRPMQuantity> a owl:Class; 
-                                     rdfs:comment ""@EN; 
-                                     rdfs:subClassOf <http://ddhub.no/MeasurableQuantity>. 
-
-<http://ddhub.no/SurfaceTorque> a owl:Class; 
-                                rdfs:comment ""@EN; 
-                                rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
-
-<http://ddhub.no/SurfaceTorqueQuantity> a owl:Class; 
-                                        rdfs:comment ""@EN; 
-                                        rdfs:subClassOf <http://ddhub.no/MeasurableQuantity>. 
-
-<http://ddhub.no/SynchronizationGroup> a owl:Class; 
-                                       rdfs:comment ""@EN; 
-                                       rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
-
-<http://ddhub.no/SynchronizationGroup.SamplingRate> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/SynchronizationGroup/SamplingRate> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                     rdfs:comment ""@EN; 
-                                                    rdfs:domain <http://ddhub.no/SynchronizationGroup>; 
+                                                    rdfs:domain ddhub:SynchronizationGroup; 
                                                     rdfs:range xsd:float. 
 
-<http://ddhub.no/SynchronizationGroup.SynchronizationDelay> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/SynchronizationGroup/SynchronizationDelay> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                             rdfs:comment ""@EN; 
-                                                            rdfs:domain <http://ddhub.no/SynchronizationGroup>; 
+                                                            rdfs:domain ddhub:SynchronizationGroup; 
                                                             rdfs:range xsd:float. 
 
-<http://ddhub.no/Telemetry> a owl:Class; 
-                            rdfs:comment "Technology used for transferring the data from its main origin."@EN; 
-                            rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
+ddhub:Telemetry a owl:Class; 
+                rdfs:comment "Technology used for transferring the data from its main origin."@EN; 
+                rdfs:subClassOf ddhub:DWISNoun. 
 
-<http://ddhub.no/Telemetry.AverageDelayByRepeaters> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/Telemetry/AverageDelayByRepeaters> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                     rdfs:comment ""@EN; 
-                                                    rdfs:domain <http://ddhub.no/Telemetry>; 
+                                                    rdfs:domain ddhub:Telemetry; 
                                                     rdfs:range xsd:float. 
 
-<http://ddhub.no/Telemetry.NumberOfRepeaters> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/Telemetry/NumberOfRepeaters> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                               rdfs:comment ""@EN; 
-                                              rdfs:domain <http://ddhub.no/Telemetry>; 
+                                              rdfs:domain ddhub:Telemetry; 
                                               rdfs:range xsd:float. 
 
-<http://ddhub.no/Telemetry.RefreshRate> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/Telemetry/RefreshRate> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                         rdfs:comment ""@EN; 
-                                        rdfs:domain <http://ddhub.no/Telemetry>; 
+                                        rdfs:domain ddhub:Telemetry; 
                                         rdfs:range xsd:float. 
 
-<http://ddhub.no/TemperatureIn> a owl:Class; 
-                                rdfs:comment ""@EN; 
-                                rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
+ddhub:TemperatureIn a owl:Class; 
+                    rdfs:comment ""@EN; 
+                    rdfs:subClassOf ddhub:DrillingDataPoint. 
 
-<http://ddhub.no/TemperatureOut> a owl:Class; 
+ddhub:TemperatureOut a owl:Class; 
+                     rdfs:comment ""@EN; 
+                     rdfs:subClassOf ddhub:DrillingDataPoint. 
+
+ddhub:TemperatureQuantity a owl:Class; 
+                          rdfs:comment ""@EN; 
+                          rdfs:subClassOf ddhub:Quantity. 
+
+ddhub:ThreeDimensionalReferenceFrame a owl:Class; 
+                                     rdfs:comment ""@EN; 
+                                     rdfs:subClassOf ddhub:ReferenceFrame. 
+
+ddhub:ThreeWayManifold a owl:Class; 
+                       rdfs:comment ""@EN; 
+                       rdfs:subClassOf ddhub:DrillingEquipment. 
+
+ddhub:ThreeWayValve a owl:Class; 
+                    rdfs:comment ""@EN; 
+                    rdfs:subClassOf ddhub:DrillingEquipment. 
+
+ddhub:ThreeWayValveInternalValve a owl:Class; 
                                  rdfs:comment ""@EN; 
-                                 rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
+                                 rdfs:subClassOf ddhub:DrillingEquipment. 
 
-<http://ddhub.no/TemperatureQuantity> a owl:Class; 
-                                      rdfs:comment ""@EN; 
-                                      rdfs:subClassOf <http://ddhub.no/Quantity>. 
+ddhub:TimeBasedTransformation a owl:Class; 
+                              rdfs:comment "Transformations that apply only to time series: time derivations, time integration, averaging..."@EN; 
+                              rdfs:subClassOf ddhub:Transformation. 
 
-<http://ddhub.no/ThreeDimensionalReferenceFrame> a owl:Class; 
-                                                 rdfs:comment ""@EN; 
-                                                 rdfs:subClassOf <http://ddhub.no/ReferenceFrame>. 
+ddhub:TimeWindowMovingAverage a owl:Class; 
+                              rdfs:comment ""@EN; 
+                              rdfs:subClassOf ddhub:MovingAverage. 
 
-<http://ddhub.no/ThreeWayManifold> a owl:Class; 
-                                   rdfs:comment ""@EN; 
-                                   rdfs:subClassOf <http://ddhub.no/DrillingEquipment>. 
-
-<http://ddhub.no/ThreeWayValve> a owl:Class; 
-                                rdfs:comment ""@EN; 
-                                rdfs:subClassOf <http://ddhub.no/DrillingEquipment>. 
-
-<http://ddhub.no/ThreeWayValveInternalValve> a owl:Class; 
-                                             rdfs:comment ""@EN; 
-                                             rdfs:subClassOf <http://ddhub.no/DrillingEquipment>. 
-
-<http://ddhub.no/TimeBasedTransformation> a owl:Class; 
-                                          rdfs:comment "Transformations that apply only to time series: time derivations, time integration, averaging..."@EN; 
-                                          rdfs:subClassOf <http://ddhub.no/Transformation>. 
-
-<http://ddhub.no/TimeWindowMovingAverage> a owl:Class; 
-                                          rdfs:comment ""@EN; 
-                                          rdfs:subClassOf <http://ddhub.no/MovingAverage>. 
-
-<http://ddhub.no/TimeWindowMovingAverage.TimeWindow> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/TimeWindowMovingAverage/TimeWindow> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                      rdfs:comment ""@EN; 
-                                                     rdfs:domain <http://ddhub.no/TimeWindowMovingAverage>; 
+                                                     rdfs:domain ddhub:TimeWindowMovingAverage; 
                                                      rdfs:range xsd:float. 
 
-<http://ddhub.no/TimeWindowRangeExtraction> a owl:Class; 
-                                            rdfs:comment ""@EN; 
-                                            rdfs:subClassOf <http://ddhub.no/RangeExtraction>. 
+ddhub:TimeWindowRangeExtraction a owl:Class; 
+                                rdfs:comment ""@EN; 
+                                rdfs:subClassOf ddhub:RangeExtraction. 
 
-<http://ddhub.no/TimeWindowRangeExtraction.TimeWindow> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/TimeWindowRangeExtraction/TimeWindow> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                        rdfs:comment ""@EN; 
-                                                       rdfs:domain <http://ddhub.no/TimeWindowRangeExtraction>; 
+                                                       rdfs:domain ddhub:TimeWindowRangeExtraction; 
                                                        rdfs:range xsd:float. 
 
-<http://ddhub.no/TopDrive> a owl:Class; 
-                           rdfs:comment ""@EN; 
-                           rdfs:subClassOf <http://ddhub.no/DrillingEquipment>. 
+ddhub:TopDrive a owl:Class; 
+               rdfs:comment ""@EN; 
+               rdfs:subClassOf ddhub:DrillingEquipment. 
 
-<http://ddhub.no/TopDriveBody> a owl:Class; 
+ddhub:TopDriveBody a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:DrillingEquipment. 
+
+ddhub:TopDriveControlSystem a owl:Class; 
+                            rdfs:comment ""@EN; 
+                            rdfs:subClassOf ddhub:ControlSystem. 
+
+ddhub:TopDriveHook a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:DrillingEquipment. 
+
+ddhub:TopDriveShaft a owl:Class; 
+                    rdfs:comment ""@EN; 
+                    rdfs:subClassOf ddhub:DrillingEquipment. 
+
+ddhub:TopOfStringForceQuantity a owl:Class; 
                                rdfs:comment ""@EN; 
-                               rdfs:subClassOf <http://ddhub.no/DrillingEquipment>. 
+                               rdfs:subClassOf ddhub:MeasurableQuantity. 
 
-<http://ddhub.no/TopDriveControlSystem> a owl:Class; 
-                                        rdfs:comment ""@EN; 
-                                        rdfs:subClassOf <http://ddhub.no/ControlSystem>. 
+ddhub:TopOfStringPosition a owl:Class; 
+                          rdfs:comment ""@EN; 
+                          rdfs:subClassOf ddhub:DrillingDataPoint. 
 
-<http://ddhub.no/TopDriveHook> a owl:Class; 
-                               rdfs:comment ""@EN; 
-                               rdfs:subClassOf <http://ddhub.no/DrillingEquipment>. 
-
-<http://ddhub.no/TopDriveShaft> a owl:Class; 
-                                rdfs:comment ""@EN; 
-                                rdfs:subClassOf <http://ddhub.no/DrillingEquipment>. 
-
-<http://ddhub.no/TopOfStringForceQuantity> a owl:Class; 
-                                           rdfs:comment ""@EN; 
-                                           rdfs:subClassOf <http://ddhub.no/MeasurableQuantity>. 
-
-<http://ddhub.no/TopOfStringPosition> a owl:Class; 
-                                      rdfs:comment ""@EN; 
-                                      rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
-
-<http://ddhub.no/TopsideHydraulicNetwork> a owl:Class; 
-                                          rdfs:comment ""@EN; 
-                                          rdfs:subClassOf <http://ddhub.no/HydraulicNetwork>. 
-
-<http://ddhub.no/TopSideTelemetry> a owl:Class; 
-                                   rdfs:comment ""@EN; 
-                                   rdfs:subClassOf <http://ddhub.no/Telemetry>. 
-
-<http://ddhub.no/TorqueQuantity> a owl:Class; 
-                                 rdfs:comment ""@EN; 
-                                 rdfs:subClassOf <http://ddhub.no/Quantity>. 
-
-<http://ddhub.no/TorqueToForceTransformation> a owl:Class; 
-                                              rdfs:comment ""@EN; 
-                                              rdfs:subClassOf <http://ddhub.no/DirectTransformation>. 
-
-<http://ddhub.no/Transformation> a owl:Class; 
-                                 rdfs:comment "Represents a transformation applied to some signals that produces other signals"@EN; 
-                                 rdfs:subClassOf <http://ddhub.no/DataFlowNode>. 
-
-<http://ddhub.no/TransientModel> a owl:Class; 
-                                 rdfs:comment "A model for which the state variables changes with time."@EN; 
-                                 rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
-
-<http://ddhub.no/TransmissionLine> a owl:Class; 
-                                   rdfs:comment ""@EN; 
-                                   rdfs:subClassOf <http://ddhub.no/DataFlowNode>. 
-
-<http://ddhub.no/TravellingBlock> a owl:Class; 
-                                  rdfs:comment ""@EN; 
-                                  rdfs:subClassOf <http://ddhub.no/MechanicalBlock>. 
-
-<http://ddhub.no/TVDQuantity> a owl:Class; 
+ddhub:TopsideHydraulicNetwork a owl:Class; 
                               rdfs:comment ""@EN; 
-                              rdfs:subClassOf <http://ddhub.no/MeasurableQuantity>. 
+                              rdfs:subClassOf ddhub:HydraulicNetwork. 
 
-<http://ddhub.no/TwoDimensionalReferenceFrame> a owl:Class; 
-                                               rdfs:comment ""@EN; 
-                                               rdfs:subClassOf <http://ddhub.no/ReferenceFrame>. 
-
-<http://ddhub.no/UnderReamer> a owl:Class; 
-                              rdfs:comment ""@EN; 
-                              rdfs:subClassOf <http://ddhub.no/DrillingEquipment>. 
-
-<http://ddhub.no/Unit> a owl:Class; 
+ddhub:TopSideTelemetry a owl:Class; 
                        rdfs:comment ""@EN; 
-                       rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
+                       rdfs:subClassOf ddhub:Telemetry. 
 
-<http://ddhub.no/Unit.ConversionFactorA> a owl:DatatypeProperty, owl:FunctionalProperty; 
+ddhub:TorqueQuantity a owl:Class; 
+                     rdfs:comment ""@EN; 
+                     rdfs:subClassOf ddhub:Quantity. 
+
+ddhub:TorqueToForceTransformation a owl:Class; 
+                                  rdfs:comment ""@EN; 
+                                  rdfs:subClassOf ddhub:DirectTransformation. 
+
+ddhub:Transformation a owl:Class; 
+                     rdfs:comment "Represents a transformation applied to some signals that produces other signals"@EN; 
+                     rdfs:subClassOf ddhub:DataFlowNode. 
+
+ddhub:TransientModel a owl:Class; 
+                     rdfs:comment "A model for which the state variables changes with time."@EN; 
+                     rdfs:subClassOf ddhub:DWISNoun. 
+
+ddhub:TransmissionLine a owl:Class; 
+                       rdfs:comment ""@EN; 
+                       rdfs:subClassOf ddhub:DataFlowNode. 
+
+ddhub:TravellingBlock a owl:Class; 
+                      rdfs:comment ""@EN; 
+                      rdfs:subClassOf ddhub:MechanicalBlock. 
+
+ddhub:TVDQuantity a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:MeasurableQuantity. 
+
+ddhub:TwoDimensionalReferenceFrame a owl:Class; 
+                                   rdfs:comment ""@EN; 
+                                   rdfs:subClassOf ddhub:ReferenceFrame. 
+
+ddhub:UnderReamer a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:DrillingEquipment. 
+
+ddhub:Unit a owl:Class; 
+           rdfs:comment ""@EN; 
+           rdfs:subClassOf ddhub:DWISNoun. 
+
+<http://ddhub.no/Unit/ConversionFactorA> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                          rdfs:comment "Unit conversion from SI unit is performed as:"@EN; 
-                                         rdfs:domain <http://ddhub.no/Unit>; 
+                                         rdfs:domain ddhub:Unit; 
                                          rdfs:range xsd:float. 
 
-<http://ddhub.no/Unit.ConversionFactorB> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/Unit/ConversionFactorB> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                          rdfs:comment "Unit conversion from SI unit is performed as:"@EN; 
-                                         rdfs:domain <http://ddhub.no/Unit>; 
+                                         rdfs:domain ddhub:Unit; 
                                          rdfs:range xsd:float. 
 
-<http://ddhub.no/Unit.Symbol> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/Unit/Symbol> a owl:DatatypeProperty, owl:FunctionalProperty; 
                               rdfs:comment ""@EN; 
-                              rdfs:domain <http://ddhub.no/Unit>; 
+                              rdfs:domain ddhub:Unit; 
                               rdfs:range xsd:float. 
 
-<http://ddhub.no/UnitSystem> a owl:Class; 
-                             rdfs:comment "A set of associations between measurable quantities and units"@EN; 
-                             rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
+ddhub:UnitSystem a owl:Class; 
+                 rdfs:comment "A set of associations between measurable quantities and units"@EN; 
+                 rdfs:subClassOf ddhub:DWISNoun. 
 
-<http://ddhub.no/UserInterface> a owl:Class; 
-                                rdfs:comment ""@EN; 
-                                rdfs:subClassOf <http://ddhub.no/DataFlowNode>. 
+ddhub:UserInterface a owl:Class; 
+                    rdfs:comment ""@EN; 
+                    rdfs:subClassOf ddhub:DataFlowNode. 
 
-<http://ddhub.no/ValidityCondition> a owl:Class; 
-                                    rdfs:comment ""@EN; 
-                                    rdfs:subClassOf <http://ddhub.no/DWISNoun>. 
+ddhub:ValidityCondition a owl:Class; 
+                        rdfs:comment ""@EN; 
+                        rdfs:subClassOf ddhub:DWISNoun. 
 
-<http://ddhub.no/VelocityQuantity> a owl:Class; 
-                                   rdfs:comment ""@EN; 
-                                   rdfs:subClassOf <http://ddhub.no/Quantity>. 
+ddhub:VelocityQuantity a owl:Class; 
+                       rdfs:comment ""@EN; 
+                       rdfs:subClassOf ddhub:Quantity. 
 
-<http://ddhub.no/VerticalDepthFrame> a owl:Class; 
-                                     rdfs:comment ""@EN; 
-                                     rdfs:subClassOf <http://ddhub.no/OneDimensionalCartesianReferenceFrame>. 
+ddhub:VerticalDepthFrame a owl:Class; 
+                         rdfs:comment ""@EN; 
+                         rdfs:subClassOf ddhub:OneDimensionalCartesianReferenceFrame. 
 
-<http://ddhub.no/VolumeQuantity> a owl:Class; 
-                                 rdfs:comment ""@EN; 
-                                 rdfs:subClassOf <http://ddhub.no/Quantity>. 
+ddhub:VolumeQuantity a owl:Class; 
+                     rdfs:comment ""@EN; 
+                     rdfs:subClassOf ddhub:Quantity. 
 
-<http://ddhub.no/VolumetricRateQuantity> a owl:Class; 
-                                         rdfs:comment ""@EN; 
-                                         rdfs:subClassOf <http://ddhub.no/Quantity>. 
+ddhub:VolumetricRateQuantity a owl:Class; 
+                             rdfs:comment ""@EN; 
+                             rdfs:subClassOf ddhub:Quantity. 
 
-<http://ddhub.no/WellboreCenterLineFrame> a owl:Class; 
-                                          rdfs:comment ""@EN; 
-                                          rdfs:subClassOf <http://ddhub.no/OneDimensionalCurviLinearReferenceFrame>. 
+ddhub:WellboreCenterLineFrame a owl:Class; 
+                              rdfs:comment ""@EN; 
+                              rdfs:subClassOf ddhub:OneDimensionalCurviLinearReferenceFrame. 
 
-<http://ddhub.no/WellboreCenterLineFrame.PositiveUpward> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/WellboreCenterLineFrame/PositiveUpward> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                          rdfs:comment ""@EN; 
-                                                         rdfs:domain <http://ddhub.no/WellboreCenterLineFrame>; 
+                                                         rdfs:domain ddhub:WellboreCenterLineFrame; 
                                                          rdfs:range xsd:float. 
 
-<http://ddhub.no/WiredPipeTelemetry> a owl:Class; 
-                                     rdfs:comment ""@EN; 
-                                     rdfs:subClassOf <http://ddhub.no/DownHoleTelemetry>. 
+ddhub:WiredPipeTelemetry a owl:Class; 
+                         rdfs:comment ""@EN; 
+                         rdfs:subClassOf ddhub:DownHoleTelemetry. 
 
-<http://ddhub.no/WitsMLTimeBasedLogEndPoint> a owl:Class; 
-                                             rdfs:comment ""@EN; 
-                                             rdfs:subClassOf <http://ddhub.no/DataEndPoint>. 
+ddhub:WitsMLTimeBasedLogEndPoint a owl:Class; 
+                                 rdfs:comment ""@EN; 
+                                 rdfs:subClassOf ddhub:DataEndPoint. 
 
-<http://ddhub.no/WitsMLTimeBasedLogEndPoint.LogName> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/WitsMLTimeBasedLogEndPoint/LogName> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                      rdfs:comment ""@EN; 
-                                                     rdfs:domain <http://ddhub.no/WitsMLTimeBasedLogEndPoint>; 
+                                                     rdfs:domain ddhub:WitsMLTimeBasedLogEndPoint; 
                                                      rdfs:range xsd:float. 
 
-<http://ddhub.no/WitsMLTimeBasedLogEndPoint.LogUID> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/WitsMLTimeBasedLogEndPoint/LogUID> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                     rdfs:comment ""@EN; 
-                                                    rdfs:domain <http://ddhub.no/WitsMLTimeBasedLogEndPoint>; 
+                                                    rdfs:domain ddhub:WitsMLTimeBasedLogEndPoint; 
                                                     rdfs:range xsd:float. 
 
-<http://ddhub.no/WitsMLTimeBasedLogEndPoint.Mnemonic> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/WitsMLTimeBasedLogEndPoint/Mnemonic> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                       rdfs:comment ""@EN; 
-                                                      rdfs:domain <http://ddhub.no/WitsMLTimeBasedLogEndPoint>; 
+                                                      rdfs:domain ddhub:WitsMLTimeBasedLogEndPoint; 
                                                       rdfs:range xsd:float. 
 
-<http://ddhub.no/WitsMLTimeBasedLogEndPoint.WellboreName> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/WitsMLTimeBasedLogEndPoint/WellboreName> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                           rdfs:comment ""@EN; 
-                                                          rdfs:domain <http://ddhub.no/WitsMLTimeBasedLogEndPoint>; 
+                                                          rdfs:domain ddhub:WitsMLTimeBasedLogEndPoint; 
                                                           rdfs:range xsd:float. 
 
-<http://ddhub.no/WitsMLTimeBasedLogEndPoint.WellboreUID> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/WitsMLTimeBasedLogEndPoint/WellboreUID> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                          rdfs:comment ""@EN; 
-                                                         rdfs:domain <http://ddhub.no/WitsMLTimeBasedLogEndPoint>; 
+                                                         rdfs:domain ddhub:WitsMLTimeBasedLogEndPoint; 
                                                          rdfs:range xsd:float. 
 
-<http://ddhub.no/WitsMLTimeBasedLogEndPoint.WellName> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/WitsMLTimeBasedLogEndPoint/WellName> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                       rdfs:comment ""@EN; 
-                                                      rdfs:domain <http://ddhub.no/WitsMLTimeBasedLogEndPoint>; 
+                                                      rdfs:domain ddhub:WitsMLTimeBasedLogEndPoint; 
                                                       rdfs:range xsd:float. 
 
-<http://ddhub.no/WitsMLTimeBasedLogEndPoint.WellUID> a owl:DatatypeProperty, owl:FunctionalProperty; 
+<http://ddhub.no/WitsMLTimeBasedLogEndPoint/WellUID> a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                      rdfs:comment ""@EN; 
-                                                     rdfs:domain <http://ddhub.no/WitsMLTimeBasedLogEndPoint>; 
+                                                     rdfs:domain ddhub:WitsMLTimeBasedLogEndPoint; 
                                                      rdfs:range xsd:float. 
 
-<http://ddhub.no/WOB> a owl:Class; 
-                      rdfs:comment ""@EN; 
-                      rdfs:subClassOf <http://ddhub.no/DrillingDataPoint>. 
+ddhub:WOB a owl:Class; 
+          rdfs:comment ""@EN; 
+          rdfs:subClassOf ddhub:DrillingDataPoint. 
 
-<http://ddhub.no/WOBQuantity> a owl:Class; 
-                              rdfs:comment ""@EN; 
-                              rdfs:subClassOf <http://ddhub.no/MeasurableQuantity>. 
+ddhub:WOBQuantity a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:MeasurableQuantity. 
