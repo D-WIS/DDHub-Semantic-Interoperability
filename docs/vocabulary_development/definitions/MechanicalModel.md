@@ -43,7 +43,13 @@
 - Specialization:
 - Description: Such a stiff mechanical model estimates the position of the contact points.
 - Examples:
-
+## TangencyLength<!-- NOUN -->
+- Display name: Tangency length
+- Parent class: DWISNoun
+- Attributes:
+- Specialization:
+- Description: the position along the drill-string, counted from the bit, from which we can consider that the pipes direction is tangential with the borehole direction.
+- Examples: 
 
 # VERBS
 ## IsOfMechanicalStiffnessType <!-- VERB -->

@@ -49,6 +49,14 @@
 - Description: Such a stiff mechanical model estimates the position of the contact points.
 - Examples:
 - Definition set: MechanicalModel
+## TangencyLength <!-- NOUN -->
+- Display name: TangencyLength
+- Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: the position along the drill-string, counted from the bit, from which we can consider that the pipes direction is tangential with the borehole direction.
+- Examples:
+- Definition set: MechanicalModel
 # Verbs
 ## IsOfMechanicalStiffnessType <!-- VERB -->
 - Display name: IsOfMechanicalStiffnessType

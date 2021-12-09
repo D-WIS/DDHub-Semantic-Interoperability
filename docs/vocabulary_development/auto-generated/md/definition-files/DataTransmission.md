@@ -5,9 +5,6 @@
 - Display name: Telemetry
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Attributes:
-  - RefreshRate
-    - Type: double
-    - Description: 
   - NumberOfRepeaters
     - Type: int
     - Description: 
@@ -31,7 +28,15 @@
 - Parent class: [DownHoleTelemetry](./DataTransmission.md#DownHoleTelemetry)
 - Attributes:
 - Specialization:
-- Description: 
+- Description: A method that allows transfer of downhole data to the surface via pressure pulses sent trough the drilling fluid.
+- Examples:
+- Definition set: DataTransmission
+## ElectromagneticTelemetry <!-- NOUN -->
+- Display name: ElectromagneticTelemetry
+- Parent class: [DownHoleTelemetry](./DataTransmission.md#DownHoleTelemetry)
+- Attributes:
+- Specialization:
+- Description: A method that allows transfer of downhole data to the surface via electromagnetic waves sent trough the drilling formation.
 - Examples:
 - Definition set: DataTransmission
 ## WiredPipeTelemetry <!-- NOUN -->
@@ -39,7 +44,7 @@
 - Parent class: [DownHoleTelemetry](./DataTransmission.md#DownHoleTelemetry)
 - Attributes:
 - Specialization:
-- Description: 
+- Description: A method that allows transfer of downhole data to the surface via electrical connections through the drill string.
 - Examples:
 - Definition set: DataTransmission
 ## TopSideTelemetry <!-- NOUN -->
@@ -47,17 +52,17 @@
 - Parent class: [Telemetry](./DataTransmission.md#Telemetry)
 - Attributes:
 - Specialization:
-- Description: 
+- Description: Method that allows transfer of data from surface systems.
 - Examples:
 - Definition set: DataTransmission
 # Verbs
 ## IsTransmittedBy <!-- VERB -->
 - Display name: IsTransmittedBy
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [Telemetry](./DataTransmission.md#Telemetry)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples: EMS DWOB is transmitted by WiredPipeTelemetry
 - Definition set: DataTransmission
