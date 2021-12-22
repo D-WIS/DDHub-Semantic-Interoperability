@@ -7,6 +7,10 @@ namespace VocabularyUtils
 {
     public static class VocabularyParsing
     {
+
+        public static string VERB_TAG = "<!-- VERB -->";
+        public static string NOUN_TAG = "<!-- NOUN -->";
+
         private static List<string[]> SplitSnippet(string[] snippet, string indent)
         {
             List<string[]> result = new List<string[]>();
@@ -59,16 +63,16 @@ namespace VocabularyUtils
             return result;
         }
 
-        public static bool FromMDSnippet(string[] allSnippetLines,out Noun noun)
+        private static bool FromMDSnippet(string[] allSnippetLines, out Noun noun)
         {
             noun = null;
             if (allSnippetLines != null && allSnippetLines.Length > 0)
             {
                 noun = new Noun();
                 string header = allSnippetLines[0];
-                if (header.StartsWith("##") && header.EndsWith("<!-- NOUN -->"))
+                if (header.StartsWith("##") && header.EndsWith(NOUN_TAG))
                 {
-                    header = header.Remove(header.Length - "< !--NOUN-- >".Length).Remove(0, "##".Length).Trim().TrimEnd();
+                    header = header.Remove(header.Length - NOUN_TAG.Length).Remove(0, "##".Length).Trim().TrimEnd();
 
                     noun.Name = header;
 
@@ -80,7 +84,7 @@ namespace VocabularyUtils
                         UpdateFromSnippetItem(snippetItem, noun);
                     }
 
-                    if (noun.Name!= "DWISNoun" && string.IsNullOrEmpty(noun.ParentNounName))
+                    if (noun.Name != "DWISNoun" && string.IsNullOrEmpty(noun.ParentNounName))
                     {
                         noun.ParentNounName = "DWISNoun";
                     }
@@ -168,7 +172,7 @@ namespace VocabularyUtils
                     }
                     if (!string.IsNullOrEmpty(attributeName) && !string.IsNullOrEmpty(attributeValue))
                     {
-                        SpecializedNounAttribute specializedNounAttribute = new SpecializedNounAttribute() {  AttributeName = attributeName, SpecializedValue = attributeValue};
+                        SpecializedNounAttribute specializedNounAttribute = new SpecializedNounAttribute() { AttributeName = attributeName, SpecializedValue = attributeValue };
 
                         if (noun.SpecializedNounAttributes == null)
                         {
@@ -231,7 +235,7 @@ namespace VocabularyUtils
             return true;
         }
 
-        public static void ExtractSnippets(string[] fileLines, out List<string[]> allSnippets)
+        private static void ExtractSnippets(string[] fileLines, out List<string[]> allSnippets)
         {
             allSnippets = new List<string[]>();
             List<string> current = new List<string>();
@@ -261,17 +265,16 @@ namespace VocabularyUtils
 
 
 
-
-        public static bool FromMDSnippet(string[] allSnippetLines,out Verb verb)
+        private static bool FromMDSnippet(string[] allSnippetLines, out Verb verb)
         {
             verb = null;
             if (allSnippetLines != null && allSnippetLines.Length > 0)
             {
                 verb = new Verb();
                 string header = allSnippetLines[0];
-                if (header.StartsWith("##") && header.EndsWith("<!-- VERB -->"))
+                if (header.StartsWith("##") && header.EndsWith(VERB_TAG))
                 {
-                    header = header.Remove(header.Length - "< !--VERB-- >".Length).Remove(0, "##".Length).Trim().TrimEnd();
+                    header = header.Remove(header.Length - VERB_TAG.Length).Remove(0, "##".Length).Trim().TrimEnd();
 
                     verb.Name = header;
 
@@ -283,7 +286,7 @@ namespace VocabularyUtils
                         UpdateFromSnippetItem(snippetItem, verb);
                     }
 
-                    if (verb.Name!= "DWISVerb" && string.IsNullOrEmpty(verb.ParentVerbName))
+                    if (verb.Name != "DWISVerb" && string.IsNullOrEmpty(verb.ParentVerbName))
                     {
                         verb.ParentVerbName = "DWISVerb";
                     }
@@ -301,11 +304,11 @@ namespace VocabularyUtils
             return false;
         }
 
-        public static bool FromMDLines(string[] allLines, out DefinitionSet definitionSet)
+        private static bool FromMDLines(string[] allLines, out DefinitionSet definitionSet)
         {
             definitionSet = null;
             ExtractSnippets(allLines, out System.Collections.Generic.List<string[]> allSnippets);
-            
+
             if (allSnippets != null && allSnippets.Count > 0)
             {
                 definitionSet = new DefinitionSet();
@@ -317,8 +320,8 @@ namespace VocabularyUtils
 
                     }
                     else if (snippet != null && snippet.Length > 0 && snippet[0].StartsWith("- Description: "))
-                    { 
-                        definitionSet.SetDescription = snippet[0].Remove(0, "- Description: ".Length).Trim().TrimEnd(); 
+                    {
+                        definitionSet.SetDescription = snippet[0].Remove(0, "- Description: ".Length).Trim().TrimEnd();
                     }
                     if (VocabularyParsing.FromMDSnippet(snippet, out Noun noun))
                     {
@@ -338,7 +341,7 @@ namespace VocabularyUtils
             return false;
         }
 
-        public static void PostProcess(DefinitionSet definitionSet)
+        private static void PostProcess(DefinitionSet definitionSet)
         {
             foreach (var n in definitionSet.Nouns)
             {
@@ -350,7 +353,7 @@ namespace VocabularyUtils
             }
         }
 
-        public static bool FromMDFile(string fileName, out DefinitionSet definitionSet)
+        private static bool FromMDFile(string fileName, out DefinitionSet definitionSet)
         {
             definitionSet = null;
             string[] allLines = System.IO.File.ReadAllLines(fileName);
@@ -361,15 +364,15 @@ namespace VocabularyUtils
                 definitionSet.Name = definitionSetName;
                 PostProcess(definitionSet);
                 return true;
-            }           
-            
+            }
+
             return false;
         }
 
         public static bool FromFolder(string folderName, out DWISVocabulary vocabulary)
         {
             vocabulary = null;
-            var files = System.IO.Directory.GetFiles(folderName);
+            var files = System.IO.Directory.GetFiles(folderName).Where(f => f.EndsWith(".md")).ToArray();
             if (files != null && files.Length > 0)
             {
                 vocabulary = new DWISVocabulary();
@@ -386,6 +389,31 @@ namespace VocabularyUtils
             return false;
         }
 
+        public static void CountTags(string folderName, out int nounTagsCount, out int verbTagsCount)
+        {
+            var files = System.IO.Directory.GetFiles(folderName).Where(f => f.EndsWith(".md")).ToArray();
 
+            var nounTags = GetTagLines(files, NOUN_TAG);
+            var verbsTags = GetTagLines(files, VERB_TAG);
+
+            nounTagsCount = files.Sum(f => System.IO.File.ReadAllLines(f).Count(l => l.Contains(NOUN_TAG)));
+            verbTagsCount = files.Sum(f => System.IO.File.ReadAllLines(f).Count(l => l.Contains(VERB_TAG)));
+        }
+
+        public static void GetTags(string folderName, out IEnumerable<string> nounTags, out IEnumerable<string> verbsTags)
+        {
+            var files = System.IO.Directory.GetFiles(folderName).Where(f => f.EndsWith(".md")).ToArray();
+
+            nounTags = GetTagLines(files, NOUN_TAG).Select(t => t.Replace(NOUN_TAG, "").Replace("##", "").Trim());
+            verbsTags = GetTagLines(files, VERB_TAG).Select(t => t.Replace(NOUN_TAG, "").Replace("##", "").Trim());
+
+        }
+
+
+        private static IEnumerable<string> GetTagLines(string[] files, string tag)
+        {
+            var sub = files.Select(f => System.IO.File.ReadAllLines(f).Where(l => l.Contains(tag)).ToList()).ToList();
+            return sub.SelectMany(x => x).ToList();
+        }
     }
 }

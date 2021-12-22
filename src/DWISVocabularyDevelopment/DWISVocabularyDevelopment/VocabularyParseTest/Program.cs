@@ -12,7 +12,6 @@ namespace VocabularyParseTest
             //    @"C:\Users\beda\source\repos\D-WIS\DDHub-Semantic-Interoperability\docs\vocabulary_development\definitions\DataFlow.md";
 
 
-           var ont =  DWISVocabulary.OWL.OntologyGeneration.GenerateOntology(@"C:\Users\beda\source\repos\D-WIS\DDHub-Semantic-Interoperability\docs\vocabulary_development\auto-generated\rdf\DWISVocabulary");
 
 
 
@@ -21,6 +20,7 @@ namespace VocabularyParseTest
 
             VocabularyParsing.FromFolder(folderName, out DWISVocabularyDevelopment.DWISVocabulary vocabulary);
 
+            var ont = DWISVocabulary.OWL.OntologyGeneration.GenerateOntology(@"C:\Users\beda\source\repos\D-WIS\DDHub-Semantic-Interoperability\docs\vocabulary_development\auto-generated\rdf\DWISVocabulary", vocabulary);
 
             vocabulary.CheckForDuplicates(out ICollection<Noun> duplicatedNouns, out ICollection<Verb> duplicatedVerbs);
 

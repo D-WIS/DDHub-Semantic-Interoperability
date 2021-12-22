@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VocabularyParseTest", "Voca
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VocabularyUtils", "VocabularyUtils\VocabularyUtils.csproj", "{28A1B3A6-C24B-4FDE-969A-CDE42786E857}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DWISVocabulary.OWL", "DWISVocabulary.OWL\DWISVocabulary.OWL.csproj", "{BC6E062D-5A11-469B-8C3B-616051A94D8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWISVocabulary.OWL", "DWISVocabulary.OWL\DWISVocabulary.OWL.csproj", "{BC6E062D-5A11-469B-8C3B-616051A94D8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DWISVocabularyDevelopment.Actions", "DWISVocabularyDevelopment.Actions\DWISVocabularyDevelopment.Actions.csproj", "{89997B26-3249-4AEC-87FA-9B954D4819BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{BC6E062D-5A11-469B-8C3B-616051A94D8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC6E062D-5A11-469B-8C3B-616051A94D8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC6E062D-5A11-469B-8C3B-616051A94D8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89997B26-3249-4AEC-87FA-9B954D4819BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89997B26-3249-4AEC-87FA-9B954D4819BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89997B26-3249-4AEC-87FA-9B954D4819BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89997B26-3249-4AEC-87FA-9B954D4819BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

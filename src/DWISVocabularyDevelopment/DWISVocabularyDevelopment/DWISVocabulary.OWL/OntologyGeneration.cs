@@ -12,15 +12,9 @@ namespace DWISVocabulary.OWL
     {
         static string prefix = "http://ddhub.no/";
 
-        public static RDFOntology GenerateOntology(string fileName)
+        public static RDFOntology GenerateOntology(string fileName, DWISVocabularyDevelopment.DWISVocabulary vocabulary)
         {
-            string folderName = @"C:\Users\beda\source\repos\D-WIS\DDHub-Semantic-Interoperability\docs\vocabulary_development\definitions\";
-
             string ontologyName = "DWISVocabulary";
-
-            VocabularyParsing.FromFolder(folderName, out DWISVocabularyDevelopment.DWISVocabulary vocabulary);
-
-            vocabulary.CheckForDuplicates(out ICollection<Noun> duplicatedNouns, out ICollection<Verb> duplicatedVerbs);
 
             vocabulary.ToTrees(out Tree<Noun> nounTree, out Tree<Verb> verbTree);
 
@@ -33,8 +27,8 @@ namespace DWISVocabulary.OWL
 
             RDFNamespaceRegister.AddNamespace(new RDFNamespace("ddhub", prefix));
 
-            RDFOntology ontology = new RDFOntology(new RDFResource(prefix+ ontologyName));
-            
+            RDFOntology ontology = new RDFOntology(new RDFResource(prefix + ontologyName));
+
             ontology.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.Comment, new RDFOntologyLiteral(new RDFPlainLiteral(comment, "En")));
             ontology.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.VersionInfo, new RDFOntologyLiteral(new RDFTypedLiteral(versionInfo, RDFModelEnums.RDFDatatypes.XSD_STRING)));
             ontology.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.Label, new RDFOntologyLiteral(new RDFTypedLiteral(label, RDFModelEnums.RDFDatatypes.XSD_STRING)));
@@ -46,10 +40,10 @@ namespace DWISVocabulary.OWL
             AddVerb(verbTree, null, ontology);
 
             var gr = ontology.ToRDFGraph(RDFSemanticsEnums.RDFOntologyInferenceExportBehavior.None);
-         
+
             ontology.ToRDFGraph(RDFSemanticsEnums.RDFOntologyInferenceExportBehavior.None).ToFile(RDFModelEnums.RDFFormats.Turtle, fileName + ".ttl");
             ontology.ToRDFGraph(RDFSemanticsEnums.RDFOntologyInferenceExportBehavior.None).ToFile(RDFModelEnums.RDFFormats.NTriples, fileName + ".nt");
-            ontology.ToRDFGraph(RDFSemanticsEnums.RDFOntologyInferenceExportBehavior.None).ToFile(RDFModelEnums.RDFFormats.RdfXml, fileName+ ".xml");
+            ontology.ToRDFGraph(RDFSemanticsEnums.RDFOntologyInferenceExportBehavior.None).ToFile(RDFModelEnums.RDFFormats.RdfXml, fileName + ".xml");
 
             return ontology;
         }
@@ -59,7 +53,7 @@ namespace DWISVocabulary.OWL
 
         private static void AddClass(Tree<Noun> currentTree, RDFOntologyClass parent, RDFOntology ontology)
         {
-            var current = new RDFOntologyClass(new RDFResource(prefix +currentTree.RootItem.Name));
+            var current = new RDFOntologyClass(new RDFResource(prefix + currentTree.RootItem.Name));
             ontology.Model.ClassModel.AddClass(current);
             ontology.Model.ClassModel.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.Comment, current, new RDFOntologyLiteral(new RDFPlainLiteral(currentTree.RootItem.Description, "En")));
 
@@ -75,7 +69,7 @@ namespace DWISVocabulary.OWL
                     ontology.Model.PropertyModel.AddProperty(prop);
                     prop.SetDomain(current);
                     prop.SetRange(RDFSharp.Model.RDFVocabulary.XSD.FLOAT.ToRDFOntologyClass());
-                    prop.SetFunctional(true);                  
+                    prop.SetFunctional(true);
                     RDFOntologyCardinalityRestriction cardinalityRestriction = new RDFOntologyCardinalityRestriction(AttributeCardinalityRestriction, prop, 1, 1);
                     ontology.Model.ClassModel.AddRestriction(cardinalityRestriction);
                     ontology.Model.PropertyModel.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.Comment, prop, new RDFOntologyLiteral(new RDFPlainLiteral(attribute.Description, "En")));
@@ -93,7 +87,7 @@ namespace DWISVocabulary.OWL
 
         private static void AddVerb(Tree<Verb> currentTree, RDFOntologyObjectProperty parent, RDFOntology ontology)
         {
-            var current = new RDFOntologyObjectProperty(new RDFResource(prefix + currentTree.RootItem.Name));           
+            var current = new RDFOntologyObjectProperty(new RDFResource(prefix + currentTree.RootItem.Name));
             ontology.Model.PropertyModel.AddProperty(current);
 
             ontology.Model.PropertyModel.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.Comment, current, new RDFOntologyLiteral(new RDFPlainLiteral(currentTree.RootItem.Description, "En")));
@@ -107,13 +101,13 @@ namespace DWISVocabulary.OWL
             current.SetDomain(new RDFOntologyClass(new RDFResource(prefix + currentTree.RootItem.DomainNounName)));
             current.SetRange(new RDFOntologyClass(new RDFResource(prefix + currentTree.RootItem.RangeNounName)));
 
-            if (currentTree.RootItem.MinCardinality>0|| currentTree.RootItem.MaxCardinality >0)
+            if (currentTree.RootItem.MinCardinality > 0 || currentTree.RootItem.MaxCardinality > 0)
             {
-                RDFOntologyCardinalityRestriction cardinalityRestriction = new RDFOntologyCardinalityRestriction(new RDFResource(prefix + "DWSIVerbCardinalityRestriction" +  currentTree.RootItem.Name), current, currentTree.RootItem.MinCardinality, currentTree.RootItem.MaxCardinality);
+                RDFOntologyCardinalityRestriction cardinalityRestriction = new RDFOntologyCardinalityRestriction(new RDFResource(prefix + "DWSIVerbCardinalityRestriction" + currentTree.RootItem.Name), current, currentTree.RootItem.MinCardinality, currentTree.RootItem.MaxCardinality);
                 ontology.Model.ClassModel.AddRestriction(cardinalityRestriction);
             }
 
-                 
+
 
             if (currentTree.Children != null)
             {
@@ -129,9 +123,9 @@ namespace DWISVocabulary.OWL
 
         private static string ConvertToLiteralType(string type)
         {
-           // RDFSharp.Model.RDFVocabulary.XSD.FLOAT.ToRDFOntologyClass();
+            // RDFSharp.Model.RDFVocabulary.XSD.FLOAT.ToRDFOntologyClass();
             return RDFModelEnums.RDFDatatypes.XSD_BOOLEAN.ToString();
-            
+
         }
     }
 }
