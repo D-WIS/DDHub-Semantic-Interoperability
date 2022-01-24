@@ -492,3 +492,13 @@
 - Description: 
 - Examples: 
 - Definition set: Quantities
+## HasSIUnit <!-- VERB -->
+- Display name: HasSIUnit
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [Quantity](./Quantities.md#Quantity)
+- Object class: [Unit](./Quantities.md#Unit)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Quantities
