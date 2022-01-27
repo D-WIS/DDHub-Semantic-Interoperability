@@ -50,13 +50,6 @@
 - Specialization: 
 - Description: The model accounts for the lateral movement of some parts of the physical system.
 - Examples:A hydraulic model accounts for the effect of the lateral pipe displacement on the fluid velocity in an annulus. A torque and drag model accounts for the lateral  movement of a drill-stem.
-## LateralModelling <!-- NOUN -->
-- Display name: Lateral modelling
-- Parent class: ModelledDegreeOfFreedom
-- Attributes:
-- Specialization: 
-- Description: The model accounts for the lateral movement of some parts of the physical system.
-- Examples:A hydraulic model accounts for the effect of the lateral pipe displacement on the fluid velocity in an annulus. A torque and drag model accounts for the lateral  movement of a drill-stem.
 ## RadialModelling <!-- NOUN -->
 - Display name: Radial modelling
 - Parent class: LateralModelling
