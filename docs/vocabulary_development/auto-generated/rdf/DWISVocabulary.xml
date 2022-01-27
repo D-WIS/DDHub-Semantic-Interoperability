@@ -227,6 +227,12 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DataProvider">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Telemetry">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
@@ -285,12 +291,6 @@
   <rdf:Description rdf:about="http://ddhub.no/LT">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/ValidityCondition" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DataProvider">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
@@ -438,6 +438,54 @@
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/WOB">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SetPoint">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Command">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Recommendation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Limit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Measurement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DerivedMeasurement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Measurement" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/CorrectedMeasurement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Measurement" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ComputedData">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
     <rdfs:comment xml:lang="EN">
@@ -1513,6 +1561,14 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DataProvider/ProviderName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DataProvider" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Telemetry/NumberOfRepeaters">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
@@ -1525,14 +1581,6 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Telemetry" />
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DataProvider/ProviderName">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DataProvider" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
@@ -1861,6 +1909,30 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsDependentOn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HasPressureReference">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsDependentOn" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HasTemperatureReference">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsDependentOn" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Controls">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
@@ -2045,6 +2117,14 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsProvidedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:range rdf:resource="http://ddhub.no/DataProvider" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsTransmittedBy">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
@@ -2109,14 +2189,6 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/HasSIUnit">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/Quantity" />
-    <rdfs:range rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/HasValue">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
@@ -2138,38 +2210,6 @@
     <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
     <rdfs:range rdf:resource="http://ddhub.no/DrillingSignal" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasValue" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsDependentOn">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/HasPressureReference">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsDependentOn" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/HasTemperatureReference">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsDependentOn" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsProvidedBy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:range rdf:resource="http://ddhub.no/DataProvider" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
@@ -2512,6 +2552,14 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Unit" />
     <rdfs:range rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HasSIUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:range rdf:resource="http://ddhub.no/Unit" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>

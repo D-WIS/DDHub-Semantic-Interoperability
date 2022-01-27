@@ -441,3 +441,10 @@ ConvertedValue = ConversionFactorA + SIValue * ConversionFactorB
 - Object class: Quantity
 - Description: 
 - Examples: 
+## HasSIUnit <!-- VERB -->
+- Display name: HasSIUnit
+- Parent verb: DWISVerb
+- Subject class: Quantity
+- Object class: Unit
+- Description: 
+- Examples: 

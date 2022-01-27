@@ -1,17 +1,6 @@
 # DrillingDataSemantics<!-- DEFINITION SET HEADER -->
 - Description: this is the part associated to the signal's description themselves. Dimensionality, data type are the main items to be described.
 # Nouns
-## DataProvider <!-- NOUN -->
-- Display name: DataProvider
-- Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Attributes:
-  - ProviderName
-    - Type: string
-    - Description: 
-- Specialization:
-- Description: 
-- Examples:
-- Definition set: DrillingDataSemantics
 ## DrillingDataPoint <!-- NOUN -->
 - Display name: DrillingDataPoint
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
@@ -215,6 +204,70 @@
 - Description: 
 - Examples:
 - Definition set: DrillingDataSemantics
+## SetPoint <!-- NOUN -->
+- Display name: SetPoint
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## Command <!-- NOUN -->
+- Display name: Command
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## Recommendation <!-- NOUN -->
+- Display name: Recommendation
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## Limit <!-- NOUN -->
+- Display name: Limit
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## Measurement <!-- NOUN -->
+- Display name: Measurement
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## DerivedMeasurement <!-- NOUN -->
+- Display name: DerivedMeasurement
+- Parent class: [Measurement](./DrillingDataSemantics.md#Measurement)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## CorrectedMeasurement <!-- NOUN -->
+- Display name: CorrectedMeasurement
+- Parent class: [Measurement](./DrillingDataSemantics.md#Measurement)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## ComputedData <!-- NOUN -->
+- Display name: ComputedData
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
 ## DrillingSignal <!-- NOUN -->
 - Display name: DrillingSignal
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
@@ -258,16 +311,6 @@
 - Description: 
 - Examples: 
 - Definition set: DrillingDataSemantics
-## HasSIUnit <!-- VERB -->
-- Display name: HasSIUnit
-- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [Quantity](./Quantities.md#Quantity)
-- Object class: [Unit](./Quantities.md#Unit)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: 
-- Examples: 
-- Definition set: DrillingDataSemantics
 ## HasValue <!-- VERB -->
 - Display name: HasValue
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
@@ -293,46 +336,6 @@
 - Parent verb: [HasValue](./DrillingDataSemantics.md#HasValue)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [DrillingSignal](./DrillingDataSemantics.md#DrillingSignal)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: 
-- Examples: 
-- Definition set: DrillingDataSemantics
-## IsDependentOn <!-- VERB -->
-- Display name: IsDependentOn
-- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
-- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: 
-- Examples: 
-- Definition set: DrillingDataSemantics
-## HasPressureReference <!-- VERB -->
-- Display name: HasPressureReference
-- Parent verb: [IsDependentOn](./DrillingDataSemantics.md#IsDependentOn)
-- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
-- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: 
-- Examples: 
-- Definition set: DrillingDataSemantics
-## HasTemperatureReference <!-- VERB -->
-- Display name: HasTemperatureReference
-- Parent verb: [IsDependentOn](./DrillingDataSemantics.md#IsDependentOn)
-- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
-- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: 
-- Examples: 
-- Definition set: DrillingDataSemantics
-## IsProvidedBy <!-- VERB -->
-- Display name: IsProvidedBy
-- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DataProvider](./DrillingDataSemantics.md#DataProvider)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 

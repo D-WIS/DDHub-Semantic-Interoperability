@@ -1,6 +1,10 @@
 # Definition sets
+## DataDependencies<!-- DEFINITION SET HEADER -->
+- Description: this part covers the physical dependencies between signals.
 ## DataFlow<!-- DEFINITION SET HEADER -->
 - Description: this category refers to the data processing. It should probably be renamed accordingly. It should define and organize the different types of processing encountered during drilling operations. A Thursday session was devoted to those items. Note that in the current version, control flow is also included: a controller is seen as a special type of processing unit, that generates commands based on measurements and set-points. This can of course be modified if deemed necessary. Note also that transmission is included there as well. A telemetry system is seen as a processing unit that only duplicates a signal, and a delay is associated to the duplication process. While this is a useful way of looking at telemetry, it is probably not intuitive enough.
+## DataProviders<!-- DEFINITION SET HEADER -->
+- Description: description of the different actors involved in the well construction process
 ## DataTransmission<!-- DEFINITION SET HEADER -->
 - Description: this category contains all nouns and verbs used to describe the rig's telemetry, for each signal. Downhole telemetry has focus.
 ## DataValidity<!-- DEFINITION SET HEADER -->
@@ -354,6 +358,17 @@
 - Description: 
 - Examples:
 - Definition set: DataFlow
+## DataProvider <!-- NOUN -->
+- Display name: DataProvider
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+  - ProviderName
+    - Type: string
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataProviders
 ## Telemetry <!-- NOUN -->
 - Display name: Telemetry
 - Parent class: [DWISNoun](#DWISNoun)
@@ -448,17 +463,6 @@
 - Description: 
 - Examples:
 - Definition set: DataValidity
-## DataProvider <!-- NOUN -->
-- Display name: DataProvider
-- Parent class: [DWISNoun](#DWISNoun)
-- Attributes:
-  - ProviderName
-    - Type: string
-    - Description: 
-- Specialization:
-- Description: 
-- Examples:
-- Definition set: DrillingDataSemantics
 ## DrillingDataPoint <!-- NOUN -->
 - Display name: DrillingDataPoint
 - Parent class: [DWISNoun](#DWISNoun)
@@ -656,6 +660,70 @@
 - Definition set: DrillingDataSemantics
 ## WOB <!-- NOUN -->
 - Display name: WOB
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## SetPoint <!-- NOUN -->
+- Display name: SetPoint
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## Command <!-- NOUN -->
+- Display name: Command
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## Recommendation <!-- NOUN -->
+- Display name: Recommendation
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## Limit <!-- NOUN -->
+- Display name: Limit
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## Measurement <!-- NOUN -->
+- Display name: Measurement
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## DerivedMeasurement <!-- NOUN -->
+- Display name: DerivedMeasurement
+- Parent class: [Measurement](#Measurement)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## CorrectedMeasurement <!-- NOUN -->
+- Display name: CorrectedMeasurement
+- Parent class: [Measurement](#Measurement)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## ComputedData <!-- NOUN -->
+- Display name: ComputedData
 - Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
@@ -2177,6 +2245,36 @@
 - Examples:
 - Definition set: Uncertainty
 # Verbs
+## IsDependentOn <!-- VERB -->
+- Display name: IsDependentOn
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataDependencies
+## HasPressureReference <!-- VERB -->
+- Display name: HasPressureReference
+- Parent verb: [IsDependentOn](#IsDependentOn)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataDependencies
+## HasTemperatureReference <!-- VERB -->
+- Display name: HasTemperatureReference
+- Parent verb: [IsDependentOn](#IsDependentOn)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataDependencies
 ## Controls <!-- VERB -->
 - Display name: Controls
 - Parent verb: [DWISVerb](#DWISVerb)
@@ -2407,6 +2505,16 @@
 - Description: 
 - Examples: 
 - Definition set: DataFlow
+## IsProvidedBy <!-- VERB -->
+- Display name: IsProvidedBy
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DataProvider](#DataProvider)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataProviders
 ## IsTransmittedBy <!-- VERB -->
 - Display name: IsTransmittedBy
 - Parent verb: [DWISVerb](#DWISVerb)
@@ -2487,16 +2595,6 @@
 - Description: 
 - Examples: 
 - Definition set: DrillingDataSemantics
-## HasSIUnit <!-- VERB -->
-- Display name: HasSIUnit
-- Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [Quantity](#Quantity)
-- Object class: [Unit](#Unit)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: 
-- Examples: 
-- Definition set: DrillingDataSemantics
 ## HasValue <!-- VERB -->
 - Display name: HasValue
 - Parent verb: [DWISVerb](#DWISVerb)
@@ -2522,46 +2620,6 @@
 - Parent verb: [HasValue](#HasValue)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DrillingSignal](#DrillingSignal)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: 
-- Examples: 
-- Definition set: DrillingDataSemantics
-## IsDependentOn <!-- VERB -->
-- Display name: IsDependentOn
-- Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DrillingDataPoint](#DrillingDataPoint)
-- Object class: [DrillingDataPoint](#DrillingDataPoint)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: 
-- Examples: 
-- Definition set: DrillingDataSemantics
-## HasPressureReference <!-- VERB -->
-- Display name: HasPressureReference
-- Parent verb: [IsDependentOn](#IsDependentOn)
-- Subject class: [DrillingDataPoint](#DrillingDataPoint)
-- Object class: [DrillingDataPoint](#DrillingDataPoint)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: 
-- Examples: 
-- Definition set: DrillingDataSemantics
-## HasTemperatureReference <!-- VERB -->
-- Display name: HasTemperatureReference
-- Parent verb: [IsDependentOn](#IsDependentOn)
-- Subject class: [DrillingDataPoint](#DrillingDataPoint)
-- Object class: [DrillingDataPoint](#DrillingDataPoint)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: 
-- Examples: 
-- Definition set: DrillingDataSemantics
-## IsProvidedBy <!-- VERB -->
-- Display name: IsProvidedBy
-- Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DWISNoun](#DWISNoun)
-- Object class: [DataProvider](#DataProvider)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -3002,6 +3060,16 @@
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [Unit](#Unit)
 - Object class: [Quantity](#Quantity)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Quantities
+## HasSIUnit <!-- VERB -->
+- Display name: HasSIUnit
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [Quantity](#Quantity)
+- Object class: [Unit](#Unit)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 

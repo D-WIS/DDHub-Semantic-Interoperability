@@ -188,9 +188,17 @@ ddhub:Clock a owl:Class;
                                 rdfs:domain ddhub:Clock; 
                                 rdfs:range xsd:float. 
 
+ddhub:Command a owl:Class; 
+              rdfs:comment ""@EN; 
+              rdfs:subClassOf ddhub:DrillingDataPoint. 
+
 ddhub:ComputationUnit a owl:Class; 
                       rdfs:comment "Denotes a complex computation unit, typically based on advanced numerical modeling"@EN; 
                       rdfs:subClassOf ddhub:DataFlowNode. 
+
+ddhub:ComputedData a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:DrillingDataPoint. 
 
 ddhub:ConnectedCondition a owl:Class; 
                          rdfs:comment ""@EN; 
@@ -209,6 +217,10 @@ ddhub:Controls a owl:ObjectProperty;
 ddhub:ControlSystem a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:DataFlowNode. 
+
+ddhub:CorrectedMeasurement a owl:Class; 
+                           rdfs:comment ""@EN; 
+                           rdfs:subClassOf ddhub:Measurement. 
 
 ddhub:CrownBlock a owl:Class; 
                  rdfs:comment ""@EN; 
@@ -271,6 +283,10 @@ ddhub:DepthQuantity a owl:Class;
 ddhub:Derivation a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:TimeBasedTransformation. 
+
+ddhub:DerivedMeasurement a owl:Class; 
+                         rdfs:comment ""@EN; 
+                         rdfs:subClassOf ddhub:Measurement. 
 
 ddhub:DirectTransformation a owl:Class; 
                            rdfs:comment "Direct transformations are performed using only the current value of their inputs, time is not involved"@EN; 
@@ -1151,6 +1167,10 @@ ddhub:LengthQuantity a owl:Class;
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:Quantity. 
 
+ddhub:Limit a owl:Class; 
+            rdfs:comment ""@EN; 
+            rdfs:subClassOf ddhub:DrillingDataPoint. 
+
 ddhub:Location a owl:Class; 
                rdfs:comment "Physical location for a signal."@EN; 
                rdfs:subClassOf ddhub:DWISNoun. 
@@ -1212,6 +1232,10 @@ ddhub:MeasuredDepthToTrueVerticalDepthTransformation a owl:Class;
 ddhub:MeasuredDepthTranslation a owl:Class; 
                                rdfs:comment ""@EN; 
                                rdfs:subClassOf ddhub:DirectTransformation. 
+
+ddhub:Measurement a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:DrillingDataPoint. 
 
 ddhub:MeasurementDevice a owl:Class; 
                         rdfs:comment "Denotes a physical sensor"@EN; 
@@ -1445,6 +1469,10 @@ ddhub:RangeExtraction a owl:Class;
                       rdfs:comment ""@EN; 
                       rdfs:subClassOf ddhub:TimeBasedTransformation. 
 
+ddhub:Recommendation a owl:Class; 
+                     rdfs:comment ""@EN; 
+                     rdfs:subClassOf ddhub:DrillingDataPoint. 
+
 ddhub:RectangularChannel a owl:Class; 
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:OpenChannel. 
@@ -1507,6 +1535,10 @@ ddhub:SemiCircularChannel a owl:Class;
 ddhub:SensorUncertainty a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:SignalUncertainty. 
+
+ddhub:SetPoint a owl:Class; 
+               rdfs:comment ""@EN; 
+               rdfs:subClassOf ddhub:DrillingDataPoint. 
 
 ddhub:ShaleShakers a owl:Class; 
                    rdfs:comment ""@EN; 

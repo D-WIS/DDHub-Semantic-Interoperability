@@ -1,16 +1,7 @@
 - Description: this is the part associated to the signal's description themselves. Dimensionality, data type are the main items to be described.
 
 # NOUNS
-## DataProvider <!-- NOUN -->
-- Display name: DataProvider
-- Parent class: DWISNoun
-- Attributes:
-  - ProviderName
-    - Type: string
-    - Description: 
-- Specialization:
-- Description: 
-- Examples:
+
 ## DrillingDataPoint <!-- NOUN -->
 - Display name: DrillingDataPoint
 - Parent class: DWISNoun
@@ -190,6 +181,62 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Specialization:
 - Description: 
 - Examples:
+## SetPoint <!-- NOUN -->
+- Display name: Set-point
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## Command <!-- NOUN -->
+- Display name: Command
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## Recommendation <!-- NOUN -->
+- Display name: Recommendation
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## Limit <!-- NOUN -->
+- Display name: Limit
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## Measurement <!-- NOUN -->
+- Display name: Measurement
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## DerivedMeasurement <!-- NOUN -->
+- Display name: DerivedMeasurement
+- Parent class: Measurement
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## CorrectedMeasurement <!-- NOUN -->
+- Display name: CorrectedMeasurement
+- Parent class: Measurement
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## ComputedData <!-- NOUN -->
+- Display name: ComputedData
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## DrillingSignal <!-- NOUN -->
 - Display name: DrillingSignal
 - Parent class: DWISNoun
@@ -227,14 +274,6 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Object class: DrillingDataPoint
 - Description: 
 - Examples: 
-
-## HasSIUnit <!-- VERB -->
-- Display name: HasSIUnit
-- Parent verb: DWISVerb
-- Subject class: Quantity
-- Object class: Unit
-- Description: 
-- Examples: 
 ## HasValue <!-- VERB -->
 - Display name: HasValue
 - Parent verb: DWISVerb
@@ -256,31 +295,4 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Object class: DrillingSignal
 - Description: 
 - Examples: 
-## IsDependentOn <!-- VERB -->
-- Display name: IsDependentOn
-- Parent verb: DWISVerb
-- Subject class: DrillingDataPoint
-- Object class: DrillingDataPoint
-- Description: 
-- Examples: 
-## HasPressureReference <!-- VERB -->
-- Display name: HasPressureReference
-- Parent verb: IsDependentOn
-- Subject class: DrillingDataPoint
-- Object class: DrillingDataPoint
-- Description: 
-- Examples: 
-## HasTemperatureReference <!-- VERB -->
-- Display name: HasTemperatureReference
-- Parent verb: IsDependentOn
-- Subject class: DrillingDataPoint
-- Object class: DrillingDataPoint
-- Description: 
-- Examples: 
-## IsProvidedBy <!-- VERB -->
-- Display name: IsProvidedBy
-- Parent verb: DWISVerb
-- Subject class: DWISNoun
-- Object class: DataProvider
-- Description: 
-- Examples: 
+
