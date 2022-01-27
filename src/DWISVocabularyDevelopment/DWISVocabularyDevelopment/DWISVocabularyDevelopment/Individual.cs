@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using System.Collections;
 
 namespace DWISVocabularyDevelopment
 {
@@ -73,11 +74,59 @@ namespace DWISVocabularyDevelopment
         { }
     }
 
-    public interface IPopulation: IEnumerable<TypedIndividual>
+    public interface IPopulation: ICollection<TypedIndividual>
     {
         TypedIndividual GetIndividual(string name);
     }
 
+    public class SimplePopulation : IPopulation
+    {
+        private List<TypedIndividual> _individuals;
+
+        public int Count => ((ICollection<TypedIndividual>)_individuals).Count;
+
+        public bool IsReadOnly => ((ICollection<TypedIndividual>)_individuals).IsReadOnly;
+
+        public void Add(TypedIndividual item)
+        {
+            ((ICollection<TypedIndividual>)_individuals).Add(item);
+        }
+
+        public void Clear()
+        {
+            ((ICollection<TypedIndividual>)_individuals).Clear();
+        }
+
+        public bool Contains(TypedIndividual item)
+        {
+            return ((ICollection<TypedIndividual>)_individuals).Contains(item);
+        }
+
+        public void CopyTo(TypedIndividual[] array, int arrayIndex)
+        {
+            ((ICollection<TypedIndividual>)_individuals).CopyTo(array, arrayIndex);
+        }
+
+        public IEnumerator<TypedIndividual> GetEnumerator()
+        {
+            return ((IEnumerable<TypedIndividual>)_individuals).GetEnumerator();
+        }
+
+        public TypedIndividual GetIndividual(string name)
+        {
+            return _individuals.Find(i => i.Name == name);
+        }
+
+        public bool Remove(TypedIndividual item)
+        {
+            return ((ICollection<TypedIndividual>)_individuals).Remove(item);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return ((IEnumerable)_individuals).GetEnumerator();
+        }
+    }
     public class DWISInstance
     {
         public string Name { get;private set; }
