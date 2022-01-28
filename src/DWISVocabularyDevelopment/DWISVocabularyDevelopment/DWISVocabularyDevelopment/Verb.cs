@@ -17,5 +17,12 @@
         {
             return Name;
         }
+
+
+        public override bool Equals(object obj)
+        {
+            return obj != null && obj is Verb && ((Verb)obj).Name == Name;
+        }
+
     }
 }
