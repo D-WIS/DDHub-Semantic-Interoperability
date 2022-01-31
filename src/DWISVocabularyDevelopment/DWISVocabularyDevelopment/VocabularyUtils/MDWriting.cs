@@ -35,7 +35,7 @@ namespace VocabularyUtils
             nounBuilder.AppendLine("- Definition set: " + noun.DefinitionSetName);
         }
 
-        private static string GetLink(string name, bool singleFile = true, Vocabulary vocabulary = null)
+        private static string GetLink(string name, bool singleFile = true, Vocabulary vocabulary = null, string route = "./")
         {
             if (singleFile)
             {
@@ -57,7 +57,7 @@ namespace VocabularyUtils
                         definitionSet = verb.DefinitionSetName;
                     }
                 }
-                return "(./" + definitionSet + ".md#" + name + ")";
+                return "("+route + definitionSet + ".md#" + name + ")";
             }
         }
 
@@ -74,6 +74,16 @@ namespace VocabularyUtils
             verbBuilder.AppendLine("- Description: " + verb.Description);
             verbBuilder.AppendLine("- Examples: " + verb.Examples);
             verbBuilder.AppendLine("- Definition set: " + verb.DefinitionSetName);
+        }
+
+        public static void IndividualToMD(StringBuilder builder, TypedIndividual individual, Vocabulary vocabulary)
+        {
+            builder.AppendLine("- " +GetLink( individual.TypeName,vocabulary: vocabulary , route: "../")+ ":" + individual.Name);
+        }
+
+        public static void SentenceToMD(StringBuilder builder, Sentence sentence, Vocabulary vocabulary)
+        {
+            builder.AppendLine("- " + sentence.Subject + " " +  GetLink(sentence.Verb, vocabulary: vocabulary, route: "../") + " " +sentence.Object);
         }
 
         public static void DefinitionSetHeaderToMD(StringBuilder builder, DefinitionSetHeader header, bool singleFile = true)
@@ -174,6 +184,22 @@ namespace VocabularyUtils
             }
 
             System.IO.File.WriteAllText(folderName + System.IO.Path.DirectorySeparatorChar + definitionSet.Name + ".md", builder.ToString());
+
+        }
+
+        public static void ToMDFile(DWISInstance instance, string fileName, Vocabulary vocabulary)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.AppendLine("# " + instance.Name);
+            foreach (var i in instance.Population)
+            {
+                IndividualToMD(builder, i, vocabulary);
+            }
+            foreach (var v in instance.Sentences)
+            {
+                SentenceToMD(builder, v, vocabulary);
+            }
+            System.IO.File.WriteAllText(fileName, builder.ToString());
 
         }
     }
