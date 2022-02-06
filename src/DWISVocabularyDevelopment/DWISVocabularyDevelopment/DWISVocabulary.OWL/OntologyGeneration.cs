@@ -12,7 +12,8 @@ namespace DWISVocabulary.OWL
     {
         static string prefix = "http://ddhub.no/";
 
-        public static RDFOntology GenerateOntology(string fileName, DWISVocabularyDevelopment.DWISVocabulary vocabulary)
+
+        public static RDFOntology GetOntology(DWISVocabularyDevelopment.DWISVocabulary vocabulary)
         {
             string ontologyName = "DWISVocabulary";
 
@@ -38,6 +39,12 @@ namespace DWISVocabulary.OWL
 
             AddClass(nounTree, null, ontology);
             AddVerb(verbTree, null, ontology);
+
+            return ontology;
+        }
+        public static RDFOntology GenerateOntology(string fileName, DWISVocabularyDevelopment.DWISVocabulary vocabulary)
+        {
+            var ontology = GetOntology(vocabulary);
 
             var gr = ontology.ToRDFGraph(RDFSemanticsEnums.RDFOntologyInferenceExportBehavior.None);
 
