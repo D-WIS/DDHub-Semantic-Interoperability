@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DWISVocabulary.OWL\DWIS.Vocabulary.OWL.csproj" />
+    <ProjectReference Include="..\DWISVocabularyDevelopment\DWIS.Vocabulary.Development.csproj" />
+    <ProjectReference Include="..\VocabularyUtils\DWIS.Vocabulary.Utils.csproj" />
+  </ItemGroup>
+
+</Project>

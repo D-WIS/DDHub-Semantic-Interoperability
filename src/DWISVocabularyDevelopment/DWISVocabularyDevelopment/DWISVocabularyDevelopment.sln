@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWISVocabularyDevelopment", "DWISVocabularyDevelopment\DWISVocabularyDevelopment.csproj", "{D1EC2752-B58D-489D-97E6-0DCE99F45639}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWIS.Vocabulary.Development", "DWISVocabularyDevelopment\DWIS.Vocabulary.Development.csproj", "{D1EC2752-B58D-489D-97E6-0DCE99F45639}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VocabularyParseTest", "VocabularyParseTest\VocabularyParseTest.csproj", "{9515E3F5-97E8-4763-B993-9E916E94E0CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWIS.Vocabulary.Parse.Test", "VocabularyParseTest\DWIS.Vocabulary.Parse.Test.csproj", "{9515E3F5-97E8-4763-B993-9E916E94E0CF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VocabularyUtils", "VocabularyUtils\VocabularyUtils.csproj", "{28A1B3A6-C24B-4FDE-969A-CDE42786E857}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWIS.Vocabulary.Utils", "VocabularyUtils\DWIS.Vocabulary.Utils.csproj", "{28A1B3A6-C24B-4FDE-969A-CDE42786E857}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWISVocabulary.OWL", "DWISVocabulary.OWL\DWISVocabulary.OWL.csproj", "{BC6E062D-5A11-469B-8C3B-616051A94D8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWIS.Vocabulary.OWL", "DWISVocabulary.OWL\DWIS.Vocabulary.OWL.csproj", "{BC6E062D-5A11-469B-8C3B-616051A94D8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DWISVocabularyDevelopment.Actions", "DWISVocabularyDevelopment.Actions\DWISVocabularyDevelopment.Actions.csproj", "{89997B26-3249-4AEC-87FA-9B954D4819BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWIS.Vocabulary.Development.Actions", "DWISVocabularyDevelopment.Actions\DWIS.Vocabulary.Development.Actions.csproj", "{89997B26-3249-4AEC-87FA-9B954D4819BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

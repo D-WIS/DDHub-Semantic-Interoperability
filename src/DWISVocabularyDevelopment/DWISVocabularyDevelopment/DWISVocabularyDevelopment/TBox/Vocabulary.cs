@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DWISVocabularyDevelopment
+namespace DWIS.Vocabulary.Development
 {
     public class Vocabulary
     {

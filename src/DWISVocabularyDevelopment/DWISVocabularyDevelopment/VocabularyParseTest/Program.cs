@@ -1,8 +1,8 @@
 ﻿using System;
-using DWISVocabularyDevelopment;
-using VocabularyUtils;
+using DWIS.Vocabulary.Development;
+using DWIS.Vocabulary.Utils;
 using System.Collections.Generic;
-namespace VocabularyParseTest
+namespace Vocabulary.Parse.Test
 {
     class Program
     {
@@ -18,9 +18,9 @@ namespace VocabularyParseTest
             string folderName = @"C:\Users\beda\source\repos\D-WIS\DDHub-Semantic-Interoperability\docs\vocabulary_development\definitions\";
 
 
-            VocabularyParsing.FromFolder(folderName, out DWISVocabularyDevelopment.DWISVocabulary vocabulary);
+            VocabularyParsing.FromFolder(folderName, out DWIS.Vocabulary.Development.DWISVocabulary vocabulary);
 
-            DWISVocabulary.OWL.OntologyGeneration.GenerateOntology(@"C:\Users\beda\source\repos\D-WIS\DDHub-Semantic-Interoperability\docs\vocabulary_development\auto-generated\rdf\DWISVocabulary", vocabulary);
+            DWIS.Vocabulary.OWL.OntologyGeneration.GenerateOntology(@"C:\Users\beda\source\repos\D-WIS\DDHub-Semantic-Interoperability\docs\vocabulary_development\auto-generated\rdf\DWISVocabulary", vocabulary);
 
             vocabulary.CheckForDuplicates(out ICollection<Noun> duplicatedNouns, out ICollection<Verb> duplicatedVerbs);
 

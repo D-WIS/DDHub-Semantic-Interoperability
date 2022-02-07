@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace DWISVocabularyDevelopment
+namespace DWIS.Vocabulary.Development
 {
     public class TypedIndividual : Individual
     {

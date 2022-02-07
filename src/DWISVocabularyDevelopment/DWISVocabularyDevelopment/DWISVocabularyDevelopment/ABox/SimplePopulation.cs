@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections;
 
-namespace DWISVocabularyDevelopment
+namespace DWIS.Vocabulary.Development
 {
     public class SimplePopulation : IPopulation
     {

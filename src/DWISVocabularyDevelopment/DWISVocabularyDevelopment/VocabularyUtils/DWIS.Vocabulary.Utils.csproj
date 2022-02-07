@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DWISVocabularyDevelopment\DWISVocabularyDevelopment.csproj" />
+    <ProjectReference Include="..\DWISVocabularyDevelopment\DWIS.Vocabulary.Development.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿namespace DWISVocabularyDevelopment
+﻿namespace DWIS.Vocabulary.Development
 {
     public class NounAttribute
     {

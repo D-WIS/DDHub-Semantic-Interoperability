@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 
-namespace DWISVocabularyDevelopment
+namespace DWIS.Vocabulary.Development
 {
     public class Tree<T>
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace DWISVocabularyDevelopment
+namespace DWIS.Vocabulary.Development
 {
     public class Individual
     {

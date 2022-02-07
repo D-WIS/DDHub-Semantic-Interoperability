@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DWISVocabularyDevelopment
+namespace DWIS.Vocabulary.Development
 {
     public interface IPopulation: ICollection<TypedIndividual>
     {

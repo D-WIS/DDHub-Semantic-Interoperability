@@ -6,11 +6,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using DWISVocabularyDevelopment;
-using VocabularyUtils;
-using OWL = DWISVocabulary.OWL;
+using DWIS.Vocabulary.Development;
+using DWIS.Vocabulary.Utils;
+using OWL = DWIS.Vocabulary.OWL;
 
-namespace DWISVocabularyDevelopment.Actions
+namespace DWIS.Vocabulary.Development.Actions
 {
     class Program
     {

@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using DWISVocabularyDevelopment;
-using VocabularyUtils;
+using DWIS.Vocabulary.Development;
+using DWIS.Vocabulary.Utils;
 using RDFSharp.Model;
 using RDFSharp.Semantics.OWL;
 
-namespace DWISVocabulary.OWL
+namespace DWIS.Vocabulary.OWL
 {
     public static class OntologyGeneration
     {
         static string prefix = "http://ddhub.no/";
 
 
-        public static RDFOntology GetOntology(DWISVocabularyDevelopment.DWISVocabulary vocabulary)
+        public static RDFOntology GetOntology(DWIS.Vocabulary.Development.DWISVocabulary vocabulary)
         {
             string ontologyName = "DWISVocabulary";
 
@@ -42,7 +42,7 @@ namespace DWISVocabulary.OWL
 
             return ontology;
         }
-        public static RDFOntology GenerateOntology(string fileName, DWISVocabularyDevelopment.DWISVocabulary vocabulary)
+        public static RDFOntology GenerateOntology(string fileName, DWIS.Vocabulary.Development.DWISVocabulary vocabulary)
         {
             var ontology = GetOntology(vocabulary);
 

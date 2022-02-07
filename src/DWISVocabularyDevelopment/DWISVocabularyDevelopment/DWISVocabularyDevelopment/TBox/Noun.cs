@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DWISVocabularyDevelopment
+namespace DWIS.Vocabulary.Development
 {
     public class Noun
     {

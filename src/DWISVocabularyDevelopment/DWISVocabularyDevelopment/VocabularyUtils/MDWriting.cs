@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using DWISVocabularyDevelopment;
+using DWIS.Vocabulary.Development;
 
-namespace VocabularyUtils
+namespace DWIS.Vocabulary.Utils
 {
     public static class MDWriting
     {
-        public static void NounToMD(StringBuilder nounBuilder, Noun noun, bool singleFile = true, Vocabulary vocabulary = null)
+        public static void NounToMD(StringBuilder nounBuilder, Noun noun, bool singleFile = true,DWIS.Vocabulary.Development.Vocabulary vocabulary = null)
         {
             nounBuilder.AppendLine("## " + noun.Name + " <!-- NOUN -->");
             nounBuilder.AppendLine("- Display name: " + noun.Name);
@@ -35,7 +35,7 @@ namespace VocabularyUtils
             nounBuilder.AppendLine("- Definition set: " + noun.DefinitionSetName);
         }
 
-        private static string GetLink(string name, bool singleFile = true, Vocabulary vocabulary = null, string route = "./")
+        private static string GetLink(string name, bool singleFile = true, DWIS.Vocabulary.Development.Vocabulary vocabulary = null, string route = "./")
         {
             if (singleFile)
             {
@@ -62,7 +62,7 @@ namespace VocabularyUtils
         }
 
 
-        public static void VerbToMD(StringBuilder verbBuilder, Verb verb, bool singleFile = true, Vocabulary vocabulary = null)
+        public static void VerbToMD(StringBuilder verbBuilder, Verb verb, bool singleFile = true, DWIS.Vocabulary.Development.Vocabulary vocabulary = null)
         {
             verbBuilder.AppendLine("## " + verb.Name + " <!-- VERB -->");
             verbBuilder.AppendLine("- Display name: " + verb.Name);
@@ -76,12 +76,12 @@ namespace VocabularyUtils
             verbBuilder.AppendLine("- Definition set: " + verb.DefinitionSetName);
         }
 
-        public static void IndividualToMD(StringBuilder builder, TypedIndividual individual, Vocabulary vocabulary)
+        public static void IndividualToMD(StringBuilder builder, TypedIndividual individual, DWIS.Vocabulary.Development.Vocabulary vocabulary)
         {
             builder.AppendLine("- " +GetLink( individual.TypeName,vocabulary: vocabulary , route: "../")+ ":" + individual.Name);
         }
 
-        public static void SentenceToMD(StringBuilder builder, Sentence sentence, Vocabulary vocabulary)
+        public static void SentenceToMD(StringBuilder builder, Sentence sentence, DWIS.Vocabulary.Development.Vocabulary vocabulary)
         {
             builder.AppendLine("- " + sentence.Subject + " " +  GetLink(sentence.Verb, vocabulary: vocabulary, route: "../") + " " +sentence.Object);
         }
@@ -162,7 +162,7 @@ namespace VocabularyUtils
         }
 
 
-        public static void ToMDFile(DefinitionSet definitionSet, string folderName, Vocabulary vocabulary)
+        public static void ToMDFile(DefinitionSet definitionSet, string folderName, DWIS.Vocabulary.Development.Vocabulary vocabulary)
         {
             StringBuilder builder = new StringBuilder();
             DefinitionSetHeaderToMD(builder, definitionSet.DefinitionSetHeader, singleFile:false);           
@@ -187,7 +187,7 @@ namespace VocabularyUtils
 
         }
 
-        public static void ToMDFile(DWISInstance instance, string fileName, Vocabulary vocabulary)
+        public static void ToMDFile(DWISInstance instance, string fileName, DWIS.Vocabulary.Development.Vocabulary vocabulary)
         {
             StringBuilder builder = new StringBuilder();
             builder.AppendLine("# " + instance.Name);

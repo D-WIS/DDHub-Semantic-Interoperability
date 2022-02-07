@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="appsettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.2-mauipre.1.22054.8" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.2-mauipre.1.22054.8" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.2-mauipre.1.22054.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DWISVocabulary.OWL\DWIS.Vocabulary.OWL.csproj" />
+    <ProjectReference Include="..\DWISVocabularyDevelopment\DWIS.Vocabulary.Development.csproj" />
+    <ProjectReference Include="..\VocabularyUtils\DWIS.Vocabulary.Utils.csproj" />
+  </ItemGroup>
+
+</Project>

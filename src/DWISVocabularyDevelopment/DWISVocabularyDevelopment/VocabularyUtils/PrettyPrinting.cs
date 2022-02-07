@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using DWISVocabularyDevelopment;
+using DWIS.Vocabulary.Development;
 
-namespace VocabularyUtils
+namespace DWIS.Vocabulary.Utils
 {
     public static class PrettyPrinting
     {

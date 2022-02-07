@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using DWISVocabularyDevelopment;
+using DWIS.Vocabulary.Development;
 
-namespace VocabularyUtils
+namespace DWIS.Vocabulary.Utils
 {
     public static class VocabularyParsing
     {
