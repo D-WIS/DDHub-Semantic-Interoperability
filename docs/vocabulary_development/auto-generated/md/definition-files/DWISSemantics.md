@@ -20,3 +20,23 @@
 - Description: 
 - Examples: 
 - Definition set: DWISSemantics
+## HasType <!-- VERB -->
+- Display name: HasType
+- Parent verb: [BelongsToClass](./DWISSemantics.md#BelongsToClass)
+- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DWISSemantics
+## BelongsToClass <!-- VERB -->
+- Display name: BelongsToClass
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DWISSemantics

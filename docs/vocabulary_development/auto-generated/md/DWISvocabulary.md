@@ -2635,6 +2635,26 @@
 - Description: 
 - Examples: 
 - Definition set: DWISSemantics
+## HasType <!-- VERB -->
+- Display name: HasType
+- Parent verb: [BelongsToClass](#BelongsToClass)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DWISSemantics
+## BelongsToClass <!-- VERB -->
+- Display name: BelongsToClass
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DWISSemantics
 ## HasEndPoint <!-- VERB -->
 - Display name: HasEndPoint
 - Parent verb: [DWISVerb](#DWISVerb)

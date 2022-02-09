@@ -83,6 +83,12 @@ ddhub:BellNipple a owl:Class;
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:DrillingEquipment. 
 
+ddhub:BelongsToClass a owl:ObjectProperty; 
+                     rdfs:comment ""@EN; 
+                     rdfs:domain ddhub:DWISNoun; 
+                     rdfs:range ddhub:DWISNoun; 
+                     rdfs:subPropertyOf ddhub:DWISVerb. 
+
 ddhub:BelongsToSynchronizationGroup a owl:ObjectProperty; 
                                     rdfs:comment ""@EN; 
                                     rdfs:domain ddhub:Resampling; 
@@ -700,6 +706,12 @@ ddhub:HasTransmissionDelay a owl:ObjectProperty;
                            rdfs:domain ddhub:DrillingDataPoint; 
                            rdfs:range ddhub:DrillingDataPoint; 
                            rdfs:subPropertyOf ddhub:DWISVerb. 
+
+ddhub:HasType a owl:ObjectProperty; 
+              rdfs:comment ""@EN; 
+              rdfs:domain ddhub:DWISNoun; 
+              rdfs:range ddhub:DWISNoun; 
+              rdfs:subPropertyOf ddhub:BelongsToClass. 
 
 ddhub:HasUncertainty a owl:ObjectProperty; 
                      rdfs:comment ""@EN; 
