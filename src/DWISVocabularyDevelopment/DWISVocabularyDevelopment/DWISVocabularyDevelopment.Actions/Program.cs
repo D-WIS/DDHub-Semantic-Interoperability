@@ -21,7 +21,15 @@ namespace DWIS.Vocabulary.Development.Actions
             using IHost host = CreateHostBuilder(args).Build();
           
             var s = host.Services.GetRequiredService<VocabularyActioner>();
-            s.PerformActions();
+            if (s.PerformActions())
+            {
+                Console.WriteLine("Perform actions succeeded.");
+            }
+            else
+            {
+                Console.WriteLine("Perform actions returned false.");
+            }
+            Console.WriteLine("Press any key to exit...");
 
             Console.ReadLine();
         }
@@ -93,8 +101,11 @@ namespace DWIS.Vocabulary.Development.Actions
 
         private bool Export()
         {
+            _logger.LogInformation($"Export md single file to {_paths.SingleMDFilePath}");
             MDWriting.ToMDFile(_vocabulary, _paths.SingleMDFilePath);
+            _logger.LogInformation($"Export md individual files to folder {_paths.DefinitionFilesFolderPath}");
             MDWriting.ToMDFiles(_vocabulary, _paths.DefinitionFilesFolderPath);
+            _logger.LogInformation($"Export ontology to {_paths.OntologyFilePath}");
             OWL.OntologyGeneration.GenerateOntology(_paths.OntologyFilePath, _vocabulary);
 
             return true;
