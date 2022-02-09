@@ -667,7 +667,7 @@
 - Examples:
 - Definition set: DrillingDataSemantics
 ## SetPoint <!-- NOUN -->
-- Display name: SetPoint
+- Display name: Set-point
 - Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
@@ -1017,7 +1017,7 @@
 - Examples:
 - Definition set: DrillingEquipment
 ## DWISNoun <!-- NOUN -->
-- Display name: DWISNoun
+- Display name: DWIS noun
 - Parent class: [](#)
 - Attributes:
 - Specialization:
@@ -1253,7 +1253,7 @@
 - Examples:
 - Definition set: Hydraulics
 ## DrillStemMechanicalModel <!-- NOUN -->
-- Display name: DrillStemMechanicalModel
+- Display name: Drill-stem mechanical model
 - Parent class: [MathematicalModel](#MathematicalModel)
 - Attributes:
 - Specialization:
@@ -1261,7 +1261,7 @@
 - Examples:
 - Definition set: MechanicalModel
 ## MechanicalStiffnessType <!-- NOUN -->
-- Display name: MechanicalStiffnessType
+- Display name: Mechanical stiffness type
 - Parent class: [DWISNoun](#DWISNoun)
 - Attributes:
 - Specialization:
@@ -1269,7 +1269,7 @@
 - Examples:
 - Definition set: MechanicalModel
 ## MechanicalSoftModel <!-- NOUN -->
-- Display name: MechanicalSoftModel
+- Display name: Mechanical soft model
 - Parent class: [MechanicalStiffnessType](#MechanicalStiffnessType)
 - Attributes:
 - Specialization:
@@ -1277,7 +1277,7 @@
 - Examples:
 - Definition set: MechanicalModel
 ## MechanicalStiffModel <!-- NOUN -->
-- Display name: MechanicalStiffModel
+- Display name: Mechanical stiff model
 - Parent class: [MechanicalStiffnessType](#MechanicalStiffnessType)
 - Attributes:
 - Specialization:
@@ -1285,7 +1285,7 @@
 - Examples:
 - Definition set: MechanicalModel
 ## MechanicalStiffModelAssumedContacts <!-- NOUN -->
-- Display name: MechanicalStiffModelAssumedContacts
+- Display name: Mechanical stiff model with assumed contacts
 - Parent class: [MechanicalStiffModel](#MechanicalStiffModel)
 - Attributes:
 - Specialization:
@@ -1293,7 +1293,7 @@
 - Examples:
 - Definition set: MechanicalModel
 ## MechanicalStiffModelEstimatedContacts <!-- NOUN -->
-- Display name: MechanicalStiffModelEstimatedContacts
+- Display name: Mechanical stiff model with estimated contacts
 - Parent class: [MechanicalStiffModel](#MechanicalStiffModel)
 - Attributes:
 - Specialization:
@@ -1301,7 +1301,7 @@
 - Examples:
 - Definition set: MechanicalModel
 ## TangencyLength <!-- NOUN -->
-- Display name: TangencyLength
+- Display name: Tangency length
 - Parent class: [DWISNoun](#DWISNoun)
 - Attributes:
 - Specialization:
@@ -1347,7 +1347,7 @@
 - Examples:
 - Definition set: Mechanics
 ## MathematicalModel <!-- NOUN -->
-- Display name: MathematicalModel
+- Display name: Mathematical model
 - Parent class: [DWISNoun](#DWISNoun)
 - Attributes:
 - Specialization:
@@ -1355,7 +1355,7 @@
 - Examples:
 - Definition set: Model
 ## SteadyStateModel <!-- NOUN -->
-- Display name: SteadyStateModel
+- Display name: Steady state model
 - Parent class: [MathematicalModel](#MathematicalModel)
 - Attributes:
 - Specialization:
@@ -1363,7 +1363,7 @@
 - Examples:
 - Definition set: Model
 ## TransientModel <!-- NOUN -->
-- Display name: TransientModel
+- Display name: Transient model
 - Parent class: [MathematicalModel](#MathematicalModel)
 - Attributes:
 - Specialization:
@@ -1371,7 +1371,7 @@
 - Examples:
 - Definition set: Model
 ## ModelledDegreeOfFreedom <!-- NOUN -->
-- Display name: ModelledDegreeOfFreedom
+- Display name: Modelled degree of freedom
 - Parent class: [DWISNoun](#DWISNoun)
 - Attributes:
 - Specialization:
@@ -1379,7 +1379,7 @@
 - Examples:
 - Definition set: Model
 ## AxialModelling <!-- NOUN -->
-- Display name: AxialModelling
+- Display name: Axial modelling
 - Parent class: [ModelledDegreeOfFreedom](#ModelledDegreeOfFreedom)
 - Attributes:
 - Specialization:
@@ -1387,7 +1387,7 @@
 - Examples:
 - Definition set: Model
 ## RotationalModelling <!-- NOUN -->
-- Display name: RotationalModelling
+- Display name: Rotational modelling
 - Parent class: [ModelledDegreeOfFreedom](#ModelledDegreeOfFreedom)
 - Attributes:
 - Specialization:
@@ -1395,7 +1395,7 @@
 - Examples:
 - Definition set: Model
 ## LateralModelling <!-- NOUN -->
-- Display name: LateralModelling
+- Display name: Lateral modelling
 - Parent class: [ModelledDegreeOfFreedom](#ModelledDegreeOfFreedom)
 - Attributes:
 - Specialization:
@@ -1403,7 +1403,7 @@
 - Examples:
 - Definition set: Model
 ## RadialModelling <!-- NOUN -->
-- Display name: RadialModelling
+- Display name: Radial modelling
 - Parent class: [LateralModelling](#LateralModelling)
 - Attributes:
 - Specialization:
@@ -1411,7 +1411,7 @@
 - Examples:
 - Definition set: Model
 ## AngularLateralModelling <!-- NOUN -->
-- Display name: AngularLateralModelling
+- Display name: Angular lateral modelling
 - Parent class: [LateralModelling](#LateralModelling)
 - Attributes:
 - Specialization:
@@ -1419,7 +1419,7 @@
 - Examples:
 - Definition set: Model
 ## TangentialModelling <!-- NOUN -->
-- Display name: TangentialModelling
+- Display name: Tangential modelling
 - Parent class: [LateralModelling](#LateralModelling)
 - Attributes:
 - Specialization:
@@ -1427,7 +1427,7 @@
 - Examples:
 - Definition set: Model
 ## VerticalOndulationModelling <!-- NOUN -->
-- Display name: VerticalOndulationModelling
+- Display name: Vertical ondulation modelling
 - Parent class: [TangentialModelling](#TangentialModelling)
 - Attributes:
 - Specialization:
@@ -1435,7 +1435,7 @@
 - Examples:
 - Definition set: Model
 ## HorizontalOndulationModelling <!-- NOUN -->
-- Display name: HorizontalOndulationModelling
+- Display name: Horizontal ondulation modelling
 - Parent class: [TangentialModelling](#TangentialModelling)
 - Attributes:
 - Specialization:
@@ -1443,7 +1443,7 @@
 - Examples:
 - Definition set: Model
 ## ModellingDimensions <!-- NOUN -->
-- Display name: ModellingDimensions
+- Display name: Modelling dimensions
 - Parent class: [DWISNoun](#DWISNoun)
 - Attributes:
 - Specialization:
@@ -1451,7 +1451,7 @@
 - Examples:
 - Definition set: Model
 ## 1DModelling <!-- NOUN -->
-- Display name: 1DModelling
+- Display name: 1D modelling
 - Parent class: [ModellingDimensions](#ModellingDimensions)
 - Attributes:
 - Specialization:
@@ -1459,7 +1459,7 @@
 - Examples:
 - Definition set: Model
 ## 2DModelling <!-- NOUN -->
-- Display name: 2DModelling
+- Display name: 2D modelling
 - Parent class: [ModellingDimensions](#ModellingDimensions)
 - Attributes:
 - Specialization:
@@ -1467,7 +1467,7 @@
 - Examples:
 - Definition set: Model
 ## 3DModelling <!-- NOUN -->
-- Display name: 3DModelling
+- Display name: 3D modelling
 - Parent class: [ModellingDimensions](#ModellingDimensions)
 - Attributes:
 - Specialization:
@@ -1475,7 +1475,7 @@
 - Examples:
 - Definition set: Model
 ## ModellingDiscretization <!-- NOUN -->
-- Display name: ModellingDiscretization
+- Display name: Modelling discretization
 - Parent class: [DWISNoun](#DWISNoun)
 - Attributes:
 - Specialization:
@@ -1483,7 +1483,7 @@
 - Examples:
 - Definition set: Model
 ## BoundaryDiscretization <!-- NOUN -->
-- Display name: BoundaryDiscretization
+- Display name: Boundary discretization
 - Parent class: [ModellingDiscretization](#ModellingDiscretization)
 - Attributes:
 - Specialization:
@@ -1491,7 +1491,7 @@
 - Examples:
 - Definition set: Model
 ## StrainWaveBasedDiscretization <!-- NOUN -->
-- Display name: StrainWaveBasedDiscretization
+- Display name: Strain-wave based discretization
 - Parent class: [ModellingDiscretization](#ModellingDiscretization)
 - Attributes:
 - Specialization:
@@ -1499,7 +1499,7 @@
 - Examples:
 - Definition set: Model
 ## MassTransferBasedDiscretization <!-- NOUN -->
-- Display name: MassTransferBasedDiscretization
+- Display name: Elasticity based discretization
 - Parent class: [ModellingDiscretization](#ModellingDiscretization)
 - Attributes:
 - Specialization:
@@ -2626,7 +2626,7 @@
 - Examples: 
 - Definition set: DrillingDataSemantics
 ## DWISVerb <!-- VERB -->
-- Display name: DWISVerb
+- Display name: DWIS verb
 - Parent verb: [](#)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DWISNoun](#DWISNoun)
@@ -2636,7 +2636,7 @@
 - Examples: 
 - Definition set: DWISSemantics
 ## HasType <!-- VERB -->
-- Display name: HasType
+- Display name: Has Type
 - Parent verb: [BelongsToClass](#BelongsToClass)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DWISNoun](#DWISNoun)
@@ -2646,7 +2646,7 @@
 - Examples: 
 - Definition set: DWISSemantics
 ## BelongsToClass <!-- VERB -->
-- Display name: BelongsToClass
+- Display name: Belongs To Class
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DWISNoun](#DWISNoun)
@@ -2926,7 +2926,7 @@
 - Examples: 
 - Definition set: Hydraulics
 ## IsOfMechanicalStiffnessType <!-- VERB -->
-- Display name: IsOfMechanicalStiffnessType
+- Display name: Is of mechanical stiffness type
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [MechanicalModel](#MechanicalModel)
 - Object class: [MechanicalStiffnessType](#MechanicalStiffnessType)

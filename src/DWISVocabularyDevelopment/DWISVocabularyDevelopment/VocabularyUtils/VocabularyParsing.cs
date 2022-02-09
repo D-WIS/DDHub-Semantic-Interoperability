@@ -88,6 +88,10 @@ namespace DWIS.Vocabulary.Utils
                     {
                         noun.ParentNounName = "DWISNoun";
                     }
+                    else if (noun.ParentNounName.Contains("["))//it is a link...
+                    {
+                        noun.ParentNounName = noun.ParentNounName.Split(new char[] { '[', ']' }, System.StringSplitOptions.RemoveEmptyEntries)[0];
+                    }
 
                     return true;
                 }
@@ -290,13 +294,25 @@ namespace DWIS.Vocabulary.Utils
                     {
                         verb.ParentVerbName = "DWISVerb";
                     }
+                    else if (verb.ParentVerbName.Contains("["))//it is a link...
+                    {
+                        verb.ParentVerbName = verb.ParentVerbName.Split(new char[] { '[', ']' }, System.StringSplitOptions.RemoveEmptyEntries)[0];
+                    }
                     if (string.IsNullOrEmpty(verb.DomainNounName))
                     {
                         verb.DomainNounName = "DWISNoun";
                     }
+                    else if (verb.DomainNounName.Contains("["))//it is a link...
+                    {
+                        verb.DomainNounName = verb.DomainNounName.Split(new char[] { '[', ']' }, System.StringSplitOptions.RemoveEmptyEntries)[0];
+                    }
                     if (string.IsNullOrEmpty(verb.RangeNounName))
                     {
                         verb.RangeNounName = "DWISNoun";
+                    }
+                    else if (verb.RangeNounName.Contains("["))//it is a link...
+                    {
+                        verb.RangeNounName = verb.RangeNounName.Split(new char[] { '[', ']' }, System.StringSplitOptions.RemoveEmptyEntries)[0];
                     }
                     return true;
                 }

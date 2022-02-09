@@ -2,7 +2,7 @@
 - Description: definitions of the base noun and verb. All verbs and nouns in the DWIS vocabulary are children of those.
 # Nouns
 ## DWISNoun <!-- NOUN -->
-- Display name: DWISNoun
+- Display name: DWIS noun
 - Parent class: [](./.md#)
 - Attributes:
 - Specialization:
@@ -11,7 +11,7 @@
 - Definition set: DWISSemantics
 # Verbs
 ## DWISVerb <!-- VERB -->
-- Display name: DWISVerb
+- Display name: DWIS verb
 - Parent verb: [](./.md#)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
@@ -21,7 +21,7 @@
 - Examples: 
 - Definition set: DWISSemantics
 ## HasType <!-- VERB -->
-- Display name: HasType
+- Display name: Has Type
 - Parent verb: [BelongsToClass](./DWISSemantics.md#BelongsToClass)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
@@ -31,7 +31,7 @@
 - Examples: 
 - Definition set: DWISSemantics
 ## BelongsToClass <!-- VERB -->
-- Display name: BelongsToClass
+- Display name: Belongs To Class
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)

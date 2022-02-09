@@ -10,7 +10,7 @@ namespace DWIS.Vocabulary.Utils
         public static void NounToMD(StringBuilder nounBuilder, Noun noun, bool singleFile = true,DWIS.Vocabulary.Development.Vocabulary vocabulary = null)
         {
             nounBuilder.AppendLine("## " + noun.Name + " <!-- NOUN -->");
-            nounBuilder.AppendLine("- Display name: " + noun.Name);
+            nounBuilder.AppendLine("- Display name: " + noun.DisplayName);
             nounBuilder.AppendLine("- Parent class: [" + noun.ParentNounName + "]" + GetLink(noun.ParentNounName, singleFile, vocabulary));//    (#" + noun.ParentNounName + ")");
             nounBuilder.AppendLine("- Attributes:");
             if (noun.NounAttributes != null)
@@ -65,7 +65,7 @@ namespace DWIS.Vocabulary.Utils
         public static void VerbToMD(StringBuilder verbBuilder, Verb verb, bool singleFile = true, DWIS.Vocabulary.Development.Vocabulary vocabulary = null)
         {
             verbBuilder.AppendLine("## " + verb.Name + " <!-- VERB -->");
-            verbBuilder.AppendLine("- Display name: " + verb.Name);
+            verbBuilder.AppendLine("- Display name: " + verb.DisplayName);
             verbBuilder.AppendLine("- Parent verb: [" + verb.ParentVerbName + "]" + GetLink(verb.ParentVerbName, singleFile, vocabulary));// 
             verbBuilder.AppendLine("- Subject class: [" + verb.DomainNounName + "]" + GetLink(verb.DomainNounName, singleFile, vocabulary));// 
             verbBuilder.AppendLine("- Object class: [" + verb.RangeNounName + "]" + GetLink(verb.RangeNounName, singleFile, vocabulary));// 

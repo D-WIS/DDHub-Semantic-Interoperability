@@ -205,7 +205,7 @@
 - Examples:
 - Definition set: DrillingDataSemantics
 ## SetPoint <!-- NOUN -->
-- Display name: SetPoint
+- Display name: Set-point
 - Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:

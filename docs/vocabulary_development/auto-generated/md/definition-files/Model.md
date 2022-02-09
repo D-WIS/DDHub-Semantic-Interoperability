@@ -2,7 +2,7 @@
 - Description: high level and generic vocabulary for mathematical models of the drilling process
 # Nouns
 ## MathematicalModel <!-- NOUN -->
-- Display name: MathematicalModel
+- Display name: Mathematical model
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Attributes:
 - Specialization:
@@ -10,7 +10,7 @@
 - Examples:
 - Definition set: Model
 ## SteadyStateModel <!-- NOUN -->
-- Display name: SteadyStateModel
+- Display name: Steady state model
 - Parent class: [MathematicalModel](./Model.md#MathematicalModel)
 - Attributes:
 - Specialization:
@@ -18,7 +18,7 @@
 - Examples:
 - Definition set: Model
 ## TransientModel <!-- NOUN -->
-- Display name: TransientModel
+- Display name: Transient model
 - Parent class: [MathematicalModel](./Model.md#MathematicalModel)
 - Attributes:
 - Specialization:
@@ -26,7 +26,7 @@
 - Examples:
 - Definition set: Model
 ## ModelledDegreeOfFreedom <!-- NOUN -->
-- Display name: ModelledDegreeOfFreedom
+- Display name: Modelled degree of freedom
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Attributes:
 - Specialization:
@@ -34,7 +34,7 @@
 - Examples:
 - Definition set: Model
 ## AxialModelling <!-- NOUN -->
-- Display name: AxialModelling
+- Display name: Axial modelling
 - Parent class: [ModelledDegreeOfFreedom](./Model.md#ModelledDegreeOfFreedom)
 - Attributes:
 - Specialization:
@@ -42,7 +42,7 @@
 - Examples:
 - Definition set: Model
 ## RotationalModelling <!-- NOUN -->
-- Display name: RotationalModelling
+- Display name: Rotational modelling
 - Parent class: [ModelledDegreeOfFreedom](./Model.md#ModelledDegreeOfFreedom)
 - Attributes:
 - Specialization:
@@ -50,7 +50,7 @@
 - Examples:
 - Definition set: Model
 ## LateralModelling <!-- NOUN -->
-- Display name: LateralModelling
+- Display name: Lateral modelling
 - Parent class: [ModelledDegreeOfFreedom](./Model.md#ModelledDegreeOfFreedom)
 - Attributes:
 - Specialization:
@@ -58,7 +58,7 @@
 - Examples:
 - Definition set: Model
 ## RadialModelling <!-- NOUN -->
-- Display name: RadialModelling
+- Display name: Radial modelling
 - Parent class: [LateralModelling](./Model.md#LateralModelling)
 - Attributes:
 - Specialization:
@@ -66,7 +66,7 @@
 - Examples:
 - Definition set: Model
 ## AngularLateralModelling <!-- NOUN -->
-- Display name: AngularLateralModelling
+- Display name: Angular lateral modelling
 - Parent class: [LateralModelling](./Model.md#LateralModelling)
 - Attributes:
 - Specialization:
@@ -74,7 +74,7 @@
 - Examples:
 - Definition set: Model
 ## TangentialModelling <!-- NOUN -->
-- Display name: TangentialModelling
+- Display name: Tangential modelling
 - Parent class: [LateralModelling](./Model.md#LateralModelling)
 - Attributes:
 - Specialization:
@@ -82,7 +82,7 @@
 - Examples:
 - Definition set: Model
 ## VerticalOndulationModelling <!-- NOUN -->
-- Display name: VerticalOndulationModelling
+- Display name: Vertical ondulation modelling
 - Parent class: [TangentialModelling](./Model.md#TangentialModelling)
 - Attributes:
 - Specialization:
@@ -90,7 +90,7 @@
 - Examples:
 - Definition set: Model
 ## HorizontalOndulationModelling <!-- NOUN -->
-- Display name: HorizontalOndulationModelling
+- Display name: Horizontal ondulation modelling
 - Parent class: [TangentialModelling](./Model.md#TangentialModelling)
 - Attributes:
 - Specialization:
@@ -98,7 +98,7 @@
 - Examples:
 - Definition set: Model
 ## ModellingDimensions <!-- NOUN -->
-- Display name: ModellingDimensions
+- Display name: Modelling dimensions
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Attributes:
 - Specialization:
@@ -106,7 +106,7 @@
 - Examples:
 - Definition set: Model
 ## 1DModelling <!-- NOUN -->
-- Display name: 1DModelling
+- Display name: 1D modelling
 - Parent class: [ModellingDimensions](./Model.md#ModellingDimensions)
 - Attributes:
 - Specialization:
@@ -114,7 +114,7 @@
 - Examples:
 - Definition set: Model
 ## 2DModelling <!-- NOUN -->
-- Display name: 2DModelling
+- Display name: 2D modelling
 - Parent class: [ModellingDimensions](./Model.md#ModellingDimensions)
 - Attributes:
 - Specialization:
@@ -122,7 +122,7 @@
 - Examples:
 - Definition set: Model
 ## 3DModelling <!-- NOUN -->
-- Display name: 3DModelling
+- Display name: 3D modelling
 - Parent class: [ModellingDimensions](./Model.md#ModellingDimensions)
 - Attributes:
 - Specialization:
@@ -130,7 +130,7 @@
 - Examples:
 - Definition set: Model
 ## ModellingDiscretization <!-- NOUN -->
-- Display name: ModellingDiscretization
+- Display name: Modelling discretization
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Attributes:
 - Specialization:
@@ -138,7 +138,7 @@
 - Examples:
 - Definition set: Model
 ## BoundaryDiscretization <!-- NOUN -->
-- Display name: BoundaryDiscretization
+- Display name: Boundary discretization
 - Parent class: [ModellingDiscretization](./Model.md#ModellingDiscretization)
 - Attributes:
 - Specialization:
@@ -146,7 +146,7 @@
 - Examples:
 - Definition set: Model
 ## StrainWaveBasedDiscretization <!-- NOUN -->
-- Display name: StrainWaveBasedDiscretization
+- Display name: Strain-wave based discretization
 - Parent class: [ModellingDiscretization](./Model.md#ModellingDiscretization)
 - Attributes:
 - Specialization:
@@ -154,7 +154,7 @@
 - Examples:
 - Definition set: Model
 ## MassTransferBasedDiscretization <!-- NOUN -->
-- Display name: MassTransferBasedDiscretization
+- Display name: Elasticity based discretization
 - Parent class: [ModellingDiscretization](./Model.md#ModellingDiscretization)
 - Attributes:
 - Specialization:

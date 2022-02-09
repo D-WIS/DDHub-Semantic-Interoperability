@@ -2,7 +2,7 @@
 - Description: specialized vocabulary for the modelling of the drilling mechanics. Covers in particular the so-called torque and drag models
 # Nouns
 ## DrillStemMechanicalModel <!-- NOUN -->
-- Display name: DrillStemMechanicalModel
+- Display name: Drill-stem mechanical model
 - Parent class: [MathematicalModel](./Model.md#MathematicalModel)
 - Attributes:
 - Specialization:
@@ -10,7 +10,7 @@
 - Examples:
 - Definition set: MechanicalModel
 ## MechanicalStiffnessType <!-- NOUN -->
-- Display name: MechanicalStiffnessType
+- Display name: Mechanical stiffness type
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Attributes:
 - Specialization:
@@ -18,7 +18,7 @@
 - Examples:
 - Definition set: MechanicalModel
 ## MechanicalSoftModel <!-- NOUN -->
-- Display name: MechanicalSoftModel
+- Display name: Mechanical soft model
 - Parent class: [MechanicalStiffnessType](./MechanicalModel.md#MechanicalStiffnessType)
 - Attributes:
 - Specialization:
@@ -26,7 +26,7 @@
 - Examples:
 - Definition set: MechanicalModel
 ## MechanicalStiffModel <!-- NOUN -->
-- Display name: MechanicalStiffModel
+- Display name: Mechanical stiff model
 - Parent class: [MechanicalStiffnessType](./MechanicalModel.md#MechanicalStiffnessType)
 - Attributes:
 - Specialization:
@@ -34,7 +34,7 @@
 - Examples:
 - Definition set: MechanicalModel
 ## MechanicalStiffModelAssumedContacts <!-- NOUN -->
-- Display name: MechanicalStiffModelAssumedContacts
+- Display name: Mechanical stiff model with assumed contacts
 - Parent class: [MechanicalStiffModel](./MechanicalModel.md#MechanicalStiffModel)
 - Attributes:
 - Specialization:
@@ -42,7 +42,7 @@
 - Examples:
 - Definition set: MechanicalModel
 ## MechanicalStiffModelEstimatedContacts <!-- NOUN -->
-- Display name: MechanicalStiffModelEstimatedContacts
+- Display name: Mechanical stiff model with estimated contacts
 - Parent class: [MechanicalStiffModel](./MechanicalModel.md#MechanicalStiffModel)
 - Attributes:
 - Specialization:
@@ -50,7 +50,7 @@
 - Examples:
 - Definition set: MechanicalModel
 ## TangencyLength <!-- NOUN -->
-- Display name: TangencyLength
+- Display name: Tangency length
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Attributes:
 - Specialization:
@@ -59,7 +59,7 @@
 - Definition set: MechanicalModel
 # Verbs
 ## IsOfMechanicalStiffnessType <!-- VERB -->
-- Display name: IsOfMechanicalStiffnessType
+- Display name: Is of mechanical stiffness type
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [MechanicalModel](./.md#MechanicalModel)
 - Object class: [MechanicalStiffnessType](./MechanicalModel.md#MechanicalStiffnessType)
