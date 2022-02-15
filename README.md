@@ -15,3 +15,8 @@ Some early architecture can be found [here](docs/architecture/DDHub_architecture
 The DDHub ontology can be found [here for the xml serialization](model/DDHub_xml.owl). Auto-generated documentation is [there](model/html/documentation/index-en.html), but it does not display well in the browser. 
 
 Vocabulary development takes place [here](docs/vocabulary_development/README.md). 
+
+```mermaid
+  graph TD;
+      D-- D -->Hub;      
+```
