@@ -76,14 +76,28 @@ namespace DWIS.Vocabulary.Utils
             verbBuilder.AppendLine("- Definition set: " + verb.DefinitionSetName);
         }
 
-        public static void IndividualToMD(StringBuilder builder, TypedIndividual individual, DWIS.Vocabulary.Development.Vocabulary vocabulary)
+        public static void IndividualToMD(StringBuilder builder, TypedIndividual individual, DWIS.Vocabulary.Development.Vocabulary vocabulary, bool useLinks = false)
         {
-            builder.AppendLine("- " +GetLink( individual.TypeName,vocabulary: vocabulary , route: "../")+ ":" + individual.Name);
+            if (useLinks)
+            {
+                builder.AppendLine("- " + GetLink(individual.TypeName, vocabulary: vocabulary, route: "../") + ":" + individual.Name);
+            }
+            else
+            {
+                builder.AppendLine("- " + individual.TypeName+ ":" + individual.Name);
+            }
         }
 
-        public static void SentenceToMD(StringBuilder builder, Sentence sentence, DWIS.Vocabulary.Development.Vocabulary vocabulary)
+        public static void SentenceToMD(StringBuilder builder, Sentence sentence, DWIS.Vocabulary.Development.Vocabulary vocabulary, bool useLinks = false)
         {
-            builder.AppendLine("- " + sentence.Subject + " " +  GetLink(sentence.Verb, vocabulary: vocabulary, route: "../") + " " +sentence.Object);
+            if (useLinks)
+            {
+                builder.AppendLine("- " + sentence.Subject + " " + GetLink(sentence.Verb, vocabulary: vocabulary, route: "../") + " " + sentence.Object);
+            }
+            else
+            {
+                builder.AppendLine("- " + sentence.Subject + " " +sentence.Verb + " " + sentence.Object);
+            }
         }
 
         public static void DefinitionSetHeaderToMD(StringBuilder builder, DefinitionSetHeader header, bool singleFile = true)
@@ -187,20 +201,51 @@ namespace DWIS.Vocabulary.Utils
 
         }
 
-        public static void ToMDFile(DWISInstance instance, string fileName, DWIS.Vocabulary.Development.Vocabulary vocabulary)
+        public static void ToMDFile(DWISInstance instance, string fileName, DWIS.Vocabulary.Development.Vocabulary vocabulary, bool addGraph = false, bool useLinks = true)
         {
             StringBuilder builder = new StringBuilder();
             builder.AppendLine("# " + instance.Name);
             foreach (var i in instance.Population)
             {
-                IndividualToMD(builder, i, vocabulary);
+                IndividualToMD(builder, i, vocabulary, useLinks);
             }
             foreach (var v in instance.Sentences)
             {
-                SentenceToMD(builder, v, vocabulary);
+                SentenceToMD(builder, v, vocabulary, useLinks);
             }
+
+            if (addGraph)
+            {
+                ToMDMermaidGraph(instance, builder);
+            }
+
             System.IO.File.WriteAllText(fileName, builder.ToString());
 
+        }
+
+
+        public static void ToMDMermaidGraph(DWISInstance instance, StringBuilder builder)
+        {
+            string name;
+            if (string.IsNullOrEmpty(instance.Name))
+            {
+                name = "example";
+            }
+            else
+            {
+                name = instance.Name;
+            }
+            builder.AppendLine("```mermaid");
+            builder.AppendLine("flowchart TD");
+            foreach (var i in instance.Population)
+            {
+                builder.AppendLine($"\t{i.Name}([{i.Name}]) --> {i.TypeName}[[{i.TypeName}]]"  );               
+            }
+            foreach (var i in instance.Sentences)
+            {
+                builder.AppendLine($"\t {i.Subject} -- {i.Verb} --> {i.Object} ");
+            }
+            builder.AppendLine("```");
         }
     }
 }
