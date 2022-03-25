@@ -1,0 +1,252 @@
+{
+  "Name": "Hookloads",
+  "Population": [
+    {
+      "TypeName": "DrillingDataPoint",
+      "Attributes": [
+        {
+          "AttributeName": "IsValid",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DrillingDataPoint_0"
+    },
+    {
+      "TypeName": "DeadLine",
+      "Attributes": null,
+      "Name": "DeadLine_0"
+    },
+    {
+      "TypeName": "HookLoad",
+      "Attributes": null,
+      "Name": "HookLoad_0"
+    },
+    {
+      "TypeName": "TravellingBlock",
+      "Attributes": null,
+      "Name": "TravellingBlock_0"
+    },
+    {
+      "TypeName": "HookLoad",
+      "Attributes": null,
+      "Name": "HookLoad_1"
+    },
+    {
+      "TypeName": "TopDriveShaft",
+      "Attributes": null,
+      "Name": "TopDriveShaft_0"
+    },
+    {
+      "TypeName": "DrillingDataPoint",
+      "Attributes": [
+        {
+          "AttributeName": "IsValid",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DrillingDataPoint_1"
+    },
+    {
+      "TypeName": "DrillingDataPoint",
+      "Attributes": [
+        {
+          "AttributeName": "IsValid",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DrillingDataPoint_2"
+    },
+    {
+      "TypeName": "HookloadQuantity",
+      "Attributes": null,
+      "Name": "HookloadQuantity_0"
+    },
+    {
+      "TypeName": "Transformation",
+      "Attributes": null,
+      "Name": "Transformation_0"
+    },
+    {
+      "TypeName": "ForceToLoadTransformation",
+      "Attributes": null,
+      "Name": "ForceToLoadTransformation_0"
+    },
+    {
+      "TypeName": "ForceToLoadTransformation",
+      "Attributes": null,
+      "Name": "ForceToLoadTransformation_1"
+    },
+    {
+      "TypeName": "DrillingDataPoint",
+      "Attributes": [
+        {
+          "AttributeName": "IsValid",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DrillingDataPoint_3"
+    },
+    {
+      "TypeName": "TopSideTelemetry",
+      "Attributes": null,
+      "Name": "TopSideTelemetry_0"
+    },
+    {
+      "TypeName": "DataFlowNode",
+      "Attributes": null,
+      "Name": "DataFlowNode_0"
+    },
+    {
+      "TypeName": "TimeWindowMovingAverage",
+      "Attributes": [
+        {
+          "AttributeName": "TimeWindow",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "TimeWindowMovingAverage_0"
+    },
+    {
+      "TypeName": "TimeWindowMovingAverage",
+      "Attributes": [
+        {
+          "AttributeName": "TimeWindow",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "TimeWindowMovingAverage_1"
+    }
+  ],
+  "Sentences": [
+    {
+      "Subject": "DrillingDataPoint_0",
+      "Verb": "IsMechanicallyLocatedAt",
+      "Object": "DeadLine_0"
+    },
+    {
+      "Subject": "HookLoad_0",
+      "Verb": "IsMechanicallyLocatedAt",
+      "Object": "TravellingBlock_0"
+    },
+    {
+      "Subject": "HookLoad_1",
+      "Verb": "IsMechanicallyLocatedAt",
+      "Object": "TopDriveShaft_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_1",
+      "Verb": "IsMechanicallyLocatedAt",
+      "Object": "TopDriveShaft_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_2",
+      "Verb": "IsMechanicallyLocatedAt",
+      "Object": "TravellingBlock_0"
+    },
+    {
+      "Subject": "HookLoad_0",
+      "Verb": "IsOfMeasurableQuantity",
+      "Object": "HookloadQuantity_0"
+    },
+    {
+      "Subject": "HookLoad_1",
+      "Verb": "IsOfMeasurableQuantity",
+      "Object": "HookloadQuantity_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_0",
+      "Verb": "IsTransformationInput",
+      "Object": "Transformation_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_1",
+      "Verb": "IsTransformationInput",
+      "Object": "ForceToLoadTransformation_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_2",
+      "Verb": "IsTransformationInput",
+      "Object": "ForceToLoadTransformation_1"
+    },
+    {
+      "Subject": "ForceToLoadTransformation_1",
+      "Verb": "IsTransformationOutput",
+      "Object": "HookLoad_0"
+    },
+    {
+      "Subject": "ForceToLoadTransformation_0",
+      "Verb": "IsTransformationOutput",
+      "Object": "HookLoad_1"
+    },
+    {
+      "Subject": "Transformation_0",
+      "Verb": "IsTransformationOutput",
+      "Object": "DrillingDataPoint_2"
+    },
+    {
+      "Subject": "HookLoad_1",
+      "Verb": "IsValidBy",
+      "Object": "DrillingDataPoint_3"
+    },
+    {
+      "Subject": "DrillingDataPoint_0",
+      "Verb": "IsTransmittedBy",
+      "Object": "TopSideTelemetry_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_1",
+      "Verb": "IsTransmittedBy",
+      "Object": "TopSideTelemetry_0"
+    },
+    {
+      "Subject": "HookLoad_0",
+      "Verb": "IsTransmittedBy",
+      "Object": "TopSideTelemetry_0"
+    },
+    {
+      "Subject": "HookLoad_1",
+      "Verb": "IsTransmittedBy",
+      "Object": "TopSideTelemetry_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_2",
+      "Verb": "IsTransmittedBy",
+      "Object": "TopSideTelemetry_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_0",
+      "Verb": "IsProvidedBy",
+      "Object": "DataFlowNode_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_1",
+      "Verb": "IsProvidedBy",
+      "Object": "DataFlowNode_0"
+    },
+    {
+      "Subject": "HookLoad_0",
+      "Verb": "IsProvidedBy",
+      "Object": "DataFlowNode_0"
+    },
+    {
+      "Subject": "HookLoad_1",
+      "Verb": "IsProvidedBy",
+      "Object": "DataFlowNode_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_2",
+      "Verb": "IsProvidedBy",
+      "Object": "DataFlowNode_0"
+    },
+    {
+      "Subject": "HookLoad_0",
+      "Verb": "IsProcessedBy",
+      "Object": "TimeWindowMovingAverage_0"
+    },
+    {
+      "Subject": "HookLoad_1",
+      "Verb": "IsProcessedBy",
+      "Object": "TimeWindowMovingAverage_1"
+    }
+  ]
+}

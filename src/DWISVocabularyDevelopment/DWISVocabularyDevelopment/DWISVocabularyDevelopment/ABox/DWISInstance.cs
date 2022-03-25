@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace DWIS.Vocabulary.Development
 {
     public class DWISInstance
     {
         public string Name { get;private set; }
+        [JsonIgnore]
         public DWISVocabulary Vocabulary { get;private set; }
         public IPopulation Population{ get; set; }
         public ISentenceCollection Sentences { get; set; }
@@ -46,8 +48,15 @@ namespace DWIS.Vocabulary.Development
 
         }
 
+        public static void ToJsonFile(DWISInstance instance, string fileName)
+        {
+            System.IO.File.WriteAllText(fileName, Newtonsoft.Json.JsonConvert.SerializeObject(instance, Formatting.Indented));
+        }
 
-
+        public static DWISInstance FromJsonFile(string fileName)
+        {
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<DWISInstance>(System.IO.File.ReadAllText(fileName));
+        }
     }
 
     public class SimpleSentenceCollection : ISentenceCollection

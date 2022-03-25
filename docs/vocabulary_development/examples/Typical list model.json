@@ -1,0 +1,297 @@
+{
+  "Name": "Typical list model",
+  "Population": [
+    {
+      "TypeName": "HookVelocity",
+      "Attributes": null,
+      "Name": "HookVelocity_0"
+    },
+    {
+      "TypeName": "DynamicDrillingSignal",
+      "Attributes": [
+        {
+          "AttributeName": "TimeStampAcquisition",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DynamicDrillingSignal_0"
+    },
+    {
+      "TypeName": "FlowRateIn",
+      "Attributes": null,
+      "Name": "FlowRateIn_0"
+    },
+    {
+      "TypeName": "DynamicDrillingSignal",
+      "Attributes": [
+        {
+          "AttributeName": "TimeStampAcquisition",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DynamicDrillingSignal_1"
+    },
+    {
+      "TypeName": "BitDepth",
+      "Attributes": null,
+      "Name": "BitDepth_0"
+    },
+    {
+      "TypeName": "DynamicDrillingSignal",
+      "Attributes": [
+        {
+          "AttributeName": "TimeStampAcquisition",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DynamicDrillingSignal_2"
+    },
+    {
+      "TypeName": "SurfaceRPM",
+      "Attributes": null,
+      "Name": "SurfaceRPM_0"
+    },
+    {
+      "TypeName": "DynamicDrillingSignal",
+      "Attributes": [
+        {
+          "AttributeName": "TimeStampAcquisition",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DynamicDrillingSignal_3"
+    },
+    {
+      "TypeName": "SurfaceTorque",
+      "Attributes": null,
+      "Name": "SurfaceTorque_0"
+    },
+    {
+      "TypeName": "DynamicDrillingSignal",
+      "Attributes": [
+        {
+          "AttributeName": "TimeStampAcquisition",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DynamicDrillingSignal_4"
+    },
+    {
+      "TypeName": "SPP",
+      "Attributes": null,
+      "Name": "SPP_0"
+    },
+    {
+      "TypeName": "DynamicDrillingSignal",
+      "Attributes": [
+        {
+          "AttributeName": "TimeStampAcquisition",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DynamicDrillingSignal_5"
+    },
+    {
+      "TypeName": "DownholeECD",
+      "Attributes": null,
+      "Name": "DownholeECD_0"
+    },
+    {
+      "TypeName": "DynamicDrillingSignal",
+      "Attributes": [
+        {
+          "AttributeName": "TimeStampAcquisition",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DynamicDrillingSignal_6"
+    },
+    {
+      "TypeName": "HookPosition",
+      "Attributes": null,
+      "Name": "HookPosition_0"
+    },
+    {
+      "TypeName": "DynamicDrillingSignal",
+      "Attributes": [
+        {
+          "AttributeName": "TimeStampAcquisition",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DynamicDrillingSignal_7"
+    },
+    {
+      "TypeName": "TemperatureIn",
+      "Attributes": null,
+      "Name": "TemperatureIn_0"
+    },
+    {
+      "TypeName": "DynamicDrillingSignal",
+      "Attributes": [
+        {
+          "AttributeName": "TimeStampAcquisition",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DynamicDrillingSignal_8"
+    },
+    {
+      "TypeName": "DownholePressure",
+      "Attributes": null,
+      "Name": "DownholePressure_0"
+    },
+    {
+      "TypeName": "DynamicDrillingSignal",
+      "Attributes": [
+        {
+          "AttributeName": "TimeStampAcquisition",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DynamicDrillingSignal_9"
+    },
+    {
+      "TypeName": "HookLoad",
+      "Attributes": null,
+      "Name": "HookLoad_0"
+    },
+    {
+      "TypeName": "DynamicDrillingSignal",
+      "Attributes": [
+        {
+          "AttributeName": "TimeStampAcquisition",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DynamicDrillingSignal_10"
+    },
+    {
+      "TypeName": "DynamicDrillingSignal",
+      "Attributes": [
+        {
+          "AttributeName": "TimeStampAcquisition",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DynamicDrillingSignal_11"
+    },
+    {
+      "TypeName": "DynamicDrillingSignal",
+      "Attributes": [
+        {
+          "AttributeName": "TimeStampAcquisition",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DynamicDrillingSignal_12"
+    },
+    {
+      "TypeName": "DynamicDrillingSignal",
+      "Attributes": [
+        {
+          "AttributeName": "TimeStampAcquisition",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DynamicDrillingSignal_13"
+    },
+    {
+      "TypeName": "DynamicDrillingSignal",
+      "Attributes": [
+        {
+          "AttributeName": "TimeStampAcquisition",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DynamicDrillingSignal_14"
+    },
+    {
+      "TypeName": "DynamicDrillingSignal",
+      "Attributes": [
+        {
+          "AttributeName": "TimeStampAcquisition",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DynamicDrillingSignal_15"
+    },
+    {
+      "TypeName": "DynamicDrillingSignal",
+      "Attributes": [
+        {
+          "AttributeName": "TimeStampAcquisition",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DynamicDrillingSignal_16"
+    },
+    {
+      "TypeName": "DynamicDrillingSignal",
+      "Attributes": [
+        {
+          "AttributeName": "TimeStampAcquisition",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DynamicDrillingSignal_17"
+    }
+  ],
+  "Sentences": [
+    {
+      "Subject": "HookVelocity_0",
+      "Verb": "HasValue",
+      "Object": "DynamicDrillingSignal_0"
+    },
+    {
+      "Subject": "FlowRateIn_0",
+      "Verb": "HasValue",
+      "Object": "DynamicDrillingSignal_1"
+    },
+    {
+      "Subject": "BitDepth_0",
+      "Verb": "HasValue",
+      "Object": "DynamicDrillingSignal_2"
+    },
+    {
+      "Subject": "SurfaceRPM_0",
+      "Verb": "HasValue",
+      "Object": "DynamicDrillingSignal_3"
+    },
+    {
+      "Subject": "SurfaceTorque_0",
+      "Verb": "HasValue",
+      "Object": "DynamicDrillingSignal_4"
+    },
+    {
+      "Subject": "SPP_0",
+      "Verb": "HasValue",
+      "Object": "DynamicDrillingSignal_5"
+    },
+    {
+      "Subject": "DownholeECD_0",
+      "Verb": "HasValue",
+      "Object": "DynamicDrillingSignal_6"
+    },
+    {
+      "Subject": "HookPosition_0",
+      "Verb": "HasValue",
+      "Object": "DynamicDrillingSignal_7"
+    },
+    {
+      "Subject": "TemperatureIn_0",
+      "Verb": "HasValue",
+      "Object": "DynamicDrillingSignal_8"
+    },
+    {
+      "Subject": "DownholePressure_0",
+      "Verb": "HasValue",
+      "Object": "DynamicDrillingSignal_9"
+    },
+    {
+      "Subject": "HookLoad_0",
+      "Verb": "HasValue",
+      "Object": "DynamicDrillingSignal_10"
+    }
+  ]
+}

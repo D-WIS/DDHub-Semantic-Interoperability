@@ -1,0 +1,322 @@
+{
+  "Name": "Downhole ECD",
+  "Population": [
+    {
+      "TypeName": "DownholePressureQuantity",
+      "Attributes": null,
+      "Name": "DownholePressureQuantity_0"
+    },
+    {
+      "TypeName": "PressureQuantity",
+      "Attributes": null,
+      "Name": "PressureQuantity_0"
+    },
+    {
+      "TypeName": "DownholeECD",
+      "Attributes": null,
+      "Name": "DownholeECD_0"
+    },
+    {
+      "TypeName": "EMWQuantity",
+      "Attributes": null,
+      "Name": "EMWQuantity_0"
+    },
+    {
+      "TypeName": "DownholePressure",
+      "Attributes": null,
+      "Name": "DownholePressure_0"
+    },
+    {
+      "TypeName": "DrillingDataPoint",
+      "Attributes": [
+        {
+          "AttributeName": "IsValid",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DrillingDataPoint_0"
+    },
+    {
+      "TypeName": "TVDQuantity",
+      "Attributes": null,
+      "Name": "TVDQuantity_0"
+    },
+    {
+      "TypeName": "DrillingDataPoint",
+      "Attributes": [
+        {
+          "AttributeName": "IsValid",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DrillingDataPoint_1"
+    },
+    {
+      "TypeName": "AccelerationQuantity",
+      "Attributes": null,
+      "Name": "AccelerationQuantity_0"
+    },
+    {
+      "TypeName": "DrillingDataPoint",
+      "Attributes": [
+        {
+          "AttributeName": "IsValid",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DrillingDataPoint_2"
+    },
+    {
+      "TypeName": "DrillingDataPoint",
+      "Attributes": [
+        {
+          "AttributeName": "IsValid",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DrillingDataPoint_3"
+    },
+    {
+      "TypeName": "LengthQuantity",
+      "Attributes": null,
+      "Name": "LengthQuantity_0"
+    },
+    {
+      "TypeName": "DrillingDataPoint",
+      "Attributes": [
+        {
+          "AttributeName": "IsValid",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DrillingDataPoint_4"
+    },
+    {
+      "TypeName": "DepthQuantity",
+      "Attributes": null,
+      "Name": "DepthQuantity_0"
+    },
+    {
+      "TypeName": "BitDepth",
+      "Attributes": null,
+      "Name": "BitDepth_0"
+    },
+    {
+      "TypeName": "DirectTransformation",
+      "Attributes": null,
+      "Name": "DirectTransformation_0"
+    },
+    {
+      "TypeName": "DirectTransformation",
+      "Attributes": null,
+      "Name": "DirectTransformation_1"
+    },
+    {
+      "TypeName": "DirectTransformation",
+      "Attributes": null,
+      "Name": "DirectTransformation_2"
+    },
+    {
+      "TypeName": "BHAAnnular",
+      "Attributes": null,
+      "Name": "BHAAnnular_0"
+    },
+    {
+      "TypeName": "FlowRateIn",
+      "Attributes": null,
+      "Name": "FlowRateIn_0"
+    },
+    {
+      "TypeName": "GT",
+      "Attributes": null,
+      "Name": "GT_0"
+    },
+    {
+      "TypeName": "DrillingDataPoint",
+      "Attributes": [
+        {
+          "AttributeName": "IsValid",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DrillingDataPoint_5"
+    },
+    {
+      "TypeName": "HydraulicConnectedState",
+      "Attributes": [
+        {
+          "AttributeName": "Value",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "HydraulicConnectedState_0"
+    },
+    {
+      "TypeName": "DrillingDataPoint",
+      "Attributes": [
+        {
+          "AttributeName": "IsValid",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DrillingDataPoint_6"
+    },
+    {
+      "TypeName": "TopDriveShaft",
+      "Attributes": null,
+      "Name": "TopDriveShaft_0"
+    },
+    {
+      "TypeName": "ConnectedCondition",
+      "Attributes": null,
+      "Name": "ConnectedCondition_0"
+    }
+  ],
+  "Sentences": [
+    {
+      "Subject": "DownholePressureQuantity_0",
+      "Verb": "IsObservableFrom",
+      "Object": "PressureQuantity_0"
+    },
+    {
+      "Subject": "DownholeECD_0",
+      "Verb": "IsOfMeasurableQuantity",
+      "Object": "EMWQuantity_0"
+    },
+    {
+      "Subject": "DownholePressure_0",
+      "Verb": "IsOfMeasurableQuantity",
+      "Object": "DownholePressureQuantity_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_0",
+      "Verb": "IsOfMeasurableQuantity",
+      "Object": "TVDQuantity_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_1",
+      "Verb": "IsOfBaseQuantity",
+      "Object": "AccelerationQuantity_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_2",
+      "Verb": "IsOfBaseQuantity",
+      "Object": "PressureQuantity_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_3",
+      "Verb": "IsOfBaseQuantity",
+      "Object": "LengthQuantity_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_4",
+      "Verb": "IsOfMeasurableQuantity",
+      "Object": "DepthQuantity_0"
+    },
+    {
+      "Subject": "BitDepth_0",
+      "Verb": "IsOfMeasurableQuantity",
+      "Object": "DepthQuantity_0"
+    },
+    {
+      "Subject": "BitDepth_0",
+      "Verb": "IsTransformationInput",
+      "Object": "DirectTransformation_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_3",
+      "Verb": "IsTransformationInput",
+      "Object": "DirectTransformation_0"
+    },
+    {
+      "Subject": "DirectTransformation_0",
+      "Verb": "IsTransformationOutput",
+      "Object": "DrillingDataPoint_4"
+    },
+    {
+      "Subject": "DrillingDataPoint_4",
+      "Verb": "IsTransformationInput",
+      "Object": "DirectTransformation_1"
+    },
+    {
+      "Subject": "DirectTransformation_1",
+      "Verb": "IsTransformationOutput",
+      "Object": "DrillingDataPoint_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_2",
+      "Verb": "IsTransformationInput",
+      "Object": "DirectTransformation_2"
+    },
+    {
+      "Subject": "DrillingDataPoint_1",
+      "Verb": "IsTransformationInput",
+      "Object": "DirectTransformation_2"
+    },
+    {
+      "Subject": "DrillingDataPoint_0",
+      "Verb": "IsTransformationInput",
+      "Object": "DirectTransformation_2"
+    },
+    {
+      "Subject": "DownholePressure_0",
+      "Verb": "IsTransformationInput",
+      "Object": "DirectTransformation_2"
+    },
+    {
+      "Subject": "DirectTransformation_2",
+      "Verb": "IsTransformationOutput",
+      "Object": "DownholeECD_0"
+    },
+    {
+      "Subject": "DownholePressure_0",
+      "Verb": "IsHydraulicallyLocatedAt",
+      "Object": "BHAAnnular_0"
+    },
+    {
+      "Subject": "DownholeECD_0",
+      "Verb": "IsHydraulicallyLocatedAt",
+      "Object": "BHAAnnular_0"
+    },
+    {
+      "Subject": "FlowRateIn_0",
+      "Verb": "IsConditionLeft",
+      "Object": "GT_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_5",
+      "Verb": "IsConditionRight",
+      "Object": "GT_0"
+    },
+    {
+      "Subject": "DownholePressure_0",
+      "Verb": "IsConditionedBy",
+      "Object": "GT_0"
+    },
+    {
+      "Subject": "HydraulicConnectedState_0",
+      "Verb": "HasHydraulicStateValueFrom",
+      "Object": "DrillingDataPoint_6"
+    },
+    {
+      "Subject": "TopDriveShaft_0",
+      "Verb": "HasHydraulicState",
+      "Object": "HydraulicConnectedState_0"
+    },
+    {
+      "Subject": "DownholePressure_0",
+      "Verb": "IsConditionedBy",
+      "Object": "ConnectedCondition_0"
+    },
+    {
+      "Subject": "HydraulicConnectedState_0",
+      "Verb": "IsConditionInput",
+      "Object": "ConnectedCondition_0"
+    },
+    {
+      "Subject": "DownholePressure_0",
+      "Verb": "IsValidBy",
+      "Object": "DrillingDataPoint_6"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "Name": "Sub surface hydraulic",
+  "Population": [
+    {
+      "TypeName": "DrillPipesAnnular",
+      "Attributes": null,
+      "Name": "DrillPipesAnnular_0"
+    },
+    {
+      "TypeName": "BellNipple",
+      "Attributes": null,
+      "Name": "BellNipple_0"
+    },
+    {
+      "TypeName": "BHAAnnular",
+      "Attributes": null,
+      "Name": "BHAAnnular_0"
+    },
+    {
+      "TypeName": "Bit",
+      "Attributes": null,
+      "Name": "Bit_0"
+    },
+    {
+      "TypeName": "OpenHole",
+      "Attributes": null,
+      "Name": "OpenHole_0"
+    },
+    {
+      "TypeName": "BHAInner",
+      "Attributes": null,
+      "Name": "BHAInner_0"
+    },
+    {
+      "TypeName": "DrillPipesInner",
+      "Attributes": null,
+      "Name": "DrillPipesInner_0"
+    },
+    {
+      "TypeName": "UnderReamer",
+      "Attributes": null,
+      "Name": "UnderReamer_0"
+    },
+    {
+      "TypeName": "TopDrive",
+      "Attributes": null,
+      "Name": "TopDrive_0"
+    }
+  ],
+  "Sentences": [
+    {
+      "Subject": "DrillPipesAnnular_0",
+      "Verb": "IsHydraulicConnectedTo",
+      "Object": "BellNipple_0"
+    },
+    {
+      "Subject": "BHAAnnular_0",
+      "Verb": "IsHydraulicConnectedTo",
+      "Object": "DrillPipesAnnular_0"
+    },
+    {
+      "Subject": "Bit_0",
+      "Verb": "IsHydraulicConnectedTo",
+      "Object": "BHAAnnular_0"
+    },
+    {
+      "Subject": "Bit_0",
+      "Verb": "IsHydraulicConnectedTo",
+      "Object": "OpenHole_0"
+    },
+    {
+      "Subject": "BHAInner_0",
+      "Verb": "IsHydraulicConnectedTo",
+      "Object": "Bit_0"
+    },
+    {
+      "Subject": "DrillPipesInner_0",
+      "Verb": "IsHydraulicConnectedTo",
+      "Object": "UnderReamer_0"
+    },
+    {
+      "Subject": "TopDrive_0",
+      "Verb": "IsHydraulicConnectedTo",
+      "Object": "DrillPipesInner_0"
+    },
+    {
+      "Subject": "UnderReamer_0",
+      "Verb": "IsHydraulicConnectedTo",
+      "Object": "DrillPipesAnnular_0"
+    },
+    {
+      "Subject": "UnderReamer_0",
+      "Verb": "IsHydraulicConnectedTo",
+      "Object": "BHAInner_0"
+    }
+  ]
+}

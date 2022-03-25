@@ -1,0 +1,252 @@
+{
+  "Name": "LWD Signals",
+  "Population": [
+    {
+      "TypeName": "DrillingDataPoint",
+      "Attributes": [
+        {
+          "AttributeName": "IsValid",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DrillingDataPoint_0"
+    },
+    {
+      "TypeName": "Resistivity",
+      "Attributes": null,
+      "Name": "Resistivity_0"
+    },
+    {
+      "TypeName": "Location",
+      "Attributes": null,
+      "Name": "Location_0"
+    },
+    {
+      "TypeName": "MudPulseTelemetry",
+      "Attributes": null,
+      "Name": "MudPulseTelemetry_0"
+    },
+    {
+      "TypeName": "DataFlowNode",
+      "Attributes": null,
+      "Name": "DataFlowNode_0"
+    },
+    {
+      "TypeName": "DrillingDataPoint",
+      "Attributes": [
+        {
+          "AttributeName": "IsValid",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DrillingDataPoint_1"
+    },
+    {
+      "TypeName": "RockDensityQuantity",
+      "Attributes": null,
+      "Name": "RockDensityQuantity_0"
+    },
+    {
+      "TypeName": "Location",
+      "Attributes": null,
+      "Name": "Location_1"
+    },
+    {
+      "TypeName": "DrillingDataPoint",
+      "Attributes": [
+        {
+          "AttributeName": "IsValid",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DrillingDataPoint_2"
+    },
+    {
+      "TypeName": "DrillingDataPoint",
+      "Attributes": [
+        {
+          "AttributeName": "IsValid",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DrillingDataPoint_3"
+    },
+    {
+      "TypeName": "DepthQuantity",
+      "Attributes": null,
+      "Name": "DepthQuantity_0"
+    },
+    {
+      "TypeName": "DrillingDataPoint",
+      "Attributes": [
+        {
+          "AttributeName": "IsValid",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DrillingDataPoint_4"
+    },
+    {
+      "TypeName": "FormationPorosityQuantity",
+      "Attributes": null,
+      "Name": "FormationPorosityQuantity_0"
+    },
+    {
+      "TypeName": "DrillingDataPoint",
+      "Attributes": [
+        {
+          "AttributeName": "IsValid",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DrillingDataPoint_5"
+    },
+    {
+      "TypeName": "DrillingDataPoint",
+      "Attributes": [
+        {
+          "AttributeName": "IsValid",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DrillingDataPoint_6"
+    },
+    {
+      "TypeName": "Location",
+      "Attributes": null,
+      "Name": "Location_2"
+    },
+    {
+      "TypeName": "DrillingDataPoint",
+      "Attributes": [
+        {
+          "AttributeName": "IsValid",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "DrillingDataPoint_7"
+    },
+    {
+      "TypeName": "MassDensityQuantity",
+      "Attributes": null,
+      "Name": "MassDensityQuantity_0"
+    }
+  ],
+  "Sentences": [
+    {
+      "Subject": "DrillingDataPoint_0",
+      "Verb": "IsOfMeasurableQuantity",
+      "Object": "Resistivity_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_0",
+      "Verb": "IsPhysicallyLocatedAt",
+      "Object": "Location_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_0",
+      "Verb": "IsTransmittedBy",
+      "Object": "MudPulseTelemetry_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_0",
+      "Verb": "IsProvidedBy",
+      "Object": "DataFlowNode_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_1",
+      "Verb": "IsOfMeasurableQuantity",
+      "Object": "RockDensityQuantity_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_1",
+      "Verb": "IsPhysicallyLocatedAt",
+      "Object": "Location_1"
+    },
+    {
+      "Subject": "DrillingDataPoint_1",
+      "Verb": "IsTransmittedBy",
+      "Object": "MudPulseTelemetry_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_1",
+      "Verb": "IsProvidedBy",
+      "Object": "DataFlowNode_0"
+    },
+    {
+      "Subject": "Location_0",
+      "Verb": "HasCoordinates",
+      "Object": "DrillingDataPoint_2"
+    },
+    {
+      "Subject": "Location_1",
+      "Verb": "HasCoordinates",
+      "Object": "DrillingDataPoint_3"
+    },
+    {
+      "Subject": "DrillingDataPoint_2",
+      "Verb": "IsOfMeasurableQuantity",
+      "Object": "DepthQuantity_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_3",
+      "Verb": "IsOfMeasurableQuantity",
+      "Object": "DepthQuantity_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_4",
+      "Verb": "IsOfMeasurableQuantity",
+      "Object": "FormationPorosityQuantity_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_5",
+      "Verb": "IsOfMeasurableQuantity",
+      "Object": "FormationPorosityQuantity_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_6",
+      "Verb": "IsOfMeasurableQuantity",
+      "Object": "FormationPorosityQuantity_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_4",
+      "Verb": "IsPhysicallyLocatedAt",
+      "Object": "Location_2"
+    },
+    {
+      "Subject": "DrillingDataPoint_5",
+      "Verb": "IsPhysicallyLocatedAt",
+      "Object": "Location_2"
+    },
+    {
+      "Subject": "DrillingDataPoint_6",
+      "Verb": "IsPhysicallyLocatedAt",
+      "Object": "Location_2"
+    },
+    {
+      "Subject": "Location_2",
+      "Verb": "HasCoordinates",
+      "Object": "DrillingDataPoint_7"
+    },
+    {
+      "Subject": "DrillingDataPoint_5",
+      "Verb": "IsTransmittedBy",
+      "Object": "MudPulseTelemetry_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_6",
+      "Verb": "IsTransmittedBy",
+      "Object": "MudPulseTelemetry_0"
+    },
+    {
+      "Subject": "DrillingDataPoint_4",
+      "Verb": "IsTransmittedBy",
+      "Object": "MudPulseTelemetry_0"
+    },
+    {
+      "Subject": "RockDensityQuantity_0",
+      "Verb": "IsObservableFrom",
+      "Object": "MassDensityQuantity_0"
+    }
+  ]
+}

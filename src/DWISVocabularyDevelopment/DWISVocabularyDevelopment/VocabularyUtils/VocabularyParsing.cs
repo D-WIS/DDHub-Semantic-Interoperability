@@ -426,6 +426,63 @@ namespace DWIS.Vocabulary.Utils
         }
 
 
+        public static bool FromMDFile(string fileName, DWISVocabulary vocabulary, out DWISInstance instance)
+        {
+            instance = null;
+            string[] allLines = System.IO.File.ReadAllLines(fileName);
+            if (allLines != null && allLines.Length > 0)
+            {
+                instance = new DWISInstance(System.IO.Path.GetFileNameWithoutExtension(fileName), vocabulary);
+                instance.Population = new SimplePopulation();
+                instance.Sentences = new SimpleSentenceCollection();
+                foreach (string line in allLines)
+                {
+                    if (line.Contains("mermaid"))
+                    {
+                        return true;
+                    }
+                    else if (line.StartsWith("- "))
+                    {
+                        var l = line.Remove(0, "- ".Length);
+                        if (l.Contains(':'))
+                        {
+                            var els = l.Split(':');
+                            if (els.Length == 2)
+                            {
+                                var t = els[0].Trim();
+                                var noun = vocabulary.Nouns.Find(no => no.Name == t);
+                                if (noun != null)
+                                {
+                                    var n = els[1].Trim();
+                                    instance.Population.Add(new TypedIndividual(n, noun));
+                                }
+                            }
+                        }
+                        else
+                        {
+                            var els = l.Split(' ');
+                            if (els.Length == 3)
+                            {
+                                var s = els[0].Trim();
+                                var o = els[2].Trim();
+                                var v = els[1].Trim();
+                                var verb = vocabulary.Verbs.Find(ve => ve.Name == v);
+                                var subject = instance.Population.FirstOrDefault(i => i.Name == s);
+                                var sentenceObjecT = instance.Population.FirstOrDefault(i => i.Name == o);
+                                if (verb != null && subject!=null && sentenceObjecT!=null)
+                                {
+                                    instance.Sentences.Add(new Sentence(subject, verb, sentenceObjecT));
+                                }
+                            }
+                        }
+                    }
+                }
+                return true;
+            }
+            return false;
+        }
+
+
         private static IEnumerable<string> GetTagLines(string[] files, string tag)
         {
             var sub = files.Select(f => System.IO.File.ReadAllLines(f).Where(l => l.Contains(tag)).ToList()).ToList();

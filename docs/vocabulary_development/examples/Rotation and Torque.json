@@ -1,0 +1,132 @@
+{
+  "Name": "Rotation and Torque",
+  "Population": [
+    {
+      "TypeName": "SurfaceRPM",
+      "Attributes": null,
+      "Name": "SurfaceRPM_0"
+    },
+    {
+      "TypeName": "TopDriveShaft",
+      "Attributes": null,
+      "Name": "TopDriveShaft_0"
+    },
+    {
+      "TypeName": "SurfaceTorque",
+      "Attributes": null,
+      "Name": "SurfaceTorque_0"
+    },
+    {
+      "TypeName": "SurfaceRPMQuantity",
+      "Attributes": null,
+      "Name": "SurfaceRPMQuantity_0"
+    },
+    {
+      "TypeName": "SurfaceTorqueQuantity",
+      "Attributes": null,
+      "Name": "SurfaceTorqueQuantity_0"
+    },
+    {
+      "TypeName": "Transformation",
+      "Attributes": null,
+      "Name": "Transformation_0"
+    },
+    {
+      "TypeName": "Transformation",
+      "Attributes": null,
+      "Name": "Transformation_1"
+    },
+    {
+      "TypeName": "DataFlowNode",
+      "Attributes": null,
+      "Name": "DataFlowNode_0"
+    },
+    {
+      "TypeName": "TopSideTelemetry",
+      "Attributes": null,
+      "Name": "TopSideTelemetry_0"
+    },
+    {
+      "TypeName": "TimeWindowMovingAverage",
+      "Attributes": [
+        {
+          "AttributeName": "TimeWindow",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "TimeWindowMovingAverage_0"
+    },
+    {
+      "TypeName": "TimeWindowMovingAverage",
+      "Attributes": [
+        {
+          "AttributeName": "TimeWindow",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "TimeWindowMovingAverage_1"
+    }
+  ],
+  "Sentences": [
+    {
+      "Subject": "SurfaceRPM_0",
+      "Verb": "IsMechanicallyLocatedAt",
+      "Object": "TopDriveShaft_0"
+    },
+    {
+      "Subject": "SurfaceTorque_0",
+      "Verb": "IsMechanicallyLocatedAt",
+      "Object": "TopDriveShaft_0"
+    },
+    {
+      "Subject": "SurfaceRPM_0",
+      "Verb": "IsOfMeasurableQuantity",
+      "Object": "SurfaceRPMQuantity_0"
+    },
+    {
+      "Subject": "SurfaceTorque_0",
+      "Verb": "IsOfMeasurableQuantity",
+      "Object": "SurfaceTorqueQuantity_0"
+    },
+    {
+      "Subject": "Transformation_0",
+      "Verb": "IsTransformationOutput",
+      "Object": "SurfaceRPM_0"
+    },
+    {
+      "Subject": "Transformation_1",
+      "Verb": "IsTransformationOutput",
+      "Object": "SurfaceTorque_0"
+    },
+    {
+      "Subject": "SurfaceRPM_0",
+      "Verb": "IsProvidedBy",
+      "Object": "DataFlowNode_0"
+    },
+    {
+      "Subject": "SurfaceTorque_0",
+      "Verb": "IsProvidedBy",
+      "Object": "DataFlowNode_0"
+    },
+    {
+      "Subject": "SurfaceRPM_0",
+      "Verb": "IsTransmittedBy",
+      "Object": "TopSideTelemetry_0"
+    },
+    {
+      "Subject": "SurfaceTorque_0",
+      "Verb": "IsTransmittedBy",
+      "Object": "TopSideTelemetry_0"
+    },
+    {
+      "Subject": "SurfaceRPM_0",
+      "Verb": "IsProcessedBy",
+      "Object": "TimeWindowMovingAverage_0"
+    },
+    {
+      "Subject": "SurfaceTorque_0",
+      "Verb": "IsProcessedBy",
+      "Object": "TimeWindowMovingAverage_1"
+    }
+  ]
+}

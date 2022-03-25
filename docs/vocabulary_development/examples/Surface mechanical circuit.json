@@ -1,0 +1,147 @@
+{
+  "Name": "Surface mechanical circuit",
+  "Population": [
+    {
+      "TypeName": "ActiveLine",
+      "Attributes": null,
+      "Name": "ActiveLine_0"
+    },
+    {
+      "TypeName": "DrawWorks",
+      "Attributes": null,
+      "Name": "DrawWorks_0"
+    },
+    {
+      "TypeName": "CrownBlock",
+      "Attributes": null,
+      "Name": "CrownBlock_0"
+    },
+    {
+      "TypeName": "DeadLine",
+      "Attributes": null,
+      "Name": "DeadLine_0"
+    },
+    {
+      "TypeName": "SupportLine",
+      "Attributes": null,
+      "Name": "SupportLine_0"
+    },
+    {
+      "TypeName": "DrawWorks",
+      "Attributes": null,
+      "Name": "DrawWorks_1"
+    },
+    {
+      "TypeName": "Dolly",
+      "Attributes": null,
+      "Name": "Dolly_0"
+    },
+    {
+      "TypeName": "DollyRail",
+      "Attributes": null,
+      "Name": "DollyRail_0"
+    },
+    {
+      "TypeName": "Elevator",
+      "Attributes": null,
+      "Name": "Elevator_0"
+    },
+    {
+      "TypeName": "DrillString",
+      "Attributes": null,
+      "Name": "DrillString_0"
+    },
+    {
+      "TypeName": "TravellingBlock",
+      "Attributes": null,
+      "Name": "TravellingBlock_0"
+    },
+    {
+      "TypeName": "TopDriveBody",
+      "Attributes": null,
+      "Name": "TopDriveBody_0"
+    },
+    {
+      "TypeName": "TopDriveShaft",
+      "Attributes": null,
+      "Name": "TopDriveShaft_0"
+    },
+    {
+      "TypeName": "TopDriveHook",
+      "Attributes": null,
+      "Name": "TopDriveHook_0"
+    }
+  ],
+  "Sentences": [
+    {
+      "Subject": "ActiveLine_0",
+      "Verb": "IsMechanicallyConnectTo",
+      "Object": "DrawWorks_0"
+    },
+    {
+      "Subject": "CrownBlock_0",
+      "Verb": "IsMechanicallyConnectTo",
+      "Object": "ActiveLine_0"
+    },
+    {
+      "Subject": "CrownBlock_0",
+      "Verb": "IsMechanicallyConnectTo",
+      "Object": "DeadLine_0"
+    },
+    {
+      "Subject": "CrownBlock_0",
+      "Verb": "IsMechanicallyConnectTo",
+      "Object": "SupportLine_0"
+    },
+    {
+      "Subject": "DeadLine_0",
+      "Verb": "IsMechanicallyConnectTo",
+      "Object": "DrawWorks_1"
+    },
+    {
+      "Subject": "Dolly_0",
+      "Verb": "IsMechanicallyConnectTo",
+      "Object": "DollyRail_0"
+    },
+    {
+      "Subject": "Elevator_0",
+      "Verb": "IsMechanicallyConnectTo",
+      "Object": "DrillString_0"
+    },
+    {
+      "Subject": "SupportLine_0",
+      "Verb": "IsMechanicallyConnectTo",
+      "Object": "TravellingBlock_0"
+    },
+    {
+      "Subject": "TopDriveBody_0",
+      "Verb": "IsMechanicallyConnectTo",
+      "Object": "Dolly_0"
+    },
+    {
+      "Subject": "TopDriveBody_0",
+      "Verb": "IsMechanicallyConnectTo",
+      "Object": "Elevator_0"
+    },
+    {
+      "Subject": "TopDriveBody_0",
+      "Verb": "IsMechanicallyConnectTo",
+      "Object": "TopDriveShaft_0"
+    },
+    {
+      "Subject": "TopDriveHook_0",
+      "Verb": "IsMechanicallyConnectTo",
+      "Object": "TopDriveBody_0"
+    },
+    {
+      "Subject": "TopDriveShaft_0",
+      "Verb": "IsMechanicallyConnectTo",
+      "Object": "DrillString_0"
+    },
+    {
+      "Subject": "TravellingBlock_0",
+      "Verb": "IsMechanicallyConnectTo",
+      "Object": "TopDriveHook_0"
+    }
+  ]
+}

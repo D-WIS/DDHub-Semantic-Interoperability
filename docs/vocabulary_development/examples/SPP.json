@@ -1,0 +1,67 @@
+{
+  "Name": "SPP",
+  "Population": [
+    {
+      "TypeName": "SPP",
+      "Attributes": null,
+      "Name": "SPP_0"
+    },
+    {
+      "TypeName": "StandPipe",
+      "Attributes": null,
+      "Name": "StandPipe_0"
+    },
+    {
+      "TypeName": "SPPQuantity",
+      "Attributes": null,
+      "Name": "SPPQuantity_0"
+    },
+    {
+      "TypeName": "TimeWindowMovingAverage",
+      "Attributes": [
+        {
+          "AttributeName": "TimeWindow",
+          "AttributeValue": null
+        }
+      ],
+      "Name": "TimeWindowMovingAverage_0"
+    },
+    {
+      "TypeName": "TopSideTelemetry",
+      "Attributes": null,
+      "Name": "TopSideTelemetry_0"
+    },
+    {
+      "TypeName": "DataFlowNode",
+      "Attributes": null,
+      "Name": "DataFlowNode_0"
+    }
+  ],
+  "Sentences": [
+    {
+      "Subject": "SPP_0",
+      "Verb": "IsHydraulicallyLocatedAt",
+      "Object": "StandPipe_0"
+    },
+    {
+      "Subject": "SPP_0",
+      "Verb": "IsOfMeasurableQuantity",
+      "Object": "SPPQuantity_0"
+    },
+    {
+      "Subject": "SPP_0",
+      "Verb": "IsProcessedBy",
+      "Object": "TimeWindowMovingAverage_0"
+    },
+    {
+      "Subject": "SPP_0",
+      "Verb": "IsTransmittedBy",
+      "Object": "TopSideTelemetry_0"
+    },
+    {
+      "Subject": "SPP_0",
+      "Verb": "IsProvidedBy",
+      "Object": "DataFlowNode_0"
+    }
+  ]
+}

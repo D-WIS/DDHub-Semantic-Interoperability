@@ -75,7 +75,7 @@ namespace DWIS.Vocabulary.Development.Actions
         {
             _logger = logger;
             
-            _paths = new ActionPaths(conf.SourceFolder, conf.DestinationFolder);
+            _paths = new ActionPaths(conf.SourceFolder, conf.DestinationFolder, conf.SchemaFolder);
         
         }
         public bool PerformActions()
@@ -107,7 +107,7 @@ namespace DWIS.Vocabulary.Development.Actions
             MDWriting.ToMDFiles(_vocabulary, _paths.DefinitionFilesFolderPath);
             _logger.LogInformation($"Export ontology to {_paths.OntologyFilePath}");
             OWL.OntologyGeneration.GenerateOntology(_paths.OntologyFilePath, _vocabulary);
-
+            SchemaWriter.WriteSchema(_vocabulary, _paths.NounsSchemaPath, _paths.VerbsSchemaPath);
             return true;
         }
 
@@ -204,6 +204,7 @@ namespace DWIS.Vocabulary.Development.Actions
     {
         public string SourceFolder { get;  set; }
         public string DestinationFolder { get; set; }
+        public string SchemaFolder { get; set; }
     }
 
     public class ActionPaths
@@ -215,6 +216,10 @@ namespace DWIS.Vocabulary.Development.Actions
         public static string RDFFolderName { get; set; } = "rdf";
         public static string MDFolderName { get; set; } = "md";
 
+        public string NounsSchemaPath { get; set; }
+        public string VerbsSchemaPath { get; set; }
+
+
         public string MDFolderPath { get; private set; }
         public string SingleMDFilePath { get;private  set; }
         public string DefinitionFilesFolderPath { get;private set; }
@@ -222,7 +227,7 @@ namespace DWIS.Vocabulary.Development.Actions
         public string RDFFolderPath { get; private set; }
         public string OntologyFilePath { get; private set; }
 
-        public ActionPaths(string sourceFolder, string destinationFolder)
+        public ActionPaths(string sourceFolder, string destinationFolder, string schemasFolder)
         {
             char sep = System.IO.Path.DirectorySeparatorChar;
             string mdExtension = ".md";
@@ -235,6 +240,10 @@ namespace DWIS.Vocabulary.Development.Actions
 
             RDFFolderPath = destinationFolder + sep + RDFFolderName;
             OntologyFilePath = RDFFolderPath + sep + SingleFileName;
+
+            NounsSchemaPath = schemasFolder + sep + "Nouns.cs";
+            VerbsSchemaPath = schemasFolder + sep + "Verbs.cs";
+
         }
 
     }
