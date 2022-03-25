@@ -10,7 +10,8 @@ namespace DWIS.Vocabulary.OWL
 {
     public static class OntologyGeneration
     {
-        static string prefix = "http://ddhub.no/";
+        public static string DDHubPrefix = "http://ddhub.no/";
+        public static string SemanticNamespaceSuffix = "Semantics";
 
 
         public static RDFOntology GetOntology(DWIS.Vocabulary.Development.DWISVocabulary vocabulary)
@@ -26,9 +27,9 @@ namespace DWIS.Vocabulary.OWL
             string iri = "https://github.com/D-WIS/DDHub-Semantic-Interoperability/tree/main/docs/vocabulary_development/auto-generated/dwis.owl";
 
 
-            RDFNamespaceRegister.AddNamespace(new RDFNamespace("ddhub", prefix));
+            RDFNamespaceRegister.AddNamespace(new RDFNamespace("ddhub", DDHubPrefix));
 
-            RDFOntology ontology = new RDFOntology(new RDFResource(prefix + ontologyName));
+            RDFOntology ontology = new RDFOntology(new RDFResource(DDHubPrefix + ontologyName));
 
             ontology.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.Comment, new RDFOntologyLiteral(new RDFPlainLiteral(comment, "En")));
             ontology.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.VersionInfo, new RDFOntologyLiteral(new RDFTypedLiteral(versionInfo, RDFModelEnums.RDFDatatypes.XSD_STRING)));
@@ -55,12 +56,12 @@ namespace DWIS.Vocabulary.OWL
             return ontology;
         }
 
-        private static RDFResource AttributeCardinalityRestriction = new RDFResource(prefix + "DWISAttributeCardinalityRestriction");
+        private static RDFResource AttributeCardinalityRestriction = new RDFResource(DDHubPrefix + "DWISAttributeCardinalityRestriction");
 
 
         private static void AddClass(Tree<Noun> currentTree, RDFOntologyClass parent, RDFOntology ontology)
         {
-            var current = new RDFOntologyClass(new RDFResource(prefix + currentTree.RootItem.Name));
+            var current = new RDFOntologyClass(new RDFResource(DDHubPrefix + currentTree.RootItem.Name));
             ontology.Model.ClassModel.AddClass(current);
             ontology.Model.ClassModel.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.Comment, current, new RDFOntologyLiteral(new RDFPlainLiteral(currentTree.RootItem.Description, "En")));
 
@@ -72,7 +73,7 @@ namespace DWIS.Vocabulary.OWL
             {
                 foreach (var attribute in currentTree.RootItem.NounAttributes)
                 {
-                    RDFOntologyDatatypeProperty prop = new RDFOntologyDatatypeProperty(new RDFResource(prefix + currentTree.RootItem.Name + "/" + attribute.Name));
+                    RDFOntologyDatatypeProperty prop = new RDFOntologyDatatypeProperty(new RDFResource(DDHubPrefix + currentTree.RootItem.Name + "/" + attribute.Name));
                     ontology.Model.PropertyModel.AddProperty(prop);
                     prop.SetDomain(current);
                     prop.SetRange(RDFSharp.Model.RDFVocabulary.XSD.FLOAT.ToRDFOntologyClass());
@@ -94,7 +95,7 @@ namespace DWIS.Vocabulary.OWL
 
         private static void AddVerb(Tree<Verb> currentTree, RDFOntologyObjectProperty parent, RDFOntology ontology)
         {
-            var current = new RDFOntologyObjectProperty(new RDFResource(prefix + currentTree.RootItem.Name));
+            var current = new RDFOntologyObjectProperty(new RDFResource(DDHubPrefix + currentTree.RootItem.Name));
             ontology.Model.PropertyModel.AddProperty(current);
 
             ontology.Model.PropertyModel.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.Comment, current, new RDFOntologyLiteral(new RDFPlainLiteral(currentTree.RootItem.Description, "En")));
@@ -105,12 +106,12 @@ namespace DWIS.Vocabulary.OWL
             }
 
 
-            current.SetDomain(new RDFOntologyClass(new RDFResource(prefix + currentTree.RootItem.DomainNounName)));
-            current.SetRange(new RDFOntologyClass(new RDFResource(prefix + currentTree.RootItem.RangeNounName)));
+            current.SetDomain(new RDFOntologyClass(new RDFResource(DDHubPrefix + currentTree.RootItem.DomainNounName)));
+            current.SetRange(new RDFOntologyClass(new RDFResource(DDHubPrefix + currentTree.RootItem.RangeNounName)));
 
             if (currentTree.RootItem.MinCardinality > 0 || currentTree.RootItem.MaxCardinality > 0)
             {
-                RDFOntologyCardinalityRestriction cardinalityRestriction = new RDFOntologyCardinalityRestriction(new RDFResource(prefix + "DWSIVerbCardinalityRestriction" + currentTree.RootItem.Name), current, currentTree.RootItem.MinCardinality, currentTree.RootItem.MaxCardinality);
+                RDFOntologyCardinalityRestriction cardinalityRestriction = new RDFOntologyCardinalityRestriction(new RDFResource(DDHubPrefix + "DWSIVerbCardinalityRestriction" + currentTree.RootItem.Name), current, currentTree.RootItem.MinCardinality, currentTree.RootItem.MaxCardinality);
                 ontology.Model.ClassModel.AddRestriction(cardinalityRestriction);
             }
 
