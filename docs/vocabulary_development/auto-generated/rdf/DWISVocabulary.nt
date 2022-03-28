@@ -170,9 +170,9 @@
 <http://ddhub.no/VerticalOndulationModelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/HorizontalOndulationModelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ModellingDimensions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://ddhub.no/1DModelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://ddhub.no/2DModelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://ddhub.no/3DModelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/OneDModelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/TwoDModelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ThreeDModelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ModellingDiscretization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/BoundaryDiscretization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/StrainWaveBasedDiscretization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -419,9 +419,9 @@
 <http://ddhub.no/VerticalOndulationModelling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/TangentialModelling> .
 <http://ddhub.no/HorizontalOndulationModelling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/TangentialModelling> .
 <http://ddhub.no/ModellingDimensions> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
-<http://ddhub.no/1DModelling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingDimensions> .
-<http://ddhub.no/2DModelling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingDimensions> .
-<http://ddhub.no/3DModelling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingDimensions> .
+<http://ddhub.no/OneDModelling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingDimensions> .
+<http://ddhub.no/TwoDModelling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingDimensions> .
+<http://ddhub.no/ThreeDModelling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingDimensions> .
 <http://ddhub.no/ModellingDiscretization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/BoundaryDiscretization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingDiscretization> .
 <http://ddhub.no/StrainWaveBasedDiscretization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingDiscretization> .
@@ -669,9 +669,9 @@
 <http://ddhub.no/VerticalOndulationModelling> <http://www.w3.org/2000/01/rdf-schema#comment> "The model accounts for the change of inclination of some parts of the physical system."@EN .
 <http://ddhub.no/HorizontalOndulationModelling> <http://www.w3.org/2000/01/rdf-schema#comment> "The model accounts for the change of azimuth of some parts of the physical system."@EN .
 <http://ddhub.no/ModellingDimensions> <http://www.w3.org/2000/01/rdf-schema#comment> "The number of dimensions that are accounted by the model"@EN .
-<http://ddhub.no/1DModelling> <http://www.w3.org/2000/01/rdf-schema#comment> "The model only accounts for one dimension"@EN .
-<http://ddhub.no/2DModelling> <http://www.w3.org/2000/01/rdf-schema#comment> "The model only accounts for two dimensions"@EN .
-<http://ddhub.no/3DModelling> <http://www.w3.org/2000/01/rdf-schema#comment> "The model only accounts for three dimensions"@EN .
+<http://ddhub.no/OneDModelling> <http://www.w3.org/2000/01/rdf-schema#comment> "The model only accounts for one dimension"@EN .
+<http://ddhub.no/TwoDModelling> <http://www.w3.org/2000/01/rdf-schema#comment> "The model only accounts for two dimensions"@EN .
+<http://ddhub.no/ThreeDModelling> <http://www.w3.org/2000/01/rdf-schema#comment> "The model only accounts for three dimensions"@EN .
 <http://ddhub.no/ModellingDiscretization> <http://www.w3.org/2000/01/rdf-schema#comment> "A characteristic of the discretization made by the model."@EN .
 <http://ddhub.no/BoundaryDiscretization> <http://www.w3.org/2000/01/rdf-schema#comment> "A model only considers the bounds of the physical system and does not apply any intermediate discretization."@EN .
 <http://ddhub.no/StrainWaveBasedDiscretization> <http://www.w3.org/2000/01/rdf-schema#comment> "A model can properly estimate values at the level of strain wave propagation."@EN .

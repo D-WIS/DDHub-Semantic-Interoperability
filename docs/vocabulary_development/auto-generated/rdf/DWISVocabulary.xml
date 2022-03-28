@@ -962,17 +962,17 @@
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
     <rdfs:comment xml:lang="EN">The number of dimensions that are accounted by the model</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/1DModelling">
+  <rdf:Description rdf:about="http://ddhub.no/OneDModelling">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/ModellingDimensions" />
     <rdfs:comment xml:lang="EN">The model only accounts for one dimension</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/2DModelling">
+  <rdf:Description rdf:about="http://ddhub.no/TwoDModelling">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/ModellingDimensions" />
     <rdfs:comment xml:lang="EN">The model only accounts for two dimensions</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/3DModelling">
+  <rdf:Description rdf:about="http://ddhub.no/ThreeDModelling">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/ModellingDimensions" />
     <rdfs:comment xml:lang="EN">The model only accounts for three dimensions</rdfs:comment>

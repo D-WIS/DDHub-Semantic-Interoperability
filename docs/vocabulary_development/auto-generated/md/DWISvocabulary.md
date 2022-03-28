@@ -1450,7 +1450,7 @@
 - Description: The number of dimensions that are accounted by the model
 - Examples:
 - Definition set: Model
-## 1DModelling <!-- NOUN -->
+## OneDModelling <!-- NOUN -->
 - Display name: 1D modelling
 - Parent class: [ModellingDimensions](#ModellingDimensions)
 - Attributes:
@@ -1458,7 +1458,7 @@
 - Description: The model only accounts for one dimension
 - Examples:
 - Definition set: Model
-## 2DModelling <!-- NOUN -->
+## TwoDModelling <!-- NOUN -->
 - Display name: 2D modelling
 - Parent class: [ModellingDimensions](#ModellingDimensions)
 - Attributes:
@@ -1466,7 +1466,7 @@
 - Description: The model only accounts for two dimensions
 - Examples:
 - Definition set: Model
-## 3DModelling <!-- NOUN -->
+## ThreeDModelling <!-- NOUN -->
 - Display name: 3D modelling
 - Parent class: [ModellingDimensions](#ModellingDimensions)
 - Attributes:

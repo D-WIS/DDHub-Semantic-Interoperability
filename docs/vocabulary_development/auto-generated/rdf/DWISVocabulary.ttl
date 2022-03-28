@@ -5,18 +5,6 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @base <http://ddhub.no/DWISVocabulary>.
 
-<http://ddhub.no/1DModelling> a owl:Class; 
-                              rdfs:comment "The model only accounts for one dimension"@EN; 
-                              rdfs:subClassOf ddhub:ModellingDimensions. 
-
-<http://ddhub.no/2DModelling> a owl:Class; 
-                              rdfs:comment "The model only accounts for two dimensions"@EN; 
-                              rdfs:subClassOf ddhub:ModellingDimensions. 
-
-<http://ddhub.no/3DModelling> a owl:Class; 
-                              rdfs:comment "The model only accounts for three dimensions"@EN; 
-                              rdfs:subClassOf ddhub:ModellingDimensions. 
-
 ddhub:AccelerationQuantity a owl:Class; 
                            rdfs:comment ""@EN; 
                            rdfs:subClassOf ddhub:Quantity. 
@@ -1377,6 +1365,10 @@ ddhub:OneDimensionalReferenceFrame a owl:Class;
                                    rdfs:comment ""@EN; 
                                    rdfs:subClassOf ddhub:ReferenceFrame. 
 
+ddhub:OneDModelling a owl:Class; 
+                    rdfs:comment "The model only accounts for one dimension"@EN; 
+                    rdfs:subClassOf ddhub:ModellingDimensions. 
+
 ddhub:OpenChannel a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:HydraulicBranch. 
@@ -1655,6 +1647,10 @@ ddhub:ThreeDimensionalReferenceFrame a owl:Class;
                                      rdfs:comment ""@EN; 
                                      rdfs:subClassOf ddhub:ReferenceFrame. 
 
+ddhub:ThreeDModelling a owl:Class; 
+                      rdfs:comment "The model only accounts for three dimensions"@EN; 
+                      rdfs:subClassOf ddhub:ModellingDimensions. 
+
 ddhub:ThreeWayManifold a owl:Class; 
                        rdfs:comment ""@EN; 
                        rdfs:subClassOf ddhub:DrillingEquipment. 
@@ -1761,6 +1757,10 @@ ddhub:TVDQuantity a owl:Class;
 ddhub:TwoDimensionalReferenceFrame a owl:Class; 
                                    rdfs:comment ""@EN; 
                                    rdfs:subClassOf ddhub:ReferenceFrame. 
+
+ddhub:TwoDModelling a owl:Class; 
+                    rdfs:comment "The model only accounts for two dimensions"@EN; 
+                    rdfs:subClassOf ddhub:ModellingDimensions. 
 
 ddhub:UnderReamer a owl:Class; 
                   rdfs:comment ""@EN; 

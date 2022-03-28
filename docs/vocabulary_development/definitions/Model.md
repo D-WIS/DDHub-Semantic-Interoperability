@@ -92,21 +92,21 @@
 - Specialization: 
 - Description: The number of dimensions that are accounted by the model 
 - Examples:
-## 1DModelling <!-- NOUN -->
+## OneDModelling <!-- NOUN -->
 - Display name: 1D modelling
 - Parent class: ModellingDimensions
 - Attributes:
 - Specialization: 
 - Description: The model only accounts for one dimension 
 - Examples: A hydraulic model only considers the axial direction for the flow in a pipe and in an annulus.
-## 2DModelling <!-- NOUN -->
+## TwoDModelling <!-- NOUN -->
 - Display name: 2D modelling
 - Parent class: ModellingDimensions
 - Attributes:
 - Specialization: 
 - Description: The model only accounts for two dimensions
 - Examples: A hydraulic calculation considers the fluid velocity field in a cross-section but does not consider the axial direction. A heat transfer model considers the radial and axial heat transfer but assumes complete angular symmetry.
-## 3DModelling <!-- NOUN -->
+## ThreeDModelling <!-- NOUN -->
 - Display name: 3D modelling
 - Parent class: ModellingDimensions
 - Attributes:

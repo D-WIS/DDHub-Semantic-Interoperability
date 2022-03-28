@@ -167,9 +167,9 @@ public static class Nouns
 	public static string VerticalOndulationModelling = "VerticalOndulationModelling";
 	public static string HorizontalOndulationModelling = "HorizontalOndulationModelling";
 	public static string ModellingDimensions = "ModellingDimensions";
-	public static string 1DModelling = "1DModelling";
-	public static string 2DModelling = "2DModelling";
-	public static string 3DModelling = "3DModelling";
+	public static string OneDModelling = "OneDModelling";
+	public static string TwoDModelling = "TwoDModelling";
+	public static string ThreeDModelling = "ThreeDModelling";
 	public static string ModellingDiscretization = "ModellingDiscretization";
 	public static string BoundaryDiscretization = "BoundaryDiscretization";
 	public static string StrainWaveBasedDiscretization = "StrainWaveBasedDiscretization";
