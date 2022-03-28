@@ -73,7 +73,7 @@ namespace DWIS.Vocabulary.OWL
             {
                 foreach (var attribute in currentTree.RootItem.NounAttributes)
                 {
-                    RDFOntologyDatatypeProperty prop = new RDFOntologyDatatypeProperty(new RDFResource(DDHubPrefix + currentTree.RootItem.Name + "/" + attribute.Name));
+                    RDFOntologyDatatypeProperty prop = new RDFOntologyDatatypeProperty(new RDFResource(DDHubPrefix +  attribute.Name));
                     ontology.Model.PropertyModel.AddProperty(prop);
                     prop.SetDomain(current);
                     prop.SetRange(RDFSharp.Model.RDFVocabulary.XSD.FLOAT.ToRDFOntologyClass());
