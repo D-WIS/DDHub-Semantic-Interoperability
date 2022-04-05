@@ -213,7 +213,7 @@ namespace DWIS.Vocabulary.Development.Actions
                 {
                     string exportFileName = _paths.ExamplesFilesFolderPath + System.IO.Path.DirectorySeparatorChar + System.IO.Path.GetFileNameWithoutExtension(file) + ".md";
 
-                    MDWriting.ToMDFile(instance, exportFileName, _vocabulary, true, true);
+                    MDWriting.ToMDFile(instance, exportFileName, _vocabulary, true, false);
                 }
             }
             return this;

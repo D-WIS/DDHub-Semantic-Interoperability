@@ -1,47 +1,47 @@
 # Hookloads
-- (#DrillingDataPoint):DrillingDataPoint_0
-- (#DeadLine):DeadLine_0
-- (#HookLoad):HookLoad_0
-- (#TravellingBlock):TravellingBlock_0
-- (#HookLoad):HookLoad_1
-- (#TopDriveShaft):TopDriveShaft_0
-- (#DrillingDataPoint):DrillingDataPoint_1
-- (#DrillingDataPoint):DrillingDataPoint_2
-- (#HookloadQuantity):HookloadQuantity_0
-- (#Transformation):Transformation_0
-- (#ForceToLoadTransformation):ForceToLoadTransformation_0
-- (#ForceToLoadTransformation):ForceToLoadTransformation_1
-- (#DrillingDataPoint):DrillingDataPoint_3
-- (#TopSideTelemetry):TopSideTelemetry_0
-- (#DataFlowNode):DataFlowNode_0
-- (#TimeWindowMovingAverage):TimeWindowMovingAverage_0
-- (#TimeWindowMovingAverage):TimeWindowMovingAverage_1
-- DrillingDataPoint_0 (#IsMechanicallyLocatedAt) DeadLine_0
-- HookLoad_0 (#IsMechanicallyLocatedAt) TravellingBlock_0
-- HookLoad_1 (#IsMechanicallyLocatedAt) TopDriveShaft_0
-- DrillingDataPoint_1 (#IsMechanicallyLocatedAt) TopDriveShaft_0
-- DrillingDataPoint_2 (#IsMechanicallyLocatedAt) TravellingBlock_0
-- HookLoad_0 (#IsOfMeasurableQuantity) HookloadQuantity_0
-- HookLoad_1 (#IsOfMeasurableQuantity) HookloadQuantity_0
-- DrillingDataPoint_0 (#IsTransformationInput) Transformation_0
-- DrillingDataPoint_1 (#IsTransformationInput) ForceToLoadTransformation_0
-- DrillingDataPoint_2 (#IsTransformationInput) ForceToLoadTransformation_1
-- ForceToLoadTransformation_1 (#IsTransformationOutput) HookLoad_0
-- ForceToLoadTransformation_0 (#IsTransformationOutput) HookLoad_1
-- Transformation_0 (#IsTransformationOutput) DrillingDataPoint_2
-- HookLoad_1 (#IsValidBy) DrillingDataPoint_3
-- DrillingDataPoint_0 (#IsTransmittedBy) TopSideTelemetry_0
-- DrillingDataPoint_1 (#IsTransmittedBy) TopSideTelemetry_0
-- HookLoad_0 (#IsTransmittedBy) TopSideTelemetry_0
-- HookLoad_1 (#IsTransmittedBy) TopSideTelemetry_0
-- DrillingDataPoint_2 (#IsTransmittedBy) TopSideTelemetry_0
-- DrillingDataPoint_0 (#IsProvidedBy) DataFlowNode_0
-- DrillingDataPoint_1 (#IsProvidedBy) DataFlowNode_0
-- HookLoad_0 (#IsProvidedBy) DataFlowNode_0
-- HookLoad_1 (#IsProvidedBy) DataFlowNode_0
-- DrillingDataPoint_2 (#IsProvidedBy) DataFlowNode_0
-- HookLoad_0 (#IsProcessedBy) TimeWindowMovingAverage_0
-- HookLoad_1 (#IsProcessedBy) TimeWindowMovingAverage_1
+- DrillingDataPoint:DrillingDataPoint_0
+- DeadLine:DeadLine_0
+- HookLoad:HookLoad_0
+- TravellingBlock:TravellingBlock_0
+- HookLoad:HookLoad_1
+- TopDriveShaft:TopDriveShaft_0
+- DrillingDataPoint:DrillingDataPoint_1
+- DrillingDataPoint:DrillingDataPoint_2
+- HookloadQuantity:HookloadQuantity_0
+- Transformation:Transformation_0
+- ForceToLoadTransformation:ForceToLoadTransformation_0
+- ForceToLoadTransformation:ForceToLoadTransformation_1
+- DrillingDataPoint:DrillingDataPoint_3
+- TopSideTelemetry:TopSideTelemetry_0
+- DataFlowNode:DataFlowNode_0
+- TimeWindowMovingAverage:TimeWindowMovingAverage_0
+- TimeWindowMovingAverage:TimeWindowMovingAverage_1
+- DrillingDataPoint_0 IsMechanicallyLocatedAt DeadLine_0
+- HookLoad_0 IsMechanicallyLocatedAt TravellingBlock_0
+- HookLoad_1 IsMechanicallyLocatedAt TopDriveShaft_0
+- DrillingDataPoint_1 IsMechanicallyLocatedAt TopDriveShaft_0
+- DrillingDataPoint_2 IsMechanicallyLocatedAt TravellingBlock_0
+- HookLoad_0 IsOfMeasurableQuantity HookloadQuantity_0
+- HookLoad_1 IsOfMeasurableQuantity HookloadQuantity_0
+- DrillingDataPoint_0 IsTransformationInput Transformation_0
+- DrillingDataPoint_1 IsTransformationInput ForceToLoadTransformation_0
+- DrillingDataPoint_2 IsTransformationInput ForceToLoadTransformation_1
+- ForceToLoadTransformation_1 IsTransformationOutput HookLoad_0
+- ForceToLoadTransformation_0 IsTransformationOutput HookLoad_1
+- Transformation_0 IsTransformationOutput DrillingDataPoint_2
+- HookLoad_1 IsValidBy DrillingDataPoint_3
+- DrillingDataPoint_0 IsTransmittedBy TopSideTelemetry_0
+- DrillingDataPoint_1 IsTransmittedBy TopSideTelemetry_0
+- HookLoad_0 IsTransmittedBy TopSideTelemetry_0
+- HookLoad_1 IsTransmittedBy TopSideTelemetry_0
+- DrillingDataPoint_2 IsTransmittedBy TopSideTelemetry_0
+- DrillingDataPoint_0 IsProvidedBy DataFlowNode_0
+- DrillingDataPoint_1 IsProvidedBy DataFlowNode_0
+- HookLoad_0 IsProvidedBy DataFlowNode_0
+- HookLoad_1 IsProvidedBy DataFlowNode_0
+- DrillingDataPoint_2 IsProvidedBy DataFlowNode_0
+- HookLoad_0 IsProcessedBy TimeWindowMovingAverage_0
+- HookLoad_1 IsProcessedBy TimeWindowMovingAverage_1
 ```mermaid
 flowchart TD
 	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint[[DrillingDataPoint]]
