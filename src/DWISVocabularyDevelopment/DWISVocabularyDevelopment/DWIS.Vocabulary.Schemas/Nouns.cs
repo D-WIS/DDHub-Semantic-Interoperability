@@ -188,6 +188,7 @@ public static class Nouns
 	public static string OneDimensionalReferenceFrame = "OneDimensionalReferenceFrame";
 	public static string OneDimensionalCartesianReferenceFrame = "OneDimensionalCartesianReferenceFrame";
 	public static string VerticalDepthFrame = "VerticalDepthFrame";
+	public static string VerticalElevationReferenceFrame = "VerticalElevationReferenceFrame";
 	public static string OneDimensionalCurviLinearReferenceFrame = "OneDimensionalCurviLinearReferenceFrame";
 	public static string DrillStringCenterLineFrame = "DrillStringCenterLineFrame";
 	public static string OpenHoleCenterLineFrame = "OpenHoleCenterLineFrame";

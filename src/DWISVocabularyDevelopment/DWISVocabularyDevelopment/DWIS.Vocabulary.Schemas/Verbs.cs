@@ -6,6 +6,7 @@ public static class Verbs
 	public static string IsDependentOn = "IsDependentOn";
 	public static string HasPressureReference = "HasPressureReference";
 	public static string HasTemperatureReference = "HasTemperatureReference";
+	public static string HasElevationReference = "HasElevationReference";
 	public static string Controls = "Controls";
 	public static string HasFunction = "HasFunction";
 	public static string IsCommandFor = "IsCommandFor";

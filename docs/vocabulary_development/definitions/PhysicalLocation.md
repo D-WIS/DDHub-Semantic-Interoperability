@@ -103,6 +103,13 @@ Refers to:
 - Specialization:
 - Description: 
 - Examples:
+## VerticalElevationReferenceFrame <!-- NOUN -->
+- Display name: Vertical Elevation Reference Frame
+- Parent class: OneDimensionalCartesianReferenceFrame
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## OneDimensionalCurviLinearReferenceFrame <!-- NOUN -->
 - Display name: OneDimensionalCurviLinearReferenceFrame
 - Parent class: OneDimensionalReferenceFrame

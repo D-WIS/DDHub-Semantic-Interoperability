@@ -26,3 +26,10 @@
 - Object class: DrillingDataPoint
 - Description: 
 - Examples: 
+## HasElevationReference <!-- VERB -->
+- Display name: HasElevationReference
+- Parent verb: IsDependentOn
+- Subject class: DrillingDataPoint
+- Object class: Location
+- Description: 
+- Examples: 

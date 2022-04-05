@@ -1618,6 +1618,14 @@
 - Description: 
 - Examples:
 - Definition set: PhysicalLocation
+## VerticalElevationReferenceFrame <!-- NOUN -->
+- Display name: Vertical Elevation Reference Frame
+- Parent class: [OneDimensionalCartesianReferenceFrame](#OneDimensionalCartesianReferenceFrame)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
 ## OneDimensionalCurviLinearReferenceFrame <!-- NOUN -->
 - Display name: OneDimensionalCurviLinearReferenceFrame
 - Parent class: [OneDimensionalReferenceFrame](#OneDimensionalReferenceFrame)
@@ -2270,6 +2278,16 @@
 - Parent verb: [IsDependentOn](#IsDependentOn)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataDependencies
+## HasElevationReference <!-- VERB -->
+- Display name: HasElevationReference
+- Parent verb: [IsDependentOn](#IsDependentOn)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [Location](#Location)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 

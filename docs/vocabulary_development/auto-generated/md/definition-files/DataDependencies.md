@@ -32,3 +32,13 @@
 - Description: 
 - Examples: 
 - Definition set: DataDependencies
+## HasElevationReference <!-- VERB -->
+- Display name: HasElevationReference
+- Parent verb: [IsDependentOn](./DataDependencies.md#IsDependentOn)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [Location](./PhysicalLocation.md#Location)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataDependencies

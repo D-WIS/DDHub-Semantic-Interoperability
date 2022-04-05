@@ -514,6 +514,12 @@ ddhub:HasDynamicValue a owl:ObjectProperty;
                       rdfs:range ddhub:DynamicDrillingSignal; 
                       rdfs:subPropertyOf ddhub:HasValue. 
 
+ddhub:HasElevationReference a owl:ObjectProperty; 
+                            rdfs:comment ""@EN; 
+                            rdfs:domain ddhub:DrillingDataPoint; 
+                            rdfs:range ddhub:Location; 
+                            rdfs:subPropertyOf ddhub:IsDependentOn. 
+
 ddhub:HasEndJunction a owl:ObjectProperty; 
                      rdfs:comment ""@EN; 
                      rdfs:domain ddhub:HydraulicBranch; 
@@ -1804,6 +1810,10 @@ ddhub:VelocityQuantity a owl:Class;
 ddhub:VerticalDepthFrame a owl:Class; 
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:OneDimensionalCartesianReferenceFrame. 
+
+ddhub:VerticalElevationReferenceFrame a owl:Class; 
+                                      rdfs:comment ""@EN; 
+                                      rdfs:subClassOf ddhub:OneDimensionalCartesianReferenceFrame. 
 
 ddhub:VerticalOndulationModelling a owl:Class; 
                                   rdfs:comment "The model accounts for the change of inclination of some parts of the physical system."@EN; 

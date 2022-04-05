@@ -113,6 +113,14 @@
 - Description: 
 - Examples:
 - Definition set: PhysicalLocation
+## VerticalElevationReferenceFrame <!-- NOUN -->
+- Display name: Vertical Elevation Reference Frame
+- Parent class: [OneDimensionalCartesianReferenceFrame](./PhysicalLocation.md#OneDimensionalCartesianReferenceFrame)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
 ## OneDimensionalCurviLinearReferenceFrame <!-- NOUN -->
 - Display name: OneDimensionalCurviLinearReferenceFrame
 - Parent class: [OneDimensionalReferenceFrame](./PhysicalLocation.md#OneDimensionalReferenceFrame)
