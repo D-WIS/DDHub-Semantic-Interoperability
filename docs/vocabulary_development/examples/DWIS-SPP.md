@@ -19,5 +19,5 @@
 - SPP_0 IsPhysicallyLocatedAt StandPipeLocation
 - StandPipeLocation HasCoordinates StandPipeElevation
 - StandPipeLocation HasReferenceFrame ElevationReferenceFrame
-- ElevationReferenceFrame HasOrigin DrillFloorLocation
+- ElevationReferenceFrame HasReferenceFrameOrigin DrillFloorLocation
 

@@ -17,6 +17,7 @@
 - SPP_0 IsPhysicallyLocatedAt StandPipeLocation
 - StandPipeLocation HasCoordinates StandPipeElevation
 - StandPipeLocation HasReferenceFrame ElevationReferenceFrame
+- ElevationReferenceFrame HasReferenceFrameOrigin DrillFloorLocation
 ```mermaid
 flowchart TD
 	SPP_0([SPP_0]) --> DrillingDataPoint[[DrillingDataPoint]]
@@ -37,4 +38,5 @@ flowchart TD
 	 SPP_0 -- IsPhysicallyLocatedAt --> StandPipeLocation 
 	 StandPipeLocation -- HasCoordinates --> StandPipeElevation 
 	 StandPipeLocation -- HasReferenceFrame --> ElevationReferenceFrame 
+	 ElevationReferenceFrame -- HasReferenceFrameOrigin --> DrillFloorLocation 
 ```
