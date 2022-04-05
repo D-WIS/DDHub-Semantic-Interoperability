@@ -435,6 +435,7 @@ namespace DWIS.Vocabulary.Utils
                 instance = new DWISInstance(System.IO.Path.GetFileNameWithoutExtension(fileName), vocabulary);
                 instance.Population = new SimplePopulation();
                 instance.Sentences = new SimpleSentenceCollection();
+                instance.ClassAssertions = new SimpleClassAssertionCollection();
                 foreach (string line in allLines)
                 {
                     if (line.Contains("mermaid"))
@@ -468,10 +469,25 @@ namespace DWIS.Vocabulary.Utils
                                 var v = els[1].Trim();
                                 var verb = vocabulary.Verbs.Find(ve => ve.Name == v);
                                 var subject = instance.Population.FirstOrDefault(i => i.Name == s);
-                                var sentenceObjecT = instance.Population.FirstOrDefault(i => i.Name == o);
-                                if (verb != null && subject!=null && sentenceObjecT!=null)
+
+                                if (verb != null && subject != null )
                                 {
-                                    instance.Sentences.Add(new Sentence(subject, verb, sentenceObjecT));
+                                    if (verb.Name == "BelongsToClass")
+                                    {
+                                        var sentenceObjecT = vocabulary.Nouns.FirstOrDefault(i => i.Name == o);
+                                        if (sentenceObjecT != null)
+                                        {
+                                            instance.ClassAssertions.Add(new ClassAssertion(subject, verb, sentenceObjecT));
+                                        }
+                                    }
+                                    else
+                                    {
+                                        var sentenceObjecT = instance.Population.FirstOrDefault(i => i.Name == o);
+                                        if (sentenceObjecT != null)
+                                        {
+                                            instance.Sentences.Add(new Sentence(subject, verb, sentenceObjecT));
+                                        }
+                                    }
                                 }
                             }
                         }

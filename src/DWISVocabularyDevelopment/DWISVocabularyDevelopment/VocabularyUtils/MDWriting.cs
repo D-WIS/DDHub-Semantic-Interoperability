@@ -88,6 +88,19 @@ namespace DWIS.Vocabulary.Utils
             }
         }
 
+        public static void ClassAssertionToMD(StringBuilder builder, ClassAssertion sentence, DWIS.Vocabulary.Development.Vocabulary vocabulary, bool useLinks = false)
+        {
+            if (useLinks)
+            {
+                builder.AppendLine("- " + sentence.Subject + " " + GetLink(sentence.Verb, vocabulary: vocabulary, route: "../") + " " + sentence.Class);
+            }
+            else
+            {
+                builder.AppendLine("- " + sentence.Subject + " " + sentence.Verb + " " + sentence.Class);
+            }
+        }
+
+
         public static void SentenceToMD(StringBuilder builder, Sentence sentence, DWIS.Vocabulary.Development.Vocabulary vocabulary, bool useLinks = false)
         {
             if (useLinks)
@@ -209,6 +222,13 @@ namespace DWIS.Vocabulary.Utils
             {
                 IndividualToMD(builder, i, vocabulary, useLinks);
             }
+
+
+            foreach (var v in instance.ClassAssertions)
+            {
+                ClassAssertionToMD(builder, v, vocabulary, useLinks);
+            }
+
             foreach (var v in instance.Sentences)
             {
                 SentenceToMD(builder, v, vocabulary, useLinks);
