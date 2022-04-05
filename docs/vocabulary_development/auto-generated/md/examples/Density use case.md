@@ -25,18 +25,19 @@
 - TemperatureIn_1 IsOfMeasurableQuantity FluidTemperatureInQuantity_0
 ```mermaid
 flowchart TD
-	DensityIn_0([DensityIn_0]) --> DensityIn[[DensityIn]]
-	TemperatureIn_0([TemperatureIn_0]) --> TemperatureIn[[TemperatureIn]]
-	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint[[DrillingDataPoint]]
-	DensityIn_1([DensityIn_1]) --> DensityIn[[DensityIn]]
-	SPP_0([SPP_0]) --> SPP[[SPP]]
-	TemperatureIn_1([TemperatureIn_1]) --> TemperatureIn[[TemperatureIn]]
-	ActivePit_0([ActivePit_0]) --> ActivePit[[ActivePit]]
-	MudMixing_0([MudMixing_0]) --> MudMixing[[MudMixing]]
-	StandPipe_0([StandPipe_0]) --> StandPipe[[StandPipe]]
-	FluidTemperatureInQuantity_0([FluidTemperatureInQuantity_0]) --> FluidTemperatureInQuantity[[FluidTemperatureInQuantity]]
-	PressureQuantity_0([PressureQuantity_0]) --> PressureQuantity[[PressureQuantity]]
-	FluidDensityInQuantity_0([FluidDensityInQuantity_0]) --> FluidDensityInQuantity[[FluidDensityInQuantity]]
+	 classDef typeClass fill:#f96;
+	DensityIn_0([DensityIn_0]) --> DensityIn:::classDef[[DensityIn]]
+	TemperatureIn_0([TemperatureIn_0]) --> TemperatureIn:::classDef[[TemperatureIn]]
+	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint:::classDef[[DrillingDataPoint]]
+	DensityIn_1([DensityIn_1]) --> DensityIn:::classDef[[DensityIn]]
+	SPP_0([SPP_0]) --> SPP:::classDef[[SPP]]
+	TemperatureIn_1([TemperatureIn_1]) --> TemperatureIn:::classDef[[TemperatureIn]]
+	ActivePit_0([ActivePit_0]) --> ActivePit:::classDef[[ActivePit]]
+	MudMixing_0([MudMixing_0]) --> MudMixing:::classDef[[MudMixing]]
+	StandPipe_0([StandPipe_0]) --> StandPipe:::classDef[[StandPipe]]
+	FluidTemperatureInQuantity_0([FluidTemperatureInQuantity_0]) --> FluidTemperatureInQuantity:::classDef[[FluidTemperatureInQuantity]]
+	PressureQuantity_0([PressureQuantity_0]) --> PressureQuantity:::classDef[[PressureQuantity]]
+	FluidDensityInQuantity_0([FluidDensityInQuantity_0]) --> FluidDensityInQuantity:::classDef[[FluidDensityInQuantity]]
 	 DensityIn_0 -- IsDependentOn --> TemperatureIn_0 
 	 DensityIn_0 -- IsDependentOn --> DrillingDataPoint_0 
 	 DensityIn_1 -- IsDependentOn --> SPP_0 

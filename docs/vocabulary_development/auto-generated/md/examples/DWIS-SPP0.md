@@ -23,16 +23,17 @@
 - ElevationReferenceFrame HasReferenceFrameOrigin DrillFloorLocation
 ```mermaid
 flowchart TD
-	SPP_0([SPP_0]) --> DrillingDataPoint[[DrillingDataPoint]]
-	StandPipe_0([StandPipe_0]) --> StandPipe[[StandPipe]]
-	SPPQuantity_0([SPPQuantity_0]) --> SPPQuantity[[SPPQuantity]]
-	SPPUncertainty_0([SPPUncertainty_0]) --> SensorUncertainty[[SensorUncertainty]]
-	SPP_LowPassFilter([SPP_LowPassFilter]) --> LowPassFilter[[LowPassFilter]]
-	DrillingControlSystem_0([DrillingControlSystem_0]) --> DataProvider[[DataProvider]]
-	StandPipeLocation([StandPipeLocation]) --> Location[[Location]]
-	DrillFloorLocation([DrillFloorLocation]) --> DrillFloorReferenceLocation[[DrillFloorReferenceLocation]]
-	StandPipeElevation([StandPipeElevation]) --> DrillingDataPoint[[DrillingDataPoint]]
-	ElevationReferenceFrame([ElevationReferenceFrame]) --> VerticalElevationReferenceFrame[[VerticalElevationReferenceFrame]]
+	 classDef typeClass fill:#f96;
+	SPP_0([SPP_0]) --> DrillingDataPoint:::classDef[[DrillingDataPoint]]
+	StandPipe_0([StandPipe_0]) --> StandPipe:::classDef[[StandPipe]]
+	SPPQuantity_0([SPPQuantity_0]) --> SPPQuantity:::classDef[[SPPQuantity]]
+	SPPUncertainty_0([SPPUncertainty_0]) --> SensorUncertainty:::classDef[[SensorUncertainty]]
+	SPP_LowPassFilter([SPP_LowPassFilter]) --> LowPassFilter:::classDef[[LowPassFilter]]
+	DrillingControlSystem_0([DrillingControlSystem_0]) --> DataProvider:::classDef[[DataProvider]]
+	StandPipeLocation([StandPipeLocation]) --> Location:::classDef[[Location]]
+	DrillFloorLocation([DrillFloorLocation]) --> DrillFloorReferenceLocation:::classDef[[DrillFloorReferenceLocation]]
+	StandPipeElevation([StandPipeElevation]) --> DrillingDataPoint:::classDef[[DrillingDataPoint]]
+	ElevationReferenceFrame([ElevationReferenceFrame]) --> VerticalElevationReferenceFrame:::classDef[[VerticalElevationReferenceFrame]]
 	 SPP_0 -- IsProvidedBy --> DrillingControlSystem_0 
 	 SPP_0 -- IsHydraulicallyLocatedAt --> StandPipe_0 
 	 SPP_0 -- IsOfMeasurableQuantity --> SPPQuantity_0 

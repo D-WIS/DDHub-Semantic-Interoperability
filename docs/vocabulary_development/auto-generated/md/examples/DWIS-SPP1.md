@@ -28,18 +28,19 @@
 - InstantComputedSPP IsTransmissionInput MovingAverage1
 ```mermaid
 flowchart TD
-	StandPipe_0([StandPipe_0]) --> StandPipe[[StandPipe]]
-	SPPQuantity_0([SPPQuantity_0]) --> SPPQuantity[[SPPQuantity]]
-	StandPipeLocation([StandPipeLocation]) --> Location[[Location]]
-	DrillFloorLocation([DrillFloorLocation]) --> DrillFloorReferenceLocation[[DrillFloorReferenceLocation]]
-	StandPipeElevation([StandPipeElevation]) --> DrillingDataPoint[[DrillingDataPoint]]
-	ElevationReferenceFrame([ElevationReferenceFrame]) --> VerticalElevationReferenceFrame[[VerticalElevationReferenceFrame]]
-	SPP_1([SPP_1]) --> DrillingDataPoint[[DrillingDataPoint]]
-	DrillingOptimizingService_0([DrillingOptimizingService_0]) --> DataProvider[[DataProvider]]
-	MovingAverage1([MovingAverage1]) --> MovingAverage[[MovingAverage]]
-	SPP1_Uncertainty([SPP1_Uncertainty]) --> GaussianUncertainty[[GaussianUncertainty]]
-	SPPComputationUnit_0([SPPComputationUnit_0]) --> ComputationUnit[[ComputationUnit]]
-	InstantComputedSPP([InstantComputedSPP]) --> DrillingDataPoint[[DrillingDataPoint]]
+	 classDef typeClass fill:#f96;
+	StandPipe_0([StandPipe_0]) --> StandPipe:::classDef[[StandPipe]]
+	SPPQuantity_0([SPPQuantity_0]) --> SPPQuantity:::classDef[[SPPQuantity]]
+	StandPipeLocation([StandPipeLocation]) --> Location:::classDef[[Location]]
+	DrillFloorLocation([DrillFloorLocation]) --> DrillFloorReferenceLocation:::classDef[[DrillFloorReferenceLocation]]
+	StandPipeElevation([StandPipeElevation]) --> DrillingDataPoint:::classDef[[DrillingDataPoint]]
+	ElevationReferenceFrame([ElevationReferenceFrame]) --> VerticalElevationReferenceFrame:::classDef[[VerticalElevationReferenceFrame]]
+	SPP_1([SPP_1]) --> DrillingDataPoint:::classDef[[DrillingDataPoint]]
+	DrillingOptimizingService_0([DrillingOptimizingService_0]) --> DataProvider:::classDef[[DataProvider]]
+	MovingAverage1([MovingAverage1]) --> MovingAverage:::classDef[[MovingAverage]]
+	SPP1_Uncertainty([SPP1_Uncertainty]) --> GaussianUncertainty:::classDef[[GaussianUncertainty]]
+	SPPComputationUnit_0([SPPComputationUnit_0]) --> ComputationUnit:::classDef[[ComputationUnit]]
+	InstantComputedSPP([InstantComputedSPP]) --> DrillingDataPoint:::classDef[[DrillingDataPoint]]
 	 StandPipeLocation -- HasCoordinates --> StandPipeElevation 
 	 StandPipeLocation -- HasReferenceFrame --> ElevationReferenceFrame 
 	 ElevationReferenceFrame -- HasReferenceFrameOrigin --> DrillFloorLocation 

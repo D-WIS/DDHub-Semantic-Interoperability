@@ -39,20 +39,21 @@
 - BitReferenceLocation_0 HasCoordinates BitDepth_1
 ```mermaid
 flowchart TD
-	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint[[DrillingDataPoint]]
-	DepthQuantity_0([DepthQuantity_0]) --> DepthQuantity[[DepthQuantity]]
-	BitDepth_0([BitDepth_0]) --> BitDepth[[BitDepth]]
-	BitReferenceLocation_0([BitReferenceLocation_0]) --> BitReferenceLocation[[BitReferenceLocation]]
-	HoleBottomLocation_0([HoleBottomLocation_0]) --> HoleBottomLocation[[HoleBottomLocation]]
-	Transformation_0([Transformation_0]) --> Transformation[[Transformation]]
-	HookPosition_0([HookPosition_0]) --> HookPosition[[HookPosition]]
-	DirectTransformation_0([DirectTransformation_0]) --> DirectTransformation[[DirectTransformation]]
-	DrillingDataPoint_1([DrillingDataPoint_1]) --> DrillingDataPoint[[DrillingDataPoint]]
-	MechanicallyClosedState_0([MechanicallyClosedState_0]) --> MechanicallyClosedState[[MechanicallyClosedState]]
-	TopSideTelemetry_0([TopSideTelemetry_0]) --> TopSideTelemetry[[TopSideTelemetry]]
-	DataFlowNode_0([DataFlowNode_0]) --> DataFlowNode[[DataFlowNode]]
-	BitDepth_1([BitDepth_1]) --> BitDepth[[BitDepth]]
-	DirectTransformation_1([DirectTransformation_1]) --> DirectTransformation[[DirectTransformation]]
+	 classDef typeClass fill:#f96;
+	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint:::classDef[[DrillingDataPoint]]
+	DepthQuantity_0([DepthQuantity_0]) --> DepthQuantity:::classDef[[DepthQuantity]]
+	BitDepth_0([BitDepth_0]) --> BitDepth:::classDef[[BitDepth]]
+	BitReferenceLocation_0([BitReferenceLocation_0]) --> BitReferenceLocation:::classDef[[BitReferenceLocation]]
+	HoleBottomLocation_0([HoleBottomLocation_0]) --> HoleBottomLocation:::classDef[[HoleBottomLocation]]
+	Transformation_0([Transformation_0]) --> Transformation:::classDef[[Transformation]]
+	HookPosition_0([HookPosition_0]) --> HookPosition:::classDef[[HookPosition]]
+	DirectTransformation_0([DirectTransformation_0]) --> DirectTransformation:::classDef[[DirectTransformation]]
+	DrillingDataPoint_1([DrillingDataPoint_1]) --> DrillingDataPoint:::classDef[[DrillingDataPoint]]
+	MechanicallyClosedState_0([MechanicallyClosedState_0]) --> MechanicallyClosedState:::classDef[[MechanicallyClosedState]]
+	TopSideTelemetry_0([TopSideTelemetry_0]) --> TopSideTelemetry:::classDef[[TopSideTelemetry]]
+	DataFlowNode_0([DataFlowNode_0]) --> DataFlowNode:::classDef[[DataFlowNode]]
+	BitDepth_1([BitDepth_1]) --> BitDepth:::classDef[[BitDepth]]
+	DirectTransformation_1([DirectTransformation_1]) --> DirectTransformation:::classDef[[DirectTransformation]]
 	 DrillingDataPoint_0 -- IsOfMeasurableQuantity --> DepthQuantity_0 
 	 BitDepth_0 -- IsPhysicallyLocatedAt --> BitReferenceLocation_0 
 	 DrillingDataPoint_0 -- IsPhysicallyLocatedAt --> HoleBottomLocation_0 

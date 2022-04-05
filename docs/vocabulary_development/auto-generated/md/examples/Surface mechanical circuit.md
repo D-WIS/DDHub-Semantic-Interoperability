@@ -29,20 +29,21 @@
 - TravellingBlock_0 IsMechanicallyConnectTo TopDriveHook_0
 ```mermaid
 flowchart TD
-	ActiveLine_0([ActiveLine_0]) --> ActiveLine[[ActiveLine]]
-	DrawWorks_0([DrawWorks_0]) --> DrawWorks[[DrawWorks]]
-	CrownBlock_0([CrownBlock_0]) --> CrownBlock[[CrownBlock]]
-	DeadLine_0([DeadLine_0]) --> DeadLine[[DeadLine]]
-	SupportLine_0([SupportLine_0]) --> SupportLine[[SupportLine]]
-	DrawWorks_1([DrawWorks_1]) --> DrawWorks[[DrawWorks]]
-	Dolly_0([Dolly_0]) --> Dolly[[Dolly]]
-	DollyRail_0([DollyRail_0]) --> DollyRail[[DollyRail]]
-	Elevator_0([Elevator_0]) --> Elevator[[Elevator]]
-	DrillString_0([DrillString_0]) --> DrillString[[DrillString]]
-	TravellingBlock_0([TravellingBlock_0]) --> TravellingBlock[[TravellingBlock]]
-	TopDriveBody_0([TopDriveBody_0]) --> TopDriveBody[[TopDriveBody]]
-	TopDriveShaft_0([TopDriveShaft_0]) --> TopDriveShaft[[TopDriveShaft]]
-	TopDriveHook_0([TopDriveHook_0]) --> TopDriveHook[[TopDriveHook]]
+	 classDef typeClass fill:#f96;
+	ActiveLine_0([ActiveLine_0]) --> ActiveLine:::classDef[[ActiveLine]]
+	DrawWorks_0([DrawWorks_0]) --> DrawWorks:::classDef[[DrawWorks]]
+	CrownBlock_0([CrownBlock_0]) --> CrownBlock:::classDef[[CrownBlock]]
+	DeadLine_0([DeadLine_0]) --> DeadLine:::classDef[[DeadLine]]
+	SupportLine_0([SupportLine_0]) --> SupportLine:::classDef[[SupportLine]]
+	DrawWorks_1([DrawWorks_1]) --> DrawWorks:::classDef[[DrawWorks]]
+	Dolly_0([Dolly_0]) --> Dolly:::classDef[[Dolly]]
+	DollyRail_0([DollyRail_0]) --> DollyRail:::classDef[[DollyRail]]
+	Elevator_0([Elevator_0]) --> Elevator:::classDef[[Elevator]]
+	DrillString_0([DrillString_0]) --> DrillString:::classDef[[DrillString]]
+	TravellingBlock_0([TravellingBlock_0]) --> TravellingBlock:::classDef[[TravellingBlock]]
+	TopDriveBody_0([TopDriveBody_0]) --> TopDriveBody:::classDef[[TopDriveBody]]
+	TopDriveShaft_0([TopDriveShaft_0]) --> TopDriveShaft:::classDef[[TopDriveShaft]]
+	TopDriveHook_0([TopDriveHook_0]) --> TopDriveHook:::classDef[[TopDriveHook]]
 	 ActiveLine_0 -- IsMechanicallyConnectTo --> DrawWorks_0 
 	 CrownBlock_0 -- IsMechanicallyConnectTo --> ActiveLine_0 
 	 CrownBlock_0 -- IsMechanicallyConnectTo --> DeadLine_0 
