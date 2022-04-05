@@ -75,7 +75,7 @@ namespace DWIS.Vocabulary.Development.Actions
         {
             _logger = logger;
             
-            _paths = new ActionPaths(conf.SourceFolder, conf.DestinationFolder, conf.SchemaFolder);
+            _paths = new ActionPaths(conf.SourceFolder, conf.DestinationFolder, conf.SchemaFolder, conf.ExamplesSourceFolder);
         
         }
         public bool PerformActions()
@@ -103,23 +103,30 @@ namespace DWIS.Vocabulary.Development.Actions
         {
             _logger.LogInformation($"Export md single file to {_paths.SingleMDFilePath}");
             MDWriting.ToMDFile(_vocabulary, _paths.SingleMDFilePath);
+            
             _logger.LogInformation($"Export md individual files to folder {_paths.DefinitionFilesFolderPath}");
             MDWriting.ToMDFiles(_vocabulary, _paths.DefinitionFilesFolderPath);
+            
             _logger.LogInformation($"Export ontology to {_paths.OntologyFilePath}");
             OWL.OntologyGeneration.GenerateOntology(_paths.OntologyFilePath, _vocabulary);
+
+            _logger.LogInformation($"Export schemas files to {_paths.NounsSchemaPath} and { _paths.VerbsSchemaPath}");
             SchemaWriter.WriteSchema(_vocabulary, _paths.NounsSchemaPath, _paths.VerbsSchemaPath);
+
+            _logger.LogInformation($"Export example files to {_paths.ExamplesFilesFolderPath}");
+            ParseExamples();
             return true;
         }
 
         private VocabularyActioner LoadSourceVocabulary(bool previousOK, out bool ok)
         {
-            ok =previousOK && VocabularyParsing.FromFolder(_paths.SourceFolder, out _vocabulary);
+            ok =previousOK && VocabularyParsing.FromFolder(_paths.VocabularySourceFolder, out _vocabulary);
             return this;
         }
 
         private VocabularyActioner CheckForTagCount(bool previousOK, out bool ok)
         {
-            VocabularyParsing.CountTags(_paths.SourceFolder, out int nounTagsCount, out int verbsTagsCount);
+            VocabularyParsing.CountTags(_paths.VocabularySourceFolder, out int nounTagsCount, out int verbsTagsCount);
             ok = previousOK && nounTagsCount == _vocabulary.Nouns.Count && verbsTagsCount == _vocabulary.Verbs.Count;
 
             if (previousOK && !ok)
@@ -131,7 +138,7 @@ namespace DWIS.Vocabulary.Development.Actions
 
 
 
-                    VocabularyParsing.GetTags(_paths.SourceFolder, out var nounTags, out var verbsTags);
+                    VocabularyParsing.GetTags(_paths.VocabularySourceFolder, out var nounTags, out var verbsTags);
 
                     int disctinct = nounTags.Distinct().Count();
                     if (disctinct < nounTags.Count())
@@ -197,6 +204,20 @@ namespace DWIS.Vocabulary.Development.Actions
             return this;
         }
 
+        private VocabularyActioner ParseExamples()
+        {
+            var files = System.IO.Directory.GetFiles(_paths.ExamplesSourceFolder).Where(f=>f.EndsWith(".md"));
+            foreach (var file in files)
+            {
+                if (VocabularyParsing.FromMDFile(file, _vocabulary, out DWISInstance instance))
+                {
+                    string exportFileName = _paths.ExamplesFilesFolderPath + System.IO.Path.DirectorySeparatorChar + System.IO.Path.GetFileNameWithoutExtension(file) + ".md";
+
+                    MDWriting.ToMDFile(instance, exportFileName, _vocabulary, true, true);
+                }
+            }
+            return this;
+        }
     }
 
 
@@ -205,14 +226,17 @@ namespace DWIS.Vocabulary.Development.Actions
         public string SourceFolder { get;  set; }
         public string DestinationFolder { get; set; }
         public string SchemaFolder { get; set; }
+        public string ExamplesSourceFolder { get; set; }
     }
 
     public class ActionPaths
     {
-        public string SourceFolder { get;private set; }
-
+        public string VocabularySourceFolder { get;private set; }
+        public string ExamplesSourceFolder { get; private set; }
         public static string SingleFileName { get; set; } = "DWISVocabulary";
         public static string DefinitionFilesFolderName { get; set; } = "definition-files";
+        public static string ExamplesFilesFolderName { get; set; } = "examples";
+
         public static string RDFFolderName { get; set; } = "rdf";
         public static string MDFolderName { get; set; } = "md";
 
@@ -223,20 +247,24 @@ namespace DWIS.Vocabulary.Development.Actions
         public string MDFolderPath { get; private set; }
         public string SingleMDFilePath { get;private  set; }
         public string DefinitionFilesFolderPath { get;private set; }
-
+        public string ExamplesFilesFolderPath { get; private set; }
         public string RDFFolderPath { get; private set; }
         public string OntologyFilePath { get; private set; }
 
-        public ActionPaths(string sourceFolder, string destinationFolder, string schemasFolder)
+        public ActionPaths(string sourceFolder, string destinationFolder, string schemasFolder, string examplesSourceFolder)
         {
             char sep = System.IO.Path.DirectorySeparatorChar;
             string mdExtension = ".md";
 
-            SourceFolder = sourceFolder;
+            VocabularySourceFolder = sourceFolder;
+            ExamplesSourceFolder = examplesSourceFolder;
 
             MDFolderPath = destinationFolder + sep + MDFolderName;
             SingleMDFilePath = MDFolderPath + sep + SingleFileName + mdExtension;
             DefinitionFilesFolderPath = MDFolderPath + sep + DefinitionFilesFolderName;
+
+            ExamplesFilesFolderPath = MDFolderPath + sep + ExamplesFilesFolderName;
+
 
             RDFFolderPath = destinationFolder + sep + RDFFolderName;
             OntologyFilePath = RDFFolderPath + sep + SingleFileName;
