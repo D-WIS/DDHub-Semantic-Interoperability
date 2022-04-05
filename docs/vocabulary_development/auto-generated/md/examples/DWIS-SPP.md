@@ -14,6 +14,7 @@
 - SPP_0 IsOfMeasurableQuantity SPPQuantity_0
 - SPP_0 IsGeneratedBy SPP_LowPassFilter
 - SPP_0 HasUncertainty SPPUncertainty_0
+- SPP_0 IsPhysicallyLocatedAt StandPipeLocation
 - StandPipeLocation HasCoordinates StandPipeElevation
 ```mermaid
 flowchart TD
@@ -32,5 +33,6 @@ flowchart TD
 	 SPP_0 -- IsOfMeasurableQuantity --> SPPQuantity_0 
 	 SPP_0 -- IsGeneratedBy --> SPP_LowPassFilter 
 	 SPP_0 -- HasUncertainty --> SPPUncertainty_0 
+	 SPP_0 -- IsPhysicallyLocatedAt --> StandPipeLocation 
 	 StandPipeLocation -- HasCoordinates --> StandPipeElevation 
 ```

@@ -16,6 +16,7 @@
 - SPP_0 HasUncertainty SPPUncertainty_0
 - SPP_0 BelongsToClass SPP
 - SPP_0 BelongsToClass Measurement
+- SPP_0 IsPhysicallyLocatedAt StandPipeLocation
 - StandPipeLocation HasCoordinates StandPipeElevation
 - StandPipeLocation HasReferenceFrame VerticalElevationReferenceFrame
 - VerticalElevationReferenceFrame HasOrigin DrillFloorLocation
