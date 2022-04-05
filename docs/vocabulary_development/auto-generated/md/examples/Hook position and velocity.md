@@ -22,15 +22,15 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
-	HookPosition_0([HookPosition_0]) --> HookPosition:::classDef[[HookPosition]]
-	Derivation_0([Derivation_0]) --> Derivation:::classDef[[Derivation]]
-	HookVelocity_0([HookVelocity_0]) --> HookVelocity:::classDef[[HookVelocity]]
-	TopDriveHook_0([TopDriveHook_0]) --> TopDriveHook:::classDef[[TopDriveHook]]
-	BlockPositionQuantity_0([BlockPositionQuantity_0]) --> BlockPositionQuantity:::classDef[[BlockPositionQuantity]]
-	BlockVelocityQuantity_0([BlockVelocityQuantity_0]) --> BlockVelocityQuantity:::classDef[[BlockVelocityQuantity]]
-	Transformation_0([Transformation_0]) --> Transformation:::classDef[[Transformation]]
-	TopSideTelemetry_0([TopSideTelemetry_0]) --> TopSideTelemetry:::classDef[[TopSideTelemetry]]
-	DataFlowNode_0([DataFlowNode_0]) --> DataFlowNode:::classDef[[DataFlowNode]]
+	HookPosition_0([HookPosition_0]) --> HookPosition:::typeClass[[HookPosition]]
+	Derivation_0([Derivation_0]) --> Derivation:::typeClass[[Derivation]]
+	HookVelocity_0([HookVelocity_0]) --> HookVelocity:::typeClass[[HookVelocity]]
+	TopDriveHook_0([TopDriveHook_0]) --> TopDriveHook:::typeClass[[TopDriveHook]]
+	BlockPositionQuantity_0([BlockPositionQuantity_0]) --> BlockPositionQuantity:::typeClass[[BlockPositionQuantity]]
+	BlockVelocityQuantity_0([BlockVelocityQuantity_0]) --> BlockVelocityQuantity:::typeClass[[BlockVelocityQuantity]]
+	Transformation_0([Transformation_0]) --> Transformation:::typeClass[[Transformation]]
+	TopSideTelemetry_0([TopSideTelemetry_0]) --> TopSideTelemetry:::typeClass[[TopSideTelemetry]]
+	DataFlowNode_0([DataFlowNode_0]) --> DataFlowNode:::typeClass[[DataFlowNode]]
 	 HookPosition_0 -- IsDerivationInput --> Derivation_0 
 	 HookVelocity_0 -- IsDerivedFrom --> Derivation_0 
 	 HookPosition_0 -- IsMechanicallyLocatedAt --> TopDriveHook_0 

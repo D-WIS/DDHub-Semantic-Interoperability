@@ -29,18 +29,18 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
-	StandPipe_0([StandPipe_0]) --> StandPipe:::classDef[[StandPipe]]
-	SPPQuantity_0([SPPQuantity_0]) --> SPPQuantity:::classDef[[SPPQuantity]]
-	StandPipeLocation([StandPipeLocation]) --> Location:::classDef[[Location]]
-	DrillFloorLocation([DrillFloorLocation]) --> DrillFloorReferenceLocation:::classDef[[DrillFloorReferenceLocation]]
-	StandPipeElevation([StandPipeElevation]) --> DrillingDataPoint:::classDef[[DrillingDataPoint]]
-	ElevationReferenceFrame([ElevationReferenceFrame]) --> VerticalElevationReferenceFrame:::classDef[[VerticalElevationReferenceFrame]]
-	SPP_1([SPP_1]) --> DrillingDataPoint:::classDef[[DrillingDataPoint]]
-	DrillingOptimizingService_0([DrillingOptimizingService_0]) --> DataProvider:::classDef[[DataProvider]]
-	MovingAverage1([MovingAverage1]) --> MovingAverage:::classDef[[MovingAverage]]
-	SPP1_Uncertainty([SPP1_Uncertainty]) --> GaussianUncertainty:::classDef[[GaussianUncertainty]]
-	SPPComputationUnit_0([SPPComputationUnit_0]) --> ComputationUnit:::classDef[[ComputationUnit]]
-	InstantComputedSPP([InstantComputedSPP]) --> DrillingDataPoint:::classDef[[DrillingDataPoint]]
+	StandPipe_0([StandPipe_0]) --> StandPipe:::typeClass[[StandPipe]]
+	SPPQuantity_0([SPPQuantity_0]) --> SPPQuantity:::typeClass[[SPPQuantity]]
+	StandPipeLocation([StandPipeLocation]) --> Location:::typeClass[[Location]]
+	DrillFloorLocation([DrillFloorLocation]) --> DrillFloorReferenceLocation:::typeClass[[DrillFloorReferenceLocation]]
+	StandPipeElevation([StandPipeElevation]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
+	ElevationReferenceFrame([ElevationReferenceFrame]) --> VerticalElevationReferenceFrame:::typeClass[[VerticalElevationReferenceFrame]]
+	SPP_1([SPP_1]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
+	DrillingOptimizingService_0([DrillingOptimizingService_0]) --> DataProvider:::typeClass[[DataProvider]]
+	MovingAverage1([MovingAverage1]) --> MovingAverage:::typeClass[[MovingAverage]]
+	SPP1_Uncertainty([SPP1_Uncertainty]) --> GaussianUncertainty:::typeClass[[GaussianUncertainty]]
+	SPPComputationUnit_0([SPPComputationUnit_0]) --> ComputationUnit:::typeClass[[ComputationUnit]]
+	InstantComputedSPP([InstantComputedSPP]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
 	 StandPipeLocation -- HasCoordinates --> StandPipeElevation 
 	 StandPipeLocation -- HasReferenceFrame --> ElevationReferenceFrame 
 	 ElevationReferenceFrame -- HasReferenceFrameOrigin --> DrillFloorLocation 

@@ -20,15 +20,15 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
-	DrillPipesAnnular_0([DrillPipesAnnular_0]) --> DrillPipesAnnular:::classDef[[DrillPipesAnnular]]
-	BellNipple_0([BellNipple_0]) --> BellNipple:::classDef[[BellNipple]]
-	BHAAnnular_0([BHAAnnular_0]) --> BHAAnnular:::classDef[[BHAAnnular]]
-	Bit_0([Bit_0]) --> Bit:::classDef[[Bit]]
-	OpenHole_0([OpenHole_0]) --> OpenHole:::classDef[[OpenHole]]
-	BHAInner_0([BHAInner_0]) --> BHAInner:::classDef[[BHAInner]]
-	DrillPipesInner_0([DrillPipesInner_0]) --> DrillPipesInner:::classDef[[DrillPipesInner]]
-	UnderReamer_0([UnderReamer_0]) --> UnderReamer:::classDef[[UnderReamer]]
-	TopDrive_0([TopDrive_0]) --> TopDrive:::classDef[[TopDrive]]
+	DrillPipesAnnular_0([DrillPipesAnnular_0]) --> DrillPipesAnnular:::typeClass[[DrillPipesAnnular]]
+	BellNipple_0([BellNipple_0]) --> BellNipple:::typeClass[[BellNipple]]
+	BHAAnnular_0([BHAAnnular_0]) --> BHAAnnular:::typeClass[[BHAAnnular]]
+	Bit_0([Bit_0]) --> Bit:::typeClass[[Bit]]
+	OpenHole_0([OpenHole_0]) --> OpenHole:::typeClass[[OpenHole]]
+	BHAInner_0([BHAInner_0]) --> BHAInner:::typeClass[[BHAInner]]
+	DrillPipesInner_0([DrillPipesInner_0]) --> DrillPipesInner:::typeClass[[DrillPipesInner]]
+	UnderReamer_0([UnderReamer_0]) --> UnderReamer:::typeClass[[UnderReamer]]
+	TopDrive_0([TopDrive_0]) --> TopDrive:::typeClass[[TopDrive]]
 	 DrillPipesAnnular_0 -- IsHydraulicConnectedTo --> BellNipple_0 
 	 BHAAnnular_0 -- IsHydraulicConnectedTo --> DrillPipesAnnular_0 
 	 Bit_0 -- IsHydraulicConnectedTo --> BHAAnnular_0 
