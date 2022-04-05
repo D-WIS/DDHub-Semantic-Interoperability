@@ -1,4 +1,4 @@
-# DWIS_SPP
+# DWIS_SPPs
 - DrillingDataPoint:SPP_0
 - StandPipe:StandPipe_0
 - SPPQuantity:SPPQuantity_0

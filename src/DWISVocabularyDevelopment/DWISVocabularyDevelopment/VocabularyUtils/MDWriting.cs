@@ -265,6 +265,12 @@ namespace DWIS.Vocabulary.Utils
             {
                 builder.AppendLine($"\t {i.Subject} -- {i.Verb} --> {i.Object} ");
             }
+
+            foreach (var i in instance.ClassAssertions)
+            {
+                builder.AppendLine($"\t {i.Subject} -- {i.Verb} --> {i.Class}(({i.Class})) ");
+            }
+
             builder.AppendLine("```");
         }
     }
