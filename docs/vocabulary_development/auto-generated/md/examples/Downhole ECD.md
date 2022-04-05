@@ -57,32 +57,32 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
-	DownholePressureQuantity_0([DownholePressureQuantity_0]) --> DownholePressureQuantity:::typeClass[[DownholePressureQuantity]]
-	PressureQuantity_0([PressureQuantity_0]) --> PressureQuantity:::typeClass[[PressureQuantity]]
-	DownholeECD_0([DownholeECD_0]) --> DownholeECD:::typeClass[[DownholeECD]]
-	EMWQuantity_0([EMWQuantity_0]) --> EMWQuantity:::typeClass[[EMWQuantity]]
-	DownholePressure_0([DownholePressure_0]) --> DownholePressure:::typeClass[[DownholePressure]]
-	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	TVDQuantity_0([TVDQuantity_0]) --> TVDQuantity:::typeClass[[TVDQuantity]]
-	DrillingDataPoint_1([DrillingDataPoint_1]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	AccelerationQuantity_0([AccelerationQuantity_0]) --> AccelerationQuantity:::typeClass[[AccelerationQuantity]]
-	DrillingDataPoint_2([DrillingDataPoint_2]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	DrillingDataPoint_3([DrillingDataPoint_3]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	LengthQuantity_0([LengthQuantity_0]) --> LengthQuantity:::typeClass[[LengthQuantity]]
-	DrillingDataPoint_4([DrillingDataPoint_4]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	DepthQuantity_0([DepthQuantity_0]) --> DepthQuantity:::typeClass[[DepthQuantity]]
-	BitDepth_0([BitDepth_0]) --> BitDepth:::typeClass[[BitDepth]]
-	DirectTransformation_0([DirectTransformation_0]) --> DirectTransformation:::typeClass[[DirectTransformation]]
-	DirectTransformation_1([DirectTransformation_1]) --> DirectTransformation:::typeClass[[DirectTransformation]]
-	DirectTransformation_2([DirectTransformation_2]) --> DirectTransformation:::typeClass[[DirectTransformation]]
-	BHAAnnular_0([BHAAnnular_0]) --> BHAAnnular:::typeClass[[BHAAnnular]]
-	FlowRateIn_0([FlowRateIn_0]) --> FlowRateIn:::typeClass[[FlowRateIn]]
-	GT_0([GT_0]) --> GT:::typeClass[[GT]]
-	DrillingDataPoint_5([DrillingDataPoint_5]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	HydraulicConnectedState_0([HydraulicConnectedState_0]) --> HydraulicConnectedState:::typeClass[[HydraulicConnectedState]]
-	DrillingDataPoint_6([DrillingDataPoint_6]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	TopDriveShaft_0([TopDriveShaft_0]) --> TopDriveShaft:::typeClass[[TopDriveShaft]]
-	ConnectedCondition_0([ConnectedCondition_0]) --> ConnectedCondition:::typeClass[[ConnectedCondition]]
+	DownholePressureQuantity_0([DownholePressureQuantity_0]) --> DownholePressureQuantity[[DownholePressureQuantity]]:::typeClass
+	PressureQuantity_0([PressureQuantity_0]) --> PressureQuantity[[PressureQuantity]]:::typeClass
+	DownholeECD_0([DownholeECD_0]) --> DownholeECD[[DownholeECD]]:::typeClass
+	EMWQuantity_0([EMWQuantity_0]) --> EMWQuantity[[EMWQuantity]]:::typeClass
+	DownholePressure_0([DownholePressure_0]) --> DownholePressure[[DownholePressure]]:::typeClass
+	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	TVDQuantity_0([TVDQuantity_0]) --> TVDQuantity[[TVDQuantity]]:::typeClass
+	DrillingDataPoint_1([DrillingDataPoint_1]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	AccelerationQuantity_0([AccelerationQuantity_0]) --> AccelerationQuantity[[AccelerationQuantity]]:::typeClass
+	DrillingDataPoint_2([DrillingDataPoint_2]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	DrillingDataPoint_3([DrillingDataPoint_3]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	LengthQuantity_0([LengthQuantity_0]) --> LengthQuantity[[LengthQuantity]]:::typeClass
+	DrillingDataPoint_4([DrillingDataPoint_4]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	DepthQuantity_0([DepthQuantity_0]) --> DepthQuantity[[DepthQuantity]]:::typeClass
+	BitDepth_0([BitDepth_0]) --> BitDepth[[BitDepth]]:::typeClass
+	DirectTransformation_0([DirectTransformation_0]) --> DirectTransformation[[DirectTransformation]]:::typeClass
+	DirectTransformation_1([DirectTransformation_1]) --> DirectTransformation[[DirectTransformation]]:::typeClass
+	DirectTransformation_2([DirectTransformation_2]) --> DirectTransformation[[DirectTransformation]]:::typeClass
+	BHAAnnular_0([BHAAnnular_0]) --> BHAAnnular[[BHAAnnular]]:::typeClass
+	FlowRateIn_0([FlowRateIn_0]) --> FlowRateIn[[FlowRateIn]]:::typeClass
+	GT_0([GT_0]) --> GT[[GT]]:::typeClass
+	DrillingDataPoint_5([DrillingDataPoint_5]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	HydraulicConnectedState_0([HydraulicConnectedState_0]) --> HydraulicConnectedState[[HydraulicConnectedState]]:::typeClass
+	DrillingDataPoint_6([DrillingDataPoint_6]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	TopDriveShaft_0([TopDriveShaft_0]) --> TopDriveShaft[[TopDriveShaft]]:::typeClass
+	ConnectedCondition_0([ConnectedCondition_0]) --> ConnectedCondition[[ConnectedCondition]]:::typeClass
 	 DownholePressureQuantity_0 -- IsObservableFrom --> PressureQuantity_0 
 	 DownholeECD_0 -- IsOfMeasurableQuantity --> EMWQuantity_0 
 	 DownholePressure_0 -- IsOfMeasurableQuantity --> DownholePressureQuantity_0 

@@ -15,13 +15,13 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
-	FlowRateIn_0([FlowRateIn_0]) --> FlowRateIn:::typeClass[[FlowRateIn]]
-	FlowRateQuantity_0([FlowRateQuantity_0]) --> FlowRateQuantity:::typeClass[[FlowRateQuantity]]
-	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	Derivation_0([Derivation_0]) --> Derivation:::typeClass[[Derivation]]
-	DrillingDataPoint_1([DrillingDataPoint_1]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	DrillingDataPoint_2([DrillingDataPoint_2]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	StandPipe_0([StandPipe_0]) --> StandPipe:::typeClass[[StandPipe]]
+	FlowRateIn_0([FlowRateIn_0]) --> FlowRateIn[[FlowRateIn]]:::typeClass
+	FlowRateQuantity_0([FlowRateQuantity_0]) --> FlowRateQuantity[[FlowRateQuantity]]:::typeClass
+	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	Derivation_0([Derivation_0]) --> Derivation[[Derivation]]:::typeClass
+	DrillingDataPoint_1([DrillingDataPoint_1]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	DrillingDataPoint_2([DrillingDataPoint_2]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	StandPipe_0([StandPipe_0]) --> StandPipe[[StandPipe]]:::typeClass
 	 FlowRateIn_0 -- IsOfMeasurableQuantity --> FlowRateQuantity_0 
 	 DrillingDataPoint_0 -- IsTransformationInput --> Derivation_0 
 	 DrillingDataPoint_1 -- IsTransformationInput --> Derivation_0 

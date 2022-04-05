@@ -43,24 +43,24 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
-	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	Resistivity_0([Resistivity_0]) --> Resistivity:::typeClass[[Resistivity]]
-	Location_0([Location_0]) --> Location:::typeClass[[Location]]
-	MudPulseTelemetry_0([MudPulseTelemetry_0]) --> MudPulseTelemetry:::typeClass[[MudPulseTelemetry]]
-	DataFlowNode_0([DataFlowNode_0]) --> DataFlowNode:::typeClass[[DataFlowNode]]
-	DrillingDataPoint_1([DrillingDataPoint_1]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	RockDensityQuantity_0([RockDensityQuantity_0]) --> RockDensityQuantity:::typeClass[[RockDensityQuantity]]
-	Location_1([Location_1]) --> Location:::typeClass[[Location]]
-	DrillingDataPoint_2([DrillingDataPoint_2]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	DrillingDataPoint_3([DrillingDataPoint_3]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	DepthQuantity_0([DepthQuantity_0]) --> DepthQuantity:::typeClass[[DepthQuantity]]
-	DrillingDataPoint_4([DrillingDataPoint_4]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	FormationPorosityQuantity_0([FormationPorosityQuantity_0]) --> FormationPorosityQuantity:::typeClass[[FormationPorosityQuantity]]
-	DrillingDataPoint_5([DrillingDataPoint_5]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	DrillingDataPoint_6([DrillingDataPoint_6]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	Location_2([Location_2]) --> Location:::typeClass[[Location]]
-	DrillingDataPoint_7([DrillingDataPoint_7]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	MassDensityQuantity_0([MassDensityQuantity_0]) --> MassDensityQuantity:::typeClass[[MassDensityQuantity]]
+	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	Resistivity_0([Resistivity_0]) --> Resistivity[[Resistivity]]:::typeClass
+	Location_0([Location_0]) --> Location[[Location]]:::typeClass
+	MudPulseTelemetry_0([MudPulseTelemetry_0]) --> MudPulseTelemetry[[MudPulseTelemetry]]:::typeClass
+	DataFlowNode_0([DataFlowNode_0]) --> DataFlowNode[[DataFlowNode]]:::typeClass
+	DrillingDataPoint_1([DrillingDataPoint_1]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	RockDensityQuantity_0([RockDensityQuantity_0]) --> RockDensityQuantity[[RockDensityQuantity]]:::typeClass
+	Location_1([Location_1]) --> Location[[Location]]:::typeClass
+	DrillingDataPoint_2([DrillingDataPoint_2]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	DrillingDataPoint_3([DrillingDataPoint_3]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	DepthQuantity_0([DepthQuantity_0]) --> DepthQuantity[[DepthQuantity]]:::typeClass
+	DrillingDataPoint_4([DrillingDataPoint_4]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	FormationPorosityQuantity_0([FormationPorosityQuantity_0]) --> FormationPorosityQuantity[[FormationPorosityQuantity]]:::typeClass
+	DrillingDataPoint_5([DrillingDataPoint_5]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	DrillingDataPoint_6([DrillingDataPoint_6]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	Location_2([Location_2]) --> Location[[Location]]:::typeClass
+	DrillingDataPoint_7([DrillingDataPoint_7]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	MassDensityQuantity_0([MassDensityQuantity_0]) --> MassDensityQuantity[[MassDensityQuantity]]:::typeClass
 	 DrillingDataPoint_0 -- IsOfMeasurableQuantity --> Resistivity_0 
 	 DrillingDataPoint_0 -- IsPhysicallyLocatedAt --> Location_0 
 	 DrillingDataPoint_0 -- IsTransmittedBy --> MudPulseTelemetry_0 

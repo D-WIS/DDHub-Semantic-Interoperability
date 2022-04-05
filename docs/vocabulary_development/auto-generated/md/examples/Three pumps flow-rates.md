@@ -81,34 +81,34 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
-	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	DrillingDataPoint_1([DrillingDataPoint_1]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	DrillingDataPoint_2([DrillingDataPoint_2]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	DrillingDataPoint_3([DrillingDataPoint_3]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	DrillingDataPoint_4([DrillingDataPoint_4]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	DrillingDataPoint_5([DrillingDataPoint_5]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	DrillingDataPoint_6([DrillingDataPoint_6]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	DrillingDataPoint_7([DrillingDataPoint_7]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	DrillingDataPoint_8([DrillingDataPoint_8]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	CementPump_0([CementPump_0]) --> CementPump:::typeClass[[CementPump]]
-	MudPump_0([MudPump_0]) --> MudPump:::typeClass[[MudPump]]
-	MudPump_1([MudPump_1]) --> MudPump:::typeClass[[MudPump]]
-	PumpRate_0([PumpRate_0]) --> PumpRate:::typeClass[[PumpRate]]
-	PumpRate_1([PumpRate_1]) --> PumpRate:::typeClass[[PumpRate]]
-	PumpRate_2([PumpRate_2]) --> PumpRate:::typeClass[[PumpRate]]
-	DrillingDataPoint_9([DrillingDataPoint_9]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	DrillingDataPoint_10([DrillingDataPoint_10]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	DrillingDataPoint_11([DrillingDataPoint_11]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	ProportionQuantity_0([ProportionQuantity_0]) --> ProportionQuantity:::typeClass[[ProportionQuantity]]
-	VolumeQuantity_0([VolumeQuantity_0]) --> VolumeQuantity:::typeClass[[VolumeQuantity]]
-	FlowRateQuantity_0([FlowRateQuantity_0]) --> FlowRateQuantity:::typeClass[[FlowRateQuantity]]
-	PumpRateQuantity_0([PumpRateQuantity_0]) --> PumpRateQuantity:::typeClass[[PumpRateQuantity]]
-	Transformation_0([Transformation_0]) --> Transformation:::typeClass[[Transformation]]
-	Transformation_1([Transformation_1]) --> Transformation:::typeClass[[Transformation]]
-	Transformation_2([Transformation_2]) --> Transformation:::typeClass[[Transformation]]
-	Derivation_0([Derivation_0]) --> Derivation:::typeClass[[Derivation]]
-	Derivation_1([Derivation_1]) --> Derivation:::typeClass[[Derivation]]
-	Derivation_2([Derivation_2]) --> Derivation:::typeClass[[Derivation]]
+	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	DrillingDataPoint_1([DrillingDataPoint_1]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	DrillingDataPoint_2([DrillingDataPoint_2]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	DrillingDataPoint_3([DrillingDataPoint_3]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	DrillingDataPoint_4([DrillingDataPoint_4]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	DrillingDataPoint_5([DrillingDataPoint_5]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	DrillingDataPoint_6([DrillingDataPoint_6]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	DrillingDataPoint_7([DrillingDataPoint_7]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	DrillingDataPoint_8([DrillingDataPoint_8]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	CementPump_0([CementPump_0]) --> CementPump[[CementPump]]:::typeClass
+	MudPump_0([MudPump_0]) --> MudPump[[MudPump]]:::typeClass
+	MudPump_1([MudPump_1]) --> MudPump[[MudPump]]:::typeClass
+	PumpRate_0([PumpRate_0]) --> PumpRate[[PumpRate]]:::typeClass
+	PumpRate_1([PumpRate_1]) --> PumpRate[[PumpRate]]:::typeClass
+	PumpRate_2([PumpRate_2]) --> PumpRate[[PumpRate]]:::typeClass
+	DrillingDataPoint_9([DrillingDataPoint_9]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	DrillingDataPoint_10([DrillingDataPoint_10]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	DrillingDataPoint_11([DrillingDataPoint_11]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	ProportionQuantity_0([ProportionQuantity_0]) --> ProportionQuantity[[ProportionQuantity]]:::typeClass
+	VolumeQuantity_0([VolumeQuantity_0]) --> VolumeQuantity[[VolumeQuantity]]:::typeClass
+	FlowRateQuantity_0([FlowRateQuantity_0]) --> FlowRateQuantity[[FlowRateQuantity]]:::typeClass
+	PumpRateQuantity_0([PumpRateQuantity_0]) --> PumpRateQuantity[[PumpRateQuantity]]:::typeClass
+	Transformation_0([Transformation_0]) --> Transformation[[Transformation]]:::typeClass
+	Transformation_1([Transformation_1]) --> Transformation[[Transformation]]:::typeClass
+	Transformation_2([Transformation_2]) --> Transformation[[Transformation]]:::typeClass
+	Derivation_0([Derivation_0]) --> Derivation[[Derivation]]:::typeClass
+	Derivation_1([Derivation_1]) --> Derivation[[Derivation]]:::typeClass
+	Derivation_2([Derivation_2]) --> Derivation[[Derivation]]:::typeClass
 	 DrillingDataPoint_0 -- IsDependentOn --> DrillingDataPoint_1 
 	 DrillingDataPoint_0 -- IsDependentOn --> DrillingDataPoint_2 
 	 DrillingDataPoint_3 -- IsDependentOn --> DrillingDataPoint_4 

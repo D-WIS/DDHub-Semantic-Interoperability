@@ -42,22 +42,22 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
-	SPP_0([SPP_0]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	StandPipe_0([StandPipe_0]) --> StandPipe:::typeClass[[StandPipe]]
-	SPPQuantity_0([SPPQuantity_0]) --> SPPQuantity:::typeClass[[SPPQuantity]]
-	SPPUncertainty_0([SPPUncertainty_0]) --> SensorUncertainty:::typeClass[[SensorUncertainty]]
-	SPP_LowPassFilter([SPP_LowPassFilter]) --> LowPassFilter:::typeClass[[LowPassFilter]]
-	DrillingControlSystem_0([DrillingControlSystem_0]) --> DataProvider:::typeClass[[DataProvider]]
-	StandPipeLocation([StandPipeLocation]) --> Location:::typeClass[[Location]]
-	DrillFloorLocation([DrillFloorLocation]) --> DrillFloorReferenceLocation:::typeClass[[DrillFloorReferenceLocation]]
-	StandPipeElevation([StandPipeElevation]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	ElevationReferenceFrame([ElevationReferenceFrame]) --> VerticalElevationReferenceFrame:::typeClass[[VerticalElevationReferenceFrame]]
-	SPP_1([SPP_1]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	DrillingOptimizingService_0([DrillingOptimizingService_0]) --> DataProvider:::typeClass[[DataProvider]]
-	MovingAverage1([MovingAverage1]) --> MovingAverage:::typeClass[[MovingAverage]]
-	SPP1_Uncertainty([SPP1_Uncertainty]) --> GaussianUncertainty:::typeClass[[GaussianUncertainty]]
-	SPPComputationUnit_0([SPPComputationUnit_0]) --> ComputationUnit:::typeClass[[ComputationUnit]]
-	InstantComputedSPP([InstantComputedSPP]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
+	SPP_0([SPP_0]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	StandPipe_0([StandPipe_0]) --> StandPipe[[StandPipe]]:::typeClass
+	SPPQuantity_0([SPPQuantity_0]) --> SPPQuantity[[SPPQuantity]]:::typeClass
+	SPPUncertainty_0([SPPUncertainty_0]) --> SensorUncertainty[[SensorUncertainty]]:::typeClass
+	SPP_LowPassFilter([SPP_LowPassFilter]) --> LowPassFilter[[LowPassFilter]]:::typeClass
+	DrillingControlSystem_0([DrillingControlSystem_0]) --> DataProvider[[DataProvider]]:::typeClass
+	StandPipeLocation([StandPipeLocation]) --> Location[[Location]]:::typeClass
+	DrillFloorLocation([DrillFloorLocation]) --> DrillFloorReferenceLocation[[DrillFloorReferenceLocation]]:::typeClass
+	StandPipeElevation([StandPipeElevation]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	ElevationReferenceFrame([ElevationReferenceFrame]) --> VerticalElevationReferenceFrame[[VerticalElevationReferenceFrame]]:::typeClass
+	SPP_1([SPP_1]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	DrillingOptimizingService_0([DrillingOptimizingService_0]) --> DataProvider[[DataProvider]]:::typeClass
+	MovingAverage1([MovingAverage1]) --> MovingAverage[[MovingAverage]]:::typeClass
+	SPP1_Uncertainty([SPP1_Uncertainty]) --> GaussianUncertainty[[GaussianUncertainty]]:::typeClass
+	SPPComputationUnit_0([SPPComputationUnit_0]) --> ComputationUnit[[ComputationUnit]]:::typeClass
+	InstantComputedSPP([InstantComputedSPP]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	 SPP_0 -- IsProvidedBy --> DrillingControlSystem_0 
 	 SPP_0 -- IsHydraulicallyLocatedAt --> StandPipe_0 
 	 SPP_0 -- IsOfMeasurableQuantity --> SPPQuantity_0 

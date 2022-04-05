@@ -45,23 +45,23 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
-	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	DeadLine_0([DeadLine_0]) --> DeadLine:::typeClass[[DeadLine]]
-	HookLoad_0([HookLoad_0]) --> HookLoad:::typeClass[[HookLoad]]
-	TravellingBlock_0([TravellingBlock_0]) --> TravellingBlock:::typeClass[[TravellingBlock]]
-	HookLoad_1([HookLoad_1]) --> HookLoad:::typeClass[[HookLoad]]
-	TopDriveShaft_0([TopDriveShaft_0]) --> TopDriveShaft:::typeClass[[TopDriveShaft]]
-	DrillingDataPoint_1([DrillingDataPoint_1]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	DrillingDataPoint_2([DrillingDataPoint_2]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	HookloadQuantity_0([HookloadQuantity_0]) --> HookloadQuantity:::typeClass[[HookloadQuantity]]
-	Transformation_0([Transformation_0]) --> Transformation:::typeClass[[Transformation]]
-	ForceToLoadTransformation_0([ForceToLoadTransformation_0]) --> ForceToLoadTransformation:::typeClass[[ForceToLoadTransformation]]
-	ForceToLoadTransformation_1([ForceToLoadTransformation_1]) --> ForceToLoadTransformation:::typeClass[[ForceToLoadTransformation]]
-	DrillingDataPoint_3([DrillingDataPoint_3]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	TopSideTelemetry_0([TopSideTelemetry_0]) --> TopSideTelemetry:::typeClass[[TopSideTelemetry]]
-	DataFlowNode_0([DataFlowNode_0]) --> DataFlowNode:::typeClass[[DataFlowNode]]
-	TimeWindowMovingAverage_0([TimeWindowMovingAverage_0]) --> TimeWindowMovingAverage:::typeClass[[TimeWindowMovingAverage]]
-	TimeWindowMovingAverage_1([TimeWindowMovingAverage_1]) --> TimeWindowMovingAverage:::typeClass[[TimeWindowMovingAverage]]
+	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	DeadLine_0([DeadLine_0]) --> DeadLine[[DeadLine]]:::typeClass
+	HookLoad_0([HookLoad_0]) --> HookLoad[[HookLoad]]:::typeClass
+	TravellingBlock_0([TravellingBlock_0]) --> TravellingBlock[[TravellingBlock]]:::typeClass
+	HookLoad_1([HookLoad_1]) --> HookLoad[[HookLoad]]:::typeClass
+	TopDriveShaft_0([TopDriveShaft_0]) --> TopDriveShaft[[TopDriveShaft]]:::typeClass
+	DrillingDataPoint_1([DrillingDataPoint_1]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	DrillingDataPoint_2([DrillingDataPoint_2]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	HookloadQuantity_0([HookloadQuantity_0]) --> HookloadQuantity[[HookloadQuantity]]:::typeClass
+	Transformation_0([Transformation_0]) --> Transformation[[Transformation]]:::typeClass
+	ForceToLoadTransformation_0([ForceToLoadTransformation_0]) --> ForceToLoadTransformation[[ForceToLoadTransformation]]:::typeClass
+	ForceToLoadTransformation_1([ForceToLoadTransformation_1]) --> ForceToLoadTransformation[[ForceToLoadTransformation]]:::typeClass
+	DrillingDataPoint_3([DrillingDataPoint_3]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	TopSideTelemetry_0([TopSideTelemetry_0]) --> TopSideTelemetry[[TopSideTelemetry]]:::typeClass
+	DataFlowNode_0([DataFlowNode_0]) --> DataFlowNode[[DataFlowNode]]:::typeClass
+	TimeWindowMovingAverage_0([TimeWindowMovingAverage_0]) --> TimeWindowMovingAverage[[TimeWindowMovingAverage]]:::typeClass
+	TimeWindowMovingAverage_1([TimeWindowMovingAverage_1]) --> TimeWindowMovingAverage[[TimeWindowMovingAverage]]:::typeClass
 	 DrillingDataPoint_0 -- IsMechanicallyLocatedAt --> DeadLine_0 
 	 HookLoad_0 -- IsMechanicallyLocatedAt --> TravellingBlock_0 
 	 HookLoad_1 -- IsMechanicallyLocatedAt --> TopDriveShaft_0 

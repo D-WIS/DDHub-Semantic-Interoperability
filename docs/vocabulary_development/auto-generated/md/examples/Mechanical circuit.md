@@ -44,27 +44,27 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
-	Elevator_0([Elevator_0]) --> Elevator:::typeClass[[Elevator]]
-	MechanicallyConnectedState_0([MechanicallyConnectedState_0]) --> MechanicallyConnectedState:::typeClass[[MechanicallyConnectedState]]
-	Slips_0([Slips_0]) --> Slips:::typeClass[[Slips]]
-	MechanicallyClosedState_0([MechanicallyClosedState_0]) --> MechanicallyClosedState:::typeClass[[MechanicallyClosedState]]
-	TopDriveShaft_0([TopDriveShaft_0]) --> TopDriveShaft:::typeClass[[TopDriveShaft]]
-	MechanicallyConnectedState_1([MechanicallyConnectedState_1]) --> MechanicallyConnectedState:::typeClass[[MechanicallyConnectedState]]
-	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	DrillingDataPoint_1([DrillingDataPoint_1]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	DrillingDataPoint_2([DrillingDataPoint_2]) --> DrillingDataPoint:::typeClass[[DrillingDataPoint]]
-	ActiveLine_0([ActiveLine_0]) --> ActiveLine:::typeClass[[ActiveLine]]
-	DrawWorks_0([DrawWorks_0]) --> DrawWorks:::typeClass[[DrawWorks]]
-	CrownBlock_0([CrownBlock_0]) --> CrownBlock:::typeClass[[CrownBlock]]
-	DeadLine_0([DeadLine_0]) --> DeadLine:::typeClass[[DeadLine]]
-	SupportLine_0([SupportLine_0]) --> SupportLine:::typeClass[[SupportLine]]
-	DrawWorks_1([DrawWorks_1]) --> DrawWorks:::typeClass[[DrawWorks]]
-	Dolly_0([Dolly_0]) --> Dolly:::typeClass[[Dolly]]
-	DollyRail_0([DollyRail_0]) --> DollyRail:::typeClass[[DollyRail]]
-	DrillString_0([DrillString_0]) --> DrillString:::typeClass[[DrillString]]
-	TravellingBlock_0([TravellingBlock_0]) --> TravellingBlock:::typeClass[[TravellingBlock]]
-	TopDriveBody_0([TopDriveBody_0]) --> TopDriveBody:::typeClass[[TopDriveBody]]
-	TopDriveHook_0([TopDriveHook_0]) --> TopDriveHook:::typeClass[[TopDriveHook]]
+	Elevator_0([Elevator_0]) --> Elevator[[Elevator]]:::typeClass
+	MechanicallyConnectedState_0([MechanicallyConnectedState_0]) --> MechanicallyConnectedState[[MechanicallyConnectedState]]:::typeClass
+	Slips_0([Slips_0]) --> Slips[[Slips]]:::typeClass
+	MechanicallyClosedState_0([MechanicallyClosedState_0]) --> MechanicallyClosedState[[MechanicallyClosedState]]:::typeClass
+	TopDriveShaft_0([TopDriveShaft_0]) --> TopDriveShaft[[TopDriveShaft]]:::typeClass
+	MechanicallyConnectedState_1([MechanicallyConnectedState_1]) --> MechanicallyConnectedState[[MechanicallyConnectedState]]:::typeClass
+	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	DrillingDataPoint_1([DrillingDataPoint_1]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	DrillingDataPoint_2([DrillingDataPoint_2]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	ActiveLine_0([ActiveLine_0]) --> ActiveLine[[ActiveLine]]:::typeClass
+	DrawWorks_0([DrawWorks_0]) --> DrawWorks[[DrawWorks]]:::typeClass
+	CrownBlock_0([CrownBlock_0]) --> CrownBlock[[CrownBlock]]:::typeClass
+	DeadLine_0([DeadLine_0]) --> DeadLine[[DeadLine]]:::typeClass
+	SupportLine_0([SupportLine_0]) --> SupportLine[[SupportLine]]:::typeClass
+	DrawWorks_1([DrawWorks_1]) --> DrawWorks[[DrawWorks]]:::typeClass
+	Dolly_0([Dolly_0]) --> Dolly[[Dolly]]:::typeClass
+	DollyRail_0([DollyRail_0]) --> DollyRail[[DollyRail]]:::typeClass
+	DrillString_0([DrillString_0]) --> DrillString[[DrillString]]:::typeClass
+	TravellingBlock_0([TravellingBlock_0]) --> TravellingBlock[[TravellingBlock]]:::typeClass
+	TopDriveBody_0([TopDriveBody_0]) --> TopDriveBody[[TopDriveBody]]:::typeClass
+	TopDriveHook_0([TopDriveHook_0]) --> TopDriveHook[[TopDriveHook]]:::typeClass
 	 Elevator_0 -- HasMechanicalState --> MechanicallyConnectedState_0 
 	 Slips_0 -- HasMechanicalState --> MechanicallyClosedState_0 
 	 TopDriveShaft_0 -- HasMechanicalState --> MechanicallyConnectedState_1 

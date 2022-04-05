@@ -30,20 +30,20 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
-	ActiveLine_0([ActiveLine_0]) --> ActiveLine:::typeClass[[ActiveLine]]
-	DrawWorks_0([DrawWorks_0]) --> DrawWorks:::typeClass[[DrawWorks]]
-	CrownBlock_0([CrownBlock_0]) --> CrownBlock:::typeClass[[CrownBlock]]
-	DeadLine_0([DeadLine_0]) --> DeadLine:::typeClass[[DeadLine]]
-	SupportLine_0([SupportLine_0]) --> SupportLine:::typeClass[[SupportLine]]
-	DrawWorks_1([DrawWorks_1]) --> DrawWorks:::typeClass[[DrawWorks]]
-	Dolly_0([Dolly_0]) --> Dolly:::typeClass[[Dolly]]
-	DollyRail_0([DollyRail_0]) --> DollyRail:::typeClass[[DollyRail]]
-	Elevator_0([Elevator_0]) --> Elevator:::typeClass[[Elevator]]
-	DrillString_0([DrillString_0]) --> DrillString:::typeClass[[DrillString]]
-	TravellingBlock_0([TravellingBlock_0]) --> TravellingBlock:::typeClass[[TravellingBlock]]
-	TopDriveBody_0([TopDriveBody_0]) --> TopDriveBody:::typeClass[[TopDriveBody]]
-	TopDriveShaft_0([TopDriveShaft_0]) --> TopDriveShaft:::typeClass[[TopDriveShaft]]
-	TopDriveHook_0([TopDriveHook_0]) --> TopDriveHook:::typeClass[[TopDriveHook]]
+	ActiveLine_0([ActiveLine_0]) --> ActiveLine[[ActiveLine]]:::typeClass
+	DrawWorks_0([DrawWorks_0]) --> DrawWorks[[DrawWorks]]:::typeClass
+	CrownBlock_0([CrownBlock_0]) --> CrownBlock[[CrownBlock]]:::typeClass
+	DeadLine_0([DeadLine_0]) --> DeadLine[[DeadLine]]:::typeClass
+	SupportLine_0([SupportLine_0]) --> SupportLine[[SupportLine]]:::typeClass
+	DrawWorks_1([DrawWorks_1]) --> DrawWorks[[DrawWorks]]:::typeClass
+	Dolly_0([Dolly_0]) --> Dolly[[Dolly]]:::typeClass
+	DollyRail_0([DollyRail_0]) --> DollyRail[[DollyRail]]:::typeClass
+	Elevator_0([Elevator_0]) --> Elevator[[Elevator]]:::typeClass
+	DrillString_0([DrillString_0]) --> DrillString[[DrillString]]:::typeClass
+	TravellingBlock_0([TravellingBlock_0]) --> TravellingBlock[[TravellingBlock]]:::typeClass
+	TopDriveBody_0([TopDriveBody_0]) --> TopDriveBody[[TopDriveBody]]:::typeClass
+	TopDriveShaft_0([TopDriveShaft_0]) --> TopDriveShaft[[TopDriveShaft]]:::typeClass
+	TopDriveHook_0([TopDriveHook_0]) --> TopDriveHook[[TopDriveHook]]:::typeClass
 	 ActiveLine_0 -- IsMechanicallyConnectTo --> DrawWorks_0 
 	 CrownBlock_0 -- IsMechanicallyConnectTo --> ActiveLine_0 
 	 CrownBlock_0 -- IsMechanicallyConnectTo --> DeadLine_0 

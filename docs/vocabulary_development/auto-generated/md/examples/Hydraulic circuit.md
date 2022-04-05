@@ -37,23 +37,23 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
-	ActivePit_0([ActivePit_0]) --> ActivePit:::typeClass[[ActivePit]]
-	ThreeWayValve_0([ThreeWayValve_0]) --> ThreeWayValve:::typeClass[[ThreeWayValve]]
-	GateValve_0([GateValve_0]) --> GateValve:::typeClass[[GateValve]]
-	GateValve_1([GateValve_1]) --> GateValve:::typeClass[[GateValve]]
-	GateValve_2([GateValve_2]) --> GateValve:::typeClass[[GateValve]]
-	ThreeWayManifold_0([ThreeWayManifold_0]) --> ThreeWayManifold:::typeClass[[ThreeWayManifold]]
-	ThreeWayManifold_1([ThreeWayManifold_1]) --> ThreeWayManifold:::typeClass[[ThreeWayManifold]]
-	ThreeWayManifold_2([ThreeWayManifold_2]) --> ThreeWayManifold:::typeClass[[ThreeWayManifold]]
-	CementPump_0([CementPump_0]) --> CementPump:::typeClass[[CementPump]]
-	MudPump_0([MudPump_0]) --> MudPump:::typeClass[[MudPump]]
-	MudPump_1([MudPump_1]) --> MudPump:::typeClass[[MudPump]]
-	ThreeWayValve_1([ThreeWayValve_1]) --> ThreeWayValve:::typeClass[[ThreeWayValve]]
-	ThreeWayValve_2([ThreeWayValve_2]) --> ThreeWayValve:::typeClass[[ThreeWayValve]]
-	ThreeWayValve_3([ThreeWayValve_3]) --> ThreeWayValve:::typeClass[[ThreeWayValve]]
-	ThreeWayManifold_3([ThreeWayManifold_3]) --> ThreeWayManifold:::typeClass[[ThreeWayManifold]]
-	StandPipe_0([StandPipe_0]) --> StandPipe:::typeClass[[StandPipe]]
-	MudMixing_0([MudMixing_0]) --> MudMixing:::typeClass[[MudMixing]]
+	ActivePit_0([ActivePit_0]) --> ActivePit[[ActivePit]]:::typeClass
+	ThreeWayValve_0([ThreeWayValve_0]) --> ThreeWayValve[[ThreeWayValve]]:::typeClass
+	GateValve_0([GateValve_0]) --> GateValve[[GateValve]]:::typeClass
+	GateValve_1([GateValve_1]) --> GateValve[[GateValve]]:::typeClass
+	GateValve_2([GateValve_2]) --> GateValve[[GateValve]]:::typeClass
+	ThreeWayManifold_0([ThreeWayManifold_0]) --> ThreeWayManifold[[ThreeWayManifold]]:::typeClass
+	ThreeWayManifold_1([ThreeWayManifold_1]) --> ThreeWayManifold[[ThreeWayManifold]]:::typeClass
+	ThreeWayManifold_2([ThreeWayManifold_2]) --> ThreeWayManifold[[ThreeWayManifold]]:::typeClass
+	CementPump_0([CementPump_0]) --> CementPump[[CementPump]]:::typeClass
+	MudPump_0([MudPump_0]) --> MudPump[[MudPump]]:::typeClass
+	MudPump_1([MudPump_1]) --> MudPump[[MudPump]]:::typeClass
+	ThreeWayValve_1([ThreeWayValve_1]) --> ThreeWayValve[[ThreeWayValve]]:::typeClass
+	ThreeWayValve_2([ThreeWayValve_2]) --> ThreeWayValve[[ThreeWayValve]]:::typeClass
+	ThreeWayValve_3([ThreeWayValve_3]) --> ThreeWayValve[[ThreeWayValve]]:::typeClass
+	ThreeWayManifold_3([ThreeWayManifold_3]) --> ThreeWayManifold[[ThreeWayManifold]]:::typeClass
+	StandPipe_0([StandPipe_0]) --> StandPipe[[StandPipe]]:::typeClass
+	MudMixing_0([MudMixing_0]) --> MudMixing[[MudMixing]]:::typeClass
 	 ActivePit_0 -- IsHydraulicConnectedTo --> ThreeWayValve_0 
 	 ThreeWayValve_0 -- IsHydraulicConnectedTo --> GateValve_0 
 	 ThreeWayValve_0 -- IsHydraulicConnectedTo --> GateValve_1 

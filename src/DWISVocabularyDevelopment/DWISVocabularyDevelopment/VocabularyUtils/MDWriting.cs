@@ -260,7 +260,7 @@ namespace DWIS.Vocabulary.Utils
             builder.AppendLine("\t classDef typeClass fill:#f96;");
             foreach (var i in instance.Population)
             {
-                builder.AppendLine($"\t{i.Name}([{i.Name}]) --> {i.TypeName}:::typeClass[[{i.TypeName}]]"  );               
+                builder.AppendLine($"\t{i.Name}([{i.Name}]) --> {i.TypeName}[[{i.TypeName}]]:::typeClass"  );               
             }
             foreach (var i in instance.Sentences)
             {
