@@ -12,6 +12,7 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
+	 classDef classClass fill:#9dd0ff;
 	Bit_0([Bit_0]) --> Bit[[Bit]]:::typeClass
 	Pipe_0([Pipe_0]) --> Pipe[[Pipe]]:::typeClass
 	Pipe_1([Pipe_1]) --> Pipe[[Pipe]]:::typeClass

@@ -20,6 +20,7 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
+	 classDef classClass fill:#9dd0ff;
 	DrillPipesAnnular_0([DrillPipesAnnular_0]) --> DrillPipesAnnular[[DrillPipesAnnular]]:::typeClass
 	BellNipple_0([BellNipple_0]) --> BellNipple[[BellNipple]]:::typeClass
 	BHAAnnular_0([BHAAnnular_0]) --> BHAAnnular[[BHAAnnular]]:::typeClass

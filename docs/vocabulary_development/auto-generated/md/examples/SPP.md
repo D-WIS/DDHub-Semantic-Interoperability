@@ -13,6 +13,7 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
+	 classDef classClass fill:#9dd0ff;
 	SPP_0([SPP_0]) --> SPP[[SPP]]:::typeClass
 	StandPipe_0([StandPipe_0]) --> StandPipe[[StandPipe]]:::typeClass
 	SPPQuantity_0([SPPQuantity_0]) --> SPPQuantity[[SPPQuantity]]:::typeClass

@@ -536,6 +536,7 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
+	 classDef classClass fill:#9dd0ff;
 	HookVelocity_0([HookVelocity_0]) --> HookVelocity[[HookVelocity]]:::typeClass
 	DynamicDrillingSignal_0([DynamicDrillingSignal_0]) --> DynamicDrillingSignal[[DynamicDrillingSignal]]:::typeClass
 	FlowRateIn_0([FlowRateIn_0]) --> FlowRateIn[[FlowRateIn]]:::typeClass

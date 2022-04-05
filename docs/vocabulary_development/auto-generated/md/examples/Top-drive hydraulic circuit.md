@@ -7,6 +7,7 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
+	 classDef classClass fill:#9dd0ff;
 	StandPipe_0([StandPipe_0]) --> StandPipe[[StandPipe]]:::typeClass
 	TopDriveShaft_0([TopDriveShaft_0]) --> TopDriveShaft[[TopDriveShaft]]:::typeClass
 	TopDrive_0([TopDrive_0]) --> TopDrive[[TopDrive]]:::typeClass

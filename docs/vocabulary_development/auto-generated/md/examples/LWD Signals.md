@@ -43,6 +43,7 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
+	 classDef classClass fill:#9dd0ff;
 	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	Resistivity_0([Resistivity_0]) --> Resistivity[[Resistivity]]:::typeClass
 	Location_0([Location_0]) --> Location[[Location]]:::typeClass

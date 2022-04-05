@@ -69,6 +69,7 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
+	 classDef classClass fill:#9dd0ff;
 	DensityOut_0([DensityOut_0]) --> DensityOut[[DensityOut]]:::typeClass
 	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	TemperatureOut_0([TemperatureOut_0]) --> TemperatureOut[[TemperatureOut]]:::typeClass

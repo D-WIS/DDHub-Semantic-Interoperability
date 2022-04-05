@@ -44,6 +44,7 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
+	 classDef classClass fill:#9dd0ff;
 	Elevator_0([Elevator_0]) --> Elevator[[Elevator]]:::typeClass
 	MechanicallyConnectedState_0([MechanicallyConnectedState_0]) --> MechanicallyConnectedState[[MechanicallyConnectedState]]:::typeClass
 	Slips_0([Slips_0]) --> Slips[[Slips]]:::typeClass

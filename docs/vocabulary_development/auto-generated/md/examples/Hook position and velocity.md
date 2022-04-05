@@ -22,6 +22,7 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
+	 classDef classClass fill:#9dd0ff;
 	HookPosition_0([HookPosition_0]) --> HookPosition[[HookPosition]]:::typeClass
 	Derivation_0([Derivation_0]) --> Derivation[[Derivation]]:::typeClass
 	HookVelocity_0([HookVelocity_0]) --> HookVelocity[[HookVelocity]]:::typeClass

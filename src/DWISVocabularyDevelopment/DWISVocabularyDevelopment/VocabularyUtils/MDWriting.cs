@@ -258,6 +258,7 @@ namespace DWIS.Vocabulary.Utils
             builder.AppendLine("```mermaid");
             builder.AppendLine("flowchart TD");
             builder.AppendLine("\t classDef typeClass fill:#f96;");
+            builder.AppendLine("\t classDef classClass fill:#9dd0ff;");
             foreach (var i in instance.Population)
             {
                 builder.AppendLine($"\t{i.Name}([{i.Name}]) --> {i.TypeName}[[{i.TypeName}]]:::typeClass"  );               
@@ -269,7 +270,7 @@ namespace DWIS.Vocabulary.Utils
 
             foreach (var i in instance.ClassAssertions)
             {
-                builder.AppendLine($"\t {i.Subject} -- {i.Verb} --> {i.Class}(({i.Class})) ");
+                builder.AppendLine($"\t {i.Subject} -- {i.Verb} --> {i.Class}(({i.Class})):::classClass");
             }
 
             builder.AppendLine("```");

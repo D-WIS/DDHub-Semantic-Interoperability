@@ -37,6 +37,7 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
+	 classDef classClass fill:#9dd0ff;
 	ActivePit_0([ActivePit_0]) --> ActivePit[[ActivePit]]:::typeClass
 	ThreeWayValve_0([ThreeWayValve_0]) --> ThreeWayValve[[ThreeWayValve]]:::typeClass
 	GateValve_0([GateValve_0]) --> GateValve[[GateValve]]:::typeClass

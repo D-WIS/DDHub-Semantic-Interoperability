@@ -55,6 +55,7 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
+	 classDef classClass fill:#9dd0ff;
 	BitTorqueQuantity_0([BitTorqueQuantity_0]) --> BitTorqueQuantity[[BitTorqueQuantity]]:::typeClass
 	TorqueQuantity_0([TorqueQuantity_0]) --> TorqueQuantity[[TorqueQuantity]]:::typeClass
 	BlockAccelerationQuantity_0([BlockAccelerationQuantity_0]) --> BlockAccelerationQuantity[[BlockAccelerationQuantity]]:::typeClass

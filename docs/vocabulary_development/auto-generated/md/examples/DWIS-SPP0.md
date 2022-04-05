@@ -24,6 +24,7 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
+	 classDef classClass fill:#9dd0ff;
 	SPP_0([SPP_0]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	StandPipe_0([StandPipe_0]) --> StandPipe[[StandPipe]]:::typeClass
 	SPPQuantity_0([SPPQuantity_0]) --> SPPQuantity[[SPPQuantity]]:::typeClass
@@ -44,6 +45,6 @@ flowchart TD
 	 StandPipeLocation -- HasCoordinates --> StandPipeElevation 
 	 StandPipeLocation -- HasReferenceFrame --> ElevationReferenceFrame 
 	 ElevationReferenceFrame -- HasReferenceFrameOrigin --> DrillFloorLocation 
-	 SPP_0 -- BelongsToClass --> SPP((SPP)) 
-	 SPP_0 -- BelongsToClass --> Measurement((Measurement)) 
+	 SPP_0 -- BelongsToClass --> SPP((SPP)):::classClass
+	 SPP_0 -- BelongsToClass --> Measurement((Measurement)):::classClass
 ```

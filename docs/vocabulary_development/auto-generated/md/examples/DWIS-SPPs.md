@@ -42,6 +42,7 @@
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
+	 classDef classClass fill:#9dd0ff;
 	SPP_0([SPP_0]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	StandPipe_0([StandPipe_0]) --> StandPipe[[StandPipe]]:::typeClass
 	SPPQuantity_0([SPPQuantity_0]) --> SPPQuantity[[SPPQuantity]]:::typeClass
@@ -77,9 +78,9 @@ flowchart TD
 	 SPP_1 -- IsPhysicallyLocatedAt --> StandPipeLocation 
 	 InstantComputedSPP -- IsComputedBy --> SPPComputationUnit_0 
 	 InstantComputedSPP -- IsTransmissionInput --> MovingAverage1 
-	 SPP_0 -- BelongsToClass --> SPP((SPP)) 
-	 SPP_0 -- BelongsToClass --> Measurement((Measurement)) 
-	 SPP_1 -- BelongsToClass --> SPP((SPP)) 
-	 SPP_1 -- BelongsToClass --> ComputedData((ComputedData)) 
-	 SPP_1 -- BelongsToClass --> Limit((Limit)) 
+	 SPP_0 -- BelongsToClass --> SPP((SPP)):::classClass
+	 SPP_0 -- BelongsToClass --> Measurement((Measurement)):::classClass
+	 SPP_1 -- BelongsToClass --> SPP((SPP)):::classClass
+	 SPP_1 -- BelongsToClass --> ComputedData((ComputedData)):::classClass
+	 SPP_1 -- BelongsToClass --> Limit((Limit)):::classClass
 ```
