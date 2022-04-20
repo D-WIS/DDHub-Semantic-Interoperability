@@ -425,26 +425,19 @@ namespace DWIS.Vocabulary.Utils
 
         }
 
-
-        public static bool FromMDFile(string fileName, DWISVocabulary vocabulary, out DWISInstance instance)
+        public static bool FromLines(string[] allLines, DWISVocabulary vocabulary, DWISInstance instance, bool fromMD = true)
         {
-            instance = null;
-            string[] allLines = System.IO.File.ReadAllLines(fileName);
             if (allLines != null && allLines.Length > 0)
             {
-                instance = new DWISInstance(System.IO.Path.GetFileNameWithoutExtension(fileName), vocabulary);
-                instance.Population = new SimplePopulation();
-                instance.Sentences = new SimpleSentenceCollection();
-                instance.ClassAssertions = new SimpleClassAssertionCollection();
                 foreach (string line in allLines)
                 {
                     if (line.Contains("mermaid"))
                     {
                         return true;
                     }
-                    else if (line.StartsWith("- "))
+                    else if (!fromMD || line.StartsWith("- "))
                     {
-                        var l = line.Remove(0, "- ".Length);
+                        var l = fromMD ? line.Remove(0, "- ".Length) : line;
                         if (l.Contains(':'))
                         {
                             var els = l.Split(':');
@@ -470,7 +463,7 @@ namespace DWIS.Vocabulary.Utils
                                 var verb = vocabulary.Verbs.Find(ve => ve.Name == v);
                                 var subject = instance.Population.FirstOrDefault(i => i.Name == s);
 
-                                if (verb != null && subject != null )
+                                if (verb != null && subject != null)
                                 {
                                     if (verb.Name == "BelongsToClass")
                                     {
@@ -496,6 +489,18 @@ namespace DWIS.Vocabulary.Utils
                 return true;
             }
             return false;
+        }
+
+        public static bool FromMDFile(string fileName, DWISVocabulary vocabulary, out DWISInstance instance)
+        {
+            instance = new DWISInstance(System.IO.Path.GetFileNameWithoutExtension(fileName), vocabulary);
+            instance.Population = new SimplePopulation();
+            instance.Sentences = new SimpleSentenceCollection();
+            instance.ClassAssertions = new SimpleClassAssertionCollection();
+
+            string[] allLines = System.IO.File.ReadAllLines(fileName);
+
+            return FromLines(allLines, vocabulary, instance);
         }
 
 

@@ -215,6 +215,13 @@ namespace DWIS.Vocabulary.Utils
         }
 
         public static void ToMDFile(DWISInstance instance, string fileName, DWIS.Vocabulary.Development.Vocabulary vocabulary, bool addGraph = false, bool useLinks = true)
+        {            
+
+            System.IO.File.WriteAllText(fileName, ToString(instance, fileName, vocabulary, addGraph, useLinks));
+
+        }
+
+        public static string ToString(DWISInstance instance, string fileName, DWIS.Vocabulary.Development.Vocabulary vocabulary, bool addGraph = false, bool useLinks = true)
         {
             StringBuilder builder = new StringBuilder();
             builder.AppendLine("# " + instance.Name);
@@ -238,12 +245,8 @@ namespace DWIS.Vocabulary.Utils
             {
                 ToMDMermaidGraph(instance, builder);
             }
-
-            System.IO.File.WriteAllText(fileName, builder.ToString());
-
+            return builder.ToString();
         }
-
-
         public static void ToMDMermaidGraph(DWISInstance instance, StringBuilder builder)
         {
             string name;

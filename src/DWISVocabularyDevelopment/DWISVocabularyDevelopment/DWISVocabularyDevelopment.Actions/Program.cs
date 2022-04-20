@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Diagnostics;
+using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,7 +21,7 @@ namespace DWIS.Vocabulary.Development.Actions
             Console.WriteLine("DWIS Vocabulary development: vocabulary actions");
 
             using IHost host = CreateHostBuilder(args).Build();
-          
+
             var s = host.Services.GetRequiredService<VocabularyActioner>();
             if (s.PerformActions())
             {
@@ -41,19 +43,19 @@ namespace DWIS.Vocabulary.Development.Actions
       Host.CreateDefaultBuilder(args)
           .ConfigureAppConfiguration((hostingContext, configuration) =>
           {
-              configuration.Sources.Clear(); 
+              configuration.Sources.Clear();
               configuration
                   .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
           })
           .ConfigureLogging(logging =>
-          { 
+          {
               logging
                   .ClearProviders()
                   .AddConsole().SetMinimumLevel(LogLevel.Trace);
           })
           .ConfigureServices((hostContext, services) =>
           {
-             // hostContext
+              // hostContext
               ActionsConfig options = new ActionsConfig();
               hostContext.Configuration.GetSection(nameof(ActionsConfig))
                                .Bind(options);
@@ -66,21 +68,45 @@ namespace DWIS.Vocabulary.Development.Actions
           });
     }
 
-    public class VocabularyActioner 
+    public class VocabularyActioner
     {
         private ILogger _logger;
         private ActionPaths _paths;
         private DWISVocabulary _vocabulary;
+        private List<PackageInfo> _packageInfos = new List<PackageInfo>();
+
         public VocabularyActioner(ActionsConfig conf, ILogger<VocabularyActioner> logger)
         {
             _logger = logger;
-            
+
             _paths = new ActionPaths(conf.SourceFolder, conf.DestinationFolder, conf.SchemaFolder, conf.ExamplesSourceFolder);
-        
+
+            if (!string.IsNullOrEmpty(conf.ProjectsToPack))
+            {
+                int version = conf.PackVersion;
+                if (conf.IncrementVersion)
+                {
+                    version++;
+                    var filePath = System.IO.Path.Combine(AppContext.BaseDirectory, "appSettings.json");
+                    string json = System.IO.File.ReadAllText(filePath);
+                    var jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject<ActionsConfig>(json);
+                    jsonObj.PackVersion = version;
+                    string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented);
+                    System.IO.File.WriteAllText(filePath, output);
+                }
+
+
+                var projects = conf.ProjectsToPack.Split(',', StringSplitOptions.RemoveEmptyEntries);
+                foreach (string project in projects)
+                {
+                    PackageInfo packageInfo = new PackageInfo() { ProjectName = project, Version = version , OutPutFolder = conf.PackageOutputFolder};
+                    _packageInfos.Add(packageInfo);
+                }
+            }
         }
         public bool PerformActions()
         {
-            return Checks() && Export();
+            return Checks() && Export() && Pack();
         }
 
         private bool Checks()
@@ -103,10 +129,10 @@ namespace DWIS.Vocabulary.Development.Actions
         {
             _logger.LogInformation($"Export md single file to {_paths.SingleMDFilePath}");
             MDWriting.ToMDFile(_vocabulary, _paths.SingleMDFilePath);
-            
+
             _logger.LogInformation($"Export md individual files to folder {_paths.DefinitionFilesFolderPath}");
             MDWriting.ToMDFiles(_vocabulary, _paths.DefinitionFilesFolderPath);
-            
+
             _logger.LogInformation($"Export ontology to {_paths.OntologyFilePath}");
             OWL.OntologyGeneration.GenerateOntology(_paths.OntologyFilePath, _vocabulary);
 
@@ -114,13 +140,23 @@ namespace DWIS.Vocabulary.Development.Actions
             SchemaWriter.WriteSchema(_vocabulary, _paths.NounsSchemaPath, _paths.VerbsSchemaPath);
 
             _logger.LogInformation($"Export example files to {_paths.ExamplesFilesFolderPath}");
-            ParseExamples();
+            ParseExamples();         
+
+            return true;
+        }
+
+        private bool Pack()
+        {
+            foreach (var pi in _packageInfos)
+            {
+                new PackageCreator().PackAndCopyProject(pi);   
+            }
             return true;
         }
 
         private VocabularyActioner LoadSourceVocabulary(bool previousOK, out bool ok)
         {
-            ok =previousOK && VocabularyParsing.FromFolder(_paths.VocabularySourceFolder, out _vocabulary);
+            ok = previousOK && VocabularyParsing.FromFolder(_paths.VocabularySourceFolder, out _vocabulary);
             return this;
         }
 
@@ -147,7 +183,7 @@ namespace DWIS.Vocabulary.Development.Actions
                         var sorted = nounTags.ToList();
                         sorted.Sort();
                         List<string> duplicates = new List<string>();
-                        for (int i = 0; i < sorted.Count-1; i++)
+                        for (int i = 0; i < sorted.Count - 1; i++)
                         {
                             if (sorted[i] == sorted[i + 1])
                             {
@@ -192,7 +228,7 @@ namespace DWIS.Vocabulary.Development.Actions
 
         private VocabularyActioner CheckForTreeCount(bool previousOK, out Tree<Noun> nounTree, out Tree<Verb> verbTree, out bool ok)
         {
-            _vocabulary.ToTrees(out  nounTree, out  verbTree);
+            _vocabulary.ToTrees(out nounTree, out verbTree);
             ok = previousOK && nounTree.Count() == _vocabulary.Nouns.Count && verbTree.Count() == _vocabulary.Verbs.Count;
 
             if (previousOK && !ok)
@@ -206,7 +242,7 @@ namespace DWIS.Vocabulary.Development.Actions
 
         private VocabularyActioner ParseExamples()
         {
-            var files = System.IO.Directory.GetFiles(_paths.ExamplesSourceFolder).Where(f=>f.EndsWith(".md"));
+            var files = System.IO.Directory.GetFiles(_paths.ExamplesSourceFolder).Where(f => f.EndsWith(".md"));
             foreach (var file in files)
             {
                 if (VocabularyParsing.FromMDFile(file, _vocabulary, out DWISInstance instance))
@@ -223,15 +259,19 @@ namespace DWIS.Vocabulary.Development.Actions
 
     public class ActionsConfig
     {
-        public string SourceFolder { get;  set; }
+        public string SourceFolder { get; set; }
         public string DestinationFolder { get; set; }
         public string SchemaFolder { get; set; }
         public string ExamplesSourceFolder { get; set; }
+        public string ProjectsToPack { get; set; }
+        public int PackVersion { get; set; }
+        public string PackageOutputFolder { get; set; }
+        public bool IncrementVersion { get; set; }
     }
 
     public class ActionPaths
     {
-        public string VocabularySourceFolder { get;private set; }
+        public string VocabularySourceFolder { get; private set; }
         public string ExamplesSourceFolder { get; private set; }
         public static string SingleFileName { get; set; } = "DWISVocabulary";
         public static string DefinitionFilesFolderName { get; set; } = "definition-files";
@@ -245,8 +285,8 @@ namespace DWIS.Vocabulary.Development.Actions
 
 
         public string MDFolderPath { get; private set; }
-        public string SingleMDFilePath { get;private  set; }
-        public string DefinitionFilesFolderPath { get;private set; }
+        public string SingleMDFilePath { get; private set; }
+        public string DefinitionFilesFolderPath { get; private set; }
         public string ExamplesFilesFolderPath { get; private set; }
         public string RDFFolderPath { get; private set; }
         public string OntologyFilePath { get; private set; }
@@ -274,6 +314,61 @@ namespace DWIS.Vocabulary.Development.Actions
 
         }
 
+    }
+
+
+    public class PackageCreator
+    {
+        private string FindProjectFolder ( string projectName,System.IO.DirectoryInfo currentDirectory = null)
+        {
+            if (currentDirectory == null)
+            {
+                currentDirectory = new System.IO.DirectoryInfo(System.IO.Directory.GetCurrentDirectory());
+            }
+
+            var files = currentDirectory.GetFiles("*" + projectName + ".csproj", System.IO.SearchOption.AllDirectories);
+            if (files != null && files.Length==1)
+            {
+                return files[0].DirectoryName;
+            }
+            else
+            {
+                return  currentDirectory.Parent !=null ?  FindProjectFolder(projectName, currentDirectory.Parent) : null;
+            }
+        }
+
+
+        public bool PackAndCopyProject(PackageInfo packageInfo)
+        {
+            if (packageInfo.OutPutFolder != null )
+            {
+                string arguments = $"pack --no-build --output {packageInfo.OutPutFolder} -p:PackageVersion=1.0.{packageInfo.Version}";
+
+                string folder = FindProjectFolder(packageInfo.ProjectName);
+                if (!string.IsNullOrEmpty(folder))
+                {
+                    var process = new Process
+                    {
+                        StartInfo =
+                    {
+                        FileName = "dotnet",
+                        Arguments = arguments,
+                        UseShellExecute = false,
+                        WorkingDirectory = folder
+                    }
+                    };
+                    process.Start();
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+    public class PackageInfo
+    {
+        public string ProjectName { get; set; }
+        public int Version { get; set; }
+        public string OutPutFolder { get; set; }
     }
 
 }
