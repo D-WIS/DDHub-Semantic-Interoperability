@@ -18,5 +18,5 @@ Vocabulary development takes place [here](docs/vocabulary_development/README.md)
 
 ```mermaid
   graph TD;
-      D-- D -->Hub;      
+      Drilling-- Data -->Hub;      
 ```
