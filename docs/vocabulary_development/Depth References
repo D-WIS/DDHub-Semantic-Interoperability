@@ -1,0 +1,61 @@
+******* DRAFT  ******   DRAFT   ******* DRAFT ******
+
+Intro
+
+  (Thank you to Jonathan Lightfoot and the ISCWSA for this information.)
+  The work of the ISCWSA (SPE Wellbore Positioning Technical Section was put in place to help with Depth references and Quality Assurance. 
+  The primary work was in the recent RP-78 workgroup to reduce the QA/QC of depth from a large section to a summary of requirements. 
+  In addition, Depth was included in the discussion related to Well Origin (Surface Location). 
+  They also worked with the OSDU to propose some data tables to establish mnemonics for all the WITS Levels in an effort to further standardize these values. 
+  Most of the RP-78 work is related to wellbore positioning whereas the OSDU tables are a proposed reference as a starting point to make sure realtime data transmitted at the wellsite is better organized. 
+  Most of it was based on common tables except for WITS Level 7, 8, & 9.
+  Jonathon expanded the tables beyond thetraditional WITS-WITSML data levels.
+  
+  Jonathan also suggests that DWIS consider the IOGP data standards (attached), especially with respect to
+  coordinate reference systems, vertical reference datums and wellbore positioning data standards. 
+  The P7-17 document was recently updated and published and is a great reference for depth references used in wellbore construction. 
+  Also check out Guidance Note 24 related to vertical data in Oil and Gas.
+  https://www.iogp.org/blog/geomatics/iogp-releases-geomatics-guidance-note-24-vertical-data-in-oil-and-gas-applications/
+  
+  The following files are included on the GitHub site:
+    373-24-2.pdf                          Geomatics Guidance Note 24 Vertical data in oil and gas applications
+    48-7.pdf                              P7/17 Wellbore Positioning Data Exchange Format
+    IOGP Presentation p7/17.pptx          The International Association of Oil & Gas Producers
+    ISCWSA April 2021 Presentation.pptx
+    P717_User_Guide-v1.0-2020-02-11.docx  Wellbore Positional Data ExchangeUser Guide
+    PICTURES USER GUIDE_.pptx
+    PR_GN24-VerticalCRSs_final.pdf
+  
+  Summary
+  
+  The International Association of Oil & Gas Producers (IOGP) Geomatics Committee recommended an updated format to to enable 
+  storing raw sensor measurement data, tool error models and uncertainties.  With respect to depth measurements:
+      - Depth is the Distance of a point from a chosen vertical reference surface downward along a line that is perpendicular to that surface. 
+        Note 1 to entry: The line direction may be straight, or be dependent on the Earth's gravity field or other physical phenomena.
+        Note 2 to entry: A depth above the vertical reference surface will have a negative value. (ISO 19111). Colloquially, undesirably, 
+        called “Z” in some applications.  Often referred to as TVD, TVDss, TVDMSL.
+      - Gravity-related height is the height that is dependent on the Earth’s gravity field. 
+        Note 1 to entry: This refers to, amongst others, orthometric height and Normal height, which are both approximations of the distance of a point 
+        above the mean sea level, but also may include Normal-orthometric heights, dynamic heights or geopotential numbers. 
+        Note 2 to entry: The distance from the reference surface may follow a curved line, not necessarily straight, as it is influenced by the direction 
+        of gravity. (ISO 19111).
+      - Ground level (GL) is a point on the structure.  Note issue with pad construction and subsidence. Typically not used as ZDP directly, 
+        but in a two-step definition.
+      - The Well Reference Point (WRP) is the horizontal origin of the wellbore, generally the location where the wellbore enters the earth. 
+        The WRP is typically a physical point at or close to ground level (land rigs) or sea bed (offshore rigs). 
+      - The Zero-depth Point (ZDP) is the operational observation reference for the measured depth (MD) measurements, often the Derrick Floor during drilling.
+        The height (or 3D location) of the ZDP above the Vertical Reference Surface (e.g., mean sea level (MSL)) is recorded in the P7/17 file, as well as the measured depth 
+        of the WRP below it
+      - Coordinate Reference System (CRS)   --- TBD
+      - Vertical Reference Surface          --- TBD
+      - The Tie-in Point(TP) is a real survey station common to both the parent wellbore and the sidetrack. It is the last real, measured survey station 
+        in the parent wellbore that is above the kick-off point.
+      - The kick-off point (KOP), sometimes referred to as a window point, is intended to be the last ‘point’ in the parent wellbore before deviation. 
+      - The Measured Depth (MD) is the along hole distance from the ZDP point to a point in the wellbore (meters or feet, as indicated).  
+      - Total Depth (TD) is the distance (MD) from the ZDP to the end of the wellbore. 
+      - Total Vertical Depths(TVD) is an ambiguous term which in general means the same as local depth (i.e., the vertical distance below the ZDP) 
+        but can also mean depth below MSL.
+      - Local Depth (d) is the third component of the local coordinates, positive in vertical “down” direction. Not the same as MD (which is along hole). 
+  
+  
+  For additional terms and definitions see the table on page 44.
