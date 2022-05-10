@@ -438,47 +438,76 @@ namespace DWIS.Vocabulary.Utils
                     else if (!fromMD || line.StartsWith("- "))
                     {
                         var l = fromMD ? line.Remove(0, "- ".Length) : line;
-                        if (l.Contains(':'))
+
+                        bool found = false;
+
+                        if (l.Contains('.'))
                         {
-                            var els = l.Split(':');
-                            if (els.Length == 2)
+                            int idx = l.IndexOf('.');
+                            if (idx>0)
                             {
-                                var t = els[0].Trim();
-                                var noun = vocabulary.Nouns.Find(no => no.Name == t);
-                                if (noun != null)
+                                var instName = l.Substring(0, idx);
+                                var res = instance.Population.First(t => t.Name == instName.Trim());
+                                if (res != null)
                                 {
-                                    var n = els[1].Trim();
-                                    instance.Population.Add(new TypedIndividual(n, noun));
+                                    found = true;
+                                    var rest = l.Substring(idx + 1, l.Length - idx -1);
+                                    if (rest.Contains('='))
+                                    {
+                                        string propertyName = rest.Split('=')[0].Trim();
+                                        var p = res.Attributes.FirstOrDefault(a => a.AttributeName == propertyName);
+                                        if (p != null)
+                                        {
+                                            p.AttributeValue = rest.Split('=')[1].Trim();
+                                        }
+                                    }
                                 }
                             }
                         }
-                        else
+                        if (!found)
                         {
-                            var els = l.Split(' ');
-                            if (els.Length == 3)
+                            if (l.Contains(':'))
                             {
-                                var s = els[0].Trim();
-                                var o = els[2].Trim();
-                                var v = els[1].Trim();
-                                var verb = vocabulary.Verbs.Find(ve => ve.Name == v);
-                                var subject = instance.Population.FirstOrDefault(i => i.Name == s);
-
-                                if (verb != null && subject != null)
+                                var els = l.Split(':');
+                                if (els.Length == 2)
                                 {
-                                    if (verb.Name == "BelongsToClass")
+                                    var t = els[0].Trim();
+                                    var noun = vocabulary.Nouns.Find(no => no.Name == t);
+                                    if (noun != null)
                                     {
-                                        var sentenceObjecT = vocabulary.Nouns.FirstOrDefault(i => i.Name == o);
-                                        if (sentenceObjecT != null)
-                                        {
-                                            instance.ClassAssertions.Add(new ClassAssertion(subject, verb, sentenceObjecT));
-                                        }
+                                        var n = els[1].Trim();
+                                        instance.Population.Add(new TypedIndividual(n, noun));
                                     }
-                                    else
+                                }
+                            }
+                            else
+                            {
+                                var els = l.Split(' ');
+                                if (els.Length == 3)
+                                {
+                                    var s = els[0].Trim();
+                                    var o = els[2].Trim();
+                                    var v = els[1].Trim();
+                                    var verb = vocabulary.Verbs.Find(ve => ve.Name == v);
+                                    var subject = instance.Population.FirstOrDefault(i => i.Name == s);
+
+                                    if (verb != null && subject != null)
                                     {
-                                        var sentenceObjecT = instance.Population.FirstOrDefault(i => i.Name == o);
-                                        if (sentenceObjecT != null)
+                                        if (verb.Name == "BelongsToClass")
                                         {
-                                            instance.Sentences.Add(new Sentence(subject, verb, sentenceObjecT));
+                                            var sentenceObjecT = vocabulary.Nouns.FirstOrDefault(i => i.Name == o);
+                                            if (sentenceObjecT != null)
+                                            {
+                                                instance.ClassAssertions.Add(new ClassAssertion(subject, verb, sentenceObjecT));
+                                            }
+                                        }
+                                        else
+                                        {
+                                            var sentenceObjecT = instance.Population.FirstOrDefault(i => i.Name == o);
+                                            if (sentenceObjecT != null)
+                                            {
+                                                instance.Sentences.Add(new Sentence(subject, verb, sentenceObjecT));
+                                            }
                                         }
                                     }
                                 }
