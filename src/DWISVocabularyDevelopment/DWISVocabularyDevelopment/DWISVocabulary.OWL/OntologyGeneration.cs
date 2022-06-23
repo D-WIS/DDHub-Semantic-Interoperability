@@ -11,7 +11,6 @@ namespace DWIS.Vocabulary.OWL
     public static class OntologyGeneration
     {
         public static string DDHubPrefix = "http://ddhub.no/";
-        public static string SemanticNamespaceSuffix = "Semantics";
 
 
         public static RDFOntology GetOntology(DWIS.Vocabulary.Development.DWISVocabulary vocabulary)
