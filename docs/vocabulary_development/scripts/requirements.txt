@@ -2,5 +2,4 @@ python-dotenv
 networkx[default]
 pydot
 requests
-hashlib
 beautifulsoup4
