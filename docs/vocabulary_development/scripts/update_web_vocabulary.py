@@ -113,13 +113,16 @@ def printTermLine(t,header=False):
 
 
 # grab the date of the last commit
-stream = os.popen("git log -1 --format=%cd -- ../auto-generated/md/DWISvocabulary.md")
+source_path = os.getenv("SOURCE_PATH","../auto-generated/md")
+stream = os.popen(f"git log -1 --format=%cd -- {source_path}/DWISvocabulary.md")
 gitdateString = stream.read()
 gitdate = parser.parse(gitdateString)
-print("Git Date: ",gitdate)
 
-stream = os.popen("git log -n 1 --pretty=format:%H -- ../auto-generated/md/DWISvocabulary.md")
+stream = os.popen("git log -n 1 --pretty=format:%H -- {source_path}/DWISvocabulary.md")
 gitCommitSha = stream.read().strip()
+
+print("Git Date: ",gitdate)
+print("Git SHA: ",gitCommitSha)
 #exit()
 
 wordpress_user = os.getenv("WORDPRESS_USER")
@@ -201,7 +204,7 @@ print()
 # loop over github glossaries
 
 print("Collect GitHub terms...")
-with open("../auto-generated/md/DWISvocabulary.md","r") as fp:
+with open(f"{source_path}/DWISvocabulary.md","r") as fp:
     lines = fp.readlines()
 
 noun = None
