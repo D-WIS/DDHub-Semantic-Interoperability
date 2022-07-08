@@ -114,13 +114,14 @@ def printTermLine(t,header=False):
 
 # grab the date of the last commit
 print("Checking the previous commits...")
-source_path = os.getenv("SOURCE_PATH","../auto-generated/md")
+source_path = os.getenv("SOURCE_PATH","../auto-generated/md").strip()
 print(f"Path of the source file: {source_path}/DWISvocabulary.md")
 stream = os.popen(f"git log -1 --format=%cd -- {source_path}/DWISvocabulary.md")
 gitdateString = stream.read()
+print("GitDate String: ",gitdateString)
 gitdate = parser.parse(gitdateString)
 
-stream = os.popen("git log -n 1 --pretty=format:%H -- {source_path}/DWISvocabulary.md")
+stream = os.popen(f"git log -n 1 --pretty=format:%H -- {source_path}/DWISvocabulary.md")
 gitCommitSha = stream.read().strip()
 
 print("Git Date: ",gitdate)
