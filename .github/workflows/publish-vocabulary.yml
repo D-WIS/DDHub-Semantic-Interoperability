@@ -25,7 +25,7 @@ jobs:
       OUTPUT_FOLDER: "${{ github.workspace }}/docs/vocabulary_development/diagrams"
       PNGFILE_FOLDER: "${{ github.workspace }}/docs/vocabulary_development/diagrams/generated"
       SCRIPT_PATH: "${{ github.workspace }}/docs/vocabulary_development/scripts"
-      SOURCE_PATH: "${{ github.workspace }}/docs/vocabulary_development/generated/md"
+      SOURCE_PATH: "${{ github.workspace }}/docs/vocabulary_development/auto-generated/md"
       WORDPRESS_USER: "cicd"
       WORDPRESS_APPLICATION_PASSWORD: "${{ secrets.WORDPRESS_APPLICATION_PASSWORD }}"
       WORDPRESS_URL: "https://adams210.sg-host.com/"
