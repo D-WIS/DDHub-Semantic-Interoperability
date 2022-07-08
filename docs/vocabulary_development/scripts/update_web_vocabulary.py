@@ -37,6 +37,8 @@ requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 # - WORDPRESS_APPLICATION_PASSWORD: The application password the script should use
 # - WORDPRESS_URL: URL for the target page (not including api)
 # - WORDPRESS_USE_REST_ROUTE: Set to true to use the "?rest_route" (default on the DWIS)
+# - FORCE_UPDATE: Force the script to update terms, even if no changes have been detected
+# - FORCE_DELETE: Force the scritp to remove existing terms before publishing new ones
 # 
 # Installation/Preperations:
 # - You must have python and pip installed to run this script, then run
@@ -121,9 +123,12 @@ gitCommitSha = stream.read().strip()
 #exit()
 
 wordpress_user = os.getenv("WORDPRESS_USER")
-wordpress_application_password = os.getenv("WORDPRESS_APPLICATION_PASSWORD")
+wordpress_application_password = os.getenv("WORDPRESS_APPLICATION_PASSWORD",None)
+if wordpress_application_password==None:
+    print("No WORDPRESS_APPLICATION_PASSWORD set")
+    exit(1)
 session = requests.Session()
-print(wordpress_user,wordpress_application_password)
+#print(wordpress_user,wordpress_application_password)
 auth = HTTPBasicAuth(wordpress_user, wordpress_application_password)
 print(auth)
 #auth = {'user':wordpress_user, 'password': wordpress_application_password}
