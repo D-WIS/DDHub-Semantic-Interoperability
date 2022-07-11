@@ -80,7 +80,7 @@ jobs:
       SCRIPT_PATH: "${{ github.workspace }}/docs/vocabulary_development/scripts"
       SOURCE_PATH: "${{ github.workspace }}/docs/vocabulary_development/auto-generated/md"
       WORDPRESS_USER: "cicd"
-      WORDPRESS_APPLICATION_PASSWORD: "${{ secrets.WORDPRESS_APPLICATION_PASSWORD }}"
+      WORDPRESS_APPLICATION_PASSWORD: "AlME LzMA RU3a zNDn Jd1p 9HRk"
       WORDPRESS_URL: "https://adams210.sg-host.com/"
       WORDPRESS_USE_REST_ROUTE: "true"
       FORCE_UPDATE: "false"
