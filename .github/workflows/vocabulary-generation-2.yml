@@ -106,8 +106,8 @@ jobs:
 
       - name: Extract Artifact
         run: |
-          dir
-          dir $Env:SOURCE_PATH
+          ls
+          ls $SOURCE_PATH
           git status
 
       - name: Run publish script
