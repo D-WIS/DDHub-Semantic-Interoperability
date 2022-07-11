@@ -14,11 +14,34 @@ jobs:
       EXAMPLES_SOURCE_FOLDER: "${{ github.workspace }}\\docs\\vocabulary_development\\examples"
       PROJECTS_TO_PACK: "DWIS.Vocabulary.Development,DWIS.Vocabulary.OWL,DWIS.Vocabulary.Schemas,DWIS.Vocabulary.Utils"
       PACK_VERSION: "5"
-      PACKAGE_OUTPUT_FOLDER: "C:\\temp\\DDHub-DSID-WP2-Common\\src\\DWIS.Vocabulary.OPCUA\\LocalPackages"
+      PACKAGE_OUTPUT_FOLDER: "${{ github.workspace }}\\temp\\src\\DWIS.Vocabulary.OPCUA\\LocalPackages"
       INCREMENT_VERSION: "true"
     
     steps:
       - uses: actions/checkout@v2
+      - name: Overwrite appsettings.json
+        run: |
+          cd $Env:SCRIPT_PATH
+          echo "Old appsettings.json"
+          type .\appsettings.json
+          echo ""
+          echo "Changing appsettings.json..."
+          $a = Get-Content 'appsettings.json' -raw | ConvertFrom-Json
+          $a.ActionsConfig.SourceFolder="$Env:SOURCE_FOLDER"
+          $a.ActionsConfig.DestinationFolder="$Env:DESTINATION_FOLDER"
+          $a.ActionsConfig.SchemaFolder="$Env:SCHEMA_FOLDER"
+          $a.ActionsConfig.ExamplesSourceFolder="$Env:EXAMPLES_SOURCE_FOLDER"
+          $a.ActionsConfig.ProjectsToPack="$Env:PROJECTS_TO_PACK"
+          $a.ActionsConfig.PackVersion="$Env:PACK_VERSION"
+          $a.ActionsConfig.PackageOutputFolder="$Env:PACKAGE_OUTPUT_FOLDER"
+          $a.ActionsConfig.IncrementVersion="$Env:INCREMENT_VERSION"
+          $a | ConvertTo-Json -depth 32| set-content 'appsettings.json'
+          echo ""
+          echo "New appsettings.json"
+          type .\appsettings.json
+
+
+        
       - name: Run generation script
         timeout-minutes: 1
         run: |
