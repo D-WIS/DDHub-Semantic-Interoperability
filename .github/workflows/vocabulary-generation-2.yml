@@ -43,7 +43,7 @@ jobs:
 
         
       - name: Run generation script
-        timeout-minutes: 1
+        timeout-minutes: 2
         run: |
           cd $Env:SCRIPT_PATH
           dotnet restore
