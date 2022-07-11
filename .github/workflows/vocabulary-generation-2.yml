@@ -1,6 +1,5 @@
 name: Generate cleaned vocabulary
 on: 
-  # Allow manual execution
   workflow_dispatch:
     inputs:
       force_updates:
