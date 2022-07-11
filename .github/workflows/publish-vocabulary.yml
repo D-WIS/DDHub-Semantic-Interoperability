@@ -41,9 +41,19 @@ jobs:
           echo "FORCE_DELETION=${{ github.event.inputs.force_deletion }}" >> $GITHUB_ENV
           echo "WORDPRESS_APPLICATION_PASSWORD=${{ github.event.inputs.application_password }}" >> $GITHUB_ENV
       - uses: actions/checkout@v2
+      - name: Exit if application password not set
+        run: |
+          if [ -z "$var" ]
+          fi
       - name: Run publish script
         run: |
           cd $SCRIPT_PATH
-          pip install -r requirements.txt
-          python update_web_vocabulary.py
+          if [ -z "$WORDPRESS_APPLICATION_PASSWORD" ]
+          then
+            echo Application password not set, aborting without failure
+            exit 0
+          else
+            pip install -r requirements.txt
+            python update_web_vocabulary.py
+          fi
       
