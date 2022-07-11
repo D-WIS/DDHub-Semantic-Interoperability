@@ -76,6 +76,7 @@ jobs:
 
   publish_vocabulary:
     runs-on: ubuntu-latest
+    needs: generate_vocabulary
     env:
       SCRIPT_PATH: "${{ github.workspace }}/docs/vocabulary_development/scripts"
       SOURCE_PATH: "${{ github.workspace }}/docs/vocabulary_development/auto-generated/md"
