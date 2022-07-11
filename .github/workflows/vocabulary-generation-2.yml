@@ -1,0 +1,31 @@
+name: Generate cleaned vocabulary
+on: 
+  workflow_dispatch:
+  push: # push must be changed to trigger after md's have been generated (workflow trigger?)
+
+jobs:
+  generate_vocabulary:
+    runs-on: windows-latest
+    env:
+      SOURCE_FOLDER: "${{ github.workspace }}\\docs\\vocabulary_development\\definitions"
+      SCRIPT_PATH: "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment.Actions"
+      DESTINATION_FOLDER: "${{ github.workspace }}\\docs\\vocabulary_development\\auto-generated"
+      SCHEMA_FOLDER: "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWIS.Vocabulary.Schemas"
+      EXAMPLES_SOURCE_FOLDER: "${{ github.workspace }}\\docs\\vocabulary_development\\examples"
+      PROJECTS_TO_PACK: "DWIS.Vocabulary.Development,DWIS.Vocabulary.OWL,DWIS.Vocabulary.Schemas,DWIS.Vocabulary.Utils"
+      PACK_VERSION: "5"
+      PACKAGE_OUTPUT_FOLDER: "C:\\temp\\DDHub-DSID-WP2-Common\\src\\DWIS.Vocabulary.OPCUA\\LocalPackages"
+      INCREMENT_VERSION: "true"
+    
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run generation script
+        timeout-minutes: 1
+        run: |
+          cd $SCRIPT_PATH
+          dotnet restore
+          dotnet run
+      - name: Git Status
+        run: |
+          git status
+      
