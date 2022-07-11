@@ -46,6 +46,7 @@ jobs:
         timeout-minutes: 2
         run: |
           cd $Env:SCRIPT_PATH
+          pwd
           dotnet restore
           dotnet run
       - name: Git Status
