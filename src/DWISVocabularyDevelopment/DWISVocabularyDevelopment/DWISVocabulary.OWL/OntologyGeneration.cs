@@ -57,7 +57,10 @@ namespace DWIS.Vocabulary.OWL
 
         private static RDFResource AttributeCardinalityRestriction = new RDFResource(DDHubPrefix + "DWISAttributeCardinalityRestriction");
 
-
+        public static RDFResource GetBaseTypeResource(string type)
+        {
+            return new RDFResource("http://www.w3.org/2001/XMLSchema#" + type.ToLower());
+        }
         private static void AddClass(Tree<Noun> currentTree, RDFOntologyClass parent, RDFOntology ontology)
         {
             var current = new RDFOntologyClass(new RDFResource(DDHubPrefix + currentTree.RootItem.Name));
@@ -75,8 +78,9 @@ namespace DWIS.Vocabulary.OWL
                     RDFOntologyDatatypeProperty prop = new RDFOntologyDatatypeProperty(new RDFResource(DDHubPrefix +  attribute.Name));
                     ontology.Model.PropertyModel.AddProperty(prop);
                     prop.SetDomain(current);
-                    prop.SetRange(RDFSharp.Model.RDFVocabulary.XSD.FLOAT.ToRDFOntologyClass());
+                    prop.SetRange(GetBaseTypeResource(attribute.Type).ToRDFOntologyClass());                         
                     prop.SetFunctional(true);
+
                     RDFOntologyCardinalityRestriction cardinalityRestriction = new RDFOntologyCardinalityRestriction(AttributeCardinalityRestriction, prop, 1, 1);
                     ontology.Model.ClassModel.AddRestriction(cardinalityRestriction);
                     ontology.Model.PropertyModel.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.Comment, prop, new RDFOntologyLiteral(new RDFPlainLiteral(attribute.Description, "En")));
