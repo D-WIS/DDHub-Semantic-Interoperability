@@ -52,7 +52,7 @@ ddhub:AssociatesUnit a owl:ObjectProperty;
 ddhub:AverageDelayByRepeaters a owl:DatatypeProperty, owl:FunctionalProperty; 
                               rdfs:comment ""@EN; 
                               rdfs:domain ddhub:Telemetry; 
-                              rdfs:range xsd:float. 
+                              rdfs:range xsd:double. 
 
 ddhub:AxialModelling a owl:Class; 
                      rdfs:comment "The model accounts for the axial movement of some parts of the physical system."@EN; 
@@ -125,7 +125,7 @@ ddhub:Buffering a owl:Class;
 ddhub:BufferingInterval a owl:DatatypeProperty, owl:FunctionalProperty; 
                         rdfs:comment ""@EN; 
                         rdfs:domain ddhub:Buffering; 
-                        rdfs:range xsd:float. 
+                        rdfs:range xsd:double. 
 
 ddhub:CartesianThreeDimensionalReferenceFrame a owl:Class; 
                                               rdfs:comment ""@EN; 
@@ -180,12 +180,12 @@ ddhub:ControlSystem a owl:Class;
 ddhub:ConversionFactorA a owl:DatatypeProperty, owl:FunctionalProperty; 
                         rdfs:comment "Unit conversion from SI unit is performed as:"@EN; 
                         rdfs:domain ddhub:Unit; 
-                        rdfs:range xsd:float. 
+                        rdfs:range xsd:double. 
 
 ddhub:ConversionFactorB a owl:DatatypeProperty, owl:FunctionalProperty; 
                         rdfs:comment "Unit conversion from SI unit is performed as:"@EN; 
                         rdfs:domain ddhub:Unit; 
-                        rdfs:range xsd:float. 
+                        rdfs:range xsd:double. 
 
 ddhub:CorrectedMeasurement a owl:Class; 
                            rdfs:comment ""@EN; 
@@ -202,7 +202,7 @@ ddhub:CurviLinearFrenetSerretReferenceFrame a owl:Class;
 ddhub:CutOffFrequency a owl:DatatypeProperty, owl:FunctionalProperty; 
                       rdfs:comment ""@EN; 
                       rdfs:domain ddhub:HighPassFilter; 
-                      rdfs:range xsd:float. 
+                      rdfs:range xsd:double. 
 
 ddhub:CylindricalReferenceFrame a owl:Class; 
                                 rdfs:comment ""@EN; 
@@ -389,7 +389,7 @@ ddhub:EMWQuantity a owl:Class;
 ddhub:EndPointDescription a owl:DatatypeProperty, owl:FunctionalProperty; 
                           rdfs:comment ""@EN; 
                           rdfs:domain ddhub:DataEndPoint; 
-                          rdfs:range xsd:float. 
+                          rdfs:range xsd:string. 
 
 ddhub:EndPointMapping a owl:Class; 
                       rdfs:comment ""@EN; 
@@ -412,7 +412,7 @@ ddhub:Filter a owl:Class;
 ddhub:FixedIndices a owl:DatatypeProperty, owl:FunctionalProperty; 
                    rdfs:comment ""@EN; 
                    rdfs:domain ddhub:EndPointMapping; 
-                   rdfs:range xsd:float. 
+                   rdfs:range <http://www.w3.org/2001/XMLSchema#int[]>. 
 
 ddhub:FlowRateIn a owl:Class; 
                  rdfs:comment ""@EN; 
@@ -771,7 +771,7 @@ ddhub:HydraulicNetwork a owl:Class;
 ddhub:I a owl:DatatypeProperty, owl:FunctionalProperty; 
         rdfs:comment "Electric current exponent."@EN; 
         rdfs:domain ddhub:Quantity; 
-        rdfs:range xsd:float. 
+        rdfs:range xsd:int. 
 
 ddhub:Integration a owl:Class; 
                   rdfs:comment ""@EN; 
@@ -1086,7 +1086,7 @@ ddhub:IsUnitForQuantity a owl:ObjectProperty;
 ddhub:IsValid a owl:DatatypeProperty, owl:FunctionalProperty; 
               rdfs:comment ""@EN; 
               rdfs:domain ddhub:DrillingDataPoint; 
-              rdfs:range xsd:float. 
+              rdfs:range xsd:bool. 
 
 ddhub:IsValidBy a owl:ObjectProperty; 
                 rdfs:comment ""@EN; 
@@ -1103,12 +1103,12 @@ ddhub:IsVolumetricFlowRateAt a owl:ObjectProperty;
 ddhub:J a owl:DatatypeProperty, owl:FunctionalProperty; 
         rdfs:comment "Luminous intensity exponent."@EN; 
         rdfs:domain ddhub:Quantity; 
-        rdfs:range xsd:float. 
+        rdfs:range xsd:int. 
 
 ddhub:L a owl:DatatypeProperty, owl:FunctionalProperty; 
         rdfs:comment "Length exponent."@EN; 
         rdfs:domain ddhub:Quantity; 
-        rdfs:range xsd:float. 
+        rdfs:range xsd:int. 
 
 ddhub:LateralModelling a owl:Class; 
                        rdfs:comment "The model accounts for the lateral movement of some parts of the physical system."@EN; 
@@ -1117,12 +1117,12 @@ ddhub:LateralModelling a owl:Class;
 ddhub:LeapSeconds a owl:DatatypeProperty, owl:FunctionalProperty; 
                   rdfs:comment ""@EN; 
                   rdfs:domain ddhub:Clock; 
-                  rdfs:range xsd:float. 
+                  rdfs:range xsd:int. 
 
 ddhub:LeftToRight a owl:DatatypeProperty, owl:FunctionalProperty; 
                   rdfs:comment "Indicates whether the fluid can flow from the left branch to the right branch though the junction"@EN; 
                   rdfs:domain ddhub:HydraulicJunction; 
-                  rdfs:range xsd:float. 
+                  rdfs:range xsd:bool. 
 
 ddhub:LengthQuantity a owl:Class; 
                      rdfs:comment ""@EN; 
@@ -1139,12 +1139,12 @@ ddhub:Location a owl:Class;
 ddhub:LogName a owl:DatatypeProperty, owl:FunctionalProperty; 
               rdfs:comment ""@EN; 
               rdfs:domain ddhub:WitsMLTimeBasedLogEndPoint; 
-              rdfs:range xsd:float. 
+              rdfs:range xsd:string. 
 
 ddhub:LogUID a owl:DatatypeProperty, owl:FunctionalProperty; 
              rdfs:comment ""@EN; 
              rdfs:domain ddhub:WitsMLTimeBasedLogEndPoint; 
-             rdfs:range xsd:float. 
+             rdfs:range xsd:string. 
 
 ddhub:LowPassFilter a owl:Class; 
                     rdfs:comment ""@EN; 
@@ -1161,7 +1161,7 @@ ddhub:LWDLocation a owl:Class;
 ddhub:M a owl:DatatypeProperty, owl:FunctionalProperty; 
         rdfs:comment "Mass exponent."@EN; 
         rdfs:domain ddhub:Quantity; 
-        rdfs:range xsd:float. 
+        rdfs:range xsd:int. 
 
 ddhub:MassDensityQuantity a owl:Class; 
                           rdfs:comment ""@EN; 
@@ -1186,17 +1186,17 @@ ddhub:MathematicalModel a owl:Class;
 ddhub:MaxFrequency a owl:DatatypeProperty, owl:FunctionalProperty; 
                    rdfs:comment ""@EN; 
                    rdfs:domain ddhub:BandPassFilter; 
-                   rdfs:range xsd:float. 
+                   rdfs:range xsd:double. 
 
 ddhub:MaximumFluctuations a owl:DatatypeProperty, owl:FunctionalProperty; 
                           rdfs:comment ""@EN; 
                           rdfs:domain ddhub:Clock; 
-                          rdfs:range xsd:float. 
+                          rdfs:range xsd:double. 
 
 ddhub:MeaningfulPrecision a owl:DatatypeProperty, owl:FunctionalProperty; 
                           rdfs:comment ""@EN; 
                           rdfs:domain ddhub:MeasurableQuantity; 
-                          rdfs:range xsd:float. 
+                          rdfs:range xsd:double. 
 
 ddhub:MeasurableQuantity a owl:Class; 
                          rdfs:comment "Represents a quantity that allows meaningful comparisons."@EN; 
@@ -1225,7 +1225,7 @@ ddhub:MeasurementDevice a owl:Class;
 ddhub:MeasurementIndex a owl:DatatypeProperty, owl:FunctionalProperty; 
                        rdfs:comment ""@EN; 
                        rdfs:domain ddhub:EndPointMapping; 
-                       rdfs:range xsd:float. 
+                       rdfs:range xsd:int. 
 
 ddhub:MechanicalBlock a owl:Class; 
                       rdfs:comment ""@EN; 
@@ -1270,7 +1270,7 @@ ddhub:MechanicalStiffnessType a owl:Class;
 ddhub:MinFrequency a owl:DatatypeProperty, owl:FunctionalProperty; 
                    rdfs:comment ""@EN; 
                    rdfs:domain ddhub:BandPassFilter; 
-                   rdfs:range xsd:float. 
+                   rdfs:range xsd:double. 
 
 ddhub:MinMaxUncertainty a owl:Class; 
                         rdfs:comment ""@EN; 
@@ -1279,7 +1279,7 @@ ddhub:MinMaxUncertainty a owl:Class;
 ddhub:Mnemonic a owl:DatatypeProperty, owl:FunctionalProperty; 
                rdfs:comment ""@EN; 
                rdfs:domain ddhub:WitsMLTimeBasedLogEndPoint; 
-               rdfs:range xsd:float. 
+               rdfs:range xsd:string. 
 
 ddhub:ModelledDegreeOfFreedom a owl:Class; 
                               rdfs:comment "In physics and chemistry, a degree of freedom is an independent physical parameter in the formal description of the state of a physical system. A model may account for some or all of the degrees of freedom of the physical system."@EN; 
@@ -1316,17 +1316,17 @@ ddhub:MudPumpsControlSystem a owl:Class;
 ddhub:N a owl:DatatypeProperty, owl:FunctionalProperty; 
         rdfs:comment "Amount of substance exponent."@EN; 
         rdfs:domain ddhub:Quantity; 
-        rdfs:range xsd:float. 
+        rdfs:range xsd:int. 
 
 ddhub:NetworkSynchronizationLatencyAverage a owl:DatatypeProperty, owl:FunctionalProperty; 
                                            rdfs:comment ""@EN; 
                                            rdfs:domain ddhub:Clock; 
-                                           rdfs:range xsd:float. 
+                                           rdfs:range xsd:double. 
 
 ddhub:NetworkSynchronizationLatencyStandardDeviation a owl:DatatypeProperty, owl:FunctionalProperty; 
                                                      rdfs:comment ""@EN; 
                                                      rdfs:domain ddhub:Clock; 
-                                                     rdfs:range xsd:float. 
+                                                     rdfs:range xsd:double. 
 
 ddhub:NorthEastFrame a owl:Class; 
                      rdfs:comment ""@EN; 
@@ -1339,7 +1339,7 @@ ddhub:NorthEastTVDFrame a owl:Class;
 ddhub:NumberOfItems a owl:DatatypeProperty, owl:FunctionalProperty; 
                     rdfs:comment ""@EN; 
                     rdfs:domain ddhub:NumberOfItemsRangeExtraction; 
-                    rdfs:range xsd:float. 
+                    rdfs:range xsd:int. 
 
 ddhub:NumberOfItemsRangeExtraction a owl:Class; 
                                    rdfs:comment ""@EN; 
@@ -1348,7 +1348,7 @@ ddhub:NumberOfItemsRangeExtraction a owl:Class;
 ddhub:NumberOfRepeaters a owl:DatatypeProperty, owl:FunctionalProperty; 
                         rdfs:comment ""@EN; 
                         rdfs:domain ddhub:Telemetry; 
-                        rdfs:range xsd:float. 
+                        rdfs:range xsd:int. 
 
 ddhub:NumberOfSampleMovingAverage a owl:Class; 
                                   rdfs:comment ""@EN; 
@@ -1357,7 +1357,7 @@ ddhub:NumberOfSampleMovingAverage a owl:Class;
 ddhub:NumberOfSamples a owl:DatatypeProperty, owl:FunctionalProperty; 
                       rdfs:comment ""@EN; 
                       rdfs:domain ddhub:NumberOfSampleMovingAverage; 
-                      rdfs:range xsd:float. 
+                      rdfs:range xsd:int. 
 
 ddhub:OneDimensionalCartesianReferenceFrame a owl:Class; 
                                             rdfs:comment ""@EN; 
@@ -1398,7 +1398,7 @@ ddhub:PolarReferenceFrame a owl:Class;
 ddhub:PositiveUpward a owl:DatatypeProperty, owl:FunctionalProperty; 
                      rdfs:comment ""@EN; 
                      rdfs:domain ddhub:DrillStringCenterLineFrame; 
-                     rdfs:range xsd:float. 
+                     rdfs:range xsd:bool. 
 
 ddhub:PowerQuantity a owl:Class; 
                     rdfs:comment ""@EN; 
@@ -1423,7 +1423,7 @@ ddhub:ProportionQuantity a owl:Class;
 ddhub:ProviderName a owl:DatatypeProperty, owl:FunctionalProperty; 
                    rdfs:comment ""@EN; 
                    rdfs:domain ddhub:DataProvider; 
-                   rdfs:range xsd:float. 
+                   rdfs:range xsd:string. 
 
 ddhub:Pump a owl:Class; 
            rdfs:comment ""@EN; 
@@ -1476,12 +1476,12 @@ ddhub:Resampling a owl:Class;
 ddhub:ResamplingDelay a owl:DatatypeProperty, owl:FunctionalProperty; 
                       rdfs:comment ""@EN; 
                       rdfs:domain ddhub:Resampling; 
-                      rdfs:range xsd:float. 
+                      rdfs:range xsd:double. 
 
 ddhub:ResamplingRate a owl:DatatypeProperty, owl:FunctionalProperty; 
                      rdfs:comment ""@EN; 
                      rdfs:domain ddhub:Resampling; 
-                     rdfs:range xsd:float. 
+                     rdfs:range xsd:double. 
 
 ddhub:Resistivity a owl:Class; 
                   rdfs:comment ""@EN; 
@@ -1490,7 +1490,7 @@ ddhub:Resistivity a owl:Class;
 ddhub:Resolution a owl:DatatypeProperty, owl:FunctionalProperty; 
                  rdfs:comment ""@EN; 
                  rdfs:domain ddhub:Clock; 
-                 rdfs:range xsd:float. 
+                 rdfs:range xsd:double. 
 
 ddhub:ReturnFlowLine a owl:Class; 
                      rdfs:comment ""@EN; 
@@ -1499,7 +1499,7 @@ ddhub:ReturnFlowLine a owl:Class;
 ddhub:RightToLeft a owl:DatatypeProperty, owl:FunctionalProperty; 
                   rdfs:comment "Indicates whether the fluid can flow from the right branch to the left branch though the junction"@EN; 
                   rdfs:domain ddhub:HydraulicJunction; 
-                  rdfs:range xsd:float. 
+                  rdfs:range xsd:bool. 
 
 ddhub:RockDensityQuantity a owl:Class; 
                           rdfs:comment ""@EN; 
@@ -1516,7 +1516,7 @@ ddhub:RotationalModelling a owl:Class;
 ddhub:SamplingRate a owl:DatatypeProperty, owl:FunctionalProperty; 
                    rdfs:comment ""@EN; 
                    rdfs:domain ddhub:SynchronizationGroup; 
-                   rdfs:range xsd:float. 
+                   rdfs:range xsd:double. 
 
 ddhub:SemiCircularChannel a owl:Class; 
                           rdfs:comment ""@EN; 
@@ -1545,7 +1545,7 @@ ddhub:SignalUncertainty a owl:Class;
 ddhub:SIUnit a owl:DatatypeProperty, owl:FunctionalProperty; 
              rdfs:comment ""@EN; 
              rdfs:domain ddhub:Quantity; 
-             rdfs:range xsd:float. 
+             rdfs:range xsd:string. 
 
 ddhub:Slips a owl:Class; 
             rdfs:comment ""@EN; 
@@ -1584,7 +1584,7 @@ ddhub:StrainWaveBasedDiscretization a owl:Class;
 ddhub:Stratum a owl:DatatypeProperty, owl:FunctionalProperty; 
               rdfs:comment ""@EN; 
               rdfs:domain ddhub:Clock; 
-              rdfs:range xsd:float. 
+              rdfs:range xsd:int. 
 
 ddhub:SupportLine a owl:Class; 
                   rdfs:comment ""@EN; 
@@ -1609,12 +1609,12 @@ ddhub:SurfaceTorqueQuantity a owl:Class;
 ddhub:Symbol a owl:DatatypeProperty, owl:FunctionalProperty; 
              rdfs:comment ""@EN; 
              rdfs:domain ddhub:Unit; 
-             rdfs:range xsd:float. 
+             rdfs:range xsd:string. 
 
 ddhub:SynchronizationDelay a owl:DatatypeProperty, owl:FunctionalProperty; 
                            rdfs:comment ""@EN; 
                            rdfs:domain ddhub:SynchronizationGroup; 
-                           rdfs:range xsd:float. 
+                           rdfs:range xsd:double. 
 
 ddhub:SynchronizationGroup a owl:Class; 
                            rdfs:comment ""@EN; 
@@ -1623,7 +1623,7 @@ ddhub:SynchronizationGroup a owl:Class;
 ddhub:T a owl:DatatypeProperty, owl:FunctionalProperty; 
         rdfs:comment "Time exponent."@EN; 
         rdfs:domain ddhub:Quantity; 
-        rdfs:range xsd:float. 
+        rdfs:range xsd:int. 
 
 ddhub:TangencyLength a owl:Class; 
                      rdfs:comment "the position along the drill-string, counted from the bit, from which we can consider that the pipes direction is tangential with the borehole direction."@EN; 
@@ -1672,7 +1672,7 @@ ddhub:ThreeWayValveInternalValve a owl:Class;
 ddhub:ThT a owl:DatatypeProperty, owl:FunctionalProperty; 
           rdfs:comment "Thermodynamic temperature exponent."@EN; 
           rdfs:domain ddhub:Quantity; 
-          rdfs:range xsd:float. 
+          rdfs:range xsd:int. 
 
 ddhub:TimeBasedTransformation a owl:Class; 
                               rdfs:comment "Transformations that apply only to time series: time derivations, time integration, averaging..."@EN; 
@@ -1681,12 +1681,12 @@ ddhub:TimeBasedTransformation a owl:Class;
 ddhub:TimeStampAcquisition a owl:DatatypeProperty, owl:FunctionalProperty; 
                            rdfs:comment ""@EN; 
                            rdfs:domain ddhub:DynamicDrillingSignal; 
-                           rdfs:range xsd:float. 
+                           rdfs:range xsd:datetime. 
 
 ddhub:TimeWindow a owl:DatatypeProperty, owl:FunctionalProperty; 
                  rdfs:comment ""@EN; 
                  rdfs:domain ddhub:TimeWindowMovingAverage; 
-                 rdfs:range xsd:float. 
+                 rdfs:range xsd:double. 
 
 ddhub:TimeWindowMovingAverage a owl:Class; 
                               rdfs:comment ""@EN; 
@@ -1787,7 +1787,7 @@ ddhub:UserInterface a owl:Class;
 ddhub:Validity a owl:DatatypeProperty, owl:FunctionalProperty; 
                rdfs:comment ""@EN; 
                rdfs:domain ddhub:Resampling; 
-               rdfs:range xsd:float. 
+               rdfs:range xsd:double. 
 
 ddhub:ValidityCondition a owl:Class; 
                         rdfs:comment ""@EN; 
@@ -1796,12 +1796,12 @@ ddhub:ValidityCondition a owl:Class;
 ddhub:Value a owl:DatatypeProperty, owl:FunctionalProperty; 
             rdfs:comment ""@EN; 
             rdfs:domain ddhub:DrillingSignal; 
-            rdfs:range xsd:float. 
+            rdfs:range xsd:object. 
 
 ddhub:ValuesIndices a owl:DatatypeProperty, owl:FunctionalProperty; 
                     rdfs:comment ""@EN; 
                     rdfs:domain ddhub:EndPointMapping; 
-                    rdfs:range xsd:float. 
+                    rdfs:range <http://www.w3.org/2001/XMLSchema#int[]>. 
 
 ddhub:VelocityQuantity a owl:Class; 
                        rdfs:comment ""@EN; 
@@ -1834,22 +1834,22 @@ ddhub:WellboreCenterLineFrame a owl:Class;
 ddhub:WellboreName a owl:DatatypeProperty, owl:FunctionalProperty; 
                    rdfs:comment ""@EN; 
                    rdfs:domain ddhub:WitsMLTimeBasedLogEndPoint; 
-                   rdfs:range xsd:float. 
+                   rdfs:range xsd:string. 
 
 ddhub:WellboreUID a owl:DatatypeProperty, owl:FunctionalProperty; 
                   rdfs:comment ""@EN; 
                   rdfs:domain ddhub:WitsMLTimeBasedLogEndPoint; 
-                  rdfs:range xsd:float. 
+                  rdfs:range xsd:string. 
 
 ddhub:WellName a owl:DatatypeProperty, owl:FunctionalProperty; 
                rdfs:comment ""@EN; 
                rdfs:domain ddhub:WitsMLTimeBasedLogEndPoint; 
-               rdfs:range xsd:float. 
+               rdfs:range xsd:string. 
 
 ddhub:WellUID a owl:DatatypeProperty, owl:FunctionalProperty; 
               rdfs:comment ""@EN; 
               rdfs:domain ddhub:WitsMLTimeBasedLogEndPoint; 
-              rdfs:range xsd:float. 
+              rdfs:range xsd:string. 
 
 ddhub:WiredPipeTelemetry a owl:Class; 
                          rdfs:comment "A method that allows transfer of downhole data to the surface via electrical connections through the drill string."@EN; 

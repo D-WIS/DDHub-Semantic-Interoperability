@@ -137,7 +137,7 @@ namespace DWIS.Vocabulary.Development.Actions
             OWL.OntologyGeneration.GenerateOntology(_paths.OntologyFilePath, _vocabulary);
 
             _logger.LogInformation($"Export schemas files to {_paths.NounsSchemaPath} and { _paths.VerbsSchemaPath}");
-            SchemaWriter.WriteSchema(_vocabulary, _paths.NounsSchemaPath, _paths.VerbsSchemaPath);
+            SchemaWriter.WriteSchema(_vocabulary, _paths.NounsSchemaPath, _paths.VerbsSchemaPath, _paths.AttributesSchemaPath);
 
             _logger.LogInformation($"Export example files to {_paths.ExamplesFilesFolderPath}");
             ParseExamples();         
@@ -290,6 +290,7 @@ namespace DWIS.Vocabulary.Development.Actions
         public string ExamplesFilesFolderPath { get; private set; }
         public string RDFFolderPath { get; private set; }
         public string OntologyFilePath { get; private set; }
+        public string AttributesSchemaPath { get; private set; }
 
         public ActionPaths(string sourceFolder, string destinationFolder, string schemasFolder, string examplesSourceFolder)
         {
@@ -311,7 +312,7 @@ namespace DWIS.Vocabulary.Development.Actions
 
             NounsSchemaPath = schemasFolder + sep + "Nouns.cs";
             VerbsSchemaPath = schemasFolder + sep + "Verbs.cs";
-
+            AttributesSchemaPath = schemasFolder + sep + "Attributes.cs";
         }
 
     }
