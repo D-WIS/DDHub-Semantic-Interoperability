@@ -37,6 +37,18 @@ namespace DWIS.Vocabulary.Development
             return Verbs.Contains(verb);
         }
 
+        public bool GetNoun(string nounName, out Noun noun)
+        {
+            noun = Nouns.FirstOrDefault(n => n.Name == nounName);
+            return noun != null;
+        }
+
+        public bool GetVerb(string verbName, out Verb verb)
+        {
+            verb = Verbs.FirstOrDefault(v => v.Name == verbName);
+            return verb != null;
+        }
+
         public bool CheckForDuplicates(out ICollection<Noun> duplicatedNouns,out ICollection<Verb> duplicatedVerbs)
         {
             duplicatedNouns = new List<Noun>();

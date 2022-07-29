@@ -86,6 +86,16 @@ namespace DWIS.Vocabulary.Utils
             {
                 builder.AppendLine("- " + individual.TypeName+ ":" + individual.Name);
             }
+            if (individual.Attributes != null)
+            {
+                foreach (var att in individual.Attributes)
+                {
+                    if (att != null && !string.IsNullOrEmpty(att.AttributeValue))
+                    {
+                        builder.AppendLine("- " + individual.Name + "." + att.AttributeName + " = " + att.AttributeValue);
+                    }
+                }
+            }
         }
 
         public static void ClassAssertionToMD(StringBuilder builder, ClassAssertion sentence, DWIS.Vocabulary.Development.Vocabulary vocabulary, bool useLinks = false)

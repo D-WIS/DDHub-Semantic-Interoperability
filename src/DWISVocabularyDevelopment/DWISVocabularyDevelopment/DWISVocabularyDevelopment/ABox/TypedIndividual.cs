@@ -21,5 +21,15 @@ namespace DWIS.Vocabulary.Development
         }
 
         public IndividualAttribute[] Attributes { get; private set; }
+
+        public bool GetAttribute(string attributeName, out IndividualAttribute attribute)
+        {
+            if (Attributes == null) { attribute = null; return false; }
+            else
+            {
+                attribute = Attributes.FirstOrDefault(a => a.AttributeName == attributeName);
+                return attribute != null;
+            }
+        }
     }
 }
