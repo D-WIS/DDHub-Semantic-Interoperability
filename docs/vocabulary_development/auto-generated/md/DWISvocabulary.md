@@ -1021,7 +1021,7 @@
 - Parent class: [](#)
 - Attributes:
 - Specialization:
-- Description: 
+- Description: Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a "is a" relation between the node and the noun.
 - Examples:
 - Definition set: DWISSemantics
 ## DataEndPoint <!-- NOUN -->

@@ -353,7 +353,7 @@ ddhub:DWISAttributeCardinalityRestriction a owl:Restriction;
                                           owl:onProperty ddhub:MinFrequency. 
 
 ddhub:DWISNoun a owl:Class; 
-               rdfs:comment ""@EN. 
+               rdfs:comment """Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a "is a" relation between the node and the noun."""@EN. 
 
 ddhub:DWISVerb a owl:ObjectProperty; 
                rdfs:comment ""@EN; 

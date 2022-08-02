@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using DWIS.Vocabulary.Development;
 using DWIS.Vocabulary.Utils;
 using RDFSharp.Model;
@@ -12,8 +13,9 @@ namespace DWIS.Vocabulary.OWL
     {
         public static string DDHubPrefix = "http://ddhub.no/";
 
+        private static RDFResource AttributeCardinalityRestriction = new RDFResource(DDHubPrefix + "DWISAttributeCardinalityRestriction");
 
-        public static RDFOntology GetOntology(DWIS.Vocabulary.Development.DWISVocabulary vocabulary)
+        public static RDFOntology GetOntology(DWISVocabulary vocabulary)
         {
             string ontologyName = "DWISVocabulary";
 
@@ -42,25 +44,28 @@ namespace DWIS.Vocabulary.OWL
 
             return ontology;
         }
-        public static RDFOntology GenerateOntology(string fileName, DWIS.Vocabulary.Development.DWISVocabulary vocabulary)
+
+        public static RDFOntology ExportOntology(string fileName,DWISVocabulary vocabulary)
         {
             var ontology = GetOntology(vocabulary);
 
-            var gr = ontology.ToRDFGraph(RDFSemanticsEnums.RDFOntologyInferenceExportBehavior.None);
-
-            ontology.ToRDFGraph(RDFSemanticsEnums.RDFOntologyInferenceExportBehavior.None).ToFile(RDFModelEnums.RDFFormats.Turtle, fileName + ".ttl");
-            ontology.ToRDFGraph(RDFSemanticsEnums.RDFOntologyInferenceExportBehavior.None).ToFile(RDFModelEnums.RDFFormats.NTriples, fileName + ".nt");
-            ontology.ToRDFGraph(RDFSemanticsEnums.RDFOntologyInferenceExportBehavior.None).ToFile(RDFModelEnums.RDFFormats.RdfXml, fileName + ".xml");
+            WriteOntology(ontology, fileName);
 
             return ontology;
         }
 
-        private static RDFResource AttributeCardinalityRestriction = new RDFResource(DDHubPrefix + "DWISAttributeCardinalityRestriction");
-
+        public static void WriteOntology(RDFOntology ontology, string fileName, bool includeModel = true)
+        {
+            RDFSemanticsEnums.RDFOntologyInferenceExportBehavior behavior = includeModel ? RDFSemanticsEnums.RDFOntologyInferenceExportBehavior.ModelAndData : RDFSemanticsEnums.RDFOntologyInferenceExportBehavior.OnlyData;
+            ontology.ToRDFGraph(behavior).ToFile(RDFModelEnums.RDFFormats.Turtle, fileName + ".ttl");
+            ontology.ToRDFGraph(behavior).ToFile(RDFModelEnums.RDFFormats.NTriples, fileName + ".nt");
+            ontology.ToRDFGraph(behavior).ToFile(RDFModelEnums.RDFFormats.RdfXml, fileName + ".xml");
+        }
         public static RDFResource GetBaseTypeResource(string type)
         {
             return new RDFResource("http://www.w3.org/2001/XMLSchema#" + type.ToLower());
         }
+
         private static void AddClass(Tree<Noun> currentTree, RDFOntologyClass parent, RDFOntology ontology)
         {
             var current = new RDFOntologyClass(new RDFResource(DDHubPrefix + currentTree.RootItem.Name));
@@ -129,14 +134,94 @@ namespace DWIS.Vocabulary.OWL
             }
         }
 
-
-
-
-        private static string ConvertToLiteralType(string type)
+        private static RDFModelEnums.RDFDatatypes ConvertToLiteralType(string type)
         {
+            switch (type.ToLower())
+            {
+                case "bool" or "boolean":
+                    return RDFModelEnums.RDFDatatypes.XSD_BOOLEAN;
+                case "int":
+                    return RDFModelEnums.RDFDatatypes.XSD_INT;
+                case "integer":
+                    return RDFModelEnums.RDFDatatypes.XSD_INTEGER;
+                case "float":
+                    return RDFModelEnums.RDFDatatypes.XSD_FLOAT;
+                case "double":
+                    return RDFModelEnums.RDFDatatypes.XSD_DOUBLE;
+                case "long":
+                    return RDFModelEnums.RDFDatatypes.XSD_LONG;
+                case "decimal":
+                    return RDFModelEnums.RDFDatatypes.XSD_DECIMAL;
+                case "short":
+                    return RDFModelEnums.RDFDatatypes.XSD_SHORT;
+                case "byte":
+                    return RDFModelEnums.RDFDatatypes.XSD_BYTE;
+                case "string":
+                    return RDFModelEnums.RDFDatatypes.XSD_STRING;
+                case "uint" or "unsignedint":
+                    return RDFModelEnums.RDFDatatypes.XSD_UNSIGNEDINT;
+                case "ulong" or "unsignedlong":
+                    return RDFModelEnums.RDFDatatypes.XSD_UNSIGNEDLONG;
+
+                default: return RDFModelEnums.RDFDatatypes.XSD_STRING;
+            }
+
+
             // RDFSharp.Model.RDFVocabulary.XSD.FLOAT.ToRDFOntologyClass();
-            return RDFModelEnums.RDFDatatypes.XSD_BOOLEAN.ToString();
+            return RDFModelEnums.RDFDatatypes.XSD_BOOLEAN;
 
         }
+
+        public static RDFOntology AddInstance(RDFOntology ontology, DWISVocabulary vocabulary, DWISInstance instance)
+        {
+            foreach (var individual in instance.Population)
+            {
+
+                if (vocabulary.GetNoun(individual.TypeName, out Noun noun))
+                {
+                    var fact = new RDFOntologyFact(new RDFResource(DDHubPrefix + individual.Name));
+                    ontology.Data.AddFact(fact);
+                    var type = ontology.Model.ClassModel.SelectClass(DDHubPrefix + individual.TypeName);
+                    ontology.Data.AddClassTypeRelation(fact, type);
+
+                    if (individual.Attributes != null)
+                    {
+                        foreach (var attribute in individual.Attributes)
+                        {
+                            if (!string.IsNullOrEmpty(attribute.AttributeValue))
+                            {
+                                var property = ontology.Model.PropertyModel.SelectProperty(DDHubPrefix + attribute.AttributeName);
+                                string attributeType = noun.NounAttributes.FirstOrDefault(na => na.Name == attribute.AttributeName).Type;
+
+                                string attributeValue = attribute.AttributeValue.Replace(",", ".");
+                                if (System.Text.Encoding.UTF8.GetByteCount(attributeValue) == attributeValue.Length)
+                                {
+                                    RDFTypedLiteral literal = new RDFTypedLiteral(attributeValue, ConvertToLiteralType(attributeType));
+                                    ontology.Data.AddAssertionRelation(fact, (RDFOntologyDatatypeProperty)property, new RDFOntologyLiteral(literal));
+                                }
+                            }
+                        }
+                    } 
+                }
+            }
+
+            foreach (var ca in instance.ClassAssertions)
+            {
+                var type = ontology.Model.ClassModel.SelectClass(DDHubPrefix + ca.Class);
+                var fact = ontology.Data.SelectFact(DDHubPrefix + ca.Subject);
+                ontology.Data.AddClassTypeRelation(fact, type);
+            }
+
+            foreach (var sentence in instance.Sentences)
+            {
+                var verb = ontology.Model.PropertyModel.SelectProperty(DDHubPrefix + sentence.Verb);
+                var subjectFact = ontology.Data.SelectFact(DDHubPrefix + sentence.Subject);
+                var objectFact = ontology.Data.SelectFact(DDHubPrefix + sentence.Object);
+                ontology.Data.AddAssertionRelation(subjectFact, (RDFOntologyObjectProperty)verb, objectFact);
+            }
+
+            return ontology;
+        }
+
     }
 }

@@ -134,7 +134,7 @@ namespace DWIS.Vocabulary.Development.Actions
             MDWriting.ToMDFiles(_vocabulary, _paths.DefinitionFilesFolderPath);
 
             _logger.LogInformation($"Export ontology to {_paths.OntologyFilePath}");
-            OWL.OntologyGeneration.GenerateOntology(_paths.OntologyFilePath, _vocabulary);
+            OWL.OntologyGeneration.ExportOntology(_paths.OntologyFilePath, _vocabulary);
 
             _logger.LogInformation($"Export schemas files to {_paths.NounsSchemaPath} and { _paths.VerbsSchemaPath}");
             SchemaWriter.WriteSchema(_vocabulary, _paths.NounsSchemaPath, _paths.VerbsSchemaPath, _paths.AttributesSchemaPath);

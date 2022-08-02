@@ -33,7 +33,7 @@ namespace Vocabulary.Parse.Test
 
 
 
-            DWIS.Vocabulary.OWL.OntologyGeneration.GenerateOntology(@"C:\Users\beda\source\repos\D-WIS\DDHub-Semantic-Interoperability\docs\vocabulary_development\auto-generated\rdf\DWISVocabulary", vocabulary);
+            DWIS.Vocabulary.OWL.OntologyGeneration.ExportOntology(@"C:\Users\beda\source\repos\D-WIS\DDHub-Semantic-Interoperability\docs\vocabulary_development\auto-generated\rdf\DWISVocabulary", vocabulary);
 
             vocabulary.CheckForDuplicates(out ICollection<Noun> duplicatedNouns, out ICollection<Verb> duplicatedVerbs);
 

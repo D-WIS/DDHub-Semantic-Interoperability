@@ -17,6 +17,13 @@ if (VocabularyParsing.FromFolder(folder, out DWISVocabulary vocabulary))
             }
         }
     }
+
+    var ontology = DWIS.Vocabulary.OWL.OntologyGeneration.GetOntology(vocabulary);
+    ontology = DWIS.Vocabulary.OWL.OntologyGeneration.AddInstance(ontology, vocabulary, instance);
+
+    DWIS.Vocabulary.OWL.OntologyGeneration.WriteOntology(ontology, @"C://temp/uq");
+
+
     DWIS.Vocabulary.Utils.MDWriting.ToMDFile(instance, @"C:/temp/uq.md", vocabulary, useLinks:false, addGraph:false);
     string allText = System.IO.File.ReadAllText(@"C:/temp/uq.md").Replace("- ", "");
     System.IO.File.WriteAllText(@"C:/temp/uq2.md", allText);

@@ -36,7 +36,7 @@ namespace DWIS.StandardSet.UQ
                         TypedIndividual quantityIndividual = new TypedIndividual(GetValidName(quantity.Name), quantityNoun);
                         quantities.Population.Add(quantityIndividual);
 
-                        IndividualAttribute att = null;
+                        IndividualAttribute att;
 
                         if (quantityIndividual.GetAttribute(Attributes.Quantity_I, out att))
                         {
