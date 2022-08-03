@@ -2946,7 +2946,7 @@
 ## IsOfMechanicalStiffnessType <!-- VERB -->
 - Display name: Is of mechanical stiffness type
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [MechanicalModel](#MechanicalModel)
+- Subject class: [DrillStemMechanicalModel](#DrillStemMechanicalModel)
 - Object class: [MechanicalStiffnessType](#MechanicalStiffnessType)
 - Min cardinality: -1
 - Max cardinality: -1

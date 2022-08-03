@@ -971,7 +971,7 @@ ddhub:IsOfMeasurableQuantity a owl:ObjectProperty;
 
 ddhub:IsOfMechanicalStiffnessType a owl:ObjectProperty; 
                                   rdfs:comment "A relation to describe how the drill-stem mechanical model manage stiffness."@EN; 
-                                  rdfs:domain ddhub:MechanicalModel; 
+                                  rdfs:domain ddhub:DrillStemMechanicalModel; 
                                   rdfs:range ddhub:MechanicalStiffnessType; 
                                   rdfs:subPropertyOf ddhub:DWISVerb. 
 
