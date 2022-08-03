@@ -8,10 +8,15 @@ namespace DWIS.StandardSet.UQ
 {
     public static class QuantitiesExport
     {
-
+        private static string CorrectName(string original)
+        {
+            string correctedName = original.Replace("/", "Per");
+            correctedName = correctedName.Replace("\"", "");
+            return correctedName;
+        }
         private static string GetValidName(string originalName)
         {
-            string validName = originalName.Replace(" ", "");
+            string validName = originalName.Replace(" ", "").Replace("/", "Per").Replace("\"", "");
             string first = validName.Substring(0, 1).ToLower();
             return first + validName.Substring(1);
         }
@@ -74,6 +79,13 @@ namespace DWIS.StandardSet.UQ
                             foreach (var unit in quantity.UnitChoices)
                             {
                                 TypedIndividual unitIndividual = new TypedIndividual(GetValidName(unit.UnitName), unitNoun);
+
+                                if (unitIndividual.Name == "arcsecond")
+                                {
+                                    unit.UnitLabel = "arcsec";                                   
+                                }
+
+
                                 if (unitIndividual.GetAttribute(Attributes.Unit_ConversionFactorA, out att))
                                 {
                                     att.AttributeValue = unit.ConversionBiasFromSI.ToString();

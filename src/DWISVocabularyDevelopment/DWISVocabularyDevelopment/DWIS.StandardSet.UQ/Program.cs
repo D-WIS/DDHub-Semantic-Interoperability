@@ -2,7 +2,10 @@
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("Quantities export");
 string folder = "C:\\Users\\beda\\source\\repos\\D-WIS\\DDHub-Semantic-Interoperability\\docs\\vocabulary_development\\definitions";
-if (VocabularyParsing.FromFolder(folder, out DWISVocabulary vocabulary))
+
+DWISVocabulary vocabulary = DWIS.Vocabulary.Standard.VocabularyProvider.Vocabulary;
+
+if (vocabulary!=null)
 {
     var instance = DWIS.StandardSet.UQ.QuantitiesExport.Export(folder);
     //DWIS.Vocabulary.Utils.MDWriting.ToMDFile(instance, )

@@ -54,7 +54,7 @@
 # VERBS
 ## IsOfMechanicalStiffnessType <!-- VERB -->
 - Display name: Is of mechanical stiffness type
-- Subject class: MechanicalModel
+- Subject class: DrillStemMechanicalModel
 - Object class: MechanicalStiffnessType
 - Description: A relation to describe how the drill-stem mechanical model manage stiffness.
 - Examples: 

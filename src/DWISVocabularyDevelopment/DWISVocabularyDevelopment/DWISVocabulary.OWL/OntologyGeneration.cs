@@ -172,14 +172,16 @@ namespace DWIS.Vocabulary.OWL
 
         }
 
+
+    
+
         public static RDFOntology AddInstance(RDFOntology ontology, DWISVocabulary vocabulary, DWISInstance instance)
         {
             foreach (var individual in instance.Population)
-            {
-
+            {                
                 if (vocabulary.GetNoun(individual.TypeName, out Noun noun))
                 {
-                    var fact = new RDFOntologyFact(new RDFResource(DDHubPrefix + individual.Name));
+                    var fact = new RDFOntologyFact(new RDFResource(DDHubPrefix +individual.Name));
                     ontology.Data.AddFact(fact);
                     var type = ontology.Model.ClassModel.SelectClass(DDHubPrefix + individual.TypeName);
                     ontology.Data.AddClassTypeRelation(fact, type);
@@ -215,7 +217,7 @@ namespace DWIS.Vocabulary.OWL
             foreach (var sentence in instance.Sentences)
             {
                 var verb = ontology.Model.PropertyModel.SelectProperty(DDHubPrefix + sentence.Verb);
-                var subjectFact = ontology.Data.SelectFact(DDHubPrefix + sentence.Subject);
+                var subjectFact = ontology.Data.SelectFact(DDHubPrefix +  sentence.Subject);
                 var objectFact = ontology.Data.SelectFact(DDHubPrefix + sentence.Object);
                 ontology.Data.AddAssertionRelation(subjectFact, (RDFOntologyObjectProperty)verb, objectFact);
             }
