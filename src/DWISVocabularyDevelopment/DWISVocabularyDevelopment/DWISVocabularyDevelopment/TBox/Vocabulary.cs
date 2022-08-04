@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace DWIS.Vocabulary.Development
 {
-    public class Vocabulary
+    public class Vocabulary : IEquatable<Vocabulary>
     {
         public List<Noun> Nouns { get; set; } = new List<Noun>();
         public List<Verb> Verbs { get; set; } = new List<Verb>();
@@ -128,6 +128,44 @@ namespace DWIS.Vocabulary.Development
                     }
                 }
             }     
+        }
+
+        public bool Equals(Vocabulary other)
+        {
+            if(other == null) return false;
+            if(this == other) return true;
+            if (Nouns == null && other.Nouns != null) return false;
+            if (Verbs == null && other.Verbs != null) return false;
+            if (Nouns != null)
+            {
+                if (Nouns.Count != other.Nouns.Count) return false;
+                Nouns.Sort();
+                other.Nouns.Sort();
+                for (int i = 0; i < Nouns.Count; i++)
+                {
+                    if (!Nouns[i].Equals(other.Nouns[i]))
+                    {
+                        return false; 
+                    }
+                }
+            }
+
+            if (Verbs != null)
+            {
+                if (Verbs.Count != other.Verbs.Count) return false;
+                Verbs.Sort();
+                other.Verbs.Sort();
+                for (int i = 0; i < Verbs.Count; i++)
+                {
+                    if (!Verbs[i].Equals(other.Verbs[i]))
+                    {
+                        return false; 
+                    }
+                }
+            }
+
+            return true;
+
         }
     }
 }

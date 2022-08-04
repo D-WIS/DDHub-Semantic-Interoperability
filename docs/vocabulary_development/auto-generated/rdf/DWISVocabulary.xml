@@ -9,7 +9,7 @@
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DWISNoun">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:comment xml:lang="EN">Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a "is a" relation between the node and the noun.</rdfs:comment>
+    <rdfs:comment xml:lang="EN">Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a "is a" relation between the instance node and the noun.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DataFlowNode">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />

@@ -83,8 +83,11 @@ namespace DWIS.Vocabulary.Utils
                     {
                         UpdateFromSnippetItem(snippetItem, noun);
                     }
-
-                    if (noun.Name != "DWISNoun" && string.IsNullOrEmpty(noun.ParentNounName))
+                    if (noun.Name == "DWISNoun")
+                    {
+                        noun.ParentNounName = "";
+                    }
+                    else if (noun.Name != "DWISNoun" && string.IsNullOrEmpty(noun.ParentNounName))
                     {
                         noun.ParentNounName = "DWISNoun";
                     }
@@ -290,7 +293,11 @@ namespace DWIS.Vocabulary.Utils
                         UpdateFromSnippetItem(snippetItem, verb);
                     }
 
-                    if (verb.Name != "DWISVerb" && string.IsNullOrEmpty(verb.ParentVerbName))
+                    if (verb.Name == "DWISVerb")
+                    {
+                        verb.ParentVerbName = "";
+                    }
+                    else if (verb.Name != "DWISVerb" && string.IsNullOrEmpty(verb.ParentVerbName))
                     {
                         verb.ParentVerbName = "DWISVerb";
                     }

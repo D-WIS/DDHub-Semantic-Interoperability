@@ -8,7 +8,7 @@ namespace DWIS.Vocabulary.Standard
 {
     public static class VocabularyProvider
     {
-        private static string _folder = FindDWISFolder() + @"\DDHub-Semantic-Interoperability\docs\vocabulary_development\auto-generated\md\definition-files\";
+        private static string _vocabularyJsonFileName =  @"DWISVocabulary.json";
         private static string _unitsAndQuantitiesInstanceFile = string.Empty;
 
         private static Development.DWISVocabulary _vocabulary = null;
@@ -34,9 +34,9 @@ namespace DWIS.Vocabulary.Standard
         }
 
 
-        public static void SetVocabularyFolder(string folder)
+        public static void SetVocabularyJsonFile(string fileName)
         {
-            _folder = folder;
+            _vocabularyJsonFileName = fileName;
         }
 
         public static void SetUnitsAndQuantitiesFile(string file)
@@ -46,11 +46,7 @@ namespace DWIS.Vocabulary.Standard
 
         public static Development.DWISVocabulary GetDWISVocabulary()
         {
-            if (Utils.VocabularyParsing.FromFolder(_folder, out var vocabulary))
-            {
-                return vocabulary;
-            }
-            else return null;
+            return DWIS.Vocabulary.Development.DWISVocabulary.FromJsonString(Properties.Resources.DWISVocabulary);
         }
 
         public static DWIS.Vocabulary.Development.DWISInstance GetUnitsAndQuantities()

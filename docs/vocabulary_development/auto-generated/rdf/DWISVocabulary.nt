@@ -507,7 +507,7 @@
 <http://ddhub.no/MinMaxUncertainty> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/SignalUncertainty> .
 <http://ddhub.no/RelativeUncertainty> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/SignalUncertainty> .
 <http://ddhub.no/SensorUncertainty> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/SignalUncertainty> .
-<http://ddhub.no/DWISNoun> <http://www.w3.org/2000/01/rdf-schema#comment> "Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a \"is a\" relation between the node and the noun."@EN .
+<http://ddhub.no/DWISNoun> <http://www.w3.org/2000/01/rdf-schema#comment> "Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a \"is a\" relation between the instance node and the noun."@EN .
 <http://ddhub.no/DataFlowNode> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/ComputationUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes a complex computation unit, typically based on advanced numerical modeling"@EN .
 <http://ddhub.no/Controller> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .

@@ -1,10 +1,22 @@
-﻿namespace DWIS.Vocabulary.Development
+﻿using System;
+
+namespace DWIS.Vocabulary.Development
 {
-    public class NounAttribute
+    public class NounAttribute : IEquatable<NounAttribute>
     {
         public string Type { get; set; }
         public string Name { get; set; }
         public string DisplayName { get; set; }
         public string Description { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as NounAttribute);
+        }
+
+        public bool Equals(NounAttribute other)
+        {
+            return other!=null && Type == other.Type && Name == other.Name && Description == other.Description && DisplayName == other.DisplayName;
+        }
     }
 }

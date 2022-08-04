@@ -1,6 +1,8 @@
-﻿namespace DWIS.Vocabulary.Development
+﻿using System;
+
+namespace DWIS.Vocabulary.Development
 {
-    public class Verb
+    public class Verb : IEquatable<Verb>, IComparable<Verb>
     {
         public string Name { get; set; }
         public string DisplayName { get; set; }
@@ -24,5 +26,25 @@
             return obj != null && obj is Verb && ((Verb)obj).Name == Name;
         }
 
+        public bool Equals(Verb other)
+        {
+           return other != null 
+                && Name == other.Name 
+                && DisplayName == other.DisplayName 
+                && ParentVerbName == other.ParentVerbName 
+                && DomainNounName == other.DomainNounName
+                && RangeNounName == other.RangeNounName
+                && Description == other.Description
+                && Examples == other.Examples
+                && DefinitionSetName == other.DefinitionSetName
+                && MinCardinality == other.MinCardinality
+                && MaxCardinality == other.MaxCardinality;
+        }
+
+        public int CompareTo(Verb other)
+        {
+            if (other == null) return 1;
+            return Name.CompareTo(other.Name);
+        }
     }
 }

@@ -6,7 +6,7 @@
 - Parent class: [](./.md#)
 - Attributes:
 - Specialization:
-- Description: Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a "is a" relation between the node and the noun.
+- Description: Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a "is a" relation between the instance node and the noun.
 - Examples:
 - Definition set: DWISSemantics
 # Verbs

@@ -59,5 +59,14 @@ namespace DWIS.Vocabulary.Standard.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {&quot;DefinitionSetHeaders&quot;:[{&quot;Name&quot;:&quot;DataDependencies&quot;,&quot;SetDescription&quot;:&quot;this part covers the physical dependencies between signals.&quot;},{&quot;Name&quot;:&quot;DataFlow&quot;,&quot;SetDescription&quot;:&quot;this category refers to the data processing. It should probably be renamed accordingly. It should define and organize the different types of processing encountered during drilling operations. A Thursday session was devoted to those items. Note that in the current version, control flow is also included: a controller is seen as a special type  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string DWISVocabulary {
+            get {
+                return ResourceManager.GetString("DWISVocabulary", resourceCulture);
+            }
+        }
     }
 }

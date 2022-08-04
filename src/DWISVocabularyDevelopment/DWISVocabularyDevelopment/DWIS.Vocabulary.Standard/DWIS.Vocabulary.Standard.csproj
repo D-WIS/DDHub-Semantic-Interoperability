@@ -5,6 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Properties\DWISVocabulary.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\DWISVocabulary.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DWISVocabularyDevelopment\DWIS.Vocabulary.Development.csproj" />
     <ProjectReference Include="..\VocabularyUtils\DWIS.Vocabulary.Utils.csproj" />
   </ItemGroup>
