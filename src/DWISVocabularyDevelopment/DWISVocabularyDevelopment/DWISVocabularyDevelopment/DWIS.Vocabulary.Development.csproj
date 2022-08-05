@@ -1,14 +1,23 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>DWIS.NodeSetGeneration_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
     <Version>1.0.1</Version>
+    <Authors>Benoît Daireaux</Authors>
+    <Company>NORCE</Company>
+    <Description>Base classes to define a vocabulary. </Description>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl>https://github.com/D-WIS/DDHub-Semantic-Interoperability</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
-
+  <ItemGroup>
+      <None Include="license\LICENSE" Pack="true" PackagePath="" />
+  </ItemGroup>
 </Project>

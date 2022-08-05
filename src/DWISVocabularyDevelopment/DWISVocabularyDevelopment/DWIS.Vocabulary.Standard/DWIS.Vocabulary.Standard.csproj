@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <Authors>Benoît Daireaux</Authors>
+    <Company>NORCE</Company>
+    <Description>OWL ontology generation from a DWIS vocabulary</Description>
+    <RepositoryUrl>https://github.com/D-WIS/DDHub-Semantic-Interoperability</RepositoryUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +20,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="RDFSharp" Version="2.26.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DWISVocabulary.OWL\DWIS.Vocabulary.OWL.csproj" />
     <ProjectReference Include="..\DWISVocabularyDevelopment\DWIS.Vocabulary.Development.csproj" />
     <ProjectReference Include="..\VocabularyUtils\DWIS.Vocabulary.Utils.csproj" />
   </ItemGroup>
@@ -33,5 +43,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-
+  <ItemGroup>
+      <None Include="license\LICENSE" Pack="true" PackagePath="" />
+  </ItemGroup>
 </Project>

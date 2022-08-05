@@ -21,7 +21,7 @@ if (vocabulary!=null)
         }
     }
 
-    var ontology = DWIS.Vocabulary.OWL.OntologyGeneration.GetOntology(vocabulary);
+    var ontology = DWIS.Vocabulary.Standard.OntologyProvider.DWISOntology;// DWIS.Vocabulary.OWL.OntologyGeneration.GetOntology(vocabulary);
     ontology = DWIS.Vocabulary.OWL.OntologyGeneration.AddInstance(ontology, vocabulary, instance);
 
     DWIS.Vocabulary.OWL.OntologyGeneration.WriteOntology(ontology, @"C://temp/uq");
