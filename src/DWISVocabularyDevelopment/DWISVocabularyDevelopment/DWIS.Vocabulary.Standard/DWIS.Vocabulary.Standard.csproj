@@ -4,9 +4,10 @@
     <TargetFramework>net5.0</TargetFramework>
     <Authors>Benoît Daireaux</Authors>
     <Company>NORCE</Company>
-    <Description>OWL ontology generation from a DWIS vocabulary</Description>
+    <Description>Provides access to current version of the DWIS vocabulary</Description>
     <RepositoryUrl>https://github.com/D-WIS/DDHub-Semantic-Interoperability</RepositoryUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>Readme-pkg.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -44,6 +45,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+      <None Include="..\..\..\..\..\DDHub-DSID-WP2-Common\src\DWIS.Vocabulary.OPCUA\DWIS.OPCUA.Vocabulary\Readme-pkg.md">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+      </None>
       <None Include="license\LICENSE" Pack="true" PackagePath="" />
   </ItemGroup>
 </Project>

@@ -19,7 +19,7 @@ jobs:
       PACKAGE_OUTPUT_FOLDER: "${{ github.workspace }}\\packages"
       INCREMENT_VERSION: "true"
       STANDARD_RESOURCE_FOLDER: "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWIS.Vocabulary.Standard\\Properties"
-
+      NUGET_SECRET_API: ${{ secrets.NUGET_SECRET_API }}
 
     
     steps:
@@ -74,16 +74,17 @@ jobs:
       - name: Build and pack
         run: |
           cd "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWIS.Vocabulary.Schemas"
-          dotnet pack --output $Env:PACKAGE_OUTPUT_FOLDER 
+          dotnet pack --output $Env:PACKAGE_OUTPUT_FOLDER --version-suffix "{{ github.sha }}"
           cd "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWIS.Vocabulary.Standard"
-          dotnet pack --output $Env:PACKAGE_OUTPUT_FOLDER 
+          dotnet pack --output $Env:PACKAGE_OUTPUT_FOLDER  --version-suffix "{{ github.sha }}"
+
       - name: 'Upload the generated packages as artifacts'
         uses: actions/upload-artifact@v3
         with:
-          name: generated-md-files
+          name: generated-nuget-packages
           path: "${{ github.workspace }}/packages"
 
-
-
-
-      
+      - name: 'Push to NuGet.org'
+        run: |
+          cd $Env:PACKAGE_OUTPUT_FOLDER
+          dotnet nuget push "*.nupkg" -k "$env:NUGET_SECRET_API" -s https://api.nuget.org/v3/index.json --skip-duplicate
