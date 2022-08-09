@@ -44,7 +44,7 @@ namespace DWIS.Vocabulary.Development.Actions
         }
         public bool PerformActions()
         {
-            return PreChecks() && Export() && PostChecks() && Pack();
+            return PreChecks() && Export() && PostChecks();// && Pack();
         }
 
         private bool PreChecks()
