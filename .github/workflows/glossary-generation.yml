@@ -1,4 +1,4 @@
-name: Generate cleaned vocabulary
+name: Generate glossary
 on: 
   workflow_dispatch:
     inputs:
