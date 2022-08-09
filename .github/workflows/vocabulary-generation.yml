@@ -1,30 +1,86 @@
-# This is a basic workflow that is manually triggered
-
-name: Vocabulary generation
-
-# Controls when the action will run. Workflow runs when manually triggered using the UI
-# or API.
-on:
+name: Generate cleaned vocabulary and packages
+on: 
   workflow_dispatch:
-    # Inputs the workflow accepts.
-    inputs:
-      name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Person to greet'
-        # Default value if no value is explicitly provided
-        default: 'World'
-        # Input has to be provided for the workflow to run
-        required: true
+  push: # push must be changed to trigger after md's have been generated (workflow trigger?)
+   paths:
+     - 'docs/vocabulary_developement/definitions/**.md' 
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "greet"
-  greet:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+  generate_vocabulary:
+    runs-on: windows-latest
+    env:
+      SOURCE_FOLDER: "${{ github.workspace }}\\docs\\vocabulary_development\\definitions"
+      SCRIPT_PATH: "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment.Actions"
+      DESTINATION_FOLDER: "${{ github.workspace }}\\docs\\vocabulary_development\\auto-generated"
+      SCHEMA_FOLDER: "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWIS.Vocabulary.Schemas"
+      EXAMPLES_SOURCE_FOLDER: "${{ github.workspace }}\\docs\\vocabulary_development\\examples"
+      PROJECTS_TO_PACK: "DWIS.Vocabulary.Development,DWIS.Vocabulary.OWL,DWIS.Vocabulary.Schemas,DWIS.Vocabulary.Utils"
+      PACK_VERSION: "5"
+      PACKAGE_OUTPUT_FOLDER: "${{ github.workspace }}\\temp\\src\\DWIS.Vocabulary.OPCUA\\LocalPackages"
+      INCREMENT_VERSION: "true"
+      
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    
     steps:
-    # Runs a single command using the runners shell
-    - name: Send greeting
-      run: echo "Hello ${{ github.event.inputs.name }}"
+      - uses: actions/checkout@v2
+      - name: Overwrite appsettings.json
+        run: |
+          cd $Env:SCRIPT_PATH
+          echo "Old appsettings.json"
+          type .\appsettings.json
+          echo ""
+          echo "Changing appsettings.json..."
+          $a = Get-Content 'appsettings.json' -raw | ConvertFrom-Json
+          $a.ActionsConfig.SourceFolder="$Env:SOURCE_FOLDER"
+          $a.ActionsConfig.DestinationFolder="$Env:DESTINATION_FOLDER"
+          $a.ActionsConfig.SchemaFolder="$Env:SCHEMA_FOLDER"
+          $a.ActionsConfig.ExamplesSourceFolder="$Env:EXAMPLES_SOURCE_FOLDER"
+          $a.ActionsConfig.ProjectsToPack="$Env:PROJECTS_TO_PACK"
+          $a.ActionsConfig.PackVersion="$Env:PACK_VERSION"
+          $a.ActionsConfig.PackageOutputFolder="$Env:PACKAGE_OUTPUT_FOLDER"
+          $a.ActionsConfig.IncrementVersion="$Env:INCREMENT_VERSION"
+          $a | ConvertTo-Json -depth 32| set-content 'appsettings.json'
+          echo ""
+          echo "New appsettings.json"
+          type .\appsettings.json
+
+
+        
+      - name: Run generation script
+        timeout-minutes: 3
+        run: |
+          cd $Env:SCRIPT_PATH
+          pwd
+          dotnet restore
+          dotnet run
+
+      - name: Git Update
+        run: |
+          git add -a
+          git status
+          git commit -m "Automatically generated files" -a
+          git push
+
+      - name: 'Upload the generated files as artifacts'
+        uses: actions/upload-artifact@v3
+        with:
+          name: generated-md-files
+          path: "${{ github.workspace }}/docs/vocabulary_development/auto-generated/md"
+
+      - name: Build and pack
+        uses: actions/checkout@v2
+        run: |
+          cd "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWIS.Vocabulary.Schemas"
+          dotnet pack --output $Env:PACKAGE_OUTPUT_FOLDER 
+          cd "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWIS.Vocabulary.Standard"
+          dotnet pack --output $Env:PACKAGE_OUTPUT_FOLDER 
+      - name: 'Upload the generated packages as artifacts'
+        uses: actions/upload-artifact@v3
+        with:
+          name: generated-md-files
+          path: "${{ github.workspace }}/packages"
+
+
+
+
+      
