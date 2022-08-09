@@ -74,9 +74,9 @@ jobs:
       - name: Build and pack
         run: |
           cd "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWIS.Vocabulary.Schemas"
-          dotnet pack --output $Env:PACKAGE_OUTPUT_FOLDER --version-suffix "{{ github.sha }}"
+          dotnet pack --output $Env:PACKAGE_OUTPUT_FOLDER --version-suffix "${{ github.sha }}"
           cd "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWIS.Vocabulary.Standard"
-          dotnet pack --output $Env:PACKAGE_OUTPUT_FOLDER  --version-suffix "{{ github.sha }}"
+          dotnet pack --output $Env:PACKAGE_OUTPUT_FOLDER  --version-suffix "${{ github.sha }}"
 
       - name: 'Upload the generated packages as artifacts'
         uses: actions/upload-artifact@v3
