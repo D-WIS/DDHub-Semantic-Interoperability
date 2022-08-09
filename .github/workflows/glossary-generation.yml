@@ -1,0 +1,71 @@
+name: Generate cleaned vocabulary
+on: 
+  workflow_dispatch:
+    inputs:
+      force_updates:
+        description: 'Force updates of terms, even without changes to them'
+        required: true
+        default: 'false'
+      force_deletion:
+        decription: 'Force deletion of existing terms before updates'
+        required: true
+        default: 'false'
+      application_password:
+        description: 'Application password to use'
+        required: false
+        default: ''
+  #push: # push must be changed to trigger after md's have been generated (workflow trigger?)
+  #paths:
+  # - 'docs/vocabulary_developement/definitions/**.md' 
+
+jobs:
+  publish_vocabulary:
+    runs-on: ubuntu-latest
+    needs: generate_vocabulary
+    env:
+      SCRIPT_PATH: "${{ github.workspace }}/docs/vocabulary_development/scripts"
+      SOURCE_PATH: "${{ github.workspace }}/docs/vocabulary_development/auto-generated/md"
+      WORDPRESS_USER: "cicd"
+      WORDPRESS_APPLICATION_PASSWORD: "${{ secrets.WORDPRESS_APPLICATION_PASSWORD }}"
+      WORDPRESS_URL: "https://adams210.sg-host.com/"
+      WORDPRESS_USE_REST_ROUTE: "true"
+      FORCE_UPDATE: "false"
+      FORCE_DELETION: "false"
+    
+    steps:
+        # Override env variables with content from the Workflow Dispatch dialog
+      - name: override-dispatch-variables
+        if: ${{ github.event_name=='workflow_dispatch' }}
+        run: |
+          echo "FORCE_UPDATE=${{ github.event.inputs.force_updates }}" >> $GITHUB_ENV
+          echo "FORCE_DELETION=${{ github.event.inputs.force_deletion }}" >> $GITHUB_ENV
+          echo "WORDPRESS_APPLICATION_PASSWORD=${{ github.event.inputs.application_password }}" >> $GITHUB_ENV
+
+      - uses: actions/checkout@v2
+
+      - name: 'Download the generated files from artifacts'
+        uses: actions/download-artifact@v3
+        with:
+          name: generated-md-files
+          path: "${{ github.workspace }}/docs/vocabulary_development/auto-generated/md"
+
+      - name: Extract Artifact
+        run: |
+          ls
+          ls $SOURCE_PATH
+          git status
+
+      - name: Run publish script
+        run: |
+          cd $SCRIPT_PATH
+          if [ -z "$WORDPRESS_APPLICATION_PASSWORD" ]
+          then
+            echo Application password not set, aborting without failure
+            exit 0
+          else
+            pip install -r requirements.txt
+            python update_web_vocabulary.py
+          fi
+
+
+      
