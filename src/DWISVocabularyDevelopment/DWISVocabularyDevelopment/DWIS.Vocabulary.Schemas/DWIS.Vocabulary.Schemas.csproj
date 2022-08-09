@@ -2,14 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <Version>1.0.1</Version>    
+    <Version>$(VersionPrefix)</Version>    
     <Authors>Benoît Daireaux</Authors>
     <Company>NORCE</Company>
-    <Description>OWL ontology generation from a DWIS vocabulary</Description>
+    <Description>Provides constants for manipulation of the DWIS vocabulary.</Description>
     <RepositoryUrl>https://github.com/D-WIS/DDHub-Semantic-Interoperability</RepositoryUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>readme-pkg.md</PackageReadmeFile>
   </PropertyGroup>
   <ItemGroup>
       <None Include="license\LICENSE" Pack="true" PackagePath="" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="readme-pkg.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 </Project>
