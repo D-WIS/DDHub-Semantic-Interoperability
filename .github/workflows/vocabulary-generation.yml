@@ -18,7 +18,7 @@ jobs:
       PACK_VERSION: "5"
       PACKAGE_OUTPUT_FOLDER: "${{ github.workspace }}\\temp\\src\\DWIS.Vocabulary.OPCUA\\LocalPackages"
       INCREMENT_VERSION: "true"
-      STANDARD_RESOURCE_FOLDER: "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWIS.Vocabulary.Standard\\Properties",
+      STANDARD_RESOURCE_FOLDER: "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWIS.Vocabulary.Standard\\Properties"
 
 
     
