@@ -73,11 +73,16 @@ jobs:
 
       - name: Build and pack
         run: |
-          cd "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWIS.Vocabulary.Schemas"
+          cd "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment"
+          dotnet pack --output $Env:PACKAGE_OUTPUT_FOLDER -p:PackageVersion=1.0."${{ github.run_number }}" 
+          cd "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\VocabularyUtils"
+          dotnet pack --output $Env:PACKAGE_OUTPUT_FOLDER  -p:PackageVersion=1.0."${{ github.run_number }}" 
+          cd "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWISVocabulary.OWL"
           dotnet pack --output $Env:PACKAGE_OUTPUT_FOLDER -p:PackageVersion=1.0."${{ github.run_number }}" 
           cd "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWIS.Vocabulary.Standard"
-          dotnet pack --output $Env:PACKAGE_OUTPUT_FOLDER  -p:PackageVersion=1.0."${{ github.run_number }}" 
-
+          dotnet pack --output $Env:PACKAGE_OUTPUT_FOLDER -p:PackageVersion=1.0."${{ github.run_number }}" 
+          cd "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWIS.Vocabulary.Schemas"
+          dotnet pack --output $Env:PACKAGE_OUTPUT_FOLDER -p:PackageVersion=1.0."${{ github.run_number }}" 
       - name: 'Upload the generated packages as artifacts'
         uses: actions/upload-artifact@v3
         with:
