@@ -78,13 +78,13 @@ ddhub:BelongsToSynchronizationGroup a owl:ObjectProperty;
                                     rdfs:range ddhub:SynchronizationGroup; 
                                     rdfs:subPropertyOf ddhub:DWISVerb. 
 
-ddhub:BHAAnnular a owl:Class; 
-                 rdfs:comment ""@EN; 
-                 rdfs:subClassOf ddhub:Annular. 
-
 ddhub:BHAInner a owl:Class; 
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:Pipe. 
+
+ddhub:BHAAnnular a owl:Class; 
+                 rdfs:comment ""@EN; 
+                 rdfs:subClassOf ddhub:Annular. 
 
 ddhub:Bit a owl:Class; 
           rdfs:comment ""@EN; 

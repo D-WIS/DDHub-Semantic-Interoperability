@@ -11,6 +11,7 @@
         public static string RDFFolderName { get; set; } = "rdf";
         public static string MDFolderName { get; set; } = "md";
         public static string JsonFolderName { get; set; } = "json";
+        public static string CSVFolderName { get; set; } = "csv";
 
         public string NounsSchemaPath { get; set; }
         public string VerbsSchemaPath { get; set; }
@@ -25,12 +26,14 @@
         public string RDFFolderPath { get; private set; }
         public string OntologyFilePath { get; private set; }
         public string AttributesSchemaPath { get; private set; }
+        public string CSVFilePath { get; private set; }
 
         public ActionPaths(string sourceFolder, string destinationFolder, string schemasFolder, string examplesSourceFolder, string standardResourceFolder)
         {
             char sep = System.IO.Path.DirectorySeparatorChar;
             string mdExtension = ".md";
             string jsonExtension = ".json";
+            string csvExtension = ".csv";
 
             VocabularySourceFolder = sourceFolder;
             ExamplesSourceFolder = examplesSourceFolder;
@@ -46,6 +49,9 @@
 
             SingleJsonFilePath = destinationFolder + sep + JsonFolderName + sep + SingleFileName + jsonExtension;
             StandardJsonFilePath = standardResourceFolder + sep + SingleFileName + jsonExtension;
+
+            CSVFilePath = destinationFolder + sep + CSVFolderName + sep + SingleFileName + csvExtension;
+
 
             NounsSchemaPath = schemasFolder + sep + "Nouns.cs";
             VerbsSchemaPath = schemasFolder + sep + "Verbs.cs";

@@ -165,6 +165,45 @@ namespace DWIS.Vocabulary.Utils
             System.IO.File.WriteAllText(fileName, builder.ToString());
         }
 
+        public static void ToCSVFile(DWISVocabulary vocabulary, string fileName)
+        {
+            StringBuilder builder = new StringBuilder();
+
+            builder.AppendLine("\"name\", \"description\", \"submitter\"");
+            foreach (Noun n in vocabulary.Nouns)
+            {
+                NounToCSV(builder, n);
+            }
+            foreach (Verb v in vocabulary.Verbs)
+            {
+                VerbToCSV(builder, v);
+            }
+            System.IO.File.WriteAllText(fileName, builder.ToString());
+        }
+
+        private static void NounToCSV(StringBuilder builder, Noun n)
+        {
+            string description = "\"";
+            description += "Nature: Noun\r\n";
+            description += "Display name: " + n.DisplayName + "\r\n";
+            description += "Parent noun: " + n.ParentNounName + "\r\n";
+            description += "Description: " + n.Description;
+            description += "\"";
+
+            builder.AppendLine($"\"{n.Name}\", \"{n.Description}\"");
+        }
+
+        private static void VerbToCSV(StringBuilder builder, Verb n)
+        {
+            string description = "\"";
+            description += "Nature: Verb\r\n";
+            description += "Display name: " + n.DisplayName + "\r\n";
+            description += "Parent noun: " + n.ParentVerbName + "\r\n";
+            description += "Description: " + n.Description;
+            description += "\"";
+
+            builder.AppendLine($"\"{n.Name}\", \"{n.Description}\"");
+        }
 
         public static void ToMDFiles(DWISVocabulary vocabulary, string folderName)
         {
