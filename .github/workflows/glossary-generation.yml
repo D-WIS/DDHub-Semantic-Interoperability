@@ -10,17 +10,18 @@ on:
         decription: 'Force deletion of existing terms before updates'
         required: true
         default: 'false'
-      application_password:
-        description: 'Application password to use'
-        required: false
-        default: ''
-  #push: # push must be changed to trigger after md's have been generated (workflow trigger?)
-  #paths:
-  # - 'docs/vocabulary_developement/definitions/**.md' 
+  # push: # push must be changed to trigger after md's have been generated (workflow trigger?)
+  # paths:
+  #  - 'docs/vocabulary_developement/definitions/**.md' 
+  workflow_run:
+    workflows: [Generate cleaned vocabulary and packages]
+    types: [completed]
 
 jobs:
   publish_vocabulary:
     runs-on: ubuntu-latest
+    # Run if the previous workflow succeeded, or if manually dispatched
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name=='workflow_dispatch'}}
     needs: generate_vocabulary
     env:
       SCRIPT_PATH: "${{ github.workspace }}/docs/vocabulary_development/scripts"
@@ -39,7 +40,6 @@ jobs:
         run: |
           echo "FORCE_UPDATE=${{ github.event.inputs.force_updates }}" >> $GITHUB_ENV
           echo "FORCE_DELETION=${{ github.event.inputs.force_deletion }}" >> $GITHUB_ENV
-          echo "WORDPRESS_APPLICATION_PASSWORD=${{ github.event.inputs.application_password }}" >> $GITHUB_ENV
 
       - uses: actions/checkout@v2
 
