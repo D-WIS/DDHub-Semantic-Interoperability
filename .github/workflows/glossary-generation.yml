@@ -1,4 +1,4 @@
-name: Generate glossary
+name: Publish Vocabulary to D-WIS webpage
 on: 
   workflow_dispatch:
     inputs:
@@ -22,7 +22,6 @@ jobs:
     runs-on: ubuntu-latest
     # Run if the previous workflow succeeded, or if manually dispatched
     #if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name=='workflow_dispatch'}}
-    needs: generate_vocabulary
     env:
       SCRIPT_PATH: "${{ github.workspace }}/docs/vocabulary_development/scripts"
       SOURCE_PATH: "${{ github.workspace }}/docs/vocabulary_development/auto-generated/md"
