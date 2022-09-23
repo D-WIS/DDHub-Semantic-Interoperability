@@ -147,6 +147,14 @@ ddhub:Clock a owl:Class;
             rdfs:comment "Represents a clock"@EN; 
             rdfs:subClassOf ddhub:DWISNoun. 
 
+ddhub:CollapsePressure a owl:Class; 
+                       rdfs:comment ""@EN; 
+                       rdfs:subClassOf ddhub:DrillingDataPoint. 
+
+ddhub:CollapsePressureGradient a owl:Class; 
+                               rdfs:comment ""@EN; 
+                               rdfs:subClassOf ddhub:DrillingDataPoint. 
+
 ddhub:Command a owl:Class; 
               rdfs:comment ""@EN; 
               rdfs:subClassOf ddhub:DrillingDataPoint. 
@@ -453,6 +461,14 @@ ddhub:FormationPorosityQuantity a owl:Class;
 ddhub:FourDimensionalReferenceFrame a owl:Class; 
                                     rdfs:comment ""@EN; 
                                     rdfs:subClassOf ddhub:ReferenceFrame. 
+
+ddhub:FracturingPressure a owl:Class; 
+                         rdfs:comment ""@EN; 
+                         rdfs:subClassOf ddhub:DrillingDataPoint. 
+
+ddhub:FracturingPressureGradient a owl:Class; 
+                                 rdfs:comment ""@EN; 
+                                 rdfs:subClassOf ddhub:DrillingDataPoint. 
 
 ddhub:FrenetSerretReferenceFrame a owl:Class; 
                                  rdfs:comment ""@EN; 
@@ -1272,6 +1288,14 @@ ddhub:MinFrequency a owl:DatatypeProperty, owl:FunctionalProperty;
                    rdfs:domain ddhub:BandPassFilter; 
                    rdfs:range xsd:double. 
 
+ddhub:MinimumHorizontalStress a owl:Class; 
+                              rdfs:comment ""@EN; 
+                              rdfs:subClassOf ddhub:DrillingDataPoint. 
+
+ddhub:MinimumHorizontalStressGradient a owl:Class; 
+                                      rdfs:comment ""@EN; 
+                                      rdfs:subClassOf ddhub:DrillingDataPoint. 
+
 ddhub:MinMaxUncertainty a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:SignalUncertainty. 
@@ -1387,6 +1411,14 @@ ddhub:OpenHoleCenterLineFrame a owl:Class;
                               rdfs:comment ""@EN; 
                               rdfs:subClassOf ddhub:OneDimensionalCurviLinearReferenceFrame. 
 
+ddhub:OverburdenPressure a owl:Class; 
+                         rdfs:comment ""@EN; 
+                         rdfs:subClassOf ddhub:DrillingDataPoint. 
+
+ddhub:OverburdenPressureGradient a owl:Class; 
+                                 rdfs:comment ""@EN; 
+                                 rdfs:subClassOf ddhub:DrillingDataPoint. 
+
 ddhub:Pipe a owl:Class; 
            rdfs:comment ""@EN; 
            rdfs:subClassOf ddhub:HydraulicBranch. 
@@ -1394,6 +1426,14 @@ ddhub:Pipe a owl:Class;
 ddhub:PolarReferenceFrame a owl:Class; 
                           rdfs:comment ""@EN; 
                           rdfs:subClassOf ddhub:TwoDimensionalReferenceFrame. 
+
+ddhub:PorePressure a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:DrillingDataPoint. 
+
+ddhub:PorePressureGradient a owl:Class; 
+                           rdfs:comment ""@EN; 
+                           rdfs:subClassOf ddhub:DrillingDataPoint. 
 
 ddhub:PositiveUpward a owl:DatatypeProperty, owl:FunctionalProperty; 
                      rdfs:comment ""@EN; 

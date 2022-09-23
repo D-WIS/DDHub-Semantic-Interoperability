@@ -76,6 +76,16 @@ public static class Nouns
 	public static string TemperatureOut = "TemperatureOut";
 	public static string TopOfStringPosition = "TopOfStringPosition";
 	public static string WOB = "WOB";
+	public static string PorePressure = "PorePressure";
+	public static string PorePressureGradient = "PorePressureGradient";
+	public static string FracturingPressure = "FracturingPressure";
+	public static string FracturingPressureGradient = "FracturingPressureGradient";
+	public static string CollapsePressure = "CollapsePressure";
+	public static string CollapsePressureGradient = "CollapsePressureGradient";
+	public static string MinimumHorizontalStress = "MinimumHorizontalStress";
+	public static string MinimumHorizontalStressGradient = "MinimumHorizontalStressGradient";
+	public static string OverburdenPressure = "OverburdenPressure";
+	public static string OverburdenPressureGradient = "OverburdenPressureGradient";
 	public static string SetPoint = "SetPoint";
 	public static string Command = "Command";
 	public static string Recommendation = "Recommendation";

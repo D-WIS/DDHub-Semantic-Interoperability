@@ -204,6 +204,86 @@
 - Description: 
 - Examples:
 - Definition set: DrillingDataSemantics
+## PorePressure <!-- NOUN -->
+- Display name: PorePressure
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## PorePressureGradient <!-- NOUN -->
+- Display name: PorePressureGradient
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## FracturingPressure <!-- NOUN -->
+- Display name: FracturingPressure
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## FracturingPressureGradient <!-- NOUN -->
+- Display name: FracturingPressureGradient
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## CollapsePressure <!-- NOUN -->
+- Display name: CollapsePressure
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## CollapsePressureGradient <!-- NOUN -->
+- Display name: CollapsePressureGradient
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## MinimumHorizontalStress <!-- NOUN -->
+- Display name: MinimumHorizontalStress
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## MinimumHorizontalStressGradient <!-- NOUN -->
+- Display name: MinimumHorizontalStressGradient
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## OverburdenPressure <!-- NOUN -->
+- Display name: OverburdenPressure
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## OverburdenPressureGradient <!-- NOUN -->
+- Display name: OverburdenPressureGradient
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
 ## SetPoint <!-- NOUN -->
 - Display name: Set-point
 - Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
