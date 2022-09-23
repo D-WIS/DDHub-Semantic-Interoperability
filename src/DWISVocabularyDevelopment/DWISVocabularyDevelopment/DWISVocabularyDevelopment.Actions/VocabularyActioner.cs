@@ -85,7 +85,7 @@ namespace DWIS.Vocabulary.Development.Actions
             DWISVocabulary.ToJsonFile(_paths.SingleJsonFilePath, _vocabulary);
             DWISVocabulary.ToJsonFile(_paths.StandardJsonFilePath, _vocabulary);
 
-           MDWriting.ToCSVFile(_vocabulary, _paths.CSVFilePath);
+           //MDWriting.ToCSVFile(_vocabulary, _paths.CSVFilePath);
 
 
             _logger.LogInformation($"Export ontology to {_paths.OntologyFilePath}");
