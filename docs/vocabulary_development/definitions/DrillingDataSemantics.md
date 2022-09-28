@@ -251,6 +251,62 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Specialization:
 - Description: 
 - Examples:
+## BOPOpening <!-- NOUN -->
+- Display name: BOPOpening
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## BOPPressure <!-- NOUN -->
+- Display name: BOPPressure
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MPDChokeOpening <!-- NOUN -->
+- Display name: MPDChokeOpening
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MPDChokePressure <!-- NOUN -->
+- Display name: MPDChokePressure
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MPDPumpRate <!-- NOUN -->
+- Display name: MPDPumpRate
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MPDPumpFlowRate <!-- NOUN -->
+- Display name: MPDPumpFlowRate
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## GasFlowRate <!-- NOUN -->
+- Display name: GasFlowRate
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## BackPressurePumpPressure <!-- NOUN -->
+- Display name: BackPressurePumpPressure
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## SetPoint <!-- NOUN -->
 - Display name: Set-point
 - Parent class: DrillingDataPoint
