@@ -58,6 +58,10 @@ ddhub:AxialModelling a owl:Class;
                      rdfs:comment "The model accounts for the axial movement of some parts of the physical system."@EN; 
                      rdfs:subClassOf ddhub:ModelledDegreeOfFreedom. 
 
+ddhub:BackPressurePumpPressure a owl:Class; 
+                               rdfs:comment ""@EN; 
+                               rdfs:subClassOf ddhub:DrillingDataPoint. 
+
 ddhub:BandPassFilter a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:Filter. 
@@ -113,6 +117,14 @@ ddhub:BlockPositionQuantity a owl:Class;
 ddhub:BlockVelocityQuantity a owl:Class; 
                             rdfs:comment ""@EN; 
                             rdfs:subClassOf ddhub:MeasurableQuantity. 
+
+ddhub:BOPOpening a owl:Class; 
+                 rdfs:comment ""@EN; 
+                 rdfs:subClassOf ddhub:DrillingDataPoint. 
+
+ddhub:BOPPressure a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:DrillingDataPoint. 
 
 ddhub:BoundaryDiscretization a owl:Class; 
                              rdfs:comment "A model only considers the bounds of the physical system and does not apply any intermediate discretization."@EN; 
@@ -477,6 +489,10 @@ ddhub:FrenetSerretReferenceFrame a owl:Class;
 ddhub:FrequencyQuantity a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:Quantity. 
+
+ddhub:GasFlowRate a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:DrillingDataPoint. 
 
 ddhub:GateValve a owl:Class; 
                 rdfs:comment ""@EN; 
@@ -1320,6 +1336,22 @@ ddhub:ModellingDiscretization a owl:Class;
 ddhub:MovingAverage a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:Filter. 
+
+ddhub:MPDChokeOpening a owl:Class; 
+                      rdfs:comment ""@EN; 
+                      rdfs:subClassOf ddhub:DrillingDataPoint. 
+
+ddhub:MPDChokePressure a owl:Class; 
+                       rdfs:comment ""@EN; 
+                       rdfs:subClassOf ddhub:DrillingDataPoint. 
+
+ddhub:MPDPumpFlowRate a owl:Class; 
+                      rdfs:comment ""@EN; 
+                      rdfs:subClassOf ddhub:DrillingDataPoint. 
+
+ddhub:MPDPumpRate a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:DrillingDataPoint. 
 
 ddhub:MudMixing a owl:Class; 
                 rdfs:comment ""@EN; 

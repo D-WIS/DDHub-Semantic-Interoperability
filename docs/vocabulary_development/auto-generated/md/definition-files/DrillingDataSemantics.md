@@ -284,6 +284,70 @@
 - Description: 
 - Examples:
 - Definition set: DrillingDataSemantics
+## BOPOpening <!-- NOUN -->
+- Display name: BOPOpening
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## BOPPressure <!-- NOUN -->
+- Display name: BOPPressure
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## MPDChokeOpening <!-- NOUN -->
+- Display name: MPDChokeOpening
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## MPDChokePressure <!-- NOUN -->
+- Display name: MPDChokePressure
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## MPDPumpRate <!-- NOUN -->
+- Display name: MPDPumpRate
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## MPDPumpFlowRate <!-- NOUN -->
+- Display name: MPDPumpFlowRate
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## GasFlowRate <!-- NOUN -->
+- Display name: GasFlowRate
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## BackPressurePumpPressure <!-- NOUN -->
+- Display name: BackPressurePumpPressure
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
 ## SetPoint <!-- NOUN -->
 - Display name: Set-point
 - Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)

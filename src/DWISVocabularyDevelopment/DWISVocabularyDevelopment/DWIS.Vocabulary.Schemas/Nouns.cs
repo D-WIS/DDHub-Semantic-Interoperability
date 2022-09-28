@@ -86,6 +86,14 @@ public static class Nouns
 	public static string MinimumHorizontalStressGradient = "MinimumHorizontalStressGradient";
 	public static string OverburdenPressure = "OverburdenPressure";
 	public static string OverburdenPressureGradient = "OverburdenPressureGradient";
+	public static string BOPOpening = "BOPOpening";
+	public static string BOPPressure = "BOPPressure";
+	public static string MPDChokeOpening = "MPDChokeOpening";
+	public static string MPDChokePressure = "MPDChokePressure";
+	public static string MPDPumpRate = "MPDPumpRate";
+	public static string MPDPumpFlowRate = "MPDPumpFlowRate";
+	public static string GasFlowRate = "GasFlowRate";
+	public static string BackPressurePumpPressure = "BackPressurePumpPressure";
 	public static string SetPoint = "SetPoint";
 	public static string Command = "Command";
 	public static string Recommendation = "Recommendation";
