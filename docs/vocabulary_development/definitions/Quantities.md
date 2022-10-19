@@ -430,7 +430,7 @@ ConvertedValue = ConversionFactorA + SIValue * ConversionFactorB
 ## IsOfMeasurableQuantity <!-- VERB -->
 - Display name: IsOfMeasurableQuantity
 - Parent verb: DWISVerb
-- Subject class: DWISNoun
+- Subject class: DrillingSignal
 - Object class: MeasurableQuantity
 - Description: 
 - Examples: 
@@ -445,6 +445,13 @@ ConvertedValue = ConversionFactorA + SIValue * ConversionFactorB
 - Display name: HasSIUnit
 - Parent verb: DWISVerb
 - Subject class: Quantity
+- Object class: Unit
+- Description: 
+- Examples: 
+## HasSIUnit <!-- VERB -->
+- Display name: HasUnitOfMeasure
+- Parent verb: DWISVerb
+- Subject class: DrillingSignal
 - Object class: Unit
 - Description: 
 - Examples: 
