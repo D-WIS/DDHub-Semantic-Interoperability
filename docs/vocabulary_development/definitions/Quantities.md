@@ -448,7 +448,7 @@ ConvertedValue = ConversionFactorA + SIValue * ConversionFactorB
 - Object class: Unit
 - Description: 
 - Examples: 
-## HasSIUnit <!-- VERB -->
+## HasUnitOfMeasure <!-- VERB -->
 - Display name: HasUnitOfMeasure
 - Parent verb: DWISVerb
 - Subject class: DrillingSignal
