@@ -424,7 +424,7 @@ ConvertedValue = ConversionFactorA + SIValue * ConversionFactorB
 - Display name: IsOfBaseQuantity
 - Parent verb: DWISVerb
 - Subject class: DWISNoun
-- Object class: DWISNoun
+- Object class: Quantity
 - Description: 
 - Examples: 
 ## IsOfMeasurableQuantity <!-- VERB -->
