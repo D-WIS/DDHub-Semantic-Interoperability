@@ -40,6 +40,12 @@
 - Display name: SensorUncertainty
 - Parent class: SignalUncertainty
 - Attributes:
+  - Accuracy
+    - DataType: double
+    - Description:
+  - Precision
+    - DataType: double 
+    - Description: 
 - Specialization:
 - Description: 
 - Examples:
