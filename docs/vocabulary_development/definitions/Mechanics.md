@@ -5,6 +5,9 @@
 - Display name: MechanicalElementState
 - Parent class: DWISNoun
 - Attributes:
+  - Value
+    - Type: bool
+    - Description: 
 - Specialization:
 - Description: 
 - Examples:
@@ -12,9 +15,6 @@
 - Display name: MechanicallyClosedState
 - Parent class: MechanicalElementState
 - Attributes:
-  - Value
-    - Type: bool
-    - Description: 
 - Specialization:
 - Description: 
 - Examples:
@@ -22,9 +22,6 @@
 - Display name: MechanicallyConnectedState
 - Parent class: MechanicalElementState
 - Attributes:
-  - Value
-    - Type: bool
-    - Description: 
 - Specialization:
 - Description: 
 - Examples:
