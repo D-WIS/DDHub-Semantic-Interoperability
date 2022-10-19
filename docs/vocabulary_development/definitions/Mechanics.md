@@ -52,11 +52,11 @@
 - Object class: DrillingDataPoint
 - Description: 
 - Examples: 
-## IsMechanicallyConnectTo <!-- VERB -->
+## IsMechanicallyConnectedTo <!-- VERB -->
 - Display name: IsMechanicallyConnectTo
 - Parent verb: DWISVerb
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Subject class: MechanicalLogicalElement
+- Object class: MechanicalLogicalElement
 - Description: 
 - Examples: 
 ## IsMechanicallyLocatedAt <!-- VERB -->
