@@ -87,7 +87,7 @@
 - Examples:
 ## DrawWorks <!-- NOUN -->
 - Display name: DrawWorks
-- Parent class: DrillLineFastener
+- Parent class: HoistingSystem
 - Attributes:
 - Specialization:
 - Description: 
