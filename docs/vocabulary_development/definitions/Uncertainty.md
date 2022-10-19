@@ -41,10 +41,10 @@
 - Parent class: SignalUncertainty
 - Attributes:
   - Accuracy
-    - DataType: double
+    - Type: double
     - Description:
   - Precision
-    - DataType: double 
+    - Type: double 
     - Description: 
 - Specialization:
 - Description: 
