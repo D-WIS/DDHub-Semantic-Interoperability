@@ -45,7 +45,7 @@
 ## HasMechanicalStateValueFrom <!-- VERB -->
 - Display name: HasMechanicalStateValueFrom
 - Parent verb: DWISVerb
-- Subject class: MechanicalLogicalElement
+- Subject class: MechanicalElementState
 - Object class: DrillingDataPoint
 - Description: 
 - Examples: 
@@ -59,7 +59,7 @@
 ## IsMechanicallyLocatedAt <!-- VERB -->
 - Display name: IsMechanicallyLocatedAt
 - Parent verb: DWISVerb
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Subject class: DrillingDataPoint
+- Object class: MechanicalLogicalElement
 - Description: 
 - Examples: 
