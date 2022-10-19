@@ -83,6 +83,9 @@
 - Display name: OneDimensionalReferenceFrame
 - Parent class: ReferenceFrame
 - Attributes:
+  - PostiveUpward
+    - Type: bool
+    - Description: 
 - Specialization:
 - Description: 
 - Examples:
