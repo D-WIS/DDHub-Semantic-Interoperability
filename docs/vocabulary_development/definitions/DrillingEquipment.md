@@ -232,6 +232,33 @@
 - Specialization:
 - Description: 
 - Examples:
-
+## HoistingSystem <!-- NOUN -->
+- Display name: HoistingSystem
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## Rig <!-- NOUN -->
+- Display name: Rig
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## Sea <!-- NOUN -->
+- Display name: Sea
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## Ground <!-- NOUN -->
+- Display name: Ground
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 
 # VERBS
