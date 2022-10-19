@@ -224,7 +224,7 @@
 ## HasReferenceFrame <!-- VERB -->
 - Display name: HasReferenceFrame
 - Parent verb: DWISVerb
-- Subject class: Location
+- Subject class: DrillingDataPoint
 - Object class: ReferenceFrame
 - Description: 
 - Examples: 
