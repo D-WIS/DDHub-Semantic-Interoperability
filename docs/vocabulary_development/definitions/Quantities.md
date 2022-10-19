@@ -431,7 +431,7 @@ ConvertedValue = ConversionFactorA + SIValue * ConversionFactorB
 - Display name: IsOfMeasurableQuantity
 - Parent verb: DWISVerb
 - Subject class: DWISNoun
-- Object class: DWISNoun
+- Object class: MeasurableQuantity
 - Description: 
 - Examples: 
 ## IsUnitForQuantity <!-- VERB -->
