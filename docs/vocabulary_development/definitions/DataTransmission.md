@@ -8,6 +8,9 @@
   - NumberOfRepeaters
     - Type: int
     - Description: 
+  - DistanceBetweenRepeaters
+    - Type: double
+    - Description:
   - AverageDelayByRepeater
     - Type: double
     - Description: 
