@@ -31,8 +31,10 @@ public static class Attributes
 	public static string DataProvider_ProviderName_Type = "string";
 	public static string Telemetry_NumberOfRepeaters = "NumberOfRepeaters";
 	public static string Telemetry_NumberOfRepeaters_Type = "int";
-	public static string Telemetry_AverageDelayByRepeaters = "AverageDelayByRepeaters";
-	public static string Telemetry_AverageDelayByRepeaters_Type = "double";
+	public static string Telemetry_DistanceBetweenRepeaters = "DistanceBetweenRepeaters";
+	public static string Telemetry_DistanceBetweenRepeaters_Type = "double";
+	public static string Telemetry_AverageDelayByRepeater = "AverageDelayByRepeater";
+	public static string Telemetry_AverageDelayByRepeater_Type = "double";
 	public static string DrillingDataPoint_IsValid = "IsValid";
 	public static string DrillingDataPoint_IsValid_Type = "bool";
 	public static string DrillingSignal_Value = "Value";
@@ -67,10 +69,10 @@ public static class Attributes
 	public static string HydraulicJunction_LeftToRight_Type = "bool";
 	public static string HydraulicJunction_RightToLeft = "RightToLeft";
 	public static string HydraulicJunction_RightToLeft_Type = "bool";
-	public static string MechanicallyClosedState_Value = "Value";
-	public static string MechanicallyClosedState_Value_Type = "bool";
-	public static string MechanicallyConnectedState_Value = "Value";
-	public static string MechanicallyConnectedState_Value_Type = "bool";
+	public static string MechanicalElementState_Value = "Value";
+	public static string MechanicalElementState_Value_Type = "bool";
+	public static string OneDimensionalReferenceFrame_PostiveUpward = "PostiveUpward";
+	public static string OneDimensionalReferenceFrame_PostiveUpward_Type = "bool";
 	public static string DrillStringCenterLineFrame_PositiveUpward = "PositiveUpward";
 	public static string DrillStringCenterLineFrame_PositiveUpward_Type = "bool";
 	public static string WellboreCenterLineFrame_PositiveUpward = "PositiveUpward";
@@ -115,5 +117,9 @@ public static class Attributes
 	public static string SynchronizationGroup_SynchronizationDelay_Type = "double";
 	public static string SynchronizationGroup_SamplingRate = "SamplingRate";
 	public static string SynchronizationGroup_SamplingRate_Type = "double";
+	public static string SensorUncertainty_Accuracy = "Accuracy";
+	public static string SensorUncertainty_Accuracy_Type = "double";
+	public static string SensorUncertainty_Precision = "Precision";
+	public static string SensorUncertainty_Precision_Type = "double";
 }
 }

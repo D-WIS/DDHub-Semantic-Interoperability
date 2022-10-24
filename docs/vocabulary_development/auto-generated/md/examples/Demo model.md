@@ -424,21 +424,6 @@
 - MechanicallyConnectedState_0 HasMechanicalStateValueFrom DrillingDataPoint_18
 - MechanicallyClosedState_0 HasMechanicalStateValueFrom DrillingDataPoint_19
 - MechanicallyConnectedState_1 HasMechanicalStateValueFrom DrillingDataPoint_20
-- ActiveLine_0 IsMechanicallyConnectTo DrawWorks_0
-- CrownBlock_0 IsMechanicallyConnectTo ActiveLine_0
-- CrownBlock_0 IsMechanicallyConnectTo DeadLine_0
-- CrownBlock_0 IsMechanicallyConnectTo SupportLine_0
-- DeadLine_0 IsMechanicallyConnectTo DrawWorks_1
-- Dolly_0 IsMechanicallyConnectTo DollyRail_0
-- DrillString_0 IsMechanicallyConnectTo Slips_0
-- Elevator_0 IsMechanicallyConnectTo DrillString_0
-- SupportLine_0 IsMechanicallyConnectTo TravellingBlock_0
-- TopDriveBody_0 IsMechanicallyConnectTo Dolly_0
-- TopDriveBody_0 IsMechanicallyConnectTo Elevator_0
-- TopDriveBody_0 IsMechanicallyConnectTo TopDriveShaft_0
-- TopDriveHook_0 IsMechanicallyConnectTo TopDriveBody_0
-- TopDriveShaft_0 IsMechanicallyConnectTo DrillString_0
-- TravellingBlock_0 IsMechanicallyConnectTo TopDriveHook_0
 - DrillingDataPoint_21 IsMechanicallyLocatedAt DeadLine_0
 - HookLoad_0 IsMechanicallyLocatedAt TravellingBlock_0
 - HookLoad_1 IsMechanicallyLocatedAt TopDriveShaft_0
@@ -962,21 +947,6 @@ flowchart TD
 	 MechanicallyConnectedState_0 -- HasMechanicalStateValueFrom --> DrillingDataPoint_18 
 	 MechanicallyClosedState_0 -- HasMechanicalStateValueFrom --> DrillingDataPoint_19 
 	 MechanicallyConnectedState_1 -- HasMechanicalStateValueFrom --> DrillingDataPoint_20 
-	 ActiveLine_0 -- IsMechanicallyConnectTo --> DrawWorks_0 
-	 CrownBlock_0 -- IsMechanicallyConnectTo --> ActiveLine_0 
-	 CrownBlock_0 -- IsMechanicallyConnectTo --> DeadLine_0 
-	 CrownBlock_0 -- IsMechanicallyConnectTo --> SupportLine_0 
-	 DeadLine_0 -- IsMechanicallyConnectTo --> DrawWorks_1 
-	 Dolly_0 -- IsMechanicallyConnectTo --> DollyRail_0 
-	 DrillString_0 -- IsMechanicallyConnectTo --> Slips_0 
-	 Elevator_0 -- IsMechanicallyConnectTo --> DrillString_0 
-	 SupportLine_0 -- IsMechanicallyConnectTo --> TravellingBlock_0 
-	 TopDriveBody_0 -- IsMechanicallyConnectTo --> Dolly_0 
-	 TopDriveBody_0 -- IsMechanicallyConnectTo --> Elevator_0 
-	 TopDriveBody_0 -- IsMechanicallyConnectTo --> TopDriveShaft_0 
-	 TopDriveHook_0 -- IsMechanicallyConnectTo --> TopDriveBody_0 
-	 TopDriveShaft_0 -- IsMechanicallyConnectTo --> DrillString_0 
-	 TravellingBlock_0 -- IsMechanicallyConnectTo --> TopDriveHook_0 
 	 DrillingDataPoint_21 -- IsMechanicallyLocatedAt --> DeadLine_0 
 	 HookLoad_0 -- IsMechanicallyLocatedAt --> TravellingBlock_0 
 	 HookLoad_1 -- IsMechanicallyLocatedAt --> TopDriveShaft_0 

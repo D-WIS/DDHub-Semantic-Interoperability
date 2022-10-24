@@ -6,7 +6,7 @@
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Attributes:
 - Specialization:
-- Description: Physical location for a signal.
+- Description: Physical location for a signal. Refers to: 1) a reference frame (via the HasReferenceFrame relation), that works as a system of coordinates 2) an origin (of type Location) via the HasReferenceFrameOrigin relation.
 - Examples:
 - Definition set: PhysicalLocation
 ## BitReferenceLocation <!-- NOUN -->
@@ -93,6 +93,9 @@
 - Display name: OneDimensionalReferenceFrame
 - Parent class: [ReferenceFrame](./PhysicalLocation.md#ReferenceFrame)
 - Attributes:
+  - PostiveUpward
+    - Type: bool
+    - Description: 
 - Specialization:
 - Description: 
 - Examples:
@@ -253,7 +256,7 @@
 ## HasReferenceFrame <!-- VERB -->
 - Display name: HasReferenceFrame
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [Location](./PhysicalLocation.md#Location)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [ReferenceFrame](./PhysicalLocation.md#ReferenceFrame)
 - Min cardinality: -1
 - Max cardinality: -1

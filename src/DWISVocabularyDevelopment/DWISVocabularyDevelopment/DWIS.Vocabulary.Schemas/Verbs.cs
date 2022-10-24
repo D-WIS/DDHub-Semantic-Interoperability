@@ -75,7 +75,7 @@ public static class Verbs
 	public static string IsOfMechanicalStiffnessType = "IsOfMechanicalStiffnessType";
 	public static string HasMechanicalState = "HasMechanicalState";
 	public static string HasMechanicalStateValueFrom = "HasMechanicalStateValueFrom";
-	public static string IsMechanicallyConnectTo = "IsMechanicallyConnectTo";
+	public static string IsMechanicallyConnectedTo = "IsMechanicallyConnectedTo";
 	public static string IsMechanicallyLocatedAt = "IsMechanicallyLocatedAt";
 	public static string HasCoordinates = "HasCoordinates";
 	public static string HasReferenceFrame = "HasReferenceFrame";
@@ -89,6 +89,7 @@ public static class Verbs
 	public static string IsOfMeasurableQuantity = "IsOfMeasurableQuantity";
 	public static string IsUnitForQuantity = "IsUnitForQuantity";
 	public static string HasSIUnit = "HasSIUnit";
+	public static string HasUnitOfMeasure = "HasUnitOfMeasure";
 	public static string BelongsToSynchronizationGroup = "BelongsToSynchronizationGroup";
 	public static string HasAcquisitionClock = "HasAcquisitionClock";
 	public static string HasSourceClock = "HasSourceClock";

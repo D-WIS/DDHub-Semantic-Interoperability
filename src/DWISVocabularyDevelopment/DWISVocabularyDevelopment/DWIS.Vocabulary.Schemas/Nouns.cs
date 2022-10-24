@@ -10,6 +10,8 @@ public static class Nouns
 	public static string DrawWorksControlSystem = "DrawWorksControlSystem";
 	public static string MudPumpsControlSystem = "MudPumpsControlSystem";
 	public static string TopDriveControlSystem = "TopDriveControlSystem";
+	public static string BOPControlSystem = "BOPControlSystem";
+	public static string RigChokeControlSystem = "RigChokeControlSystem";
 	public static string MeasurementDevice = "MeasurementDevice";
 	public static string Transformation = "Transformation";
 	public static string DirectTransformation = "DirectTransformation";
@@ -137,6 +139,10 @@ public static class Nouns
 	public static string TopDriveHook = "TopDriveHook";
 	public static string TopDriveShaft = "TopDriveShaft";
 	public static string UnderReamer = "UnderReamer";
+	public static string HoistingSystem = "HoistingSystem";
+	public static string Rig = "Rig";
+	public static string Sea = "Sea";
+	public static string Ground = "Ground";
 	public static string DWISNoun = "DWISNoun";
 	public static string DataEndPoint = "DataEndPoint";
 	public static string WitsMLTimeBasedLogEndPoint = "WitsMLTimeBasedLogEndPoint";

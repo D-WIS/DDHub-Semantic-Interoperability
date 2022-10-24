@@ -45,6 +45,12 @@
 - Display name: SensorUncertainty
 - Parent class: [SignalUncertainty](./Uncertainty.md#SignalUncertainty)
 - Attributes:
+  - Accuracy
+    - Type: double
+    - Description: 
+  - Precision
+    - Type: double
+    - Description: 
 - Specialization:
 - Description: 
 - Examples:

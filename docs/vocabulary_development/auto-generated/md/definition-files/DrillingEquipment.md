@@ -99,7 +99,7 @@
 - Definition set: DrillingEquipment
 ## DrawWorks <!-- NOUN -->
 - Display name: DrawWorks
-- Parent class: [DrillLineFastener](./DrillingEquipment.md#DrillLineFastener)
+- Parent class: [HoistingSystem](./DrillingEquipment.md#HoistingSystem)
 - Attributes:
 - Specialization:
 - Description: 
@@ -259,6 +259,38 @@
 - Definition set: DrillingEquipment
 ## UnderReamer <!-- NOUN -->
 - Display name: UnderReamer
+- Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## HoistingSystem <!-- NOUN -->
+- Display name: HoistingSystem
+- Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## Rig <!-- NOUN -->
+- Display name: Rig
+- Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## Sea <!-- NOUN -->
+- Display name: Sea
+- Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## Ground <!-- NOUN -->
+- Display name: Ground
 - Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
 - Attributes:
 - Specialization:
