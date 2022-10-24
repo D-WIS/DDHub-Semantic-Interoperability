@@ -50,6 +50,20 @@
 - Specialization:
 - Description: 
 - Examples:
+## BOPControlSystem <!-- NOUN -->
+- Display name: BOPControlSystem
+- Parent class: ControlSystem
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## RigChokeControlSystem <!-- NOUN -->
+- Display name: RigChokeControlSystem
+- Parent class: ControlSystem
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## MeasurementDevice <!-- NOUN -->
 - Display name: MeasurementDevice
 - Parent class: DataFlowNode
