@@ -181,6 +181,132 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Specialization:
 - Description: 
 - Examples:
+## PorePressure <!-- NOUN -->
+- Display name: PorePressure
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## PorePressureGradient <!-- NOUN -->
+- Display name: PorePressureGradient
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## FracturingPressure <!-- NOUN -->
+- Display name: FracturingPressure
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## FracturingPressureGradient <!-- NOUN -->
+- Display name: FracturingPressureGradient
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## CollapsePressure <!-- NOUN -->
+- Display name: CollapsePressure
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## CollapsePressureGradient <!-- NOUN -->
+- Display name: CollapsePressureGradient
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MinimumHorizontalStress <!-- NOUN -->
+- Display name: MinimumHorizontalStress
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MinimumHorizontalStressGradient <!-- NOUN -->
+- Display name: MinimumHorizontalStressGradient
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## OverburdenPressure <!-- NOUN -->
+- Display name: OverburdenPressure
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## OverburdenPressureGradient <!-- NOUN -->
+- Display name: OverburdenPressureGradient
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## BOPOpening <!-- NOUN -->
+- Display name: BOPOpening
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## BOPPressure <!-- NOUN -->
+- Display name: BOPPressure
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MPDChokeOpening <!-- NOUN -->
+- Display name: MPDChokeOpening
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MPDChokePressure <!-- NOUN -->
+- Display name: MPDChokePressure
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MPDPumpRate <!-- NOUN -->
+- Display name: MPDPumpRate
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MPDPumpFlowRate <!-- NOUN -->
+- Display name: MPDPumpFlowRate
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## GasFlowRate <!-- NOUN -->
+- Display name: GasFlowRate
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## BackPressurePumpPressure <!-- NOUN -->
+- Display name: BackPressurePumpPressure
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## SetPoint <!-- NOUN -->
 - Display name: Set-point
 - Parent class: DrillingDataPoint

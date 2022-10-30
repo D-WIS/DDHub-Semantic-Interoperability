@@ -6,10 +6,7 @@
 - Parent class: DWISNoun
 - Attributes:
 - Specialization:
-- Description: Physical location for a signal. 
-Refers to:
- - a reference frame (via the HasReferenceFrame relation), that works as a system of coordinates
- - an origin (of type Location) via the HasReferenceFrameOrigin relation. 
+- Description: Physical location for a signal. Refers to: 1) a reference frame (via the HasReferenceFrame relation), that works as a system of coordinates 2) an origin (of type Location) via the HasReferenceFrameOrigin relation. 
  - some coordinates
 - Examples:
 ## BitReferenceLocation <!-- NOUN -->
@@ -86,6 +83,9 @@ Refers to:
 - Display name: OneDimensionalReferenceFrame
 - Parent class: ReferenceFrame
 - Attributes:
+  - PostiveUpward
+    - Type: bool
+    - Description: 
 - Specialization:
 - Description: 
 - Examples:
@@ -227,7 +227,7 @@ Refers to:
 ## HasReferenceFrame <!-- VERB -->
 - Display name: HasReferenceFrame
 - Parent verb: DWISVerb
-- Subject class: Location
+- Subject class: DrillingDataPoint
 - Object class: ReferenceFrame
 - Description: 
 - Examples: 

@@ -90,6 +90,22 @@
 - Description: 
 - Examples:
 - Definition set: DataFlow
+## BOPControlSystem <!-- NOUN -->
+- Display name: BOPControlSystem
+- Parent class: [ControlSystem](#ControlSystem)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## RigChokeControlSystem <!-- NOUN -->
+- Display name: RigChokeControlSystem
+- Parent class: [ControlSystem](#ControlSystem)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
 ## MeasurementDevice <!-- NOUN -->
 - Display name: MeasurementDevice
 - Parent class: [DataFlowNode](#DataFlowNode)
@@ -376,7 +392,10 @@
   - NumberOfRepeaters
     - Type: int
     - Description: 
-  - AverageDelayByRepeaters
+  - DistanceBetweenRepeaters
+    - Type: double
+    - Description: 
+  - AverageDelayByRepeater
     - Type: double
     - Description: 
 - Specialization:
@@ -666,6 +685,150 @@
 - Description: 
 - Examples:
 - Definition set: DrillingDataSemantics
+## PorePressure <!-- NOUN -->
+- Display name: PorePressure
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## PorePressureGradient <!-- NOUN -->
+- Display name: PorePressureGradient
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## FracturingPressure <!-- NOUN -->
+- Display name: FracturingPressure
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## FracturingPressureGradient <!-- NOUN -->
+- Display name: FracturingPressureGradient
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## CollapsePressure <!-- NOUN -->
+- Display name: CollapsePressure
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## CollapsePressureGradient <!-- NOUN -->
+- Display name: CollapsePressureGradient
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## MinimumHorizontalStress <!-- NOUN -->
+- Display name: MinimumHorizontalStress
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## MinimumHorizontalStressGradient <!-- NOUN -->
+- Display name: MinimumHorizontalStressGradient
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## OverburdenPressure <!-- NOUN -->
+- Display name: OverburdenPressure
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## OverburdenPressureGradient <!-- NOUN -->
+- Display name: OverburdenPressureGradient
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## BOPOpening <!-- NOUN -->
+- Display name: BOPOpening
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## BOPPressure <!-- NOUN -->
+- Display name: BOPPressure
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## MPDChokeOpening <!-- NOUN -->
+- Display name: MPDChokeOpening
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## MPDChokePressure <!-- NOUN -->
+- Display name: MPDChokePressure
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## MPDPumpRate <!-- NOUN -->
+- Display name: MPDPumpRate
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## MPDPumpFlowRate <!-- NOUN -->
+- Display name: MPDPumpFlowRate
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## GasFlowRate <!-- NOUN -->
+- Display name: GasFlowRate
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## BackPressurePumpPressure <!-- NOUN -->
+- Display name: BackPressurePumpPressure
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
 ## SetPoint <!-- NOUN -->
 - Display name: Set-point
 - Parent class: [DrillingDataPoint](#DrillingDataPoint)
@@ -850,7 +1013,7 @@
 - Definition set: DrillingEquipment
 ## DrawWorks <!-- NOUN -->
 - Display name: DrawWorks
-- Parent class: [DrillLineFastener](#DrillLineFastener)
+- Parent class: [HoistingSystem](#HoistingSystem)
 - Attributes:
 - Specialization:
 - Description: 
@@ -1010,6 +1173,38 @@
 - Definition set: DrillingEquipment
 ## UnderReamer <!-- NOUN -->
 - Display name: UnderReamer
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## HoistingSystem <!-- NOUN -->
+- Display name: HoistingSystem
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## Rig <!-- NOUN -->
+- Display name: Rig
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## Sea <!-- NOUN -->
+- Display name: Sea
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## Ground <!-- NOUN -->
+- Display name: Ground
 - Parent class: [DrillingEquipment](#DrillingEquipment)
 - Attributes:
 - Specialization:
@@ -1312,6 +1507,9 @@
 - Display name: MechanicalElementState
 - Parent class: [DWISNoun](#DWISNoun)
 - Attributes:
+  - Value
+    - Type: bool
+    - Description: 
 - Specialization:
 - Description: 
 - Examples:
@@ -1320,9 +1518,6 @@
 - Display name: MechanicallyClosedState
 - Parent class: [MechanicalElementState](#MechanicalElementState)
 - Attributes:
-  - Value
-    - Type: bool
-    - Description: 
 - Specialization:
 - Description: 
 - Examples:
@@ -1331,9 +1526,6 @@
 - Display name: MechanicallyConnectedState
 - Parent class: [MechanicalElementState](#MechanicalElementState)
 - Attributes:
-  - Value
-    - Type: bool
-    - Description: 
 - Specialization:
 - Description: 
 - Examples:
@@ -1511,7 +1703,7 @@
 - Parent class: [DWISNoun](#DWISNoun)
 - Attributes:
 - Specialization:
-- Description: Physical location for a signal.
+- Description: Physical location for a signal. Refers to: 1) a reference frame (via the HasReferenceFrame relation), that works as a system of coordinates 2) an origin (of type Location) via the HasReferenceFrameOrigin relation.
 - Examples:
 - Definition set: PhysicalLocation
 ## BitReferenceLocation <!-- NOUN -->
@@ -1598,6 +1790,9 @@
 - Display name: OneDimensionalReferenceFrame
 - Parent class: [ReferenceFrame](#ReferenceFrame)
 - Attributes:
+  - PostiveUpward
+    - Type: bool
+    - Description: 
 - Specialization:
 - Description: 
 - Examples:
@@ -2248,6 +2443,12 @@
 - Display name: SensorUncertainty
 - Parent class: [SignalUncertainty](#SignalUncertainty)
 - Attributes:
+  - Accuracy
+    - Type: double
+    - Description: 
+  - Precision
+    - Type: double
+    - Description: 
 - Specialization:
 - Description: 
 - Examples:
@@ -2966,18 +3167,18 @@
 ## HasMechanicalStateValueFrom <!-- VERB -->
 - Display name: HasMechanicalStateValueFrom
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [MechanicalLogicalElement](#MechanicalLogicalElement)
+- Subject class: [MechanicalElementState](#MechanicalElementState)
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
 - Examples: 
 - Definition set: Mechanics
-## IsMechanicallyConnectTo <!-- VERB -->
+## IsMechanicallyConnectedTo <!-- VERB -->
 - Display name: IsMechanicallyConnectTo
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DWISNoun](#DWISNoun)
-- Object class: [DWISNoun](#DWISNoun)
+- Subject class: [MechanicalLogicalElement](#MechanicalLogicalElement)
+- Object class: [MechanicalLogicalElement](#MechanicalLogicalElement)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -2986,8 +3187,8 @@
 ## IsMechanicallyLocatedAt <!-- VERB -->
 - Display name: IsMechanicallyLocatedAt
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DWISNoun](#DWISNoun)
-- Object class: [DWISNoun](#DWISNoun)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [MechanicalLogicalElement](#MechanicalLogicalElement)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -3006,7 +3207,7 @@
 ## HasReferenceFrame <!-- VERB -->
 - Display name: HasReferenceFrame
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [Location](#Location)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [ReferenceFrame](#ReferenceFrame)
 - Min cardinality: -1
 - Max cardinality: -1
@@ -3076,8 +3277,8 @@
 ## IsOfBaseQuantity <!-- VERB -->
 - Display name: IsOfBaseQuantity
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DWISNoun](#DWISNoun)
-- Object class: [DWISNoun](#DWISNoun)
+- Subject class: [MeasurableQuantity](#MeasurableQuantity)
+- Object class: [Quantity](#Quantity)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -3086,8 +3287,8 @@
 ## IsOfMeasurableQuantity <!-- VERB -->
 - Display name: IsOfMeasurableQuantity
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DWISNoun](#DWISNoun)
-- Object class: [DWISNoun](#DWISNoun)
+- Subject class: [DrillingSignal](#DrillingSignal)
+- Object class: [MeasurableQuantity](#MeasurableQuantity)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -3107,6 +3308,16 @@
 - Display name: HasSIUnit
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [Quantity](#Quantity)
+- Object class: [Unit](#Unit)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Quantities
+## HasUnitOfMeasure <!-- VERB -->
+- Display name: HasUnitOfMeasure
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingSignal](#DrillingSignal)
 - Object class: [Unit](#Unit)
 - Min cardinality: -1
 - Max cardinality: -1

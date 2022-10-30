@@ -465,8 +465,8 @@
 ## IsOfBaseQuantity <!-- VERB -->
 - Display name: IsOfBaseQuantity
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Subject class: [MeasurableQuantity](./Quantities.md#MeasurableQuantity)
+- Object class: [Quantity](./Quantities.md#Quantity)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -475,8 +475,8 @@
 ## IsOfMeasurableQuantity <!-- VERB -->
 - Display name: IsOfMeasurableQuantity
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Subject class: [DrillingSignal](./DrillingDataSemantics.md#DrillingSignal)
+- Object class: [MeasurableQuantity](./Quantities.md#MeasurableQuantity)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -496,6 +496,16 @@
 - Display name: HasSIUnit
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [Quantity](./Quantities.md#Quantity)
+- Object class: [Unit](./Quantities.md#Unit)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Quantities
+## HasUnitOfMeasure <!-- VERB -->
+- Display name: HasUnitOfMeasure
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [DrillingSignal](./DrillingDataSemantics.md#DrillingSignal)
 - Object class: [Unit](./Quantities.md#Unit)
 - Min cardinality: -1
 - Max cardinality: -1

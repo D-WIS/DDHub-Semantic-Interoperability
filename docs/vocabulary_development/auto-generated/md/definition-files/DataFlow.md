@@ -57,6 +57,22 @@
 - Description: 
 - Examples:
 - Definition set: DataFlow
+## BOPControlSystem <!-- NOUN -->
+- Display name: BOPControlSystem
+- Parent class: [ControlSystem](./DataFlow.md#ControlSystem)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## RigChokeControlSystem <!-- NOUN -->
+- Display name: RigChokeControlSystem
+- Parent class: [ControlSystem](./DataFlow.md#ControlSystem)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
 ## MeasurementDevice <!-- NOUN -->
 - Display name: MeasurementDevice
 - Parent class: [DataFlowNode](./DataFlow.md#DataFlowNode)

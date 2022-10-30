@@ -5,6 +5,9 @@
 - Display name: MechanicalElementState
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Attributes:
+  - Value
+    - Type: bool
+    - Description: 
 - Specialization:
 - Description: 
 - Examples:
@@ -13,9 +16,6 @@
 - Display name: MechanicallyClosedState
 - Parent class: [MechanicalElementState](./Mechanics.md#MechanicalElementState)
 - Attributes:
-  - Value
-    - Type: bool
-    - Description: 
 - Specialization:
 - Description: 
 - Examples:
@@ -24,9 +24,6 @@
 - Display name: MechanicallyConnectedState
 - Parent class: [MechanicalElementState](./Mechanics.md#MechanicalElementState)
 - Attributes:
-  - Value
-    - Type: bool
-    - Description: 
 - Specialization:
 - Description: 
 - Examples:
@@ -53,18 +50,18 @@
 ## HasMechanicalStateValueFrom <!-- VERB -->
 - Display name: HasMechanicalStateValueFrom
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [MechanicalLogicalElement](./Mechanics.md#MechanicalLogicalElement)
+- Subject class: [MechanicalElementState](./Mechanics.md#MechanicalElementState)
 - Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
 - Examples: 
 - Definition set: Mechanics
-## IsMechanicallyConnectTo <!-- VERB -->
+## IsMechanicallyConnectedTo <!-- VERB -->
 - Display name: IsMechanicallyConnectTo
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Subject class: [MechanicalLogicalElement](./Mechanics.md#MechanicalLogicalElement)
+- Object class: [MechanicalLogicalElement](./Mechanics.md#MechanicalLogicalElement)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -73,8 +70,8 @@
 ## IsMechanicallyLocatedAt <!-- VERB -->
 - Display name: IsMechanicallyLocatedAt
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [MechanicalLogicalElement](./Mechanics.md#MechanicalLogicalElement)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 

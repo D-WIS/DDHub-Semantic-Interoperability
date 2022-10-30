@@ -5,6 +5,9 @@
 - Display name: MechanicalElementState
 - Parent class: DWISNoun
 - Attributes:
+  - Value
+    - Type: bool
+    - Description: 
 - Specialization:
 - Description: 
 - Examples:
@@ -12,9 +15,6 @@
 - Display name: MechanicallyClosedState
 - Parent class: MechanicalElementState
 - Attributes:
-  - Value
-    - Type: bool
-    - Description: 
 - Specialization:
 - Description: 
 - Examples:
@@ -22,9 +22,6 @@
 - Display name: MechanicallyConnectedState
 - Parent class: MechanicalElementState
 - Attributes:
-  - Value
-    - Type: bool
-    - Description: 
 - Specialization:
 - Description: 
 - Examples:
@@ -48,21 +45,21 @@
 ## HasMechanicalStateValueFrom <!-- VERB -->
 - Display name: HasMechanicalStateValueFrom
 - Parent verb: DWISVerb
-- Subject class: MechanicalLogicalElement
+- Subject class: MechanicalElementState
 - Object class: DrillingDataPoint
 - Description: 
 - Examples: 
-## IsMechanicallyConnectTo <!-- VERB -->
+## IsMechanicallyConnectedTo <!-- VERB -->
 - Display name: IsMechanicallyConnectTo
 - Parent verb: DWISVerb
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Subject class: MechanicalLogicalElement
+- Object class: MechanicalLogicalElement
 - Description: 
 - Examples: 
 ## IsMechanicallyLocatedAt <!-- VERB -->
 - Display name: IsMechanicallyLocatedAt
 - Parent verb: DWISVerb
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Subject class: DrillingDataPoint
+- Object class: MechanicalLogicalElement
 - Description: 
 - Examples: 
