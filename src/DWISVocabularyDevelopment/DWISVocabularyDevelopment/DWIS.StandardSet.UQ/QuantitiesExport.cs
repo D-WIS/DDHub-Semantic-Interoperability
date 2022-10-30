@@ -16,10 +16,30 @@ namespace DWIS.StandardSet.UQ
         }
         private static string GetValidName(string originalName)
         {
+            if (string.IsNullOrEmpty(originalName)) { return originalName; }
             string validName = originalName.Replace(" ", "").Replace("/", "Per").Replace("\"", "");
             string first = validName.Substring(0, 1).ToLower();
-            return first + validName.Substring(1);
+            return Correct(first + validName.Substring(1));
         }
+
+
+        private static string Correct(string symbol)
+        {
+            return symbol.Replace("²", "square")
+                    .Replace("µ", "mu")
+                    .Replace("°", "deg")
+                    .Replace("³", "cubic")
+                    .Replace("•", "dot")
+                    .Replace("Ω", "omega")
+                    .Replace("å", "aa")
+                    .Replace("Å", "AA")
+                    .Replace("ø", "oe")
+                    .Replace("☉", "solarMass")
+                    .Replace("🜨", "earthMass")
+                    .Replace("é", "e")
+                    .Replace("‰", "perThousands");                
+        }
+
 
         public static DWISInstance Export(string vocabularyFolder)
         {
@@ -96,7 +116,7 @@ namespace DWIS.StandardSet.UQ
                                 }
                                 if (unitIndividual.GetAttribute(Attributes.Unit_Symbol, out att))
                                 {
-                                    att.AttributeValue = unit.UnitLabel.ToString();
+                                    att.AttributeValue = GetValidName(unit.UnitLabel.ToString());
                                 }
                                 quantities.Population.Add(unitIndividual);
 
