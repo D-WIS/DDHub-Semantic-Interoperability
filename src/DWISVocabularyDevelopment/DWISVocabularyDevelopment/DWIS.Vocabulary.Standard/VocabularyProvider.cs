@@ -6,13 +6,39 @@ using System.Threading.Tasks;
 
 namespace DWIS.Vocabulary.Standard
 {
+    public static class StandardSetProvider
+    {
+        private static string _unitsAndQuantitiesInstanceFile = @"UnitsAndQuantities.json";
+        private static DWIS.Vocabulary.Development.DWISInstance _unitsAndQuantities = null;
+        public static DWIS.Vocabulary.Development.DWISInstance UnitsAndQuantities
+        {
+            get
+            {
+                if (_unitsAndQuantities == null) { _unitsAndQuantities = GetUnitsAndQuantities(); }
+                return _unitsAndQuantities;
+            }
+        }
+        public static void SetUnitsAndQuantitiesFile(string file)
+        {
+            _unitsAndQuantitiesInstanceFile = file;
+        }
+        public static DWIS.Vocabulary.Development.DWISInstance GetUnitsAndQuantities()
+        {
+            if (Utils.VocabularyParsing.FromMDFileContents(Properties.Resources.UnitsAndQuantities.Split("\r\n"), "UnitsAndQuantities",VocabularyProvider.Vocabulary, out var uq))
+            {
+                return uq;
+            }
+            else return null;
+        }
+    }
+
+
+
     public static class VocabularyProvider
     {
         private static string _vocabularyJsonFileName =  @"DWISVocabulary.json";
-        private static string _unitsAndQuantitiesInstanceFile = string.Empty;
 
         private static Development.DWISVocabulary _vocabulary = null;
-        private static DWIS.Vocabulary.Development.DWISInstance _unitsAndQuantities = null;
 
         public static Development.DWISVocabulary Vocabulary
         {
@@ -24,14 +50,7 @@ namespace DWIS.Vocabulary.Standard
         }
 
 
-        public static DWIS.Vocabulary.Development.DWISInstance UnitsAndQuantities
-        {
-            get
-            {
-                if (_unitsAndQuantities == null) { _unitsAndQuantities = GetUnitsAndQuantities(); }
-                return _unitsAndQuantities;
-            }
-        }
+      
 
 
         public static void SetVocabularyJsonFile(string fileName)
@@ -39,24 +58,14 @@ namespace DWIS.Vocabulary.Standard
             _vocabularyJsonFileName = fileName;
         }
 
-        public static void SetUnitsAndQuantitiesFile(string file)
-        {
-            _unitsAndQuantitiesInstanceFile = file;
-        }
+      
 
         public static Development.DWISVocabulary GetDWISVocabulary()
         {
             return DWIS.Vocabulary.Development.DWISVocabulary.FromJsonString(Properties.Resources.DWISVocabulary);
         }
 
-        public static DWIS.Vocabulary.Development.DWISInstance GetUnitsAndQuantities()
-        {
-            if (Utils.VocabularyParsing.FromMDFile(_unitsAndQuantitiesInstanceFile, Vocabulary, out var uq))
-            {
-                return uq;
-            }
-            else return null;
-        }
+      
 
 
         private static string FindDWISFolder()

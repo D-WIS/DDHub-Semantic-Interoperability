@@ -12,10 +12,14 @@
 
   <ItemGroup>
     <None Remove="Properties\DWISVocabulary.json" />
+    <None Remove="Properties\UnitsAndQuantities.md" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Properties\DWISVocabulary.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\UnitsAndQuantities.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

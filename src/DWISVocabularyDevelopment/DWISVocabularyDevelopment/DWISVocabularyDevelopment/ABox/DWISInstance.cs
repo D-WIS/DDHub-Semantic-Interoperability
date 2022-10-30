@@ -57,6 +57,10 @@ namespace DWIS.Vocabulary.Development
         {
             return Newtonsoft.Json.JsonConvert.DeserializeObject<DWISInstance>(System.IO.File.ReadAllText(fileName));
         }
+        public static DWISInstance FromJsonString(string json)
+        {
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<DWISInstance>(json);
+        }
     }
 
     public class SimpleSentenceCollection : ISentenceCollection

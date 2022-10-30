@@ -68,5 +68,31 @@ namespace DWIS.Vocabulary.Standard.Properties {
                 return ResourceManager.GetString("DWISVocabulary", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to # Quantities
+        ///Quantity:acceleration
+        ///acceleration.L = 1
+        ///acceleration.M = 0
+        ///acceleration.T = -2
+        ///acceleration.I = 0
+        ///acceleration.ThT = 0
+        ///acceleration.N = 0
+        ///acceleration.J = 0
+        ///Unit:meterPerSecondSquare
+        ///meterPerSecondSquare.Symbol = mPerssquare
+        ///meterPerSecondSquare.ConversionFactorA = 0
+        ///meterPerSecondSquare.ConversionFactorB = 1
+        ///Unit:footPerSecondSquare
+        ///footPerSecondSquare.Symbol = ftPerssquare
+        ///footPerSecondSquare.ConversionFactorA = 0
+        ///footPerSecondSquare.ConversionFactorB = 3,280839895013123
+        ///Uni [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string UnitsAndQuantities {
+            get {
+                return ResourceManager.GetString("UnitsAndQuantities", resourceCulture);
+            }
+        }
     }
 }

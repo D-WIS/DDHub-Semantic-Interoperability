@@ -5,6 +5,9 @@ string folder = "C:\\Users\\beda\\source\\repos\\D-WIS\\DDHub-Semantic-Interoper
 
 DWISVocabulary vocabulary = DWIS.Vocabulary.Standard.VocabularyProvider.Vocabulary;
 
+DWISInstance uaq = DWIS.Vocabulary.Standard.StandardSetProvider.GetUnitsAndQuantities();
+
+
 if (vocabulary!=null)
 {
     var instance = DWIS.StandardSet.UQ.QuantitiesExport.Export(folder);
@@ -30,6 +33,11 @@ if (vocabulary!=null)
     DWIS.Vocabulary.Utils.MDWriting.ToMDFile(instance, @"C:/temp/uq.md", vocabulary, useLinks:false, addGraph:false);
     string allText = System.IO.File.ReadAllText(@"C:/temp/uq.md").Replace("- ", "");
     System.IO.File.WriteAllText(@"C:/temp/uq2.md", allText);
+
+    DWIS.Vocabulary.Development.DWISInstance.ToJsonFile(instance, @"C:/temp/UnitsAndQuantities.json");
+
+
+
     Console.WriteLine("Exported instance");
 }
 Console.ReadLine(); 

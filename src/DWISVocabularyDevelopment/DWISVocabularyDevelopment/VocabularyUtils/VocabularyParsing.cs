@@ -539,6 +539,17 @@ namespace DWIS.Vocabulary.Utils
             return FromLines(allLines, vocabulary, instance);
         }
 
+        public static bool FromMDFileContents(string[] fileLines,string instanceName, DWISVocabulary vocabulary, out DWISInstance instance)
+        {
+            instance = new DWISInstance(instanceName, vocabulary);
+            instance.Population = new SimplePopulation();
+            instance.Sentences = new SimpleSentenceCollection();
+            instance.ClassAssertions = new SimpleClassAssertionCollection();
+
+            //string[] allLines = System.IO.File.ReadAllLines(fileName);
+
+            return FromLines(fileLines, vocabulary, instance);
+        }
 
         private static IEnumerable<string> GetTagLines(string[] files, string tag)
         {
