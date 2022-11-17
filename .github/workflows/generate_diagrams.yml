@@ -2,6 +2,11 @@ name: Generate Diagrams
 on: 
   workflow_dispatch:
   #push: # push must be changed to trigger after md's have been generated (workflow trigger)
+  workflow_run:
+    workflows: [Generate cleaned vocabulary and packages]
+    branches: [main]
+    types: 
+      - completed
 
 
 
