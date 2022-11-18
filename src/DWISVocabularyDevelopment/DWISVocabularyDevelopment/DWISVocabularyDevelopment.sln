@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWIS.StandardSet.UQ", "DWIS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWIS.Vocabulary.Standard", "DWIS.Vocabulary.Standard\DWIS.Vocabulary.Standard.csproj", "{EABC1765-DEA8-4118-83EC-CB3D0854D164}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DWIS.TestApp", "DWIS.TestApp\DWIS.TestApp.csproj", "{444A416E-C10A-4180-BBF8-0B2A4CACA103}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWIS.TestApp", "DWIS.TestApp\DWIS.TestApp.csproj", "{444A416E-C10A-4180-BBF8-0B2A4CACA103}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
