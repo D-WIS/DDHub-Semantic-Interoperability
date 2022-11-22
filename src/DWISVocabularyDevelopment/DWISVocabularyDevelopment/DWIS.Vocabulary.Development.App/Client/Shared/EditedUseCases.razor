@@ -1,0 +1,28 @@
+﻿@using DWIS.Vocabulary.Development.App.Shared;
+@inject IGitHubManager Manager;
+
+<h1>Edited use cases</h1>
+
+<table>
+    @foreach(var u in editedUseCases)
+    {
+    <tr>
+        <td>@u.Path</td>
+    </tr>
+    }
+</table>
+
+
+@code {
+    private List<EditableUseCase> editedUseCases;
+
+    protected override Task OnInitializedAsync()
+    {
+        editedUseCases = Manager.GetEditedUseCases();
+        if (editedUseCases == null)
+        {
+            editedUseCases = new List<EditableUseCase>();
+        }
+        return base.OnInitializedAsync();
+    }
+}

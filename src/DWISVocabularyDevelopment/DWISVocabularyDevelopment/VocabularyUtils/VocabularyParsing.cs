@@ -454,7 +454,7 @@ namespace DWIS.Vocabulary.Utils
                             if (idx>0)
                             {
                                 var instName = l.Substring(0, idx);
-                                var res = instance.Population.First(t => t.Name == instName.Trim());
+                                var res = instance.Population.FirstOrDefault(t => t.Name == instName.Trim());
                                 if (res != null)
                                 {
                                     found = true;

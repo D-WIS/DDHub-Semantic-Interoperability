@@ -21,6 +21,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWIS.Vocabulary.Standard", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWIS.TestApp", "DWIS.TestApp\DWIS.TestApp.csproj", "{444A416E-C10A-4180-BBF8-0B2A4CACA103}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWIS.Vocabulary.Development.App.Server", "DWIS.Vocabulary.Development.App\Server\DWIS.Vocabulary.Development.App.Server.csproj", "{9B1E05C6-EC09-4D9A-85CF-2DA06A876D57}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWIS.Vocabulary.Development.App.Client", "DWIS.Vocabulary.Development.App\Client\DWIS.Vocabulary.Development.App.Client.csproj", "{F7E53731-709C-43A3-BF90-58D3E3222452}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWIS.Vocabulary.Development.App.Shared", "DWIS.Vocabulary.Development.App\Shared\DWIS.Vocabulary.Development.App.Shared.csproj", "{ADC6C495-EEBD-435B-8254-B0406880E55D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +69,18 @@ Global
 		{444A416E-C10A-4180-BBF8-0B2A4CACA103}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{444A416E-C10A-4180-BBF8-0B2A4CACA103}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{444A416E-C10A-4180-BBF8-0B2A4CACA103}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B1E05C6-EC09-4D9A-85CF-2DA06A876D57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B1E05C6-EC09-4D9A-85CF-2DA06A876D57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B1E05C6-EC09-4D9A-85CF-2DA06A876D57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B1E05C6-EC09-4D9A-85CF-2DA06A876D57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7E53731-709C-43A3-BF90-58D3E3222452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7E53731-709C-43A3-BF90-58D3E3222452}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7E53731-709C-43A3-BF90-58D3E3222452}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7E53731-709C-43A3-BF90-58D3E3222452}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADC6C495-EEBD-435B-8254-B0406880E55D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADC6C495-EEBD-435B-8254-B0406880E55D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADC6C495-EEBD-435B-8254-B0406880E55D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADC6C495-EEBD-435B-8254-B0406880E55D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

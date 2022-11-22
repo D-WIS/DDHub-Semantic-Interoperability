@@ -1,0 +1,49 @@
+﻿@using DWIS.Vocabulary.Development.App.Shared;
+@inject IGitHubManager Manager;
+
+<h3>Use cases</h3>
+
+<p>
+Below is the list of use cases stored in the main branch of the repository. 
+</p>
+
+<hr />
+
+    <table class="table  table-dark table-striped  table-hover">
+        <thead>
+            <tr>
+                <th>Use case path</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+        @for (int i = 0; i < _useCases?.Count; i++)
+            {
+                int idx = i;
+            <tr>
+                <td @onclick="@(()=> _current = _useCases?[idx])">
+                    @_useCases?[idx].Path
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            }
+        </tbody>
+        </table>
+
+
+
+<InstanceEditor UseCase="_current"></InstanceEditor>
+
+
+@code {
+    private List<EditableUseCase>? _useCases = null;
+
+    private EditableUseCase? _current = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _useCases =  await Manager.GetUseCases();
+    }
+}

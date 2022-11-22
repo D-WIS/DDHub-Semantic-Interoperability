@@ -1,0 +1,64 @@
+﻿@using DWIS.Vocabulary.Development.App.Shared;
+@inject IGitHubManager Manager;
+
+<h1>Welcome @_userName</h1>
+
+Please enter your GitHub API key to connect to the edition services. 
+
+<input type="password" class="form-control"  @bind="_apiKEY" @bind:event="oninput" />
+<div>
+    <button @onclick="@ConnectToGitHub" class="btn btn-primary my-3">
+        <img src="/css/open-iconic/svg/account-login.svg" class="img-fluid  mr-3" height="15" width="15" />
+        Connect to GitHub
+    </button>
+</div>
+
+
+@if (_warning)
+{
+    <label class="alert-warning">@_warningText </label>
+}
+
+@code {
+
+    private string _apiKEY = "your API key";
+    private string _defaultBranchName = "your default branch name";
+    private string _userName = "";
+
+    private bool _warning = false;
+    private string _warningText="";
+
+    protected override Task OnInitializedAsync()
+    {
+        ManageStatus();
+        return base.OnInitializedAsync();
+    }
+
+    private async void ConnectToGitHub()
+    {
+        bool ok = await Manager.ManageCredentials(_apiKEY);
+
+        ManageStatus();
+    }
+
+    private async void ManageStatus()
+    { 
+        if (Manager.CredentialsOK())
+        {
+            _userName = Manager.GetUser();
+            _warning = !await Manager.BranchOK();
+
+            if (_warning)
+            {
+                _warningText = "There is no branch with the required name. \r\n";
+                _warningText += "Please create a branch called " + Manager.GetBranchName() + "\r\n";
+                _warningText += "You can do it there: https://github.com/D-WIS/DDHub-Semantic-Interoperability";
+            }
+        }
+        else
+        {
+            _warning = true;
+            _warningText = "Invalid credentials.";
+        }
+    }
+}

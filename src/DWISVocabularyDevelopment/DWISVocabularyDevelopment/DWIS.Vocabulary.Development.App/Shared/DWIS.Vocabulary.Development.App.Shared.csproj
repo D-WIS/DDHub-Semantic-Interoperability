@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Octokit" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\DWIS.Vocabulary.Schemas\DWIS.Vocabulary.Schemas.csproj" />
+    <ProjectReference Include="..\..\DWIS.Vocabulary.Standard\DWIS.Vocabulary.Standard.csproj" />
+    <ProjectReference Include="..\..\DWISVocabularyDevelopment\DWIS.Vocabulary.Development.csproj" />
+    <ProjectReference Include="..\..\VocabularyUtils\DWIS.Vocabulary.Utils.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+</Project>
