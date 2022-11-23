@@ -4,25 +4,24 @@
 <h1>Edited use cases</h1>
 
 <table>
-    @foreach(var u in editedUseCases)
+    @foreach(var u in _editedUseCases ?? new List<EditableUseCase>())
     {
     <tr>
         <td>@u.Path</td>
+        <td @onclick="()=>Manager.CommitChanges(u)">Commit</td>
     </tr>
     }
 </table>
 
 
 @code {
-    private List<EditableUseCase> editedUseCases;
+    private List<EditableUseCase>? _editedUseCases;
 
     protected override Task OnInitializedAsync()
     {
-        editedUseCases = Manager.GetEditedUseCases();
-        if (editedUseCases == null)
-        {
-            editedUseCases = new List<EditableUseCase>();
-        }
+        _editedUseCases = Manager.GetEditedUseCases();
+        
         return base.OnInitializedAsync();
     }
+
 }

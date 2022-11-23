@@ -2,16 +2,36 @@
 @inject IGitHubManager Manager;
 
 <h1>Welcome @_userName</h1>
-
-Please enter your GitHub API key to connect to the edition services. 
-
+@if (!Manager.CredentialsOK())
+{
+    <p>
+    Please enter your GitHub API key to connect to the edition services.
+    </p>
 <input type="password" class="form-control"  @bind="_apiKEY" @bind:event="oninput" />
-<div>
-    <button @onclick="@ConnectToGitHub" class="btn btn-primary my-3">
-        <img src="/css/open-iconic/svg/account-login.svg" class="img-fluid  mr-3" height="15" width="15" />
-        Connect to GitHub
-    </button>
-</div>
+    <div>
+        <button @onclick="@ConnectToGitHub" class="btn btn-primary my-3">
+            <img src="/css/open-iconic/svg/account-login.svg" class="img-fluid  mr-3" height="15" width="15" />
+            Connect to GitHub
+        </button>
+    </div>
+}
+else
+{
+<table>
+    <tr>
+        <td>User name</td>
+        <td>@_userName</td>
+    </tr>
+    <tr>
+        <td>User login</td>
+        <td>@_userLogin</td>
+    </tr>
+    <tr>
+        <td>Edition branch name</td>
+        <td>@_defaultBranchName</td>
+    </tr>
+</table>
+}
 
 
 @if (_warning)
@@ -24,6 +44,7 @@ Please enter your GitHub API key to connect to the edition services.
     private string _apiKEY = "your API key";
     private string _defaultBranchName = "your default branch name";
     private string _userName = "";
+    private string _userLogin = "";
 
     private bool _warning = false;
     private string _warningText="";
@@ -45,7 +66,9 @@ Please enter your GitHub API key to connect to the edition services.
     { 
         if (Manager.CredentialsOK())
         {
-            _userName = Manager.GetUser();
+            _userName = Manager.GetUserName();
+            _defaultBranchName = Manager.GetBranchName();
+            _userLogin = Manager.GetUserLogin();
             _warning = !await Manager.BranchOK();
 
             if (_warning)
@@ -60,5 +83,6 @@ Please enter your GitHub API key to connect to the edition services.
             _warning = true;
             _warningText = "Invalid credentials.";
         }
+        StateHasChanged();
     }
 }

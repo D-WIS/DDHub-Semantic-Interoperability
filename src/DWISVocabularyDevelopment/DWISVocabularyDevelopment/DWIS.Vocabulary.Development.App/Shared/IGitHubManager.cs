@@ -4,20 +4,22 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using Octokit;
 
 namespace DWIS.Vocabulary.Development.App.Shared
 {
     public interface IGitHubManager
     {
-        string GetUser();
+        string GetUserName();
+        string GetUserLogin();
         Task<bool> ManageCredentials(string apiKey);
         bool CredentialsOK();
         Task<bool> BranchOK();
         Task<List<EditableUseCase>?> GetUseCases();
         void RegisterChanges(string filePath);
-        bool CommitChanges(string filePath);
-        bool CommitAllChanges();
+        Task<bool> CommitChanges(EditableUseCase useCase);
+        Task<bool> CommitAllChanges();
         string GetBranchName();
         Task<List<string>> GetUserBranch();
         List<EditableUseCase>? GetEditedUseCases();
@@ -30,10 +32,11 @@ namespace DWIS.Vocabulary.Development.App.Shared
         public DWISInstance EditedInstance { get; set; }
         public string Path { get; set; }
         public bool Edited { get; set; }
-        public EditableUseCase(string fileContents, string path)
+        public string SHA { get; set; }
+        public EditableUseCase(string fileContents, string path, string sha)
         {
             Path = path;
-
+            SHA = sha;
             if (fileContents.Contains("```"))
             {
                 int idx = fileContents.IndexOf("```");
@@ -50,6 +53,11 @@ namespace DWIS.Vocabulary.Development.App.Shared
             StoredInstance = inst;
             EditedInstance = new DWISInstance(StoredInstance);
         }
+
+        public string GetEditedCode()
+        {
+            return DWIS.Vocabulary.Utils.MDWriting.ToString(EditedInstance, DWIS.Vocabulary.Standard.VocabularyProvider.Vocabulary, false, false);
+        }
     }
 
     public class GitHubManager : IGitHubManager
@@ -63,14 +71,38 @@ namespace DWIS.Vocabulary.Development.App.Shared
         private string _userLogin;
         private long _repoID;
         private List<EditableUseCase>? _useCases = null;
-        public bool CommitAllChanges()
+        private ILogger<GitHubManager>? _logger;
+
+        public GitHubManager(ILogger<GitHubManager>? logger)
         {
-            throw new NotImplementedException();
+            _logger = logger;
         }
 
-        public bool CommitChanges(string filePath)
+        public async Task<bool> CommitAllChanges()
         {
-            throw new NotImplementedException();
+            bool ok = true;
+            var edited = GetEditedUseCases();
+            foreach (var e in edited)
+            {
+                ok &= await CommitChanges(e);
+            }
+            return ok;
+        }
+
+        public async Task<bool> CommitChanges(EditableUseCase useCase)
+        {
+            string contents = useCase.GetEditedCode();
+            UpdateFileRequest updateFileRequest = new UpdateFileRequest("Edit of use case", contents, useCase.SHA, GetBranchName());
+            try
+            {
+                var res = await _gitHubClient.Repository.Content.UpdateFile(_repoID, useCase.Path, updateFileRequest);
+                return res != null;
+            }
+            catch (Exception e)
+            {
+                _logger?.LogError(e, "Exception on commit");
+                return false;
+            }
         }
 
         public bool CredentialsOK()
@@ -94,31 +126,40 @@ namespace DWIS.Vocabulary.Development.App.Shared
                     var files = await _gitHubClient.Repository.Content.GetAllContents(_repoID, UseCasesFolderPath);
                     foreach (var file in files)
                     {
-                        var contents = await _gitHubClient.Repository.Content.GetAllContents(_repoID, file.Path);
+                        var contents = await _gitHubClient.Repository.Content.GetAllContentsByRef(_repoID, file.Path, "main");
                         if (contents != null && contents.Count == 1)
                         {
-                            string text = contents[0].Content;
-                            _useCases.Add(new EditableUseCase(text, file.Path));
+                            string text = contents[0].Content; 
+                            _useCases.Add(new EditableUseCase(text, file.Path, contents[0].Sha));
                         }
                     }
+                    return _useCases;
                 }
                 catch (Exception e)
                 {
-                    int i = 0;
+                    _logger?.LogError(e, "Exception on use cases retrieval.");
+                    return null;
                 }
-                return _useCases;
             }
         }
 
-        public string GetUser()
+        public string GetUserName()
         {
             return _userName;
         }
 
         public async Task<List<string>> GetUserBranch()
         {
-            var branches = await _gitHubClient.Repository.Branch.GetAll(_repoID);
-            return branches.Where(b => b.Name == GetBranchName()).Select(b => b.Name).ToList();
+            try
+            {
+                var branches = await _gitHubClient.Repository.Branch.GetAll(_repoID);
+                return branches.Where(b => b.Name == GetBranchName()).Select(b => b.Name).ToList();
+            }
+            catch (Exception e)
+            {
+                _logger?.LogError(e, "Exception on branch retrieval.");
+                return null;
+            }
         }
 
         public async Task<bool> BranchOK()
@@ -133,15 +174,23 @@ namespace DWIS.Vocabulary.Development.App.Shared
 
         public async Task<bool> ManageCredentials(string apiKey)
         {
-            _gitHubClient.Credentials = new Credentials(apiKey);
-            var r = await _gitHubClient.User.Current();
-            _userLogin = r.Login;
-            _userName = r.Name;
+            try
+            {
+                _gitHubClient.Credentials = new Credentials(apiKey);
+                var r = await _gitHubClient.User.Current();
+                _userLogin = r.Login;
+                _userName = r.Name;
 
-            var allRepos = await _gitHubClient.Repository.GetAllForCurrent();
-            var vocabularyRepo = allRepos.FirstOrDefault(r => r.Name == RepositoryName);
-            _repoID = vocabularyRepo.Id;
-            return CredentialsOK();
+                var allRepos = await _gitHubClient.Repository.GetAllForCurrent();
+                var vocabularyRepo = allRepos.FirstOrDefault(r => r.Name == RepositoryName);
+                _repoID = vocabularyRepo.Id;
+                return CredentialsOK();
+            }
+            catch (Exception e)
+            {
+                _logger?.LogError(e, "Exception on credential management.");
+                return false;
+            }
         }
 
         public void RegisterChanges(string filePath)
@@ -156,6 +205,11 @@ namespace DWIS.Vocabulary.Development.App.Shared
                 return _useCases.Where(u => u.Edited).ToList();
             }
             else return null;
+        }
+
+        public string GetUserLogin()
+        {
+            return _userLogin;
         }
     }
 }

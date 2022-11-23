@@ -68,10 +68,7 @@
     {
         if (e.Code == "Enter" || e.Code == "NumpadEnter")
         {
-            UseCase.Edited = true;
-            DWISInstance.Population.Clear();
-            DWISInstance.Sentences.Clear();
-            DWISInstance.ClassAssertions.Clear();
+            UseCase.Edited = true;           
 
             if (_instanceCode.Contains('-'))
             {
@@ -80,7 +77,7 @@
 
             _instanceCode.Trim();
 
-            if (DiagramManager.Manage(_instanceCode,out string mermaidCode))
+            if (DiagramManager.Manage(_instanceCode,DWISInstance,out string mermaidCode))
             {             
 
                 await JSRuntime.InvokeVoidAsync("renderMermaidDiagram", mermaidCode);

@@ -8,17 +8,37 @@ namespace DWIS.Vocabulary.Development.App.Shared
 {
     public interface IDiagramManager
     {
-        bool Manage(string inputCode, out string diagramCode);
+        bool Manage(string inputCode, DWISInstance Instance, out string diagramCode);
     }
 
     public class DiagramManager : IDiagramManager
     {
-        public bool Manage(string inputCode, out string diagramCode)
+        public bool Manage(string inputCode, DWISInstance Instance , out string diagramCode)
         {
-            DWISInstance Instance = new("My graph", DWIS.Vocabulary.Standard.VocabularyProvider.Vocabulary);
-            Instance.Population = new SimplePopulation();
-            Instance.Sentences = new SimpleSentenceCollection();
-            Instance.ClassAssertions = new SimpleClassAssertionCollection();
+            if (Instance.Population == null)
+            {
+                Instance.Population = new SimplePopulation();
+            }
+            else
+            {
+                Instance.Population.Clear();
+            }
+            if (Instance.Sentences == null)
+            {
+                Instance.Sentences = new SimpleSentenceCollection();
+            }
+            else
+            {
+                Instance.Sentences.Clear();
+            }
+            if (Instance.ClassAssertions == null)
+            {
+                Instance.ClassAssertions = new SimpleClassAssertionCollection();
+            }
+            else
+            {
+                Instance.ClassAssertions.Clear();
+            }
             if (DWIS.Vocabulary.Utils.VocabularyParsing.FromLines(
                 inputCode.Split("\n", StringSplitOptions.RemoveEmptyEntries).Select(l => l.Trim()).ToArray(),
                 DWIS.Vocabulary.Standard.VocabularyProvider.Vocabulary, 
