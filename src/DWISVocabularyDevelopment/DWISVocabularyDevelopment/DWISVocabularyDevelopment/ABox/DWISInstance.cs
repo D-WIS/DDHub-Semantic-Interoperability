@@ -61,6 +61,27 @@ namespace DWIS.Vocabulary.Development
         {
             return Newtonsoft.Json.JsonConvert.DeserializeObject<DWISInstance>(json);
         }
+
+        public DWISInstance(DWISInstance other)
+        {
+            Name = other.Name;
+            Population = new SimplePopulation();
+            Sentences = new SimpleSentenceCollection();
+            ClassAssertions = new SimpleClassAssertionCollection();
+
+            foreach (var i in other.Population) 
+            {
+                Population.Add(i);
+            }
+            foreach (var s in other.Sentences)
+            {
+                Sentences.Add(s);
+            }
+            foreach (var ca in other.ClassAssertions)
+            {
+                ClassAssertions.Add(ca);
+            }
+        }
     }
 
     public class SimpleSentenceCollection : ISentenceCollection

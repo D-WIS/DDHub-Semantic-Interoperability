@@ -266,11 +266,11 @@ namespace DWIS.Vocabulary.Utils
         public static void ToMDFile(DWISInstance instance, string fileName, DWIS.Vocabulary.Development.Vocabulary vocabulary, bool addGraph = false, bool useLinks = true)
         {            
 
-            System.IO.File.WriteAllText(fileName, ToString(instance, fileName, vocabulary, addGraph, useLinks));
+            System.IO.File.WriteAllText(fileName, ToString(instance,  vocabulary, addGraph, useLinks));
 
         }
 
-        public static string ToString(DWISInstance instance, string fileName, DWIS.Vocabulary.Development.Vocabulary vocabulary, bool addGraph = false, bool useLinks = true)
+        public static string ToString(DWISInstance instance,  DWIS.Vocabulary.Development.Vocabulary vocabulary, bool addGraph = false, bool useLinks = true)
         {
             StringBuilder builder = new StringBuilder();
             builder.AppendLine("# " + instance.Name);

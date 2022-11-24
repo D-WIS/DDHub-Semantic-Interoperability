@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.10" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\DWIS.Vocabulary.Schemas\DWIS.Vocabulary.Schemas.csproj" />
+    <ProjectReference Include="..\..\DWIS.Vocabulary.Standard\DWIS.Vocabulary.Standard.csproj" />
+    <ProjectReference Include="..\..\DWISVocabularyDevelopment\DWIS.Vocabulary.Development.csproj" />
+    <ProjectReference Include="..\..\VocabularyUtils\DWIS.Vocabulary.Utils.csproj" />
+    <ProjectReference Include="..\Shared\DWIS.Vocabulary.Development.App.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
