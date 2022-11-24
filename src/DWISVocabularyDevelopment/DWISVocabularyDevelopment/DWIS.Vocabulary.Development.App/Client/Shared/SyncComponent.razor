@@ -1,0 +1,8 @@
+﻿@using DWIS.Vocabulary.Development.App.Shared;
+@inject IGitHubManager Manager;
+
+<h3>SyncComponent</h3>
+<button @onclick="()=>Manager.SyncChanges()">Sync</button>
+@code {
+
+}

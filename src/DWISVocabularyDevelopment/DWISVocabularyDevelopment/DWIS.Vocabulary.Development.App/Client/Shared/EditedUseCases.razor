@@ -1,25 +1,41 @@
 ﻿@using DWIS.Vocabulary.Development.App.Shared;
 @inject IGitHubManager Manager;
 
-<h1>Edited use cases</h1>
+<h2>Edited use cases</h2>
 
 <table>
+      <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Path</th>
+      <th scope="col">Commit</th>
+    </tr>
+  </thead>
+  <tbody>
     @foreach(var u in _editedUseCases ?? new List<EditableUseCase>())
     {
     <tr>
+        <th scope="row">@u.EditedInstance.Name</th>
         <td>@u.Path</td>
-        <td @onclick="()=>Manager.CommitChanges(u)">Commit</td>
+        <td>
+            <button class="btn btn-primary" @onclick="()=>Manager.CommitChanges(u)">
+                Commit
+            </button>
+        </td>
     </tr>
     }
+    </tbody>
 </table>
-
+<button class="btn btn-primary" @onclick="()=>Manager.CommitAllChanges()">
+                Commit all changes
+</button>
 
 @code {
     private List<EditableUseCase>? _editedUseCases;
 
     protected override Task OnInitializedAsync()
     {
-        _editedUseCases = Manager.GetEditedUseCases();
+        _editedUseCases = Manager.GetSessionEditedUseCases();
         
         return base.OnInitializedAsync();
     }

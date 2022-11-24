@@ -20,9 +20,10 @@ namespace DWIS.Vocabulary.Development.App.Shared
         void RegisterChanges(string filePath);
         Task<bool> CommitChanges(EditableUseCase useCase);
         Task<bool> CommitAllChanges();
+        Task<bool> SyncChanges();
         string GetBranchName();
         Task<List<string>> GetUserBranch();
-        List<EditableUseCase>? GetEditedUseCases();
+        List<EditableUseCase>? GetSessionEditedUseCases();
     }
 
 
@@ -42,8 +43,6 @@ namespace DWIS.Vocabulary.Development.App.Shared
                 int idx = fileContents.IndexOf("```");
                 fileContents = fileContents.Remove(idx, fileContents.Length - idx);
             }
-            //fileContents = fileContents.Replace("- ", string.Empty);
-
 
             DWIS.Vocabulary.Utils.VocabularyParsing.FromMDFileContents(
                 fileContents.Split("\n", StringSplitOptions.RemoveEmptyEntries), 
@@ -81,12 +80,16 @@ namespace DWIS.Vocabulary.Development.App.Shared
         public async Task<bool> CommitAllChanges()
         {
             bool ok = true;
-            var edited = GetEditedUseCases();
-            foreach (var e in edited)
+            var edited = GetSessionEditedUseCases();
+            if (edited != null)
             {
-                ok &= await CommitChanges(e);
+                foreach (var e in edited)
+                {
+                    ok &= await CommitChanges(e);
+                }
+                return ok;
             }
-            return ok;
+            else return false;
         }
 
         public async Task<bool> CommitChanges(EditableUseCase useCase)
@@ -152,7 +155,8 @@ namespace DWIS.Vocabulary.Development.App.Shared
         {
             try
             {
-                var branches = await _gitHubClient.Repository.Branch.GetAll(_repoID);
+                var branches = await _gitHubClient.Repository.Branch.GetAll(_repoID);                
+
                 return branches.Where(b => b.Name == GetBranchName()).Select(b => b.Name).ToList();
             }
             catch (Exception e)
@@ -198,7 +202,7 @@ namespace DWIS.Vocabulary.Development.App.Shared
             throw new NotImplementedException();
         }
 
-        public List<EditableUseCase>? GetEditedUseCases()
+        public List<EditableUseCase>? GetSessionEditedUseCases()
         {
             if (_useCases != null)
             {
@@ -210,6 +214,22 @@ namespace DWIS.Vocabulary.Development.App.Shared
         public string GetUserLogin()
         {
             return _userLogin;
+        }
+
+        public async Task<bool> SyncChanges()
+        {
+            try
+            {
+                var t = await _gitHubClient.Repository.Merging.Create(_repoID, new NewMerge(GetBranchName(), "main"));
+                string prTitle = "Use case edition [" + _userName + "] [" + GetBranchName() + "]";
+                var pr = await _gitHubClient.PullRequest.Create(_repoID, new NewPullRequest(prTitle, GetBranchName(), "main"));
+                return true;
+            }
+            catch (Exception e)
+            {
+                _logger?.LogError(e, "Exception during synchronization.");
+                return false;
+            }
         }
     }
 }

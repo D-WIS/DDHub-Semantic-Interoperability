@@ -7,30 +7,50 @@
     <p>
     Please enter your GitHub API key to connect to the edition services.
     </p>
-<input type="password" class="form-control"  @bind="_apiKEY" @bind:event="oninput" />
+
+
+    <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" @bind="_apiKEY" @bind:event="oninput">
+        <label for="floatingPassword">API key</label>
+        <button @onclick="@ConnectToGitHub" class="btn btn-primary my-3" type="button">
+            @if (_connecting)
+            {
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            }
+            else
+            {
+            <img src="/css/open-iconic/svg/account-login.svg" class="img-fluid  mr-3" height="15" width="15" />
+            }
+            Connect to GitHub
+        </button>
+    </div>
+
+
+
+@*<input type="password" class="form-control"  @bind="_apiKEY" @bind:event="oninput" />
     <div>
         <button @onclick="@ConnectToGitHub" class="btn btn-primary my-3">
             <img src="/css/open-iconic/svg/account-login.svg" class="img-fluid  mr-3" height="15" width="15" />
             Connect to GitHub
         </button>
-    </div>
+    </div>*@
 }
 else
 {
-<table>
-    <tr>
-        <td>User name</td>
-        <td>@_userName</td>
-    </tr>
-    <tr>
-        <td>User login</td>
-        <td>@_userLogin</td>
-    </tr>
-    <tr>
-        <td>Edition branch name</td>
-        <td>@_defaultBranchName</td>
-    </tr>
-</table>
+    <div>
+    <div class="row mb-3">
+        <label class="col-sm-2">User name</label>
+        <label class="col-sm-10">@_userName</label>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2">User login</label>
+        <label class="col-sm-10">@_userLogin</label>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2">Edition branch</label>
+        <label class="col-sm-10">@_defaultBranchName</label>
+    </div>
+    </div>
 }
 
 
@@ -49,6 +69,9 @@ else
     private bool _warning = false;
     private string _warningText="";
 
+    private bool _connecting = false;
+
+
     protected override Task OnInitializedAsync()
     {
         ManageStatus();
@@ -57,9 +80,13 @@ else
 
     private async void ConnectToGitHub()
     {
-        bool ok = await Manager.ManageCredentials(_apiKEY);
-
-        ManageStatus();
+        if (!_connecting)
+        {
+            _connecting = true;
+            bool ok = await Manager.ManageCredentials(_apiKEY);
+            _connecting = false;
+            ManageStatus();
+        }
     }
 
     private async void ManageStatus()
