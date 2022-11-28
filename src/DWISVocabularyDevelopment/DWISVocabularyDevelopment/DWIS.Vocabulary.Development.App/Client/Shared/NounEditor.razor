@@ -1,0 +1,22 @@
+﻿@using DWIS.Vocabulary.Development;
+<div class="card-body">
+    <h5>Noun name</h5>
+<input class="form-control" @bind ="EditedNoun.Name"  @bind:event ="oninput" />
+    <h5>Display name</h5>
+
+<input class="form-control" @bind="EditedNoun.DisplayName" @bind:event="oninput" />
+    <h5>Parent noun name</h5>
+
+<input class="form-control" @bind="EditedNoun.ParentNounName" @bind:event="oninput" />
+    <h5>Description</h5>
+
+<input class="form-text" @bind="EditedNoun.Description" @bind:event="oninput" />
+
+</div>
+
+@code {
+    [Parameter]
+    public Noun EditedNoun {get;set;}
+
+
+}

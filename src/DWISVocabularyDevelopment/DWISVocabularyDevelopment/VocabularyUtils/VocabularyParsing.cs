@@ -376,7 +376,7 @@ namespace DWIS.Vocabulary.Utils
             }
         }
 
-        private static bool FromMDFile(string fileName, out DefinitionSet definitionSet)
+        public static bool FromMDFile(string fileName, out DefinitionSet definitionSet)
         {
             definitionSet = null;
             string[] allLines = System.IO.File.ReadAllLines(fileName);
@@ -391,6 +391,24 @@ namespace DWIS.Vocabulary.Utils
 
             return false;
         }
+
+        public static bool FromMDFileContents(string[] allLines,string fileName, out DefinitionSet definitionSet)
+        {
+         
+
+            if (FromMDLines(allLines, out definitionSet))
+            {
+                string definitionSetName = System.IO.Path.GetFileNameWithoutExtension(fileName);
+                definitionSet.Name = definitionSetName;
+                PostProcess(definitionSet);
+                return true;
+            }
+
+            return false;
+        }
+
+
+
 
         public static bool FromFolder(string folderName, out DWISVocabulary vocabulary)
         {
@@ -411,6 +429,28 @@ namespace DWIS.Vocabulary.Utils
             }
             return false;
         }
+
+        public static bool FromFiles(string[] files, out DWISVocabulary vocabulary)
+        {
+            vocabulary = null;
+            if (files != null && files.Length > 0)
+            {
+                vocabulary = new DWISVocabulary();
+                foreach (string file in files)
+                {
+                    if (FromMDFile(file, out DefinitionSet definitionSet))
+                    {
+                        vocabulary.Add(definitionSet);
+                        vocabulary.DefinitionSetHeaders.Add(definitionSet.DefinitionSetHeader);
+                    }
+                }
+                return true;
+            }
+            return false;
+        }
+
+
+
 
         public static void CountTags(string folderName, out int nounTagsCount, out int verbTagsCount)
         {

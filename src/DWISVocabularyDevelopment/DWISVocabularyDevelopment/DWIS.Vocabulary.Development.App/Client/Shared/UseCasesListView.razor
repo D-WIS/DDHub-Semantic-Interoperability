@@ -9,10 +9,11 @@ Below is the list of use cases stored in the main branch of the repository.
 
 <hr />
 
-    <table class="table  table-dark table-striped  table-hover">
+    <table class="table table-striped  table-hover">
         <thead>
             <tr>
-                <th>Use case path</th>
+                <th>Name</th>
+                <th>Store path</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
@@ -23,10 +24,13 @@ Below is the list of use cases stored in the main branch of the repository.
                 int idx = i;
             <tr>
                 <td @onclick="@(()=> _current = _useCases?[idx])">
-                    @_useCases?[idx].Path
+                    @_useCases?[idx].StoredInstance.Name
                 </td>
+                <td>@_useCases?[idx].Path</td>
                 <td></td>
-                <td></td>
+                <td>
+                    <img src="/css/open-iconic/svg/trash.svg" class="img-fluid ml-3 mr-3" height="20" width="20" alt="trash" @onclick="@(() =>_useCases?.RemoveAt(idx))">
+                </td>
             </tr>
             }
         </tbody>

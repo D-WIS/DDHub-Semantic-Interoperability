@@ -15,5 +15,9 @@
     <ProjectReference Include="..\Shared\DWIS.Vocabulary.Development.App.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 
 </Project>
