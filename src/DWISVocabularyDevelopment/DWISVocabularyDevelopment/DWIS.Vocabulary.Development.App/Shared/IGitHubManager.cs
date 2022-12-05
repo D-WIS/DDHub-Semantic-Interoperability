@@ -22,6 +22,7 @@ namespace DWIS.Vocabulary.Development.App.Shared
         string GetBranchName();
         Task<List<string>> GetUserBranch();
         List<EditableUseCase>? GetSessionEditedUseCases();
+        Task<(Tree<EditableNoun>? nouns, Tree<EditableVerb>? verbs)> GetNounsAndVerbs();
         
         bool AddUseCase(string useCaseName);
     }

@@ -15,6 +15,24 @@ namespace DWIS.Vocabulary.Development
         public string Examples { get; set; }
         public string DefinitionSetName { get; set; }
 
+        public Verb() { }
+
+        public Verb(Verb other)
+        { 
+        Name = other.Name;
+            DisplayName = other.DisplayName;
+            ParentVerbName = other.ParentVerbName;
+            DomainNounName = other.DomainNounName;
+            RangeNounName = other.RangeNounName;
+            Description = other.Description;
+            Examples = other.Examples;
+            DefinitionSetName = other.DefinitionSetName;
+            MinCardinality = other.MinCardinality;
+            MaxCardinality = other.MaxCardinality;
+        }
+
+
+
         public override string ToString()
         {
             return Name;

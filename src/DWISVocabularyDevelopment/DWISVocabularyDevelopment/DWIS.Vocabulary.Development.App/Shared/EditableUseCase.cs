@@ -2,13 +2,21 @@
 
 namespace DWIS.Vocabulary.Development.App.Shared
 {
-    public class EditableNoun
+    public class EditableNoun : Noun
     { 
-    public Noun StoredNoun { get; set; }
         public Noun EditedNoun { get; set; }
         public string Path { get; set; }
-        public bool Edited { get; set; }
+        public bool Edited { get; set; } = false;
         public string SHA { get; set; }
+
+        public EditableNoun(Noun baseNoun, string path, string sha) : base(baseNoun)
+        {
+            EditedNoun = new Noun(baseNoun);
+            Path = path;
+            SHA = sha;
+        }
+
+
         public string GetEditedCode()
         {
             StringBuilder stringBuilder = new StringBuilder();
@@ -18,13 +26,21 @@ namespace DWIS.Vocabulary.Development.App.Shared
 
     }
 
-    public class EditableVerb
+    public class EditableVerb : Verb
     {
-        public Verb StoredVerb { get; set; }
         public Verb EditedVerb { get; set; }
         public string Path { get; set; }
-        public bool Edited { get; set; }
+        public bool Edited { get; set; } = false;
         public string SHA { get; set; }
+
+        public EditableVerb(Verb baseVerb, string path, string sha) : base(baseVerb)
+        {
+            EditedVerb = new Verb(baseVerb);
+            Path = path;
+            SHA = sha;
+        }
+
+
         public string GetEditedCode()
         {
             StringBuilder stringBuilder = new StringBuilder();

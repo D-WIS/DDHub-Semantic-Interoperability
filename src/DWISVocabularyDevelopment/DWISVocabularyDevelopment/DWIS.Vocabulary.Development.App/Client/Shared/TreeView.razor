@@ -1,0 +1,39 @@
+﻿@using DWIS.Vocabulary.Development
+@typeparam TItem
+
+<ul class="list-group list-group-flush">
+    <li class="list-group-item  ">
+        @if (Tree != null)
+        {
+        <div class="justify-content-between d-flex align-items-center">
+            <label @onclick="() =>
+            { _expanded = !_expanded; }">
+                @Tree.RootItem.ToString()
+            </label>
+            @if (Tree.Children.Count() > 0)
+            {
+                <span class="badge badge-info badge-pill">@Tree.Children.Count()</span>
+            }
+        </div>
+            @if (_expanded)
+            {
+                <TreeNodeView Element="Tree.RootItem"></TreeNodeView>
+                @foreach (var c in Tree.Children)
+                {
+                    <TreeView Tree="c"></TreeView>
+                }
+            }
+        }
+    </li>
+
+</ul>
+
+
+@code {
+    [Parameter]
+    public Tree<TItem> Tree { get; set; }
+
+    private bool _expanded { get; set; } = false;
+
+
+}
