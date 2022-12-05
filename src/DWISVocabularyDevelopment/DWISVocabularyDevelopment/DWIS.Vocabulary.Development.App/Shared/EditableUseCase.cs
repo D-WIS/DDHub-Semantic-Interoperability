@@ -59,9 +59,21 @@ namespace DWIS.Vocabulary.Development.App.Shared
                 fileContents = fileContents.Remove(idx, fileContents.Length - idx);
             }
 
+            string instanceName = path;
+            int idx2 = instanceName.LastIndexOf('/');
+            if (idx2 >= 0 && idx2 < instanceName.Length - 1)
+            {
+                instanceName = instanceName.Substring(idx2 + 1);
+            }
+            if (instanceName.EndsWith(".md")) 
+            {
+                idx2 = instanceName.LastIndexOf('.');
+                instanceName = instanceName.Substring(0, idx2);
+            }
+
             DWIS.Vocabulary.Utils.VocabularyParsing.FromMDFileContents(
                 fileContents.Split("\n", StringSplitOptions.RemoveEmptyEntries), 
-                path, 
+                instanceName, 
                 DWIS.Vocabulary.Standard.VocabularyProvider.Vocabulary, 
                 out DWISInstance inst);
             StoredInstance = inst;

@@ -40,17 +40,38 @@ namespace DWIS.Vocabulary.Development.App.Shared
 
         public async Task<bool> CommitChanges(EditableUseCase useCase)
         {
-            string contents = useCase.GetEditedCode();
-            UpdateFileRequest updateFileRequest = new UpdateFileRequest("Edit of use case", contents, useCase.SHA, GetBranchName());
-            try
+            if (!string.IsNullOrEmpty(useCase.Path) && !string.IsNullOrEmpty(useCase.SHA) && useCase.StoredInstance != null)
             {
-                var res = await _gitHubClient.Repository.Content.UpdateFile(_repoID, useCase.Path, updateFileRequest);
-                return res != null;
+                string contents = useCase.GetEditedCode();
+                UpdateFileRequest updateFileRequest = new UpdateFileRequest("Edit of use case", contents, useCase.SHA, GetBranchName());
+                try
+                {
+                    var res = await _gitHubClient.Repository.Content.UpdateFile(_repoID, useCase.Path, updateFileRequest);
+                    return res != null;
+                }
+                catch (Exception e)
+                {
+                    _logger?.LogError(e, "Exception on commit");
+                    return false;
+                }
             }
-            catch (Exception e)
+            else
             {
-                _logger?.LogError(e, "Exception on commit");
-                return false;
+                string contents = useCase.GetEditedCode();
+                string message = "Creating use case " + useCase.EditedInstance.Name;
+                string path = useCase.EditedInstance.Name.Replace(" ", "-");
+                path = UseCasesFolderPath + "/" + path + ".md";
+                CreateFileRequest createFileRequest = new CreateFileRequest(message, contents, GetBranchName());
+                try
+                {
+                    var res = await _gitHubClient.Repository.Content.CreateFile(_repoID, path, createFileRequest);
+                    return res != null;
+                }
+                catch (Exception e)
+                {
+                    _logger?.LogError(e, "Exception on commit");
+                    return false;
+                }
             }
         }
 
@@ -71,7 +92,7 @@ namespace DWIS.Vocabulary.Development.App.Shared
             {
                 _useCases = new List<EditableUseCase>();
                 try
-                {
+                { 
                     var files = await _gitHubClient.Repository.Content.GetAllContents(_repoID, UseCasesFolderPath);
                     foreach (var file in files)
                     {
@@ -136,8 +157,18 @@ namespace DWIS.Vocabulary.Development.App.Shared
             }
         }
 
-
-
+        public bool AddUseCase(string useCaseName)
+        {
+            _useCases?.Add(
+                new EditableUseCase(
+                    new DWISInstance(useCaseName, DWIS.Vocabulary.Standard.VocabularyProvider.Vocabulary),
+                    "",
+                    false,
+                    string.Empty
+                    )
+                );
+            return true;
+        }
 
         public string GetUserName()
         {
