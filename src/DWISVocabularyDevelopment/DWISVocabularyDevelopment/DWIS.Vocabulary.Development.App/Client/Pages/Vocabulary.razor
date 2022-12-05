@@ -1,7 +1,31 @@
-﻿@page "/vocabulary"
+﻿@using DWIS.Vocabulary.Development.App.Shared;
+@using DWIS.Vocabulary.Development;
+@inject IGitHubManager Manager;
+
+
+@page "/vocabulary"
 
 <h3>vocabulary</h3>
 
-@code {
+<div>
+    <div style="width: 50%; float: left;">
+        <h3>Type nouns</h3>
+        <TreeView Tree="_NounsTree"></TreeView>
+    </div>
+    <div style="width: 50%; float:left;">
+        <h3>Verbs</h3>
+        <TreeView Tree="_verbsTree"></TreeView>
+    </div>
+</div>
 
+@code {
+    private Tree<EditableNoun> _NounsTree;
+    private Tree<EditableVerb> _verbsTree;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var p = await Manager.GetNounsAndVerbs();
+        _NounsTree = p.nouns;
+        _verbsTree = p.verbs;
+    }
 }

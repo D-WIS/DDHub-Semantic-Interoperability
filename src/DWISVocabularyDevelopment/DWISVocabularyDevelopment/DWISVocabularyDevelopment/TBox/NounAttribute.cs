@@ -9,6 +9,16 @@ namespace DWIS.Vocabulary.Development
         public string DisplayName { get; set; }
         public string Description { get; set; }
 
+        public NounAttribute() { }
+        public NounAttribute(NounAttribute other)
+        { 
+        Type = other.Type;
+            Name = other.Name;  
+            DisplayName = other.DisplayName;
+            Description = other.Description;
+        }
+
+
         public override bool Equals(object obj)
         {
             return Equals(obj as NounAttribute);

@@ -7,6 +7,7 @@ namespace DWIS.Vocabulary.Development.App.Shared
     {
         public static readonly string RepositoryName = "DDHub-Semantic-Interoperability";
         public static readonly string UseCasesFolderPath = "docs/vocabulary_development/examples";
+        public static readonly string VocabularyFolderPath = "docs/vocabulary_development/definitions";
         public static readonly string ApplicationName = "DWIS-Vocabulary-Edition";
         private GitHubClient _gitHubClient=new GitHubClient(new ProductHeaderValue(ApplicationName));
         public static readonly string BranchSuffix = "-voc-dev";
@@ -14,8 +15,8 @@ namespace DWIS.Vocabulary.Development.App.Shared
         private string _userLogin;
         private long _repoID;
         private List<EditableUseCase>? _useCases = null;
-        private List<EditableNoun>? _nouns = null;
-        private List<EditableVerb>? _verbs = null;
+        private Tree<EditableNoun>? _nouns = null;
+        private Tree<EditableVerb>? _verbs = null;
         private ILogger<GitHubManager>? _logger;
 
         public GitHubManager(ILogger<GitHubManager>? logger)
@@ -92,41 +93,58 @@ namespace DWIS.Vocabulary.Development.App.Shared
             }
         }
 
-        public async Task<(List<EditableNoun>? nouns, List<EditableVerb>? verbs)> GetNounsAndVerbs()
+        public async Task<(Tree<EditableNoun>? nouns, Tree<EditableVerb>? verbs)> GetNounsAndVerbs()
         {
             if (_nouns != null && _verbs!=null) { return (_nouns, _verbs); }
             else
             {
-                _nouns = new List<EditableNoun>();
-                _verbs = new List<EditableVerb>();
+                _nouns = new Tree<EditableNoun>();
+                _verbs = new Tree<EditableVerb>();
+                DWISVocabulary vocabulary = new DWISVocabulary();
                 try
                 {
-                    var files = await _gitHubClient.Repository.Content.GetAllContents(_repoID, UseCasesFolderPath);
+                    var files = await _gitHubClient.Repository.Content.GetAllContents(_repoID, VocabularyFolderPath);
                     List<string> filesContents = new List<string>();
                     foreach (var file in files)
                     {
                         var contents = await _gitHubClient.Repository.Content.GetAllContentsByRef(_repoID, file.Path, "main");
                         if (contents != null && contents.Count == 1)
-                        {
-                            
+                        {                            
                             string text = contents[0].Content;
                             string[] allLines = text.Split('\r', '\n');
                             DWIS.Vocabulary.Utils.VocabularyParsing.FromMDFileContents(allLines, file.Path, out var definitionSet);
 
-                            foreach (var n in definitionSet.Nouns)
+                            for (int i = 0; i < definitionSet.Nouns.Count; i++)
                             {
-                                EditableNoun editableNoun = new EditableNoun() { Path = file.Path, SHA = contents[0].Sha, StoredNoun = n, EditedNoun = new Noun() };//to fix
-                                _nouns.Add(editableNoun);   
+                                definitionSet.Nouns[i] = new EditableNoun(definitionSet.Nouns[i], file.Path, contents[0].Sha);
                             }
-                            foreach (var v in definitionSet.Verbs)
+                            for (int i = 0; i < definitionSet.Verbs.Count; i++)
                             {
-                                EditableVerb editableVerb = new EditableVerb() { Path = file.Path, SHA = contents[0].Sha, StoredVerb = v, EditedVerb = new Verb() };//to fix
-                                _verbs.Add(editableVerb);
+                                definitionSet.Verbs[i] = new EditableVerb(definitionSet.Verbs[i], file.Path, contents[0].Sha);
                             }
+                            vocabulary.Add(definitionSet);
+                            //foreach (var n in definitionSet.Nouns)
+                            //{
+                            //    EditableNoun editableNoun = new EditableNoun() { Path = file.Path, SHA = contents[0].Sha, StoredNoun = n, EditedNoun = new Noun() };//to fix
+                            //    _nouns.Add(editableNoun);   
+                            //}
+                            //foreach (var v in definitionSet.Verbs)
+                            //{
+                            //    EditableVerb editableVerb = new EditableVerb() { Path = file.Path, SHA = contents[0].Sha, StoredVerb = v, EditedVerb = new Verb() };//to fix
+                            //    _verbs.Add(editableVerb);
+                            //}
+
+                            //vocabulary.tot
 
                         }
                     }
-                    return (_nouns, _verbs); ;
+                    
+
+                    vocabulary.ToTrees(out var baseNounTree, out var baseVerbTree);
+
+                    _nouns = CopyTree<EditableNoun, Noun>(baseNounTree);
+                    _verbs = CopyTree<EditableVerb, Verb>(baseVerbTree);
+                    return (_nouns, _verbs);// as (Tree<EditableNoun>?, Tree<EditableVerb>?);
                 }
                 catch (Exception e)
                 {
@@ -136,8 +154,19 @@ namespace DWIS.Vocabulary.Development.App.Shared
             }
         }
 
-
-
+        private Tree<T> CopyTree<T, T2>(Tree<T2> baseTree) where T:T2
+        {
+            Tree<T> tree = new Tree<T>((T)baseTree.RootItem);
+            if (baseTree.Children != null && baseTree.Children.Count > 0)
+            {
+                tree.Children = new List<Tree<T>>();
+                foreach (var c in baseTree.Children)
+                {
+                    tree.Children.Add(CopyTree<T, T2>(c));
+                }
+            }
+            return tree;
+        }
 
         public string GetUserName()
         {

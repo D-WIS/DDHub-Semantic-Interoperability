@@ -1,0 +1,108 @@
+﻿@using DWIS.Vocabulary.Development
+
+@if (Element != null)
+{
+    if (Element is Noun)
+    {
+        Noun noun = (Noun)Element;
+        <table class="table table-secondary">
+            <tr>
+                <td>Display name</td>
+                <td>
+                <label>@noun.DisplayName</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>
+                    <label>@noun.Description</label>
+                </td>
+            </tr>
+            <tr>  
+                <td>Parent noun</td>
+                <td>
+                    <label>@noun.ParentNounName</label>
+                </td>
+        </tr>
+            <tr>
+                <td>Definition set</td>
+                            <td>
+                    <label>@noun.DefinitionSetName</label>
+                </td>
+        </tr>
+            <tr>
+                <td colspan="2" align="center">Attributes</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    @if (noun.NounAttributes != null && noun.NounAttributes.Length>0)
+                    {
+                        <table class="table table-info">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Data type</th>
+                                    <th>Description</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                @for (int i = 0; i < noun.NounAttributes.Length; i++)
+                                {
+                                    <tr>
+                                        <td><label>@noun.NounAttributes[i].Name</label> </td>
+                               
+                                        <td><label>@noun.NounAttributes[i].Type</label> </td>
+                                    
+                                        <td><label>@noun.NounAttributes[i].Description</label> </td>
+                                    </tr>
+                                }
+                            </tbody>
+                    </table>
+                    }
+                </td>
+            </tr>
+        </table>
+    }
+    else if (Element is Verb)
+    {
+        Verb verb = (Verb)Element;
+
+
+           <table class="table table-secondary">
+            <tr>
+                <td>Display name</td>
+                <td>
+                    <label>@verb.DisplayName</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>
+                    <label>@verb.Description</label>
+                </td>
+            </tr>
+            <tr>  
+                <td>Parent verb</td>
+                <td>
+                    <label>@verb.ParentVerbName</label>
+                </td>
+        </tr>
+            <tr>
+                <td>Definition set</td>
+                            <td>
+                    <label>@verb.DefinitionSetName</label>
+                </td>
+        </tr>
+        </table>
+
+
+
+    }
+}
+
+
+@code {
+    [Parameter]
+    public object Element { get; set; }
+}
