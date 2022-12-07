@@ -1,103 +1,132 @@
-﻿@using DWIS.Vocabulary.Development
+﻿@using DWIS.Vocabulary.Development;
+@using DWIS.Vocabulary.Development.App.Shared;
 
 @if (Element != null)
 {
-    if (Element is Noun)
+    @if (_readOnlyMode)
     {
-        Noun noun = (Noun)Element;
-        <table class="table table-secondary">
-            <tr>
-                <td>Display name</td>
-                <td>
-                <label>@noun.DisplayName</label>
-                </td>
-            </tr>
-            <tr>
-                <td>Description</td>
-                <td>
-                    <label>@noun.Description</label>
-                </td>
-            </tr>
-            <tr>  
-                <td>Parent noun</td>
-                <td>
-                    <label>@noun.ParentNounName</label>
-                </td>
-        </tr>
-            <tr>
-                <td>Definition set</td>
-                            <td>
-                    <label>@noun.DefinitionSetName</label>
-                </td>
-        </tr>
-            <tr>
-                <td colspan="2" align="center">Attributes</td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    @if (noun.NounAttributes != null && noun.NounAttributes.Length>0)
-                    {
-                        <table class="table table-info">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Data type</th>
-                                    <th>Description</th>
-                                </tr>
+        <button @onclick="()=> SetEdited()" class="btn btn-primary my-3" type="button">
 
-                            </thead>
-                            <tbody>
-                                @for (int i = 0; i < noun.NounAttributes.Length; i++)
-                                {
-                                    <tr>
-                                        <td><label>@noun.NounAttributes[i].Name</label> </td>
-                               
-                                        <td><label>@noun.NounAttributes[i].Type</label> </td>
-                                    
-                                        <td><label>@noun.NounAttributes[i].Description</label> </td>
-                                    </tr>
-                                }
-                            </tbody>
-                    </table>
-                    }
-                </td>
-            </tr>
-        </table>
+            <img src="/css/open-iconic/svg/pencil.svg" class="img-fluid  mr-3" height="15" width="15" />
+        
+        Edit
+    </button>
     }
-    else if (Element is Verb)
+    if (Element is EditableNoun)
     {
-        Verb verb = (Verb)Element;
+        Noun EditedNoun = ((EditableNoun)Element).EditedNoun;
+        <div class="bg-light border-2">
+            <div class="input-group mb-3">
+                <label class="col-sm-2 col-form-label">Noun name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" @bind="EditedNoun.Name" @bind:event="oninput" readonly=@_readOnlyMode />
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <label class="col-sm-2 col-form-label">Display name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" @bind="EditedNoun.DisplayName" @bind:event="oninput" readonly=@_readOnlyMode />
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <label class="col-sm-2 col-form-label">Parent noun name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" @bind="EditedNoun.ParentNounName" @bind:event="oninput" readonly=@_readOnlyMode />
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <label class="col-sm-2 col-form-label">Description</label>
+                <div class="col-sm-10">
+                    <textarea class="form-text" @bind="EditedNoun.Description" @bind:event="oninput" rows="10" cols="100" readonly=@_readOnlyMode />
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <label class="col-sm-2 col-form-label">Attributes</label>
+                @if (EditedNoun.NounAttributes != null && EditedNoun.NounAttributes.Length > 0)
+                {
+                    <table class="table table-info">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Data type</th>
+                                <th>Description</th>
+                            </tr>
 
-
-           <table class="table table-secondary">
-            <tr>
-                <td>Display name</td>
-                <td>
-                    <label>@verb.DisplayName</label>
-                </td>
-            </tr>
-            <tr>
-                <td>Description</td>
-                <td>
-                    <label>@verb.Description</label>
-                </td>
-            </tr>
-            <tr>  
-                <td>Parent verb</td>
-                <td>
-                    <label>@verb.ParentVerbName</label>
-                </td>
-        </tr>
-            <tr>
-                <td>Definition set</td>
-                            <td>
-                    <label>@verb.DefinitionSetName</label>
-                </td>
-        </tr>
-        </table>
-
-
-
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < EditedNoun.NounAttributes.Length; i++)
+                            {
+                                <tr>
+                                    <td> <input class="form-control" @bind="EditedNoun.NounAttributes[i].Name" @bind:event="oninput" readonly=@_readOnlyMode /> </td>
+                                    <td> <input class="form-control" @bind="EditedNoun.NounAttributes[i].Type" @bind:event="oninput" readonly=@_readOnlyMode /> </td>
+                                    <td> <input class="form-control" @bind="EditedNoun.NounAttributes[i].Description" @bind:event="oninput" readonly=@_readOnlyMode /> </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+            </div>
+            <div class="input-group mb-3">
+                <label class="col-sm-2 col-form-label">Definition set: @EditedNoun.DefinitionSetName</label>
+            </div>
+        </div>
+    }
+    else if (Element is EditableVerb)
+    {
+        Verb verb = ((EditableVerb)Element).EditedVerb;
+        <div class="card-body">
+            <div class="input-group mb-3">
+                <label class="col-sm-2 col-form-label">Noun name</label>
+                <div class="col-sm-10">
+                    <input class="form-control" @bind="verb.Name"  @bind:event="oninput" readonly=@_readOnlyMode />
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <label class="col-sm-2 col-form-label">Display name</label>
+                <div class="col-sm-10">
+                    <input class="form-control" @bind="verb.DisplayName" @bind:event="oninput" readonly=@_readOnlyMode />
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <label class="col-sm-2 col-form-label">Parent noun name</label>
+                <div class="col-sm-10">
+                    <input class="form-control" @bind="verb.ParentVerbName" @bind:event="oninput" readonly=@_readOnlyMode />
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <label class="col-sm-2 col-form-label">Domain noun name</label>
+                <div class="col-sm-10">
+                    <input class="form-control" @bind="verb.DomainNounName" @bind:event="oninput" readonly=@_readOnlyMode />
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <label class="col-sm-2 col-form-label">Range noun name</label>
+                <div class="col-sm-10">
+                    <input class="form-control" @bind="verb.RangeNounName" @bind:event="oninput"  readonly=@_readOnlyMode/>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <label class="col-sm-2 col-form-label">Minimum cardinality</label>
+                <div class="col-sm-10">
+                    <input class="form-control" @bind="verb.MinCardinality" @bind:event="oninput" readonly=@_readOnlyMode />
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <label class="col-sm-2 col-form-label">Maximum cardinality</label>
+                <div class="col-sm-10">
+                    <input class="form-control" @bind="verb.MaxCardinality" @bind:event="oninput" readonly=@_readOnlyMode />
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <label class="col-sm-2 col-form-label">Description</label>
+                <div class="col-sm-10">
+                    <textarea class="form-text" @bind="verb.Description" @bind:event="oninput" readonly=@_readOnlyMode />
+                </div>
+            </div>
+            <div class="input-group mb-3">
+              <label class="col-sm-2 col-form-label">Definition set: @verb.DefinitionSetName</label>
+            </div>
+        </div>        
     }
 }
 
@@ -105,4 +134,20 @@
 @code {
     [Parameter]
     public object Element { get; set; }
+
+    private bool _readOnlyMode = true;
+
+    private async Task SetEdited()
+    {
+        _readOnlyMode = false;
+        if (Element is EditableVerb)
+        {
+            ((EditableNoun)Element).Edited = true;
+        }
+        else if (Element is EditableNoun)
+        {
+            ((EditableNoun)Element).Edited = true;
+        }
+        //searchResult = await SearchService.FetchAsync(searchText);
+    }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using DWIS.Vocabulary.Utils;
+using Microsoft.Extensions.Logging;
 using Octokit;
 
 namespace DWIS.Vocabulary.Development.App.Shared
@@ -18,13 +19,14 @@ namespace DWIS.Vocabulary.Development.App.Shared
         private Tree<EditableNoun>? _nouns = null;
         private Tree<EditableVerb>? _verbs = null;
         private ILogger<GitHubManager>? _logger;
+        private DWISVocabulary _vocabulary = new DWISVocabulary();
 
         public GitHubManager(ILogger<GitHubManager>? logger)
         {
             _logger = logger;
         }
 
-        public async Task<bool> CommitAllChanges()
+        public async Task<bool> CommitAllUseCaseChanges()
         {
             bool ok = true;
             var edited = GetSessionEditedUseCases();
@@ -37,6 +39,77 @@ namespace DWIS.Vocabulary.Development.App.Shared
                 return ok;
             }
             else return false;
+        }
+
+        public async Task<bool> CommitAllVocabularyChanges()
+        {
+            var editedNouns = GetSessionEditedNouns();
+            var editedVerbs = GetSessionEditedVerbs();
+            var definitionSets = editedNouns?.Select(n => n.DefinitionSetName).ToList();
+            if (definitionSets == null) { definitionSets = new List<string>(); }
+            var df2 = editedVerbs?.Select(v => v.DefinitionSetName).ToList();
+           
+            definitionSets.AddRange(df2 ?? Enumerable.Empty<string>());
+            bool ok = true;
+            foreach (string ds in definitionSets.Distinct())
+            {
+                ok &= await CommitChanges(ds);
+            }
+            return ok;
+        }
+
+
+        public async Task<bool> CommitChanges(string definitionSetName)
+        {
+            var definitionSets= MDWriting.ToDefinitionSets(_vocabulary);
+
+            var definitionSet = definitionSets.FirstOrDefault(df => df.Name == definitionSetName);
+            if (definitionSet != null)
+            {
+                string path = string.Empty;
+                string sha = string.Empty;
+
+                if (definitionSet.Nouns != null && definitionSet.Nouns.Count > 0 && definitionSet.Nouns[0] is EditableNoun)
+                {
+                    path = ((EditableNoun)definitionSet.Nouns[0]).Path;
+                    sha = ((EditableNoun)definitionSet.Nouns[0]).SHA;
+                }
+                else if (definitionSet.Verbs != null && definitionSet.Verbs.Count > 0 && definitionSet.Verbs[0] is EditableVerb)
+                {
+                    path = ((EditableVerb)definitionSet.Verbs[0]).Path;
+                    sha = ((EditableVerb)definitionSet.Verbs[0]).SHA;
+
+                }
+
+                if (!string.IsNullOrEmpty(sha) && !string.IsNullOrEmpty(path))
+                {
+                    DefinitionSet editedDefinitionSet = new DefinitionSet();
+                    editedDefinitionSet.Name = definitionSetName;
+                    editedDefinitionSet.DefinitionSetHeader = definitionSet.DefinitionSetHeader;
+                    editedDefinitionSet.SetDescription = definitionSet.SetDescription;
+                    editedDefinitionSet.Verbs = definitionSet.Verbs.Select(v => ((EditableVerb)v).EditedVerb).ToList();
+                    editedDefinitionSet.Nouns = definitionSet.Nouns.Select(v => ((EditableNoun)v).EditedNoun).ToList();
+                    string contents = MDWriting.ToMDString(editedDefinitionSet, _vocabulary);
+                    UpdateFileRequest updateFileRequest = new UpdateFileRequest("Edit of definition set", contents, sha, GetBranchName());
+                    try
+                    {
+                        var res = await _gitHubClient.Repository.Content.UpdateFile(_repoID, path, updateFileRequest);
+                        return res != null;
+                    }
+                    catch (Exception e)
+                    {
+                        _logger?.LogError(e, "Exception on commit");
+                        return false;
+                    }
+                }
+                _logger?.LogError("Could not retrieve SHA or path for definition set.");
+                return false;
+            }
+            else
+            {
+                _logger?.LogError("Could not retrieve original definition set.");
+                return false;
+            }
         }
 
         public async Task<bool> CommitChanges(EditableUseCase useCase)
@@ -97,7 +170,7 @@ namespace DWIS.Vocabulary.Development.App.Shared
                     var files = await _gitHubClient.Repository.Content.GetAllContents(_repoID, UseCasesFolderPath);
                     foreach (var file in files)
                     {
-                        var contents = await _gitHubClient.Repository.Content.GetAllContentsByRef(_repoID, file.Path, "main");
+                        var contents = await _gitHubClient.Repository.Content.GetAllContentsByRef(_repoID, file.Path, GetBranchName());
                         if (contents != null && contents.Count == 1)
                         {
                             string text = contents[0].Content; 
@@ -121,14 +194,14 @@ namespace DWIS.Vocabulary.Development.App.Shared
             {
                 _nouns = new Tree<EditableNoun>();
                 _verbs = new Tree<EditableVerb>();
-                DWISVocabulary vocabulary = new DWISVocabulary();
+                _vocabulary = new DWISVocabulary();
                 try
                 {
                     var files = await _gitHubClient.Repository.Content.GetAllContents(_repoID, VocabularyFolderPath);
                     List<string> filesContents = new List<string>();
                     foreach (var file in files)
                     {
-                        var contents = await _gitHubClient.Repository.Content.GetAllContentsByRef(_repoID, file.Path, "main");
+                        var contents = await _gitHubClient.Repository.Content.GetAllContentsByRef(_repoID, file.Path, GetBranchName());
                         if (contents != null && contents.Count == 1)
                         {                            
                             string text = contents[0].Content;
@@ -143,29 +216,17 @@ namespace DWIS.Vocabulary.Development.App.Shared
                             {
                                 definitionSet.Verbs[i] = new EditableVerb(definitionSet.Verbs[i], file.Path, contents[0].Sha);
                             }
-                            vocabulary.Add(definitionSet);
-                            //foreach (var n in definitionSet.Nouns)
-                            //{
-                            //    EditableNoun editableNoun = new EditableNoun() { Path = file.Path, SHA = contents[0].Sha, StoredNoun = n, EditedNoun = new Noun() };//to fix
-                            //    _nouns.Add(editableNoun);   
-                            //}
-                            //foreach (var v in definitionSet.Verbs)
-                            //{
-                            //    EditableVerb editableVerb = new EditableVerb() { Path = file.Path, SHA = contents[0].Sha, StoredVerb = v, EditedVerb = new Verb() };//to fix
-                            //    _verbs.Add(editableVerb);
-                            //}
-
-                            //vocabulary.tot
-
+                            _vocabulary.Add(definitionSet);
+                            _vocabulary.DefinitionSetHeaders.Add(definitionSet.DefinitionSetHeader);
                         }
                     }
-                    
 
-                    vocabulary.ToTrees(out var baseNounTree, out var baseVerbTree);
+
+                    _vocabulary.ToTrees(out var baseNounTree, out var baseVerbTree);
 
                     _nouns = CopyTree<EditableNoun, Noun>(baseNounTree);
                     _verbs = CopyTree<EditableVerb, Verb>(baseVerbTree);
-                    return (_nouns, _verbs);// as (Tree<EditableNoun>?, Tree<EditableVerb>?);
+                    return (_nouns, _verbs);
                 }
                 catch (Exception e)
                 {
@@ -266,6 +327,16 @@ namespace DWIS.Vocabulary.Development.App.Shared
             else return null;
         }
 
+
+        public List<EditableNoun>? GetSessionEditedNouns()
+        {
+            return _nouns?.ToList().Where(n => n.Edited).ToList();
+        }
+
+        public List<EditableVerb>? GetSessionEditedVerbs()
+        {
+            return _verbs?.ToList().Where(n => n.Edited).ToList();
+        }
         public string GetUserLogin()
         {
             return _userLogin;

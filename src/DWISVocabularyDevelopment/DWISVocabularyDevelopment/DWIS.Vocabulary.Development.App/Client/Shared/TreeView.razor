@@ -6,10 +6,10 @@
         @if (Tree != null)
         {
         <div class="justify-content-between d-flex align-items-center">
-            <label @onclick="() =>
+            <h3 @onclick="() =>
             { _expanded = !_expanded; }">
                 @Tree.RootItem.ToString()
-            </label>
+            </h3>
             @if (Tree.Children.Count() > 0)
             {
                 <span class="badge badge-info badge-pill">@Tree.Children.Count()</span>

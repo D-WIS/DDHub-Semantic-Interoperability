@@ -207,6 +207,16 @@ namespace DWIS.Vocabulary.Utils
 
         public static void ToMDFiles(DWISVocabulary vocabulary, string folderName)
         {
+            List<DefinitionSet> definitionSets = ToDefinitionSets(vocabulary);
+
+            foreach (DefinitionSet set in definitionSets)
+            {
+                ToMDFile(set, folderName, vocabulary);
+            }
+        }
+
+        public static List<DefinitionSet> ToDefinitionSets(DWISVocabulary vocabulary)
+        {
             List<DefinitionSet> definitionSets = new List<DefinitionSet>();
             foreach (var h in vocabulary.DefinitionSetHeaders)
             {
@@ -229,26 +239,20 @@ namespace DWIS.Vocabulary.Utils
                     definitionSet.Add(v);
                 }
             }
-
-            foreach (DefinitionSet set in definitionSets)
-            {
-                ToMDFile(set, folderName, vocabulary);
-            }
-
+            return definitionSets;
         }
 
-
-        public static void ToMDFile(DefinitionSet definitionSet, string folderName, DWIS.Vocabulary.Development.Vocabulary vocabulary)
+        public static string ToMDString(DefinitionSet definitionSet, DWIS.Vocabulary.Development.Vocabulary vocabulary)
         {
             StringBuilder builder = new StringBuilder();
-            DefinitionSetHeaderToMD(builder, definitionSet.DefinitionSetHeader, singleFile:false);           
+            DefinitionSetHeaderToMD(builder, definitionSet.DefinitionSetHeader, singleFile: false);
 
             builder.AppendLine("# Nouns");
 
 
             foreach (var n in definitionSet.Nouns)
             {
-                NounToMD(builder, n,singleFile:false, vocabulary:vocabulary );
+                NounToMD(builder, n, singleFile: false, vocabulary: vocabulary);
             }
 
             builder.AppendLine("# Verbs");
@@ -258,8 +262,14 @@ namespace DWIS.Vocabulary.Utils
             {
                 VerbToMD(builder, v, singleFile: false, vocabulary: vocabulary);
             }
+            return builder.ToString();
+        }
 
-            System.IO.File.WriteAllText(folderName + System.IO.Path.DirectorySeparatorChar + definitionSet.Name + ".md", builder.ToString());
+        public static void ToMDFile(DefinitionSet definitionSet, string folderName, DWIS.Vocabulary.Development.Vocabulary vocabulary)
+        {
+          string mdContents = ToMDString(definitionSet, vocabulary);
+
+            System.IO.File.WriteAllText(folderName + System.IO.Path.DirectorySeparatorChar + definitionSet.Name + ".md", mdContents);
 
         }
 

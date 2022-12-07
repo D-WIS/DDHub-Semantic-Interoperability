@@ -17,7 +17,8 @@ namespace DWIS.Vocabulary.Development.App.Shared
         Task<List<EditableUseCase>?> GetUseCases();
         void RegisterChanges(string filePath);
         Task<bool> CommitChanges(EditableUseCase useCase);
-        Task<bool> CommitAllChanges();
+        Task<bool> CommitAllUseCaseChanges();
+        Task<bool> CommitAllVocabularyChanges();
         Task<bool> SyncChanges();
         string GetBranchName();
         Task<List<string>> GetUserBranch();
@@ -25,5 +26,8 @@ namespace DWIS.Vocabulary.Development.App.Shared
         Task<(Tree<EditableNoun>? nouns, Tree<EditableVerb>? verbs)> GetNounsAndVerbs();
         
         bool AddUseCase(string useCaseName);
+        List<EditableNoun>? GetSessionEditedNouns();
+        List<EditableVerb>? GetSessionEditedVerbs(); 
+        Task<bool> CommitChanges(string definitionSetName);
     }
 }

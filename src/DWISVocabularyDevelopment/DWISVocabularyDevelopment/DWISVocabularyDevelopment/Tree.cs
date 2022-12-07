@@ -61,6 +61,24 @@ namespace DWIS.Vocabulary.Development
             return 1 + Children.Sum(c => c.Count());        
         }
 
+        public List<T> ToList()
+        {
+            List<T> list = new List<T>();
+            ToList(list);
+            return list;
+        }
+
+        private void ToList(List<T> list)
+        {
+            list.Add(RootItem);
+            if (Children != null) 
+            {
+                foreach (var child in Children)
+                { 
+                child.ToList(list);
+                }
+            }
+        }
 
         public override string ToString()
         {

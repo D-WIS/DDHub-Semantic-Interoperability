@@ -1,0 +1,102 @@
+﻿@using DWIS.Vocabulary.Development.App.Shared;
+@inject IGitHubManager Manager;
+
+
+@if ((_editedNouns != null && _editedNouns.Count > 0) ||(_editedVerbs != null && _editedVerbs.Count > 0))
+{
+    @if (_editedNouns != null && _editedNouns.Count > 0)
+    {
+        <h2>Edited nouns</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Path</th>
+                    <th scope="col">Commit</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (_editedNouns != null)
+                {
+                    @foreach (var u in _editedNouns.GroupBy<EditableNoun, string>(n => n.Path))
+                    {
+                        <tr>
+                            @foreach (var n in u)
+                            {
+                                <th scope="row">@n.Name</th>
+                            }
+                            <td colspan="@u.Count()">@u.First().Path</td>
+                            <td colspan="@u.Count()">
+                                <button class="btn btn-primary" @onclick="()=>Manager.CommitChanges(u.First().DefinitionSetName)">
+                                    Commit
+                                </button>
+                            </td>
+                        </tr>
+                    }
+
+                }
+            </tbody>
+        </table>
+    }
+
+    @if (_editedVerbs != null && _editedVerbs.Count > 0)
+    {
+        <h2>Edited verbs</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Path</th>
+                    <th scope="col">Commit</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (_editedVerbs != null)
+                {
+                    @foreach (var u in _editedVerbs.GroupBy<EditableVerb, string>(n => n.Path))
+                    {
+                        <tr>
+                            @foreach (var n in u)
+                            {
+                                <th scope="row">@n.Name</th>
+                            }
+                            <td colspan="@u.Count()">@u.First().Path</td>
+                            <td colspan="@u.Count()">
+                                <button class="btn btn-primary" @onclick="()=>Manager.CommitChanges(u.First().DefinitionSetName)">
+                                    Commit
+                                </button>
+                            </td>
+                        </tr>
+                    }
+
+                }
+            </tbody>
+        </table>
+    }
+
+    <button class="btn btn-primary" @onclick="()=>Manager.CommitAllVocabularyChanges()">
+        Commit all changes
+    </button>
+}
+else
+{
+<label class="alert-info">No vocabulary edition to manage.</label>
+}
+
+@code {
+
+    private List<EditableNoun>? _editedNouns;
+    private List<EditableVerb>? _editedVerbs;
+
+    protected override Task OnInitializedAsync()
+    {
+        _editedNouns = Manager.GetSessionEditedNouns();
+        _editedVerbs = Manager.GetSessionEditedVerbs();
+
+        return base.OnInitializedAsync();
+    }
+
+
+}

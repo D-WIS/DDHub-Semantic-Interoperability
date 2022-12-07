@@ -1,34 +1,41 @@
 ﻿@using DWIS.Vocabulary.Development.App.Shared;
 @inject IGitHubManager Manager;
 
-<h2>Edited use cases</h2>
+@if (_editedUseCases != null && _editedUseCases.Count > 0)
+{
+    <h2>Edited use cases</h2>
 
-<table>
-      <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Path</th>
-      <th scope="col">Commit</th>
-    </tr>
-  </thead>
-  <tbody>
-    @foreach(var u in _editedUseCases ?? new List<EditableUseCase>())
-    {
-    <tr>
-        <th scope="row">@u.EditedInstance.Name</th>
-        <td>@u.Path</td>
-        <td>
-            <button class="btn btn-primary" @onclick="()=>Manager.CommitChanges(u)">
-                Commit
-            </button>
-        </td>
-    </tr>
-    }
-    </tbody>
-</table>
-<button class="btn btn-primary" @onclick="()=>Manager.CommitAllChanges()">
-                Commit all changes
-</button>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Path</th>
+                <th scope="col">Commit</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var u in _editedUseCases ?? new List<EditableUseCase>())
+            {
+                <tr>
+                    <th scope="row">@u.EditedInstance.Name</th>
+                    <td>@u.Path</td>
+                    <td>
+                        <button class="btn btn-primary" @onclick="()=>Manager.CommitChanges(u)">
+                            Commit
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <button class="btn btn-primary" @onclick="()=>Manager.CommitAllUseCaseChanges()">
+        Commit all changes
+    </button>
+}
+else
+{
+    <label class="alert-info">No use-case edition to manage.</label>
+}
 
 @code {
     private List<EditableUseCase>? _editedUseCases;
