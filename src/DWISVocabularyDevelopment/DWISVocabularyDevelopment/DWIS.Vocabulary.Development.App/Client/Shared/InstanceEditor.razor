@@ -47,14 +47,20 @@
     private ElementReference codeTextArea;
     private bool _preventDefault = false;
 
-    protected override Task OnParametersSetAsync()
+    protected override async Task OnParametersSetAsync()
     {
         if (UseCase != null)
         {
             DWISInstance = UseCase.EditedInstance;
             _instanceCode = DWIS.Vocabulary.Utils.MDWriting.ToString(DWISInstance, DWIS.Vocabulary.Standard.VocabularyProvider.Vocabulary, false, false).Replace("- ", string.Empty);
+
+            if (DiagramManager.Manage(_instanceCode, DWISInstance, out string mermaidCode))
+            {
+                await JSRuntime.InvokeVoidAsync("renderMermaidDiagram", mermaidCode);
+            }
         }
-        return base.OnParametersSetAsync();
+        await base.OnParametersSetAsync();
+        //return Task.CompletedTask;
     }
 
 

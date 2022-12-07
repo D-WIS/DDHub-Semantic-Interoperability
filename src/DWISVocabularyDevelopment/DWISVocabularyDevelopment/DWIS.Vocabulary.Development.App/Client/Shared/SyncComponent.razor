@@ -1,0 +1,9 @@
+﻿@using DWIS.Vocabulary.Development.App.Shared;
+@inject IGitHubManager Manager;
+
+<hr />
+
+<button class="btn btn-primary my-3" type="button" @onclick="()=>Manager.SyncChanges()">Sync (merge request)</button>
+@code {
+
+}

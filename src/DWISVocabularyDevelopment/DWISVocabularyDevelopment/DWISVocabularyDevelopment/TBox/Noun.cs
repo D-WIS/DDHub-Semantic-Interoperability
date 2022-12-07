@@ -14,6 +14,22 @@ namespace DWIS.Vocabulary.Development
         public string Examples { get; set; }
         public string DefinitionSetName { get; set; }
 
+        public Noun()
+        { }
+
+        public Noun(Noun other)
+        {
+            Name = other.Name;
+            DisplayName = other.DisplayName;
+            ParentNounName = other.ParentNounName;
+            NounAttributes =other.NounAttributes != null ? other.NounAttributes.Select(na => new NounAttribute(na)).ToArray() : null;
+            SpecializedNounAttributes = other.SpecializedNounAttributes != null ? other.SpecializedNounAttributes.Select(na => new SpecializedNounAttribute(na)).ToArray() : null;
+            Description = other.Description;
+            Examples = other.Examples;
+            DefinitionSetName = other.DefinitionSetName;
+        }
+
+
         public string ToMDSnippet()
         {
             return string.Empty;
