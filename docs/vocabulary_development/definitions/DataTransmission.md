@@ -60,5 +60,5 @@
 - Parent verb: DWISVerb
 - Subject class: DrillingDataPoint
 - Object class: Telemetry
-- Description: 
+- Description: Expresses that a signal is transmitted by some given telemetry system
 - Examples: EMS DWOB is transmitted by WiredPipeTelemetry
