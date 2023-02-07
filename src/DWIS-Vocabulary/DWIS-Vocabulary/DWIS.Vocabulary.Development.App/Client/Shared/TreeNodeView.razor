@@ -76,7 +76,7 @@
         Verb verb = ((EditableVerb)Element).EditedVerb;
         <div class="card-body">
             <div class="input-group mb-3">
-                <label class="col-sm-2 col-form-label">Noun name</label>
+                <label class="col-sm-2 col-form-label">Verb name</label>
                 <div class="col-sm-10">
                     <input class="form-control" @bind="verb.Name"  @bind:event="oninput" readonly=@_readOnlyMode />
                 </div>
@@ -88,7 +88,7 @@
                 </div>
             </div>
             <div class="input-group mb-3">
-                <label class="col-sm-2 col-form-label">Parent noun name</label>
+                <label class="col-sm-2 col-form-label">Parent verb name</label>
                 <div class="col-sm-10">
                     <input class="form-control" @bind="verb.ParentVerbName" @bind:event="oninput" readonly=@_readOnlyMode />
                 </div>

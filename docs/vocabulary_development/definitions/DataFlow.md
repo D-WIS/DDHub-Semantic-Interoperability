@@ -15,6 +15,20 @@
 - Specialization:
 - Description: Denotes a complex computation unit, typically based on advanced numerical modeling
 - Examples:
+## Advisor <!-- NOUN -->
+- Display name: Advisor
+- Parent class: ComputationUnit
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## Simulator <!-- NOUN -->
+- Display name: Simulator
+- Parent class: ComputationUnit
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## Controller <!-- NOUN -->
 - Display name: Controller
 - Parent class: DataFlowNode
@@ -328,28 +342,35 @@
 - Description: 
 - Examples: 
 ## IsComputationInput <!-- VERB -->
-- Display name: IsComputationInput
+- Display name: Is Computation Input
 - Parent verb: HasFunction
 - Subject class: DrillingDataPoint
 - Object class: ComputationUnit
 - Description: 
 - Examples: 
 ## IsLimitFor <!-- VERB -->
-- Display name: IsLimitFor
+- Display name: Is Limit For
 - Parent verb: HasFunction
 - Subject class: DrillingDataPoint
 - Object class: ControlSystem
 - Description: 
 - Examples: 
 ## IsSetPointFor <!-- VERB -->
-- Display name: IsSetPointFor
+- Display name: Is Set-Point For
 - Parent verb: HasFunction
 - Subject class: DrillingDataPoint
 - Object class: Controller
 - Description: 
 - Examples: 
 ## IsSetPointRecommendationFor <!-- VERB -->
-- Display name: IsSetPointRecommendationFor
+- Display name: Is Set-Point Recommendation For
+- Parent verb: HasFunction
+- Subject class: DrillingDataPoint
+- Object class: ControlSystem
+- Description: 
+- Examples: 
+## IsSetPointAdviceFor <!-- VERB -->
+- Display name: Is Set-Point Advice For
 - Parent verb: HasFunction
 - Subject class: DrillingDataPoint
 - Object class: ControlSystem

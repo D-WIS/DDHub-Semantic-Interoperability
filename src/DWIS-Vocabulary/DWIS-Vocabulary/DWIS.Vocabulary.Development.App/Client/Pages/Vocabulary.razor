@@ -5,6 +5,62 @@
 
 @page "/vocabulary"
 
+Below is the vocabulary developed by the <a href="https://d-wis.org/d-wis-semantics-of-real-time-signals/">Semantics of real-time signals</a> D-WIS workstream.
+
+The vocabulary is a set of <i>Nouns</i> and <i>Verbs</i>. Nouns can be seen as types, or classes, while verbs correspond to relations between elements. 
+
+The vocabulary is used to build a semantic graph. 
+
+A noun is a structure comprised of 
+<dl>
+    <dt>Name</dt>
+    <dd>The unique name of the noun. It is used as an identifier.</dd>
+    <dt>Display name</dt>
+    <dd>A human readable version of the noun's name.</dd>
+    <dt>Parent noun name</dt>
+    <dd>Nouns obey a strict inheritance structure: they are sub-nouns (read sub-type or derived class) of a unique parent noun. All nouns except the root noun (DWISNoun) <em>must</em> have a parent noun. </dd>
+    <dt>Description</dt>
+    <dd>A human readable text that explains the meaning of the noun.</dd>
+    <dt>Attributes</dt>
+    <dd>
+        A set of attributes: those are field that any resource attached to the noun <em>must</em> have. An attribute is also a structure: 
+        <dl>
+            <dt>Name</dt>
+            <dd>The name of the attribute. </dd>
+            <dt> Data type</dt>
+            <dd>The type of the attribute. Only base types are considered here.</dd>
+            <dt>Description</dt>
+            <dd>A human readable text that explains the meaning of the attribute.</dd>
+        </dl>
+    </dd>
+    <dt>Specialization</dt>
+    <dd>A set of specialized attribute values. All resources attached to the noun have then predefined values for those attributes. A specialized attribute is also a simple structure:</dd>
+    <dl>
+        <dt>Attribute name</dt>
+        <dd>The name of the attribute whose value is predefined. </dd>
+        <dt>Attribute value</dt>
+        <dd>The specialized value.</dd>
+    </dl>
+</dl>
+
+A verb is also a structure:
+<dl>
+    <dt>Name</dt>
+    <dd>The unique name of the verb. It is used as an identifier.</dd>
+    <dt>Display name</dt>
+    <dd>A human readable version of the verb's name.</dd>
+    <dt>Parent verb name</dt>
+    <dd>Verbs obey a strict inheritance structure: they are sub-verb of a unique parent verb. All verbs except the root verb (DWISVerb) <em>must</em> have a parent verb. </dd>
+    <dt>Domain noun name</dt>
+    <dd>One can specify that verbs can only appear in sentences where the subject is attached to a certain noun: this is the domain noun.</dd>
+    <dt>Range noun name</dt>
+    <dd>One can specify that verbs can only appear in sentences where the object is attached to a certain noun: this is the range noun.</dd>
+    <dt>Minimum cardinality</dt>
+    <dd>One can specify that any resource attached to the domain noun should have <em>at least</em> a given number of relation using the current verb. This number is the minimum cardinality</dd>
+    <dt>Maximum cardinality.</dt>
+    <dd>One can specify that any resource attached to the domain noun should have <em>at most</em> a given number of relation using the current verb. This number is the maximum cardinality.</dd>
+</dl>
+<hr />
 
 <div>
     <div style="width: 50%; float: left;">
@@ -18,8 +74,8 @@
 </div>
 
 @code {
-    private Tree<EditableNoun> _NounsTree;
-    private Tree<EditableVerb> _verbsTree;
+    private Tree<EditableNoun>? _NounsTree;
+    private Tree<EditableVerb>? _verbsTree;
 
     protected override async Task OnInitializedAsync()
     {

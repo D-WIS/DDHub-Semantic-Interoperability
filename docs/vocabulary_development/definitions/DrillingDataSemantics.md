@@ -328,6 +328,13 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Specialization:
 - Description: 
 - Examples:
+## Advice <!-- NOUN -->
+- Display name: Advice
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## Limit <!-- NOUN -->
 - Display name: Limit
 - Parent class: DrillingDataPoint
