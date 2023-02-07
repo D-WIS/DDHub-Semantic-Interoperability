@@ -10,15 +10,15 @@ jobs:
     runs-on: windows-latest
     env:
       SOURCE_FOLDER: "${{ github.workspace }}\\docs\\vocabulary_development\\definitions"
-      SCRIPT_PATH: "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment.Actions"
+      SCRIPT_PATH: "${{ github.workspace }}\\src\\DWIS-Vocabulary\\DWIS-Vocabulary\\DWISVocabularyDevelopment.Actions"
       DESTINATION_FOLDER: "${{ github.workspace }}\\docs\\vocabulary_development\\auto-generated"
-      SCHEMA_FOLDER: "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWIS.Vocabulary.Schemas"
+      SCHEMA_FOLDER: "${{ github.workspace }}\\src\\DWIS-Vocabulary\\DWIS-Vocabulary\\DWIS.Vocabulary.Schemas"
       EXAMPLES_SOURCE_FOLDER: "${{ github.workspace }}\\docs\\vocabulary_development\\examples"
       PROJECTS_TO_PACK: "DWIS.Vocabulary.Development,DWIS.Vocabulary.OWL,DWIS.Vocabulary.Schemas,DWIS.Vocabulary.Utils"
       PACK_VERSION: "5"
       PACKAGE_OUTPUT_FOLDER: "${{ github.workspace }}\\packages"
       INCREMENT_VERSION: "true"
-      STANDARD_RESOURCE_FOLDER: "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWIS.Vocabulary.Standard\\Properties"
+      STANDARD_RESOURCE_FOLDER: "${{ github.workspace }}\\src\\DWIS-Vocabulary\\DWIS-Vocabulary\\DWIS.Vocabulary.Standard\\Properties"
       NUGET_SECRET_API: ${{ secrets.NUGET_SECRET_API }}
 
     
@@ -73,15 +73,15 @@ jobs:
 
       - name: Build and pack
         run: |
-          cd "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment"
+          cd "${{ github.workspace }}\\src\\DWIS-Vocabulary\\DWIS-Vocabulary\\DWISVocabularyDevelopment"
           dotnet pack --output $Env:PACKAGE_OUTPUT_FOLDER -p:PackageVersion=1.0."${{ github.run_number }}" 
-          cd "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\VocabularyUtils"
+          cd "${{ github.workspace }}\\src\\DWIS-Vocabulary\\DWIS-Vocabulary\\VocabularyUtils"
           dotnet pack --output $Env:PACKAGE_OUTPUT_FOLDER  -p:PackageVersion=1.0."${{ github.run_number }}" 
-          cd "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWISVocabulary.OWL"
+          cd "${{ github.workspace }}\\src\\DWIS-Vocabulary\\DWIS-Vocabulary\\DWISVocabulary.OWL"
           dotnet pack --output $Env:PACKAGE_OUTPUT_FOLDER -p:PackageVersion=1.0."${{ github.run_number }}" 
-          cd "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWIS.Vocabulary.Standard"
+          cd "${{ github.workspace }}\\src\\DWIS-Vocabulary\\DWIS-Vocabulary\\DWIS.Vocabulary.Standard"
           dotnet pack --output $Env:PACKAGE_OUTPUT_FOLDER -p:PackageVersion=1.0."${{ github.run_number }}" 
-          cd "${{ github.workspace }}\\src\\DWISVocabularyDevelopment\\DWISVocabularyDevelopment\\DWIS.Vocabulary.Schemas"
+          cd "${{ github.workspace }}\\src\\DWIS-Vocabulary\\DWIS-Vocabulary\\DWIS.Vocabulary.Schemas"
           dotnet pack --output $Env:PACKAGE_OUTPUT_FOLDER -p:PackageVersion=1.0."${{ github.run_number }}" 
       - name: 'Upload the generated packages as artifacts'
         uses: actions/upload-artifact@v3
