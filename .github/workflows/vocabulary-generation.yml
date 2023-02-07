@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push: # push must be changed to trigger after md's have been generated (workflow trigger?)
     paths:
-      - 'docs/vocabulary_developement/definitions/**.md' 
+      - 'docs/vocabulary_development/definitions/**.md' 
 
 jobs:
   generate_vocabulary:
