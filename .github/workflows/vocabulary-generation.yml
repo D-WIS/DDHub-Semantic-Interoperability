@@ -68,8 +68,8 @@ jobs:
           name: generated-md-files
           path: "${{ github.workspace }}/docs/vocabulary_development/auto-generated/md"
 
-      - name: Checkout modified repo
-        uses: actions/checkout@v2
+      #- name: Checkout modified repo
+      #  uses: actions/checkout@v2
 
       - name: Build and pack
         run: |
