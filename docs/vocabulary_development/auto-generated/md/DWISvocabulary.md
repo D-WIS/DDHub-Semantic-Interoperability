@@ -50,6 +50,22 @@
 - Description: Denotes a complex computation unit, typically based on advanced numerical modeling
 - Examples:
 - Definition set: DataFlow
+## Advisor <!-- NOUN -->
+- Display name: Advisor
+- Parent class: [ComputationUnit](#ComputationUnit)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## Simulator <!-- NOUN -->
+- Display name: Simulator
+- Parent class: [ComputationUnit](#ComputationUnit)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
 ## Controller <!-- NOUN -->
 - Display name: Controller
 - Parent class: [DataFlowNode](#DataFlowNode)
@@ -847,6 +863,14 @@
 - Definition set: DrillingDataSemantics
 ## Recommendation <!-- NOUN -->
 - Display name: Recommendation
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## Advice <!-- NOUN -->
+- Display name: Advice
 - Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
@@ -2525,7 +2549,7 @@
 - Examples: 
 - Definition set: DataFlow
 ## IsComputationInput <!-- VERB -->
-- Display name: IsComputationInput
+- Display name: Is Computation Input
 - Parent verb: [HasFunction](#HasFunction)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [ComputationUnit](#ComputationUnit)
@@ -2535,7 +2559,7 @@
 - Examples: 
 - Definition set: DataFlow
 ## IsLimitFor <!-- VERB -->
-- Display name: IsLimitFor
+- Display name: Is Limit For
 - Parent verb: [HasFunction](#HasFunction)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [ControlSystem](#ControlSystem)
@@ -2545,7 +2569,7 @@
 - Examples: 
 - Definition set: DataFlow
 ## IsSetPointFor <!-- VERB -->
-- Display name: IsSetPointFor
+- Display name: Is Set-Point For
 - Parent verb: [HasFunction](#HasFunction)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [Controller](#Controller)
@@ -2555,7 +2579,17 @@
 - Examples: 
 - Definition set: DataFlow
 ## IsSetPointRecommendationFor <!-- VERB -->
-- Display name: IsSetPointRecommendationFor
+- Display name: Is Set-Point Recommendation For
+- Parent verb: [HasFunction](#HasFunction)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [ControlSystem](#ControlSystem)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsSetPointAdviceFor <!-- VERB -->
+- Display name: Is Set-Point Advice For
 - Parent verb: [HasFunction](#HasFunction)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [ControlSystem](#ControlSystem)
@@ -2741,7 +2775,7 @@
 - Object class: [Telemetry](#Telemetry)
 - Min cardinality: -1
 - Max cardinality: -1
-- Description: 
+- Description: Expresses that a signal is transmitted by some given telemetry system
 - Examples: EMS DWOB is transmitted by WiredPipeTelemetry
 - Definition set: DataTransmission
 ## IsConditionedBy <!-- VERB -->

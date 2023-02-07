@@ -17,6 +17,22 @@
 - Description: Denotes a complex computation unit, typically based on advanced numerical modeling
 - Examples:
 - Definition set: DataFlow
+## Advisor <!-- NOUN -->
+- Display name: Advisor
+- Parent class: [ComputationUnit](./DataFlow.md#ComputationUnit)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## Simulator <!-- NOUN -->
+- Display name: Simulator
+- Parent class: [ComputationUnit](./DataFlow.md#ComputationUnit)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
 ## Controller <!-- NOUN -->
 - Display name: Controller
 - Parent class: [DataFlowNode](./DataFlow.md#DataFlowNode)
@@ -373,7 +389,7 @@
 - Examples: 
 - Definition set: DataFlow
 ## IsComputationInput <!-- VERB -->
-- Display name: IsComputationInput
+- Display name: Is Computation Input
 - Parent verb: [HasFunction](./DataFlow.md#HasFunction)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [ComputationUnit](./DataFlow.md#ComputationUnit)
@@ -383,7 +399,7 @@
 - Examples: 
 - Definition set: DataFlow
 ## IsLimitFor <!-- VERB -->
-- Display name: IsLimitFor
+- Display name: Is Limit For
 - Parent verb: [HasFunction](./DataFlow.md#HasFunction)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [ControlSystem](./DataFlow.md#ControlSystem)
@@ -393,7 +409,7 @@
 - Examples: 
 - Definition set: DataFlow
 ## IsSetPointFor <!-- VERB -->
-- Display name: IsSetPointFor
+- Display name: Is Set-Point For
 - Parent verb: [HasFunction](./DataFlow.md#HasFunction)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [Controller](./DataFlow.md#Controller)
@@ -403,7 +419,17 @@
 - Examples: 
 - Definition set: DataFlow
 ## IsSetPointRecommendationFor <!-- VERB -->
-- Display name: IsSetPointRecommendationFor
+- Display name: Is Set-Point Recommendation For
+- Parent verb: [HasFunction](./DataFlow.md#HasFunction)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [ControlSystem](./DataFlow.md#ControlSystem)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsSetPointAdviceFor <!-- VERB -->
+- Display name: Is Set-Point Advice For
 - Parent verb: [HasFunction](./DataFlow.md#HasFunction)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [ControlSystem](./DataFlow.md#ControlSystem)

@@ -22,6 +22,18 @@
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DataFlowNode" />
     <rdfs:comment xml:lang="EN">Denotes a complex computation unit, typically based on advanced numerical modeling</rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Advisor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ComputationUnit" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Simulator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ComputationUnit" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Controller">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DataFlowNode" />
@@ -575,6 +587,12 @@
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Recommendation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Advice">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
     <rdfs:comment xml:lang="EN">
@@ -2130,6 +2148,14 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsSetPointAdviceFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/ControlSystem" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsTransformationInput">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
@@ -2271,8 +2297,7 @@
     <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
     <rdfs:range rdf:resource="http://ddhub.no/Telemetry" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+    <rdfs:comment xml:lang="EN">Expresses that a signal is transmitted by some given telemetry system</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsConditionedBy">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />

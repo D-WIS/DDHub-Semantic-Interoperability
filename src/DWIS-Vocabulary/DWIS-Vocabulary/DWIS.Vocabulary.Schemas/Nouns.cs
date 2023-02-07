@@ -5,6 +5,8 @@ public static class Nouns
 {
 	public static string DataFlowNode = "DataFlowNode";
 	public static string ComputationUnit = "ComputationUnit";
+	public static string Advisor = "Advisor";
+	public static string Simulator = "Simulator";
 	public static string Controller = "Controller";
 	public static string ControlSystem = "ControlSystem";
 	public static string DrawWorksControlSystem = "DrawWorksControlSystem";
@@ -99,6 +101,7 @@ public static class Nouns
 	public static string SetPoint = "SetPoint";
 	public static string Command = "Command";
 	public static string Recommendation = "Recommendation";
+	public static string Advice = "Advice";
 	public static string Limit = "Limit";
 	public static string Measurement = "Measurement";
 	public static string DerivedMeasurement = "DerivedMeasurement";

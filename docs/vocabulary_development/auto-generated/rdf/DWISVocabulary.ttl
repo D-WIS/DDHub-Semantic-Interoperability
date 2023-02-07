@@ -26,6 +26,14 @@ ddhub:ActiveVolume a owl:Class;
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:DrillingDataPoint. 
 
+ddhub:Advice a owl:Class; 
+             rdfs:comment ""@EN; 
+             rdfs:subClassOf ddhub:DrillingDataPoint. 
+
+ddhub:Advisor a owl:Class; 
+              rdfs:comment ""@EN; 
+              rdfs:subClassOf ddhub:ComputationUnit. 
+
 ddhub:Aggregation a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:DirectTransformation. 
@@ -1083,6 +1091,12 @@ ddhub:IsResamplingInput a owl:ObjectProperty;
                         rdfs:range ddhub:Resampling; 
                         rdfs:subPropertyOf ddhub:IsTransformationInput. 
 
+ddhub:IsSetPointAdviceFor a owl:ObjectProperty; 
+                          rdfs:comment ""@EN; 
+                          rdfs:domain ddhub:DrillingDataPoint; 
+                          rdfs:range ddhub:ControlSystem; 
+                          rdfs:subPropertyOf ddhub:HasFunction. 
+
 ddhub:IsSetPointFor a owl:ObjectProperty; 
                     rdfs:comment ""@EN; 
                     rdfs:domain ddhub:DrillingDataPoint; 
@@ -1132,7 +1146,7 @@ ddhub:IsTransmissionOutput a owl:ObjectProperty;
                            rdfs:subPropertyOf ddhub:IsGeneratedBy. 
 
 ddhub:IsTransmittedBy a owl:ObjectProperty; 
-                      rdfs:comment ""@EN; 
+                      rdfs:comment "Expresses that a signal is transmitted by some given telemetry system"@EN; 
                       rdfs:domain ddhub:DrillingDataPoint; 
                       rdfs:range ddhub:Telemetry; 
                       rdfs:subPropertyOf ddhub:DWISVerb. 
@@ -1663,6 +1677,10 @@ ddhub:SignalProcessingUnit a owl:Class;
 ddhub:SignalUncertainty a owl:Class; 
                         rdfs:comment "Represent the uncertainty associated to a signal."@EN; 
                         rdfs:subClassOf ddhub:DWISNoun. 
+
+ddhub:Simulator a owl:Class; 
+                rdfs:comment ""@EN; 
+                rdfs:subClassOf ddhub:ComputationUnit. 
 
 ddhub:SIUnit a owl:DatatypeProperty, owl:FunctionalProperty; 
              rdfs:comment ""@EN; 
