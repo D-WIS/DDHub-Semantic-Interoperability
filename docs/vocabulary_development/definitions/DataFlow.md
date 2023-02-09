@@ -376,6 +376,34 @@
 - Object class: ControlSystem
 - Description: 
 - Examples: 
+## IsSetPointMinimumRecommendationFor <!-- VERB -->
+- Display name: Is Set-Point Minimum Recommendation For
+- Parent verb: HasFunction
+- Subject class: DrillingDataPoint
+- Object class: ControlSystem
+- Description: 
+- Examples: 
+## IsSetPointMinimumAdviceFor <!-- VERB -->
+- Display name: Is Set-Point Minimum Advice For
+- Parent verb: HasFunction
+- Subject class: DrillingDataPoint
+- Object class: ControlSystem
+- Description: 
+- Examples: 
+## IsSetPointMaximumRecommendationFor <!-- VERB -->
+- Display name: Is Set-Point Maximum Recommendation For
+- Parent verb: HasFunction
+- Subject class: DrillingDataPoint
+- Object class: ControlSystem
+- Description: 
+- Examples: 
+## IsSetPointMaximumAdviceFor <!-- VERB -->
+- Display name: Is Set-Point Maximum Advice For
+- Parent verb: HasFunction
+- Subject class: DrillingDataPoint
+- Object class: ControlSystem
+- Description: 
+- Examples: 
 ## IsTransformationInput <!-- VERB -->
 - Display name: IsTransformationInput
 - Parent verb: HasFunction

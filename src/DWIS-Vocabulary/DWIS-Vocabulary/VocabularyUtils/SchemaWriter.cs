@@ -26,6 +26,69 @@ namespace DWIS.Vocabulary.Utils
             });
         }
 
+        public static void WriteUnitsAndQuantitiesSchema(Development.Vocabulary vocabulary, DWISInstance instance, string unitsFileName, string quantitiesFileName)
+        {
+            if (vocabulary.GetNoun("Unit", out Noun unitNoun) && vocabulary.GetNoun("Quantity", out Noun quantityNoun))
+            {
+                List<string> written = new List<string>();
+                StringBuilder builder = new StringBuilder();
+
+                builder.AppendLine("using System;");
+                builder.AppendLine("namespace DWIS.Vocabulary.Schemas.UQ");
+                builder.AppendLine("{");
+                builder.AppendLine("public static class Units");
+                builder.AppendLine("{");
+
+                var units = instance.Population.Where(i => i.TypeName == unitNoun.Name);
+                foreach (var unit in units)
+                {
+                    string s = CorrectString(unit.Name);
+                    if (!written.Contains(s))
+                    {
+                        string line = $"\tpublic static string {s} = \"{s}\";";
+                        builder.AppendLine(line);
+                        written.Add(s);
+                    }
+                }
+
+                builder.AppendLine("}");
+                builder.AppendLine("}");
+
+                System.IO.File.WriteAllText(unitsFileName, builder.ToString());
+
+                builder = new StringBuilder();
+
+                builder.AppendLine("using System;");
+                builder.AppendLine("namespace DWIS.Vocabulary.Schemas.UQ");
+                builder.AppendLine("{");
+                builder.AppendLine("public static class Quantities");
+                builder.AppendLine("{");
+
+                var quantities = instance.Population.Where(i => i.TypeName == quantityNoun.Name);
+                foreach (var quantity in quantities)
+                {
+                    string s = CorrectString(quantity.Name);
+                    if (!written.Contains(s))
+                    {
+                        string line = $"\tpublic static string {s} = \"{s}\";";
+                    builder.AppendLine(line);
+                        written.Add(s);
+                    }
+                }
+
+                builder.AppendLine("}");
+                builder.AppendLine("}");
+
+                System.IO.File.WriteAllText(quantitiesFileName, builder.ToString());
+            } 
+        }
+
+
+        private static string CorrectString(string input)
+        {
+            return input.Replace("'", "").Replace(" ", "");
+        }
+
         public static void WriteSchema(Development.Vocabulary vocabulary, string nounsFileName, string verbsFileName, string attributesFileName)
         {
             StringBuilder builder = new StringBuilder();

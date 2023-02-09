@@ -328,10 +328,55 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Specialization:
 - Description: 
 - Examples:
+## RecommendedTarget <!-- NOUN -->
+- Display name: RecommendedTarget
+- Parent class: Recommendation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## RecommendedMinimum <!-- NOUN -->
+- Display name: RecommendedMinimum
+- Parent class: Recommendation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## RecommendedMaximum <!-- NOUN -->
+- Display name: RecommendedMaximum
+- Parent class: Recommendation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## Advice <!-- NOUN -->
 - Display name: Advice
 - Parent class: DrillingDataPoint
-- Attributes:
+- Attributes: 
+  - AdviceName
+    - Type: string
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+## AdvisedTarget <!-- NOUN -->
+- Display name: AdvisedTarget
+- Parent class: Advice
+- Attributes: 
+- Specialization:
+- Description: 
+- Examples:
+## AdvisedMinimum <!-- NOUN -->
+- Display name: AdvisedMinimum
+- Parent class: Advice
+- Attributes: 
+- Specialization:
+- Description: 
+- Examples:
+## AdvisedMaximum <!-- NOUN -->
+- Display name: AdvisedMaximum
+- Parent class: Advice
+- Attributes: 
 - Specialization:
 - Description: 
 - Examples:
