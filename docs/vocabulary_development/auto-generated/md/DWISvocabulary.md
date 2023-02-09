@@ -54,6 +54,9 @@
 - Display name: Advisor
 - Parent class: [ComputationUnit](#ComputationUnit)
 - Attributes:
+  - AdviceType
+    - Type: string
+    - Description: 
 - Specialization:
 - Description: 
 - Examples:
@@ -897,9 +900,6 @@
 - Display name: Advice
 - Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
-  - AdviceName
-    - Type: string
-    - Description: 
 - Specialization:
 - Description: 
 - Examples:

@@ -21,6 +21,9 @@
 - Display name: Advisor
 - Parent class: [ComputationUnit](./DataFlow.md#ComputationUnit)
 - Attributes:
+  - AdviceType
+    - Type: string
+    - Description: 
 - Specialization:
 - Description: 
 - Examples:

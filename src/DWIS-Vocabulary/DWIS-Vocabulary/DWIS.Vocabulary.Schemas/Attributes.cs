@@ -3,6 +3,8 @@ namespace DWIS.Vocabulary.Schemas
 {
 public static class Attributes
 {
+	public static string Advisor_AdviceType = "AdviceType";
+	public static string Advisor_AdviceType_Type = "string";
 	public static string BandPassFilter_MinFrequency = "MinFrequency";
 	public static string BandPassFilter_MinFrequency_Type = "double";
 	public static string BandPassFilter_MaxFrequency = "MaxFrequency";
@@ -37,8 +39,6 @@ public static class Attributes
 	public static string Telemetry_AverageDelayByRepeater_Type = "double";
 	public static string DrillingDataPoint_IsValid = "IsValid";
 	public static string DrillingDataPoint_IsValid_Type = "bool";
-	public static string Advice_AdviceName = "AdviceName";
-	public static string Advice_AdviceName_Type = "string";
 	public static string DrillingSignal_Value = "Value";
 	public static string DrillingSignal_Value_Type = "object";
 	public static string DynamicDrillingSignal_TimeStampAcquisition = "TimeStampAcquisition";

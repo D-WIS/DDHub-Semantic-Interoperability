@@ -30,9 +30,9 @@ ddhub:Advice a owl:Class;
              rdfs:comment ""@EN; 
              rdfs:subClassOf ddhub:DrillingDataPoint. 
 
-ddhub:AdviceName a owl:DatatypeProperty, owl:FunctionalProperty; 
+ddhub:AdviceType a owl:DatatypeProperty, owl:FunctionalProperty; 
                  rdfs:comment ""@EN; 
-                 rdfs:domain ddhub:Advice; 
+                 rdfs:domain ddhub:Advisor; 
                  rdfs:range xsd:string. 
 
 ddhub:AdvisedMaximum a owl:Class; 
@@ -409,7 +409,7 @@ ddhub:DrillStringCenterLineFrame a owl:Class;
 
 ddhub:DWISAttributeCardinalityRestriction a owl:Restriction; 
                                           owl:cardinality "1"^^xsd:nonNegativeInteger; 
-                                          owl:onProperty ddhub:MinFrequency. 
+                                          owl:onProperty ddhub:AdviceType. 
 
 ddhub:DWISNoun a owl:Class; 
                rdfs:comment """Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a "is a" relation between the instance node and the noun."""@EN. 

@@ -400,9 +400,6 @@
 - Display name: Advice
 - Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
-  - AdviceName
-    - Type: string
-    - Description: 
 - Specialization:
 - Description: 
 - Examples:
