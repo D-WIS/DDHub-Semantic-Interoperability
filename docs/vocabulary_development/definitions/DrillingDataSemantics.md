@@ -353,9 +353,6 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Display name: Advice
 - Parent class: DrillingDataPoint
 - Attributes: 
-  - AdviceName
-    - Type: string
-    - Description: 
 - Specialization:
 - Description: 
 - Examples:

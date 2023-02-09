@@ -19,6 +19,9 @@
 - Display name: Advisor
 - Parent class: ComputationUnit
 - Attributes:
+  - AdviceType
+    - Type: string
+    - Description: 
 - Specialization:
 - Description: 
 - Examples:
