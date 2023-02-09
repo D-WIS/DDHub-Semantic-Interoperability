@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DWIS.Vocabulary.Schemas\DWIS.Vocabulary.Schemas.csproj" />
     <ProjectReference Include="..\DWIS.Vocabulary.Standard\DWIS.Vocabulary.Standard.csproj" />
   </ItemGroup>
 
