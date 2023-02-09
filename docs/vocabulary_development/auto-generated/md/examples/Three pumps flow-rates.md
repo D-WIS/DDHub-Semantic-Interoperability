@@ -27,6 +27,7 @@
 - Derivation:Derivation_0
 - Derivation:Derivation_1
 - Derivation:Derivation_2
+- DrillingDataPoint:myTestPoint
 - DrillingDataPoint_0 IsDependentOn DrillingDataPoint_1
 - DrillingDataPoint_0 IsDependentOn DrillingDataPoint_2
 - DrillingDataPoint_3 IsDependentOn DrillingDataPoint_4
@@ -110,6 +111,7 @@ flowchart TD
 	Derivation_0([Derivation_0]) --> Derivation[[Derivation]]:::typeClass
 	Derivation_1([Derivation_1]) --> Derivation[[Derivation]]:::typeClass
 	Derivation_2([Derivation_2]) --> Derivation[[Derivation]]:::typeClass
+	myTestPoint([myTestPoint]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	 DrillingDataPoint_0 -- IsDependentOn --> DrillingDataPoint_1 
 	 DrillingDataPoint_0 -- IsDependentOn --> DrillingDataPoint_2 
 	 DrillingDataPoint_3 -- IsDependentOn --> DrillingDataPoint_4 

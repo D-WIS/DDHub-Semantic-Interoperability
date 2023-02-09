@@ -372,6 +372,14 @@
 - Description: 
 - Examples:
 - Definition set: DrillingDataSemantics
+## Advice <!-- NOUN -->
+- Display name: Advice
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
 ## Limit <!-- NOUN -->
 - Display name: Limit
 - Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)

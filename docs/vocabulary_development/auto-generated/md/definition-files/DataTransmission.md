@@ -66,6 +66,6 @@
 - Object class: [Telemetry](./DataTransmission.md#Telemetry)
 - Min cardinality: -1
 - Max cardinality: -1
-- Description: 
+- Description: Expresses that a signal is transmitted by some given telemetry system
 - Examples: EMS DWOB is transmitted by WiredPipeTelemetry
 - Definition set: DataTransmission
