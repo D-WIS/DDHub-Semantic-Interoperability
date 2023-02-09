@@ -438,6 +438,46 @@
 - Description: 
 - Examples: 
 - Definition set: DataFlow
+## IsSetPointMinimumRecommendationFor <!-- VERB -->
+- Display name: Is Set-Point Minimum Recommendation For
+- Parent verb: [HasFunction](./DataFlow.md#HasFunction)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [ControlSystem](./DataFlow.md#ControlSystem)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsSetPointMinimumAdviceFor <!-- VERB -->
+- Display name: Is Set-Point Minimum Advice For
+- Parent verb: [HasFunction](./DataFlow.md#HasFunction)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [ControlSystem](./DataFlow.md#ControlSystem)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsSetPointMaximumRecommendationFor <!-- VERB -->
+- Display name: Is Set-Point Maximum Recommendation For
+- Parent verb: [HasFunction](./DataFlow.md#HasFunction)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [ControlSystem](./DataFlow.md#ControlSystem)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsSetPointMaximumAdviceFor <!-- VERB -->
+- Display name: Is Set-Point Maximum Advice For
+- Parent verb: [HasFunction](./DataFlow.md#HasFunction)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [ControlSystem](./DataFlow.md#ControlSystem)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
 ## IsTransformationInput <!-- VERB -->
 - Display name: IsTransformationInput
 - Parent verb: [HasFunction](./DataFlow.md#HasFunction)

@@ -101,7 +101,13 @@ public static class Nouns
 	public static string SetPoint = "SetPoint";
 	public static string Command = "Command";
 	public static string Recommendation = "Recommendation";
+	public static string RecommendedTarget = "RecommendedTarget";
+	public static string RecommendedMinimum = "RecommendedMinimum";
+	public static string RecommendedMaximum = "RecommendedMaximum";
 	public static string Advice = "Advice";
+	public static string AdvisedTarget = "AdvisedTarget";
+	public static string AdvisedMinimum = "AdvisedMinimum";
+	public static string AdvisedMaximum = "AdvisedMaximum";
 	public static string Limit = "Limit";
 	public static string Measurement = "Measurement";
 	public static string DerivedMeasurement = "DerivedMeasurement";

@@ -869,9 +869,60 @@
 - Description: 
 - Examples:
 - Definition set: DrillingDataSemantics
+## RecommendedTarget <!-- NOUN -->
+- Display name: RecommendedTarget
+- Parent class: [Recommendation](#Recommendation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## RecommendedMinimum <!-- NOUN -->
+- Display name: RecommendedMinimum
+- Parent class: [Recommendation](#Recommendation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## RecommendedMaximum <!-- NOUN -->
+- Display name: RecommendedMaximum
+- Parent class: [Recommendation](#Recommendation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
 ## Advice <!-- NOUN -->
 - Display name: Advice
 - Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+  - AdviceName
+    - Type: string
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## AdvisedTarget <!-- NOUN -->
+- Display name: AdvisedTarget
+- Parent class: [Advice](#Advice)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## AdvisedMinimum <!-- NOUN -->
+- Display name: AdvisedMinimum
+- Parent class: [Advice](#Advice)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## AdvisedMaximum <!-- NOUN -->
+- Display name: AdvisedMaximum
+- Parent class: [Advice](#Advice)
 - Attributes:
 - Specialization:
 - Description: 
@@ -2590,6 +2641,46 @@
 - Definition set: DataFlow
 ## IsSetPointAdviceFor <!-- VERB -->
 - Display name: Is Set-Point Advice For
+- Parent verb: [HasFunction](#HasFunction)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [ControlSystem](#ControlSystem)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsSetPointMinimumRecommendationFor <!-- VERB -->
+- Display name: Is Set-Point Minimum Recommendation For
+- Parent verb: [HasFunction](#HasFunction)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [ControlSystem](#ControlSystem)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsSetPointMinimumAdviceFor <!-- VERB -->
+- Display name: Is Set-Point Minimum Advice For
+- Parent verb: [HasFunction](#HasFunction)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [ControlSystem](#ControlSystem)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsSetPointMaximumRecommendationFor <!-- VERB -->
+- Display name: Is Set-Point Maximum Recommendation For
+- Parent verb: [HasFunction](#HasFunction)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [ControlSystem](#ControlSystem)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsSetPointMaximumAdviceFor <!-- VERB -->
+- Display name: Is Set-Point Maximum Advice For
 - Parent verb: [HasFunction](#HasFunction)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [ControlSystem](#ControlSystem)

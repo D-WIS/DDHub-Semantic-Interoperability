@@ -15,6 +15,10 @@ public static class Verbs
 	public static string IsSetPointFor = "IsSetPointFor";
 	public static string IsSetPointRecommendationFor = "IsSetPointRecommendationFor";
 	public static string IsSetPointAdviceFor = "IsSetPointAdviceFor";
+	public static string IsSetPointMinimumRecommendationFor = "IsSetPointMinimumRecommendationFor";
+	public static string IsSetPointMinimumAdviceFor = "IsSetPointMinimumAdviceFor";
+	public static string IsSetPointMaximumRecommendationFor = "IsSetPointMaximumRecommendationFor";
+	public static string IsSetPointMaximumAdviceFor = "IsSetPointMaximumAdviceFor";
 	public static string IsTransformationInput = "IsTransformationInput";
 	public static string IsBufferingInput = "IsBufferingInput";
 	public static string IsDerivationInput = "IsDerivationInput";

@@ -30,6 +30,23 @@ ddhub:Advice a owl:Class;
              rdfs:comment ""@EN; 
              rdfs:subClassOf ddhub:DrillingDataPoint. 
 
+ddhub:AdviceName a owl:DatatypeProperty, owl:FunctionalProperty; 
+                 rdfs:comment ""@EN; 
+                 rdfs:domain ddhub:Advice; 
+                 rdfs:range xsd:string. 
+
+ddhub:AdvisedMaximum a owl:Class; 
+                     rdfs:comment ""@EN; 
+                     rdfs:subClassOf ddhub:Advice. 
+
+ddhub:AdvisedMinimum a owl:Class; 
+                     rdfs:comment ""@EN; 
+                     rdfs:subClassOf ddhub:Advice. 
+
+ddhub:AdvisedTarget a owl:Class; 
+                    rdfs:comment ""@EN; 
+                    rdfs:subClassOf ddhub:Advice. 
+
 ddhub:Advisor a owl:Class; 
               rdfs:comment ""@EN; 
               rdfs:subClassOf ddhub:ComputationUnit. 
@@ -1103,6 +1120,30 @@ ddhub:IsSetPointFor a owl:ObjectProperty;
                     rdfs:range ddhub:Controller; 
                     rdfs:subPropertyOf ddhub:HasFunction. 
 
+ddhub:IsSetPointMaximumAdviceFor a owl:ObjectProperty; 
+                                 rdfs:comment ""@EN; 
+                                 rdfs:domain ddhub:DrillingDataPoint; 
+                                 rdfs:range ddhub:ControlSystem; 
+                                 rdfs:subPropertyOf ddhub:HasFunction. 
+
+ddhub:IsSetPointMaximumRecommendationFor a owl:ObjectProperty; 
+                                         rdfs:comment ""@EN; 
+                                         rdfs:domain ddhub:DrillingDataPoint; 
+                                         rdfs:range ddhub:ControlSystem; 
+                                         rdfs:subPropertyOf ddhub:HasFunction. 
+
+ddhub:IsSetPointMinimumAdviceFor a owl:ObjectProperty; 
+                                 rdfs:comment ""@EN; 
+                                 rdfs:domain ddhub:DrillingDataPoint; 
+                                 rdfs:range ddhub:ControlSystem; 
+                                 rdfs:subPropertyOf ddhub:HasFunction. 
+
+ddhub:IsSetPointMinimumRecommendationFor a owl:ObjectProperty; 
+                                         rdfs:comment ""@EN; 
+                                         rdfs:domain ddhub:DrillingDataPoint; 
+                                         rdfs:range ddhub:ControlSystem; 
+                                         rdfs:subPropertyOf ddhub:HasFunction. 
+
 ddhub:IsSetPointRecommendationFor a owl:ObjectProperty; 
                                   rdfs:comment ""@EN; 
                                   rdfs:domain ddhub:DrillingDataPoint; 
@@ -1576,6 +1617,18 @@ ddhub:RangeExtraction a owl:Class;
 ddhub:Recommendation a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:DrillingDataPoint. 
+
+ddhub:RecommendedMaximum a owl:Class; 
+                         rdfs:comment ""@EN; 
+                         rdfs:subClassOf ddhub:Recommendation. 
+
+ddhub:RecommendedMinimum a owl:Class; 
+                         rdfs:comment ""@EN; 
+                         rdfs:subClassOf ddhub:Recommendation. 
+
+ddhub:RecommendedTarget a owl:Class; 
+                        rdfs:comment ""@EN; 
+                        rdfs:subClassOf ddhub:Recommendation. 
 
 ddhub:RectangularChannel a owl:Class; 
                          rdfs:comment ""@EN; 

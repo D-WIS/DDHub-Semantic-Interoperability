@@ -372,9 +372,60 @@
 - Description: 
 - Examples:
 - Definition set: DrillingDataSemantics
+## RecommendedTarget <!-- NOUN -->
+- Display name: RecommendedTarget
+- Parent class: [Recommendation](./DrillingDataSemantics.md#Recommendation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## RecommendedMinimum <!-- NOUN -->
+- Display name: RecommendedMinimum
+- Parent class: [Recommendation](./DrillingDataSemantics.md#Recommendation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## RecommendedMaximum <!-- NOUN -->
+- Display name: RecommendedMaximum
+- Parent class: [Recommendation](./DrillingDataSemantics.md#Recommendation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
 ## Advice <!-- NOUN -->
 - Display name: Advice
 - Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+  - AdviceName
+    - Type: string
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## AdvisedTarget <!-- NOUN -->
+- Display name: AdvisedTarget
+- Parent class: [Advice](./DrillingDataSemantics.md#Advice)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## AdvisedMinimum <!-- NOUN -->
+- Display name: AdvisedMinimum
+- Parent class: [Advice](./DrillingDataSemantics.md#Advice)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## AdvisedMaximum <!-- NOUN -->
+- Display name: AdvisedMaximum
+- Parent class: [Advice](./DrillingDataSemantics.md#Advice)
 - Attributes:
 - Specialization:
 - Description: 
