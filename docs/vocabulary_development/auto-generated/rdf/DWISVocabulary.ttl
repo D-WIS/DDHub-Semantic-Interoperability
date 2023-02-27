@@ -376,7 +376,7 @@ ddhub:DrillingEquipment a owl:Class;
                         rdfs:subClassOf ddhub:DWISNoun. 
 
 ddhub:DrillingSignal a owl:Class; 
-                     rdfs:comment "Data structure used to store the steaming drilling data."@EN; 
+                     rdfs:comment "Data structure used to store the streaming drilling data."@EN; 
                      rdfs:subClassOf ddhub:DWISNoun. 
 
 ddhub:DrillLine a owl:Class; 
@@ -1330,7 +1330,7 @@ ddhub:MeasuredDepthTranslation a owl:Class;
                                rdfs:subClassOf ddhub:DirectTransformation. 
 
 ddhub:Measurement a owl:Class; 
-                  rdfs:comment ""@EN; 
+                  rdfs:comment "The noun Measurement represents individuals that are measured by some instrument and which value can be compared with another measurement."@EN; 
                   rdfs:subClassOf ddhub:DrillingDataPoint. 
 
 ddhub:MeasurementDevice a owl:Class; 
@@ -1872,9 +1872,14 @@ ddhub:TimeBasedTransformation a owl:Class;
                               rdfs:subClassOf ddhub:Transformation. 
 
 ddhub:TimeStampAcquisition a owl:DatatypeProperty, owl:FunctionalProperty; 
-                           rdfs:comment ""@EN; 
+                           rdfs:comment "this is a UTC date-time value at which the value has been acquired by the data acquisition system."@EN; 
                            rdfs:domain ddhub:DynamicDrillingSignal; 
                            rdfs:range xsd:datetime. 
+
+ddhub:TimeStampAtSource a owl:DatatypeProperty, owl:FunctionalProperty; 
+                        rdfs:comment "this is a UTC date-time value corresponding to the time at which the value has been taken."@EN; 
+                        rdfs:domain ddhub:DynamicDrillingSignal; 
+                        rdfs:range xsd:datetime. 
 
 ddhub:TimeWindow a owl:DatatypeProperty, owl:FunctionalProperty; 
                  rdfs:comment ""@EN; 
