@@ -643,8 +643,7 @@
   <rdf:Description rdf:about="http://ddhub.no/Measurement">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+    <rdfs:comment xml:lang="EN">The noun Measurement represents individuals that are measured by some instrument and which value can be compared with another measurement.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DerivedMeasurement">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
@@ -667,7 +666,7 @@
   <rdf:Description rdf:about="http://ddhub.no/DrillingSignal">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:comment xml:lang="EN">Data structure used to store the steaming drilling data.</rdfs:comment>
+    <rdfs:comment xml:lang="EN">Data structure used to store the streaming drilling data.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DynamicDrillingSignal">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
@@ -1804,13 +1803,19 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TimeStampAtSource">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DynamicDrillingSignal" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#datetime" />
+    <rdfs:comment xml:lang="EN">this is a UTC date-time value corresponding to the time at which the value has been taken.</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/TimeStampAcquisition">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DynamicDrillingSignal" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#datetime" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+    <rdfs:comment xml:lang="EN">this is a UTC date-time value at which the value has been acquired by the data acquisition system.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/EndPointDescription">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />

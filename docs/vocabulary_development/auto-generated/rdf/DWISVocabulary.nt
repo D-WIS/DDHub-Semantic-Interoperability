@@ -680,11 +680,11 @@
 <http://ddhub.no/AdvisedMinimum> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/AdvisedMaximum> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/Limit> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/Measurement> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/Measurement> <http://www.w3.org/2000/01/rdf-schema#comment> "The noun Measurement represents individuals that are measured by some instrument and which value can be compared with another measurement."@EN .
 <http://ddhub.no/DerivedMeasurement> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/CorrectedMeasurement> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/ComputedData> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/DrillingSignal> <http://www.w3.org/2000/01/rdf-schema#comment> "Data structure used to store the steaming drilling data."@EN .
+<http://ddhub.no/DrillingSignal> <http://www.w3.org/2000/01/rdf-schema#comment> "Data structure used to store the streaming drilling data."@EN .
 <http://ddhub.no/DynamicDrillingSignal> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/DrillingEquipment> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/ActivePit> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
@@ -925,6 +925,10 @@
 <http://ddhub.no/Value> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <http://ddhub.no/Value> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingSignal> .
 <http://ddhub.no/Value> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#object> .
+<http://ddhub.no/TimeStampAtSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ddhub.no/TimeStampAtSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ddhub.no/TimeStampAtSource> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DynamicDrillingSignal> .
+<http://ddhub.no/TimeStampAtSource> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#datetime> .
 <http://ddhub.no/TimeStampAcquisition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://ddhub.no/TimeStampAcquisition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <http://ddhub.no/TimeStampAcquisition> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DynamicDrillingSignal> .
@@ -1517,7 +1521,8 @@
 <http://ddhub.no/AverageDelayByRepeater> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/IsValid> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/Value> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/TimeStampAcquisition> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/TimeStampAtSource> <http://www.w3.org/2000/01/rdf-schema#comment> "this is a UTC date-time value corresponding to the time at which the value has been taken."@EN .
+<http://ddhub.no/TimeStampAcquisition> <http://www.w3.org/2000/01/rdf-schema#comment> "this is a UTC date-time value at which the value has been acquired by the data acquisition system."@EN .
 <http://ddhub.no/EndPointDescription> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/WellUID> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/WellName> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
