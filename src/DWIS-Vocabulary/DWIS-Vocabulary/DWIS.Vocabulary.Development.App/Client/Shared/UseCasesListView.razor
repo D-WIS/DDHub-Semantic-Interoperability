@@ -8,10 +8,36 @@ Below is the list of use cases stored in the main branch of the repository.
 </p>
 
 <hr />
-Add a new use case: <button @onclick="() => Manager.AddUseCase(_newUseCaseName) "><img src="/css/open-iconic/svg/plus.svg" class="img-fluid ml-3 mr-3" height="20" width="20" />  <input class="form-control" type="text" @bind="_newUseCaseName" /></button>
+<div class="d-flex">
+<MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Add" @onclick="() => Manager.AddUseCase(_newUseCaseName)">Add </MudButton>
+    <MudTextField @bind-Value="_newUseCaseName" Label="Standard" Variant="Variant.Text" Class="d-flex ml-auto"></MudTextField>
+</div>
+@*Add a new use case: <button @onclick="() => Manager.AddUseCase(_newUseCaseName) "><img src="/css/open-iconic/svg/plus.svg" class="img-fluid ml-3 mr-3" height="20" width="20" />  <input class="form-control" type="text" @bind="_newUseCaseName" /></button>*@
 
 <hr />
-    <table class="table table-striped  table-hover">
+@if (_useCases != null)
+{
+    <MudTable T="EditableUseCase" Items="_useCases">
+        <HeaderContent>
+            <MudTh>Name</MudTh>
+            <MudTh>Store path</MudTh>
+            <MudTh>Edit</MudTh>
+            <MudTh>Delete</MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Name">@context.StoredInstance.Name</MudTd>
+            <MudTd DataLabel="Path">@context.Path</MudTd>
+            <MudTd>
+                <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Edit" @onclick="() => _current = context"></MudButton>
+            </MudTd>
+            <MudTd>
+                <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Delete" @onclick="() => _useCases?.Remove(context)"></MudButton>
+            </MudTd>
+        </RowTemplate>
+    </MudTable>
+}
+
+  @*  <table class="table table-striped  table-hover">
         <thead>
             <tr>
                 <th>Name</th>
@@ -38,8 +64,8 @@ Add a new use case: <button @onclick="() => Manager.AddUseCase(_newUseCaseName) 
             </tr>
             }
         </tbody>
-        </table>
-
+        </table>*@
+     
 
 
 <InstanceEditor UseCase="_current"></InstanceEditor>
