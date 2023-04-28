@@ -1,22 +1,96 @@
 ﻿@using DWIS.Vocabulary.Development;
-<div class="card-body">
-    <h5>Noun name</h5>
-<input class="form-control" @bind ="EditedNoun.Name"  @bind:event ="oninput" />
-    <h5>Display name</h5>
+@using DWIS.Vocabulary.Development.App.Shared;
+@inject IGitHubManager Manager;
 
-<input class="form-control" @bind="EditedNoun.DisplayName" @bind:event="oninput" />
-    <h5>Parent noun name</h5>
+<MudGrid>
+    <MudItem xs="1">
+        <MudButton StartIcon="@Icons.Material.Filled.Edit" OnClick="()=>SetEdited()"></MudButton>
+    </MudItem>
+    <MudItem xs="11">
+        <MudTextField @bind-Value="EditedNoun.Name" Label="Name" ReadOnly="@_readOnly" Variant="Variant.Outlined" />
+    </MudItem>
+    <MudItem xs="6">
+        <MudTextField @bind-Value="EditedNoun.DisplayName" Label="Display name" ReadOnly="@_readOnly" Variant="Variant.Outlined" />
+    </MudItem>
+    <MudItem xs="6">
+        <MudSelect @bind-Value="EditedNoun.ParentNounName"  ReadOnly="@_readOnly" HelperText="Parent noun" T="string" Label="Parent noun">
+            @foreach(var n in GetNouns().Result)
+            {
+                <MudSelectItem Value="n.Name">@n.Name</MudSelectItem>
+            }
+        </MudSelect>
+    </MudItem>
 
-<input class="form-control" @bind="EditedNoun.ParentNounName" @bind:event="oninput" />
-    <h5>Description</h5>
+    <MudItem xs="12">
+        <MudTable Items="EditedNoun.NounAttributes" T="NounAttribute">
+            <ToolBarContent>
+                <MudText Typo="Typo.h6">Attributes</MudText>
+                <MudSpacer></MudSpacer>
+                <MudButton EndIcon="@Icons.Material.Filled.Add" OnClick="()=>AddAttribute()" Disabled=_readOnly></MudButton>
+            </ToolBarContent>
+            <HeaderContent>
+                <MudTh>Name</MudTh>
+                <MudTh>Display name</MudTh>
+                <MudTh>Type</MudTh>
+                <MudTh>Description</MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd DataLabel="Name">@context.Name</MudTd>
+                <MudTd DataLabel="Display Name">@context.DisplayName</MudTd>
+                <MudTd DataLabel="Type">@context.Type</MudTd>
+                <MudTd DataLabel="Description">@context.Description</MudTd>
+            </RowTemplate>
+            <RowEditingTemplate>
+                <MudTd DataLabel="Name"> <MudTextField @bind-Value="@context.Name" ReadOnly="_readOnly" Required /></MudTd>
+                <MudTd DataLabel="Display Name"> <MudTextField @bind-Value="@context.DisplayName" ReadOnly="_readOnly"  /></MudTd>
+                <MudTd DataLabel="Type"> <MudTextField @bind-Value="@context.Type" ReadOnly="_readOnly" Required /></MudTd>
+                <MudTd DataLabel="Description"> <MudTextField @bind-Value="@context.Description" ReadOnly="_readOnly"  /></MudTd>
+            </RowEditingTemplate>
+        </MudTable>
+    </MudItem>
+    <MudItem xs="12">
+        <MudTextField Lines="5" @bind-Value="EditedNoun.Description" Label="Description" ReadOnly="@_readOnly" Variant="Variant.Outlined" />
+    </MudItem>
+    <MudItem xs="12">
+        <MudTextField @bind-Value="EditedNoun.DefinitionSetName" Label="Definition set file" ReadOnly="@true" Variant="Variant.Outlined" />
+    </MudItem>
+</MudGrid>
 
-<input class="form-text" @bind="EditedNoun.Description" @bind:event="oninput" />
 
-</div>
+
 
 @code {
     [Parameter]
-    public Noun EditedNoun {get;set;}
+    public EditableNoun EditedNoun {get;set;}
 
+    protected override Task OnParametersSetAsync()
+    {
+        if (EditedNoun.NounAttributes == null)
+        {
 
+            EditedNoun.NounAttributes = new NounAttribute[0];
+        }
+        return base.OnParametersSetAsync();
+    }
+
+    private bool _editMode = false;
+    private bool _readOnly => !_editMode;
+
+    private async Task SetEdited()
+    {
+        _editMode = true;
+        EditedNoun.Edited = true;
+    }
+    private async Task AddAttribute()
+    {
+        NounAttribute attribute = new NounAttribute() { Name = "New attribute", Type = "object" };
+        var ats = EditedNoun.NounAttributes.ToList();
+        ats.Add(attribute);
+        EditedNoun.NounAttributes = ats.ToArray();
+    }
+    private async Task<List<EditableNoun>> GetNouns()
+    {
+        var nv = await Manager.GetNounsAndVerbs();
+        return nv.nouns.ToList().Where(n => n.Name != EditedNoun.Name).ToList();
+    }
 }

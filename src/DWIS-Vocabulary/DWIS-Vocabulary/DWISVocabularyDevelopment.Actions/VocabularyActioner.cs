@@ -126,9 +126,6 @@ namespace DWIS.Vocabulary.Development.Actions
                 {
                     _logger.Log(LogLevel.Error, $"Nouns tags {nounTagsCount} vs {_vocabulary.Nouns.Count})");
 
-
-
-
                     VocabularyParsing.GetTags(_paths.VocabularySourceFolder, out var nounTags, out var verbsTags);
 
                     int disctinct = nounTags.Distinct().Count();
