@@ -389,7 +389,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
-- Description: 
+- Description: The noun Measurement represents individuals that are measured by some instrument and which value can be compared with another measurement.
 - Examples:
 ## DerivedMeasurement <!-- NOUN -->
 - Display name: DerivedMeasurement
@@ -420,15 +420,18 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     - Type: object
     - Description: 
 - Specialization:
-- Description: Data structure used to store the steaming drilling data. 
+- Description: Data structure used to store the streaming drilling data. 
 - Examples:
 ## DynamicDrillingSignal <!-- NOUN -->
 - Display name: DynamicDrillingSignal
 - Parent class: DrillingSignal
 - Attributes:
+  - TimeStampAtSource
+    - Type: DateTime
+    - Description: this is a UTC date-time value corresponding to the time at which the value has been taken.
   - TimeStampAcquisition
     - Type: DateTime
-    - Description: 
+    - Description: this is a UTC date-time value at which the value has been acquired by the data acquisition system.
 - Specialization:
 - Description: 
 - Examples:

@@ -441,7 +441,7 @@
 - Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Attributes:
 - Specialization:
-- Description: 
+- Description: The noun Measurement represents individuals that are measured by some instrument and which value can be compared with another measurement.
 - Examples:
 - Definition set: DrillingDataSemantics
 ## DerivedMeasurement <!-- NOUN -->
@@ -476,16 +476,19 @@
     - Type: object
     - Description: 
 - Specialization:
-- Description: Data structure used to store the steaming drilling data.
+- Description: Data structure used to store the streaming drilling data.
 - Examples:
 - Definition set: DrillingDataSemantics
 ## DynamicDrillingSignal <!-- NOUN -->
 - Display name: DynamicDrillingSignal
 - Parent class: [DrillingSignal](./DrillingDataSemantics.md#DrillingSignal)
 - Attributes:
+  - TimeStampAtSource
+    - Type: DateTime
+    - Description: this is a UTC date-time value corresponding to the time at which the value has been taken.
   - TimeStampAcquisition
     - Type: DateTime
-    - Description: 
+    - Description: this is a UTC date-time value at which the value has been acquired by the data acquisition system.
 - Specialization:
 - Description: 
 - Examples:

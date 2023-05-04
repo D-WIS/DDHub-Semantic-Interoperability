@@ -41,6 +41,8 @@ public static class Attributes
 	public static string DrillingDataPoint_IsValid_Type = "bool";
 	public static string DrillingSignal_Value = "Value";
 	public static string DrillingSignal_Value_Type = "object";
+	public static string DynamicDrillingSignal_TimeStampAtSource = "TimeStampAtSource";
+	public static string DynamicDrillingSignal_TimeStampAtSource_Type = "DateTime";
 	public static string DynamicDrillingSignal_TimeStampAcquisition = "TimeStampAcquisition";
 	public static string DynamicDrillingSignal_TimeStampAcquisition_Type = "DateTime";
 	public static string DataEndPoint_EndPointDescription = "EndPointDescription";

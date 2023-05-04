@@ -24,6 +24,9 @@ namespace DWIS.Vocabulary.Development.App.Shared
         public GitHubManager(ILogger<GitHubManager>? logger)
         {
             _logger = logger;
+            _userName = string.Empty;
+            _userLogin = string.Empty;
+            _repoID = 0;
         }
 
         public async Task<bool> CommitAllUseCaseChanges()
@@ -272,7 +275,7 @@ namespace DWIS.Vocabulary.Development.App.Shared
             try
             {
                 var branches = await _gitHubClient.Repository.Branch.GetAll(_repoID);                
-
+                
                 return branches.Where(b => b.Name == GetBranchName()).Select(b => b.Name).ToList();
             }
             catch (Exception e)
