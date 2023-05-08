@@ -491,14 +491,14 @@ namespace DWIS.Vocabulary.Utils
                         if (l.Contains('.'))
                         {
                             int idx = l.IndexOf('.');
-                            if (idx>0)
+                            if (idx > 0)
                             {
                                 var instName = l.Substring(0, idx);
                                 var res = instance.Population.FirstOrDefault(t => t.Name == instName.Trim());
                                 if (res != null)
                                 {
                                     found = true;
-                                    var rest = l.Substring(idx + 1, l.Length - idx -1);
+                                    var rest = l.Substring(idx + 1, l.Length - idx - 1);
                                     if (rest.Contains('='))
                                     {
                                         string propertyName = rest.Split('=')[0].Trim();
@@ -529,7 +529,7 @@ namespace DWIS.Vocabulary.Utils
                             }
                             else
                             {
-                                var els = l.Split(' ');
+                                var els = l.Split(' ', System.StringSplitOptions.RemoveEmptyEntries);
                                 if (els.Length == 3)
                                 {
                                     var s = els[0].Trim();
@@ -555,6 +555,14 @@ namespace DWIS.Vocabulary.Utils
                                             {
                                                 instance.Sentences.Add(new Sentence(subject, verb, sentenceObjecT));
                                             }
+                                            else
+                                            {
+                                                var nounObject = vocabulary.Nouns.FirstOrDefault(i => i.Name == o);
+                                                if (nounObject != null)
+                                                {
+                                                    instance.ImplicitSentences.Add(new ImplicitSentence(subject, verb, nounObject));
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -573,7 +581,7 @@ namespace DWIS.Vocabulary.Utils
             instance.Population = new SimplePopulation();
             instance.Sentences = new SimpleSentenceCollection();
             instance.ClassAssertions = new SimpleClassAssertionCollection();
-
+            instance.ImplicitSentences = new SimpleImplicitSentenceCollection();
             string[] allLines = System.IO.File.ReadAllLines(fileName);
 
             return FromLines(allLines, vocabulary, instance);
@@ -585,6 +593,7 @@ namespace DWIS.Vocabulary.Utils
             instance.Population = new SimplePopulation();
             instance.Sentences = new SimpleSentenceCollection();
             instance.ClassAssertions = new SimpleClassAssertionCollection();
+            instance.ImplicitSentences = new SimpleImplicitSentenceCollection();
 
             //string[] allLines = System.IO.File.ReadAllLines(fileName);
 

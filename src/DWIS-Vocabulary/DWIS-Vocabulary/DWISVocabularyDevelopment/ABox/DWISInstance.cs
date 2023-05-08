@@ -6,12 +6,13 @@ namespace DWIS.Vocabulary.Development
 {
     public class DWISInstance
     {
-        public string Name { get;private set; }
+        public string Name { get; private set; }
         [JsonIgnore]
-        public DWISVocabulary Vocabulary { get;private set; }
-        public IPopulation Population{ get; set; }
+        public DWISVocabulary Vocabulary { get; private set; }
+        public IPopulation Population { get; set; }
         public ISentenceCollection Sentences { get; set; }
         public IClassAssertionCollection ClassAssertions { get; set; }
+        public IImplicitSentenceCollection ImplicitSentences { get; set; }
         private DWISInstance() { }
         public DWISInstance(string name, DWISVocabulary vocabulary)
         {
@@ -68,19 +69,80 @@ namespace DWIS.Vocabulary.Development
             Population = new SimplePopulation();
             Sentences = new SimpleSentenceCollection();
             ClassAssertions = new SimpleClassAssertionCollection();
+            ImplicitSentences = new SimpleImplicitSentenceCollection();
 
-            foreach (var i in other.Population) 
+            if (other.Population != null)
             {
-                Population.Add(i);
+                foreach (var i in other.Population)
+                {
+                    Population.Add(i);
+                }
             }
-            foreach (var s in other.Sentences)
+            if (other.Sentences != null)
             {
-                Sentences.Add(s);
+                foreach (var s in other.Sentences)
+                {
+                    Sentences.Add(s);
+                }
             }
-            foreach (var ca in other.ClassAssertions)
+            if (other.ClassAssertions != null)
             {
-                ClassAssertions.Add(ca);
+                foreach (var ca in other.ClassAssertions)
+                {
+                    ClassAssertions.Add(ca);
+                }
             }
+            if (other.ImplicitSentences != null)
+            {
+                foreach (var ca in other.ImplicitSentences)
+                {
+                    ImplicitSentences.Add(ca);
+                }
+            }
+        }
+    }
+
+    public class SimpleImplicitSentenceCollection : IImplicitSentenceCollection
+    {
+        private List<ImplicitSentence> _implicitSentences = new List<ImplicitSentence>();
+
+        public int Count => _implicitSentences.Count;
+
+        public bool IsReadOnly => ((ICollection<ImplicitSentence>)_implicitSentences).IsReadOnly;
+
+        public void Add(ImplicitSentence item)
+        {
+            _implicitSentences.Add(item);
+        }
+
+        public void Clear()
+        {
+            _implicitSentences.Clear();
+        }
+
+        public bool Contains(ImplicitSentence item)
+        {
+            return _implicitSentences.Contains(item);
+        }
+
+        public void CopyTo(ImplicitSentence[] array, int arrayIndex)
+        {
+           _implicitSentences.CopyTo(array, arrayIndex); 
+        }
+
+        public IEnumerator<ImplicitSentence> GetEnumerator()
+        {
+            return _implicitSentences.GetEnumerator();
+        }
+
+        public bool Remove(ImplicitSentence item)
+        {
+            return _implicitSentences.Remove(item);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return _implicitSentences.GetEnumerator();
         }
     }
 
@@ -127,7 +189,8 @@ namespace DWIS.Vocabulary.Development
             return ((IEnumerable)_sentences).GetEnumerator();
         }
     }
-
+    public interface IImplicitSentenceCollection : ICollection<ImplicitSentence>
+    { }
     public interface ISentenceCollection : ICollection<Sentence>
     { }
     public interface IClassAssertionCollection : ICollection<ClassAssertion>
