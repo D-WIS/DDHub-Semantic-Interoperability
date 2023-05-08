@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RDFSharp.Model;
-using RDFSharp.Semantics.OWL;
+using RDFSharp.Semantics;
 
 namespace DWIS.Vocabulary.Standard
 {
     public static class OntologyProvider
     {
-        private static RDFOntology _dwisOntology;
-        public static RDFOntology GetDWISOntology()
+        private static OWLOntology _dwisOntology;
+        public static OWLOntology GetDWISOntology()
         {
             return DWIS.Vocabulary.OWL.OntologyGeneration.GetOntology(VocabularyProvider.Vocabulary);
         }
 
-        public static RDFOntology DWISOntology
+        public static OWLOntology DWISOntology
         {
             get 
             {
