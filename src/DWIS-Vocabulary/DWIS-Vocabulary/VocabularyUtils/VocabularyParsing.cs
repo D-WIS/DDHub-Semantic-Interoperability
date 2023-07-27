@@ -485,10 +485,14 @@ namespace DWIS.Vocabulary.Utils
 
 
 
-        public static bool ManageLine(string line, DWISVocabulary vocabulary, DWISInstance instance,List<NounAttribute> attributes, List<SpecializedNounAttribute> specializedAttributes, bool fromMD = true)
+        public static bool ManageLine(string line, DWISVocabulary vocabulary, DWISInstance instance,List<NounAttribute> attributes, List<SpecializedNounAttribute> specializedAttributes,out bool quit, bool fromMD = true)
         {
+            quit = false;
             if (!string.IsNullOrEmpty(line))
             {
+                quit = line.Contains("mermaid");
+                if(quit) { return false; }
+
                 if (line.Trim().StartsWith(COMMENT_TAG)) { return false; }
 
 
@@ -797,6 +801,22 @@ namespace DWIS.Vocabulary.Utils
         public static bool FromLines(string[] allLines, DWISVocabulary vocabulary, DWISInstance instance, bool fromMD = true)
         {
             if (allLines != null && allLines.Length > 0)
+            {
+                bool quit = false;
+                List<NounAttribute> nounAttributes = new List<NounAttribute>();
+                List<SpecializedNounAttribute> specializedNounAttributes = new List<SpecializedNounAttribute>();    
+                foreach (string line in allLines)
+                {
+                    ManageLine(line, vocabulary, instance, nounAttributes, specializedNounAttributes, out quit, fromMD);
+                    if (quit) { return true; }
+                }
+                return true;
+            }
+            else return false;
+
+
+
+                if (allLines != null && allLines.Length > 0)
             {
                 foreach (string line in allLines)
                 {

@@ -25,7 +25,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
-- Description: 
+- Description: Curvilinear abscissa of the bottom of the bit, in the reference frame centered in the wellbore. 
 - Examples:
 ## DensityIn <!-- NOUN -->
 - Display name: DensityIn
