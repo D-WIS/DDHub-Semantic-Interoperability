@@ -752,6 +752,22 @@
 - Description: 
 - Examples:
 - Definition set: DrillingDataSemantics
+## ShearRate <!-- NOUN -->
+- Display name: Shear rate
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## ShearStress <!-- NOUN -->
+- Display name: Shear stress
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
 ## MinimumHorizontalStress <!-- NOUN -->
 - Display name: MinimumHorizontalStress
 - Parent class: [DrillingDataPoint](#DrillingDataPoint)

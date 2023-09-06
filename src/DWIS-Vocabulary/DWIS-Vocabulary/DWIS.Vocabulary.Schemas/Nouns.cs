@@ -86,6 +86,8 @@ public static class Nouns
 	public static string FracturingPressureGradient = "FracturingPressureGradient";
 	public static string CollapsePressure = "CollapsePressure";
 	public static string CollapsePressureGradient = "CollapsePressureGradient";
+	public static string ShearRate = "ShearRate";
+	public static string ShearStress = "ShearStress";
 	public static string MinimumHorizontalStress = "MinimumHorizontalStress";
 	public static string MinimumHorizontalStressGradient = "MinimumHorizontalStressGradient";
 	public static string OverburdenPressure = "OverburdenPressure";
