@@ -799,13 +799,18 @@ ddhub:IsIntegratedFrom a owl:ObjectProperty;
 ddhub:IsLimitFor a owl:ObjectProperty; 
                  rdfs:comment ""@EN; 
                  rdfs:domain ddhub:DrillingDataPoint; 
-                 rdfs:range ddhub:ControlSystem; 
+                 rdfs:range ddhub:DWISNoun; 
                  rdfs:subPropertyOf ddhub:HasFunction. 
 ddhub:IsMassFlowRateAt a owl:ObjectProperty; 
                        rdfs:comment ""@EN; 
                        rdfs:domain ddhub:DWISNoun; 
                        rdfs:range ddhub:DWISNoun; 
                        rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
+ddhub:IsMaximumLimitFor a owl:ObjectProperty; 
+                        rdfs:comment ""@EN; 
+                        rdfs:domain ddhub:DrillingDataPoint; 
+                        rdfs:range ddhub:DWISNoun; 
+                        rdfs:subPropertyOf ddhub:IsLimitFor. 
 ddhub:IsMeasuredBy a owl:ObjectProperty; 
                    rdfs:comment ""@EN; 
                    rdfs:domain ddhub:DWISNoun; 
@@ -821,6 +826,11 @@ ddhub:IsMechanicallyLocatedAt a owl:ObjectProperty;
                               rdfs:domain ddhub:DrillingDataPoint; 
                               rdfs:range ddhub:MechanicalLogicalElement; 
                               rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsMinimumLimitFor a owl:ObjectProperty; 
+                        rdfs:comment ""@EN; 
+                        rdfs:domain ddhub:DrillingDataPoint; 
+                        rdfs:range ddhub:DWISNoun; 
+                        rdfs:subPropertyOf ddhub:IsLimitFor. 
 ddhub:IsObservableFrom a owl:ObjectProperty; 
                        rdfs:comment ""@EN; 
                        rdfs:domain ddhub:DWISNoun; 
@@ -1042,6 +1052,9 @@ ddhub:MaximumFluctuations a owl:DatatypeProperty, owl:FunctionalProperty;
                           rdfs:comment ""@EN; 
                           rdfs:domain ddhub:Clock; 
                           rdfs:range xsd:double. 
+ddhub:MaximumLimit a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:Limit. 
 ddhub:MeaningfulPrecision a owl:DatatypeProperty, owl:FunctionalProperty; 
                           rdfs:comment ""@EN; 
                           rdfs:domain ddhub:MeasurableQuantity; 
@@ -1108,6 +1121,9 @@ ddhub:MinimumHorizontalStress a owl:Class;
 ddhub:MinimumHorizontalStressGradient a owl:Class; 
                                       rdfs:comment ""@EN; 
                                       rdfs:subClassOf ddhub:DrillingDataPoint. 
+ddhub:MinimumLimit a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:Limit. 
 ddhub:MinMaxUncertainty a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:SignalUncertainty. 
@@ -1358,6 +1374,12 @@ ddhub:SetPoint a owl:Class;
 ddhub:ShaleShakers a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:DrillingEquipment. 
+ddhub:ShearRate a owl:Class; 
+                rdfs:comment ""@EN; 
+                rdfs:subClassOf ddhub:DrillingDataPoint. 
+ddhub:ShearStress a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:DrillingDataPoint. 
 ddhub:SignalProcessingUnit a owl:Class; 
                            rdfs:comment "Represent any signal processing applied prior to the distribution of the considered signal. Signal processing refers to e.g. noise removal, filtering,.."@EN; 
                            rdfs:subClassOf ddhub:Transformation. 

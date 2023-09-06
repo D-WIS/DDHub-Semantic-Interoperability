@@ -86,6 +86,8 @@ public static class Nouns
 	public static string FracturingPressureGradient = "FracturingPressureGradient";
 	public static string CollapsePressure = "CollapsePressure";
 	public static string CollapsePressureGradient = "CollapsePressureGradient";
+	public static string ShearRate = "ShearRate";
+	public static string ShearStress = "ShearStress";
 	public static string MinimumHorizontalStress = "MinimumHorizontalStress";
 	public static string MinimumHorizontalStressGradient = "MinimumHorizontalStressGradient";
 	public static string OverburdenPressure = "OverburdenPressure";
@@ -109,6 +111,8 @@ public static class Nouns
 	public static string AdvisedMinimum = "AdvisedMinimum";
 	public static string AdvisedMaximum = "AdvisedMaximum";
 	public static string Limit = "Limit";
+	public static string MinimumLimit = "MinimumLimit";
+	public static string MaximumLimit = "MaximumLimit";
 	public static string Measurement = "Measurement";
 	public static string DerivedMeasurement = "DerivedMeasurement";
 	public static string CorrectedMeasurement = "CorrectedMeasurement";

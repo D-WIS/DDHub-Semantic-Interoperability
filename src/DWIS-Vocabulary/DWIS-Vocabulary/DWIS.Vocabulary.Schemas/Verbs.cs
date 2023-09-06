@@ -12,6 +12,8 @@ public static class Verbs
 	public static string IsCommandFor = "IsCommandFor";
 	public static string IsComputationInput = "IsComputationInput";
 	public static string IsLimitFor = "IsLimitFor";
+	public static string IsMinimumLimitFor = "IsMinimumLimitFor";
+	public static string IsMaximumLimitFor = "IsMaximumLimitFor";
 	public static string IsSetPointFor = "IsSetPointFor";
 	public static string IsSetPointRecommendationFor = "IsSetPointRecommendationFor";
 	public static string IsSetPointAdviceFor = "IsSetPointAdviceFor";

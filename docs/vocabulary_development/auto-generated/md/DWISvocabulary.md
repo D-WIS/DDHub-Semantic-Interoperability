@@ -752,6 +752,22 @@
 - Description: 
 - Examples:
 - Definition set: DrillingDataSemantics
+## ShearRate <!-- NOUN -->
+- Display name: Shear rate
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## ShearStress <!-- NOUN -->
+- Display name: Shear stress
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
 ## MinimumHorizontalStress <!-- NOUN -->
 - Display name: MinimumHorizontalStress
 - Parent class: [DrillingDataPoint](#DrillingDataPoint)
@@ -931,6 +947,22 @@
 ## Limit <!-- NOUN -->
 - Display name: Limit
 - Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## MinimumLimit <!-- NOUN -->
+- Display name: Minimum Limit
+- Parent class: [Limit](#Limit)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## MaximumLimit <!-- NOUN -->
+- Display name: Maximum Limit
+- Parent class: [Limit](#Limit)
 - Attributes:
 - Specialization:
 - Description: 
@@ -2616,7 +2648,27 @@
 - Display name: Is Limit For
 - Parent verb: [HasFunction](#HasFunction)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
-- Object class: [ControlSystem](#ControlSystem)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsMinimumLimitFor <!-- VERB -->
+- Display name: Is Minimum Limit For
+- Parent verb: [IsLimitFor](#IsLimitFor)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsMaximumLimitFor <!-- VERB -->
+- Display name: Is Maximum Limit For
+- Parent verb: [IsLimitFor](#IsLimitFor)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DWISNoun](#DWISNoun)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 

@@ -252,6 +252,22 @@
 - Description: 
 - Examples:
 - Definition set: DrillingDataSemantics
+## ShearRate <!-- NOUN -->
+- Display name: Shear rate
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## ShearStress <!-- NOUN -->
+- Display name: Shear stress
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
 ## MinimumHorizontalStress <!-- NOUN -->
 - Display name: MinimumHorizontalStress
 - Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
@@ -431,6 +447,22 @@
 ## Limit <!-- NOUN -->
 - Display name: Limit
 - Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## MinimumLimit <!-- NOUN -->
+- Display name: Minimum Limit
+- Parent class: [Limit](./DrillingDataSemantics.md#Limit)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## MaximumLimit <!-- NOUN -->
+- Display name: Maximum Limit
+- Parent class: [Limit](./DrillingDataSemantics.md#Limit)
 - Attributes:
 - Specialization:
 - Description: 
