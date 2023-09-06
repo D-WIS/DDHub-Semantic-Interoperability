@@ -384,6 +384,20 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Specialization:
 - Description: 
 - Examples:
+## MinimumLimit <!-- NOUN -->
+- Display name: Minimum Limit
+- Parent class: Limit
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MaximumLimit <!-- NOUN -->
+- Display name: Maximum Limit
+- Parent class: Limit
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## Measurement <!-- NOUN -->
 - Display name: Measurement
 - Parent class: DrillingDataPoint
