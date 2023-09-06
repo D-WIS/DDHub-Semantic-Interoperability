@@ -405,7 +405,27 @@
 - Display name: Is Limit For
 - Parent verb: [HasFunction](./DataFlow.md#HasFunction)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
-- Object class: [ControlSystem](./DataFlow.md#ControlSystem)
+- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsMinimumLimitFor <!-- VERB -->
+- Display name: Is Minimum Limit For
+- Parent verb: [IsLimitFor](./DataFlow.md#IsLimitFor)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsMaximumLimitFor <!-- VERB -->
+- Display name: Is Maximum Limit For
+- Parent verb: [IsLimitFor](./DataFlow.md#IsLimitFor)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 

@@ -109,6 +109,8 @@ public static class Nouns
 	public static string AdvisedMinimum = "AdvisedMinimum";
 	public static string AdvisedMaximum = "AdvisedMaximum";
 	public static string Limit = "Limit";
+	public static string MinimumLimit = "MinimumLimit";
+	public static string MaximumLimit = "MaximumLimit";
 	public static string Measurement = "Measurement";
 	public static string DerivedMeasurement = "DerivedMeasurement";
 	public static string CorrectedMeasurement = "CorrectedMeasurement";

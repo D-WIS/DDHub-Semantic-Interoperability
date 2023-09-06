@@ -936,6 +936,22 @@
 - Description: 
 - Examples:
 - Definition set: DrillingDataSemantics
+## MinimumLimit <!-- NOUN -->
+- Display name: Minimum Limit
+- Parent class: [Limit](#Limit)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## MaximumLimit <!-- NOUN -->
+- Display name: Maximum Limit
+- Parent class: [Limit](#Limit)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
 ## Measurement <!-- NOUN -->
 - Display name: Measurement
 - Parent class: [DrillingDataPoint](#DrillingDataPoint)
@@ -2616,7 +2632,27 @@
 - Display name: Is Limit For
 - Parent verb: [HasFunction](#HasFunction)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
-- Object class: [ControlSystem](#ControlSystem)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsMinimumLimitFor <!-- VERB -->
+- Display name: Is Minimum Limit For
+- Parent verb: [IsLimitFor](#IsLimitFor)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DWISNoun](#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataFlow
+## IsMaximumLimitFor <!-- VERB -->
+- Display name: Is Maximum Limit For
+- Parent verb: [IsLimitFor](#IsLimitFor)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DWISNoun](#DWISNoun)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
