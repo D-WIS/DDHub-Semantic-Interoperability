@@ -436,6 +436,22 @@
 - Description: 
 - Examples:
 - Definition set: DrillingDataSemantics
+## MinimumLimit <!-- NOUN -->
+- Display name: Minimum Limit
+- Parent class: [Limit](./DrillingDataSemantics.md#Limit)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## MaximumLimit <!-- NOUN -->
+- Display name: Maximum Limit
+- Parent class: [Limit](./DrillingDataSemantics.md#Limit)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
 ## Measurement <!-- NOUN -->
 - Display name: Measurement
 - Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
