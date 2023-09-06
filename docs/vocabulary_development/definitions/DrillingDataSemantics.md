@@ -223,6 +223,20 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Specialization:
 - Description: 
 - Examples:
+## ShearRate <!-- NOUN -->
+- Display name: Shear rate
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## ShearStress <!-- NOUN -->
+- Display name: Shear stress
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## MinimumHorizontalStress <!-- NOUN -->
 - Display name: MinimumHorizontalStress
 - Parent class: DrillingDataPoint
@@ -380,6 +394,20 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 ## Limit <!-- NOUN -->
 - Display name: Limit
 - Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MinimumLimit <!-- NOUN -->
+- Display name: Minimum Limit
+- Parent class: Limit
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MaximumLimit <!-- NOUN -->
+- Display name: Maximum Limit
+- Parent class: Limit
 - Attributes:
 - Specialization:
 - Description: 

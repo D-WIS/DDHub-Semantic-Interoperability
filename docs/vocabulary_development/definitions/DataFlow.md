@@ -355,7 +355,21 @@
 - Display name: Is Limit For
 - Parent verb: HasFunction
 - Subject class: DrillingDataPoint
-- Object class: ControlSystem
+- Object class: DWISNoun
+- Description: 
+- Examples: 
+## IsMinimumLimitFor <!-- VERB -->
+- Display name: Is Minimum Limit For
+- Parent verb: IsLimitFor
+- Subject class: DrillingDataPoint
+- Object class: DWISNoun
+- Description: 
+- Examples: 
+## IsMaximumLimitFor <!-- VERB -->
+- Display name: Is Maximum Limit For
+- Parent verb: IsLimitFor
+- Subject class: DrillingDataPoint
+- Object class: DWISNoun
 - Description: 
 - Examples: 
 ## IsSetPointFor <!-- VERB -->
