@@ -18,10 +18,4 @@ namespace DWIS.Vocabulary.Development
             set { DefinitionSetHeader.SetDescription = value; }
         }
     }
-
-    public class DefinitionSetHeader
-    {
-        public string Name { get; set; }
-        public string SetDescription { get; set; }
-    }
 }

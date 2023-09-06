@@ -525,7 +525,7 @@
 - Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:
-- Description: 
+- Description: Curvilinear abscissa of the bottom of the bit, in the reference frame centered in the wellbore.
 - Examples:
 - Definition set: DrillingDataSemantics
 ## DensityIn <!-- NOUN -->

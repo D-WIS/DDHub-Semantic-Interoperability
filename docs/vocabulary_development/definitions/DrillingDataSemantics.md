@@ -25,7 +25,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
-- Description: 
+- Description: Curvilinear abscissa of the bottom of the bit, in the reference frame centered in the wellbore. 
 - Examples:
 ## DensityIn <!-- NOUN -->
 - Display name: DensityIn
@@ -218,6 +218,20 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Examples:
 ## CollapsePressureGradient <!-- NOUN -->
 - Display name: CollapsePressureGradient
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## ShearRate <!-- NOUN -->
+- Display name: Shear rate
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## ShearStress <!-- NOUN -->
+- Display name: Shear stress
 - Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:

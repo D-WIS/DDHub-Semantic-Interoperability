@@ -2,10 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Linq;
 using DWIS.Vocabulary.Development;
 using DWIS.Vocabulary.Utils;
 using RDFSharp.Model;
-using RDFSharp.Semantics.OWL;
+using RDFSharp.Semantics;
 
 namespace DWIS.Vocabulary.OWL
 {
@@ -15,7 +16,7 @@ namespace DWIS.Vocabulary.OWL
 
         private static RDFResource AttributeCardinalityRestriction = new RDFResource(DDHubPrefix + "DWISAttributeCardinalityRestriction");
 
-        public static RDFOntology GetOntology(DWISVocabulary vocabulary)
+        public static OWLOntology GetOntology(DWISVocabulary vocabulary)
         {
             string ontologyName = "DWISVocabulary";
 
@@ -30,13 +31,13 @@ namespace DWIS.Vocabulary.OWL
 
             RDFNamespaceRegister.AddNamespace(new RDFNamespace("ddhub", DDHubPrefix));
 
-            RDFOntology ontology = new RDFOntology(new RDFResource(DDHubPrefix + ontologyName));
+            OWLOntology ontology = new OWLOntology(new RDFResource(DDHubPrefix + ontologyName).ToString());
 
-            ontology.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.Comment, new RDFOntologyLiteral(new RDFPlainLiteral(comment, "En")));
-            ontology.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.VersionInfo, new RDFOntologyLiteral(new RDFTypedLiteral(versionInfo, RDFModelEnums.RDFDatatypes.XSD_STRING)));
-            ontology.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.Label, new RDFOntologyLiteral(new RDFTypedLiteral(label, RDFModelEnums.RDFDatatypes.XSD_STRING)));
-            ontology.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.IsDefinedBy, new RDFOntologyLiteral(new RDFTypedLiteral(definedBy, RDFModelEnums.RDFDatatypes.XSD_STRING)));
-            ontology.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.VersionIRI, new RDFOntologyLiteral(new RDFTypedLiteral(iri, RDFModelEnums.RDFDatatypes.XSD_ANYURI)));
+            ontology.Annotate(RDFVocabulary.RDFS.COMMENT, new RDFPlainLiteral(comment, "En"));
+            ontology.Annotate(RDFVocabulary.OWL.VERSION_INFO,new RDFTypedLiteral(versionInfo, RDFModelEnums.RDFDatatypes.XSD_STRING));
+            ontology.Annotate(RDFVocabulary.RDFS.LABEL, new RDFTypedLiteral(label, RDFModelEnums.RDFDatatypes.XSD_STRING));
+            ontology.Annotate(RDFVocabulary.RDFS.IS_DEFINED_BY, new RDFTypedLiteral(definedBy, RDFModelEnums.RDFDatatypes.XSD_STRING));
+            ontology.Annotate(RDFVocabulary.OWL.VERSION_IRI, new RDFTypedLiteral(iri, RDFModelEnums.RDFDatatypes.XSD_ANYURI));
 
 
             AddClass(nounTree, null, ontology);
@@ -45,7 +46,7 @@ namespace DWIS.Vocabulary.OWL
             return ontology;
         }
 
-        public static RDFOntology ExportOntology(string fileName,DWISVocabulary vocabulary)
+        public static OWLOntology ExportOntology(string fileName,DWISVocabulary vocabulary)
         {
             var ontology = GetOntology(vocabulary);
 
@@ -54,41 +55,56 @@ namespace DWIS.Vocabulary.OWL
             return ontology;
         }
 
-        public static void WriteOntology(RDFOntology ontology, string fileName, bool includeModel = true)
-        {
-            RDFSemanticsEnums.RDFOntologyInferenceExportBehavior behavior = includeModel ? RDFSemanticsEnums.RDFOntologyInferenceExportBehavior.ModelAndData : RDFSemanticsEnums.RDFOntologyInferenceExportBehavior.OnlyData;
-            ontology.ToRDFGraph(behavior).ToFile(RDFModelEnums.RDFFormats.Turtle, fileName + ".ttl");
-            ontology.ToRDFGraph(behavior).ToFile(RDFModelEnums.RDFFormats.NTriples, fileName + ".nt");
-            ontology.ToRDFGraph(behavior).ToFile(RDFModelEnums.RDFFormats.RdfXml, fileName + ".xml");
+        public static void WriteOntology(OWLOntology ontology, string fileName, bool includeModel = true)
+        {           
+            //RDFSemanticsEnums.RDFOntologyInferenceExportBehavior behavior = includeModel ? RDFSemanticsEnums.RDFOntologyInferenceExportBehavior.ModelAndData : RDFSemanticsEnums.RDFOntologyInferenceExportBehavior.OnlyData;
+            //ontology.ToRDFGraph(behavior).ToFile(RDFModelEnums.RDFFormats.Turtle, fileName + ".ttl");
+            //ontology.ToRDFGraph(behavior).ToFile(RDFModelEnums.RDFFormats.NTriples, fileName + ".nt");
+            //ontology.ToRDFGraph(behavior).ToFile(RDFModelEnums.RDFFormats.RdfXml, fileName + ".xml");
+            ontology.ToRDFGraph().ToFile(RDFModelEnums.RDFFormats.Turtle, fileName + ".ttl");
+            ontology.ToRDFGraph().ToFile(RDFModelEnums.RDFFormats.NTriples, fileName + ".nt");
+            ontology.ToRDFGraph().ToFile(RDFModelEnums.RDFFormats.RdfXml, fileName + ".xml");
         }
         public static RDFResource GetBaseTypeResource(string type)
         {
             return new RDFResource("http://www.w3.org/2001/XMLSchema#" + type.ToLower());
         }
 
-        private static void AddClass(Tree<Noun> currentTree, RDFOntologyClass parent, RDFOntology ontology)
+        private static void AddClass(Tree<Noun> currentTree, RDFResource parent, OWLOntology ontology)
         {
-            var current = new RDFOntologyClass(new RDFResource(DDHubPrefix + currentTree.RootItem.Name));
-            ontology.Model.ClassModel.AddClass(current);
-            ontology.Model.ClassModel.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.Comment, current, new RDFOntologyLiteral(new RDFPlainLiteral(currentTree.RootItem.Description, "En")));
+            RDFResource current = new RDFResource( DDHubPrefix + currentTree.RootItem.Name);
+            ontology.Model.ClassModel.DeclareClass(current);
+            ontology.Model.ClassModel.AnnotateClass(current, RDFVocabulary.RDFS.COMMENT, new RDFPlainLiteral(currentTree.RootItem.Description, "En"));
+            //var current = new RDFOntologyClass(new RDFResource(DDHubPrefix + currentTree.RootItem.Name));
+            //ontology.Model.ClassModel.AddClass(current);
+            //ontology.Model.ClassModel.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.Comment, current, new RDFOntologyLiteral(new RDFPlainLiteral(currentTree.RootItem.Description, "En")));
 
             if (parent != null)
             {
-                ontology.Model.ClassModel.AddSubClassOfRelation(current, parent);
+                ontology.Model.ClassModel.DeclareSubClasses(current, parent);
+                //ontology.Model.ClassModel.AddSubClassOfRelation(current, parent);
             }
             if (currentTree.RootItem.NounAttributes != null)
             {
                 foreach (var attribute in currentTree.RootItem.NounAttributes)
                 {
-                    RDFOntologyDatatypeProperty prop = new RDFOntologyDatatypeProperty(new RDFResource(DDHubPrefix +  attribute.Name));
-                    ontology.Model.PropertyModel.AddProperty(prop);
-                    prop.SetDomain(current);
-                    prop.SetRange(GetBaseTypeResource(attribute.Type).ToRDFOntologyClass());                         
-                    prop.SetFunctional(true);
+                    RDFResource propertyResource = new RDFResource(DDHubPrefix + attribute.Name);
+                   // RDFOntologyDatatypeProperty prop = new RDFOntologyDatatypeProperty(new RDFResource(DDHubPrefix +  attribute.Name));
+                    ontology.Model.PropertyModel.DeclareDatatypeProperty(propertyResource, new OWLOntologyDatatypePropertyBehavior() {  Domain = current, Range = GetBaseTypeResource(attribute.Type), Functional = true });
 
-                    RDFOntologyCardinalityRestriction cardinalityRestriction = new RDFOntologyCardinalityRestriction(AttributeCardinalityRestriction, prop, 1, 1);
-                    ontology.Model.ClassModel.AddRestriction(cardinalityRestriction);
-                    ontology.Model.PropertyModel.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.Comment, prop, new RDFOntologyLiteral(new RDFPlainLiteral(attribute.Description, "En")));
+                    ontology.Model.ClassModel.DeclareMinMaxQualifiedCardinalityRestriction(AttributeCardinalityRestriction, propertyResource, 1, 1, current);
+
+                    //prop.SetDomain(current);
+                    //prop.SetRange(GetBaseTypeResource(attribute.Type).ToRDFOntologyClass());                         
+                    //prop.SetFunctional(true);
+
+                    //ontology.Model.PropertyModel.
+                    //RDFSharp.Model.RDFPropertyConstraint hjk = new RDFPropertyConstraint(null) {  };
+
+                    //RDFOntologyCardinalityRestriction cardinalityRestriction = new RDFOntologyCardinalityRestriction(AttributeCardinalityRestriction, prop, 1, 1);
+                    //ontology.Model.ClassModel.AddRestriction(cardinalityRestriction);
+                    //ontology.Model.PropertyModel.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.Comment, prop, new RDFOntologyLiteral(new RDFPlainLiteral(attribute.Description, "En")));
+                    ontology.Model.PropertyModel.AnnotateProperty(propertyResource, RDFVocabulary.RDFS.COMMENT, new RDFPlainLiteral(attribute.Description, "En"));
                 }
             }
 
@@ -101,26 +117,35 @@ namespace DWIS.Vocabulary.OWL
             }
         }
 
-        private static void AddVerb(Tree<Verb> currentTree, RDFOntologyObjectProperty parent, RDFOntology ontology)
+        private static void AddVerb(Tree<Verb> currentTree, RDFResource parent, OWLOntology ontology)
         {
-            var current = new RDFOntologyObjectProperty(new RDFResource(DDHubPrefix + currentTree.RootItem.Name));
-            ontology.Model.PropertyModel.AddProperty(current);
+            
+            var current = new RDFResource(DDHubPrefix + currentTree.RootItem.Name);
 
-            ontology.Model.PropertyModel.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.Comment, current, new RDFOntologyLiteral(new RDFPlainLiteral(currentTree.RootItem.Description, "En")));
+            OWLOntologyObjectPropertyBehavior behavior = new OWLOntologyObjectPropertyBehavior();
+            behavior.Domain = new RDFResource(DDHubPrefix + currentTree.RootItem.DomainNounName);
+            behavior.Range = new RDFResource(DDHubPrefix + currentTree.RootItem.RangeNounName);
+            ontology.Model.PropertyModel.DeclareObjectProperty(current, behavior);
+            ontology.Model.PropertyModel.AnnotateProperty(current, RDFVocabulary.RDFS.COMMENT, new RDFPlainLiteral(currentTree.RootItem.Description, "En"));
+
+            //ontology.Model.PropertyModel.AddProperty(current);
+
+            //ontology.Model.PropertyModel.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.Comment, current, new RDFOntologyLiteral(new RDFPlainLiteral(currentTree.RootItem.Description, "En")));
 
             if (parent != null)
             {
-                ontology.Model.PropertyModel.AddSubPropertyOfRelation(current, parent);
+                ontology.Model.PropertyModel.DeclareSubProperties(current, parent);
             }
 
 
-            current.SetDomain(new RDFOntologyClass(new RDFResource(DDHubPrefix + currentTree.RootItem.DomainNounName)));
-            current.SetRange(new RDFOntologyClass(new RDFResource(DDHubPrefix + currentTree.RootItem.RangeNounName)));
+            //current.SetDomain(new RDFOntologyClass(new RDFResource(DDHubPrefix + currentTree.RootItem.DomainNounName)));
+            //current.SetRange(new RDFOntologyClass(new RDFResource(DDHubPrefix + currentTree.RootItem.RangeNounName)));
 
             if (currentTree.RootItem.MinCardinality > 0 || currentTree.RootItem.MaxCardinality > 0)
             {
-                RDFOntologyCardinalityRestriction cardinalityRestriction = new RDFOntologyCardinalityRestriction(new RDFResource(DDHubPrefix + "DWSIVerbCardinalityRestriction" + currentTree.RootItem.Name), current, currentTree.RootItem.MinCardinality, currentTree.RootItem.MaxCardinality);
-                ontology.Model.ClassModel.AddRestriction(cardinalityRestriction);
+                ontology.Model.ClassModel.DeclareMinMaxQualifiedCardinalityRestriction(new RDFResource(DDHubPrefix + "DWSIVerbCardinalityRestriction" + currentTree.RootItem.Name), current, (uint)currentTree.RootItem.MinCardinality, (uint)currentTree.RootItem.MaxCardinality, new RDFResource(DDHubPrefix + currentTree.RootItem.DomainNounName));
+                //RDFOntologyCardinalityRestriction cardinalityRestriction = new RDFOntologyCardinalityRestriction(new RDFResource(DDHubPrefix + "DWSIVerbCardinalityRestriction" + currentTree.RootItem.Name), current, currentTree.RootItem.MinCardinality, currentTree.RootItem.MaxCardinality);
+                //ontology.Model.ClassModel.AddRestriction(cardinalityRestriction);
             }
 
 
@@ -175,16 +200,18 @@ namespace DWIS.Vocabulary.OWL
 
     
 
-        public static RDFOntology AddInstance(RDFOntology ontology, DWISVocabulary vocabulary, DWISInstance instance)
+        public static OWLOntology AddInstance(OWLOntology ontology, DWISVocabulary vocabulary, DWISInstance instance)
         {
             foreach (var individual in instance.Population)
-            {                
+            {
                 if (vocabulary.GetNoun(individual.TypeName, out Noun noun))
                 {
-                    var fact = new RDFOntologyFact(new RDFResource(DDHubPrefix +individual.Name));
-                    ontology.Data.AddFact(fact);
-                    var type = ontology.Model.ClassModel.SelectClass(DDHubPrefix + individual.TypeName);
-                    ontology.Data.AddClassTypeRelation(fact, type);
+                    RDFResource individualResource = new RDFResource(DDHubPrefix + individual.Name);
+                    ontology.Data.DeclareIndividual(individualResource);
+                    //var fact = new RDFOntologyFact(new RDFResource(DDHubPrefix +individual.Name));
+                    //ontology.Data.AddFact(fact);
+                    //var type = ontology.Model.ClassModel.SelectClass(DDHubPrefix + individual.TypeName);
+                    ontology.Data.DeclareIndividualType(individualResource, new RDFResource(DDHubPrefix + individual.TypeName));//.AddClassTypeRelation(fact, type);
 
                     if (individual.Attributes != null)
                     {
@@ -192,34 +219,39 @@ namespace DWIS.Vocabulary.OWL
                         {
                             if (!string.IsNullOrEmpty(attribute.AttributeValue))
                             {
-                                var property = ontology.Model.PropertyModel.SelectProperty(DDHubPrefix + attribute.AttributeName);
                                 string attributeType = noun.NounAttributes.FirstOrDefault(na => na.Name == attribute.AttributeName).Type;
-
                                 string attributeValue = attribute.AttributeValue.Replace(",", ".");
                                 if (System.Text.Encoding.UTF8.GetByteCount(attributeValue) == attributeValue.Length)
                                 {
                                     RDFTypedLiteral literal = new RDFTypedLiteral(attributeValue, ConvertToLiteralType(attributeType));
-                                    ontology.Data.AddAssertionRelation(fact, (RDFOntologyDatatypeProperty)property, new RDFOntologyLiteral(literal));
+                                    //ontology.Data.AddAssertionRelation(fact, (RDFOntologyDatatypeProperty)property, new RDFOntologyLiteral(literal));
+                                    ontology.Data.DeclareDatatypeAssertion(individualResource, new RDFResource(DDHubPrefix + attribute.AttributeName), literal);
                                 }
+                                //  var property = ontology.Model.PropertyModel.SelectProperty(DDHubPrefix + attribute.AttributeName);                   
                             }
                         }
-                    } 
+                    }
                 }
             }
 
             foreach (var ca in instance.ClassAssertions)
             {
-                var type = ontology.Model.ClassModel.SelectClass(DDHubPrefix + ca.Class);
-                var fact = ontology.Data.SelectFact(DDHubPrefix + ca.Subject);
-                ontology.Data.AddClassTypeRelation(fact, type);
+                RDFResource individualResource = new RDFResource(DDHubPrefix + ca.Subject);
+                ontology.Data.DeclareIndividualType(individualResource, new RDFResource(DDHubPrefix + ca.Class));
+
+                //var type = ontology.Model.ClassModel.SelectClass(DDHubPrefix + ca.Class);
+                //var fact = ontology.Data.SelectFact(DDHubPrefix + ca.Subject);
+                //ontology.Data.AddClassTypeRelation(fact, type);
             }
 
             foreach (var sentence in instance.Sentences)
             {
-                var verb = ontology.Model.PropertyModel.SelectProperty(DDHubPrefix + sentence.Verb);
-                var subjectFact = ontology.Data.SelectFact(DDHubPrefix +  sentence.Subject);
-                var objectFact = ontology.Data.SelectFact(DDHubPrefix + sentence.Object);
-                ontology.Data.AddAssertionRelation(subjectFact, (RDFOntologyObjectProperty)verb, objectFact);
+                ontology.Data.DeclareObjectAssertion(new RDFResource(DDHubPrefix + sentence.Subject), new RDFResource(DDHubPrefix + sentence.Verb), new RDFResource(DDHubPrefix + sentence.Object));
+
+                //var verb = ontology.Model.PropertyModel.SelectProperty(DDHubPrefix + sentence.Verb);
+                //var subjectFact = ontology.Data.SelectFact(DDHubPrefix +  sentence.Subject);
+                //var objectFact = ontology.Data.SelectFact(DDHubPrefix + sentence.Object);
+                //ontology.Data.AddAssertionRelation(subjectFact, (RDFOntologyObjectProperty)verb, objectFact);
             }
 
             return ontology;

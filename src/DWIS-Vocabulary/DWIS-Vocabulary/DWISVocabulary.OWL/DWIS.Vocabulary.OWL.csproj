@@ -11,7 +11,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="RDFSharp" Version="2.26.0" />
+    <PackageReference Include="RDFSharp" Version="3.4.4" />
+    <PackageReference Include="RDFSharp.Semantics" Version="3.4.4" />
   </ItemGroup>
 
   <ItemGroup>

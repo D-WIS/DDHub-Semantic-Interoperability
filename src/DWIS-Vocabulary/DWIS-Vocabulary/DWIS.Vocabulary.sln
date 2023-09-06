@@ -27,6 +27,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWIS.Vocabulary.Development
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWIS.Vocabulary.Development.App.Shared", "DWIS.Vocabulary.Development.App\Shared\DWIS.Vocabulary.Development.App.Shared.csproj", "{ADC6C495-EEBD-435B-8254-B0406880E55D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1A20F26C-6AB6-4F82-A678-BE8EA2C51E19}"
+	ProjectSection(SolutionItems) = preProject
+		pack-local.bat = pack-local.bat
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
