@@ -3,6 +3,17 @@ namespace DWIS.Vocabulary.Schemas
 {
 public static class Verbs
 {
+	public static string HasTag = "HasTag";
+	public static string IsEnablingSignalFor = "IsEnablingSignalFor";
+	public static string IsActivatedSignalFor = "IsActivatedSignalFor";
+	public static string IsAllowEnablementSignalFor = "IsAllowEnablementSignalFor";
+	public static string IsIdlingSignalFor = "IsIdlingSignalFor";
+	public static string IsUserControllableExtraMarginSignalFor = "IsUserControllableExtraMarginSignalFor";
+	public static string IsUsedDefinedExtraMarginSignalFor = "IsUsedDefinedExtraMarginSignalFor";
+	public static string IsArmedSignalFor = "IsArmedSignalFor";
+	public static string IsTriggeredSignalFor = "IsTriggeredSignalFor";
+	public static string IsIdlingAfterTriggeredSignalFor = "IsIdlingAfterTriggeredSignalFor";
+	public static string IsImpactDescriptionSignalFor = "IsImpactDescriptionSignalFor";
 	public static string IsDependentOn = "IsDependentOn";
 	public static string HasPressureReference = "HasPressureReference";
 	public static string HasTemperatureReference = "HasTemperatureReference";
