@@ -12,6 +12,12 @@
 - Display name: Runnable Function 
 - Parent class: ActivableFunction
 - Attributes:
+  - MainFunction 
+    - Type: string
+    - Description: 
+  - AuxiliaryFunction 
+    - Type: string
+    - Description: 
 - Specialization:
 - Description: 
 - Examples:
@@ -50,7 +56,6 @@
 - Specialization:
 - Description: 
 - Examples:
-## ADCSTag <!-- NOUN -->
 - Display name: ADCS Tag
 - Parent class: DWISNoun
 - Attributes:
@@ -62,13 +67,7 @@
 - Examples:
 
 # VERBS
-## HasTag <!-- VERB -->
-- Display name: Has Tag
-- Parent verb: DWISVerb
-- Subject class: DWISNoun
-- Object class: ADCSTag
-- Description: 
-- Examples: 
+
 ## IsEnablingSignalFor <!-- VERB -->
 - Display name: IsEnablingSignalFor
 - Parent verb: DWISVerb
