@@ -56,15 +56,6 @@
 - Specialization:
 - Description: 
 - Examples:
-- Display name: ADCS Tag
-- Parent class: DWISNoun
-- Attributes:
-  - Tag
-    - Type: string
-    - Description: 
-- Specialization:
-- Description: 
-- Examples:
 
 # VERBS
 
