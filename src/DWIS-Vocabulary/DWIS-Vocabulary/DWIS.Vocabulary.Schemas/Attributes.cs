@@ -3,8 +3,12 @@ namespace DWIS.Vocabulary.Schemas
 {
 public static class Attributes
 {
-	public static string ADCSTag_Tag = "Tag";
-	public static string ADCSTag_Tag_Type = "string";
+	public static string RunnableFunction_MainFunction = "MainFunction";
+	public static string RunnableFunction_MainFunction_Type = "string";
+	public static string RunnableFunction_AuxiliaryFunction = "AuxiliaryFunction";
+	public static string RunnableFunction_AuxiliaryFunction_Type = "string";
+	public static string ProcedureFunction_Tag = "Tag";
+	public static string ProcedureFunction_Tag_Type = "string";
 	public static string Advisor_AdviceType = "AdviceType";
 	public static string Advisor_AdviceType_Type = "string";
 	public static string BandPassFilter_MinFrequency = "MinFrequency";

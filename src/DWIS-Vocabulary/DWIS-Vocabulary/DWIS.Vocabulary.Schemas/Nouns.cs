@@ -10,7 +10,6 @@ public static class Nouns
 	public static string SOEFunction = "SOEFunction";
 	public static string ControllerFunction = "ControllerFunction";
 	public static string ProcedureFunction = "ProcedureFunction";
-	public static string ADCSTag = "ADCSTag";
 	public static string DataFlowNode = "DataFlowNode";
 	public static string ComputationUnit = "ComputationUnit";
 	public static string Advisor = "Advisor";

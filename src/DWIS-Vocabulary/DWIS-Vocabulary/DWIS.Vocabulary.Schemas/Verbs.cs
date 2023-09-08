@@ -3,7 +3,6 @@ namespace DWIS.Vocabulary.Schemas
 {
 public static class Verbs
 {
-	public static string HasTag = "HasTag";
 	public static string IsEnablingSignalFor = "IsEnablingSignalFor";
 	public static string IsActivatedSignalFor = "IsActivatedSignalFor";
 	public static string IsAllowEnablementSignalFor = "IsAllowEnablementSignalFor";

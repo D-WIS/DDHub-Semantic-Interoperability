@@ -16,48 +16,15 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ControllerFunction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/RunnableFunction" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ProcedureFunction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/RunnableFunction" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ProtectionFunction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/ActivableFunction" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/FDIRFunction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/ProtectionFunction" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SOEFunction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/ProtectionFunction" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ADCSTag">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DWISAttributeCardinalityRestriction">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
-    <owl:onProperty rdf:resource="http://ddhub.no/Tag" />
+    <owl:onProperty rdf:resource="http://ddhub.no/MainFunction" />
     <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-    <owl:onClass rdf:resource="http://ddhub.no/ADCSTag" />
+    <owl:onClass rdf:resource="http://ddhub.no/RunnableFunction" />
+    <owl:onProperty rdf:resource="http://ddhub.no/AuxiliaryFunction" />
+    <owl:onProperty rdf:resource="http://ddhub.no/Tag" />
+    <owl:onClass rdf:resource="http://ddhub.no/ProcedureFunction" />
     <owl:onProperty rdf:resource="http://ddhub.no/AdviceType" />
     <owl:onClass rdf:resource="http://ddhub.no/Advisor" />
     <owl:onProperty rdf:resource="http://ddhub.no/MinFrequency" />
@@ -144,6 +111,36 @@
     <owl:onProperty rdf:resource="http://ddhub.no/Accuracy" />
     <owl:onClass rdf:resource="http://ddhub.no/SensorUncertainty" />
     <owl:onProperty rdf:resource="http://ddhub.no/Precision" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ControllerFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/RunnableFunction" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ProtectionFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ActivableFunction" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/FDIRFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ProtectionFunction" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SOEFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ProtectionFunction" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ProcedureFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DataFlowNode">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
@@ -1819,10 +1816,26 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MainFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/RunnableFunction" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AuxiliaryFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/RunnableFunction" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Tag">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/ADCSTag" />
+    <rdfs:domain rdf:resource="http://ddhub.no/ProcedureFunction" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
@@ -2272,14 +2285,6 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
     <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/HasTag">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:range rdf:resource="http://ddhub.no/ADCSTag" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>

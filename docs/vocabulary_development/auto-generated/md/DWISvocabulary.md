@@ -48,6 +48,12 @@
 - Display name: Runnable Function
 - Parent class: [ActivableFunction](#ActivableFunction)
 - Attributes:
+  - MainFunction
+    - Type: string
+    - Description: 
+  - AuxiliaryFunction
+    - Type: string
+    - Description: 
 - Specialization:
 - Description: 
 - Examples:
@@ -85,14 +91,6 @@
 - Examples:
 - Definition set: ADCS
 ## ProcedureFunction <!-- NOUN -->
-- Display name: Procedure Function
-- Parent class: [RunnableFunction](#RunnableFunction)
-- Attributes:
-- Specialization:
-- Description: 
-- Examples:
-- Definition set: ADCS
-## ADCSTag <!-- NOUN -->
 - Display name: ADCS Tag
 - Parent class: [DWISNoun](#DWISNoun)
 - Attributes:
@@ -2633,16 +2631,6 @@
 - Examples:
 - Definition set: Uncertainty
 # Verbs
-## HasTag <!-- VERB -->
-- Display name: Has Tag
-- Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DWISNoun](#DWISNoun)
-- Object class: [ADCSTag](#ADCSTag)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: 
-- Examples: 
-- Definition set: ADCS
 ## IsEnablingSignalFor <!-- VERB -->
 - Display name: IsEnablingSignalFor
 - Parent verb: [DWISVerb](#DWISVerb)
