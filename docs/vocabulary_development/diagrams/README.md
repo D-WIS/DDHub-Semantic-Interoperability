@@ -50,6 +50,11 @@
 [<img src="generated/Mechanics.png" width="600px">](./generated/Mechanics.png)
 
 ---
+[ADCS.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/ADCS.md)
+
+[<img src="generated/ADCS.png" width="600px">](./generated/ADCS.png)
+
+---
 [Model.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/Model.md)
 
 [<img src="generated/Model.png" width="600px">](./generated/Model.png)
