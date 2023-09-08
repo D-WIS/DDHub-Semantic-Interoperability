@@ -91,12 +91,9 @@
 - Examples:
 - Definition set: ADCS
 ## ProcedureFunction <!-- NOUN -->
-- Display name: ADCS Tag
-- Parent class: [DWISNoun](#DWISNoun)
+- Display name: Procedure Function
+- Parent class: [RunnableFunction](#RunnableFunction)
 - Attributes:
-  - Tag
-    - Type: string
-    - Description: 
 - Specialization:
 - Description: 
 - Examples:

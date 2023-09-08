@@ -322,8 +322,8 @@ ddhub:DrillStringCenterLineFrame a owl:Class;
                                  rdfs:comment ""@EN; 
                                  rdfs:subClassOf ddhub:OneDimensionalCurviLinearReferenceFrame. 
 ddhub:DWISAttributeCardinalityRestriction a owl:Class, owl:Restriction; 
-                                          owl:onClass ddhub:RunnableFunction, ddhub:ProcedureFunction, ddhub:Advisor, ddhub:BandPassFilter, ddhub:HighPassFilter, ddhub:LowPassFilter, ddhub:NumberOfSampleMovingAverage, ddhub:TimeWindowMovingAverage, ddhub:Buffering, ddhub:NumberOfItemsRangeExtraction, ddhub:TimeWindowRangeExtraction, ddhub:Resampling, ddhub:DataProvider, ddhub:Telemetry, ddhub:DrillingDataPoint, ddhub:DrillingSignal, ddhub:DynamicDrillingSignal, ddhub:DataEndPoint, ddhub:WitsMLTimeBasedLogEndPoint, ddhub:EndPointMapping, ddhub:HydraulicConnectedState, ddhub:HydraulicJunction, ddhub:MechanicalElementState, ddhub:OneDimensionalReferenceFrame, ddhub:DrillStringCenterLineFrame, ddhub:WellboreCenterLineFrame, ddhub:MeasurableQuantity, ddhub:Quantity, ddhub:Unit, ddhub:Clock, ddhub:SynchronizationGroup, ddhub:SensorUncertainty; 
-                                          owl:onProperty ddhub:MainFunction, ddhub:AuxiliaryFunction, ddhub:Tag, ddhub:AdviceType, ddhub:MinFrequency, ddhub:MaxFrequency, ddhub:CutOffFrequency, ddhub:NumberOfSamples, ddhub:TimeWindow, ddhub:BufferingInterval, ddhub:NumberOfItems, ddhub:ResamplingRate, ddhub:ResamplingDelay, ddhub:Validity, ddhub:ProviderName, ddhub:NumberOfRepeaters, ddhub:DistanceBetweenRepeaters, ddhub:AverageDelayByRepeater, ddhub:IsValid, ddhub:Value, ddhub:TimeStampAtSource, ddhub:TimeStampAcquisition, ddhub:EndPointDescription, ddhub:WellUID, ddhub:WellName, ddhub:WellboreUID, ddhub:WellboreName, ddhub:LogUID, ddhub:LogName, ddhub:Mnemonic, ddhub:FixedIndices, ddhub:ValuesIndices, ddhub:MeasurementIndex, ddhub:LeftToRight, ddhub:RightToLeft, ddhub:PostiveUpward, ddhub:PositiveUpward, ddhub:MeaningfulPrecision, ddhub:L, ddhub:M, ddhub:T, ddhub:I, ddhub:ThT, ddhub:N, ddhub:J, ddhub:SIUnit, ddhub:Symbol, ddhub:ConversionFactorA, ddhub:ConversionFactorB, ddhub:LeapSeconds, ddhub:Stratum, ddhub:NetworkSynchronizationLatencyAverage, ddhub:NetworkSynchronizationLatencyStandardDeviation, ddhub:Resolution, ddhub:MaximumFluctuations, ddhub:SynchronizationDelay, ddhub:SamplingRate, ddhub:Accuracy, ddhub:Precision; 
+                                          owl:onClass ddhub:RunnableFunction, ddhub:Advisor, ddhub:BandPassFilter, ddhub:HighPassFilter, ddhub:LowPassFilter, ddhub:NumberOfSampleMovingAverage, ddhub:TimeWindowMovingAverage, ddhub:Buffering, ddhub:NumberOfItemsRangeExtraction, ddhub:TimeWindowRangeExtraction, ddhub:Resampling, ddhub:DataProvider, ddhub:Telemetry, ddhub:DrillingDataPoint, ddhub:DrillingSignal, ddhub:DynamicDrillingSignal, ddhub:DataEndPoint, ddhub:WitsMLTimeBasedLogEndPoint, ddhub:EndPointMapping, ddhub:HydraulicConnectedState, ddhub:HydraulicJunction, ddhub:MechanicalElementState, ddhub:OneDimensionalReferenceFrame, ddhub:DrillStringCenterLineFrame, ddhub:WellboreCenterLineFrame, ddhub:MeasurableQuantity, ddhub:Quantity, ddhub:Unit, ddhub:Clock, ddhub:SynchronizationGroup, ddhub:SensorUncertainty; 
+                                          owl:onProperty ddhub:MainFunction, ddhub:AuxiliaryFunction, ddhub:AdviceType, ddhub:MinFrequency, ddhub:MaxFrequency, ddhub:CutOffFrequency, ddhub:NumberOfSamples, ddhub:TimeWindow, ddhub:BufferingInterval, ddhub:NumberOfItems, ddhub:ResamplingRate, ddhub:ResamplingDelay, ddhub:Validity, ddhub:ProviderName, ddhub:NumberOfRepeaters, ddhub:DistanceBetweenRepeaters, ddhub:AverageDelayByRepeater, ddhub:IsValid, ddhub:Value, ddhub:TimeStampAtSource, ddhub:TimeStampAcquisition, ddhub:EndPointDescription, ddhub:WellUID, ddhub:WellName, ddhub:WellboreUID, ddhub:WellboreName, ddhub:LogUID, ddhub:LogName, ddhub:Mnemonic, ddhub:FixedIndices, ddhub:ValuesIndices, ddhub:MeasurementIndex, ddhub:LeftToRight, ddhub:RightToLeft, ddhub:PostiveUpward, ddhub:PositiveUpward, ddhub:MeaningfulPrecision, ddhub:L, ddhub:M, ddhub:T, ddhub:I, ddhub:ThT, ddhub:N, ddhub:J, ddhub:SIUnit, ddhub:Symbol, ddhub:ConversionFactorA, ddhub:ConversionFactorB, ddhub:LeapSeconds, ddhub:Stratum, ddhub:NetworkSynchronizationLatencyAverage, ddhub:NetworkSynchronizationLatencyStandardDeviation, ddhub:Resolution, ddhub:MaximumFluctuations, ddhub:SynchronizationDelay, ddhub:SamplingRate, ddhub:Accuracy, ddhub:Precision; 
                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger. 
 ddhub:DWISNoun a owl:Class; 
                rdfs:comment """Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a "is a" relation between the instance node and the noun."""@EN. 
@@ -1335,7 +1335,7 @@ ddhub:PressureToForceTransformation a owl:Class;
                                     rdfs:subClassOf ddhub:DirectTransformation. 
 ddhub:ProcedureFunction a owl:Class; 
                         rdfs:comment ""@EN; 
-                        rdfs:subClassOf ddhub:DWISNoun. 
+                        rdfs:subClassOf ddhub:RunnableFunction. 
 ddhub:ProportionQuantity a owl:Class; 
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:Quantity. 
@@ -1532,10 +1532,6 @@ ddhub:T a owl:DatatypeProperty, owl:FunctionalProperty;
         rdfs:comment "Time exponent."@EN; 
         rdfs:domain ddhub:Quantity; 
         rdfs:range xsd:int. 
-ddhub:Tag a owl:DatatypeProperty, owl:FunctionalProperty; 
-          rdfs:comment ""@EN; 
-          rdfs:domain ddhub:ProcedureFunction; 
-          rdfs:range xsd:string. 
 ddhub:TangencyLength a owl:Class; 
                      rdfs:comment "the position along the drill-string, counted from the bit, from which we can consider that the pipes direction is tangential with the borehole direction."@EN; 
                      rdfs:subClassOf ddhub:DWISNoun. 
