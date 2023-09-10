@@ -106,6 +106,70 @@
 - Description: 
 - Examples:
 - Definition set: DataFlow
+## Plan <!-- NOUN -->
+- Display name: Plan
+- Parent class: [DataFlowNode](#DataFlowNode)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## OperationalPlan <!-- NOUN -->
+- Display name: OperationalPlan
+- Parent class: [Plan](#Plan)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## DrillingProgram <!-- NOUN -->
+- Display name: DrillingProgram
+- Parent class: [Plan](#Plan)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## RigActionPlan <!-- NOUN -->
+- Display name: RigActionPlan
+- Parent class: [Plan](#Plan)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## ComputedState <!-- NOUN -->
+- Display name: ComputedState
+- Parent class: [ComputationUnit](#ComputationUnit)
+- Attributes:
+- Specialization:
+- Description: A state represents the current configuation of a system.
+- Examples:
+- Definition set: DataFlow
+## ProceduralState <!-- NOUN -->
+- Display name: ComputedProceduralState
+- Parent class: [ComputedState](#ComputedState)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## ProcessState <!-- NOUN -->
+- Display name: ComputedProcessState
+- Parent class: [ComputedState](#ComputedState)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## PhysicalState <!-- NOUN -->
+- Display name: ComputedPhysicalState
+- Parent class: [ComputedState](#ComputedState)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
 ## ComputationUnit <!-- NOUN -->
 - Display name: ComputationUnit
 - Parent class: [DataFlowNode](#DataFlowNode)
@@ -465,7 +529,106 @@
     - Type: string
     - Description: 
 - Specialization:
+- Description: A data provider is any sources for data
+- Examples:
+- Definition set: DataProviders
+## OperatingCompany <!-- NOUN -->
+- Display name: OperatingCompany
+- Parent class: [DataProvider](#DataProvider)
+- Attributes:
+  - ProviderName
+    - Type: string
+    - Description: 
+- Specialization:
+- Description: An operating company is an entity that holds the rights to explore, develop, and produce hydrocarbon resources from a particular oil or gas field or lease
+- Examples:
+- Definition set: DataProviders
+## ServiceCompany <!-- NOUN -->
+- Display name: ServiceCompany
+- Parent class: [DataProvider](#DataProvider)
+- Attributes:
+  - ProviderName
+    - Type: string
+    - Description: 
+- Specialization:
+- Description: A service company is an entity that provides services during the well construction.
+- Examples:
+- Definition set: DataProviders
+## DirectionalServiceCompany <!-- NOUN -->
+- Display name: DirectionalServiceCompany
+- Parent class: [ServiceCompany](#ServiceCompany)
+- Attributes:
+  - ProviderName
+    - Type: string
+    - Description: 
+- Specialization:
+- Description: A directional service company is an entity that provides services for downhole directional drilling and downhole measurements.
+- Examples:
+- Definition set: DataProviders
+## DrillingFluidProvider <!-- NOUN -->
+- Display name: DrillingFluidProvider
+- Parent class: [ServiceCompany](#ServiceCompany)
+- Attributes:
+  - ProviderName
+    - Type: string
+    - Description: 
+- Specialization:
+- Description: A drilling fluid provider is a company that provides and maintains the drilling fluids during well construction.
+- Examples:
+- Definition set: DataProviders
+## LoggingServiceCompany <!-- NOUN -->
+- Display name: LoggingServiceCompany
+- Parent class: [ServiceCompany](#ServiceCompany)
+- Attributes:
+  - ProviderName
+    - Type: string
+    - Description: 
+- Specialization:
+- Description: A logging service company is an entity that gathers measured information during well construction.
+- Examples:
+- Definition set: DataProviders
+## CementingServiceCompany <!-- NOUN -->
+- Display name: CementingServiceCompany
+- Parent class: [ServiceCompany](#ServiceCompany)
+- Attributes:
+  - ProviderName
+    - Type: string
+    - Description: 
+- Specialization:
 - Description: 
+- Examples:
+- Definition set: DataProviders
+## DataAnalysisServiceCompany <!-- NOUN -->
+- Display name: DataAnalysisServiceCompany
+- Parent class: [ServiceCompany](#ServiceCompany)
+- Attributes:
+  - ProviderName
+    - Type: string
+    - Description: 
+- Specialization:
+- Description: A data analysis service company is an entity that analyses measured data and provide new information from these measurements.
+- Examples:
+- Definition set: DataProviders
+## DrillingContractor <!-- NOUN -->
+- Display name: DrillingContractor
+- Parent class: [DataProvider](#DataProvider)
+- Attributes:
+  - ProviderName
+    - Type: string
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataProviders
+## DWISInternalService <!-- NOUN -->
+- Display name: DWISInternalService
+- Parent class: [DataProvider](#DataProvider)
+- Attributes:
+  - ProviderName
+    - Type: string
+    - Description: 
+- Specialization:
+- Description: A DWIS internal service is an internal component of the DWIS infrastructure that generates information that can be used by any systems connected to the DWIS infrastructure.
 - Examples:
 - Definition set: DataProviders
 ## Telemetry <!-- NOUN -->

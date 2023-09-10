@@ -150,6 +150,9 @@ ddhub:CartesianTwoDimensionalReferenceFrame a owl:Class;
 ddhub:CasingShoeLocation a owl:Class; 
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:Location. 
+ddhub:CementingServiceCompany a owl:Class; 
+                              rdfs:comment ""@EN; 
+                              rdfs:subClassOf ddhub:ServiceCompany. 
 ddhub:CementPump a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:Pump. 
@@ -171,6 +174,9 @@ ddhub:ComputationUnit a owl:Class;
 ddhub:ComputedData a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:DrillingDataPoint. 
+ddhub:ComputedState a owl:Class; 
+                    rdfs:comment "A state represents the current configuation of a system."@EN; 
+                    rdfs:subClassOf ddhub:ComputationUnit. 
 ddhub:ConnectedCondition a owl:Class; 
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:ValidityCondition. 
@@ -212,6 +218,9 @@ ddhub:CutOffFrequency a owl:DatatypeProperty, owl:FunctionalProperty;
 ddhub:CylindricalReferenceFrame a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:ThreeDimensionalReferenceFrame. 
+ddhub:DataAnalysisServiceCompany a owl:Class; 
+                                 rdfs:comment "A data analysis service company is an entity that analyses measured data and provide new information from these measurements."@EN; 
+                                 rdfs:subClassOf ddhub:ServiceCompany. 
 ddhub:DataEndPoint a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:DWISNoun. 
@@ -219,7 +228,7 @@ ddhub:DataFlowNode a owl:Class;
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:DataProvider a owl:Class; 
-                   rdfs:comment ""@EN; 
+                   rdfs:comment "A data provider is any sources for data"@EN; 
                    rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:DeadLine a owl:Class; 
                rdfs:comment ""@EN; 
@@ -245,6 +254,9 @@ ddhub:Derivation a owl:Class;
 ddhub:DerivedMeasurement a owl:Class; 
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:Measurement. 
+ddhub:DirectionalServiceCompany a owl:Class; 
+                                rdfs:comment "A directional service company is an entity that provides services for downhole directional drilling and downhole measurements."@EN; 
+                                rdfs:subClassOf ddhub:ServiceCompany. 
 ddhub:DirectTransformation a owl:Class; 
                            rdfs:comment "Direct transformations are performed using only the current value of their inputs, time is not involved"@EN; 
                            rdfs:subClassOf ddhub:Transformation. 
@@ -291,12 +303,21 @@ ddhub:DrawWorksControlSystem a owl:Class;
 ddhub:DrillFloorReferenceLocation a owl:Class; 
                                   rdfs:comment ""@EN; 
                                   rdfs:subClassOf ddhub:Location. 
+ddhub:DrillingContractor a owl:Class; 
+                         rdfs:comment ""@EN; 
+                         rdfs:subClassOf ddhub:DataProvider. 
 ddhub:DrillingDataPoint a owl:Class; 
                         rdfs:comment "Main type of DDHub data. Represents a drilling signal."@EN; 
                         rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:DrillingEquipment a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:DrillingFluidProvider a owl:Class; 
+                            rdfs:comment "A drilling fluid provider is a company that provides and maintains the drilling fluids during well construction."@EN; 
+                            rdfs:subClassOf ddhub:ServiceCompany. 
+ddhub:DrillingProgram a owl:Class; 
+                      rdfs:comment ""@EN; 
+                      rdfs:subClassOf ddhub:Plan. 
 ddhub:DrillingSignal a owl:Class; 
                      rdfs:comment "Data structure used to store the streaming drilling data."@EN; 
                      rdfs:subClassOf ddhub:DWISNoun. 
@@ -322,9 +343,12 @@ ddhub:DrillStringCenterLineFrame a owl:Class;
                                  rdfs:comment ""@EN; 
                                  rdfs:subClassOf ddhub:OneDimensionalCurviLinearReferenceFrame. 
 ddhub:DWISAttributeCardinalityRestriction a owl:Class, owl:Restriction; 
-                                          owl:onClass ddhub:RunnableFunction, ddhub:Advisor, ddhub:BandPassFilter, ddhub:HighPassFilter, ddhub:LowPassFilter, ddhub:NumberOfSampleMovingAverage, ddhub:TimeWindowMovingAverage, ddhub:Buffering, ddhub:NumberOfItemsRangeExtraction, ddhub:TimeWindowRangeExtraction, ddhub:Resampling, ddhub:DataProvider, ddhub:Telemetry, ddhub:DrillingDataPoint, ddhub:DrillingSignal, ddhub:DynamicDrillingSignal, ddhub:DataEndPoint, ddhub:WitsMLTimeBasedLogEndPoint, ddhub:EndPointMapping, ddhub:HydraulicConnectedState, ddhub:HydraulicJunction, ddhub:MechanicalElementState, ddhub:OneDimensionalReferenceFrame, ddhub:DrillStringCenterLineFrame, ddhub:WellboreCenterLineFrame, ddhub:MeasurableQuantity, ddhub:Quantity, ddhub:Unit, ddhub:Clock, ddhub:SynchronizationGroup, ddhub:SensorUncertainty; 
+                                          owl:onClass ddhub:RunnableFunction, ddhub:Advisor, ddhub:BandPassFilter, ddhub:HighPassFilter, ddhub:LowPassFilter, ddhub:NumberOfSampleMovingAverage, ddhub:TimeWindowMovingAverage, ddhub:Buffering, ddhub:NumberOfItemsRangeExtraction, ddhub:TimeWindowRangeExtraction, ddhub:Resampling, ddhub:DataProvider, ddhub:OperatingCompany, ddhub:ServiceCompany, ddhub:DirectionalServiceCompany, ddhub:DrillingFluidProvider, ddhub:LoggingServiceCompany, ddhub:CementingServiceCompany, ddhub:DataAnalysisServiceCompany, ddhub:DrillingContractor, ddhub:DWISInternalService, ddhub:Telemetry, ddhub:DrillingDataPoint, ddhub:DrillingSignal, ddhub:DynamicDrillingSignal, ddhub:DataEndPoint, ddhub:WitsMLTimeBasedLogEndPoint, ddhub:EndPointMapping, ddhub:HydraulicConnectedState, ddhub:HydraulicJunction, ddhub:MechanicalElementState, ddhub:OneDimensionalReferenceFrame, ddhub:DrillStringCenterLineFrame, ddhub:WellboreCenterLineFrame, ddhub:MeasurableQuantity, ddhub:Quantity, ddhub:Unit, ddhub:Clock, ddhub:SynchronizationGroup, ddhub:SensorUncertainty; 
                                           owl:onProperty ddhub:MainFunction, ddhub:AuxiliaryFunction, ddhub:AdviceType, ddhub:MinFrequency, ddhub:MaxFrequency, ddhub:CutOffFrequency, ddhub:NumberOfSamples, ddhub:TimeWindow, ddhub:BufferingInterval, ddhub:NumberOfItems, ddhub:ResamplingRate, ddhub:ResamplingDelay, ddhub:Validity, ddhub:ProviderName, ddhub:NumberOfRepeaters, ddhub:DistanceBetweenRepeaters, ddhub:AverageDelayByRepeater, ddhub:IsValid, ddhub:Value, ddhub:TimeStampAtSource, ddhub:TimeStampAcquisition, ddhub:EndPointDescription, ddhub:WellUID, ddhub:WellName, ddhub:WellboreUID, ddhub:WellboreName, ddhub:LogUID, ddhub:LogName, ddhub:Mnemonic, ddhub:FixedIndices, ddhub:ValuesIndices, ddhub:MeasurementIndex, ddhub:LeftToRight, ddhub:RightToLeft, ddhub:PostiveUpward, ddhub:PositiveUpward, ddhub:MeaningfulPrecision, ddhub:L, ddhub:M, ddhub:T, ddhub:I, ddhub:ThT, ddhub:N, ddhub:J, ddhub:SIUnit, ddhub:Symbol, ddhub:ConversionFactorA, ddhub:ConversionFactorB, ddhub:LeapSeconds, ddhub:Stratum, ddhub:NetworkSynchronizationLatencyAverage, ddhub:NetworkSynchronizationLatencyStandardDeviation, ddhub:Resolution, ddhub:MaximumFluctuations, ddhub:SynchronizationDelay, ddhub:SamplingRate, ddhub:Accuracy, ddhub:Precision; 
                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger. 
+ddhub:DWISInternalService a owl:Class; 
+                          rdfs:comment "A DWIS internal service is an internal component of the DWIS infrastructure that generates information that can be used by any systems connected to the DWIS infrastructure."@EN; 
+                          rdfs:subClassOf ddhub:DataProvider. 
 ddhub:DWISNoun a owl:Class; 
                rdfs:comment """Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a "is a" relation between the instance node and the noun."""@EN. 
 ddhub:DWISVerb a owl:ObjectProperty; 
@@ -1071,6 +1095,9 @@ ddhub:Limit a owl:Class;
 ddhub:Location a owl:Class; 
                rdfs:comment "Physical location for a signal. Refers to: 1) a reference frame (via the HasReferenceFrame relation), that works as a system of coordinates 2) an origin (of type Location) via the HasReferenceFrameOrigin relation."@EN; 
                rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:LoggingServiceCompany a owl:Class; 
+                            rdfs:comment "A logging service company is an entity that gathers measured information during well construction."@EN; 
+                            rdfs:subClassOf ddhub:ServiceCompany. 
 ddhub:LogName a owl:DatatypeProperty, owl:FunctionalProperty; 
               rdfs:comment ""@EN; 
               rdfs:domain ddhub:WitsMLTimeBasedLogEndPoint; 
@@ -1291,15 +1318,27 @@ ddhub:OpenHole a owl:Class;
 ddhub:OpenHoleCenterLineFrame a owl:Class; 
                               rdfs:comment ""@EN; 
                               rdfs:subClassOf ddhub:OneDimensionalCurviLinearReferenceFrame. 
+ddhub:OperatingCompany a owl:Class; 
+                       rdfs:comment "An operating company is an entity that holds the rights to explore, develop, and produce hydrocarbon resources from a particular oil or gas field or lease"@EN; 
+                       rdfs:subClassOf ddhub:DataProvider. 
+ddhub:OperationalPlan a owl:Class; 
+                      rdfs:comment ""@EN; 
+                      rdfs:subClassOf ddhub:Plan. 
 ddhub:OverburdenPressure a owl:Class; 
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:DrillingDataPoint. 
 ddhub:OverburdenPressureGradient a owl:Class; 
                                  rdfs:comment ""@EN; 
                                  rdfs:subClassOf ddhub:DrillingDataPoint. 
+ddhub:PhysicalState a owl:Class; 
+                    rdfs:comment ""@EN; 
+                    rdfs:subClassOf ddhub:ComputedState. 
 ddhub:Pipe a owl:Class; 
            rdfs:comment ""@EN; 
            rdfs:subClassOf ddhub:HydraulicBranch. 
+ddhub:Plan a owl:Class; 
+           rdfs:comment ""@EN; 
+           rdfs:subClassOf ddhub:DataFlowNode. 
 ddhub:PolarReferenceFrame a owl:Class; 
                           rdfs:comment ""@EN; 
                           rdfs:subClassOf ddhub:TwoDimensionalReferenceFrame. 
@@ -1333,9 +1372,15 @@ ddhub:PressureToEquivalentDensityTransformation a owl:Class;
 ddhub:PressureToForceTransformation a owl:Class; 
                                     rdfs:comment ""@EN; 
                                     rdfs:subClassOf ddhub:DirectTransformation. 
+ddhub:ProceduralState a owl:Class; 
+                      rdfs:comment ""@EN; 
+                      rdfs:subClassOf ddhub:ComputedState. 
 ddhub:ProcedureFunction a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:RunnableFunction. 
+ddhub:ProcessState a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:ComputedState. 
 ddhub:ProportionQuantity a owl:Class; 
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:Quantity. 
@@ -1344,7 +1389,7 @@ ddhub:ProtectionFunction a owl:Class;
                          rdfs:subClassOf ddhub:ActivableFunction. 
 ddhub:ProviderName a owl:DatatypeProperty, owl:FunctionalProperty; 
                    rdfs:comment ""@EN; 
-                   rdfs:domain ddhub:DataProvider; 
+                   rdfs:domain ddhub:DataProvider, ddhub:OperatingCompany, ddhub:ServiceCompany, ddhub:DirectionalServiceCompany, ddhub:DrillingFluidProvider, ddhub:LoggingServiceCompany, ddhub:CementingServiceCompany, ddhub:DataAnalysisServiceCompany, ddhub:DrillingContractor, ddhub:DWISInternalService; 
                    rdfs:range xsd:string. 
 ddhub:Pump a owl:Class; 
            rdfs:comment ""@EN; 
@@ -1412,6 +1457,9 @@ ddhub:ReturnFlowLine a owl:Class;
 ddhub:Rig a owl:Class; 
           rdfs:comment ""@EN; 
           rdfs:subClassOf ddhub:DrillingEquipment. 
+ddhub:RigActionPlan a owl:Class; 
+                    rdfs:comment ""@EN; 
+                    rdfs:subClassOf ddhub:Plan. 
 ddhub:RigChokeControlSystem a owl:Class; 
                             rdfs:comment ""@EN; 
                             rdfs:subClassOf ddhub:ControlSystem. 
@@ -1444,6 +1492,9 @@ ddhub:SemiCircularChannel a owl:Class;
 ddhub:SensorUncertainty a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:SignalUncertainty. 
+ddhub:ServiceCompany a owl:Class; 
+                     rdfs:comment "A service company is an entity that provides services during the well construction."@EN; 
+                     rdfs:subClassOf ddhub:DataProvider. 
 ddhub:SetPoint a owl:Class; 
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:DrillingDataPoint. 

@@ -21,8 +21,24 @@
 <http://ddhub.no/SOEFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ProtectionFunction> .
 <http://ddhub.no/DataFlowNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/DataFlowNode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/Plan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Plan> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DataFlowNode> .
+<http://ddhub.no/OperationalPlan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/OperationalPlan> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Plan> .
+<http://ddhub.no/DrillingProgram> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillingProgram> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Plan> .
+<http://ddhub.no/RigActionPlan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/RigActionPlan> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Plan> .
 <http://ddhub.no/ComputationUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ComputationUnit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DataFlowNode> .
+<http://ddhub.no/ComputedState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ComputedState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ComputationUnit> .
+<http://ddhub.no/ProceduralState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ProceduralState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ComputedState> .
+<http://ddhub.no/ProcessState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ProcessState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ComputedState> .
+<http://ddhub.no/PhysicalState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/PhysicalState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ComputedState> .
 <http://ddhub.no/Advisor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/Advisor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ComputationUnit> .
 <http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onProperty> <http://ddhub.no/AdviceType> .
@@ -124,6 +140,33 @@
 <http://ddhub.no/DataProvider> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onProperty> <http://ddhub.no/ProviderName> .
 <http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onClass> <http://ddhub.no/DataProvider> .
+<http://ddhub.no/OperatingCompany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/OperatingCompany> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DataProvider> .
+<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onClass> <http://ddhub.no/OperatingCompany> .
+<http://ddhub.no/ServiceCompany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ServiceCompany> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DataProvider> .
+<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onClass> <http://ddhub.no/ServiceCompany> .
+<http://ddhub.no/DirectionalServiceCompany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DirectionalServiceCompany> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ServiceCompany> .
+<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onClass> <http://ddhub.no/DirectionalServiceCompany> .
+<http://ddhub.no/DrillingFluidProvider> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillingFluidProvider> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ServiceCompany> .
+<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onClass> <http://ddhub.no/DrillingFluidProvider> .
+<http://ddhub.no/LoggingServiceCompany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/LoggingServiceCompany> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ServiceCompany> .
+<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onClass> <http://ddhub.no/LoggingServiceCompany> .
+<http://ddhub.no/CementingServiceCompany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/CementingServiceCompany> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ServiceCompany> .
+<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onClass> <http://ddhub.no/CementingServiceCompany> .
+<http://ddhub.no/DataAnalysisServiceCompany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DataAnalysisServiceCompany> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ServiceCompany> .
+<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onClass> <http://ddhub.no/DataAnalysisServiceCompany> .
+<http://ddhub.no/DrillingContractor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillingContractor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DataProvider> .
+<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onClass> <http://ddhub.no/DrillingContractor> .
+<http://ddhub.no/DWISInternalService> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DWISInternalService> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DataProvider> .
+<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onClass> <http://ddhub.no/DWISInternalService> .
 <http://ddhub.no/Telemetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/Telemetry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onProperty> <http://ddhub.no/NumberOfRepeaters> .
@@ -688,7 +731,15 @@
 <http://ddhub.no/FDIRFunction> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/SOEFunction> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/DataFlowNode> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/Plan> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/OperationalPlan> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/DrillingProgram> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/RigActionPlan> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/ComputationUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes a complex computation unit, typically based on advanced numerical modeling"@EN .
+<http://ddhub.no/ComputedState> <http://www.w3.org/2000/01/rdf-schema#comment> "A state represents the current configuation of a system."@EN .
+<http://ddhub.no/ProceduralState> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/ProcessState> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/PhysicalState> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/Advisor> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/Simulator> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/Controller> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
@@ -727,7 +778,16 @@
 <http://ddhub.no/Resampling> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/TransmissionLine> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/UserInterface> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/DataProvider> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/DataProvider> <http://www.w3.org/2000/01/rdf-schema#comment> "A data provider is any sources for data"@EN .
+<http://ddhub.no/OperatingCompany> <http://www.w3.org/2000/01/rdf-schema#comment> "An operating company is an entity that holds the rights to explore, develop, and produce hydrocarbon resources from a particular oil or gas field or lease"@EN .
+<http://ddhub.no/ServiceCompany> <http://www.w3.org/2000/01/rdf-schema#comment> "A service company is an entity that provides services during the well construction."@EN .
+<http://ddhub.no/DirectionalServiceCompany> <http://www.w3.org/2000/01/rdf-schema#comment> "A directional service company is an entity that provides services for downhole directional drilling and downhole measurements."@EN .
+<http://ddhub.no/DrillingFluidProvider> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling fluid provider is a company that provides and maintains the drilling fluids during well construction."@EN .
+<http://ddhub.no/LoggingServiceCompany> <http://www.w3.org/2000/01/rdf-schema#comment> "A logging service company is an entity that gathers measured information during well construction."@EN .
+<http://ddhub.no/CementingServiceCompany> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/DataAnalysisServiceCompany> <http://www.w3.org/2000/01/rdf-schema#comment> "A data analysis service company is an entity that analyses measured data and provide new information from these measurements."@EN .
+<http://ddhub.no/DrillingContractor> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/DWISInternalService> <http://www.w3.org/2000/01/rdf-schema#comment> "A DWIS internal service is an internal component of the DWIS infrastructure that generates information that can be used by any systems connected to the DWIS infrastructure."@EN .
 <http://ddhub.no/Telemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "Technology used for transferring the data from its main origin."@EN .
 <http://ddhub.no/DownHoleTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/MudPulseTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "A method that allows transfer of downhole data to the surface via pressure pulses sent trough the drilling fluid."@EN .
@@ -1032,6 +1092,15 @@
 <http://ddhub.no/ProviderName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <http://ddhub.no/ProviderName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DataProvider> .
 <http://ddhub.no/ProviderName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://ddhub.no/ProviderName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/OperatingCompany> .
+<http://ddhub.no/ProviderName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/ServiceCompany> .
+<http://ddhub.no/ProviderName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DirectionalServiceCompany> .
+<http://ddhub.no/ProviderName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingFluidProvider> .
+<http://ddhub.no/ProviderName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/LoggingServiceCompany> .
+<http://ddhub.no/ProviderName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/CementingServiceCompany> .
+<http://ddhub.no/ProviderName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DataAnalysisServiceCompany> .
+<http://ddhub.no/ProviderName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingContractor> .
+<http://ddhub.no/ProviderName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISInternalService> .
 <http://ddhub.no/NumberOfRepeaters> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://ddhub.no/NumberOfRepeaters> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <http://ddhub.no/NumberOfRepeaters> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/Telemetry> .

@@ -46,6 +46,15 @@
     <owl:onProperty rdf:resource="http://ddhub.no/Validity" />
     <owl:onProperty rdf:resource="http://ddhub.no/ProviderName" />
     <owl:onClass rdf:resource="http://ddhub.no/DataProvider" />
+    <owl:onClass rdf:resource="http://ddhub.no/OperatingCompany" />
+    <owl:onClass rdf:resource="http://ddhub.no/ServiceCompany" />
+    <owl:onClass rdf:resource="http://ddhub.no/DirectionalServiceCompany" />
+    <owl:onClass rdf:resource="http://ddhub.no/DrillingFluidProvider" />
+    <owl:onClass rdf:resource="http://ddhub.no/LoggingServiceCompany" />
+    <owl:onClass rdf:resource="http://ddhub.no/CementingServiceCompany" />
+    <owl:onClass rdf:resource="http://ddhub.no/DataAnalysisServiceCompany" />
+    <owl:onClass rdf:resource="http://ddhub.no/DrillingContractor" />
+    <owl:onClass rdf:resource="http://ddhub.no/DWISInternalService" />
     <owl:onProperty rdf:resource="http://ddhub.no/NumberOfRepeaters" />
     <owl:onClass rdf:resource="http://ddhub.no/Telemetry" />
     <owl:onProperty rdf:resource="http://ddhub.no/DistanceBetweenRepeaters" />
@@ -146,10 +155,57 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Plan">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DataFlowNode" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/OperationalPlan">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Plan" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingProgram">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Plan" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RigActionPlan">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Plan" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ComputationUnit">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DataFlowNode" />
     <rdfs:comment xml:lang="EN">Denotes a complex computation unit, typically based on advanced numerical modeling</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ComputedState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ComputationUnit" />
+    <rdfs:comment xml:lang="EN">A state represents the current configuation of a system.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ProceduralState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ComputedState" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ProcessState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ComputedState" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PhysicalState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ComputedState" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Advisor">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
@@ -377,8 +433,54 @@
   <rdf:Description rdf:about="http://ddhub.no/DataProvider">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:comment xml:lang="EN">A data provider is any sources for data</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/OperatingCompany">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DataProvider" />
+    <rdfs:comment xml:lang="EN">An operating company is an entity that holds the rights to explore, develop, and produce hydrocarbon resources from a particular oil or gas field or lease</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ServiceCompany">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DataProvider" />
+    <rdfs:comment xml:lang="EN">A service company is an entity that provides services during the well construction.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DirectionalServiceCompany">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ServiceCompany" />
+    <rdfs:comment xml:lang="EN">A directional service company is an entity that provides services for downhole directional drilling and downhole measurements.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingFluidProvider">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ServiceCompany" />
+    <rdfs:comment xml:lang="EN">A drilling fluid provider is a company that provides and maintains the drilling fluids during well construction.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/LoggingServiceCompany">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ServiceCompany" />
+    <rdfs:comment xml:lang="EN">A logging service company is an entity that gathers measured information during well construction.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/CementingServiceCompany">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ServiceCompany" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DataAnalysisServiceCompany">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ServiceCompany" />
+    <rdfs:comment xml:lang="EN">A data analysis service company is an entity that analyses measured data and provide new information from these measurements.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingContractor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DataProvider" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DWISInternalService">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DataProvider" />
+    <rdfs:comment xml:lang="EN">A DWIS internal service is an internal component of the DWIS infrastructure that generates information that can be used by any systems connected to the DWIS infrastructure.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Telemetry">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
@@ -1925,6 +2027,15 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DataProvider" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+    <rdfs:domain rdf:resource="http://ddhub.no/OperatingCompany" />
+    <rdfs:domain rdf:resource="http://ddhub.no/ServiceCompany" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DirectionalServiceCompany" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingFluidProvider" />
+    <rdfs:domain rdf:resource="http://ddhub.no/LoggingServiceCompany" />
+    <rdfs:domain rdf:resource="http://ddhub.no/CementingServiceCompany" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DataAnalysisServiceCompany" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingContractor" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DWISInternalService" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>

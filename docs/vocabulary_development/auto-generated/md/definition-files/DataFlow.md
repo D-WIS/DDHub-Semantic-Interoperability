@@ -9,6 +9,70 @@
 - Description: 
 - Examples:
 - Definition set: DataFlow
+## Plan <!-- NOUN -->
+- Display name: Plan
+- Parent class: [DataFlowNode](./DataFlow.md#DataFlowNode)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## OperationalPlan <!-- NOUN -->
+- Display name: OperationalPlan
+- Parent class: [Plan](./DataFlow.md#Plan)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## DrillingProgram <!-- NOUN -->
+- Display name: DrillingProgram
+- Parent class: [Plan](./DataFlow.md#Plan)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## RigActionPlan <!-- NOUN -->
+- Display name: RigActionPlan
+- Parent class: [Plan](./DataFlow.md#Plan)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## ComputedState <!-- NOUN -->
+- Display name: ComputedState
+- Parent class: [ComputationUnit](./DataFlow.md#ComputationUnit)
+- Attributes:
+- Specialization:
+- Description: A state represents the current configuation of a system.
+- Examples:
+- Definition set: DataFlow
+## ProceduralState <!-- NOUN -->
+- Display name: ComputedProceduralState
+- Parent class: [ComputedState](./DataFlow.md#ComputedState)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## ProcessState <!-- NOUN -->
+- Display name: ComputedProcessState
+- Parent class: [ComputedState](./DataFlow.md#ComputedState)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## PhysicalState <!-- NOUN -->
+- Display name: ComputedPhysicalState
+- Parent class: [ComputedState](./DataFlow.md#ComputedState)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
 ## ComputationUnit <!-- NOUN -->
 - Display name: ComputationUnit
 - Parent class: [DataFlowNode](./DataFlow.md#DataFlowNode)
