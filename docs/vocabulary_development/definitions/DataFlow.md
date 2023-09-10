@@ -9,13 +9,6 @@
 - Description: 
 - Examples:
 ## Plan <!-- NOUN -->
-- Display name: ConfigurationData
-- Parent class: DataFlowNode
-- Attributes:
-- Specialization: Configuration data for a process
-- Description: 
-- Examples:
-## Plan <!-- NOUN -->
 - Display name: Plan
 - Parent class: DataFlowNode
 - Attributes:
@@ -43,30 +36,30 @@
 - Specialization: A rig action plan is a set of steps and rules that shall be conducted to fulfil a particulat activity when constructing a well.
 - Description: 
 - Examples:
-## State <!-- NOUN -->
-- Display name: State
-- Parent class: DataFlowNode
+## ComputedState <!-- NOUN -->
+- Display name: ComputedState
+- Parent class: ComputationUnit
 - Attributes:
 - Specialization:
 - Description: A state represents the current configuation of a system.
 - Examples:
 ## ProceduralState <!-- NOUN -->
-- Display name: ProceduralState
-- Parent class: State
+- Display name: ComputedProceduralState
+- Parent class: ComputedState
 - Attributes:
 - Specialization: A procedural state describes the state of a running procedure.
 - Description: 
 - Examples:
 ## ProcessState <!-- NOUN -->
-- Display name: ProcessState
-- Parent class: State
+- Display name: ComputedProcessState
+- Parent class: ComputedState
 - Attributes:
 - Specialization: A process state describes the state of a process.
 - Description: 
 - Examples:
 ## PhysicalState <!-- NOUN -->
-- Display name: PhysicalState
-- Parent class: State
+- Display name: ComputedPhysicalState
+- Parent class: ComputedState
 - Attributes:
 - Specialization: A physical state describes the phyiscal state of a system.
 - Description: 
