@@ -12,7 +12,7 @@
 - Specialization:
 - Description: A data provider is any sources for data
 - Examples:
-## DataProvider <!-- NOUN -->
+## OperatingCompany <!-- NOUN -->
 - Display name: OperatingCompany
 - Parent class: DataProvider
 - Attributes:
@@ -22,7 +22,7 @@
 - Specialization:
 - Description: An operating company is an entity that holds the rights to explore, develop, and produce hydrocarbon resources from a particular oil or gas field or lease
 - Examples:
-## DataProvider <!-- NOUN -->
+## ServiceCompany <!-- NOUN -->
 - Display name: ServiceCompany
 - Parent class: DataProvider
 - Attributes:
@@ -32,7 +32,7 @@
 - Specialization:
 - Description: A service company is an entity that provides services during the well construction.
 - Examples:
-## DataProvider <!-- NOUN -->
+## DirectionalServiceCompany <!-- NOUN -->
 - Display name: DirectionalServiceCompany
 - Parent class: ServiceCompany
 - Attributes:
@@ -42,7 +42,7 @@
 - Specialization:
 - Description: A directional service company is an entity that provides services for downhole directional drilling and downhole measurements.
 - Examples:
-## DataProvider <!-- NOUN -->
+## DrillingFluidProvider <!-- NOUN -->
 - Display name: DrillingFluidProvider
 - Parent class: ServiceCompany
 - Attributes:
@@ -52,7 +52,7 @@
 - Specialization:
 - Description: A drilling fluid provider is a company that provides and maintains the drilling fluids during well construction.
 - Examples:
-## DataProvider <!-- NOUN -->
+## LoggingServiceCompany <!-- NOUN -->
 - Display name: LoggingServiceCompany
 - Parent class: ServiceCompany
 - Attributes:
@@ -62,7 +62,7 @@
 - Specialization:
 - Description: A logging service company is an entity that gathers measured information during well construction.
 - Examples:
-## DataProvider <!-- NOUN -->
+## CementingServiceCompany <!-- NOUN -->
 - Display name: CementingServiceCompany
 - Parent class: ServiceCompany
 - Attributes:
@@ -72,7 +72,7 @@
 - Specialization: A cementing service company is an entity that provides the cement slurry used during cementing operations.
 - Description: 
 - Examples:
-## DataProvider <!-- NOUN -->
+## DataAnalysisServiceCompany <!-- NOUN -->
 - Display name: DataAnalysisServiceCompany
 - Parent class: ServiceCompany
 - Attributes:
@@ -82,7 +82,7 @@
 - Specialization:
 - Description: A data analysis service company is an entity that analyses measured data and provide new information from these measurements.
 - Examples:
-## DataProvider <!-- NOUN -->
+## DrillingContractor <!-- NOUN -->
 - Display name: DrillingContractor
 - Parent class: DataProvider
 - Attributes:
@@ -92,7 +92,7 @@
 - Specialization: A drilling contractor is a company that is primarily responsible for conducting drilling operations, including the construction and operation of drilling rigs.
 - Description: 
 - Examples:
-## DataProvider <!-- NOUN -->
+## DWISInternalService <!-- NOUN -->
 - Display name: DWISInternalService
 - Parent class: DataProvider
 - Attributes:
