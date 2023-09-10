@@ -9,6 +9,13 @@
 - Description: 
 - Examples:
 ## Plan <!-- NOUN -->
+- Display name: ConfigurationData
+- Parent class: DataFlowNode
+- Attributes:
+- Specialization: Configuration data for a process
+- Description: 
+- Examples:
+## Plan <!-- NOUN -->
 - Display name: Plan
 - Parent class: DataFlowNode
 - Attributes:
