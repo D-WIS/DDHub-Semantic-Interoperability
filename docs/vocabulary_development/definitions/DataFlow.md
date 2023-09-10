@@ -8,56 +8,56 @@
 - Specialization:
 - Description: 
 - Examples:
-## DataFlowNode <!-- NOUN -->
+## Plan <!-- NOUN -->
 - Display name: Plan
 - Parent class: DataFlowNode
 - Attributes:
 - Specialization: A plan is a description of the actions that shall be undertaken to reach an objective
 - Description: 
 - Examples:
-## DataFlowNode <!-- NOUN -->
+## OperationalPlan <!-- NOUN -->
 - Display name: OperationalPlan
 - Parent class: Plan
 - Attributes:
 - Specialization: An operational plan is the day-to-day list of activities that shall be performed to contruct a well.
 - Description: 
 - Examples:
-## DataFlowNode <!-- NOUN -->
+## DrillingProgram <!-- NOUN -->
 - Display name: DrillingProgram
 - Parent class: Plan
 - Attributes:
 - Specialization: A drilling program is a set of procedures that are necessary to construct a well.
 - Description: 
 - Examples:
-## DataFlowNode <!-- NOUN -->
+## RigActionPlan <!-- NOUN -->
 - Display name: RigActionPlan
 - Parent class: Plan
 - Attributes:
 - Specialization: A rig action plan is a set of steps and rules that shall be conducted to fulfil a particulat activity when constructing a well.
 - Description: 
 - Examples:
-## DataFlowNode <!-- NOUN -->
+## State <!-- NOUN -->
 - Display name: State
 - Parent class: DataFlowNode
 - Attributes:
 - Specialization:
 - Description: A state represents the current configuation of a system.
 - Examples:
-## DataFlowNode <!-- NOUN -->
+## ProceduralState <!-- NOUN -->
 - Display name: ProceduralState
 - Parent class: State
 - Attributes:
 - Specialization: A procedural state describes the state of a running procedure.
 - Description: 
 - Examples:
-## DataFlowNode <!-- NOUN -->
+## ProcessState <!-- NOUN -->
 - Display name: ProcessState
 - Parent class: State
 - Attributes:
 - Specialization: A process state describes the state of a process.
 - Description: 
 - Examples:
-## DataFlowNode <!-- NOUN -->
+## PhysicalState <!-- NOUN -->
 - Display name: PhysicalState
 - Parent class: State
 - Attributes:
