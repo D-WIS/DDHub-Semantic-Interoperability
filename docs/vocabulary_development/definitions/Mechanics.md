@@ -35,6 +35,13 @@
 
 
 # VERBS
+## IsAMechanicalRepresentationFor <!-- VERB -->
+- Display name: IsAMechanicalRepresentationFor
+- Parent verb: DWISVerb
+- Subject class: MechanicalLogicalElement
+- Object class: DrillingEquipment
+- Description: 
+- Examples: 
 ## HasMechanicalState <!-- VERB -->
 - Display name: HasMechanicalState
 - Parent verb: DWISVerb
