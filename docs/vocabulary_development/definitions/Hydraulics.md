@@ -162,6 +162,13 @@
 - Object class: HydraulicBranch
 - Description: 
 - Examples: 
+## IsAHydraulicRepresentationFor <!-- VERB -->
+- Display name: IsAHydraulicRepresentationFor
+- Parent verb: DWISVerb
+- Subject class: HydraulicLogicalElement
+- Object class: DrillingEquipment
+- Description: 
+- Examples: 
 ## HasBranchComponent <!-- VERB -->
 - Display name: HasBranchComponent
 - Parent verb: DWISVerb
