@@ -37,6 +37,16 @@
 - Examples:
 - Definition set: Mechanics
 # Verbs
+## IsAMechanicalRepresentationFor <!-- VERB -->
+- Display name: IsAMechanicalRepresentationFor
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [MechanicalLogicalElement](./Mechanics.md#MechanicalLogicalElement)
+- Object class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Mechanics
 ## HasMechanicalState <!-- VERB -->
 - Display name: HasMechanicalState
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)

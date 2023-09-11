@@ -183,6 +183,16 @@
 - Description: 
 - Examples: 
 - Definition set: Hydraulics
+## IsAHydraulicRepresentationFor <!-- VERB -->
+- Display name: IsAHydraulicRepresentationFor
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement)
+- Object class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
 ## HasBranchComponent <!-- VERB -->
 - Display name: HasBranchComponent
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)

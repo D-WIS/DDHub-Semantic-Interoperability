@@ -306,6 +306,7 @@ public static class Nouns
 	public static string VelocityQuantity = "VelocityQuantity";
 	public static string VolumeQuantity = "VolumeQuantity";
 	public static string VolumetricRateQuantity = "VolumetricRateQuantity";
+	public static string VolumetricFlowateRateOfChangeQuantity = "VolumetricFlowateRateOfChangeQuantity";
 	public static string Unit = "Unit";
 	public static string UnitSystem = "UnitSystem";
 	public static string Clock = "Clock";

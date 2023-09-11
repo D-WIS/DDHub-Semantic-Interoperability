@@ -396,6 +396,16 @@
 - Description: 
 - Examples:
 - Definition set: Quantities
+## VolumetricFlowateRateOfChangeQuantity <!-- NOUN -->
+- Display name: VolumetricFlowateRateOfChangeQuantity
+- Parent class: [Quantity](./Quantities.md#Quantity)
+- Attributes:
+- Specialization:
+  - L = 3
+  - T = -2
+- Description: 
+- Examples:
+- Definition set: Quantities
 ## Unit <!-- NOUN -->
 - Display name: Unit
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)

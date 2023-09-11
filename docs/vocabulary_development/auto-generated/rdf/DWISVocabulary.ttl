@@ -718,11 +718,21 @@ ddhub:IsActivatedSignalFor a owl:ObjectProperty;
                            rdfs:domain ddhub:DWISNoun; 
                            rdfs:range ddhub:ActivableFunction; 
                            rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsAHydraulicRepresentationFor a owl:ObjectProperty; 
+                                    rdfs:comment ""@EN; 
+                                    rdfs:domain ddhub:HydraulicLogicalElement; 
+                                    rdfs:range ddhub:DrillingEquipment; 
+                                    rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsAllowEnablementSignalFor a owl:ObjectProperty; 
                                  rdfs:comment ""@EN; 
                                  rdfs:domain ddhub:DWISNoun; 
                                  rdfs:range ddhub:ActivableFunction; 
                                  rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsAMechanicalRepresentationFor a owl:ObjectProperty; 
+                                     rdfs:comment ""@EN; 
+                                     rdfs:domain ddhub:MechanicalLogicalElement; 
+                                     rdfs:range ddhub:DrillingEquipment; 
+                                     rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsArmedSignalFor a owl:ObjectProperty; 
                        rdfs:comment ""@EN; 
                        rdfs:domain ddhub:DWISNoun; 
@@ -1740,6 +1750,9 @@ ddhub:VerticalOndulationModelling a owl:Class;
 ddhub:VolumeQuantity a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:Quantity. 
+ddhub:VolumetricFlowateRateOfChangeQuantity a owl:Class; 
+                                            rdfs:comment ""@EN; 
+                                            rdfs:subClassOf ddhub:Quantity. 
 ddhub:VolumetricRateQuantity a owl:Class; 
                              rdfs:comment ""@EN; 
                              rdfs:subClassOf ddhub:Quantity. 

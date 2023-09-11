@@ -64,6 +64,7 @@ public static class Verbs
 	public static string BelongsToClass = "BelongsToClass";
 	public static string HasEndPoint = "HasEndPoint";
 	public static string EndsHydraulicBranchDecomposition = "EndsHydraulicBranchDecomposition";
+	public static string IsAHydraulicRepresentationFor = "IsAHydraulicRepresentationFor";
 	public static string HasBranchComponent = "HasBranchComponent";
 	public static string HasBranchCoordinateSystem = "HasBranchCoordinateSystem";
 	public static string HasHydraulicState = "HasHydraulicState";
@@ -90,6 +91,7 @@ public static class Verbs
 	public static string HasStartJunction = "HasStartJunction";
 	public static string StartsHydraulicBranchDecomposition = "StartsHydraulicBranchDecomposition";
 	public static string IsOfMechanicalStiffnessType = "IsOfMechanicalStiffnessType";
+	public static string IsAMechanicalRepresentationFor = "IsAMechanicalRepresentationFor";
 	public static string HasMechanicalState = "HasMechanicalState";
 	public static string HasMechanicalStateValueFrom = "HasMechanicalStateValueFrom";
 	public static string IsMechanicallyConnectedTo = "IsMechanicallyConnectedTo";

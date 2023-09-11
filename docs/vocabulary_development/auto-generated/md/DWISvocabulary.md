@@ -2679,6 +2679,16 @@
 - Description: 
 - Examples:
 - Definition set: Quantities
+## VolumetricFlowateRateOfChangeQuantity <!-- NOUN -->
+- Display name: VolumetricFlowateRateOfChangeQuantity
+- Parent class: [Quantity](#Quantity)
+- Attributes:
+- Specialization:
+  - L = 3
+  - T = -2
+- Description: 
+- Examples:
+- Definition set: Quantities
 ## Unit <!-- NOUN -->
 - Display name: Unit
 - Parent class: [DWISNoun](#DWISNoun)
@@ -3409,6 +3419,16 @@
 - Description: 
 - Examples: 
 - Definition set: Hydraulics
+## IsAHydraulicRepresentationFor <!-- VERB -->
+- Display name: IsAHydraulicRepresentationFor
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [HydraulicLogicalElement](#HydraulicLogicalElement)
+- Object class: [DrillingEquipment](#DrillingEquipment)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
 ## HasBranchComponent <!-- VERB -->
 - Display name: HasBranchComponent
 - Parent verb: [DWISVerb](#DWISVerb)
@@ -3669,6 +3689,16 @@
 - Description: A relation to describe how the drill-stem mechanical model manage stiffness.
 - Examples: 
 - Definition set: MechanicalModel
+## IsAMechanicalRepresentationFor <!-- VERB -->
+- Display name: IsAMechanicalRepresentationFor
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [MechanicalLogicalElement](#MechanicalLogicalElement)
+- Object class: [DrillingEquipment](#DrillingEquipment)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Mechanics
 ## HasMechanicalState <!-- VERB -->
 - Display name: HasMechanicalState
 - Parent verb: [DWISVerb](#DWISVerb)
