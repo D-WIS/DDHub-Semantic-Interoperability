@@ -364,6 +364,15 @@ SI Unit: Candela (cd)
   - T = -1
 - Description: 
 - Examples:
+## VolumetricFlowateRateOfChangeQuantity <!-- NOUN -->
+- Display name: VolumetricFlowateRateOfChangeQuantity
+- Parent class: Quantity
+- Attributes:
+- Specialization:
+  - L = 3
+  - T = -2
+- Description: 
+- Examples:
 ## Unit <!-- NOUN -->
 - Display name: Unit
 - Parent class: DWISNoun
