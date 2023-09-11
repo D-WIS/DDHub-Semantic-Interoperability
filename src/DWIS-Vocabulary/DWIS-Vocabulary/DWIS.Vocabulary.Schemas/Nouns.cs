@@ -237,6 +237,7 @@ public static class Nouns
 	public static string MassTransferBasedDiscretization = "MassTransferBasedDiscretization";
 	public static string Location = "Location";
 	public static string BitReferenceLocation = "BitReferenceLocation";
+	public static string TopOfStringReferenceLocation = "TopOfStringReferenceLocation";
 	public static string CasingShoeLocation = "CasingShoeLocation";
 	public static string DrillFloorReferenceLocation = "DrillFloorReferenceLocation";
 	public static string HoleBottomLocation = "HoleBottomLocation";

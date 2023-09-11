@@ -533,6 +533,8 @@
 <http://ddhub.no/Location> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/BitReferenceLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/BitReferenceLocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Location> .
+<http://ddhub.no/TopOfStringReferenceLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/TopOfStringReferenceLocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Location> .
 <http://ddhub.no/CasingShoeLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/CasingShoeLocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Location> .
 <http://ddhub.no/DrillFloorReferenceLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -956,6 +958,7 @@
 <http://ddhub.no/MassTransferBasedDiscretization> <http://www.w3.org/2000/01/rdf-schema#comment> "A model can properly estimate values at the level of mass transfer propagation."@EN .
 <http://ddhub.no/Location> <http://www.w3.org/2000/01/rdf-schema#comment> "Physical location for a signal. Refers to: 1) a reference frame (via the HasReferenceFrame relation), that works as a system of coordinates 2) an origin (of type Location) via the HasReferenceFrameOrigin relation."@EN .
 <http://ddhub.no/BitReferenceLocation> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/TopOfStringReferenceLocation> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/CasingShoeLocation> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/DrillFloorReferenceLocation> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/HoleBottomLocation> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .

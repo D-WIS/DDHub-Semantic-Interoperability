@@ -2051,6 +2051,14 @@
 - Description: 
 - Examples:
 - Definition set: PhysicalLocation
+## TopOfStringReferenceLocation <!-- NOUN -->
+- Display name: TopOfStringReferenceLocation
+- Parent class: [Location](#Location)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
 ## CasingShoeLocation <!-- NOUN -->
 - Display name: CasingShoeLocation
 - Parent class: [Location](#Location)
