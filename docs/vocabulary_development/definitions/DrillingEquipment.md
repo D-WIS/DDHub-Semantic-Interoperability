@@ -8,8 +8,43 @@
 - Specialization:
 - Description: 
 - Examples:
+## Pit <!-- NOUN -->
+- Display name: Pit
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## ActivePit <!-- NOUN -->
 - Display name: ActivePit
+- Parent class: Pit
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## ReservePit <!-- NOUN -->
+- Display name: ReservePit
+- Parent class: Pit
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## SlugPit <!-- NOUN -->
+- Display name: SlugPit
+- Parent class: Pit
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## TripTank <!-- NOUN -->
+- Display name: TripTank
+- Parent class: Pit
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## AnnulusTerminator <!-- NOUN -->
+- Display name: AnnulusTerminator
 - Parent class: DrillingEquipment
 - Attributes:
 - Specialization:
@@ -17,6 +52,48 @@
 - Examples:
 ## BellNipple <!-- NOUN -->
 - Display name: BellNipple
+- Parent class: AnnulusTerminator
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## Diverter <!-- NOUN -->
+- Display name: Diverter
+- Parent class: AnnulusTerminator
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## FlowLine <!-- NOUN -->
+- Display name: FlowLine
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## BlowOutPreventerStack <!-- NOUN -->
+- Display name: BlowOutPreventerStack
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## AnnularPreventer <!-- NOUN -->
+- Display name: AnnularPreventer
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## BOPRam <!-- NOUN -->
+- Display name: BOPRam
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## BOPShearRam <!-- NOUN -->
+- Display name: BOPShearRam
 - Parent class: DrillingEquipment
 - Attributes:
 - Specialization:
