@@ -92,9 +92,65 @@
 - Specialization:
 - Description: 
 - Examples:
+## RackAndPinionHoistingSystem <!-- NOUN -->
+- Display name: RackAndPinionHoistingSystem
+- Parent class: HoistingSystem
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## RamHoistingSystem <!-- NOUN -->
+- Display name: RamHoistingSystem
+- Parent class: HoistingSystem
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## DrillStem <!-- NOUN -->
+- Display name: DrillStem
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## DrillString <!-- NOUN -->
 - Display name: DrillString
-- Parent class: DrillingEquipment
+- Parent class: DrillStem
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## CasingString <!-- NOUN -->
+- Display name: CasingString
+- Parent class: DrillStem
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## Liner <!-- NOUN -->
+- Display name: Liner
+- Parent class: DrillStem
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## TubingString <!-- NOUN -->
+- Display name: TubingString
+- Parent class: DrillStem
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## ScreenString <!-- NOUN -->
+- Display name: ScreenString
+- Parent class: DrillStem
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## CoiledTubing <!-- NOUN -->
+- Display name: CoiledTubing
+- Parent class: DrillStem
 - Attributes:
 - Specialization:
 - Description: 
@@ -155,6 +211,20 @@
 - Specialization:
 - Description: 
 - Examples:
+## BoosterPump <!-- NOUN -->
+- Display name: BoosterPump
+- Parent class: Pump
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## BackPressurePump <!-- NOUN -->
+- Display name: BackPressurePump
+- Parent class: Pump
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## ShaleShakers <!-- NOUN -->
 - Display name: ShaleShakers
 - Parent class: DrillingEquipment
@@ -197,9 +267,30 @@
 - Specialization:
 - Description: 
 - Examples:
+## StringRotationSystem <!-- NOUN -->
+- Display name: StringRotationSystem
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## RotaryTable <!-- NOUN -->
+- Display name: RotaryTable
+- Parent class: StringRotationSystem
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## Kelly <!-- NOUN -->
+- Display name: Kelly
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## TopDrive <!-- NOUN -->
 - Display name: TopDrive
-- Parent class: DrillingEquipment
+- Parent class: StringRotationSystem
 - Attributes:
 - Specialization:
 - Description: 
@@ -262,3 +353,10 @@
 - Examples:
 
 # VERBS
+## IsSubPartOf <!-- VERB -->
+- Display name: IsSubPartOf
+- Parent verb: DWISVerb
+- Subject class: DrillingEquipment
+- Object class: DrillingEquipment
+- Description: 
+- Examples: 
