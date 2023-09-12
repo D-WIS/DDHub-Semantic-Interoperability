@@ -20,7 +20,7 @@ ddhub:ActiveLine a owl:Class;
                  rdfs:subClassOf ddhub:DrillLine. 
 ddhub:ActivePit a owl:Class; 
                 rdfs:comment ""@EN; 
-                rdfs:subClassOf ddhub:DrillingEquipment. 
+                rdfs:subClassOf ddhub:Pit. 
 ddhub:ActiveVolume a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:DrillingDataPoint. 
@@ -52,6 +52,12 @@ ddhub:AngularLateralModelling a owl:Class;
 ddhub:Annular a owl:Class; 
               rdfs:comment ""@EN; 
               rdfs:subClassOf ddhub:HydraulicBranch. 
+ddhub:AnnularPreventer a owl:Class; 
+                       rdfs:comment ""@EN; 
+                       rdfs:subClassOf ddhub:DrillingEquipment. 
+ddhub:AnnulusTerminator a owl:Class; 
+                        rdfs:comment ""@EN; 
+                        rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:AreaQuantity a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:Quantity. 
@@ -87,7 +93,7 @@ ddhub:BandPassFilter a owl:Class;
                      rdfs:subClassOf ddhub:Filter. 
 ddhub:BellNipple a owl:Class; 
                  rdfs:comment ""@EN; 
-                 rdfs:subClassOf ddhub:DrillingEquipment. 
+                 rdfs:subClassOf ddhub:AnnulusTerminator. 
 ddhub:BelongsToClass a owl:ObjectProperty; 
                      rdfs:comment ""@EN; 
                      rdfs:domain ddhub:DWISNoun; 
@@ -125,6 +131,9 @@ ddhub:BlockPositionQuantity a owl:Class;
 ddhub:BlockVelocityQuantity a owl:Class; 
                             rdfs:comment ""@EN; 
                             rdfs:subClassOf ddhub:MeasurableQuantity. 
+ddhub:BlowOutPreventerStack a owl:Class; 
+                            rdfs:comment ""@EN; 
+                            rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:BoosterPump a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:Pump. 
@@ -137,6 +146,12 @@ ddhub:BOPOpening a owl:Class;
 ddhub:BOPPressure a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:DrillingDataPoint. 
+ddhub:BOPRam a owl:Class; 
+             rdfs:comment ""@EN; 
+             rdfs:subClassOf ddhub:DrillingEquipment. 
+ddhub:BOPShearRam a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:BoundaryDiscretization a owl:Class; 
                              rdfs:comment "A model only considers the bounds of the physical system and does not apply any intermediate discretization."@EN; 
                              rdfs:subClassOf ddhub:ModellingDiscretization. 
@@ -276,6 +291,9 @@ ddhub:DistanceBetweenRepeaters a owl:DatatypeProperty, owl:FunctionalProperty;
                                rdfs:comment ""@EN; 
                                rdfs:domain ddhub:Telemetry; 
                                rdfs:range xsd:double. 
+ddhub:Diverter a owl:Class; 
+               rdfs:comment ""@EN; 
+               rdfs:subClassOf ddhub:AnnulusTerminator. 
 ddhub:Dolly a owl:Class; 
             rdfs:comment ""@EN; 
             rdfs:subClassOf ddhub:DrillingEquipment. 
@@ -416,6 +434,9 @@ ddhub:FixedIndices a owl:DatatypeProperty, owl:FunctionalProperty;
                    rdfs:comment ""@EN; 
                    rdfs:domain ddhub:EndPointMapping; 
                    rdfs:range <http://www.w3.org/2001/XMLSchema#int[]>. 
+ddhub:FlowLine a owl:Class; 
+               rdfs:comment ""@EN; 
+               rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:FlowRateIn a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:DrillingDataPoint. 
@@ -1372,6 +1393,9 @@ ddhub:PhysicalState a owl:Class;
 ddhub:Pipe a owl:Class; 
            rdfs:comment ""@EN; 
            rdfs:subClassOf ddhub:HydraulicBranch. 
+ddhub:Pit a owl:Class; 
+          rdfs:comment ""@EN; 
+          rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:Plan a owl:Class; 
            rdfs:comment ""@EN; 
            rdfs:subClassOf ddhub:DataFlowNode. 
@@ -1486,6 +1510,9 @@ ddhub:ResamplingRate a owl:DatatypeProperty, owl:FunctionalProperty;
                      rdfs:comment ""@EN; 
                      rdfs:domain ddhub:Resampling; 
                      rdfs:range xsd:double. 
+ddhub:ReservePit a owl:Class; 
+                 rdfs:comment ""@EN; 
+                 rdfs:subClassOf ddhub:Pit. 
 ddhub:Resistivity a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:MeasurableQuantity. 
@@ -1571,6 +1598,9 @@ ddhub:SIUnit a owl:DatatypeProperty, owl:FunctionalProperty;
 ddhub:Slips a owl:Class; 
             rdfs:comment ""@EN; 
             rdfs:subClassOf ddhub:DrillingEquipment. 
+ddhub:SlugPit a owl:Class; 
+              rdfs:comment ""@EN; 
+              rdfs:subClassOf ddhub:Pit. 
 ddhub:SOEFunction a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:ProtectionFunction. 
@@ -1740,6 +1770,9 @@ ddhub:TransmissionLine a owl:Class;
 ddhub:TravellingBlock a owl:Class; 
                       rdfs:comment ""@EN; 
                       rdfs:subClassOf ddhub:MechanicalBlock. 
+ddhub:TripTank a owl:Class; 
+               rdfs:comment ""@EN; 
+               rdfs:subClassOf ddhub:Pit. 
 ddhub:TubingString a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:DrillStem. 

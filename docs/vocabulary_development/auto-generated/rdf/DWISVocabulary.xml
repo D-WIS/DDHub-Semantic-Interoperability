@@ -929,13 +929,79 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Pit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingEquipment" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ActivePit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Pit" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ReservePit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Pit" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SlugPit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Pit" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TripTank">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Pit" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AnnulusTerminator">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingEquipment" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/BellNipple">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/AnnulusTerminator" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Diverter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/AnnulusTerminator" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/FlowLine">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingEquipment" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/BlowOutPreventerStack">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingEquipment" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AnnularPreventer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingEquipment" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/BOPRam">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingEquipment" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/BOPShearRam">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingEquipment" />
     <rdfs:comment xml:lang="EN">

@@ -9,8 +9,48 @@
 - Description: 
 - Examples:
 - Definition set: DrillingEquipment
+## Pit <!-- NOUN -->
+- Display name: Pit
+- Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
 ## ActivePit <!-- NOUN -->
 - Display name: ActivePit
+- Parent class: [Pit](./DrillingEquipment.md#Pit)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## ReservePit <!-- NOUN -->
+- Display name: ReservePit
+- Parent class: [Pit](./DrillingEquipment.md#Pit)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## SlugPit <!-- NOUN -->
+- Display name: SlugPit
+- Parent class: [Pit](./DrillingEquipment.md#Pit)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## TripTank <!-- NOUN -->
+- Display name: TripTank
+- Parent class: [Pit](./DrillingEquipment.md#Pit)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## AnnulusTerminator <!-- NOUN -->
+- Display name: AnnulusTerminator
 - Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
 - Attributes:
 - Specialization:
@@ -19,6 +59,54 @@
 - Definition set: DrillingEquipment
 ## BellNipple <!-- NOUN -->
 - Display name: BellNipple
+- Parent class: [AnnulusTerminator](./DrillingEquipment.md#AnnulusTerminator)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## Diverter <!-- NOUN -->
+- Display name: Diverter
+- Parent class: [AnnulusTerminator](./DrillingEquipment.md#AnnulusTerminator)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## FlowLine <!-- NOUN -->
+- Display name: FlowLine
+- Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## BlowOutPreventerStack <!-- NOUN -->
+- Display name: BlowOutPreventerStack
+- Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## AnnularPreventer <!-- NOUN -->
+- Display name: AnnularPreventer
+- Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## BOPRam <!-- NOUN -->
+- Display name: BOPRam
+- Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## BOPShearRam <!-- NOUN -->
+- Display name: BOPShearRam
 - Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
 - Attributes:
 - Specialization:
