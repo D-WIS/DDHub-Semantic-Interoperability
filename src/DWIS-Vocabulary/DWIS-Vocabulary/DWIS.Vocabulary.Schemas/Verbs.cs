@@ -59,6 +59,7 @@ public static class Verbs
 	public static string HasValue = "HasValue";
 	public static string HasDynamicValue = "HasDynamicValue";
 	public static string HasStaticValue = "HasStaticValue";
+	public static string IsSubPartOf = "IsSubPartOf";
 	public static string DWISVerb = "DWISVerb";
 	public static string HasType = "HasType";
 	public static string BelongsToClass = "BelongsToClass";

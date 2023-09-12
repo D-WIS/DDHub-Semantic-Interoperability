@@ -76,6 +76,9 @@ ddhub:AverageDelayByRepeater a owl:DatatypeProperty, owl:FunctionalProperty;
 ddhub:AxialModelling a owl:Class; 
                      rdfs:comment "The model accounts for the axial movement of some parts of the physical system."@EN; 
                      rdfs:subClassOf ddhub:ModelledDegreeOfFreedom. 
+ddhub:BackPressurePump a owl:Class; 
+                       rdfs:comment ""@EN; 
+                       rdfs:subClassOf ddhub:Pump. 
 ddhub:BackPressurePumpPressure a owl:Class; 
                                rdfs:comment ""@EN; 
                                rdfs:subClassOf ddhub:DrillingDataPoint. 
@@ -122,6 +125,9 @@ ddhub:BlockPositionQuantity a owl:Class;
 ddhub:BlockVelocityQuantity a owl:Class; 
                             rdfs:comment ""@EN; 
                             rdfs:subClassOf ddhub:MeasurableQuantity. 
+ddhub:BoosterPump a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:Pump. 
 ddhub:BOPControlSystem a owl:Class; 
                        rdfs:comment ""@EN; 
                        rdfs:subClassOf ddhub:ControlSystem. 
@@ -150,6 +156,9 @@ ddhub:CartesianTwoDimensionalReferenceFrame a owl:Class;
 ddhub:CasingShoeLocation a owl:Class; 
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:Location. 
+ddhub:CasingString a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:DrillStem. 
 ddhub:CementingServiceCompany a owl:Class; 
                               rdfs:comment ""@EN; 
                               rdfs:subClassOf ddhub:ServiceCompany. 
@@ -159,6 +168,9 @@ ddhub:CementPump a owl:Class;
 ddhub:Clock a owl:Class; 
             rdfs:comment "Represents a clock"@EN; 
             rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:CoiledTubing a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:DrillStem. 
 ddhub:CollapsePressure a owl:Class; 
                        rdfs:comment ""@EN; 
                        rdfs:subClassOf ddhub:DrillingDataPoint. 
@@ -333,12 +345,15 @@ ddhub:DrillPipesAnnular a owl:Class;
 ddhub:DrillPipesInner a owl:Class; 
                       rdfs:comment ""@EN; 
                       rdfs:subClassOf ddhub:Pipe. 
+ddhub:DrillStem a owl:Class; 
+                rdfs:comment ""@EN; 
+                rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:DrillStemMechanicalModel a owl:Class; 
                                rdfs:comment "A mechanical model for a drill-stem. Another name for drill-stem mechanical models is a torque and drag model."@EN; 
                                rdfs:subClassOf ddhub:MathematicalModel. 
 ddhub:DrillString a owl:Class; 
                   rdfs:comment ""@EN; 
-                  rdfs:subClassOf ddhub:DrillingEquipment. 
+                  rdfs:subClassOf ddhub:DrillStem. 
 ddhub:DrillStringCenterLineFrame a owl:Class; 
                                  rdfs:comment ""@EN; 
                                  rdfs:subClassOf ddhub:OneDimensionalCurviLinearReferenceFrame. 
@@ -1008,6 +1023,11 @@ ddhub:IsSetPointRecommendationFor a owl:ObjectProperty;
                                   rdfs:domain ddhub:DrillingDataPoint; 
                                   rdfs:range ddhub:ControlSystem; 
                                   rdfs:subPropertyOf ddhub:HasFunction. 
+ddhub:IsSubPartOf a owl:ObjectProperty; 
+                  rdfs:comment ""@EN; 
+                  rdfs:domain ddhub:DrillingEquipment; 
+                  rdfs:range ddhub:DrillingEquipment; 
+                  rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsSynchronizationGroupInput a owl:ObjectProperty; 
                                   rdfs:comment ""@EN; 
                                   rdfs:domain ddhub:DrillingDataPoint; 
@@ -1081,6 +1101,9 @@ ddhub:J a owl:DatatypeProperty, owl:FunctionalProperty;
         rdfs:comment "Luminous intensity exponent."@EN; 
         rdfs:domain ddhub:Quantity; 
         rdfs:range xsd:int. 
+ddhub:Kelly a owl:Class; 
+            rdfs:comment ""@EN; 
+            rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:L a owl:DatatypeProperty, owl:FunctionalProperty; 
         rdfs:comment "Length exponent."@EN; 
         rdfs:domain ddhub:Quantity; 
@@ -1102,6 +1125,9 @@ ddhub:LengthQuantity a owl:Class;
 ddhub:Limit a owl:Class; 
             rdfs:comment ""@EN; 
             rdfs:subClassOf ddhub:DrillingDataPoint. 
+ddhub:Liner a owl:Class; 
+            rdfs:comment ""@EN; 
+            rdfs:subClassOf ddhub:DrillStem. 
 ddhub:Location a owl:Class; 
                rdfs:comment "Physical location for a signal. Refers to: 1) a reference frame (via the HasReferenceFrame relation), that works as a system of coordinates 2) an origin (of type Location) via the HasReferenceFrameOrigin relation."@EN; 
                rdfs:subClassOf ddhub:DWISNoun. 
@@ -1413,9 +1439,15 @@ ddhub:PumpRateQuantity a owl:Class;
 ddhub:Quantity a owl:Class; 
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:RackAndPinionHoistingSystem a owl:Class; 
+                                  rdfs:comment ""@EN; 
+                                  rdfs:subClassOf ddhub:HoistingSystem. 
 ddhub:RadialModelling a owl:Class; 
                       rdfs:comment "The model accounts for the radial movement of some parts of the physical system."@EN; 
                       rdfs:subClassOf ddhub:LateralModelling. 
+ddhub:RamHoistingSystem a owl:Class; 
+                        rdfs:comment ""@EN; 
+                        rdfs:subClassOf ddhub:HoistingSystem. 
 ddhub:RangeExtraction a owl:Class; 
                       rdfs:comment ""@EN; 
                       rdfs:subClassOf ddhub:TimeBasedTransformation. 
@@ -1483,6 +1515,9 @@ ddhub:RockDensityQuantity a owl:Class;
 ddhub:ROP a owl:Class; 
           rdfs:comment ""@EN; 
           rdfs:subClassOf ddhub:DrillingDataPoint. 
+ddhub:RotaryTable a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:StringRotationSystem. 
 ddhub:RotationalModelling a owl:Class; 
                           rdfs:comment "The model accounts for the rotational movement of some parts of the physical system."@EN; 
                           rdfs:subClassOf ddhub:ModelledDegreeOfFreedom. 
@@ -1493,6 +1528,9 @@ ddhub:SamplingRate a owl:DatatypeProperty, owl:FunctionalProperty;
                    rdfs:comment ""@EN; 
                    rdfs:domain ddhub:SynchronizationGroup; 
                    rdfs:range xsd:double. 
+ddhub:ScreenString a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:DrillStem. 
 ddhub:Sea a owl:Class; 
           rdfs:comment ""@EN; 
           rdfs:subClassOf ddhub:DrillingEquipment. 
@@ -1563,6 +1601,9 @@ ddhub:Stratum a owl:DatatypeProperty, owl:FunctionalProperty;
               rdfs:comment ""@EN; 
               rdfs:domain ddhub:Clock; 
               rdfs:range xsd:int. 
+ddhub:StringRotationSystem a owl:Class; 
+                           rdfs:comment ""@EN; 
+                           rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:SupportLine a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:DrillLine. 
@@ -1653,7 +1694,7 @@ ddhub:TimeWindowRangeExtraction a owl:Class;
                                 rdfs:subClassOf ddhub:RangeExtraction. 
 ddhub:TopDrive a owl:Class; 
                rdfs:comment ""@EN; 
-               rdfs:subClassOf ddhub:DrillingEquipment. 
+               rdfs:subClassOf ddhub:StringRotationSystem. 
 ddhub:TopDriveBody a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:DrillingEquipment. 
@@ -1699,6 +1740,9 @@ ddhub:TransmissionLine a owl:Class;
 ddhub:TravellingBlock a owl:Class; 
                       rdfs:comment ""@EN; 
                       rdfs:subClassOf ddhub:MechanicalBlock. 
+ddhub:TubingString a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:DrillStem. 
 ddhub:TVDQuantity a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:MeasurableQuantity. 

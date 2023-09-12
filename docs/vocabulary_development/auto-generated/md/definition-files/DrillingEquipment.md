@@ -105,9 +105,73 @@
 - Description: 
 - Examples:
 - Definition set: DrillingEquipment
+## RackAndPinionHoistingSystem <!-- NOUN -->
+- Display name: RackAndPinionHoistingSystem
+- Parent class: [HoistingSystem](./DrillingEquipment.md#HoistingSystem)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## RamHoistingSystem <!-- NOUN -->
+- Display name: RamHoistingSystem
+- Parent class: [HoistingSystem](./DrillingEquipment.md#HoistingSystem)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## DrillStem <!-- NOUN -->
+- Display name: DrillStem
+- Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
 ## DrillString <!-- NOUN -->
 - Display name: DrillString
-- Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Parent class: [DrillStem](./DrillingEquipment.md#DrillStem)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## CasingString <!-- NOUN -->
+- Display name: CasingString
+- Parent class: [DrillStem](./DrillingEquipment.md#DrillStem)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## Liner <!-- NOUN -->
+- Display name: Liner
+- Parent class: [DrillStem](./DrillingEquipment.md#DrillStem)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## TubingString <!-- NOUN -->
+- Display name: TubingString
+- Parent class: [DrillStem](./DrillingEquipment.md#DrillStem)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## ScreenString <!-- NOUN -->
+- Display name: ScreenString
+- Parent class: [DrillStem](./DrillingEquipment.md#DrillStem)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## CoiledTubing <!-- NOUN -->
+- Display name: CoiledTubing
+- Parent class: [DrillStem](./DrillingEquipment.md#DrillStem)
 - Attributes:
 - Specialization:
 - Description: 
@@ -177,6 +241,22 @@
 - Description: 
 - Examples:
 - Definition set: DrillingEquipment
+## BoosterPump <!-- NOUN -->
+- Display name: BoosterPump
+- Parent class: [Pump](./DrillingEquipment.md#Pump)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## BackPressurePump <!-- NOUN -->
+- Display name: BackPressurePump
+- Parent class: [Pump](./DrillingEquipment.md#Pump)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
 ## ShaleShakers <!-- NOUN -->
 - Display name: ShaleShakers
 - Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
@@ -225,9 +305,33 @@
 - Description: 
 - Examples:
 - Definition set: DrillingEquipment
+## StringRotationSystem <!-- NOUN -->
+- Display name: StringRotationSystem
+- Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## RotaryTable <!-- NOUN -->
+- Display name: RotaryTable
+- Parent class: [StringRotationSystem](./DrillingEquipment.md#StringRotationSystem)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## Kelly <!-- NOUN -->
+- Display name: Kelly
+- Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
 ## TopDrive <!-- NOUN -->
 - Display name: TopDrive
-- Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Parent class: [StringRotationSystem](./DrillingEquipment.md#StringRotationSystem)
 - Attributes:
 - Specialization:
 - Description: 
@@ -298,3 +402,13 @@
 - Examples:
 - Definition set: DrillingEquipment
 # Verbs
+## IsSubPartOf <!-- VERB -->
+- Display name: IsSubPartOf
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Object class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DrillingEquipment

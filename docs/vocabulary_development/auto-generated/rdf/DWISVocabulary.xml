@@ -1007,9 +1007,57 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DrillString">
+  <rdf:Description rdf:about="http://ddhub.no/RackAndPinionHoistingSystem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/HoistingSystem" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RamHoistingSystem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/HoistingSystem" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillStem">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingEquipment" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillString">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillStem" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/CasingString">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillStem" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Liner">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillStem" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TubingString">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillStem" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ScreenString">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillStem" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/CoiledTubing">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillStem" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
@@ -1061,6 +1109,18 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/BoosterPump">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Pump" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/BackPressurePump">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Pump" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ShaleShakers">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingEquipment" />
@@ -1097,7 +1157,25 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/StringRotationSystem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingEquipment" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RotaryTable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/StringRotationSystem" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/TopDrive">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/StringRotationSystem" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Kelly">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingEquipment" />
     <rdfs:comment xml:lang="EN">
@@ -2845,6 +2923,14 @@
     <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
     <rdfs:range rdf:resource="http://ddhub.no/DrillingSignal" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasValue" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsSubPartOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingEquipment" />
+    <rdfs:range rdf:resource="http://ddhub.no/DrillingEquipment" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
