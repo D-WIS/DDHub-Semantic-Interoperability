@@ -20,6 +20,13 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Specialization:
 - Description: 
 - Examples:
+## Azimuth <!-- NOUN -->
+- Display name: Azimuth
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## BitDepth <!-- NOUN -->
 - Display name: BitDepth
 - Parent class: DrillingDataPoint
@@ -113,6 +120,20 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Examples:
 ## HookVelocity <!-- NOUN -->
 - Display name: HookVelocity
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## Inclination <!-- NOUN -->
+- Display name: Inclination
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MeasuredDepth <!-- NOUN -->
+- Display name: MeasuredDepth
 - Parent class: DrillingDataPoint
 - Attributes:
 - Specialization:
