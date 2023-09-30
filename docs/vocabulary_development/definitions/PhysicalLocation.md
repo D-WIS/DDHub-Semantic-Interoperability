@@ -9,7 +9,7 @@
 - Description: Physical location for a signal. Refers to: 1) a reference frame (via the HasReferenceFrame relation), that works as a system of coordinates 2) an origin (of type Location) via the HasReferenceFrameOrigin relation. 
  - some coordinates
 - Examples:
-##VerticalDatumReferenceLocation <!-- NOUN -->
+## VerticalDatumReferenceLocation <!-- NOUN -->
 - Display name: VerticalDatumReferenceLocation
 - Parent class: Location
 - Attributes:
