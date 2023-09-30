@@ -1815,6 +1815,9 @@ ddhub:ValuesIndices a owl:DatatypeProperty, owl:FunctionalProperty;
 ddhub:VelocityQuantity a owl:Class; 
                        rdfs:comment ""@EN; 
                        rdfs:subClassOf ddhub:Quantity. 
+ddhub:VerticalDatumReferenceLocation a owl:Class; 
+                                     rdfs:comment ""@EN; 
+                                     rdfs:subClassOf ddhub:Location. 
 ddhub:VerticalDepthFrame a owl:Class; 
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:OneDimensionalCartesianReferenceFrame. 

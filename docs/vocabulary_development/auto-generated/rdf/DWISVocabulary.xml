@@ -1591,6 +1591,12 @@
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
     <rdfs:comment xml:lang="EN">Physical location for a signal. Refers to: 1) a reference frame (via the HasReferenceFrame relation), that works as a system of coordinates 2) an origin (of type Location) via the HasReferenceFrameOrigin relation.</rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/VerticalDatumReferenceLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Location" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/BitReferenceLocation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Location" />

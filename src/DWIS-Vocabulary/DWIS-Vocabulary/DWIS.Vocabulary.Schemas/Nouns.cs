@@ -260,6 +260,7 @@ public static class Nouns
 	public static string StrainWaveBasedDiscretization = "StrainWaveBasedDiscretization";
 	public static string MassTransferBasedDiscretization = "MassTransferBasedDiscretization";
 	public static string Location = "Location";
+	public static string VerticalDatumReferenceLocation = "VerticalDatumReferenceLocation";
 	public static string BitReferenceLocation = "BitReferenceLocation";
 	public static string TopOfStringReferenceLocation = "TopOfStringReferenceLocation";
 	public static string CasingShoeLocation = "CasingShoeLocation";
