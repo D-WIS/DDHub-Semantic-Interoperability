@@ -82,6 +82,9 @@ ddhub:AverageDelayByRepeater a owl:DatatypeProperty, owl:FunctionalProperty;
 ddhub:AxialModelling a owl:Class; 
                      rdfs:comment "The model accounts for the axial movement of some parts of the physical system."@EN; 
                      rdfs:subClassOf ddhub:ModelledDegreeOfFreedom. 
+ddhub:Azimuth a owl:Class; 
+              rdfs:comment ""@EN; 
+              rdfs:subClassOf ddhub:DrillingDataPoint. 
 ddhub:BackPressurePump a owl:Class; 
                        rdfs:comment ""@EN; 
                        rdfs:subClassOf ddhub:Pump. 
@@ -746,6 +749,9 @@ ddhub:I a owl:DatatypeProperty, owl:FunctionalProperty;
         rdfs:comment "Electric current exponent."@EN; 
         rdfs:domain ddhub:Quantity; 
         rdfs:range xsd:int. 
+ddhub:Inclination a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:DrillingDataPoint. 
 ddhub:Integration a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:TimeBasedTransformation. 
@@ -1216,6 +1222,9 @@ ddhub:MeasurableQuantity a owl:Class;
 ddhub:MeasurableQuantityUnitAssociation a owl:Class; 
                                         rdfs:comment ""@EN; 
                                         rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:MeasuredDepth a owl:Class; 
+                    rdfs:comment ""@EN; 
+                    rdfs:subClassOf ddhub:DrillingDataPoint. 
 ddhub:MeasuredDepthToTrueVerticalDepthTransformation a owl:Class; 
                                                      rdfs:comment ""@EN; 
                                                      rdfs:subClassOf ddhub:DirectTransformation. 

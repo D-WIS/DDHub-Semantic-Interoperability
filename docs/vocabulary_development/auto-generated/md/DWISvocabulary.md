@@ -747,6 +747,14 @@
 - Description: 
 - Examples:
 - Definition set: DrillingDataSemantics
+## Azimuth <!-- NOUN -->
+- Display name: Azimuth
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
 ## BitDepth <!-- NOUN -->
 - Display name: BitDepth
 - Parent class: [DrillingDataPoint](#DrillingDataPoint)
@@ -853,6 +861,22 @@
 - Definition set: DrillingDataSemantics
 ## HookVelocity <!-- NOUN -->
 - Display name: HookVelocity
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## Inclination <!-- NOUN -->
+- Display name: Inclination
+- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## MeasuredDepth <!-- NOUN -->
+- Display name: MeasuredDepth
 - Parent class: [DrillingDataPoint](#DrillingDataPoint)
 - Attributes:
 - Specialization:

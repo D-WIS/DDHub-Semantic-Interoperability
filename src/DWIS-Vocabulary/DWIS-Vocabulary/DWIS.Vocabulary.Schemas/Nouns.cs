@@ -81,6 +81,7 @@ public static class Nouns
 	public static string LT = "LT";
 	public static string DrillingDataPoint = "DrillingDataPoint";
 	public static string ActiveVolume = "ActiveVolume";
+	public static string Azimuth = "Azimuth";
 	public static string BitDepth = "BitDepth";
 	public static string DensityIn = "DensityIn";
 	public static string DensityOut = "DensityOut";
@@ -95,6 +96,8 @@ public static class Nouns
 	public static string HookLoad = "HookLoad";
 	public static string HookPosition = "HookPosition";
 	public static string HookVelocity = "HookVelocity";
+	public static string Inclination = "Inclination";
+	public static string MeasuredDepth = "MeasuredDepth";
 	public static string PumpRate = "PumpRate";
 	public static string ROP = "ROP";
 	public static string SPP = "SPP";
