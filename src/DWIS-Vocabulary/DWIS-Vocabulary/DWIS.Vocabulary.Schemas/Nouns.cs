@@ -202,6 +202,7 @@ public static class Nouns
 	public static string Slips = "Slips";
 	public static string SurfacePipe = "SurfacePipe";
 	public static string StandPipe = "StandPipe";
+	public static string MudHose = "MudHose";
 	public static string ThreeWayManifold = "ThreeWayManifold";
 	public static string ThreeWayValve = "ThreeWayValve";
 	public static string ThreeWayValveInternalValve = "ThreeWayValveInternalValve";

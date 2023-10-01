@@ -449,6 +449,14 @@
 - Description: 
 - Examples:
 - Definition set: DrillingEquipment
+## MudHose <!-- NOUN -->
+- Display name: MudHose
+- Parent class: [SurfacePipe](./DrillingEquipment.md#SurfacePipe)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
 ## ThreeWayManifold <!-- NOUN -->
 - Display name: ThreeWayManifold
 - Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)

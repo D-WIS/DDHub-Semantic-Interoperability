@@ -1340,6 +1340,9 @@ ddhub:MPDPumpFlowRate a owl:Class;
 ddhub:MPDPumpRate a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:DrillingDataPoint. 
+ddhub:MudHose a owl:Class; 
+              rdfs:comment ""@EN; 
+              rdfs:subClassOf ddhub:SurfacePipe. 
 ddhub:MudMixing a owl:Class; 
                 rdfs:comment ""@EN; 
                 rdfs:subClassOf ddhub:HydraulicJunction. 
