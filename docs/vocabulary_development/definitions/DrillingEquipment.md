@@ -50,6 +50,48 @@
 - Specialization:
 - Description: 
 - Examples:
+## Riser <!-- NOUN -->
+- Display name: Riser
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MarineRiser <!-- NOUN -->
+- Display name: MarineRiser
+- Parent class: Riser
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## SurfaceRiser <!-- NOUN -->
+- Display name: SurfaceRiser
+- Parent class: Riser
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## LowPressureRiser <!-- NOUN -->
+- Display name: LowPressureRiser
+- Parent class: SurfaceRiser
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## HighPressureRiser <!-- NOUN -->
+- Display name:HighPressureRiser
+- Parent class: SurfaceRiser
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## SlipJoint <!-- NOUN -->
+- Display name:SlipJoint
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## BellNipple <!-- NOUN -->
 - Display name: BellNipple
 - Parent class: AnnulusTerminator
