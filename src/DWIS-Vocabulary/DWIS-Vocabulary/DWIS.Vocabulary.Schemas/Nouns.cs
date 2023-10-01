@@ -197,6 +197,7 @@ public static class Nouns
 	public static string BackPressurePump = "BackPressurePump";
 	public static string ShaleShakers = "ShaleShakers";
 	public static string Slips = "Slips";
+	public static string SurfacePipe = "SurfacePipe";
 	public static string StandPipe = "StandPipe";
 	public static string ThreeWayManifold = "ThreeWayManifold";
 	public static string ThreeWayValve = "ThreeWayValve";

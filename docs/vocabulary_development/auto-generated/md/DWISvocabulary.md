@@ -1684,9 +1684,17 @@
 - Description: 
 - Examples:
 - Definition set: DrillingEquipment
+## SurfacePipe <!-- NOUN -->
+- Display name: SurfacePipe
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
 ## StandPipe <!-- NOUN -->
 - Display name: StandPipe
-- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Parent class: [SurfacePipe](#SurfacePipe)
 - Attributes:
 - Specialization:
 - Description: 

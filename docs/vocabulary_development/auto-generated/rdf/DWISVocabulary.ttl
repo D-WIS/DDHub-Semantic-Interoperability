@@ -1644,7 +1644,7 @@ ddhub:SPPQuantity a owl:Class;
                   rdfs:subClassOf ddhub:MeasurableQuantity. 
 ddhub:StandPipe a owl:Class; 
                 rdfs:comment ""@EN; 
-                rdfs:subClassOf ddhub:DrillingEquipment. 
+                rdfs:subClassOf ddhub:SurfacePipe. 
 ddhub:StartsHydraulicBranchDecomposition a owl:ObjectProperty; 
                                          rdfs:comment ""@EN; 
                                          rdfs:domain ddhub:DWISNoun; 
@@ -1666,6 +1666,9 @@ ddhub:StringRotationSystem a owl:Class;
 ddhub:SupportLine a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:DrillLine. 
+ddhub:SurfacePipe a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:SurfaceRiser a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:Riser. 
