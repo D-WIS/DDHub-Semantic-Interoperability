@@ -358,9 +358,16 @@
 - Specialization:
 - Description: 
 - Examples:
+## SurfacePipe <!-- NOUN -->
+- Display name: SurfacePipe
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## StandPipe <!-- NOUN -->
 - Display name: StandPipe
-- Parent class: DrillingEquipment
+- Parent class: SurfacePipe
 - Attributes:
 - Specialization:
 - Description: 
