@@ -3122,96 +3122,104 @@
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsEquivalentCirculationDensityAt">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/HydraulicLogicalElement" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsHydraulicallyLocatedAt" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsFluidDensityAt">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/HydraulicLogicalElement" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsHydraulicallyLocatedAt" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsFluidTemperatureAt">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/HydraulicLogicalElement" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsHydraulicallyLocatedAt" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsFluidVelocityAt">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/HydraulicLogicalElement" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsHydraulicallyLocatedAt" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsOpeningRatioAt">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/HydraulicLogicalElement" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsHydraulicallyLocatedAt" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsHydraulicEstimationAt">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/HydraulicLogicalElement" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsHydraulicallyLocatedAt" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsHydraulicMaximumAllowedRateOfChangeAt">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/HydraulicLogicalElement" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsHydraulicallyLocatedAt" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsHydraulicMaximumAllowedValueAt">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/HydraulicLogicalElement" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsHydraulicallyLocatedAt" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsHydraulicMeasurementAt">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/HydraulicLogicalElement" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsHydraulicallyLocatedAt" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsMassFlowRateAt">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/HydraulicLogicalElement" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsHydraulicallyLocatedAt" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsPressureAt">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/HydraulicLogicalElement" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsHydraulicallyLocatedAt" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsPressureGradientAt">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/HydraulicLogicalElement" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsHydraulicallyLocatedAt" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsVolumetricFlowRateAt">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/HydraulicLogicalElement" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsHydraulicallyLocatedAt" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>

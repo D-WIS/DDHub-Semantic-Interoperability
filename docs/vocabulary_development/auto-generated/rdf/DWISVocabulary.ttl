@@ -847,23 +847,23 @@ ddhub:IsEnablingSignalFor a owl:ObjectProperty;
                           rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsEquivalentCirculationDensityAt a owl:ObjectProperty; 
                                        rdfs:comment ""@EN; 
-                                       rdfs:domain ddhub:DWISNoun; 
-                                       rdfs:range ddhub:DWISNoun; 
+                                       rdfs:domain ddhub:DrillingDataPoint; 
+                                       rdfs:range ddhub:HydraulicLogicalElement; 
                                        rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 ddhub:IsFluidDensityAt a owl:ObjectProperty; 
                        rdfs:comment ""@EN; 
-                       rdfs:domain ddhub:DWISNoun; 
-                       rdfs:range ddhub:DWISNoun; 
+                       rdfs:domain ddhub:DrillingDataPoint; 
+                       rdfs:range ddhub:HydraulicLogicalElement; 
                        rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 ddhub:IsFluidTemperatureAt a owl:ObjectProperty; 
                            rdfs:comment ""@EN; 
-                           rdfs:domain ddhub:DWISNoun; 
-                           rdfs:range ddhub:DWISNoun; 
+                           rdfs:domain ddhub:DrillingDataPoint; 
+                           rdfs:range ddhub:HydraulicLogicalElement; 
                            rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 ddhub:IsFluidVelocityAt a owl:ObjectProperty; 
                         rdfs:comment ""@EN; 
-                        rdfs:domain ddhub:DWISNoun; 
-                        rdfs:range ddhub:DWISNoun; 
+                        rdfs:domain ddhub:DrillingDataPoint; 
+                        rdfs:range ddhub:HydraulicLogicalElement; 
                         rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 ddhub:IsGeneratedBy a owl:ObjectProperty; 
                     rdfs:comment ""@EN; 
@@ -882,23 +882,23 @@ ddhub:IsHydraulicConnectedTo a owl:ObjectProperty;
                              rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsHydraulicEstimationAt a owl:ObjectProperty; 
                               rdfs:comment ""@EN; 
-                              rdfs:domain ddhub:DWISNoun; 
-                              rdfs:range ddhub:DWISNoun; 
+                              rdfs:domain ddhub:DrillingDataPoint; 
+                              rdfs:range ddhub:HydraulicLogicalElement; 
                               rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 ddhub:IsHydraulicMaximumAllowedRateOfChangeAt a owl:ObjectProperty; 
                                               rdfs:comment ""@EN; 
-                                              rdfs:domain ddhub:DWISNoun; 
-                                              rdfs:range ddhub:DWISNoun; 
+                                              rdfs:domain ddhub:DrillingDataPoint; 
+                                              rdfs:range ddhub:HydraulicLogicalElement; 
                                               rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 ddhub:IsHydraulicMaximumAllowedValueAt a owl:ObjectProperty; 
                                        rdfs:comment ""@EN; 
-                                       rdfs:domain ddhub:DWISNoun; 
-                                       rdfs:range ddhub:DWISNoun; 
+                                       rdfs:domain ddhub:DrillingDataPoint; 
+                                       rdfs:range ddhub:HydraulicLogicalElement; 
                                        rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 ddhub:IsHydraulicMeasurementAt a owl:ObjectProperty; 
                                rdfs:comment ""@EN; 
-                               rdfs:domain ddhub:DWISNoun; 
-                               rdfs:range ddhub:DWISNoun; 
+                               rdfs:domain ddhub:DrillingDataPoint; 
+                               rdfs:range ddhub:HydraulicLogicalElement; 
                                rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 ddhub:IsIdlingAfterTriggeredSignalFor a owl:ObjectProperty; 
                                       rdfs:comment ""@EN; 
@@ -927,8 +927,8 @@ ddhub:IsLimitFor a owl:ObjectProperty;
                  rdfs:subPropertyOf ddhub:HasFunction. 
 ddhub:IsMassFlowRateAt a owl:ObjectProperty; 
                        rdfs:comment ""@EN; 
-                       rdfs:domain ddhub:DWISNoun; 
-                       rdfs:range ddhub:DWISNoun; 
+                       rdfs:domain ddhub:DrillingDataPoint; 
+                       rdfs:range ddhub:HydraulicLogicalElement; 
                        rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 ddhub:IsMaximumLimitFor a owl:ObjectProperty; 
                         rdfs:comment ""@EN; 
@@ -975,6 +975,11 @@ ddhub:IsOfMechanicalStiffnessType a owl:ObjectProperty;
                                   rdfs:domain ddhub:DrillStemMechanicalModel; 
                                   rdfs:range ddhub:MechanicalStiffnessType; 
                                   rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsOpeningRatioAt a owl:ObjectProperty; 
+                       rdfs:comment ""@EN; 
+                       rdfs:domain ddhub:DrillingDataPoint; 
+                       rdfs:range ddhub:HydraulicLogicalElement; 
+                       rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 ddhub:IsPhysicallyLocatedAt a owl:ObjectProperty; 
                             rdfs:comment ""@EN; 
                             rdfs:domain ddhub:DrillingDataPoint; 
@@ -982,13 +987,13 @@ ddhub:IsPhysicallyLocatedAt a owl:ObjectProperty;
                             rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsPressureAt a owl:ObjectProperty; 
                    rdfs:comment ""@EN; 
-                   rdfs:domain ddhub:DWISNoun; 
-                   rdfs:range ddhub:DWISNoun; 
+                   rdfs:domain ddhub:DrillingDataPoint; 
+                   rdfs:range ddhub:HydraulicLogicalElement; 
                    rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 ddhub:IsPressureGradientAt a owl:ObjectProperty; 
                            rdfs:comment ""@EN; 
-                           rdfs:domain ddhub:DWISNoun; 
-                           rdfs:range ddhub:DWISNoun; 
+                           rdfs:domain ddhub:DrillingDataPoint; 
+                           rdfs:range ddhub:HydraulicLogicalElement; 
                            rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 ddhub:IsProcessedBy a owl:ObjectProperty; 
                     rdfs:comment ""@EN; 
@@ -1121,8 +1126,8 @@ ddhub:IsValidBy a owl:ObjectProperty;
                 rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsVolumetricFlowRateAt a owl:ObjectProperty; 
                              rdfs:comment ""@EN; 
-                             rdfs:domain ddhub:DWISNoun; 
-                             rdfs:range ddhub:DWISNoun; 
+                             rdfs:domain ddhub:DrillingDataPoint; 
+                             rdfs:range ddhub:HydraulicLogicalElement; 
                              rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 ddhub:J a owl:DatatypeProperty, owl:FunctionalProperty; 
         rdfs:comment "Luminous intensity exponent."@EN; 
