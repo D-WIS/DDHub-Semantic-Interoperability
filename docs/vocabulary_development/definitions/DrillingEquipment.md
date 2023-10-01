@@ -393,6 +393,13 @@
 - Specialization:
 - Description: 
 - Examples:
+## MudHose <!-- NOUN -->
+- Display name: MudHose
+- Parent class: SurfacePipe
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## ThreeWayManifold <!-- NOUN -->
 - Display name: ThreeWayManifold
 - Parent class: DrillingEquipment
