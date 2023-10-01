@@ -288,6 +288,27 @@
 - Specialization:
 - Description: 
 - Examples:
+## Choke <!-- NOUN -->
+- Display name: Choke
+- Parent class: GateValve
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## RigChoke <!-- NOUN -->
+- Display name: RigChoke
+- Parent class: Choke
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MPDChoke <!-- NOUN -->
+- Display name: MPDChoke
+- Parent class: Choke
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## MechanicalBlock <!-- NOUN -->
 - Display name: MechanicalBlock
 - Parent class: DrillingEquipment
