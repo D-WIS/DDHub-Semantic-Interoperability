@@ -329,6 +329,30 @@
 - Description: 
 - Examples:
 - Definition set: DrillingEquipment
+## Choke <!-- NOUN -->
+- Display name: Choke
+- Parent class: [GateValve](./DrillingEquipment.md#GateValve)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## RigChoke <!-- NOUN -->
+- Display name: RigChoke
+- Parent class: [Choke](./DrillingEquipment.md#Choke)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## MPDChoke <!-- NOUN -->
+- Display name: MPDChoke
+- Parent class: [Choke](./DrillingEquipment.md#Choke)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
 ## MechanicalBlock <!-- NOUN -->
 - Display name: MechanicalBlock
 - Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)

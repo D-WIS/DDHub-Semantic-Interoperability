@@ -183,6 +183,9 @@ ddhub:CementingServiceCompany a owl:Class;
 ddhub:CementPump a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:Pump. 
+ddhub:Choke a owl:Class; 
+            rdfs:comment ""@EN; 
+            rdfs:subClassOf ddhub:GateValve. 
 ddhub:Clock a owl:Class; 
             rdfs:comment "Represents a clock"@EN; 
             rdfs:subClassOf ddhub:DWISNoun. 
@@ -1317,6 +1320,9 @@ ddhub:ModellingDiscretization a owl:Class;
 ddhub:MovingAverage a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:Filter. 
+ddhub:MPDChoke a owl:Class; 
+               rdfs:comment ""@EN; 
+               rdfs:subClassOf ddhub:Choke. 
 ddhub:MPDChokeOpening a owl:Class; 
                       rdfs:comment ""@EN; 
                       rdfs:subClassOf ddhub:DrillingDataPoint. 
@@ -1552,6 +1558,9 @@ ddhub:Rig a owl:Class;
 ddhub:RigActionPlan a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:Plan. 
+ddhub:RigChoke a owl:Class; 
+               rdfs:comment ""@EN; 
+               rdfs:subClassOf ddhub:Choke. 
 ddhub:RigChokeControlSystem a owl:Class; 
                             rdfs:comment ""@EN; 
                             rdfs:subClassOf ddhub:ControlSystem. 

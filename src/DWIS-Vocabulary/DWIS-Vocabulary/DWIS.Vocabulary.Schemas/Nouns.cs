@@ -187,6 +187,9 @@ public static class Nouns
 	public static string CoiledTubing = "CoiledTubing";
 	public static string Elevator = "Elevator";
 	public static string GateValve = "GateValve";
+	public static string Choke = "Choke";
+	public static string RigChoke = "RigChoke";
+	public static string MPDChoke = "MPDChoke";
 	public static string MechanicalBlock = "MechanicalBlock";
 	public static string CrownBlock = "CrownBlock";
 	public static string TravellingBlock = "TravellingBlock";
