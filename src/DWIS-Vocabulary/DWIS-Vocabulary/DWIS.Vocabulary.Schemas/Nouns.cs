@@ -153,6 +153,12 @@ public static class Nouns
 	public static string SlugPit = "SlugPit";
 	public static string TripTank = "TripTank";
 	public static string AnnulusTerminator = "AnnulusTerminator";
+	public static string Riser = "Riser";
+	public static string MarineRiser = "MarineRiser";
+	public static string SurfaceRiser = "SurfaceRiser";
+	public static string LowPressureRiser = "LowPressureRiser";
+	public static string HighPressureRiser = "HighPressureRiser";
+	public static string SlipJoint = "SlipJoint";
 	public static string BellNipple = "BellNipple";
 	public static string Diverter = "Diverter";
 	public static string FlowLine = "FlowLine";

@@ -703,6 +703,9 @@ ddhub:HasValue a owl:ObjectProperty;
 ddhub:HighPassFilter a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:Filter. 
+ddhub:HighPressureRiser a owl:Class; 
+                        rdfs:comment ""@EN; 
+                        rdfs:subClassOf ddhub:SurfaceRiser. 
 ddhub:HoistingSystem a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:DrillingEquipment. 
@@ -1177,6 +1180,9 @@ ddhub:LogUID a owl:DatatypeProperty, owl:FunctionalProperty;
 ddhub:LowPassFilter a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:Filter. 
+ddhub:LowPressureRiser a owl:Class; 
+                       rdfs:comment ""@EN; 
+                       rdfs:subClassOf ddhub:SurfaceRiser. 
 ddhub:LT a owl:Class; 
          rdfs:comment ""@EN; 
          rdfs:subClassOf ddhub:ValidityCondition. 
@@ -1191,6 +1197,9 @@ ddhub:MainFunction a owl:DatatypeProperty, owl:FunctionalProperty;
                    rdfs:comment ""@EN; 
                    rdfs:domain ddhub:RunnableFunction; 
                    rdfs:range xsd:string. 
+ddhub:MarineRiser a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:Riser. 
 ddhub:MassDensityQuantity a owl:Class; 
                           rdfs:comment ""@EN; 
                           rdfs:subClassOf ddhub:Quantity. 
@@ -1550,6 +1559,9 @@ ddhub:RightToLeft a owl:DatatypeProperty, owl:FunctionalProperty;
                   rdfs:comment "Indicates whether the fluid can flow from the right branch to the left branch though the junction"@EN; 
                   rdfs:domain ddhub:HydraulicJunction; 
                   rdfs:range xsd:bool. 
+ddhub:Riser a owl:Class; 
+            rdfs:comment ""@EN; 
+            rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:RockDensityQuantity a owl:Class; 
                           rdfs:comment ""@EN; 
                           rdfs:subClassOf ddhub:MeasurableQuantity. 
@@ -1609,6 +1621,9 @@ ddhub:SIUnit a owl:DatatypeProperty, owl:FunctionalProperty;
              rdfs:comment ""@EN; 
              rdfs:domain ddhub:Quantity; 
              rdfs:range xsd:string. 
+ddhub:SlipJoint a owl:Class; 
+                rdfs:comment ""@EN; 
+                rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:Slips a owl:Class; 
             rdfs:comment ""@EN; 
             rdfs:subClassOf ddhub:DrillingEquipment. 
@@ -1651,6 +1666,9 @@ ddhub:StringRotationSystem a owl:Class;
 ddhub:SupportLine a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:DrillLine. 
+ddhub:SurfaceRiser a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:Riser. 
 ddhub:SurfaceRPM a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:DrillingDataPoint. 

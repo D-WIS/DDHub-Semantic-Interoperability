@@ -57,6 +57,54 @@
 - Description: 
 - Examples:
 - Definition set: DrillingEquipment
+## Riser <!-- NOUN -->
+- Display name: Riser
+- Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## MarineRiser <!-- NOUN -->
+- Display name: MarineRiser
+- Parent class: [Riser](./DrillingEquipment.md#Riser)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## SurfaceRiser <!-- NOUN -->
+- Display name: SurfaceRiser
+- Parent class: [Riser](./DrillingEquipment.md#Riser)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## LowPressureRiser <!-- NOUN -->
+- Display name: LowPressureRiser
+- Parent class: [SurfaceRiser](./DrillingEquipment.md#SurfaceRiser)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## HighPressureRiser <!-- NOUN -->
+- Display name: ighPressureRiser
+- Parent class: [SurfaceRiser](./DrillingEquipment.md#SurfaceRiser)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## SlipJoint <!-- NOUN -->
+- Display name: lipJoint
+- Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
 ## BellNipple <!-- NOUN -->
 - Display name: BellNipple
 - Parent class: [AnnulusTerminator](./DrillingEquipment.md#AnnulusTerminator)
