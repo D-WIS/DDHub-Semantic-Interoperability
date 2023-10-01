@@ -1130,6 +1130,11 @@ ddhub:IsValidBy a owl:ObjectProperty;
                 rdfs:domain ddhub:DWISNoun; 
                 rdfs:range ddhub:DWISNoun; 
                 rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsVolumeAt a owl:ObjectProperty; 
+                 rdfs:comment ""@EN; 
+                 rdfs:domain ddhub:DrillingDataPoint; 
+                 rdfs:range ddhub:Tank; 
+                 rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 ddhub:IsVolumetricFlowRateAt a owl:ObjectProperty; 
                              rdfs:comment ""@EN; 
                              rdfs:domain ddhub:DrillingDataPoint; 
@@ -1714,6 +1719,9 @@ ddhub:TangencyLength a owl:Class;
 ddhub:TangentialModelling a owl:Class; 
                           rdfs:comment "The model accounts for the change of tangential direction of some parts of the physical system."@EN; 
                           rdfs:subClassOf ddhub:LateralModelling. 
+ddhub:Tank a owl:Class; 
+           rdfs:comment ""@EN; 
+           rdfs:subClassOf ddhub:HydraulicLogicalElement. 
 ddhub:Telemetry a owl:Class; 
                 rdfs:comment "Technology used for transferring the data from its main origin."@EN; 
                 rdfs:subClassOf ddhub:DWISNoun. 

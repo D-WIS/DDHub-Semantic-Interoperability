@@ -237,6 +237,7 @@ public static class Nouns
 	public static string OpenHole = "OpenHole";
 	public static string ReturnFlowLine = "ReturnFlowLine";
 	public static string HydraulicJunction = "HydraulicJunction";
+	public static string Tank = "Tank";
 	public static string MudMixing = "MudMixing";
 	public static string HydraulicNetwork = "HydraulicNetwork";
 	public static string DownholeHydraulicNetwork = "DownholeHydraulicNetwork";

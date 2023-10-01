@@ -140,6 +140,14 @@
 - Description: 
 - Examples:
 - Definition set: Hydraulics
+## Tank <!-- NOUN -->
+- Display name: Tank
+- Parent class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
 ## MudMixing <!-- NOUN -->
 - Display name: MudMixing
 - Parent class: [HydraulicJunction](./Hydraulics.md#HydraulicJunction)
@@ -308,6 +316,16 @@
 - Parent verb: [IsHydraulicallyLocatedAt](./Hydraulics.md#IsHydraulicallyLocatedAt)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## IsVolumeAt <!-- VERB -->
+- Display name: IsVolumeAt
+- Parent verb: [IsHydraulicallyLocatedAt](./Hydraulics.md#IsHydraulicallyLocatedAt)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [Tank](./Hydraulics.md#Tank)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
