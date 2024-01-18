@@ -140,6 +140,14 @@
 - Description: 
 - Examples:
 - Definition set: Hydraulics
+## Tank <!-- NOUN -->
+- Display name: Tank
+- Parent class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
 ## MudMixing <!-- NOUN -->
 - Display name: MudMixing
 - Parent class: [HydraulicJunction](./Hydraulics.md#HydraulicJunction)
@@ -266,8 +274,8 @@
 ## IsEquivalentCirculationDensityAt <!-- VERB -->
 - Display name: IsEquivalentCirculationDensityAt
 - Parent verb: [IsHydraulicallyLocatedAt](./Hydraulics.md#IsHydraulicallyLocatedAt)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -276,8 +284,8 @@
 ## IsFluidDensityAt <!-- VERB -->
 - Display name: IsFluidDensityAt
 - Parent verb: [IsHydraulicallyLocatedAt](./Hydraulics.md#IsHydraulicallyLocatedAt)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -286,8 +294,8 @@
 ## IsFluidTemperatureAt <!-- VERB -->
 - Display name: IsFluidTemperatureAt
 - Parent verb: [IsHydraulicallyLocatedAt](./Hydraulics.md#IsHydraulicallyLocatedAt)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -296,8 +304,28 @@
 ## IsFluidVelocityAt <!-- VERB -->
 - Display name: IsFluidVelocityAt
 - Parent verb: [IsHydraulicallyLocatedAt](./Hydraulics.md#IsHydraulicallyLocatedAt)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## IsOpeningRatioAt <!-- VERB -->
+- Display name: IsOpeningRatioAt
+- Parent verb: [IsHydraulicallyLocatedAt](./Hydraulics.md#IsHydraulicallyLocatedAt)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## IsVolumeAt <!-- VERB -->
+- Display name: IsVolumeAt
+- Parent verb: [IsHydraulicallyLocatedAt](./Hydraulics.md#IsHydraulicallyLocatedAt)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [Tank](./Hydraulics.md#Tank)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -306,8 +334,8 @@
 ## IsHydraulicEstimationAt <!-- VERB -->
 - Display name: IsHydraulicEstimationAt
 - Parent verb: [IsHydraulicallyLocatedAt](./Hydraulics.md#IsHydraulicallyLocatedAt)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -316,8 +344,8 @@
 ## IsHydraulicMaximumAllowedRateOfChangeAt <!-- VERB -->
 - Display name: IsHydraulicMaximumAllowedRateOfChangeAt
 - Parent verb: [IsHydraulicallyLocatedAt](./Hydraulics.md#IsHydraulicallyLocatedAt)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -326,8 +354,8 @@
 ## IsHydraulicMaximumAllowedValueAt <!-- VERB -->
 - Display name: IsHydraulicMaximumAllowedValueAt
 - Parent verb: [IsHydraulicallyLocatedAt](./Hydraulics.md#IsHydraulicallyLocatedAt)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -336,8 +364,8 @@
 ## IsHydraulicMeasurementAt <!-- VERB -->
 - Display name: IsHydraulicMeasurementAt
 - Parent verb: [IsHydraulicallyLocatedAt](./Hydraulics.md#IsHydraulicallyLocatedAt)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -346,8 +374,8 @@
 ## IsMassFlowRateAt <!-- VERB -->
 - Display name: IsMassFlowRateAt
 - Parent verb: [IsHydraulicallyLocatedAt](./Hydraulics.md#IsHydraulicallyLocatedAt)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -356,8 +384,8 @@
 ## IsPressureAt <!-- VERB -->
 - Display name: IsPressureAt
 - Parent verb: [IsHydraulicallyLocatedAt](./Hydraulics.md#IsHydraulicallyLocatedAt)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -366,8 +394,8 @@
 ## IsPressureGradientAt <!-- VERB -->
 - Display name: IsPressureGradientAt
 - Parent verb: [IsHydraulicallyLocatedAt](./Hydraulics.md#IsHydraulicallyLocatedAt)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -376,8 +404,8 @@
 ## IsVolumetricFlowRateAt <!-- VERB -->
 - Display name: IsVolumetricFlowRateAt
 - Parent verb: [IsHydraulicallyLocatedAt](./Hydraulics.md#IsHydraulicallyLocatedAt)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 

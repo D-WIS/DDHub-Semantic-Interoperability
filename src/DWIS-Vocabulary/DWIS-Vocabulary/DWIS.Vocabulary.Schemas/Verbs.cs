@@ -77,6 +77,8 @@ public static class Verbs
 	public static string IsFluidDensityAt = "IsFluidDensityAt";
 	public static string IsFluidTemperatureAt = "IsFluidTemperatureAt";
 	public static string IsFluidVelocityAt = "IsFluidVelocityAt";
+	public static string IsOpeningRatioAt = "IsOpeningRatioAt";
+	public static string IsVolumeAt = "IsVolumeAt";
 	public static string IsHydraulicEstimationAt = "IsHydraulicEstimationAt";
 	public static string IsHydraulicMaximumAllowedRateOfChangeAt = "IsHydraulicMaximumAllowedRateOfChangeAt";
 	public static string IsHydraulicMaximumAllowedValueAt = "IsHydraulicMaximumAllowedValueAt";

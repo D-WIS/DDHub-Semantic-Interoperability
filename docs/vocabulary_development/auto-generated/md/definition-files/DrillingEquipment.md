@@ -57,6 +57,54 @@
 - Description: 
 - Examples:
 - Definition set: DrillingEquipment
+## Riser <!-- NOUN -->
+- Display name: Riser
+- Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## MarineRiser <!-- NOUN -->
+- Display name: MarineRiser
+- Parent class: [Riser](./DrillingEquipment.md#Riser)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## SurfaceRiser <!-- NOUN -->
+- Display name: SurfaceRiser
+- Parent class: [Riser](./DrillingEquipment.md#Riser)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## LowPressureRiser <!-- NOUN -->
+- Display name: LowPressureRiser
+- Parent class: [SurfaceRiser](./DrillingEquipment.md#SurfaceRiser)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## HighPressureRiser <!-- NOUN -->
+- Display name: ighPressureRiser
+- Parent class: [SurfaceRiser](./DrillingEquipment.md#SurfaceRiser)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## SlipJoint <!-- NOUN -->
+- Display name: lipJoint
+- Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
 ## BellNipple <!-- NOUN -->
 - Display name: BellNipple
 - Parent class: [AnnulusTerminator](./DrillingEquipment.md#AnnulusTerminator)
@@ -281,6 +329,30 @@
 - Description: 
 - Examples:
 - Definition set: DrillingEquipment
+## Choke <!-- NOUN -->
+- Display name: Choke
+- Parent class: [GateValve](./DrillingEquipment.md#GateValve)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## RigChoke <!-- NOUN -->
+- Display name: RigChoke
+- Parent class: [Choke](./DrillingEquipment.md#Choke)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## MPDChoke <!-- NOUN -->
+- Display name: MPDChoke
+- Parent class: [Choke](./DrillingEquipment.md#Choke)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
 ## MechanicalBlock <!-- NOUN -->
 - Display name: MechanicalBlock
 - Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
@@ -361,9 +433,25 @@
 - Description: 
 - Examples:
 - Definition set: DrillingEquipment
+## SurfacePipe <!-- NOUN -->
+- Display name: SurfacePipe
+- Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
 ## StandPipe <!-- NOUN -->
 - Display name: StandPipe
-- Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Parent class: [SurfacePipe](./DrillingEquipment.md#SurfacePipe)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## MudHose <!-- NOUN -->
+- Display name: MudHose
+- Parent class: [SurfacePipe](./DrillingEquipment.md#SurfacePipe)
 - Attributes:
 - Specialization:
 - Description: 

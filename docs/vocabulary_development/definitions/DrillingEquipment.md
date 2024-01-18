@@ -50,6 +50,48 @@
 - Specialization:
 - Description: 
 - Examples:
+## Riser <!-- NOUN -->
+- Display name: Riser
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MarineRiser <!-- NOUN -->
+- Display name: MarineRiser
+- Parent class: Riser
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## SurfaceRiser <!-- NOUN -->
+- Display name: SurfaceRiser
+- Parent class: Riser
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## LowPressureRiser <!-- NOUN -->
+- Display name: LowPressureRiser
+- Parent class: SurfaceRiser
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## HighPressureRiser <!-- NOUN -->
+- Display name:HighPressureRiser
+- Parent class: SurfaceRiser
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## SlipJoint <!-- NOUN -->
+- Display name:SlipJoint
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## BellNipple <!-- NOUN -->
 - Display name: BellNipple
 - Parent class: AnnulusTerminator
@@ -246,6 +288,27 @@
 - Specialization:
 - Description: 
 - Examples:
+## Choke <!-- NOUN -->
+- Display name: Choke
+- Parent class: GateValve
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## RigChoke <!-- NOUN -->
+- Display name: RigChoke
+- Parent class: Choke
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MPDChoke <!-- NOUN -->
+- Display name: MPDChoke
+- Parent class: Choke
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## MechanicalBlock <!-- NOUN -->
 - Display name: MechanicalBlock
 - Parent class: DrillingEquipment
@@ -316,9 +379,23 @@
 - Specialization:
 - Description: 
 - Examples:
+## SurfacePipe <!-- NOUN -->
+- Display name: SurfacePipe
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## StandPipe <!-- NOUN -->
 - Display name: StandPipe
-- Parent class: DrillingEquipment
+- Parent class: SurfacePipe
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MudHose <!-- NOUN -->
+- Display name: MudHose
+- Parent class: SurfacePipe
 - Attributes:
 - Specialization:
 - Description: 

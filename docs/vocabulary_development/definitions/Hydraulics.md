@@ -124,6 +124,13 @@
   - RightToLeft = true
 - Description: 
 - Examples:
+## Tank <!-- NOUN -->
+- Display name: Tank
+- Parent class: HydraulicLogicalElement
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## MudMixing <!-- NOUN -->
 - Display name: MudMixing
 - Parent class: HydraulicJunction
@@ -221,85 +228,99 @@
 ## IsEquivalentCirculationDensityAt <!-- VERB -->
 - Display name: IsEquivalentCirculationDensityAt
 - Parent verb: IsHydraulicallyLocatedAt
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Subject class: DrillingDataPoint
+- Object class: HydraulicLogicalElement
 - Description: 
 - Examples: 
 ## IsFluidDensityAt <!-- VERB -->
 - Display name: IsFluidDensityAt
 - Parent verb: IsHydraulicallyLocatedAt
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Subject class: DrillingDataPoint
+- Object class: HydraulicLogicalElement
 - Description: 
 - Examples: 
 ## IsFluidTemperatureAt <!-- VERB -->
 - Display name: IsFluidTemperatureAt
 - Parent verb: IsHydraulicallyLocatedAt
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Subject class: DrillingDataPoint
+- Object class: HydraulicLogicalElement
 - Description: 
 - Examples: 
 ## IsFluidVelocityAt <!-- VERB -->
 - Display name: IsFluidVelocityAt
 - Parent verb: IsHydraulicallyLocatedAt
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Subject class: DrillingDataPoint
+- Object class: HydraulicLogicalElement
+- Description: 
+- Examples: 
+## IsOpeningRatioAt <!-- VERB -->
+- Display name: IsOpeningRatioAt
+- Parent verb: IsHydraulicallyLocatedAt
+- Subject class: DrillingDataPoint
+- Object class: HydraulicLogicalElement
+- Description: 
+- Examples: 
+## IsVolumeAt <!-- VERB -->
+- Display name: IsVolumeAt
+- Parent verb: IsHydraulicallyLocatedAt
+- Subject class: DrillingDataPoint
+- Object class: Tank
 - Description: 
 - Examples: 
 ## IsHydraulicEstimationAt <!-- VERB -->
 - Display name: IsHydraulicEstimationAt
 - Parent verb: IsHydraulicallyLocatedAt
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Subject class: DrillingDataPoint
+- Object class: HydraulicLogicalElement
 - Description: 
 - Examples: 
 ## IsHydraulicMaximumAllowedRateOfChangeAt <!-- VERB -->
 - Display name: IsHydraulicMaximumAllowedRateOfChangeAt
 - Parent verb: IsHydraulicallyLocatedAt
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Subject class: DrillingDataPoint
+- Object class: HydraulicLogicalElement
 - Description: 
 - Examples: 
 ## IsHydraulicMaximumAllowedValueAt <!-- VERB -->
 - Display name: IsHydraulicMaximumAllowedValueAt
 - Parent verb: IsHydraulicallyLocatedAt
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Subject class: DrillingDataPoint
+- Object class: HydraulicLogicalElement
 - Description: 
 - Examples: 
 ## IsHydraulicMeasurementAt <!-- VERB -->
 - Display name: IsHydraulicMeasurementAt
 - Parent verb: IsHydraulicallyLocatedAt
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Subject class: DrillingDataPoint
+- Object class: HydraulicLogicalElement
 - Description: 
 - Examples: 
 ## IsMassFlowRateAt <!-- VERB -->
 - Display name: IsMassFlowRateAt
 - Parent verb: IsHydraulicallyLocatedAt
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Subject class: DrillingDataPoint
+- Object class: HydraulicLogicalElement
 - Description: 
 - Examples: 
 ## IsPressureAt <!-- VERB -->
 - Display name: IsPressureAt
 - Parent verb: IsHydraulicallyLocatedAt
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Subject class: DrillingDataPoint
+- Object class: HydraulicLogicalElement
 - Description: 
 - Examples: 
 ## IsPressureGradientAt <!-- VERB -->
 - Display name: IsPressureGradientAt
 - Parent verb: IsHydraulicallyLocatedAt
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Subject class: DrillingDataPoint
+- Object class: HydraulicLogicalElement
 - Description: 
 - Examples: 
 ## IsVolumetricFlowRateAt <!-- VERB -->
 - Display name: IsVolumetricFlowRateAt
 - Parent verb: IsHydraulicallyLocatedAt
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Subject class: DrillingDataPoint
+- Object class: HydraulicLogicalElement
 - Description: 
 - Examples: 
 ## IsHydraulicConnectedTo <!-- VERB -->

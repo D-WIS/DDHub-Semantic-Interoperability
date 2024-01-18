@@ -81,6 +81,7 @@ public static class Nouns
 	public static string LT = "LT";
 	public static string DrillingDataPoint = "DrillingDataPoint";
 	public static string ActiveVolume = "ActiveVolume";
+	public static string Azimuth = "Azimuth";
 	public static string BitDepth = "BitDepth";
 	public static string DensityIn = "DensityIn";
 	public static string DensityOut = "DensityOut";
@@ -95,6 +96,8 @@ public static class Nouns
 	public static string HookLoad = "HookLoad";
 	public static string HookPosition = "HookPosition";
 	public static string HookVelocity = "HookVelocity";
+	public static string Inclination = "Inclination";
+	public static string MeasuredDepth = "MeasuredDepth";
 	public static string PumpRate = "PumpRate";
 	public static string ROP = "ROP";
 	public static string SPP = "SPP";
@@ -150,6 +153,12 @@ public static class Nouns
 	public static string SlugPit = "SlugPit";
 	public static string TripTank = "TripTank";
 	public static string AnnulusTerminator = "AnnulusTerminator";
+	public static string Riser = "Riser";
+	public static string MarineRiser = "MarineRiser";
+	public static string SurfaceRiser = "SurfaceRiser";
+	public static string LowPressureRiser = "LowPressureRiser";
+	public static string HighPressureRiser = "HighPressureRiser";
+	public static string SlipJoint = "SlipJoint";
 	public static string BellNipple = "BellNipple";
 	public static string Diverter = "Diverter";
 	public static string FlowLine = "FlowLine";
@@ -178,6 +187,9 @@ public static class Nouns
 	public static string CoiledTubing = "CoiledTubing";
 	public static string Elevator = "Elevator";
 	public static string GateValve = "GateValve";
+	public static string Choke = "Choke";
+	public static string RigChoke = "RigChoke";
+	public static string MPDChoke = "MPDChoke";
 	public static string MechanicalBlock = "MechanicalBlock";
 	public static string CrownBlock = "CrownBlock";
 	public static string TravellingBlock = "TravellingBlock";
@@ -188,7 +200,9 @@ public static class Nouns
 	public static string BackPressurePump = "BackPressurePump";
 	public static string ShaleShakers = "ShaleShakers";
 	public static string Slips = "Slips";
+	public static string SurfacePipe = "SurfacePipe";
 	public static string StandPipe = "StandPipe";
+	public static string MudHose = "MudHose";
 	public static string ThreeWayManifold = "ThreeWayManifold";
 	public static string ThreeWayValve = "ThreeWayValve";
 	public static string ThreeWayValveInternalValve = "ThreeWayValveInternalValve";
@@ -224,6 +238,7 @@ public static class Nouns
 	public static string OpenHole = "OpenHole";
 	public static string ReturnFlowLine = "ReturnFlowLine";
 	public static string HydraulicJunction = "HydraulicJunction";
+	public static string Tank = "Tank";
 	public static string MudMixing = "MudMixing";
 	public static string HydraulicNetwork = "HydraulicNetwork";
 	public static string DownholeHydraulicNetwork = "DownholeHydraulicNetwork";
@@ -260,6 +275,7 @@ public static class Nouns
 	public static string StrainWaveBasedDiscretization = "StrainWaveBasedDiscretization";
 	public static string MassTransferBasedDiscretization = "MassTransferBasedDiscretization";
 	public static string Location = "Location";
+	public static string VerticalDatumReferenceLocation = "VerticalDatumReferenceLocation";
 	public static string BitReferenceLocation = "BitReferenceLocation";
 	public static string TopOfStringReferenceLocation = "TopOfStringReferenceLocation";
 	public static string CasingShoeLocation = "CasingShoeLocation";

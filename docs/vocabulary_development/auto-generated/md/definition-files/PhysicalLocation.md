@@ -9,6 +9,14 @@
 - Description: Physical location for a signal. Refers to: 1) a reference frame (via the HasReferenceFrame relation), that works as a system of coordinates 2) an origin (of type Location) via the HasReferenceFrameOrigin relation.
 - Examples:
 - Definition set: PhysicalLocation
+## VerticalDatumReferenceLocation <!-- NOUN -->
+- Display name: VerticalDatumReferenceLocation
+- Parent class: [Location](./PhysicalLocation.md#Location)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
 ## BitReferenceLocation <!-- NOUN -->
 - Display name: BitReferenceLocation
 - Parent class: [Location](./PhysicalLocation.md#Location)
