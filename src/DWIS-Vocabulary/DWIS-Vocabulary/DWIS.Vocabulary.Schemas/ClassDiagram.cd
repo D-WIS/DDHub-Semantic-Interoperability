@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DWIS.Vocabulary.Schemas.Attributes" Collapsed="true">
+    <Position X="1.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UW860pIyGBBAEpkRXDEITgu0pARI+wgQARzo3bwVSJc=</HashCode>
+      <FileName>Attributes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DWIS.Vocabulary.Schemas.Nouns" Collapsed="true">
+    <Position X="3" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>/p/P+/b1V7v7v24H/buvv3/9q7/z2sb9zrOU3bf1f50=</HashCode>
+      <FileName>Nouns.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DWIS.Vocabulary.Schemas.UQ.Quantities" Collapsed="true">
+    <Position X="4.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gqiBBGIAgGAAAFwAAEBaAALISAiAAQyCQycWEYATBIE=</HashCode>
+      <FileName>quantities.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DWIS.Vocabulary.Schemas.UQ.Units" Collapsed="true">
+    <Position X="1.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>3//37f13/j/+25/9tn//7/3/f8v/nv/f8/3+/U/+/Ns=</HashCode>
+      <FileName>units.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DWIS.Vocabulary.Schemas.Verbs" Collapsed="true">
+    <Position X="3" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hBhY51IEwwGMYA1DRVJC0OKypCVNyG3VDHkwIgDVL6E=</HashCode>
+      <FileName>Verbs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
