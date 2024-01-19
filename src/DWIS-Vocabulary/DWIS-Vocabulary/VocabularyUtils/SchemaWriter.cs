@@ -83,7 +83,6 @@ namespace DWIS.Vocabulary.Utils
             } 
         }
 
-
         private static string CorrectString(string input)
         {
             return input.Replace("'", "").Replace(" ", "");
@@ -98,6 +97,20 @@ namespace DWIS.Vocabulary.Utils
             builder.AppendLine("{");
             builder.AppendLine("public static class Nouns");
             builder.AppendLine("{");
+            builder.AppendLine("public enum Enum");
+            builder.AppendLine("{");
+            foreach (Noun noun in vocabulary.Nouns)
+            {
+                if (noun != vocabulary.Nouns.Last())
+                {
+                    builder.AppendLine(noun.Name + ",");
+                }
+                else
+                {
+                    builder.AppendLine(noun.Name);
+                }
+            }
+            builder.AppendLine("}");
             foreach (string line in GetNouns(vocabulary))
             {
                 builder.AppendLine(line);
@@ -130,6 +143,21 @@ namespace DWIS.Vocabulary.Utils
             builder.AppendLine("{");
             builder.AppendLine("public static class Verbs");
             builder.AppendLine("{");
+            builder.AppendLine("public enum Enum");
+            builder.AppendLine("{");
+            foreach (Verb verb in vocabulary.Verbs)
+            {
+                if (verb != vocabulary.Verbs.Last())
+                {
+                    builder.AppendLine(verb.Name + ",");
+                }
+                else
+                {
+                    builder.AppendLine(verb.Name);
+                }
+            }
+            builder.AppendLine("}");
+
             foreach (string line in GetVerbs(vocabulary))
             {
                 builder.AppendLine(line);
