@@ -16,8 +16,25 @@
 - Description: The uncertainty is represented by a Gaussian distribution, i.e., with a `Mean` and a `StandardDeviation`, $\mathcal{N}(\overline{x},{\sigma_{x}}^2)$ where $\overline{x}$ is the `Mean` value and $\sigma_{x}$ is the `StandardDeviation`.
 - Examples:
 ```dot
-"ddp#01" -> "DrillingDataPoint" [label="BelongsToClass"]
+digraph {
+  "DrillingDataPoint" [color="grey"]
+  "GaussianUncertainty" [color="grey"]
+  "DynamicDrillingSignal" [color="grey"]
+  "ddp#01" -> "DrillingDataPoint" [label="BelongsToClass"]
+  "GU#01" -> "GaussianUncertainty" [label="BelongsToClass"]
+  "ddp#01" -> "GU#01" [label="HasUncertainty"]
+  "Mean#01" -> "DrillingDataPoint" [label="BelongsToClass"]
+  "StdDev#01" -> "DrillingDataPoint" [label="BelongsToClass"]
+  "GU#01" -> "Mean#01" [label="HasUncertaintyMean"]
+  "GU#01" -> "StdDev#01" [label="HasUncertaintyStandardDeviation"]
+  "Signal#01" -> "DynamicDrillingSignal" [label="BelongsToClass"]
+  "Signal#02" -> "DynamicDrillingSignal" [label="BelongsToClass"]
+  "Mean#01" -> "Signal#01" [label="HasDynamicValue"]
+  "StdDev#01" -> "Signal#02" [label="HasDynamicValue"]
+}
 ```
+In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is a Gaussian distribution that is described by a `Mean` value called `Mean#01` and a `StandardDeviation` value called `StdDev#01`. `Mean#01` is a live signal that is attached to `Signal#01`. Similarly `StdDev#01` is a live signal attached to `Signal#02`.
+
 ## GenericUncertainty <!-- NOUN -->
 - Display name: GenericUncertainty
 - Parent class: SignalUncertainty
@@ -38,7 +55,7 @@
 - Attributes:
   - Fullscale
     - Type: double
-    - Description: The total range of measurement of the signal, i.e., $\left| max - min \right|}$. The value is expected to be in the same physical quantity as the sensor value.
+    - Description: The total range of measurement of the signal, i.e., $\left| max - min \right|$. The value is expected to be in the same physical quantity as the sensor value.
   - ProportionError
     - Type: double
     - Description: The proportion error on the signal. The value is expected to be a dimensionless physical quantity between 0 and 1 in SI unit. This proportion is applied to the `Fullscale` to obtain the standard deviation of the Gaussian probability distribution that describes the uncertainty of the signal. The mean value of that Gaussian distribution is the signal value.
