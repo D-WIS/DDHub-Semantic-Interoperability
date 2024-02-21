@@ -16,18 +16,18 @@
 - Description: The uncertainty is represented by a Gaussian distribution, i.e., with a `Mean` and a `StandardDeviation`, $\mathcal{N}(\overline{x},{\sigma_{x}}^2)$ where $\overline{x}$ is the `Mean` value and $\sigma_{x}$ is the `StandardDeviation`.
 - Examples:
 ```mermaid
-graph GU;
-  "ddp#01" --> "DrillingDataPoint"[style fill: grey] BelongsToClass;
-  "GU#01" --> "GaussianUncertainty"[style fill: grey] BelongsToClass;
-  "ddp#01" --> "GU#01" HasUncertainty;
-  "Mean#01" --> "DrillingDataPoint"[style fill: grey] BelongsToClass;
-  "StdDev#01" --> "DrillingDataPoint"[style fill: grey] BelongsToClass;
-  "GU#01" --> "Mean#01" HasUncertaintyMean;
-  "GU#01" --> "StdDev#01" HasUncertaintyStandardDeviation;
-  "Signal#01" --> "DynamicDrillingSignal"[style fill: grey] BelongsToClass;
-  "Signal#02" --> "DynamicDrillingSignal"[style fill: grey] BelongsToClass;
-  "Mean#01" --> "Signal#01" HasDynamicValue;
-  "StdDev#01" --> "Signal#02" HasDynamicValue;
+graph LR;
+  A[ddp#01] -->|BelongsToClass| B[DrillingDataPoint];
+  D[GU#01] -->|BelongsToClass| I[GaussianUncertainty];
+  A[ddp#01] -->|HasUncertainty| D[GU#01] ;
+  E[Mean#01] -->|BelongsToClass| B[DrillingDataPoint];
+  F[StdDev#01] -->|BelongsToClass| B[DrillingDataPoint];
+  D[GU#01] -->|HasUncertaintyMean| E[Mean#01] ;
+  D[GU#01] -->|HasUncertaintyStandardDeviation| F[StdDev#01] ;
+  G[Signal#01] -->|BelongsToClass| C[DynamicDrillingSignal];
+  H[Signal#02] -->|BelongsToClass| C[DynamicDrillingSignal];
+  E[Mean#01] -->|HasDynamicValue| G[Signal#01] ;
+  F[StdDev#01] -->|HasDynamicValue| H[Signal#02] ;
 ```
 In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is a Gaussian distribution that is described by a `Mean` value called `Mean#01` and a `StandardDeviation` value called `StdDev#01`. `Mean#01` is a live signal that is attached to `Signal#01`. Similarly `StdDev#01` is a live signal attached to `Signal#02`.
 
