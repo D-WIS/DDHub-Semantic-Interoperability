@@ -6,6 +6,19 @@
 - Parent class: DWISNoun
 - Description: Represent the uncertainty associated to a `DrillingDataPoint`. 
 - Examples:
+This noun is not intended to be used directly in describing a signal. However, it can be useful when formulating a query and then it serves as a generic way to check if there are facts related to uncertainty description for a `DrillingDataPoint`.
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+
+SELECT ?dataPoint 
+WHERE {
+			?dataPoint ddhub:HasUncertainty ?uncertainty .
+      ?dataPoint rdf:type ddhub:DrillingDataPoint .
+			?uncertainty rdf:type ddhub:SignalUncertainty .
+}
+```
+This query returns all the `DrillingDataPoint` for which an uncertainty is given.
 ## GaussianUncertainty <!-- NOUN -->
 - Display name: GaussianUncertainty
 - Parent class: SignalUncertainty
