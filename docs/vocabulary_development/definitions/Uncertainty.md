@@ -14,7 +14,7 @@ PREFIX ddhub: <http://ddhub.no/>
 SELECT ?dataPoint 
 WHERE {
 			?dataPoint ddhub:HasUncertainty ?uncertainty .
-      ?dataPoint rdf:type ddhub:DrillingDataPoint .
+			?dataPoint rdf:type ddhub:DrillingDataPoint .
 			?uncertainty rdf:type ddhub:SignalUncertainty .
 }
 ```
