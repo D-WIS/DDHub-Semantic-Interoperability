@@ -4302,8 +4302,8 @@
 ## HasUncertaintyMax <!-- VERB -->
 - Display name: HasUncertaintyMax
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DWISNoun](#DWISNoun)
-- Object class: [DWISNoun](#DWISNoun)
+- Subject class: [SignalUncertainty](#SignalUncertainty)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -4312,8 +4312,8 @@
 ## HasUncertaintyMean <!-- VERB -->
 - Display name: HasUncertaintyMean
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DWISNoun](#DWISNoun)
-- Object class: [DWISNoun](#DWISNoun)
+- Subject class: [SignalUncertainty](#SignalUncertainty)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -4322,8 +4322,8 @@
 ## HasUncertaintyMin <!-- VERB -->
 - Display name: HasUncertaintyMin
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DWISNoun](#DWISNoun)
-- Object class: [DWISNoun](#DWISNoun)
+- Subject class: [SignalUncertainty](#SignalUncertainty)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -4342,8 +4342,8 @@
 ## HasUncertaintyRelativeValue <!-- VERB -->
 - Display name: HasUncertaintyRelativeValue
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DWISNoun](#DWISNoun)
-- Object class: [DWISNoun](#DWISNoun)
+- Subject class: [SignalUncertainty](#SignalUncertainty)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -4352,8 +4352,18 @@
 ## HasUncertaintyStandardDeviation <!-- VERB -->
 - Display name: HasUncertaintyStandardDeviation
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DWISNoun](#DWISNoun)
-- Object class: [DWISNoun](#DWISNoun)
+- Subject class: [SignalUncertainty](#SignalUncertainty)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Uncertainty
+## HasUncertaintyHistogram <!-- VERB -->
+- Display name: HasUncertaintyHistogram
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [SignalUncertainty](#SignalUncertainty)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 

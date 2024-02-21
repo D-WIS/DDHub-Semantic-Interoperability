@@ -79,8 +79,8 @@
 ## HasUncertaintyMax <!-- VERB -->
 - Display name: HasUncertaintyMax
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Subject class: [SignalUncertainty](./Uncertainty.md#SignalUncertainty)
+- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -89,8 +89,8 @@
 ## HasUncertaintyMean <!-- VERB -->
 - Display name: HasUncertaintyMean
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Subject class: [SignalUncertainty](./Uncertainty.md#SignalUncertainty)
+- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -99,8 +99,8 @@
 ## HasUncertaintyMin <!-- VERB -->
 - Display name: HasUncertaintyMin
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Subject class: [SignalUncertainty](./Uncertainty.md#SignalUncertainty)
+- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -119,8 +119,8 @@
 ## HasUncertaintyRelativeValue <!-- VERB -->
 - Display name: HasUncertaintyRelativeValue
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Subject class: [SignalUncertainty](./Uncertainty.md#SignalUncertainty)
+- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
@@ -129,8 +129,18 @@
 ## HasUncertaintyStandardDeviation <!-- VERB -->
 - Display name: HasUncertaintyStandardDeviation
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Subject class: [SignalUncertainty](./Uncertainty.md#SignalUncertainty)
+- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Uncertainty
+## HasUncertaintyHistogram <!-- VERB -->
+- Display name: HasUncertaintyHistogram
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [SignalUncertainty](./Uncertainty.md#SignalUncertainty)
+- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 

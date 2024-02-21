@@ -658,20 +658,25 @@ ddhub:HasUncertaintyAccuracy a owl:ObjectProperty;
                              rdfs:domain ddhub:SensorUncertainty; 
                              rdfs:range ddhub:DrillingDataPoint; 
                              rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:HasUncertaintyHistogram a owl:ObjectProperty; 
+                              rdfs:comment ""@EN; 
+                              rdfs:domain ddhub:SignalUncertainty; 
+                              rdfs:range ddhub:DrillingDataPoint; 
+                              rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasUncertaintyMax a owl:ObjectProperty; 
                         rdfs:comment ""@EN; 
-                        rdfs:domain ddhub:DWISNoun; 
-                        rdfs:range ddhub:DWISNoun; 
+                        rdfs:domain ddhub:SignalUncertainty; 
+                        rdfs:range ddhub:DrillingDataPoint; 
                         rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasUncertaintyMean a owl:ObjectProperty; 
                          rdfs:comment ""@EN; 
-                         rdfs:domain ddhub:DWISNoun; 
-                         rdfs:range ddhub:DWISNoun; 
+                         rdfs:domain ddhub:SignalUncertainty; 
+                         rdfs:range ddhub:DrillingDataPoint; 
                          rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasUncertaintyMin a owl:ObjectProperty; 
                         rdfs:comment ""@EN; 
-                        rdfs:domain ddhub:DWISNoun; 
-                        rdfs:range ddhub:DWISNoun; 
+                        rdfs:domain ddhub:SignalUncertainty; 
+                        rdfs:range ddhub:DrillingDataPoint; 
                         rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasUncertaintyPrecision a owl:ObjectProperty; 
                               rdfs:comment ""@EN; 
@@ -680,13 +685,13 @@ ddhub:HasUncertaintyPrecision a owl:ObjectProperty;
                               rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasUncertaintyRelativeValue a owl:ObjectProperty; 
                                   rdfs:comment ""@EN; 
-                                  rdfs:domain ddhub:DWISNoun; 
-                                  rdfs:range ddhub:DWISNoun; 
+                                  rdfs:domain ddhub:SignalUncertainty; 
+                                  rdfs:range ddhub:DrillingDataPoint; 
                                   rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasUncertaintyStandardDeviation a owl:ObjectProperty; 
                                       rdfs:comment ""@EN; 
-                                      rdfs:domain ddhub:DWISNoun; 
-                                      rdfs:range ddhub:DWISNoun; 
+                                      rdfs:domain ddhub:SignalUncertainty; 
+                                      rdfs:range ddhub:DrillingDataPoint; 
                                       rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasUnitAssociation a owl:ObjectProperty; 
                          rdfs:comment ""@EN; 

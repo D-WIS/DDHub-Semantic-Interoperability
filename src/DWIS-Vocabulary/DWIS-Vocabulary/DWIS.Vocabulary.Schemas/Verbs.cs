@@ -127,7 +127,8 @@ HasUncertaintyMean,
 HasUncertaintyMin,
 HasUncertaintyPrecision,
 HasUncertaintyRelativeValue,
-HasUncertaintyStandardDeviation
+HasUncertaintyStandardDeviation,
+HasUncertaintyHistogram
 }
 	public static string IsEnablingSignalFor = "IsEnablingSignalFor";
 	public static string IsActivatedSignalFor = "IsActivatedSignalFor";
@@ -252,5 +253,6 @@ HasUncertaintyStandardDeviation
 	public static string HasUncertaintyPrecision = "HasUncertaintyPrecision";
 	public static string HasUncertaintyRelativeValue = "HasUncertaintyRelativeValue";
 	public static string HasUncertaintyStandardDeviation = "HasUncertaintyStandardDeviation";
+	public static string HasUncertaintyHistogram = "HasUncertaintyHistogram";
 }
 }

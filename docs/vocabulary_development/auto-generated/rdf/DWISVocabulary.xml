@@ -3569,24 +3569,24 @@
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/HasUncertaintyMax">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:domain rdf:resource="http://ddhub.no/SignalUncertainty" />
+    <rdfs:range rdf:resource="http://ddhub.no/DrillingDataPoint" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/HasUncertaintyMean">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:domain rdf:resource="http://ddhub.no/SignalUncertainty" />
+    <rdfs:range rdf:resource="http://ddhub.no/DrillingDataPoint" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/HasUncertaintyMin">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:domain rdf:resource="http://ddhub.no/SignalUncertainty" />
+    <rdfs:range rdf:resource="http://ddhub.no/DrillingDataPoint" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
@@ -3601,16 +3601,24 @@
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/HasUncertaintyRelativeValue">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:domain rdf:resource="http://ddhub.no/SignalUncertainty" />
+    <rdfs:range rdf:resource="http://ddhub.no/DrillingDataPoint" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/HasUncertaintyStandardDeviation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:domain rdf:resource="http://ddhub.no/SignalUncertainty" />
+    <rdfs:range rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HasUncertaintyHistogram">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/SignalUncertainty" />
+    <rdfs:range rdf:resource="http://ddhub.no/DrillingDataPoint" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
