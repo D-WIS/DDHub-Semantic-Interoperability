@@ -15,23 +15,19 @@
 - Specialization:
 - Description: The uncertainty is represented by a Gaussian distribution, i.e., with a `Mean` and a `StandardDeviation`, $\mathcal{N}(\overline{x},{\sigma_{x}}^2)$ where $\overline{x}$ is the `Mean` value and $\sigma_{x}$ is the `StandardDeviation`.
 - Examples:
-```dot
-digraph {
-  "DrillingDataPoint" [color="grey"]
-  "GaussianUncertainty" [color="grey"]
-  "DynamicDrillingSignal" [color="grey"]
-  "ddp#01" -> "DrillingDataPoint" [label="BelongsToClass"]
-  "GU#01" -> "GaussianUncertainty" [label="BelongsToClass"]
-  "ddp#01" -> "GU#01" [label="HasUncertainty"]
-  "Mean#01" -> "DrillingDataPoint" [label="BelongsToClass"]
-  "StdDev#01" -> "DrillingDataPoint" [label="BelongsToClass"]
-  "GU#01" -> "Mean#01" [label="HasUncertaintyMean"]
-  "GU#01" -> "StdDev#01" [label="HasUncertaintyStandardDeviation"]
-  "Signal#01" -> "DynamicDrillingSignal" [label="BelongsToClass"]
-  "Signal#02" -> "DynamicDrillingSignal" [label="BelongsToClass"]
-  "Mean#01" -> "Signal#01" [label="HasDynamicValue"]
-  "StdDev#01" -> "Signal#02" [label="HasDynamicValue"]
-}
+```mermaid
+graph GU;
+  "ddp#01" --> "DrillingDataPoint"[style fill: grey] BelongsToClass;
+  "GU#01" --> "GaussianUncertainty"[style fill: grey] BelongsToClass;
+  "ddp#01" --> "GU#01" HasUncertainty;
+  "Mean#01" --> "DrillingDataPoint"[style fill: grey] BelongsToClass;
+  "StdDev#01" --> "DrillingDataPoint"[style fill: grey] BelongsToClass;
+  "GU#01" --> "Mean#01" HasUncertaintyMean;
+  "GU#01" --> "StdDev#01" HasUncertaintyStandardDeviation;
+  "Signal#01" --> "DynamicDrillingSignal"[style fill: grey] BelongsToClass;
+  "Signal#02" --> "DynamicDrillingSignal"[style fill: grey] BelongsToClass;
+  "Mean#01" --> "Signal#01" HasDynamicValue;
+  "StdDev#01" --> "Signal#02" HasDynamicValue;
 ```
 In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is a Gaussian distribution that is described by a `Mean` value called `Mean#01` and a `StandardDeviation` value called `StdDev#01`. `Mean#01` is a live signal that is attached to `Signal#01`. Similarly `StdDev#01` is a live signal attached to `Signal#02`.
 
