@@ -69,22 +69,22 @@
 ## HasUncertaintyMax <!-- VERB -->
 - Display name: HasUncertaintyMax
 - Parent verb: DWISVerb
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Subject class: SignalUncertainty
+- Object class: DrillingDataPoint
 - Description: 
 - Examples: 
 ## HasUncertaintyMean <!-- VERB -->
 - Display name: HasUncertaintyMean
 - Parent verb: DWISVerb
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Subject class: SignalUncertainty
+- Object class: DrillingDataPoint
 - Description: 
 - Examples: 
 ## HasUncertaintyMin <!-- VERB -->
 - Display name: HasUncertaintyMin
 - Parent verb: DWISVerb
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Subject class: SignalUncertainty
+- Object class: DrillingDataPoint
 - Description: 
 - Examples: 
 ## HasUncertaintyPrecision <!-- VERB -->
@@ -97,14 +97,21 @@
 ## HasUncertaintyRelativeValue <!-- VERB -->
 - Display name: HasUncertaintyRelativeValue
 - Parent verb: DWISVerb
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Subject class: SignalUncertainty
+- Object class: DrillingDataPoint
 - Description: 
 - Examples: 
 ## HasUncertaintyStandardDeviation <!-- VERB -->
 - Display name: HasUncertaintyStandardDeviation
 - Parent verb: DWISVerb
-- Subject class: DWISNoun
-- Object class: DWISNoun
+- Subject class: SignalUncertainty
+- Object class: DrillingDataPoint
 - Description: 
 - Examples: 
+## HasUncertaintyHistogram <!-- VERB -->
+- Display name: HasUncertaintyHistogram
+- Parent verb: DWISVerb
+- Subject class: SignalUncertainty
+- Object class: DrillingDataPoint
+- Description: 
+- Examples:
