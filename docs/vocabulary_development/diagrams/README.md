@@ -100,11 +100,6 @@ The following top level relationships have been omitted from the diagrams due to
 | DWISNoun | IsConditionLeft | DWISNoun |
 | DWISNoun | IsConditionRight | DWISNoun |
 | DWISNoun | IsValidBy | DWISNoun |
-| DWISNoun | HasUncertaintyMax | DWISNoun |
-| DWISNoun | HasUncertaintyMean | DWISNoun |
-| DWISNoun | HasUncertaintyMin | DWISNoun |
-| DWISNoun | HasUncertaintyRelativeValue | DWISNoun |
-| DWISNoun | HasUncertaintyStandardDeviation | DWISNoun |
 | DWISNoun | IsObservableFrom | DWISNoun |
 | DWISNoun | HasHydraulicStateValueFrom | DWISNoun |
 | DWISNoun | StartsHydraulicBranchDecomposition | DWISNoun |
