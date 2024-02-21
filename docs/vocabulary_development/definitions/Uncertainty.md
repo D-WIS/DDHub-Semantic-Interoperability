@@ -318,7 +318,8 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Subject class: GenericUncertainty
 - Object class: DrillingDataPoint
 - Description: This verb is used to associated a `DrillingDataPoint` as the `Histogram` value of a `GenericUncertainty`
-- Examples: 
+- Examples:
+```mermaid
 graph LR;
   A[ddp#01] -->|BelongsToClass| B[DrillingDataPoint];
   D[GU#01] -->|BelongsToClass| I[GenericUncertainty];
