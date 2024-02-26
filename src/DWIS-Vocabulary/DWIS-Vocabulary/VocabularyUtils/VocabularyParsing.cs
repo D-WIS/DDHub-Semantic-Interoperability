@@ -479,7 +479,7 @@ namespace DWIS.Vocabulary.Utils
             var files = System.IO.Directory.GetFiles(folderName).Where(f => f.EndsWith(".md")).ToArray();
 
             nounTags = GetTagLines(files, NOUN_TAG).Select(t => t.Replace(NOUN_TAG, "").Replace("##", "").Trim());
-            verbsTags = GetTagLines(files, VERB_TAG).Select(t => t.Replace(NOUN_TAG, "").Replace("##", "").Trim());
+            verbsTags = GetTagLines(files, VERB_TAG).Select(t => t.Replace(VERB_TAG, "").Replace("##", "").Trim());
 
         }
 

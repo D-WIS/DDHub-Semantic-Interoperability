@@ -173,7 +173,7 @@ graph LR;
   F[Prec#01] -->|HasStaticValue| H[Signal#02] ;
 ```
 In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is representing a sensor having a Gaussian probability distibution that is described using an `Accuracy` (called `Acc#01`)  and a `Precision` called `Prec#01`. `Acc#01` is a static signal that is attached to `Signal#01`. Similarly `Prec#01` is a static signal attached to `Signal#02`.
-- ## HasUncertaintyPrecision <!-- VERB -->
+## HasUncertaintyPrecision <!-- VERB -->
 - Display name: HasUncertaintyPrecision
 - Parent verb: DWISVerb
 - Subject class: SensorUncertainty
@@ -217,7 +217,7 @@ graph LR;
   F[Max#01] -->|HasDynamicValue| H[Signal#02] ;
 ```
 In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is a uniform probability distribution that is described by a `Min` value called `Min#01` and a `Max` value called `Max#01`. `Min#01` is a live signal that is attached to `Signal#01`. Similarly `Max#01` is a live signal attached to `Signal#02`.
-- ## HasUncertaintyMax <!-- VERB -->
+## HasUncertaintyMax <!-- VERB -->
 - Display name: HasUncertaintyMax
 - Parent verb: DWISVerb
 - Subject class: MinMaxUncertainty
@@ -303,7 +303,7 @@ graph LR;
   F[ErrProp#01] -->|HasStaticValue| H[Signal#02] ;
 ```
 In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is representing a sensor having a Gaussian probability distibution that is described using a `ProportionError` (called `ErrProp#01`) of a `FullScale` value called `FullScale#01`. `FullScale#01` is a static signal that is attached to `Signal#01`. Similarly `ErrProp#01` is a static signal attached to `Signal#02`.
-- ## HasFullScale <!-- VERB -->
+## HasFullScale <!-- VERB -->
 - Display name: HasFullScale
 - Parent verb: DWISVerb
 - Subject class: FullScaleUncertainty

@@ -166,6 +166,45 @@ namespace DWIS.Vocabulary.Development.Actions
                 if (verbsTagsCount != _vocabulary.Verbs.Count)
                 {
                     _logger.Log(LogLevel.Error, $"Verbs tags {verbsTagsCount} vs {_vocabulary.Verbs.Count})");
+
+                    VocabularyParsing.GetTags(_paths.VocabularySourceFolder, out var nounTags, out var verbsTags);
+
+                    int disctinct = verbsTags.Distinct().Count();
+                    if (disctinct < verbsTags.Count())
+                    {
+                        _logger.Log(LogLevel.Error, "Duplicates in tags");
+                        var sorted = verbsTags.ToList();
+                        sorted.Sort();
+                        List<string> duplicates = new List<string>();
+                        for (int i = 0; i < sorted.Count - 1; i++)
+                        {
+                            if (sorted[i] == sorted[i + 1])
+                            {
+                                _logger.Log(LogLevel.Error, $"Verb {sorted[i]} is duplicated");
+                                duplicates.Add(sorted[i]);
+                            }
+                        }
+                    }
+
+                    var ex = verbsTags.Except(_vocabulary.Verbs.Select(n => n.Name));
+                    //var intersect = nounTags.Intersect(_vocabulary.Nouns.Select(n => n.Name));
+                    if (ex.Count() > 0)
+                    {
+                        foreach (var item in ex)
+                        {
+                            _logger.Log(LogLevel.Error, $"Verb {item} present in the verb tag list but not in vocabulary");
+                        }
+                    }
+                    else
+                    {
+                        ex = _vocabulary.Verbs.Select(n => n.Name).Except(nounTags);
+                        foreach (var item in ex)
+                        {
+                            _logger.Log(LogLevel.Error, $"Verb {item} present in the verb tag list but not in vocabulary");
+                        }
+                    }
+
+
                 }
             }
 

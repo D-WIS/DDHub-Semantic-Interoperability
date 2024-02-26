@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections;
-using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using DWIS.Vocabulary.Development;
-using OWL = DWIS.Vocabulary.OWL;
 
 namespace DWIS.Vocabulary.Development.Actions
 {
