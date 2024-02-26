@@ -63,7 +63,6 @@ HasDynamicValue,
 HasStaticValue,
 IsSubPartOf,
 DWISVerb,
-HasType,
 BelongsToClass,
 HasEndPoint,
 EndsHydraulicBranchDecomposition,
@@ -122,12 +121,13 @@ IsSynchronizationGroupInput,
 IsSynchronizationGroupOutput,
 HasUncertainty,
 HasUncertaintyAccuracy,
+HasUncertaintyPrecision,
+HasUncertaintyMin,
 HasUncertaintyMax,
 HasUncertaintyMean,
-HasUncertaintyMin,
-HasUncertaintyPrecision,
-HasUncertaintyRelativeValue,
 HasUncertaintyStandardDeviation,
+HasProportionError,
+HasFullScale,
 HasUncertaintyHistogram
 }
 	public static string IsEnablingSignalFor = "IsEnablingSignalFor";
@@ -188,7 +188,6 @@ HasUncertaintyHistogram
 	public static string HasStaticValue = "HasStaticValue";
 	public static string IsSubPartOf = "IsSubPartOf";
 	public static string DWISVerb = "DWISVerb";
-	public static string HasType = "HasType";
 	public static string BelongsToClass = "BelongsToClass";
 	public static string HasEndPoint = "HasEndPoint";
 	public static string EndsHydraulicBranchDecomposition = "EndsHydraulicBranchDecomposition";
@@ -247,12 +246,13 @@ HasUncertaintyHistogram
 	public static string IsSynchronizationGroupOutput = "IsSynchronizationGroupOutput";
 	public static string HasUncertainty = "HasUncertainty";
 	public static string HasUncertaintyAccuracy = "HasUncertaintyAccuracy";
+	public static string HasUncertaintyPrecision = "HasUncertaintyPrecision";
+	public static string HasUncertaintyMin = "HasUncertaintyMin";
 	public static string HasUncertaintyMax = "HasUncertaintyMax";
 	public static string HasUncertaintyMean = "HasUncertaintyMean";
-	public static string HasUncertaintyMin = "HasUncertaintyMin";
-	public static string HasUncertaintyPrecision = "HasUncertaintyPrecision";
-	public static string HasUncertaintyRelativeValue = "HasUncertaintyRelativeValue";
 	public static string HasUncertaintyStandardDeviation = "HasUncertaintyStandardDeviation";
+	public static string HasProportionError = "HasProportionError";
+	public static string HasFullScale = "HasFullScale";
 	public static string HasUncertaintyHistogram = "HasUncertaintyHistogram";
 }
 }

@@ -357,7 +357,7 @@ SignalUncertainty,
 GaussianUncertainty,
 GenericUncertainty,
 MinMaxUncertainty,
-RelativeUncertainty,
+FullScaleUncertainty,
 SensorUncertainty
 }
 	public static string ActivableFunction = "ActivableFunction";
@@ -712,7 +712,7 @@ SensorUncertainty
 	public static string GaussianUncertainty = "GaussianUncertainty";
 	public static string GenericUncertainty = "GenericUncertainty";
 	public static string MinMaxUncertainty = "MinMaxUncertainty";
-	public static string RelativeUncertainty = "RelativeUncertainty";
+	public static string FullScaleUncertainty = "FullScaleUncertainty";
 	public static string SensorUncertainty = "SensorUncertainty";
 }
 }
