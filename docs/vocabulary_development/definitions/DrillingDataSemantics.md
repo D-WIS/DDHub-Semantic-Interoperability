@@ -342,6 +342,13 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Specialization:
 - Description: 
 - Examples:
+## MechanicalSpecificEnergy <!-- NOUN -->
+- Display name: Mechanical Specific Energy
+- Parent class: DrillingDataPoint
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## SetPoint <!-- NOUN -->
 - Display name: Set-point
 - Parent class: DrillingDataPoint
