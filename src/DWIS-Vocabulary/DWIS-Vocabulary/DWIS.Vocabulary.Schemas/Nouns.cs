@@ -129,6 +129,7 @@ MPDPumpRate,
 MPDPumpFlowRate,
 GasFlowRate,
 BackPressurePumpPressure,
+MechanicalSpecificEnergy,
 SetPoint,
 Command,
 Recommendation,
@@ -484,6 +485,7 @@ SensorUncertainty
 	public static string MPDPumpFlowRate = "MPDPumpFlowRate";
 	public static string GasFlowRate = "GasFlowRate";
 	public static string BackPressurePumpPressure = "BackPressurePumpPressure";
+	public static string MechanicalSpecificEnergy = "MechanicalSpecificEnergy";
 	public static string SetPoint = "SetPoint";
 	public static string Command = "Command";
 	public static string Recommendation = "Recommendation";

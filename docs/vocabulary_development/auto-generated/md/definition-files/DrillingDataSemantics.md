@@ -388,6 +388,14 @@
 - Description: 
 - Examples:
 - Definition set: DrillingDataSemantics
+## MechanicalSpecificEnergy <!-- NOUN -->
+- Display name: Mechanical Specific Energy
+- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
 ## SetPoint <!-- NOUN -->
 - Display name: Set-point
 - Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)

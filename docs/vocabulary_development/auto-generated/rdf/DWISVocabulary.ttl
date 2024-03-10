@@ -1293,6 +1293,9 @@ ddhub:MechanicallyConnectedState a owl:Class;
 ddhub:MechanicalSoftModel a owl:Class; 
                           rdfs:comment "An infinitively soft model assumes that the drill-stem deforms without any resistance when compressive loads are applied."@EN; 
                           rdfs:subClassOf ddhub:MechanicalStiffnessType. 
+ddhub:MechanicalSpecificEnergy a owl:Class; 
+                               rdfs:comment ""@EN; 
+                               rdfs:subClassOf ddhub:DrillingDataPoint. 
 ddhub:MechanicalStiffModel a owl:Class; 
                            rdfs:comment "A stiff mechanical model considers that the drill-stem can deform laterally when put in compression."@EN; 
                            rdfs:subClassOf ddhub:MechanicalStiffnessType. 
