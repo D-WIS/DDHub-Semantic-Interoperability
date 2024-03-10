@@ -1,0 +1,55 @@
+﻿@using Blazor.Diagrams.Components.Renderers;
+
+<div class="custom-node @(Node.Selected ? " selected" : "")" style="block-size:inherit; background-color:paleturquoise; border-color:darkorange;">
+
+     @if(Node.IsType)
+                {
+
+    <MudCard Style="block-size:auto;background-color:paleturquoise; border-color:darkorange;">
+        <MudCardHeader>
+            <CardHeaderContent>
+               
+                    <MudText Style="font-size:16px; mb-3;" Typo="Typo.overline" Color="Color.Info">@Node.Noun.Name</MudText>
+               
+            </CardHeaderContent>
+
+        </MudCardHeader>
+        @if (_extended)
+        {
+            <MudCardContent>
+                <MudText> blabla</MudText>
+            </MudCardContent>
+        }
+    </MudCard>
+    }
+    else
+    {
+          <MudCard Style="block-size:auto;background-color: mistyrose; border-color:darkorange;">
+            <MudCardHeader>
+                <CardHeaderContent>
+
+                    <MudText Style="font-size:16px; mb-3;" Typo="Typo.overline" Color="Color.Info">@Node.Noun.Name</MudText>
+
+                </CardHeaderContent>
+
+            </MudCardHeader>
+            @if (_extended)
+            {
+                <MudCardContent>
+                    <MudText> blabla</MudText>
+                </MudCardContent>
+            }
+        </MudCard>
+    }
+    @foreach (var port in Node.Ports)
+    {
+        <PortRenderer Port="port"></PortRenderer>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public NounNode Node { get; set; }
+
+    private bool _extended = false;
+}

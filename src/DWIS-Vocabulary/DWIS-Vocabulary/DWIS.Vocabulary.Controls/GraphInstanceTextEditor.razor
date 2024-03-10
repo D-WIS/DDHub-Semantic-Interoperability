@@ -1,0 +1,111 @@
+﻿@using BlazorMonaco
+@using BlazorMonaco.Editor
+
+<StandaloneCodeEditor @ref="_editor" Id="myId" ConstructionOptions="EditorConstructionOptions" OnKeyDown="onKeyDown" />
+
+@code {
+    [Parameter]
+    public DWISVocabulary Vocabulary { get; set; }
+    [Parameter]
+    public DWISInstance DWISInstance { get; set; }
+    [Parameter]
+    public EventCallback<DWISInstance> DWISInstanceChanged { get; set; }
+
+    private StandaloneCodeEditor _editor;
+    private string _code = "";
+
+    private StandaloneEditorConstructionOptions EditorConstructionOptions(StandaloneCodeEditor editor)
+    {
+        //QuickSuggestionsOptions op = new QuickSuggestionsOptions() { };
+        //QuickSuggestionsValue. va = new QuickSuggestionsValue() {  }
+        return new StandaloneEditorConstructionOptions
+            {
+                AutomaticLayout = true,
+                Dimension = new Dimension() { Height = 500, Width = 100 }, Theme = "vs-dark" 
+            };
+    }
+
+
+    private string _initialTextForCompletion = string.Empty;
+
+
+    // protected override async Task OnInitializedAsync()
+    // {
+    //     // await Global.SetTheme("vs-dark");
+
+    //     // var c = await _editor.GetValue();
+    //     //       await _editor.SetValue(_initialTextForCompletion);
+    //     //          await _editor.SetValue(c);
+    //    // return base.OnInitializedAsync();
+    // }
+
+    protected override async  Task OnParametersSetAsync()
+    {
+        if (Vocabulary != null )
+        {
+            var lines = Vocabulary.Nouns.Select(n => n.Name).Concat(Vocabulary.Verbs.Select(v => v.Name));
+
+            _initialTextForCompletion = string.Empty;
+            foreach (var s in lines)
+            {
+
+                _initialTextForCompletion += s + "\r\n";
+            }            
+        }
+    }
+
+    // protected override async Task OnAfterRenderAsync(bool firstRender)
+    // {
+    //     base.OnAfterRenderAsync(firstRender);
+    //     if (firstRender)
+    //     {
+    //         var c = await _editor.GetValue();
+    //         await _editor.SetValue(_initialTextForCompletion);
+    //         await _editor.SetValue(c);
+    //     }
+    // }
+
+
+
+
+    private async Task onKeyDown(KeyboardEvent e)
+    {
+        if (e.Code == "Enter" || e.Code == "NumpadEnter")
+        {
+            _code = await _editor.GetValue(); 
+            if (_code.Contains('-'))
+            {
+                _code = _code.Replace("-", string.Empty);
+            }
+
+            _code.Trim();
+
+            var tempInstance = new DWISInstance("temp", Vocabulary);
+
+            tempInstance.Population = new SimplePopulation();
+            tempInstance.ClassAssertions = new SimpleClassAssertionCollection();
+            tempInstance.Sentences = new SimpleSentenceCollection();
+            tempInstance.ImplicitSentences = new SimpleImplicitSentenceCollection();
+
+
+            //      { }
+
+            if (DWIS.Vocabulary.Utils.VocabularyParsing.FromLines(
+                    _code.Split("\n", StringSplitOptions.RemoveEmptyEntries).Select(l => l.Trim()).ToArray(), 
+                    Vocabulary, 
+                    tempInstance,
+                    false) 
+                && tempInstance != null)
+            {
+                DWISInstance.Sentences = tempInstance.Sentences;
+                DWISInstance.Population = tempInstance.Population;
+                DWISInstance.ClassAssertions = tempInstance.ClassAssertions;
+                DWISInstance.ImplicitSentences = tempInstance.ImplicitSentences;
+                if (DWISInstanceChanged.HasDelegate)
+                {
+                    await DWISInstanceChanged.InvokeAsync(DWISInstance);
+                }
+            }
+        }
+    }
+}

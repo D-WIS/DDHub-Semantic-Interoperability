@@ -1,0 +1,55 @@
+﻿@using Blazor.Diagrams.Components.Renderers;
+
+<div class="custom-node @(Node.Selected ? " selected" : "")" style="block-size:inherit;background-color: lightgray; border-color:darkorange;">
+
+    <MudCard Style="block-size:auto;background-color: lightgray; border-color:darkorange;">
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudText Style="font-size:16px" Typo="Typo.overline" Color="Color.Info">@Node.Individual.Name</MudText>
+            </CardHeaderContent>
+           
+                <CardHeaderActions>
+                     @if(Node.Expandable)
+            {
+                    <MudIconButton Size="Size.Small" Icon="@(_extended ? Icons.Material.Filled.Remove : Icons.Material.Filled.Add)" Variant="Variant.Filled" Color="Color.Default" OnClick="()=>_extended = !_extended"></MudIconButton>
+            }
+                </CardHeaderActions>
+            
+        </MudCardHeader>
+        @if (_extended)
+        {
+            <MudCardContent>
+                @if (Node.GetAttributes().Any())
+                {
+                    @foreach (var c in Node.GetAttributes())
+                    {
+                        <MudText Color="Color.Info">@c</MudText>
+                    }
+
+                }
+                @foreach(var c in Node.GetClasses())
+                {
+                    <MudChip Color="Color.Warning">@c</MudChip>
+                }
+                @foreach(var s in Node.GetSentences())
+                {
+                <MudText> @s.Subject @s.Verb @s.Object</MudText>
+                }
+            </MudCardContent>
+        }
+    </MudCard>
+
+    @foreach (var port in Node.Ports)
+    {
+        <PortRenderer Port="port"></PortRenderer>
+    }
+</div>
+
+
+@code {
+    [Parameter]
+    public IndividualNode Node { get; set; }
+
+
+    private bool _extended = false;
+}

@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blazorade.Mermaid" Version="1.0.1" />
+    <PackageReference Include="MermaidJS.Blazor" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.WindowsForms" Version="8.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DWIS.Vocabulary.Controls\DWIS.Vocabulary.Controls.csproj" />
+    <ProjectReference Include="..\DWIS.Vocabulary.Standard\DWIS.Vocabulary.Standard.csproj" />
+  </ItemGroup>
+
+</Project>

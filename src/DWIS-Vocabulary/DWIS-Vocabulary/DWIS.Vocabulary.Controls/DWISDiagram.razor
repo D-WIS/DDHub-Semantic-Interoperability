@@ -1,0 +1,229 @@
+﻿@using Blazor.Diagrams.Components
+
+<div style="width:@DiagramWidth; height:@DiagramHeight; border-style: solid;">
+    @if (Diagram != null)
+    {
+        <CascadingValue Value="Diagram">
+            <DiagramCanvas></DiagramCanvas>
+        </CascadingValue>
+    }
+</div>
+
+@code {
+
+    [Parameter]
+    public DWIS.Vocabulary.Development.DWISInstance DWISInstance { get; set; }
+
+    [Parameter]
+    public bool ShowNouns { get; set; }
+
+    private int _diagramWidth = 2000;
+    private string DiagramWidth { get { return _diagramWidth.ToString() + "px"; } }
+    private int _diagramHeight = 500;
+    private string DiagramHeight { get { return _diagramHeight.ToString() + "px"; } }
+    private BlazorDiagram Diagram { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        //return base.OnInitializedAsync();
+
+        await base.OnInitializedAsync();
+        var options = new BlazorDiagramOptions
+            {
+                AllowMultiSelection = true,
+                Zoom =
+            {
+                Enabled = false,
+            },
+                Links =
+            {
+                DefaultRouter = new NormalRouter(),
+                DefaultPathGenerator = new SmoothPathGenerator()
+            },
+            };
+
+        // var options = new BlazorDiagramOptions
+        //     {
+        //         DeleteKey = "Delete", // What key deletes the selected nodes/links
+        //         DefaultNodeComponent = null, // Default component for nodes
+        //         AllowMultiSelection = true, // Whether to allow multi selection using CTRL
+        //         Links = new DiagramLinkOptions
+        //         {
+        //             // Options related to links
+        //         },
+        //         Zoom = new DiagramZoomOptions
+        //         {
+        //             Minimum = 0.5, // Minimum zoom value
+        //             Inverse = false, // Whether to inverse the direction of the zoom when using the wheel
+        //                              // Other
+        //         }
+        //     };
+        Diagram = new BlazorDiagram(options);
+        Diagram.RegisterComponent<IndividualNode, IndividualNodeWidget>();
+        Diagram.RegisterComponent<NounNode, NounNodeWidget>();
+    }    
+
+    public void UpdateDiagram()
+    {
+        Diagram.Links.Clear();
+        Diagram.Nodes.Clear();
+        if (DWISInstance != null)
+        {
+
+            int nodeCount = DWISInstance.Population.Count;
+
+            var allTypes = DWISInstance.Population.Select(i => i.TypeName).Union(DWISInstance.ClassAssertions.Select(ca => ca.Class)).Distinct();
+
+            Microsoft.Msagl.Core.Layout.GeometryGraph graph = new Microsoft.Msagl.Core.Layout.GeometryGraph();
+            double w = 30;
+            double h = 20;
+            foreach (var n in DWISInstance.Population)
+            {
+                graph.Nodes.Add(new Microsoft.Msagl.Core.Layout.Node(new Microsoft.Msagl.Core.Geometry.Curves.Ellipse(w, h, new Microsoft.Msagl.Core.Geometry.Point())) { UserData = n.Name });
+            }
+
+            foreach (var s in DWISInstance.Sentences)
+            {
+                Microsoft.Msagl.Core.Layout.Node source = graph.FindNodeByUserData(s.Subject);
+                Microsoft.Msagl.Core.Layout.Node target = graph.FindNodeByUserData(s.Object);
+                graph.Edges.Add(new Microsoft.Msagl.Core.Layout.Edge(source, target));
+            }
+
+            if (ShowNouns)
+            {
+                foreach (var n in allTypes)
+                {
+                    graph.Nodes.Add(new Microsoft.Msagl.Core.Layout.Node(new Microsoft.Msagl.Core.Geometry.Curves.Ellipse(w, h, new Microsoft.Msagl.Core.Geometry.Point())) { UserData = n });
+                }
+
+
+                foreach (var p in DWISInstance.Population)
+                {
+                    Microsoft.Msagl.Core.Layout.Node source = graph.FindNodeByUserData(p.Name);
+                    Microsoft.Msagl.Core.Layout.Node target = graph.FindNodeByUserData(p.TypeName);
+                    graph.Edges.Add(new Microsoft.Msagl.Core.Layout.Edge(source, target));
+                }
+                foreach (var ca in DWISInstance.ClassAssertions)
+                {
+                    Microsoft.Msagl.Core.Layout.Node source = graph.FindNodeByUserData(ca.Subject);
+                    Microsoft.Msagl.Core.Layout.Node target = graph.FindNodeByUserData(ca.Class);
+                    graph.Edges.Add(new Microsoft.Msagl.Core.Layout.Edge(source, target));              
+                }
+            }
+
+            var settings = new Microsoft.Msagl.Layout.MDS.MdsLayoutSettings();
+            Microsoft.Msagl.Miscellaneous.LayoutHelpers.CalculateLayout(graph, settings, null);
+
+            double graphLeft = graph.BoundingBox.Left;
+            double graphTop = graph.BoundingBox.Top;
+            double graphWidth = graph.BoundingBox.Width;
+            double graphHeight = graph.BoundingBox.Height;
+
+            int nodeWidth = _diagramWidth;
+            if (ShowNouns)
+            {
+                nodeWidth = (int)(_diagramWidth * ((double)nodeCount / (double)allTypes.Count()));
+            }
+
+            int nodeColumnCount = System.Math.Max(1, (int)System.Math.Sqrt((double)nodeWidth * (double)nodeCount / (double)_diagramHeight) + 1);
+            int nodeRowCount = System.Math.Max(1, (int)((double)nodeCount / (double)nodeColumnCount));
+            int col, row;
+            col = row = 0;
+
+            int deltaX, deltaY;
+            deltaX = (int)((double)nodeWidth / ((double)nodeColumnCount + 1));
+            deltaY = (int)((double)_diagramHeight / ((double)nodeRowCount + 1));
+            int offSetX = deltaX / 2;
+            int offSetY = deltaY / 2;
+            foreach (var n in DWISInstance.Population)
+            {
+                var gn = graph.FindNodeByUserData((string)n.Name);
+
+                double x = gn.Center.X;
+                double y = gn.Center.Y;
+
+                double X = ((double)_diagramWidth * (x - graphLeft) / graphWidth);
+                double Y = ((double)_diagramHeight * ( graphTop - y) / graphHeight);
+
+
+                var node = new IndividualNode(n , DWISInstance, position: new Blazor.Diagrams.Core.Geometry.Point(X,Y),expandable:!ShowNouns ){ Size = new Blazor.Diagrams.Core.Geometry.Size(deltaX / 2, deltaY / 2) };
+
+                col++;
+                if (col == nodeColumnCount)
+                {
+                    col = 0;
+                    row++;
+                }
+
+                Diagram.Nodes.Add(node);
+            }
+            foreach (var s in DWISInstance.Sentences)
+            {
+                var link = new LinkModel(Diagram.Nodes.First(n => n.Id == s.Subject), Diagram.Nodes.First(n => n.Id == s.Object));
+                link.Labels.Add(new LinkLabelModel(link, s.GetHashCode().ToString(), s.Verb));
+                Diagram.Links.Add(link); //{ Labels = new List<LinkLabelModel>() { new LinkLabelModel() } });
+            }
+            foreach (var cd in DWISInstance.ClassAssertions)
+            {
+                var n = Diagram.Nodes.First(n => n.Id == cd.Subject);
+                n.Title += "\r\n-" + cd.Class;
+            }
+
+
+            if (ShowNouns)
+            {
+                int typesCount = allTypes.Count();
+                int nounsColumnCount = System.Math.Max(1, (int)System.Math.Sqrt((double)(_diagramWidth - nodeWidth) * (double)typesCount / (double)_diagramHeight) + 1);
+                int nounsRowCount = System.Math.Max(1, (int)((double)typesCount / (double)nounsColumnCount));
+
+                col = row = 0;               
+                deltaX = (int)((double)(_diagramWidth - nodeWidth) / ((double)nounsColumnCount + 1));
+                deltaY = (int)((double)_diagramHeight / ((double)nounsRowCount + 1));
+                offSetX =nodeWidth +  deltaX / 2;
+                offSetY = deltaY / 2;
+
+                var allRealTypes = DWISInstance.Population.Select(i => i.TypeName).Distinct();
+                // var allClasses = DWISInstance.ClassAssertions.Select(ca => ca.Class).Distinct();
+                foreach (var n in allTypes)
+                {
+                    if (DWISInstance.Vocabulary.GetNoun(n, out DWIS.Vocabulary.Development.Noun noun))
+                    {
+                        var gn = graph.FindNodeByUserData((string)n);
+
+                        double x = gn.Center.X;
+                        double y = gn.Center.Y;
+
+                        double X = ((double)_diagramWidth * (x - graphLeft) / graphWidth);
+                        double Y = ((double)_diagramHeight * (y - graphTop) / graphHeight);
+
+                        bool isType = allRealTypes.Contains(n);
+                        var node = new NounNode(noun, position: new Blazor.Diagrams.Core.Geometry.Point(X, Y), isType: isType) { Size = new Blazor.Diagrams.Core.Geometry.Size(deltaX / 2, deltaY / 2) };
+                        //node.Title = n.Name + "\r\n-" + n.TypeName;
+                        col++;
+                        if (col == nounsColumnCount)
+                        {
+                            col = 0;
+                            row++;
+                        }
+
+                        Diagram.Nodes.Add(node);
+                    }
+                }
+                foreach (var p in DWISInstance.Population)
+                {
+                    var link = new LinkModel(Diagram.Nodes.First(n => n.Id == p.Name), Diagram.Nodes.First(n => n.Id == p.TypeName));
+                    //link.Labels.Add(new LinkLabelModel(link, s.GetHashCode().ToString(), s.Verb));
+                    Diagram.Links.Add(link); //{ Labels = new List<LinkLabelModel>() { new LinkLabelModel() } });
+                }
+                foreach (var ca in DWISInstance.ClassAssertions)
+                {
+                    var link = new LinkModel(Diagram.Nodes.First(n => n.Id == ca.Subject), Diagram.Nodes.First(n => n.Id == ca.Class));
+                    Diagram.Links.Add(link); 
+                }
+            }
+            
+            Diagram.ZoomToFit();
+            ShouldRender();
+        }
+    }
+}

@@ -1,0 +1,24 @@
+﻿
+
+<MudThemeProvider />
+<div style="height:1500px">
+<MudGrid >
+    <MudItem xs="4" >
+       <GraphInstanceTextEditor   DWISInstance="DWISInstance" Vocabulary="Vocabulary" DWISInstanceChanged="()=>{ _mermaidDiagram.UpdateDiagram();}"></GraphInstanceTextEditor>
+    </MudItem>
+    <MudItem xs="8">
+            <DWISMermaidDiagram DWISInstance="DWISInstance" ShowNouns="@ShowNouns" @ref="_mermaidDiagram"></DWISMermaidDiagram>
+    </MudItem>
+</MudGrid>
+</div>
+@code {
+    [Parameter]
+    public DWISVocabulary Vocabulary { get; set; }
+    [Parameter]
+    public DWISInstance DWISInstance { get; set; }
+
+    [Parameter]
+    public bool ShowNouns { get; set; } = true;
+
+    private DWISMermaidDiagram _mermaidDiagram;
+}

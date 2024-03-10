@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutomaticGraphLayout" Version="1.1.12" />
+    <PackageReference Include="Blazorade.Mermaid" Version="1.0.1" />
+    <PackageReference Include="BlazorMonaco" Version="3.2.0" />
+    <PackageReference Include="MermaidJS.Blazor" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.2" />
+    <PackageReference Include="MudBlazor" Version="6.16.0" />
+    <PackageReference Include="Z.Blazor.Diagrams" Version="3.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DWISVocabularyDevelopment\DWIS.Vocabulary.Development.csproj" />
+    <ProjectReference Include="..\VocabularyUtils\DWIS.Vocabulary.Utils.csproj" />
+  </ItemGroup>
+
+</Project>
