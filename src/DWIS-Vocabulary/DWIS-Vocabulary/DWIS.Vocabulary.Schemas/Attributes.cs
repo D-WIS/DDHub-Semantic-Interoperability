@@ -125,6 +125,10 @@ public static class Attributes
 	public static string SynchronizationGroup_SynchronizationDelay_Type = "double";
 	public static string SynchronizationGroup_SamplingRate = "SamplingRate";
 	public static string SynchronizationGroup_SamplingRate_Type = "double";
+	public static string FullScaleUncertainty_FullScale = "FullScale";
+	public static string FullScaleUncertainty_FullScale_Type = "double";
+	public static string FullScaleUncertainty_ProportionError = "ProportionError";
+	public static string FullScaleUncertainty_ProportionError_Type = "double";
 	public static string SensorUncertainty_Accuracy = "Accuracy";
 	public static string SensorUncertainty_Accuracy_Type = "double";
 	public static string SensorUncertainty_Precision = "Precision";

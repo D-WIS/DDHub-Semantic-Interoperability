@@ -1857,7 +1857,7 @@
 - Parent class: [](#)
 - Attributes:
 - Specialization:
-- Description: Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a "is a" relation between the instance node and the noun.
+- Description: Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a "is a" relation between the instance node and the noun. This is the root class for all the nouns defined in the DWIS vocabulary.
 - Examples:
 - Definition set: DWISSemantics
 ## DataEndPoint <!-- NOUN -->
@@ -3079,7 +3079,7 @@
 - Parent class: [DWISNoun](#DWISNoun)
 - Attributes:
 - Specialization:
-- Description: Represent the uncertainty associated to a signal.
+- Description: Represent the uncertainty associated to a `DrillingDataPoint`.
 - Examples:
 - Definition set: Uncertainty
 ## GaussianUncertainty <!-- NOUN -->
@@ -3087,7 +3087,7 @@
 - Parent class: [SignalUncertainty](#SignalUncertainty)
 - Attributes:
 - Specialization:
-- Description: 
+- Description: The uncertainty is represented by a Gaussian distribution, i.e., with a `Mean` and a `StandardDeviation`, $\mathcal{N}(\overline{x},{\sigma_{x}}^2)$ where $\overline{x}$ is the `Mean` value and $\sigma_{x}$ is the `StandardDeviation`.
 - Examples:
 - Definition set: Uncertainty
 ## GenericUncertainty <!-- NOUN -->
@@ -3095,7 +3095,7 @@
 - Parent class: [SignalUncertainty](#SignalUncertainty)
 - Attributes:
 - Specialization:
-- Description: 
+- Description: The uncertainty is represented by a `Histogram`.
 - Examples:
 - Definition set: Uncertainty
 ## MinMaxUncertainty <!-- NOUN -->
@@ -3103,29 +3103,35 @@
 - Parent class: [SignalUncertainty](#SignalUncertainty)
 - Attributes:
 - Specialization:
-- Description: 
+- Description: The uncertainty is represented by a uniform probability distribution between a `Min` and a `Max` value.
 - Examples:
 - Definition set: Uncertainty
-## RelativeUncertainty <!-- NOUN -->
-- Display name: RelativeUncertainty
-- Parent class: [SignalUncertainty](#SignalUncertainty)
+## FullScaleUncertainty <!-- NOUN -->
+- Display name: FullScaleUncertainty
+- Parent class: [GaussianUncertainty](#GaussianUncertainty)
 - Attributes:
+  - FullScale
+    - Type: double
+    - Description: The total range of measurement of the signal, i.e., $\left| max - min \right|$. The value is expected to be in the same physical quantity as the sensor value.
+  - ProportionError
+    - Type: double
+    - Description: The proportion error on the signal. The value is expected to be a dimensionless physical quantity between 0 and 1 in SI unit. This proportion is applied to the `Fullscale` to obtain the standard deviation of the Gaussian probability distribution that describes the uncertainty of the signal. The mean value of that Gaussian distribution is the signal value.
 - Specialization:
-- Description: 
+- Description: The uncertainty on the signal is described as a Gaussian distribution with a standard deviation that is calculated using a proportion of the maximum range of the signal. The `Fullscale` or `ProportionError` can either be defined as attribute values, for example when they have fixed values, or using facts utilizing the verbs `HasFullScale` or repectively `HasProportionError` when these values may change through time.
 - Examples:
 - Definition set: Uncertainty
 ## SensorUncertainty <!-- NOUN -->
 - Display name: SensorUncertainty
-- Parent class: [SignalUncertainty](#SignalUncertainty)
+- Parent class: [GaussianUncertainty](#GaussianUncertainty)
 - Attributes:
   - Accuracy
     - Type: double
-    - Description: 
+    - Description: The standard deviation of the systematic bias component of the uncertainty of the sensor. The assumed mean value of the attached Gaussian distribution is the measured value. The value is expected to be in the same physical quantity as the sensor value.
   - Precision
     - Type: double
-    - Description: 
+    - Description: The standard deviation of the repetitive error component of the uncertainty of the sensor. The assumed mean value of the attached Gaussian distribution is the measured value. The value is expected to be in the same physical quantity as the sensor value.
 - Specialization:
-- Description: 
+- Description: The uncertainty of the sensor is described by a systematic bias and repetitive error. The systematic bias is referred to as the `Accuracy` while the repetitive error is referred to as the `Precision`. The standard deviation of the overall Gaussian distribution is $\sqrt{\sigma^2{_a}+\sigma^2{_p}}$ where $\sigma_a$ is the accuracy and $\sigma_p$ is the precision. The `Accuracy` or the `Precision` can either be defined as attribute values, for example when they have fixed values, or using another facts utilizing the verbs `HasAccuracy` or respectively `HasPrecision` when these values may change through time.
 - Examples:
 - Definition set: Uncertainty
 # Verbs
@@ -3706,18 +3712,8 @@
 - Object class: [DWISNoun](#DWISNoun)
 - Min cardinality: -1
 - Max cardinality: -1
-- Description: 
-- Examples: 
-- Definition set: DWISSemantics
-## HasType <!-- VERB -->
-- Display name: Has Type
-- Parent verb: [BelongsToClass](#BelongsToClass)
-- Subject class: [DWISNoun](#DWISNoun)
-- Object class: [DWISNoun](#DWISNoun)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: 
-- Examples: 
+- Description: This is the root class for all verbs defined in the DWIS vocabulary. It is used to define a relation between a subject, which can be of any `DWISNoun` and an object, also of any type of `DWISNoun`.
+- Examples: `DWISVerb` is not really intended to be used directly neither when defining facts nor in sparql queries.
 - Definition set: DWISSemantics
 ## BelongsToClass <!-- VERB -->
 - Display name: Belongs To Class
@@ -3726,7 +3722,7 @@
 - Object class: [DWISNoun](#DWISNoun)
 - Min cardinality: -1
 - Max cardinality: -1
-- Description: 
+- Description: The verb is used between a node and a Noun, i.e., a class. Semantically it can be considered as a synonym to `rdf:type`. It has been introduced to overcome limitations from OPC-UA that does not allow for multiple inheritance. Note that the same node can be in relation using `BelongsToClass` to several classes.
 - Examples: 
 - Definition set: DWISSemantics
 ## HasEndPoint <!-- VERB -->
@@ -4286,7 +4282,7 @@
 - Object class: [SignalUncertainty](#SignalUncertainty)
 - Min cardinality: -1
 - Max cardinality: -1
-- Description: 
+- Description: This verb allows to associate a `SignalUncertainty` to a `DrillingDataPoint`.
 - Examples: 
 - Definition set: Uncertainty
 ## HasUncertaintyAccuracy <!-- VERB -->
@@ -4296,37 +4292,7 @@
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
-- Description: 
-- Examples: 
-- Definition set: Uncertainty
-## HasUncertaintyMax <!-- VERB -->
-- Display name: HasUncertaintyMax
-- Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [SignalUncertainty](#SignalUncertainty)
-- Object class: [DrillingDataPoint](#DrillingDataPoint)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: 
-- Examples: 
-- Definition set: Uncertainty
-## HasUncertaintyMean <!-- VERB -->
-- Display name: HasUncertaintyMean
-- Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [SignalUncertainty](#SignalUncertainty)
-- Object class: [DrillingDataPoint](#DrillingDataPoint)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: 
-- Examples: 
-- Definition set: Uncertainty
-## HasUncertaintyMin <!-- VERB -->
-- Display name: HasUncertaintyMin
-- Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [SignalUncertainty](#SignalUncertainty)
-- Object class: [DrillingDataPoint](#DrillingDataPoint)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: 
+- Description: This verb allows to associate a `DrillingDataPoint` as the `Accuracy` of a `SensorUncertainty`
 - Examples: 
 - Definition set: Uncertainty
 ## HasUncertaintyPrecision <!-- VERB -->
@@ -4336,36 +4302,76 @@
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
-- Description: 
+- Description: This verb is used to associate a `DrillingDataPoint` as the `Precision` of a `SensorUncertainty`
 - Examples: 
 - Definition set: Uncertainty
-## HasUncertaintyRelativeValue <!-- VERB -->
-- Display name: HasUncertaintyRelativeValue
+## HasUncertaintyMin <!-- VERB -->
+- Display name: HasUncertaintyMin
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [SignalUncertainty](#SignalUncertainty)
+- Subject class: [MinMaxUncertainty](#MinMaxUncertainty)
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
-- Description: 
+- Description: This verb is used to associate a `DrillingDataPoint` as the `Min` value of `MinMaxUncertainty`
+- Examples: 
+- Definition set: Uncertainty
+## HasUncertaintyMax <!-- VERB -->
+- Display name: HasUncertaintyMax
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [MinMaxUncertainty](#MinMaxUncertainty)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: This verb is used to associate a `DrillingDataPoint` as the `Max` value of a `MinMaxUncertainty`
+- Examples: 
+- Definition set: Uncertainty
+## HasUncertaintyMean <!-- VERB -->
+- Display name: HasUncertaintyMean
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [GaussianUncertainty](#GaussianUncertainty)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: This verb is used to associate a `DrillingDataPoint` as the `Mean` value of a `GaussianUncertainty`
 - Examples: 
 - Definition set: Uncertainty
 ## HasUncertaintyStandardDeviation <!-- VERB -->
 - Display name: HasUncertaintyStandardDeviation
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [SignalUncertainty](#SignalUncertainty)
+- Subject class: [GaussianUncertainty](#GaussianUncertainty)
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
-- Description: 
+- Description: This verb is used to associate a `DrillingDataPoint` as the `StandardDeviation` value of a `GaussianUncertainty`
+- Examples: 
+- Definition set: Uncertainty
+## HasProportionError <!-- VERB -->
+- Display name: HasProportionError
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [FullScaleUncertainty](#FullScaleUncertainty)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: This verb is used to associate a `DrillingDataPoint` as the `ProportionError` value of a `FullScaleUncertainty`
+- Examples: 
+- Definition set: Uncertainty
+## HasFullScale <!-- VERB -->
+- Display name: HasFullScale
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [FullScaleUncertainty](#FullScaleUncertainty)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: This verb is used to associate a `DrillingDataPoint` as the `FullScale` value of a `FullScaleUncertainty`
 - Examples: 
 - Definition set: Uncertainty
 ## HasUncertaintyHistogram <!-- VERB -->
 - Display name: HasUncertaintyHistogram
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [SignalUncertainty](#SignalUncertainty)
+- Subject class: [GenericUncertainty](#GenericUncertainty)
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Min cardinality: -1
 - Max cardinality: -1
-- Description: 
+- Description: This verb is used to associated a `DrillingDataPoint` as the `Histogram` value of a `GenericUncertainty`
 - Examples: 
 - Definition set: Uncertainty

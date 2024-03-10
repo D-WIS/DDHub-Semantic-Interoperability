@@ -104,7 +104,6 @@ The following top level relationships have been omitted from the diagrams due to
 | DWISNoun | HasHydraulicStateValueFrom | DWISNoun |
 | DWISNoun | StartsHydraulicBranchDecomposition | DWISNoun |
 | DWISNoun | DWISVerb | DWISNoun |
-| DWISNoun | HasType | DWISNoun |
 | DWISNoun | BelongsToClass | DWISNoun |
 | DWISNoun | Controls | DWISNoun |
 | DWISNoun | IsDerivationInput | DWISNoun |
