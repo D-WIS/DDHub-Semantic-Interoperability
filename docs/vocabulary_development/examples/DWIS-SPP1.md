@@ -2,9 +2,9 @@
 - StandPipe:StandPipe_0
 - SPPQuantity:SPPQuantity_0
 - Location:StandPipeLocation
-- DrillFloorReferenceLocation:DrillFloorLocation
+- DerrickFloorVerticalLocation:DrillFloorLocation
 - DrillingDataPoint:StandPipeElevation
-- VerticalElevationReferenceFrame:ElevationReferenceFrame
+- VerticalDepthFrame:ElevationReferenceFrame
 - StandPipeLocation HasCoordinates StandPipeElevation
 - StandPipeLocation HasReferenceFrame ElevationReferenceFrame
 - ElevationReferenceFrame HasReferenceFrameOrigin DrillFloorLocation

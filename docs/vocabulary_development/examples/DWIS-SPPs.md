@@ -6,9 +6,9 @@
 - LowPassFilter:SPP_LowPassFilter
 - DataProvider:DrillingControlSystem_0
 - Location:StandPipeLocation
-- DrillFloorReferenceLocation:DrillFloorLocation
+- DerrickFloorVerticalLocation:DrillFloorLocation
 - DrillingDataPoint:StandPipeElevation
-- VerticalElevationReferenceFrame:ElevationReferenceFrame
+- VerticalDepthFrame:ElevationReferenceFrame
 - SPP_0 IsProvidedBy DrillingControlSystem_0
 - SPP_0 IsHydraulicallyLocatedAt StandPipe_0
 - SPP_0 IsOfMeasurableQuantity SPPQuantity_0
