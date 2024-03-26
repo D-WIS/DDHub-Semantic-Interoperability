@@ -268,6 +268,27 @@
 - Specialization:
 - Description: 
 - Examples:
+## MovingStandardDeviation <!-- NOUN -->
+- Display name: MovingStandardDeviation
+- Parent class: Filter
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MovingMin <!-- NOUN -->
+- Display name: MovingMin
+- Parent class: Filter
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MovingMax <!-- NOUN -->
+- Display name: MovingMax
+- Parent class: Filter
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## NumberOfSampleMovingAverage <!-- NOUN -->
 - Display name: NumberOfSampleMovingAverage
 - Parent class: MovingAverage
