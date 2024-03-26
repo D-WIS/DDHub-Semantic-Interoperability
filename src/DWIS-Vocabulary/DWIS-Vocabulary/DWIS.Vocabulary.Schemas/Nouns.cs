@@ -48,6 +48,9 @@ BandPassFilter,
 HighPassFilter,
 LowPassFilter,
 MovingAverage,
+MovingStandardDeviation,
+MovingMin,
+MovingMax,
 NumberOfSampleMovingAverage,
 TimeWindowMovingAverage,
 TimeBasedTransformation,
@@ -439,6 +442,9 @@ SensorUncertainty
 	public static string HighPassFilter = "HighPassFilter";
 	public static string LowPassFilter = "LowPassFilter";
 	public static string MovingAverage = "MovingAverage";
+	public static string MovingStandardDeviation = "MovingStandardDeviation";
+	public static string MovingMin = "MovingMin";
+	public static string MovingMax = "MovingMax";
 	public static string NumberOfSampleMovingAverage = "NumberOfSampleMovingAverage";
 	public static string TimeWindowMovingAverage = "TimeWindowMovingAverage";
 	public static string TimeBasedTransformation = "TimeBasedTransformation";

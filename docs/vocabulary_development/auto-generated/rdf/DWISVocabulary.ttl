@@ -1409,6 +1409,15 @@ ddhub:ModellingDiscretization a owl:Class;
 ddhub:MovingAverage a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:Filter. 
+ddhub:MovingMax a owl:Class; 
+                rdfs:comment ""@EN; 
+                rdfs:subClassOf ddhub:Filter. 
+ddhub:MovingMin a owl:Class; 
+                rdfs:comment ""@EN; 
+                rdfs:subClassOf ddhub:Filter. 
+ddhub:MovingStandardDeviation a owl:Class; 
+                              rdfs:comment ""@EN; 
+                              rdfs:subClassOf ddhub:Filter. 
 ddhub:MPDChoke a owl:Class; 
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:Choke. 

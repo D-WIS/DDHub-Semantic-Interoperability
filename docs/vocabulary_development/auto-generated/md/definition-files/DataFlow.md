@@ -304,6 +304,30 @@
 - Description: 
 - Examples:
 - Definition set: DataFlow
+## MovingStandardDeviation <!-- NOUN -->
+- Display name: MovingStandardDeviation
+- Parent class: [Filter](./DataFlow.md#Filter)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## MovingMin <!-- NOUN -->
+- Display name: MovingMin
+- Parent class: [Filter](./DataFlow.md#Filter)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
+## MovingMax <!-- NOUN -->
+- Display name: MovingMax
+- Parent class: [Filter](./DataFlow.md#Filter)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataFlow
 ## NumberOfSampleMovingAverage <!-- NOUN -->
 - Display name: NumberOfSampleMovingAverage
 - Parent class: [MovingAverage](./DataFlow.md#MovingAverage)
