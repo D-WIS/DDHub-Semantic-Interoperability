@@ -345,9 +345,6 @@
 - Display name: DrillStringCenterLineFrame
 - Parent class: OneDimensionalCurviLinearReferenceFrame
 - Attributes:
-  - PositiveUpward
-    - Type: bool
-    - Description: 
 - Specialization:
 - Description: 
 - Examples:
