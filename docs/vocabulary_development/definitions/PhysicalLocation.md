@@ -9,58 +9,289 @@
 - Description: Physical location for a signal. Refers to: 1) a reference frame (via the HasReferenceFrame relation), that works as a system of coordinates 2) an origin (of type Location) via the HasReferenceFrameOrigin relation. 
  - some coordinates
 - Examples:
-## VerticalDatumReferenceLocation <!-- NOUN -->
-- Display name: VerticalDatumReferenceLocation
+## VerticalReferenceLocation <!-- NOUN -->
+- Display name: VerticalReferenceLocation
 - Parent class: Location
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
-## BitReferenceLocation <!-- NOUN -->
-- Display name: BitReferenceLocation
+## WGS84VerticalLocation <!-- NOUN -->
+- Display name: WGS84VerticalLocation
+- Parent class: VerticalReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## CasingFlangeVerticalLocation <!-- NOUN -->
+- Display name: CasingFlangeVerticalLocation
+- Parent class: VerticalmReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## CrownValveVerticalLocation <!-- NOUN -->
+- Display name: CrownValveVerticalLocation
+- Parent class: VerticalReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## DerrickFloorVerticalLocation <!-- NOUN -->
+- Display name: DerrickFloorVerticalLocation
+- Parent class: VerticalReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## KellyBushingVerticalLocation <!-- NOUN -->
+- Display name: KellyBushingVerticalLocation
+- Parent class: VerticalReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## RotaryTableVerticalLocation <!-- NOUN -->
+- Display name: RotaryTableVerticalLocation
+- Parent class: VerticalReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## WellHeadVerticalLocation <!-- NOUN -->
+- Display name: WellHeadVerticalLocation
+- Parent class: VerticalReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## GroundLevelVerticalLocation <!-- NOUN -->
+- Display name: GroundLevelVerticalLocation
+- Parent class: VerticalReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## SeaFloorVerticalLocation <!-- NOUN -->
+- Display name: SeaFloorVerticalLocation
+- Parent class: VerticalReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## LowestAstronomicalTideVerticalLocation <!-- NOUN -->
+- Display name: LowestAstronomicalTideVerticalLocation
+- Parent class: VerticalReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MeanSeaLevelVerticalLocation <!-- NOUN -->
+- Display name: MeanSeaLevelVerticalLocation
+- Parent class: VerticalReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MeanHigherHighWaterVerticalLocation <!-- NOUN -->
+- Display name: MeanHigherHighWaterVerticalLocation
+- Parent class: VerticalReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MeanHighWaterVerticalLocation <!-- NOUN -->
+- Display name: MeanHighWaterVerticalLocation
+- Parent class: VerticalReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MeanLowerLowWaterVerticalLocation <!-- NOUN -->
+- Display name: MeanLowerLowWaterVerticalLocation
+- Parent class: VerticalReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MeanLowWaterVerticalLocation <!-- NOUN -->
+- Display name: MeanLowWaterVerticalLocation
+- Parent class: VerticalReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MeanTideLevelVerticalLocation <!-- NOUN -->
+- Display name: MeanTideLevelVerticalLocation
+- Parent class: VerticalReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## KickOffVerticalLocation <!-- NOUN -->
+- Display name: KickOffVerticalLocation
+- Parent class: VerticalReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## PositionReferenceLocation <!-- NOUN -->
+- Display name: PositionReferenceLocation
 - Parent class: Location
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## WGS84PositionLocation <!-- NOUN -->
+- Display name: WGS84PositionLocation
+- Parent class: PositionReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## WellHeadPositionLocation <!-- NOUN -->
+- Display name: WellHeadPositionLocation
+- Parent class: PositionReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## ClusterPositionLocation <!-- NOUN -->
+- Display name: ClusterPositionLocation
+- Parent class: PositionReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## LeaseLinePositionLocation <!-- NOUN -->
+- Display name: LeaseLinePositionLocation
+- Parent class: PositionReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## AxialReferenceLocation <!-- NOUN -->
+- Display name: AxialReferenceLocation
+- Parent class: Location
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## BottomShoulderAxialLocation <!-- NOUN -->
+- Display name: BottomShoulderAxialLocation
+- Parent class: AxialReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## TopShoulderAxialLocation <!-- NOUN -->
+- Display name: TopShoulderAxialLocation
+- Parent class: AxialReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## AbscissaReferenceLocation <!-- NOUN -->
+- Display name: AbscissaReferenceLocation
+- Parent class: Location
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## BottomOfStringReferenceLocation <!-- NOUN -->
+- Display name: BottomOfStringReferenceLocation
+- Parent class: AbscissaReferenceLocation
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## TopOfStringReferenceLocation <!-- NOUN -->
 - Display name: TopOfStringReferenceLocation
-- Parent class: Location
+- Parent class: AbscissaReferenceLocation
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
-## CasingShoeLocation <!-- NOUN -->
-- Display name: CasingShoeLocation
-- Parent class: Location
-- Attributes:
-- Specialization:
-- Description: 
-- Examples:
-## DrillFloorReferenceLocation <!-- NOUN -->
-- Display name: DrillFloorReferenceLocation
-- Parent class: Location
+## LastCasingShoeReferenceLocation <!-- NOUN -->
+- Display name: LastCasingShoeReferenceLocation
+- Parent class: AbscissaReferenceLocation
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## HoleBottomLocation <!-- NOUN -->
 - Display name: HoleBottomLocation
+- Parent class: AbscissaReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## TopOfRatHoleLocation <!-- NOUN -->
+- Display name: TopOfRatHoleLocation
+- Parent class: AbscissaReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## AngleReferenceLocation <!-- NOUN -->
+- Display name: AngleReferenceLocation
 - Parent class: Location
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
-## LWDLocation <!-- NOUN -->
-- Display name: LWDLocation
+## ScribeLineAngleLocation <!-- NOUN -->
+- Display name: ScribeLineAngleLocation
+- Parent class: AngleReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## GravityHighSideAngleLocation <!-- NOUN -->
+- Display name: GravityHighSideAngleLocation
+- Parent class: AngleReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MagneticHighSideAngleLocation <!-- NOUN -->
+- Display name: MagneticHighSideAngleLocation
+- Parent class: AngleReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## UpperSideAngleLocation <!-- NOUN -->
+- Display name: UpperSideAngleLocation
+- Parent class: AngleReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## AzimuthReferenceLocation <!-- NOUN -->
+- Display name: AzimuthReferenceLocation
 - Parent class: Location
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
-## ReferenceLocation <!-- NOUN -->
-- Display name: ReferenceLocation
-- Parent class: Location
+## TrueNorthAzimuthLocation <!-- NOUN -->
+- Display name: TrueNorthAzimuthLocation
+- Parent class: AzimuthReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MagneticNorthAzimuthLocation <!-- NOUN -->
+- Display name: MagneticNorthAzimuthLocation
+- Parent class: AzimuthReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## GridNorthAzimuthLocation <!-- NOUN -->
+- Display name: GridNorthAzimuthLocation
+- Parent class: AzimuthReferenceLocation
 - Attributes:
 - Specialization:
 - Description: 
@@ -72,27 +303,6 @@
 - Specialization:
 - Description: Represents a system of coordinates
 - Examples:
-## DepthAndAngleFrame <!-- NOUN -->
-- Display name: DepthAndAngleFrame
-- Parent class: ReferenceFrame
-- Attributes:
-- Specialization:
-- Description: 
-- Examples:
-## FourDimensionalReferenceFrame <!-- NOUN -->
-- Display name: FourDimensionalReferenceFrame
-- Parent class: ReferenceFrame
-- Attributes:
-- Specialization:
-- Description: 
-- Examples:
-## CurviLinearFrenetSerretReferenceFrame <!-- NOUN -->
-- Display name: CurviLinearFrenetSerretReferenceFrame
-- Parent class: FourDimensionalReferenceFrame
-- Attributes:
-- Specialization:
-- Description: 
-- Examples:
 ## OneDimensionalReferenceFrame <!-- NOUN -->
 - Display name: OneDimensionalReferenceFrame
 - Parent class: ReferenceFrame
@@ -100,6 +310,13 @@
   - PostiveUpward
     - Type: bool
     - Description: 
+- Specialization:
+- Description: 
+- Examples:
+## AngleReferenceFrame <!-- NOUN -->
+- Display name: AngleReferenceFrame
+- Parent class: OneDimensionalReferenceFrame
+- Attributes:
 - Specialization:
 - Description: 
 - Examples:
@@ -112,13 +329,6 @@
 - Examples:
 ## VerticalDepthFrame <!-- NOUN -->
 - Display name: VerticalDepthFrame
-- Parent class: OneDimensionalCartesianReferenceFrame
-- Attributes:
-- Specialization:
-- Description: 
-- Examples:
-## VerticalElevationReferenceFrame <!-- NOUN -->
-- Display name: Vertical Elevation Reference Frame
 - Parent class: OneDimensionalCartesianReferenceFrame
 - Attributes:
 - Specialization:
@@ -141,61 +351,16 @@
 - Specialization:
 - Description: 
 - Examples:
-## OpenHoleCenterLineFrame <!-- NOUN -->
-- Display name: OpenHoleCenterLineFrame
-- Parent class: OneDimensionalCurviLinearReferenceFrame
-- Attributes:
-- Specialization:
-- Description: 
-- Examples:
 ## WellboreCenterLineFrame <!-- NOUN -->
 - Display name: WellboreCenterLineFrame
 - Parent class: OneDimensionalCurviLinearReferenceFrame
 - Attributes:
-  - PositiveUpward
-    - Type: bool
-    - Description: 
 - Specialization:
 - Description: 
 - Examples:
-## ThreeDimensionalReferenceFrame <!-- NOUN -->
-- Display name: ThreeDimensionalReferenceFrame
+## DepthAndAngleFrame <!-- NOUN -->
+- Display name: DepthAndAngleFrame
 - Parent class: ReferenceFrame
-- Attributes:
-- Specialization:
-- Description: 
-- Examples:
-## CartesianThreeDimensionalReferenceFrame <!-- NOUN -->
-- Display name: CartesianThreeDimensionalReferenceFrame
-- Parent class: ThreeDimensionalReferenceFrame
-- Attributes:
-- Specialization:
-- Description: 
-- Examples:
-## FrenetSerretReferenceFrame <!-- NOUN -->
-- Display name: FrenetSerretReferenceFrame
-- Parent class: CartesianThreeDimensionalReferenceFrame
-- Attributes:
-- Specialization:
-- Description: 
-- Examples:
-## NorthEastTVDFrame <!-- NOUN -->
-- Display name: NorthEastTVDFrame
-- Parent class: CartesianThreeDimensionalReferenceFrame
-- Attributes:
-- Specialization:
-- Description: 
-- Examples:
-## CylindricalReferenceFrame <!-- NOUN -->
-- Display name: CylindricalReferenceFrame
-- Parent class: ThreeDimensionalReferenceFrame
-- Attributes:
-- Specialization:
-- Description: 
-- Examples:
-## SphericalReferenceFrame <!-- NOUN -->
-- Display name: SphericalReferenceFrame
-- Parent class: ThreeDimensionalReferenceFrame
 - Attributes:
 - Specialization:
 - Description: 
@@ -228,7 +393,83 @@
 - Specialization:
 - Description: 
 - Examples:
-
+## RiemannianManifoldTwoDimensionalReferenceFrame <!-- NOUN -->
+- Display name: RiemannianManifoldTwoDimensionalReferenceFrame
+- Parent class: TwoDimensionalReferenceFrame
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## ThreeDimensionalReferenceFrame <!-- NOUN -->
+- Display name: ThreeDimensionalReferenceFrame
+- Parent class: ReferenceFrame
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## CartesianThreeDimensionalReferenceFrame <!-- NOUN -->
+- Display name: CartesianThreeDimensionalReferenceFrame
+- Parent class: ThreeDimensionalReferenceFrame
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## NorthEastTVDFrame <!-- NOUN -->
+- Display name: NorthEastTVDFrame
+- Parent class: CartesianThreeDimensionalReferenceFrame
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## FrenetSerretReferenceFrame <!-- NOUN -->
+- Display name: FrenetSerretReferenceFrame
+- Parent class: ThreeDimensionalReferenceFrame
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## RiemannianManifoldThreeDimensionalReferenceFrame <!-- NOUN -->
+- Display name: RiemannianManifoldThreeDimensionalReferenceFrame
+- Parent class: ThreeDimensionalReferenceFrame
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## CylindricalReferenceFrame <!-- NOUN -->
+- Display name: CylindricalReferenceFrame
+- Parent class: ThreeDimensionalReferenceFrame
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## SphericalReferenceFrame <!-- NOUN -->
+- Display name: SphericalReferenceFrame
+- Parent class: ThreeDimensionalReferenceFrame
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## FourDimensionalReferenceFrame <!-- NOUN -->
+- Display name: FourDimensionalReferenceFrame
+- Parent class: ReferenceFrame
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## CartesianFourDimensionalReferenceFrame <!-- NOUN -->
+- Display name: CartesianFourDimensionalReferenceFrame
+- Parent class: FourDimensionalReferenceFrame
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## RiemannianManifoldFourDimensionalReferenceFrame <!-- NOUN -->
+- Display name: RiemannianManifoldFourDimensionalReferenceFrame
+- Parent class: FourDimensionalReferenceFrame
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 
 # VERBS
 ## HasCoordinates <!-- VERB -->
