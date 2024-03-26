@@ -25,7 +25,7 @@
 - Examples:
 ## CasingFlangeVerticalLocation <!-- NOUN -->
 - Display name: CasingFlangeVerticalLocation
-- Parent class: VerticalmReferenceLocation
+- Parent class: VerticalReferenceLocation
 - Attributes:
 - Specialization:
 - Description: 
