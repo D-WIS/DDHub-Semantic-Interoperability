@@ -5,6 +5,9 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @base <https://rdfsharp.codeplex.com/>.
 
+ddhub:AbscissaReferenceLocation a owl:Class; 
+                                rdfs:comment ""@EN; 
+                                rdfs:subClassOf ddhub:Location. 
 ddhub:AccelerationQuantity a owl:Class; 
                            rdfs:comment ""@EN; 
                            rdfs:subClassOf ddhub:Quantity. 
@@ -46,6 +49,12 @@ ddhub:Advisor a owl:Class;
 ddhub:Aggregation a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:DirectTransformation. 
+ddhub:AngleReferenceFrame a owl:Class; 
+                          rdfs:comment ""@EN; 
+                          rdfs:subClassOf ddhub:OneDimensionalReferenceFrame. 
+ddhub:AngleReferenceLocation a owl:Class; 
+                             rdfs:comment ""@EN; 
+                             rdfs:subClassOf ddhub:Location. 
 ddhub:AngularLateralModelling a owl:Class; 
                               rdfs:comment "The model accounts for the angular lateral movement of some parts of the physical system."@EN; 
                               rdfs:subClassOf ddhub:LateralModelling. 
@@ -82,9 +91,15 @@ ddhub:AverageDelayByRepeater a owl:DatatypeProperty, owl:FunctionalProperty;
 ddhub:AxialModelling a owl:Class; 
                      rdfs:comment "The model accounts for the axial movement of some parts of the physical system."@EN; 
                      rdfs:subClassOf ddhub:ModelledDegreeOfFreedom. 
+ddhub:AxialReferenceLocation a owl:Class; 
+                             rdfs:comment ""@EN; 
+                             rdfs:subClassOf ddhub:Location. 
 ddhub:Azimuth a owl:Class; 
               rdfs:comment ""@EN; 
               rdfs:subClassOf ddhub:DrillingDataPoint. 
+ddhub:AzimuthReferenceLocation a owl:Class; 
+                               rdfs:comment ""@EN; 
+                               rdfs:subClassOf ddhub:Location. 
 ddhub:BackPressurePump a owl:Class; 
                        rdfs:comment ""@EN; 
                        rdfs:subClassOf ddhub:Pump. 
@@ -119,9 +134,6 @@ ddhub:Bit a owl:Class;
 ddhub:BitDepth a owl:Class; 
                rdfs:comment "Curvilinear abscissa of the bottom of the bit, in the reference frame centered in the wellbore."@EN; 
                rdfs:subClassOf ddhub:DrillingDataPoint. 
-ddhub:BitReferenceLocation a owl:Class; 
-                           rdfs:comment ""@EN; 
-                           rdfs:subClassOf ddhub:Location. 
 ddhub:BitTorqueQuantity a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:MeasurableQuantity. 
@@ -155,6 +167,12 @@ ddhub:BOPRam a owl:Class;
 ddhub:BOPShearRam a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:DrillingEquipment. 
+ddhub:BottomOfStringReferenceLocation a owl:Class; 
+                                      rdfs:comment ""@EN; 
+                                      rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
+ddhub:BottomShoulderAxialLocation a owl:Class; 
+                                  rdfs:comment ""@EN; 
+                                  rdfs:subClassOf ddhub:AxialReferenceLocation. 
 ddhub:BoundaryDiscretization a owl:Class; 
                              rdfs:comment "A model only considers the bounds of the physical system and does not apply any intermediate discretization."@EN; 
                              rdfs:subClassOf ddhub:ModellingDiscretization. 
@@ -165,15 +183,18 @@ ddhub:BufferingInterval a owl:DatatypeProperty, owl:FunctionalProperty;
                         rdfs:comment ""@EN; 
                         rdfs:domain ddhub:Buffering; 
                         rdfs:range xsd:double. 
+ddhub:CartesianFourDimensionalReferenceFrame a owl:Class; 
+                                             rdfs:comment ""@EN; 
+                                             rdfs:subClassOf ddhub:FourDimensionalReferenceFrame. 
 ddhub:CartesianThreeDimensionalReferenceFrame a owl:Class; 
                                               rdfs:comment ""@EN; 
                                               rdfs:subClassOf ddhub:ThreeDimensionalReferenceFrame. 
 ddhub:CartesianTwoDimensionalReferenceFrame a owl:Class; 
                                             rdfs:comment ""@EN; 
                                             rdfs:subClassOf ddhub:TwoDimensionalReferenceFrame. 
-ddhub:CasingShoeLocation a owl:Class; 
-                         rdfs:comment ""@EN; 
-                         rdfs:subClassOf ddhub:Location. 
+ddhub:CasingFlangeVerticalLocation a owl:Class; 
+                                   rdfs:comment ""@EN; 
+                                   rdfs:subClassOf ddhub:VerticalReferenceLocation. 
 ddhub:CasingString a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:DrillStem. 
@@ -189,6 +210,9 @@ ddhub:Choke a owl:Class;
 ddhub:Clock a owl:Class; 
             rdfs:comment "Represents a clock"@EN; 
             rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:ClusterPositionLocation a owl:Class; 
+                              rdfs:comment ""@EN; 
+                              rdfs:subClassOf ddhub:PositionReferenceLocation. 
 ddhub:CoiledTubing a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:DrillStem. 
@@ -241,9 +265,9 @@ ddhub:CorrectedMeasurement a owl:Class;
 ddhub:CrownBlock a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:MechanicalBlock. 
-ddhub:CurviLinearFrenetSerretReferenceFrame a owl:Class; 
-                                            rdfs:comment ""@EN; 
-                                            rdfs:subClassOf ddhub:FourDimensionalReferenceFrame. 
+ddhub:CrownValveVerticalLocation a owl:Class; 
+                                 rdfs:comment ""@EN; 
+                                 rdfs:subClassOf ddhub:VerticalReferenceLocation. 
 ddhub:CutOffFrequency a owl:DatatypeProperty, owl:FunctionalProperty; 
                       rdfs:comment ""@EN; 
                       rdfs:domain ddhub:HighPassFilter, ddhub:LowPassFilter; 
@@ -287,6 +311,9 @@ ddhub:Derivation a owl:Class;
 ddhub:DerivedMeasurement a owl:Class; 
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:Measurement. 
+ddhub:DerrickFloorVerticalLocation a owl:Class; 
+                                   rdfs:comment ""@EN; 
+                                   rdfs:subClassOf ddhub:VerticalReferenceLocation. 
 ddhub:DirectionalServiceCompany a owl:Class; 
                                 rdfs:comment "A directional service company is an entity that provides services for downhole directional drilling and downhole measurements."@EN; 
                                 rdfs:subClassOf ddhub:ServiceCompany. 
@@ -336,9 +363,6 @@ ddhub:DrawWorks a owl:Class;
 ddhub:DrawWorksControlSystem a owl:Class; 
                              rdfs:comment ""@EN; 
                              rdfs:subClassOf ddhub:ControlSystem. 
-ddhub:DrillFloorReferenceLocation a owl:Class; 
-                                  rdfs:comment ""@EN; 
-                                  rdfs:subClassOf ddhub:Location. 
 ddhub:DrillingContractor a owl:Class; 
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:DataProvider. 
@@ -382,8 +406,8 @@ ddhub:DrillStringCenterLineFrame a owl:Class;
                                  rdfs:comment ""@EN; 
                                  rdfs:subClassOf ddhub:OneDimensionalCurviLinearReferenceFrame. 
 ddhub:DWISAttributeCardinalityRestriction a owl:Class, owl:Restriction; 
-                                          owl:onClass ddhub:RunnableFunction, ddhub:Advisor, ddhub:BandPassFilter, ddhub:HighPassFilter, ddhub:LowPassFilter, ddhub:NumberOfSampleMovingAverage, ddhub:TimeWindowMovingAverage, ddhub:Buffering, ddhub:NumberOfItemsRangeExtraction, ddhub:TimeWindowRangeExtraction, ddhub:Resampling, ddhub:DataProvider, ddhub:OperatingCompany, ddhub:ServiceCompany, ddhub:DirectionalServiceCompany, ddhub:DrillingFluidProvider, ddhub:LoggingServiceCompany, ddhub:CementingServiceCompany, ddhub:DataAnalysisServiceCompany, ddhub:DrillingContractor, ddhub:DWISInternalService, ddhub:Telemetry, ddhub:DrillingDataPoint, ddhub:DrillingSignal, ddhub:DynamicDrillingSignal, ddhub:DataEndPoint, ddhub:WitsMLTimeBasedLogEndPoint, ddhub:EndPointMapping, ddhub:HydraulicConnectedState, ddhub:HydraulicJunction, ddhub:MechanicalElementState, ddhub:OneDimensionalReferenceFrame, ddhub:DrillStringCenterLineFrame, ddhub:WellboreCenterLineFrame, ddhub:MeasurableQuantity, ddhub:Quantity, ddhub:Unit, ddhub:Clock, ddhub:SynchronizationGroup, ddhub:FullScaleUncertainty, ddhub:SensorUncertainty; 
-                                          owl:onProperty ddhub:MainFunction, ddhub:AuxiliaryFunction, ddhub:AdviceType, ddhub:MinFrequency, ddhub:MaxFrequency, ddhub:CutOffFrequency, ddhub:NumberOfSamples, ddhub:TimeWindow, ddhub:BufferingInterval, ddhub:NumberOfItems, ddhub:ResamplingRate, ddhub:ResamplingDelay, ddhub:Validity, ddhub:ProviderName, ddhub:NumberOfRepeaters, ddhub:DistanceBetweenRepeaters, ddhub:AverageDelayByRepeater, ddhub:IsValid, ddhub:Value, ddhub:TimeStampAtSource, ddhub:TimeStampAcquisition, ddhub:EndPointDescription, ddhub:WellUID, ddhub:WellName, ddhub:WellboreUID, ddhub:WellboreName, ddhub:LogUID, ddhub:LogName, ddhub:Mnemonic, ddhub:FixedIndices, ddhub:ValuesIndices, ddhub:MeasurementIndex, ddhub:LeftToRight, ddhub:RightToLeft, ddhub:PostiveUpward, ddhub:PositiveUpward, ddhub:MeaningfulPrecision, ddhub:L, ddhub:M, ddhub:T, ddhub:I, ddhub:ThT, ddhub:N, ddhub:J, ddhub:SIUnit, ddhub:Symbol, ddhub:ConversionFactorA, ddhub:ConversionFactorB, ddhub:LeapSeconds, ddhub:Stratum, ddhub:NetworkSynchronizationLatencyAverage, ddhub:NetworkSynchronizationLatencyStandardDeviation, ddhub:Resolution, ddhub:MaximumFluctuations, ddhub:SynchronizationDelay, ddhub:SamplingRate, ddhub:FullScale, ddhub:ProportionError, ddhub:Accuracy, ddhub:Precision; 
+                                          owl:onClass ddhub:RunnableFunction, ddhub:Advisor, ddhub:BandPassFilter, ddhub:HighPassFilter, ddhub:LowPassFilter, ddhub:NumberOfSampleMovingAverage, ddhub:TimeWindowMovingAverage, ddhub:Buffering, ddhub:NumberOfItemsRangeExtraction, ddhub:TimeWindowRangeExtraction, ddhub:Resampling, ddhub:DataProvider, ddhub:OperatingCompany, ddhub:ServiceCompany, ddhub:DirectionalServiceCompany, ddhub:DrillingFluidProvider, ddhub:LoggingServiceCompany, ddhub:CementingServiceCompany, ddhub:DataAnalysisServiceCompany, ddhub:DrillingContractor, ddhub:DWISInternalService, ddhub:Telemetry, ddhub:DrillingDataPoint, ddhub:DrillingSignal, ddhub:DynamicDrillingSignal, ddhub:DataEndPoint, ddhub:WitsMLTimeBasedLogEndPoint, ddhub:EndPointMapping, ddhub:HydraulicConnectedState, ddhub:HydraulicJunction, ddhub:MechanicalElementState, ddhub:OneDimensionalReferenceFrame, ddhub:MeasurableQuantity, ddhub:Quantity, ddhub:Unit, ddhub:Clock, ddhub:SynchronizationGroup, ddhub:FullScaleUncertainty, ddhub:SensorUncertainty; 
+                                          owl:onProperty ddhub:MainFunction, ddhub:AuxiliaryFunction, ddhub:AdviceType, ddhub:MinFrequency, ddhub:MaxFrequency, ddhub:CutOffFrequency, ddhub:NumberOfSamples, ddhub:TimeWindow, ddhub:BufferingInterval, ddhub:NumberOfItems, ddhub:ResamplingRate, ddhub:ResamplingDelay, ddhub:Validity, ddhub:ProviderName, ddhub:NumberOfRepeaters, ddhub:DistanceBetweenRepeaters, ddhub:AverageDelayByRepeater, ddhub:IsValid, ddhub:Value, ddhub:TimeStampAtSource, ddhub:TimeStampAcquisition, ddhub:EndPointDescription, ddhub:WellUID, ddhub:WellName, ddhub:WellboreUID, ddhub:WellboreName, ddhub:LogUID, ddhub:LogName, ddhub:Mnemonic, ddhub:FixedIndices, ddhub:ValuesIndices, ddhub:MeasurementIndex, ddhub:LeftToRight, ddhub:RightToLeft, ddhub:PostiveUpward, ddhub:MeaningfulPrecision, ddhub:L, ddhub:M, ddhub:T, ddhub:I, ddhub:ThT, ddhub:N, ddhub:J, ddhub:SIUnit, ddhub:Symbol, ddhub:ConversionFactorA, ddhub:ConversionFactorB, ddhub:LeapSeconds, ddhub:Stratum, ddhub:NetworkSynchronizationLatencyAverage, ddhub:NetworkSynchronizationLatencyStandardDeviation, ddhub:Resolution, ddhub:MaximumFluctuations, ddhub:SynchronizationDelay, ddhub:SamplingRate, ddhub:FullScale, ddhub:ProportionError, ddhub:Accuracy, ddhub:Precision; 
                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger. 
 ddhub:DWISInternalService a owl:Class; 
                           rdfs:comment "A DWIS internal service is an internal component of the DWIS infrastructure that generates information that can be used by any systems connected to the DWIS infrastructure."@EN; 
@@ -481,7 +505,7 @@ ddhub:FracturingPressureGradient a owl:Class;
                                  rdfs:subClassOf ddhub:DrillingDataPoint. 
 ddhub:FrenetSerretReferenceFrame a owl:Class; 
                                  rdfs:comment ""@EN; 
-                                 rdfs:subClassOf ddhub:CartesianThreeDimensionalReferenceFrame. 
+                                 rdfs:subClassOf ddhub:ThreeDimensionalReferenceFrame. 
 ddhub:FrequencyQuantity a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:Quantity. 
@@ -504,9 +528,18 @@ ddhub:GaussianUncertainty a owl:Class;
 ddhub:GenericUncertainty a owl:Class; 
                          rdfs:comment "The uncertainty is represented by a `Histogram`."@EN; 
                          rdfs:subClassOf ddhub:SignalUncertainty. 
+ddhub:GravityHighSideAngleLocation a owl:Class; 
+                                   rdfs:comment ""@EN; 
+                                   rdfs:subClassOf ddhub:AngleReferenceLocation. 
+ddhub:GridNorthAzimuthLocation a owl:Class; 
+                               rdfs:comment ""@EN; 
+                               rdfs:subClassOf ddhub:AzimuthReferenceLocation. 
 ddhub:Ground a owl:Class; 
              rdfs:comment ""@EN; 
              rdfs:subClassOf ddhub:DrillingEquipment. 
+ddhub:GroundLevelVerticalLocation a owl:Class; 
+                                  rdfs:comment ""@EN; 
+                                  rdfs:subClassOf ddhub:VerticalReferenceLocation. 
 ddhub:GT a owl:Class; 
          rdfs:comment ""@EN; 
          rdfs:subClassOf ddhub:ValidityCondition. 
@@ -726,7 +759,7 @@ ddhub:HoistingSystem a owl:Class;
                      rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:HoleBottomLocation a owl:Class; 
                          rdfs:comment ""@EN; 
-                         rdfs:subClassOf ddhub:Location. 
+                         rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
 ddhub:HoleDepth a owl:Class; 
                 rdfs:comment ""@EN; 
                 rdfs:subClassOf ddhub:DrillingDataPoint. 
@@ -1159,10 +1192,19 @@ ddhub:J a owl:DatatypeProperty, owl:FunctionalProperty;
 ddhub:Kelly a owl:Class; 
             rdfs:comment ""@EN; 
             rdfs:subClassOf ddhub:DrillingEquipment. 
+ddhub:KellyBushingVerticalLocation a owl:Class; 
+                                   rdfs:comment ""@EN; 
+                                   rdfs:subClassOf ddhub:VerticalReferenceLocation. 
+ddhub:KickOffVerticalLocation a owl:Class; 
+                              rdfs:comment ""@EN; 
+                              rdfs:subClassOf ddhub:VerticalReferenceLocation. 
 ddhub:L a owl:DatatypeProperty, owl:FunctionalProperty; 
         rdfs:comment "Length exponent."@EN; 
         rdfs:domain ddhub:Quantity; 
         rdfs:range xsd:int. 
+ddhub:LastCasingShoeReferenceLocation a owl:Class; 
+                                      rdfs:comment ""@EN; 
+                                      rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
 ddhub:LateralModelling a owl:Class; 
                        rdfs:comment "The model accounts for the lateral movement of some parts of the physical system."@EN; 
                        rdfs:subClassOf ddhub:ModelledDegreeOfFreedom. 
@@ -1170,6 +1212,9 @@ ddhub:LeapSeconds a owl:DatatypeProperty, owl:FunctionalProperty;
                   rdfs:comment ""@EN; 
                   rdfs:domain ddhub:Clock; 
                   rdfs:range xsd:int. 
+ddhub:LeaseLinePositionLocation a owl:Class; 
+                                rdfs:comment ""@EN; 
+                                rdfs:subClassOf ddhub:PositionReferenceLocation. 
 ddhub:LeftToRight a owl:DatatypeProperty, owl:FunctionalProperty; 
                   rdfs:comment "Indicates whether the fluid can flow from the left branch to the right branch though the junction"@EN; 
                   rdfs:domain ddhub:HydraulicJunction; 
@@ -1197,6 +1242,9 @@ ddhub:LogUID a owl:DatatypeProperty, owl:FunctionalProperty;
              rdfs:comment ""@EN; 
              rdfs:domain ddhub:WitsMLTimeBasedLogEndPoint; 
              rdfs:range xsd:string. 
+ddhub:LowestAstronomicalTideVerticalLocation a owl:Class; 
+                                             rdfs:comment ""@EN; 
+                                             rdfs:subClassOf ddhub:VerticalReferenceLocation. 
 ddhub:LowPassFilter a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:Filter. 
@@ -1206,13 +1254,16 @@ ddhub:LowPressureRiser a owl:Class;
 ddhub:LT a owl:Class; 
          rdfs:comment ""@EN; 
          rdfs:subClassOf ddhub:ValidityCondition. 
-ddhub:LWDLocation a owl:Class; 
-                  rdfs:comment ""@EN; 
-                  rdfs:subClassOf ddhub:Location. 
 ddhub:M a owl:DatatypeProperty, owl:FunctionalProperty; 
         rdfs:comment "Mass exponent."@EN; 
         rdfs:domain ddhub:Quantity; 
         rdfs:range xsd:int. 
+ddhub:MagneticHighSideAngleLocation a owl:Class; 
+                                    rdfs:comment ""@EN; 
+                                    rdfs:subClassOf ddhub:AngleReferenceLocation. 
+ddhub:MagneticNorthAzimuthLocation a owl:Class; 
+                                   rdfs:comment ""@EN; 
+                                   rdfs:subClassOf ddhub:AzimuthReferenceLocation. 
 ddhub:MainFunction a owl:DatatypeProperty, owl:FunctionalProperty; 
                    rdfs:comment ""@EN; 
                    rdfs:domain ddhub:RunnableFunction; 
@@ -1246,10 +1297,28 @@ ddhub:MaximumFluctuations a owl:DatatypeProperty, owl:FunctionalProperty;
 ddhub:MaximumLimit a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:Limit. 
+ddhub:MeanHigherHighWaterVerticalLocation a owl:Class; 
+                                          rdfs:comment ""@EN; 
+                                          rdfs:subClassOf ddhub:VerticalReferenceLocation. 
+ddhub:MeanHighWaterVerticalLocation a owl:Class; 
+                                    rdfs:comment ""@EN; 
+                                    rdfs:subClassOf ddhub:VerticalReferenceLocation. 
 ddhub:MeaningfulPrecision a owl:DatatypeProperty, owl:FunctionalProperty; 
                           rdfs:comment ""@EN; 
                           rdfs:domain ddhub:MeasurableQuantity; 
                           rdfs:range xsd:double. 
+ddhub:MeanLowerLowWaterVerticalLocation a owl:Class; 
+                                        rdfs:comment ""@EN; 
+                                        rdfs:subClassOf ddhub:VerticalReferenceLocation. 
+ddhub:MeanLowWaterVerticalLocation a owl:Class; 
+                                   rdfs:comment ""@EN; 
+                                   rdfs:subClassOf ddhub:VerticalReferenceLocation. 
+ddhub:MeanSeaLevelVerticalLocation a owl:Class; 
+                                   rdfs:comment ""@EN; 
+                                   rdfs:subClassOf ddhub:VerticalReferenceLocation. 
+ddhub:MeanTideLevelVerticalLocation a owl:Class; 
+                                    rdfs:comment ""@EN; 
+                                    rdfs:subClassOf ddhub:VerticalReferenceLocation. 
 ddhub:MeasurableQuantity a owl:Class; 
                          rdfs:comment "Represents a quantity that allows meaningful comparisons."@EN; 
                          rdfs:subClassOf ddhub:DWISNoun. 
@@ -1424,9 +1493,6 @@ ddhub:OpenChannel a owl:Class;
 ddhub:OpenHole a owl:Class; 
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:Pipe. 
-ddhub:OpenHoleCenterLineFrame a owl:Class; 
-                              rdfs:comment ""@EN; 
-                              rdfs:subClassOf ddhub:OneDimensionalCurviLinearReferenceFrame. 
 ddhub:OperatingCompany a owl:Class; 
                        rdfs:comment "An operating company is an entity that holds the rights to explore, develop, and produce hydrocarbon resources from a particular oil or gas field or lease"@EN; 
                        rdfs:subClassOf ddhub:DataProvider. 
@@ -1460,10 +1526,9 @@ ddhub:PorePressure a owl:Class;
 ddhub:PorePressureGradient a owl:Class; 
                            rdfs:comment ""@EN; 
                            rdfs:subClassOf ddhub:DrillingDataPoint. 
-ddhub:PositiveUpward a owl:DatatypeProperty, owl:FunctionalProperty; 
-                     rdfs:comment ""@EN; 
-                     rdfs:domain ddhub:DrillStringCenterLineFrame, ddhub:WellboreCenterLineFrame; 
-                     rdfs:range xsd:bool. 
+ddhub:PositionReferenceLocation a owl:Class; 
+                                rdfs:comment ""@EN; 
+                                rdfs:subClassOf ddhub:Location. 
 ddhub:PostiveUpward a owl:DatatypeProperty, owl:FunctionalProperty; 
                     rdfs:comment ""@EN; 
                     rdfs:domain ddhub:OneDimensionalReferenceFrame; 
@@ -1549,9 +1614,6 @@ ddhub:RectangularChannel a owl:Class;
 ddhub:ReferenceFrame a owl:Class; 
                      rdfs:comment "Represents a system of coordinates"@EN; 
                      rdfs:subClassOf ddhub:DWISNoun. 
-ddhub:ReferenceLocation a owl:Class; 
-                        rdfs:comment ""@EN; 
-                        rdfs:subClassOf ddhub:Location. 
 ddhub:Resampling a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:TimeBasedTransformation. 
@@ -1576,6 +1638,15 @@ ddhub:Resolution a owl:DatatypeProperty, owl:FunctionalProperty;
 ddhub:ReturnFlowLine a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:Pipe. 
+ddhub:RiemannianManifoldFourDimensionalReferenceFrame a owl:Class; 
+                                                      rdfs:comment ""@EN; 
+                                                      rdfs:subClassOf ddhub:FourDimensionalReferenceFrame. 
+ddhub:RiemannianManifoldThreeDimensionalReferenceFrame a owl:Class; 
+                                                       rdfs:comment ""@EN; 
+                                                       rdfs:subClassOf ddhub:ThreeDimensionalReferenceFrame. 
+ddhub:RiemannianManifoldTwoDimensionalReferenceFrame a owl:Class; 
+                                                     rdfs:comment ""@EN; 
+                                                     rdfs:subClassOf ddhub:TwoDimensionalReferenceFrame. 
 ddhub:Rig a owl:Class; 
           rdfs:comment ""@EN; 
           rdfs:subClassOf ddhub:DrillingEquipment. 
@@ -1604,6 +1675,9 @@ ddhub:ROP a owl:Class;
 ddhub:RotaryTable a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:StringRotationSystem. 
+ddhub:RotaryTableVerticalLocation a owl:Class; 
+                                  rdfs:comment ""@EN; 
+                                  rdfs:subClassOf ddhub:VerticalReferenceLocation. 
 ddhub:RotationalModelling a owl:Class; 
                           rdfs:comment "The model accounts for the rotational movement of some parts of the physical system."@EN; 
                           rdfs:subClassOf ddhub:ModelledDegreeOfFreedom. 
@@ -1617,9 +1691,15 @@ ddhub:SamplingRate a owl:DatatypeProperty, owl:FunctionalProperty;
 ddhub:ScreenString a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:DrillStem. 
+ddhub:ScribeLineAngleLocation a owl:Class; 
+                              rdfs:comment ""@EN; 
+                              rdfs:subClassOf ddhub:AngleReferenceLocation. 
 ddhub:Sea a owl:Class; 
           rdfs:comment ""@EN; 
           rdfs:subClassOf ddhub:DrillingEquipment. 
+ddhub:SeaFloorVerticalLocation a owl:Class; 
+                               rdfs:comment ""@EN; 
+                               rdfs:subClassOf ddhub:VerticalReferenceLocation. 
 ddhub:SemiCircularChannel a owl:Class; 
                           rdfs:comment ""@EN; 
                           rdfs:subClassOf ddhub:OpenChannel. 
@@ -1808,6 +1888,9 @@ ddhub:TopDriveHook a owl:Class;
 ddhub:TopDriveShaft a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:DrillingEquipment. 
+ddhub:TopOfRatHoleLocation a owl:Class; 
+                           rdfs:comment ""@EN; 
+                           rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
 ddhub:TopOfStringForceQuantity a owl:Class; 
                                rdfs:comment ""@EN; 
                                rdfs:subClassOf ddhub:MeasurableQuantity. 
@@ -1816,7 +1899,10 @@ ddhub:TopOfStringPosition a owl:Class;
                           rdfs:subClassOf ddhub:DrillingDataPoint. 
 ddhub:TopOfStringReferenceLocation a owl:Class; 
                                    rdfs:comment ""@EN; 
-                                   rdfs:subClassOf ddhub:Location. 
+                                   rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
+ddhub:TopShoulderAxialLocation a owl:Class; 
+                               rdfs:comment ""@EN; 
+                               rdfs:subClassOf ddhub:AxialReferenceLocation. 
 ddhub:TopsideHydraulicNetwork a owl:Class; 
                               rdfs:comment ""@EN; 
                               rdfs:subClassOf ddhub:HydraulicNetwork. 
@@ -1844,6 +1930,9 @@ ddhub:TravellingBlock a owl:Class;
 ddhub:TripTank a owl:Class; 
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:Pit. 
+ddhub:TrueNorthAzimuthLocation a owl:Class; 
+                               rdfs:comment ""@EN; 
+                               rdfs:subClassOf ddhub:AzimuthReferenceLocation. 
 ddhub:TubingString a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:DrillStem. 
@@ -1865,6 +1954,9 @@ ddhub:Unit a owl:Class;
 ddhub:UnitSystem a owl:Class; 
                  rdfs:comment "A set of associations between measurable quantities and units"@EN; 
                  rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:UpperSideAngleLocation a owl:Class; 
+                             rdfs:comment ""@EN; 
+                             rdfs:subClassOf ddhub:AngleReferenceLocation. 
 ddhub:UserInterface a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:DataFlowNode. 
@@ -1886,18 +1978,15 @@ ddhub:ValuesIndices a owl:DatatypeProperty, owl:FunctionalProperty;
 ddhub:VelocityQuantity a owl:Class; 
                        rdfs:comment ""@EN; 
                        rdfs:subClassOf ddhub:Quantity. 
-ddhub:VerticalDatumReferenceLocation a owl:Class; 
-                                     rdfs:comment ""@EN; 
-                                     rdfs:subClassOf ddhub:Location. 
 ddhub:VerticalDepthFrame a owl:Class; 
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:OneDimensionalCartesianReferenceFrame. 
-ddhub:VerticalElevationReferenceFrame a owl:Class; 
-                                      rdfs:comment ""@EN; 
-                                      rdfs:subClassOf ddhub:OneDimensionalCartesianReferenceFrame. 
 ddhub:VerticalOndulationModelling a owl:Class; 
                                   rdfs:comment "The model accounts for the change of inclination of some parts of the physical system."@EN; 
                                   rdfs:subClassOf ddhub:TangentialModelling. 
+ddhub:VerticalReferenceLocation a owl:Class; 
+                                rdfs:comment ""@EN; 
+                                rdfs:subClassOf ddhub:Location. 
 ddhub:VolumeQuantity a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:Quantity. 
@@ -1918,6 +2007,12 @@ ddhub:WellboreUID a owl:DatatypeProperty, owl:FunctionalProperty;
                   rdfs:comment ""@EN; 
                   rdfs:domain ddhub:WitsMLTimeBasedLogEndPoint; 
                   rdfs:range xsd:string. 
+ddhub:WellHeadPositionLocation a owl:Class; 
+                               rdfs:comment ""@EN; 
+                               rdfs:subClassOf ddhub:PositionReferenceLocation. 
+ddhub:WellHeadVerticalLocation a owl:Class; 
+                               rdfs:comment ""@EN; 
+                               rdfs:subClassOf ddhub:VerticalReferenceLocation. 
 ddhub:WellName a owl:DatatypeProperty, owl:FunctionalProperty; 
                rdfs:comment ""@EN; 
                rdfs:domain ddhub:WitsMLTimeBasedLogEndPoint; 
@@ -1926,6 +2021,12 @@ ddhub:WellUID a owl:DatatypeProperty, owl:FunctionalProperty;
               rdfs:comment ""@EN; 
               rdfs:domain ddhub:WitsMLTimeBasedLogEndPoint; 
               rdfs:range xsd:string. 
+ddhub:WGS84PositionLocation a owl:Class; 
+                            rdfs:comment ""@EN; 
+                            rdfs:subClassOf ddhub:PositionReferenceLocation. 
+ddhub:WGS84VerticalLocation a owl:Class; 
+                            rdfs:comment ""@EN; 
+                            rdfs:subClassOf ddhub:VerticalReferenceLocation. 
 ddhub:WiredPipeTelemetry a owl:Class; 
                          rdfs:comment "A method that allows transfer of downhole data to the surface via electrical connections through the drill string."@EN; 
                          rdfs:subClassOf ddhub:DownHoleTelemetry. 

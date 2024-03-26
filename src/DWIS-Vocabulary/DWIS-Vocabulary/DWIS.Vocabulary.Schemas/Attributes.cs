@@ -81,10 +81,6 @@ public static class Attributes
 	public static string MechanicalElementState_Value_Type = "bool";
 	public static string OneDimensionalReferenceFrame_PostiveUpward = "PostiveUpward";
 	public static string OneDimensionalReferenceFrame_PostiveUpward_Type = "bool";
-	public static string DrillStringCenterLineFrame_PositiveUpward = "PositiveUpward";
-	public static string DrillStringCenterLineFrame_PositiveUpward_Type = "bool";
-	public static string WellboreCenterLineFrame_PositiveUpward = "PositiveUpward";
-	public static string WellboreCenterLineFrame_PositiveUpward_Type = "bool";
 	public static string MeasurableQuantity_MeaningfulPrecision = "MeaningfulPrecision";
 	public static string MeasurableQuantity_MeaningfulPrecision_Type = "double";
 	public static string Quantity_L = "L";

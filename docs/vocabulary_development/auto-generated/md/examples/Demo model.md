@@ -194,7 +194,7 @@
 - Derivation:Derivation_3
 - Transformation:Transformation_7
 - DrillingDataPoint:DrillingDataPoint_24
-- BitReferenceLocation:BitReferenceLocation_0
+- BottomOfStringReferenceLocation:BottomOfStringReferenceLocation_0
 - HoleBottomLocation:HoleBottomLocation_0
 - Transformation:Transformation_8
 - DirectTransformation:DirectTransformation_4
@@ -476,7 +476,7 @@
 - HookPosition_0 IsProvidedBy DataFlowNode_0
 - HookVelocity_0 IsProvidedBy DataFlowNode_0
 - DrillingDataPoint_24 IsOfMeasurableQuantity DepthQuantity_0
-- BitDepth_0 IsPhysicallyLocatedAt BitReferenceLocation_0
+- BitDepth_0 IsPhysicallyLocatedAt BottomOfStringReferenceLocation_0
 - DrillingDataPoint_24 IsPhysicallyLocatedAt HoleBottomLocation_0
 - BitDepth_0 IsTransformationInput Transformation_8
 - HookPosition_0 IsTransformationInput DirectTransformation_4
@@ -488,14 +488,14 @@
 - BitDepth_0 IsTransmittedBy TopSideTelemetry_0
 - DrillingDataPoint_24 IsProvidedBy DataFlowNode_0
 - BitDepth_0 IsProvidedBy DataFlowNode_0
-- BitReferenceLocation_0 HasCoordinates BitDepth_0
-- BitDepth_1 IsPhysicallyLocatedAt BitReferenceLocation_0
+- BottomOfStringReferenceLocation_0 HasCoordinates BitDepth_0
+- BitDepth_1 IsPhysicallyLocatedAt BottomOfStringReferenceLocation_0
 - BitDepth_1 IsOfMeasurableQuantity DepthQuantity_0
 - BitDepth_1 IsTransmittedBy TopSideTelemetry_0
 - HookPosition_0 IsTransformationInput DirectTransformation_5
 - DirectTransformation_5 IsTransformationOutput BitDepth_1
 - BitDepth_1 IsProvidedBy DataFlowNode_0
-- BitReferenceLocation_0 HasCoordinates BitDepth_1
+- BottomOfStringReferenceLocation_0 HasCoordinates BitDepth_1
 - DrillingDataPoint_26 IsOfMeasurableQuantity Resistivity_0
 - DrillingDataPoint_26 IsPhysicallyLocatedAt Location_0
 - DrillingDataPoint_26 IsTransmittedBy MudPulseTelemetry_0
@@ -717,7 +717,7 @@ flowchart TD
 	Derivation_3([Derivation_3]) --> Derivation[[Derivation]]:::typeClass
 	Transformation_7([Transformation_7]) --> Transformation[[Transformation]]:::typeClass
 	DrillingDataPoint_24([DrillingDataPoint_24]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
-	BitReferenceLocation_0([BitReferenceLocation_0]) --> BitReferenceLocation[[BitReferenceLocation]]:::typeClass
+	BottomOfStringReferenceLocation_0([BottomOfStringReferenceLocation_0]) --> BottomOfStringReferenceLocation[[BottomOfStringReferenceLocation]]:::typeClass
 	HoleBottomLocation_0([HoleBottomLocation_0]) --> HoleBottomLocation[[HoleBottomLocation]]:::typeClass
 	Transformation_8([Transformation_8]) --> Transformation[[Transformation]]:::typeClass
 	DirectTransformation_4([DirectTransformation_4]) --> DirectTransformation[[DirectTransformation]]:::typeClass
@@ -999,7 +999,7 @@ flowchart TD
 	 HookPosition_0 -- IsProvidedBy --> DataFlowNode_0 
 	 HookVelocity_0 -- IsProvidedBy --> DataFlowNode_0 
 	 DrillingDataPoint_24 -- IsOfMeasurableQuantity --> DepthQuantity_0 
-	 BitDepth_0 -- IsPhysicallyLocatedAt --> BitReferenceLocation_0 
+	 BitDepth_0 -- IsPhysicallyLocatedAt --> BottomOfStringReferenceLocation_0 
 	 DrillingDataPoint_24 -- IsPhysicallyLocatedAt --> HoleBottomLocation_0 
 	 BitDepth_0 -- IsTransformationInput --> Transformation_8 
 	 HookPosition_0 -- IsTransformationInput --> DirectTransformation_4 
@@ -1011,14 +1011,14 @@ flowchart TD
 	 BitDepth_0 -- IsTransmittedBy --> TopSideTelemetry_0 
 	 DrillingDataPoint_24 -- IsProvidedBy --> DataFlowNode_0 
 	 BitDepth_0 -- IsProvidedBy --> DataFlowNode_0 
-	 BitReferenceLocation_0 -- HasCoordinates --> BitDepth_0 
-	 BitDepth_1 -- IsPhysicallyLocatedAt --> BitReferenceLocation_0 
+	 BottomOfStringReferenceLocation_0 -- HasCoordinates --> BitDepth_0 
+	 BitDepth_1 -- IsPhysicallyLocatedAt --> BottomOfStringReferenceLocation_0 
 	 BitDepth_1 -- IsOfMeasurableQuantity --> DepthQuantity_0 
 	 BitDepth_1 -- IsTransmittedBy --> TopSideTelemetry_0 
 	 HookPosition_0 -- IsTransformationInput --> DirectTransformation_5 
 	 DirectTransformation_5 -- IsTransformationOutput --> BitDepth_1 
 	 BitDepth_1 -- IsProvidedBy --> DataFlowNode_0 
-	 BitReferenceLocation_0 -- HasCoordinates --> BitDepth_1 
+	 BottomOfStringReferenceLocation_0 -- HasCoordinates --> BitDepth_1 
 	 DrillingDataPoint_26 -- IsOfMeasurableQuantity --> Resistivity_0 
 	 DrillingDataPoint_26 -- IsPhysicallyLocatedAt --> Location_0 
 	 DrillingDataPoint_26 -- IsTransmittedBy --> MudPulseTelemetry_0 

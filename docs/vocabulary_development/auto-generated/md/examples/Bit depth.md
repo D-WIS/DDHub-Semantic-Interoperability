@@ -2,7 +2,7 @@
 - DrillingDataPoint:DrillingDataPoint_0
 - DepthQuantity:DepthQuantity_0
 - BitDepth:BitDepth_0
-- BitReferenceLocation:BitReferenceLocation_0
+- BottomOfStringReferenceLocation:BottomOfStringReferenceLocation_0
 - HoleBottomLocation:HoleBottomLocation_0
 - Transformation:Transformation_0
 - HookPosition:HookPosition_0
@@ -14,7 +14,7 @@
 - BitDepth:BitDepth_1
 - DirectTransformation:DirectTransformation_1
 - DrillingDataPoint_0 IsOfMeasurableQuantity DepthQuantity_0
-- BitDepth_0 IsPhysicallyLocatedAt BitReferenceLocation_0
+- BitDepth_0 IsPhysicallyLocatedAt BottomOfStringReferenceLocation_0
 - DrillingDataPoint_0 IsPhysicallyLocatedAt HoleBottomLocation_0
 - BitDepth_0 IsTransformationInput Transformation_0
 - HookPosition_0 IsTransformationInput DirectTransformation_0
@@ -28,15 +28,15 @@
 - DrillingDataPoint_0 IsProvidedBy DataFlowNode_0
 - BitDepth_0 IsProvidedBy DataFlowNode_0
 - HookPosition_0 IsProvidedBy DataFlowNode_0
-- BitReferenceLocation_0 HasCoordinates BitDepth_0
+- BottomOfStringReferenceLocation_0 HasCoordinates BitDepth_0
 - BitDepth_0 IsOfMeasurableQuantity DepthQuantity_0
-- BitDepth_1 IsPhysicallyLocatedAt BitReferenceLocation_0
+- BitDepth_1 IsPhysicallyLocatedAt BottomOfStringReferenceLocation_0
 - BitDepth_1 IsOfMeasurableQuantity DepthQuantity_0
 - BitDepth_1 IsTransmittedBy TopSideTelemetry_0
 - HookPosition_0 IsTransformationInput DirectTransformation_1
 - DirectTransformation_1 IsTransformationOutput BitDepth_1
 - BitDepth_1 IsProvidedBy DataFlowNode_0
-- BitReferenceLocation_0 HasCoordinates BitDepth_1
+- BottomOfStringReferenceLocation_0 HasCoordinates BitDepth_1
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
@@ -44,7 +44,7 @@ flowchart TD
 	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	DepthQuantity_0([DepthQuantity_0]) --> DepthQuantity[[DepthQuantity]]:::typeClass
 	BitDepth_0([BitDepth_0]) --> BitDepth[[BitDepth]]:::typeClass
-	BitReferenceLocation_0([BitReferenceLocation_0]) --> BitReferenceLocation[[BitReferenceLocation]]:::typeClass
+	BottomOfStringReferenceLocation_0([BottomOfStringReferenceLocation_0]) --> BottomOfStringReferenceLocation[[BottomOfStringReferenceLocation]]:::typeClass
 	HoleBottomLocation_0([HoleBottomLocation_0]) --> HoleBottomLocation[[HoleBottomLocation]]:::typeClass
 	Transformation_0([Transformation_0]) --> Transformation[[Transformation]]:::typeClass
 	HookPosition_0([HookPosition_0]) --> HookPosition[[HookPosition]]:::typeClass
@@ -56,7 +56,7 @@ flowchart TD
 	BitDepth_1([BitDepth_1]) --> BitDepth[[BitDepth]]:::typeClass
 	DirectTransformation_1([DirectTransformation_1]) --> DirectTransformation[[DirectTransformation]]:::typeClass
 	 DrillingDataPoint_0 -- IsOfMeasurableQuantity --> DepthQuantity_0 
-	 BitDepth_0 -- IsPhysicallyLocatedAt --> BitReferenceLocation_0 
+	 BitDepth_0 -- IsPhysicallyLocatedAt --> BottomOfStringReferenceLocation_0 
 	 DrillingDataPoint_0 -- IsPhysicallyLocatedAt --> HoleBottomLocation_0 
 	 BitDepth_0 -- IsTransformationInput --> Transformation_0 
 	 HookPosition_0 -- IsTransformationInput --> DirectTransformation_0 
@@ -70,13 +70,13 @@ flowchart TD
 	 DrillingDataPoint_0 -- IsProvidedBy --> DataFlowNode_0 
 	 BitDepth_0 -- IsProvidedBy --> DataFlowNode_0 
 	 HookPosition_0 -- IsProvidedBy --> DataFlowNode_0 
-	 BitReferenceLocation_0 -- HasCoordinates --> BitDepth_0 
+	 BottomOfStringReferenceLocation_0 -- HasCoordinates --> BitDepth_0 
 	 BitDepth_0 -- IsOfMeasurableQuantity --> DepthQuantity_0 
-	 BitDepth_1 -- IsPhysicallyLocatedAt --> BitReferenceLocation_0 
+	 BitDepth_1 -- IsPhysicallyLocatedAt --> BottomOfStringReferenceLocation_0 
 	 BitDepth_1 -- IsOfMeasurableQuantity --> DepthQuantity_0 
 	 BitDepth_1 -- IsTransmittedBy --> TopSideTelemetry_0 
 	 HookPosition_0 -- IsTransformationInput --> DirectTransformation_1 
 	 DirectTransformation_1 -- IsTransformationOutput --> BitDepth_1 
 	 BitDepth_1 -- IsProvidedBy --> DataFlowNode_0 
-	 BitReferenceLocation_0 -- HasCoordinates --> BitDepth_1 
+	 BottomOfStringReferenceLocation_0 -- HasCoordinates --> BitDepth_1 
 ```

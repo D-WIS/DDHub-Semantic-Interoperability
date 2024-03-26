@@ -278,36 +278,71 @@ BoundaryDiscretization,
 StrainWaveBasedDiscretization,
 MassTransferBasedDiscretization,
 Location,
-VerticalDatumReferenceLocation,
-BitReferenceLocation,
+VerticalReferenceLocation,
+WGS84VerticalLocation,
+CasingFlangeVerticalLocation,
+CrownValveVerticalLocation,
+DerrickFloorVerticalLocation,
+KellyBushingVerticalLocation,
+RotaryTableVerticalLocation,
+WellHeadVerticalLocation,
+GroundLevelVerticalLocation,
+SeaFloorVerticalLocation,
+LowestAstronomicalTideVerticalLocation,
+MeanSeaLevelVerticalLocation,
+MeanHigherHighWaterVerticalLocation,
+MeanHighWaterVerticalLocation,
+MeanLowerLowWaterVerticalLocation,
+MeanLowWaterVerticalLocation,
+MeanTideLevelVerticalLocation,
+KickOffVerticalLocation,
+PositionReferenceLocation,
+WGS84PositionLocation,
+WellHeadPositionLocation,
+ClusterPositionLocation,
+LeaseLinePositionLocation,
+AxialReferenceLocation,
+BottomShoulderAxialLocation,
+TopShoulderAxialLocation,
+AbscissaReferenceLocation,
+BottomOfStringReferenceLocation,
 TopOfStringReferenceLocation,
-CasingShoeLocation,
-DrillFloorReferenceLocation,
+LastCasingShoeReferenceLocation,
 HoleBottomLocation,
-LWDLocation,
-ReferenceLocation,
+TopOfRatHoleLocation,
+AngleReferenceLocation,
+ScribeLineAngleLocation,
+GravityHighSideAngleLocation,
+MagneticHighSideAngleLocation,
+UpperSideAngleLocation,
+AzimuthReferenceLocation,
+TrueNorthAzimuthLocation,
+MagneticNorthAzimuthLocation,
+GridNorthAzimuthLocation,
 ReferenceFrame,
-DepthAndAngleFrame,
-FourDimensionalReferenceFrame,
-CurviLinearFrenetSerretReferenceFrame,
 OneDimensionalReferenceFrame,
+AngleReferenceFrame,
 OneDimensionalCartesianReferenceFrame,
 VerticalDepthFrame,
-VerticalElevationReferenceFrame,
 OneDimensionalCurviLinearReferenceFrame,
 DrillStringCenterLineFrame,
-OpenHoleCenterLineFrame,
 WellboreCenterLineFrame,
-ThreeDimensionalReferenceFrame,
-CartesianThreeDimensionalReferenceFrame,
-FrenetSerretReferenceFrame,
-NorthEastTVDFrame,
-CylindricalReferenceFrame,
-SphericalReferenceFrame,
+DepthAndAngleFrame,
 TwoDimensionalReferenceFrame,
 CartesianTwoDimensionalReferenceFrame,
 NorthEastFrame,
 PolarReferenceFrame,
+RiemannianManifoldTwoDimensionalReferenceFrame,
+ThreeDimensionalReferenceFrame,
+CartesianThreeDimensionalReferenceFrame,
+NorthEastTVDFrame,
+FrenetSerretReferenceFrame,
+RiemannianManifoldThreeDimensionalReferenceFrame,
+CylindricalReferenceFrame,
+SphericalReferenceFrame,
+FourDimensionalReferenceFrame,
+CartesianFourDimensionalReferenceFrame,
+RiemannianManifoldFourDimensionalReferenceFrame,
 MeasurableQuantity,
 BitTorqueQuantity,
 BlockAccelerationQuantity,
@@ -634,36 +669,71 @@ SensorUncertainty
 	public static string StrainWaveBasedDiscretization = "StrainWaveBasedDiscretization";
 	public static string MassTransferBasedDiscretization = "MassTransferBasedDiscretization";
 	public static string Location = "Location";
-	public static string VerticalDatumReferenceLocation = "VerticalDatumReferenceLocation";
-	public static string BitReferenceLocation = "BitReferenceLocation";
+	public static string VerticalReferenceLocation = "VerticalReferenceLocation";
+	public static string WGS84VerticalLocation = "WGS84VerticalLocation";
+	public static string CasingFlangeVerticalLocation = "CasingFlangeVerticalLocation";
+	public static string CrownValveVerticalLocation = "CrownValveVerticalLocation";
+	public static string DerrickFloorVerticalLocation = "DerrickFloorVerticalLocation";
+	public static string KellyBushingVerticalLocation = "KellyBushingVerticalLocation";
+	public static string RotaryTableVerticalLocation = "RotaryTableVerticalLocation";
+	public static string WellHeadVerticalLocation = "WellHeadVerticalLocation";
+	public static string GroundLevelVerticalLocation = "GroundLevelVerticalLocation";
+	public static string SeaFloorVerticalLocation = "SeaFloorVerticalLocation";
+	public static string LowestAstronomicalTideVerticalLocation = "LowestAstronomicalTideVerticalLocation";
+	public static string MeanSeaLevelVerticalLocation = "MeanSeaLevelVerticalLocation";
+	public static string MeanHigherHighWaterVerticalLocation = "MeanHigherHighWaterVerticalLocation";
+	public static string MeanHighWaterVerticalLocation = "MeanHighWaterVerticalLocation";
+	public static string MeanLowerLowWaterVerticalLocation = "MeanLowerLowWaterVerticalLocation";
+	public static string MeanLowWaterVerticalLocation = "MeanLowWaterVerticalLocation";
+	public static string MeanTideLevelVerticalLocation = "MeanTideLevelVerticalLocation";
+	public static string KickOffVerticalLocation = "KickOffVerticalLocation";
+	public static string PositionReferenceLocation = "PositionReferenceLocation";
+	public static string WGS84PositionLocation = "WGS84PositionLocation";
+	public static string WellHeadPositionLocation = "WellHeadPositionLocation";
+	public static string ClusterPositionLocation = "ClusterPositionLocation";
+	public static string LeaseLinePositionLocation = "LeaseLinePositionLocation";
+	public static string AxialReferenceLocation = "AxialReferenceLocation";
+	public static string BottomShoulderAxialLocation = "BottomShoulderAxialLocation";
+	public static string TopShoulderAxialLocation = "TopShoulderAxialLocation";
+	public static string AbscissaReferenceLocation = "AbscissaReferenceLocation";
+	public static string BottomOfStringReferenceLocation = "BottomOfStringReferenceLocation";
 	public static string TopOfStringReferenceLocation = "TopOfStringReferenceLocation";
-	public static string CasingShoeLocation = "CasingShoeLocation";
-	public static string DrillFloorReferenceLocation = "DrillFloorReferenceLocation";
+	public static string LastCasingShoeReferenceLocation = "LastCasingShoeReferenceLocation";
 	public static string HoleBottomLocation = "HoleBottomLocation";
-	public static string LWDLocation = "LWDLocation";
-	public static string ReferenceLocation = "ReferenceLocation";
+	public static string TopOfRatHoleLocation = "TopOfRatHoleLocation";
+	public static string AngleReferenceLocation = "AngleReferenceLocation";
+	public static string ScribeLineAngleLocation = "ScribeLineAngleLocation";
+	public static string GravityHighSideAngleLocation = "GravityHighSideAngleLocation";
+	public static string MagneticHighSideAngleLocation = "MagneticHighSideAngleLocation";
+	public static string UpperSideAngleLocation = "UpperSideAngleLocation";
+	public static string AzimuthReferenceLocation = "AzimuthReferenceLocation";
+	public static string TrueNorthAzimuthLocation = "TrueNorthAzimuthLocation";
+	public static string MagneticNorthAzimuthLocation = "MagneticNorthAzimuthLocation";
+	public static string GridNorthAzimuthLocation = "GridNorthAzimuthLocation";
 	public static string ReferenceFrame = "ReferenceFrame";
-	public static string DepthAndAngleFrame = "DepthAndAngleFrame";
-	public static string FourDimensionalReferenceFrame = "FourDimensionalReferenceFrame";
-	public static string CurviLinearFrenetSerretReferenceFrame = "CurviLinearFrenetSerretReferenceFrame";
 	public static string OneDimensionalReferenceFrame = "OneDimensionalReferenceFrame";
+	public static string AngleReferenceFrame = "AngleReferenceFrame";
 	public static string OneDimensionalCartesianReferenceFrame = "OneDimensionalCartesianReferenceFrame";
 	public static string VerticalDepthFrame = "VerticalDepthFrame";
-	public static string VerticalElevationReferenceFrame = "VerticalElevationReferenceFrame";
 	public static string OneDimensionalCurviLinearReferenceFrame = "OneDimensionalCurviLinearReferenceFrame";
 	public static string DrillStringCenterLineFrame = "DrillStringCenterLineFrame";
-	public static string OpenHoleCenterLineFrame = "OpenHoleCenterLineFrame";
 	public static string WellboreCenterLineFrame = "WellboreCenterLineFrame";
-	public static string ThreeDimensionalReferenceFrame = "ThreeDimensionalReferenceFrame";
-	public static string CartesianThreeDimensionalReferenceFrame = "CartesianThreeDimensionalReferenceFrame";
-	public static string FrenetSerretReferenceFrame = "FrenetSerretReferenceFrame";
-	public static string NorthEastTVDFrame = "NorthEastTVDFrame";
-	public static string CylindricalReferenceFrame = "CylindricalReferenceFrame";
-	public static string SphericalReferenceFrame = "SphericalReferenceFrame";
+	public static string DepthAndAngleFrame = "DepthAndAngleFrame";
 	public static string TwoDimensionalReferenceFrame = "TwoDimensionalReferenceFrame";
 	public static string CartesianTwoDimensionalReferenceFrame = "CartesianTwoDimensionalReferenceFrame";
 	public static string NorthEastFrame = "NorthEastFrame";
 	public static string PolarReferenceFrame = "PolarReferenceFrame";
+	public static string RiemannianManifoldTwoDimensionalReferenceFrame = "RiemannianManifoldTwoDimensionalReferenceFrame";
+	public static string ThreeDimensionalReferenceFrame = "ThreeDimensionalReferenceFrame";
+	public static string CartesianThreeDimensionalReferenceFrame = "CartesianThreeDimensionalReferenceFrame";
+	public static string NorthEastTVDFrame = "NorthEastTVDFrame";
+	public static string FrenetSerretReferenceFrame = "FrenetSerretReferenceFrame";
+	public static string RiemannianManifoldThreeDimensionalReferenceFrame = "RiemannianManifoldThreeDimensionalReferenceFrame";
+	public static string CylindricalReferenceFrame = "CylindricalReferenceFrame";
+	public static string SphericalReferenceFrame = "SphericalReferenceFrame";
+	public static string FourDimensionalReferenceFrame = "FourDimensionalReferenceFrame";
+	public static string CartesianFourDimensionalReferenceFrame = "CartesianFourDimensionalReferenceFrame";
+	public static string RiemannianManifoldFourDimensionalReferenceFrame = "RiemannianManifoldFourDimensionalReferenceFrame";
 	public static string MeasurableQuantity = "MeasurableQuantity";
 	public static string BitTorqueQuantity = "BitTorqueQuantity";
 	public static string BlockAccelerationQuantity = "BlockAccelerationQuantity";

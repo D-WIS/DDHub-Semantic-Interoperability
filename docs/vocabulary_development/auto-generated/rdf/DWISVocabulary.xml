@@ -87,9 +87,6 @@
     <owl:onClass rdf:resource="http://ddhub.no/MechanicalElementState" />
     <owl:onProperty rdf:resource="http://ddhub.no/PostiveUpward" />
     <owl:onClass rdf:resource="http://ddhub.no/OneDimensionalReferenceFrame" />
-    <owl:onProperty rdf:resource="http://ddhub.no/PositiveUpward" />
-    <owl:onClass rdf:resource="http://ddhub.no/DrillStringCenterLineFrame" />
-    <owl:onClass rdf:resource="http://ddhub.no/WellboreCenterLineFrame" />
     <owl:onProperty rdf:resource="http://ddhub.no/MeaningfulPrecision" />
     <owl:onClass rdf:resource="http://ddhub.no/MeasurableQuantity" />
     <owl:onProperty rdf:resource="http://ddhub.no/L" />
@@ -1690,51 +1687,249 @@
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
     <rdfs:comment xml:lang="EN">Physical location for a signal. Refers to: 1) a reference frame (via the HasReferenceFrame relation), that works as a system of coordinates 2) an origin (of type Location) via the HasReferenceFrameOrigin relation.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/VerticalDatumReferenceLocation">
+  <rdf:Description rdf:about="http://ddhub.no/VerticalReferenceLocation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Location" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/BitReferenceLocation">
+  <rdf:Description rdf:about="http://ddhub.no/WGS84VerticalLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/VerticalReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/CasingFlangeVerticalLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/VerticalReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/CrownValveVerticalLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/VerticalReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DerrickFloorVerticalLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/VerticalReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/KellyBushingVerticalLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/VerticalReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RotaryTableVerticalLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/VerticalReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/WellHeadVerticalLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/VerticalReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GroundLevelVerticalLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/VerticalReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SeaFloorVerticalLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/VerticalReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/LowestAstronomicalTideVerticalLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/VerticalReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MeanSeaLevelVerticalLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/VerticalReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MeanHigherHighWaterVerticalLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/VerticalReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MeanHighWaterVerticalLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/VerticalReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MeanLowerLowWaterVerticalLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/VerticalReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MeanLowWaterVerticalLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/VerticalReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MeanTideLevelVerticalLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/VerticalReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/KickOffVerticalLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/VerticalReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PositionReferenceLocation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Location" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/WGS84PositionLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PositionReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/WellHeadPositionLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PositionReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ClusterPositionLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PositionReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/LeaseLinePositionLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PositionReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AxialReferenceLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Location" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/BottomShoulderAxialLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/AxialReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TopShoulderAxialLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/AxialReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AbscissaReferenceLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Location" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/BottomOfStringReferenceLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/AbscissaReferenceLocation" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/TopOfStringReferenceLocation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Location" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/AbscissaReferenceLocation" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/CasingShoeLocation">
+  <rdf:Description rdf:about="http://ddhub.no/LastCasingShoeReferenceLocation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Location" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DrillFloorReferenceLocation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Location" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/AbscissaReferenceLocation" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/HoleBottomLocation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Location" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/AbscissaReferenceLocation" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/LWDLocation">
+  <rdf:Description rdf:about="http://ddhub.no/TopOfRatHoleLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/AbscissaReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AngleReferenceLocation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Location" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ReferenceLocation">
+  <rdf:Description rdf:about="http://ddhub.no/ScribeLineAngleLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/AngleReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GravityHighSideAngleLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/AngleReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MagneticHighSideAngleLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/AngleReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/UpperSideAngleLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/AngleReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AzimuthReferenceLocation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Location" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TrueNorthAzimuthLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/AzimuthReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MagneticNorthAzimuthLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/AzimuthReferenceLocation" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GridNorthAzimuthLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/AzimuthReferenceLocation" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
@@ -1743,27 +1938,15 @@
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
     <rdfs:comment xml:lang="EN">Represents a system of coordinates</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DepthAndAngleFrame">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/ReferenceFrame" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/FourDimensionalReferenceFrame">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/ReferenceFrame" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/CurviLinearFrenetSerretReferenceFrame">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/FourDimensionalReferenceFrame" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/OneDimensionalReferenceFrame">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/ReferenceFrame" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AngleReferenceFrame">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/OneDimensionalReferenceFrame" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
@@ -1774,12 +1957,6 @@
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/VerticalDepthFrame">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/OneDimensionalCartesianReferenceFrame" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/VerticalElevationReferenceFrame">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/OneDimensionalCartesianReferenceFrame" />
     <rdfs:comment xml:lang="EN">
@@ -1797,51 +1974,15 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/OpenHoleCenterLineFrame">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/OneDimensionalCurviLinearReferenceFrame" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/WellboreCenterLineFrame">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/OneDimensionalCurviLinearReferenceFrame" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ThreeDimensionalReferenceFrame">
+  <rdf:Description rdf:about="http://ddhub.no/DepthAndAngleFrame">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/ReferenceFrame" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/CartesianThreeDimensionalReferenceFrame">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/ThreeDimensionalReferenceFrame" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/FrenetSerretReferenceFrame">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/CartesianThreeDimensionalReferenceFrame" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/NorthEastTVDFrame">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/CartesianThreeDimensionalReferenceFrame" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/CylindricalReferenceFrame">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/ThreeDimensionalReferenceFrame" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SphericalReferenceFrame">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/ThreeDimensionalReferenceFrame" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
@@ -1866,6 +2007,72 @@
   <rdf:Description rdf:about="http://ddhub.no/PolarReferenceFrame">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/TwoDimensionalReferenceFrame" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RiemannianManifoldTwoDimensionalReferenceFrame">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/TwoDimensionalReferenceFrame" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ThreeDimensionalReferenceFrame">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ReferenceFrame" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/CartesianThreeDimensionalReferenceFrame">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ThreeDimensionalReferenceFrame" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/NorthEastTVDFrame">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CartesianThreeDimensionalReferenceFrame" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/FrenetSerretReferenceFrame">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ThreeDimensionalReferenceFrame" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RiemannianManifoldThreeDimensionalReferenceFrame">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ThreeDimensionalReferenceFrame" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/CylindricalReferenceFrame">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ThreeDimensionalReferenceFrame" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SphericalReferenceFrame">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ThreeDimensionalReferenceFrame" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/FourDimensionalReferenceFrame">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ReferenceFrame" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/CartesianFourDimensionalReferenceFrame">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/FourDimensionalReferenceFrame" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RiemannianManifoldFourDimensionalReferenceFrame">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/FourDimensionalReferenceFrame" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
@@ -2459,15 +2666,6 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/OneDimensionalReferenceFrame" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#bool" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PositiveUpward">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillStringCenterLineFrame" />
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#bool" />
-    <rdfs:domain rdf:resource="http://ddhub.no/WellboreCenterLineFrame" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>

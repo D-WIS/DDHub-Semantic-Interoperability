@@ -6,9 +6,9 @@
 - LowPassFilter:SPP_LowPassFilter
 - DataProvider:DrillingControlSystem_0
 - Location:StandPipeLocation
-- DrillFloorReferenceLocation:DrillFloorLocation
+- DerrickFloorVerticalLocation:DerrickFloorVerticalLocation
 - DrillingDataPoint:StandPipeElevation
-- VerticalElevationReferenceFrame:ElevationReferenceFrame
+- VerticalDepthFrame:ElevationReferenceFrame
 - SPP_0 BelongsToClass SPP
 - SPP_0 BelongsToClass Measurement
 - SPP_0 IsProvidedBy DrillingControlSystem_0
@@ -20,7 +20,7 @@
 - SPP_0 IsPhysicallyLocatedAt StandPipeLocation
 - StandPipeLocation HasCoordinates StandPipeElevation
 - StandPipeLocation HasReferenceFrame ElevationReferenceFrame
-- ElevationReferenceFrame HasReferenceFrameOrigin DrillFloorLocation
+- ElevationReferenceFrame HasReferenceFrameOrigin DerrickFloorVerticalLocation
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
@@ -32,9 +32,9 @@ flowchart TD
 	SPP_LowPassFilter([SPP_LowPassFilter]) --> LowPassFilter[[LowPassFilter]]:::typeClass
 	DrillingControlSystem_0([DrillingControlSystem_0]) --> DataProvider[[DataProvider]]:::typeClass
 	StandPipeLocation([StandPipeLocation]) --> Location[[Location]]:::typeClass
-	DrillFloorLocation([DrillFloorLocation]) --> DrillFloorReferenceLocation[[DrillFloorReferenceLocation]]:::typeClass
+	DerrickFloorVerticalLocation([DerrickFloorVerticalLocation]) --> DerrickFloorVerticalLocation[[DerrickFloorVerticalLocation]]:::typeClass
 	StandPipeElevation([StandPipeElevation]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
-	ElevationReferenceFrame([ElevationReferenceFrame]) --> VerticalElevationReferenceFrame[[VerticalElevationReferenceFrame]]:::typeClass
+	ElevationReferenceFrame([ElevationReferenceFrame]) --> VerticalDepthFrame[[VerticalDepthFrame]]:::typeClass
 	 SPP_0 -- IsProvidedBy --> DrillingControlSystem_0 
 	 SPP_0 -- IsHydraulicallyLocatedAt --> StandPipe_0 
 	 SPP_0 -- IsOfMeasurableQuantity --> SPPQuantity_0 
@@ -44,7 +44,7 @@ flowchart TD
 	 SPP_0 -- IsPhysicallyLocatedAt --> StandPipeLocation 
 	 StandPipeLocation -- HasCoordinates --> StandPipeElevation 
 	 StandPipeLocation -- HasReferenceFrame --> ElevationReferenceFrame 
-	 ElevationReferenceFrame -- HasReferenceFrameOrigin --> DrillFloorLocation 
+	 ElevationReferenceFrame -- HasReferenceFrameOrigin --> DerrickFloorVerticalLocation 
 	 SPP_0 -- BelongsToClass --> SPP((SPP)):::classClass
 	 SPP_0 -- BelongsToClass --> Measurement((Measurement)):::classClass
 ```

@@ -6,9 +6,9 @@
 - LowPassFilter:SPP_LowPassFilter
 - DataProvider:DrillingControlSystem_0
 - Location:StandPipeLocation
-- DrillFloorReferenceLocation:DrillFloorLocation
+- DerrickFloorVerticalLocation:DrillFloorLocation
 - DrillingDataPoint:StandPipeElevation
-- VerticalElevationReferenceFrame:ElevationReferenceFrame
+- VerticalDepthFrame:ElevationReferenceFrame
 - DrillingDataPoint:SPP_1
 - DataProvider:DrillingOptimizingService_0
 - MovingAverage:MovingAverage1
@@ -50,9 +50,9 @@ flowchart TD
 	SPP_LowPassFilter([SPP_LowPassFilter]) --> LowPassFilter[[LowPassFilter]]:::typeClass
 	DrillingControlSystem_0([DrillingControlSystem_0]) --> DataProvider[[DataProvider]]:::typeClass
 	StandPipeLocation([StandPipeLocation]) --> Location[[Location]]:::typeClass
-	DrillFloorLocation([DrillFloorLocation]) --> DrillFloorReferenceLocation[[DrillFloorReferenceLocation]]:::typeClass
+	DrillFloorLocation([DrillFloorLocation]) --> DerrickFloorVerticalLocation[[DerrickFloorVerticalLocation]]:::typeClass
 	StandPipeElevation([StandPipeElevation]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
-	ElevationReferenceFrame([ElevationReferenceFrame]) --> VerticalElevationReferenceFrame[[VerticalElevationReferenceFrame]]:::typeClass
+	ElevationReferenceFrame([ElevationReferenceFrame]) --> VerticalDepthFrame[[VerticalDepthFrame]]:::typeClass
 	SPP_1([SPP_1]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	DrillingOptimizingService_0([DrillingOptimizingService_0]) --> DataProvider[[DataProvider]]:::typeClass
 	MovingAverage1([MovingAverage1]) --> MovingAverage[[MovingAverage]]:::typeClass
