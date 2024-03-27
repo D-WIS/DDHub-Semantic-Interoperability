@@ -198,6 +198,9 @@ ddhub:CasingFlangeVerticalLocation a owl:Class;
 ddhub:CasingString a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:DrillStem. 
+ddhub:CavingsComponent a owl:Class; 
+                       rdfs:comment ""@EN; 
+                       rdfs:subClassOf ddhub:FormationSolidComponent. 
 ddhub:CementingServiceCompany a owl:Class; 
                               rdfs:comment ""@EN; 
                               rdfs:subClassOf ddhub:ServiceCompany. 
@@ -234,6 +237,11 @@ ddhub:ComputedData a owl:Class;
 ddhub:ComputedState a owl:Class; 
                     rdfs:comment "A state represents the current configuation of a system."@EN; 
                     rdfs:subClassOf ddhub:ComputationUnit. 
+ddhub:ConcernsAFluidComponent a owl:ObjectProperty; 
+                              rdfs:comment ""@EN; 
+                              rdfs:domain ddhub:DrillingDataPoint; 
+                              rdfs:range ddhub:FluidComponent; 
+                              rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:ConnectedCondition a owl:Class; 
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:ValidityCondition. 
@@ -272,6 +280,9 @@ ddhub:CutOffFrequency a owl:DatatypeProperty, owl:FunctionalProperty;
                       rdfs:comment ""@EN; 
                       rdfs:domain ddhub:HighPassFilter, ddhub:LowPassFilter; 
                       rdfs:range xsd:double. 
+ddhub:CuttingsComponent a owl:Class; 
+                        rdfs:comment ""@EN; 
+                        rdfs:subClassOf ddhub:FormationSolidComponent. 
 ddhub:CylindricalReferenceFrame a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:ThreeDimensionalReferenceFrame. 
@@ -372,9 +383,15 @@ ddhub:DrillingDataPoint a owl:Class;
 ddhub:DrillingEquipment a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:DrillingFluidGasComponent a owl:Class; 
+                                rdfs:comment ""@EN; 
+                                rdfs:subClassOf ddhub:GasComponent. 
 ddhub:DrillingFluidProvider a owl:Class; 
                             rdfs:comment "A drilling fluid provider is a company that provides and maintains the drilling fluids during well construction."@EN; 
                             rdfs:subClassOf ddhub:ServiceCompany. 
+ddhub:DrillingFluidSolidComponent a owl:Class; 
+                                  rdfs:comment ""@EN; 
+                                  rdfs:subClassOf ddhub:SolidComponent. 
 ddhub:DrillingProgram a owl:Class; 
                       rdfs:comment ""@EN; 
                       rdfs:subClassOf ddhub:Plan. 
@@ -476,6 +493,9 @@ ddhub:FlowRateOut a owl:Class;
 ddhub:FlowRateQuantity a owl:Class; 
                        rdfs:comment ""@EN; 
                        rdfs:subClassOf ddhub:MeasurableQuantity. 
+ddhub:FluidComponent a owl:Class; 
+                     rdfs:comment ""@EN; 
+                     rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:FluidDensityInQuantity a owl:Class; 
                              rdfs:comment ""@EN; 
                              rdfs:subClassOf ddhub:MeasurableQuantity. 
@@ -491,9 +511,15 @@ ddhub:ForceQuantity a owl:Class;
 ddhub:ForceToLoadTransformation a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:DirectTransformation. 
+ddhub:FormationGasComponent a owl:Class; 
+                            rdfs:comment ""@EN; 
+                            rdfs:subClassOf ddhub:GasComponent. 
 ddhub:FormationPorosityQuantity a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:MeasurableQuantity. 
+ddhub:FormationSolidComponent a owl:Class; 
+                              rdfs:comment ""@EN; 
+                              rdfs:subClassOf ddhub:SolidComponent. 
 ddhub:FourDimensionalReferenceFrame a owl:Class; 
                                     rdfs:comment ""@EN; 
                                     rdfs:subClassOf ddhub:ReferenceFrame. 
@@ -516,6 +542,9 @@ ddhub:FullScale a owl:DatatypeProperty, owl:FunctionalProperty;
 ddhub:FullScaleUncertainty a owl:Class; 
                            rdfs:comment "The uncertainty on the signal is described as a Gaussian distribution with a standard deviation that is calculated using a proportion of the maximum range of the signal. The `Fullscale` or `ProportionError` can either be defined as attribute values, for example when they have fixed values, or using facts utilizing the verbs `HasFullScale` or repectively `HasProportionError` when these values may change through time."@EN; 
                            rdfs:subClassOf ddhub:GaussianUncertainty. 
+ddhub:GasComponent a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:FluidComponent. 
 ddhub:GasFlowRate a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:DrillingDataPoint. 
@@ -748,6 +777,9 @@ ddhub:HasValue a owl:ObjectProperty;
                rdfs:domain ddhub:DrillingDataPoint; 
                rdfs:range ddhub:DrillingSignal; 
                rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:HighGravitySolidComponent a owl:Class; 
+                                rdfs:comment ""@EN; 
+                                rdfs:subClassOf ddhub:DrillingFluidSolidComponent. 
 ddhub:HighPassFilter a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:Filter. 
@@ -1228,6 +1260,9 @@ ddhub:Limit a owl:Class;
 ddhub:Liner a owl:Class; 
             rdfs:comment ""@EN; 
             rdfs:subClassOf ddhub:DrillStem. 
+ddhub:LiquidComponent a owl:Class; 
+                      rdfs:comment ""@EN; 
+                      rdfs:subClassOf ddhub:FluidComponent. 
 ddhub:Location a owl:Class; 
                rdfs:comment "Physical location for a signal. Refers to: 1) a reference frame (via the HasReferenceFrame relation), that works as a system of coordinates 2) an origin (of type Location) via the HasReferenceFrameOrigin relation."@EN; 
                rdfs:subClassOf ddhub:DWISNoun. 
@@ -1245,6 +1280,9 @@ ddhub:LogUID a owl:DatatypeProperty, owl:FunctionalProperty;
 ddhub:LowestAstronomicalTideVerticalLocation a owl:Class; 
                                              rdfs:comment ""@EN; 
                                              rdfs:subClassOf ddhub:VerticalReferenceLocation. 
+ddhub:LowGravitySolidComponent a owl:Class; 
+                               rdfs:comment ""@EN; 
+                               rdfs:subClassOf ddhub:DrillingFluidSolidComponent. 
 ddhub:LowPassFilter a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:Filter. 
@@ -1484,6 +1522,9 @@ ddhub:NumberOfSamples a owl:DatatypeProperty, owl:FunctionalProperty;
                       rdfs:comment ""@EN; 
                       rdfs:domain ddhub:NumberOfSampleMovingAverage; 
                       rdfs:range xsd:int. 
+ddhub:OilComponent a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:LiquidComponent. 
 ddhub:OneDimensionalCartesianReferenceFrame a owl:Class; 
                                             rdfs:comment ""@EN; 
                                             rdfs:subClassOf ddhub:OneDimensionalReferenceFrame. 
@@ -1755,6 +1796,9 @@ ddhub:SlugPit a owl:Class;
 ddhub:SOEFunction a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:ProtectionFunction. 
+ddhub:SolidComponent a owl:Class; 
+                     rdfs:comment ""@EN; 
+                     rdfs:subClassOf ddhub:FluidComponent. 
 ddhub:SphericalReferenceFrame a owl:Class; 
                               rdfs:comment ""@EN; 
                               rdfs:subClassOf ddhub:ThreeDimensionalReferenceFrame. 
@@ -2005,6 +2049,9 @@ ddhub:VolumetricFlowateRateOfChangeQuantity a owl:Class;
 ddhub:VolumetricRateQuantity a owl:Class; 
                              rdfs:comment ""@EN; 
                              rdfs:subClassOf ddhub:Quantity. 
+ddhub:WaterComponent a owl:Class; 
+                     rdfs:comment ""@EN; 
+                     rdfs:subClassOf ddhub:LiquidComponent. 
 ddhub:WellboreCenterLineFrame a owl:Class; 
                               rdfs:comment ""@EN; 
                               rdfs:subClassOf ddhub:OneDimensionalCurviLinearReferenceFrame. 

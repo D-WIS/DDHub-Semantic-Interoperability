@@ -249,6 +249,20 @@ MudMixing,
 HydraulicNetwork,
 DownholeHydraulicNetwork,
 TopsideHydraulicNetwork,
+FluidComponent,
+LiquidComponent,
+OilComponent,
+WaterComponent,
+GasComponent,
+FormationGasComponent,
+DrillingFluidGasComponent,
+SolidComponent,
+DrillingFluidSolidComponent,
+HighGravitySolidComponent,
+LowGravitySolidComponent,
+FormationSolidComponent,
+CuttingsComponent,
+CavingsComponent,
 DrillStemMechanicalModel,
 MechanicalStiffnessType,
 MechanicalSoftModel,
@@ -643,6 +657,20 @@ SensorUncertainty
 	public static string HydraulicNetwork = "HydraulicNetwork";
 	public static string DownholeHydraulicNetwork = "DownholeHydraulicNetwork";
 	public static string TopsideHydraulicNetwork = "TopsideHydraulicNetwork";
+	public static string FluidComponent = "FluidComponent";
+	public static string LiquidComponent = "LiquidComponent";
+	public static string OilComponent = "OilComponent";
+	public static string WaterComponent = "WaterComponent";
+	public static string GasComponent = "GasComponent";
+	public static string FormationGasComponent = "FormationGasComponent";
+	public static string DrillingFluidGasComponent = "DrillingFluidGasComponent";
+	public static string SolidComponent = "SolidComponent";
+	public static string DrillingFluidSolidComponent = "DrillingFluidSolidComponent";
+	public static string HighGravitySolidComponent = "HighGravitySolidComponent";
+	public static string LowGravitySolidComponent = "LowGravitySolidComponent";
+	public static string FormationSolidComponent = "FormationSolidComponent";
+	public static string CuttingsComponent = "CuttingsComponent";
+	public static string CavingsComponent = "CavingsComponent";
 	public static string DrillStemMechanicalModel = "DrillStemMechanicalModel";
 	public static string MechanicalStiffnessType = "MechanicalStiffnessType";
 	public static string MechanicalSoftModel = "MechanicalSoftModel";

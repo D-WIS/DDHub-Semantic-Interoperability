@@ -94,6 +94,7 @@ HasLeftBranch,
 HasRightBranch,
 HasStartJunction,
 StartsHydraulicBranchDecomposition,
+ConcernsAFluidComponent,
 IsOfMechanicalStiffnessType,
 IsAMechanicalRepresentationFor,
 HasMechanicalState,
@@ -219,6 +220,7 @@ HasUncertaintyHistogram
 	public static string HasRightBranch = "HasRightBranch";
 	public static string HasStartJunction = "HasStartJunction";
 	public static string StartsHydraulicBranchDecomposition = "StartsHydraulicBranchDecomposition";
+	public static string ConcernsAFluidComponent = "ConcernsAFluidComponent";
 	public static string IsOfMechanicalStiffnessType = "IsOfMechanicalStiffnessType";
 	public static string IsAMechanicalRepresentationFor = "IsAMechanicalRepresentationFor";
 	public static string HasMechanicalState = "HasMechanicalState";

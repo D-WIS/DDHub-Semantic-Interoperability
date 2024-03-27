@@ -180,6 +180,118 @@
 - Description: 
 - Examples:
 - Definition set: Hydraulics
+## FluidComponent <!-- NOUN -->
+- Display name: FluidComponent
+- Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## LiquidComponent <!-- NOUN -->
+- Display name: LiquidComponent
+- Parent class: [FluidComponent](./Hydraulics.md#FluidComponent)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## OilComponent <!-- NOUN -->
+- Display name: OilComponent
+- Parent class: [LiquidComponent](./Hydraulics.md#LiquidComponent)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## WaterComponent <!-- NOUN -->
+- Display name: WaterComponent
+- Parent class: [LiquidComponent](./Hydraulics.md#LiquidComponent)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## GasComponent <!-- NOUN -->
+- Display name: GasComponent
+- Parent class: [FluidComponent](./Hydraulics.md#FluidComponent)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## FormationGasComponent <!-- NOUN -->
+- Display name: FormationGasComponent
+- Parent class: [GasComponent](./Hydraulics.md#GasComponent)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## DrillingFluidGasComponent <!-- NOUN -->
+- Display name: DrillingFluidGasComponent
+- Parent class: [GasComponent](./Hydraulics.md#GasComponent)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## SolidComponent <!-- NOUN -->
+- Display name: SolidComponent
+- Parent class: [FluidComponent](./Hydraulics.md#FluidComponent)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## DrillingFluidSolidComponent <!-- NOUN -->
+- Display name: DrillingFluidSolidComponent
+- Parent class: [SolidComponent](./Hydraulics.md#SolidComponent)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## HighGravitySolidComponent <!-- NOUN -->
+- Display name: HighGravitySolidComponent
+- Parent class: [DrillingFluidSolidComponent](./Hydraulics.md#DrillingFluidSolidComponent)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## LowGravitySolidComponent <!-- NOUN -->
+- Display name: LowGravitySolidComponent
+- Parent class: [DrillingFluidSolidComponent](./Hydraulics.md#DrillingFluidSolidComponent)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## FormationSolidComponent <!-- NOUN -->
+- Display name: FormationSolidComponent
+- Parent class: [SolidComponent](./Hydraulics.md#SolidComponent)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## CuttingsComponent <!-- NOUN -->
+- Display name: CuttingsComponent
+- Parent class: [FormationSolidComponent](./Hydraulics.md#FormationSolidComponent)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## CavingsComponent <!-- NOUN -->
+- Display name: CavingsComponent
+- Parent class: [FormationSolidComponent](./Hydraulics.md#FormationSolidComponent)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
 # Verbs
 ## EndsHydraulicBranchDecomposition <!-- VERB -->
 - Display name: EndsHydraulicBranchDecomposition
@@ -466,6 +578,16 @@
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
+## ConcernsAFluidComponent <!-- VERB -->
+- Display name: ConcernsAFluidComponent
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [FluidComponent](./Hydraulics.md#FluidComponent)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
