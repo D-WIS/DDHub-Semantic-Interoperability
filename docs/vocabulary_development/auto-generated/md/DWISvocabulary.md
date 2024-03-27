@@ -1444,9 +1444,17 @@
 - Description: 
 - Examples:
 - Definition set: DrillingEquipment
+## BlowOutPreventerElement <!-- NOUN -->
+- Display name: BlowOutPreventerElement
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
 ## AnnularPreventer <!-- NOUN -->
 - Display name: AnnularPreventer
-- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Parent class: [BlowOutPreventerElement](#BlowOutPreventerElement)
 - Attributes:
 - Specialization:
 - Description: 
@@ -1454,7 +1462,7 @@
 - Definition set: DrillingEquipment
 ## BOPRam <!-- NOUN -->
 - Display name: BOPRam
-- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Parent class: [BlowOutPreventerElement](#BlowOutPreventerElement)
 - Attributes:
 - Specialization:
 - Description: 
@@ -1462,6 +1470,14 @@
 - Definition set: DrillingEquipment
 ## BOPShearRam <!-- NOUN -->
 - Display name: BOPShearRam
+- Parent class: [BlowOutPreventerElement](#BlowOutPreventerElement)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## DrillStemTerminator <!-- NOUN -->
+- Display name: DrillStemTerminator
 - Parent class: [DrillingEquipment](#DrillingEquipment)
 - Attributes:
 - Specialization:
@@ -1470,7 +1486,23 @@
 - Definition set: DrillingEquipment
 ## Bit <!-- NOUN -->
 - Display name: Bit
-- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Parent class: [DrillStemTerminator](#DrillStemTerminator)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## BullNose <!-- NOUN -->
+- Display name: BullNose
+- Parent class: [DrillStemTerminator](#DrillStemTerminator)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## CasingShoe <!-- NOUN -->
+- Display name: CasingShoe
+- Parent class: [DrillStemTerminator](#DrillStemTerminator)
 - Attributes:
 - Specialization:
 - Description: 
@@ -1844,9 +1876,25 @@
 - Description: 
 - Examples:
 - Definition set: DrillingEquipment
+## HoleEnlargementElement <!-- NOUN -->
+- Display name: HoleEnlargementElement
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
 ## UnderReamer <!-- NOUN -->
 - Display name: UnderReamer
-- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Parent class: [HoleEnlargementElement](#HoleEnlargementElement)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## HoleOpener <!-- NOUN -->
+- Display name: HoleOpener
+- Parent class: [HoleEnlargementElement](#HoleEnlargementElement)
 - Attributes:
 - Specialization:
 - Description: 

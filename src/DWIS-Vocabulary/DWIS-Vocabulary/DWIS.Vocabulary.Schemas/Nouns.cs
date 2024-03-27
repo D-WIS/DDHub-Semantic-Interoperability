@@ -169,10 +169,14 @@ BellNipple,
 Diverter,
 FlowLine,
 BlowOutPreventerStack,
+BlowOutPreventerElement,
 AnnularPreventer,
 BOPRam,
 BOPShearRam,
+DrillStemTerminator,
 Bit,
+BullNose,
+CasingShoe,
 Dolly,
 DollyRail,
 DrillLine,
@@ -219,7 +223,9 @@ TopDrive,
 TopDriveBody,
 TopDriveHook,
 TopDriveShaft,
+HoleEnlargementElement,
 UnderReamer,
+HoleOpener,
 HoistingSystem,
 Rig,
 Sea,
@@ -577,10 +583,14 @@ SensorUncertainty
 	public static string Diverter = "Diverter";
 	public static string FlowLine = "FlowLine";
 	public static string BlowOutPreventerStack = "BlowOutPreventerStack";
+	public static string BlowOutPreventerElement = "BlowOutPreventerElement";
 	public static string AnnularPreventer = "AnnularPreventer";
 	public static string BOPRam = "BOPRam";
 	public static string BOPShearRam = "BOPShearRam";
+	public static string DrillStemTerminator = "DrillStemTerminator";
 	public static string Bit = "Bit";
+	public static string BullNose = "BullNose";
+	public static string CasingShoe = "CasingShoe";
 	public static string Dolly = "Dolly";
 	public static string DollyRail = "DollyRail";
 	public static string DrillLine = "DrillLine";
@@ -627,7 +637,9 @@ SensorUncertainty
 	public static string TopDriveBody = "TopDriveBody";
 	public static string TopDriveHook = "TopDriveHook";
 	public static string TopDriveShaft = "TopDriveShaft";
+	public static string HoleEnlargementElement = "HoleEnlargementElement";
 	public static string UnderReamer = "UnderReamer";
+	public static string HoleOpener = "HoleOpener";
 	public static string HoistingSystem = "HoistingSystem";
 	public static string Rig = "Rig";
 	public static string Sea = "Sea";

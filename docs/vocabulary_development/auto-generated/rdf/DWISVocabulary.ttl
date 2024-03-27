@@ -63,7 +63,7 @@ ddhub:Annular a owl:Class;
               rdfs:subClassOf ddhub:HydraulicBranch. 
 ddhub:AnnularPreventer a owl:Class; 
                        rdfs:comment ""@EN; 
-                       rdfs:subClassOf ddhub:DrillingEquipment. 
+                       rdfs:subClassOf ddhub:BlowOutPreventerElement. 
 ddhub:AnnulusTerminator a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:DrillingEquipment. 
@@ -130,7 +130,7 @@ ddhub:BHAInner a owl:Class;
                rdfs:subClassOf ddhub:Pipe. 
 ddhub:Bit a owl:Class; 
           rdfs:comment ""@EN; 
-          rdfs:subClassOf ddhub:DrillingEquipment. 
+          rdfs:subClassOf ddhub:DrillStemTerminator. 
 ddhub:BitDepth a owl:Class; 
                rdfs:comment "Curvilinear abscissa of the bottom of the bit, in the reference frame centered in the wellbore."@EN; 
                rdfs:subClassOf ddhub:DrillingDataPoint. 
@@ -146,6 +146,9 @@ ddhub:BlockPositionQuantity a owl:Class;
 ddhub:BlockVelocityQuantity a owl:Class; 
                             rdfs:comment ""@EN; 
                             rdfs:subClassOf ddhub:MeasurableQuantity. 
+ddhub:BlowOutPreventerElement a owl:Class; 
+                              rdfs:comment ""@EN; 
+                              rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:BlowOutPreventerStack a owl:Class; 
                             rdfs:comment ""@EN; 
                             rdfs:subClassOf ddhub:DrillingEquipment. 
@@ -163,10 +166,10 @@ ddhub:BOPPressure a owl:Class;
                   rdfs:subClassOf ddhub:DrillingDataPoint. 
 ddhub:BOPRam a owl:Class; 
              rdfs:comment ""@EN; 
-             rdfs:subClassOf ddhub:DrillingEquipment. 
+             rdfs:subClassOf ddhub:BlowOutPreventerElement. 
 ddhub:BOPShearRam a owl:Class; 
                   rdfs:comment ""@EN; 
-                  rdfs:subClassOf ddhub:DrillingEquipment. 
+                  rdfs:subClassOf ddhub:BlowOutPreventerElement. 
 ddhub:BottomOfStringReferenceLocation a owl:Class; 
                                       rdfs:comment ""@EN; 
                                       rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
@@ -183,6 +186,9 @@ ddhub:BufferingInterval a owl:DatatypeProperty, owl:FunctionalProperty;
                         rdfs:comment ""@EN; 
                         rdfs:domain ddhub:Buffering; 
                         rdfs:range xsd:double. 
+ddhub:BullNose a owl:Class; 
+               rdfs:comment ""@EN; 
+               rdfs:subClassOf ddhub:DrillStemTerminator. 
 ddhub:CartesianFourDimensionalReferenceFrame a owl:Class; 
                                              rdfs:comment ""@EN; 
                                              rdfs:subClassOf ddhub:FourDimensionalReferenceFrame. 
@@ -195,6 +201,9 @@ ddhub:CartesianTwoDimensionalReferenceFrame a owl:Class;
 ddhub:CasingFlangeVerticalLocation a owl:Class; 
                                    rdfs:comment ""@EN; 
                                    rdfs:subClassOf ddhub:VerticalReferenceLocation. 
+ddhub:CasingShoe a owl:Class; 
+                 rdfs:comment ""@EN; 
+                 rdfs:subClassOf ddhub:DrillStemTerminator. 
 ddhub:CasingString a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:DrillStem. 
@@ -416,6 +425,9 @@ ddhub:DrillStem a owl:Class;
 ddhub:DrillStemMechanicalModel a owl:Class; 
                                rdfs:comment "A mechanical model for a drill-stem. Another name for drill-stem mechanical models is a torque and drag model."@EN; 
                                rdfs:subClassOf ddhub:MathematicalModel. 
+ddhub:DrillStemTerminator a owl:Class; 
+                          rdfs:comment ""@EN; 
+                          rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:DrillString a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:DrillStem. 
@@ -795,6 +807,12 @@ ddhub:HoleBottomLocation a owl:Class;
 ddhub:HoleDepth a owl:Class; 
                 rdfs:comment ""@EN; 
                 rdfs:subClassOf ddhub:DrillingDataPoint. 
+ddhub:HoleEnlargementElement a owl:Class; 
+                             rdfs:comment ""@EN; 
+                             rdfs:subClassOf ddhub:DrillingEquipment. 
+ddhub:HoleOpener a owl:Class; 
+                 rdfs:comment ""@EN; 
+                 rdfs:subClassOf ddhub:HoleEnlargementElement. 
 ddhub:HookLoad a owl:Class; 
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:DrillingDataPoint. 
@@ -2000,7 +2018,7 @@ ddhub:TwoDModelling a owl:Class;
                     rdfs:subClassOf ddhub:ModellingDimensions. 
 ddhub:UnderReamer a owl:Class; 
                   rdfs:comment ""@EN; 
-                  rdfs:subClassOf ddhub:DrillingEquipment. 
+                  rdfs:subClassOf ddhub:HoleEnlargementElement. 
 ddhub:Unit a owl:Class; 
            rdfs:comment ""@EN; 
            rdfs:subClassOf ddhub:DWISNoun. 
