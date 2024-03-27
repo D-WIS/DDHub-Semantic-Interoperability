@@ -120,22 +120,36 @@
 - Specialization:
 - Description: 
 - Examples:
+## BlowOutPreventerElement <!-- NOUN -->
+- Display name: BlowOutPreventerElement
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## AnnularPreventer <!-- NOUN -->
 - Display name: AnnularPreventer
-- Parent class: DrillingEquipment
+- Parent class: BlowOutPreventerElement
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## BOPRam <!-- NOUN -->
 - Display name: BOPRam
-- Parent class: DrillingEquipment
+- Parent class: BlowOutPreventerElement
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## BOPShearRam <!-- NOUN -->
 - Display name: BOPShearRam
+- Parent class: BlowOutPreventerElement
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## DrillStemTerminator <!-- NOUN -->
+- Display name: DrillStemTerminator
 - Parent class: DrillingEquipment
 - Attributes:
 - Specialization:
@@ -143,7 +157,21 @@
 - Examples:
 ## Bit <!-- NOUN -->
 - Display name: Bit
-- Parent class: DrillingEquipment
+- Parent class: DrillStemTerminator
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## BullNose <!-- NOUN -->
+- Display name: BullNose
+- Parent class: DrillStemTerminator
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## CasingShoe <!-- NOUN -->
+- Display name: CasingShoe
+- Parent class: DrillStemTerminator
 - Attributes:
 - Specialization:
 - Description: 
@@ -470,9 +498,23 @@
 - Specialization:
 - Description: 
 - Examples:
+## HoleEnlargementElement <!-- NOUN -->
+- Display name: HoleEnlargementElement
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## UnderReamer <!-- NOUN -->
 - Display name: UnderReamer
-- Parent class: DrillingEquipment
+- Parent class: HoleEnlargementElement
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## HoleOpener <!-- NOUN -->
+- Display name: HoleOpener
+- Parent class: HoleEnlargementElement
 - Attributes:
 - Specialization:
 - Description: 
