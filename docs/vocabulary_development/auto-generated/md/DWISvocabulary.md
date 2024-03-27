@@ -2216,17 +2216,33 @@
 - Description: 
 - Examples:
 - Definition set: Hydraulics
-## OilComponent <!-- NOUN -->
-- Display name: OilComponent
+## FormationLiquidComponent <!-- NOUN -->
+- Display name: FormationLiquidComponent
 - Parent class: [LiquidComponent](#LiquidComponent)
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 - Definition set: Hydraulics
-## WaterComponent <!-- NOUN -->
-- Display name: WaterComponent
+## DrillingFluidLiquidComponent <!-- NOUN -->
+- Display name: DrillingFluidLiquidComponent
 - Parent class: [LiquidComponent](#LiquidComponent)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## DrillingFluidOilComponent <!-- NOUN -->
+- Display name: OilComponent
+- Parent class: [DrillingFluidLiquidComponent](#DrillingFluidLiquidComponent)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## DrillingFluidWaterComponent <!-- NOUN -->
+- Display name: WaterComponent
+- Parent class: [DrillingFluidLiquidComponent](#DrillingFluidLiquidComponent)
 - Attributes:
 - Specialization:
 - Description: 

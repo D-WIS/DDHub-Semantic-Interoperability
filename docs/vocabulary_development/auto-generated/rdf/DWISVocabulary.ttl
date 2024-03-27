@@ -395,12 +395,21 @@ ddhub:DrillingEquipment a owl:Class;
 ddhub:DrillingFluidGasComponent a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:GasComponent. 
+ddhub:DrillingFluidLiquidComponent a owl:Class; 
+                                   rdfs:comment ""@EN; 
+                                   rdfs:subClassOf ddhub:LiquidComponent. 
+ddhub:DrillingFluidOilComponent a owl:Class; 
+                                rdfs:comment ""@EN; 
+                                rdfs:subClassOf ddhub:DrillingFluidLiquidComponent. 
 ddhub:DrillingFluidProvider a owl:Class; 
                             rdfs:comment "A drilling fluid provider is a company that provides and maintains the drilling fluids during well construction."@EN; 
                             rdfs:subClassOf ddhub:ServiceCompany. 
 ddhub:DrillingFluidSolidComponent a owl:Class; 
                                   rdfs:comment ""@EN; 
                                   rdfs:subClassOf ddhub:SolidComponent. 
+ddhub:DrillingFluidWaterComponent a owl:Class; 
+                                  rdfs:comment ""@EN; 
+                                  rdfs:subClassOf ddhub:DrillingFluidLiquidComponent. 
 ddhub:DrillingProgram a owl:Class; 
                       rdfs:comment ""@EN; 
                       rdfs:subClassOf ddhub:Plan. 
@@ -526,6 +535,9 @@ ddhub:ForceToLoadTransformation a owl:Class;
 ddhub:FormationGasComponent a owl:Class; 
                             rdfs:comment ""@EN; 
                             rdfs:subClassOf ddhub:GasComponent. 
+ddhub:FormationLiquidComponent a owl:Class; 
+                               rdfs:comment ""@EN; 
+                               rdfs:subClassOf ddhub:LiquidComponent. 
 ddhub:FormationPorosityQuantity a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:MeasurableQuantity. 
@@ -1540,9 +1552,6 @@ ddhub:NumberOfSamples a owl:DatatypeProperty, owl:FunctionalProperty;
                       rdfs:comment ""@EN; 
                       rdfs:domain ddhub:NumberOfSampleMovingAverage; 
                       rdfs:range xsd:int. 
-ddhub:OilComponent a owl:Class; 
-                   rdfs:comment ""@EN; 
-                   rdfs:subClassOf ddhub:LiquidComponent. 
 ddhub:OneDimensionalCartesianReferenceFrame a owl:Class; 
                                             rdfs:comment ""@EN; 
                                             rdfs:subClassOf ddhub:OneDimensionalReferenceFrame. 
@@ -2076,9 +2085,6 @@ ddhub:VolumetricFlowateRateOfChangeQuantity a owl:Class;
 ddhub:VolumetricRateQuantity a owl:Class; 
                              rdfs:comment ""@EN; 
                              rdfs:subClassOf ddhub:Quantity. 
-ddhub:WaterComponent a owl:Class; 
-                     rdfs:comment ""@EN; 
-                     rdfs:subClassOf ddhub:LiquidComponent. 
 ddhub:WellboreCenterLineFrame a owl:Class; 
                               rdfs:comment ""@EN; 
                               rdfs:subClassOf ddhub:OneDimensionalCurviLinearReferenceFrame. 

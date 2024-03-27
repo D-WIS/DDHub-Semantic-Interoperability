@@ -260,8 +260,10 @@ DownholeHydraulicNetwork,
 TopsideHydraulicNetwork,
 FluidComponent,
 LiquidComponent,
-OilComponent,
-WaterComponent,
+FormationLiquidComponent,
+DrillingFluidLiquidComponent,
+DrillingFluidOilComponent,
+DrillingFluidWaterComponent,
 GasComponent,
 FormationGasComponent,
 DrillingFluidGasComponent,
@@ -677,8 +679,10 @@ SensorUncertainty
 	public static string TopsideHydraulicNetwork = "TopsideHydraulicNetwork";
 	public static string FluidComponent = "FluidComponent";
 	public static string LiquidComponent = "LiquidComponent";
-	public static string OilComponent = "OilComponent";
-	public static string WaterComponent = "WaterComponent";
+	public static string FormationLiquidComponent = "FormationLiquidComponent";
+	public static string DrillingFluidLiquidComponent = "DrillingFluidLiquidComponent";
+	public static string DrillingFluidOilComponent = "DrillingFluidOilComponent";
+	public static string DrillingFluidWaterComponent = "DrillingFluidWaterComponent";
 	public static string GasComponent = "GasComponent";
 	public static string FormationGasComponent = "FormationGasComponent";
 	public static string DrillingFluidGasComponent = "DrillingFluidGasComponent";
