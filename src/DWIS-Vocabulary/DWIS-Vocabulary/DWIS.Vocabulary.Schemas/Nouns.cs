@@ -85,6 +85,7 @@ EQ,
 GT,
 LT,
 DrillingDataPoint,
+PrototypeData,
 ActiveVolume,
 Azimuth,
 BitDepth,
@@ -133,6 +134,7 @@ MPDPumpFlowRate,
 GasFlowRate,
 BackPressurePumpPressure,
 MechanicalSpecificEnergy,
+ProcessData,
 SetPoint,
 Command,
 Recommendation,
@@ -146,6 +148,7 @@ AdvisedMaximum,
 Limit,
 MinimumLimit,
 MaximumLimit,
+PhysicalData,
 Measurement,
 DerivedMeasurement,
 CorrectedMeasurement,
@@ -499,6 +502,7 @@ SensorUncertainty
 	public static string GT = "GT";
 	public static string LT = "LT";
 	public static string DrillingDataPoint = "DrillingDataPoint";
+	public static string PrototypeData = "PrototypeData";
 	public static string ActiveVolume = "ActiveVolume";
 	public static string Azimuth = "Azimuth";
 	public static string BitDepth = "BitDepth";
@@ -547,6 +551,7 @@ SensorUncertainty
 	public static string GasFlowRate = "GasFlowRate";
 	public static string BackPressurePumpPressure = "BackPressurePumpPressure";
 	public static string MechanicalSpecificEnergy = "MechanicalSpecificEnergy";
+	public static string ProcessData = "ProcessData";
 	public static string SetPoint = "SetPoint";
 	public static string Command = "Command";
 	public static string Recommendation = "Recommendation";
@@ -560,6 +565,7 @@ SensorUncertainty
 	public static string Limit = "Limit";
 	public static string MinimumLimit = "MinimumLimit";
 	public static string MaximumLimit = "MaximumLimit";
+	public static string PhysicalData = "PhysicalData";
 	public static string Measurement = "Measurement";
 	public static string DerivedMeasurement = "DerivedMeasurement";
 	public static string CorrectedMeasurement = "CorrectedMeasurement";

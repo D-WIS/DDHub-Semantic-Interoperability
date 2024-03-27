@@ -566,74 +566,290 @@
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
     <rdfs:comment xml:lang="EN">Main type of DDHub data. Represents a drilling signal.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ActiveVolume">
+  <rdf:Description rdf:about="http://ddhub.no/PrototypeData">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ActiveVolume">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Azimuth">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/BitDepth">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
     <rdfs:comment xml:lang="EN">Curvilinear abscissa of the bottom of the bit, in the reference frame centered in the wellbore.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DensityIn">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DensityOut">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DownholeECD">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DownholePressure">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DownholeRPM">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DownholeTemperature">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DownholeTorque">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/FlowRateIn">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/FlowRateOut">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HookLoad">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HookPosition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HookVelocity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Inclination">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MeasuredDepth">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PumpRate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ROP">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SPP">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SurfaceRPM">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SurfaceTorque">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TemperatureIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TemperatureOut">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TopOfStringPosition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/WOB">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PorePressure">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PorePressureGradient">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/FracturingPressure">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/FracturingPressureGradient">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/CollapsePressure">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/CollapsePressureGradient">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ShearRate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ShearStress">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MinimumHorizontalStress">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MinimumHorizontalStressGradient">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/OverburdenPressure">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/OverburdenPressureGradient">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/BOPOpening">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/BOPPressure">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MPDChokeOpening">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MPDChokePressure">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MPDPumpRate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MPDPumpFlowRate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GasFlowRate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/BackPressurePumpPressure">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MechanicalSpecificEnergy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
@@ -643,211 +859,7 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/HookLoad">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/HookPosition">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/HookVelocity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Inclination">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MeasuredDepth">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PumpRate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ROP">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SPP">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SurfaceRPM">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SurfaceTorque">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/TemperatureIn">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/TemperatureOut">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/TopOfStringPosition">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/WOB">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PorePressure">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PorePressureGradient">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/FracturingPressure">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/FracturingPressureGradient">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/CollapsePressure">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/CollapsePressureGradient">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ShearRate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ShearStress">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MinimumHorizontalStress">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MinimumHorizontalStressGradient">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/OverburdenPressure">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/OverburdenPressureGradient">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/BOPOpening">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/BOPPressure">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MPDChokeOpening">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MPDChokePressure">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MPDPumpRate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MPDPumpFlowRate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/GasFlowRate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/BackPressurePumpPressure">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MechanicalSpecificEnergy">
+  <rdf:Description rdf:about="http://ddhub.no/ProcessData">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
     <rdfs:comment xml:lang="EN">
@@ -855,19 +867,19 @@
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/SetPoint">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ProcessData" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Command">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ProcessData" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Recommendation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ProcessData" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
@@ -891,7 +903,7 @@
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Advice">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ProcessData" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
@@ -915,7 +927,7 @@
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Limit">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ProcessData" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
@@ -931,9 +943,15 @@
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Measurement">
+  <rdf:Description rdf:about="http://ddhub.no/PhysicalData">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Measurement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PhysicalData" />
     <rdfs:comment xml:lang="EN">The noun Measurement represents individuals that are measured by some instrument and which value can be compared with another measurement.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DerivedMeasurement">
@@ -950,7 +968,7 @@
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ComputedData">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PhysicalData" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
