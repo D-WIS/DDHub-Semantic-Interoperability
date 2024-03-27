@@ -159,8 +159,105 @@
 - Specialization:
 - Description: 
 - Examples:
-
-
+## FluidComponent <!-- NOUN -->
+- Display name: FluidComponent
+- Parent class: DWISNoun
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## LiquidComponent <!-- NOUN -->
+- Display name: LiquidComponent
+- Parent class: FluidComponent
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## OilComponent <!-- NOUN -->
+- Display name: OilComponent
+- Parent class: LiquidComponent
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## WaterComponent <!-- NOUN -->
+- Display name: WaterComponent
+- Parent class: LiquidComponent
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## GasComponent <!-- NOUN -->
+- Display name: GasComponent
+- Parent class: FluidComponent
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## FormationGasComponent <!-- NOUN -->
+- Display name: FormationGasComponent
+- Parent class: GasComponent
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## DrillingFluidGasComponent <!-- NOUN -->
+- Display name: DrillingFluidGasComponent
+- Parent class: GasComponent
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## SolidComponent <!-- NOUN -->
+- Display name: SolidComponent
+- Parent class: FluidComponent
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## DrillingFluidSolidComponent <!-- NOUN -->
+- Display name: DrillingFluidSolidComponent
+- Parent class: SolidComponent
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## HighGravitySolidComponent <!-- NOUN -->
+- Display name: HighGravitySolidComponent
+- Parent class: DrillingFluidSolidComponent
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## LowGravitySolidComponent <!-- NOUN -->
+- Display name: LowGravitySolidComponent
+- Parent class: DrillingFluidSolidComponent
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## FormationSolidComponent <!-- NOUN -->
+- Display name: FormationSolidComponent
+- Parent class: SolidComponent
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## CuttingsComponent <!-- NOUN -->
+- Display name: CuttingsComponent
+- Parent class: FormationSolidComponent
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## CavingsComponent <!-- NOUN -->
+- Display name: CavingsComponent
+- Parent class: FormationSolidComponent
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+  
 # VERBS
 ## EndsHydraulicBranchDecomposition <!-- VERB -->
 - Display name: EndsHydraulicBranchDecomposition
@@ -364,4 +461,11 @@
 - Subject class: DWISNoun
 - Object class: DWISNoun
 - Description: 
-- Examples: 
+- Examples:
+## ConcernsAFluidComponent <!-- VERB -->
+- Display name: ConcernsAFluidComponent
+- Parent verb: DWISVerb
+- Subject class: DrillingDataPoint
+- Object class: FluidComponent
+- Description: 
+- Examples:
