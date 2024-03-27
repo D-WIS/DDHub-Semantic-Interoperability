@@ -173,16 +173,30 @@
 - Specialization:
 - Description: 
 - Examples:
-## OilComponent <!-- NOUN -->
-- Display name: OilComponent
+## FormationLiquidComponent <!-- NOUN -->
+- Display name: FormationLiquidComponent
 - Parent class: LiquidComponent
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
-## WaterComponent <!-- NOUN -->
-- Display name: WaterComponent
+## DrillingFluidLiquidComponent <!-- NOUN -->
+- Display name: DrillingFluidLiquidComponent
 - Parent class: LiquidComponent
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## DrillingFluidOilComponent <!-- NOUN -->
+- Display name: OilComponent
+- Parent class: DrillingFluidLiquidComponent
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## DrillingFluidWaterComponent <!-- NOUN -->
+- Display name: WaterComponent
+- Parent class: DrillingFluidLiquidComponent
 - Attributes:
 - Specialization:
 - Description: 
