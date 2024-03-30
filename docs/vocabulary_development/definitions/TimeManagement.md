@@ -39,8 +39,56 @@
 - Specialization:
 - Description: 
 - Examples:
-
-
+## TimeReference <!-- NOUN -->
+- Display name: TimeReference
+- Parent class: DWISNoun
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## AbsoluteTimeReference <!-- NOUN -->
+- Display name: AbsoluteTimeReference
+- Parent class: TimeReference
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## RelativeTimeReference <!-- NOUN -->
+- Display name: RelativeTimeReference
+- Parent class: TimeReference
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## GPSReference <!-- NOUN -->
+- Display name: AbsoluteTimeReference
+- Parent class: TimeReference
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## UTCReference <!-- NOUN -->
+- Display name: AbsoluteTimeReference
+- Parent class: TimeReference
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## LocalTimeReference <!-- NOUN -->
+- Display name: LocalTimeReference
+- Parent class: RelativeTimeReference
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## TimeSpanReference <!-- NOUN -->
+- Display name: TimeSpanReference
+- Parent class: RelativeTimeReference
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+  
 # VERBS
 ## BelongsToSynchronizationGroup <!-- VERB -->
 - Display name: BelongsToSynchronizationGroup
@@ -84,3 +132,10 @@
 - Object class: SynchronizationGroup
 - Description: 
 - Examples: 
+## HasTimeReference <!-- VERB -->
+- Display name: HasTimeReference
+- Parent verb: DWISVerb
+- Subject class: DrillingDataPoint
+- Object class: TimeReference
+- Description: 
+- Examples:
