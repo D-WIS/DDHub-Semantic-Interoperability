@@ -301,8 +301,8 @@
 - Examples:
   
 # VERBS
-## HasPressureReference <!-- VERB -->
-- Display name: HasPressureReference
+## HasPressureReferenceType <!-- VERB -->
+- Display name: HasPressureReferenceType
 - Parent verb: DWISVerb
 - Subject class: DrillingDataPoint
 - Object class: PressureReference
