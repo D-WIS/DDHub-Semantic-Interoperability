@@ -508,6 +508,9 @@ ddhub:FixedIndices a owl:DatatypeProperty, owl:FunctionalProperty;
                    rdfs:comment ""@EN; 
                    rdfs:domain ddhub:EndPointMapping; 
                    rdfs:range <http://www.w3.org/2001/XMLSchema#int[]>. 
+ddhub:FloatValve a owl:Class; 
+                 rdfs:comment ""@EN; 
+                 rdfs:subClassOf ddhub:GateValve. 
 ddhub:FlowLine a owl:Class; 
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:DrillingEquipment. 
@@ -873,6 +876,9 @@ ddhub:HydraulicLogicalElement a owl:Class;
 ddhub:HydraulicNetwork a owl:Class; 
                        rdfs:comment ""@EN; 
                        rdfs:subClassOf ddhub:HydraulicLogicalElement. 
+ddhub:HydraulicSlips a owl:Class; 
+                     rdfs:comment ""@EN; 
+                     rdfs:subClassOf ddhub:PowerSlips. 
 ddhub:I a owl:DatatypeProperty, owl:FunctionalProperty; 
         rdfs:comment "Electric current exponent."@EN; 
         rdfs:domain ddhub:Quantity; 
@@ -1354,6 +1360,9 @@ ddhub:MainFunction a owl:DatatypeProperty, owl:FunctionalProperty;
                    rdfs:comment ""@EN; 
                    rdfs:domain ddhub:RunnableFunction; 
                    rdfs:range xsd:string. 
+ddhub:ManualSlips a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:Slips. 
 ddhub:MarineRiser a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:Riser. 
@@ -1618,6 +1627,9 @@ ddhub:Pit a owl:Class;
 ddhub:Plan a owl:Class; 
            rdfs:comment ""@EN; 
            rdfs:subClassOf ddhub:DataFlowNode. 
+ddhub:PneumaticSlips a owl:Class; 
+                     rdfs:comment ""@EN; 
+                     rdfs:subClassOf ddhub:PowerSlips. 
 ddhub:PolarReferenceFrame a owl:Class; 
                           rdfs:comment ""@EN; 
                           rdfs:subClassOf ddhub:TwoDimensionalReferenceFrame. 
@@ -1637,6 +1649,9 @@ ddhub:PostiveUpward a owl:DatatypeProperty, owl:FunctionalProperty;
 ddhub:PowerQuantity a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:Quantity. 
+ddhub:PowerSlips a owl:Class; 
+                 rdfs:comment ""@EN; 
+                 rdfs:subClassOf ddhub:Slips. 
 ddhub:Precision a owl:DatatypeProperty, owl:FunctionalProperty; 
                 rdfs:comment "The standard deviation of the repetitive error component of the uncertainty of the sensor. The assumed mean value of the attached Gaussian distribution is the measured value. The value is expected to be in the same physical quantity as the sensor value."@EN; 
                 rdfs:domain ddhub:SensorUncertainty; 

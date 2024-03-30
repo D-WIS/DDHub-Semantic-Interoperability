@@ -202,6 +202,7 @@ Elevator,
 GateValve,
 Choke,
 RigChoke,
+FloatValve,
 MPDChoke,
 MechanicalBlock,
 CrownBlock,
@@ -213,6 +214,10 @@ BoosterPump,
 BackPressurePump,
 ShaleShakers,
 Slips,
+ManualSlips,
+PowerSlips,
+PneumaticSlips,
+HydraulicSlips,
 SurfacePipe,
 StandPipe,
 MudHose,
@@ -628,6 +633,7 @@ SensorUncertainty
 	public static string GateValve = "GateValve";
 	public static string Choke = "Choke";
 	public static string RigChoke = "RigChoke";
+	public static string FloatValve = "FloatValve";
 	public static string MPDChoke = "MPDChoke";
 	public static string MechanicalBlock = "MechanicalBlock";
 	public static string CrownBlock = "CrownBlock";
@@ -639,6 +645,10 @@ SensorUncertainty
 	public static string BackPressurePump = "BackPressurePump";
 	public static string ShaleShakers = "ShaleShakers";
 	public static string Slips = "Slips";
+	public static string ManualSlips = "ManualSlips";
+	public static string PowerSlips = "PowerSlips";
+	public static string PneumaticSlips = "PneumaticSlips";
+	public static string HydraulicSlips = "HydraulicSlips";
 	public static string SurfacePipe = "SurfacePipe";
 	public static string StandPipe = "StandPipe";
 	public static string MudHose = "MudHose";

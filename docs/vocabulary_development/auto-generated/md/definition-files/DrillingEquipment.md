@@ -377,6 +377,14 @@
 - Description: 
 - Examples:
 - Definition set: DrillingEquipment
+## FloatValve <!-- NOUN -->
+- Display name: FloatValve
+- Parent class: [GateValve](./DrillingEquipment.md#GateValve)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
 ## MPDChoke <!-- NOUN -->
 - Display name: MPDChoke
 - Parent class: [Choke](./DrillingEquipment.md#Choke)
@@ -460,6 +468,38 @@
 ## Slips <!-- NOUN -->
 - Display name: Slips
 - Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## ManualSlips <!-- NOUN -->
+- Display name: ManualSlips
+- Parent class: [Slips](./DrillingEquipment.md#Slips)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## PowerSlips <!-- NOUN -->
+- Display name: PowerSlips
+- Parent class: [Slips](./DrillingEquipment.md#Slips)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## PneumaticSlips <!-- NOUN -->
+- Display name: PneumaticSlips
+- Parent class: [PowerSlips](./DrillingEquipment.md#PowerSlips)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## HydraulicSlips <!-- NOUN -->
+- Display name: PneumaticSlips
+- Parent class: [PowerSlips](./DrillingEquipment.md#PowerSlips)
 - Attributes:
 - Specialization:
 - Description: 
