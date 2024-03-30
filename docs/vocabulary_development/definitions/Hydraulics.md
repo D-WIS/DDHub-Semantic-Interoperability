@@ -1,6 +1,34 @@
 - Description: this part refers to the hydraulic circuit, and should only contain the "abstract" or conceptual part of the vocabulary. Additional nouns coming from the drilling equipment category will be used when constructing the semantic graphs.
 
 # NOUNS
+## PressureReference <!-- NOUN -->
+- Display name: PressureReference
+- Parent class: DWISNoun
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## AbsolutePressureReference <!-- NOUN -->
+- Display name: AbsolutePressureReference
+- Parent class: PressureReference
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## RelativePressureReference <!-- NOUN -->
+- Display name: RelativePressureReference
+- Parent class: PressureReference
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## GaugePressureReference <!-- NOUN -->
+- Display name: GaugePressureReference
+- Parent class: RelativePressureReference
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## HydraulicElementState <!-- NOUN -->
 - Display name: HydraulicElementState
 - Parent class: DWISNoun
@@ -273,6 +301,13 @@
 - Examples:
   
 # VERBS
+## HasPressureReference <!-- VERB -->
+- Display name: HasPressureReference
+- Parent verb: DWISVerb
+- Subject class: DrillingDataPoint
+- Object class: PressureReference
+- Description: 
+- Examples: 
 ## EndsHydraulicBranchDecomposition <!-- VERB -->
 - Display name: EndsHydraulicBranchDecomposition
 - Parent verb: DWISVerb
