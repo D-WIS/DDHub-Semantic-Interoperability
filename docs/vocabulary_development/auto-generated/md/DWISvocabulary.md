@@ -1460,6 +1460,22 @@
 - Description: 
 - Examples:
 - Definition set: DrillingEquipment
+## RotatingControlDevice <!-- NOUN -->
+- Display name: RotatingControlDevice
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## IsolationSeal <!-- NOUN -->
+- Display name: IsolationSeal
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
 ## BlowOutPreventerStack <!-- NOUN -->
 - Display name: BlowOutPreventerStack
 - Parent class: [DrillingEquipment](#DrillingEquipment)

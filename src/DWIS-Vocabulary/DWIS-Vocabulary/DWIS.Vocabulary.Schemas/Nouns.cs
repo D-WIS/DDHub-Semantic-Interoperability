@@ -171,6 +171,8 @@ SlipJoint,
 BellNipple,
 Diverter,
 FlowLine,
+RotatingControlDevice,
+IsolationSeal,
 BlowOutPreventerStack,
 BlowOutPreventerElement,
 AnnularPreventer,
@@ -617,6 +619,8 @@ SensorUncertainty
 	public static string BellNipple = "BellNipple";
 	public static string Diverter = "Diverter";
 	public static string FlowLine = "FlowLine";
+	public static string RotatingControlDevice = "RotatingControlDevice";
+	public static string IsolationSeal = "IsolationSeal";
 	public static string BlowOutPreventerStack = "BlowOutPreventerStack";
 	public static string BlowOutPreventerElement = "BlowOutPreventerElement";
 	public static string AnnularPreventer = "AnnularPreventer";

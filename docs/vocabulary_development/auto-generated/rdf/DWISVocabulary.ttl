@@ -1144,6 +1144,9 @@ ddhub:IsOfMechanicalStiffnessType a owl:ObjectProperty;
                                   rdfs:domain ddhub:DrillStemMechanicalModel; 
                                   rdfs:range ddhub:MechanicalStiffnessType; 
                                   rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsolationSeal a owl:Class; 
+                    rdfs:comment ""@EN; 
+                    rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:IsOpeningRatioAt a owl:ObjectProperty; 
                        rdfs:comment ""@EN; 
                        rdfs:domain ddhub:DrillingDataPoint; 
@@ -1853,6 +1856,9 @@ ddhub:RotaryTable a owl:Class;
 ddhub:RotaryTableVerticalLocation a owl:Class; 
                                   rdfs:comment ""@EN; 
                                   rdfs:subClassOf ddhub:VerticalReferenceLocation. 
+ddhub:RotatingControlDevice a owl:Class; 
+                            rdfs:comment ""@EN; 
+                            rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:RotationalModelling a owl:Class; 
                           rdfs:comment "The model accounts for the rotational movement of some parts of the physical system."@EN; 
                           rdfs:subClassOf ddhub:ModelledDegreeOfFreedom. 
