@@ -330,6 +330,13 @@
 - Specialization:
 - Description: 
 - Examples:
+## FloatValve <!-- NOUN -->
+- Display name: FloatValve
+- Parent class: GateValve
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## MPDChoke <!-- NOUN -->
 - Display name: MPDChoke
 - Parent class: Choke
@@ -403,6 +410,34 @@
 ## Slips <!-- NOUN -->
 - Display name: Slips
 - Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## ManualSlips <!-- NOUN -->
+- Display name: ManualSlips
+- Parent class: Slips
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## PowerSlips <!-- NOUN -->
+- Display name: PowerSlips
+- Parent class: Slips
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## PneumaticSlips <!-- NOUN -->
+- Display name: PneumaticSlips
+- Parent class: PowerSlips
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## HydraulicSlips <!-- NOUN -->
+- Display name: PneumaticSlips
+- Parent class: PowerSlips
 - Attributes:
 - Specialization:
 - Description: 
