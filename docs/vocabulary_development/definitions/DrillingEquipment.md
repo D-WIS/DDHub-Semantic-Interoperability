@@ -113,6 +113,20 @@
 - Specialization:
 - Description: 
 - Examples:
+## RotatingControlDevice <!-- NOUN -->
+- Display name: RotatingControlDevice
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## IsolationSeal <!-- NOUN -->
+- Display name: IsolationSeal
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## BlowOutPreventerStack <!-- NOUN -->
 - Display name: BlowOutPreventerStack
 - Parent class: DrillingEquipment
