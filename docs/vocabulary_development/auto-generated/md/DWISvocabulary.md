@@ -2061,6 +2061,38 @@
 - Description: 
 - Examples:
 - Definition set: EndPoints
+## PressureReference <!-- NOUN -->
+- Display name: PressureReference
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## AbsolutePressureReference <!-- NOUN -->
+- Display name: AbsolutePressureReference
+- Parent class: [PressureReference](#PressureReference)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## RelativePressureReference <!-- NOUN -->
+- Display name: RelativePressureReference
+- Parent class: [PressureReference](#PressureReference)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## GaugePressureReference <!-- NOUN -->
+- Display name: GaugePressureReference
+- Parent class: [RelativePressureReference](#RelativePressureReference)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
 ## HydraulicElementState <!-- NOUN -->
 - Display name: HydraulicElementState
 - Parent class: [DWISNoun](#DWISNoun)
@@ -2454,6 +2486,38 @@
 ## MechanicalLogicalElement <!-- NOUN -->
 - Display name: MechanicalLogicalElement
 - Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Mechanics
+## MotionType <!-- NOUN -->
+- Display name: MotionType
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Mechanics
+## AxialMotionType <!-- NOUN -->
+- Display name: AxialMotionType
+- Parent class: [MotionType](#MotionType)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Mechanics
+## TorsionalMotionType <!-- NOUN -->
+- Display name: TorsionalMotionType
+- Parent class: [MotionType](#MotionType)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Mechanics
+## LateralMotionType <!-- NOUN -->
+- Display name: LateralMotionType
+- Parent class: [MotionType](#MotionType)
 - Attributes:
 - Specialization:
 - Description: 
@@ -3676,6 +3740,62 @@
 - Description: 
 - Examples:
 - Definition set: TimeManagement
+## TimeReference <!-- NOUN -->
+- Display name: TimeReference
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: TimeManagement
+## AbsoluteTimeReference <!-- NOUN -->
+- Display name: AbsoluteTimeReference
+- Parent class: [TimeReference](#TimeReference)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: TimeManagement
+## RelativeTimeReference <!-- NOUN -->
+- Display name: RelativeTimeReference
+- Parent class: [TimeReference](#TimeReference)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: TimeManagement
+## GPSReference <!-- NOUN -->
+- Display name: AbsoluteTimeReference
+- Parent class: [TimeReference](#TimeReference)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: TimeManagement
+## UTCReference <!-- NOUN -->
+- Display name: AbsoluteTimeReference
+- Parent class: [TimeReference](#TimeReference)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: TimeManagement
+## LocalTimeReference <!-- NOUN -->
+- Display name: LocalTimeReference
+- Parent class: [RelativeTimeReference](#RelativeTimeReference)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: TimeManagement
+## TimeSpanReference <!-- NOUN -->
+- Display name: TimeSpanReference
+- Parent class: [RelativeTimeReference](#RelativeTimeReference)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: TimeManagement
 ## SignalUncertainty <!-- NOUN -->
 - Display name: SignalUncertainty
 - Parent class: [DWISNoun](#DWISNoun)
@@ -4337,6 +4457,16 @@
 - Description: 
 - Examples: 
 - Definition set: EndPoints
+## HasPressureReferenceType <!-- VERB -->
+- Display name: HasPressureReferenceType
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [PressureReference](#PressureReference)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
 ## EndsHydraulicBranchDecomposition <!-- VERB -->
 - Display name: EndsHydraulicBranchDecomposition
 - Parent verb: [DWISVerb](#DWISVerb)
@@ -4697,6 +4827,26 @@
 - Description: 
 - Examples: 
 - Definition set: Mechanics
+## IsForMotionType <!-- VERB -->
+- Display name: IsForMotionType
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [MotionType](#MotionType)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Mechanics
+## HasMotionType <!-- VERB -->
+- Display name: HasMotionType
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [MechanicalLogicalElement](#MechanicalLogicalElement)
+- Object class: [MotionType](#MotionType)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Mechanics
 ## HasCoordinates <!-- VERB -->
 - Display name: HasCoordinates
 - Parent verb: [DWISVerb](#DWISVerb)
@@ -4882,6 +5032,16 @@
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [SynchronizationGroup](#SynchronizationGroup)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: TimeManagement
+## HasTimeReference <!-- VERB -->
+- Display name: HasTimeReference
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [TimeReference](#TimeReference)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 

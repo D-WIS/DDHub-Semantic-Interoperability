@@ -8,6 +8,12 @@
 ddhub:AbscissaReferenceLocation a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:Location. 
+ddhub:AbsolutePressureReference a owl:Class; 
+                                rdfs:comment ""@EN; 
+                                rdfs:subClassOf ddhub:PressureReference. 
+ddhub:AbsoluteTimeReference a owl:Class; 
+                            rdfs:comment ""@EN; 
+                            rdfs:subClassOf ddhub:TimeReference. 
 ddhub:AccelerationQuantity a owl:Class; 
                            rdfs:comment ""@EN; 
                            rdfs:subClassOf ddhub:Quantity. 
@@ -91,6 +97,9 @@ ddhub:AverageDelayByRepeater a owl:DatatypeProperty, owl:FunctionalProperty;
 ddhub:AxialModelling a owl:Class; 
                      rdfs:comment "The model accounts for the axial movement of some parts of the physical system."@EN; 
                      rdfs:subClassOf ddhub:ModelledDegreeOfFreedom. 
+ddhub:AxialMotionType a owl:Class; 
+                      rdfs:comment ""@EN; 
+                      rdfs:subClassOf ddhub:MotionType. 
 ddhub:AxialReferenceLocation a owl:Class; 
                              rdfs:comment ""@EN; 
                              rdfs:subClassOf ddhub:Location. 
@@ -593,12 +602,18 @@ ddhub:GasFlowRate a owl:Class;
 ddhub:GateValve a owl:Class; 
                 rdfs:comment ""@EN; 
                 rdfs:subClassOf ddhub:DrillingEquipment. 
+ddhub:GaugePressureReference a owl:Class; 
+                             rdfs:comment ""@EN; 
+                             rdfs:subClassOf ddhub:RelativePressureReference. 
 ddhub:GaussianUncertainty a owl:Class; 
                           rdfs:comment "The uncertainty is represented by a Gaussian distribution, i.e., with a `Mean` and a `StandardDeviation`, $\\mathcal{N}(\\overline{x},{\\sigma_{x}}^2)$ where $\\overline{x}$ is the `Mean` value and $\\sigma_{x}$ is the `StandardDeviation`."@EN; 
                           rdfs:subClassOf ddhub:SignalUncertainty. 
 ddhub:GenericUncertainty a owl:Class; 
                          rdfs:comment "The uncertainty is represented by a `Histogram`."@EN; 
                          rdfs:subClassOf ddhub:SignalUncertainty. 
+ddhub:GPSReference a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:TimeReference. 
 ddhub:GravityHighSideAngleLocation a owl:Class; 
                                    rdfs:comment ""@EN; 
                                    rdfs:subClassOf ddhub:AngleReferenceLocation. 
@@ -699,11 +714,21 @@ ddhub:HasMechanicalStateValueFrom a owl:ObjectProperty;
                                   rdfs:domain ddhub:MechanicalElementState; 
                                   rdfs:range ddhub:DrillingDataPoint; 
                                   rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:HasMotionType a owl:ObjectProperty; 
+                    rdfs:comment ""@EN; 
+                    rdfs:domain ddhub:MechanicalLogicalElement; 
+                    rdfs:range ddhub:MotionType; 
+                    rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasPressureReference a owl:ObjectProperty; 
                            rdfs:comment ""@EN; 
                            rdfs:domain ddhub:DrillingDataPoint; 
                            rdfs:range ddhub:DrillingDataPoint; 
                            rdfs:subPropertyOf ddhub:IsDependentOn. 
+ddhub:HasPressureReferenceType a owl:ObjectProperty; 
+                               rdfs:comment ""@EN; 
+                               rdfs:domain ddhub:DrillingDataPoint; 
+                               rdfs:range ddhub:PressureReference; 
+                               rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasProportionError a owl:ObjectProperty; 
                          rdfs:comment "This verb is used to associate a `DrillingDataPoint` as the `ProportionError` value of a `FullScaleUncertainty`"@EN; 
                          rdfs:domain ddhub:FullScaleUncertainty; 
@@ -759,6 +784,11 @@ ddhub:HasTimeIntervalDomain a owl:ObjectProperty;
                             rdfs:domain ddhub:DrillingDataPoint; 
                             rdfs:range ddhub:DrillingDataPoint; 
                             rdfs:subPropertyOf ddhub:HasDomain. 
+ddhub:HasTimeReference a owl:ObjectProperty; 
+                       rdfs:comment ""@EN; 
+                       rdfs:domain ddhub:DrillingDataPoint; 
+                       rdfs:range ddhub:TimeReference; 
+                       rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasTransmissionDelay a owl:ObjectProperty; 
                            rdfs:comment ""@EN; 
                            rdfs:domain ddhub:DrillingDataPoint; 
@@ -999,6 +1029,11 @@ ddhub:IsFluidVelocityAt a owl:ObjectProperty;
                         rdfs:domain ddhub:DrillingDataPoint; 
                         rdfs:range ddhub:HydraulicLogicalElement; 
                         rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
+ddhub:IsForMotionType a owl:ObjectProperty; 
+                      rdfs:comment ""@EN; 
+                      rdfs:domain ddhub:DrillingDataPoint; 
+                      rdfs:range ddhub:MotionType; 
+                      rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsGeneratedBy a owl:ObjectProperty; 
                     rdfs:comment ""@EN; 
                     rdfs:domain ddhub:DrillingDataPoint; 
@@ -1291,6 +1326,9 @@ ddhub:LastCasingShoeReferenceLocation a owl:Class;
 ddhub:LateralModelling a owl:Class; 
                        rdfs:comment "The model accounts for the lateral movement of some parts of the physical system."@EN; 
                        rdfs:subClassOf ddhub:ModelledDegreeOfFreedom. 
+ddhub:LateralMotionType a owl:Class; 
+                        rdfs:comment ""@EN; 
+                        rdfs:subClassOf ddhub:MotionType. 
 ddhub:LeapSeconds a owl:DatatypeProperty, owl:FunctionalProperty; 
                   rdfs:comment ""@EN; 
                   rdfs:domain ddhub:Clock; 
@@ -1317,6 +1355,9 @@ ddhub:Liner a owl:Class;
 ddhub:LiquidComponent a owl:Class; 
                       rdfs:comment ""@EN; 
                       rdfs:subClassOf ddhub:FluidComponent. 
+ddhub:LocalTimeReference a owl:Class; 
+                         rdfs:comment ""@EN; 
+                         rdfs:subClassOf ddhub:RelativeTimeReference. 
 ddhub:Location a owl:Class; 
                rdfs:comment "Physical location for a signal. Refers to: 1) a reference frame (via the HasReferenceFrame relation), that works as a system of coordinates 2) an origin (of type Location) via the HasReferenceFrameOrigin relation."@EN; 
                rdfs:subClassOf ddhub:DWISNoun. 
@@ -1501,6 +1542,9 @@ ddhub:ModellingDimensions a owl:Class;
 ddhub:ModellingDiscretization a owl:Class; 
                               rdfs:comment "A characteristic of the discretization made by the model."@EN; 
                               rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:MotionType a owl:Class; 
+                 rdfs:comment ""@EN; 
+                 rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:MovingAverage a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:Filter. 
@@ -1659,6 +1703,9 @@ ddhub:Precision a owl:DatatypeProperty, owl:FunctionalProperty;
 ddhub:PressureQuantity a owl:Class; 
                        rdfs:comment ""@EN; 
                        rdfs:subClassOf ddhub:Quantity. 
+ddhub:PressureReference a owl:Class; 
+                        rdfs:comment ""@EN; 
+                        rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:PressureToEquivalentDensityTransformation a owl:Class; 
                                                 rdfs:comment ""@EN; 
                                                 rdfs:subClassOf ddhub:DirectTransformation. 
@@ -1736,6 +1783,12 @@ ddhub:RectangularChannel a owl:Class;
 ddhub:ReferenceFrame a owl:Class; 
                      rdfs:comment "Represents a system of coordinates"@EN; 
                      rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:RelativePressureReference a owl:Class; 
+                                rdfs:comment ""@EN; 
+                                rdfs:subClassOf ddhub:PressureReference. 
+ddhub:RelativeTimeReference a owl:Class; 
+                            rdfs:comment ""@EN; 
+                            rdfs:subClassOf ddhub:TimeReference. 
 ddhub:Resampling a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:TimeBasedTransformation. 
@@ -1980,6 +2033,12 @@ ddhub:ThT a owl:DatatypeProperty, owl:FunctionalProperty;
 ddhub:TimeBasedTransformation a owl:Class; 
                               rdfs:comment "Transformations that apply only to time series: time derivations, time integration, averaging..."@EN; 
                               rdfs:subClassOf ddhub:Transformation. 
+ddhub:TimeReference a owl:Class; 
+                    rdfs:comment ""@EN; 
+                    rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:TimeSpanReference a owl:Class; 
+                        rdfs:comment ""@EN; 
+                        rdfs:subClassOf ddhub:RelativeTimeReference. 
 ddhub:TimeStampAcquisition a owl:DatatypeProperty, owl:FunctionalProperty; 
                            rdfs:comment "this is a UTC date-time value at which the value has been acquired by the data acquisition system."@EN; 
                            rdfs:domain ddhub:DynamicDrillingSignal; 
@@ -2040,6 +2099,9 @@ ddhub:TorqueQuantity a owl:Class;
 ddhub:TorqueToForceTransformation a owl:Class; 
                                   rdfs:comment ""@EN; 
                                   rdfs:subClassOf ddhub:DirectTransformation. 
+ddhub:TorsionalMotionType a owl:Class; 
+                          rdfs:comment ""@EN; 
+                          rdfs:subClassOf ddhub:MotionType. 
 ddhub:Transformation a owl:Class; 
                      rdfs:comment "Represents a transformation applied to some signals that produces other signals"@EN; 
                      rdfs:subClassOf ddhub:DataFlowNode. 
@@ -2085,6 +2147,9 @@ ddhub:UpperSideAngleLocation a owl:Class;
 ddhub:UserInterface a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:DataFlowNode. 
+ddhub:UTCReference a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:TimeReference. 
 ddhub:Validity a owl:DatatypeProperty, owl:FunctionalProperty; 
                rdfs:comment ""@EN; 
                rdfs:domain ddhub:Resampling; 

@@ -65,6 +65,7 @@ IsSubPartOf,
 DWISVerb,
 BelongsToClass,
 HasEndPoint,
+HasPressureReferenceType,
 EndsHydraulicBranchDecomposition,
 IsAHydraulicRepresentationFor,
 HasBranchComponent,
@@ -101,6 +102,8 @@ HasMechanicalState,
 HasMechanicalStateValueFrom,
 IsMechanicallyConnectedTo,
 IsMechanicallyLocatedAt,
+IsForMotionType,
+HasMotionType,
 HasCoordinates,
 HasReferenceFrame,
 HasReferenceFrameOrigin,
@@ -120,6 +123,7 @@ HasSourceClock,
 HasTransmissionDelay,
 IsSynchronizationGroupInput,
 IsSynchronizationGroupOutput,
+HasTimeReference,
 HasUncertainty,
 HasUncertaintyAccuracy,
 HasUncertaintyPrecision,
@@ -191,6 +195,7 @@ HasUncertaintyHistogram
 	public static string DWISVerb = "DWISVerb";
 	public static string BelongsToClass = "BelongsToClass";
 	public static string HasEndPoint = "HasEndPoint";
+	public static string HasPressureReferenceType = "HasPressureReferenceType";
 	public static string EndsHydraulicBranchDecomposition = "EndsHydraulicBranchDecomposition";
 	public static string IsAHydraulicRepresentationFor = "IsAHydraulicRepresentationFor";
 	public static string HasBranchComponent = "HasBranchComponent";
@@ -227,6 +232,8 @@ HasUncertaintyHistogram
 	public static string HasMechanicalStateValueFrom = "HasMechanicalStateValueFrom";
 	public static string IsMechanicallyConnectedTo = "IsMechanicallyConnectedTo";
 	public static string IsMechanicallyLocatedAt = "IsMechanicallyLocatedAt";
+	public static string IsForMotionType = "IsForMotionType";
+	public static string HasMotionType = "HasMotionType";
 	public static string HasCoordinates = "HasCoordinates";
 	public static string HasReferenceFrame = "HasReferenceFrame";
 	public static string HasReferenceFrameOrigin = "HasReferenceFrameOrigin";
@@ -246,6 +253,7 @@ HasUncertaintyHistogram
 	public static string HasTransmissionDelay = "HasTransmissionDelay";
 	public static string IsSynchronizationGroupInput = "IsSynchronizationGroupInput";
 	public static string IsSynchronizationGroupOutput = "IsSynchronizationGroupOutput";
+	public static string HasTimeReference = "HasTimeReference";
 	public static string HasUncertainty = "HasUncertainty";
 	public static string HasUncertaintyAccuracy = "HasUncertaintyAccuracy";
 	public static string HasUncertaintyPrecision = "HasUncertaintyPrecision";

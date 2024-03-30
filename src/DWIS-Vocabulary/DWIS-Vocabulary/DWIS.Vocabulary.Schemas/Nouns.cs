@@ -242,6 +242,10 @@ DWISNoun,
 DataEndPoint,
 WitsMLTimeBasedLogEndPoint,
 EndPointMapping,
+PressureReference,
+AbsolutePressureReference,
+RelativePressureReference,
+GaugePressureReference,
 HydraulicElementState,
 HydraulicConnectedState,
 HydraulicLogicalElement,
@@ -290,6 +294,10 @@ MechanicalElementState,
 MechanicallyClosedState,
 MechanicallyConnectedState,
 MechanicalLogicalElement,
+MotionType,
+AxialMotionType,
+TorsionalMotionType,
+LateralMotionType,
 MathematicalModel,
 SteadyStateModel,
 TransientModel,
@@ -429,6 +437,13 @@ Unit,
 UnitSystem,
 Clock,
 SynchronizationGroup,
+TimeReference,
+AbsoluteTimeReference,
+RelativeTimeReference,
+GPSReference,
+UTCReference,
+LocalTimeReference,
+TimeSpanReference,
 SignalUncertainty,
 GaussianUncertainty,
 GenericUncertainty,
@@ -673,6 +688,10 @@ SensorUncertainty
 	public static string DataEndPoint = "DataEndPoint";
 	public static string WitsMLTimeBasedLogEndPoint = "WitsMLTimeBasedLogEndPoint";
 	public static string EndPointMapping = "EndPointMapping";
+	public static string PressureReference = "PressureReference";
+	public static string AbsolutePressureReference = "AbsolutePressureReference";
+	public static string RelativePressureReference = "RelativePressureReference";
+	public static string GaugePressureReference = "GaugePressureReference";
 	public static string HydraulicElementState = "HydraulicElementState";
 	public static string HydraulicConnectedState = "HydraulicConnectedState";
 	public static string HydraulicLogicalElement = "HydraulicLogicalElement";
@@ -721,6 +740,10 @@ SensorUncertainty
 	public static string MechanicallyClosedState = "MechanicallyClosedState";
 	public static string MechanicallyConnectedState = "MechanicallyConnectedState";
 	public static string MechanicalLogicalElement = "MechanicalLogicalElement";
+	public static string MotionType = "MotionType";
+	public static string AxialMotionType = "AxialMotionType";
+	public static string TorsionalMotionType = "TorsionalMotionType";
+	public static string LateralMotionType = "LateralMotionType";
 	public static string MathematicalModel = "MathematicalModel";
 	public static string SteadyStateModel = "SteadyStateModel";
 	public static string TransientModel = "TransientModel";
@@ -860,6 +883,13 @@ SensorUncertainty
 	public static string UnitSystem = "UnitSystem";
 	public static string Clock = "Clock";
 	public static string SynchronizationGroup = "SynchronizationGroup";
+	public static string TimeReference = "TimeReference";
+	public static string AbsoluteTimeReference = "AbsoluteTimeReference";
+	public static string RelativeTimeReference = "RelativeTimeReference";
+	public static string GPSReference = "GPSReference";
+	public static string UTCReference = "UTCReference";
+	public static string LocalTimeReference = "LocalTimeReference";
+	public static string TimeSpanReference = "TimeSpanReference";
 	public static string SignalUncertainty = "SignalUncertainty";
 	public static string GaussianUncertainty = "GaussianUncertainty";
 	public static string GenericUncertainty = "GenericUncertainty";

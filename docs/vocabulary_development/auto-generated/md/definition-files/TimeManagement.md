@@ -41,6 +41,62 @@
 - Description: 
 - Examples:
 - Definition set: TimeManagement
+## TimeReference <!-- NOUN -->
+- Display name: TimeReference
+- Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: TimeManagement
+## AbsoluteTimeReference <!-- NOUN -->
+- Display name: AbsoluteTimeReference
+- Parent class: [TimeReference](./TimeManagement.md#TimeReference)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: TimeManagement
+## RelativeTimeReference <!-- NOUN -->
+- Display name: RelativeTimeReference
+- Parent class: [TimeReference](./TimeManagement.md#TimeReference)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: TimeManagement
+## GPSReference <!-- NOUN -->
+- Display name: AbsoluteTimeReference
+- Parent class: [TimeReference](./TimeManagement.md#TimeReference)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: TimeManagement
+## UTCReference <!-- NOUN -->
+- Display name: AbsoluteTimeReference
+- Parent class: [TimeReference](./TimeManagement.md#TimeReference)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: TimeManagement
+## LocalTimeReference <!-- NOUN -->
+- Display name: LocalTimeReference
+- Parent class: [RelativeTimeReference](./TimeManagement.md#RelativeTimeReference)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: TimeManagement
+## TimeSpanReference <!-- NOUN -->
+- Display name: TimeSpanReference
+- Parent class: [RelativeTimeReference](./TimeManagement.md#RelativeTimeReference)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: TimeManagement
 # Verbs
 ## BelongsToSynchronizationGroup <!-- VERB -->
 - Display name: BelongsToSynchronizationGroup
@@ -97,6 +153,16 @@
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [SynchronizationGroup](./TimeManagement.md#SynchronizationGroup)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: TimeManagement
+## HasTimeReference <!-- VERB -->
+- Display name: HasTimeReference
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [TimeReference](./TimeManagement.md#TimeReference)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 

@@ -36,6 +36,38 @@
 - Description: 
 - Examples:
 - Definition set: Mechanics
+## MotionType <!-- NOUN -->
+- Display name: MotionType
+- Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Mechanics
+## AxialMotionType <!-- NOUN -->
+- Display name: AxialMotionType
+- Parent class: [MotionType](./Mechanics.md#MotionType)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Mechanics
+## TorsionalMotionType <!-- NOUN -->
+- Display name: TorsionalMotionType
+- Parent class: [MotionType](./Mechanics.md#MotionType)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Mechanics
+## LateralMotionType <!-- NOUN -->
+- Display name: LateralMotionType
+- Parent class: [MotionType](./Mechanics.md#MotionType)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Mechanics
 # Verbs
 ## IsAMechanicalRepresentationFor <!-- VERB -->
 - Display name: IsAMechanicalRepresentationFor
@@ -82,6 +114,26 @@
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [MechanicalLogicalElement](./Mechanics.md#MechanicalLogicalElement)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Mechanics
+## IsForMotionType <!-- VERB -->
+- Display name: IsForMotionType
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [MotionType](./Mechanics.md#MotionType)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Mechanics
+## HasMotionType <!-- VERB -->
+- Display name: HasMotionType
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [MechanicalLogicalElement](./Mechanics.md#MechanicalLogicalElement)
+- Object class: [MotionType](./Mechanics.md#MotionType)
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 

@@ -1,6 +1,38 @@
 # Hydraulics<!-- DEFINITION SET HEADER -->
 - Description: this part refers to the hydraulic circuit, and should only contain the "abstract" or conceptual part of the vocabulary. Additional nouns coming from the drilling equipment category will be used when constructing the semantic graphs.
 # Nouns
+## PressureReference <!-- NOUN -->
+- Display name: PressureReference
+- Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## AbsolutePressureReference <!-- NOUN -->
+- Display name: AbsolutePressureReference
+- Parent class: [PressureReference](./Hydraulics.md#PressureReference)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## RelativePressureReference <!-- NOUN -->
+- Display name: RelativePressureReference
+- Parent class: [PressureReference](./Hydraulics.md#PressureReference)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## GaugePressureReference <!-- NOUN -->
+- Display name: GaugePressureReference
+- Parent class: [RelativePressureReference](./Hydraulics.md#RelativePressureReference)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
 ## HydraulicElementState <!-- NOUN -->
 - Display name: HydraulicElementState
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
@@ -309,6 +341,16 @@
 - Examples:
 - Definition set: Hydraulics
 # Verbs
+## HasPressureReferenceType <!-- VERB -->
+- Display name: HasPressureReferenceType
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [PressureReference](./Hydraulics.md#PressureReference)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: Hydraulics
 ## EndsHydraulicBranchDecomposition <!-- VERB -->
 - Display name: EndsHydraulicBranchDecomposition
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
