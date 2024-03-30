@@ -214,6 +214,8 @@ CementPump,
 MudPump,
 BoosterPump,
 BackPressurePump,
+FillPump,
+LiftPump,
 ShaleShakers,
 Slips,
 ManualSlips,
@@ -662,6 +664,8 @@ SensorUncertainty
 	public static string MudPump = "MudPump";
 	public static string BoosterPump = "BoosterPump";
 	public static string BackPressurePump = "BackPressurePump";
+	public static string FillPump = "FillPump";
+	public static string LiftPump = "LiftPump";
 	public static string ShaleShakers = "ShaleShakers";
 	public static string Slips = "Slips";
 	public static string ManualSlips = "ManualSlips";

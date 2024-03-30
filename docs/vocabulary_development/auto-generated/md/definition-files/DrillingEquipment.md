@@ -473,6 +473,22 @@
 - Description: 
 - Examples:
 - Definition set: DrillingEquipment
+## FillPump <!-- NOUN -->
+- Display name: FillPump
+- Parent class: [Pump](./DrillingEquipment.md#Pump)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## LiftPump <!-- NOUN -->
+- Display name: LiftPump
+- Parent class: [Pump](./DrillingEquipment.md#Pump)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
 ## ShaleShakers <!-- NOUN -->
 - Display name: ShaleShakers
 - Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)

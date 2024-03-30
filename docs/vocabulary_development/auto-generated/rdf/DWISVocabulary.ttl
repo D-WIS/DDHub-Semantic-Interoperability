@@ -510,6 +510,9 @@ ddhub:EQ a owl:Class;
 ddhub:FDIRFunction a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:ProtectionFunction. 
+ddhub:FillPump a owl:Class; 
+               rdfs:comment ""@EN; 
+               rdfs:subClassOf ddhub:Pump. 
 ddhub:Filter a owl:Class; 
              rdfs:comment ""@EN; 
              rdfs:subClassOf ddhub:SignalProcessingUnit. 
@@ -1349,6 +1352,9 @@ ddhub:LeftToRight a owl:DatatypeProperty, owl:FunctionalProperty;
 ddhub:LengthQuantity a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:Quantity. 
+ddhub:LiftPump a owl:Class; 
+               rdfs:comment ""@EN; 
+               rdfs:subClassOf ddhub:Pump. 
 ddhub:Limit a owl:Class; 
             rdfs:comment ""@EN; 
             rdfs:subClassOf ddhub:ProcessData. 
