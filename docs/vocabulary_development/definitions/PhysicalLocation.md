@@ -233,6 +233,55 @@
 - Specialization:
 - Description: 
 - Examples:
+## LedgeLocation <!-- NOUN -->
+- Display name: LedgeLocation
+- Parent class: AbscissaReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## CuttingsBedLocation <!-- NOUN -->
+- Display name: CuttingsBedLocation
+- Parent class: AbscissaReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## FormationFluidTransferLocation <!-- NOUN -->
+- Display name: FormationFluidTransferLocation
+- Parent class: AbscissaReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## DifferentialStickingLocation <!-- NOUN -->
+- Display name: DifferentialStickingLocation
+- Parent class: AbscissaReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## FormationCollapseLocation <!-- NOUN -->
+- Display name: FormationCollapseLocation
+- Parent class: AbscissaReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## PipeWashoutLocation <!-- NOUN -->
+- Display name: PipeWashoutLocation
+- Parent class: AbscissaReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## FormationWashoutLocation <!-- NOUN -->
+- Display name: FormationWashoutLocation
+- Parent class: AbscissaReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## AngleReferenceLocation <!-- NOUN -->
 - Display name: AngleReferenceLocation
 - Parent class: Location
