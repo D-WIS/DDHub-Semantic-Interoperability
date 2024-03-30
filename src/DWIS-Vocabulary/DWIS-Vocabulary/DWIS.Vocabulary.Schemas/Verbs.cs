@@ -62,6 +62,7 @@ HasValue,
 HasDynamicValue,
 HasStaticValue,
 IsSubPartOf,
+IsRelatedToDrillingIncident,
 DWISVerb,
 BelongsToClass,
 HasEndPoint,
@@ -192,6 +193,7 @@ HasUncertaintyHistogram
 	public static string HasDynamicValue = "HasDynamicValue";
 	public static string HasStaticValue = "HasStaticValue";
 	public static string IsSubPartOf = "IsSubPartOf";
+	public static string IsRelatedToDrillingIncident = "IsRelatedToDrillingIncident";
 	public static string DWISVerb = "DWISVerb";
 	public static string BelongsToClass = "BelongsToClass";
 	public static string HasEndPoint = "HasEndPoint";

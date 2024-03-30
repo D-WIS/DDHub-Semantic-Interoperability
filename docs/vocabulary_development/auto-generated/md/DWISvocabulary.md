@@ -15,6 +15,8 @@
 - Description: this is the part associated to the signal's description themselves. Dimensionality, data type are the main items to be described.
 ## DrillingEquipment<!-- DEFINITION SET HEADER -->
 - Description: in this category fall all the standard equipment encountered on a drilling rig. Note that the goal of the vocabulary is not to provide a detailed description of the rig. Therefore we only consider nouns that can help providing a signal context.
+## DrillingIncident<!-- DEFINITION SET HEADER -->
+- Description: this category refers mostly to the description of drilling incidents.
 ## DWISSemantics<!-- DEFINITION SET HEADER -->
 - Description: definitions of the base noun and verb. All verbs and nouns in the DWIS vocabulary are children of those.
 ## EndPoints<!-- DEFINITION SET HEADER -->
@@ -2028,6 +2030,102 @@
 - Description: 
 - Examples:
 - Definition set: DrillingEquipment
+## DrillingIncident <!-- NOUN -->
+- Display name: DrillingIncident
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingIncident
+## TwistOff <!-- NOUN -->
+- Display name: TwistOff
+- Parent class: [DrillingIncident](#DrillingIncident)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingIncident
+## Overpull <!-- NOUN -->
+- Display name: Overpull
+- Parent class: [DrillingIncident](#DrillingIncident)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingIncident
+## Underpull <!-- NOUN -->
+- Display name: Underpull
+- Parent class: [DrillingIncident](#DrillingIncident)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingIncident
+## Influx <!-- NOUN -->
+- Display name: Influx
+- Parent class: [DrillingIncident](#DrillingIncident)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingIncident
+## LossCirculation <!-- NOUN -->
+- Display name: LossCirculation
+- Parent class: [DrillingIncident](#DrillingIncident)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingIncident
+## HoleCollapse <!-- NOUN -->
+- Display name: HoleCollapse
+- Parent class: [DrillingIncident](#DrillingIncident)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingIncident
+## StuckPipe <!-- NOUN -->
+- Display name: StuckPipe
+- Parent class: [DrillingIncident](#DrillingIncident)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingIncident
+## PipeWashout <!-- NOUN -->
+- Display name: PipeWashout
+- Parent class: [DrillingIncident](#DrillingIncident)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingIncident
+## FormationWashout <!-- NOUN -->
+- Display name: FormationWashout
+- Parent class: [DrillingIncident](#DrillingIncident)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingIncident
+## OverTorque <!-- NOUN -->
+- Display name: OverTorque
+- Parent class: [DrillingIncident](#DrillingIncident)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingIncident
+## NozzlePlugged <!-- NOUN -->
+- Display name: NozzlePlugged
+- Parent class: [DrillingIncident](#DrillingIncident)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingIncident
 ## DWISNoun <!-- NOUN -->
 - Display name: DWIS noun
 - Parent class: [](#)
@@ -4507,6 +4605,16 @@
 - Description: 
 - Examples: 
 - Definition set: DrillingEquipment
+## IsRelatedToDrillingIncident <!-- VERB -->
+- Display name: IsRelatedToDrillingIncident
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingIncident](#DrillingIncident)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DrillingIncident
 ## DWISVerb <!-- VERB -->
 - Display name: DWIS verb
 - Parent verb: [](#)

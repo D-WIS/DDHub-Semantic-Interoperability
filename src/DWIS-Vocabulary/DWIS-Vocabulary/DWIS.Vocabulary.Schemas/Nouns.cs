@@ -242,6 +242,18 @@ HoistingSystem,
 Rig,
 Sea,
 Ground,
+DrillingIncident,
+TwistOff,
+Overpull,
+Underpull,
+Influx,
+LossCirculation,
+HoleCollapse,
+StuckPipe,
+PipeWashout,
+FormationWashout,
+OverTorque,
+NozzlePlugged,
 DWISNoun,
 DataEndPoint,
 WitsMLTimeBasedLogEndPoint,
@@ -698,6 +710,18 @@ SensorUncertainty
 	public static string Rig = "Rig";
 	public static string Sea = "Sea";
 	public static string Ground = "Ground";
+	public static string DrillingIncident = "DrillingIncident";
+	public static string TwistOff = "TwistOff";
+	public static string Overpull = "Overpull";
+	public static string Underpull = "Underpull";
+	public static string Influx = "Influx";
+	public static string LossCirculation = "LossCirculation";
+	public static string HoleCollapse = "HoleCollapse";
+	public static string StuckPipe = "StuckPipe";
+	public static string PipeWashout = "PipeWashout";
+	public static string FormationWashout = "FormationWashout";
+	public static string OverTorque = "OverTorque";
+	public static string NozzlePlugged = "NozzlePlugged";
 	public static string DWISNoun = "DWISNoun";
 	public static string DataEndPoint = "DataEndPoint";
 	public static string WitsMLTimeBasedLogEndPoint = "WitsMLTimeBasedLogEndPoint";
