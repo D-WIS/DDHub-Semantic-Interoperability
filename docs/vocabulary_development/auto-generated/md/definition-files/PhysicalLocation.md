@@ -65,6 +65,14 @@
 - Description: 
 - Examples:
 - Definition set: PhysicalLocation
+## StickUpHeightVerticalLocation <!-- NOUN -->
+- Display name: StickUpHeightVerticalLocation
+- Parent class: [VerticalReferenceLocation](./PhysicalLocation.md#VerticalReferenceLocation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
 ## WellHeadVerticalLocation <!-- NOUN -->
 - Display name: WellHeadVerticalLocation
 - Parent class: [VerticalReferenceLocation](./PhysicalLocation.md#VerticalReferenceLocation)
@@ -235,6 +243,38 @@
 - Definition set: PhysicalLocation
 ## TopOfStringReferenceLocation <!-- NOUN -->
 - Display name: TopOfStringReferenceLocation
+- Parent class: [AbscissaReferenceLocation](./PhysicalLocation.md#AbscissaReferenceLocation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## ToolJoint1ReferenceLocation <!-- NOUN -->
+- Display name: ToolJoint1ReferenceLocation
+- Parent class: [AbscissaReferenceLocation](./PhysicalLocation.md#AbscissaReferenceLocation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## ToolJoint2ReferenceLocation <!-- NOUN -->
+- Display name: ToolJoint2ReferenceLocation
+- Parent class: [AbscissaReferenceLocation](./PhysicalLocation.md#AbscissaReferenceLocation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## ToolJoint3ReferenceLocation <!-- NOUN -->
+- Display name: ToolJoint3ReferenceLocation
+- Parent class: [AbscissaReferenceLocation](./PhysicalLocation.md#AbscissaReferenceLocation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## ToolJoint4ReferenceLocation <!-- NOUN -->
+- Display name: ToolJoint4ReferenceLocation
 - Parent class: [AbscissaReferenceLocation](./PhysicalLocation.md#AbscissaReferenceLocation)
 - Attributes:
 - Specialization:

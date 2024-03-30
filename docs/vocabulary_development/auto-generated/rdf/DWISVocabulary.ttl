@@ -1956,6 +1956,9 @@ ddhub:StartsHydraulicBranchDecomposition a owl:ObjectProperty;
 ddhub:SteadyStateModel a owl:Class; 
                        rdfs:comment "A model for which the state variables do not change with time."@EN; 
                        rdfs:subClassOf ddhub:MathematicalModel. 
+ddhub:StickUpHeightVerticalLocation a owl:Class; 
+                                    rdfs:comment ""@EN; 
+                                    rdfs:subClassOf ddhub:VerticalReferenceLocation. 
 ddhub:StrainWaveBasedDiscretization a owl:Class; 
                                     rdfs:comment "A model can properly estimate values at the level of strain wave propagation."@EN; 
                                     rdfs:subClassOf ddhub:ModellingDiscretization. 
@@ -2069,6 +2072,18 @@ ddhub:TimeWindowMovingAverage a owl:Class;
 ddhub:TimeWindowRangeExtraction a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:RangeExtraction. 
+ddhub:ToolJoint1ReferenceLocation a owl:Class; 
+                                  rdfs:comment ""@EN; 
+                                  rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
+ddhub:ToolJoint2ReferenceLocation a owl:Class; 
+                                  rdfs:comment ""@EN; 
+                                  rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
+ddhub:ToolJoint3ReferenceLocation a owl:Class; 
+                                  rdfs:comment ""@EN; 
+                                  rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
+ddhub:ToolJoint4ReferenceLocation a owl:Class; 
+                                  rdfs:comment ""@EN; 
+                                  rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
 ddhub:TopDrive a owl:Class; 
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:StringRotationSystem. 

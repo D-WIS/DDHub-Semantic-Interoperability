@@ -330,6 +330,7 @@ CrownValveVerticalLocation,
 DerrickFloorVerticalLocation,
 KellyBushingVerticalLocation,
 RotaryTableVerticalLocation,
+StickUpHeightVerticalLocation,
 WellHeadVerticalLocation,
 GroundLevelVerticalLocation,
 SeaFloorVerticalLocation,
@@ -352,6 +353,10 @@ TopShoulderAxialLocation,
 AbscissaReferenceLocation,
 BottomOfStringReferenceLocation,
 TopOfStringReferenceLocation,
+ToolJoint1ReferenceLocation,
+ToolJoint2ReferenceLocation,
+ToolJoint3ReferenceLocation,
+ToolJoint4ReferenceLocation,
 LastCasingShoeReferenceLocation,
 HoleBottomLocation,
 TopOfRatHoleLocation,
@@ -780,6 +785,7 @@ SensorUncertainty
 	public static string DerrickFloorVerticalLocation = "DerrickFloorVerticalLocation";
 	public static string KellyBushingVerticalLocation = "KellyBushingVerticalLocation";
 	public static string RotaryTableVerticalLocation = "RotaryTableVerticalLocation";
+	public static string StickUpHeightVerticalLocation = "StickUpHeightVerticalLocation";
 	public static string WellHeadVerticalLocation = "WellHeadVerticalLocation";
 	public static string GroundLevelVerticalLocation = "GroundLevelVerticalLocation";
 	public static string SeaFloorVerticalLocation = "SeaFloorVerticalLocation";
@@ -802,6 +808,10 @@ SensorUncertainty
 	public static string AbscissaReferenceLocation = "AbscissaReferenceLocation";
 	public static string BottomOfStringReferenceLocation = "BottomOfStringReferenceLocation";
 	public static string TopOfStringReferenceLocation = "TopOfStringReferenceLocation";
+	public static string ToolJoint1ReferenceLocation = "ToolJoint1ReferenceLocation";
+	public static string ToolJoint2ReferenceLocation = "ToolJoint2ReferenceLocation";
+	public static string ToolJoint3ReferenceLocation = "ToolJoint3ReferenceLocation";
+	public static string ToolJoint4ReferenceLocation = "ToolJoint4ReferenceLocation";
 	public static string LastCasingShoeReferenceLocation = "LastCasingShoeReferenceLocation";
 	public static string HoleBottomLocation = "HoleBottomLocation";
 	public static string TopOfRatHoleLocation = "TopOfRatHoleLocation";
