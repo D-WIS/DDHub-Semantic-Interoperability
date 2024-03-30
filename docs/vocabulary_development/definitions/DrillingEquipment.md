@@ -414,6 +414,20 @@
 - Specialization:
 - Description: 
 - Examples:
+## FillPump <!-- NOUN -->
+- Display name: FillPump
+- Parent class: Pump
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## LiftPump <!-- NOUN -->
+- Display name: LiftPump
+- Parent class: Pump
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## ShaleShakers <!-- NOUN -->
 - Display name: ShaleShakers
 - Parent class: DrillingEquipment
