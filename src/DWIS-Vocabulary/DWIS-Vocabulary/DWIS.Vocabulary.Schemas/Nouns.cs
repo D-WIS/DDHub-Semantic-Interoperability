@@ -338,6 +338,13 @@ TopOfStringReferenceLocation,
 LastCasingShoeReferenceLocation,
 HoleBottomLocation,
 TopOfRatHoleLocation,
+LedgeLocation,
+CuttingsBedLocation,
+FormationFluidTransferLocation,
+DifferentialStickingLocation,
+FormationCollapseLocation,
+PipeWashoutLocation,
+FormationWashoutLocation,
 AngleReferenceLocation,
 ScribeLineAngleLocation,
 GravityHighSideAngleLocation,
@@ -757,6 +764,13 @@ SensorUncertainty
 	public static string LastCasingShoeReferenceLocation = "LastCasingShoeReferenceLocation";
 	public static string HoleBottomLocation = "HoleBottomLocation";
 	public static string TopOfRatHoleLocation = "TopOfRatHoleLocation";
+	public static string LedgeLocation = "LedgeLocation";
+	public static string CuttingsBedLocation = "CuttingsBedLocation";
+	public static string FormationFluidTransferLocation = "FormationFluidTransferLocation";
+	public static string DifferentialStickingLocation = "DifferentialStickingLocation";
+	public static string FormationCollapseLocation = "FormationCollapseLocation";
+	public static string PipeWashoutLocation = "PipeWashoutLocation";
+	public static string FormationWashoutLocation = "FormationWashoutLocation";
 	public static string AngleReferenceLocation = "AngleReferenceLocation";
 	public static string ScribeLineAngleLocation = "ScribeLineAngleLocation";
 	public static string GravityHighSideAngleLocation = "GravityHighSideAngleLocation";

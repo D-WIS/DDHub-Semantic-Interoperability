@@ -265,6 +265,62 @@
 - Description: 
 - Examples:
 - Definition set: PhysicalLocation
+## LedgeLocation <!-- NOUN -->
+- Display name: LedgeLocation
+- Parent class: [AbscissaReferenceLocation](./PhysicalLocation.md#AbscissaReferenceLocation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## CuttingsBedLocation <!-- NOUN -->
+- Display name: CuttingsBedLocation
+- Parent class: [AbscissaReferenceLocation](./PhysicalLocation.md#AbscissaReferenceLocation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## FormationFluidTransferLocation <!-- NOUN -->
+- Display name: FormationFluidTransferLocation
+- Parent class: [AbscissaReferenceLocation](./PhysicalLocation.md#AbscissaReferenceLocation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## DifferentialStickingLocation <!-- NOUN -->
+- Display name: DifferentialStickingLocation
+- Parent class: [AbscissaReferenceLocation](./PhysicalLocation.md#AbscissaReferenceLocation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## FormationCollapseLocation <!-- NOUN -->
+- Display name: FormationCollapseLocation
+- Parent class: [AbscissaReferenceLocation](./PhysicalLocation.md#AbscissaReferenceLocation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## PipeWashoutLocation <!-- NOUN -->
+- Display name: PipeWashoutLocation
+- Parent class: [AbscissaReferenceLocation](./PhysicalLocation.md#AbscissaReferenceLocation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
+## FormationWashoutLocation <!-- NOUN -->
+- Display name: FormationWashoutLocation
+- Parent class: [AbscissaReferenceLocation](./PhysicalLocation.md#AbscissaReferenceLocation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
 ## AngleReferenceLocation <!-- NOUN -->
 - Display name: AngleReferenceLocation
 - Parent class: [Location](./PhysicalLocation.md#Location)

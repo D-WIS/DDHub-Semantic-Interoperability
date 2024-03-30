@@ -289,6 +289,9 @@ ddhub:CutOffFrequency a owl:DatatypeProperty, owl:FunctionalProperty;
                       rdfs:comment ""@EN; 
                       rdfs:domain ddhub:HighPassFilter, ddhub:LowPassFilter; 
                       rdfs:range xsd:double. 
+ddhub:CuttingsBedLocation a owl:Class; 
+                          rdfs:comment ""@EN; 
+                          rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
 ddhub:CuttingsComponent a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:FormationSolidComponent. 
@@ -334,6 +337,9 @@ ddhub:DerivedMeasurement a owl:Class;
 ddhub:DerrickFloorVerticalLocation a owl:Class; 
                                    rdfs:comment ""@EN; 
                                    rdfs:subClassOf ddhub:VerticalReferenceLocation. 
+ddhub:DifferentialStickingLocation a owl:Class; 
+                                   rdfs:comment ""@EN; 
+                                   rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
 ddhub:DirectionalServiceCompany a owl:Class; 
                                 rdfs:comment "A directional service company is an entity that provides services for downhole directional drilling and downhole measurements."@EN; 
                                 rdfs:subClassOf ddhub:ServiceCompany. 
@@ -532,6 +538,12 @@ ddhub:ForceQuantity a owl:Class;
 ddhub:ForceToLoadTransformation a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:DirectTransformation. 
+ddhub:FormationCollapseLocation a owl:Class; 
+                                rdfs:comment ""@EN; 
+                                rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
+ddhub:FormationFluidTransferLocation a owl:Class; 
+                                     rdfs:comment ""@EN; 
+                                     rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
 ddhub:FormationGasComponent a owl:Class; 
                             rdfs:comment ""@EN; 
                             rdfs:subClassOf ddhub:GasComponent. 
@@ -544,6 +556,9 @@ ddhub:FormationPorosityQuantity a owl:Class;
 ddhub:FormationSolidComponent a owl:Class; 
                               rdfs:comment ""@EN; 
                               rdfs:subClassOf ddhub:SolidComponent. 
+ddhub:FormationWashoutLocation a owl:Class; 
+                               rdfs:comment ""@EN; 
+                               rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
 ddhub:FourDimensionalReferenceFrame a owl:Class; 
                                     rdfs:comment ""@EN; 
                                     rdfs:subClassOf ddhub:ReferenceFrame. 
@@ -1277,6 +1292,9 @@ ddhub:LeapSeconds a owl:DatatypeProperty, owl:FunctionalProperty;
 ddhub:LeaseLinePositionLocation a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:PositionReferenceLocation. 
+ddhub:LedgeLocation a owl:Class; 
+                    rdfs:comment ""@EN; 
+                    rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
 ddhub:LeftToRight a owl:DatatypeProperty, owl:FunctionalProperty; 
                   rdfs:comment "Indicates whether the fluid can flow from the left branch to the right branch though the junction"@EN; 
                   rdfs:domain ddhub:HydraulicJunction; 
@@ -1591,6 +1609,9 @@ ddhub:PhysicalState a owl:Class;
 ddhub:Pipe a owl:Class; 
            rdfs:comment ""@EN; 
            rdfs:subClassOf ddhub:HydraulicBranch. 
+ddhub:PipeWashoutLocation a owl:Class; 
+                          rdfs:comment ""@EN; 
+                          rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
 ddhub:Pit a owl:Class; 
           rdfs:comment ""@EN; 
           rdfs:subClassOf ddhub:DrillingEquipment. 
