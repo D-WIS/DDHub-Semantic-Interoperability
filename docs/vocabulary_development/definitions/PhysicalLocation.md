@@ -58,6 +58,13 @@
 - Specialization:
 - Description: 
 - Examples:
+## StickUpHeightVerticalLocation <!-- NOUN -->
+- Display name: StickUpHeightVerticalLocation
+- Parent class: VerticalReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## WellHeadVerticalLocation <!-- NOUN -->
 - Display name: WellHeadVerticalLocation
 - Parent class: VerticalReferenceLocation
@@ -207,6 +214,34 @@
 - Examples:
 ## TopOfStringReferenceLocation <!-- NOUN -->
 - Display name: TopOfStringReferenceLocation
+- Parent class: AbscissaReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## ToolJoint1ReferenceLocation <!-- NOUN -->
+- Display name: ToolJoint1ReferenceLocation
+- Parent class: AbscissaReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## ToolJoint2ReferenceLocation <!-- NOUN -->
+- Display name: ToolJoint2ReferenceLocation
+- Parent class: AbscissaReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## ToolJoint3ReferenceLocation <!-- NOUN -->
+- Display name: ToolJoint3ReferenceLocation
+- Parent class: AbscissaReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## ToolJoint4ReferenceLocation <!-- NOUN -->
+- Display name: ToolJoint4ReferenceLocation
 - Parent class: AbscissaReferenceLocation
 - Attributes:
 - Specialization:
