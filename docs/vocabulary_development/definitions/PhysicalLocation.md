@@ -65,6 +65,13 @@
 - Specialization:
 - Description: 
 - Examples:
+## MinDrillHeightVerticalLocation <!-- NOUN -->
+- Display name: MinDrillHeightVerticalLocation
+- Parent class: VerticalReferenceLocation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## WellHeadVerticalLocation <!-- NOUN -->
 - Display name: WellHeadVerticalLocation
 - Parent class: VerticalReferenceLocation
