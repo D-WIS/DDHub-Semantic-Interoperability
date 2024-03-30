@@ -32,7 +32,34 @@
 - Specialization:
 - Description: 
 - Examples:
-
+## MotionType <!-- NOUN -->
+- Display name: MotionType
+- Parent class: DWISNoun
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## AxialMotionType <!-- NOUN -->
+- Display name: AxialMotionType
+- Parent class: MotionType
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## TorsionalMotionType <!-- NOUN -->
+- Display name: TorsionalMotionType
+- Parent class: MotionType
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## LateralMotionType <!-- NOUN -->
+- Display name: LateralMotionType
+- Parent class: MotionType
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 
 # VERBS
 ## IsAMechanicalRepresentationFor <!-- VERB -->
@@ -68,5 +95,19 @@
 - Parent verb: DWISVerb
 - Subject class: DrillingDataPoint
 - Object class: MechanicalLogicalElement
+- Description: 
+- Examples: 
+## IsForMotionType <!-- VERB -->
+- Display name: IsForMotionType
+- Parent verb: DWISVerb
+- Subject class: DrillingDataPoint
+- Object class: MotionType
+- Description: 
+- Examples:
+## HasMotionType <!-- VERB -->
+- Display name: HasMotionType
+- Parent verb: DWISVerb
+- Subject class: MechanicalLogicalElement
+- Object class: MotionType
 - Description: 
 - Examples: 
