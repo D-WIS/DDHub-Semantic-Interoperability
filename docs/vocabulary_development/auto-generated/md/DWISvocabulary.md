@@ -2787,6 +2787,14 @@
 - Description: 
 - Examples:
 - Definition set: PhysicalLocation
+## MinDrillHeightVerticalLocation <!-- NOUN -->
+- Display name: MinDrillHeightVerticalLocation
+- Parent class: [VerticalReferenceLocation](#VerticalReferenceLocation)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: PhysicalLocation
 ## WellHeadVerticalLocation <!-- NOUN -->
 - Display name: WellHeadVerticalLocation
 - Parent class: [VerticalReferenceLocation](#VerticalReferenceLocation)

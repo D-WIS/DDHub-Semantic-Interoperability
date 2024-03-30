@@ -1522,6 +1522,9 @@ ddhub:MechanicalStiffModelEstimatedContacts a owl:Class;
 ddhub:MechanicalStiffnessType a owl:Class; 
                               rdfs:comment "A description of how the drill-stem stiffness is modelled."@EN; 
                               rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:MinDrillHeightVerticalLocation a owl:Class; 
+                                     rdfs:comment ""@EN; 
+                                     rdfs:subClassOf ddhub:VerticalReferenceLocation. 
 ddhub:MinFrequency a owl:DatatypeProperty, owl:FunctionalProperty; 
                    rdfs:comment ""@EN; 
                    rdfs:domain ddhub:BandPassFilter; 

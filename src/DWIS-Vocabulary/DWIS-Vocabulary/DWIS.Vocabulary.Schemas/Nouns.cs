@@ -331,6 +331,7 @@ DerrickFloorVerticalLocation,
 KellyBushingVerticalLocation,
 RotaryTableVerticalLocation,
 StickUpHeightVerticalLocation,
+MinDrillHeightVerticalLocation,
 WellHeadVerticalLocation,
 GroundLevelVerticalLocation,
 SeaFloorVerticalLocation,
@@ -786,6 +787,7 @@ SensorUncertainty
 	public static string KellyBushingVerticalLocation = "KellyBushingVerticalLocation";
 	public static string RotaryTableVerticalLocation = "RotaryTableVerticalLocation";
 	public static string StickUpHeightVerticalLocation = "StickUpHeightVerticalLocation";
+	public static string MinDrillHeightVerticalLocation = "MinDrillHeightVerticalLocation";
 	public static string WellHeadVerticalLocation = "WellHeadVerticalLocation";
 	public static string GroundLevelVerticalLocation = "GroundLevelVerticalLocation";
 	public static string SeaFloorVerticalLocation = "SeaFloorVerticalLocation";
