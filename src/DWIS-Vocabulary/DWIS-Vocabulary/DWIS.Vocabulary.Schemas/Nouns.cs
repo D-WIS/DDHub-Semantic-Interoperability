@@ -321,6 +321,9 @@ MechanicalStiffModelEstimatedContacts,
 TangencyLength,
 MechanicalElementState,
 MechanicallyClosedState,
+MechanicallyOpenState,
+MechanicallyActiveState,
+MechanicallyInactiveState,
 MechanicallyConnectedState,
 MechanicalLogicalElement,
 MotionType,
@@ -802,6 +805,9 @@ SensorUncertainty
 	public static string TangencyLength = "TangencyLength";
 	public static string MechanicalElementState = "MechanicalElementState";
 	public static string MechanicallyClosedState = "MechanicallyClosedState";
+	public static string MechanicallyOpenState = "MechanicallyOpenState";
+	public static string MechanicallyActiveState = "MechanicallyActiveState";
+	public static string MechanicallyInactiveState = "MechanicallyInactiveState";
 	public static string MechanicallyConnectedState = "MechanicallyConnectedState";
 	public static string MechanicalLogicalElement = "MechanicalLogicalElement";
 	public static string MotionType = "MotionType";

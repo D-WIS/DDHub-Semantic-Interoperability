@@ -2709,6 +2709,30 @@
 - Description: 
 - Examples:
 - Definition set: Mechanics
+## MechanicallyOpenState <!-- NOUN -->
+- Display name: MechanicallyOpenState
+- Parent class: [MechanicalElementState](#MechanicalElementState)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Mechanics
+## MechanicallyActiveState <!-- NOUN -->
+- Display name: MechanicallyActiveState
+- Parent class: [MechanicalElementState](#MechanicalElementState)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Mechanics
+## MechanicallyInactiveState <!-- NOUN -->
+- Display name: MechanicallyInactiveState
+- Parent class: [MechanicalElementState](#MechanicalElementState)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Mechanics
 ## MechanicallyConnectedState <!-- NOUN -->
 - Display name: MechanicallyConnectedState
 - Parent class: [MechanicalElementState](#MechanicalElementState)

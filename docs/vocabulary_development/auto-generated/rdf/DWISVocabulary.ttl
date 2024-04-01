@@ -1542,12 +1542,21 @@ ddhub:MechanicalElementState a owl:Class;
 ddhub:MechanicalLogicalElement a owl:Class; 
                                rdfs:comment ""@EN; 
                                rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:MechanicallyActiveState a owl:Class; 
+                              rdfs:comment ""@EN; 
+                              rdfs:subClassOf ddhub:MechanicalElementState. 
 ddhub:MechanicallyClosedState a owl:Class; 
                               rdfs:comment ""@EN; 
                               rdfs:subClassOf ddhub:MechanicalElementState. 
 ddhub:MechanicallyConnectedState a owl:Class; 
                                  rdfs:comment ""@EN; 
                                  rdfs:subClassOf ddhub:MechanicalElementState. 
+ddhub:MechanicallyInactiveState a owl:Class; 
+                                rdfs:comment ""@EN; 
+                                rdfs:subClassOf ddhub:MechanicalElementState. 
+ddhub:MechanicallyOpenState a owl:Class; 
+                            rdfs:comment ""@EN; 
+                            rdfs:subClassOf ddhub:MechanicalElementState. 
 ddhub:MechanicalSoftModel a owl:Class; 
                           rdfs:comment "An infinitively soft model assumes that the drill-stem deforms without any resistance when compressive loads are applied."@EN; 
                           rdfs:subClassOf ddhub:MechanicalStiffnessType. 
