@@ -164,9 +164,6 @@ ddhub:BlowOutPreventerElement a owl:Class;
 ddhub:BlowOutPreventerStack a owl:Class; 
                             rdfs:comment ""@EN; 
                             rdfs:subClassOf ddhub:DrillingEquipment. 
-ddhub:BooleanDataType a owl:Class; 
-                      rdfs:comment ""@EN; 
-                      rdfs:subClassOf ddhub:EnumerationDataType. 
 ddhub:BoosterPump a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:Pump. 
@@ -272,9 +269,6 @@ ddhub:ConcernsAFluidComponent a owl:ObjectProperty;
 ddhub:ConnectedCondition a owl:Class; 
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:ValidityCondition. 
-ddhub:ContinuousDataType a owl:Class; 
-                         rdfs:comment ""@EN; 
-                         rdfs:subClassOf ddhub:DataType. 
 ddhub:Controller a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:DataFlowNode. 
@@ -300,10 +294,6 @@ ddhub:ConversionFactorB a owl:DatatypeProperty, owl:FunctionalProperty;
 ddhub:CorrectedMeasurement a owl:Class; 
                            rdfs:comment ""@EN; 
                            rdfs:subClassOf ddhub:Measurement. 
-<http://ddhub.no/Count:> a owl:DatatypeProperty, owl:FunctionalProperty; 
-                         rdfs:comment ""@EN; 
-                         rdfs:domain ddhub:EnumerationDataType; 
-                         rdfs:range xsd:int. 
 ddhub:CrownBlock a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:MechanicalBlock. 
@@ -335,9 +325,6 @@ ddhub:DataFlowNode a owl:Class;
 ddhub:DataProvider a owl:Class; 
                    rdfs:comment "A data provider is any sources for data"@EN; 
                    rdfs:subClassOf ddhub:DWISNoun. 
-ddhub:DataType a owl:Class; 
-               rdfs:comment ""@EN; 
-               rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:DeadLine a owl:Class; 
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:DrillLine. 
@@ -368,19 +355,12 @@ ddhub:DerrickFloorVerticalLocation a owl:Class;
 ddhub:DifferentialStickingLocation a owl:Class; 
                                    rdfs:comment ""@EN; 
                                    rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
-<http://ddhub.no/Dimension:> a owl:DatatypeProperty, owl:FunctionalProperty; 
-                             rdfs:comment ""@EN; 
-                             rdfs:domain ddhub:DataType; 
-                             rdfs:range xsd:int. 
 ddhub:DirectionalServiceCompany a owl:Class; 
                                 rdfs:comment "A directional service company is an entity that provides services for downhole directional drilling and downhole measurements."@EN; 
                                 rdfs:subClassOf ddhub:ServiceCompany. 
 ddhub:DirectTransformation a owl:Class; 
                            rdfs:comment "Direct transformations are performed using only the current value of their inputs, time is not involved"@EN; 
                            rdfs:subClassOf ddhub:Transformation. 
-ddhub:DiscreteDataType a owl:Class; 
-                       rdfs:comment ""@EN; 
-                       rdfs:subClassOf ddhub:DataType. 
 ddhub:DistanceBetweenRepeaters a owl:DatatypeProperty, owl:FunctionalProperty; 
                                rdfs:comment ""@EN; 
                                rdfs:domain ddhub:Telemetry; 
@@ -488,8 +468,8 @@ ddhub:DrillStringCenterLineFrame a owl:Class;
                                  rdfs:comment ""@EN; 
                                  rdfs:subClassOf ddhub:OneDimensionalCurviLinearReferenceFrame. 
 ddhub:DWISAttributeCardinalityRestriction a owl:Class, owl:Restriction; 
-                                          owl:onClass ddhub:RunnableFunction, ddhub:Advisor, ddhub:BandPassFilter, ddhub:HighPassFilter, ddhub:LowPassFilter, ddhub:NumberOfSampleMovingAverage, ddhub:TimeWindowMovingAverage, ddhub:Buffering, ddhub:NumberOfItemsRangeExtraction, ddhub:TimeWindowRangeExtraction, ddhub:Resampling, ddhub:DataProvider, ddhub:OperatingCompany, ddhub:ServiceCompany, ddhub:DirectionalServiceCompany, ddhub:DrillingFluidProvider, ddhub:LoggingServiceCompany, ddhub:CementingServiceCompany, ddhub:DataAnalysisServiceCompany, ddhub:DrillingContractor, ddhub:DWISInternalService, ddhub:Telemetry, ddhub:DataType, ddhub:EnumerationDataType, ddhub:DrillingDataPoint, ddhub:DrillingSignal, ddhub:DynamicDrillingSignal, ddhub:DataEndPoint, ddhub:WitsMLTimeBasedLogEndPoint, ddhub:EndPointMapping, ddhub:HydraulicConnectedState, ddhub:HydraulicJunction, ddhub:MechanicalElementState, ddhub:OneDimensionalReferenceFrame, ddhub:MeasurableQuantity, ddhub:Quantity, ddhub:Unit, ddhub:Clock, ddhub:SynchronizationGroup, ddhub:FullScaleUncertainty, ddhub:SensorUncertainty; 
-                                          owl:onProperty ddhub:MainFunction, ddhub:AuxiliaryFunction, ddhub:AdviceType, ddhub:MinFrequency, ddhub:MaxFrequency, ddhub:CutOffFrequency, ddhub:NumberOfSamples, ddhub:TimeWindow, ddhub:BufferingInterval, ddhub:NumberOfItems, ddhub:ResamplingRate, ddhub:ResamplingDelay, ddhub:Validity, ddhub:ProviderName, ddhub:NumberOfRepeaters, ddhub:DistanceBetweenRepeaters, ddhub:AverageDelayByRepeater, <http://ddhub.no/Dimension:>, <http://ddhub.no/Count:>, ddhub:IsValid, ddhub:Value, ddhub:TimeStampAtSource, ddhub:TimeStampAcquisition, ddhub:EndPointDescription, ddhub:WellUID, ddhub:WellName, ddhub:WellboreUID, ddhub:WellboreName, ddhub:LogUID, ddhub:LogName, ddhub:Mnemonic, ddhub:FixedIndices, ddhub:ValuesIndices, ddhub:MeasurementIndex, ddhub:LeftToRight, ddhub:RightToLeft, ddhub:PostiveUpward, ddhub:MeaningfulPrecision, ddhub:L, ddhub:M, ddhub:T, ddhub:I, ddhub:ThT, ddhub:N, ddhub:J, ddhub:SIUnit, ddhub:Symbol, ddhub:ConversionFactorA, ddhub:ConversionFactorB, ddhub:LeapSeconds, ddhub:Stratum, ddhub:NetworkSynchronizationLatencyAverage, ddhub:NetworkSynchronizationLatencyStandardDeviation, ddhub:Resolution, ddhub:MaximumFluctuations, ddhub:SynchronizationDelay, ddhub:SamplingRate, ddhub:FullScale, ddhub:ProportionError, ddhub:Accuracy, ddhub:Precision; 
+                                          owl:onClass ddhub:RunnableFunction, ddhub:Advisor, ddhub:BandPassFilter, ddhub:HighPassFilter, ddhub:LowPassFilter, ddhub:NumberOfSampleMovingAverage, ddhub:TimeWindowMovingAverage, ddhub:Buffering, ddhub:NumberOfItemsRangeExtraction, ddhub:TimeWindowRangeExtraction, ddhub:Resampling, ddhub:DataProvider, ddhub:OperatingCompany, ddhub:ServiceCompany, ddhub:DirectionalServiceCompany, ddhub:DrillingFluidProvider, ddhub:LoggingServiceCompany, ddhub:CementingServiceCompany, ddhub:DataAnalysisServiceCompany, ddhub:DrillingContractor, ddhub:DWISInternalService, ddhub:Telemetry, ddhub:DrillingDataPoint, ddhub:DrillingSignal, ddhub:DynamicDrillingSignal, ddhub:DataEndPoint, ddhub:WitsMLTimeBasedLogEndPoint, ddhub:EndPointMapping, ddhub:HydraulicConnectedState, ddhub:HydraulicJunction, ddhub:MechanicalElementState, ddhub:OneDimensionalReferenceFrame, ddhub:MeasurableQuantity, ddhub:Quantity, ddhub:Unit, ddhub:Clock, ddhub:SynchronizationGroup, ddhub:FullScaleUncertainty, ddhub:SensorUncertainty; 
+                                          owl:onProperty ddhub:MainFunction, ddhub:AuxiliaryFunction, ddhub:AdviceType, ddhub:MinFrequency, ddhub:MaxFrequency, ddhub:CutOffFrequency, ddhub:NumberOfSamples, ddhub:TimeWindow, ddhub:BufferingInterval, ddhub:NumberOfItems, ddhub:ResamplingRate, ddhub:ResamplingDelay, ddhub:Validity, ddhub:ProviderName, ddhub:NumberOfRepeaters, ddhub:DistanceBetweenRepeaters, ddhub:AverageDelayByRepeater, ddhub:IsValid, ddhub:Value, ddhub:TimeStampAtSource, ddhub:TimeStampAcquisition, ddhub:EndPointDescription, ddhub:WellUID, ddhub:WellName, ddhub:WellboreUID, ddhub:WellboreName, ddhub:LogUID, ddhub:LogName, ddhub:Mnemonic, ddhub:FixedIndices, ddhub:ValuesIndices, ddhub:MeasurementIndex, ddhub:LeftToRight, ddhub:RightToLeft, ddhub:PostiveUpward, ddhub:MeaningfulPrecision, ddhub:L, ddhub:M, ddhub:T, ddhub:I, ddhub:ThT, ddhub:N, ddhub:J, ddhub:SIUnit, ddhub:Symbol, ddhub:ConversionFactorA, ddhub:ConversionFactorB, ddhub:LeapSeconds, ddhub:Stratum, ddhub:NetworkSynchronizationLatencyAverage, ddhub:NetworkSynchronizationLatencyStandardDeviation, ddhub:Resolution, ddhub:MaximumFluctuations, ddhub:SynchronizationDelay, ddhub:SamplingRate, ddhub:FullScale, ddhub:ProportionError, ddhub:Accuracy, ddhub:Precision; 
                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger. 
 ddhub:DWISInternalService a owl:Class; 
                           rdfs:comment "A DWIS internal service is an internal component of the DWIS infrastructure that generates information that can be used by any systems connected to the DWIS infrastructure."@EN; 
@@ -533,9 +513,6 @@ ddhub:EndsHydraulicBranchDecomposition a owl:ObjectProperty;
                                        rdfs:domain ddhub:HydraulicBranch; 
                                        rdfs:range ddhub:HydraulicBranch; 
                                        rdfs:subPropertyOf ddhub:DWISVerb. 
-ddhub:EnumerationDataType a owl:Class; 
-                          rdfs:comment ""@EN; 
-                          rdfs:subClassOf ddhub:DiscreteDataType. 
 ddhub:EQ a owl:Class; 
          rdfs:comment ""@EN; 
          rdfs:subClassOf ddhub:ValidityCondition. 
@@ -1666,9 +1643,6 @@ ddhub:NetworkSynchronizationLatencyStandardDeviation a owl:DatatypeProperty, owl
                                                      rdfs:comment ""@EN; 
                                                      rdfs:domain ddhub:Clock; 
                                                      rdfs:range xsd:double. 
-ddhub:NormalizedDataType a owl:Class; 
-                         rdfs:comment "between 0 and 1"@EN; 
-                         rdfs:subClassOf ddhub:ContinuousDataType. 
 ddhub:NorthEastFrame a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:CartesianTwoDimensionalReferenceFrame. 

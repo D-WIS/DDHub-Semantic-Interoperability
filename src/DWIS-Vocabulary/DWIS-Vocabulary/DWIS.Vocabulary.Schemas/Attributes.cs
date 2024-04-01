@@ -41,10 +41,6 @@ public static class Attributes
 	public static string Telemetry_DistanceBetweenRepeaters_Type = "double";
 	public static string Telemetry_AverageDelayByRepeater = "AverageDelayByRepeater";
 	public static string Telemetry_AverageDelayByRepeater_Type = "double";
-	public static string DataType_Dimension: = "Dimension:";
-	public static string DataType_Dimension:_Type = "int";
-	public static string EnumerationDataType_Count: = "Count:";
-	public static string EnumerationDataType_Count:_Type = "int";
 	public static string DrillingDataPoint_IsValid = "IsValid";
 	public static string DrillingDataPoint_IsValid_Type = "bool";
 	public static string DrillingSignal_Value = "Value";
