@@ -582,6 +582,55 @@
 - Specialization:
 - Description: 
 - Examples:
+## CirculationSub <!-- NOUN -->
+- Display name: CirculationSub
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## PortedFloat <!-- NOUN -->
+- Display name: PortedFloat
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## Whipstock <!-- NOUN -->
+- Display name: Whipstock
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## Plug <!-- NOUN -->
+- Display name: Plug
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## BearingAssembly <!-- NOUN -->
+- Display name: BearingAssembly
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MPDScreen <!-- NOUN -->
+- Display name: MPDScreen
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## HeaveCompensation <!-- NOUN -->
+- Display name: HeaveCompensation
+- Parent class: DrillingEquipment
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## HoistingSystem <!-- NOUN -->
 - Display name: HoistingSystem
 - Parent class: DrillingEquipment
