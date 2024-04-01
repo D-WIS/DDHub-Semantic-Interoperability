@@ -2222,8 +2222,8 @@
 - Description: 
 - Examples:
 - Definition set: DrillingIncident
-## NozzlePlugged <!-- NOUN -->
-- Display name: NozzlePlugged
+## Plugged <!-- NOUN -->
+- Display name: Plugged
 - Parent class: [DrillingIncident](#DrillingIncident)
 - Attributes:
 - Specialization:

@@ -1676,9 +1676,6 @@ ddhub:NorthEastFrame a owl:Class;
 ddhub:NorthEastTVDFrame a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:CartesianThreeDimensionalReferenceFrame. 
-ddhub:NozzlePlugged a owl:Class; 
-                    rdfs:comment ""@EN; 
-                    rdfs:subClassOf ddhub:DrillingIncident. 
 ddhub:NumberOfItems a owl:DatatypeProperty, owl:FunctionalProperty; 
                     rdfs:comment ""@EN; 
                     rdfs:domain ddhub:NumberOfItemsRangeExtraction; 
@@ -1757,6 +1754,9 @@ ddhub:Plan a owl:Class;
 ddhub:Plug a owl:Class; 
            rdfs:comment ""@EN; 
            rdfs:subClassOf ddhub:DrillingEquipment. 
+ddhub:Plugged a owl:Class; 
+              rdfs:comment ""@EN; 
+              rdfs:subClassOf ddhub:DrillingIncident. 
 ddhub:PneumaticSlips a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:PowerSlips. 

@@ -266,7 +266,7 @@ StuckPipe,
 PipeWashout,
 FormationWashout,
 OverTorque,
-NozzlePlugged,
+Plugged,
 DWISNoun,
 DataEndPoint,
 WitsMLTimeBasedLogEndPoint,
@@ -750,7 +750,7 @@ SensorUncertainty
 	public static string PipeWashout = "PipeWashout";
 	public static string FormationWashout = "FormationWashout";
 	public static string OverTorque = "OverTorque";
-	public static string NozzlePlugged = "NozzlePlugged";
+	public static string Plugged = "Plugged";
 	public static string DWISNoun = "DWISNoun";
 	public static string DataEndPoint = "DataEndPoint";
 	public static string WitsMLTimeBasedLogEndPoint = "WitsMLTimeBasedLogEndPoint";
