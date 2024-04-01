@@ -84,6 +84,12 @@ ConnectedCondition,
 EQ,
 GT,
 LT,
+DataType,
+ContinuousDataType,
+NormalizedDataType,
+DiscreteDataType,
+EnumerationDataType,
+BooleanDataType,
 DrillingDataPoint,
 PrototypeData,
 ActiveVolume,
@@ -559,6 +565,12 @@ SensorUncertainty
 	public static string EQ = "EQ";
 	public static string GT = "GT";
 	public static string LT = "LT";
+	public static string DataType = "DataType";
+	public static string ContinuousDataType = "ContinuousDataType";
+	public static string NormalizedDataType = "NormalizedDataType";
+	public static string DiscreteDataType = "DiscreteDataType";
+	public static string EnumerationDataType = "EnumerationDataType";
+	public static string BooleanDataType = "BooleanDataType";
 	public static string DrillingDataPoint = "DrillingDataPoint";
 	public static string PrototypeData = "PrototypeData";
 	public static string ActiveVolume = "ActiveVolume";

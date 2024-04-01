@@ -164,6 +164,9 @@ ddhub:BlowOutPreventerElement a owl:Class;
 ddhub:BlowOutPreventerStack a owl:Class; 
                             rdfs:comment ""@EN; 
                             rdfs:subClassOf ddhub:DrillingEquipment. 
+ddhub:BooleanDataType a owl:Class; 
+                      rdfs:comment ""@EN; 
+                      rdfs:subClassOf ddhub:EnumerationDataType. 
 ddhub:BoosterPump a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:Pump. 
@@ -269,6 +272,9 @@ ddhub:ConcernsAFluidComponent a owl:ObjectProperty;
 ddhub:ConnectedCondition a owl:Class; 
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:ValidityCondition. 
+ddhub:ContinuousDataType a owl:Class; 
+                         rdfs:comment ""@EN; 
+                         rdfs:subClassOf ddhub:DataType. 
 ddhub:Controller a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:DataFlowNode. 
@@ -325,6 +331,9 @@ ddhub:DataFlowNode a owl:Class;
 ddhub:DataProvider a owl:Class; 
                    rdfs:comment "A data provider is any sources for data"@EN; 
                    rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:DataType a owl:Class; 
+               rdfs:comment ""@EN; 
+               rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:DeadLine a owl:Class; 
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:DrillLine. 
@@ -361,6 +370,9 @@ ddhub:DirectionalServiceCompany a owl:Class;
 ddhub:DirectTransformation a owl:Class; 
                            rdfs:comment "Direct transformations are performed using only the current value of their inputs, time is not involved"@EN; 
                            rdfs:subClassOf ddhub:Transformation. 
+ddhub:DiscreteDataType a owl:Class; 
+                       rdfs:comment ""@EN; 
+                       rdfs:subClassOf ddhub:DataType. 
 ddhub:DistanceBetweenRepeaters a owl:DatatypeProperty, owl:FunctionalProperty; 
                                rdfs:comment ""@EN; 
                                rdfs:domain ddhub:Telemetry; 
@@ -513,6 +525,9 @@ ddhub:EndsHydraulicBranchDecomposition a owl:ObjectProperty;
                                        rdfs:domain ddhub:HydraulicBranch; 
                                        rdfs:range ddhub:HydraulicBranch; 
                                        rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:EnumerationDataType a owl:Class; 
+                          rdfs:comment ""@EN; 
+                          rdfs:subClassOf ddhub:DiscreteDataType. 
 ddhub:EQ a owl:Class; 
          rdfs:comment ""@EN; 
          rdfs:subClassOf ddhub:ValidityCondition. 
@@ -1643,6 +1658,9 @@ ddhub:NetworkSynchronizationLatencyStandardDeviation a owl:DatatypeProperty, owl
                                                      rdfs:comment ""@EN; 
                                                      rdfs:domain ddhub:Clock; 
                                                      rdfs:range xsd:double. 
+ddhub:NormalizedDataType a owl:Class; 
+                         rdfs:comment "between 0 and 1"@EN; 
+                         rdfs:subClassOf ddhub:ContinuousDataType. 
 ddhub:NorthEastFrame a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:CartesianTwoDimensionalReferenceFrame. 

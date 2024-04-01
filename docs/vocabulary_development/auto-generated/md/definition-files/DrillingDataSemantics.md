@@ -1,6 +1,54 @@
 # DrillingDataSemantics<!-- DEFINITION SET HEADER -->
 - Description: this is the part associated to the signal's description themselves. Dimensionality, data type are the main items to be described.
 # Nouns
+## DataType <!-- NOUN -->
+- Display name: DataType
+- Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## ContinuousDataType <!-- NOUN -->
+- Display name: ContinuousDataType
+- Parent class: [DataType](./DrillingDataSemantics.md#DataType)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## NormalizedDataType <!-- NOUN -->
+- Display name: NormalizedDataType
+- Parent class: [ContinuousDataType](./DrillingDataSemantics.md#ContinuousDataType)
+- Attributes:
+- Specialization:
+- Description: between 0 and 1
+- Examples:
+- Definition set: DrillingDataSemantics
+## DiscreteDataType <!-- NOUN -->
+- Display name: DiscreteDataType
+- Parent class: [DataType](./DrillingDataSemantics.md#DataType)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## EnumerationDataType <!-- NOUN -->
+- Display name: EnumerationDataType
+- Parent class: [DiscreteDataType](./DrillingDataSemantics.md#DiscreteDataType)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## BooleanDataType <!-- NOUN -->
+- Display name: BooleanDataType
+- Parent class: [EnumerationDataType](./DrillingDataSemantics.md#EnumerationDataType)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
 ## DrillingDataPoint <!-- NOUN -->
 - Display name: DrillingDataPoint
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
