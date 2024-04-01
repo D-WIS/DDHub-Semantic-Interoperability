@@ -187,6 +187,20 @@
 - Specialization:
 - Description: 
 - Examples:
+## MPDMainFlowPath <!-- NOUN -->
+- Display name: MPDMainFlowPath
+- Parent class: TopsideHydraulicNetwork
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MPDAlternateFlowPath <!-- NOUN -->
+- Display name: MPDAlternateFlowPath
+- Parent class: TopsideHydraulicNetwork
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## FluidComponent <!-- NOUN -->
 - Display name: FluidComponent
 - Parent class: DWISNoun
