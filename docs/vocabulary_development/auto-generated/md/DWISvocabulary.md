@@ -754,6 +754,60 @@
 - Description: 
 - Examples:
 - Definition set: DataValidity
+## DataType <!-- NOUN -->
+- Display name: DataType
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+  - Dimension:
+    - Type: int
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## ContinuousDataType <!-- NOUN -->
+- Display name: ContinuousDataType
+- Parent class: [DataType](#DataType)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## NormalizedDataType <!-- NOUN -->
+- Display name: NormalizedDataType
+- Parent class: [ContinuousDataType](#ContinuousDataType)
+- Attributes:
+- Specialization:
+- Description: between 0 and 1
+- Examples:
+- Definition set: DrillingDataSemantics
+## DiscreteDataType <!-- NOUN -->
+- Display name: DiscreteDataType
+- Parent class: [DataType](#DataType)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## EnumerationDataType <!-- NOUN -->
+- Display name: EnumerationDataType
+- Parent class: [DiscreteDataType](#DiscreteDataType)
+- Attributes:
+  - Count:
+    - Type: int
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## BooleanDataType <!-- NOUN -->
+- Display name: BooleanDataType
+- Parent class: [EnumerationDataType](#EnumerationDataType)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
 ## DrillingDataPoint <!-- NOUN -->
 - Display name: DrillingDataPoint
 - Parent class: [DWISNoun](#DWISNoun)
@@ -871,7 +925,7 @@
 - Definition set: DrillingDataSemantics
 ## HoleDepth <!-- NOUN -->
 - Display name: HoleDepth
-- Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Parent class: [PrototypeData](#PrototypeData)
 - Attributes:
 - Specialization:
 - Description: 

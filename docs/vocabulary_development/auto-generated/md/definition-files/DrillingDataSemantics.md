@@ -1,6 +1,60 @@
 # DrillingDataSemantics<!-- DEFINITION SET HEADER -->
 - Description: this is the part associated to the signal's description themselves. Dimensionality, data type are the main items to be described.
 # Nouns
+## DataType <!-- NOUN -->
+- Display name: DataType
+- Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Attributes:
+  - Dimension:
+    - Type: int
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## ContinuousDataType <!-- NOUN -->
+- Display name: ContinuousDataType
+- Parent class: [DataType](./DrillingDataSemantics.md#DataType)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## NormalizedDataType <!-- NOUN -->
+- Display name: NormalizedDataType
+- Parent class: [ContinuousDataType](./DrillingDataSemantics.md#ContinuousDataType)
+- Attributes:
+- Specialization:
+- Description: between 0 and 1
+- Examples:
+- Definition set: DrillingDataSemantics
+## DiscreteDataType <!-- NOUN -->
+- Display name: DiscreteDataType
+- Parent class: [DataType](./DrillingDataSemantics.md#DataType)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## EnumerationDataType <!-- NOUN -->
+- Display name: EnumerationDataType
+- Parent class: [DiscreteDataType](./DrillingDataSemantics.md#DiscreteDataType)
+- Attributes:
+  - Count:
+    - Type: int
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
+## BooleanDataType <!-- NOUN -->
+- Display name: BooleanDataType
+- Parent class: [EnumerationDataType](./DrillingDataSemantics.md#EnumerationDataType)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingDataSemantics
 ## DrillingDataPoint <!-- NOUN -->
 - Display name: DrillingDataPoint
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
@@ -118,7 +172,7 @@
 - Definition set: DrillingDataSemantics
 ## HoleDepth <!-- NOUN -->
 - Display name: HoleDepth
-- Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Parent class: [PrototypeData](./DrillingDataSemantics.md#PrototypeData)
 - Attributes:
 - Specialization:
 - Description: 
