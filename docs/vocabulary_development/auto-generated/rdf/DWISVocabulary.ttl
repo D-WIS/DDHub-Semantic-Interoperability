@@ -1622,6 +1622,9 @@ ddhub:MovingMin a owl:Class;
 ddhub:MovingStandardDeviation a owl:Class; 
                               rdfs:comment ""@EN; 
                               rdfs:subClassOf ddhub:Filter. 
+ddhub:MPDAlternateFlowPath a owl:Class; 
+                           rdfs:comment ""@EN; 
+                           rdfs:subClassOf ddhub:TopsideHydraulicNetwork. 
 ddhub:MPDChoke a owl:Class; 
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:Choke. 
@@ -1631,6 +1634,9 @@ ddhub:MPDChokeOpening a owl:Class;
 ddhub:MPDChokePressure a owl:Class; 
                        rdfs:comment ""@EN; 
                        rdfs:subClassOf ddhub:PrototypeData. 
+ddhub:MPDMainFlowPath a owl:Class; 
+                      rdfs:comment ""@EN; 
+                      rdfs:subClassOf ddhub:TopsideHydraulicNetwork. 
 ddhub:MPDPumpFlowRate a owl:Class; 
                       rdfs:comment ""@EN; 
                       rdfs:subClassOf ddhub:PrototypeData. 

@@ -296,6 +296,8 @@ MudMixing,
 HydraulicNetwork,
 DownholeHydraulicNetwork,
 TopsideHydraulicNetwork,
+MPDMainFlowPath,
+MPDAlternateFlowPath,
 FluidComponent,
 LiquidComponent,
 FormationLiquidComponent,
@@ -780,6 +782,8 @@ SensorUncertainty
 	public static string HydraulicNetwork = "HydraulicNetwork";
 	public static string DownholeHydraulicNetwork = "DownholeHydraulicNetwork";
 	public static string TopsideHydraulicNetwork = "TopsideHydraulicNetwork";
+	public static string MPDMainFlowPath = "MPDMainFlowPath";
+	public static string MPDAlternateFlowPath = "MPDAlternateFlowPath";
 	public static string FluidComponent = "FluidComponent";
 	public static string LiquidComponent = "LiquidComponent";
 	public static string FormationLiquidComponent = "FormationLiquidComponent";

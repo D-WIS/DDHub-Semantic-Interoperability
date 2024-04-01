@@ -2506,6 +2506,22 @@
 - Description: 
 - Examples:
 - Definition set: Hydraulics
+## MPDMainFlowPath <!-- NOUN -->
+- Display name: MPDMainFlowPath
+- Parent class: [TopsideHydraulicNetwork](#TopsideHydraulicNetwork)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
+## MPDAlternateFlowPath <!-- NOUN -->
+- Display name: MPDAlternateFlowPath
+- Parent class: [TopsideHydraulicNetwork](#TopsideHydraulicNetwork)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Hydraulics
 ## FluidComponent <!-- NOUN -->
 - Display name: FluidComponent
 - Parent class: [DWISNoun](#DWISNoun)
