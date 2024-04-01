@@ -18,6 +18,27 @@
 - Specialization:
 - Description: 
 - Examples:
+## MechanicallyOpenState <!-- NOUN -->
+- Display name: MechanicallyOpenState
+- Parent class: MechanicalElementState
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MechanicallyActiveState <!-- NOUN -->
+- Display name: MechanicallyActiveState
+- Parent class: MechanicalElementState
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MechanicallyInactiveState <!-- NOUN -->
+- Display name: MechanicallyInactiveState
+- Parent class: MechanicalElementState
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## MechanicallyConnectedState <!-- NOUN -->
 - Display name: MechanicallyConnectedState
 - Parent class: MechanicalElementState
