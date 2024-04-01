@@ -1,7 +1,54 @@
 - Description: this is the part associated to the signal's description themselves. Dimensionality, data type are the main items to be described.
 
 # NOUNS
-
+## DataType <!-- NOUN -->
+- Display name: DataType
+- Parent class: DWISNoun
+- Attributes:
+  - Dimension:
+    - Type: int
+    - Description
+- Specialization:
+- Description: 
+- Examples:
+## ContinuousDataType <!-- NOUN -->
+- Display name: ContinuousDataType
+- Parent class: DataType
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## NormalizedDataType <!-- NOUN -->
+- Display name: NormalizedDataType
+- Parent class: ContinuousDataType
+- Attributes:
+- Specialization:
+- Description: between 0 and 1
+- Examples:
+## DiscreteDataType <!-- NOUN -->
+- Display name: DiscreteDataType
+- Parent class: DataType
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## EnumerationDataType <!-- NOUN -->
+- Display name: EnumerationDataType
+- Parent class: DiscreteDataType
+- Attributes:
+  - Count:
+    - Type: int
+    - Description: 
+- Specialization:
+- Description: 
+- Examples:
+## BooleanDataType <!-- NOUN -->
+- Display name: BooleanDataType
+- Parent class: EnumerationDataType
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## DrillingDataPoint <!-- NOUN -->
 - Display name: DrillingDataPoint
 - Parent class: DWISNoun
@@ -106,7 +153,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Examples:
 ## HoleDepth <!-- NOUN -->
 - Display name: HoleDepth
-- Parent class: DrillingDataPoint
+- Parent class: PrototypeData
 - Attributes:
 - Specialization:
 - Description: 
