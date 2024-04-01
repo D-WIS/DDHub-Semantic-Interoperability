@@ -238,6 +238,13 @@ TopDriveShaft,
 HoleEnlargementElement,
 UnderReamer,
 HoleOpener,
+CirculationSub,
+PortedFloat,
+Whipstock,
+Plug,
+BearingAssembly,
+MPDScreen,
+HeaveCompensation,
 HoistingSystem,
 Rig,
 Sea,
@@ -706,6 +713,13 @@ SensorUncertainty
 	public static string HoleEnlargementElement = "HoleEnlargementElement";
 	public static string UnderReamer = "UnderReamer";
 	public static string HoleOpener = "HoleOpener";
+	public static string CirculationSub = "CirculationSub";
+	public static string PortedFloat = "PortedFloat";
+	public static string Whipstock = "Whipstock";
+	public static string Plug = "Plug";
+	public static string BearingAssembly = "BearingAssembly";
+	public static string MPDScreen = "MPDScreen";
+	public static string HeaveCompensation = "HeaveCompensation";
 	public static string HoistingSystem = "HoistingSystem";
 	public static string Rig = "Rig";
 	public static string Sea = "Sea";

@@ -1998,6 +1998,62 @@
 - Description: 
 - Examples:
 - Definition set: DrillingEquipment
+## CirculationSub <!-- NOUN -->
+- Display name: CirculationSub
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## PortedFloat <!-- NOUN -->
+- Display name: PortedFloat
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## Whipstock <!-- NOUN -->
+- Display name: Whipstock
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## Plug <!-- NOUN -->
+- Display name: Plug
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## BearingAssembly <!-- NOUN -->
+- Display name: BearingAssembly
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## MPDScreen <!-- NOUN -->
+- Display name: MPDScreen
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
+## HeaveCompensation <!-- NOUN -->
+- Display name: HeaveCompensation
+- Parent class: [DrillingEquipment](#DrillingEquipment)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DrillingEquipment
 ## HoistingSystem <!-- NOUN -->
 - Display name: HoistingSystem
 - Parent class: [DrillingEquipment](#DrillingEquipment)

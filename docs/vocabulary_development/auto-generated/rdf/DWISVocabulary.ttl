@@ -118,6 +118,9 @@ ddhub:BackPressurePumpPressure a owl:Class;
 ddhub:BandPassFilter a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:Filter. 
+ddhub:BearingAssembly a owl:Class; 
+                      rdfs:comment ""@EN; 
+                      rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:BellNipple a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:AnnulusTerminator. 
@@ -228,6 +231,9 @@ ddhub:CementPump a owl:Class;
 ddhub:Choke a owl:Class; 
             rdfs:comment ""@EN; 
             rdfs:subClassOf ddhub:GateValve. 
+ddhub:CirculationSub a owl:Class; 
+                     rdfs:comment ""@EN; 
+                     rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:Clock a owl:Class; 
             rdfs:comment "Represents a clock"@EN; 
             rdfs:subClassOf ddhub:DWISNoun. 
@@ -858,6 +864,9 @@ ddhub:HasValue a owl:ObjectProperty;
                rdfs:domain ddhub:DrillingDataPoint; 
                rdfs:range ddhub:DrillingSignal; 
                rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:HeaveCompensation a owl:Class; 
+                        rdfs:comment ""@EN; 
+                        rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:HighGravitySolidComponent a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:DrillingFluidSolidComponent. 
@@ -1604,6 +1613,9 @@ ddhub:MPDPumpFlowRate a owl:Class;
 ddhub:MPDPumpRate a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:PrototypeData. 
+ddhub:MPDScreen a owl:Class; 
+                rdfs:comment ""@EN; 
+                rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:MudHose a owl:Class; 
               rdfs:comment ""@EN; 
               rdfs:subClassOf ddhub:SurfacePipe. 
@@ -1715,6 +1727,9 @@ ddhub:Pit a owl:Class;
 ddhub:Plan a owl:Class; 
            rdfs:comment ""@EN; 
            rdfs:subClassOf ddhub:DataFlowNode. 
+ddhub:Plug a owl:Class; 
+           rdfs:comment ""@EN; 
+           rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:PneumaticSlips a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:PowerSlips. 
@@ -1727,6 +1742,9 @@ ddhub:PorePressure a owl:Class;
 ddhub:PorePressureGradient a owl:Class; 
                            rdfs:comment ""@EN; 
                            rdfs:subClassOf ddhub:PrototypeData. 
+ddhub:PortedFloat a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:PositionReferenceLocation a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:Location. 
@@ -2288,6 +2306,9 @@ ddhub:WGS84PositionLocation a owl:Class;
 ddhub:WGS84VerticalLocation a owl:Class; 
                             rdfs:comment ""@EN; 
                             rdfs:subClassOf ddhub:VerticalReferenceLocation. 
+ddhub:Whipstock a owl:Class; 
+                rdfs:comment ""@EN; 
+                rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:WiredPipeTelemetry a owl:Class; 
                          rdfs:comment "A method that allows transfer of downhole data to the surface via electrical connections through the drill string."@EN; 
                          rdfs:subClassOf ddhub:DownHoleTelemetry. 
