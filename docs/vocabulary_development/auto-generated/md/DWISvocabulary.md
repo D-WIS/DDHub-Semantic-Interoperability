@@ -4813,6 +4813,16 @@
 - Description: 
 - Examples: 
 - Definition set: DrillingDataSemantics
+## IsToBeComparedWith <!-- VERB -->
+- Display name: IsToBeComparedWith
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DrillingDataSemantics
 ## IsSubPartOf <!-- VERB -->
 - Display name: IsSubPartOf
 - Parent verb: [DWISVerb](#DWISVerb)

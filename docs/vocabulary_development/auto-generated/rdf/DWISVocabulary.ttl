@@ -1315,6 +1315,11 @@ ddhub:IsSynchronizationGroupOutput a owl:ObjectProperty;
                                    rdfs:domain ddhub:DrillingDataPoint; 
                                    rdfs:range ddhub:SynchronizationGroup; 
                                    rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsToBeComparedWith a owl:ObjectProperty; 
+                         rdfs:comment ""@EN; 
+                         rdfs:domain ddhub:DrillingDataPoint; 
+                         rdfs:range ddhub:DrillingDataPoint; 
+                         rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsTransformationInput a owl:ObjectProperty; 
                             rdfs:comment ""@EN; 
                             rdfs:domain ddhub:DrillingDataPoint; 

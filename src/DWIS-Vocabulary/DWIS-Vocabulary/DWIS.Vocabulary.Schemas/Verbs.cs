@@ -62,6 +62,7 @@ HasTimeIntervalDomain,
 HasValue,
 HasDynamicValue,
 HasStaticValue,
+IsToBeComparedWith,
 IsSubPartOf,
 IsRelatedToDrillingIncident,
 DWISVerb,
@@ -194,6 +195,7 @@ HasUncertaintyHistogram
 	public static string HasValue = "HasValue";
 	public static string HasDynamicValue = "HasDynamicValue";
 	public static string HasStaticValue = "HasStaticValue";
+	public static string IsToBeComparedWith = "IsToBeComparedWith";
 	public static string IsSubPartOf = "IsSubPartOf";
 	public static string IsRelatedToDrillingIncident = "IsRelatedToDrillingIncident";
 	public static string DWISVerb = "DWISVerb";
