@@ -102,11 +102,72 @@
 - Specialization:
 - Description: A DWIS internal service is an internal component of the DWIS infrastructure that generates information that can be used by any systems connected to the DWIS infrastructure.
 - Examples:
-
+## DWISDDHub <!-- NOUN -->
+- Display name: DWISDDHub
+- Parent class: DWISInternalService
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## DWISDrillingProcessStateInterpreter <!-- NOUN -->
+- Display name: DWISDrillingProcessStateInterpreter
+- Parent class: DWISInternalService
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## DWISAdviceComposer <!-- NOUN -->
+- Display name: DWISAdviceComposer
+- Parent class: DWISInternalService
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## DWISScheduler <!-- NOUN -->
+- Display name: DWISScheduler
+- Parent class: DWISInternalService
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## DWISContextualDataBuilder <!-- NOUN -->
+- Display name: DWISContextualDataBuilder
+- Parent class: DWISInternalService
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## DWISLogger <!-- NOUN -->
+- Display name: DWISLogger
+- Parent class: DWISInternalService
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## DWISADCSInterface <!-- NOUN -->
+- Display name: DWISADCSInterface
+- Parent class: DWISInternalService
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## DWISADCSCapabilityDescriptor <!-- NOUN -->
+- Display name: DWISADCSCapabilityDescriptor
+- Parent class: DWISInternalService
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 # VERBS
-
 ## IsProvidedBy <!-- VERB -->
 - Display name: IsProvidedBy
+- Parent verb: DWISVerb
+- Subject class: DWISNoun
+- Object class: DataProvider
+- Description: 
+- Examples: 
+## IsProvidedTo <!-- VERB -->
+- Display name: IsProvidedTo
 - Parent verb: DWISVerb
 - Subject class: DWISNoun
 - Object class: DataProvider
