@@ -590,5 +590,12 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Subject class: DrillingDataPoint
 - Object class: DrillingSignal
 - Description: 
+- Examples:
+## IsToBeComparedWith <!-- VERB -->
+- Display name: IsToBeComparedWith
+- Parent verb: DWISVerb
+- Subject class: DrillingDataPoint
+- Object class: DrillingDataPoint
+- Description: 
 - Examples: 
 
