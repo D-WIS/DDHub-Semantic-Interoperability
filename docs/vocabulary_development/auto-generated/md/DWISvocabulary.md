@@ -657,6 +657,70 @@
 - Description: A DWIS internal service is an internal component of the DWIS infrastructure that generates information that can be used by any systems connected to the DWIS infrastructure.
 - Examples:
 - Definition set: DataProviders
+## DWISDDHub <!-- NOUN -->
+- Display name: DWISDDHub
+- Parent class: [DWISInternalService](#DWISInternalService)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataProviders
+## DWISDrillingProcessStateInterpreter <!-- NOUN -->
+- Display name: DWISDrillingProcessStateInterpreter
+- Parent class: [DWISInternalService](#DWISInternalService)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataProviders
+## DWISAdviceComposer <!-- NOUN -->
+- Display name: DWISAdviceComposer
+- Parent class: [DWISInternalService](#DWISInternalService)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataProviders
+## DWISScheduler <!-- NOUN -->
+- Display name: DWISScheduler
+- Parent class: [DWISInternalService](#DWISInternalService)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataProviders
+## DWISContextualDataBuilder <!-- NOUN -->
+- Display name: DWISContextualDataBuilder
+- Parent class: [DWISInternalService](#DWISInternalService)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataProviders
+## DWISLogger <!-- NOUN -->
+- Display name: DWISLogger
+- Parent class: [DWISInternalService](#DWISInternalService)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataProviders
+## DWISADCSInterface <!-- NOUN -->
+- Display name: DWISADCSInterface
+- Parent class: [DWISInternalService](#DWISInternalService)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataProviders
+## DWISADCSCapabilityDescriptor <!-- NOUN -->
+- Display name: DWISADCSCapabilityDescriptor
+- Parent class: [DWISInternalService](#DWISInternalService)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: DataProviders
 ## Telemetry <!-- NOUN -->
 - Display name: Telemetry
 - Parent class: [DWISNoun](#DWISNoun)
@@ -4621,6 +4685,16 @@
 - Definition set: DataFlow
 ## IsProvidedBy <!-- VERB -->
 - Display name: IsProvidedBy
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DWISNoun](#DWISNoun)
+- Object class: [DataProvider](#DataProvider)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DataProviders
+## IsProvidedTo <!-- VERB -->
+- Display name: IsProvidedTo
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DataProvider](#DataProvider)

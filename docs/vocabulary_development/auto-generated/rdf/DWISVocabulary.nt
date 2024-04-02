@@ -173,6 +173,22 @@
 <http://ddhub.no/DWISInternalService> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/DWISInternalService> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DataProvider> .
 <http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onClass> <http://ddhub.no/DWISInternalService> .
+<http://ddhub.no/DWISDDHub> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DWISDDHub> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISInternalService> .
+<http://ddhub.no/DWISDrillingProcessStateInterpreter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DWISDrillingProcessStateInterpreter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISInternalService> .
+<http://ddhub.no/DWISAdviceComposer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DWISAdviceComposer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISInternalService> .
+<http://ddhub.no/DWISScheduler> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DWISScheduler> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISInternalService> .
+<http://ddhub.no/DWISContextualDataBuilder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DWISContextualDataBuilder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISInternalService> .
+<http://ddhub.no/DWISLogger> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DWISLogger> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISInternalService> .
+<http://ddhub.no/DWISADCSInterface> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DWISADCSInterface> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISInternalService> .
+<http://ddhub.no/DWISADCSCapabilityDescriptor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DWISADCSCapabilityDescriptor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISInternalService> .
 <http://ddhub.no/Telemetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/Telemetry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onProperty> <http://ddhub.no/NumberOfRepeaters> .
@@ -1137,6 +1153,14 @@
 <http://ddhub.no/DataAnalysisServiceCompany> <http://www.w3.org/2000/01/rdf-schema#comment> "A data analysis service company is an entity that analyses measured data and provide new information from these measurements."@EN .
 <http://ddhub.no/DrillingContractor> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/DWISInternalService> <http://www.w3.org/2000/01/rdf-schema#comment> "A DWIS internal service is an internal component of the DWIS infrastructure that generates information that can be used by any systems connected to the DWIS infrastructure."@EN .
+<http://ddhub.no/DWISDDHub> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/DWISDrillingProcessStateInterpreter> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/DWISAdviceComposer> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/DWISScheduler> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/DWISContextualDataBuilder> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/DWISLogger> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/DWISADCSInterface> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/DWISADCSCapabilityDescriptor> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/Telemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "Technology used for transferring the data from its main origin."@EN .
 <http://ddhub.no/DownHoleTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/MudPulseTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "A method that allows transfer of downhole data to the surface via pressure pulses sent trough the drilling fluid."@EN .
@@ -1986,6 +2010,10 @@
 <http://ddhub.no/IsProvidedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/IsProvidedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DataProvider> .
 <http://ddhub.no/IsProvidedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsProvidedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsProvidedTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsProvidedTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DataProvider> .
+<http://ddhub.no/IsProvidedTo> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
 <http://ddhub.no/IsTransmittedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://ddhub.no/IsTransmittedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
 <http://ddhub.no/IsTransmittedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Telemetry> .
@@ -2427,6 +2455,7 @@
 <http://ddhub.no/IsTransmissionOutput> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/IsProcessedBy> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/IsProvidedBy> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/IsProvidedTo> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/IsTransmittedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Expresses that a signal is transmitted by some given telemetry system"@EN .
 <http://ddhub.no/IsConditionedBy> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/IsConditionInput> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .

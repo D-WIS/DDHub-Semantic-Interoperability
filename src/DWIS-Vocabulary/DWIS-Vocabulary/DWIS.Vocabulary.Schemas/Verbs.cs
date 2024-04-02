@@ -50,6 +50,7 @@ IsResampledBy,
 IsTransmissionOutput,
 IsProcessedBy,
 IsProvidedBy,
+IsProvidedTo,
 IsTransmittedBy,
 IsConditionedBy,
 IsConditionInput,
@@ -181,6 +182,7 @@ HasUncertaintyHistogram
 	public static string IsTransmissionOutput = "IsTransmissionOutput";
 	public static string IsProcessedBy = "IsProcessedBy";
 	public static string IsProvidedBy = "IsProvidedBy";
+	public static string IsProvidedTo = "IsProvidedTo";
 	public static string IsTransmittedBy = "IsTransmittedBy";
 	public static string IsConditionedBy = "IsConditionedBy";
 	public static string IsConditionInput = "IsConditionInput";

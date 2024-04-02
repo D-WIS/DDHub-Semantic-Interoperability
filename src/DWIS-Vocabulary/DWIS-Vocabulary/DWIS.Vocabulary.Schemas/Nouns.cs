@@ -73,6 +73,14 @@ CementingServiceCompany,
 DataAnalysisServiceCompany,
 DrillingContractor,
 DWISInternalService,
+DWISDDHub,
+DWISDrillingProcessStateInterpreter,
+DWISAdviceComposer,
+DWISScheduler,
+DWISContextualDataBuilder,
+DWISLogger,
+DWISADCSInterface,
+DWISADCSCapabilityDescriptor,
 Telemetry,
 DownHoleTelemetry,
 MudPulseTelemetry,
@@ -559,6 +567,14 @@ SensorUncertainty
 	public static string DataAnalysisServiceCompany = "DataAnalysisServiceCompany";
 	public static string DrillingContractor = "DrillingContractor";
 	public static string DWISInternalService = "DWISInternalService";
+	public static string DWISDDHub = "DWISDDHub";
+	public static string DWISDrillingProcessStateInterpreter = "DWISDrillingProcessStateInterpreter";
+	public static string DWISAdviceComposer = "DWISAdviceComposer";
+	public static string DWISScheduler = "DWISScheduler";
+	public static string DWISContextualDataBuilder = "DWISContextualDataBuilder";
+	public static string DWISLogger = "DWISLogger";
+	public static string DWISADCSInterface = "DWISADCSInterface";
+	public static string DWISADCSCapabilityDescriptor = "DWISADCSCapabilityDescriptor";
 	public static string Telemetry = "Telemetry";
 	public static string DownHoleTelemetry = "DownHoleTelemetry";
 	public static string MudPulseTelemetry = "MudPulseTelemetry";
