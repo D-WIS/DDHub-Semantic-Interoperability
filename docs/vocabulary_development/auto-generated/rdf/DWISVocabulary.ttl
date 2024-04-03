@@ -1320,6 +1320,46 @@ ddhub:IsToBeComparedWith a owl:ObjectProperty;
                          rdfs:domain ddhub:DrillingDataPoint; 
                          rdfs:range ddhub:DrillingDataPoint; 
                          rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsToBeDifferentFrom a owl:ObjectProperty; 
+                          rdfs:comment ""@EN; 
+                          rdfs:domain ddhub:DrillingDataPoint; 
+                          rdfs:range ddhub:DrillingDataPoint; 
+                          rdfs:subPropertyOf ddhub:IsToBeComparedWith. 
+ddhub:IsToBeEqualTo a owl:ObjectProperty; 
+                    rdfs:comment ""@EN; 
+                    rdfs:domain ddhub:DrillingDataPoint; 
+                    rdfs:range ddhub:DrillingDataPoint; 
+                    rdfs:subPropertyOf ddhub:IsToBeComparedWith. 
+ddhub:IsToBeGreaterOrEqualThan a owl:ObjectProperty; 
+                               rdfs:comment ""@EN; 
+                               rdfs:domain ddhub:DrillingDataPoint; 
+                               rdfs:range ddhub:DrillingDataPoint; 
+                               rdfs:subPropertyOf ddhub:IsToBeGreaterThan. 
+ddhub:IsToBeGreaterThan a owl:ObjectProperty; 
+                        rdfs:comment ""@EN; 
+                        rdfs:domain ddhub:DrillingDataPoint; 
+                        rdfs:range ddhub:DrillingDataPoint; 
+                        rdfs:subPropertyOf ddhub:IsToBeComparedWith. 
+ddhub:IsToBeSmallerOrEqualThan a owl:ObjectProperty; 
+                               rdfs:comment ""@EN; 
+                               rdfs:domain ddhub:DrillingDataPoint; 
+                               rdfs:range ddhub:DrillingDataPoint; 
+                               rdfs:subPropertyOf ddhub:IsToBeSmallerThan. 
+ddhub:IsToBeSmallerThan a owl:ObjectProperty; 
+                        rdfs:comment ""@EN; 
+                        rdfs:domain ddhub:DrillingDataPoint; 
+                        rdfs:range ddhub:DrillingDataPoint; 
+                        rdfs:subPropertyOf ddhub:IsToBeComparedWith. 
+ddhub:IsToBeStrictlyGreaterThan a owl:ObjectProperty; 
+                                rdfs:comment ""@EN; 
+                                rdfs:domain ddhub:DrillingDataPoint; 
+                                rdfs:range ddhub:DrillingDataPoint; 
+                                rdfs:subPropertyOf ddhub:IsToBeGreaterThan. 
+ddhub:IsToBeStrictlySmallerThan a owl:ObjectProperty; 
+                                rdfs:comment ""@EN; 
+                                rdfs:domain ddhub:DrillingDataPoint; 
+                                rdfs:range ddhub:DrillingDataPoint; 
+                                rdfs:subPropertyOf ddhub:IsToBeSmallerThan. 
 ddhub:IsTransformationInput a owl:ObjectProperty; 
                             rdfs:comment ""@EN; 
                             rdfs:domain ddhub:DrillingDataPoint; 

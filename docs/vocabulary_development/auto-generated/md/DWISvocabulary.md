@@ -4823,6 +4823,86 @@
 - Description: 
 - Examples: 
 - Definition set: DrillingDataSemantics
+## IsToBeGreaterThan <!-- VERB -->
+- Display name: IsToBeGreaterThan
+- Parent verb: [IsToBeComparedWith](#IsToBeComparedWith)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DrillingDataSemantics
+## IsToBeGreaterOrEqualThan <!-- VERB -->
+- Display name: IsToBeGreaterOrEqualThan
+- Parent verb: [IsToBeGreaterThan](#IsToBeGreaterThan)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DrillingDataSemantics
+## IsToBeStrictlyGreaterThan <!-- VERB -->
+- Display name: IsToBeStrictlyGreaterThan
+- Parent verb: [IsToBeGreaterThan](#IsToBeGreaterThan)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DrillingDataSemantics
+## IsToBeSmallerThan <!-- VERB -->
+- Display name: IsToBeSmallerThan
+- Parent verb: [IsToBeComparedWith](#IsToBeComparedWith)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DrillingDataSemantics
+## IsToBeSmallerOrEqualThan <!-- VERB -->
+- Display name: IsToBeSmallerOrEqualThan
+- Parent verb: [IsToBeSmallerThan](#IsToBeSmallerThan)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DrillingDataSemantics
+## IsToBeStrictlySmallerThan <!-- VERB -->
+- Display name: IsToBeStrictlySmallerThan
+- Parent verb: [IsToBeSmallerThan](#IsToBeSmallerThan)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DrillingDataSemantics
+## IsToBeEqualTo <!-- VERB -->
+- Display name: IsToBeEqualTo
+- Parent verb: [IsToBeComparedWith](#IsToBeComparedWith)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DrillingDataSemantics
+## IsToBeDifferentFrom <!-- VERB -->
+- Display name: IsToBeDifferentFrom
+- Parent verb: [IsToBeComparedWith](#IsToBeComparedWith)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Min cardinality: -1
+- Max cardinality: -1
+- Description: 
+- Examples: 
+- Definition set: DrillingDataSemantics
 ## IsSubPartOf <!-- VERB -->
 - Display name: IsSubPartOf
 - Parent verb: [DWISVerb](#DWISVerb)

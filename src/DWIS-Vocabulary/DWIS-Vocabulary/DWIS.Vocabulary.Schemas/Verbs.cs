@@ -63,6 +63,14 @@ HasValue,
 HasDynamicValue,
 HasStaticValue,
 IsToBeComparedWith,
+IsToBeGreaterThan,
+IsToBeGreaterOrEqualThan,
+IsToBeStrictlyGreaterThan,
+IsToBeSmallerThan,
+IsToBeSmallerOrEqualThan,
+IsToBeStrictlySmallerThan,
+IsToBeEqualTo,
+IsToBeDifferentFrom,
 IsSubPartOf,
 IsRelatedToDrillingIncident,
 DWISVerb,
@@ -196,6 +204,14 @@ HasUncertaintyHistogram
 	public static string HasDynamicValue = "HasDynamicValue";
 	public static string HasStaticValue = "HasStaticValue";
 	public static string IsToBeComparedWith = "IsToBeComparedWith";
+	public static string IsToBeGreaterThan = "IsToBeGreaterThan";
+	public static string IsToBeGreaterOrEqualThan = "IsToBeGreaterOrEqualThan";
+	public static string IsToBeStrictlyGreaterThan = "IsToBeStrictlyGreaterThan";
+	public static string IsToBeSmallerThan = "IsToBeSmallerThan";
+	public static string IsToBeSmallerOrEqualThan = "IsToBeSmallerOrEqualThan";
+	public static string IsToBeStrictlySmallerThan = "IsToBeStrictlySmallerThan";
+	public static string IsToBeEqualTo = "IsToBeEqualTo";
+	public static string IsToBeDifferentFrom = "IsToBeDifferentFrom";
 	public static string IsSubPartOf = "IsSubPartOf";
 	public static string IsRelatedToDrillingIncident = "IsRelatedToDrillingIncident";
 	public static string DWISVerb = "DWISVerb";
