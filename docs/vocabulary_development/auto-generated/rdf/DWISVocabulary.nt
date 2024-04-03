@@ -741,6 +741,12 @@
 <http://ddhub.no/TorsionalMotionType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/MotionType> .
 <http://ddhub.no/LateralMotionType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/LateralMotionType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/MotionType> .
+<http://ddhub.no/ModelType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ModelType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/DeterministicModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DeterministicModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModelType> .
+<http://ddhub.no/StochasticModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/StochasticModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModelType> .
 <http://ddhub.no/ModelledDegreeOfFreedom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ModelledDegreeOfFreedom> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/AxialModelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1422,6 +1428,9 @@
 <http://ddhub.no/AxialMotionType> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/TorsionalMotionType> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/LateralMotionType> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/ModelType> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/DeterministicModel> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/StochasticModel> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/ModelledDegreeOfFreedom> <http://www.w3.org/2000/01/rdf-schema#comment> "In physics and chemistry, a degree of freedom is an independent physical parameter in the formal description of the state of a physical system. A model may account for some or all of the degrees of freedom of the physical system."@EN .
 <http://ddhub.no/AxialModelling> <http://www.w3.org/2000/01/rdf-schema#comment> "The model accounts for the axial movement of some parts of the physical system."@EN .
 <http://ddhub.no/RotationalModelling> <http://www.w3.org/2000/01/rdf-schema#comment> "The model accounts for the rotational movement of some parts of the physical system."@EN .

@@ -2861,6 +2861,30 @@
 - Description: 
 - Examples:
 - Definition set: Mechanics
+## ModelType <!-- NOUN -->
+- Display name: ModelType
+- Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Model
+## DeterministicModel <!-- NOUN -->
+- Display name: DeterministicModel
+- Parent class: [ModelType](#ModelType)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Model
+## StochasticModel <!-- NOUN -->
+- Display name: StochasticModel
+- Parent class: [ModelType](#ModelType)
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+- Definition set: Model
 ## MathematicalModel <!-- NOUN -->
 - Display name: Mathematical model
 - Parent class: [DWISNoun](#DWISNoun)

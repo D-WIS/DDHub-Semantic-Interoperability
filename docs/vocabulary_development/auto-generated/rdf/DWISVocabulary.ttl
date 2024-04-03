@@ -361,6 +361,9 @@ ddhub:DerivedMeasurement a owl:Class;
 ddhub:DerrickFloorVerticalLocation a owl:Class; 
                                    rdfs:comment ""@EN; 
                                    rdfs:subClassOf ddhub:VerticalReferenceLocation. 
+ddhub:DeterministicModel a owl:Class; 
+                         rdfs:comment ""@EN; 
+                         rdfs:subClassOf ddhub:ModelType. 
 ddhub:DifferentialStickingLocation a owl:Class; 
                                    rdfs:comment ""@EN; 
                                    rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
@@ -1681,6 +1684,9 @@ ddhub:ModellingDimensions a owl:Class;
 ddhub:ModellingDiscretization a owl:Class; 
                               rdfs:comment "A characteristic of the discretization made by the model."@EN; 
                               rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:ModelType a owl:Class; 
+                rdfs:comment ""@EN; 
+                rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:MotionType a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:DWISNoun. 
@@ -2119,6 +2125,9 @@ ddhub:SteadyStateModel a owl:Class;
 ddhub:StickUpHeightVerticalLocation a owl:Class; 
                                     rdfs:comment ""@EN; 
                                     rdfs:subClassOf ddhub:VerticalReferenceLocation. 
+ddhub:StochasticModel a owl:Class; 
+                      rdfs:comment ""@EN; 
+                      rdfs:subClassOf ddhub:ModelType. 
 ddhub:StrainWaveBasedDiscretization a owl:Class; 
                                     rdfs:comment "A model can properly estimate values at the level of strain wave propagation."@EN; 
                                     rdfs:subClassOf ddhub:ModellingDiscretization. 

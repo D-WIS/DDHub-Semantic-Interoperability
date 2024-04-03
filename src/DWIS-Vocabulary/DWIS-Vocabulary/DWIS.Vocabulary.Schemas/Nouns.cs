@@ -340,6 +340,9 @@ MotionType,
 AxialMotionType,
 TorsionalMotionType,
 LateralMotionType,
+ModelType,
+DeterministicModel,
+StochasticModel,
 MathematicalModel,
 SteadyStateModel,
 TransientModel,
@@ -834,6 +837,9 @@ SensorUncertainty
 	public static string AxialMotionType = "AxialMotionType";
 	public static string TorsionalMotionType = "TorsionalMotionType";
 	public static string LateralMotionType = "LateralMotionType";
+	public static string ModelType = "ModelType";
+	public static string DeterministicModel = "DeterministicModel";
+	public static string StochasticModel = "StochasticModel";
 	public static string MathematicalModel = "MathematicalModel";
 	public static string SteadyStateModel = "SteadyStateModel";
 	public static string TransientModel = "TransientModel";
