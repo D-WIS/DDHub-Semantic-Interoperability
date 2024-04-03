@@ -597,5 +597,60 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Subject class: DrillingDataPoint
 - Object class: DrillingDataPoint
 - Description: 
-- Examples: 
-
+- Examples:
+## IsToBeGreaterThan <!-- VERB -->
+- Display name: IsToBeGreaterThan
+- Parent verb: IsToBeComparedWith
+- Subject class: DrillingDataPoint
+- Object class: DrillingDataPoint
+- Description: 
+- Examples:
+## IsToBeGreaterOrEqualThan <!-- VERB -->
+- Display name: IsToBeGreaterOrEqualThan
+- Parent verb: IsToBeGreaterThan
+- Subject class: DrillingDataPoint
+- Object class: DrillingDataPoint
+- Description: 
+- Examples:
+## IsToBeStrictlyGreaterThan <!-- VERB -->
+- Display name: IsToBeStrictlyGreaterThan
+- Parent verb: IsToBeGreaterThan
+- Subject class: DrillingDataPoint
+- Object class: DrillingDataPoint
+- Description: 
+- Examples:
+## IsToBeSmallerThan <!-- VERB -->
+- Display name: IsToBeSmallerThan
+- Parent verb: IsToBeComparedWith
+- Subject class: DrillingDataPoint
+- Object class: DrillingDataPoint
+- Description: 
+- Examples:
+## IsToBeSmallerOrEqualThan <!-- VERB -->
+- Display name: IsToBeSmallerOrEqualThan
+- Parent verb: IsToBeSmallerThan
+- Subject class: DrillingDataPoint
+- Object class: DrillingDataPoint
+- Description: 
+- Examples:
+## IsToBeStrictlySmallerThan <!-- VERB -->
+- Display name: IsToBeStrictlySmallerThan
+- Parent verb: IsToBeSmallerThan
+- Subject class: DrillingDataPoint
+- Object class: DrillingDataPoint
+- Description: 
+- Examples:
+## IsToBeEqualTo <!-- VERB -->
+- Display name: IsToBeEqualTo
+- Parent verb: IsToBeComparedWith
+- Subject class: DrillingDataPoint
+- Object class: DrillingDataPoint
+- Description: 
+- Examples:
+## IsToBeDifferentFrom <!-- VERB -->
+- Display name: IsToBeDifferentFrom
+- Parent verb: IsToBeComparedWith
+- Subject class: DrillingDataPoint
+- Object class: DrillingDataPoint
+- Description: 
+- Examples:
