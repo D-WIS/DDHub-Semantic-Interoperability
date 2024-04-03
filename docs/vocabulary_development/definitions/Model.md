@@ -1,6 +1,27 @@
 - Description: high level and generic vocabulary for mathematical models of the drilling process
 
 # NOUNS
+## ModelType <!-- NOUN -->
+- Display name: ModelType
+- Parent class: DWISNoun
+- Attributes:
+- Specialization: 
+- Description: 
+- Examples:
+## DeterministicModel <!-- NOUN -->
+- Display name: DeterministicModel
+- Parent class: ModelType
+- Attributes:
+- Specialization: 
+- Description: 
+- Examples:
+## StochasticModel <!-- NOUN -->
+- Display name: StochasticModel
+- Parent class: ModelType
+- Attributes:
+- Specialization: 
+- Description: 
+- Examples:
 ## MathematicalModel <!-- NOUN -->
 - Display name: Mathematical model
 - Parent class: DWISNoun
