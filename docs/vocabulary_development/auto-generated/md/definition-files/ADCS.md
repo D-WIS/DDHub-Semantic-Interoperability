@@ -72,7 +72,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: ADCS
 ## IsActivatedSignalFor <!-- VERB -->
 - Display name: IsActivatedSignalFor
@@ -82,7 +82,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: ADCS
 ## IsAllowEnablementSignalFor <!-- VERB -->
 - Display name: IsAllowEnablementSignalFor
@@ -92,7 +92,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: ADCS
 ## IsIdlingSignalFor <!-- VERB -->
 - Display name: IsIdlingSignalFor
@@ -102,7 +102,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: ADCS
 ## IsUserControllableExtraMarginSignalFor <!-- VERB -->
 - Display name: IsUserControllableExtraMarginSignalFor
@@ -112,7 +112,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: ADCS
 ## IsUsedDefinedExtraMarginSignalFor <!-- VERB -->
 - Display name: IsUsedDefinedExtraMarginSignalFor
@@ -122,7 +122,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: ADCS
 ## IsArmedSignalFor <!-- VERB -->
 - Display name: IsArmedSignalFor
@@ -132,7 +132,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: ADCS
 ## IsTriggeredSignalFor <!-- VERB -->
 - Display name: IsTriggeredSignalFor
@@ -142,7 +142,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: ADCS
 ## IsIdlingAfterTriggeredSignalFor <!-- VERB -->
 - Display name: IsIdlingAfterTriggeredSignalFor
@@ -152,7 +152,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: ADCS
 ## IsImpactDescriptionSignalFor <!-- VERB -->
 - Display name: IsImpactDescriptionSignalFor
@@ -162,5 +162,5 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: ADCS

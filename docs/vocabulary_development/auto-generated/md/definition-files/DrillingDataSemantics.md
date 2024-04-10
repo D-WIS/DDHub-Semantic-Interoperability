@@ -638,7 +638,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## HasTimeIntervalDomain <!-- VERB -->
 - Display name: HasTimeIntervalDomain
@@ -648,7 +648,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## HasValue <!-- VERB -->
 - Display name: HasValue
@@ -658,7 +658,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## HasDynamicValue <!-- VERB -->
 - Display name: HasDynamicValue
@@ -668,7 +668,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## HasStaticValue <!-- VERB -->
 - Display name: HasStaticValue
@@ -678,7 +678,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## IsToBeComparedWith <!-- VERB -->
 - Display name: IsToBeComparedWith
@@ -688,7 +688,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## IsToBeGreaterThan <!-- VERB -->
 - Display name: IsToBeGreaterThan
@@ -698,7 +698,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## IsToBeGreaterOrEqualThan <!-- VERB -->
 - Display name: IsToBeGreaterOrEqualThan
@@ -708,7 +708,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## IsToBeStrictlyGreaterThan <!-- VERB -->
 - Display name: IsToBeStrictlyGreaterThan
@@ -718,7 +718,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## IsToBeSmallerThan <!-- VERB -->
 - Display name: IsToBeSmallerThan
@@ -728,7 +728,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## IsToBeSmallerOrEqualThan <!-- VERB -->
 - Display name: IsToBeSmallerOrEqualThan
@@ -738,7 +738,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## IsToBeStrictlySmallerThan <!-- VERB -->
 - Display name: IsToBeStrictlySmallerThan
@@ -748,7 +748,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## IsToBeEqualTo <!-- VERB -->
 - Display name: IsToBeEqualTo
@@ -758,7 +758,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## IsToBeDifferentFrom <!-- VERB -->
 - Display name: IsToBeDifferentFrom
@@ -768,5 +768,5 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics

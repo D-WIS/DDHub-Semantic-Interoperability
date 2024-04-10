@@ -50,7 +50,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataValidity
 ## IsConditionInput <!-- VERB -->
 - Display name: IsConditionInput
@@ -60,7 +60,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataValidity
 ## IsConditionLeft <!-- VERB -->
 - Display name: IsConditionLeft
@@ -70,7 +70,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataValidity
 ## IsConditionRight <!-- VERB -->
 - Display name: IsConditionRight
@@ -80,7 +80,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataValidity
 ## IsValidBy <!-- VERB -->
 - Display name: IsValidBy
@@ -90,5 +90,5 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataValidity

@@ -440,7 +440,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Quantities
 ## AssociatesUnit <!-- VERB -->
 - Display name: AssociatesUnit
@@ -450,7 +450,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Quantities
 ## HasUnitAssociation <!-- VERB -->
 - Display name: HasUnitAssociation
@@ -460,7 +460,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Quantities
 ## IsObservableFrom <!-- VERB -->
 - Display name: IsObservableFrom
@@ -470,7 +470,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Quantities
 ## IsOfBaseQuantity <!-- VERB -->
 - Display name: IsOfBaseQuantity
@@ -480,7 +480,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Quantities
 ## IsOfMeasurableQuantity <!-- VERB -->
 - Display name: IsOfMeasurableQuantity
@@ -490,7 +490,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Quantities
 ## IsUnitForQuantity <!-- VERB -->
 - Display name: IsUnitForQuantity
@@ -500,7 +500,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Quantities
 ## HasSIUnit <!-- VERB -->
 - Display name: HasSIUnit
@@ -510,7 +510,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Quantities
 ## HasUnitOfMeasure <!-- VERB -->
 - Display name: HasUnitOfMeasure
@@ -520,5 +520,5 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Quantities

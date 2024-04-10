@@ -457,7 +457,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## HasFunction <!-- VERB -->
 - Display name: HasFunction
@@ -467,7 +467,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsCommandFor <!-- VERB -->
 - Display name: IsCommandFor
@@ -477,7 +477,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsComputationInput <!-- VERB -->
 - Display name: Is Computation Input
@@ -487,7 +487,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsLimitFor <!-- VERB -->
 - Display name: Is Limit For
@@ -497,7 +497,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsMinimumLimitFor <!-- VERB -->
 - Display name: Is Minimum Limit For
@@ -507,7 +507,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsMaximumLimitFor <!-- VERB -->
 - Display name: Is Maximum Limit For
@@ -517,7 +517,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsSetPointFor <!-- VERB -->
 - Display name: Is Set-Point For
@@ -527,7 +527,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsSetPointRecommendationFor <!-- VERB -->
 - Display name: Is Set-Point Recommendation For
@@ -537,7 +537,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsSetPointAdviceFor <!-- VERB -->
 - Display name: Is Set-Point Advice For
@@ -547,7 +547,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsSetPointMinimumRecommendationFor <!-- VERB -->
 - Display name: Is Set-Point Minimum Recommendation For
@@ -557,7 +557,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsSetPointMinimumAdviceFor <!-- VERB -->
 - Display name: Is Set-Point Minimum Advice For
@@ -567,7 +567,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsSetPointMaximumRecommendationFor <!-- VERB -->
 - Display name: Is Set-Point Maximum Recommendation For
@@ -577,7 +577,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsSetPointMaximumAdviceFor <!-- VERB -->
 - Display name: Is Set-Point Maximum Advice For
@@ -587,7 +587,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsTransformationInput <!-- VERB -->
 - Display name: IsTransformationInput
@@ -597,7 +597,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsBufferingInput <!-- VERB -->
 - Display name: IsBufferingInput
@@ -607,7 +607,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsDerivationInput <!-- VERB -->
 - Display name: IsDerivationInput
@@ -617,7 +617,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsResamplingInput <!-- VERB -->
 - Display name: IsResamplingInput
@@ -627,7 +627,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsTransmissionInput <!-- VERB -->
 - Display name: IsTransmissionInput
@@ -637,7 +637,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsGeneratedBy <!-- VERB -->
 - Display name: IsGeneratedBy
@@ -647,7 +647,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsComputedBy <!-- VERB -->
 - Display name: IsComputedBy
@@ -657,7 +657,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsMeasuredBy <!-- VERB -->
 - Display name: IsMeasuredBy
@@ -667,7 +667,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsRecordedFrom <!-- VERB -->
 - Display name: IsRecordedFrom
@@ -677,7 +677,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsTransformationOutput <!-- VERB -->
 - Display name: IsTransformationOutput
@@ -687,7 +687,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsBufferingOutput <!-- VERB -->
 - Display name: IsBufferingOutput
@@ -697,7 +697,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsDerivedFrom <!-- VERB -->
 - Display name: IsDerivedFrom
@@ -707,7 +707,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsIntegratedFrom <!-- VERB -->
 - Display name: IsIntegratedFrom
@@ -717,7 +717,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsResampledBy <!-- VERB -->
 - Display name: IsResampledBy
@@ -727,7 +727,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsTransmissionOutput <!-- VERB -->
 - Display name: IsTransmissionOutput
@@ -737,7 +737,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsProcessedBy <!-- VERB -->
 - Display name: IsProcessedBy
@@ -747,5 +747,5 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
