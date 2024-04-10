@@ -11,7 +11,7 @@ namespace DWIS.Vocabulary.Development
         public NounAttribute[] NounAttributes { get; set; }
         public SpecializedNounAttribute[] SpecializedNounAttributes { get; set; }
         public string Description { get; set; }
-        public string Examples { get; set; }
+        public string[] Examples { get; set; }
         public string DefinitionSetName { get; set; }
 
         public Noun()
