@@ -20,12 +20,11 @@
 - Object class: DWISNoun
 - Description: The verb is used between a node and a Noun, i.e., a class. Semantically it can be considered as a synonym to `rdf:type`. It has been introduced to overcome limitations from OPC-UA that does not allow for multiple inheritance. Note that the same node can be in relation using `BelongsToClass` to several classes.
 - Examples:
-```mermaid
-graph LR;
-  A[dat#01] -->|BelongsToClass| B[BitDepth]
-  A[dat#01] -->|BelongsToClass| C[DerivedMeasurement]
-  D[dat#02] -->|BelongsToClass| B[BitDepth]
-  D[dat#02] -->|BelongsToClass| E[ComputedData]
+```ddhub
+BitDepth:dat#01
+DerivedMeasurement:dat#01
+BitDepth:dat#02
+ComputedData:dat#02
 ```
 In this example, `dat#01` is a `BitDepth` that is a derived measurement, while `dat#02` is a `BitDepth` that has been estimated.
 If one use the following sparql query:
