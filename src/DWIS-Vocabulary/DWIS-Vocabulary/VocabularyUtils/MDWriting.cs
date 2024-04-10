@@ -262,7 +262,14 @@ namespace DWIS.Vocabulary.Utils
             verbBuilder.AppendLine("- Min cardinality: " + verb.MinCardinality);
             verbBuilder.AppendLine("- Max cardinality: " + verb.MaxCardinality);
             verbBuilder.AppendLine("- Description: " + verb.Description);
-            verbBuilder.AppendLine("- Examples: " + verb.Examples);
+            List<string> examples = PostProcessExample(verb.Examples);
+            foreach (var line in examples)
+            {
+                if (!string.IsNullOrEmpty(line))
+                {
+                    verbBuilder.AppendLine(line);
+                }
+            }
             verbBuilder.AppendLine("- Definition set: " + verb.DefinitionSetName);
         }
 

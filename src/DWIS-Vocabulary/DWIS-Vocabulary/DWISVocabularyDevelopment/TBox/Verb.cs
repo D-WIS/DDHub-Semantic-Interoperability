@@ -12,7 +12,7 @@ namespace DWIS.Vocabulary.Development
         public int MinCardinality { get; set; } = -1;
         public int MaxCardinality { get; set; } = -1;
         public string Description { get;  set; }
-        public string Examples { get; set; }
+        public string[] Examples { get; set; }
         public string DefinitionSetName { get; set; }
 
         public Verb() { }

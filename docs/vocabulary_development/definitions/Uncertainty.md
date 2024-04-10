@@ -39,7 +39,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Examples:
 ```ddhub Signal#01
 DrillingDataPoint:ddp#01
-GenericUncertainty:GU#01[D W I S Semantics](DWISSemantics.md)
+GenericUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
 DrillingDataPoint:Histo#01
 GU#01 HasUncertaintyHistogram Histo#01

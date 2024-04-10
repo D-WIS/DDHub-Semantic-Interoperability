@@ -226,29 +226,33 @@ namespace DWIS.Vocabulary.Utils
             {
                 verb.Description = header.Remove(0, "- Description: ".Length).Trim().TrimEnd();
             }
-            else if (header.StartsWith("- Examples: "))
+            else if (header.StartsWith("- Examples:"))
             {
-                verb.Examples = header.Remove(0, "- Examples: ".Length).Trim().TrimEnd();
+                verb.Examples = snippetItem;
+                if (snippetItem != null && snippetItem.Length > 0)
+                {
+                    snippetItem[0] = header.Remove(0, "- Examples:".Length).Trim().TrimEnd();
+                }
             }
-            else if (header.StartsWith("- Subject class: "))
+            else if (header.StartsWith("- Subject class:"))
             {
-                verb.DomainNounName = header.Remove(0, "- Subject class: ".Length).Trim().TrimEnd();
+                verb.DomainNounName = header.Remove(0, "- Subject class:".Length).Trim().TrimEnd();
             }
-            else if (header.StartsWith("- Object class: "))
+            else if (header.StartsWith("- Object class:"))
             {
-                verb.RangeNounName = header.Remove(0, "- Object class: ".Length).Trim().TrimEnd();
+                verb.RangeNounName = header.Remove(0, "- Object class:".Length).Trim().TrimEnd();
             }
-            else if (header.StartsWith("- Min cardinality: "))
+            else if (header.StartsWith("- Min cardinality:"))
             {
-                string card = header.Remove(0, "- Min cardinality: ".Length).Trim().TrimEnd();
+                string card = header.Remove(0, "- Min cardinality:".Length).Trim().TrimEnd();
                 if (int.TryParse(card, out int temp))
                 {
                     verb.MinCardinality = temp;
                 }
             }
-            else if (header.StartsWith("- Max cardinality: "))
+            else if (header.StartsWith("- Max cardinality:"))
             {
-                string card = header.Remove(0, "- Max cardinality: ".Length).Trim().TrimEnd();
+                string card = header.Remove(0, "- Max cardinality:".Length).Trim().TrimEnd();
                 if (int.TryParse(card, out int temp))
                 {
                     verb.MaxCardinality = temp;
