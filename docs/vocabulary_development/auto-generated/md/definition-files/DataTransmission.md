@@ -25,6 +25,7 @@
 - Specialization:
 - Description: 
 - Examples:
+Technology that allows transfer of downhole data to the surface.
 - Definition set: DataTransmission
 ## MudPulseTelemetry <!-- NOUN -->
 - Display name: MudPulseTelemetry
@@ -33,6 +34,7 @@
 - Specialization:
 - Description: A method that allows transfer of downhole data to the surface via pressure pulses sent trough the drilling fluid.
 - Examples:
+NOV BlackStar II dual-telemetry MWD
 - Definition set: DataTransmission
 ## ElectromagneticTelemetry <!-- NOUN -->
 - Display name: ElectromagneticTelemetry
@@ -41,6 +43,7 @@
 - Specialization:
 - Description: A method that allows transfer of downhole data to the surface via electromagnetic waves sent trough the drilling formation.
 - Examples:
+APS SureShot-EM, NOV BlackStar II EM MWD
 - Definition set: DataTransmission
 ## WiredPipeTelemetry <!-- NOUN -->
 - Display name: WiredPipeTelemetry
@@ -49,6 +52,7 @@
 - Specialization:
 - Description: A method that allows transfer of downhole data to the surface via electrical connections through the drill string.
 - Examples:
+Intelliserv Wired Drill Pipe, Reelwell DualLink
 - Definition set: DataTransmission
 ## TopSideTelemetry <!-- NOUN -->
 - Display name: TopSideTelemetry
@@ -57,6 +61,7 @@
 - Specialization:
 - Description: Method that allows transfer of data from surface systems.
 - Examples:
+NOVOS, Cyberbase, DEAL
 - Definition set: DataTransmission
 # Verbs
 ## IsTransmittedBy <!-- VERB -->

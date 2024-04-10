@@ -8,6 +8,7 @@
 - Specialization:
 - Description: Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a "is a" relation between the instance node and the noun. This is the root class for all the nouns defined in the DWIS vocabulary.
 - Examples:
+`DWISNoun` is not really intended to be used directly neither when defining semantic facts nor in sparql queries.
 - Definition set: DWISSemantics
 # Verbs
 ## DWISVerb <!-- VERB -->
