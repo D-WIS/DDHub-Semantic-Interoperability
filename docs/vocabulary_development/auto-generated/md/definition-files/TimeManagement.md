@@ -96,6 +96,7 @@
 - Specialization:
 - Description: 
 - Examples:
+  
 - Definition set: TimeManagement
 # Verbs
 ## BelongsToSynchronizationGroup <!-- VERB -->

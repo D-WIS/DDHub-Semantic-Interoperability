@@ -90,7 +90,7 @@
 - Examples:
 - Definition set: DrillingEquipment
 ## HighPressureRiser <!-- NOUN -->
-- Display name: ighPressureRiser
+- Display name: HighPressureRiser
 - Parent class: [SurfaceRiser](./DrillingEquipment.md#SurfaceRiser)
 - Attributes:
 - Specialization:
@@ -98,7 +98,7 @@
 - Examples:
 - Definition set: DrillingEquipment
 ## SlipJoint <!-- NOUN -->
-- Display name: lipJoint
+- Display name: SlipJoint
 - Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
 - Attributes:
 - Specialization:
