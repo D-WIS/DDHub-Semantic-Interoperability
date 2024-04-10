@@ -118,19 +118,23 @@ namespace DWIS.Vocabulary.Utils
             string header = snippetItem[0];
             if (header.StartsWith("- Display name:"))
             {
-                noun.DisplayName = header.Remove(0, "- Display name: ".Length).Trim().TrimEnd();
+                noun.DisplayName = header.Remove(0, "- Display name:".Length).Trim().TrimEnd();
             }
             else if (header.StartsWith("- Parent class:"))
             {
-                noun.ParentNounName = header.Remove(0, "- Parent class: ".Length).Trim().TrimEnd();
+                noun.ParentNounName = header.Remove(0, "- Parent class:".Length).Trim().TrimEnd();
             }
             else if (header.StartsWith("- Description:"))
             {
-                noun.Description = header.Remove(0, "- Description: ".Length).Trim().TrimEnd();
+                noun.Description = header.Remove(0, "- Description:".Length).Trim().TrimEnd();
             }
-            else if (header.StartsWith("Examples:"))
+            else if (header.StartsWith("- Examples:"))
             {
-                noun.Examples = header.Remove(0, "- Examples: ".Length).Trim().TrimEnd();
+                noun.Examples = snippetItem;
+                if (snippetItem != null && snippetItem.Length > 0)
+                {
+                    snippetItem[0] = header.Remove(0, "- Examples:".Length).Trim().TrimEnd();
+                }
             }
             else if (header.StartsWith("- Attributes:"))
             {
@@ -485,316 +489,263 @@ namespace DWIS.Vocabulary.Utils
 
 
 
-        public static bool ManageLine(string line, DWISVocabulary vocabulary, DWISInstance instance,List<NounAttribute> attributes, List<SpecializedNounAttribute> specializedAttributes,out bool quit, bool fromMD = true)
+        public static bool ManageLine(string line, DWISVocabulary vocabulary, DWISInstance instance,List<NounAttribute> attributes, List<SpecializedNounAttribute> specializedAttributes,ref bool insideABlock, ref bool insideADDHubBlock, ref string[] queryArguments, bool fromMD = true)
         {
-            quit = false;
             if (!string.IsNullOrEmpty(line))
             {
-                quit = line.Contains("mermaid");
-                if(quit) { return false; }
-
-                if (line.Trim().StartsWith(COMMENT_TAG)) { return false; }
-
-
-                if (!fromMD || line.StartsWith("- "))
+                bool skip = false;
+                if (line.Contains("```"))
                 {
-                    line = fromMD ? line.Remove(0, "- ".Length) : line;
-
-                    if (line.Contains(':'))//declaration of individual or semantic term
+                    skip = true;
+                    insideABlock = !insideABlock;
+                    if (insideABlock)
                     {
-                        var elements = line.Split(':');
-                        if (elements != null && elements.Length == 2)
+                        insideADDHubBlock = line.Contains("ddhub") || line.Contains("DDHUB") || line.Contains("DDHub");
+                        if (insideADDHubBlock)
                         {
-                            if (elements[0].Trim().ToLower() == NOUN_KEYWORD.ToLower())
+                            int pos = line.LastIndexOf("ddhub");
+                            if (pos < 0)
                             {
-                                Noun newNoun = new Noun() { Name = elements[1].Trim() };
-                                instance.InstanceVocabulary.Add(newNoun);
-                                return true;
+                                pos = line.LastIndexOf("DDHUB");
                             }
-                            else if (elements[0].Trim().ToLower() == VERB_KEYWORD.ToLower())
+                            if (pos < 0)
                             {
-                                Verb newVerb = new Verb() { Name = elements[1].Trim() };
-                                instance.InstanceVocabulary.Add(newVerb);
-                                return true;
+                                pos = line.LastIndexOf("DDHub");
                             }
-                            else if (elements[0].Trim().ToLower() == NOUNATTRIBUTE_KEYWORD.ToLower())
+                            if (pos >= 0)
                             {
-                                NounAttribute newNounAttribute = new NounAttribute() { Name = elements[1].Trim() };
-                                attributes.Add(newNounAttribute);
-                                return true;
-                            }
-                            else if (elements[0].Trim().ToLower() == SPECIALIZED_NOUNATTRIBUTE_KEYWORK.ToLower())
-                            {
-                                SpecializedNounAttribute newNounAttribute = new SpecializedNounAttribute() { AttributeName = elements[1].Trim() };
-                                specializedAttributes.Add(newNounAttribute);
-                                return true;
-                            }
-                            else
-                            {
-                                string nounName = elements[0].Trim();
-                                if (vocabulary.GetNoun(nounName, out Noun noun))
-                                {
-                                    string name = elements[1].Trim();
-                                    instance.Population.Add(new TypedIndividual(name, noun));
-                                    return true;
-                                }
-                                else if (instance.InstanceVocabulary.GetNoun(nounName, out noun))
-                                {
-                                    string name = elements[1].Trim();
-                                    instance.Population.Add(new TypedIndividual(name, noun));
-                                    return true;
-                                }
-                                else return false;
+                                string rest = line.Substring(pos + 5);
+                                queryArguments = rest.Split(' ', '\t');
                             }
                         }
-                        else return false;
                     }
-                    else if (line.Contains('='))//individual attribute, or attribute
+                    else
                     {
-                        var elements = line.Split('=');
-                        if (elements != null && elements.Length == 2)
+                        insideADDHubBlock = false;
+                    }
+                }
+                if (insideABlock || skip)
+                {
+                    if (insideADDHubBlock)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false; 
+                    }
+                }
+                else
+                {
+                    if (line.Trim().StartsWith(COMMENT_TAG)) { return false; }
+                    if (!fromMD || line.StartsWith("- "))
+                    {
+                        line = fromMD ? line.Remove(0, "- ".Length) : line;
+
+                        if (line.Contains(':'))//declaration of individual or semantic term
                         {
-                            string attributeValue = elements[1].Trim();
-                            if (elements[0].Contains('.'))
+                            var elements = line.Split(':');
+                            if (elements != null && elements.Length == 2)
                             {
-                                var leftElements = elements[0].Split('.');
-                                if (leftElements != null && leftElements.Length == 2)
+                                if (elements[0].Trim().ToLower() == NOUN_KEYWORD.ToLower())
                                 {
-                                    string attributeSubject = leftElements[0].Trim();
-                                    string attributeName = leftElements[1].Trim();
-                                    var individual = instance.Population.FirstOrDefault(id => id.Name == attributeSubject);
-                                    if (individual != null)//standard case
+                                    Noun newNoun = new Noun() { Name = elements[1].Trim() };
+                                    instance.InstanceVocabulary.Add(newNoun);
+                                    return true;
+                                }
+                                else if (elements[0].Trim().ToLower() == VERB_KEYWORD.ToLower())
+                                {
+                                    Verb newVerb = new Verb() { Name = elements[1].Trim() };
+                                    instance.InstanceVocabulary.Add(newVerb);
+                                    return true;
+                                }
+                                else if (elements[0].Trim().ToLower() == NOUNATTRIBUTE_KEYWORD.ToLower())
+                                {
+                                    NounAttribute newNounAttribute = new NounAttribute() { Name = elements[1].Trim() };
+                                    attributes.Add(newNounAttribute);
+                                    return true;
+                                }
+                                else if (elements[0].Trim().ToLower() == SPECIALIZED_NOUNATTRIBUTE_KEYWORK.ToLower())
+                                {
+                                    SpecializedNounAttribute newNounAttribute = new SpecializedNounAttribute() { AttributeName = elements[1].Trim() };
+                                    specializedAttributes.Add(newNounAttribute);
+                                    return true;
+                                }
+                                else
+                                {
+                                    string nounName = elements[0].Trim();
+                                    if (vocabulary.GetNoun(nounName, out Noun noun))
                                     {
-                                        var attribute = individual.Attributes.FirstOrDefault(at => at.AttributeName.ToLower() == attributeName.ToLower());
-                                        if (attribute != null)
-                                        {
-                                            attribute.AttributeValue = attributeValue;
-                                            return true;
-                                        }
-                                        else return false;
+                                        string name = elements[1].Trim();
+                                        instance.Population.Add(new TypedIndividual(name, noun));
+                                        return true;
                                     }
-                                    else if (instance.InstanceVocabulary.GetNoun(attributeSubject, out var noun)) //standard case with local vocabulary
+                                    else if (instance.InstanceVocabulary.GetNoun(nounName, out noun))
                                     {
-                                        if (attributeName.ToLower() == PARENT_KEYWORD.ToLower())
-                                        {
-                                            noun.ParentNounName = attributeValue;
-                                            return true;
-                                        }
-                                        else return false;
+                                        string name = elements[1].Trim();
+                                        instance.Population.Add(new TypedIndividual(name, noun));
+                                        return true;
                                     }
-                                    else
+                                    else return false;
+                                }
+                            }
+                            else return false;
+                        }
+                        else if (line.Contains('='))//individual attribute, or attribute
+                        {
+                            var elements = line.Split('=');
+                            if (elements != null && elements.Length == 2)
+                            {
+                                string attributeValue = elements[1].Trim();
+                                if (elements[0].Contains('.'))
+                                {
+                                    var leftElements = elements[0].Split('.');
+                                    if (leftElements != null && leftElements.Length == 2)
                                     {
-                                        //check if we're working with an attribute
-                                        var attribute = attributes.FirstOrDefault(att => att.Name.ToLower() == attributeSubject.ToLower());
-                                        if (attribute != null)
+                                        string attributeSubject = leftElements[0].Trim();
+                                        string attributeName = leftElements[1].Trim();
+                                        var individual = instance.Population.FirstOrDefault(id => id.Name == attributeSubject);
+                                        if (individual != null)//standard case
                                         {
-                                            if (attributeName.ToLower() == NOUN_KEYWORD.ToLower() && instance.InstanceVocabulary.GetNoun(attributeValue, out noun))//set the attribute to the noun
+                                            var attribute = individual.Attributes.FirstOrDefault(at => at.AttributeName.ToLower() == attributeName.ToLower());
+                                            if (attribute != null)
                                             {
-                                                var atts = noun.NounAttributes.ToList();
-                                                atts.Add(attribute);
-                                                noun.NounAttributes = atts.ToArray();
+                                                attribute.AttributeValue = attributeValue;
                                                 return true;
-                                            }
-                                            else if (attributeName.ToLower() == TYPE_KEYWORD)//data type of the attribute
-                                            {
-                                                attribute.Type = attributeValue;
-                                                return true;
-                                            }
-                                            else
-                                            {
-                                                return false;
-                                            }
-                                        }
-                                        else
-                                        {
-                                            //check if we're working with a specialized attribute
-                                            var specializedAttribute = specializedAttributes.FirstOrDefault(att => att.AttributeName.ToLower() == attributeSubject.ToLower());
-                                            if (specializedAttribute != null)
-                                            {
-                                                if (attributeName.ToLower() == VALUE_KEYWORK.ToLower())//set the specialized attribute value
-                                                {
-                                                    specializedAttribute.SpecializedValue = attributeValue;
-                                                    return true;
-                                                }
-                                                else if (attributeName.ToLower() == NOUN_KEYWORD.ToLower() && instance.InstanceVocabulary.GetNoun(attributeValue, out noun))//set the attribute to the noun
-                                                {
-                                                    var atts = noun.SpecializedNounAttributes.ToList();
-                                                    atts.Add(specializedAttribute);
-                                                    noun.SpecializedNounAttributes = atts.ToArray();
-                                                    return true;
-                                                }
-                                                else return false;
-                                            }
-                                            else if (instance.InstanceVocabulary.GetNoun(attributeSubject, out noun))//check if we're working with a noun
-                                            {
-                                                if (attributeName.ToLower() == PARENT_KEYWORD.ToLower())
-                                                {
-                                                    noun.ParentNounName = attributeValue;
-                                                    return true;
-                                                }
-                                                else return false;
-                                            }
-                                            else if (instance.InstanceVocabulary.GetVerb(attributeSubject, out Verb verb))//check if we're working with a verb
-                                            {
-                                                if (attributeName.ToLower() == PARENT_KEYWORD.ToLower())
-                                                {
-                                                    verb.ParentVerbName = attributeValue;
-                                                    return true;
-                                                }
-                                                else return false;
                                             }
                                             else return false;
                                         }
+                                        else if (instance.InstanceVocabulary.GetNoun(attributeSubject, out var noun)) //standard case with local vocabulary
+                                        {
+                                            if (attributeName.ToLower() == PARENT_KEYWORD.ToLower())
+                                            {
+                                                noun.ParentNounName = attributeValue;
+                                                return true;
+                                            }
+                                            else return false;
+                                        }
+                                        else
+                                        {
+                                            //check if we're working with an attribute
+                                            var attribute = attributes.FirstOrDefault(att => att.Name.ToLower() == attributeSubject.ToLower());
+                                            if (attribute != null)
+                                            {
+                                                if (attributeName.ToLower() == NOUN_KEYWORD.ToLower() && instance.InstanceVocabulary.GetNoun(attributeValue, out noun))//set the attribute to the noun
+                                                {
+                                                    var atts = noun.NounAttributes.ToList();
+                                                    atts.Add(attribute);
+                                                    noun.NounAttributes = atts.ToArray();
+                                                    return true;
+                                                }
+                                                else if (attributeName.ToLower() == TYPE_KEYWORD)//data type of the attribute
+                                                {
+                                                    attribute.Type = attributeValue;
+                                                    return true;
+                                                }
+                                                else
+                                                {
+                                                    return false;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                //check if we're working with a specialized attribute
+                                                var specializedAttribute = specializedAttributes.FirstOrDefault(att => att.AttributeName.ToLower() == attributeSubject.ToLower());
+                                                if (specializedAttribute != null)
+                                                {
+                                                    if (attributeName.ToLower() == VALUE_KEYWORK.ToLower())//set the specialized attribute value
+                                                    {
+                                                        specializedAttribute.SpecializedValue = attributeValue;
+                                                        return true;
+                                                    }
+                                                    else if (attributeName.ToLower() == NOUN_KEYWORD.ToLower() && instance.InstanceVocabulary.GetNoun(attributeValue, out noun))//set the attribute to the noun
+                                                    {
+                                                        var atts = noun.SpecializedNounAttributes.ToList();
+                                                        atts.Add(specializedAttribute);
+                                                        noun.SpecializedNounAttributes = atts.ToArray();
+                                                        return true;
+                                                    }
+                                                    else return false;
+                                                }
+                                                else if (instance.InstanceVocabulary.GetNoun(attributeSubject, out noun))//check if we're working with a noun
+                                                {
+                                                    if (attributeName.ToLower() == PARENT_KEYWORD.ToLower())
+                                                    {
+                                                        noun.ParentNounName = attributeValue;
+                                                        return true;
+                                                    }
+                                                    else return false;
+                                                }
+                                                else if (instance.InstanceVocabulary.GetVerb(attributeSubject, out Verb verb))//check if we're working with a verb
+                                                {
+                                                    if (attributeName.ToLower() == PARENT_KEYWORD.ToLower())
+                                                    {
+                                                        verb.ParentVerbName = attributeValue;
+                                                        return true;
+                                                    }
+                                                    else return false;
+                                                }
+                                                else return false;
+                                            }
+                                        }
                                     }
+                                    else return false;
                                 }
                                 else return false;
                             }
                             else return false;
                         }
-                        else return false;
-                    }
-                    else //a priori, a triplet
-                    {
-                        var elements = line.Split(' ', System.StringSplitOptions.RemoveEmptyEntries);
-                        if (elements != null && elements.Length == 3)
+                        else //a priori, a triplet
                         {
-                            var s = elements[0].Trim();
-                            var o = elements[2].Trim();
-                            var v = elements[1].Trim();
-                            var verb = vocabulary.Verbs.Find(ve => ve.Name == v);
-                            var subject = instance.Population.FirstOrDefault(i => i.Name == s);
-
-                            if (verb != null && subject != null)
+                            var elements = line.Split(' ', System.StringSplitOptions.RemoveEmptyEntries);
+                            if (elements != null && elements.Length == 3)
                             {
-                                if (verb.Name == "BelongsToClass")
+                                var s = elements[0].Trim();
+                                var o = elements[2].Trim();
+                                var v = elements[1].Trim();
+                                var verb = vocabulary.Verbs.Find(ve => ve.Name == v);
+                                var subject = instance.Population.FirstOrDefault(i => i.Name == s);
+
+                                if (verb != null && subject != null)
                                 {
-                                    if (instance.Vocabulary.GetNoun(o, out Noun theClass) || instance.InstanceVocabulary.GetNoun(o, out theClass))
+                                    if (verb.Name == "BelongsToClass")
                                     {
-                                        instance.ClassAssertions.Add(new ClassAssertion(subject, verb, theClass));
-                                        return true;
-                                    }
-                                    else return false;
-                                }
-                                else
-                                {
-                                    var sentenceObjecT = instance.Population.FirstOrDefault(i => i.Name == o);
-                                    if (sentenceObjecT != null)
-                                    {
-                                        instance.Sentences.Add(new Sentence(subject, verb, sentenceObjecT));
-                                        return true;
-                                    }
-                                    else
-                                    {
-                                        if (instance.Vocabulary.GetNoun(o, out Noun nounObject) || instance.InstanceVocabulary.GetNoun(o, out nounObject))
+                                        if (instance.Vocabulary.GetNoun(o, out Noun theClass) || instance.InstanceVocabulary.GetNoun(o, out theClass))
                                         {
-                                            instance.ImplicitSentences.Add(new ImplicitSentence(subject, verb, nounObject));
+                                            instance.ClassAssertions.Add(new ClassAssertion(subject, verb, theClass));
                                             return true;
                                         }
                                         else return false;
                                     }
+                                    else
+                                    {
+                                        var sentenceObjecT = instance.Population.FirstOrDefault(i => i.Name == o);
+                                        if (sentenceObjecT != null)
+                                        {
+                                            instance.Sentences.Add(new Sentence(subject, verb, sentenceObjecT));
+                                            return true;
+                                        }
+                                        else
+                                        {
+                                            if (instance.Vocabulary.GetNoun(o, out Noun nounObject) || instance.InstanceVocabulary.GetNoun(o, out nounObject))
+                                            {
+                                                instance.ImplicitSentences.Add(new ImplicitSentence(subject, verb, nounObject));
+                                                return true;
+                                            }
+                                            else return false;
+                                        }
+                                    }
                                 }
+                                else
+                                    return false;
                             }
                             else
                                 return false;
                         }
-                        else
-                            return false;
+
                     }
-
-
-
-
-                    //if (line.Contains('.'))//attribute
-                    //{
-                    //    int idx = line.IndexOf('.');
-                    //    if (idx > 0)
-                    //    {
-                    //        var instName = line.Substring(0, idx);
-                    //        var res = instance.Population.FirstOrDefault(t => t.Name == instName.Trim());
-                    //        if (res != null)
-                    //        {
-                    //            found = true;
-                    //            var rest = line.Substring(idx + 1, line.Length - idx - 1);
-                    //            if (rest.Contains('='))
-                    //            {
-                    //                string propertyName = rest.Split('=')[0].Trim();
-                    //                var p = res.Attributes.FirstOrDefault(a => a.AttributeName == propertyName);
-                    //                if (p != null)
-                    //                {
-                    //                    p.AttributeValue = rest.Split('=')[1].Trim();
-                    //                    return true;
-                    //                }
-                    //            }
-                    //        }
-                    //    }
-                    //    return false;
-                    //}
-                    //if (!found)
-                    //{
-                    //    if (line.Contains(':'))//individual declaration
-                    //    {
-                    //        var els = line.Split(':');
-                    //        if (els.Length == 2)
-                    //        {
-                    //            var t = els[0].Trim();
-                    //            var noun = vocabulary.Nouns.Find(no => no.Name == t);
-                    //            if (noun != null)
-                    //            {
-                    //                var n = els[1].Trim();
-                    //                instance.Population.Add(new TypedIndividual(n, noun));
-                    //                return true;
-                    //            }
-                    //        }
-                    //        return false;
-                    //    }
-                    //    else//sentence, either class assertion, standard or implicit sentence. 
-                    //    {
-                    //        var els = line.Split(' ', System.StringSplitOptions.RemoveEmptyEntries);
-                    //        if (els.Length == 3)
-                    //        {
-                    //            var s = els[0].Trim();
-                    //            var o = els[2].Trim();
-                    //            var v = els[1].Trim();
-                    //            var verb = vocabulary.Verbs.Find(ve => ve.Name == v);
-                    //            var subject = instance.Population.FirstOrDefault(i => i.Name == s);
-
-                    //            if (verb != null && subject != null)
-                    //            {
-                    //                if (verb.Name == "BelongsToClass")
-                    //                {
-                    //                    var sentenceObjecT = vocabulary.Nouns.FirstOrDefault(i => i.Name == o);
-                    //                    if (sentenceObjecT != null)
-                    //                    {
-                    //                        instance.ClassAssertions.Add(new ClassAssertion(subject, verb, sentenceObjecT));
-                    //                        return true;
-                    //                    }
-                    //                }
-                    //                else
-                    //                {
-                    //                    var sentenceObjecT = instance.Population.FirstOrDefault(i => i.Name == o);
-                    //                    if (sentenceObjecT != null)
-                    //                    {
-                    //                        instance.Sentences.Add(new Sentence(subject, verb, sentenceObjecT));
-                    //                        return true;
-                    //                    }
-                    //                    else
-                    //                    {
-                    //                        var nounObject = vocabulary.Nouns.FirstOrDefault(i => i.Name == o);
-                    //                        if (nounObject != null)
-                    //                        {
-                    //                            instance.ImplicitSentences.Add(new ImplicitSentence(subject, verb, nounObject));
-                    //                            return true;
-                    //                        }
-                    //                    }
-                    //                }
-                    //            }
-                    //        }
-                    //        return false;
-                    //    }
-                    //}
-                    //return false;
+                    else return false;
                 }
-                else return false;
             }
             else return false;
         }
@@ -802,119 +753,18 @@ namespace DWIS.Vocabulary.Utils
         {
             if (allLines != null && allLines.Length > 0)
             {
-                bool quit = false;
+                bool insideABlock = false;
+                bool insideADDHubBlock = false;
+                string[] queryArguments = null;
                 List<NounAttribute> nounAttributes = new List<NounAttribute>();
                 List<SpecializedNounAttribute> specializedNounAttributes = new List<SpecializedNounAttribute>();    
                 foreach (string line in allLines)
                 {
-                    ManageLine(line, vocabulary, instance, nounAttributes, specializedNounAttributes, out quit, fromMD);
-                    if (quit) { return true; }
+                    ManageLine(line, vocabulary, instance, nounAttributes, specializedNounAttributes, ref insideABlock, ref insideADDHubBlock, ref queryArguments, fromMD);
                 }
                 return true;
             }
             else return false;
-
-
-
-                if (allLines != null && allLines.Length > 0)
-            {
-                foreach (string line in allLines)
-                {
-                    if (line.Contains("mermaid"))
-                    {
-                        return true;
-                    }
-                    else if (!fromMD || line.StartsWith("- "))
-                    {
-                        var l = fromMD ? line.Remove(0, "- ".Length) : line;
-
-                        bool found = false;
-
-                        if (l.Contains('.'))
-                        {
-                            int idx = l.IndexOf('.');
-                            if (idx > 0)
-                            {
-                                var instName = l.Substring(0, idx);
-                                var res = instance.Population.FirstOrDefault(t => t.Name == instName.Trim());
-                                if (res != null)
-                                {
-                                    found = true;
-                                    var rest = l.Substring(idx + 1, l.Length - idx - 1);
-                                    if (rest.Contains('='))
-                                    {
-                                        string propertyName = rest.Split('=')[0].Trim();
-                                        var p = res.Attributes.FirstOrDefault(a => a.AttributeName == propertyName);
-                                        if (p != null)
-                                        {
-                                            p.AttributeValue = rest.Split('=')[1].Trim();
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        if (!found)
-                        {
-                            if (l.Contains(':'))
-                            {
-                                var els = l.Split(':');
-                                if (els.Length == 2)
-                                {
-                                    var t = els[0].Trim();
-                                    var noun = vocabulary.Nouns.Find(no => no.Name == t);
-                                    if (noun != null)
-                                    {
-                                        var n = els[1].Trim();
-                                        instance.Population.Add(new TypedIndividual(n, noun));
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                var els = l.Split(' ', System.StringSplitOptions.RemoveEmptyEntries);
-                                if (els.Length == 3)
-                                {
-                                    var s = els[0].Trim();
-                                    var o = els[2].Trim();
-                                    var v = els[1].Trim();
-                                    var verb = vocabulary.Verbs.Find(ve => ve.Name == v);
-                                    var subject = instance.Population.FirstOrDefault(i => i.Name == s);
-
-                                    if (verb != null && subject != null)
-                                    {
-                                        if (verb.Name == "BelongsToClass")
-                                        {
-                                            var sentenceObjecT = vocabulary.Nouns.FirstOrDefault(i => i.Name == o);
-                                            if (sentenceObjecT != null)
-                                            {
-                                                instance.ClassAssertions.Add(new ClassAssertion(subject, verb, sentenceObjecT));
-                                            }
-                                        }
-                                        else
-                                        {
-                                            var sentenceObjecT = instance.Population.FirstOrDefault(i => i.Name == o);
-                                            if (sentenceObjecT != null)
-                                            {
-                                                instance.Sentences.Add(new Sentence(subject, verb, sentenceObjecT));
-                                            }
-                                            else
-                                            {
-                                                var nounObject = vocabulary.Nouns.FirstOrDefault(i => i.Name == o);
-                                                if (nounObject != null)
-                                                {
-                                                    instance.ImplicitSentences.Add(new ImplicitSentence(subject, verb, nounObject));
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                return true;
-            }
-            return false;
         }
 
         public static bool FromMDFile(string fileName, DWISVocabulary vocabulary, out DWISInstance instance)

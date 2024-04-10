@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.ExceptionServices;
 using System.Text;
 using DWIS.Vocabulary.Development;
 
@@ -31,8 +32,197 @@ namespace DWIS.Vocabulary.Utils
                 }
             }
             nounBuilder.AppendLine("- Description: " + noun.Description);
-            nounBuilder.AppendLine("- Examples:" + noun.Examples);
+            List<string> examples = PostProcessExample(noun.Examples);
+            foreach (var line in examples)
+            {
+                if (!string.IsNullOrEmpty(line))
+                {
+                    nounBuilder.AppendLine(line);
+                }
+            }
             nounBuilder.AppendLine("- Definition set: " + noun.DefinitionSetName);
+        }
+
+        private static List<string> PostProcessExample(string[] inputLines)
+        {
+            List<string> lines = new List<string>
+            {
+                "- Examples:"
+            };
+            List<Tuple<string, string, string>> ddhub = null;
+            bool insideADDHubBlock = false;
+            List<string> queryArguments = null;
+            foreach (string l in inputLines)
+            {
+                bool skip = false;
+                if (l.Contains("```") && (l.Contains("ddhub") || l.Contains("DDHUB") || l.Contains("DDHub")))
+                {
+                    insideADDHubBlock = true;
+                    skip = true;
+                    int pos = l.LastIndexOf("ddhub");
+                    if (pos < 0)
+                    {
+                        pos = l.LastIndexOf("DDHUB");
+                    }
+                    if (pos < 0)
+                    {
+                        pos = l.LastIndexOf("DDHub");
+                    }
+                    if (pos >= 0)
+                    {
+                        string rest = l.Substring(pos + 5);
+                        string[] tokens = rest.Split(' ', '\t');
+                        if (tokens != null)
+                        {
+                            queryArguments = new List<string>();
+                            foreach (string s in tokens)
+                            {
+                                if (!string.IsNullOrEmpty(s))
+                                {
+                                    queryArguments.Add(s);
+                                }
+                            }
+                        }
+                    }
+                    ddhub = new List<Tuple<string, string, string>>();
+                }
+                else if (l.Contains("```") && insideADDHubBlock)
+                {
+                    skip = true;
+                    insideADDHubBlock = false;
+                    GenerateMermaid(ddhub, lines);
+                    if (queryArguments != null && queryArguments.Count > 0)
+                    {
+                        GenerateSparQL(ddhub, queryArguments, lines);
+                    }
+                    ddhub = null;
+                    queryArguments = null;
+                }
+                if (insideADDHubBlock)
+                {
+                    if (!skip)
+                    {
+                        if (!string.IsNullOrEmpty(l))
+                        {
+                            if (l.Contains(':'))
+                            {
+                                string[] tokens = l.Split(':', ' ', '\t');
+                                if (tokens != null && tokens.Length >= 2 && !string.IsNullOrEmpty(tokens[0]) && !string.IsNullOrEmpty(tokens[1]))
+                                {
+                                    ddhub.Add(new Tuple<string, string, string>(tokens[1].Trim(), "BelongsTo", tokens[0].Trim()));
+                                }
+                            }
+                            else
+                            {
+                                string[] tokens = l.Split(' ', '\t');
+                                if (tokens != null && tokens.Length >= 3 && !string.IsNullOrEmpty(tokens[0]) && !string.IsNullOrEmpty(tokens[1]) && !string.IsNullOrEmpty(tokens[2]))
+                                {
+                                    ddhub.Add(new Tuple<string, string, string>(tokens[0].Trim(), tokens[1].Trim(), tokens[2].Trim()));
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    if (!skip)
+                    {
+                        lines.Add(l);
+                    }
+                }
+            }
+            return lines;
+        }
+
+        private static void GenerateMermaid(List<Tuple<string, string, string>> facts, List<string> outputs)
+        {
+            outputs.Add("An example semantic graph looks like as follow:");
+            outputs.Add("```mermaid");
+            outputs.Add("graph LR");
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+            int count = 0;
+            foreach (var fact in facts)
+            {
+                if (fact != null && !string.IsNullOrEmpty(fact.Item1) && !string.IsNullOrEmpty(fact.Item2) && !string.IsNullOrEmpty(fact.Item3))
+                {
+                    if (!dict.ContainsKey(fact.Item1))
+                    {
+                        string val = "N" + count.ToString("0000");
+                        dict.Add(fact.Item1, val);
+                        count++;
+                    }
+                    if (!dict.ContainsKey(fact.Item3))
+                    {
+                        string val = "N" + count.ToString("0000");
+                        dict.Add(fact.Item3, val);
+                        count++;
+                    }
+                    string str = "\t";
+                    str += dict[fact.Item1] + "[" + fact.Item1 + "] ";
+                    str += "-->|" + fact.Item2 + "| ";
+                    str += dict[fact.Item3] + "[" + fact.Item3 + "] ";
+                    outputs.Add(str);
+                }
+            }
+            outputs.Add("```");
+
+        }
+
+        private static void GenerateSparQL(List<Tuple<string, string, string>> facts, List<string> queryArguments, List<string> outputs)
+        {
+            outputs.Add("An example SparQL query looks like this:");
+            outputs.Add("```sparql");
+            outputs.Add("PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>");
+            outputs.Add("PREFIX ddhub: <http://ddhub.no/>");
+            outputs.Add("PREFIX quantity: <http://ddhub.no/UnitAndQuantity>");
+            outputs.Add("");
+            string select = "SELECT ";
+            bool first = true;
+            foreach (string arg in queryArguments)
+            {
+                if (!first)
+                {
+                    select += ", ";
+                }
+                first = false;
+                select += ProcessSparQLVariable(arg);
+            }
+            outputs.Add(select);
+            outputs.Add("WHERE {");
+            foreach (var fact in facts)
+            {
+                if (fact != null)
+                {
+                    string str = null;
+                    if (fact.Item2 == "BelongsTo")
+                    {
+                        str = "\t" + ProcessSparQLVariable(fact.Item1) + " rdf:type " + "ddhub:" + fact.Item3 + " .";
+                    }
+                    else if (fact.Item2 == "IsOfMeasureableQuantity")
+                    {
+                        str = "\t" + ProcessSparQLVariable(fact.Item1) + " ddhub:IsOfMeasurableQuantity " + "quantity:" + fact.Item3 + " .";
+                    }
+                    else
+                    {
+                        str = "\t" + ProcessSparQLVariable(fact.Item1) + " ddhub:" + fact.Item2 + " " + ProcessSparQLVariable(fact.Item3) + " .";
+                    }
+                    outputs.Add(str);
+                }
+            }
+            outputs.Add("}");
+            outputs.Add("```");
+        }
+
+        private static string ProcessSparQLVariable(string var)
+        {
+            if (!string.IsNullOrEmpty(var) && !var.StartsWith('?'))
+            {
+                return "?" + var;
+            }
+            else
+            {
+                return var;
+            }
         }
 
         private static string GetLink(string name, bool singleFile = true, DWIS.Vocabulary.Development.Vocabulary vocabulary = null, string route = "./")
