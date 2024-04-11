@@ -1,6 +1,22 @@
 # TimeManagement<!-- DEFINITION SET HEADER -->
-- Description: this category referes mostly to the description of the various clocks that can be encoutered on a rig, and their synchronization status with respect to each other.
+- Description: 
+this category referes mostly to the description of the various clocks that can be encoutered on a rig, and their synchronization status with respect to each other.
+
 # Nouns
+## Class Inheritance for Nouns
+Here is a class inheritance diagram for the nouns contained in this definition set.
+```mermaid
+classDiagram
+DWISNoun <|-- Clock
+DWISNoun <|-- SynchronizationGroup
+DWISNoun <|-- TimeReference
+TimeReference <|-- AbsoluteTimeReference
+TimeReference <|-- RelativeTimeReference
+TimeReference <|-- GPSReference
+TimeReference <|-- UTCReference
+RelativeTimeReference <|-- LocalTimeReference
+RelativeTimeReference <|-- TimeSpanReference
+```
 ## Clock <!-- NOUN -->
 - Display name: Clock
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
@@ -23,10 +39,10 @@
   - MaximumFluctuations
     - Type: double
     - Description: 
-- Specialization:
-- Description: Represents a clock
-- Examples:
+- Description: 
+Represents a clock
 - Definition set: TimeManagement
+- Examples:
 ## SynchronizationGroup <!-- NOUN -->
 - Display name: SynchronizationGroup
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
@@ -37,135 +53,145 @@
   - SamplingRate
     - Type: double
     - Description: 
-- Specialization:
 - Description: 
-- Examples:
+
 - Definition set: TimeManagement
+- Examples:
 ## TimeReference <!-- NOUN -->
 - Display name: TimeReference
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Attributes:
-- Specialization:
 - Description: 
-- Examples:
+
 - Definition set: TimeManagement
+- Examples:
 ## AbsoluteTimeReference <!-- NOUN -->
 - Display name: AbsoluteTimeReference
 - Parent class: [TimeReference](./TimeManagement.md#TimeReference)
-- Attributes:
-- Specialization:
 - Description: 
-- Examples:
+
 - Definition set: TimeManagement
+- Examples:
 ## RelativeTimeReference <!-- NOUN -->
 - Display name: RelativeTimeReference
 - Parent class: [TimeReference](./TimeManagement.md#TimeReference)
-- Attributes:
-- Specialization:
 - Description: 
-- Examples:
+
 - Definition set: TimeManagement
+- Examples:
 ## GPSReference <!-- NOUN -->
 - Display name: AbsoluteTimeReference
 - Parent class: [TimeReference](./TimeManagement.md#TimeReference)
-- Attributes:
-- Specialization:
 - Description: 
-- Examples:
+
 - Definition set: TimeManagement
+- Examples:
 ## UTCReference <!-- NOUN -->
 - Display name: AbsoluteTimeReference
 - Parent class: [TimeReference](./TimeManagement.md#TimeReference)
-- Attributes:
-- Specialization:
 - Description: 
-- Examples:
+
 - Definition set: TimeManagement
+- Examples:
 ## LocalTimeReference <!-- NOUN -->
 - Display name: LocalTimeReference
 - Parent class: [RelativeTimeReference](./TimeManagement.md#RelativeTimeReference)
-- Attributes:
-- Specialization:
 - Description: 
-- Examples:
+
 - Definition set: TimeManagement
+- Examples:
 ## TimeSpanReference <!-- NOUN -->
 - Display name: TimeSpanReference
 - Parent class: [RelativeTimeReference](./TimeManagement.md#RelativeTimeReference)
-- Attributes:
-- Specialization:
 - Description: 
+
+- Definition set: TimeManagement
 - Examples:
   
-- Definition set: TimeManagement
 # Verbs
+## Class Inheritance for Verbs
+Here is a class inheritance diagram for the verbs contained in this definition set.
+```mermaid
+classDiagram
+DWISVerb <|-- BelongsToSynchronizationGroup
+DWISVerb <|-- HasAcquisitionClock
+DWISVerb <|-- HasSourceClock
+DWISVerb <|-- HasTransmissionDelay
+DWISVerb <|-- IsSynchronizationGroupInput
+DWISVerb <|-- IsSynchronizationGroupOutput
+DWISVerb <|-- HasTimeReference
+```
+## Relations
+Here is a graph representing the relations that can be made with the verbs defined in this definition set.
+```mermaid
+erDiagram
+Resampling ||--o{ SynchronizationGroup : BelongsToSynchronizationGroup
+DrillingDataPoint ||--o{ Clock : HasAcquisitionClock
+DrillingDataPoint ||--o{ Clock : HasSourceClock
+DrillingDataPoint ||--o{ DrillingDataPoint : HasTransmissionDelay
+DrillingDataPoint ||--o{ SynchronizationGroup : IsSynchronizationGroupInput
+DrillingDataPoint ||--o{ SynchronizationGroup : IsSynchronizationGroupOutput
+DrillingDataPoint ||--o{ TimeReference : HasTimeReference
+```
 ## BelongsToSynchronizationGroup <!-- VERB -->
 - Display name: BelongsToSynchronizationGroup
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [Resampling](./DataFlow.md#Resampling)
 - Object class: [SynchronizationGroup](./TimeManagement.md#SynchronizationGroup)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: 
-- Examples:
 - Definition set: TimeManagement
+- Description: 
+
+- Examples:
 ## HasAcquisitionClock <!-- VERB -->
 - Display name: HasAcquisitionClock
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [Clock](./TimeManagement.md#Clock)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: 
-- Examples:
 - Definition set: TimeManagement
+- Description: 
+
+- Examples:
 ## HasSourceClock <!-- VERB -->
 - Display name: HasSourceClock
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [Clock](./TimeManagement.md#Clock)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: 
-- Examples:
 - Definition set: TimeManagement
+- Description: 
+
+- Examples:
 ## HasTransmissionDelay <!-- VERB -->
 - Display name: HasTransmissionDelay
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: 
-- Examples:
 - Definition set: TimeManagement
+- Description: 
+
+- Examples:
 ## IsSynchronizationGroupInput <!-- VERB -->
 - Display name: IsSynchronizationGroupInput
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [SynchronizationGroup](./TimeManagement.md#SynchronizationGroup)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: 
-- Examples:
 - Definition set: TimeManagement
+- Description: 
+
+- Examples:
 ## IsSynchronizationGroupOutput <!-- VERB -->
 - Display name: IsSynchronizationGroupOutput
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [SynchronizationGroup](./TimeManagement.md#SynchronizationGroup)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: 
-- Examples:
 - Definition set: TimeManagement
+- Description: 
+
+- Examples:
 ## HasTimeReference <!-- VERB -->
 - Display name: HasTimeReference
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [TimeReference](./TimeManagement.md#TimeReference)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: 
-- Examples:
 - Definition set: TimeManagement
+- Description: 
+
+- Examples:

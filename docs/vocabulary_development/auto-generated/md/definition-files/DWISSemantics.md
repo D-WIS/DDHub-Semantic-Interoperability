@@ -1,36 +1,58 @@
 # DWISSemantics<!-- DEFINITION SET HEADER -->
-- Description: definitions of the base noun and verb. All verbs and nouns in the DWIS vocabulary are children of those.
+- Description: 
+definitions of the base noun and verb. All verbs and nouns in the DWIS vocabulary are children of those.
+
 # Nouns
+## Class Inheritance for Nouns
+Here is a class inheritance diagram for the nouns contained in this definition set.
+```mermaid
+classDiagram
+```
 ## DWISNoun <!-- NOUN -->
 - Display name: DWIS noun
-- Parent class: [](./.md#)
-- Attributes:
-- Specialization:
-- Description: Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a "is a" relation between the instance node and the noun. This is the root class for all the nouns defined in the DWIS vocabulary.
+- Description: 
+Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a "is a" relation between the instance node and the noun. This is the root class for all the nouns defined in the DWIS vocabulary.
+- Definition set: DWISSemantics
 - Examples:
 `DWISNoun` is not really intended to be used directly neither when defining semantic facts nor in sparql queries.
-- Definition set: DWISSemantics
 # Verbs
+## Class Inheritance for Verbs
+Here is a class inheritance diagram for the verbs contained in this definition set.
+```mermaid
+classDiagram
+DWISVerb <|-- BelongsToClass
+```
+## Relations
+Here is a graph representing the relations that can be made with the verbs defined in this definition set.
+```mermaid
+erDiagram
+DWISNoun ||--o{ DWISNoun : DWISVerb
+DWISNoun ||--o{ DWISNoun : BelongsToClass
+```
 ## DWISVerb <!-- VERB -->
 - Display name: DWIS verb
-- Parent verb: [](./.md#)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: This is the root class for all verbs defined in the DWIS vocabulary. It is used to define a relation between a subject, which can be of any `DWISNoun` and an object, also of any type of `DWISNoun`.
+- Definition set: DWISSemantics
+- Description: 
+This is the root class for all verbs defined in the DWIS vocabulary. It is used to define a relation between a subject, which can be of any `DWISNoun` and an object, also of any type of `DWISNoun`.
 - Examples:
 `DWISVerb` is not really intended to be used directly neither when defining facts nor in sparql queries.
-- Definition set: DWISSemantics
 ## BelongsToClass <!-- VERB -->
 - Display name: Belongs To Class
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: The verb is used between a node and a Noun, i.e., a class. Semantically it can be considered as a synonym to `rdf:type`. It has been introduced to overcome limitations from OPC-UA that does not allow for multiple inheritance. Note that the same node can be in relation using `BelongsToClass` to several classes.
+- Definition set: DWISSemantics
+- Description: 
+The verb is used between a node and a Noun, i.e., a class. Semantically it can be considered as a synonym to `rdf:type`. It has been introduced to overcome limitations from OPC-UA that does not allow for multiple inheritance. Note that the same node can be in relation using `BelongsToClass` to several classes.
 - Examples:
+```ddhub
+BitDepth:dat#01
+DerivedMeasurement:dat#01
+BitDepth:dat#02
+ComputedData:dat#02
+```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
@@ -67,4 +89,3 @@ one obtain the result:
 ```
 dat#01
 ```
-- Definition set: DWISSemantics

@@ -1,6 +1,19 @@
 # DataTransmission<!-- DEFINITION SET HEADER -->
-- Description: this category contains all nouns and verbs used to describe the rig's telemetry, for each signal. Downhole telemetry has focus.
+- Description: 
+this category contains all nouns and verbs used to describe the rig's telemetry, for each signal. Downhole telemetry has focus.
+
 # Nouns
+## Class Inheritance for Nouns
+Here is a class inheritance diagram for the nouns contained in this definition set.
+```mermaid
+classDiagram
+DWISNoun <|-- Telemetry
+Telemetry <|-- DownHoleTelemetry
+DownHoleTelemetry <|-- MudPulseTelemetry
+DownHoleTelemetry <|-- ElectromagneticTelemetry
+DownHoleTelemetry <|-- WiredPipeTelemetry
+Telemetry <|-- TopSideTelemetry
+```
 ## Telemetry <!-- NOUN -->
 - Display name: Telemetry
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
@@ -14,64 +27,70 @@
   - AverageDelayByRepeater
     - Type: double
     - Description: 
-- Specialization:
-- Description: Technology used for transferring the data from its main origin.
-- Examples:
+- Description: 
+Technology used for transferring the data from its main origin.
 - Definition set: DataTransmission
+- Examples:
 ## DownHoleTelemetry <!-- NOUN -->
 - Display name: DownHoleTelemetry
 - Parent class: [Telemetry](./DataTransmission.md#Telemetry)
-- Attributes:
-- Specialization:
 - Description: 
+
+- Definition set: DataTransmission
 - Examples:
 Technology that allows transfer of downhole data to the surface.
-- Definition set: DataTransmission
 ## MudPulseTelemetry <!-- NOUN -->
 - Display name: MudPulseTelemetry
 - Parent class: [DownHoleTelemetry](./DataTransmission.md#DownHoleTelemetry)
-- Attributes:
-- Specialization:
-- Description: A method that allows transfer of downhole data to the surface via pressure pulses sent trough the drilling fluid.
+- Description: 
+A method that allows transfer of downhole data to the surface via pressure pulses sent trough the drilling fluid.
+- Definition set: DataTransmission
 - Examples:
 NOV BlackStar II dual-telemetry MWD
-- Definition set: DataTransmission
 ## ElectromagneticTelemetry <!-- NOUN -->
 - Display name: ElectromagneticTelemetry
 - Parent class: [DownHoleTelemetry](./DataTransmission.md#DownHoleTelemetry)
-- Attributes:
-- Specialization:
-- Description: A method that allows transfer of downhole data to the surface via electromagnetic waves sent trough the drilling formation.
+- Description: 
+A method that allows transfer of downhole data to the surface via electromagnetic waves sent trough the drilling formation.
+- Definition set: DataTransmission
 - Examples:
 APS SureShot-EM, NOV BlackStar II EM MWD
-- Definition set: DataTransmission
 ## WiredPipeTelemetry <!-- NOUN -->
 - Display name: WiredPipeTelemetry
 - Parent class: [DownHoleTelemetry](./DataTransmission.md#DownHoleTelemetry)
-- Attributes:
-- Specialization:
-- Description: A method that allows transfer of downhole data to the surface via electrical connections through the drill string.
+- Description: 
+A method that allows transfer of downhole data to the surface via electrical connections through the drill string.
+- Definition set: DataTransmission
 - Examples:
 Intelliserv Wired Drill Pipe, Reelwell DualLink
-- Definition set: DataTransmission
 ## TopSideTelemetry <!-- NOUN -->
 - Display name: TopSideTelemetry
 - Parent class: [Telemetry](./DataTransmission.md#Telemetry)
-- Attributes:
-- Specialization:
-- Description: Method that allows transfer of data from surface systems.
+- Description: 
+Method that allows transfer of data from surface systems.
+- Definition set: DataTransmission
 - Examples:
 NOVOS, Cyberbase, DEAL
-- Definition set: DataTransmission
 # Verbs
+## Class Inheritance for Verbs
+Here is a class inheritance diagram for the verbs contained in this definition set.
+```mermaid
+classDiagram
+DWISVerb <|-- IsTransmittedBy
+```
+## Relations
+Here is a graph representing the relations that can be made with the verbs defined in this definition set.
+```mermaid
+erDiagram
+DrillingDataPoint ||--o{ Telemetry : IsTransmittedBy
+```
 ## IsTransmittedBy <!-- VERB -->
 - Display name: IsTransmittedBy
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [Telemetry](./DataTransmission.md#Telemetry)
-- Min cardinality: -1
-- Max cardinality: -1
-- Description: Expresses that a signal is transmitted by some given telemetry system
+- Definition set: DataTransmission
+- Description: 
+Expresses that a signal is transmitted by some given telemetry system
 - Examples:
 EMS DWOB is transmitted by WiredPipeTelemetry
-- Definition set: DataTransmission
