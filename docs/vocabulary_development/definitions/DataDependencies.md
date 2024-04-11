@@ -1,4 +1,4 @@
-- Description: this part covers the physical dependencies between signals.
+- Description: this definition set covers the physical dependence of a `DrillingDatPoint` on something else.
 
 # NOUNS
 
@@ -9,27 +9,93 @@
 - Display name: IsDependentOn
 - Parent verb: DWISVerb
 - Subject class: DrillingDataPoint
-- Object class: DrillingDataPoint
-- Description: 
+- Object class: DWISNoun
+- Description: This verb is used to describe a general dependence relationship between a `DrillingDataPoint` and something else.
 - Examples: 
+```ddhub DerrickFloorElevation HeaveElevation TideElevation
+DerickFloorVerticalLocation:DerrickFloor
+DerivedMeasurement:DerrickFloorElevation
+Measurement:HeaveElevation
+Measurement:TideElevation
+DerrickFloorElevation IsOfMeasurableQuantity AxialPosition
+DerrickFloorElevation IsPhysicallyLocatedAt DerrickFloor
+HeaveElevation IsOfMeasurableQuantity AxialPosition
+TideElevation IsOfMeasurableQuantity AxialPosition
+DerrickFloorElevation IsDependentOn HeaveElevation
+DerrickFloorElevation IsDependentOn TideElevation
+```
+In this example, it is described that the derrick floor elevation, `DerrickFloorElevation`, 
+depends on the heave measurement, `HeaveElevation`, and the tide measurement, `TideElevation`.
 ## HasPressureReference <!-- VERB -->
 - Display name: HasPressureReference
 - Parent verb: IsDependentOn
 - Subject class: DrillingDataPoint
 - Object class: DrillingDataPoint
-- Description: 
+- Description: This verb is a specialization of `IsDependentOn` and refers to the specific dependence on a pressure reference.
 - Examples: 
+```ddhub MeasuredDrillingFluidDensity MeasuredTemperature MeasuredPressure
+Measurement:MeasuredDrillingFluidDensity
+Measurement:MeasuredTemperature
+Measurement:MeasuredPressure
+MeasuredDrillingFluidDensity IsOfMeasurableQuantity DrillingDensity
+MeasuredTemperature IsOfMeasurableQuantity DrillingTemperature
+MeasuredPressure IsOfMeasurableQuantity DrillingPressure
+MeasuredDrillingFluidDensity HasTemperatureReference MeasuredTemperature
+MeasuredDrillingFluidDensity HasPressureReference MeasuredPressure
+```
+In this example, it is described that `MeasuredDrillingFluidDensity`, which is a measurement of the measurable quantity
+`DrillingDensity` has a dependence on pressure and temperature, and that the associated measured pressure can be found
+at `MeasuredPressure`.
 ## HasTemperatureReference <!-- VERB -->
 - Display name: HasTemperatureReference
 - Parent verb: IsDependentOn
 - Subject class: DrillingDataPoint
 - Object class: DrillingDataPoint
-- Description: 
+- Description: This verb is a specialization of `IsDependentOn` and refers to the specific dependence on a temperature reference.
 - Examples: 
+```ddhub MeasuredDrillingFluidDensity MeasuredTemperature MeasuredPressure
+Measurement:MeasuredDrillingFluidDensity
+Measurement:MeasuredTemperature
+Measurement:MeasuredPressure
+MeasuredDrillingFluidDensity IsOfMeasurableQuantity DrillingDensity
+MeasuredTemperature IsOfMeasurableQuantity DrillingTemperature
+MeasuredPressure IsOfMeasurableQuantity DrillingPressure
+MeasuredDrillingFluidDensity HasTemperatureReference MeasuredTemperature
+MeasuredDrillingFluidDensity HasPressureReference MeasuredPressure
+```
+In this example, it is described that `MeasuredDrillingFluidDensity`, which is a measurement of the measurable quantity
+`DrillingDensity` has a dependence on pressure and temperature, and that the associated measured temperaure can be found
+at `MeasuredTemperature`.
 ## HasElevationReference <!-- VERB -->
 - Display name: HasElevationReference
 - Parent verb: IsDependentOn
 - Subject class: DrillingDataPoint
 - Object class: Location
-- Description: 
+- Description: This verb is a specialization of `IsDependentOn` and refers to the specific dependence on an elevation reference.
 - Examples: 
+```ddhub MeasuredStandPipePressure DerrickFloorElevation HeaveElevation TideElevation
+Measurement:MeasuredStandPipePressure
+DerickFloorVerticalLocation:DerrickFloor
+DerivedMeasurement:DerrickFloorElevation
+Measurement:HeaveElevation
+Measurement:TideElevation
+StandPipe:StandPipeElement
+MechanicalLogicalElement:LogicalRepresentationStandPipe
+MeasuredStandPipePressure HasElevationReference DerrickFloor
+LogicalRepresentationStandPipe IsAMechanicalRepresentationFor StandPipeElement
+MeasuredStandPipePressure IsMechanicallyLocatedAt LogicalRepresentationStandPipe
+MeasuredStandPipePressure IsOfMeasurableQuantity DrillingPressure
+DerrickFloorElevation IsOfMeasurableQuantity AxialPosition
+DerrickFloorElevation IsPhysicallyLocatedAt DerrickFloor
+HeaveElevation IsOfMeasurableQuantity AxialPosition
+TideElevation IsOfMeasurableQuantity AxialPosition
+WGS84VerticalLocation:VerticalDatum
+HeaveElevation HasElevationReference VerticalDatum
+TideElevation HasElevationReference VerticalDatum
+DerrickFloorElevation IsDependentOn HeaveElevation
+DerrickFloorElevation IsDependentOn TideElevation
+```
+In this example, it is described that the standpipe pressure measurement, `MeasuredStandPipePressure`, depends on
+the derrick floor elevation, `DerrickFloor`, elevation and that the derrick floor elevation depends on the heave
+elevation and on the tide elevation, which in turn have an elevation reference compared to the vertical datum, which
+here is WGS84.
