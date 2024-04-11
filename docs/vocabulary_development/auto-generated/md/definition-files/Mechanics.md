@@ -101,7 +101,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Mechanics
 ## HasMechanicalState <!-- VERB -->
 - Display name: HasMechanicalState
@@ -111,7 +111,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Mechanics
 ## HasMechanicalStateValueFrom <!-- VERB -->
 - Display name: HasMechanicalStateValueFrom
@@ -121,7 +121,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Mechanics
 ## IsMechanicallyConnectedTo <!-- VERB -->
 - Display name: IsMechanicallyConnectTo
@@ -131,7 +131,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Mechanics
 ## IsMechanicallyLocatedAt <!-- VERB -->
 - Display name: IsMechanicallyLocatedAt
@@ -141,7 +141,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Mechanics
 ## IsForMotionType <!-- VERB -->
 - Display name: IsForMotionType
@@ -151,7 +151,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Mechanics
 ## HasMotionType <!-- VERB -->
 - Display name: HasMotionType
@@ -161,5 +161,5 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Mechanics

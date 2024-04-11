@@ -645,7 +645,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: PhysicalLocation
 ## HasReferenceFrame <!-- VERB -->
 - Display name: HasReferenceFrame
@@ -655,7 +655,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: PhysicalLocation
 ## HasReferenceFrameOrigin <!-- VERB -->
 - Display name: HasReferenceFrameOrigin
@@ -665,7 +665,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: PhysicalLocation
 ## IsPhysicallyLocatedAt <!-- VERB -->
 - Display name: IsPhysicallyLocatedAt
@@ -675,5 +675,5 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: PhysicalLocation

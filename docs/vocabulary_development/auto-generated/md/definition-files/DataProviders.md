@@ -184,7 +184,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataProviders
 ## IsProvidedTo <!-- VERB -->
 - Display name: IsProvidedTo
@@ -194,5 +194,5 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataProviders

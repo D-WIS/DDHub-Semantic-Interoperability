@@ -106,5 +106,5 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingIncident

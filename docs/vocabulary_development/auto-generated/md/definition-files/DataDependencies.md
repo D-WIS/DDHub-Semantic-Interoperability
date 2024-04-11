@@ -10,7 +10,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataDependencies
 ## HasPressureReference <!-- VERB -->
 - Display name: HasPressureReference
@@ -20,7 +20,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataDependencies
 ## HasTemperatureReference <!-- VERB -->
 - Display name: HasTemperatureReference
@@ -30,7 +30,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataDependencies
 ## HasElevationReference <!-- VERB -->
 - Display name: HasElevationReference
@@ -40,5 +40,5 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataDependencies

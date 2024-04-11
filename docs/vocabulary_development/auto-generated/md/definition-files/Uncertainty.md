@@ -85,12 +85,12 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01[D] -->|BelongsTo| N0003[GenericUncertainty] 
-	N0000[ddp#01] -->|HasUncertainty| N0004[GU#01] 
-	N0005[Histo#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0004[GU#01] -->|HasUncertaintyHistogram| N0005[Histo#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
-	N0005[Histo#01] -->|HasDynamicValue| N0006[Signal#01] 
+	N0002[GU#01] -->|BelongsTo| N0003[GenericUncertainty] 
+	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
+	N0004[Histo#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|HasUncertaintyHistogram| N0004[Histo#01] 
+	N0005[Signal#01] -->|BelongsTo| N0006[DynamicDrillingSignal] 
+	N0004[Histo#01] -->|HasDynamicValue| N0005[Signal#01] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -100,7 +100,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?Signal#01
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01[D rdf:type ddhub:GenericUncertainty .
+	?GU#01 rdf:type ddhub:GenericUncertainty .
 	?ddp#01 ddhub:HasUncertainty ?GU#01 .
 	?Histo#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 ddhub:HasUncertaintyHistogram ?Histo#01 .
@@ -263,7 +263,42 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: This verb allows to associate a `SignalUncertainty` to a `DrillingDataPoint`.
-- Examples: 
+- Examples:
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|BelongsTo| N0003[GaussianUncertainty] 
+	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
+	N0004[Mean#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0005[StdDev#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|HasUncertaintyMean| N0004[Mean#01] 
+	N0002[GU#01] -->|HasUncertaintyStandardDeviation| N0005[StdDev#01] 
+	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0008[Signal#02] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0004[Mean#01] -->|HasDynamicValue| N0006[Signal#01] 
+	N0005[StdDev#01] -->|HasDynamicValue| N0008[Signal#02] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?Signal#01, ?Signal#02
+WHERE {
+	?ddp#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 rdf:type ddhub:GaussianUncertainty .
+	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?Mean#01 rdf:type ddhub:DrillingDataPoint .
+	?StdDev#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 ddhub:HasUncertaintyMean ?Mean#01 .
+	?GU#01 ddhub:HasUncertaintyStandardDeviation ?StdDev#01 .
+	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
+	?Signal#02 rdf:type ddhub:DynamicDrillingSignal .
+	?Mean#01 ddhub:HasDynamicValue ?Signal#01 .
+	?StdDev#01 ddhub:HasDynamicValue ?Signal#02 .
+}
+```
 - Definition set: Uncertainty
 ## HasUncertaintyAccuracy <!-- VERB -->
 - Display name: HasUncertaintyAccuracy
@@ -273,7 +308,43 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: This verb allows to associate a `DrillingDataPoint` as the `Accuracy` of a `SensorUncertainty`
-- Examples: 
+- Examples:
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|BelongsTo| N0003[SensorUncertainty] 
+	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
+	N0004[Acc#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0005[Prec#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|HasUncertaintyAccuracy| N0004[Acc#01] 
+	N0002[GU#01] -->|HasUncertaintyPrecision| N0005[Prec#01] 
+	N0006[Signal#01] -->|BelongsTo| N0007[DrillingSignal] 
+	N0008[Signal#02] -->|BelongsTo| N0007[DrillingSignal] 
+	N0004[Acc#01] -->|HasStaticValue| N0006[Signal#01] 
+	N0005[Prec#01] -->|HasStaticValue| N0008[Signal#02] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?Signal#01, ?Signal#02
+WHERE {
+	?ddp#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 rdf:type ddhub:SensorUncertainty .
+	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?Acc#01 rdf:type ddhub:DrillingDataPoint .
+	?Prec#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 ddhub:HasUncertaintyAccuracy ?Acc#01 .
+	?GU#01 ddhub:HasUncertaintyPrecision ?Prec#01 .
+	?Signal#01 rdf:type ddhub:DrillingSignal .
+	?Signal#02 rdf:type ddhub:DrillingSignal .
+	?Acc#01 ddhub:HasStaticValue ?Signal#01 .
+	?Prec#01 ddhub:HasStaticValue ?Signal#02 .
+}
+```
+In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is representing a sensor having a Gaussian probability distibution that is described using an `Accuracy` (called `Acc#01`)  and a `Precision` called `Prec#01`. `Acc#01` is a static signal that is attached to `Signal#01`. Similarly `Prec#01` is a static signal attached to `Signal#02`.
 - Definition set: Uncertainty
 ## HasUncertaintyPrecision <!-- VERB -->
 - Display name: HasUncertaintyPrecision
@@ -283,7 +354,43 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: This verb is used to associate a `DrillingDataPoint` as the `Precision` of a `SensorUncertainty`
-- Examples: 
+- Examples:
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|BelongsTo| N0003[SensorUncertainty] 
+	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
+	N0004[Acc#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0005[Prec#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|HasUncertaintyAccuracy| N0004[Acc#01] 
+	N0002[GU#01] -->|HasUncertaintyPrecision| N0005[Prec#01] 
+	N0006[Signal#01] -->|BelongsTo| N0007[DrillingSignal] 
+	N0008[Signal#02] -->|BelongsTo| N0007[DrillingSignal] 
+	N0004[Acc#01] -->|HasStaticValue| N0006[Signal#01] 
+	N0005[Prec#01] -->|HasStaticValue| N0008[Signal#02] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?Signal#01, ?Signal#02
+WHERE {
+	?ddp#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 rdf:type ddhub:SensorUncertainty .
+	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?Acc#01 rdf:type ddhub:DrillingDataPoint .
+	?Prec#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 ddhub:HasUncertaintyAccuracy ?Acc#01 .
+	?GU#01 ddhub:HasUncertaintyPrecision ?Prec#01 .
+	?Signal#01 rdf:type ddhub:DrillingSignal .
+	?Signal#02 rdf:type ddhub:DrillingSignal .
+	?Acc#01 ddhub:HasStaticValue ?Signal#01 .
+	?Prec#01 ddhub:HasStaticValue ?Signal#02 .
+}
+```
+In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is representing a sensor having a Gaussian probability distibution that is described using an `Accuracy` (called `Acc#01`)  and a `Precision` called `Prec#01`. `Acc#01` is a static signal that is attached to `Signal#01`. Similarly `Prec#01` is a static signal attached to `Signal#02`.
 - Definition set: Uncertainty
 ## HasUncertaintyMin <!-- VERB -->
 - Display name: HasUncertaintyMin
@@ -293,7 +400,43 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: This verb is used to associate a `DrillingDataPoint` as the `Min` value of `MinMaxUncertainty`
-- Examples: 
+- Examples:
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|BelongsTo| N0003[MinMaxUncertainty] 
+	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
+	N0004[Min#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0005[Max#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|HasUncertaintyMin| N0004[Min#01] 
+	N0002[GU#01] -->|HasUncertaintyMax| N0005[Max#01] 
+	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0008[Signal#02] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0004[Min#01] -->|HasDynamicValue| N0006[Signal#01] 
+	N0005[Max#01] -->|HasDynamicValue| N0008[Signal#02] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?Signal#01, ?Signal#02
+WHERE {
+	?ddp#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 rdf:type ddhub:MinMaxUncertainty .
+	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?Min#01 rdf:type ddhub:DrillingDataPoint .
+	?Max#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 ddhub:HasUncertaintyMin ?Min#01 .
+	?GU#01 ddhub:HasUncertaintyMax ?Max#01 .
+	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
+	?Signal#02 rdf:type ddhub:DynamicDrillingSignal .
+	?Min#01 ddhub:HasDynamicValue ?Signal#01 .
+	?Max#01 ddhub:HasDynamicValue ?Signal#02 .
+}
+```
+In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is a uniform probability distribution that is described by a `Min` value called `Min#01` and a `Max` value called `Max#01`. `Min#01` is a live signal that is attached to `Signal#01`. Similarly `Max#01` is a live signal attached to `Signal#02`.
 - Definition set: Uncertainty
 ## HasUncertaintyMax <!-- VERB -->
 - Display name: HasUncertaintyMax
@@ -303,7 +446,43 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: This verb is used to associate a `DrillingDataPoint` as the `Max` value of a `MinMaxUncertainty`
-- Examples: 
+- Examples:
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|BelongsTo| N0003[MinMaxUncertainty] 
+	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
+	N0004[Min#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0005[Max#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|HasUncertaintyMin| N0004[Min#01] 
+	N0002[GU#01] -->|HasUncertaintyMax| N0005[Max#01] 
+	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0008[Signal#02] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0004[Min#01] -->|HasDynamicValue| N0006[Signal#01] 
+	N0005[Max#01] -->|HasDynamicValue| N0008[Signal#02] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?Signal#01, ?Signal#02
+WHERE {
+	?ddp#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 rdf:type ddhub:MinMaxUncertainty .
+	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?Min#01 rdf:type ddhub:DrillingDataPoint .
+	?Max#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 ddhub:HasUncertaintyMin ?Min#01 .
+	?GU#01 ddhub:HasUncertaintyMax ?Max#01 .
+	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
+	?Signal#02 rdf:type ddhub:DynamicDrillingSignal .
+	?Min#01 ddhub:HasDynamicValue ?Signal#01 .
+	?Max#01 ddhub:HasDynamicValue ?Signal#02 .
+}
+```
+In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is a uniform probability distribution that is described by a `Min` value called `Min#01` and a `Max` value called `Max#01`. `Min#01` is a live signal that is attached to `Signal#01`. Similarly `Max#01` is a live signal attached to `Signal#02`.
 - Definition set: Uncertainty
 ## HasUncertaintyMean <!-- VERB -->
 - Display name: HasUncertaintyMean
@@ -313,7 +492,42 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: This verb is used to associate a `DrillingDataPoint` as the `Mean` value of a `GaussianUncertainty`
-- Examples: 
+- Examples:
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|BelongsTo| N0003[GaussianUncertainty] 
+	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
+	N0004[Mean#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0005[StdDev#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|HasUncertaintyMean| N0004[Mean#01] 
+	N0002[GU#01] -->|HasUncertaintyStandardDeviation| N0005[StdDev#01] 
+	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0008[Signal#02] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0004[Mean#01] -->|HasDynamicValue| N0006[Signal#01] 
+	N0005[StdDev#01] -->|HasDynamicValue| N0008[Signal#02] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?Signal#01, ?Signal#02
+WHERE {
+	?ddp#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 rdf:type ddhub:GaussianUncertainty .
+	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?Mean#01 rdf:type ddhub:DrillingDataPoint .
+	?StdDev#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 ddhub:HasUncertaintyMean ?Mean#01 .
+	?GU#01 ddhub:HasUncertaintyStandardDeviation ?StdDev#01 .
+	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
+	?Signal#02 rdf:type ddhub:DynamicDrillingSignal .
+	?Mean#01 ddhub:HasDynamicValue ?Signal#01 .
+	?StdDev#01 ddhub:HasDynamicValue ?Signal#02 .
+}
+```
 - Definition set: Uncertainty
 ## HasUncertaintyStandardDeviation <!-- VERB -->
 - Display name: HasUncertaintyStandardDeviation
@@ -323,7 +537,42 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: This verb is used to associate a `DrillingDataPoint` as the `StandardDeviation` value of a `GaussianUncertainty`
-- Examples: 
+- Examples:
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|BelongsTo| N0003[GaussianUncertainty] 
+	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
+	N0004[Mean#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0005[StdDev#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|HasUncertaintyMean| N0004[Mean#01] 
+	N0002[GU#01] -->|HasUncertaintyStandardDeviation| N0005[StdDev#01] 
+	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0008[Signal#02] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0004[Mean#01] -->|HasDynamicValue| N0006[Signal#01] 
+	N0005[StdDev#01] -->|HasDynamicValue| N0008[Signal#02] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?Signal#01, ?Signal#02
+WHERE {
+	?ddp#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 rdf:type ddhub:GaussianUncertainty .
+	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?Mean#01 rdf:type ddhub:DrillingDataPoint .
+	?StdDev#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 ddhub:HasUncertaintyMean ?Mean#01 .
+	?GU#01 ddhub:HasUncertaintyStandardDeviation ?StdDev#01 .
+	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
+	?Signal#02 rdf:type ddhub:DynamicDrillingSignal .
+	?Mean#01 ddhub:HasDynamicValue ?Signal#01 .
+	?StdDev#01 ddhub:HasDynamicValue ?Signal#02 .
+}
+```
 - Definition set: Uncertainty
 ## HasProportionError <!-- VERB -->
 - Display name: HasProportionError
@@ -333,7 +582,43 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: This verb is used to associate a `DrillingDataPoint` as the `ProportionError` value of a `FullScaleUncertainty`
-- Examples: 
+- Examples:
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|BelongsTo| N0003[FullScaleUncertainty] 
+	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
+	N0004[FullScale#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0005[ErrProp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|HasFullScale| N0004[FullScale#01] 
+	N0002[GU#01] -->|HasProportionError| N0005[ErrProp#01] 
+	N0006[Signal#01] -->|BelongsTo| N0007[DrillingSignal] 
+	N0008[Signal#02] -->|BelongsTo| N0007[DrillingSignal] 
+	N0004[FullScale#01] -->|HasStaticValue| N0006[Signal#01] 
+	N0005[ErrProp#01] -->|HasStaticValue| N0008[Signal#02] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?Signal#01, ?Signal#02
+WHERE {
+	?ddp#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 rdf:type ddhub:FullScaleUncertainty .
+	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?FullScale#01 rdf:type ddhub:DrillingDataPoint .
+	?ErrProp#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 ddhub:HasFullScale ?FullScale#01 .
+	?GU#01 ddhub:HasProportionError ?ErrProp#01 .
+	?Signal#01 rdf:type ddhub:DrillingSignal .
+	?Signal#02 rdf:type ddhub:DrillingSignal .
+	?FullScale#01 ddhub:HasStaticValue ?Signal#01 .
+	?ErrProp#01 ddhub:HasStaticValue ?Signal#02 .
+}
+```
+In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is representing a sensor having a Gaussian probability distibution that is described using a `ProportionError` (called `ErrProp#01`) of a `FullScale` value called `FullScale#01`. `FullScale#01` is a static signal that is attached to `Signal#01`. Similarly `ErrProp#01` is a static signal attached to `Signal#02`.
 - Definition set: Uncertainty
 ## HasFullScale <!-- VERB -->
 - Display name: HasFullScale
@@ -343,7 +628,43 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: This verb is used to associate a `DrillingDataPoint` as the `FullScale` value of a `FullScaleUncertainty`
-- Examples: 
+- Examples:
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|BelongsTo| N0003[FullScaleUncertainty] 
+	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
+	N0004[FullScale#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0005[ErrProp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|HasFullScale| N0004[FullScale#01] 
+	N0002[GU#01] -->|HasProportionError| N0005[ErrProp#01] 
+	N0006[Signal#01] -->|BelongsTo| N0007[DrillingSignal] 
+	N0008[Signal#02] -->|BelongsTo| N0007[DrillingSignal] 
+	N0004[FullScale#01] -->|HasStaticValue| N0006[Signal#01] 
+	N0005[ErrProp#01] -->|HasStaticValue| N0008[Signal#02] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?Signal#01, ?Signal#02
+WHERE {
+	?ddp#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 rdf:type ddhub:FullScaleUncertainty .
+	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?FullScale#01 rdf:type ddhub:DrillingDataPoint .
+	?ErrProp#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 ddhub:HasFullScale ?FullScale#01 .
+	?GU#01 ddhub:HasProportionError ?ErrProp#01 .
+	?Signal#01 rdf:type ddhub:DrillingSignal .
+	?Signal#02 rdf:type ddhub:DrillingSignal .
+	?FullScale#01 ddhub:HasStaticValue ?Signal#01 .
+	?ErrProp#01 ddhub:HasStaticValue ?Signal#02 .
+}
+```
+In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is representing a sensor having a Gaussian probability distibution that is described using a `ProportionError` (called `ErrProp#01`) of a `FullScale` value called `FullScale#01`. `FullScale#01` is a static signal that is attached to `Signal#01`. Similarly `ErrProp#01` is a static signal attached to `Signal#02`.
 - Definition set: Uncertainty
 ## HasUncertaintyHistogram <!-- VERB -->
 - Display name: HasUncertaintyHistogram
@@ -353,5 +674,33 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: This verb is used to associated a `DrillingDataPoint` as the `Histogram` value of a `GenericUncertainty`
-- Examples: 
+- Examples:
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|BelongsTo| N0003[GenericUncertainty] 
+	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
+	N0004[Histo#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|HasUncertaintyHistogram| N0004[Histo#01] 
+	N0005[Signal#01] -->|BelongsTo| N0006[DynamicDrillingSignal] 
+	N0004[Histo#01] -->|HasDynamicValue| N0005[Signal#01] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?Signal#01
+WHERE {
+	?ddp#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 rdf:type ddhub:GenericUncertainty .
+	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?Histo#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 ddhub:HasUncertaintyHistogram ?Histo#01 .
+	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
+	?Histo#01 ddhub:HasDynamicValue ?Signal#01 .
+}
+```
+In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is a general probability distribution that is described by a histogram called `Histo#01`. `Histo#01` is a live signal that is attached to `Signal#01`.
 - Definition set: Uncertainty

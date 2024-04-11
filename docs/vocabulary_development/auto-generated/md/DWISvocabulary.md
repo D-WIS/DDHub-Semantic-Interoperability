@@ -4313,12 +4313,12 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01[D] -->|BelongsTo| N0003[GenericUncertainty] 
-	N0000[ddp#01] -->|HasUncertainty| N0004[GU#01] 
-	N0005[Histo#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0004[GU#01] -->|HasUncertaintyHistogram| N0005[Histo#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
-	N0005[Histo#01] -->|HasDynamicValue| N0006[Signal#01] 
+	N0002[GU#01] -->|BelongsTo| N0003[GenericUncertainty] 
+	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
+	N0004[Histo#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|HasUncertaintyHistogram| N0004[Histo#01] 
+	N0005[Signal#01] -->|BelongsTo| N0006[DynamicDrillingSignal] 
+	N0004[Histo#01] -->|HasDynamicValue| N0005[Signal#01] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -4328,7 +4328,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?Signal#01
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01[D rdf:type ddhub:GenericUncertainty .
+	?GU#01 rdf:type ddhub:GenericUncertainty .
 	?ddp#01 ddhub:HasUncertainty ?GU#01 .
 	?Histo#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 ddhub:HasUncertaintyHistogram ?Histo#01 .
@@ -4491,7 +4491,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: ADCS
 ## IsActivatedSignalFor <!-- VERB -->
 - Display name: IsActivatedSignalFor
@@ -4501,7 +4501,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: ADCS
 ## IsAllowEnablementSignalFor <!-- VERB -->
 - Display name: IsAllowEnablementSignalFor
@@ -4511,7 +4511,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: ADCS
 ## IsIdlingSignalFor <!-- VERB -->
 - Display name: IsIdlingSignalFor
@@ -4521,7 +4521,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: ADCS
 ## IsUserControllableExtraMarginSignalFor <!-- VERB -->
 - Display name: IsUserControllableExtraMarginSignalFor
@@ -4531,7 +4531,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: ADCS
 ## IsUsedDefinedExtraMarginSignalFor <!-- VERB -->
 - Display name: IsUsedDefinedExtraMarginSignalFor
@@ -4541,7 +4541,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: ADCS
 ## IsArmedSignalFor <!-- VERB -->
 - Display name: IsArmedSignalFor
@@ -4551,7 +4551,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: ADCS
 ## IsTriggeredSignalFor <!-- VERB -->
 - Display name: IsTriggeredSignalFor
@@ -4561,7 +4561,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: ADCS
 ## IsIdlingAfterTriggeredSignalFor <!-- VERB -->
 - Display name: IsIdlingAfterTriggeredSignalFor
@@ -4571,7 +4571,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: ADCS
 ## IsImpactDescriptionSignalFor <!-- VERB -->
 - Display name: IsImpactDescriptionSignalFor
@@ -4581,7 +4581,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: ADCS
 ## IsDependentOn <!-- VERB -->
 - Display name: IsDependentOn
@@ -4591,7 +4591,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataDependencies
 ## HasPressureReference <!-- VERB -->
 - Display name: HasPressureReference
@@ -4601,7 +4601,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataDependencies
 ## HasTemperatureReference <!-- VERB -->
 - Display name: HasTemperatureReference
@@ -4611,7 +4611,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataDependencies
 ## HasElevationReference <!-- VERB -->
 - Display name: HasElevationReference
@@ -4621,7 +4621,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataDependencies
 ## Controls <!-- VERB -->
 - Display name: Controls
@@ -4631,7 +4631,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## HasFunction <!-- VERB -->
 - Display name: HasFunction
@@ -4641,7 +4641,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsCommandFor <!-- VERB -->
 - Display name: IsCommandFor
@@ -4651,7 +4651,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsComputationInput <!-- VERB -->
 - Display name: Is Computation Input
@@ -4661,7 +4661,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsLimitFor <!-- VERB -->
 - Display name: Is Limit For
@@ -4671,7 +4671,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsMinimumLimitFor <!-- VERB -->
 - Display name: Is Minimum Limit For
@@ -4681,7 +4681,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsMaximumLimitFor <!-- VERB -->
 - Display name: Is Maximum Limit For
@@ -4691,7 +4691,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsSetPointFor <!-- VERB -->
 - Display name: Is Set-Point For
@@ -4701,7 +4701,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsSetPointRecommendationFor <!-- VERB -->
 - Display name: Is Set-Point Recommendation For
@@ -4711,7 +4711,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsSetPointAdviceFor <!-- VERB -->
 - Display name: Is Set-Point Advice For
@@ -4721,7 +4721,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsSetPointMinimumRecommendationFor <!-- VERB -->
 - Display name: Is Set-Point Minimum Recommendation For
@@ -4731,7 +4731,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsSetPointMinimumAdviceFor <!-- VERB -->
 - Display name: Is Set-Point Minimum Advice For
@@ -4741,7 +4741,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsSetPointMaximumRecommendationFor <!-- VERB -->
 - Display name: Is Set-Point Maximum Recommendation For
@@ -4751,7 +4751,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsSetPointMaximumAdviceFor <!-- VERB -->
 - Display name: Is Set-Point Maximum Advice For
@@ -4761,7 +4761,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsTransformationInput <!-- VERB -->
 - Display name: IsTransformationInput
@@ -4771,7 +4771,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsBufferingInput <!-- VERB -->
 - Display name: IsBufferingInput
@@ -4781,7 +4781,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsDerivationInput <!-- VERB -->
 - Display name: IsDerivationInput
@@ -4791,7 +4791,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsResamplingInput <!-- VERB -->
 - Display name: IsResamplingInput
@@ -4801,7 +4801,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsTransmissionInput <!-- VERB -->
 - Display name: IsTransmissionInput
@@ -4811,7 +4811,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsGeneratedBy <!-- VERB -->
 - Display name: IsGeneratedBy
@@ -4821,7 +4821,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsComputedBy <!-- VERB -->
 - Display name: IsComputedBy
@@ -4831,7 +4831,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsMeasuredBy <!-- VERB -->
 - Display name: IsMeasuredBy
@@ -4841,7 +4841,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsRecordedFrom <!-- VERB -->
 - Display name: IsRecordedFrom
@@ -4851,7 +4851,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsTransformationOutput <!-- VERB -->
 - Display name: IsTransformationOutput
@@ -4861,7 +4861,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsBufferingOutput <!-- VERB -->
 - Display name: IsBufferingOutput
@@ -4871,7 +4871,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsDerivedFrom <!-- VERB -->
 - Display name: IsDerivedFrom
@@ -4881,7 +4881,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsIntegratedFrom <!-- VERB -->
 - Display name: IsIntegratedFrom
@@ -4891,7 +4891,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsResampledBy <!-- VERB -->
 - Display name: IsResampledBy
@@ -4901,7 +4901,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsTransmissionOutput <!-- VERB -->
 - Display name: IsTransmissionOutput
@@ -4911,7 +4911,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsProcessedBy <!-- VERB -->
 - Display name: IsProcessedBy
@@ -4921,7 +4921,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataFlow
 ## IsProvidedBy <!-- VERB -->
 - Display name: IsProvidedBy
@@ -4931,7 +4931,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataProviders
 ## IsProvidedTo <!-- VERB -->
 - Display name: IsProvidedTo
@@ -4941,7 +4941,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataProviders
 ## IsTransmittedBy <!-- VERB -->
 - Display name: IsTransmittedBy
@@ -4951,7 +4951,8 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: Expresses that a signal is transmitted by some given telemetry system
-- Examples: EMS DWOB is transmitted by WiredPipeTelemetry
+- Examples:
+EMS DWOB is transmitted by WiredPipeTelemetry
 - Definition set: DataTransmission
 ## IsConditionedBy <!-- VERB -->
 - Display name: IsConditionedBy
@@ -4961,7 +4962,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataValidity
 ## IsConditionInput <!-- VERB -->
 - Display name: IsConditionInput
@@ -4971,7 +4972,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataValidity
 ## IsConditionLeft <!-- VERB -->
 - Display name: IsConditionLeft
@@ -4981,7 +4982,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataValidity
 ## IsConditionRight <!-- VERB -->
 - Display name: IsConditionRight
@@ -4991,7 +4992,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataValidity
 ## IsValidBy <!-- VERB -->
 - Display name: IsValidBy
@@ -5001,7 +5002,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DataValidity
 ## HasDomain <!-- VERB -->
 - Display name: HasDomain
@@ -5011,7 +5012,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## HasTimeIntervalDomain <!-- VERB -->
 - Display name: HasTimeIntervalDomain
@@ -5021,7 +5022,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## HasValue <!-- VERB -->
 - Display name: HasValue
@@ -5031,7 +5032,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## HasDynamicValue <!-- VERB -->
 - Display name: HasDynamicValue
@@ -5041,7 +5042,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## HasStaticValue <!-- VERB -->
 - Display name: HasStaticValue
@@ -5051,7 +5052,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## IsToBeComparedWith <!-- VERB -->
 - Display name: IsToBeComparedWith
@@ -5061,7 +5062,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## IsToBeGreaterThan <!-- VERB -->
 - Display name: IsToBeGreaterThan
@@ -5071,7 +5072,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## IsToBeGreaterOrEqualThan <!-- VERB -->
 - Display name: IsToBeGreaterOrEqualThan
@@ -5081,7 +5082,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## IsToBeStrictlyGreaterThan <!-- VERB -->
 - Display name: IsToBeStrictlyGreaterThan
@@ -5091,7 +5092,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## IsToBeSmallerThan <!-- VERB -->
 - Display name: IsToBeSmallerThan
@@ -5101,7 +5102,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## IsToBeSmallerOrEqualThan <!-- VERB -->
 - Display name: IsToBeSmallerOrEqualThan
@@ -5111,7 +5112,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## IsToBeStrictlySmallerThan <!-- VERB -->
 - Display name: IsToBeStrictlySmallerThan
@@ -5121,7 +5122,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## IsToBeEqualTo <!-- VERB -->
 - Display name: IsToBeEqualTo
@@ -5131,7 +5132,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## IsToBeDifferentFrom <!-- VERB -->
 - Display name: IsToBeDifferentFrom
@@ -5141,7 +5142,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingDataSemantics
 ## IsSubPartOf <!-- VERB -->
 - Display name: IsSubPartOf
@@ -5151,7 +5152,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingEquipment
 ## IsRelatedToDrillingIncident <!-- VERB -->
 - Display name: IsRelatedToDrillingIncident
@@ -5161,7 +5162,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: DrillingIncident
 ## DWISVerb <!-- VERB -->
 - Display name: DWIS verb
@@ -5171,7 +5172,8 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: This is the root class for all verbs defined in the DWIS vocabulary. It is used to define a relation between a subject, which can be of any `DWISNoun` and an object, also of any type of `DWISNoun`.
-- Examples: `DWISVerb` is not really intended to be used directly neither when defining facts nor in sparql queries.
+- Examples:
+`DWISVerb` is not really intended to be used directly neither when defining facts nor in sparql queries.
 - Definition set: DWISSemantics
 ## BelongsToClass <!-- VERB -->
 - Display name: Belongs To Class
@@ -5181,7 +5183,43 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: The verb is used between a node and a Noun, i.e., a class. Semantically it can be considered as a synonym to `rdf:type`. It has been introduced to overcome limitations from OPC-UA that does not allow for multiple inheritance. Note that the same node can be in relation using `BelongsToClass` to several classes.
-- Examples: 
+- Examples:
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[dat#01] -->|BelongsTo| N0001[BitDepth] 
+	N0000[dat#01] -->|BelongsTo| N0002[DerivedMeasurement] 
+	N0003[dat#02] -->|BelongsTo| N0001[BitDepth] 
+	N0003[dat#02] -->|BelongsTo| N0004[ComputedData] 
+```
+In this example, `dat#01` is a `BitDepth` that is a derived measurement, while `dat#02` is a `BitDepth` that has been estimated.
+If one use the following sparql query:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+SELECT ?dataPoint 
+WHERE {
+			?dataPoint rdf:type ddhub:BitDepth .
+}
+```
+one obtain the result:
+```
+dat#01 dat#02
+```
+If now the sparql query is:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+SELECT ?dataPoint 
+WHERE {
+			?dataPoint rdf:type ddhub:BitDepth .
+			?dataPoint ddhub:BelongsToClass ddhub:Measurement .
+}
+```
+one obtain the result:
+```
+dat#01
+```
 - Definition set: DWISSemantics
 ## HasEndPoint <!-- VERB -->
 - Display name: HasEndPoint
@@ -5191,7 +5229,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: EndPoints
 ## HasPressureReferenceType <!-- VERB -->
 - Display name: HasPressureReferenceType
@@ -5201,7 +5239,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## EndsHydraulicBranchDecomposition <!-- VERB -->
 - Display name: EndsHydraulicBranchDecomposition
@@ -5211,7 +5249,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## IsAHydraulicRepresentationFor <!-- VERB -->
 - Display name: IsAHydraulicRepresentationFor
@@ -5221,7 +5259,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## HasBranchComponent <!-- VERB -->
 - Display name: HasBranchComponent
@@ -5231,7 +5269,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## HasBranchCoordinateSystem <!-- VERB -->
 - Display name: HasBranchCoordinateSystem
@@ -5241,7 +5279,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## HasHydraulicState <!-- VERB -->
 - Display name: HasHydraulicState
@@ -5251,7 +5289,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## HasHydraulicStateValueFrom <!-- VERB -->
 - Display name: HasHydraulicStateValueFrom
@@ -5261,7 +5299,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## HasLeftBranchCoordinates <!-- VERB -->
 - Display name: HasLeftBranchCoordinates
@@ -5271,7 +5309,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## HasRightBranchCoordinates <!-- VERB -->
 - Display name: HasRightBranchCoordinates
@@ -5281,7 +5319,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## IsHydraulicallyLocatedAt <!-- VERB -->
 - Display name: IsHydraulicallyLocatedAt
@@ -5291,7 +5329,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## IsEquivalentCirculationDensityAt <!-- VERB -->
 - Display name: IsEquivalentCirculationDensityAt
@@ -5301,7 +5339,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## IsFluidDensityAt <!-- VERB -->
 - Display name: IsFluidDensityAt
@@ -5311,7 +5349,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## IsFluidTemperatureAt <!-- VERB -->
 - Display name: IsFluidTemperatureAt
@@ -5321,7 +5359,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## IsFluidVelocityAt <!-- VERB -->
 - Display name: IsFluidVelocityAt
@@ -5331,7 +5369,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## IsOpeningRatioAt <!-- VERB -->
 - Display name: IsOpeningRatioAt
@@ -5341,7 +5379,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## IsVolumeAt <!-- VERB -->
 - Display name: IsVolumeAt
@@ -5351,7 +5389,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## IsHydraulicEstimationAt <!-- VERB -->
 - Display name: IsHydraulicEstimationAt
@@ -5361,7 +5399,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## IsHydraulicMaximumAllowedRateOfChangeAt <!-- VERB -->
 - Display name: IsHydraulicMaximumAllowedRateOfChangeAt
@@ -5371,7 +5409,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## IsHydraulicMaximumAllowedValueAt <!-- VERB -->
 - Display name: IsHydraulicMaximumAllowedValueAt
@@ -5381,7 +5419,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## IsHydraulicMeasurementAt <!-- VERB -->
 - Display name: IsHydraulicMeasurementAt
@@ -5391,7 +5429,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## IsMassFlowRateAt <!-- VERB -->
 - Display name: IsMassFlowRateAt
@@ -5401,7 +5439,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## IsPressureAt <!-- VERB -->
 - Display name: IsPressureAt
@@ -5411,7 +5449,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## IsPressureGradientAt <!-- VERB -->
 - Display name: IsPressureGradientAt
@@ -5421,7 +5459,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## IsVolumetricFlowRateAt <!-- VERB -->
 - Display name: IsVolumetricFlowRateAt
@@ -5431,7 +5469,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## IsHydraulicConnectedTo <!-- VERB -->
 - Display name: IsHydraulicConnectedTo
@@ -5441,7 +5479,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## HasEndJunction <!-- VERB -->
 - Display name: HasEndJunction
@@ -5451,7 +5489,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## HasLeftBranch <!-- VERB -->
 - Display name: HasLeftBranch
@@ -5461,7 +5499,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## HasRightBranch <!-- VERB -->
 - Display name: HasRightBranch
@@ -5471,7 +5509,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## HasStartJunction <!-- VERB -->
 - Display name: HasStartJunction
@@ -5481,7 +5519,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## StartsHydraulicBranchDecomposition <!-- VERB -->
 - Display name: StartsHydraulicBranchDecomposition
@@ -5491,7 +5529,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## ConcernsAFluidComponent <!-- VERB -->
 - Display name: ConcernsAFluidComponent
@@ -5501,7 +5539,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Hydraulics
 ## IsOfMechanicalStiffnessType <!-- VERB -->
 - Display name: Is of mechanical stiffness type
@@ -5511,7 +5549,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: A relation to describe how the drill-stem mechanical model manage stiffness.
-- Examples: 
+- Examples:
 - Definition set: MechanicalModel
 ## IsAMechanicalRepresentationFor <!-- VERB -->
 - Display name: IsAMechanicalRepresentationFor
@@ -5521,7 +5559,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Mechanics
 ## HasMechanicalState <!-- VERB -->
 - Display name: HasMechanicalState
@@ -5531,7 +5569,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Mechanics
 ## HasMechanicalStateValueFrom <!-- VERB -->
 - Display name: HasMechanicalStateValueFrom
@@ -5541,7 +5579,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Mechanics
 ## IsMechanicallyConnectedTo <!-- VERB -->
 - Display name: IsMechanicallyConnectTo
@@ -5551,7 +5589,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Mechanics
 ## IsMechanicallyLocatedAt <!-- VERB -->
 - Display name: IsMechanicallyLocatedAt
@@ -5561,7 +5599,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Mechanics
 ## IsForMotionType <!-- VERB -->
 - Display name: IsForMotionType
@@ -5571,7 +5609,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Mechanics
 ## HasMotionType <!-- VERB -->
 - Display name: HasMotionType
@@ -5581,7 +5619,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Mechanics
 ## HasCoordinates <!-- VERB -->
 - Display name: HasCoordinates
@@ -5591,7 +5629,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: PhysicalLocation
 ## HasReferenceFrame <!-- VERB -->
 - Display name: HasReferenceFrame
@@ -5601,7 +5639,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: PhysicalLocation
 ## HasReferenceFrameOrigin <!-- VERB -->
 - Display name: HasReferenceFrameOrigin
@@ -5611,7 +5649,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: PhysicalLocation
 ## IsPhysicallyLocatedAt <!-- VERB -->
 - Display name: IsPhysicallyLocatedAt
@@ -5621,7 +5659,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: PhysicalLocation
 ## AssociatesMeasurableQuantity <!-- VERB -->
 - Display name: AssociatesMeasurableQuantity
@@ -5631,7 +5669,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Quantities
 ## AssociatesUnit <!-- VERB -->
 - Display name: AssociatesUnit
@@ -5641,7 +5679,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Quantities
 ## HasUnitAssociation <!-- VERB -->
 - Display name: HasUnitAssociation
@@ -5651,7 +5689,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Quantities
 ## IsObservableFrom <!-- VERB -->
 - Display name: IsObservableFrom
@@ -5661,7 +5699,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Quantities
 ## IsOfBaseQuantity <!-- VERB -->
 - Display name: IsOfBaseQuantity
@@ -5671,7 +5709,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Quantities
 ## IsOfMeasurableQuantity <!-- VERB -->
 - Display name: IsOfMeasurableQuantity
@@ -5681,7 +5719,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Quantities
 ## IsUnitForQuantity <!-- VERB -->
 - Display name: IsUnitForQuantity
@@ -5691,7 +5729,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Quantities
 ## HasSIUnit <!-- VERB -->
 - Display name: HasSIUnit
@@ -5701,7 +5739,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Quantities
 ## HasUnitOfMeasure <!-- VERB -->
 - Display name: HasUnitOfMeasure
@@ -5711,7 +5749,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: Quantities
 ## BelongsToSynchronizationGroup <!-- VERB -->
 - Display name: BelongsToSynchronizationGroup
@@ -5721,7 +5759,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: TimeManagement
 ## HasAcquisitionClock <!-- VERB -->
 - Display name: HasAcquisitionClock
@@ -5731,7 +5769,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: TimeManagement
 ## HasSourceClock <!-- VERB -->
 - Display name: HasSourceClock
@@ -5741,7 +5779,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: TimeManagement
 ## HasTransmissionDelay <!-- VERB -->
 - Display name: HasTransmissionDelay
@@ -5751,7 +5789,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: TimeManagement
 ## IsSynchronizationGroupInput <!-- VERB -->
 - Display name: IsSynchronizationGroupInput
@@ -5761,7 +5799,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: TimeManagement
 ## IsSynchronizationGroupOutput <!-- VERB -->
 - Display name: IsSynchronizationGroupOutput
@@ -5771,7 +5809,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: TimeManagement
 ## HasTimeReference <!-- VERB -->
 - Display name: HasTimeReference
@@ -5781,7 +5819,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: TimeManagement
 ## HasUncertainty <!-- VERB -->
 - Display name: HasUncertainty
@@ -5791,7 +5829,42 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: This verb allows to associate a `SignalUncertainty` to a `DrillingDataPoint`.
-- Examples: 
+- Examples:
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|BelongsTo| N0003[GaussianUncertainty] 
+	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
+	N0004[Mean#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0005[StdDev#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|HasUncertaintyMean| N0004[Mean#01] 
+	N0002[GU#01] -->|HasUncertaintyStandardDeviation| N0005[StdDev#01] 
+	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0008[Signal#02] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0004[Mean#01] -->|HasDynamicValue| N0006[Signal#01] 
+	N0005[StdDev#01] -->|HasDynamicValue| N0008[Signal#02] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?Signal#01, ?Signal#02
+WHERE {
+	?ddp#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 rdf:type ddhub:GaussianUncertainty .
+	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?Mean#01 rdf:type ddhub:DrillingDataPoint .
+	?StdDev#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 ddhub:HasUncertaintyMean ?Mean#01 .
+	?GU#01 ddhub:HasUncertaintyStandardDeviation ?StdDev#01 .
+	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
+	?Signal#02 rdf:type ddhub:DynamicDrillingSignal .
+	?Mean#01 ddhub:HasDynamicValue ?Signal#01 .
+	?StdDev#01 ddhub:HasDynamicValue ?Signal#02 .
+}
+```
 - Definition set: Uncertainty
 ## HasUncertaintyAccuracy <!-- VERB -->
 - Display name: HasUncertaintyAccuracy
@@ -5801,7 +5874,43 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: This verb allows to associate a `DrillingDataPoint` as the `Accuracy` of a `SensorUncertainty`
-- Examples: 
+- Examples:
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|BelongsTo| N0003[SensorUncertainty] 
+	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
+	N0004[Acc#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0005[Prec#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|HasUncertaintyAccuracy| N0004[Acc#01] 
+	N0002[GU#01] -->|HasUncertaintyPrecision| N0005[Prec#01] 
+	N0006[Signal#01] -->|BelongsTo| N0007[DrillingSignal] 
+	N0008[Signal#02] -->|BelongsTo| N0007[DrillingSignal] 
+	N0004[Acc#01] -->|HasStaticValue| N0006[Signal#01] 
+	N0005[Prec#01] -->|HasStaticValue| N0008[Signal#02] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?Signal#01, ?Signal#02
+WHERE {
+	?ddp#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 rdf:type ddhub:SensorUncertainty .
+	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?Acc#01 rdf:type ddhub:DrillingDataPoint .
+	?Prec#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 ddhub:HasUncertaintyAccuracy ?Acc#01 .
+	?GU#01 ddhub:HasUncertaintyPrecision ?Prec#01 .
+	?Signal#01 rdf:type ddhub:DrillingSignal .
+	?Signal#02 rdf:type ddhub:DrillingSignal .
+	?Acc#01 ddhub:HasStaticValue ?Signal#01 .
+	?Prec#01 ddhub:HasStaticValue ?Signal#02 .
+}
+```
+In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is representing a sensor having a Gaussian probability distibution that is described using an `Accuracy` (called `Acc#01`)  and a `Precision` called `Prec#01`. `Acc#01` is a static signal that is attached to `Signal#01`. Similarly `Prec#01` is a static signal attached to `Signal#02`.
 - Definition set: Uncertainty
 ## HasUncertaintyPrecision <!-- VERB -->
 - Display name: HasUncertaintyPrecision
@@ -5811,7 +5920,43 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: This verb is used to associate a `DrillingDataPoint` as the `Precision` of a `SensorUncertainty`
-- Examples: 
+- Examples:
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|BelongsTo| N0003[SensorUncertainty] 
+	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
+	N0004[Acc#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0005[Prec#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|HasUncertaintyAccuracy| N0004[Acc#01] 
+	N0002[GU#01] -->|HasUncertaintyPrecision| N0005[Prec#01] 
+	N0006[Signal#01] -->|BelongsTo| N0007[DrillingSignal] 
+	N0008[Signal#02] -->|BelongsTo| N0007[DrillingSignal] 
+	N0004[Acc#01] -->|HasStaticValue| N0006[Signal#01] 
+	N0005[Prec#01] -->|HasStaticValue| N0008[Signal#02] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?Signal#01, ?Signal#02
+WHERE {
+	?ddp#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 rdf:type ddhub:SensorUncertainty .
+	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?Acc#01 rdf:type ddhub:DrillingDataPoint .
+	?Prec#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 ddhub:HasUncertaintyAccuracy ?Acc#01 .
+	?GU#01 ddhub:HasUncertaintyPrecision ?Prec#01 .
+	?Signal#01 rdf:type ddhub:DrillingSignal .
+	?Signal#02 rdf:type ddhub:DrillingSignal .
+	?Acc#01 ddhub:HasStaticValue ?Signal#01 .
+	?Prec#01 ddhub:HasStaticValue ?Signal#02 .
+}
+```
+In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is representing a sensor having a Gaussian probability distibution that is described using an `Accuracy` (called `Acc#01`)  and a `Precision` called `Prec#01`. `Acc#01` is a static signal that is attached to `Signal#01`. Similarly `Prec#01` is a static signal attached to `Signal#02`.
 - Definition set: Uncertainty
 ## HasUncertaintyMin <!-- VERB -->
 - Display name: HasUncertaintyMin
@@ -5821,7 +5966,43 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: This verb is used to associate a `DrillingDataPoint` as the `Min` value of `MinMaxUncertainty`
-- Examples: 
+- Examples:
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|BelongsTo| N0003[MinMaxUncertainty] 
+	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
+	N0004[Min#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0005[Max#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|HasUncertaintyMin| N0004[Min#01] 
+	N0002[GU#01] -->|HasUncertaintyMax| N0005[Max#01] 
+	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0008[Signal#02] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0004[Min#01] -->|HasDynamicValue| N0006[Signal#01] 
+	N0005[Max#01] -->|HasDynamicValue| N0008[Signal#02] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?Signal#01, ?Signal#02
+WHERE {
+	?ddp#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 rdf:type ddhub:MinMaxUncertainty .
+	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?Min#01 rdf:type ddhub:DrillingDataPoint .
+	?Max#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 ddhub:HasUncertaintyMin ?Min#01 .
+	?GU#01 ddhub:HasUncertaintyMax ?Max#01 .
+	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
+	?Signal#02 rdf:type ddhub:DynamicDrillingSignal .
+	?Min#01 ddhub:HasDynamicValue ?Signal#01 .
+	?Max#01 ddhub:HasDynamicValue ?Signal#02 .
+}
+```
+In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is a uniform probability distribution that is described by a `Min` value called `Min#01` and a `Max` value called `Max#01`. `Min#01` is a live signal that is attached to `Signal#01`. Similarly `Max#01` is a live signal attached to `Signal#02`.
 - Definition set: Uncertainty
 ## HasUncertaintyMax <!-- VERB -->
 - Display name: HasUncertaintyMax
@@ -5831,7 +6012,43 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: This verb is used to associate a `DrillingDataPoint` as the `Max` value of a `MinMaxUncertainty`
-- Examples: 
+- Examples:
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|BelongsTo| N0003[MinMaxUncertainty] 
+	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
+	N0004[Min#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0005[Max#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|HasUncertaintyMin| N0004[Min#01] 
+	N0002[GU#01] -->|HasUncertaintyMax| N0005[Max#01] 
+	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0008[Signal#02] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0004[Min#01] -->|HasDynamicValue| N0006[Signal#01] 
+	N0005[Max#01] -->|HasDynamicValue| N0008[Signal#02] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?Signal#01, ?Signal#02
+WHERE {
+	?ddp#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 rdf:type ddhub:MinMaxUncertainty .
+	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?Min#01 rdf:type ddhub:DrillingDataPoint .
+	?Max#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 ddhub:HasUncertaintyMin ?Min#01 .
+	?GU#01 ddhub:HasUncertaintyMax ?Max#01 .
+	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
+	?Signal#02 rdf:type ddhub:DynamicDrillingSignal .
+	?Min#01 ddhub:HasDynamicValue ?Signal#01 .
+	?Max#01 ddhub:HasDynamicValue ?Signal#02 .
+}
+```
+In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is a uniform probability distribution that is described by a `Min` value called `Min#01` and a `Max` value called `Max#01`. `Min#01` is a live signal that is attached to `Signal#01`. Similarly `Max#01` is a live signal attached to `Signal#02`.
 - Definition set: Uncertainty
 ## HasUncertaintyMean <!-- VERB -->
 - Display name: HasUncertaintyMean
@@ -5841,7 +6058,42 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: This verb is used to associate a `DrillingDataPoint` as the `Mean` value of a `GaussianUncertainty`
-- Examples: 
+- Examples:
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|BelongsTo| N0003[GaussianUncertainty] 
+	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
+	N0004[Mean#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0005[StdDev#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|HasUncertaintyMean| N0004[Mean#01] 
+	N0002[GU#01] -->|HasUncertaintyStandardDeviation| N0005[StdDev#01] 
+	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0008[Signal#02] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0004[Mean#01] -->|HasDynamicValue| N0006[Signal#01] 
+	N0005[StdDev#01] -->|HasDynamicValue| N0008[Signal#02] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?Signal#01, ?Signal#02
+WHERE {
+	?ddp#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 rdf:type ddhub:GaussianUncertainty .
+	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?Mean#01 rdf:type ddhub:DrillingDataPoint .
+	?StdDev#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 ddhub:HasUncertaintyMean ?Mean#01 .
+	?GU#01 ddhub:HasUncertaintyStandardDeviation ?StdDev#01 .
+	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
+	?Signal#02 rdf:type ddhub:DynamicDrillingSignal .
+	?Mean#01 ddhub:HasDynamicValue ?Signal#01 .
+	?StdDev#01 ddhub:HasDynamicValue ?Signal#02 .
+}
+```
 - Definition set: Uncertainty
 ## HasUncertaintyStandardDeviation <!-- VERB -->
 - Display name: HasUncertaintyStandardDeviation
@@ -5851,7 +6103,42 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: This verb is used to associate a `DrillingDataPoint` as the `StandardDeviation` value of a `GaussianUncertainty`
-- Examples: 
+- Examples:
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|BelongsTo| N0003[GaussianUncertainty] 
+	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
+	N0004[Mean#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0005[StdDev#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|HasUncertaintyMean| N0004[Mean#01] 
+	N0002[GU#01] -->|HasUncertaintyStandardDeviation| N0005[StdDev#01] 
+	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0008[Signal#02] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0004[Mean#01] -->|HasDynamicValue| N0006[Signal#01] 
+	N0005[StdDev#01] -->|HasDynamicValue| N0008[Signal#02] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?Signal#01, ?Signal#02
+WHERE {
+	?ddp#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 rdf:type ddhub:GaussianUncertainty .
+	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?Mean#01 rdf:type ddhub:DrillingDataPoint .
+	?StdDev#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 ddhub:HasUncertaintyMean ?Mean#01 .
+	?GU#01 ddhub:HasUncertaintyStandardDeviation ?StdDev#01 .
+	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
+	?Signal#02 rdf:type ddhub:DynamicDrillingSignal .
+	?Mean#01 ddhub:HasDynamicValue ?Signal#01 .
+	?StdDev#01 ddhub:HasDynamicValue ?Signal#02 .
+}
+```
 - Definition set: Uncertainty
 ## HasProportionError <!-- VERB -->
 - Display name: HasProportionError
@@ -5861,7 +6148,43 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: This verb is used to associate a `DrillingDataPoint` as the `ProportionError` value of a `FullScaleUncertainty`
-- Examples: 
+- Examples:
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|BelongsTo| N0003[FullScaleUncertainty] 
+	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
+	N0004[FullScale#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0005[ErrProp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|HasFullScale| N0004[FullScale#01] 
+	N0002[GU#01] -->|HasProportionError| N0005[ErrProp#01] 
+	N0006[Signal#01] -->|BelongsTo| N0007[DrillingSignal] 
+	N0008[Signal#02] -->|BelongsTo| N0007[DrillingSignal] 
+	N0004[FullScale#01] -->|HasStaticValue| N0006[Signal#01] 
+	N0005[ErrProp#01] -->|HasStaticValue| N0008[Signal#02] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?Signal#01, ?Signal#02
+WHERE {
+	?ddp#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 rdf:type ddhub:FullScaleUncertainty .
+	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?FullScale#01 rdf:type ddhub:DrillingDataPoint .
+	?ErrProp#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 ddhub:HasFullScale ?FullScale#01 .
+	?GU#01 ddhub:HasProportionError ?ErrProp#01 .
+	?Signal#01 rdf:type ddhub:DrillingSignal .
+	?Signal#02 rdf:type ddhub:DrillingSignal .
+	?FullScale#01 ddhub:HasStaticValue ?Signal#01 .
+	?ErrProp#01 ddhub:HasStaticValue ?Signal#02 .
+}
+```
+In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is representing a sensor having a Gaussian probability distibution that is described using a `ProportionError` (called `ErrProp#01`) of a `FullScale` value called `FullScale#01`. `FullScale#01` is a static signal that is attached to `Signal#01`. Similarly `ErrProp#01` is a static signal attached to `Signal#02`.
 - Definition set: Uncertainty
 ## HasFullScale <!-- VERB -->
 - Display name: HasFullScale
@@ -5871,7 +6194,43 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: This verb is used to associate a `DrillingDataPoint` as the `FullScale` value of a `FullScaleUncertainty`
-- Examples: 
+- Examples:
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|BelongsTo| N0003[FullScaleUncertainty] 
+	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
+	N0004[FullScale#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0005[ErrProp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|HasFullScale| N0004[FullScale#01] 
+	N0002[GU#01] -->|HasProportionError| N0005[ErrProp#01] 
+	N0006[Signal#01] -->|BelongsTo| N0007[DrillingSignal] 
+	N0008[Signal#02] -->|BelongsTo| N0007[DrillingSignal] 
+	N0004[FullScale#01] -->|HasStaticValue| N0006[Signal#01] 
+	N0005[ErrProp#01] -->|HasStaticValue| N0008[Signal#02] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?Signal#01, ?Signal#02
+WHERE {
+	?ddp#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 rdf:type ddhub:FullScaleUncertainty .
+	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?FullScale#01 rdf:type ddhub:DrillingDataPoint .
+	?ErrProp#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 ddhub:HasFullScale ?FullScale#01 .
+	?GU#01 ddhub:HasProportionError ?ErrProp#01 .
+	?Signal#01 rdf:type ddhub:DrillingSignal .
+	?Signal#02 rdf:type ddhub:DrillingSignal .
+	?FullScale#01 ddhub:HasStaticValue ?Signal#01 .
+	?ErrProp#01 ddhub:HasStaticValue ?Signal#02 .
+}
+```
+In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is representing a sensor having a Gaussian probability distibution that is described using a `ProportionError` (called `ErrProp#01`) of a `FullScale` value called `FullScale#01`. `FullScale#01` is a static signal that is attached to `Signal#01`. Similarly `ErrProp#01` is a static signal attached to `Signal#02`.
 - Definition set: Uncertainty
 ## HasUncertaintyHistogram <!-- VERB -->
 - Display name: HasUncertaintyHistogram
@@ -5881,5 +6240,33 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: This verb is used to associated a `DrillingDataPoint` as the `Histogram` value of a `GenericUncertainty`
-- Examples: 
+- Examples:
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|BelongsTo| N0003[GenericUncertainty] 
+	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
+	N0004[Histo#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0002[GU#01] -->|HasUncertaintyHistogram| N0004[Histo#01] 
+	N0005[Signal#01] -->|BelongsTo| N0006[DynamicDrillingSignal] 
+	N0004[Histo#01] -->|HasDynamicValue| N0005[Signal#01] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?Signal#01
+WHERE {
+	?ddp#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 rdf:type ddhub:GenericUncertainty .
+	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?Histo#01 rdf:type ddhub:DrillingDataPoint .
+	?GU#01 ddhub:HasUncertaintyHistogram ?Histo#01 .
+	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
+	?Histo#01 ddhub:HasDynamicValue ?Signal#01 .
+}
+```
+In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is a general probability distribution that is described by a histogram called `Histo#01`. `Histo#01` is a live signal that is attached to `Signal#01`.
 - Definition set: Uncertainty

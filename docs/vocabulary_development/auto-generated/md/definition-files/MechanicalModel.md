@@ -66,5 +66,5 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: A relation to describe how the drill-stem mechanical model manage stiffness.
-- Examples: 
+- Examples:
 - Definition set: MechanicalModel

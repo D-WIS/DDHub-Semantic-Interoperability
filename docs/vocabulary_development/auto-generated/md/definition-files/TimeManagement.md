@@ -107,7 +107,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: TimeManagement
 ## HasAcquisitionClock <!-- VERB -->
 - Display name: HasAcquisitionClock
@@ -117,7 +117,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: TimeManagement
 ## HasSourceClock <!-- VERB -->
 - Display name: HasSourceClock
@@ -127,7 +127,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: TimeManagement
 ## HasTransmissionDelay <!-- VERB -->
 - Display name: HasTransmissionDelay
@@ -137,7 +137,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: TimeManagement
 ## IsSynchronizationGroupInput <!-- VERB -->
 - Display name: IsSynchronizationGroupInput
@@ -147,7 +147,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: TimeManagement
 ## IsSynchronizationGroupOutput <!-- VERB -->
 - Display name: IsSynchronizationGroupOutput
@@ -157,7 +157,7 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: TimeManagement
 ## HasTimeReference <!-- VERB -->
 - Display name: HasTimeReference
@@ -167,5 +167,5 @@
 - Min cardinality: -1
 - Max cardinality: -1
 - Description: 
-- Examples: 
+- Examples:
 - Definition set: TimeManagement
