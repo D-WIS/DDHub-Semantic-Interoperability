@@ -577,7 +577,7 @@ namespace DWIS.Vocabulary.Utils
 
         private static void GenerateNounClassDiagram(StringBuilder builder, List<Noun> nouns)
         {
-            if (nouns != null && nouns.Count > 0)
+            if (nouns != null && nouns.Count > 0 && nouns[0] != null && !string.IsNullOrEmpty(nouns[0].Name) && !string.IsNullOrEmpty(nouns[0].ParentNounName))
             {
                 builder.AppendLine("## Class Inheritance for Nouns");
                 builder.AppendLine("Here is a class inheritance diagram for the nouns contained in this definition set.");
@@ -595,7 +595,7 @@ namespace DWIS.Vocabulary.Utils
         }
         private static void GenerateVerbClassDiagram(StringBuilder builder, List<Verb> verbs)
         {
-            if (verbs != null && verbs.Count > 0)
+            if (verbs != null && verbs.Count > 0 && verbs[0] != null && !string.IsNullOrEmpty(verbs[0].Name) && !string.IsNullOrEmpty(verbs[0].ParentVerbName))
             {
                 builder.AppendLine("## Class Inheritance for Verbs");
                 builder.AppendLine("Here is a class inheritance diagram for the verbs contained in this definition set.");
