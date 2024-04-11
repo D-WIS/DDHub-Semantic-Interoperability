@@ -4263,10 +4263,10 @@ DerickFloorVerticalLocation:DerrickFloor
 DerivedMeasurement:DerrickFloorElevation
 Measurement:HeaveElevation
 Measurement:TideElevation
-DerrickFloorElevation IsOfMeasurableQuantity AxialPosition
+DerrickFloorElevation IsOfMeasurableQuantity Height
 DerrickFloorElevation IsPhysicallyLocatedAt DerrickFloor
-HeaveElevation IsOfMeasurableQuantity AxialPosition
-TideElevation IsOfMeasurableQuantity AxialPosition
+HeaveElevation IsOfMeasurableQuantity Height
+TideElevation IsOfMeasurableQuantity Height
 DerrickFloorElevation IsDependentOn HeaveElevation
 DerrickFloorElevation IsDependentOn TideElevation
 ```
@@ -4277,10 +4277,10 @@ graph LR
 	N0002[DerrickFloorElevation] -->|BelongsTo| N0003[DerivedMeasurement] 
 	N0004[HeaveElevation] -->|BelongsTo| N0005[Measurement] 
 	N0006[TideElevation] -->|BelongsTo| N0005[Measurement] 
-	N0002[DerrickFloorElevation] -->|IsOfMeasurableQuantity| N0007[AxialPosition] 
+	N0002[DerrickFloorElevation] -->|IsOfMeasurableQuantity| N0007[Height] 
 	N0002[DerrickFloorElevation] -->|IsPhysicallyLocatedAt| N0000[DerrickFloor] 
-	N0004[HeaveElevation] -->|IsOfMeasurableQuantity| N0007[AxialPosition] 
-	N0006[TideElevation] -->|IsOfMeasurableQuantity| N0007[AxialPosition] 
+	N0004[HeaveElevation] -->|IsOfMeasurableQuantity| N0007[Height] 
+	N0006[TideElevation] -->|IsOfMeasurableQuantity| N0007[Height] 
 	N0002[DerrickFloorElevation] -->|IsDependentOn| N0004[HeaveElevation] 
 	N0002[DerrickFloorElevation] -->|IsDependentOn| N0006[TideElevation] 
 ```
@@ -4295,10 +4295,10 @@ WHERE {
 	?DerrickFloorElevation rdf:type ddhub:DerivedMeasurement .
 	?HeaveElevation rdf:type ddhub:Measurement .
 	?TideElevation rdf:type ddhub:Measurement .
-	?DerrickFloorElevation ddhub:IsOfMeasurableQuantity ?AxialPosition .
+	?DerrickFloorElevation ddhub:IsOfMeasurableQuantity ?Height .
 	?DerrickFloorElevation ddhub:IsPhysicallyLocatedAt ?DerrickFloor .
-	?HeaveElevation ddhub:IsOfMeasurableQuantity ?AxialPosition .
-	?TideElevation ddhub:IsOfMeasurableQuantity ?AxialPosition .
+	?HeaveElevation ddhub:IsOfMeasurableQuantity ?Height .
+	?TideElevation ddhub:IsOfMeasurableQuantity ?Height .
 	?DerrickFloorElevation ddhub:IsDependentOn ?HeaveElevation .
 	?DerrickFloorElevation ddhub:IsDependentOn ?TideElevation .
 }
@@ -4428,10 +4428,10 @@ MeasuredStandPipePressure HasElevationReference DerrickFloor
 LogicalRepresentationStandPipe IsAMechanicalRepresentationFor StandPipeElement
 MeasuredStandPipePressure IsMechanicallyLocatedAt LogicalRepresentationStandPipe
 MeasuredStandPipePressure IsOfMeasurableQuantity DrillingPressure
-DerrickFloorElevation IsOfMeasurableQuantity AxialPosition
+DerrickFloorElevation IsOfMeasurableQuantity Height
 DerrickFloorElevation IsPhysicallyLocatedAt DerrickFloor
-HeaveElevation IsOfMeasurableQuantity AxialPosition
-TideElevation IsOfMeasurableQuantity AxialPosition
+HeaveElevation IsOfMeasurableQuantity Height
+TideElevation IsOfMeasurableQuantity Height
 WGS84VerticalLocation:VerticalDatum
 HeaveElevation HasElevationReference VerticalDatum
 TideElevation HasElevationReference VerticalDatum
@@ -4452,10 +4452,10 @@ graph LR
 	N0010[LogicalRepresentationStandPipe] -->|IsAMechanicalRepresentationFor| N0008[StandPipeElement] 
 	N0000[MeasuredStandPipePressure] -->|IsMechanicallyLocatedAt| N0010[LogicalRepresentationStandPipe] 
 	N0000[MeasuredStandPipePressure] -->|IsOfMeasurableQuantity| N0012[DrillingPressure] 
-	N0004[DerrickFloorElevation] -->|IsOfMeasurableQuantity| N0013[AxialPosition] 
+	N0004[DerrickFloorElevation] -->|IsOfMeasurableQuantity| N0013[Height] 
 	N0004[DerrickFloorElevation] -->|IsPhysicallyLocatedAt| N0002[DerrickFloor] 
-	N0006[HeaveElevation] -->|IsOfMeasurableQuantity| N0013[AxialPosition] 
-	N0007[TideElevation] -->|IsOfMeasurableQuantity| N0013[AxialPosition] 
+	N0006[HeaveElevation] -->|IsOfMeasurableQuantity| N0013[Height] 
+	N0007[TideElevation] -->|IsOfMeasurableQuantity| N0013[Height] 
 	N0014[VerticalDatum] -->|BelongsTo| N0015[WGS84VerticalLocation] 
 	N0006[HeaveElevation] -->|HasElevationReference| N0014[VerticalDatum] 
 	N0007[TideElevation] -->|HasElevationReference| N0014[VerticalDatum] 
@@ -4480,10 +4480,10 @@ WHERE {
 	?LogicalRepresentationStandPipe ddhub:IsAMechanicalRepresentationFor ?StandPipeElement .
 	?MeasuredStandPipePressure ddhub:IsMechanicallyLocatedAt ?LogicalRepresentationStandPipe .
 	?MeasuredStandPipePressure ddhub:IsOfMeasurableQuantity ?DrillingPressure .
-	?DerrickFloorElevation ddhub:IsOfMeasurableQuantity ?AxialPosition .
+	?DerrickFloorElevation ddhub:IsOfMeasurableQuantity ?Height .
 	?DerrickFloorElevation ddhub:IsPhysicallyLocatedAt ?DerrickFloor .
-	?HeaveElevation ddhub:IsOfMeasurableQuantity ?AxialPosition .
-	?TideElevation ddhub:IsOfMeasurableQuantity ?AxialPosition .
+	?HeaveElevation ddhub:IsOfMeasurableQuantity ?Height .
+	?TideElevation ddhub:IsOfMeasurableQuantity ?Height .
 	?VerticalDatum rdf:type ddhub:WGS84VerticalLocation .
 	?HeaveElevation ddhub:HasElevationReference ?VerticalDatum .
 	?TideElevation ddhub:HasElevationReference ?VerticalDatum .

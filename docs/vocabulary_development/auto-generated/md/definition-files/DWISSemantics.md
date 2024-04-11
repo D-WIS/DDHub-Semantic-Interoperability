@@ -3,11 +3,6 @@
 definitions of the base noun and verb. All verbs and nouns in the DWIS vocabulary are children of those.
 
 # Nouns
-## Class Inheritance for Nouns
-Here is a class inheritance diagram for the nouns contained in this definition set.
-```mermaid
-classDiagram
-```
 ## DWISNoun <!-- NOUN -->
 - Display name: DWIS noun
 - Description: 
@@ -16,19 +11,6 @@ Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a
 - Examples:
 `DWISNoun` is not really intended to be used directly neither when defining semantic facts nor in sparql queries.
 # Verbs
-## Class Inheritance for Verbs
-Here is a class inheritance diagram for the verbs contained in this definition set.
-```mermaid
-classDiagram
-DWISVerb <|-- BelongsToClass
-```
-## Relations
-Here is a graph representing the relations that can be made with the verbs defined in this definition set.
-```mermaid
-erDiagram
-DWISNoun ||--o{ DWISNoun : DWISVerb
-DWISNoun ||--o{ DWISNoun : BelongsToClass
-```
 ## DWISVerb <!-- VERB -->
 - Display name: DWIS verb
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
