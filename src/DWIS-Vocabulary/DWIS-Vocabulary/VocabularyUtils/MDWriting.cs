@@ -11,11 +11,17 @@ namespace DWIS.Vocabulary.Utils
         public static void NounToMD(StringBuilder nounBuilder, Noun noun, bool singleFile = true,DWIS.Vocabulary.Development.Vocabulary vocabulary = null)
         {
             nounBuilder.AppendLine("## " + noun.Name + " <!-- NOUN -->");
-            nounBuilder.AppendLine("- Display name: " + noun.DisplayName);
-            nounBuilder.AppendLine("- Parent class: [" + noun.ParentNounName + "]" + GetLink(noun.ParentNounName, singleFile, vocabulary));//    (#" + noun.ParentNounName + ")");
-            nounBuilder.AppendLine("- Attributes:");
-            if (noun.NounAttributes != null)
+            if (!string.IsNullOrEmpty(noun.DisplayName))
             {
+                nounBuilder.AppendLine("- Display name: " + noun.DisplayName);
+            }
+            if (!string.IsNullOrEmpty(noun.ParentNounName))
+            {
+                nounBuilder.AppendLine("- Parent class: [" + noun.ParentNounName + "]" + GetLink(noun.ParentNounName, singleFile, vocabulary));
+            }
+            if (noun.NounAttributes != null && noun.NounAttributes.Length > 0)
+            {
+                nounBuilder.AppendLine("- Attributes:");
                 foreach (var att in noun.NounAttributes)
                 {
                     nounBuilder.AppendLine("  - " + att.Name);
@@ -23,24 +29,37 @@ namespace DWIS.Vocabulary.Utils
                     nounBuilder.AppendLine("    - Description: " + att.Description);
                 }
             }
-            nounBuilder.AppendLine("- Specialization:");
-            if (noun.SpecializedNounAttributes != null)
+            if (noun.SpecializedNounAttributes != null && noun.SpecializedNounAttributes.Length > 0)
             {
+                nounBuilder.AppendLine("- Specialization:");
                 foreach (var att in noun.SpecializedNounAttributes)
                 {
                     nounBuilder.AppendLine("  - " + att.AttributeName + " = " + att.SpecializedValue);
                 }
             }
-            nounBuilder.AppendLine("- Description: " + noun.Description);
-            List<string> examples = PostProcessExample(noun.Examples);
-            foreach (var line in examples)
+            if (noun.Description != null && noun.Description.Length > 0)
             {
-                if (!string.IsNullOrEmpty(line))
+                nounBuilder.AppendLine("- Description: ");
+                foreach (string desc in noun.Description)
                 {
-                    nounBuilder.AppendLine(line);
+                    nounBuilder.AppendLine(desc);
                 }
             }
-            nounBuilder.AppendLine("- Definition set: " + noun.DefinitionSetName);
+            if (!string.IsNullOrEmpty(noun.DefinitionSetName))
+            {
+                nounBuilder.AppendLine("- Definition set: " + noun.DefinitionSetName);
+            }
+            if (noun.Examples != null && noun.Examples.Length > 0)
+            {
+                List<string> examples = PostProcessExample(noun.Examples);
+                foreach (var line in examples)
+                {
+                    if (!string.IsNullOrEmpty(line))
+                    {
+                        nounBuilder.AppendLine(line);
+                    }
+                }
+            }
         }
 
         private static List<string> PostProcessExample(string[] inputLines)
@@ -57,8 +76,9 @@ namespace DWIS.Vocabulary.Utils
                 bool skip = false;
                 if (l.Contains("```") && (l.Contains("ddhub") || l.Contains("DDHUB") || l.Contains("DDHub")))
                 {
-                    insideADDHubBlock = true;
+                    lines.Add(l);
                     skip = true;
+                    insideADDHubBlock = true;
                     int pos = l.LastIndexOf("ddhub");
                     if (pos < 0)
                     {
@@ -88,6 +108,7 @@ namespace DWIS.Vocabulary.Utils
                 }
                 else if (l.Contains("```") && insideADDHubBlock)
                 {
+                    lines.Add(l);
                     skip = true;
                     insideADDHubBlock = false;
                     GenerateMermaid(ddhub, lines);
@@ -123,12 +144,9 @@ namespace DWIS.Vocabulary.Utils
                         }
                     }
                 }
-                else
+                if (!skip)
                 {
-                    if (!skip)
-                    {
-                        lines.Add(l);
-                    }
+                    lines.Add(l);
                 }
             }
             return lines;
@@ -255,22 +273,53 @@ namespace DWIS.Vocabulary.Utils
         public static void VerbToMD(StringBuilder verbBuilder, Verb verb, bool singleFile = true, DWIS.Vocabulary.Development.Vocabulary vocabulary = null)
         {
             verbBuilder.AppendLine("## " + verb.Name + " <!-- VERB -->");
-            verbBuilder.AppendLine("- Display name: " + verb.DisplayName);
-            verbBuilder.AppendLine("- Parent verb: [" + verb.ParentVerbName + "]" + GetLink(verb.ParentVerbName, singleFile, vocabulary));// 
-            verbBuilder.AppendLine("- Subject class: [" + verb.DomainNounName + "]" + GetLink(verb.DomainNounName, singleFile, vocabulary));// 
-            verbBuilder.AppendLine("- Object class: [" + verb.RangeNounName + "]" + GetLink(verb.RangeNounName, singleFile, vocabulary));// 
-            verbBuilder.AppendLine("- Min cardinality: " + verb.MinCardinality);
-            verbBuilder.AppendLine("- Max cardinality: " + verb.MaxCardinality);
-            verbBuilder.AppendLine("- Description: " + verb.Description);
-            List<string> examples = PostProcessExample(verb.Examples);
-            foreach (var line in examples)
+            if (!string.IsNullOrEmpty(verb.DisplayName))
             {
-                if (!string.IsNullOrEmpty(line))
+                verbBuilder.AppendLine("- Display name: " + verb.DisplayName);
+            }
+            if (!string.IsNullOrEmpty(verb.ParentVerbName))
+            {
+                verbBuilder.AppendLine("- Parent verb: [" + verb.ParentVerbName + "]" + GetLink(verb.ParentVerbName, singleFile, vocabulary));
+            }
+            if (!string.IsNullOrEmpty(verb.DomainNounName))
+            {
+                verbBuilder.AppendLine("- Subject class: [" + verb.DomainNounName + "]" + GetLink(verb.DomainNounName, singleFile, vocabulary));
+            }
+            if (!string.IsNullOrEmpty(verb.RangeNounName))
+            {
+                verbBuilder.AppendLine("- Object class: [" + verb.RangeNounName + "]" + GetLink(verb.RangeNounName, singleFile, vocabulary));
+            }
+            if (verb.MinCardinality >= 0)
+            {
+                verbBuilder.AppendLine("- Min cardinality: " + verb.MinCardinality);
+            }
+            if (verb.MaxCardinality >= 0)
+            {
+                verbBuilder.AppendLine("- Max cardinality: " + verb.MaxCardinality);
+            }
+            if (!string.IsNullOrEmpty(verb.DefinitionSetName))
+            {
+                verbBuilder.AppendLine("- Definition set: " + verb.DefinitionSetName);
+            }
+            if (verb.Description != null && verb.Description.Length > 0) 
+            {
+                verbBuilder.AppendLine("- Description: ");
+                foreach (string desc in verb.Description)
                 {
-                    verbBuilder.AppendLine(line);
+                    verbBuilder.AppendLine(desc);
                 }
             }
-            verbBuilder.AppendLine("- Definition set: " + verb.DefinitionSetName);
+            if (verb.Examples != null && verb.Examples.Length > 0)
+            {
+                List<string> examples = PostProcessExample(verb.Examples);
+                foreach (var line in examples)
+                {
+                    if (!string.IsNullOrEmpty(line))
+                    {
+                        verbBuilder.AppendLine(line);
+                    }
+                }
+            }
         }
 
         public static void IndividualToMD(StringBuilder builder, TypedIndividual individual, DWIS.Vocabulary.Development.Vocabulary vocabulary, bool useLinks = false)
@@ -330,7 +379,14 @@ namespace DWIS.Vocabulary.Utils
             {
                 builder.AppendLine("# " + header.Name + "<!-- DEFINITION SET HEADER -->");
             }
-            builder.AppendLine("- Description: " + header.SetDescription);
+            if (header.SetDescription != null && header.SetDescription.Length > 0) 
+            {
+                builder.AppendLine("- Description: ");
+                foreach (var desc in header.SetDescription)
+                {
+                    builder.AppendLine(desc);
+                }
+            }
         }
 
         public static void ToMDFile(DWISVocabulary vocabulary, string fileName)
@@ -345,7 +401,6 @@ namespace DWIS.Vocabulary.Utils
             }
 
             builder.AppendLine("# Nouns");
-
 
             foreach (var n in vocabulary.Nouns)
             {
@@ -443,18 +498,14 @@ namespace DWIS.Vocabulary.Utils
         {
             StringBuilder builder = new StringBuilder();
             DefinitionSetHeaderToMD(builder, definitionSet.DefinitionSetHeader, singleFile: false);
-
             builder.AppendLine("# Nouns");
-
-
+            GenerateNounClassDiagram(builder, definitionSet.Nouns);
             foreach (var n in definitionSet.Nouns)
             {
                 NounToMD(builder, n, singleFile: false, vocabulary: vocabulary);
             }
-
             builder.AppendLine("# Verbs");
-
-
+            GenerateVerbClassDiagram(builder, definitionSet.Verbs);
             foreach (var v in definitionSet.Verbs)
             {
                 VerbToMD(builder, v, singleFile: false, vocabulary: vocabulary);
@@ -464,17 +515,13 @@ namespace DWIS.Vocabulary.Utils
 
         public static void ToMDFile(DefinitionSet definitionSet, string folderName, DWIS.Vocabulary.Development.Vocabulary vocabulary)
         {
-          string mdContents = ToMDString(definitionSet, vocabulary);
-
+            string mdContents = ToMDString(definitionSet, vocabulary);
             System.IO.File.WriteAllText(folderName + System.IO.Path.DirectorySeparatorChar + definitionSet.Name + ".md", mdContents);
-
         }
 
         public static void ToMDFile(DWISInstance instance, string fileName, DWIS.Vocabulary.Development.Vocabulary vocabulary, bool addGraph = false, bool useLinks = true)
         {            
-
             System.IO.File.WriteAllText(fileName, ToString(instance,  vocabulary, addGraph, useLinks));
-
         }
 
         public static string ToString(DWISInstance instance,  DWIS.Vocabulary.Development.Vocabulary vocabulary, bool addGraph = false, bool useLinks = true)
@@ -502,6 +549,55 @@ namespace DWIS.Vocabulary.Utils
                 ToMDMermaidGraph(instance, builder);
             }
             return builder.ToString();
+        }
+
+        private static void GenerateNounClassDiagram(StringBuilder builder, List<Noun> nouns)
+        {
+            if (nouns != null && nouns.Count > 0)
+            {
+                builder.AppendLine("## Class Inheritance for Nouns");
+                builder.AppendLine("Here is a class inheritance diagram for the nouns contained in this definition set.");
+                builder.AppendLine("```mermaid");
+                builder.AppendLine("classDiagram");
+                foreach (var n in nouns)
+                {
+                    if (n != null && !string.IsNullOrEmpty(n.Name) && !string.IsNullOrEmpty(n.ParentNounName))
+                    {
+                        builder.AppendLine(n.ParentNounName + " <|-- " + n.Name);
+                    }
+                }
+                builder.AppendLine("```");
+            }
+        }
+        private static void GenerateVerbClassDiagram(StringBuilder builder, List<Verb> verbs)
+        {
+            if (verbs != null && verbs.Count > 0)
+            {
+                builder.AppendLine("## Class Inheritance for Verbs");
+                builder.AppendLine("Here is a class inheritance diagram for the verbs contained in this definition set.");
+                builder.AppendLine("```mermaid");
+                builder.AppendLine("classDiagram");
+                foreach (var v in verbs)
+                {
+                    if (v != null && !string.IsNullOrEmpty(v.Name) && !string.IsNullOrEmpty(v.ParentVerbName))
+                    {
+                        builder.AppendLine(v.ParentVerbName + " <|-- " + v.Name);
+                    }
+                }
+                builder.AppendLine("```");
+                builder.AppendLine("## Relations");
+                builder.AppendLine("Here is a graph representing the relations that can be made with the verbs defined in this definition set.");
+                builder.AppendLine("```mermaid");
+                builder.AppendLine("erDiagram");
+                foreach (var v in verbs)
+                {
+                    if (v != null && !string.IsNullOrEmpty(v.Name) && !string.IsNullOrEmpty(v.DomainNounName) && !string.IsNullOrEmpty(v.RangeNounName))
+                    {
+                        builder.AppendLine(v.DomainNounName + " ||--o{ " + v.RangeNounName + " : " + v.Name);
+                    }
+                }
+                builder.AppendLine("```");
+            }
         }
         public static void ToMDMermaidGraph(DWISInstance instance, StringBuilder builder)
         {

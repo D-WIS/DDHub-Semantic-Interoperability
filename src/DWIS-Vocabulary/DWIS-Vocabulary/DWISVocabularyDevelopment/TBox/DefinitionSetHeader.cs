@@ -2,8 +2,8 @@
 {
     public class DefinitionSetHeader
     {
-        public string Name { get; set; }
-        public string SetDescription { get; set; }
+        public string Name { get; set; } = null;
+        public string[] SetDescription { get; set; } = null;
 
         public override string ToString()
         {

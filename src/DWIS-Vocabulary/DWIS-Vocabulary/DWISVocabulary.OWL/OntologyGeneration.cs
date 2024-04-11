@@ -74,7 +74,15 @@ namespace DWIS.Vocabulary.OWL
         {
             RDFResource current = new RDFResource( DDHubPrefix + currentTree.RootItem.Name);
             ontology.Model.ClassModel.DeclareClass(current);
-            ontology.Model.ClassModel.AnnotateClass(current, RDFVocabulary.RDFS.COMMENT, new RDFPlainLiteral(currentTree.RootItem.Description, "En"));
+            string description = string.Empty;
+            if (currentTree.RootItem.Description != null && currentTree.RootItem.Description.Length > 0)
+            {
+                foreach (string desc in currentTree.RootItem.Description)
+                {
+                    description += desc + "\n";
+                }
+            }
+            ontology.Model.ClassModel.AnnotateClass(current, RDFVocabulary.RDFS.COMMENT, new RDFPlainLiteral(description, "En"));
             //var current = new RDFOntologyClass(new RDFResource(DDHubPrefix + currentTree.RootItem.Name));
             //ontology.Model.ClassModel.AddClass(current);
             //ontology.Model.ClassModel.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.Comment, current, new RDFOntologyLiteral(new RDFPlainLiteral(currentTree.RootItem.Description, "En")));
@@ -126,7 +134,15 @@ namespace DWIS.Vocabulary.OWL
             behavior.Domain = new RDFResource(DDHubPrefix + currentTree.RootItem.DomainNounName);
             behavior.Range = new RDFResource(DDHubPrefix + currentTree.RootItem.RangeNounName);
             ontology.Model.PropertyModel.DeclareObjectProperty(current, behavior);
-            ontology.Model.PropertyModel.AnnotateProperty(current, RDFVocabulary.RDFS.COMMENT, new RDFPlainLiteral(currentTree.RootItem.Description, "En"));
+            string description = string.Empty;
+            if (currentTree.RootItem.Description != null && currentTree.RootItem.Description.Length > 0)
+            {
+                foreach (string desc in currentTree.RootItem.Description)
+                {
+                    description += desc + "\n";
+                }
+            }
+            ontology.Model.PropertyModel.AnnotateProperty(current, RDFVocabulary.RDFS.COMMENT, new RDFPlainLiteral(description, "En"));
 
             //ontology.Model.PropertyModel.AddProperty(current);
 

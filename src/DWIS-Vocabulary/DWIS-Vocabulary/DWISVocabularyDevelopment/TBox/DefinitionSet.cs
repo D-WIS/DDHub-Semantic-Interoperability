@@ -12,7 +12,7 @@ namespace DWIS.Vocabulary.Development
             get { return DefinitionSetHeader.Name; }
             set { DefinitionSetHeader.Name = value; }
         }
-        public string SetDescription
+        public string[] SetDescription
         {
             get { return DefinitionSetHeader.SetDescription; }
             set { DefinitionSetHeader.SetDescription = value; }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Security.Principal;
 
 namespace DWIS.Vocabulary.Development
 {
@@ -10,9 +11,12 @@ namespace DWIS.Vocabulary.Development
         public string ParentNounName { get; set; }
         public NounAttribute[] NounAttributes { get; set; }
         public SpecializedNounAttribute[] SpecializedNounAttributes { get; set; }
-        public string Description { get; set; }
+        public string[] Description { get; set; }
         public string[] Examples { get; set; }
         public string DefinitionSetName { get; set; }
+        public bool IsObsolete { get; set; } = false;
+        public DateTime WillBeRemovedBy { get; set; } = DateTime.MinValue;
+        public string ReplacedBy { get; set; } = null;
 
         public Noun()
         { }
@@ -27,6 +31,9 @@ namespace DWIS.Vocabulary.Development
             Description = other.Description;
             Examples = other.Examples;
             DefinitionSetName = other.DefinitionSetName;
+            IsObsolete = other.IsObsolete;
+            WillBeRemovedBy = other.WillBeRemovedBy;
+            ReplacedBy = other.ReplacedBy;
         }
 
 
@@ -74,7 +81,9 @@ namespace DWIS.Vocabulary.Development
                     if (!other.SpecializedNounAttributes.Contains(SpecializedNounAttributes[i])) return false;
                 }
             }
-
+            if (IsObsolete != other.IsObsolete) return false;
+            if (WillBeRemovedBy != other.WillBeRemovedBy) return false;
+            if (ReplacedBy != other.ReplacedBy) return false;
 
             return true;
         }

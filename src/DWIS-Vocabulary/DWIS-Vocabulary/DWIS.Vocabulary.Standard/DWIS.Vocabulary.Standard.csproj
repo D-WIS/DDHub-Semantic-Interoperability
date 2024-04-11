@@ -57,4 +57,5 @@
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
+  <ProjectExtensions><VisualStudio><UserProperties properties_4dwisvocabulary_1json__JsonSchema="https://docs.renovatebot.com/renovate-schema.json" /></VisualStudio></ProjectExtensions>
 </Project>

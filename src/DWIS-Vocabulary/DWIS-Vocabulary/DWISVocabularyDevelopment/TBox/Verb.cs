@@ -4,22 +4,25 @@ namespace DWIS.Vocabulary.Development
 {
     public class Verb : IEquatable<Verb>, IComparable<Verb>
     {
-        public string Name { get; set; }
-        public string DisplayName { get; set; }
-        public string ParentVerbName { get; set; }
-        public string DomainNounName { get; set; }
-        public string RangeNounName { get; set; }
+        public string Name { get; set; } = null;
+        public string DisplayName { get; set; } = null;
+        public string ParentVerbName { get; set; } = null;
+        public string DomainNounName { get; set; } = null;
+        public string RangeNounName { get; set; } = null;
         public int MinCardinality { get; set; } = -1;
         public int MaxCardinality { get; set; } = -1;
-        public string Description { get;  set; }
-        public string[] Examples { get; set; }
-        public string DefinitionSetName { get; set; }
+        public string[] Description { get; set; } = null;
+        public string[] Examples { get; set; } = null;
+        public string DefinitionSetName { get; set; } = null;
+        public bool IsObsolete { get; set; } = false;
+        public DateTime WillBeRemovedBy { get; set; } = DateTime.MinValue;
+        public string ReplacedBy { get; set; } = null;
 
         public Verb() { }
 
         public Verb(Verb other)
-        { 
-        Name = other.Name;
+        {
+            Name = other.Name;
             DisplayName = other.DisplayName;
             ParentVerbName = other.ParentVerbName;
             DomainNounName = other.DomainNounName;
@@ -29,9 +32,10 @@ namespace DWIS.Vocabulary.Development
             DefinitionSetName = other.DefinitionSetName;
             MinCardinality = other.MinCardinality;
             MaxCardinality = other.MaxCardinality;
+            IsObsolete = other.IsObsolete;
+            WillBeRemovedBy = other.WillBeRemovedBy;
+            ReplacedBy = other.ReplacedBy;
         }
-
-
 
         public override string ToString()
         {
@@ -46,17 +50,20 @@ namespace DWIS.Vocabulary.Development
 
         public bool Equals(Verb other)
         {
-           return other != null 
-                && Name == other.Name 
-                && DisplayName == other.DisplayName 
-                && ParentVerbName == other.ParentVerbName 
-                && DomainNounName == other.DomainNounName
-                && RangeNounName == other.RangeNounName
-                && Description == other.Description
-                && Examples == other.Examples
-                && DefinitionSetName == other.DefinitionSetName
-                && MinCardinality == other.MinCardinality
-                && MaxCardinality == other.MaxCardinality;
+            return other != null
+                 && Name == other.Name
+                 && DisplayName == other.DisplayName
+                 && ParentVerbName == other.ParentVerbName
+                 && DomainNounName == other.DomainNounName
+                 && RangeNounName == other.RangeNounName
+                 && Description == other.Description
+                 && Examples == other.Examples
+                 && DefinitionSetName == other.DefinitionSetName
+                 && MinCardinality == other.MinCardinality
+                 && MaxCardinality == other.MaxCardinality
+                 && IsObsolete == other.IsObsolete
+                 && WillBeRemovedBy == other.WillBeRemovedBy
+                 && ReplacedBy == other.ReplacedBy;
         }
 
         public int CompareTo(Verb other)

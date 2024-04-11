@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.Design;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
-using System.Text;
+using OSDC.DotnetLibraries.General.Common;
 using DWIS.Vocabulary.Development;
+using System.Reflection.PortableExecutable;
 
 namespace DWIS.Vocabulary.Utils
 {
@@ -126,7 +126,11 @@ namespace DWIS.Vocabulary.Utils
             }
             else if (header.StartsWith("- Description:"))
             {
-                noun.Description = header.Remove(0, "- Description:".Length).Trim().TrimEnd();
+                noun.Description = snippetItem;
+                if (snippetItem != null && snippetItem.Length > 0)
+                {
+                    snippetItem[0] = header.Remove(0, "- Description:".Length).Trim().TrimEnd();
+                }
             }
             else if (header.StartsWith("- Examples:"))
             {
@@ -209,6 +213,28 @@ namespace DWIS.Vocabulary.Utils
                     }
                 }
             }
+            else if (header.StartsWith("- Obsolete:"))
+            {
+                string boolStr = header.Remove(0, "- Obsolete: ".Length).Trim().TrimEnd();
+                bool obsolete;
+                if (Numeric.TryParse(boolStr, out obsolete))
+                {
+                    noun.IsObsolete = obsolete;
+                }
+            }
+            else if (header.StartsWith("- Will be removed by:"))
+            {
+                string dateStr = header.Remove(0, "- Will be removed by: ".Length).Trim().TrimEnd();
+                DateTime date;
+                if (Numeric.TryParse(dateStr, out date))
+                {
+                    noun.WillBeRemovedBy = date;
+                }
+            }
+            else if (header.StartsWith("- Replaced by:"))
+            {
+                noun.ReplacedBy = header.Remove(0, "- Replaced by: ".Length).Trim().TrimEnd();
+            }
             return false;
         }
         private static bool UpdateFromSnippetItem(string[] snippetItem, Verb verb)
@@ -224,7 +250,11 @@ namespace DWIS.Vocabulary.Utils
             }
             else if (header.StartsWith("- Description:"))
             {
-                verb.Description = header.Remove(0, "- Description: ".Length).Trim().TrimEnd();
+                verb.Description = snippetItem;
+                if (snippetItem != null && snippetItem.Length > 0)
+                {
+                    snippetItem[0] = header.Remove(0, "- Description:".Length).Trim().TrimEnd();
+                }
             }
             else if (header.StartsWith("- Examples:"))
             {
@@ -257,6 +287,28 @@ namespace DWIS.Vocabulary.Utils
                 {
                     verb.MaxCardinality = temp;
                 }
+            }
+            else if (header.StartsWith("- Obsolete:"))
+            {
+                string boolStr = header.Remove(0, "- Obsolete: ".Length).Trim().TrimEnd();
+                bool obsolete;
+                if (Numeric.TryParse(boolStr, out obsolete))
+                {
+                    verb.IsObsolete = obsolete;
+                }
+            }
+            else if (header.StartsWith("- Will be removed by:"))
+            {
+                string dateStr = header.Remove(0, "- Will be removed by: ".Length).Trim().TrimEnd();
+                DateTime date;
+                if (Numeric.TryParse(dateStr, out date))
+                {
+                    verb.WillBeRemovedBy = date;
+                }
+            }
+            else if (header.StartsWith("- Replaced by:"))
+            {
+                verb.ReplacedBy = header.Remove(0, "- Replaced by: ".Length).Trim().TrimEnd();
             }
             return true;
         }
@@ -363,7 +415,11 @@ namespace DWIS.Vocabulary.Utils
                     }
                     else if (snippet != null && snippet.Length > 0 && snippet[0].StartsWith("- Description: "))
                     {
-                        definitionSet.SetDescription = snippet[0].Remove(0, "- Description: ".Length).Trim().TrimEnd();
+                        definitionSet.SetDescription = snippet;
+                        if (snippet != null && snippet.Length > 0)
+                        {
+                            snippet[0] = snippet[0].Remove(0, "- Description:".Length).Trim().TrimEnd();
+                        }
                     }
                     if (VocabularyParsing.FromMDSnippet(snippet, out Noun noun))
                     {

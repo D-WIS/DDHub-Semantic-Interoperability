@@ -19,5 +19,8 @@
   <ItemGroup>
       <None Include="license\LICENSE" Pack="true" PackagePath="" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="OSDC.DotnetLibraries.General.Common" Version="1.0.9" />
+  </ItemGroup>
 
 </Project>
