@@ -5,7 +5,7 @@ this category refers to the various functions an ADCS implements. It is to be us
 
 ## DataDependencies<!-- DEFINITION SET HEADER -->
 - Description: 
-this part covers the physical dependencies between signals.
+this definition set covers the physical dependence of a `DrillingDatPoint` on something else.
 
 ## DataFlow<!-- DEFINITION SET HEADER -->
 - Description: 
@@ -66,6 +66,10 @@ this category contains the vocabulary necessary to specify the location of vario
 ## Quantities<!-- DEFINITION SET HEADER -->
 - Description: 
 quantities and units
+
+## SignalPrototypes<!-- DEFINITION SET HEADER -->
+- Description: 
+this is description set for specialization of signa prototypes.
 
 ## TimeManagement<!-- DEFINITION SET HEADER -->
 - Description: 
@@ -853,342 +857,6 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 ## PrototypeData <!-- NOUN -->
 - Display name: PrototypeData
 - Parent class: [DrillingDataPoint](#DrillingDataPoint)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## ActiveVolume <!-- NOUN -->
-- Display name: ActiveVolume
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## Azimuth <!-- NOUN -->
-- Display name: Azimuth
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## BitDepth <!-- NOUN -->
-- Display name: BitDepth
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-Curvilinear abscissa of the bottom of the bit, in the reference frame centered in the wellbore.
-- Definition set: DrillingDataSemantics
-- Examples:
-## DensityIn <!-- NOUN -->
-- Display name: DensityIn
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## DensityOut <!-- NOUN -->
-- Display name: DensityOut
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## DownholeECD <!-- NOUN -->
-- Display name: DownholeECD
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## DownholePressure <!-- NOUN -->
-- Display name: DownholePressure
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## DownholeRPM <!-- NOUN -->
-- Display name: DownholeRPM
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## DownholeTemperature <!-- NOUN -->
-- Display name: DownholeTemperature
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## DownholeTorque <!-- NOUN -->
-- Display name: DownholeTorque
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## FlowRateIn <!-- NOUN -->
-- Display name: FlowRateIn
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## FlowRateOut <!-- NOUN -->
-- Display name: FlowRateOut
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## HoleDepth <!-- NOUN -->
-- Display name: HoleDepth
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## HookLoad <!-- NOUN -->
-- Display name: HookLoad
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## HookPosition <!-- NOUN -->
-- Display name: HookPosition
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## HookVelocity <!-- NOUN -->
-- Display name: HookVelocity
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## Inclination <!-- NOUN -->
-- Display name: Inclination
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## MeasuredDepth <!-- NOUN -->
-- Display name: MeasuredDepth
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## PumpRate <!-- NOUN -->
-- Display name: PumpRate
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## ROP <!-- NOUN -->
-- Display name: ROP
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## SPP <!-- NOUN -->
-- Display name: SPP
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## SurfaceRPM <!-- NOUN -->
-- Display name: SurfaceRPM
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## SurfaceTorque <!-- NOUN -->
-- Display name: SurfaceTorque
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## TemperatureIn <!-- NOUN -->
-- Display name: TemperatureIn
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## TemperatureOut <!-- NOUN -->
-- Display name: TemperatureOut
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## TopOfStringPosition <!-- NOUN -->
-- Display name: TopOfStringPosition
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## WOB <!-- NOUN -->
-- Display name: WOB
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## PorePressure <!-- NOUN -->
-- Display name: PorePressure
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## PorePressureGradient <!-- NOUN -->
-- Display name: PorePressureGradient
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## FracturingPressure <!-- NOUN -->
-- Display name: FracturingPressure
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## FracturingPressureGradient <!-- NOUN -->
-- Display name: FracturingPressureGradient
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## CollapsePressure <!-- NOUN -->
-- Display name: CollapsePressure
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## CollapsePressureGradient <!-- NOUN -->
-- Display name: CollapsePressureGradient
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## ShearRate <!-- NOUN -->
-- Display name: Shear rate
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## ShearStress <!-- NOUN -->
-- Display name: Shear stress
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## MinimumHorizontalStress <!-- NOUN -->
-- Display name: MinimumHorizontalStress
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## MinimumHorizontalStressGradient <!-- NOUN -->
-- Display name: MinimumHorizontalStressGradient
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## OverburdenPressure <!-- NOUN -->
-- Display name: OverburdenPressure
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## OverburdenPressureGradient <!-- NOUN -->
-- Display name: OverburdenPressureGradient
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## BOPOpening <!-- NOUN -->
-- Display name: BOPOpening
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## BOPPressure <!-- NOUN -->
-- Display name: BOPPressure
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## MPDChokeOpening <!-- NOUN -->
-- Display name: MPDChokeOpening
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## MPDChokePressure <!-- NOUN -->
-- Display name: MPDChokePressure
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## MPDPumpRate <!-- NOUN -->
-- Display name: MPDPumpRate
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## MPDPumpFlowRate <!-- NOUN -->
-- Display name: MPDPumpFlowRate
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## GasFlowRate <!-- NOUN -->
-- Display name: GasFlowRate
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## BackPressurePumpPressure <!-- NOUN -->
-- Display name: BackPressurePumpPressure
-- Parent class: [PrototypeData](#PrototypeData)
-- Description: 
-
-- Definition set: DrillingDataSemantics
-- Examples:
-## MechanicalSpecificEnergy <!-- NOUN -->
-- Display name: Mechanical Specific Energy
-- Parent class: [PrototypeData](#PrototypeData)
 - Description: 
 
 - Definition set: DrillingDataSemantics
@@ -3749,6 +3417,342 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
 A set of associations between measurable quantities and units
 - Definition set: Quantities
 - Examples:
+## ActiveVolume <!-- NOUN -->
+- Display name: ActiveVolume
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## Azimuth <!-- NOUN -->
+- Display name: Azimuth
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## BitDepth <!-- NOUN -->
+- Display name: BitDepth
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Curvilinear abscissa of the bottom of the bit, in the reference frame centered in the wellbore.
+- Definition set: SignalPrototypes
+- Examples:
+## DensityIn <!-- NOUN -->
+- Display name: DensityIn
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## DensityOut <!-- NOUN -->
+- Display name: DensityOut
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## DownholeECD <!-- NOUN -->
+- Display name: DownholeECD
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## DownholePressure <!-- NOUN -->
+- Display name: DownholePressure
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## DownholeRPM <!-- NOUN -->
+- Display name: DownholeRPM
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## DownholeTemperature <!-- NOUN -->
+- Display name: DownholeTemperature
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## DownholeTorque <!-- NOUN -->
+- Display name: DownholeTorque
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## FlowRateIn <!-- NOUN -->
+- Display name: FlowRateIn
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## FlowRateOut <!-- NOUN -->
+- Display name: FlowRateOut
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## HoleDepth <!-- NOUN -->
+- Display name: HoleDepth
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## HookLoad <!-- NOUN -->
+- Display name: HookLoad
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## HookPosition <!-- NOUN -->
+- Display name: HookPosition
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## HookVelocity <!-- NOUN -->
+- Display name: HookVelocity
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## Inclination <!-- NOUN -->
+- Display name: Inclination
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## MeasuredDepth <!-- NOUN -->
+- Display name: MeasuredDepth
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## PumpRate <!-- NOUN -->
+- Display name: PumpRate
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## ROP <!-- NOUN -->
+- Display name: ROP
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## SPP <!-- NOUN -->
+- Display name: SPP
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## SurfaceRPM <!-- NOUN -->
+- Display name: SurfaceRPM
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## SurfaceTorque <!-- NOUN -->
+- Display name: SurfaceTorque
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## TemperatureIn <!-- NOUN -->
+- Display name: TemperatureIn
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## TemperatureOut <!-- NOUN -->
+- Display name: TemperatureOut
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## TopOfStringPosition <!-- NOUN -->
+- Display name: TopOfStringPosition
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## WOB <!-- NOUN -->
+- Display name: WOB
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## PorePressure <!-- NOUN -->
+- Display name: PorePressure
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## PorePressureGradient <!-- NOUN -->
+- Display name: PorePressureGradient
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## FracturingPressure <!-- NOUN -->
+- Display name: FracturingPressure
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## FracturingPressureGradient <!-- NOUN -->
+- Display name: FracturingPressureGradient
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## CollapsePressure <!-- NOUN -->
+- Display name: CollapsePressure
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## CollapsePressureGradient <!-- NOUN -->
+- Display name: CollapsePressureGradient
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## ShearRate <!-- NOUN -->
+- Display name: Shear rate
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## ShearStress <!-- NOUN -->
+- Display name: Shear stress
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## MinimumHorizontalStress <!-- NOUN -->
+- Display name: MinimumHorizontalStress
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## MinimumHorizontalStressGradient <!-- NOUN -->
+- Display name: MinimumHorizontalStressGradient
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## OverburdenPressure <!-- NOUN -->
+- Display name: OverburdenPressure
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## OverburdenPressureGradient <!-- NOUN -->
+- Display name: OverburdenPressureGradient
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## BOPOpening <!-- NOUN -->
+- Display name: BOPOpening
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## BOPPressure <!-- NOUN -->
+- Display name: BOPPressure
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## MPDChokeOpening <!-- NOUN -->
+- Display name: MPDChokeOpening
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## MPDChokePressure <!-- NOUN -->
+- Display name: MPDChokePressure
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## MPDPumpRate <!-- NOUN -->
+- Display name: MPDPumpRate
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## MPDPumpFlowRate <!-- NOUN -->
+- Display name: MPDPumpFlowRate
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## GasFlowRate <!-- NOUN -->
+- Display name: GasFlowRate
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## BackPressurePumpPressure <!-- NOUN -->
+- Display name: BackPressurePumpPressure
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
+## MechanicalSpecificEnergy <!-- NOUN -->
+- Display name: Mechanical Specific Energy
+- Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+
+- Definition set: SignalPrototypes
+- Examples:
 ## Clock <!-- NOUN -->
 - Display name: Clock
 - Parent class: [DWISNoun](#DWISNoun)
@@ -4249,11 +4253,58 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Display name: IsDependentOn
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
-- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataDependencies
 - Description: 
-
+This verb is used to describe a general dependence relationship between a `DrillingDataPoint` and something else.
 - Examples:
+```ddhub DerrickFloorElevation HeaveElevation TideElevation
+DerickFloorVerticalLocation:DerrickFloor
+DerivedMeasurement:DerrickFloorElevation
+Measurement:HeaveElevation
+Measurement:TideElevation
+DerrickFloorElevation IsOfMeasurableQuantity AxialPosition
+DerrickFloorElevation IsPhysicallyLocatedAt DerrickFloor
+HeaveElevation IsOfMeasurableQuantity AxialPosition
+TideElevation IsOfMeasurableQuantity AxialPosition
+DerrickFloorElevation IsDependentOn HeaveElevation
+DerrickFloorElevation IsDependentOn TideElevation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[DerrickFloor] -->|BelongsTo| N0001[DerickFloorVerticalLocation] 
+	N0002[DerrickFloorElevation] -->|BelongsTo| N0003[DerivedMeasurement] 
+	N0004[HeaveElevation] -->|BelongsTo| N0005[Measurement] 
+	N0006[TideElevation] -->|BelongsTo| N0005[Measurement] 
+	N0002[DerrickFloorElevation] -->|IsOfMeasurableQuantity| N0007[AxialPosition] 
+	N0002[DerrickFloorElevation] -->|IsPhysicallyLocatedAt| N0000[DerrickFloor] 
+	N0004[HeaveElevation] -->|IsOfMeasurableQuantity| N0007[AxialPosition] 
+	N0006[TideElevation] -->|IsOfMeasurableQuantity| N0007[AxialPosition] 
+	N0002[DerrickFloorElevation] -->|IsDependentOn| N0004[HeaveElevation] 
+	N0002[DerrickFloorElevation] -->|IsDependentOn| N0006[TideElevation] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?DerrickFloorElevation, ?HeaveElevation, ?TideElevation
+WHERE {
+	?DerrickFloor rdf:type ddhub:DerickFloorVerticalLocation .
+	?DerrickFloorElevation rdf:type ddhub:DerivedMeasurement .
+	?HeaveElevation rdf:type ddhub:Measurement .
+	?TideElevation rdf:type ddhub:Measurement .
+	?DerrickFloorElevation ddhub:IsOfMeasurableQuantity ?AxialPosition .
+	?DerrickFloorElevation ddhub:IsPhysicallyLocatedAt ?DerrickFloor .
+	?HeaveElevation ddhub:IsOfMeasurableQuantity ?AxialPosition .
+	?TideElevation ddhub:IsOfMeasurableQuantity ?AxialPosition .
+	?DerrickFloorElevation ddhub:IsDependentOn ?HeaveElevation .
+	?DerrickFloorElevation ddhub:IsDependentOn ?TideElevation .
+}
+```
+In this example, it is described that the derrick floor elevation, `DerrickFloorElevation`, 
+depends on the heave measurement, `HeaveElevation`, and the tide measurement, `TideElevation`.
 ## HasPressureReference <!-- VERB -->
 - Display name: HasPressureReference
 - Parent verb: [IsDependentOn](#IsDependentOn)
@@ -4261,8 +4312,50 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Definition set: DataDependencies
 - Description: 
-
+This verb is a specialization of `IsDependentOn` and refers to the specific dependence on a pressure reference.
 - Examples:
+```ddhub MeasuredDrillingFluidDensity MeasuredTemperature MeasuredPressure
+Measurement:MeasuredDrillingFluidDensity
+Measurement:MeasuredTemperature
+Measurement:MeasuredPressure
+MeasuredDrillingFluidDensity IsOfMeasurableQuantity DrillingDensity
+MeasuredTemperature IsOfMeasurableQuantity DrillingTemperature
+MeasuredPressure IsOfMeasurableQuantity DrillingPressure
+MeasuredDrillingFluidDensity HasTemperatureReference MeasuredTemperature
+MeasuredDrillingFluidDensity HasPressureReference MeasuredPressure
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MeasuredDrillingFluidDensity] -->|BelongsTo| N0001[Measurement] 
+	N0002[MeasuredTemperature] -->|BelongsTo| N0001[Measurement] 
+	N0003[MeasuredPressure] -->|BelongsTo| N0001[Measurement] 
+	N0000[MeasuredDrillingFluidDensity] -->|IsOfMeasurableQuantity| N0004[DrillingDensity] 
+	N0002[MeasuredTemperature] -->|IsOfMeasurableQuantity| N0005[DrillingTemperature] 
+	N0003[MeasuredPressure] -->|IsOfMeasurableQuantity| N0006[DrillingPressure] 
+	N0000[MeasuredDrillingFluidDensity] -->|HasTemperatureReference| N0002[MeasuredTemperature] 
+	N0000[MeasuredDrillingFluidDensity] -->|HasPressureReference| N0003[MeasuredPressure] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?MeasuredDrillingFluidDensity, ?MeasuredTemperature, ?MeasuredPressure
+WHERE {
+	?MeasuredDrillingFluidDensity rdf:type ddhub:Measurement .
+	?MeasuredTemperature rdf:type ddhub:Measurement .
+	?MeasuredPressure rdf:type ddhub:Measurement .
+	?MeasuredDrillingFluidDensity ddhub:IsOfMeasurableQuantity ?DrillingDensity .
+	?MeasuredTemperature ddhub:IsOfMeasurableQuantity ?DrillingTemperature .
+	?MeasuredPressure ddhub:IsOfMeasurableQuantity ?DrillingPressure .
+	?MeasuredDrillingFluidDensity ddhub:HasTemperatureReference ?MeasuredTemperature .
+	?MeasuredDrillingFluidDensity ddhub:HasPressureReference ?MeasuredPressure .
+}
+```
+In this example, it is described that `MeasuredDrillingFluidDensity`, which is a measurement of the measurable quantity
+`DrillingDensity` has a dependence on pressure and temperature, and that the associated measured pressure can be found
+at `MeasuredPressure`.
 ## HasTemperatureReference <!-- VERB -->
 - Display name: HasTemperatureReference
 - Parent verb: [IsDependentOn](#IsDependentOn)
@@ -4270,8 +4363,50 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Definition set: DataDependencies
 - Description: 
-
+This verb is a specialization of `IsDependentOn` and refers to the specific dependence on a temperature reference.
 - Examples:
+```ddhub MeasuredDrillingFluidDensity MeasuredTemperature MeasuredPressure
+Measurement:MeasuredDrillingFluidDensity
+Measurement:MeasuredTemperature
+Measurement:MeasuredPressure
+MeasuredDrillingFluidDensity IsOfMeasurableQuantity DrillingDensity
+MeasuredTemperature IsOfMeasurableQuantity DrillingTemperature
+MeasuredPressure IsOfMeasurableQuantity DrillingPressure
+MeasuredDrillingFluidDensity HasTemperatureReference MeasuredTemperature
+MeasuredDrillingFluidDensity HasPressureReference MeasuredPressure
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MeasuredDrillingFluidDensity] -->|BelongsTo| N0001[Measurement] 
+	N0002[MeasuredTemperature] -->|BelongsTo| N0001[Measurement] 
+	N0003[MeasuredPressure] -->|BelongsTo| N0001[Measurement] 
+	N0000[MeasuredDrillingFluidDensity] -->|IsOfMeasurableQuantity| N0004[DrillingDensity] 
+	N0002[MeasuredTemperature] -->|IsOfMeasurableQuantity| N0005[DrillingTemperature] 
+	N0003[MeasuredPressure] -->|IsOfMeasurableQuantity| N0006[DrillingPressure] 
+	N0000[MeasuredDrillingFluidDensity] -->|HasTemperatureReference| N0002[MeasuredTemperature] 
+	N0000[MeasuredDrillingFluidDensity] -->|HasPressureReference| N0003[MeasuredPressure] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?MeasuredDrillingFluidDensity, ?MeasuredTemperature, ?MeasuredPressure
+WHERE {
+	?MeasuredDrillingFluidDensity rdf:type ddhub:Measurement .
+	?MeasuredTemperature rdf:type ddhub:Measurement .
+	?MeasuredPressure rdf:type ddhub:Measurement .
+	?MeasuredDrillingFluidDensity ddhub:IsOfMeasurableQuantity ?DrillingDensity .
+	?MeasuredTemperature ddhub:IsOfMeasurableQuantity ?DrillingTemperature .
+	?MeasuredPressure ddhub:IsOfMeasurableQuantity ?DrillingPressure .
+	?MeasuredDrillingFluidDensity ddhub:HasTemperatureReference ?MeasuredTemperature .
+	?MeasuredDrillingFluidDensity ddhub:HasPressureReference ?MeasuredPressure .
+}
+```
+In this example, it is described that `MeasuredDrillingFluidDensity`, which is a measurement of the measurable quantity
+`DrillingDensity` has a dependence on pressure and temperature, and that the associated measured temperaure can be found
+at `MeasuredTemperature`.
 ## HasElevationReference <!-- VERB -->
 - Display name: HasElevationReference
 - Parent verb: [IsDependentOn](#IsDependentOn)
@@ -4279,8 +4414,87 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Object class: [Location](#Location)
 - Definition set: DataDependencies
 - Description: 
-
+This verb is a specialization of `IsDependentOn` and refers to the specific dependence on an elevation reference.
 - Examples:
+```ddhub MeasuredStandPipePressure DerrickFloorElevation HeaveElevation TideElevation
+Measurement:MeasuredStandPipePressure
+DerickFloorVerticalLocation:DerrickFloor
+DerivedMeasurement:DerrickFloorElevation
+Measurement:HeaveElevation
+Measurement:TideElevation
+StandPipe:StandPipeElement
+MechanicalLogicalElement:LogicalRepresentationStandPipe
+MeasuredStandPipePressure HasElevationReference DerrickFloor
+LogicalRepresentationStandPipe IsAMechanicalRepresentationFor StandPipeElement
+MeasuredStandPipePressure IsMechanicallyLocatedAt LogicalRepresentationStandPipe
+MeasuredStandPipePressure IsOfMeasurableQuantity DrillingPressure
+DerrickFloorElevation IsOfMeasurableQuantity AxialPosition
+DerrickFloorElevation IsPhysicallyLocatedAt DerrickFloor
+HeaveElevation IsOfMeasurableQuantity AxialPosition
+TideElevation IsOfMeasurableQuantity AxialPosition
+WGS84VerticalLocation:VerticalDatum
+HeaveElevation HasElevationReference VerticalDatum
+TideElevation HasElevationReference VerticalDatum
+DerrickFloorElevation IsDependentOn HeaveElevation
+DerrickFloorElevation IsDependentOn TideElevation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MeasuredStandPipePressure] -->|BelongsTo| N0001[Measurement] 
+	N0002[DerrickFloor] -->|BelongsTo| N0003[DerickFloorVerticalLocation] 
+	N0004[DerrickFloorElevation] -->|BelongsTo| N0005[DerivedMeasurement] 
+	N0006[HeaveElevation] -->|BelongsTo| N0001[Measurement] 
+	N0007[TideElevation] -->|BelongsTo| N0001[Measurement] 
+	N0008[StandPipeElement] -->|BelongsTo| N0009[StandPipe] 
+	N0010[LogicalRepresentationStandPipe] -->|BelongsTo| N0011[MechanicalLogicalElement] 
+	N0000[MeasuredStandPipePressure] -->|HasElevationReference| N0002[DerrickFloor] 
+	N0010[LogicalRepresentationStandPipe] -->|IsAMechanicalRepresentationFor| N0008[StandPipeElement] 
+	N0000[MeasuredStandPipePressure] -->|IsMechanicallyLocatedAt| N0010[LogicalRepresentationStandPipe] 
+	N0000[MeasuredStandPipePressure] -->|IsOfMeasurableQuantity| N0012[DrillingPressure] 
+	N0004[DerrickFloorElevation] -->|IsOfMeasurableQuantity| N0013[AxialPosition] 
+	N0004[DerrickFloorElevation] -->|IsPhysicallyLocatedAt| N0002[DerrickFloor] 
+	N0006[HeaveElevation] -->|IsOfMeasurableQuantity| N0013[AxialPosition] 
+	N0007[TideElevation] -->|IsOfMeasurableQuantity| N0013[AxialPosition] 
+	N0014[VerticalDatum] -->|BelongsTo| N0015[WGS84VerticalLocation] 
+	N0006[HeaveElevation] -->|HasElevationReference| N0014[VerticalDatum] 
+	N0007[TideElevation] -->|HasElevationReference| N0014[VerticalDatum] 
+	N0004[DerrickFloorElevation] -->|IsDependentOn| N0006[HeaveElevation] 
+	N0004[DerrickFloorElevation] -->|IsDependentOn| N0007[TideElevation] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?MeasuredStandPipePressure, ?DerrickFloorElevation, ?HeaveElevation, ?TideElevation
+WHERE {
+	?MeasuredStandPipePressure rdf:type ddhub:Measurement .
+	?DerrickFloor rdf:type ddhub:DerickFloorVerticalLocation .
+	?DerrickFloorElevation rdf:type ddhub:DerivedMeasurement .
+	?HeaveElevation rdf:type ddhub:Measurement .
+	?TideElevation rdf:type ddhub:Measurement .
+	?StandPipeElement rdf:type ddhub:StandPipe .
+	?LogicalRepresentationStandPipe rdf:type ddhub:MechanicalLogicalElement .
+	?MeasuredStandPipePressure ddhub:HasElevationReference ?DerrickFloor .
+	?LogicalRepresentationStandPipe ddhub:IsAMechanicalRepresentationFor ?StandPipeElement .
+	?MeasuredStandPipePressure ddhub:IsMechanicallyLocatedAt ?LogicalRepresentationStandPipe .
+	?MeasuredStandPipePressure ddhub:IsOfMeasurableQuantity ?DrillingPressure .
+	?DerrickFloorElevation ddhub:IsOfMeasurableQuantity ?AxialPosition .
+	?DerrickFloorElevation ddhub:IsPhysicallyLocatedAt ?DerrickFloor .
+	?HeaveElevation ddhub:IsOfMeasurableQuantity ?AxialPosition .
+	?TideElevation ddhub:IsOfMeasurableQuantity ?AxialPosition .
+	?VerticalDatum rdf:type ddhub:WGS84VerticalLocation .
+	?HeaveElevation ddhub:HasElevationReference ?VerticalDatum .
+	?TideElevation ddhub:HasElevationReference ?VerticalDatum .
+	?DerrickFloorElevation ddhub:IsDependentOn ?HeaveElevation .
+	?DerrickFloorElevation ddhub:IsDependentOn ?TideElevation .
+}
+```
+In this example, it is described that the standpipe pressure measurement, `MeasuredStandPipePressure`, depends on
+the derrick floor elevation, `DerrickFloor`, elevation and that the derrick floor elevation depends on the heave
+elevation and on the tide elevation, which in turn have an elevation reference compared to the vertical datum, which
+here is WGS84.
 ## Controls <!-- VERB -->
 - Display name: Controls
 - Parent verb: [DWISVerb](#DWISVerb)

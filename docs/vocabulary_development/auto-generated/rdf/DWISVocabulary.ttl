@@ -927,7 +927,7 @@ ddhub:HasDynamicValue a owl:ObjectProperty;
                       rdfs:range ddhub:DynamicDrillingSignal; 
                       rdfs:subPropertyOf ddhub:HasValue. 
 ddhub:HasElevationReference a owl:ObjectProperty; 
-                            rdfs:comment """
+                            rdfs:comment """This verb is a specialization of `IsDependentOn` and refers to the specific dependence on an elevation reference.
 """@EN; 
                             rdfs:domain ddhub:DrillingDataPoint; 
                             rdfs:range ddhub:Location; 
@@ -999,7 +999,7 @@ ddhub:HasMotionType a owl:ObjectProperty;
                     rdfs:range ddhub:MotionType; 
                     rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasPressureReference a owl:ObjectProperty; 
-                           rdfs:comment """
+                           rdfs:comment """This verb is a specialization of `IsDependentOn` and refers to the specific dependence on a pressure reference.
 """@EN; 
                            rdfs:domain ddhub:DrillingDataPoint; 
                            rdfs:range ddhub:DrillingDataPoint; 
@@ -1065,7 +1065,7 @@ ddhub:HasStaticValue a owl:ObjectProperty;
                      rdfs:range ddhub:DrillingSignal; 
                      rdfs:subPropertyOf ddhub:HasValue. 
 ddhub:HasTemperatureReference a owl:ObjectProperty; 
-                              rdfs:comment """
+                              rdfs:comment """This verb is a specialization of `IsDependentOn` and refers to the specific dependence on a temperature reference.
 """@EN; 
                               rdfs:domain ddhub:DrillingDataPoint; 
                               rdfs:range ddhub:DrillingDataPoint; 
@@ -1343,10 +1343,10 @@ ddhub:IsConditionRight a owl:ObjectProperty;
                        rdfs:range ddhub:DWISNoun; 
                        rdfs:subPropertyOf ddhub:IsConditionInput. 
 ddhub:IsDependentOn a owl:ObjectProperty; 
-                    rdfs:comment """
+                    rdfs:comment """This verb is used to describe a general dependence relationship between a `DrillingDataPoint` and something else.
 """@EN; 
                     rdfs:domain ddhub:DrillingDataPoint; 
-                    rdfs:range ddhub:DrillingDataPoint; 
+                    rdfs:range ddhub:DWISNoun; 
                     rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsDerivationInput a owl:ObjectProperty; 
                         rdfs:comment """

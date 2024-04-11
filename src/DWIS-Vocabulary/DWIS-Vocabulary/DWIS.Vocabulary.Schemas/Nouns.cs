@@ -100,54 +100,6 @@ EnumerationDataType,
 BooleanDataType,
 DrillingDataPoint,
 PrototypeData,
-ActiveVolume,
-Azimuth,
-BitDepth,
-DensityIn,
-DensityOut,
-DownholeECD,
-DownholePressure,
-DownholeRPM,
-DownholeTemperature,
-DownholeTorque,
-FlowRateIn,
-FlowRateOut,
-HoleDepth,
-HookLoad,
-HookPosition,
-HookVelocity,
-Inclination,
-MeasuredDepth,
-PumpRate,
-ROP,
-SPP,
-SurfaceRPM,
-SurfaceTorque,
-TemperatureIn,
-TemperatureOut,
-TopOfStringPosition,
-WOB,
-PorePressure,
-PorePressureGradient,
-FracturingPressure,
-FracturingPressureGradient,
-CollapsePressure,
-CollapsePressureGradient,
-ShearRate,
-ShearStress,
-MinimumHorizontalStress,
-MinimumHorizontalStressGradient,
-OverburdenPressure,
-OverburdenPressureGradient,
-BOPOpening,
-BOPPressure,
-MPDChokeOpening,
-MPDChokePressure,
-MPDPumpRate,
-MPDPumpFlowRate,
-GasFlowRate,
-BackPressurePumpPressure,
-MechanicalSpecificEnergy,
 ProcessData,
 SetPoint,
 Command,
@@ -486,6 +438,54 @@ VolumetricRateQuantity,
 VolumetricFlowateRateOfChangeQuantity,
 Unit,
 UnitSystem,
+ActiveVolume,
+Azimuth,
+BitDepth,
+DensityIn,
+DensityOut,
+DownholeECD,
+DownholePressure,
+DownholeRPM,
+DownholeTemperature,
+DownholeTorque,
+FlowRateIn,
+FlowRateOut,
+HoleDepth,
+HookLoad,
+HookPosition,
+HookVelocity,
+Inclination,
+MeasuredDepth,
+PumpRate,
+ROP,
+SPP,
+SurfaceRPM,
+SurfaceTorque,
+TemperatureIn,
+TemperatureOut,
+TopOfStringPosition,
+WOB,
+PorePressure,
+PorePressureGradient,
+FracturingPressure,
+FracturingPressureGradient,
+CollapsePressure,
+CollapsePressureGradient,
+ShearRate,
+ShearStress,
+MinimumHorizontalStress,
+MinimumHorizontalStressGradient,
+OverburdenPressure,
+OverburdenPressureGradient,
+BOPOpening,
+BOPPressure,
+MPDChokeOpening,
+MPDChokePressure,
+MPDPumpRate,
+MPDPumpFlowRate,
+GasFlowRate,
+BackPressurePumpPressure,
+MechanicalSpecificEnergy,
 Clock,
 SynchronizationGroup,
 TimeReference,
@@ -597,54 +597,6 @@ SensorUncertainty
 	public static string BooleanDataType = "BooleanDataType";
 	public static string DrillingDataPoint = "DrillingDataPoint";
 	public static string PrototypeData = "PrototypeData";
-	public static string ActiveVolume = "ActiveVolume";
-	public static string Azimuth = "Azimuth";
-	public static string BitDepth = "BitDepth";
-	public static string DensityIn = "DensityIn";
-	public static string DensityOut = "DensityOut";
-	public static string DownholeECD = "DownholeECD";
-	public static string DownholePressure = "DownholePressure";
-	public static string DownholeRPM = "DownholeRPM";
-	public static string DownholeTemperature = "DownholeTemperature";
-	public static string DownholeTorque = "DownholeTorque";
-	public static string FlowRateIn = "FlowRateIn";
-	public static string FlowRateOut = "FlowRateOut";
-	public static string HoleDepth = "HoleDepth";
-	public static string HookLoad = "HookLoad";
-	public static string HookPosition = "HookPosition";
-	public static string HookVelocity = "HookVelocity";
-	public static string Inclination = "Inclination";
-	public static string MeasuredDepth = "MeasuredDepth";
-	public static string PumpRate = "PumpRate";
-	public static string ROP = "ROP";
-	public static string SPP = "SPP";
-	public static string SurfaceRPM = "SurfaceRPM";
-	public static string SurfaceTorque = "SurfaceTorque";
-	public static string TemperatureIn = "TemperatureIn";
-	public static string TemperatureOut = "TemperatureOut";
-	public static string TopOfStringPosition = "TopOfStringPosition";
-	public static string WOB = "WOB";
-	public static string PorePressure = "PorePressure";
-	public static string PorePressureGradient = "PorePressureGradient";
-	public static string FracturingPressure = "FracturingPressure";
-	public static string FracturingPressureGradient = "FracturingPressureGradient";
-	public static string CollapsePressure = "CollapsePressure";
-	public static string CollapsePressureGradient = "CollapsePressureGradient";
-	public static string ShearRate = "ShearRate";
-	public static string ShearStress = "ShearStress";
-	public static string MinimumHorizontalStress = "MinimumHorizontalStress";
-	public static string MinimumHorizontalStressGradient = "MinimumHorizontalStressGradient";
-	public static string OverburdenPressure = "OverburdenPressure";
-	public static string OverburdenPressureGradient = "OverburdenPressureGradient";
-	public static string BOPOpening = "BOPOpening";
-	public static string BOPPressure = "BOPPressure";
-	public static string MPDChokeOpening = "MPDChokeOpening";
-	public static string MPDChokePressure = "MPDChokePressure";
-	public static string MPDPumpRate = "MPDPumpRate";
-	public static string MPDPumpFlowRate = "MPDPumpFlowRate";
-	public static string GasFlowRate = "GasFlowRate";
-	public static string BackPressurePumpPressure = "BackPressurePumpPressure";
-	public static string MechanicalSpecificEnergy = "MechanicalSpecificEnergy";
 	public static string ProcessData = "ProcessData";
 	public static string SetPoint = "SetPoint";
 	public static string Command = "Command";
@@ -983,6 +935,54 @@ SensorUncertainty
 	public static string VolumetricFlowateRateOfChangeQuantity = "VolumetricFlowateRateOfChangeQuantity";
 	public static string Unit = "Unit";
 	public static string UnitSystem = "UnitSystem";
+	public static string ActiveVolume = "ActiveVolume";
+	public static string Azimuth = "Azimuth";
+	public static string BitDepth = "BitDepth";
+	public static string DensityIn = "DensityIn";
+	public static string DensityOut = "DensityOut";
+	public static string DownholeECD = "DownholeECD";
+	public static string DownholePressure = "DownholePressure";
+	public static string DownholeRPM = "DownholeRPM";
+	public static string DownholeTemperature = "DownholeTemperature";
+	public static string DownholeTorque = "DownholeTorque";
+	public static string FlowRateIn = "FlowRateIn";
+	public static string FlowRateOut = "FlowRateOut";
+	public static string HoleDepth = "HoleDepth";
+	public static string HookLoad = "HookLoad";
+	public static string HookPosition = "HookPosition";
+	public static string HookVelocity = "HookVelocity";
+	public static string Inclination = "Inclination";
+	public static string MeasuredDepth = "MeasuredDepth";
+	public static string PumpRate = "PumpRate";
+	public static string ROP = "ROP";
+	public static string SPP = "SPP";
+	public static string SurfaceRPM = "SurfaceRPM";
+	public static string SurfaceTorque = "SurfaceTorque";
+	public static string TemperatureIn = "TemperatureIn";
+	public static string TemperatureOut = "TemperatureOut";
+	public static string TopOfStringPosition = "TopOfStringPosition";
+	public static string WOB = "WOB";
+	public static string PorePressure = "PorePressure";
+	public static string PorePressureGradient = "PorePressureGradient";
+	public static string FracturingPressure = "FracturingPressure";
+	public static string FracturingPressureGradient = "FracturingPressureGradient";
+	public static string CollapsePressure = "CollapsePressure";
+	public static string CollapsePressureGradient = "CollapsePressureGradient";
+	public static string ShearRate = "ShearRate";
+	public static string ShearStress = "ShearStress";
+	public static string MinimumHorizontalStress = "MinimumHorizontalStress";
+	public static string MinimumHorizontalStressGradient = "MinimumHorizontalStressGradient";
+	public static string OverburdenPressure = "OverburdenPressure";
+	public static string OverburdenPressureGradient = "OverburdenPressureGradient";
+	public static string BOPOpening = "BOPOpening";
+	public static string BOPPressure = "BOPPressure";
+	public static string MPDChokeOpening = "MPDChokeOpening";
+	public static string MPDChokePressure = "MPDChokePressure";
+	public static string MPDPumpRate = "MPDPumpRate";
+	public static string MPDPumpFlowRate = "MPDPumpFlowRate";
+	public static string GasFlowRate = "GasFlowRate";
+	public static string BackPressurePumpPressure = "BackPressurePumpPressure";
+	public static string MechanicalSpecificEnergy = "MechanicalSpecificEnergy";
 	public static string Clock = "Clock";
 	public static string SynchronizationGroup = "SynchronizationGroup";
 	public static string TimeReference = "TimeReference";

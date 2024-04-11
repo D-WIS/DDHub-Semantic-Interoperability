@@ -1881,7 +1881,7 @@
 <http://ddhub.no/IsImpactDescriptionSignalFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
 <http://ddhub.no/IsDependentOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://ddhub.no/IsDependentOn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/IsDependentOn> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsDependentOn> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/IsDependentOn> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
 <http://ddhub.no/HasPressureReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://ddhub.no/HasPressureReference> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
@@ -2465,10 +2465,10 @@
 <http://ddhub.no/IsTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
 <http://ddhub.no/IsIdlingAfterTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
 <http://ddhub.no/IsImpactDescriptionSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
-<http://ddhub.no/IsDependentOn> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
-<http://ddhub.no/HasPressureReference> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
-<http://ddhub.no/HasTemperatureReference> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
-<http://ddhub.no/HasElevationReference> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/IsDependentOn> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to describe a general dependence relationship between a `DrillingDataPoint` and something else.\n"@EN .
+<http://ddhub.no/HasPressureReference> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is a specialization of `IsDependentOn` and refers to the specific dependence on a pressure reference.\n"@EN .
+<http://ddhub.no/HasTemperatureReference> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is a specialization of `IsDependentOn` and refers to the specific dependence on a temperature reference.\n"@EN .
+<http://ddhub.no/HasElevationReference> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is a specialization of `IsDependentOn` and refers to the specific dependence on an elevation reference.\n"@EN .
 <http://ddhub.no/Controls> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
 <http://ddhub.no/HasFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
 <http://ddhub.no/IsCommandFor> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
