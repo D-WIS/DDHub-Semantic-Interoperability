@@ -5,6 +5,11 @@
 [<img src="generated/PhysicalLocation.png" width="600px">](./generated/PhysicalLocation.png)
 
 ---
+[SignalPrototypes.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/SignalPrototypes.md)
+
+[<img src="generated/SignalPrototypes.png" width="600px">](./generated/SignalPrototypes.png)
+
+---
 [TimeManagement.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/TimeManagement.md)
 
 [<img src="generated/TimeManagement.png" width="600px">](./generated/TimeManagement.png)
