@@ -497,6 +497,9 @@
 - Attributes:
 - Specialization:
 - Description: 
+- Obsolete: true
+- Will be removed by: 31 Dec 2024
+- Replaced by: ThreeWayValve
 - Examples:
 ## ThreeWayValve <!-- NOUN -->
 - Display name: ThreeWayValve

@@ -49,6 +49,18 @@ namespace DWIS.Vocabulary.Utils
             {
                 nounBuilder.AppendLine("- Definition set: " + noun.DefinitionSetName);
             }
+            if (noun.IsObsolete)
+            {
+                nounBuilder.AppendLine("- Obsolete: true");
+                if (noun.WillBeRemovedBy > DateTime.MinValue)
+                {
+                    nounBuilder.AppendLine("- Will be removed by: " + noun.WillBeRemovedBy.ToShortDateString());
+                }
+                if (!string.IsNullOrEmpty(noun.ReplacedBy))
+                {
+                    nounBuilder.AppendLine("- Replaced by: " + noun.ReplacedBy);
+                }
+            }
             if (noun.Examples != null && noun.Examples.Length > 0)
             {
                 List<string> examples = PostProcessExample(noun.Examples);
@@ -307,6 +319,18 @@ namespace DWIS.Vocabulary.Utils
                 foreach (string desc in verb.Description)
                 {
                     verbBuilder.AppendLine(desc);
+                }
+            }
+            if (verb.IsObsolete)
+            {
+                verbBuilder.AppendLine("- Obsolete: true");
+                if (verb.WillBeRemovedBy > DateTime.MinValue)
+                {
+                    verbBuilder.AppendLine("- Will be removed by: " + verb.WillBeRemovedBy.ToShortDateString());
+                }
+                if (!string.IsNullOrEmpty(verb.ReplacedBy))
+                {
+                    verbBuilder.AppendLine("- Replaced by: " + verb.ReplacedBy);
                 }
             }
             if (verb.Examples != null && verb.Examples.Length > 0)
