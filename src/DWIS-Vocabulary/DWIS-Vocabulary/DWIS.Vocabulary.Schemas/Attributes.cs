@@ -3,10 +3,10 @@ namespace DWIS.Vocabulary.Schemas
 {
 public static class Attributes
 {
-	public static string RunnableFunction_MainFunction = "MainFunction";
-	public static string RunnableFunction_MainFunction_Type = "string";
-	public static string RunnableFunction_AuxiliaryFunction = "AuxiliaryFunction";
-	public static string RunnableFunction_AuxiliaryFunction_Type = "string";
+	public static string ActivableFunction_HasFunction = "HasFunction";
+	public static string ActivableFunction_HasFunction_Type = "string";
+	public static string RunnableFunction_IsAuxiliary = "IsAuxiliary";
+	public static string RunnableFunction_IsAuxiliary_Type = "boolean";
 	public static string Advisor_AdviceType = "AdviceType";
 	public static string Advisor_AdviceType_Type = "string";
 	public static string BandPassFilter_MinFrequency = "MinFrequency";

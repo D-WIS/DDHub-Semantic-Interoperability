@@ -7,7 +7,7 @@ namespace DWIS.Vocabulary.Development
         public string Type { get; set; }
         public string Name { get; set; }
         public string DisplayName { get; set; }
-        public string Description { get; set; }
+        public string[] Description { get; set; }
 
         public NounAttribute() { }
         public NounAttribute(NounAttribute other)

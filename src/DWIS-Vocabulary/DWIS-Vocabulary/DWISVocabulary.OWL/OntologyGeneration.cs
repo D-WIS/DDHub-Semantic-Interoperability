@@ -112,7 +112,15 @@ namespace DWIS.Vocabulary.OWL
                     //RDFOntologyCardinalityRestriction cardinalityRestriction = new RDFOntologyCardinalityRestriction(AttributeCardinalityRestriction, prop, 1, 1);
                     //ontology.Model.ClassModel.AddRestriction(cardinalityRestriction);
                     //ontology.Model.PropertyModel.AddStandardAnnotation(RDFSemanticsEnums.RDFOntologyStandardAnnotation.Comment, prop, new RDFOntologyLiteral(new RDFPlainLiteral(attribute.Description, "En")));
-                    ontology.Model.PropertyModel.AnnotateProperty(propertyResource, RDFVocabulary.RDFS.COMMENT, new RDFPlainLiteral(attribute.Description, "En"));
+                    string attributeDescription = string.Empty;
+                    if (attribute.Description != null)
+                    {
+                        foreach (string s in attribute.Description)
+                        {
+                            attributeDescription += s + "\n";
+                        }
+                    }
+                    ontology.Model.PropertyModel.AnnotateProperty(propertyResource, RDFVocabulary.RDFS.COMMENT, new RDFPlainLiteral(attributeDescription, "En"));
                 }
             }
 

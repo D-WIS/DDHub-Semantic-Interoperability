@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.ExceptionServices;
 using System.Text;
+using System.Threading;
 using DWIS.Vocabulary.Development;
 
 namespace DWIS.Vocabulary.Utils
@@ -25,8 +26,18 @@ namespace DWIS.Vocabulary.Utils
                 foreach (var att in noun.NounAttributes)
                 {
                     nounBuilder.AppendLine("  - " + att.Name);
-                    nounBuilder.AppendLine("    - Type: " + att.Type);
-                    nounBuilder.AppendLine("    - Description: " + att.Description);
+                    if (!string.IsNullOrEmpty(att.Type))
+                    {
+                        nounBuilder.AppendLine("    - Type: " + att.Type);
+                    }
+                    if (att.Description != null && att.Description.Length > 0)
+                    {
+                        nounBuilder.AppendLine("    - Description: " + att.Description[0]);
+                        for (int i = 1; i < att.Description.Length; i++)
+                        {
+                            nounBuilder.AppendLine("    " + att.Description[i]);
+                        }
+                    }
                 }
             }
             if (noun.SpecializedNounAttributes != null && noun.SpecializedNounAttributes.Length > 0)
@@ -49,7 +60,7 @@ namespace DWIS.Vocabulary.Utils
             {
                 nounBuilder.AppendLine("- Definition set: " + noun.DefinitionSetName);
             }
-            if (noun.IsObsolete)
+            if (noun.IsDeprecated)
             {
                 nounBuilder.AppendLine("- Obsolete: true");
                 if (noun.WillBeRemovedBy > DateTime.MinValue)
@@ -63,7 +74,7 @@ namespace DWIS.Vocabulary.Utils
             }
             if (noun.Examples != null && noun.Examples.Length > 0)
             {
-                List<string> examples = PostProcessExample(noun.Examples);
+                List<string> examples = PostProcessExample(noun.Examples, vocabulary);
                 foreach (var line in examples)
                 {
                     if (!string.IsNullOrEmpty(line))
@@ -74,7 +85,7 @@ namespace DWIS.Vocabulary.Utils
             }
         }
 
-        private static List<string> PostProcessExample(string[] inputLines)
+        private static List<string> PostProcessExample(string[] inputLines, Development.Vocabulary vocabulary)
         {
             List<string> lines = new List<string>
             {
@@ -86,32 +97,35 @@ namespace DWIS.Vocabulary.Utils
             foreach (string l in inputLines)
             {
                 bool skip = false;
-                if (l.Contains("```") && (l.Contains("ddhub") || l.Contains("DDHUB") || l.Contains("DDHub")))
+                if (l.Contains("```") && (l.Contains("dwis") || l.Contains("DWIS")))
                 {
                     lines.Add(l);
                     skip = true;
                     insideADDHubBlock = true;
-                    int pos = l.LastIndexOf("ddhub");
+                    int pos = l.LastIndexOf("dwis");
                     if (pos < 0)
                     {
-                        pos = l.LastIndexOf("DDHUB");
-                    }
-                    if (pos < 0)
-                    {
-                        pos = l.LastIndexOf("DDHub");
+                        pos = l.LastIndexOf("DWIS");
                     }
                     if (pos >= 0)
                     {
-                        string rest = l.Substring(pos + 5);
-                        string[] tokens = rest.Split(' ', '\t');
-                        if (tokens != null)
+                        string rest = null;
+                        if (pos + 5 < l.Length)
                         {
-                            queryArguments = new List<string>();
-                            foreach (string s in tokens)
+                            rest = l.Substring(pos + 5);
+                            if (!string.IsNullOrEmpty(rest))
                             {
-                                if (!string.IsNullOrEmpty(s))
+                                string[] tokens = rest.Split(' ', '\t');
+                                if (tokens != null)
                                 {
-                                    queryArguments.Add(s);
+                                    queryArguments = new List<string>();
+                                    foreach (string s in tokens)
+                                    {
+                                        if (!string.IsNullOrEmpty(s))
+                                        {
+                                            queryArguments.Add(s);
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -123,10 +137,10 @@ namespace DWIS.Vocabulary.Utils
                     lines.Add(l);
                     skip = true;
                     insideADDHubBlock = false;
-                    GenerateMermaid(ddhub, lines);
+                    GenerateMermaid(ddhub, lines, vocabulary);
                     if (queryArguments != null && queryArguments.Count > 0)
                     {
-                        GenerateSparQL(ddhub, queryArguments, lines);
+                        GenerateSparQL(ddhub, queryArguments, lines, vocabulary);
                     }
                     ddhub = null;
                     queryArguments = null;
@@ -142,7 +156,7 @@ namespace DWIS.Vocabulary.Utils
                                 string[] tokens = l.Split(':', ' ', '\t');
                                 if (tokens != null && tokens.Length >= 2 && !string.IsNullOrEmpty(tokens[0]) && !string.IsNullOrEmpty(tokens[1]))
                                 {
-                                    ddhub.Add(new Tuple<string, string, string>(tokens[1].Trim(), "BelongsTo", tokens[0].Trim()));
+                                    ddhub.Add(new Tuple<string, string, string>(tokens[1].Trim(), "BelongsToClass", tokens[0].Trim()));
                                 }
                             }
                             else
@@ -164,7 +178,7 @@ namespace DWIS.Vocabulary.Utils
             return lines;
         }
 
-        private static void GenerateMermaid(List<Tuple<string, string, string>> facts, List<string> outputs)
+        private static void GenerateMermaid(List<Tuple<string, string, string>> facts, List<string> outputs, Development.Vocabulary vocabulary)
         {
             outputs.Add("An example semantic graph looks like as follow:");
             outputs.Add("```mermaid");
@@ -190,7 +204,30 @@ namespace DWIS.Vocabulary.Utils
                     string str = "\t";
                     str += dict[fact.Item1] + "[" + fact.Item1 + "] ";
                     str += "-->|" + fact.Item2 + "| ";
-                    str += dict[fact.Item3] + "[" + fact.Item3 + "] ";
+                    bool isVerb = false;
+                    if (vocabulary != null && vocabulary.Verbs != null)
+                    {
+                        foreach (Verb v in vocabulary.Verbs)
+                        {
+                            if (v != null && v.Name == fact.Item2)
+                            {
+                                isVerb = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (fact.Item2 == "BelongsToClass")
+                    {
+                        str += dict[fact.Item3] + "(" + fact.Item3 + ") ";
+                    }
+                    else if (isVerb)
+                    {
+                        str += dict[fact.Item3] + "[" + fact.Item3 + "] ";
+                    }
+                    else
+                    {
+                        str += dict[fact.Item3] + "((" + fact.Item3 + ")) ";
+                    }
                     outputs.Add(str);
                 }
             }
@@ -198,7 +235,7 @@ namespace DWIS.Vocabulary.Utils
 
         }
 
-        private static void GenerateSparQL(List<Tuple<string, string, string>> facts, List<string> queryArguments, List<string> outputs)
+        private static void GenerateSparQL(List<Tuple<string, string, string>> facts, List<string> queryArguments, List<string> outputs, Development.Vocabulary vocabulary)
         {
             outputs.Add("An example SparQL query looks like this:");
             outputs.Add("```sparql");
@@ -218,13 +255,27 @@ namespace DWIS.Vocabulary.Utils
                 select += ProcessSparQLVariable(arg);
             }
             outputs.Add(select);
+            List<string> filters = new List<string>();
+            int attrCount = 0;
             outputs.Add("WHERE {");
             foreach (var fact in facts)
             {
                 if (fact != null)
                 {
+                    bool isVerb = false;
+                    if (vocabulary != null && vocabulary.Verbs != null)
+                    {
+                        foreach (Verb v in vocabulary.Verbs)
+                        {
+                            if (v != null && v.Name == fact.Item2)
+                            {
+                                isVerb = true;
+                                break;
+                            }
+                        }
+                    }
                     string str = null;
-                    if (fact.Item2 == "BelongsTo")
+                    if (fact.Item2 == "BelongsToClass")
                     {
                         str = "\t" + ProcessSparQLVariable(fact.Item1) + " rdf:type " + "ddhub:" + fact.Item3 + " .";
                     }
@@ -232,12 +283,39 @@ namespace DWIS.Vocabulary.Utils
                     {
                         str = "\t" + ProcessSparQLVariable(fact.Item1) + " ddhub:IsOfMeasurableQuantity " + "quantity:" + fact.Item3 + " .";
                     }
-                    else
+                    else if (isVerb)
                     {
                         str = "\t" + ProcessSparQLVariable(fact.Item1) + " ddhub:" + fact.Item2 + " " + ProcessSparQLVariable(fact.Item3) + " .";
                     }
-                    outputs.Add(str);
+                    else
+                    {
+                        str = "\t" + ProcessSparQLVariable(fact.Item1) + " ddhub:" + fact.Item2 + " " + "?Attribute" + attrCount.ToString("000") + " .";
+                        filters.Add("\t" + "?Attribute" + attrCount.ToString("000") + " = " + fact.Item3);
+                        attrCount++;
+                    }
+                    if (str != null)
+                    {
+                        outputs.Add(str);
+                    }
                 }
+            }
+            if (filters != null && filters.Count > 0)
+            {
+                outputs.Add("  FILTER (");
+                first = true;
+                foreach (string f in filters)
+                {
+                    if (first)
+                    {
+                        outputs.Add(f);
+                        first = false;
+                    }
+                    else
+                    {
+                        outputs.Add("\t&& " + f);
+                    }
+                }
+                outputs.Add("  )");
             }
             outputs.Add("}");
             outputs.Add("```");
@@ -255,7 +333,7 @@ namespace DWIS.Vocabulary.Utils
             }
         }
 
-        private static string GetLink(string name, bool singleFile = true, DWIS.Vocabulary.Development.Vocabulary vocabulary = null, string route = "./")
+        private static string GetLink(string name, bool singleFile = true, Development.Vocabulary vocabulary = null, string route = "./")
         {
             if (singleFile)
             {
@@ -321,7 +399,7 @@ namespace DWIS.Vocabulary.Utils
                     verbBuilder.AppendLine(desc);
                 }
             }
-            if (verb.IsObsolete)
+            if (verb.IsDeprecated)
             {
                 verbBuilder.AppendLine("- Obsolete: true");
                 if (verb.WillBeRemovedBy > DateTime.MinValue)
@@ -335,7 +413,7 @@ namespace DWIS.Vocabulary.Utils
             }
             if (verb.Examples != null && verb.Examples.Length > 0)
             {
-                List<string> examples = PostProcessExample(verb.Examples);
+                List<string> examples = PostProcessExample(verb.Examples, vocabulary);
                 foreach (var line in examples)
                 {
                     if (!string.IsNullOrEmpty(line))

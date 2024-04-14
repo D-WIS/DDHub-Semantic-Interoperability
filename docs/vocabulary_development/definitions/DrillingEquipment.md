@@ -497,7 +497,7 @@
 - Attributes:
 - Specialization:
 - Description: 
-- Obsolete: true
+- Deprecated: true
 - Will be removed by: 31 Dec 2024
 - Replaced by: ThreeWayValve
 - Examples:

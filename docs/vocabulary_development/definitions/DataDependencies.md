@@ -12,7 +12,7 @@
 - Object class: DWISNoun
 - Description: This verb is used to describe a general dependence relationship between a `DrillingDataPoint` and something else.
 - Examples: 
-```ddhub DerrickFloorElevation HeaveElevation TideElevation
+```dwis DerrickFloorElevation HeaveElevation TideElevation
 DerickFloorVerticalLocation:DerrickFloor
 DerivedMeasurement:DerrickFloorElevation
 Measurement:HeaveElevation
@@ -33,7 +33,7 @@ depends on the heave measurement, `HeaveElevation`, and the tide measurement, `T
 - Object class: DrillingDataPoint
 - Description: This verb is a specialization of `IsDependentOn` and refers to the specific dependence on a pressure reference.
 - Examples: 
-```ddhub MeasuredDrillingFluidDensity MeasuredTemperature MeasuredPressure
+```dwis MeasuredDrillingFluidDensity MeasuredTemperature MeasuredPressure
 Measurement:MeasuredDrillingFluidDensity
 Measurement:MeasuredTemperature
 Measurement:MeasuredPressure
@@ -53,7 +53,7 @@ at `MeasuredPressure`.
 - Object class: DrillingDataPoint
 - Description: This verb is a specialization of `IsDependentOn` and refers to the specific dependence on a temperature reference.
 - Examples: 
-```ddhub MeasuredDrillingFluidDensity MeasuredTemperature MeasuredPressure
+```dwis MeasuredDrillingFluidDensity MeasuredTemperature MeasuredPressure
 Measurement:MeasuredDrillingFluidDensity
 Measurement:MeasuredTemperature
 Measurement:MeasuredPressure
@@ -73,7 +73,7 @@ at `MeasuredTemperature`.
 - Object class: Location
 - Description: This verb is a specialization of `IsDependentOn` and refers to the specific dependence on an elevation reference.
 - Examples: 
-```ddhub MeasuredStandPipePressure DerrickFloorElevation HeaveElevation TideElevation
+```dwis MeasuredStandPipePressure DerrickFloorElevation HeaveElevation TideElevation
 Measurement:MeasuredStandPipePressure
 DerickFloorVerticalLocation:DerrickFloor
 DerivedMeasurement:DerrickFloorElevation

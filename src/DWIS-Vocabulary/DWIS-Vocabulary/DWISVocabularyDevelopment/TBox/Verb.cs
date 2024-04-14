@@ -14,8 +14,9 @@ namespace DWIS.Vocabulary.Development
         public string[] Description { get; set; } = null;
         public string[] Examples { get; set; } = null;
         public string DefinitionSetName { get; set; } = null;
-        public bool IsObsolete { get; set; } = false;
+        public bool IsDeprecated { get; set; } = false;
         public DateTime WillBeRemovedBy { get; set; } = DateTime.MinValue;
+        public string WillBeRemovedFromVersion { get; set; } = null;
         public string ReplacedBy { get; set; } = null;
 
         public Verb() { }
@@ -32,8 +33,9 @@ namespace DWIS.Vocabulary.Development
             DefinitionSetName = other.DefinitionSetName;
             MinCardinality = other.MinCardinality;
             MaxCardinality = other.MaxCardinality;
-            IsObsolete = other.IsObsolete;
+            IsDeprecated = other.IsDeprecated;
             WillBeRemovedBy = other.WillBeRemovedBy;
+            WillBeRemovedFromVersion = other.WillBeRemovedFromVersion;
             ReplacedBy = other.ReplacedBy;
         }
 
@@ -61,8 +63,9 @@ namespace DWIS.Vocabulary.Development
                  && DefinitionSetName == other.DefinitionSetName
                  && MinCardinality == other.MinCardinality
                  && MaxCardinality == other.MaxCardinality
-                 && IsObsolete == other.IsObsolete
+                 && IsDeprecated == other.IsDeprecated
                  && WillBeRemovedBy == other.WillBeRemovedBy
+                 && WillBeRemovedFromVersion == other.WillBeRemovedFromVersion
                  && ReplacedBy == other.ReplacedBy;
         }
 

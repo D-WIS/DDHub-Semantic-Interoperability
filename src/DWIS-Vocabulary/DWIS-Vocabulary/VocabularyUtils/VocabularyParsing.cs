@@ -146,30 +146,41 @@ namespace DWIS.Vocabulary.Utils
                 foreach (var att in attributes)
                 {
                     string attributeName = string.Empty;
-                    string description = string.Empty;
+                    List<string> description = null;
                     string dataType = string.Empty;
+                    bool insideDescription = false;
                     foreach (string l in att)
                     {
                         if (l.StartsWith("  - "))
                         {
                             attributeName = l.Remove(0, "  - ".Length).Trim().TrimEnd();
+                            insideDescription = false;                         
                         }
                         else if (l.StartsWith("    - Description:"))
                         {
-                            description = l.Remove(0, "    - Description:".Length).Trim().TrimEnd();
+                            description = new List<string>() { l.Remove(0, "    - Description:".Length).Trim().TrimEnd()};
+                            insideDescription = true;
                         }
                         else if (l.StartsWith("    - Type:"))
                         {
                             dataType = l.Remove(0, "    - Type:".Length).Trim().TrimEnd();
+                            insideDescription = false;
+                        }
+                        else if (insideDescription && description != null) 
+                        {
+                            description.Add(l);
                         }
                     }
                     if (!string.IsNullOrEmpty(attributeName) && !string.IsNullOrEmpty(dataType))
                     {
-                        NounAttribute nounAttribute = new NounAttribute() { Name = attributeName, Type = dataType, Description = description };
-
+                        NounAttribute nounAttribute = new NounAttribute() { Name = attributeName, Type = dataType };
+                        if (description != null && description.Count > 0)
+                        {
+                            nounAttribute.Description = description.ToArray();
+                        }
                         if (noun.NounAttributes == null)
                         {
-                            noun.NounAttributes = new NounAttribute[1] { nounAttribute };
+                            noun.NounAttributes = new NounAttribute[] { nounAttribute };
                         }
                         else
                         {
@@ -213,13 +224,13 @@ namespace DWIS.Vocabulary.Utils
                     }
                 }
             }
-            else if (header.StartsWith("- Obsolete:"))
+            else if (header.StartsWith("- Deprecated:"))
             {
-                string boolStr = header.Remove(0, "- Obsolete: ".Length).Trim().TrimEnd();
-                bool obsolete;
-                if (Numeric.TryParse(boolStr, out obsolete))
+                string boolStr = header.Remove(0, "- Deprecated: ".Length).Trim().TrimEnd();
+                bool deprecated;
+                if (Numeric.TryParse(boolStr, out deprecated))
                 {
-                    noun.IsObsolete = obsolete;
+                    noun.IsDeprecated = deprecated;
                 }
             }
             else if (header.StartsWith("- Will be removed by:"))
@@ -230,6 +241,10 @@ namespace DWIS.Vocabulary.Utils
                 {
                     noun.WillBeRemovedBy = date;
                 }
+            }
+            else if (header.StartsWith("- Will be removed from version:"))
+            {
+                noun.WillBeRemovedFromVersion = header.Remove(0, "- Will be removed from version: ".Length).Trim().TrimEnd();
             }
             else if (header.StartsWith("- Replaced by:"))
             {
@@ -288,13 +303,13 @@ namespace DWIS.Vocabulary.Utils
                     verb.MaxCardinality = temp;
                 }
             }
-            else if (header.StartsWith("- Obsolete:"))
+            else if (header.StartsWith("- Deprecated:"))
             {
-                string boolStr = header.Remove(0, "- Obsolete: ".Length).Trim().TrimEnd();
-                bool obsolete;
-                if (Numeric.TryParse(boolStr, out obsolete))
+                string boolStr = header.Remove(0, "- Deprecated: ".Length).Trim().TrimEnd();
+                bool deprecated;
+                if (Numeric.TryParse(boolStr, out deprecated))
                 {
-                    verb.IsObsolete = obsolete;
+                    verb.IsDeprecated = deprecated;
                 }
             }
             else if (header.StartsWith("- Will be removed by:"))
@@ -305,6 +320,10 @@ namespace DWIS.Vocabulary.Utils
                 {
                     verb.WillBeRemovedBy = date;
                 }
+            }
+            else if (header.StartsWith("- Will be removed from version:"))
+            {
+                verb.WillBeRemovedFromVersion = header.Remove(0, "- Will be removed from version: ".Length).Trim().TrimEnd();
             }
             else if (header.StartsWith("- Replaced by:"))
             {
@@ -560,17 +579,13 @@ namespace DWIS.Vocabulary.Utils
                     insideABlock = !insideABlock;
                     if (insideABlock)
                     {
-                        insideADDHubBlock = line.Contains("ddhub") || line.Contains("DDHUB") || line.Contains("DDHub");
+                        insideADDHubBlock = line.Contains("dwis") || line.Contains("DWIS");
                         if (insideADDHubBlock)
                         {
-                            int pos = line.LastIndexOf("ddhub");
+                            int pos = line.LastIndexOf("dwis");
                             if (pos < 0)
                             {
-                                pos = line.LastIndexOf("DDHUB");
-                            }
-                            if (pos < 0)
-                            {
-                                pos = line.LastIndexOf("DDHub");
+                                pos = line.LastIndexOf("DWIS");
                             }
                             if (pos >= 0)
                             {

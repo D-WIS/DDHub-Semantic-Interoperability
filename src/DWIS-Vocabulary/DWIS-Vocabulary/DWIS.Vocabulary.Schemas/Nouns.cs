@@ -7,11 +7,11 @@ public enum Enum
 {
 ActivableFunction,
 RunnableFunction,
+ControllerFunction,
+ProcedureFunction,
 ProtectionFunction,
 FDIRFunction,
 SOEFunction,
-ControllerFunction,
-ProcedureFunction,
 DataFlowNode,
 Plan,
 OperationalPlan,
@@ -504,11 +504,11 @@ SensorUncertainty
 }
 	public static string ActivableFunction = "ActivableFunction";
 	public static string RunnableFunction = "RunnableFunction";
+	public static string ControllerFunction = "ControllerFunction";
+	public static string ProcedureFunction = "ProcedureFunction";
 	public static string ProtectionFunction = "ProtectionFunction";
 	public static string FDIRFunction = "FDIRFunction";
 	public static string SOEFunction = "SOEFunction";
-	public static string ControllerFunction = "ControllerFunction";
-	public static string ProcedureFunction = "ProcedureFunction";
 	public static string DataFlowNode = "DataFlowNode";
 	public static string Plan = "Plan";
 	public static string OperationalPlan = "OperationalPlan";
