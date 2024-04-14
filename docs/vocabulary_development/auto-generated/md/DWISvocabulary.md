@@ -1,7 +1,7 @@
 # Definition sets
 ## ADCS<!-- DEFINITION SET HEADER -->
 - Description: 
-this category refers to the various functions an ADCS implements. It is to be used for the ADCS capability description.
+this definition set refers to the various functions an ADCS implements. It is to be used for the ADCS capability description.
 
 ## DataDependencies<!-- DEFINITION SET HEADER -->
 - Description: 
@@ -83,59 +83,382 @@ this category contains the nouns and verbs required to describe the various type
 ## ActivableFunction <!-- NOUN -->
 - Display name: Activable Function
 - Parent class: [DWISNoun](#DWISNoun)
+- Attributes:
+  - HasFunction
+    - Type: string
+    - Description: this attribute describes the purpose of the activable function.
 - Description: 
-
+An `ActivableFunction` is an ADCS function that can be activated. Here activation means that the
+function may run immediately or that it is enabled and can trigger if some conditions are respected.
 - Definition set: ADCS
 - Examples:
+```dwis ADCSFunction
+ActivableFunction:ADCSFunction
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+ActivableFunction IsProvidedBy DCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ADCSFunction] -->|BelongsToClass| N0001(ActivableFunction) 
+	N0002[DCS] -->|BelongsToClass| N0003(ControlSystem) 
+	N0004[Contractor] -->|BelongsToClass| N0005(DrillingContractor) 
+	N0002[DCS] -->|IsProvidedBy| N0004((Contractor)) 
+	N0002[DCS] -->|BelongsToClass| N0006(DataProvider) 
+	N0001[ActivableFunction] -->|IsProvidedBy| N0002((DCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ADCSFunction
+WHERE {
+	?ADCSFunction rdf:type ddhub:ActivableFunction .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS ddhub:IsProvidedBy ?Attribute000 .
+	?DCS rdf:type ddhub:DataProvider .
+	?ActivableFunction ddhub:IsProvidedBy ?Attribute001 .
+  FILTER (
+	?Attribute000 = Contractor
+	&& 	?Attribute001 = DCS
+  )
+}
+```
+This example describes all `ActivableFunction` provided by the drilling control system, `DCS`. The `DCS` is 
+defined as a `ControlSystem` provided by a drilling contractor.
 ## RunnableFunction <!-- NOUN -->
 - Display name: Runnable Function
 - Parent class: [ActivableFunction](#ActivableFunction)
 - Attributes:
-  - MainFunction
-    - Type: string
-    - Description: 
-  - AuxiliaryFunction
-    - Type: string
-    - Description: 
+  - IsAuxiliary
+    - Type: boolean
+    - Description: This attribute specifies if the function is a main or an auxilary one. A main function impacts
+        substantially the drilling process while an auxiliary function does not impact or only in limited fashion the
+        drilling process. Example of a main functions are: Hoist, Tag Bottom, Start Circulation, Start Rotation, 
+        Stop Circulation, Stop Rotation, Drill, Pull Out,Run In, Pull Out With Lubrication, Run In With Lubrication, Ream Up, 
+        Ream Down,Test Friction, Reciprocate, Test Pressure Integrity, Place Cement, .... Example of auxiliary functions
+        are: Boost Riser Flow, Down Link from ADCS, Rock Pipe, ...
 - Description: 
-
+A runnable function is a function that starts to run immediately when activated.
 - Definition set: ADCS
 - Examples:
-## ProtectionFunction <!-- NOUN -->
-- Display name: Protection Function
-- Parent class: [ActivableFunction](#ActivableFunction)
-- Description: 
-
-- Definition set: ADCS
-- Examples:
-## FDIRFunction <!-- NOUN -->
-- Display name: FDIR Function
-- Parent class: [ProtectionFunction](#ProtectionFunction)
-- Description: 
-
-- Definition set: ADCS
-- Examples:
-## SOEFunction <!-- NOUN -->
-- Display name: SOE Function
-- Parent class: [ProtectionFunction](#ProtectionFunction)
-- Description: 
-
-- Definition set: ADCS
-- Examples:
+```dwis runnableFunction
+RunnableFunction:runnableFunction
+runnableFunction IsAuxiliary false
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+runnableFunction IsProvidedBy DCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[runnableFunction] -->|BelongsToClass| N0001(RunnableFunction) 
+	N0000[runnableFunction] -->|IsAuxiliary| N0002((false)) 
+	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
+	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
+	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
+	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
+	N0000[runnableFunction] -->|IsProvidedBy| N0003((DCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?runnableFunction
+WHERE {
+	?runnableFunction rdf:type ddhub:RunnableFunction .
+	?runnableFunction ddhub:IsAuxiliary ?Attribute000 .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS ddhub:IsProvidedBy ?Attribute001 .
+	?DCS rdf:type ddhub:DataProvider .
+	?runnableFunction ddhub:IsProvidedBy ?Attribute002 .
+  FILTER (
+	?Attribute000 = false
+	&& 	?Attribute001 = Contractor
+	&& 	?Attribute002 = DCS
+  )
+}
+```
+This example describes all the main runnable functions provided by the drilling control system, `DCS`. The `DCS` is 
+defined as a `ControlSystem` provided by a drilling contractor.
 ## ControllerFunction <!-- NOUN -->
 - Display name: Controller Function
 - Parent class: [RunnableFunction](#RunnableFunction)
 - Description: 
-
+A `ControllerFunction` is a `RunnableFunction` that executes a feedback control loop to follow as closely
+as possible one or several desired values. A typical example of `ControllerFunction` is the `AutoDriller`. An `AutoDriller` 
+follows as closely as possible, for instance, a desired `WOB`.
 - Definition set: ADCS
 - Examples:
+```dwis autoDriller
+ControllerFunction:autoDriller
+autoDriller HasFunction "Drill"
+autoDriller IsAuxiliary false
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+autoDriller IsProvidedBy DCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[autoDriller] -->|BelongsToClass| N0001(ControllerFunction) 
+	N0000[autoDriller] -->|HasFunction| N0002(("Drill")) 
+	N0000[autoDriller] -->|IsAuxiliary| N0003((false)) 
+	N0004[DCS] -->|BelongsToClass| N0005(ControlSystem) 
+	N0006[Contractor] -->|BelongsToClass| N0007(DrillingContractor) 
+	N0004[DCS] -->|IsProvidedBy| N0006((Contractor)) 
+	N0004[DCS] -->|BelongsToClass| N0008(DataProvider) 
+	N0000[autoDriller] -->|IsProvidedBy| N0004((DCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?autoDriller
+WHERE {
+	?autoDriller rdf:type ddhub:ControllerFunction .
+	?autoDriller ddhub:HasFunction ?Attribute000 .
+	?autoDriller ddhub:IsAuxiliary ?Attribute001 .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS ddhub:IsProvidedBy ?Attribute002 .
+	?DCS rdf:type ddhub:DataProvider .
+	?autoDriller ddhub:IsProvidedBy ?Attribute003 .
+  FILTER (
+	?Attribute000 = "Drill"
+	&& 	?Attribute001 = false
+	&& 	?Attribute002 = Contractor
+	&& 	?Attribute003 = DCS
+  )
+}
+```
+This example describes the auto driller provided by the drilling control system, `DCS`. The `DCS` is 
+defined as a `ControlSystem` provided by a drilling contractor. It is a main function and its purpose is to `Drill`.
 ## ProcedureFunction <!-- NOUN -->
 - Display name: Procedure Function
 - Parent class: [RunnableFunction](#RunnableFunction)
 - Description: 
-
+A `ProcedureFunction` is a `RunnableFunction` that executes a finites state automaton, i.e., a graph of
+transitions between states. It should be noted that a `ProcedureFunction` may use control algorithms while being in one
+state or when transiting from state to state. An example of `ProcedureFunction` is a friction test. A friction test has
+at least three states: rotation off bottom, pick-up without rotation, slack-off without rotation. The transitions 
+between the different states may depend on the implementation. Each of those states uses a controller, one that controls
+the rotational speed and one that controls the axial speed.
 - Definition set: ADCS
 - Examples:
+```dwis frictionTest
+ProcedureFunction:frictionTest
+frictionTest HasFunction "FrictionTest"
+FrictionTest IsAuxiliary false
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+frictionTest IsProvidedBy DCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[frictionTest] -->|BelongsToClass| N0001(ProcedureFunction) 
+	N0000[frictionTest] -->|HasFunction| N0002(("FrictionTest")) 
+	N0003[FrictionTest] -->|IsAuxiliary| N0004((false)) 
+	N0005[DCS] -->|BelongsToClass| N0006(ControlSystem) 
+	N0007[Contractor] -->|BelongsToClass| N0008(DrillingContractor) 
+	N0005[DCS] -->|IsProvidedBy| N0007((Contractor)) 
+	N0005[DCS] -->|BelongsToClass| N0009(DataProvider) 
+	N0000[frictionTest] -->|IsProvidedBy| N0005((DCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?frictionTest
+WHERE {
+	?frictionTest rdf:type ddhub:ProcedureFunction .
+	?frictionTest ddhub:HasFunction ?Attribute000 .
+	?FrictionTest ddhub:IsAuxiliary ?Attribute001 .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS ddhub:IsProvidedBy ?Attribute002 .
+	?DCS rdf:type ddhub:DataProvider .
+	?frictionTest ddhub:IsProvidedBy ?Attribute003 .
+  FILTER (
+	?Attribute000 = "FrictionTest"
+	&& 	?Attribute001 = false
+	&& 	?Attribute002 = Contractor
+	&& 	?Attribute003 = DCS
+  )
+}
+```
+This example describes the friction test procedure provided by the drilling control system, `DCS`. The `DCS` is 
+defined as a `ControlSystem` provided by a drilling contractor. It is a main function and its purpose is to perform a
+`FrictionTest`.
+## ProtectionFunction <!-- NOUN -->
+- Display name: Protection Function
+- Parent class: [ActivableFunction](#ActivableFunction)
+- Description: 
+A `ProtectionFunction` is an `ActivableFunction`. It must be activated to have an effect, but the effect
+is to protect the drilling process, either by protecting the inputs to the drilling machines to avoid generating 
+a drilling incident, or to detect an abnormal drilling process state and react to the situation.
+detected.
+- Definition set: ADCS
+- Examples:
+```dwis protectionFunction
+ProtectionFunction:protectionFunction
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+protectionFunction IsProvidedBy DCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[protectionFunction] -->|BelongsToClass| N0001(ProtectionFunction) 
+	N0002[DCS] -->|BelongsToClass| N0003(ControlSystem) 
+	N0004[Contractor] -->|BelongsToClass| N0005(DrillingContractor) 
+	N0002[DCS] -->|IsProvidedBy| N0004((Contractor)) 
+	N0002[DCS] -->|BelongsToClass| N0006(DataProvider) 
+	N0000[protectionFunction] -->|IsProvidedBy| N0002((DCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?protectionFunction
+WHERE {
+	?protectionFunction rdf:type ddhub:ProtectionFunction .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS ddhub:IsProvidedBy ?Attribute000 .
+	?DCS rdf:type ddhub:DataProvider .
+	?protectionFunction ddhub:IsProvidedBy ?Attribute001 .
+  FILTER (
+	?Attribute000 = Contractor
+	&& 	?Attribute001 = DCS
+  )
+}
+```
+This example describes all the protection functions of the drilling control system, `DCS`. The `DCS` is 
+defined as a `ControlSystem` provided by a drilling contractor.
+## FDIRFunction <!-- NOUN -->
+- Display name: FDIR Function
+- Parent class: [ProtectionFunction](#ProtectionFunction)
+- Description: 
+A `FDIRFunction` is a `ProtectionFunction` that reacts to a particular state of the drilling process. FDIR
+- Definition set: ADCS
+- Examples:
+```dwis packOffDectionAndReaction
+FDIRFunction:packOffDetectionAndReaction
+packOffDetectionAndReaction HasFunction "PackOffFDIR"
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+packOffDetectionAndReaction IsProvidedBy DCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
+	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002(("PackOffFDIR")) 
+	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
+	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
+	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
+	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
+	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0003((DCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?packOffDectionAndReaction
+WHERE {
+	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
+	?packOffDetectionAndReaction ddhub:HasFunction ?Attribute000 .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS ddhub:IsProvidedBy ?Attribute001 .
+	?DCS rdf:type ddhub:DataProvider .
+	?packOffDetectionAndReaction ddhub:IsProvidedBy ?Attribute002 .
+  FILTER (
+	?Attribute000 = "PackOffFDIR"
+	&& 	?Attribute001 = Contractor
+	&& 	?Attribute002 = DCS
+  )
+}
+```
+This example describes the `packOffDetectionAndReaction` fault detection and isolation procedure of the drilling control
+system for pack-off events, `DCS`. The `DCS` is defined as a `ControlSystem` provided by a drilling contractor.
+## SOEFunction <!-- NOUN -->
+- Display name: SOE Function
+- Parent class: [ProtectionFunction](#ProtectionFunction)
+- Description: 
+A `SOEFunction` is a `ProtectionFunction` that limits the commands that are send to the drilling machines
+to avoid generating a drilling incident. SOE stands for Safe Operating Envelope. A `SOEFunction` protects the inputs
+of the drilling process. An example `SOEFunction` is a swab/surge limits protection. This function limits the axial acceleration
+and speed of the drill-stem to avoid generate swabbing pressure below the maximum of the collapse and pore pressure, and
+surging pressure above the fracturing pressure.
+- Definition set: ADCS
+- Examples:
+```dwis swabSurgeLimits
+SOEFunction:swabSurgeLimits
+swabSurgeLimits HasFunction "SwabSurgeSOE"
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+swabSurgeLimits IsProvidedBy DCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[swabSurgeLimits] -->|BelongsToClass| N0001(SOEFunction) 
+	N0000[swabSurgeLimits] -->|HasFunction| N0002(("SwabSurgeSOE")) 
+	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
+	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
+	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
+	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
+	N0000[swabSurgeLimits] -->|IsProvidedBy| N0003((DCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?swabSurgeLimits
+WHERE {
+	?swabSurgeLimits rdf:type ddhub:SOEFunction .
+	?swabSurgeLimits ddhub:HasFunction ?Attribute000 .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS ddhub:IsProvidedBy ?Attribute001 .
+	?DCS rdf:type ddhub:DataProvider .
+	?swabSurgeLimits ddhub:IsProvidedBy ?Attribute002 .
+  FILTER (
+	?Attribute000 = "SwabSurgeSOE"
+	&& 	?Attribute001 = Contractor
+	&& 	?Attribute002 = DCS
+  )
+}
+```
+This example describes the `swabSurgeLimits` safe operating envelope limits to avoid detrimental swab/surge pressures in 
+the open hole section of the borehole. 
 ## DataFlowNode <!-- NOUN -->
 - Display name: DataFlowNode
 - Parent class: [DWISNoun](#DWISNoun)
@@ -3182,24 +3505,31 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
   - L
     - Type: int
     - Description: Length exponent.
+    SI Unit: meter (m)
   - M
     - Type: int
     - Description: Mass exponent.
+    SI Unit: Kilogram (kg)
   - T
     - Type: int
     - Description: Time exponent.
+    SI Unit: Second (s)
   - I
     - Type: int
     - Description: Electric current exponent.
+    SI Unit: Ampere (A)
   - ThT
     - Type: int
     - Description: Thermodynamic temperature exponent.
+    SI Unit: Kelvin (K)
   - N
     - Type: int
     - Description: Amount of substance exponent.
+    SI Unit: Mole (N)
   - J
     - Type: int
     - Description: Luminous intensity exponent.
+    SI Unit: Candela (cd)
   - SIUnit
     - Type: string
     - Description: 
@@ -3403,9 +3733,11 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
   - ConversionFactorA
     - Type: double
     - Description: Unit conversion from SI unit is performed as:
+    ConvertedValue = ConversionFactorA + SIValue * ConversionFactorB
   - ConversionFactorB
     - Type: double
     - Description: Unit conversion from SI unit is performed as:
+    ConvertedValue = ConversionFactorA + SIValue * ConversionFactorB
 - Description: 
 
 - Definition set: Quantities
@@ -3851,7 +4183,7 @@ Represent the uncertainty associated to a `DrillingDataPoint`.
 - Definition set: Uncertainty
 - Examples:
 This noun is not intended to be used directly in describing a signal. However, it can be useful when formulating a query and then it serves as a generic way to check if there are facts related to uncertainty description for a `DrillingDataPoint`.
-```ddhub dataPoint
+```dwis dataPoint
 DrillingDataPoint:dataPoint
 SignalUncertainty:uncertainty
 dataPoint HasUncertainty uncertainty
@@ -3859,9 +4191,9 @@ dataPoint HasUncertainty uncertainty
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[dataPoint] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[uncertainty] -->|BelongsTo| N0003[SignalUncertainty] 
-	N0000[dataPoint] -->|HasUncertainty| N0002[uncertainty] 
+	N0000[dataPoint] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[uncertainty] -->|BelongsToClass| N0003(SignalUncertainty) 
+	N0000[dataPoint] -->|HasUncertainty| N0002((uncertainty)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -3872,7 +4204,10 @@ SELECT ?dataPoint
 WHERE {
 	?dataPoint rdf:type ddhub:DrillingDataPoint .
 	?uncertainty rdf:type ddhub:SignalUncertainty .
-	?dataPoint ddhub:HasUncertainty ?uncertainty .
+	?dataPoint ddhub:HasUncertainty ?Attribute000 .
+  FILTER (
+	?Attribute000 = uncertainty
+  )
 }
 ```
 This query returns all the `DrillingDataPoint` for which an uncertainty is given.
@@ -3883,7 +4218,7 @@ This query returns all the `DrillingDataPoint` for which an uncertainty is given
 The uncertainty is represented by a Gaussian distribution, i.e., with a `Mean` and a `StandardDeviation`, $\mathcal{N}(\overline{x},{\sigma_{x}}^2)$ where $\overline{x}$ is the `Mean` value and $\sigma_{x}$ is the `StandardDeviation`.
 - Definition set: Uncertainty
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 GaussianUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -3899,17 +4234,17 @@ StdDev#01 HasDynamicValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[GaussianUncertainty] 
-	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[Mean#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[StdDev#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|HasUncertaintyMean| N0004[Mean#01] 
-	N0002[GU#01] -->|HasUncertaintyStandardDeviation| N0005[StdDev#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DynamicDrillingSignal] 
-	N0004[Mean#01] -->|HasDynamicValue| N0006[Signal#01] 
-	N0005[StdDev#01] -->|HasDynamicValue| N0008[Signal#02] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(GaussianUncertainty) 
+	N0000[ddp#01] -->|HasUncertainty| N0002((GU#01)) 
+	N0004[Mean#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[StdDev#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|HasUncertaintyMean| N0004((Mean#01)) 
+	N0002[GU#01] -->|HasUncertaintyStandardDeviation| N0005((StdDev#01)) 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
+	N0004[Mean#01] -->|HasDynamicValue| N0006((Signal#01)) 
+	N0005[StdDev#01] -->|HasDynamicValue| N0008((Signal#02)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -3920,15 +4255,22 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:GaussianUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?Mean#01 rdf:type ddhub:DrillingDataPoint .
 	?StdDev#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasUncertaintyMean ?Mean#01 .
-	?GU#01 ddhub:HasUncertaintyStandardDeviation ?StdDev#01 .
+	?GU#01 ddhub:HasUncertaintyMean ?Attribute001 .
+	?GU#01 ddhub:HasUncertaintyStandardDeviation ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
 	?Signal#02 rdf:type ddhub:DynamicDrillingSignal .
-	?Mean#01 ddhub:HasDynamicValue ?Signal#01 .
-	?StdDev#01 ddhub:HasDynamicValue ?Signal#02 .
+	?Mean#01 ddhub:HasDynamicValue ?Attribute003 .
+	?StdDev#01 ddhub:HasDynamicValue ?Attribute004 .
+  FILTER (
+	?Attribute000 = GU#01
+	&& 	?Attribute001 = Mean#01
+	&& 	?Attribute002 = StdDev#01
+	&& 	?Attribute003 = Signal#01
+	&& 	?Attribute004 = Signal#02
+  )
 }
 ```
 In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is a Gaussian distribution that is described by a `Mean` value called `Mean#01` and a `StandardDeviation` value called `StdDev#01`. `Mean#01` is a live signal that is attached to `Signal#01`. Similarly `StdDev#01` is a live signal attached to `Signal#02`.
@@ -3939,7 +4281,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 The uncertainty is represented by a `Histogram`.
 - Definition set: Uncertainty
 - Examples:
-```ddhub Signal#01
+```dwis Signal#01
 DrillingDataPoint:ddp#01
 GenericUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -3951,13 +4293,13 @@ Histo#01 HasDynamicValue Signal#01
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[GenericUncertainty] 
-	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[Histo#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|HasUncertaintyHistogram| N0004[Histo#01] 
-	N0005[Signal#01] -->|BelongsTo| N0006[DynamicDrillingSignal] 
-	N0004[Histo#01] -->|HasDynamicValue| N0005[Signal#01] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(GenericUncertainty) 
+	N0000[ddp#01] -->|HasUncertainty| N0002((GU#01)) 
+	N0004[Histo#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|HasUncertaintyHistogram| N0004((Histo#01)) 
+	N0005[Signal#01] -->|BelongsToClass| N0006(DynamicDrillingSignal) 
+	N0004[Histo#01] -->|HasDynamicValue| N0005((Signal#01)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -3968,11 +4310,16 @@ SELECT ?Signal#01
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:GenericUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?Histo#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasUncertaintyHistogram ?Histo#01 .
+	?GU#01 ddhub:HasUncertaintyHistogram ?Attribute001 .
 	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
-	?Histo#01 ddhub:HasDynamicValue ?Signal#01 .
+	?Histo#01 ddhub:HasDynamicValue ?Attribute002 .
+  FILTER (
+	?Attribute000 = GU#01
+	&& 	?Attribute001 = Histo#01
+	&& 	?Attribute002 = Signal#01
+  )
 }
 ```
 In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is a general probability distribution that is described by a histogram called `Histo#01`. `Histo#01` is a live signal that is attached to `Signal#01`.
@@ -3983,7 +4330,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 The uncertainty is represented by a uniform probability distribution between a `Min` and a `Max` value.
 - Definition set: Uncertainty
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 MinMaxUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -3999,17 +4346,17 @@ Max#01 HasDynamicValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[MinMaxUncertainty] 
-	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[Min#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[Max#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|HasUncertaintyMin| N0004[Min#01] 
-	N0002[GU#01] -->|HasUncertaintyMax| N0005[Max#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DynamicDrillingSignal] 
-	N0004[Min#01] -->|HasDynamicValue| N0006[Signal#01] 
-	N0005[Max#01] -->|HasDynamicValue| N0008[Signal#02] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(MinMaxUncertainty) 
+	N0000[ddp#01] -->|HasUncertainty| N0002((GU#01)) 
+	N0004[Min#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[Max#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|HasUncertaintyMin| N0004((Min#01)) 
+	N0002[GU#01] -->|HasUncertaintyMax| N0005((Max#01)) 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
+	N0004[Min#01] -->|HasDynamicValue| N0006((Signal#01)) 
+	N0005[Max#01] -->|HasDynamicValue| N0008((Signal#02)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -4020,15 +4367,22 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:MinMaxUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?Min#01 rdf:type ddhub:DrillingDataPoint .
 	?Max#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasUncertaintyMin ?Min#01 .
-	?GU#01 ddhub:HasUncertaintyMax ?Max#01 .
+	?GU#01 ddhub:HasUncertaintyMin ?Attribute001 .
+	?GU#01 ddhub:HasUncertaintyMax ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
 	?Signal#02 rdf:type ddhub:DynamicDrillingSignal .
-	?Min#01 ddhub:HasDynamicValue ?Signal#01 .
-	?Max#01 ddhub:HasDynamicValue ?Signal#02 .
+	?Min#01 ddhub:HasDynamicValue ?Attribute003 .
+	?Max#01 ddhub:HasDynamicValue ?Attribute004 .
+  FILTER (
+	?Attribute000 = GU#01
+	&& 	?Attribute001 = Min#01
+	&& 	?Attribute002 = Max#01
+	&& 	?Attribute003 = Signal#01
+	&& 	?Attribute004 = Signal#02
+  )
 }
 ```
 In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is a uniform probability distribution that is described by a `Min` value called `Min#01` and a `Max` value called `Max#01`. `Min#01` is a live signal that is attached to `Signal#01`. Similarly `Max#01` is a live signal attached to `Signal#02`.
@@ -4046,7 +4400,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 The uncertainty on the signal is described as a Gaussian distribution with a standard deviation that is calculated using a proportion of the maximum range of the signal. The `Fullscale` or `ProportionError` can either be defined as attribute values, for example when they have fixed values, or using facts utilizing the verbs `HasFullScale` or repectively `HasProportionError` when these values may change through time.
 - Definition set: Uncertainty
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 FullScaleUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -4062,17 +4416,17 @@ ErrProp#01 HasStaticValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[FullScaleUncertainty] 
-	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[FullScale#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[ErrProp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|HasFullScale| N0004[FullScale#01] 
-	N0002[GU#01] -->|HasProportionError| N0005[ErrProp#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DrillingSignal] 
-	N0004[FullScale#01] -->|HasStaticValue| N0006[Signal#01] 
-	N0005[ErrProp#01] -->|HasStaticValue| N0008[Signal#02] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(FullScaleUncertainty) 
+	N0000[ddp#01] -->|HasUncertainty| N0002((GU#01)) 
+	N0004[FullScale#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[ErrProp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|HasFullScale| N0004((FullScale#01)) 
+	N0002[GU#01] -->|HasProportionError| N0005((ErrProp#01)) 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DrillingSignal) 
+	N0004[FullScale#01] -->|HasStaticValue| N0006((Signal#01)) 
+	N0005[ErrProp#01] -->|HasStaticValue| N0008((Signal#02)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -4083,15 +4437,22 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:FullScaleUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?FullScale#01 rdf:type ddhub:DrillingDataPoint .
 	?ErrProp#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasFullScale ?FullScale#01 .
-	?GU#01 ddhub:HasProportionError ?ErrProp#01 .
+	?GU#01 ddhub:HasFullScale ?Attribute001 .
+	?GU#01 ddhub:HasProportionError ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DrillingSignal .
 	?Signal#02 rdf:type ddhub:DrillingSignal .
-	?FullScale#01 ddhub:HasStaticValue ?Signal#01 .
-	?ErrProp#01 ddhub:HasStaticValue ?Signal#02 .
+	?FullScale#01 ddhub:HasStaticValue ?Attribute003 .
+	?ErrProp#01 ddhub:HasStaticValue ?Attribute004 .
+  FILTER (
+	?Attribute000 = GU#01
+	&& 	?Attribute001 = FullScale#01
+	&& 	?Attribute002 = ErrProp#01
+	&& 	?Attribute003 = Signal#01
+	&& 	?Attribute004 = Signal#02
+  )
 }
 ```
 In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is representing a sensor having a Gaussian probability distibution that is described using a `ProportionError` (called `ErrProp#01`) of a `FullScale` value called `FullScale#01`. `FullScale#01` is a static signal that is attached to `Signal#01`. Similarly `ErrProp#01` is a static signal attached to `Signal#02`.
@@ -4109,7 +4470,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 The uncertainty of the sensor is described by a systematic bias and repetitive error. The systematic bias is referred to as the `Accuracy` while the repetitive error is referred to as the `Precision`. The standard deviation of the overall Gaussian distribution is $\sqrt{\sigma^2{_a}+\sigma^2{_p}}$ where $\sigma_a$ is the accuracy and $\sigma_p$ is the precision. The `Accuracy` or the `Precision` can either be defined as attribute values, for example when they have fixed values, or using another facts utilizing the verbs `HasAccuracy` or respectively `HasPrecision` when these values may change through time.
 - Definition set: Uncertainty
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 SensorUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -4125,17 +4486,17 @@ Prec#01 HasStaticValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[SensorUncertainty] 
-	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[Acc#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[Prec#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|HasUncertaintyAccuracy| N0004[Acc#01] 
-	N0002[GU#01] -->|HasUncertaintyPrecision| N0005[Prec#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DrillingSignal] 
-	N0004[Acc#01] -->|HasStaticValue| N0006[Signal#01] 
-	N0005[Prec#01] -->|HasStaticValue| N0008[Signal#02] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(SensorUncertainty) 
+	N0000[ddp#01] -->|HasUncertainty| N0002((GU#01)) 
+	N0004[Acc#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[Prec#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|HasUncertaintyAccuracy| N0004((Acc#01)) 
+	N0002[GU#01] -->|HasUncertaintyPrecision| N0005((Prec#01)) 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DrillingSignal) 
+	N0004[Acc#01] -->|HasStaticValue| N0006((Signal#01)) 
+	N0005[Prec#01] -->|HasStaticValue| N0008((Signal#02)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -4146,15 +4507,22 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:SensorUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?Acc#01 rdf:type ddhub:DrillingDataPoint .
 	?Prec#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasUncertaintyAccuracy ?Acc#01 .
-	?GU#01 ddhub:HasUncertaintyPrecision ?Prec#01 .
+	?GU#01 ddhub:HasUncertaintyAccuracy ?Attribute001 .
+	?GU#01 ddhub:HasUncertaintyPrecision ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DrillingSignal .
 	?Signal#02 rdf:type ddhub:DrillingSignal .
-	?Acc#01 ddhub:HasStaticValue ?Signal#01 .
-	?Prec#01 ddhub:HasStaticValue ?Signal#02 .
+	?Acc#01 ddhub:HasStaticValue ?Attribute003 .
+	?Prec#01 ddhub:HasStaticValue ?Attribute004 .
+  FILTER (
+	?Attribute000 = GU#01
+	&& 	?Attribute001 = Acc#01
+	&& 	?Attribute002 = Prec#01
+	&& 	?Attribute003 = Signal#01
+	&& 	?Attribute004 = Signal#02
+  )
 }
 ```
 In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is representing a sensor having a Gaussian probability distibution that is described using an `Accuracy` (called `Acc#01`)  and a `Precision` called `Prec#01`. `Acc#01` is a static signal that is attached to `Signal#01`. Similarly `Prec#01` is a static signal attached to `Signal#02`.
@@ -4258,7 +4626,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Description: 
 This verb is used to describe a general dependence relationship between a `DrillingDataPoint` and something else.
 - Examples:
-```ddhub DerrickFloorElevation HeaveElevation TideElevation
+```dwis DerrickFloorElevation HeaveElevation TideElevation
 DerickFloorVerticalLocation:DerrickFloor
 DerivedMeasurement:DerrickFloorElevation
 Measurement:HeaveElevation
@@ -4273,16 +4641,16 @@ DerrickFloorElevation IsDependentOn TideElevation
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[DerrickFloor] -->|BelongsTo| N0001[DerickFloorVerticalLocation] 
-	N0002[DerrickFloorElevation] -->|BelongsTo| N0003[DerivedMeasurement] 
-	N0004[HeaveElevation] -->|BelongsTo| N0005[Measurement] 
-	N0006[TideElevation] -->|BelongsTo| N0005[Measurement] 
-	N0002[DerrickFloorElevation] -->|IsOfMeasurableQuantity| N0007[Height] 
-	N0002[DerrickFloorElevation] -->|IsPhysicallyLocatedAt| N0000[DerrickFloor] 
-	N0004[HeaveElevation] -->|IsOfMeasurableQuantity| N0007[Height] 
-	N0006[TideElevation] -->|IsOfMeasurableQuantity| N0007[Height] 
-	N0002[DerrickFloorElevation] -->|IsDependentOn| N0004[HeaveElevation] 
-	N0002[DerrickFloorElevation] -->|IsDependentOn| N0006[TideElevation] 
+	N0000[DerrickFloor] -->|BelongsToClass| N0001(DerickFloorVerticalLocation) 
+	N0002[DerrickFloorElevation] -->|BelongsToClass| N0003(DerivedMeasurement) 
+	N0004[HeaveElevation] -->|BelongsToClass| N0005(Measurement) 
+	N0006[TideElevation] -->|BelongsToClass| N0005(Measurement) 
+	N0002[DerrickFloorElevation] -->|IsOfMeasurableQuantity| N0007((Height)) 
+	N0002[DerrickFloorElevation] -->|IsPhysicallyLocatedAt| N0000((DerrickFloor)) 
+	N0004[HeaveElevation] -->|IsOfMeasurableQuantity| N0007((Height)) 
+	N0006[TideElevation] -->|IsOfMeasurableQuantity| N0007((Height)) 
+	N0002[DerrickFloorElevation] -->|IsDependentOn| N0004((HeaveElevation)) 
+	N0002[DerrickFloorElevation] -->|IsDependentOn| N0006((TideElevation)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -4295,12 +4663,20 @@ WHERE {
 	?DerrickFloorElevation rdf:type ddhub:DerivedMeasurement .
 	?HeaveElevation rdf:type ddhub:Measurement .
 	?TideElevation rdf:type ddhub:Measurement .
-	?DerrickFloorElevation ddhub:IsOfMeasurableQuantity ?Height .
-	?DerrickFloorElevation ddhub:IsPhysicallyLocatedAt ?DerrickFloor .
-	?HeaveElevation ddhub:IsOfMeasurableQuantity ?Height .
-	?TideElevation ddhub:IsOfMeasurableQuantity ?Height .
-	?DerrickFloorElevation ddhub:IsDependentOn ?HeaveElevation .
-	?DerrickFloorElevation ddhub:IsDependentOn ?TideElevation .
+	?DerrickFloorElevation ddhub:IsOfMeasurableQuantity ?Attribute000 .
+	?DerrickFloorElevation ddhub:IsPhysicallyLocatedAt ?Attribute001 .
+	?HeaveElevation ddhub:IsOfMeasurableQuantity ?Attribute002 .
+	?TideElevation ddhub:IsOfMeasurableQuantity ?Attribute003 .
+	?DerrickFloorElevation ddhub:IsDependentOn ?Attribute004 .
+	?DerrickFloorElevation ddhub:IsDependentOn ?Attribute005 .
+  FILTER (
+	?Attribute000 = Height
+	&& 	?Attribute001 = DerrickFloor
+	&& 	?Attribute002 = Height
+	&& 	?Attribute003 = Height
+	&& 	?Attribute004 = HeaveElevation
+	&& 	?Attribute005 = TideElevation
+  )
 }
 ```
 In this example, it is described that the derrick floor elevation, `DerrickFloorElevation`, 
@@ -4314,7 +4690,7 @@ depends on the heave measurement, `HeaveElevation`, and the tide measurement, `T
 - Description: 
 This verb is a specialization of `IsDependentOn` and refers to the specific dependence on a pressure reference.
 - Examples:
-```ddhub MeasuredDrillingFluidDensity MeasuredTemperature MeasuredPressure
+```dwis MeasuredDrillingFluidDensity MeasuredTemperature MeasuredPressure
 Measurement:MeasuredDrillingFluidDensity
 Measurement:MeasuredTemperature
 Measurement:MeasuredPressure
@@ -4327,14 +4703,14 @@ MeasuredDrillingFluidDensity HasPressureReference MeasuredPressure
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[MeasuredDrillingFluidDensity] -->|BelongsTo| N0001[Measurement] 
-	N0002[MeasuredTemperature] -->|BelongsTo| N0001[Measurement] 
-	N0003[MeasuredPressure] -->|BelongsTo| N0001[Measurement] 
-	N0000[MeasuredDrillingFluidDensity] -->|IsOfMeasurableQuantity| N0004[DrillingDensity] 
-	N0002[MeasuredTemperature] -->|IsOfMeasurableQuantity| N0005[DrillingTemperature] 
-	N0003[MeasuredPressure] -->|IsOfMeasurableQuantity| N0006[DrillingPressure] 
-	N0000[MeasuredDrillingFluidDensity] -->|HasTemperatureReference| N0002[MeasuredTemperature] 
-	N0000[MeasuredDrillingFluidDensity] -->|HasPressureReference| N0003[MeasuredPressure] 
+	N0000[MeasuredDrillingFluidDensity] -->|BelongsToClass| N0001(Measurement) 
+	N0002[MeasuredTemperature] -->|BelongsToClass| N0001(Measurement) 
+	N0003[MeasuredPressure] -->|BelongsToClass| N0001(Measurement) 
+	N0000[MeasuredDrillingFluidDensity] -->|IsOfMeasurableQuantity| N0004((DrillingDensity)) 
+	N0002[MeasuredTemperature] -->|IsOfMeasurableQuantity| N0005((DrillingTemperature)) 
+	N0003[MeasuredPressure] -->|IsOfMeasurableQuantity| N0006((DrillingPressure)) 
+	N0000[MeasuredDrillingFluidDensity] -->|HasTemperatureReference| N0002((MeasuredTemperature)) 
+	N0000[MeasuredDrillingFluidDensity] -->|HasPressureReference| N0003((MeasuredPressure)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -4346,11 +4722,18 @@ WHERE {
 	?MeasuredDrillingFluidDensity rdf:type ddhub:Measurement .
 	?MeasuredTemperature rdf:type ddhub:Measurement .
 	?MeasuredPressure rdf:type ddhub:Measurement .
-	?MeasuredDrillingFluidDensity ddhub:IsOfMeasurableQuantity ?DrillingDensity .
-	?MeasuredTemperature ddhub:IsOfMeasurableQuantity ?DrillingTemperature .
-	?MeasuredPressure ddhub:IsOfMeasurableQuantity ?DrillingPressure .
-	?MeasuredDrillingFluidDensity ddhub:HasTemperatureReference ?MeasuredTemperature .
-	?MeasuredDrillingFluidDensity ddhub:HasPressureReference ?MeasuredPressure .
+	?MeasuredDrillingFluidDensity ddhub:IsOfMeasurableQuantity ?Attribute000 .
+	?MeasuredTemperature ddhub:IsOfMeasurableQuantity ?Attribute001 .
+	?MeasuredPressure ddhub:IsOfMeasurableQuantity ?Attribute002 .
+	?MeasuredDrillingFluidDensity ddhub:HasTemperatureReference ?Attribute003 .
+	?MeasuredDrillingFluidDensity ddhub:HasPressureReference ?Attribute004 .
+  FILTER (
+	?Attribute000 = DrillingDensity
+	&& 	?Attribute001 = DrillingTemperature
+	&& 	?Attribute002 = DrillingPressure
+	&& 	?Attribute003 = MeasuredTemperature
+	&& 	?Attribute004 = MeasuredPressure
+  )
 }
 ```
 In this example, it is described that `MeasuredDrillingFluidDensity`, which is a measurement of the measurable quantity
@@ -4365,7 +4748,7 @@ at `MeasuredPressure`.
 - Description: 
 This verb is a specialization of `IsDependentOn` and refers to the specific dependence on a temperature reference.
 - Examples:
-```ddhub MeasuredDrillingFluidDensity MeasuredTemperature MeasuredPressure
+```dwis MeasuredDrillingFluidDensity MeasuredTemperature MeasuredPressure
 Measurement:MeasuredDrillingFluidDensity
 Measurement:MeasuredTemperature
 Measurement:MeasuredPressure
@@ -4378,14 +4761,14 @@ MeasuredDrillingFluidDensity HasPressureReference MeasuredPressure
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[MeasuredDrillingFluidDensity] -->|BelongsTo| N0001[Measurement] 
-	N0002[MeasuredTemperature] -->|BelongsTo| N0001[Measurement] 
-	N0003[MeasuredPressure] -->|BelongsTo| N0001[Measurement] 
-	N0000[MeasuredDrillingFluidDensity] -->|IsOfMeasurableQuantity| N0004[DrillingDensity] 
-	N0002[MeasuredTemperature] -->|IsOfMeasurableQuantity| N0005[DrillingTemperature] 
-	N0003[MeasuredPressure] -->|IsOfMeasurableQuantity| N0006[DrillingPressure] 
-	N0000[MeasuredDrillingFluidDensity] -->|HasTemperatureReference| N0002[MeasuredTemperature] 
-	N0000[MeasuredDrillingFluidDensity] -->|HasPressureReference| N0003[MeasuredPressure] 
+	N0000[MeasuredDrillingFluidDensity] -->|BelongsToClass| N0001(Measurement) 
+	N0002[MeasuredTemperature] -->|BelongsToClass| N0001(Measurement) 
+	N0003[MeasuredPressure] -->|BelongsToClass| N0001(Measurement) 
+	N0000[MeasuredDrillingFluidDensity] -->|IsOfMeasurableQuantity| N0004((DrillingDensity)) 
+	N0002[MeasuredTemperature] -->|IsOfMeasurableQuantity| N0005((DrillingTemperature)) 
+	N0003[MeasuredPressure] -->|IsOfMeasurableQuantity| N0006((DrillingPressure)) 
+	N0000[MeasuredDrillingFluidDensity] -->|HasTemperatureReference| N0002((MeasuredTemperature)) 
+	N0000[MeasuredDrillingFluidDensity] -->|HasPressureReference| N0003((MeasuredPressure)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -4397,11 +4780,18 @@ WHERE {
 	?MeasuredDrillingFluidDensity rdf:type ddhub:Measurement .
 	?MeasuredTemperature rdf:type ddhub:Measurement .
 	?MeasuredPressure rdf:type ddhub:Measurement .
-	?MeasuredDrillingFluidDensity ddhub:IsOfMeasurableQuantity ?DrillingDensity .
-	?MeasuredTemperature ddhub:IsOfMeasurableQuantity ?DrillingTemperature .
-	?MeasuredPressure ddhub:IsOfMeasurableQuantity ?DrillingPressure .
-	?MeasuredDrillingFluidDensity ddhub:HasTemperatureReference ?MeasuredTemperature .
-	?MeasuredDrillingFluidDensity ddhub:HasPressureReference ?MeasuredPressure .
+	?MeasuredDrillingFluidDensity ddhub:IsOfMeasurableQuantity ?Attribute000 .
+	?MeasuredTemperature ddhub:IsOfMeasurableQuantity ?Attribute001 .
+	?MeasuredPressure ddhub:IsOfMeasurableQuantity ?Attribute002 .
+	?MeasuredDrillingFluidDensity ddhub:HasTemperatureReference ?Attribute003 .
+	?MeasuredDrillingFluidDensity ddhub:HasPressureReference ?Attribute004 .
+  FILTER (
+	?Attribute000 = DrillingDensity
+	&& 	?Attribute001 = DrillingTemperature
+	&& 	?Attribute002 = DrillingPressure
+	&& 	?Attribute003 = MeasuredTemperature
+	&& 	?Attribute004 = MeasuredPressure
+  )
 }
 ```
 In this example, it is described that `MeasuredDrillingFluidDensity`, which is a measurement of the measurable quantity
@@ -4416,7 +4806,7 @@ at `MeasuredTemperature`.
 - Description: 
 This verb is a specialization of `IsDependentOn` and refers to the specific dependence on an elevation reference.
 - Examples:
-```ddhub MeasuredStandPipePressure DerrickFloorElevation HeaveElevation TideElevation
+```dwis MeasuredStandPipePressure DerrickFloorElevation HeaveElevation TideElevation
 Measurement:MeasuredStandPipePressure
 DerickFloorVerticalLocation:DerrickFloor
 DerivedMeasurement:DerrickFloorElevation
@@ -4441,26 +4831,26 @@ DerrickFloorElevation IsDependentOn TideElevation
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[MeasuredStandPipePressure] -->|BelongsTo| N0001[Measurement] 
-	N0002[DerrickFloor] -->|BelongsTo| N0003[DerickFloorVerticalLocation] 
-	N0004[DerrickFloorElevation] -->|BelongsTo| N0005[DerivedMeasurement] 
-	N0006[HeaveElevation] -->|BelongsTo| N0001[Measurement] 
-	N0007[TideElevation] -->|BelongsTo| N0001[Measurement] 
-	N0008[StandPipeElement] -->|BelongsTo| N0009[StandPipe] 
-	N0010[LogicalRepresentationStandPipe] -->|BelongsTo| N0011[MechanicalLogicalElement] 
-	N0000[MeasuredStandPipePressure] -->|HasElevationReference| N0002[DerrickFloor] 
-	N0010[LogicalRepresentationStandPipe] -->|IsAMechanicalRepresentationFor| N0008[StandPipeElement] 
-	N0000[MeasuredStandPipePressure] -->|IsMechanicallyLocatedAt| N0010[LogicalRepresentationStandPipe] 
-	N0000[MeasuredStandPipePressure] -->|IsOfMeasurableQuantity| N0012[DrillingPressure] 
-	N0004[DerrickFloorElevation] -->|IsOfMeasurableQuantity| N0013[Height] 
-	N0004[DerrickFloorElevation] -->|IsPhysicallyLocatedAt| N0002[DerrickFloor] 
-	N0006[HeaveElevation] -->|IsOfMeasurableQuantity| N0013[Height] 
-	N0007[TideElevation] -->|IsOfMeasurableQuantity| N0013[Height] 
-	N0014[VerticalDatum] -->|BelongsTo| N0015[WGS84VerticalLocation] 
-	N0006[HeaveElevation] -->|HasElevationReference| N0014[VerticalDatum] 
-	N0007[TideElevation] -->|HasElevationReference| N0014[VerticalDatum] 
-	N0004[DerrickFloorElevation] -->|IsDependentOn| N0006[HeaveElevation] 
-	N0004[DerrickFloorElevation] -->|IsDependentOn| N0007[TideElevation] 
+	N0000[MeasuredStandPipePressure] -->|BelongsToClass| N0001(Measurement) 
+	N0002[DerrickFloor] -->|BelongsToClass| N0003(DerickFloorVerticalLocation) 
+	N0004[DerrickFloorElevation] -->|BelongsToClass| N0005(DerivedMeasurement) 
+	N0006[HeaveElevation] -->|BelongsToClass| N0001(Measurement) 
+	N0007[TideElevation] -->|BelongsToClass| N0001(Measurement) 
+	N0008[StandPipeElement] -->|BelongsToClass| N0009(StandPipe) 
+	N0010[LogicalRepresentationStandPipe] -->|BelongsToClass| N0011(MechanicalLogicalElement) 
+	N0000[MeasuredStandPipePressure] -->|HasElevationReference| N0002((DerrickFloor)) 
+	N0010[LogicalRepresentationStandPipe] -->|IsAMechanicalRepresentationFor| N0008((StandPipeElement)) 
+	N0000[MeasuredStandPipePressure] -->|IsMechanicallyLocatedAt| N0010((LogicalRepresentationStandPipe)) 
+	N0000[MeasuredStandPipePressure] -->|IsOfMeasurableQuantity| N0012((DrillingPressure)) 
+	N0004[DerrickFloorElevation] -->|IsOfMeasurableQuantity| N0013((Height)) 
+	N0004[DerrickFloorElevation] -->|IsPhysicallyLocatedAt| N0002((DerrickFloor)) 
+	N0006[HeaveElevation] -->|IsOfMeasurableQuantity| N0013((Height)) 
+	N0007[TideElevation] -->|IsOfMeasurableQuantity| N0013((Height)) 
+	N0014[VerticalDatum] -->|BelongsToClass| N0015(WGS84VerticalLocation) 
+	N0006[HeaveElevation] -->|HasElevationReference| N0014((VerticalDatum)) 
+	N0007[TideElevation] -->|HasElevationReference| N0014((VerticalDatum)) 
+	N0004[DerrickFloorElevation] -->|IsDependentOn| N0006((HeaveElevation)) 
+	N0004[DerrickFloorElevation] -->|IsDependentOn| N0007((TideElevation)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -4476,19 +4866,33 @@ WHERE {
 	?TideElevation rdf:type ddhub:Measurement .
 	?StandPipeElement rdf:type ddhub:StandPipe .
 	?LogicalRepresentationStandPipe rdf:type ddhub:MechanicalLogicalElement .
-	?MeasuredStandPipePressure ddhub:HasElevationReference ?DerrickFloor .
-	?LogicalRepresentationStandPipe ddhub:IsAMechanicalRepresentationFor ?StandPipeElement .
-	?MeasuredStandPipePressure ddhub:IsMechanicallyLocatedAt ?LogicalRepresentationStandPipe .
-	?MeasuredStandPipePressure ddhub:IsOfMeasurableQuantity ?DrillingPressure .
-	?DerrickFloorElevation ddhub:IsOfMeasurableQuantity ?Height .
-	?DerrickFloorElevation ddhub:IsPhysicallyLocatedAt ?DerrickFloor .
-	?HeaveElevation ddhub:IsOfMeasurableQuantity ?Height .
-	?TideElevation ddhub:IsOfMeasurableQuantity ?Height .
+	?MeasuredStandPipePressure ddhub:HasElevationReference ?Attribute000 .
+	?LogicalRepresentationStandPipe ddhub:IsAMechanicalRepresentationFor ?Attribute001 .
+	?MeasuredStandPipePressure ddhub:IsMechanicallyLocatedAt ?Attribute002 .
+	?MeasuredStandPipePressure ddhub:IsOfMeasurableQuantity ?Attribute003 .
+	?DerrickFloorElevation ddhub:IsOfMeasurableQuantity ?Attribute004 .
+	?DerrickFloorElevation ddhub:IsPhysicallyLocatedAt ?Attribute005 .
+	?HeaveElevation ddhub:IsOfMeasurableQuantity ?Attribute006 .
+	?TideElevation ddhub:IsOfMeasurableQuantity ?Attribute007 .
 	?VerticalDatum rdf:type ddhub:WGS84VerticalLocation .
-	?HeaveElevation ddhub:HasElevationReference ?VerticalDatum .
-	?TideElevation ddhub:HasElevationReference ?VerticalDatum .
-	?DerrickFloorElevation ddhub:IsDependentOn ?HeaveElevation .
-	?DerrickFloorElevation ddhub:IsDependentOn ?TideElevation .
+	?HeaveElevation ddhub:HasElevationReference ?Attribute008 .
+	?TideElevation ddhub:HasElevationReference ?Attribute009 .
+	?DerrickFloorElevation ddhub:IsDependentOn ?Attribute010 .
+	?DerrickFloorElevation ddhub:IsDependentOn ?Attribute011 .
+  FILTER (
+	?Attribute000 = DerrickFloor
+	&& 	?Attribute001 = StandPipeElement
+	&& 	?Attribute002 = LogicalRepresentationStandPipe
+	&& 	?Attribute003 = DrillingPressure
+	&& 	?Attribute004 = Height
+	&& 	?Attribute005 = DerrickFloor
+	&& 	?Attribute006 = Height
+	&& 	?Attribute007 = Height
+	&& 	?Attribute008 = VerticalDatum
+	&& 	?Attribute009 = VerticalDatum
+	&& 	?Attribute010 = HeaveElevation
+	&& 	?Attribute011 = TideElevation
+  )
 }
 ```
 In this example, it is described that the standpipe pressure measurement, `MeasuredStandPipePressure`, depends on
@@ -5005,14 +5409,6 @@ BitDepth:dat#01
 DerivedMeasurement:dat#01
 BitDepth:dat#02
 ComputedData:dat#02
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[dat#01] -->|BelongsTo| N0001[BitDepth] 
-	N0000[dat#01] -->|BelongsTo| N0002[DerivedMeasurement] 
-	N0003[dat#02] -->|BelongsTo| N0001[BitDepth] 
-	N0003[dat#02] -->|BelongsTo| N0004[ComputedData] 
 ```
 In this example, `dat#01` is a `BitDepth` that is a derived measurement, while `dat#02` is a `BitDepth` that has been estimated.
 If one use the following sparql query:
@@ -5591,7 +5987,7 @@ A relation to describe how the drill-stem mechanical model manage stiffness.
 - Description: 
 This verb allows to associate a `SignalUncertainty` to a `DrillingDataPoint`.
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 GaussianUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -5607,17 +6003,17 @@ StdDev#01 HasDynamicValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[GaussianUncertainty] 
-	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[Mean#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[StdDev#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|HasUncertaintyMean| N0004[Mean#01] 
-	N0002[GU#01] -->|HasUncertaintyStandardDeviation| N0005[StdDev#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DynamicDrillingSignal] 
-	N0004[Mean#01] -->|HasDynamicValue| N0006[Signal#01] 
-	N0005[StdDev#01] -->|HasDynamicValue| N0008[Signal#02] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(GaussianUncertainty) 
+	N0000[ddp#01] -->|HasUncertainty| N0002((GU#01)) 
+	N0004[Mean#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[StdDev#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|HasUncertaintyMean| N0004((Mean#01)) 
+	N0002[GU#01] -->|HasUncertaintyStandardDeviation| N0005((StdDev#01)) 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
+	N0004[Mean#01] -->|HasDynamicValue| N0006((Signal#01)) 
+	N0005[StdDev#01] -->|HasDynamicValue| N0008((Signal#02)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -5628,15 +6024,22 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:GaussianUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?Mean#01 rdf:type ddhub:DrillingDataPoint .
 	?StdDev#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasUncertaintyMean ?Mean#01 .
-	?GU#01 ddhub:HasUncertaintyStandardDeviation ?StdDev#01 .
+	?GU#01 ddhub:HasUncertaintyMean ?Attribute001 .
+	?GU#01 ddhub:HasUncertaintyStandardDeviation ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
 	?Signal#02 rdf:type ddhub:DynamicDrillingSignal .
-	?Mean#01 ddhub:HasDynamicValue ?Signal#01 .
-	?StdDev#01 ddhub:HasDynamicValue ?Signal#02 .
+	?Mean#01 ddhub:HasDynamicValue ?Attribute003 .
+	?StdDev#01 ddhub:HasDynamicValue ?Attribute004 .
+  FILTER (
+	?Attribute000 = GU#01
+	&& 	?Attribute001 = Mean#01
+	&& 	?Attribute002 = StdDev#01
+	&& 	?Attribute003 = Signal#01
+	&& 	?Attribute004 = Signal#02
+  )
 }
 ```
 ## HasUncertaintyAccuracy <!-- VERB -->
@@ -5648,7 +6051,7 @@ WHERE {
 - Description: 
 This verb allows to associate a `DrillingDataPoint` as the `Accuracy` of a `SensorUncertainty`
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 SensorUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -5664,17 +6067,17 @@ Prec#01 HasStaticValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[SensorUncertainty] 
-	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[Acc#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[Prec#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|HasUncertaintyAccuracy| N0004[Acc#01] 
-	N0002[GU#01] -->|HasUncertaintyPrecision| N0005[Prec#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DrillingSignal] 
-	N0004[Acc#01] -->|HasStaticValue| N0006[Signal#01] 
-	N0005[Prec#01] -->|HasStaticValue| N0008[Signal#02] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(SensorUncertainty) 
+	N0000[ddp#01] -->|HasUncertainty| N0002((GU#01)) 
+	N0004[Acc#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[Prec#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|HasUncertaintyAccuracy| N0004((Acc#01)) 
+	N0002[GU#01] -->|HasUncertaintyPrecision| N0005((Prec#01)) 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DrillingSignal) 
+	N0004[Acc#01] -->|HasStaticValue| N0006((Signal#01)) 
+	N0005[Prec#01] -->|HasStaticValue| N0008((Signal#02)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -5685,15 +6088,22 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:SensorUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?Acc#01 rdf:type ddhub:DrillingDataPoint .
 	?Prec#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasUncertaintyAccuracy ?Acc#01 .
-	?GU#01 ddhub:HasUncertaintyPrecision ?Prec#01 .
+	?GU#01 ddhub:HasUncertaintyAccuracy ?Attribute001 .
+	?GU#01 ddhub:HasUncertaintyPrecision ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DrillingSignal .
 	?Signal#02 rdf:type ddhub:DrillingSignal .
-	?Acc#01 ddhub:HasStaticValue ?Signal#01 .
-	?Prec#01 ddhub:HasStaticValue ?Signal#02 .
+	?Acc#01 ddhub:HasStaticValue ?Attribute003 .
+	?Prec#01 ddhub:HasStaticValue ?Attribute004 .
+  FILTER (
+	?Attribute000 = GU#01
+	&& 	?Attribute001 = Acc#01
+	&& 	?Attribute002 = Prec#01
+	&& 	?Attribute003 = Signal#01
+	&& 	?Attribute004 = Signal#02
+  )
 }
 ```
 In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is representing a sensor having a Gaussian probability distibution that is described using an `Accuracy` (called `Acc#01`)  and a `Precision` called `Prec#01`. `Acc#01` is a static signal that is attached to `Signal#01`. Similarly `Prec#01` is a static signal attached to `Signal#02`.
@@ -5706,7 +6116,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Description: 
 This verb is used to associate a `DrillingDataPoint` as the `Precision` of a `SensorUncertainty`
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 SensorUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -5722,17 +6132,17 @@ Prec#01 HasStaticValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[SensorUncertainty] 
-	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[Acc#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[Prec#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|HasUncertaintyAccuracy| N0004[Acc#01] 
-	N0002[GU#01] -->|HasUncertaintyPrecision| N0005[Prec#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DrillingSignal] 
-	N0004[Acc#01] -->|HasStaticValue| N0006[Signal#01] 
-	N0005[Prec#01] -->|HasStaticValue| N0008[Signal#02] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(SensorUncertainty) 
+	N0000[ddp#01] -->|HasUncertainty| N0002((GU#01)) 
+	N0004[Acc#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[Prec#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|HasUncertaintyAccuracy| N0004((Acc#01)) 
+	N0002[GU#01] -->|HasUncertaintyPrecision| N0005((Prec#01)) 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DrillingSignal) 
+	N0004[Acc#01] -->|HasStaticValue| N0006((Signal#01)) 
+	N0005[Prec#01] -->|HasStaticValue| N0008((Signal#02)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -5743,15 +6153,22 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:SensorUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?Acc#01 rdf:type ddhub:DrillingDataPoint .
 	?Prec#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasUncertaintyAccuracy ?Acc#01 .
-	?GU#01 ddhub:HasUncertaintyPrecision ?Prec#01 .
+	?GU#01 ddhub:HasUncertaintyAccuracy ?Attribute001 .
+	?GU#01 ddhub:HasUncertaintyPrecision ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DrillingSignal .
 	?Signal#02 rdf:type ddhub:DrillingSignal .
-	?Acc#01 ddhub:HasStaticValue ?Signal#01 .
-	?Prec#01 ddhub:HasStaticValue ?Signal#02 .
+	?Acc#01 ddhub:HasStaticValue ?Attribute003 .
+	?Prec#01 ddhub:HasStaticValue ?Attribute004 .
+  FILTER (
+	?Attribute000 = GU#01
+	&& 	?Attribute001 = Acc#01
+	&& 	?Attribute002 = Prec#01
+	&& 	?Attribute003 = Signal#01
+	&& 	?Attribute004 = Signal#02
+  )
 }
 ```
 In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is representing a sensor having a Gaussian probability distibution that is described using an `Accuracy` (called `Acc#01`)  and a `Precision` called `Prec#01`. `Acc#01` is a static signal that is attached to `Signal#01`. Similarly `Prec#01` is a static signal attached to `Signal#02`.
@@ -5764,7 +6181,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Description: 
 This verb is used to associate a `DrillingDataPoint` as the `Min` value of `MinMaxUncertainty`
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 MinMaxUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -5780,17 +6197,17 @@ Max#01 HasDynamicValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[MinMaxUncertainty] 
-	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[Min#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[Max#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|HasUncertaintyMin| N0004[Min#01] 
-	N0002[GU#01] -->|HasUncertaintyMax| N0005[Max#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DynamicDrillingSignal] 
-	N0004[Min#01] -->|HasDynamicValue| N0006[Signal#01] 
-	N0005[Max#01] -->|HasDynamicValue| N0008[Signal#02] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(MinMaxUncertainty) 
+	N0000[ddp#01] -->|HasUncertainty| N0002((GU#01)) 
+	N0004[Min#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[Max#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|HasUncertaintyMin| N0004((Min#01)) 
+	N0002[GU#01] -->|HasUncertaintyMax| N0005((Max#01)) 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
+	N0004[Min#01] -->|HasDynamicValue| N0006((Signal#01)) 
+	N0005[Max#01] -->|HasDynamicValue| N0008((Signal#02)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -5801,15 +6218,22 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:MinMaxUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?Min#01 rdf:type ddhub:DrillingDataPoint .
 	?Max#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasUncertaintyMin ?Min#01 .
-	?GU#01 ddhub:HasUncertaintyMax ?Max#01 .
+	?GU#01 ddhub:HasUncertaintyMin ?Attribute001 .
+	?GU#01 ddhub:HasUncertaintyMax ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
 	?Signal#02 rdf:type ddhub:DynamicDrillingSignal .
-	?Min#01 ddhub:HasDynamicValue ?Signal#01 .
-	?Max#01 ddhub:HasDynamicValue ?Signal#02 .
+	?Min#01 ddhub:HasDynamicValue ?Attribute003 .
+	?Max#01 ddhub:HasDynamicValue ?Attribute004 .
+  FILTER (
+	?Attribute000 = GU#01
+	&& 	?Attribute001 = Min#01
+	&& 	?Attribute002 = Max#01
+	&& 	?Attribute003 = Signal#01
+	&& 	?Attribute004 = Signal#02
+  )
 }
 ```
 In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is a uniform probability distribution that is described by a `Min` value called `Min#01` and a `Max` value called `Max#01`. `Min#01` is a live signal that is attached to `Signal#01`. Similarly `Max#01` is a live signal attached to `Signal#02`.
@@ -5822,7 +6246,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Description: 
 This verb is used to associate a `DrillingDataPoint` as the `Max` value of a `MinMaxUncertainty`
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 MinMaxUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -5838,17 +6262,17 @@ Max#01 HasDynamicValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[MinMaxUncertainty] 
-	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[Min#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[Max#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|HasUncertaintyMin| N0004[Min#01] 
-	N0002[GU#01] -->|HasUncertaintyMax| N0005[Max#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DynamicDrillingSignal] 
-	N0004[Min#01] -->|HasDynamicValue| N0006[Signal#01] 
-	N0005[Max#01] -->|HasDynamicValue| N0008[Signal#02] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(MinMaxUncertainty) 
+	N0000[ddp#01] -->|HasUncertainty| N0002((GU#01)) 
+	N0004[Min#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[Max#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|HasUncertaintyMin| N0004((Min#01)) 
+	N0002[GU#01] -->|HasUncertaintyMax| N0005((Max#01)) 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
+	N0004[Min#01] -->|HasDynamicValue| N0006((Signal#01)) 
+	N0005[Max#01] -->|HasDynamicValue| N0008((Signal#02)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -5859,15 +6283,22 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:MinMaxUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?Min#01 rdf:type ddhub:DrillingDataPoint .
 	?Max#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasUncertaintyMin ?Min#01 .
-	?GU#01 ddhub:HasUncertaintyMax ?Max#01 .
+	?GU#01 ddhub:HasUncertaintyMin ?Attribute001 .
+	?GU#01 ddhub:HasUncertaintyMax ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
 	?Signal#02 rdf:type ddhub:DynamicDrillingSignal .
-	?Min#01 ddhub:HasDynamicValue ?Signal#01 .
-	?Max#01 ddhub:HasDynamicValue ?Signal#02 .
+	?Min#01 ddhub:HasDynamicValue ?Attribute003 .
+	?Max#01 ddhub:HasDynamicValue ?Attribute004 .
+  FILTER (
+	?Attribute000 = GU#01
+	&& 	?Attribute001 = Min#01
+	&& 	?Attribute002 = Max#01
+	&& 	?Attribute003 = Signal#01
+	&& 	?Attribute004 = Signal#02
+  )
 }
 ```
 In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is a uniform probability distribution that is described by a `Min` value called `Min#01` and a `Max` value called `Max#01`. `Min#01` is a live signal that is attached to `Signal#01`. Similarly `Max#01` is a live signal attached to `Signal#02`.
@@ -5880,7 +6311,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Description: 
 This verb is used to associate a `DrillingDataPoint` as the `Mean` value of a `GaussianUncertainty`
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 GaussianUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -5896,17 +6327,17 @@ StdDev#01 HasDynamicValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[GaussianUncertainty] 
-	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[Mean#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[StdDev#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|HasUncertaintyMean| N0004[Mean#01] 
-	N0002[GU#01] -->|HasUncertaintyStandardDeviation| N0005[StdDev#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DynamicDrillingSignal] 
-	N0004[Mean#01] -->|HasDynamicValue| N0006[Signal#01] 
-	N0005[StdDev#01] -->|HasDynamicValue| N0008[Signal#02] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(GaussianUncertainty) 
+	N0000[ddp#01] -->|HasUncertainty| N0002((GU#01)) 
+	N0004[Mean#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[StdDev#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|HasUncertaintyMean| N0004((Mean#01)) 
+	N0002[GU#01] -->|HasUncertaintyStandardDeviation| N0005((StdDev#01)) 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
+	N0004[Mean#01] -->|HasDynamicValue| N0006((Signal#01)) 
+	N0005[StdDev#01] -->|HasDynamicValue| N0008((Signal#02)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -5917,15 +6348,22 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:GaussianUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?Mean#01 rdf:type ddhub:DrillingDataPoint .
 	?StdDev#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasUncertaintyMean ?Mean#01 .
-	?GU#01 ddhub:HasUncertaintyStandardDeviation ?StdDev#01 .
+	?GU#01 ddhub:HasUncertaintyMean ?Attribute001 .
+	?GU#01 ddhub:HasUncertaintyStandardDeviation ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
 	?Signal#02 rdf:type ddhub:DynamicDrillingSignal .
-	?Mean#01 ddhub:HasDynamicValue ?Signal#01 .
-	?StdDev#01 ddhub:HasDynamicValue ?Signal#02 .
+	?Mean#01 ddhub:HasDynamicValue ?Attribute003 .
+	?StdDev#01 ddhub:HasDynamicValue ?Attribute004 .
+  FILTER (
+	?Attribute000 = GU#01
+	&& 	?Attribute001 = Mean#01
+	&& 	?Attribute002 = StdDev#01
+	&& 	?Attribute003 = Signal#01
+	&& 	?Attribute004 = Signal#02
+  )
 }
 ```
 ## HasUncertaintyStandardDeviation <!-- VERB -->
@@ -5937,7 +6375,7 @@ WHERE {
 - Description: 
 This verb is used to associate a `DrillingDataPoint` as the `StandardDeviation` value of a `GaussianUncertainty`
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 GaussianUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -5953,17 +6391,17 @@ StdDev#01 HasDynamicValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[GaussianUncertainty] 
-	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[Mean#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[StdDev#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|HasUncertaintyMean| N0004[Mean#01] 
-	N0002[GU#01] -->|HasUncertaintyStandardDeviation| N0005[StdDev#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DynamicDrillingSignal] 
-	N0004[Mean#01] -->|HasDynamicValue| N0006[Signal#01] 
-	N0005[StdDev#01] -->|HasDynamicValue| N0008[Signal#02] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(GaussianUncertainty) 
+	N0000[ddp#01] -->|HasUncertainty| N0002((GU#01)) 
+	N0004[Mean#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[StdDev#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|HasUncertaintyMean| N0004((Mean#01)) 
+	N0002[GU#01] -->|HasUncertaintyStandardDeviation| N0005((StdDev#01)) 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
+	N0004[Mean#01] -->|HasDynamicValue| N0006((Signal#01)) 
+	N0005[StdDev#01] -->|HasDynamicValue| N0008((Signal#02)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -5974,15 +6412,22 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:GaussianUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?Mean#01 rdf:type ddhub:DrillingDataPoint .
 	?StdDev#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasUncertaintyMean ?Mean#01 .
-	?GU#01 ddhub:HasUncertaintyStandardDeviation ?StdDev#01 .
+	?GU#01 ddhub:HasUncertaintyMean ?Attribute001 .
+	?GU#01 ddhub:HasUncertaintyStandardDeviation ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
 	?Signal#02 rdf:type ddhub:DynamicDrillingSignal .
-	?Mean#01 ddhub:HasDynamicValue ?Signal#01 .
-	?StdDev#01 ddhub:HasDynamicValue ?Signal#02 .
+	?Mean#01 ddhub:HasDynamicValue ?Attribute003 .
+	?StdDev#01 ddhub:HasDynamicValue ?Attribute004 .
+  FILTER (
+	?Attribute000 = GU#01
+	&& 	?Attribute001 = Mean#01
+	&& 	?Attribute002 = StdDev#01
+	&& 	?Attribute003 = Signal#01
+	&& 	?Attribute004 = Signal#02
+  )
 }
 ```
 ## HasProportionError <!-- VERB -->
@@ -5994,7 +6439,7 @@ WHERE {
 - Description: 
 This verb is used to associate a `DrillingDataPoint` as the `ProportionError` value of a `FullScaleUncertainty`
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 FullScaleUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -6010,17 +6455,17 @@ ErrProp#01 HasStaticValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[FullScaleUncertainty] 
-	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[FullScale#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[ErrProp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|HasFullScale| N0004[FullScale#01] 
-	N0002[GU#01] -->|HasProportionError| N0005[ErrProp#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DrillingSignal] 
-	N0004[FullScale#01] -->|HasStaticValue| N0006[Signal#01] 
-	N0005[ErrProp#01] -->|HasStaticValue| N0008[Signal#02] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(FullScaleUncertainty) 
+	N0000[ddp#01] -->|HasUncertainty| N0002((GU#01)) 
+	N0004[FullScale#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[ErrProp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|HasFullScale| N0004((FullScale#01)) 
+	N0002[GU#01] -->|HasProportionError| N0005((ErrProp#01)) 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DrillingSignal) 
+	N0004[FullScale#01] -->|HasStaticValue| N0006((Signal#01)) 
+	N0005[ErrProp#01] -->|HasStaticValue| N0008((Signal#02)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -6031,15 +6476,22 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:FullScaleUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?FullScale#01 rdf:type ddhub:DrillingDataPoint .
 	?ErrProp#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasFullScale ?FullScale#01 .
-	?GU#01 ddhub:HasProportionError ?ErrProp#01 .
+	?GU#01 ddhub:HasFullScale ?Attribute001 .
+	?GU#01 ddhub:HasProportionError ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DrillingSignal .
 	?Signal#02 rdf:type ddhub:DrillingSignal .
-	?FullScale#01 ddhub:HasStaticValue ?Signal#01 .
-	?ErrProp#01 ddhub:HasStaticValue ?Signal#02 .
+	?FullScale#01 ddhub:HasStaticValue ?Attribute003 .
+	?ErrProp#01 ddhub:HasStaticValue ?Attribute004 .
+  FILTER (
+	?Attribute000 = GU#01
+	&& 	?Attribute001 = FullScale#01
+	&& 	?Attribute002 = ErrProp#01
+	&& 	?Attribute003 = Signal#01
+	&& 	?Attribute004 = Signal#02
+  )
 }
 ```
 In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is representing a sensor having a Gaussian probability distibution that is described using a `ProportionError` (called `ErrProp#01`) of a `FullScale` value called `FullScale#01`. `FullScale#01` is a static signal that is attached to `Signal#01`. Similarly `ErrProp#01` is a static signal attached to `Signal#02`.
@@ -6052,7 +6504,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Description: 
 This verb is used to associate a `DrillingDataPoint` as the `FullScale` value of a `FullScaleUncertainty`
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 FullScaleUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -6068,17 +6520,17 @@ ErrProp#01 HasStaticValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[FullScaleUncertainty] 
-	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[FullScale#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[ErrProp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|HasFullScale| N0004[FullScale#01] 
-	N0002[GU#01] -->|HasProportionError| N0005[ErrProp#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DrillingSignal] 
-	N0004[FullScale#01] -->|HasStaticValue| N0006[Signal#01] 
-	N0005[ErrProp#01] -->|HasStaticValue| N0008[Signal#02] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(FullScaleUncertainty) 
+	N0000[ddp#01] -->|HasUncertainty| N0002((GU#01)) 
+	N0004[FullScale#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[ErrProp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|HasFullScale| N0004((FullScale#01)) 
+	N0002[GU#01] -->|HasProportionError| N0005((ErrProp#01)) 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DrillingSignal) 
+	N0004[FullScale#01] -->|HasStaticValue| N0006((Signal#01)) 
+	N0005[ErrProp#01] -->|HasStaticValue| N0008((Signal#02)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -6089,15 +6541,22 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:FullScaleUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?FullScale#01 rdf:type ddhub:DrillingDataPoint .
 	?ErrProp#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasFullScale ?FullScale#01 .
-	?GU#01 ddhub:HasProportionError ?ErrProp#01 .
+	?GU#01 ddhub:HasFullScale ?Attribute001 .
+	?GU#01 ddhub:HasProportionError ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DrillingSignal .
 	?Signal#02 rdf:type ddhub:DrillingSignal .
-	?FullScale#01 ddhub:HasStaticValue ?Signal#01 .
-	?ErrProp#01 ddhub:HasStaticValue ?Signal#02 .
+	?FullScale#01 ddhub:HasStaticValue ?Attribute003 .
+	?ErrProp#01 ddhub:HasStaticValue ?Attribute004 .
+  FILTER (
+	?Attribute000 = GU#01
+	&& 	?Attribute001 = FullScale#01
+	&& 	?Attribute002 = ErrProp#01
+	&& 	?Attribute003 = Signal#01
+	&& 	?Attribute004 = Signal#02
+  )
 }
 ```
 In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is representing a sensor having a Gaussian probability distibution that is described using a `ProportionError` (called `ErrProp#01`) of a `FullScale` value called `FullScale#01`. `FullScale#01` is a static signal that is attached to `Signal#01`. Similarly `ErrProp#01` is a static signal attached to `Signal#02`.
@@ -6110,7 +6569,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Description: 
 This verb is used to associated a `DrillingDataPoint` as the `Histogram` value of a `GenericUncertainty`
 - Examples:
-```ddhub Signal#01
+```dwis Signal#01
 DrillingDataPoint:ddp#01
 GenericUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -6122,13 +6581,13 @@ Histo#01 HasDynamicValue Signal#01
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[GenericUncertainty] 
-	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[Histo#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|HasUncertaintyHistogram| N0004[Histo#01] 
-	N0005[Signal#01] -->|BelongsTo| N0006[DynamicDrillingSignal] 
-	N0004[Histo#01] -->|HasDynamicValue| N0005[Signal#01] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(GenericUncertainty) 
+	N0000[ddp#01] -->|HasUncertainty| N0002((GU#01)) 
+	N0004[Histo#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|HasUncertaintyHistogram| N0004((Histo#01)) 
+	N0005[Signal#01] -->|BelongsToClass| N0006(DynamicDrillingSignal) 
+	N0004[Histo#01] -->|HasDynamicValue| N0005((Signal#01)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -6139,11 +6598,16 @@ SELECT ?Signal#01
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:GenericUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?GU#01 .
+	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?Histo#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasUncertaintyHistogram ?Histo#01 .
+	?GU#01 ddhub:HasUncertaintyHistogram ?Attribute001 .
 	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
-	?Histo#01 ddhub:HasDynamicValue ?Signal#01 .
+	?Histo#01 ddhub:HasDynamicValue ?Attribute002 .
+  FILTER (
+	?Attribute000 = GU#01
+	&& 	?Attribute001 = Histo#01
+	&& 	?Attribute002 = Signal#01
+  )
 }
 ```
 In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is a general probability distribution that is described by a histogram called `Histo#01`. `Histo#01` is a live signal that is attached to `Signal#01`.

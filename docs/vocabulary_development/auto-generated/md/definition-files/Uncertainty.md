@@ -22,7 +22,7 @@ Represent the uncertainty associated to a `DrillingDataPoint`.
 - Definition set: Uncertainty
 - Examples:
 This noun is not intended to be used directly in describing a signal. However, it can be useful when formulating a query and then it serves as a generic way to check if there are facts related to uncertainty description for a `DrillingDataPoint`.
-```ddhub dataPoint
+```dwis dataPoint
 DrillingDataPoint:dataPoint
 SignalUncertainty:uncertainty
 dataPoint HasUncertainty uncertainty
@@ -30,8 +30,8 @@ dataPoint HasUncertainty uncertainty
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[dataPoint] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[uncertainty] -->|BelongsTo| N0003[SignalUncertainty] 
+	N0000[dataPoint] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[uncertainty] -->|BelongsToClass| N0003(SignalUncertainty) 
 	N0000[dataPoint] -->|HasUncertainty| N0002[uncertainty] 
 ```
 An example SparQL query looks like this:
@@ -54,7 +54,7 @@ This query returns all the `DrillingDataPoint` for which an uncertainty is given
 The uncertainty is represented by a Gaussian distribution, i.e., with a `Mean` and a `StandardDeviation`, $\mathcal{N}(\overline{x},{\sigma_{x}}^2)$ where $\overline{x}$ is the `Mean` value and $\sigma_{x}$ is the `StandardDeviation`.
 - Definition set: Uncertainty
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 GaussianUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -70,15 +70,15 @@ StdDev#01 HasDynamicValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[GaussianUncertainty] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(GaussianUncertainty) 
 	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[Mean#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[StdDev#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0004[Mean#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[StdDev#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[GU#01] -->|HasUncertaintyMean| N0004[Mean#01] 
 	N0002[GU#01] -->|HasUncertaintyStandardDeviation| N0005[StdDev#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
 	N0004[Mean#01] -->|HasDynamicValue| N0006[Signal#01] 
 	N0005[StdDev#01] -->|HasDynamicValue| N0008[Signal#02] 
 ```
@@ -110,7 +110,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 The uncertainty is represented by a `Histogram`.
 - Definition set: Uncertainty
 - Examples:
-```ddhub Signal#01
+```dwis Signal#01
 DrillingDataPoint:ddp#01
 GenericUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -122,12 +122,12 @@ Histo#01 HasDynamicValue Signal#01
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[GenericUncertainty] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(GenericUncertainty) 
 	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[Histo#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0004[Histo#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[GU#01] -->|HasUncertaintyHistogram| N0004[Histo#01] 
-	N0005[Signal#01] -->|BelongsTo| N0006[DynamicDrillingSignal] 
+	N0005[Signal#01] -->|BelongsToClass| N0006(DynamicDrillingSignal) 
 	N0004[Histo#01] -->|HasDynamicValue| N0005[Signal#01] 
 ```
 An example SparQL query looks like this:
@@ -154,7 +154,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 The uncertainty is represented by a uniform probability distribution between a `Min` and a `Max` value.
 - Definition set: Uncertainty
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 MinMaxUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -170,15 +170,15 @@ Max#01 HasDynamicValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[MinMaxUncertainty] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(MinMaxUncertainty) 
 	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[Min#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[Max#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0004[Min#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[Max#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[GU#01] -->|HasUncertaintyMin| N0004[Min#01] 
 	N0002[GU#01] -->|HasUncertaintyMax| N0005[Max#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
 	N0004[Min#01] -->|HasDynamicValue| N0006[Signal#01] 
 	N0005[Max#01] -->|HasDynamicValue| N0008[Signal#02] 
 ```
@@ -217,7 +217,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 The uncertainty on the signal is described as a Gaussian distribution with a standard deviation that is calculated using a proportion of the maximum range of the signal. The `Fullscale` or `ProportionError` can either be defined as attribute values, for example when they have fixed values, or using facts utilizing the verbs `HasFullScale` or repectively `HasProportionError` when these values may change through time.
 - Definition set: Uncertainty
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 FullScaleUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -233,15 +233,15 @@ ErrProp#01 HasStaticValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[FullScaleUncertainty] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(FullScaleUncertainty) 
 	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[FullScale#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[ErrProp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0004[FullScale#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[ErrProp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[GU#01] -->|HasFullScale| N0004[FullScale#01] 
 	N0002[GU#01] -->|HasProportionError| N0005[ErrProp#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DrillingSignal] 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DrillingSignal) 
 	N0004[FullScale#01] -->|HasStaticValue| N0006[Signal#01] 
 	N0005[ErrProp#01] -->|HasStaticValue| N0008[Signal#02] 
 ```
@@ -280,7 +280,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 The uncertainty of the sensor is described by a systematic bias and repetitive error. The systematic bias is referred to as the `Accuracy` while the repetitive error is referred to as the `Precision`. The standard deviation of the overall Gaussian distribution is $\sqrt{\sigma^2{_a}+\sigma^2{_p}}$ where $\sigma_a$ is the accuracy and $\sigma_p$ is the precision. The `Accuracy` or the `Precision` can either be defined as attribute values, for example when they have fixed values, or using another facts utilizing the verbs `HasAccuracy` or respectively `HasPrecision` when these values may change through time.
 - Definition set: Uncertainty
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 SensorUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -296,15 +296,15 @@ Prec#01 HasStaticValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[SensorUncertainty] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(SensorUncertainty) 
 	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[Acc#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[Prec#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0004[Acc#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[Prec#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[GU#01] -->|HasUncertaintyAccuracy| N0004[Acc#01] 
 	N0002[GU#01] -->|HasUncertaintyPrecision| N0005[Prec#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DrillingSignal] 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DrillingSignal) 
 	N0004[Acc#01] -->|HasStaticValue| N0006[Signal#01] 
 	N0005[Prec#01] -->|HasStaticValue| N0008[Signal#02] 
 ```
@@ -369,7 +369,7 @@ GenericUncertainty ||--o{ DrillingDataPoint : HasUncertaintyHistogram
 - Description: 
 This verb allows to associate a `SignalUncertainty` to a `DrillingDataPoint`.
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 GaussianUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -385,15 +385,15 @@ StdDev#01 HasDynamicValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[GaussianUncertainty] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(GaussianUncertainty) 
 	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[Mean#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[StdDev#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0004[Mean#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[StdDev#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[GU#01] -->|HasUncertaintyMean| N0004[Mean#01] 
 	N0002[GU#01] -->|HasUncertaintyStandardDeviation| N0005[StdDev#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
 	N0004[Mean#01] -->|HasDynamicValue| N0006[Signal#01] 
 	N0005[StdDev#01] -->|HasDynamicValue| N0008[Signal#02] 
 ```
@@ -426,7 +426,7 @@ WHERE {
 - Description: 
 This verb allows to associate a `DrillingDataPoint` as the `Accuracy` of a `SensorUncertainty`
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 SensorUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -442,15 +442,15 @@ Prec#01 HasStaticValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[SensorUncertainty] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(SensorUncertainty) 
 	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[Acc#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[Prec#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0004[Acc#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[Prec#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[GU#01] -->|HasUncertaintyAccuracy| N0004[Acc#01] 
 	N0002[GU#01] -->|HasUncertaintyPrecision| N0005[Prec#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DrillingSignal] 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DrillingSignal) 
 	N0004[Acc#01] -->|HasStaticValue| N0006[Signal#01] 
 	N0005[Prec#01] -->|HasStaticValue| N0008[Signal#02] 
 ```
@@ -484,7 +484,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Description: 
 This verb is used to associate a `DrillingDataPoint` as the `Precision` of a `SensorUncertainty`
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 SensorUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -500,15 +500,15 @@ Prec#01 HasStaticValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[SensorUncertainty] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(SensorUncertainty) 
 	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[Acc#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[Prec#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0004[Acc#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[Prec#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[GU#01] -->|HasUncertaintyAccuracy| N0004[Acc#01] 
 	N0002[GU#01] -->|HasUncertaintyPrecision| N0005[Prec#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DrillingSignal] 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DrillingSignal) 
 	N0004[Acc#01] -->|HasStaticValue| N0006[Signal#01] 
 	N0005[Prec#01] -->|HasStaticValue| N0008[Signal#02] 
 ```
@@ -542,7 +542,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Description: 
 This verb is used to associate a `DrillingDataPoint` as the `Min` value of `MinMaxUncertainty`
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 MinMaxUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -558,15 +558,15 @@ Max#01 HasDynamicValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[MinMaxUncertainty] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(MinMaxUncertainty) 
 	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[Min#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[Max#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0004[Min#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[Max#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[GU#01] -->|HasUncertaintyMin| N0004[Min#01] 
 	N0002[GU#01] -->|HasUncertaintyMax| N0005[Max#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
 	N0004[Min#01] -->|HasDynamicValue| N0006[Signal#01] 
 	N0005[Max#01] -->|HasDynamicValue| N0008[Signal#02] 
 ```
@@ -600,7 +600,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Description: 
 This verb is used to associate a `DrillingDataPoint` as the `Max` value of a `MinMaxUncertainty`
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 MinMaxUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -616,15 +616,15 @@ Max#01 HasDynamicValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[MinMaxUncertainty] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(MinMaxUncertainty) 
 	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[Min#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[Max#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0004[Min#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[Max#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[GU#01] -->|HasUncertaintyMin| N0004[Min#01] 
 	N0002[GU#01] -->|HasUncertaintyMax| N0005[Max#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
 	N0004[Min#01] -->|HasDynamicValue| N0006[Signal#01] 
 	N0005[Max#01] -->|HasDynamicValue| N0008[Signal#02] 
 ```
@@ -658,7 +658,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Description: 
 This verb is used to associate a `DrillingDataPoint` as the `Mean` value of a `GaussianUncertainty`
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 GaussianUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -674,15 +674,15 @@ StdDev#01 HasDynamicValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[GaussianUncertainty] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(GaussianUncertainty) 
 	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[Mean#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[StdDev#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0004[Mean#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[StdDev#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[GU#01] -->|HasUncertaintyMean| N0004[Mean#01] 
 	N0002[GU#01] -->|HasUncertaintyStandardDeviation| N0005[StdDev#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
 	N0004[Mean#01] -->|HasDynamicValue| N0006[Signal#01] 
 	N0005[StdDev#01] -->|HasDynamicValue| N0008[Signal#02] 
 ```
@@ -715,7 +715,7 @@ WHERE {
 - Description: 
 This verb is used to associate a `DrillingDataPoint` as the `StandardDeviation` value of a `GaussianUncertainty`
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 GaussianUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -731,15 +731,15 @@ StdDev#01 HasDynamicValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[GaussianUncertainty] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(GaussianUncertainty) 
 	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[Mean#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[StdDev#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0004[Mean#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[StdDev#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[GU#01] -->|HasUncertaintyMean| N0004[Mean#01] 
 	N0002[GU#01] -->|HasUncertaintyStandardDeviation| N0005[StdDev#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DynamicDrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DynamicDrillingSignal] 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DynamicDrillingSignal) 
 	N0004[Mean#01] -->|HasDynamicValue| N0006[Signal#01] 
 	N0005[StdDev#01] -->|HasDynamicValue| N0008[Signal#02] 
 ```
@@ -772,7 +772,7 @@ WHERE {
 - Description: 
 This verb is used to associate a `DrillingDataPoint` as the `ProportionError` value of a `FullScaleUncertainty`
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 FullScaleUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -788,15 +788,15 @@ ErrProp#01 HasStaticValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[FullScaleUncertainty] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(FullScaleUncertainty) 
 	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[FullScale#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[ErrProp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0004[FullScale#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[ErrProp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[GU#01] -->|HasFullScale| N0004[FullScale#01] 
 	N0002[GU#01] -->|HasProportionError| N0005[ErrProp#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DrillingSignal] 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DrillingSignal) 
 	N0004[FullScale#01] -->|HasStaticValue| N0006[Signal#01] 
 	N0005[ErrProp#01] -->|HasStaticValue| N0008[Signal#02] 
 ```
@@ -830,7 +830,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Description: 
 This verb is used to associate a `DrillingDataPoint` as the `FullScale` value of a `FullScaleUncertainty`
 - Examples:
-```ddhub Signal#01 Signal#02
+```dwis Signal#01 Signal#02
 DrillingDataPoint:ddp#01
 FullScaleUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -846,15 +846,15 @@ ErrProp#01 HasStaticValue Signal#02
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[FullScaleUncertainty] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(FullScaleUncertainty) 
 	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[FullScale#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0005[ErrProp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0004[FullScale#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0005[ErrProp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[GU#01] -->|HasFullScale| N0004[FullScale#01] 
 	N0002[GU#01] -->|HasProportionError| N0005[ErrProp#01] 
-	N0006[Signal#01] -->|BelongsTo| N0007[DrillingSignal] 
-	N0008[Signal#02] -->|BelongsTo| N0007[DrillingSignal] 
+	N0006[Signal#01] -->|BelongsToClass| N0007(DrillingSignal) 
+	N0008[Signal#02] -->|BelongsToClass| N0007(DrillingSignal) 
 	N0004[FullScale#01] -->|HasStaticValue| N0006[Signal#01] 
 	N0005[ErrProp#01] -->|HasStaticValue| N0008[Signal#02] 
 ```
@@ -888,7 +888,7 @@ In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#0
 - Description: 
 This verb is used to associated a `DrillingDataPoint` as the `Histogram` value of a `GenericUncertainty`
 - Examples:
-```ddhub Signal#01
+```dwis Signal#01
 DrillingDataPoint:ddp#01
 GenericUncertainty:GU#01
 ddp#01 HasUncertainty GU#01
@@ -900,12 +900,12 @@ Histo#01 HasDynamicValue Signal#01
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ddp#01] -->|BelongsTo| N0001[DrillingDataPoint] 
-	N0002[GU#01] -->|BelongsTo| N0003[GenericUncertainty] 
+	N0000[ddp#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[GU#01] -->|BelongsToClass| N0003(GenericUncertainty) 
 	N0000[ddp#01] -->|HasUncertainty| N0002[GU#01] 
-	N0004[Histo#01] -->|BelongsTo| N0001[DrillingDataPoint] 
+	N0004[Histo#01] -->|BelongsToClass| N0001(DrillingDataPoint) 
 	N0002[GU#01] -->|HasUncertaintyHistogram| N0004[Histo#01] 
-	N0005[Signal#01] -->|BelongsTo| N0006[DynamicDrillingSignal] 
+	N0005[Signal#01] -->|BelongsToClass| N0006(DynamicDrillingSignal) 
 	N0004[Histo#01] -->|HasDynamicValue| N0005[Signal#01] 
 ```
 An example SparQL query looks like this:

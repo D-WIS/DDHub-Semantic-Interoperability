@@ -35,14 +35,6 @@ DerivedMeasurement:dat#01
 BitDepth:dat#02
 ComputedData:dat#02
 ```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[dat#01] -->|BelongsTo| N0001[BitDepth] 
-	N0000[dat#01] -->|BelongsTo| N0002[DerivedMeasurement] 
-	N0003[dat#02] -->|BelongsTo| N0001[BitDepth] 
-	N0003[dat#02] -->|BelongsTo| N0004[ComputedData] 
-```
 In this example, `dat#01` is a `BitDepth` that is a derived measurement, while `dat#02` is a `BitDepth` that has been estimated.
 If one use the following sparql query:
 ```sparql

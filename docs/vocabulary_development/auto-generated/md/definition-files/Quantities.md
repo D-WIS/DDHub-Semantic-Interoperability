@@ -226,24 +226,31 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
   - L
     - Type: int
     - Description: Length exponent.
+    SI Unit: meter (m)
   - M
     - Type: int
     - Description: Mass exponent.
+    SI Unit: Kilogram (kg)
   - T
     - Type: int
     - Description: Time exponent.
+    SI Unit: Second (s)
   - I
     - Type: int
     - Description: Electric current exponent.
+    SI Unit: Ampere (A)
   - ThT
     - Type: int
     - Description: Thermodynamic temperature exponent.
+    SI Unit: Kelvin (K)
   - N
     - Type: int
     - Description: Amount of substance exponent.
+    SI Unit: Mole (N)
   - J
     - Type: int
     - Description: Luminous intensity exponent.
+    SI Unit: Candela (cd)
   - SIUnit
     - Type: string
     - Description: 
@@ -447,9 +454,11 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
   - ConversionFactorA
     - Type: double
     - Description: Unit conversion from SI unit is performed as:
+    ConvertedValue = ConversionFactorA + SIValue * ConversionFactorB
   - ConversionFactorB
     - Type: double
     - Description: Unit conversion from SI unit is performed as:
+    ConvertedValue = ConversionFactorA + SIValue * ConversionFactorB
 - Description: 
 
 - Definition set: Quantities

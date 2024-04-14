@@ -8,22 +8,18 @@
   <rdf:Description rdf:about="http://ddhub.no/ActivableFunction">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/RunnableFunction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/ActivableFunction" />
-    <rdfs:comment xml:lang="EN">
+    <rdfs:comment xml:lang="EN">An `ActivableFunction` is an ADCS function that can be activated. Here activation means that the
+function may run immediately or that it is enabled and can trigger if some conditions are respected.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DWISAttributeCardinalityRestriction">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
-    <owl:onProperty rdf:resource="http://ddhub.no/MainFunction" />
+    <owl:onProperty rdf:resource="http://ddhub.no/HasFunction" />
     <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onClass rdf:resource="http://ddhub.no/ActivableFunction" />
+    <owl:onProperty rdf:resource="http://ddhub.no/IsAuxiliary" />
     <owl:onClass rdf:resource="http://ddhub.no/RunnableFunction" />
-    <owl:onProperty rdf:resource="http://ddhub.no/AuxiliaryFunction" />
     <owl:onProperty rdf:resource="http://ddhub.no/AdviceType" />
     <owl:onClass rdf:resource="http://ddhub.no/Advisor" />
     <owl:onProperty rdf:resource="http://ddhub.no/MinFrequency" />
@@ -120,34 +116,54 @@
     <owl:onClass rdf:resource="http://ddhub.no/SensorUncertainty" />
     <owl:onProperty rdf:resource="http://ddhub.no/Precision" />
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RunnableFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ActivableFunction" />
+    <rdfs:comment xml:lang="EN">A runnable function is a function that starts to run immediately when activated.
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ControllerFunction">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/RunnableFunction" />
-    <rdfs:comment xml:lang="EN">
+    <rdfs:comment xml:lang="EN">A `ControllerFunction` is a `RunnableFunction` that executes a feedback control loop to follow as closely
+as possible one or several desired values. A typical example of `ControllerFunction` is the `AutoDriller`. An `AutoDriller` 
+follows as closely as possible, for instance, a desired `WOB`.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ProcedureFunction">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/RunnableFunction" />
-    <rdfs:comment xml:lang="EN">
+    <rdfs:comment xml:lang="EN">A `ProcedureFunction` is a `RunnableFunction` that executes a finites state automaton, i.e., a graph of
+transitions between states. It should be noted that a `ProcedureFunction` may use control algorithms while being in one
+state or when transiting from state to state. An example of `ProcedureFunction` is a friction test. A friction test has
+at least three states: rotation off bottom, pick-up without rotation, slack-off without rotation. The transitions 
+between the different states may depend on the implementation. Each of those states uses a controller, one that controls
+the rotational speed and one that controls the axial speed.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ProtectionFunction">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/ActivableFunction" />
-    <rdfs:comment xml:lang="EN">
+    <rdfs:comment xml:lang="EN">A `ProtectionFunction` is an `ActivableFunction`. It must be activated to have an effect, but the effect
+is to protect the drilling process, either by protecting the inputs to the drilling machines to avoid generating 
+a drilling incident, or to detect an abnormal drilling process state and react to the situation.
+detected.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/FDIRFunction">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/ProtectionFunction" />
-    <rdfs:comment xml:lang="EN">
+    <rdfs:comment xml:lang="EN">A `FDIRFunction` is a `ProtectionFunction` that reacts to a particular state of the drilling process. FDIR
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/SOEFunction">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/ProtectionFunction" />
-    <rdfs:comment xml:lang="EN">
+    <rdfs:comment xml:lang="EN">A `SOEFunction` is a `ProtectionFunction` that limits the commands that are send to the drilling machines
+to avoid generating a drilling incident. SOE stands for Safe Operating Envelope. A `SOEFunction` protects the inputs
+of the drilling process. An example `SOEFunction` is a swab/surge limits protection. This function limits the axial acceleration
+and speed of the drill-stem to avoid generate swabbing pressure below the maximum of the collapse and pore pressure, and
+surging pressure above the fracturing pressure.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DataFlowNode">
@@ -3082,21 +3098,32 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:comment xml:lang="EN">The uncertainty is represented by a uniform probability distribution between a `Min` and a `Max` value.
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MainFunction">
+  <rdf:Description rdf:about="http://ddhub.no/HasFunction">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/RunnableFunction" />
+    <rdfs:domain rdf:resource="http://ddhub.no/ActivableFunction" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/DataFlowNode" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
+    <rdfs:comment xml:lang="EN">this attribute describes the purpose of the activable function.
+</rdfs:comment>
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/AuxiliaryFunction">
+  <rdf:Description rdf:about="http://ddhub.no/IsAuxiliary">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/RunnableFunction" />
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+    <rdfs:comment xml:lang="EN">This attribute specifies if the function is a main or an auxilary one. A main function impacts
+    substantially the drilling process while an auxiliary function does not impact or only in limited fashion the
+    drilling process. Example of a main functions are: Hoist, Tag Bottom, Start Circulation, Start Rotation, 
+    Stop Circulation, Stop Rotation, Drill, Pull Out,Run In, Pull Out With Lubrication, Run In With Lubrication, Ream Up, 
+    Ream Down,Test Friction, Reciprocate, Test Pressure Integrity, Place Cement, .... Example of auxiliary functions
+    are: Boost Riser Flow, Down Link from ADCS, Rock Pipe, ...
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/AdviceType">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3104,7 +3131,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/Advisor" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/MinFrequency">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3112,7 +3139,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/BandPassFilter" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/MaxFrequency">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3120,7 +3147,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/BandPassFilter" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/CutOffFrequency">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3129,7 +3156,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
     <rdfs:domain rdf:resource="http://ddhub.no/LowPassFilter" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/NumberOfSamples">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3137,7 +3164,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/NumberOfSampleMovingAverage" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/TimeWindow">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3146,7 +3173,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
     <rdfs:domain rdf:resource="http://ddhub.no/TimeWindowRangeExtraction" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/BufferingInterval">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3154,7 +3181,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/Buffering" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/NumberOfItems">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3162,7 +3189,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/NumberOfItemsRangeExtraction" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ResamplingRate">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3170,7 +3197,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/Resampling" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ResamplingDelay">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3178,7 +3205,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/Resampling" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Validity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3186,7 +3213,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/Resampling" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ProviderName">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3203,7 +3230,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/DrillingContractor" />
     <rdfs:domain rdf:resource="http://ddhub.no/DWISInternalService" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/NumberOfRepeaters">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3211,7 +3238,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/Telemetry" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DistanceBetweenRepeaters">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3219,7 +3246,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/Telemetry" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/AverageDelayByRepeater">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3227,7 +3254,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/Telemetry" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsValid">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3235,7 +3262,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#bool" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Value">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3246,21 +3273,23 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#bool" />
     <rdfs:domain rdf:resource="http://ddhub.no/MechanicalElementState" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/TimeStampAtSource">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DynamicDrillingSignal" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#datetime" />
-    <rdfs:comment xml:lang="EN">this is a UTC date-time value corresponding to the time at which the value has been taken.</rdfs:comment>
+    <rdfs:comment xml:lang="EN">this is a UTC date-time value corresponding to the time at which the value has been taken.
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/TimeStampAcquisition">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DynamicDrillingSignal" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#datetime" />
-    <rdfs:comment xml:lang="EN">this is a UTC date-time value at which the value has been acquired by the data acquisition system.</rdfs:comment>
+    <rdfs:comment xml:lang="EN">this is a UTC date-time value at which the value has been acquired by the data acquisition system.
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/EndPointDescription">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3268,7 +3297,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/DataEndPoint" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/WellUID">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3276,7 +3305,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/WitsMLTimeBasedLogEndPoint" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/WellName">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3284,7 +3313,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/WitsMLTimeBasedLogEndPoint" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/WellboreUID">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3292,7 +3321,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/WitsMLTimeBasedLogEndPoint" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/WellboreName">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3300,7 +3329,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/WitsMLTimeBasedLogEndPoint" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/LogUID">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3308,7 +3337,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/WitsMLTimeBasedLogEndPoint" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/LogName">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3316,7 +3345,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/WitsMLTimeBasedLogEndPoint" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Mnemonic">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3324,7 +3353,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/WitsMLTimeBasedLogEndPoint" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/FixedIndices">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3332,7 +3361,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/EndPointMapping" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int[]" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ValuesIndices">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3340,7 +3369,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/EndPointMapping" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int[]" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/MeasurementIndex">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3348,21 +3377,23 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/EndPointMapping" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/LeftToRight">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/HydraulicJunction" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#bool" />
-    <rdfs:comment xml:lang="EN">Indicates whether the fluid can flow from the left branch to the right branch though the junction</rdfs:comment>
+    <rdfs:comment xml:lang="EN">Indicates whether the fluid can flow from the left branch to the right branch though the junction
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/RightToLeft">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/HydraulicJunction" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#bool" />
-    <rdfs:comment xml:lang="EN">Indicates whether the fluid can flow from the right branch to the left branch though the junction</rdfs:comment>
+    <rdfs:comment xml:lang="EN">Indicates whether the fluid can flow from the right branch to the left branch though the junction
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/PostiveUpward">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3370,7 +3401,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/OneDimensionalReferenceFrame" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#bool" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/MeaningfulPrecision">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3378,56 +3409,70 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/MeasurableQuantity" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/L">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int" />
-    <rdfs:comment xml:lang="EN">Length exponent.</rdfs:comment>
+    <rdfs:comment xml:lang="EN">Length exponent.
+SI Unit: meter (m)
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/M">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int" />
-    <rdfs:comment xml:lang="EN">Mass exponent.</rdfs:comment>
+    <rdfs:comment xml:lang="EN">Mass exponent.
+SI Unit: Kilogram (kg)
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/T">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int" />
-    <rdfs:comment xml:lang="EN">Time exponent.</rdfs:comment>
+    <rdfs:comment xml:lang="EN">Time exponent.
+SI Unit: Second (s)
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/I">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int" />
-    <rdfs:comment xml:lang="EN">Electric current exponent.</rdfs:comment>
+    <rdfs:comment xml:lang="EN">Electric current exponent.
+SI Unit: Ampere (A)
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ThT">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int" />
-    <rdfs:comment xml:lang="EN">Thermodynamic temperature exponent.</rdfs:comment>
+    <rdfs:comment xml:lang="EN">Thermodynamic temperature exponent.
+SI Unit: Kelvin (K)
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/N">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int" />
-    <rdfs:comment xml:lang="EN">Amount of substance exponent.</rdfs:comment>
+    <rdfs:comment xml:lang="EN">Amount of substance exponent.
+SI Unit: Mole (N)
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/J">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int" />
-    <rdfs:comment xml:lang="EN">Luminous intensity exponent.</rdfs:comment>
+    <rdfs:comment xml:lang="EN">Luminous intensity exponent.
+SI Unit: Candela (cd)
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/SIUnit">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3435,7 +3480,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Symbol">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3443,21 +3488,25 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/Unit" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ConversionFactorA">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Unit" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
-    <rdfs:comment xml:lang="EN">Unit conversion from SI unit is performed as:</rdfs:comment>
+    <rdfs:comment xml:lang="EN">Unit conversion from SI unit is performed as:
+ConvertedValue = ConversionFactorA + SIValue * ConversionFactorB
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ConversionFactorB">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/Unit" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
-    <rdfs:comment xml:lang="EN">Unit conversion from SI unit is performed as:</rdfs:comment>
+    <rdfs:comment xml:lang="EN">Unit conversion from SI unit is performed as:
+ConvertedValue = ConversionFactorA + SIValue * ConversionFactorB
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/LeapSeconds">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3465,7 +3514,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/Clock" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Stratum">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3473,7 +3522,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/Clock" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/NetworkSynchronizationLatencyAverage">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3481,7 +3530,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/Clock" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/NetworkSynchronizationLatencyStandardDeviation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3489,7 +3538,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/Clock" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Resolution">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3497,7 +3546,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/Clock" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/MaximumFluctuations">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3505,7 +3554,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/Clock" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/SynchronizationDelay">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3513,7 +3562,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/SynchronizationGroup" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/SamplingRate">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
@@ -3521,35 +3570,39 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:domain rdf:resource="http://ddhub.no/SynchronizationGroup" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
     <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/FullScale">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/FullScaleUncertainty" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
-    <rdfs:comment xml:lang="EN">The total range of measurement of the signal, i.e., $\left| max - min \right|$. The value is expected to be in the same physical quantity as the sensor value.</rdfs:comment>
+    <rdfs:comment xml:lang="EN">The total range of measurement of the signal, i.e., $\left| max - min \right|$. The value is expected to be in the same physical quantity as the sensor value.
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ProportionError">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/FullScaleUncertainty" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
-    <rdfs:comment xml:lang="EN">The proportion error on the signal. The value is expected to be a dimensionless physical quantity between 0 and 1 in SI unit. This proportion is applied to the `Fullscale` to obtain the standard deviation of the Gaussian probability distribution that describes the uncertainty of the signal. The mean value of that Gaussian distribution is the signal value.</rdfs:comment>
+    <rdfs:comment xml:lang="EN">The proportion error on the signal. The value is expected to be a dimensionless physical quantity between 0 and 1 in SI unit. This proportion is applied to the `Fullscale` to obtain the standard deviation of the Gaussian probability distribution that describes the uncertainty of the signal. The mean value of that Gaussian distribution is the signal value.
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Accuracy">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/SensorUncertainty" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
-    <rdfs:comment xml:lang="EN">The standard deviation of the systematic bias component of the uncertainty of the sensor. The assumed mean value of the attached Gaussian distribution is the measured value. The value is expected to be in the same physical quantity as the sensor value.</rdfs:comment>
+    <rdfs:comment xml:lang="EN">The standard deviation of the systematic bias component of the uncertainty of the sensor. The assumed mean value of the attached Gaussian distribution is the measured value. The value is expected to be in the same physical quantity as the sensor value.
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Precision">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/SensorUncertainty" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
-    <rdfs:comment xml:lang="EN">The standard deviation of the repetitive error component of the uncertainty of the sensor. The assumed mean value of the attached Gaussian distribution is the measured value. The value is expected to be in the same physical quantity as the sensor value.</rdfs:comment>
+    <rdfs:comment xml:lang="EN">The standard deviation of the repetitive error component of the uncertainty of the sensor. The assumed mean value of the attached Gaussian distribution is the measured value. The value is expected to be in the same physical quantity as the sensor value.
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DWISVerb">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
@@ -3674,14 +3727,6 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
     <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/HasFunction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://ddhub.no/DataFlowNode" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>

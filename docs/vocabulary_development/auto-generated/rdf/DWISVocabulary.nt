@@ -1,14 +1,15 @@
 <http://ddhub.no/DWISNoun> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ActivableFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ActivableFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
-<http://ddhub.no/RunnableFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://ddhub.no/RunnableFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ActivableFunction> .
 <http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onProperty> <http://ddhub.no/MainFunction> .
+<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onProperty> <http://ddhub.no/HasFunction> .
 <http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onClass> <http://ddhub.no/ActivableFunction> .
+<http://ddhub.no/RunnableFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/RunnableFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ActivableFunction> .
+<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onProperty> <http://ddhub.no/IsAuxiliary> .
 <http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onClass> <http://ddhub.no/RunnableFunction> .
-<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onProperty> <http://ddhub.no/AuxiliaryFunction> .
 <http://ddhub.no/ControllerFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ControllerFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/RunnableFunction> .
 <http://ddhub.no/ProcedureFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1091,13 +1092,13 @@
 <http://ddhub.no/MinMaxUncertainty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/MinMaxUncertainty> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/SignalUncertainty> .
 <http://ddhub.no/DWISNoun> <http://www.w3.org/2000/01/rdf-schema#comment> "Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a \"is a\" relation between the instance node and the noun. This is the root class for all the nouns defined in the DWIS vocabulary.\n"@EN .
-<http://ddhub.no/ActivableFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
-<http://ddhub.no/RunnableFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
-<http://ddhub.no/ControllerFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
-<http://ddhub.no/ProcedureFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
-<http://ddhub.no/ProtectionFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
-<http://ddhub.no/FDIRFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
-<http://ddhub.no/SOEFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/ActivableFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "An `ActivableFunction` is an ADCS function that can be activated. Here activation means that the\nfunction may run immediately or that it is enabled and can trigger if some conditions are respected.\n"@EN .
+<http://ddhub.no/RunnableFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A runnable function is a function that starts to run immediately when activated.\n"@EN .
+<http://ddhub.no/ControllerFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A `ControllerFunction` is a `RunnableFunction` that executes a feedback control loop to follow as closely\nas possible one or several desired values. A typical example of `ControllerFunction` is the `AutoDriller`. An `AutoDriller` \nfollows as closely as possible, for instance, a desired `WOB`.\n"@EN .
+<http://ddhub.no/ProcedureFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A `ProcedureFunction` is a `RunnableFunction` that executes a finites state automaton, i.e., a graph of\ntransitions between states. It should be noted that a `ProcedureFunction` may use control algorithms while being in one\nstate or when transiting from state to state. An example of `ProcedureFunction` is a friction test. A friction test has\nat least three states: rotation off bottom, pick-up without rotation, slack-off without rotation. The transitions \nbetween the different states may depend on the implementation. Each of those states uses a controller, one that controls\nthe rotational speed and one that controls the axial speed.\n"@EN .
+<http://ddhub.no/ProtectionFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A `ProtectionFunction` is an `ActivableFunction`. It must be activated to have an effect, but the effect\nis to protect the drilling process, either by protecting the inputs to the drilling machines to avoid generating \na drilling incident, or to detect an abnormal drilling process state and react to the situation.\ndetected.\n"@EN .
+<http://ddhub.no/FDIRFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A `FDIRFunction` is a `ProtectionFunction` that reacts to a particular state of the drilling process. FDIR\n"@EN .
+<http://ddhub.no/SOEFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A `SOEFunction` is a `ProtectionFunction` that limits the commands that are send to the drilling machines\nto avoid generating a drilling incident. SOE stands for Safe Operating Envelope. A `SOEFunction` protects the inputs\nof the drilling process. An example `SOEFunction` is a swab/surge limits protection. This function limits the axial acceleration\nand speed of the drill-stem to avoid generate swabbing pressure below the maximum of the collapse and pore pressure, and\nsurging pressure above the fracturing pressure.\n"@EN .
 <http://ddhub.no/DataFlowNode> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
 <http://ddhub.no/Plan> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
 <http://ddhub.no/OperationalPlan> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
@@ -1586,14 +1587,14 @@
 <http://ddhub.no/SensorUncertainty> <http://www.w3.org/2000/01/rdf-schema#comment> "The uncertainty of the sensor is described by a systematic bias and repetitive error. The systematic bias is referred to as the `Accuracy` while the repetitive error is referred to as the `Precision`. The standard deviation of the overall Gaussian distribution is $\\sqrt{\\sigma^2{_a}+\\sigma^2{_p}}$ where $\\sigma_a$ is the accuracy and $\\sigma_p$ is the precision. The `Accuracy` or the `Precision` can either be defined as attribute values, for example when they have fixed values, or using another facts utilizing the verbs `HasAccuracy` or respectively `HasPrecision` when these values may change through time.\n"@EN .
 <http://ddhub.no/GenericUncertainty> <http://www.w3.org/2000/01/rdf-schema#comment> "The uncertainty is represented by a `Histogram`.\n"@EN .
 <http://ddhub.no/MinMaxUncertainty> <http://www.w3.org/2000/01/rdf-schema#comment> "The uncertainty is represented by a uniform probability distribution between a `Min` and a `Max` value.\n"@EN .
-<http://ddhub.no/MainFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://ddhub.no/MainFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<http://ddhub.no/MainFunction> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/RunnableFunction> .
-<http://ddhub.no/MainFunction> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://ddhub.no/AuxiliaryFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://ddhub.no/AuxiliaryFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<http://ddhub.no/AuxiliaryFunction> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/RunnableFunction> .
-<http://ddhub.no/AuxiliaryFunction> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://ddhub.no/HasFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ddhub.no/HasFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ddhub.no/HasFunction> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/ActivableFunction> .
+<http://ddhub.no/HasFunction> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://ddhub.no/IsAuxiliary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ddhub.no/IsAuxiliary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ddhub.no/IsAuxiliary> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/RunnableFunction> .
+<http://ddhub.no/IsAuxiliary> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
 <http://ddhub.no/AdviceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://ddhub.no/AdviceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <http://ddhub.no/AdviceType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/Advisor> .
@@ -2395,65 +2396,65 @@
 <http://ddhub.no/HasUncertaintyHistogram> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/GenericUncertainty> .
 <http://ddhub.no/HasUncertaintyHistogram> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingDataPoint> .
 <http://ddhub.no/HasUncertaintyHistogram> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
-<http://ddhub.no/MainFunction> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/AuxiliaryFunction> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/AdviceType> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/MinFrequency> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/MaxFrequency> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/CutOffFrequency> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/NumberOfSamples> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/TimeWindow> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/BufferingInterval> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/NumberOfItems> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/ResamplingRate> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/ResamplingDelay> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/Validity> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/ProviderName> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/NumberOfRepeaters> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/DistanceBetweenRepeaters> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/AverageDelayByRepeater> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/IsValid> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/Value> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/TimeStampAtSource> <http://www.w3.org/2000/01/rdf-schema#comment> "this is a UTC date-time value corresponding to the time at which the value has been taken."@EN .
-<http://ddhub.no/TimeStampAcquisition> <http://www.w3.org/2000/01/rdf-schema#comment> "this is a UTC date-time value at which the value has been acquired by the data acquisition system."@EN .
-<http://ddhub.no/EndPointDescription> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/WellUID> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/WellName> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/WellboreUID> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/WellboreName> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/LogUID> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/LogName> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/Mnemonic> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/FixedIndices> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/ValuesIndices> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/MeasurementIndex> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/LeftToRight> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates whether the fluid can flow from the left branch to the right branch though the junction"@EN .
-<http://ddhub.no/RightToLeft> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates whether the fluid can flow from the right branch to the left branch though the junction"@EN .
-<http://ddhub.no/PostiveUpward> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/MeaningfulPrecision> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/L> <http://www.w3.org/2000/01/rdf-schema#comment> "Length exponent."@EN .
-<http://ddhub.no/M> <http://www.w3.org/2000/01/rdf-schema#comment> "Mass exponent."@EN .
-<http://ddhub.no/T> <http://www.w3.org/2000/01/rdf-schema#comment> "Time exponent."@EN .
-<http://ddhub.no/I> <http://www.w3.org/2000/01/rdf-schema#comment> "Electric current exponent."@EN .
-<http://ddhub.no/ThT> <http://www.w3.org/2000/01/rdf-schema#comment> "Thermodynamic temperature exponent."@EN .
-<http://ddhub.no/N> <http://www.w3.org/2000/01/rdf-schema#comment> "Amount of substance exponent."@EN .
-<http://ddhub.no/J> <http://www.w3.org/2000/01/rdf-schema#comment> "Luminous intensity exponent."@EN .
-<http://ddhub.no/SIUnit> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/Symbol> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/ConversionFactorA> <http://www.w3.org/2000/01/rdf-schema#comment> "Unit conversion from SI unit is performed as:"@EN .
-<http://ddhub.no/ConversionFactorB> <http://www.w3.org/2000/01/rdf-schema#comment> "Unit conversion from SI unit is performed as:"@EN .
-<http://ddhub.no/LeapSeconds> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/Stratum> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/NetworkSynchronizationLatencyAverage> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/NetworkSynchronizationLatencyStandardDeviation> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/Resolution> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/MaximumFluctuations> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/SynchronizationDelay> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/SamplingRate> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/FullScale> <http://www.w3.org/2000/01/rdf-schema#comment> "The total range of measurement of the signal, i.e., $\\left| max - min \\right|$. The value is expected to be in the same physical quantity as the sensor value."@EN .
-<http://ddhub.no/ProportionError> <http://www.w3.org/2000/01/rdf-schema#comment> "The proportion error on the signal. The value is expected to be a dimensionless physical quantity between 0 and 1 in SI unit. This proportion is applied to the `Fullscale` to obtain the standard deviation of the Gaussian probability distribution that describes the uncertainty of the signal. The mean value of that Gaussian distribution is the signal value."@EN .
-<http://ddhub.no/Accuracy> <http://www.w3.org/2000/01/rdf-schema#comment> "The standard deviation of the systematic bias component of the uncertainty of the sensor. The assumed mean value of the attached Gaussian distribution is the measured value. The value is expected to be in the same physical quantity as the sensor value."@EN .
-<http://ddhub.no/Precision> <http://www.w3.org/2000/01/rdf-schema#comment> "The standard deviation of the repetitive error component of the uncertainty of the sensor. The assumed mean value of the attached Gaussian distribution is the measured value. The value is expected to be in the same physical quantity as the sensor value."@EN .
+<http://ddhub.no/HasFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "this attribute describes the purpose of the activable function.\n"@EN .
+<http://ddhub.no/IsAuxiliary> <http://www.w3.org/2000/01/rdf-schema#comment> "This attribute specifies if the function is a main or an auxilary one. A main function impacts\n    substantially the drilling process while an auxiliary function does not impact or only in limited fashion the\n    drilling process. Example of a main functions are: Hoist, Tag Bottom, Start Circulation, Start Rotation, \n    Stop Circulation, Stop Rotation, Drill, Pull Out,Run In, Pull Out With Lubrication, Run In With Lubrication, Ream Up, \n    Ream Down,Test Friction, Reciprocate, Test Pressure Integrity, Place Cement, .... Example of auxiliary functions\n    are: Boost Riser Flow, Down Link from ADCS, Rock Pipe, ...\n"@EN .
+<http://ddhub.no/AdviceType> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/MinFrequency> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/MaxFrequency> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/CutOffFrequency> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/NumberOfSamples> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/TimeWindow> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/BufferingInterval> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/NumberOfItems> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/ResamplingRate> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/ResamplingDelay> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/Validity> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/ProviderName> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/NumberOfRepeaters> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/DistanceBetweenRepeaters> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/AverageDelayByRepeater> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/IsValid> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/Value> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/TimeStampAtSource> <http://www.w3.org/2000/01/rdf-schema#comment> "this is a UTC date-time value corresponding to the time at which the value has been taken.\n"@EN .
+<http://ddhub.no/TimeStampAcquisition> <http://www.w3.org/2000/01/rdf-schema#comment> "this is a UTC date-time value at which the value has been acquired by the data acquisition system.\n"@EN .
+<http://ddhub.no/EndPointDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/WellUID> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/WellName> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/WellboreUID> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/WellboreName> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/LogUID> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/LogName> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/Mnemonic> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/FixedIndices> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/ValuesIndices> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/MeasurementIndex> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/LeftToRight> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates whether the fluid can flow from the left branch to the right branch though the junction\n"@EN .
+<http://ddhub.no/RightToLeft> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates whether the fluid can flow from the right branch to the left branch though the junction\n"@EN .
+<http://ddhub.no/PostiveUpward> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/MeaningfulPrecision> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/L> <http://www.w3.org/2000/01/rdf-schema#comment> "Length exponent.\nSI Unit: meter (m)\n"@EN .
+<http://ddhub.no/M> <http://www.w3.org/2000/01/rdf-schema#comment> "Mass exponent.\nSI Unit: Kilogram (kg)\n"@EN .
+<http://ddhub.no/T> <http://www.w3.org/2000/01/rdf-schema#comment> "Time exponent.\nSI Unit: Second (s)\n"@EN .
+<http://ddhub.no/I> <http://www.w3.org/2000/01/rdf-schema#comment> "Electric current exponent.\nSI Unit: Ampere (A)\n"@EN .
+<http://ddhub.no/ThT> <http://www.w3.org/2000/01/rdf-schema#comment> "Thermodynamic temperature exponent.\nSI Unit: Kelvin (K)\n"@EN .
+<http://ddhub.no/N> <http://www.w3.org/2000/01/rdf-schema#comment> "Amount of substance exponent.\nSI Unit: Mole (N)\n"@EN .
+<http://ddhub.no/J> <http://www.w3.org/2000/01/rdf-schema#comment> "Luminous intensity exponent.\nSI Unit: Candela (cd)\n"@EN .
+<http://ddhub.no/SIUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/Symbol> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/ConversionFactorA> <http://www.w3.org/2000/01/rdf-schema#comment> "Unit conversion from SI unit is performed as:\nConvertedValue = ConversionFactorA + SIValue * ConversionFactorB\n"@EN .
+<http://ddhub.no/ConversionFactorB> <http://www.w3.org/2000/01/rdf-schema#comment> "Unit conversion from SI unit is performed as:\nConvertedValue = ConversionFactorA + SIValue * ConversionFactorB\n"@EN .
+<http://ddhub.no/LeapSeconds> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/Stratum> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/NetworkSynchronizationLatencyAverage> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/NetworkSynchronizationLatencyStandardDeviation> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/Resolution> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/MaximumFluctuations> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/SynchronizationDelay> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/SamplingRate> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/FullScale> <http://www.w3.org/2000/01/rdf-schema#comment> "The total range of measurement of the signal, i.e., $\\left| max - min \\right|$. The value is expected to be in the same physical quantity as the sensor value.\n"@EN .
+<http://ddhub.no/ProportionError> <http://www.w3.org/2000/01/rdf-schema#comment> "The proportion error on the signal. The value is expected to be a dimensionless physical quantity between 0 and 1 in SI unit. This proportion is applied to the `Fullscale` to obtain the standard deviation of the Gaussian probability distribution that describes the uncertainty of the signal. The mean value of that Gaussian distribution is the signal value.\n"@EN .
+<http://ddhub.no/Accuracy> <http://www.w3.org/2000/01/rdf-schema#comment> "The standard deviation of the systematic bias component of the uncertainty of the sensor. The assumed mean value of the attached Gaussian distribution is the measured value. The value is expected to be in the same physical quantity as the sensor value.\n"@EN .
+<http://ddhub.no/Precision> <http://www.w3.org/2000/01/rdf-schema#comment> "The standard deviation of the repetitive error component of the uncertainty of the sensor. The assumed mean value of the attached Gaussian distribution is the measured value. The value is expected to be in the same physical quantity as the sensor value.\n"@EN .
 <http://ddhub.no/DWISVerb> <http://www.w3.org/2000/01/rdf-schema#comment> "This is the root class for all verbs defined in the DWIS vocabulary. It is used to define a relation between a subject, which can be of any `DWISNoun` and an object, also of any type of `DWISNoun`.\n"@EN .
 <http://ddhub.no/IsEnablingSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
 <http://ddhub.no/IsActivatedSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
