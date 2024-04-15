@@ -2,43 +2,50 @@
 
 # NOUNS
 ## DataType <!-- NOUN -->
-- Display name: DataType
+- Display name: Data Type
 - Parent class: DWISNoun
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## ContinuousDataType <!-- NOUN -->
-- Display name: ContinuousDataType
+- Display name: Continuous Data Type
 - Parent class: DataType
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## NormalizedDataType <!-- NOUN -->
-- Display name: NormalizedDataType
+- Display name: Normalized Data Type
 - Parent class: ContinuousDataType
 - Attributes:
 - Specialization:
 - Description: between 0 and 1
 - Examples:
 ## DiscreteDataType <!-- NOUN -->
-- Display name: DiscreteDataType
+- Display name: Discrete Data Type
 - Parent class: DataType
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## EnumerationDataType <!-- NOUN -->
-- Display name: EnumerationDataType
+- Display name: Enumeration Data Type
 - Parent class: DiscreteDataType
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## BooleanDataType <!-- NOUN -->
-- Display name: BooleanDataType
+- Display name: Boolean Data Type
 - Parent class: EnumerationDataType
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## StringDataType <!-- NOUN -->
+- Display name: String Data Type
+- Parent class: DataType
 - Attributes:
 - Specialization:
 - Description: 

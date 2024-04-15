@@ -150,72 +150,255 @@ the open hole section of the borehole.
 # VERBS
 
 ## IsEnablingSignalFor <!-- VERB -->
-- Display name: IsEnablingSignalFor
+- Display name: Is Enabling Signal For
 - Parent verb: DWISVerb
-- Subject class: DWISNoun
+- Subject class: DrillingDataPoint
 - Object class: ActivableFunction
-- Description: 
+- Description: This verb is used to define a `DrillingDataPoint` that is used to enable or disable an `ActivableFunction`.
+It is expected that the `DrillingDataPoint` is a Boolean value.
 - Examples: 
+```dwis packOffDectionAndReaction
+FDIRFunction:packOffDetectionAndReaction
+packOffDetectionAndReaction HasFunction "PackOffFDIR"
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+packOffDetectionAndReaction IsProvidedBy DCS
+Command:enableSignalPackOffDetectionFDIR
+enableSignalPackOffDetectionFDIR BelongsToClass BooleanDataType
+enableSignalPackOffDetectionFDIR IsEnablingSignalFor packOffDetectionAndReaction
+```
+This example describes that the `Command` signal `enableSignalPackOffDetectionFDIR` is used to enable/disable the `FDIRFunction`.
 ## IsActivatedSignalFor <!-- VERB -->
-- Display name: IsActivatedSignalFor  
+- Display name: Is Activated Signal For  
 - Parent verb: DWISVerb
-- Subject class: DWISNoun
+- Subject class: DrillingDataPoint
 - Object class: ActivableFunction
-- Description: 
+- Description: This verb is used to define a `DrillingDataPoint` that indicates if the `ActivableFunction` is activated or
+not. It is expected that the `DrillingDataPoint` is a Boolean value.
 - Examples: 
-## IsAllowEnablementSignalFor <!-- VERB -->
-- Display name: IsAllowEnablementSignalFor  
+```dwis packOffDectionAndReaction
+FDIRFunction:packOffDetectionAndReaction
+packOffDetectionAndReaction HasFunction "PackOffFDIR"
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+packOffDetectionAndReaction IsProvidedBy DCS
+ComputedData:activatedSignalPackOffDetectionFDIR
+activatedSignalPackOffDetectionFDIR BelongsToClass BooleanDataType
+activatedSignalPackOffDetectionFDIR IsEnablingSignalFor packOffDetectionAndReaction
+```
+This example describes that the `ComputedData` signal `activatedSignalPackOffDetectionFDIR` informs whether the 
+`packOffDetectionAndReaction` FDIR function is activated or not.
+## AllowEnablementSignalFor <!-- VERB -->
+- Display name: Allow Enablement Signal For  
 - Parent verb: DWISVerb
-- Subject class: DWISNoun
+- Subject class: DrillingDataPoint
 - Object class: ActivableFunction
-- Description: 
+- Description: This verb is used to define a `DrillingDataPoint` tells if it is allowed or not to enable or
+disable an activable function. It is expected that the `DrillingDataPoint` is a Boolean value. If the signal is true,
+then it is possible to enable or disable the function using the signal associated with `IsEnablingSignalFor`. If it is
+false, it is not allowed to enable or disable the `ActivableFunction`, meaning that the signal associated with `IsEnablingSignalFor`
+is ignored.
 - Examples: 
+```dwis packOffDectionAndReaction
+FDIRFunction:packOffDetectionAndReaction
+packOffDetectionAndReaction HasFunction "PackOffFDIR"
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+packOffDetectionAndReaction IsProvidedBy DCS
+ComputedData:allowEnablementSignalPackOffDetectionFDIR
+allowEnablementSignalPackOffDetectionFDIR BelongsToClass BooleanDataType
+allowEnablementSignalPackOffDetectionFDIR IsEnablingSignalFor packOffDetectionAndReaction
+Command:enableSignalPackOffDetectionFDIR
+enableSignalPackOffDetectionFDIR BelongsToClass BooleanDataType
+enableSignalPackOffDetectionFDIR IsEnablingSignalFor packOffDetectionAndReaction
+```
+This example describes that the `ComputedData` signal `allowEnablementSignalPackOffDetectionFDIR` tells whether the 
+`packOffDetectionAndReaction` FDIR function can be allowed to be enabled or not. The state of the signal `allowEnablementSignalPackOffDetectionFDIR`
+has an impact on whether the signal `enableSignalPackOffDetectionFDIR` is used or ignored.
 ## IsIdlingSignalFor <!-- VERB -->
-- Display name: IsIdlingSignalFor  
+- Display name: Is Idling Signal For  
 - Parent verb: DWISVerb
-- Subject class: DWISNoun
+- Subject class: DrillingDataPoint
 - Object class: RunnableFunction
-- Description: 
+- Description: This verb is used to indicate a `DrillingDataPoint` that tells if the function is in an idle state.
+A function that is idle must be enabled but does not perform any particular control on the machines. For instance, a 
+`ProcedureFunction` that has reached its terminal state or a `ControllerFunction` that cannot control anymore its 
+parameter because a limit is reached, e.g., autodriller when reaching the `MinDrillHeightVerticalLocation`, or an FDIR
+function when there are no incidents that is detected. A SOE function is in idle state, if the used set-points are
+within the limits, but if the limits are applied then the idle state is false, because the function acts on the set-points.
 - Examples: 
+```dwis packOffDectionAndReaction
+FDIRFunction:packOffDetectionAndReaction
+packOffDetectionAndReaction HasFunction "PackOffFDIR"
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+packOffDetectionAndReaction IsProvidedBy DCS
+ComputedData:idlingSignalPackOffDetectionFDIR
+idlingSignalPackOffDetectionFDIR BelongsToClass BooleanDataType
+idlingSignalPackOffDetectionFDIR IsIdlingSignalFor packOffDetectionAndReaction
+ComputedData:activatedSignalPackOffDetectionFDIR
+activatedSignalPackOffDetectionFDIR BelongsToClass BooleanDataType
+activatedSignalPackOffDetectionFDIR IsEnablingSignalFor packOffDetectionAndReaction
+```
+This example describes that the `ComputedData` signal `idlingSignalPackOffDetectionFDIR` informs whether the `packOffDetectionAndReaction`
+FDIR function is in an idle state or not. Logically, this signal has a meaning only if the signal `activatedSignalPackOffDetectionFDIR` is
+true.
 ## IsUserControllableExtraMarginSignalFor <!-- VERB -->
-- Display name: IsUserControllableExtraMarginSignalFor  
+- Display name: Is User Controllable Extra Margin Signal For  
 - Parent verb: DWISVerb
-- Subject class: DWISNoun
+- Subject class: DrillingDataPoint
 - Object class: FDIRFunction
-- Description: 
+- Description: This verb is used to indicate that a `DrillingDataPoint` used by an `FDIRFunction`, extends the calculated
+threshold value for the fault detection by a user-defined amount. The value of this signal is supposed to be interpreted
+in absolute value. If it is negative, then it is its magnitude that is used. This allows the end-user to increase the margin for
+detection of an incident. 
 - Examples: 
-## IsUsedDefinedExtraMarginSignalFor <!-- VERB -->
-- Display name: IsUsedDefinedExtraMarginSignalFor  
+```dwis packOffDectionAndReaction
+FDIRFunction:packOffDetectionAndReaction
+packOffDetectionAndReaction HasFunction "PackOffFDIR"
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+packOffDetectionAndReaction IsProvidedBy DCS
+Command:extraMarginUserDefinedSignalPackOffDetectionFDIR
+extraMarginUserDefinedSignalPackOffDetectionFDIR BelongsToClass ContinuousDataType
+extraMarginUserDefinedSignalPackOffDetectionFDIR IsUserControllableExtraMarginSignalFor packOffDetectionAndReaction
+```
+This example descibes that the `Command` signal `extraMarginUserDefinedSignalPackOffDetectionFDIR` is used to extend
+the threshold detection for pressure by a user defined value.
+## IsUsedExtraMarginSignalFor <!-- VERB -->
+- Display name: Is Used Extra Margin Signal For  
 - Parent verb: DWISVerb
-- Subject class: DWISNoun
+- Subject class: DrillingDataPoint
 - Object class: FDIRFunction
-- Description: 
+- Description: This verb is used to indicate a `DrillingDataPoint` used by an `FDIRFunction` tells whether the
+extra margin signal is used or not by the FDIR function. This signal is expected to be a boolean value.
 - Examples: 
+```dwis packOffDectionAndReaction
+FDIRFunction:packOffDetectionAndReaction
+packOffDetectionAndReaction HasFunction "PackOffFDIR"
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+packOffDetectionAndReaction IsProvidedBy DCS
+ComputedData:usedExtraMarginSignal
+usedExtraMarginSignal BelongsToClass BooleanDataType
+usedExtraMarginSignal IsUsedExtraMarginSignalFor packOffDetectionAndReaction
+Command:extraMarginUserDefinedSignalPackOffDetectionFDIR
+extraMarginUserDefinedSignalPackOffDetectionFDIR BelongsToClass ContinuousDataType
+extraMarginUserDefinedSignalPackOffDetectionFDIR IsUserControllableExtraMarginSignalFor packOffDetectionAndReaction
+```
+This example describes a `ComputedData` signal that indicates whether an extra margin value is used for the threshold
+detection. This extra margin is describes by `extraMarginUserDefinedSignalPackOffDetectionFDIR`.
 ## IsArmedSignalFor <!-- VERB -->
-- Display name: IsArmedSignalFor  
+- Display name: Is Armed Signal For  
 - Parent verb: DWISVerb
-- Subject class: DWISNoun
+- Subject class: DrillingDataPoint
 - Object class: FDIRFunction
-- Description: 
+- Description: This verb is used to indicate a `DrillingDataPoint` used by an `FDIRFunction` tells if the FDIR function is armed and operative.
+The signal is supposed to be a Boolean value.
+The FDIR function may be active, but the current state of the drilling process may imply that the function cannot be
+triggered. For instance, a pack-off FDIR may be active but would react only if the flow is supposed to be steady state.
 - Examples: 
+```dwis packOffDectionAndReaction
+FDIRFunction:packOffDetectionAndReaction
+packOffDetectionAndReaction HasFunction "PackOffFDIR"
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+packOffDetectionAndReaction IsProvidedBy DCS
+ComputedData:armedSignalPackOffDetectionFDIR
+armedSignalPackOffDetectionFDIR BelongsToClass BooleanValue
+armedSignalPackOffDetectionFDIR IsArmedSignalFor packOffDetectionAndReaction
+ComputedData:activatedSignalPackOffDetectionFDIR
+activatedSignalPackOffDetectionFDIR BelongsToClass BooleanDataType
+activatedSignalPackOffDetectionFDIR IsEnablingSignalFor packOffDetectionAndReaction
+```
+This example describes a `ComputedData` signal used by an `FDIRFunction` to indicate when the packoff detection can trigger.
+It also uses an `activatedSignalPackOffDetectionFDIR` signal that indicates when the function is active or not.
 ## IsTriggeredSignalFor <!-- VERB -->
-- Display name: IsTriggeredSignalFor  
+- Display name: Is Triggered Signal For  
 - Parent verb: DWISVerb
-- Subject class: DWISNoun
+- Subject class: DrillingDataPoint
 - Object class: FDIRFunction
-- Description: 
-- Examples: 
+- Description: This verb is used to indicate a `DrillingDataPoint` tells whether an `FDIRFunction` has been triggered
+or not. This signal is expected to be a Boolean value. The signal is expected to be true from the moment the FDIR has triggered
+to the moment it has recovered from the incident, if it has a recovery procedure, or to the moment the control is given
+back to the end-user, in case of failure of the recovery procedure or at the end of the isolation procedure.
+- Examples:
+ ```dwis packOffDectionAndReaction
+FDIRFunction:packOffDetectionAndReaction
+packOffDetectionAndReaction HasFunction "PackOffFDIR"
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+packOffDetectionAndReaction IsProvidedBy DCS
+ComputedData:triggeredSignalPackOffDetectionFDIR
+triggeredSignalPackOffDetectionFDIR BelongsToClass BooleanValue
+triggeredSignalPackOffDetectionFDIR IsTriggeredSignalFor packOffDetectionAndReaction
+```
+This example describes a `ComputedData` signal used by an `FDIRFunction` to indicate when whether the packoff detection
+is triggered. 
 ## IsIdlingAfterTriggeredSignalFor <!-- VERB -->
-- Display name: IsIdlingAfterTriggeredSignalFor  
+- Display name: Is Idling After Triggered Signal For  
 - Parent verb: DWISVerb
-- Subject class: DWISNoun
+- Subject class: DrillingDataPoint
 - Object class: FDIRFunction
-- Description: 
-- Examples: 
+- Description: This verb is used to indicate that a `DrillingDataPoint` tells whether the isolation or the recovery
+- procedures have reached their terminal state and are in an idle state until the system is returned to manual mode. In case
+- the recovery procedure has been successful, the system will not enter an idle state as it will exit completely the triggered
+- state of the `FDIRFunction`. The value can only turn true when the tiggered signal is true. This signal is supposed to be a boolean value.
+- Examples:
+```dwis packOffDectionAndReaction
+FDIRFunction:packOffDetectionAndReaction
+packOffDetectionAndReaction HasFunction "PackOffFDIR"
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+packOffDetectionAndReaction IsProvidedBy DCS
+ComputedData:idleAfterTriggeredSignalPackOffDetectionFDIR
+idleAfterTriggeredSignalPackOffDetectionFDIR BelongsToClass BooleanValue
+idleAfterTriggeredSignalPackOffDetectionFDIR IsIdlingAfterTriggeredSignalFor packOffDetectionAndReaction
+ComputedData:triggeredSignalPackOffDetectionFDIR
+triggeredSignalPackOffDetectionFDIR BelongsToClass BooleanValue
+triggeredSignalPackOffDetectionFDIR IsTriggeredSignalFor packOffDetectionAndReaction
+```
+This example describes a `ComputedData` signal of an `FDIRFunction` that tells whether the isolation or the recovery 
+procedures have reached a terminal state and have not managed to recover from the incident, therefore waiting to
+return to manual mode. There is also an `triggeredSignalPackOffDetectionFDIR` signal that tells whether the function
+has triggered or not.
 ## IsImpactDescriptionSignalFor  <!-- VERB -->
-- Display name: IsImpactDescriptionSignalFor  
+- Display name: Is Impact Description Signal For  
 - Parent verb: DWISVerb
-- Subject class: DWISNoun
+- Subject class: DrillingDataPoint
 - Object class: FDIRFunction
-- Description: 
-- Examples: 
+- Description: This verbs is used to indicate that a `DrillingDataPoint` used by an `FDIRFunction` can be used to
+describe the impact of the function on the drilling process. This signal is supposed to be string value.
+- Examples:
+```dwis packOffDectionAndReaction
+FDIRFunction:packOffDetectionAndReaction
+packOffDetectionAndReaction HasFunction "PackOffFDIR"
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+packOffDetectionAndReaction IsProvidedBy DCS
+Command:impactDescriptionSignalPackOffDetectionFDIR
+impactDescriptionSignalPackOffDetectionFDIR BelongsToClass StringDataType
+impactDescriptionSignalPackOffDetectionFDIR IsImpactDescriptionSignalFor packOffDetectionAndReaction
+```
+This example describes a `Command` signal of an `FDIRFunction` that is used to inform the ADCS about the impact of
+triggering the FDIR function.
