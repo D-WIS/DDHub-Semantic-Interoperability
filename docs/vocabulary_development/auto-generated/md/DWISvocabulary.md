@@ -1124,43 +1124,50 @@ NOVOS, Cyberbase, DEAL
 - Definition set: DataValidity
 - Examples:
 ## DataType <!-- NOUN -->
-- Display name: DataType
+- Display name: Data Type
 - Parent class: [DWISNoun](#DWISNoun)
 - Description: 
 
 - Definition set: DrillingDataSemantics
 - Examples:
 ## ContinuousDataType <!-- NOUN -->
-- Display name: ContinuousDataType
+- Display name: Continuous Data Type
 - Parent class: [DataType](#DataType)
 - Description: 
 
 - Definition set: DrillingDataSemantics
 - Examples:
 ## NormalizedDataType <!-- NOUN -->
-- Display name: NormalizedDataType
+- Display name: Normalized Data Type
 - Parent class: [ContinuousDataType](#ContinuousDataType)
 - Description: 
 between 0 and 1
 - Definition set: DrillingDataSemantics
 - Examples:
 ## DiscreteDataType <!-- NOUN -->
-- Display name: DiscreteDataType
+- Display name: Discrete Data Type
 - Parent class: [DataType](#DataType)
 - Description: 
 
 - Definition set: DrillingDataSemantics
 - Examples:
 ## EnumerationDataType <!-- NOUN -->
-- Display name: EnumerationDataType
+- Display name: Enumeration Data Type
 - Parent class: [DiscreteDataType](#DiscreteDataType)
 - Description: 
 
 - Definition set: DrillingDataSemantics
 - Examples:
 ## BooleanDataType <!-- NOUN -->
-- Display name: BooleanDataType
+- Display name: Boolean Data Type
 - Parent class: [EnumerationDataType](#EnumerationDataType)
+- Description: 
+
+- Definition set: DrillingDataSemantics
+- Examples:
+## StringDataType <!-- NOUN -->
+- Display name: String Data Type
+- Parent class: [DataType](#DataType)
 - Description: 
 
 - Definition set: DrillingDataSemantics
@@ -4528,95 +4535,700 @@ WHERE {
 In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is representing a sensor having a Gaussian probability distibution that is described using an `Accuracy` (called `Acc#01`)  and a `Precision` called `Prec#01`. `Acc#01` is a static signal that is attached to `Signal#01`. Similarly `Prec#01` is a static signal attached to `Signal#02`.
 # Verbs
 ## IsEnablingSignalFor <!-- VERB -->
-- Display name: IsEnablingSignalFor
+- Display name: Is Enabling Signal For
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DWISNoun](#DWISNoun)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [ActivableFunction](#ActivableFunction)
 - Definition set: ADCS
 - Description: 
-
+This verb is used to define a `DrillingDataPoint` that is used to enable or disable an `ActivableFunction`.
+It is expected that the `DrillingDataPoint` is a Boolean value.
 - Examples:
+```dwis packOffDectionAndReaction
+FDIRFunction:packOffDetectionAndReaction
+packOffDetectionAndReaction HasFunction "PackOffFDIR"
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+packOffDetectionAndReaction IsProvidedBy DCS
+Command:enableSignalPackOffDetectionFDIR
+enableSignalPackOffDetectionFDIR BelongsToClass BooleanDataType
+enableSignalPackOffDetectionFDIR IsEnablingSignalFor packOffDetectionAndReaction
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
+	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002(("PackOffFDIR")) 
+	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
+	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
+	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
+	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
+	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0003((DCS)) 
+	N0008[enableSignalPackOffDetectionFDIR] -->|BelongsToClass| N0009(Command) 
+	N0008[enableSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(BooleanDataType) 
+	N0008[enableSignalPackOffDetectionFDIR] -->|IsEnablingSignalFor| N0000((packOffDetectionAndReaction)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?packOffDectionAndReaction
+WHERE {
+	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
+	?packOffDetectionAndReaction ddhub:HasFunction ?Attribute000 .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS ddhub:IsProvidedBy ?Attribute001 .
+	?DCS rdf:type ddhub:DataProvider .
+	?packOffDetectionAndReaction ddhub:IsProvidedBy ?Attribute002 .
+	?enableSignalPackOffDetectionFDIR rdf:type ddhub:Command .
+	?enableSignalPackOffDetectionFDIR rdf:type ddhub:BooleanDataType .
+	?enableSignalPackOffDetectionFDIR ddhub:IsEnablingSignalFor ?Attribute003 .
+  FILTER (
+	?Attribute000 = "PackOffFDIR"
+	&& 	?Attribute001 = Contractor
+	&& 	?Attribute002 = DCS
+	&& 	?Attribute003 = packOffDetectionAndReaction
+  )
+}
+```
+This example describes that the `Command` signal `enableSignalPackOffDetectionFDIR` is used to enable/disable the `FDIRFunction`.
 ## IsActivatedSignalFor <!-- VERB -->
-- Display name: IsActivatedSignalFor
+- Display name: Is Activated Signal For
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DWISNoun](#DWISNoun)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [ActivableFunction](#ActivableFunction)
 - Definition set: ADCS
 - Description: 
-
+This verb is used to define a `DrillingDataPoint` that indicates if the `ActivableFunction` is activated or
+not. It is expected that the `DrillingDataPoint` is a Boolean value.
 - Examples:
-## IsAllowEnablementSignalFor <!-- VERB -->
-- Display name: IsAllowEnablementSignalFor
+```dwis packOffDectionAndReaction
+FDIRFunction:packOffDetectionAndReaction
+packOffDetectionAndReaction HasFunction "PackOffFDIR"
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+packOffDetectionAndReaction IsProvidedBy DCS
+ComputedData:activatedSignalPackOffDetectionFDIR
+activatedSignalPackOffDetectionFDIR BelongsToClass BooleanDataType
+activatedSignalPackOffDetectionFDIR IsEnablingSignalFor packOffDetectionAndReaction
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
+	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002(("PackOffFDIR")) 
+	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
+	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
+	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
+	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
+	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0003((DCS)) 
+	N0008[activatedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0009(ComputedData) 
+	N0008[activatedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(BooleanDataType) 
+	N0008[activatedSignalPackOffDetectionFDIR] -->|IsEnablingSignalFor| N0000((packOffDetectionAndReaction)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?packOffDectionAndReaction
+WHERE {
+	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
+	?packOffDetectionAndReaction ddhub:HasFunction ?Attribute000 .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS ddhub:IsProvidedBy ?Attribute001 .
+	?DCS rdf:type ddhub:DataProvider .
+	?packOffDetectionAndReaction ddhub:IsProvidedBy ?Attribute002 .
+	?activatedSignalPackOffDetectionFDIR rdf:type ddhub:ComputedData .
+	?activatedSignalPackOffDetectionFDIR rdf:type ddhub:BooleanDataType .
+	?activatedSignalPackOffDetectionFDIR ddhub:IsEnablingSignalFor ?Attribute003 .
+  FILTER (
+	?Attribute000 = "PackOffFDIR"
+	&& 	?Attribute001 = Contractor
+	&& 	?Attribute002 = DCS
+	&& 	?Attribute003 = packOffDetectionAndReaction
+  )
+}
+```
+This example describes that the `ComputedData` signal `activatedSignalPackOffDetectionFDIR` informs whether the 
+`packOffDetectionAndReaction` FDIR function is activated or not.
+## AllowEnablementSignalFor <!-- VERB -->
+- Display name: Allow Enablement Signal For
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DWISNoun](#DWISNoun)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [ActivableFunction](#ActivableFunction)
 - Definition set: ADCS
 - Description: 
-
+This verb is used to define a `DrillingDataPoint` tells if it is allowed or not to enable or
+disable an activable function. It is expected that the `DrillingDataPoint` is a Boolean value. If the signal is true,
+then it is possible to enable or disable the function using the signal associated with `IsEnablingSignalFor`. If it is
+false, it is not allowed to enable or disable the `ActivableFunction`, meaning that the signal associated with `IsEnablingSignalFor`
+is ignored.
 - Examples:
+```dwis packOffDectionAndReaction
+FDIRFunction:packOffDetectionAndReaction
+packOffDetectionAndReaction HasFunction "PackOffFDIR"
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+packOffDetectionAndReaction IsProvidedBy DCS
+ComputedData:allowEnablementSignalPackOffDetectionFDIR
+allowEnablementSignalPackOffDetectionFDIR BelongsToClass BooleanDataType
+allowEnablementSignalPackOffDetectionFDIR IsEnablingSignalFor packOffDetectionAndReaction
+Command:enableSignalPackOffDetectionFDIR
+enableSignalPackOffDetectionFDIR BelongsToClass BooleanDataType
+enableSignalPackOffDetectionFDIR IsEnablingSignalFor packOffDetectionAndReaction
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
+	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002(("PackOffFDIR")) 
+	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
+	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
+	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
+	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
+	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0003((DCS)) 
+	N0008[allowEnablementSignalPackOffDetectionFDIR] -->|BelongsToClass| N0009(ComputedData) 
+	N0008[allowEnablementSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(BooleanDataType) 
+	N0008[allowEnablementSignalPackOffDetectionFDIR] -->|IsEnablingSignalFor| N0000((packOffDetectionAndReaction)) 
+	N0011[enableSignalPackOffDetectionFDIR] -->|BelongsToClass| N0012(Command) 
+	N0011[enableSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(BooleanDataType) 
+	N0011[enableSignalPackOffDetectionFDIR] -->|IsEnablingSignalFor| N0000((packOffDetectionAndReaction)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?packOffDectionAndReaction
+WHERE {
+	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
+	?packOffDetectionAndReaction ddhub:HasFunction ?Attribute000 .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS ddhub:IsProvidedBy ?Attribute001 .
+	?DCS rdf:type ddhub:DataProvider .
+	?packOffDetectionAndReaction ddhub:IsProvidedBy ?Attribute002 .
+	?allowEnablementSignalPackOffDetectionFDIR rdf:type ddhub:ComputedData .
+	?allowEnablementSignalPackOffDetectionFDIR rdf:type ddhub:BooleanDataType .
+	?allowEnablementSignalPackOffDetectionFDIR ddhub:IsEnablingSignalFor ?Attribute003 .
+	?enableSignalPackOffDetectionFDIR rdf:type ddhub:Command .
+	?enableSignalPackOffDetectionFDIR rdf:type ddhub:BooleanDataType .
+	?enableSignalPackOffDetectionFDIR ddhub:IsEnablingSignalFor ?Attribute004 .
+  FILTER (
+	?Attribute000 = "PackOffFDIR"
+	&& 	?Attribute001 = Contractor
+	&& 	?Attribute002 = DCS
+	&& 	?Attribute003 = packOffDetectionAndReaction
+	&& 	?Attribute004 = packOffDetectionAndReaction
+  )
+}
+```
+This example describes that the `ComputedData` signal `allowEnablementSignalPackOffDetectionFDIR` tells whether the 
+`packOffDetectionAndReaction` FDIR function can be allowed to be enabled or not. The state of the signal `allowEnablementSignalPackOffDetectionFDIR`
+has an impact on whether the signal `enableSignalPackOffDetectionFDIR` is used or ignored.
 ## IsIdlingSignalFor <!-- VERB -->
-- Display name: IsIdlingSignalFor
+- Display name: Is Idling Signal For
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DWISNoun](#DWISNoun)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [RunnableFunction](#RunnableFunction)
 - Definition set: ADCS
 - Description: 
-
+This verb is used to indicate a `DrillingDataPoint` that tells if the function is in an idle state.
+A function that is idle must be enabled but does not perform any particular control on the machines. For instance, a 
+`ProcedureFunction` that has reached its terminal state or a `ControllerFunction` that cannot control anymore its 
+parameter because a limit is reached, e.g., autodriller when reaching the `MinDrillHeightVerticalLocation`, or an FDIR
+function when there are no incidents that is detected. A SOE function is in idle state, if the used set-points are
+within the limits, but if the limits are applied then the idle state is false, because the function acts on the set-points.
 - Examples:
+```dwis packOffDectionAndReaction
+FDIRFunction:packOffDetectionAndReaction
+packOffDetectionAndReaction HasFunction "PackOffFDIR"
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+packOffDetectionAndReaction IsProvidedBy DCS
+ComputedData:idlingSignalPackOffDetectionFDIR
+idlingSignalPackOffDetectionFDIR BelongsToClass BooleanDataType
+idlingSignalPackOffDetectionFDIR IsIdlingSignalFor packOffDetectionAndReaction
+ComputedData:activatedSignalPackOffDetectionFDIR
+activatedSignalPackOffDetectionFDIR BelongsToClass BooleanDataType
+activatedSignalPackOffDetectionFDIR IsEnablingSignalFor packOffDetectionAndReaction
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
+	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002(("PackOffFDIR")) 
+	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
+	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
+	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
+	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
+	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0003((DCS)) 
+	N0008[idlingSignalPackOffDetectionFDIR] -->|BelongsToClass| N0009(ComputedData) 
+	N0008[idlingSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(BooleanDataType) 
+	N0008[idlingSignalPackOffDetectionFDIR] -->|IsIdlingSignalFor| N0000((packOffDetectionAndReaction)) 
+	N0011[activatedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0009(ComputedData) 
+	N0011[activatedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(BooleanDataType) 
+	N0011[activatedSignalPackOffDetectionFDIR] -->|IsEnablingSignalFor| N0000((packOffDetectionAndReaction)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?packOffDectionAndReaction
+WHERE {
+	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
+	?packOffDetectionAndReaction ddhub:HasFunction ?Attribute000 .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS ddhub:IsProvidedBy ?Attribute001 .
+	?DCS rdf:type ddhub:DataProvider .
+	?packOffDetectionAndReaction ddhub:IsProvidedBy ?Attribute002 .
+	?idlingSignalPackOffDetectionFDIR rdf:type ddhub:ComputedData .
+	?idlingSignalPackOffDetectionFDIR rdf:type ddhub:BooleanDataType .
+	?idlingSignalPackOffDetectionFDIR ddhub:IsIdlingSignalFor ?Attribute003 .
+	?activatedSignalPackOffDetectionFDIR rdf:type ddhub:ComputedData .
+	?activatedSignalPackOffDetectionFDIR rdf:type ddhub:BooleanDataType .
+	?activatedSignalPackOffDetectionFDIR ddhub:IsEnablingSignalFor ?Attribute004 .
+  FILTER (
+	?Attribute000 = "PackOffFDIR"
+	&& 	?Attribute001 = Contractor
+	&& 	?Attribute002 = DCS
+	&& 	?Attribute003 = packOffDetectionAndReaction
+	&& 	?Attribute004 = packOffDetectionAndReaction
+  )
+}
+```
+This example describes that the `ComputedData` signal `idlingSignalPackOffDetectionFDIR` informs whether the `packOffDetectionAndReaction`
+FDIR function is in an idle state or not. Logically, this signal has a meaning only if the signal `activatedSignalPackOffDetectionFDIR` is
+true.
 ## IsUserControllableExtraMarginSignalFor <!-- VERB -->
-- Display name: IsUserControllableExtraMarginSignalFor
+- Display name: Is User Controllable Extra Margin Signal For
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DWISNoun](#DWISNoun)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [FDIRFunction](#FDIRFunction)
 - Definition set: ADCS
 - Description: 
-
+This verb is used to indicate that a `DrillingDataPoint` used by an `FDIRFunction`, extends the calculated
+threshold value for the fault detection by a user-defined amount. The value of this signal is supposed to be interpreted
+in absolute value. If it is negative, then it is its magnitude that is used. This allows the end-user to increase the margin for
+detection of an incident. 
 - Examples:
-## IsUsedDefinedExtraMarginSignalFor <!-- VERB -->
-- Display name: IsUsedDefinedExtraMarginSignalFor
+```dwis packOffDectionAndReaction
+FDIRFunction:packOffDetectionAndReaction
+packOffDetectionAndReaction HasFunction "PackOffFDIR"
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+packOffDetectionAndReaction IsProvidedBy DCS
+Command:extraMarginUserDefinedSignalPackOffDetectionFDIR
+extraMarginUserDefinedSignalPackOffDetectionFDIR BelongsToClass ContinuousDataType
+extraMarginUserDefinedSignalPackOffDetectionFDIR IsUserControllableExtraMarginSignalFor packOffDetectionAndReaction
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
+	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002(("PackOffFDIR")) 
+	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
+	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
+	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
+	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
+	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0003((DCS)) 
+	N0008[extraMarginUserDefinedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0009(Command) 
+	N0008[extraMarginUserDefinedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(ContinuousDataType) 
+	N0008[extraMarginUserDefinedSignalPackOffDetectionFDIR] -->|IsUserControllableExtraMarginSignalFor| N0000((packOffDetectionAndReaction)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?packOffDectionAndReaction
+WHERE {
+	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
+	?packOffDetectionAndReaction ddhub:HasFunction ?Attribute000 .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS ddhub:IsProvidedBy ?Attribute001 .
+	?DCS rdf:type ddhub:DataProvider .
+	?packOffDetectionAndReaction ddhub:IsProvidedBy ?Attribute002 .
+	?extraMarginUserDefinedSignalPackOffDetectionFDIR rdf:type ddhub:Command .
+	?extraMarginUserDefinedSignalPackOffDetectionFDIR rdf:type ddhub:ContinuousDataType .
+	?extraMarginUserDefinedSignalPackOffDetectionFDIR ddhub:IsUserControllableExtraMarginSignalFor ?Attribute003 .
+  FILTER (
+	?Attribute000 = "PackOffFDIR"
+	&& 	?Attribute001 = Contractor
+	&& 	?Attribute002 = DCS
+	&& 	?Attribute003 = packOffDetectionAndReaction
+  )
+}
+```
+This example descibes that the `Command` signal `extraMarginUserDefinedSignalPackOffDetectionFDIR` is used to extend
+the threshold detection for pressure by a user defined value.
+## IsUsedExtraMarginSignalFor <!-- VERB -->
+- Display name: Is Used Extra Margin Signal For
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DWISNoun](#DWISNoun)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [FDIRFunction](#FDIRFunction)
 - Definition set: ADCS
 - Description: 
-
+This verb is used to indicate a `DrillingDataPoint` used by an `FDIRFunction` tells whether the
+extra margin signal is used or not by the FDIR function. This signal is expected to be a boolean value.
 - Examples:
+```dwis packOffDectionAndReaction
+FDIRFunction:packOffDetectionAndReaction
+packOffDetectionAndReaction HasFunction "PackOffFDIR"
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+packOffDetectionAndReaction IsProvidedBy DCS
+ComputedData:usedExtraMarginSignal
+usedExtraMarginSignal BelongsToClass BooleanDataType
+usedExtraMarginSignal IsUsedExtraMarginSignalFor packOffDetectionAndReaction
+Command:extraMarginUserDefinedSignalPackOffDetectionFDIR
+extraMarginUserDefinedSignalPackOffDetectionFDIR BelongsToClass ContinuousDataType
+extraMarginUserDefinedSignalPackOffDetectionFDIR IsUserControllableExtraMarginSignalFor packOffDetectionAndReaction
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
+	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002(("PackOffFDIR")) 
+	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
+	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
+	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
+	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
+	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0003((DCS)) 
+	N0008[usedExtraMarginSignal] -->|BelongsToClass| N0009(ComputedData) 
+	N0008[usedExtraMarginSignal] -->|BelongsToClass| N0010(BooleanDataType) 
+	N0008[usedExtraMarginSignal] -->|IsUsedExtraMarginSignalFor| N0000((packOffDetectionAndReaction)) 
+	N0011[extraMarginUserDefinedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0012(Command) 
+	N0011[extraMarginUserDefinedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0013(ContinuousDataType) 
+	N0011[extraMarginUserDefinedSignalPackOffDetectionFDIR] -->|IsUserControllableExtraMarginSignalFor| N0000((packOffDetectionAndReaction)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?packOffDectionAndReaction
+WHERE {
+	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
+	?packOffDetectionAndReaction ddhub:HasFunction ?Attribute000 .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS ddhub:IsProvidedBy ?Attribute001 .
+	?DCS rdf:type ddhub:DataProvider .
+	?packOffDetectionAndReaction ddhub:IsProvidedBy ?Attribute002 .
+	?usedExtraMarginSignal rdf:type ddhub:ComputedData .
+	?usedExtraMarginSignal rdf:type ddhub:BooleanDataType .
+	?usedExtraMarginSignal ddhub:IsUsedExtraMarginSignalFor ?Attribute003 .
+	?extraMarginUserDefinedSignalPackOffDetectionFDIR rdf:type ddhub:Command .
+	?extraMarginUserDefinedSignalPackOffDetectionFDIR rdf:type ddhub:ContinuousDataType .
+	?extraMarginUserDefinedSignalPackOffDetectionFDIR ddhub:IsUserControllableExtraMarginSignalFor ?Attribute004 .
+  FILTER (
+	?Attribute000 = "PackOffFDIR"
+	&& 	?Attribute001 = Contractor
+	&& 	?Attribute002 = DCS
+	&& 	?Attribute003 = packOffDetectionAndReaction
+	&& 	?Attribute004 = packOffDetectionAndReaction
+  )
+}
+```
+This example describes a `ComputedData` signal that indicates whether an extra margin value is used for the threshold
+detection. This extra margin is describes by `extraMarginUserDefinedSignalPackOffDetectionFDIR`.
 ## IsArmedSignalFor <!-- VERB -->
-- Display name: IsArmedSignalFor
+- Display name: Is Armed Signal For
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DWISNoun](#DWISNoun)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [FDIRFunction](#FDIRFunction)
 - Definition set: ADCS
 - Description: 
-
+This verb is used to indicate a `DrillingDataPoint` used by an `FDIRFunction` tells if the FDIR function is armed and operative.
+The signal is supposed to be a Boolean value.
+The FDIR function may be active, but the current state of the drilling process may imply that the function cannot be
+triggered. For instance, a pack-off FDIR may be active but would react only if the flow is supposed to be steady state.
 - Examples:
+```dwis packOffDectionAndReaction
+FDIRFunction:packOffDetectionAndReaction
+packOffDetectionAndReaction HasFunction "PackOffFDIR"
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+packOffDetectionAndReaction IsProvidedBy DCS
+ComputedData:armedSignalPackOffDetectionFDIR
+armedSignalPackOffDetectionFDIR BelongsToClass BooleanValue
+armedSignalPackOffDetectionFDIR IsArmedSignalFor packOffDetectionAndReaction
+ComputedData:activatedSignalPackOffDetectionFDIR
+activatedSignalPackOffDetectionFDIR BelongsToClass BooleanDataType
+activatedSignalPackOffDetectionFDIR IsEnablingSignalFor packOffDetectionAndReaction
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
+	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002(("PackOffFDIR")) 
+	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
+	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
+	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
+	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
+	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0003((DCS)) 
+	N0008[armedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0009(ComputedData) 
+	N0008[armedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(BooleanValue) 
+	N0008[armedSignalPackOffDetectionFDIR] -->|IsArmedSignalFor| N0000((packOffDetectionAndReaction)) 
+	N0011[activatedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0009(ComputedData) 
+	N0011[activatedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0012(BooleanDataType) 
+	N0011[activatedSignalPackOffDetectionFDIR] -->|IsEnablingSignalFor| N0000((packOffDetectionAndReaction)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?packOffDectionAndReaction
+WHERE {
+	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
+	?packOffDetectionAndReaction ddhub:HasFunction ?Attribute000 .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS ddhub:IsProvidedBy ?Attribute001 .
+	?DCS rdf:type ddhub:DataProvider .
+	?packOffDetectionAndReaction ddhub:IsProvidedBy ?Attribute002 .
+	?armedSignalPackOffDetectionFDIR rdf:type ddhub:ComputedData .
+	?armedSignalPackOffDetectionFDIR rdf:type ddhub:BooleanValue .
+	?armedSignalPackOffDetectionFDIR ddhub:IsArmedSignalFor ?Attribute003 .
+	?activatedSignalPackOffDetectionFDIR rdf:type ddhub:ComputedData .
+	?activatedSignalPackOffDetectionFDIR rdf:type ddhub:BooleanDataType .
+	?activatedSignalPackOffDetectionFDIR ddhub:IsEnablingSignalFor ?Attribute004 .
+  FILTER (
+	?Attribute000 = "PackOffFDIR"
+	&& 	?Attribute001 = Contractor
+	&& 	?Attribute002 = DCS
+	&& 	?Attribute003 = packOffDetectionAndReaction
+	&& 	?Attribute004 = packOffDetectionAndReaction
+  )
+}
+```
+This example describes a `ComputedData` signal used by an `FDIRFunction` to indicate when the packoff detection can trigger.
+It also uses an `activatedSignalPackOffDetectionFDIR` signal that indicates when the function is active or not.
 ## IsTriggeredSignalFor <!-- VERB -->
-- Display name: IsTriggeredSignalFor
+- Display name: Is Triggered Signal For
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DWISNoun](#DWISNoun)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [FDIRFunction](#FDIRFunction)
 - Definition set: ADCS
 - Description: 
-
+This verb is used to indicate a `DrillingDataPoint` tells whether an `FDIRFunction` has been triggered
+or not. This signal is expected to be a Boolean value. The signal is expected to be true from the moment the FDIR has triggered
+to the moment it has recovered from the incident, if it has a recovery procedure, or to the moment the control is given
+back to the end-user, in case of failure of the recovery procedure or at the end of the isolation procedure.
 - Examples:
+ ```dwis packOffDectionAndReaction
+FDIRFunction:packOffDetectionAndReaction
+packOffDetectionAndReaction HasFunction "PackOffFDIR"
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+packOffDetectionAndReaction IsProvidedBy DCS
+ComputedData:triggeredSignalPackOffDetectionFDIR
+triggeredSignalPackOffDetectionFDIR BelongsToClass BooleanValue
+triggeredSignalPackOffDetectionFDIR IsTriggeredSignalFor packOffDetectionAndReaction
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
+	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002(("PackOffFDIR")) 
+	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
+	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
+	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
+	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
+	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0003((DCS)) 
+	N0008[triggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0009(ComputedData) 
+	N0008[triggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(BooleanValue) 
+	N0008[triggeredSignalPackOffDetectionFDIR] -->|IsTriggeredSignalFor| N0000((packOffDetectionAndReaction)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?packOffDectionAndReaction
+WHERE {
+	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
+	?packOffDetectionAndReaction ddhub:HasFunction ?Attribute000 .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS ddhub:IsProvidedBy ?Attribute001 .
+	?DCS rdf:type ddhub:DataProvider .
+	?packOffDetectionAndReaction ddhub:IsProvidedBy ?Attribute002 .
+	?triggeredSignalPackOffDetectionFDIR rdf:type ddhub:ComputedData .
+	?triggeredSignalPackOffDetectionFDIR rdf:type ddhub:BooleanValue .
+	?triggeredSignalPackOffDetectionFDIR ddhub:IsTriggeredSignalFor ?Attribute003 .
+  FILTER (
+	?Attribute000 = "PackOffFDIR"
+	&& 	?Attribute001 = Contractor
+	&& 	?Attribute002 = DCS
+	&& 	?Attribute003 = packOffDetectionAndReaction
+  )
+}
+```
+This example describes a `ComputedData` signal used by an `FDIRFunction` to indicate when whether the packoff detection
+is triggered. 
 ## IsIdlingAfterTriggeredSignalFor <!-- VERB -->
-- Display name: IsIdlingAfterTriggeredSignalFor
+- Display name: Is Idling After Triggered Signal For
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DWISNoun](#DWISNoun)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [FDIRFunction](#FDIRFunction)
 - Definition set: ADCS
 - Description: 
-
+This verb is used to indicate that a `DrillingDataPoint` tells whether the isolation or the recovery
 - Examples:
+```dwis packOffDectionAndReaction
+FDIRFunction:packOffDetectionAndReaction
+packOffDetectionAndReaction HasFunction "PackOffFDIR"
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+packOffDetectionAndReaction IsProvidedBy DCS
+ComputedData:idleAfterTriggeredSignalPackOffDetectionFDIR
+idleAfterTriggeredSignalPackOffDetectionFDIR BelongsToClass BooleanValue
+idleAfterTriggeredSignalPackOffDetectionFDIR IsIdlingAfterTriggeredSignalFor packOffDetectionAndReaction
+ComputedData:triggeredSignalPackOffDetectionFDIR
+triggeredSignalPackOffDetectionFDIR BelongsToClass BooleanValue
+triggeredSignalPackOffDetectionFDIR IsTriggeredSignalFor packOffDetectionAndReaction
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
+	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002(("PackOffFDIR")) 
+	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
+	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
+	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
+	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
+	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0003((DCS)) 
+	N0008[idleAfterTriggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0009(ComputedData) 
+	N0008[idleAfterTriggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(BooleanValue) 
+	N0008[idleAfterTriggeredSignalPackOffDetectionFDIR] -->|IsIdlingAfterTriggeredSignalFor| N0000((packOffDetectionAndReaction)) 
+	N0011[triggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0009(ComputedData) 
+	N0011[triggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(BooleanValue) 
+	N0011[triggeredSignalPackOffDetectionFDIR] -->|IsTriggeredSignalFor| N0000((packOffDetectionAndReaction)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?packOffDectionAndReaction
+WHERE {
+	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
+	?packOffDetectionAndReaction ddhub:HasFunction ?Attribute000 .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS ddhub:IsProvidedBy ?Attribute001 .
+	?DCS rdf:type ddhub:DataProvider .
+	?packOffDetectionAndReaction ddhub:IsProvidedBy ?Attribute002 .
+	?idleAfterTriggeredSignalPackOffDetectionFDIR rdf:type ddhub:ComputedData .
+	?idleAfterTriggeredSignalPackOffDetectionFDIR rdf:type ddhub:BooleanValue .
+	?idleAfterTriggeredSignalPackOffDetectionFDIR ddhub:IsIdlingAfterTriggeredSignalFor ?Attribute003 .
+	?triggeredSignalPackOffDetectionFDIR rdf:type ddhub:ComputedData .
+	?triggeredSignalPackOffDetectionFDIR rdf:type ddhub:BooleanValue .
+	?triggeredSignalPackOffDetectionFDIR ddhub:IsTriggeredSignalFor ?Attribute004 .
+  FILTER (
+	?Attribute000 = "PackOffFDIR"
+	&& 	?Attribute001 = Contractor
+	&& 	?Attribute002 = DCS
+	&& 	?Attribute003 = packOffDetectionAndReaction
+	&& 	?Attribute004 = packOffDetectionAndReaction
+  )
+}
+```
+This example describes a `ComputedData` signal of an `FDIRFunction` that tells whether the isolation or the recovery 
+procedures have reached a terminal state and have not managed to recover from the incident, therefore waiting to
+return to manual mode. There is also an `triggeredSignalPackOffDetectionFDIR` signal that tells whether the function
+has triggered or not.
 ## IsImpactDescriptionSignalFor <!-- VERB -->
-- Display name: IsImpactDescriptionSignalFor
+- Display name: Is Impact Description Signal For
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [DWISNoun](#DWISNoun)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [FDIRFunction](#FDIRFunction)
 - Definition set: ADCS
 - Description: 
-
+This verbs is used to indicate that a `DrillingDataPoint` used by an `FDIRFunction` can be used to
+describe the impact of the function on the drilling process. This signal is supposed to be string value.
 - Examples:
+```dwis packOffDectionAndReaction
+FDIRFunction:packOffDetectionAndReaction
+packOffDetectionAndReaction HasFunction "PackOffFDIR"
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+packOffDetectionAndReaction IsProvidedBy DCS
+Command:impactDescriptionSignalPackOffDetectionFDIR
+impactDescriptionSignalPackOffDetectionFDIR BelongsToClass StringDataType
+impactDescriptionSignalPackOffDetectionFDIR IsImpactDescriptionSignalFor packOffDetectionAndReaction
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
+	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002(("PackOffFDIR")) 
+	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
+	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
+	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
+	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
+	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0003((DCS)) 
+	N0008[impactDescriptionSignalPackOffDetectionFDIR] -->|BelongsToClass| N0009(Command) 
+	N0008[impactDescriptionSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(StringDataType) 
+	N0008[impactDescriptionSignalPackOffDetectionFDIR] -->|IsImpactDescriptionSignalFor| N0000((packOffDetectionAndReaction)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?packOffDectionAndReaction
+WHERE {
+	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
+	?packOffDetectionAndReaction ddhub:HasFunction ?Attribute000 .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS ddhub:IsProvidedBy ?Attribute001 .
+	?DCS rdf:type ddhub:DataProvider .
+	?packOffDetectionAndReaction ddhub:IsProvidedBy ?Attribute002 .
+	?impactDescriptionSignalPackOffDetectionFDIR rdf:type ddhub:Command .
+	?impactDescriptionSignalPackOffDetectionFDIR rdf:type ddhub:StringDataType .
+	?impactDescriptionSignalPackOffDetectionFDIR ddhub:IsImpactDescriptionSignalFor ?Attribute003 .
+  FILTER (
+	?Attribute000 = "PackOffFDIR"
+	&& 	?Attribute001 = Contractor
+	&& 	?Attribute002 = DCS
+	&& 	?Attribute003 = packOffDetectionAndReaction
+  )
+}
+```
+This example describes a `Command` signal of an `FDIRFunction` that is used to inform the ADCS about the impact of
+triggering the FDIR function.
 ## IsDependentOn <!-- VERB -->
 - Display name: IsDependentOn
 - Parent verb: [DWISVerb](#DWISVerb)

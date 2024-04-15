@@ -13,6 +13,7 @@ ContinuousDataType <|-- NormalizedDataType
 DataType <|-- DiscreteDataType
 DiscreteDataType <|-- EnumerationDataType
 EnumerationDataType <|-- BooleanDataType
+DataType <|-- StringDataType
 DWISNoun <|-- DrillingDataPoint
 DrillingDataPoint <|-- PrototypeData
 DrillingDataPoint <|-- ProcessData
@@ -38,43 +39,50 @@ DWISNoun <|-- DrillingSignal
 DrillingSignal <|-- DynamicDrillingSignal
 ```
 ## DataType <!-- NOUN -->
-- Display name: DataType
+- Display name: Data Type
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Description: 
 
 - Definition set: DrillingDataSemantics
 - Examples:
 ## ContinuousDataType <!-- NOUN -->
-- Display name: ContinuousDataType
+- Display name: Continuous Data Type
 - Parent class: [DataType](./DrillingDataSemantics.md#DataType)
 - Description: 
 
 - Definition set: DrillingDataSemantics
 - Examples:
 ## NormalizedDataType <!-- NOUN -->
-- Display name: NormalizedDataType
+- Display name: Normalized Data Type
 - Parent class: [ContinuousDataType](./DrillingDataSemantics.md#ContinuousDataType)
 - Description: 
 between 0 and 1
 - Definition set: DrillingDataSemantics
 - Examples:
 ## DiscreteDataType <!-- NOUN -->
-- Display name: DiscreteDataType
+- Display name: Discrete Data Type
 - Parent class: [DataType](./DrillingDataSemantics.md#DataType)
 - Description: 
 
 - Definition set: DrillingDataSemantics
 - Examples:
 ## EnumerationDataType <!-- NOUN -->
-- Display name: EnumerationDataType
+- Display name: Enumeration Data Type
 - Parent class: [DiscreteDataType](./DrillingDataSemantics.md#DiscreteDataType)
 - Description: 
 
 - Definition set: DrillingDataSemantics
 - Examples:
 ## BooleanDataType <!-- NOUN -->
-- Display name: BooleanDataType
+- Display name: Boolean Data Type
 - Parent class: [EnumerationDataType](./DrillingDataSemantics.md#EnumerationDataType)
+- Description: 
+
+- Definition set: DrillingDataSemantics
+- Examples:
+## StringDataType <!-- NOUN -->
+- Display name: String Data Type
+- Parent class: [DataType](./DrillingDataSemantics.md#DataType)
 - Description: 
 
 - Definition set: DrillingDataSemantics

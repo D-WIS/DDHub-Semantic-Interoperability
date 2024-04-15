@@ -7,10 +7,10 @@ public enum Enum
 {
 IsEnablingSignalFor,
 IsActivatedSignalFor,
-IsAllowEnablementSignalFor,
+AllowEnablementSignalFor,
 IsIdlingSignalFor,
 IsUserControllableExtraMarginSignalFor,
-IsUsedDefinedExtraMarginSignalFor,
+IsUsedExtraMarginSignalFor,
 IsArmedSignalFor,
 IsTriggeredSignalFor,
 IsIdlingAfterTriggeredSignalFor,
@@ -148,10 +148,10 @@ HasUncertaintyHistogram
 }
 	public static string IsEnablingSignalFor = "IsEnablingSignalFor";
 	public static string IsActivatedSignalFor = "IsActivatedSignalFor";
-	public static string IsAllowEnablementSignalFor = "IsAllowEnablementSignalFor";
+	public static string AllowEnablementSignalFor = "AllowEnablementSignalFor";
 	public static string IsIdlingSignalFor = "IsIdlingSignalFor";
 	public static string IsUserControllableExtraMarginSignalFor = "IsUserControllableExtraMarginSignalFor";
-	public static string IsUsedDefinedExtraMarginSignalFor = "IsUsedDefinedExtraMarginSignalFor";
+	public static string IsUsedExtraMarginSignalFor = "IsUsedExtraMarginSignalFor";
 	public static string IsArmedSignalFor = "IsArmedSignalFor";
 	public static string IsTriggeredSignalFor = "IsTriggeredSignalFor";
 	public static string IsIdlingAfterTriggeredSignalFor = "IsIdlingAfterTriggeredSignalFor";

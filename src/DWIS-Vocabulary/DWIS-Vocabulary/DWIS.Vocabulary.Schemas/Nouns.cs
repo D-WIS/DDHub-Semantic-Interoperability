@@ -98,6 +98,7 @@ NormalizedDataType,
 DiscreteDataType,
 EnumerationDataType,
 BooleanDataType,
+StringDataType,
 DrillingDataPoint,
 PrototypeData,
 ProcessData,
@@ -595,6 +596,7 @@ SensorUncertainty
 	public static string DiscreteDataType = "DiscreteDataType";
 	public static string EnumerationDataType = "EnumerationDataType";
 	public static string BooleanDataType = "BooleanDataType";
+	public static string StringDataType = "StringDataType";
 	public static string DrillingDataPoint = "DrillingDataPoint";
 	public static string PrototypeData = "PrototypeData";
 	public static string ProcessData = "ProcessData";

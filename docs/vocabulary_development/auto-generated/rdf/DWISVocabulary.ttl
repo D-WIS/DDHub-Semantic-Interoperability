@@ -72,6 +72,16 @@ ddhub:Aggregation a owl:Class;
                   rdfs:comment """
 """@EN; 
                   rdfs:subClassOf ddhub:DirectTransformation. 
+ddhub:AllowEnablementSignalFor a owl:ObjectProperty; 
+                               rdfs:comment """This verb is used to define a `DrillingDataPoint` tells if it is allowed or not to enable or
+disable an activable function. It is expected that the `DrillingDataPoint` is a Boolean value. If the signal is true,
+then it is possible to enable or disable the function using the signal associated with `IsEnablingSignalFor`. If it is
+false, it is not allowed to enable or disable the `ActivableFunction`, meaning that the signal associated with `IsEnablingSignalFor`
+is ignored.
+"""@EN; 
+                               rdfs:domain ddhub:DrillingDataPoint; 
+                               rdfs:range ddhub:ActivableFunction; 
+                               rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:AngleReferenceFrame a owl:Class; 
                           rdfs:comment """
 """@EN; 
@@ -1274,9 +1284,10 @@ ddhub:Integration a owl:Class;
 """@EN; 
                   rdfs:subClassOf ddhub:TimeBasedTransformation. 
 ddhub:IsActivatedSignalFor a owl:ObjectProperty; 
-                           rdfs:comment """
+                           rdfs:comment """This verb is used to define a `DrillingDataPoint` that indicates if the `ActivableFunction` is activated or
+not. It is expected that the `DrillingDataPoint` is a Boolean value.
 """@EN; 
-                           rdfs:domain ddhub:DWISNoun; 
+                           rdfs:domain ddhub:DrillingDataPoint; 
                            rdfs:range ddhub:ActivableFunction; 
                            rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsAHydraulicRepresentationFor a owl:ObjectProperty; 
@@ -1285,12 +1296,6 @@ ddhub:IsAHydraulicRepresentationFor a owl:ObjectProperty;
                                     rdfs:domain ddhub:HydraulicLogicalElement; 
                                     rdfs:range ddhub:DrillingEquipment; 
                                     rdfs:subPropertyOf ddhub:DWISVerb. 
-ddhub:IsAllowEnablementSignalFor a owl:ObjectProperty; 
-                                 rdfs:comment """
-"""@EN; 
-                                 rdfs:domain ddhub:DWISNoun; 
-                                 rdfs:range ddhub:ActivableFunction; 
-                                 rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsAMechanicalRepresentationFor a owl:ObjectProperty; 
                                      rdfs:comment """
 """@EN; 
@@ -1298,9 +1303,12 @@ ddhub:IsAMechanicalRepresentationFor a owl:ObjectProperty;
                                      rdfs:range ddhub:DrillingEquipment; 
                                      rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsArmedSignalFor a owl:ObjectProperty; 
-                       rdfs:comment """
+                       rdfs:comment """This verb is used to indicate a `DrillingDataPoint` used by an `FDIRFunction` tells if the FDIR function is armed and operative.
+The signal is supposed to be a Boolean value.
+The FDIR function may be active, but the current state of the drilling process may imply that the function cannot be
+triggered. For instance, a pack-off FDIR may be active but would react only if the flow is supposed to be steady state.
 """@EN; 
-                       rdfs:domain ddhub:DWISNoun; 
+                       rdfs:domain ddhub:DrillingDataPoint; 
                        rdfs:range ddhub:FDIRFunction; 
                        rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsAuxiliary a owl:DatatypeProperty, owl:FunctionalProperty; 
@@ -1386,9 +1394,10 @@ ddhub:IsDerivedFrom a owl:ObjectProperty;
                     rdfs:range ddhub:DWISNoun; 
                     rdfs:subPropertyOf ddhub:IsTransformationOutput. 
 ddhub:IsEnablingSignalFor a owl:ObjectProperty; 
-                          rdfs:comment """
+                          rdfs:comment """This verb is used to define a `DrillingDataPoint` that is used to enable or disable an `ActivableFunction`.
+It is expected that the `DrillingDataPoint` is a Boolean value.
 """@EN; 
-                          rdfs:domain ddhub:DWISNoun; 
+                          rdfs:domain ddhub:DrillingDataPoint; 
                           rdfs:range ddhub:ActivableFunction; 
                           rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsEquivalentCirculationDensityAt a owl:ObjectProperty; 
@@ -1464,21 +1473,27 @@ ddhub:IsHydraulicMeasurementAt a owl:ObjectProperty;
                                rdfs:range ddhub:HydraulicLogicalElement; 
                                rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 ddhub:IsIdlingAfterTriggeredSignalFor a owl:ObjectProperty; 
-                                      rdfs:comment """
+                                      rdfs:comment """This verb is used to indicate that a `DrillingDataPoint` tells whether the isolation or the recovery
 """@EN; 
-                                      rdfs:domain ddhub:DWISNoun; 
+                                      rdfs:domain ddhub:DrillingDataPoint; 
                                       rdfs:range ddhub:FDIRFunction; 
                                       rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsIdlingSignalFor a owl:ObjectProperty; 
-                        rdfs:comment """
+                        rdfs:comment """This verb is used to indicate a `DrillingDataPoint` that tells if the function is in an idle state.
+A function that is idle must be enabled but does not perform any particular control on the machines. For instance, a 
+`ProcedureFunction` that has reached its terminal state or a `ControllerFunction` that cannot control anymore its 
+parameter because a limit is reached, e.g., autodriller when reaching the `MinDrillHeightVerticalLocation`, or an FDIR
+function when there are no incidents that is detected. A SOE function is in idle state, if the used set-points are
+within the limits, but if the limits are applied then the idle state is false, because the function acts on the set-points.
 """@EN; 
-                        rdfs:domain ddhub:DWISNoun; 
+                        rdfs:domain ddhub:DrillingDataPoint; 
                         rdfs:range ddhub:RunnableFunction; 
                         rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsImpactDescriptionSignalFor a owl:ObjectProperty; 
-                                   rdfs:comment """
+                                   rdfs:comment """This verbs is used to indicate that a `DrillingDataPoint` used by an `FDIRFunction` can be used to
+describe the impact of the function on the drilling process. This signal is supposed to be string value.
 """@EN; 
-                                   rdfs:domain ddhub:DWISNoun; 
+                                   rdfs:domain ddhub:DrillingDataPoint; 
                                    rdfs:range ddhub:FDIRFunction; 
                                    rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsIntegratedFrom a owl:ObjectProperty; 
@@ -1768,9 +1783,12 @@ ddhub:IsTransmittedBy a owl:ObjectProperty;
                       rdfs:range ddhub:Telemetry; 
                       rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsTriggeredSignalFor a owl:ObjectProperty; 
-                           rdfs:comment """
+                           rdfs:comment """This verb is used to indicate a `DrillingDataPoint` tells whether an `FDIRFunction` has been triggered
+or not. This signal is expected to be a Boolean value. The signal is expected to be true from the moment the FDIR has triggered
+to the moment it has recovered from the incident, if it has a recovery procedure, or to the moment the control is given
+back to the end-user, in case of failure of the recovery procedure or at the end of the isolation procedure.
 """@EN; 
-                           rdfs:domain ddhub:DWISNoun; 
+                           rdfs:domain ddhub:DrillingDataPoint; 
                            rdfs:range ddhub:FDIRFunction; 
                            rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsUnitForQuantity a owl:ObjectProperty; 
@@ -1779,16 +1797,20 @@ ddhub:IsUnitForQuantity a owl:ObjectProperty;
                         rdfs:domain ddhub:Unit; 
                         rdfs:range ddhub:Quantity; 
                         rdfs:subPropertyOf ddhub:DWISVerb. 
-ddhub:IsUsedDefinedExtraMarginSignalFor a owl:ObjectProperty; 
-                                        rdfs:comment """
+ddhub:IsUsedExtraMarginSignalFor a owl:ObjectProperty; 
+                                 rdfs:comment """This verb is used to indicate a `DrillingDataPoint` used by an `FDIRFunction` tells whether the
+extra margin signal is used or not by the FDIR function. This signal is expected to be a boolean value.
 """@EN; 
-                                        rdfs:domain ddhub:DWISNoun; 
-                                        rdfs:range ddhub:FDIRFunction; 
-                                        rdfs:subPropertyOf ddhub:DWISVerb. 
+                                 rdfs:domain ddhub:DrillingDataPoint; 
+                                 rdfs:range ddhub:FDIRFunction; 
+                                 rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsUserControllableExtraMarginSignalFor a owl:ObjectProperty; 
-                                             rdfs:comment """
+                                             rdfs:comment """This verb is used to indicate that a `DrillingDataPoint` used by an `FDIRFunction`, extends the calculated
+threshold value for the fault detection by a user-defined amount. The value of this signal is supposed to be interpreted
+in absolute value. If it is negative, then it is its magnitude that is used. This allows the end-user to increase the margin for
+detection of an incident. 
 """@EN; 
-                                             rdfs:domain ddhub:DWISNoun; 
+                                             rdfs:domain ddhub:DrillingDataPoint; 
                                              rdfs:range ddhub:FDIRFunction; 
                                              rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsValid a owl:DatatypeProperty, owl:FunctionalProperty; 
@@ -2761,6 +2783,10 @@ ddhub:Stratum a owl:DatatypeProperty, owl:FunctionalProperty;
 """@EN; 
               rdfs:domain ddhub:Clock; 
               rdfs:range xsd:int. 
+ddhub:StringDataType a owl:Class; 
+                     rdfs:comment """
+"""@EN; 
+                     rdfs:subClassOf ddhub:DataType. 
 ddhub:StringRotationSystem a owl:Class; 
                            rdfs:comment """
 """@EN; 
