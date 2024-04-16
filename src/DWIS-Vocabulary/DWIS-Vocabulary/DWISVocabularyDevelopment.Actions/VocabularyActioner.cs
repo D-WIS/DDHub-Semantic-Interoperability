@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Extensions.Logging;
 using DWIS.Vocabulary.Utils;
+using System.Diagnostics.Eventing.Reader;
+using System.Diagnostics.Metrics;
 
 namespace DWIS.Vocabulary.Development.Actions
 {
@@ -51,11 +53,14 @@ namespace DWIS.Vocabulary.Development.Actions
         {
             bool ok = true;
             this.
+                GenerateDrillingEquipment(ok, out bool drillEquipOK).
+                GenerateQuantities(ok, out bool quantitiesOK).
                 LoadSourceVocabulary(ok, out bool loadOK).
                 CheckForTagCount(loadOK, out bool tagCountOK).
                 CheckForDuplicates(tagCountOK, out bool duplicatesOK).
                 CheckForTreeCount(duplicatesOK, out var nounTree, out var verbTree, out bool treeCountOK);
-
+            _logger.LogInformation($"Drilling Equipment ok: {drillEquipOK}");
+            _logger.LogInformation($"Quantities ok: {quantitiesOK}");
             _logger.LogInformation($"Load ok: {loadOK}");
             _logger.LogInformation($"Tag count ok:  { tagCountOK}");
             _logger.LogInformation($"Duplicates ok:  { duplicatesOK}");
@@ -109,6 +114,16 @@ namespace DWIS.Vocabulary.Development.Actions
             return true;
         }
 
+        private VocabularyActioner GenerateDrillingEquipment(bool previousOK, out bool ok)
+        {
+            ok = previousOK && Utils.GenerateDrillingEquipment.FromFolder(_paths.VocabularySourceFolder);
+            return this;
+        }
+        private VocabularyActioner GenerateQuantities(bool previousOK, out bool ok)
+        {
+            ok = previousOK && Utils.GenerateQuantities.FromFolder(_paths.VocabularySourceFolder);
+            return this;
+        }
         private VocabularyActioner LoadSourceVocabulary(bool previousOK, out bool ok)
         {
             ok = previousOK && VocabularyParsing.FromFolder(_paths.VocabularySourceFolder, out _vocabulary);

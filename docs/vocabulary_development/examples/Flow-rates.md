@@ -24,8 +24,8 @@
 - Transformation:Transformation_0
 - Transformation:Transformation_1
 - Transformation:Transformation_2
-- MudPump:MudPump_0
-- MudPump:MudPump_1
+- Pumps:Pumps_0
+- Pumps:Pumps_1
 - CementPump:CementPump_0
 - DrillingDataPoint_0 IsOfMeasurableQuantity FlowRateQuantity_0
 - DrillingDataPoint_1 IsOfMeasurableQuantity FlowRateQuantity_0
@@ -63,16 +63,16 @@
 - DrillingDataPoint_0 IsDependentOn DrillingDataPoint_3
 - DrillingDataPoint_1 IsDependentOn DrillingDataPoint_4
 - DrillingDataPoint_2 IsDependentOn DrillingDataPoint_5
-- DrillingDataPoint_0 IsHydraulicallyLocatedAt MudPump_0
-- PumpRate_0 IsHydraulicallyLocatedAt MudPump_0
-- DrillingDataPoint_9 IsHydraulicallyLocatedAt MudPump_0
-- DrillingDataPoint_6 IsHydraulicallyLocatedAt MudPump_0
-- DrillingDataPoint_3 IsHydraulicallyLocatedAt MudPump_0
-- DrillingDataPoint_1 IsHydraulicallyLocatedAt MudPump_1
-- PumpRate_1 IsHydraulicallyLocatedAt MudPump_1
-- DrillingDataPoint_10 IsHydraulicallyLocatedAt MudPump_1
-- DrillingDataPoint_7 IsHydraulicallyLocatedAt MudPump_1
-- DrillingDataPoint_4 IsHydraulicallyLocatedAt MudPump_1
+- DrillingDataPoint_0 IsHydraulicallyLocatedAt Pumps_0
+- PumpRate_0 IsHydraulicallyLocatedAt Pumps_0
+- DrillingDataPoint_9 IsHydraulicallyLocatedAt Pumps_0
+- DrillingDataPoint_6 IsHydraulicallyLocatedAt Pumps_0
+- DrillingDataPoint_3 IsHydraulicallyLocatedAt Pumps_0
+- DrillingDataPoint_1 IsHydraulicallyLocatedAt Pumps_1
+- PumpRate_1 IsHydraulicallyLocatedAt Pumps_1
+- DrillingDataPoint_10 IsHydraulicallyLocatedAt Pumps_1
+- DrillingDataPoint_7 IsHydraulicallyLocatedAt Pumps_1
+- DrillingDataPoint_4 IsHydraulicallyLocatedAt Pumps_1
 - DrillingDataPoint_2 IsHydraulicallyLocatedAt CementPump_0
 - PumpRate_2 IsHydraulicallyLocatedAt CementPump_0
 - DrillingDataPoint_11 IsHydraulicallyLocatedAt CementPump_0
@@ -105,8 +105,8 @@ flowchart TD
 	Transformation_0([Transformation_0]) --> Transformation[[Transformation]]
 	Transformation_1([Transformation_1]) --> Transformation[[Transformation]]
 	Transformation_2([Transformation_2]) --> Transformation[[Transformation]]
-	MudPump_0([MudPump_0]) --> MudPump[[MudPump]]
-	MudPump_1([MudPump_1]) --> MudPump[[MudPump]]
+	Pumps_0([Pumps_0]) --> Pumps[[Pumps]]
+	Pumps_1([Pumps_1]) --> Pumps[[Pumps]]
 	CementPump_0([CementPump_0]) --> CementPump[[CementPump]]
 	 DrillingDataPoint_0 -- IsOfMeasurableQuantity --> FlowRateQuantity_0 
 	 DrillingDataPoint_1 -- IsOfMeasurableQuantity --> FlowRateQuantity_0 
@@ -144,16 +144,16 @@ flowchart TD
 	 DrillingDataPoint_0 -- IsDependentOn --> DrillingDataPoint_3 
 	 DrillingDataPoint_1 -- IsDependentOn --> DrillingDataPoint_4 
 	 DrillingDataPoint_2 -- IsDependentOn --> DrillingDataPoint_5 
-	 DrillingDataPoint_0 -- IsHydraulicallyLocatedAt --> MudPump_0 
-	 PumpRate_0 -- IsHydraulicallyLocatedAt --> MudPump_0 
-	 DrillingDataPoint_9 -- IsHydraulicallyLocatedAt --> MudPump_0 
-	 DrillingDataPoint_6 -- IsHydraulicallyLocatedAt --> MudPump_0 
-	 DrillingDataPoint_3 -- IsHydraulicallyLocatedAt --> MudPump_0 
-	 DrillingDataPoint_1 -- IsHydraulicallyLocatedAt --> MudPump_1 
-	 PumpRate_1 -- IsHydraulicallyLocatedAt --> MudPump_1 
-	 DrillingDataPoint_10 -- IsHydraulicallyLocatedAt --> MudPump_1 
-	 DrillingDataPoint_7 -- IsHydraulicallyLocatedAt --> MudPump_1 
-	 DrillingDataPoint_4 -- IsHydraulicallyLocatedAt --> MudPump_1 
+	 DrillingDataPoint_0 -- IsHydraulicallyLocatedAt --> Pumps_0 
+	 PumpRate_0 -- IsHydraulicallyLocatedAt --> Pumps_0 
+	 DrillingDataPoint_9 -- IsHydraulicallyLocatedAt --> Pumps_0 
+	 DrillingDataPoint_6 -- IsHydraulicallyLocatedAt --> Pumps_0 
+	 DrillingDataPoint_3 -- IsHydraulicallyLocatedAt --> Pumps_0 
+	 DrillingDataPoint_1 -- IsHydraulicallyLocatedAt --> Pumps_1 
+	 PumpRate_1 -- IsHydraulicallyLocatedAt --> Pumps_1 
+	 DrillingDataPoint_10 -- IsHydraulicallyLocatedAt --> Pumps_1 
+	 DrillingDataPoint_7 -- IsHydraulicallyLocatedAt --> Pumps_1 
+	 DrillingDataPoint_4 -- IsHydraulicallyLocatedAt --> Pumps_1 
 	 DrillingDataPoint_2 -- IsHydraulicallyLocatedAt --> CementPump_0 
 	 PumpRate_2 -- IsHydraulicallyLocatedAt --> CementPump_0 
 	 DrillingDataPoint_11 -- IsHydraulicallyLocatedAt --> CementPump_0 

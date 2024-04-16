@@ -4,7 +4,7 @@
 - HookLoad:HookLoad_0
 - TravellingBlock:TravellingBlock_0
 - HookLoad:HookLoad_1
-- TopDriveShaft:TopDriveShaft_0
+- Quill:Quill_0
 - DrillingDataPoint:DrillingDataPoint_1
 - DrillingDataPoint:DrillingDataPoint_2
 - HookloadQuantity:HookloadQuantity_0
@@ -18,8 +18,8 @@
 - TimeWindowMovingAverage:TimeWindowMovingAverage_1
 - DrillingDataPoint_0 IsMechanicallyLocatedAt DeadLine_0
 - HookLoad_0 IsMechanicallyLocatedAt TravellingBlock_0
-- HookLoad_1 IsMechanicallyLocatedAt TopDriveShaft_0
-- DrillingDataPoint_1 IsMechanicallyLocatedAt TopDriveShaft_0
+- HookLoad_1 IsMechanicallyLocatedAt Quill_0
+- DrillingDataPoint_1 IsMechanicallyLocatedAt Quill_0
 - DrillingDataPoint_2 IsMechanicallyLocatedAt TravellingBlock_0
 - HookLoad_0 IsOfMeasurableQuantity HookloadQuantity_0
 - HookLoad_1 IsOfMeasurableQuantity HookloadQuantity_0
@@ -49,7 +49,7 @@ flowchart TD
 	HookLoad_0([HookLoad_0]) --> HookLoad[[HookLoad]]
 	TravellingBlock_0([TravellingBlock_0]) --> TravellingBlock[[TravellingBlock]]
 	HookLoad_1([HookLoad_1]) --> HookLoad[[HookLoad]]
-	TopDriveShaft_0([TopDriveShaft_0]) --> TopDriveShaft[[TopDriveShaft]]
+	Quill_0([Quill_0]) --> Quill[[Quill]]
 	DrillingDataPoint_1([DrillingDataPoint_1]) --> DrillingDataPoint[[DrillingDataPoint]]
 	DrillingDataPoint_2([DrillingDataPoint_2]) --> DrillingDataPoint[[DrillingDataPoint]]
 	HookloadQuantity_0([HookloadQuantity_0]) --> HookloadQuantity[[HookloadQuantity]]
@@ -63,8 +63,8 @@ flowchart TD
 	TimeWindowMovingAverage_1([TimeWindowMovingAverage_1]) --> TimeWindowMovingAverage[[TimeWindowMovingAverage]]
 	 DrillingDataPoint_0 -- IsMechanicallyLocatedAt --> DeadLine_0 
 	 HookLoad_0 -- IsMechanicallyLocatedAt --> TravellingBlock_0 
-	 HookLoad_1 -- IsMechanicallyLocatedAt --> TopDriveShaft_0 
-	 DrillingDataPoint_1 -- IsMechanicallyLocatedAt --> TopDriveShaft_0 
+	 HookLoad_1 -- IsMechanicallyLocatedAt --> Quill_0 
+	 DrillingDataPoint_1 -- IsMechanicallyLocatedAt --> Quill_0 
 	 DrillingDataPoint_2 -- IsMechanicallyLocatedAt --> TravellingBlock_0 
 	 HookLoad_0 -- IsOfMeasurableQuantity --> HookloadQuantity_0 
 	 HookLoad_1 -- IsOfMeasurableQuantity --> HookloadQuantity_0 

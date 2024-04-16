@@ -23,7 +23,7 @@
 - DrillingDataPoint:DrillingDataPoint_5
 - HydraulicConnectedState:HydraulicConnectedState_0
 - DrillingDataPoint:DrillingDataPoint_6
-- TopDriveShaft:TopDriveShaft_0
+- Quill:Quill_0
 - ConnectedCondition:ConnectedCondition_0
 - DownholePressureQuantity_0 IsObservableFrom PressureQuantity_0
 - DownholeECD_0 IsOfMeasurableQuantity EMWQuantity_0
@@ -50,7 +50,7 @@
 - DrillingDataPoint_5 IsConditionRight GT_0
 - DownholePressure_0 IsConditionedBy GT_0
 - HydraulicConnectedState_0 HasHydraulicStateValueFrom DrillingDataPoint_6
-- TopDriveShaft_0 HasHydraulicState HydraulicConnectedState_0
+- Quill_0 HasHydraulicState HydraulicConnectedState_0
 - DownholePressure_0 IsConditionedBy ConnectedCondition_0
 - HydraulicConnectedState_0 IsConditionInput ConnectedCondition_0
 - DownholePressure_0 IsValidBy DrillingDataPoint_6
@@ -80,7 +80,7 @@ flowchart TD
 	DrillingDataPoint_5([DrillingDataPoint_5]) --> DrillingDataPoint[[DrillingDataPoint]]
 	HydraulicConnectedState_0([HydraulicConnectedState_0]) --> HydraulicConnectedState[[HydraulicConnectedState]]
 	DrillingDataPoint_6([DrillingDataPoint_6]) --> DrillingDataPoint[[DrillingDataPoint]]
-	TopDriveShaft_0([TopDriveShaft_0]) --> TopDriveShaft[[TopDriveShaft]]
+	Quill_0([Quill_0]) --> Quill[[Quill]]
 	ConnectedCondition_0([ConnectedCondition_0]) --> ConnectedCondition[[ConnectedCondition]]
 	 DownholePressureQuantity_0 -- IsObservableFrom --> PressureQuantity_0 
 	 DownholeECD_0 -- IsOfMeasurableQuantity --> EMWQuantity_0 
@@ -107,7 +107,7 @@ flowchart TD
 	 DrillingDataPoint_5 -- IsConditionRight --> GT_0 
 	 DownholePressure_0 -- IsConditionedBy --> GT_0 
 	 HydraulicConnectedState_0 -- HasHydraulicStateValueFrom --> DrillingDataPoint_6 
-	 TopDriveShaft_0 -- HasHydraulicState --> HydraulicConnectedState_0 
+	 Quill_0 -- HasHydraulicState --> HydraulicConnectedState_0 
 	 DownholePressure_0 -- IsConditionedBy --> ConnectedCondition_0 
 	 HydraulicConnectedState_0 -- IsConditionInput --> ConnectedCondition_0 
 	 DownholePressure_0 -- IsValidBy --> DrillingDataPoint_6 

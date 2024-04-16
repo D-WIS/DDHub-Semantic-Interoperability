@@ -122,100 +122,441 @@ CorrectedMeasurement,
 ComputedData,
 DrillingSignal,
 DynamicDrillingSignal,
-DrillingEquipment,
-Pit,
-ActivePit,
-ReservePit,
-SlugPit,
-TripTank,
-AnnulusTerminator,
-Riser,
-MarineRiser,
-SurfaceRiser,
-LowPressureRiser,
-HighPressureRiser,
-SlipJoint,
-BellNipple,
-Diverter,
-FlowLine,
-RotatingControlDevice,
-IsolationSeal,
-BlowOutPreventerStack,
-BlowOutPreventerElement,
-AnnularPreventer,
-BOPRam,
-BOPShearRam,
-DrillStemTerminator,
-Bit,
-BullNose,
-CasingShoe,
-Dolly,
-DollyRail,
+Equipment,
+RigEquipment,
+HoistingSystem,
+RackAndPinionHoistingSystem,
+RamHoistingSystem,
+Derrick,
+Double,
+Quadruple,
+Slant,
+Triple,
+DerrickSingle,
+Drawworks,
+StandardElectrical,
+Mechanical,
+RamRig,
+DieselElectrical,
+MechanicalBlock,
+TravellingBlock,
+CrownBlock,
+Hook,
 DrillLine,
 ActiveLine,
 DeadLine,
 SupportLine,
 DrillLineFastener,
 DeadLineAnchor,
-DrawWorks,
-RackAndPinionHoistingSystem,
-RamHoistingSystem,
-DrillStem,
-DrillString,
-CasingString,
-Liner,
-TubingString,
-ScreenString,
-CoiledTubing,
-Elevator,
+SurfaceRotationSystem,
+TopDrive,
+TorqueTrack,
+TorqueBushing,
+SwivelSub,
+ExtendFrame,
+Quill,
+MainframeAssembly,
+LoadNut,
+RotaryTable,
+RotaryBushing,
+WearBushing,
+Kelly,
+KellyHose,
+KellyBushing,
+KellyJoint,
+KellySwivel,
+WellControlSystem,
+Accumulator,
+BopStack,
+SurfaceBop,
+LandBop,
+SubseaBop,
+BopElement,
+AnnularPreventer,
+PipeRam,
+ShearRam,
+BlindRam,
+ChokeManifold,
+ChokeValve,
 GateValve,
-Choke,
-RigChoke,
-FloatValve,
-MPDChoke,
-MechanicalBlock,
-CrownBlock,
-TravellingBlock,
-Pump,
-CementPump,
-MudPump,
+KillLine,
+ChokeLine,
+ControlManifold,
+Ibop,
+KellyValve,
+FloatValveNonreturnValve,
+PlungerFloatValvesF,
+PortedPlungerValvesFa,
+FlapperFloatValvesG,
+MpdChoke,
+MudSystem,
+Pumps,
+PistonMudPumps,
+PulsationDampener,
+Piston,
+Liner,
+Efficiency,
+Cylinders,
+Action,
+ActionSingle,
+Dual,
+CentrifugalMudPumps,
 BoosterPump,
 BackPressurePump,
 FillPump,
 LiftPump,
+DrillingFluid,
+DrillWater,
+PotableWater,
+SeaWater,
+OilBasedMudObm,
+WaterBasedMudWbm,
+SyntheticOilBasedMudSobm,
+SpudMud,
+MudPits,
+ActiveDrillingSystem,
+TripTank,
+MixingTank,
+ReservePit,
+SlugSettlingPit,
+SurgeTank,
+Storage,
+SandTrap,
+ChemicalTank,
+BulkTank,
 ShaleShakers,
+Hopper,
+Decks,
+Screens,
+MeshSize,
+CascadeLevels,
+Centrifuge,
+Degasser,
+CentrifugalDegasser,
+VacuumDegasser,
+AfmAutofluidMeasSkid,
+Hydrocyclones,
+PowerGenerationSystem,
+Generators,
+ElectricalControlSystem,
+ScrSystem,
+MarineSystem,
+DrillingRiser,
+MarineRiser,
+SurfaceRiser,
+LowPressureRiser,
+HighPressureRiser,
+BallJoint,
+CompletionWorkoverRiser,
+LowerMarineRiserPackageLmrp,
+SlipJoint,
+SpiderGimbal,
+MarineRiserTensionerMrtRing,
+RiserTensioners,
+ConductorTensioners,
+RiserRecoilSystem,
+LandingJoint,
+Rov,
+BallastSystem,
+Beacons,
+JackupLegs,
+MooringSystem,
+MooringLines,
+Anchors,
+MarineFuel,
+MudLineSystem,
+StormLoop,
+HeaveCompensationSystem,
+DrillFloorEquipment,
+Elevator,
+Bails,
+ManualPipeTongs,
+PowerTongs,
+CasingTongs,
+RigFloor,
 Slips,
 ManualSlips,
 PowerSlips,
 PneumaticSlips,
-HydraulicSlips,
-SurfacePipe,
-StandPipe,
+RotatingControlDeviceRcd,
+IronRoughneck,
+StabbingGuide,
+Mousehole,
+SafetyClamps,
+DogHouse,
+DrillersConsole,
+Dolly,
+DollyRail,
+CementingEquipment,
+CementPump,
+CementSlurry,
+CementSpacer,
+CementStand,
+CementStinger,
+CementUnit,
+CementHead,
+CementLines,
+CementManifold,
+WellTestingEquipment,
+TestingTools,
+TestPlug,
+SubseaTestTree,
+TestTools,
+Seperator,
+SurfaceEquipment,
+AnnulusTerminator,
+BellNipple,
+Diverter,
+Wellhead,
+Overshot,
+SpoolAdapter,
+ControlLines,
+BoosterLine,
+SurfaceLines,
+StandpipeManifold,
+Standpipe,
 MudHose,
-ThreeWayManifold,
-ThreeWayValve,
-ThreeWayValveInternalValve,
-StringRotationSystem,
-RotaryTable,
-Kelly,
-TopDrive,
-TopDriveBody,
-TopDriveHook,
-TopDriveShaft,
-HoleEnlargementElement,
-UnderReamer,
+Gooseneck,
+OverboardLines,
+FlowLine,
+XmasTree,
+DiverterLineHangers,
+IsolationSeal,
+SlickLine,
+SafetyEquipment,
+FireSafetySystems,
+GasSafetySystems,
+ThirdPartyRigEquipment,
+ThirdPartyTools,
+MudLoggingEquipment,
+CuttingsSamplingEquipment,
+CuttingsAnalysisEquipmnet,
+GasAnalysisEquipment,
+FlowAnalysisEquipment,
+Tubulars,
+DrillString,
+BottomholeAssembly,
+DrillPipe,
+CompressiveDrillPipe,
+DrillCollars,
+NonmagneticCollars,
+ShortDc,
+Heavyweight,
+PupJoints,
+Stabilizers,
+BladeShape,
+Dynamic,
+Melon,
+Spiral,
+Straight,
+Variable,
+BladeType,
+Clampon,
+Integral,
+Sleeve,
+BladeTypeWelded,
+BladeDiameter,
+BladeLength,
+Nonmagnetic,
+NearBit,
+Nonrotating,
+Steerable,
+Grouping,
+Stands,
+Doubles,
+Singles,
+MiscSubs,
+Subbent,
+Subbit,
+Subbumper,
+Subcatcher,
+Subcirculation,
+Subcone,
+Subcrossover,
+Subdart,
+Subfilter,
+Subfloat,
+Subjetting,
+Subjunk,
+Suborienting,
+Subported,
+SubpressureRelief,
+SubpumpOut,
+Subrestrictor,
+Subsaver,
+Subshock,
+SubsideEntry,
+Substop,
+CasingString,
+ConductorDrivePipe,
+Casing,
+Liners,
+Centralizers,
+Crossover,
+Connection,
+Box,
+Flange,
+Mandrel,
+Pin,
+ConnectionWelded,
+Selfsealingthreaded,
+Expandables,
+TubingString,
+ScreenString,
+TubularConnection,
+TubularConfiguration,
+PinDown,
+PinUp,
+Boxbox,
+Pinpin,
+DownholeEquipment,
+DrillingEquipment,
+DrillstemTerminator,
+DrillingBit,
+RollingCutter,
+Milltooth,
+InsertTci,
+FixedCutter,
+Pdc,
+Diamond,
+PdcCore,
+DiamondCore,
+HybridKymera,
+Nozzles,
+BullNose,
+Reamers,
+RollerReamers,
+RfidReamers,
+NearbitReamers,
+FixedBladeReamers,
+BicenterReamerBit,
+ExpandableReamers,
 HoleOpener,
+Underreamers,
+FixedBlade,
+CoringTool,
+InnerBarrel,
+OuterBarrel,
+DownholeMotor,
+TurbineMotor,
+PositiveDisplacementMotor,
+OilBearing,
+MudLubeBearing,
+SteerableMotor,
+InstrumentedMotor,
+AdjustableKickoffSub,
+RotarySteerableSystems,
+Pointthebit,
+Pushthebit,
+ContinuousProportional,
+JettingAssembly,
+HammerAssembly,
+JarringAssembly,
+JarAction,
+MechanicalJar,
+HydraulicJar,
+HydromechanicalJar,
+Accelerator,
+Casingwhiledrilling,
+DirectionalCasingWhileDrilling,
+LinerDrilling,
+SteerableLinerDrilling,
 CirculationSub,
-PortedFloat,
 Whipstock,
-Plug,
-BearingAssembly,
-MPDScreen,
-HeaveCompensation,
-HoistingSystem,
-Rig,
-Sea,
-Ground,
+FishingTools,
+Overshoot,
+Spear,
+JunkBasket,
+Thruster,
+ActiveVibrationTools,
+BhaVibrationDampers,
+VibrationIsolators,
+NearBitVibrationDampers,
+CasingEquipment,
+CasingMillingTools,
+MillCasingCutting,
+MillDress,
+MillFlatBottom,
+MillHollow,
+MillPackerPickerAssembly,
+MillPilot,
+MillPolish,
+MillSection,
+MillTaper,
+MillWashover,
+MillWatermelon,
+CasingLinerEquipment,
+CasingHead,
+ShoeTrack,
+FloatCollar,
+FloatShoe,
+LinerPacker,
+DownholeValveAssembly,
+PerforatingGuns,
+Hangers,
+TubingHanger,
+CasingHanger,
+LinerHanger,
+Plugs,
+InnerString,
+LandingString,
+CasingShoe,
+CasingCutter,
+LoggingEquipment,
+EquipmentTelemetry,
+MudPulse,
+WiredPipe,
+Electromagnetic,
+Acoustic,
+Hybrid,
+WireCable,
+PowerSystems,
+DownholeAlternator,
+DownholeBatteries,
+SurfacePower,
+LoggingWhileDrillingTools,
+LoggingWhileDrillingToolsAcoustictools,
+AzimuthalTools,
+LoggingWhileDrillingToolsElectricalpropagation,
+LoggingWhileDrillingToolsElectricalresistivity,
+FormationTestTools,
+ImagingTools,
+LoggingWhileDrillingToolsNmrtools,
+LoggingWhileDrillingToolsNucleartools,
+LoggingWhileDrillingToolsSeismictools,
+MeasurementWhileDrillingTools,
+DirectionalTool,
+MechanicsAndVibrationTools,
+PwdPressure,
+WirelineLoggingTools,
+OpenholeTools,
+CasedHoleTools,
+ProductionTools,
+WirelineLoggingToolsElectricalresistivity,
+WirelineLoggingToolsElectricalpropagation,
+SpontaneousPotential,
+WirelineLoggingToolsNucleartools,
+WirelineLoggingToolsNmrtools,
+WirelineLoggingToolsAcoustictools,
+DipmeterAndImagingTools,
+FormationTestingAndSampling,
+WirelineLoggingToolsSeismictools,
+CasingCollarLocator,
+FluidDensityTools,
+FlowmeterTools,
+CementBondLoggingTools,
+PressureLoggingTools,
+CoiledTubingEquipment,
+CoiledTubingReel,
+InjectorHead,
+TubingGuideArch,
+PowerSupply,
+ControlConsole,
+ControlAndMonitoringEquipment,
+DownholeCtConnectors,
+CtBhaComponents,
+MudStandpipeManifold,
+ThreeWayValve,
 DrillingIncident,
 TwistOff,
 Overpull,
@@ -620,100 +961,441 @@ SensorUncertainty
 	public static string ComputedData = "ComputedData";
 	public static string DrillingSignal = "DrillingSignal";
 	public static string DynamicDrillingSignal = "DynamicDrillingSignal";
-	public static string DrillingEquipment = "DrillingEquipment";
-	public static string Pit = "Pit";
-	public static string ActivePit = "ActivePit";
-	public static string ReservePit = "ReservePit";
-	public static string SlugPit = "SlugPit";
-	public static string TripTank = "TripTank";
-	public static string AnnulusTerminator = "AnnulusTerminator";
-	public static string Riser = "Riser";
-	public static string MarineRiser = "MarineRiser";
-	public static string SurfaceRiser = "SurfaceRiser";
-	public static string LowPressureRiser = "LowPressureRiser";
-	public static string HighPressureRiser = "HighPressureRiser";
-	public static string SlipJoint = "SlipJoint";
-	public static string BellNipple = "BellNipple";
-	public static string Diverter = "Diverter";
-	public static string FlowLine = "FlowLine";
-	public static string RotatingControlDevice = "RotatingControlDevice";
-	public static string IsolationSeal = "IsolationSeal";
-	public static string BlowOutPreventerStack = "BlowOutPreventerStack";
-	public static string BlowOutPreventerElement = "BlowOutPreventerElement";
-	public static string AnnularPreventer = "AnnularPreventer";
-	public static string BOPRam = "BOPRam";
-	public static string BOPShearRam = "BOPShearRam";
-	public static string DrillStemTerminator = "DrillStemTerminator";
-	public static string Bit = "Bit";
-	public static string BullNose = "BullNose";
-	public static string CasingShoe = "CasingShoe";
-	public static string Dolly = "Dolly";
-	public static string DollyRail = "DollyRail";
+	public static string Equipment = "Equipment";
+	public static string RigEquipment = "RigEquipment";
+	public static string HoistingSystem = "HoistingSystem";
+	public static string RackAndPinionHoistingSystem = "RackAndPinionHoistingSystem";
+	public static string RamHoistingSystem = "RamHoistingSystem";
+	public static string Derrick = "Derrick";
+	public static string Double = "Double";
+	public static string Quadruple = "Quadruple";
+	public static string Slant = "Slant";
+	public static string Triple = "Triple";
+	public static string DerrickSingle = "DerrickSingle";
+	public static string Drawworks = "Drawworks";
+	public static string StandardElectrical = "StandardElectrical";
+	public static string Mechanical = "Mechanical";
+	public static string RamRig = "RamRig";
+	public static string DieselElectrical = "DieselElectrical";
+	public static string MechanicalBlock = "MechanicalBlock";
+	public static string TravellingBlock = "TravellingBlock";
+	public static string CrownBlock = "CrownBlock";
+	public static string Hook = "Hook";
 	public static string DrillLine = "DrillLine";
 	public static string ActiveLine = "ActiveLine";
 	public static string DeadLine = "DeadLine";
 	public static string SupportLine = "SupportLine";
 	public static string DrillLineFastener = "DrillLineFastener";
 	public static string DeadLineAnchor = "DeadLineAnchor";
-	public static string DrawWorks = "DrawWorks";
-	public static string RackAndPinionHoistingSystem = "RackAndPinionHoistingSystem";
-	public static string RamHoistingSystem = "RamHoistingSystem";
-	public static string DrillStem = "DrillStem";
-	public static string DrillString = "DrillString";
-	public static string CasingString = "CasingString";
-	public static string Liner = "Liner";
-	public static string TubingString = "TubingString";
-	public static string ScreenString = "ScreenString";
-	public static string CoiledTubing = "CoiledTubing";
-	public static string Elevator = "Elevator";
+	public static string SurfaceRotationSystem = "SurfaceRotationSystem";
+	public static string TopDrive = "TopDrive";
+	public static string TorqueTrack = "TorqueTrack";
+	public static string TorqueBushing = "TorqueBushing";
+	public static string SwivelSub = "SwivelSub";
+	public static string ExtendFrame = "ExtendFrame";
+	public static string Quill = "Quill";
+	public static string MainframeAssembly = "MainframeAssembly";
+	public static string LoadNut = "LoadNut";
+	public static string RotaryTable = "RotaryTable";
+	public static string RotaryBushing = "RotaryBushing";
+	public static string WearBushing = "WearBushing";
+	public static string Kelly = "Kelly";
+	public static string KellyHose = "KellyHose";
+	public static string KellyBushing = "KellyBushing";
+	public static string KellyJoint = "KellyJoint";
+	public static string KellySwivel = "KellySwivel";
+	public static string WellControlSystem = "WellControlSystem";
+	public static string Accumulator = "Accumulator";
+	public static string BopStack = "BopStack";
+	public static string SurfaceBop = "SurfaceBop";
+	public static string LandBop = "LandBop";
+	public static string SubseaBop = "SubseaBop";
+	public static string BopElement = "BopElement";
+	public static string AnnularPreventer = "AnnularPreventer";
+	public static string PipeRam = "PipeRam";
+	public static string ShearRam = "ShearRam";
+	public static string BlindRam = "BlindRam";
+	public static string ChokeManifold = "ChokeManifold";
+	public static string ChokeValve = "ChokeValve";
 	public static string GateValve = "GateValve";
-	public static string Choke = "Choke";
-	public static string RigChoke = "RigChoke";
-	public static string FloatValve = "FloatValve";
-	public static string MPDChoke = "MPDChoke";
-	public static string MechanicalBlock = "MechanicalBlock";
-	public static string CrownBlock = "CrownBlock";
-	public static string TravellingBlock = "TravellingBlock";
-	public static string Pump = "Pump";
-	public static string CementPump = "CementPump";
-	public static string MudPump = "MudPump";
+	public static string KillLine = "KillLine";
+	public static string ChokeLine = "ChokeLine";
+	public static string ControlManifold = "ControlManifold";
+	public static string Ibop = "Ibop";
+	public static string KellyValve = "KellyValve";
+	public static string FloatValveNonreturnValve = "FloatValveNonreturnValve";
+	public static string PlungerFloatValvesF = "PlungerFloatValvesF";
+	public static string PortedPlungerValvesFa = "PortedPlungerValvesFa";
+	public static string FlapperFloatValvesG = "FlapperFloatValvesG";
+	public static string MpdChoke = "MpdChoke";
+	public static string MudSystem = "MudSystem";
+	public static string Pumps = "Pumps";
+	public static string PistonMudPumps = "PistonMudPumps";
+	public static string PulsationDampener = "PulsationDampener";
+	public static string Piston = "Piston";
+	public static string Liner = "Liner";
+	public static string Efficiency = "Efficiency";
+	public static string Cylinders = "Cylinders";
+	public static string Action = "Action";
+	public static string ActionSingle = "ActionSingle";
+	public static string Dual = "Dual";
+	public static string CentrifugalMudPumps = "CentrifugalMudPumps";
 	public static string BoosterPump = "BoosterPump";
 	public static string BackPressurePump = "BackPressurePump";
 	public static string FillPump = "FillPump";
 	public static string LiftPump = "LiftPump";
+	public static string DrillingFluid = "DrillingFluid";
+	public static string DrillWater = "DrillWater";
+	public static string PotableWater = "PotableWater";
+	public static string SeaWater = "SeaWater";
+	public static string OilBasedMudObm = "OilBasedMudObm";
+	public static string WaterBasedMudWbm = "WaterBasedMudWbm";
+	public static string SyntheticOilBasedMudSobm = "SyntheticOilBasedMudSobm";
+	public static string SpudMud = "SpudMud";
+	public static string MudPits = "MudPits";
+	public static string ActiveDrillingSystem = "ActiveDrillingSystem";
+	public static string TripTank = "TripTank";
+	public static string MixingTank = "MixingTank";
+	public static string ReservePit = "ReservePit";
+	public static string SlugSettlingPit = "SlugSettlingPit";
+	public static string SurgeTank = "SurgeTank";
+	public static string Storage = "Storage";
+	public static string SandTrap = "SandTrap";
+	public static string ChemicalTank = "ChemicalTank";
+	public static string BulkTank = "BulkTank";
 	public static string ShaleShakers = "ShaleShakers";
+	public static string Hopper = "Hopper";
+	public static string Decks = "Decks";
+	public static string Screens = "Screens";
+	public static string MeshSize = "MeshSize";
+	public static string CascadeLevels = "CascadeLevels";
+	public static string Centrifuge = "Centrifuge";
+	public static string Degasser = "Degasser";
+	public static string CentrifugalDegasser = "CentrifugalDegasser";
+	public static string VacuumDegasser = "VacuumDegasser";
+	public static string AfmAutofluidMeasSkid = "AfmAutofluidMeasSkid";
+	public static string Hydrocyclones = "Hydrocyclones";
+	public static string PowerGenerationSystem = "PowerGenerationSystem";
+	public static string Generators = "Generators";
+	public static string ElectricalControlSystem = "ElectricalControlSystem";
+	public static string ScrSystem = "ScrSystem";
+	public static string MarineSystem = "MarineSystem";
+	public static string DrillingRiser = "DrillingRiser";
+	public static string MarineRiser = "MarineRiser";
+	public static string SurfaceRiser = "SurfaceRiser";
+	public static string LowPressureRiser = "LowPressureRiser";
+	public static string HighPressureRiser = "HighPressureRiser";
+	public static string BallJoint = "BallJoint";
+	public static string CompletionWorkoverRiser = "CompletionWorkoverRiser";
+	public static string LowerMarineRiserPackageLmrp = "LowerMarineRiserPackageLmrp";
+	public static string SlipJoint = "SlipJoint";
+	public static string SpiderGimbal = "SpiderGimbal";
+	public static string MarineRiserTensionerMrtRing = "MarineRiserTensionerMrtRing";
+	public static string RiserTensioners = "RiserTensioners";
+	public static string ConductorTensioners = "ConductorTensioners";
+	public static string RiserRecoilSystem = "RiserRecoilSystem";
+	public static string LandingJoint = "LandingJoint";
+	public static string Rov = "Rov";
+	public static string BallastSystem = "BallastSystem";
+	public static string Beacons = "Beacons";
+	public static string JackupLegs = "JackupLegs";
+	public static string MooringSystem = "MooringSystem";
+	public static string MooringLines = "MooringLines";
+	public static string Anchors = "Anchors";
+	public static string MarineFuel = "MarineFuel";
+	public static string MudLineSystem = "MudLineSystem";
+	public static string StormLoop = "StormLoop";
+	public static string HeaveCompensationSystem = "HeaveCompensationSystem";
+	public static string DrillFloorEquipment = "DrillFloorEquipment";
+	public static string Elevator = "Elevator";
+	public static string Bails = "Bails";
+	public static string ManualPipeTongs = "ManualPipeTongs";
+	public static string PowerTongs = "PowerTongs";
+	public static string CasingTongs = "CasingTongs";
+	public static string RigFloor = "RigFloor";
 	public static string Slips = "Slips";
 	public static string ManualSlips = "ManualSlips";
 	public static string PowerSlips = "PowerSlips";
 	public static string PneumaticSlips = "PneumaticSlips";
-	public static string HydraulicSlips = "HydraulicSlips";
-	public static string SurfacePipe = "SurfacePipe";
-	public static string StandPipe = "StandPipe";
+	public static string RotatingControlDeviceRcd = "RotatingControlDeviceRcd";
+	public static string IronRoughneck = "IronRoughneck";
+	public static string StabbingGuide = "StabbingGuide";
+	public static string Mousehole = "Mousehole";
+	public static string SafetyClamps = "SafetyClamps";
+	public static string DogHouse = "DogHouse";
+	public static string DrillersConsole = "DrillersConsole";
+	public static string Dolly = "Dolly";
+	public static string DollyRail = "DollyRail";
+	public static string CementingEquipment = "CementingEquipment";
+	public static string CementPump = "CementPump";
+	public static string CementSlurry = "CementSlurry";
+	public static string CementSpacer = "CementSpacer";
+	public static string CementStand = "CementStand";
+	public static string CementStinger = "CementStinger";
+	public static string CementUnit = "CementUnit";
+	public static string CementHead = "CementHead";
+	public static string CementLines = "CementLines";
+	public static string CementManifold = "CementManifold";
+	public static string WellTestingEquipment = "WellTestingEquipment";
+	public static string TestingTools = "TestingTools";
+	public static string TestPlug = "TestPlug";
+	public static string SubseaTestTree = "SubseaTestTree";
+	public static string TestTools = "TestTools";
+	public static string Seperator = "Seperator";
+	public static string SurfaceEquipment = "SurfaceEquipment";
+	public static string AnnulusTerminator = "AnnulusTerminator";
+	public static string BellNipple = "BellNipple";
+	public static string Diverter = "Diverter";
+	public static string Wellhead = "Wellhead";
+	public static string Overshot = "Overshot";
+	public static string SpoolAdapter = "SpoolAdapter";
+	public static string ControlLines = "ControlLines";
+	public static string BoosterLine = "BoosterLine";
+	public static string SurfaceLines = "SurfaceLines";
+	public static string StandpipeManifold = "StandpipeManifold";
+	public static string Standpipe = "Standpipe";
 	public static string MudHose = "MudHose";
-	public static string ThreeWayManifold = "ThreeWayManifold";
-	public static string ThreeWayValve = "ThreeWayValve";
-	public static string ThreeWayValveInternalValve = "ThreeWayValveInternalValve";
-	public static string StringRotationSystem = "StringRotationSystem";
-	public static string RotaryTable = "RotaryTable";
-	public static string Kelly = "Kelly";
-	public static string TopDrive = "TopDrive";
-	public static string TopDriveBody = "TopDriveBody";
-	public static string TopDriveHook = "TopDriveHook";
-	public static string TopDriveShaft = "TopDriveShaft";
-	public static string HoleEnlargementElement = "HoleEnlargementElement";
-	public static string UnderReamer = "UnderReamer";
+	public static string Gooseneck = "Gooseneck";
+	public static string OverboardLines = "OverboardLines";
+	public static string FlowLine = "FlowLine";
+	public static string XmasTree = "XmasTree";
+	public static string DiverterLineHangers = "DiverterLineHangers";
+	public static string IsolationSeal = "IsolationSeal";
+	public static string SlickLine = "SlickLine";
+	public static string SafetyEquipment = "SafetyEquipment";
+	public static string FireSafetySystems = "FireSafetySystems";
+	public static string GasSafetySystems = "GasSafetySystems";
+	public static string ThirdPartyRigEquipment = "ThirdPartyRigEquipment";
+	public static string ThirdPartyTools = "ThirdPartyTools";
+	public static string MudLoggingEquipment = "MudLoggingEquipment";
+	public static string CuttingsSamplingEquipment = "CuttingsSamplingEquipment";
+	public static string CuttingsAnalysisEquipmnet = "CuttingsAnalysisEquipmnet";
+	public static string GasAnalysisEquipment = "GasAnalysisEquipment";
+	public static string FlowAnalysisEquipment = "FlowAnalysisEquipment";
+	public static string Tubulars = "Tubulars";
+	public static string DrillString = "DrillString";
+	public static string BottomholeAssembly = "BottomholeAssembly";
+	public static string DrillPipe = "DrillPipe";
+	public static string CompressiveDrillPipe = "CompressiveDrillPipe";
+	public static string DrillCollars = "DrillCollars";
+	public static string NonmagneticCollars = "NonmagneticCollars";
+	public static string ShortDc = "ShortDc";
+	public static string Heavyweight = "Heavyweight";
+	public static string PupJoints = "PupJoints";
+	public static string Stabilizers = "Stabilizers";
+	public static string BladeShape = "BladeShape";
+	public static string Dynamic = "Dynamic";
+	public static string Melon = "Melon";
+	public static string Spiral = "Spiral";
+	public static string Straight = "Straight";
+	public static string Variable = "Variable";
+	public static string BladeType = "BladeType";
+	public static string Clampon = "Clampon";
+	public static string Integral = "Integral";
+	public static string Sleeve = "Sleeve";
+	public static string BladeTypeWelded = "BladeTypeWelded";
+	public static string BladeDiameter = "BladeDiameter";
+	public static string BladeLength = "BladeLength";
+	public static string Nonmagnetic = "Nonmagnetic";
+	public static string NearBit = "NearBit";
+	public static string Nonrotating = "Nonrotating";
+	public static string Steerable = "Steerable";
+	public static string Grouping = "Grouping";
+	public static string Stands = "Stands";
+	public static string Doubles = "Doubles";
+	public static string Singles = "Singles";
+	public static string MiscSubs = "MiscSubs";
+	public static string Subbent = "Subbent";
+	public static string Subbit = "Subbit";
+	public static string Subbumper = "Subbumper";
+	public static string Subcatcher = "Subcatcher";
+	public static string Subcirculation = "Subcirculation";
+	public static string Subcone = "Subcone";
+	public static string Subcrossover = "Subcrossover";
+	public static string Subdart = "Subdart";
+	public static string Subfilter = "Subfilter";
+	public static string Subfloat = "Subfloat";
+	public static string Subjetting = "Subjetting";
+	public static string Subjunk = "Subjunk";
+	public static string Suborienting = "Suborienting";
+	public static string Subported = "Subported";
+	public static string SubpressureRelief = "SubpressureRelief";
+	public static string SubpumpOut = "SubpumpOut";
+	public static string Subrestrictor = "Subrestrictor";
+	public static string Subsaver = "Subsaver";
+	public static string Subshock = "Subshock";
+	public static string SubsideEntry = "SubsideEntry";
+	public static string Substop = "Substop";
+	public static string CasingString = "CasingString";
+	public static string ConductorDrivePipe = "ConductorDrivePipe";
+	public static string Casing = "Casing";
+	public static string Liners = "Liners";
+	public static string Centralizers = "Centralizers";
+	public static string Crossover = "Crossover";
+	public static string Connection = "Connection";
+	public static string Box = "Box";
+	public static string Flange = "Flange";
+	public static string Mandrel = "Mandrel";
+	public static string Pin = "Pin";
+	public static string ConnectionWelded = "ConnectionWelded";
+	public static string Selfsealingthreaded = "Selfsealingthreaded";
+	public static string Expandables = "Expandables";
+	public static string TubingString = "TubingString";
+	public static string ScreenString = "ScreenString";
+	public static string TubularConnection = "TubularConnection";
+	public static string TubularConfiguration = "TubularConfiguration";
+	public static string PinDown = "PinDown";
+	public static string PinUp = "PinUp";
+	public static string Boxbox = "Boxbox";
+	public static string Pinpin = "Pinpin";
+	public static string DownholeEquipment = "DownholeEquipment";
+	public static string DrillingEquipment = "DrillingEquipment";
+	public static string DrillstemTerminator = "DrillstemTerminator";
+	public static string DrillingBit = "DrillingBit";
+	public static string RollingCutter = "RollingCutter";
+	public static string Milltooth = "Milltooth";
+	public static string InsertTci = "InsertTci";
+	public static string FixedCutter = "FixedCutter";
+	public static string Pdc = "Pdc";
+	public static string Diamond = "Diamond";
+	public static string PdcCore = "PdcCore";
+	public static string DiamondCore = "DiamondCore";
+	public static string HybridKymera = "HybridKymera";
+	public static string Nozzles = "Nozzles";
+	public static string BullNose = "BullNose";
+	public static string Reamers = "Reamers";
+	public static string RollerReamers = "RollerReamers";
+	public static string RfidReamers = "RfidReamers";
+	public static string NearbitReamers = "NearbitReamers";
+	public static string FixedBladeReamers = "FixedBladeReamers";
+	public static string BicenterReamerBit = "BicenterReamerBit";
+	public static string ExpandableReamers = "ExpandableReamers";
 	public static string HoleOpener = "HoleOpener";
+	public static string Underreamers = "Underreamers";
+	public static string FixedBlade = "FixedBlade";
+	public static string CoringTool = "CoringTool";
+	public static string InnerBarrel = "InnerBarrel";
+	public static string OuterBarrel = "OuterBarrel";
+	public static string DownholeMotor = "DownholeMotor";
+	public static string TurbineMotor = "TurbineMotor";
+	public static string PositiveDisplacementMotor = "PositiveDisplacementMotor";
+	public static string OilBearing = "OilBearing";
+	public static string MudLubeBearing = "MudLubeBearing";
+	public static string SteerableMotor = "SteerableMotor";
+	public static string InstrumentedMotor = "InstrumentedMotor";
+	public static string AdjustableKickoffSub = "AdjustableKickoffSub";
+	public static string RotarySteerableSystems = "RotarySteerableSystems";
+	public static string Pointthebit = "Pointthebit";
+	public static string Pushthebit = "Pushthebit";
+	public static string ContinuousProportional = "ContinuousProportional";
+	public static string JettingAssembly = "JettingAssembly";
+	public static string HammerAssembly = "HammerAssembly";
+	public static string JarringAssembly = "JarringAssembly";
+	public static string JarAction = "JarAction";
+	public static string MechanicalJar = "MechanicalJar";
+	public static string HydraulicJar = "HydraulicJar";
+	public static string HydromechanicalJar = "HydromechanicalJar";
+	public static string Accelerator = "Accelerator";
+	public static string Casingwhiledrilling = "Casingwhiledrilling";
+	public static string DirectionalCasingWhileDrilling = "DirectionalCasingWhileDrilling";
+	public static string LinerDrilling = "LinerDrilling";
+	public static string SteerableLinerDrilling = "SteerableLinerDrilling";
 	public static string CirculationSub = "CirculationSub";
-	public static string PortedFloat = "PortedFloat";
 	public static string Whipstock = "Whipstock";
-	public static string Plug = "Plug";
-	public static string BearingAssembly = "BearingAssembly";
-	public static string MPDScreen = "MPDScreen";
-	public static string HeaveCompensation = "HeaveCompensation";
-	public static string HoistingSystem = "HoistingSystem";
-	public static string Rig = "Rig";
-	public static string Sea = "Sea";
-	public static string Ground = "Ground";
+	public static string FishingTools = "FishingTools";
+	public static string Overshoot = "Overshoot";
+	public static string Spear = "Spear";
+	public static string JunkBasket = "JunkBasket";
+	public static string Thruster = "Thruster";
+	public static string ActiveVibrationTools = "ActiveVibrationTools";
+	public static string BhaVibrationDampers = "BhaVibrationDampers";
+	public static string VibrationIsolators = "VibrationIsolators";
+	public static string NearBitVibrationDampers = "NearBitVibrationDampers";
+	public static string CasingEquipment = "CasingEquipment";
+	public static string CasingMillingTools = "CasingMillingTools";
+	public static string MillCasingCutting = "MillCasingCutting";
+	public static string MillDress = "MillDress";
+	public static string MillFlatBottom = "MillFlatBottom";
+	public static string MillHollow = "MillHollow";
+	public static string MillPackerPickerAssembly = "MillPackerPickerAssembly";
+	public static string MillPilot = "MillPilot";
+	public static string MillPolish = "MillPolish";
+	public static string MillSection = "MillSection";
+	public static string MillTaper = "MillTaper";
+	public static string MillWashover = "MillWashover";
+	public static string MillWatermelon = "MillWatermelon";
+	public static string CasingLinerEquipment = "CasingLinerEquipment";
+	public static string CasingHead = "CasingHead";
+	public static string ShoeTrack = "ShoeTrack";
+	public static string FloatCollar = "FloatCollar";
+	public static string FloatShoe = "FloatShoe";
+	public static string LinerPacker = "LinerPacker";
+	public static string DownholeValveAssembly = "DownholeValveAssembly";
+	public static string PerforatingGuns = "PerforatingGuns";
+	public static string Hangers = "Hangers";
+	public static string TubingHanger = "TubingHanger";
+	public static string CasingHanger = "CasingHanger";
+	public static string LinerHanger = "LinerHanger";
+	public static string Plugs = "Plugs";
+	public static string InnerString = "InnerString";
+	public static string LandingString = "LandingString";
+	public static string CasingShoe = "CasingShoe";
+	public static string CasingCutter = "CasingCutter";
+	public static string LoggingEquipment = "LoggingEquipment";
+	public static string EquipmentTelemetry = "EquipmentTelemetry";
+	public static string MudPulse = "MudPulse";
+	public static string WiredPipe = "WiredPipe";
+	public static string Electromagnetic = "Electromagnetic";
+	public static string Acoustic = "Acoustic";
+	public static string Hybrid = "Hybrid";
+	public static string WireCable = "WireCable";
+	public static string PowerSystems = "PowerSystems";
+	public static string DownholeAlternator = "DownholeAlternator";
+	public static string DownholeBatteries = "DownholeBatteries";
+	public static string SurfacePower = "SurfacePower";
+	public static string LoggingWhileDrillingTools = "LoggingWhileDrillingTools";
+	public static string LoggingWhileDrillingToolsAcoustictools = "LoggingWhileDrillingToolsAcoustictools";
+	public static string AzimuthalTools = "AzimuthalTools";
+	public static string LoggingWhileDrillingToolsElectricalpropagation = "LoggingWhileDrillingToolsElectricalpropagation";
+	public static string LoggingWhileDrillingToolsElectricalresistivity = "LoggingWhileDrillingToolsElectricalresistivity";
+	public static string FormationTestTools = "FormationTestTools";
+	public static string ImagingTools = "ImagingTools";
+	public static string LoggingWhileDrillingToolsNmrtools = "LoggingWhileDrillingToolsNmrtools";
+	public static string LoggingWhileDrillingToolsNucleartools = "LoggingWhileDrillingToolsNucleartools";
+	public static string LoggingWhileDrillingToolsSeismictools = "LoggingWhileDrillingToolsSeismictools";
+	public static string MeasurementWhileDrillingTools = "MeasurementWhileDrillingTools";
+	public static string DirectionalTool = "DirectionalTool";
+	public static string MechanicsAndVibrationTools = "MechanicsAndVibrationTools";
+	public static string PwdPressure = "PwdPressure";
+	public static string WirelineLoggingTools = "WirelineLoggingTools";
+	public static string OpenholeTools = "OpenholeTools";
+	public static string CasedHoleTools = "CasedHoleTools";
+	public static string ProductionTools = "ProductionTools";
+	public static string WirelineLoggingToolsElectricalresistivity = "WirelineLoggingToolsElectricalresistivity";
+	public static string WirelineLoggingToolsElectricalpropagation = "WirelineLoggingToolsElectricalpropagation";
+	public static string SpontaneousPotential = "SpontaneousPotential";
+	public static string WirelineLoggingToolsNucleartools = "WirelineLoggingToolsNucleartools";
+	public static string WirelineLoggingToolsNmrtools = "WirelineLoggingToolsNmrtools";
+	public static string WirelineLoggingToolsAcoustictools = "WirelineLoggingToolsAcoustictools";
+	public static string DipmeterAndImagingTools = "DipmeterAndImagingTools";
+	public static string FormationTestingAndSampling = "FormationTestingAndSampling";
+	public static string WirelineLoggingToolsSeismictools = "WirelineLoggingToolsSeismictools";
+	public static string CasingCollarLocator = "CasingCollarLocator";
+	public static string FluidDensityTools = "FluidDensityTools";
+	public static string FlowmeterTools = "FlowmeterTools";
+	public static string CementBondLoggingTools = "CementBondLoggingTools";
+	public static string PressureLoggingTools = "PressureLoggingTools";
+	public static string CoiledTubingEquipment = "CoiledTubingEquipment";
+	public static string CoiledTubingReel = "CoiledTubingReel";
+	public static string InjectorHead = "InjectorHead";
+	public static string TubingGuideArch = "TubingGuideArch";
+	public static string PowerSupply = "PowerSupply";
+	public static string ControlConsole = "ControlConsole";
+	public static string ControlAndMonitoringEquipment = "ControlAndMonitoringEquipment";
+	public static string DownholeCtConnectors = "DownholeCtConnectors";
+	public static string CtBhaComponents = "CtBhaComponents";
+	public static string MudStandpipeManifold = "MudStandpipeManifold";
+	public static string ThreeWayValve = "ThreeWayValve";
 	public static string DrillingIncident = "DrillingIncident";
 	public static string TwistOff = "TwistOff";
 	public static string Overpull = "Overpull";
