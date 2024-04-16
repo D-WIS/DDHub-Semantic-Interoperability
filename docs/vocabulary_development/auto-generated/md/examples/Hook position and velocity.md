@@ -2,7 +2,7 @@
 - HookPosition:HookPosition_0
 - Derivation:Derivation_0
 - HookVelocity:HookVelocity_0
-- TopDriveHook:TopDriveHook_0
+- LoadNut:LoadNut_0
 - BlockPositionQuantity:BlockPositionQuantity_0
 - BlockVelocityQuantity:BlockVelocityQuantity_0
 - Transformation:Transformation_0
@@ -10,8 +10,8 @@
 - DataFlowNode:DataFlowNode_0
 - HookPosition_0 IsDerivationInput Derivation_0
 - HookVelocity_0 IsDerivedFrom Derivation_0
-- HookPosition_0 IsMechanicallyLocatedAt TopDriveHook_0
-- HookVelocity_0 IsMechanicallyLocatedAt TopDriveHook_0
+- HookPosition_0 IsMechanicallyLocatedAt LoadNut_0
+- HookVelocity_0 IsMechanicallyLocatedAt LoadNut_0
 - HookPosition_0 IsOfMeasurableQuantity BlockPositionQuantity_0
 - HookVelocity_0 IsOfMeasurableQuantity BlockVelocityQuantity_0
 - Transformation_0 IsTransformationOutput HookPosition_0
@@ -26,7 +26,7 @@ flowchart TD
 	HookPosition_0([HookPosition_0]) --> HookPosition[[HookPosition]]:::typeClass
 	Derivation_0([Derivation_0]) --> Derivation[[Derivation]]:::typeClass
 	HookVelocity_0([HookVelocity_0]) --> HookVelocity[[HookVelocity]]:::typeClass
-	TopDriveHook_0([TopDriveHook_0]) --> TopDriveHook[[TopDriveHook]]:::typeClass
+	LoadNut_0([LoadNut_0]) --> LoadNut[[LoadNut]]:::typeClass
 	BlockPositionQuantity_0([BlockPositionQuantity_0]) --> BlockPositionQuantity[[BlockPositionQuantity]]:::typeClass
 	BlockVelocityQuantity_0([BlockVelocityQuantity_0]) --> BlockVelocityQuantity[[BlockVelocityQuantity]]:::typeClass
 	Transformation_0([Transformation_0]) --> Transformation[[Transformation]]:::typeClass
@@ -34,8 +34,8 @@ flowchart TD
 	DataFlowNode_0([DataFlowNode_0]) --> DataFlowNode[[DataFlowNode]]:::typeClass
 	 HookPosition_0 -- IsDerivationInput --> Derivation_0 
 	 HookVelocity_0 -- IsDerivedFrom --> Derivation_0 
-	 HookPosition_0 -- IsMechanicallyLocatedAt --> TopDriveHook_0 
-	 HookVelocity_0 -- IsMechanicallyLocatedAt --> TopDriveHook_0 
+	 HookPosition_0 -- IsMechanicallyLocatedAt --> LoadNut_0 
+	 HookVelocity_0 -- IsMechanicallyLocatedAt --> LoadNut_0 
 	 HookPosition_0 -- IsOfMeasurableQuantity --> BlockPositionQuantity_0 
 	 HookVelocity_0 -- IsOfMeasurableQuantity --> BlockVelocityQuantity_0 
 	 Transformation_0 -- IsTransformationOutput --> HookPosition_0 
