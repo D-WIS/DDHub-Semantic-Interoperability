@@ -1,5 +1,5 @@
 # DWIS_SPP1
-- StandPipe:StandPipe_0
+- MudStandpipe:StandPipe_0
 - SPPQuantity:SPPQuantity_0
 - Location:StandPipeLocation
 - DerrickFloorVerticalLocation:DrillFloorLocation
@@ -26,5 +26,3 @@
 - SPP_1 BelongsToClass Limit
 - InstantComputedSPP IsComputedBy SPPComputationUnit_0
 - InstantComputedSPP IsTransmissionInput MovingAverage1
-
-

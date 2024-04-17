@@ -1,6 +1,6 @@
 # DWIS_SPP0
 - DrillingDataPoint:SPP_0
-- StandPipe:StandPipe_0
+- MudStandpipe:StandPipe_0
 - SPPQuantity:SPPQuantity_0
 - SensorUncertainty:SPPUncertainty_0
 - LowPassFilter:SPP_LowPassFilter
@@ -21,6 +21,3 @@
 - StandPipeLocation HasCoordinates StandPipeElevation
 - StandPipeLocation HasReferenceFrame ElevationReferenceFrame
 - ElevationReferenceFrame HasReferenceFrameOrigin DerrickFloorVerticalLocation
-
-
-

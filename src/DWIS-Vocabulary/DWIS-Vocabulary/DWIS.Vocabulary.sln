@@ -48,6 +48,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWIS.Vocabulary.Controls", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWIS.Vocabulary.InstanceEdition", "DWIS.Vocabulary.InstanceEdition\DWIS.Vocabulary.InstanceEdition.csproj", "{58E8D84D-6055-4C30-986E-CAC6B892E8ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DWIS.RenameNounsInExamples", "DWIS.RenameNounsInExamples\DWIS.RenameNounsInExamples.csproj", "{F80F4165-8844-4887-A8EA-D613165C1103}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -110,6 +112,10 @@ Global
 		{58E8D84D-6055-4C30-986E-CAC6B892E8ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58E8D84D-6055-4C30-986E-CAC6B892E8ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58E8D84D-6055-4C30-986E-CAC6B892E8ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F80F4165-8844-4887-A8EA-D613165C1103}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F80F4165-8844-4887-A8EA-D613165C1103}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F80F4165-8844-4887-A8EA-D613165C1103}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F80F4165-8844-4887-A8EA-D613165C1103}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -128,6 +134,7 @@ Global
 		{0CFDA729-1E00-47DF-A107-C10B039092DB} = {5D5F1DFB-E5BB-490F-97D8-3FF6FC2DC168}
 		{A9B77ADA-3D81-4FA3-AEAD-E8F80D5278E2} = {0CFDA729-1E00-47DF-A107-C10B039092DB}
 		{58E8D84D-6055-4C30-986E-CAC6B892E8ED} = {0CFDA729-1E00-47DF-A107-C10B039092DB}
+		{F80F4165-8844-4887-A8EA-D613165C1103} = {A6B119D7-8E09-4B79-9D51-4E867667EF47}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F325564A-BA5A-4860-BA83-72F0743F08F9}

@@ -1,6 +1,6 @@
 # DWIS_SPPs
 - DrillingDataPoint:SPP_0
-- StandPipe:StandPipe_0
+- MudStandpipe:StandPipe_0
 - SPPQuantity:SPPQuantity_0
 - SensorUncertainty:SPPUncertainty_0
 - LowPassFilter:SPP_LowPassFilter
@@ -39,5 +39,3 @@
 - SPP_1 BelongsToClass Limit
 - InstantComputedSPP IsComputedBy SPPComputationUnit_0
 - InstantComputedSPP IsTransmissionInput MovingAverage1
-
-
