@@ -7,10 +7,10 @@
 - DensityIn:DensityIn_1
 - SPP:SPP_0
 - TemperatureIn:TemperatureIn_1
-- ActiveDrillingSystem:ActiveDrillingSystem_0
+- ActivePit:ActivePit_0
 - ReturnFlowLine:ReturnFlowLine_0
 - MudMixing:MudMixing_0
-- Standpipe:Standpipe_0
+- StandPipe:StandPipe_0
 - FluidTemperatureInQuantity:FluidTemperatureInQuantity_0
 - PressureQuantity:PressureQuantity_0
 - FluidDensityInQuantity:FluidDensityInQuantity_0
@@ -33,10 +33,10 @@
 - DensityIn_0 IsDependentOn DrillingDataPoint_0
 - DensityIn_1 IsDependentOn SPP_0
 - DensityIn_1 IsDependentOn TemperatureIn_1
-- TemperatureIn_0 IsHydraulicallyLocatedAt ActiveDrillingSystem_0
+- TemperatureIn_0 IsHydraulicallyLocatedAt ActivePit_0
 - DensityOut_0 IsHydraulicallyLocatedAt ReturnFlowLine_0
 - DensityIn_0 IsHydraulicallyLocatedAt MudMixing_0
-- DensityIn_1 IsHydraulicallyLocatedAt Standpipe_0
+- DensityIn_1 IsHydraulicallyLocatedAt StandPipe_0
 - TemperatureOut_0 IsMechanicallyLocatedAt ReturnFlowLine_0
 - TemperatureIn_0 IsOfMeasurableQuantity FluidTemperatureInQuantity_0
 - DrillingDataPoint_0 IsOfMeasurableQuantity PressureQuantity_0
@@ -76,10 +76,10 @@ flowchart TD
 	DensityIn_1([DensityIn_1]) --> DensityIn[[DensityIn]]
 	SPP_0([SPP_0]) --> SPP[[SPP]]
 	TemperatureIn_1([TemperatureIn_1]) --> TemperatureIn[[TemperatureIn]]
-	ActiveDrillingSystem_0([ActiveDrillingSystem_0]) --> ActiveDrillingSystem[[ActiveDrillingSystem]]
+	ActivePit_0([ActivePit_0]) --> ActivePit[[ActivePit]]
 	ReturnFlowLine_0([ReturnFlowLine_0]) --> ReturnFlowLine[[ReturnFlowLine]]
 	MudMixing_0([MudMixing_0]) --> MudMixing[[MudMixing]]
-	Standpipe_0([Standpipe_0]) --> Standpipe[[Standpipe]]
+	StandPipe_0([StandPipe_0]) --> StandPipe[[StandPipe]]
 	FluidTemperatureInQuantity_0([FluidTemperatureInQuantity_0]) --> FluidTemperatureInQuantity[[FluidTemperatureInQuantity]]
 	PressureQuantity_0([PressureQuantity_0]) --> PressureQuantity[[PressureQuantity]]
 	FluidDensityInQuantity_0([FluidDensityInQuantity_0]) --> FluidDensityInQuantity[[FluidDensityInQuantity]]
@@ -102,10 +102,10 @@ flowchart TD
 	 DensityIn_0 -- IsDependentOn --> DrillingDataPoint_0 
 	 DensityIn_1 -- IsDependentOn --> SPP_0 
 	 DensityIn_1 -- IsDependentOn --> TemperatureIn_1 
-	 TemperatureIn_0 -- IsHydraulicallyLocatedAt --> ActiveDrillingSystem_0 
+	 TemperatureIn_0 -- IsHydraulicallyLocatedAt --> ActivePit_0 
 	 DensityOut_0 -- IsHydraulicallyLocatedAt --> ReturnFlowLine_0 
 	 DensityIn_0 -- IsHydraulicallyLocatedAt --> MudMixing_0 
-	 DensityIn_1 -- IsHydraulicallyLocatedAt --> Standpipe_0 
+	 DensityIn_1 -- IsHydraulicallyLocatedAt --> StandPipe_0 
 	 TemperatureOut_0 -- IsMechanicallyLocatedAt --> ReturnFlowLine_0 
 	 TemperatureIn_0 -- IsOfMeasurableQuantity --> FluidTemperatureInQuantity_0 
 	 DrillingDataPoint_0 -- IsOfMeasurableQuantity --> PressureQuantity_0 
