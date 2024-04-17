@@ -11,6 +11,26 @@
 - Parent class: Equipment
 - Description:
 - Examples:
+## PowerGenerationSystem <!-- NOUN -->
+- Display name: Power Generation System
+- Parent class: RigEquipment
+- Description:
+- Examples:
+## PowerGenerators <!-- NOUN -->
+- Display name: Power Generators
+- Parent class: PowerGenerationSystem
+- Description:
+- Examples:
+## ElectricalControlSystem <!-- NOUN -->
+- Display name: Electrical Control System
+- Parent class: PowerGenerationSystem
+- Description:
+- Examples:
+## PowerScrSystem <!-- NOUN -->
+- Display name: Power SCR System
+- Parent class: PowerGenerationSystem
+- Description:
+- Examples:
 ## HoistingSystem <!-- NOUN -->
 - Display name: Hoisting  System 
 - Parent class: RigEquipment
@@ -31,28 +51,33 @@
 - Parent class: HoistingSystem
 - Description:
 - Examples:
-## Double <!-- NOUN -->
-- Display name: Double
+## ConventionalDerrick <!-- NOUN -->
+- Display name: Conventional Derrick
 - Parent class: Derrick
 - Description:
 - Examples:
-## Quadruple <!-- NOUN -->
-- Display name: Quadruple
+## SlantDerrick <!-- NOUN -->
+- Display name: Slant Derrick
 - Parent class: Derrick
 - Description:
 - Examples:
-## Slant <!-- NOUN -->
-- Display name: Slant
+## QuadristandDerrick <!-- NOUN -->
+- Display name: Quadri-Stand Derrick
 - Parent class: Derrick
 - Description:
 - Examples:
-## Triple <!-- NOUN -->
-- Display name: Triple
+## TripleStandDerrick <!-- NOUN -->
+- Display name: Triple Stand Derrick
 - Parent class: Derrick
 - Description:
 - Examples:
-## DerrickSingle <!-- NOUN -->
-- Display name: Single
+## DoubleStandDerrick <!-- NOUN -->
+- Display name: Double Stand Derrick
+- Parent class: Derrick
+- Description:
+- Examples:
+## SingleJointDerrick <!-- NOUN -->
+- Display name: Single Joint Derrick
 - Parent class: Derrick
 - Description:
 - Examples:
@@ -61,23 +86,23 @@
 - Parent class: HoistingSystem
 - Description:
 - Examples:
-## StandardElectrical <!-- NOUN -->
-- Display name: Standard Electrical
+## StandardElectricalDrawworks <!-- NOUN -->
+- Display name: Standard Electrical Drawworks
 - Parent class: Drawworks
 - Description:
 - Examples:
-## Mechanical <!-- NOUN -->
-- Display name: Mechanical
+## MechanicalDrawworks <!-- NOUN -->
+- Display name: Mechanical Drawworks
+- Parent class: Drawworks
+- Description:
+- Examples:
+## DieselElectricalDrawworks <!-- NOUN -->
+- Display name: Diesel Electrical Drawworks
 - Parent class: Drawworks
 - Description:
 - Examples:
 ## RamRig <!-- NOUN -->
 - Display name: Ram Rig
-- Parent class: Drawworks
-- Description:
-- Examples:
-## DieselElectrical <!-- NOUN -->
-- Display name: Diesel Electrical
 - Parent class: Drawworks
 - Description:
 - Examples:
@@ -181,13 +206,8 @@
 - Parent class: SurfaceRotationSystem
 - Description:
 - Examples:
-## RotaryBushing <!-- NOUN -->
-- Display name: Rotary Bushing
-- Parent class: RotaryTable
-- Description:
-- Examples:
-## WearBushing <!-- NOUN -->
-- Display name: Wear Bushing
+## RotaryTableBushings <!-- NOUN -->
+- Display name: Rotary Table Bushings
 - Parent class: RotaryTable
 - Description:
 - Examples:
@@ -221,6 +241,11 @@
 - Parent class: RigEquipment
 - Description:
 - Examples:
+## BellNipple <!-- NOUN -->
+- Display name: Bell Nipple
+- Parent class: WellControlSystem
+- Description:
+- Examples:
 ## Accumulator <!-- NOUN -->
 - Display name: Accumulator
 - Parent class: WellControlSystem
@@ -232,7 +257,7 @@
 - Description:
 - Examples:
 ## SurfaceBop <!-- NOUN -->
-- Display name: Surface BOP 
+- Display name: Surface BOP  
 - Parent class: BopStack
 - Description:
 - Examples:
@@ -271,6 +296,16 @@
 - Parent class: BopElement
 - Description:
 - Examples:
+## AdapterSpool <!-- NOUN -->
+- Display name: Adapter Spool
+- Parent class: WellControlSystem
+- Description:
+- Examples:
+## SpacingSpool <!-- NOUN -->
+- Display name: Spacing Spool
+- Parent class: WellControlSystem
+- Description:
+- Examples:
 ## ChokeManifold <!-- NOUN -->
 - Display name: Choke Manifold
 - Parent class: WellControlSystem
@@ -281,7 +316,7 @@
 - Parent class: ChokeManifold
 - Description:
 - Examples:
-## GateValve <!-- NOUN -->
+## ChokeValveGatevalve <!-- NOUN -->
 - Display name: Gate Valve
 - Parent class: ChokeValve
 - Description:
@@ -294,6 +329,31 @@
 ## ChokeLine <!-- NOUN -->
 - Display name: Choke Line
 - Parent class: WellControlSystem
+- Description:
+- Examples:
+## ControlLines <!-- NOUN -->
+- Display name: Control Lines
+- Parent class: WellControlSystem
+- Description:
+- Examples:
+## Diverter <!-- NOUN -->
+- Display name: Diverter
+- Parent class: WellControlSystem
+- Description:
+- Examples:
+## DiverterLine <!-- NOUN -->
+- Display name: Diverter Line
+- Parent class: Diverter
+- Description:
+- Examples:
+## DiverterLineHanger <!-- NOUN -->
+- Display name: Diverter Line Hanger
+- Parent class: Diverter
+- Description:
+- Examples:
+## VentOverboardLine <!-- NOUN -->
+- Display name: Vent (Overboard) Line
+- Parent class: Diverter
 - Description:
 - Examples:
 ## ControlManifold <!-- NOUN -->
@@ -336,89 +396,109 @@
 - Parent class: WellControlSystem
 - Description:
 - Examples:
-## MudSystem <!-- NOUN -->
-- Display name: Mud System
+## WellheadXmasTree <!-- NOUN -->
+- Display name: Wellhead (Xmas) Tree
+- Parent class: WellControlSystem
+- Description:
+- Examples:
+## CirculationSystem <!-- NOUN -->
+- Display name: Circulation System
 - Parent class: RigEquipment
 - Description:
 - Examples:
-## Pumps <!-- NOUN -->
-- Display name: Pumps
-- Parent class: MudSystem
+## MudPump <!-- NOUN -->
+- Display name: Mud Pump
+- Parent class: CirculationSystem
 - Description:
 - Examples:
-## PistonMudPumps <!-- NOUN -->
-- Display name: Piston Mud Pumps
-- Parent class: Pumps
+## PistonMudPump <!-- NOUN -->
+- Display name: Piston Mud Pump
+- Parent class: MudPump
 - Description:
 - Examples:
 ## PulsationDampener <!-- NOUN -->
 - Display name: Pulsation Dampener
-- Parent class: PistonMudPumps
+- Parent class: PistonMudPump
 - Description:
 - Examples:
 ## Piston <!-- NOUN -->
 - Display name: Piston 
-- Parent class: PistonMudPumps
+- Parent class: PistonMudPump
 - Description:
 - Examples:
 ## Liner <!-- NOUN -->
 - Display name: Liner
-- Parent class: PistonMudPumps
-- Description:
-- Examples:
-## Efficiency <!-- NOUN -->
-- Display name: Efficiency
-- Parent class: PistonMudPumps
+- Parent class: PistonMudPump
 - Description:
 - Examples:
 ## Cylinders <!-- NOUN -->
 - Display name: Cylinders
-- Parent class: PistonMudPumps
+- Parent class: PistonMudPump
 - Description:
 - Examples:
 ## Action <!-- NOUN -->
 - Display name: Action
-- Parent class: PistonMudPumps
+- Parent class: PistonMudPump
 - Description:
 - Examples:
-## ActionSingle <!-- NOUN -->
-- Display name: Single
+## SingleActing <!-- NOUN -->
+- Display name: Single Acting
 - Parent class: Action
 - Description:
 - Examples:
-## Dual <!-- NOUN -->
-- Display name: Dual
+## DualActing <!-- NOUN -->
+- Display name: Dual Acting
 - Parent class: Action
 - Description:
 - Examples:
-## CentrifugalMudPumps <!-- NOUN -->
-- Display name: Centrifugal Mud Pumps
-- Parent class: Pumps
+## PlungerMudPump <!-- NOUN -->
+- Display name: Plunger Mud Pump
+- Parent class: MudPump
 - Description:
 - Examples:
-## BoosterPump <!-- NOUN -->
-- Display name: Booster Pump
-- Parent class: Pumps
+## CentrifugalMudPump <!-- NOUN -->
+- Display name: Centrifugal Mud Pump
+- Parent class: MudPump
 - Description:
 - Examples:
-## BackPressurePump <!-- NOUN -->
-- Display name: Back Pressure Pump
-- Parent class: Pumps
+## HydraulicMudPump <!-- NOUN -->
+- Display name: Hydraulic Mud Pump
+- Parent class: MudPump
+- Description:
+- Examples:
+## DiaphragmMudPump <!-- NOUN -->
+- Display name: Diaphragm Mud Pump
+- Parent class: MudPump
+- Description:
+- Examples:
+## PeristalticMudPump <!-- NOUN -->
+- Display name: Peristaltic Mud Pump
+- Parent class: MudPump
+- Description:
+- Examples:
+## RiserLiftPump <!-- NOUN -->
+- Display name: Riser Lift Pump
+- Parent class: CirculationSystem
 - Description:
 - Examples:
 ## FillPump <!-- NOUN -->
 - Display name: Fill Pump
-- Parent class: Pumps
+- Parent class: CirculationSystem
 - Description:
 - Examples:
-## LiftPump <!-- NOUN -->
-- Display name: Lift Pump
-- Parent class: Pumps
+## BackPressurePump <!-- NOUN -->
+- Display name: Back Pressure Pump
+- Parent class: CirculationSystem
+- Description:
+- Examples:
+## BoosterPump <!-- NOUN -->
+- Display name: Booster Pump
+- Parent class: CirculationSystem
 - Description:
 - Examples:
 ## DrillingFluid <!-- NOUN -->
 - Display name: Drilling Fluid
-- Parent class: MudSystem
+- Parent class: CirculationSystem
 - Description:
 - Examples:
 ## DrillWater <!-- NOUN -->
@@ -458,7 +538,7 @@
 - Examples:
 ## MudPits <!-- NOUN -->
 - Display name: Mud Pits
-- Parent class: MudSystem
+- Parent class: CirculationSystem
 - Description:
 - Examples:
 ## ActiveDrillingSystem <!-- NOUN -->
@@ -491,8 +571,8 @@
 - Parent class: MudPits
 - Description:
 - Examples:
-## Storage <!-- NOUN -->
-- Display name: Storage
+## StorageTank <!-- NOUN -->
+- Display name: Storage Tank
 - Parent class: MudPits
 - Description:
 - Examples:
@@ -513,42 +593,42 @@
 - Examples:
 ## ShaleShakers <!-- NOUN -->
 - Display name: Shale Shakers
-- Parent class: MudSystem
+- Parent class: CirculationSystem
 - Description:
 - Examples:
-## Hopper <!-- NOUN -->
-- Display name: Hopper
+## ShakerHopper <!-- NOUN -->
+- Display name: Shaker Hopper
 - Parent class: ShaleShakers
 - Description:
 - Examples:
-## Decks <!-- NOUN -->
-- Display name: Decks
+## ShakerDecks <!-- NOUN -->
+- Display name:  Shaker Decks
 - Parent class: ShaleShakers
 - Description:
 - Examples:
-## Screens <!-- NOUN -->
-- Display name: Screens
-- Parent class: Decks
+## ShakerScreens <!-- NOUN -->
+- Display name: Shaker Screens
+- Parent class: ShakerDecks
 - Description:
 - Examples:
-## MeshSize <!-- NOUN -->
-- Display name: Mesh Size
-- Parent class: Decks
+## ShakerScreenMeshSize <!-- NOUN -->
+- Display name: Shaker Screen Mesh Size
+- Parent class: ShakerDecks
 - Description:
 - Examples:
-## CascadeLevels <!-- NOUN -->
-- Display name: Cascade Levels
+## ShakerCascadeLevels <!-- NOUN -->
+- Display name: Shaker Cascade Levels
 - Parent class: ShaleShakers
 - Description:
 - Examples:
 ## Centrifuge <!-- NOUN -->
 - Display name: Centrifuge
-- Parent class: MudSystem
+- Parent class: CirculationSystem
 - Description:
 - Examples:
 ## Degasser <!-- NOUN -->
 - Display name: Degasser
-- Parent class: MudSystem
+- Parent class: CirculationSystem
 - Description:
 - Examples:
 ## CentrifugalDegasser <!-- NOUN -->
@@ -563,32 +643,42 @@
 - Examples:
 ## AfmAutofluidMeasSkid <!-- NOUN -->
 - Display name: AFM (Auto-Fluid Meas.) Skid
-- Parent class: MudSystem
+- Parent class: CirculationSystem
 - Description:
 - Examples:
 ## Hydrocyclones <!-- NOUN -->
 - Display name: Hydrocyclones
-- Parent class: MudSystem
+- Parent class: CirculationSystem
 - Description:
 - Examples:
-## PowerGenerationSystem <!-- NOUN -->
-- Display name: Power Generation System
-- Parent class: RigEquipment
+## MudLines <!-- NOUN -->
+- Display name: Mud Lines
+- Parent class: CirculationSystem
 - Description:
 - Examples:
-## Generators <!-- NOUN -->
-- Display name: Generators
-- Parent class: PowerGenerationSystem
+## MudStandpipeManifold <!-- NOUN -->
+- Display name: Mud Standpipe Manifold
+- Parent class: MudLines
 - Description:
 - Examples:
-## ElectricalControlSystem <!-- NOUN -->
-- Display name: Electrical Control System
-- Parent class: PowerGenerationSystem
+## MudStandpipe <!-- NOUN -->
+- Display name: Mud Standpipe
+- Parent class: MudLines
 - Description:
 - Examples:
-## ScrSystem <!-- NOUN -->
-- Display name: SCR System
-- Parent class: PowerGenerationSystem
+## MudHose <!-- NOUN -->
+- Display name: Mud Hose
+- Parent class: MudLines
+- Description:
+- Examples:
+## Gooseneck <!-- NOUN -->
+- Display name: Gooseneck
+- Parent class: MudLines
+- Description:
+- Examples:
+## FlowLine <!-- NOUN -->
+- Display name: Flow Line
+- Parent class: MudLines
 - Description:
 - Examples:
 ## MarineSystem <!-- NOUN -->
@@ -633,6 +723,11 @@
 - Examples:
 ## LowerMarineRiserPackageLmrp <!-- NOUN -->
 - Display name: Lower Marine Riser Package (LMRP)
+- Parent class: MarineSystem
+- Description:
+- Examples:
+## BoosterLine <!-- NOUN -->
+- Display name: Booster Line
 - Parent class: MarineSystem
 - Description:
 - Examples:
@@ -726,63 +821,43 @@
 - Parent class: MarineSystem
 - Description:
 - Examples:
-## DrillFloorEquipment <!-- NOUN -->
-- Display name: Drill Floor Equipment
+## DrillFloorSystems <!-- NOUN -->
+- Display name: Drill Floor Systems
 - Parent class: RigEquipment
 - Description:
 - Examples:
-## Elevator <!-- NOUN -->
-- Display name: Elevator
-- Parent class: DrillFloorEquipment
+## DrillFloorStructure <!-- NOUN -->
+- Display name: Drill Floor Structure
+- Parent class: DrillFloorSystems
 - Description:
 - Examples:
-## Bails <!-- NOUN -->
-- Display name: Bails 
-- Parent class: DrillFloorEquipment
-- Description:
-- Examples:
-## ManualPipeTongs <!-- NOUN -->
-- Display name: Manual Pipe Tongs
-- Parent class: DrillFloorEquipment
-- Description:
-- Examples:
-## PowerTongs <!-- NOUN -->
-- Display name: Power Tongs
-- Parent class: DrillFloorEquipment
-- Description:
-- Examples:
-## CasingTongs <!-- NOUN -->
-- Display name: Casing Tongs
-- Parent class: DrillFloorEquipment
+## DogHouse <!-- NOUN -->
+- Display name: Dog House
+- Parent class: DrillFloorStructure
 - Description:
 - Examples:
 ## RigFloor <!-- NOUN -->
 - Display name: Rig Floor
-- Parent class: DrillFloorEquipment
+- Parent class: DrillFloorStructure
 - Description:
 - Examples:
-## Slips <!-- NOUN -->
-- Display name: Slips
-- Parent class: DrillFloorEquipment
+## Mousehole <!-- NOUN -->
+- Display name: Mousehole
+- Parent class: DrillFloorStructure
 - Description:
 - Examples:
-## ManualSlips <!-- NOUN -->
-- Display name: Manual Slips
-- Parent class: Slips
+## DrillFloorSubstructure <!-- NOUN -->
+- Display name: Drill Floor Substructure
+- Parent class: DrillFloorStructure
 - Description:
 - Examples:
-## PowerSlips <!-- NOUN -->
-- Display name: Power Slips
-- Parent class: Slips
+## DrillFloorEquipment <!-- NOUN -->
+- Display name: Drill Floor Equipment
+- Parent class: DrillFloorSystems
 - Description:
 - Examples:
-## PneumaticSlips <!-- NOUN -->
-- Display name: Pneumatic Slips
-- Parent class: Slips
-- Description:
-- Examples:
-## RotatingControlDeviceRcd <!-- NOUN -->
-- Display name: Rotating Control Device (RCD)
+## DrillersConsole <!-- NOUN -->
+- Display name: Drillers Console
 - Parent class: DrillFloorEquipment
 - Description:
 - Examples:
@@ -791,13 +866,58 @@
 - Parent class: DrillFloorEquipment
 - Description:
 - Examples:
-## StabbingGuide <!-- NOUN -->
-- Display name: Stabbing Guide
+## DrillPipeElevator <!-- NOUN -->
+- Display name: Drill Pipe Elevator
 - Parent class: DrillFloorEquipment
 - Description:
 - Examples:
-## Mousehole <!-- NOUN -->
-- Display name: Mousehole
+## ElevatorBailsLinks <!-- NOUN -->
+- Display name: Elevator Bails / Links
+- Parent class: DrillFloorEquipment
+- Description:
+- Examples:
+## DrillPipeTongs <!-- NOUN -->
+- Display name: Drill Pipe Tongs
+- Parent class: DrillFloorEquipment
+- Description:
+- Examples:
+## ManualPipeTongs <!-- NOUN -->
+- Display name: Manual Pipe Tongs
+- Parent class: DrillPipeTongs
+- Description:
+- Examples:
+## PowerPipeTongs <!-- NOUN -->
+- Display name: Power Pipe Tongs
+- Parent class: DrillPipeTongs
+- Description:
+- Examples:
+## CasingTongs <!-- NOUN -->
+- Display name: Casing Tongs
+- Parent class: DrillPipeTongs
+- Description:
+- Examples:
+## RotarySlips <!-- NOUN -->
+- Display name: Rotary Slips
+- Parent class: DrillFloorEquipment
+- Description:
+- Examples:
+## ManualSlips <!-- NOUN -->
+- Display name: Manual Slips
+- Parent class: RotarySlips
+- Description:
+- Examples:
+## PowerSlips <!-- NOUN -->
+- Display name: Power Slips
+- Parent class: RotarySlips
+- Description:
+- Examples:
+## PneumaticSlips <!-- NOUN -->
+- Display name: Pneumatic Slips
+- Parent class: RotarySlips
+- Description:
+- Examples:
+## StabbingGuide <!-- NOUN -->
+- Display name: Stabbing Guide
 - Parent class: DrillFloorEquipment
 - Description:
 - Examples:
@@ -806,13 +926,8 @@
 - Parent class: DrillFloorEquipment
 - Description:
 - Examples:
-## DogHouse <!-- NOUN -->
-- Display name: Dog House
-- Parent class: DrillFloorEquipment
-- Description:
-- Examples:
-## DrillersConsole <!-- NOUN -->
-- Display name: Drillers Console
+## RotatingControlDeviceRcd <!-- NOUN -->
+- Display name: Rotating Control Device (RCD)
 - Parent class: DrillFloorEquipment
 - Description:
 - Examples:
@@ -823,6 +938,11 @@
 - Examples:
 ## DollyRail <!-- NOUN -->
 - Display name: Dolly Rail
+- Parent class: DrillFloorEquipment
+- Description:
+- Examples:
+## SlickLine <!-- NOUN -->
+- Display name: Slick Line
 - Parent class: DrillFloorEquipment
 - Description:
 - Examples:
@@ -904,106 +1024,6 @@
 ## Seperator <!-- NOUN -->
 - Display name: Seperator
 - Parent class: WellTestingEquipment
-- Description:
-- Examples:
-## SurfaceEquipment <!-- NOUN -->
-- Display name: Surface Equipment
-- Parent class: RigEquipment
-- Description:
-- Examples:
-## AnnulusTerminator <!-- NOUN -->
-- Display name: Annulus Terminator
-- Parent class: SurfaceEquipment
-- Description:
-- Examples:
-## BellNipple <!-- NOUN -->
-- Display name: Bell Nipple
-- Parent class: AnnulusTerminator
-- Description:
-- Examples:
-## Diverter <!-- NOUN -->
-- Display name: Diverter 
-- Parent class: AnnulusTerminator
-- Description:
-- Examples:
-## Wellhead <!-- NOUN -->
-- Display name: Wellhead 
-- Parent class: SurfaceEquipment
-- Description:
-- Examples:
-## Overshot <!-- NOUN -->
-- Display name: Overshot
-- Parent class: SurfaceEquipment
-- Description:
-- Examples:
-## SpoolAdapter <!-- NOUN -->
-- Display name: Spool Adapter
-- Parent class: SurfaceEquipment
-- Description:
-- Examples:
-## ControlLines <!-- NOUN -->
-- Display name: Control Lines
-- Parent class: SurfaceEquipment
-- Description:
-- Examples:
-## BoosterLine <!-- NOUN -->
-- Display name: Booster Line
-- Parent class: SurfaceEquipment
-- Description:
-- Examples:
-## SurfaceLines <!-- NOUN -->
-- Display name: Surface lines
-- Parent class: SurfaceEquipment
-- Description:
-- Examples:
-## StandpipeManifold <!-- NOUN -->
-- Display name: Standpipe Manifold
-- Parent class: SurfaceLines
-- Description:
-- Examples:
-## Standpipe <!-- NOUN -->
-- Display name: Standpipe
-- Parent class: SurfaceLines
-- Description:
-- Examples:
-## MudHose <!-- NOUN -->
-- Display name: Mud Hose
-- Parent class: SurfaceLines
-- Description:
-- Examples:
-## Gooseneck <!-- NOUN -->
-- Display name: Gooseneck
-- Parent class: SurfaceLines
-- Description:
-- Examples:
-## OverboardLines <!-- NOUN -->
-- Display name: Overboard Lines
-- Parent class: SurfaceEquipment
-- Description:
-- Examples:
-## FlowLine <!-- NOUN -->
-- Display name: Flow Line
-- Parent class: SurfaceEquipment
-- Description:
-- Examples:
-## XmasTree <!-- NOUN -->
-- Display name: Xmas Tree
-- Parent class: SurfaceEquipment
-- Description:
-- Examples:
-## DiverterLineHangers <!-- NOUN -->
-- Display name: Diverter Line Hangers
-- Parent class: SurfaceEquipment
-- Description:
-- Examples:
-## IsolationSeal <!-- NOUN -->
-- Display name: Isolation Seal
-- Parent class: SurfaceEquipment
-- Description:
-- Examples:
-## SlickLine <!-- NOUN -->
-- Display name: Slick Line
-- Parent class: SurfaceEquipment
 - Description:
 - Examples:
 ## SafetyEquipment <!-- NOUN -->
@@ -1711,8 +1731,8 @@
 - Parent class: DrillingEquipment
 - Description:
 - Examples:
-## Overshoot <!-- NOUN -->
-- Display name: Overshoot
+## Overshot <!-- NOUN -->
+- Display name: Overshot
 - Parent class: FishingTools
 - Description:
 - Examples:
@@ -1749,6 +1769,11 @@
 ## NearBitVibrationDampers <!-- NOUN -->
 - Display name: Near Bit Vibration Dampers
 - Parent class: ActiveVibrationTools
+- Description:
+- Examples:
+## IsolationSeal <!-- NOUN -->
+- Display name: Isolation Seal
+- Parent class: DrillingEquipment
 - Description:
 - Examples:
 ## CasingEquipment <!-- NOUN -->
@@ -2166,14 +2191,24 @@
 - Parent class: CoiledTubingEquipment
 - Description:
 - Examples:
-## MudStandpipeManifold <!-- NOUN -->
-- Display name: Mud Standpipe Manifold
-- Parent class: MudSystem
+## WellcontrolStackEquipment <!-- NOUN -->
+- Display name: Well-control stack equipment
+- Parent class: CoiledTubingEquipment
 - Description:
 - Examples:
-## ThreeWayValve <!-- NOUN -->
-- Display name: Three Way Valve
-- Parent class: MudSystem
+## GenericEquipment <!-- NOUN -->
+- Display name: <Generic Equipment>
+- Parent class: Equipment
+- Description:
+- Examples:
+## GenericEquipmentGatevalve <!-- NOUN -->
+- Display name: Gate Valve
+- Parent class: GenericEquipment
+- Description:
+- Examples:
+## ThreeWayManifold <!-- NOUN -->
+- Display name: Three Way Manifold
+- Parent class: GenericEquipment
 - Description:
 - Examples:
 

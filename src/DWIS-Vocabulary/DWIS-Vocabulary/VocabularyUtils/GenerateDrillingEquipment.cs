@@ -30,23 +30,46 @@ namespace DWIS.Vocabulary.Utils
                             {
                                 int rowCount = worksheet.Dimension.Rows;
                                 int colCount = worksheet.Dimension.Columns;
-                                if (rowCount > 2 && colCount >= 9)
+                                if (rowCount >= 1 && colCount >= 7)
                                 {
-                                    for (int i = 2; i < rowCount; i++)
+                                    List<string> stack = new List<string>() { "DWISNoun" };
+                                    for (int i = 1; i <= rowCount; i++)
                                     {
-                                        List<string> names = new List<string>() { "DWISNoun" };
-                                        for (int j = 2; j < colCount; j++)
+                                        bool found = false;
+                                        for (int j = 1; j <= colCount; j++)
                                         {
-                                            if (worksheet.Cells[i, j] == null || worksheet.Cells[i, j].Value == null || (worksheet.Cells[i, j].Value is string && string.IsNullOrEmpty(worksheet.Cells[i, j].Value as string)))
+                                            if (worksheet.Cells[i, j] != null && worksheet.Cells[i, j].Value != null && worksheet.Cells[i, j].Value is string)
                                             {
+                                                if (j == stack.Count-1)
+                                                {
+                                                    stack[stack.Count - 1] = worksheet.Cells[i, j].Value as string;
+                                                }
+                                                else if (j > stack.Count-1)
+                                                {
+                                                    stack.Add(worksheet.Cells[i, j].Value as string);
+                                                }
+                                                else
+                                                {
+                                                    int cc = stack.Count - j - 1;
+                                                    for (int k = 0; k < cc; k++)
+                                                    {
+                                                        stack.RemoveAt(stack.Count - 1);
+                                                    }
+                                                    stack[stack.Count - 1] = worksheet.Cells[i, j].Value as string;
+                                                }
+                                                found = true;
                                                 break;
                                             }
-                                            else if (worksheet.Cells[i, j] != null && worksheet.Cells[i, j].Value != null && worksheet.Cells[i, j].Value is string)
-                                            {
-                                                names.Add(worksheet.Cells[i, j].Value as string);
-                                            }
                                         }
-                                        list.Add(names);
+                                        if (found)
+                                        {
+                                            List<string> names = new List<string>();
+                                            foreach (string name in stack)
+                                            {
+                                                names.Add(name);
+                                            }
+                                            list.Add(names);
+                                        }
                                     }
                                 }
                             }
@@ -108,8 +131,8 @@ namespace DWIS.Vocabulary.Utils
                         {
                             List<Tuple<string, string, string>> addendum = new List<Tuple<string, string, string>>()
                             {
-                                new Tuple<string, string, string>("MudStandpipeManifold", "Mud Standpipe Manifold", "MudSystem"),
-                                new Tuple<string, string, string>("ThreeWayValve", "Three Way Valve", "MudSystem")
+                                //new Tuple<string, string, string>("MudStandpipeManifold", "Mud Standpipe Manifold", "MudSystem"),
+                                //new Tuple<string, string, string>("ThreeWayValve", "Three Way Valve", "MudSystem")
                             };
                             foreach (var entry in  addendum)
                             {
