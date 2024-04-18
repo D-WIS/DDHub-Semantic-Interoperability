@@ -38,8 +38,8 @@
 - DrillingDataPoint:DrillingDataPoint_7
 - DrillingDataPoint:DrillingDataPoint_8
 - CementPump:CementPump_0
-- PistonMudPumps:MudPump_0
-- PistonMudPumps:MudPump_1
+- MudPump:MudPump_0
+- MudPump:MudPump_1
 - PumpRate:PumpRate_0
 - PumpRate:PumpRate_1
 - PumpRate:PumpRate_2
@@ -48,8 +48,8 @@
 - DrillingDataPoint:DrillingDataPoint_11
 - ProportionQuantity:ProportionQuantity_0
 - VolumeQuantity:VolumeQuantity_0
-- FlowRateQuantity:FlowRateQuantity_0
-- PumpRateQuantity:PumpRateQuantity_0
+- DrillingVolumetricFlowrateQuantity:FlowRateQuantity_0
+- RotationFrequencyQuantity:PumpRateQuantity_0
 - Transformation:Transformation_0
 - Transformation:Transformation_1
 - Transformation:Transformation_2
@@ -57,63 +57,63 @@
 - Derivation:Derivation_1
 - Derivation:Derivation_2
 - FlowRateIn:FlowRateIn_1
-- Standpipe:StandPipe_0
+- MudStandpipe:StandPipe_0
 - Transformation:Transformation_3
-- BitTorqueQuantity:BitTorqueQuantity_0
+- DrillingTorqueQuantity:BitTorqueQuantity_0
 - TorqueQuantity:TorqueQuantity_0
-- BlockAccelerationQuantity:BlockAccelerationQuantity_0
+- DrillingAccelerationQuantity:BlockAccelerationQuantity_0
 - AccelerationQuantity:AccelerationQuantity_0
-- BlockPositionQuantity:BlockPositionQuantity_0
+- PositionQuantity:BlockPositionQuantity_0
 - LengthQuantity:LengthQuantity_0
 - BlockVelocityQuantity:BlockVelocityQuantity_0
 - VelocityQuantity:VelocityQuantity_0
 - DepthQuantity:DepthQuantity_0
-- EMWQuantity:EMWQuantity_0
-- MassDensityQuantity:MassDensityQuantity_0
-- VolumetricRateQuantity:VolumetricRateQuantity_0
-- FluidDensityInQuantity:FluidDensityInQuantity_0
-- FluidTemperatureInQuantity:FluidTemperatureInQuantity_0
+- DrillingDensityQuantity:EMWQuantity_0
+- DrillingDensityQuantity:MassDensityQuantity_0
+- DrillingVolumetricFlowrateQuantity:VolumetricRateQuantity_0
+- DrillingDensityQuantity:FluidDensityInQuantity_0
+- DrillingTemperatureQuantity:FluidTemperatureInQuantity_0
 - TemperatureQuantity:TemperatureQuantity_0
-- HookloadQuantity:HookloadQuantity_0
+- HookLoadQuantity:HookloadQuantity_0
 - MassQuantity:MassQuantity_0
 - FrequencyQuantity:FrequencyQuantity_0
-- SPPQuantity:SPPQuantity_0
+- DrillingPressureQuantity:SPPQuantity_0
 - PressureQuantity:PressureQuantity_0
-- SurfaceRPMQuantity:SurfaceRPMQuantity_0
-- SurfaceTorqueQuantity:SurfaceTorqueQuantity_0
-- TopOfStringForceQuantity:TopOfStringForceQuantity_0
+- RotationFrequencyQuantity:SurfaceRPMQuantity_0
+- DrillingTorqueQuantity:SurfaceTorqueQuantity_0
+- DrillingForceQuantity:TopOfStringForceQuantity_0
 - ForceQuantity:ForceQuantity_0
-- TVDQuantity:TVDQuantity_0
-- WOBQuantity:WOBQuantity_0
-- Resistivity:Resistivity_0
-- ElectricResistivityQuantity:ElectricResistivityQuantity_0
-- RockDensityQuantity:RockDensityQuantity_0
-- FormationPorosityQuantity:FormationPorosityQuantity_0
+- DepthQuantity:TVDQuantity_0
+- WeightOnBitQuantity:WOBQuantity_0
+- FormationResistivityQuantity:Resistivity_0
+- FormationResistivityQuantity:ElectricResistivityQuantity_0
+- DrillingDensityQuantity:RockDensityQuantity_0
+- PorosityQuantity:FormationPorosityQuantity_0
 - ProportionQuantity:ProportionQuantity_1
-- Quill:Quill_0
+- Quill:TopDriveShaft_0
 - TopDrive:TopDrive_0
-- MudStandpipeManifold:MudStandpipeManifold_0
-- MudStandpipeManifold:MudStandpipeManifold_1
-- MudStandpipeManifold:MudStandpipeManifold_2
+- ThreeWayManifold:ThreeWayManifold_0
+- ThreeWayManifold:ThreeWayManifold_1
+- ThreeWayManifold:ThreeWayManifold_2
 - ThreeWayValve:ThreeWayValve_0
-- GateValve:GateValve_0
-- GateValve:GateValve_1
-- GateValve:GateValve_2
+- GenericEquipmentGatevalve:GateValve_0
+- GenericEquipmentGatevalve:GateValve_1
+- GenericEquipmentGatevalve:GateValve_2
 - ThreeWayValve:ThreeWayValve_1
-- MudStandpipeManifold:MudStandpipeManifold_3
+- ThreeWayManifold:ThreeWayManifold_3
 - ThreeWayValve:ThreeWayValve_2
 - ThreeWayValve:ThreeWayValve_3
-- ActiveDrillingSystem:ActiveDrillingSystem_0
+- ActiveDrillingSystem:ActivePit_0
 - BellNipple:BellNipple_0
 - ReturnFlowLine:ReturnFlowLine_0
 - MudMixing:MudMixing_0
 - DrillPipesAnnular:DrillPipesAnnular_0
 - BHAAnnular:BHAAnnular_0
-- DrillingBit:DrillingBit_0
+- DrillingBit:Bit_0
 - OpenHole:OpenHole_0
 - BHAInner:BHAInner_0
 - DrillPipesInner:DrillPipesInner_0
-- Underreamers:Underreamers_0
+- Underreamers:UnderReamer_0
 - DownholeECD:DownholeECD_1
 - DynamicDrillingSignal:DynamicDrillingSignal_18
 - HydraulicConnectedState:HydraulicConnectedState_0
@@ -123,7 +123,7 @@
 - ConnectedCondition:ConnectedCondition_0
 - DownholePressure:DownholePressure_2
 - DrillingDataPoint:DrillingDataPoint_13
-- DownholePressureQuantity:DownholePressureQuantity_0
+- DrillingPressureQuantity:DownholePressureQuantity_0
 - DrillingDataPoint:DrillingDataPoint_14
 - DrillingDataPoint:DrillingDataPoint_15
 - DrillingDataPoint:DrillingDataPoint_16
@@ -157,26 +157,26 @@
 - TimeWindowMovingAverage:TimeWindowMovingAverage_4
 - TimeWindowMovingAverage:TimeWindowMovingAverage_5
 - TimeWindowMovingAverage:TimeWindowMovingAverage_6
-- Elevator:Elevator_0
+- DrillPipeElevator:Elevator_0
 - MechanicallyConnectedState:MechanicallyConnectedState_0
-- Slips:Slips_0
+- RotarySlips:Slips_0
 - MechanicallyClosedState:MechanicallyClosedState_0
 - MechanicallyConnectedState:MechanicallyConnectedState_1
 - DrillingDataPoint:DrillingDataPoint_18
 - DrillingDataPoint:DrillingDataPoint_19
 - DrillingDataPoint:DrillingDataPoint_20
 - ActiveLine:ActiveLine_0
-- Drawworks:Drawworks_0
+- Drawworks:DrawWorks_0
 - CrownBlock:CrownBlock_0
 - DeadLine:DeadLine_0
 - SupportLine:SupportLine_0
-- Drawworks:Drawworks_1
+- Drawworks:DrawWorks_1
 - Dolly:Dolly_0
 - DollyRail:DollyRail_0
 - DrillString:DrillString_0
 - TravellingBlock:TravellingBlock_0
-- MainframeAssembly:MainframeAssembly_0
-- LoadNut:LoadNut_0
+- MainframeAssembly:TopDriveBody_0
+- Hook:TopDriveHook_0
 - DrillingDataPoint:DrillingDataPoint_21
 - HookLoad:HookLoad_1
 - DrillingDataPoint:DrillingDataPoint_22
@@ -301,39 +301,39 @@
 - Resistivity_0 IsObservableFrom ElectricResistivityQuantity_0
 - RockDensityQuantity_0 IsObservableFrom MassDensityQuantity_0
 - FormationPorosityQuantity_0 IsObservableFrom ProportionQuantity_1
-- StandPipe_0 IsHydraulicConnectedTo Quill_0
-- Quill_0 IsHydraulicConnectedTo TopDrive_0
+- StandPipe_0 IsHydraulicConnectedTo TopDriveShaft_0
+- TopDriveShaft_0 IsHydraulicConnectedTo TopDrive_0
 - ThreeWayValve_0 IsHydraulicConnectedTo GateValve_0
 - ThreeWayValve_0 IsHydraulicConnectedTo GateValve_1
 - ThreeWayValve_0 IsHydraulicConnectedTo GateValve_2
-- ThreeWayValve_1 IsHydraulicConnectedTo MudStandpipeManifold_3
-- ThreeWayValve_2 IsHydraulicConnectedTo MudStandpipeManifold_3
-- ThreeWayValve_3 IsHydraulicConnectedTo MudStandpipeManifold_3
-- MudStandpipeManifold_0 IsHydraulicConnectedTo CementPump_0
-- MudStandpipeManifold_1 IsHydraulicConnectedTo MudPump_0
-- MudStandpipeManifold_2 IsHydraulicConnectedTo MudPump_1
-- MudStandpipeManifold_3 IsHydraulicConnectedTo StandPipe_0
-- ActiveDrillingSystem_0 IsHydraulicConnectedTo ThreeWayValve_0
+- ThreeWayValve_1 IsHydraulicConnectedTo ThreeWayManifold_3
+- ThreeWayValve_2 IsHydraulicConnectedTo ThreeWayManifold_3
+- ThreeWayValve_3 IsHydraulicConnectedTo ThreeWayManifold_3
+- ThreeWayManifold_0 IsHydraulicConnectedTo CementPump_0
+- ThreeWayManifold_1 IsHydraulicConnectedTo MudPump_0
+- ThreeWayManifold_2 IsHydraulicConnectedTo MudPump_1
+- ThreeWayManifold_3 IsHydraulicConnectedTo StandPipe_0
+- ActivePit_0 IsHydraulicConnectedTo ThreeWayValve_0
 - BellNipple_0 IsHydraulicConnectedTo ReturnFlowLine_0
 - CementPump_0 IsHydraulicConnectedTo ThreeWayValve_1
-- GateValve_0 IsHydraulicConnectedTo MudStandpipeManifold_0
-- GateValve_1 IsHydraulicConnectedTo MudStandpipeManifold_1
-- GateValve_2 IsHydraulicConnectedTo MudStandpipeManifold_2
-- MudMixing_0 IsHydraulicConnectedTo ActiveDrillingSystem_0
+- GateValve_0 IsHydraulicConnectedTo ThreeWayManifold_0
+- GateValve_1 IsHydraulicConnectedTo ThreeWayManifold_1
+- GateValve_2 IsHydraulicConnectedTo ThreeWayManifold_2
+- MudMixing_0 IsHydraulicConnectedTo ActivePit_0
 - MudPump_0 IsHydraulicConnectedTo ThreeWayValve_2
 - MudPump_1 IsHydraulicConnectedTo ThreeWayValve_3
 - ReturnFlowLine_0 IsHydraulicConnectedTo MudMixing_0
 - DrillPipesAnnular_0 IsHydraulicConnectedTo BellNipple_0
 - BHAAnnular_0 IsHydraulicConnectedTo DrillPipesAnnular_0
-- DrillingBit_0 IsHydraulicConnectedTo BHAAnnular_0
-- DrillingBit_0 IsHydraulicConnectedTo OpenHole_0
-- BHAInner_0 IsHydraulicConnectedTo DrillingBit_0
-- DrillPipesInner_0 IsHydraulicConnectedTo Underreamers_0
+- Bit_0 IsHydraulicConnectedTo BHAAnnular_0
+- Bit_0 IsHydraulicConnectedTo OpenHole_0
+- BHAInner_0 IsHydraulicConnectedTo Bit_0
+- DrillPipesInner_0 IsHydraulicConnectedTo UnderReamer_0
 - TopDrive_0 IsHydraulicConnectedTo DrillPipesInner_0
-- Underreamers_0 IsHydraulicConnectedTo DrillPipesAnnular_0
-- Underreamers_0 IsHydraulicConnectedTo BHAInner_0
+- UnderReamer_0 IsHydraulicConnectedTo DrillPipesAnnular_0
+- UnderReamer_0 IsHydraulicConnectedTo BHAInner_0
 - DownholeECD_1 HasValue DynamicDrillingSignal_18
-- Quill_0 HasHydraulicState HydraulicConnectedState_0
+- TopDriveShaft_0 HasHydraulicState HydraulicConnectedState_0
 - HydraulicConnectedState_0 HasHydraulicStateValueFrom DrillingDataPoint_12
 - DownholePressure_1 IsConditionedBy GT_0
 - DownholePressure_1 IsConditionedBy ConnectedCondition_0
@@ -386,7 +386,7 @@
 - DensityIn_0 IsDependentOn DrillingDataPoint_14
 - DensityIn_1 IsDependentOn SPP_1
 - DensityIn_1 IsDependentOn TemperatureIn_1
-- TemperatureIn_0 IsHydraulicallyLocatedAt ActiveDrillingSystem_0
+- TemperatureIn_0 IsHydraulicallyLocatedAt ActivePit_0
 - DensityOut_0 IsHydraulicallyLocatedAt ReturnFlowLine_0
 - DensityIn_0 IsHydraulicallyLocatedAt MudMixing_0
 - DensityIn_1 IsHydraulicallyLocatedAt StandPipe_0
@@ -420,14 +420,14 @@
 - TemperatureOut_0 IsProvidedBy DataFlowNode_2
 - Elevator_0 HasMechanicalState MechanicallyConnectedState_0
 - Slips_0 HasMechanicalState MechanicallyClosedState_0
-- Quill_0 HasMechanicalState MechanicallyConnectedState_1
+- TopDriveShaft_0 HasMechanicalState MechanicallyConnectedState_1
 - MechanicallyConnectedState_0 HasMechanicalStateValueFrom DrillingDataPoint_18
 - MechanicallyClosedState_0 HasMechanicalStateValueFrom DrillingDataPoint_19
 - MechanicallyConnectedState_1 HasMechanicalStateValueFrom DrillingDataPoint_20
 - DrillingDataPoint_21 IsMechanicallyLocatedAt DeadLine_0
 - HookLoad_0 IsMechanicallyLocatedAt TravellingBlock_0
-- HookLoad_1 IsMechanicallyLocatedAt Quill_0
-- DrillingDataPoint_22 IsMechanicallyLocatedAt Quill_0
+- HookLoad_1 IsMechanicallyLocatedAt TopDriveShaft_0
+- DrillingDataPoint_22 IsMechanicallyLocatedAt TopDriveShaft_0
 - DrillingDataPoint_23 IsMechanicallyLocatedAt TravellingBlock_0
 - HookLoad_0 IsOfMeasurableQuantity HookloadQuantity_0
 - HookLoad_1 IsOfMeasurableQuantity HookloadQuantity_0
@@ -452,8 +452,8 @@
 - HookLoad_1 IsProcessedBy TimeWindowMovingAverage_8
 - SPP_1 IsHydraulicallyLocatedAt StandPipe_0
 - SPP_1 IsOfMeasurableQuantity SPPQuantity_0
-- SurfaceRPM_1 IsMechanicallyLocatedAt Quill_0
-- SurfaceTorque_0 IsMechanicallyLocatedAt Quill_0
+- SurfaceRPM_1 IsMechanicallyLocatedAt TopDriveShaft_0
+- SurfaceTorque_0 IsMechanicallyLocatedAt TopDriveShaft_0
 - SurfaceRPM_1 IsOfMeasurableQuantity SurfaceRPMQuantity_0
 - SurfaceTorque_0 IsOfMeasurableQuantity SurfaceTorqueQuantity_0
 - Transformation_5 IsTransformationOutput SurfaceRPM_1
@@ -466,8 +466,8 @@
 - SurfaceTorque_0 IsProcessedBy TimeWindowMovingAverage_10
 - HookPosition_0 IsDerivationInput Derivation_3
 - HookVelocity_0 IsDerivedFrom Derivation_3
-- HookPosition_0 IsMechanicallyLocatedAt LoadNut_0
-- HookVelocity_0 IsMechanicallyLocatedAt LoadNut_0
+- HookPosition_0 IsMechanicallyLocatedAt TopDriveHook_0
+- HookVelocity_0 IsMechanicallyLocatedAt TopDriveHook_0
 - HookPosition_0 IsOfMeasurableQuantity BlockPositionQuantity_0
 - HookVelocity_0 IsOfMeasurableQuantity BlockVelocityQuantity_0
 - Transformation_7 IsTransformationOutput HookPosition_0
@@ -561,8 +561,8 @@ flowchart TD
 	DrillingDataPoint_7([DrillingDataPoint_7]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	DrillingDataPoint_8([DrillingDataPoint_8]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	CementPump_0([CementPump_0]) --> CementPump[[CementPump]]:::typeClass
-	MudPump_0([MudPump_0]) --> PistonMudPumps[[PistonMudPumps]]:::typeClass
-	MudPump_1([MudPump_1]) --> PistonMudPumps[[PistonMudPumps]]:::typeClass
+	MudPump_0([MudPump_0]) --> MudPump[[MudPump]]:::typeClass
+	MudPump_1([MudPump_1]) --> MudPump[[MudPump]]:::typeClass
 	PumpRate_0([PumpRate_0]) --> PumpRate[[PumpRate]]:::typeClass
 	PumpRate_1([PumpRate_1]) --> PumpRate[[PumpRate]]:::typeClass
 	PumpRate_2([PumpRate_2]) --> PumpRate[[PumpRate]]:::typeClass
@@ -571,8 +571,8 @@ flowchart TD
 	DrillingDataPoint_11([DrillingDataPoint_11]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	ProportionQuantity_0([ProportionQuantity_0]) --> ProportionQuantity[[ProportionQuantity]]:::typeClass
 	VolumeQuantity_0([VolumeQuantity_0]) --> VolumeQuantity[[VolumeQuantity]]:::typeClass
-	FlowRateQuantity_0([FlowRateQuantity_0]) --> FlowRateQuantity[[FlowRateQuantity]]:::typeClass
-	PumpRateQuantity_0([PumpRateQuantity_0]) --> PumpRateQuantity[[PumpRateQuantity]]:::typeClass
+	FlowRateQuantity_0([FlowRateQuantity_0]) --> DrillingVolumetricFlowrateQuantity[[DrillingVolumetricFlowrateQuantity]]:::typeClass
+	PumpRateQuantity_0([PumpRateQuantity_0]) --> RotationFrequencyQuantity[[RotationFrequencyQuantity]]:::typeClass
 	Transformation_0([Transformation_0]) --> Transformation[[Transformation]]:::typeClass
 	Transformation_1([Transformation_1]) --> Transformation[[Transformation]]:::typeClass
 	Transformation_2([Transformation_2]) --> Transformation[[Transformation]]:::typeClass
@@ -580,63 +580,63 @@ flowchart TD
 	Derivation_1([Derivation_1]) --> Derivation[[Derivation]]:::typeClass
 	Derivation_2([Derivation_2]) --> Derivation[[Derivation]]:::typeClass
 	FlowRateIn_1([FlowRateIn_1]) --> FlowRateIn[[FlowRateIn]]:::typeClass
-	StandPipe_0([StandPipe_0]) --> Standpipe[[Standpipe]]:::typeClass
+	StandPipe_0([StandPipe_0]) --> MudStandpipe[[MudStandpipe]]:::typeClass
 	Transformation_3([Transformation_3]) --> Transformation[[Transformation]]:::typeClass
-	BitTorqueQuantity_0([BitTorqueQuantity_0]) --> BitTorqueQuantity[[BitTorqueQuantity]]:::typeClass
+	BitTorqueQuantity_0([BitTorqueQuantity_0]) --> DrillingTorqueQuantity[[DrillingTorqueQuantity]]:::typeClass
 	TorqueQuantity_0([TorqueQuantity_0]) --> TorqueQuantity[[TorqueQuantity]]:::typeClass
-	BlockAccelerationQuantity_0([BlockAccelerationQuantity_0]) --> BlockAccelerationQuantity[[BlockAccelerationQuantity]]:::typeClass
+	BlockAccelerationQuantity_0([BlockAccelerationQuantity_0]) --> DrillingAccelerationQuantity[[DrillingAccelerationQuantity]]:::typeClass
 	AccelerationQuantity_0([AccelerationQuantity_0]) --> AccelerationQuantity[[AccelerationQuantity]]:::typeClass
-	BlockPositionQuantity_0([BlockPositionQuantity_0]) --> BlockPositionQuantity[[BlockPositionQuantity]]:::typeClass
+	BlockPositionQuantity_0([BlockPositionQuantity_0]) --> PositionQuantity[[PositionQuantity]]:::typeClass
 	LengthQuantity_0([LengthQuantity_0]) --> LengthQuantity[[LengthQuantity]]:::typeClass
 	BlockVelocityQuantity_0([BlockVelocityQuantity_0]) --> BlockVelocityQuantity[[BlockVelocityQuantity]]:::typeClass
 	VelocityQuantity_0([VelocityQuantity_0]) --> VelocityQuantity[[VelocityQuantity]]:::typeClass
 	DepthQuantity_0([DepthQuantity_0]) --> DepthQuantity[[DepthQuantity]]:::typeClass
-	EMWQuantity_0([EMWQuantity_0]) --> EMWQuantity[[EMWQuantity]]:::typeClass
-	MassDensityQuantity_0([MassDensityQuantity_0]) --> MassDensityQuantity[[MassDensityQuantity]]:::typeClass
-	VolumetricRateQuantity_0([VolumetricRateQuantity_0]) --> VolumetricRateQuantity[[VolumetricRateQuantity]]:::typeClass
-	FluidDensityInQuantity_0([FluidDensityInQuantity_0]) --> FluidDensityInQuantity[[FluidDensityInQuantity]]:::typeClass
-	FluidTemperatureInQuantity_0([FluidTemperatureInQuantity_0]) --> FluidTemperatureInQuantity[[FluidTemperatureInQuantity]]:::typeClass
+	EMWQuantity_0([EMWQuantity_0]) --> DrillingDensityQuantity[[DrillingDensityQuantity]]:::typeClass
+	MassDensityQuantity_0([MassDensityQuantity_0]) --> DrillingDensityQuantity[[DrillingDensityQuantity]]:::typeClass
+	VolumetricRateQuantity_0([VolumetricRateQuantity_0]) --> DrillingVolumetricFlowrateQuantity[[DrillingVolumetricFlowrateQuantity]]:::typeClass
+	FluidDensityInQuantity_0([FluidDensityInQuantity_0]) --> DrillingDensityQuantity[[DrillingDensityQuantity]]:::typeClass
+	FluidTemperatureInQuantity_0([FluidTemperatureInQuantity_0]) --> DrillingTemperatureQuantity[[DrillingTemperatureQuantity]]:::typeClass
 	TemperatureQuantity_0([TemperatureQuantity_0]) --> TemperatureQuantity[[TemperatureQuantity]]:::typeClass
-	HookloadQuantity_0([HookloadQuantity_0]) --> HookloadQuantity[[HookloadQuantity]]:::typeClass
+	HookloadQuantity_0([HookloadQuantity_0]) --> HookLoadQuantity[[HookLoadQuantity]]:::typeClass
 	MassQuantity_0([MassQuantity_0]) --> MassQuantity[[MassQuantity]]:::typeClass
 	FrequencyQuantity_0([FrequencyQuantity_0]) --> FrequencyQuantity[[FrequencyQuantity]]:::typeClass
-	SPPQuantity_0([SPPQuantity_0]) --> SPPQuantity[[SPPQuantity]]:::typeClass
+	SPPQuantity_0([SPPQuantity_0]) --> DrillingPressureQuantity[[DrillingPressureQuantity]]:::typeClass
 	PressureQuantity_0([PressureQuantity_0]) --> PressureQuantity[[PressureQuantity]]:::typeClass
-	SurfaceRPMQuantity_0([SurfaceRPMQuantity_0]) --> SurfaceRPMQuantity[[SurfaceRPMQuantity]]:::typeClass
-	SurfaceTorqueQuantity_0([SurfaceTorqueQuantity_0]) --> SurfaceTorqueQuantity[[SurfaceTorqueQuantity]]:::typeClass
-	TopOfStringForceQuantity_0([TopOfStringForceQuantity_0]) --> TopOfStringForceQuantity[[TopOfStringForceQuantity]]:::typeClass
+	SurfaceRPMQuantity_0([SurfaceRPMQuantity_0]) --> RotationFrequencyQuantity[[RotationFrequencyQuantity]]:::typeClass
+	SurfaceTorqueQuantity_0([SurfaceTorqueQuantity_0]) --> DrillingTorqueQuantity[[DrillingTorqueQuantity]]:::typeClass
+	TopOfStringForceQuantity_0([TopOfStringForceQuantity_0]) --> DrillingForceQuantity[[DrillingForceQuantity]]:::typeClass
 	ForceQuantity_0([ForceQuantity_0]) --> ForceQuantity[[ForceQuantity]]:::typeClass
-	TVDQuantity_0([TVDQuantity_0]) --> TVDQuantity[[TVDQuantity]]:::typeClass
-	WOBQuantity_0([WOBQuantity_0]) --> WOBQuantity[[WOBQuantity]]:::typeClass
-	Resistivity_0([Resistivity_0]) --> Resistivity[[Resistivity]]:::typeClass
-	ElectricResistivityQuantity_0([ElectricResistivityQuantity_0]) --> ElectricResistivityQuantity[[ElectricResistivityQuantity]]:::typeClass
-	RockDensityQuantity_0([RockDensityQuantity_0]) --> RockDensityQuantity[[RockDensityQuantity]]:::typeClass
-	FormationPorosityQuantity_0([FormationPorosityQuantity_0]) --> FormationPorosityQuantity[[FormationPorosityQuantity]]:::typeClass
+	TVDQuantity_0([TVDQuantity_0]) --> DepthQuantity[[DepthQuantity]]:::typeClass
+	WOBQuantity_0([WOBQuantity_0]) --> WeightOnBitQuantity[[WeightOnBitQuantity]]:::typeClass
+	Resistivity_0([Resistivity_0]) --> FormationResistivityQuantity[[FormationResistivityQuantity]]:::typeClass
+	ElectricResistivityQuantity_0([ElectricResistivityQuantity_0]) --> FormationResistivityQuantity[[FormationResistivityQuantity]]:::typeClass
+	RockDensityQuantity_0([RockDensityQuantity_0]) --> DrillingDensityQuantity[[DrillingDensityQuantity]]:::typeClass
+	FormationPorosityQuantity_0([FormationPorosityQuantity_0]) --> PorosityQuantity[[PorosityQuantity]]:::typeClass
 	ProportionQuantity_1([ProportionQuantity_1]) --> ProportionQuantity[[ProportionQuantity]]:::typeClass
-	Quill_0([Quill_0]) --> Quill[[Quill]]:::typeClass
+	TopDriveShaft_0([TopDriveShaft_0]) --> Quill[[Quill]]:::typeClass
 	TopDrive_0([TopDrive_0]) --> TopDrive[[TopDrive]]:::typeClass
-	MudStandpipeManifold_0([MudStandpipeManifold_0]) --> MudStandpipeManifold[[MudStandpipeManifold]]:::typeClass
-	MudStandpipeManifold_1([MudStandpipeManifold_1]) --> MudStandpipeManifold[[MudStandpipeManifold]]:::typeClass
-	MudStandpipeManifold_2([MudStandpipeManifold_2]) --> MudStandpipeManifold[[MudStandpipeManifold]]:::typeClass
+	ThreeWayManifold_0([ThreeWayManifold_0]) --> ThreeWayManifold[[ThreeWayManifold]]:::typeClass
+	ThreeWayManifold_1([ThreeWayManifold_1]) --> ThreeWayManifold[[ThreeWayManifold]]:::typeClass
+	ThreeWayManifold_2([ThreeWayManifold_2]) --> ThreeWayManifold[[ThreeWayManifold]]:::typeClass
 	ThreeWayValve_0([ThreeWayValve_0]) --> ThreeWayValve[[ThreeWayValve]]:::typeClass
-	GateValve_0([GateValve_0]) --> GateValve[[GateValve]]:::typeClass
-	GateValve_1([GateValve_1]) --> GateValve[[GateValve]]:::typeClass
-	GateValve_2([GateValve_2]) --> GateValve[[GateValve]]:::typeClass
+	GateValve_0([GateValve_0]) --> GenericEquipmentGatevalve[[GenericEquipmentGatevalve]]:::typeClass
+	GateValve_1([GateValve_1]) --> GenericEquipmentGatevalve[[GenericEquipmentGatevalve]]:::typeClass
+	GateValve_2([GateValve_2]) --> GenericEquipmentGatevalve[[GenericEquipmentGatevalve]]:::typeClass
 	ThreeWayValve_1([ThreeWayValve_1]) --> ThreeWayValve[[ThreeWayValve]]:::typeClass
-	MudStandpipeManifold_3([MudStandpipeManifold_3]) --> MudStandpipeManifold[[MudStandpipeManifold]]:::typeClass
+	ThreeWayManifold_3([ThreeWayManifold_3]) --> ThreeWayManifold[[ThreeWayManifold]]:::typeClass
 	ThreeWayValve_2([ThreeWayValve_2]) --> ThreeWayValve[[ThreeWayValve]]:::typeClass
 	ThreeWayValve_3([ThreeWayValve_3]) --> ThreeWayValve[[ThreeWayValve]]:::typeClass
-	ActiveDrillingSystem_0([ActiveDrillingSystem_0]) --> ActiveDrillingSystem[[ActiveDrillingSystem]]:::typeClass
+	ActivePit_0([ActivePit_0]) --> ActiveDrillingSystem[[ActiveDrillingSystem]]:::typeClass
 	BellNipple_0([BellNipple_0]) --> BellNipple[[BellNipple]]:::typeClass
 	ReturnFlowLine_0([ReturnFlowLine_0]) --> ReturnFlowLine[[ReturnFlowLine]]:::typeClass
 	MudMixing_0([MudMixing_0]) --> MudMixing[[MudMixing]]:::typeClass
 	DrillPipesAnnular_0([DrillPipesAnnular_0]) --> DrillPipesAnnular[[DrillPipesAnnular]]:::typeClass
 	BHAAnnular_0([BHAAnnular_0]) --> BHAAnnular[[BHAAnnular]]:::typeClass
-	DrillingBit_0([DrillingBit_0]) --> DrillingBit[[DrillingBit]]:::typeClass
+	Bit_0([Bit_0]) --> DrillingBit[[DrillingBit]]:::typeClass
 	OpenHole_0([OpenHole_0]) --> OpenHole[[OpenHole]]:::typeClass
 	BHAInner_0([BHAInner_0]) --> BHAInner[[BHAInner]]:::typeClass
 	DrillPipesInner_0([DrillPipesInner_0]) --> DrillPipesInner[[DrillPipesInner]]:::typeClass
-	Underreamers_0([Underreamers_0]) --> Underreamers[[Underreamers]]:::typeClass
+	UnderReamer_0([UnderReamer_0]) --> Underreamers[[Underreamers]]:::typeClass
 	DownholeECD_1([DownholeECD_1]) --> DownholeECD[[DownholeECD]]:::typeClass
 	DynamicDrillingSignal_18([DynamicDrillingSignal_18]) --> DynamicDrillingSignal[[DynamicDrillingSignal]]:::typeClass
 	HydraulicConnectedState_0([HydraulicConnectedState_0]) --> HydraulicConnectedState[[HydraulicConnectedState]]:::typeClass
@@ -646,7 +646,7 @@ flowchart TD
 	ConnectedCondition_0([ConnectedCondition_0]) --> ConnectedCondition[[ConnectedCondition]]:::typeClass
 	DownholePressure_2([DownholePressure_2]) --> DownholePressure[[DownholePressure]]:::typeClass
 	DrillingDataPoint_13([DrillingDataPoint_13]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
-	DownholePressureQuantity_0([DownholePressureQuantity_0]) --> DownholePressureQuantity[[DownholePressureQuantity]]:::typeClass
+	DownholePressureQuantity_0([DownholePressureQuantity_0]) --> DrillingPressureQuantity[[DrillingPressureQuantity]]:::typeClass
 	DrillingDataPoint_14([DrillingDataPoint_14]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	DrillingDataPoint_15([DrillingDataPoint_15]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	DrillingDataPoint_16([DrillingDataPoint_16]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
@@ -680,26 +680,26 @@ flowchart TD
 	TimeWindowMovingAverage_4([TimeWindowMovingAverage_4]) --> TimeWindowMovingAverage[[TimeWindowMovingAverage]]:::typeClass
 	TimeWindowMovingAverage_5([TimeWindowMovingAverage_5]) --> TimeWindowMovingAverage[[TimeWindowMovingAverage]]:::typeClass
 	TimeWindowMovingAverage_6([TimeWindowMovingAverage_6]) --> TimeWindowMovingAverage[[TimeWindowMovingAverage]]:::typeClass
-	Elevator_0([Elevator_0]) --> Elevator[[Elevator]]:::typeClass
+	Elevator_0([Elevator_0]) --> DrillPipeElevator[[DrillPipeElevator]]:::typeClass
 	MechanicallyConnectedState_0([MechanicallyConnectedState_0]) --> MechanicallyConnectedState[[MechanicallyConnectedState]]:::typeClass
-	Slips_0([Slips_0]) --> Slips[[Slips]]:::typeClass
+	Slips_0([Slips_0]) --> RotarySlips[[RotarySlips]]:::typeClass
 	MechanicallyClosedState_0([MechanicallyClosedState_0]) --> MechanicallyClosedState[[MechanicallyClosedState]]:::typeClass
 	MechanicallyConnectedState_1([MechanicallyConnectedState_1]) --> MechanicallyConnectedState[[MechanicallyConnectedState]]:::typeClass
 	DrillingDataPoint_18([DrillingDataPoint_18]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	DrillingDataPoint_19([DrillingDataPoint_19]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	DrillingDataPoint_20([DrillingDataPoint_20]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	ActiveLine_0([ActiveLine_0]) --> ActiveLine[[ActiveLine]]:::typeClass
-	Drawworks_0([Drawworks_0]) --> Drawworks[[Drawworks]]:::typeClass
+	DrawWorks_0([DrawWorks_0]) --> Drawworks[[Drawworks]]:::typeClass
 	CrownBlock_0([CrownBlock_0]) --> CrownBlock[[CrownBlock]]:::typeClass
 	DeadLine_0([DeadLine_0]) --> DeadLine[[DeadLine]]:::typeClass
 	SupportLine_0([SupportLine_0]) --> SupportLine[[SupportLine]]:::typeClass
-	Drawworks_1([Drawworks_1]) --> Drawworks[[Drawworks]]:::typeClass
+	DrawWorks_1([DrawWorks_1]) --> Drawworks[[Drawworks]]:::typeClass
 	Dolly_0([Dolly_0]) --> Dolly[[Dolly]]:::typeClass
 	DollyRail_0([DollyRail_0]) --> DollyRail[[DollyRail]]:::typeClass
 	DrillString_0([DrillString_0]) --> DrillString[[DrillString]]:::typeClass
 	TravellingBlock_0([TravellingBlock_0]) --> TravellingBlock[[TravellingBlock]]:::typeClass
-	MainframeAssembly_0([MainframeAssembly_0]) --> MainframeAssembly[[MainframeAssembly]]:::typeClass
-	LoadNut_0([LoadNut_0]) --> LoadNut[[LoadNut]]:::typeClass
+	TopDriveBody_0([TopDriveBody_0]) --> MainframeAssembly[[MainframeAssembly]]:::typeClass
+	TopDriveHook_0([TopDriveHook_0]) --> Hook[[Hook]]:::typeClass
 	DrillingDataPoint_21([DrillingDataPoint_21]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	HookLoad_1([HookLoad_1]) --> HookLoad[[HookLoad]]:::typeClass
 	DrillingDataPoint_22([DrillingDataPoint_22]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
@@ -824,39 +824,39 @@ flowchart TD
 	 Resistivity_0 -- IsObservableFrom --> ElectricResistivityQuantity_0 
 	 RockDensityQuantity_0 -- IsObservableFrom --> MassDensityQuantity_0 
 	 FormationPorosityQuantity_0 -- IsObservableFrom --> ProportionQuantity_1 
-	 StandPipe_0 -- IsHydraulicConnectedTo --> Quill_0 
-	 Quill_0 -- IsHydraulicConnectedTo --> TopDrive_0 
+	 StandPipe_0 -- IsHydraulicConnectedTo --> TopDriveShaft_0 
+	 TopDriveShaft_0 -- IsHydraulicConnectedTo --> TopDrive_0 
 	 ThreeWayValve_0 -- IsHydraulicConnectedTo --> GateValve_0 
 	 ThreeWayValve_0 -- IsHydraulicConnectedTo --> GateValve_1 
 	 ThreeWayValve_0 -- IsHydraulicConnectedTo --> GateValve_2 
-	 ThreeWayValve_1 -- IsHydraulicConnectedTo --> MudStandpipeManifold_3 
-	 ThreeWayValve_2 -- IsHydraulicConnectedTo --> MudStandpipeManifold_3 
-	 ThreeWayValve_3 -- IsHydraulicConnectedTo --> MudStandpipeManifold_3 
-	 MudStandpipeManifold_0 -- IsHydraulicConnectedTo --> CementPump_0 
-	 MudStandpipeManifold_1 -- IsHydraulicConnectedTo --> MudPump_0 
-	 MudStandpipeManifold_2 -- IsHydraulicConnectedTo --> MudPump_1 
-	 MudStandpipeManifold_3 -- IsHydraulicConnectedTo --> StandPipe_0 
-	 ActiveDrillingSystem_0 -- IsHydraulicConnectedTo --> ThreeWayValve_0 
+	 ThreeWayValve_1 -- IsHydraulicConnectedTo --> ThreeWayManifold_3 
+	 ThreeWayValve_2 -- IsHydraulicConnectedTo --> ThreeWayManifold_3 
+	 ThreeWayValve_3 -- IsHydraulicConnectedTo --> ThreeWayManifold_3 
+	 ThreeWayManifold_0 -- IsHydraulicConnectedTo --> CementPump_0 
+	 ThreeWayManifold_1 -- IsHydraulicConnectedTo --> MudPump_0 
+	 ThreeWayManifold_2 -- IsHydraulicConnectedTo --> MudPump_1 
+	 ThreeWayManifold_3 -- IsHydraulicConnectedTo --> StandPipe_0 
+	 ActivePit_0 -- IsHydraulicConnectedTo --> ThreeWayValve_0 
 	 BellNipple_0 -- IsHydraulicConnectedTo --> ReturnFlowLine_0 
 	 CementPump_0 -- IsHydraulicConnectedTo --> ThreeWayValve_1 
-	 GateValve_0 -- IsHydraulicConnectedTo --> MudStandpipeManifold_0 
-	 GateValve_1 -- IsHydraulicConnectedTo --> MudStandpipeManifold_1 
-	 GateValve_2 -- IsHydraulicConnectedTo --> MudStandpipeManifold_2 
-	 MudMixing_0 -- IsHydraulicConnectedTo --> ActiveDrillingSystem_0 
+	 GateValve_0 -- IsHydraulicConnectedTo --> ThreeWayManifold_0 
+	 GateValve_1 -- IsHydraulicConnectedTo --> ThreeWayManifold_1 
+	 GateValve_2 -- IsHydraulicConnectedTo --> ThreeWayManifold_2 
+	 MudMixing_0 -- IsHydraulicConnectedTo --> ActivePit_0 
 	 MudPump_0 -- IsHydraulicConnectedTo --> ThreeWayValve_2 
 	 MudPump_1 -- IsHydraulicConnectedTo --> ThreeWayValve_3 
 	 ReturnFlowLine_0 -- IsHydraulicConnectedTo --> MudMixing_0 
 	 DrillPipesAnnular_0 -- IsHydraulicConnectedTo --> BellNipple_0 
 	 BHAAnnular_0 -- IsHydraulicConnectedTo --> DrillPipesAnnular_0 
-	 DrillingBit_0 -- IsHydraulicConnectedTo --> BHAAnnular_0 
-	 DrillingBit_0 -- IsHydraulicConnectedTo --> OpenHole_0 
-	 BHAInner_0 -- IsHydraulicConnectedTo --> DrillingBit_0 
-	 DrillPipesInner_0 -- IsHydraulicConnectedTo --> Underreamers_0 
+	 Bit_0 -- IsHydraulicConnectedTo --> BHAAnnular_0 
+	 Bit_0 -- IsHydraulicConnectedTo --> OpenHole_0 
+	 BHAInner_0 -- IsHydraulicConnectedTo --> Bit_0 
+	 DrillPipesInner_0 -- IsHydraulicConnectedTo --> UnderReamer_0 
 	 TopDrive_0 -- IsHydraulicConnectedTo --> DrillPipesInner_0 
-	 Underreamers_0 -- IsHydraulicConnectedTo --> DrillPipesAnnular_0 
-	 Underreamers_0 -- IsHydraulicConnectedTo --> BHAInner_0 
+	 UnderReamer_0 -- IsHydraulicConnectedTo --> DrillPipesAnnular_0 
+	 UnderReamer_0 -- IsHydraulicConnectedTo --> BHAInner_0 
 	 DownholeECD_1 -- HasValue --> DynamicDrillingSignal_18 
-	 Quill_0 -- HasHydraulicState --> HydraulicConnectedState_0 
+	 TopDriveShaft_0 -- HasHydraulicState --> HydraulicConnectedState_0 
 	 HydraulicConnectedState_0 -- HasHydraulicStateValueFrom --> DrillingDataPoint_12 
 	 DownholePressure_1 -- IsConditionedBy --> GT_0 
 	 DownholePressure_1 -- IsConditionedBy --> ConnectedCondition_0 
@@ -909,7 +909,7 @@ flowchart TD
 	 DensityIn_0 -- IsDependentOn --> DrillingDataPoint_14 
 	 DensityIn_1 -- IsDependentOn --> SPP_1 
 	 DensityIn_1 -- IsDependentOn --> TemperatureIn_1 
-	 TemperatureIn_0 -- IsHydraulicallyLocatedAt --> ActiveDrillingSystem_0 
+	 TemperatureIn_0 -- IsHydraulicallyLocatedAt --> ActivePit_0 
 	 DensityOut_0 -- IsHydraulicallyLocatedAt --> ReturnFlowLine_0 
 	 DensityIn_0 -- IsHydraulicallyLocatedAt --> MudMixing_0 
 	 DensityIn_1 -- IsHydraulicallyLocatedAt --> StandPipe_0 
@@ -943,14 +943,14 @@ flowchart TD
 	 TemperatureOut_0 -- IsProvidedBy --> DataFlowNode_2 
 	 Elevator_0 -- HasMechanicalState --> MechanicallyConnectedState_0 
 	 Slips_0 -- HasMechanicalState --> MechanicallyClosedState_0 
-	 Quill_0 -- HasMechanicalState --> MechanicallyConnectedState_1 
+	 TopDriveShaft_0 -- HasMechanicalState --> MechanicallyConnectedState_1 
 	 MechanicallyConnectedState_0 -- HasMechanicalStateValueFrom --> DrillingDataPoint_18 
 	 MechanicallyClosedState_0 -- HasMechanicalStateValueFrom --> DrillingDataPoint_19 
 	 MechanicallyConnectedState_1 -- HasMechanicalStateValueFrom --> DrillingDataPoint_20 
 	 DrillingDataPoint_21 -- IsMechanicallyLocatedAt --> DeadLine_0 
 	 HookLoad_0 -- IsMechanicallyLocatedAt --> TravellingBlock_0 
-	 HookLoad_1 -- IsMechanicallyLocatedAt --> Quill_0 
-	 DrillingDataPoint_22 -- IsMechanicallyLocatedAt --> Quill_0 
+	 HookLoad_1 -- IsMechanicallyLocatedAt --> TopDriveShaft_0 
+	 DrillingDataPoint_22 -- IsMechanicallyLocatedAt --> TopDriveShaft_0 
 	 DrillingDataPoint_23 -- IsMechanicallyLocatedAt --> TravellingBlock_0 
 	 HookLoad_0 -- IsOfMeasurableQuantity --> HookloadQuantity_0 
 	 HookLoad_1 -- IsOfMeasurableQuantity --> HookloadQuantity_0 
@@ -975,8 +975,8 @@ flowchart TD
 	 HookLoad_1 -- IsProcessedBy --> TimeWindowMovingAverage_8 
 	 SPP_1 -- IsHydraulicallyLocatedAt --> StandPipe_0 
 	 SPP_1 -- IsOfMeasurableQuantity --> SPPQuantity_0 
-	 SurfaceRPM_1 -- IsMechanicallyLocatedAt --> Quill_0 
-	 SurfaceTorque_0 -- IsMechanicallyLocatedAt --> Quill_0 
+	 SurfaceRPM_1 -- IsMechanicallyLocatedAt --> TopDriveShaft_0 
+	 SurfaceTorque_0 -- IsMechanicallyLocatedAt --> TopDriveShaft_0 
 	 SurfaceRPM_1 -- IsOfMeasurableQuantity --> SurfaceRPMQuantity_0 
 	 SurfaceTorque_0 -- IsOfMeasurableQuantity --> SurfaceTorqueQuantity_0 
 	 Transformation_5 -- IsTransformationOutput --> SurfaceRPM_1 
@@ -989,8 +989,8 @@ flowchart TD
 	 SurfaceTorque_0 -- IsProcessedBy --> TimeWindowMovingAverage_10 
 	 HookPosition_0 -- IsDerivationInput --> Derivation_3 
 	 HookVelocity_0 -- IsDerivedFrom --> Derivation_3 
-	 HookPosition_0 -- IsMechanicallyLocatedAt --> LoadNut_0 
-	 HookVelocity_0 -- IsMechanicallyLocatedAt --> LoadNut_0 
+	 HookPosition_0 -- IsMechanicallyLocatedAt --> TopDriveHook_0 
+	 HookVelocity_0 -- IsMechanicallyLocatedAt --> TopDriveHook_0 
 	 HookPosition_0 -- IsOfMeasurableQuantity --> BlockPositionQuantity_0 
 	 HookVelocity_0 -- IsOfMeasurableQuantity --> BlockVelocityQuantity_0 
 	 Transformation_7 -- IsTransformationOutput --> HookPosition_0 

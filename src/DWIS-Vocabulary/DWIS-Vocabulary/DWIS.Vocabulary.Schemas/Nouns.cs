@@ -122,22 +122,27 @@ CorrectedMeasurement,
 ComputedData,
 DrillingSignal,
 DynamicDrillingSignal,
-Equipment,
+<equipment>,
 RigEquipment,
+PowerGenerationSystem,
+PowerGenerators,
+ElectricalControlSystem,
+PowerScrSystem,
 HoistingSystem,
 RackAndPinionHoistingSystem,
 RamHoistingSystem,
 Derrick,
-Double,
-Quadruple,
-Slant,
-Triple,
-DerrickSingle,
+ConventionalDerrick,
+SlantDerrick,
+QuadristandDerrick,
+TripleStandDerrick,
+DoubleStandDerrick,
+SingleJointDerrick,
 Drawworks,
-StandardElectrical,
-Mechanical,
+StandardElectricalDrawworks,
+MechanicalDrawworks,
+DieselElectricalDrawworks,
 RamRig,
-DieselElectrical,
 MechanicalBlock,
 TravellingBlock,
 CrownBlock,
@@ -158,14 +163,14 @@ Quill,
 MainframeAssembly,
 LoadNut,
 RotaryTable,
-RotaryBushing,
-WearBushing,
+RotaryTableBushings,
 Kelly,
 KellyHose,
 KellyBushing,
 KellyJoint,
 KellySwivel,
 WellControlSystem,
+BellNipple,
 Accumulator,
 BopStack,
 SurfaceBop,
@@ -176,35 +181,46 @@ AnnularPreventer,
 PipeRam,
 ShearRam,
 BlindRam,
+AdapterSpool,
+SpacingSpool,
 ChokeManifold,
 ChokeValve,
-GateValve,
+ChokeValveGatevalve,
 KillLine,
 ChokeLine,
+ControlLines,
+Diverter,
+DiverterLine,
+DiverterLineHanger,
+VentOverboardLine,
 ControlManifold,
-Ibop,
+IBOP,
 KellyValve,
 FloatValveNonreturnValve,
 PlungerFloatValvesF,
 PortedPlungerValvesFa,
 FlapperFloatValvesG,
 MpdChoke,
-MudSystem,
-Pumps,
-PistonMudPumps,
+WellheadXmasTree,
+CirculationSystem,
+MudPump,
+PistonMudPump,
 PulsationDampener,
 Piston,
 Liner,
-Efficiency,
 Cylinders,
 Action,
-ActionSingle,
-Dual,
-CentrifugalMudPumps,
-BoosterPump,
-BackPressurePump,
+SingleActing,
+DualActing,
+PlungerMudPump,
+CentrifugalMudPump,
+HydraulicMudPump,
+DiaphragmMudPump,
+PeristalticMudPump,
+RiserLiftPump,
 FillPump,
-LiftPump,
+BackPressurePump,
+BoosterPump,
 DrillingFluid,
 DrillWater,
 PotableWater,
@@ -220,26 +236,28 @@ MixingTank,
 ReservePit,
 SlugSettlingPit,
 SurgeTank,
-Storage,
+StorageTank,
 SandTrap,
 ChemicalTank,
 BulkTank,
 ShaleShakers,
-Hopper,
-Decks,
-Screens,
-MeshSize,
-CascadeLevels,
+ShakerHopper,
+ShakerDecks,
+ShakerScreens,
+ShakerScreenMeshSize,
+ShakerCascadeLevels,
 Centrifuge,
 Degasser,
 CentrifugalDegasser,
 VacuumDegasser,
 AfmAutofluidMeasSkid,
 Hydrocyclones,
-PowerGenerationSystem,
-Generators,
-ElectricalControlSystem,
-ScrSystem,
+MudLines,
+MudStandpipeManifold,
+MudStandpipe,
+MudHose,
+Gooseneck,
+FlowLine,
 MarineSystem,
 DrillingRiser,
 MarineRiser,
@@ -249,6 +267,7 @@ HighPressureRiser,
 BallJoint,
 CompletionWorkoverRiser,
 LowerMarineRiserPackageLmrp,
+BoosterLine,
 SlipJoint,
 SpiderGimbal,
 MarineRiserTensionerMrtRing,
@@ -256,7 +275,7 @@ RiserTensioners,
 ConductorTensioners,
 RiserRecoilSystem,
 LandingJoint,
-Rov,
+ROV,
 BallastSystem,
 Beacons,
 JackupLegs,
@@ -267,26 +286,31 @@ MarineFuel,
 MudLineSystem,
 StormLoop,
 HeaveCompensationSystem,
-DrillFloorEquipment,
-Elevator,
-Bails,
-ManualPipeTongs,
-PowerTongs,
-CasingTongs,
+DrillFloorSystems,
+DrillFloorStructure,
+DogHouse,
 RigFloor,
-Slips,
+Mousehole,
+DrillFloorSubstructure,
+DrillFloorEquipment,
+DrillersConsole,
+IronRoughneck,
+DrillPipeElevator,
+ElevatorBailsLinks,
+DrillPipeTongs,
+ManualPipeTongs,
+PowerPipeTongs,
+CasingTongs,
+RotarySlips,
 ManualSlips,
 PowerSlips,
 PneumaticSlips,
-RotatingControlDeviceRcd,
-IronRoughneck,
 StabbingGuide,
-Mousehole,
 SafetyClamps,
-DogHouse,
-DrillersConsole,
+RotatingControlDeviceRcd,
 Dolly,
 DollyRail,
+SlickLine,
 CementingEquipment,
 CementPump,
 CementSlurry,
@@ -303,26 +327,6 @@ TestPlug,
 SubseaTestTree,
 TestTools,
 Seperator,
-SurfaceEquipment,
-AnnulusTerminator,
-BellNipple,
-Diverter,
-Wellhead,
-Overshot,
-SpoolAdapter,
-ControlLines,
-BoosterLine,
-SurfaceLines,
-StandpipeManifold,
-Standpipe,
-MudHose,
-Gooseneck,
-OverboardLines,
-FlowLine,
-XmasTree,
-DiverterLineHangers,
-IsolationSeal,
-SlickLine,
 SafetyEquipment,
 FireSafetySystems,
 GasSafetySystems,
@@ -333,7 +337,7 @@ CuttingsSamplingEquipment,
 CuttingsAnalysisEquipmnet,
 GasAnalysisEquipment,
 FlowAnalysisEquipment,
-Tubulars,
+<Tubulars>,
 DrillString,
 BottomholeAssembly,
 DrillPipe,
@@ -345,48 +349,48 @@ Heavyweight,
 PupJoints,
 Stabilizers,
 BladeShape,
-Dynamic,
-Melon,
-Spiral,
-Straight,
-Variable,
+dynamic,
+melon,
+spiral,
+straight,
+variable,
 BladeType,
-Clampon,
-Integral,
-Sleeve,
+clamp-on,
+integral,
+sleeve,
 BladeTypeWelded,
 BladeDiameter,
 BladeLength,
-Nonmagnetic,
+Non-Magnetic,
 NearBit,
-Nonrotating,
+Non-Rotating,
 Steerable,
 Grouping,
 Stands,
 Doubles,
 Singles,
 MiscSubs,
-Subbent,
-Subbit,
-Subbumper,
-Subcatcher,
-Subcirculation,
-Subcone,
-Subcrossover,
-Subdart,
-Subfilter,
-Subfloat,
-Subjetting,
-Subjunk,
-Suborienting,
-Subported,
+sub-bent,
+sub-bit,
+sub-bumper,
+sub-catcher,
+sub-circulation,
+sub-cone,
+sub-crossover,
+sub-dart,
+sub-filter,
+sub-float,
+sub-jetting,
+sub-junk,
+sub-orienting,
+sub-ported,
 SubpressureRelief,
 SubpumpOut,
-Subrestrictor,
-Subsaver,
-Subshock,
+sub-restrictor,
+sub-saver,
+sub-shock,
 SubsideEntry,
-Substop,
+sub-stop,
 CasingString,
 ConductorDrivePipe,
 Casing,
@@ -394,12 +398,12 @@ Liners,
 Centralizers,
 Crossover,
 Connection,
-Box,
-Flange,
-Mandrel,
-Pin,
+box,
+flange,
+mandrel,
+pin,
 ConnectionWelded,
-Selfsealingthreaded,
+self-sealing-threaded,
 Expandables,
 TubingString,
 ScreenString,
@@ -407,17 +411,17 @@ TubularConnection,
 TubularConfiguration,
 PinDown,
 PinUp,
-Boxbox,
-Pinpin,
+Box-Box,
+Pin-Pin,
 DownholeEquipment,
 DrillingEquipment,
 DrillstemTerminator,
 DrillingBit,
 RollingCutter,
-Milltooth,
+MillTooth,
 InsertTci,
 FixedCutter,
-Pdc,
+PDC,
 Diamond,
 PdcCore,
 DiamondCore,
@@ -446,8 +450,8 @@ SteerableMotor,
 InstrumentedMotor,
 AdjustableKickoffSub,
 RotarySteerableSystems,
-Pointthebit,
-Pushthebit,
+Point-The-Bit,
+Push-The-Bit,
 ContinuousProportional,
 JettingAssembly,
 HammerAssembly,
@@ -457,14 +461,14 @@ MechanicalJar,
 HydraulicJar,
 HydromechanicalJar,
 Accelerator,
-Casingwhiledrilling,
+Casing-While-Drilling,
 DirectionalCasingWhileDrilling,
 LinerDrilling,
 SteerableLinerDrilling,
 CirculationSub,
 Whipstock,
 FishingTools,
-Overshoot,
+Overshot,
 Spear,
 JunkBasket,
 Thruster,
@@ -472,6 +476,7 @@ ActiveVibrationTools,
 BhaVibrationDampers,
 VibrationIsolators,
 NearBitVibrationDampers,
+IsolationSeal,
 CasingEquipment,
 CasingMillingTools,
 MillCasingCutting,
@@ -506,7 +511,7 @@ LoggingEquipment,
 EquipmentTelemetry,
 MudPulse,
 WiredPipe,
-Electromagnetic,
+Electro-Magnetic,
 Acoustic,
 Hybrid,
 WireCable,
@@ -555,7 +560,10 @@ ControlConsole,
 ControlAndMonitoringEquipment,
 DownholeCtConnectors,
 CtBhaComponents,
-MudStandpipeManifold,
+WellcontrolStackEquipment,
+GenericEquipment,
+GenericEquipmentGatevalve,
+ThreeWayManifold,
 ThreeWayValve,
 DrillingIncident,
 TwistOff,
@@ -616,6 +624,88 @@ LowGravitySolidComponent,
 FormationSolidComponent,
 CuttingsComponent,
 CavingsComponent,
+EarthMagneticFluxDensityQuantity,
+ElectricTensionQuantity,
+ImageScaleQuantity,
+SmallLengthQuantity,
+RotationFrequencyQuantity,
+LargeVolumeQuantity,
+PermeabilityQuantity,
+YoungModulusQuantity,
+StandardProportionQuantity,
+StandardDimensionlessQuantity,
+StandardLengthQuantity,
+FluidShearRateQuantity,
+FluidShearStressQuantity,
+RheologyConsistencyIndexQuantity,
+SmallDiameterQuantity,
+SmallTorqueQuantity,
+SmallRotationFrequencyQuantity,
+SmallProportionQuantity,
+PorosityQuantity,
+BlockVelocityQuantity,
+CableDiameterQuantity,
+CapillaryPressureQuantity,
+DepthQuantity,
+DrillingAccelerationQuantity,
+DrillingAngleVariationGradientQuantity,
+DrillingAngularVelocityQuantity,
+DrillingAreaQuantity,
+DrillingAxialVelocityQuantity,
+DrillingCompressibilityQuantity,
+DrillingCurvatureQuantity,
+DrillingDensityGradientDepthQuantity,
+DrillingDensityGradientTemperatureQuantity,
+DrillingDensityQuantity,
+DrillingDensityRateOfChangeQuantity,
+DrillingDrillStringMagneticFluxQuantity,
+DrillingDurationQuantity,
+DrillingDynamicViscosityQuantity,
+DrillingElongationGradientQuantity,
+DrillingFluidVelocityQuantity,
+DrillingForceGradientQuantity,
+DrillingForceQuantity,
+DrillingHeatTransferCoefficientQuantity,
+DrillingHydraulicConductivityQuantity,
+DrillingInterfacialTensionQuantity,
+DrillingMassGradientQuantity,
+DrillingMassQuantity,
+DrillingMassRateQuantity,
+DrillingPlaneAngleQuantity,
+DrillingPressureGradientQuantity,
+DrillingPressureLossConstantQuantity,
+DrillingPressureQuantity,
+DrillingRandomWalkQuantity,
+DrillingRotationFrequencyRateOfChangeQuantity,
+DrillingSpecificHeatCapacityQuantity,
+DrillingSpecificHeatCapacityTemperatureGradientQuantity,
+DrillingSurveyInstrumentAngleMagneticFluxDensityQuantity,
+DrillingSurveyInstrumentAngularVelocityQuantity,
+DrillingSurveyInstrumentReciprocalLengthQuantity,
+DrillingTemperatureGradientQuantity,
+DrillingTemperatureQuantity,
+DrillingTensionQuantity,
+DrillingThermalConductivityQuantity,
+DrillingThermalConductivityTemperatureGradientQuantity,
+DrillingTorqueQuantity,
+DrillingVolumeQuantity,
+DrillingVolumetricFlowRateOfChangeQuantity,
+DrillingVolumetricFlowrateQuantity,
+DrillStemMaterialStrengthQuantity,
+FormationResistivityQuantity,
+FormationStrengthQuantity,
+GammaRayQuantity,
+GasShowQuantity,
+GasVolumetricFlowRateQuantity,
+HeightQuantity,
+HookLoadQuantity,
+NozzleDiameterQuantity,
+PipeDiameterQuantity,
+PoreDiameterQuantity,
+PoreSurfaceQuantity,
+PositionQuantity,
+RateOfPenetrationQuantity,
+WeightOnBitQuantity,
 DrillStemMechanicalModel,
 MechanicalStiffnessType,
 MechanicalSoftModel,
@@ -737,49 +827,68 @@ FourDimensionalReferenceFrame,
 CartesianFourDimensionalReferenceFrame,
 RiemannianManifoldFourDimensionalReferenceFrame,
 MeasurableQuantity,
-BitTorqueQuantity,
-BlockAccelerationQuantity,
-BlockPositionQuantity,
-BlockVelocityQuantity,
-DepthQuantity,
-DownholePressureQuantity,
-EMWQuantity,
-FlowRateQuantity,
-FluidDensityInQuantity,
-FluidTemperatureInQuantity,
-FormationPorosityQuantity,
-HookloadQuantity,
-PumpRateQuantity,
-Resistivity,
-RockDensityQuantity,
-SPPQuantity,
-SurfaceRPMQuantity,
-SurfaceTorqueQuantity,
-TopOfStringForceQuantity,
-TVDQuantity,
-WOBQuantity,
 MeasurableQuantityUnitAssociation,
 Quantity,
-AccelerationQuantity,
-AreaQuantity,
-ElectricResistivityQuantity,
-ForceQuantity,
-FrequencyQuantity,
-LengthQuantity,
-MassDensityQuantity,
-MassQuantity,
-MassRate,
-PowerQuantity,
-PressureQuantity,
-ProportionQuantity,
-TemperatureQuantity,
-TorqueQuantity,
-VelocityQuantity,
-VolumeQuantity,
-VolumetricRateQuantity,
-VolumetricFlowateRateOfChangeQuantity,
 Unit,
 UnitSystem,
+AccelerationQuantity,
+AmountSubstanceQuantity,
+AngleMagneticFluxDensityQuantity,
+AngleVariationGradientQuantity,
+AngularVelocityQuantity,
+AreaQuantity,
+CompressibilityQuantity,
+CurvatureQuantity,
+DensityGradientDepthQuantity,
+DensityGradientTemperatureQuantity,
+DensityQuantity,
+DensityRateOfChangeQuantity,
+DimensionlessQuantity,
+DynamicViscosityQuantity,
+ElectricalCapacitanceQuantity,
+ElectricCurrentQuantity,
+ElongationGradientQuantity,
+EnergyQuantity,
+LengthQuantity,
+LuminousIntensityQuantity,
+MassQuantity,
+PlaneAngleQuantity,
+RelativeTemperatureQuantity,
+SolidAngleQuantity,
+TemperatureQuantity,
+TimeQuantity,
+PressureQuantity,
+VolumetricFlowRateQuantity,
+VolumetricFlowRateOfChangeQuantity,
+VelocityQuantity,
+ForceGradientQuantity,
+ForceQuantity,
+MaterialStrengthQuantity,
+FrequencyQuantity,
+ProportionQuantity,
+HeatTransferCoefficientQuantity,
+GravitationalLoadQuantity,
+HydraulicConductivityQuantity,
+InterfacialTensionQuantity,
+VolumeQuantity,
+MagneticFluxDensityQuantity,
+MassRateQuantity,
+PressureGradientQuantity,
+PressureLossConstantQuantity,
+ResistivityQuantity,
+FrequencyRateOfChangeQuantity,
+RotationFrequencyRateOfChangeQuantity,
+SpecificHeatCapacityQuantity,
+SpecificHeatCapacityTemperatureGradientQuantity,
+TemperatureGradientQuantity,
+TensionQuantity,
+ThermalConductivityQuantity,
+MassGradientQuantity,
+ThermalConductivityTemperatureGradientQuantity,
+TorqueQuantity,
+MagneticFluxQuantity,
+RandomWalkQuantity,
+WaveNumberQuantity,
 ActiveVolume,
 Azimuth,
 BitDepth,
@@ -961,22 +1070,27 @@ SensorUncertainty
 	public static string ComputedData = "ComputedData";
 	public static string DrillingSignal = "DrillingSignal";
 	public static string DynamicDrillingSignal = "DynamicDrillingSignal";
-	public static string Equipment = "Equipment";
+	public static string <equipment> = "<equipment>";
 	public static string RigEquipment = "RigEquipment";
+	public static string PowerGenerationSystem = "PowerGenerationSystem";
+	public static string PowerGenerators = "PowerGenerators";
+	public static string ElectricalControlSystem = "ElectricalControlSystem";
+	public static string PowerScrSystem = "PowerScrSystem";
 	public static string HoistingSystem = "HoistingSystem";
 	public static string RackAndPinionHoistingSystem = "RackAndPinionHoistingSystem";
 	public static string RamHoistingSystem = "RamHoistingSystem";
 	public static string Derrick = "Derrick";
-	public static string Double = "Double";
-	public static string Quadruple = "Quadruple";
-	public static string Slant = "Slant";
-	public static string Triple = "Triple";
-	public static string DerrickSingle = "DerrickSingle";
+	public static string ConventionalDerrick = "ConventionalDerrick";
+	public static string SlantDerrick = "SlantDerrick";
+	public static string QuadristandDerrick = "QuadristandDerrick";
+	public static string TripleStandDerrick = "TripleStandDerrick";
+	public static string DoubleStandDerrick = "DoubleStandDerrick";
+	public static string SingleJointDerrick = "SingleJointDerrick";
 	public static string Drawworks = "Drawworks";
-	public static string StandardElectrical = "StandardElectrical";
-	public static string Mechanical = "Mechanical";
+	public static string StandardElectricalDrawworks = "StandardElectricalDrawworks";
+	public static string MechanicalDrawworks = "MechanicalDrawworks";
+	public static string DieselElectricalDrawworks = "DieselElectricalDrawworks";
 	public static string RamRig = "RamRig";
-	public static string DieselElectrical = "DieselElectrical";
 	public static string MechanicalBlock = "MechanicalBlock";
 	public static string TravellingBlock = "TravellingBlock";
 	public static string CrownBlock = "CrownBlock";
@@ -997,14 +1111,14 @@ SensorUncertainty
 	public static string MainframeAssembly = "MainframeAssembly";
 	public static string LoadNut = "LoadNut";
 	public static string RotaryTable = "RotaryTable";
-	public static string RotaryBushing = "RotaryBushing";
-	public static string WearBushing = "WearBushing";
+	public static string RotaryTableBushings = "RotaryTableBushings";
 	public static string Kelly = "Kelly";
 	public static string KellyHose = "KellyHose";
 	public static string KellyBushing = "KellyBushing";
 	public static string KellyJoint = "KellyJoint";
 	public static string KellySwivel = "KellySwivel";
 	public static string WellControlSystem = "WellControlSystem";
+	public static string BellNipple = "BellNipple";
 	public static string Accumulator = "Accumulator";
 	public static string BopStack = "BopStack";
 	public static string SurfaceBop = "SurfaceBop";
@@ -1015,35 +1129,46 @@ SensorUncertainty
 	public static string PipeRam = "PipeRam";
 	public static string ShearRam = "ShearRam";
 	public static string BlindRam = "BlindRam";
+	public static string AdapterSpool = "AdapterSpool";
+	public static string SpacingSpool = "SpacingSpool";
 	public static string ChokeManifold = "ChokeManifold";
 	public static string ChokeValve = "ChokeValve";
-	public static string GateValve = "GateValve";
+	public static string ChokeValveGatevalve = "ChokeValveGatevalve";
 	public static string KillLine = "KillLine";
 	public static string ChokeLine = "ChokeLine";
+	public static string ControlLines = "ControlLines";
+	public static string Diverter = "Diverter";
+	public static string DiverterLine = "DiverterLine";
+	public static string DiverterLineHanger = "DiverterLineHanger";
+	public static string VentOverboardLine = "VentOverboardLine";
 	public static string ControlManifold = "ControlManifold";
-	public static string Ibop = "Ibop";
+	public static string IBOP = "IBOP";
 	public static string KellyValve = "KellyValve";
 	public static string FloatValveNonreturnValve = "FloatValveNonreturnValve";
 	public static string PlungerFloatValvesF = "PlungerFloatValvesF";
 	public static string PortedPlungerValvesFa = "PortedPlungerValvesFa";
 	public static string FlapperFloatValvesG = "FlapperFloatValvesG";
 	public static string MpdChoke = "MpdChoke";
-	public static string MudSystem = "MudSystem";
-	public static string Pumps = "Pumps";
-	public static string PistonMudPumps = "PistonMudPumps";
+	public static string WellheadXmasTree = "WellheadXmasTree";
+	public static string CirculationSystem = "CirculationSystem";
+	public static string MudPump = "MudPump";
+	public static string PistonMudPump = "PistonMudPump";
 	public static string PulsationDampener = "PulsationDampener";
 	public static string Piston = "Piston";
 	public static string Liner = "Liner";
-	public static string Efficiency = "Efficiency";
 	public static string Cylinders = "Cylinders";
 	public static string Action = "Action";
-	public static string ActionSingle = "ActionSingle";
-	public static string Dual = "Dual";
-	public static string CentrifugalMudPumps = "CentrifugalMudPumps";
-	public static string BoosterPump = "BoosterPump";
-	public static string BackPressurePump = "BackPressurePump";
+	public static string SingleActing = "SingleActing";
+	public static string DualActing = "DualActing";
+	public static string PlungerMudPump = "PlungerMudPump";
+	public static string CentrifugalMudPump = "CentrifugalMudPump";
+	public static string HydraulicMudPump = "HydraulicMudPump";
+	public static string DiaphragmMudPump = "DiaphragmMudPump";
+	public static string PeristalticMudPump = "PeristalticMudPump";
+	public static string RiserLiftPump = "RiserLiftPump";
 	public static string FillPump = "FillPump";
-	public static string LiftPump = "LiftPump";
+	public static string BackPressurePump = "BackPressurePump";
+	public static string BoosterPump = "BoosterPump";
 	public static string DrillingFluid = "DrillingFluid";
 	public static string DrillWater = "DrillWater";
 	public static string PotableWater = "PotableWater";
@@ -1059,26 +1184,28 @@ SensorUncertainty
 	public static string ReservePit = "ReservePit";
 	public static string SlugSettlingPit = "SlugSettlingPit";
 	public static string SurgeTank = "SurgeTank";
-	public static string Storage = "Storage";
+	public static string StorageTank = "StorageTank";
 	public static string SandTrap = "SandTrap";
 	public static string ChemicalTank = "ChemicalTank";
 	public static string BulkTank = "BulkTank";
 	public static string ShaleShakers = "ShaleShakers";
-	public static string Hopper = "Hopper";
-	public static string Decks = "Decks";
-	public static string Screens = "Screens";
-	public static string MeshSize = "MeshSize";
-	public static string CascadeLevels = "CascadeLevels";
+	public static string ShakerHopper = "ShakerHopper";
+	public static string ShakerDecks = "ShakerDecks";
+	public static string ShakerScreens = "ShakerScreens";
+	public static string ShakerScreenMeshSize = "ShakerScreenMeshSize";
+	public static string ShakerCascadeLevels = "ShakerCascadeLevels";
 	public static string Centrifuge = "Centrifuge";
 	public static string Degasser = "Degasser";
 	public static string CentrifugalDegasser = "CentrifugalDegasser";
 	public static string VacuumDegasser = "VacuumDegasser";
 	public static string AfmAutofluidMeasSkid = "AfmAutofluidMeasSkid";
 	public static string Hydrocyclones = "Hydrocyclones";
-	public static string PowerGenerationSystem = "PowerGenerationSystem";
-	public static string Generators = "Generators";
-	public static string ElectricalControlSystem = "ElectricalControlSystem";
-	public static string ScrSystem = "ScrSystem";
+	public static string MudLines = "MudLines";
+	public static string MudStandpipeManifold = "MudStandpipeManifold";
+	public static string MudStandpipe = "MudStandpipe";
+	public static string MudHose = "MudHose";
+	public static string Gooseneck = "Gooseneck";
+	public static string FlowLine = "FlowLine";
 	public static string MarineSystem = "MarineSystem";
 	public static string DrillingRiser = "DrillingRiser";
 	public static string MarineRiser = "MarineRiser";
@@ -1088,6 +1215,7 @@ SensorUncertainty
 	public static string BallJoint = "BallJoint";
 	public static string CompletionWorkoverRiser = "CompletionWorkoverRiser";
 	public static string LowerMarineRiserPackageLmrp = "LowerMarineRiserPackageLmrp";
+	public static string BoosterLine = "BoosterLine";
 	public static string SlipJoint = "SlipJoint";
 	public static string SpiderGimbal = "SpiderGimbal";
 	public static string MarineRiserTensionerMrtRing = "MarineRiserTensionerMrtRing";
@@ -1095,7 +1223,7 @@ SensorUncertainty
 	public static string ConductorTensioners = "ConductorTensioners";
 	public static string RiserRecoilSystem = "RiserRecoilSystem";
 	public static string LandingJoint = "LandingJoint";
-	public static string Rov = "Rov";
+	public static string ROV = "ROV";
 	public static string BallastSystem = "BallastSystem";
 	public static string Beacons = "Beacons";
 	public static string JackupLegs = "JackupLegs";
@@ -1106,26 +1234,31 @@ SensorUncertainty
 	public static string MudLineSystem = "MudLineSystem";
 	public static string StormLoop = "StormLoop";
 	public static string HeaveCompensationSystem = "HeaveCompensationSystem";
-	public static string DrillFloorEquipment = "DrillFloorEquipment";
-	public static string Elevator = "Elevator";
-	public static string Bails = "Bails";
-	public static string ManualPipeTongs = "ManualPipeTongs";
-	public static string PowerTongs = "PowerTongs";
-	public static string CasingTongs = "CasingTongs";
+	public static string DrillFloorSystems = "DrillFloorSystems";
+	public static string DrillFloorStructure = "DrillFloorStructure";
+	public static string DogHouse = "DogHouse";
 	public static string RigFloor = "RigFloor";
-	public static string Slips = "Slips";
+	public static string Mousehole = "Mousehole";
+	public static string DrillFloorSubstructure = "DrillFloorSubstructure";
+	public static string DrillFloorEquipment = "DrillFloorEquipment";
+	public static string DrillersConsole = "DrillersConsole";
+	public static string IronRoughneck = "IronRoughneck";
+	public static string DrillPipeElevator = "DrillPipeElevator";
+	public static string ElevatorBailsLinks = "ElevatorBailsLinks";
+	public static string DrillPipeTongs = "DrillPipeTongs";
+	public static string ManualPipeTongs = "ManualPipeTongs";
+	public static string PowerPipeTongs = "PowerPipeTongs";
+	public static string CasingTongs = "CasingTongs";
+	public static string RotarySlips = "RotarySlips";
 	public static string ManualSlips = "ManualSlips";
 	public static string PowerSlips = "PowerSlips";
 	public static string PneumaticSlips = "PneumaticSlips";
-	public static string RotatingControlDeviceRcd = "RotatingControlDeviceRcd";
-	public static string IronRoughneck = "IronRoughneck";
 	public static string StabbingGuide = "StabbingGuide";
-	public static string Mousehole = "Mousehole";
 	public static string SafetyClamps = "SafetyClamps";
-	public static string DogHouse = "DogHouse";
-	public static string DrillersConsole = "DrillersConsole";
+	public static string RotatingControlDeviceRcd = "RotatingControlDeviceRcd";
 	public static string Dolly = "Dolly";
 	public static string DollyRail = "DollyRail";
+	public static string SlickLine = "SlickLine";
 	public static string CementingEquipment = "CementingEquipment";
 	public static string CementPump = "CementPump";
 	public static string CementSlurry = "CementSlurry";
@@ -1142,26 +1275,6 @@ SensorUncertainty
 	public static string SubseaTestTree = "SubseaTestTree";
 	public static string TestTools = "TestTools";
 	public static string Seperator = "Seperator";
-	public static string SurfaceEquipment = "SurfaceEquipment";
-	public static string AnnulusTerminator = "AnnulusTerminator";
-	public static string BellNipple = "BellNipple";
-	public static string Diverter = "Diverter";
-	public static string Wellhead = "Wellhead";
-	public static string Overshot = "Overshot";
-	public static string SpoolAdapter = "SpoolAdapter";
-	public static string ControlLines = "ControlLines";
-	public static string BoosterLine = "BoosterLine";
-	public static string SurfaceLines = "SurfaceLines";
-	public static string StandpipeManifold = "StandpipeManifold";
-	public static string Standpipe = "Standpipe";
-	public static string MudHose = "MudHose";
-	public static string Gooseneck = "Gooseneck";
-	public static string OverboardLines = "OverboardLines";
-	public static string FlowLine = "FlowLine";
-	public static string XmasTree = "XmasTree";
-	public static string DiverterLineHangers = "DiverterLineHangers";
-	public static string IsolationSeal = "IsolationSeal";
-	public static string SlickLine = "SlickLine";
 	public static string SafetyEquipment = "SafetyEquipment";
 	public static string FireSafetySystems = "FireSafetySystems";
 	public static string GasSafetySystems = "GasSafetySystems";
@@ -1172,7 +1285,7 @@ SensorUncertainty
 	public static string CuttingsAnalysisEquipmnet = "CuttingsAnalysisEquipmnet";
 	public static string GasAnalysisEquipment = "GasAnalysisEquipment";
 	public static string FlowAnalysisEquipment = "FlowAnalysisEquipment";
-	public static string Tubulars = "Tubulars";
+	public static string <Tubulars> = "<Tubulars>";
 	public static string DrillString = "DrillString";
 	public static string BottomholeAssembly = "BottomholeAssembly";
 	public static string DrillPipe = "DrillPipe";
@@ -1184,48 +1297,48 @@ SensorUncertainty
 	public static string PupJoints = "PupJoints";
 	public static string Stabilizers = "Stabilizers";
 	public static string BladeShape = "BladeShape";
-	public static string Dynamic = "Dynamic";
-	public static string Melon = "Melon";
-	public static string Spiral = "Spiral";
-	public static string Straight = "Straight";
-	public static string Variable = "Variable";
+	public static string dynamic = "dynamic";
+	public static string melon = "melon";
+	public static string spiral = "spiral";
+	public static string straight = "straight";
+	public static string variable = "variable";
 	public static string BladeType = "BladeType";
-	public static string Clampon = "Clampon";
-	public static string Integral = "Integral";
-	public static string Sleeve = "Sleeve";
+	public static string clamp-on = "clamp-on";
+	public static string integral = "integral";
+	public static string sleeve = "sleeve";
 	public static string BladeTypeWelded = "BladeTypeWelded";
 	public static string BladeDiameter = "BladeDiameter";
 	public static string BladeLength = "BladeLength";
-	public static string Nonmagnetic = "Nonmagnetic";
+	public static string Non-Magnetic = "Non-Magnetic";
 	public static string NearBit = "NearBit";
-	public static string Nonrotating = "Nonrotating";
+	public static string Non-Rotating = "Non-Rotating";
 	public static string Steerable = "Steerable";
 	public static string Grouping = "Grouping";
 	public static string Stands = "Stands";
 	public static string Doubles = "Doubles";
 	public static string Singles = "Singles";
 	public static string MiscSubs = "MiscSubs";
-	public static string Subbent = "Subbent";
-	public static string Subbit = "Subbit";
-	public static string Subbumper = "Subbumper";
-	public static string Subcatcher = "Subcatcher";
-	public static string Subcirculation = "Subcirculation";
-	public static string Subcone = "Subcone";
-	public static string Subcrossover = "Subcrossover";
-	public static string Subdart = "Subdart";
-	public static string Subfilter = "Subfilter";
-	public static string Subfloat = "Subfloat";
-	public static string Subjetting = "Subjetting";
-	public static string Subjunk = "Subjunk";
-	public static string Suborienting = "Suborienting";
-	public static string Subported = "Subported";
+	public static string sub-bent = "sub-bent";
+	public static string sub-bit = "sub-bit";
+	public static string sub-bumper = "sub-bumper";
+	public static string sub-catcher = "sub-catcher";
+	public static string sub-circulation = "sub-circulation";
+	public static string sub-cone = "sub-cone";
+	public static string sub-crossover = "sub-crossover";
+	public static string sub-dart = "sub-dart";
+	public static string sub-filter = "sub-filter";
+	public static string sub-float = "sub-float";
+	public static string sub-jetting = "sub-jetting";
+	public static string sub-junk = "sub-junk";
+	public static string sub-orienting = "sub-orienting";
+	public static string sub-ported = "sub-ported";
 	public static string SubpressureRelief = "SubpressureRelief";
 	public static string SubpumpOut = "SubpumpOut";
-	public static string Subrestrictor = "Subrestrictor";
-	public static string Subsaver = "Subsaver";
-	public static string Subshock = "Subshock";
+	public static string sub-restrictor = "sub-restrictor";
+	public static string sub-saver = "sub-saver";
+	public static string sub-shock = "sub-shock";
 	public static string SubsideEntry = "SubsideEntry";
-	public static string Substop = "Substop";
+	public static string sub-stop = "sub-stop";
 	public static string CasingString = "CasingString";
 	public static string ConductorDrivePipe = "ConductorDrivePipe";
 	public static string Casing = "Casing";
@@ -1233,12 +1346,12 @@ SensorUncertainty
 	public static string Centralizers = "Centralizers";
 	public static string Crossover = "Crossover";
 	public static string Connection = "Connection";
-	public static string Box = "Box";
-	public static string Flange = "Flange";
-	public static string Mandrel = "Mandrel";
-	public static string Pin = "Pin";
+	public static string box = "box";
+	public static string flange = "flange";
+	public static string mandrel = "mandrel";
+	public static string pin = "pin";
 	public static string ConnectionWelded = "ConnectionWelded";
-	public static string Selfsealingthreaded = "Selfsealingthreaded";
+	public static string self-sealing-threaded = "self-sealing-threaded";
 	public static string Expandables = "Expandables";
 	public static string TubingString = "TubingString";
 	public static string ScreenString = "ScreenString";
@@ -1246,17 +1359,17 @@ SensorUncertainty
 	public static string TubularConfiguration = "TubularConfiguration";
 	public static string PinDown = "PinDown";
 	public static string PinUp = "PinUp";
-	public static string Boxbox = "Boxbox";
-	public static string Pinpin = "Pinpin";
+	public static string Box-Box = "Box-Box";
+	public static string Pin-Pin = "Pin-Pin";
 	public static string DownholeEquipment = "DownholeEquipment";
 	public static string DrillingEquipment = "DrillingEquipment";
 	public static string DrillstemTerminator = "DrillstemTerminator";
 	public static string DrillingBit = "DrillingBit";
 	public static string RollingCutter = "RollingCutter";
-	public static string Milltooth = "Milltooth";
+	public static string MillTooth = "MillTooth";
 	public static string InsertTci = "InsertTci";
 	public static string FixedCutter = "FixedCutter";
-	public static string Pdc = "Pdc";
+	public static string PDC = "PDC";
 	public static string Diamond = "Diamond";
 	public static string PdcCore = "PdcCore";
 	public static string DiamondCore = "DiamondCore";
@@ -1285,8 +1398,8 @@ SensorUncertainty
 	public static string InstrumentedMotor = "InstrumentedMotor";
 	public static string AdjustableKickoffSub = "AdjustableKickoffSub";
 	public static string RotarySteerableSystems = "RotarySteerableSystems";
-	public static string Pointthebit = "Pointthebit";
-	public static string Pushthebit = "Pushthebit";
+	public static string Point-The-Bit = "Point-The-Bit";
+	public static string Push-The-Bit = "Push-The-Bit";
 	public static string ContinuousProportional = "ContinuousProportional";
 	public static string JettingAssembly = "JettingAssembly";
 	public static string HammerAssembly = "HammerAssembly";
@@ -1296,14 +1409,14 @@ SensorUncertainty
 	public static string HydraulicJar = "HydraulicJar";
 	public static string HydromechanicalJar = "HydromechanicalJar";
 	public static string Accelerator = "Accelerator";
-	public static string Casingwhiledrilling = "Casingwhiledrilling";
+	public static string Casing-While-Drilling = "Casing-While-Drilling";
 	public static string DirectionalCasingWhileDrilling = "DirectionalCasingWhileDrilling";
 	public static string LinerDrilling = "LinerDrilling";
 	public static string SteerableLinerDrilling = "SteerableLinerDrilling";
 	public static string CirculationSub = "CirculationSub";
 	public static string Whipstock = "Whipstock";
 	public static string FishingTools = "FishingTools";
-	public static string Overshoot = "Overshoot";
+	public static string Overshot = "Overshot";
 	public static string Spear = "Spear";
 	public static string JunkBasket = "JunkBasket";
 	public static string Thruster = "Thruster";
@@ -1311,6 +1424,7 @@ SensorUncertainty
 	public static string BhaVibrationDampers = "BhaVibrationDampers";
 	public static string VibrationIsolators = "VibrationIsolators";
 	public static string NearBitVibrationDampers = "NearBitVibrationDampers";
+	public static string IsolationSeal = "IsolationSeal";
 	public static string CasingEquipment = "CasingEquipment";
 	public static string CasingMillingTools = "CasingMillingTools";
 	public static string MillCasingCutting = "MillCasingCutting";
@@ -1345,7 +1459,7 @@ SensorUncertainty
 	public static string EquipmentTelemetry = "EquipmentTelemetry";
 	public static string MudPulse = "MudPulse";
 	public static string WiredPipe = "WiredPipe";
-	public static string Electromagnetic = "Electromagnetic";
+	public static string Electro-Magnetic = "Electro-Magnetic";
 	public static string Acoustic = "Acoustic";
 	public static string Hybrid = "Hybrid";
 	public static string WireCable = "WireCable";
@@ -1394,7 +1508,10 @@ SensorUncertainty
 	public static string ControlAndMonitoringEquipment = "ControlAndMonitoringEquipment";
 	public static string DownholeCtConnectors = "DownholeCtConnectors";
 	public static string CtBhaComponents = "CtBhaComponents";
-	public static string MudStandpipeManifold = "MudStandpipeManifold";
+	public static string WellcontrolStackEquipment = "WellcontrolStackEquipment";
+	public static string GenericEquipment = "GenericEquipment";
+	public static string GenericEquipmentGatevalve = "GenericEquipmentGatevalve";
+	public static string ThreeWayManifold = "ThreeWayManifold";
 	public static string ThreeWayValve = "ThreeWayValve";
 	public static string DrillingIncident = "DrillingIncident";
 	public static string TwistOff = "TwistOff";
@@ -1455,6 +1572,88 @@ SensorUncertainty
 	public static string FormationSolidComponent = "FormationSolidComponent";
 	public static string CuttingsComponent = "CuttingsComponent";
 	public static string CavingsComponent = "CavingsComponent";
+	public static string EarthMagneticFluxDensityQuantity = "EarthMagneticFluxDensityQuantity";
+	public static string ElectricTensionQuantity = "ElectricTensionQuantity";
+	public static string ImageScaleQuantity = "ImageScaleQuantity";
+	public static string SmallLengthQuantity = "SmallLengthQuantity";
+	public static string RotationFrequencyQuantity = "RotationFrequencyQuantity";
+	public static string LargeVolumeQuantity = "LargeVolumeQuantity";
+	public static string PermeabilityQuantity = "PermeabilityQuantity";
+	public static string YoungModulusQuantity = "YoungModulusQuantity";
+	public static string StandardProportionQuantity = "StandardProportionQuantity";
+	public static string StandardDimensionlessQuantity = "StandardDimensionlessQuantity";
+	public static string StandardLengthQuantity = "StandardLengthQuantity";
+	public static string FluidShearRateQuantity = "FluidShearRateQuantity";
+	public static string FluidShearStressQuantity = "FluidShearStressQuantity";
+	public static string RheologyConsistencyIndexQuantity = "RheologyConsistencyIndexQuantity";
+	public static string SmallDiameterQuantity = "SmallDiameterQuantity";
+	public static string SmallTorqueQuantity = "SmallTorqueQuantity";
+	public static string SmallRotationFrequencyQuantity = "SmallRotationFrequencyQuantity";
+	public static string SmallProportionQuantity = "SmallProportionQuantity";
+	public static string PorosityQuantity = "PorosityQuantity";
+	public static string BlockVelocityQuantity = "BlockVelocityQuantity";
+	public static string CableDiameterQuantity = "CableDiameterQuantity";
+	public static string CapillaryPressureQuantity = "CapillaryPressureQuantity";
+	public static string DepthQuantity = "DepthQuantity";
+	public static string DrillingAccelerationQuantity = "DrillingAccelerationQuantity";
+	public static string DrillingAngleVariationGradientQuantity = "DrillingAngleVariationGradientQuantity";
+	public static string DrillingAngularVelocityQuantity = "DrillingAngularVelocityQuantity";
+	public static string DrillingAreaQuantity = "DrillingAreaQuantity";
+	public static string DrillingAxialVelocityQuantity = "DrillingAxialVelocityQuantity";
+	public static string DrillingCompressibilityQuantity = "DrillingCompressibilityQuantity";
+	public static string DrillingCurvatureQuantity = "DrillingCurvatureQuantity";
+	public static string DrillingDensityGradientDepthQuantity = "DrillingDensityGradientDepthQuantity";
+	public static string DrillingDensityGradientTemperatureQuantity = "DrillingDensityGradientTemperatureQuantity";
+	public static string DrillingDensityQuantity = "DrillingDensityQuantity";
+	public static string DrillingDensityRateOfChangeQuantity = "DrillingDensityRateOfChangeQuantity";
+	public static string DrillingDrillStringMagneticFluxQuantity = "DrillingDrillStringMagneticFluxQuantity";
+	public static string DrillingDurationQuantity = "DrillingDurationQuantity";
+	public static string DrillingDynamicViscosityQuantity = "DrillingDynamicViscosityQuantity";
+	public static string DrillingElongationGradientQuantity = "DrillingElongationGradientQuantity";
+	public static string DrillingFluidVelocityQuantity = "DrillingFluidVelocityQuantity";
+	public static string DrillingForceGradientQuantity = "DrillingForceGradientQuantity";
+	public static string DrillingForceQuantity = "DrillingForceQuantity";
+	public static string DrillingHeatTransferCoefficientQuantity = "DrillingHeatTransferCoefficientQuantity";
+	public static string DrillingHydraulicConductivityQuantity = "DrillingHydraulicConductivityQuantity";
+	public static string DrillingInterfacialTensionQuantity = "DrillingInterfacialTensionQuantity";
+	public static string DrillingMassGradientQuantity = "DrillingMassGradientQuantity";
+	public static string DrillingMassQuantity = "DrillingMassQuantity";
+	public static string DrillingMassRateQuantity = "DrillingMassRateQuantity";
+	public static string DrillingPlaneAngleQuantity = "DrillingPlaneAngleQuantity";
+	public static string DrillingPressureGradientQuantity = "DrillingPressureGradientQuantity";
+	public static string DrillingPressureLossConstantQuantity = "DrillingPressureLossConstantQuantity";
+	public static string DrillingPressureQuantity = "DrillingPressureQuantity";
+	public static string DrillingRandomWalkQuantity = "DrillingRandomWalkQuantity";
+	public static string DrillingRotationFrequencyRateOfChangeQuantity = "DrillingRotationFrequencyRateOfChangeQuantity";
+	public static string DrillingSpecificHeatCapacityQuantity = "DrillingSpecificHeatCapacityQuantity";
+	public static string DrillingSpecificHeatCapacityTemperatureGradientQuantity = "DrillingSpecificHeatCapacityTemperatureGradientQuantity";
+	public static string DrillingSurveyInstrumentAngleMagneticFluxDensityQuantity = "DrillingSurveyInstrumentAngleMagneticFluxDensityQuantity";
+	public static string DrillingSurveyInstrumentAngularVelocityQuantity = "DrillingSurveyInstrumentAngularVelocityQuantity";
+	public static string DrillingSurveyInstrumentReciprocalLengthQuantity = "DrillingSurveyInstrumentReciprocalLengthQuantity";
+	public static string DrillingTemperatureGradientQuantity = "DrillingTemperatureGradientQuantity";
+	public static string DrillingTemperatureQuantity = "DrillingTemperatureQuantity";
+	public static string DrillingTensionQuantity = "DrillingTensionQuantity";
+	public static string DrillingThermalConductivityQuantity = "DrillingThermalConductivityQuantity";
+	public static string DrillingThermalConductivityTemperatureGradientQuantity = "DrillingThermalConductivityTemperatureGradientQuantity";
+	public static string DrillingTorqueQuantity = "DrillingTorqueQuantity";
+	public static string DrillingVolumeQuantity = "DrillingVolumeQuantity";
+	public static string DrillingVolumetricFlowRateOfChangeQuantity = "DrillingVolumetricFlowRateOfChangeQuantity";
+	public static string DrillingVolumetricFlowrateQuantity = "DrillingVolumetricFlowrateQuantity";
+	public static string DrillStemMaterialStrengthQuantity = "DrillStemMaterialStrengthQuantity";
+	public static string FormationResistivityQuantity = "FormationResistivityQuantity";
+	public static string FormationStrengthQuantity = "FormationStrengthQuantity";
+	public static string GammaRayQuantity = "GammaRayQuantity";
+	public static string GasShowQuantity = "GasShowQuantity";
+	public static string GasVolumetricFlowRateQuantity = "GasVolumetricFlowRateQuantity";
+	public static string HeightQuantity = "HeightQuantity";
+	public static string HookLoadQuantity = "HookLoadQuantity";
+	public static string NozzleDiameterQuantity = "NozzleDiameterQuantity";
+	public static string PipeDiameterQuantity = "PipeDiameterQuantity";
+	public static string PoreDiameterQuantity = "PoreDiameterQuantity";
+	public static string PoreSurfaceQuantity = "PoreSurfaceQuantity";
+	public static string PositionQuantity = "PositionQuantity";
+	public static string RateOfPenetrationQuantity = "RateOfPenetrationQuantity";
+	public static string WeightOnBitQuantity = "WeightOnBitQuantity";
 	public static string DrillStemMechanicalModel = "DrillStemMechanicalModel";
 	public static string MechanicalStiffnessType = "MechanicalStiffnessType";
 	public static string MechanicalSoftModel = "MechanicalSoftModel";
@@ -1576,49 +1775,68 @@ SensorUncertainty
 	public static string CartesianFourDimensionalReferenceFrame = "CartesianFourDimensionalReferenceFrame";
 	public static string RiemannianManifoldFourDimensionalReferenceFrame = "RiemannianManifoldFourDimensionalReferenceFrame";
 	public static string MeasurableQuantity = "MeasurableQuantity";
-	public static string BitTorqueQuantity = "BitTorqueQuantity";
-	public static string BlockAccelerationQuantity = "BlockAccelerationQuantity";
-	public static string BlockPositionQuantity = "BlockPositionQuantity";
-	public static string BlockVelocityQuantity = "BlockVelocityQuantity";
-	public static string DepthQuantity = "DepthQuantity";
-	public static string DownholePressureQuantity = "DownholePressureQuantity";
-	public static string EMWQuantity = "EMWQuantity";
-	public static string FlowRateQuantity = "FlowRateQuantity";
-	public static string FluidDensityInQuantity = "FluidDensityInQuantity";
-	public static string FluidTemperatureInQuantity = "FluidTemperatureInQuantity";
-	public static string FormationPorosityQuantity = "FormationPorosityQuantity";
-	public static string HookloadQuantity = "HookloadQuantity";
-	public static string PumpRateQuantity = "PumpRateQuantity";
-	public static string Resistivity = "Resistivity";
-	public static string RockDensityQuantity = "RockDensityQuantity";
-	public static string SPPQuantity = "SPPQuantity";
-	public static string SurfaceRPMQuantity = "SurfaceRPMQuantity";
-	public static string SurfaceTorqueQuantity = "SurfaceTorqueQuantity";
-	public static string TopOfStringForceQuantity = "TopOfStringForceQuantity";
-	public static string TVDQuantity = "TVDQuantity";
-	public static string WOBQuantity = "WOBQuantity";
 	public static string MeasurableQuantityUnitAssociation = "MeasurableQuantityUnitAssociation";
 	public static string Quantity = "Quantity";
-	public static string AccelerationQuantity = "AccelerationQuantity";
-	public static string AreaQuantity = "AreaQuantity";
-	public static string ElectricResistivityQuantity = "ElectricResistivityQuantity";
-	public static string ForceQuantity = "ForceQuantity";
-	public static string FrequencyQuantity = "FrequencyQuantity";
-	public static string LengthQuantity = "LengthQuantity";
-	public static string MassDensityQuantity = "MassDensityQuantity";
-	public static string MassQuantity = "MassQuantity";
-	public static string MassRate = "MassRate";
-	public static string PowerQuantity = "PowerQuantity";
-	public static string PressureQuantity = "PressureQuantity";
-	public static string ProportionQuantity = "ProportionQuantity";
-	public static string TemperatureQuantity = "TemperatureQuantity";
-	public static string TorqueQuantity = "TorqueQuantity";
-	public static string VelocityQuantity = "VelocityQuantity";
-	public static string VolumeQuantity = "VolumeQuantity";
-	public static string VolumetricRateQuantity = "VolumetricRateQuantity";
-	public static string VolumetricFlowateRateOfChangeQuantity = "VolumetricFlowateRateOfChangeQuantity";
 	public static string Unit = "Unit";
 	public static string UnitSystem = "UnitSystem";
+	public static string AccelerationQuantity = "AccelerationQuantity";
+	public static string AmountSubstanceQuantity = "AmountSubstanceQuantity";
+	public static string AngleMagneticFluxDensityQuantity = "AngleMagneticFluxDensityQuantity";
+	public static string AngleVariationGradientQuantity = "AngleVariationGradientQuantity";
+	public static string AngularVelocityQuantity = "AngularVelocityQuantity";
+	public static string AreaQuantity = "AreaQuantity";
+	public static string CompressibilityQuantity = "CompressibilityQuantity";
+	public static string CurvatureQuantity = "CurvatureQuantity";
+	public static string DensityGradientDepthQuantity = "DensityGradientDepthQuantity";
+	public static string DensityGradientTemperatureQuantity = "DensityGradientTemperatureQuantity";
+	public static string DensityQuantity = "DensityQuantity";
+	public static string DensityRateOfChangeQuantity = "DensityRateOfChangeQuantity";
+	public static string DimensionlessQuantity = "DimensionlessQuantity";
+	public static string DynamicViscosityQuantity = "DynamicViscosityQuantity";
+	public static string ElectricalCapacitanceQuantity = "ElectricalCapacitanceQuantity";
+	public static string ElectricCurrentQuantity = "ElectricCurrentQuantity";
+	public static string ElongationGradientQuantity = "ElongationGradientQuantity";
+	public static string EnergyQuantity = "EnergyQuantity";
+	public static string LengthQuantity = "LengthQuantity";
+	public static string LuminousIntensityQuantity = "LuminousIntensityQuantity";
+	public static string MassQuantity = "MassQuantity";
+	public static string PlaneAngleQuantity = "PlaneAngleQuantity";
+	public static string RelativeTemperatureQuantity = "RelativeTemperatureQuantity";
+	public static string SolidAngleQuantity = "SolidAngleQuantity";
+	public static string TemperatureQuantity = "TemperatureQuantity";
+	public static string TimeQuantity = "TimeQuantity";
+	public static string PressureQuantity = "PressureQuantity";
+	public static string VolumetricFlowRateQuantity = "VolumetricFlowRateQuantity";
+	public static string VolumetricFlowRateOfChangeQuantity = "VolumetricFlowRateOfChangeQuantity";
+	public static string VelocityQuantity = "VelocityQuantity";
+	public static string ForceGradientQuantity = "ForceGradientQuantity";
+	public static string ForceQuantity = "ForceQuantity";
+	public static string MaterialStrengthQuantity = "MaterialStrengthQuantity";
+	public static string FrequencyQuantity = "FrequencyQuantity";
+	public static string ProportionQuantity = "ProportionQuantity";
+	public static string HeatTransferCoefficientQuantity = "HeatTransferCoefficientQuantity";
+	public static string GravitationalLoadQuantity = "GravitationalLoadQuantity";
+	public static string HydraulicConductivityQuantity = "HydraulicConductivityQuantity";
+	public static string InterfacialTensionQuantity = "InterfacialTensionQuantity";
+	public static string VolumeQuantity = "VolumeQuantity";
+	public static string MagneticFluxDensityQuantity = "MagneticFluxDensityQuantity";
+	public static string MassRateQuantity = "MassRateQuantity";
+	public static string PressureGradientQuantity = "PressureGradientQuantity";
+	public static string PressureLossConstantQuantity = "PressureLossConstantQuantity";
+	public static string ResistivityQuantity = "ResistivityQuantity";
+	public static string FrequencyRateOfChangeQuantity = "FrequencyRateOfChangeQuantity";
+	public static string RotationFrequencyRateOfChangeQuantity = "RotationFrequencyRateOfChangeQuantity";
+	public static string SpecificHeatCapacityQuantity = "SpecificHeatCapacityQuantity";
+	public static string SpecificHeatCapacityTemperatureGradientQuantity = "SpecificHeatCapacityTemperatureGradientQuantity";
+	public static string TemperatureGradientQuantity = "TemperatureGradientQuantity";
+	public static string TensionQuantity = "TensionQuantity";
+	public static string ThermalConductivityQuantity = "ThermalConductivityQuantity";
+	public static string MassGradientQuantity = "MassGradientQuantity";
+	public static string ThermalConductivityTemperatureGradientQuantity = "ThermalConductivityTemperatureGradientQuantity";
+	public static string TorqueQuantity = "TorqueQuantity";
+	public static string MagneticFluxQuantity = "MagneticFluxQuantity";
+	public static string RandomWalkQuantity = "RandomWalkQuantity";
+	public static string WaveNumberQuantity = "WaveNumberQuantity";
 	public static string ActiveVolume = "ActiveVolume";
 	public static string Azimuth = "Azimuth";
 	public static string BitDepth = "BitDepth";

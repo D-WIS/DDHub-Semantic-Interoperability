@@ -1,11 +1,11 @@
 # Downhole ECD
-- DownholePressureQuantity:DownholePressureQuantity_0
+- DrillingPressureQuantity:DownholePressureQuantity_0
 - PressureQuantity:PressureQuantity_0
 - DownholeECD:DownholeECD_0
-- EMWQuantity:EMWQuantity_0
+- DrillingDensityQuantity:EMWQuantity_0
 - DownholePressure:DownholePressure_0
 - DrillingDataPoint:DrillingDataPoint_0
-- TVDQuantity:TVDQuantity_0
+- DepthQuantity:TVDQuantity_0
 - DrillingDataPoint:DrillingDataPoint_1
 - AccelerationQuantity:AccelerationQuantity_0
 - DrillingDataPoint:DrillingDataPoint_2
@@ -23,7 +23,7 @@
 - DrillingDataPoint:DrillingDataPoint_5
 - HydraulicConnectedState:HydraulicConnectedState_0
 - DrillingDataPoint:DrillingDataPoint_6
-- Quill:Quill_0
+- Quill:TopDriveShaft_0
 - ConnectedCondition:ConnectedCondition_0
 - DownholePressureQuantity_0 IsObservableFrom PressureQuantity_0
 - DownholeECD_0 IsOfMeasurableQuantity EMWQuantity_0
@@ -50,7 +50,7 @@
 - DrillingDataPoint_5 IsConditionRight GT_0
 - DownholePressure_0 IsConditionedBy GT_0
 - HydraulicConnectedState_0 HasHydraulicStateValueFrom DrillingDataPoint_6
-- Quill_0 HasHydraulicState HydraulicConnectedState_0
+- TopDriveShaft_0 HasHydraulicState HydraulicConnectedState_0
 - DownholePressure_0 IsConditionedBy ConnectedCondition_0
 - HydraulicConnectedState_0 IsConditionInput ConnectedCondition_0
 - DownholePressure_0 IsValidBy DrillingDataPoint_6
@@ -58,13 +58,13 @@
 flowchart TD
 	 classDef typeClass fill:#f96;
 	 classDef classClass fill:#9dd0ff;
-	DownholePressureQuantity_0([DownholePressureQuantity_0]) --> DownholePressureQuantity[[DownholePressureQuantity]]:::typeClass
+	DownholePressureQuantity_0([DownholePressureQuantity_0]) --> DrillingPressureQuantity[[DrillingPressureQuantity]]:::typeClass
 	PressureQuantity_0([PressureQuantity_0]) --> PressureQuantity[[PressureQuantity]]:::typeClass
 	DownholeECD_0([DownholeECD_0]) --> DownholeECD[[DownholeECD]]:::typeClass
-	EMWQuantity_0([EMWQuantity_0]) --> EMWQuantity[[EMWQuantity]]:::typeClass
+	EMWQuantity_0([EMWQuantity_0]) --> DrillingDensityQuantity[[DrillingDensityQuantity]]:::typeClass
 	DownholePressure_0([DownholePressure_0]) --> DownholePressure[[DownholePressure]]:::typeClass
 	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
-	TVDQuantity_0([TVDQuantity_0]) --> TVDQuantity[[TVDQuantity]]:::typeClass
+	TVDQuantity_0([TVDQuantity_0]) --> DepthQuantity[[DepthQuantity]]:::typeClass
 	DrillingDataPoint_1([DrillingDataPoint_1]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	AccelerationQuantity_0([AccelerationQuantity_0]) --> AccelerationQuantity[[AccelerationQuantity]]:::typeClass
 	DrillingDataPoint_2([DrillingDataPoint_2]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
@@ -82,7 +82,7 @@ flowchart TD
 	DrillingDataPoint_5([DrillingDataPoint_5]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	HydraulicConnectedState_0([HydraulicConnectedState_0]) --> HydraulicConnectedState[[HydraulicConnectedState]]:::typeClass
 	DrillingDataPoint_6([DrillingDataPoint_6]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
-	Quill_0([Quill_0]) --> Quill[[Quill]]:::typeClass
+	TopDriveShaft_0([TopDriveShaft_0]) --> Quill[[Quill]]:::typeClass
 	ConnectedCondition_0([ConnectedCondition_0]) --> ConnectedCondition[[ConnectedCondition]]:::typeClass
 	 DownholePressureQuantity_0 -- IsObservableFrom --> PressureQuantity_0 
 	 DownholeECD_0 -- IsOfMeasurableQuantity --> EMWQuantity_0 
@@ -109,7 +109,7 @@ flowchart TD
 	 DrillingDataPoint_5 -- IsConditionRight --> GT_0 
 	 DownholePressure_0 -- IsConditionedBy --> GT_0 
 	 HydraulicConnectedState_0 -- HasHydraulicStateValueFrom --> DrillingDataPoint_6 
-	 Quill_0 -- HasHydraulicState --> HydraulicConnectedState_0 
+	 TopDriveShaft_0 -- HasHydraulicState --> HydraulicConnectedState_0 
 	 DownholePressure_0 -- IsConditionedBy --> ConnectedCondition_0 
 	 HydraulicConnectedState_0 -- IsConditionInput --> ConnectedCondition_0 
 	 DownholePressure_0 -- IsValidBy --> DrillingDataPoint_6 

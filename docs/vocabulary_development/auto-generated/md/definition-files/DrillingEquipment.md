@@ -7,22 +7,27 @@ in this category fall all the standard equipment encountered on a drilling rig. 
 Here is a class inheritance diagram for the nouns contained in this definition set.
 ```mermaid
 classDiagram
-DWISNoun <|-- Equipment
-Equipment <|-- RigEquipment
+DWISNoun <|-- <equipment>
+<equipment> <|-- RigEquipment
+RigEquipment <|-- PowerGenerationSystem
+PowerGenerationSystem <|-- PowerGenerators
+PowerGenerationSystem <|-- ElectricalControlSystem
+PowerGenerationSystem <|-- PowerScrSystem
 RigEquipment <|-- HoistingSystem
 HoistingSystem <|-- RackAndPinionHoistingSystem
 HoistingSystem <|-- RamHoistingSystem
 HoistingSystem <|-- Derrick
-Derrick <|-- Double
-Derrick <|-- Quadruple
-Derrick <|-- Slant
-Derrick <|-- Triple
-Derrick <|-- DerrickSingle
+Derrick <|-- ConventionalDerrick
+Derrick <|-- SlantDerrick
+Derrick <|-- QuadristandDerrick
+Derrick <|-- TripleStandDerrick
+Derrick <|-- DoubleStandDerrick
+Derrick <|-- SingleJointDerrick
 HoistingSystem <|-- Drawworks
-Drawworks <|-- StandardElectrical
-Drawworks <|-- Mechanical
+Drawworks <|-- StandardElectricalDrawworks
+Drawworks <|-- MechanicalDrawworks
+Drawworks <|-- DieselElectricalDrawworks
 Drawworks <|-- RamRig
-Drawworks <|-- DieselElectrical
 HoistingSystem <|-- MechanicalBlock
 MechanicalBlock <|-- TravellingBlock
 MechanicalBlock <|-- CrownBlock
@@ -43,14 +48,14 @@ TopDrive <|-- Quill
 TopDrive <|-- MainframeAssembly
 TopDrive <|-- LoadNut
 SurfaceRotationSystem <|-- RotaryTable
-RotaryTable <|-- RotaryBushing
-RotaryTable <|-- WearBushing
+RotaryTable <|-- RotaryTableBushings
 RotaryTable <|-- Kelly
 Kelly <|-- KellyHose
 Kelly <|-- KellyBushing
 Kelly <|-- KellyJoint
 Kelly <|-- KellySwivel
 RigEquipment <|-- WellControlSystem
+WellControlSystem <|-- BellNipple
 WellControlSystem <|-- Accumulator
 WellControlSystem <|-- BopStack
 BopStack <|-- SurfaceBop
@@ -61,36 +66,47 @@ BopElement <|-- AnnularPreventer
 BopElement <|-- PipeRam
 BopElement <|-- ShearRam
 BopElement <|-- BlindRam
+WellControlSystem <|-- AdapterSpool
+WellControlSystem <|-- SpacingSpool
 WellControlSystem <|-- ChokeManifold
 ChokeManifold <|-- ChokeValve
-ChokeValve <|-- GateValve
+ChokeValve <|-- ChokeValveGatevalve
 WellControlSystem <|-- KillLine
 WellControlSystem <|-- ChokeLine
+WellControlSystem <|-- ControlLines
+WellControlSystem <|-- Diverter
+Diverter <|-- DiverterLine
+Diverter <|-- DiverterLineHanger
+Diverter <|-- VentOverboardLine
 WellControlSystem <|-- ControlManifold
-WellControlSystem <|-- Ibop
+WellControlSystem <|-- IBOP
 WellControlSystem <|-- KellyValve
 WellControlSystem <|-- FloatValveNonreturnValve
 FloatValveNonreturnValve <|-- PlungerFloatValvesF
 FloatValveNonreturnValve <|-- PortedPlungerValvesFa
 FloatValveNonreturnValve <|-- FlapperFloatValvesG
 WellControlSystem <|-- MpdChoke
-RigEquipment <|-- MudSystem
-MudSystem <|-- Pumps
-Pumps <|-- PistonMudPumps
-PistonMudPumps <|-- PulsationDampener
-PistonMudPumps <|-- Piston
-PistonMudPumps <|-- Liner
-PistonMudPumps <|-- Efficiency
-PistonMudPumps <|-- Cylinders
-PistonMudPumps <|-- Action
-Action <|-- ActionSingle
-Action <|-- Dual
-Pumps <|-- CentrifugalMudPumps
-Pumps <|-- BoosterPump
-Pumps <|-- BackPressurePump
-Pumps <|-- FillPump
-Pumps <|-- LiftPump
-MudSystem <|-- DrillingFluid
+WellControlSystem <|-- WellheadXmasTree
+RigEquipment <|-- CirculationSystem
+CirculationSystem <|-- MudPump
+MudPump <|-- PistonMudPump
+PistonMudPump <|-- PulsationDampener
+PistonMudPump <|-- Piston
+PistonMudPump <|-- Liner
+PistonMudPump <|-- Cylinders
+PistonMudPump <|-- Action
+Action <|-- SingleActing
+Action <|-- DualActing
+MudPump <|-- PlungerMudPump
+MudPump <|-- CentrifugalMudPump
+MudPump <|-- HydraulicMudPump
+MudPump <|-- DiaphragmMudPump
+MudPump <|-- PeristalticMudPump
+CirculationSystem <|-- RiserLiftPump
+CirculationSystem <|-- FillPump
+CirculationSystem <|-- BackPressurePump
+CirculationSystem <|-- BoosterPump
+CirculationSystem <|-- DrillingFluid
 DrillingFluid <|-- DrillWater
 DrillingFluid <|-- PotableWater
 DrillingFluid <|-- SeaWater
@@ -98,33 +114,35 @@ DrillingFluid <|-- OilBasedMudObm
 DrillingFluid <|-- WaterBasedMudWbm
 DrillingFluid <|-- SyntheticOilBasedMudSobm
 DrillingFluid <|-- SpudMud
-MudSystem <|-- MudPits
+CirculationSystem <|-- MudPits
 MudPits <|-- ActiveDrillingSystem
 MudPits <|-- TripTank
 MudPits <|-- MixingTank
 MudPits <|-- ReservePit
 MudPits <|-- SlugSettlingPit
 MudPits <|-- SurgeTank
-MudPits <|-- Storage
+MudPits <|-- StorageTank
 MudPits <|-- SandTrap
 MudPits <|-- ChemicalTank
 MudPits <|-- BulkTank
-MudSystem <|-- ShaleShakers
-ShaleShakers <|-- Hopper
-ShaleShakers <|-- Decks
-Decks <|-- Screens
-Decks <|-- MeshSize
-ShaleShakers <|-- CascadeLevels
-MudSystem <|-- Centrifuge
-MudSystem <|-- Degasser
+CirculationSystem <|-- ShaleShakers
+ShaleShakers <|-- ShakerHopper
+ShaleShakers <|-- ShakerDecks
+ShakerDecks <|-- ShakerScreens
+ShakerDecks <|-- ShakerScreenMeshSize
+ShaleShakers <|-- ShakerCascadeLevels
+CirculationSystem <|-- Centrifuge
+CirculationSystem <|-- Degasser
 Degasser <|-- CentrifugalDegasser
 Degasser <|-- VacuumDegasser
-MudSystem <|-- AfmAutofluidMeasSkid
-MudSystem <|-- Hydrocyclones
-RigEquipment <|-- PowerGenerationSystem
-PowerGenerationSystem <|-- Generators
-PowerGenerationSystem <|-- ElectricalControlSystem
-PowerGenerationSystem <|-- ScrSystem
+CirculationSystem <|-- AfmAutofluidMeasSkid
+CirculationSystem <|-- Hydrocyclones
+CirculationSystem <|-- MudLines
+MudLines <|-- MudStandpipeManifold
+MudLines <|-- MudStandpipe
+MudLines <|-- MudHose
+MudLines <|-- Gooseneck
+MudLines <|-- FlowLine
 RigEquipment <|-- MarineSystem
 MarineSystem <|-- DrillingRiser
 DrillingRiser <|-- MarineRiser
@@ -134,6 +152,7 @@ SurfaceRiser <|-- HighPressureRiser
 DrillingRiser <|-- BallJoint
 MarineSystem <|-- CompletionWorkoverRiser
 MarineSystem <|-- LowerMarineRiserPackageLmrp
+MarineSystem <|-- BoosterLine
 MarineSystem <|-- SlipJoint
 MarineSystem <|-- SpiderGimbal
 MarineSystem <|-- MarineRiserTensionerMrtRing
@@ -141,7 +160,7 @@ MarineSystem <|-- RiserTensioners
 MarineSystem <|-- ConductorTensioners
 MarineSystem <|-- RiserRecoilSystem
 MarineSystem <|-- LandingJoint
-MarineSystem <|-- Rov
+MarineSystem <|-- ROV
 MarineSystem <|-- BallastSystem
 MarineSystem <|-- Beacons
 MarineSystem <|-- JackupLegs
@@ -152,26 +171,31 @@ MarineSystem <|-- MarineFuel
 MarineSystem <|-- MudLineSystem
 MarineSystem <|-- StormLoop
 MarineSystem <|-- HeaveCompensationSystem
-RigEquipment <|-- DrillFloorEquipment
-DrillFloorEquipment <|-- Elevator
-DrillFloorEquipment <|-- Bails
-DrillFloorEquipment <|-- ManualPipeTongs
-DrillFloorEquipment <|-- PowerTongs
-DrillFloorEquipment <|-- CasingTongs
-DrillFloorEquipment <|-- RigFloor
-DrillFloorEquipment <|-- Slips
-Slips <|-- ManualSlips
-Slips <|-- PowerSlips
-Slips <|-- PneumaticSlips
-DrillFloorEquipment <|-- RotatingControlDeviceRcd
-DrillFloorEquipment <|-- IronRoughneck
-DrillFloorEquipment <|-- StabbingGuide
-DrillFloorEquipment <|-- Mousehole
-DrillFloorEquipment <|-- SafetyClamps
-DrillFloorEquipment <|-- DogHouse
+RigEquipment <|-- DrillFloorSystems
+DrillFloorSystems <|-- DrillFloorStructure
+DrillFloorStructure <|-- DogHouse
+DrillFloorStructure <|-- RigFloor
+DrillFloorStructure <|-- Mousehole
+DrillFloorStructure <|-- DrillFloorSubstructure
+DrillFloorSystems <|-- DrillFloorEquipment
 DrillFloorEquipment <|-- DrillersConsole
+DrillFloorEquipment <|-- IronRoughneck
+DrillFloorEquipment <|-- DrillPipeElevator
+DrillFloorEquipment <|-- ElevatorBailsLinks
+DrillFloorEquipment <|-- DrillPipeTongs
+DrillPipeTongs <|-- ManualPipeTongs
+DrillPipeTongs <|-- PowerPipeTongs
+DrillPipeTongs <|-- CasingTongs
+DrillFloorEquipment <|-- RotarySlips
+RotarySlips <|-- ManualSlips
+RotarySlips <|-- PowerSlips
+RotarySlips <|-- PneumaticSlips
+DrillFloorEquipment <|-- StabbingGuide
+DrillFloorEquipment <|-- SafetyClamps
+DrillFloorEquipment <|-- RotatingControlDeviceRcd
 DrillFloorEquipment <|-- Dolly
 DrillFloorEquipment <|-- DollyRail
+DrillFloorEquipment <|-- SlickLine
 RigEquipment <|-- CementingEquipment
 CementingEquipment <|-- CementPump
 CementingEquipment <|-- CementSlurry
@@ -188,26 +212,6 @@ WellTestingEquipment <|-- TestPlug
 WellTestingEquipment <|-- SubseaTestTree
 WellTestingEquipment <|-- TestTools
 WellTestingEquipment <|-- Seperator
-RigEquipment <|-- SurfaceEquipment
-SurfaceEquipment <|-- AnnulusTerminator
-AnnulusTerminator <|-- BellNipple
-AnnulusTerminator <|-- Diverter
-SurfaceEquipment <|-- Wellhead
-SurfaceEquipment <|-- Overshot
-SurfaceEquipment <|-- SpoolAdapter
-SurfaceEquipment <|-- ControlLines
-SurfaceEquipment <|-- BoosterLine
-SurfaceEquipment <|-- SurfaceLines
-SurfaceLines <|-- StandpipeManifold
-SurfaceLines <|-- Standpipe
-SurfaceLines <|-- MudHose
-SurfaceLines <|-- Gooseneck
-SurfaceEquipment <|-- OverboardLines
-SurfaceEquipment <|-- FlowLine
-SurfaceEquipment <|-- XmasTree
-SurfaceEquipment <|-- DiverterLineHangers
-SurfaceEquipment <|-- IsolationSeal
-SurfaceEquipment <|-- SlickLine
 RigEquipment <|-- SafetyEquipment
 SafetyEquipment <|-- FireSafetySystems
 SafetyEquipment <|-- GasSafetySystems
@@ -218,8 +222,8 @@ MudLoggingEquipment <|-- CuttingsSamplingEquipment
 MudLoggingEquipment <|-- CuttingsAnalysisEquipmnet
 MudLoggingEquipment <|-- GasAnalysisEquipment
 MudLoggingEquipment <|-- FlowAnalysisEquipment
-Equipment <|-- Tubulars
-Tubulars <|-- DrillString
+<equipment> <|-- <Tubulars>
+<Tubulars> <|-- DrillString
 DrillString <|-- BottomholeAssembly
 DrillString <|-- DrillPipe
 DrillString <|-- CompressiveDrillPipe
@@ -230,79 +234,79 @@ DrillString <|-- Heavyweight
 DrillString <|-- PupJoints
 DrillString <|-- Stabilizers
 Stabilizers <|-- BladeShape
-BladeShape <|-- Dynamic
-BladeShape <|-- Melon
-BladeShape <|-- Spiral
-BladeShape <|-- Straight
-BladeShape <|-- Variable
+BladeShape <|-- dynamic
+BladeShape <|-- melon
+BladeShape <|-- spiral
+BladeShape <|-- straight
+BladeShape <|-- variable
 Stabilizers <|-- BladeType
-BladeType <|-- Clampon
-BladeType <|-- Integral
-BladeType <|-- Sleeve
+BladeType <|-- clamp-on
+BladeType <|-- integral
+BladeType <|-- sleeve
 BladeType <|-- BladeTypeWelded
 Stabilizers <|-- BladeDiameter
 Stabilizers <|-- BladeLength
-Stabilizers <|-- Nonmagnetic
+Stabilizers <|-- Non-Magnetic
 Stabilizers <|-- NearBit
-Stabilizers <|-- Nonrotating
+Stabilizers <|-- Non-Rotating
 Stabilizers <|-- Steerable
 DrillString <|-- Grouping
 Grouping <|-- Stands
 Grouping <|-- Doubles
 Grouping <|-- Singles
 DrillString <|-- MiscSubs
-MiscSubs <|-- Subbent
-MiscSubs <|-- Subbit
-MiscSubs <|-- Subbumper
-MiscSubs <|-- Subcatcher
-MiscSubs <|-- Subcirculation
-MiscSubs <|-- Subcone
-MiscSubs <|-- Subcrossover
-MiscSubs <|-- Subdart
-MiscSubs <|-- Subfilter
-MiscSubs <|-- Subfloat
-MiscSubs <|-- Subjetting
-MiscSubs <|-- Subjunk
-MiscSubs <|-- Suborienting
-MiscSubs <|-- Subported
+MiscSubs <|-- sub-bent
+MiscSubs <|-- sub-bit
+MiscSubs <|-- sub-bumper
+MiscSubs <|-- sub-catcher
+MiscSubs <|-- sub-circulation
+MiscSubs <|-- sub-cone
+MiscSubs <|-- sub-crossover
+MiscSubs <|-- sub-dart
+MiscSubs <|-- sub-filter
+MiscSubs <|-- sub-float
+MiscSubs <|-- sub-jetting
+MiscSubs <|-- sub-junk
+MiscSubs <|-- sub-orienting
+MiscSubs <|-- sub-ported
 MiscSubs <|-- SubpressureRelief
 MiscSubs <|-- SubpumpOut
-MiscSubs <|-- Subrestrictor
-MiscSubs <|-- Subsaver
-MiscSubs <|-- Subshock
+MiscSubs <|-- sub-restrictor
+MiscSubs <|-- sub-saver
+MiscSubs <|-- sub-shock
 MiscSubs <|-- SubsideEntry
-MiscSubs <|-- Substop
-Tubulars <|-- CasingString
+MiscSubs <|-- sub-stop
+<Tubulars> <|-- CasingString
 CasingString <|-- ConductorDrivePipe
 CasingString <|-- Casing
 CasingString <|-- Liners
 CasingString <|-- Centralizers
 CasingString <|-- Crossover
 CasingString <|-- Connection
-Connection <|-- Box
-Connection <|-- Flange
-Connection <|-- Mandrel
-Connection <|-- Pin
+Connection <|-- box
+Connection <|-- flange
+Connection <|-- mandrel
+Connection <|-- pin
 Connection <|-- ConnectionWelded
-Connection <|-- Selfsealingthreaded
-Tubulars <|-- Expandables
-Tubulars <|-- TubingString
-Tubulars <|-- ScreenString
-Tubulars <|-- TubularConnection
-Tubulars <|-- TubularConfiguration
+Connection <|-- self-sealing-threaded
+<Tubulars> <|-- Expandables
+<Tubulars> <|-- TubingString
+<Tubulars> <|-- ScreenString
+<Tubulars> <|-- TubularConnection
+<Tubulars> <|-- TubularConfiguration
 TubularConfiguration <|-- PinDown
 TubularConfiguration <|-- PinUp
-TubularConfiguration <|-- Boxbox
-TubularConfiguration <|-- Pinpin
-Equipment <|-- DownholeEquipment
+TubularConfiguration <|-- Box-Box
+TubularConfiguration <|-- Pin-Pin
+<equipment> <|-- DownholeEquipment
 DownholeEquipment <|-- DrillingEquipment
 DrillingEquipment <|-- DrillstemTerminator
 DrillstemTerminator <|-- DrillingBit
 DrillingBit <|-- RollingCutter
-RollingCutter <|-- Milltooth
+RollingCutter <|-- MillTooth
 RollingCutter <|-- InsertTci
 DrillingBit <|-- FixedCutter
-FixedCutter <|-- Pdc
+FixedCutter <|-- PDC
 FixedCutter <|-- Diamond
 FixedCutter <|-- PdcCore
 FixedCutter <|-- DiamondCore
@@ -331,8 +335,8 @@ DownholeMotor <|-- SteerableMotor
 DownholeMotor <|-- InstrumentedMotor
 DrillingEquipment <|-- AdjustableKickoffSub
 DrillingEquipment <|-- RotarySteerableSystems
-RotarySteerableSystems <|-- Pointthebit
-RotarySteerableSystems <|-- Pushthebit
+RotarySteerableSystems <|-- Point-The-Bit
+RotarySteerableSystems <|-- Push-The-Bit
 RotarySteerableSystems <|-- ContinuousProportional
 DrillingEquipment <|-- JettingAssembly
 DrillingEquipment <|-- HammerAssembly
@@ -342,14 +346,14 @@ JarringAssembly <|-- MechanicalJar
 JarringAssembly <|-- HydraulicJar
 JarringAssembly <|-- HydromechanicalJar
 JarringAssembly <|-- Accelerator
-DrillingEquipment <|-- Casingwhiledrilling
-Casingwhiledrilling <|-- DirectionalCasingWhileDrilling
+DrillingEquipment <|-- Casing-While-Drilling
+Casing-While-Drilling <|-- DirectionalCasingWhileDrilling
 DrillingEquipment <|-- LinerDrilling
 LinerDrilling <|-- SteerableLinerDrilling
 DrillingEquipment <|-- CirculationSub
 DrillingEquipment <|-- Whipstock
 DrillingEquipment <|-- FishingTools
-FishingTools <|-- Overshoot
+FishingTools <|-- Overshot
 FishingTools <|-- Spear
 FishingTools <|-- JunkBasket
 DrillingEquipment <|-- Thruster
@@ -357,6 +361,7 @@ DrillingEquipment <|-- ActiveVibrationTools
 ActiveVibrationTools <|-- BhaVibrationDampers
 ActiveVibrationTools <|-- VibrationIsolators
 ActiveVibrationTools <|-- NearBitVibrationDampers
+DrillingEquipment <|-- IsolationSeal
 DownholeEquipment <|-- CasingEquipment
 CasingEquipment <|-- CasingMillingTools
 CasingMillingTools <|-- MillCasingCutting
@@ -391,7 +396,7 @@ DownholeEquipment <|-- LoggingEquipment
 LoggingEquipment <|-- EquipmentTelemetry
 EquipmentTelemetry <|-- MudPulse
 EquipmentTelemetry <|-- WiredPipe
-EquipmentTelemetry <|-- Electromagnetic
+EquipmentTelemetry <|-- Electro-Magnetic
 EquipmentTelemetry <|-- Acoustic
 EquipmentTelemetry <|-- Hybrid
 EquipmentTelemetry <|-- WireCable
@@ -431,7 +436,7 @@ WirelineLoggingTools <|-- FluidDensityTools
 WirelineLoggingTools <|-- FlowmeterTools
 WirelineLoggingTools <|-- CementBondLoggingTools
 WirelineLoggingTools <|-- PressureLoggingTools
-Equipment <|-- CoiledTubingEquipment
+<equipment> <|-- CoiledTubingEquipment
 CoiledTubingEquipment <|-- CoiledTubingReel
 CoiledTubingEquipment <|-- InjectorHead
 CoiledTubingEquipment <|-- TubingGuideArch
@@ -440,10 +445,13 @@ CoiledTubingEquipment <|-- ControlConsole
 ControlConsole <|-- ControlAndMonitoringEquipment
 CoiledTubingEquipment <|-- DownholeCtConnectors
 CoiledTubingEquipment <|-- CtBhaComponents
-MudSystem <|-- MudStandpipeManifold
-MudSystem <|-- ThreeWayValve
+CoiledTubingEquipment <|-- WellcontrolStackEquipment
+<equipment> <|-- GenericEquipment
+GenericEquipment <|-- GenericEquipmentGatevalve
+GenericEquipment <|-- ThreeWayManifold
+GenericEquipment <|-- ThreeWayValve
 ```
-## Equipment <!-- NOUN -->
+## <equipment> <!-- NOUN -->
 - Display name: <equipment>
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Description: 
@@ -452,7 +460,35 @@ MudSystem <|-- ThreeWayValve
 - Examples:
 ## RigEquipment <!-- NOUN -->
 - Display name: <Rig Equipment>
-- Parent class: [Equipment](./DrillingEquipment.md#Equipment)
+- Parent class: [<equipment>](./DrillingEquipment.md#<equipment>)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## PowerGenerationSystem <!-- NOUN -->
+- Display name: Power Generation System
+- Parent class: [RigEquipment](./DrillingEquipment.md#RigEquipment)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## PowerGenerators <!-- NOUN -->
+- Display name: Power Generators
+- Parent class: [PowerGenerationSystem](./DrillingEquipment.md#PowerGenerationSystem)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## ElectricalControlSystem <!-- NOUN -->
+- Display name: Electrical Control System
+- Parent class: [PowerGenerationSystem](./DrillingEquipment.md#PowerGenerationSystem)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## PowerScrSystem <!-- NOUN -->
+- Display name: Power SCR System
+- Parent class: [PowerGenerationSystem](./DrillingEquipment.md#PowerGenerationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -485,36 +521,43 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Double <!-- NOUN -->
-- Display name: Double
+## ConventionalDerrick <!-- NOUN -->
+- Display name: Conventional Derrick
 - Parent class: [Derrick](./DrillingEquipment.md#Derrick)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Quadruple <!-- NOUN -->
-- Display name: Quadruple
+## SlantDerrick <!-- NOUN -->
+- Display name: Slant Derrick
 - Parent class: [Derrick](./DrillingEquipment.md#Derrick)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Slant <!-- NOUN -->
-- Display name: Slant
+## QuadristandDerrick <!-- NOUN -->
+- Display name: Quadri-Stand Derrick
 - Parent class: [Derrick](./DrillingEquipment.md#Derrick)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Triple <!-- NOUN -->
-- Display name: Triple
+## TripleStandDerrick <!-- NOUN -->
+- Display name: Triple Stand Derrick
 - Parent class: [Derrick](./DrillingEquipment.md#Derrick)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## DerrickSingle <!-- NOUN -->
-- Display name: Single
+## DoubleStandDerrick <!-- NOUN -->
+- Display name: Double Stand Derrick
+- Parent class: [Derrick](./DrillingEquipment.md#Derrick)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## SingleJointDerrick <!-- NOUN -->
+- Display name: Single Joint Derrick
 - Parent class: [Derrick](./DrillingEquipment.md#Derrick)
 - Description: 
 
@@ -527,15 +570,22 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## StandardElectrical <!-- NOUN -->
-- Display name: Standard Electrical
+## StandardElectricalDrawworks <!-- NOUN -->
+- Display name: Standard Electrical Drawworks
 - Parent class: [Drawworks](./DrillingEquipment.md#Drawworks)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Mechanical <!-- NOUN -->
-- Display name: Mechanical
+## MechanicalDrawworks <!-- NOUN -->
+- Display name: Mechanical Drawworks
+- Parent class: [Drawworks](./DrillingEquipment.md#Drawworks)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## DieselElectricalDrawworks <!-- NOUN -->
+- Display name: Diesel Electrical Drawworks
 - Parent class: [Drawworks](./DrillingEquipment.md#Drawworks)
 - Description: 
 
@@ -543,13 +593,6 @@ MudSystem <|-- ThreeWayValve
 - Examples:
 ## RamRig <!-- NOUN -->
 - Display name: Ram Rig
-- Parent class: [Drawworks](./DrillingEquipment.md#Drawworks)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## DieselElectrical <!-- NOUN -->
-- Display name: Diesel Electrical
 - Parent class: [Drawworks](./DrillingEquipment.md#Drawworks)
 - Description: 
 
@@ -695,15 +738,8 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## RotaryBushing <!-- NOUN -->
-- Display name: Rotary Bushing
-- Parent class: [RotaryTable](./DrillingEquipment.md#RotaryTable)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## WearBushing <!-- NOUN -->
-- Display name: Wear Bushing
+## RotaryTableBushings <!-- NOUN -->
+- Display name: Rotary Table Bushings
 - Parent class: [RotaryTable](./DrillingEquipment.md#RotaryTable)
 - Description: 
 
@@ -747,6 +783,13 @@ MudSystem <|-- ThreeWayValve
 ## WellControlSystem <!-- NOUN -->
 - Display name: Well Control System
 - Parent class: [RigEquipment](./DrillingEquipment.md#RigEquipment)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## BellNipple <!-- NOUN -->
+- Display name: Bell Nipple
+- Parent class: [WellControlSystem](./DrillingEquipment.md#WellControlSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -821,6 +864,20 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
+## AdapterSpool <!-- NOUN -->
+- Display name: Adapter Spool
+- Parent class: [WellControlSystem](./DrillingEquipment.md#WellControlSystem)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## SpacingSpool <!-- NOUN -->
+- Display name: Spacing Spool
+- Parent class: [WellControlSystem](./DrillingEquipment.md#WellControlSystem)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
 ## ChokeManifold <!-- NOUN -->
 - Display name: Choke Manifold
 - Parent class: [WellControlSystem](./DrillingEquipment.md#WellControlSystem)
@@ -835,7 +892,7 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## GateValve <!-- NOUN -->
+## ChokeValveGatevalve <!-- NOUN -->
 - Display name: Gate Valve
 - Parent class: [ChokeValve](./DrillingEquipment.md#ChokeValve)
 - Description: 
@@ -856,6 +913,41 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
+## ControlLines <!-- NOUN -->
+- Display name: Control Lines
+- Parent class: [WellControlSystem](./DrillingEquipment.md#WellControlSystem)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## Diverter <!-- NOUN -->
+- Display name: Diverter
+- Parent class: [WellControlSystem](./DrillingEquipment.md#WellControlSystem)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## DiverterLine <!-- NOUN -->
+- Display name: Diverter Line
+- Parent class: [Diverter](./DrillingEquipment.md#Diverter)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## DiverterLineHanger <!-- NOUN -->
+- Display name: Diverter Line Hanger
+- Parent class: [Diverter](./DrillingEquipment.md#Diverter)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## VentOverboardLine <!-- NOUN -->
+- Display name: Vent (Overboard) Line
+- Parent class: [Diverter](./DrillingEquipment.md#Diverter)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
 ## ControlManifold <!-- NOUN -->
 - Display name: Control Manifold
 - Parent class: [WellControlSystem](./DrillingEquipment.md#WellControlSystem)
@@ -863,7 +955,7 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Ibop <!-- NOUN -->
+## IBOP <!-- NOUN -->
 - Display name: IBOP
 - Parent class: [WellControlSystem](./DrillingEquipment.md#WellControlSystem)
 - Description: 
@@ -912,121 +1004,149 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## MudSystem <!-- NOUN -->
-- Display name: Mud System
+## WellheadXmasTree <!-- NOUN -->
+- Display name: Wellhead (Xmas) Tree
+- Parent class: [WellControlSystem](./DrillingEquipment.md#WellControlSystem)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## CirculationSystem <!-- NOUN -->
+- Display name: Circulation System
 - Parent class: [RigEquipment](./DrillingEquipment.md#RigEquipment)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Pumps <!-- NOUN -->
-- Display name: Pumps
-- Parent class: [MudSystem](./DrillingEquipment.md#MudSystem)
+## MudPump <!-- NOUN -->
+- Display name: Mud Pump
+- Parent class: [CirculationSystem](./DrillingEquipment.md#CirculationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## PistonMudPumps <!-- NOUN -->
-- Display name: Piston Mud Pumps
-- Parent class: [Pumps](./DrillingEquipment.md#Pumps)
+## PistonMudPump <!-- NOUN -->
+- Display name: Piston Mud Pump
+- Parent class: [MudPump](./DrillingEquipment.md#MudPump)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## PulsationDampener <!-- NOUN -->
 - Display name: Pulsation Dampener
-- Parent class: [PistonMudPumps](./DrillingEquipment.md#PistonMudPumps)
+- Parent class: [PistonMudPump](./DrillingEquipment.md#PistonMudPump)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## Piston <!-- NOUN -->
 - Display name: Piston
-- Parent class: [PistonMudPumps](./DrillingEquipment.md#PistonMudPumps)
+- Parent class: [PistonMudPump](./DrillingEquipment.md#PistonMudPump)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## Liner <!-- NOUN -->
 - Display name: Liner
-- Parent class: [PistonMudPumps](./DrillingEquipment.md#PistonMudPumps)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## Efficiency <!-- NOUN -->
-- Display name: Efficiency
-- Parent class: [PistonMudPumps](./DrillingEquipment.md#PistonMudPumps)
+- Parent class: [PistonMudPump](./DrillingEquipment.md#PistonMudPump)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## Cylinders <!-- NOUN -->
 - Display name: Cylinders
-- Parent class: [PistonMudPumps](./DrillingEquipment.md#PistonMudPumps)
+- Parent class: [PistonMudPump](./DrillingEquipment.md#PistonMudPump)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## Action <!-- NOUN -->
 - Display name: Action
-- Parent class: [PistonMudPumps](./DrillingEquipment.md#PistonMudPumps)
+- Parent class: [PistonMudPump](./DrillingEquipment.md#PistonMudPump)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## ActionSingle <!-- NOUN -->
-- Display name: Single
+## SingleActing <!-- NOUN -->
+- Display name: Single Acting
 - Parent class: [Action](./DrillingEquipment.md#Action)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Dual <!-- NOUN -->
-- Display name: Dual
+## DualActing <!-- NOUN -->
+- Display name: Dual Acting
 - Parent class: [Action](./DrillingEquipment.md#Action)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## CentrifugalMudPumps <!-- NOUN -->
-- Display name: Centrifugal Mud Pumps
-- Parent class: [Pumps](./DrillingEquipment.md#Pumps)
+## PlungerMudPump <!-- NOUN -->
+- Display name: Plunger Mud Pump
+- Parent class: [MudPump](./DrillingEquipment.md#MudPump)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## BoosterPump <!-- NOUN -->
-- Display name: Booster Pump
-- Parent class: [Pumps](./DrillingEquipment.md#Pumps)
+## CentrifugalMudPump <!-- NOUN -->
+- Display name: Centrifugal Mud Pump
+- Parent class: [MudPump](./DrillingEquipment.md#MudPump)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## BackPressurePump <!-- NOUN -->
-- Display name: Back Pressure Pump
-- Parent class: [Pumps](./DrillingEquipment.md#Pumps)
+## HydraulicMudPump <!-- NOUN -->
+- Display name: Hydraulic Mud Pump
+- Parent class: [MudPump](./DrillingEquipment.md#MudPump)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## DiaphragmMudPump <!-- NOUN -->
+- Display name: Diaphragm Mud Pump
+- Parent class: [MudPump](./DrillingEquipment.md#MudPump)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## PeristalticMudPump <!-- NOUN -->
+- Display name: Peristaltic Mud Pump
+- Parent class: [MudPump](./DrillingEquipment.md#MudPump)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## RiserLiftPump <!-- NOUN -->
+- Display name: Riser Lift Pump
+- Parent class: [CirculationSystem](./DrillingEquipment.md#CirculationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## FillPump <!-- NOUN -->
 - Display name: Fill Pump
-- Parent class: [Pumps](./DrillingEquipment.md#Pumps)
+- Parent class: [CirculationSystem](./DrillingEquipment.md#CirculationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## LiftPump <!-- NOUN -->
-- Display name: Lift Pump
-- Parent class: [Pumps](./DrillingEquipment.md#Pumps)
+## BackPressurePump <!-- NOUN -->
+- Display name: Back Pressure Pump
+- Parent class: [CirculationSystem](./DrillingEquipment.md#CirculationSystem)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## BoosterPump <!-- NOUN -->
+- Display name: Booster Pump
+- Parent class: [CirculationSystem](./DrillingEquipment.md#CirculationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## DrillingFluid <!-- NOUN -->
 - Display name: Drilling Fluid
-- Parent class: [MudSystem](./DrillingEquipment.md#MudSystem)
+- Parent class: [CirculationSystem](./DrillingEquipment.md#CirculationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -1082,7 +1202,7 @@ MudSystem <|-- ThreeWayValve
 - Examples:
 ## MudPits <!-- NOUN -->
 - Display name: Mud Pits
-- Parent class: [MudSystem](./DrillingEquipment.md#MudSystem)
+- Parent class: [CirculationSystem](./DrillingEquipment.md#CirculationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -1129,8 +1249,8 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Storage <!-- NOUN -->
-- Display name: Storage
+## StorageTank <!-- NOUN -->
+- Display name: Storage Tank
 - Parent class: [MudPits](./DrillingEquipment.md#MudPits)
 - Description: 
 
@@ -1159,41 +1279,41 @@ MudSystem <|-- ThreeWayValve
 - Examples:
 ## ShaleShakers <!-- NOUN -->
 - Display name: Shale Shakers
-- Parent class: [MudSystem](./DrillingEquipment.md#MudSystem)
+- Parent class: [CirculationSystem](./DrillingEquipment.md#CirculationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Hopper <!-- NOUN -->
-- Display name: Hopper
+## ShakerHopper <!-- NOUN -->
+- Display name: Shaker Hopper
 - Parent class: [ShaleShakers](./DrillingEquipment.md#ShaleShakers)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Decks <!-- NOUN -->
-- Display name: Decks
+## ShakerDecks <!-- NOUN -->
+- Display name: Shaker Decks
 - Parent class: [ShaleShakers](./DrillingEquipment.md#ShaleShakers)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Screens <!-- NOUN -->
-- Display name: Screens
-- Parent class: [Decks](./DrillingEquipment.md#Decks)
+## ShakerScreens <!-- NOUN -->
+- Display name: Shaker Screens
+- Parent class: [ShakerDecks](./DrillingEquipment.md#ShakerDecks)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## MeshSize <!-- NOUN -->
-- Display name: Mesh Size
-- Parent class: [Decks](./DrillingEquipment.md#Decks)
+## ShakerScreenMeshSize <!-- NOUN -->
+- Display name: Shaker Screen Mesh Size
+- Parent class: [ShakerDecks](./DrillingEquipment.md#ShakerDecks)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## CascadeLevels <!-- NOUN -->
-- Display name: Cascade Levels
+## ShakerCascadeLevels <!-- NOUN -->
+- Display name: Shaker Cascade Levels
 - Parent class: [ShaleShakers](./DrillingEquipment.md#ShaleShakers)
 - Description: 
 
@@ -1201,14 +1321,14 @@ MudSystem <|-- ThreeWayValve
 - Examples:
 ## Centrifuge <!-- NOUN -->
 - Display name: Centrifuge
-- Parent class: [MudSystem](./DrillingEquipment.md#MudSystem)
+- Parent class: [CirculationSystem](./DrillingEquipment.md#CirculationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## Degasser <!-- NOUN -->
 - Display name: Degasser
-- Parent class: [MudSystem](./DrillingEquipment.md#MudSystem)
+- Parent class: [CirculationSystem](./DrillingEquipment.md#CirculationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -1229,42 +1349,56 @@ MudSystem <|-- ThreeWayValve
 - Examples:
 ## AfmAutofluidMeasSkid <!-- NOUN -->
 - Display name: AFM (Auto-Fluid Meas.) Skid
-- Parent class: [MudSystem](./DrillingEquipment.md#MudSystem)
+- Parent class: [CirculationSystem](./DrillingEquipment.md#CirculationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## Hydrocyclones <!-- NOUN -->
 - Display name: Hydrocyclones
-- Parent class: [MudSystem](./DrillingEquipment.md#MudSystem)
+- Parent class: [CirculationSystem](./DrillingEquipment.md#CirculationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## PowerGenerationSystem <!-- NOUN -->
-- Display name: Power Generation System
-- Parent class: [RigEquipment](./DrillingEquipment.md#RigEquipment)
+## MudLines <!-- NOUN -->
+- Display name: Mud Lines
+- Parent class: [CirculationSystem](./DrillingEquipment.md#CirculationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Generators <!-- NOUN -->
-- Display name: Generators
-- Parent class: [PowerGenerationSystem](./DrillingEquipment.md#PowerGenerationSystem)
+## MudStandpipeManifold <!-- NOUN -->
+- Display name: Mud Standpipe Manifold
+- Parent class: [MudLines](./DrillingEquipment.md#MudLines)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## ElectricalControlSystem <!-- NOUN -->
-- Display name: Electrical Control System
-- Parent class: [PowerGenerationSystem](./DrillingEquipment.md#PowerGenerationSystem)
+## MudStandpipe <!-- NOUN -->
+- Display name: Mud Standpipe
+- Parent class: [MudLines](./DrillingEquipment.md#MudLines)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## ScrSystem <!-- NOUN -->
-- Display name: SCR System
-- Parent class: [PowerGenerationSystem](./DrillingEquipment.md#PowerGenerationSystem)
+## MudHose <!-- NOUN -->
+- Display name: Mud Hose
+- Parent class: [MudLines](./DrillingEquipment.md#MudLines)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## Gooseneck <!-- NOUN -->
+- Display name: Gooseneck
+- Parent class: [MudLines](./DrillingEquipment.md#MudLines)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## FlowLine <!-- NOUN -->
+- Display name: Flow Line
+- Parent class: [MudLines](./DrillingEquipment.md#MudLines)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -1332,6 +1466,13 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
+## BoosterLine <!-- NOUN -->
+- Display name: Booster Line
+- Parent class: [MarineSystem](./DrillingEquipment.md#MarineSystem)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
 ## SlipJoint <!-- NOUN -->
 - Display name: Slip Joint
 - Parent class: [MarineSystem](./DrillingEquipment.md#MarineSystem)
@@ -1381,7 +1522,7 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Rov <!-- NOUN -->
+## ROV <!-- NOUN -->
 - Display name: ROV
 - Parent class: [MarineSystem](./DrillingEquipment.md#MarineSystem)
 - Description: 
@@ -1458,85 +1599,57 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## DrillFloorEquipment <!-- NOUN -->
-- Display name: Drill Floor Equipment
+## DrillFloorSystems <!-- NOUN -->
+- Display name: Drill Floor Systems
 - Parent class: [RigEquipment](./DrillingEquipment.md#RigEquipment)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Elevator <!-- NOUN -->
-- Display name: Elevator
-- Parent class: [DrillFloorEquipment](./DrillingEquipment.md#DrillFloorEquipment)
+## DrillFloorStructure <!-- NOUN -->
+- Display name: Drill Floor Structure
+- Parent class: [DrillFloorSystems](./DrillingEquipment.md#DrillFloorSystems)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Bails <!-- NOUN -->
-- Display name: Bails
-- Parent class: [DrillFloorEquipment](./DrillingEquipment.md#DrillFloorEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## ManualPipeTongs <!-- NOUN -->
-- Display name: Manual Pipe Tongs
-- Parent class: [DrillFloorEquipment](./DrillingEquipment.md#DrillFloorEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## PowerTongs <!-- NOUN -->
-- Display name: Power Tongs
-- Parent class: [DrillFloorEquipment](./DrillingEquipment.md#DrillFloorEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## CasingTongs <!-- NOUN -->
-- Display name: Casing Tongs
-- Parent class: [DrillFloorEquipment](./DrillingEquipment.md#DrillFloorEquipment)
+## DogHouse <!-- NOUN -->
+- Display name: Dog House
+- Parent class: [DrillFloorStructure](./DrillingEquipment.md#DrillFloorStructure)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## RigFloor <!-- NOUN -->
 - Display name: Rig Floor
-- Parent class: [DrillFloorEquipment](./DrillingEquipment.md#DrillFloorEquipment)
+- Parent class: [DrillFloorStructure](./DrillingEquipment.md#DrillFloorStructure)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Slips <!-- NOUN -->
-- Display name: Slips
-- Parent class: [DrillFloorEquipment](./DrillingEquipment.md#DrillFloorEquipment)
+## Mousehole <!-- NOUN -->
+- Display name: Mousehole
+- Parent class: [DrillFloorStructure](./DrillingEquipment.md#DrillFloorStructure)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## ManualSlips <!-- NOUN -->
-- Display name: Manual Slips
-- Parent class: [Slips](./DrillingEquipment.md#Slips)
+## DrillFloorSubstructure <!-- NOUN -->
+- Display name: Drill Floor Substructure
+- Parent class: [DrillFloorStructure](./DrillingEquipment.md#DrillFloorStructure)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## PowerSlips <!-- NOUN -->
-- Display name: Power Slips
-- Parent class: [Slips](./DrillingEquipment.md#Slips)
+## DrillFloorEquipment <!-- NOUN -->
+- Display name: Drill Floor Equipment
+- Parent class: [DrillFloorSystems](./DrillingEquipment.md#DrillFloorSystems)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## PneumaticSlips <!-- NOUN -->
-- Display name: Pneumatic Slips
-- Parent class: [Slips](./DrillingEquipment.md#Slips)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## RotatingControlDeviceRcd <!-- NOUN -->
-- Display name: Rotating Control Device (RCD)
+## DrillersConsole <!-- NOUN -->
+- Display name: Drillers Console
 - Parent class: [DrillFloorEquipment](./DrillingEquipment.md#DrillFloorEquipment)
 - Description: 
 
@@ -1549,15 +1662,78 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## StabbingGuide <!-- NOUN -->
-- Display name: Stabbing Guide
+## DrillPipeElevator <!-- NOUN -->
+- Display name: Drill Pipe Elevator
 - Parent class: [DrillFloorEquipment](./DrillingEquipment.md#DrillFloorEquipment)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Mousehole <!-- NOUN -->
-- Display name: Mousehole
+## ElevatorBailsLinks <!-- NOUN -->
+- Display name: Elevator Bails / Links
+- Parent class: [DrillFloorEquipment](./DrillingEquipment.md#DrillFloorEquipment)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## DrillPipeTongs <!-- NOUN -->
+- Display name: Drill Pipe Tongs
+- Parent class: [DrillFloorEquipment](./DrillingEquipment.md#DrillFloorEquipment)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## ManualPipeTongs <!-- NOUN -->
+- Display name: Manual Pipe Tongs
+- Parent class: [DrillPipeTongs](./DrillingEquipment.md#DrillPipeTongs)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## PowerPipeTongs <!-- NOUN -->
+- Display name: Power Pipe Tongs
+- Parent class: [DrillPipeTongs](./DrillingEquipment.md#DrillPipeTongs)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## CasingTongs <!-- NOUN -->
+- Display name: Casing Tongs
+- Parent class: [DrillPipeTongs](./DrillingEquipment.md#DrillPipeTongs)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## RotarySlips <!-- NOUN -->
+- Display name: Rotary Slips
+- Parent class: [DrillFloorEquipment](./DrillingEquipment.md#DrillFloorEquipment)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## ManualSlips <!-- NOUN -->
+- Display name: Manual Slips
+- Parent class: [RotarySlips](./DrillingEquipment.md#RotarySlips)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## PowerSlips <!-- NOUN -->
+- Display name: Power Slips
+- Parent class: [RotarySlips](./DrillingEquipment.md#RotarySlips)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## PneumaticSlips <!-- NOUN -->
+- Display name: Pneumatic Slips
+- Parent class: [RotarySlips](./DrillingEquipment.md#RotarySlips)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## StabbingGuide <!-- NOUN -->
+- Display name: Stabbing Guide
 - Parent class: [DrillFloorEquipment](./DrillingEquipment.md#DrillFloorEquipment)
 - Description: 
 
@@ -1570,15 +1746,8 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## DogHouse <!-- NOUN -->
-- Display name: Dog House
-- Parent class: [DrillFloorEquipment](./DrillingEquipment.md#DrillFloorEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## DrillersConsole <!-- NOUN -->
-- Display name: Drillers Console
+## RotatingControlDeviceRcd <!-- NOUN -->
+- Display name: Rotating Control Device (RCD)
 - Parent class: [DrillFloorEquipment](./DrillingEquipment.md#DrillFloorEquipment)
 - Description: 
 
@@ -1593,6 +1762,13 @@ MudSystem <|-- ThreeWayValve
 - Examples:
 ## DollyRail <!-- NOUN -->
 - Display name: Dolly Rail
+- Parent class: [DrillFloorEquipment](./DrillingEquipment.md#DrillFloorEquipment)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## SlickLine <!-- NOUN -->
+- Display name: Slick Line
 - Parent class: [DrillFloorEquipment](./DrillingEquipment.md#DrillFloorEquipment)
 - Description: 
 
@@ -1710,146 +1886,6 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## SurfaceEquipment <!-- NOUN -->
-- Display name: Surface Equipment
-- Parent class: [RigEquipment](./DrillingEquipment.md#RigEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## AnnulusTerminator <!-- NOUN -->
-- Display name: Annulus Terminator
-- Parent class: [SurfaceEquipment](./DrillingEquipment.md#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## BellNipple <!-- NOUN -->
-- Display name: Bell Nipple
-- Parent class: [AnnulusTerminator](./DrillingEquipment.md#AnnulusTerminator)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## Diverter <!-- NOUN -->
-- Display name: Diverter
-- Parent class: [AnnulusTerminator](./DrillingEquipment.md#AnnulusTerminator)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## Wellhead <!-- NOUN -->
-- Display name: Wellhead
-- Parent class: [SurfaceEquipment](./DrillingEquipment.md#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## Overshot <!-- NOUN -->
-- Display name: Overshot
-- Parent class: [SurfaceEquipment](./DrillingEquipment.md#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## SpoolAdapter <!-- NOUN -->
-- Display name: Spool Adapter
-- Parent class: [SurfaceEquipment](./DrillingEquipment.md#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## ControlLines <!-- NOUN -->
-- Display name: Control Lines
-- Parent class: [SurfaceEquipment](./DrillingEquipment.md#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## BoosterLine <!-- NOUN -->
-- Display name: Booster Line
-- Parent class: [SurfaceEquipment](./DrillingEquipment.md#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## SurfaceLines <!-- NOUN -->
-- Display name: Surface lines
-- Parent class: [SurfaceEquipment](./DrillingEquipment.md#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## StandpipeManifold <!-- NOUN -->
-- Display name: Standpipe Manifold
-- Parent class: [SurfaceLines](./DrillingEquipment.md#SurfaceLines)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## Standpipe <!-- NOUN -->
-- Display name: Standpipe
-- Parent class: [SurfaceLines](./DrillingEquipment.md#SurfaceLines)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## MudHose <!-- NOUN -->
-- Display name: Mud Hose
-- Parent class: [SurfaceLines](./DrillingEquipment.md#SurfaceLines)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## Gooseneck <!-- NOUN -->
-- Display name: Gooseneck
-- Parent class: [SurfaceLines](./DrillingEquipment.md#SurfaceLines)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## OverboardLines <!-- NOUN -->
-- Display name: Overboard Lines
-- Parent class: [SurfaceEquipment](./DrillingEquipment.md#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## FlowLine <!-- NOUN -->
-- Display name: Flow Line
-- Parent class: [SurfaceEquipment](./DrillingEquipment.md#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## XmasTree <!-- NOUN -->
-- Display name: Xmas Tree
-- Parent class: [SurfaceEquipment](./DrillingEquipment.md#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## DiverterLineHangers <!-- NOUN -->
-- Display name: Diverter Line Hangers
-- Parent class: [SurfaceEquipment](./DrillingEquipment.md#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## IsolationSeal <!-- NOUN -->
-- Display name: Isolation Seal
-- Parent class: [SurfaceEquipment](./DrillingEquipment.md#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## SlickLine <!-- NOUN -->
-- Display name: Slick Line
-- Parent class: [SurfaceEquipment](./DrillingEquipment.md#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
 ## SafetyEquipment <!-- NOUN -->
 - Display name: Safety Equipment
 - Parent class: [RigEquipment](./DrillingEquipment.md#RigEquipment)
@@ -1920,16 +1956,16 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Tubulars <!-- NOUN -->
+## <Tubulars> <!-- NOUN -->
 - Display name: <Tubulars>
-- Parent class: [Equipment](./DrillingEquipment.md#Equipment)
+- Parent class: [<equipment>](./DrillingEquipment.md#<equipment>)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## DrillString <!-- NOUN -->
 - Display name: Drill String
-- Parent class: [Tubulars](./DrillingEquipment.md#Tubulars)
+- Parent class: [<Tubulars>](./DrillingEquipment.md#<Tubulars>)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -2004,35 +2040,35 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Dynamic <!-- NOUN -->
+## dynamic <!-- NOUN -->
 - Display name: dynamic
 - Parent class: [BladeShape](./DrillingEquipment.md#BladeShape)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Melon <!-- NOUN -->
+## melon <!-- NOUN -->
 - Display name: melon
 - Parent class: [BladeShape](./DrillingEquipment.md#BladeShape)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Spiral <!-- NOUN -->
+## spiral <!-- NOUN -->
 - Display name: spiral
 - Parent class: [BladeShape](./DrillingEquipment.md#BladeShape)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Straight <!-- NOUN -->
+## straight <!-- NOUN -->
 - Display name: straight
 - Parent class: [BladeShape](./DrillingEquipment.md#BladeShape)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Variable <!-- NOUN -->
+## variable <!-- NOUN -->
 - Display name: variable
 - Parent class: [BladeShape](./DrillingEquipment.md#BladeShape)
 - Description: 
@@ -2046,21 +2082,21 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Clampon <!-- NOUN -->
+## clamp-on <!-- NOUN -->
 - Display name: clamp-on
 - Parent class: [BladeType](./DrillingEquipment.md#BladeType)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Integral <!-- NOUN -->
+## integral <!-- NOUN -->
 - Display name: integral
 - Parent class: [BladeType](./DrillingEquipment.md#BladeType)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Sleeve <!-- NOUN -->
+## sleeve <!-- NOUN -->
 - Display name: sleeve
 - Parent class: [BladeType](./DrillingEquipment.md#BladeType)
 - Description: 
@@ -2088,7 +2124,7 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Nonmagnetic <!-- NOUN -->
+## Non-Magnetic <!-- NOUN -->
 - Display name: Non-Magnetic
 - Parent class: [Stabilizers](./DrillingEquipment.md#Stabilizers)
 - Description: 
@@ -2102,7 +2138,7 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Nonrotating <!-- NOUN -->
+## Non-Rotating <!-- NOUN -->
 - Display name: Non-Rotating
 - Parent class: [Stabilizers](./DrillingEquipment.md#Stabilizers)
 - Description: 
@@ -2151,98 +2187,98 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subbent <!-- NOUN -->
+## sub-bent <!-- NOUN -->
 - Display name: sub-bent
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subbit <!-- NOUN -->
+## sub-bit <!-- NOUN -->
 - Display name: sub-bit
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subbumper <!-- NOUN -->
+## sub-bumper <!-- NOUN -->
 - Display name: sub-bumper
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subcatcher <!-- NOUN -->
+## sub-catcher <!-- NOUN -->
 - Display name: sub-catcher
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subcirculation <!-- NOUN -->
+## sub-circulation <!-- NOUN -->
 - Display name: sub-circulation
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subcone <!-- NOUN -->
+## sub-cone <!-- NOUN -->
 - Display name: sub-cone
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subcrossover <!-- NOUN -->
+## sub-crossover <!-- NOUN -->
 - Display name: sub-crossover
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subdart <!-- NOUN -->
+## sub-dart <!-- NOUN -->
 - Display name: sub-dart
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subfilter <!-- NOUN -->
+## sub-filter <!-- NOUN -->
 - Display name: sub-filter
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subfloat <!-- NOUN -->
+## sub-float <!-- NOUN -->
 - Display name: sub-float
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subjetting <!-- NOUN -->
+## sub-jetting <!-- NOUN -->
 - Display name: sub-jetting
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subjunk <!-- NOUN -->
+## sub-junk <!-- NOUN -->
 - Display name: sub-junk
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Suborienting <!-- NOUN -->
+## sub-orienting <!-- NOUN -->
 - Display name: sub-orienting
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subported <!-- NOUN -->
+## sub-ported <!-- NOUN -->
 - Display name: sub-ported
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
@@ -2263,21 +2299,21 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subrestrictor <!-- NOUN -->
+## sub-restrictor <!-- NOUN -->
 - Display name: sub-restrictor
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subsaver <!-- NOUN -->
+## sub-saver <!-- NOUN -->
 - Display name: sub-saver
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subshock <!-- NOUN -->
+## sub-shock <!-- NOUN -->
 - Display name: sub-shock
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
@@ -2291,7 +2327,7 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Substop <!-- NOUN -->
+## sub-stop <!-- NOUN -->
 - Display name: sub-stop
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
@@ -2300,7 +2336,7 @@ MudSystem <|-- ThreeWayValve
 - Examples:
 ## CasingString <!-- NOUN -->
 - Display name: Casing String
-- Parent class: [Tubulars](./DrillingEquipment.md#Tubulars)
+- Parent class: [<Tubulars>](./DrillingEquipment.md#<Tubulars>)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -2347,28 +2383,28 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Box <!-- NOUN -->
+## box <!-- NOUN -->
 - Display name: box
 - Parent class: [Connection](./DrillingEquipment.md#Connection)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Flange <!-- NOUN -->
+## flange <!-- NOUN -->
 - Display name: flange
 - Parent class: [Connection](./DrillingEquipment.md#Connection)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Mandrel <!-- NOUN -->
+## mandrel <!-- NOUN -->
 - Display name: mandrel
 - Parent class: [Connection](./DrillingEquipment.md#Connection)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Pin <!-- NOUN -->
+## pin <!-- NOUN -->
 - Display name: pin
 - Parent class: [Connection](./DrillingEquipment.md#Connection)
 - Description: 
@@ -2382,7 +2418,7 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Selfsealingthreaded <!-- NOUN -->
+## self-sealing-threaded <!-- NOUN -->
 - Display name: self-sealing-threaded
 - Parent class: [Connection](./DrillingEquipment.md#Connection)
 - Description: 
@@ -2391,35 +2427,35 @@ MudSystem <|-- ThreeWayValve
 - Examples:
 ## Expandables <!-- NOUN -->
 - Display name: Expandables
-- Parent class: [Tubulars](./DrillingEquipment.md#Tubulars)
+- Parent class: [<Tubulars>](./DrillingEquipment.md#<Tubulars>)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## TubingString <!-- NOUN -->
 - Display name: Tubing String
-- Parent class: [Tubulars](./DrillingEquipment.md#Tubulars)
+- Parent class: [<Tubulars>](./DrillingEquipment.md#<Tubulars>)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## ScreenString <!-- NOUN -->
 - Display name: Screen String
-- Parent class: [Tubulars](./DrillingEquipment.md#Tubulars)
+- Parent class: [<Tubulars>](./DrillingEquipment.md#<Tubulars>)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## TubularConnection <!-- NOUN -->
 - Display name: Tubular Connection
-- Parent class: [Tubulars](./DrillingEquipment.md#Tubulars)
+- Parent class: [<Tubulars>](./DrillingEquipment.md#<Tubulars>)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## TubularConfiguration <!-- NOUN -->
 - Display name: Tubular Configuration
-- Parent class: [Tubulars](./DrillingEquipment.md#Tubulars)
+- Parent class: [<Tubulars>](./DrillingEquipment.md#<Tubulars>)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -2438,14 +2474,14 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Boxbox <!-- NOUN -->
+## Box-Box <!-- NOUN -->
 - Display name: Box-Box
 - Parent class: [TubularConfiguration](./DrillingEquipment.md#TubularConfiguration)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Pinpin <!-- NOUN -->
+## Pin-Pin <!-- NOUN -->
 - Display name: Pin-Pin
 - Parent class: [TubularConfiguration](./DrillingEquipment.md#TubularConfiguration)
 - Description: 
@@ -2454,7 +2490,7 @@ MudSystem <|-- ThreeWayValve
 - Examples:
 ## DownholeEquipment <!-- NOUN -->
 - Display name: <Downhole Equipment>
-- Parent class: [Equipment](./DrillingEquipment.md#Equipment)
+- Parent class: [<equipment>](./DrillingEquipment.md#<equipment>)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -2487,7 +2523,7 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Milltooth <!-- NOUN -->
+## MillTooth <!-- NOUN -->
 - Display name: MillTooth
 - Parent class: [RollingCutter](./DrillingEquipment.md#RollingCutter)
 - Description: 
@@ -2508,7 +2544,7 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Pdc <!-- NOUN -->
+## PDC <!-- NOUN -->
 - Display name: PDC
 - Parent class: [FixedCutter](./DrillingEquipment.md#FixedCutter)
 - Description: 
@@ -2711,14 +2747,14 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Pointthebit <!-- NOUN -->
+## Point-The-Bit <!-- NOUN -->
 - Display name: Point-The-Bit
 - Parent class: [RotarySteerableSystems](./DrillingEquipment.md#RotarySteerableSystems)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Pushthebit <!-- NOUN -->
+## Push-The-Bit <!-- NOUN -->
 - Display name: Push-The-Bit
 - Parent class: [RotarySteerableSystems](./DrillingEquipment.md#RotarySteerableSystems)
 - Description: 
@@ -2788,7 +2824,7 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Casingwhiledrilling <!-- NOUN -->
+## Casing-While-Drilling <!-- NOUN -->
 - Display name: Casing-While-Drilling
 - Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
 - Description: 
@@ -2797,7 +2833,7 @@ MudSystem <|-- ThreeWayValve
 - Examples:
 ## DirectionalCasingWhileDrilling <!-- NOUN -->
 - Display name: Directional Casing While Drilling
-- Parent class: [Casingwhiledrilling](./DrillingEquipment.md#Casingwhiledrilling)
+- Parent class: [Casing-While-Drilling](./DrillingEquipment.md#Casing-While-Drilling)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -2837,8 +2873,8 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Overshoot <!-- NOUN -->
-- Display name: Overshoot
+## Overshot <!-- NOUN -->
+- Display name: Overshot
 - Parent class: [FishingTools](./DrillingEquipment.md#FishingTools)
 - Description: 
 
@@ -2889,6 +2925,13 @@ MudSystem <|-- ThreeWayValve
 ## NearBitVibrationDampers <!-- NOUN -->
 - Display name: Near Bit Vibration Dampers
 - Parent class: [ActiveVibrationTools](./DrillingEquipment.md#ActiveVibrationTools)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## IsolationSeal <!-- NOUN -->
+- Display name: Isolation Seal
+- Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -3131,7 +3174,7 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Electromagnetic <!-- NOUN -->
+## Electro-Magnetic <!-- NOUN -->
 - Display name: Electro-Magnetic
 - Parent class: [EquipmentTelemetry](./DrillingEquipment.md#EquipmentTelemetry)
 - Description: 
@@ -3413,7 +3456,7 @@ MudSystem <|-- ThreeWayValve
 - Examples:
 ## CoiledTubingEquipment <!-- NOUN -->
 - Display name: <Coiled Tubing Equipment>
-- Parent class: [Equipment](./DrillingEquipment.md#Equipment)
+- Parent class: [<equipment>](./DrillingEquipment.md#<equipment>)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -3474,16 +3517,37 @@ MudSystem <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## MudStandpipeManifold <!-- NOUN -->
-- Display name: Mud Standpipe Manifold
-- Parent class: [MudSystem](./DrillingEquipment.md#MudSystem)
+## WellcontrolStackEquipment <!-- NOUN -->
+- Display name: Well-control stack equipment
+- Parent class: [CoiledTubingEquipment](./DrillingEquipment.md#CoiledTubingEquipment)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## GenericEquipment <!-- NOUN -->
+- Display name: <Generic Equipment>
+- Parent class: [<equipment>](./DrillingEquipment.md#<equipment>)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## GenericEquipmentGatevalve <!-- NOUN -->
+- Display name: Gate Valve
+- Parent class: [GenericEquipment](./DrillingEquipment.md#GenericEquipment)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## ThreeWayManifold <!-- NOUN -->
+- Display name: Three Way Manifold
+- Parent class: [GenericEquipment](./DrillingEquipment.md#GenericEquipment)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## ThreeWayValve <!-- NOUN -->
 - Display name: Three Way Valve
-- Parent class: [MudSystem](./DrillingEquipment.md#MudSystem)
+- Parent class: [GenericEquipment](./DrillingEquipment.md#GenericEquipment)
 - Description: 
 
 - Definition set: DrillingEquipment

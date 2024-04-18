@@ -81,11 +81,11 @@ function may run immediately or that it is enabled and can trigger if some condi
     <owl:onProperty rdf:resource="http://ddhub.no/LeftToRight" />
     <owl:onClass rdf:resource="http://ddhub.no/HydraulicJunction" />
     <owl:onProperty rdf:resource="http://ddhub.no/RightToLeft" />
+    <owl:onProperty rdf:resource="http://ddhub.no/MeaningfulPrecision" />
+    <owl:onClass rdf:resource="http://ddhub.no/MeasurableQuantity" />
     <owl:onClass rdf:resource="http://ddhub.no/MechanicalElementState" />
     <owl:onProperty rdf:resource="http://ddhub.no/PostiveUpward" />
     <owl:onClass rdf:resource="http://ddhub.no/OneDimensionalReferenceFrame" />
-    <owl:onProperty rdf:resource="http://ddhub.no/MeaningfulPrecision" />
-    <owl:onClass rdf:resource="http://ddhub.no/MeasurableQuantity" />
     <owl:onProperty rdf:resource="http://ddhub.no/L" />
     <owl:onClass rdf:resource="http://ddhub.no/Quantity" />
     <owl:onProperty rdf:resource="http://ddhub.no/M" />
@@ -1115,7 +1115,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Equipment">
+  <rdf:Description rdf:about="http://ddhub.no/&lt;equipment&gt;">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
     <rdfs:comment xml:lang="EN">
@@ -1123,7 +1123,31 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/RigEquipment">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Equipment" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/&lt;equipment&gt;" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PowerGenerationSystem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/RigEquipment" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PowerGenerators">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PowerGenerationSystem" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ElectricalControlSystem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PowerGenerationSystem" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PowerScrSystem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PowerGenerationSystem" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -1151,31 +1175,37 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Double">
+  <rdf:Description rdf:about="http://ddhub.no/ConventionalDerrick">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Derrick" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Quadruple">
+  <rdf:Description rdf:about="http://ddhub.no/SlantDerrick">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Derrick" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Slant">
+  <rdf:Description rdf:about="http://ddhub.no/QuadristandDerrick">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Derrick" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Triple">
+  <rdf:Description rdf:about="http://ddhub.no/TripleStandDerrick">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Derrick" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DerrickSingle">
+  <rdf:Description rdf:about="http://ddhub.no/DoubleStandDerrick">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Derrick" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SingleJointDerrick">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Derrick" />
     <rdfs:comment xml:lang="EN">
@@ -1187,25 +1217,25 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/StandardElectrical">
+  <rdf:Description rdf:about="http://ddhub.no/StandardElectricalDrawworks">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Drawworks" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Mechanical">
+  <rdf:Description rdf:about="http://ddhub.no/MechanicalDrawworks">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Drawworks" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DieselElectricalDrawworks">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Drawworks" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/RamRig">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Drawworks" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DieselElectrical">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Drawworks" />
     <rdfs:comment xml:lang="EN">
@@ -1331,13 +1361,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/RotaryBushing">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/RotaryTable" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/WearBushing">
+  <rdf:Description rdf:about="http://ddhub.no/RotaryTableBushings">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/RotaryTable" />
     <rdfs:comment xml:lang="EN">
@@ -1376,6 +1400,12 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
   <rdf:Description rdf:about="http://ddhub.no/WellControlSystem">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/RigEquipment" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/BellNipple">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/WellControlSystem" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -1439,6 +1469,18 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AdapterSpool">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/WellControlSystem" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SpacingSpool">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/WellControlSystem" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ChokeManifold">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/WellControlSystem" />
@@ -1451,7 +1493,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/GateValve">
+  <rdf:Description rdf:about="http://ddhub.no/ChokeValveGatevalve">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/ChokeValve" />
     <rdfs:comment xml:lang="EN">
@@ -1469,13 +1511,43 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ControlLines">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/WellControlSystem" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Diverter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/WellControlSystem" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DiverterLine">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Diverter" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DiverterLineHanger">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Diverter" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/VentOverboardLine">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Diverter" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ControlManifold">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/WellControlSystem" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Ibop">
+  <rdf:Description rdf:about="http://ddhub.no/IBOP">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/WellControlSystem" />
     <rdfs:comment xml:lang="EN">
@@ -1517,105 +1589,129 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MudSystem">
+  <rdf:Description rdf:about="http://ddhub.no/WellheadXmasTree">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/WellControlSystem" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/CirculationSystem">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/RigEquipment" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Pumps">
+  <rdf:Description rdf:about="http://ddhub.no/MudPump">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudSystem" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CirculationSystem" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PistonMudPumps">
+  <rdf:Description rdf:about="http://ddhub.no/PistonMudPump">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Pumps" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudPump" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/PulsationDampener">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/PistonMudPumps" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PistonMudPump" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Piston">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/PistonMudPumps" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PistonMudPump" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Liner">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/PistonMudPumps" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Efficiency">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/PistonMudPumps" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PistonMudPump" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Cylinders">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/PistonMudPumps" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PistonMudPump" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Action">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/PistonMudPumps" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PistonMudPump" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ActionSingle">
+  <rdf:Description rdf:about="http://ddhub.no/SingleActing">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Action" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Dual">
+  <rdf:Description rdf:about="http://ddhub.no/DualActing">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Action" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/CentrifugalMudPumps">
+  <rdf:Description rdf:about="http://ddhub.no/PlungerMudPump">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Pumps" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudPump" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/BoosterPump">
+  <rdf:Description rdf:about="http://ddhub.no/CentrifugalMudPump">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Pumps" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudPump" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/BackPressurePump">
+  <rdf:Description rdf:about="http://ddhub.no/HydraulicMudPump">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Pumps" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudPump" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DiaphragmMudPump">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudPump" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PeristalticMudPump">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudPump" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RiserLiftPump">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CirculationSystem" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/FillPump">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Pumps" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CirculationSystem" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/LiftPump">
+  <rdf:Description rdf:about="http://ddhub.no/BackPressurePump">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Pumps" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CirculationSystem" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/BoosterPump">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CirculationSystem" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DrillingFluid">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudSystem" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CirculationSystem" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -1663,7 +1759,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/MudPits">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudSystem" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CirculationSystem" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -1703,7 +1799,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Storage">
+  <rdf:Description rdf:about="http://ddhub.no/StorageTank">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MudPits" />
     <rdfs:comment xml:lang="EN">
@@ -1729,35 +1825,35 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ShaleShakers">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudSystem" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CirculationSystem" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Hopper">
+  <rdf:Description rdf:about="http://ddhub.no/ShakerHopper">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/ShaleShakers" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Decks">
+  <rdf:Description rdf:about="http://ddhub.no/ShakerDecks">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/ShaleShakers" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Screens">
+  <rdf:Description rdf:about="http://ddhub.no/ShakerScreens">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Decks" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ShakerDecks" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MeshSize">
+  <rdf:Description rdf:about="http://ddhub.no/ShakerScreenMeshSize">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Decks" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ShakerDecks" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/CascadeLevels">
+  <rdf:Description rdf:about="http://ddhub.no/ShakerCascadeLevels">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/ShaleShakers" />
     <rdfs:comment xml:lang="EN">
@@ -1765,13 +1861,13 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Centrifuge">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudSystem" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CirculationSystem" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Degasser">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudSystem" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CirculationSystem" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -1789,49 +1885,49 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/AfmAutofluidMeasSkid">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudSystem" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CirculationSystem" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Hydrocyclones">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudSystem" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CirculationSystem" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MudLines">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CirculationSystem" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/MudStandpipeManifold">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudSystem" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudLines" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ThreeWayValve">
+  <rdf:Description rdf:about="http://ddhub.no/MudStandpipe">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudSystem" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudLines" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PowerGenerationSystem">
+  <rdf:Description rdf:about="http://ddhub.no/MudHose">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/RigEquipment" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudLines" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Generators">
+  <rdf:Description rdf:about="http://ddhub.no/Gooseneck">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/PowerGenerationSystem" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudLines" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ElectricalControlSystem">
+  <rdf:Description rdf:about="http://ddhub.no/FlowLine">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/PowerGenerationSystem" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ScrSystem">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/PowerGenerationSystem" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudLines" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -1889,6 +1985,12 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/BoosterLine">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MarineSystem" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/SlipJoint">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MarineSystem" />
@@ -1931,7 +2033,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Rov">
+  <rdf:Description rdf:about="http://ddhub.no/ROV">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MarineSystem" />
     <rdfs:comment xml:lang="EN">
@@ -1997,73 +2099,49 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DrillFloorEquipment">
+  <rdf:Description rdf:about="http://ddhub.no/DrillFloorSystems">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/RigEquipment" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Elevator">
+  <rdf:Description rdf:about="http://ddhub.no/DrillFloorStructure">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillFloorEquipment" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillFloorSystems" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Bails">
+  <rdf:Description rdf:about="http://ddhub.no/DogHouse">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillFloorEquipment" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ManualPipeTongs">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillFloorEquipment" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PowerTongs">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillFloorEquipment" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/CasingTongs">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillFloorEquipment" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillFloorStructure" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/RigFloor">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillFloorEquipment" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillFloorStructure" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Slips">
+  <rdf:Description rdf:about="http://ddhub.no/Mousehole">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillFloorEquipment" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillFloorStructure" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ManualSlips">
+  <rdf:Description rdf:about="http://ddhub.no/DrillFloorSubstructure">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Slips" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillFloorStructure" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PowerSlips">
+  <rdf:Description rdf:about="http://ddhub.no/DrillFloorEquipment">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Slips" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillFloorSystems" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PneumaticSlips">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Slips" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/RotatingControlDeviceRcd">
+  <rdf:Description rdf:about="http://ddhub.no/DrillersConsole">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillFloorEquipment" />
     <rdfs:comment xml:lang="EN">
@@ -2075,13 +2153,67 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/StabbingGuide">
+  <rdf:Description rdf:about="http://ddhub.no/DrillPipeElevator">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillFloorEquipment" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Mousehole">
+  <rdf:Description rdf:about="http://ddhub.no/ElevatorBailsLinks">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillFloorEquipment" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillPipeTongs">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillFloorEquipment" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ManualPipeTongs">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillPipeTongs" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PowerPipeTongs">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillPipeTongs" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/CasingTongs">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillPipeTongs" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RotarySlips">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillFloorEquipment" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ManualSlips">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/RotarySlips" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PowerSlips">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/RotarySlips" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PneumaticSlips">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/RotarySlips" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/StabbingGuide">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillFloorEquipment" />
     <rdfs:comment xml:lang="EN">
@@ -2093,13 +2225,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DogHouse">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillFloorEquipment" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DrillersConsole">
+  <rdf:Description rdf:about="http://ddhub.no/RotatingControlDeviceRcd">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillFloorEquipment" />
     <rdfs:comment xml:lang="EN">
@@ -2112,6 +2238,12 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DollyRail">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillFloorEquipment" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SlickLine">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillFloorEquipment" />
     <rdfs:comment xml:lang="EN">
@@ -2213,126 +2345,6 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SurfaceEquipment">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/RigEquipment" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/AnnulusTerminator">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/SurfaceEquipment" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/BellNipple">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/AnnulusTerminator" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Diverter">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/AnnulusTerminator" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Wellhead">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/SurfaceEquipment" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Overshot">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/SurfaceEquipment" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SpoolAdapter">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/SurfaceEquipment" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ControlLines">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/SurfaceEquipment" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/BoosterLine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/SurfaceEquipment" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SurfaceLines">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/SurfaceEquipment" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/StandpipeManifold">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/SurfaceLines" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Standpipe">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/SurfaceLines" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MudHose">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/SurfaceLines" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Gooseneck">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/SurfaceLines" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/OverboardLines">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/SurfaceEquipment" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/FlowLine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/SurfaceEquipment" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/XmasTree">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/SurfaceEquipment" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DiverterLineHangers">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/SurfaceEquipment" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsolationSeal">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/SurfaceEquipment" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SlickLine">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/SurfaceEquipment" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/SafetyEquipment">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/RigEquipment" />
@@ -2393,15 +2405,15 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Tubulars">
+  <rdf:Description rdf:about="http://ddhub.no/&lt;Tubulars&gt;">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Equipment" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/&lt;equipment&gt;" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DrillString">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Tubulars" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/&lt;Tubulars&gt;" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -2465,31 +2477,31 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Dynamic">
+  <rdf:Description rdf:about="http://ddhub.no/dynamic">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/BladeShape" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Melon">
+  <rdf:Description rdf:about="http://ddhub.no/melon">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/BladeShape" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Spiral">
+  <rdf:Description rdf:about="http://ddhub.no/spiral">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/BladeShape" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Straight">
+  <rdf:Description rdf:about="http://ddhub.no/straight">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/BladeShape" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Variable">
+  <rdf:Description rdf:about="http://ddhub.no/variable">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/BladeShape" />
     <rdfs:comment xml:lang="EN">
@@ -2501,19 +2513,19 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Clampon">
+  <rdf:Description rdf:about="http://ddhub.no/clamp-on">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/BladeType" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Integral">
+  <rdf:Description rdf:about="http://ddhub.no/integral">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/BladeType" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Sleeve">
+  <rdf:Description rdf:about="http://ddhub.no/sleeve">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/BladeType" />
     <rdfs:comment xml:lang="EN">
@@ -2537,7 +2549,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Nonmagnetic">
+  <rdf:Description rdf:about="http://ddhub.no/Non-Magnetic">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Stabilizers" />
     <rdfs:comment xml:lang="EN">
@@ -2549,7 +2561,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Nonrotating">
+  <rdf:Description rdf:about="http://ddhub.no/Non-Rotating">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Stabilizers" />
     <rdfs:comment xml:lang="EN">
@@ -2591,85 +2603,85 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Subbent">
+  <rdf:Description rdf:about="http://ddhub.no/sub-bent">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Subbit">
+  <rdf:Description rdf:about="http://ddhub.no/sub-bit">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Subbumper">
+  <rdf:Description rdf:about="http://ddhub.no/sub-bumper">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Subcatcher">
+  <rdf:Description rdf:about="http://ddhub.no/sub-catcher">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Subcirculation">
+  <rdf:Description rdf:about="http://ddhub.no/sub-circulation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Subcone">
+  <rdf:Description rdf:about="http://ddhub.no/sub-cone">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Subcrossover">
+  <rdf:Description rdf:about="http://ddhub.no/sub-crossover">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Subdart">
+  <rdf:Description rdf:about="http://ddhub.no/sub-dart">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Subfilter">
+  <rdf:Description rdf:about="http://ddhub.no/sub-filter">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Subfloat">
+  <rdf:Description rdf:about="http://ddhub.no/sub-float">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Subjetting">
+  <rdf:Description rdf:about="http://ddhub.no/sub-jetting">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Subjunk">
+  <rdf:Description rdf:about="http://ddhub.no/sub-junk">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Suborienting">
+  <rdf:Description rdf:about="http://ddhub.no/sub-orienting">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Subported">
+  <rdf:Description rdf:about="http://ddhub.no/sub-ported">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
@@ -2687,19 +2699,19 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Subrestrictor">
+  <rdf:Description rdf:about="http://ddhub.no/sub-restrictor">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Subsaver">
+  <rdf:Description rdf:about="http://ddhub.no/sub-saver">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Subshock">
+  <rdf:Description rdf:about="http://ddhub.no/sub-shock">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
@@ -2711,7 +2723,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Substop">
+  <rdf:Description rdf:about="http://ddhub.no/sub-stop">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
@@ -2719,7 +2731,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/CasingString">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Tubulars" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/&lt;Tubulars&gt;" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -2759,25 +2771,25 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Box">
+  <rdf:Description rdf:about="http://ddhub.no/box">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Connection" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Flange">
+  <rdf:Description rdf:about="http://ddhub.no/flange">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Connection" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Mandrel">
+  <rdf:Description rdf:about="http://ddhub.no/mandrel">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Connection" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Pin">
+  <rdf:Description rdf:about="http://ddhub.no/pin">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Connection" />
     <rdfs:comment xml:lang="EN">
@@ -2789,7 +2801,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Selfsealingthreaded">
+  <rdf:Description rdf:about="http://ddhub.no/self-sealing-threaded">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Connection" />
     <rdfs:comment xml:lang="EN">
@@ -2797,31 +2809,31 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Expandables">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Tubulars" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/&lt;Tubulars&gt;" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/TubingString">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Tubulars" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/&lt;Tubulars&gt;" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ScreenString">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Tubulars" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/&lt;Tubulars&gt;" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/TubularConnection">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Tubulars" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/&lt;Tubulars&gt;" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/TubularConfiguration">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Tubulars" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/&lt;Tubulars&gt;" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -2837,13 +2849,13 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Boxbox">
+  <rdf:Description rdf:about="http://ddhub.no/Box-Box">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/TubularConfiguration" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Pinpin">
+  <rdf:Description rdf:about="http://ddhub.no/Pin-Pin">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/TubularConfiguration" />
     <rdfs:comment xml:lang="EN">
@@ -2851,7 +2863,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DownholeEquipment">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Equipment" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/&lt;equipment&gt;" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -2879,7 +2891,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Milltooth">
+  <rdf:Description rdf:about="http://ddhub.no/MillTooth">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/RollingCutter" />
     <rdfs:comment xml:lang="EN">
@@ -2897,7 +2909,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Pdc">
+  <rdf:Description rdf:about="http://ddhub.no/PDC">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/FixedCutter" />
     <rdfs:comment xml:lang="EN">
@@ -3071,13 +3083,13 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Pointthebit">
+  <rdf:Description rdf:about="http://ddhub.no/Point-The-Bit">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/RotarySteerableSystems" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Pushthebit">
+  <rdf:Description rdf:about="http://ddhub.no/Push-The-Bit">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/RotarySteerableSystems" />
     <rdfs:comment xml:lang="EN">
@@ -3137,7 +3149,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Casingwhiledrilling">
+  <rdf:Description rdf:about="http://ddhub.no/Casing-While-Drilling">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingEquipment" />
     <rdfs:comment xml:lang="EN">
@@ -3145,7 +3157,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DirectionalCasingWhileDrilling">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Casingwhiledrilling" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Casing-While-Drilling" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -3179,7 +3191,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Overshoot">
+  <rdf:Description rdf:about="http://ddhub.no/Overshot">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/FishingTools" />
     <rdfs:comment xml:lang="EN">
@@ -3224,6 +3236,12 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
   <rdf:Description rdf:about="http://ddhub.no/NearBitVibrationDampers">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/ActiveVibrationTools" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsolationSeal">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingEquipment" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -3431,7 +3449,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Electromagnetic">
+  <rdf:Description rdf:about="http://ddhub.no/Electro-Magnetic">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/EquipmentTelemetry" />
     <rdfs:comment xml:lang="EN">
@@ -3673,7 +3691,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/CoiledTubingEquipment">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Equipment" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/&lt;equipment&gt;" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -3722,6 +3740,36 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
   <rdf:Description rdf:about="http://ddhub.no/CtBhaComponents">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/CoiledTubingEquipment" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/WellcontrolStackEquipment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CoiledTubingEquipment" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GenericEquipment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/&lt;equipment&gt;" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GenericEquipmentGatevalve">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/GenericEquipment" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ThreeWayManifold">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/GenericEquipment" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ThreeWayValve">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/GenericEquipment" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -4070,6 +4118,506 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
   <rdf:Description rdf:about="http://ddhub.no/CavingsComponent">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/FormationSolidComponent" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MeasurableQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:comment xml:lang="EN">Represents a quantity that allows meaningful comparisons.
+Are related by a Quantity via the "IsObservableFrom" relation. 
+Context dependent: for example, Fluid density and Equivalent Circulating Density are represented as two different "Measurable quantities", although they both refer to the same base SI quantities. 
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/EarthMagneticFluxDensityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ElectricTensionQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ImageScaleQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SmallLengthQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RotationFrequencyQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/LargeVolumeQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PermeabilityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/YoungModulusQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/StandardProportionQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/StandardDimensionlessQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/StandardLengthQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/FluidShearRateQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/FluidShearStressQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RheologyConsistencyIndexQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SmallDiameterQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SmallTorqueQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SmallRotationFrequencyQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SmallProportionQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PorosityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/BlockVelocityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/CableDiameterQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/CapillaryPressureQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DepthQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingAccelerationQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingAngleVariationGradientQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingAngularVelocityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingAreaQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingAxialVelocityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingCompressibilityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingCurvatureQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingDensityGradientDepthQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingDensityGradientTemperatureQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingDensityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingDensityRateOfChangeQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingDrillStringMagneticFluxQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingDurationQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingDynamicViscosityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingElongationGradientQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingFluidVelocityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingForceGradientQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingForceQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingHeatTransferCoefficientQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingHydraulicConductivityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingInterfacialTensionQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingMassGradientQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingMassQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingMassRateQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingPlaneAngleQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingPressureGradientQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingPressureLossConstantQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingPressureQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingRandomWalkQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingRotationFrequencyRateOfChangeQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingSpecificHeatCapacityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingSpecificHeatCapacityTemperatureGradientQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingSurveyInstrumentAngleMagneticFluxDensityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingSurveyInstrumentAngularVelocityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingSurveyInstrumentReciprocalLengthQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingTemperatureGradientQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingTemperatureQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingTensionQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingThermalConductivityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingThermalConductivityTemperatureGradientQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingTorqueQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingVolumeQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingVolumetricFlowRateOfChangeQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingVolumetricFlowrateQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillStemMaterialStrengthQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/FormationResistivityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/FormationStrengthQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GammaRayQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GasShowQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GasVolumetricFlowRateQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HeightQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HookLoadQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/NozzleDiameterQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PipeDiameterQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoreDiameterQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoreSurfaceQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PositionQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RateOfPenetrationQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/WeightOnBitQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -4794,140 +5342,6 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MeasurableQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:comment xml:lang="EN">Represents a quantity that allows meaningful comparisons.
-Are related by a Quantity via the "IsObservableFrom" relation. 
-Context dependent: for example, Fluid density and Equivalent Circulating Density are represented as two different "Measurable quantities", although they both refer to the same base SI quantities. 
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/BitTorqueQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/BlockAccelerationQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/BlockPositionQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/BlockVelocityQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DepthQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DownholePressureQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/EMWQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/FlowRateQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/FluidDensityInQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/FluidTemperatureInQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/FormationPorosityQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/HookloadQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PumpRateQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Resistivity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/RockDensityQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SPPQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SurfaceRPMQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SurfaceTorqueQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/TopOfStringForceQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/TVDQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/WOBQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/MeasurableQuantityUnitAssociation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
@@ -4946,25 +5360,103 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AmountSubstanceQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AngleMagneticFluxDensityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AngleVariationGradientQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AngularVelocityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/AreaQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ElectricResistivityQuantity">
+  <rdf:Description rdf:about="http://ddhub.no/CompressibilityQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ForceQuantity">
+  <rdf:Description rdf:about="http://ddhub.no/CurvatureQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/FrequencyQuantity">
+  <rdf:Description rdf:about="http://ddhub.no/DensityGradientDepthQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DensityGradientTemperatureQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DensityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DensityRateOfChangeQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DimensionlessQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DynamicViscosityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ElectricalCapacitanceQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ElectricCurrentQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ElongationGradientQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/EnergyQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:comment xml:lang="EN">
@@ -4976,7 +5468,7 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MassDensityQuantity">
+  <rdf:Description rdf:about="http://ddhub.no/LuminousIntensityQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:comment xml:lang="EN">
@@ -4988,25 +5480,19 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MassRate">
+  <rdf:Description rdf:about="http://ddhub.no/PlaneAngleQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PowerQuantity">
+  <rdf:Description rdf:about="http://ddhub.no/RelativeTemperatureQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PressureQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ProportionQuantity">
+  <rdf:Description rdf:about="http://ddhub.no/SolidAngleQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:comment xml:lang="EN">
@@ -5018,7 +5504,25 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/TorqueQuantity">
+  <rdf:Description rdf:about="http://ddhub.no/TimeQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PressureQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/VolumetricFlowRateQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/VolumetricFlowRateOfChangeQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:comment xml:lang="EN">
@@ -5030,19 +5534,169 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ForceGradientQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ForceQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MaterialStrengthQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/FrequencyQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ProportionQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HeatTransferCoefficientQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GravitationalLoadQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HydraulicConductivityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/InterfacialTensionQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/VolumeQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/VolumetricRateQuantity">
+  <rdf:Description rdf:about="http://ddhub.no/MagneticFluxDensityQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/VolumetricFlowateRateOfChangeQuantity">
+  <rdf:Description rdf:about="http://ddhub.no/MassRateQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PressureGradientQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PressureLossConstantQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ResistivityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/FrequencyRateOfChangeQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RotationFrequencyRateOfChangeQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SpecificHeatCapacityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SpecificHeatCapacityTemperatureGradientQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TemperatureGradientQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TensionQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ThermalConductivityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MassGradientQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ThermalConductivityTemperatureGradientQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TorqueQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MagneticFluxQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RandomWalkQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/WaveNumberQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
     <rdfs:comment xml:lang="EN">
@@ -5447,19 +6101,19 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     <rdfs:comment xml:lang="EN">Indicates whether the fluid can flow from the right branch to the left branch though the junction
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PostiveUpward">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/OneDimensionalReferenceFrame" />
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#bool" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/MeaningfulPrecision">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/MeasurableQuantity" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PostiveUpward">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/OneDimensionalReferenceFrame" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#bool" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>

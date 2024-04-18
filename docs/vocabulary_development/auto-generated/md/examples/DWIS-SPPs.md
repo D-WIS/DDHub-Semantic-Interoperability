@@ -1,13 +1,13 @@
 # DWIS-SPPs
 - DrillingDataPoint:SPP_0
-- Standpipe:Standpipe_0
-- SPPQuantity:SPPQuantity_0
+- MudStandpipe:StandPipe_0
+- DrillingPressureQuantity:SPPQuantity_0
 - SensorUncertainty:SPPUncertainty_0
 - LowPassFilter:SPP_LowPassFilter
 - DataProvider:DrillingControlSystem_0
-- Location:StandpipeLocation
+- Location:StandPipeLocation
 - DerrickFloorVerticalLocation:DrillFloorLocation
-- DrillingDataPoint:StandpipeElevation
+- DrillingDataPoint:StandPipeElevation
 - VerticalDepthFrame:ElevationReferenceFrame
 - DrillingDataPoint:SPP_1
 - DataProvider:DrillingOptimizingService_0
@@ -21,22 +21,22 @@
 - SPP_1 BelongsToClass ComputedData
 - SPP_1 BelongsToClass Limit
 - SPP_0 IsProvidedBy DrillingControlSystem_0
-- SPP_0 IsHydraulicallyLocatedAt Standpipe_0
+- SPP_0 IsHydraulicallyLocatedAt StandPipe_0
 - SPP_0 IsOfMeasurableQuantity SPPQuantity_0
 - SPP_0 IsGeneratedBy SPP_LowPassFilter
 - SPP_0 HasUncertainty SPPUncertainty_0
-- SPP_0 HasElevationReference StandpipeLocation
-- SPP_0 IsPhysicallyLocatedAt StandpipeLocation
-- StandpipeLocation HasCoordinates StandpipeElevation
-- StandpipeLocation HasReferenceFrame ElevationReferenceFrame
+- SPP_0 HasElevationReference StandPipeLocation
+- SPP_0 IsPhysicallyLocatedAt StandPipeLocation
+- StandPipeLocation HasCoordinates StandPipeElevation
+- StandPipeLocation HasReferenceFrame ElevationReferenceFrame
 - ElevationReferenceFrame HasReferenceFrameOrigin DrillFloorLocation
 - SPP_1 IsProvidedBy DrillingOptimizingService_0
 - SPP_1 IsGeneratedBy MovingAverage1
-- SPP_1 IsHydraulicallyLocatedAt Standpipe_0
+- SPP_1 IsHydraulicallyLocatedAt StandPipe_0
 - SPP_1 IsOfMeasurableQuantity SPPQuantity_0
 - SPP_1 HasUncertainty SPP1_Uncertainty
-- SPP_1 HasElevationReference StandpipeLocation
-- SPP_1 IsPhysicallyLocatedAt StandpipeLocation
+- SPP_1 HasElevationReference StandPipeLocation
+- SPP_1 IsPhysicallyLocatedAt StandPipeLocation
 - InstantComputedSPP IsComputedBy SPPComputationUnit_0
 - InstantComputedSPP IsTransmissionInput MovingAverage1
 ```mermaid
@@ -44,14 +44,14 @@ flowchart TD
 	 classDef typeClass fill:#f96;
 	 classDef classClass fill:#9dd0ff;
 	SPP_0([SPP_0]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
-	Standpipe_0([Standpipe_0]) --> Standpipe[[Standpipe]]:::typeClass
-	SPPQuantity_0([SPPQuantity_0]) --> SPPQuantity[[SPPQuantity]]:::typeClass
+	StandPipe_0([StandPipe_0]) --> MudStandpipe[[MudStandpipe]]:::typeClass
+	SPPQuantity_0([SPPQuantity_0]) --> DrillingPressureQuantity[[DrillingPressureQuantity]]:::typeClass
 	SPPUncertainty_0([SPPUncertainty_0]) --> SensorUncertainty[[SensorUncertainty]]:::typeClass
 	SPP_LowPassFilter([SPP_LowPassFilter]) --> LowPassFilter[[LowPassFilter]]:::typeClass
 	DrillingControlSystem_0([DrillingControlSystem_0]) --> DataProvider[[DataProvider]]:::typeClass
-	StandpipeLocation([StandpipeLocation]) --> Location[[Location]]:::typeClass
+	StandPipeLocation([StandPipeLocation]) --> Location[[Location]]:::typeClass
 	DrillFloorLocation([DrillFloorLocation]) --> DerrickFloorVerticalLocation[[DerrickFloorVerticalLocation]]:::typeClass
-	StandpipeElevation([StandpipeElevation]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
+	StandPipeElevation([StandPipeElevation]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	ElevationReferenceFrame([ElevationReferenceFrame]) --> VerticalDepthFrame[[VerticalDepthFrame]]:::typeClass
 	SPP_1([SPP_1]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	DrillingOptimizingService_0([DrillingOptimizingService_0]) --> DataProvider[[DataProvider]]:::typeClass
@@ -60,22 +60,22 @@ flowchart TD
 	SPPComputationUnit_0([SPPComputationUnit_0]) --> ComputationUnit[[ComputationUnit]]:::typeClass
 	InstantComputedSPP([InstantComputedSPP]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	 SPP_0 -- IsProvidedBy --> DrillingControlSystem_0 
-	 SPP_0 -- IsHydraulicallyLocatedAt --> Standpipe_0 
+	 SPP_0 -- IsHydraulicallyLocatedAt --> StandPipe_0 
 	 SPP_0 -- IsOfMeasurableQuantity --> SPPQuantity_0 
 	 SPP_0 -- IsGeneratedBy --> SPP_LowPassFilter 
 	 SPP_0 -- HasUncertainty --> SPPUncertainty_0 
-	 SPP_0 -- HasElevationReference --> StandpipeLocation 
-	 SPP_0 -- IsPhysicallyLocatedAt --> StandpipeLocation 
-	 StandpipeLocation -- HasCoordinates --> StandpipeElevation 
-	 StandpipeLocation -- HasReferenceFrame --> ElevationReferenceFrame 
+	 SPP_0 -- HasElevationReference --> StandPipeLocation 
+	 SPP_0 -- IsPhysicallyLocatedAt --> StandPipeLocation 
+	 StandPipeLocation -- HasCoordinates --> StandPipeElevation 
+	 StandPipeLocation -- HasReferenceFrame --> ElevationReferenceFrame 
 	 ElevationReferenceFrame -- HasReferenceFrameOrigin --> DrillFloorLocation 
 	 SPP_1 -- IsProvidedBy --> DrillingOptimizingService_0 
 	 SPP_1 -- IsGeneratedBy --> MovingAverage1 
-	 SPP_1 -- IsHydraulicallyLocatedAt --> Standpipe_0 
+	 SPP_1 -- IsHydraulicallyLocatedAt --> StandPipe_0 
 	 SPP_1 -- IsOfMeasurableQuantity --> SPPQuantity_0 
 	 SPP_1 -- HasUncertainty --> SPP1_Uncertainty 
-	 SPP_1 -- HasElevationReference --> StandpipeLocation 
-	 SPP_1 -- IsPhysicallyLocatedAt --> StandpipeLocation 
+	 SPP_1 -- HasElevationReference --> StandPipeLocation 
+	 SPP_1 -- IsPhysicallyLocatedAt --> StandPipeLocation 
 	 InstantComputedSPP -- IsComputedBy --> SPPComputationUnit_0 
 	 InstantComputedSPP -- IsTransmissionInput --> MovingAverage1 
 	 SPP_0 -- BelongsToClass --> SPP((SPP)):::classClass

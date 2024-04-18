@@ -47,6 +47,7 @@ this is the part associated to the description of external end-points.
 - Description: 
 this part refers to the hydraulic circuit, and should only contain the "abstract" or conceptual part of the vocabulary. Additional nouns coming from the drilling equipment category will be used when constructing the semantic graphs.
 
+## MeasurableQuantityTypes<!-- DEFINITION SET HEADER -->
 ## MechanicalModel<!-- DEFINITION SET HEADER -->
 - Description: 
 specialized vocabulary for the modelling of the drilling mechanics. Covers in particular the so-called torque and drag models
@@ -67,6 +68,7 @@ this category contains the vocabulary necessary to specify the location of vario
 - Description: 
 quantities and units
 
+## QuantityTypes<!-- DEFINITION SET HEADER -->
 ## SignalPrototypes<!-- DEFINITION SET HEADER -->
 - Description: 
 this is description set for specialization of signa prototypes.
@@ -1349,7 +1351,7 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingDataSemantics
 - Examples:
-## Equipment <!-- NOUN -->
+## <equipment> <!-- NOUN -->
 - Display name: <equipment>
 - Parent class: [DWISNoun](#DWISNoun)
 - Description: 
@@ -1358,7 +1360,35 @@ Data structure used to store the streaming drilling data.
 - Examples:
 ## RigEquipment <!-- NOUN -->
 - Display name: <Rig Equipment>
-- Parent class: [Equipment](#Equipment)
+- Parent class: [<equipment>](#<equipment>)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## PowerGenerationSystem <!-- NOUN -->
+- Display name: Power Generation System
+- Parent class: [RigEquipment](#RigEquipment)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## PowerGenerators <!-- NOUN -->
+- Display name: Power Generators
+- Parent class: [PowerGenerationSystem](#PowerGenerationSystem)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## ElectricalControlSystem <!-- NOUN -->
+- Display name: Electrical Control System
+- Parent class: [PowerGenerationSystem](#PowerGenerationSystem)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## PowerScrSystem <!-- NOUN -->
+- Display name: Power SCR System
+- Parent class: [PowerGenerationSystem](#PowerGenerationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -1391,36 +1421,43 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Double <!-- NOUN -->
-- Display name: Double
+## ConventionalDerrick <!-- NOUN -->
+- Display name: Conventional Derrick
 - Parent class: [Derrick](#Derrick)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Quadruple <!-- NOUN -->
-- Display name: Quadruple
+## SlantDerrick <!-- NOUN -->
+- Display name: Slant Derrick
 - Parent class: [Derrick](#Derrick)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Slant <!-- NOUN -->
-- Display name: Slant
+## QuadristandDerrick <!-- NOUN -->
+- Display name: Quadri-Stand Derrick
 - Parent class: [Derrick](#Derrick)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Triple <!-- NOUN -->
-- Display name: Triple
+## TripleStandDerrick <!-- NOUN -->
+- Display name: Triple Stand Derrick
 - Parent class: [Derrick](#Derrick)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## DerrickSingle <!-- NOUN -->
-- Display name: Single
+## DoubleStandDerrick <!-- NOUN -->
+- Display name: Double Stand Derrick
+- Parent class: [Derrick](#Derrick)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## SingleJointDerrick <!-- NOUN -->
+- Display name: Single Joint Derrick
 - Parent class: [Derrick](#Derrick)
 - Description: 
 
@@ -1433,15 +1470,22 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## StandardElectrical <!-- NOUN -->
-- Display name: Standard Electrical
+## StandardElectricalDrawworks <!-- NOUN -->
+- Display name: Standard Electrical Drawworks
 - Parent class: [Drawworks](#Drawworks)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Mechanical <!-- NOUN -->
-- Display name: Mechanical
+## MechanicalDrawworks <!-- NOUN -->
+- Display name: Mechanical Drawworks
+- Parent class: [Drawworks](#Drawworks)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## DieselElectricalDrawworks <!-- NOUN -->
+- Display name: Diesel Electrical Drawworks
 - Parent class: [Drawworks](#Drawworks)
 - Description: 
 
@@ -1449,13 +1493,6 @@ Data structure used to store the streaming drilling data.
 - Examples:
 ## RamRig <!-- NOUN -->
 - Display name: Ram Rig
-- Parent class: [Drawworks](#Drawworks)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## DieselElectrical <!-- NOUN -->
-- Display name: Diesel Electrical
 - Parent class: [Drawworks](#Drawworks)
 - Description: 
 
@@ -1601,15 +1638,8 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## RotaryBushing <!-- NOUN -->
-- Display name: Rotary Bushing
-- Parent class: [RotaryTable](#RotaryTable)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## WearBushing <!-- NOUN -->
-- Display name: Wear Bushing
+## RotaryTableBushings <!-- NOUN -->
+- Display name: Rotary Table Bushings
 - Parent class: [RotaryTable](#RotaryTable)
 - Description: 
 
@@ -1653,6 +1683,13 @@ Data structure used to store the streaming drilling data.
 ## WellControlSystem <!-- NOUN -->
 - Display name: Well Control System
 - Parent class: [RigEquipment](#RigEquipment)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## BellNipple <!-- NOUN -->
+- Display name: Bell Nipple
+- Parent class: [WellControlSystem](#WellControlSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -1727,6 +1764,20 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
+## AdapterSpool <!-- NOUN -->
+- Display name: Adapter Spool
+- Parent class: [WellControlSystem](#WellControlSystem)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## SpacingSpool <!-- NOUN -->
+- Display name: Spacing Spool
+- Parent class: [WellControlSystem](#WellControlSystem)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
 ## ChokeManifold <!-- NOUN -->
 - Display name: Choke Manifold
 - Parent class: [WellControlSystem](#WellControlSystem)
@@ -1741,7 +1792,7 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## GateValve <!-- NOUN -->
+## ChokeValveGatevalve <!-- NOUN -->
 - Display name: Gate Valve
 - Parent class: [ChokeValve](#ChokeValve)
 - Description: 
@@ -1762,6 +1813,41 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
+## ControlLines <!-- NOUN -->
+- Display name: Control Lines
+- Parent class: [WellControlSystem](#WellControlSystem)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## Diverter <!-- NOUN -->
+- Display name: Diverter
+- Parent class: [WellControlSystem](#WellControlSystem)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## DiverterLine <!-- NOUN -->
+- Display name: Diverter Line
+- Parent class: [Diverter](#Diverter)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## DiverterLineHanger <!-- NOUN -->
+- Display name: Diverter Line Hanger
+- Parent class: [Diverter](#Diverter)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## VentOverboardLine <!-- NOUN -->
+- Display name: Vent (Overboard) Line
+- Parent class: [Diverter](#Diverter)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
 ## ControlManifold <!-- NOUN -->
 - Display name: Control Manifold
 - Parent class: [WellControlSystem](#WellControlSystem)
@@ -1769,7 +1855,7 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Ibop <!-- NOUN -->
+## IBOP <!-- NOUN -->
 - Display name: IBOP
 - Parent class: [WellControlSystem](#WellControlSystem)
 - Description: 
@@ -1818,121 +1904,149 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## MudSystem <!-- NOUN -->
-- Display name: Mud System
+## WellheadXmasTree <!-- NOUN -->
+- Display name: Wellhead (Xmas) Tree
+- Parent class: [WellControlSystem](#WellControlSystem)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## CirculationSystem <!-- NOUN -->
+- Display name: Circulation System
 - Parent class: [RigEquipment](#RigEquipment)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Pumps <!-- NOUN -->
-- Display name: Pumps
-- Parent class: [MudSystem](#MudSystem)
+## MudPump <!-- NOUN -->
+- Display name: Mud Pump
+- Parent class: [CirculationSystem](#CirculationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## PistonMudPumps <!-- NOUN -->
-- Display name: Piston Mud Pumps
-- Parent class: [Pumps](#Pumps)
+## PistonMudPump <!-- NOUN -->
+- Display name: Piston Mud Pump
+- Parent class: [MudPump](#MudPump)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## PulsationDampener <!-- NOUN -->
 - Display name: Pulsation Dampener
-- Parent class: [PistonMudPumps](#PistonMudPumps)
+- Parent class: [PistonMudPump](#PistonMudPump)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## Piston <!-- NOUN -->
 - Display name: Piston
-- Parent class: [PistonMudPumps](#PistonMudPumps)
+- Parent class: [PistonMudPump](#PistonMudPump)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## Liner <!-- NOUN -->
 - Display name: Liner
-- Parent class: [PistonMudPumps](#PistonMudPumps)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## Efficiency <!-- NOUN -->
-- Display name: Efficiency
-- Parent class: [PistonMudPumps](#PistonMudPumps)
+- Parent class: [PistonMudPump](#PistonMudPump)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## Cylinders <!-- NOUN -->
 - Display name: Cylinders
-- Parent class: [PistonMudPumps](#PistonMudPumps)
+- Parent class: [PistonMudPump](#PistonMudPump)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## Action <!-- NOUN -->
 - Display name: Action
-- Parent class: [PistonMudPumps](#PistonMudPumps)
+- Parent class: [PistonMudPump](#PistonMudPump)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## ActionSingle <!-- NOUN -->
-- Display name: Single
+## SingleActing <!-- NOUN -->
+- Display name: Single Acting
 - Parent class: [Action](#Action)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Dual <!-- NOUN -->
-- Display name: Dual
+## DualActing <!-- NOUN -->
+- Display name: Dual Acting
 - Parent class: [Action](#Action)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## CentrifugalMudPumps <!-- NOUN -->
-- Display name: Centrifugal Mud Pumps
-- Parent class: [Pumps](#Pumps)
+## PlungerMudPump <!-- NOUN -->
+- Display name: Plunger Mud Pump
+- Parent class: [MudPump](#MudPump)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## BoosterPump <!-- NOUN -->
-- Display name: Booster Pump
-- Parent class: [Pumps](#Pumps)
+## CentrifugalMudPump <!-- NOUN -->
+- Display name: Centrifugal Mud Pump
+- Parent class: [MudPump](#MudPump)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## BackPressurePump <!-- NOUN -->
-- Display name: Back Pressure Pump
-- Parent class: [Pumps](#Pumps)
+## HydraulicMudPump <!-- NOUN -->
+- Display name: Hydraulic Mud Pump
+- Parent class: [MudPump](#MudPump)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## DiaphragmMudPump <!-- NOUN -->
+- Display name: Diaphragm Mud Pump
+- Parent class: [MudPump](#MudPump)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## PeristalticMudPump <!-- NOUN -->
+- Display name: Peristaltic Mud Pump
+- Parent class: [MudPump](#MudPump)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## RiserLiftPump <!-- NOUN -->
+- Display name: Riser Lift Pump
+- Parent class: [CirculationSystem](#CirculationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## FillPump <!-- NOUN -->
 - Display name: Fill Pump
-- Parent class: [Pumps](#Pumps)
+- Parent class: [CirculationSystem](#CirculationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## LiftPump <!-- NOUN -->
-- Display name: Lift Pump
-- Parent class: [Pumps](#Pumps)
+## BackPressurePump <!-- NOUN -->
+- Display name: Back Pressure Pump
+- Parent class: [CirculationSystem](#CirculationSystem)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## BoosterPump <!-- NOUN -->
+- Display name: Booster Pump
+- Parent class: [CirculationSystem](#CirculationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## DrillingFluid <!-- NOUN -->
 - Display name: Drilling Fluid
-- Parent class: [MudSystem](#MudSystem)
+- Parent class: [CirculationSystem](#CirculationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -1988,7 +2102,7 @@ Data structure used to store the streaming drilling data.
 - Examples:
 ## MudPits <!-- NOUN -->
 - Display name: Mud Pits
-- Parent class: [MudSystem](#MudSystem)
+- Parent class: [CirculationSystem](#CirculationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -2035,8 +2149,8 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Storage <!-- NOUN -->
-- Display name: Storage
+## StorageTank <!-- NOUN -->
+- Display name: Storage Tank
 - Parent class: [MudPits](#MudPits)
 - Description: 
 
@@ -2065,41 +2179,41 @@ Data structure used to store the streaming drilling data.
 - Examples:
 ## ShaleShakers <!-- NOUN -->
 - Display name: Shale Shakers
-- Parent class: [MudSystem](#MudSystem)
+- Parent class: [CirculationSystem](#CirculationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Hopper <!-- NOUN -->
-- Display name: Hopper
+## ShakerHopper <!-- NOUN -->
+- Display name: Shaker Hopper
 - Parent class: [ShaleShakers](#ShaleShakers)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Decks <!-- NOUN -->
-- Display name: Decks
+## ShakerDecks <!-- NOUN -->
+- Display name: Shaker Decks
 - Parent class: [ShaleShakers](#ShaleShakers)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Screens <!-- NOUN -->
-- Display name: Screens
-- Parent class: [Decks](#Decks)
+## ShakerScreens <!-- NOUN -->
+- Display name: Shaker Screens
+- Parent class: [ShakerDecks](#ShakerDecks)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## MeshSize <!-- NOUN -->
-- Display name: Mesh Size
-- Parent class: [Decks](#Decks)
+## ShakerScreenMeshSize <!-- NOUN -->
+- Display name: Shaker Screen Mesh Size
+- Parent class: [ShakerDecks](#ShakerDecks)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## CascadeLevels <!-- NOUN -->
-- Display name: Cascade Levels
+## ShakerCascadeLevels <!-- NOUN -->
+- Display name: Shaker Cascade Levels
 - Parent class: [ShaleShakers](#ShaleShakers)
 - Description: 
 
@@ -2107,14 +2221,14 @@ Data structure used to store the streaming drilling data.
 - Examples:
 ## Centrifuge <!-- NOUN -->
 - Display name: Centrifuge
-- Parent class: [MudSystem](#MudSystem)
+- Parent class: [CirculationSystem](#CirculationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## Degasser <!-- NOUN -->
 - Display name: Degasser
-- Parent class: [MudSystem](#MudSystem)
+- Parent class: [CirculationSystem](#CirculationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -2135,42 +2249,56 @@ Data structure used to store the streaming drilling data.
 - Examples:
 ## AfmAutofluidMeasSkid <!-- NOUN -->
 - Display name: AFM (Auto-Fluid Meas.) Skid
-- Parent class: [MudSystem](#MudSystem)
+- Parent class: [CirculationSystem](#CirculationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## Hydrocyclones <!-- NOUN -->
 - Display name: Hydrocyclones
-- Parent class: [MudSystem](#MudSystem)
+- Parent class: [CirculationSystem](#CirculationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## PowerGenerationSystem <!-- NOUN -->
-- Display name: Power Generation System
-- Parent class: [RigEquipment](#RigEquipment)
+## MudLines <!-- NOUN -->
+- Display name: Mud Lines
+- Parent class: [CirculationSystem](#CirculationSystem)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Generators <!-- NOUN -->
-- Display name: Generators
-- Parent class: [PowerGenerationSystem](#PowerGenerationSystem)
+## MudStandpipeManifold <!-- NOUN -->
+- Display name: Mud Standpipe Manifold
+- Parent class: [MudLines](#MudLines)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## ElectricalControlSystem <!-- NOUN -->
-- Display name: Electrical Control System
-- Parent class: [PowerGenerationSystem](#PowerGenerationSystem)
+## MudStandpipe <!-- NOUN -->
+- Display name: Mud Standpipe
+- Parent class: [MudLines](#MudLines)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## ScrSystem <!-- NOUN -->
-- Display name: SCR System
-- Parent class: [PowerGenerationSystem](#PowerGenerationSystem)
+## MudHose <!-- NOUN -->
+- Display name: Mud Hose
+- Parent class: [MudLines](#MudLines)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## Gooseneck <!-- NOUN -->
+- Display name: Gooseneck
+- Parent class: [MudLines](#MudLines)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## FlowLine <!-- NOUN -->
+- Display name: Flow Line
+- Parent class: [MudLines](#MudLines)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -2238,6 +2366,13 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
+## BoosterLine <!-- NOUN -->
+- Display name: Booster Line
+- Parent class: [MarineSystem](#MarineSystem)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
 ## SlipJoint <!-- NOUN -->
 - Display name: Slip Joint
 - Parent class: [MarineSystem](#MarineSystem)
@@ -2287,7 +2422,7 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Rov <!-- NOUN -->
+## ROV <!-- NOUN -->
 - Display name: ROV
 - Parent class: [MarineSystem](#MarineSystem)
 - Description: 
@@ -2364,85 +2499,57 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## DrillFloorEquipment <!-- NOUN -->
-- Display name: Drill Floor Equipment
+## DrillFloorSystems <!-- NOUN -->
+- Display name: Drill Floor Systems
 - Parent class: [RigEquipment](#RigEquipment)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Elevator <!-- NOUN -->
-- Display name: Elevator
-- Parent class: [DrillFloorEquipment](#DrillFloorEquipment)
+## DrillFloorStructure <!-- NOUN -->
+- Display name: Drill Floor Structure
+- Parent class: [DrillFloorSystems](#DrillFloorSystems)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Bails <!-- NOUN -->
-- Display name: Bails
-- Parent class: [DrillFloorEquipment](#DrillFloorEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## ManualPipeTongs <!-- NOUN -->
-- Display name: Manual Pipe Tongs
-- Parent class: [DrillFloorEquipment](#DrillFloorEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## PowerTongs <!-- NOUN -->
-- Display name: Power Tongs
-- Parent class: [DrillFloorEquipment](#DrillFloorEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## CasingTongs <!-- NOUN -->
-- Display name: Casing Tongs
-- Parent class: [DrillFloorEquipment](#DrillFloorEquipment)
+## DogHouse <!-- NOUN -->
+- Display name: Dog House
+- Parent class: [DrillFloorStructure](#DrillFloorStructure)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## RigFloor <!-- NOUN -->
 - Display name: Rig Floor
-- Parent class: [DrillFloorEquipment](#DrillFloorEquipment)
+- Parent class: [DrillFloorStructure](#DrillFloorStructure)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Slips <!-- NOUN -->
-- Display name: Slips
-- Parent class: [DrillFloorEquipment](#DrillFloorEquipment)
+## Mousehole <!-- NOUN -->
+- Display name: Mousehole
+- Parent class: [DrillFloorStructure](#DrillFloorStructure)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## ManualSlips <!-- NOUN -->
-- Display name: Manual Slips
-- Parent class: [Slips](#Slips)
+## DrillFloorSubstructure <!-- NOUN -->
+- Display name: Drill Floor Substructure
+- Parent class: [DrillFloorStructure](#DrillFloorStructure)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## PowerSlips <!-- NOUN -->
-- Display name: Power Slips
-- Parent class: [Slips](#Slips)
+## DrillFloorEquipment <!-- NOUN -->
+- Display name: Drill Floor Equipment
+- Parent class: [DrillFloorSystems](#DrillFloorSystems)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## PneumaticSlips <!-- NOUN -->
-- Display name: Pneumatic Slips
-- Parent class: [Slips](#Slips)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## RotatingControlDeviceRcd <!-- NOUN -->
-- Display name: Rotating Control Device (RCD)
+## DrillersConsole <!-- NOUN -->
+- Display name: Drillers Console
 - Parent class: [DrillFloorEquipment](#DrillFloorEquipment)
 - Description: 
 
@@ -2455,15 +2562,78 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## StabbingGuide <!-- NOUN -->
-- Display name: Stabbing Guide
+## DrillPipeElevator <!-- NOUN -->
+- Display name: Drill Pipe Elevator
 - Parent class: [DrillFloorEquipment](#DrillFloorEquipment)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Mousehole <!-- NOUN -->
-- Display name: Mousehole
+## ElevatorBailsLinks <!-- NOUN -->
+- Display name: Elevator Bails / Links
+- Parent class: [DrillFloorEquipment](#DrillFloorEquipment)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## DrillPipeTongs <!-- NOUN -->
+- Display name: Drill Pipe Tongs
+- Parent class: [DrillFloorEquipment](#DrillFloorEquipment)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## ManualPipeTongs <!-- NOUN -->
+- Display name: Manual Pipe Tongs
+- Parent class: [DrillPipeTongs](#DrillPipeTongs)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## PowerPipeTongs <!-- NOUN -->
+- Display name: Power Pipe Tongs
+- Parent class: [DrillPipeTongs](#DrillPipeTongs)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## CasingTongs <!-- NOUN -->
+- Display name: Casing Tongs
+- Parent class: [DrillPipeTongs](#DrillPipeTongs)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## RotarySlips <!-- NOUN -->
+- Display name: Rotary Slips
+- Parent class: [DrillFloorEquipment](#DrillFloorEquipment)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## ManualSlips <!-- NOUN -->
+- Display name: Manual Slips
+- Parent class: [RotarySlips](#RotarySlips)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## PowerSlips <!-- NOUN -->
+- Display name: Power Slips
+- Parent class: [RotarySlips](#RotarySlips)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## PneumaticSlips <!-- NOUN -->
+- Display name: Pneumatic Slips
+- Parent class: [RotarySlips](#RotarySlips)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## StabbingGuide <!-- NOUN -->
+- Display name: Stabbing Guide
 - Parent class: [DrillFloorEquipment](#DrillFloorEquipment)
 - Description: 
 
@@ -2476,15 +2646,8 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## DogHouse <!-- NOUN -->
-- Display name: Dog House
-- Parent class: [DrillFloorEquipment](#DrillFloorEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## DrillersConsole <!-- NOUN -->
-- Display name: Drillers Console
+## RotatingControlDeviceRcd <!-- NOUN -->
+- Display name: Rotating Control Device (RCD)
 - Parent class: [DrillFloorEquipment](#DrillFloorEquipment)
 - Description: 
 
@@ -2499,6 +2662,13 @@ Data structure used to store the streaming drilling data.
 - Examples:
 ## DollyRail <!-- NOUN -->
 - Display name: Dolly Rail
+- Parent class: [DrillFloorEquipment](#DrillFloorEquipment)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## SlickLine <!-- NOUN -->
+- Display name: Slick Line
 - Parent class: [DrillFloorEquipment](#DrillFloorEquipment)
 - Description: 
 
@@ -2616,146 +2786,6 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## SurfaceEquipment <!-- NOUN -->
-- Display name: Surface Equipment
-- Parent class: [RigEquipment](#RigEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## AnnulusTerminator <!-- NOUN -->
-- Display name: Annulus Terminator
-- Parent class: [SurfaceEquipment](#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## BellNipple <!-- NOUN -->
-- Display name: Bell Nipple
-- Parent class: [AnnulusTerminator](#AnnulusTerminator)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## Diverter <!-- NOUN -->
-- Display name: Diverter
-- Parent class: [AnnulusTerminator](#AnnulusTerminator)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## Wellhead <!-- NOUN -->
-- Display name: Wellhead
-- Parent class: [SurfaceEquipment](#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## Overshot <!-- NOUN -->
-- Display name: Overshot
-- Parent class: [SurfaceEquipment](#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## SpoolAdapter <!-- NOUN -->
-- Display name: Spool Adapter
-- Parent class: [SurfaceEquipment](#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## ControlLines <!-- NOUN -->
-- Display name: Control Lines
-- Parent class: [SurfaceEquipment](#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## BoosterLine <!-- NOUN -->
-- Display name: Booster Line
-- Parent class: [SurfaceEquipment](#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## SurfaceLines <!-- NOUN -->
-- Display name: Surface lines
-- Parent class: [SurfaceEquipment](#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## StandpipeManifold <!-- NOUN -->
-- Display name: Standpipe Manifold
-- Parent class: [SurfaceLines](#SurfaceLines)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## Standpipe <!-- NOUN -->
-- Display name: Standpipe
-- Parent class: [SurfaceLines](#SurfaceLines)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## MudHose <!-- NOUN -->
-- Display name: Mud Hose
-- Parent class: [SurfaceLines](#SurfaceLines)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## Gooseneck <!-- NOUN -->
-- Display name: Gooseneck
-- Parent class: [SurfaceLines](#SurfaceLines)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## OverboardLines <!-- NOUN -->
-- Display name: Overboard Lines
-- Parent class: [SurfaceEquipment](#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## FlowLine <!-- NOUN -->
-- Display name: Flow Line
-- Parent class: [SurfaceEquipment](#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## XmasTree <!-- NOUN -->
-- Display name: Xmas Tree
-- Parent class: [SurfaceEquipment](#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## DiverterLineHangers <!-- NOUN -->
-- Display name: Diverter Line Hangers
-- Parent class: [SurfaceEquipment](#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## IsolationSeal <!-- NOUN -->
-- Display name: Isolation Seal
-- Parent class: [SurfaceEquipment](#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
-## SlickLine <!-- NOUN -->
-- Display name: Slick Line
-- Parent class: [SurfaceEquipment](#SurfaceEquipment)
-- Description: 
-
-- Definition set: DrillingEquipment
-- Examples:
 ## SafetyEquipment <!-- NOUN -->
 - Display name: Safety Equipment
 - Parent class: [RigEquipment](#RigEquipment)
@@ -2826,16 +2856,16 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Tubulars <!-- NOUN -->
+## <Tubulars> <!-- NOUN -->
 - Display name: <Tubulars>
-- Parent class: [Equipment](#Equipment)
+- Parent class: [<equipment>](#<equipment>)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## DrillString <!-- NOUN -->
 - Display name: Drill String
-- Parent class: [Tubulars](#Tubulars)
+- Parent class: [<Tubulars>](#<Tubulars>)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -2910,35 +2940,35 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Dynamic <!-- NOUN -->
+## dynamic <!-- NOUN -->
 - Display name: dynamic
 - Parent class: [BladeShape](#BladeShape)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Melon <!-- NOUN -->
+## melon <!-- NOUN -->
 - Display name: melon
 - Parent class: [BladeShape](#BladeShape)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Spiral <!-- NOUN -->
+## spiral <!-- NOUN -->
 - Display name: spiral
 - Parent class: [BladeShape](#BladeShape)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Straight <!-- NOUN -->
+## straight <!-- NOUN -->
 - Display name: straight
 - Parent class: [BladeShape](#BladeShape)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Variable <!-- NOUN -->
+## variable <!-- NOUN -->
 - Display name: variable
 - Parent class: [BladeShape](#BladeShape)
 - Description: 
@@ -2952,21 +2982,21 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Clampon <!-- NOUN -->
+## clamp-on <!-- NOUN -->
 - Display name: clamp-on
 - Parent class: [BladeType](#BladeType)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Integral <!-- NOUN -->
+## integral <!-- NOUN -->
 - Display name: integral
 - Parent class: [BladeType](#BladeType)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Sleeve <!-- NOUN -->
+## sleeve <!-- NOUN -->
 - Display name: sleeve
 - Parent class: [BladeType](#BladeType)
 - Description: 
@@ -2994,7 +3024,7 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Nonmagnetic <!-- NOUN -->
+## Non-Magnetic <!-- NOUN -->
 - Display name: Non-Magnetic
 - Parent class: [Stabilizers](#Stabilizers)
 - Description: 
@@ -3008,7 +3038,7 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Nonrotating <!-- NOUN -->
+## Non-Rotating <!-- NOUN -->
 - Display name: Non-Rotating
 - Parent class: [Stabilizers](#Stabilizers)
 - Description: 
@@ -3057,98 +3087,98 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subbent <!-- NOUN -->
+## sub-bent <!-- NOUN -->
 - Display name: sub-bent
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subbit <!-- NOUN -->
+## sub-bit <!-- NOUN -->
 - Display name: sub-bit
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subbumper <!-- NOUN -->
+## sub-bumper <!-- NOUN -->
 - Display name: sub-bumper
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subcatcher <!-- NOUN -->
+## sub-catcher <!-- NOUN -->
 - Display name: sub-catcher
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subcirculation <!-- NOUN -->
+## sub-circulation <!-- NOUN -->
 - Display name: sub-circulation
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subcone <!-- NOUN -->
+## sub-cone <!-- NOUN -->
 - Display name: sub-cone
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subcrossover <!-- NOUN -->
+## sub-crossover <!-- NOUN -->
 - Display name: sub-crossover
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subdart <!-- NOUN -->
+## sub-dart <!-- NOUN -->
 - Display name: sub-dart
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subfilter <!-- NOUN -->
+## sub-filter <!-- NOUN -->
 - Display name: sub-filter
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subfloat <!-- NOUN -->
+## sub-float <!-- NOUN -->
 - Display name: sub-float
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subjetting <!-- NOUN -->
+## sub-jetting <!-- NOUN -->
 - Display name: sub-jetting
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subjunk <!-- NOUN -->
+## sub-junk <!-- NOUN -->
 - Display name: sub-junk
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Suborienting <!-- NOUN -->
+## sub-orienting <!-- NOUN -->
 - Display name: sub-orienting
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subported <!-- NOUN -->
+## sub-ported <!-- NOUN -->
 - Display name: sub-ported
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
@@ -3169,21 +3199,21 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subrestrictor <!-- NOUN -->
+## sub-restrictor <!-- NOUN -->
 - Display name: sub-restrictor
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subsaver <!-- NOUN -->
+## sub-saver <!-- NOUN -->
 - Display name: sub-saver
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Subshock <!-- NOUN -->
+## sub-shock <!-- NOUN -->
 - Display name: sub-shock
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
@@ -3197,7 +3227,7 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Substop <!-- NOUN -->
+## sub-stop <!-- NOUN -->
 - Display name: sub-stop
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
@@ -3206,7 +3236,7 @@ Data structure used to store the streaming drilling data.
 - Examples:
 ## CasingString <!-- NOUN -->
 - Display name: Casing String
-- Parent class: [Tubulars](#Tubulars)
+- Parent class: [<Tubulars>](#<Tubulars>)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -3253,28 +3283,28 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Box <!-- NOUN -->
+## box <!-- NOUN -->
 - Display name: box
 - Parent class: [Connection](#Connection)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Flange <!-- NOUN -->
+## flange <!-- NOUN -->
 - Display name: flange
 - Parent class: [Connection](#Connection)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Mandrel <!-- NOUN -->
+## mandrel <!-- NOUN -->
 - Display name: mandrel
 - Parent class: [Connection](#Connection)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Pin <!-- NOUN -->
+## pin <!-- NOUN -->
 - Display name: pin
 - Parent class: [Connection](#Connection)
 - Description: 
@@ -3288,7 +3318,7 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Selfsealingthreaded <!-- NOUN -->
+## self-sealing-threaded <!-- NOUN -->
 - Display name: self-sealing-threaded
 - Parent class: [Connection](#Connection)
 - Description: 
@@ -3297,35 +3327,35 @@ Data structure used to store the streaming drilling data.
 - Examples:
 ## Expandables <!-- NOUN -->
 - Display name: Expandables
-- Parent class: [Tubulars](#Tubulars)
+- Parent class: [<Tubulars>](#<Tubulars>)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## TubingString <!-- NOUN -->
 - Display name: Tubing String
-- Parent class: [Tubulars](#Tubulars)
+- Parent class: [<Tubulars>](#<Tubulars>)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## ScreenString <!-- NOUN -->
 - Display name: Screen String
-- Parent class: [Tubulars](#Tubulars)
+- Parent class: [<Tubulars>](#<Tubulars>)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## TubularConnection <!-- NOUN -->
 - Display name: Tubular Connection
-- Parent class: [Tubulars](#Tubulars)
+- Parent class: [<Tubulars>](#<Tubulars>)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## TubularConfiguration <!-- NOUN -->
 - Display name: Tubular Configuration
-- Parent class: [Tubulars](#Tubulars)
+- Parent class: [<Tubulars>](#<Tubulars>)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -3344,14 +3374,14 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Boxbox <!-- NOUN -->
+## Box-Box <!-- NOUN -->
 - Display name: Box-Box
 - Parent class: [TubularConfiguration](#TubularConfiguration)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Pinpin <!-- NOUN -->
+## Pin-Pin <!-- NOUN -->
 - Display name: Pin-Pin
 - Parent class: [TubularConfiguration](#TubularConfiguration)
 - Description: 
@@ -3360,7 +3390,7 @@ Data structure used to store the streaming drilling data.
 - Examples:
 ## DownholeEquipment <!-- NOUN -->
 - Display name: <Downhole Equipment>
-- Parent class: [Equipment](#Equipment)
+- Parent class: [<equipment>](#<equipment>)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -3393,7 +3423,7 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Milltooth <!-- NOUN -->
+## MillTooth <!-- NOUN -->
 - Display name: MillTooth
 - Parent class: [RollingCutter](#RollingCutter)
 - Description: 
@@ -3414,7 +3444,7 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Pdc <!-- NOUN -->
+## PDC <!-- NOUN -->
 - Display name: PDC
 - Parent class: [FixedCutter](#FixedCutter)
 - Description: 
@@ -3617,14 +3647,14 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Pointthebit <!-- NOUN -->
+## Point-The-Bit <!-- NOUN -->
 - Display name: Point-The-Bit
 - Parent class: [RotarySteerableSystems](#RotarySteerableSystems)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Pushthebit <!-- NOUN -->
+## Push-The-Bit <!-- NOUN -->
 - Display name: Push-The-Bit
 - Parent class: [RotarySteerableSystems](#RotarySteerableSystems)
 - Description: 
@@ -3694,7 +3724,7 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Casingwhiledrilling <!-- NOUN -->
+## Casing-While-Drilling <!-- NOUN -->
 - Display name: Casing-While-Drilling
 - Parent class: [DrillingEquipment](#DrillingEquipment)
 - Description: 
@@ -3703,7 +3733,7 @@ Data structure used to store the streaming drilling data.
 - Examples:
 ## DirectionalCasingWhileDrilling <!-- NOUN -->
 - Display name: Directional Casing While Drilling
-- Parent class: [Casingwhiledrilling](#Casingwhiledrilling)
+- Parent class: [Casing-While-Drilling](#Casing-While-Drilling)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -3743,8 +3773,8 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Overshoot <!-- NOUN -->
-- Display name: Overshoot
+## Overshot <!-- NOUN -->
+- Display name: Overshot
 - Parent class: [FishingTools](#FishingTools)
 - Description: 
 
@@ -3795,6 +3825,13 @@ Data structure used to store the streaming drilling data.
 ## NearBitVibrationDampers <!-- NOUN -->
 - Display name: Near Bit Vibration Dampers
 - Parent class: [ActiveVibrationTools](#ActiveVibrationTools)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## IsolationSeal <!-- NOUN -->
+- Display name: Isolation Seal
+- Parent class: [DrillingEquipment](#DrillingEquipment)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -4037,7 +4074,7 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Electromagnetic <!-- NOUN -->
+## Electro-Magnetic <!-- NOUN -->
 - Display name: Electro-Magnetic
 - Parent class: [EquipmentTelemetry](#EquipmentTelemetry)
 - Description: 
@@ -4319,7 +4356,7 @@ Data structure used to store the streaming drilling data.
 - Examples:
 ## CoiledTubingEquipment <!-- NOUN -->
 - Display name: <Coiled Tubing Equipment>
-- Parent class: [Equipment](#Equipment)
+- Parent class: [<equipment>](#<equipment>)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -4380,16 +4417,37 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## MudStandpipeManifold <!-- NOUN -->
-- Display name: Mud Standpipe Manifold
-- Parent class: [MudSystem](#MudSystem)
+## WellcontrolStackEquipment <!-- NOUN -->
+- Display name: Well-control stack equipment
+- Parent class: [CoiledTubingEquipment](#CoiledTubingEquipment)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## GenericEquipment <!-- NOUN -->
+- Display name: <Generic Equipment>
+- Parent class: [<equipment>](#<equipment>)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## GenericEquipmentGatevalve <!-- NOUN -->
+- Display name: Gate Valve
+- Parent class: [GenericEquipment](#GenericEquipment)
+- Description: 
+
+- Definition set: DrillingEquipment
+- Examples:
+## ThreeWayManifold <!-- NOUN -->
+- Display name: Three Way Manifold
+- Parent class: [GenericEquipment](#GenericEquipment)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## ThreeWayValve <!-- NOUN -->
 - Display name: Three Way Valve
-- Parent class: [MudSystem](#MudSystem)
+- Parent class: [GenericEquipment](#GenericEquipment)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -4858,6 +4916,744 @@ Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a
 - Definition set: Hydraulics
 - Examples:
   
+## EarthMagneticFluxDensityQuantity <!-- NOUN -->
+- Display name: EarthMagneticFluxDensity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-09
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## ElectricTensionQuantity <!-- NOUN -->
+- Display name: ElectricTension
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.01
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## ImageScaleQuantity <!-- NOUN -->
+- Display name: Image Scale
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## SmallLengthQuantity <!-- NOUN -->
+- Display name: Small Length
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-05
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## RotationFrequencyQuantity <!-- NOUN -->
+- Display name: RotationFrequency
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.016666666666666666
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## LargeVolumeQuantity <!-- NOUN -->
+- Display name: LargeVolume
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.1
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## PermeabilityQuantity <!-- NOUN -->
+- Display name: Permeability
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-10
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## YoungModulusQuantity <!-- NOUN -->
+- Display name: YoungModulus
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 10000
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## StandardProportionQuantity <!-- NOUN -->
+- Display name: StandardProportion
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## StandardDimensionlessQuantity <!-- NOUN -->
+- Display name: StandardDimensionless
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## StandardLengthQuantity <!-- NOUN -->
+- Display name: Standard Length
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## FluidShearRateQuantity <!-- NOUN -->
+- Display name: FluidShearRate
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.01
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## FluidShearStressQuantity <!-- NOUN -->
+- Display name: FluidShearStress
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.0001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## RheologyConsistencyIndexQuantity <!-- NOUN -->
+- Display name: RheologyConsistencyIndex
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.0001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## SmallDiameterQuantity <!-- NOUN -->
+- Display name: Small Diameter
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.0001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## SmallTorqueQuantity <!-- NOUN -->
+- Display name: Small Torque
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-05
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## SmallRotationFrequencyQuantity <!-- NOUN -->
+- Display name: Small Rotation Frequency
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.00016666
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## SmallProportionQuantity <!-- NOUN -->
+- Display name: SmallProportion
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-08
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## PorosityQuantity <!-- NOUN -->
+- Display name: Porosity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## BlockVelocityQuantity <!-- NOUN -->
+- Display name: BlockVelocity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.01
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## CableDiameterQuantity <!-- NOUN -->
+- Display name: Cable Diameter
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.0005
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## CapillaryPressureQuantity <!-- NOUN -->
+- Display name: CapillaryPressure
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.1
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DepthQuantity <!-- NOUN -->
+- Display name: Depth
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingAccelerationQuantity <!-- NOUN -->
+- Display name: DrillingAcceleration
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingAngleVariationGradientQuantity <!-- NOUN -->
+- Display name: DrillingAngleVariationGradient
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.00017453292519943296
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingAngularVelocityQuantity <!-- NOUN -->
+- Display name: DrillingAngularVelocity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.01
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingAreaQuantity <!-- NOUN -->
+- Display name: DrillingArea
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-06
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingAxialVelocityQuantity <!-- NOUN -->
+- Display name: DrillingAxialVelocity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.01
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingCompressibilityQuantity <!-- NOUN -->
+- Display name: DrillingCompressibility
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-13
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingCurvatureQuantity <!-- NOUN -->
+- Display name: DrillingCurvature
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 5.817764173314432E-06
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingDensityGradientDepthQuantity <!-- NOUN -->
+- Display name: DrillingDensityGradientDepth
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingDensityGradientTemperatureQuantity <!-- NOUN -->
+- Display name: DrillingDensityGradientTemperature
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingDensityQuantity <!-- NOUN -->
+- Display name: DrillingDensity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingDensityRateOfChangeQuantity <!-- NOUN -->
+- Display name: DrillingDensitySpeed
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingDrillStringMagneticFluxQuantity <!-- NOUN -->
+- Display name: DrillingDrillStringMagneticFlux
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-07
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingDurationQuantity <!-- NOUN -->
+- Display name: DrillingDuration
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingDynamicViscosityQuantity <!-- NOUN -->
+- Display name: DrillingDynamicViscosity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.0001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingElongationGradientQuantity <!-- NOUN -->
+- Display name: DrillingElongationGradient
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.01
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingFluidVelocityQuantity <!-- NOUN -->
+- Display name: DrillingFluidVelocity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.01
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingForceGradientQuantity <!-- NOUN -->
+- Display name: DrillingForceGradient
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingForceQuantity <!-- NOUN -->
+- Display name: DrillingForce
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.1
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingHeatTransferCoefficientQuantity <!-- NOUN -->
+- Display name: DrillingHeatTransferCoefficient
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.0001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingHydraulicConductivityQuantity <!-- NOUN -->
+- Display name: DrillingHydraulicConductivity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingInterfacialTensionQuantity <!-- NOUN -->
+- Display name: DrillingInterfacialTension
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.0001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingMassGradientQuantity <!-- NOUN -->
+- Display name: DrillingMassGradient
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.05
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingMassQuantity <!-- NOUN -->
+- Display name: DrillingMass
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.1
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingMassRateQuantity <!-- NOUN -->
+- Display name: DrillingMassRate
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.0001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingPlaneAngleQuantity <!-- NOUN -->
+- Display name: DrillingPlaneAngle
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.00017453292519943296
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingPressureGradientQuantity <!-- NOUN -->
+- Display name: DrillingPressureGradient
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 10000
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingPressureLossConstantQuantity <!-- NOUN -->
+- Display name: DrillingPressureLossConstant
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.1
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingPressureQuantity <!-- NOUN -->
+- Display name: DrillingPressure
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 10000
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingRandomWalkQuantity <!-- NOUN -->
+- Display name: DrillingRandomWalk
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-05
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingRotationFrequencyRateOfChangeQuantity <!-- NOUN -->
+- Display name: DrillingRotationFrequencyRateOfChange
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.016666666666666666
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingSpecificHeatCapacityQuantity <!-- NOUN -->
+- Display name: DrillingSpecificHeatCapacity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.01
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingSpecificHeatCapacityTemperatureGradientQuantity <!-- NOUN -->
+- Display name: DrillingSpecificHeatCapacityTemperatureGradient
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.01
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingSurveyInstrumentAngleMagneticFluxDensityQuantity <!-- NOUN -->
+- Display name: DrillingSurveyInstrumentMagneticFluxDensity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-09
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingSurveyInstrumentAngularVelocityQuantity <!-- NOUN -->
+- Display name: DrillingSurveyInstrumentAngularVelocity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-07
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingSurveyInstrumentReciprocalLengthQuantity <!-- NOUN -->
+- Display name: DrillingSurveyInstrumentReciprocalLength
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-08
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingTemperatureGradientQuantity <!-- NOUN -->
+- Display name: DrillingTemperatureGradient
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingTemperatureQuantity <!-- NOUN -->
+- Display name: DrillingTemperature
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.01
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingTensionQuantity <!-- NOUN -->
+- Display name: DrillingTension
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 100
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingThermalConductivityQuantity <!-- NOUN -->
+- Display name: DrillingThermalConductivity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.01
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingThermalConductivityTemperatureGradientQuantity <!-- NOUN -->
+- Display name: DrillingThermalConductivityTemperatureGradient
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.01
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingTorqueQuantity <!-- NOUN -->
+- Display name: DrillingTorque
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.1
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingVolumeQuantity <!-- NOUN -->
+- Display name: DrillingVolume
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.0001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingVolumetricFlowRateOfChangeQuantity <!-- NOUN -->
+- Display name: DrillingVolumetricFlowRateOfChange
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-06
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillingVolumetricFlowrateQuantity <!-- NOUN -->
+- Display name: DrillingVolumetricFlowrate
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.0001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## DrillStemMaterialStrengthQuantity <!-- NOUN -->
+- Display name: DrillStemMaterialStrength
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 10000
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## FormationResistivityQuantity <!-- NOUN -->
+- Display name: FormationResistivity
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 10000
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## FormationStrengthQuantity <!-- NOUN -->
+- Display name: FormationStrength
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 10000
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## GammaRayQuantity <!-- NOUN -->
+- Display name: GammaRay
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## GasShowQuantity <!-- NOUN -->
+- Display name: GasShow
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-07
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## GasVolumetricFlowRateQuantity <!-- NOUN -->
+- Display name: GasVolmetricFlowRate
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.01
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## HeightQuantity <!-- NOUN -->
+- Display name: Height
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## HookLoadQuantity <!-- NOUN -->
+- Display name: HookLoad
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 100
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## NozzleDiameterQuantity <!-- NOUN -->
+- Display name: Nozzle Diameter
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.0001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## PipeDiameterQuantity <!-- NOUN -->
+- Display name: Pipe Diameter
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.0001
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## PoreDiameterQuantity <!-- NOUN -->
+- Display name: Pore Diameter
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-07
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## PoreSurfaceQuantity <!-- NOUN -->
+- Display name: PoreSurface
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-13
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## PositionQuantity <!-- NOUN -->
+- Display name: Position
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.01
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## RateOfPenetrationQuantity <!-- NOUN -->
+- Display name: RateOfPenetration
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 2.77778E-05
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
+## WeightOnBitQuantity <!-- NOUN -->
+- Display name: WeightOnBit
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 10
+- Description: 
+
+- Definition set: MeasurableQuantityTypes
+- Examples:
 ## DrillStemMechanicalModel <!-- NOUN -->
 - Display name: Drill-stem mechanical model
 - Parent class: [MathematicalModel](#MathematicalModel)
@@ -5735,153 +6531,6 @@ Are related by a Quantity via the "IsObservableFrom" relation.
 Context dependent: for example, Fluid density and Equivalent Circulating Density are represented as two different "Measurable quantities", although they both refer to the same base SI quantities. 
 - Definition set: Quantities
 - Examples:
-## BitTorqueQuantity <!-- NOUN -->
-- Display name: BitTorqueQuantity
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## BlockAccelerationQuantity <!-- NOUN -->
-- Display name: BlockAccelerationQuantity
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## BlockPositionQuantity <!-- NOUN -->
-- Display name: BlockPositionQuantity
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## BlockVelocityQuantity <!-- NOUN -->
-- Display name: BlockVelocityQuantity
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## DepthQuantity <!-- NOUN -->
-- Display name: DepthQuantity
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## DownholePressureQuantity <!-- NOUN -->
-- Display name: DownholePressureQuantity
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## EMWQuantity <!-- NOUN -->
-- Display name: EMWQuantity
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## FlowRateQuantity <!-- NOUN -->
-- Display name: FlowRateQuantity
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## FluidDensityInQuantity <!-- NOUN -->
-- Display name: FluidDensityInQuantity
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## FluidTemperatureInQuantity <!-- NOUN -->
-- Display name: FluidTemperatureInQuantity
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## FormationPorosityQuantity <!-- NOUN -->
-- Display name: FormationPorosityQuantity
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## HookloadQuantity <!-- NOUN -->
-- Display name: HookloadQuantity
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## PumpRateQuantity <!-- NOUN -->
-- Display name: PumpRateQuantity
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## Resistivity <!-- NOUN -->
-- Display name: Resistivity
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## RockDensityQuantity <!-- NOUN -->
-- Display name: RockDensityQuantity
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## SPPQuantity <!-- NOUN -->
-- Display name: SPPQuantity
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## SurfaceRPMQuantity <!-- NOUN -->
-- Display name: SurfaceRPMQuantity
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## SurfaceTorqueQuantity <!-- NOUN -->
-- Display name: SurfaceTorqueQuantity
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## TopOfStringForceQuantity <!-- NOUN -->
-- Display name: TopOfStringForceQuantity
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## TVDQuantity <!-- NOUN -->
-- Display name: TVDQuantity
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## WOBQuantity <!-- NOUN -->
-- Display name: WOBQuantity
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Description: 
-
-- Definition set: Quantities
-- Examples:
 ## MeasurableQuantityUnitAssociation <!-- NOUN -->
 - Display name: MeasurableQuantityUnitAssociation
 - Parent class: [DWISNoun](#DWISNoun)
@@ -5936,184 +6585,6 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
 
 - Definition set: Quantities
 - Examples:
-## AccelerationQuantity <!-- NOUN -->
-- Display name: AccelerationQuantity
-- Parent class: [Quantity](#Quantity)
-- Specialization:
-  - L = 1
-  - T = -2
-  - Name = Acceleration quantity
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## AreaQuantity <!-- NOUN -->
-- Display name: AreaQuantity
-- Parent class: [Quantity](#Quantity)
-- Specialization:
-  - L = 2
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## ElectricResistivityQuantity <!-- NOUN -->
-- Display name: ElectricResistivityQuantity
-- Parent class: [Quantity](#Quantity)
-- Specialization:
-  - L = 3
-  - M = 1
-  - T = -3
-  - I = -2
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## ForceQuantity <!-- NOUN -->
-- Display name: ForceQuantity
-- Parent class: [Quantity](#Quantity)
-- Specialization:
-  - L = 1
-  - M = 1
-  - T = -2
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## FrequencyQuantity <!-- NOUN -->
-- Display name: FrequencyQuantity
-- Parent class: [Quantity](#Quantity)
-- Specialization:
-  - T = -1
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## LengthQuantity <!-- NOUN -->
-- Display name: LengthQuantity
-- Parent class: [Quantity](#Quantity)
-- Specialization:
-  - L = 1
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## MassDensityQuantity <!-- NOUN -->
-- Display name: MassDensityQuantity
-- Parent class: [Quantity](#Quantity)
-- Specialization:
-  - L = 3
-  - M = 1
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## MassQuantity <!-- NOUN -->
-- Display name: MassQuantity
-- Parent class: [Quantity](#Quantity)
-- Specialization:
-  - M = 1
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## MassRate <!-- NOUN -->
-- Display name: MassRate
-- Parent class: [Quantity](#Quantity)
-- Specialization:
-  - M = 1
-  - T = -1
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## PowerQuantity <!-- NOUN -->
-- Display name: PowerQuantity
-- Parent class: [Quantity](#Quantity)
-- Specialization:
-  - L = 2
-  - M = 1
-  - T = -3
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## PressureQuantity <!-- NOUN -->
-- Display name: PressureQuantity
-- Parent class: [Quantity](#Quantity)
-- Specialization:
-  - L = -1
-  - M = 1
-  - T = 2
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## ProportionQuantity <!-- NOUN -->
-- Display name: ProportionQuantity
-- Parent class: [Quantity](#Quantity)
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## TemperatureQuantity <!-- NOUN -->
-- Display name: TemperatureQuantity
-- Parent class: [Quantity](#Quantity)
-- Specialization:
-  - ThT = 1
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## TorqueQuantity <!-- NOUN -->
-- Display name: TorqueQuantity
-- Parent class: [Quantity](#Quantity)
-- Specialization:
-  - L = 2
-  - M = 1
-  - T = -2
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## VelocityQuantity <!-- NOUN -->
-- Display name: VelocityQuantity
-- Parent class: [Quantity](#Quantity)
-- Specialization:
-  - L = 1
-  - T = -1
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## VolumeQuantity <!-- NOUN -->
-- Display name: VolumeQuantity
-- Parent class: [Quantity](#Quantity)
-- Specialization:
-  - L = 3
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## VolumetricRateQuantity <!-- NOUN -->
-- Display name: VolumetricRateQuantity
-- Parent class: [Quantity](#Quantity)
-- Specialization:
-  - L = 3
-  - T = -1
-- Description: 
-
-- Definition set: Quantities
-- Examples:
-## VolumetricFlowateRateOfChangeQuantity <!-- NOUN -->
-- Display name: VolumetricFlowateRateOfChangeQuantity
-- Parent class: [Quantity](#Quantity)
-- Specialization:
-  - L = 3
-  - T = -2
-- Description: 
-
-- Definition set: Quantities
-- Examples:
 ## Unit <!-- NOUN -->
 - Display name: Unit
 - Parent class: [DWISNoun](#DWISNoun)
@@ -6139,6 +6610,573 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
 - Description: 
 A set of associations between measurable quantities and units
 - Definition set: Quantities
+- Examples:
+## AccelerationQuantity <!-- NOUN -->
+- Display name: Acceleration
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 1
+  - T = -2
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## AmountSubstanceQuantity <!-- NOUN -->
+- Display name: Amount Substance
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - N = 1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## AngleMagneticFluxDensityQuantity <!-- NOUN -->
+- Display name: AngleMagneticFluxDensity
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - M = 1
+  - T = -2
+  - I = -1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## AngleVariationGradientQuantity <!-- NOUN -->
+- Display name: AngleVariationGradient
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = -1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## AngularVelocityQuantity <!-- NOUN -->
+- Display name: AngularVelocity
+- Parent class: [Quantity](#Quantity)
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## AreaQuantity <!-- NOUN -->
+- Display name: Area
+- Parent class: [Quantity](#Quantity)
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## CompressibilityQuantity <!-- NOUN -->
+- Display name: Compressibility
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 1
+  - M = -1
+  - T = 1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## CurvatureQuantity <!-- NOUN -->
+- Display name: Curvature
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = -1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## DensityGradientDepthQuantity <!-- NOUN -->
+- Display name: DensityGradientDepth
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = -4
+  - M = 1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## DensityGradientTemperatureQuantity <!-- NOUN -->
+- Display name: DensityGradientTemperature
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = -3
+  - M = 1
+  - ThT = -1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## DensityQuantity <!-- NOUN -->
+- Display name: Density
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = -3
+  - M = 1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## DensityRateOfChangeQuantity <!-- NOUN -->
+- Display name: DensitySpeed
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = -3
+  - M = 1
+  - T = -1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## DimensionlessQuantity <!-- NOUN -->
+- Display name: Dimensionless
+- Parent class: [Quantity](#Quantity)
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## DynamicViscosityQuantity <!-- NOUN -->
+- Display name: DynamicViscosity
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = -1
+  - M = 1
+  - T = -1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## ElectricalCapacitanceQuantity <!-- NOUN -->
+- Display name: Capacitance
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = -2
+  - M = -1
+  - T = 4
+  - I = 2
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## ElectricCurrentQuantity <!-- NOUN -->
+- Display name: Electrical Current
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - I = 1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## ElongationGradientQuantity <!-- NOUN -->
+- Display name: ElongationGradient
+- Parent class: [Quantity](#Quantity)
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## EnergyQuantity <!-- NOUN -->
+- Display name: Energy
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 2
+  - M = 1
+  - T = -2
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## LengthQuantity <!-- NOUN -->
+- Display name: Length
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## LuminousIntensityQuantity <!-- NOUN -->
+- Display name: Luminous Intensity
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - J = 1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## MassQuantity <!-- NOUN -->
+- Display name: Mass
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - M = 1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## PlaneAngleQuantity <!-- NOUN -->
+- Display name: Plane Angle
+- Parent class: [Quantity](#Quantity)
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## RelativeTemperatureQuantity <!-- NOUN -->
+- Display name: Relative Temperature
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - ThT = 1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## SolidAngleQuantity <!-- NOUN -->
+- Display name: Solid Angle
+- Parent class: [Quantity](#Quantity)
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## TemperatureQuantity <!-- NOUN -->
+- Display name: Temperature
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - ThT = 1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## TimeQuantity <!-- NOUN -->
+- Display name: Time
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - T = 1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## PressureQuantity <!-- NOUN -->
+- Display name: Pressure
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = -1
+  - M = 1
+  - T = -2
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## VolumetricFlowRateQuantity <!-- NOUN -->
+- Display name: FlowRate
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 3
+  - T = -1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## VolumetricFlowRateOfChangeQuantity <!-- NOUN -->
+- Display name: VolumetricFlowRateRateOfChange
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 3
+  - T = -2
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## VelocityQuantity <!-- NOUN -->
+- Display name: Velocity
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 1
+  - T = -1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## ForceGradientQuantity <!-- NOUN -->
+- Display name: ForceGradient
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - M = 1
+  - T = -3
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## ForceQuantity <!-- NOUN -->
+- Display name: Force
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 1
+  - M = 1
+  - T = -2
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## MaterialStrengthQuantity <!-- NOUN -->
+- Display name: MaterialStrength
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = -1
+  - M = 1
+  - T = -1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## FrequencyQuantity <!-- NOUN -->
+- Display name: Frequency
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - T = -1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## ProportionQuantity <!-- NOUN -->
+- Display name: Proportion
+- Parent class: [Quantity](#Quantity)
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## HeatTransferCoefficientQuantity <!-- NOUN -->
+- Display name: HeatTransferCoefficient
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - M = 1
+  - T = -3
+  - ThT = -1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## GravitationalLoadQuantity <!-- NOUN -->
+- Display name: GravitationalLoad
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - M = 1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## HydraulicConductivityQuantity <!-- NOUN -->
+- Display name: HydraulicConductivity
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 1
+  - T = -1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## InterfacialTensionQuantity <!-- NOUN -->
+- Display name: InterfacialTension
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - M = 1
+  - T = -2
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## VolumeQuantity <!-- NOUN -->
+- Display name: Volume
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 3
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## MagneticFluxDensityQuantity <!-- NOUN -->
+- Display name: MagneticFluxDensity
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - M = 1
+  - T = -2
+  - I = -1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## MassRateQuantity <!-- NOUN -->
+- Display name: MassRate
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - M = 1
+  - T = -1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## PressureGradientQuantity <!-- NOUN -->
+- Display name: PressureGradient
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = -2
+  - M = 1
+  - T = -2
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## PressureLossConstantQuantity <!-- NOUN -->
+- Display name: PressureLossConstant
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 4
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## ResistivityQuantity <!-- NOUN -->
+- Display name: Resistivity
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 3
+  - M = 1
+  - T = -3
+  - I = -2
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## FrequencyRateOfChangeQuantity <!-- NOUN -->
+- Display name: FrequencyRateOfChange
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - T = -2
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## RotationFrequencyRateOfChangeQuantity <!-- NOUN -->
+- Display name: RotationFreqencyRateOfChange
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - T = -2
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## SpecificHeatCapacityQuantity <!-- NOUN -->
+- Display name: SpecificHeatCapacity
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 2
+  - T = -2
+  - ThT = -1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## SpecificHeatCapacityTemperatureGradientQuantity <!-- NOUN -->
+- Display name: SpecificHeatCapcityTemperatureGradient
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 2
+  - T = -2
+  - ThT = -2
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## TemperatureGradientQuantity <!-- NOUN -->
+- Display name: TemperatureGradient
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = -1
+  - ThT = 1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## TensionQuantity <!-- NOUN -->
+- Display name: Tension
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 1
+  - M = 1
+  - T = -2
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## ThermalConductivityQuantity <!-- NOUN -->
+- Display name: ThermalConductivity
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 1
+  - M = 1
+  - T = -3
+  - ThT = -1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## MassGradientQuantity <!-- NOUN -->
+- Display name: MassGradient
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = -1
+  - M = 1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## ThermalConductivityTemperatureGradientQuantity <!-- NOUN -->
+- Display name: ThermalConductivityTemperatureGradient
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 1
+  - M = 1
+  - T = -3
+  - ThT = -2
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## TorqueQuantity <!-- NOUN -->
+- Display name: Torque
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 2
+  - M = 1
+  - T = -2
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## MagneticFluxQuantity <!-- NOUN -->
+- Display name: MagneticFlux
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 2
+  - M = 1
+  - T = -2
+  - I = -1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## RandomWalkQuantity <!-- NOUN -->
+- Display name: RandomWalk
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 1
+- Description: 
+
+- Definition set: QuantityTypes
+- Examples:
+## WaveNumberQuantity <!-- NOUN -->
+- Display name: WaveNumber
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = -1
+- Description: 
+
+- Definition set: QuantityTypes
 - Examples:
 ## ActiveVolume <!-- NOUN -->
 - Display name: ActiveVolume

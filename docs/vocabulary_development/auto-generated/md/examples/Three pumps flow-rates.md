@@ -9,8 +9,8 @@
 - DrillingDataPoint:DrillingDataPoint_7
 - DrillingDataPoint:DrillingDataPoint_8
 - CementPump:CementPump_0
-- Pumps:Pumps_0
-- Pumps:Pumps_1
+- MudPump:MudPump_0
+- MudPump:MudPump_1
 - PumpRate:PumpRate_0
 - PumpRate:PumpRate_1
 - PumpRate:PumpRate_2
@@ -19,8 +19,8 @@
 - DrillingDataPoint:DrillingDataPoint_11
 - ProportionQuantity:ProportionQuantity_0
 - VolumeQuantity:VolumeQuantity_0
-- FlowRateQuantity:FlowRateQuantity_0
-- PumpRateQuantity:PumpRateQuantity_0
+- DrillingVolumetricFlowrateQuantity:FlowRateQuantity_0
+- RotationFrequencyQuantity:PumpRateQuantity_0
 - Transformation:Transformation_0
 - Transformation:Transformation_1
 - Transformation:Transformation_2
@@ -37,18 +37,18 @@
 - DrillingDataPoint_1 IsHydraulicallyLocatedAt CementPump_0
 - DrillingDataPoint_2 IsHydraulicallyLocatedAt CementPump_0
 - DrillingDataPoint_0 IsHydraulicallyLocatedAt CementPump_0
-- DrillingDataPoint_3 IsHydraulicallyLocatedAt Pumps_0
-- DrillingDataPoint_6 IsHydraulicallyLocatedAt Pumps_1
+- DrillingDataPoint_3 IsHydraulicallyLocatedAt MudPump_0
+- DrillingDataPoint_6 IsHydraulicallyLocatedAt MudPump_1
 - PumpRate_0 IsHydraulicallyLocatedAt CementPump_0
-- PumpRate_1 IsHydraulicallyLocatedAt Pumps_0
-- PumpRate_2 IsHydraulicallyLocatedAt Pumps_1
-- DrillingDataPoint_4 IsHydraulicallyLocatedAt Pumps_0
-- DrillingDataPoint_5 IsHydraulicallyLocatedAt Pumps_0
-- DrillingDataPoint_7 IsHydraulicallyLocatedAt Pumps_1
-- DrillingDataPoint_8 IsHydraulicallyLocatedAt Pumps_1
+- PumpRate_1 IsHydraulicallyLocatedAt MudPump_0
+- PumpRate_2 IsHydraulicallyLocatedAt MudPump_1
+- DrillingDataPoint_4 IsHydraulicallyLocatedAt MudPump_0
+- DrillingDataPoint_5 IsHydraulicallyLocatedAt MudPump_0
+- DrillingDataPoint_7 IsHydraulicallyLocatedAt MudPump_1
+- DrillingDataPoint_8 IsHydraulicallyLocatedAt MudPump_1
 - DrillingDataPoint_9 IsHydraulicallyLocatedAt CementPump_0
-- DrillingDataPoint_10 IsHydraulicallyLocatedAt Pumps_0
-- DrillingDataPoint_11 IsHydraulicallyLocatedAt Pumps_1
+- DrillingDataPoint_10 IsHydraulicallyLocatedAt MudPump_0
+- DrillingDataPoint_11 IsHydraulicallyLocatedAt MudPump_1
 - DrillingDataPoint_1 IsOfMeasurableQuantity ProportionQuantity_0
 - DrillingDataPoint_2 IsOfMeasurableQuantity VolumeQuantity_0
 - DrillingDataPoint_0 IsOfMeasurableQuantity FlowRateQuantity_0
@@ -93,8 +93,8 @@ flowchart TD
 	DrillingDataPoint_7([DrillingDataPoint_7]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	DrillingDataPoint_8([DrillingDataPoint_8]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	CementPump_0([CementPump_0]) --> CementPump[[CementPump]]:::typeClass
-	Pumps_0([Pumps_0]) --> Pumps[[Pumps]]:::typeClass
-	Pumps_1([Pumps_1]) --> Pumps[[Pumps]]:::typeClass
+	MudPump_0([MudPump_0]) --> MudPump[[MudPump]]:::typeClass
+	MudPump_1([MudPump_1]) --> MudPump[[MudPump]]:::typeClass
 	PumpRate_0([PumpRate_0]) --> PumpRate[[PumpRate]]:::typeClass
 	PumpRate_1([PumpRate_1]) --> PumpRate[[PumpRate]]:::typeClass
 	PumpRate_2([PumpRate_2]) --> PumpRate[[PumpRate]]:::typeClass
@@ -103,8 +103,8 @@ flowchart TD
 	DrillingDataPoint_11([DrillingDataPoint_11]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	ProportionQuantity_0([ProportionQuantity_0]) --> ProportionQuantity[[ProportionQuantity]]:::typeClass
 	VolumeQuantity_0([VolumeQuantity_0]) --> VolumeQuantity[[VolumeQuantity]]:::typeClass
-	FlowRateQuantity_0([FlowRateQuantity_0]) --> FlowRateQuantity[[FlowRateQuantity]]:::typeClass
-	PumpRateQuantity_0([PumpRateQuantity_0]) --> PumpRateQuantity[[PumpRateQuantity]]:::typeClass
+	FlowRateQuantity_0([FlowRateQuantity_0]) --> DrillingVolumetricFlowrateQuantity[[DrillingVolumetricFlowrateQuantity]]:::typeClass
+	PumpRateQuantity_0([PumpRateQuantity_0]) --> RotationFrequencyQuantity[[RotationFrequencyQuantity]]:::typeClass
 	Transformation_0([Transformation_0]) --> Transformation[[Transformation]]:::typeClass
 	Transformation_1([Transformation_1]) --> Transformation[[Transformation]]:::typeClass
 	Transformation_2([Transformation_2]) --> Transformation[[Transformation]]:::typeClass
@@ -121,18 +121,18 @@ flowchart TD
 	 DrillingDataPoint_1 -- IsHydraulicallyLocatedAt --> CementPump_0 
 	 DrillingDataPoint_2 -- IsHydraulicallyLocatedAt --> CementPump_0 
 	 DrillingDataPoint_0 -- IsHydraulicallyLocatedAt --> CementPump_0 
-	 DrillingDataPoint_3 -- IsHydraulicallyLocatedAt --> Pumps_0 
-	 DrillingDataPoint_6 -- IsHydraulicallyLocatedAt --> Pumps_1 
+	 DrillingDataPoint_3 -- IsHydraulicallyLocatedAt --> MudPump_0 
+	 DrillingDataPoint_6 -- IsHydraulicallyLocatedAt --> MudPump_1 
 	 PumpRate_0 -- IsHydraulicallyLocatedAt --> CementPump_0 
-	 PumpRate_1 -- IsHydraulicallyLocatedAt --> Pumps_0 
-	 PumpRate_2 -- IsHydraulicallyLocatedAt --> Pumps_1 
-	 DrillingDataPoint_4 -- IsHydraulicallyLocatedAt --> Pumps_0 
-	 DrillingDataPoint_5 -- IsHydraulicallyLocatedAt --> Pumps_0 
-	 DrillingDataPoint_7 -- IsHydraulicallyLocatedAt --> Pumps_1 
-	 DrillingDataPoint_8 -- IsHydraulicallyLocatedAt --> Pumps_1 
+	 PumpRate_1 -- IsHydraulicallyLocatedAt --> MudPump_0 
+	 PumpRate_2 -- IsHydraulicallyLocatedAt --> MudPump_1 
+	 DrillingDataPoint_4 -- IsHydraulicallyLocatedAt --> MudPump_0 
+	 DrillingDataPoint_5 -- IsHydraulicallyLocatedAt --> MudPump_0 
+	 DrillingDataPoint_7 -- IsHydraulicallyLocatedAt --> MudPump_1 
+	 DrillingDataPoint_8 -- IsHydraulicallyLocatedAt --> MudPump_1 
 	 DrillingDataPoint_9 -- IsHydraulicallyLocatedAt --> CementPump_0 
-	 DrillingDataPoint_10 -- IsHydraulicallyLocatedAt --> Pumps_0 
-	 DrillingDataPoint_11 -- IsHydraulicallyLocatedAt --> Pumps_1 
+	 DrillingDataPoint_10 -- IsHydraulicallyLocatedAt --> MudPump_0 
+	 DrillingDataPoint_11 -- IsHydraulicallyLocatedAt --> MudPump_1 
 	 DrillingDataPoint_1 -- IsOfMeasurableQuantity --> ProportionQuantity_0 
 	 DrillingDataPoint_2 -- IsOfMeasurableQuantity --> VolumeQuantity_0 
 	 DrillingDataPoint_0 -- IsOfMeasurableQuantity --> FlowRateQuantity_0 

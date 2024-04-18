@@ -1,16 +1,16 @@
 # Top-drive hydraulic circuit
-- Standpipe:Standpipe_0
-- Quill:Quill_0
+- MudStandpipe:StandPipe_0
+- Quill:TopDriveShaft_0
 - TopDrive:TopDrive_0
-- Standpipe_0 IsHydraulicConnectedTo Quill_0
-- Quill_0 IsHydraulicConnectedTo TopDrive_0
+- StandPipe_0 IsHydraulicConnectedTo TopDriveShaft_0
+- TopDriveShaft_0 IsHydraulicConnectedTo TopDrive_0
 ```mermaid
 flowchart TD
 	 classDef typeClass fill:#f96;
 	 classDef classClass fill:#9dd0ff;
-	Standpipe_0([Standpipe_0]) --> Standpipe[[Standpipe]]:::typeClass
-	Quill_0([Quill_0]) --> Quill[[Quill]]:::typeClass
+	StandPipe_0([StandPipe_0]) --> MudStandpipe[[MudStandpipe]]:::typeClass
+	TopDriveShaft_0([TopDriveShaft_0]) --> Quill[[Quill]]:::typeClass
 	TopDrive_0([TopDrive_0]) --> TopDrive[[TopDrive]]:::typeClass
-	 Standpipe_0 -- IsHydraulicConnectedTo --> Quill_0 
-	 Quill_0 -- IsHydraulicConnectedTo --> TopDrive_0 
+	 StandPipe_0 -- IsHydraulicConnectedTo --> TopDriveShaft_0 
+	 TopDriveShaft_0 -- IsHydraulicConnectedTo --> TopDrive_0 
 ```
