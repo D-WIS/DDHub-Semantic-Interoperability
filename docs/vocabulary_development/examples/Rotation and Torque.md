@@ -2,8 +2,8 @@
 - SurfaceRPM:SurfaceRPM_0
 - Quill:TopDriveShaft_0
 - SurfaceTorque:SurfaceTorque_0
-- SurfaceRPMQuantity:SurfaceRPMQuantity_0
-- SurfaceTorqueQuantity:SurfaceTorqueQuantity_0
+- RotationFrequencyQuantity:SurfaceRPMQuantity_0
+- DrillingTorqueQuantity:SurfaceTorqueQuantity_0
 - Transformation:Transformation_0
 - Transformation:Transformation_1
 - DataFlowNode:DataFlowNode_0

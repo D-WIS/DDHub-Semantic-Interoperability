@@ -1,22 +1,22 @@
 # LWD Signals
 - DrillingDataPoint:DrillingDataPoint_0
-- Resistivity:Resistivity_0
+- FormationResistivityQuantity:Resistivity_0
 - Location:Location_0
 - MudPulseTelemetry:MudPulseTelemetry_0
 - DataFlowNode:DataFlowNode_0
 - DrillingDataPoint:DrillingDataPoint_1
-- RockDensityQuantity:RockDensityQuantity_0
+- DrillingDensityQuantity:RockDensityQuantity_0
 - Location:Location_1
 - DrillingDataPoint:DrillingDataPoint_2
 - DrillingDataPoint:DrillingDataPoint_3
 - DepthQuantity:DepthQuantity_0
 - DrillingDataPoint:DrillingDataPoint_4
-- FormationPorosityQuantity:FormationPorosityQuantity_0
+- PorosityQuantity:FormationPorosityQuantity_0
 - DrillingDataPoint:DrillingDataPoint_5
 - DrillingDataPoint:DrillingDataPoint_6
 - Location:Location_2
 - DrillingDataPoint:DrillingDataPoint_7
-- MassDensityQuantity:MassDensityQuantity_0
+- DrillingDensityQuantity:MassDensityQuantity_0
 - DrillingDataPoint_0 IsOfMeasurableQuantity Resistivity_0
 - DrillingDataPoint_0 IsPhysicallyLocatedAt Location_0
 - DrillingDataPoint_0 IsTransmittedBy MudPulseTelemetry_0

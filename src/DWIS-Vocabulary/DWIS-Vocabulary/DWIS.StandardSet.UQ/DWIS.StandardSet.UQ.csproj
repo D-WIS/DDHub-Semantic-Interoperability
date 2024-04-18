@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OSDC.UnitConversion.Conversion" Version="1.0.3" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\DWIS.Vocabulary.Schemas\DWIS.Vocabulary.Schemas.csproj" />
     <ProjectReference Include="..\DWIS.Vocabulary.Standard\DWIS.Vocabulary.Standard.csproj" />
     <ProjectReference Include="..\DWISVocabulary.OWL\DWIS.Vocabulary.OWL.csproj" />

@@ -1,11 +1,11 @@
 # Downhole ECD
-- DownholePressureQuantity:DownholePressureQuantity_0
+- DrillingPressureQuantity:DownholePressureQuantity_0
 - PressureQuantity:PressureQuantity_0
 - DownholeECD:DownholeECD_0
-- EMWQuantity:EMWQuantity_0
+- DrillingDensityQuantity:EMWQuantity_0
 - DownholePressure:DownholePressure_0
 - DrillingDataPoint:DrillingDataPoint_0
-- TVDQuantity:TVDQuantity_0
+- DepthQuantity:TVDQuantity_0
 - DrillingDataPoint:DrillingDataPoint_1
 - AccelerationQuantity:AccelerationQuantity_0
 - DrillingDataPoint:DrillingDataPoint_2

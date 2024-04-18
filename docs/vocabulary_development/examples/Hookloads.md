@@ -7,7 +7,7 @@
 - Quill:TopDriveShaft_0
 - DrillingDataPoint:DrillingDataPoint_1
 - DrillingDataPoint:DrillingDataPoint_2
-- HookloadQuantity:HookloadQuantity_0
+- HookLoadQuantity:HookloadQuantity_0
 - Transformation:Transformation_0
 - ForceToLoadTransformation:ForceToLoadTransformation_0
 - ForceToLoadTransformation:ForceToLoadTransformation_1

@@ -8,9 +8,9 @@
 - ActiveDrillingSystem:ActivePit_0
 - MudMixing:MudMixing_0
 - MudStandpipe:StandPipe_0
-- FluidTemperatureInQuantity:FluidTemperatureInQuantity_0
+- DrillingTemperatureQuantity:FluidTemperatureInQuantity_0
 - PressureQuantity:PressureQuantity_0
-- FluidDensityInQuantity:FluidDensityInQuantity_0
+- DrillingDensityQuantity:FluidDensityInQuantity_0
 - DensityIn_0 IsDependentOn TemperatureIn_0
 - DensityIn_0 IsDependentOn DrillingDataPoint_0
 - DensityIn_1 IsDependentOn SPP_0

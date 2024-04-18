@@ -1,6 +1,6 @@
 # Flow-rate In
 - FlowRateIn:FlowRateIn_0
-- FlowRateQuantity:FlowRateQuantity_0
+- DrillingVolumetricFlowrateQuantity:FlowRateQuantity_0
 - DrillingDataPoint:DrillingDataPoint_0
 - Derivation:Derivation_0
 - DrillingDataPoint:DrillingDataPoint_1
