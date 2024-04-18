@@ -75,6 +75,11 @@
 [<img src="generated/DataTransmission.png" width="600px">](./generated/DataTransmission.png)
 
 ---
+[MeasurableQuantityTypes.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/MeasurableQuantityTypes.md)
+
+[<img src="generated/MeasurableQuantityTypes.png" width="600px">](./generated/MeasurableQuantityTypes.png)
+
+---
 [DataDependencies.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/DataDependencies.md)
 
 [<img src="generated/DataDependencies.png" width="600px">](./generated/DataDependencies.png)
@@ -83,6 +88,11 @@
 [Mechanics.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/Mechanics.md)
 
 [<img src="generated/Mechanics.png" width="600px">](./generated/Mechanics.png)
+
+---
+[QuantityTypes.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/QuantityTypes.md)
+
+[<img src="generated/QuantityTypes.png" width="600px">](./generated/QuantityTypes.png)
 
 ---
 [MechanicalModel.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/MechanicalModel.md)
