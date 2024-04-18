@@ -207,38 +207,30 @@ namespace DWIS.Vocabulary.Utils
                     if (tokens != null && tokens.Length > 0)
                     {
                         string normalizedNoun = string.Empty;
-                        if (tokens.Length == 1)
+                        foreach (string token in tokens)
                         {
-                            normalizedNoun = tokens[0];
-                        }
-                        else
-                        {
-
-                            foreach (string token in tokens)
+                            if (!string.IsNullOrEmpty(token))
                             {
-                                if (!string.IsNullOrEmpty(token))
+                                string str = token;
+                                str = str.Replace("&", "And");
+                                str = str.Replace("-", "");
+                                StringBuilder builder = new StringBuilder();
+                                foreach (char c in str)
                                 {
-                                    string str = token;
-                                    str = str.Replace("&", "And");
-                                    str = str.Replace("-", "");
-                                    StringBuilder builder = new StringBuilder();
-                                    foreach (char c in str)
+                                    if (char.IsLetter(c) || c == '_' || char.IsDigit(c))
                                     {
-                                        if (char.IsLetter(c) || c == '_' || char.IsDigit(c))
-                                        {
-                                            builder.Append(c);
-                                        }
+                                        builder.Append(c);
                                     }
-                                    str = builder.ToString();
-                                    if (!string.IsNullOrEmpty(str))
-                                    {
-                                        str = char.ToUpper(str[0]) + str.Substring(1).ToLower();
-                                        normalizedNoun += str;
-                                    }
-                                    else
-                                    {
+                                }
+                                str = builder.ToString();
+                                if (!string.IsNullOrEmpty(str))
+                                {
+                                    str = char.ToUpper(str[0]) + str.Substring(1).ToLower();
+                                    normalizedNoun += str;
+                                }
+                                else
+                                {
 
-                                    }
                                 }
                             }
                         }
