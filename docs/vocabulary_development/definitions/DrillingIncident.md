@@ -8,6 +8,83 @@
 - Specialization:
 - Description: 
 - Examples:
+## AbnormalOscillation <!-- NOUN -->
+- Display name: Abnormal Oscillation
+- Parent class: DrillingIncident
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## AbnormalAxialOscillation <!-- NOUN -->
+- Display name: Abnormal Axial Oscillation
+- Parent class: AbnormalOscillation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## AbnormalTorsionalOscillation <!-- NOUN -->
+- Display name: Abnormal Torsional Oscillation
+- Parent class: AbnormalOscillation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## AbnormalLateralOscillation <!-- NOUN -->
+- Display name: Abnormal Lateral Oscillation
+- Parent class: AbnormalOscillation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## StickSlip <!-- NOUN -->
+- Display name: Stick-slip
+- Parent class: AbnormalTorsionalOscillation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## HFTO <!-- NOUN -->
+- Display name: High Frequency Torsional Oscillation
+- Parent class: AbnormalTorsionalOscillation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## Whirling <!-- NOUN -->
+- Display name: Whirling
+- Parent class: AbnormalLateralOscillation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## ForwardWhirl <!-- NOUN -->
+- Display name: Forward Whirl
+- Parent class: Whirling
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## BackwardWhirl <!-- NOUN -->
+- Display name: Backward Whirl
+- Parent class: Whirling
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## ChaoticWhirl <!-- NOUN -->
+- Display name: Chaotic Whirl
+- Parent class: Whirling
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## Shock <!-- NOUN -->
+- Display name: Shock
+- Parent class: AbnormalLateralOscillation
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 ## TwistOff <!-- NOUN -->
 - Display name: TwistOff
 - Parent class: DrillingIncident
