@@ -8,6 +8,17 @@ Here is a class inheritance diagram for the nouns contained in this definition s
 ```mermaid
 classDiagram
 DWISNoun <|-- DrillingIncident
+DrillingIncident <|-- AbnormalOscillation
+AbnormalOscillation <|-- AbnormalAxialOscillation
+AbnormalOscillation <|-- AbnormalTorsionalOscillation
+AbnormalOscillation <|-- AbnormalLateralOscillation
+AbnormalTorsionalOscillation <|-- StickSlip
+AbnormalTorsionalOscillation <|-- HFTO
+AbnormalLateralOscillation <|-- Whirling
+Whirling <|-- ForwardWhirl
+Whirling <|-- BackwardWhirl
+Whirling <|-- ChaoticWhirl
+AbnormalLateralOscillation <|-- Shock
 DrillingIncident <|-- TwistOff
 DrillingIncident <|-- Overpull
 DrillingIncident <|-- Underpull
@@ -23,6 +34,83 @@ DrillingIncident <|-- Plugged
 ## DrillingIncident <!-- NOUN -->
 - Display name: DrillingIncident
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Description: 
+
+- Definition set: DrillingIncident
+- Examples:
+## AbnormalOscillation <!-- NOUN -->
+- Display name: Abnormal Oscillation
+- Parent class: [DrillingIncident](./DrillingIncident.md#DrillingIncident)
+- Description: 
+
+- Definition set: DrillingIncident
+- Examples:
+## AbnormalAxialOscillation <!-- NOUN -->
+- Display name: Abnormal Axial Oscillation
+- Parent class: [AbnormalOscillation](./DrillingIncident.md#AbnormalOscillation)
+- Description: 
+
+- Definition set: DrillingIncident
+- Examples:
+## AbnormalTorsionalOscillation <!-- NOUN -->
+- Display name: Abnormal Torsional Oscillation
+- Parent class: [AbnormalOscillation](./DrillingIncident.md#AbnormalOscillation)
+- Description: 
+
+- Definition set: DrillingIncident
+- Examples:
+## AbnormalLateralOscillation <!-- NOUN -->
+- Display name: Abnormal Lateral Oscillation
+- Parent class: [AbnormalOscillation](./DrillingIncident.md#AbnormalOscillation)
+- Description: 
+
+- Definition set: DrillingIncident
+- Examples:
+## StickSlip <!-- NOUN -->
+- Display name: Stick-slip
+- Parent class: [AbnormalTorsionalOscillation](./DrillingIncident.md#AbnormalTorsionalOscillation)
+- Description: 
+
+- Definition set: DrillingIncident
+- Examples:
+## HFTO <!-- NOUN -->
+- Display name: High Frequency Torsional Oscillation
+- Parent class: [AbnormalTorsionalOscillation](./DrillingIncident.md#AbnormalTorsionalOscillation)
+- Description: 
+
+- Definition set: DrillingIncident
+- Examples:
+## Whirling <!-- NOUN -->
+- Display name: Whirling
+- Parent class: [AbnormalLateralOscillation](./DrillingIncident.md#AbnormalLateralOscillation)
+- Description: 
+
+- Definition set: DrillingIncident
+- Examples:
+## ForwardWhirl <!-- NOUN -->
+- Display name: Forward Whirl
+- Parent class: [Whirling](./DrillingIncident.md#Whirling)
+- Description: 
+
+- Definition set: DrillingIncident
+- Examples:
+## BackwardWhirl <!-- NOUN -->
+- Display name: Backward Whirl
+- Parent class: [Whirling](./DrillingIncident.md#Whirling)
+- Description: 
+
+- Definition set: DrillingIncident
+- Examples:
+## ChaoticWhirl <!-- NOUN -->
+- Display name: Chaotic Whirl
+- Parent class: [Whirling](./DrillingIncident.md#Whirling)
+- Description: 
+
+- Definition set: DrillingIncident
+- Examples:
+## Shock <!-- NOUN -->
+- Display name: Shock
+- Parent class: [AbnormalLateralOscillation](./DrillingIncident.md#AbnormalLateralOscillation)
 - Description: 
 
 - Definition set: DrillingIncident

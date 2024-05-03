@@ -7,8 +7,8 @@ in this category fall all the standard equipment encountered on a drilling rig. 
 Here is a class inheritance diagram for the nouns contained in this definition set.
 ```mermaid
 classDiagram
-DWISNoun <|-- <equipment>
-<equipment> <|-- RigEquipment
+DWISNoun <|-- Equipment
+Equipment <|-- RigEquipment
 RigEquipment <|-- PowerGenerationSystem
 PowerGenerationSystem <|-- PowerGenerators
 PowerGenerationSystem <|-- ElectricalControlSystem
@@ -79,7 +79,7 @@ Diverter <|-- DiverterLine
 Diverter <|-- DiverterLineHanger
 Diverter <|-- VentOverboardLine
 WellControlSystem <|-- ControlManifold
-WellControlSystem <|-- IBOP
+WellControlSystem <|-- Ibop
 WellControlSystem <|-- KellyValve
 WellControlSystem <|-- FloatValveNonreturnValve
 FloatValveNonreturnValve <|-- PlungerFloatValvesF
@@ -160,7 +160,7 @@ MarineSystem <|-- RiserTensioners
 MarineSystem <|-- ConductorTensioners
 MarineSystem <|-- RiserRecoilSystem
 MarineSystem <|-- LandingJoint
-MarineSystem <|-- ROV
+MarineSystem <|-- Rov
 MarineSystem <|-- BallastSystem
 MarineSystem <|-- Beacons
 MarineSystem <|-- JackupLegs
@@ -222,8 +222,8 @@ MudLoggingEquipment <|-- CuttingsSamplingEquipment
 MudLoggingEquipment <|-- CuttingsAnalysisEquipmnet
 MudLoggingEquipment <|-- GasAnalysisEquipment
 MudLoggingEquipment <|-- FlowAnalysisEquipment
-<equipment> <|-- <Tubulars>
-<Tubulars> <|-- DrillString
+Equipment <|-- Tubulars
+Tubulars <|-- DrillString
 DrillString <|-- BottomholeAssembly
 DrillString <|-- DrillPipe
 DrillString <|-- CompressiveDrillPipe
@@ -234,79 +234,79 @@ DrillString <|-- Heavyweight
 DrillString <|-- PupJoints
 DrillString <|-- Stabilizers
 Stabilizers <|-- BladeShape
-BladeShape <|-- dynamic
-BladeShape <|-- melon
-BladeShape <|-- spiral
-BladeShape <|-- straight
-BladeShape <|-- variable
+BladeShape <|-- Dynamic
+BladeShape <|-- Melon
+BladeShape <|-- Spiral
+BladeShape <|-- Straight
+BladeShape <|-- Variable
 Stabilizers <|-- BladeType
-BladeType <|-- clamp-on
-BladeType <|-- integral
-BladeType <|-- sleeve
+BladeType <|-- Clampon
+BladeType <|-- Integral
+BladeType <|-- Sleeve
 BladeType <|-- BladeTypeWelded
 Stabilizers <|-- BladeDiameter
 Stabilizers <|-- BladeLength
-Stabilizers <|-- Non-Magnetic
+Stabilizers <|-- Nonmagnetic
 Stabilizers <|-- NearBit
-Stabilizers <|-- Non-Rotating
+Stabilizers <|-- Nonrotating
 Stabilizers <|-- Steerable
 DrillString <|-- Grouping
 Grouping <|-- Stands
 Grouping <|-- Doubles
 Grouping <|-- Singles
 DrillString <|-- MiscSubs
-MiscSubs <|-- sub-bent
-MiscSubs <|-- sub-bit
-MiscSubs <|-- sub-bumper
-MiscSubs <|-- sub-catcher
-MiscSubs <|-- sub-circulation
-MiscSubs <|-- sub-cone
-MiscSubs <|-- sub-crossover
-MiscSubs <|-- sub-dart
-MiscSubs <|-- sub-filter
-MiscSubs <|-- sub-float
-MiscSubs <|-- sub-jetting
-MiscSubs <|-- sub-junk
-MiscSubs <|-- sub-orienting
-MiscSubs <|-- sub-ported
+MiscSubs <|-- Subbent
+MiscSubs <|-- Subbit
+MiscSubs <|-- Subbumper
+MiscSubs <|-- Subcatcher
+MiscSubs <|-- Subcirculation
+MiscSubs <|-- Subcone
+MiscSubs <|-- Subcrossover
+MiscSubs <|-- Subdart
+MiscSubs <|-- Subfilter
+MiscSubs <|-- Subfloat
+MiscSubs <|-- Subjetting
+MiscSubs <|-- Subjunk
+MiscSubs <|-- Suborienting
+MiscSubs <|-- Subported
 MiscSubs <|-- SubpressureRelief
 MiscSubs <|-- SubpumpOut
-MiscSubs <|-- sub-restrictor
-MiscSubs <|-- sub-saver
-MiscSubs <|-- sub-shock
+MiscSubs <|-- Subrestrictor
+MiscSubs <|-- Subsaver
+MiscSubs <|-- Subshock
 MiscSubs <|-- SubsideEntry
-MiscSubs <|-- sub-stop
-<Tubulars> <|-- CasingString
+MiscSubs <|-- Substop
+Tubulars <|-- CasingString
 CasingString <|-- ConductorDrivePipe
 CasingString <|-- Casing
 CasingString <|-- Liners
 CasingString <|-- Centralizers
 CasingString <|-- Crossover
 CasingString <|-- Connection
-Connection <|-- box
-Connection <|-- flange
-Connection <|-- mandrel
-Connection <|-- pin
+Connection <|-- Box
+Connection <|-- Flange
+Connection <|-- Mandrel
+Connection <|-- Pin
 Connection <|-- ConnectionWelded
-Connection <|-- self-sealing-threaded
-<Tubulars> <|-- Expandables
-<Tubulars> <|-- TubingString
-<Tubulars> <|-- ScreenString
-<Tubulars> <|-- TubularConnection
-<Tubulars> <|-- TubularConfiguration
+Connection <|-- Selfsealingthreaded
+Tubulars <|-- Expandables
+Tubulars <|-- TubingString
+Tubulars <|-- ScreenString
+Tubulars <|-- TubularConnection
+Tubulars <|-- TubularConfiguration
 TubularConfiguration <|-- PinDown
 TubularConfiguration <|-- PinUp
-TubularConfiguration <|-- Box-Box
-TubularConfiguration <|-- Pin-Pin
-<equipment> <|-- DownholeEquipment
+TubularConfiguration <|-- Boxbox
+TubularConfiguration <|-- Pinpin
+Equipment <|-- DownholeEquipment
 DownholeEquipment <|-- DrillingEquipment
 DrillingEquipment <|-- DrillstemTerminator
 DrillstemTerminator <|-- DrillingBit
 DrillingBit <|-- RollingCutter
-RollingCutter <|-- MillTooth
+RollingCutter <|-- Milltooth
 RollingCutter <|-- InsertTci
 DrillingBit <|-- FixedCutter
-FixedCutter <|-- PDC
+FixedCutter <|-- Pdc
 FixedCutter <|-- Diamond
 FixedCutter <|-- PdcCore
 FixedCutter <|-- DiamondCore
@@ -335,8 +335,8 @@ DownholeMotor <|-- SteerableMotor
 DownholeMotor <|-- InstrumentedMotor
 DrillingEquipment <|-- AdjustableKickoffSub
 DrillingEquipment <|-- RotarySteerableSystems
-RotarySteerableSystems <|-- Point-The-Bit
-RotarySteerableSystems <|-- Push-The-Bit
+RotarySteerableSystems <|-- Pointthebit
+RotarySteerableSystems <|-- Pushthebit
 RotarySteerableSystems <|-- ContinuousProportional
 DrillingEquipment <|-- JettingAssembly
 DrillingEquipment <|-- HammerAssembly
@@ -346,8 +346,8 @@ JarringAssembly <|-- MechanicalJar
 JarringAssembly <|-- HydraulicJar
 JarringAssembly <|-- HydromechanicalJar
 JarringAssembly <|-- Accelerator
-DrillingEquipment <|-- Casing-While-Drilling
-Casing-While-Drilling <|-- DirectionalCasingWhileDrilling
+DrillingEquipment <|-- Casingwhiledrilling
+Casingwhiledrilling <|-- DirectionalCasingWhileDrilling
 DrillingEquipment <|-- LinerDrilling
 LinerDrilling <|-- SteerableLinerDrilling
 DrillingEquipment <|-- CirculationSub
@@ -396,7 +396,7 @@ DownholeEquipment <|-- LoggingEquipment
 LoggingEquipment <|-- EquipmentTelemetry
 EquipmentTelemetry <|-- MudPulse
 EquipmentTelemetry <|-- WiredPipe
-EquipmentTelemetry <|-- Electro-Magnetic
+EquipmentTelemetry <|-- Electromagnetic
 EquipmentTelemetry <|-- Acoustic
 EquipmentTelemetry <|-- Hybrid
 EquipmentTelemetry <|-- WireCable
@@ -436,7 +436,7 @@ WirelineLoggingTools <|-- FluidDensityTools
 WirelineLoggingTools <|-- FlowmeterTools
 WirelineLoggingTools <|-- CementBondLoggingTools
 WirelineLoggingTools <|-- PressureLoggingTools
-<equipment> <|-- CoiledTubingEquipment
+Equipment <|-- CoiledTubingEquipment
 CoiledTubingEquipment <|-- CoiledTubingReel
 CoiledTubingEquipment <|-- InjectorHead
 CoiledTubingEquipment <|-- TubingGuideArch
@@ -446,12 +446,12 @@ ControlConsole <|-- ControlAndMonitoringEquipment
 CoiledTubingEquipment <|-- DownholeCtConnectors
 CoiledTubingEquipment <|-- CtBhaComponents
 CoiledTubingEquipment <|-- WellcontrolStackEquipment
-<equipment> <|-- GenericEquipment
+Equipment <|-- GenericEquipment
 GenericEquipment <|-- GenericEquipmentGatevalve
 GenericEquipment <|-- ThreeWayManifold
 GenericEquipment <|-- ThreeWayValve
 ```
-## <equipment> <!-- NOUN -->
+## Equipment <!-- NOUN -->
 - Display name: <equipment>
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Description: 
@@ -460,7 +460,7 @@ GenericEquipment <|-- ThreeWayValve
 - Examples:
 ## RigEquipment <!-- NOUN -->
 - Display name: <Rig Equipment>
-- Parent class: [<equipment>](./DrillingEquipment.md#<equipment>)
+- Parent class: [Equipment](./DrillingEquipment.md#Equipment)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -955,7 +955,7 @@ GenericEquipment <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## IBOP <!-- NOUN -->
+## Ibop <!-- NOUN -->
 - Display name: IBOP
 - Parent class: [WellControlSystem](./DrillingEquipment.md#WellControlSystem)
 - Description: 
@@ -1522,7 +1522,7 @@ GenericEquipment <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## ROV <!-- NOUN -->
+## Rov <!-- NOUN -->
 - Display name: ROV
 - Parent class: [MarineSystem](./DrillingEquipment.md#MarineSystem)
 - Description: 
@@ -1956,16 +1956,16 @@ GenericEquipment <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## <Tubulars> <!-- NOUN -->
+## Tubulars <!-- NOUN -->
 - Display name: <Tubulars>
-- Parent class: [<equipment>](./DrillingEquipment.md#<equipment>)
+- Parent class: [Equipment](./DrillingEquipment.md#Equipment)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## DrillString <!-- NOUN -->
 - Display name: Drill String
-- Parent class: [<Tubulars>](./DrillingEquipment.md#<Tubulars>)
+- Parent class: [Tubulars](./DrillingEquipment.md#Tubulars)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -2040,35 +2040,35 @@ GenericEquipment <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## dynamic <!-- NOUN -->
+## Dynamic <!-- NOUN -->
 - Display name: dynamic
 - Parent class: [BladeShape](./DrillingEquipment.md#BladeShape)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## melon <!-- NOUN -->
+## Melon <!-- NOUN -->
 - Display name: melon
 - Parent class: [BladeShape](./DrillingEquipment.md#BladeShape)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## spiral <!-- NOUN -->
+## Spiral <!-- NOUN -->
 - Display name: spiral
 - Parent class: [BladeShape](./DrillingEquipment.md#BladeShape)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## straight <!-- NOUN -->
+## Straight <!-- NOUN -->
 - Display name: straight
 - Parent class: [BladeShape](./DrillingEquipment.md#BladeShape)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## variable <!-- NOUN -->
+## Variable <!-- NOUN -->
 - Display name: variable
 - Parent class: [BladeShape](./DrillingEquipment.md#BladeShape)
 - Description: 
@@ -2082,21 +2082,21 @@ GenericEquipment <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## clamp-on <!-- NOUN -->
+## Clampon <!-- NOUN -->
 - Display name: clamp-on
 - Parent class: [BladeType](./DrillingEquipment.md#BladeType)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## integral <!-- NOUN -->
+## Integral <!-- NOUN -->
 - Display name: integral
 - Parent class: [BladeType](./DrillingEquipment.md#BladeType)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sleeve <!-- NOUN -->
+## Sleeve <!-- NOUN -->
 - Display name: sleeve
 - Parent class: [BladeType](./DrillingEquipment.md#BladeType)
 - Description: 
@@ -2124,7 +2124,7 @@ GenericEquipment <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Non-Magnetic <!-- NOUN -->
+## Nonmagnetic <!-- NOUN -->
 - Display name: Non-Magnetic
 - Parent class: [Stabilizers](./DrillingEquipment.md#Stabilizers)
 - Description: 
@@ -2138,7 +2138,7 @@ GenericEquipment <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Non-Rotating <!-- NOUN -->
+## Nonrotating <!-- NOUN -->
 - Display name: Non-Rotating
 - Parent class: [Stabilizers](./DrillingEquipment.md#Stabilizers)
 - Description: 
@@ -2187,98 +2187,98 @@ GenericEquipment <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-bent <!-- NOUN -->
+## Subbent <!-- NOUN -->
 - Display name: sub-bent
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-bit <!-- NOUN -->
+## Subbit <!-- NOUN -->
 - Display name: sub-bit
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-bumper <!-- NOUN -->
+## Subbumper <!-- NOUN -->
 - Display name: sub-bumper
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-catcher <!-- NOUN -->
+## Subcatcher <!-- NOUN -->
 - Display name: sub-catcher
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-circulation <!-- NOUN -->
+## Subcirculation <!-- NOUN -->
 - Display name: sub-circulation
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-cone <!-- NOUN -->
+## Subcone <!-- NOUN -->
 - Display name: sub-cone
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-crossover <!-- NOUN -->
+## Subcrossover <!-- NOUN -->
 - Display name: sub-crossover
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-dart <!-- NOUN -->
+## Subdart <!-- NOUN -->
 - Display name: sub-dart
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-filter <!-- NOUN -->
+## Subfilter <!-- NOUN -->
 - Display name: sub-filter
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-float <!-- NOUN -->
+## Subfloat <!-- NOUN -->
 - Display name: sub-float
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-jetting <!-- NOUN -->
+## Subjetting <!-- NOUN -->
 - Display name: sub-jetting
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-junk <!-- NOUN -->
+## Subjunk <!-- NOUN -->
 - Display name: sub-junk
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-orienting <!-- NOUN -->
+## Suborienting <!-- NOUN -->
 - Display name: sub-orienting
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-ported <!-- NOUN -->
+## Subported <!-- NOUN -->
 - Display name: sub-ported
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
@@ -2299,21 +2299,21 @@ GenericEquipment <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-restrictor <!-- NOUN -->
+## Subrestrictor <!-- NOUN -->
 - Display name: sub-restrictor
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-saver <!-- NOUN -->
+## Subsaver <!-- NOUN -->
 - Display name: sub-saver
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-shock <!-- NOUN -->
+## Subshock <!-- NOUN -->
 - Display name: sub-shock
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
@@ -2327,7 +2327,7 @@ GenericEquipment <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-stop <!-- NOUN -->
+## Substop <!-- NOUN -->
 - Display name: sub-stop
 - Parent class: [MiscSubs](./DrillingEquipment.md#MiscSubs)
 - Description: 
@@ -2336,7 +2336,7 @@ GenericEquipment <|-- ThreeWayValve
 - Examples:
 ## CasingString <!-- NOUN -->
 - Display name: Casing String
-- Parent class: [<Tubulars>](./DrillingEquipment.md#<Tubulars>)
+- Parent class: [Tubulars](./DrillingEquipment.md#Tubulars)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -2383,28 +2383,28 @@ GenericEquipment <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## box <!-- NOUN -->
+## Box <!-- NOUN -->
 - Display name: box
 - Parent class: [Connection](./DrillingEquipment.md#Connection)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## flange <!-- NOUN -->
+## Flange <!-- NOUN -->
 - Display name: flange
 - Parent class: [Connection](./DrillingEquipment.md#Connection)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## mandrel <!-- NOUN -->
+## Mandrel <!-- NOUN -->
 - Display name: mandrel
 - Parent class: [Connection](./DrillingEquipment.md#Connection)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## pin <!-- NOUN -->
+## Pin <!-- NOUN -->
 - Display name: pin
 - Parent class: [Connection](./DrillingEquipment.md#Connection)
 - Description: 
@@ -2418,7 +2418,7 @@ GenericEquipment <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## self-sealing-threaded <!-- NOUN -->
+## Selfsealingthreaded <!-- NOUN -->
 - Display name: self-sealing-threaded
 - Parent class: [Connection](./DrillingEquipment.md#Connection)
 - Description: 
@@ -2427,35 +2427,35 @@ GenericEquipment <|-- ThreeWayValve
 - Examples:
 ## Expandables <!-- NOUN -->
 - Display name: Expandables
-- Parent class: [<Tubulars>](./DrillingEquipment.md#<Tubulars>)
+- Parent class: [Tubulars](./DrillingEquipment.md#Tubulars)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## TubingString <!-- NOUN -->
 - Display name: Tubing String
-- Parent class: [<Tubulars>](./DrillingEquipment.md#<Tubulars>)
+- Parent class: [Tubulars](./DrillingEquipment.md#Tubulars)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## ScreenString <!-- NOUN -->
 - Display name: Screen String
-- Parent class: [<Tubulars>](./DrillingEquipment.md#<Tubulars>)
+- Parent class: [Tubulars](./DrillingEquipment.md#Tubulars)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## TubularConnection <!-- NOUN -->
 - Display name: Tubular Connection
-- Parent class: [<Tubulars>](./DrillingEquipment.md#<Tubulars>)
+- Parent class: [Tubulars](./DrillingEquipment.md#Tubulars)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## TubularConfiguration <!-- NOUN -->
 - Display name: Tubular Configuration
-- Parent class: [<Tubulars>](./DrillingEquipment.md#<Tubulars>)
+- Parent class: [Tubulars](./DrillingEquipment.md#Tubulars)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -2474,14 +2474,14 @@ GenericEquipment <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Box-Box <!-- NOUN -->
+## Boxbox <!-- NOUN -->
 - Display name: Box-Box
 - Parent class: [TubularConfiguration](./DrillingEquipment.md#TubularConfiguration)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Pin-Pin <!-- NOUN -->
+## Pinpin <!-- NOUN -->
 - Display name: Pin-Pin
 - Parent class: [TubularConfiguration](./DrillingEquipment.md#TubularConfiguration)
 - Description: 
@@ -2490,7 +2490,7 @@ GenericEquipment <|-- ThreeWayValve
 - Examples:
 ## DownholeEquipment <!-- NOUN -->
 - Display name: <Downhole Equipment>
-- Parent class: [<equipment>](./DrillingEquipment.md#<equipment>)
+- Parent class: [Equipment](./DrillingEquipment.md#Equipment)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -2523,7 +2523,7 @@ GenericEquipment <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## MillTooth <!-- NOUN -->
+## Milltooth <!-- NOUN -->
 - Display name: MillTooth
 - Parent class: [RollingCutter](./DrillingEquipment.md#RollingCutter)
 - Description: 
@@ -2544,7 +2544,7 @@ GenericEquipment <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## PDC <!-- NOUN -->
+## Pdc <!-- NOUN -->
 - Display name: PDC
 - Parent class: [FixedCutter](./DrillingEquipment.md#FixedCutter)
 - Description: 
@@ -2747,14 +2747,14 @@ GenericEquipment <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Point-The-Bit <!-- NOUN -->
+## Pointthebit <!-- NOUN -->
 - Display name: Point-The-Bit
 - Parent class: [RotarySteerableSystems](./DrillingEquipment.md#RotarySteerableSystems)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Push-The-Bit <!-- NOUN -->
+## Pushthebit <!-- NOUN -->
 - Display name: Push-The-Bit
 - Parent class: [RotarySteerableSystems](./DrillingEquipment.md#RotarySteerableSystems)
 - Description: 
@@ -2824,7 +2824,7 @@ GenericEquipment <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Casing-While-Drilling <!-- NOUN -->
+## Casingwhiledrilling <!-- NOUN -->
 - Display name: Casing-While-Drilling
 - Parent class: [DrillingEquipment](./DrillingEquipment.md#DrillingEquipment)
 - Description: 
@@ -2833,7 +2833,7 @@ GenericEquipment <|-- ThreeWayValve
 - Examples:
 ## DirectionalCasingWhileDrilling <!-- NOUN -->
 - Display name: Directional Casing While Drilling
-- Parent class: [Casing-While-Drilling](./DrillingEquipment.md#Casing-While-Drilling)
+- Parent class: [Casingwhiledrilling](./DrillingEquipment.md#Casingwhiledrilling)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -3174,7 +3174,7 @@ GenericEquipment <|-- ThreeWayValve
 
 - Definition set: DrillingEquipment
 - Examples:
-## Electro-Magnetic <!-- NOUN -->
+## Electromagnetic <!-- NOUN -->
 - Display name: Electro-Magnetic
 - Parent class: [EquipmentTelemetry](./DrillingEquipment.md#EquipmentTelemetry)
 - Description: 
@@ -3456,7 +3456,7 @@ GenericEquipment <|-- ThreeWayValve
 - Examples:
 ## CoiledTubingEquipment <!-- NOUN -->
 - Display name: <Coiled Tubing Equipment>
-- Parent class: [<equipment>](./DrillingEquipment.md#<equipment>)
+- Parent class: [Equipment](./DrillingEquipment.md#Equipment)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -3526,7 +3526,7 @@ GenericEquipment <|-- ThreeWayValve
 - Examples:
 ## GenericEquipment <!-- NOUN -->
 - Display name: <Generic Equipment>
-- Parent class: [<equipment>](./DrillingEquipment.md#<equipment>)
+- Parent class: [Equipment](./DrillingEquipment.md#Equipment)
 - Description: 
 
 - Definition set: DrillingEquipment

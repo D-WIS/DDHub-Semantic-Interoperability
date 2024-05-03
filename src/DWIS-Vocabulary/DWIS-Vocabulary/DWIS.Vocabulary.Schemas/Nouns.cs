@@ -122,7 +122,7 @@ CorrectedMeasurement,
 ComputedData,
 DrillingSignal,
 DynamicDrillingSignal,
-<equipment>,
+Equipment,
 RigEquipment,
 PowerGenerationSystem,
 PowerGenerators,
@@ -194,7 +194,7 @@ DiverterLine,
 DiverterLineHanger,
 VentOverboardLine,
 ControlManifold,
-IBOP,
+Ibop,
 KellyValve,
 FloatValveNonreturnValve,
 PlungerFloatValvesF,
@@ -275,7 +275,7 @@ RiserTensioners,
 ConductorTensioners,
 RiserRecoilSystem,
 LandingJoint,
-ROV,
+Rov,
 BallastSystem,
 Beacons,
 JackupLegs,
@@ -337,7 +337,7 @@ CuttingsSamplingEquipment,
 CuttingsAnalysisEquipmnet,
 GasAnalysisEquipment,
 FlowAnalysisEquipment,
-<Tubulars>,
+Tubulars,
 DrillString,
 BottomholeAssembly,
 DrillPipe,
@@ -349,48 +349,48 @@ Heavyweight,
 PupJoints,
 Stabilizers,
 BladeShape,
-dynamic,
-melon,
-spiral,
-straight,
-variable,
+Dynamic,
+Melon,
+Spiral,
+Straight,
+Variable,
 BladeType,
-clamp-on,
-integral,
-sleeve,
+Clampon,
+Integral,
+Sleeve,
 BladeTypeWelded,
 BladeDiameter,
 BladeLength,
-Non-Magnetic,
+Nonmagnetic,
 NearBit,
-Non-Rotating,
+Nonrotating,
 Steerable,
 Grouping,
 Stands,
 Doubles,
 Singles,
 MiscSubs,
-sub-bent,
-sub-bit,
-sub-bumper,
-sub-catcher,
-sub-circulation,
-sub-cone,
-sub-crossover,
-sub-dart,
-sub-filter,
-sub-float,
-sub-jetting,
-sub-junk,
-sub-orienting,
-sub-ported,
+Subbent,
+Subbit,
+Subbumper,
+Subcatcher,
+Subcirculation,
+Subcone,
+Subcrossover,
+Subdart,
+Subfilter,
+Subfloat,
+Subjetting,
+Subjunk,
+Suborienting,
+Subported,
 SubpressureRelief,
 SubpumpOut,
-sub-restrictor,
-sub-saver,
-sub-shock,
+Subrestrictor,
+Subsaver,
+Subshock,
 SubsideEntry,
-sub-stop,
+Substop,
 CasingString,
 ConductorDrivePipe,
 Casing,
@@ -398,12 +398,12 @@ Liners,
 Centralizers,
 Crossover,
 Connection,
-box,
-flange,
-mandrel,
-pin,
+Box,
+Flange,
+Mandrel,
+Pin,
 ConnectionWelded,
-self-sealing-threaded,
+Selfsealingthreaded,
 Expandables,
 TubingString,
 ScreenString,
@@ -411,17 +411,17 @@ TubularConnection,
 TubularConfiguration,
 PinDown,
 PinUp,
-Box-Box,
-Pin-Pin,
+Boxbox,
+Pinpin,
 DownholeEquipment,
 DrillingEquipment,
 DrillstemTerminator,
 DrillingBit,
 RollingCutter,
-MillTooth,
+Milltooth,
 InsertTci,
 FixedCutter,
-PDC,
+Pdc,
 Diamond,
 PdcCore,
 DiamondCore,
@@ -450,8 +450,8 @@ SteerableMotor,
 InstrumentedMotor,
 AdjustableKickoffSub,
 RotarySteerableSystems,
-Point-The-Bit,
-Push-The-Bit,
+Pointthebit,
+Pushthebit,
 ContinuousProportional,
 JettingAssembly,
 HammerAssembly,
@@ -461,7 +461,7 @@ MechanicalJar,
 HydraulicJar,
 HydromechanicalJar,
 Accelerator,
-Casing-While-Drilling,
+Casingwhiledrilling,
 DirectionalCasingWhileDrilling,
 LinerDrilling,
 SteerableLinerDrilling,
@@ -511,7 +511,7 @@ LoggingEquipment,
 EquipmentTelemetry,
 MudPulse,
 WiredPipe,
-Electro-Magnetic,
+Electromagnetic,
 Acoustic,
 Hybrid,
 WireCable,
@@ -566,6 +566,17 @@ GenericEquipmentGatevalve,
 ThreeWayManifold,
 ThreeWayValve,
 DrillingIncident,
+AbnormalOscillation,
+AbnormalAxialOscillation,
+AbnormalTorsionalOscillation,
+AbnormalLateralOscillation,
+StickSlip,
+HFTO,
+Whirling,
+ForwardWhirl,
+BackwardWhirl,
+ChaoticWhirl,
+Shock,
 TwistOff,
 Overpull,
 Underpull,
@@ -1070,7 +1081,7 @@ SensorUncertainty
 	public static string ComputedData = "ComputedData";
 	public static string DrillingSignal = "DrillingSignal";
 	public static string DynamicDrillingSignal = "DynamicDrillingSignal";
-	public static string <equipment> = "<equipment>";
+	public static string Equipment = "Equipment";
 	public static string RigEquipment = "RigEquipment";
 	public static string PowerGenerationSystem = "PowerGenerationSystem";
 	public static string PowerGenerators = "PowerGenerators";
@@ -1142,7 +1153,7 @@ SensorUncertainty
 	public static string DiverterLineHanger = "DiverterLineHanger";
 	public static string VentOverboardLine = "VentOverboardLine";
 	public static string ControlManifold = "ControlManifold";
-	public static string IBOP = "IBOP";
+	public static string Ibop = "Ibop";
 	public static string KellyValve = "KellyValve";
 	public static string FloatValveNonreturnValve = "FloatValveNonreturnValve";
 	public static string PlungerFloatValvesF = "PlungerFloatValvesF";
@@ -1223,7 +1234,7 @@ SensorUncertainty
 	public static string ConductorTensioners = "ConductorTensioners";
 	public static string RiserRecoilSystem = "RiserRecoilSystem";
 	public static string LandingJoint = "LandingJoint";
-	public static string ROV = "ROV";
+	public static string Rov = "Rov";
 	public static string BallastSystem = "BallastSystem";
 	public static string Beacons = "Beacons";
 	public static string JackupLegs = "JackupLegs";
@@ -1285,7 +1296,7 @@ SensorUncertainty
 	public static string CuttingsAnalysisEquipmnet = "CuttingsAnalysisEquipmnet";
 	public static string GasAnalysisEquipment = "GasAnalysisEquipment";
 	public static string FlowAnalysisEquipment = "FlowAnalysisEquipment";
-	public static string <Tubulars> = "<Tubulars>";
+	public static string Tubulars = "Tubulars";
 	public static string DrillString = "DrillString";
 	public static string BottomholeAssembly = "BottomholeAssembly";
 	public static string DrillPipe = "DrillPipe";
@@ -1297,48 +1308,48 @@ SensorUncertainty
 	public static string PupJoints = "PupJoints";
 	public static string Stabilizers = "Stabilizers";
 	public static string BladeShape = "BladeShape";
-	public static string dynamic = "dynamic";
-	public static string melon = "melon";
-	public static string spiral = "spiral";
-	public static string straight = "straight";
-	public static string variable = "variable";
+	public static string Dynamic = "Dynamic";
+	public static string Melon = "Melon";
+	public static string Spiral = "Spiral";
+	public static string Straight = "Straight";
+	public static string Variable = "Variable";
 	public static string BladeType = "BladeType";
-	public static string clamp-on = "clamp-on";
-	public static string integral = "integral";
-	public static string sleeve = "sleeve";
+	public static string Clampon = "Clampon";
+	public static string Integral = "Integral";
+	public static string Sleeve = "Sleeve";
 	public static string BladeTypeWelded = "BladeTypeWelded";
 	public static string BladeDiameter = "BladeDiameter";
 	public static string BladeLength = "BladeLength";
-	public static string Non-Magnetic = "Non-Magnetic";
+	public static string Nonmagnetic = "Nonmagnetic";
 	public static string NearBit = "NearBit";
-	public static string Non-Rotating = "Non-Rotating";
+	public static string Nonrotating = "Nonrotating";
 	public static string Steerable = "Steerable";
 	public static string Grouping = "Grouping";
 	public static string Stands = "Stands";
 	public static string Doubles = "Doubles";
 	public static string Singles = "Singles";
 	public static string MiscSubs = "MiscSubs";
-	public static string sub-bent = "sub-bent";
-	public static string sub-bit = "sub-bit";
-	public static string sub-bumper = "sub-bumper";
-	public static string sub-catcher = "sub-catcher";
-	public static string sub-circulation = "sub-circulation";
-	public static string sub-cone = "sub-cone";
-	public static string sub-crossover = "sub-crossover";
-	public static string sub-dart = "sub-dart";
-	public static string sub-filter = "sub-filter";
-	public static string sub-float = "sub-float";
-	public static string sub-jetting = "sub-jetting";
-	public static string sub-junk = "sub-junk";
-	public static string sub-orienting = "sub-orienting";
-	public static string sub-ported = "sub-ported";
+	public static string Subbent = "Subbent";
+	public static string Subbit = "Subbit";
+	public static string Subbumper = "Subbumper";
+	public static string Subcatcher = "Subcatcher";
+	public static string Subcirculation = "Subcirculation";
+	public static string Subcone = "Subcone";
+	public static string Subcrossover = "Subcrossover";
+	public static string Subdart = "Subdart";
+	public static string Subfilter = "Subfilter";
+	public static string Subfloat = "Subfloat";
+	public static string Subjetting = "Subjetting";
+	public static string Subjunk = "Subjunk";
+	public static string Suborienting = "Suborienting";
+	public static string Subported = "Subported";
 	public static string SubpressureRelief = "SubpressureRelief";
 	public static string SubpumpOut = "SubpumpOut";
-	public static string sub-restrictor = "sub-restrictor";
-	public static string sub-saver = "sub-saver";
-	public static string sub-shock = "sub-shock";
+	public static string Subrestrictor = "Subrestrictor";
+	public static string Subsaver = "Subsaver";
+	public static string Subshock = "Subshock";
 	public static string SubsideEntry = "SubsideEntry";
-	public static string sub-stop = "sub-stop";
+	public static string Substop = "Substop";
 	public static string CasingString = "CasingString";
 	public static string ConductorDrivePipe = "ConductorDrivePipe";
 	public static string Casing = "Casing";
@@ -1346,12 +1357,12 @@ SensorUncertainty
 	public static string Centralizers = "Centralizers";
 	public static string Crossover = "Crossover";
 	public static string Connection = "Connection";
-	public static string box = "box";
-	public static string flange = "flange";
-	public static string mandrel = "mandrel";
-	public static string pin = "pin";
+	public static string Box = "Box";
+	public static string Flange = "Flange";
+	public static string Mandrel = "Mandrel";
+	public static string Pin = "Pin";
 	public static string ConnectionWelded = "ConnectionWelded";
-	public static string self-sealing-threaded = "self-sealing-threaded";
+	public static string Selfsealingthreaded = "Selfsealingthreaded";
 	public static string Expandables = "Expandables";
 	public static string TubingString = "TubingString";
 	public static string ScreenString = "ScreenString";
@@ -1359,17 +1370,17 @@ SensorUncertainty
 	public static string TubularConfiguration = "TubularConfiguration";
 	public static string PinDown = "PinDown";
 	public static string PinUp = "PinUp";
-	public static string Box-Box = "Box-Box";
-	public static string Pin-Pin = "Pin-Pin";
+	public static string Boxbox = "Boxbox";
+	public static string Pinpin = "Pinpin";
 	public static string DownholeEquipment = "DownholeEquipment";
 	public static string DrillingEquipment = "DrillingEquipment";
 	public static string DrillstemTerminator = "DrillstemTerminator";
 	public static string DrillingBit = "DrillingBit";
 	public static string RollingCutter = "RollingCutter";
-	public static string MillTooth = "MillTooth";
+	public static string Milltooth = "Milltooth";
 	public static string InsertTci = "InsertTci";
 	public static string FixedCutter = "FixedCutter";
-	public static string PDC = "PDC";
+	public static string Pdc = "Pdc";
 	public static string Diamond = "Diamond";
 	public static string PdcCore = "PdcCore";
 	public static string DiamondCore = "DiamondCore";
@@ -1398,8 +1409,8 @@ SensorUncertainty
 	public static string InstrumentedMotor = "InstrumentedMotor";
 	public static string AdjustableKickoffSub = "AdjustableKickoffSub";
 	public static string RotarySteerableSystems = "RotarySteerableSystems";
-	public static string Point-The-Bit = "Point-The-Bit";
-	public static string Push-The-Bit = "Push-The-Bit";
+	public static string Pointthebit = "Pointthebit";
+	public static string Pushthebit = "Pushthebit";
 	public static string ContinuousProportional = "ContinuousProportional";
 	public static string JettingAssembly = "JettingAssembly";
 	public static string HammerAssembly = "HammerAssembly";
@@ -1409,7 +1420,7 @@ SensorUncertainty
 	public static string HydraulicJar = "HydraulicJar";
 	public static string HydromechanicalJar = "HydromechanicalJar";
 	public static string Accelerator = "Accelerator";
-	public static string Casing-While-Drilling = "Casing-While-Drilling";
+	public static string Casingwhiledrilling = "Casingwhiledrilling";
 	public static string DirectionalCasingWhileDrilling = "DirectionalCasingWhileDrilling";
 	public static string LinerDrilling = "LinerDrilling";
 	public static string SteerableLinerDrilling = "SteerableLinerDrilling";
@@ -1459,7 +1470,7 @@ SensorUncertainty
 	public static string EquipmentTelemetry = "EquipmentTelemetry";
 	public static string MudPulse = "MudPulse";
 	public static string WiredPipe = "WiredPipe";
-	public static string Electro-Magnetic = "Electro-Magnetic";
+	public static string Electromagnetic = "Electromagnetic";
 	public static string Acoustic = "Acoustic";
 	public static string Hybrid = "Hybrid";
 	public static string WireCable = "WireCable";
@@ -1514,6 +1525,17 @@ SensorUncertainty
 	public static string ThreeWayManifold = "ThreeWayManifold";
 	public static string ThreeWayValve = "ThreeWayValve";
 	public static string DrillingIncident = "DrillingIncident";
+	public static string AbnormalOscillation = "AbnormalOscillation";
+	public static string AbnormalAxialOscillation = "AbnormalAxialOscillation";
+	public static string AbnormalTorsionalOscillation = "AbnormalTorsionalOscillation";
+	public static string AbnormalLateralOscillation = "AbnormalLateralOscillation";
+	public static string StickSlip = "StickSlip";
+	public static string HFTO = "HFTO";
+	public static string Whirling = "Whirling";
+	public static string ForwardWhirl = "ForwardWhirl";
+	public static string BackwardWhirl = "BackwardWhirl";
+	public static string ChaoticWhirl = "ChaoticWhirl";
+	public static string Shock = "Shock";
 	public static string TwistOff = "TwistOff";
 	public static string Overpull = "Overpull";
 	public static string Underpull = "Underpull";

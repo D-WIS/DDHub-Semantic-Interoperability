@@ -1,14 +1,14 @@
 - Description: in this category fall all the standard equipment encountered on a drilling rig. Note that the goal of the vocabulary is not to provide a detailed description of the rig. Therefore we only consider nouns that can help providing a signal context.
 
 # NOUNS
-## <equipment> <!-- NOUN -->
+## Equipment <!-- NOUN -->
 - Display name: <equipment>
 - Parent class: DWISNoun
 - Description:
 - Examples:
 ## RigEquipment <!-- NOUN -->
 - Display name: <Rig Equipment>
-- Parent class: <equipment>
+- Parent class: Equipment
 - Description:
 - Examples:
 ## PowerGenerationSystem <!-- NOUN -->
@@ -361,7 +361,7 @@
 - Parent class: WellControlSystem
 - Description:
 - Examples:
-## IBOP <!-- NOUN -->
+## Ibop <!-- NOUN -->
 - Display name: IBOP
 - Parent class: WellControlSystem
 - Description:
@@ -766,7 +766,7 @@
 - Parent class: MarineSystem
 - Description:
 - Examples:
-## ROV <!-- NOUN -->
+## Rov <!-- NOUN -->
 - Display name: ROV
 - Parent class: MarineSystem
 - Description:
@@ -1076,14 +1076,14 @@
 - Parent class: MudLoggingEquipment
 - Description:
 - Examples:
-## <Tubulars> <!-- NOUN -->
+## Tubulars <!-- NOUN -->
 - Display name: <Tubulars>
-- Parent class: <equipment>
+- Parent class: Equipment
 - Description:
 - Examples:
 ## DrillString <!-- NOUN -->
 - Display name: Drill String
-- Parent class: <Tubulars>
+- Parent class: Tubulars
 - Description:
 - Examples:
 ## BottomholeAssembly <!-- NOUN -->
@@ -1136,27 +1136,27 @@
 - Parent class: Stabilizers
 - Description:
 - Examples:
-## dynamic <!-- NOUN -->
+## Dynamic <!-- NOUN -->
 - Display name: dynamic
 - Parent class: BladeShape
 - Description:
 - Examples:
-## melon <!-- NOUN -->
+## Melon <!-- NOUN -->
 - Display name: melon
 - Parent class: BladeShape
 - Description:
 - Examples:
-## spiral <!-- NOUN -->
+## Spiral <!-- NOUN -->
 - Display name: spiral
 - Parent class: BladeShape
 - Description:
 - Examples:
-## straight <!-- NOUN -->
+## Straight <!-- NOUN -->
 - Display name: straight
 - Parent class: BladeShape
 - Description:
 - Examples:
-## variable <!-- NOUN -->
+## Variable <!-- NOUN -->
 - Display name: variable
 - Parent class: BladeShape
 - Description:
@@ -1166,17 +1166,17 @@
 - Parent class: Stabilizers
 - Description:
 - Examples:
-## clamp-on <!-- NOUN -->
+## Clampon <!-- NOUN -->
 - Display name: clamp-on
 - Parent class: BladeType
 - Description:
 - Examples:
-## integral <!-- NOUN -->
+## Integral <!-- NOUN -->
 - Display name: integral
 - Parent class: BladeType
 - Description:
 - Examples:
-## sleeve <!-- NOUN -->
+## Sleeve <!-- NOUN -->
 - Display name: sleeve
 - Parent class: BladeType
 - Description:
@@ -1196,7 +1196,7 @@
 - Parent class: Stabilizers
 - Description:
 - Examples:
-## Non-Magnetic <!-- NOUN -->
+## Nonmagnetic <!-- NOUN -->
 - Display name: Non-Magnetic
 - Parent class: Stabilizers
 - Description:
@@ -1206,7 +1206,7 @@
 - Parent class: Stabilizers
 - Description:
 - Examples:
-## Non-Rotating <!-- NOUN -->
+## Nonrotating <!-- NOUN -->
 - Display name: Non-Rotating
 - Parent class: Stabilizers
 - Description:
@@ -1241,72 +1241,72 @@
 - Parent class: DrillString
 - Description:
 - Examples:
-## sub-bent <!-- NOUN -->
+## Subbent <!-- NOUN -->
 - Display name: sub-bent
 - Parent class: MiscSubs
 - Description:
 - Examples:
-## sub-bit <!-- NOUN -->
+## Subbit <!-- NOUN -->
 - Display name: sub-bit
 - Parent class: MiscSubs
 - Description:
 - Examples:
-## sub-bumper <!-- NOUN -->
+## Subbumper <!-- NOUN -->
 - Display name: sub-bumper
 - Parent class: MiscSubs
 - Description:
 - Examples:
-## sub-catcher <!-- NOUN -->
+## Subcatcher <!-- NOUN -->
 - Display name: sub-catcher
 - Parent class: MiscSubs
 - Description:
 - Examples:
-## sub-circulation <!-- NOUN -->
+## Subcirculation <!-- NOUN -->
 - Display name: sub-circulation
 - Parent class: MiscSubs
 - Description:
 - Examples:
-## sub-cone <!-- NOUN -->
+## Subcone <!-- NOUN -->
 - Display name: sub-cone
 - Parent class: MiscSubs
 - Description:
 - Examples:
-## sub-crossover <!-- NOUN -->
+## Subcrossover <!-- NOUN -->
 - Display name: sub-crossover
 - Parent class: MiscSubs
 - Description:
 - Examples:
-## sub-dart <!-- NOUN -->
+## Subdart <!-- NOUN -->
 - Display name: sub-dart
 - Parent class: MiscSubs
 - Description:
 - Examples:
-## sub-filter <!-- NOUN -->
+## Subfilter <!-- NOUN -->
 - Display name: sub-filter
 - Parent class: MiscSubs
 - Description:
 - Examples:
-## sub-float <!-- NOUN -->
+## Subfloat <!-- NOUN -->
 - Display name: sub-float
 - Parent class: MiscSubs
 - Description:
 - Examples:
-## sub-jetting <!-- NOUN -->
+## Subjetting <!-- NOUN -->
 - Display name: sub-jetting
 - Parent class: MiscSubs
 - Description:
 - Examples:
-## sub-junk <!-- NOUN -->
+## Subjunk <!-- NOUN -->
 - Display name: sub-junk
 - Parent class: MiscSubs
 - Description:
 - Examples:
-## sub-orienting <!-- NOUN -->
+## Suborienting <!-- NOUN -->
 - Display name: sub-orienting
 - Parent class: MiscSubs
 - Description:
 - Examples:
-## sub-ported <!-- NOUN -->
+## Subported <!-- NOUN -->
 - Display name: sub-ported
 - Parent class: MiscSubs
 - Description:
@@ -1321,17 +1321,17 @@
 - Parent class: MiscSubs
 - Description:
 - Examples:
-## sub-restrictor <!-- NOUN -->
+## Subrestrictor <!-- NOUN -->
 - Display name: sub-restrictor
 - Parent class: MiscSubs
 - Description:
 - Examples:
-## sub-saver <!-- NOUN -->
+## Subsaver <!-- NOUN -->
 - Display name: sub-saver
 - Parent class: MiscSubs
 - Description:
 - Examples:
-## sub-shock <!-- NOUN -->
+## Subshock <!-- NOUN -->
 - Display name: sub-shock
 - Parent class: MiscSubs
 - Description:
@@ -1341,14 +1341,14 @@
 - Parent class: MiscSubs
 - Description:
 - Examples:
-## sub-stop <!-- NOUN -->
+## Substop <!-- NOUN -->
 - Display name: sub-stop
 - Parent class: MiscSubs
 - Description:
 - Examples:
 ## CasingString <!-- NOUN -->
 - Display name: Casing String
-- Parent class: <Tubulars>
+- Parent class: Tubulars
 - Description:
 - Examples:
 ## ConductorDrivePipe <!-- NOUN -->
@@ -1381,22 +1381,22 @@
 - Parent class: CasingString
 - Description:
 - Examples:
-## box <!-- NOUN -->
+## Box <!-- NOUN -->
 - Display name: box
 - Parent class: Connection
 - Description:
 - Examples:
-## flange <!-- NOUN -->
+## Flange <!-- NOUN -->
 - Display name: flange
 - Parent class: Connection
 - Description:
 - Examples:
-## mandrel <!-- NOUN -->
+## Mandrel <!-- NOUN -->
 - Display name: mandrel
 - Parent class: Connection
 - Description:
 - Examples:
-## pin <!-- NOUN -->
+## Pin <!-- NOUN -->
 - Display name: pin
 - Parent class: Connection
 - Description:
@@ -1406,34 +1406,34 @@
 - Parent class: Connection
 - Description:
 - Examples:
-## self-sealing-threaded <!-- NOUN -->
+## Selfsealingthreaded <!-- NOUN -->
 - Display name: self-sealing-threaded
 - Parent class: Connection
 - Description:
 - Examples:
 ## Expandables <!-- NOUN -->
 - Display name: Expandables
-- Parent class: <Tubulars>
+- Parent class: Tubulars
 - Description:
 - Examples:
 ## TubingString <!-- NOUN -->
 - Display name:  Tubing String
-- Parent class: <Tubulars>
+- Parent class: Tubulars
 - Description:
 - Examples:
 ## ScreenString <!-- NOUN -->
 - Display name: Screen String
-- Parent class: <Tubulars>
+- Parent class: Tubulars
 - Description:
 - Examples:
 ## TubularConnection <!-- NOUN -->
 - Display name: Tubular Connection
-- Parent class: <Tubulars>
+- Parent class: Tubulars
 - Description:
 - Examples:
 ## TubularConfiguration <!-- NOUN -->
 - Display name: Tubular Configuration 
-- Parent class: <Tubulars>
+- Parent class: Tubulars
 - Description:
 - Examples:
 ## PinDown <!-- NOUN -->
@@ -1446,19 +1446,19 @@
 - Parent class: TubularConfiguration
 - Description:
 - Examples:
-## Box-Box <!-- NOUN -->
+## Boxbox <!-- NOUN -->
 - Display name: Box-Box
 - Parent class: TubularConfiguration
 - Description:
 - Examples:
-## Pin-Pin <!-- NOUN -->
+## Pinpin <!-- NOUN -->
 - Display name: Pin-Pin
 - Parent class: TubularConfiguration
 - Description:
 - Examples:
 ## DownholeEquipment <!-- NOUN -->
 - Display name: <Downhole Equipment>
-- Parent class: <equipment>
+- Parent class: Equipment
 - Description:
 - Examples:
 ## DrillingEquipment <!-- NOUN -->
@@ -1481,7 +1481,7 @@
 - Parent class: DrillingBit
 - Description:
 - Examples:
-## MillTooth <!-- NOUN -->
+## Milltooth <!-- NOUN -->
 - Display name: MillTooth
 - Parent class: RollingCutter
 - Description:
@@ -1496,7 +1496,7 @@
 - Parent class: DrillingBit
 - Description:
 - Examples:
-## PDC <!-- NOUN -->
+## Pdc <!-- NOUN -->
 - Display name: PDC
 - Parent class: FixedCutter
 - Description:
@@ -1641,12 +1641,12 @@
 - Parent class: DrillingEquipment
 - Description:
 - Examples:
-## Point-The-Bit <!-- NOUN -->
+## Pointthebit <!-- NOUN -->
 - Display name: Point-The-Bit
 - Parent class: RotarySteerableSystems
 - Description:
 - Examples:
-## Push-The-Bit <!-- NOUN -->
+## Pushthebit <!-- NOUN -->
 - Display name: Push-The-Bit
 - Parent class: RotarySteerableSystems
 - Description:
@@ -1696,14 +1696,14 @@
 - Parent class: JarringAssembly
 - Description:
 - Examples:
-## Casing-While-Drilling <!-- NOUN -->
+## Casingwhiledrilling <!-- NOUN -->
 - Display name: Casing-While-Drilling
 - Parent class: DrillingEquipment
 - Description:
 - Examples:
 ## DirectionalCasingWhileDrilling <!-- NOUN -->
 - Display name: Directional Casing While Drilling
-- Parent class: Casing-While-Drilling
+- Parent class: Casingwhiledrilling
 - Description:
 - Examples:
 ## LinerDrilling <!-- NOUN -->
@@ -1946,7 +1946,7 @@
 - Parent class: EquipmentTelemetry
 - Description:
 - Examples:
-## Electro-Magnetic <!-- NOUN -->
+## Electromagnetic <!-- NOUN -->
 - Display name: Electro-Magnetic
 - Parent class: EquipmentTelemetry
 - Description:
@@ -2148,7 +2148,7 @@
 - Examples:
 ## CoiledTubingEquipment <!-- NOUN -->
 - Display name: <Coiled Tubing Equipment>
-- Parent class: <equipment>
+- Parent class: Equipment
 - Description:
 - Examples:
 ## CoiledTubingReel <!-- NOUN -->
@@ -2198,7 +2198,7 @@
 - Examples:
 ## GenericEquipment <!-- NOUN -->
 - Display name: <Generic Equipment>
-- Parent class: <equipment>
+- Parent class: Equipment
 - Description:
 - Examples:
 ## GenericEquipmentGatevalve <!-- NOUN -->

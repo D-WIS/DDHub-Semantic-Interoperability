@@ -1115,7 +1115,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/&lt;equipment&gt;">
+  <rdf:Description rdf:about="http://ddhub.no/Equipment">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
     <rdfs:comment xml:lang="EN">
@@ -1123,7 +1123,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/RigEquipment">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/&lt;equipment&gt;" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Equipment" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -1547,7 +1547,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IBOP">
+  <rdf:Description rdf:about="http://ddhub.no/Ibop">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/WellControlSystem" />
     <rdfs:comment xml:lang="EN">
@@ -2033,7 +2033,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ROV">
+  <rdf:Description rdf:about="http://ddhub.no/Rov">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MarineSystem" />
     <rdfs:comment xml:lang="EN">
@@ -2405,15 +2405,15 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/&lt;Tubulars&gt;">
+  <rdf:Description rdf:about="http://ddhub.no/Tubulars">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/&lt;equipment&gt;" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Equipment" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DrillString">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/&lt;Tubulars&gt;" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Tubulars" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -2477,31 +2477,31 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/dynamic">
+  <rdf:Description rdf:about="http://ddhub.no/Dynamic">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/BladeShape" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/melon">
+  <rdf:Description rdf:about="http://ddhub.no/Melon">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/BladeShape" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/spiral">
+  <rdf:Description rdf:about="http://ddhub.no/Spiral">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/BladeShape" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/straight">
+  <rdf:Description rdf:about="http://ddhub.no/Straight">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/BladeShape" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/variable">
+  <rdf:Description rdf:about="http://ddhub.no/Variable">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/BladeShape" />
     <rdfs:comment xml:lang="EN">
@@ -2513,19 +2513,19 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/clamp-on">
+  <rdf:Description rdf:about="http://ddhub.no/Clampon">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/BladeType" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/integral">
+  <rdf:Description rdf:about="http://ddhub.no/Integral">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/BladeType" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/sleeve">
+  <rdf:Description rdf:about="http://ddhub.no/Sleeve">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/BladeType" />
     <rdfs:comment xml:lang="EN">
@@ -2549,7 +2549,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Non-Magnetic">
+  <rdf:Description rdf:about="http://ddhub.no/Nonmagnetic">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Stabilizers" />
     <rdfs:comment xml:lang="EN">
@@ -2561,7 +2561,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Non-Rotating">
+  <rdf:Description rdf:about="http://ddhub.no/Nonrotating">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Stabilizers" />
     <rdfs:comment xml:lang="EN">
@@ -2603,85 +2603,85 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/sub-bent">
+  <rdf:Description rdf:about="http://ddhub.no/Subbent">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/sub-bit">
+  <rdf:Description rdf:about="http://ddhub.no/Subbit">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/sub-bumper">
+  <rdf:Description rdf:about="http://ddhub.no/Subbumper">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/sub-catcher">
+  <rdf:Description rdf:about="http://ddhub.no/Subcatcher">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/sub-circulation">
+  <rdf:Description rdf:about="http://ddhub.no/Subcirculation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/sub-cone">
+  <rdf:Description rdf:about="http://ddhub.no/Subcone">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/sub-crossover">
+  <rdf:Description rdf:about="http://ddhub.no/Subcrossover">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/sub-dart">
+  <rdf:Description rdf:about="http://ddhub.no/Subdart">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/sub-filter">
+  <rdf:Description rdf:about="http://ddhub.no/Subfilter">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/sub-float">
+  <rdf:Description rdf:about="http://ddhub.no/Subfloat">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/sub-jetting">
+  <rdf:Description rdf:about="http://ddhub.no/Subjetting">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/sub-junk">
+  <rdf:Description rdf:about="http://ddhub.no/Subjunk">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/sub-orienting">
+  <rdf:Description rdf:about="http://ddhub.no/Suborienting">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/sub-ported">
+  <rdf:Description rdf:about="http://ddhub.no/Subported">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
@@ -2699,19 +2699,19 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/sub-restrictor">
+  <rdf:Description rdf:about="http://ddhub.no/Subrestrictor">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/sub-saver">
+  <rdf:Description rdf:about="http://ddhub.no/Subsaver">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/sub-shock">
+  <rdf:Description rdf:about="http://ddhub.no/Subshock">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
@@ -2723,7 +2723,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/sub-stop">
+  <rdf:Description rdf:about="http://ddhub.no/Substop">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MiscSubs" />
     <rdfs:comment xml:lang="EN">
@@ -2731,7 +2731,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/CasingString">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/&lt;Tubulars&gt;" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Tubulars" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -2771,25 +2771,25 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/box">
+  <rdf:Description rdf:about="http://ddhub.no/Box">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Connection" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/flange">
+  <rdf:Description rdf:about="http://ddhub.no/Flange">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Connection" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/mandrel">
+  <rdf:Description rdf:about="http://ddhub.no/Mandrel">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Connection" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/pin">
+  <rdf:Description rdf:about="http://ddhub.no/Pin">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Connection" />
     <rdfs:comment xml:lang="EN">
@@ -2801,7 +2801,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/self-sealing-threaded">
+  <rdf:Description rdf:about="http://ddhub.no/Selfsealingthreaded">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Connection" />
     <rdfs:comment xml:lang="EN">
@@ -2809,31 +2809,31 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Expandables">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/&lt;Tubulars&gt;" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Tubulars" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/TubingString">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/&lt;Tubulars&gt;" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Tubulars" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ScreenString">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/&lt;Tubulars&gt;" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Tubulars" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/TubularConnection">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/&lt;Tubulars&gt;" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Tubulars" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/TubularConfiguration">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/&lt;Tubulars&gt;" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Tubulars" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -2849,13 +2849,13 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Box-Box">
+  <rdf:Description rdf:about="http://ddhub.no/Boxbox">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/TubularConfiguration" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Pin-Pin">
+  <rdf:Description rdf:about="http://ddhub.no/Pinpin">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/TubularConfiguration" />
     <rdfs:comment xml:lang="EN">
@@ -2863,7 +2863,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DownholeEquipment">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/&lt;equipment&gt;" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Equipment" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -2891,7 +2891,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MillTooth">
+  <rdf:Description rdf:about="http://ddhub.no/Milltooth">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/RollingCutter" />
     <rdfs:comment xml:lang="EN">
@@ -2909,7 +2909,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PDC">
+  <rdf:Description rdf:about="http://ddhub.no/Pdc">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/FixedCutter" />
     <rdfs:comment xml:lang="EN">
@@ -3083,13 +3083,13 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Point-The-Bit">
+  <rdf:Description rdf:about="http://ddhub.no/Pointthebit">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/RotarySteerableSystems" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Push-The-Bit">
+  <rdf:Description rdf:about="http://ddhub.no/Pushthebit">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/RotarySteerableSystems" />
     <rdfs:comment xml:lang="EN">
@@ -3149,7 +3149,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Casing-While-Drilling">
+  <rdf:Description rdf:about="http://ddhub.no/Casingwhiledrilling">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingEquipment" />
     <rdfs:comment xml:lang="EN">
@@ -3157,7 +3157,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DirectionalCasingWhileDrilling">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Casing-While-Drilling" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Casingwhiledrilling" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -3449,7 +3449,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Electro-Magnetic">
+  <rdf:Description rdf:about="http://ddhub.no/Electromagnetic">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/EquipmentTelemetry" />
     <rdfs:comment xml:lang="EN">
@@ -3691,7 +3691,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/CoiledTubingEquipment">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/&lt;equipment&gt;" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Equipment" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -3751,7 +3751,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/GenericEquipment">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/&lt;equipment&gt;" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Equipment" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -3776,6 +3776,72 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
   <rdf:Description rdf:about="http://ddhub.no/DrillingIncident">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AbnormalOscillation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingIncident" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AbnormalAxialOscillation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/AbnormalOscillation" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AbnormalTorsionalOscillation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/AbnormalOscillation" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/StickSlip">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/AbnormalTorsionalOscillation" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HFTO">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/AbnormalTorsionalOscillation" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AbnormalLateralOscillation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/AbnormalOscillation" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Whirling">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/AbnormalLateralOscillation" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ForwardWhirl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Whirling" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/BackwardWhirl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Whirling" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ChaoticWhirl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Whirling" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Shock">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/AbnormalLateralOscillation" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>

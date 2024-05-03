@@ -1351,7 +1351,7 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingDataSemantics
 - Examples:
-## <equipment> <!-- NOUN -->
+## Equipment <!-- NOUN -->
 - Display name: <equipment>
 - Parent class: [DWISNoun](#DWISNoun)
 - Description: 
@@ -1360,7 +1360,7 @@ Data structure used to store the streaming drilling data.
 - Examples:
 ## RigEquipment <!-- NOUN -->
 - Display name: <Rig Equipment>
-- Parent class: [<equipment>](#<equipment>)
+- Parent class: [Equipment](#Equipment)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -1855,7 +1855,7 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## IBOP <!-- NOUN -->
+## Ibop <!-- NOUN -->
 - Display name: IBOP
 - Parent class: [WellControlSystem](#WellControlSystem)
 - Description: 
@@ -2422,7 +2422,7 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## ROV <!-- NOUN -->
+## Rov <!-- NOUN -->
 - Display name: ROV
 - Parent class: [MarineSystem](#MarineSystem)
 - Description: 
@@ -2856,16 +2856,16 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## <Tubulars> <!-- NOUN -->
+## Tubulars <!-- NOUN -->
 - Display name: <Tubulars>
-- Parent class: [<equipment>](#<equipment>)
+- Parent class: [Equipment](#Equipment)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## DrillString <!-- NOUN -->
 - Display name: Drill String
-- Parent class: [<Tubulars>](#<Tubulars>)
+- Parent class: [Tubulars](#Tubulars)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -2940,35 +2940,35 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## dynamic <!-- NOUN -->
+## Dynamic <!-- NOUN -->
 - Display name: dynamic
 - Parent class: [BladeShape](#BladeShape)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## melon <!-- NOUN -->
+## Melon <!-- NOUN -->
 - Display name: melon
 - Parent class: [BladeShape](#BladeShape)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## spiral <!-- NOUN -->
+## Spiral <!-- NOUN -->
 - Display name: spiral
 - Parent class: [BladeShape](#BladeShape)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## straight <!-- NOUN -->
+## Straight <!-- NOUN -->
 - Display name: straight
 - Parent class: [BladeShape](#BladeShape)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## variable <!-- NOUN -->
+## Variable <!-- NOUN -->
 - Display name: variable
 - Parent class: [BladeShape](#BladeShape)
 - Description: 
@@ -2982,21 +2982,21 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## clamp-on <!-- NOUN -->
+## Clampon <!-- NOUN -->
 - Display name: clamp-on
 - Parent class: [BladeType](#BladeType)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## integral <!-- NOUN -->
+## Integral <!-- NOUN -->
 - Display name: integral
 - Parent class: [BladeType](#BladeType)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sleeve <!-- NOUN -->
+## Sleeve <!-- NOUN -->
 - Display name: sleeve
 - Parent class: [BladeType](#BladeType)
 - Description: 
@@ -3024,7 +3024,7 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Non-Magnetic <!-- NOUN -->
+## Nonmagnetic <!-- NOUN -->
 - Display name: Non-Magnetic
 - Parent class: [Stabilizers](#Stabilizers)
 - Description: 
@@ -3038,7 +3038,7 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Non-Rotating <!-- NOUN -->
+## Nonrotating <!-- NOUN -->
 - Display name: Non-Rotating
 - Parent class: [Stabilizers](#Stabilizers)
 - Description: 
@@ -3087,98 +3087,98 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-bent <!-- NOUN -->
+## Subbent <!-- NOUN -->
 - Display name: sub-bent
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-bit <!-- NOUN -->
+## Subbit <!-- NOUN -->
 - Display name: sub-bit
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-bumper <!-- NOUN -->
+## Subbumper <!-- NOUN -->
 - Display name: sub-bumper
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-catcher <!-- NOUN -->
+## Subcatcher <!-- NOUN -->
 - Display name: sub-catcher
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-circulation <!-- NOUN -->
+## Subcirculation <!-- NOUN -->
 - Display name: sub-circulation
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-cone <!-- NOUN -->
+## Subcone <!-- NOUN -->
 - Display name: sub-cone
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-crossover <!-- NOUN -->
+## Subcrossover <!-- NOUN -->
 - Display name: sub-crossover
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-dart <!-- NOUN -->
+## Subdart <!-- NOUN -->
 - Display name: sub-dart
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-filter <!-- NOUN -->
+## Subfilter <!-- NOUN -->
 - Display name: sub-filter
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-float <!-- NOUN -->
+## Subfloat <!-- NOUN -->
 - Display name: sub-float
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-jetting <!-- NOUN -->
+## Subjetting <!-- NOUN -->
 - Display name: sub-jetting
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-junk <!-- NOUN -->
+## Subjunk <!-- NOUN -->
 - Display name: sub-junk
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-orienting <!-- NOUN -->
+## Suborienting <!-- NOUN -->
 - Display name: sub-orienting
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-ported <!-- NOUN -->
+## Subported <!-- NOUN -->
 - Display name: sub-ported
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
@@ -3199,21 +3199,21 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-restrictor <!-- NOUN -->
+## Subrestrictor <!-- NOUN -->
 - Display name: sub-restrictor
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-saver <!-- NOUN -->
+## Subsaver <!-- NOUN -->
 - Display name: sub-saver
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-shock <!-- NOUN -->
+## Subshock <!-- NOUN -->
 - Display name: sub-shock
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
@@ -3227,7 +3227,7 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## sub-stop <!-- NOUN -->
+## Substop <!-- NOUN -->
 - Display name: sub-stop
 - Parent class: [MiscSubs](#MiscSubs)
 - Description: 
@@ -3236,7 +3236,7 @@ Data structure used to store the streaming drilling data.
 - Examples:
 ## CasingString <!-- NOUN -->
 - Display name: Casing String
-- Parent class: [<Tubulars>](#<Tubulars>)
+- Parent class: [Tubulars](#Tubulars)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -3283,28 +3283,28 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## box <!-- NOUN -->
+## Box <!-- NOUN -->
 - Display name: box
 - Parent class: [Connection](#Connection)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## flange <!-- NOUN -->
+## Flange <!-- NOUN -->
 - Display name: flange
 - Parent class: [Connection](#Connection)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## mandrel <!-- NOUN -->
+## Mandrel <!-- NOUN -->
 - Display name: mandrel
 - Parent class: [Connection](#Connection)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## pin <!-- NOUN -->
+## Pin <!-- NOUN -->
 - Display name: pin
 - Parent class: [Connection](#Connection)
 - Description: 
@@ -3318,7 +3318,7 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## self-sealing-threaded <!-- NOUN -->
+## Selfsealingthreaded <!-- NOUN -->
 - Display name: self-sealing-threaded
 - Parent class: [Connection](#Connection)
 - Description: 
@@ -3327,35 +3327,35 @@ Data structure used to store the streaming drilling data.
 - Examples:
 ## Expandables <!-- NOUN -->
 - Display name: Expandables
-- Parent class: [<Tubulars>](#<Tubulars>)
+- Parent class: [Tubulars](#Tubulars)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## TubingString <!-- NOUN -->
 - Display name: Tubing String
-- Parent class: [<Tubulars>](#<Tubulars>)
+- Parent class: [Tubulars](#Tubulars)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## ScreenString <!-- NOUN -->
 - Display name: Screen String
-- Parent class: [<Tubulars>](#<Tubulars>)
+- Parent class: [Tubulars](#Tubulars)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## TubularConnection <!-- NOUN -->
 - Display name: Tubular Connection
-- Parent class: [<Tubulars>](#<Tubulars>)
+- Parent class: [Tubulars](#Tubulars)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
 ## TubularConfiguration <!-- NOUN -->
 - Display name: Tubular Configuration
-- Parent class: [<Tubulars>](#<Tubulars>)
+- Parent class: [Tubulars](#Tubulars)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -3374,14 +3374,14 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Box-Box <!-- NOUN -->
+## Boxbox <!-- NOUN -->
 - Display name: Box-Box
 - Parent class: [TubularConfiguration](#TubularConfiguration)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Pin-Pin <!-- NOUN -->
+## Pinpin <!-- NOUN -->
 - Display name: Pin-Pin
 - Parent class: [TubularConfiguration](#TubularConfiguration)
 - Description: 
@@ -3390,7 +3390,7 @@ Data structure used to store the streaming drilling data.
 - Examples:
 ## DownholeEquipment <!-- NOUN -->
 - Display name: <Downhole Equipment>
-- Parent class: [<equipment>](#<equipment>)
+- Parent class: [Equipment](#Equipment)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -3423,7 +3423,7 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## MillTooth <!-- NOUN -->
+## Milltooth <!-- NOUN -->
 - Display name: MillTooth
 - Parent class: [RollingCutter](#RollingCutter)
 - Description: 
@@ -3444,7 +3444,7 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## PDC <!-- NOUN -->
+## Pdc <!-- NOUN -->
 - Display name: PDC
 - Parent class: [FixedCutter](#FixedCutter)
 - Description: 
@@ -3647,14 +3647,14 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Point-The-Bit <!-- NOUN -->
+## Pointthebit <!-- NOUN -->
 - Display name: Point-The-Bit
 - Parent class: [RotarySteerableSystems](#RotarySteerableSystems)
 - Description: 
 
 - Definition set: DrillingEquipment
 - Examples:
-## Push-The-Bit <!-- NOUN -->
+## Pushthebit <!-- NOUN -->
 - Display name: Push-The-Bit
 - Parent class: [RotarySteerableSystems](#RotarySteerableSystems)
 - Description: 
@@ -3724,7 +3724,7 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Casing-While-Drilling <!-- NOUN -->
+## Casingwhiledrilling <!-- NOUN -->
 - Display name: Casing-While-Drilling
 - Parent class: [DrillingEquipment](#DrillingEquipment)
 - Description: 
@@ -3733,7 +3733,7 @@ Data structure used to store the streaming drilling data.
 - Examples:
 ## DirectionalCasingWhileDrilling <!-- NOUN -->
 - Display name: Directional Casing While Drilling
-- Parent class: [Casing-While-Drilling](#Casing-While-Drilling)
+- Parent class: [Casingwhiledrilling](#Casingwhiledrilling)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -4074,7 +4074,7 @@ Data structure used to store the streaming drilling data.
 
 - Definition set: DrillingEquipment
 - Examples:
-## Electro-Magnetic <!-- NOUN -->
+## Electromagnetic <!-- NOUN -->
 - Display name: Electro-Magnetic
 - Parent class: [EquipmentTelemetry](#EquipmentTelemetry)
 - Description: 
@@ -4356,7 +4356,7 @@ Data structure used to store the streaming drilling data.
 - Examples:
 ## CoiledTubingEquipment <!-- NOUN -->
 - Display name: <Coiled Tubing Equipment>
-- Parent class: [<equipment>](#<equipment>)
+- Parent class: [Equipment](#Equipment)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -4426,7 +4426,7 @@ Data structure used to store the streaming drilling data.
 - Examples:
 ## GenericEquipment <!-- NOUN -->
 - Display name: <Generic Equipment>
-- Parent class: [<equipment>](#<equipment>)
+- Parent class: [Equipment](#Equipment)
 - Description: 
 
 - Definition set: DrillingEquipment
@@ -4455,6 +4455,83 @@ Data structure used to store the streaming drilling data.
 ## DrillingIncident <!-- NOUN -->
 - Display name: DrillingIncident
 - Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+
+- Definition set: DrillingIncident
+- Examples:
+## AbnormalOscillation <!-- NOUN -->
+- Display name: Abnormal Oscillation
+- Parent class: [DrillingIncident](#DrillingIncident)
+- Description: 
+
+- Definition set: DrillingIncident
+- Examples:
+## AbnormalAxialOscillation <!-- NOUN -->
+- Display name: Abnormal Axial Oscillation
+- Parent class: [AbnormalOscillation](#AbnormalOscillation)
+- Description: 
+
+- Definition set: DrillingIncident
+- Examples:
+## AbnormalTorsionalOscillation <!-- NOUN -->
+- Display name: Abnormal Torsional Oscillation
+- Parent class: [AbnormalOscillation](#AbnormalOscillation)
+- Description: 
+
+- Definition set: DrillingIncident
+- Examples:
+## AbnormalLateralOscillation <!-- NOUN -->
+- Display name: Abnormal Lateral Oscillation
+- Parent class: [AbnormalOscillation](#AbnormalOscillation)
+- Description: 
+
+- Definition set: DrillingIncident
+- Examples:
+## StickSlip <!-- NOUN -->
+- Display name: Stick-slip
+- Parent class: [AbnormalTorsionalOscillation](#AbnormalTorsionalOscillation)
+- Description: 
+
+- Definition set: DrillingIncident
+- Examples:
+## HFTO <!-- NOUN -->
+- Display name: High Frequency Torsional Oscillation
+- Parent class: [AbnormalTorsionalOscillation](#AbnormalTorsionalOscillation)
+- Description: 
+
+- Definition set: DrillingIncident
+- Examples:
+## Whirling <!-- NOUN -->
+- Display name: Whirling
+- Parent class: [AbnormalLateralOscillation](#AbnormalLateralOscillation)
+- Description: 
+
+- Definition set: DrillingIncident
+- Examples:
+## ForwardWhirl <!-- NOUN -->
+- Display name: Forward Whirl
+- Parent class: [Whirling](#Whirling)
+- Description: 
+
+- Definition set: DrillingIncident
+- Examples:
+## BackwardWhirl <!-- NOUN -->
+- Display name: Backward Whirl
+- Parent class: [Whirling](#Whirling)
+- Description: 
+
+- Definition set: DrillingIncident
+- Examples:
+## ChaoticWhirl <!-- NOUN -->
+- Display name: Chaotic Whirl
+- Parent class: [Whirling](#Whirling)
+- Description: 
+
+- Definition set: DrillingIncident
+- Examples:
+## Shock <!-- NOUN -->
+- Display name: Shock
+- Parent class: [AbnormalLateralOscillation](#AbnormalLateralOscillation)
 - Description: 
 
 - Definition set: DrillingIncident

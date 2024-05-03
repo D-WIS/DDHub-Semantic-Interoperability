@@ -5,14 +5,22 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @base <https://rdfsharp.codeplex.com/>.
 
-<http://ddhub.no/<equipment>> a owl:Class; 
-                              rdfs:comment """
+ddhub:AbnormalAxialOscillation a owl:Class; 
+                               rdfs:comment """
 """@EN; 
-                              rdfs:subClassOf ddhub:DWISNoun. 
-<http://ddhub.no/<Tubulars>> a owl:Class; 
-                             rdfs:comment """
+                               rdfs:subClassOf ddhub:AbnormalOscillation. 
+ddhub:AbnormalLateralOscillation a owl:Class; 
+                                 rdfs:comment """
 """@EN; 
-                             rdfs:subClassOf <http://ddhub.no/<equipment>>. 
+                                 rdfs:subClassOf ddhub:AbnormalOscillation. 
+ddhub:AbnormalOscillation a owl:Class; 
+                          rdfs:comment """
+"""@EN; 
+                          rdfs:subClassOf ddhub:DrillingIncident. 
+ddhub:AbnormalTorsionalOscillation a owl:Class; 
+                                   rdfs:comment """
+"""@EN; 
+                                   rdfs:subClassOf ddhub:AbnormalOscillation. 
 ddhub:AbscissaReferenceLocation a owl:Class; 
                                 rdfs:comment """
 """@EN; 
@@ -215,6 +223,10 @@ ddhub:BackPressurePumpPressure a owl:Class;
                                rdfs:comment """
 """@EN; 
                                rdfs:subClassOf ddhub:PrototypeData. 
+ddhub:BackwardWhirl a owl:Class; 
+                    rdfs:comment """
+"""@EN; 
+                    rdfs:subClassOf ddhub:Whirling. 
 ddhub:BallastSystem a owl:Class; 
                     rdfs:comment """
 """@EN; 
@@ -343,14 +355,14 @@ ddhub:BoundaryDiscretization a owl:Class;
                              rdfs:comment """A model only considers the bounds of the physical system and does not apply any intermediate discretization.
 """@EN; 
                              rdfs:subClassOf ddhub:ModellingDiscretization. 
-ddhub:box a owl:Class; 
+ddhub:Box a owl:Class; 
           rdfs:comment """
 """@EN; 
           rdfs:subClassOf ddhub:Connection. 
-ddhub:Box-Box a owl:Class; 
-              rdfs:comment """
+ddhub:Boxbox a owl:Class; 
+             rdfs:comment """
 """@EN; 
-              rdfs:subClassOf ddhub:TubularConfiguration. 
+             rdfs:subClassOf ddhub:TubularConfiguration. 
 ddhub:Buffering a owl:Class; 
                 rdfs:comment """
 """@EN; 
@@ -396,10 +408,6 @@ ddhub:Casing a owl:Class;
              rdfs:comment """
 """@EN; 
              rdfs:subClassOf ddhub:CasingString. 
-ddhub:Casing-While-Drilling a owl:Class; 
-                            rdfs:comment """
-"""@EN; 
-                            rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:CasingCollarLocator a owl:Class; 
                           rdfs:comment """
 """@EN; 
@@ -439,11 +447,15 @@ ddhub:CasingShoe a owl:Class;
 ddhub:CasingString a owl:Class; 
                    rdfs:comment """
 """@EN; 
-                   rdfs:subClassOf <http://ddhub.no/<Tubulars>>. 
+                   rdfs:subClassOf ddhub:Tubulars. 
 ddhub:CasingTongs a owl:Class; 
                   rdfs:comment """
 """@EN; 
                   rdfs:subClassOf ddhub:DrillPipeTongs. 
+ddhub:Casingwhiledrilling a owl:Class; 
+                          rdfs:comment """
+"""@EN; 
+                          rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:CavingsComponent a owl:Class; 
                        rdfs:comment """
 """@EN; 
@@ -512,6 +524,10 @@ ddhub:Centrifuge a owl:Class;
                  rdfs:comment """
 """@EN; 
                  rdfs:subClassOf ddhub:CirculationSystem. 
+ddhub:ChaoticWhirl a owl:Class; 
+                   rdfs:comment """
+"""@EN; 
+                   rdfs:subClassOf ddhub:Whirling. 
 ddhub:ChemicalTank a owl:Class; 
                    rdfs:comment """
 """@EN; 
@@ -540,10 +556,10 @@ ddhub:CirculationSystem a owl:Class;
                         rdfs:comment """
 """@EN; 
                         rdfs:subClassOf ddhub:RigEquipment. 
-ddhub:clamp-on a owl:Class; 
-               rdfs:comment """
+ddhub:Clampon a owl:Class; 
+              rdfs:comment """
 """@EN; 
-               rdfs:subClassOf ddhub:BladeType. 
+              rdfs:subClassOf ddhub:BladeType. 
 ddhub:Clock a owl:Class; 
             rdfs:comment """Represents a clock
 """@EN; 
@@ -555,7 +571,7 @@ ddhub:ClusterPositionLocation a owl:Class;
 ddhub:CoiledTubingEquipment a owl:Class; 
                             rdfs:comment """
 """@EN; 
-                            rdfs:subClassOf <http://ddhub.no/<equipment>>. 
+                            rdfs:subClassOf ddhub:Equipment. 
 ddhub:CoiledTubingReel a owl:Class; 
                        rdfs:comment """
 """@EN; 
@@ -854,7 +870,7 @@ ddhub:DipmeterAndImagingTools a owl:Class;
 ddhub:DirectionalCasingWhileDrilling a owl:Class; 
                                      rdfs:comment """
 """@EN; 
-                                     rdfs:subClassOf ddhub:Casing-While-Drilling. 
+                                     rdfs:subClassOf ddhub:Casingwhiledrilling. 
 ddhub:DirectionalServiceCompany a owl:Class; 
                                 rdfs:comment """A directional service company is an entity that provides services for downhole directional drilling and downhole measurements.
 """@EN; 
@@ -927,7 +943,7 @@ ddhub:DownholeECD a owl:Class;
 ddhub:DownholeEquipment a owl:Class; 
                         rdfs:comment """
 """@EN; 
-                        rdfs:subClassOf <http://ddhub.no/<equipment>>. 
+                        rdfs:subClassOf ddhub:Equipment. 
 ddhub:DownholeHydraulicNetwork a owl:Class; 
                                rdfs:comment """
 """@EN; 
@@ -1272,7 +1288,7 @@ ddhub:DrillstemTerminator a owl:Class;
 ddhub:DrillString a owl:Class; 
                   rdfs:comment """
 """@EN; 
-                  rdfs:subClassOf <http://ddhub.no/<Tubulars>>. 
+                  rdfs:subClassOf ddhub:Tubulars. 
 ddhub:DrillStringCenterLineFrame a owl:Class; 
                                  rdfs:comment """
 """@EN; 
@@ -1339,7 +1355,7 @@ ddhub:DWISVocabulary a owl:Ontology;
                      rdfs:label "D-WIS vocabulary"^^xsd:string; 
                      owl:versionInfo "0.1"^^xsd:string; 
                      owl:versionIRI "https://github.com/D-WIS/DDHub-Semantic-Interoperability/tree/main/docs/vocabulary_development/auto-generated/dwis.owl"^^xsd:anyURI. 
-ddhub:dynamic a owl:Class; 
+ddhub:Dynamic a owl:Class; 
               rdfs:comment """
 """@EN; 
               rdfs:subClassOf ddhub:BladeShape. 
@@ -1371,10 +1387,10 @@ ddhub:ElectricTensionQuantity a owl:Class;
                               rdfs:comment """
 """@EN; 
                               rdfs:subClassOf ddhub:MeasurableQuantity. 
-ddhub:Electro-Magnetic a owl:Class; 
-                       rdfs:comment """
+ddhub:Electromagnetic a owl:Class; 
+                      rdfs:comment """
 """@EN; 
-                       rdfs:subClassOf ddhub:EquipmentTelemetry. 
+                      rdfs:subClassOf ddhub:EquipmentTelemetry. 
 ddhub:ElectromagneticTelemetry a owl:Class; 
                                rdfs:comment """A method that allows transfer of downhole data to the surface via electromagnetic waves sent trough the drilling formation.
 """@EN; 
@@ -1414,6 +1430,10 @@ ddhub:EQ a owl:Class;
          rdfs:comment """
 """@EN; 
          rdfs:subClassOf ddhub:ValidityCondition. 
+ddhub:Equipment a owl:Class; 
+                rdfs:comment """
+"""@EN; 
+                rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:EquipmentTelemetry a owl:Class; 
                          rdfs:comment """
 """@EN; 
@@ -1425,7 +1445,7 @@ ddhub:ExpandableReamers a owl:Class;
 ddhub:Expandables a owl:Class; 
                   rdfs:comment """
 """@EN; 
-                  rdfs:subClassOf <http://ddhub.no/<Tubulars>>. 
+                  rdfs:subClassOf ddhub:Tubulars. 
 ddhub:ExtendFrame a owl:Class; 
                   rdfs:comment """
 """@EN; 
@@ -1467,7 +1487,7 @@ ddhub:FixedIndices a owl:DatatypeProperty, owl:FunctionalProperty;
 """@EN; 
                    rdfs:domain ddhub:EndPointMapping; 
                    rdfs:range <http://www.w3.org/2001/XMLSchema#int[]>. 
-ddhub:flange a owl:Class; 
+ddhub:Flange a owl:Class; 
              rdfs:comment """
 """@EN; 
              rdfs:subClassOf ddhub:Connection. 
@@ -1583,6 +1603,10 @@ ddhub:FormationWashoutLocation a owl:Class;
                                rdfs:comment """
 """@EN; 
                                rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
+ddhub:ForwardWhirl a owl:Class; 
+                   rdfs:comment """
+"""@EN; 
+                   rdfs:subClassOf ddhub:Whirling. 
 ddhub:FourDimensionalReferenceFrame a owl:Class; 
                                     rdfs:comment """
 """@EN; 
@@ -1655,7 +1679,7 @@ ddhub:GaussianUncertainty a owl:Class;
 ddhub:GenericEquipment a owl:Class; 
                        rdfs:comment """
 """@EN; 
-                       rdfs:subClassOf <http://ddhub.no/<equipment>>. 
+                       rdfs:subClassOf ddhub:Equipment. 
 ddhub:GenericEquipmentGatevalve a owl:Class; 
                                 rdfs:comment """
 """@EN; 
@@ -1985,6 +2009,10 @@ ddhub:HeightQuantity a owl:Class;
                      rdfs:comment """
 """@EN; 
                      rdfs:subClassOf ddhub:MeasurableQuantity. 
+ddhub:HFTO a owl:Class; 
+           rdfs:comment """
+"""@EN; 
+           rdfs:subClassOf ddhub:AbnormalTorsionalOscillation. 
 ddhub:HighGravitySolidComponent a owl:Class; 
                                 rdfs:comment """
 """@EN; 
@@ -2099,7 +2127,7 @@ SI Unit: Ampere (A)
 """@EN; 
         rdfs:domain ddhub:Quantity; 
         rdfs:range xsd:int. 
-ddhub:IBOP a owl:Class; 
+ddhub:Ibop a owl:Class; 
            rdfs:comment """
 """@EN; 
            rdfs:subClassOf ddhub:WellControlSystem. 
@@ -2139,7 +2167,7 @@ ddhub:InstrumentedMotor a owl:Class;
                         rdfs:comment """
 """@EN; 
                         rdfs:subClassOf ddhub:DownholeMotor. 
-ddhub:integral a owl:Class; 
+ddhub:Integral a owl:Class; 
                rdfs:comment """
 """@EN; 
                rdfs:subClassOf ddhub:BladeType. 
@@ -2971,7 +2999,7 @@ ddhub:MainframeAssembly a owl:Class;
                         rdfs:comment """
 """@EN; 
                         rdfs:subClassOf ddhub:TopDrive. 
-ddhub:mandrel a owl:Class; 
+ddhub:Mandrel a owl:Class; 
               rdfs:comment """
 """@EN; 
               rdfs:subClassOf ddhub:Connection. 
@@ -3173,7 +3201,7 @@ ddhub:MechanicsAndVibrationTools a owl:Class;
                                  rdfs:comment """
 """@EN; 
                                  rdfs:subClassOf ddhub:MeasurementWhileDrillingTools. 
-ddhub:melon a owl:Class; 
+ddhub:Melon a owl:Class; 
             rdfs:comment """
 """@EN; 
             rdfs:subClassOf ddhub:BladeShape. 
@@ -3213,7 +3241,7 @@ ddhub:MillTaper a owl:Class;
                 rdfs:comment """
 """@EN; 
                 rdfs:subClassOf ddhub:CasingMillingTools. 
-ddhub:MillTooth a owl:Class; 
+ddhub:Milltooth a owl:Class; 
                 rdfs:comment """
 """@EN; 
                 rdfs:subClassOf ddhub:RollingCutter. 
@@ -3419,18 +3447,18 @@ ddhub:NetworkSynchronizationLatencyStandardDeviation a owl:DatatypeProperty, owl
 """@EN; 
                                                      rdfs:domain ddhub:Clock; 
                                                      rdfs:range xsd:double. 
-ddhub:Non-Magnetic a owl:Class; 
-                   rdfs:comment """
+ddhub:Nonmagnetic a owl:Class; 
+                  rdfs:comment """
 """@EN; 
-                   rdfs:subClassOf ddhub:Stabilizers. 
-ddhub:Non-Rotating a owl:Class; 
-                   rdfs:comment """
-"""@EN; 
-                   rdfs:subClassOf ddhub:Stabilizers. 
+                  rdfs:subClassOf ddhub:Stabilizers. 
 ddhub:NonmagneticCollars a owl:Class; 
                          rdfs:comment """
 """@EN; 
                          rdfs:subClassOf ddhub:DrillString. 
+ddhub:Nonrotating a owl:Class; 
+                  rdfs:comment """
+"""@EN; 
+                  rdfs:subClassOf ddhub:Stabilizers. 
 ddhub:NormalizedDataType a owl:Class; 
                          rdfs:comment """between 0 and 1
 """@EN; 
@@ -3542,7 +3570,7 @@ ddhub:OverTorque a owl:Class;
                  rdfs:comment """
 """@EN; 
                  rdfs:subClassOf ddhub:DrillingIncident. 
-ddhub:PDC a owl:Class; 
+ddhub:Pdc a owl:Class; 
           rdfs:comment """
 """@EN; 
           rdfs:subClassOf ddhub:FixedCutter. 
@@ -3570,18 +3598,18 @@ ddhub:PhysicalState a owl:Class;
                     rdfs:comment """
 """@EN; 
                     rdfs:subClassOf ddhub:ComputedState. 
-ddhub:pin a owl:Class; 
+ddhub:Pin a owl:Class; 
           rdfs:comment """
 """@EN; 
           rdfs:subClassOf ddhub:Connection. 
-ddhub:Pin-Pin a owl:Class; 
-              rdfs:comment """
-"""@EN; 
-              rdfs:subClassOf ddhub:TubularConfiguration. 
 ddhub:PinDown a owl:Class; 
               rdfs:comment """
 """@EN; 
               rdfs:subClassOf ddhub:TubularConfiguration. 
+ddhub:Pinpin a owl:Class; 
+             rdfs:comment """
+"""@EN; 
+             rdfs:subClassOf ddhub:TubularConfiguration. 
 ddhub:PinUp a owl:Class; 
             rdfs:comment """
 """@EN; 
@@ -3642,10 +3670,10 @@ ddhub:PneumaticSlips a owl:Class;
                      rdfs:comment """
 """@EN; 
                      rdfs:subClassOf ddhub:RotarySlips. 
-ddhub:Point-The-Bit a owl:Class; 
-                    rdfs:comment """
+ddhub:Pointthebit a owl:Class; 
+                  rdfs:comment """
 """@EN; 
-                    rdfs:subClassOf ddhub:RotarySteerableSystems. 
+                  rdfs:subClassOf ddhub:RotarySteerableSystems. 
 ddhub:PolarReferenceFrame a owl:Class; 
                           rdfs:comment """
 """@EN; 
@@ -3818,10 +3846,10 @@ ddhub:PupJoints a owl:Class;
                 rdfs:comment """
 """@EN; 
                 rdfs:subClassOf ddhub:DrillString. 
-ddhub:Push-The-Bit a owl:Class; 
-                   rdfs:comment """
+ddhub:Pushthebit a owl:Class; 
+                 rdfs:comment """
 """@EN; 
-                   rdfs:subClassOf ddhub:RotarySteerableSystems. 
+                 rdfs:subClassOf ddhub:RotarySteerableSystems. 
 ddhub:PwdPressure a owl:Class; 
                   rdfs:comment """
 """@EN; 
@@ -3968,7 +3996,7 @@ ddhub:RigChokeControlSystem a owl:Class;
 ddhub:RigEquipment a owl:Class; 
                    rdfs:comment """
 """@EN; 
-                   rdfs:subClassOf <http://ddhub.no/<equipment>>. 
+                   rdfs:subClassOf ddhub:Equipment. 
 ddhub:RigFloor a owl:Class; 
                rdfs:comment """
 """@EN; 
@@ -4038,7 +4066,7 @@ ddhub:RotationFrequencyRateOfChangeQuantity a owl:Class;
                                             rdfs:comment """
 """@EN; 
                                             rdfs:subClassOf ddhub:Quantity. 
-ddhub:ROV a owl:Class; 
+ddhub:Rov a owl:Class; 
           rdfs:comment """
 """@EN; 
           rdfs:subClassOf ddhub:MarineSystem. 
@@ -4066,7 +4094,7 @@ ddhub:SandTrap a owl:Class;
 ddhub:ScreenString a owl:Class; 
                    rdfs:comment """
 """@EN; 
-                   rdfs:subClassOf <http://ddhub.no/<Tubulars>>. 
+                   rdfs:subClassOf ddhub:Tubulars. 
 ddhub:ScribeLineAngleLocation a owl:Class; 
                               rdfs:comment """
 """@EN; 
@@ -4079,10 +4107,10 @@ ddhub:SeaWater a owl:Class;
                rdfs:comment """
 """@EN; 
                rdfs:subClassOf ddhub:DrillingFluid. 
-ddhub:self-sealing-threaded a owl:Class; 
-                            rdfs:comment """
+ddhub:Selfsealingthreaded a owl:Class; 
+                          rdfs:comment """
 """@EN; 
-                            rdfs:subClassOf ddhub:Connection. 
+                          rdfs:subClassOf ddhub:Connection. 
 ddhub:SemiCircularChannel a owl:Class; 
                           rdfs:comment """
 """@EN; 
@@ -4139,6 +4167,10 @@ ddhub:ShearStress a owl:Class;
                   rdfs:comment """
 """@EN; 
                   rdfs:subClassOf ddhub:PrototypeData. 
+ddhub:Shock a owl:Class; 
+            rdfs:comment """
+"""@EN; 
+            rdfs:subClassOf ddhub:AbnormalLateralOscillation. 
 ddhub:ShoeTrack a owl:Class; 
                 rdfs:comment """
 """@EN; 
@@ -4180,7 +4212,7 @@ ddhub:SlantDerrick a owl:Class;
                    rdfs:comment """
 """@EN; 
                    rdfs:subClassOf ddhub:Derrick. 
-ddhub:sleeve a owl:Class; 
+ddhub:Sleeve a owl:Class; 
              rdfs:comment """
 """@EN; 
              rdfs:subClassOf ddhub:BladeType. 
@@ -4256,7 +4288,7 @@ ddhub:SpiderGimbal a owl:Class;
                    rdfs:comment """
 """@EN; 
                    rdfs:subClassOf ddhub:MarineSystem. 
-ddhub:spiral a owl:Class; 
+ddhub:Spiral a owl:Class; 
              rdfs:comment """
 """@EN; 
              rdfs:subClassOf ddhub:BladeShape. 
@@ -4322,6 +4354,10 @@ ddhub:SteerableMotor a owl:Class;
                      rdfs:comment """
 """@EN; 
                      rdfs:subClassOf ddhub:DownholeMotor. 
+ddhub:StickSlip a owl:Class; 
+                rdfs:comment """
+"""@EN; 
+                rdfs:subClassOf ddhub:AbnormalTorsionalOscillation. 
 ddhub:StickUpHeightVerticalLocation a owl:Class; 
                                     rdfs:comment """
 """@EN; 
@@ -4338,7 +4374,7 @@ ddhub:StormLoop a owl:Class;
                 rdfs:comment """
 """@EN; 
                 rdfs:subClassOf ddhub:MarineSystem. 
-ddhub:straight a owl:Class; 
+ddhub:Straight a owl:Class; 
                rdfs:comment """
 """@EN; 
                rdfs:subClassOf ddhub:BladeShape. 
@@ -4359,78 +4395,62 @@ ddhub:StuckPipe a owl:Class;
                 rdfs:comment """
 """@EN; 
                 rdfs:subClassOf ddhub:DrillingIncident. 
-ddhub:sub-bent a owl:Class; 
-               rdfs:comment """
-"""@EN; 
-               rdfs:subClassOf ddhub:MiscSubs. 
-ddhub:sub-bit a owl:Class; 
+ddhub:Subbent a owl:Class; 
               rdfs:comment """
 """@EN; 
               rdfs:subClassOf ddhub:MiscSubs. 
-ddhub:sub-bumper a owl:Class; 
-                 rdfs:comment """
+ddhub:Subbit a owl:Class; 
+             rdfs:comment """
 """@EN; 
-                 rdfs:subClassOf ddhub:MiscSubs. 
-ddhub:sub-catcher a owl:Class; 
-                  rdfs:comment """
-"""@EN; 
-                  rdfs:subClassOf ddhub:MiscSubs. 
-ddhub:sub-circulation a owl:Class; 
-                      rdfs:comment """
-"""@EN; 
-                      rdfs:subClassOf ddhub:MiscSubs. 
-ddhub:sub-cone a owl:Class; 
-               rdfs:comment """
-"""@EN; 
-               rdfs:subClassOf ddhub:MiscSubs. 
-ddhub:sub-crossover a owl:Class; 
-                    rdfs:comment """
-"""@EN; 
-                    rdfs:subClassOf ddhub:MiscSubs. 
-ddhub:sub-dart a owl:Class; 
-               rdfs:comment """
-"""@EN; 
-               rdfs:subClassOf ddhub:MiscSubs. 
-ddhub:sub-filter a owl:Class; 
-                 rdfs:comment """
-"""@EN; 
-                 rdfs:subClassOf ddhub:MiscSubs. 
-ddhub:sub-float a owl:Class; 
+             rdfs:subClassOf ddhub:MiscSubs. 
+ddhub:Subbumper a owl:Class; 
                 rdfs:comment """
 """@EN; 
                 rdfs:subClassOf ddhub:MiscSubs. 
-ddhub:sub-jetting a owl:Class; 
-                  rdfs:comment """
-"""@EN; 
-                  rdfs:subClassOf ddhub:MiscSubs. 
-ddhub:sub-junk a owl:Class; 
-               rdfs:comment """
-"""@EN; 
-               rdfs:subClassOf ddhub:MiscSubs. 
-ddhub:sub-orienting a owl:Class; 
-                    rdfs:comment """
-"""@EN; 
-                    rdfs:subClassOf ddhub:MiscSubs. 
-ddhub:sub-ported a owl:Class; 
+ddhub:Subcatcher a owl:Class; 
                  rdfs:comment """
 """@EN; 
                  rdfs:subClassOf ddhub:MiscSubs. 
-ddhub:sub-restrictor a owl:Class; 
+ddhub:Subcirculation a owl:Class; 
                      rdfs:comment """
 """@EN; 
                      rdfs:subClassOf ddhub:MiscSubs. 
-ddhub:sub-saver a owl:Class; 
+ddhub:Subcone a owl:Class; 
+              rdfs:comment """
+"""@EN; 
+              rdfs:subClassOf ddhub:MiscSubs. 
+ddhub:Subcrossover a owl:Class; 
+                   rdfs:comment """
+"""@EN; 
+                   rdfs:subClassOf ddhub:MiscSubs. 
+ddhub:Subdart a owl:Class; 
+              rdfs:comment """
+"""@EN; 
+              rdfs:subClassOf ddhub:MiscSubs. 
+ddhub:Subfilter a owl:Class; 
                 rdfs:comment """
 """@EN; 
                 rdfs:subClassOf ddhub:MiscSubs. 
-ddhub:sub-shock a owl:Class; 
-                rdfs:comment """
-"""@EN; 
-                rdfs:subClassOf ddhub:MiscSubs. 
-ddhub:sub-stop a owl:Class; 
+ddhub:Subfloat a owl:Class; 
                rdfs:comment """
 """@EN; 
                rdfs:subClassOf ddhub:MiscSubs. 
+ddhub:Subjetting a owl:Class; 
+                 rdfs:comment """
+"""@EN; 
+                 rdfs:subClassOf ddhub:MiscSubs. 
+ddhub:Subjunk a owl:Class; 
+              rdfs:comment """
+"""@EN; 
+              rdfs:subClassOf ddhub:MiscSubs. 
+ddhub:Suborienting a owl:Class; 
+                   rdfs:comment """
+"""@EN; 
+                   rdfs:subClassOf ddhub:MiscSubs. 
+ddhub:Subported a owl:Class; 
+                rdfs:comment """
+"""@EN; 
+                rdfs:subClassOf ddhub:MiscSubs. 
 ddhub:SubpressureRelief a owl:Class; 
                         rdfs:comment """
 """@EN; 
@@ -4439,6 +4459,14 @@ ddhub:SubpumpOut a owl:Class;
                  rdfs:comment """
 """@EN; 
                  rdfs:subClassOf ddhub:MiscSubs. 
+ddhub:Subrestrictor a owl:Class; 
+                    rdfs:comment """
+"""@EN; 
+                    rdfs:subClassOf ddhub:MiscSubs. 
+ddhub:Subsaver a owl:Class; 
+               rdfs:comment """
+"""@EN; 
+               rdfs:subClassOf ddhub:MiscSubs. 
 ddhub:SubseaBop a owl:Class; 
                 rdfs:comment """
 """@EN; 
@@ -4447,10 +4475,18 @@ ddhub:SubseaTestTree a owl:Class;
                      rdfs:comment """
 """@EN; 
                      rdfs:subClassOf ddhub:WellTestingEquipment. 
+ddhub:Subshock a owl:Class; 
+               rdfs:comment """
+"""@EN; 
+               rdfs:subClassOf ddhub:MiscSubs. 
 ddhub:SubsideEntry a owl:Class; 
                    rdfs:comment """
 """@EN; 
                    rdfs:subClassOf ddhub:MiscSubs. 
+ddhub:Substop a owl:Class; 
+              rdfs:comment """
+"""@EN; 
+              rdfs:subClassOf ddhub:MiscSubs. 
 ddhub:SupportLine a owl:Class; 
                   rdfs:comment """
 """@EN; 
@@ -4747,15 +4783,19 @@ ddhub:TubingHanger a owl:Class;
 ddhub:TubingString a owl:Class; 
                    rdfs:comment """
 """@EN; 
-                   rdfs:subClassOf <http://ddhub.no/<Tubulars>>. 
+                   rdfs:subClassOf ddhub:Tubulars. 
 ddhub:TubularConfiguration a owl:Class; 
                            rdfs:comment """
 """@EN; 
-                           rdfs:subClassOf <http://ddhub.no/<Tubulars>>. 
+                           rdfs:subClassOf ddhub:Tubulars. 
 ddhub:TubularConnection a owl:Class; 
                         rdfs:comment """
 """@EN; 
-                        rdfs:subClassOf <http://ddhub.no/<Tubulars>>. 
+                        rdfs:subClassOf ddhub:Tubulars. 
+ddhub:Tubulars a owl:Class; 
+               rdfs:comment """
+"""@EN; 
+               rdfs:subClassOf ddhub:Equipment. 
 ddhub:TurbineMotor a owl:Class; 
                    rdfs:comment """
 """@EN; 
@@ -4823,7 +4863,7 @@ ddhub:ValuesIndices a owl:DatatypeProperty, owl:FunctionalProperty;
 """@EN; 
                     rdfs:domain ddhub:EndPointMapping; 
                     rdfs:range <http://www.w3.org/2001/XMLSchema#int[]>. 
-ddhub:variable a owl:Class; 
+ddhub:Variable a owl:Class; 
                rdfs:comment """
 """@EN; 
                rdfs:subClassOf ddhub:BladeShape. 
@@ -4935,6 +4975,10 @@ ddhub:Whipstock a owl:Class;
                 rdfs:comment """
 """@EN; 
                 rdfs:subClassOf ddhub:DrillingEquipment. 
+ddhub:Whirling a owl:Class; 
+               rdfs:comment """
+"""@EN; 
+               rdfs:subClassOf ddhub:AbnormalLateralOscillation. 
 ddhub:WireCable a owl:Class; 
                 rdfs:comment """
 """@EN; 
