@@ -131,6 +131,8 @@ HasUnitOfMeasure,
 BelongsToSynchronizationGroup,
 HasAcquisitionClock,
 HasSourceClock,
+HasSourceTime,
+HasAcquisitionTime,
 HasTransmissionDelay,
 IsSynchronizationGroupInput,
 IsSynchronizationGroupOutput,
@@ -272,6 +274,8 @@ HasUncertaintyHistogram
 	public static string BelongsToSynchronizationGroup = "BelongsToSynchronizationGroup";
 	public static string HasAcquisitionClock = "HasAcquisitionClock";
 	public static string HasSourceClock = "HasSourceClock";
+	public static string HasSourceTime = "HasSourceTime";
+	public static string HasAcquisitionTime = "HasAcquisitionTime";
 	public static string HasTransmissionDelay = "HasTransmissionDelay";
 	public static string IsSynchronizationGroupInput = "IsSynchronizationGroupInput";
 	public static string IsSynchronizationGroupOutput = "IsSynchronizationGroupOutput";

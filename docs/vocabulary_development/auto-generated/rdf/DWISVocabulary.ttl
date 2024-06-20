@@ -1734,6 +1734,12 @@ ddhub:HasAcquisitionClock a owl:ObjectProperty;
                           rdfs:domain ddhub:DrillingDataPoint; 
                           rdfs:range ddhub:Clock; 
                           rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:HasAcquisitionTime a owl:ObjectProperty; 
+                         rdfs:comment """
+"""@EN; 
+                         rdfs:domain ddhub:DrillingDataPoint; 
+                         rdfs:range ddhub:DrillingDataPoint; 
+                         rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasBranchComponent a owl:ObjectProperty; 
                          rdfs:comment """
 """@EN; 
@@ -1891,6 +1897,12 @@ ddhub:HasSourceClock a owl:ObjectProperty;
                      rdfs:domain ddhub:DrillingDataPoint; 
                      rdfs:range ddhub:Clock; 
                      rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:HasSourceTime a owl:ObjectProperty; 
+                    rdfs:comment """
+"""@EN; 
+                    rdfs:domain ddhub:DrillingDataPoint; 
+                    rdfs:range ddhub:DrillingDataPoint; 
+                    rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasStartJunction a owl:ObjectProperty; 
                        rdfs:comment """
 """@EN; 

@@ -10053,6 +10053,24 @@ A relation to describe how the drill-stem mechanical model manage stiffness.
 - Description: 
 
 - Examples:
+## HasSourceTime <!-- VERB -->
+- Display name: HasSourceTime
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Definition set: TimeManagement
+- Description: 
+
+- Examples:
+## HasAcquisitionTime <!-- VERB -->
+- Display name: HasAcquisitionTime
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Definition set: TimeManagement
+- Description: 
+
+- Examples:
 ## HasTransmissionDelay <!-- VERB -->
 - Display name: HasTransmissionDelay
 - Parent verb: [DWISVerb](#DWISVerb)

@@ -115,6 +115,8 @@ classDiagram
 DWISVerb <|-- BelongsToSynchronizationGroup
 DWISVerb <|-- HasAcquisitionClock
 DWISVerb <|-- HasSourceClock
+DWISVerb <|-- HasSourceTime
+DWISVerb <|-- HasAcquisitionTime
 DWISVerb <|-- HasTransmissionDelay
 DWISVerb <|-- IsSynchronizationGroupInput
 DWISVerb <|-- IsSynchronizationGroupOutput
@@ -127,6 +129,8 @@ erDiagram
 Resampling ||--o{ SynchronizationGroup : BelongsToSynchronizationGroup
 DrillingDataPoint ||--o{ Clock : HasAcquisitionClock
 DrillingDataPoint ||--o{ Clock : HasSourceClock
+DrillingDataPoint ||--o{ DrillingDataPoint : HasSourceTime
+DrillingDataPoint ||--o{ DrillingDataPoint : HasAcquisitionTime
 DrillingDataPoint ||--o{ DrillingDataPoint : HasTransmissionDelay
 DrillingDataPoint ||--o{ SynchronizationGroup : IsSynchronizationGroupInput
 DrillingDataPoint ||--o{ SynchronizationGroup : IsSynchronizationGroupOutput
@@ -155,6 +159,24 @@ DrillingDataPoint ||--o{ TimeReference : HasTimeReference
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [Clock](./TimeManagement.md#Clock)
+- Definition set: TimeManagement
+- Description: 
+
+- Examples:
+## HasSourceTime <!-- VERB -->
+- Display name: HasSourceTime
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Definition set: TimeManagement
+- Description: 
+
+- Examples:
+## HasAcquisitionTime <!-- VERB -->
+- Display name: HasAcquisitionTime
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Definition set: TimeManagement
 - Description: 
 
