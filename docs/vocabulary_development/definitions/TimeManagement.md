@@ -111,6 +111,20 @@
 - Object class: Clock
 - Description: 
 - Examples: 
+## HasSourceTime <!-- VERB -->
+- Display name: HasSourceTime
+- Parent verb: DWISVerb
+- Subject class: DrillingDataPoint
+- Object class: DrillingDataPoint
+- Description: 
+- Examples:
+## HasAcquisitionTime <!-- VERB -->
+- Display name: HasAcquisitionTime
+- Parent verb: DWISVerb
+- Subject class: DrillingDataPoint
+- Object class: DrillingDataPoint
+- Description: 
+- Examples:
 ## HasTransmissionDelay <!-- VERB -->
 - Display name: HasTransmissionDelay
 - Parent verb: DWISVerb
