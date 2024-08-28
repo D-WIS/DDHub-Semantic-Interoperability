@@ -17,8 +17,8 @@ namespace DWIS.Vocabulary.Utils
         {
             if (!string.IsNullOrEmpty(folder) && Directory.Exists(folder))
             {
-                List<PhysicalQuantity> quantities = PhysicalQuantity.AvailableQuantities;
-                List<PhysicalQuantity> drillingQuantities = DrillingPhysicalQuantity.AvailableQuantities;
+                List<BasePhysicalQuantity> quantities = BasePhysicalQuantity.AvailableBasePhysicalQuantities;
+                List<BasePhysicalQuantity> drillingQuantities = PhysicalQuantity.AvailablePhysicalQuantities;
                 if (quantities != null || drillingQuantities != null)
                 {
                     using (StreamWriter writer = new StreamWriter(folder + Path.DirectorySeparatorChar + "QuantityTypes.md"))
@@ -28,7 +28,7 @@ namespace DWIS.Vocabulary.Utils
                         writer.WriteLine("# NOUNS");
                         if (quantities != null)
                         {
-                            foreach (PhysicalQuantity quant in quantities)
+                            foreach (BasePhysicalQuantity quant in quantities)
                             {
                                 if (quant != null && quant.MeaningfulPrecisionInSI == null && !string.IsNullOrEmpty(quant.Name))
                                 {
@@ -38,7 +38,7 @@ namespace DWIS.Vocabulary.Utils
                         }
                         if (drillingQuantities != null)
                         {
-                            foreach (PhysicalQuantity quant in drillingQuantities)
+                            foreach (BasePhysicalQuantity quant in drillingQuantities)
                             {
                                 if (quant != null && quant.MeaningfulPrecisionInSI == null && !string.IsNullOrEmpty(quant.Name))
                                 {
@@ -55,7 +55,7 @@ namespace DWIS.Vocabulary.Utils
                     writer.WriteLine("# NOUNS");
                     if (quantities != null)
                     {
-                        foreach (PhysicalQuantity quant in quantities)
+                        foreach (BasePhysicalQuantity quant in quantities)
                         {
                             if (quant != null && quant.MeaningfulPrecisionInSI != null && !string.IsNullOrEmpty(quant.Name))
                             {
@@ -65,7 +65,7 @@ namespace DWIS.Vocabulary.Utils
                     }
                     if (drillingQuantities != null)
                     {
-                        foreach (PhysicalQuantity quant in drillingQuantities)
+                        foreach (BasePhysicalQuantity quant in drillingQuantities)
                         {
                             if (quant != null && quant.MeaningfulPrecisionInSI != null && !string.IsNullOrEmpty(quant.Name))
                             {
@@ -81,7 +81,7 @@ namespace DWIS.Vocabulary.Utils
                 return false;
             }
         }
-        private static void ProcessQuantity(StreamWriter writer, PhysicalQuantity quant)
+        private static void ProcessQuantity(StreamWriter writer, BasePhysicalQuantity quant)
         {
             if (writer != null && quant != null && !string.IsNullOrEmpty(quant.Name) && !string.IsNullOrEmpty(quant.GetType().Name))
             {
@@ -117,12 +117,53 @@ namespace DWIS.Vocabulary.Utils
                 {
                     writer.WriteLine("  - J = " + quant.LuminousIntensityDimension);
                 }
+                if (quant.PlaneAngleDimension != 0)
+                {
+                    writer.WriteLine("  - Theta = " + quant.PlaneAngleDimension);
+                }
+                if (quant.SolidAngleDimension != 0)
+                {
+                    writer.WriteLine("  - Omega = " + quant.SolidAngleDimension);
+                }
                 writer.WriteLine("- Description: ");
+                if (!string.IsNullOrEmpty(quant.DescriptionMD))
+                {
+                    string[] desc = quant.DescriptionMD.Split(Environment.NewLine);
+                    if (desc.Length > 1 && string.IsNullOrEmpty(desc[0]))
+                    {
+                        string[] desc2 = new string[desc.Length - 2];
+                        desc.CopyTo(desc2, 1);
+                        desc = desc2;
+                    }
+                    foreach (string d in desc)
+                    {
+                        writer.WriteLine(d);
+                    }
+                }
                 writer.WriteLine("- Examples: ");
+                if (quant.SemanticExample != null && quant.SemanticExample.Count > 0)
+                {
+                    writer.WriteLine("``` dwis " + quant.SemanticExample[0].Subject);
+                    foreach (var fact in quant.SemanticExample)
+                    {
+                        if (fact != null && !string.IsNullOrEmpty(fact.Subject) && !string.IsNullOrEmpty(fact.Verb) && !string.IsNullOrEmpty(fact.Object))
+                        {
+                            if (fact.Verb.Equals("BelongsToClass"))
+                            {
+                                writer.WriteLine(fact.Object.Replace("-", "_") + ":" + fact.Subject.Replace("-", "_"));
+                            }
+                            else
+                            {
+                                writer.WriteLine(fact.Subject.Replace("-", "_") + " " + fact.Verb + " " + fact.Object.Replace("-", "_"));
+                            }
+                        }
+                    }
+                    writer.WriteLine("```");
+                }
             }
         }
 
-        private static void ProcessMeasurableQuantity(StreamWriter writer, PhysicalQuantity quant)
+        private static void ProcessMeasurableQuantity(StreamWriter writer, BasePhysicalQuantity quant)
         {
             if (writer != null && quant != null && !string.IsNullOrEmpty(quant.Name) && quant.MeaningfulPrecisionInSI != null && !string.IsNullOrEmpty(quant.GetType().Name))
             {
@@ -132,7 +173,40 @@ namespace DWIS.Vocabulary.Utils
                 writer.WriteLine("- Specialization: ");
                 writer.WriteLine("  - MeaningfulPrecision = " + quant.MeaningfulPrecisionInSI.Value.ToString(System.Globalization.CultureInfo.InvariantCulture));
                 writer.WriteLine("- Description: ");
+                if (!string.IsNullOrEmpty(quant.DescriptionMD))
+                {
+                    string[] desc = quant.DescriptionMD.Split(Environment.NewLine);
+                    if (desc.Length > 1 && string.IsNullOrEmpty(desc[0]))
+                    {
+                        string[] desc2 = new string[desc.Length - 2];
+                        desc.CopyTo(desc2, 1);
+                        desc = desc2;
+                    }
+                    foreach (string d in desc)
+                    {
+                        writer.WriteLine(d); 
+                    }
+                }
                 writer.WriteLine("- Examples: ");
+                if (quant.SemanticExample != null && quant.SemanticExample.Count > 0)
+                {
+                    writer.WriteLine("``` dwis " + quant.SemanticExample[0].Subject);
+                    foreach (var fact in quant.SemanticExample)
+                    {
+                        if (fact != null && !string.IsNullOrEmpty(fact.Subject) && !string.IsNullOrEmpty(fact.Verb) && !string.IsNullOrEmpty(fact.Object))
+                        {
+                            if (fact.Verb.Equals("BelongsToClass"))
+                            {
+                                writer.WriteLine(fact.Object.Replace("-", "_") + ":" + fact.Subject.Replace("-", "_"));
+                            }
+                            else
+                            {
+                                writer.WriteLine(fact.Subject.Replace("-", "_") + " " + fact.Verb + " " + fact.Object.Replace("-", "_"));
+                            }
+                        }
+                    }
+                    writer.WriteLine("```");
+                }
             }
         }
     }

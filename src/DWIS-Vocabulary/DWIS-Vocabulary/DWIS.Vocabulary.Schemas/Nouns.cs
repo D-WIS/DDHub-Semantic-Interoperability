@@ -635,88 +635,95 @@ LowGravitySolidComponent,
 FormationSolidComponent,
 CuttingsComponent,
 CavingsComponent,
-EarthMagneticFluxDensityQuantity,
+ConsistencyIndexRheologyQuantity,
 ElectricTensionQuantity,
 ImageScaleQuantity,
-SmallLengthQuantity,
-RotationFrequencyQuantity,
-LargeVolumeQuantity,
-PermeabilityQuantity,
-YoungModulusQuantity,
-StandardProportionQuantity,
-StandardDimensionlessQuantity,
-StandardLengthQuantity,
+DiameterSmallQuantity,
+DimensionLessStandardQuantity,
+EarthMagneticFluxDensityQuantity,
+ElasticModulusQuantity,
+LengthSmallQuantity,
+RotationalFrequencyQuantity,
+VolumeLargeQuantity,
+ProportionStandardQuantity,
+LengthStandardQuantity,
 FluidShearRateQuantity,
 FluidShearStressQuantity,
-RheologyConsistencyIndexQuantity,
-SmallDiameterQuantity,
-SmallTorqueQuantity,
-SmallRotationFrequencyQuantity,
-SmallProportionQuantity,
+TorqueSmallQuantity,
+RotationalFrequencySmallQuantity,
+ProportionSmallQuantity,
 PorosityQuantity,
-BlockVelocityQuantity,
-CableDiameterQuantity,
-CapillaryPressureQuantity,
-DepthQuantity,
-DrillingAccelerationQuantity,
-DrillingAngleVariationGradientQuantity,
-DrillingAngularVelocityQuantity,
-DrillingAreaQuantity,
-DrillingAxialVelocityQuantity,
-DrillingCompressibilityQuantity,
-DrillingCurvatureQuantity,
-DrillingDensityGradientDepthQuantity,
-DrillingDensityGradientTemperatureQuantity,
-DrillingDensityQuantity,
-DrillingDensityRateOfChangeQuantity,
-DrillingDrillStringMagneticFluxQuantity,
-DrillingDurationQuantity,
-DrillingDynamicViscosityQuantity,
-DrillingElongationGradientQuantity,
-DrillingFluidVelocityQuantity,
-DrillingForceGradientQuantity,
-DrillingForceQuantity,
-DrillingHeatTransferCoefficientQuantity,
-DrillingHydraulicConductivityQuantity,
-DrillingInterfacialTensionQuantity,
-DrillingMassGradientQuantity,
-DrillingMassQuantity,
-DrillingMassRateQuantity,
-DrillingPlaneAngleQuantity,
-DrillingPressureGradientQuantity,
-DrillingPressureLossConstantQuantity,
-DrillingPressureQuantity,
-DrillingRandomWalkQuantity,
-DrillingRotationFrequencyRateOfChangeQuantity,
-DrillingSpecificHeatCapacityQuantity,
-DrillingSpecificHeatCapacityTemperatureGradientQuantity,
-DrillingSurveyInstrumentAngleMagneticFluxDensityQuantity,
-DrillingSurveyInstrumentAngularVelocityQuantity,
-DrillingSurveyInstrumentReciprocalLengthQuantity,
-DrillingTemperatureGradientQuantity,
-DrillingTemperatureQuantity,
-DrillingTensionQuantity,
-DrillingThermalConductivityQuantity,
-DrillingThermalConductivityTemperatureGradientQuantity,
-DrillingTorqueQuantity,
-DrillingVolumeQuantity,
-DrillingVolumetricFlowRateOfChangeQuantity,
-DrillingVolumetricFlowrateQuantity,
-DrillStemMaterialStrengthQuantity,
-FormationResistivityQuantity,
-FormationStrengthQuantity,
-GammaRayQuantity,
-GasShowQuantity,
-GasVolumetricFlowRateQuantity,
-HeightQuantity,
-HookLoadQuantity,
-NozzleDiameterQuantity,
-PipeDiameterQuantity,
-PoreDiameterQuantity,
-PoreSurfaceQuantity,
-PositionQuantity,
-RateOfPenetrationQuantity,
-WeightOnBitQuantity,
+StrokeFrequencyQuantity,
+ShockRateQuantity,
+AccelerationDrillingQuantity,
+AngleGradientPerLengthDrillingQuantity,
+AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity,
+AngularAccelerationDrillingQuantity,
+AngularVelocityDrillingQuantity,
+AngularVelocitySurveyInstrumentDrillingQuantity,
+AreaDrillingQuantity,
+AxialVelocityDrillingQuantity,
+BlockVelocityDrillingQuantity,
+CableDiameterDrillingQuantity,
+CapillaryPressureDrillingQuantity,
+CompressibilityDrillingQuantity,
+CurvatureDrillingQuantity,
+DepthDrillingQuantity,
+DiameterPipeDrillingQuantity,
+DiameterPoreDrillingQuantity,
+DrillStemMaterialStrengthDrillingQuantity,
+DrillStringMagneticFluxDrillingQuantity,
+DurationDrillingQuantity,
+DynamicViscosityDrillingQuantity,
+ElongationGradientPerLengthDrillingQuantity,
+EnergyDensityDrillingQuantity,
+MassDensityRateOfChangeDrillingQuantity,
+MassDensityGradientPerTemperatureDrillingQuantity,
+MassDensityGradientPerLengthDrillingQuantity,
+MassDensityDrillingQuantity,
+FluidVelocityDrillingQuantity,
+ForceGradientPerLengthDrillingQuantity,
+ForceDrillingQuantity,
+HeatTransferCoefficientDrillingQuantity,
+HydraulicConductivityDrillingQuantity,
+InterfacialTensionDrillingQuantity,
+MassGradientPerLengthDrillingQuantity,
+MassDrillingQuantity,
+MassRateDrillingQuantity,
+PlaneAngleDrillingQuantity,
+PowerDrillingQuantity,
+PressureGradientPerLengthDrillingQuantity,
+PressureLossConstantDrillingQuantity,
+PressureDrillingQuantity,
+RandomWalkDrillingQuantity,
+RotationalFrequencyRateOfChangeDrillingQuantity,
+IsobaricSpecificHeatCapacityDrillingQuantity,
+IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity,
+StickDurationDrillingQuantity,
+ReciprocalLengthSurveyInstrumentDrillingQuantity,
+TemperatureGradientPerLengthDrillingQuantity,
+TemperatureDrillingQuantity,
+TensionDrillingQuantity,
+ThermalConductivityDrillingQuantity,
+TorqueDrillingQuantity,
+VolumeDrillingQuantity,
+VolumetricFlowRateOfChangeDrillingQuantity,
+VolumetricFlowrateDrillingQuantity,
+FormationResistivityDrillingQuantity,
+FormationStrengthDrillingQuantity,
+GammaRayIndexDrillingQuantity,
+GasShowDrillingQuantity,
+GasVolumetricFlowRateDrillingQuantity,
+HeightDrillingQuantity,
+HookLoadDrillingQuantity,
+NozzleDiameterDrillingQuantity,
+SurfacePoreDrillingQuantity,
+PositionDrillingQuantity,
+RateOfPenetrationDrillingQuantity,
+WeightOnBitDrillingQuantity,
+ThermalConductivityGradientPerTemperatureDrillingQuantity,
+TorqueGradientPerLengthDrillingQuantity,
+PorousMediumPermeabilityDrillingQuantity,
 DrillStemMechanicalModel,
 MechanicalStiffnessType,
 MechanicalSoftModel,
@@ -844,62 +851,68 @@ Unit,
 UnitSystem,
 AccelerationQuantity,
 AmountSubstanceQuantity,
+AngleGradientPerLengthQuantity,
 AngleMagneticFluxDensityQuantity,
-AngleVariationGradientQuantity,
+AngularAccelerationQuantity,
 AngularVelocityQuantity,
 AreaQuantity,
 CompressibilityQuantity,
 CurvatureQuantity,
-DensityGradientDepthQuantity,
-DensityGradientTemperatureQuantity,
-DensityQuantity,
-DensityRateOfChangeQuantity,
+MassDensityGradientPerLengthQuantity,
+MassDensityGradientPerTemperatureQuantity,
+MassDensityQuantity,
+MassDensityRateOfChangeQuantity,
 DimensionlessQuantity,
 DynamicViscosityQuantity,
-ElectricalCapacitanceQuantity,
+ElectricCapacitanceQuantity,
 ElectricCurrentQuantity,
-ElongationGradientQuantity,
-EnergyQuantity,
+ElongationGradientPerLengthQuantity,
+EnergyDensityQuantity,
+ForceGradientPerLengthQuantity,
+ForceQuantity,
+FrequencyQuantity,
+FrequencyRateOfChangeQuantity,
+HeatTransferCoefficientQuantity,
+InterfacialTensionQuantity,
 LengthQuantity,
 LuminousIntensityQuantity,
-MassQuantity,
-PlaneAngleQuantity,
-RelativeTemperatureQuantity,
-SolidAngleQuantity,
-TemperatureQuantity,
-TimeQuantity,
-PressureQuantity,
-VolumetricFlowRateQuantity,
-VolumetricFlowRateOfChangeQuantity,
-VelocityQuantity,
-ForceGradientQuantity,
-ForceQuantity,
+MagneticFluxDensityQuantity,
+MagneticFluxQuantity,
+MassGradientPerLengthQuantity,
+MassRateQuantity,
 MaterialStrengthQuantity,
-FrequencyQuantity,
+PorousMediumPermeabilityQuantity,
+PlaneAngleQuantity,
+PowerQuantity,
+PressureGradientPerLengthQuantity,
+PressureLossConstantQuantity,
+PressureQuantity,
 ProportionQuantity,
-HeatTransferCoefficientQuantity,
+RandomWalkQuantity,
+RelativeTemperatureQuantity,
+ElectricResistivityQuantity,
+SolidAngleQuantity,
+IsobaricSpecificHeatCapacityQuantity,
+IsobaricSpecificHeatCapacityGradientPerTemperatureQuantity,
+StressQuantity,
+TemperatureGradientPerLengthQuantity,
+TemperatureQuantity,
+ThermalConductivityQuantity,
+ThermalConductivityGradientPerTemperatureQuantity,
+TimeQuantity,
+TorqueGradientPerLengthQuantity,
+TorqueQuantity,
+VelocityQuantity,
+VolumeQuantity,
+VolumetricFlowRateOfChangeQuantity,
+VolumetricFlowRateQuantity,
+WaveNumberQuantity,
+MassQuantity,
+EnergyQuantity,
 GravitationalLoadQuantity,
 HydraulicConductivityQuantity,
-InterfacialTensionQuantity,
-VolumeQuantity,
-MagneticFluxDensityQuantity,
-MassRateQuantity,
-PressureGradientQuantity,
-PressureLossConstantQuantity,
-ResistivityQuantity,
-FrequencyRateOfChangeQuantity,
-RotationFrequencyRateOfChangeQuantity,
-SpecificHeatCapacityQuantity,
-SpecificHeatCapacityTemperatureGradientQuantity,
-TemperatureGradientQuantity,
+RotationalFrequencyRateOfChangeQuantity,
 TensionQuantity,
-ThermalConductivityQuantity,
-MassGradientQuantity,
-ThermalConductivityTemperatureGradientQuantity,
-TorqueQuantity,
-MagneticFluxQuantity,
-RandomWalkQuantity,
-WaveNumberQuantity,
 ActiveVolume,
 Azimuth,
 BitDepth,
@@ -1594,88 +1607,95 @@ SensorUncertainty
 	public static string FormationSolidComponent = "FormationSolidComponent";
 	public static string CuttingsComponent = "CuttingsComponent";
 	public static string CavingsComponent = "CavingsComponent";
-	public static string EarthMagneticFluxDensityQuantity = "EarthMagneticFluxDensityQuantity";
+	public static string ConsistencyIndexRheologyQuantity = "ConsistencyIndexRheologyQuantity";
 	public static string ElectricTensionQuantity = "ElectricTensionQuantity";
 	public static string ImageScaleQuantity = "ImageScaleQuantity";
-	public static string SmallLengthQuantity = "SmallLengthQuantity";
-	public static string RotationFrequencyQuantity = "RotationFrequencyQuantity";
-	public static string LargeVolumeQuantity = "LargeVolumeQuantity";
-	public static string PermeabilityQuantity = "PermeabilityQuantity";
-	public static string YoungModulusQuantity = "YoungModulusQuantity";
-	public static string StandardProportionQuantity = "StandardProportionQuantity";
-	public static string StandardDimensionlessQuantity = "StandardDimensionlessQuantity";
-	public static string StandardLengthQuantity = "StandardLengthQuantity";
+	public static string DiameterSmallQuantity = "DiameterSmallQuantity";
+	public static string DimensionLessStandardQuantity = "DimensionLessStandardQuantity";
+	public static string EarthMagneticFluxDensityQuantity = "EarthMagneticFluxDensityQuantity";
+	public static string ElasticModulusQuantity = "ElasticModulusQuantity";
+	public static string LengthSmallQuantity = "LengthSmallQuantity";
+	public static string RotationalFrequencyQuantity = "RotationalFrequencyQuantity";
+	public static string VolumeLargeQuantity = "VolumeLargeQuantity";
+	public static string ProportionStandardQuantity = "ProportionStandardQuantity";
+	public static string LengthStandardQuantity = "LengthStandardQuantity";
 	public static string FluidShearRateQuantity = "FluidShearRateQuantity";
 	public static string FluidShearStressQuantity = "FluidShearStressQuantity";
-	public static string RheologyConsistencyIndexQuantity = "RheologyConsistencyIndexQuantity";
-	public static string SmallDiameterQuantity = "SmallDiameterQuantity";
-	public static string SmallTorqueQuantity = "SmallTorqueQuantity";
-	public static string SmallRotationFrequencyQuantity = "SmallRotationFrequencyQuantity";
-	public static string SmallProportionQuantity = "SmallProportionQuantity";
+	public static string TorqueSmallQuantity = "TorqueSmallQuantity";
+	public static string RotationalFrequencySmallQuantity = "RotationalFrequencySmallQuantity";
+	public static string ProportionSmallQuantity = "ProportionSmallQuantity";
 	public static string PorosityQuantity = "PorosityQuantity";
-	public static string BlockVelocityQuantity = "BlockVelocityQuantity";
-	public static string CableDiameterQuantity = "CableDiameterQuantity";
-	public static string CapillaryPressureQuantity = "CapillaryPressureQuantity";
-	public static string DepthQuantity = "DepthQuantity";
-	public static string DrillingAccelerationQuantity = "DrillingAccelerationQuantity";
-	public static string DrillingAngleVariationGradientQuantity = "DrillingAngleVariationGradientQuantity";
-	public static string DrillingAngularVelocityQuantity = "DrillingAngularVelocityQuantity";
-	public static string DrillingAreaQuantity = "DrillingAreaQuantity";
-	public static string DrillingAxialVelocityQuantity = "DrillingAxialVelocityQuantity";
-	public static string DrillingCompressibilityQuantity = "DrillingCompressibilityQuantity";
-	public static string DrillingCurvatureQuantity = "DrillingCurvatureQuantity";
-	public static string DrillingDensityGradientDepthQuantity = "DrillingDensityGradientDepthQuantity";
-	public static string DrillingDensityGradientTemperatureQuantity = "DrillingDensityGradientTemperatureQuantity";
-	public static string DrillingDensityQuantity = "DrillingDensityQuantity";
-	public static string DrillingDensityRateOfChangeQuantity = "DrillingDensityRateOfChangeQuantity";
-	public static string DrillingDrillStringMagneticFluxQuantity = "DrillingDrillStringMagneticFluxQuantity";
-	public static string DrillingDurationQuantity = "DrillingDurationQuantity";
-	public static string DrillingDynamicViscosityQuantity = "DrillingDynamicViscosityQuantity";
-	public static string DrillingElongationGradientQuantity = "DrillingElongationGradientQuantity";
-	public static string DrillingFluidVelocityQuantity = "DrillingFluidVelocityQuantity";
-	public static string DrillingForceGradientQuantity = "DrillingForceGradientQuantity";
-	public static string DrillingForceQuantity = "DrillingForceQuantity";
-	public static string DrillingHeatTransferCoefficientQuantity = "DrillingHeatTransferCoefficientQuantity";
-	public static string DrillingHydraulicConductivityQuantity = "DrillingHydraulicConductivityQuantity";
-	public static string DrillingInterfacialTensionQuantity = "DrillingInterfacialTensionQuantity";
-	public static string DrillingMassGradientQuantity = "DrillingMassGradientQuantity";
-	public static string DrillingMassQuantity = "DrillingMassQuantity";
-	public static string DrillingMassRateQuantity = "DrillingMassRateQuantity";
-	public static string DrillingPlaneAngleQuantity = "DrillingPlaneAngleQuantity";
-	public static string DrillingPressureGradientQuantity = "DrillingPressureGradientQuantity";
-	public static string DrillingPressureLossConstantQuantity = "DrillingPressureLossConstantQuantity";
-	public static string DrillingPressureQuantity = "DrillingPressureQuantity";
-	public static string DrillingRandomWalkQuantity = "DrillingRandomWalkQuantity";
-	public static string DrillingRotationFrequencyRateOfChangeQuantity = "DrillingRotationFrequencyRateOfChangeQuantity";
-	public static string DrillingSpecificHeatCapacityQuantity = "DrillingSpecificHeatCapacityQuantity";
-	public static string DrillingSpecificHeatCapacityTemperatureGradientQuantity = "DrillingSpecificHeatCapacityTemperatureGradientQuantity";
-	public static string DrillingSurveyInstrumentAngleMagneticFluxDensityQuantity = "DrillingSurveyInstrumentAngleMagneticFluxDensityQuantity";
-	public static string DrillingSurveyInstrumentAngularVelocityQuantity = "DrillingSurveyInstrumentAngularVelocityQuantity";
-	public static string DrillingSurveyInstrumentReciprocalLengthQuantity = "DrillingSurveyInstrumentReciprocalLengthQuantity";
-	public static string DrillingTemperatureGradientQuantity = "DrillingTemperatureGradientQuantity";
-	public static string DrillingTemperatureQuantity = "DrillingTemperatureQuantity";
-	public static string DrillingTensionQuantity = "DrillingTensionQuantity";
-	public static string DrillingThermalConductivityQuantity = "DrillingThermalConductivityQuantity";
-	public static string DrillingThermalConductivityTemperatureGradientQuantity = "DrillingThermalConductivityTemperatureGradientQuantity";
-	public static string DrillingTorqueQuantity = "DrillingTorqueQuantity";
-	public static string DrillingVolumeQuantity = "DrillingVolumeQuantity";
-	public static string DrillingVolumetricFlowRateOfChangeQuantity = "DrillingVolumetricFlowRateOfChangeQuantity";
-	public static string DrillingVolumetricFlowrateQuantity = "DrillingVolumetricFlowrateQuantity";
-	public static string DrillStemMaterialStrengthQuantity = "DrillStemMaterialStrengthQuantity";
-	public static string FormationResistivityQuantity = "FormationResistivityQuantity";
-	public static string FormationStrengthQuantity = "FormationStrengthQuantity";
-	public static string GammaRayQuantity = "GammaRayQuantity";
-	public static string GasShowQuantity = "GasShowQuantity";
-	public static string GasVolumetricFlowRateQuantity = "GasVolumetricFlowRateQuantity";
-	public static string HeightQuantity = "HeightQuantity";
-	public static string HookLoadQuantity = "HookLoadQuantity";
-	public static string NozzleDiameterQuantity = "NozzleDiameterQuantity";
-	public static string PipeDiameterQuantity = "PipeDiameterQuantity";
-	public static string PoreDiameterQuantity = "PoreDiameterQuantity";
-	public static string PoreSurfaceQuantity = "PoreSurfaceQuantity";
-	public static string PositionQuantity = "PositionQuantity";
-	public static string RateOfPenetrationQuantity = "RateOfPenetrationQuantity";
-	public static string WeightOnBitQuantity = "WeightOnBitQuantity";
+	public static string StrokeFrequencyQuantity = "StrokeFrequencyQuantity";
+	public static string ShockRateQuantity = "ShockRateQuantity";
+	public static string AccelerationDrillingQuantity = "AccelerationDrillingQuantity";
+	public static string AngleGradientPerLengthDrillingQuantity = "AngleGradientPerLengthDrillingQuantity";
+	public static string AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity = "AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity";
+	public static string AngularAccelerationDrillingQuantity = "AngularAccelerationDrillingQuantity";
+	public static string AngularVelocityDrillingQuantity = "AngularVelocityDrillingQuantity";
+	public static string AngularVelocitySurveyInstrumentDrillingQuantity = "AngularVelocitySurveyInstrumentDrillingQuantity";
+	public static string AreaDrillingQuantity = "AreaDrillingQuantity";
+	public static string AxialVelocityDrillingQuantity = "AxialVelocityDrillingQuantity";
+	public static string BlockVelocityDrillingQuantity = "BlockVelocityDrillingQuantity";
+	public static string CableDiameterDrillingQuantity = "CableDiameterDrillingQuantity";
+	public static string CapillaryPressureDrillingQuantity = "CapillaryPressureDrillingQuantity";
+	public static string CompressibilityDrillingQuantity = "CompressibilityDrillingQuantity";
+	public static string CurvatureDrillingQuantity = "CurvatureDrillingQuantity";
+	public static string DepthDrillingQuantity = "DepthDrillingQuantity";
+	public static string DiameterPipeDrillingQuantity = "DiameterPipeDrillingQuantity";
+	public static string DiameterPoreDrillingQuantity = "DiameterPoreDrillingQuantity";
+	public static string DrillStemMaterialStrengthDrillingQuantity = "DrillStemMaterialStrengthDrillingQuantity";
+	public static string DrillStringMagneticFluxDrillingQuantity = "DrillStringMagneticFluxDrillingQuantity";
+	public static string DurationDrillingQuantity = "DurationDrillingQuantity";
+	public static string DynamicViscosityDrillingQuantity = "DynamicViscosityDrillingQuantity";
+	public static string ElongationGradientPerLengthDrillingQuantity = "ElongationGradientPerLengthDrillingQuantity";
+	public static string EnergyDensityDrillingQuantity = "EnergyDensityDrillingQuantity";
+	public static string MassDensityRateOfChangeDrillingQuantity = "MassDensityRateOfChangeDrillingQuantity";
+	public static string MassDensityGradientPerTemperatureDrillingQuantity = "MassDensityGradientPerTemperatureDrillingQuantity";
+	public static string MassDensityGradientPerLengthDrillingQuantity = "MassDensityGradientPerLengthDrillingQuantity";
+	public static string MassDensityDrillingQuantity = "MassDensityDrillingQuantity";
+	public static string FluidVelocityDrillingQuantity = "FluidVelocityDrillingQuantity";
+	public static string ForceGradientPerLengthDrillingQuantity = "ForceGradientPerLengthDrillingQuantity";
+	public static string ForceDrillingQuantity = "ForceDrillingQuantity";
+	public static string HeatTransferCoefficientDrillingQuantity = "HeatTransferCoefficientDrillingQuantity";
+	public static string HydraulicConductivityDrillingQuantity = "HydraulicConductivityDrillingQuantity";
+	public static string InterfacialTensionDrillingQuantity = "InterfacialTensionDrillingQuantity";
+	public static string MassGradientPerLengthDrillingQuantity = "MassGradientPerLengthDrillingQuantity";
+	public static string MassDrillingQuantity = "MassDrillingQuantity";
+	public static string MassRateDrillingQuantity = "MassRateDrillingQuantity";
+	public static string PlaneAngleDrillingQuantity = "PlaneAngleDrillingQuantity";
+	public static string PowerDrillingQuantity = "PowerDrillingQuantity";
+	public static string PressureGradientPerLengthDrillingQuantity = "PressureGradientPerLengthDrillingQuantity";
+	public static string PressureLossConstantDrillingQuantity = "PressureLossConstantDrillingQuantity";
+	public static string PressureDrillingQuantity = "PressureDrillingQuantity";
+	public static string RandomWalkDrillingQuantity = "RandomWalkDrillingQuantity";
+	public static string RotationalFrequencyRateOfChangeDrillingQuantity = "RotationalFrequencyRateOfChangeDrillingQuantity";
+	public static string IsobaricSpecificHeatCapacityDrillingQuantity = "IsobaricSpecificHeatCapacityDrillingQuantity";
+	public static string IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity = "IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity";
+	public static string StickDurationDrillingQuantity = "StickDurationDrillingQuantity";
+	public static string ReciprocalLengthSurveyInstrumentDrillingQuantity = "ReciprocalLengthSurveyInstrumentDrillingQuantity";
+	public static string TemperatureGradientPerLengthDrillingQuantity = "TemperatureGradientPerLengthDrillingQuantity";
+	public static string TemperatureDrillingQuantity = "TemperatureDrillingQuantity";
+	public static string TensionDrillingQuantity = "TensionDrillingQuantity";
+	public static string ThermalConductivityDrillingQuantity = "ThermalConductivityDrillingQuantity";
+	public static string TorqueDrillingQuantity = "TorqueDrillingQuantity";
+	public static string VolumeDrillingQuantity = "VolumeDrillingQuantity";
+	public static string VolumetricFlowRateOfChangeDrillingQuantity = "VolumetricFlowRateOfChangeDrillingQuantity";
+	public static string VolumetricFlowrateDrillingQuantity = "VolumetricFlowrateDrillingQuantity";
+	public static string FormationResistivityDrillingQuantity = "FormationResistivityDrillingQuantity";
+	public static string FormationStrengthDrillingQuantity = "FormationStrengthDrillingQuantity";
+	public static string GammaRayIndexDrillingQuantity = "GammaRayIndexDrillingQuantity";
+	public static string GasShowDrillingQuantity = "GasShowDrillingQuantity";
+	public static string GasVolumetricFlowRateDrillingQuantity = "GasVolumetricFlowRateDrillingQuantity";
+	public static string HeightDrillingQuantity = "HeightDrillingQuantity";
+	public static string HookLoadDrillingQuantity = "HookLoadDrillingQuantity";
+	public static string NozzleDiameterDrillingQuantity = "NozzleDiameterDrillingQuantity";
+	public static string SurfacePoreDrillingQuantity = "SurfacePoreDrillingQuantity";
+	public static string PositionDrillingQuantity = "PositionDrillingQuantity";
+	public static string RateOfPenetrationDrillingQuantity = "RateOfPenetrationDrillingQuantity";
+	public static string WeightOnBitDrillingQuantity = "WeightOnBitDrillingQuantity";
+	public static string ThermalConductivityGradientPerTemperatureDrillingQuantity = "ThermalConductivityGradientPerTemperatureDrillingQuantity";
+	public static string TorqueGradientPerLengthDrillingQuantity = "TorqueGradientPerLengthDrillingQuantity";
+	public static string PorousMediumPermeabilityDrillingQuantity = "PorousMediumPermeabilityDrillingQuantity";
 	public static string DrillStemMechanicalModel = "DrillStemMechanicalModel";
 	public static string MechanicalStiffnessType = "MechanicalStiffnessType";
 	public static string MechanicalSoftModel = "MechanicalSoftModel";
@@ -1803,62 +1823,68 @@ SensorUncertainty
 	public static string UnitSystem = "UnitSystem";
 	public static string AccelerationQuantity = "AccelerationQuantity";
 	public static string AmountSubstanceQuantity = "AmountSubstanceQuantity";
+	public static string AngleGradientPerLengthQuantity = "AngleGradientPerLengthQuantity";
 	public static string AngleMagneticFluxDensityQuantity = "AngleMagneticFluxDensityQuantity";
-	public static string AngleVariationGradientQuantity = "AngleVariationGradientQuantity";
+	public static string AngularAccelerationQuantity = "AngularAccelerationQuantity";
 	public static string AngularVelocityQuantity = "AngularVelocityQuantity";
 	public static string AreaQuantity = "AreaQuantity";
 	public static string CompressibilityQuantity = "CompressibilityQuantity";
 	public static string CurvatureQuantity = "CurvatureQuantity";
-	public static string DensityGradientDepthQuantity = "DensityGradientDepthQuantity";
-	public static string DensityGradientTemperatureQuantity = "DensityGradientTemperatureQuantity";
-	public static string DensityQuantity = "DensityQuantity";
-	public static string DensityRateOfChangeQuantity = "DensityRateOfChangeQuantity";
+	public static string MassDensityGradientPerLengthQuantity = "MassDensityGradientPerLengthQuantity";
+	public static string MassDensityGradientPerTemperatureQuantity = "MassDensityGradientPerTemperatureQuantity";
+	public static string MassDensityQuantity = "MassDensityQuantity";
+	public static string MassDensityRateOfChangeQuantity = "MassDensityRateOfChangeQuantity";
 	public static string DimensionlessQuantity = "DimensionlessQuantity";
 	public static string DynamicViscosityQuantity = "DynamicViscosityQuantity";
-	public static string ElectricalCapacitanceQuantity = "ElectricalCapacitanceQuantity";
+	public static string ElectricCapacitanceQuantity = "ElectricCapacitanceQuantity";
 	public static string ElectricCurrentQuantity = "ElectricCurrentQuantity";
-	public static string ElongationGradientQuantity = "ElongationGradientQuantity";
-	public static string EnergyQuantity = "EnergyQuantity";
+	public static string ElongationGradientPerLengthQuantity = "ElongationGradientPerLengthQuantity";
+	public static string EnergyDensityQuantity = "EnergyDensityQuantity";
+	public static string ForceGradientPerLengthQuantity = "ForceGradientPerLengthQuantity";
+	public static string ForceQuantity = "ForceQuantity";
+	public static string FrequencyQuantity = "FrequencyQuantity";
+	public static string FrequencyRateOfChangeQuantity = "FrequencyRateOfChangeQuantity";
+	public static string HeatTransferCoefficientQuantity = "HeatTransferCoefficientQuantity";
+	public static string InterfacialTensionQuantity = "InterfacialTensionQuantity";
 	public static string LengthQuantity = "LengthQuantity";
 	public static string LuminousIntensityQuantity = "LuminousIntensityQuantity";
-	public static string MassQuantity = "MassQuantity";
-	public static string PlaneAngleQuantity = "PlaneAngleQuantity";
-	public static string RelativeTemperatureQuantity = "RelativeTemperatureQuantity";
-	public static string SolidAngleQuantity = "SolidAngleQuantity";
-	public static string TemperatureQuantity = "TemperatureQuantity";
-	public static string TimeQuantity = "TimeQuantity";
-	public static string PressureQuantity = "PressureQuantity";
-	public static string VolumetricFlowRateQuantity = "VolumetricFlowRateQuantity";
-	public static string VolumetricFlowRateOfChangeQuantity = "VolumetricFlowRateOfChangeQuantity";
-	public static string VelocityQuantity = "VelocityQuantity";
-	public static string ForceGradientQuantity = "ForceGradientQuantity";
-	public static string ForceQuantity = "ForceQuantity";
+	public static string MagneticFluxDensityQuantity = "MagneticFluxDensityQuantity";
+	public static string MagneticFluxQuantity = "MagneticFluxQuantity";
+	public static string MassGradientPerLengthQuantity = "MassGradientPerLengthQuantity";
+	public static string MassRateQuantity = "MassRateQuantity";
 	public static string MaterialStrengthQuantity = "MaterialStrengthQuantity";
-	public static string FrequencyQuantity = "FrequencyQuantity";
+	public static string PorousMediumPermeabilityQuantity = "PorousMediumPermeabilityQuantity";
+	public static string PlaneAngleQuantity = "PlaneAngleQuantity";
+	public static string PowerQuantity = "PowerQuantity";
+	public static string PressureGradientPerLengthQuantity = "PressureGradientPerLengthQuantity";
+	public static string PressureLossConstantQuantity = "PressureLossConstantQuantity";
+	public static string PressureQuantity = "PressureQuantity";
 	public static string ProportionQuantity = "ProportionQuantity";
-	public static string HeatTransferCoefficientQuantity = "HeatTransferCoefficientQuantity";
+	public static string RandomWalkQuantity = "RandomWalkQuantity";
+	public static string RelativeTemperatureQuantity = "RelativeTemperatureQuantity";
+	public static string ElectricResistivityQuantity = "ElectricResistivityQuantity";
+	public static string SolidAngleQuantity = "SolidAngleQuantity";
+	public static string IsobaricSpecificHeatCapacityQuantity = "IsobaricSpecificHeatCapacityQuantity";
+	public static string IsobaricSpecificHeatCapacityGradientPerTemperatureQuantity = "IsobaricSpecificHeatCapacityGradientPerTemperatureQuantity";
+	public static string StressQuantity = "StressQuantity";
+	public static string TemperatureGradientPerLengthQuantity = "TemperatureGradientPerLengthQuantity";
+	public static string TemperatureQuantity = "TemperatureQuantity";
+	public static string ThermalConductivityQuantity = "ThermalConductivityQuantity";
+	public static string ThermalConductivityGradientPerTemperatureQuantity = "ThermalConductivityGradientPerTemperatureQuantity";
+	public static string TimeQuantity = "TimeQuantity";
+	public static string TorqueGradientPerLengthQuantity = "TorqueGradientPerLengthQuantity";
+	public static string TorqueQuantity = "TorqueQuantity";
+	public static string VelocityQuantity = "VelocityQuantity";
+	public static string VolumeQuantity = "VolumeQuantity";
+	public static string VolumetricFlowRateOfChangeQuantity = "VolumetricFlowRateOfChangeQuantity";
+	public static string VolumetricFlowRateQuantity = "VolumetricFlowRateQuantity";
+	public static string WaveNumberQuantity = "WaveNumberQuantity";
+	public static string MassQuantity = "MassQuantity";
+	public static string EnergyQuantity = "EnergyQuantity";
 	public static string GravitationalLoadQuantity = "GravitationalLoadQuantity";
 	public static string HydraulicConductivityQuantity = "HydraulicConductivityQuantity";
-	public static string InterfacialTensionQuantity = "InterfacialTensionQuantity";
-	public static string VolumeQuantity = "VolumeQuantity";
-	public static string MagneticFluxDensityQuantity = "MagneticFluxDensityQuantity";
-	public static string MassRateQuantity = "MassRateQuantity";
-	public static string PressureGradientQuantity = "PressureGradientQuantity";
-	public static string PressureLossConstantQuantity = "PressureLossConstantQuantity";
-	public static string ResistivityQuantity = "ResistivityQuantity";
-	public static string FrequencyRateOfChangeQuantity = "FrequencyRateOfChangeQuantity";
-	public static string RotationFrequencyRateOfChangeQuantity = "RotationFrequencyRateOfChangeQuantity";
-	public static string SpecificHeatCapacityQuantity = "SpecificHeatCapacityQuantity";
-	public static string SpecificHeatCapacityTemperatureGradientQuantity = "SpecificHeatCapacityTemperatureGradientQuantity";
-	public static string TemperatureGradientQuantity = "TemperatureGradientQuantity";
+	public static string RotationalFrequencyRateOfChangeQuantity = "RotationalFrequencyRateOfChangeQuantity";
 	public static string TensionQuantity = "TensionQuantity";
-	public static string ThermalConductivityQuantity = "ThermalConductivityQuantity";
-	public static string MassGradientQuantity = "MassGradientQuantity";
-	public static string ThermalConductivityTemperatureGradientQuantity = "ThermalConductivityTemperatureGradientQuantity";
-	public static string TorqueQuantity = "TorqueQuantity";
-	public static string MagneticFluxQuantity = "MagneticFluxQuantity";
-	public static string RandomWalkQuantity = "RandomWalkQuantity";
-	public static string WaveNumberQuantity = "WaveNumberQuantity";
 	public static string ActiveVolume = "ActiveVolume";
 	public static string Azimuth = "Azimuth";
 	public static string BitDepth = "BitDepth";

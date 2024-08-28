@@ -126,19 +126,37 @@ namespace DWIS.Vocabulary.Utils
             }
             else if (header.StartsWith("- Description:"))
             {
-                noun.Description = snippetItem;
+                List<string> list = new List<string>();
                 if (snippetItem != null && snippetItem.Length > 0)
                 {
-                    snippetItem[0] = header.Remove(0, "- Description:".Length).Trim().TrimEnd();
+                    string processed = header.Remove(0, "- Description:".Length).Trim().TrimEnd();
+                    if (!string.IsNullOrEmpty(processed))
+                    {
+                        list.Add(processed);
+                    }
                 }
+                for (int i = 1; i < snippetItem.Length; i++)
+                {
+                    list.Add(snippetItem[i]);
+                }
+                noun.Description = list.ToArray();
             }
             else if (header.StartsWith("- Examples:"))
             {
-                noun.Examples = snippetItem;
+                List<string> list = new List<string>();
                 if (snippetItem != null && snippetItem.Length > 0)
                 {
-                    snippetItem[0] = header.Remove(0, "- Examples:".Length).Trim().TrimEnd();
+                    string processed = header.Remove(0, "- Examples:".Length).Trim().TrimEnd();
+                    if (!string.IsNullOrEmpty(processed))
+                    {
+                        list.Add(processed);
+                    }
                 }
+                for (int i = 1; i < snippetItem.Length; i++)
+                {
+                    list.Add(snippetItem[i]);
+                }
+                noun.Examples = list.ToArray();
             }
             else if (header.StartsWith("- Attributes:"))
             {
@@ -168,7 +186,7 @@ namespace DWIS.Vocabulary.Utils
                         }
                         else if (insideDescription && description != null) 
                         {
-                            description.Add(l);
+                            description.Add(l.Trim().TrimEnd());
                         }
                     }
                     if (!string.IsNullOrEmpty(attributeName) && !string.IsNullOrEmpty(dataType))
@@ -226,7 +244,7 @@ namespace DWIS.Vocabulary.Utils
             }
             else if (header.StartsWith("- Deprecated:"))
             {
-                string boolStr = header.Remove(0, "- Deprecated: ".Length).Trim().TrimEnd();
+                string boolStr = header.Remove(0, "- Deprecated:".Length).Trim().TrimEnd();
                 bool deprecated;
                 if (Numeric.TryParse(boolStr, out deprecated))
                 {
@@ -235,7 +253,7 @@ namespace DWIS.Vocabulary.Utils
             }
             else if (header.StartsWith("- Will be removed by:"))
             {
-                string dateStr = header.Remove(0, "- Will be removed by: ".Length).Trim().TrimEnd();
+                string dateStr = header.Remove(0, "- Will be removed by:".Length).Trim().TrimEnd();
                 DateTime date;
                 if (Numeric.TryParse(dateStr, out date))
                 {
@@ -244,11 +262,11 @@ namespace DWIS.Vocabulary.Utils
             }
             else if (header.StartsWith("- Will be removed from version:"))
             {
-                noun.WillBeRemovedFromVersion = header.Remove(0, "- Will be removed from version: ".Length).Trim().TrimEnd();
+                noun.WillBeRemovedFromVersion = header.Remove(0, "- Will be removed from version:".Length).Trim().TrimEnd();
             }
             else if (header.StartsWith("- Replaced by:"))
             {
-                noun.ReplacedBy = header.Remove(0, "- Replaced by: ".Length).Trim().TrimEnd();
+                noun.ReplacedBy = header.Remove(0, "- Replaced by:".Length).Trim().TrimEnd();
             }
             return false;
         }
@@ -265,19 +283,37 @@ namespace DWIS.Vocabulary.Utils
             }
             else if (header.StartsWith("- Description:"))
             {
-                verb.Description = snippetItem;
+                List<string> list = new List<string>();
                 if (snippetItem != null && snippetItem.Length > 0)
                 {
-                    snippetItem[0] = header.Remove(0, "- Description:".Length).Trim().TrimEnd();
+                    string processed = header.Remove(0, "- Description:".Length).Trim().TrimEnd();
+                    if (!string.IsNullOrEmpty(processed))
+                    {
+                        list.Add(processed);
+                    }
                 }
+                for (int i = 1; i < snippetItem.Length; i++)
+                {
+                    list.Add(snippetItem[i]);
+                }
+                verb.Description = list.ToArray();
             }
             else if (header.StartsWith("- Examples:"))
             {
-                verb.Examples = snippetItem;
+                List<string> list = new List<string>(); 
                 if (snippetItem != null && snippetItem.Length > 0)
                 {
-                    snippetItem[0] = header.Remove(0, "- Examples:".Length).Trim().TrimEnd();
+                    string processed = header.Remove(0, "- Examples:".Length).Trim().TrimEnd();
+                    if (!string.IsNullOrEmpty (processed))
+                    {
+                        list.Add(processed);
+                    }
                 }
+                for (int i = 1; i < snippetItem.Length; i++)
+                {
+                    list.Add(snippetItem[i]);
+                }
+                verb.Examples = list.ToArray();
             }
             else if (header.StartsWith("- Subject class:"))
             {
@@ -323,11 +359,11 @@ namespace DWIS.Vocabulary.Utils
             }
             else if (header.StartsWith("- Will be removed from version:"))
             {
-                verb.WillBeRemovedFromVersion = header.Remove(0, "- Will be removed from version: ".Length).Trim().TrimEnd();
+                verb.WillBeRemovedFromVersion = header.Remove(0, "- Will be removed from version:".Length).Trim().TrimEnd();
             }
             else if (header.StartsWith("- Replaced by:"))
             {
-                verb.ReplacedBy = header.Remove(0, "- Replaced by: ".Length).Trim().TrimEnd();
+                verb.ReplacedBy = header.Remove(0, "- Replaced by:".Length).Trim().TrimEnd();
             }
             return true;
         }

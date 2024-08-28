@@ -59,7 +59,16 @@ namespace DWIS.Vocabulary.Development
             if (Name != other.Name) return false;
             if(DisplayName != other.DisplayName) return false;
             if(ParentNounName != other.ParentNounName) return false;
-            if(Description != other.Description) return false;
+            if ((Description == null || Description.Length == 0) && (other.Description != null && other.Description.Length > 0)) return false;
+            if ((Description != null && Description.Length > 0) && (other.Description == null || other.Description.Length == 0)) return false;
+            if (Description != null && other.Description != null)
+            {
+                if (Description.Length != other.Description.Length) return false;
+                for (int i = 0; i < Description.Length; i++)
+                {
+                    if (Description[i] != other.Description[i]) return false;
+                }
+            }
             //if(DefinitionSetName != other.DefinitionSetName) return false;
 
             if (NounAttributes == null && other.NounAttributes != null) return false;
@@ -69,7 +78,16 @@ namespace DWIS.Vocabulary.Development
                 if (NounAttributes.Length != other.NounAttributes.Length) return false;
                 for (int i = 0; i < NounAttributes.Length; i++)
                 {
-                    if (!other.NounAttributes.Contains(NounAttributes[i])) return false;
+                    bool contained = false; 
+                    for (int j = 0; j  < other.NounAttributes.Length; j++)
+                    {
+                        if (NounAttributes[i].Equals(other.NounAttributes[j]))
+                        {
+                            contained = true;
+                            break;
+                        }
+                    }
+                    if (!contained) return false;
                 }
             }
 

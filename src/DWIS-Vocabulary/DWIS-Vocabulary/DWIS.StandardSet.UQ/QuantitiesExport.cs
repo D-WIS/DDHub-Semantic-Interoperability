@@ -25,11 +25,11 @@ namespace DWIS.StandardSet.UQ
 
         private static string Correct(string symbol)
         {
-            return symbol.Replace("²", "square")
+            string corrected = symbol.Replace("²", "square")
                     .Replace("µ", "mu")
                     .Replace("°", "deg")
                     .Replace("³", "cubic")
-                    .Replace("•", "dot")
+                    .Replace("•", ".")
                     .Replace("Ω", "omega")
                     .Replace("å", "aa")
                     .Replace("Å", "AA")
@@ -37,11 +37,17 @@ namespace DWIS.StandardSet.UQ
                     .Replace("☉", "solarMass")
                     .Replace("🜨", "earthMass")
                     .Replace("é", "e")
-                    .Replace("‰", "perThousands");                
+                    .Replace("‰", "perThousands")
+                    .Replace("√", "sqrt ");
+            if (corrected.Any(c => !char.IsLetterOrDigit(c)))
+            {
+                throw new Exception("symbol still contains special characters");
+            }
+            return corrected;
         }
 
 
-        public static DWISInstance Export(string vocabularyFolder)
+        public static DWISInstance? Export(string vocabularyFolder)
         {
             if (VocabularyParsing.FromFolder(vocabularyFolder, out DWISVocabulary vocabulary))
             {
@@ -56,7 +62,7 @@ namespace DWIS.StandardSet.UQ
                     && vocabulary.GetVerb(Verbs.IsUnitForQuantity, out Verb isUnitForQuantityVerb)
                     )
                 {
-                    foreach (var quantity in PhysicalQuantity.AvailableQuantities)
+                    foreach (var quantity in BasePhysicalQuantity.AvailableBasePhysicalQuantities)
                     {
                         TypedIndividual quantityIndividual = new TypedIndividual(GetValidName(quantity.Name), quantityNoun);
                         quantities.Population.Add(quantityIndividual);

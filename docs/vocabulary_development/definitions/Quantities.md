@@ -25,33 +25,41 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
 - Parent class: DWISNoun
 - Attributes:
   - L
-    - Type: int
+    - Type: double
     - Description: Length exponent. 
 SI Unit: meter (m)
   - M
-    - Type: int
+    - Type: double
     - Description: Mass exponent. 
 SI Unit: Kilogram (kg)
   - T
-    - Type: int
+    - Type: double
     - Description: Time exponent.
 SI Unit: Second (s)
   - I
-    - Type: int
+    - Type: double
     - Description: Electric current exponent. 
 SI Unit: Ampere (A)
   - ThT
-    - Type: int
+    - Type: double
     - Description: Thermodynamic temperature exponent.
 SI Unit: Kelvin (K)
   - N
-    - Type: int
+    - Type: double
     - Description: Amount of substance exponent.
 SI Unit: Mole (N)
   - J
-    - Type: int
+    - Type: double
     - Description: Luminous intensity exponent. 
 SI Unit: Candela (cd)
+  - Theta
+    - Type: double
+    - Description: plane angle exponent.
+SI Unit: radian (rad)
+  - Omega
+    - Type: double
+    - Description: solid angle exponent.
+SI Unit: steradian (sr)
   - SIUnit
     - Type: string
     - Description: 
@@ -63,6 +71,8 @@ SI Unit: Candela (cd)
   - ThT = 0
   - N = 0
   - J = 0
+  - Theta = 0
+  - Omega = 0
 - Description: 
 - Examples:
 ## Unit <!-- NOUN -->

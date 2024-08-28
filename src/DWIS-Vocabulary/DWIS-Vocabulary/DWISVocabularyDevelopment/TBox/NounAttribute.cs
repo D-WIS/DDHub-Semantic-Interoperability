@@ -26,7 +26,21 @@ namespace DWIS.Vocabulary.Development
 
         public bool Equals(NounAttribute other)
         {
-            return other!=null && Type == other.Type && Name == other.Name && Description == other.Description && DisplayName == other.DisplayName;
+            if ((other == null)) return false;
+            if (Type != other.Type) return false;
+            if (Name != other.Name) return false;
+            if (DisplayName != other.DisplayName) return false;
+            if ((Description == null || Description.Length == 0) && other.Description != null && other.Description.Length > 0) return false;
+            if (Description != null && Description.Length > 0 && (other.Description == null || other.Description.Length == 0)) return false;
+            if (Description != null && other.Description != null)
+            {
+                if (Description.Length != other.Description.Length) return false;
+                for (int i = 0; i < Description.Length; i++)
+                {
+                    if (Description[i] != other.Description[i]) return false;
+                }
+            }
+            return true;
         }
     }
 }

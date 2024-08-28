@@ -11,7 +11,7 @@ namespace DWIS.Vocabulary.Development
         public ISentenceCollection Sentences { get; set; }
         public IClassAssertionCollection ClassAssertions { get; set; }
         public IImplicitSentenceCollection ImplicitSentences { get; set; }
-        public Vocabulary InstanceVocabulary { get; set; }
+        public Vocabulary InstanceVocabulary { get; set; } = new Vocabulary();
         private DWISInstance() { }
         public DWISInstance(string name, DWISVocabulary vocabulary)
         {
