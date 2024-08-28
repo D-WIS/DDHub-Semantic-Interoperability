@@ -1,6 +1,5 @@
 # DWIS-SPP1
 - MudStandpipe:StandPipe_0
-- DrillingPressureQuantity:SPPQuantity_0
 - Location:StandPipeLocation
 - DerrickFloorVerticalLocation:DrillFloorLocation
 - DrillingDataPoint:StandPipeElevation
@@ -20,7 +19,6 @@
 - SPP_1 IsProvidedBy DrillingOptimizingService_0
 - SPP_1 IsGeneratedBy MovingAverage1
 - SPP_1 IsHydraulicallyLocatedAt StandPipe_0
-- SPP_1 IsOfMeasurableQuantity SPPQuantity_0
 - SPP_1 HasUncertainty SPP1_Uncertainty
 - SPP_1 HasElevationReference StandPipeLocation
 - SPP_1 IsPhysicallyLocatedAt StandPipeLocation
@@ -31,7 +29,6 @@ flowchart TD
 	 classDef typeClass fill:#f96;
 	 classDef classClass fill:#9dd0ff;
 	StandPipe_0([StandPipe_0]) --> MudStandpipe[[MudStandpipe]]:::typeClass
-	SPPQuantity_0([SPPQuantity_0]) --> DrillingPressureQuantity[[DrillingPressureQuantity]]:::typeClass
 	StandPipeLocation([StandPipeLocation]) --> Location[[Location]]:::typeClass
 	DrillFloorLocation([DrillFloorLocation]) --> DerrickFloorVerticalLocation[[DerrickFloorVerticalLocation]]:::typeClass
 	StandPipeElevation([StandPipeElevation]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
@@ -48,7 +45,6 @@ flowchart TD
 	 SPP_1 -- IsProvidedBy --> DrillingOptimizingService_0 
 	 SPP_1 -- IsGeneratedBy --> MovingAverage1 
 	 SPP_1 -- IsHydraulicallyLocatedAt --> StandPipe_0 
-	 SPP_1 -- IsOfMeasurableQuantity --> SPPQuantity_0 
 	 SPP_1 -- HasUncertainty --> SPP1_Uncertainty 
 	 SPP_1 -- HasElevationReference --> StandPipeLocation 
 	 SPP_1 -- IsPhysicallyLocatedAt --> StandPipeLocation 

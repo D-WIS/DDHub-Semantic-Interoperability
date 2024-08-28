@@ -48,8 +48,6 @@
 - DrillingDataPoint:DrillingDataPoint_11
 - ProportionQuantity:ProportionQuantity_0
 - VolumeQuantity:VolumeQuantity_0
-- DrillingVolumetricFlowrateQuantity:FlowRateQuantity_0
-- RotationFrequencyQuantity:PumpRateQuantity_0
 - Transformation:Transformation_0
 - Transformation:Transformation_1
 - Transformation:Transformation_2
@@ -59,35 +57,15 @@
 - FlowRateIn:FlowRateIn_1
 - MudStandpipe:StandPipe_0
 - Transformation:Transformation_3
-- DrillingTorqueQuantity:BitTorqueQuantity_0
 - TorqueQuantity:TorqueQuantity_0
-- DrillingAccelerationQuantity:BlockAccelerationQuantity_0
 - AccelerationQuantity:AccelerationQuantity_0
-- PositionQuantity:BlockPositionQuantity_0
 - LengthQuantity:LengthQuantity_0
-- BlockVelocityQuantity:BlockVelocityQuantity_0
 - VelocityQuantity:VelocityQuantity_0
-- DepthQuantity:DepthQuantity_0
-- DrillingDensityQuantity:EMWQuantity_0
-- DrillingDensityQuantity:MassDensityQuantity_0
-- DrillingVolumetricFlowrateQuantity:VolumetricRateQuantity_0
-- DrillingDensityQuantity:FluidDensityInQuantity_0
-- DrillingTemperatureQuantity:FluidTemperatureInQuantity_0
 - TemperatureQuantity:TemperatureQuantity_0
-- HookLoadQuantity:HookloadQuantity_0
 - MassQuantity:MassQuantity_0
 - FrequencyQuantity:FrequencyQuantity_0
-- DrillingPressureQuantity:SPPQuantity_0
 - PressureQuantity:PressureQuantity_0
-- RotationFrequencyQuantity:SurfaceRPMQuantity_0
-- DrillingTorqueQuantity:SurfaceTorqueQuantity_0
-- DrillingForceQuantity:TopOfStringForceQuantity_0
 - ForceQuantity:ForceQuantity_0
-- DepthQuantity:TVDQuantity_0
-- WeightOnBitQuantity:WOBQuantity_0
-- FormationResistivityQuantity:Resistivity_0
-- FormationResistivityQuantity:ElectricResistivityQuantity_0
-- DrillingDensityQuantity:RockDensityQuantity_0
 - PorosityQuantity:FormationPorosityQuantity_0
 - ProportionQuantity:ProportionQuantity_1
 - Quill:TopDriveShaft_0
@@ -123,7 +101,6 @@
 - ConnectedCondition:ConnectedCondition_0
 - DownholePressure:DownholePressure_2
 - DrillingDataPoint:DrillingDataPoint_13
-- DrillingPressureQuantity:DownholePressureQuantity_0
 - DrillingDataPoint:DrillingDataPoint_14
 - DrillingDataPoint:DrillingDataPoint_15
 - DrillingDataPoint:DrillingDataPoint_16
@@ -247,12 +224,6 @@
 - DrillingDataPoint_11 IsHydraulicallyLocatedAt MudPump_1
 - DrillingDataPoint_1 IsOfMeasurableQuantity ProportionQuantity_0
 - DrillingDataPoint_2 IsOfMeasurableQuantity VolumeQuantity_0
-- DrillingDataPoint_0 IsOfMeasurableQuantity FlowRateQuantity_0
-- DrillingDataPoint_3 IsOfMeasurableQuantity FlowRateQuantity_0
-- DrillingDataPoint_6 IsOfMeasurableQuantity FlowRateQuantity_0
-- PumpRate_0 IsOfMeasurableQuantity PumpRateQuantity_0
-- PumpRate_1 IsOfMeasurableQuantity PumpRateQuantity_0
-- PumpRate_2 IsOfMeasurableQuantity PumpRateQuantity_0
 - DrillingDataPoint_4 IsOfMeasurableQuantity ProportionQuantity_0
 - DrillingDataPoint_5 IsOfMeasurableQuantity VolumeQuantity_0
 - DrillingDataPoint_7 IsOfMeasurableQuantity ProportionQuantity_0
@@ -276,30 +247,10 @@
 - PumpRate_1 IsDerivedFrom Derivation_1
 - PumpRate_2 IsDerivedFrom Derivation_2
 - FlowRateIn_1 IsHydraulicallyLocatedAt StandPipe_0
-- FlowRateIn_1 IsOfMeasurableQuantity FlowRateQuantity_0
 - DrillingDataPoint_0 IsTransformationInput Transformation_3
 - DrillingDataPoint_3 IsTransformationInput Transformation_3
 - DrillingDataPoint_6 IsTransformationInput Transformation_3
 - Transformation_3 IsTransformationOutput FlowRateIn_1
-- BitTorqueQuantity_0 IsObservableFrom TorqueQuantity_0
-- BlockAccelerationQuantity_0 IsObservableFrom AccelerationQuantity_0
-- BlockPositionQuantity_0 IsObservableFrom LengthQuantity_0
-- BlockVelocityQuantity_0 IsObservableFrom VelocityQuantity_0
-- DepthQuantity_0 IsObservableFrom LengthQuantity_0
-- EMWQuantity_0 IsObservableFrom MassDensityQuantity_0
-- FlowRateQuantity_0 IsObservableFrom VolumetricRateQuantity_0
-- FluidDensityInQuantity_0 IsObservableFrom MassDensityQuantity_0
-- FluidTemperatureInQuantity_0 IsObservableFrom TemperatureQuantity_0
-- HookloadQuantity_0 IsObservableFrom MassQuantity_0
-- PumpRateQuantity_0 IsObservableFrom FrequencyQuantity_0
-- SPPQuantity_0 IsObservableFrom PressureQuantity_0
-- SurfaceRPMQuantity_0 IsObservableFrom FrequencyQuantity_0
-- SurfaceTorqueQuantity_0 IsObservableFrom TorqueQuantity_0
-- TopOfStringForceQuantity_0 IsObservableFrom ForceQuantity_0
-- TVDQuantity_0 IsObservableFrom LengthQuantity_0
-- WOBQuantity_0 IsObservableFrom MassQuantity_0
-- Resistivity_0 IsObservableFrom ElectricResistivityQuantity_0
-- RockDensityQuantity_0 IsObservableFrom MassDensityQuantity_0
 - FormationPorosityQuantity_0 IsObservableFrom ProportionQuantity_1
 - StandPipe_0 IsHydraulicConnectedTo TopDriveShaft_0
 - TopDriveShaft_0 IsHydraulicConnectedTo TopDrive_0
@@ -345,16 +296,9 @@
 - DownholeECD_1 IsHydraulicallyLocatedAt BHAAnnular_0
 - DownholePressure_1 IsHydraulicallyLocatedAt BHAAnnular_0
 - DownholePressure_2 IsHydraulicallyLocatedAt BHAAnnular_0
-- DownholePressureQuantity_0 IsObservableFrom PressureQuantity_0
 - DrillingDataPoint_14 IsOfBaseQuantity PressureQuantity_0
 - DrillingDataPoint_15 IsOfBaseQuantity AccelerationQuantity_0
 - DrillingDataPoint_16 IsOfBaseQuantity LengthQuantity_0
-- BitDepth_0 IsOfMeasurableQuantity DepthQuantity_0
-- DownholeECD_0 IsOfMeasurableQuantity EMWQuantity_0
-- DownholeECD_1 IsOfMeasurableQuantity EMWQuantity_0
-- DownholeECD_2 IsOfMeasurableQuantity DepthQuantity_0
-- DownholePressure_3 IsOfMeasurableQuantity DownholePressureQuantity_0
-- DrillingDataPoint_17 IsOfMeasurableQuantity TVDQuantity_0
 - DownholePressure_2 IsIntegratedFrom DownholePressure_3
 - DownholePressure_1 IsIntegratedFrom DownholePressure_3
 - DownholePressure_1 IsProcessedBy NumberOfSampleMovingAverage_0
@@ -391,12 +335,6 @@
 - DensityIn_0 IsHydraulicallyLocatedAt MudMixing_0
 - DensityIn_1 IsHydraulicallyLocatedAt StandPipe_0
 - TemperatureOut_0 IsMechanicallyLocatedAt ReturnFlowLine_0
-- TemperatureIn_0 IsOfMeasurableQuantity FluidTemperatureInQuantity_0
-- DensityOut_0 IsOfMeasurableQuantity FluidDensityInQuantity_0
-- DensityIn_0 IsOfMeasurableQuantity FluidDensityInQuantity_0
-- DensityIn_1 IsOfMeasurableQuantity FluidDensityInQuantity_0
-- TemperatureIn_1 IsOfMeasurableQuantity FluidTemperatureInQuantity_0
-- TemperatureOut_0 IsOfMeasurableQuantity FluidTemperatureInQuantity_0
 - SPP_1 IsProcessedBy TimeWindowMovingAverage_0
 - SPP_1 IsTransmittedBy TopSideTelemetry_0
 - SPP_1 IsProvidedBy DataFlowNode_0
@@ -429,8 +367,6 @@
 - HookLoad_1 IsMechanicallyLocatedAt TopDriveShaft_0
 - DrillingDataPoint_22 IsMechanicallyLocatedAt TopDriveShaft_0
 - DrillingDataPoint_23 IsMechanicallyLocatedAt TravellingBlock_0
-- HookLoad_0 IsOfMeasurableQuantity HookloadQuantity_0
-- HookLoad_1 IsOfMeasurableQuantity HookloadQuantity_0
 - DrillingDataPoint_21 IsTransformationInput Transformation_4
 - DrillingDataPoint_22 IsTransformationInput ForceToLoadTransformation_0
 - DrillingDataPoint_23 IsTransformationInput ForceToLoadTransformation_1
@@ -451,11 +387,8 @@
 - HookLoad_0 IsProcessedBy TimeWindowMovingAverage_7
 - HookLoad_1 IsProcessedBy TimeWindowMovingAverage_8
 - SPP_1 IsHydraulicallyLocatedAt StandPipe_0
-- SPP_1 IsOfMeasurableQuantity SPPQuantity_0
 - SurfaceRPM_1 IsMechanicallyLocatedAt TopDriveShaft_0
 - SurfaceTorque_0 IsMechanicallyLocatedAt TopDriveShaft_0
-- SurfaceRPM_1 IsOfMeasurableQuantity SurfaceRPMQuantity_0
-- SurfaceTorque_0 IsOfMeasurableQuantity SurfaceTorqueQuantity_0
 - Transformation_5 IsTransformationOutput SurfaceRPM_1
 - Transformation_6 IsTransformationOutput SurfaceTorque_0
 - SurfaceRPM_1 IsProvidedBy DataFlowNode_0
@@ -468,14 +401,11 @@
 - HookVelocity_0 IsDerivedFrom Derivation_3
 - HookPosition_0 IsMechanicallyLocatedAt TopDriveHook_0
 - HookVelocity_0 IsMechanicallyLocatedAt TopDriveHook_0
-- HookPosition_0 IsOfMeasurableQuantity BlockPositionQuantity_0
-- HookVelocity_0 IsOfMeasurableQuantity BlockVelocityQuantity_0
 - Transformation_7 IsTransformationOutput HookPosition_0
 - HookPosition_0 IsTransmittedBy TopSideTelemetry_0
 - HookVelocity_0 IsTransmittedBy TopSideTelemetry_0
 - HookPosition_0 IsProvidedBy DataFlowNode_0
 - HookVelocity_0 IsProvidedBy DataFlowNode_0
-- DrillingDataPoint_24 IsOfMeasurableQuantity DepthQuantity_0
 - BitDepth_0 IsPhysicallyLocatedAt BottomOfStringReferenceLocation_0
 - DrillingDataPoint_24 IsPhysicallyLocatedAt HoleBottomLocation_0
 - BitDepth_0 IsTransformationInput Transformation_8
@@ -490,24 +420,19 @@
 - BitDepth_0 IsProvidedBy DataFlowNode_0
 - BottomOfStringReferenceLocation_0 HasCoordinates BitDepth_0
 - BitDepth_1 IsPhysicallyLocatedAt BottomOfStringReferenceLocation_0
-- BitDepth_1 IsOfMeasurableQuantity DepthQuantity_0
 - BitDepth_1 IsTransmittedBy TopSideTelemetry_0
 - HookPosition_0 IsTransformationInput DirectTransformation_5
 - DirectTransformation_5 IsTransformationOutput BitDepth_1
 - BitDepth_1 IsProvidedBy DataFlowNode_0
 - BottomOfStringReferenceLocation_0 HasCoordinates BitDepth_1
-- DrillingDataPoint_26 IsOfMeasurableQuantity Resistivity_0
 - DrillingDataPoint_26 IsPhysicallyLocatedAt Location_0
 - DrillingDataPoint_26 IsTransmittedBy MudPulseTelemetry_0
 - DrillingDataPoint_26 IsProvidedBy DataFlowNode_3
-- DrillingDataPoint_27 IsOfMeasurableQuantity RockDensityQuantity_0
 - DrillingDataPoint_27 IsPhysicallyLocatedAt Location_1
 - DrillingDataPoint_27 IsTransmittedBy MudPulseTelemetry_0
 - DrillingDataPoint_27 IsProvidedBy DataFlowNode_3
 - Location_0 HasCoordinates DrillingDataPoint_28
 - Location_1 HasCoordinates DrillingDataPoint_29
-- DrillingDataPoint_28 IsOfMeasurableQuantity DepthQuantity_0
-- DrillingDataPoint_29 IsOfMeasurableQuantity DepthQuantity_0
 - DrillingDataPoint_30 IsOfMeasurableQuantity FormationPorosityQuantity_0
 - DrillingDataPoint_31 IsOfMeasurableQuantity FormationPorosityQuantity_0
 - DrillingDataPoint_32 IsOfMeasurableQuantity FormationPorosityQuantity_0
@@ -571,8 +496,6 @@ flowchart TD
 	DrillingDataPoint_11([DrillingDataPoint_11]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	ProportionQuantity_0([ProportionQuantity_0]) --> ProportionQuantity[[ProportionQuantity]]:::typeClass
 	VolumeQuantity_0([VolumeQuantity_0]) --> VolumeQuantity[[VolumeQuantity]]:::typeClass
-	FlowRateQuantity_0([FlowRateQuantity_0]) --> DrillingVolumetricFlowrateQuantity[[DrillingVolumetricFlowrateQuantity]]:::typeClass
-	PumpRateQuantity_0([PumpRateQuantity_0]) --> RotationFrequencyQuantity[[RotationFrequencyQuantity]]:::typeClass
 	Transformation_0([Transformation_0]) --> Transformation[[Transformation]]:::typeClass
 	Transformation_1([Transformation_1]) --> Transformation[[Transformation]]:::typeClass
 	Transformation_2([Transformation_2]) --> Transformation[[Transformation]]:::typeClass
@@ -582,35 +505,15 @@ flowchart TD
 	FlowRateIn_1([FlowRateIn_1]) --> FlowRateIn[[FlowRateIn]]:::typeClass
 	StandPipe_0([StandPipe_0]) --> MudStandpipe[[MudStandpipe]]:::typeClass
 	Transformation_3([Transformation_3]) --> Transformation[[Transformation]]:::typeClass
-	BitTorqueQuantity_0([BitTorqueQuantity_0]) --> DrillingTorqueQuantity[[DrillingTorqueQuantity]]:::typeClass
 	TorqueQuantity_0([TorqueQuantity_0]) --> TorqueQuantity[[TorqueQuantity]]:::typeClass
-	BlockAccelerationQuantity_0([BlockAccelerationQuantity_0]) --> DrillingAccelerationQuantity[[DrillingAccelerationQuantity]]:::typeClass
 	AccelerationQuantity_0([AccelerationQuantity_0]) --> AccelerationQuantity[[AccelerationQuantity]]:::typeClass
-	BlockPositionQuantity_0([BlockPositionQuantity_0]) --> PositionQuantity[[PositionQuantity]]:::typeClass
 	LengthQuantity_0([LengthQuantity_0]) --> LengthQuantity[[LengthQuantity]]:::typeClass
-	BlockVelocityQuantity_0([BlockVelocityQuantity_0]) --> BlockVelocityQuantity[[BlockVelocityQuantity]]:::typeClass
 	VelocityQuantity_0([VelocityQuantity_0]) --> VelocityQuantity[[VelocityQuantity]]:::typeClass
-	DepthQuantity_0([DepthQuantity_0]) --> DepthQuantity[[DepthQuantity]]:::typeClass
-	EMWQuantity_0([EMWQuantity_0]) --> DrillingDensityQuantity[[DrillingDensityQuantity]]:::typeClass
-	MassDensityQuantity_0([MassDensityQuantity_0]) --> DrillingDensityQuantity[[DrillingDensityQuantity]]:::typeClass
-	VolumetricRateQuantity_0([VolumetricRateQuantity_0]) --> DrillingVolumetricFlowrateQuantity[[DrillingVolumetricFlowrateQuantity]]:::typeClass
-	FluidDensityInQuantity_0([FluidDensityInQuantity_0]) --> DrillingDensityQuantity[[DrillingDensityQuantity]]:::typeClass
-	FluidTemperatureInQuantity_0([FluidTemperatureInQuantity_0]) --> DrillingTemperatureQuantity[[DrillingTemperatureQuantity]]:::typeClass
 	TemperatureQuantity_0([TemperatureQuantity_0]) --> TemperatureQuantity[[TemperatureQuantity]]:::typeClass
-	HookloadQuantity_0([HookloadQuantity_0]) --> HookLoadQuantity[[HookLoadQuantity]]:::typeClass
 	MassQuantity_0([MassQuantity_0]) --> MassQuantity[[MassQuantity]]:::typeClass
 	FrequencyQuantity_0([FrequencyQuantity_0]) --> FrequencyQuantity[[FrequencyQuantity]]:::typeClass
-	SPPQuantity_0([SPPQuantity_0]) --> DrillingPressureQuantity[[DrillingPressureQuantity]]:::typeClass
 	PressureQuantity_0([PressureQuantity_0]) --> PressureQuantity[[PressureQuantity]]:::typeClass
-	SurfaceRPMQuantity_0([SurfaceRPMQuantity_0]) --> RotationFrequencyQuantity[[RotationFrequencyQuantity]]:::typeClass
-	SurfaceTorqueQuantity_0([SurfaceTorqueQuantity_0]) --> DrillingTorqueQuantity[[DrillingTorqueQuantity]]:::typeClass
-	TopOfStringForceQuantity_0([TopOfStringForceQuantity_0]) --> DrillingForceQuantity[[DrillingForceQuantity]]:::typeClass
 	ForceQuantity_0([ForceQuantity_0]) --> ForceQuantity[[ForceQuantity]]:::typeClass
-	TVDQuantity_0([TVDQuantity_0]) --> DepthQuantity[[DepthQuantity]]:::typeClass
-	WOBQuantity_0([WOBQuantity_0]) --> WeightOnBitQuantity[[WeightOnBitQuantity]]:::typeClass
-	Resistivity_0([Resistivity_0]) --> FormationResistivityQuantity[[FormationResistivityQuantity]]:::typeClass
-	ElectricResistivityQuantity_0([ElectricResistivityQuantity_0]) --> FormationResistivityQuantity[[FormationResistivityQuantity]]:::typeClass
-	RockDensityQuantity_0([RockDensityQuantity_0]) --> DrillingDensityQuantity[[DrillingDensityQuantity]]:::typeClass
 	FormationPorosityQuantity_0([FormationPorosityQuantity_0]) --> PorosityQuantity[[PorosityQuantity]]:::typeClass
 	ProportionQuantity_1([ProportionQuantity_1]) --> ProportionQuantity[[ProportionQuantity]]:::typeClass
 	TopDriveShaft_0([TopDriveShaft_0]) --> Quill[[Quill]]:::typeClass
@@ -646,7 +549,6 @@ flowchart TD
 	ConnectedCondition_0([ConnectedCondition_0]) --> ConnectedCondition[[ConnectedCondition]]:::typeClass
 	DownholePressure_2([DownholePressure_2]) --> DownholePressure[[DownholePressure]]:::typeClass
 	DrillingDataPoint_13([DrillingDataPoint_13]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
-	DownholePressureQuantity_0([DownholePressureQuantity_0]) --> DrillingPressureQuantity[[DrillingPressureQuantity]]:::typeClass
 	DrillingDataPoint_14([DrillingDataPoint_14]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	DrillingDataPoint_15([DrillingDataPoint_15]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	DrillingDataPoint_16([DrillingDataPoint_16]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
@@ -770,12 +672,6 @@ flowchart TD
 	 DrillingDataPoint_11 -- IsHydraulicallyLocatedAt --> MudPump_1 
 	 DrillingDataPoint_1 -- IsOfMeasurableQuantity --> ProportionQuantity_0 
 	 DrillingDataPoint_2 -- IsOfMeasurableQuantity --> VolumeQuantity_0 
-	 DrillingDataPoint_0 -- IsOfMeasurableQuantity --> FlowRateQuantity_0 
-	 DrillingDataPoint_3 -- IsOfMeasurableQuantity --> FlowRateQuantity_0 
-	 DrillingDataPoint_6 -- IsOfMeasurableQuantity --> FlowRateQuantity_0 
-	 PumpRate_0 -- IsOfMeasurableQuantity --> PumpRateQuantity_0 
-	 PumpRate_1 -- IsOfMeasurableQuantity --> PumpRateQuantity_0 
-	 PumpRate_2 -- IsOfMeasurableQuantity --> PumpRateQuantity_0 
 	 DrillingDataPoint_4 -- IsOfMeasurableQuantity --> ProportionQuantity_0 
 	 DrillingDataPoint_5 -- IsOfMeasurableQuantity --> VolumeQuantity_0 
 	 DrillingDataPoint_7 -- IsOfMeasurableQuantity --> ProportionQuantity_0 
@@ -799,30 +695,10 @@ flowchart TD
 	 PumpRate_1 -- IsDerivedFrom --> Derivation_1 
 	 PumpRate_2 -- IsDerivedFrom --> Derivation_2 
 	 FlowRateIn_1 -- IsHydraulicallyLocatedAt --> StandPipe_0 
-	 FlowRateIn_1 -- IsOfMeasurableQuantity --> FlowRateQuantity_0 
 	 DrillingDataPoint_0 -- IsTransformationInput --> Transformation_3 
 	 DrillingDataPoint_3 -- IsTransformationInput --> Transformation_3 
 	 DrillingDataPoint_6 -- IsTransformationInput --> Transformation_3 
 	 Transformation_3 -- IsTransformationOutput --> FlowRateIn_1 
-	 BitTorqueQuantity_0 -- IsObservableFrom --> TorqueQuantity_0 
-	 BlockAccelerationQuantity_0 -- IsObservableFrom --> AccelerationQuantity_0 
-	 BlockPositionQuantity_0 -- IsObservableFrom --> LengthQuantity_0 
-	 BlockVelocityQuantity_0 -- IsObservableFrom --> VelocityQuantity_0 
-	 DepthQuantity_0 -- IsObservableFrom --> LengthQuantity_0 
-	 EMWQuantity_0 -- IsObservableFrom --> MassDensityQuantity_0 
-	 FlowRateQuantity_0 -- IsObservableFrom --> VolumetricRateQuantity_0 
-	 FluidDensityInQuantity_0 -- IsObservableFrom --> MassDensityQuantity_0 
-	 FluidTemperatureInQuantity_0 -- IsObservableFrom --> TemperatureQuantity_0 
-	 HookloadQuantity_0 -- IsObservableFrom --> MassQuantity_0 
-	 PumpRateQuantity_0 -- IsObservableFrom --> FrequencyQuantity_0 
-	 SPPQuantity_0 -- IsObservableFrom --> PressureQuantity_0 
-	 SurfaceRPMQuantity_0 -- IsObservableFrom --> FrequencyQuantity_0 
-	 SurfaceTorqueQuantity_0 -- IsObservableFrom --> TorqueQuantity_0 
-	 TopOfStringForceQuantity_0 -- IsObservableFrom --> ForceQuantity_0 
-	 TVDQuantity_0 -- IsObservableFrom --> LengthQuantity_0 
-	 WOBQuantity_0 -- IsObservableFrom --> MassQuantity_0 
-	 Resistivity_0 -- IsObservableFrom --> ElectricResistivityQuantity_0 
-	 RockDensityQuantity_0 -- IsObservableFrom --> MassDensityQuantity_0 
 	 FormationPorosityQuantity_0 -- IsObservableFrom --> ProportionQuantity_1 
 	 StandPipe_0 -- IsHydraulicConnectedTo --> TopDriveShaft_0 
 	 TopDriveShaft_0 -- IsHydraulicConnectedTo --> TopDrive_0 
@@ -868,16 +744,9 @@ flowchart TD
 	 DownholeECD_1 -- IsHydraulicallyLocatedAt --> BHAAnnular_0 
 	 DownholePressure_1 -- IsHydraulicallyLocatedAt --> BHAAnnular_0 
 	 DownholePressure_2 -- IsHydraulicallyLocatedAt --> BHAAnnular_0 
-	 DownholePressureQuantity_0 -- IsObservableFrom --> PressureQuantity_0 
 	 DrillingDataPoint_14 -- IsOfBaseQuantity --> PressureQuantity_0 
 	 DrillingDataPoint_15 -- IsOfBaseQuantity --> AccelerationQuantity_0 
 	 DrillingDataPoint_16 -- IsOfBaseQuantity --> LengthQuantity_0 
-	 BitDepth_0 -- IsOfMeasurableQuantity --> DepthQuantity_0 
-	 DownholeECD_0 -- IsOfMeasurableQuantity --> EMWQuantity_0 
-	 DownholeECD_1 -- IsOfMeasurableQuantity --> EMWQuantity_0 
-	 DownholeECD_2 -- IsOfMeasurableQuantity --> DepthQuantity_0 
-	 DownholePressure_3 -- IsOfMeasurableQuantity --> DownholePressureQuantity_0 
-	 DrillingDataPoint_17 -- IsOfMeasurableQuantity --> TVDQuantity_0 
 	 DownholePressure_2 -- IsIntegratedFrom --> DownholePressure_3 
 	 DownholePressure_1 -- IsIntegratedFrom --> DownholePressure_3 
 	 DownholePressure_1 -- IsProcessedBy --> NumberOfSampleMovingAverage_0 
@@ -914,12 +783,6 @@ flowchart TD
 	 DensityIn_0 -- IsHydraulicallyLocatedAt --> MudMixing_0 
 	 DensityIn_1 -- IsHydraulicallyLocatedAt --> StandPipe_0 
 	 TemperatureOut_0 -- IsMechanicallyLocatedAt --> ReturnFlowLine_0 
-	 TemperatureIn_0 -- IsOfMeasurableQuantity --> FluidTemperatureInQuantity_0 
-	 DensityOut_0 -- IsOfMeasurableQuantity --> FluidDensityInQuantity_0 
-	 DensityIn_0 -- IsOfMeasurableQuantity --> FluidDensityInQuantity_0 
-	 DensityIn_1 -- IsOfMeasurableQuantity --> FluidDensityInQuantity_0 
-	 TemperatureIn_1 -- IsOfMeasurableQuantity --> FluidTemperatureInQuantity_0 
-	 TemperatureOut_0 -- IsOfMeasurableQuantity --> FluidTemperatureInQuantity_0 
 	 SPP_1 -- IsProcessedBy --> TimeWindowMovingAverage_0 
 	 SPP_1 -- IsTransmittedBy --> TopSideTelemetry_0 
 	 SPP_1 -- IsProvidedBy --> DataFlowNode_0 
@@ -952,8 +815,6 @@ flowchart TD
 	 HookLoad_1 -- IsMechanicallyLocatedAt --> TopDriveShaft_0 
 	 DrillingDataPoint_22 -- IsMechanicallyLocatedAt --> TopDriveShaft_0 
 	 DrillingDataPoint_23 -- IsMechanicallyLocatedAt --> TravellingBlock_0 
-	 HookLoad_0 -- IsOfMeasurableQuantity --> HookloadQuantity_0 
-	 HookLoad_1 -- IsOfMeasurableQuantity --> HookloadQuantity_0 
 	 DrillingDataPoint_21 -- IsTransformationInput --> Transformation_4 
 	 DrillingDataPoint_22 -- IsTransformationInput --> ForceToLoadTransformation_0 
 	 DrillingDataPoint_23 -- IsTransformationInput --> ForceToLoadTransformation_1 
@@ -974,11 +835,8 @@ flowchart TD
 	 HookLoad_0 -- IsProcessedBy --> TimeWindowMovingAverage_7 
 	 HookLoad_1 -- IsProcessedBy --> TimeWindowMovingAverage_8 
 	 SPP_1 -- IsHydraulicallyLocatedAt --> StandPipe_0 
-	 SPP_1 -- IsOfMeasurableQuantity --> SPPQuantity_0 
 	 SurfaceRPM_1 -- IsMechanicallyLocatedAt --> TopDriveShaft_0 
 	 SurfaceTorque_0 -- IsMechanicallyLocatedAt --> TopDriveShaft_0 
-	 SurfaceRPM_1 -- IsOfMeasurableQuantity --> SurfaceRPMQuantity_0 
-	 SurfaceTorque_0 -- IsOfMeasurableQuantity --> SurfaceTorqueQuantity_0 
 	 Transformation_5 -- IsTransformationOutput --> SurfaceRPM_1 
 	 Transformation_6 -- IsTransformationOutput --> SurfaceTorque_0 
 	 SurfaceRPM_1 -- IsProvidedBy --> DataFlowNode_0 
@@ -991,14 +849,11 @@ flowchart TD
 	 HookVelocity_0 -- IsDerivedFrom --> Derivation_3 
 	 HookPosition_0 -- IsMechanicallyLocatedAt --> TopDriveHook_0 
 	 HookVelocity_0 -- IsMechanicallyLocatedAt --> TopDriveHook_0 
-	 HookPosition_0 -- IsOfMeasurableQuantity --> BlockPositionQuantity_0 
-	 HookVelocity_0 -- IsOfMeasurableQuantity --> BlockVelocityQuantity_0 
 	 Transformation_7 -- IsTransformationOutput --> HookPosition_0 
 	 HookPosition_0 -- IsTransmittedBy --> TopSideTelemetry_0 
 	 HookVelocity_0 -- IsTransmittedBy --> TopSideTelemetry_0 
 	 HookPosition_0 -- IsProvidedBy --> DataFlowNode_0 
 	 HookVelocity_0 -- IsProvidedBy --> DataFlowNode_0 
-	 DrillingDataPoint_24 -- IsOfMeasurableQuantity --> DepthQuantity_0 
 	 BitDepth_0 -- IsPhysicallyLocatedAt --> BottomOfStringReferenceLocation_0 
 	 DrillingDataPoint_24 -- IsPhysicallyLocatedAt --> HoleBottomLocation_0 
 	 BitDepth_0 -- IsTransformationInput --> Transformation_8 
@@ -1013,24 +868,19 @@ flowchart TD
 	 BitDepth_0 -- IsProvidedBy --> DataFlowNode_0 
 	 BottomOfStringReferenceLocation_0 -- HasCoordinates --> BitDepth_0 
 	 BitDepth_1 -- IsPhysicallyLocatedAt --> BottomOfStringReferenceLocation_0 
-	 BitDepth_1 -- IsOfMeasurableQuantity --> DepthQuantity_0 
 	 BitDepth_1 -- IsTransmittedBy --> TopSideTelemetry_0 
 	 HookPosition_0 -- IsTransformationInput --> DirectTransformation_5 
 	 DirectTransformation_5 -- IsTransformationOutput --> BitDepth_1 
 	 BitDepth_1 -- IsProvidedBy --> DataFlowNode_0 
 	 BottomOfStringReferenceLocation_0 -- HasCoordinates --> BitDepth_1 
-	 DrillingDataPoint_26 -- IsOfMeasurableQuantity --> Resistivity_0 
 	 DrillingDataPoint_26 -- IsPhysicallyLocatedAt --> Location_0 
 	 DrillingDataPoint_26 -- IsTransmittedBy --> MudPulseTelemetry_0 
 	 DrillingDataPoint_26 -- IsProvidedBy --> DataFlowNode_3 
-	 DrillingDataPoint_27 -- IsOfMeasurableQuantity --> RockDensityQuantity_0 
 	 DrillingDataPoint_27 -- IsPhysicallyLocatedAt --> Location_1 
 	 DrillingDataPoint_27 -- IsTransmittedBy --> MudPulseTelemetry_0 
 	 DrillingDataPoint_27 -- IsProvidedBy --> DataFlowNode_3 
 	 Location_0 -- HasCoordinates --> DrillingDataPoint_28 
 	 Location_1 -- HasCoordinates --> DrillingDataPoint_29 
-	 DrillingDataPoint_28 -- IsOfMeasurableQuantity --> DepthQuantity_0 
-	 DrillingDataPoint_29 -- IsOfMeasurableQuantity --> DepthQuantity_0 
 	 DrillingDataPoint_30 -- IsOfMeasurableQuantity --> FormationPorosityQuantity_0 
 	 DrillingDataPoint_31 -- IsOfMeasurableQuantity --> FormationPorosityQuantity_0 
 	 DrillingDataPoint_32 -- IsOfMeasurableQuantity --> FormationPorosityQuantity_0 

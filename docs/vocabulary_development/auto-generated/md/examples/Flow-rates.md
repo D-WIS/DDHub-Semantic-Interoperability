@@ -1,10 +1,8 @@
 # Flow-rates
 - DrillingDataPoint:DrillingDataPoint_0
-- DrillingVolumetricFlowrateQuantity:FlowRateQuantity_0
 - DrillingDataPoint:DrillingDataPoint_1
 - DrillingDataPoint:DrillingDataPoint_2
 - PumpRate:PumpRate_0
-- RotationFrequencyQuantity:PumpRateQuantity_0
 - PumpRate:PumpRate_1
 - PumpRate:PumpRate_2
 - DrillingDataPoint:DrillingDataPoint_3
@@ -27,12 +25,6 @@
 - MudPump:MudPump_0
 - MudPump:MudPump_1
 - CementPump:CementPump_0
-- DrillingDataPoint_0 IsOfMeasurableQuantity FlowRateQuantity_0
-- DrillingDataPoint_1 IsOfMeasurableQuantity FlowRateQuantity_0
-- DrillingDataPoint_2 IsOfMeasurableQuantity FlowRateQuantity_0
-- PumpRate_0 IsOfMeasurableQuantity PumpRateQuantity_0
-- PumpRate_1 IsOfMeasurableQuantity PumpRateQuantity_0
-- PumpRate_2 IsOfMeasurableQuantity PumpRateQuantity_0
 - DrillingDataPoint_3 IsOfMeasurableQuantity VolumeQuantity_0
 - DrillingDataPoint_4 IsOfMeasurableQuantity VolumeQuantity_0
 - DrillingDataPoint_5 IsOfMeasurableQuantity VolumeQuantity_0
@@ -83,11 +75,9 @@ flowchart TD
 	 classDef typeClass fill:#f96;
 	 classDef classClass fill:#9dd0ff;
 	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
-	FlowRateQuantity_0([FlowRateQuantity_0]) --> DrillingVolumetricFlowrateQuantity[[DrillingVolumetricFlowrateQuantity]]:::typeClass
 	DrillingDataPoint_1([DrillingDataPoint_1]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	DrillingDataPoint_2([DrillingDataPoint_2]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	PumpRate_0([PumpRate_0]) --> PumpRate[[PumpRate]]:::typeClass
-	PumpRateQuantity_0([PumpRateQuantity_0]) --> RotationFrequencyQuantity[[RotationFrequencyQuantity]]:::typeClass
 	PumpRate_1([PumpRate_1]) --> PumpRate[[PumpRate]]:::typeClass
 	PumpRate_2([PumpRate_2]) --> PumpRate[[PumpRate]]:::typeClass
 	DrillingDataPoint_3([DrillingDataPoint_3]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
@@ -110,12 +100,6 @@ flowchart TD
 	MudPump_0([MudPump_0]) --> MudPump[[MudPump]]:::typeClass
 	MudPump_1([MudPump_1]) --> MudPump[[MudPump]]:::typeClass
 	CementPump_0([CementPump_0]) --> CementPump[[CementPump]]:::typeClass
-	 DrillingDataPoint_0 -- IsOfMeasurableQuantity --> FlowRateQuantity_0 
-	 DrillingDataPoint_1 -- IsOfMeasurableQuantity --> FlowRateQuantity_0 
-	 DrillingDataPoint_2 -- IsOfMeasurableQuantity --> FlowRateQuantity_0 
-	 PumpRate_0 -- IsOfMeasurableQuantity --> PumpRateQuantity_0 
-	 PumpRate_1 -- IsOfMeasurableQuantity --> PumpRateQuantity_0 
-	 PumpRate_2 -- IsOfMeasurableQuantity --> PumpRateQuantity_0 
 	 DrillingDataPoint_3 -- IsOfMeasurableQuantity --> VolumeQuantity_0 
 	 DrillingDataPoint_4 -- IsOfMeasurableQuantity --> VolumeQuantity_0 
 	 DrillingDataPoint_5 -- IsOfMeasurableQuantity --> VolumeQuantity_0 

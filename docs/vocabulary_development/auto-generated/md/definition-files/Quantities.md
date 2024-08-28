@@ -25,46 +25,50 @@ Represents a quantity that allows meaningful comparisons.
 Are related by a Quantity via the "IsObservableFrom" relation. 
 Context dependent: for example, Fluid density and Equivalent Circulating Density are represented as two different "Measurable quantities", although they both refer to the same base SI quantities. 
 - Definition set: Quantities
-- Examples:
 ## MeasurableQuantityUnitAssociation <!-- NOUN -->
 - Display name: MeasurableQuantityUnitAssociation
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Description: 
-
 - Definition set: Quantities
-- Examples:
 ## Quantity <!-- NOUN -->
 - Display name: Quantity
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Attributes:
   - L
-    - Type: int
+    - Type: double
     - Description: Length exponent.
     SI Unit: meter (m)
   - M
-    - Type: int
+    - Type: double
     - Description: Mass exponent.
     SI Unit: Kilogram (kg)
   - T
-    - Type: int
+    - Type: double
     - Description: Time exponent.
     SI Unit: Second (s)
   - I
-    - Type: int
+    - Type: double
     - Description: Electric current exponent.
     SI Unit: Ampere (A)
   - ThT
-    - Type: int
+    - Type: double
     - Description: Thermodynamic temperature exponent.
     SI Unit: Kelvin (K)
   - N
-    - Type: int
+    - Type: double
     - Description: Amount of substance exponent.
     SI Unit: Mole (N)
   - J
-    - Type: int
+    - Type: double
     - Description: Luminous intensity exponent.
     SI Unit: Candela (cd)
+  - Theta
+    - Type: double
+    - Description: plane angle exponent.
+    SI Unit: radian (rad)
+  - Omega
+    - Type: double
+    - Description: solid angle exponent.
+    SI Unit: steradian (sr)
   - SIUnit
     - Type: string
     - Description: 
@@ -76,10 +80,9 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
   - ThT = 0
   - N = 0
   - J = 0
-- Description: 
-
+  - Theta = 0
+  - Omega = 0
 - Definition set: Quantities
-- Examples:
 ## Unit <!-- NOUN -->
 - Display name: Unit
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
@@ -95,17 +98,13 @@ Context dependent: for example, Fluid density and Equivalent Circulating Density
     - Type: double
     - Description: Unit conversion from SI unit is performed as:
     ConvertedValue = ConversionFactorA + SIValue * ConversionFactorB
-- Description: 
-
 - Definition set: Quantities
-- Examples:
 ## UnitSystem <!-- NOUN -->
 - Display name: UnitSystem
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Description: 
 A set of associations between measurable quantities and units
 - Definition set: Quantities
-- Examples:
 # Verbs
 ## Class Inheritance for Verbs
 Here is a class inheritance diagram for the verbs contained in this definition set.
@@ -141,78 +140,51 @@ DrillingSignal ||--o{ Unit : HasUnitOfMeasure
 - Subject class: [MeasurableQuantityUnitAssociation](./Quantities.md#MeasurableQuantityUnitAssociation)
 - Object class: [MeasurableQuantity](./Quantities.md#MeasurableQuantity)
 - Definition set: Quantities
-- Description: 
-
-- Examples:
 ## AssociatesUnit <!-- VERB -->
 - Display name: AssociatesUnit
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [MeasurableQuantityUnitAssociation](./Quantities.md#MeasurableQuantityUnitAssociation)
 - Object class: [Unit](./Quantities.md#Unit)
 - Definition set: Quantities
-- Description: 
-
-- Examples:
 ## HasUnitAssociation <!-- VERB -->
 - Display name: HasUnitAssociation
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [UnitSystem](./Quantities.md#UnitSystem)
 - Object class: [MeasurableQuantityUnitAssociation](./Quantities.md#MeasurableQuantityUnitAssociation)
 - Definition set: Quantities
-- Description: 
-
-- Examples:
 ## IsObservableFrom <!-- VERB -->
 - Display name: IsObservableFrom
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Definition set: Quantities
-- Description: 
-
-- Examples:
 ## IsOfBaseQuantity <!-- VERB -->
 - Display name: IsOfBaseQuantity
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [MeasurableQuantity](./Quantities.md#MeasurableQuantity)
 - Object class: [Quantity](./Quantities.md#Quantity)
 - Definition set: Quantities
-- Description: 
-
-- Examples:
 ## IsOfMeasurableQuantity <!-- VERB -->
 - Display name: IsOfMeasurableQuantity
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingSignal](./DrillingDataSemantics.md#DrillingSignal)
 - Object class: [MeasurableQuantity](./Quantities.md#MeasurableQuantity)
 - Definition set: Quantities
-- Description: 
-
-- Examples:
 ## IsUnitForQuantity <!-- VERB -->
 - Display name: IsUnitForQuantity
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [Unit](./Quantities.md#Unit)
 - Object class: [Quantity](./Quantities.md#Quantity)
 - Definition set: Quantities
-- Description: 
-
-- Examples:
 ## HasSIUnit <!-- VERB -->
 - Display name: HasSIUnit
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [Quantity](./Quantities.md#Quantity)
 - Object class: [Unit](./Quantities.md#Unit)
 - Definition set: Quantities
-- Description: 
-
-- Examples:
 ## HasUnitOfMeasure <!-- VERB -->
 - Display name: HasUnitOfMeasure
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingSignal](./DrillingDataSemantics.md#DrillingSignal)
 - Object class: [Unit](./Quantities.md#Unit)
 - Definition set: Quantities
-- Description: 
-
-- Examples:

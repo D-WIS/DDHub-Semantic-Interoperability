@@ -19,8 +19,6 @@
 - DrillingDataPoint:DrillingDataPoint_11
 - ProportionQuantity:ProportionQuantity_0
 - VolumeQuantity:VolumeQuantity_0
-- DrillingVolumetricFlowrateQuantity:FlowRateQuantity_0
-- RotationFrequencyQuantity:PumpRateQuantity_0
 - Transformation:Transformation_0
 - Transformation:Transformation_1
 - Transformation:Transformation_2
@@ -51,12 +49,6 @@
 - DrillingDataPoint_11 IsHydraulicallyLocatedAt MudPump_1
 - DrillingDataPoint_1 IsOfMeasurableQuantity ProportionQuantity_0
 - DrillingDataPoint_2 IsOfMeasurableQuantity VolumeQuantity_0
-- DrillingDataPoint_0 IsOfMeasurableQuantity FlowRateQuantity_0
-- DrillingDataPoint_3 IsOfMeasurableQuantity FlowRateQuantity_0
-- DrillingDataPoint_6 IsOfMeasurableQuantity FlowRateQuantity_0
-- PumpRate_0 IsOfMeasurableQuantity PumpRateQuantity_0
-- PumpRate_1 IsOfMeasurableQuantity PumpRateQuantity_0
-- PumpRate_2 IsOfMeasurableQuantity PumpRateQuantity_0
 - DrillingDataPoint_4 IsOfMeasurableQuantity ProportionQuantity_0
 - DrillingDataPoint_5 IsOfMeasurableQuantity VolumeQuantity_0
 - DrillingDataPoint_7 IsOfMeasurableQuantity ProportionQuantity_0
@@ -103,8 +95,6 @@ flowchart TD
 	DrillingDataPoint_11([DrillingDataPoint_11]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	ProportionQuantity_0([ProportionQuantity_0]) --> ProportionQuantity[[ProportionQuantity]]:::typeClass
 	VolumeQuantity_0([VolumeQuantity_0]) --> VolumeQuantity[[VolumeQuantity]]:::typeClass
-	FlowRateQuantity_0([FlowRateQuantity_0]) --> DrillingVolumetricFlowrateQuantity[[DrillingVolumetricFlowrateQuantity]]:::typeClass
-	PumpRateQuantity_0([PumpRateQuantity_0]) --> RotationFrequencyQuantity[[RotationFrequencyQuantity]]:::typeClass
 	Transformation_0([Transformation_0]) --> Transformation[[Transformation]]:::typeClass
 	Transformation_1([Transformation_1]) --> Transformation[[Transformation]]:::typeClass
 	Transformation_2([Transformation_2]) --> Transformation[[Transformation]]:::typeClass
@@ -135,12 +125,6 @@ flowchart TD
 	 DrillingDataPoint_11 -- IsHydraulicallyLocatedAt --> MudPump_1 
 	 DrillingDataPoint_1 -- IsOfMeasurableQuantity --> ProportionQuantity_0 
 	 DrillingDataPoint_2 -- IsOfMeasurableQuantity --> VolumeQuantity_0 
-	 DrillingDataPoint_0 -- IsOfMeasurableQuantity --> FlowRateQuantity_0 
-	 DrillingDataPoint_3 -- IsOfMeasurableQuantity --> FlowRateQuantity_0 
-	 DrillingDataPoint_6 -- IsOfMeasurableQuantity --> FlowRateQuantity_0 
-	 PumpRate_0 -- IsOfMeasurableQuantity --> PumpRateQuantity_0 
-	 PumpRate_1 -- IsOfMeasurableQuantity --> PumpRateQuantity_0 
-	 PumpRate_2 -- IsOfMeasurableQuantity --> PumpRateQuantity_0 
 	 DrillingDataPoint_4 -- IsOfMeasurableQuantity --> ProportionQuantity_0 
 	 DrillingDataPoint_5 -- IsOfMeasurableQuantity --> VolumeQuantity_0 
 	 DrillingDataPoint_7 -- IsOfMeasurableQuantity --> ProportionQuantity_0 

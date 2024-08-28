@@ -11,9 +11,7 @@
 - ReturnFlowLine:ReturnFlowLine_0
 - MudMixing:MudMixing_0
 - MudStandpipe:StandPipe_0
-- DrillingTemperatureQuantity:FluidTemperatureInQuantity_0
 - PressureQuantity:PressureQuantity_0
-- DrillingDensityQuantity:FluidDensityInQuantity_0
 - TimeWindowMovingAverage:TimeWindowMovingAverage_0
 - TopSideTelemetry:TopSideTelemetry_0
 - DataFlowNode:DataFlowNode_0
@@ -38,13 +36,7 @@
 - DensityIn_0 IsHydraulicallyLocatedAt MudMixing_0
 - DensityIn_1 IsHydraulicallyLocatedAt StandPipe_0
 - TemperatureOut_0 IsMechanicallyLocatedAt ReturnFlowLine_0
-- TemperatureIn_0 IsOfMeasurableQuantity FluidTemperatureInQuantity_0
 - DrillingDataPoint_0 IsOfMeasurableQuantity PressureQuantity_0
-- DensityOut_0 IsOfMeasurableQuantity FluidDensityInQuantity_0
-- DensityIn_0 IsOfMeasurableQuantity FluidDensityInQuantity_0
-- DensityIn_1 IsOfMeasurableQuantity FluidDensityInQuantity_0
-- TemperatureIn_1 IsOfMeasurableQuantity FluidTemperatureInQuantity_0
-- TemperatureOut_0 IsOfMeasurableQuantity FluidTemperatureInQuantity_0
 - SPP_0 IsProcessedBy TimeWindowMovingAverage_0
 - SPP_0 IsTransmittedBy TopSideTelemetry_0
 - SPP_0 IsProvidedBy DataFlowNode_0
@@ -82,9 +74,7 @@ flowchart TD
 	ReturnFlowLine_0([ReturnFlowLine_0]) --> ReturnFlowLine[[ReturnFlowLine]]:::typeClass
 	MudMixing_0([MudMixing_0]) --> MudMixing[[MudMixing]]:::typeClass
 	StandPipe_0([StandPipe_0]) --> MudStandpipe[[MudStandpipe]]:::typeClass
-	FluidTemperatureInQuantity_0([FluidTemperatureInQuantity_0]) --> DrillingTemperatureQuantity[[DrillingTemperatureQuantity]]:::typeClass
 	PressureQuantity_0([PressureQuantity_0]) --> PressureQuantity[[PressureQuantity]]:::typeClass
-	FluidDensityInQuantity_0([FluidDensityInQuantity_0]) --> DrillingDensityQuantity[[DrillingDensityQuantity]]:::typeClass
 	TimeWindowMovingAverage_0([TimeWindowMovingAverage_0]) --> TimeWindowMovingAverage[[TimeWindowMovingAverage]]:::typeClass
 	TopSideTelemetry_0([TopSideTelemetry_0]) --> TopSideTelemetry[[TopSideTelemetry]]:::typeClass
 	DataFlowNode_0([DataFlowNode_0]) --> DataFlowNode[[DataFlowNode]]:::typeClass
@@ -109,13 +99,7 @@ flowchart TD
 	 DensityIn_0 -- IsHydraulicallyLocatedAt --> MudMixing_0 
 	 DensityIn_1 -- IsHydraulicallyLocatedAt --> StandPipe_0 
 	 TemperatureOut_0 -- IsMechanicallyLocatedAt --> ReturnFlowLine_0 
-	 TemperatureIn_0 -- IsOfMeasurableQuantity --> FluidTemperatureInQuantity_0 
 	 DrillingDataPoint_0 -- IsOfMeasurableQuantity --> PressureQuantity_0 
-	 DensityOut_0 -- IsOfMeasurableQuantity --> FluidDensityInQuantity_0 
-	 DensityIn_0 -- IsOfMeasurableQuantity --> FluidDensityInQuantity_0 
-	 DensityIn_1 -- IsOfMeasurableQuantity --> FluidDensityInQuantity_0 
-	 TemperatureIn_1 -- IsOfMeasurableQuantity --> FluidTemperatureInQuantity_0 
-	 TemperatureOut_0 -- IsOfMeasurableQuantity --> FluidTemperatureInQuantity_0 
 	 SPP_0 -- IsProcessedBy --> TimeWindowMovingAverage_0 
 	 SPP_0 -- IsTransmittedBy --> TopSideTelemetry_0 
 	 SPP_0 -- IsProvidedBy --> DataFlowNode_0 

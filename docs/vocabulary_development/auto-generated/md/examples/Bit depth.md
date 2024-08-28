@@ -1,6 +1,5 @@
 # Bit depth
 - DrillingDataPoint:DrillingDataPoint_0
-- DepthQuantity:DepthQuantity_0
 - BitDepth:BitDepth_0
 - BottomOfStringReferenceLocation:BottomOfStringReferenceLocation_0
 - HoleBottomLocation:HoleBottomLocation_0
@@ -13,7 +12,6 @@
 - DataFlowNode:DataFlowNode_0
 - BitDepth:BitDepth_1
 - DirectTransformation:DirectTransformation_1
-- DrillingDataPoint_0 IsOfMeasurableQuantity DepthQuantity_0
 - BitDepth_0 IsPhysicallyLocatedAt BottomOfStringReferenceLocation_0
 - DrillingDataPoint_0 IsPhysicallyLocatedAt HoleBottomLocation_0
 - BitDepth_0 IsTransformationInput Transformation_0
@@ -29,9 +27,7 @@
 - BitDepth_0 IsProvidedBy DataFlowNode_0
 - HookPosition_0 IsProvidedBy DataFlowNode_0
 - BottomOfStringReferenceLocation_0 HasCoordinates BitDepth_0
-- BitDepth_0 IsOfMeasurableQuantity DepthQuantity_0
 - BitDepth_1 IsPhysicallyLocatedAt BottomOfStringReferenceLocation_0
-- BitDepth_1 IsOfMeasurableQuantity DepthQuantity_0
 - BitDepth_1 IsTransmittedBy TopSideTelemetry_0
 - HookPosition_0 IsTransformationInput DirectTransformation_1
 - DirectTransformation_1 IsTransformationOutput BitDepth_1
@@ -42,7 +38,6 @@ flowchart TD
 	 classDef typeClass fill:#f96;
 	 classDef classClass fill:#9dd0ff;
 	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
-	DepthQuantity_0([DepthQuantity_0]) --> DepthQuantity[[DepthQuantity]]:::typeClass
 	BitDepth_0([BitDepth_0]) --> BitDepth[[BitDepth]]:::typeClass
 	BottomOfStringReferenceLocation_0([BottomOfStringReferenceLocation_0]) --> BottomOfStringReferenceLocation[[BottomOfStringReferenceLocation]]:::typeClass
 	HoleBottomLocation_0([HoleBottomLocation_0]) --> HoleBottomLocation[[HoleBottomLocation]]:::typeClass
@@ -55,7 +50,6 @@ flowchart TD
 	DataFlowNode_0([DataFlowNode_0]) --> DataFlowNode[[DataFlowNode]]:::typeClass
 	BitDepth_1([BitDepth_1]) --> BitDepth[[BitDepth]]:::typeClass
 	DirectTransformation_1([DirectTransformation_1]) --> DirectTransformation[[DirectTransformation]]:::typeClass
-	 DrillingDataPoint_0 -- IsOfMeasurableQuantity --> DepthQuantity_0 
 	 BitDepth_0 -- IsPhysicallyLocatedAt --> BottomOfStringReferenceLocation_0 
 	 DrillingDataPoint_0 -- IsPhysicallyLocatedAt --> HoleBottomLocation_0 
 	 BitDepth_0 -- IsTransformationInput --> Transformation_0 
@@ -71,9 +65,7 @@ flowchart TD
 	 BitDepth_0 -- IsProvidedBy --> DataFlowNode_0 
 	 HookPosition_0 -- IsProvidedBy --> DataFlowNode_0 
 	 BottomOfStringReferenceLocation_0 -- HasCoordinates --> BitDepth_0 
-	 BitDepth_0 -- IsOfMeasurableQuantity --> DepthQuantity_0 
 	 BitDepth_1 -- IsPhysicallyLocatedAt --> BottomOfStringReferenceLocation_0 
-	 BitDepth_1 -- IsOfMeasurableQuantity --> DepthQuantity_0 
 	 BitDepth_1 -- IsTransmittedBy --> TopSideTelemetry_0 
 	 HookPosition_0 -- IsTransformationInput --> DirectTransformation_1 
 	 DirectTransformation_1 -- IsTransformationOutput --> BitDepth_1 

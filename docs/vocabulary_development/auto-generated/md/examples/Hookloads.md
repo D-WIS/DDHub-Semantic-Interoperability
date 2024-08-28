@@ -7,7 +7,6 @@
 - Quill:TopDriveShaft_0
 - DrillingDataPoint:DrillingDataPoint_1
 - DrillingDataPoint:DrillingDataPoint_2
-- HookLoadQuantity:HookloadQuantity_0
 - Transformation:Transformation_0
 - ForceToLoadTransformation:ForceToLoadTransformation_0
 - ForceToLoadTransformation:ForceToLoadTransformation_1
@@ -21,8 +20,6 @@
 - HookLoad_1 IsMechanicallyLocatedAt TopDriveShaft_0
 - DrillingDataPoint_1 IsMechanicallyLocatedAt TopDriveShaft_0
 - DrillingDataPoint_2 IsMechanicallyLocatedAt TravellingBlock_0
-- HookLoad_0 IsOfMeasurableQuantity HookloadQuantity_0
-- HookLoad_1 IsOfMeasurableQuantity HookloadQuantity_0
 - DrillingDataPoint_0 IsTransformationInput Transformation_0
 - DrillingDataPoint_1 IsTransformationInput ForceToLoadTransformation_0
 - DrillingDataPoint_2 IsTransformationInput ForceToLoadTransformation_1
@@ -54,7 +51,6 @@ flowchart TD
 	TopDriveShaft_0([TopDriveShaft_0]) --> Quill[[Quill]]:::typeClass
 	DrillingDataPoint_1([DrillingDataPoint_1]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	DrillingDataPoint_2([DrillingDataPoint_2]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
-	HookloadQuantity_0([HookloadQuantity_0]) --> HookLoadQuantity[[HookLoadQuantity]]:::typeClass
 	Transformation_0([Transformation_0]) --> Transformation[[Transformation]]:::typeClass
 	ForceToLoadTransformation_0([ForceToLoadTransformation_0]) --> ForceToLoadTransformation[[ForceToLoadTransformation]]:::typeClass
 	ForceToLoadTransformation_1([ForceToLoadTransformation_1]) --> ForceToLoadTransformation[[ForceToLoadTransformation]]:::typeClass
@@ -68,8 +64,6 @@ flowchart TD
 	 HookLoad_1 -- IsMechanicallyLocatedAt --> TopDriveShaft_0 
 	 DrillingDataPoint_1 -- IsMechanicallyLocatedAt --> TopDriveShaft_0 
 	 DrillingDataPoint_2 -- IsMechanicallyLocatedAt --> TravellingBlock_0 
-	 HookLoad_0 -- IsOfMeasurableQuantity --> HookloadQuantity_0 
-	 HookLoad_1 -- IsOfMeasurableQuantity --> HookloadQuantity_0 
 	 DrillingDataPoint_0 -- IsTransformationInput --> Transformation_0 
 	 DrillingDataPoint_1 -- IsTransformationInput --> ForceToLoadTransformation_0 
 	 DrillingDataPoint_2 -- IsTransformationInput --> ForceToLoadTransformation_1 

@@ -34,45 +34,33 @@ ModellingDiscretization <|-- MassTransferBasedDiscretization
 ## ModelType <!-- NOUN -->
 - Display name: ModelType
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Description: 
-
 - Definition set: Model
-- Examples:
 ## DeterministicModel <!-- NOUN -->
 - Display name: DeterministicModel
 - Parent class: [ModelType](./Model.md#ModelType)
-- Description: 
-
 - Definition set: Model
-- Examples:
 ## StochasticModel <!-- NOUN -->
 - Display name: StochasticModel
 - Parent class: [ModelType](./Model.md#ModelType)
-- Description: 
-
 - Definition set: Model
-- Examples:
 ## MathematicalModel <!-- NOUN -->
 - Display name: Mathematical model
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Description: 
 A model for which the state variables do not change with time.
 - Definition set: Model
-- Examples:
 ## SteadyStateModel <!-- NOUN -->
 - Display name: Steady state model
 - Parent class: [MathematicalModel](./Model.md#MathematicalModel)
 - Description: 
 A model for which the state variables do not change with time.
 - Definition set: Model
-- Examples:
 ## TransientModel <!-- NOUN -->
 - Display name: Transient model
 - Parent class: [MathematicalModel](./Model.md#MathematicalModel)
 - Description: 
 A model for which the state variables changes with time.
 - Definition set: Model
-- Examples:
 ## ModelledDegreeOfFreedom <!-- NOUN -->
 - Display name: Modelled degree of freedom
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
@@ -151,7 +139,6 @@ A hydraulic model accounts for the effect of the pipe horizontal ondulation on t
 - Description: 
 The number of dimensions that are accounted by the model
 - Definition set: Model
-- Examples:
 ## OneDModelling <!-- NOUN -->
 - Display name: 1D modelling
 - Parent class: [ModellingDimensions](./Model.md#ModellingDimensions)
@@ -182,7 +169,6 @@ A hydraulic calculation considers the fluid velocity field in a cross-section an
 - Description: 
 A characteristic of the discretization made by the model.
 - Definition set: Model
-- Examples:
 ## BoundaryDiscretization <!-- NOUN -->
 - Display name: Boundary discretization
 - Parent class: [ModellingDiscretization](./Model.md#ModellingDiscretization)
