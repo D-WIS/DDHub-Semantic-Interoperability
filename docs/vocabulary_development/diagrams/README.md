@@ -1,5 +1,15 @@
 # Generated Diagrams
 
+[Mechanics.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/Mechanics.md)
+
+[<img src="generated/Mechanics.png" width="600px">](./generated/Mechanics.png)
+
+---
+[DataValidity.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/DataValidity.md)
+
+[<img src="generated/DataValidity.png" width="600px">](./generated/DataValidity.png)
+
+---
 [DataFlow.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/DataFlow.md)
 
 [<img src="generated/DataFlow.png" width="600px">](./generated/DataFlow.png)
@@ -10,49 +20,9 @@
 [<img src="generated/Uncertainty.png" width="600px">](./generated/Uncertainty.png)
 
 ---
-[MechanicalModel.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/MechanicalModel.md)
-
-[<img src="generated/MechanicalModel.png" width="600px">](./generated/MechanicalModel.png)
-
----
-[DataProviders.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/DataProviders.md)
-
-[<img src="generated/DataProviders.png" width="600px">](./generated/DataProviders.png)
-
----
-[DrillingEquipment.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/DrillingEquipment.md)
-
-[<img src="generated/DrillingEquipment.png" width="600px">](./generated/DrillingEquipment.png)
-
----
 [DataDependencies.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/DataDependencies.md)
 
 [<img src="generated/DataDependencies.png" width="600px">](./generated/DataDependencies.png)
-
----
-[DrillingIncident.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/DrillingIncident.md)
-
-[<img src="generated/DrillingIncident.png" width="600px">](./generated/DrillingIncident.png)
-
----
-[Mechanics.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/Mechanics.md)
-
-[<img src="generated/Mechanics.png" width="600px">](./generated/Mechanics.png)
-
----
-[QuantityTypes.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/QuantityTypes.md)
-
-[<img src="generated/QuantityTypes.png" width="600px">](./generated/QuantityTypes.png)
-
----
-[TimeManagement.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/TimeManagement.md)
-
-[<img src="generated/TimeManagement.png" width="600px">](./generated/TimeManagement.png)
-
----
-[Model.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/Model.md)
-
-[<img src="generated/Model.png" width="600px">](./generated/Model.png)
 
 ---
 [MeasurableQuantityTypes.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/MeasurableQuantityTypes.md)
@@ -60,19 +30,29 @@
 [<img src="generated/MeasurableQuantityTypes.png" width="600px">](./generated/MeasurableQuantityTypes.png)
 
 ---
-[Hydraulics.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/Hydraulics.md)
+[DrillingEquipment.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/DrillingEquipment.md)
 
-[<img src="generated/Hydraulics.png" width="600px">](./generated/Hydraulics.png)
+[<img src="generated/DrillingEquipment.png" width="600px">](./generated/DrillingEquipment.png)
+
+---
+[DrillingIncident.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/DrillingIncident.md)
+
+[<img src="generated/DrillingIncident.png" width="600px">](./generated/DrillingIncident.png)
+
+---
+[TimeManagement.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/TimeManagement.md)
+
+[<img src="generated/TimeManagement.png" width="600px">](./generated/TimeManagement.png)
+
+---
+[DataTransmission.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/DataTransmission.md)
+
+[<img src="generated/DataTransmission.png" width="600px">](./generated/DataTransmission.png)
 
 ---
 [Quantities.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/Quantities.md)
 
 [<img src="generated/Quantities.png" width="600px">](./generated/Quantities.png)
-
----
-[ADCS.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/ADCS.md)
-
-[<img src="generated/ADCS.png" width="600px">](./generated/ADCS.png)
 
 ---
 [PhysicalLocation.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/PhysicalLocation.md)
@@ -85,29 +65,49 @@
 [<img src="generated/DWISSemantics.png" width="600px">](./generated/DWISSemantics.png)
 
 ---
-[SignalPrototypes.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/SignalPrototypes.md)
+[DataProviders.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/DataProviders.md)
 
-[<img src="generated/SignalPrototypes.png" width="600px">](./generated/SignalPrototypes.png)
-
----
-[DrillingDataSemantics.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/DrillingDataSemantics.md)
-
-[<img src="generated/DrillingDataSemantics.png" width="600px">](./generated/DrillingDataSemantics.png)
-
----
-[DataValidity.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/DataValidity.md)
-
-[<img src="generated/DataValidity.png" width="600px">](./generated/DataValidity.png)
-
----
-[DataTransmission.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/DataTransmission.md)
-
-[<img src="generated/DataTransmission.png" width="600px">](./generated/DataTransmission.png)
+[<img src="generated/DataProviders.png" width="600px">](./generated/DataProviders.png)
 
 ---
 [EndPoints.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/EndPoints.md)
 
 [<img src="generated/EndPoints.png" width="600px">](./generated/EndPoints.png)
+
+---
+[QuantityTypes.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/QuantityTypes.md)
+
+[<img src="generated/QuantityTypes.png" width="600px">](./generated/QuantityTypes.png)
+
+---
+[SignalPrototypes.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/SignalPrototypes.md)
+
+[<img src="generated/SignalPrototypes.png" width="600px">](./generated/SignalPrototypes.png)
+
+---
+[Model.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/Model.md)
+
+[<img src="generated/Model.png" width="600px">](./generated/Model.png)
+
+---
+[Hydraulics.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/Hydraulics.md)
+
+[<img src="generated/Hydraulics.png" width="600px">](./generated/Hydraulics.png)
+
+---
+[ADCS.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/ADCS.md)
+
+[<img src="generated/ADCS.png" width="600px">](./generated/ADCS.png)
+
+---
+[MechanicalModel.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/MechanicalModel.md)
+
+[<img src="generated/MechanicalModel.png" width="600px">](./generated/MechanicalModel.png)
+
+---
+[DrillingDataSemantics.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/DrillingDataSemantics.md)
+
+[<img src="generated/DrillingDataSemantics.png" width="600px">](./generated/DrillingDataSemantics.png)
 
 ---
 
@@ -117,6 +117,9 @@ The following top level relationships have been omitted from the diagrams due to
 
 | SubjectClass | Relationship | ObjectClass |
 | ------------ | ------------ | ----------- |
+| DWISNoun | IsConditionLeft | DWISNoun |
+| DWISNoun | IsConditionRight | DWISNoun |
+| DWISNoun | IsValidBy | DWISNoun |
 | DWISNoun | Controls | DWISNoun |
 | DWISNoun | IsDerivationInput | DWISNoun |
 | DWISNoun | IsComputedBy | DWISNoun |
@@ -125,11 +128,8 @@ The following top level relationships have been omitted from the diagrams due to
 | DWISNoun | IsDerivedFrom | DWISNoun |
 | DWISNoun | IsIntegratedFrom | DWISNoun |
 | DWISNoun | IsProcessedBy | DWISNoun |
-| DWISNoun | HasHydraulicStateValueFrom | DWISNoun |
-| DWISNoun | StartsHydraulicBranchDecomposition | DWISNoun |
 | DWISNoun | IsObservableFrom | DWISNoun |
 | DWISNoun | DWISVerb | DWISNoun |
 | DWISNoun | BelongsToClass | DWISNoun |
-| DWISNoun | IsConditionLeft | DWISNoun |
-| DWISNoun | IsConditionRight | DWISNoun |
-| DWISNoun | IsValidBy | DWISNoun |
+| DWISNoun | HasHydraulicStateValueFrom | DWISNoun |
+| DWISNoun | StartsHydraulicBranchDecomposition | DWISNoun |
