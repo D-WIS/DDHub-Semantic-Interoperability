@@ -3,8 +3,8 @@
 - Derivation:Derivation_0
 - HookVelocity:HookVelocity_0
 - Hook:TopDriveHook_0
-- PositionQuantity:BlockPositionQuantity_0
-- BlockVelocityQuantity:BlockVelocityQuantity_0
+- PositionDrillingQuantity:BlockPositionQuantity_0
+- BlockVelocityDrillingQuantity:BlockVelocityQuantity_0
 - Transformation:Transformation_0
 - TopSideTelemetry:TopSideTelemetry_0
 - DataFlowNode:DataFlowNode_0

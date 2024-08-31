@@ -16,11 +16,12 @@ The consistency index in rheology measures a fluid's resistance to flow; it quan
 The meaningful precision of a consistency index in rheology is typically: 0,0001 Pa•s
 
 - Examples: 
-``` dwis ConsistencyIndexRheology-Value
-DynamicDrillingSignal:ConsistencyIndexRheology_Value
-Measurement:ConsistencyIndexRheology_Signal
-ConsistencyIndexRheology_Signal HasDynamicValue ConsistencyIndexRheology_Value
-ConsistencyIndexRheology_Signal IsOfMeasurableQuantity ConsistencyIndexRheology
+``` dwis
+DrillingSignal:ConsistencyIndexRheology_Signal
+DrillingDataPoint:ConsistencyIndexRheology_DataPoint
+ConsistencyIndexRheology_DataPoint HasValue ConsistencyIndexRheology_Signal
+ConsistencyIndexRheology_DataPoint IsOfMeasurableQuantity ConsistencyIndexRheologyQuantity
+ConsistencyIndexRheology_Signal HasUnitOfMeasure PascalSecond
 ```
 ## ElectricTensionQuantity <!-- NOUN -->
 - Display name: ElectricTension
@@ -35,11 +36,12 @@ $$[L^{2}MI^{-1}T^{-3}]$$.
 The SI unit for **electric tension** is: volt with the associated unit label $V$
 
 - Examples: 
-``` dwis ElectricTension-Value
-DynamicDrillingSignal:ElectricTension_Value
-Measurement:ElectricTension_Signal
-ElectricTension_Signal HasDynamicValue ElectricTension_Value
-ElectricTension_Signal IsOfMeasurableQuantity ElectricTension
+``` dwis
+DrillingSignal:ElectricTension_Signal
+DrillingDataPoint:ElectricTension_DataPoint
+ElectricTension_DataPoint HasValue ElectricTension_Signal
+ElectricTension_DataPoint IsOfMeasurableQuantity ElectricTensionQuantity
+ElectricTension_Signal HasUnitOfMeasure Volt
 ```
 ## ImageScaleQuantity <!-- NOUN -->
 - Display name: ImageScale
@@ -54,11 +56,12 @@ $$[L^{-1}]$$.
 The SI unit for **image scale** is: dot per metre with the associated unit label $dpm$
 
 - Examples: 
-``` dwis ImageScale-Value
-DynamicDrillingSignal:ImageScale_Value
-Measurement:ImageScale_Signal
-ImageScale_Signal HasDynamicValue ImageScale_Value
-ImageScale_Signal IsOfMeasurableQuantity ImageScale
+``` dwis
+DrillingSignal:ImageScale_Signal
+DrillingDataPoint:ImageScale_DataPoint
+ImageScale_DataPoint HasValue ImageScale_Signal
+ImageScale_DataPoint IsOfMeasurableQuantity ImageScaleQuantity
+ImageScale_Signal HasUnitOfMeasure DotPerMetre
 ```
 ## DiameterSmallQuantity <!-- NOUN -->
 - Display name: DiameterSmall
@@ -75,11 +78,12 @@ The SI unit for **length** is: metre with the associated unit label $m$
 The meaningful precision of small diameter is typically: 0,0001 m
 
 - Examples: 
-``` dwis DiameterSmall-Value
-DynamicDrillingSignal:DiameterSmall_Value
-Measurement:DiameterSmall_Signal
-DiameterSmall_Signal HasDynamicValue DiameterSmall_Value
-DiameterSmall_Signal IsOfMeasurableQuantity DiameterSmall
+``` dwis
+DrillingSignal:DiameterSmall_Signal
+DrillingDataPoint:DiameterSmall_DataPoint
+DiameterSmall_DataPoint HasValue DiameterSmall_Signal
+DiameterSmall_DataPoint IsOfMeasurableQuantity DiameterSmallQuantity
+DiameterSmall_Signal HasUnitOfMeasure Metre
 ```
 ## DimensionLessStandardQuantity <!-- NOUN -->
 - Display name: DimensionLessStandard
@@ -92,11 +96,12 @@ As its name indicates, a dimensionless quantity has no dimension:
 The meaningful precision of standard dimensionless values is typically: 0,001 
 
 - Examples: 
-``` dwis DimensionLessStandard-Value
-DynamicDrillingSignal:DimensionLessStandard_Value
-Measurement:DimensionLessStandard_Signal
-DimensionLessStandard_Signal HasDynamicValue DimensionLessStandard_Value
-DimensionLessStandard_Signal IsOfMeasurableQuantity DimensionLessStandard
+``` dwis
+DrillingSignal:DimensionLessStandard_Signal
+DrillingDataPoint:DimensionLessStandard_DataPoint
+DimensionLessStandard_DataPoint HasValue DimensionLessStandard_Signal
+DimensionLessStandard_DataPoint IsOfMeasurableQuantity DimensionLessStandardQuantity
+DimensionLessStandard_Signal HasUnitOfMeasure Dimensionless
 ```
 ## EarthMagneticFluxDensityQuantity <!-- NOUN -->
 - Display name: EarthMagneticFluxDensity
@@ -113,11 +118,12 @@ Earth's magnetic flux density refers to the strength and direction of the Earth'
 The meaningful precision of earth magnetic flux density is: 1E-09 T
 
 - Examples: 
-``` dwis EarthMagneticFluxDensity-Value
-DynamicDrillingSignal:EarthMagneticFluxDensity_Value
-Measurement:EarthMagneticFluxDensity_Signal
-EarthMagneticFluxDensity_Signal HasDynamicValue EarthMagneticFluxDensity_Value
-EarthMagneticFluxDensity_Signal IsOfMeasurableQuantity EarthMagneticFluxDensity
+``` dwis
+DrillingSignal:EarthMagneticFluxDensity_Signal
+DrillingDataPoint:EarthMagneticFluxDensity_DataPoint
+EarthMagneticFluxDensity_DataPoint HasValue EarthMagneticFluxDensity_Signal
+EarthMagneticFluxDensity_DataPoint IsOfMeasurableQuantity EarthMagneticFluxDensityQuantity
+EarthMagneticFluxDensity_Signal HasUnitOfMeasure Tesla
 ```
 ## ElasticModulusQuantity <!-- NOUN -->
 - Display name: ElasticModulus
@@ -134,11 +140,12 @@ Elastic modulus is a measure of a material's ability to resist deformation under
 The meaningful precision of an elastic modulus is typically: 10000 Pa
 
 - Examples: 
-``` dwis ElasticModulus-Value
-DynamicDrillingSignal:ElasticModulus_Value
-Measurement:ElasticModulus_Signal
-ElasticModulus_Signal HasDynamicValue ElasticModulus_Value
-ElasticModulus_Signal IsOfMeasurableQuantity ElasticModulus
+``` dwis
+DrillingSignal:ElasticModulus_Signal
+DrillingDataPoint:ElasticModulus_DataPoint
+ElasticModulus_DataPoint HasValue ElasticModulus_Signal
+ElasticModulus_DataPoint IsOfMeasurableQuantity ElasticModulusQuantity
+ElasticModulus_Signal HasUnitOfMeasure Pascal
 ```
 ## LengthSmallQuantity <!-- NOUN -->
 - Display name: LengthSmall
@@ -155,11 +162,12 @@ The SI unit for **length** is: metre with the associated unit label $m$
 The meaningful precision of small length is typically: 1E-05 m
 
 - Examples: 
-``` dwis LengthSmall-Value
-DynamicDrillingSignal:LengthSmall_Value
-Measurement:LengthSmall_Signal
-LengthSmall_Signal HasDynamicValue LengthSmall_Value
-LengthSmall_Signal IsOfMeasurableQuantity LengthSmall
+``` dwis
+DrillingSignal:LengthSmall_Signal
+DrillingDataPoint:LengthSmall_DataPoint
+LengthSmall_DataPoint HasValue LengthSmall_Signal
+LengthSmall_DataPoint IsOfMeasurableQuantity LengthSmallQuantity
+LengthSmall_Signal HasUnitOfMeasure Metre
 ```
 ## RotationalFrequencyQuantity <!-- NOUN -->
 - Display name: RotationalFrequency
@@ -172,11 +180,12 @@ The dimension of rotational frequency is:
 $$[T^{-1}]$$.
 
 - Examples: 
-``` dwis RotationalFrequency-Value
-DynamicDrillingSignal:RotationalFrequency_Value
-Measurement:RotationalFrequency_Signal
-RotationalFrequency_Signal HasDynamicValue RotationalFrequency_Value
-RotationalFrequency_Signal IsOfMeasurableQuantity RotationalFrequency
+``` dwis
+DrillingSignal:RotationalFrequency_Signal
+DrillingDataPoint:RotationalFrequency_DataPoint
+RotationalFrequency_DataPoint HasValue RotationalFrequency_Signal
+RotationalFrequency_DataPoint IsOfMeasurableQuantity RotationalFrequencyQuantity
+RotationalFrequency_Signal HasUnitOfMeasure Hertz
 ```
 ## VolumeLargeQuantity <!-- NOUN -->
 - Display name: VolumeLarge
@@ -193,11 +202,12 @@ The SI unit for **volume** is: cubic metre with the associated unit label $m^{3}
 The meaningful precision of a large volume is typically: 0,1 m³
 
 - Examples: 
-``` dwis VolumeLarge-Value
-DynamicDrillingSignal:VolumeLarge_Value
-Measurement:VolumeLarge_Signal
-VolumeLarge_Signal HasDynamicValue VolumeLarge_Value
-VolumeLarge_Signal IsOfMeasurableQuantity VolumeLarge
+``` dwis
+DrillingSignal:VolumeLarge_Signal
+DrillingDataPoint:VolumeLarge_DataPoint
+VolumeLarge_DataPoint HasValue VolumeLarge_Signal
+VolumeLarge_DataPoint IsOfMeasurableQuantity VolumeLargeQuantity
+VolumeLarge_Signal HasUnitOfMeasure CubicMetre
 ```
 ## ProportionStandardQuantity <!-- NOUN -->
 - Display name: ProportionStandard
@@ -211,11 +221,12 @@ A proportion is dimensionless:
 The meaningful precision of a standard proportion is typically: 0,001 
 
 - Examples: 
-``` dwis ProportionStandard-Value
-DynamicDrillingSignal:ProportionStandard_Value
-Measurement:ProportionStandard_Signal
-ProportionStandard_Signal HasDynamicValue ProportionStandard_Value
-ProportionStandard_Signal IsOfMeasurableQuantity ProportionStandard
+``` dwis
+DrillingSignal:ProportionStandard_Signal
+DrillingDataPoint:ProportionStandard_DataPoint
+ProportionStandard_DataPoint HasValue ProportionStandard_Signal
+ProportionStandard_DataPoint IsOfMeasurableQuantity ProportionStandardQuantity
+ProportionStandard_Signal HasUnitOfMeasure Proportion
 ```
 ## LengthStandardQuantity <!-- NOUN -->
 - Display name: LengthStandard
@@ -232,11 +243,12 @@ The SI unit for **length** is: metre with the associated unit label $m$
 The meaningful precision of a standard length is typically: 0,001 m
 
 - Examples: 
-``` dwis LengthStandard-Value
-DynamicDrillingSignal:LengthStandard_Value
-Measurement:LengthStandard_Signal
-LengthStandard_Signal HasDynamicValue LengthStandard_Value
-LengthStandard_Signal IsOfMeasurableQuantity LengthStandard
+``` dwis
+DrillingSignal:LengthStandard_Signal
+DrillingDataPoint:LengthStandard_DataPoint
+LengthStandard_DataPoint HasValue LengthStandard_Signal
+LengthStandard_DataPoint IsOfMeasurableQuantity LengthStandardQuantity
+LengthStandard_Signal HasUnitOfMeasure Metre
 ```
 ## FluidShearRateQuantity <!-- NOUN -->
 - Display name: FluidShearRate
@@ -254,11 +266,12 @@ Shear rate in a fluid is the rate at which adjacent layers of the fluid move rel
 The meaningful precision of a shear rate for a fluid is typically: 0,01 Hz
 
 - Examples: 
-``` dwis FluidShearRate-Value
-DynamicDrillingSignal:FluidShearRate_Value
-Measurement:FluidShearRate_Signal
-FluidShearRate_Signal HasDynamicValue FluidShearRate_Value
-FluidShearRate_Signal IsOfMeasurableQuantity FluidShearRate
+``` dwis
+DrillingSignal:FluidShearRate_Signal
+DrillingDataPoint:FluidShearRate_DataPoint
+FluidShearRate_DataPoint HasValue FluidShearRate_Signal
+FluidShearRate_DataPoint IsOfMeasurableQuantity FluidShearRateQuantity
+FluidShearRate_Signal HasUnitOfMeasure Hertz
 ```
 ## FluidShearStressQuantity <!-- NOUN -->
 - Display name: FluidShearStress
@@ -275,11 +288,12 @@ Shear stress in a fluid is the force per unit area exerted parallel to the fluid
 The meaningful precision of a shear stress for a fluid is typically: 0,0001 Pa
 
 - Examples: 
-``` dwis FluidShearStress-Value
-DynamicDrillingSignal:FluidShearStress_Value
-Measurement:FluidShearStress_Signal
-FluidShearStress_Signal HasDynamicValue FluidShearStress_Value
-FluidShearStress_Signal IsOfMeasurableQuantity FluidShearStress
+``` dwis
+DrillingSignal:FluidShearStress_Signal
+DrillingDataPoint:FluidShearStress_DataPoint
+FluidShearStress_DataPoint HasValue FluidShearStress_Signal
+FluidShearStress_DataPoint IsOfMeasurableQuantity FluidShearStressQuantity
+FluidShearStress_Signal HasUnitOfMeasure Pascal
 ```
 ## TorqueSmallQuantity <!-- NOUN -->
 - Display name: TorqueSmall
@@ -296,11 +310,12 @@ The SI unit for **torque** is: newton metre with the associated unit label $N \c
 The meaningful precision of small torque is typically: 1E-05 N•m
 
 - Examples: 
-``` dwis TorqueSmall-Value
-DynamicDrillingSignal:TorqueSmall_Value
-Measurement:TorqueSmall_Signal
-TorqueSmall_Signal HasDynamicValue TorqueSmall_Value
-TorqueSmall_Signal IsOfMeasurableQuantity TorqueSmall
+``` dwis
+DrillingSignal:TorqueSmall_Signal
+DrillingDataPoint:TorqueSmall_DataPoint
+TorqueSmall_DataPoint HasValue TorqueSmall_Signal
+TorqueSmall_DataPoint IsOfMeasurableQuantity TorqueSmallQuantity
+TorqueSmall_Signal HasUnitOfMeasure NewtonMetre
 ```
 ## RotationalFrequencySmallQuantity <!-- NOUN -->
 - Display name: RotationalFrequencySmall
@@ -315,11 +330,12 @@ $$[T^{-1}]$$.
 The meaningful precision of small rotational frequency is typically: 0,00016666 Hz
 
 - Examples: 
-``` dwis RotationalFrequencySmall-Value
-DynamicDrillingSignal:RotationalFrequencySmall_Value
-Measurement:RotationalFrequencySmall_Signal
-RotationalFrequencySmall_Signal HasDynamicValue RotationalFrequencySmall_Value
-RotationalFrequencySmall_Signal IsOfMeasurableQuantity RotationalFrequencySmall
+``` dwis
+DrillingSignal:RotationalFrequencySmall_Signal
+DrillingDataPoint:RotationalFrequencySmall_DataPoint
+RotationalFrequencySmall_DataPoint HasValue RotationalFrequencySmall_Signal
+RotationalFrequencySmall_DataPoint IsOfMeasurableQuantity RotationalFrequencySmallQuantity
+RotationalFrequencySmall_Signal HasUnitOfMeasure Hertz
 ```
 ## ProportionSmallQuantity <!-- NOUN -->
 - Display name: ProportionSmall
@@ -333,11 +349,12 @@ A proportion is dimensionless:
 The meaningful precision of small proportion is typically: 1E-08 
 
 - Examples: 
-``` dwis ProportionSmall-Value
-DynamicDrillingSignal:ProportionSmall_Value
-Measurement:ProportionSmall_Signal
-ProportionSmall_Signal HasDynamicValue ProportionSmall_Value
-ProportionSmall_Signal IsOfMeasurableQuantity ProportionSmall
+``` dwis
+DrillingSignal:ProportionSmall_Signal
+DrillingDataPoint:ProportionSmall_DataPoint
+ProportionSmall_DataPoint HasValue ProportionSmall_Signal
+ProportionSmall_DataPoint IsOfMeasurableQuantity ProportionSmallQuantity
+ProportionSmall_Signal HasUnitOfMeasure Proportion
 ```
 ## PorosityQuantity <!-- NOUN -->
 - Display name: Porosity
@@ -351,11 +368,12 @@ Porosity is the measure of the void spaces or pores within a material, expressed
 The meaningful precision of porosity is typically: 0,001 
 
 - Examples: 
-``` dwis Porosity-Value
-DynamicDrillingSignal:Porosity_Value
-Measurement:Porosity_Signal
-Porosity_Signal HasDynamicValue Porosity_Value
-Porosity_Signal IsOfMeasurableQuantity Porosity
+``` dwis
+DrillingSignal:Porosity_Signal
+DrillingDataPoint:Porosity_DataPoint
+Porosity_DataPoint HasValue Porosity_Signal
+Porosity_DataPoint IsOfMeasurableQuantity PorosityQuantity
+Porosity_Signal HasUnitOfMeasure Proportion
 ```
 ## StrokeFrequencyQuantity <!-- NOUN -->
 - Display name: StrokeFrequency
@@ -367,11 +385,12 @@ A stroke frequency is the number of stokes per unit time
 The meaningful precision of a stroke frequency is typically: 0,016666666666666666 Hz
 
 - Examples: 
-``` dwis StrokeFrequency-Value
-DynamicDrillingSignal:StrokeFrequency_Value
-Measurement:StrokeFrequency_Signal
-StrokeFrequency_Signal HasDynamicValue StrokeFrequency_Value
-StrokeFrequency_Signal IsOfMeasurableQuantity StrokeFrequency
+``` dwis
+DrillingSignal:StrokeFrequency_Signal
+DrillingDataPoint:StrokeFrequency_DataPoint
+StrokeFrequency_DataPoint HasValue StrokeFrequency_Signal
+StrokeFrequency_DataPoint IsOfMeasurableQuantity StrokeFrequencyQuantity
+StrokeFrequency_Signal HasUnitOfMeasure Hertz
 ```
 ## ShockRateQuantity <!-- NOUN -->
 - Display name: ShockRate
@@ -383,11 +402,12 @@ A shock rate is the number of shocks per unit time.
 The meaningful precision of shock rate is typically: 0,016666666666666666 Hz/s
 
 - Examples: 
-``` dwis ShockRate-Value
-DynamicDrillingSignal:ShockRate_Value
-Measurement:ShockRate_Signal
-ShockRate_Signal HasDynamicValue ShockRate_Value
-ShockRate_Signal IsOfMeasurableQuantity ShockRate
+``` dwis
+DrillingSignal:ShockRate_Signal
+DrillingDataPoint:ShockRate_DataPoint
+ShockRate_DataPoint HasValue ShockRate_Signal
+ShockRate_DataPoint IsOfMeasurableQuantity ShockRateQuantity
+ShockRate_Signal HasUnitOfMeasure Hertz
 ```
 ## AccelerationDrillingQuantity <!-- NOUN -->
 - Display name: AccelerationDrilling
@@ -414,11 +434,12 @@ The SI unit for **acceleration** is: metre per second squared with the associate
 The meaningful precision of acceleration in the drilling context is typically: 0,001 m/s²
 
 - Examples: 
-``` dwis AccelerationDrilling-Value
-DynamicDrillingSignal:AccelerationDrilling_Value
-Measurement:AccelerationDrilling_Signal
-AccelerationDrilling_Signal HasDynamicValue AccelerationDrilling_Value
-AccelerationDrilling_Signal IsOfMeasurableQuantity AccelerationDrilling
+``` dwis
+DrillingSignal:AccelerationDrilling_Signal
+DrillingDataPoint:AccelerationDrilling_DataPoint
+AccelerationDrilling_DataPoint HasValue AccelerationDrilling_Signal
+AccelerationDrilling_DataPoint IsOfMeasurableQuantity AccelerationDrillingQuantity
+AccelerationDrilling_Signal HasUnitOfMeasure MetrePerSecondSquared
 ```
 ## AngleGradientPerLengthDrillingQuantity <!-- NOUN -->
 - Display name: AngleGradientPerLengthDrilling
@@ -441,11 +462,12 @@ The SI unit for **angle gradient per length** is: radian per metre with the asso
 In a drilling engineering perspective, the meaningful precision of an angle gradient per length is: 0,00017453292519943296 rad/m
 
 - Examples: 
-``` dwis AngleGradientPerLengthDrilling-Value
-DynamicDrillingSignal:AngleGradientPerLengthDrilling_Value
-Measurement:AngleGradientPerLengthDrilling_Signal
-AngleGradientPerLengthDrilling_Signal HasDynamicValue AngleGradientPerLengthDrilling_Value
-AngleGradientPerLengthDrilling_Signal IsOfMeasurableQuantity AngleGradientPerLengthDrilling
+``` dwis
+DrillingSignal:AngleGradientPerLengthDrilling_Signal
+DrillingDataPoint:AngleGradientPerLengthDrilling_DataPoint
+AngleGradientPerLengthDrilling_DataPoint HasValue AngleGradientPerLengthDrilling_Signal
+AngleGradientPerLengthDrilling_DataPoint IsOfMeasurableQuantity AngleGradientPerLengthDrillingQuantity
+AngleGradientPerLengthDrilling_Signal HasUnitOfMeasure RadianPerMetre
 ```
 ## AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity <!-- NOUN -->
 - Display name: AngleMagneticFluxDensitySurveyInstrumentDrilling
@@ -472,11 +494,12 @@ The SI unit for **angle magnetic flux density** is: radian tesla with the associ
 The meaningful precision of angle magnetic flux density related to survey instrument performance models in the drilling context is typically: 1E-09 rad•T
 
 - Examples: 
-``` dwis AngleMagneticFluxDensitySurveyInstrumentDrilling-Value
-DynamicDrillingSignal:AngleMagneticFluxDensitySurveyInstrumentDrilling_Value
-Measurement:AngleMagneticFluxDensitySurveyInstrumentDrilling_Signal
-AngleMagneticFluxDensitySurveyInstrumentDrilling_Signal HasDynamicValue AngleMagneticFluxDensitySurveyInstrumentDrilling_Value
-AngleMagneticFluxDensitySurveyInstrumentDrilling_Signal IsOfMeasurableQuantity AngleMagneticFluxDensitySurveyInstrumentDrilling
+``` dwis
+DrillingSignal:AngleMagneticFluxDensitySurveyInstrumentDrilling_Signal
+DrillingDataPoint:AngleMagneticFluxDensitySurveyInstrumentDrilling_DataPoint
+AngleMagneticFluxDensitySurveyInstrumentDrilling_DataPoint HasValue AngleMagneticFluxDensitySurveyInstrumentDrilling_Signal
+AngleMagneticFluxDensitySurveyInstrumentDrilling_DataPoint IsOfMeasurableQuantity AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity
+AngleMagneticFluxDensitySurveyInstrumentDrilling_Signal HasUnitOfMeasure RadianTesla
 ```
 ## AngularAccelerationDrillingQuantity <!-- NOUN -->
 - Display name: AngularAccelerationDrilling
@@ -493,11 +516,12 @@ The SI unit for **angular acceleration** is: radian per second squared with the 
 The meaningful precision of angular acceleration in the drilling context is typically: 0,01 rad/s²
 
 - Examples: 
-``` dwis AngularAccelerationDrilling-Value
-DynamicDrillingSignal:AngularAccelerationDrilling_Value
-Measurement:AngularAccelerationDrilling_Signal
-AngularAccelerationDrilling_Signal HasDynamicValue AngularAccelerationDrilling_Value
-AngularAccelerationDrilling_Signal IsOfMeasurableQuantity AngularAccelerationDrilling
+``` dwis
+DrillingSignal:AngularAccelerationDrilling_Signal
+DrillingDataPoint:AngularAccelerationDrilling_DataPoint
+AngularAccelerationDrilling_DataPoint HasValue AngularAccelerationDrilling_Signal
+AngularAccelerationDrilling_DataPoint IsOfMeasurableQuantity AngularAccelerationDrillingQuantity
+AngularAccelerationDrilling_Signal HasUnitOfMeasure RadianPerSecondSquared
 ```
 ## AngularVelocityDrillingQuantity <!-- NOUN -->
 - Display name: AngularVelocityDrilling
@@ -514,11 +538,12 @@ The SI unit for **angular velocity** is: radian per second with the associated u
 The meaningful precision of angular velocity in the drilling context is typically: 0,01 rad/s
 
 - Examples: 
-``` dwis AngularVelocityDrilling-Value
-DynamicDrillingSignal:AngularVelocityDrilling_Value
-Measurement:AngularVelocityDrilling_Signal
-AngularVelocityDrilling_Signal HasDynamicValue AngularVelocityDrilling_Value
-AngularVelocityDrilling_Signal IsOfMeasurableQuantity AngularVelocityDrilling
+``` dwis
+DrillingSignal:AngularVelocityDrilling_Signal
+DrillingDataPoint:AngularVelocityDrilling_DataPoint
+AngularVelocityDrilling_DataPoint HasValue AngularVelocityDrilling_Signal
+AngularVelocityDrilling_DataPoint IsOfMeasurableQuantity AngularVelocityDrillingQuantity
+AngularVelocityDrilling_Signal HasUnitOfMeasure RadianPerSecond
 ```
 ## AngularVelocitySurveyInstrumentDrillingQuantity <!-- NOUN -->
 - Display name: AngularVelocitySurveyInstrumentDrilling
@@ -535,11 +560,12 @@ The SI unit for **angular velocity** is: radian per second with the associated u
 The meaningful precision of angular velocity related to survey instrument performance models in the drilling context is typically: 1E-07 rad•T
 
 - Examples: 
-``` dwis AngularVelocitySurveyInstrumentDrilling-Value
-DynamicDrillingSignal:AngularVelocitySurveyInstrumentDrilling_Value
-Measurement:AngularVelocitySurveyInstrumentDrilling_Signal
-AngularVelocitySurveyInstrumentDrilling_Signal HasDynamicValue AngularVelocitySurveyInstrumentDrilling_Value
-AngularVelocitySurveyInstrumentDrilling_Signal IsOfMeasurableQuantity AngularVelocitySurveyInstrumentDrilling
+``` dwis
+DrillingSignal:AngularVelocitySurveyInstrumentDrilling_Signal
+DrillingDataPoint:AngularVelocitySurveyInstrumentDrilling_DataPoint
+AngularVelocitySurveyInstrumentDrilling_DataPoint HasValue AngularVelocitySurveyInstrumentDrilling_Signal
+AngularVelocitySurveyInstrumentDrilling_DataPoint IsOfMeasurableQuantity AngularVelocitySurveyInstrumentDrillingQuantity
+AngularVelocitySurveyInstrumentDrilling_Signal HasUnitOfMeasure RadianPerSecond
 ```
 ## AreaDrillingQuantity <!-- NOUN -->
 - Display name: AreaDrilling
@@ -556,11 +582,12 @@ The SI unit for **area** is: square metre with the associated unit label $m^{2}$
 The meaningful precision of area in the drilling context is typically: 1E-06 m²
 
 - Examples: 
-``` dwis AreaDrilling-Value
-DynamicDrillingSignal:AreaDrilling_Value
-Measurement:AreaDrilling_Signal
-AreaDrilling_Signal HasDynamicValue AreaDrilling_Value
-AreaDrilling_Signal IsOfMeasurableQuantity AreaDrilling
+``` dwis
+DrillingSignal:AreaDrilling_Signal
+DrillingDataPoint:AreaDrilling_DataPoint
+AreaDrilling_DataPoint HasValue AreaDrilling_Signal
+AreaDrilling_DataPoint IsOfMeasurableQuantity AreaDrillingQuantity
+AreaDrilling_Signal HasUnitOfMeasure SquareMetre
 ```
 ## AxialVelocityDrillingQuantity <!-- NOUN -->
 - Display name: AxialVelocityDrilling
@@ -577,11 +604,12 @@ The SI unit for **velocity** is: metre per second with the associated unit label
 The meaningful precision of velocity in the drilling context is typically: 0,01 m/s
 
 - Examples: 
-``` dwis AxialVelocityDrilling-Value
-DynamicDrillingSignal:AxialVelocityDrilling_Value
-Measurement:AxialVelocityDrilling_Signal
-AxialVelocityDrilling_Signal HasDynamicValue AxialVelocityDrilling_Value
-AxialVelocityDrilling_Signal IsOfMeasurableQuantity AxialVelocityDrilling
+``` dwis
+DrillingSignal:AxialVelocityDrilling_Signal
+DrillingDataPoint:AxialVelocityDrilling_DataPoint
+AxialVelocityDrilling_DataPoint HasValue AxialVelocityDrilling_Signal
+AxialVelocityDrilling_DataPoint IsOfMeasurableQuantity AxialVelocityDrillingQuantity
+AxialVelocityDrilling_Signal HasUnitOfMeasure MetrePerSecond
 ```
 ## BlockVelocityDrillingQuantity <!-- NOUN -->
 - Display name: BlockVelocityDrilling
@@ -598,11 +626,12 @@ The SI unit for **velocity** is: metre per second with the associated unit label
 The meaningful precision of block velocity in the drilling context is typically: 0,01 m/s
 
 - Examples: 
-``` dwis BlockVelocityDrilling-Value
-DynamicDrillingSignal:BlockVelocityDrilling_Value
-Measurement:BlockVelocityDrilling_Signal
-BlockVelocityDrilling_Signal HasDynamicValue BlockVelocityDrilling_Value
-BlockVelocityDrilling_Signal IsOfMeasurableQuantity BlockVelocityDrilling
+``` dwis
+DrillingSignal:BlockVelocityDrilling_Signal
+DrillingDataPoint:BlockVelocityDrilling_DataPoint
+BlockVelocityDrilling_DataPoint HasValue BlockVelocityDrilling_Signal
+BlockVelocityDrilling_DataPoint IsOfMeasurableQuantity BlockVelocityDrillingQuantity
+BlockVelocityDrilling_Signal HasUnitOfMeasure MetrePerSecond
 ```
 ## CableDiameterDrillingQuantity <!-- NOUN -->
 - Display name: CableDiameterDrilling
@@ -621,11 +650,12 @@ The meaningful precision of small length is typically: 0,0005 m
 The meaningful precision of a cable diameter in the drilling context is typically: 0,0005 m
 
 - Examples: 
-``` dwis CableDiameterDrilling-Value
-DynamicDrillingSignal:CableDiameterDrilling_Value
-Measurement:CableDiameterDrilling_Signal
-CableDiameterDrilling_Signal HasDynamicValue CableDiameterDrilling_Value
-CableDiameterDrilling_Signal IsOfMeasurableQuantity CableDiameterDrilling
+``` dwis
+DrillingSignal:CableDiameterDrilling_Signal
+DrillingDataPoint:CableDiameterDrilling_DataPoint
+CableDiameterDrilling_DataPoint HasValue CableDiameterDrilling_Signal
+CableDiameterDrilling_DataPoint IsOfMeasurableQuantity CableDiameterDrillingQuantity
+CableDiameterDrilling_Signal HasUnitOfMeasure Metre
 ```
 ## CapillaryPressureDrillingQuantity <!-- NOUN -->
 - Display name: CapillaryPressureDrilling
@@ -642,11 +672,12 @@ The SI unit for **pressure** is: pascal with the associated unit label $Pa$
 The meaningful precision of capilary pressure in the drilling context is typically: 0,1 Pa
 
 - Examples: 
-``` dwis CapillaryPressureDrilling-Value
-DynamicDrillingSignal:CapillaryPressureDrilling_Value
-Measurement:CapillaryPressureDrilling_Signal
-CapillaryPressureDrilling_Signal HasDynamicValue CapillaryPressureDrilling_Value
-CapillaryPressureDrilling_Signal IsOfMeasurableQuantity CapillaryPressureDrilling
+``` dwis
+DrillingSignal:CapillaryPressureDrilling_Signal
+DrillingDataPoint:CapillaryPressureDrilling_DataPoint
+CapillaryPressureDrilling_DataPoint HasValue CapillaryPressureDrilling_Signal
+CapillaryPressureDrilling_DataPoint IsOfMeasurableQuantity CapillaryPressureDrillingQuantity
+CapillaryPressureDrilling_Signal HasUnitOfMeasure Pascal
 ```
 ## CompressibilityDrillingQuantity <!-- NOUN -->
 - Display name: CompressibilityDrilling
@@ -663,11 +694,12 @@ The SI unit for **compressibility** is: inverse pascal with the associated unit 
 The meaningful precision of compressibility in the drilling context is typically: 1E-13 1/Pa
 
 - Examples: 
-``` dwis CompressibilityDrilling-Value
-DynamicDrillingSignal:CompressibilityDrilling_Value
-Measurement:CompressibilityDrilling_Signal
-CompressibilityDrilling_Signal HasDynamicValue CompressibilityDrilling_Value
-CompressibilityDrilling_Signal IsOfMeasurableQuantity CompressibilityDrilling
+``` dwis
+DrillingSignal:CompressibilityDrilling_Signal
+DrillingDataPoint:CompressibilityDrilling_DataPoint
+CompressibilityDrilling_DataPoint HasValue CompressibilityDrilling_Signal
+CompressibilityDrilling_DataPoint IsOfMeasurableQuantity CompressibilityDrillingQuantity
+CompressibilityDrilling_Signal HasUnitOfMeasure InversePascal
 ```
 ## CurvatureDrillingQuantity <!-- NOUN -->
 - Display name: CurvatureDrilling
@@ -684,11 +716,12 @@ The SI unit for **curvature** is: radian per metre with the associated unit labe
 The meaningful precision of curvature in the drilling context is typically: 5,817764173314432E-06 rad/m
 
 - Examples: 
-``` dwis CurvatureDrilling-Value
-DynamicDrillingSignal:CurvatureDrilling_Value
-Measurement:CurvatureDrilling_Signal
-CurvatureDrilling_Signal HasDynamicValue CurvatureDrilling_Value
-CurvatureDrilling_Signal IsOfMeasurableQuantity CurvatureDrilling
+``` dwis
+DrillingSignal:CurvatureDrilling_Signal
+DrillingDataPoint:CurvatureDrilling_DataPoint
+CurvatureDrilling_DataPoint HasValue CurvatureDrilling_Signal
+CurvatureDrilling_DataPoint IsOfMeasurableQuantity CurvatureDrillingQuantity
+CurvatureDrilling_Signal HasUnitOfMeasure RadianPerMetre
 ```
 ## DepthDrillingQuantity <!-- NOUN -->
 - Display name: DepthDrilling
@@ -705,11 +738,12 @@ The SI unit for **length** is: metre with the associated unit label $m$
 The meaningful precision of depth in the drilling context is typically: 0,001 m
 
 - Examples: 
-``` dwis DepthDrilling-Value
-DynamicDrillingSignal:DepthDrilling_Value
-Measurement:DepthDrilling_Signal
-DepthDrilling_Signal HasDynamicValue DepthDrilling_Value
-DepthDrilling_Signal IsOfMeasurableQuantity DepthDrilling
+``` dwis
+DrillingSignal:DepthDrilling_Signal
+DrillingDataPoint:DepthDrilling_DataPoint
+DepthDrilling_DataPoint HasValue DepthDrilling_Signal
+DepthDrilling_DataPoint IsOfMeasurableQuantity DepthDrillingQuantity
+DepthDrilling_Signal HasUnitOfMeasure Metre
 ```
 ## DiameterPipeDrillingQuantity <!-- NOUN -->
 - Display name: DiameterPipeDrilling
@@ -728,11 +762,12 @@ The meaningful precision of small length is typically: 0,0001 m
 The meaningful precision of pipe diameter in the drilling context is typically: 0,0001 m
 
 - Examples: 
-``` dwis DiameterPipeDrilling-Value
-DynamicDrillingSignal:DiameterPipeDrilling_Value
-Measurement:DiameterPipeDrilling_Signal
-DiameterPipeDrilling_Signal HasDynamicValue DiameterPipeDrilling_Value
-DiameterPipeDrilling_Signal IsOfMeasurableQuantity DiameterPipeDrilling
+``` dwis
+DrillingSignal:DiameterPipeDrilling_Signal
+DrillingDataPoint:DiameterPipeDrilling_DataPoint
+DiameterPipeDrilling_DataPoint HasValue DiameterPipeDrilling_Signal
+DiameterPipeDrilling_DataPoint IsOfMeasurableQuantity DiameterPipeDrillingQuantity
+DiameterPipeDrilling_Signal HasUnitOfMeasure Metre
 ```
 ## DiameterPoreDrillingQuantity <!-- NOUN -->
 - Display name: DiameterPoreDrilling
@@ -751,11 +786,12 @@ The meaningful precision of small length is typically: 1E-07 m
 The meaningful precision of pore diameter in the drilling context is typically: 1E-07 m
 
 - Examples: 
-``` dwis DiameterPoreDrilling-Value
-DynamicDrillingSignal:DiameterPoreDrilling_Value
-Measurement:DiameterPoreDrilling_Signal
-DiameterPoreDrilling_Signal HasDynamicValue DiameterPoreDrilling_Value
-DiameterPoreDrilling_Signal IsOfMeasurableQuantity DiameterPoreDrilling
+``` dwis
+DrillingSignal:DiameterPoreDrilling_Signal
+DrillingDataPoint:DiameterPoreDrilling_DataPoint
+DiameterPoreDrilling_DataPoint HasValue DiameterPoreDrilling_Signal
+DiameterPoreDrilling_DataPoint IsOfMeasurableQuantity DiameterPoreDrillingQuantity
+DiameterPoreDrilling_Signal HasUnitOfMeasure Metre
 ```
 ## DrillStemMaterialStrengthDrillingQuantity <!-- NOUN -->
 - Display name: DrillStemMaterialStrengthDrilling
@@ -772,11 +808,12 @@ The SI unit for **material strength** is: pascal with the associated unit label 
 The meaningful precision of drill stem material strength in the drilling context is typically: 10000 Pa
 
 - Examples: 
-``` dwis DrillStemMaterialStrengthDrilling-Value
-DynamicDrillingSignal:DrillStemMaterialStrengthDrilling_Value
-Measurement:DrillStemMaterialStrengthDrilling_Signal
-DrillStemMaterialStrengthDrilling_Signal HasDynamicValue DrillStemMaterialStrengthDrilling_Value
-DrillStemMaterialStrengthDrilling_Signal IsOfMeasurableQuantity DrillStemMaterialStrengthDrilling
+``` dwis
+DrillingSignal:DrillStemMaterialStrengthDrilling_Signal
+DrillingDataPoint:DrillStemMaterialStrengthDrilling_DataPoint
+DrillStemMaterialStrengthDrilling_DataPoint HasValue DrillStemMaterialStrengthDrilling_Signal
+DrillStemMaterialStrengthDrilling_DataPoint IsOfMeasurableQuantity DrillStemMaterialStrengthDrillingQuantity
+DrillStemMaterialStrengthDrilling_Signal HasUnitOfMeasure Pascal
 ```
 ## DrillStringMagneticFluxDrillingQuantity <!-- NOUN -->
 - Display name: DrillStringMagneticFluxDrilling
@@ -793,11 +830,12 @@ The SI unit for **magnetic flux** is: weber with the associated unit label $Wb$
 The meaningful precision of magnetic flux in the drilling context is typically: 1E-07 Wb
 
 - Examples: 
-``` dwis DrillStringMagneticFluxDrilling-Value
-DynamicDrillingSignal:DrillStringMagneticFluxDrilling_Value
-Measurement:DrillStringMagneticFluxDrilling_Signal
-DrillStringMagneticFluxDrilling_Signal HasDynamicValue DrillStringMagneticFluxDrilling_Value
-DrillStringMagneticFluxDrilling_Signal IsOfMeasurableQuantity DrillStringMagneticFluxDrilling
+``` dwis
+DrillingSignal:DrillStringMagneticFluxDrilling_Signal
+DrillingDataPoint:DrillStringMagneticFluxDrilling_DataPoint
+DrillStringMagneticFluxDrilling_DataPoint HasValue DrillStringMagneticFluxDrilling_Signal
+DrillStringMagneticFluxDrilling_DataPoint IsOfMeasurableQuantity DrillStringMagneticFluxDrillingQuantity
+DrillStringMagneticFluxDrilling_Signal HasUnitOfMeasure Weber
 ```
 ## DurationDrillingQuantity <!-- NOUN -->
 - Display name: DurationDrilling
@@ -814,11 +852,12 @@ The SI unit for **time** is: second with the associated unit label $s$
 The meaningful precision of time in the drilling context is typically: 0,001 s
 
 - Examples: 
-``` dwis DurationDrilling-Value
-DynamicDrillingSignal:DurationDrilling_Value
-Measurement:DurationDrilling_Signal
-DurationDrilling_Signal HasDynamicValue DurationDrilling_Value
-DurationDrilling_Signal IsOfMeasurableQuantity DurationDrilling
+``` dwis
+DrillingSignal:DurationDrilling_Signal
+DrillingDataPoint:DurationDrilling_DataPoint
+DurationDrilling_DataPoint HasValue DurationDrilling_Signal
+DurationDrilling_DataPoint IsOfMeasurableQuantity DurationDrillingQuantity
+DurationDrilling_Signal HasUnitOfMeasure Second
 ```
 ## DynamicViscosityDrillingQuantity <!-- NOUN -->
 - Display name: DynamicViscosityDrilling
@@ -835,11 +874,12 @@ The SI unit for **dynamic viscosity** is: pascal second with the associated unit
 The meaningful precision of dynamic viscosity in the drilling context is typically: 0,0001 Pa•s
 
 - Examples: 
-``` dwis DynamicViscosityDrilling-Value
-DynamicDrillingSignal:DynamicViscosityDrilling_Value
-Measurement:DynamicViscosityDrilling_Signal
-DynamicViscosityDrilling_Signal HasDynamicValue DynamicViscosityDrilling_Value
-DynamicViscosityDrilling_Signal IsOfMeasurableQuantity DynamicViscosityDrilling
+``` dwis
+DrillingSignal:DynamicViscosityDrilling_Signal
+DrillingDataPoint:DynamicViscosityDrilling_DataPoint
+DynamicViscosityDrilling_DataPoint HasValue DynamicViscosityDrilling_Signal
+DynamicViscosityDrilling_DataPoint IsOfMeasurableQuantity DynamicViscosityDrillingQuantity
+DynamicViscosityDrilling_Signal HasUnitOfMeasure PascalSecond
 ```
 ## ElongationGradientPerLengthDrillingQuantity <!-- NOUN -->
 - Display name: ElongationGradientPerLengthDrilling
@@ -855,11 +895,12 @@ The SI unit for **elongation gradient per length** is: metre per metre with the 
 The meaningful precision of elongation gradient per length in the drilling context is typically: 1E-05 m/m
 
 - Examples: 
-``` dwis ElongationGradientPerLengthDrilling-Value
-DynamicDrillingSignal:ElongationGradientPerLengthDrilling_Value
-Measurement:ElongationGradientPerLengthDrilling_Signal
-ElongationGradientPerLengthDrilling_Signal HasDynamicValue ElongationGradientPerLengthDrilling_Value
-ElongationGradientPerLengthDrilling_Signal IsOfMeasurableQuantity ElongationGradientPerLengthDrilling
+``` dwis
+DrillingSignal:ElongationGradientPerLengthDrilling_Signal
+DrillingDataPoint:ElongationGradientPerLengthDrilling_DataPoint
+ElongationGradientPerLengthDrilling_DataPoint HasValue ElongationGradientPerLengthDrilling_Signal
+ElongationGradientPerLengthDrilling_DataPoint IsOfMeasurableQuantity ElongationGradientPerLengthDrillingQuantity
+ElongationGradientPerLengthDrilling_Signal HasUnitOfMeasure MetrePerMetre
 ```
 ## EnergyDensityDrillingQuantity <!-- NOUN -->
 - Display name: EnergyDensityDrilling
@@ -876,11 +917,12 @@ The SI unit for **energy density** is: joule per cubic metre with the associated
 The meaningful precision of energy density in the drilling context is typically: 0,01 J/m³
 
 - Examples: 
-``` dwis EnergyDensityDrilling-Value
-DynamicDrillingSignal:EnergyDensityDrilling_Value
-Measurement:EnergyDensityDrilling_Signal
-EnergyDensityDrilling_Signal HasDynamicValue EnergyDensityDrilling_Value
-EnergyDensityDrilling_Signal IsOfMeasurableQuantity EnergyDensityDrilling
+``` dwis
+DrillingSignal:EnergyDensityDrilling_Signal
+DrillingDataPoint:EnergyDensityDrilling_DataPoint
+EnergyDensityDrilling_DataPoint HasValue EnergyDensityDrilling_Signal
+EnergyDensityDrilling_DataPoint IsOfMeasurableQuantity EnergyDensityDrillingQuantity
+EnergyDensityDrilling_Signal HasUnitOfMeasure JoulePerCubicMetre
 ```
 ## MassDensityRateOfChangeDrillingQuantity <!-- NOUN -->
 - Display name: MassDensityRateOfChangeDrilling
@@ -897,11 +939,12 @@ The SI unit for **mass density rate of change** is: kilogram per cubic metre per
 The meaningful precision of mass density rate of change in the drilling context is typically: 0,001 kg/m³/s
 
 - Examples: 
-``` dwis MassDensityRateOfChangeDrilling-Value
-DynamicDrillingSignal:MassDensityRateOfChangeDrilling_Value
-Measurement:MassDensityRateOfChangeDrilling_Signal
-MassDensityRateOfChangeDrilling_Signal HasDynamicValue MassDensityRateOfChangeDrilling_Value
-MassDensityRateOfChangeDrilling_Signal IsOfMeasurableQuantity MassDensityRateOfChangeDrilling
+``` dwis
+DrillingSignal:MassDensityRateOfChangeDrilling_Signal
+DrillingDataPoint:MassDensityRateOfChangeDrilling_DataPoint
+MassDensityRateOfChangeDrilling_DataPoint HasValue MassDensityRateOfChangeDrilling_Signal
+MassDensityRateOfChangeDrilling_DataPoint IsOfMeasurableQuantity MassDensityRateOfChangeDrillingQuantity
+MassDensityRateOfChangeDrilling_Signal HasUnitOfMeasure KilogramPerCubicMetrePerSecond
 ```
 ## MassDensityGradientPerTemperatureDrillingQuantity <!-- NOUN -->
 - Display name: MassDensityGradientPerTemperatureDrilling
@@ -918,11 +961,12 @@ The SI unit for **mass density gradient per temperature** is: kilogram per cubic
 The meaningful precision of mass density gradient per temperature in the drilling context is typically: 0,001 kg/m³/K
 
 - Examples: 
-``` dwis MassDensityGradientPerTemperatureDrilling-Value
-DynamicDrillingSignal:MassDensityGradientPerTemperatureDrilling_Value
-Measurement:MassDensityGradientPerTemperatureDrilling_Signal
-MassDensityGradientPerTemperatureDrilling_Signal HasDynamicValue MassDensityGradientPerTemperatureDrilling_Value
-MassDensityGradientPerTemperatureDrilling_Signal IsOfMeasurableQuantity MassDensityGradientPerTemperatureDrilling
+``` dwis
+DrillingSignal:MassDensityGradientPerTemperatureDrilling_Signal
+DrillingDataPoint:MassDensityGradientPerTemperatureDrilling_DataPoint
+MassDensityGradientPerTemperatureDrilling_DataPoint HasValue MassDensityGradientPerTemperatureDrilling_Signal
+MassDensityGradientPerTemperatureDrilling_DataPoint IsOfMeasurableQuantity MassDensityGradientPerTemperatureDrillingQuantity
+MassDensityGradientPerTemperatureDrilling_Signal HasUnitOfMeasure KilogramPerCubicMetrePerKelvin
 ```
 ## MassDensityGradientPerLengthDrillingQuantity <!-- NOUN -->
 - Display name: MassDensityGradientPerLengthDrilling
@@ -939,11 +983,12 @@ The SI unit for **mass density gradient per length** is: kilogram per cubic metr
 The meaningful precision of mass density gradient per length in the drilling context is typically: 0,001 kg/m³/m
 
 - Examples: 
-``` dwis MassDensityGradientPerLengthDrilling-Value
-DynamicDrillingSignal:MassDensityGradientPerLengthDrilling_Value
-Measurement:MassDensityGradientPerLengthDrilling_Signal
-MassDensityGradientPerLengthDrilling_Signal HasDynamicValue MassDensityGradientPerLengthDrilling_Value
-MassDensityGradientPerLengthDrilling_Signal IsOfMeasurableQuantity MassDensityGradientPerLengthDrilling
+``` dwis
+DrillingSignal:MassDensityGradientPerLengthDrilling_Signal
+DrillingDataPoint:MassDensityGradientPerLengthDrilling_DataPoint
+MassDensityGradientPerLengthDrilling_DataPoint HasValue MassDensityGradientPerLengthDrilling_Signal
+MassDensityGradientPerLengthDrilling_DataPoint IsOfMeasurableQuantity MassDensityGradientPerLengthDrillingQuantity
+MassDensityGradientPerLengthDrilling_Signal HasUnitOfMeasure KilogramPerCubicMetrePerMetre
 ```
 ## MassDensityDrillingQuantity <!-- NOUN -->
 - Display name: MassDensityDrilling
@@ -960,11 +1005,12 @@ The SI unit for **mass density** is: kilogram per cubic metre with the associate
 The meaningful precision of mass density in the drilling context is typically: 1 kg/m³
 
 - Examples: 
-``` dwis MassDensityDrilling-Value
-DynamicDrillingSignal:MassDensityDrilling_Value
-Measurement:MassDensityDrilling_Signal
-MassDensityDrilling_Signal HasDynamicValue MassDensityDrilling_Value
-MassDensityDrilling_Signal IsOfMeasurableQuantity MassDensityDrilling
+``` dwis
+DrillingSignal:MassDensityDrilling_Signal
+DrillingDataPoint:MassDensityDrilling_DataPoint
+MassDensityDrilling_DataPoint HasValue MassDensityDrilling_Signal
+MassDensityDrilling_DataPoint IsOfMeasurableQuantity MassDensityDrillingQuantity
+MassDensityDrilling_Signal HasUnitOfMeasure KilogramPerCubicMetre
 ```
 ## FluidVelocityDrillingQuantity <!-- NOUN -->
 - Display name: FluidVelocityDrilling
@@ -981,11 +1027,12 @@ The SI unit for **velocity** is: metre per second with the associated unit label
 The meaningful precision of fluid velocity in the drilling context is typically: 0,01 m/s
 
 - Examples: 
-``` dwis FluidVelocityDrilling-Value
-DynamicDrillingSignal:FluidVelocityDrilling_Value
-Measurement:FluidVelocityDrilling_Signal
-FluidVelocityDrilling_Signal HasDynamicValue FluidVelocityDrilling_Value
-FluidVelocityDrilling_Signal IsOfMeasurableQuantity FluidVelocityDrilling
+``` dwis
+DrillingSignal:FluidVelocityDrilling_Signal
+DrillingDataPoint:FluidVelocityDrilling_DataPoint
+FluidVelocityDrilling_DataPoint HasValue FluidVelocityDrilling_Signal
+FluidVelocityDrilling_DataPoint IsOfMeasurableQuantity FluidVelocityDrillingQuantity
+FluidVelocityDrilling_Signal HasUnitOfMeasure MetrePerSecond
 ```
 ## ForceGradientPerLengthDrillingQuantity <!-- NOUN -->
 - Display name: ForceGradientPerLengthDrilling
@@ -1002,11 +1049,12 @@ The SI unit for **force gradient per length** is: newton per metre with the asso
 The meaningful precision of force gradient per length in the drilling context is typically: 1 N/m
 
 - Examples: 
-``` dwis ForceGradientPerLengthDrilling-Value
-DynamicDrillingSignal:ForceGradientPerLengthDrilling_Value
-Measurement:ForceGradientPerLengthDrilling_Signal
-ForceGradientPerLengthDrilling_Signal HasDynamicValue ForceGradientPerLengthDrilling_Value
-ForceGradientPerLengthDrilling_Signal IsOfMeasurableQuantity ForceGradientPerLengthDrilling
+``` dwis
+DrillingSignal:ForceGradientPerLengthDrilling_Signal
+DrillingDataPoint:ForceGradientPerLengthDrilling_DataPoint
+ForceGradientPerLengthDrilling_DataPoint HasValue ForceGradientPerLengthDrilling_Signal
+ForceGradientPerLengthDrilling_DataPoint IsOfMeasurableQuantity ForceGradientPerLengthDrillingQuantity
+ForceGradientPerLengthDrilling_Signal HasUnitOfMeasure NewtonPerMetre
 ```
 ## ForceDrillingQuantity <!-- NOUN -->
 - Display name: ForceDrilling
@@ -1023,11 +1071,12 @@ The SI unit for **force** is: newton with the associated unit label $N$
 The meaningful precision of force in the drilling context is typically: 0,1 N
 
 - Examples: 
-``` dwis ForceDrilling-Value
-DynamicDrillingSignal:ForceDrilling_Value
-Measurement:ForceDrilling_Signal
-ForceDrilling_Signal HasDynamicValue ForceDrilling_Value
-ForceDrilling_Signal IsOfMeasurableQuantity ForceDrilling
+``` dwis
+DrillingSignal:ForceDrilling_Signal
+DrillingDataPoint:ForceDrilling_DataPoint
+ForceDrilling_DataPoint HasValue ForceDrilling_Signal
+ForceDrilling_DataPoint IsOfMeasurableQuantity ForceDrillingQuantity
+ForceDrilling_Signal HasUnitOfMeasure Newton
 ```
 ## HeatTransferCoefficientDrillingQuantity <!-- NOUN -->
 - Display name: HeatTransferCoefficientDrilling
@@ -1044,11 +1093,12 @@ The SI unit for **heat transfer coefficient** is: watt per square metre per kelv
 The meaningful precision of heat transfer coefficient in the drilling context is typically: 0,0001 W/m²/K
 
 - Examples: 
-``` dwis HeatTransferCoefficientDrilling-Value
-DynamicDrillingSignal:HeatTransferCoefficientDrilling_Value
-Measurement:HeatTransferCoefficientDrilling_Signal
-HeatTransferCoefficientDrilling_Signal HasDynamicValue HeatTransferCoefficientDrilling_Value
-HeatTransferCoefficientDrilling_Signal IsOfMeasurableQuantity HeatTransferCoefficientDrilling
+``` dwis
+DrillingSignal:HeatTransferCoefficientDrilling_Signal
+DrillingDataPoint:HeatTransferCoefficientDrilling_DataPoint
+HeatTransferCoefficientDrilling_DataPoint HasValue HeatTransferCoefficientDrilling_Signal
+HeatTransferCoefficientDrilling_DataPoint IsOfMeasurableQuantity HeatTransferCoefficientDrillingQuantity
+HeatTransferCoefficientDrilling_Signal HasUnitOfMeasure WattPerSquareMetrePerKelvin
 ```
 ## HydraulicConductivityDrillingQuantity <!-- NOUN -->
 - Display name: HydraulicConductivityDrilling
@@ -1065,11 +1115,12 @@ The SI unit for **velocity** is: metre per second with the associated unit label
 The meaningful precision of hydraulic conductivity in the drilling context is typically: 0,001 m/s
 
 - Examples: 
-``` dwis HydraulicConductivityDrilling-Value
-DynamicDrillingSignal:HydraulicConductivityDrilling_Value
-Measurement:HydraulicConductivityDrilling_Signal
-HydraulicConductivityDrilling_Signal HasDynamicValue HydraulicConductivityDrilling_Value
-HydraulicConductivityDrilling_Signal IsOfMeasurableQuantity HydraulicConductivityDrilling
+``` dwis
+DrillingSignal:HydraulicConductivityDrilling_Signal
+DrillingDataPoint:HydraulicConductivityDrilling_DataPoint
+HydraulicConductivityDrilling_DataPoint HasValue HydraulicConductivityDrilling_Signal
+HydraulicConductivityDrilling_DataPoint IsOfMeasurableQuantity HydraulicConductivityDrillingQuantity
+HydraulicConductivityDrilling_Signal HasUnitOfMeasure MetrePerSecond
 ```
 ## InterfacialTensionDrillingQuantity <!-- NOUN -->
 - Display name: InterfacialTensionDrilling
@@ -1086,11 +1137,12 @@ The SI unit for **interfacial tension** is: newton per metre with the associated
 The meaningful precision of interfacial tension in the drilling context is typically: 0,0001 N/m
 
 - Examples: 
-``` dwis InterfacialTensionDrilling-Value
-DynamicDrillingSignal:InterfacialTensionDrilling_Value
-Measurement:InterfacialTensionDrilling_Signal
-InterfacialTensionDrilling_Signal HasDynamicValue InterfacialTensionDrilling_Value
-InterfacialTensionDrilling_Signal IsOfMeasurableQuantity InterfacialTensionDrilling
+``` dwis
+DrillingSignal:InterfacialTensionDrilling_Signal
+DrillingDataPoint:InterfacialTensionDrilling_DataPoint
+InterfacialTensionDrilling_DataPoint HasValue InterfacialTensionDrilling_Signal
+InterfacialTensionDrilling_DataPoint IsOfMeasurableQuantity InterfacialTensionDrillingQuantity
+InterfacialTensionDrilling_Signal HasUnitOfMeasure NewtonPerMetre
 ```
 ## MassGradientPerLengthDrillingQuantity <!-- NOUN -->
 - Display name: MassGradientPerLengthDrilling
@@ -1107,11 +1159,12 @@ The SI unit for **mass gradient per length** is: kilogram per metre with the ass
 The meaningful precision of mass gradient per length in the drilling context is typically: 0,05 kg/m
 
 - Examples: 
-``` dwis MassGradientPerLengthDrilling-Value
-DynamicDrillingSignal:MassGradientPerLengthDrilling_Value
-Measurement:MassGradientPerLengthDrilling_Signal
-MassGradientPerLengthDrilling_Signal HasDynamicValue MassGradientPerLengthDrilling_Value
-MassGradientPerLengthDrilling_Signal IsOfMeasurableQuantity MassGradientPerLengthDrilling
+``` dwis
+DrillingSignal:MassGradientPerLengthDrilling_Signal
+DrillingDataPoint:MassGradientPerLengthDrilling_DataPoint
+MassGradientPerLengthDrilling_DataPoint HasValue MassGradientPerLengthDrilling_Signal
+MassGradientPerLengthDrilling_DataPoint IsOfMeasurableQuantity MassGradientPerLengthDrillingQuantity
+MassGradientPerLengthDrilling_Signal HasUnitOfMeasure KilogramPerMetre
 ```
 ## MassDrillingQuantity <!-- NOUN -->
 - Display name: MassDrilling
@@ -1128,11 +1181,12 @@ The SI unit for **mass** is: kilogram with the associated unit label $kg$
 The meaningful precision of mass density in the drilling context is typically: 0,1 kg
 
 - Examples: 
-``` dwis MassDrilling-Value
-DynamicDrillingSignal:MassDrilling_Value
-Measurement:MassDrilling_Signal
-MassDrilling_Signal HasDynamicValue MassDrilling_Value
-MassDrilling_Signal IsOfMeasurableQuantity MassDrilling
+``` dwis
+DrillingSignal:MassDrilling_Signal
+DrillingDataPoint:MassDrilling_DataPoint
+MassDrilling_DataPoint HasValue MassDrilling_Signal
+MassDrilling_DataPoint IsOfMeasurableQuantity MassDrillingQuantity
+MassDrilling_Signal HasUnitOfMeasure Kilogram
 ```
 ## MassRateDrillingQuantity <!-- NOUN -->
 - Display name: MassRateDrilling
@@ -1149,11 +1203,12 @@ The SI unit for **mass rate** is: kilogram per second with the associated unit l
 The meaningful precision of mass rate in the drilling context is typically: 0,0001 kg/s
 
 - Examples: 
-``` dwis MassRateDrilling-Value
-DynamicDrillingSignal:MassRateDrilling_Value
-Measurement:MassRateDrilling_Signal
-MassRateDrilling_Signal HasDynamicValue MassRateDrilling_Value
-MassRateDrilling_Signal IsOfMeasurableQuantity MassRateDrilling
+``` dwis
+DrillingSignal:MassRateDrilling_Signal
+DrillingDataPoint:MassRateDrilling_DataPoint
+MassRateDrilling_DataPoint HasValue MassRateDrilling_Signal
+MassRateDrilling_DataPoint IsOfMeasurableQuantity MassRateDrillingQuantity
+MassRateDrilling_Signal HasUnitOfMeasure KilogramPerSecond
 ```
 ## PlaneAngleDrillingQuantity <!-- NOUN -->
 - Display name: PlaneAngleDrilling
@@ -1170,11 +1225,12 @@ The SI unit for **plane angle** is: radian with the associated unit label $rad$
 The meaningful precision of plane angle in the drilling context is typically: 0,00017453292519943296 rad
 
 - Examples: 
-``` dwis PlaneAngleDrilling-Value
-DynamicDrillingSignal:PlaneAngleDrilling_Value
-Measurement:PlaneAngleDrilling_Signal
-PlaneAngleDrilling_Signal HasDynamicValue PlaneAngleDrilling_Value
-PlaneAngleDrilling_Signal IsOfMeasurableQuantity PlaneAngleDrilling
+``` dwis
+DrillingSignal:PlaneAngleDrilling_Signal
+DrillingDataPoint:PlaneAngleDrilling_DataPoint
+PlaneAngleDrilling_DataPoint HasValue PlaneAngleDrilling_Signal
+PlaneAngleDrilling_DataPoint IsOfMeasurableQuantity PlaneAngleDrillingQuantity
+PlaneAngleDrilling_Signal HasUnitOfMeasure Radian
 ```
 ## PowerDrillingQuantity <!-- NOUN -->
 - Display name: PowerDrilling
@@ -1191,11 +1247,12 @@ The SI unit for **power** is: watt with the associated unit label $W$
 The meaningful precision of power in the drilling context is typically: 0,1 W
 
 - Examples: 
-``` dwis PowerDrilling-Value
-DynamicDrillingSignal:PowerDrilling_Value
-Measurement:PowerDrilling_Signal
-PowerDrilling_Signal HasDynamicValue PowerDrilling_Value
-PowerDrilling_Signal IsOfMeasurableQuantity PowerDrilling
+``` dwis
+DrillingSignal:PowerDrilling_Signal
+DrillingDataPoint:PowerDrilling_DataPoint
+PowerDrilling_DataPoint HasValue PowerDrilling_Signal
+PowerDrilling_DataPoint IsOfMeasurableQuantity PowerDrillingQuantity
+PowerDrilling_Signal HasUnitOfMeasure Watt
 ```
 ## PressureGradientPerLengthDrillingQuantity <!-- NOUN -->
 - Display name: PressureGradientPerLengthDrilling
@@ -1212,11 +1269,12 @@ The SI unit for **pressure gradient per length** is: pascal per metre with the a
 The meaningful precision of pressure gradient per length in the drilling context is typically: 10000 Pa/m
 
 - Examples: 
-``` dwis PressureGradientPerLengthDrilling-Value
-DynamicDrillingSignal:PressureGradientPerLengthDrilling_Value
-Measurement:PressureGradientPerLengthDrilling_Signal
-PressureGradientPerLengthDrilling_Signal HasDynamicValue PressureGradientPerLengthDrilling_Value
-PressureGradientPerLengthDrilling_Signal IsOfMeasurableQuantity PressureGradientPerLengthDrilling
+``` dwis
+DrillingSignal:PressureGradientPerLengthDrilling_Signal
+DrillingDataPoint:PressureGradientPerLengthDrilling_DataPoint
+PressureGradientPerLengthDrilling_DataPoint HasValue PressureGradientPerLengthDrilling_Signal
+PressureGradientPerLengthDrilling_DataPoint IsOfMeasurableQuantity PressureGradientPerLengthDrillingQuantity
+PressureGradientPerLengthDrilling_Signal HasUnitOfMeasure PascalPerMetre
 ```
 ## PressureLossConstantDrillingQuantity <!-- NOUN -->
 - Display name: PressureLossConstantDrilling
@@ -1233,11 +1291,12 @@ The SI unit for **pressure loss constant** is: pressure loss constant SI with th
 The meaningful precision of pressure loss constant in the drilling context is typically: 0,1 (m³/s)²•(kg/m³)/Pa
 
 - Examples: 
-``` dwis PressureLossConstantDrilling-Value
-DynamicDrillingSignal:PressureLossConstantDrilling_Value
-Measurement:PressureLossConstantDrilling_Signal
-PressureLossConstantDrilling_Signal HasDynamicValue PressureLossConstantDrilling_Value
-PressureLossConstantDrilling_Signal IsOfMeasurableQuantity PressureLossConstantDrilling
+``` dwis
+DrillingSignal:PressureLossConstantDrilling_Signal
+DrillingDataPoint:PressureLossConstantDrilling_DataPoint
+PressureLossConstantDrilling_DataPoint HasValue PressureLossConstantDrilling_Signal
+PressureLossConstantDrilling_DataPoint IsOfMeasurableQuantity PressureLossConstantDrillingQuantity
+PressureLossConstantDrilling_Signal HasUnitOfMeasure PressureLossConstantSi
 ```
 ## PressureDrillingQuantity <!-- NOUN -->
 - Display name: PressureDrilling
@@ -1254,11 +1313,12 @@ The SI unit for **pressure** is: pascal with the associated unit label $Pa$
 The meaningful precision of pressure in the drilling context is typically: 10000 Pa
 
 - Examples: 
-``` dwis PressureDrilling-Value
-DynamicDrillingSignal:PressureDrilling_Value
-Measurement:PressureDrilling_Signal
-PressureDrilling_Signal HasDynamicValue PressureDrilling_Value
-PressureDrilling_Signal IsOfMeasurableQuantity PressureDrilling
+``` dwis
+DrillingSignal:PressureDrilling_Signal
+DrillingDataPoint:PressureDrilling_DataPoint
+PressureDrilling_DataPoint HasValue PressureDrilling_Signal
+PressureDrilling_DataPoint IsOfMeasurableQuantity PressureDrillingQuantity
+PressureDrilling_Signal HasUnitOfMeasure Pascal
 ```
 ## RandomWalkDrillingQuantity <!-- NOUN -->
 - Display name: RandomWalkDrilling
@@ -1275,11 +1335,12 @@ The SI unit for **random walk** is: radian per square root second with the assoc
 The meaningful precision of random walk in the drilling context is typically: 1E-05 rad/√s
 
 - Examples: 
-``` dwis RandomWalkDrilling-Value
-DynamicDrillingSignal:RandomWalkDrilling_Value
-Measurement:RandomWalkDrilling_Signal
-RandomWalkDrilling_Signal HasDynamicValue RandomWalkDrilling_Value
-RandomWalkDrilling_Signal IsOfMeasurableQuantity RandomWalkDrilling
+``` dwis
+DrillingSignal:RandomWalkDrilling_Signal
+DrillingDataPoint:RandomWalkDrilling_DataPoint
+RandomWalkDrilling_DataPoint HasValue RandomWalkDrilling_Signal
+RandomWalkDrilling_DataPoint IsOfMeasurableQuantity RandomWalkDrillingQuantity
+RandomWalkDrilling_Signal HasUnitOfMeasure RadianPerSquareRootSecond
 ```
 ## RotationalFrequencyRateOfChangeDrillingQuantity <!-- NOUN -->
 - Display name: RotationalFrequencyRateOfChangeDrilling
@@ -1298,11 +1359,12 @@ The meaningful precision of rotational frequency is typically: 0,016666666666666
 The meaningful precision of rotational frequency rate of change in the drilling context is typically: 0,016666666666666666 Hz/s
 
 - Examples: 
-``` dwis RotationalFrequencyRateOfChangeDrilling-Value
-DynamicDrillingSignal:RotationalFrequencyRateOfChangeDrilling_Value
-Measurement:RotationalFrequencyRateOfChangeDrilling_Signal
-RotationalFrequencyRateOfChangeDrilling_Signal HasDynamicValue RotationalFrequencyRateOfChangeDrilling_Value
-RotationalFrequencyRateOfChangeDrilling_Signal IsOfMeasurableQuantity RotationalFrequencyRateOfChangeDrilling
+``` dwis
+DrillingSignal:RotationalFrequencyRateOfChangeDrilling_Signal
+DrillingDataPoint:RotationalFrequencyRateOfChangeDrilling_DataPoint
+RotationalFrequencyRateOfChangeDrilling_DataPoint HasValue RotationalFrequencyRateOfChangeDrilling_Signal
+RotationalFrequencyRateOfChangeDrilling_DataPoint IsOfMeasurableQuantity RotationalFrequencyRateOfChangeDrillingQuantity
+RotationalFrequencyRateOfChangeDrilling_Signal HasUnitOfMeasure HertzPerSecond
 ```
 ## IsobaricSpecificHeatCapacityDrillingQuantity <!-- NOUN -->
 - Display name: IsobaricSpecificHeatCapacityDrilling
@@ -1319,11 +1381,12 @@ The SI unit for **isobaric specific heat capacity** is: joule per kilogram kelvi
 The meaningful precision of specific heat capacity in the drilling context is typically: 0,01 J/kg•K
 
 - Examples: 
-``` dwis IsobaricSpecificHeatCapacityDrilling-Value
-DynamicDrillingSignal:IsobaricSpecificHeatCapacityDrilling_Value
-Measurement:IsobaricSpecificHeatCapacityDrilling_Signal
-IsobaricSpecificHeatCapacityDrilling_Signal HasDynamicValue IsobaricSpecificHeatCapacityDrilling_Value
-IsobaricSpecificHeatCapacityDrilling_Signal IsOfMeasurableQuantity IsobaricSpecificHeatCapacityDrilling
+``` dwis
+DrillingSignal:IsobaricSpecificHeatCapacityDrilling_Signal
+DrillingDataPoint:IsobaricSpecificHeatCapacityDrilling_DataPoint
+IsobaricSpecificHeatCapacityDrilling_DataPoint HasValue IsobaricSpecificHeatCapacityDrilling_Signal
+IsobaricSpecificHeatCapacityDrilling_DataPoint IsOfMeasurableQuantity IsobaricSpecificHeatCapacityDrillingQuantity
+IsobaricSpecificHeatCapacityDrilling_Signal HasUnitOfMeasure JoulePerKilogramKelvin
 ```
 ## IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity <!-- NOUN -->
 - Display name: IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling
@@ -1340,11 +1403,12 @@ The SI unit for **isobaric specific heat capacity gradient per temperature** is:
 The meaningful precision of isobaric specific heat capacity gradient per temperature in the drilling context is typically: 0,01 J/kg•K²
 
 - Examples: 
-``` dwis IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling-Value
-DynamicDrillingSignal:IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_Value
-Measurement:IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_Signal
-IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_Signal HasDynamicValue IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_Value
-IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_Signal IsOfMeasurableQuantity IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling
+``` dwis
+DrillingSignal:IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_Signal
+DrillingDataPoint:IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_DataPoint
+IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_DataPoint HasValue IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_Signal
+IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_DataPoint IsOfMeasurableQuantity IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity
+IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_Signal HasUnitOfMeasure JoulePerKilogramSquaredKelvin
 ```
 ## StickDurationDrillingQuantity <!-- NOUN -->
 - Display name: StickDurationDrilling
@@ -1361,11 +1425,12 @@ The SI unit for **time** is: second with the associated unit label $s$
 The meaningful precision of stick duration in the drilling context is typically: 0,001 s
 
 - Examples: 
-``` dwis StickDurationDrilling-Value
-DynamicDrillingSignal:StickDurationDrilling_Value
-Measurement:StickDurationDrilling_Signal
-StickDurationDrilling_Signal HasDynamicValue StickDurationDrilling_Value
-StickDurationDrilling_Signal IsOfMeasurableQuantity StickDurationDrilling
+``` dwis
+DrillingSignal:StickDurationDrilling_Signal
+DrillingDataPoint:StickDurationDrilling_DataPoint
+StickDurationDrilling_DataPoint HasValue StickDurationDrilling_Signal
+StickDurationDrilling_DataPoint IsOfMeasurableQuantity StickDurationDrillingQuantity
+StickDurationDrilling_Signal HasUnitOfMeasure Second
 ```
 ## ReciprocalLengthSurveyInstrumentDrillingQuantity <!-- NOUN -->
 - Display name: ReciprocalLengthSurveyInstrumentDrilling
@@ -1382,11 +1447,12 @@ The SI unit for **wave number** is: reciprocal metre with the associated unit la
 The meaningful precision of reciprocal length related to survey instrument performance models in the drilling context is typically: 1E-08 1/m
 
 - Examples: 
-``` dwis ReciprocalLengthSurveyInstrumentDrilling-Value
-DynamicDrillingSignal:ReciprocalLengthSurveyInstrumentDrilling_Value
-Measurement:ReciprocalLengthSurveyInstrumentDrilling_Signal
-ReciprocalLengthSurveyInstrumentDrilling_Signal HasDynamicValue ReciprocalLengthSurveyInstrumentDrilling_Value
-ReciprocalLengthSurveyInstrumentDrilling_Signal IsOfMeasurableQuantity ReciprocalLengthSurveyInstrumentDrilling
+``` dwis
+DrillingSignal:ReciprocalLengthSurveyInstrumentDrilling_Signal
+DrillingDataPoint:ReciprocalLengthSurveyInstrumentDrilling_DataPoint
+ReciprocalLengthSurveyInstrumentDrilling_DataPoint HasValue ReciprocalLengthSurveyInstrumentDrilling_Signal
+ReciprocalLengthSurveyInstrumentDrilling_DataPoint IsOfMeasurableQuantity ReciprocalLengthSurveyInstrumentDrillingQuantity
+ReciprocalLengthSurveyInstrumentDrilling_Signal HasUnitOfMeasure ReciprocalMetre
 ```
 ## TemperatureGradientPerLengthDrillingQuantity <!-- NOUN -->
 - Display name: TemperatureGradientPerLengthDrilling
@@ -1403,11 +1469,12 @@ The SI unit for **temperature gradient per length** is: kelvin per metre with th
 The meaningful precision of temperature gradient per length in the drilling context is typically: 0,001 K/m
 
 - Examples: 
-``` dwis TemperatureGradientPerLengthDrilling-Value
-DynamicDrillingSignal:TemperatureGradientPerLengthDrilling_Value
-Measurement:TemperatureGradientPerLengthDrilling_Signal
-TemperatureGradientPerLengthDrilling_Signal HasDynamicValue TemperatureGradientPerLengthDrilling_Value
-TemperatureGradientPerLengthDrilling_Signal IsOfMeasurableQuantity TemperatureGradientPerLengthDrilling
+``` dwis
+DrillingSignal:TemperatureGradientPerLengthDrilling_Signal
+DrillingDataPoint:TemperatureGradientPerLengthDrilling_DataPoint
+TemperatureGradientPerLengthDrilling_DataPoint HasValue TemperatureGradientPerLengthDrilling_Signal
+TemperatureGradientPerLengthDrilling_DataPoint IsOfMeasurableQuantity TemperatureGradientPerLengthDrillingQuantity
+TemperatureGradientPerLengthDrilling_Signal HasUnitOfMeasure KelvinPerMetre
 ```
 ## TemperatureDrillingQuantity <!-- NOUN -->
 - Display name: TemperatureDrilling
@@ -1424,11 +1491,12 @@ The SI unit for **temperature** is: kelvin with the associated unit label $K$
 The meaningful precision of temperature in the drilling context is typically: 0,01 K
 
 - Examples: 
-``` dwis TemperatureDrilling-Value
-DynamicDrillingSignal:TemperatureDrilling_Value
-Measurement:TemperatureDrilling_Signal
-TemperatureDrilling_Signal HasDynamicValue TemperatureDrilling_Value
-TemperatureDrilling_Signal IsOfMeasurableQuantity TemperatureDrilling
+``` dwis
+DrillingSignal:TemperatureDrilling_Signal
+DrillingDataPoint:TemperatureDrilling_DataPoint
+TemperatureDrilling_DataPoint HasValue TemperatureDrilling_Signal
+TemperatureDrilling_DataPoint IsOfMeasurableQuantity TemperatureDrillingQuantity
+TemperatureDrilling_Signal HasUnitOfMeasure Kelvin
 ```
 ## TensionDrillingQuantity <!-- NOUN -->
 - Display name: TensionDrilling
@@ -1443,11 +1511,12 @@ $$[LMT^{-2}]$$.
 The meaningful precision of tension in the drilling context is typically: 100 N
 
 - Examples: 
-``` dwis TensionDrilling-Value
-DynamicDrillingSignal:TensionDrilling_Value
-Measurement:TensionDrilling_Signal
-TensionDrilling_Signal HasDynamicValue TensionDrilling_Value
-TensionDrilling_Signal IsOfMeasurableQuantity TensionDrilling
+``` dwis
+DrillingSignal:TensionDrilling_Signal
+DrillingDataPoint:TensionDrilling_DataPoint
+TensionDrilling_DataPoint HasValue TensionDrilling_Signal
+TensionDrilling_DataPoint IsOfMeasurableQuantity TensionDrillingQuantity
+TensionDrilling_Signal HasUnitOfMeasure Newton
 ```
 ## ThermalConductivityDrillingQuantity <!-- NOUN -->
 - Display name: ThermalConductivityDrilling
@@ -1464,11 +1533,12 @@ The SI unit for **thermal conductivity** is: watt per metre kelvin with the asso
 The meaningful precision of thermal conductivity in the drilling context is typically: 0,01 W/m•K
 
 - Examples: 
-``` dwis ThermalConductivityDrilling-Value
-DynamicDrillingSignal:ThermalConductivityDrilling_Value
-Measurement:ThermalConductivityDrilling_Signal
-ThermalConductivityDrilling_Signal HasDynamicValue ThermalConductivityDrilling_Value
-ThermalConductivityDrilling_Signal IsOfMeasurableQuantity ThermalConductivityDrilling
+``` dwis
+DrillingSignal:ThermalConductivityDrilling_Signal
+DrillingDataPoint:ThermalConductivityDrilling_DataPoint
+ThermalConductivityDrilling_DataPoint HasValue ThermalConductivityDrilling_Signal
+ThermalConductivityDrilling_DataPoint IsOfMeasurableQuantity ThermalConductivityDrillingQuantity
+ThermalConductivityDrilling_Signal HasUnitOfMeasure WattPerMetreKelvin
 ```
 ## TorqueDrillingQuantity <!-- NOUN -->
 - Display name: TorqueDrilling
@@ -1485,11 +1555,12 @@ The SI unit for **torque** is: newton metre with the associated unit label $N \c
 The meaningful precision of torque in the drilling context is typically: 0,1 N•m
 
 - Examples: 
-``` dwis TorqueDrilling-Value
-DynamicDrillingSignal:TorqueDrilling_Value
-Measurement:TorqueDrilling_Signal
-TorqueDrilling_Signal HasDynamicValue TorqueDrilling_Value
-TorqueDrilling_Signal IsOfMeasurableQuantity TorqueDrilling
+``` dwis
+DrillingSignal:TorqueDrilling_Signal
+DrillingDataPoint:TorqueDrilling_DataPoint
+TorqueDrilling_DataPoint HasValue TorqueDrilling_Signal
+TorqueDrilling_DataPoint IsOfMeasurableQuantity TorqueDrillingQuantity
+TorqueDrilling_Signal HasUnitOfMeasure NewtonMetre
 ```
 ## VolumeDrillingQuantity <!-- NOUN -->
 - Display name: VolumeDrilling
@@ -1506,11 +1577,12 @@ The SI unit for **volume** is: cubic metre with the associated unit label $m^{3}
 The meaningful precision of volume in the drilling context is typically: 0,0001 m³
 
 - Examples: 
-``` dwis VolumeDrilling-Value
-DynamicDrillingSignal:VolumeDrilling_Value
-Measurement:VolumeDrilling_Signal
-VolumeDrilling_Signal HasDynamicValue VolumeDrilling_Value
-VolumeDrilling_Signal IsOfMeasurableQuantity VolumeDrilling
+``` dwis
+DrillingSignal:VolumeDrilling_Signal
+DrillingDataPoint:VolumeDrilling_DataPoint
+VolumeDrilling_DataPoint HasValue VolumeDrilling_Signal
+VolumeDrilling_DataPoint IsOfMeasurableQuantity VolumeDrillingQuantity
+VolumeDrilling_Signal HasUnitOfMeasure CubicMetre
 ```
 ## VolumetricFlowRateOfChangeDrillingQuantity <!-- NOUN -->
 - Display name: VolumetricFlowRateOfChangeDrilling
@@ -1527,11 +1599,12 @@ The SI unit for **volumetric flow Rate rate of change** is: cubic metre per seco
 The meaningful precision of volumetric flow rate of change in the drilling context is typically: 1E-06 m³/s²
 
 - Examples: 
-``` dwis VolumetricFlowRateOfChangeDrilling-Value
-DynamicDrillingSignal:VolumetricFlowRateOfChangeDrilling_Value
-Measurement:VolumetricFlowRateOfChangeDrilling_Signal
-VolumetricFlowRateOfChangeDrilling_Signal HasDynamicValue VolumetricFlowRateOfChangeDrilling_Value
-VolumetricFlowRateOfChangeDrilling_Signal IsOfMeasurableQuantity VolumetricFlowRateOfChangeDrilling
+``` dwis
+DrillingSignal:VolumetricFlowRateOfChangeDrilling_Signal
+DrillingDataPoint:VolumetricFlowRateOfChangeDrilling_DataPoint
+VolumetricFlowRateOfChangeDrilling_DataPoint HasValue VolumetricFlowRateOfChangeDrilling_Signal
+VolumetricFlowRateOfChangeDrilling_DataPoint IsOfMeasurableQuantity VolumetricFlowRateOfChangeDrillingQuantity
+VolumetricFlowRateOfChangeDrilling_Signal HasUnitOfMeasure CubicMetrePerSecondSquared
 ```
 ## VolumetricFlowrateDrillingQuantity <!-- NOUN -->
 - Display name: VolumetricFlowrateDrilling
@@ -1548,11 +1621,12 @@ The SI unit for **volumetric flow rate** is: cubic metre per second with the ass
 The meaningful precision of volumetric flowrate in the drilling context is typically: 0,0001 ft³/s
 
 - Examples: 
-``` dwis VolumetricFlowrateDrilling-Value
-DynamicDrillingSignal:VolumetricFlowrateDrilling_Value
-Measurement:VolumetricFlowrateDrilling_Signal
-VolumetricFlowrateDrilling_Signal HasDynamicValue VolumetricFlowrateDrilling_Value
-VolumetricFlowrateDrilling_Signal IsOfMeasurableQuantity VolumetricFlowrateDrilling
+``` dwis
+DrillingSignal:VolumetricFlowrateDrilling_Signal
+DrillingDataPoint:VolumetricFlowrateDrilling_DataPoint
+VolumetricFlowrateDrilling_DataPoint HasValue VolumetricFlowrateDrilling_Signal
+VolumetricFlowrateDrilling_DataPoint IsOfMeasurableQuantity VolumetricFlowrateDrillingQuantity
+VolumetricFlowrateDrilling_Signal HasUnitOfMeasure CubicMetrePerSecond
 ```
 ## FormationResistivityDrillingQuantity <!-- NOUN -->
 - Display name: FormationResistivityDrilling
@@ -1569,11 +1643,12 @@ The SI unit for **electric resistivity** is: ohm metre with the associated unit 
 The meaningful precision of formation electric resistivity in the drilling context is typically: 0,01 Ω•m
 
 - Examples: 
-``` dwis FormationResistivityDrilling-Value
-DynamicDrillingSignal:FormationResistivityDrilling_Value
-Measurement:FormationResistivityDrilling_Signal
-FormationResistivityDrilling_Signal HasDynamicValue FormationResistivityDrilling_Value
-FormationResistivityDrilling_Signal IsOfMeasurableQuantity FormationResistivityDrilling
+``` dwis
+DrillingSignal:FormationResistivityDrilling_Signal
+DrillingDataPoint:FormationResistivityDrilling_DataPoint
+FormationResistivityDrilling_DataPoint HasValue FormationResistivityDrilling_Signal
+FormationResistivityDrilling_DataPoint IsOfMeasurableQuantity FormationResistivityDrillingQuantity
+FormationResistivityDrilling_Signal HasUnitOfMeasure OhmMetre
 ```
 ## FormationStrengthDrillingQuantity <!-- NOUN -->
 - Display name: FormationStrengthDrilling
@@ -1590,11 +1665,12 @@ The SI unit for **material strength** is: pascal with the associated unit label 
 The meaningful precision of formation strength in the drilling context is typically: 10000 Pa
 
 - Examples: 
-``` dwis FormationStrengthDrilling-Value
-DynamicDrillingSignal:FormationStrengthDrilling_Value
-Measurement:FormationStrengthDrilling_Signal
-FormationStrengthDrilling_Signal HasDynamicValue FormationStrengthDrilling_Value
-FormationStrengthDrilling_Signal IsOfMeasurableQuantity FormationStrengthDrilling
+``` dwis
+DrillingSignal:FormationStrengthDrilling_Signal
+DrillingDataPoint:FormationStrengthDrilling_DataPoint
+FormationStrengthDrilling_DataPoint HasValue FormationStrengthDrilling_Signal
+FormationStrengthDrilling_DataPoint IsOfMeasurableQuantity FormationStrengthDrillingQuantity
+FormationStrengthDrilling_Signal HasUnitOfMeasure Pascal
 ```
 ## GammaRayIndexDrillingQuantity <!-- NOUN -->
 - Display name: GammaRayIndexDrilling
@@ -1611,11 +1687,12 @@ Since the Gamma Ray API is a measure of gamma radiation intensity, let's break d
 The meaningful precision of gamma ray in the drilling context is typically: 0,001 
 
 - Examples: 
-``` dwis GammaRayIndexDrilling-Value
-DynamicDrillingSignal:GammaRayIndexDrilling_Value
-Measurement:GammaRayIndexDrilling_Signal
-GammaRayIndexDrilling_Signal HasDynamicValue GammaRayIndexDrilling_Value
-GammaRayIndexDrilling_Signal IsOfMeasurableQuantity GammaRayIndexDrilling
+``` dwis
+DrillingSignal:GammaRayIndexDrilling_Signal
+DrillingDataPoint:GammaRayIndexDrilling_DataPoint
+GammaRayIndexDrilling_DataPoint HasValue GammaRayIndexDrilling_Signal
+GammaRayIndexDrilling_DataPoint IsOfMeasurableQuantity GammaRayIndexDrillingQuantity
+GammaRayIndexDrilling_Signal HasUnitOfMeasure Dimensionless
 ```
 ## GasShowDrillingQuantity <!-- NOUN -->
 - Display name: GasShowDrilling
@@ -1629,11 +1706,12 @@ A proportion is dimensionless:
 The meaningful precision of gas show in the drilling context is typically: 1E-07 
 
 - Examples: 
-``` dwis GasShowDrilling-Value
-DynamicDrillingSignal:GasShowDrilling_Value
-Measurement:GasShowDrilling_Signal
-GasShowDrilling_Signal HasDynamicValue GasShowDrilling_Value
-GasShowDrilling_Signal IsOfMeasurableQuantity GasShowDrilling
+``` dwis
+DrillingSignal:GasShowDrilling_Signal
+DrillingDataPoint:GasShowDrilling_DataPoint
+GasShowDrilling_DataPoint HasValue GasShowDrilling_Signal
+GasShowDrilling_DataPoint IsOfMeasurableQuantity GasShowDrillingQuantity
+GasShowDrilling_Signal HasUnitOfMeasure Proportion
 ```
 ## GasVolumetricFlowRateDrillingQuantity <!-- NOUN -->
 - Display name: GasVolumetricFlowRateDrilling
@@ -1650,11 +1728,12 @@ The SI unit for **volumetric flow rate** is: cubic metre per second with the ass
 The meaningful precision of gas volumetric flowrate in the drilling context is typically: 0,01 m³/s
 
 - Examples: 
-``` dwis GasVolumetricFlowRateDrilling-Value
-DynamicDrillingSignal:GasVolumetricFlowRateDrilling_Value
-Measurement:GasVolumetricFlowRateDrilling_Signal
-GasVolumetricFlowRateDrilling_Signal HasDynamicValue GasVolumetricFlowRateDrilling_Value
-GasVolumetricFlowRateDrilling_Signal IsOfMeasurableQuantity GasVolumetricFlowRateDrilling
+``` dwis
+DrillingSignal:GasVolumetricFlowRateDrilling_Signal
+DrillingDataPoint:GasVolumetricFlowRateDrilling_DataPoint
+GasVolumetricFlowRateDrilling_DataPoint HasValue GasVolumetricFlowRateDrilling_Signal
+GasVolumetricFlowRateDrilling_DataPoint IsOfMeasurableQuantity GasVolumetricFlowRateDrillingQuantity
+GasVolumetricFlowRateDrilling_Signal HasUnitOfMeasure CubicMetrePerSecond
 ```
 ## HeightDrillingQuantity <!-- NOUN -->
 - Display name: HeightDrilling
@@ -1671,11 +1750,12 @@ The SI unit for **length** is: metre with the associated unit label $m$
 The meaningful precision of height in the drilling context is typically: 0,001 m
 
 - Examples: 
-``` dwis HeightDrilling-Value
-DynamicDrillingSignal:HeightDrilling_Value
-Measurement:HeightDrilling_Signal
-HeightDrilling_Signal HasDynamicValue HeightDrilling_Value
-HeightDrilling_Signal IsOfMeasurableQuantity HeightDrilling
+``` dwis
+DrillingSignal:HeightDrilling_Signal
+DrillingDataPoint:HeightDrilling_DataPoint
+HeightDrilling_DataPoint HasValue HeightDrilling_Signal
+HeightDrilling_DataPoint IsOfMeasurableQuantity HeightDrillingQuantity
+HeightDrilling_Signal HasUnitOfMeasure Metre
 ```
 ## HookLoadDrillingQuantity <!-- NOUN -->
 - Display name: HookLoadDrilling
@@ -1692,11 +1772,12 @@ The SI unit for **mass** is: kilogram with the associated unit label $kg$
 The meaningful precision of hook load in the drilling context is typically: 100 kg
 
 - Examples: 
-``` dwis HookLoadDrilling-Value
-DynamicDrillingSignal:HookLoadDrilling_Value
-Measurement:HookLoadDrilling_Signal
-HookLoadDrilling_Signal HasDynamicValue HookLoadDrilling_Value
-HookLoadDrilling_Signal IsOfMeasurableQuantity HookLoadDrilling
+``` dwis
+DrillingSignal:HookLoadDrilling_Signal
+DrillingDataPoint:HookLoadDrilling_DataPoint
+HookLoadDrilling_DataPoint HasValue HookLoadDrilling_Signal
+HookLoadDrilling_DataPoint IsOfMeasurableQuantity HookLoadDrillingQuantity
+HookLoadDrilling_Signal HasUnitOfMeasure Kilogram
 ```
 ## NozzleDiameterDrillingQuantity <!-- NOUN -->
 - Display name: NozzleDiameterDrilling
@@ -1715,11 +1796,12 @@ The meaningful precision of small length is typically: 0,0001 m
 The meaningful precision of nozzle diameter in the drilling context is typically: 0,0001 m
 
 - Examples: 
-``` dwis NozzleDiameterDrilling-Value
-DynamicDrillingSignal:NozzleDiameterDrilling_Value
-Measurement:NozzleDiameterDrilling_Signal
-NozzleDiameterDrilling_Signal HasDynamicValue NozzleDiameterDrilling_Value
-NozzleDiameterDrilling_Signal IsOfMeasurableQuantity NozzleDiameterDrilling
+``` dwis
+DrillingSignal:NozzleDiameterDrilling_Signal
+DrillingDataPoint:NozzleDiameterDrilling_DataPoint
+NozzleDiameterDrilling_DataPoint HasValue NozzleDiameterDrilling_Signal
+NozzleDiameterDrilling_DataPoint IsOfMeasurableQuantity NozzleDiameterDrillingQuantity
+NozzleDiameterDrilling_Signal HasUnitOfMeasure Metre
 ```
 ## SurfacePoreDrillingQuantity <!-- NOUN -->
 - Display name: SurfacePoreDrilling
@@ -1736,11 +1818,12 @@ The SI unit for **area** is: square metre with the associated unit label $m^{2}$
 The meaningful precision of pore surface in the drilling context is typically: 1E-13 m²
 
 - Examples: 
-``` dwis SurfacePoreDrilling-Value
-DynamicDrillingSignal:SurfacePoreDrilling_Value
-Measurement:SurfacePoreDrilling_Signal
-SurfacePoreDrilling_Signal HasDynamicValue SurfacePoreDrilling_Value
-SurfacePoreDrilling_Signal IsOfMeasurableQuantity SurfacePoreDrilling
+``` dwis
+DrillingSignal:SurfacePoreDrilling_Signal
+DrillingDataPoint:SurfacePoreDrilling_DataPoint
+SurfacePoreDrilling_DataPoint HasValue SurfacePoreDrilling_Signal
+SurfacePoreDrilling_DataPoint IsOfMeasurableQuantity SurfacePoreDrillingQuantity
+SurfacePoreDrilling_Signal HasUnitOfMeasure SquareMetre
 ```
 ## PositionDrillingQuantity <!-- NOUN -->
 - Display name: PositionDrilling
@@ -1757,11 +1840,12 @@ The SI unit for **length** is: metre with the associated unit label $m$
 The meaningful precision of position in the drilling context is typically: 0,01 m
 
 - Examples: 
-``` dwis PositionDrilling-Value
-DynamicDrillingSignal:PositionDrilling_Value
-Measurement:PositionDrilling_Signal
-PositionDrilling_Signal HasDynamicValue PositionDrilling_Value
-PositionDrilling_Signal IsOfMeasurableQuantity PositionDrilling
+``` dwis
+DrillingSignal:PositionDrilling_Signal
+DrillingDataPoint:PositionDrilling_DataPoint
+PositionDrilling_DataPoint HasValue PositionDrilling_Signal
+PositionDrilling_DataPoint IsOfMeasurableQuantity PositionDrillingQuantity
+PositionDrilling_Signal HasUnitOfMeasure Metre
 ```
 ## RateOfPenetrationDrillingQuantity <!-- NOUN -->
 - Display name: RateOfPenetrationDrilling
@@ -1778,11 +1862,12 @@ The SI unit for **velocity** is: metre per second with the associated unit label
 The meaningful precision of rate of penetration in the drilling context is typically: 2,77778E-05 m/min
 
 - Examples: 
-``` dwis RateOfPenetrationDrilling-Value
-DynamicDrillingSignal:RateOfPenetrationDrilling_Value
-Measurement:RateOfPenetrationDrilling_Signal
-RateOfPenetrationDrilling_Signal HasDynamicValue RateOfPenetrationDrilling_Value
-RateOfPenetrationDrilling_Signal IsOfMeasurableQuantity RateOfPenetrationDrilling
+``` dwis
+DrillingSignal:RateOfPenetrationDrilling_Signal
+DrillingDataPoint:RateOfPenetrationDrilling_DataPoint
+RateOfPenetrationDrilling_DataPoint HasValue RateOfPenetrationDrilling_Signal
+RateOfPenetrationDrilling_DataPoint IsOfMeasurableQuantity RateOfPenetrationDrillingQuantity
+RateOfPenetrationDrilling_Signal HasUnitOfMeasure MetrePerSecond
 ```
 ## WeightOnBitDrillingQuantity <!-- NOUN -->
 - Display name: WeightOnBitDrilling
@@ -1799,11 +1884,12 @@ The SI unit for **mass** is: kilogram with the associated unit label $kg$
 The meaningful precision of weight on bit in the drilling context is typically: 10 kg
 
 - Examples: 
-``` dwis WeightOnBitDrilling-Value
-DynamicDrillingSignal:WeightOnBitDrilling_Value
-Measurement:WeightOnBitDrilling_Signal
-WeightOnBitDrilling_Signal HasDynamicValue WeightOnBitDrilling_Value
-WeightOnBitDrilling_Signal IsOfMeasurableQuantity WeightOnBitDrilling
+``` dwis
+DrillingSignal:WeightOnBitDrilling_Signal
+DrillingDataPoint:WeightOnBitDrilling_DataPoint
+WeightOnBitDrilling_DataPoint HasValue WeightOnBitDrilling_Signal
+WeightOnBitDrilling_DataPoint IsOfMeasurableQuantity WeightOnBitDrillingQuantity
+WeightOnBitDrilling_Signal HasUnitOfMeasure Kilogram
 ```
 ## ThermalConductivityGradientPerTemperatureDrillingQuantity <!-- NOUN -->
 - Display name: ThermalConductivityGradientPerTemperatureDrilling
@@ -1820,11 +1906,12 @@ The SI unit for **thermal conductivity gradient per temperature** is: watt per m
 The meaningful precision of thermal conductivity gradient per temperature in the drilling context is typically: 0,01 (W/(m•K))/K
 
 - Examples: 
-``` dwis ThermalConductivityGradientPerTemperatureDrilling-Value
-DynamicDrillingSignal:ThermalConductivityGradientPerTemperatureDrilling_Value
-Measurement:ThermalConductivityGradientPerTemperatureDrilling_Signal
-ThermalConductivityGradientPerTemperatureDrilling_Signal HasDynamicValue ThermalConductivityGradientPerTemperatureDrilling_Value
-ThermalConductivityGradientPerTemperatureDrilling_Signal IsOfMeasurableQuantity ThermalConductivityGradientPerTemperatureDrilling
+``` dwis
+DrillingSignal:ThermalConductivityGradientPerTemperatureDrilling_Signal
+DrillingDataPoint:ThermalConductivityGradientPerTemperatureDrilling_DataPoint
+ThermalConductivityGradientPerTemperatureDrilling_DataPoint HasValue ThermalConductivityGradientPerTemperatureDrilling_Signal
+ThermalConductivityGradientPerTemperatureDrilling_DataPoint IsOfMeasurableQuantity ThermalConductivityGradientPerTemperatureDrillingQuantity
+ThermalConductivityGradientPerTemperatureDrilling_Signal HasUnitOfMeasure WattPerMetreKelvinPerKelvin
 ```
 ## TorqueGradientPerLengthDrillingQuantity <!-- NOUN -->
 - Display name: TorqueGradientPerLengthDrilling
@@ -1841,11 +1928,12 @@ The SI unit for **torque gradient per length** is: newton metre per metre with t
 The meaningful precision of torque gradient per length in the drilling context is typically: 1 N•m/m
 
 - Examples: 
-``` dwis TorqueGradientPerLengthDrilling-Value
-DynamicDrillingSignal:TorqueGradientPerLengthDrilling_Value
-Measurement:TorqueGradientPerLengthDrilling_Signal
-TorqueGradientPerLengthDrilling_Signal HasDynamicValue TorqueGradientPerLengthDrilling_Value
-TorqueGradientPerLengthDrilling_Signal IsOfMeasurableQuantity TorqueGradientPerLengthDrilling
+``` dwis
+DrillingSignal:TorqueGradientPerLengthDrilling_Signal
+DrillingDataPoint:TorqueGradientPerLengthDrilling_DataPoint
+TorqueGradientPerLengthDrilling_DataPoint HasValue TorqueGradientPerLengthDrilling_Signal
+TorqueGradientPerLengthDrilling_DataPoint IsOfMeasurableQuantity TorqueGradientPerLengthDrillingQuantity
+TorqueGradientPerLengthDrilling_Signal HasUnitOfMeasure NewtonMetrePerMetre
 ```
 ## PorousMediumPermeabilityDrillingQuantity <!-- NOUN -->
 - Display name: PorousMediumPermeabilityDrilling
@@ -1862,9 +1950,10 @@ The SI unit for **porous medium permeability** is: square metre with the associa
 The meaningful precision of permeability in the drilling context is typically: 1E-10 m²
 
 - Examples: 
-``` dwis PorousMediumPermeabilityDrilling-Value
-DynamicDrillingSignal:PorousMediumPermeabilityDrilling_Value
-Measurement:PorousMediumPermeabilityDrilling_Signal
-PorousMediumPermeabilityDrilling_Signal HasDynamicValue PorousMediumPermeabilityDrilling_Value
-PorousMediumPermeabilityDrilling_Signal IsOfMeasurableQuantity PorousMediumPermeabilityDrilling
+``` dwis
+DrillingSignal:PorousMediumPermeabilityDrilling_Signal
+DrillingDataPoint:PorousMediumPermeabilityDrilling_DataPoint
+PorousMediumPermeabilityDrilling_DataPoint HasValue PorousMediumPermeabilityDrilling_Signal
+PorousMediumPermeabilityDrilling_DataPoint IsOfMeasurableQuantity PorousMediumPermeabilityDrillingQuantity
+PorousMediumPermeabilityDrilling_Signal HasUnitOfMeasure SquareMetre
 ```

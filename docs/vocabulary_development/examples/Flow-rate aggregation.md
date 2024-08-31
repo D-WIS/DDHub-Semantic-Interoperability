@@ -1,7 +1,7 @@
 # Flow-rate aggregation
 - FlowRateIn:FlowRateIn_0
 - MudStandpipe:StandPipe_0
-- DrillingVolumetricFlowrateQuantity:FlowRateQuantity_0
+- VolumetricFlowrateDrillingQuantity:FlowRateQuantity_0
 - DrillingDataPoint:DrillingDataPoint_0
 - Transformation:Transformation_0
 - DrillingDataPoint:DrillingDataPoint_1

@@ -1,6 +1,6 @@
 # Bit depth
 - DrillingDataPoint:DrillingDataPoint_0
-- DepthQuantity:DepthQuantity_0
+- DepthDrillingQuantity:DepthQuantity_0
 - BitDepth:BitDepth_0
 - BottomOfStringReferenceLocation:BottomOfStringReferenceLocation_0
 - HoleBottomLocation:HoleBottomLocation_0

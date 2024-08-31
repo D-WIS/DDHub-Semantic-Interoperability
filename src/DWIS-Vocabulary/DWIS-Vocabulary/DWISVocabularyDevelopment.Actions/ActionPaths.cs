@@ -15,7 +15,11 @@
 
         public string NounsSchemaPath { get; set; }
         public string VerbsSchemaPath { get; set; }
+        public string AttributesSchemaPath { get; private set; }
+        public string QuantitiesSchemaPath { get; set; }
+        public string UnitsSchemaPath { get; set; }
 
+        public string UnitsAndQuantitiesPath {get; set;}
 
         public string MDFolderPath { get; private set; }
         public string SingleMDFilePath { get; private set; }
@@ -25,7 +29,6 @@
         public string ExamplesFilesFolderPath { get; private set; }
         public string RDFFolderPath { get; private set; }
         public string OntologyFilePath { get; private set; }
-        public string AttributesSchemaPath { get; private set; }
         public string CSVFilePath { get; private set; }
 
         public ActionPaths(string sourceFolder, string destinationFolder, string schemasFolder, string examplesSourceFolder, string standardResourceFolder)
@@ -52,10 +55,13 @@
 
             CSVFilePath = destinationFolder + sep + CSVFolderName + sep + SingleFileName + csvExtension;
 
+            UnitsAndQuantitiesPath = standardResourceFolder + sep + "UnitsAndQuantities" + mdExtension;
 
             NounsSchemaPath = schemasFolder + sep + "Nouns.cs";
             VerbsSchemaPath = schemasFolder + sep + "Verbs.cs";
             AttributesSchemaPath = schemasFolder + sep + "Attributes.cs";
+            QuantitiesSchemaPath = schemasFolder + sep + "Quantities.cs";
+            UnitsSchemaPath = schemasFolder + sep + "Units.cs";
         }
 
     }

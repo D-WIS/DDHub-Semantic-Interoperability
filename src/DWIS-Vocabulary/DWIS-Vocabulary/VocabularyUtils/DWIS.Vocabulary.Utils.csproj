@@ -22,7 +22,7 @@
   <ItemGroup>
     <PackageReference Include="EPPlus" Version="7.1.1" />
     <PackageReference Include="OSDC.DotnetLibraries.General.Common" Version="1.0.9" />
-    <PackageReference Include="OSDC.UnitConversion.Conversion.DrillingEngineering" Version="3.3.6" />
+    <PackageReference Include="OSDC.UnitConversion.Conversion.DrillingEngineering" Version="3.3.12" />
   </ItemGroup>
 
 </Project>

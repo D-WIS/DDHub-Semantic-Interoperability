@@ -19,8 +19,8 @@
 - DrillingDataPoint:DrillingDataPoint_11
 - ProportionQuantity:ProportionQuantity_0
 - VolumeQuantity:VolumeQuantity_0
-- DrillingVolumetricFlowrateQuantity:FlowRateQuantity_0
-- RotationFrequencyQuantity:PumpRateQuantity_0
+- VolumetricFlowrateDrillingQuantity:FlowRateQuantity_0
+- RotationalFrequencyQuantity:PumpRateQuantity_0
 - Transformation:Transformation_0
 - Transformation:Transformation_1
 - Transformation:Transformation_2

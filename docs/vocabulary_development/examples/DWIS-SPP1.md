@@ -1,6 +1,6 @@
 # DWIS_SPP1
 - MudStandpipe:StandPipe_0
-- DrillingPressureQuantity:SPPQuantity_0
+- PressureDrillingQuantity:SPPQuantity_0
 - Location:StandPipeLocation
 - DerrickFloorVerticalLocation:DrillFloorLocation
 - DrillingDataPoint:StandPipeElevation

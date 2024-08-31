@@ -1,5 +1,4 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
 string examplePath = "C:\\DWIS\\DDHub-Semantic-Interoperability\\docs\\vocabulary_development\\examples";
 string[] examples = Directory.GetFiles(examplePath, "*.md");
 List<Tuple<string, string>> renameList = new List<Tuple<string, string>>()
@@ -37,6 +36,21 @@ List<Tuple<string, string>> renameList = new List<Tuple<string, string>>()
     new Tuple<string, string>("RockDensityQuantity", "DrillingDensityQuantity"),
     new Tuple<string, string>("FormationPorosityQuantity", "PorosityQuantity"),
     new Tuple<string, string>("DownholePressureQuantity", "DrillingPressureQuantity"),
+
+    new Tuple<string, string>("DrillingVolumetricFlowrateQuantity", "VolumetricFlowrateDrillingQuantity"),
+    new Tuple<string, string>("RotationFrequencyQuantity", "RotationalFrequencyQuantity"),
+    new Tuple<string, string>("DrillingTorqueQuantity", "TorqueDrillingQuantity"),
+    new Tuple<string, string>("DrillingAccelerationQuantity", "AccelerationDrillingQuantity"),
+    new Tuple<string, string>("PositionQuantity", "PositionDrillingQuantity"),
+    new Tuple<string, string>("DrillingDensityQuantity", "MassDensityDrilling"),
+    new Tuple<string, string>("DrillingTemperatureQuantity", "TemperatureDrillingQuantity"),
+    new Tuple<string, string>("HookLoadQuantity", "HookLoadDrillingQuantity"),
+    new Tuple<string, string>("DrillingPressureQuantity", "PressureDrillingQuantity"),
+    new Tuple<string, string>("DrillingForceQuantity", "ForceDrillingQuantity"),
+    new Tuple<string, string>("DepthQuantity", "DepthDrillingQuantity"),
+    new Tuple<string, string>("WeightOnBitQuantity", "WeightOnBitDrillingQuantity"),
+    new Tuple<string, string>("FormationResistivityQuantity", "FormationResistivityDrillingQuantity"),
+    new Tuple<string, string>("BlockVelocityQuantity", "BlockVelocityDrillingQuantity"),
 };
 if (examples != null)
 {

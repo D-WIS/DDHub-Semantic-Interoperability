@@ -11,9 +11,9 @@
 - ReturnFlowLine:ReturnFlowLine_0
 - MudMixing:MudMixing_0
 - MudStandpipe:StandPipe_0
-- DrillingTemperatureQuantity:FluidTemperatureInQuantity_0
+- TemperatureDrillingQuantity:FluidTemperatureInQuantity_0
 - PressureQuantity:PressureQuantity_0
-- DrillingDensityQuantity:FluidDensityInQuantity_0
+- MassDensityDrilling:FluidDensityInQuantity_0
 - TimeWindowMovingAverage:TimeWindowMovingAverage_0
 - TopSideTelemetry:TopSideTelemetry_0
 - DataFlowNode:DataFlowNode_0

@@ -1,7 +1,7 @@
 # DWIS_SPP0
 - DrillingDataPoint:SPP_0
 - MudStandpipe:StandPipe_0
-- DrillingPressureQuantity:SPPQuantity_0
+- PressureDrillingQuantity:SPPQuantity_0
 - SensorUncertainty:SPPUncertainty_0
 - LowPassFilter:SPP_LowPassFilter
 - DataProvider:DrillingControlSystem_0

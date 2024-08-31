@@ -81,6 +81,9 @@ namespace DWIS.Vocabulary.Development.Actions
 
         private bool Export()
         {
+            _logger.LogInformation($"Export md file UnitsAndQuantities to {_paths.UnitsAndQuantitiesPath}");
+            MDWriting.UnitsAndQuantitiesToMDFile(_paths.UnitsAndQuantitiesPath);
+
             _logger.LogInformation($"Export md single file to {_paths.SingleMDFilePath}");
             MDWriting.ToMDFile(_vocabulary, _paths.SingleMDFilePath);
 
@@ -98,6 +101,9 @@ namespace DWIS.Vocabulary.Development.Actions
 
             _logger.LogInformation($"Export schemas files to {_paths.NounsSchemaPath} and { _paths.VerbsSchemaPath}");
             SchemaWriter.WriteSchema(_vocabulary, _paths.NounsSchemaPath, _paths.VerbsSchemaPath, _paths.AttributesSchemaPath);
+
+            _logger.LogInformation($"Export quantities and units files to {_paths.QuantitiesSchemaPath} and {_paths.UnitsSchemaPath}");
+            SchemaWriter.WriteQuantitiesAndUnits(_paths.QuantitiesSchemaPath, _paths.UnitsSchemaPath);
 
             _logger.LogInformation($"Export example files to {_paths.ExamplesFilesFolderPath}");
             ParseExamples();         

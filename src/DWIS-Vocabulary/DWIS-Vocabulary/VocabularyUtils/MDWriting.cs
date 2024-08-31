@@ -1,14 +1,113 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading;
 using DWIS.Vocabulary.Development;
+using OSDC.DotnetLibraries.General.Common;
+using OSDC.UnitConversion.Conversion;
+using OSDC.UnitConversion.Conversion.DrillingEngineering;
 
 namespace DWIS.Vocabulary.Utils
 {
     public static class MDWriting
     {
+        public static void UnitsAndQuantitiesToMDFile(string path)
+        {
+            StringBuilder semanticBuilder = new StringBuilder();
+            semanticBuilder.AppendLine("# Quantities");
+            List<BasePhysicalQuantity> basePhysicalQuantities = BasePhysicalQuantity.AvailableBasePhysicalQuantities;
+            UnitsAndQuantitiesToMDFile(semanticBuilder, basePhysicalQuantities);
+            List<BasePhysicalQuantity> physicalQuantities = PhysicalQuantity.AvailablePhysicalQuantities;
+            UnitsAndQuantitiesToMDFile(semanticBuilder, physicalQuantities);
+            System.IO.File.WriteAllText(path, semanticBuilder.ToString());
+        }
+        private static void UnitsAndQuantitiesToMDFile(StringBuilder semanticBuilder, List<BasePhysicalQuantity> quantities)
+        {
+            if (quantities != null)
+            {
+                foreach (BasePhysicalQuantity quantity in quantities)
+                {
+                    if (quantity != null)
+                    {
+                        string quantityName = quantity.GetType().Name;
+                        if (!string.IsNullOrEmpty(quantityName))
+                        {
+                            semanticBuilder.AppendLine("- Quantity:" + quantityName);
+                            semanticBuilder.AppendLine("- " + quantityName+ ".L = " + quantity.LengthDimension.ToString(CultureInfo.InvariantCulture));
+                            semanticBuilder.AppendLine("- " + quantityName+ ".M = " + quantity.MassDimension.ToString(CultureInfo.InvariantCulture));
+                            semanticBuilder.AppendLine("- " + quantityName + ".T = " + quantity.TimeDimension.ToString(CultureInfo.InvariantCulture));
+                            semanticBuilder.AppendLine("- " + quantityName + ".I = " + quantity.ElectricCurrentDimension.ToString(CultureInfo.InvariantCulture));
+                            semanticBuilder.AppendLine("- " + quantityName + ".ThT = " + quantity.TemperatureDimension.ToString(CultureInfo.InvariantCulture));
+                            semanticBuilder.AppendLine("- " + quantityName + ".N = " + quantity.AmountSubstanceDimension.ToString(CultureInfo.InvariantCulture));
+                            semanticBuilder.AppendLine("- " + quantityName + ".J = " + quantity.LuminousIntensityDimension.ToString(CultureInfo.InvariantCulture));
+                            semanticBuilder.AppendLine("- " + quantityName + ".Theta = " + quantity.PlaneAngleDimension.ToString(CultureInfo.InvariantCulture));
+                            semanticBuilder.AppendLine("- " + quantityName + ".Omega = " + quantity.SolidAngleDimension.ToString(CultureInfo.InvariantCulture));
+                            if (quantity.UnitChoices != null)
+                            {
+                                foreach (var unitChoice in quantity.UnitChoices)
+                                {
+                                    if (unitChoice != null)
+                                    {
+                                        string unitName = unitChoice.GetVariableName();
+                                        if (!string.IsNullOrEmpty(unitName))
+                                        {
+                                            semanticBuilder.AppendLine("- Unit:" + unitName);
+                                            semanticBuilder.AppendLine("- " + unitName + ".ConversionFactorA = " + unitChoice.ConversionBiasFromSI.ToString(CultureInfo.InvariantCulture));
+                                            semanticBuilder.AppendLine("- " + unitName + ".ConversionFactorB = " + unitChoice.ConversionFactorFromSI.ToString(CultureInfo.InvariantCulture));
+                                            string unitLabel = GetValidName(unitChoice.UnitLabel);
+                                            if (!string.IsNullOrEmpty(unitLabel))
+                                            {
+                                                semanticBuilder.AppendLine("- " + unitName + ".Symbol = " + unitLabel);
+                                            }
+                                            semanticBuilder.AppendLine("- " + unitName + " IsUnitForQuantity " + quantityName);
+                                            if (unitChoice.IsSI)
+                                            {
+                                                semanticBuilder.AppendLine("- " + quantityName + " HasSIUnit " + unitName);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        private static string GetValidName(string originalName)
+        {
+            if (string.IsNullOrEmpty(originalName)) { return originalName; }
+            string validName = originalName.Replace(" ", "").Replace("/", "Per").Replace("\"", "");
+            if (string.IsNullOrEmpty (validName)) { return validName; }
+            string first = validName.Substring(0, 1).ToLower();
+            return Correct(first + validName.Substring(1));
+        }
+
+
+        private static string Correct(string symbol)
+        {
+            string corrected = symbol.Replace("²", "square")
+                    .Replace("µ", "mu")
+                    .Replace("°", "deg")
+                    .Replace("³", "cubic")
+                    .Replace("•", ".")
+                    .Replace("Ω", "omega")
+                    .Replace("å", "aa")
+                    .Replace("Å", "AA")
+                    .Replace("ø", "oe")
+                    .Replace("☉", "solarMass")
+                    .Replace("🜨", "earthMass")
+                    .Replace("é", "e")
+                    .Replace("‰", "perThousands")
+                    .Replace("√", "sqrt ");
+            //if (corrected.Any(c => !char.IsLetterOrDigit(c)))
+            //{
+            //    throw new Exception("symbol still contains special characters");
+            //}
+            return corrected;
+        }
         public static void NounToMD(StringBuilder nounBuilder, Noun noun, bool singleFile = true,DWIS.Vocabulary.Development.Vocabulary vocabulary = null)
         {
             nounBuilder.AppendLine("## " + noun.Name + " <!-- NOUN -->");
@@ -164,7 +263,15 @@ namespace DWIS.Vocabulary.Utils
                                 string[] tokens = l.Split(' ', '\t');
                                 if (tokens != null && tokens.Length >= 3 && !string.IsNullOrEmpty(tokens[0]) && !string.IsNullOrEmpty(tokens[1]) && !string.IsNullOrEmpty(tokens[2]))
                                 {
-                                    ddhub.Add(new Tuple<string, string, string>(tokens[0].Trim(), tokens[1].Trim(), tokens[2].Trim()));
+                                    string subject = tokens[2].Trim();
+                                    if (tokens.Length > 3)
+                                    {
+                                        for (int i = 3; i < tokens.Length; i++)
+                                        {
+                                            subject += " " + tokens[i].Trim();
+                                        }
+                                    }
+                                    ddhub.Add(new Tuple<string, string, string>(tokens[0].Trim(), tokens[1].Trim(), subject));
                                 }
                             }
                         }
@@ -185,48 +292,71 @@ namespace DWIS.Vocabulary.Utils
             outputs.Add("graph LR");
             Dictionary<string, string> dict = new Dictionary<string, string>();
             int count = 0;
+            Tuple<string, string, string> f = new Tuple<string, string, string>(null, null, null);
             foreach (var fact in facts)
             {
                 if (fact != null && !string.IsNullOrEmpty(fact.Item1) && !string.IsNullOrEmpty(fact.Item2) && !string.IsNullOrEmpty(fact.Item3))
-                {
-                    if (!dict.ContainsKey(fact.Item1))
+                { 
+                    f = new Tuple<string, string, string>(fact.Item1, fact.Item2, fact.Item3);
+                    if (fact.Item1.Contains('.') && fact.Item2 == "=")
+                    {
+                        // this is an assignment to an attribute
+                        string[] tokens = f.Item1.Split('.');
+                        if (tokens != null && tokens.Length == 2)
+                        {
+                            string subj = tokens[0];
+                            string verb = tokens[1];
+                            string o = f.Item3;
+                            f = new Tuple<string, string, string>(subj, verb, o);
+                        }
+                    }               
+                    if (!dict.ContainsKey(f.Item1))
                     {
                         string val = "N" + count.ToString("0000");
-                        dict.Add(fact.Item1, val);
+                        dict.Add(f.Item1, val);
                         count++;
                     }
-                    if (!dict.ContainsKey(fact.Item3))
+                    if (!dict.ContainsKey(f.Item3))
                     {
                         string val = "N" + count.ToString("0000");
-                        dict.Add(fact.Item3, val);
+                        dict.Add(f.Item3, val);
                         count++;
                     }
                     string str = "\t";
-                    str += dict[fact.Item1] + "[" + fact.Item1 + "] ";
-                    str += "-->|" + fact.Item2 + "| ";
+                    str += dict[f.Item1] + "[" + f.Item1 + "] ";
+                    str += "-->|" + f.Item2 + "| ";
                     bool isVerb = false;
                     if (vocabulary != null && vocabulary.Verbs != null)
                     {
                         foreach (Verb v in vocabulary.Verbs)
                         {
-                            if (v != null && v.Name == fact.Item2)
+                            if (v != null && v.Name == f.Item2)
                             {
                                 isVerb = true;
                                 break;
                             }
                         }
                     }
-                    if (fact.Item2 == "BelongsToClass")
+                    string obj = f.Item3;
+                    if (obj == "\"\"\"")
                     {
-                        str += dict[fact.Item3] + "(" + fact.Item3 + ") ";
+                        obj = "\"''\"";
+                    }
+                    if (int.TryParse(obj, out int ival) || double.TryParse(obj, NumberStyles.Any, CultureInfo.InvariantCulture, out double dval))
+                    {
+                        obj = "\"" + obj + "\"";
+                    }
+                    if (f.Item2 == "BelongsToClass")
+                    {
+                        str += dict[f.Item3] + "(" + obj + ") ";
                     }
                     else if (isVerb)
                     {
-                        str += dict[fact.Item3] + "[" + fact.Item3 + "] ";
+                        str += dict[f.Item3] + "[" + obj + "] ";
                     }
                     else
                     {
-                        str += dict[fact.Item3] + "((" + fact.Item3 + ")) ";
+                        str += dict[f.Item3] + "((" + obj + ")) ";
                     }
                     outputs.Add(str);
                 }

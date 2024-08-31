@@ -74,6 +74,45 @@ namespace DWIS.Vocabulary.Utils
                         }
                     }
                 }
+                using (StreamWriter writer = new StreamWriter(folder + Path.DirectorySeparatorChar + "UnitTypes.md"))
+                {
+                    writer.WriteLine("-Description: standard measurable quantity types. A measurable quantity type is a sub-class of `MeasurableQuantity` for which a `MeaningfulPrecision` is defined.");
+                    writer.WriteLine();
+                    writer.WriteLine("# NOUNS");
+                    List<string> alreadyProcessed = new List<string>();
+                    if (quantities != null)
+                    {
+                        foreach (BasePhysicalQuantity quant in quantities)
+                        {
+                            if (quant != null && quant.UnitChoices != null)
+                            {
+                                foreach (UnitChoice choice in quant.UnitChoices)
+                                {
+                                    if (!alreadyProcessed.Contains(choice.GetVariableName()))
+                                    {
+                                        ProcessUnit(writer, choice, alreadyProcessed);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (drillingQuantities != null)
+                    {
+                        foreach (BasePhysicalQuantity quant in drillingQuantities)
+                        {
+                            if (quant != null && quant.UnitChoices != null)
+                            {
+                                foreach (UnitChoice choice in quant.UnitChoices)
+                                {
+                                    if (!alreadyProcessed.Contains(choice.GetVariableName()))
+                                    {
+                                        ProcessUnit(writer, choice, alreadyProcessed);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
                 return true;
             }
             else
@@ -143,18 +182,18 @@ namespace DWIS.Vocabulary.Utils
                 writer.WriteLine("- Examples: ");
                 if (quant.SemanticExample != null && quant.SemanticExample.Count > 0)
                 {
-                    writer.WriteLine("``` dwis " + quant.SemanticExample[0].Subject);
+                    writer.WriteLine("``` dwis");
                     foreach (var fact in quant.SemanticExample)
                     {
                         if (fact != null && !string.IsNullOrEmpty(fact.Subject) && !string.IsNullOrEmpty(fact.Verb) && !string.IsNullOrEmpty(fact.Object))
                         {
                             if (fact.Verb.Equals("BelongsToClass"))
                             {
-                                writer.WriteLine(fact.Object.Replace("-", "_") + ":" + fact.Subject.Replace("-", "_"));
+                                writer.WriteLine(fact.Object + ":" + fact.Subject);
                             }
                             else
                             {
-                                writer.WriteLine(fact.Subject.Replace("-", "_") + " " + fact.Verb + " " + fact.Object.Replace("-", "_"));
+                                writer.WriteLine(fact.Subject + " " + fact.Verb + " " + fact.Object);
                             }
                         }
                     }
@@ -190,23 +229,78 @@ namespace DWIS.Vocabulary.Utils
                 writer.WriteLine("- Examples: ");
                 if (quant.SemanticExample != null && quant.SemanticExample.Count > 0)
                 {
-                    writer.WriteLine("``` dwis " + quant.SemanticExample[0].Subject);
+                    writer.WriteLine("``` dwis");
                     foreach (var fact in quant.SemanticExample)
                     {
                         if (fact != null && !string.IsNullOrEmpty(fact.Subject) && !string.IsNullOrEmpty(fact.Verb) && !string.IsNullOrEmpty(fact.Object))
                         {
                             if (fact.Verb.Equals("BelongsToClass"))
                             {
-                                writer.WriteLine(fact.Object.Replace("-", "_") + ":" + fact.Subject.Replace("-", "_"));
+                                writer.WriteLine(fact.Object + ":" + fact.Subject);
                             }
                             else
                             {
-                                writer.WriteLine(fact.Subject.Replace("-", "_") + " " + fact.Verb + " " + fact.Object.Replace("-", "_"));
+                                writer.WriteLine(fact.Subject + " " + fact.Verb + " " + fact.Object);
                             }
                         }
                     }
                     writer.WriteLine("```");
                 }
+            }
+        }
+
+        private static void ProcessUnit(StreamWriter writer, UnitChoice choice, List<string> alreadyProcessed)
+        {
+            if (writer != null && choice != null && !string.IsNullOrEmpty(choice.UnitName) && !string.IsNullOrEmpty(choice.GetVariableName()))
+            {
+                string var = choice.GetVariableName();
+                writer.WriteLine("## " + var + " <!-- NOUN -->");
+                writer.WriteLine("- Display name: " + choice.UnitName);
+                writer.WriteLine("- Parent class: Unit");
+                writer.WriteLine("- Specialization: ");
+                if (choice.ConversionBiasFromSI != 0)
+                {
+                    writer.WriteLine("  - ConversionFactorA = " + choice.ConversionBiasFromSI.ToString(System.Globalization.CultureInfo.InvariantCulture));
+                }
+                if (choice.ConversionFactorFromSI != 1)
+                {
+                    writer.WriteLine("  - ConversionFactorB = " + choice.ConversionFactorFromSI.ToString(System.Globalization.CultureInfo.InvariantCulture));
+                }
+                writer.WriteLine("- Description: ");
+                if (!string.IsNullOrEmpty(choice.ConversionDescription))
+                {
+                    string[] desc = choice.ConversionDescription.Split(Environment.NewLine);
+                    if (desc.Length > 1 && string.IsNullOrEmpty(desc[0]))
+                    {
+                        string[] desc2 = new string[desc.Length - 2];
+                        desc.CopyTo(desc2, 1);
+                        desc = desc2;
+                    }
+                    foreach (string d in desc)
+                    {
+                        writer.WriteLine(d);
+                    }
+                }
+                writer.WriteLine("- Examples: ");
+                if (choice != null && !string.IsNullOrEmpty(choice.GetVariableName()))
+                {
+                    writer.WriteLine("``` dwis");
+                    writer.WriteLine(var + ":" + var + "_1");
+                    if (choice.ConversionBiasFromSI != 0)
+                    {
+                        writer.WriteLine(var + "_1" + ".ConversionFactorA" + " = " + "\"" + choice.ConversionBiasFromSI.ToString(System.Globalization.CultureInfo.InvariantCulture) + "\"");
+                    }
+                    if (choice.ConversionFactorFromSI != 1)
+                    {
+                        writer.WriteLine(var + "_1" + ".ConversionFactorB" + " = " + "\"" + choice.ConversionFactorFromSI.ToString(System.Globalization.CultureInfo.InvariantCulture) + "\"");
+                    }
+                    if (!string.IsNullOrEmpty(choice.UnitLabel))
+                    {
+                        writer.WriteLine(var + "_1" + ".Symbol" + " = " + "\"" + choice.UnitLabel + "\"");
+                    }
+                    writer.WriteLine("```");
+                }
+                alreadyProcessed.Add(var);
             }
         }
     }

@@ -26,6 +26,21 @@ DerrickFloorElevation IsDependentOn TideElevation
 ```
 In this example, it is described that the derrick floor elevation, `DerrickFloorElevation`, 
 depends on the heave measurement, `HeaveElevation`, and the tide measurement, `TideElevation`.
+## IsObservableFrom <!-- VERB -->
+- Display name: IsObservableFrom
+- Parent verb: DWISVerb
+- Subject class: DWISNoun
+- Object class: DrillingDataPoint
+- Description: This `Verb` means that something can be seen, detected, or noticed from a particular 
+location or perspective. It implies that there is a clear view or means of perception from one point 
+to another.
+- Examples: 
+``` dwis
+Overpull:overpull_event
+DrillingDataPoint:hook_load
+hook_load BelongsToClass HookLoad
+overpull_event IsObservableFrom hook_load
+```
 ## HasPressureReference <!-- VERB -->
 - Display name: HasPressureReference
 - Parent verb: IsDependentOn

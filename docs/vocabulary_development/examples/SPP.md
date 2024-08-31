@@ -1,7 +1,7 @@
 # SPP
 - SPP:SPP_0
 - MudStandpipe:StandPipe_0
-- DrillingPressureQuantity:SPPQuantity_0
+- PressureDrillingQuantity:SPPQuantity_0
 - TimeWindowMovingAverage:TimeWindowMovingAverage_0
 - TopSideTelemetry:TopSideTelemetry_0
 - DataFlowNode:DataFlowNode_0

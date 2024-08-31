@@ -1,3201 +1,8650 @@
 # Quantities
-- Quantity:acceleration
-- acceleration.L = 1
-- acceleration.M = 0
-- acceleration.T = -2
-- acceleration.I = 0
-- acceleration.ThT = 0
-- acceleration.N = 0
-- acceleration.J = 0
-- Unit:meterPerSecondSquare
-- meterPerSecondSquare.Symbol = mPerssquare
-- meterPerSecondSquare.ConversionFactorA = 0
-- meterPerSecondSquare.ConversionFactorB = 1
-- Unit:footPerSecondSquare
-- footPerSecondSquare.Symbol = ftPerssquare
-- footPerSecondSquare.ConversionFactorA = 0
-- footPerSecondSquare.ConversionFactorB = 3,280839895013123
-- Unit:centimeterPerSecondSquare
-- centimeterPerSecondSquare.Symbol = cmPerssquare
-- centimeterPerSecondSquare.ConversionFactorA = 0
-- centimeterPerSecondSquare.ConversionFactorB = 100
-- Unit:centimeterPerHourPerSecond
-- centimeterPerHourPerSecond.Symbol = cmPer(h.s)
-- centimeterPerHourPerSecond.ConversionFactorA = 0
-- centimeterPerHourPerSecond.ConversionFactorB = 360000
-- Unit:centimeterPerMinutePerSecond
-- centimeterPerMinutePerSecond.Symbol = cmPer(min.s)
-- centimeterPerMinutePerSecond.ConversionFactorA = 0
-- centimeterPerMinutePerSecond.ConversionFactorB = 60000
-- Unit:footPerHourPerSecond
-- footPerHourPerSecond.Symbol = ftPer(h.s)
-- footPerHourPerSecond.ConversionFactorA = 0
-- footPerHourPerSecond.ConversionFactorB = 11811,018972039774
-- Unit:footPerMinutePerSecond
-- footPerMinutePerSecond.Symbol = ftPer(min.s)
-- footPerMinutePerSecond.ConversionFactorA = 0
-- footPerMinutePerSecond.ConversionFactorB = 196,85039370078738
-- Unit:galileo
-- galileo.Symbol = gal
-- galileo.ConversionFactorA = 0
-- galileo.ConversionFactorB = 100
-- Unit:gravityStandard
-- gravityStandard.Symbol = gn
-- gravityStandard.ConversionFactorA = 0
-- gravityStandard.ConversionFactorB = 0,11001505556035343
-- Unit:inchPerHourPerSecond
-- inchPerHourPerSecond.Symbol = inPer(h.s)
-- inchPerHourPerSecond.ConversionFactorA = 0
-- inchPerHourPerSecond.ConversionFactorB = 141732,1941844446
-- Unit:inchPerMinutePerSecond
-- inchPerMinutePerSecond.Symbol = inPer(min.s)
-- inchPerMinutePerSecond.ConversionFactorA = 0
-- inchPerMinutePerSecond.ConversionFactorB = 2362,206584414633
-- Unit:inchPerSecondSquare
-- inchPerSecondSquare.Symbol = inPerssquare
-- inchPerSecondSquare.ConversionFactorA = 0
-- inchPerSecondSquare.ConversionFactorB = 39,37007874015748
-- Unit:knotPerSecond
-- knotPerSecond.Symbol = knPers
-- knotPerSecond.ConversionFactorA = 0
-- knotPerSecond.ConversionFactorB = 1,9438461717893492
-- Unit:meterPerSecondPerMillisecond
-- meterPerSecondPerMillisecond.Symbol = mPer(s.ms)
-- meterPerSecondPerMillisecond.ConversionFactorA = 0
-- meterPerSecondPerMillisecond.ConversionFactorB = 0,001
-- Unit:milePerHourPerSecond
-- milePerHourPerSecond.Symbol = miPer(h.s)
-- milePerHourPerSecond.ConversionFactorA = 0
-- milePerHourPerSecond.ConversionFactorB = 2,2369362920544025
-- Unit:milePerMinutePerSecond
-- milePerMinutePerSecond.Symbol = miPer(min.s)
-- milePerMinutePerSecond.ConversionFactorA = 0
-- milePerMinutePerSecond.ConversionFactorB = 0,0372794918059677
-- Unit:milePerSecondSquare
-- milePerSecondSquare.Symbol = miPerssquare
-- milePerSecondSquare.ConversionFactorA = 0
-- milePerSecondSquare.ConversionFactorB = 0,0006213711922373339
-- Unit:kilometerPerSecondSquare
-- kilometerPerSecondSquare.Symbol = kmPerssquare
-- kilometerPerSecondSquare.ConversionFactorA = 0
-- kilometerPerSecondSquare.ConversionFactorB = 0,001
-- Unit:kilometerPerHourPerSecond
-- kilometerPerHourPerSecond.Symbol = kmPer(h.s)
-- kilometerPerHourPerSecond.ConversionFactorA = 0
-- kilometerPerHourPerSecond.ConversionFactorB = 3,6
-- Unit:kilometerPerMinutePerSecond
-- kilometerPerMinutePerSecond.Symbol = kmPer(min.s)
-- kilometerPerMinutePerSecond.ConversionFactorA = 0
-- kilometerPerMinutePerSecond.ConversionFactorB = 0,06
-- Quantity:amountSubstance
-- amountSubstance.L = 0
-- amountSubstance.M = 0
-- amountSubstance.T = 0
-- amountSubstance.I = 0
-- amountSubstance.ThT = 0
-- amountSubstance.N = 1
-- amountSubstance.J = 0
-- Unit:mole
-- mole.Symbol = mol
-- mole.ConversionFactorA = 0
-- mole.ConversionFactorB = 1
-- Unit:decimole
-- decimole.Symbol = dmol
-- decimole.ConversionFactorA = 0
-- decimole.ConversionFactorB = 10
-- Unit:centimole
-- centimole.Symbol = cmol
-- centimole.ConversionFactorA = 0
-- centimole.ConversionFactorB = 100
-- Unit:millimole
-- millimole.Symbol = mmol
-- millimole.ConversionFactorA = 0
-- millimole.ConversionFactorB = 1000
-- Unit:micromole
-- micromole.Symbol = mumol
-- micromole.ConversionFactorA = 0
-- micromole.ConversionFactorB = 1000000
-- Unit:nanomole
-- nanomole.Symbol = nmol
-- nanomole.ConversionFactorA = 0
-- nanomole.ConversionFactorB = 1000000000
-- Unit:picomole
-- picomole.Symbol = pmol
-- picomole.ConversionFactorA = 0
-- picomole.ConversionFactorB = 1000000000000
-- Unit:kilomole
-- kilomole.Symbol = kmol
-- kilomole.ConversionFactorA = 0
-- kilomole.ConversionFactorB = 0,001
-- Quantity:angleVariationGradient
-- angleVariationGradient.L = -1
-- angleVariationGradient.M = 0
-- angleVariationGradient.T = 0
-- angleVariationGradient.I = 0
-- angleVariationGradient.ThT = 0
-- angleVariationGradient.N = 0
-- angleVariationGradient.J = 0
-- Unit:radianPerMeter
-- radianPerMeter.Symbol = rdPerm
-- radianPerMeter.ConversionFactorA = 0
-- radianPerMeter.ConversionFactorB = 1
-- Unit:degreePerMeter
-- degreePerMeter.Symbol = degPerm
-- degreePerMeter.ConversionFactorA = 0
-- degreePerMeter.ConversionFactorB = 57,29577951308232
-- Unit:degreePerCentimeter
-- degreePerCentimeter.Symbol = degPercm
-- degreePerCentimeter.ConversionFactorA = 0
-- degreePerCentimeter.ConversionFactorB = 0,5729577951308232
-- Unit:degreePerFoot
-- degreePerFoot.Symbol = degPerft
-- degreePerFoot.ConversionFactorA = 0
-- degreePerFoot.ConversionFactorB = 17,463753595587495
-- Unit:degreePerInch
-- degreePerInch.Symbol = degPerin
-- degreePerInch.ConversionFactorA = 0
-- degreePerInch.ConversionFactorB = 1,455312799632291
-- Quantity:angularVelocity
-- angularVelocity.L = 0
-- angularVelocity.M = 0
-- angularVelocity.T = 0
-- angularVelocity.I = 0
-- angularVelocity.ThT = 0
-- angularVelocity.N = 0
-- angularVelocity.J = 0
-- Unit:radianPerSecond
-- radianPerSecond.Symbol = rdPers
-- radianPerSecond.ConversionFactorA = 0
-- radianPerSecond.ConversionFactorB = 1
-- Unit:degreePerSecond
-- degreePerSecond.Symbol = degPers
-- degreePerSecond.ConversionFactorA = 0
-- degreePerSecond.ConversionFactorB = 57,29577951308232
-- Unit:radianPerDay
-- radianPerDay.Symbol = rdPerd
-- radianPerDay.ConversionFactorA = 0
-- radianPerDay.ConversionFactorB = 86400
-- Unit:radianPerHour
-- radianPerHour.Symbol = rdPerh
-- radianPerHour.ConversionFactorA = 0
-- radianPerHour.ConversionFactorB = 3600
-- Unit:radianPerMinute
-- radianPerMinute.Symbol = rdPermin
-- radianPerMinute.ConversionFactorA = 0
-- radianPerMinute.ConversionFactorB = 60
-- Unit:degreePerDay
-- degreePerDay.Symbol = degPerd
-- degreePerDay.ConversionFactorA = 0
-- degreePerDay.ConversionFactorB = 4950355,3499303
-- Unit:degreePerHour
-- degreePerHour.Symbol = degPerh
-- degreePerHour.ConversionFactorA = 0
-- degreePerHour.ConversionFactorB = 206264,8062471
-- Unit:degreePerMinute
-- degreePerMinute.Symbol = degPermin
-- degreePerMinute.ConversionFactorA = 0
-- degreePerMinute.ConversionFactorB = 3437,746770785
-- Quantity:area
-- area.L = 0
-- area.M = 0
-- area.T = 0
-- area.I = 0
-- area.ThT = 0
-- area.N = 0
-- area.J = 0
-- Unit:squareMeter
-- squareMeter.Symbol = msquare
-- squareMeter.ConversionFactorA = 0
-- squareMeter.ConversionFactorB = 1
-- Unit:squareKilometer
-- squareKilometer.Symbol = kmsquare
-- squareKilometer.ConversionFactorA = 0
-- squareKilometer.ConversionFactorB = 1E-06
-- Unit:hectar
-- hectar.Symbol = ha
-- hectar.ConversionFactorA = 0
-- hectar.ConversionFactorB = 0,0001
-- Unit:squareDecimeter
-- squareDecimeter.Symbol = dmsquare
-- squareDecimeter.ConversionFactorA = 0
-- squareDecimeter.ConversionFactorB = 100
-- Unit:squareCentimeter
-- squareCentimeter.Symbol = cmsquare
-- squareCentimeter.ConversionFactorA = 0
-- squareCentimeter.ConversionFactorB = 10000
-- Unit:squareMillimeter
-- squareMillimeter.Symbol = mmsquare
-- squareMillimeter.ConversionFactorA = 0
-- squareMillimeter.ConversionFactorB = 1000000
-- Unit:squareMicrometer
-- squareMicrometer.Symbol = mumsquare
-- squareMicrometer.ConversionFactorA = 0
-- squareMicrometer.ConversionFactorB = 1000000000000
-- Unit:squareFoot
-- squareFoot.Symbol = ftsquare
-- squareFoot.ConversionFactorA = 0
-- squareFoot.ConversionFactorB = 10,763910416709722
-- Unit:squareInch
-- squareInch.Symbol = insquare
-- squareInch.ConversionFactorA = 0
-- squareInch.ConversionFactorB = 1550,0031000062002
-- Unit:squareYard
-- squareYard.Symbol = ydsquare
-- squareYard.ConversionFactorA = 0
-- squareYard.ConversionFactorB = 1,1959900463010802
-- Unit:acre
-- acre.Symbol = ac
-- acre.ConversionFactorA = 0
-- acre.ConversionFactorB = 0,0002471053814671653
-- Unit:squareMile
-- squareMile.Symbol = misquare
-- squareMile.ConversionFactorA = 0
-- squareMile.ConversionFactorB = 3,861021585424458E-07
-- Quantity:compressibility
-- compressibility.L = 1
-- compressibility.M = -1
-- compressibility.T = 1
-- compressibility.I = 0
-- compressibility.ThT = 0
-- compressibility.N = 0
-- compressibility.J = 0
-- Unit:inversePascal
-- inversePascal.Symbol = 1PerPa
-- inversePascal.ConversionFactorA = 0
-- inversePascal.ConversionFactorB = 1
-- Unit:inverseBar
-- inverseBar.Symbol = 1Perbar
-- inverseBar.ConversionFactorA = 0
-- inverseBar.ConversionFactorB = 100000
-- Unit:inversePoundPerSquareInch
-- inversePoundPerSquareInch.Symbol = 1Perpsi
-- inversePoundPerSquareInch.ConversionFactorA = 0
-- inversePoundPerSquareInch.ConversionFactorB = 6894,7625831
-- Quantity:curvature
-- curvature.L = -1
-- curvature.M = 0
-- curvature.T = 0
-- curvature.I = 0
-- curvature.ThT = 0
-- curvature.N = 0
-- curvature.J = 0
-- Unit:radianPerMeter
-- radianPerMeter.Symbol = rdPerm
-- radianPerMeter.ConversionFactorA = 0
-- radianPerMeter.ConversionFactorB = 1
-- Unit:degreePer10m
-- degreePer10m.Symbol = degPer10m
-- degreePer10m.ConversionFactorA = 0
-- degreePer10m.ConversionFactorB = 572,9577951308232
-- Unit:degreePer30m
-- degreePer30m.Symbol = degPer30m
-- degreePer30m.ConversionFactorA = 0
-- degreePer30m.ConversionFactorB = 1718,8733853924698
-- Unit:degreePer30ft
-- degreePer30ft.Symbol = degPer30ft
-- degreePer30ft.ConversionFactorA = 0
-- degreePer30ft.ConversionFactorB = 523,9126078676247
-- Unit:degreePer100ft
-- degreePer100ft.Symbol = degPer100ft
-- degreePer100ft.ConversionFactorA = 0
-- degreePer100ft.ConversionFactorB = 1746,375359558749
-- Unit:degreePerFoot
-- degreePerFoot.Symbol = degPerft
-- degreePerFoot.ConversionFactorA = 0
-- degreePerFoot.ConversionFactorB = 17,46375359558749
-- Unit:radianPerFoot
-- radianPerFoot.Symbol = rdPerft
-- radianPerFoot.ConversionFactorA = 0
-- radianPerFoot.ConversionFactorB = 0,3048
-- Unit:degreePerMeter
-- degreePerMeter.Symbol = degPerm
-- degreePerMeter.ConversionFactorA = 0
-- degreePerMeter.ConversionFactorB = 57,29577951308232
-- Quantity:densityGradientDepth
-- densityGradientDepth.L = -4
-- densityGradientDepth.M = 1
-- densityGradientDepth.T = 0
-- densityGradientDepth.I = 0
-- densityGradientDepth.ThT = 0
-- densityGradientDepth.N = 0
-- densityGradientDepth.J = 0
-- Unit:kilogramPerCubicMeterPerMeter
-- kilogramPerCubicMeterPerMeter.Symbol = kgPermcubicPerm
-- kilogramPerCubicMeterPerMeter.ConversionFactorA = 0
-- kilogramPerCubicMeterPerMeter.ConversionFactorB = 1
-- Unit:specificGravityPerMeter
-- specificGravityPerMeter.Symbol = sgPerm
-- specificGravityPerMeter.ConversionFactorA = 0
-- specificGravityPerMeter.ConversionFactorB = 0,001
-- Unit:specificGravityPer10Meter
-- specificGravityPer10Meter.Symbol = sgPer10m
-- specificGravityPer10Meter.ConversionFactorA = 0
-- specificGravityPer10Meter.ConversionFactorB = 0,01
-- Unit:specificGravityPer30Meter
-- specificGravityPer30Meter.Symbol = sgPer30m
-- specificGravityPer30Meter.ConversionFactorA = 0
-- specificGravityPer30Meter.ConversionFactorB = 0,03
-- Unit:specificGravityPer100Meter
-- specificGravityPer100Meter.Symbol = sgPer100m
-- specificGravityPer100Meter.ConversionFactorA = 0
-- specificGravityPer100Meter.ConversionFactorB = 0,1
-- Unit:gramPerCubicCentimeterPer100Meter
-- gramPerCubicCentimeterPer100Meter.Symbol = gPercmcubicPer100m
-- gramPerCubicCentimeterPer100Meter.ConversionFactorA = 0
-- gramPerCubicCentimeterPer100Meter.ConversionFactorB = 0,1
-- Unit:poundPerGallonUKPerFoot
-- poundPerGallonUKPerFoot.Symbol = ppgUKPerft
-- poundPerGallonUKPerFoot.ConversionFactorA = 0
-- poundPerGallonUKPerFoot.ConversionFactorB = 0,0100224
-- Unit:poundPerGallonUKPer30Foot
-- poundPerGallonUKPer30Foot.Symbol = ppgUKPer30ft
-- poundPerGallonUKPer30Foot.ConversionFactorA = 0
-- poundPerGallonUKPer30Foot.ConversionFactorB = 0,30067200000000005
-- Unit:poundPerGallonUKPer100Foot
-- poundPerGallonUKPer100Foot.Symbol = ppgUKPer100ft
-- poundPerGallonUKPer100Foot.ConversionFactorA = 0
-- poundPerGallonUKPer100Foot.ConversionFactorB = 1,00224
-- Unit:poundPerGallonUSPerFoot
-- poundPerGallonUSPerFoot.Symbol = ppgUSPerft
-- poundPerGallonUSPerFoot.ConversionFactorA = 0
-- poundPerGallonUSPerFoot.ConversionFactorB = 0,015021719999999999
-- Unit:poundPerGallonUSPer30Foot
-- poundPerGallonUSPer30Foot.Symbol = ppgUSPer30ft
-- poundPerGallonUSPer30Foot.ConversionFactorA = 0
-- poundPerGallonUSPer30Foot.ConversionFactorB = 0,4506516
-- Unit:poundPerGallonUSPer100Foot
-- poundPerGallonUSPer100Foot.Symbol = ppgUSPer100ft
-- poundPerGallonUSPer100Foot.ConversionFactorA = 0
-- poundPerGallonUSPer100Foot.ConversionFactorB = 1,5021719999999998
-- Quantity:densityGradientTemperature
-- densityGradientTemperature.L = -3
-- densityGradientTemperature.M = 1
-- densityGradientTemperature.T = 0
-- densityGradientTemperature.I = 0
-- densityGradientTemperature.ThT = -1
-- densityGradientTemperature.N = 0
-- densityGradientTemperature.J = 0
-- Unit:kilogramPerCubicMeterPerKelvin
-- kilogramPerCubicMeterPerKelvin.Symbol = kgPermcubicPerK
-- kilogramPerCubicMeterPerKelvin.ConversionFactorA = 0
-- kilogramPerCubicMeterPerKelvin.ConversionFactorB = 1
-- Unit:specificGravityPerCelsius
-- specificGravityPerCelsius.Symbol = sgPerdegC
-- specificGravityPerCelsius.ConversionFactorA = 0
-- specificGravityPerCelsius.ConversionFactorB = 0,001
-- Unit:gramPerCubicCentimeterPerCelsius
-- gramPerCubicCentimeterPerCelsius.Symbol = gPercmcubicPerdegC
-- gramPerCubicCentimeterPerCelsius.ConversionFactorA = 0
-- gramPerCubicCentimeterPerCelsius.ConversionFactorB = 0,001
-- Unit:poundPerGallonUKPerCelsius
-- poundPerGallonUKPerCelsius.Symbol = ppgUKPerdegC
-- poundPerGallonUKPerCelsius.ConversionFactorA = 0
-- poundPerGallonUKPerCelsius.ConversionFactorB = 0,0030548275200000005
-- Unit:poundPerGallonUSPerFarenheit
-- poundPerGallonUSPerFarenheit.Symbol = ppgUSPerF
-- poundPerGallonUSPerFarenheit.ConversionFactorA = 0
-- poundPerGallonUSPerFarenheit.ConversionFactorB = 0,00254367792
-- Quantity:density
-- density.L = -3
-- density.M = 1
-- density.T = 0
-- density.I = 0
-- density.ThT = 0
-- density.N = 0
-- density.J = 0
-- Unit:kilogramPerCubicMeter
-- kilogramPerCubicMeter.Symbol = kgPermcubic
-- kilogramPerCubicMeter.ConversionFactorA = 0
-- kilogramPerCubicMeter.ConversionFactorB = 1
-- Unit:gramPerCubicMeter
-- gramPerCubicMeter.Symbol = gPermcubic
-- gramPerCubicMeter.ConversionFactorA = 0
-- gramPerCubicMeter.ConversionFactorB = 1000
-- Unit:specificGravity
-- specificGravity.Symbol = s.g.
-- specificGravity.ConversionFactorA = 0
-- specificGravity.ConversionFactorB = 0,001
-- Unit:gramPerCubicCentimeter
-- gramPerCubicCentimeter.Symbol = gPercmcubic
-- gramPerCubicCentimeter.ConversionFactorA = 0
-- gramPerCubicCentimeter.ConversionFactorB = 0,001
-- Unit:poundPerGallonUK
-- poundPerGallonUK.Symbol = ppgUK
-- poundPerGallonUK.ConversionFactorA = 0
-- poundPerGallonUK.ConversionFactorB = 0,0100224
-- Unit:poundPerGallonUS
-- poundPerGallonUS.Symbol = ppgUS
-- poundPerGallonUS.ConversionFactorA = 0
-- poundPerGallonUS.ConversionFactorB = 0,0083454
-- Unit:poundPerCubicFoot
-- poundPerCubicFoot.Symbol = lbPerftcubic
-- poundPerCubicFoot.ConversionFactorA = 0
-- poundPerCubicFoot.ConversionFactorB = 0,0624279606
-- Quantity:densitySpeed
-- densitySpeed.L = -3
-- densitySpeed.M = 1
-- densitySpeed.T = -1
-- densitySpeed.I = 0
-- densitySpeed.ThT = 0
-- densitySpeed.N = 0
-- densitySpeed.J = 0
-- Unit:kilogramPerCubicMeterPerSecond
-- kilogramPerCubicMeterPerSecond.Symbol = kgPermcubicPers
-- kilogramPerCubicMeterPerSecond.ConversionFactorA = 0
-- kilogramPerCubicMeterPerSecond.ConversionFactorB = 1
-- Unit:specificGravityPerSecond
-- specificGravityPerSecond.Symbol = sgPers
-- specificGravityPerSecond.ConversionFactorA = 0
-- specificGravityPerSecond.ConversionFactorB = 0,001
-- Unit:specificGravityPerMinute
-- specificGravityPerMinute.Symbol = sgPermin
-- specificGravityPerMinute.ConversionFactorA = 0
-- specificGravityPerMinute.ConversionFactorB = 0,06
-- Unit:specificGravityPerHour
-- specificGravityPerHour.Symbol = sgPerh
-- specificGravityPerHour.ConversionFactorA = 0
-- specificGravityPerHour.ConversionFactorB = 3,6
-- Unit:gramPerCubicCentimeterPerHour
-- gramPerCubicCentimeterPerHour.Symbol = kgPercmcubicPerh
-- gramPerCubicCentimeterPerHour.ConversionFactorA = 0
-- gramPerCubicCentimeterPerHour.ConversionFactorB = 3,6
-- Unit:poundPerGallonUKPerSecond
-- poundPerGallonUKPerSecond.Symbol = ppgUKPers
-- poundPerGallonUKPerSecond.ConversionFactorA = 0
-- poundPerGallonUKPerSecond.ConversionFactorB = 0,010022412855
-- Unit:poundPerGallonUKPerMinute
-- poundPerGallonUKPerMinute.Symbol = ppgUKPermin
-- poundPerGallonUKPerMinute.ConversionFactorA = 0
-- poundPerGallonUKPerMinute.ConversionFactorB = 0,6013447713
-- Unit:poundPerGallonUKPerHour
-- poundPerGallonUKPerHour.Symbol = ppgUKPerh
-- poundPerGallonUKPerHour.ConversionFactorA = 0
-- poundPerGallonUKPerHour.ConversionFactorB = 36,080686277999995
-- Unit:poundPerGallonUSPerSecond
-- poundPerGallonUSPerSecond.Symbol = ppgUSPers
-- poundPerGallonUSPerSecond.ConversionFactorA = 0
-- poundPerGallonUSPerSecond.ConversionFactorB = 0,0083454044518
-- Unit:poundPerGallonUSPerMinute
-- poundPerGallonUSPerMinute.Symbol = ppgUSPermin
-- poundPerGallonUSPerMinute.ConversionFactorA = 0
-- poundPerGallonUSPerMinute.ConversionFactorB = 0,500724267108
-- Unit:poundPerGallonUSPerHour
-- poundPerGallonUSPerHour.Symbol = ppgUSPerhour
-- poundPerGallonUSPerHour.ConversionFactorA = 0
-- poundPerGallonUSPerHour.ConversionFactorB = 30,043456026479998
-- Quantity:dimensionless
-- dimensionless.L = 0
-- dimensionless.M = 0
-- dimensionless.T = 0
-- dimensionless.I = 0
-- dimensionless.ThT = 0
-- dimensionless.N = 0
-- dimensionless.J = 0
-- Unit:dimensionless
-- dimensionless.ConversionFactorA = 0
-- dimensionless.ConversionFactorB = 1
-- Quantity:dynamicViscosity
-- dynamicViscosity.L = -1
-- dynamicViscosity.M = 1
-- dynamicViscosity.T = -1
-- dynamicViscosity.I = 0
-- dynamicViscosity.ThT = 0
-- dynamicViscosity.N = 0
-- dynamicViscosity.J = 0
-- Unit:pascalSecond
-- pascalSecond.Symbol = padots
-- pascalSecond.ConversionFactorA = 0
-- pascalSecond.ConversionFactorB = 1
-- Unit:centiPoise
-- centiPoise.Symbol = cP
-- centiPoise.ConversionFactorA = 0
-- centiPoise.ConversionFactorB = 1000
-- Unit:microPascalSecond
-- microPascalSecond.Symbol = muPadots
-- microPascalSecond.ConversionFactorA = 0
-- microPascalSecond.ConversionFactorB = 1000000
-- Unit:microPoise
-- microPoise.Symbol = muP
-- microPoise.ConversionFactorA = 0
-- microPoise.ConversionFactorB = 10000000
-- Quantity:earthMagneticFluxDensity
-- earthMagneticFluxDensity.L = 0
-- earthMagneticFluxDensity.M = 1
-- earthMagneticFluxDensity.T = -2
-- earthMagneticFluxDensity.I = -1
-- earthMagneticFluxDensity.ThT = 0
-- earthMagneticFluxDensity.N = 0
-- earthMagneticFluxDensity.J = 0
-- Unit:tesla
-- tesla.Symbol = t
-- tesla.ConversionFactorA = 0
-- tesla.ConversionFactorB = 1
-- Unit:gauss
-- gauss.Symbol = g
-- gauss.ConversionFactorA = 0
-- gauss.ConversionFactorB = 10000
-- Unit:milliGauss
-- milliGauss.Symbol = mG
-- milliGauss.ConversionFactorA = 0
-- milliGauss.ConversionFactorB = 10000000
-- Unit:microTesla
-- microTesla.Symbol = muT
-- microTesla.ConversionFactorA = 0
-- microTesla.ConversionFactorB = 1000000
-- Unit:nanoTesla
-- nanoTesla.Symbol = nT
-- nanoTesla.ConversionFactorA = 0
-- nanoTesla.ConversionFactorB = 1000000000
-- Quantity:capacitance
-- capacitance.L = -2
-- capacitance.M = -1
-- capacitance.T = 4
-- capacitance.I = 2
-- capacitance.ThT = 0
-- capacitance.N = 0
-- capacitance.J = 0
-- Unit:farad
-- farad.Symbol = f
-- farad.ConversionFactorA = 0
-- farad.ConversionFactorB = 1
-- Unit:coulombPerVolt
-- coulombPerVolt.Symbol = cPerV
-- coulombPerVolt.ConversionFactorA = 0
-- coulombPerVolt.ConversionFactorB = 1
-- Unit:milliFarad
-- milliFarad.Symbol = mF
-- milliFarad.ConversionFactorA = 0
-- milliFarad.ConversionFactorB = 1000
-- Unit:microFarad
-- microFarad.Symbol = μF
-- microFarad.ConversionFactorA = 0
-- microFarad.ConversionFactorB = 1000000
-- Unit:picoFarad
-- picoFarad.Symbol = pF
-- picoFarad.ConversionFactorA = 0
-- picoFarad.ConversionFactorB = 1000000000
-- Quantity:electricalCurrent
-- electricalCurrent.L = 0
-- electricalCurrent.M = 0
-- electricalCurrent.T = 0
-- electricalCurrent.I = 1
-- electricalCurrent.ThT = 0
-- electricalCurrent.N = 0
-- electricalCurrent.J = 0
-- Unit:ampere
-- ampere.Symbol = a
-- ampere.ConversionFactorA = 0
-- ampere.ConversionFactorB = 1
-- Unit:coulombPersecond
-- coulombPersecond.Symbol = cPers
-- coulombPersecond.ConversionFactorA = 0
-- coulombPersecond.ConversionFactorB = 1
-- Unit:siemensvolt
-- siemensvolt.Symbol = s.V
-- siemensvolt.ConversionFactorA = 0
-- siemensvolt.ConversionFactorB = 1
-- Unit:voltPerohm
-- voltPerohm.Symbol = vPeromega
-- voltPerohm.ConversionFactorA = 0
-- voltPerohm.ConversionFactorB = 1
-- Unit:wattPervolt
-- wattPervolt.Symbol = wPerV
-- wattPervolt.ConversionFactorA = 0
-- wattPervolt.ConversionFactorB = 1
-- Unit:weberPerhenry
-- weberPerhenry.Symbol = wbPerH
-- weberPerhenry.ConversionFactorA = 0
-- weberPerhenry.ConversionFactorB = 1
-- Unit:deciampere
-- deciampere.Symbol = dA
-- deciampere.ConversionFactorA = 0
-- deciampere.ConversionFactorB = 10
-- Unit:centiampere
-- centiampere.Symbol = cA
-- centiampere.ConversionFactorA = 0
-- centiampere.ConversionFactorB = 100
-- Unit:milliampere
-- milliampere.Symbol = mA
-- milliampere.ConversionFactorA = 0
-- milliampere.ConversionFactorB = 1000
-- Unit:microampere
-- microampere.Symbol = muA
-- microampere.ConversionFactorA = 0
-- microampere.ConversionFactorB = 1000000
-- Unit:nanoampere
-- nanoampere.Symbol = nA
-- nanoampere.ConversionFactorA = 0
-- nanoampere.ConversionFactorB = 1000000000
-- Unit:picoampere
-- picoampere.Symbol = pA
-- picoampere.ConversionFactorA = 0
-- picoampere.ConversionFactorB = 1000000000000
-- Unit:biot
-- biot.Symbol = bi
-- biot.ConversionFactorA = 0
-- biot.ConversionFactorB = 0,1
-- Unit:abampere
-- abampere.Symbol = abA
-- abampere.ConversionFactorA = 0
-- abampere.ConversionFactorB = 0,1
-- Unit:kiloampere
-- kiloampere.Symbol = kA
-- kiloampere.ConversionFactorA = 0
-- kiloampere.ConversionFactorB = 0,001
-- Unit:megaampere
-- megaampere.Symbol = mA
-- megaampere.ConversionFactorA = 0
-- megaampere.ConversionFactorB = 1E-06
-- Unit:gigaampere
-- gigaampere.Symbol = gA
-- gigaampere.ConversionFactorA = 0
-- gigaampere.ConversionFactorB = 1E-09
-- Unit:teraampere
-- teraampere.Symbol = tA
-- teraampere.ConversionFactorA = 0
-- teraampere.ConversionFactorB = 1E-12
-- Unit:gilbert
-- gilbert.Symbol = gi
-- gilbert.ConversionFactorA = 0
-- gilbert.ConversionFactorB = 1,256637
-- Unit:statampere
-- statampere.Symbol = stA
-- statampere.ConversionFactorA = 0
-- statampere.ConversionFactorB = 2997924536,843143
-- Quantity:electricTension
-- electricTension.L = 2
-- electricTension.M = 1
-- electricTension.T = -3
-- electricTension.I = -1
-- electricTension.ThT = 0
-- electricTension.N = 0
-- electricTension.J = 0
-- Unit:volt
-- volt.Symbol = v
-- volt.ConversionFactorA = 0
-- volt.ConversionFactorB = 1
-- Unit:millivolt
-- millivolt.Symbol = mV
-- millivolt.ConversionFactorA = 0
-- millivolt.ConversionFactorB = 1000
-- Unit:centivolt
-- centivolt.Symbol = cV
-- centivolt.ConversionFactorA = 0
-- centivolt.ConversionFactorB = 100
-- Unit:kilovolt
-- kilovolt.Symbol = kV
-- kilovolt.ConversionFactorA = 0
-- kilovolt.ConversionFactorB = 0,001
-- Quantity:elongationGradient
-- elongationGradient.L = 0
-- elongationGradient.M = 0
-- elongationGradient.T = 0
-- elongationGradient.I = 0
-- elongationGradient.ThT = 0
-- elongationGradient.N = 0
-- elongationGradient.J = 0
-- Unit:meterPerMeter
-- meterPerMeter.Symbol = mPerm
-- meterPerMeter.ConversionFactorA = 0
-- meterPerMeter.ConversionFactorB = 1
-- Unit:millimeterpermeter
-- millimeterpermeter.Symbol = mmPerm
-- millimeterpermeter.ConversionFactorA = 0
-- millimeterpermeter.ConversionFactorB = 1000
-- Unit:inchperfoot
-- inchperfoot.Symbol = inPerft
-- inchperfoot.ConversionFactorA = 0
-- inchperfoot.ConversionFactorB = 12
-- Quantity:energy
-- energy.L = 2
-- energy.M = 1
-- energy.T = -2
-- energy.I = 0
-- energy.ThT = 0
-- energy.N = 0
-- energy.J = 0
-- Unit:joule
-- joule.Symbol = j
-- joule.ConversionFactorA = 0
-- joule.ConversionFactorB = 1
-- Unit:kiloJoule
-- kiloJoule.Symbol = kJ
-- kiloJoule.ConversionFactorA = 0
-- kiloJoule.ConversionFactorB = 0,001
-- Unit:megaJoule
-- megaJoule.Symbol = mJ
-- megaJoule.ConversionFactorA = 0
-- megaJoule.ConversionFactorB = 1E-06
-- Unit:gigaJoule
-- gigaJoule.Symbol = gJ
-- gigaJoule.ConversionFactorA = 0
-- gigaJoule.ConversionFactorB = 1E-09
-- Unit:calorie
-- calorie.Symbol = cal
-- calorie.ConversionFactorA = 0
-- calorie.ConversionFactorB = 4,186799999956105
-- Unit:kiloCalorie
-- kiloCalorie.Symbol = cal
-- kiloCalorie.ConversionFactorA = 0
-- kiloCalorie.ConversionFactorB = 0,0041867999999561055
-- Quantity:imageScale
-- imageScale.L = -1
-- imageScale.M = 0
-- imageScale.T = 0
-- imageScale.I = 0
-- imageScale.ThT = 0
-- imageScale.N = 0
-- imageScale.J = 0
-- Unit:dotpermeter
-- dotpermeter.Symbol = dpm
-- dotpermeter.ConversionFactorA = 0
-- dotpermeter.ConversionFactorB = 1
-- Unit:dotperinch
-- dotperinch.Symbol = dpi
-- dotperinch.ConversionFactorA = 0
-- dotperinch.ConversionFactorB = 0,0254000000001016
-- Unit:dotpermillimeter
-- dotpermillimeter.Symbol = dpmm
-- dotpermillimeter.ConversionFactorA = 0
-- dotpermillimeter.ConversionFactorB = 0,001
-- Unit:dotpermicrometer
-- dotpermicrometer.Symbol = dpmum
-- dotpermicrometer.ConversionFactorA = 0
-- dotpermicrometer.ConversionFactorB = 1E-06
-- Quantity:length
-- length.L = 1
-- length.M = 0
-- length.T = 0
-- length.I = 0
-- length.ThT = 0
-- length.N = 0
-- length.J = 0
-- Unit:metre
-- metre.Symbol = m
-- metre.ConversionFactorA = 0
-- metre.ConversionFactorB = 1
-- Unit:decimeter
-- decimeter.Symbol = dm
-- decimeter.ConversionFactorA = 0
-- decimeter.ConversionFactorB = 10
-- Unit:centimeter
-- centimeter.Symbol = cm
-- centimeter.ConversionFactorA = 0
-- centimeter.ConversionFactorB = 100
-- Unit:millimeter
-- millimeter.Symbol = mm
-- millimeter.ConversionFactorA = 0
-- millimeter.ConversionFactorB = 1000
-- Unit:micrometer
-- micrometer.Symbol = mum
-- micrometer.ConversionFactorA = 0
-- micrometer.ConversionFactorB = 1000000
-- Unit:nanometer
-- nanometer.Symbol = nm
-- nanometer.ConversionFactorA = 0
-- nanometer.ConversionFactorB = 1000000000
-- Unit:aangstroem
-- aangstroem.Symbol = aa
-- aangstroem.ConversionFactorA = 0
-- aangstroem.ConversionFactorB = 10000000000
-- Unit:picometer
-- picometer.Symbol = nm
-- picometer.ConversionFactorA = 0
-- picometer.ConversionFactorB = 1000000000000
-- Unit:decameter
-- decameter.Symbol = dam
-- decameter.ConversionFactorA = 0
-- decameter.ConversionFactorB = 0,1
-- Unit:hectometer
-- hectometer.Symbol = hm
-- hectometer.ConversionFactorA = 0
-- hectometer.ConversionFactorB = 0,01
-- Unit:kilometer
-- kilometer.Symbol = km
-- kilometer.ConversionFactorA = 0
-- kilometer.ConversionFactorB = 0,001
-- Unit:astronomicalunit
-- astronomicalunit.Symbol = au
-- astronomicalunit.ConversionFactorA = 0
-- astronomicalunit.ConversionFactorB = 6,684587122268445E-12
-- Unit:lightyear
-- lightyear.Symbol = ly
-- lightyear.ConversionFactorA = 0
-- lightyear.ConversionFactorB = 1,0570008340246154E-16
-- Unit:parsec
-- parsec.Symbol = pc
-- parsec.ConversionFactorA = 0
-- parsec.ConversionFactorB = 3,240779289444365E-17
-- Unit:feet
-- feet.Symbol = ft
-- feet.ConversionFactorA = 0
-- feet.ConversionFactorB = 3,280839895013123
-- Unit:uSsurveyfeet
-- uSsurveyfeet.Symbol = ft
-- uSsurveyfeet.ConversionFactorA = 0
-- uSsurveyfeet.ConversionFactorB = 3,280829131138021
-- Unit:inch
-- inch.Symbol = in
-- inch.ConversionFactorA = 0
-- inch.ConversionFactorB = 39,37007874015748
-- Unit:yard
-- yard.Symbol = yd
-- yard.ConversionFactorA = 0
-- yard.ConversionFactorB = 1,0936132983377078
-- Unit:fathom
-- fathom.Symbol = fathom
-- fathom.ConversionFactorA = 0
-- fathom.ConversionFactorB = 0,5468066491688539
-- Unit:surveyor'schain
-- surveyor'schain.Symbol = chain
-- surveyor'schain.ConversionFactorA = 0
-- surveyor'schain.ConversionFactorB = 0,049709695378986715
-- Unit:mile
-- mile.Symbol = mi
-- mile.ConversionFactorA = 0
-- mile.ConversionFactorB = 0,0006213711922373339
-- Unit:internationalnauticalmile
-- internationalnauticalmile.Symbol = nmi
-- internationalnauticalmile.ConversionFactorA = 0
-- internationalnauticalmile.ConversionFactorB = 0,0005399568034557236
-- Unit:uKnauticalmile
-- uKnauticalmile.Symbol = uKnmi
-- uKnauticalmile.ConversionFactorA = 0
-- uKnauticalmile.ConversionFactorB = 0,0005396118248376848
-- Unit:scandinavianmile
-- scandinavianmile.Symbol = mil
-- scandinavianmile.ConversionFactorA = 0
-- scandinavianmile.ConversionFactorB = 0,0001
-- Unit:inchPer32
-- inchPer32.Symbol = inPer32
-- inchPer32.ConversionFactorA = 0
-- inchPer32.ConversionFactorB = 1259,8425196850394
-- Unit:mil
-- mil.Symbol = mil
-- mil.ConversionFactorA = 0
-- mil.ConversionFactorB = 39370,07874015748
-- Unit:thou
-- thou.Symbol = thou
-- thou.ConversionFactorA = 0
-- thou.ConversionFactorB = 39370,07874015748
-- Unit:hand
-- hand.Symbol = hand
-- hand.ConversionFactorA = 0
-- hand.ConversionFactorB = 9,84251968503937
-- Unit:furlong
-- furlong.Symbol = furlong
-- furlong.ConversionFactorA = 0
-- furlong.ConversionFactorB = 0,004970969537898671
-- Quantity:luminousIntensity
-- luminousIntensity.L = 0
-- luminousIntensity.M = 0
-- luminousIntensity.T = 0
-- luminousIntensity.I = 0
-- luminousIntensity.ThT = 0
-- luminousIntensity.N = 0
-- luminousIntensity.J = 1
-- Unit:candela
-- candela.Symbol = cd
-- candela.ConversionFactorA = 0
-- candela.ConversionFactorB = 1
-- Unit:lumenPersteradian
-- lumenPersteradian.Symbol = lmPerst
-- lumenPersteradian.ConversionFactorA = 0
-- lumenPersteradian.ConversionFactorB = 1
-- Unit:millicandela
-- millicandela.Symbol = mcd
-- millicandela.ConversionFactorA = 0
-- millicandela.ConversionFactorB = 1000
-- Unit:kilocandela
-- kilocandela.Symbol = kcd
-- kilocandela.ConversionFactorA = 0
-- kilocandela.ConversionFactorB = 0,001
-- Unit:hefnerkerze
-- hefnerkerze.Symbol = hefnerkerze
-- hefnerkerze.ConversionFactorA = 0
-- hefnerkerze.ConversionFactorB = 1,1074197120709
-- Unit:internationalcandle
-- internationalcandle.Symbol = int.candle
-- internationalcandle.ConversionFactorA = 0
-- internationalcandle.ConversionFactorB = 0,98135426889107
-- Unit:decimalcandle
-- decimalcandle.Symbol = dec.candle
-- decimalcandle.ConversionFactorA = 0
-- decimalcandle.ConversionFactorB = 0,99157164105107
-- Unit:candlepower
-- candlepower.Symbol = candlepower
-- candlepower.ConversionFactorA = 0
-- candlepower.ConversionFactorB = 1,0193679918451
-- Unit:berlinerlichteinheit
-- berlinerlichteinheit.Symbol = berlinerlichteinheit
-- berlinerlichteinheit.ConversionFactorA = 0
-- berlinerlichteinheit.ConversionFactorB = 0,9009009009009
-- Unit:dVWGcandle
-- dVWGcandle.Symbol = dVWGcandle
-- dVWGcandle.ConversionFactorA = 0
-- dVWGcandle.ConversionFactorB = 0,92592592592593
-- Unit:violle
-- violle.Symbol = violle
-- violle.ConversionFactorA = 0
-- violle.ConversionFactorB = 0,049067713444553
-- Unit:carcel
-- carcel.Symbol = carcel
-- carcel.ConversionFactorA = 0
-- carcel.ConversionFactorB = 0,10266940451745
-- Quantity:mass
-- mass.L = 0
-- mass.M = 1
-- mass.T = 0
-- mass.I = 0
-- mass.ThT = 0
-- mass.N = 0
-- mass.J = 0
-- Unit:kilogram
-- kilogram.Symbol = kg
-- kilogram.ConversionFactorA = 0
-- kilogram.ConversionFactorB = 1
-- Unit:hectogram
-- hectogram.Symbol = hg
-- hectogram.ConversionFactorA = 0
-- hectogram.ConversionFactorB = 10
-- Unit:decagram
-- decagram.Symbol = dag
-- decagram.ConversionFactorA = 0
-- decagram.ConversionFactorB = 100
-- Unit:gram
-- gram.Symbol = g
-- gram.ConversionFactorA = 0
-- gram.ConversionFactorB = 1000
-- Unit:centigram
-- centigram.Symbol = cg
-- centigram.ConversionFactorA = 0
-- centigram.ConversionFactorB = 100000
-- Unit:milligram
-- milligram.Symbol = mg
-- milligram.ConversionFactorA = 0
-- milligram.ConversionFactorB = 100000
-- Unit:microgram
-- microgram.Symbol = mug
-- microgram.ConversionFactorA = 0
-- microgram.ConversionFactorB = 100000000
-- Unit:nanogram
-- nanogram.Symbol = ng
-- nanogram.ConversionFactorA = 0
-- nanogram.ConversionFactorB = 100000000000
-- Unit:atommassunit
-- atommassunit.Symbol = u
-- atommassunit.ConversionFactorA = 0
-- atommassunit.ConversionFactorB = 6,022045E+26
-- Unit:tonnemetric
-- tonnemetric.Symbol = t
-- tonnemetric.ConversionFactorA = 0
-- tonnemetric.ConversionFactorB = 0,001
-- Unit:kilotonne
-- kilotonne.Symbol = kt
-- kilotonne.ConversionFactorA = 0
-- kilotonne.ConversionFactorB = 1E-06
-- Unit:megatonne
-- megatonne.Symbol = mt
-- megatonne.ConversionFactorA = 0
-- megatonne.ConversionFactorB = 1E-09
-- Unit:gigatonne
-- gigatonne.Symbol = gt
-- gigatonne.ConversionFactorA = 0
-- gigatonne.ConversionFactorB = 1E-12
-- Unit:pound
-- pound.Symbol = lb
-- pound.ConversionFactorA = 0
-- pound.ConversionFactorB = 2,204623
-- Unit:kiloPound
-- kiloPound.Symbol = klb
-- kiloPound.ConversionFactorA = 0
-- kiloPound.ConversionFactorB = 0,002204622621848776
-- Unit:ounce
-- ounce.Symbol = oz
-- ounce.ConversionFactorA = 0
-- ounce.ConversionFactorB = 32,150747
-- Unit:stone
-- stone.Symbol = st
-- stone.ConversionFactorA = 0
-- stone.ConversionFactorB = 0,157473
-- Unit:tonUK
-- tonUK.Symbol = lT
-- tonUK.ConversionFactorA = 0
-- tonUK.ConversionFactorB = 0,0009842065274173282
-- Unit:tonUS
-- tonUS.Symbol = sT
-- tonUS.ConversionFactorA = 0
-- tonUS.ConversionFactorB = 0,001102311310924388
-- Unit:solarmass
-- solarmass.Symbol = msolarMass
-- solarmass.ConversionFactorA = 0
-- solarmass.ConversionFactorB = 1,98847E+30
-- Unit:earthmass
-- earthmass.Symbol = mearthMass
-- earthmass.ConversionFactorA = 0
-- earthmass.ConversionFactorB = 5,9722E+24
-- Unit:cental
-- cental.Symbol = cental
-- cental.ConversionFactorA = 0
-- cental.ConversionFactorB = 0,022046
-- Unit:grain
-- grain.Symbol = gr
-- grain.ConversionFactorA = 0
-- grain.ConversionFactorB = 15432,358353
-- Unit:hundredweights
-- hundredweights.Symbol = cwt
-- hundredweights.ConversionFactorA = 0
-- hundredweights.ConversionFactorB = 0,019684
-- Quantity:planeAngle
-- planeAngle.L = 0
-- planeAngle.M = 0
-- planeAngle.T = 0
-- planeAngle.I = 0
-- planeAngle.ThT = 0
-- planeAngle.N = 0
-- planeAngle.J = 0
-- Unit:radian
-- radian.Symbol = rd
-- radian.ConversionFactorA = 0
-- radian.ConversionFactorB = 1
-- Unit:milliradian
-- milliradian.Symbol = mrad
-- milliradian.ConversionFactorA = 0
-- milliradian.ConversionFactorB = 1000
-- Unit:degree
-- degree.Symbol = deg
-- degree.ConversionFactorA = 0
-- degree.ConversionFactorB = 57,29577951308232
-- Unit:grad
-- grad.Symbol = grad
-- grad.ConversionFactorA = 0
-- grad.ConversionFactorB = 63,66197723675813
-- Unit:gon
-- gon.Symbol = gon
-- gon.ConversionFactorA = 0
-- gon.ConversionFactorB = 63,66197723675813
-- Unit:circle
-- circle.Symbol = circle
-- circle.ConversionFactorA = 0
-- circle.ConversionFactorB = 0,15915494309189535
-- Unit:revolution
-- revolution.Symbol = revolution
-- revolution.ConversionFactorA = 0
-- revolution.ConversionFactorB = 0,15915494309189535
-- Unit:quadrant
-- quadrant.Symbol = quadrant
-- quadrant.ConversionFactorA = 0
-- quadrant.ConversionFactorB = 0,6366197723675814
-- Unit:sextant
-- sextant.Symbol = sextant
-- sextant.ConversionFactorA = 0
-- sextant.ConversionFactorB = 0,954929658551372
-- Unit:octant
-- octant.Symbol = octant
-- octant.ConversionFactorA = 0
-- octant.ConversionFactorB = 1,2732395447351628
-- Unit:arcminute
-- arcminute.Symbol = '
-- arcminute.ConversionFactorA = 0
-- arcminute.ConversionFactorB = 3437,7467707849396
-- Unit:arcsecond
-- arcsecond.Symbol = arcsec
-- arcsecond.ConversionFactorA = 0
-- arcsecond.ConversionFactorB = 206264,80624709636
-- Quantity:relativeTemperature
-- relativeTemperature.L = 0
-- relativeTemperature.M = 0
-- relativeTemperature.T = 0
-- relativeTemperature.I = 0
-- relativeTemperature.ThT = 1
-- relativeTemperature.N = 0
-- relativeTemperature.J = 0
-- Unit:kelvin
-- kelvin.Symbol = k
-- kelvin.ConversionFactorA = 0
-- kelvin.ConversionFactorB = 1
-- Unit:relativeCelcius
-- relativeCelcius.Symbol = degC
-- relativeCelcius.ConversionFactorA = 0
-- relativeCelcius.ConversionFactorB = 1
-- Unit:rankine
-- rankine.Symbol = degR
-- rankine.ConversionFactorA = 0
-- rankine.ConversionFactorB = 1,8
-- Quantity:smallLength
-- smallLength.L = 1
-- smallLength.M = 0
-- smallLength.T = 0
-- smallLength.I = 0
-- smallLength.ThT = 0
-- smallLength.N = 0
-- smallLength.J = 0
-- Unit:centimeter
-- centimeter.Symbol = cm
-- centimeter.ConversionFactorA = 0
-- centimeter.ConversionFactorB = 100
-- Unit:decimeter
-- decimeter.Symbol = dm
-- decimeter.ConversionFactorA = 0
-- decimeter.ConversionFactorB = 10
-- Unit:feet
-- feet.Symbol = ft
-- feet.ConversionFactorA = 0
-- feet.ConversionFactorB = 3,280839895013123
-- Unit:inch
-- inch.Symbol = in
-- inch.ConversionFactorA = 0
-- inch.ConversionFactorB = 39,37007874015748
-- Unit:metre
-- metre.Symbol = m
-- metre.ConversionFactorA = 0
-- metre.ConversionFactorB = 1
-- Unit:micrometer
-- micrometer.Symbol = mum
-- micrometer.ConversionFactorA = 0
-- micrometer.ConversionFactorB = 1000000
-- Unit:millimeter
-- millimeter.Symbol = mm
-- millimeter.ConversionFactorA = 0
-- millimeter.ConversionFactorB = 1000
-- Unit:nanometer
-- nanometer.Symbol = nm
-- nanometer.ConversionFactorA = 0
-- nanometer.ConversionFactorB = 1000000000
-- Unit:picometer
-- picometer.Symbol = nm
-- picometer.ConversionFactorA = 0
-- picometer.ConversionFactorB = 1000000000000
-- Unit:aangstroem
-- aangstroem.Symbol = aa
-- aangstroem.ConversionFactorA = 0
-- aangstroem.ConversionFactorB = 10000000000
-- Unit:inchPer32
-- inchPer32.Symbol = inPer32
-- inchPer32.ConversionFactorA = 0
-- inchPer32.ConversionFactorB = 1259,8425196850394
-- Quantity:solidAngle
-- solidAngle.L = 0
-- solidAngle.M = 0
-- solidAngle.T = 0
-- solidAngle.I = 0
-- solidAngle.ThT = 0
-- solidAngle.N = 0
-- solidAngle.J = 0
-- Unit:steradian
-- steradian.Symbol = sr
-- steradian.ConversionFactorA = 0
-- steradian.ConversionFactorB = 1
-- Unit:spat
-- spat.Symbol = spat
-- spat.ConversionFactorA = 0
-- spat.ConversionFactorB = 0,07957747154594767
-- Unit:squaredegree
-- squaredegree.Symbol = (deg)square
-- squaredegree.ConversionFactorA = 0
-- squaredegree.ConversionFactorB = 3282,806350011744
-- Quantity:temperature
-- temperature.L = 0
-- temperature.M = 0
-- temperature.T = 0
-- temperature.I = 0
-- temperature.ThT = 1
-- temperature.N = 0
-- temperature.J = 0
-- Unit:kelvin
-- kelvin.Symbol = k
-- kelvin.ConversionFactorA = 0
-- kelvin.ConversionFactorB = 1
-- Unit:celsius
-- celsius.Symbol = degC
-- celsius.ConversionFactorA = -273,15
-- celsius.ConversionFactorB = 1
-- Unit:fahrenheit
-- fahrenheit.Symbol = degF
-- fahrenheit.ConversionFactorA = -459,67
-- fahrenheit.ConversionFactorB = 1,8
-- Unit:reaumure
-- reaumure.Symbol = degRe
-- reaumure.ConversionFactorA = -218,51999999999998
-- reaumure.ConversionFactorB = 0,8
-- Quantity:time
-- time.L = 0
-- time.M = 0
-- time.T = 1
-- time.I = 0
-- time.ThT = 0
-- time.N = 0
-- time.J = 0
-- Unit:second
-- second.Symbol = s
-- second.ConversionFactorA = 0
-- second.ConversionFactorB = 1
-- Unit:millisecond
-- millisecond.Symbol = ms
-- millisecond.ConversionFactorA = 0
-- millisecond.ConversionFactorB = 1000
-- Unit:microsecond
-- microsecond.Symbol = mus
-- microsecond.ConversionFactorA = 0
-- microsecond.ConversionFactorB = 1000000
-- Unit:shake
-- shake.Symbol = shake
-- shake.ConversionFactorA = 0
-- shake.ConversionFactorB = 100000000
-- Unit:nanosecond
-- nanosecond.Symbol = ns
-- nanosecond.ConversionFactorA = 0
-- nanosecond.ConversionFactorB = 1000000000
-- Unit:picosecond
-- picosecond.Symbol = ps
-- picosecond.ConversionFactorA = 0
-- picosecond.ConversionFactorB = 1000000000000
-- Unit:minute
-- minute.Symbol = min
-- minute.ConversionFactorA = 0
-- minute.ConversionFactorB = 0,016666666666666666
-- Unit:hour
-- hour.Symbol = h
-- hour.ConversionFactorA = 0
-- hour.ConversionFactorB = 0,0002777777777777778
-- Unit:day
-- day.Symbol = d
-- day.ConversionFactorA = 0
-- day.ConversionFactorB = 1,1574074074074073E-05
-- Unit:week
-- week.Symbol = week
-- week.ConversionFactorA = 0
-- week.ConversionFactorB = 1,6534391534391535E-06
-- Unit:fortnight
-- fortnight.Symbol = fortnight
-- fortnight.ConversionFactorA = 0
-- fortnight.ConversionFactorB = 8,267195767195768E-07
-- Unit:monthcommon
-- monthcommon.Symbol = monthcommon
-- monthcommon.ConversionFactorA = 0
-- monthcommon.ConversionFactorB = 3,8051750380517503E-07
-- Unit:monthsynodic
-- monthsynodic.Symbol = monthsynodic
-- monthsynodic.ConversionFactorA = 0
-- monthsynodic.ConversionFactorB = 3,9193509056233435E-07
-- Unit:quatercommon
-- quatercommon.Symbol = quartercommon
-- quatercommon.ConversionFactorA = 0
-- quatercommon.ConversionFactorB = 1,2683916793505834E-07
-- Unit:yearcommon
-- yearcommon.Symbol = y
-- yearcommon.ConversionFactorA = 0
-- yearcommon.ConversionFactorB = 3,1709791983764586E-08
-- Unit:yearaveragegregorian
-- yearaveragegregorian.Symbol = yearaveragegregorian
-- yearaveragegregorian.ConversionFactorA = 0
-- yearaveragegregorian.ConversionFactorB = 3,168873850681143E-08
-- Unit:yearjulian
-- yearjulian.Symbol = yearjulian
-- yearjulian.ConversionFactorA = 0
-- yearjulian.ConversionFactorB = 3,168808781402895E-08
-- Unit:yearleap
-- yearleap.Symbol = yearleap
-- yearleap.ConversionFactorA = 0
-- yearleap.ConversionFactorB = 3,1623153207852664E-08
-- Unit:yeartropical
-- yeartropical.Symbol = yeartropical
-- yeartropical.ConversionFactorA = 0
-- yeartropical.ConversionFactorB = 3,168876540268821E-08
-- Unit:decade
-- decade.Symbol = decade
-- decade.ConversionFactorA = 0
-- decade.ConversionFactorB = 3,1709791983764586E-09
-- Unit:century
-- century.Symbol = century
-- century.ConversionFactorA = 0
-- century.ConversionFactorB = 3,1709791983764586E-10
-- Unit:millenia
-- millenia.Symbol = millenia
-- millenia.ConversionFactorA = 0
-- millenia.ConversionFactorB = 3,1709791983764586E-11
-- Unit:millionyear
-- millionyear.Symbol = my
-- millionyear.ConversionFactorA = 0
-- millionyear.ConversionFactorB = 3,1709791983764584E-14
-- Quantity:pressure
-- pressure.L = -1
-- pressure.M = 1
-- pressure.T = -1
-- pressure.I = 0
-- pressure.ThT = 0
-- pressure.N = 0
-- pressure.J = 0
-- Unit:pascal
-- pascal.Symbol = pa
-- pascal.ConversionFactorA = 0
-- pascal.ConversionFactorB = 1
-- Unit:kiloPascal
-- kiloPascal.Symbol = kPa
-- kiloPascal.ConversionFactorA = 0
-- kiloPascal.ConversionFactorB = 0,001
-- Unit:bar
-- bar.Symbol = bar
-- bar.ConversionFactorA = 0
-- bar.ConversionFactorB = 1E-05
-- Unit:millibar
-- millibar.Symbol = mbar
-- millibar.ConversionFactorA = 0
-- millibar.ConversionFactorB = 0,01
-- Unit:microbar
-- microbar.Symbol = mubar
-- microbar.ConversionFactorA = 0
-- microbar.ConversionFactorB = 10
-- Unit:poundPerSquareInch
-- poundPerSquareInch.Symbol = psi
-- poundPerSquareInch.ConversionFactorA = 0
-- poundPerSquareInch.ConversionFactorB = 0,00014503762645158165
-- Unit:poundPer100SquareFoot
-- poundPer100SquareFoot.Symbol = lbPer100ftsquare
-- poundPer100SquareFoot.ConversionFactorA = 0
-- poundPer100SquareFoot.ConversionFactorB = 2,0887
-- Unit:kiloPoundPerSquareInch
-- kiloPoundPerSquareInch.Symbol = ksi
-- kiloPoundPerSquareInch.ConversionFactorA = 0
-- kiloPoundPerSquareInch.ConversionFactorB = 1,4503762645158164E-07
-- Unit:standardatmosphere
-- standardatmosphere.Symbol = atm
-- standardatmosphere.ConversionFactorA = 0
-- standardatmosphere.ConversionFactorB = 9,869232667E-06
-- Unit:poundPerSquareFoot
-- poundPerSquareFoot.Symbol = lbPerftsquare
-- poundPerSquareFoot.ConversionFactorA = 0
-- poundPerSquareFoot.ConversionFactorB = 0,02088543
-- Unit:megaPascal
-- megaPascal.Symbol = mPa
-- megaPascal.ConversionFactorA = 0
-- megaPascal.ConversionFactorB = 1E-06
-- Unit:gigaPascal
-- gigaPascal.Symbol = gPa
-- gigaPascal.ConversionFactorA = 0
-- gigaPascal.ConversionFactorB = 1E-09
-- Unit:newtonPerSquareMeter
-- newtonPerSquareMeter.Symbol = nPermsquare
-- newtonPerSquareMeter.ConversionFactorA = 0
-- newtonPerSquareMeter.ConversionFactorB = 1
-- Unit:newtonPerSquareCentimeter
-- newtonPerSquareCentimeter.Symbol = nPercmsquare
-- newtonPerSquareCentimeter.ConversionFactorA = 0
-- newtonPerSquareCentimeter.ConversionFactorB = 0,0001
-- Unit:newtonPerSquareMillimeter
-- newtonPerSquareMillimeter.Symbol = nPermmsquare
-- newtonPerSquareMillimeter.ConversionFactorA = 0
-- newtonPerSquareMillimeter.ConversionFactorB = 1E-06
-- Unit:kiloNewtonPerSquareMeter
-- kiloNewtonPerSquareMeter.Symbol = kNPermsquare
-- kiloNewtonPerSquareMeter.ConversionFactorA = 0
-- kiloNewtonPerSquareMeter.ConversionFactorB = 0,001
-- Unit:megaPoundPerSquareInch
-- megaPoundPerSquareInch.Symbol = mpsi
-- megaPoundPerSquareInch.ConversionFactorA = 0
-- megaPoundPerSquareInch.ConversionFactorB = 1,4503762645158166E-10
-- Unit:torr
-- torr.Symbol = torr
-- torr.ConversionFactorA = 0
-- torr.ConversionFactorB = 0,0075006168
-- Unit:centimeterMercuryZeroDegC
-- centimeterMercuryZeroDegC.Symbol = cmHg0degC
-- centimeterMercuryZeroDegC.ConversionFactorA = 0
-- centimeterMercuryZeroDegC.ConversionFactorB = 0,0007500638
-- Unit:millimeterMercuryZeroDegC
-- millimeterMercuryZeroDegC.Symbol = mmHg0degC
-- millimeterMercuryZeroDegC.ConversionFactorA = 0
-- millimeterMercuryZeroDegC.ConversionFactorB = 0,007500638
-- Unit:inchMercury32DegF
-- inchMercury32DegF.Symbol = inHg32degF
-- inchMercury32DegF.ConversionFactorA = 0
-- inchMercury32DegF.ConversionFactorB = 0,0002953006
-- Unit:inchMercury60DegF
-- inchMercury60DegF.Symbol = inHg60degF
-- inchMercury60DegF.ConversionFactorA = 0
-- inchMercury60DegF.ConversionFactorB = 0,000296134
-- Unit:centimeterWater4DegC
-- centimeterWater4DegC.Symbol = cmAq4degC
-- centimeterWater4DegC.ConversionFactorA = 0
-- centimeterWater4DegC.ConversionFactorB = 0,01019744289
-- Unit:millimeterWater4DegC
-- millimeterWater4DegC.Symbol = mmAq4degC
-- millimeterWater4DegC.ConversionFactorA = 0
-- millimeterWater4DegC.ConversionFactorB = 0,1019744289
-- Unit:inchWater4DegC
-- inchWater4DegC.Symbol = inAq4degC
-- inchWater4DegC.ConversionFactorA = 0
-- inchWater4DegC.ConversionFactorB = 0,0040147421
-- Unit:footWater4DegC
-- footWater4DegC.Symbol = ftAq4degC
-- footWater4DegC.ConversionFactorA = 0
-- footWater4DegC.ConversionFactorB = 0,0003345623
-- Unit:inchWater60DegF
-- inchWater60DegF.Symbol = inAq60degF
-- inchWater60DegF.ConversionFactorA = 0
-- inchWater60DegF.ConversionFactorB = 0,0040185981
-- Unit:footWater60DegF
-- footWater60DegF.Symbol = ftAq60degF
-- footWater60DegF.ConversionFactorA = 0
-- footWater60DegF.ConversionFactorB = 0,0003348832
-- Quantity:flowRate
-- flowRate.L = 3
-- flowRate.M = 0
-- flowRate.T = -1
-- flowRate.I = 0
-- flowRate.ThT = 0
-- flowRate.N = 0
-- flowRate.J = 0
-- Unit:literPerSecond
-- literPerSecond.Symbol = lPers
-- literPerSecond.ConversionFactorA = 0
-- literPerSecond.ConversionFactorB = 1000
-- Unit:cubicMeterPerSecond
-- cubicMeterPerSecond.Symbol = mcubicPers
-- cubicMeterPerSecond.ConversionFactorA = 0
-- cubicMeterPerSecond.ConversionFactorB = 1
-- Unit:cubicFootPerSecond
-- cubicFootPerSecond.Symbol = ftcubicPers
-- cubicFootPerSecond.ConversionFactorA = 0
-- cubicFootPerSecond.ConversionFactorB = 35,31467
-- Unit:uKGallonPerSecond
-- uKGallonPerSecond.Symbol = gpsUK
-- uKGallonPerSecond.ConversionFactorA = 0
-- uKGallonPerSecond.ConversionFactorB = 219,96924829908778
-- Unit:uSGallonPerSecond
-- uSGallonPerSecond.Symbol = gpsUS
-- uSGallonPerSecond.ConversionFactorA = 0
-- uSGallonPerSecond.ConversionFactorB = 264,17985364436106
-- Unit:barrelPerSecond
-- barrelPerSecond.Symbol = bblPers
-- barrelPerSecond.ConversionFactorA = 0
-- barrelPerSecond.ConversionFactorB = 6,28999651534193
-- Unit:cubicMeterPerMinute
-- cubicMeterPerMinute.Symbol = mcubicPermin
-- cubicMeterPerMinute.ConversionFactorA = 0
-- cubicMeterPerMinute.ConversionFactorB = 60
-- Unit:literPerMinute
-- literPerMinute.Symbol = lPermin
-- literPerMinute.ConversionFactorA = 0
-- literPerMinute.ConversionFactorB = 60000
-- Unit:cubicFootPerMinute
-- cubicFootPerMinute.Symbol = ftcubicPermin
-- cubicFootPerMinute.ConversionFactorA = 0
-- cubicFootPerMinute.ConversionFactorB = 2118,8802
-- Unit:uKGallonPerMinute
-- uKGallonPerMinute.Symbol = gpmUK
-- uKGallonPerMinute.ConversionFactorA = 0
-- uKGallonPerMinute.ConversionFactorB = 13198,1548979
-- Unit:uSGallonPerMinute
-- uSGallonPerMinute.Symbol = gpmUS
-- uSGallonPerMinute.ConversionFactorA = 0
-- uSGallonPerMinute.ConversionFactorB = 15850,3230745
-- Unit:barrelPerMinute
-- barrelPerMinute.Symbol = bblPerm
-- barrelPerMinute.ConversionFactorA = 0
-- barrelPerMinute.ConversionFactorB = 377,39979092051584
-- Unit:cubicMeterPerHour
-- cubicMeterPerHour.Symbol = mcubicPerh
-- cubicMeterPerHour.ConversionFactorA = 0
-- cubicMeterPerHour.ConversionFactorB = 3600
-- Unit:literPerHour
-- literPerHour.Symbol = lPerh
-- literPerHour.ConversionFactorA = 0
-- literPerHour.ConversionFactorB = 3600000
-- Unit:cubicFootPerHour
-- cubicFootPerHour.Symbol = ftcubicPerh
-- cubicFootPerHour.ConversionFactorA = 0
-- cubicFootPerHour.ConversionFactorB = 127132,812
-- Unit:uKGallonPerHour
-- uKGallonPerHour.Symbol = gphUK
-- uKGallonPerHour.ConversionFactorA = 0
-- uKGallonPerHour.ConversionFactorB = 791889,293874
-- Unit:uSGallonPerHour
-- uSGallonPerHour.Symbol = gphUS
-- uSGallonPerHour.ConversionFactorA = 0
-- uSGallonPerHour.ConversionFactorB = 951019,38447
-- Unit:barrelPerHour
-- barrelPerHour.Symbol = bblPerh
-- barrelPerHour.ConversionFactorA = 0
-- barrelPerHour.ConversionFactorB = 22643,98745523095
-- Unit:cubicMeterPerDay
-- cubicMeterPerDay.Symbol = mcubicPerd
-- cubicMeterPerDay.ConversionFactorA = 0
-- cubicMeterPerDay.ConversionFactorB = 86400
-- Unit:millionCubicMeterPerDay
-- millionCubicMeterPerDay.Symbol = mmcubicPerd
-- millionCubicMeterPerDay.ConversionFactorA = 0
-- millionCubicMeterPerDay.ConversionFactorB = 0,0864
-- Unit:uKGallonPerDay
-- uKGallonPerDay.Symbol = gpdUK
-- uKGallonPerDay.ConversionFactorA = 0
-- uKGallonPerDay.ConversionFactorB = 19005343,052975997
-- Unit:uSGallonPerDay
-- uSGallonPerDay.Symbol = gpdUS
-- uSGallonPerDay.ConversionFactorA = 0
-- uSGallonPerDay.ConversionFactorB = 22824465,227280002
-- Unit:millionUKGallonPerDay
-- millionUKGallonPerDay.Symbol = millionUKGallonPerDay
-- millionUKGallonPerDay.ConversionFactorA = 0
-- millionUKGallonPerDay.ConversionFactorB = 19,005343052976
-- Unit:millionUSGallonPerDay
-- millionUSGallonPerDay.Symbol = millionUSGallonPerDay
-- millionUSGallonPerDay.ConversionFactorA = 0
-- millionUSGallonPerDay.ConversionFactorB = 22,82446522728
-- Unit:literPerDay
-- literPerDay.Symbol = lPerd
-- literPerDay.ConversionFactorA = 0
-- literPerDay.ConversionFactorB = 86400000
-- Unit:millionLiterPerDay
-- millionLiterPerDay.Symbol = millionLiterPerDay
-- millionLiterPerDay.ConversionFactorA = 0
-- millionLiterPerDay.ConversionFactorB = 86,4
-- Unit:cubicFootPerDay
-- cubicFootPerDay.Symbol = ftcubicPerd
-- cubicFootPerDay.ConversionFactorA = 0
-- cubicFootPerDay.ConversionFactorB = 3051187,488
-- Unit:thousandStandardCubicFootPerDay
-- thousandStandardCubicFootPerDay.Symbol = mscfPerd
-- thousandStandardCubicFootPerDay.ConversionFactorA = 0
-- thousandStandardCubicFootPerDay.ConversionFactorB = 4,087346064814815E-07
-- Unit:millionStandardCubicFootPerDay
-- millionStandardCubicFootPerDay.Symbol = mMscfPerd
-- millionStandardCubicFootPerDay.ConversionFactorA = 0
-- millionStandardCubicFootPerDay.ConversionFactorB = 4,087346064814815E-10
-- Unit:barrelPerDay
-- barrelPerDay.Symbol = bblPerd
-- barrelPerDay.ConversionFactorA = 0
-- barrelPerDay.ConversionFactorB = 543455,6989255428
-- Unit:cubicMeterPerYear
-- cubicMeterPerYear.Symbol = mcubicPeryear
-- cubicMeterPerYear.ConversionFactorA = 0
-- cubicMeterPerYear.ConversionFactorB = 31557600
-- Unit:literPerYear
-- literPerYear.Symbol = lPeryear
-- literPerYear.ConversionFactorA = 0
-- literPerYear.ConversionFactorB = 31557600000
-- Unit:cubicFootPerYear
-- cubicFootPerYear.Symbol = ftcubicPeryear
-- cubicFootPerYear.ConversionFactorA = 0
-- cubicFootPerYear.ConversionFactorB = 1114446229,992
-- Unit:uKGallonPerYear
-- uKGallonPerYear.Symbol = gpyUK
-- uKGallonPerYear.ConversionFactorA = 0
-- uKGallonPerYear.ConversionFactorB = 6941701550,0994835
-- Unit:uSGallonPerYear
-- uSGallonPerYear.Symbol = gpyUS
-- uSGallonPerYear.ConversionFactorA = 0
-- uSGallonPerYear.ConversionFactorB = 8336635924,264021
-- Unit:barrelPerYear
-- barrelPerYear.Symbol = bblPeryear
-- barrelPerYear.ConversionFactorA = 0
-- barrelPerYear.ConversionFactorB = 543455,6989255428
-- Quantity:volumetricFlowRateRateOfChange
-- volumetricFlowRateRateOfChange.L = 3
-- volumetricFlowRateRateOfChange.M = 0
-- volumetricFlowRateRateOfChange.T = -2
-- volumetricFlowRateRateOfChange.I = 0
-- volumetricFlowRateRateOfChange.ThT = 0
-- volumetricFlowRateRateOfChange.N = 0
-- volumetricFlowRateRateOfChange.J = 0
-- Unit:cubicMeterPerSecondSquare
-- cubicMeterPerSecondSquare.Symbol = mcubicPerssquare
-- cubicMeterPerSecondSquare.ConversionFactorA = 0
-- cubicMeterPerSecondSquare.ConversionFactorB = 1
-- Unit:literPerMinuteSquare
-- literPerMinuteSquare.Symbol = lPerminsquare
-- literPerMinuteSquare.ConversionFactorA = 0
-- literPerMinuteSquare.ConversionFactorB = 3600000
-- Unit:literPerMinutePerSecond
-- literPerMinutePerSecond.Symbol = lPerminPers
-- literPerMinutePerSecond.ConversionFactorA = 0
-- literPerMinutePerSecond.ConversionFactorB = 60000
-- Unit:literPerSecondPerSecond
-- literPerSecondPerSecond.Symbol = lPerssquare
-- literPerSecondPerSecond.ConversionFactorA = 0
-- literPerSecondPerSecond.ConversionFactorB = 1000
-- Unit:uKGallonPerMinuteSquare
-- uKGallonPerMinuteSquare.Symbol = uKGalPerminsquare
-- uKGallonPerMinuteSquare.ConversionFactorA = 0
-- uKGallonPerMinuteSquare.ConversionFactorB = 791889,293874
-- Unit:uKGallonPerMinutePerSecond
-- uKGallonPerMinutePerSecond.Symbol = uKGalPerminPers
-- uKGallonPerMinutePerSecond.ConversionFactorA = 0
-- uKGallonPerMinutePerSecond.ConversionFactorB = 13198,1549
-- Unit:uSGallonPerMinuteSquare
-- uSGallonPerMinuteSquare.Symbol = uSGalPerminsquare
-- uSGallonPerMinuteSquare.ConversionFactorA = 0
-- uSGallonPerMinuteSquare.ConversionFactorB = 951019,38447
-- Unit:uSGallonPerMinutePerSecond
-- uSGallonPerMinutePerSecond.Symbol = uSGalPerminPers
-- uSGallonPerMinutePerSecond.ConversionFactorA = 0
-- uSGallonPerMinutePerSecond.ConversionFactorB = 15850,32307
-- Quantity:velocity
-- velocity.L = 1
-- velocity.M = 0
-- velocity.T = -1
-- velocity.I = 0
-- velocity.ThT = 0
-- velocity.N = 0
-- velocity.J = 0
-- Unit:meterPerSecond
-- meterPerSecond.Symbol = mPers
-- meterPerSecond.ConversionFactorA = 0
-- meterPerSecond.ConversionFactorB = 1
-- Unit:meterPerMinute
-- meterPerMinute.Symbol = mPermin
-- meterPerMinute.ConversionFactorA = 0
-- meterPerMinute.ConversionFactorB = 60
-- Unit:centimeterPerSecond
-- centimeterPerSecond.Symbol = cmPers
-- centimeterPerSecond.ConversionFactorA = 0
-- centimeterPerSecond.ConversionFactorB = 100
-- Unit:meterPerHour
-- meterPerHour.Symbol = mPerh
-- meterPerHour.ConversionFactorA = 0
-- meterPerHour.ConversionFactorB = 3600
-- Unit:meterPerDay
-- meterPerDay.Symbol = mPerd
-- meterPerDay.ConversionFactorA = 0
-- meterPerDay.ConversionFactorB = 86400
-- Unit:footPerHour
-- footPerHour.Symbol = ftPerh
-- footPerHour.ConversionFactorA = 0
-- footPerHour.ConversionFactorB = 11811,023622
-- Unit:footPerDay
-- footPerDay.Symbol = ftPerd
-- footPerDay.ConversionFactorA = 0
-- footPerDay.ConversionFactorB = 283464,566928
-- Unit:footPerMinute
-- footPerMinute.Symbol = ftPerm
-- footPerMinute.ConversionFactorA = 0
-- footPerMinute.ConversionFactorB = 196,8503936
-- Unit:footPerSecond
-- footPerSecond.Symbol = ftPers
-- footPerSecond.ConversionFactorA = 0
-- footPerSecond.ConversionFactorB = 3,280839894
-- Unit:inchPerSecond
-- inchPerSecond.Symbol = inPers
-- inchPerSecond.ConversionFactorA = 0
-- inchPerSecond.ConversionFactorB = 39,37007874015748
-- Unit:milePerHour
-- milePerHour.Symbol = mph
-- milePerHour.ConversionFactorA = 0
-- milePerHour.ConversionFactorB = 2,236936
-- Quantity:forceGradient
-- forceGradient.L = 0
-- forceGradient.M = 1
-- forceGradient.T = -3
-- forceGradient.I = 0
-- forceGradient.ThT = 0
-- forceGradient.N = 0
-- forceGradient.J = 0
-- Unit:newtonPerMeter
-- newtonPerMeter.Symbol = nPerm
-- newtonPerMeter.ConversionFactorA = 0
-- newtonPerMeter.ConversionFactorB = 1
-- Unit:newtonPer30Meter
-- newtonPer30Meter.Symbol = nPer30m
-- newtonPer30Meter.ConversionFactorA = 0
-- newtonPer30Meter.ConversionFactorB = 30
-- Unit:decaNewtonPerMeter
-- decaNewtonPerMeter.Symbol = daNPerm
-- decaNewtonPerMeter.ConversionFactorA = 0
-- decaNewtonPerMeter.ConversionFactorB = 10
-- Quantity:force
-- force.L = 1
-- force.M = 1
-- force.T = -2
-- force.I = 0
-- force.ThT = 0
-- force.N = 0
-- force.J = 0
-- Unit:newton
-- newton.Symbol = n
-- newton.ConversionFactorA = 0
-- newton.ConversionFactorB = 1
-- Unit:decaNewton
-- decaNewton.Symbol = daN
-- decaNewton.ConversionFactorA = 0
-- decaNewton.ConversionFactorB = 0,1
-- Unit:kiloNewton
-- kiloNewton.Symbol = kN
-- kiloNewton.ConversionFactorA = 0
-- kiloNewton.ConversionFactorB = 0,001
-- Unit:kiloDecaNewton
-- kiloDecaNewton.Symbol = kdaN
-- kiloDecaNewton.ConversionFactorA = 0
-- kiloDecaNewton.ConversionFactorB = 0,0001
-- Unit:kilogramForce
-- kilogramForce.Symbol = kgf
-- kilogramForce.ConversionFactorA = 0
-- kilogramForce.ConversionFactorB = 0,10197162129779283
-- Unit:poundForce
-- poundForce.Symbol = lbf
-- poundForce.ConversionFactorA = 0
-- poundForce.ConversionFactorB = 0,2248089438709618
-- Unit:kiloPoundForce
-- kiloPoundForce.Symbol = klbf
-- kiloPoundForce.ConversionFactorA = 0
-- kiloPoundForce.ConversionFactorB = 0,00022480894387096184
-- Quantity:materialStrength
-- materialStrength.L = -1
-- materialStrength.M = 1
-- materialStrength.T = -1
-- materialStrength.I = 0
-- materialStrength.ThT = 0
-- materialStrength.N = 0
-- materialStrength.J = 0
-- Unit:pascal
-- pascal.Symbol = pa
-- pascal.ConversionFactorA = 0
-- pascal.ConversionFactorB = 1
-- Unit:megaPascal
-- megaPascal.Symbol = mPa
-- megaPascal.ConversionFactorA = 0
-- megaPascal.ConversionFactorB = 1E-06
-- Unit:gigaPascal
-- gigaPascal.Symbol = gPa
-- gigaPascal.ConversionFactorA = 0
-- gigaPascal.ConversionFactorB = 1E-09
-- Unit:pSI
-- pSI.Symbol = psi
-- pSI.ConversionFactorA = 0
-- pSI.ConversionFactorB = 0,00014503762645158165
-- Unit:poundPer100SquareFoot
-- poundPer100SquareFoot.Symbol = lbPer100ftsquare
-- poundPer100SquareFoot.ConversionFactorA = 0
-- poundPer100SquareFoot.ConversionFactorB = 2,0887
-- Unit:megapoundPerSquareInch
-- megapoundPerSquareInch.Symbol = mpsi
-- megapoundPerSquareInch.ConversionFactorA = 0
-- megapoundPerSquareInch.ConversionFactorB = 1,4503762645158166E-10
-- Quantity:frequency
-- frequency.L = 0
-- frequency.M = 0
-- frequency.T = -1
-- frequency.I = 0
-- frequency.ThT = 0
-- frequency.N = 0
-- frequency.J = 0
-- Unit:hertz
-- hertz.Symbol = hz
-- hertz.ConversionFactorA = 0
-- hertz.ConversionFactorB = 1
-- Unit:kiloHertz
-- kiloHertz.Symbol = kHz
-- kiloHertz.ConversionFactorA = 0
-- kiloHertz.ConversionFactorB = 0,001
-- Unit:megaHertz
-- megaHertz.Symbol = mHz
-- megaHertz.ConversionFactorA = 0
-- megaHertz.ConversionFactorB = 1E-06
-- Unit:gigaHertz
-- gigaHertz.Symbol = mHz
-- gigaHertz.ConversionFactorA = 0
-- gigaHertz.ConversionFactorB = 1E-09
-- Quantity:rotationFrequency
-- rotationFrequency.L = 0
-- rotationFrequency.M = 0
-- rotationFrequency.T = -1
-- rotationFrequency.I = 0
-- rotationFrequency.ThT = 0
-- rotationFrequency.N = 0
-- rotationFrequency.J = 0
-- Unit:hertz
-- hertz.Symbol = hz
-- hertz.ConversionFactorA = 0
-- hertz.ConversionFactorB = 1
-- Unit:rPM
-- rPM.Symbol = rpm
-- rPM.ConversionFactorA = 0
-- rPM.ConversionFactorB = 60
-- Quantity:proportion
-- proportion.L = 0
-- proportion.M = 0
-- proportion.T = 0
-- proportion.I = 0
-- proportion.ThT = 0
-- proportion.N = 0
-- proportion.J = 0
-- Unit:proportion
-- proportion.ConversionFactorA = 0
-- proportion.ConversionFactorB = 1
-- Unit:percent
-- percent.Symbol = %
-- percent.ConversionFactorA = 0
-- percent.ConversionFactorB = 100
-- Unit:perThousand
-- perThousand.Symbol = perThousands
-- perThousand.ConversionFactorA = 0
-- perThousand.ConversionFactorB = 1000
-- Unit:partPerMillion
-- partPerMillion.Symbol = ppm
-- partPerMillion.ConversionFactorA = 0
-- partPerMillion.ConversionFactorB = 1000000
-- Quantity:heatTransferCoefficient
-- heatTransferCoefficient.L = 0
-- heatTransferCoefficient.M = 1
-- heatTransferCoefficient.T = -3
-- heatTransferCoefficient.I = 0
-- heatTransferCoefficient.ThT = -1
-- heatTransferCoefficient.N = 0
-- heatTransferCoefficient.J = 0
-- Unit:wattPerMeterSquaredPerKelvin
-- wattPerMeterSquaredPerKelvin.Symbol = wPermsquarePerK
-- wattPerMeterSquaredPerKelvin.ConversionFactorA = 0
-- wattPerMeterSquaredPerKelvin.ConversionFactorB = 1
-- Unit:britishThermalUnitPerHourPerSquareFootPerDegreeFahrenheit
-- britishThermalUnitPerHourPerSquareFootPerDegreeFahrenheit.Symbol = bTUPerhPerftsquarePerdegF
-- britishThermalUnitPerHourPerSquareFootPerDegreeFahrenheit.ConversionFactorA = 0
-- britishThermalUnitPerHourPerSquareFootPerDegreeFahrenheit.ConversionFactorB = 0,176110184
-- Quantity:gravitationalLoad
-- gravitationalLoad.L = 0
-- gravitationalLoad.M = 1
-- gravitationalLoad.T = 0
-- gravitationalLoad.I = 0
-- gravitationalLoad.ThT = 0
-- gravitationalLoad.N = 0
-- gravitationalLoad.J = 0
-- Unit:kilogram
-- kilogram.Symbol = kg
-- kilogram.ConversionFactorA = 0
-- kilogram.ConversionFactorB = 1
-- Unit:tonnemetric
-- tonnemetric.Symbol = t
-- tonnemetric.ConversionFactorA = 0
-- tonnemetric.ConversionFactorB = 0,001
-- Unit:pound
-- pound.Symbol = lb
-- pound.ConversionFactorA = 0
-- pound.ConversionFactorB = 2,204623
-- Unit:kiloPound
-- kiloPound.Symbol = klb
-- kiloPound.ConversionFactorA = 0
-- kiloPound.ConversionFactorB = 0,002204622621848776
-- Unit:tonUK
-- tonUK.Symbol = lT
-- tonUK.ConversionFactorA = 0
-- tonUK.ConversionFactorB = 0,0009842065274173282
-- Quantity:hydraulicConductivity
-- hydraulicConductivity.L = 1
-- hydraulicConductivity.M = 0
-- hydraulicConductivity.T = -1
-- hydraulicConductivity.I = 0
-- hydraulicConductivity.ThT = 0
-- hydraulicConductivity.N = 0
-- hydraulicConductivity.J = 0
-- Unit:meterPerSecond
-- meterPerSecond.Symbol = mPers
-- meterPerSecond.ConversionFactorA = 0
-- meterPerSecond.ConversionFactorB = 1
-- Unit:meterPerMinute
-- meterPerMinute.Symbol = mPermin
-- meterPerMinute.ConversionFactorA = 0
-- meterPerMinute.ConversionFactorB = 60
-- Unit:meterPerHour
-- meterPerHour.Symbol = mPerh
-- meterPerHour.ConversionFactorA = 0
-- meterPerHour.ConversionFactorB = 3600
-- Unit:meterPerDay
-- meterPerDay.Symbol = mPerd
-- meterPerDay.ConversionFactorA = 0
-- meterPerDay.ConversionFactorB = 86400
-- Unit:footPerSecond
-- footPerSecond.Symbol = ftPers
-- footPerSecond.ConversionFactorA = 0
-- footPerSecond.ConversionFactorB = 3,280839894
-- Unit:footPerMinute
-- footPerMinute.Symbol = ftPerm
-- footPerMinute.ConversionFactorA = 0
-- footPerMinute.ConversionFactorB = 196,8503936
-- Unit:footPerHour
-- footPerHour.Symbol = ftPerh
-- footPerHour.ConversionFactorA = 0
-- footPerHour.ConversionFactorB = 11811,023622
-- Unit:footPerDay
-- footPerDay.Symbol = ftPerd
-- footPerDay.ConversionFactorA = 0
-- footPerDay.ConversionFactorB = 283464,566928
-- Unit:centimeterPerSecond
-- centimeterPerSecond.Symbol = cmPers
-- centimeterPerSecond.ConversionFactorA = 0
-- centimeterPerSecond.ConversionFactorB = 100
-- Unit:inchPerSecond
-- inchPerSecond.Symbol = inPers
-- inchPerSecond.ConversionFactorA = 0
-- inchPerSecond.ConversionFactorB = 39,37007874015748
-- Quantity:interfacialTension
-- interfacialTension.L = 0
-- interfacialTension.M = 1
-- interfacialTension.T = -2
-- interfacialTension.I = 0
-- interfacialTension.ThT = 0
-- interfacialTension.N = 0
-- interfacialTension.J = 0
-- Unit:newtonPerMeter
-- newtonPerMeter.Symbol = nPerm
-- newtonPerMeter.ConversionFactorA = 0
-- newtonPerMeter.ConversionFactorB = 1
-- Unit:milliNewtonPerMeter
-- milliNewtonPerMeter.Symbol = mNPerm
-- milliNewtonPerMeter.ConversionFactorA = 0
-- milliNewtonPerMeter.ConversionFactorB = 1000
-- Unit:dynesPerCentimeter
-- dynesPerCentimeter.Symbol = dynPercm
-- dynesPerCentimeter.ConversionFactorA = 0
-- dynesPerCentimeter.ConversionFactorB = 1000
-- Unit:poundPerSecondSquared
-- poundPerSecondSquared.Symbol = lbmPerssquare
-- poundPerSecondSquared.ConversionFactorA = 0
-- poundPerSecondSquared.ConversionFactorB = 2,2046244201837775
-- Quantity:volume
-- volume.L = 3
-- volume.M = 0
-- volume.T = 0
-- volume.I = 0
-- volume.ThT = 0
-- volume.N = 0
-- volume.J = 0
-- Unit:cubicMeter
-- cubicMeter.Symbol = mcubic
-- cubicMeter.ConversionFactorA = 0
-- cubicMeter.ConversionFactorB = 1
-- Unit:liter
-- liter.Symbol = l
-- liter.ConversionFactorA = 0
-- liter.ConversionFactorB = 1000
-- Unit:deciliter
-- deciliter.Symbol = dl
-- deciliter.ConversionFactorA = 0
-- deciliter.ConversionFactorB = 10000
-- Unit:centiliter
-- centiliter.Symbol = cl
-- centiliter.ConversionFactorA = 0
-- centiliter.ConversionFactorB = 99999,99999999999
-- Unit:milliliter
-- milliliter.Symbol = ml
-- milliliter.ConversionFactorA = 0
-- milliliter.ConversionFactorB = 1000000
-- Unit:uSGallon
-- uSGallon.Symbol = uSGal.
-- uSGallon.ConversionFactorA = 0
-- uSGallon.ConversionFactorB = 264,17985364436106
-- Unit:uKGallon
-- uKGallon.Symbol = uKGal.
-- uKGallon.ConversionFactorA = 0
-- uKGallon.ConversionFactorB = 219,96924829908778
-- Unit:barrel
-- barrel.Symbol = bbl
-- barrel.ConversionFactorA = 0
-- barrel.ConversionFactorB = 6,28999651534193
-- Unit:millionCubicMeter
-- millionCubicMeter.Symbol = mmcubic
-- millionCubicMeter.ConversionFactorA = 0
-- millionCubicMeter.ConversionFactorB = 1E-06
-- Unit:millionLiter
-- millionLiter.Symbol = ml
-- millionLiter.ConversionFactorA = 0
-- millionLiter.ConversionFactorB = 0,001
-- Unit:millionUKGallon
-- millionUKGallon.Symbol = mUKGal.
-- millionUKGallon.ConversionFactorA = 0
-- millionUKGallon.ConversionFactorB = 0,0002199692482990878
-- Unit:millionBarrel
-- millionBarrel.Symbol = mbbl
-- millionBarrel.ConversionFactorA = 0
-- millionBarrel.ConversionFactorB = 0,00026417985364436106
-- Unit:thousandStandardCubicFoot
-- thousandStandardCubicFoot.Symbol = mscf
-- thousandStandardCubicFoot.ConversionFactorA = 0
-- thousandStandardCubicFoot.ConversionFactorB = 0,03531467
-- Unit:millionStandardCubicFoot
-- millionStandardCubicFoot.Symbol = mMscf
-- millionStandardCubicFoot.ConversionFactorA = 0
-- millionStandardCubicFoot.ConversionFactorB = 3,531467E-05
-- Quantity:largeVolume
-- largeVolume.L = 3
-- largeVolume.M = 0
-- largeVolume.T = 0
-- largeVolume.I = 0
-- largeVolume.ThT = 0
-- largeVolume.N = 0
-- largeVolume.J = 0
-- Unit:cubicMeter
-- cubicMeter.Symbol = mcubic
-- cubicMeter.ConversionFactorA = 0
-- cubicMeter.ConversionFactorB = 1
-- Unit:liter
-- liter.Symbol = l
-- liter.ConversionFactorA = 0
-- liter.ConversionFactorB = 1000
-- Unit:uSGallon
-- uSGallon.Symbol = uSGal.
-- uSGallon.ConversionFactorA = 0
-- uSGallon.ConversionFactorB = 264,17985364436106
-- Unit:uKGallon
-- uKGallon.Symbol = uKGal.
-- uKGallon.ConversionFactorA = 0
-- uKGallon.ConversionFactorB = 219,96924829908778
-- Unit:barrel
-- barrel.Symbol = bbl
-- barrel.ConversionFactorA = 0
-- barrel.ConversionFactorB = 6,28999651534193
-- Unit:millionCubicMeter
-- millionCubicMeter.Symbol = mmcubic
-- millionCubicMeter.ConversionFactorA = 0
-- millionCubicMeter.ConversionFactorB = 1E-06
-- Unit:millionLiter
-- millionLiter.Symbol = ml
-- millionLiter.ConversionFactorA = 0
-- millionLiter.ConversionFactorB = 0,001
-- Unit:millionUKGallon
-- millionUKGallon.Symbol = mUKGal.
-- millionUKGallon.ConversionFactorA = 0
-- millionUKGallon.ConversionFactorB = 0,0002199692482990878
-- Unit:millionBarrel
-- millionBarrel.Symbol = mbbl
-- millionBarrel.ConversionFactorA = 0
-- millionBarrel.ConversionFactorB = 0,00026417985364436106
-- Unit:millionStandardCubicFoot
-- millionStandardCubicFoot.Symbol = mMscf
-- millionStandardCubicFoot.ConversionFactorA = 0
-- millionStandardCubicFoot.ConversionFactorB = 3,531467E-05
-- Unit:thousandStandardCubicFoot
-- thousandStandardCubicFoot.Symbol = mscf
-- thousandStandardCubicFoot.ConversionFactorA = 0
-- thousandStandardCubicFoot.ConversionFactorB = 0,03531467
-- Quantity:magneticFluxDensity
-- magneticFluxDensity.L = 0
-- magneticFluxDensity.M = 1
-- magneticFluxDensity.T = -2
-- magneticFluxDensity.I = -1
-- magneticFluxDensity.ThT = 0
-- magneticFluxDensity.N = 0
-- magneticFluxDensity.J = 0
-- Unit:tesla
-- tesla.Symbol = t
-- tesla.ConversionFactorA = 0
-- tesla.ConversionFactorB = 1
-- Unit:gauss
-- gauss.Symbol = g
-- gauss.ConversionFactorA = 0
-- gauss.ConversionFactorB = 10000
-- Unit:milliGauss
-- milliGauss.Symbol = mG
-- milliGauss.ConversionFactorA = 0
-- milliGauss.ConversionFactorB = 10000000
-- Unit:milliTesla
-- milliTesla.Symbol = mT
-- milliTesla.ConversionFactorA = 0
-- milliTesla.ConversionFactorB = 1000
-- Unit:microTesla
-- microTesla.Symbol = muT
-- microTesla.ConversionFactorA = 0
-- microTesla.ConversionFactorB = 1000000
-- Unit:nanoTesla
-- nanoTesla.Symbol = nT
-- nanoTesla.ConversionFactorA = 0
-- nanoTesla.ConversionFactorB = 1000000000
-- Unit:maxwellPerSquareCentimeter
-- maxwellPerSquareCentimeter.Symbol = mxPercmsquare
-- maxwellPerSquareCentimeter.ConversionFactorA = 0
-- maxwellPerSquareCentimeter.ConversionFactorB = 10000
-- Unit:weberPerSquareMeter
-- weberPerSquareMeter.Symbol = wbPermsquare
-- weberPerSquareMeter.ConversionFactorA = 0
-- weberPerSquareMeter.ConversionFactorB = 1
-- Quantity:massRate
-- massRate.L = 0
-- massRate.M = 1
-- massRate.T = -1
-- massRate.I = 0
-- massRate.ThT = 0
-- massRate.N = 0
-- massRate.J = 0
-- Unit:kilogramPerSecond
-- kilogramPerSecond.Symbol = kgPers
-- kilogramPerSecond.ConversionFactorA = 0
-- kilogramPerSecond.ConversionFactorB = 1
-- Unit:kilogramPerMinute
-- kilogramPerMinute.Symbol = kgPermin
-- kilogramPerMinute.ConversionFactorA = 0
-- kilogramPerMinute.ConversionFactorB = 60
-- Quantity:permeability
-- permeability.L = 0
-- permeability.M = 0
-- permeability.T = 0
-- permeability.I = 0
-- permeability.ThT = 0
-- permeability.N = 0
-- permeability.J = 0
-- Unit:squareMeter
-- squareMeter.Symbol = msquare
-- squareMeter.ConversionFactorA = 0
-- squareMeter.ConversionFactorB = 1
-- Unit:darcy
-- darcy.Symbol = d
-- darcy.ConversionFactorA = 0
-- darcy.ConversionFactorB = 1000000
-- Unit:milliDarcy
-- milliDarcy.Symbol = mD
-- milliDarcy.ConversionFactorA = 0
-- milliDarcy.ConversionFactorB = 1000000000
-- Unit:microDarcy
-- microDarcy.Symbol = muD
-- microDarcy.ConversionFactorA = 0
-- microDarcy.ConversionFactorB = 1000000000
-- Quantity:pressureGradient
-- pressureGradient.L = -2
-- pressureGradient.M = 1
-- pressureGradient.T = -2
-- pressureGradient.I = 0
-- pressureGradient.ThT = 0
-- pressureGradient.N = 0
-- pressureGradient.J = 0
-- Unit:pascalPerMeter
-- pascalPerMeter.Symbol = paPerm
-- pascalPerMeter.ConversionFactorA = 0
-- pascalPerMeter.ConversionFactorB = 1
-- Unit:barPerMeter
-- barPerMeter.Symbol = barPerm
-- barPerMeter.ConversionFactorA = 0
-- barPerMeter.ConversionFactorB = 1E-05
-- Unit:pSIPerMeter
-- pSIPerMeter.Symbol = psiPerm
-- pSIPerMeter.ConversionFactorA = 0
-- pSIPerMeter.ConversionFactorB = 0,00014503762645158165
-- Unit:pSIPerFoot
-- pSIPerFoot.Symbol = psiPerft
-- pSIPerFoot.ConversionFactorA = 0
-- pSIPerFoot.ConversionFactorB = 4,4207468542442094E-05
-- Quantity:pressureLossConstant
-- pressureLossConstant.L = 4
-- pressureLossConstant.M = 0
-- pressureLossConstant.T = 0
-- pressureLossConstant.I = 0
-- pressureLossConstant.ThT = 0
-- pressureLossConstant.N = 0
-- pressureLossConstant.J = 0
-- Unit:pressureLossConstantSI
-- pressureLossConstantSI.Symbol = (mcubicPers)squaredot(kgPermcubic)PerPa
-- pressureLossConstantSI.ConversionFactorA = 0
-- pressureLossConstantSI.ConversionFactorB = 1
-- Unit:pressureLossConstantMetric
-- pressureLossConstantMetric.Symbol = (lPermin)squaredotsgPerbar
-- pressureLossConstantMetric.ConversionFactorA = 0
-- pressureLossConstantMetric.ConversionFactorB = 360000000000
-- Unit:pressureLossConstantUK
-- pressureLossConstantUK.Symbol = gpmUKsquaredotppgUKPerpsi
-- pressureLossConstantUK.ConversionFactorA = 0
-- pressureLossConstantUK.ConversionFactorB = 12036978643,119
-- Unit:pressureLossConstantUS
-- pressureLossConstantUS.Symbol = gpmUSsquaredotppgUSPerpsi
-- pressureLossConstantUS.ConversionFactorA = 0
-- pressureLossConstantUS.ConversionFactorB = 14455817187,722
-- Quantity:resistivity
-- resistivity.L = 3
-- resistivity.M = 1
-- resistivity.T = -3
-- resistivity.I = -2
-- resistivity.ThT = 0
-- resistivity.N = 0
-- resistivity.J = 0
-- Unit:ohmMeter
-- ohmMeter.Symbol = ohmdotm
-- ohmMeter.ConversionFactorA = 0
-- ohmMeter.ConversionFactorB = 1
-- Quantity:frequencyRateOfChange
-- frequencyRateOfChange.L = 0
-- frequencyRateOfChange.M = 0
-- frequencyRateOfChange.T = -2
-- frequencyRateOfChange.I = 0
-- frequencyRateOfChange.ThT = 0
-- frequencyRateOfChange.N = 0
-- frequencyRateOfChange.J = 0
-- Unit:hertzPerSecond
-- hertzPerSecond.Symbol = hzPers
-- hertzPerSecond.ConversionFactorA = 0
-- hertzPerSecond.ConversionFactorB = 1
-- Quantity:rotationFreqencyRateOfChange
-- rotationFreqencyRateOfChange.L = 0
-- rotationFreqencyRateOfChange.M = 0
-- rotationFreqencyRateOfChange.T = -2
-- rotationFreqencyRateOfChange.I = 0
-- rotationFreqencyRateOfChange.ThT = 0
-- rotationFreqencyRateOfChange.N = 0
-- rotationFreqencyRateOfChange.J = 0
-- Unit:hertzPerSecond
-- hertzPerSecond.Symbol = hzPers
-- hertzPerSecond.ConversionFactorA = 0
-- hertzPerSecond.ConversionFactorB = 1
-- Unit:rPMPerSecond
-- rPMPerSecond.Symbol = rpmPers
-- rPMPerSecond.ConversionFactorA = 0
-- rPMPerSecond.ConversionFactorB = 60
-- Quantity:fluidShearStress
-- fluidShearStress.L = -1
-- fluidShearStress.M = 1
-- fluidShearStress.T = -1
-- fluidShearStress.I = 0
-- fluidShearStress.ThT = 0
-- fluidShearStress.N = 0
-- fluidShearStress.J = 0
-- Unit:pascal
-- pascal.Symbol = pa
-- pascal.ConversionFactorA = 0
-- pascal.ConversionFactorB = 1
-- Unit:kiloPascal
-- kiloPascal.Symbol = kPa
-- kiloPascal.ConversionFactorA = 0
-- kiloPascal.ConversionFactorB = 0,001
-- Unit:bar
-- bar.Symbol = bar
-- bar.ConversionFactorA = 0
-- bar.ConversionFactorB = 1E-05
-- Unit:poundPerSquareInch
-- poundPerSquareInch.Symbol = psi
-- poundPerSquareInch.ConversionFactorA = 0
-- poundPerSquareInch.ConversionFactorB = 0,00014503762645158165
-- Unit:poundPer100SquareFoot
-- poundPer100SquareFoot.Symbol = lbPer100ftsquare
-- poundPer100SquareFoot.ConversionFactorA = 0
-- poundPer100SquareFoot.ConversionFactorB = 2,0887
-- Quantity:specificHeatCapacity
-- specificHeatCapacity.L = 2
-- specificHeatCapacity.M = 0
-- specificHeatCapacity.T = -2
-- specificHeatCapacity.I = 0
-- specificHeatCapacity.ThT = -1
-- specificHeatCapacity.N = 0
-- specificHeatCapacity.J = 0
-- Unit:joulePerKilogramKelvin
-- joulePerKilogramKelvin.Symbol = jPerkgdotK
-- joulePerKilogramKelvin.ConversionFactorA = 0
-- joulePerKilogramKelvin.ConversionFactorB = 1
-- Unit:joulePerGramKelvin
-- joulePerGramKelvin.Symbol = jPergdotk
-- joulePerGramKelvin.ConversionFactorA = 0
-- joulePerGramKelvin.ConversionFactorB = 0,001
-- Unit:joulePerGramDegreeCelsius
-- joulePerGramDegreeCelsius.Symbol = jPergdotdegC
-- joulePerGramDegreeCelsius.ConversionFactorA = 0
-- joulePerGramDegreeCelsius.ConversionFactorB = 0,001
-- Unit:caloriePerGramDegreeCelsius
-- caloriePerGramDegreeCelsius.Symbol = calPergdotdegC
-- caloriePerGramDegreeCelsius.ConversionFactorA = 0
-- caloriePerGramDegreeCelsius.ConversionFactorB = 0,0002388459
-- Unit:britishThermalUnitPerPoundDegreeFarenheit
-- britishThermalUnitPerPoundDegreeFarenheit.Symbol = bTUPerlbdotdegF
-- britishThermalUnitPerPoundDegreeFarenheit.ConversionFactorA = 0
-- britishThermalUnitPerPoundDegreeFarenheit.ConversionFactorB = 0,0002388459
-- Quantity:specificHeatCapcityTemperatureGradient
-- specificHeatCapcityTemperatureGradient.L = 2
-- specificHeatCapcityTemperatureGradient.M = 0
-- specificHeatCapcityTemperatureGradient.T = -2
-- specificHeatCapcityTemperatureGradient.I = 0
-- specificHeatCapcityTemperatureGradient.ThT = -2
-- specificHeatCapcityTemperatureGradient.N = 0
-- specificHeatCapcityTemperatureGradient.J = 0
-- Unit:joulePerKilogramKelvinPerKelvin
-- joulePerKilogramKelvinPerKelvin.Symbol = jPerkgdotKsquare
-- joulePerKilogramKelvinPerKelvin.ConversionFactorA = 0
-- joulePerKilogramKelvinPerKelvin.ConversionFactorB = 1
-- Unit:joulePerGramKelvinPerKelvin
-- joulePerGramKelvinPerKelvin.Symbol = jPergdotKsquare
-- joulePerGramKelvinPerKelvin.ConversionFactorA = 0
-- joulePerGramKelvinPerKelvin.ConversionFactorB = 0,001
-- Unit:joulePerGramDegreeCelsiusPerCelsius
-- joulePerGramDegreeCelsiusPerCelsius.Symbol = jPergdotdegCsquare
-- joulePerGramDegreeCelsiusPerCelsius.ConversionFactorA = 0
-- joulePerGramDegreeCelsiusPerCelsius.ConversionFactorB = 0,001
-- Unit:caloriePerGramDegreeCelsiusPerCelsius
-- caloriePerGramDegreeCelsiusPerCelsius.Symbol = calPergdotdegCsquare
-- caloriePerGramDegreeCelsiusPerCelsius.ConversionFactorA = 0
-- caloriePerGramDegreeCelsiusPerCelsius.ConversionFactorB = 0,0002388459
-- Unit:britishThermalUnitPerPoundDegreeFarenheitPerFarenheit
-- britishThermalUnitPerPoundDegreeFarenheitPerFarenheit.Symbol = bTUPerlbdotdegFsquare
-- britishThermalUnitPerPoundDegreeFarenheitPerFarenheit.ConversionFactorA = 0
-- britishThermalUnitPerPoundDegreeFarenheitPerFarenheit.ConversionFactorB = 0,00013269216666666667
-- Quantity:temperatureGradient
-- temperatureGradient.L = -1
-- temperatureGradient.M = 0
-- temperatureGradient.T = 0
-- temperatureGradient.I = 0
-- temperatureGradient.ThT = 1
-- temperatureGradient.N = 0
-- temperatureGradient.J = 0
-- Unit:kelvinPerMeter
-- kelvinPerMeter.Symbol = kPerm
-- kelvinPerMeter.ConversionFactorA = 0
-- kelvinPerMeter.ConversionFactorB = 1
-- Unit:celsiusPerMeter
-- celsiusPerMeter.Symbol = degCPerm
-- celsiusPerMeter.ConversionFactorA = 0
-- celsiusPerMeter.ConversionFactorB = 1
-- Unit:celsiusPer10Meter
-- celsiusPer10Meter.Symbol = degCPer10m
-- celsiusPer10Meter.ConversionFactorA = 0
-- celsiusPer10Meter.ConversionFactorB = 10
-- Unit:celsiusPer30Meter
-- celsiusPer30Meter.Symbol = degCPer30m
-- celsiusPer30Meter.ConversionFactorA = 0
-- celsiusPer30Meter.ConversionFactorB = 30
-- Unit:celsiusPer100Meter
-- celsiusPer100Meter.Symbol = degCPer100m
-- celsiusPer100Meter.ConversionFactorA = 0
-- celsiusPer100Meter.ConversionFactorB = 100
-- Unit:celsiusPerFoot
-- celsiusPerFoot.Symbol = degCPerft
-- celsiusPerFoot.ConversionFactorA = 0
-- celsiusPerFoot.ConversionFactorB = 0,3048
-- Unit:celsiusPer30Foot
-- celsiusPer30Foot.Symbol = degCPer30ft
-- celsiusPer30Foot.ConversionFactorA = 0
-- celsiusPer30Foot.ConversionFactorB = 9,144
-- Unit:celsiusPer100Foot
-- celsiusPer100Foot.Symbol = degCPer100ft
-- celsiusPer100Foot.ConversionFactorA = 0
-- celsiusPer100Foot.ConversionFactorB = 30,48
-- Unit:fahrenheitPerFoot
-- fahrenheitPerFoot.Symbol = degFPerft
-- fahrenheitPerFoot.ConversionFactorA = 0
-- fahrenheitPerFoot.ConversionFactorB = 0,54864
-- Unit:fahrenheitPer30Foot
-- fahrenheitPer30Foot.Symbol = degFPer30ft
-- fahrenheitPer30Foot.ConversionFactorA = 0
-- fahrenheitPer30Foot.ConversionFactorB = 16,4592
-- Unit:fahrenheitPer100Foot
-- fahrenheitPer100Foot.Symbol = degFPer100ft
-- fahrenheitPer100Foot.ConversionFactorA = 0
-- fahrenheitPer100Foot.ConversionFactorB = 54,864000000000004
-- Quantity:tension
-- tension.L = 1
-- tension.M = 1
-- tension.T = -2
-- tension.I = 0
-- tension.ThT = 0
-- tension.N = 0
-- tension.J = 0
-- Unit:newton
-- newton.Symbol = n
-- newton.ConversionFactorA = 0
-- newton.ConversionFactorB = 1
-- Unit:decaNewton
-- decaNewton.Symbol = daN
-- decaNewton.ConversionFactorA = 0
-- decaNewton.ConversionFactorB = 0,1
-- Unit:kiloNewton
-- kiloNewton.Symbol = kN
-- kiloNewton.ConversionFactorA = 0
-- kiloNewton.ConversionFactorB = 0,001
-- Unit:kiloDecaNewton
-- kiloDecaNewton.Symbol = kdaN
-- kiloDecaNewton.ConversionFactorA = 0
-- kiloDecaNewton.ConversionFactorB = 0,0001
-- Unit:kilogramForce
-- kilogramForce.Symbol = kgf
-- kilogramForce.ConversionFactorA = 0
-- kilogramForce.ConversionFactorB = 0,10197162129779283
-- Unit:poundForce
-- poundForce.Symbol = lbf
-- poundForce.ConversionFactorA = 0
-- poundForce.ConversionFactorB = 0,2248089438709618
-- Unit:kiloPoundForce
-- kiloPoundForce.Symbol = klbf
-- kiloPoundForce.ConversionFactorA = 0
-- kiloPoundForce.ConversionFactorB = 0,00022480894387096184
-- Quantity:thermalConductivity
-- thermalConductivity.L = 1
-- thermalConductivity.M = 1
-- thermalConductivity.T = -3
-- thermalConductivity.I = 0
-- thermalConductivity.ThT = -1
-- thermalConductivity.N = 0
-- thermalConductivity.J = 0
-- Unit:wattPerMetreKelvin
-- wattPerMetreKelvin.Symbol = wPermdotK
-- wattPerMetreKelvin.ConversionFactorA = 0
-- wattPerMetreKelvin.ConversionFactorB = 1
-- Unit:caloriePerMetreSecondDegreeCelsius
-- caloriePerMetreSecondDegreeCelsius.Symbol = calPermdotsdotdegC
-- caloriePerMetreSecondDegreeCelsius.ConversionFactorA = 0
-- caloriePerMetreSecondDegreeCelsius.ConversionFactorB = 0,238846
-- Unit:caloriePerCentimetreSecondDegreeCelsius
-- caloriePerCentimetreSecondDegreeCelsius.Symbol = calPercmdotsdotdegC
-- caloriePerCentimetreSecondDegreeCelsius.ConversionFactorA = 0
-- caloriePerCentimetreSecondDegreeCelsius.ConversionFactorB = 0,00238846
-- Unit:britishThermalUnitPerHourFootDegreeFarenheit
-- britishThermalUnitPerHourFootDegreeFarenheit.Symbol = bUTPerhdotftdotdegF
-- britishThermalUnitPerHourFootDegreeFarenheit.ConversionFactorA = 0
-- britishThermalUnitPerHourFootDegreeFarenheit.ConversionFactorB = 0,5777893
-- Unit:britishThermalUnitInchPerHourSquareFootDegreeFarenheit
-- britishThermalUnitInchPerHourSquareFootDegreeFarenheit.Symbol = bUTdotinPerhdotftsquaredotdegF
-- britishThermalUnitInchPerHourSquareFootDegreeFarenheit.ConversionFactorA = 0
-- britishThermalUnitInchPerHourSquareFootDegreeFarenheit.ConversionFactorB = 6,933472
-- Quantity:massGradient
-- massGradient.L = -1
-- massGradient.M = 1
-- massGradient.T = 0
-- massGradient.I = 0
-- massGradient.ThT = 0
-- massGradient.N = 0
-- massGradient.J = 0
-- Unit:kilogramPerMeter
-- kilogramPerMeter.Symbol = kgPerm
-- kilogramPerMeter.ConversionFactorA = 0
-- kilogramPerMeter.ConversionFactorB = 1
-- Unit:poundPerFoot
-- poundPerFoot.Symbol = lbPerft
-- poundPerFoot.ConversionFactorA = 0
-- poundPerFoot.ConversionFactorB = 0,6719689753966845
-- Unit:gramPerMeter
-- gramPerMeter.Symbol = gPerm
-- gramPerMeter.ConversionFactorA = 0
-- gramPerMeter.ConversionFactorB = 1000
-- Quantity:thermalConductivityTemperatureGradient
-- thermalConductivityTemperatureGradient.L = 1
-- thermalConductivityTemperatureGradient.M = 1
-- thermalConductivityTemperatureGradient.T = -3
-- thermalConductivityTemperatureGradient.I = 0
-- thermalConductivityTemperatureGradient.ThT = -2
-- thermalConductivityTemperatureGradient.N = 0
-- thermalConductivityTemperatureGradient.J = 0
-- Unit:wattPerMetreKelvinPerKelvin
-- wattPerMetreKelvinPerKelvin.Symbol = (WPer(mdotK))PerK
-- wattPerMetreKelvinPerKelvin.ConversionFactorA = 0
-- wattPerMetreKelvinPerKelvin.ConversionFactorB = 1
-- Unit:caloriePerMetreSecondDegreeCelsiusPerCelsius
-- caloriePerMetreSecondDegreeCelsiusPerCelsius.Symbol = calPermdotsdotdegCsquare
-- caloriePerMetreSecondDegreeCelsiusPerCelsius.ConversionFactorA = 0
-- caloriePerMetreSecondDegreeCelsiusPerCelsius.ConversionFactorB = 0,238846
-- Unit:caloriePerCentimetreSecondDegreeCelsiusPerCelsius
-- caloriePerCentimetreSecondDegreeCelsiusPerCelsius.Symbol = calPercmdotsdotdegCsquare
-- caloriePerCentimetreSecondDegreeCelsiusPerCelsius.ConversionFactorA = 0
-- caloriePerCentimetreSecondDegreeCelsiusPerCelsius.ConversionFactorB = 0,00238846
-- Unit:britishThermalUnitPerHourFootDegreeFarenheitPerFarenheit
-- britishThermalUnitPerHourFootDegreeFarenheitPerFarenheit.Symbol = bUTPerhdotftdotdegFsquare
-- britishThermalUnitPerHourFootDegreeFarenheitPerFarenheit.ConversionFactorA = 0
-- britishThermalUnitPerHourFootDegreeFarenheitPerFarenheit.ConversionFactorB = 0,32099405555555555
-- Unit:britishThermalUnitInchPerHourSquareFootDegreeFarenheitPerFarenheit
-- britishThermalUnitInchPerHourSquareFootDegreeFarenheitPerFarenheit.Symbol = bUTdotinPerhdotftsquaredotdegFsquare
-- britishThermalUnitInchPerHourSquareFootDegreeFarenheitPerFarenheit.ConversionFactorA = 0
-- britishThermalUnitInchPerHourSquareFootDegreeFarenheitPerFarenheit.ConversionFactorB = 3,8519288888888887
-- Quantity:torque
-- torque.L = 2
-- torque.M = 1
-- torque.T = -2
-- torque.I = 0
-- torque.ThT = 0
-- torque.N = 0
-- torque.J = 0
-- Unit:meterNewton
-- meterNewton.Symbol = m.N
-- meterNewton.ConversionFactorA = 0
-- meterNewton.ConversionFactorB = 1
-- Unit:meterDecaNewton
-- meterDecaNewton.Symbol = m.daN
-- meterDecaNewton.ConversionFactorA = 0
-- meterDecaNewton.ConversionFactorB = 0,1
-- Unit:meterKilogramForce
-- meterKilogramForce.Symbol = m.kgf
-- meterKilogramForce.ConversionFactorA = 0
-- meterKilogramForce.ConversionFactorB = 0,10197162129779283
-- Unit:meterKiloNewton
-- meterKiloNewton.Symbol = m.kN
-- meterKiloNewton.ConversionFactorA = 0
-- meterKiloNewton.ConversionFactorB = 0,001
-- Unit:footPound
-- footPound.Symbol = ft.lbf
-- footPound.ConversionFactorA = 0
-- footPound.ConversionFactorB = 0,7375621211696556
-- Unit:kiloFootPound
-- kiloFootPound.Symbol = kft.lbf
-- kiloFootPound.ConversionFactorA = 0
-- kiloFootPound.ConversionFactorB = 0,0007375621211696556
-- Quantity:youngModulus
-- youngModulus.L = -1
-- youngModulus.M = 1
-- youngModulus.T = -1
-- youngModulus.I = 0
-- youngModulus.ThT = 0
-- youngModulus.N = 0
-- youngModulus.J = 0
-- Unit:pascal
-- pascal.Symbol = pa
-- pascal.ConversionFactorA = 0
-- pascal.ConversionFactorB = 1
-- Unit:megaPascal
-- megaPascal.Symbol = mPa
-- megaPascal.ConversionFactorA = 0
-- megaPascal.ConversionFactorB = 1E-06
-- Unit:gigaPascal
-- gigaPascal.Symbol = gPa
-- gigaPascal.ConversionFactorA = 0
-- gigaPascal.ConversionFactorB = 1E-09
-- Unit:pSI
-- pSI.Symbol = psi
-- pSI.ConversionFactorA = 0
-- pSI.ConversionFactorB = 0,00014503762645158165
-- Unit:megapoundPerSquareInch
-- megapoundPerSquareInch.Symbol = mpsi
-- megapoundPerSquareInch.ConversionFactorA = 0
-- megapoundPerSquareInch.ConversionFactorB = 1,4503762645158166E-10
-- Quantity:standardProportion
-- standardProportion.L = 0
-- standardProportion.M = 0
-- standardProportion.T = 0
-- standardProportion.I = 0
-- standardProportion.ThT = 0
-- standardProportion.N = 0
-- standardProportion.J = 0
-- Unit:proportion
-- proportion.ConversionFactorA = 0
-- proportion.ConversionFactorB = 1
-- Unit:percent
-- percent.Symbol = %
-- percent.ConversionFactorA = 0
-- percent.ConversionFactorB = 100
-- Unit:perThousand
-- perThousand.Symbol = perThousands
-- perThousand.ConversionFactorA = 0
-- perThousand.ConversionFactorB = 1000
-- Unit:partPerMillion
-- partPerMillion.Symbol = ppm
-- partPerMillion.ConversionFactorA = 0
-- partPerMillion.ConversionFactorB = 1000000
-- Quantity:standardDimensionless
-- standardDimensionless.L = 0
-- standardDimensionless.M = 0
-- standardDimensionless.T = 0
-- standardDimensionless.I = 0
-- standardDimensionless.ThT = 0
-- standardDimensionless.N = 0
-- standardDimensionless.J = 0
-- Unit:dimensionless
-- dimensionless.ConversionFactorA = 0
-- dimensionless.ConversionFactorB = 1
-- Quantity:standardLength
-- standardLength.L = 1
-- standardLength.M = 0
-- standardLength.T = 0
-- standardLength.I = 0
-- standardLength.ThT = 0
-- standardLength.N = 0
-- standardLength.J = 0
-- Unit:centimeter
-- centimeter.Symbol = cm
-- centimeter.ConversionFactorA = 0
-- centimeter.ConversionFactorB = 100
-- Unit:decimeter
-- decimeter.Symbol = dm
-- decimeter.ConversionFactorA = 0
-- decimeter.ConversionFactorB = 10
-- Unit:feet
-- feet.Symbol = ft
-- feet.ConversionFactorA = 0
-- feet.ConversionFactorB = 3,280839895013123
-- Unit:inch
-- inch.Symbol = in
-- inch.ConversionFactorA = 0
-- inch.ConversionFactorB = 39,37007874015748
-- Unit:metre
-- metre.Symbol = m
-- metre.ConversionFactorA = 0
-- metre.ConversionFactorB = 1
-- Unit:micrometer
-- micrometer.Symbol = mum
-- micrometer.ConversionFactorA = 0
-- micrometer.ConversionFactorB = 1000000
-- Unit:millimeter
-- millimeter.Symbol = mm
-- millimeter.ConversionFactorA = 0
-- millimeter.ConversionFactorB = 1000
-- acceleration HasSIUnit meterPerSecondSquare
-- meterPerSecondSquare IsUnitForQuantity acceleration
-- footPerSecondSquare IsUnitForQuantity acceleration
-- centimeterPerSecondSquare IsUnitForQuantity acceleration
-- centimeterPerHourPerSecond IsUnitForQuantity acceleration
-- centimeterPerMinutePerSecond IsUnitForQuantity acceleration
-- footPerHourPerSecond IsUnitForQuantity acceleration
-- footPerMinutePerSecond IsUnitForQuantity acceleration
-- galileo IsUnitForQuantity acceleration
-- gravityStandard IsUnitForQuantity acceleration
-- inchPerHourPerSecond IsUnitForQuantity acceleration
-- inchPerMinutePerSecond IsUnitForQuantity acceleration
-- inchPerSecondSquare IsUnitForQuantity acceleration
-- knotPerSecond IsUnitForQuantity acceleration
-- meterPerSecondPerMillisecond IsUnitForQuantity acceleration
-- milePerHourPerSecond IsUnitForQuantity acceleration
-- milePerMinutePerSecond IsUnitForQuantity acceleration
-- milePerSecondSquare IsUnitForQuantity acceleration
-- kilometerPerSecondSquare IsUnitForQuantity acceleration
-- kilometerPerHourPerSecond IsUnitForQuantity acceleration
-- kilometerPerMinutePerSecond IsUnitForQuantity acceleration
-- amountSubstance HasSIUnit mole
-- mole IsUnitForQuantity amountSubstance
-- decimole IsUnitForQuantity amountSubstance
-- centimole IsUnitForQuantity amountSubstance
-- millimole IsUnitForQuantity amountSubstance
-- micromole IsUnitForQuantity amountSubstance
-- nanomole IsUnitForQuantity amountSubstance
-- picomole IsUnitForQuantity amountSubstance
-- kilomole IsUnitForQuantity amountSubstance
-- angleVariationGradient HasSIUnit radianPerMeter
-- radianPerMeter IsUnitForQuantity angleVariationGradient
-- degreePerMeter IsUnitForQuantity angleVariationGradient
-- degreePerCentimeter IsUnitForQuantity angleVariationGradient
-- degreePerFoot IsUnitForQuantity angleVariationGradient
-- degreePerInch IsUnitForQuantity angleVariationGradient
-- angularVelocity HasSIUnit radianPerSecond
-- radianPerSecond IsUnitForQuantity angularVelocity
-- degreePerSecond IsUnitForQuantity angularVelocity
-- radianPerDay IsUnitForQuantity angularVelocity
-- radianPerHour IsUnitForQuantity angularVelocity
-- radianPerMinute IsUnitForQuantity angularVelocity
-- degreePerDay IsUnitForQuantity angularVelocity
-- degreePerHour IsUnitForQuantity angularVelocity
-- degreePerMinute IsUnitForQuantity angularVelocity
-- area HasSIUnit squareMeter
-- squareMeter IsUnitForQuantity area
-- squareKilometer IsUnitForQuantity area
-- hectar IsUnitForQuantity area
-- squareDecimeter IsUnitForQuantity area
-- squareCentimeter IsUnitForQuantity area
-- squareMillimeter IsUnitForQuantity area
-- squareMicrometer IsUnitForQuantity area
-- squareFoot IsUnitForQuantity area
-- squareInch IsUnitForQuantity area
-- squareYard IsUnitForQuantity area
-- acre IsUnitForQuantity area
-- squareMile IsUnitForQuantity area
-- compressibility HasSIUnit inversePascal
-- inversePascal IsUnitForQuantity compressibility
-- inverseBar IsUnitForQuantity compressibility
-- inversePoundPerSquareInch IsUnitForQuantity compressibility
-- curvature HasSIUnit radianPerMeter
-- radianPerMeter IsUnitForQuantity curvature
-- degreePer10m IsUnitForQuantity curvature
-- degreePer30m IsUnitForQuantity curvature
-- degreePer30ft IsUnitForQuantity curvature
-- degreePer100ft IsUnitForQuantity curvature
-- degreePerFoot IsUnitForQuantity curvature
-- radianPerFoot IsUnitForQuantity curvature
-- degreePerMeter IsUnitForQuantity curvature
-- densityGradientDepth HasSIUnit kilogramPerCubicMeterPerMeter
-- kilogramPerCubicMeterPerMeter IsUnitForQuantity densityGradientDepth
-- specificGravityPerMeter IsUnitForQuantity densityGradientDepth
-- specificGravityPer10Meter IsUnitForQuantity densityGradientDepth
-- specificGravityPer30Meter IsUnitForQuantity densityGradientDepth
-- specificGravityPer100Meter IsUnitForQuantity densityGradientDepth
-- gramPerCubicCentimeterPer100Meter IsUnitForQuantity densityGradientDepth
-- poundPerGallonUKPerFoot IsUnitForQuantity densityGradientDepth
-- poundPerGallonUKPer30Foot IsUnitForQuantity densityGradientDepth
-- poundPerGallonUKPer100Foot IsUnitForQuantity densityGradientDepth
-- poundPerGallonUSPerFoot IsUnitForQuantity densityGradientDepth
-- poundPerGallonUSPer30Foot IsUnitForQuantity densityGradientDepth
-- poundPerGallonUSPer100Foot IsUnitForQuantity densityGradientDepth
-- densityGradientTemperature HasSIUnit kilogramPerCubicMeterPerKelvin
-- kilogramPerCubicMeterPerKelvin IsUnitForQuantity densityGradientTemperature
-- specificGravityPerCelsius IsUnitForQuantity densityGradientTemperature
-- gramPerCubicCentimeterPerCelsius IsUnitForQuantity densityGradientTemperature
-- poundPerGallonUKPerCelsius IsUnitForQuantity densityGradientTemperature
-- poundPerGallonUSPerFarenheit IsUnitForQuantity densityGradientTemperature
-- density HasSIUnit kilogramPerCubicMeter
-- kilogramPerCubicMeter IsUnitForQuantity density
-- gramPerCubicMeter IsUnitForQuantity density
-- specificGravity IsUnitForQuantity density
-- gramPerCubicCentimeter IsUnitForQuantity density
-- poundPerGallonUK IsUnitForQuantity density
-- poundPerGallonUS IsUnitForQuantity density
-- poundPerCubicFoot IsUnitForQuantity density
-- densitySpeed HasSIUnit kilogramPerCubicMeterPerSecond
-- kilogramPerCubicMeterPerSecond IsUnitForQuantity densitySpeed
-- specificGravityPerSecond IsUnitForQuantity densitySpeed
-- specificGravityPerMinute IsUnitForQuantity densitySpeed
-- specificGravityPerHour IsUnitForQuantity densitySpeed
-- gramPerCubicCentimeterPerHour IsUnitForQuantity densitySpeed
-- poundPerGallonUKPerSecond IsUnitForQuantity densitySpeed
-- poundPerGallonUKPerMinute IsUnitForQuantity densitySpeed
-- poundPerGallonUKPerHour IsUnitForQuantity densitySpeed
-- poundPerGallonUSPerSecond IsUnitForQuantity densitySpeed
-- poundPerGallonUSPerMinute IsUnitForQuantity densitySpeed
-- poundPerGallonUSPerHour IsUnitForQuantity densitySpeed
-- dimensionless HasSIUnit dimensionless
-- dimensionless IsUnitForQuantity dimensionless
-- dynamicViscosity HasSIUnit pascalSecond
-- pascalSecond IsUnitForQuantity dynamicViscosity
-- centiPoise IsUnitForQuantity dynamicViscosity
-- microPascalSecond IsUnitForQuantity dynamicViscosity
-- microPoise IsUnitForQuantity dynamicViscosity
-- earthMagneticFluxDensity HasSIUnit tesla
-- tesla IsUnitForQuantity earthMagneticFluxDensity
-- gauss IsUnitForQuantity earthMagneticFluxDensity
-- milliGauss IsUnitForQuantity earthMagneticFluxDensity
-- microTesla IsUnitForQuantity earthMagneticFluxDensity
-- nanoTesla IsUnitForQuantity earthMagneticFluxDensity
-- capacitance HasSIUnit farad
-- farad IsUnitForQuantity capacitance
-- coulombPerVolt IsUnitForQuantity capacitance
-- milliFarad IsUnitForQuantity capacitance
-- microFarad IsUnitForQuantity capacitance
-- picoFarad IsUnitForQuantity capacitance
-- electricalCurrent HasSIUnit ampere
-- ampere IsUnitForQuantity electricalCurrent
-- coulombPersecond IsUnitForQuantity electricalCurrent
-- siemensvolt IsUnitForQuantity electricalCurrent
-- voltPerohm IsUnitForQuantity electricalCurrent
-- wattPervolt IsUnitForQuantity electricalCurrent
-- weberPerhenry IsUnitForQuantity electricalCurrent
-- deciampere IsUnitForQuantity electricalCurrent
-- centiampere IsUnitForQuantity electricalCurrent
-- milliampere IsUnitForQuantity electricalCurrent
-- microampere IsUnitForQuantity electricalCurrent
-- nanoampere IsUnitForQuantity electricalCurrent
-- picoampere IsUnitForQuantity electricalCurrent
-- biot IsUnitForQuantity electricalCurrent
-- abampere IsUnitForQuantity electricalCurrent
-- kiloampere IsUnitForQuantity electricalCurrent
-- megaampere IsUnitForQuantity electricalCurrent
-- gigaampere IsUnitForQuantity electricalCurrent
-- teraampere IsUnitForQuantity electricalCurrent
-- gilbert IsUnitForQuantity electricalCurrent
-- statampere IsUnitForQuantity electricalCurrent
-- electricTension HasSIUnit volt
-- volt IsUnitForQuantity electricTension
-- millivolt IsUnitForQuantity electricTension
-- centivolt IsUnitForQuantity electricTension
-- kilovolt IsUnitForQuantity electricTension
-- elongationGradient HasSIUnit meterPerMeter
-- meterPerMeter IsUnitForQuantity elongationGradient
-- millimeterpermeter IsUnitForQuantity elongationGradient
-- inchperfoot IsUnitForQuantity elongationGradient
-- energy HasSIUnit joule
-- joule IsUnitForQuantity energy
-- kiloJoule IsUnitForQuantity energy
-- megaJoule IsUnitForQuantity energy
-- gigaJoule IsUnitForQuantity energy
-- calorie IsUnitForQuantity energy
-- kiloCalorie IsUnitForQuantity energy
-- imageScale HasSIUnit dotpermeter
-- dotpermeter IsUnitForQuantity imageScale
-- dotperinch IsUnitForQuantity imageScale
-- dotpermillimeter IsUnitForQuantity imageScale
-- dotpermicrometer IsUnitForQuantity imageScale
-- length HasSIUnit metre
-- metre IsUnitForQuantity length
-- decimeter IsUnitForQuantity length
-- centimeter IsUnitForQuantity length
-- millimeter IsUnitForQuantity length
-- micrometer IsUnitForQuantity length
-- nanometer IsUnitForQuantity length
-- aangstroem IsUnitForQuantity length
-- picometer IsUnitForQuantity length
-- decameter IsUnitForQuantity length
-- hectometer IsUnitForQuantity length
-- kilometer IsUnitForQuantity length
-- astronomicalunit IsUnitForQuantity length
-- lightyear IsUnitForQuantity length
-- parsec IsUnitForQuantity length
-- feet IsUnitForQuantity length
-- uSsurveyfeet IsUnitForQuantity length
-- inch IsUnitForQuantity length
-- yard IsUnitForQuantity length
-- fathom IsUnitForQuantity length
-- surveyor'schain IsUnitForQuantity length
-- mile IsUnitForQuantity length
-- internationalnauticalmile IsUnitForQuantity length
-- uKnauticalmile IsUnitForQuantity length
-- scandinavianmile IsUnitForQuantity length
-- inchPer32 IsUnitForQuantity length
-- mil IsUnitForQuantity length
-- thou IsUnitForQuantity length
-- hand IsUnitForQuantity length
-- furlong IsUnitForQuantity length
-- luminousIntensity HasSIUnit candela
-- candela IsUnitForQuantity luminousIntensity
-- lumenPersteradian IsUnitForQuantity luminousIntensity
-- millicandela IsUnitForQuantity luminousIntensity
-- kilocandela IsUnitForQuantity luminousIntensity
-- hefnerkerze IsUnitForQuantity luminousIntensity
-- internationalcandle IsUnitForQuantity luminousIntensity
-- decimalcandle IsUnitForQuantity luminousIntensity
-- candlepower IsUnitForQuantity luminousIntensity
-- berlinerlichteinheit IsUnitForQuantity luminousIntensity
-- dVWGcandle IsUnitForQuantity luminousIntensity
-- violle IsUnitForQuantity luminousIntensity
-- carcel IsUnitForQuantity luminousIntensity
-- mass HasSIUnit kilogram
-- kilogram IsUnitForQuantity mass
-- hectogram IsUnitForQuantity mass
-- decagram IsUnitForQuantity mass
-- gram IsUnitForQuantity mass
-- centigram IsUnitForQuantity mass
-- milligram IsUnitForQuantity mass
-- microgram IsUnitForQuantity mass
-- nanogram IsUnitForQuantity mass
-- atommassunit IsUnitForQuantity mass
-- tonnemetric IsUnitForQuantity mass
-- kilotonne IsUnitForQuantity mass
-- megatonne IsUnitForQuantity mass
-- gigatonne IsUnitForQuantity mass
-- pound IsUnitForQuantity mass
-- kiloPound IsUnitForQuantity mass
-- ounce IsUnitForQuantity mass
-- stone IsUnitForQuantity mass
-- tonUK IsUnitForQuantity mass
-- tonUS IsUnitForQuantity mass
-- solarmass IsUnitForQuantity mass
-- earthmass IsUnitForQuantity mass
-- cental IsUnitForQuantity mass
-- grain IsUnitForQuantity mass
-- hundredweights IsUnitForQuantity mass
-- planeAngle HasSIUnit radian
-- radian IsUnitForQuantity planeAngle
-- milliradian IsUnitForQuantity planeAngle
-- degree IsUnitForQuantity planeAngle
-- grad IsUnitForQuantity planeAngle
-- gon IsUnitForQuantity planeAngle
-- circle IsUnitForQuantity planeAngle
-- revolution IsUnitForQuantity planeAngle
-- quadrant IsUnitForQuantity planeAngle
-- sextant IsUnitForQuantity planeAngle
-- octant IsUnitForQuantity planeAngle
-- arcminute IsUnitForQuantity planeAngle
-- arcsecond IsUnitForQuantity planeAngle
-- relativeTemperature HasSIUnit kelvin
-- kelvin IsUnitForQuantity relativeTemperature
-- relativeCelcius IsUnitForQuantity relativeTemperature
-- rankine IsUnitForQuantity relativeTemperature
-- centimeter IsUnitForQuantity smallLength
-- decimeter IsUnitForQuantity smallLength
-- feet IsUnitForQuantity smallLength
-- inch IsUnitForQuantity smallLength
-- smallLength HasSIUnit metre
-- metre IsUnitForQuantity smallLength
-- micrometer IsUnitForQuantity smallLength
-- millimeter IsUnitForQuantity smallLength
-- nanometer IsUnitForQuantity smallLength
-- picometer IsUnitForQuantity smallLength
-- aangstroem IsUnitForQuantity smallLength
-- inchPer32 IsUnitForQuantity smallLength
-- solidAngle HasSIUnit steradian
-- steradian IsUnitForQuantity solidAngle
-- spat IsUnitForQuantity solidAngle
-- squaredegree IsUnitForQuantity solidAngle
-- temperature HasSIUnit kelvin
-- kelvin IsUnitForQuantity temperature
-- celsius IsUnitForQuantity temperature
-- fahrenheit IsUnitForQuantity temperature
-- reaumure IsUnitForQuantity temperature
-- time HasSIUnit second
-- second IsUnitForQuantity time
-- millisecond IsUnitForQuantity time
-- microsecond IsUnitForQuantity time
-- shake IsUnitForQuantity time
-- nanosecond IsUnitForQuantity time
-- picosecond IsUnitForQuantity time
-- minute IsUnitForQuantity time
-- hour IsUnitForQuantity time
-- day IsUnitForQuantity time
-- week IsUnitForQuantity time
-- fortnight IsUnitForQuantity time
-- monthcommon IsUnitForQuantity time
-- monthsynodic IsUnitForQuantity time
-- quatercommon IsUnitForQuantity time
-- yearcommon IsUnitForQuantity time
-- yearaveragegregorian IsUnitForQuantity time
-- yearjulian IsUnitForQuantity time
-- yearleap IsUnitForQuantity time
-- yeartropical IsUnitForQuantity time
-- decade IsUnitForQuantity time
-- century IsUnitForQuantity time
-- millenia IsUnitForQuantity time
-- millionyear IsUnitForQuantity time
-- pressure HasSIUnit pascal
-- pascal IsUnitForQuantity pressure
-- kiloPascal IsUnitForQuantity pressure
-- bar IsUnitForQuantity pressure
-- millibar IsUnitForQuantity pressure
-- microbar IsUnitForQuantity pressure
-- poundPerSquareInch IsUnitForQuantity pressure
-- poundPer100SquareFoot IsUnitForQuantity pressure
-- kiloPoundPerSquareInch IsUnitForQuantity pressure
-- standardatmosphere IsUnitForQuantity pressure
-- poundPerSquareFoot IsUnitForQuantity pressure
-- megaPascal IsUnitForQuantity pressure
-- gigaPascal IsUnitForQuantity pressure
-- newtonPerSquareMeter IsUnitForQuantity pressure
-- newtonPerSquareCentimeter IsUnitForQuantity pressure
-- newtonPerSquareMillimeter IsUnitForQuantity pressure
-- kiloNewtonPerSquareMeter IsUnitForQuantity pressure
-- megaPoundPerSquareInch IsUnitForQuantity pressure
-- torr IsUnitForQuantity pressure
-- centimeterMercuryZeroDegC IsUnitForQuantity pressure
-- millimeterMercuryZeroDegC IsUnitForQuantity pressure
-- inchMercury32DegF IsUnitForQuantity pressure
-- inchMercury60DegF IsUnitForQuantity pressure
-- centimeterWater4DegC IsUnitForQuantity pressure
-- millimeterWater4DegC IsUnitForQuantity pressure
-- inchWater4DegC IsUnitForQuantity pressure
-- footWater4DegC IsUnitForQuantity pressure
-- inchWater60DegF IsUnitForQuantity pressure
-- footWater60DegF IsUnitForQuantity pressure
-- literPerSecond IsUnitForQuantity flowRate
-- flowRate HasSIUnit cubicMeterPerSecond
-- cubicMeterPerSecond IsUnitForQuantity flowRate
-- cubicFootPerSecond IsUnitForQuantity flowRate
-- uKGallonPerSecond IsUnitForQuantity flowRate
-- uSGallonPerSecond IsUnitForQuantity flowRate
-- barrelPerSecond IsUnitForQuantity flowRate
-- cubicMeterPerMinute IsUnitForQuantity flowRate
-- literPerMinute IsUnitForQuantity flowRate
-- cubicFootPerMinute IsUnitForQuantity flowRate
-- uKGallonPerMinute IsUnitForQuantity flowRate
-- uSGallonPerMinute IsUnitForQuantity flowRate
-- barrelPerMinute IsUnitForQuantity flowRate
-- cubicMeterPerHour IsUnitForQuantity flowRate
-- literPerHour IsUnitForQuantity flowRate
-- cubicFootPerHour IsUnitForQuantity flowRate
-- uKGallonPerHour IsUnitForQuantity flowRate
-- uSGallonPerHour IsUnitForQuantity flowRate
-- barrelPerHour IsUnitForQuantity flowRate
-- cubicMeterPerDay IsUnitForQuantity flowRate
-- millionCubicMeterPerDay IsUnitForQuantity flowRate
-- uKGallonPerDay IsUnitForQuantity flowRate
-- uSGallonPerDay IsUnitForQuantity flowRate
-- millionUKGallonPerDay IsUnitForQuantity flowRate
-- millionUSGallonPerDay IsUnitForQuantity flowRate
-- literPerDay IsUnitForQuantity flowRate
-- millionLiterPerDay IsUnitForQuantity flowRate
-- cubicFootPerDay IsUnitForQuantity flowRate
-- thousandStandardCubicFootPerDay IsUnitForQuantity flowRate
-- millionStandardCubicFootPerDay IsUnitForQuantity flowRate
-- barrelPerDay IsUnitForQuantity flowRate
-- cubicMeterPerYear IsUnitForQuantity flowRate
-- literPerYear IsUnitForQuantity flowRate
-- cubicFootPerYear IsUnitForQuantity flowRate
-- uKGallonPerYear IsUnitForQuantity flowRate
-- uSGallonPerYear IsUnitForQuantity flowRate
-- barrelPerYear IsUnitForQuantity flowRate
-- volumetricFlowRateRateOfChange HasSIUnit cubicMeterPerSecondSquare
-- cubicMeterPerSecondSquare IsUnitForQuantity volumetricFlowRateRateOfChange
-- literPerMinuteSquare IsUnitForQuantity volumetricFlowRateRateOfChange
-- literPerMinutePerSecond IsUnitForQuantity volumetricFlowRateRateOfChange
-- literPerSecondPerSecond IsUnitForQuantity volumetricFlowRateRateOfChange
-- uKGallonPerMinuteSquare IsUnitForQuantity volumetricFlowRateRateOfChange
-- uKGallonPerMinutePerSecond IsUnitForQuantity volumetricFlowRateRateOfChange
-- uSGallonPerMinuteSquare IsUnitForQuantity volumetricFlowRateRateOfChange
-- uSGallonPerMinutePerSecond IsUnitForQuantity volumetricFlowRateRateOfChange
-- velocity HasSIUnit meterPerSecond
-- meterPerSecond IsUnitForQuantity velocity
-- meterPerMinute IsUnitForQuantity velocity
-- centimeterPerSecond IsUnitForQuantity velocity
-- meterPerHour IsUnitForQuantity velocity
-- meterPerDay IsUnitForQuantity velocity
-- footPerHour IsUnitForQuantity velocity
-- footPerDay IsUnitForQuantity velocity
-- footPerMinute IsUnitForQuantity velocity
-- footPerSecond IsUnitForQuantity velocity
-- inchPerSecond IsUnitForQuantity velocity
-- milePerHour IsUnitForQuantity velocity
-- forceGradient HasSIUnit newtonPerMeter
-- newtonPerMeter IsUnitForQuantity forceGradient
-- newtonPer30Meter IsUnitForQuantity forceGradient
-- decaNewtonPerMeter IsUnitForQuantity forceGradient
-- force HasSIUnit newton
-- newton IsUnitForQuantity force
-- decaNewton IsUnitForQuantity force
-- kiloNewton IsUnitForQuantity force
-- kiloDecaNewton IsUnitForQuantity force
-- kilogramForce IsUnitForQuantity force
-- poundForce IsUnitForQuantity force
-- kiloPoundForce IsUnitForQuantity force
-- materialStrength HasSIUnit pascal
-- pascal IsUnitForQuantity materialStrength
-- megaPascal IsUnitForQuantity materialStrength
-- gigaPascal IsUnitForQuantity materialStrength
-- pSI IsUnitForQuantity materialStrength
-- poundPer100SquareFoot IsUnitForQuantity materialStrength
-- megapoundPerSquareInch IsUnitForQuantity materialStrength
-- frequency HasSIUnit hertz
-- hertz IsUnitForQuantity frequency
-- kiloHertz IsUnitForQuantity frequency
-- megaHertz IsUnitForQuantity frequency
-- gigaHertz IsUnitForQuantity frequency
-- rotationFrequency HasSIUnit hertz
-- hertz IsUnitForQuantity rotationFrequency
-- rPM IsUnitForQuantity rotationFrequency
-- proportion HasSIUnit proportion
-- proportion IsUnitForQuantity proportion
-- percent IsUnitForQuantity proportion
-- perThousand IsUnitForQuantity proportion
-- partPerMillion IsUnitForQuantity proportion
-- heatTransferCoefficient HasSIUnit wattPerMeterSquaredPerKelvin
-- wattPerMeterSquaredPerKelvin IsUnitForQuantity heatTransferCoefficient
-- britishThermalUnitPerHourPerSquareFootPerDegreeFahrenheit IsUnitForQuantity heatTransferCoefficient
-- gravitationalLoad HasSIUnit kilogram
-- kilogram IsUnitForQuantity gravitationalLoad
-- tonnemetric IsUnitForQuantity gravitationalLoad
-- pound IsUnitForQuantity gravitationalLoad
-- kiloPound IsUnitForQuantity gravitationalLoad
-- tonUK IsUnitForQuantity gravitationalLoad
-- hydraulicConductivity HasSIUnit meterPerSecond
-- meterPerSecond IsUnitForQuantity hydraulicConductivity
-- meterPerMinute IsUnitForQuantity hydraulicConductivity
-- meterPerHour IsUnitForQuantity hydraulicConductivity
-- meterPerDay IsUnitForQuantity hydraulicConductivity
-- footPerSecond IsUnitForQuantity hydraulicConductivity
-- footPerMinute IsUnitForQuantity hydraulicConductivity
-- footPerHour IsUnitForQuantity hydraulicConductivity
-- footPerDay IsUnitForQuantity hydraulicConductivity
-- centimeterPerSecond IsUnitForQuantity hydraulicConductivity
-- inchPerSecond IsUnitForQuantity hydraulicConductivity
-- interfacialTension HasSIUnit newtonPerMeter
-- newtonPerMeter IsUnitForQuantity interfacialTension
-- milliNewtonPerMeter IsUnitForQuantity interfacialTension
-- dynesPerCentimeter IsUnitForQuantity interfacialTension
-- poundPerSecondSquared IsUnitForQuantity interfacialTension
-- volume HasSIUnit cubicMeter
-- cubicMeter IsUnitForQuantity volume
-- liter IsUnitForQuantity volume
-- deciliter IsUnitForQuantity volume
-- centiliter IsUnitForQuantity volume
-- milliliter IsUnitForQuantity volume
-- uSGallon IsUnitForQuantity volume
-- uKGallon IsUnitForQuantity volume
-- barrel IsUnitForQuantity volume
-- millionCubicMeter IsUnitForQuantity volume
-- millionLiter IsUnitForQuantity volume
-- millionUKGallon IsUnitForQuantity volume
-- millionBarrel IsUnitForQuantity volume
-- thousandStandardCubicFoot IsUnitForQuantity volume
-- millionStandardCubicFoot IsUnitForQuantity volume
-- largeVolume HasSIUnit cubicMeter
-- cubicMeter IsUnitForQuantity largeVolume
-- liter IsUnitForQuantity largeVolume
-- uSGallon IsUnitForQuantity largeVolume
-- uKGallon IsUnitForQuantity largeVolume
-- barrel IsUnitForQuantity largeVolume
-- millionCubicMeter IsUnitForQuantity largeVolume
-- millionLiter IsUnitForQuantity largeVolume
-- millionUKGallon IsUnitForQuantity largeVolume
-- millionBarrel IsUnitForQuantity largeVolume
-- millionStandardCubicFoot IsUnitForQuantity largeVolume
-- thousandStandardCubicFoot IsUnitForQuantity largeVolume
-- magneticFluxDensity HasSIUnit tesla
-- tesla IsUnitForQuantity magneticFluxDensity
-- gauss IsUnitForQuantity magneticFluxDensity
-- milliGauss IsUnitForQuantity magneticFluxDensity
-- milliTesla IsUnitForQuantity magneticFluxDensity
-- microTesla IsUnitForQuantity magneticFluxDensity
-- nanoTesla IsUnitForQuantity magneticFluxDensity
-- maxwellPerSquareCentimeter IsUnitForQuantity magneticFluxDensity
-- weberPerSquareMeter IsUnitForQuantity magneticFluxDensity
-- massRate HasSIUnit kilogramPerSecond
-- kilogramPerSecond IsUnitForQuantity massRate
-- kilogramPerMinute IsUnitForQuantity massRate
-- permeability HasSIUnit squareMeter
-- squareMeter IsUnitForQuantity permeability
-- darcy IsUnitForQuantity permeability
-- milliDarcy IsUnitForQuantity permeability
-- microDarcy IsUnitForQuantity permeability
-- pressureGradient HasSIUnit pascalPerMeter
-- pascalPerMeter IsUnitForQuantity pressureGradient
-- barPerMeter IsUnitForQuantity pressureGradient
-- pSIPerMeter IsUnitForQuantity pressureGradient
-- pSIPerFoot IsUnitForQuantity pressureGradient
-- pressureLossConstant HasSIUnit pressureLossConstantSI
-- pressureLossConstantSI IsUnitForQuantity pressureLossConstant
-- pressureLossConstantMetric IsUnitForQuantity pressureLossConstant
-- pressureLossConstantUK IsUnitForQuantity pressureLossConstant
-- pressureLossConstantUS IsUnitForQuantity pressureLossConstant
-- resistivity HasSIUnit ohmMeter
-- ohmMeter IsUnitForQuantity resistivity
-- frequencyRateOfChange HasSIUnit hertzPerSecond
-- hertzPerSecond IsUnitForQuantity frequencyRateOfChange
-- rotationFreqencyRateOfChange HasSIUnit hertzPerSecond
-- hertzPerSecond IsUnitForQuantity rotationFreqencyRateOfChange
-- rPMPerSecond IsUnitForQuantity rotationFreqencyRateOfChange
-- fluidShearStress HasSIUnit pascal
-- pascal IsUnitForQuantity fluidShearStress
-- kiloPascal IsUnitForQuantity fluidShearStress
-- bar IsUnitForQuantity fluidShearStress
-- poundPerSquareInch IsUnitForQuantity fluidShearStress
-- poundPer100SquareFoot IsUnitForQuantity fluidShearStress
-- specificHeatCapacity HasSIUnit joulePerKilogramKelvin
-- joulePerKilogramKelvin IsUnitForQuantity specificHeatCapacity
-- joulePerGramKelvin IsUnitForQuantity specificHeatCapacity
-- joulePerGramDegreeCelsius IsUnitForQuantity specificHeatCapacity
-- caloriePerGramDegreeCelsius IsUnitForQuantity specificHeatCapacity
-- britishThermalUnitPerPoundDegreeFarenheit IsUnitForQuantity specificHeatCapacity
-- specificHeatCapcityTemperatureGradient HasSIUnit joulePerKilogramKelvinPerKelvin
-- joulePerKilogramKelvinPerKelvin IsUnitForQuantity specificHeatCapcityTemperatureGradient
-- joulePerGramKelvinPerKelvin IsUnitForQuantity specificHeatCapcityTemperatureGradient
-- joulePerGramDegreeCelsiusPerCelsius IsUnitForQuantity specificHeatCapcityTemperatureGradient
-- caloriePerGramDegreeCelsiusPerCelsius IsUnitForQuantity specificHeatCapcityTemperatureGradient
-- britishThermalUnitPerPoundDegreeFarenheitPerFarenheit IsUnitForQuantity specificHeatCapcityTemperatureGradient
-- temperatureGradient HasSIUnit kelvinPerMeter
-- kelvinPerMeter IsUnitForQuantity temperatureGradient
-- celsiusPerMeter IsUnitForQuantity temperatureGradient
-- celsiusPer10Meter IsUnitForQuantity temperatureGradient
-- celsiusPer30Meter IsUnitForQuantity temperatureGradient
-- celsiusPer100Meter IsUnitForQuantity temperatureGradient
-- celsiusPerFoot IsUnitForQuantity temperatureGradient
-- celsiusPer30Foot IsUnitForQuantity temperatureGradient
-- celsiusPer100Foot IsUnitForQuantity temperatureGradient
-- fahrenheitPerFoot IsUnitForQuantity temperatureGradient
-- fahrenheitPer30Foot IsUnitForQuantity temperatureGradient
-- fahrenheitPer100Foot IsUnitForQuantity temperatureGradient
-- tension HasSIUnit newton
-- newton IsUnitForQuantity tension
-- decaNewton IsUnitForQuantity tension
-- kiloNewton IsUnitForQuantity tension
-- kiloDecaNewton IsUnitForQuantity tension
-- kilogramForce IsUnitForQuantity tension
-- poundForce IsUnitForQuantity tension
-- kiloPoundForce IsUnitForQuantity tension
-- thermalConductivity HasSIUnit wattPerMetreKelvin
-- wattPerMetreKelvin IsUnitForQuantity thermalConductivity
-- caloriePerMetreSecondDegreeCelsius IsUnitForQuantity thermalConductivity
-- caloriePerCentimetreSecondDegreeCelsius IsUnitForQuantity thermalConductivity
-- britishThermalUnitPerHourFootDegreeFarenheit IsUnitForQuantity thermalConductivity
-- britishThermalUnitInchPerHourSquareFootDegreeFarenheit IsUnitForQuantity thermalConductivity
-- massGradient HasSIUnit kilogramPerMeter
-- kilogramPerMeter IsUnitForQuantity massGradient
-- poundPerFoot IsUnitForQuantity massGradient
-- gramPerMeter IsUnitForQuantity massGradient
-- thermalConductivityTemperatureGradient HasSIUnit wattPerMetreKelvinPerKelvin
-- wattPerMetreKelvinPerKelvin IsUnitForQuantity thermalConductivityTemperatureGradient
-- caloriePerMetreSecondDegreeCelsiusPerCelsius IsUnitForQuantity thermalConductivityTemperatureGradient
-- caloriePerCentimetreSecondDegreeCelsiusPerCelsius IsUnitForQuantity thermalConductivityTemperatureGradient
-- britishThermalUnitPerHourFootDegreeFarenheitPerFarenheit IsUnitForQuantity thermalConductivityTemperatureGradient
-- britishThermalUnitInchPerHourSquareFootDegreeFarenheitPerFarenheit IsUnitForQuantity thermalConductivityTemperatureGradient
-- torque HasSIUnit meterNewton
-- meterNewton IsUnitForQuantity torque
-- meterDecaNewton IsUnitForQuantity torque
-- meterKilogramForce IsUnitForQuantity torque
-- meterKiloNewton IsUnitForQuantity torque
-- footPound IsUnitForQuantity torque
-- kiloFootPound IsUnitForQuantity torque
-- youngModulus HasSIUnit pascal
-- pascal IsUnitForQuantity youngModulus
-- megaPascal IsUnitForQuantity youngModulus
-- gigaPascal IsUnitForQuantity youngModulus
-- pSI IsUnitForQuantity youngModulus
-- megapoundPerSquareInch IsUnitForQuantity youngModulus
-- standardProportion HasSIUnit proportion
-- proportion IsUnitForQuantity standardProportion
-- percent IsUnitForQuantity standardProportion
-- perThousand IsUnitForQuantity standardProportion
-- partPerMillion IsUnitForQuantity standardProportion
-- standardDimensionless HasSIUnit dimensionless
-- dimensionless IsUnitForQuantity standardDimensionless
-- centimeter IsUnitForQuantity standardLength
-- decimeter IsUnitForQuantity standardLength
-- feet IsUnitForQuantity standardLength
-- inch IsUnitForQuantity standardLength
-- standardLength HasSIUnit metre
-- metre IsUnitForQuantity standardLength
-- micrometer IsUnitForQuantity standardLength
-- millimeter IsUnitForQuantity standardLength
+- Quantity:AccelerationQuantity
+- AccelerationQuantity.L = 1
+- AccelerationQuantity.M = 0
+- AccelerationQuantity.T = -2
+- AccelerationQuantity.I = 0
+- AccelerationQuantity.ThT = 0
+- AccelerationQuantity.N = 0
+- AccelerationQuantity.J = 0
+- AccelerationQuantity.Theta = 0
+- AccelerationQuantity.Omega = 0
+- Unit:MetrePerSecondSquared
+- MetrePerSecondSquared.ConversionFactorA = 0
+- MetrePerSecondSquared.ConversionFactorB = 1
+- MetrePerSecondSquared.Symbol = mPerssquare
+- MetrePerSecondSquared IsUnitForQuantity AccelerationQuantity
+- AccelerationQuantity HasSIUnit MetrePerSecondSquared
+- Unit:FootPerSecondSquared
+- FootPerSecondSquared.ConversionFactorA = 0
+- FootPerSecondSquared.ConversionFactorB = 3.280839895013124
+- FootPerSecondSquared.Symbol = ftPerssquare
+- FootPerSecondSquared IsUnitForQuantity AccelerationQuantity
+- Unit:CentimetrePerSecondSquared
+- CentimetrePerSecondSquared.ConversionFactorA = 0
+- CentimetrePerSecondSquared.ConversionFactorB = 100
+- CentimetrePerSecondSquared.Symbol = cmPerssquare
+- CentimetrePerSecondSquared IsUnitForQuantity AccelerationQuantity
+- Unit:CentimetrePerHourPerSecond
+- CentimetrePerHourPerSecond.ConversionFactorA = 0
+- CentimetrePerHourPerSecond.ConversionFactorB = 360000
+- CentimetrePerHourPerSecond.Symbol = cmPer(h.s)
+- CentimetrePerHourPerSecond IsUnitForQuantity AccelerationQuantity
+- Unit:CentimetrePerMinutePerSecond
+- CentimetrePerMinutePerSecond.ConversionFactorA = 0
+- CentimetrePerMinutePerSecond.ConversionFactorB = 6000
+- CentimetrePerMinutePerSecond.Symbol = cmPer(min.s)
+- CentimetrePerMinutePerSecond IsUnitForQuantity AccelerationQuantity
+- Unit:FootPerHourPerSecond
+- FootPerHourPerSecond.ConversionFactorA = 0
+- FootPerHourPerSecond.ConversionFactorB = 11811.023622047245
+- FootPerHourPerSecond.Symbol = ftPer(h.s)
+- FootPerHourPerSecond IsUnitForQuantity AccelerationQuantity
+- Unit:FootPerMinutePerSecond
+- FootPerMinutePerSecond.ConversionFactorA = 0
+- FootPerMinutePerSecond.ConversionFactorB = 196.85039370078744
+- FootPerMinutePerSecond.Symbol = ftPer(min.s)
+- FootPerMinutePerSecond IsUnitForQuantity AccelerationQuantity
+- Unit:Galileo
+- Galileo.ConversionFactorA = 0
+- Galileo.ConversionFactorB = 100
+- Galileo.Symbol = gal
+- Galileo IsUnitForQuantity AccelerationQuantity
+- Unit:GravityStandard
+- GravityStandard.ConversionFactorA = 0
+- GravityStandard.ConversionFactorB = 0.10197162129779283
+- GravityStandard.Symbol = gn
+- GravityStandard IsUnitForQuantity AccelerationQuantity
+- Unit:InchPerHourPerSecond
+- InchPerHourPerSecond.ConversionFactorA = 0
+- InchPerHourPerSecond.ConversionFactorB = 141732.28346456692
+- InchPerHourPerSecond.Symbol = inPer(h.s)
+- InchPerHourPerSecond IsUnitForQuantity AccelerationQuantity
+- Unit:InchPerMinutePerSecond
+- InchPerMinutePerSecond.ConversionFactorA = 0
+- InchPerMinutePerSecond.ConversionFactorB = 2362.2047244094488
+- InchPerMinutePerSecond.Symbol = inPer(min.s)
+- InchPerMinutePerSecond IsUnitForQuantity AccelerationQuantity
+- Unit:InchPerSecondSquared
+- InchPerSecondSquared.ConversionFactorA = 0
+- InchPerSecondSquared.ConversionFactorB = 39.37007874015748
+- InchPerSecondSquared.Symbol = inPerssquare
+- InchPerSecondSquared IsUnitForQuantity AccelerationQuantity
+- Unit:KnotPerSecond
+- KnotPerSecond.ConversionFactorA = 0
+- KnotPerSecond.ConversionFactorB = 1.9438444924406046
+- KnotPerSecond.Symbol = knPers
+- KnotPerSecond IsUnitForQuantity AccelerationQuantity
+- Unit:MetrePerSecondPerMillisecond
+- MetrePerSecondPerMillisecond.ConversionFactorA = 0
+- MetrePerSecondPerMillisecond.ConversionFactorB = 0.001
+- MetrePerSecondPerMillisecond.Symbol = mPer(s.ms)
+- MetrePerSecondPerMillisecond IsUnitForQuantity AccelerationQuantity
+- Unit:MilePerHourPerSecond
+- MilePerHourPerSecond.ConversionFactorA = 0
+- MilePerHourPerSecond.ConversionFactorB = 2.2369362920544025
+- MilePerHourPerSecond.Symbol = miPer(h.s)
+- MilePerHourPerSecond IsUnitForQuantity AccelerationQuantity
+- Unit:MilePerMinutePerSecond
+- MilePerMinutePerSecond.ConversionFactorA = 0
+- MilePerMinutePerSecond.ConversionFactorB = 0.03728227153424004
+- MilePerMinutePerSecond.Symbol = miPer(min.s)
+- MilePerMinutePerSecond IsUnitForQuantity AccelerationQuantity
+- Unit:MilePerSecondSquared
+- MilePerSecondSquared.ConversionFactorA = 0
+- MilePerSecondSquared.ConversionFactorB = 0.000621371192237334
+- MilePerSecondSquared.Symbol = miPerssquare
+- MilePerSecondSquared IsUnitForQuantity AccelerationQuantity
+- Unit:KilometrePerSecondSquared
+- KilometrePerSecondSquared.ConversionFactorA = 0
+- KilometrePerSecondSquared.ConversionFactorB = 0.001
+- KilometrePerSecondSquared.Symbol = kmPerssquare
+- KilometrePerSecondSquared IsUnitForQuantity AccelerationQuantity
+- Unit:KilometrePerHourPerSecond
+- KilometrePerHourPerSecond.ConversionFactorA = 0
+- KilometrePerHourPerSecond.ConversionFactorB = 3.6
+- KilometrePerHourPerSecond.Symbol = kmPer(h.s)
+- KilometrePerHourPerSecond IsUnitForQuantity AccelerationQuantity
+- Unit:KilometrePerMinutePerSecond
+- KilometrePerMinutePerSecond.ConversionFactorA = 0
+- KilometrePerMinutePerSecond.ConversionFactorB = 0.06
+- KilometrePerMinutePerSecond.Symbol = kmPer(min.s)
+- KilometrePerMinutePerSecond IsUnitForQuantity AccelerationQuantity
+- Quantity:AmountSubstanceQuantity
+- AmountSubstanceQuantity.L = 0
+- AmountSubstanceQuantity.M = 0
+- AmountSubstanceQuantity.T = 0
+- AmountSubstanceQuantity.I = 0
+- AmountSubstanceQuantity.ThT = 0
+- AmountSubstanceQuantity.N = 1
+- AmountSubstanceQuantity.J = 0
+- AmountSubstanceQuantity.Theta = 0
+- AmountSubstanceQuantity.Omega = 0
+- Unit:Mole
+- Mole.ConversionFactorA = 0
+- Mole.ConversionFactorB = 1
+- Mole.Symbol = mol
+- Mole IsUnitForQuantity AmountSubstanceQuantity
+- AmountSubstanceQuantity HasSIUnit Mole
+- Unit:Decimole
+- Decimole.ConversionFactorA = 0
+- Decimole.ConversionFactorB = 10
+- Decimole.Symbol = dmol
+- Decimole IsUnitForQuantity AmountSubstanceQuantity
+- Unit:Centimole
+- Centimole.ConversionFactorA = 0
+- Centimole.ConversionFactorB = 100
+- Centimole.Symbol = cmol
+- Centimole IsUnitForQuantity AmountSubstanceQuantity
+- Unit:Millimole
+- Millimole.ConversionFactorA = 0
+- Millimole.ConversionFactorB = 1000
+- Millimole.Symbol = mmol
+- Millimole IsUnitForQuantity AmountSubstanceQuantity
+- Unit:Micromole
+- Micromole.ConversionFactorA = 0
+- Micromole.ConversionFactorB = 1000000
+- Micromole.Symbol = mumol
+- Micromole IsUnitForQuantity AmountSubstanceQuantity
+- Unit:Nanomole
+- Nanomole.ConversionFactorA = 0
+- Nanomole.ConversionFactorB = 999999999.9999999
+- Nanomole.Symbol = nmol
+- Nanomole IsUnitForQuantity AmountSubstanceQuantity
+- Unit:Picomole
+- Picomole.ConversionFactorA = 0
+- Picomole.ConversionFactorB = 1000000000000
+- Picomole.Symbol = pmol
+- Picomole IsUnitForQuantity AmountSubstanceQuantity
+- Unit:Kilomole
+- Kilomole.ConversionFactorA = 0
+- Kilomole.ConversionFactorB = 0.001
+- Kilomole.Symbol = kmol
+- Kilomole IsUnitForQuantity AmountSubstanceQuantity
+- Quantity:AngleGradientPerLengthQuantity
+- AngleGradientPerLengthQuantity.L = -1
+- AngleGradientPerLengthQuantity.M = 0
+- AngleGradientPerLengthQuantity.T = 0
+- AngleGradientPerLengthQuantity.I = 0
+- AngleGradientPerLengthQuantity.ThT = 0
+- AngleGradientPerLengthQuantity.N = 0
+- AngleGradientPerLengthQuantity.J = 0
+- AngleGradientPerLengthQuantity.Theta = 1
+- AngleGradientPerLengthQuantity.Omega = 0
+- Unit:RadianPerMetre
+- RadianPerMetre.ConversionFactorA = 0
+- RadianPerMetre.ConversionFactorB = 1
+- RadianPerMetre.Symbol = radPerm
+- RadianPerMetre IsUnitForQuantity AngleGradientPerLengthQuantity
+- AngleGradientPerLengthQuantity HasSIUnit RadianPerMetre
+- Unit:DegreePerMetre
+- DegreePerMetre.ConversionFactorA = 0
+- DegreePerMetre.ConversionFactorB = 57.29577951308232
+- DegreePerMetre.Symbol = degPerm
+- DegreePerMetre IsUnitForQuantity AngleGradientPerLengthQuantity
+- Unit:DegreePerCentimetre
+- DegreePerCentimetre.ConversionFactorA = 0
+- DegreePerCentimetre.ConversionFactorB = 0.5729577951308232
+- DegreePerCentimetre.Symbol = degPercm
+- DegreePerCentimetre IsUnitForQuantity AngleGradientPerLengthQuantity
+- Unit:DegreePerFoot
+- DegreePerFoot.ConversionFactorA = 0
+- DegreePerFoot.ConversionFactorB = 17.46375359558749
+- DegreePerFoot.Symbol = degPerft
+- DegreePerFoot IsUnitForQuantity AngleGradientPerLengthQuantity
+- Unit:DegreePerInch
+- DegreePerInch.ConversionFactorA = 0
+- DegreePerInch.ConversionFactorB = 1.455312799632291
+- DegreePerInch.Symbol = degPerin
+- DegreePerInch IsUnitForQuantity AngleGradientPerLengthQuantity
+- Unit:DegreePerDecimetre
+- DegreePerDecimetre.ConversionFactorA = 0
+- DegreePerDecimetre.ConversionFactorB = 5.729577951308233
+- DegreePerDecimetre.Symbol = degPerdm
+- DegreePerDecimetre IsUnitForQuantity AngleGradientPerLengthQuantity
+- Unit:DegreePerMillimetre
+- DegreePerMillimetre.ConversionFactorA = 0
+- DegreePerMillimetre.ConversionFactorB = 0.057295779513082325
+- DegreePerMillimetre.Symbol = degPermm
+- DegreePerMillimetre IsUnitForQuantity AngleGradientPerLengthQuantity
+- Unit:RadianPerMillimetre
+- RadianPerMillimetre.ConversionFactorA = 0
+- RadianPerMillimetre.ConversionFactorB = 0.001
+- RadianPerMillimetre.Symbol = radPermm
+- RadianPerMillimetre IsUnitForQuantity AngleGradientPerLengthQuantity
+- Unit:RadianPerCentimetre
+- RadianPerCentimetre.ConversionFactorA = 0
+- RadianPerCentimetre.ConversionFactorB = 0.01
+- RadianPerCentimetre.Symbol = radPercm
+- RadianPerCentimetre IsUnitForQuantity AngleGradientPerLengthQuantity
+- Unit:RadianPerDecimetre
+- RadianPerDecimetre.ConversionFactorA = 0
+- RadianPerDecimetre.ConversionFactorB = 0.1
+- RadianPerDecimetre.Symbol = radPerdm
+- RadianPerDecimetre IsUnitForQuantity AngleGradientPerLengthQuantity
+- Unit:RadianPerFoot
+- RadianPerFoot.ConversionFactorA = 0
+- RadianPerFoot.ConversionFactorB = 0.30479999999999996
+- RadianPerFoot.Symbol = radPerft
+- RadianPerFoot IsUnitForQuantity AngleGradientPerLengthQuantity
+- Unit:RadianPerInch
+- RadianPerInch.ConversionFactorA = 0
+- RadianPerInch.ConversionFactorB = 0.0254
+- RadianPerInch.Symbol = radPerin
+- RadianPerInch IsUnitForQuantity AngleGradientPerLengthQuantity
+- Quantity:AngleMagneticFluxDensityQuantity
+- AngleMagneticFluxDensityQuantity.L = 0
+- AngleMagneticFluxDensityQuantity.M = 1
+- AngleMagneticFluxDensityQuantity.T = -2
+- AngleMagneticFluxDensityQuantity.I = -1
+- AngleMagneticFluxDensityQuantity.ThT = 0
+- AngleMagneticFluxDensityQuantity.N = 0
+- AngleMagneticFluxDensityQuantity.J = 0
+- AngleMagneticFluxDensityQuantity.Theta = 1
+- AngleMagneticFluxDensityQuantity.Omega = 0
+- Unit:RadianTesla
+- RadianTesla.ConversionFactorA = 0
+- RadianTesla.ConversionFactorB = 1
+- RadianTesla.Symbol = rad.T
+- RadianTesla IsUnitForQuantity AngleMagneticFluxDensityQuantity
+- AngleMagneticFluxDensityQuantity HasSIUnit RadianTesla
+- Unit:RadianGauss
+- RadianGauss.ConversionFactorA = 0
+- RadianGauss.ConversionFactorB = 10000
+- RadianGauss.Symbol = rad.G
+- RadianGauss IsUnitForQuantity AngleMagneticFluxDensityQuantity
+- Unit:RadianMilligauss
+- RadianMilligauss.ConversionFactorA = 0
+- RadianMilligauss.ConversionFactorB = 10000000
+- RadianMilligauss.Symbol = rad.mG
+- RadianMilligauss IsUnitForQuantity AngleMagneticFluxDensityQuantity
+- Unit:RadianMillitesla
+- RadianMillitesla.ConversionFactorA = 0
+- RadianMillitesla.ConversionFactorB = 1000
+- RadianMillitesla.Symbol = rad.mT
+- RadianMillitesla IsUnitForQuantity AngleMagneticFluxDensityQuantity
+- Unit:RadianMicrotesla
+- RadianMicrotesla.ConversionFactorA = 0
+- RadianMicrotesla.ConversionFactorB = 1000000
+- RadianMicrotesla.Symbol = rad.muT
+- RadianMicrotesla IsUnitForQuantity AngleMagneticFluxDensityQuantity
+- Unit:RadianNanotesla
+- RadianNanotesla.ConversionFactorA = 0
+- RadianNanotesla.ConversionFactorB = 999999999.9999999
+- RadianNanotesla.Symbol = rad.nT
+- RadianNanotesla IsUnitForQuantity AngleMagneticFluxDensityQuantity
+- Unit:RadianMaxwellPerSquareCentimetre
+- RadianMaxwellPerSquareCentimetre.ConversionFactorA = 0
+- RadianMaxwellPerSquareCentimetre.ConversionFactorB = 10000
+- RadianMaxwellPerSquareCentimetre.Symbol = rad.MxPercmsquare
+- RadianMaxwellPerSquareCentimetre IsUnitForQuantity AngleMagneticFluxDensityQuantity
+- Unit:RadianWeberPerSquareMetre
+- RadianWeberPerSquareMetre.ConversionFactorA = 0
+- RadianWeberPerSquareMetre.ConversionFactorB = 1
+- RadianWeberPerSquareMetre.Symbol = rad.WbPermsquare
+- RadianWeberPerSquareMetre IsUnitForQuantity AngleMagneticFluxDensityQuantity
+- Unit:DegreeTesla
+- DegreeTesla.ConversionFactorA = 0
+- DegreeTesla.ConversionFactorB = 57.29577951308232
+- DegreeTesla.Symbol = deg.T
+- DegreeTesla IsUnitForQuantity AngleMagneticFluxDensityQuantity
+- Unit:DegreeGauss
+- DegreeGauss.ConversionFactorA = 0
+- DegreeGauss.ConversionFactorB = 572957.7951308232
+- DegreeGauss.Symbol = deg.G
+- DegreeGauss IsUnitForQuantity AngleMagneticFluxDensityQuantity
+- Unit:DegreeMilligauss
+- DegreeMilligauss.ConversionFactorA = 0
+- DegreeMilligauss.ConversionFactorB = 572957795.1308231
+- DegreeMilligauss.Symbol = deg.mG
+- DegreeMilligauss IsUnitForQuantity AngleMagneticFluxDensityQuantity
+- Unit:DegreeMillitesla
+- DegreeMillitesla.ConversionFactorA = 0
+- DegreeMillitesla.ConversionFactorB = 57295.77951308232
+- DegreeMillitesla.Symbol = deg.mT
+- DegreeMillitesla IsUnitForQuantity AngleMagneticFluxDensityQuantity
+- Unit:DegreeMicrotesla
+- DegreeMicrotesla.ConversionFactorA = 0
+- DegreeMicrotesla.ConversionFactorB = 57295779.513082325
+- DegreeMicrotesla.Symbol = deg.muT
+- DegreeMicrotesla IsUnitForQuantity AngleMagneticFluxDensityQuantity
+- Unit:DegreeNanotesla
+- DegreeNanotesla.ConversionFactorA = 0
+- DegreeNanotesla.ConversionFactorB = 57295779513.08232
+- DegreeNanotesla.Symbol = deg.nT
+- DegreeNanotesla IsUnitForQuantity AngleMagneticFluxDensityQuantity
+- Unit:DegreeMaxwellPerSquareCentimetre
+- DegreeMaxwellPerSquareCentimetre.ConversionFactorA = 0
+- DegreeMaxwellPerSquareCentimetre.ConversionFactorB = 572957.7951308232
+- DegreeMaxwellPerSquareCentimetre.Symbol = deg.MxPercmsquare
+- DegreeMaxwellPerSquareCentimetre IsUnitForQuantity AngleMagneticFluxDensityQuantity
+- Unit:DegreeWeberPerSquareMetre
+- DegreeWeberPerSquareMetre.ConversionFactorA = 0
+- DegreeWeberPerSquareMetre.ConversionFactorB = 57.29577951308232
+- DegreeWeberPerSquareMetre.Symbol = deg.WbPermsquare
+- DegreeWeberPerSquareMetre IsUnitForQuantity AngleMagneticFluxDensityQuantity
+- Quantity:AngularAccelerationQuantity
+- AngularAccelerationQuantity.L = 0
+- AngularAccelerationQuantity.M = 0
+- AngularAccelerationQuantity.T = -2
+- AngularAccelerationQuantity.I = 0
+- AngularAccelerationQuantity.ThT = 0
+- AngularAccelerationQuantity.N = 0
+- AngularAccelerationQuantity.J = 0
+- AngularAccelerationQuantity.Theta = 1
+- AngularAccelerationQuantity.Omega = 0
+- Unit:RadianPerSecondSquared
+- RadianPerSecondSquared.ConversionFactorA = 0
+- RadianPerSecondSquared.ConversionFactorB = 1
+- RadianPerSecondSquared.Symbol = radPerssquare
+- RadianPerSecondSquared IsUnitForQuantity AngularAccelerationQuantity
+- AngularAccelerationQuantity HasSIUnit RadianPerSecondSquared
+- Unit:DegreePerSecondSquared
+- DegreePerSecondSquared.ConversionFactorA = 0
+- DegreePerSecondSquared.ConversionFactorB = 57.29577951308232
+- DegreePerSecondSquared.Symbol = degPerssquare
+- DegreePerSecondSquared IsUnitForQuantity AngularAccelerationQuantity
+- Unit:RadianPerDayPerSecond
+- RadianPerDayPerSecond.ConversionFactorA = 0
+- RadianPerDayPerSecond.ConversionFactorB = 86400
+- RadianPerDayPerSecond.Symbol = radPerdPers
+- RadianPerDayPerSecond IsUnitForQuantity AngularAccelerationQuantity
+- Unit:RadianPerHourPerSecond
+- RadianPerHourPerSecond.ConversionFactorA = 0
+- RadianPerHourPerSecond.ConversionFactorB = 3600
+- RadianPerHourPerSecond.Symbol = radPerhPers
+- RadianPerHourPerSecond IsUnitForQuantity AngularAccelerationQuantity
+- Unit:RadianPerMinutePerSecond
+- RadianPerMinutePerSecond.ConversionFactorA = 0
+- RadianPerMinutePerSecond.ConversionFactorB = 60
+- RadianPerMinutePerSecond.Symbol = radPerminPers
+- RadianPerMinutePerSecond IsUnitForQuantity AngularAccelerationQuantity
+- Unit:DegreePerDayPerSecond
+- DegreePerDayPerSecond.ConversionFactorA = 0
+- DegreePerDayPerSecond.ConversionFactorB = 4950355.3499303125
+- DegreePerDayPerSecond.Symbol = degPerdPers
+- DegreePerDayPerSecond IsUnitForQuantity AngularAccelerationQuantity
+- Unit:DegreePerHourPerSecond
+- DegreePerHourPerSecond.ConversionFactorA = 0
+- DegreePerHourPerSecond.ConversionFactorB = 206264.80624709636
+- DegreePerHourPerSecond.Symbol = degPerhPers
+- DegreePerHourPerSecond IsUnitForQuantity AngularAccelerationQuantity
+- Unit:DegreePerMinutePerSecond
+- DegreePerMinutePerSecond.ConversionFactorA = 0
+- DegreePerMinutePerSecond.ConversionFactorB = 3437.746770784939
+- DegreePerMinutePerSecond.Symbol = degPerminPers
+- DegreePerMinutePerSecond IsUnitForQuantity AngularAccelerationQuantity
+- Unit:RadianPerSecondPerMinute
+- RadianPerSecondPerMinute.ConversionFactorA = 0
+- RadianPerSecondPerMinute.ConversionFactorB = 60
+- RadianPerSecondPerMinute.Symbol = radPersPermin
+- RadianPerSecondPerMinute IsUnitForQuantity AngularAccelerationQuantity
+- Unit:DegreePerSecondPerMinute
+- DegreePerSecondPerMinute.ConversionFactorA = 0
+- DegreePerSecondPerMinute.ConversionFactorB = 3437.746770784939
+- DegreePerSecondPerMinute.Symbol = degPersPermin
+- DegreePerSecondPerMinute IsUnitForQuantity AngularAccelerationQuantity
+- Unit:RadianPerDayPerMinute
+- RadianPerDayPerMinute.ConversionFactorA = 0
+- RadianPerDayPerMinute.ConversionFactorB = 5184000
+- RadianPerDayPerMinute.Symbol = radPerdPermin
+- RadianPerDayPerMinute IsUnitForQuantity AngularAccelerationQuantity
+- Unit:RadianPerHourPerMinute
+- RadianPerHourPerMinute.ConversionFactorA = 0
+- RadianPerHourPerMinute.ConversionFactorB = 216000
+- RadianPerHourPerMinute.Symbol = radPerhPermin
+- RadianPerHourPerMinute IsUnitForQuantity AngularAccelerationQuantity
+- Unit:RadianPerMinuteSquared
+- RadianPerMinuteSquared.ConversionFactorA = 0
+- RadianPerMinuteSquared.ConversionFactorB = 3600
+- RadianPerMinuteSquared.Symbol = radPerminsquare
+- RadianPerMinuteSquared IsUnitForQuantity AngularAccelerationQuantity
+- Unit:DegreePerDayPerMinute
+- DegreePerDayPerMinute.ConversionFactorA = 0
+- DegreePerDayPerMinute.ConversionFactorB = 297021320.99581873
+- DegreePerDayPerMinute.Symbol = degPerdPermin
+- DegreePerDayPerMinute IsUnitForQuantity AngularAccelerationQuantity
+- Unit:DegreePerHourPerMinute
+- DegreePerHourPerMinute.ConversionFactorA = 0
+- DegreePerHourPerMinute.ConversionFactorB = 12375888.374825781
+- DegreePerHourPerMinute.Symbol = degPerhPermin
+- DegreePerHourPerMinute IsUnitForQuantity AngularAccelerationQuantity
+- Unit:DegreePerMinuteSquared
+- DegreePerMinuteSquared.ConversionFactorA = 0
+- DegreePerMinuteSquared.ConversionFactorB = 206264.80624709636
+- DegreePerMinuteSquared.Symbol = degPerminsquare
+- DegreePerMinuteSquared IsUnitForQuantity AngularAccelerationQuantity
+- Unit:RadianPerSecondPerHour
+- RadianPerSecondPerHour.ConversionFactorA = 0
+- RadianPerSecondPerHour.ConversionFactorB = 3600
+- RadianPerSecondPerHour.Symbol = radPersPerh
+- RadianPerSecondPerHour IsUnitForQuantity AngularAccelerationQuantity
+- Unit:DegreePerSecondPerHour
+- DegreePerSecondPerHour.ConversionFactorA = 0
+- DegreePerSecondPerHour.ConversionFactorB = 206264.80624709636
+- DegreePerSecondPerHour.Symbol = degPersPerh
+- DegreePerSecondPerHour IsUnitForQuantity AngularAccelerationQuantity
+- Unit:RadianPerDayPerHour
+- RadianPerDayPerHour.ConversionFactorA = 0
+- RadianPerDayPerHour.ConversionFactorB = 311040000
+- RadianPerDayPerHour.Symbol = radPerdPerh
+- RadianPerDayPerHour IsUnitForQuantity AngularAccelerationQuantity
+- Unit:RadianPerHourSquared
+- RadianPerHourSquared.ConversionFactorA = 0
+- RadianPerHourSquared.ConversionFactorB = 12960000
+- RadianPerHourSquared.Symbol = radPerhsquare
+- RadianPerHourSquared IsUnitForQuantity AngularAccelerationQuantity
+- Unit:RadianPerMinutePerHour
+- RadianPerMinutePerHour.ConversionFactorA = 0
+- RadianPerMinutePerHour.ConversionFactorB = 216000
+- RadianPerMinutePerHour.Symbol = radPerminPerh
+- RadianPerMinutePerHour IsUnitForQuantity AngularAccelerationQuantity
+- Unit:DegreePerDayPerHour
+- DegreePerDayPerHour.ConversionFactorA = 0
+- DegreePerDayPerHour.ConversionFactorB = 17821279259.749126
+- DegreePerDayPerHour.Symbol = degPerdPerh
+- DegreePerDayPerHour IsUnitForQuantity AngularAccelerationQuantity
+- Unit:DegreePerHourSquared
+- DegreePerHourSquared.ConversionFactorA = 0
+- DegreePerHourSquared.ConversionFactorB = 742553302.4895469
+- DegreePerHourSquared.Symbol = degPerhsquare
+- DegreePerHourSquared IsUnitForQuantity AngularAccelerationQuantity
+- Unit:DegreePerMinutePerHour
+- DegreePerMinutePerHour.ConversionFactorA = 0
+- DegreePerMinutePerHour.ConversionFactorB = 12375888.374825781
+- DegreePerMinutePerHour.Symbol = degPerminPerh
+- DegreePerMinutePerHour IsUnitForQuantity AngularAccelerationQuantity
+- Unit:RadianPerSecondPerDay
+- RadianPerSecondPerDay.ConversionFactorA = 0
+- RadianPerSecondPerDay.ConversionFactorB = 86400
+- RadianPerSecondPerDay.Symbol = radPersPerd
+- RadianPerSecondPerDay IsUnitForQuantity AngularAccelerationQuantity
+- Unit:DegreePerSecondPerDay
+- DegreePerSecondPerDay.ConversionFactorA = 0
+- DegreePerSecondPerDay.ConversionFactorB = 4950355.3499303125
+- DegreePerSecondPerDay.Symbol = degPersPerd
+- DegreePerSecondPerDay IsUnitForQuantity AngularAccelerationQuantity
+- Unit:RadianPerDaySquared
+- RadianPerDaySquared.ConversionFactorA = 0
+- RadianPerDaySquared.ConversionFactorB = 7464960000
+- RadianPerDaySquared.Symbol = radPerdsquare
+- RadianPerDaySquared IsUnitForQuantity AngularAccelerationQuantity
+- Unit:RadianPerHourPerDay
+- RadianPerHourPerDay.ConversionFactorA = 0
+- RadianPerHourPerDay.ConversionFactorB = 311040000
+- RadianPerHourPerDay.Symbol = radPerhPerd
+- RadianPerHourPerDay IsUnitForQuantity AngularAccelerationQuantity
+- Unit:RadianPerMinutePerDay
+- RadianPerMinutePerDay.ConversionFactorA = 0
+- RadianPerMinutePerDay.ConversionFactorB = 5184000
+- RadianPerMinutePerDay.Symbol = radPerminPerd
+- RadianPerMinutePerDay IsUnitForQuantity AngularAccelerationQuantity
+- Unit:DegreePerDaySquared
+- DegreePerDaySquared.ConversionFactorA = 0
+- DegreePerDaySquared.ConversionFactorB = 427710702233.979
+- DegreePerDaySquared.Symbol = degPerdsquare
+- DegreePerDaySquared IsUnitForQuantity AngularAccelerationQuantity
+- Unit:DegreePerHourPerDay
+- DegreePerHourPerDay.ConversionFactorA = 0
+- DegreePerHourPerDay.ConversionFactorB = 17821279259.749126
+- DegreePerHourPerDay.Symbol = degPerhPerd
+- DegreePerHourPerDay IsUnitForQuantity AngularAccelerationQuantity
+- Unit:DegreePerMinutePerDay
+- DegreePerMinutePerDay.ConversionFactorA = 0
+- DegreePerMinutePerDay.ConversionFactorB = 297021320.99581873
+- DegreePerMinutePerDay.Symbol = degPerminPerd
+- DegreePerMinutePerDay IsUnitForQuantity AngularAccelerationQuantity
+- Quantity:AngularVelocityQuantity
+- AngularVelocityQuantity.L = 0
+- AngularVelocityQuantity.M = 0
+- AngularVelocityQuantity.T = -1
+- AngularVelocityQuantity.I = 0
+- AngularVelocityQuantity.ThT = 0
+- AngularVelocityQuantity.N = 0
+- AngularVelocityQuantity.J = 0
+- AngularVelocityQuantity.Theta = 1
+- AngularVelocityQuantity.Omega = 0
+- Unit:RadianPerSecond
+- RadianPerSecond.ConversionFactorA = 0
+- RadianPerSecond.ConversionFactorB = 1
+- RadianPerSecond.Symbol = radPers
+- RadianPerSecond IsUnitForQuantity AngularVelocityQuantity
+- AngularVelocityQuantity HasSIUnit RadianPerSecond
+- Unit:DegreePerSecond
+- DegreePerSecond.ConversionFactorA = 0
+- DegreePerSecond.ConversionFactorB = 57.29577951308232
+- DegreePerSecond.Symbol = degPers
+- DegreePerSecond IsUnitForQuantity AngularVelocityQuantity
+- Unit:RadianPerDay
+- RadianPerDay.ConversionFactorA = 0
+- RadianPerDay.ConversionFactorB = 86400
+- RadianPerDay.Symbol = radPerd
+- RadianPerDay IsUnitForQuantity AngularVelocityQuantity
+- Unit:RadianPerHour
+- RadianPerHour.ConversionFactorA = 0
+- RadianPerHour.ConversionFactorB = 3600
+- RadianPerHour.Symbol = radPerh
+- RadianPerHour IsUnitForQuantity AngularVelocityQuantity
+- Unit:RadianPerMinute
+- RadianPerMinute.ConversionFactorA = 0
+- RadianPerMinute.ConversionFactorB = 60
+- RadianPerMinute.Symbol = radPermin
+- RadianPerMinute IsUnitForQuantity AngularVelocityQuantity
+- Unit:DegreePerDay
+- DegreePerDay.ConversionFactorA = 0
+- DegreePerDay.ConversionFactorB = 4950355.3499303125
+- DegreePerDay.Symbol = degPerd
+- DegreePerDay IsUnitForQuantity AngularVelocityQuantity
+- Unit:DegreePerHour
+- DegreePerHour.ConversionFactorA = 0
+- DegreePerHour.ConversionFactorB = 206264.80624709636
+- DegreePerHour.Symbol = degPerh
+- DegreePerHour IsUnitForQuantity AngularVelocityQuantity
+- Unit:DegreePerMinute
+- DegreePerMinute.ConversionFactorA = 0
+- DegreePerMinute.ConversionFactorB = 3437.746770784939
+- DegreePerMinute.Symbol = degPermin
+- DegreePerMinute IsUnitForQuantity AngularVelocityQuantity
+- Quantity:AreaQuantity
+- AreaQuantity.L = 2
+- AreaQuantity.M = 0
+- AreaQuantity.T = 0
+- AreaQuantity.I = 0
+- AreaQuantity.ThT = 0
+- AreaQuantity.N = 0
+- AreaQuantity.J = 0
+- AreaQuantity.Theta = 0
+- AreaQuantity.Omega = 0
+- Unit:SquareMetre
+- SquareMetre.ConversionFactorA = 0
+- SquareMetre.ConversionFactorB = 1
+- SquareMetre.Symbol = msquare
+- SquareMetre IsUnitForQuantity AreaQuantity
+- AreaQuantity HasSIUnit SquareMetre
+- Unit:SquareKilometre
+- SquareKilometre.ConversionFactorA = 0
+- SquareKilometre.ConversionFactorB = 1E-06
+- SquareKilometre.Symbol = kmsquare
+- SquareKilometre IsUnitForQuantity AreaQuantity
+- Unit:Hectare
+- Hectare.ConversionFactorA = 0
+- Hectare.ConversionFactorB = 0.0001
+- Hectare.Symbol = ha
+- Hectare IsUnitForQuantity AreaQuantity
+- Unit:SquareDecametre
+- SquareDecametre.ConversionFactorA = 0
+- SquareDecametre.ConversionFactorB = 0.01
+- SquareDecametre.Symbol = damsquare
+- SquareDecametre IsUnitForQuantity AreaQuantity
+- Unit:SquareDecimetre
+- SquareDecimetre.ConversionFactorA = 0
+- SquareDecimetre.ConversionFactorB = 99.99999999999999
+- SquareDecimetre.Symbol = dmsquare
+- SquareDecimetre IsUnitForQuantity AreaQuantity
+- Unit:SquareCentimetre
+- SquareCentimetre.ConversionFactorA = 0
+- SquareCentimetre.ConversionFactorB = 10000
+- SquareCentimetre.Symbol = cmsquare
+- SquareCentimetre IsUnitForQuantity AreaQuantity
+- Unit:SquareMillimetre
+- SquareMillimetre.ConversionFactorA = 0
+- SquareMillimetre.ConversionFactorB = 1000000
+- SquareMillimetre.Symbol = mmsquare
+- SquareMillimetre IsUnitForQuantity AreaQuantity
+- Unit:SquareMicrometre
+- SquareMicrometre.ConversionFactorA = 0
+- SquareMicrometre.ConversionFactorB = 1000000000000
+- SquareMicrometre.Symbol = mumsquare
+- SquareMicrometre IsUnitForQuantity AreaQuantity
+- Unit:SquareFoot
+- SquareFoot.ConversionFactorA = 0
+- SquareFoot.ConversionFactorB = 10.763910416709725
+- SquareFoot.Symbol = ftsquare
+- SquareFoot IsUnitForQuantity AreaQuantity
+- Unit:SquareInch
+- SquareInch.ConversionFactorA = 0
+- SquareInch.ConversionFactorB = 1550.0031000062002
+- SquareInch.Symbol = insquare
+- SquareInch IsUnitForQuantity AreaQuantity
+- Unit:SquareYard
+- SquareYard.ConversionFactorA = 0
+- SquareYard.ConversionFactorB = 1.1959900463010806
+- SquareYard.Symbol = ydsquare
+- SquareYard IsUnitForQuantity AreaQuantity
+- Unit:Acre
+- Acre.ConversionFactorA = 0
+- Acre.ConversionFactorB = 0.0002471053814671654
+- Acre.Symbol = ac
+- Acre IsUnitForQuantity AreaQuantity
+- Unit:SquareMile
+- SquareMile.ConversionFactorA = 0
+- SquareMile.ConversionFactorB = 3.861021585424459E-07
+- SquareMile.Symbol = misquare
+- SquareMile IsUnitForQuantity AreaQuantity
+- Quantity:CompressibilityQuantity
+- CompressibilityQuantity.L = 1
+- CompressibilityQuantity.M = -1
+- CompressibilityQuantity.T = 2
+- CompressibilityQuantity.I = 0
+- CompressibilityQuantity.ThT = 0
+- CompressibilityQuantity.N = 0
+- CompressibilityQuantity.J = 0
+- CompressibilityQuantity.Theta = 0
+- CompressibilityQuantity.Omega = 0
+- Unit:InversePascal
+- InversePascal.ConversionFactorA = 0
+- InversePascal.ConversionFactorB = 1
+- InversePascal.Symbol = 1PerPa
+- InversePascal IsUnitForQuantity CompressibilityQuantity
+- CompressibilityQuantity HasSIUnit InversePascal
+- Unit:InverseBar
+- InverseBar.ConversionFactorA = 0
+- InverseBar.ConversionFactorB = 100000
+- InverseBar.Symbol = 1Perbar
+- InverseBar IsUnitForQuantity CompressibilityQuantity
+- Unit:InversePoundPerSquareInch
+- InversePoundPerSquareInch.ConversionFactorA = 0
+- InversePoundPerSquareInch.ConversionFactorB = 6894.757293168361
+- InversePoundPerSquareInch.Symbol = 1Perpsi
+- InversePoundPerSquareInch IsUnitForQuantity CompressibilityQuantity
+- Unit:InverseAtmosphere
+- InverseAtmosphere.ConversionFactorA = 0
+- InverseAtmosphere.ConversionFactorB = 101325
+- InverseAtmosphere.Symbol = 1Peratm
+- InverseAtmosphere IsUnitForQuantity CompressibilityQuantity
+- Quantity:ConsistencyIndexRheologyQuantity
+- ConsistencyIndexRheologyQuantity.L = -1
+- ConsistencyIndexRheologyQuantity.M = 1
+- ConsistencyIndexRheologyQuantity.T = -1
+- ConsistencyIndexRheologyQuantity.I = 0
+- ConsistencyIndexRheologyQuantity.ThT = 0
+- ConsistencyIndexRheologyQuantity.N = 0
+- ConsistencyIndexRheologyQuantity.J = 0
+- ConsistencyIndexRheologyQuantity.Theta = 0
+- ConsistencyIndexRheologyQuantity.Omega = 0
+- Unit:PascalSecond
+- PascalSecond.ConversionFactorA = 0
+- PascalSecond.ConversionFactorB = 1
+- PascalSecond.Symbol = pa.s
+- PascalSecond IsUnitForQuantity ConsistencyIndexRheologyQuantity
+- ConsistencyIndexRheologyQuantity HasSIUnit PascalSecond
+- Unit:MicropascalSecond
+- MicropascalSecond.ConversionFactorA = 0
+- MicropascalSecond.ConversionFactorB = 1000000
+- MicropascalSecond.Symbol = muPa.s
+- MicropascalSecond IsUnitForQuantity ConsistencyIndexRheologyQuantity
+- Unit:Centipoise
+- Centipoise.ConversionFactorA = 0
+- Centipoise.ConversionFactorB = 1000
+- Centipoise.Symbol = cP
+- Centipoise IsUnitForQuantity ConsistencyIndexRheologyQuantity
+- Unit:Micropoise
+- Micropoise.ConversionFactorA = 0
+- Micropoise.ConversionFactorB = 10000000
+- Micropoise.Symbol = muP
+- Micropoise IsUnitForQuantity ConsistencyIndexRheologyQuantity
+- Unit:PoundSecondPer100SquareFoot
+- PoundSecondPer100SquareFoot.ConversionFactorA = 0
+- PoundSecondPer100SquareFoot.ConversionFactorB = 2.0885434233150124
+- PoundSecondPer100SquareFoot.Symbol = lb.sPer100ftsquare
+- PoundSecondPer100SquareFoot IsUnitForQuantity ConsistencyIndexRheologyQuantity
+- Unit:DyneSecondPerSquareCentimetre
+- DyneSecondPerSquareCentimetre.ConversionFactorA = 0
+- DyneSecondPerSquareCentimetre.ConversionFactorB = 10
+- DyneSecondPerSquareCentimetre.Symbol = dyne.sPercmsquare
+- DyneSecondPerSquareCentimetre IsUnitForQuantity ConsistencyIndexRheologyQuantity
+- Quantity:CurvatureQuantity
+- CurvatureQuantity.L = -1
+- CurvatureQuantity.M = 0
+- CurvatureQuantity.T = 0
+- CurvatureQuantity.I = 0
+- CurvatureQuantity.ThT = 0
+- CurvatureQuantity.N = 0
+- CurvatureQuantity.J = 0
+- CurvatureQuantity.Theta = 1
+- CurvatureQuantity.Omega = 0
+- Unit:RadianPerMetre
+- RadianPerMetre.ConversionFactorA = 0
+- RadianPerMetre.ConversionFactorB = 1
+- RadianPerMetre.Symbol = radPerm
+- RadianPerMetre IsUnitForQuantity CurvatureQuantity
+- CurvatureQuantity HasSIUnit RadianPerMetre
+- Unit:DegreePer10m
+- DegreePer10m.ConversionFactorA = 0
+- DegreePer10m.ConversionFactorB = 572.9577951308232
+- DegreePer10m.Symbol = degPer10m
+- DegreePer10m IsUnitForQuantity CurvatureQuantity
+- Unit:DegreePer30m
+- DegreePer30m.ConversionFactorA = 0
+- DegreePer30m.ConversionFactorB = 1718.8733853924696
+- DegreePer30m.Symbol = degPer30m
+- DegreePer30m IsUnitForQuantity CurvatureQuantity
+- Unit:DegreePer30ft
+- DegreePer30ft.ConversionFactorA = 0
+- DegreePer30ft.ConversionFactorB = 523.9126078676246
+- DegreePer30ft.Symbol = degPer30ft
+- DegreePer30ft IsUnitForQuantity CurvatureQuantity
+- Unit:DegreePer100ft
+- DegreePer100ft.ConversionFactorA = 0
+- DegreePer100ft.ConversionFactorB = 1746.375359558749
+- DegreePer100ft.Symbol = degPer100ft
+- DegreePer100ft IsUnitForQuantity CurvatureQuantity
+- Unit:DegreePerFoot
+- DegreePerFoot.ConversionFactorA = 0
+- DegreePerFoot.ConversionFactorB = 17.46375359558749
+- DegreePerFoot.Symbol = degPerft
+- DegreePerFoot IsUnitForQuantity CurvatureQuantity
+- Unit:RadianPerFoot
+- RadianPerFoot.ConversionFactorA = 0
+- RadianPerFoot.ConversionFactorB = 0.30479999999999996
+- RadianPerFoot.Symbol = radPerft
+- RadianPerFoot IsUnitForQuantity CurvatureQuantity
+- Unit:DegreePerMetre
+- DegreePerMetre.ConversionFactorA = 0
+- DegreePerMetre.ConversionFactorB = 57.29577951308232
+- DegreePerMetre.Symbol = degPerm
+- DegreePerMetre IsUnitForQuantity CurvatureQuantity
+- Unit:DegreePerDecimeter
+- DegreePerDecimeter.ConversionFactorA = 0
+- DegreePerDecimeter.ConversionFactorB = 5.729577951308233
+- DegreePerDecimeter.Symbol = degPerdm
+- DegreePerDecimeter IsUnitForQuantity CurvatureQuantity
+- Unit:DegreePerCentimeter
+- DegreePerCentimeter.ConversionFactorA = 0
+- DegreePerCentimeter.ConversionFactorB = 0.5729577951308232
+- DegreePerCentimeter.Symbol = degPercm
+- DegreePerCentimeter IsUnitForQuantity CurvatureQuantity
+- Unit:DegreePerMillimeter
+- DegreePerMillimeter.ConversionFactorA = 0
+- DegreePerMillimeter.ConversionFactorB = 0.057295779513082325
+- DegreePerMillimeter.Symbol = degPermm
+- DegreePerMillimeter IsUnitForQuantity CurvatureQuantity
+- Unit:DegreePerMicrometer
+- DegreePerMicrometer.ConversionFactorA = 0
+- DegreePerMicrometer.ConversionFactorB = 5.729577951308232E-05
+- DegreePerMicrometer.Symbol = degPermm
+- DegreePerMicrometer IsUnitForQuantity CurvatureQuantity
+- Unit:DegreePerNanometer
+- DegreePerNanometer.ConversionFactorA = 0
+- DegreePerNanometer.ConversionFactorB = 5.7295779513082324E-08
+- DegreePerNanometer.Symbol = degPermm
+- DegreePerNanometer IsUnitForQuantity CurvatureQuantity
+- Unit:DegreePerDecameter
+- DegreePerDecameter.ConversionFactorA = 0
+- DegreePerDecameter.ConversionFactorB = 572.9577951308232
+- DegreePerDecameter.Symbol = degPerdam
+- DegreePerDecameter IsUnitForQuantity CurvatureQuantity
+- Unit:DegreePerHectometer
+- DegreePerHectometer.ConversionFactorA = 0
+- DegreePerHectometer.ConversionFactorB = 5729.5779513082325
+- DegreePerHectometer.Symbol = degPerhm
+- DegreePerHectometer IsUnitForQuantity CurvatureQuantity
+- Unit:DegreePerKilometer
+- DegreePerKilometer.ConversionFactorA = 0
+- DegreePerKilometer.ConversionFactorB = 57295.77951308232
+- DegreePerKilometer.Symbol = degPerkm
+- DegreePerKilometer IsUnitForQuantity CurvatureQuantity
+- Unit:RadianPerDecimeter
+- RadianPerDecimeter.ConversionFactorA = 0
+- RadianPerDecimeter.ConversionFactorB = 0.1
+- RadianPerDecimeter.Symbol = radPerdm
+- RadianPerDecimeter IsUnitForQuantity CurvatureQuantity
+- Unit:RadianPerCentimeter
+- RadianPerCentimeter.ConversionFactorA = 0
+- RadianPerCentimeter.ConversionFactorB = 0.01
+- RadianPerCentimeter.Symbol = radPercm
+- RadianPerCentimeter IsUnitForQuantity CurvatureQuantity
+- Unit:RadianPerMillimeter
+- RadianPerMillimeter.ConversionFactorA = 0
+- RadianPerMillimeter.ConversionFactorB = 0.001
+- RadianPerMillimeter.Symbol = radPermm
+- RadianPerMillimeter IsUnitForQuantity CurvatureQuantity
+- Unit:RadianPerMicrometer
+- RadianPerMicrometer.ConversionFactorA = 0
+- RadianPerMicrometer.ConversionFactorB = 1E-06
+- RadianPerMicrometer.Symbol = radPermm
+- RadianPerMicrometer IsUnitForQuantity CurvatureQuantity
+- Unit:RadianPerNanometer
+- RadianPerNanometer.ConversionFactorA = 0
+- RadianPerNanometer.ConversionFactorB = 1E-09
+- RadianPerNanometer.Symbol = radPermm
+- RadianPerNanometer IsUnitForQuantity CurvatureQuantity
+- Unit:RadianPerDecameter
+- RadianPerDecameter.ConversionFactorA = 0
+- RadianPerDecameter.ConversionFactorB = 10
+- RadianPerDecameter.Symbol = radPerdam
+- RadianPerDecameter IsUnitForQuantity CurvatureQuantity
+- Unit:RadianPerHectometer
+- RadianPerHectometer.ConversionFactorA = 0
+- RadianPerHectometer.ConversionFactorB = 100
+- RadianPerHectometer.Symbol = radPerhm
+- RadianPerHectometer IsUnitForQuantity CurvatureQuantity
+- Unit:RadianPerKilometer
+- RadianPerKilometer.ConversionFactorA = 0
+- RadianPerKilometer.ConversionFactorB = 1000
+- RadianPerKilometer.Symbol = radPerkm
+- RadianPerKilometer IsUnitForQuantity CurvatureQuantity
+- Unit:DegreePerYard
+- DegreePerYard.ConversionFactorA = 0
+- DegreePerYard.ConversionFactorB = 52.391260786762466
+- DegreePerYard.Symbol = degPeryd
+- DegreePerYard IsUnitForQuantity CurvatureQuantity
+- Unit:DegreePerMile
+- DegreePerMile.ConversionFactorA = 0
+- DegreePerMile.ConversionFactorB = 92208.61898470194
+- DegreePerMile.Symbol = degPermi
+- DegreePerMile IsUnitForQuantity CurvatureQuantity
+- Unit:RadianPerYard
+- RadianPerYard.ConversionFactorA = 0
+- RadianPerYard.ConversionFactorB = 0.9143999999999999
+- RadianPerYard.Symbol = radPeryd
+- RadianPerYard IsUnitForQuantity CurvatureQuantity
+- Unit:RadianPerMile
+- RadianPerMile.ConversionFactorA = 0
+- RadianPerMile.ConversionFactorB = 1609.3439999999998
+- RadianPerMile.Symbol = radPermi
+- RadianPerMile IsUnitForQuantity CurvatureQuantity
+- Quantity:MassDensityGradientPerLengthQuantity
+- MassDensityGradientPerLengthQuantity.L = -4
+- MassDensityGradientPerLengthQuantity.M = 1
+- MassDensityGradientPerLengthQuantity.T = 0
+- MassDensityGradientPerLengthQuantity.I = 0
+- MassDensityGradientPerLengthQuantity.ThT = 0
+- MassDensityGradientPerLengthQuantity.N = 0
+- MassDensityGradientPerLengthQuantity.J = 0
+- MassDensityGradientPerLengthQuantity.Theta = 0
+- MassDensityGradientPerLengthQuantity.Omega = 0
+- Unit:KilogramPerCubicMetrePerMetre
+- KilogramPerCubicMetrePerMetre.ConversionFactorA = 0
+- KilogramPerCubicMetrePerMetre.ConversionFactorB = 1
+- KilogramPerCubicMetrePerMetre.Symbol = kgPermcubicPerm
+- KilogramPerCubicMetrePerMetre IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- MassDensityGradientPerLengthQuantity HasSIUnit KilogramPerCubicMetrePerMetre
+- Unit:SpecificGravityPerMetre
+- SpecificGravityPerMetre.ConversionFactorA = 0
+- SpecificGravityPerMetre.ConversionFactorB = 0.001000028000784022
+- SpecificGravityPerMetre.Symbol = sgPerm
+- SpecificGravityPerMetre IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:SpecificGravityPer10Metre
+- SpecificGravityPer10Metre.ConversionFactorA = 0
+- SpecificGravityPer10Metre.ConversionFactorB = 0.01000028000784022
+- SpecificGravityPer10Metre.Symbol = sgPer10m
+- SpecificGravityPer10Metre IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:SpecificGravityPer30Metre
+- SpecificGravityPer30Metre.ConversionFactorA = 0
+- SpecificGravityPer30Metre.ConversionFactorB = 0.03000084002352066
+- SpecificGravityPer30Metre.Symbol = sgPer30m
+- SpecificGravityPer30Metre IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:SpecificGravityPer100Metre
+- SpecificGravityPer100Metre.ConversionFactorA = 0
+- SpecificGravityPer100Metre.ConversionFactorB = 0.10000280007840219
+- SpecificGravityPer100Metre.Symbol = sgPer100m
+- SpecificGravityPer100Metre IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:GramPerCubicCentimetrePer100Metre
+- GramPerCubicCentimetrePer100Metre.ConversionFactorA = 0
+- GramPerCubicCentimetrePer100Metre.ConversionFactorB = 0.10000000000000002
+- GramPerCubicCentimetrePer100Metre.Symbol = gPercmcubicPer100m
+- GramPerCubicCentimetrePer100Metre IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:PoundPerGallonUkPerFoot
+- PoundPerGallonUkPerFoot.ConversionFactorA = 0
+- PoundPerGallonUkPerFoot.ConversionFactorB = 0.00305483143819196
+- PoundPerGallonUkPerFoot.Symbol = ppgUKPerft
+- PoundPerGallonUkPerFoot IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:PoundPerGallonUkPer30Foot
+- PoundPerGallonUkPer30Foot.ConversionFactorA = 0
+- PoundPerGallonUkPer30Foot.ConversionFactorB = 0.0916449431457588
+- PoundPerGallonUkPer30Foot.Symbol = ppgUKPer30ft
+- PoundPerGallonUkPer30Foot IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:PoundPerGallonUkPer100Foot
+- PoundPerGallonUkPer100Foot.ConversionFactorA = 0
+- PoundPerGallonUkPer100Foot.ConversionFactorB = 0.305483143819196
+- PoundPerGallonUkPer100Foot.Symbol = ppgUKPer100ft
+- PoundPerGallonUkPer100Foot IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:PoundPerGallonUsPerFoot
+- PoundPerGallonUsPerFoot.ConversionFactorA = 0
+- PoundPerGallonUsPerFoot.ConversionFactorB = 0.0025436792769754917
+- PoundPerGallonUsPerFoot.Symbol = ppgUSPerft
+- PoundPerGallonUsPerFoot IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:PoundPerGallonUsPer30Foot
+- PoundPerGallonUsPer30Foot.ConversionFactorA = 0
+- PoundPerGallonUsPer30Foot.ConversionFactorB = 0.07631037830926475
+- PoundPerGallonUsPer30Foot.Symbol = ppgUSPer30ft
+- PoundPerGallonUsPer30Foot IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:PoundPerGallonUsPer100Foot
+- PoundPerGallonUsPer100Foot.ConversionFactorA = 0
+- PoundPerGallonUsPer100Foot.ConversionFactorB = 0.2543679276975492
+- PoundPerGallonUsPer100Foot.Symbol = ppgUSPer100ft
+- PoundPerGallonUsPer100Foot IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:KilogramPerCubicMetrePer10Metre
+- KilogramPerCubicMetrePer10Metre.ConversionFactorA = 0
+- KilogramPerCubicMetrePer10Metre.ConversionFactorB = 10
+- KilogramPerCubicMetrePer10Metre.Symbol = kgPermcubicPer10m
+- KilogramPerCubicMetrePer10Metre IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:KilogramPerCubicMetrePer30Metre
+- KilogramPerCubicMetrePer30Metre.ConversionFactorA = 0
+- KilogramPerCubicMetrePer30Metre.ConversionFactorB = 30
+- KilogramPerCubicMetrePer30Metre.Symbol = kgPermcubicPer30m
+- KilogramPerCubicMetrePer30Metre IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:KilogramPerCubicMetrePer100Metre
+- KilogramPerCubicMetrePer100Metre.ConversionFactorA = 0
+- KilogramPerCubicMetrePer100Metre.ConversionFactorB = 100
+- KilogramPerCubicMetrePer100Metre.Symbol = kgPermcubicPer30m
+- KilogramPerCubicMetrePer100Metre IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:GramPerCubicCentimetrePerMetre
+- GramPerCubicCentimetrePerMetre.ConversionFactorA = 0
+- GramPerCubicCentimetrePerMetre.ConversionFactorB = 0.0010000000000000002
+- GramPerCubicCentimetrePerMetre.Symbol = gPercmcubicPerm
+- GramPerCubicCentimetrePerMetre IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:GramPerCubicCentimetrePer10Metre
+- GramPerCubicCentimetrePer10Metre.ConversionFactorA = 0
+- GramPerCubicCentimetrePer10Metre.ConversionFactorB = 0.010000000000000002
+- GramPerCubicCentimetrePer10Metre.Symbol = gPercmcubicPer10m
+- GramPerCubicCentimetrePer10Metre IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:GramPerCubicCentimetrePer30Metre
+- GramPerCubicCentimetrePer30Metre.ConversionFactorA = 0
+- GramPerCubicCentimetrePer30Metre.ConversionFactorB = 0.030000000000000002
+- GramPerCubicCentimetrePer30Metre.Symbol = gPercmcubicPer30m
+- GramPerCubicCentimetrePer30Metre IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:PoundPerCubicFootPerFoot
+- PoundPerCubicFootPerFoot.ConversionFactorA = 0
+- PoundPerCubicFootPerFoot.ConversionFactorB = 0.019028042383608865
+- PoundPerCubicFootPerFoot.Symbol = lbPerftcubicPerft
+- PoundPerCubicFootPerFoot IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:PoundPerCubicFootPer30Foot
+- PoundPerCubicFootPer30Foot.ConversionFactorA = 0
+- PoundPerCubicFootPer30Foot.ConversionFactorB = 0.570841271508266
+- PoundPerCubicFootPer30Foot.Symbol = lbPerftcubicPer30ft
+- PoundPerCubicFootPer30Foot IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:PoundPerCubicFootPer100Foot
+- PoundPerCubicFootPer100Foot.ConversionFactorA = 0
+- PoundPerCubicFootPer100Foot.ConversionFactorB = 1.902804238360887
+- PoundPerCubicFootPer100Foot.Symbol = lbPerftcubicPer100ft
+- PoundPerCubicFootPer100Foot IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:PoundPerCubicInchPerFoot
+- PoundPerCubicInchPerFoot.ConversionFactorA = 0
+- PoundPerCubicInchPerFoot.ConversionFactorB = 1.1011598601625506E-05
+- PoundPerCubicInchPerFoot.Symbol = lbPerincubicPerft
+- PoundPerCubicInchPerFoot IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:PoundPerCubicInchPer30Foot
+- PoundPerCubicInchPer30Foot.ConversionFactorA = 0
+- PoundPerCubicInchPer30Foot.ConversionFactorB = 0.00033034795804876514
+- PoundPerCubicInchPer30Foot.Symbol = lbPerincubicPer30ft
+- PoundPerCubicInchPer30Foot IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:PoundPerCubicInchPer100Foot
+- PoundPerCubicInchPer100Foot.ConversionFactorA = 0
+- PoundPerCubicInchPer100Foot.ConversionFactorB = 0.0011011598601625506
+- PoundPerCubicInchPer100Foot.Symbol = lbPerincubicPer100ft
+- PoundPerCubicInchPer100Foot IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:PoundPerCubicYardPerFoot
+- PoundPerCubicYardPerFoot.ConversionFactorA = 0
+- PoundPerCubicYardPerFoot.ConversionFactorB = 0.5137571443574394
+- PoundPerCubicYardPerFoot.Symbol = lbPerydcubicPerft
+- PoundPerCubicYardPerFoot IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:PoundPerCubicYardPer30Foot
+- PoundPerCubicYardPer30Foot.ConversionFactorA = 0
+- PoundPerCubicYardPer30Foot.ConversionFactorB = 15.412714330723183
+- PoundPerCubicYardPer30Foot.Symbol = lbPerydcubicPer30ft
+- PoundPerCubicYardPer30Foot IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Unit:PoundPerCubicYardPer100Foot
+- PoundPerCubicYardPer100Foot.ConversionFactorA = 0
+- PoundPerCubicYardPer100Foot.ConversionFactorB = 51.37571443574393
+- PoundPerCubicYardPer100Foot.Symbol = lbPerydcubicPer100ft
+- PoundPerCubicYardPer100Foot IsUnitForQuantity MassDensityGradientPerLengthQuantity
+- Quantity:MassDensityGradientPerTemperatureQuantity
+- MassDensityGradientPerTemperatureQuantity.L = -3
+- MassDensityGradientPerTemperatureQuantity.M = 1
+- MassDensityGradientPerTemperatureQuantity.T = 0
+- MassDensityGradientPerTemperatureQuantity.I = 0
+- MassDensityGradientPerTemperatureQuantity.ThT = -1
+- MassDensityGradientPerTemperatureQuantity.N = 0
+- MassDensityGradientPerTemperatureQuantity.J = 0
+- MassDensityGradientPerTemperatureQuantity.Theta = 0
+- MassDensityGradientPerTemperatureQuantity.Omega = 0
+- Unit:KilogramPerCubicMetrePerKelvin
+- KilogramPerCubicMetrePerKelvin.ConversionFactorA = 0
+- KilogramPerCubicMetrePerKelvin.ConversionFactorB = 1
+- KilogramPerCubicMetrePerKelvin.Symbol = kgPermcubicPerK
+- KilogramPerCubicMetrePerKelvin IsUnitForQuantity MassDensityGradientPerTemperatureQuantity
+- MassDensityGradientPerTemperatureQuantity HasSIUnit KilogramPerCubicMetrePerKelvin
+- Unit:SpecificGravityPerCelsius
+- SpecificGravityPerCelsius.ConversionFactorA = 0
+- SpecificGravityPerCelsius.ConversionFactorB = 0.001000028000784022
+- SpecificGravityPerCelsius.Symbol = sgPerdegC
+- SpecificGravityPerCelsius IsUnitForQuantity MassDensityGradientPerTemperatureQuantity
+- Unit:GramPerCubicCentimetrePerCelsius
+- GramPerCubicCentimetrePerCelsius.ConversionFactorA = 0
+- GramPerCubicCentimetrePerCelsius.ConversionFactorB = 0.0010000000000000002
+- GramPerCubicCentimetrePerCelsius.Symbol = gPercmcubicPerdegC
+- GramPerCubicCentimetrePerCelsius IsUnitForQuantity MassDensityGradientPerTemperatureQuantity
+- Unit:PoundPerGallonUkPerCelsius
+- PoundPerGallonUkPerCelsius.ConversionFactorA = 0
+- PoundPerGallonUkPerCelsius.ConversionFactorB = 0.010022412854960501
+- PoundPerGallonUkPerCelsius.Symbol = ppgUKPerdegC
+- PoundPerGallonUkPerCelsius IsUnitForQuantity MassDensityGradientPerTemperatureQuantity
+- Unit:PoundPerGallonUsPerFahrenheit
+- PoundPerGallonUsPerFahrenheit.ConversionFactorA = 0
+- PoundPerGallonUsPerFahrenheit.ConversionFactorB = 0.004636335806677406
+- PoundPerGallonUsPerFahrenheit.Symbol = ppgUSPerdegF
+- PoundPerGallonUsPerFahrenheit IsUnitForQuantity MassDensityGradientPerTemperatureQuantity
+- Unit:PoundPerGallonUkPerFahrenheit
+- PoundPerGallonUkPerFahrenheit.ConversionFactorA = 0
+- PoundPerGallonUkPerFahrenheit.ConversionFactorB = 0.005568007141644723
+- PoundPerGallonUkPerFahrenheit.Symbol = ppgUKPerdegF
+- PoundPerGallonUkPerFahrenheit IsUnitForQuantity MassDensityGradientPerTemperatureQuantity
+- Unit:PoundPerGallonUsPerCelsius
+- PoundPerGallonUsPerCelsius.ConversionFactorA = 0
+- PoundPerGallonUsPerCelsius.ConversionFactorB = 0.00834540445201933
+- PoundPerGallonUsPerCelsius.Symbol = ppgUSPerdegC
+- PoundPerGallonUsPerCelsius IsUnitForQuantity MassDensityGradientPerTemperatureQuantity
+- Unit:PoundPerCubicFootPerCelsius
+- PoundPerCubicFootPerCelsius.ConversionFactorA = 0
+- PoundPerCubicFootPerCelsius.ConversionFactorB = 0.06242796057614459
+- PoundPerCubicFootPerCelsius.Symbol = lbPerftcubicPerdegC
+- PoundPerCubicFootPerCelsius IsUnitForQuantity MassDensityGradientPerTemperatureQuantity
+- Unit:PoundPerCubicFootPerFahrenheit
+- PoundPerCubicFootPerFahrenheit.ConversionFactorA = 0
+- PoundPerCubicFootPerFahrenheit.ConversionFactorB = 0.03468220032008033
+- PoundPerCubicFootPerFahrenheit.Symbol = lbPerftcubicPerdegF
+- PoundPerCubicFootPerFahrenheit IsUnitForQuantity MassDensityGradientPerTemperatureQuantity
+- Unit:PoundPerCubicInchPerCelsius
+- PoundPerCubicInchPerCelsius.ConversionFactorA = 0
+- PoundPerCubicInchPerCelsius.ConversionFactorB = 3.612729200008369E-05
+- PoundPerCubicInchPerCelsius.Symbol = lbPerincubicPerdegC
+- PoundPerCubicInchPerCelsius IsUnitForQuantity MassDensityGradientPerTemperatureQuantity
+- Unit:PoundPerCubicInchPerFahrenheit
+- PoundPerCubicInchPerFahrenheit.ConversionFactorA = 0
+- PoundPerCubicInchPerFahrenheit.ConversionFactorB = 2.0070717777824268E-05
+- PoundPerCubicInchPerFahrenheit.Symbol = lbPerincubicPerdegF
+- PoundPerCubicInchPerFahrenheit IsUnitForQuantity MassDensityGradientPerTemperatureQuantity
+- Unit:PoundPerCubicYardPerCelsius
+- PoundPerCubicYardPerCelsius.ConversionFactorA = 0
+- PoundPerCubicYardPerCelsius.ConversionFactorB = 1.6855549355559039
+- PoundPerCubicYardPerCelsius.Symbol = lbPerydcubicPerdegC
+- PoundPerCubicYardPerCelsius IsUnitForQuantity MassDensityGradientPerTemperatureQuantity
+- Unit:PoundPerCubicYeardPerFahrenheit
+- PoundPerCubicYeardPerFahrenheit.ConversionFactorA = 0
+- PoundPerCubicYeardPerFahrenheit.ConversionFactorB = 0.9364194086421688
+- PoundPerCubicYeardPerFahrenheit.Symbol = lbPerydcubicPerdegF
+- PoundPerCubicYeardPerFahrenheit IsUnitForQuantity MassDensityGradientPerTemperatureQuantity
+- Quantity:MassDensityQuantity
+- MassDensityQuantity.L = -3
+- MassDensityQuantity.M = 1
+- MassDensityQuantity.T = 0
+- MassDensityQuantity.I = 0
+- MassDensityQuantity.ThT = 0
+- MassDensityQuantity.N = 0
+- MassDensityQuantity.J = 0
+- MassDensityQuantity.Theta = 0
+- MassDensityQuantity.Omega = 0
+- Unit:KilogramPerCubicMetre
+- KilogramPerCubicMetre.ConversionFactorA = 0
+- KilogramPerCubicMetre.ConversionFactorB = 1
+- KilogramPerCubicMetre.Symbol = kgPermcubic
+- KilogramPerCubicMetre IsUnitForQuantity MassDensityQuantity
+- MassDensityQuantity HasSIUnit KilogramPerCubicMetre
+- Unit:GramPerCubicMetre
+- GramPerCubicMetre.ConversionFactorA = 0
+- GramPerCubicMetre.ConversionFactorB = 1000
+- GramPerCubicMetre.Symbol = gPermcubic
+- GramPerCubicMetre IsUnitForQuantity MassDensityQuantity
+- Unit:SpecificGravity
+- SpecificGravity.ConversionFactorA = 0
+- SpecificGravity.ConversionFactorB = 999.972
+- SpecificGravity.Symbol = s.g.
+- SpecificGravity IsUnitForQuantity MassDensityQuantity
+- Unit:GramPerCubicCentimetre
+- GramPerCubicCentimetre.ConversionFactorA = 0
+- GramPerCubicCentimetre.ConversionFactorB = 0.0010000000000000002
+- GramPerCubicCentimetre.Symbol = gPercmcubic
+- GramPerCubicCentimetre IsUnitForQuantity MassDensityQuantity
+- Unit:PoundPerGallonUk
+- PoundPerGallonUk.ConversionFactorA = 0
+- PoundPerGallonUk.ConversionFactorB = 0.010022412854960501
+- PoundPerGallonUk.Symbol = ppgUK
+- PoundPerGallonUk IsUnitForQuantity MassDensityQuantity
+- Unit:PoundPerGallonUs
+- PoundPerGallonUs.ConversionFactorA = 0
+- PoundPerGallonUs.ConversionFactorB = 0.00834540445201933
+- PoundPerGallonUs.Symbol = ppgUS
+- PoundPerGallonUs IsUnitForQuantity MassDensityQuantity
+- Unit:PoundPerCubicFoot
+- PoundPerCubicFoot.ConversionFactorA = 0
+- PoundPerCubicFoot.ConversionFactorB = 0.06242796057614459
+- PoundPerCubicFoot.Symbol = lbPerftcubic
+- PoundPerCubicFoot IsUnitForQuantity MassDensityQuantity
+- Unit:PoundPerCubicInch
+- PoundPerCubicInch.ConversionFactorA = 0
+- PoundPerCubicInch.ConversionFactorB = 3.612729200008369E-05
+- PoundPerCubicInch.Symbol = lbPerincubic
+- PoundPerCubicInch IsUnitForQuantity MassDensityQuantity
+- Unit:PoundPerCubicYard
+- PoundPerCubicYard.ConversionFactorA = 0
+- PoundPerCubicYard.ConversionFactorB = 1.6855549355559039
+- PoundPerCubicYard.Symbol = lbPerydcubic
+- PoundPerCubicYard IsUnitForQuantity MassDensityQuantity
+- Quantity:MassDensityRateOfChangeQuantity
+- MassDensityRateOfChangeQuantity.L = -3
+- MassDensityRateOfChangeQuantity.M = 1
+- MassDensityRateOfChangeQuantity.T = -1
+- MassDensityRateOfChangeQuantity.I = 0
+- MassDensityRateOfChangeQuantity.ThT = 0
+- MassDensityRateOfChangeQuantity.N = 0
+- MassDensityRateOfChangeQuantity.J = 0
+- MassDensityRateOfChangeQuantity.Theta = 0
+- MassDensityRateOfChangeQuantity.Omega = 0
+- Unit:KilogramPerCubicMetrePerSecond
+- KilogramPerCubicMetrePerSecond.ConversionFactorA = 0
+- KilogramPerCubicMetrePerSecond.ConversionFactorB = 1
+- KilogramPerCubicMetrePerSecond.Symbol = kgPermcubicPers
+- KilogramPerCubicMetrePerSecond IsUnitForQuantity MassDensityRateOfChangeQuantity
+- MassDensityRateOfChangeQuantity HasSIUnit KilogramPerCubicMetrePerSecond
+- Unit:SpecificGravityPerSecond
+- SpecificGravityPerSecond.ConversionFactorA = 0
+- SpecificGravityPerSecond.ConversionFactorB = 0.001000028000784022
+- SpecificGravityPerSecond.Symbol = sgPers
+- SpecificGravityPerSecond IsUnitForQuantity MassDensityRateOfChangeQuantity
+- Unit:SpecificGravityPerMinute
+- SpecificGravityPerMinute.ConversionFactorA = 0
+- SpecificGravityPerMinute.ConversionFactorB = 0.06000168004704132
+- SpecificGravityPerMinute.Symbol = sgPermin
+- SpecificGravityPerMinute IsUnitForQuantity MassDensityRateOfChangeQuantity
+- Unit:SpecificGravityPerHour
+- SpecificGravityPerHour.ConversionFactorA = 0
+- SpecificGravityPerHour.ConversionFactorB = 3.600100802822479
+- SpecificGravityPerHour.Symbol = sgPerh
+- SpecificGravityPerHour IsUnitForQuantity MassDensityRateOfChangeQuantity
+- Unit:GramPerCubicCentimetrePerSecond
+- GramPerCubicCentimetrePerSecond.ConversionFactorA = 0
+- GramPerCubicCentimetrePerSecond.ConversionFactorB = 0.001
+- GramPerCubicCentimetrePerSecond.Symbol = gPercmcubicPers
+- GramPerCubicCentimetrePerSecond IsUnitForQuantity MassDensityRateOfChangeQuantity
+- Unit:GramPerCubicCentimetrePerMinute
+- GramPerCubicCentimetrePerMinute.ConversionFactorA = 0
+- GramPerCubicCentimetrePerMinute.ConversionFactorB = 0.06
+- GramPerCubicCentimetrePerMinute.Symbol = gPercmcubicPermin
+- GramPerCubicCentimetrePerMinute IsUnitForQuantity MassDensityRateOfChangeQuantity
+- Unit:GramPerCubicCentimetrePerHour
+- GramPerCubicCentimetrePerHour.ConversionFactorA = 0
+- GramPerCubicCentimetrePerHour.ConversionFactorB = 3.6
+- GramPerCubicCentimetrePerHour.Symbol = gPercmcubicPerh
+- GramPerCubicCentimetrePerHour IsUnitForQuantity MassDensityRateOfChangeQuantity
+- Unit:PoundPerGallonUkPerSecond
+- PoundPerGallonUkPerSecond.ConversionFactorA = 0
+- PoundPerGallonUkPerSecond.ConversionFactorB = 0.010022412854960501
+- PoundPerGallonUkPerSecond.Symbol = ppgUKPers
+- PoundPerGallonUkPerSecond IsUnitForQuantity MassDensityRateOfChangeQuantity
+- Unit:PoundPerGallonUkPerMinute
+- PoundPerGallonUkPerMinute.ConversionFactorA = 0
+- PoundPerGallonUkPerMinute.ConversionFactorB = 0.6013447712976301
+- PoundPerGallonUkPerMinute.Symbol = ppgUKPermin
+- PoundPerGallonUkPerMinute IsUnitForQuantity MassDensityRateOfChangeQuantity
+- Unit:PoundPerGallonUkPerHour
+- PoundPerGallonUkPerHour.ConversionFactorA = 0
+- PoundPerGallonUkPerHour.ConversionFactorB = 36.08068627785781
+- PoundPerGallonUkPerHour.Symbol = ppgUKPerh
+- PoundPerGallonUkPerHour IsUnitForQuantity MassDensityRateOfChangeQuantity
+- Unit:PoundPerGallonUsPerSecond
+- PoundPerGallonUsPerSecond.ConversionFactorA = 0
+- PoundPerGallonUsPerSecond.ConversionFactorB = 0.00834540445201933
+- PoundPerGallonUsPerSecond.Symbol = ppgUSPers
+- PoundPerGallonUsPerSecond IsUnitForQuantity MassDensityRateOfChangeQuantity
+- Unit:PoundPerGallonUsPerMinute
+- PoundPerGallonUsPerMinute.ConversionFactorA = 0
+- PoundPerGallonUsPerMinute.ConversionFactorB = 0.5007242671211598
+- PoundPerGallonUsPerMinute.Symbol = ppgUSPermin
+- PoundPerGallonUsPerMinute IsUnitForQuantity MassDensityRateOfChangeQuantity
+- Unit:PoundPerGallonUsPerHour
+- PoundPerGallonUsPerHour.ConversionFactorA = 0
+- PoundPerGallonUsPerHour.ConversionFactorB = 30.043456027269592
+- PoundPerGallonUsPerHour.Symbol = ppgUSPerh
+- PoundPerGallonUsPerHour IsUnitForQuantity MassDensityRateOfChangeQuantity
+- Quantity:DimensionlessQuantity
+- DimensionlessQuantity.L = 0
+- DimensionlessQuantity.M = 0
+- DimensionlessQuantity.T = 0
+- DimensionlessQuantity.I = 0
+- DimensionlessQuantity.ThT = 0
+- DimensionlessQuantity.N = 0
+- DimensionlessQuantity.J = 0
+- DimensionlessQuantity.Theta = 0
+- DimensionlessQuantity.Omega = 0
+- Unit:Dimensionless
+- Dimensionless.ConversionFactorA = 0
+- Dimensionless.ConversionFactorB = 1
+- Dimensionless IsUnitForQuantity DimensionlessQuantity
+- DimensionlessQuantity HasSIUnit Dimensionless
+- Quantity:DynamicViscosityQuantity
+- DynamicViscosityQuantity.L = -1
+- DynamicViscosityQuantity.M = 1
+- DynamicViscosityQuantity.T = -1
+- DynamicViscosityQuantity.I = 0
+- DynamicViscosityQuantity.ThT = 0
+- DynamicViscosityQuantity.N = 0
+- DynamicViscosityQuantity.J = 0
+- DynamicViscosityQuantity.Theta = 0
+- DynamicViscosityQuantity.Omega = 0
+- Unit:PascalSecond
+- PascalSecond.ConversionFactorA = 0
+- PascalSecond.ConversionFactorB = 1
+- PascalSecond.Symbol = pa.s
+- PascalSecond IsUnitForQuantity DynamicViscosityQuantity
+- DynamicViscosityQuantity HasSIUnit PascalSecond
+- Unit:MillipascalSecond
+- MillipascalSecond.ConversionFactorA = 0
+- MillipascalSecond.ConversionFactorB = 1000
+- MillipascalSecond.Symbol = mPa.s
+- MillipascalSecond IsUnitForQuantity DynamicViscosityQuantity
+- Unit:MicropascalSecond
+- MicropascalSecond.ConversionFactorA = 0
+- MicropascalSecond.ConversionFactorB = 1000000
+- MicropascalSecond.Symbol = muPa.s
+- MicropascalSecond IsUnitForQuantity DynamicViscosityQuantity
+- Unit:Poise
+- Poise.ConversionFactorA = 0
+- Poise.ConversionFactorB = 10
+- Poise.Symbol = p
+- Poise IsUnitForQuantity DynamicViscosityQuantity
+- Unit:Centipoise
+- Centipoise.ConversionFactorA = 0
+- Centipoise.ConversionFactorB = 1000
+- Centipoise.Symbol = cP
+- Centipoise IsUnitForQuantity DynamicViscosityQuantity
+- Unit:Millipoise
+- Millipoise.ConversionFactorA = 0
+- Millipoise.ConversionFactorB = 10000
+- Millipoise.Symbol = mP
+- Millipoise IsUnitForQuantity DynamicViscosityQuantity
+- Unit:Micropoise
+- Micropoise.ConversionFactorA = 0
+- Micropoise.ConversionFactorB = 10000000
+- Micropoise.Symbol = muP
+- Micropoise IsUnitForQuantity DynamicViscosityQuantity
+- Unit:PoundSecondPerSquareFoot
+- PoundSecondPerSquareFoot.ConversionFactorA = 0
+- PoundSecondPerSquareFoot.ConversionFactorB = 0.020885434233150126
+- PoundSecondPerSquareFoot.Symbol = lb.sPerftsquare
+- PoundSecondPerSquareFoot IsUnitForQuantity DynamicViscosityQuantity
+- Unit:PoundSecondPer100SquareFoot
+- PoundSecondPer100SquareFoot.ConversionFactorA = 0
+- PoundSecondPer100SquareFoot.ConversionFactorB = 2.0885434233150124
+- PoundSecondPer100SquareFoot.Symbol = lb.sPer100ftsquare
+- PoundSecondPer100SquareFoot IsUnitForQuantity DynamicViscosityQuantity
+- Unit:PoundSecondPerSquareInch
+- PoundSecondPerSquareInch.ConversionFactorA = 0
+- PoundSecondPerSquareInch.ConversionFactorB = 0.0001450377377302092
+- PoundSecondPerSquareInch.Symbol = lb.sPerinsquare
+- PoundSecondPerSquareInch IsUnitForQuantity DynamicViscosityQuantity
+- Unit:DyneSecondPerSquareCentimetre
+- DyneSecondPerSquareCentimetre.ConversionFactorA = 0
+- DyneSecondPerSquareCentimetre.ConversionFactorB = 10
+- DyneSecondPerSquareCentimetre.Symbol = dyne.sPercmsquare
+- DyneSecondPerSquareCentimetre IsUnitForQuantity DynamicViscosityQuantity
+- Quantity:ElectricCapacitanceQuantity
+- ElectricCapacitanceQuantity.L = -2
+- ElectricCapacitanceQuantity.M = -1
+- ElectricCapacitanceQuantity.T = 4
+- ElectricCapacitanceQuantity.I = 2
+- ElectricCapacitanceQuantity.ThT = 0
+- ElectricCapacitanceQuantity.N = 0
+- ElectricCapacitanceQuantity.J = 0
+- ElectricCapacitanceQuantity.Theta = 0
+- ElectricCapacitanceQuantity.Omega = 0
+- Unit:Farad
+- Farad.ConversionFactorA = 0
+- Farad.ConversionFactorB = 1
+- Farad.Symbol = f
+- Farad IsUnitForQuantity ElectricCapacitanceQuantity
+- ElectricCapacitanceQuantity HasSIUnit Farad
+- Unit:CoulombPerVolt
+- CoulombPerVolt.ConversionFactorA = 0
+- CoulombPerVolt.ConversionFactorB = 1
+- CoulombPerVolt.Symbol = cPerV
+- CoulombPerVolt IsUnitForQuantity ElectricCapacitanceQuantity
+- Unit:Millifarad
+- Millifarad.ConversionFactorA = 0
+- Millifarad.ConversionFactorB = 1000
+- Millifarad.Symbol = mF
+- Millifarad IsUnitForQuantity ElectricCapacitanceQuantity
+- Unit:Microfarad
+- Microfarad.ConversionFactorA = 0
+- Microfarad.ConversionFactorB = 1000000
+- Microfarad.Symbol = μF
+- Microfarad IsUnitForQuantity ElectricCapacitanceQuantity
+- Unit:Nanofarad
+- Nanofarad.ConversionFactorA = 0
+- Nanofarad.ConversionFactorB = 999999999.9999999
+- Nanofarad.Symbol = nF
+- Nanofarad IsUnitForQuantity ElectricCapacitanceQuantity
+- Unit:Picofarad
+- Picofarad.ConversionFactorA = 0
+- Picofarad.ConversionFactorB = 1000000000000
+- Picofarad.Symbol = pF
+- Picofarad IsUnitForQuantity ElectricCapacitanceQuantity
+- Quantity:ElectricCurrentQuantity
+- ElectricCurrentQuantity.L = 0
+- ElectricCurrentQuantity.M = 0
+- ElectricCurrentQuantity.T = 0
+- ElectricCurrentQuantity.I = 1
+- ElectricCurrentQuantity.ThT = 0
+- ElectricCurrentQuantity.N = 0
+- ElectricCurrentQuantity.J = 0
+- ElectricCurrentQuantity.Theta = 0
+- ElectricCurrentQuantity.Omega = 0
+- Unit:Ampere
+- Ampere.ConversionFactorA = 0
+- Ampere.ConversionFactorB = 1
+- Ampere.Symbol = a
+- Ampere IsUnitForQuantity ElectricCurrentQuantity
+- ElectricCurrentQuantity HasSIUnit Ampere
+- Unit:CoulombPerSecond
+- CoulombPerSecond.ConversionFactorA = 0
+- CoulombPerSecond.ConversionFactorB = 1
+- CoulombPerSecond.Symbol = cPers
+- CoulombPerSecond IsUnitForQuantity ElectricCurrentQuantity
+- Unit:SiemensVolt
+- SiemensVolt.ConversionFactorA = 0
+- SiemensVolt.ConversionFactorB = 1
+- SiemensVolt.Symbol = s.V
+- SiemensVolt IsUnitForQuantity ElectricCurrentQuantity
+- Unit:VoltPerOhm
+- VoltPerOhm.ConversionFactorA = 0
+- VoltPerOhm.ConversionFactorB = 1
+- VoltPerOhm.Symbol = vPeromega
+- VoltPerOhm IsUnitForQuantity ElectricCurrentQuantity
+- Unit:WattPerVolt
+- WattPerVolt.ConversionFactorA = 0
+- WattPerVolt.ConversionFactorB = 1
+- WattPerVolt.Symbol = wPerV
+- WattPerVolt IsUnitForQuantity ElectricCurrentQuantity
+- Unit:WeberPerHenry
+- WeberPerHenry.ConversionFactorA = 0
+- WeberPerHenry.ConversionFactorB = 1
+- WeberPerHenry.Symbol = wbPerH
+- WeberPerHenry IsUnitForQuantity ElectricCurrentQuantity
+- Unit:Deciampere
+- Deciampere.ConversionFactorA = 0
+- Deciampere.ConversionFactorB = 10
+- Deciampere.Symbol = dA
+- Deciampere IsUnitForQuantity ElectricCurrentQuantity
+- Unit:Centiampere
+- Centiampere.ConversionFactorA = 0
+- Centiampere.ConversionFactorB = 100
+- Centiampere.Symbol = cA
+- Centiampere IsUnitForQuantity ElectricCurrentQuantity
+- Unit:Milliampere
+- Milliampere.ConversionFactorA = 0
+- Milliampere.ConversionFactorB = 1000
+- Milliampere.Symbol = mA
+- Milliampere IsUnitForQuantity ElectricCurrentQuantity
+- Unit:Microampere
+- Microampere.ConversionFactorA = 0
+- Microampere.ConversionFactorB = 1000000
+- Microampere.Symbol = muA
+- Microampere IsUnitForQuantity ElectricCurrentQuantity
+- Unit:Nanoampere
+- Nanoampere.ConversionFactorA = 0
+- Nanoampere.ConversionFactorB = 999999999.9999999
+- Nanoampere.Symbol = nA
+- Nanoampere IsUnitForQuantity ElectricCurrentQuantity
+- Unit:Picoampere
+- Picoampere.ConversionFactorA = 0
+- Picoampere.ConversionFactorB = 1000000000000
+- Picoampere.Symbol = pA
+- Picoampere IsUnitForQuantity ElectricCurrentQuantity
+- Unit:Biot
+- Biot.ConversionFactorA = 0
+- Biot.ConversionFactorB = 0.1
+- Biot.Symbol = bi
+- Biot IsUnitForQuantity ElectricCurrentQuantity
+- Unit:Abampere
+- Abampere.ConversionFactorA = 0
+- Abampere.ConversionFactorB = 0.1
+- Abampere.Symbol = abA
+- Abampere IsUnitForQuantity ElectricCurrentQuantity
+- Unit:Kiloampere
+- Kiloampere.ConversionFactorA = 0
+- Kiloampere.ConversionFactorB = 0.001
+- Kiloampere.Symbol = kA
+- Kiloampere IsUnitForQuantity ElectricCurrentQuantity
+- Unit:Megaampere
+- Megaampere.ConversionFactorA = 0
+- Megaampere.ConversionFactorB = 1E-06
+- Megaampere.Symbol = mA
+- Megaampere IsUnitForQuantity ElectricCurrentQuantity
+- Unit:Gigaampere
+- Gigaampere.ConversionFactorA = 0
+- Gigaampere.ConversionFactorB = 1E-09
+- Gigaampere.Symbol = gA
+- Gigaampere IsUnitForQuantity ElectricCurrentQuantity
+- Unit:Teraampere
+- Teraampere.ConversionFactorA = 0
+- Teraampere.ConversionFactorB = 1E-12
+- Teraampere.Symbol = tA
+- Teraampere IsUnitForQuantity ElectricCurrentQuantity
+- Unit:Statampere
+- Statampere.ConversionFactorA = 0
+- Statampere.ConversionFactorB = 2997924580
+- Statampere.Symbol = stA
+- Statampere IsUnitForQuantity ElectricCurrentQuantity
+- Quantity:ElectricTensionQuantity
+- ElectricTensionQuantity.L = 2
+- ElectricTensionQuantity.M = 1
+- ElectricTensionQuantity.T = -3
+- ElectricTensionQuantity.I = -1
+- ElectricTensionQuantity.ThT = 0
+- ElectricTensionQuantity.N = 0
+- ElectricTensionQuantity.J = 0
+- ElectricTensionQuantity.Theta = 0
+- ElectricTensionQuantity.Omega = 0
+- Unit:Volt
+- Volt.ConversionFactorA = 0
+- Volt.ConversionFactorB = 1
+- Volt.Symbol = v
+- Volt IsUnitForQuantity ElectricTensionQuantity
+- ElectricTensionQuantity HasSIUnit Volt
+- Unit:Millivolt
+- Millivolt.ConversionFactorA = 0
+- Millivolt.ConversionFactorB = 1000
+- Millivolt.Symbol = mV
+- Millivolt IsUnitForQuantity ElectricTensionQuantity
+- Unit:Centivolt
+- Centivolt.ConversionFactorA = 0
+- Centivolt.ConversionFactorB = 100
+- Centivolt.Symbol = cV
+- Centivolt IsUnitForQuantity ElectricTensionQuantity
+- Unit:Microvolt
+- Microvolt.ConversionFactorA = 0
+- Microvolt.ConversionFactorB = 1000000
+- Microvolt.Symbol = muV
+- Microvolt IsUnitForQuantity ElectricTensionQuantity
+- Unit:Nanovolt
+- Nanovolt.ConversionFactorA = 0
+- Nanovolt.ConversionFactorB = 999999999.9999999
+- Nanovolt.Symbol = nV
+- Nanovolt IsUnitForQuantity ElectricTensionQuantity
+- Unit:Picovolt
+- Picovolt.ConversionFactorA = 0
+- Picovolt.ConversionFactorB = 1000000000000
+- Picovolt.Symbol = pV
+- Picovolt IsUnitForQuantity ElectricTensionQuantity
+- Unit:Kilovolt
+- Kilovolt.ConversionFactorA = 0
+- Kilovolt.ConversionFactorB = 0.001
+- Kilovolt.Symbol = kV
+- Kilovolt IsUnitForQuantity ElectricTensionQuantity
+- Unit:Megavolt
+- Megavolt.ConversionFactorA = 0
+- Megavolt.ConversionFactorB = 1E-06
+- Megavolt.Symbol = mV
+- Megavolt IsUnitForQuantity ElectricTensionQuantity
+- Unit:Gigavolt
+- Gigavolt.ConversionFactorA = 0
+- Gigavolt.ConversionFactorB = 1E-09
+- Gigavolt.Symbol = gV
+- Gigavolt IsUnitForQuantity ElectricTensionQuantity
+- Quantity:ElongationGradientPerLengthQuantity
+- ElongationGradientPerLengthQuantity.L = 0
+- ElongationGradientPerLengthQuantity.M = 0
+- ElongationGradientPerLengthQuantity.T = 0
+- ElongationGradientPerLengthQuantity.I = 0
+- ElongationGradientPerLengthQuantity.ThT = 0
+- ElongationGradientPerLengthQuantity.N = 0
+- ElongationGradientPerLengthQuantity.J = 0
+- ElongationGradientPerLengthQuantity.Theta = 0
+- ElongationGradientPerLengthQuantity.Omega = 0
+- Unit:MetrePerMetre
+- MetrePerMetre.ConversionFactorA = 0
+- MetrePerMetre.ConversionFactorB = 1
+- MetrePerMetre.Symbol = mPerm
+- MetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
+- ElongationGradientPerLengthQuantity HasSIUnit MetrePerMetre
+- Unit:DecimetrePerMetre
+- DecimetrePerMetre.ConversionFactorA = 0
+- DecimetrePerMetre.ConversionFactorB = 10
+- DecimetrePerMetre.Symbol = dmPerm
+- DecimetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
+- Unit:CentimetrePerMetre
+- CentimetrePerMetre.ConversionFactorA = 0
+- CentimetrePerMetre.ConversionFactorB = 100
+- CentimetrePerMetre.Symbol = cmPerm
+- CentimetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
+- Unit:MillimetrePerMetre
+- MillimetrePerMetre.ConversionFactorA = 0
+- MillimetrePerMetre.ConversionFactorB = 1000
+- MillimetrePerMetre.Symbol = mmPerm
+- MillimetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
+- Unit:MicrometrePerMetre
+- MicrometrePerMetre.ConversionFactorA = 0
+- MicrometrePerMetre.ConversionFactorB = 1000000
+- MicrometrePerMetre.Symbol = mumPerm
+- MicrometrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
+- Unit:MetrePerKilometre
+- MetrePerKilometre.ConversionFactorA = 0
+- MetrePerKilometre.ConversionFactorB = 1000
+- MetrePerKilometre.Symbol = mPerkm
+- MetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
+- Unit:DecimetrePerKilometre
+- DecimetrePerKilometre.ConversionFactorA = 0
+- DecimetrePerKilometre.ConversionFactorB = 10000
+- DecimetrePerKilometre.Symbol = dmPerkm
+- DecimetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
+- Unit:CentimetrePerKilometre
+- CentimetrePerKilometre.ConversionFactorA = 0
+- CentimetrePerKilometre.ConversionFactorB = 100000
+- CentimetrePerKilometre.Symbol = cmPerkm
+- CentimetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
+- Unit:MillimetrePerKilometre
+- MillimetrePerKilometre.ConversionFactorA = 0
+- MillimetrePerKilometre.ConversionFactorB = 1000000
+- MillimetrePerKilometre.Symbol = mmPerkm
+- MillimetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
+- Unit:MicrometrePerKilometre
+- MicrometrePerKilometre.ConversionFactorA = 0
+- MicrometrePerKilometre.ConversionFactorB = 1000000000
+- MicrometrePerKilometre.Symbol = mumPerkm
+- MicrometrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
+- Unit:InchPerFoot
+- InchPerFoot.ConversionFactorA = 0
+- InchPerFoot.ConversionFactorB = 11.999999999999998
+- InchPerFoot.Symbol = inPerft
+- InchPerFoot IsUnitForQuantity ElongationGradientPerLengthQuantity
+- Unit:InchPerYard
+- InchPerYard.ConversionFactorA = 0
+- InchPerYard.ConversionFactorB = 36
+- InchPerYard.Symbol = inPeryd
+- InchPerYard IsUnitForQuantity ElongationGradientPerLengthQuantity
+- Unit:InchPerMile
+- InchPerMile.ConversionFactorA = 0
+- InchPerMile.ConversionFactorB = 63359.99999999999
+- InchPerMile.Symbol = inPermi
+- InchPerMile IsUnitForQuantity ElongationGradientPerLengthQuantity
+- Unit:FootPerFoot
+- FootPerFoot.ConversionFactorA = 0
+- FootPerFoot.ConversionFactorB = 1
+- FootPerFoot.Symbol = ftPerft
+- FootPerFoot IsUnitForQuantity ElongationGradientPerLengthQuantity
+- Unit:FootPerYard
+- FootPerYard.ConversionFactorA = 0
+- FootPerYard.ConversionFactorB = 3
+- FootPerYard.Symbol = ftPeryd
+- FootPerYard IsUnitForQuantity ElongationGradientPerLengthQuantity
+- Unit:FootPerMile
+- FootPerMile.ConversionFactorA = 0
+- FootPerMile.ConversionFactorB = 5280
+- FootPerMile.Symbol = ftPermi
+- FootPerMile IsUnitForQuantity ElongationGradientPerLengthQuantity
+- Unit:YardPerFoot
+- YardPerFoot.ConversionFactorA = 0
+- YardPerFoot.ConversionFactorB = 0.3333333333333333
+- YardPerFoot.Symbol = ydPerft
+- YardPerFoot IsUnitForQuantity ElongationGradientPerLengthQuantity
+- Unit:YardPerYard
+- YardPerYard.ConversionFactorA = 0
+- YardPerYard.ConversionFactorB = 1
+- YardPerYard.Symbol = ydPeryd
+- YardPerYard IsUnitForQuantity ElongationGradientPerLengthQuantity
+- Unit:YardPerMile
+- YardPerMile.ConversionFactorA = 0
+- YardPerMile.ConversionFactorB = 1760
+- YardPerMile.Symbol = ydPermi
+- YardPerMile IsUnitForQuantity ElongationGradientPerLengthQuantity
+- Quantity:EnergyDensityQuantity
+- EnergyDensityQuantity.L = -1
+- EnergyDensityQuantity.M = 1
+- EnergyDensityQuantity.T = -2
+- EnergyDensityQuantity.I = 0
+- EnergyDensityQuantity.ThT = 0
+- EnergyDensityQuantity.N = 0
+- EnergyDensityQuantity.J = 0
+- EnergyDensityQuantity.Theta = 0
+- EnergyDensityQuantity.Omega = 0
+- Unit:JoulePerCubicMetre
+- JoulePerCubicMetre.ConversionFactorA = 0
+- JoulePerCubicMetre.ConversionFactorB = 1
+- JoulePerCubicMetre.Symbol = jPermcubic
+- JoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+- EnergyDensityQuantity HasSIUnit JoulePerCubicMetre
+- Unit:JoulePerLitre
+- JoulePerLitre.ConversionFactorA = 0
+- JoulePerLitre.ConversionFactorB = 0.001
+- JoulePerLitre.Symbol = jPerL
+- JoulePerLitre IsUnitForQuantity EnergyDensityQuantity
+- Unit:KilojoulePerCubicMetre
+- KilojoulePerCubicMetre.ConversionFactorA = 0
+- KilojoulePerCubicMetre.ConversionFactorB = 0.001
+- KilojoulePerCubicMetre.Symbol = kJPermcubic
+- KilojoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+- Unit:KilojoulePerLitre
+- KilojoulePerLitre.ConversionFactorA = 0
+- KilojoulePerLitre.ConversionFactorB = 1E-06
+- KilojoulePerLitre.Symbol = kJPerL
+- KilojoulePerLitre IsUnitForQuantity EnergyDensityQuantity
+- Unit:MegajoulePerCubicMetre
+- MegajoulePerCubicMetre.ConversionFactorA = 0
+- MegajoulePerCubicMetre.ConversionFactorB = 1E-06
+- MegajoulePerCubicMetre.Symbol = mJPermcubic
+- MegajoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+- Unit:MegajoulePerLitre
+- MegajoulePerLitre.ConversionFactorA = 0
+- MegajoulePerLitre.ConversionFactorB = 1E-09
+- MegajoulePerLitre.Symbol = mJPerL
+- MegajoulePerLitre IsUnitForQuantity EnergyDensityQuantity
+- Unit:GigajoulePerCubicMetre
+- GigajoulePerCubicMetre.ConversionFactorA = 0
+- GigajoulePerCubicMetre.ConversionFactorB = 1E-09
+- GigajoulePerCubicMetre.Symbol = gJPermcubic
+- GigajoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+- Unit:GigajoulePerLitre
+- GigajoulePerLitre.ConversionFactorA = 0
+- GigajoulePerLitre.ConversionFactorB = 1E-12
+- GigajoulePerLitre.Symbol = gJPerL
+- GigajoulePerLitre IsUnitForQuantity EnergyDensityQuantity
+- Unit:CaloriePerCubicMetre
+- CaloriePerCubicMetre.ConversionFactorA = 0
+- CaloriePerCubicMetre.ConversionFactorB = 0.2390057361376673
+- CaloriePerCubicMetre.Symbol = calPermcubic
+- CaloriePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+- Unit:CaloriePerLitre
+- CaloriePerLitre.ConversionFactorA = 0
+- CaloriePerLitre.ConversionFactorB = 0.0002390057361376673
+- CaloriePerLitre.Symbol = calPerL
+- CaloriePerLitre IsUnitForQuantity EnergyDensityQuantity
+- Unit:KilocaloriePerCubicMetre
+- KilocaloriePerCubicMetre.ConversionFactorA = 0
+- KilocaloriePerCubicMetre.ConversionFactorB = 0.0002390057361376673
+- KilocaloriePerCubicMetre.Symbol = calPermcubic
+- KilocaloriePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+- Unit:KilocaloriePerLitre
+- KilocaloriePerLitre.ConversionFactorA = 0
+- KilocaloriePerLitre.ConversionFactorB = 2.390057361376673E-07
+- KilocaloriePerLitre.Symbol = calPerL
+- KilocaloriePerLitre IsUnitForQuantity EnergyDensityQuantity
+- Unit:JoulePerCubicFoot
+- JoulePerCubicFoot.ConversionFactorA = 0
+- JoulePerCubicFoot.ConversionFactorB = 0.02831684659199999
+- JoulePerCubicFoot.Symbol = jPerftcubic
+- JoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+- Unit:KilojoulePerCubicFoot
+- KilojoulePerCubicFoot.ConversionFactorA = 0
+- KilojoulePerCubicFoot.ConversionFactorB = 2.831684659199999E-05
+- KilojoulePerCubicFoot.Symbol = kJPerftcubic
+- KilojoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+- Unit:MegajoulePerCubicFoot
+- MegajoulePerCubicFoot.ConversionFactorA = 0
+- MegajoulePerCubicFoot.ConversionFactorB = 2.831684659199999E-08
+- MegajoulePerCubicFoot.Symbol = mJPerftcubic
+- MegajoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+- Unit:GigajoulePerCubicFoot
+- GigajoulePerCubicFoot.ConversionFactorA = 0
+- GigajoulePerCubicFoot.ConversionFactorB = 2.831684659199999E-11
+- GigajoulePerCubicFoot.Symbol = gJPerftcubic
+- GigajoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+- Unit:CaloriePerCubicFoot
+- CaloriePerCubicFoot.ConversionFactorA = 0
+- CaloriePerCubicFoot.ConversionFactorB = 0.006767888764818353
+- CaloriePerCubicFoot.Symbol = calPerftcubic
+- CaloriePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+- Unit:KilocaloriePerCubicFoot
+- KilocaloriePerCubicFoot.ConversionFactorA = 0
+- KilocaloriePerCubicFoot.ConversionFactorB = 6.767888764818354E-06
+- KilocaloriePerCubicFoot.Symbol = calPerftcubic
+- KilocaloriePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+- Unit:JoulePerCubicInch
+- JoulePerCubicInch.ConversionFactorA = 0
+- JoulePerCubicInch.ConversionFactorB = 1.6387064E-05
+- JoulePerCubicInch.Symbol = jPerincubic
+- JoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
+- Unit:KilojoulePerCubicInch
+- KilojoulePerCubicInch.ConversionFactorA = 0
+- KilojoulePerCubicInch.ConversionFactorB = 1.6387064E-08
+- KilojoulePerCubicInch.Symbol = kJPerincubic
+- KilojoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
+- Unit:MegajoulePerCubicInch
+- MegajoulePerCubicInch.ConversionFactorA = 0
+- MegajoulePerCubicInch.ConversionFactorB = 1.6387064E-11
+- MegajoulePerCubicInch.Symbol = mJPerincubic
+- MegajoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
+- Unit:GigajoulePerCubicInch
+- GigajoulePerCubicInch.ConversionFactorA = 0
+- GigajoulePerCubicInch.ConversionFactorB = 1.6387064E-14
+- GigajoulePerCubicInch.Symbol = gJPerincubic
+- GigajoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
+- Unit:CaloriePerCubicInch
+- CaloriePerCubicInch.ConversionFactorA = 0
+- CaloriePerCubicInch.ConversionFactorB = 3.916602294455067E-06
+- CaloriePerCubicInch.Symbol = calPerincubic
+- CaloriePerCubicInch IsUnitForQuantity EnergyDensityQuantity
+- Unit:KilocaloriePerCubicInch
+- KilocaloriePerCubicInch.ConversionFactorA = 0
+- KilocaloriePerCubicInch.ConversionFactorB = 3.916602294455067E-09
+- KilocaloriePerCubicInch.Symbol = calPerincubic
+- KilocaloriePerCubicInch IsUnitForQuantity EnergyDensityQuantity
+- Unit:JoulePerGallonUk
+- JoulePerGallonUk.ConversionFactorA = 0
+- JoulePerGallonUk.ConversionFactorB = 0.00454609
+- JoulePerGallonUk.Symbol = jPergal(UK)
+- JoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
+- Unit:KilojoulePerGallonUk
+- KilojoulePerGallonUk.ConversionFactorA = 0
+- KilojoulePerGallonUk.ConversionFactorB = 4.54609E-06
+- KilojoulePerGallonUk.Symbol = kJPergal(UK)
+- KilojoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
+- Unit:MegajoulePerGallonUk
+- MegajoulePerGallonUk.ConversionFactorA = 0
+- MegajoulePerGallonUk.ConversionFactorB = 4.54609E-09
+- MegajoulePerGallonUk.Symbol = mJPergal(UK)
+- MegajoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
+- Unit:GigajoulePerGallonUk
+- GigajoulePerGallonUk.ConversionFactorA = 0
+- GigajoulePerGallonUk.ConversionFactorB = 4.54609E-12
+- GigajoulePerGallonUk.Symbol = gJPergal(UK)
+- GigajoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
+- Unit:CaloriePerGallonUk
+- CaloriePerGallonUk.ConversionFactorA = 0
+- CaloriePerGallonUk.ConversionFactorB = 0.0010865415869980878
+- CaloriePerGallonUk.Symbol = calPergal(UK)
+- CaloriePerGallonUk IsUnitForQuantity EnergyDensityQuantity
+- Unit:KilocaloriePerGallonUk
+- KilocaloriePerGallonUk.ConversionFactorA = 0
+- KilocaloriePerGallonUk.ConversionFactorB = 1.086541586998088E-06
+- KilocaloriePerGallonUk.Symbol = calPergal(UK)
+- KilocaloriePerGallonUk IsUnitForQuantity EnergyDensityQuantity
+- Unit:JoulePerGallonUs
+- JoulePerGallonUs.ConversionFactorA = 0
+- JoulePerGallonUs.ConversionFactorB = 0.0037854117839999997
+- JoulePerGallonUs.Symbol = jPergal(US)
+- JoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
+- Unit:KilojoulePerGallonUs
+- KilojoulePerGallonUs.ConversionFactorA = 0
+- KilojoulePerGallonUs.ConversionFactorB = 3.7854117839999998E-06
+- KilojoulePerGallonUs.Symbol = kJPergal(US)
+- KilojoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
+- Unit:MegajoulePerGallonUs
+- MegajoulePerGallonUs.ConversionFactorA = 0
+- MegajoulePerGallonUs.ConversionFactorB = 3.7854117839999995E-09
+- MegajoulePerGallonUs.Symbol = mJPergal(US)
+- MegajoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
+- Unit:GigajoulePerGallonUs
+- GigajoulePerGallonUs.ConversionFactorA = 0
+- GigajoulePerGallonUs.ConversionFactorB = 3.785411784E-12
+- GigajoulePerGallonUs.Symbol = gJPergal(US)
+- GigajoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
+- Unit:CaloriePerGallonUs
+- CaloriePerGallonUs.ConversionFactorA = 0
+- CaloriePerGallonUs.ConversionFactorB = 0.0009047351300191204
+- CaloriePerGallonUs.Symbol = calPergal(US)
+- CaloriePerGallonUs IsUnitForQuantity EnergyDensityQuantity
+- Unit:KilocaloriePerGallonUs
+- KilocaloriePerGallonUs.ConversionFactorA = 0
+- KilocaloriePerGallonUs.ConversionFactorB = 9.047351300191203E-07
+- KilocaloriePerGallonUs.Symbol = calPergal(US)
+- KilocaloriePerGallonUs IsUnitForQuantity EnergyDensityQuantity
+- Unit:BritishThermalUnitPerCubicMetre
+- BritishThermalUnitPerCubicMetre.ConversionFactorA = 0
+- BritishThermalUnitPerCubicMetre.ConversionFactorB = 0.0009484516526770049
+- BritishThermalUnitPerCubicMetre.Symbol = bTUPermcubic
+- BritishThermalUnitPerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+- Unit:BritishThermalUnitPerLitre
+- BritishThermalUnitPerLitre.ConversionFactorA = 0
+- BritishThermalUnitPerLitre.ConversionFactorB = 9.484516526770049E-07
+- BritishThermalUnitPerLitre.Symbol = bTUPerL
+- BritishThermalUnitPerLitre IsUnitForQuantity EnergyDensityQuantity
+- Unit:BritishThermalUnitPerCubicFoot
+- BritishThermalUnitPerCubicFoot.ConversionFactorA = 0
+- BritishThermalUnitPerCubicFoot.ConversionFactorB = 2.6857159948783606E-05
+- BritishThermalUnitPerCubicFoot.Symbol = bTUPerftcubic
+- BritishThermalUnitPerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+- Unit:BritishThermalUnitPerCubicInch
+- BritishThermalUnitPerCubicInch.ConversionFactorA = 0
+- BritishThermalUnitPerCubicInch.ConversionFactorB = 1.554233793332385E-08
+- BritishThermalUnitPerCubicInch.Symbol = bTUPerincubic
+- BritishThermalUnitPerCubicInch IsUnitForQuantity EnergyDensityQuantity
+- Unit:BritishThermalUnitPerGallonUk
+- BritishThermalUnitPerGallonUk.ConversionFactorA = 0
+- BritishThermalUnitPerGallonUk.ConversionFactorB = 4.311746573718405E-06
+- BritishThermalUnitPerGallonUk.Symbol = bTUPergal(UK)
+- BritishThermalUnitPerGallonUk IsUnitForQuantity EnergyDensityQuantity
+- Unit:BritishThermalUnitPerGallonUs
+- BritishThermalUnitPerGallonUs.ConversionFactorA = 0
+- BritishThermalUnitPerGallonUs.ConversionFactorB = 3.5902800625978092E-06
+- BritishThermalUnitPerGallonUs.Symbol = bTUPergal(US)
+- BritishThermalUnitPerGallonUs IsUnitForQuantity EnergyDensityQuantity
+- Unit:KiloBritishThermalUnitPerCubicMetre
+- KiloBritishThermalUnitPerCubicMetre.ConversionFactorA = 0
+- KiloBritishThermalUnitPerCubicMetre.ConversionFactorB = 9.484516526770048E-07
+- KiloBritishThermalUnitPerCubicMetre.Symbol = kBTUPermcubic
+- KiloBritishThermalUnitPerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+- Unit:KiloBritishThermalUnitPerLitre
+- KiloBritishThermalUnitPerLitre.ConversionFactorA = 0
+- KiloBritishThermalUnitPerLitre.ConversionFactorB = 9.48451652677005E-10
+- KiloBritishThermalUnitPerLitre.Symbol = kBTUPerL
+- KiloBritishThermalUnitPerLitre IsUnitForQuantity EnergyDensityQuantity
+- Unit:KiloBritishThermalUnitPerCubicFoot
+- KiloBritishThermalUnitPerCubicFoot.ConversionFactorA = 0
+- KiloBritishThermalUnitPerCubicFoot.ConversionFactorB = 2.6857159948783602E-08
+- KiloBritishThermalUnitPerCubicFoot.Symbol = kBTUPerftcubic
+- KiloBritishThermalUnitPerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+- Unit:KiloBritishThermalUnitPerCubicInch
+- KiloBritishThermalUnitPerCubicInch.ConversionFactorA = 0
+- KiloBritishThermalUnitPerCubicInch.ConversionFactorB = 1.5542337933323848E-11
+- KiloBritishThermalUnitPerCubicInch.Symbol = kBTUPerincubic
+- KiloBritishThermalUnitPerCubicInch IsUnitForQuantity EnergyDensityQuantity
+- Unit:KiloBritishThermalUnitPerGallonUk
+- KiloBritishThermalUnitPerGallonUk.ConversionFactorA = 0
+- KiloBritishThermalUnitPerGallonUk.ConversionFactorB = 4.311746573718405E-09
+- KiloBritishThermalUnitPerGallonUk.Symbol = kBTUPergal(UK)
+- KiloBritishThermalUnitPerGallonUk IsUnitForQuantity EnergyDensityQuantity
+- Unit:KiloBritishThermalUnitPerGallonUs
+- KiloBritishThermalUnitPerGallonUs.ConversionFactorA = 0
+- KiloBritishThermalUnitPerGallonUs.ConversionFactorB = 3.5902800625978087E-09
+- KiloBritishThermalUnitPerGallonUs.Symbol = kBTUPergal(US)
+- KiloBritishThermalUnitPerGallonUs IsUnitForQuantity EnergyDensityQuantity
+- Quantity:ForceGradientPerLengthQuantity
+- ForceGradientPerLengthQuantity.L = 0
+- ForceGradientPerLengthQuantity.M = 1
+- ForceGradientPerLengthQuantity.T = -2
+- ForceGradientPerLengthQuantity.I = 0
+- ForceGradientPerLengthQuantity.ThT = 0
+- ForceGradientPerLengthQuantity.N = 0
+- ForceGradientPerLengthQuantity.J = 0
+- ForceGradientPerLengthQuantity.Theta = 0
+- ForceGradientPerLengthQuantity.Omega = 0
+- Unit:NewtonPerMetre
+- NewtonPerMetre.ConversionFactorA = 0
+- NewtonPerMetre.ConversionFactorB = 1
+- NewtonPerMetre.Symbol = nPerm
+- NewtonPerMetre IsUnitForQuantity ForceGradientPerLengthQuantity
+- ForceGradientPerLengthQuantity HasSIUnit NewtonPerMetre
+- Unit:NewtonPer30Metre
+- NewtonPer30Metre.ConversionFactorA = 0
+- NewtonPer30Metre.ConversionFactorB = 30
+- NewtonPer30Metre.Symbol = nPer30m
+- NewtonPer30Metre IsUnitForQuantity ForceGradientPerLengthQuantity
+- Unit:NewtonPer10Metre
+- NewtonPer10Metre.ConversionFactorA = 0
+- NewtonPer10Metre.ConversionFactorB = 10
+- NewtonPer10Metre.Symbol = nPer10m
+- NewtonPer10Metre IsUnitForQuantity ForceGradientPerLengthQuantity
+- Unit:NewtonPerDecimetre
+- NewtonPerDecimetre.ConversionFactorA = 0
+- NewtonPerDecimetre.ConversionFactorB = 0.1
+- NewtonPerDecimetre.Symbol = nPerdm
+- NewtonPerDecimetre IsUnitForQuantity ForceGradientPerLengthQuantity
+- Unit:NewtonPerCentimetre
+- NewtonPerCentimetre.ConversionFactorA = 0
+- NewtonPerCentimetre.ConversionFactorB = 0.01
+- NewtonPerCentimetre.Symbol = nPercm
+- NewtonPerCentimetre IsUnitForQuantity ForceGradientPerLengthQuantity
+- Unit:NewtonPerMillimetre
+- NewtonPerMillimetre.ConversionFactorA = 0
+- NewtonPerMillimetre.ConversionFactorB = 0.001
+- NewtonPerMillimetre.Symbol = nPermm
+- NewtonPerMillimetre IsUnitForQuantity ForceGradientPerLengthQuantity
+- Unit:DecanewtonPerMetre
+- DecanewtonPerMetre.ConversionFactorA = 0
+- DecanewtonPerMetre.ConversionFactorB = 0.1
+- DecanewtonPerMetre.Symbol = daNPerm
+- DecanewtonPerMetre IsUnitForQuantity ForceGradientPerLengthQuantity
+- Unit:DecanewtonPer30Metre
+- DecanewtonPer30Metre.ConversionFactorA = 0
+- DecanewtonPer30Metre.ConversionFactorB = 3
+- DecanewtonPer30Metre.Symbol = daNPer30m
+- DecanewtonPer30Metre IsUnitForQuantity ForceGradientPerLengthQuantity
+- Unit:DecanewtonPer10Metre
+- DecanewtonPer10Metre.ConversionFactorA = 0
+- DecanewtonPer10Metre.ConversionFactorB = 1
+- DecanewtonPer10Metre.Symbol = daNPer10m
+- DecanewtonPer10Metre IsUnitForQuantity ForceGradientPerLengthQuantity
+- Unit:DecanewtonPerDecimetre
+- DecanewtonPerDecimetre.ConversionFactorA = 0
+- DecanewtonPerDecimetre.ConversionFactorB = 0.01
+- DecanewtonPerDecimetre.Symbol = daNPerdm
+- DecanewtonPerDecimetre IsUnitForQuantity ForceGradientPerLengthQuantity
+- Unit:DecanewtonPerCentimetre
+- DecanewtonPerCentimetre.ConversionFactorA = 0
+- DecanewtonPerCentimetre.ConversionFactorB = 0.001
+- DecanewtonPerCentimetre.Symbol = daNPercm
+- DecanewtonPerCentimetre IsUnitForQuantity ForceGradientPerLengthQuantity
+- Unit:DecanewtonPerMillimetre
+- DecanewtonPerMillimetre.ConversionFactorA = 0
+- DecanewtonPerMillimetre.ConversionFactorB = 0.0001
+- DecanewtonPerMillimetre.Symbol = daNPermm
+- DecanewtonPerMillimetre IsUnitForQuantity ForceGradientPerLengthQuantity
+- Unit:KilonewtonPerMetre
+- KilonewtonPerMetre.ConversionFactorA = 0
+- KilonewtonPerMetre.ConversionFactorB = 0.001
+- KilonewtonPerMetre.Symbol = kNPerm
+- KilonewtonPerMetre IsUnitForQuantity ForceGradientPerLengthQuantity
+- Unit:KilonewtonPer30Metre
+- KilonewtonPer30Metre.ConversionFactorA = 0
+- KilonewtonPer30Metre.ConversionFactorB = 0.03
+- KilonewtonPer30Metre.Symbol = kNPer30m
+- KilonewtonPer30Metre IsUnitForQuantity ForceGradientPerLengthQuantity
+- Unit:KilonewtonPer10Metre
+- KilonewtonPer10Metre.ConversionFactorA = 0
+- KilonewtonPer10Metre.ConversionFactorB = 0.01
+- KilonewtonPer10Metre.Symbol = kNPer10m
+- KilonewtonPer10Metre IsUnitForQuantity ForceGradientPerLengthQuantity
+- Unit:KilonewtonPerDecimetre
+- KilonewtonPerDecimetre.ConversionFactorA = 0
+- KilonewtonPerDecimetre.ConversionFactorB = 0.0001
+- KilonewtonPerDecimetre.Symbol = kNPerdm
+- KilonewtonPerDecimetre IsUnitForQuantity ForceGradientPerLengthQuantity
+- Unit:KilonewtonPerCentimetre
+- KilonewtonPerCentimetre.ConversionFactorA = 0
+- KilonewtonPerCentimetre.ConversionFactorB = 1E-05
+- KilonewtonPerCentimetre.Symbol = kNPercm
+- KilonewtonPerCentimetre IsUnitForQuantity ForceGradientPerLengthQuantity
+- Unit:KilonewtonPerMillimetre
+- KilonewtonPerMillimetre.ConversionFactorA = 0
+- KilonewtonPerMillimetre.ConversionFactorB = 1E-06
+- KilonewtonPerMillimetre.Symbol = kNPermm
+- KilonewtonPerMillimetre IsUnitForQuantity ForceGradientPerLengthQuantity
+- Unit:PoundPerFoot
+- PoundPerFoot.ConversionFactorA = 0
+- PoundPerFoot.ConversionFactorB = 0.06852176585679175
+- PoundPerFoot.Symbol = lbfPerft
+- PoundPerFoot IsUnitForQuantity ForceGradientPerLengthQuantity
+- Unit:PoundPerInch
+- PoundPerInch.ConversionFactorA = 0
+- PoundPerInch.ConversionFactorB = 0.0057101471547326465
+- PoundPerInch.Symbol = lbfPerin
+- PoundPerInch IsUnitForQuantity ForceGradientPerLengthQuantity
+- Unit:KilopoundPerFoot
+- KilopoundPerFoot.ConversionFactorA = 0
+- KilopoundPerFoot.ConversionFactorB = 6.852176585679175E-05
+- KilopoundPerFoot.Symbol = klbfPerft
+- KilopoundPerFoot IsUnitForQuantity ForceGradientPerLengthQuantity
+- Unit:KilopoundPerInch
+- KilopoundPerInch.ConversionFactorA = 0
+- KilopoundPerInch.ConversionFactorB = 5.7101471547326466E-06
+- KilopoundPerInch.Symbol = klbfPerin
+- KilopoundPerInch IsUnitForQuantity ForceGradientPerLengthQuantity
+- Unit:PoundPer30Foot
+- PoundPer30Foot.ConversionFactorA = 0
+- PoundPer30Foot.ConversionFactorB = 2.0556529757037523
+- PoundPer30Foot.Symbol = lbfPer30ft
+- PoundPer30Foot IsUnitForQuantity ForceGradientPerLengthQuantity
+- Unit:PoundPer100Foot
+- PoundPer100Foot.ConversionFactorA = 0
+- PoundPer100Foot.ConversionFactorB = 6.852176585679175
+- PoundPer100Foot.Symbol = lbfPer100ft
+- PoundPer100Foot IsUnitForQuantity ForceGradientPerLengthQuantity
+- Unit:KilopoundPer30Foot
+- KilopoundPer30Foot.ConversionFactorA = 0
+- KilopoundPer30Foot.ConversionFactorB = 0.0020556529757037524
+- KilopoundPer30Foot.Symbol = klbfPer30ft
+- KilopoundPer30Foot IsUnitForQuantity ForceGradientPerLengthQuantity
+- Unit:KilopoundPer100Foot
+- KilopoundPer100Foot.ConversionFactorA = 0
+- KilopoundPer100Foot.ConversionFactorB = 0.006852176585679175
+- KilopoundPer100Foot.Symbol = klbfPer100ft
+- KilopoundPer100Foot IsUnitForQuantity ForceGradientPerLengthQuantity
+- Quantity:ForceQuantity
+- ForceQuantity.L = 1
+- ForceQuantity.M = 1
+- ForceQuantity.T = -2
+- ForceQuantity.I = 0
+- ForceQuantity.ThT = 0
+- ForceQuantity.N = 0
+- ForceQuantity.J = 0
+- ForceQuantity.Theta = 0
+- ForceQuantity.Omega = 0
+- Unit:Newton
+- Newton.ConversionFactorA = 0
+- Newton.ConversionFactorB = 1
+- Newton.Symbol = n
+- Newton IsUnitForQuantity ForceQuantity
+- ForceQuantity HasSIUnit Newton
+- Unit:Decanewton
+- Decanewton.ConversionFactorA = 0
+- Decanewton.ConversionFactorB = 0.1
+- Decanewton.Symbol = daN
+- Decanewton IsUnitForQuantity ForceQuantity
+- Unit:Kilonewton
+- Kilonewton.ConversionFactorA = 0
+- Kilonewton.ConversionFactorB = 0.001
+- Kilonewton.Symbol = kN
+- Kilonewton IsUnitForQuantity ForceQuantity
+- Unit:Kilodecanewton
+- Kilodecanewton.ConversionFactorA = 0
+- Kilodecanewton.ConversionFactorB = 0.0001
+- Kilodecanewton.Symbol = kdaN
+- Kilodecanewton IsUnitForQuantity ForceQuantity
+- Unit:KilogramForce
+- KilogramForce.ConversionFactorA = 0
+- KilogramForce.ConversionFactorB = 0.10197162129779283
+- KilogramForce.Symbol = kgf
+- KilogramForce IsUnitForQuantity ForceQuantity
+- Unit:PoundForce
+- PoundForce.ConversionFactorA = 0
+- PoundForce.ConversionFactorB = 0.2248089430997105
+- PoundForce.Symbol = lbf
+- PoundForce IsUnitForQuantity ForceQuantity
+- Unit:KilopoundForce
+- KilopoundForce.ConversionFactorA = 0
+- KilopoundForce.ConversionFactorB = 0.0002248089430997105
+- KilopoundForce.Symbol = klbf
+- KilopoundForce IsUnitForQuantity ForceQuantity
+- Quantity:FrequencyQuantity
+- FrequencyQuantity.L = 0
+- FrequencyQuantity.M = 0
+- FrequencyQuantity.T = -1
+- FrequencyQuantity.I = 0
+- FrequencyQuantity.ThT = 0
+- FrequencyQuantity.N = 0
+- FrequencyQuantity.J = 0
+- FrequencyQuantity.Theta = 0
+- FrequencyQuantity.Omega = 0
+- Unit:Hertz
+- Hertz.ConversionFactorA = 0
+- Hertz.ConversionFactorB = 1
+- Hertz.Symbol = hz
+- Hertz IsUnitForQuantity FrequencyQuantity
+- FrequencyQuantity HasSIUnit Hertz
+- Unit:ReciprocalSecond
+- ReciprocalSecond.ConversionFactorA = 0
+- ReciprocalSecond.ConversionFactorB = 1
+- ReciprocalSecond.Symbol = 1Pers
+- ReciprocalSecond IsUnitForQuantity FrequencyQuantity
+- Unit:Kilohertz
+- Kilohertz.ConversionFactorA = 0
+- Kilohertz.ConversionFactorB = 0.001
+- Kilohertz.Symbol = kHz
+- Kilohertz IsUnitForQuantity FrequencyQuantity
+- Unit:Megahertz
+- Megahertz.ConversionFactorA = 0
+- Megahertz.ConversionFactorB = 1E-06
+- Megahertz.Symbol = mHz
+- Megahertz IsUnitForQuantity FrequencyQuantity
+- Unit:Gigahertz
+- Gigahertz.ConversionFactorA = 0
+- Gigahertz.ConversionFactorB = 1E-09
+- Gigahertz.Symbol = gHz
+- Gigahertz IsUnitForQuantity FrequencyQuantity
+- Unit:Terahertz
+- Terahertz.ConversionFactorA = 0
+- Terahertz.ConversionFactorB = 1E-12
+- Terahertz.Symbol = tHz
+- Terahertz IsUnitForQuantity FrequencyQuantity
+- Unit:Rpm
+- Rpm.ConversionFactorA = 0
+- Rpm.ConversionFactorB = 60
+- Rpm.Symbol = rpm
+- Rpm IsUnitForQuantity FrequencyQuantity
+- Unit:Spm
+- Spm.ConversionFactorA = 0
+- Spm.ConversionFactorB = 60
+- Spm.Symbol = spm
+- Spm IsUnitForQuantity FrequencyQuantity
+- Unit:RotationPerSecond
+- RotationPerSecond.ConversionFactorA = 0
+- RotationPerSecond.ConversionFactorB = 1
+- RotationPerSecond.Symbol = rps
+- RotationPerSecond IsUnitForQuantity FrequencyQuantity
+- Unit:StrokePerSecond
+- StrokePerSecond.ConversionFactorA = 0
+- StrokePerSecond.ConversionFactorB = 1
+- StrokePerSecond.Symbol = sps
+- StrokePerSecond IsUnitForQuantity FrequencyQuantity
+- Unit:StrokePerHour
+- StrokePerHour.ConversionFactorA = 0
+- StrokePerHour.ConversionFactorB = 3600
+- StrokePerHour.Symbol = sph
+- StrokePerHour IsUnitForQuantity FrequencyQuantity
+- Unit:RotationPerHour
+- RotationPerHour.ConversionFactorA = 0
+- RotationPerHour.ConversionFactorB = 3600
+- RotationPerHour.Symbol = rph
+- RotationPerHour IsUnitForQuantity FrequencyQuantity
+- Unit:ShockPerSecond
+- ShockPerSecond.ConversionFactorA = 0
+- ShockPerSecond.ConversionFactorB = 1
+- ShockPerSecond.Symbol = sps
+- ShockPerSecond IsUnitForQuantity FrequencyQuantity
+- Unit:ShockPerMinute
+- ShockPerMinute.ConversionFactorA = 0
+- ShockPerMinute.ConversionFactorB = 60
+- ShockPerMinute.Symbol = spm
+- ShockPerMinute IsUnitForQuantity FrequencyQuantity
+- Unit:ShockPerHour
+- ShockPerHour.ConversionFactorA = 0
+- ShockPerHour.ConversionFactorB = 3600
+- ShockPerHour.Symbol = spm
+- ShockPerHour IsUnitForQuantity FrequencyQuantity
+- Quantity:FrequencyRateOfChangeQuantity
+- FrequencyRateOfChangeQuantity.L = 0
+- FrequencyRateOfChangeQuantity.M = 0
+- FrequencyRateOfChangeQuantity.T = -2
+- FrequencyRateOfChangeQuantity.I = 0
+- FrequencyRateOfChangeQuantity.ThT = 0
+- FrequencyRateOfChangeQuantity.N = 0
+- FrequencyRateOfChangeQuantity.J = 0
+- FrequencyRateOfChangeQuantity.Theta = 0
+- FrequencyRateOfChangeQuantity.Omega = 0
+- Unit:HertzPerSecond
+- HertzPerSecond.ConversionFactorA = 0
+- HertzPerSecond.ConversionFactorB = 1
+- HertzPerSecond.Symbol = hzPers
+- HertzPerSecond IsUnitForQuantity FrequencyRateOfChangeQuantity
+- FrequencyRateOfChangeQuantity HasSIUnit HertzPerSecond
+- Unit:KiloHertzPerSecond
+- KiloHertzPerSecond.ConversionFactorA = 0
+- KiloHertzPerSecond.ConversionFactorB = 0.001
+- KiloHertzPerSecond.Symbol = kHzPers
+- KiloHertzPerSecond IsUnitForQuantity FrequencyRateOfChangeQuantity
+- Unit:MegaHertzPerSecond
+- MegaHertzPerSecond.ConversionFactorA = 0
+- MegaHertzPerSecond.ConversionFactorB = 1E-06
+- MegaHertzPerSecond.Symbol = mHzPers
+- MegaHertzPerSecond IsUnitForQuantity FrequencyRateOfChangeQuantity
+- Unit:GigaHertzPerSecond
+- GigaHertzPerSecond.ConversionFactorA = 0
+- GigaHertzPerSecond.ConversionFactorB = 1E-09
+- GigaHertzPerSecond.Symbol = gHzPers
+- GigaHertzPerSecond IsUnitForQuantity FrequencyRateOfChangeQuantity
+- Unit:HertzPerMinute
+- HertzPerMinute.ConversionFactorA = 0
+- HertzPerMinute.ConversionFactorB = 60
+- HertzPerMinute.Symbol = hzPermin
+- HertzPerMinute IsUnitForQuantity FrequencyRateOfChangeQuantity
+- Unit:KiloHertzPerMinute
+- KiloHertzPerMinute.ConversionFactorA = 0
+- KiloHertzPerMinute.ConversionFactorB = 0.06
+- KiloHertzPerMinute.Symbol = kHzPermin
+- KiloHertzPerMinute IsUnitForQuantity FrequencyRateOfChangeQuantity
+- Unit:MegaHertzPerMinute
+- MegaHertzPerMinute.ConversionFactorA = 0
+- MegaHertzPerMinute.ConversionFactorB = 6E-05
+- MegaHertzPerMinute.Symbol = mHzPermin
+- MegaHertzPerMinute IsUnitForQuantity FrequencyRateOfChangeQuantity
+- Unit:GigaHertzPerMinute
+- GigaHertzPerMinute.ConversionFactorA = 0
+- GigaHertzPerMinute.ConversionFactorB = 6E-08
+- GigaHertzPerMinute.Symbol = gHzPermin
+- GigaHertzPerMinute IsUnitForQuantity FrequencyRateOfChangeQuantity
+- Unit:HertzPerHour
+- HertzPerHour.ConversionFactorA = 0
+- HertzPerHour.ConversionFactorB = 3600
+- HertzPerHour.Symbol = hzPerh
+- HertzPerHour IsUnitForQuantity FrequencyRateOfChangeQuantity
+- Unit:KiloHertzPerHour
+- KiloHertzPerHour.ConversionFactorA = 0
+- KiloHertzPerHour.ConversionFactorB = 3.6
+- KiloHertzPerHour.Symbol = kHzPerh
+- KiloHertzPerHour IsUnitForQuantity FrequencyRateOfChangeQuantity
+- Unit:MegaHertzPerHour
+- MegaHertzPerHour.ConversionFactorA = 0
+- MegaHertzPerHour.ConversionFactorB = 0.0036
+- MegaHertzPerHour.Symbol = mHzPerh
+- MegaHertzPerHour IsUnitForQuantity FrequencyRateOfChangeQuantity
+- Unit:GigaHertzPerHour
+- GigaHertzPerHour.ConversionFactorA = 0
+- GigaHertzPerHour.ConversionFactorB = 3.6E-06
+- GigaHertzPerHour.Symbol = gHzPerh
+- GigaHertzPerHour IsUnitForQuantity FrequencyRateOfChangeQuantity
+- Unit:HertzPerDay
+- HertzPerDay.ConversionFactorA = 0
+- HertzPerDay.ConversionFactorB = 86400
+- HertzPerDay.Symbol = hzPerd
+- HertzPerDay IsUnitForQuantity FrequencyRateOfChangeQuantity
+- Unit:KiloHertzPerDay
+- KiloHertzPerDay.ConversionFactorA = 0
+- KiloHertzPerDay.ConversionFactorB = 86.4
+- KiloHertzPerDay.Symbol = kHzPerd
+- KiloHertzPerDay IsUnitForQuantity FrequencyRateOfChangeQuantity
+- Unit:MegaHertzPerDay
+- MegaHertzPerDay.ConversionFactorA = 0
+- MegaHertzPerDay.ConversionFactorB = 0.0864
+- MegaHertzPerDay.Symbol = mHzPerd
+- MegaHertzPerDay IsUnitForQuantity FrequencyRateOfChangeQuantity
+- Unit:GigaHertzPerDay
+- GigaHertzPerDay.ConversionFactorA = 0
+- GigaHertzPerDay.ConversionFactorB = 8.64E-05
+- GigaHertzPerDay.Symbol = gHzPerd
+- GigaHertzPerDay IsUnitForQuantity FrequencyRateOfChangeQuantity
+- Unit:HertzPerYear
+- HertzPerYear.ConversionFactorA = 0
+- HertzPerYear.ConversionFactorB = 31557600
+- HertzPerYear.Symbol = hzPery
+- HertzPerYear IsUnitForQuantity FrequencyRateOfChangeQuantity
+- Unit:KiloHertzPerYear
+- KiloHertzPerYear.ConversionFactorA = 0
+- KiloHertzPerYear.ConversionFactorB = 31557.6
+- KiloHertzPerYear.Symbol = kHzPery
+- KiloHertzPerYear IsUnitForQuantity FrequencyRateOfChangeQuantity
+- Unit:MegaHertzPerYear
+- MegaHertzPerYear.ConversionFactorA = 0
+- MegaHertzPerYear.ConversionFactorB = 31.5576
+- MegaHertzPerYear.Symbol = mHzPery
+- MegaHertzPerYear IsUnitForQuantity FrequencyRateOfChangeQuantity
+- Unit:GigaHertzPerYear
+- GigaHertzPerYear.ConversionFactorA = 0
+- GigaHertzPerYear.ConversionFactorB = 0.0315576
+- GigaHertzPerYear.Symbol = gHzPery
+- GigaHertzPerYear IsUnitForQuantity FrequencyRateOfChangeQuantity
+- Unit:RpmPerSecond
+- RpmPerSecond.ConversionFactorA = 0
+- RpmPerSecond.ConversionFactorB = 1
+- RpmPerSecond.Symbol = rpmPers
+- RpmPerSecond IsUnitForQuantity FrequencyRateOfChangeQuantity
+- Unit:SpmPerSecond
+- SpmPerSecond.ConversionFactorA = 0
+- SpmPerSecond.ConversionFactorB = 1
+- SpmPerSecond.Symbol = spmPers
+- SpmPerSecond IsUnitForQuantity FrequencyRateOfChangeQuantity
+- Quantity:HeatTransferCoefficientQuantity
+- HeatTransferCoefficientQuantity.L = 0
+- HeatTransferCoefficientQuantity.M = 1
+- HeatTransferCoefficientQuantity.T = -3
+- HeatTransferCoefficientQuantity.I = 0
+- HeatTransferCoefficientQuantity.ThT = -1
+- HeatTransferCoefficientQuantity.N = 0
+- HeatTransferCoefficientQuantity.J = 0
+- HeatTransferCoefficientQuantity.Theta = 0
+- HeatTransferCoefficientQuantity.Omega = 0
+- Unit:WattPerSquareMetrePerKelvin
+- WattPerSquareMetrePerKelvin.ConversionFactorA = 0
+- WattPerSquareMetrePerKelvin.ConversionFactorB = 1
+- WattPerSquareMetrePerKelvin.Symbol = wPermsquarePerK
+- WattPerSquareMetrePerKelvin IsUnitForQuantity HeatTransferCoefficientQuantity
+- HeatTransferCoefficientQuantity HasSIUnit WattPerSquareMetrePerKelvin
+- Unit:BritishThermalUnitPerHourPerSquareFootPerDegreeFahrenheit
+- BritishThermalUnitPerHourPerSquareFootPerDegreeFahrenheit.ConversionFactorA = 0
+- BritishThermalUnitPerHourPerSquareFootPerDegreeFahrenheit.ConversionFactorB = 0.17622808365343573
+- BritishThermalUnitPerHourPerSquareFootPerDegreeFahrenheit.Symbol = bTUPerhPerftsquarePerdegF
+- BritishThermalUnitPerHourPerSquareFootPerDegreeFahrenheit IsUnitForQuantity HeatTransferCoefficientQuantity
+- Quantity:ImageScaleQuantity
+- ImageScaleQuantity.L = -1
+- ImageScaleQuantity.M = 0
+- ImageScaleQuantity.T = 0
+- ImageScaleQuantity.I = 0
+- ImageScaleQuantity.ThT = 0
+- ImageScaleQuantity.N = 0
+- ImageScaleQuantity.J = 0
+- ImageScaleQuantity.Theta = 0
+- ImageScaleQuantity.Omega = 0
+- Unit:DotPerMetre
+- DotPerMetre.ConversionFactorA = 0
+- DotPerMetre.ConversionFactorB = 1
+- DotPerMetre.Symbol = dpm
+- DotPerMetre IsUnitForQuantity ImageScaleQuantity
+- ImageScaleQuantity HasSIUnit DotPerMetre
+- Unit:DotPerInch
+- DotPerInch.ConversionFactorA = 0
+- DotPerInch.ConversionFactorB = 0.0254
+- DotPerInch.Symbol = dpi
+- DotPerInch IsUnitForQuantity ImageScaleQuantity
+- Unit:DotPerMillimetre
+- DotPerMillimetre.ConversionFactorA = 0
+- DotPerMillimetre.ConversionFactorB = 0.001
+- DotPerMillimetre.Symbol = dpmm
+- DotPerMillimetre IsUnitForQuantity ImageScaleQuantity
+- Unit:DotPerMicrometre
+- DotPerMicrometre.ConversionFactorA = 0
+- DotPerMicrometre.ConversionFactorB = 1E-06
+- DotPerMicrometre.Symbol = dpmum
+- DotPerMicrometre IsUnitForQuantity ImageScaleQuantity
+- Quantity:InterfacialTensionQuantity
+- InterfacialTensionQuantity.L = 0
+- InterfacialTensionQuantity.M = 1
+- InterfacialTensionQuantity.T = -2
+- InterfacialTensionQuantity.I = 0
+- InterfacialTensionQuantity.ThT = 0
+- InterfacialTensionQuantity.N = 0
+- InterfacialTensionQuantity.J = 0
+- InterfacialTensionQuantity.Theta = 0
+- InterfacialTensionQuantity.Omega = 0
+- Unit:NewtonPerMetre
+- NewtonPerMetre.ConversionFactorA = 0
+- NewtonPerMetre.ConversionFactorB = 1
+- NewtonPerMetre.Symbol = nPerm
+- NewtonPerMetre IsUnitForQuantity InterfacialTensionQuantity
+- InterfacialTensionQuantity HasSIUnit NewtonPerMetre
+- Unit:MillinewtonPerMetre
+- MillinewtonPerMetre.ConversionFactorA = 0
+- MillinewtonPerMetre.ConversionFactorB = 1000
+- MillinewtonPerMetre.Symbol = mNPerm
+- MillinewtonPerMetre IsUnitForQuantity InterfacialTensionQuantity
+- Unit:DynePerCentimetre
+- DynePerCentimetre.ConversionFactorA = 0
+- DynePerCentimetre.ConversionFactorB = 999.9999999999999
+- DynePerCentimetre.Symbol = dynePercm
+- DynePerCentimetre IsUnitForQuantity InterfacialTensionQuantity
+- Unit:PoundPerSecondSquared
+- PoundPerSecondSquared.ConversionFactorA = 0
+- PoundPerSecondSquared.ConversionFactorB = 2.2046226218487757
+- PoundPerSecondSquared.Symbol = lbPerssquare
+- PoundPerSecondSquared IsUnitForQuantity InterfacialTensionQuantity
+- Quantity:LengthQuantity
+- LengthQuantity.L = 1
+- LengthQuantity.M = 0
+- LengthQuantity.T = 0
+- LengthQuantity.I = 0
+- LengthQuantity.ThT = 0
+- LengthQuantity.N = 0
+- LengthQuantity.J = 0
+- LengthQuantity.Theta = 0
+- LengthQuantity.Omega = 0
+- Unit:Metre
+- Metre.ConversionFactorA = 0
+- Metre.ConversionFactorB = 1
+- Metre.Symbol = m
+- Metre IsUnitForQuantity LengthQuantity
+- LengthQuantity HasSIUnit Metre
+- Unit:Decimetre
+- Decimetre.ConversionFactorA = 0
+- Decimetre.ConversionFactorB = 10
+- Decimetre.Symbol = dm
+- Decimetre IsUnitForQuantity LengthQuantity
+- Unit:Centimetre
+- Centimetre.ConversionFactorA = 0
+- Centimetre.ConversionFactorB = 100
+- Centimetre.Symbol = cm
+- Centimetre IsUnitForQuantity LengthQuantity
+- Unit:Millimetre
+- Millimetre.ConversionFactorA = 0
+- Millimetre.ConversionFactorB = 1000
+- Millimetre.Symbol = mm
+- Millimetre IsUnitForQuantity LengthQuantity
+- Unit:Micrometre
+- Micrometre.ConversionFactorA = 0
+- Micrometre.ConversionFactorB = 1000000
+- Micrometre.Symbol = mum
+- Micrometre IsUnitForQuantity LengthQuantity
+- Unit:Nanometre
+- Nanometre.ConversionFactorA = 0
+- Nanometre.ConversionFactorB = 999999999.9999999
+- Nanometre.Symbol = nm
+- Nanometre IsUnitForQuantity LengthQuantity
+- Unit:Aangstroem
+- Aangstroem.ConversionFactorA = 0
+- Aangstroem.ConversionFactorB = 10000000000
+- Aangstroem.Symbol = aa
+- Aangstroem IsUnitForQuantity LengthQuantity
+- Unit:Picometre
+- Picometre.ConversionFactorA = 0
+- Picometre.ConversionFactorB = 1000000000000
+- Picometre.Symbol = pm
+- Picometre IsUnitForQuantity LengthQuantity
+- Unit:Decametre
+- Decametre.ConversionFactorA = 0
+- Decametre.ConversionFactorB = 0.1
+- Decametre.Symbol = dam
+- Decametre IsUnitForQuantity LengthQuantity
+- Unit:Hectometre
+- Hectometre.ConversionFactorA = 0
+- Hectometre.ConversionFactorB = 0.01
+- Hectometre.Symbol = hm
+- Hectometre IsUnitForQuantity LengthQuantity
+- Unit:Kilometre
+- Kilometre.ConversionFactorA = 0
+- Kilometre.ConversionFactorB = 0.001
+- Kilometre.Symbol = km
+- Kilometre IsUnitForQuantity LengthQuantity
+- Unit:AstronomicalUnit
+- AstronomicalUnit.ConversionFactorA = 0
+- AstronomicalUnit.ConversionFactorB = 6.684587122268445E-12
+- AstronomicalUnit.Symbol = au
+- AstronomicalUnit IsUnitForQuantity LengthQuantity
+- Unit:LightYear
+- LightYear.ConversionFactorA = 0
+- LightYear.ConversionFactorB = 1.0570008340246154E-16
+- LightYear.Symbol = ly
+- LightYear IsUnitForQuantity LengthQuantity
+- Unit:Parsec
+- Parsec.ConversionFactorA = 0
+- Parsec.ConversionFactorB = 3.240779289444365E-17
+- Parsec.Symbol = pc
+- Parsec IsUnitForQuantity LengthQuantity
+- Unit:Foot
+- Foot.ConversionFactorA = 0
+- Foot.ConversionFactorB = 3.280839895013124
+- Foot.Symbol = ft
+- Foot IsUnitForQuantity LengthQuantity
+- Unit:UsSurveyFoot
+- UsSurveyFoot.ConversionFactorA = 0
+- UsSurveyFoot.ConversionFactorB = 3.2808333333333337
+- UsSurveyFoot.Symbol = ft
+- UsSurveyFoot IsUnitForQuantity LengthQuantity
+- Unit:Inch
+- Inch.ConversionFactorA = 0
+- Inch.ConversionFactorB = 39.37007874015748
+- Inch.Symbol = in
+- Inch IsUnitForQuantity LengthQuantity
+- Unit:Yard
+- Yard.ConversionFactorA = 0
+- Yard.ConversionFactorB = 1.093613298337708
+- Yard.Symbol = yd
+- Yard IsUnitForQuantity LengthQuantity
+- Unit:Fathom
+- Fathom.ConversionFactorA = 0
+- Fathom.ConversionFactorB = 0.546806649168854
+- Fathom.Symbol = fathom
+- Fathom IsUnitForQuantity LengthQuantity
+- Unit:SurveyorSChain
+- SurveyorSChain.ConversionFactorA = 0
+- SurveyorSChain.ConversionFactorB = 0.04970969537898672
+- SurveyorSChain.Symbol = chain
+- SurveyorSChain IsUnitForQuantity LengthQuantity
+- Unit:Mile
+- Mile.ConversionFactorA = 0
+- Mile.ConversionFactorB = 0.000621371192237334
+- Mile.Symbol = mi
+- Mile IsUnitForQuantity LengthQuantity
+- Unit:InternationalNauticalMile
+- InternationalNauticalMile.ConversionFactorA = 0
+- InternationalNauticalMile.ConversionFactorB = 0.0005399568034557236
+- InternationalNauticalMile.Symbol = nmi
+- InternationalNauticalMile IsUnitForQuantity LengthQuantity
+- Unit:UkNauticalMile
+- UkNauticalMile.ConversionFactorA = 0
+- UkNauticalMile.ConversionFactorB = 0.0005396118248376849
+- UkNauticalMile.Symbol = uKnmi
+- UkNauticalMile IsUnitForQuantity LengthQuantity
+- Unit:ScandinavianMile
+- ScandinavianMile.ConversionFactorA = 0
+- ScandinavianMile.ConversionFactorB = 0.0001
+- ScandinavianMile.Symbol = mil
+- ScandinavianMile IsUnitForQuantity LengthQuantity
+- Unit:InchPer32
+- InchPer32.ConversionFactorA = 0
+- InchPer32.ConversionFactorB = 1259.8425196850394
+- InchPer32.Symbol = inPer32
+- InchPer32 IsUnitForQuantity LengthQuantity
+- Unit:Mil
+- Mil.ConversionFactorA = 0
+- Mil.ConversionFactorB = 39370.07874015748
+- Mil.Symbol = mil
+- Mil IsUnitForQuantity LengthQuantity
+- Unit:Thou
+- Thou.ConversionFactorA = 0
+- Thou.ConversionFactorB = 39370.07874015748
+- Thou.Symbol = thou
+- Thou IsUnitForQuantity LengthQuantity
+- Unit:Hand
+- Hand.ConversionFactorA = 0
+- Hand.ConversionFactorB = 9.84251968503937
+- Hand.Symbol = hand
+- Hand IsUnitForQuantity LengthQuantity
+- Unit:Furlong
+- Furlong.ConversionFactorA = 0
+- Furlong.ConversionFactorB = 0.004970969537898672
+- Furlong.Symbol = furlong
+- Furlong IsUnitForQuantity LengthQuantity
+- Quantity:LuminousIntensityQuantity
+- LuminousIntensityQuantity.L = 0
+- LuminousIntensityQuantity.M = 0
+- LuminousIntensityQuantity.T = 0
+- LuminousIntensityQuantity.I = 0
+- LuminousIntensityQuantity.ThT = 0
+- LuminousIntensityQuantity.N = 0
+- LuminousIntensityQuantity.J = 1
+- LuminousIntensityQuantity.Theta = 0
+- LuminousIntensityQuantity.Omega = 0
+- Unit:Candela
+- Candela.ConversionFactorA = 0
+- Candela.ConversionFactorB = 1
+- Candela.Symbol = cd
+- Candela IsUnitForQuantity LuminousIntensityQuantity
+- LuminousIntensityQuantity HasSIUnit Candela
+- Unit:LumenPerSteradian
+- LumenPerSteradian.ConversionFactorA = 0
+- LumenPerSteradian.ConversionFactorB = 1
+- LumenPerSteradian.Symbol = lmPerst
+- LumenPerSteradian IsUnitForQuantity LuminousIntensityQuantity
+- Unit:Millicandela
+- Millicandela.ConversionFactorA = 0
+- Millicandela.ConversionFactorB = 1000
+- Millicandela.Symbol = mcd
+- Millicandela IsUnitForQuantity LuminousIntensityQuantity
+- Unit:Kilocandela
+- Kilocandela.ConversionFactorA = 0
+- Kilocandela.ConversionFactorB = 0.001
+- Kilocandela.Symbol = kcd
+- Kilocandela IsUnitForQuantity LuminousIntensityQuantity
+- Unit:Hefnerkerze
+- Hefnerkerze.ConversionFactorA = 0
+- Hefnerkerze.ConversionFactorB = 1.0869565217391304
+- Hefnerkerze.Symbol = hefnerkerze
+- Hefnerkerze IsUnitForQuantity LuminousIntensityQuantity
+- Unit:InternationalCandle
+- InternationalCandle.ConversionFactorA = 0
+- InternationalCandle.ConversionFactorB = 0.9803921568627451
+- InternationalCandle.Symbol = int.candle
+- InternationalCandle IsUnitForQuantity LuminousIntensityQuantity
+- Unit:DecimalCandle
+- DecimalCandle.ConversionFactorA = 0
+- DecimalCandle.ConversionFactorB = 1
+- DecimalCandle.Symbol = dec.candle
+- DecimalCandle IsUnitForQuantity LuminousIntensityQuantity
+- Unit:BerlinerLichteinheit
+- BerlinerLichteinheit.ConversionFactorA = 0
+- BerlinerLichteinheit.ConversionFactorB = 1.0869565217391304
+- BerlinerLichteinheit.Symbol = berlinerlichteinheit
+- BerlinerLichteinheit IsUnitForQuantity LuminousIntensityQuantity
+- Unit:DvwgCandle
+- DvwgCandle.ConversionFactorA = 0
+- DvwgCandle.ConversionFactorB = 0.9354186934071691
+- DvwgCandle.Symbol = dVWGcandle
+- DvwgCandle IsUnitForQuantity LuminousIntensityQuantity
+- Unit:Violle
+- Violle.ConversionFactorA = 0
+- Violle.ConversionFactorB = 0.016666666666666666
+- Violle.Symbol = violle
+- Violle IsUnitForQuantity LuminousIntensityQuantity
+- Unit:Carcel
+- Carcel.ConversionFactorA = 0
+- Carcel.ConversionFactorB = 0.1026694045174538
+- Carcel.Symbol = carcel
+- Carcel IsUnitForQuantity LuminousIntensityQuantity
+- Quantity:MagneticFluxDensityQuantity
+- MagneticFluxDensityQuantity.L = 0
+- MagneticFluxDensityQuantity.M = 1
+- MagneticFluxDensityQuantity.T = -2
+- MagneticFluxDensityQuantity.I = -1
+- MagneticFluxDensityQuantity.ThT = 0
+- MagneticFluxDensityQuantity.N = 0
+- MagneticFluxDensityQuantity.J = 0
+- MagneticFluxDensityQuantity.Theta = 0
+- MagneticFluxDensityQuantity.Omega = 0
+- Unit:Tesla
+- Tesla.ConversionFactorA = 0
+- Tesla.ConversionFactorB = 1
+- Tesla.Symbol = t
+- Tesla IsUnitForQuantity MagneticFluxDensityQuantity
+- MagneticFluxDensityQuantity HasSIUnit Tesla
+- Unit:Gauss
+- Gauss.ConversionFactorA = 0
+- Gauss.ConversionFactorB = 10000
+- Gauss.Symbol = g
+- Gauss IsUnitForQuantity MagneticFluxDensityQuantity
+- Unit:Milligauss
+- Milligauss.ConversionFactorA = 0
+- Milligauss.ConversionFactorB = 10000000
+- Milligauss.Symbol = mG
+- Milligauss IsUnitForQuantity MagneticFluxDensityQuantity
+- Unit:Millitesla
+- Millitesla.ConversionFactorA = 0
+- Millitesla.ConversionFactorB = 1000
+- Millitesla.Symbol = mT
+- Millitesla IsUnitForQuantity MagneticFluxDensityQuantity
+- Unit:Microtesla
+- Microtesla.ConversionFactorA = 0
+- Microtesla.ConversionFactorB = 1000000
+- Microtesla.Symbol = muT
+- Microtesla IsUnitForQuantity MagneticFluxDensityQuantity
+- Unit:Nanotesla
+- Nanotesla.ConversionFactorA = 0
+- Nanotesla.ConversionFactorB = 999999999.9999999
+- Nanotesla.Symbol = nT
+- Nanotesla IsUnitForQuantity MagneticFluxDensityQuantity
+- Unit:MaxwellPerSquareCentimetre
+- MaxwellPerSquareCentimetre.ConversionFactorA = 0
+- MaxwellPerSquareCentimetre.ConversionFactorB = 0.0001
+- MaxwellPerSquareCentimetre.Symbol = mxPercmsquare
+- MaxwellPerSquareCentimetre IsUnitForQuantity MagneticFluxDensityQuantity
+- Unit:WeberPerSquareMetre
+- WeberPerSquareMetre.ConversionFactorA = 0
+- WeberPerSquareMetre.ConversionFactorB = 1
+- WeberPerSquareMetre.Symbol = wbPermsquare
+- WeberPerSquareMetre IsUnitForQuantity MagneticFluxDensityQuantity
+- Quantity:MagneticFluxQuantity
+- MagneticFluxQuantity.L = 2
+- MagneticFluxQuantity.M = 1
+- MagneticFluxQuantity.T = -2
+- MagneticFluxQuantity.I = -1
+- MagneticFluxQuantity.ThT = 0
+- MagneticFluxQuantity.N = 0
+- MagneticFluxQuantity.J = 0
+- MagneticFluxQuantity.Theta = 0
+- MagneticFluxQuantity.Omega = 0
+- Unit:Weber
+- Weber.ConversionFactorA = 0
+- Weber.ConversionFactorB = 1
+- Weber.Symbol = wb
+- Weber IsUnitForQuantity MagneticFluxQuantity
+- MagneticFluxQuantity HasSIUnit Weber
+- Unit:Milliweber
+- Milliweber.ConversionFactorA = 0
+- Milliweber.ConversionFactorB = 1000
+- Milliweber.Symbol = mWb
+- Milliweber IsUnitForQuantity MagneticFluxQuantity
+- Unit:Microweber
+- Microweber.ConversionFactorA = 0
+- Microweber.ConversionFactorB = 1000000
+- Microweber.Symbol = muWb
+- Microweber IsUnitForQuantity MagneticFluxQuantity
+- Unit:VoltSecond
+- VoltSecond.ConversionFactorA = 0
+- VoltSecond.ConversionFactorB = 1
+- VoltSecond.Symbol = v.s
+- VoltSecond IsUnitForQuantity MagneticFluxQuantity
+- Unit:UnitPole
+- UnitPole.ConversionFactorA = 0
+- UnitPole.ConversionFactorB = 795774715459476.8
+- UnitPole.Symbol = unitpole
+- UnitPole IsUnitForQuantity MagneticFluxQuantity
+- Unit:Megaline
+- Megaline.ConversionFactorA = 0
+- Megaline.ConversionFactorB = 100
+- Megaline.Symbol = megaline
+- Megaline IsUnitForQuantity MagneticFluxQuantity
+- Unit:Kiloline
+- Kiloline.ConversionFactorA = 0
+- Kiloline.ConversionFactorB = 99999.99999999999
+- Kiloline.Symbol = kiloline
+- Kiloline IsUnitForQuantity MagneticFluxQuantity
+- Unit:Line
+- Line.ConversionFactorA = 0
+- Line.ConversionFactorB = 100000000
+- Line.Symbol = line
+- Line IsUnitForQuantity MagneticFluxQuantity
+- Unit:Maxwell
+- Maxwell.ConversionFactorA = 0
+- Maxwell.ConversionFactorB = 100000000
+- Maxwell.Symbol = mx
+- Maxwell IsUnitForQuantity MagneticFluxQuantity
+- Unit:TeslaSquareMetre
+- TeslaSquareMetre.ConversionFactorA = 0
+- TeslaSquareMetre.ConversionFactorB = 1
+- TeslaSquareMetre.Symbol = t.msquare
+- TeslaSquareMetre IsUnitForQuantity MagneticFluxQuantity
+- Unit:TeslaSquareCentimetre
+- TeslaSquareCentimetre.ConversionFactorA = 0
+- TeslaSquareCentimetre.ConversionFactorB = 10000
+- TeslaSquareCentimetre.Symbol = t.cmsquare
+- TeslaSquareCentimetre IsUnitForQuantity MagneticFluxQuantity
+- Unit:GaussSquareCentimetre
+- GaussSquareCentimetre.ConversionFactorA = 0
+- GaussSquareCentimetre.ConversionFactorB = 99999999.99999999
+- GaussSquareCentimetre.Symbol = g.cmsquare
+- GaussSquareCentimetre IsUnitForQuantity MagneticFluxQuantity
+- Unit:MagneticFluxQuantum
+- MagneticFluxQuantum.ConversionFactorA = 0
+- MagneticFluxQuantum.ConversionFactorB = 483597848416983.56
+- MagneticFluxQuantum.Symbol = magfluxquant
+- MagneticFluxQuantum IsUnitForQuantity MagneticFluxQuantity
+- Quantity:MassGradientPerLengthQuantity
+- MassGradientPerLengthQuantity.L = -1
+- MassGradientPerLengthQuantity.M = 1
+- MassGradientPerLengthQuantity.T = 0
+- MassGradientPerLengthQuantity.I = 0
+- MassGradientPerLengthQuantity.ThT = 0
+- MassGradientPerLengthQuantity.N = 0
+- MassGradientPerLengthQuantity.J = 0
+- MassGradientPerLengthQuantity.Theta = 0
+- MassGradientPerLengthQuantity.Omega = 0
+- Unit:KilogramPerMetre
+- KilogramPerMetre.ConversionFactorA = 0
+- KilogramPerMetre.ConversionFactorB = 1
+- KilogramPerMetre.Symbol = kgPerm
+- KilogramPerMetre IsUnitForQuantity MassGradientPerLengthQuantity
+- MassGradientPerLengthQuantity HasSIUnit KilogramPerMetre
+- Unit:PoundPerFoot
+- PoundPerFoot.ConversionFactorA = 0
+- PoundPerFoot.ConversionFactorB = 0.6719689751395067
+- PoundPerFoot.Symbol = lbPerft
+- PoundPerFoot IsUnitForQuantity MassGradientPerLengthQuantity
+- Unit:GramPerMetre
+- GramPerMetre.ConversionFactorA = 0
+- GramPerMetre.ConversionFactorB = 1000
+- GramPerMetre.Symbol = gPerm
+- GramPerMetre IsUnitForQuantity MassGradientPerLengthQuantity
+- Quantity:MassRateQuantity
+- MassRateQuantity.L = 0
+- MassRateQuantity.M = 1
+- MassRateQuantity.T = -1
+- MassRateQuantity.I = 0
+- MassRateQuantity.ThT = 0
+- MassRateQuantity.N = 0
+- MassRateQuantity.J = 0
+- MassRateQuantity.Theta = 0
+- MassRateQuantity.Omega = 0
+- Unit:KilogramPerSecond
+- KilogramPerSecond.ConversionFactorA = 0
+- KilogramPerSecond.ConversionFactorB = 1
+- KilogramPerSecond.Symbol = kgPers
+- KilogramPerSecond IsUnitForQuantity MassRateQuantity
+- MassRateQuantity HasSIUnit KilogramPerSecond
+- Unit:KilogramPerMinute
+- KilogramPerMinute.ConversionFactorA = 0
+- KilogramPerMinute.ConversionFactorB = 60
+- KilogramPerMinute.Symbol = kgPermin
+- KilogramPerMinute IsUnitForQuantity MassRateQuantity
+- Unit:KilogramPerHour
+- KilogramPerHour.ConversionFactorA = 0
+- KilogramPerHour.ConversionFactorB = 3600
+- KilogramPerHour.Symbol = kgPerh
+- KilogramPerHour IsUnitForQuantity MassRateQuantity
+- Unit:KilogramPerYear
+- KilogramPerYear.ConversionFactorA = 0
+- KilogramPerYear.ConversionFactorB = 31557600
+- KilogramPerYear.Symbol = kgPery
+- KilogramPerYear IsUnitForQuantity MassRateQuantity
+- Unit:PoundPerSecond
+- PoundPerSecond.ConversionFactorA = 0
+- PoundPerSecond.ConversionFactorB = 2.2046226218487757
+- PoundPerSecond.Symbol = lbPers
+- PoundPerSecond IsUnitForQuantity MassRateQuantity
+- Unit:PoundPerMinute
+- PoundPerMinute.ConversionFactorA = 0
+- PoundPerMinute.ConversionFactorB = 132.27735731092653
+- PoundPerMinute.Symbol = lbPermin
+- PoundPerMinute IsUnitForQuantity MassRateQuantity
+- Unit:PoundPerHour
+- PoundPerHour.ConversionFactorA = 0
+- PoundPerHour.ConversionFactorB = 7936.6414386555925
+- PoundPerHour.Symbol = lbPerh
+- PoundPerHour IsUnitForQuantity MassRateQuantity
+- Unit:PoundPerYear
+- PoundPerYear.ConversionFactorA = 0
+- PoundPerYear.ConversionFactorB = 69572598.85125493
+- PoundPerYear.Symbol = lbPery
+- PoundPerYear IsUnitForQuantity MassRateQuantity
+- Quantity:MaterialStrengthQuantity
+- MaterialStrengthQuantity.L = -1
+- MaterialStrengthQuantity.M = 1
+- MaterialStrengthQuantity.T = -2
+- MaterialStrengthQuantity.I = 0
+- MaterialStrengthQuantity.ThT = 0
+- MaterialStrengthQuantity.N = 0
+- MaterialStrengthQuantity.J = 0
+- MaterialStrengthQuantity.Theta = 0
+- MaterialStrengthQuantity.Omega = 0
+- Unit:Pascal
+- Pascal.ConversionFactorA = 0
+- Pascal.ConversionFactorB = 1
+- Pascal.Symbol = pa
+- Pascal IsUnitForQuantity MaterialStrengthQuantity
+- MaterialStrengthQuantity HasSIUnit Pascal
+- Unit:Megapascal
+- Megapascal.ConversionFactorA = 0
+- Megapascal.ConversionFactorB = 1E-06
+- Megapascal.Symbol = mPa
+- Megapascal IsUnitForQuantity MaterialStrengthQuantity
+- Unit:Gigapascal
+- Gigapascal.ConversionFactorA = 0
+- Gigapascal.ConversionFactorB = 1E-09
+- Gigapascal.Symbol = gPa
+- Gigapascal IsUnitForQuantity MaterialStrengthQuantity
+- Unit:Psi
+- Psi.ConversionFactorA = 0
+- Psi.ConversionFactorB = 0.00014503773773020924
+- Psi.Symbol = psi
+- Psi IsUnitForQuantity MaterialStrengthQuantity
+- Unit:PoundPer100SquareFoot
+- PoundPer100SquareFoot.ConversionFactorA = 0
+- PoundPer100SquareFoot.ConversionFactorB = 2.0885434233150124
+- PoundPer100SquareFoot.Symbol = lbfPer100ftsquare
+- PoundPer100SquareFoot IsUnitForQuantity MaterialStrengthQuantity
+- Unit:MegapoundPerSquareInch
+- MegapoundPerSquareInch.ConversionFactorA = 0
+- MegapoundPerSquareInch.ConversionFactorB = 1.4503773773020922E-10
+- MegapoundPerSquareInch.Symbol = mpsi
+- MegapoundPerSquareInch IsUnitForQuantity MaterialStrengthQuantity
+- Quantity:PorousMediumPermeabilityQuantity
+- PorousMediumPermeabilityQuantity.L = 2
+- PorousMediumPermeabilityQuantity.M = 0
+- PorousMediumPermeabilityQuantity.T = 0
+- PorousMediumPermeabilityQuantity.I = 0
+- PorousMediumPermeabilityQuantity.ThT = 0
+- PorousMediumPermeabilityQuantity.N = 0
+- PorousMediumPermeabilityQuantity.J = 0
+- PorousMediumPermeabilityQuantity.Theta = 0
+- PorousMediumPermeabilityQuantity.Omega = 0
+- Unit:SquareMetre
+- SquareMetre.ConversionFactorA = 0
+- SquareMetre.ConversionFactorB = 1
+- SquareMetre.Symbol = msquare
+- SquareMetre IsUnitForQuantity PorousMediumPermeabilityQuantity
+- PorousMediumPermeabilityQuantity HasSIUnit SquareMetre
+- Unit:Darcy
+- Darcy.ConversionFactorA = 0
+- Darcy.ConversionFactorB = 1013250000000
+- Darcy.Symbol = d
+- Darcy IsUnitForQuantity PorousMediumPermeabilityQuantity
+- Unit:Millidarcy
+- Millidarcy.ConversionFactorA = 0
+- Millidarcy.ConversionFactorB = 1013250000000000.1
+- Millidarcy.Symbol = mD
+- Millidarcy IsUnitForQuantity PorousMediumPermeabilityQuantity
+- Unit:Microdarcy
+- Microdarcy.ConversionFactorA = 0
+- Microdarcy.ConversionFactorB = 1.01325E+18
+- Microdarcy.Symbol = muD
+- Microdarcy IsUnitForQuantity PorousMediumPermeabilityQuantity
+- Unit:Nanodarcy
+- Nanodarcy.ConversionFactorA = 0
+- Nanodarcy.ConversionFactorB = 1.01325E+21
+- Nanodarcy.Symbol = nD
+- Nanodarcy IsUnitForQuantity PorousMediumPermeabilityQuantity
+- Quantity:PlaneAngleQuantity
+- PlaneAngleQuantity.L = 0
+- PlaneAngleQuantity.M = 0
+- PlaneAngleQuantity.T = 0
+- PlaneAngleQuantity.I = 0
+- PlaneAngleQuantity.ThT = 0
+- PlaneAngleQuantity.N = 0
+- PlaneAngleQuantity.J = 0
+- PlaneAngleQuantity.Theta = 1
+- PlaneAngleQuantity.Omega = 0
+- Unit:Radian
+- Radian.ConversionFactorA = 0
+- Radian.ConversionFactorB = 1
+- Radian.Symbol = rad
+- Radian IsUnitForQuantity PlaneAngleQuantity
+- PlaneAngleQuantity HasSIUnit Radian
+- Unit:Milliradian
+- Milliradian.ConversionFactorA = 0
+- Milliradian.ConversionFactorB = 1000
+- Milliradian.Symbol = mrad
+- Milliradian IsUnitForQuantity PlaneAngleQuantity
+- Unit:Degree
+- Degree.ConversionFactorA = 0
+- Degree.ConversionFactorB = 57.29577951308232
+- Degree.Symbol = deg
+- Degree IsUnitForQuantity PlaneAngleQuantity
+- Unit:Grad
+- Grad.ConversionFactorA = 0
+- Grad.ConversionFactorB = 63.66197723675813
+- Grad.Symbol = grad
+- Grad IsUnitForQuantity PlaneAngleQuantity
+- Unit:Gon
+- Gon.ConversionFactorA = 0
+- Gon.ConversionFactorB = 63.66197723675813
+- Gon.Symbol = gon
+- Gon IsUnitForQuantity PlaneAngleQuantity
+- Unit:Circle
+- Circle.ConversionFactorA = 0
+- Circle.ConversionFactorB = 0.15915494309189535
+- Circle.Symbol = circle
+- Circle IsUnitForQuantity PlaneAngleQuantity
+- Unit:Revolution
+- Revolution.ConversionFactorA = 0
+- Revolution.ConversionFactorB = 0.15915494309189535
+- Revolution.Symbol = revolution
+- Revolution IsUnitForQuantity PlaneAngleQuantity
+- Unit:Quadrant
+- Quadrant.ConversionFactorA = 0
+- Quadrant.ConversionFactorB = 0.6366197723675814
+- Quadrant.Symbol = quadrant
+- Quadrant IsUnitForQuantity PlaneAngleQuantity
+- Unit:Sextant
+- Sextant.ConversionFactorA = 0
+- Sextant.ConversionFactorB = 0.954929658551372
+- Sextant.Symbol = sextant
+- Sextant IsUnitForQuantity PlaneAngleQuantity
+- Unit:Octant
+- Octant.ConversionFactorA = 0
+- Octant.ConversionFactorB = 1.2732395447351628
+- Octant.Symbol = octant
+- Octant IsUnitForQuantity PlaneAngleQuantity
+- Unit:ArcMinute
+- ArcMinute.ConversionFactorA = 0
+- ArcMinute.ConversionFactorB = 3437.746770784939
+- ArcMinute.Symbol = '
+- ArcMinute IsUnitForQuantity PlaneAngleQuantity
+- Unit:ArcSecond
+- ArcSecond.ConversionFactorA = 0
+- ArcSecond.ConversionFactorB = 206264.80624709636
+- ArcSecond IsUnitForQuantity PlaneAngleQuantity
+- Quantity:PowerQuantity
+- PowerQuantity.L = 2
+- PowerQuantity.M = 1
+- PowerQuantity.T = -3
+- PowerQuantity.I = 0
+- PowerQuantity.ThT = 0
+- PowerQuantity.N = 0
+- PowerQuantity.J = 0
+- PowerQuantity.Theta = 0
+- PowerQuantity.Omega = 0
+- Unit:Watt
+- Watt.ConversionFactorA = 0
+- Watt.ConversionFactorB = 1
+- Watt.Symbol = w
+- Watt IsUnitForQuantity PowerQuantity
+- PowerQuantity HasSIUnit Watt
+- Unit:Decawatt
+- Decawatt.ConversionFactorA = 0
+- Decawatt.ConversionFactorB = 0.1
+- Decawatt.Symbol = daW
+- Decawatt IsUnitForQuantity PowerQuantity
+- Unit:Hectowatt
+- Hectowatt.ConversionFactorA = 0
+- Hectowatt.ConversionFactorB = 0.01
+- Hectowatt.Symbol = hW
+- Hectowatt IsUnitForQuantity PowerQuantity
+- Unit:Kilowatt
+- Kilowatt.ConversionFactorA = 0
+- Kilowatt.ConversionFactorB = 0.001
+- Kilowatt.Symbol = kW
+- Kilowatt IsUnitForQuantity PowerQuantity
+- Unit:Megawatt
+- Megawatt.ConversionFactorA = 0
+- Megawatt.ConversionFactorB = 1E-06
+- Megawatt.Symbol = mW
+- Megawatt IsUnitForQuantity PowerQuantity
+- Unit:Gigawatt
+- Gigawatt.ConversionFactorA = 0
+- Gigawatt.ConversionFactorB = 1E-09
+- Gigawatt.Symbol = gW
+- Gigawatt IsUnitForQuantity PowerQuantity
+- Unit:Terawatt
+- Terawatt.ConversionFactorA = 0
+- Terawatt.ConversionFactorB = 1E-12
+- Terawatt.Symbol = tW
+- Terawatt IsUnitForQuantity PowerQuantity
+- Unit:Petawatt
+- Petawatt.ConversionFactorA = 0
+- Petawatt.ConversionFactorB = 1E-15
+- Petawatt.Symbol = pW
+- Petawatt IsUnitForQuantity PowerQuantity
+- Unit:Exawatt
+- Exawatt.ConversionFactorA = 0
+- Exawatt.ConversionFactorB = 1E-18
+- Exawatt.Symbol = eW
+- Exawatt IsUnitForQuantity PowerQuantity
+- Unit:Deciwatt
+- Deciwatt.ConversionFactorA = 0
+- Deciwatt.ConversionFactorB = 10
+- Deciwatt.Symbol = dW
+- Deciwatt IsUnitForQuantity PowerQuantity
+- Unit:Centiwatt
+- Centiwatt.ConversionFactorA = 0
+- Centiwatt.ConversionFactorB = 100
+- Centiwatt.Symbol = cW
+- Centiwatt IsUnitForQuantity PowerQuantity
+- Unit:Milliwatt
+- Milliwatt.ConversionFactorA = 0
+- Milliwatt.ConversionFactorB = 1000
+- Milliwatt.Symbol = mW
+- Milliwatt IsUnitForQuantity PowerQuantity
+- Unit:Microwatt
+- Microwatt.ConversionFactorA = 0
+- Microwatt.ConversionFactorB = 1000000
+- Microwatt.Symbol = muW
+- Microwatt IsUnitForQuantity PowerQuantity
+- Unit:Nanowatt
+- Nanowatt.ConversionFactorA = 0
+- Nanowatt.ConversionFactorB = 999999999.9999999
+- Nanowatt.Symbol = nW
+- Nanowatt IsUnitForQuantity PowerQuantity
+- Unit:Picowatt
+- Picowatt.ConversionFactorA = 0
+- Picowatt.ConversionFactorB = 1000000000000
+- Picowatt.Symbol = pW
+- Picowatt IsUnitForQuantity PowerQuantity
+- Unit:Femtowatt
+- Femtowatt.ConversionFactorA = 0
+- Femtowatt.ConversionFactorB = 999999999999999.9
+- Femtowatt.Symbol = fW
+- Femtowatt IsUnitForQuantity PowerQuantity
+- Unit:Attowatt
+- Attowatt.ConversionFactorA = 0
+- Attowatt.ConversionFactorB = 9.999999999999999E+17
+- Attowatt.Symbol = aW
+- Attowatt IsUnitForQuantity PowerQuantity
+- Quantity:PressureGradientPerLengthQuantity
+- PressureGradientPerLengthQuantity.L = -2
+- PressureGradientPerLengthQuantity.M = 1
+- PressureGradientPerLengthQuantity.T = -2
+- PressureGradientPerLengthQuantity.I = 0
+- PressureGradientPerLengthQuantity.ThT = 0
+- PressureGradientPerLengthQuantity.N = 0
+- PressureGradientPerLengthQuantity.J = 0
+- PressureGradientPerLengthQuantity.Theta = 0
+- PressureGradientPerLengthQuantity.Omega = 0
+- Unit:PascalPerMetre
+- PascalPerMetre.ConversionFactorA = 0
+- PascalPerMetre.ConversionFactorB = 1
+- PascalPerMetre.Symbol = paPerm
+- PascalPerMetre IsUnitForQuantity PressureGradientPerLengthQuantity
+- PressureGradientPerLengthQuantity HasSIUnit PascalPerMetre
+- Unit:BarPerMetre
+- BarPerMetre.ConversionFactorA = 0
+- BarPerMetre.ConversionFactorB = 1E-05
+- BarPerMetre.Symbol = barPerm
+- BarPerMetre IsUnitForQuantity PressureGradientPerLengthQuantity
+- Unit:PsiPerMetre
+- PsiPerMetre.ConversionFactorA = 0
+- PsiPerMetre.ConversionFactorB = 0.00014503773773020924
+- PsiPerMetre.Symbol = psiPerm
+- PsiPerMetre IsUnitForQuantity PressureGradientPerLengthQuantity
+- Unit:PsiPerFoot
+- PsiPerFoot.ConversionFactorA = 0
+- PsiPerFoot.ConversionFactorB = 4.4207502460167764E-05
+- PsiPerFoot.Symbol = psiPerft
+- PsiPerFoot IsUnitForQuantity PressureGradientPerLengthQuantity
+- Quantity:PressureLossConstantQuantity
+- PressureLossConstantQuantity.L = 4
+- PressureLossConstantQuantity.M = 0
+- PressureLossConstantQuantity.T = 0
+- PressureLossConstantQuantity.I = 0
+- PressureLossConstantQuantity.ThT = 0
+- PressureLossConstantQuantity.N = 0
+- PressureLossConstantQuantity.J = 0
+- PressureLossConstantQuantity.Theta = 0
+- PressureLossConstantQuantity.Omega = 0
+- Unit:PressureLossConstantSi
+- PressureLossConstantSi.ConversionFactorA = 0
+- PressureLossConstantSi.ConversionFactorB = 1
+- PressureLossConstantSi.Symbol = (mcubicPers)square.(kgPermcubic)PerPa
+- PressureLossConstantSi IsUnitForQuantity PressureLossConstantQuantity
+- PressureLossConstantQuantity HasSIUnit PressureLossConstantSi
+- Unit:PressureLossConstantMetric
+- PressureLossConstantMetric.ConversionFactorA = 0
+- PressureLossConstantMetric.ConversionFactorB = 360010080282.2479
+- PressureLossConstantMetric.Symbol = (lPermin)square.sgPerbar
+- PressureLossConstantMetric IsUnitForQuantity PressureLossConstantQuantity
+- Unit:PressureLossConstantUk
+- PressureLossConstantUk.ConversionFactorA = 0
+- PressureLossConstantUk.ConversionFactorB = 12036984846.853645
+- PressureLossConstantUk.Symbol = gpmuksquare.ppgukPerpsi
+- PressureLossConstantUk IsUnitForQuantity PressureLossConstantQuantity
+- Unit:PressureLossConstantUs
+- PressureLossConstantUs.ConversionFactorA = 0
+- PressureLossConstantUs.ConversionFactorB = 14455816055.131952
+- PressureLossConstantUs.Symbol = gpmussquare.ppgusPerpsi
+- PressureLossConstantUs IsUnitForQuantity PressureLossConstantQuantity
+- Quantity:PressureQuantity
+- PressureQuantity.L = -1
+- PressureQuantity.M = 1
+- PressureQuantity.T = -2
+- PressureQuantity.I = 0
+- PressureQuantity.ThT = 0
+- PressureQuantity.N = 0
+- PressureQuantity.J = 0
+- PressureQuantity.Theta = 0
+- PressureQuantity.Omega = 0
+- Unit:Pascal
+- Pascal.ConversionFactorA = 0
+- Pascal.ConversionFactorB = 1
+- Pascal.Symbol = pa
+- Pascal IsUnitForQuantity PressureQuantity
+- PressureQuantity HasSIUnit Pascal
+- Unit:Kilopascal
+- Kilopascal.ConversionFactorA = 0
+- Kilopascal.ConversionFactorB = 0.001
+- Kilopascal.Symbol = kPa
+- Kilopascal IsUnitForQuantity PressureQuantity
+- Unit:Bar
+- Bar.ConversionFactorA = 0
+- Bar.ConversionFactorB = 1E-05
+- Bar.Symbol = bar
+- Bar IsUnitForQuantity PressureQuantity
+- Unit:Millibar
+- Millibar.ConversionFactorA = 0
+- Millibar.ConversionFactorB = 0.01
+- Millibar.Symbol = mbar
+- Millibar IsUnitForQuantity PressureQuantity
+- Unit:Microbar
+- Microbar.ConversionFactorA = 0
+- Microbar.ConversionFactorB = 10
+- Microbar.Symbol = mubar
+- Microbar IsUnitForQuantity PressureQuantity
+- Unit:PoundPerSquareInch
+- PoundPerSquareInch.ConversionFactorA = 0
+- PoundPerSquareInch.ConversionFactorB = 0.00014503773773020924
+- PoundPerSquareInch.Symbol = psi
+- PoundPerSquareInch IsUnitForQuantity PressureQuantity
+- Unit:PoundPer100SquareFoot
+- PoundPer100SquareFoot.ConversionFactorA = 0
+- PoundPer100SquareFoot.ConversionFactorB = 2.0885434233150124
+- PoundPer100SquareFoot.Symbol = lbfPer100ftsquare
+- PoundPer100SquareFoot IsUnitForQuantity PressureQuantity
+- Unit:KilopoundPerSquareInch
+- KilopoundPerSquareInch.ConversionFactorA = 0
+- KilopoundPerSquareInch.ConversionFactorB = 1.4503773773020924E-07
+- KilopoundPerSquareInch.Symbol = ksi
+- KilopoundPerSquareInch IsUnitForQuantity PressureQuantity
+- Unit:StandardAtmosphere
+- StandardAtmosphere.ConversionFactorA = 0
+- StandardAtmosphere.ConversionFactorB = 9.869232667160129E-06
+- StandardAtmosphere.Symbol = atm
+- StandardAtmosphere IsUnitForQuantity PressureQuantity
+- Unit:PoundPerSquareFoot
+- PoundPerSquareFoot.ConversionFactorA = 0
+- PoundPerSquareFoot.ConversionFactorB = 0.020885434233150126
+- PoundPerSquareFoot.Symbol = lbPerftsquare
+- PoundPerSquareFoot IsUnitForQuantity PressureQuantity
+- Unit:Megapascal
+- Megapascal.ConversionFactorA = 0
+- Megapascal.ConversionFactorB = 1E-06
+- Megapascal.Symbol = mPa
+- Megapascal IsUnitForQuantity PressureQuantity
+- Unit:Gigapascal
+- Gigapascal.ConversionFactorA = 0
+- Gigapascal.ConversionFactorB = 1E-09
+- Gigapascal.Symbol = gPa
+- Gigapascal IsUnitForQuantity PressureQuantity
+- Unit:NewtonPerSquareMetre
+- NewtonPerSquareMetre.ConversionFactorA = 0
+- NewtonPerSquareMetre.ConversionFactorB = 1
+- NewtonPerSquareMetre.Symbol = nPermsquare
+- NewtonPerSquareMetre IsUnitForQuantity PressureQuantity
+- Unit:NewtonPerSquareCentimetre
+- NewtonPerSquareCentimetre.ConversionFactorA = 0
+- NewtonPerSquareCentimetre.ConversionFactorB = 0.0001
+- NewtonPerSquareCentimetre.Symbol = nPercmsquare
+- NewtonPerSquareCentimetre IsUnitForQuantity PressureQuantity
+- Unit:NewtonPerSquareMillimetre
+- NewtonPerSquareMillimetre.ConversionFactorA = 0
+- NewtonPerSquareMillimetre.ConversionFactorB = 1E-06
+- NewtonPerSquareMillimetre.Symbol = nPermmsquare
+- NewtonPerSquareMillimetre IsUnitForQuantity PressureQuantity
+- Unit:KilonewtonPerSquareMetre
+- KilonewtonPerSquareMetre.ConversionFactorA = 0
+- KilonewtonPerSquareMetre.ConversionFactorB = 0.001
+- KilonewtonPerSquareMetre.Symbol = kNPermsquare
+- KilonewtonPerSquareMetre IsUnitForQuantity PressureQuantity
+- Unit:MegapoundPerSquareInch
+- MegapoundPerSquareInch.ConversionFactorA = 0
+- MegapoundPerSquareInch.ConversionFactorB = 1.4503773773020922E-10
+- MegapoundPerSquareInch.Symbol = mpsi
+- MegapoundPerSquareInch IsUnitForQuantity PressureQuantity
+- Unit:Torr
+- Torr.ConversionFactorA = 0
+- Torr.ConversionFactorB = 0.007500616827041697
+- Torr.Symbol = torr
+- Torr IsUnitForQuantity PressureQuantity
+- Unit:CentimetreMercuryAtZeroDegreeCelsius
+- CentimetreMercuryAtZeroDegreeCelsius.ConversionFactorA = 0
+- CentimetreMercuryAtZeroDegreeCelsius.ConversionFactorB = 0.0007500615758456563
+- CentimetreMercuryAtZeroDegreeCelsius.Symbol = cmHg0degC
+- CentimetreMercuryAtZeroDegreeCelsius IsUnitForQuantity PressureQuantity
+- Unit:MillimetreMercuryAtZeroDegreeCelsius
+- MillimetreMercuryAtZeroDegreeCelsius.ConversionFactorA = 0
+- MillimetreMercuryAtZeroDegreeCelsius.ConversionFactorB = 0.007500615758456563
+- MillimetreMercuryAtZeroDegreeCelsius.Symbol = mmHg0degC
+- MillimetreMercuryAtZeroDegreeCelsius IsUnitForQuantity PressureQuantity
+- Unit:InchMercuryAt32DegreeFahrenheit
+- InchMercuryAt32DegreeFahrenheit.ConversionFactorA = 0
+- InchMercuryAt32DegreeFahrenheit.ConversionFactorB = 3386.3890000000006
+- InchMercuryAt32DegreeFahrenheit.Symbol = inHg32degF
+- InchMercuryAt32DegreeFahrenheit IsUnitForQuantity PressureQuantity
+- Unit:InchMercuryAt60DegreeFahrenheit
+- InchMercuryAt60DegreeFahrenheit.ConversionFactorA = 0
+- InchMercuryAt60DegreeFahrenheit.ConversionFactorB = 3376.85
+- InchMercuryAt60DegreeFahrenheit.Symbol = inHg60degF
+- InchMercuryAt60DegreeFahrenheit IsUnitForQuantity PressureQuantity
+- Unit:CentimetreWaterAt4DegreeCelsius
+- CentimetreWaterAt4DegreeCelsius.ConversionFactorA = 0
+- CentimetreWaterAt4DegreeCelsius.ConversionFactorB = 0.010104429276573386
+- CentimetreWaterAt4DegreeCelsius.Symbol = cmAq4degC
+- CentimetreWaterAt4DegreeCelsius IsUnitForQuantity PressureQuantity
+- Unit:MillimetreWaterAt4DegreeCelsius
+- MillimetreWaterAt4DegreeCelsius.ConversionFactorA = 0
+- MillimetreWaterAt4DegreeCelsius.ConversionFactorB = 0.10104429276573387
+- MillimetreWaterAt4DegreeCelsius.Symbol = mmAq4degC
+- MillimetreWaterAt4DegreeCelsius IsUnitForQuantity PressureQuantity
+- Unit:InchWaterAt4DegreeCelsius
+- InchWaterAt4DegreeCelsius.ConversionFactorA = 0
+- InchWaterAt4DegreeCelsius.ConversionFactorB = 0.00401474213311279
+- InchWaterAt4DegreeCelsius.Symbol = inAq4degC
+- InchWaterAt4DegreeCelsius IsUnitForQuantity PressureQuantity
+- Unit:FootWaterAt4DegreeCelsius
+- FootWaterAt4DegreeCelsius.ConversionFactorA = 0
+- FootWaterAt4DegreeCelsius.ConversionFactorB = 0.0003345525543589354
+- FootWaterAt4DegreeCelsius.Symbol = ftAq4degC
+- FootWaterAt4DegreeCelsius IsUnitForQuantity PressureQuantity
+- Unit:DynePerSquareCentimetre
+- DynePerSquareCentimetre.ConversionFactorA = 0
+- DynePerSquareCentimetre.ConversionFactorB = 10
+- DynePerSquareCentimetre.Symbol = dynePercmsquare
+- DynePerSquareCentimetre IsUnitForQuantity PressureQuantity
+- Quantity:ProportionQuantity
+- ProportionQuantity.L = 0
+- ProportionQuantity.M = 0
+- ProportionQuantity.T = 0
+- ProportionQuantity.I = 0
+- ProportionQuantity.ThT = 0
+- ProportionQuantity.N = 0
+- ProportionQuantity.J = 0
+- ProportionQuantity.Theta = 0
+- ProportionQuantity.Omega = 0
+- Unit:Proportion
+- Proportion.ConversionFactorA = 0
+- Proportion.ConversionFactorB = 1
+- Proportion IsUnitForQuantity ProportionQuantity
+- ProportionQuantity HasSIUnit Proportion
+- Unit:Percent
+- Percent.ConversionFactorA = 0
+- Percent.ConversionFactorB = 100
+- Percent.Symbol = %
+- Percent IsUnitForQuantity ProportionQuantity
+- Unit:PerThousand
+- PerThousand.ConversionFactorA = 0
+- PerThousand.ConversionFactorB = 1000
+- PerThousand.Symbol = perThousands
+- PerThousand IsUnitForQuantity ProportionQuantity
+- Unit:PartPerMillion
+- PartPerMillion.ConversionFactorA = 0
+- PartPerMillion.ConversionFactorB = 1000000
+- PartPerMillion.Symbol = ppm
+- PartPerMillion IsUnitForQuantity ProportionQuantity
+- Quantity:RandomWalkQuantity
+- RandomWalkQuantity.L = 0
+- RandomWalkQuantity.M = 0
+- RandomWalkQuantity.T = -0.5
+- RandomWalkQuantity.I = 0
+- RandomWalkQuantity.ThT = 0
+- RandomWalkQuantity.N = 0
+- RandomWalkQuantity.J = 0
+- RandomWalkQuantity.Theta = 1
+- RandomWalkQuantity.Omega = 0
+- Unit:RadianPerSquareRootSecond
+- RadianPerSquareRootSecond.ConversionFactorA = 0
+- RadianPerSquareRootSecond.ConversionFactorB = 1
+- RadianPerSquareRootSecond.Symbol = radPersqrt s
+- RadianPerSquareRootSecond IsUnitForQuantity RandomWalkQuantity
+- RandomWalkQuantity HasSIUnit RadianPerSquareRootSecond
+- Unit:RadianPerSquareRootMinute
+- RadianPerSquareRootMinute.ConversionFactorA = 0
+- RadianPerSquareRootMinute.ConversionFactorB = 7.745966692414834
+- RadianPerSquareRootMinute.Symbol = radPersqrt min
+- RadianPerSquareRootMinute IsUnitForQuantity RandomWalkQuantity
+- Unit:RadianPerSquareRootHour
+- RadianPerSquareRootHour.ConversionFactorA = 0
+- RadianPerSquareRootHour.ConversionFactorB = 60
+- RadianPerSquareRootHour.Symbol = radPersqrt h
+- RadianPerSquareRootHour IsUnitForQuantity RandomWalkQuantity
+- Unit:RadianPerSquareRootDay
+- RadianPerSquareRootDay.ConversionFactorA = 0
+- RadianPerSquareRootDay.ConversionFactorB = 293.9387691339814
+- RadianPerSquareRootDay.Symbol = radPersqrt d
+- RadianPerSquareRootDay IsUnitForQuantity RandomWalkQuantity
+- Unit:DegreePerSquareRootSecond
+- DegreePerSquareRootSecond.ConversionFactorA = 0
+- DegreePerSquareRootSecond.ConversionFactorB = 57.29577951308232
+- DegreePerSquareRootSecond.Symbol = degPersqrt s
+- DegreePerSquareRootSecond IsUnitForQuantity RandomWalkQuantity
+- Unit:DegreePerSquareRootMinute
+- DegreePerSquareRootMinute.ConversionFactorA = 0
+- DegreePerSquareRootMinute.ConversionFactorB = 443.8111997242799
+- DegreePerSquareRootMinute.Symbol = degPersqrt min
+- DegreePerSquareRootMinute IsUnitForQuantity RandomWalkQuantity
+- Unit:DegreePerSquareRootHour
+- DegreePerSquareRootHour.ConversionFactorA = 0
+- DegreePerSquareRootHour.ConversionFactorB = 3437.746770784939
+- DegreePerSquareRootHour.Symbol = degPersqrt h
+- DegreePerSquareRootHour IsUnitForQuantity RandomWalkQuantity
+- Unit:DegreePerSquareRootDay
+- DegreePerSquareRootDay.ConversionFactorA = 0
+- DegreePerSquareRootDay.ConversionFactorB = 16841.450906647406
+- DegreePerSquareRootDay.Symbol = degPersqrt d
+- DegreePerSquareRootDay IsUnitForQuantity RandomWalkQuantity
+- Quantity:RelativeTemperatureQuantity
+- RelativeTemperatureQuantity.L = 0
+- RelativeTemperatureQuantity.M = 0
+- RelativeTemperatureQuantity.T = 0
+- RelativeTemperatureQuantity.I = 0
+- RelativeTemperatureQuantity.ThT = 1
+- RelativeTemperatureQuantity.N = 0
+- RelativeTemperatureQuantity.J = 0
+- RelativeTemperatureQuantity.Theta = 0
+- RelativeTemperatureQuantity.Omega = 0
+- Unit:Kelvin
+- Kelvin.ConversionFactorA = 0
+- Kelvin.ConversionFactorB = 1
+- Kelvin.Symbol = k
+- Kelvin IsUnitForQuantity RelativeTemperatureQuantity
+- RelativeTemperatureQuantity HasSIUnit Kelvin
+- Unit:RelativeCelsius
+- RelativeCelsius.ConversionFactorA = 0
+- RelativeCelsius.ConversionFactorB = 1
+- RelativeCelsius.Symbol = degC
+- RelativeCelsius IsUnitForQuantity RelativeTemperatureQuantity
+- Unit:Rankine
+- Rankine.ConversionFactorA = 0
+- Rankine.ConversionFactorB = 1.7999999999999998
+- Rankine.Symbol = degR
+- Rankine IsUnitForQuantity RelativeTemperatureQuantity
+- Quantity:ElectricResistivityQuantity
+- ElectricResistivityQuantity.L = 3
+- ElectricResistivityQuantity.M = 1
+- ElectricResistivityQuantity.T = -3
+- ElectricResistivityQuantity.I = -2
+- ElectricResistivityQuantity.ThT = 0
+- ElectricResistivityQuantity.N = 0
+- ElectricResistivityQuantity.J = 0
+- ElectricResistivityQuantity.Theta = 0
+- ElectricResistivityQuantity.Omega = 0
+- Unit:OhmMetre
+- OhmMetre.ConversionFactorA = 0
+- OhmMetre.ConversionFactorB = 1
+- OhmMetre.Symbol = ω.m
+- OhmMetre IsUnitForQuantity ElectricResistivityQuantity
+- ElectricResistivityQuantity HasSIUnit OhmMetre
+- Unit:KiloOhmMetre
+- KiloOhmMetre.ConversionFactorA = 0
+- KiloOhmMetre.ConversionFactorB = 0.001
+- KiloOhmMetre.Symbol = kΩ.m
+- KiloOhmMetre IsUnitForQuantity ElectricResistivityQuantity
+- Unit:MegaOhmMetre
+- MegaOhmMetre.ConversionFactorA = 0
+- MegaOhmMetre.ConversionFactorB = 1E-06
+- MegaOhmMetre.Symbol = mΩ.m
+- MegaOhmMetre IsUnitForQuantity ElectricResistivityQuantity
+- Unit:GigaOhmMetre
+- GigaOhmMetre.ConversionFactorA = 0
+- GigaOhmMetre.ConversionFactorB = 1E-09
+- GigaOhmMetre.Symbol = gΩ.m
+- GigaOhmMetre IsUnitForQuantity ElectricResistivityQuantity
+- Quantity:SolidAngleQuantity
+- SolidAngleQuantity.L = 0
+- SolidAngleQuantity.M = 0
+- SolidAngleQuantity.T = 0
+- SolidAngleQuantity.I = 0
+- SolidAngleQuantity.ThT = 0
+- SolidAngleQuantity.N = 0
+- SolidAngleQuantity.J = 0
+- SolidAngleQuantity.Theta = 0
+- SolidAngleQuantity.Omega = 1
+- Unit:Steradian
+- Steradian.ConversionFactorA = 0
+- Steradian.ConversionFactorB = 1
+- Steradian.Symbol = sr
+- Steradian IsUnitForQuantity SolidAngleQuantity
+- SolidAngleQuantity HasSIUnit Steradian
+- Unit:Spat
+- Spat.ConversionFactorA = 0
+- Spat.ConversionFactorB = 0.07957747154594767
+- Spat.Symbol = spat
+- Spat IsUnitForQuantity SolidAngleQuantity
+- Unit:DegreeSquared
+- DegreeSquared.ConversionFactorA = 0
+- DegreeSquared.ConversionFactorB = 3282.806350011744
+- DegreeSquared.Symbol = (deg)square
+- DegreeSquared IsUnitForQuantity SolidAngleQuantity
+- Quantity:IsobaricSpecificHeatCapacityQuantity
+- IsobaricSpecificHeatCapacityQuantity.L = 2
+- IsobaricSpecificHeatCapacityQuantity.M = 0
+- IsobaricSpecificHeatCapacityQuantity.T = -2
+- IsobaricSpecificHeatCapacityQuantity.I = 0
+- IsobaricSpecificHeatCapacityQuantity.ThT = -1
+- IsobaricSpecificHeatCapacityQuantity.N = 0
+- IsobaricSpecificHeatCapacityQuantity.J = 0
+- IsobaricSpecificHeatCapacityQuantity.Theta = 0
+- IsobaricSpecificHeatCapacityQuantity.Omega = 0
+- Unit:JoulePerKilogramKelvin
+- JoulePerKilogramKelvin.ConversionFactorA = 0
+- JoulePerKilogramKelvin.ConversionFactorB = 1
+- JoulePerKilogramKelvin.Symbol = jPerkg.K
+- JoulePerKilogramKelvin IsUnitForQuantity IsobaricSpecificHeatCapacityQuantity
+- IsobaricSpecificHeatCapacityQuantity HasSIUnit JoulePerKilogramKelvin
+- Unit:JoulePerGramKelvin
+- JoulePerGramKelvin.ConversionFactorA = 0
+- JoulePerGramKelvin.ConversionFactorB = 0.001
+- JoulePerGramKelvin.Symbol = jPerg.K
+- JoulePerGramKelvin IsUnitForQuantity IsobaricSpecificHeatCapacityQuantity
+- Unit:JoulePerGramDegreeCelsius
+- JoulePerGramDegreeCelsius.ConversionFactorA = 0
+- JoulePerGramDegreeCelsius.ConversionFactorB = 0.001
+- JoulePerGramDegreeCelsius.Symbol = jPerg.degC
+- JoulePerGramDegreeCelsius IsUnitForQuantity IsobaricSpecificHeatCapacityQuantity
+- Unit:CaloriePerGramDegreeCelsius
+- CaloriePerGramDegreeCelsius.ConversionFactorA = 0
+- CaloriePerGramDegreeCelsius.ConversionFactorB = 0.0002390057361376673
+- CaloriePerGramDegreeCelsius.Symbol = calPerg.degC
+- CaloriePerGramDegreeCelsius IsUnitForQuantity IsobaricSpecificHeatCapacityQuantity
+- Unit:BritishThermalUnitPerPoundDegreeFahrenheit
+- BritishThermalUnitPerPoundDegreeFahrenheit.ConversionFactorA = 0
+- BritishThermalUnitPerPoundDegreeFahrenheit.ConversionFactorB = 0.0002390057960934331
+- BritishThermalUnitPerPoundDegreeFahrenheit.Symbol = bTUPerlb.degF
+- BritishThermalUnitPerPoundDegreeFahrenheit IsUnitForQuantity IsobaricSpecificHeatCapacityQuantity
+- Unit:KilocaloriePerGramDegreeCelsius
+- KilocaloriePerGramDegreeCelsius.ConversionFactorA = 0
+- KilocaloriePerGramDegreeCelsius.ConversionFactorB = 2.390057361376673E-07
+- KilocaloriePerGramDegreeCelsius.Symbol = calPerg.degC
+- KilocaloriePerGramDegreeCelsius IsUnitForQuantity IsobaricSpecificHeatCapacityQuantity
+- Quantity:IsobaricSpecificHeatCapacityGradientPerTemperatureQuantity
+- IsobaricSpecificHeatCapacityGradientPerTemperatureQuantity.L = 2
+- IsobaricSpecificHeatCapacityGradientPerTemperatureQuantity.M = 0
+- IsobaricSpecificHeatCapacityGradientPerTemperatureQuantity.T = -2
+- IsobaricSpecificHeatCapacityGradientPerTemperatureQuantity.I = 0
+- IsobaricSpecificHeatCapacityGradientPerTemperatureQuantity.ThT = -2
+- IsobaricSpecificHeatCapacityGradientPerTemperatureQuantity.N = 0
+- IsobaricSpecificHeatCapacityGradientPerTemperatureQuantity.J = 0
+- IsobaricSpecificHeatCapacityGradientPerTemperatureQuantity.Theta = 0
+- IsobaricSpecificHeatCapacityGradientPerTemperatureQuantity.Omega = 0
+- Unit:JoulePerKilogramSquaredKelvin
+- JoulePerKilogramSquaredKelvin.ConversionFactorA = 0
+- JoulePerKilogramSquaredKelvin.ConversionFactorB = 1
+- JoulePerKilogramSquaredKelvin.Symbol = jPerkg.Ksquare
+- JoulePerKilogramSquaredKelvin IsUnitForQuantity IsobaricSpecificHeatCapacityGradientPerTemperatureQuantity
+- IsobaricSpecificHeatCapacityGradientPerTemperatureQuantity HasSIUnit JoulePerKilogramSquaredKelvin
+- Unit:JoulePerGramSquaredKelvin
+- JoulePerGramSquaredKelvin.ConversionFactorA = 0
+- JoulePerGramSquaredKelvin.ConversionFactorB = 0.001
+- JoulePerGramSquaredKelvin.Symbol = jPerg.Ksquare
+- JoulePerGramSquaredKelvin IsUnitForQuantity IsobaricSpecificHeatCapacityGradientPerTemperatureQuantity
+- Unit:JoulePerGramDegreeSquaredCelsius
+- JoulePerGramDegreeSquaredCelsius.ConversionFactorA = 0
+- JoulePerGramDegreeSquaredCelsius.ConversionFactorB = 0.001
+- JoulePerGramDegreeSquaredCelsius.Symbol = jPerg.degCsquare
+- JoulePerGramDegreeSquaredCelsius IsUnitForQuantity IsobaricSpecificHeatCapacityGradientPerTemperatureQuantity
+- Unit:CaloriePerGramDegreeSquaredCelsius
+- CaloriePerGramDegreeSquaredCelsius.ConversionFactorA = 0
+- CaloriePerGramDegreeSquaredCelsius.ConversionFactorB = 0.0002390057361376673
+- CaloriePerGramDegreeSquaredCelsius.Symbol = calPerg.degCsquare
+- CaloriePerGramDegreeSquaredCelsius IsUnitForQuantity IsobaricSpecificHeatCapacityGradientPerTemperatureQuantity
+- Unit:BritishThermalUnitPerPoundSquaredDegreeFahrenheit
+- BritishThermalUnitPerPoundSquaredDegreeFahrenheit.ConversionFactorA = 0
+- BritishThermalUnitPerPoundSquaredDegreeFahrenheit.ConversionFactorB = 0.00013278099782968505
+- BritishThermalUnitPerPoundSquaredDegreeFahrenheit.Symbol = bTUPerlb.degFsquare
+- BritishThermalUnitPerPoundSquaredDegreeFahrenheit IsUnitForQuantity IsobaricSpecificHeatCapacityGradientPerTemperatureQuantity
+- Quantity:StressQuantity
+- StressQuantity.L = -1
+- StressQuantity.M = 1
+- StressQuantity.T = -2
+- StressQuantity.I = 0
+- StressQuantity.ThT = 0
+- StressQuantity.N = 0
+- StressQuantity.J = 0
+- StressQuantity.Theta = 0
+- StressQuantity.Omega = 0
+- Unit:Pascal
+- Pascal.ConversionFactorA = 0
+- Pascal.ConversionFactorB = 1
+- Pascal.Symbol = pa
+- Pascal IsUnitForQuantity StressQuantity
+- StressQuantity HasSIUnit Pascal
+- Unit:Kilopascal
+- Kilopascal.ConversionFactorA = 0
+- Kilopascal.ConversionFactorB = 0.001
+- Kilopascal.Symbol = kPa
+- Kilopascal IsUnitForQuantity StressQuantity
+- Unit:Bar
+- Bar.ConversionFactorA = 0
+- Bar.ConversionFactorB = 1E-05
+- Bar.Symbol = bar
+- Bar IsUnitForQuantity StressQuantity
+- Unit:Millibar
+- Millibar.ConversionFactorA = 0
+- Millibar.ConversionFactorB = 0.01
+- Millibar.Symbol = mbar
+- Millibar IsUnitForQuantity StressQuantity
+- Unit:Microbar
+- Microbar.ConversionFactorA = 0
+- Microbar.ConversionFactorB = 10
+- Microbar.Symbol = mubar
+- Microbar IsUnitForQuantity StressQuantity
+- Unit:PoundPerSquareInch
+- PoundPerSquareInch.ConversionFactorA = 0
+- PoundPerSquareInch.ConversionFactorB = 0.00014503773773020924
+- PoundPerSquareInch.Symbol = psi
+- PoundPerSquareInch IsUnitForQuantity StressQuantity
+- Unit:PoundPer100SquareFoot
+- PoundPer100SquareFoot.ConversionFactorA = 0
+- PoundPer100SquareFoot.ConversionFactorB = 2.0885434233150124
+- PoundPer100SquareFoot.Symbol = lbfPer100ftsquare
+- PoundPer100SquareFoot IsUnitForQuantity StressQuantity
+- Unit:KilopoundPerSquareInch
+- KilopoundPerSquareInch.ConversionFactorA = 0
+- KilopoundPerSquareInch.ConversionFactorB = 1.4503773773020924E-07
+- KilopoundPerSquareInch.Symbol = ksi
+- KilopoundPerSquareInch IsUnitForQuantity StressQuantity
+- Unit:PoundPerSquareFoot
+- PoundPerSquareFoot.ConversionFactorA = 0
+- PoundPerSquareFoot.ConversionFactorB = 0.020885434233150126
+- PoundPerSquareFoot.Symbol = lbPerftsquare
+- PoundPerSquareFoot IsUnitForQuantity StressQuantity
+- Unit:Megapascal
+- Megapascal.ConversionFactorA = 0
+- Megapascal.ConversionFactorB = 1E-06
+- Megapascal.Symbol = mPa
+- Megapascal IsUnitForQuantity StressQuantity
+- Unit:Gigapascal
+- Gigapascal.ConversionFactorA = 0
+- Gigapascal.ConversionFactorB = 1E-09
+- Gigapascal.Symbol = gPa
+- Gigapascal IsUnitForQuantity StressQuantity
+- Unit:NewtonPerSquareMetre
+- NewtonPerSquareMetre.ConversionFactorA = 0
+- NewtonPerSquareMetre.ConversionFactorB = 1
+- NewtonPerSquareMetre.Symbol = nPermsquare
+- NewtonPerSquareMetre IsUnitForQuantity StressQuantity
+- Unit:NewtonPerSquareCentimetre
+- NewtonPerSquareCentimetre.ConversionFactorA = 0
+- NewtonPerSquareCentimetre.ConversionFactorB = 0.0001
+- NewtonPerSquareCentimetre.Symbol = nPercmsquare
+- NewtonPerSquareCentimetre IsUnitForQuantity StressQuantity
+- Unit:NewtonPerSquareMillimetre
+- NewtonPerSquareMillimetre.ConversionFactorA = 0
+- NewtonPerSquareMillimetre.ConversionFactorB = 1E-06
+- NewtonPerSquareMillimetre.Symbol = nPermmsquare
+- NewtonPerSquareMillimetre IsUnitForQuantity StressQuantity
+- Unit:KilonewtonPerSquareMetre
+- KilonewtonPerSquareMetre.ConversionFactorA = 0
+- KilonewtonPerSquareMetre.ConversionFactorB = 0.001
+- KilonewtonPerSquareMetre.Symbol = kNPermsquare
+- KilonewtonPerSquareMetre IsUnitForQuantity StressQuantity
+- Unit:MegapoundPerSquareInch
+- MegapoundPerSquareInch.ConversionFactorA = 0
+- MegapoundPerSquareInch.ConversionFactorB = 1.4503773773020922E-10
+- MegapoundPerSquareInch.Symbol = mpsi
+- MegapoundPerSquareInch IsUnitForQuantity StressQuantity
+- Unit:DynePerSquareCentimetre
+- DynePerSquareCentimetre.ConversionFactorA = 0
+- DynePerSquareCentimetre.ConversionFactorB = 10
+- DynePerSquareCentimetre.Symbol = dynePercmsquare
+- DynePerSquareCentimetre IsUnitForQuantity StressQuantity
+- Quantity:TemperatureGradientPerLengthQuantity
+- TemperatureGradientPerLengthQuantity.L = -1
+- TemperatureGradientPerLengthQuantity.M = 0
+- TemperatureGradientPerLengthQuantity.T = 0
+- TemperatureGradientPerLengthQuantity.I = 0
+- TemperatureGradientPerLengthQuantity.ThT = 1
+- TemperatureGradientPerLengthQuantity.N = 0
+- TemperatureGradientPerLengthQuantity.J = 0
+- TemperatureGradientPerLengthQuantity.Theta = 0
+- TemperatureGradientPerLengthQuantity.Omega = 0
+- Unit:KelvinPerMetre
+- KelvinPerMetre.ConversionFactorA = 0
+- KelvinPerMetre.ConversionFactorB = 1
+- KelvinPerMetre.Symbol = kPerm
+- KelvinPerMetre IsUnitForQuantity TemperatureGradientPerLengthQuantity
+- TemperatureGradientPerLengthQuantity HasSIUnit KelvinPerMetre
+- Unit:CelsiusPerMetre
+- CelsiusPerMetre.ConversionFactorA = 0
+- CelsiusPerMetre.ConversionFactorB = 1
+- CelsiusPerMetre.Symbol = degCPerm
+- CelsiusPerMetre IsUnitForQuantity TemperatureGradientPerLengthQuantity
+- Unit:CelsiusPer10Metre
+- CelsiusPer10Metre.ConversionFactorA = 0
+- CelsiusPer10Metre.ConversionFactorB = 10
+- CelsiusPer10Metre.Symbol = degCPer10m
+- CelsiusPer10Metre IsUnitForQuantity TemperatureGradientPerLengthQuantity
+- Unit:CelsiusPer30Metre
+- CelsiusPer30Metre.ConversionFactorA = 0
+- CelsiusPer30Metre.ConversionFactorB = 30
+- CelsiusPer30Metre.Symbol = degCPer30m
+- CelsiusPer30Metre IsUnitForQuantity TemperatureGradientPerLengthQuantity
+- Unit:CelsiusPer100Metre
+- CelsiusPer100Metre.ConversionFactorA = 0
+- CelsiusPer100Metre.ConversionFactorB = 100
+- CelsiusPer100Metre.Symbol = degCPer100m
+- CelsiusPer100Metre IsUnitForQuantity TemperatureGradientPerLengthQuantity
+- Unit:CelsiusPerFoot
+- CelsiusPerFoot.ConversionFactorA = 0
+- CelsiusPerFoot.ConversionFactorB = 0.30479999999999996
+- CelsiusPerFoot.Symbol = degCPerft
+- CelsiusPerFoot IsUnitForQuantity TemperatureGradientPerLengthQuantity
+- Unit:CelsiusPer30Foot
+- CelsiusPer30Foot.ConversionFactorA = 0
+- CelsiusPer30Foot.ConversionFactorB = 9.143999999999998
+- CelsiusPer30Foot.Symbol = degCPer30ft
+- CelsiusPer30Foot IsUnitForQuantity TemperatureGradientPerLengthQuantity
+- Unit:CelsiusPer100Foot
+- CelsiusPer100Foot.ConversionFactorA = 0
+- CelsiusPer100Foot.ConversionFactorB = 30.479999999999997
+- CelsiusPer100Foot.Symbol = degCPer100ft
+- CelsiusPer100Foot IsUnitForQuantity TemperatureGradientPerLengthQuantity
+- Unit:FahrenheitPerFoot
+- FahrenheitPerFoot.ConversionFactorA = 0
+- FahrenheitPerFoot.ConversionFactorB = 0.5486399999999999
+- FahrenheitPerFoot.Symbol = degFPerft
+- FahrenheitPerFoot IsUnitForQuantity TemperatureGradientPerLengthQuantity
+- Unit:FahrenheitPer30Foot
+- FahrenheitPer30Foot.ConversionFactorA = 0
+- FahrenheitPer30Foot.ConversionFactorB = 16.459199999999996
+- FahrenheitPer30Foot.Symbol = degFPer30ft
+- FahrenheitPer30Foot IsUnitForQuantity TemperatureGradientPerLengthQuantity
+- Unit:FahrenheitPer100Foot
+- FahrenheitPer100Foot.ConversionFactorA = 0
+- FahrenheitPer100Foot.ConversionFactorB = 54.86399999999999
+- FahrenheitPer100Foot.Symbol = degFPer100ft
+- FahrenheitPer100Foot IsUnitForQuantity TemperatureGradientPerLengthQuantity
+- Quantity:TemperatureQuantity
+- TemperatureQuantity.L = 0
+- TemperatureQuantity.M = 0
+- TemperatureQuantity.T = 0
+- TemperatureQuantity.I = 0
+- TemperatureQuantity.ThT = 1
+- TemperatureQuantity.N = 0
+- TemperatureQuantity.J = 0
+- TemperatureQuantity.Theta = 0
+- TemperatureQuantity.Omega = 0
+- Unit:Kelvin
+- Kelvin.ConversionFactorA = 0
+- Kelvin.ConversionFactorB = 1
+- Kelvin.Symbol = k
+- Kelvin IsUnitForQuantity TemperatureQuantity
+- TemperatureQuantity HasSIUnit Kelvin
+- Unit:Celsius
+- Celsius.ConversionFactorA = -273.15
+- Celsius.ConversionFactorB = 1
+- Celsius.Symbol = degC
+- Celsius IsUnitForQuantity TemperatureQuantity
+- Unit:Fahrenheit
+- Fahrenheit.ConversionFactorA = -459.67
+- Fahrenheit.ConversionFactorB = 1.7999999999999998
+- Fahrenheit.Symbol = degF
+- Fahrenheit IsUnitForQuantity TemperatureQuantity
+- Unit:Rankine
+- Rankine.ConversionFactorA = 0
+- Rankine.ConversionFactorB = 1.7999999999999998
+- Rankine.Symbol = degR
+- Rankine IsUnitForQuantity TemperatureQuantity
+- Unit:Réaumur
+- Réaumur.ConversionFactorA = -218.51999999999998
+- Réaumur.ConversionFactorB = 0.8
+- Réaumur.Symbol = degRe
+- Réaumur IsUnitForQuantity TemperatureQuantity
+- Quantity:ThermalConductivityQuantity
+- ThermalConductivityQuantity.L = 1
+- ThermalConductivityQuantity.M = 1
+- ThermalConductivityQuantity.T = -3
+- ThermalConductivityQuantity.I = 0
+- ThermalConductivityQuantity.ThT = -1
+- ThermalConductivityQuantity.N = 0
+- ThermalConductivityQuantity.J = 0
+- ThermalConductivityQuantity.Theta = 0
+- ThermalConductivityQuantity.Omega = 0
+- Unit:WattPerMetreKelvin
+- WattPerMetreKelvin.ConversionFactorA = 0
+- WattPerMetreKelvin.ConversionFactorB = 1
+- WattPerMetreKelvin.Symbol = wPerm.K
+- WattPerMetreKelvin IsUnitForQuantity ThermalConductivityQuantity
+- ThermalConductivityQuantity HasSIUnit WattPerMetreKelvin
+- Unit:CaloriePerMetreSecondDegreeCelsius
+- CaloriePerMetreSecondDegreeCelsius.ConversionFactorA = 0
+- CaloriePerMetreSecondDegreeCelsius.ConversionFactorB = 0.2390057361376673
+- CaloriePerMetreSecondDegreeCelsius.Symbol = calPerm.s.degC
+- CaloriePerMetreSecondDegreeCelsius IsUnitForQuantity ThermalConductivityQuantity
+- Unit:CaloriePerCentimetreSecondDegreeCelsius
+- CaloriePerCentimetreSecondDegreeCelsius.ConversionFactorA = 0
+- CaloriePerCentimetreSecondDegreeCelsius.ConversionFactorB = 0.002390057361376673
+- CaloriePerCentimetreSecondDegreeCelsius.Symbol = calPercm.s.degC
+- CaloriePerCentimetreSecondDegreeCelsius IsUnitForQuantity ThermalConductivityQuantity
+- Unit:BritishThermalUnitPerHourFootDegreeFahrenheit
+- BritishThermalUnitPerHourFootDegreeFahrenheit.ConversionFactorA = 0
+- BritishThermalUnitPerHourFootDegreeFahrenheit.ConversionFactorB = 0.5781761274719021
+- BritishThermalUnitPerHourFootDegreeFahrenheit.Symbol = bTUPerh.ft.degF
+- BritishThermalUnitPerHourFootDegreeFahrenheit IsUnitForQuantity ThermalConductivityQuantity
+- Unit:BritishThermalUnitInchPerHourSquareFootDegreeFahrenheit
+- BritishThermalUnitInchPerHourSquareFootDegreeFahrenheit.ConversionFactorA = 0
+- BritishThermalUnitInchPerHourSquareFootDegreeFahrenheit.ConversionFactorB = 6.938113529662824
+- BritishThermalUnitInchPerHourSquareFootDegreeFahrenheit.Symbol = bTU.inPerh.ftsquare.degF
+- BritishThermalUnitInchPerHourSquareFootDegreeFahrenheit IsUnitForQuantity ThermalConductivityQuantity
+- Quantity:ThermalConductivityGradientPerTemperatureQuantity
+- ThermalConductivityGradientPerTemperatureQuantity.L = 1
+- ThermalConductivityGradientPerTemperatureQuantity.M = 1
+- ThermalConductivityGradientPerTemperatureQuantity.T = -3
+- ThermalConductivityGradientPerTemperatureQuantity.I = 0
+- ThermalConductivityGradientPerTemperatureQuantity.ThT = -2
+- ThermalConductivityGradientPerTemperatureQuantity.N = 0
+- ThermalConductivityGradientPerTemperatureQuantity.J = 0
+- ThermalConductivityGradientPerTemperatureQuantity.Theta = 0
+- ThermalConductivityGradientPerTemperatureQuantity.Omega = 0
+- Unit:WattPerMetreKelvinPerKelvin
+- WattPerMetreKelvinPerKelvin.ConversionFactorA = 0
+- WattPerMetreKelvinPerKelvin.ConversionFactorB = 1
+- WattPerMetreKelvinPerKelvin.Symbol = (WPer(m.K))PerK
+- WattPerMetreKelvinPerKelvin IsUnitForQuantity ThermalConductivityGradientPerTemperatureQuantity
+- ThermalConductivityGradientPerTemperatureQuantity HasSIUnit WattPerMetreKelvinPerKelvin
+- Unit:CaloriePerMetreSecondDegreeCelsiusSquared
+- CaloriePerMetreSecondDegreeCelsiusSquared.ConversionFactorA = 0
+- CaloriePerMetreSecondDegreeCelsiusSquared.ConversionFactorB = 0.2390057361376673
+- CaloriePerMetreSecondDegreeCelsiusSquared.Symbol = calPerm.s.degCsquare
+- CaloriePerMetreSecondDegreeCelsiusSquared IsUnitForQuantity ThermalConductivityGradientPerTemperatureQuantity
+- Unit:CaloriePerCentimetreSecondDegreeCelsiusSquared
+- CaloriePerCentimetreSecondDegreeCelsiusSquared.ConversionFactorA = 0
+- CaloriePerCentimetreSecondDegreeCelsiusSquared.ConversionFactorB = 0.002390057361376673
+- CaloriePerCentimetreSecondDegreeCelsiusSquared.Symbol = calPercm.s.degCsquare
+- CaloriePerCentimetreSecondDegreeCelsiusSquared IsUnitForQuantity ThermalConductivityGradientPerTemperatureQuantity
+- Unit:BritishThermalUnitPerHourFootDegreeFahrenheitSquared
+- BritishThermalUnitPerHourFootDegreeFahrenheitSquared.ConversionFactorA = 0
+- BritishThermalUnitPerHourFootDegreeFahrenheitSquared.ConversionFactorB = 0.3212089597066123
+- BritishThermalUnitPerHourFootDegreeFahrenheitSquared.Symbol = bTUPerh.ft.degFsquare
+- BritishThermalUnitPerHourFootDegreeFahrenheitSquared IsUnitForQuantity ThermalConductivityGradientPerTemperatureQuantity
+- Unit:BritishThermalUnitInchPerHourSquareFootDegreeFahrenheitSquared
+- BritishThermalUnitInchPerHourSquareFootDegreeFahrenheitSquared.ConversionFactorA = 0
+- BritishThermalUnitInchPerHourSquareFootDegreeFahrenheitSquared.ConversionFactorB = 3.8545075164793468
+- BritishThermalUnitInchPerHourSquareFootDegreeFahrenheitSquared.Symbol = bTU.inPerh.ftsquare.degFsquare
+- BritishThermalUnitInchPerHourSquareFootDegreeFahrenheitSquared IsUnitForQuantity ThermalConductivityGradientPerTemperatureQuantity
+- Quantity:TimeQuantity
+- TimeQuantity.L = 0
+- TimeQuantity.M = 0
+- TimeQuantity.T = 1
+- TimeQuantity.I = 0
+- TimeQuantity.ThT = 0
+- TimeQuantity.N = 0
+- TimeQuantity.J = 0
+- TimeQuantity.Theta = 0
+- TimeQuantity.Omega = 0
+- Unit:Second
+- Second.ConversionFactorA = 0
+- Second.ConversionFactorB = 1
+- Second.Symbol = s
+- Second IsUnitForQuantity TimeQuantity
+- TimeQuantity HasSIUnit Second
+- Unit:Millisecond
+- Millisecond.ConversionFactorA = 0
+- Millisecond.ConversionFactorB = 1000
+- Millisecond.Symbol = ms
+- Millisecond IsUnitForQuantity TimeQuantity
+- Unit:Microsecond
+- Microsecond.ConversionFactorA = 0
+- Microsecond.ConversionFactorB = 1000000
+- Microsecond.Symbol = mus
+- Microsecond IsUnitForQuantity TimeQuantity
+- Unit:Shake
+- Shake.ConversionFactorA = 0
+- Shake.ConversionFactorB = 100000000
+- Shake.Symbol = shake
+- Shake IsUnitForQuantity TimeQuantity
+- Unit:Nanosecond
+- Nanosecond.ConversionFactorA = 0
+- Nanosecond.ConversionFactorB = 999999999.9999999
+- Nanosecond.Symbol = ns
+- Nanosecond IsUnitForQuantity TimeQuantity
+- Unit:Picosecond
+- Picosecond.ConversionFactorA = 0
+- Picosecond.ConversionFactorB = 1000000000000
+- Picosecond.Symbol = ps
+- Picosecond IsUnitForQuantity TimeQuantity
+- Unit:Minute
+- Minute.ConversionFactorA = 0
+- Minute.ConversionFactorB = 0.016666666666666666
+- Minute.Symbol = min
+- Minute IsUnitForQuantity TimeQuantity
+- Unit:Hour
+- Hour.ConversionFactorA = 0
+- Hour.ConversionFactorB = 0.0002777777777777778
+- Hour.Symbol = h
+- Hour IsUnitForQuantity TimeQuantity
+- Unit:Day
+- Day.ConversionFactorA = 0
+- Day.ConversionFactorB = 1.1574074074074073E-05
+- Day.Symbol = d
+- Day IsUnitForQuantity TimeQuantity
+- Unit:Week
+- Week.ConversionFactorA = 0
+- Week.ConversionFactorB = 1.6534391534391535E-06
+- Week.Symbol = week
+- Week IsUnitForQuantity TimeQuantity
+- Unit:Fortnight
+- Fortnight.ConversionFactorA = 0
+- Fortnight.ConversionFactorB = 8.267195767195768E-07
+- Fortnight.Symbol = 14d
+- Fortnight IsUnitForQuantity TimeQuantity
+- Unit:MonthCommon
+- MonthCommon.ConversionFactorA = 0
+- MonthCommon.ConversionFactorB = 3.802570537683474E-07
+- MonthCommon.Symbol = monthcommon
+- MonthCommon IsUnitForQuantity TimeQuantity
+- Unit:MonthSideral
+- MonthSideral.ConversionFactorA = 0
+- MonthSideral.ConversionFactorB = 4.2362265228665E-07
+- MonthSideral.Symbol = monthsideral
+- MonthSideral IsUnitForQuantity TimeQuantity
+- Unit:MonthSynodic
+- MonthSynodic.ConversionFactorA = 0
+- MonthSynodic.ConversionFactorB = 3.9193507729016165E-07
+- MonthSynodic.Symbol = monthsynodic
+- MonthSynodic IsUnitForQuantity TimeQuantity
+- Unit:QuarterCommon
+- QuarterCommon.ConversionFactorA = 0
+- QuarterCommon.ConversionFactorB = 1.267523512561158E-07
+- QuarterCommon.Symbol = quartercommon
+- QuarterCommon IsUnitForQuantity TimeQuantity
+- Unit:YearCommon
+- YearCommon.ConversionFactorA = 0
+- YearCommon.ConversionFactorB = 3.1709791983764586E-08
+- YearCommon.Symbol = y
+- YearCommon IsUnitForQuantity TimeQuantity
+- Unit:YearAverageGregorian
+- YearAverageGregorian.ConversionFactorA = 0
+- YearAverageGregorian.ConversionFactorB = 3.1709791983764586E-08
+- YearAverageGregorian.Symbol = yearaveragegregorian
+- YearAverageGregorian IsUnitForQuantity TimeQuantity
+- Unit:YearJulian
+- YearJulian.ConversionFactorA = 0
+- YearJulian.ConversionFactorB = 3.168808781402895E-08
+- YearJulian.Symbol = yearjulian
+- YearJulian IsUnitForQuantity TimeQuantity
+- Unit:YearLeap
+- YearLeap.ConversionFactorA = 0
+- YearLeap.ConversionFactorB = 3.1623153207852664E-08
+- YearLeap.Symbol = yearleap
+- YearLeap IsUnitForQuantity TimeQuantity
+- Unit:YearTropical
+- YearTropical.ConversionFactorA = 0
+- YearTropical.ConversionFactorB = 3.1688764535078565E-08
+- YearTropical.Symbol = yeartropical
+- YearTropical IsUnitForQuantity TimeQuantity
+- Unit:Decade
+- Decade.ConversionFactorA = 0
+- Decade.ConversionFactorB = 3.168808781402895E-09
+- Decade.Symbol = decade
+- Decade IsUnitForQuantity TimeQuantity
+- Unit:Century
+- Century.ConversionFactorA = 0
+- Century.ConversionFactorB = 3.168808781402895E-10
+- Century.Symbol = century
+- Century IsUnitForQuantity TimeQuantity
+- Unit:Millenia
+- Millenia.ConversionFactorA = 0
+- Millenia.ConversionFactorB = 3.168808781402895E-11
+- Millenia.Symbol = millenia
+- Millenia IsUnitForQuantity TimeQuantity
+- Unit:MillionYear
+- MillionYear.ConversionFactorA = 0
+- MillionYear.ConversionFactorB = 3.168808781402895E-14
+- MillionYear.Symbol = my
+- MillionYear IsUnitForQuantity TimeQuantity
+- Quantity:TorqueGradientPerLengthQuantity
+- TorqueGradientPerLengthQuantity.L = 1
+- TorqueGradientPerLengthQuantity.M = 1
+- TorqueGradientPerLengthQuantity.T = -2
+- TorqueGradientPerLengthQuantity.I = 0
+- TorqueGradientPerLengthQuantity.ThT = 0
+- TorqueGradientPerLengthQuantity.N = 0
+- TorqueGradientPerLengthQuantity.J = 0
+- TorqueGradientPerLengthQuantity.Theta = 0
+- TorqueGradientPerLengthQuantity.Omega = 0
+- Unit:NewtonMetrePerMetre
+- NewtonMetrePerMetre.ConversionFactorA = 0
+- NewtonMetrePerMetre.ConversionFactorB = 1
+- NewtonMetrePerMetre.Symbol = n.mPerm
+- NewtonMetrePerMetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- TorqueGradientPerLengthQuantity HasSIUnit NewtonMetrePerMetre
+- Unit:DecanewtonMetrePerMetre
+- DecanewtonMetrePerMetre.ConversionFactorA = 0
+- DecanewtonMetrePerMetre.ConversionFactorB = 0.1
+- DecanewtonMetrePerMetre.Symbol = daN.mPerm
+- DecanewtonMetrePerMetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:KilogramForceMetrePerMetre
+- KilogramForceMetrePerMetre.ConversionFactorA = 0
+- KilogramForceMetrePerMetre.ConversionFactorB = 0.10197162129779283
+- KilogramForceMetrePerMetre.Symbol = kgf.mPerm
+- KilogramForceMetrePerMetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:KilonewtonMetrePerMetre
+- KilonewtonMetrePerMetre.ConversionFactorA = 0
+- KilonewtonMetrePerMetre.ConversionFactorB = 0.001
+- KilonewtonMetrePerMetre.Symbol = kN.mPerm
+- KilonewtonMetrePerMetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:FootPoundPerMetre
+- FootPoundPerMetre.ConversionFactorA = 0
+- FootPoundPerMetre.ConversionFactorB = 0.7375621492772655
+- FootPoundPerMetre.Symbol = ft.lbfPerm
+- FootPoundPerMetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:KilofootPoundPerMetre
+- KilofootPoundPerMetre.ConversionFactorA = 0
+- KilofootPoundPerMetre.ConversionFactorB = 0.0007375621492772654
+- KilofootPoundPerMetre.Symbol = kft.lbfPerm
+- KilofootPoundPerMetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:NewtonDecimetrePerMetre
+- NewtonDecimetrePerMetre.ConversionFactorA = 0
+- NewtonDecimetrePerMetre.ConversionFactorB = 10
+- NewtonDecimetrePerMetre.Symbol = n.dmPerm
+- NewtonDecimetrePerMetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:NewtonCentimetrePerMetre
+- NewtonCentimetrePerMetre.ConversionFactorA = 0
+- NewtonCentimetrePerMetre.ConversionFactorB = 100
+- NewtonCentimetrePerMetre.Symbol = n.cmPerm
+- NewtonCentimetrePerMetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:NewtonMillimetrePerMetre
+- NewtonMillimetrePerMetre.ConversionFactorA = 0
+- NewtonMillimetrePerMetre.ConversionFactorB = 1000
+- NewtonMillimetrePerMetre.Symbol = n.mmPerm
+- NewtonMillimetrePerMetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:InchPoundPerMetre
+- InchPoundPerMetre.ConversionFactorA = 0
+- InchPoundPerMetre.ConversionFactorB = 8.850745791327185
+- InchPoundPerMetre.Symbol = in.lbfPerm
+- InchPoundPerMetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:NewtonMetrePerDecimetre
+- NewtonMetrePerDecimetre.ConversionFactorA = 0
+- NewtonMetrePerDecimetre.ConversionFactorB = 0.1
+- NewtonMetrePerDecimetre.Symbol = n.mPerdm
+- NewtonMetrePerDecimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:DecanewtonMetrePerDecimetre
+- DecanewtonMetrePerDecimetre.ConversionFactorA = 0
+- DecanewtonMetrePerDecimetre.ConversionFactorB = 0.01
+- DecanewtonMetrePerDecimetre.Symbol = daN.mPerdm
+- DecanewtonMetrePerDecimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:KilogramForceMetrePerDecimetre
+- KilogramForceMetrePerDecimetre.ConversionFactorA = 0
+- KilogramForceMetrePerDecimetre.ConversionFactorB = 0.010197162129779284
+- KilogramForceMetrePerDecimetre.Symbol = kgf.mPerdm
+- KilogramForceMetrePerDecimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:KilonewtonMetrePerDecimetre
+- KilonewtonMetrePerDecimetre.ConversionFactorA = 0
+- KilonewtonMetrePerDecimetre.ConversionFactorB = 0.0001
+- KilonewtonMetrePerDecimetre.Symbol = kN.mPerdm
+- KilonewtonMetrePerDecimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:FootPoundPerDecimetre
+- FootPoundPerDecimetre.ConversionFactorA = 0
+- FootPoundPerDecimetre.ConversionFactorB = 0.07375621492772655
+- FootPoundPerDecimetre.Symbol = ft.lbfPerdm
+- FootPoundPerDecimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:KilofootPoundPerDecimetre
+- KilofootPoundPerDecimetre.ConversionFactorA = 0
+- KilofootPoundPerDecimetre.ConversionFactorB = 7.375621492772657E-05
+- KilofootPoundPerDecimetre.Symbol = kft.lbfPerdm
+- KilofootPoundPerDecimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:NewtonDecimetrePerDecimetre
+- NewtonDecimetrePerDecimetre.ConversionFactorA = 0
+- NewtonDecimetrePerDecimetre.ConversionFactorB = 1
+- NewtonDecimetrePerDecimetre.Symbol = n.dmPerdm
+- NewtonDecimetrePerDecimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:NewtonCentimetrePerDecimetre
+- NewtonCentimetrePerDecimetre.ConversionFactorA = 0
+- NewtonCentimetrePerDecimetre.ConversionFactorB = 10
+- NewtonCentimetrePerDecimetre.Symbol = n.cmPerdm
+- NewtonCentimetrePerDecimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:NewtonMillimetrePerDecimetre
+- NewtonMillimetrePerDecimetre.ConversionFactorA = 0
+- NewtonMillimetrePerDecimetre.ConversionFactorB = 100
+- NewtonMillimetrePerDecimetre.Symbol = n.mmPerdm
+- NewtonMillimetrePerDecimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:InchPoundPerDecimetre
+- InchPoundPerDecimetre.ConversionFactorA = 0
+- InchPoundPerDecimetre.ConversionFactorB = 0.8850745791327186
+- InchPoundPerDecimetre.Symbol = in.lbfPerdm
+- InchPoundPerDecimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:NewtonMetrePerCentimetre
+- NewtonMetrePerCentimetre.ConversionFactorA = 0
+- NewtonMetrePerCentimetre.ConversionFactorB = 0.01
+- NewtonMetrePerCentimetre.Symbol = n.mPercm
+- NewtonMetrePerCentimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:DecanewtonMetrePerCentimetre
+- DecanewtonMetrePerCentimetre.ConversionFactorA = 0
+- DecanewtonMetrePerCentimetre.ConversionFactorB = 0.001
+- DecanewtonMetrePerCentimetre.Symbol = daN.mPercm
+- DecanewtonMetrePerCentimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:KilogramForceMetrePerCentimetre
+- KilogramForceMetrePerCentimetre.ConversionFactorA = 0
+- KilogramForceMetrePerCentimetre.ConversionFactorB = 0.0010197162129779284
+- KilogramForceMetrePerCentimetre.Symbol = kgf.mPercm
+- KilogramForceMetrePerCentimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:KilonewtonMetrePerCentimetre
+- KilonewtonMetrePerCentimetre.ConversionFactorA = 0
+- KilonewtonMetrePerCentimetre.ConversionFactorB = 1E-05
+- KilonewtonMetrePerCentimetre.Symbol = kN.mPercm
+- KilonewtonMetrePerCentimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:FootPoundPerCentimetre
+- FootPoundPerCentimetre.ConversionFactorA = 0
+- FootPoundPerCentimetre.ConversionFactorB = 0.007375621492772655
+- FootPoundPerCentimetre.Symbol = ft.lbfPercm
+- FootPoundPerCentimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:KilofootPoundPerCentimetre
+- KilofootPoundPerCentimetre.ConversionFactorA = 0
+- KilofootPoundPerCentimetre.ConversionFactorB = 7.3756214927726565E-06
+- KilofootPoundPerCentimetre.Symbol = kft.lbfPercm
+- KilofootPoundPerCentimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:NewtonDecimetrePerCentimetre
+- NewtonDecimetrePerCentimetre.ConversionFactorA = 0
+- NewtonDecimetrePerCentimetre.ConversionFactorB = 0.09999999999999999
+- NewtonDecimetrePerCentimetre.Symbol = n.dmPercm
+- NewtonDecimetrePerCentimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:NewtonCentimetrePerCentimetre
+- NewtonCentimetrePerCentimetre.ConversionFactorA = 0
+- NewtonCentimetrePerCentimetre.ConversionFactorB = 1
+- NewtonCentimetrePerCentimetre.Symbol = n.cmPercm
+- NewtonCentimetrePerCentimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:NewtonMillimetrePerCentimetre
+- NewtonMillimetrePerCentimetre.ConversionFactorA = 0
+- NewtonMillimetrePerCentimetre.ConversionFactorB = 10
+- NewtonMillimetrePerCentimetre.Symbol = n.mmPercm
+- NewtonMillimetrePerCentimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:InchPoundPerCentimetre
+- InchPoundPerCentimetre.ConversionFactorA = 0
+- InchPoundPerCentimetre.ConversionFactorB = 0.08850745791327186
+- InchPoundPerCentimetre.Symbol = in.lbfPercm
+- InchPoundPerCentimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:NewtonMetrePerMillimetre
+- NewtonMetrePerMillimetre.ConversionFactorA = 0
+- NewtonMetrePerMillimetre.ConversionFactorB = 0.001
+- NewtonMetrePerMillimetre.Symbol = n.mPermm
+- NewtonMetrePerMillimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:DecanewtonMetrePerMillimetre
+- DecanewtonMetrePerMillimetre.ConversionFactorA = 0
+- DecanewtonMetrePerMillimetre.ConversionFactorB = 0.0001
+- DecanewtonMetrePerMillimetre.Symbol = daN.mPermm
+- DecanewtonMetrePerMillimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:KilogramForceMetrePerMillimetre
+- KilogramForceMetrePerMillimetre.ConversionFactorA = 0
+- KilogramForceMetrePerMillimetre.ConversionFactorB = 0.00010197162129779284
+- KilogramForceMetrePerMillimetre.Symbol = kgf.mPermm
+- KilogramForceMetrePerMillimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:KilonewtonMetrePerMillimetre
+- KilonewtonMetrePerMillimetre.ConversionFactorA = 0
+- KilonewtonMetrePerMillimetre.ConversionFactorB = 1E-06
+- KilonewtonMetrePerMillimetre.Symbol = kN.mPermm
+- KilonewtonMetrePerMillimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:FootPoundPerMillimetre
+- FootPoundPerMillimetre.ConversionFactorA = 0
+- FootPoundPerMillimetre.ConversionFactorB = 0.0007375621492772656
+- FootPoundPerMillimetre.Symbol = ft.lbfPermm
+- FootPoundPerMillimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:KilofootPoundPerMillimetre
+- KilofootPoundPerMillimetre.ConversionFactorA = 0
+- KilofootPoundPerMillimetre.ConversionFactorB = 7.375621492772656E-07
+- KilofootPoundPerMillimetre.Symbol = kft.lbfPermm
+- KilofootPoundPerMillimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:NewtonDecimetrePerMillimetre
+- NewtonDecimetrePerMillimetre.ConversionFactorA = 0
+- NewtonDecimetrePerMillimetre.ConversionFactorB = 0.01
+- NewtonDecimetrePerMillimetre.Symbol = n.dmPermm
+- NewtonDecimetrePerMillimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:NewtonCentimetrePerMillimetre
+- NewtonCentimetrePerMillimetre.ConversionFactorA = 0
+- NewtonCentimetrePerMillimetre.ConversionFactorB = 0.1
+- NewtonCentimetrePerMillimetre.Symbol = n.cmPermm
+- NewtonCentimetrePerMillimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:NewtonMillimetrePerMillimetre
+- NewtonMillimetrePerMillimetre.ConversionFactorA = 0
+- NewtonMillimetrePerMillimetre.ConversionFactorB = 1
+- NewtonMillimetrePerMillimetre.Symbol = n.mmPermm
+- NewtonMillimetrePerMillimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:InchPoundPerMillimetre
+- InchPoundPerMillimetre.ConversionFactorA = 0
+- InchPoundPerMillimetre.ConversionFactorB = 0.008850745791327186
+- InchPoundPerMillimetre.Symbol = in.lbfPermm
+- InchPoundPerMillimetre IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:NewtonMetrePerFoot
+- NewtonMetrePerFoot.ConversionFactorA = 0
+- NewtonMetrePerFoot.ConversionFactorB = 0.30479999999999996
+- NewtonMetrePerFoot.Symbol = n.mPerft
+- NewtonMetrePerFoot IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:DecanewtonMetrePerFoot
+- DecanewtonMetrePerFoot.ConversionFactorA = 0
+- DecanewtonMetrePerFoot.ConversionFactorB = 0.030479999999999997
+- DecanewtonMetrePerFoot.Symbol = daN.mPerft
+- DecanewtonMetrePerFoot IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:KilogramForceMetrePerFoot
+- KilogramForceMetrePerFoot.ConversionFactorA = 0
+- KilogramForceMetrePerFoot.ConversionFactorB = 0.03108095017156725
+- KilogramForceMetrePerFoot.Symbol = kgf.mPerft
+- KilogramForceMetrePerFoot IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:KilonewtonMetrePerFoot
+- KilonewtonMetrePerFoot.ConversionFactorA = 0
+- KilonewtonMetrePerFoot.ConversionFactorB = 0.0003048
+- KilonewtonMetrePerFoot.Symbol = kN.mPerft
+- KilonewtonMetrePerFoot IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:FootPoundPerFoot
+- FootPoundPerFoot.ConversionFactorA = 0
+- FootPoundPerFoot.ConversionFactorB = 0.2248089430997105
+- FootPoundPerFoot.Symbol = ft.lbfPerft
+- FootPoundPerFoot IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:KilofootPoundPerFoot
+- KilofootPoundPerFoot.ConversionFactorA = 0
+- KilofootPoundPerFoot.ConversionFactorB = 0.00022480894309971053
+- KilofootPoundPerFoot.Symbol = kft.lbfPerft
+- KilofootPoundPerFoot IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:NewtonDecimetrePerFoot
+- NewtonDecimetrePerFoot.ConversionFactorA = 0
+- NewtonDecimetrePerFoot.ConversionFactorB = 3.0479999999999996
+- NewtonDecimetrePerFoot.Symbol = n.dmPerft
+- NewtonDecimetrePerFoot IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:NewtonCentimetrePerFoot
+- NewtonCentimetrePerFoot.ConversionFactorA = 0
+- NewtonCentimetrePerFoot.ConversionFactorB = 30.479999999999997
+- NewtonCentimetrePerFoot.Symbol = n.cmPerft
+- NewtonCentimetrePerFoot IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:NewtonMillimetrePerFoot
+- NewtonMillimetrePerFoot.ConversionFactorA = 0
+- NewtonMillimetrePerFoot.ConversionFactorB = 304.79999999999995
+- NewtonMillimetrePerFoot.Symbol = n.mmPerft
+- NewtonMillimetrePerFoot IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:InchPoundPerFoot
+- InchPoundPerFoot.ConversionFactorA = 0
+- InchPoundPerFoot.ConversionFactorB = 2.697707317196526
+- InchPoundPerFoot.Symbol = in.lbfPerft
+- InchPoundPerFoot IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:NewtonMetrePerInch
+- NewtonMetrePerInch.ConversionFactorA = 0
+- NewtonMetrePerInch.ConversionFactorB = 0.0254
+- NewtonMetrePerInch.Symbol = n.mPerin
+- NewtonMetrePerInch IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:DecanewtonMetrePerInch
+- DecanewtonMetrePerInch.ConversionFactorA = 0
+- DecanewtonMetrePerInch.ConversionFactorB = 0.0025399999999999997
+- DecanewtonMetrePerInch.Symbol = daN.mPerin
+- DecanewtonMetrePerInch IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:KilogramForceMetrePerInch
+- KilogramForceMetrePerInch.ConversionFactorA = 0
+- KilogramForceMetrePerInch.ConversionFactorB = 0.0025900791809639378
+- KilogramForceMetrePerInch.Symbol = kgf.mPerin
+- KilogramForceMetrePerInch IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:KilonewtonMetrePerInch
+- KilonewtonMetrePerInch.ConversionFactorA = 0
+- KilonewtonMetrePerInch.ConversionFactorB = 2.5399999999999997E-05
+- KilonewtonMetrePerInch.Symbol = kN.mPerin
+- KilonewtonMetrePerInch IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:FootPoundPerInch
+- FootPoundPerInch.ConversionFactorA = 0
+- FootPoundPerInch.ConversionFactorB = 0.018734078591642542
+- FootPoundPerInch.Symbol = ft.lbfPerin
+- FootPoundPerInch IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:KilofootPoundPerInch
+- KilofootPoundPerInch.ConversionFactorA = 0
+- KilofootPoundPerInch.ConversionFactorB = 1.8734078591642546E-05
+- KilofootPoundPerInch.Symbol = kft.lbfPerin
+- KilofootPoundPerInch IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:NewtonDecimetrePerInch
+- NewtonDecimetrePerInch.ConversionFactorA = 0
+- NewtonDecimetrePerInch.ConversionFactorB = 0.25399999999999995
+- NewtonDecimetrePerInch.Symbol = n.dmPerin
+- NewtonDecimetrePerInch IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:NewtonCentimetrePerInch
+- NewtonCentimetrePerInch.ConversionFactorA = 0
+- NewtonCentimetrePerInch.ConversionFactorB = 2.54
+- NewtonCentimetrePerInch.Symbol = n.cmPerin
+- NewtonCentimetrePerInch IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:NewtonMillimetrePerInch
+- NewtonMillimetrePerInch.ConversionFactorA = 0
+- NewtonMillimetrePerInch.ConversionFactorB = 25.4
+- NewtonMillimetrePerInch.Symbol = n.mmPerin
+- NewtonMillimetrePerInch IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Unit:InchPoundPerInch
+- InchPoundPerInch.ConversionFactorA = 0
+- InchPoundPerInch.ConversionFactorB = 0.2248089430997105
+- InchPoundPerInch.Symbol = in.lbfPerin
+- InchPoundPerInch IsUnitForQuantity TorqueGradientPerLengthQuantity
+- Quantity:TorqueQuantity
+- TorqueQuantity.L = 2
+- TorqueQuantity.M = 1
+- TorqueQuantity.T = -2
+- TorqueQuantity.I = 0
+- TorqueQuantity.ThT = 0
+- TorqueQuantity.N = 0
+- TorqueQuantity.J = 0
+- TorqueQuantity.Theta = 0
+- TorqueQuantity.Omega = 0
+- Unit:NewtonMetre
+- NewtonMetre.ConversionFactorA = 0
+- NewtonMetre.ConversionFactorB = 1
+- NewtonMetre.Symbol = n.m
+- NewtonMetre IsUnitForQuantity TorqueQuantity
+- TorqueQuantity HasSIUnit NewtonMetre
+- Unit:DecanewtonMetre
+- DecanewtonMetre.ConversionFactorA = 0
+- DecanewtonMetre.ConversionFactorB = 0.1
+- DecanewtonMetre.Symbol = daN.m
+- DecanewtonMetre IsUnitForQuantity TorqueQuantity
+- Unit:KilogramForceMetre
+- KilogramForceMetre.ConversionFactorA = 0
+- KilogramForceMetre.ConversionFactorB = 0.10197162129779283
+- KilogramForceMetre.Symbol = kgf.m
+- KilogramForceMetre IsUnitForQuantity TorqueQuantity
+- Unit:KilonewtonMetre
+- KilonewtonMetre.ConversionFactorA = 0
+- KilonewtonMetre.ConversionFactorB = 0.001
+- KilonewtonMetre.Symbol = kN.m
+- KilonewtonMetre IsUnitForQuantity TorqueQuantity
+- Unit:FootPound
+- FootPound.ConversionFactorA = 0
+- FootPound.ConversionFactorB = 0.7375621492772655
+- FootPound.Symbol = ft.lbf
+- FootPound IsUnitForQuantity TorqueQuantity
+- Unit:KilofootPound
+- KilofootPound.ConversionFactorA = 0
+- KilofootPound.ConversionFactorB = 0.0007375621492772656
+- KilofootPound.Symbol = kft.lbf
+- KilofootPound IsUnitForQuantity TorqueQuantity
+- Unit:NewtonDecimetre
+- NewtonDecimetre.ConversionFactorA = 0
+- NewtonDecimetre.ConversionFactorB = 10
+- NewtonDecimetre.Symbol = n.dm
+- NewtonDecimetre IsUnitForQuantity TorqueQuantity
+- Unit:NewtonCentimetre
+- NewtonCentimetre.ConversionFactorA = 0
+- NewtonCentimetre.ConversionFactorB = 100
+- NewtonCentimetre.Symbol = n.cm
+- NewtonCentimetre IsUnitForQuantity TorqueQuantity
+- Unit:NewtonMillimetre
+- NewtonMillimetre.ConversionFactorA = 0
+- NewtonMillimetre.ConversionFactorB = 1000
+- NewtonMillimetre.Symbol = n.mm
+- NewtonMillimetre IsUnitForQuantity TorqueQuantity
+- Unit:InchPound
+- InchPound.ConversionFactorA = 0
+- InchPound.ConversionFactorB = 8.850745791327185
+- InchPound.Symbol = in.lbf
+- InchPound IsUnitForQuantity TorqueQuantity
+- Quantity:VelocityQuantity
+- VelocityQuantity.L = 1
+- VelocityQuantity.M = 0
+- VelocityQuantity.T = -1
+- VelocityQuantity.I = 0
+- VelocityQuantity.ThT = 0
+- VelocityQuantity.N = 0
+- VelocityQuantity.J = 0
+- VelocityQuantity.Theta = 0
+- VelocityQuantity.Omega = 0
+- Unit:MetrePerSecond
+- MetrePerSecond.ConversionFactorA = 0
+- MetrePerSecond.ConversionFactorB = 1
+- MetrePerSecond.Symbol = mPers
+- MetrePerSecond IsUnitForQuantity VelocityQuantity
+- VelocityQuantity HasSIUnit MetrePerSecond
+- Unit:MetrePerMinute
+- MetrePerMinute.ConversionFactorA = 0
+- MetrePerMinute.ConversionFactorB = 60
+- MetrePerMinute.Symbol = mPermin
+- MetrePerMinute IsUnitForQuantity VelocityQuantity
+- Unit:CentimetrePerSecond
+- CentimetrePerSecond.ConversionFactorA = 0
+- CentimetrePerSecond.ConversionFactorB = 100
+- CentimetrePerSecond.Symbol = cmPers
+- CentimetrePerSecond IsUnitForQuantity VelocityQuantity
+- Unit:MetrePerHour
+- MetrePerHour.ConversionFactorA = 0
+- MetrePerHour.ConversionFactorB = 3600
+- MetrePerHour.Symbol = mPerh
+- MetrePerHour IsUnitForQuantity VelocityQuantity
+- Unit:MetrePerDay
+- MetrePerDay.ConversionFactorA = 0
+- MetrePerDay.ConversionFactorB = 86400
+- MetrePerDay.Symbol = mPerd
+- MetrePerDay IsUnitForQuantity VelocityQuantity
+- Unit:FootPerHour
+- FootPerHour.ConversionFactorA = 0
+- FootPerHour.ConversionFactorB = 11811.023622047245
+- FootPerHour.Symbol = ftPerh
+- FootPerHour IsUnitForQuantity VelocityQuantity
+- Unit:FootPerDay
+- FootPerDay.ConversionFactorA = 0
+- FootPerDay.ConversionFactorB = 283464.5669291339
+- FootPerDay.Symbol = ftPerd
+- FootPerDay IsUnitForQuantity VelocityQuantity
+- Unit:FootPerMinute
+- FootPerMinute.ConversionFactorA = 0
+- FootPerMinute.ConversionFactorB = 196.85039370078744
+- FootPerMinute.Symbol = ftPerm
+- FootPerMinute IsUnitForQuantity VelocityQuantity
+- Unit:FootPerSecond
+- FootPerSecond.ConversionFactorA = 0
+- FootPerSecond.ConversionFactorB = 3.280839895013124
+- FootPerSecond.Symbol = ftPers
+- FootPerSecond IsUnitForQuantity VelocityQuantity
+- Unit:InchPerSecond
+- InchPerSecond.ConversionFactorA = 0
+- InchPerSecond.ConversionFactorB = 39.37007874015748
+- InchPerSecond.Symbol = inPers
+- InchPerSecond IsUnitForQuantity VelocityQuantity
+- Unit:MilePerHour
+- MilePerHour.ConversionFactorA = 0
+- MilePerHour.ConversionFactorB = 2.2369362920544025
+- MilePerHour.Symbol = mph
+- MilePerHour IsUnitForQuantity VelocityQuantity
+- Unit:KilometrePerHour
+- KilometrePerHour.ConversionFactorA = 0
+- KilometrePerHour.ConversionFactorB = 3.6
+- KilometrePerHour.Symbol = kmPerh
+- KilometrePerHour IsUnitForQuantity VelocityQuantity
+- Unit:KilometrePerMinute
+- KilometrePerMinute.ConversionFactorA = 0
+- KilometrePerMinute.ConversionFactorB = 0.06
+- KilometrePerMinute.Symbol = kmPermin
+- KilometrePerMinute IsUnitForQuantity VelocityQuantity
+- Unit:KilometrePerSecond
+- KilometrePerSecond.ConversionFactorA = 0
+- KilometrePerSecond.ConversionFactorB = 0.001
+- KilometrePerSecond.Symbol = kmPers
+- KilometrePerSecond IsUnitForQuantity VelocityQuantity
+- Unit:KilometrePerDay
+- KilometrePerDay.ConversionFactorA = 0
+- KilometrePerDay.ConversionFactorB = 86.4
+- KilometrePerDay.Symbol = kmPerd
+- KilometrePerDay IsUnitForQuantity VelocityQuantity
+- Unit:MilePerMinute
+- MilePerMinute.ConversionFactorA = 0
+- MilePerMinute.ConversionFactorB = 0.03728227153424004
+- MilePerMinute.Symbol = miPermin
+- MilePerMinute IsUnitForQuantity VelocityQuantity
+- Unit:MilePerSecond
+- MilePerSecond.ConversionFactorA = 0
+- MilePerSecond.ConversionFactorB = 0.000621371192237334
+- MilePerSecond.Symbol = miPers
+- MilePerSecond IsUnitForQuantity VelocityQuantity
+- Unit:MilePerDay
+- MilePerDay.ConversionFactorA = 0
+- MilePerDay.ConversionFactorB = 53.68647100930566
+- MilePerDay.Symbol = miPerd
+- MilePerDay IsUnitForQuantity VelocityQuantity
+- Unit:InchPerMinute
+- InchPerMinute.ConversionFactorA = 0
+- InchPerMinute.ConversionFactorB = 2362.2047244094488
+- InchPerMinute.Symbol = inPermin
+- InchPerMinute IsUnitForQuantity VelocityQuantity
+- Unit:InchPerHour
+- InchPerHour.ConversionFactorA = 0
+- InchPerHour.ConversionFactorB = 141732.28346456692
+- InchPerHour.Symbol = inPerh
+- InchPerHour IsUnitForQuantity VelocityQuantity
+- Unit:InchPerDay
+- InchPerDay.ConversionFactorA = 0
+- InchPerDay.ConversionFactorB = 3401574.8031496066
+- InchPerDay.Symbol = inPerd
+- InchPerDay IsUnitForQuantity VelocityQuantity
+- Unit:CentimetrePerMinute
+- CentimetrePerMinute.ConversionFactorA = 0
+- CentimetrePerMinute.ConversionFactorB = 6000
+- CentimetrePerMinute.Symbol = cmPermin
+- CentimetrePerMinute IsUnitForQuantity VelocityQuantity
+- Unit:CentimetrePerHour
+- CentimetrePerHour.ConversionFactorA = 0
+- CentimetrePerHour.ConversionFactorB = 360000
+- CentimetrePerHour.Symbol = cmPerh
+- CentimetrePerHour IsUnitForQuantity VelocityQuantity
+- Unit:CentimetrePerDay
+- CentimetrePerDay.ConversionFactorA = 0
+- CentimetrePerDay.ConversionFactorB = 8640000
+- CentimetrePerDay.Symbol = cmPerd
+- CentimetrePerDay IsUnitForQuantity VelocityQuantity
+- Unit:MillimetrePerSecond
+- MillimetrePerSecond.ConversionFactorA = 0
+- MillimetrePerSecond.ConversionFactorB = 1000
+- MillimetrePerSecond.Symbol = mmPers
+- MillimetrePerSecond IsUnitForQuantity VelocityQuantity
+- Unit:MillimetrePerMinute
+- MillimetrePerMinute.ConversionFactorA = 0
+- MillimetrePerMinute.ConversionFactorB = 60000
+- MillimetrePerMinute.Symbol = mmPermin
+- MillimetrePerMinute IsUnitForQuantity VelocityQuantity
+- Unit:MillimetrePerHour
+- MillimetrePerHour.ConversionFactorA = 0
+- MillimetrePerHour.ConversionFactorB = 3600000
+- MillimetrePerHour.Symbol = mmPerh
+- MillimetrePerHour IsUnitForQuantity VelocityQuantity
+- Unit:MillimetrePerDay
+- MillimetrePerDay.ConversionFactorA = 0
+- MillimetrePerDay.ConversionFactorB = 86400000
+- MillimetrePerDay.Symbol = mmPerd
+- MillimetrePerDay IsUnitForQuantity VelocityQuantity
+- Unit:DecimetrePerSecond
+- DecimetrePerSecond.ConversionFactorA = 0
+- DecimetrePerSecond.ConversionFactorB = 10
+- DecimetrePerSecond.Symbol = dmPers
+- DecimetrePerSecond IsUnitForQuantity VelocityQuantity
+- Unit:DecimetrePerMinute
+- DecimetrePerMinute.ConversionFactorA = 0
+- DecimetrePerMinute.ConversionFactorB = 600
+- DecimetrePerMinute.Symbol = dmPermin
+- DecimetrePerMinute IsUnitForQuantity VelocityQuantity
+- Unit:DecimetrePerHour
+- DecimetrePerHour.ConversionFactorA = 0
+- DecimetrePerHour.ConversionFactorB = 36000
+- DecimetrePerHour.Symbol = dmPerh
+- DecimetrePerHour IsUnitForQuantity VelocityQuantity
+- Unit:DecimetrePerDay
+- DecimetrePerDay.ConversionFactorA = 0
+- DecimetrePerDay.ConversionFactorB = 864000
+- DecimetrePerDay.Symbol = dmPerd
+- DecimetrePerDay IsUnitForQuantity VelocityQuantity
+- Unit:FurlongPerFortnight
+- FurlongPerFortnight.ConversionFactorA = 0
+- FurlongPerFortnight.ConversionFactorB = 6012.884753042234
+- FurlongPerFortnight.Symbol = furlongPer14d
+- FurlongPerFortnight IsUnitForQuantity VelocityQuantity
+- Quantity:VolumeQuantity
+- VolumeQuantity.L = 3
+- VolumeQuantity.M = 0
+- VolumeQuantity.T = 0
+- VolumeQuantity.I = 0
+- VolumeQuantity.ThT = 0
+- VolumeQuantity.N = 0
+- VolumeQuantity.J = 0
+- VolumeQuantity.Theta = 0
+- VolumeQuantity.Omega = 0
+- Unit:CubicMetre
+- CubicMetre.ConversionFactorA = 0
+- CubicMetre.ConversionFactorB = 1
+- CubicMetre.Symbol = mcubic
+- CubicMetre IsUnitForQuantity VolumeQuantity
+- VolumeQuantity HasSIUnit CubicMetre
+- Unit:Litre
+- Litre.ConversionFactorA = 0
+- Litre.ConversionFactorB = 1000
+- Litre.Symbol = l
+- Litre IsUnitForQuantity VolumeQuantity
+- Unit:Decilitre
+- Decilitre.ConversionFactorA = 0
+- Decilitre.ConversionFactorB = 10000
+- Decilitre.Symbol = dl
+- Decilitre IsUnitForQuantity VolumeQuantity
+- Unit:Centilitre
+- Centilitre.ConversionFactorA = 0
+- Centilitre.ConversionFactorB = 99999.99999999999
+- Centilitre.Symbol = cl
+- Centilitre IsUnitForQuantity VolumeQuantity
+- Unit:Millilitre
+- Millilitre.ConversionFactorA = 0
+- Millilitre.ConversionFactorB = 1000000
+- Millilitre.Symbol = ml
+- Millilitre IsUnitForQuantity VolumeQuantity
+- Unit:UsGallon
+- UsGallon.ConversionFactorA = 0
+- UsGallon.ConversionFactorB = 264.17205235814845
+- UsGallon.Symbol = uSGal.
+- UsGallon IsUnitForQuantity VolumeQuantity
+- Unit:UkGallon
+- UkGallon.ConversionFactorA = 0
+- UkGallon.ConversionFactorB = 219.96924829908778
+- UkGallon.Symbol = uKGal.
+- UkGallon IsUnitForQuantity VolumeQuantity
+- Unit:Barrel
+- Barrel.ConversionFactorA = 0
+- Barrel.ConversionFactorB = 6.289810770432106
+- Barrel.Symbol = bbl
+- Barrel IsUnitForQuantity VolumeQuantity
+- Unit:MillionCubicMetre
+- MillionCubicMetre.ConversionFactorA = 0
+- MillionCubicMetre.ConversionFactorB = 1E-06
+- MillionCubicMetre.Symbol = mmcubic
+- MillionCubicMetre IsUnitForQuantity VolumeQuantity
+- Unit:MillionLitre
+- MillionLitre.ConversionFactorA = 0
+- MillionLitre.ConversionFactorB = 0.001
+- MillionLitre.Symbol = ml
+- MillionLitre IsUnitForQuantity VolumeQuantity
+- Unit:MillionUkGallon
+- MillionUkGallon.ConversionFactorA = 0
+- MillionUkGallon.ConversionFactorB = 0.0002199692482990878
+- MillionUkGallon.Symbol = mUKGal.
+- MillionUkGallon IsUnitForQuantity VolumeQuantity
+- Unit:MillionBarrel
+- MillionBarrel.ConversionFactorA = 0
+- MillionBarrel.ConversionFactorB = 6.289810770432106E-06
+- MillionBarrel.Symbol = mbbl
+- MillionBarrel IsUnitForQuantity VolumeQuantity
+- Unit:ThousandStandardCubicFoot
+- ThousandStandardCubicFoot.ConversionFactorA = 0
+- ThousandStandardCubicFoot.ConversionFactorB = 0.0353146667214886
+- ThousandStandardCubicFoot.Symbol = mscf
+- ThousandStandardCubicFoot IsUnitForQuantity VolumeQuantity
+- Unit:MillionStandardCubicFoot
+- MillionStandardCubicFoot.ConversionFactorA = 0
+- MillionStandardCubicFoot.ConversionFactorB = 3.531466672148861E-05
+- MillionStandardCubicFoot.Symbol = mMscf
+- MillionStandardCubicFoot IsUnitForQuantity VolumeQuantity
+- Unit:CubicFoot
+- CubicFoot.ConversionFactorA = 0
+- CubicFoot.ConversionFactorB = 35.3146667214886
+- CubicFoot.Symbol = ftcubic
+- CubicFoot IsUnitForQuantity VolumeQuantity
+- Unit:CubicInch
+- CubicInch.ConversionFactorA = 0
+- CubicInch.ConversionFactorB = 61023.74409473229
+- CubicInch.Symbol = incubic
+- CubicInch IsUnitForQuantity VolumeQuantity
+- Unit:MillionUsGallon
+- MillionUsGallon.ConversionFactorA = 0
+- MillionUsGallon.ConversionFactorB = 0.00026417205235814843
+- MillionUsGallon.Symbol = mUSGal.
+- MillionUsGallon IsUnitForQuantity VolumeQuantity
+- Quantity:VolumetricFlowRateOfChangeQuantity
+- VolumetricFlowRateOfChangeQuantity.L = 3
+- VolumetricFlowRateOfChangeQuantity.M = 0
+- VolumetricFlowRateOfChangeQuantity.T = -2
+- VolumetricFlowRateOfChangeQuantity.I = 0
+- VolumetricFlowRateOfChangeQuantity.ThT = 0
+- VolumetricFlowRateOfChangeQuantity.N = 0
+- VolumetricFlowRateOfChangeQuantity.J = 0
+- VolumetricFlowRateOfChangeQuantity.Theta = 0
+- VolumetricFlowRateOfChangeQuantity.Omega = 0
+- Unit:CubicMetrePerSecondSquared
+- CubicMetrePerSecondSquared.ConversionFactorA = 0
+- CubicMetrePerSecondSquared.ConversionFactorB = 1
+- CubicMetrePerSecondSquared.Symbol = mcubicPerssquare
+- CubicMetrePerSecondSquared IsUnitForQuantity VolumetricFlowRateOfChangeQuantity
+- VolumetricFlowRateOfChangeQuantity HasSIUnit CubicMetrePerSecondSquared
+- Unit:LitrePerMinuteSquared
+- LitrePerMinuteSquared.ConversionFactorA = 0
+- LitrePerMinuteSquared.ConversionFactorB = 3600000
+- LitrePerMinuteSquared.Symbol = lPerminsquare
+- LitrePerMinuteSquared IsUnitForQuantity VolumetricFlowRateOfChangeQuantity
+- Unit:LitrePerMinutePerSecond
+- LitrePerMinutePerSecond.ConversionFactorA = 0
+- LitrePerMinutePerSecond.ConversionFactorB = 60000
+- LitrePerMinutePerSecond.Symbol = lPerminPers
+- LitrePerMinutePerSecond IsUnitForQuantity VolumetricFlowRateOfChangeQuantity
+- Unit:LitrePerSecondSquared
+- LitrePerSecondSquared.ConversionFactorA = 0
+- LitrePerSecondSquared.ConversionFactorB = 1000
+- LitrePerSecondSquared.Symbol = lPerssquare
+- LitrePerSecondSquared IsUnitForQuantity VolumetricFlowRateOfChangeQuantity
+- Unit:UkGallonPerMinuteSquared
+- UkGallonPerMinuteSquared.ConversionFactorA = 0
+- UkGallonPerMinuteSquared.ConversionFactorB = 791889.293876716
+- UkGallonPerMinuteSquared.Symbol = uKGalPerminsquare
+- UkGallonPerMinuteSquared IsUnitForQuantity VolumetricFlowRateOfChangeQuantity
+- Unit:UkGallonPerMinutePerSecond
+- UkGallonPerMinutePerSecond.ConversionFactorA = 0
+- UkGallonPerMinutePerSecond.ConversionFactorB = 13198.154897945267
+- UkGallonPerMinutePerSecond.Symbol = uKGalPerminPers
+- UkGallonPerMinutePerSecond IsUnitForQuantity VolumetricFlowRateOfChangeQuantity
+- Unit:UsGallonPerMinuteSquared
+- UsGallonPerMinuteSquared.ConversionFactorA = 0
+- UsGallonPerMinuteSquared.ConversionFactorB = 951019.3884893344
+- UsGallonPerMinuteSquared.Symbol = uSGalPerminsquare
+- UsGallonPerMinuteSquared IsUnitForQuantity VolumetricFlowRateOfChangeQuantity
+- Unit:UsGallonPerMinutePerSecond
+- UsGallonPerMinutePerSecond.ConversionFactorA = 0
+- UsGallonPerMinutePerSecond.ConversionFactorB = 15850.323141488907
+- UsGallonPerMinutePerSecond.Symbol = uSGalPerminPers
+- UsGallonPerMinutePerSecond IsUnitForQuantity VolumetricFlowRateOfChangeQuantity
+- Quantity:VolumetricFlowRateQuantity
+- VolumetricFlowRateQuantity.L = 3
+- VolumetricFlowRateQuantity.M = 0
+- VolumetricFlowRateQuantity.T = -1
+- VolumetricFlowRateQuantity.I = 0
+- VolumetricFlowRateQuantity.ThT = 0
+- VolumetricFlowRateQuantity.N = 0
+- VolumetricFlowRateQuantity.J = 0
+- VolumetricFlowRateQuantity.Theta = 0
+- VolumetricFlowRateQuantity.Omega = 0
+- Unit:CubicMetrePerSecond
+- CubicMetrePerSecond.ConversionFactorA = 0
+- CubicMetrePerSecond.ConversionFactorB = 1
+- CubicMetrePerSecond.Symbol = mcubicPers
+- CubicMetrePerSecond IsUnitForQuantity VolumetricFlowRateQuantity
+- VolumetricFlowRateQuantity HasSIUnit CubicMetrePerSecond
+- Unit:LitrePerSecond
+- LitrePerSecond.ConversionFactorA = 0
+- LitrePerSecond.ConversionFactorB = 1000
+- LitrePerSecond.Symbol = lPers
+- LitrePerSecond IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:CubicFootPerSecond
+- CubicFootPerSecond.ConversionFactorA = 0
+- CubicFootPerSecond.ConversionFactorB = 35.3146667214886
+- CubicFootPerSecond.Symbol = ftcubicPers
+- CubicFootPerSecond IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:UkGallonPerSecond
+- UkGallonPerSecond.ConversionFactorA = 0
+- UkGallonPerSecond.ConversionFactorB = 219.96924829908778
+- UkGallonPerSecond.Symbol = gpsUK
+- UkGallonPerSecond IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:UsGallonPerSecond
+- UsGallonPerSecond.ConversionFactorA = 0
+- UsGallonPerSecond.ConversionFactorB = 264.17205235814845
+- UsGallonPerSecond.Symbol = gpsUS
+- UsGallonPerSecond IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:BarrelPerSecond
+- BarrelPerSecond.ConversionFactorA = 0
+- BarrelPerSecond.ConversionFactorB = 6.289810770432106
+- BarrelPerSecond.Symbol = bblPers
+- BarrelPerSecond IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:CubicMetrePerMinute
+- CubicMetrePerMinute.ConversionFactorA = 0
+- CubicMetrePerMinute.ConversionFactorB = 60
+- CubicMetrePerMinute.Symbol = mcubicPermin
+- CubicMetrePerMinute IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:LitrePerMinute
+- LitrePerMinute.ConversionFactorA = 0
+- LitrePerMinute.ConversionFactorB = 60000
+- LitrePerMinute.Symbol = lPermin
+- LitrePerMinute IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:CubicFootPerMinute
+- CubicFootPerMinute.ConversionFactorA = 0
+- CubicFootPerMinute.ConversionFactorB = 2118.880003289316
+- CubicFootPerMinute.Symbol = ftcubicPermin
+- CubicFootPerMinute IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:UkGallonPerMinute
+- UkGallonPerMinute.ConversionFactorA = 0
+- UkGallonPerMinute.ConversionFactorB = 13198.154897945267
+- UkGallonPerMinute.Symbol = gpmUK
+- UkGallonPerMinute IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:UsGallonPerMinute
+- UsGallonPerMinute.ConversionFactorA = 0
+- UsGallonPerMinute.ConversionFactorB = 15850.323141488907
+- UsGallonPerMinute.Symbol = gpmUS
+- UsGallonPerMinute IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:BarrelPerMinute
+- BarrelPerMinute.ConversionFactorA = 0
+- BarrelPerMinute.ConversionFactorB = 377.3886462259263
+- BarrelPerMinute.Symbol = bblPerm
+- BarrelPerMinute IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:CubicMetrePerHour
+- CubicMetrePerHour.ConversionFactorA = 0
+- CubicMetrePerHour.ConversionFactorB = 3600
+- CubicMetrePerHour.Symbol = mcubicPerh
+- CubicMetrePerHour IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:LitrePerHour
+- LitrePerHour.ConversionFactorA = 0
+- LitrePerHour.ConversionFactorB = 3600000
+- LitrePerHour.Symbol = lPerh
+- LitrePerHour IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:CubicFootPerHour
+- CubicFootPerHour.ConversionFactorA = 0
+- CubicFootPerHour.ConversionFactorB = 127132.80019735897
+- CubicFootPerHour.Symbol = ftcubicPerh
+- CubicFootPerHour IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:UkGallonPerHour
+- UkGallonPerHour.ConversionFactorA = 0
+- UkGallonPerHour.ConversionFactorB = 791889.293876716
+- UkGallonPerHour.Symbol = gphUK
+- UkGallonPerHour IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:UsGallonPerHour
+- UsGallonPerHour.ConversionFactorA = 0
+- UsGallonPerHour.ConversionFactorB = 951019.3884893344
+- UsGallonPerHour.Symbol = gphUS
+- UsGallonPerHour IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:BarrelPerHour
+- BarrelPerHour.ConversionFactorA = 0
+- BarrelPerHour.ConversionFactorB = 22643.31877355558
+- BarrelPerHour.Symbol = bblPerh
+- BarrelPerHour IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:CubicMetrePerDay
+- CubicMetrePerDay.ConversionFactorA = 0
+- CubicMetrePerDay.ConversionFactorB = 86400
+- CubicMetrePerDay.Symbol = mcubicPerd
+- CubicMetrePerDay IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:MillionCubicMetrePerDay
+- MillionCubicMetrePerDay.ConversionFactorA = 0
+- MillionCubicMetrePerDay.ConversionFactorB = 0.0864
+- MillionCubicMetrePerDay.Symbol = mmcubicPerd
+- MillionCubicMetrePerDay IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:UkGallonPerDay
+- UkGallonPerDay.ConversionFactorA = 0
+- UkGallonPerDay.ConversionFactorB = 19005343.053041186
+- UkGallonPerDay.Symbol = gpdUK
+- UkGallonPerDay IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:UsGallonPerDay
+- UsGallonPerDay.ConversionFactorA = 0
+- UsGallonPerDay.ConversionFactorB = 22824465.323744025
+- UsGallonPerDay.Symbol = gpdUS
+- UsGallonPerDay IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:MillionUkGallonPerDay
+- MillionUkGallonPerDay.ConversionFactorA = 0
+- MillionUkGallonPerDay.ConversionFactorB = 19.005343053041184
+- MillionUkGallonPerDay.Symbol = millionUKGallonPerDay
+- MillionUkGallonPerDay IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:MillionUsGallonPerDay
+- MillionUsGallonPerDay.ConversionFactorA = 0
+- MillionUsGallonPerDay.ConversionFactorB = 22.824465323744025
+- MillionUsGallonPerDay.Symbol = millionUSGallonPerDay
+- MillionUsGallonPerDay IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:LitrePerDay
+- LitrePerDay.ConversionFactorA = 0
+- LitrePerDay.ConversionFactorB = 86400000
+- LitrePerDay.Symbol = lPerd
+- LitrePerDay IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:MillionLiterPerDay
+- MillionLiterPerDay.ConversionFactorA = 0
+- MillionLiterPerDay.ConversionFactorB = 86.4
+- MillionLiterPerDay.Symbol = millionLiterPerDay
+- MillionLiterPerDay IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:CubicFootPerDay
+- CubicFootPerDay.ConversionFactorA = 0
+- CubicFootPerDay.ConversionFactorB = 3051187.204736615
+- CubicFootPerDay.Symbol = ftcubicPerd
+- CubicFootPerDay IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:ThousandStandardCubicFootPerDay
+- ThousandStandardCubicFootPerDay.ConversionFactorA = 0
+- ThousandStandardCubicFootPerDay.ConversionFactorB = 3051.187204736615
+- ThousandStandardCubicFootPerDay.Symbol = mscfPerd
+- ThousandStandardCubicFootPerDay IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:MillionStandardCubicFootPerDay
+- MillionStandardCubicFootPerDay.ConversionFactorA = 0
+- MillionStandardCubicFootPerDay.ConversionFactorB = 3.0511872047366158
+- MillionStandardCubicFootPerDay.Symbol = mMscfPerd
+- MillionStandardCubicFootPerDay IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:BarrelPerDay
+- BarrelPerDay.ConversionFactorA = 0
+- BarrelPerDay.ConversionFactorB = 543439.6505653339
+- BarrelPerDay.Symbol = bblPerd
+- BarrelPerDay IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:CubicMetrePerYear
+- CubicMetrePerYear.ConversionFactorA = 0
+- CubicMetrePerYear.ConversionFactorB = 31557600
+- CubicMetrePerYear.Symbol = mcubicPeryear
+- CubicMetrePerYear IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:LitrePerYear
+- LitrePerYear.ConversionFactorA = 0
+- LitrePerYear.ConversionFactorB = 31557600000
+- LitrePerYear.Symbol = lPeryear
+- LitrePerYear IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:CubicFootPerYear
+- CubicFootPerYear.ConversionFactorA = 0
+- CubicFootPerYear.ConversionFactorB = 1114446126.5300486
+- CubicFootPerYear.Symbol = ftcubicPeryear
+- CubicFootPerYear IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:UkGallonPerYear
+- UkGallonPerYear.ConversionFactorA = 0
+- UkGallonPerYear.ConversionFactorB = 6941701550.123293
+- UkGallonPerYear.Symbol = gpyUK
+- UkGallonPerYear IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:UsGallonPerYear
+- UsGallonPerYear.ConversionFactorA = 0
+- UsGallonPerYear.ConversionFactorB = 8336635959.497505
+- UsGallonPerYear.Symbol = gpyUS
+- UsGallonPerYear IsUnitForQuantity VolumetricFlowRateQuantity
+- Unit:BarrelPerYear
+- BarrelPerYear.ConversionFactorA = 0
+- BarrelPerYear.ConversionFactorB = 198491332.36898822
+- BarrelPerYear.Symbol = bblPeryear
+- BarrelPerYear IsUnitForQuantity VolumetricFlowRateQuantity
+- Quantity:WaveNumberQuantity
+- WaveNumberQuantity.L = -1
+- WaveNumberQuantity.M = 0
+- WaveNumberQuantity.T = 0
+- WaveNumberQuantity.I = 0
+- WaveNumberQuantity.ThT = 0
+- WaveNumberQuantity.N = 0
+- WaveNumberQuantity.J = 0
+- WaveNumberQuantity.Theta = 0
+- WaveNumberQuantity.Omega = 0
+- Unit:ReciprocalMetre
+- ReciprocalMetre.ConversionFactorA = 0
+- ReciprocalMetre.ConversionFactorB = 1
+- ReciprocalMetre.Symbol = 1Perm
+- ReciprocalMetre IsUnitForQuantity WaveNumberQuantity
+- WaveNumberQuantity HasSIUnit ReciprocalMetre
+- Unit:ReciprocalDecimetre
+- ReciprocalDecimetre.ConversionFactorA = 0
+- ReciprocalDecimetre.ConversionFactorB = 0.1
+- ReciprocalDecimetre.Symbol = 1Perdm
+- ReciprocalDecimetre IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalCentimetre
+- ReciprocalCentimetre.ConversionFactorA = 0
+- ReciprocalCentimetre.ConversionFactorB = 0.01
+- ReciprocalCentimetre.Symbol = 1Percm
+- ReciprocalCentimetre IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalMillimetre
+- ReciprocalMillimetre.ConversionFactorA = 0
+- ReciprocalMillimetre.ConversionFactorB = 0.001
+- ReciprocalMillimetre.Symbol = 1Permm
+- ReciprocalMillimetre IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalMicrometre
+- ReciprocalMicrometre.ConversionFactorA = 0
+- ReciprocalMicrometre.ConversionFactorB = 1E-06
+- ReciprocalMicrometre.Symbol = 1Permum
+- ReciprocalMicrometre IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalNanometre
+- ReciprocalNanometre.ConversionFactorA = 0
+- ReciprocalNanometre.ConversionFactorB = 1E-09
+- ReciprocalNanometre.Symbol = 1Pernm
+- ReciprocalNanometre IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalAangstroem
+- ReciprocalAangstroem.ConversionFactorA = 0
+- ReciprocalAangstroem.ConversionFactorB = 1E-10
+- ReciprocalAangstroem.Symbol = 1PerAA
+- ReciprocalAangstroem IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalPicometre
+- ReciprocalPicometre.ConversionFactorA = 0
+- ReciprocalPicometre.ConversionFactorB = 1E-12
+- ReciprocalPicometre.Symbol = 1Perpm
+- ReciprocalPicometre IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalDecametre
+- ReciprocalDecametre.ConversionFactorA = 0
+- ReciprocalDecametre.ConversionFactorB = 10
+- ReciprocalDecametre.Symbol = 1Perdam
+- ReciprocalDecametre IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalHectometre
+- ReciprocalHectometre.ConversionFactorA = 0
+- ReciprocalHectometre.ConversionFactorB = 100
+- ReciprocalHectometre.Symbol = 1Perhm
+- ReciprocalHectometre IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalKilometre
+- ReciprocalKilometre.ConversionFactorA = 0
+- ReciprocalKilometre.ConversionFactorB = 1000
+- ReciprocalKilometre.Symbol = 1Perkm
+- ReciprocalKilometre IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalAstronomicalUnit
+- ReciprocalAstronomicalUnit.ConversionFactorA = 0
+- ReciprocalAstronomicalUnit.ConversionFactorB = 149597870700
+- ReciprocalAstronomicalUnit.Symbol = 1Perau
+- ReciprocalAstronomicalUnit IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalLightYear
+- ReciprocalLightYear.ConversionFactorA = 0
+- ReciprocalLightYear.ConversionFactorB = 9460730472580800
+- ReciprocalLightYear.Symbol = 1Perly
+- ReciprocalLightYear IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalParsec
+- ReciprocalParsec.ConversionFactorA = 0
+- ReciprocalParsec.ConversionFactorB = 30856775814913670
+- ReciprocalParsec.Symbol = 1Perpc
+- ReciprocalParsec IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalFoot
+- ReciprocalFoot.ConversionFactorA = 0
+- ReciprocalFoot.ConversionFactorB = 0.30479999999999996
+- ReciprocalFoot.Symbol = 1Perft
+- ReciprocalFoot IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalUsSurveyFoot
+- ReciprocalUsSurveyFoot.ConversionFactorA = 0
+- ReciprocalUsSurveyFoot.ConversionFactorB = 0.3048006096012192
+- ReciprocalUsSurveyFoot.Symbol = 1Perft
+- ReciprocalUsSurveyFoot IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalInch
+- ReciprocalInch.ConversionFactorA = 0
+- ReciprocalInch.ConversionFactorB = 0.0254
+- ReciprocalInch.Symbol = 1Perin
+- ReciprocalInch IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalYard
+- ReciprocalYard.ConversionFactorA = 0
+- ReciprocalYard.ConversionFactorB = 0.9143999999999999
+- ReciprocalYard.Symbol = 1Peryd
+- ReciprocalYard IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalFathom
+- ReciprocalFathom.ConversionFactorA = 0
+- ReciprocalFathom.ConversionFactorB = 1.8287999999999998
+- ReciprocalFathom.Symbol = 1Perfathom
+- ReciprocalFathom IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalSurveyorsChain
+- ReciprocalSurveyorsChain.ConversionFactorA = 0
+- ReciprocalSurveyorsChain.ConversionFactorB = 20.116799999999998
+- ReciprocalSurveyorsChain.Symbol = 1Perchain
+- ReciprocalSurveyorsChain IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalMile
+- ReciprocalMile.ConversionFactorA = 0
+- ReciprocalMile.ConversionFactorB = 1609.3439999999998
+- ReciprocalMile.Symbol = 1Permi
+- ReciprocalMile IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalInternationalNauticalMile
+- ReciprocalInternationalNauticalMile.ConversionFactorA = 0
+- ReciprocalInternationalNauticalMile.ConversionFactorB = 1852
+- ReciprocalInternationalNauticalMile.Symbol = 1Pernmi
+- ReciprocalInternationalNauticalMile IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalUkNauticalMile
+- ReciprocalUkNauticalMile.ConversionFactorA = 0
+- ReciprocalUkNauticalMile.ConversionFactorB = 1853.1839999999997
+- ReciprocalUkNauticalMile.Symbol = 1Per(UKnmi)
+- ReciprocalUkNauticalMile IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalScandinavianMile
+- ReciprocalScandinavianMile.ConversionFactorA = 0
+- ReciprocalScandinavianMile.ConversionFactorB = 10000
+- ReciprocalScandinavianMile.Symbol = 1Permil
+- ReciprocalScandinavianMile IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalInchPer32
+- ReciprocalInchPer32.ConversionFactorA = 0
+- ReciprocalInchPer32.ConversionFactorB = 0.00079375
+- ReciprocalInchPer32.Symbol = 1PerinPer32
+- ReciprocalInchPer32 IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalMil
+- ReciprocalMil.ConversionFactorA = 0
+- ReciprocalMil.ConversionFactorB = 2.54E-05
+- ReciprocalMil.Symbol = 1Permil
+- ReciprocalMil IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalThou
+- ReciprocalThou.ConversionFactorA = 0
+- ReciprocalThou.ConversionFactorB = 2.54E-05
+- ReciprocalThou.Symbol = 1Perthou
+- ReciprocalThou IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalHand
+- ReciprocalHand.ConversionFactorA = 0
+- ReciprocalHand.ConversionFactorB = 0.1016
+- ReciprocalHand.Symbol = 1Perhand
+- ReciprocalHand IsUnitForQuantity WaveNumberQuantity
+- Unit:ReciprocalFurlong
+- ReciprocalFurlong.ConversionFactorA = 0
+- ReciprocalFurlong.ConversionFactorB = 201.16799999999998
+- ReciprocalFurlong.Symbol = 1Perfurlong
+- ReciprocalFurlong IsUnitForQuantity WaveNumberQuantity
+- Quantity:MassQuantity
+- MassQuantity.L = 0
+- MassQuantity.M = 1
+- MassQuantity.T = 0
+- MassQuantity.I = 0
+- MassQuantity.ThT = 0
+- MassQuantity.N = 0
+- MassQuantity.J = 0
+- MassQuantity.Theta = 0
+- MassQuantity.Omega = 0
+- Unit:Kilogram
+- Kilogram.ConversionFactorA = 0
+- Kilogram.ConversionFactorB = 1
+- Kilogram.Symbol = kg
+- Kilogram IsUnitForQuantity MassQuantity
+- MassQuantity HasSIUnit Kilogram
+- Unit:Hectogram
+- Hectogram.ConversionFactorA = 0
+- Hectogram.ConversionFactorB = 10
+- Hectogram.Symbol = hg
+- Hectogram IsUnitForQuantity MassQuantity
+- Unit:Decagram
+- Decagram.ConversionFactorA = 0
+- Decagram.ConversionFactorB = 100
+- Decagram.Symbol = dag
+- Decagram IsUnitForQuantity MassQuantity
+- Unit:Gram
+- Gram.ConversionFactorA = 0
+- Gram.ConversionFactorB = 1000
+- Gram.Symbol = g
+- Gram IsUnitForQuantity MassQuantity
+- Unit:Centigram
+- Centigram.ConversionFactorA = 0
+- Centigram.ConversionFactorB = 10000
+- Centigram.Symbol = cg
+- Centigram IsUnitForQuantity MassQuantity
+- Unit:Milligram
+- Milligram.ConversionFactorA = 0
+- Milligram.ConversionFactorB = 1000000
+- Milligram.Symbol = mg
+- Milligram IsUnitForQuantity MassQuantity
+- Unit:Microgram
+- Microgram.ConversionFactorA = 0
+- Microgram.ConversionFactorB = 999999999.9999999
+- Microgram.Symbol = mug
+- Microgram IsUnitForQuantity MassQuantity
+- Unit:Nanogram
+- Nanogram.ConversionFactorA = 0
+- Nanogram.ConversionFactorB = 1000000000000
+- Nanogram.Symbol = ng
+- Nanogram IsUnitForQuantity MassQuantity
+- Unit:AtomMassUnit
+- AtomMassUnit.ConversionFactorA = 0
+- AtomMassUnit.ConversionFactorB = 6.022140762081123E+26
+- AtomMassUnit.Symbol = u
+- AtomMassUnit IsUnitForQuantity MassQuantity
+- Unit:TonneMetric
+- TonneMetric.ConversionFactorA = 0
+- TonneMetric.ConversionFactorB = 0.001
+- TonneMetric.Symbol = t
+- TonneMetric IsUnitForQuantity MassQuantity
+- Unit:Kilotonne
+- Kilotonne.ConversionFactorA = 0
+- Kilotonne.ConversionFactorB = 1E-06
+- Kilotonne.Symbol = kt
+- Kilotonne IsUnitForQuantity MassQuantity
+- Unit:Megatonne
+- Megatonne.ConversionFactorA = 0
+- Megatonne.ConversionFactorB = 1E-09
+- Megatonne.Symbol = mt
+- Megatonne IsUnitForQuantity MassQuantity
+- Unit:Gigatonne
+- Gigatonne.ConversionFactorA = 0
+- Gigatonne.ConversionFactorB = 1E-12
+- Gigatonne.Symbol = gt
+- Gigatonne IsUnitForQuantity MassQuantity
+- Unit:Pound
+- Pound.ConversionFactorA = 0
+- Pound.ConversionFactorB = 2.2046226218487757
+- Pound.Symbol = lb
+- Pound IsUnitForQuantity MassQuantity
+- Unit:Kilopound
+- Kilopound.ConversionFactorA = 0
+- Kilopound.ConversionFactorB = 0.002204622621848776
+- Kilopound.Symbol = klb
+- Kilopound IsUnitForQuantity MassQuantity
+- Unit:Ounce
+- Ounce.ConversionFactorA = 0
+- Ounce.ConversionFactorB = 35.27396194958041
+- Ounce.Symbol = oz
+- Ounce IsUnitForQuantity MassQuantity
+- Unit:Stone
+- Stone.ConversionFactorA = 0
+- Stone.ConversionFactorB = 0.1574730444177697
+- Stone.Symbol = st
+- Stone IsUnitForQuantity MassQuantity
+- Unit:TonUk
+- TonUk.ConversionFactorA = 0
+- TonUk.ConversionFactorB = 0.0009842065276110606
+- TonUk.Symbol = lT
+- TonUk IsUnitForQuantity MassQuantity
+- Unit:TonUs
+- TonUs.ConversionFactorA = 0
+- TonUs.ConversionFactorB = 0.001102311310924388
+- TonUs.Symbol = sT
+- TonUs IsUnitForQuantity MassQuantity
+- Unit:SolarMass
+- SolarMass.ConversionFactorA = 0
+- SolarMass.ConversionFactorB = 5.0291176051105175E-31
+- SolarMass.Symbol = msolarMass
+- SolarMass IsUnitForQuantity MassQuantity
+- Unit:EarthMass
+- EarthMass.ConversionFactorA = 0
+- EarthMass.ConversionFactorB = 1.6744248350691536E-25
+- EarthMass.Symbol = mearthMass
+- EarthMass IsUnitForQuantity MassQuantity
+- Unit:Grain
+- Grain.ConversionFactorA = 0
+- Grain.ConversionFactorB = 15432.358352941428
+- Grain.Symbol = gr
+- Grain IsUnitForQuantity MassQuantity
+- Unit:HundredWeights
+- HundredWeights.ConversionFactorA = 0
+- HundredWeights.ConversionFactorB = 0.022046226218487758
+- HundredWeights.Symbol = cwt
+- HundredWeights IsUnitForQuantity MassQuantity
+- Quantity:EnergyQuantity
+- EnergyQuantity.L = 2
+- EnergyQuantity.M = 1
+- EnergyQuantity.T = -2
+- EnergyQuantity.I = 0
+- EnergyQuantity.ThT = 0
+- EnergyQuantity.N = 0
+- EnergyQuantity.J = 0
+- EnergyQuantity.Theta = 0
+- EnergyQuantity.Omega = 0
+- Unit:Joule
+- Joule.ConversionFactorA = 0
+- Joule.ConversionFactorB = 1
+- Joule.Symbol = j
+- Joule IsUnitForQuantity EnergyQuantity
+- EnergyQuantity HasSIUnit Joule
+- Unit:Kilojoule
+- Kilojoule.ConversionFactorA = 0
+- Kilojoule.ConversionFactorB = 0.001
+- Kilojoule.Symbol = kJ
+- Kilojoule IsUnitForQuantity EnergyQuantity
+- Unit:Megajoule
+- Megajoule.ConversionFactorA = 0
+- Megajoule.ConversionFactorB = 1E-06
+- Megajoule.Symbol = mJ
+- Megajoule IsUnitForQuantity EnergyQuantity
+- Unit:Gigajoule
+- Gigajoule.ConversionFactorA = 0
+- Gigajoule.ConversionFactorB = 1E-09
+- Gigajoule.Symbol = gJ
+- Gigajoule IsUnitForQuantity EnergyQuantity
+- Unit:Calorie
+- Calorie.ConversionFactorA = 0
+- Calorie.ConversionFactorB = 0.2390057361376673
+- Calorie.Symbol = cal
+- Calorie IsUnitForQuantity EnergyQuantity
+- Unit:Kilocalorie
+- Kilocalorie.ConversionFactorA = 0
+- Kilocalorie.ConversionFactorB = 0.0002390057361376673
+- Kilocalorie.Symbol = cal
+- Kilocalorie IsUnitForQuantity EnergyQuantity
+- Unit:BritishThermalUnit
+- BritishThermalUnit.ConversionFactorA = 0
+- BritishThermalUnit.ConversionFactorB = 0.0009484516526770049
+- BritishThermalUnit.Symbol = bTU
+- BritishThermalUnit IsUnitForQuantity EnergyQuantity
+- Unit:KiloBritishThermalUnit
+- KiloBritishThermalUnit.ConversionFactorA = 0
+- KiloBritishThermalUnit.ConversionFactorB = 9.484516526770048E-07
+- KiloBritishThermalUnit.Symbol = kBTU
+- KiloBritishThermalUnit IsUnitForQuantity EnergyQuantity
+- Unit:MegaBritishThermalUnit
+- MegaBritishThermalUnit.ConversionFactorA = 0
+- MegaBritishThermalUnit.ConversionFactorB = 9.48451652677005E-10
+- MegaBritishThermalUnit.Symbol = mMBTU
+- MegaBritishThermalUnit IsUnitForQuantity EnergyQuantity
+- Quantity:DiameterSmallQuantity
+- DiameterSmallQuantity.L = 1
+- DiameterSmallQuantity.M = 0
+- DiameterSmallQuantity.T = 0
+- DiameterSmallQuantity.I = 0
+- DiameterSmallQuantity.ThT = 0
+- DiameterSmallQuantity.N = 0
+- DiameterSmallQuantity.J = 0
+- DiameterSmallQuantity.Theta = 0
+- DiameterSmallQuantity.Omega = 0
+- Unit:Centimetre
+- Centimetre.ConversionFactorA = 0
+- Centimetre.ConversionFactorB = 100
+- Centimetre.Symbol = cm
+- Centimetre IsUnitForQuantity DiameterSmallQuantity
+- Unit:Decimetre
+- Decimetre.ConversionFactorA = 0
+- Decimetre.ConversionFactorB = 10
+- Decimetre.Symbol = dm
+- Decimetre IsUnitForQuantity DiameterSmallQuantity
+- Unit:Foot
+- Foot.ConversionFactorA = 0
+- Foot.ConversionFactorB = 3.280839895013124
+- Foot.Symbol = ft
+- Foot IsUnitForQuantity DiameterSmallQuantity
+- Unit:Inch
+- Inch.ConversionFactorA = 0
+- Inch.ConversionFactorB = 39.37007874015748
+- Inch.Symbol = in
+- Inch IsUnitForQuantity DiameterSmallQuantity
+- Unit:Metre
+- Metre.ConversionFactorA = 0
+- Metre.ConversionFactorB = 1
+- Metre.Symbol = m
+- Metre IsUnitForQuantity DiameterSmallQuantity
+- DiameterSmallQuantity HasSIUnit Metre
+- Unit:Micrometre
+- Micrometre.ConversionFactorA = 0
+- Micrometre.ConversionFactorB = 1000000
+- Micrometre.Symbol = mum
+- Micrometre IsUnitForQuantity DiameterSmallQuantity
+- Unit:Millimetre
+- Millimetre.ConversionFactorA = 0
+- Millimetre.ConversionFactorB = 1000
+- Millimetre.Symbol = mm
+- Millimetre IsUnitForQuantity DiameterSmallQuantity
+- Unit:Nanometre
+- Nanometre.ConversionFactorA = 0
+- Nanometre.ConversionFactorB = 999999999.9999999
+- Nanometre.Symbol = nm
+- Nanometre IsUnitForQuantity DiameterSmallQuantity
+- Unit:Picometre
+- Picometre.ConversionFactorA = 0
+- Picometre.ConversionFactorB = 1000000000000
+- Picometre.Symbol = pm
+- Picometre IsUnitForQuantity DiameterSmallQuantity
+- Unit:Aangstroem
+- Aangstroem.ConversionFactorA = 0
+- Aangstroem.ConversionFactorB = 10000000000
+- Aangstroem.Symbol = aa
+- Aangstroem IsUnitForQuantity DiameterSmallQuantity
+- Unit:InchPer32
+- InchPer32.ConversionFactorA = 0
+- InchPer32.ConversionFactorB = 1259.8425196850394
+- InchPer32.Symbol = inPer32
+- InchPer32 IsUnitForQuantity DiameterSmallQuantity
+- Quantity:DimensionLessStandardQuantity
+- DimensionLessStandardQuantity.L = 0
+- DimensionLessStandardQuantity.M = 0
+- DimensionLessStandardQuantity.T = 0
+- DimensionLessStandardQuantity.I = 0
+- DimensionLessStandardQuantity.ThT = 0
+- DimensionLessStandardQuantity.N = 0
+- DimensionLessStandardQuantity.J = 0
+- DimensionLessStandardQuantity.Theta = 0
+- DimensionLessStandardQuantity.Omega = 0
+- Unit:Dimensionless
+- Dimensionless.ConversionFactorA = 0
+- Dimensionless.ConversionFactorB = 1
+- Dimensionless IsUnitForQuantity DimensionLessStandardQuantity
+- DimensionLessStandardQuantity HasSIUnit Dimensionless
+- Quantity:EarthMagneticFluxDensityQuantity
+- EarthMagneticFluxDensityQuantity.L = 0
+- EarthMagneticFluxDensityQuantity.M = 1
+- EarthMagneticFluxDensityQuantity.T = -2
+- EarthMagneticFluxDensityQuantity.I = -1
+- EarthMagneticFluxDensityQuantity.ThT = 0
+- EarthMagneticFluxDensityQuantity.N = 0
+- EarthMagneticFluxDensityQuantity.J = 0
+- EarthMagneticFluxDensityQuantity.Theta = 0
+- EarthMagneticFluxDensityQuantity.Omega = 0
+- Unit:Tesla
+- Tesla.ConversionFactorA = 0
+- Tesla.ConversionFactorB = 1
+- Tesla.Symbol = t
+- Tesla IsUnitForQuantity EarthMagneticFluxDensityQuantity
+- EarthMagneticFluxDensityQuantity HasSIUnit Tesla
+- Unit:Gauss
+- Gauss.ConversionFactorA = 0
+- Gauss.ConversionFactorB = 10000
+- Gauss.Symbol = g
+- Gauss IsUnitForQuantity EarthMagneticFluxDensityQuantity
+- Unit:Milligauss
+- Milligauss.ConversionFactorA = 0
+- Milligauss.ConversionFactorB = 10000000
+- Milligauss.Symbol = mG
+- Milligauss IsUnitForQuantity EarthMagneticFluxDensityQuantity
+- Unit:Microtesla
+- Microtesla.ConversionFactorA = 0
+- Microtesla.ConversionFactorB = 1000000
+- Microtesla.Symbol = muT
+- Microtesla IsUnitForQuantity EarthMagneticFluxDensityQuantity
+- Unit:Nanotesla
+- Nanotesla.ConversionFactorA = 0
+- Nanotesla.ConversionFactorB = 999999999.9999999
+- Nanotesla.Symbol = nT
+- Nanotesla IsUnitForQuantity EarthMagneticFluxDensityQuantity
+- Quantity:ElasticModulusQuantity
+- ElasticModulusQuantity.L = -1
+- ElasticModulusQuantity.M = 1
+- ElasticModulusQuantity.T = -2
+- ElasticModulusQuantity.I = 0
+- ElasticModulusQuantity.ThT = 0
+- ElasticModulusQuantity.N = 0
+- ElasticModulusQuantity.J = 0
+- ElasticModulusQuantity.Theta = 0
+- ElasticModulusQuantity.Omega = 0
+- Unit:Pascal
+- Pascal.ConversionFactorA = 0
+- Pascal.ConversionFactorB = 1
+- Pascal.Symbol = pa
+- Pascal IsUnitForQuantity ElasticModulusQuantity
+- ElasticModulusQuantity HasSIUnit Pascal
+- Unit:Megapascal
+- Megapascal.ConversionFactorA = 0
+- Megapascal.ConversionFactorB = 1E-06
+- Megapascal.Symbol = mPa
+- Megapascal IsUnitForQuantity ElasticModulusQuantity
+- Unit:Gigapascal
+- Gigapascal.ConversionFactorA = 0
+- Gigapascal.ConversionFactorB = 1E-09
+- Gigapascal.Symbol = gPa
+- Gigapascal IsUnitForQuantity ElasticModulusQuantity
+- Unit:PoundPerSquareInch
+- PoundPerSquareInch.ConversionFactorA = 0
+- PoundPerSquareInch.ConversionFactorB = 0.00014503773773020924
+- PoundPerSquareInch.Symbol = psi
+- PoundPerSquareInch IsUnitForQuantity ElasticModulusQuantity
+- Unit:MegapoundPerSquareInch
+- MegapoundPerSquareInch.ConversionFactorA = 0
+- MegapoundPerSquareInch.ConversionFactorB = 1.4503773773020922E-10
+- MegapoundPerSquareInch.Symbol = mpsi
+- MegapoundPerSquareInch IsUnitForQuantity ElasticModulusQuantity
+- Quantity:LengthSmallQuantity
+- LengthSmallQuantity.L = 1
+- LengthSmallQuantity.M = 0
+- LengthSmallQuantity.T = 0
+- LengthSmallQuantity.I = 0
+- LengthSmallQuantity.ThT = 0
+- LengthSmallQuantity.N = 0
+- LengthSmallQuantity.J = 0
+- LengthSmallQuantity.Theta = 0
+- LengthSmallQuantity.Omega = 0
+- Unit:Centimetre
+- Centimetre.ConversionFactorA = 0
+- Centimetre.ConversionFactorB = 100
+- Centimetre.Symbol = cm
+- Centimetre IsUnitForQuantity LengthSmallQuantity
+- Unit:Decimetre
+- Decimetre.ConversionFactorA = 0
+- Decimetre.ConversionFactorB = 10
+- Decimetre.Symbol = dm
+- Decimetre IsUnitForQuantity LengthSmallQuantity
+- Unit:Foot
+- Foot.ConversionFactorA = 0
+- Foot.ConversionFactorB = 3.280839895013124
+- Foot.Symbol = ft
+- Foot IsUnitForQuantity LengthSmallQuantity
+- Unit:Inch
+- Inch.ConversionFactorA = 0
+- Inch.ConversionFactorB = 39.37007874015748
+- Inch.Symbol = in
+- Inch IsUnitForQuantity LengthSmallQuantity
+- Unit:Metre
+- Metre.ConversionFactorA = 0
+- Metre.ConversionFactorB = 1
+- Metre.Symbol = m
+- Metre IsUnitForQuantity LengthSmallQuantity
+- LengthSmallQuantity HasSIUnit Metre
+- Unit:Micrometre
+- Micrometre.ConversionFactorA = 0
+- Micrometre.ConversionFactorB = 1000000
+- Micrometre.Symbol = mum
+- Micrometre IsUnitForQuantity LengthSmallQuantity
+- Unit:Millimetre
+- Millimetre.ConversionFactorA = 0
+- Millimetre.ConversionFactorB = 1000
+- Millimetre.Symbol = mm
+- Millimetre IsUnitForQuantity LengthSmallQuantity
+- Unit:Nanometre
+- Nanometre.ConversionFactorA = 0
+- Nanometre.ConversionFactorB = 999999999.9999999
+- Nanometre.Symbol = nm
+- Nanometre IsUnitForQuantity LengthSmallQuantity
+- Unit:Picometre
+- Picometre.ConversionFactorA = 0
+- Picometre.ConversionFactorB = 1000000000000
+- Picometre.Symbol = pm
+- Picometre IsUnitForQuantity LengthSmallQuantity
+- Unit:Aangstroem
+- Aangstroem.ConversionFactorA = 0
+- Aangstroem.ConversionFactorB = 10000000000
+- Aangstroem.Symbol = aa
+- Aangstroem IsUnitForQuantity LengthSmallQuantity
+- Unit:InchPer32
+- InchPer32.ConversionFactorA = 0
+- InchPer32.ConversionFactorB = 1259.8425196850394
+- InchPer32.Symbol = inPer32
+- InchPer32 IsUnitForQuantity LengthSmallQuantity
+- Quantity:RotationalFrequencyQuantity
+- RotationalFrequencyQuantity.L = 0
+- RotationalFrequencyQuantity.M = 0
+- RotationalFrequencyQuantity.T = -1
+- RotationalFrequencyQuantity.I = 0
+- RotationalFrequencyQuantity.ThT = 0
+- RotationalFrequencyQuantity.N = 0
+- RotationalFrequencyQuantity.J = 0
+- RotationalFrequencyQuantity.Theta = 0
+- RotationalFrequencyQuantity.Omega = 0
+- Unit:Hertz
+- Hertz.ConversionFactorA = 0
+- Hertz.ConversionFactorB = 1
+- Hertz.Symbol = hz
+- Hertz IsUnitForQuantity RotationalFrequencyQuantity
+- RotationalFrequencyQuantity HasSIUnit Hertz
+- Unit:Rpm
+- Rpm.ConversionFactorA = 0
+- Rpm.ConversionFactorB = 60
+- Rpm.Symbol = rpm
+- Rpm IsUnitForQuantity RotationalFrequencyQuantity
+- Quantity:GravitationalLoadQuantity
+- GravitationalLoadQuantity.L = 0
+- GravitationalLoadQuantity.M = 1
+- GravitationalLoadQuantity.T = 0
+- GravitationalLoadQuantity.I = 0
+- GravitationalLoadQuantity.ThT = 0
+- GravitationalLoadQuantity.N = 0
+- GravitationalLoadQuantity.J = 0
+- GravitationalLoadQuantity.Theta = 0
+- GravitationalLoadQuantity.Omega = 0
+- Unit:Kilogram
+- Kilogram.ConversionFactorA = 0
+- Kilogram.ConversionFactorB = 1
+- Kilogram.Symbol = kg
+- Kilogram IsUnitForQuantity GravitationalLoadQuantity
+- GravitationalLoadQuantity HasSIUnit Kilogram
+- Unit:TonneMetric
+- TonneMetric.ConversionFactorA = 0
+- TonneMetric.ConversionFactorB = 0.001
+- TonneMetric.Symbol = t
+- TonneMetric IsUnitForQuantity GravitationalLoadQuantity
+- Unit:Pound
+- Pound.ConversionFactorA = 0
+- Pound.ConversionFactorB = 2.2046226218487757
+- Pound.Symbol = lb
+- Pound IsUnitForQuantity GravitationalLoadQuantity
+- Unit:Kilopound
+- Kilopound.ConversionFactorA = 0
+- Kilopound.ConversionFactorB = 0.002204622621848776
+- Kilopound.Symbol = klb
+- Kilopound IsUnitForQuantity GravitationalLoadQuantity
+- Unit:TonUk
+- TonUk.ConversionFactorA = 0
+- TonUk.ConversionFactorB = 0.0009842065276110606
+- TonUk.Symbol = lT
+- TonUk IsUnitForQuantity GravitationalLoadQuantity
+- Quantity:HydraulicConductivityQuantity
+- HydraulicConductivityQuantity.L = 1
+- HydraulicConductivityQuantity.M = 0
+- HydraulicConductivityQuantity.T = -1
+- HydraulicConductivityQuantity.I = 0
+- HydraulicConductivityQuantity.ThT = 0
+- HydraulicConductivityQuantity.N = 0
+- HydraulicConductivityQuantity.J = 0
+- HydraulicConductivityQuantity.Theta = 0
+- HydraulicConductivityQuantity.Omega = 0
+- Unit:MetrePerSecond
+- MetrePerSecond.ConversionFactorA = 0
+- MetrePerSecond.ConversionFactorB = 1
+- MetrePerSecond.Symbol = mPers
+- MetrePerSecond IsUnitForQuantity HydraulicConductivityQuantity
+- HydraulicConductivityQuantity HasSIUnit MetrePerSecond
+- Unit:MetrePerMinute
+- MetrePerMinute.ConversionFactorA = 0
+- MetrePerMinute.ConversionFactorB = 60
+- MetrePerMinute.Symbol = mPermin
+- MetrePerMinute IsUnitForQuantity HydraulicConductivityQuantity
+- Unit:MetrePerHour
+- MetrePerHour.ConversionFactorA = 0
+- MetrePerHour.ConversionFactorB = 3600
+- MetrePerHour.Symbol = mPerh
+- MetrePerHour IsUnitForQuantity HydraulicConductivityQuantity
+- Unit:MetrePerDay
+- MetrePerDay.ConversionFactorA = 0
+- MetrePerDay.ConversionFactorB = 86400
+- MetrePerDay.Symbol = mPerd
+- MetrePerDay IsUnitForQuantity HydraulicConductivityQuantity
+- Unit:FootPerSecond
+- FootPerSecond.ConversionFactorA = 0
+- FootPerSecond.ConversionFactorB = 3.280839895013124
+- FootPerSecond.Symbol = ftPers
+- FootPerSecond IsUnitForQuantity HydraulicConductivityQuantity
+- Unit:FootPerMinute
+- FootPerMinute.ConversionFactorA = 0
+- FootPerMinute.ConversionFactorB = 196.85039370078744
+- FootPerMinute.Symbol = ftPerm
+- FootPerMinute IsUnitForQuantity HydraulicConductivityQuantity
+- Unit:FootPerHour
+- FootPerHour.ConversionFactorA = 0
+- FootPerHour.ConversionFactorB = 11811.023622047245
+- FootPerHour.Symbol = ftPerh
+- FootPerHour IsUnitForQuantity HydraulicConductivityQuantity
+- Unit:FootPerDay
+- FootPerDay.ConversionFactorA = 0
+- FootPerDay.ConversionFactorB = 283464.5669291339
+- FootPerDay.Symbol = ftPerd
+- FootPerDay IsUnitForQuantity HydraulicConductivityQuantity
+- Unit:CentimetrePerSecond
+- CentimetrePerSecond.ConversionFactorA = 0
+- CentimetrePerSecond.ConversionFactorB = 100
+- CentimetrePerSecond.Symbol = cmPers
+- CentimetrePerSecond IsUnitForQuantity HydraulicConductivityQuantity
+- Unit:InchPerSecond
+- InchPerSecond.ConversionFactorA = 0
+- InchPerSecond.ConversionFactorB = 39.37007874015748
+- InchPerSecond.Symbol = inPers
+- InchPerSecond IsUnitForQuantity HydraulicConductivityQuantity
+- Quantity:VolumeLargeQuantity
+- VolumeLargeQuantity.L = 3
+- VolumeLargeQuantity.M = 0
+- VolumeLargeQuantity.T = 0
+- VolumeLargeQuantity.I = 0
+- VolumeLargeQuantity.ThT = 0
+- VolumeLargeQuantity.N = 0
+- VolumeLargeQuantity.J = 0
+- VolumeLargeQuantity.Theta = 0
+- VolumeLargeQuantity.Omega = 0
+- Unit:CubicMetre
+- CubicMetre.ConversionFactorA = 0
+- CubicMetre.ConversionFactorB = 1
+- CubicMetre.Symbol = mcubic
+- CubicMetre IsUnitForQuantity VolumeLargeQuantity
+- VolumeLargeQuantity HasSIUnit CubicMetre
+- Unit:Litre
+- Litre.ConversionFactorA = 0
+- Litre.ConversionFactorB = 1000
+- Litre.Symbol = l
+- Litre IsUnitForQuantity VolumeLargeQuantity
+- Unit:UsGallon
+- UsGallon.ConversionFactorA = 0
+- UsGallon.ConversionFactorB = 264.17205235814845
+- UsGallon.Symbol = uSGal.
+- UsGallon IsUnitForQuantity VolumeLargeQuantity
+- Unit:UkGallon
+- UkGallon.ConversionFactorA = 0
+- UkGallon.ConversionFactorB = 219.96924829908778
+- UkGallon.Symbol = uKGal.
+- UkGallon IsUnitForQuantity VolumeLargeQuantity
+- Unit:Barrel
+- Barrel.ConversionFactorA = 0
+- Barrel.ConversionFactorB = 6.289810770432106
+- Barrel.Symbol = bbl
+- Barrel IsUnitForQuantity VolumeLargeQuantity
+- Unit:MillionCubicMetre
+- MillionCubicMetre.ConversionFactorA = 0
+- MillionCubicMetre.ConversionFactorB = 1E-06
+- MillionCubicMetre.Symbol = mmcubic
+- MillionCubicMetre IsUnitForQuantity VolumeLargeQuantity
+- Unit:MillionLitre
+- MillionLitre.ConversionFactorA = 0
+- MillionLitre.ConversionFactorB = 0.001
+- MillionLitre.Symbol = ml
+- MillionLitre IsUnitForQuantity VolumeLargeQuantity
+- Unit:MillionUkGallon
+- MillionUkGallon.ConversionFactorA = 0
+- MillionUkGallon.ConversionFactorB = 0.0002199692482990878
+- MillionUkGallon.Symbol = mUKGal.
+- MillionUkGallon IsUnitForQuantity VolumeLargeQuantity
+- Unit:MillionBarrel
+- MillionBarrel.ConversionFactorA = 0
+- MillionBarrel.ConversionFactorB = 6.289810770432106E-06
+- MillionBarrel.Symbol = mbbl
+- MillionBarrel IsUnitForQuantity VolumeLargeQuantity
+- Unit:MillionStandardCubicFoot
+- MillionStandardCubicFoot.ConversionFactorA = 0
+- MillionStandardCubicFoot.ConversionFactorB = 3.531466672148861E-05
+- MillionStandardCubicFoot.Symbol = mMscf
+- MillionStandardCubicFoot IsUnitForQuantity VolumeLargeQuantity
+- Unit:ThousandStandardCubicFoot
+- ThousandStandardCubicFoot.ConversionFactorA = 0
+- ThousandStandardCubicFoot.ConversionFactorB = 0.0353146667214886
+- ThousandStandardCubicFoot.Symbol = mscf
+- ThousandStandardCubicFoot IsUnitForQuantity VolumeLargeQuantity
+- Quantity:RotationalFrequencyRateOfChangeQuantity
+- RotationalFrequencyRateOfChangeQuantity.L = 0
+- RotationalFrequencyRateOfChangeQuantity.M = 0
+- RotationalFrequencyRateOfChangeQuantity.T = -2
+- RotationalFrequencyRateOfChangeQuantity.I = 0
+- RotationalFrequencyRateOfChangeQuantity.ThT = 0
+- RotationalFrequencyRateOfChangeQuantity.N = 0
+- RotationalFrequencyRateOfChangeQuantity.J = 0
+- RotationalFrequencyRateOfChangeQuantity.Theta = 0
+- RotationalFrequencyRateOfChangeQuantity.Omega = 0
+- Unit:HertzPerSecond
+- HertzPerSecond.ConversionFactorA = 0
+- HertzPerSecond.ConversionFactorB = 1
+- HertzPerSecond.Symbol = hzPers
+- HertzPerSecond IsUnitForQuantity RotationalFrequencyRateOfChangeQuantity
+- RotationalFrequencyRateOfChangeQuantity HasSIUnit HertzPerSecond
+- Unit:RpmPerSecond
+- RpmPerSecond.ConversionFactorA = 0
+- RpmPerSecond.ConversionFactorB = 1
+- RpmPerSecond.Symbol = rpmPers
+- RpmPerSecond IsUnitForQuantity RotationalFrequencyRateOfChangeQuantity
+- Quantity:TensionQuantity
+- TensionQuantity.L = 1
+- TensionQuantity.M = 1
+- TensionQuantity.T = -2
+- TensionQuantity.I = 0
+- TensionQuantity.ThT = 0
+- TensionQuantity.N = 0
+- TensionQuantity.J = 0
+- TensionQuantity.Theta = 0
+- TensionQuantity.Omega = 0
+- Unit:Newton
+- Newton.ConversionFactorA = 0
+- Newton.ConversionFactorB = 1
+- Newton.Symbol = n
+- Newton IsUnitForQuantity TensionQuantity
+- TensionQuantity HasSIUnit Newton
+- Unit:Decanewton
+- Decanewton.ConversionFactorA = 0
+- Decanewton.ConversionFactorB = 0.1
+- Decanewton.Symbol = daN
+- Decanewton IsUnitForQuantity TensionQuantity
+- Unit:Kilonewton
+- Kilonewton.ConversionFactorA = 0
+- Kilonewton.ConversionFactorB = 0.001
+- Kilonewton.Symbol = kN
+- Kilonewton IsUnitForQuantity TensionQuantity
+- Unit:Kilodecanewton
+- Kilodecanewton.ConversionFactorA = 0
+- Kilodecanewton.ConversionFactorB = 0.0001
+- Kilodecanewton.Symbol = kdaN
+- Kilodecanewton IsUnitForQuantity TensionQuantity
+- Unit:KilogramForce
+- KilogramForce.ConversionFactorA = 0
+- KilogramForce.ConversionFactorB = 0.10197162129779283
+- KilogramForce.Symbol = kgf
+- KilogramForce IsUnitForQuantity TensionQuantity
+- Unit:PoundForce
+- PoundForce.ConversionFactorA = 0
+- PoundForce.ConversionFactorB = 0.2248089430997105
+- PoundForce.Symbol = lbf
+- PoundForce IsUnitForQuantity TensionQuantity
+- Unit:KilopoundForce
+- KilopoundForce.ConversionFactorA = 0
+- KilopoundForce.ConversionFactorB = 0.0002248089430997105
+- KilopoundForce.Symbol = klbf
+- KilopoundForce IsUnitForQuantity TensionQuantity
+- Quantity:ProportionStandardQuantity
+- ProportionStandardQuantity.L = 0
+- ProportionStandardQuantity.M = 0
+- ProportionStandardQuantity.T = 0
+- ProportionStandardQuantity.I = 0
+- ProportionStandardQuantity.ThT = 0
+- ProportionStandardQuantity.N = 0
+- ProportionStandardQuantity.J = 0
+- ProportionStandardQuantity.Theta = 0
+- ProportionStandardQuantity.Omega = 0
+- Unit:Proportion
+- Proportion.ConversionFactorA = 0
+- Proportion.ConversionFactorB = 1
+- Proportion IsUnitForQuantity ProportionStandardQuantity
+- ProportionStandardQuantity HasSIUnit Proportion
+- Unit:Percent
+- Percent.ConversionFactorA = 0
+- Percent.ConversionFactorB = 100
+- Percent.Symbol = %
+- Percent IsUnitForQuantity ProportionStandardQuantity
+- Unit:PerThousand
+- PerThousand.ConversionFactorA = 0
+- PerThousand.ConversionFactorB = 1000
+- PerThousand.Symbol = perThousands
+- PerThousand IsUnitForQuantity ProportionStandardQuantity
+- Unit:PartPerMillion
+- PartPerMillion.ConversionFactorA = 0
+- PartPerMillion.ConversionFactorB = 1000000
+- PartPerMillion.Symbol = ppm
+- PartPerMillion IsUnitForQuantity ProportionStandardQuantity
+- Quantity:LengthStandardQuantity
+- LengthStandardQuantity.L = 1
+- LengthStandardQuantity.M = 0
+- LengthStandardQuantity.T = 0
+- LengthStandardQuantity.I = 0
+- LengthStandardQuantity.ThT = 0
+- LengthStandardQuantity.N = 0
+- LengthStandardQuantity.J = 0
+- LengthStandardQuantity.Theta = 0
+- LengthStandardQuantity.Omega = 0
+- Unit:Centimetre
+- Centimetre.ConversionFactorA = 0
+- Centimetre.ConversionFactorB = 100
+- Centimetre.Symbol = cm
+- Centimetre IsUnitForQuantity LengthStandardQuantity
+- Unit:Decimetre
+- Decimetre.ConversionFactorA = 0
+- Decimetre.ConversionFactorB = 10
+- Decimetre.Symbol = dm
+- Decimetre IsUnitForQuantity LengthStandardQuantity
+- Unit:Foot
+- Foot.ConversionFactorA = 0
+- Foot.ConversionFactorB = 3.280839895013124
+- Foot.Symbol = ft
+- Foot IsUnitForQuantity LengthStandardQuantity
+- Unit:Inch
+- Inch.ConversionFactorA = 0
+- Inch.ConversionFactorB = 39.37007874015748
+- Inch.Symbol = in
+- Inch IsUnitForQuantity LengthStandardQuantity
+- Unit:Metre
+- Metre.ConversionFactorA = 0
+- Metre.ConversionFactorB = 1
+- Metre.Symbol = m
+- Metre IsUnitForQuantity LengthStandardQuantity
+- LengthStandardQuantity HasSIUnit Metre
+- Unit:Micrometre
+- Micrometre.ConversionFactorA = 0
+- Micrometre.ConversionFactorB = 1000000
+- Micrometre.Symbol = mum
+- Micrometre IsUnitForQuantity LengthStandardQuantity
+- Unit:Millimetre
+- Millimetre.ConversionFactorA = 0
+- Millimetre.ConversionFactorB = 1000
+- Millimetre.Symbol = mm
+- Millimetre IsUnitForQuantity LengthStandardQuantity
+- Quantity:FluidShearRateQuantity
+- FluidShearRateQuantity.L = 0
+- FluidShearRateQuantity.M = 0
+- FluidShearRateQuantity.T = -1
+- FluidShearRateQuantity.I = 0
+- FluidShearRateQuantity.ThT = 0
+- FluidShearRateQuantity.N = 0
+- FluidShearRateQuantity.J = 0
+- FluidShearRateQuantity.Theta = 0
+- FluidShearRateQuantity.Omega = 0
+- Unit:Hertz
+- Hertz.ConversionFactorA = 0
+- Hertz.ConversionFactorB = 1
+- Hertz.Symbol = hz
+- Hertz IsUnitForQuantity FluidShearRateQuantity
+- FluidShearRateQuantity HasSIUnit Hertz
+- Unit:ReciprocalSecond
+- ReciprocalSecond.ConversionFactorA = 0
+- ReciprocalSecond.ConversionFactorB = 1
+- ReciprocalSecond.Symbol = 1Pers
+- ReciprocalSecond IsUnitForQuantity FluidShearRateQuantity
+- Quantity:FluidShearStressQuantity
+- FluidShearStressQuantity.L = -1
+- FluidShearStressQuantity.M = 1
+- FluidShearStressQuantity.T = -2
+- FluidShearStressQuantity.I = 0
+- FluidShearStressQuantity.ThT = 0
+- FluidShearStressQuantity.N = 0
+- FluidShearStressQuantity.J = 0
+- FluidShearStressQuantity.Theta = 0
+- FluidShearStressQuantity.Omega = 0
+- Unit:Pascal
+- Pascal.ConversionFactorA = 0
+- Pascal.ConversionFactorB = 1
+- Pascal.Symbol = pa
+- Pascal IsUnitForQuantity FluidShearStressQuantity
+- FluidShearStressQuantity HasSIUnit Pascal
+- Unit:Kilopascal
+- Kilopascal.ConversionFactorA = 0
+- Kilopascal.ConversionFactorB = 0.001
+- Kilopascal.Symbol = kPa
+- Kilopascal IsUnitForQuantity FluidShearStressQuantity
+- Unit:Bar
+- Bar.ConversionFactorA = 0
+- Bar.ConversionFactorB = 1E-05
+- Bar.Symbol = bar
+- Bar IsUnitForQuantity FluidShearStressQuantity
+- Unit:PoundPerSquareInch
+- PoundPerSquareInch.ConversionFactorA = 0
+- PoundPerSquareInch.ConversionFactorB = 0.00014503773773020924
+- PoundPerSquareInch.Symbol = psi
+- PoundPerSquareInch IsUnitForQuantity FluidShearStressQuantity
+- Unit:PoundPerSquareFoot
+- PoundPerSquareFoot.ConversionFactorA = 0
+- PoundPerSquareFoot.ConversionFactorB = 0.020885434233150126
+- PoundPerSquareFoot.Symbol = lbPerftsquare
+- PoundPerSquareFoot IsUnitForQuantity FluidShearStressQuantity
+- Unit:PoundPer100SquareFoot
+- PoundPer100SquareFoot.ConversionFactorA = 0
+- PoundPer100SquareFoot.ConversionFactorB = 2.0885434233150124
+- PoundPer100SquareFoot.Symbol = lbfPer100ftsquare
+- PoundPer100SquareFoot IsUnitForQuantity FluidShearStressQuantity
+- Unit:DynePerSquareCentimetre
+- DynePerSquareCentimetre.ConversionFactorA = 0
+- DynePerSquareCentimetre.ConversionFactorB = 10
+- DynePerSquareCentimetre.Symbol = dynePercmsquare
+- DynePerSquareCentimetre IsUnitForQuantity FluidShearStressQuantity
+- Quantity:TorqueSmallQuantity
+- TorqueSmallQuantity.L = 2
+- TorqueSmallQuantity.M = 1
+- TorqueSmallQuantity.T = -2
+- TorqueSmallQuantity.I = 0
+- TorqueSmallQuantity.ThT = 0
+- TorqueSmallQuantity.N = 0
+- TorqueSmallQuantity.J = 0
+- TorqueSmallQuantity.Theta = 0
+- TorqueSmallQuantity.Omega = 0
+- Unit:NewtonMetre
+- NewtonMetre.ConversionFactorA = 0
+- NewtonMetre.ConversionFactorB = 1
+- NewtonMetre.Symbol = n.m
+- NewtonMetre IsUnitForQuantity TorqueSmallQuantity
+- TorqueSmallQuantity HasSIUnit NewtonMetre
+- Unit:FootPound
+- FootPound.ConversionFactorA = 0
+- FootPound.ConversionFactorB = 0.7375621492772655
+- FootPound.Symbol = ft.lbf
+- FootPound IsUnitForQuantity TorqueSmallQuantity
+- Unit:NewtonDecimetre
+- NewtonDecimetre.ConversionFactorA = 0
+- NewtonDecimetre.ConversionFactorB = 10
+- NewtonDecimetre.Symbol = n.dm
+- NewtonDecimetre IsUnitForQuantity TorqueSmallQuantity
+- Unit:NewtonCentimetre
+- NewtonCentimetre.ConversionFactorA = 0
+- NewtonCentimetre.ConversionFactorB = 100
+- NewtonCentimetre.Symbol = n.cm
+- NewtonCentimetre IsUnitForQuantity TorqueSmallQuantity
+- Unit:NewtonMillimetre
+- NewtonMillimetre.ConversionFactorA = 0
+- NewtonMillimetre.ConversionFactorB = 1000
+- NewtonMillimetre.Symbol = n.mm
+- NewtonMillimetre IsUnitForQuantity TorqueSmallQuantity
+- Unit:InchPound
+- InchPound.ConversionFactorA = 0
+- InchPound.ConversionFactorB = 8.850745791327185
+- InchPound.Symbol = in.lbf
+- InchPound IsUnitForQuantity TorqueSmallQuantity
+- Quantity:RotationalFrequencySmallQuantity
+- RotationalFrequencySmallQuantity.L = 0
+- RotationalFrequencySmallQuantity.M = 0
+- RotationalFrequencySmallQuantity.T = -1
+- RotationalFrequencySmallQuantity.I = 0
+- RotationalFrequencySmallQuantity.ThT = 0
+- RotationalFrequencySmallQuantity.N = 0
+- RotationalFrequencySmallQuantity.J = 0
+- RotationalFrequencySmallQuantity.Theta = 0
+- RotationalFrequencySmallQuantity.Omega = 0
+- Unit:Hertz
+- Hertz.ConversionFactorA = 0
+- Hertz.ConversionFactorB = 1
+- Hertz.Symbol = hz
+- Hertz IsUnitForQuantity RotationalFrequencySmallQuantity
+- RotationalFrequencySmallQuantity HasSIUnit Hertz
+- Unit:Rpm
+- Rpm.ConversionFactorA = 0
+- Rpm.ConversionFactorB = 60
+- Rpm.Symbol = rpm
+- Rpm IsUnitForQuantity RotationalFrequencySmallQuantity
+- Quantity:ProportionSmallQuantity
+- ProportionSmallQuantity.L = 0
+- ProportionSmallQuantity.M = 0
+- ProportionSmallQuantity.T = 0
+- ProportionSmallQuantity.I = 0
+- ProportionSmallQuantity.ThT = 0
+- ProportionSmallQuantity.N = 0
+- ProportionSmallQuantity.J = 0
+- ProportionSmallQuantity.Theta = 0
+- ProportionSmallQuantity.Omega = 0
+- Unit:Proportion
+- Proportion.ConversionFactorA = 0
+- Proportion.ConversionFactorB = 1
+- Proportion IsUnitForQuantity ProportionSmallQuantity
+- ProportionSmallQuantity HasSIUnit Proportion
+- Unit:Percent
+- Percent.ConversionFactorA = 0
+- Percent.ConversionFactorB = 100
+- Percent.Symbol = %
+- Percent IsUnitForQuantity ProportionSmallQuantity
+- Unit:PerThousand
+- PerThousand.ConversionFactorA = 0
+- PerThousand.ConversionFactorB = 1000
+- PerThousand.Symbol = perThousands
+- PerThousand IsUnitForQuantity ProportionSmallQuantity
+- Unit:PartPerMillion
+- PartPerMillion.ConversionFactorA = 0
+- PartPerMillion.ConversionFactorB = 1000000
+- PartPerMillion.Symbol = ppm
+- PartPerMillion IsUnitForQuantity ProportionSmallQuantity
+- Quantity:PorosityQuantity
+- PorosityQuantity.L = 0
+- PorosityQuantity.M = 0
+- PorosityQuantity.T = 0
+- PorosityQuantity.I = 0
+- PorosityQuantity.ThT = 0
+- PorosityQuantity.N = 0
+- PorosityQuantity.J = 0
+- PorosityQuantity.Theta = 0
+- PorosityQuantity.Omega = 0
+- Unit:Proportion
+- Proportion.ConversionFactorA = 0
+- Proportion.ConversionFactorB = 1
+- Proportion IsUnitForQuantity PorosityQuantity
+- PorosityQuantity HasSIUnit Proportion
+- Unit:Percent
+- Percent.ConversionFactorA = 0
+- Percent.ConversionFactorB = 100
+- Percent.Symbol = %
+- Percent IsUnitForQuantity PorosityQuantity
+- Unit:PerThousand
+- PerThousand.ConversionFactorA = 0
+- PerThousand.ConversionFactorB = 1000
+- PerThousand.Symbol = perThousands
+- PerThousand IsUnitForQuantity PorosityQuantity
+- Quantity:StrokeFrequencyQuantity
+- StrokeFrequencyQuantity.L = 0
+- StrokeFrequencyQuantity.M = 0
+- StrokeFrequencyQuantity.T = -1
+- StrokeFrequencyQuantity.I = 0
+- StrokeFrequencyQuantity.ThT = 0
+- StrokeFrequencyQuantity.N = 0
+- StrokeFrequencyQuantity.J = 0
+- StrokeFrequencyQuantity.Theta = 0
+- StrokeFrequencyQuantity.Omega = 0
+- Unit:Hertz
+- Hertz.ConversionFactorA = 0
+- Hertz.ConversionFactorB = 1
+- Hertz.Symbol = hz
+- Hertz IsUnitForQuantity StrokeFrequencyQuantity
+- StrokeFrequencyQuantity HasSIUnit Hertz
+- Unit:Spm
+- Spm.ConversionFactorA = 0
+- Spm.ConversionFactorB = 60
+- Spm.Symbol = spm
+- Spm IsUnitForQuantity StrokeFrequencyQuantity
+- Quantity:ShockRateQuantity
+- ShockRateQuantity.L = 0
+- ShockRateQuantity.M = 0
+- ShockRateQuantity.T = -1
+- ShockRateQuantity.I = 0
+- ShockRateQuantity.ThT = 0
+- ShockRateQuantity.N = 0
+- ShockRateQuantity.J = 0
+- ShockRateQuantity.Theta = 0
+- ShockRateQuantity.Omega = 0
+- Unit:Hertz
+- Hertz.ConversionFactorA = 0
+- Hertz.ConversionFactorB = 1
+- Hertz.Symbol = hz
+- Hertz IsUnitForQuantity ShockRateQuantity
+- ShockRateQuantity HasSIUnit Hertz
+- Unit:ShockPerMinute
+- ShockPerMinute.ConversionFactorA = 0
+- ShockPerMinute.ConversionFactorB = 60
+- ShockPerMinute.Symbol = spm
+- ShockPerMinute IsUnitForQuantity ShockRateQuantity
+- Unit:ShockPerHour
+- ShockPerHour.ConversionFactorA = 0
+- ShockPerHour.ConversionFactorB = 3600
+- ShockPerHour.Symbol = spm
+- ShockPerHour IsUnitForQuantity ShockRateQuantity
+- Quantity:AccelerationDrillingQuantity
+- AccelerationDrillingQuantity.L = 1
+- AccelerationDrillingQuantity.M = 0
+- AccelerationDrillingQuantity.T = -2
+- AccelerationDrillingQuantity.I = 0
+- AccelerationDrillingQuantity.ThT = 0
+- AccelerationDrillingQuantity.N = 0
+- AccelerationDrillingQuantity.J = 0
+- AccelerationDrillingQuantity.Theta = 0
+- AccelerationDrillingQuantity.Omega = 0
+- Unit:MetrePerSecondSquared
+- MetrePerSecondSquared.ConversionFactorA = 0
+- MetrePerSecondSquared.ConversionFactorB = 1
+- MetrePerSecondSquared.Symbol = mPerssquare
+- MetrePerSecondSquared IsUnitForQuantity AccelerationDrillingQuantity
+- AccelerationDrillingQuantity HasSIUnit MetrePerSecondSquared
+- Unit:FootPerSecondSquared
+- FootPerSecondSquared.ConversionFactorA = 0
+- FootPerSecondSquared.ConversionFactorB = 3.280839895013124
+- FootPerSecondSquared.Symbol = ftPerssquare
+- FootPerSecondSquared IsUnitForQuantity AccelerationDrillingQuantity
+- Quantity:AngleGradientPerLengthDrillingQuantity
+- AngleGradientPerLengthDrillingQuantity.L = -1
+- AngleGradientPerLengthDrillingQuantity.M = 0
+- AngleGradientPerLengthDrillingQuantity.T = 0
+- AngleGradientPerLengthDrillingQuantity.I = 0
+- AngleGradientPerLengthDrillingQuantity.ThT = 0
+- AngleGradientPerLengthDrillingQuantity.N = 0
+- AngleGradientPerLengthDrillingQuantity.J = 0
+- AngleGradientPerLengthDrillingQuantity.Theta = 1
+- AngleGradientPerLengthDrillingQuantity.Omega = 0
+- Unit:RadianPerMetre
+- RadianPerMetre.ConversionFactorA = 0
+- RadianPerMetre.ConversionFactorB = 1
+- RadianPerMetre.Symbol = radPerm
+- RadianPerMetre IsUnitForQuantity AngleGradientPerLengthDrillingQuantity
+- AngleGradientPerLengthDrillingQuantity HasSIUnit RadianPerMetre
+- Unit:DegreePerMetre
+- DegreePerMetre.ConversionFactorA = 0
+- DegreePerMetre.ConversionFactorB = 57.29577951308232
+- DegreePerMetre.Symbol = degPerm
+- DegreePerMetre IsUnitForQuantity AngleGradientPerLengthDrillingQuantity
+- Unit:DegreePerFoot
+- DegreePerFoot.ConversionFactorA = 0
+- DegreePerFoot.ConversionFactorB = 17.46375359558749
+- DegreePerFoot.Symbol = degPerft
+- DegreePerFoot IsUnitForQuantity AngleGradientPerLengthDrillingQuantity
+- Unit:DegreePerCentimetre
+- DegreePerCentimetre.ConversionFactorA = 0
+- DegreePerCentimetre.ConversionFactorB = 0.5729577951308232
+- DegreePerCentimetre.Symbol = degPercm
+- DegreePerCentimetre IsUnitForQuantity AngleGradientPerLengthDrillingQuantity
+- Unit:DegreePerInch
+- DegreePerInch.ConversionFactorA = 0
+- DegreePerInch.ConversionFactorB = 1.455312799632291
+- DegreePerInch.Symbol = degPerin
+- DegreePerInch IsUnitForQuantity AngleGradientPerLengthDrillingQuantity
+- Quantity:AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity
+- AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity.L = 0
+- AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity.M = 1
+- AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity.T = -2
+- AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity.I = -1
+- AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity.ThT = 0
+- AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity.N = 0
+- AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity.J = 0
+- AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity.Theta = 1
+- AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity.Omega = 0
+- Unit:RadianTesla
+- RadianTesla.ConversionFactorA = 0
+- RadianTesla.ConversionFactorB = 1
+- RadianTesla.Symbol = rad.T
+- RadianTesla IsUnitForQuantity AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity
+- AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity HasSIUnit RadianTesla
+- Unit:DegreeGauss
+- DegreeGauss.ConversionFactorA = 0
+- DegreeGauss.ConversionFactorB = 572957.7951308232
+- DegreeGauss.Symbol = deg.G
+- DegreeGauss IsUnitForQuantity AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity
+- Unit:DegreeMaxwellPerSquareCentimetre
+- DegreeMaxwellPerSquareCentimetre.ConversionFactorA = 0
+- DegreeMaxwellPerSquareCentimetre.ConversionFactorB = 572957.7951308232
+- DegreeMaxwellPerSquareCentimetre.Symbol = deg.MxPercmsquare
+- DegreeMaxwellPerSquareCentimetre IsUnitForQuantity AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity
+- Unit:DegreeMicrotesla
+- DegreeMicrotesla.ConversionFactorA = 0
+- DegreeMicrotesla.ConversionFactorB = 57295779.513082325
+- DegreeMicrotesla.Symbol = deg.muT
+- DegreeMicrotesla IsUnitForQuantity AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity
+- Unit:DegreeMilligauss
+- DegreeMilligauss.ConversionFactorA = 0
+- DegreeMilligauss.ConversionFactorB = 572957795.1308231
+- DegreeMilligauss.Symbol = deg.mG
+- DegreeMilligauss IsUnitForQuantity AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity
+- Unit:DegreeMillitesla
+- DegreeMillitesla.ConversionFactorA = 0
+- DegreeMillitesla.ConversionFactorB = 57295.77951308232
+- DegreeMillitesla.Symbol = deg.mT
+- DegreeMillitesla IsUnitForQuantity AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity
+- Unit:DegreeNanotesla
+- DegreeNanotesla.ConversionFactorA = 0
+- DegreeNanotesla.ConversionFactorB = 57295779513.08232
+- DegreeNanotesla.Symbol = deg.nT
+- DegreeNanotesla IsUnitForQuantity AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity
+- Unit:DegreeTesla
+- DegreeTesla.ConversionFactorA = 0
+- DegreeTesla.ConversionFactorB = 57.29577951308232
+- DegreeTesla.Symbol = deg.T
+- DegreeTesla IsUnitForQuantity AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity
+- Unit:DegreeWeberPerSquareMetre
+- DegreeWeberPerSquareMetre.ConversionFactorA = 0
+- DegreeWeberPerSquareMetre.ConversionFactorB = 57.29577951308232
+- DegreeWeberPerSquareMetre.Symbol = deg.WbPermsquare
+- DegreeWeberPerSquareMetre IsUnitForQuantity AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity
+- Unit:RadianGauss
+- RadianGauss.ConversionFactorA = 0
+- RadianGauss.ConversionFactorB = 10000
+- RadianGauss.Symbol = rad.G
+- RadianGauss IsUnitForQuantity AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity
+- Unit:RadianMaxwellPerSquareCentimetre
+- RadianMaxwellPerSquareCentimetre.ConversionFactorA = 0
+- RadianMaxwellPerSquareCentimetre.ConversionFactorB = 10000
+- RadianMaxwellPerSquareCentimetre.Symbol = rad.MxPercmsquare
+- RadianMaxwellPerSquareCentimetre IsUnitForQuantity AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity
+- Unit:RadianMicrotesla
+- RadianMicrotesla.ConversionFactorA = 0
+- RadianMicrotesla.ConversionFactorB = 1000000
+- RadianMicrotesla.Symbol = rad.muT
+- RadianMicrotesla IsUnitForQuantity AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity
+- Unit:RadianMilligauss
+- RadianMilligauss.ConversionFactorA = 0
+- RadianMilligauss.ConversionFactorB = 10000000
+- RadianMilligauss.Symbol = rad.mG
+- RadianMilligauss IsUnitForQuantity AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity
+- Unit:RadianMillitesla
+- RadianMillitesla.ConversionFactorA = 0
+- RadianMillitesla.ConversionFactorB = 1000
+- RadianMillitesla.Symbol = rad.mT
+- RadianMillitesla IsUnitForQuantity AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity
+- Unit:RadianNanotesla
+- RadianNanotesla.ConversionFactorA = 0
+- RadianNanotesla.ConversionFactorB = 999999999.9999999
+- RadianNanotesla.Symbol = rad.nT
+- RadianNanotesla IsUnitForQuantity AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity
+- Unit:RadianWeberPerSquareMetre
+- RadianWeberPerSquareMetre.ConversionFactorA = 0
+- RadianWeberPerSquareMetre.ConversionFactorB = 1
+- RadianWeberPerSquareMetre.Symbol = rad.WbPermsquare
+- RadianWeberPerSquareMetre IsUnitForQuantity AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity
+- Quantity:AngularAccelerationDrillingQuantity
+- AngularAccelerationDrillingQuantity.L = 0
+- AngularAccelerationDrillingQuantity.M = 0
+- AngularAccelerationDrillingQuantity.T = -2
+- AngularAccelerationDrillingQuantity.I = 0
+- AngularAccelerationDrillingQuantity.ThT = 0
+- AngularAccelerationDrillingQuantity.N = 0
+- AngularAccelerationDrillingQuantity.J = 0
+- AngularAccelerationDrillingQuantity.Theta = 1
+- AngularAccelerationDrillingQuantity.Omega = 0
+- Unit:RadianPerSecondSquared
+- RadianPerSecondSquared.ConversionFactorA = 0
+- RadianPerSecondSquared.ConversionFactorB = 1
+- RadianPerSecondSquared.Symbol = radPerssquare
+- RadianPerSecondSquared IsUnitForQuantity AngularAccelerationDrillingQuantity
+- AngularAccelerationDrillingQuantity HasSIUnit RadianPerSecondSquared
+- Unit:DegreePerSecondSquared
+- DegreePerSecondSquared.ConversionFactorA = 0
+- DegreePerSecondSquared.ConversionFactorB = 57.29577951308232
+- DegreePerSecondSquared.Symbol = degPerssquare
+- DegreePerSecondSquared IsUnitForQuantity AngularAccelerationDrillingQuantity
+- Quantity:AngularVelocityDrillingQuantity
+- AngularVelocityDrillingQuantity.L = 0
+- AngularVelocityDrillingQuantity.M = 0
+- AngularVelocityDrillingQuantity.T = -1
+- AngularVelocityDrillingQuantity.I = 0
+- AngularVelocityDrillingQuantity.ThT = 0
+- AngularVelocityDrillingQuantity.N = 0
+- AngularVelocityDrillingQuantity.J = 0
+- AngularVelocityDrillingQuantity.Theta = 1
+- AngularVelocityDrillingQuantity.Omega = 0
+- Unit:RadianPerSecond
+- RadianPerSecond.ConversionFactorA = 0
+- RadianPerSecond.ConversionFactorB = 1
+- RadianPerSecond.Symbol = radPers
+- RadianPerSecond IsUnitForQuantity AngularVelocityDrillingQuantity
+- AngularVelocityDrillingQuantity HasSIUnit RadianPerSecond
+- Unit:DegreePerSecond
+- DegreePerSecond.ConversionFactorA = 0
+- DegreePerSecond.ConversionFactorB = 57.29577951308232
+- DegreePerSecond.Symbol = degPers
+- DegreePerSecond IsUnitForQuantity AngularVelocityDrillingQuantity
+- Quantity:AngularVelocitySurveyInstrumentDrillingQuantity
+- AngularVelocitySurveyInstrumentDrillingQuantity.L = 0
+- AngularVelocitySurveyInstrumentDrillingQuantity.M = 0
+- AngularVelocitySurveyInstrumentDrillingQuantity.T = -1
+- AngularVelocitySurveyInstrumentDrillingQuantity.I = 0
+- AngularVelocitySurveyInstrumentDrillingQuantity.ThT = 0
+- AngularVelocitySurveyInstrumentDrillingQuantity.N = 0
+- AngularVelocitySurveyInstrumentDrillingQuantity.J = 0
+- AngularVelocitySurveyInstrumentDrillingQuantity.Theta = 1
+- AngularVelocitySurveyInstrumentDrillingQuantity.Omega = 0
+- Unit:RadianPerSecond
+- RadianPerSecond.ConversionFactorA = 0
+- RadianPerSecond.ConversionFactorB = 1
+- RadianPerSecond.Symbol = radPers
+- RadianPerSecond IsUnitForQuantity AngularVelocitySurveyInstrumentDrillingQuantity
+- AngularVelocitySurveyInstrumentDrillingQuantity HasSIUnit RadianPerSecond
+- Unit:DegreePerSecond
+- DegreePerSecond.ConversionFactorA = 0
+- DegreePerSecond.ConversionFactorB = 57.29577951308232
+- DegreePerSecond.Symbol = degPers
+- DegreePerSecond IsUnitForQuantity AngularVelocitySurveyInstrumentDrillingQuantity
+- Unit:DegreePerMinute
+- DegreePerMinute.ConversionFactorA = 0
+- DegreePerMinute.ConversionFactorB = 3437.746770784939
+- DegreePerMinute.Symbol = degPermin
+- DegreePerMinute IsUnitForQuantity AngularVelocitySurveyInstrumentDrillingQuantity
+- Unit:DegreePerHour
+- DegreePerHour.ConversionFactorA = 0
+- DegreePerHour.ConversionFactorB = 206264.80624709636
+- DegreePerHour.Symbol = degPerh
+- DegreePerHour IsUnitForQuantity AngularVelocitySurveyInstrumentDrillingQuantity
+- Unit:DegreePerDay
+- DegreePerDay.ConversionFactorA = 0
+- DegreePerDay.ConversionFactorB = 4950355.3499303125
+- DegreePerDay.Symbol = degPerd
+- DegreePerDay IsUnitForQuantity AngularVelocitySurveyInstrumentDrillingQuantity
+- Quantity:AreaDrillingQuantity
+- AreaDrillingQuantity.L = 2
+- AreaDrillingQuantity.M = 0
+- AreaDrillingQuantity.T = 0
+- AreaDrillingQuantity.I = 0
+- AreaDrillingQuantity.ThT = 0
+- AreaDrillingQuantity.N = 0
+- AreaDrillingQuantity.J = 0
+- AreaDrillingQuantity.Theta = 0
+- AreaDrillingQuantity.Omega = 0
+- Unit:SquareMetre
+- SquareMetre.ConversionFactorA = 0
+- SquareMetre.ConversionFactorB = 1
+- SquareMetre.Symbol = msquare
+- SquareMetre IsUnitForQuantity AreaDrillingQuantity
+- AreaDrillingQuantity HasSIUnit SquareMetre
+- Unit:SquareFoot
+- SquareFoot.ConversionFactorA = 0
+- SquareFoot.ConversionFactorB = 10.763910416709725
+- SquareFoot.Symbol = ftsquare
+- SquareFoot IsUnitForQuantity AreaDrillingQuantity
+- Unit:SquareDecimetre
+- SquareDecimetre.ConversionFactorA = 0
+- SquareDecimetre.ConversionFactorB = 99.99999999999999
+- SquareDecimetre.Symbol = dmsquare
+- SquareDecimetre IsUnitForQuantity AreaDrillingQuantity
+- Unit:SquareYard
+- SquareYard.ConversionFactorA = 0
+- SquareYard.ConversionFactorB = 1.1959900463010806
+- SquareYard.Symbol = ydsquare
+- SquareYard IsUnitForQuantity AreaDrillingQuantity
+- Unit:SquareCentimetre
+- SquareCentimetre.ConversionFactorA = 0
+- SquareCentimetre.ConversionFactorB = 10000
+- SquareCentimetre.Symbol = cmsquare
+- SquareCentimetre IsUnitForQuantity AreaDrillingQuantity
+- Unit:SquareInch
+- SquareInch.ConversionFactorA = 0
+- SquareInch.ConversionFactorB = 1550.0031000062002
+- SquareInch.Symbol = insquare
+- SquareInch IsUnitForQuantity AreaDrillingQuantity
+- Quantity:AxialVelocityDrillingQuantity
+- AxialVelocityDrillingQuantity.L = 1
+- AxialVelocityDrillingQuantity.M = 0
+- AxialVelocityDrillingQuantity.T = -1
+- AxialVelocityDrillingQuantity.I = 0
+- AxialVelocityDrillingQuantity.ThT = 0
+- AxialVelocityDrillingQuantity.N = 0
+- AxialVelocityDrillingQuantity.J = 0
+- AxialVelocityDrillingQuantity.Theta = 0
+- AxialVelocityDrillingQuantity.Omega = 0
+- Unit:MetrePerSecond
+- MetrePerSecond.ConversionFactorA = 0
+- MetrePerSecond.ConversionFactorB = 1
+- MetrePerSecond.Symbol = mPers
+- MetrePerSecond IsUnitForQuantity AxialVelocityDrillingQuantity
+- AxialVelocityDrillingQuantity HasSIUnit MetrePerSecond
+- Unit:MetrePerMinute
+- MetrePerMinute.ConversionFactorA = 0
+- MetrePerMinute.ConversionFactorB = 60
+- MetrePerMinute.Symbol = mPermin
+- MetrePerMinute IsUnitForQuantity AxialVelocityDrillingQuantity
+- Unit:MetrePerHour
+- MetrePerHour.ConversionFactorA = 0
+- MetrePerHour.ConversionFactorB = 3600
+- MetrePerHour.Symbol = mPerh
+- MetrePerHour IsUnitForQuantity AxialVelocityDrillingQuantity
+- Unit:FootPerHour
+- FootPerHour.ConversionFactorA = 0
+- FootPerHour.ConversionFactorB = 11811.023622047245
+- FootPerHour.Symbol = ftPerh
+- FootPerHour IsUnitForQuantity AxialVelocityDrillingQuantity
+- Unit:FootPerMinute
+- FootPerMinute.ConversionFactorA = 0
+- FootPerMinute.ConversionFactorB = 196.85039370078744
+- FootPerMinute.Symbol = ftPerm
+- FootPerMinute IsUnitForQuantity AxialVelocityDrillingQuantity
+- Unit:FootPerSecond
+- FootPerSecond.ConversionFactorA = 0
+- FootPerSecond.ConversionFactorB = 3.280839895013124
+- FootPerSecond.Symbol = ftPers
+- FootPerSecond IsUnitForQuantity AxialVelocityDrillingQuantity
+- Quantity:BlockVelocityDrillingQuantity
+- BlockVelocityDrillingQuantity.L = 1
+- BlockVelocityDrillingQuantity.M = 0
+- BlockVelocityDrillingQuantity.T = -1
+- BlockVelocityDrillingQuantity.I = 0
+- BlockVelocityDrillingQuantity.ThT = 0
+- BlockVelocityDrillingQuantity.N = 0
+- BlockVelocityDrillingQuantity.J = 0
+- BlockVelocityDrillingQuantity.Theta = 0
+- BlockVelocityDrillingQuantity.Omega = 0
+- Unit:MetrePerSecond
+- MetrePerSecond.ConversionFactorA = 0
+- MetrePerSecond.ConversionFactorB = 1
+- MetrePerSecond.Symbol = mPers
+- MetrePerSecond IsUnitForQuantity BlockVelocityDrillingQuantity
+- BlockVelocityDrillingQuantity HasSIUnit MetrePerSecond
+- Unit:MetrePerMinute
+- MetrePerMinute.ConversionFactorA = 0
+- MetrePerMinute.ConversionFactorB = 60
+- MetrePerMinute.Symbol = mPermin
+- MetrePerMinute IsUnitForQuantity BlockVelocityDrillingQuantity
+- Unit:MetrePerHour
+- MetrePerHour.ConversionFactorA = 0
+- MetrePerHour.ConversionFactorB = 3600
+- MetrePerHour.Symbol = mPerh
+- MetrePerHour IsUnitForQuantity BlockVelocityDrillingQuantity
+- Unit:FootPerHour
+- FootPerHour.ConversionFactorA = 0
+- FootPerHour.ConversionFactorB = 11811.023622047245
+- FootPerHour.Symbol = ftPerh
+- FootPerHour IsUnitForQuantity BlockVelocityDrillingQuantity
+- Unit:FootPerMinute
+- FootPerMinute.ConversionFactorA = 0
+- FootPerMinute.ConversionFactorB = 196.85039370078744
+- FootPerMinute.Symbol = ftPerm
+- FootPerMinute IsUnitForQuantity BlockVelocityDrillingQuantity
+- Unit:FootPerSecond
+- FootPerSecond.ConversionFactorA = 0
+- FootPerSecond.ConversionFactorB = 3.280839895013124
+- FootPerSecond.Symbol = ftPers
+- FootPerSecond IsUnitForQuantity BlockVelocityDrillingQuantity
+- Quantity:CableDiameterDrillingQuantity
+- CableDiameterDrillingQuantity.L = 1
+- CableDiameterDrillingQuantity.M = 0
+- CableDiameterDrillingQuantity.T = 0
+- CableDiameterDrillingQuantity.I = 0
+- CableDiameterDrillingQuantity.ThT = 0
+- CableDiameterDrillingQuantity.N = 0
+- CableDiameterDrillingQuantity.J = 0
+- CableDiameterDrillingQuantity.Theta = 0
+- CableDiameterDrillingQuantity.Omega = 0
+- Unit:Centimetre
+- Centimetre.ConversionFactorA = 0
+- Centimetre.ConversionFactorB = 100
+- Centimetre.Symbol = cm
+- Centimetre IsUnitForQuantity CableDiameterDrillingQuantity
+- Unit:Decimetre
+- Decimetre.ConversionFactorA = 0
+- Decimetre.ConversionFactorB = 10
+- Decimetre.Symbol = dm
+- Decimetre IsUnitForQuantity CableDiameterDrillingQuantity
+- Unit:Foot
+- Foot.ConversionFactorA = 0
+- Foot.ConversionFactorB = 3.280839895013124
+- Foot.Symbol = ft
+- Foot IsUnitForQuantity CableDiameterDrillingQuantity
+- Unit:Inch
+- Inch.ConversionFactorA = 0
+- Inch.ConversionFactorB = 39.37007874015748
+- Inch.Symbol = in
+- Inch IsUnitForQuantity CableDiameterDrillingQuantity
+- Unit:Metre
+- Metre.ConversionFactorA = 0
+- Metre.ConversionFactorB = 1
+- Metre.Symbol = m
+- Metre IsUnitForQuantity CableDiameterDrillingQuantity
+- CableDiameterDrillingQuantity HasSIUnit Metre
+- Unit:Micrometre
+- Micrometre.ConversionFactorA = 0
+- Micrometre.ConversionFactorB = 1000000
+- Micrometre.Symbol = mum
+- Micrometre IsUnitForQuantity CableDiameterDrillingQuantity
+- Unit:Millimetre
+- Millimetre.ConversionFactorA = 0
+- Millimetre.ConversionFactorB = 1000
+- Millimetre.Symbol = mm
+- Millimetre IsUnitForQuantity CableDiameterDrillingQuantity
+- Unit:Nanometre
+- Nanometre.ConversionFactorA = 0
+- Nanometre.ConversionFactorB = 999999999.9999999
+- Nanometre.Symbol = nm
+- Nanometre IsUnitForQuantity CableDiameterDrillingQuantity
+- Unit:Picometre
+- Picometre.ConversionFactorA = 0
+- Picometre.ConversionFactorB = 1000000000000
+- Picometre.Symbol = pm
+- Picometre IsUnitForQuantity CableDiameterDrillingQuantity
+- Unit:Aangstroem
+- Aangstroem.ConversionFactorA = 0
+- Aangstroem.ConversionFactorB = 10000000000
+- Aangstroem.Symbol = aa
+- Aangstroem IsUnitForQuantity CableDiameterDrillingQuantity
+- Unit:InchPer32
+- InchPer32.ConversionFactorA = 0
+- InchPer32.ConversionFactorB = 1259.8425196850394
+- InchPer32.Symbol = inPer32
+- InchPer32 IsUnitForQuantity CableDiameterDrillingQuantity
+- Quantity:CapillaryPressureDrillingQuantity
+- CapillaryPressureDrillingQuantity.L = -1
+- CapillaryPressureDrillingQuantity.M = 1
+- CapillaryPressureDrillingQuantity.T = -2
+- CapillaryPressureDrillingQuantity.I = 0
+- CapillaryPressureDrillingQuantity.ThT = 0
+- CapillaryPressureDrillingQuantity.N = 0
+- CapillaryPressureDrillingQuantity.J = 0
+- CapillaryPressureDrillingQuantity.Theta = 0
+- CapillaryPressureDrillingQuantity.Omega = 0
+- Unit:Pascal
+- Pascal.ConversionFactorA = 0
+- Pascal.ConversionFactorB = 1
+- Pascal.Symbol = pa
+- Pascal IsUnitForQuantity CapillaryPressureDrillingQuantity
+- CapillaryPressureDrillingQuantity HasSIUnit Pascal
+- Unit:Bar
+- Bar.ConversionFactorA = 0
+- Bar.ConversionFactorB = 1E-05
+- Bar.Symbol = bar
+- Bar IsUnitForQuantity CapillaryPressureDrillingQuantity
+- Unit:PoundPerSquareInch
+- PoundPerSquareInch.ConversionFactorA = 0
+- PoundPerSquareInch.ConversionFactorB = 0.00014503773773020924
+- PoundPerSquareInch.Symbol = psi
+- PoundPerSquareInch IsUnitForQuantity CapillaryPressureDrillingQuantity
+- Unit:Kilopascal
+- Kilopascal.ConversionFactorA = 0
+- Kilopascal.ConversionFactorB = 0.001
+- Kilopascal.Symbol = kPa
+- Kilopascal IsUnitForQuantity CapillaryPressureDrillingQuantity
+- Unit:MegapoundPerSquareInch
+- MegapoundPerSquareInch.ConversionFactorA = 0
+- MegapoundPerSquareInch.ConversionFactorB = 1.4503773773020922E-10
+- MegapoundPerSquareInch.Symbol = mpsi
+- MegapoundPerSquareInch IsUnitForQuantity CapillaryPressureDrillingQuantity
+- Unit:KilopoundPerSquareInch
+- KilopoundPerSquareInch.ConversionFactorA = 0
+- KilopoundPerSquareInch.ConversionFactorB = 1.4503773773020924E-07
+- KilopoundPerSquareInch.Symbol = ksi
+- KilopoundPerSquareInch IsUnitForQuantity CapillaryPressureDrillingQuantity
+- Quantity:CompressibilityDrillingQuantity
+- CompressibilityDrillingQuantity.L = 1
+- CompressibilityDrillingQuantity.M = -1
+- CompressibilityDrillingQuantity.T = 2
+- CompressibilityDrillingQuantity.I = 0
+- CompressibilityDrillingQuantity.ThT = 0
+- CompressibilityDrillingQuantity.N = 0
+- CompressibilityDrillingQuantity.J = 0
+- CompressibilityDrillingQuantity.Theta = 0
+- CompressibilityDrillingQuantity.Omega = 0
+- Unit:InversePascal
+- InversePascal.ConversionFactorA = 0
+- InversePascal.ConversionFactorB = 1
+- InversePascal.Symbol = 1PerPa
+- InversePascal IsUnitForQuantity CompressibilityDrillingQuantity
+- CompressibilityDrillingQuantity HasSIUnit InversePascal
+- Unit:InverseBar
+- InverseBar.ConversionFactorA = 0
+- InverseBar.ConversionFactorB = 100000
+- InverseBar.Symbol = 1Perbar
+- InverseBar IsUnitForQuantity CompressibilityDrillingQuantity
+- Unit:InversePoundPerSquareInch
+- InversePoundPerSquareInch.ConversionFactorA = 0
+- InversePoundPerSquareInch.ConversionFactorB = 6894.757293168361
+- InversePoundPerSquareInch.Symbol = 1Perpsi
+- InversePoundPerSquareInch IsUnitForQuantity CompressibilityDrillingQuantity
+- Quantity:CurvatureDrillingQuantity
+- CurvatureDrillingQuantity.L = -1
+- CurvatureDrillingQuantity.M = 0
+- CurvatureDrillingQuantity.T = 0
+- CurvatureDrillingQuantity.I = 0
+- CurvatureDrillingQuantity.ThT = 0
+- CurvatureDrillingQuantity.N = 0
+- CurvatureDrillingQuantity.J = 0
+- CurvatureDrillingQuantity.Theta = 1
+- CurvatureDrillingQuantity.Omega = 0
+- Unit:RadianPerMetre
+- RadianPerMetre.ConversionFactorA = 0
+- RadianPerMetre.ConversionFactorB = 1
+- RadianPerMetre.Symbol = radPerm
+- RadianPerMetre IsUnitForQuantity CurvatureDrillingQuantity
+- CurvatureDrillingQuantity HasSIUnit RadianPerMetre
+- Unit:DegreePer10m
+- DegreePer10m.ConversionFactorA = 0
+- DegreePer10m.ConversionFactorB = 572.9577951308232
+- DegreePer10m.Symbol = degPer10m
+- DegreePer10m IsUnitForQuantity CurvatureDrillingQuantity
+- Unit:DegreePer30m
+- DegreePer30m.ConversionFactorA = 0
+- DegreePer30m.ConversionFactorB = 1718.8733853924696
+- DegreePer30m.Symbol = degPer30m
+- DegreePer30m IsUnitForQuantity CurvatureDrillingQuantity
+- Unit:DegreePer30ft
+- DegreePer30ft.ConversionFactorA = 0
+- DegreePer30ft.ConversionFactorB = 523.9126078676246
+- DegreePer30ft.Symbol = degPer30ft
+- DegreePer30ft IsUnitForQuantity CurvatureDrillingQuantity
+- Unit:DegreePer100ft
+- DegreePer100ft.ConversionFactorA = 0
+- DegreePer100ft.ConversionFactorB = 1746.375359558749
+- DegreePer100ft.Symbol = degPer100ft
+- DegreePer100ft IsUnitForQuantity CurvatureDrillingQuantity
+- Quantity:DepthDrillingQuantity
+- DepthDrillingQuantity.L = 1
+- DepthDrillingQuantity.M = 0
+- DepthDrillingQuantity.T = 0
+- DepthDrillingQuantity.I = 0
+- DepthDrillingQuantity.ThT = 0
+- DepthDrillingQuantity.N = 0
+- DepthDrillingQuantity.J = 0
+- DepthDrillingQuantity.Theta = 0
+- DepthDrillingQuantity.Omega = 0
+- Unit:Metre
+- Metre.ConversionFactorA = 0
+- Metre.ConversionFactorB = 1
+- Metre.Symbol = m
+- Metre IsUnitForQuantity DepthDrillingQuantity
+- DepthDrillingQuantity HasSIUnit Metre
+- Unit:Foot
+- Foot.ConversionFactorA = 0
+- Foot.ConversionFactorB = 3.280839895013124
+- Foot.Symbol = ft
+- Foot IsUnitForQuantity DepthDrillingQuantity
+- Quantity:DiameterPipeDrillingQuantity
+- DiameterPipeDrillingQuantity.L = 1
+- DiameterPipeDrillingQuantity.M = 0
+- DiameterPipeDrillingQuantity.T = 0
+- DiameterPipeDrillingQuantity.I = 0
+- DiameterPipeDrillingQuantity.ThT = 0
+- DiameterPipeDrillingQuantity.N = 0
+- DiameterPipeDrillingQuantity.J = 0
+- DiameterPipeDrillingQuantity.Theta = 0
+- DiameterPipeDrillingQuantity.Omega = 0
+- Unit:Centimetre
+- Centimetre.ConversionFactorA = 0
+- Centimetre.ConversionFactorB = 100
+- Centimetre.Symbol = cm
+- Centimetre IsUnitForQuantity DiameterPipeDrillingQuantity
+- Unit:Decimetre
+- Decimetre.ConversionFactorA = 0
+- Decimetre.ConversionFactorB = 10
+- Decimetre.Symbol = dm
+- Decimetre IsUnitForQuantity DiameterPipeDrillingQuantity
+- Unit:Foot
+- Foot.ConversionFactorA = 0
+- Foot.ConversionFactorB = 3.280839895013124
+- Foot.Symbol = ft
+- Foot IsUnitForQuantity DiameterPipeDrillingQuantity
+- Unit:Inch
+- Inch.ConversionFactorA = 0
+- Inch.ConversionFactorB = 39.37007874015748
+- Inch.Symbol = in
+- Inch IsUnitForQuantity DiameterPipeDrillingQuantity
+- Unit:Metre
+- Metre.ConversionFactorA = 0
+- Metre.ConversionFactorB = 1
+- Metre.Symbol = m
+- Metre IsUnitForQuantity DiameterPipeDrillingQuantity
+- DiameterPipeDrillingQuantity HasSIUnit Metre
+- Unit:Micrometre
+- Micrometre.ConversionFactorA = 0
+- Micrometre.ConversionFactorB = 1000000
+- Micrometre.Symbol = mum
+- Micrometre IsUnitForQuantity DiameterPipeDrillingQuantity
+- Unit:Millimetre
+- Millimetre.ConversionFactorA = 0
+- Millimetre.ConversionFactorB = 1000
+- Millimetre.Symbol = mm
+- Millimetre IsUnitForQuantity DiameterPipeDrillingQuantity
+- Unit:Nanometre
+- Nanometre.ConversionFactorA = 0
+- Nanometre.ConversionFactorB = 999999999.9999999
+- Nanometre.Symbol = nm
+- Nanometre IsUnitForQuantity DiameterPipeDrillingQuantity
+- Unit:Picometre
+- Picometre.ConversionFactorA = 0
+- Picometre.ConversionFactorB = 1000000000000
+- Picometre.Symbol = pm
+- Picometre IsUnitForQuantity DiameterPipeDrillingQuantity
+- Unit:Aangstroem
+- Aangstroem.ConversionFactorA = 0
+- Aangstroem.ConversionFactorB = 10000000000
+- Aangstroem.Symbol = aa
+- Aangstroem IsUnitForQuantity DiameterPipeDrillingQuantity
+- Unit:InchPer32
+- InchPer32.ConversionFactorA = 0
+- InchPer32.ConversionFactorB = 1259.8425196850394
+- InchPer32.Symbol = inPer32
+- InchPer32 IsUnitForQuantity DiameterPipeDrillingQuantity
+- Quantity:DiameterPoreDrillingQuantity
+- DiameterPoreDrillingQuantity.L = 1
+- DiameterPoreDrillingQuantity.M = 0
+- DiameterPoreDrillingQuantity.T = 0
+- DiameterPoreDrillingQuantity.I = 0
+- DiameterPoreDrillingQuantity.ThT = 0
+- DiameterPoreDrillingQuantity.N = 0
+- DiameterPoreDrillingQuantity.J = 0
+- DiameterPoreDrillingQuantity.Theta = 0
+- DiameterPoreDrillingQuantity.Omega = 0
+- Unit:Centimetre
+- Centimetre.ConversionFactorA = 0
+- Centimetre.ConversionFactorB = 100
+- Centimetre.Symbol = cm
+- Centimetre IsUnitForQuantity DiameterPoreDrillingQuantity
+- Unit:Decimetre
+- Decimetre.ConversionFactorA = 0
+- Decimetre.ConversionFactorB = 10
+- Decimetre.Symbol = dm
+- Decimetre IsUnitForQuantity DiameterPoreDrillingQuantity
+- Unit:Foot
+- Foot.ConversionFactorA = 0
+- Foot.ConversionFactorB = 3.280839895013124
+- Foot.Symbol = ft
+- Foot IsUnitForQuantity DiameterPoreDrillingQuantity
+- Unit:Inch
+- Inch.ConversionFactorA = 0
+- Inch.ConversionFactorB = 39.37007874015748
+- Inch.Symbol = in
+- Inch IsUnitForQuantity DiameterPoreDrillingQuantity
+- Unit:Metre
+- Metre.ConversionFactorA = 0
+- Metre.ConversionFactorB = 1
+- Metre.Symbol = m
+- Metre IsUnitForQuantity DiameterPoreDrillingQuantity
+- DiameterPoreDrillingQuantity HasSIUnit Metre
+- Unit:Micrometre
+- Micrometre.ConversionFactorA = 0
+- Micrometre.ConversionFactorB = 1000000
+- Micrometre.Symbol = mum
+- Micrometre IsUnitForQuantity DiameterPoreDrillingQuantity
+- Unit:Millimetre
+- Millimetre.ConversionFactorA = 0
+- Millimetre.ConversionFactorB = 1000
+- Millimetre.Symbol = mm
+- Millimetre IsUnitForQuantity DiameterPoreDrillingQuantity
+- Unit:Nanometre
+- Nanometre.ConversionFactorA = 0
+- Nanometre.ConversionFactorB = 999999999.9999999
+- Nanometre.Symbol = nm
+- Nanometre IsUnitForQuantity DiameterPoreDrillingQuantity
+- Unit:Picometre
+- Picometre.ConversionFactorA = 0
+- Picometre.ConversionFactorB = 1000000000000
+- Picometre.Symbol = pm
+- Picometre IsUnitForQuantity DiameterPoreDrillingQuantity
+- Unit:Aangstroem
+- Aangstroem.ConversionFactorA = 0
+- Aangstroem.ConversionFactorB = 10000000000
+- Aangstroem.Symbol = aa
+- Aangstroem IsUnitForQuantity DiameterPoreDrillingQuantity
+- Unit:InchPer32
+- InchPer32.ConversionFactorA = 0
+- InchPer32.ConversionFactorB = 1259.8425196850394
+- InchPer32.Symbol = inPer32
+- InchPer32 IsUnitForQuantity DiameterPoreDrillingQuantity
+- Quantity:DrillStemMaterialStrengthDrillingQuantity
+- DrillStemMaterialStrengthDrillingQuantity.L = -1
+- DrillStemMaterialStrengthDrillingQuantity.M = 1
+- DrillStemMaterialStrengthDrillingQuantity.T = -2
+- DrillStemMaterialStrengthDrillingQuantity.I = 0
+- DrillStemMaterialStrengthDrillingQuantity.ThT = 0
+- DrillStemMaterialStrengthDrillingQuantity.N = 0
+- DrillStemMaterialStrengthDrillingQuantity.J = 0
+- DrillStemMaterialStrengthDrillingQuantity.Theta = 0
+- DrillStemMaterialStrengthDrillingQuantity.Omega = 0
+- Unit:Pascal
+- Pascal.ConversionFactorA = 0
+- Pascal.ConversionFactorB = 1
+- Pascal.Symbol = pa
+- Pascal IsUnitForQuantity DrillStemMaterialStrengthDrillingQuantity
+- DrillStemMaterialStrengthDrillingQuantity HasSIUnit Pascal
+- Unit:Gigapascal
+- Gigapascal.ConversionFactorA = 0
+- Gigapascal.ConversionFactorB = 1E-09
+- Gigapascal.Symbol = gPa
+- Gigapascal IsUnitForQuantity DrillStemMaterialStrengthDrillingQuantity
+- Unit:Megapascal
+- Megapascal.ConversionFactorA = 0
+- Megapascal.ConversionFactorB = 1E-06
+- Megapascal.Symbol = mPa
+- Megapascal IsUnitForQuantity DrillStemMaterialStrengthDrillingQuantity
+- Unit:MegapoundPerSquareInch
+- MegapoundPerSquareInch.ConversionFactorA = 0
+- MegapoundPerSquareInch.ConversionFactorB = 1.4503773773020922E-10
+- MegapoundPerSquareInch.Symbol = mpsi
+- MegapoundPerSquareInch IsUnitForQuantity DrillStemMaterialStrengthDrillingQuantity
+- Unit:PoundPer100SquareFoot
+- PoundPer100SquareFoot.ConversionFactorA = 0
+- PoundPer100SquareFoot.ConversionFactorB = 2.0885434233150124
+- PoundPer100SquareFoot.Symbol = lbfPer100ftsquare
+- PoundPer100SquareFoot IsUnitForQuantity DrillStemMaterialStrengthDrillingQuantity
+- Unit:Psi
+- Psi.ConversionFactorA = 0
+- Psi.ConversionFactorB = 0.00014503773773020924
+- Psi.Symbol = psi
+- Psi IsUnitForQuantity DrillStemMaterialStrengthDrillingQuantity
+- Quantity:DrillStringMagneticFluxDrillingQuantity
+- DrillStringMagneticFluxDrillingQuantity.L = 2
+- DrillStringMagneticFluxDrillingQuantity.M = 1
+- DrillStringMagneticFluxDrillingQuantity.T = -2
+- DrillStringMagneticFluxDrillingQuantity.I = -1
+- DrillStringMagneticFluxDrillingQuantity.ThT = 0
+- DrillStringMagneticFluxDrillingQuantity.N = 0
+- DrillStringMagneticFluxDrillingQuantity.J = 0
+- DrillStringMagneticFluxDrillingQuantity.Theta = 0
+- DrillStringMagneticFluxDrillingQuantity.Omega = 0
+- Unit:Weber
+- Weber.ConversionFactorA = 0
+- Weber.ConversionFactorB = 1
+- Weber.Symbol = wb
+- Weber IsUnitForQuantity DrillStringMagneticFluxDrillingQuantity
+- DrillStringMagneticFluxDrillingQuantity HasSIUnit Weber
+- Unit:Milliweber
+- Milliweber.ConversionFactorA = 0
+- Milliweber.ConversionFactorB = 1000
+- Milliweber.Symbol = mWb
+- Milliweber IsUnitForQuantity DrillStringMagneticFluxDrillingQuantity
+- Unit:Microweber
+- Microweber.ConversionFactorA = 0
+- Microweber.ConversionFactorB = 1000000
+- Microweber.Symbol = muWb
+- Microweber IsUnitForQuantity DrillStringMagneticFluxDrillingQuantity
+- Unit:TeslaSquareMetre
+- TeslaSquareMetre.ConversionFactorA = 0
+- TeslaSquareMetre.ConversionFactorB = 1
+- TeslaSquareMetre.Symbol = t.msquare
+- TeslaSquareMetre IsUnitForQuantity DrillStringMagneticFluxDrillingQuantity
+- Unit:TeslaSquareCentimetre
+- TeslaSquareCentimetre.ConversionFactorA = 0
+- TeslaSquareCentimetre.ConversionFactorB = 10000
+- TeslaSquareCentimetre.Symbol = t.cmsquare
+- TeslaSquareCentimetre IsUnitForQuantity DrillStringMagneticFluxDrillingQuantity
+- Unit:GaussSquareCentimetre
+- GaussSquareCentimetre.ConversionFactorA = 0
+- GaussSquareCentimetre.ConversionFactorB = 99999999.99999999
+- GaussSquareCentimetre.Symbol = g.cmsquare
+- GaussSquareCentimetre IsUnitForQuantity DrillStringMagneticFluxDrillingQuantity
+- Quantity:DurationDrillingQuantity
+- DurationDrillingQuantity.L = 0
+- DurationDrillingQuantity.M = 0
+- DurationDrillingQuantity.T = 1
+- DurationDrillingQuantity.I = 0
+- DurationDrillingQuantity.ThT = 0
+- DurationDrillingQuantity.N = 0
+- DurationDrillingQuantity.J = 0
+- DurationDrillingQuantity.Theta = 0
+- DurationDrillingQuantity.Omega = 0
+- Unit:Second
+- Second.ConversionFactorA = 0
+- Second.ConversionFactorB = 1
+- Second.Symbol = s
+- Second IsUnitForQuantity DurationDrillingQuantity
+- DurationDrillingQuantity HasSIUnit Second
+- Unit:Minute
+- Minute.ConversionFactorA = 0
+- Minute.ConversionFactorB = 0.016666666666666666
+- Minute.Symbol = min
+- Minute IsUnitForQuantity DurationDrillingQuantity
+- Unit:Hour
+- Hour.ConversionFactorA = 0
+- Hour.ConversionFactorB = 0.0002777777777777778
+- Hour.Symbol = h
+- Hour IsUnitForQuantity DurationDrillingQuantity
+- Unit:Day
+- Day.ConversionFactorA = 0
+- Day.ConversionFactorB = 1.1574074074074073E-05
+- Day.Symbol = d
+- Day IsUnitForQuantity DurationDrillingQuantity
+- Quantity:DynamicViscosityDrillingQuantity
+- DynamicViscosityDrillingQuantity.L = -1
+- DynamicViscosityDrillingQuantity.M = 1
+- DynamicViscosityDrillingQuantity.T = -1
+- DynamicViscosityDrillingQuantity.I = 0
+- DynamicViscosityDrillingQuantity.ThT = 0
+- DynamicViscosityDrillingQuantity.N = 0
+- DynamicViscosityDrillingQuantity.J = 0
+- DynamicViscosityDrillingQuantity.Theta = 0
+- DynamicViscosityDrillingQuantity.Omega = 0
+- Unit:PascalSecond
+- PascalSecond.ConversionFactorA = 0
+- PascalSecond.ConversionFactorB = 1
+- PascalSecond.Symbol = pa.s
+- PascalSecond IsUnitForQuantity DynamicViscosityDrillingQuantity
+- DynamicViscosityDrillingQuantity HasSIUnit PascalSecond
+- Unit:Centipoise
+- Centipoise.ConversionFactorA = 0
+- Centipoise.ConversionFactorB = 1000
+- Centipoise.Symbol = cP
+- Centipoise IsUnitForQuantity DynamicViscosityDrillingQuantity
+- Unit:Micropoise
+- Micropoise.ConversionFactorA = 0
+- Micropoise.ConversionFactorB = 10000000
+- Micropoise.Symbol = muP
+- Micropoise IsUnitForQuantity DynamicViscosityDrillingQuantity
+- Unit:MicropascalSecond
+- MicropascalSecond.ConversionFactorA = 0
+- MicropascalSecond.ConversionFactorB = 1000000
+- MicropascalSecond.Symbol = muPa.s
+- MicropascalSecond IsUnitForQuantity DynamicViscosityDrillingQuantity
+- Quantity:ElongationGradientPerLengthDrillingQuantity
+- ElongationGradientPerLengthDrillingQuantity.L = 0
+- ElongationGradientPerLengthDrillingQuantity.M = 0
+- ElongationGradientPerLengthDrillingQuantity.T = 0
+- ElongationGradientPerLengthDrillingQuantity.I = 0
+- ElongationGradientPerLengthDrillingQuantity.ThT = 0
+- ElongationGradientPerLengthDrillingQuantity.N = 0
+- ElongationGradientPerLengthDrillingQuantity.J = 0
+- ElongationGradientPerLengthDrillingQuantity.Theta = 0
+- ElongationGradientPerLengthDrillingQuantity.Omega = 0
+- Unit:MetrePerMetre
+- MetrePerMetre.ConversionFactorA = 0
+- MetrePerMetre.ConversionFactorB = 1
+- MetrePerMetre.Symbol = mPerm
+- MetrePerMetre IsUnitForQuantity ElongationGradientPerLengthDrillingQuantity
+- ElongationGradientPerLengthDrillingQuantity HasSIUnit MetrePerMetre
+- Unit:MillimetrePerMetre
+- MillimetrePerMetre.ConversionFactorA = 0
+- MillimetrePerMetre.ConversionFactorB = 1000
+- MillimetrePerMetre.Symbol = mmPerm
+- MillimetrePerMetre IsUnitForQuantity ElongationGradientPerLengthDrillingQuantity
+- Unit:MillimetrePerKilometre
+- MillimetrePerKilometre.ConversionFactorA = 0
+- MillimetrePerKilometre.ConversionFactorB = 1000000
+- MillimetrePerKilometre.Symbol = mmPerkm
+- MillimetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthDrillingQuantity
+- Unit:InchPerFoot
+- InchPerFoot.ConversionFactorA = 0
+- InchPerFoot.ConversionFactorB = 11.999999999999998
+- InchPerFoot.Symbol = inPerft
+- InchPerFoot IsUnitForQuantity ElongationGradientPerLengthDrillingQuantity
+- Unit:InchPerYard
+- InchPerYard.ConversionFactorA = 0
+- InchPerYard.ConversionFactorB = 36
+- InchPerYard.Symbol = inPeryd
+- InchPerYard IsUnitForQuantity ElongationGradientPerLengthDrillingQuantity
+- Unit:InchPerMile
+- InchPerMile.ConversionFactorA = 0
+- InchPerMile.ConversionFactorB = 63359.99999999999
+- InchPerMile.Symbol = inPermi
+- InchPerMile IsUnitForQuantity ElongationGradientPerLengthDrillingQuantity
+- Quantity:EnergyDensityDrillingQuantity
+- EnergyDensityDrillingQuantity.L = -1
+- EnergyDensityDrillingQuantity.M = 1
+- EnergyDensityDrillingQuantity.T = -2
+- EnergyDensityDrillingQuantity.I = 0
+- EnergyDensityDrillingQuantity.ThT = 0
+- EnergyDensityDrillingQuantity.N = 0
+- EnergyDensityDrillingQuantity.J = 0
+- EnergyDensityDrillingQuantity.Theta = 0
+- EnergyDensityDrillingQuantity.Omega = 0
+- Unit:JoulePerCubicMetre
+- JoulePerCubicMetre.ConversionFactorA = 0
+- JoulePerCubicMetre.ConversionFactorB = 1
+- JoulePerCubicMetre.Symbol = jPermcubic
+- JoulePerCubicMetre IsUnitForQuantity EnergyDensityDrillingQuantity
+- EnergyDensityDrillingQuantity HasSIUnit JoulePerCubicMetre
+- Unit:JoulePerCubicFoot
+- JoulePerCubicFoot.ConversionFactorA = 0
+- JoulePerCubicFoot.ConversionFactorB = 0.02831684659199999
+- JoulePerCubicFoot.Symbol = jPerftcubic
+- JoulePerCubicFoot IsUnitForQuantity EnergyDensityDrillingQuantity
+- Unit:JoulePerCubicInch
+- JoulePerCubicInch.ConversionFactorA = 0
+- JoulePerCubicInch.ConversionFactorB = 1.6387064E-05
+- JoulePerCubicInch.Symbol = jPerincubic
+- JoulePerCubicInch IsUnitForQuantity EnergyDensityDrillingQuantity
+- Unit:JoulePerGallonUk
+- JoulePerGallonUk.ConversionFactorA = 0
+- JoulePerGallonUk.ConversionFactorB = 0.00454609
+- JoulePerGallonUk.Symbol = jPergal(UK)
+- JoulePerGallonUk IsUnitForQuantity EnergyDensityDrillingQuantity
+- Unit:JoulePerGallonUs
+- JoulePerGallonUs.ConversionFactorA = 0
+- JoulePerGallonUs.ConversionFactorB = 0.0037854117839999997
+- JoulePerGallonUs.Symbol = jPergal(US)
+- JoulePerGallonUs IsUnitForQuantity EnergyDensityDrillingQuantity
+- Quantity:MassDensityRateOfChangeDrillingQuantity
+- MassDensityRateOfChangeDrillingQuantity.L = -3
+- MassDensityRateOfChangeDrillingQuantity.M = 1
+- MassDensityRateOfChangeDrillingQuantity.T = -1
+- MassDensityRateOfChangeDrillingQuantity.I = 0
+- MassDensityRateOfChangeDrillingQuantity.ThT = 0
+- MassDensityRateOfChangeDrillingQuantity.N = 0
+- MassDensityRateOfChangeDrillingQuantity.J = 0
+- MassDensityRateOfChangeDrillingQuantity.Theta = 0
+- MassDensityRateOfChangeDrillingQuantity.Omega = 0
+- Unit:KilogramPerCubicMetrePerSecond
+- KilogramPerCubicMetrePerSecond.ConversionFactorA = 0
+- KilogramPerCubicMetrePerSecond.ConversionFactorB = 1
+- KilogramPerCubicMetrePerSecond.Symbol = kgPermcubicPers
+- KilogramPerCubicMetrePerSecond IsUnitForQuantity MassDensityRateOfChangeDrillingQuantity
+- MassDensityRateOfChangeDrillingQuantity HasSIUnit KilogramPerCubicMetrePerSecond
+- Unit:GramPerCubicCentimetrePerHour
+- GramPerCubicCentimetrePerHour.ConversionFactorA = 0
+- GramPerCubicCentimetrePerHour.ConversionFactorB = 3.6
+- GramPerCubicCentimetrePerHour.Symbol = gPercmcubicPerh
+- GramPerCubicCentimetrePerHour IsUnitForQuantity MassDensityRateOfChangeDrillingQuantity
+- Unit:PoundPerGallonUkPerHour
+- PoundPerGallonUkPerHour.ConversionFactorA = 0
+- PoundPerGallonUkPerHour.ConversionFactorB = 36.08068627785781
+- PoundPerGallonUkPerHour.Symbol = ppgUKPerh
+- PoundPerGallonUkPerHour IsUnitForQuantity MassDensityRateOfChangeDrillingQuantity
+- Unit:PoundPerGallonUkPerMinute
+- PoundPerGallonUkPerMinute.ConversionFactorA = 0
+- PoundPerGallonUkPerMinute.ConversionFactorB = 0.6013447712976301
+- PoundPerGallonUkPerMinute.Symbol = ppgUKPermin
+- PoundPerGallonUkPerMinute IsUnitForQuantity MassDensityRateOfChangeDrillingQuantity
+- Unit:PoundPerGallonUkPerSecond
+- PoundPerGallonUkPerSecond.ConversionFactorA = 0
+- PoundPerGallonUkPerSecond.ConversionFactorB = 0.010022412854960501
+- PoundPerGallonUkPerSecond.Symbol = ppgUKPers
+- PoundPerGallonUkPerSecond IsUnitForQuantity MassDensityRateOfChangeDrillingQuantity
+- Unit:PoundPerGallonUsPerHour
+- PoundPerGallonUsPerHour.ConversionFactorA = 0
+- PoundPerGallonUsPerHour.ConversionFactorB = 30.043456027269592
+- PoundPerGallonUsPerHour.Symbol = ppgUSPerh
+- PoundPerGallonUsPerHour IsUnitForQuantity MassDensityRateOfChangeDrillingQuantity
+- Unit:PoundPerGallonUsPerMinute
+- PoundPerGallonUsPerMinute.ConversionFactorA = 0
+- PoundPerGallonUsPerMinute.ConversionFactorB = 0.5007242671211598
+- PoundPerGallonUsPerMinute.Symbol = ppgUSPermin
+- PoundPerGallonUsPerMinute IsUnitForQuantity MassDensityRateOfChangeDrillingQuantity
+- Unit:PoundPerGallonUsPerSecond
+- PoundPerGallonUsPerSecond.ConversionFactorA = 0
+- PoundPerGallonUsPerSecond.ConversionFactorB = 0.00834540445201933
+- PoundPerGallonUsPerSecond.Symbol = ppgUSPers
+- PoundPerGallonUsPerSecond IsUnitForQuantity MassDensityRateOfChangeDrillingQuantity
+- Unit:SpecificGravityPerHour
+- SpecificGravityPerHour.ConversionFactorA = 0
+- SpecificGravityPerHour.ConversionFactorB = 3.600100802822479
+- SpecificGravityPerHour.Symbol = sgPerh
+- SpecificGravityPerHour IsUnitForQuantity MassDensityRateOfChangeDrillingQuantity
+- Unit:SpecificGravityPerMinute
+- SpecificGravityPerMinute.ConversionFactorA = 0
+- SpecificGravityPerMinute.ConversionFactorB = 0.06000168004704132
+- SpecificGravityPerMinute.Symbol = sgPermin
+- SpecificGravityPerMinute IsUnitForQuantity MassDensityRateOfChangeDrillingQuantity
+- Unit:SpecificGravityPerSecond
+- SpecificGravityPerSecond.ConversionFactorA = 0
+- SpecificGravityPerSecond.ConversionFactorB = 0.001000028000784022
+- SpecificGravityPerSecond.Symbol = sgPers
+- SpecificGravityPerSecond IsUnitForQuantity MassDensityRateOfChangeDrillingQuantity
+- Quantity:MassDensityGradientPerTemperatureDrillingQuantity
+- MassDensityGradientPerTemperatureDrillingQuantity.L = -3
+- MassDensityGradientPerTemperatureDrillingQuantity.M = 1
+- MassDensityGradientPerTemperatureDrillingQuantity.T = 0
+- MassDensityGradientPerTemperatureDrillingQuantity.I = 0
+- MassDensityGradientPerTemperatureDrillingQuantity.ThT = -1
+- MassDensityGradientPerTemperatureDrillingQuantity.N = 0
+- MassDensityGradientPerTemperatureDrillingQuantity.J = 0
+- MassDensityGradientPerTemperatureDrillingQuantity.Theta = 0
+- MassDensityGradientPerTemperatureDrillingQuantity.Omega = 0
+- Unit:KilogramPerCubicMetrePerKelvin
+- KilogramPerCubicMetrePerKelvin.ConversionFactorA = 0
+- KilogramPerCubicMetrePerKelvin.ConversionFactorB = 1
+- KilogramPerCubicMetrePerKelvin.Symbol = kgPermcubicPerK
+- KilogramPerCubicMetrePerKelvin IsUnitForQuantity MassDensityGradientPerTemperatureDrillingQuantity
+- MassDensityGradientPerTemperatureDrillingQuantity HasSIUnit KilogramPerCubicMetrePerKelvin
+- Unit:GramPerCubicCentimetrePerCelsius
+- GramPerCubicCentimetrePerCelsius.ConversionFactorA = 0
+- GramPerCubicCentimetrePerCelsius.ConversionFactorB = 0.0010000000000000002
+- GramPerCubicCentimetrePerCelsius.Symbol = gPercmcubicPerdegC
+- GramPerCubicCentimetrePerCelsius IsUnitForQuantity MassDensityGradientPerTemperatureDrillingQuantity
+- Unit:PoundPerGallonUkPerCelsius
+- PoundPerGallonUkPerCelsius.ConversionFactorA = 0
+- PoundPerGallonUkPerCelsius.ConversionFactorB = 0.010022412854960501
+- PoundPerGallonUkPerCelsius.Symbol = ppgUKPerdegC
+- PoundPerGallonUkPerCelsius IsUnitForQuantity MassDensityGradientPerTemperatureDrillingQuantity
+- Unit:PoundPerGallonUsPerFahrenheit
+- PoundPerGallonUsPerFahrenheit.ConversionFactorA = 0
+- PoundPerGallonUsPerFahrenheit.ConversionFactorB = 0.004636335806677406
+- PoundPerGallonUsPerFahrenheit.Symbol = ppgUSPerdegF
+- PoundPerGallonUsPerFahrenheit IsUnitForQuantity MassDensityGradientPerTemperatureDrillingQuantity
+- Unit:SpecificGravityPerCelsius
+- SpecificGravityPerCelsius.ConversionFactorA = 0
+- SpecificGravityPerCelsius.ConversionFactorB = 0.001000028000784022
+- SpecificGravityPerCelsius.Symbol = sgPerdegC
+- SpecificGravityPerCelsius IsUnitForQuantity MassDensityGradientPerTemperatureDrillingQuantity
+- Quantity:MassDensityGradientPerLengthDrillingQuantity
+- MassDensityGradientPerLengthDrillingQuantity.L = -4
+- MassDensityGradientPerLengthDrillingQuantity.M = 1
+- MassDensityGradientPerLengthDrillingQuantity.T = 0
+- MassDensityGradientPerLengthDrillingQuantity.I = 0
+- MassDensityGradientPerLengthDrillingQuantity.ThT = 0
+- MassDensityGradientPerLengthDrillingQuantity.N = 0
+- MassDensityGradientPerLengthDrillingQuantity.J = 0
+- MassDensityGradientPerLengthDrillingQuantity.Theta = 0
+- MassDensityGradientPerLengthDrillingQuantity.Omega = 0
+- Unit:KilogramPerCubicMetrePerMetre
+- KilogramPerCubicMetrePerMetre.ConversionFactorA = 0
+- KilogramPerCubicMetrePerMetre.ConversionFactorB = 1
+- KilogramPerCubicMetrePerMetre.Symbol = kgPermcubicPerm
+- KilogramPerCubicMetrePerMetre IsUnitForQuantity MassDensityGradientPerLengthDrillingQuantity
+- MassDensityGradientPerLengthDrillingQuantity HasSIUnit KilogramPerCubicMetrePerMetre
+- Unit:GramPerCubicCentimetrePer100Metre
+- GramPerCubicCentimetrePer100Metre.ConversionFactorA = 0
+- GramPerCubicCentimetrePer100Metre.ConversionFactorB = 0.10000000000000002
+- GramPerCubicCentimetrePer100Metre.Symbol = gPercmcubicPer100m
+- GramPerCubicCentimetrePer100Metre IsUnitForQuantity MassDensityGradientPerLengthDrillingQuantity
+- Unit:PoundPerGallonUkPer100Foot
+- PoundPerGallonUkPer100Foot.ConversionFactorA = 0
+- PoundPerGallonUkPer100Foot.ConversionFactorB = 0.305483143819196
+- PoundPerGallonUkPer100Foot.Symbol = ppgUKPer100ft
+- PoundPerGallonUkPer100Foot IsUnitForQuantity MassDensityGradientPerLengthDrillingQuantity
+- Unit:PoundPerGallonUkPer30Foot
+- PoundPerGallonUkPer30Foot.ConversionFactorA = 0
+- PoundPerGallonUkPer30Foot.ConversionFactorB = 0.0916449431457588
+- PoundPerGallonUkPer30Foot.Symbol = ppgUKPer30ft
+- PoundPerGallonUkPer30Foot IsUnitForQuantity MassDensityGradientPerLengthDrillingQuantity
+- Unit:PoundPerGallonUkPerFoot
+- PoundPerGallonUkPerFoot.ConversionFactorA = 0
+- PoundPerGallonUkPerFoot.ConversionFactorB = 0.00305483143819196
+- PoundPerGallonUkPerFoot.Symbol = ppgUKPerft
+- PoundPerGallonUkPerFoot IsUnitForQuantity MassDensityGradientPerLengthDrillingQuantity
+- Unit:PoundPerGallonUsPer100Foot
+- PoundPerGallonUsPer100Foot.ConversionFactorA = 0
+- PoundPerGallonUsPer100Foot.ConversionFactorB = 0.2543679276975492
+- PoundPerGallonUsPer100Foot.Symbol = ppgUSPer100ft
+- PoundPerGallonUsPer100Foot IsUnitForQuantity MassDensityGradientPerLengthDrillingQuantity
+- Unit:PoundPerGallonUsPer30Foot
+- PoundPerGallonUsPer30Foot.ConversionFactorA = 0
+- PoundPerGallonUsPer30Foot.ConversionFactorB = 0.07631037830926475
+- PoundPerGallonUsPer30Foot.Symbol = ppgUSPer30ft
+- PoundPerGallonUsPer30Foot IsUnitForQuantity MassDensityGradientPerLengthDrillingQuantity
+- Unit:PoundPerGallonUsPerFoot
+- PoundPerGallonUsPerFoot.ConversionFactorA = 0
+- PoundPerGallonUsPerFoot.ConversionFactorB = 0.0025436792769754917
+- PoundPerGallonUsPerFoot.Symbol = ppgUSPerft
+- PoundPerGallonUsPerFoot IsUnitForQuantity MassDensityGradientPerLengthDrillingQuantity
+- Unit:SpecificGravityPer100Metre
+- SpecificGravityPer100Metre.ConversionFactorA = 0
+- SpecificGravityPer100Metre.ConversionFactorB = 0.10000280007840219
+- SpecificGravityPer100Metre.Symbol = sgPer100m
+- SpecificGravityPer100Metre IsUnitForQuantity MassDensityGradientPerLengthDrillingQuantity
+- Unit:SpecificGravityPer10Metre
+- SpecificGravityPer10Metre.ConversionFactorA = 0
+- SpecificGravityPer10Metre.ConversionFactorB = 0.01000028000784022
+- SpecificGravityPer10Metre.Symbol = sgPer10m
+- SpecificGravityPer10Metre IsUnitForQuantity MassDensityGradientPerLengthDrillingQuantity
+- Unit:SpecificGravityPer30Metre
+- SpecificGravityPer30Metre.ConversionFactorA = 0
+- SpecificGravityPer30Metre.ConversionFactorB = 0.03000084002352066
+- SpecificGravityPer30Metre.Symbol = sgPer30m
+- SpecificGravityPer30Metre IsUnitForQuantity MassDensityGradientPerLengthDrillingQuantity
+- Unit:SpecificGravityPerMetre
+- SpecificGravityPerMetre.ConversionFactorA = 0
+- SpecificGravityPerMetre.ConversionFactorB = 0.001000028000784022
+- SpecificGravityPerMetre.Symbol = sgPerm
+- SpecificGravityPerMetre IsUnitForQuantity MassDensityGradientPerLengthDrillingQuantity
+- Quantity:MassDensityDrillingQuantity
+- MassDensityDrillingQuantity.L = -3
+- MassDensityDrillingQuantity.M = 1
+- MassDensityDrillingQuantity.T = 0
+- MassDensityDrillingQuantity.I = 0
+- MassDensityDrillingQuantity.ThT = 0
+- MassDensityDrillingQuantity.N = 0
+- MassDensityDrillingQuantity.J = 0
+- MassDensityDrillingQuantity.Theta = 0
+- MassDensityDrillingQuantity.Omega = 0
+- Unit:KilogramPerCubicMetre
+- KilogramPerCubicMetre.ConversionFactorA = 0
+- KilogramPerCubicMetre.ConversionFactorB = 1
+- KilogramPerCubicMetre.Symbol = kgPermcubic
+- KilogramPerCubicMetre IsUnitForQuantity MassDensityDrillingQuantity
+- MassDensityDrillingQuantity HasSIUnit KilogramPerCubicMetre
+- Unit:GramPerCubicCentimetre
+- GramPerCubicCentimetre.ConversionFactorA = 0
+- GramPerCubicCentimetre.ConversionFactorB = 0.0010000000000000002
+- GramPerCubicCentimetre.Symbol = gPercmcubic
+- GramPerCubicCentimetre IsUnitForQuantity MassDensityDrillingQuantity
+- Unit:GramPerCubicMetre
+- GramPerCubicMetre.ConversionFactorA = 0
+- GramPerCubicMetre.ConversionFactorB = 1000
+- GramPerCubicMetre.Symbol = gPermcubic
+- GramPerCubicMetre IsUnitForQuantity MassDensityDrillingQuantity
+- Unit:PoundPerCubicFoot
+- PoundPerCubicFoot.ConversionFactorA = 0
+- PoundPerCubicFoot.ConversionFactorB = 0.06242796057614459
+- PoundPerCubicFoot.Symbol = lbPerftcubic
+- PoundPerCubicFoot IsUnitForQuantity MassDensityDrillingQuantity
+- Unit:PoundPerGallonUk
+- PoundPerGallonUk.ConversionFactorA = 0
+- PoundPerGallonUk.ConversionFactorB = 0.010022412854960501
+- PoundPerGallonUk.Symbol = ppgUK
+- PoundPerGallonUk IsUnitForQuantity MassDensityDrillingQuantity
+- Unit:PoundPerGallonUs
+- PoundPerGallonUs.ConversionFactorA = 0
+- PoundPerGallonUs.ConversionFactorB = 0.00834540445201933
+- PoundPerGallonUs.Symbol = ppgUS
+- PoundPerGallonUs IsUnitForQuantity MassDensityDrillingQuantity
+- Unit:SpecificGravity
+- SpecificGravity.ConversionFactorA = 0
+- SpecificGravity.ConversionFactorB = 999.972
+- SpecificGravity.Symbol = s.g.
+- SpecificGravity IsUnitForQuantity MassDensityDrillingQuantity
+- Quantity:FluidVelocityDrillingQuantity
+- FluidVelocityDrillingQuantity.L = 1
+- FluidVelocityDrillingQuantity.M = 0
+- FluidVelocityDrillingQuantity.T = -1
+- FluidVelocityDrillingQuantity.I = 0
+- FluidVelocityDrillingQuantity.ThT = 0
+- FluidVelocityDrillingQuantity.N = 0
+- FluidVelocityDrillingQuantity.J = 0
+- FluidVelocityDrillingQuantity.Theta = 0
+- FluidVelocityDrillingQuantity.Omega = 0
+- Unit:MetrePerSecond
+- MetrePerSecond.ConversionFactorA = 0
+- MetrePerSecond.ConversionFactorB = 1
+- MetrePerSecond.Symbol = mPers
+- MetrePerSecond IsUnitForQuantity FluidVelocityDrillingQuantity
+- FluidVelocityDrillingQuantity HasSIUnit MetrePerSecond
+- Unit:FootPerSecond
+- FootPerSecond.ConversionFactorA = 0
+- FootPerSecond.ConversionFactorB = 3.280839895013124
+- FootPerSecond.Symbol = ftPers
+- FootPerSecond IsUnitForQuantity FluidVelocityDrillingQuantity
+- Quantity:ForceGradientPerLengthDrillingQuantity
+- ForceGradientPerLengthDrillingQuantity.L = 0
+- ForceGradientPerLengthDrillingQuantity.M = 1
+- ForceGradientPerLengthDrillingQuantity.T = -2
+- ForceGradientPerLengthDrillingQuantity.I = 0
+- ForceGradientPerLengthDrillingQuantity.ThT = 0
+- ForceGradientPerLengthDrillingQuantity.N = 0
+- ForceGradientPerLengthDrillingQuantity.J = 0
+- ForceGradientPerLengthDrillingQuantity.Theta = 0
+- ForceGradientPerLengthDrillingQuantity.Omega = 0
+- Unit:NewtonPerMetre
+- NewtonPerMetre.ConversionFactorA = 0
+- NewtonPerMetre.ConversionFactorB = 1
+- NewtonPerMetre.Symbol = nPerm
+- NewtonPerMetre IsUnitForQuantity ForceGradientPerLengthDrillingQuantity
+- ForceGradientPerLengthDrillingQuantity HasSIUnit NewtonPerMetre
+- Unit:NewtonPer10Metre
+- NewtonPer10Metre.ConversionFactorA = 0
+- NewtonPer10Metre.ConversionFactorB = 10
+- NewtonPer10Metre.Symbol = nPer10m
+- NewtonPer10Metre IsUnitForQuantity ForceGradientPerLengthDrillingQuantity
+- Unit:NewtonPer30Metre
+- NewtonPer30Metre.ConversionFactorA = 0
+- NewtonPer30Metre.ConversionFactorB = 30
+- NewtonPer30Metre.Symbol = nPer30m
+- NewtonPer30Metre IsUnitForQuantity ForceGradientPerLengthDrillingQuantity
+- Unit:DecanewtonPerMetre
+- DecanewtonPerMetre.ConversionFactorA = 0
+- DecanewtonPerMetre.ConversionFactorB = 0.1
+- DecanewtonPerMetre.Symbol = daNPerm
+- DecanewtonPerMetre IsUnitForQuantity ForceGradientPerLengthDrillingQuantity
+- Unit:DecanewtonPer10Metre
+- DecanewtonPer10Metre.ConversionFactorA = 0
+- DecanewtonPer10Metre.ConversionFactorB = 1
+- DecanewtonPer10Metre.Symbol = daNPer10m
+- DecanewtonPer10Metre IsUnitForQuantity ForceGradientPerLengthDrillingQuantity
+- Unit:DecanewtonPer30Metre
+- DecanewtonPer30Metre.ConversionFactorA = 0
+- DecanewtonPer30Metre.ConversionFactorB = 3
+- DecanewtonPer30Metre.Symbol = daNPer30m
+- DecanewtonPer30Metre IsUnitForQuantity ForceGradientPerLengthDrillingQuantity
+- Unit:KilonewtonPerMetre
+- KilonewtonPerMetre.ConversionFactorA = 0
+- KilonewtonPerMetre.ConversionFactorB = 0.001
+- KilonewtonPerMetre.Symbol = kNPerm
+- KilonewtonPerMetre IsUnitForQuantity ForceGradientPerLengthDrillingQuantity
+- Unit:KilonewtonPer10Metre
+- KilonewtonPer10Metre.ConversionFactorA = 0
+- KilonewtonPer10Metre.ConversionFactorB = 0.01
+- KilonewtonPer10Metre.Symbol = kNPer10m
+- KilonewtonPer10Metre IsUnitForQuantity ForceGradientPerLengthDrillingQuantity
+- Unit:KilonewtonPer30Metre
+- KilonewtonPer30Metre.ConversionFactorA = 0
+- KilonewtonPer30Metre.ConversionFactorB = 0.03
+- KilonewtonPer30Metre.Symbol = kNPer30m
+- KilonewtonPer30Metre IsUnitForQuantity ForceGradientPerLengthDrillingQuantity
+- Unit:PoundPerFoot
+- PoundPerFoot.ConversionFactorA = 0
+- PoundPerFoot.ConversionFactorB = 0.06852176585679175
+- PoundPerFoot.Symbol = lbfPerft
+- PoundPerFoot IsUnitForQuantity ForceGradientPerLengthDrillingQuantity
+- Unit:PoundPer30Foot
+- PoundPer30Foot.ConversionFactorA = 0
+- PoundPer30Foot.ConversionFactorB = 2.0556529757037523
+- PoundPer30Foot.Symbol = lbfPer30ft
+- PoundPer30Foot IsUnitForQuantity ForceGradientPerLengthDrillingQuantity
+- Unit:PoundPer100Foot
+- PoundPer100Foot.ConversionFactorA = 0
+- PoundPer100Foot.ConversionFactorB = 6.852176585679175
+- PoundPer100Foot.Symbol = lbfPer100ft
+- PoundPer100Foot IsUnitForQuantity ForceGradientPerLengthDrillingQuantity
+- Unit:KilopoundPerFoot
+- KilopoundPerFoot.ConversionFactorA = 0
+- KilopoundPerFoot.ConversionFactorB = 6.852176585679175E-05
+- KilopoundPerFoot.Symbol = klbfPerft
+- KilopoundPerFoot IsUnitForQuantity ForceGradientPerLengthDrillingQuantity
+- Unit:KilopoundPer30Foot
+- KilopoundPer30Foot.ConversionFactorA = 0
+- KilopoundPer30Foot.ConversionFactorB = 0.0020556529757037524
+- KilopoundPer30Foot.Symbol = klbfPer30ft
+- KilopoundPer30Foot IsUnitForQuantity ForceGradientPerLengthDrillingQuantity
+- Unit:KilopoundPer100Foot
+- KilopoundPer100Foot.ConversionFactorA = 0
+- KilopoundPer100Foot.ConversionFactorB = 0.006852176585679175
+- KilopoundPer100Foot.Symbol = klbfPer100ft
+- KilopoundPer100Foot IsUnitForQuantity ForceGradientPerLengthDrillingQuantity
+- Quantity:ForceDrillingQuantity
+- ForceDrillingQuantity.L = 1
+- ForceDrillingQuantity.M = 1
+- ForceDrillingQuantity.T = -2
+- ForceDrillingQuantity.I = 0
+- ForceDrillingQuantity.ThT = 0
+- ForceDrillingQuantity.N = 0
+- ForceDrillingQuantity.J = 0
+- ForceDrillingQuantity.Theta = 0
+- ForceDrillingQuantity.Omega = 0
+- Unit:Newton
+- Newton.ConversionFactorA = 0
+- Newton.ConversionFactorB = 1
+- Newton.Symbol = n
+- Newton IsUnitForQuantity ForceDrillingQuantity
+- ForceDrillingQuantity HasSIUnit Newton
+- Unit:Decanewton
+- Decanewton.ConversionFactorA = 0
+- Decanewton.ConversionFactorB = 0.1
+- Decanewton.Symbol = daN
+- Decanewton IsUnitForQuantity ForceDrillingQuantity
+- Unit:Kilodecanewton
+- Kilodecanewton.ConversionFactorA = 0
+- Kilodecanewton.ConversionFactorB = 0.0001
+- Kilodecanewton.Symbol = kdaN
+- Kilodecanewton IsUnitForQuantity ForceDrillingQuantity
+- Unit:KilogramForce
+- KilogramForce.ConversionFactorA = 0
+- KilogramForce.ConversionFactorB = 0.10197162129779283
+- KilogramForce.Symbol = kgf
+- KilogramForce IsUnitForQuantity ForceDrillingQuantity
+- Unit:Kilonewton
+- Kilonewton.ConversionFactorA = 0
+- Kilonewton.ConversionFactorB = 0.001
+- Kilonewton.Symbol = kN
+- Kilonewton IsUnitForQuantity ForceDrillingQuantity
+- Unit:KilopoundForce
+- KilopoundForce.ConversionFactorA = 0
+- KilopoundForce.ConversionFactorB = 0.0002248089430997105
+- KilopoundForce.Symbol = klbf
+- KilopoundForce IsUnitForQuantity ForceDrillingQuantity
+- Unit:PoundForce
+- PoundForce.ConversionFactorA = 0
+- PoundForce.ConversionFactorB = 0.2248089430997105
+- PoundForce.Symbol = lbf
+- PoundForce IsUnitForQuantity ForceDrillingQuantity
+- Quantity:HeatTransferCoefficientDrillingQuantity
+- HeatTransferCoefficientDrillingQuantity.L = 0
+- HeatTransferCoefficientDrillingQuantity.M = 1
+- HeatTransferCoefficientDrillingQuantity.T = -3
+- HeatTransferCoefficientDrillingQuantity.I = 0
+- HeatTransferCoefficientDrillingQuantity.ThT = -1
+- HeatTransferCoefficientDrillingQuantity.N = 0
+- HeatTransferCoefficientDrillingQuantity.J = 0
+- HeatTransferCoefficientDrillingQuantity.Theta = 0
+- HeatTransferCoefficientDrillingQuantity.Omega = 0
+- Unit:WattPerSquareMetrePerKelvin
+- WattPerSquareMetrePerKelvin.ConversionFactorA = 0
+- WattPerSquareMetrePerKelvin.ConversionFactorB = 1
+- WattPerSquareMetrePerKelvin.Symbol = wPermsquarePerK
+- WattPerSquareMetrePerKelvin IsUnitForQuantity HeatTransferCoefficientDrillingQuantity
+- HeatTransferCoefficientDrillingQuantity HasSIUnit WattPerSquareMetrePerKelvin
+- Unit:BritishThermalUnitPerHourPerSquareFootPerDegreeFahrenheit
+- BritishThermalUnitPerHourPerSquareFootPerDegreeFahrenheit.ConversionFactorA = 0
+- BritishThermalUnitPerHourPerSquareFootPerDegreeFahrenheit.ConversionFactorB = 0.17622808365343573
+- BritishThermalUnitPerHourPerSquareFootPerDegreeFahrenheit.Symbol = bTUPerhPerftsquarePerdegF
+- BritishThermalUnitPerHourPerSquareFootPerDegreeFahrenheit IsUnitForQuantity HeatTransferCoefficientDrillingQuantity
+- Quantity:HydraulicConductivityDrillingQuantity
+- HydraulicConductivityDrillingQuantity.L = 1
+- HydraulicConductivityDrillingQuantity.M = 0
+- HydraulicConductivityDrillingQuantity.T = -1
+- HydraulicConductivityDrillingQuantity.I = 0
+- HydraulicConductivityDrillingQuantity.ThT = 0
+- HydraulicConductivityDrillingQuantity.N = 0
+- HydraulicConductivityDrillingQuantity.J = 0
+- HydraulicConductivityDrillingQuantity.Theta = 0
+- HydraulicConductivityDrillingQuantity.Omega = 0
+- Unit:MetrePerSecond
+- MetrePerSecond.ConversionFactorA = 0
+- MetrePerSecond.ConversionFactorB = 1
+- MetrePerSecond.Symbol = mPers
+- MetrePerSecond IsUnitForQuantity HydraulicConductivityDrillingQuantity
+- HydraulicConductivityDrillingQuantity HasSIUnit MetrePerSecond
+- Unit:MetrePerMinute
+- MetrePerMinute.ConversionFactorA = 0
+- MetrePerMinute.ConversionFactorB = 60
+- MetrePerMinute.Symbol = mPermin
+- MetrePerMinute IsUnitForQuantity HydraulicConductivityDrillingQuantity
+- Unit:MetrePerHour
+- MetrePerHour.ConversionFactorA = 0
+- MetrePerHour.ConversionFactorB = 3600
+- MetrePerHour.Symbol = mPerh
+- MetrePerHour IsUnitForQuantity HydraulicConductivityDrillingQuantity
+- Unit:MetrePerDay
+- MetrePerDay.ConversionFactorA = 0
+- MetrePerDay.ConversionFactorB = 86400
+- MetrePerDay.Symbol = mPerd
+- MetrePerDay IsUnitForQuantity HydraulicConductivityDrillingQuantity
+- Unit:FootPerSecond
+- FootPerSecond.ConversionFactorA = 0
+- FootPerSecond.ConversionFactorB = 3.280839895013124
+- FootPerSecond.Symbol = ftPers
+- FootPerSecond IsUnitForQuantity HydraulicConductivityDrillingQuantity
+- Unit:FootPerMinute
+- FootPerMinute.ConversionFactorA = 0
+- FootPerMinute.ConversionFactorB = 196.85039370078744
+- FootPerMinute.Symbol = ftPerm
+- FootPerMinute IsUnitForQuantity HydraulicConductivityDrillingQuantity
+- Unit:FootPerHour
+- FootPerHour.ConversionFactorA = 0
+- FootPerHour.ConversionFactorB = 11811.023622047245
+- FootPerHour.Symbol = ftPerh
+- FootPerHour IsUnitForQuantity HydraulicConductivityDrillingQuantity
+- Unit:FootPerDay
+- FootPerDay.ConversionFactorA = 0
+- FootPerDay.ConversionFactorB = 283464.5669291339
+- FootPerDay.Symbol = ftPerd
+- FootPerDay IsUnitForQuantity HydraulicConductivityDrillingQuantity
+- Unit:CentimetrePerSecond
+- CentimetrePerSecond.ConversionFactorA = 0
+- CentimetrePerSecond.ConversionFactorB = 100
+- CentimetrePerSecond.Symbol = cmPers
+- CentimetrePerSecond IsUnitForQuantity HydraulicConductivityDrillingQuantity
+- Unit:InchPerSecond
+- InchPerSecond.ConversionFactorA = 0
+- InchPerSecond.ConversionFactorB = 39.37007874015748
+- InchPerSecond.Symbol = inPers
+- InchPerSecond IsUnitForQuantity HydraulicConductivityDrillingQuantity
+- Quantity:InterfacialTensionDrillingQuantity
+- InterfacialTensionDrillingQuantity.L = 0
+- InterfacialTensionDrillingQuantity.M = 1
+- InterfacialTensionDrillingQuantity.T = -2
+- InterfacialTensionDrillingQuantity.I = 0
+- InterfacialTensionDrillingQuantity.ThT = 0
+- InterfacialTensionDrillingQuantity.N = 0
+- InterfacialTensionDrillingQuantity.J = 0
+- InterfacialTensionDrillingQuantity.Theta = 0
+- InterfacialTensionDrillingQuantity.Omega = 0
+- Unit:NewtonPerMetre
+- NewtonPerMetre.ConversionFactorA = 0
+- NewtonPerMetre.ConversionFactorB = 1
+- NewtonPerMetre.Symbol = nPerm
+- NewtonPerMetre IsUnitForQuantity InterfacialTensionDrillingQuantity
+- InterfacialTensionDrillingQuantity HasSIUnit NewtonPerMetre
+- Unit:MillinewtonPerMetre
+- MillinewtonPerMetre.ConversionFactorA = 0
+- MillinewtonPerMetre.ConversionFactorB = 1000
+- MillinewtonPerMetre.Symbol = mNPerm
+- MillinewtonPerMetre IsUnitForQuantity InterfacialTensionDrillingQuantity
+- Unit:DynePerCentimetre
+- DynePerCentimetre.ConversionFactorA = 0
+- DynePerCentimetre.ConversionFactorB = 999.9999999999999
+- DynePerCentimetre.Symbol = dynePercm
+- DynePerCentimetre IsUnitForQuantity InterfacialTensionDrillingQuantity
+- Unit:PoundPerSecondSquared
+- PoundPerSecondSquared.ConversionFactorA = 0
+- PoundPerSecondSquared.ConversionFactorB = 2.2046226218487757
+- PoundPerSecondSquared.Symbol = lbPerssquare
+- PoundPerSecondSquared IsUnitForQuantity InterfacialTensionDrillingQuantity
+- Quantity:MassGradientPerLengthDrillingQuantity
+- MassGradientPerLengthDrillingQuantity.L = -1
+- MassGradientPerLengthDrillingQuantity.M = 1
+- MassGradientPerLengthDrillingQuantity.T = 0
+- MassGradientPerLengthDrillingQuantity.I = 0
+- MassGradientPerLengthDrillingQuantity.ThT = 0
+- MassGradientPerLengthDrillingQuantity.N = 0
+- MassGradientPerLengthDrillingQuantity.J = 0
+- MassGradientPerLengthDrillingQuantity.Theta = 0
+- MassGradientPerLengthDrillingQuantity.Omega = 0
+- Unit:KilogramPerMetre
+- KilogramPerMetre.ConversionFactorA = 0
+- KilogramPerMetre.ConversionFactorB = 1
+- KilogramPerMetre.Symbol = kgPerm
+- KilogramPerMetre IsUnitForQuantity MassGradientPerLengthDrillingQuantity
+- MassGradientPerLengthDrillingQuantity HasSIUnit KilogramPerMetre
+- Unit:PoundPerFoot
+- PoundPerFoot.ConversionFactorA = 0
+- PoundPerFoot.ConversionFactorB = 0.6719689751395067
+- PoundPerFoot.Symbol = lbPerft
+- PoundPerFoot IsUnitForQuantity MassGradientPerLengthDrillingQuantity
+- Quantity:MassDrillingQuantity
+- MassDrillingQuantity.L = 0
+- MassDrillingQuantity.M = 1
+- MassDrillingQuantity.T = 0
+- MassDrillingQuantity.I = 0
+- MassDrillingQuantity.ThT = 0
+- MassDrillingQuantity.N = 0
+- MassDrillingQuantity.J = 0
+- MassDrillingQuantity.Theta = 0
+- MassDrillingQuantity.Omega = 0
+- Unit:Kilogram
+- Kilogram.ConversionFactorA = 0
+- Kilogram.ConversionFactorB = 1
+- Kilogram.Symbol = kg
+- Kilogram IsUnitForQuantity MassDrillingQuantity
+- MassDrillingQuantity HasSIUnit Kilogram
+- Unit:TonneMetric
+- TonneMetric.ConversionFactorA = 0
+- TonneMetric.ConversionFactorB = 0.001
+- TonneMetric.Symbol = t
+- TonneMetric IsUnitForQuantity MassDrillingQuantity
+- Unit:Pound
+- Pound.ConversionFactorA = 0
+- Pound.ConversionFactorB = 2.2046226218487757
+- Pound.Symbol = lb
+- Pound IsUnitForQuantity MassDrillingQuantity
+- Unit:Kilopound
+- Kilopound.ConversionFactorA = 0
+- Kilopound.ConversionFactorB = 0.002204622621848776
+- Kilopound.Symbol = klb
+- Kilopound IsUnitForQuantity MassDrillingQuantity
+- Unit:TonUk
+- TonUk.ConversionFactorA = 0
+- TonUk.ConversionFactorB = 0.0009842065276110606
+- TonUk.Symbol = lT
+- TonUk IsUnitForQuantity MassDrillingQuantity
+- Quantity:MassRateDrillingQuantity
+- MassRateDrillingQuantity.L = 0
+- MassRateDrillingQuantity.M = 1
+- MassRateDrillingQuantity.T = -1
+- MassRateDrillingQuantity.I = 0
+- MassRateDrillingQuantity.ThT = 0
+- MassRateDrillingQuantity.N = 0
+- MassRateDrillingQuantity.J = 0
+- MassRateDrillingQuantity.Theta = 0
+- MassRateDrillingQuantity.Omega = 0
+- Unit:KilogramPerSecond
+- KilogramPerSecond.ConversionFactorA = 0
+- KilogramPerSecond.ConversionFactorB = 1
+- KilogramPerSecond.Symbol = kgPers
+- KilogramPerSecond IsUnitForQuantity MassRateDrillingQuantity
+- MassRateDrillingQuantity HasSIUnit KilogramPerSecond
+- Unit:KilogramPerMinute
+- KilogramPerMinute.ConversionFactorA = 0
+- KilogramPerMinute.ConversionFactorB = 60
+- KilogramPerMinute.Symbol = kgPermin
+- KilogramPerMinute IsUnitForQuantity MassRateDrillingQuantity
+- Quantity:PlaneAngleDrillingQuantity
+- PlaneAngleDrillingQuantity.L = 0
+- PlaneAngleDrillingQuantity.M = 0
+- PlaneAngleDrillingQuantity.T = 0
+- PlaneAngleDrillingQuantity.I = 0
+- PlaneAngleDrillingQuantity.ThT = 0
+- PlaneAngleDrillingQuantity.N = 0
+- PlaneAngleDrillingQuantity.J = 0
+- PlaneAngleDrillingQuantity.Theta = 1
+- PlaneAngleDrillingQuantity.Omega = 0
+- Unit:Radian
+- Radian.ConversionFactorA = 0
+- Radian.ConversionFactorB = 1
+- Radian.Symbol = rad
+- Radian IsUnitForQuantity PlaneAngleDrillingQuantity
+- PlaneAngleDrillingQuantity HasSIUnit Radian
+- Unit:Degree
+- Degree.ConversionFactorA = 0
+- Degree.ConversionFactorB = 57.29577951308232
+- Degree.Symbol = deg
+- Degree IsUnitForQuantity PlaneAngleDrillingQuantity
+- Quantity:PowerDrillingQuantity
+- PowerDrillingQuantity.L = 2
+- PowerDrillingQuantity.M = 1
+- PowerDrillingQuantity.T = -3
+- PowerDrillingQuantity.I = 0
+- PowerDrillingQuantity.ThT = 0
+- PowerDrillingQuantity.N = 0
+- PowerDrillingQuantity.J = 0
+- PowerDrillingQuantity.Theta = 0
+- PowerDrillingQuantity.Omega = 0
+- Unit:Watt
+- Watt.ConversionFactorA = 0
+- Watt.ConversionFactorB = 1
+- Watt.Symbol = w
+- Watt IsUnitForQuantity PowerDrillingQuantity
+- PowerDrillingQuantity HasSIUnit Watt
+- Unit:Kilowatt
+- Kilowatt.ConversionFactorA = 0
+- Kilowatt.ConversionFactorB = 0.001
+- Kilowatt.Symbol = kW
+- Kilowatt IsUnitForQuantity PowerDrillingQuantity
+- Unit:Megawatt
+- Megawatt.ConversionFactorA = 0
+- Megawatt.ConversionFactorB = 1E-06
+- Megawatt.Symbol = mW
+- Megawatt IsUnitForQuantity PowerDrillingQuantity
+- Quantity:PressureGradientPerLengthDrillingQuantity
+- PressureGradientPerLengthDrillingQuantity.L = -2
+- PressureGradientPerLengthDrillingQuantity.M = 1
+- PressureGradientPerLengthDrillingQuantity.T = -2
+- PressureGradientPerLengthDrillingQuantity.I = 0
+- PressureGradientPerLengthDrillingQuantity.ThT = 0
+- PressureGradientPerLengthDrillingQuantity.N = 0
+- PressureGradientPerLengthDrillingQuantity.J = 0
+- PressureGradientPerLengthDrillingQuantity.Theta = 0
+- PressureGradientPerLengthDrillingQuantity.Omega = 0
+- Unit:PascalPerMetre
+- PascalPerMetre.ConversionFactorA = 0
+- PascalPerMetre.ConversionFactorB = 1
+- PascalPerMetre.Symbol = paPerm
+- PascalPerMetre IsUnitForQuantity PressureGradientPerLengthDrillingQuantity
+- PressureGradientPerLengthDrillingQuantity HasSIUnit PascalPerMetre
+- Unit:BarPerMetre
+- BarPerMetre.ConversionFactorA = 0
+- BarPerMetre.ConversionFactorB = 1E-05
+- BarPerMetre.Symbol = barPerm
+- BarPerMetre IsUnitForQuantity PressureGradientPerLengthDrillingQuantity
+- Unit:PsiPerFoot
+- PsiPerFoot.ConversionFactorA = 0
+- PsiPerFoot.ConversionFactorB = 4.4207502460167764E-05
+- PsiPerFoot.Symbol = psiPerft
+- PsiPerFoot IsUnitForQuantity PressureGradientPerLengthDrillingQuantity
+- Unit:PsiPerMetre
+- PsiPerMetre.ConversionFactorA = 0
+- PsiPerMetre.ConversionFactorB = 0.00014503773773020924
+- PsiPerMetre.Symbol = psiPerm
+- PsiPerMetre IsUnitForQuantity PressureGradientPerLengthDrillingQuantity
+- Quantity:PressureLossConstantDrillingQuantity
+- PressureLossConstantDrillingQuantity.L = 4
+- PressureLossConstantDrillingQuantity.M = 0
+- PressureLossConstantDrillingQuantity.T = 0
+- PressureLossConstantDrillingQuantity.I = 0
+- PressureLossConstantDrillingQuantity.ThT = 0
+- PressureLossConstantDrillingQuantity.N = 0
+- PressureLossConstantDrillingQuantity.J = 0
+- PressureLossConstantDrillingQuantity.Theta = 0
+- PressureLossConstantDrillingQuantity.Omega = 0
+- Unit:PressureLossConstantSi
+- PressureLossConstantSi.ConversionFactorA = 0
+- PressureLossConstantSi.ConversionFactorB = 1
+- PressureLossConstantSi.Symbol = (mcubicPers)square.(kgPermcubic)PerPa
+- PressureLossConstantSi IsUnitForQuantity PressureLossConstantDrillingQuantity
+- PressureLossConstantDrillingQuantity HasSIUnit PressureLossConstantSi
+- Unit:PressureLossConstantMetric
+- PressureLossConstantMetric.ConversionFactorA = 0
+- PressureLossConstantMetric.ConversionFactorB = 360010080282.2479
+- PressureLossConstantMetric.Symbol = (lPermin)square.sgPerbar
+- PressureLossConstantMetric IsUnitForQuantity PressureLossConstantDrillingQuantity
+- Unit:PressureLossConstantUk
+- PressureLossConstantUk.ConversionFactorA = 0
+- PressureLossConstantUk.ConversionFactorB = 12036984846.853645
+- PressureLossConstantUk.Symbol = gpmuksquare.ppgukPerpsi
+- PressureLossConstantUk IsUnitForQuantity PressureLossConstantDrillingQuantity
+- Unit:PressureLossConstantUs
+- PressureLossConstantUs.ConversionFactorA = 0
+- PressureLossConstantUs.ConversionFactorB = 14455816055.131952
+- PressureLossConstantUs.Symbol = gpmussquare.ppgusPerpsi
+- PressureLossConstantUs IsUnitForQuantity PressureLossConstantDrillingQuantity
+- Quantity:PressureDrillingQuantity
+- PressureDrillingQuantity.L = -1
+- PressureDrillingQuantity.M = 1
+- PressureDrillingQuantity.T = -2
+- PressureDrillingQuantity.I = 0
+- PressureDrillingQuantity.ThT = 0
+- PressureDrillingQuantity.N = 0
+- PressureDrillingQuantity.J = 0
+- PressureDrillingQuantity.Theta = 0
+- PressureDrillingQuantity.Omega = 0
+- Unit:Pascal
+- Pascal.ConversionFactorA = 0
+- Pascal.ConversionFactorB = 1
+- Pascal.Symbol = pa
+- Pascal IsUnitForQuantity PressureDrillingQuantity
+- PressureDrillingQuantity HasSIUnit Pascal
+- Unit:Bar
+- Bar.ConversionFactorA = 0
+- Bar.ConversionFactorB = 1E-05
+- Bar.Symbol = bar
+- Bar IsUnitForQuantity PressureDrillingQuantity
+- Unit:PoundPerSquareInch
+- PoundPerSquareInch.ConversionFactorA = 0
+- PoundPerSquareInch.ConversionFactorB = 0.00014503773773020924
+- PoundPerSquareInch.Symbol = psi
+- PoundPerSquareInch IsUnitForQuantity PressureDrillingQuantity
+- Unit:Kilopascal
+- Kilopascal.ConversionFactorA = 0
+- Kilopascal.ConversionFactorB = 0.001
+- Kilopascal.Symbol = kPa
+- Kilopascal IsUnitForQuantity PressureDrillingQuantity
+- Unit:Megapascal
+- Megapascal.ConversionFactorA = 0
+- Megapascal.ConversionFactorB = 1E-06
+- Megapascal.Symbol = mPa
+- Megapascal IsUnitForQuantity PressureDrillingQuantity
+- Unit:KilopoundPerSquareInch
+- KilopoundPerSquareInch.ConversionFactorA = 0
+- KilopoundPerSquareInch.ConversionFactorB = 1.4503773773020924E-07
+- KilopoundPerSquareInch.Symbol = ksi
+- KilopoundPerSquareInch IsUnitForQuantity PressureDrillingQuantity
+- Quantity:RandomWalkDrillingQuantity
+- RandomWalkDrillingQuantity.L = 0
+- RandomWalkDrillingQuantity.M = 0
+- RandomWalkDrillingQuantity.T = -0.5
+- RandomWalkDrillingQuantity.I = 0
+- RandomWalkDrillingQuantity.ThT = 0
+- RandomWalkDrillingQuantity.N = 0
+- RandomWalkDrillingQuantity.J = 0
+- RandomWalkDrillingQuantity.Theta = 1
+- RandomWalkDrillingQuantity.Omega = 0
+- Unit:RadianPerSquareRootSecond
+- RadianPerSquareRootSecond.ConversionFactorA = 0
+- RadianPerSquareRootSecond.ConversionFactorB = 1
+- RadianPerSquareRootSecond.Symbol = radPersqrt s
+- RadianPerSquareRootSecond IsUnitForQuantity RandomWalkDrillingQuantity
+- RandomWalkDrillingQuantity HasSIUnit RadianPerSquareRootSecond
+- Unit:RadianPerSquareRootMinute
+- RadianPerSquareRootMinute.ConversionFactorA = 0
+- RadianPerSquareRootMinute.ConversionFactorB = 7.745966692414834
+- RadianPerSquareRootMinute.Symbol = radPersqrt min
+- RadianPerSquareRootMinute IsUnitForQuantity RandomWalkDrillingQuantity
+- Unit:RadianPerSquareRootHour
+- RadianPerSquareRootHour.ConversionFactorA = 0
+- RadianPerSquareRootHour.ConversionFactorB = 60
+- RadianPerSquareRootHour.Symbol = radPersqrt h
+- RadianPerSquareRootHour IsUnitForQuantity RandomWalkDrillingQuantity
+- Unit:RadianPerSquareRootDay
+- RadianPerSquareRootDay.ConversionFactorA = 0
+- RadianPerSquareRootDay.ConversionFactorB = 293.9387691339814
+- RadianPerSquareRootDay.Symbol = radPersqrt d
+- RadianPerSquareRootDay IsUnitForQuantity RandomWalkDrillingQuantity
+- Unit:DegreePerSquareRootSecond
+- DegreePerSquareRootSecond.ConversionFactorA = 0
+- DegreePerSquareRootSecond.ConversionFactorB = 57.29577951308232
+- DegreePerSquareRootSecond.Symbol = degPersqrt s
+- DegreePerSquareRootSecond IsUnitForQuantity RandomWalkDrillingQuantity
+- Unit:DegreePerSquareRootMinute
+- DegreePerSquareRootMinute.ConversionFactorA = 0
+- DegreePerSquareRootMinute.ConversionFactorB = 443.8111997242799
+- DegreePerSquareRootMinute.Symbol = degPersqrt min
+- DegreePerSquareRootMinute IsUnitForQuantity RandomWalkDrillingQuantity
+- Unit:DegreePerSquareRootHour
+- DegreePerSquareRootHour.ConversionFactorA = 0
+- DegreePerSquareRootHour.ConversionFactorB = 3437.746770784939
+- DegreePerSquareRootHour.Symbol = degPersqrt h
+- DegreePerSquareRootHour IsUnitForQuantity RandomWalkDrillingQuantity
+- Unit:DegreePerSquareRootDay
+- DegreePerSquareRootDay.ConversionFactorA = 0
+- DegreePerSquareRootDay.ConversionFactorB = 16841.450906647406
+- DegreePerSquareRootDay.Symbol = degPersqrt d
+- DegreePerSquareRootDay IsUnitForQuantity RandomWalkDrillingQuantity
+- Quantity:RotationalFrequencyRateOfChangeDrillingQuantity
+- RotationalFrequencyRateOfChangeDrillingQuantity.L = 0
+- RotationalFrequencyRateOfChangeDrillingQuantity.M = 0
+- RotationalFrequencyRateOfChangeDrillingQuantity.T = -2
+- RotationalFrequencyRateOfChangeDrillingQuantity.I = 0
+- RotationalFrequencyRateOfChangeDrillingQuantity.ThT = 0
+- RotationalFrequencyRateOfChangeDrillingQuantity.N = 0
+- RotationalFrequencyRateOfChangeDrillingQuantity.J = 0
+- RotationalFrequencyRateOfChangeDrillingQuantity.Theta = 0
+- RotationalFrequencyRateOfChangeDrillingQuantity.Omega = 0
+- Unit:HertzPerSecond
+- HertzPerSecond.ConversionFactorA = 0
+- HertzPerSecond.ConversionFactorB = 1
+- HertzPerSecond.Symbol = hzPers
+- HertzPerSecond IsUnitForQuantity RotationalFrequencyRateOfChangeDrillingQuantity
+- RotationalFrequencyRateOfChangeDrillingQuantity HasSIUnit HertzPerSecond
+- Unit:RpmPerSecond
+- RpmPerSecond.ConversionFactorA = 0
+- RpmPerSecond.ConversionFactorB = 1
+- RpmPerSecond.Symbol = rpmPers
+- RpmPerSecond IsUnitForQuantity RotationalFrequencyRateOfChangeDrillingQuantity
+- Quantity:IsobaricSpecificHeatCapacityDrillingQuantity
+- IsobaricSpecificHeatCapacityDrillingQuantity.L = 2
+- IsobaricSpecificHeatCapacityDrillingQuantity.M = 0
+- IsobaricSpecificHeatCapacityDrillingQuantity.T = -2
+- IsobaricSpecificHeatCapacityDrillingQuantity.I = 0
+- IsobaricSpecificHeatCapacityDrillingQuantity.ThT = -1
+- IsobaricSpecificHeatCapacityDrillingQuantity.N = 0
+- IsobaricSpecificHeatCapacityDrillingQuantity.J = 0
+- IsobaricSpecificHeatCapacityDrillingQuantity.Theta = 0
+- IsobaricSpecificHeatCapacityDrillingQuantity.Omega = 0
+- Unit:JoulePerKilogramKelvin
+- JoulePerKilogramKelvin.ConversionFactorA = 0
+- JoulePerKilogramKelvin.ConversionFactorB = 1
+- JoulePerKilogramKelvin.Symbol = jPerkg.K
+- JoulePerKilogramKelvin IsUnitForQuantity IsobaricSpecificHeatCapacityDrillingQuantity
+- IsobaricSpecificHeatCapacityDrillingQuantity HasSIUnit JoulePerKilogramKelvin
+- Unit:JoulePerGramKelvin
+- JoulePerGramKelvin.ConversionFactorA = 0
+- JoulePerGramKelvin.ConversionFactorB = 0.001
+- JoulePerGramKelvin.Symbol = jPerg.K
+- JoulePerGramKelvin IsUnitForQuantity IsobaricSpecificHeatCapacityDrillingQuantity
+- Unit:JoulePerGramDegreeCelsius
+- JoulePerGramDegreeCelsius.ConversionFactorA = 0
+- JoulePerGramDegreeCelsius.ConversionFactorB = 0.001
+- JoulePerGramDegreeCelsius.Symbol = jPerg.degC
+- JoulePerGramDegreeCelsius IsUnitForQuantity IsobaricSpecificHeatCapacityDrillingQuantity
+- Unit:CaloriePerGramDegreeCelsius
+- CaloriePerGramDegreeCelsius.ConversionFactorA = 0
+- CaloriePerGramDegreeCelsius.ConversionFactorB = 0.0002390057361376673
+- CaloriePerGramDegreeCelsius.Symbol = calPerg.degC
+- CaloriePerGramDegreeCelsius IsUnitForQuantity IsobaricSpecificHeatCapacityDrillingQuantity
+- Unit:BritishThermalUnitPerPoundDegreeFahrenheit
+- BritishThermalUnitPerPoundDegreeFahrenheit.ConversionFactorA = 0
+- BritishThermalUnitPerPoundDegreeFahrenheit.ConversionFactorB = 0.0002390057960934331
+- BritishThermalUnitPerPoundDegreeFahrenheit.Symbol = bTUPerlb.degF
+- BritishThermalUnitPerPoundDegreeFahrenheit IsUnitForQuantity IsobaricSpecificHeatCapacityDrillingQuantity
+- Quantity:IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity
+- IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity.L = 2
+- IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity.M = 0
+- IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity.T = -2
+- IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity.I = 0
+- IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity.ThT = -2
+- IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity.N = 0
+- IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity.J = 0
+- IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity.Theta = 0
+- IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity.Omega = 0
+- Unit:JoulePerKilogramSquaredKelvin
+- JoulePerKilogramSquaredKelvin.ConversionFactorA = 0
+- JoulePerKilogramSquaredKelvin.ConversionFactorB = 1
+- JoulePerKilogramSquaredKelvin.Symbol = jPerkg.Ksquare
+- JoulePerKilogramSquaredKelvin IsUnitForQuantity IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity
+- IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity HasSIUnit JoulePerKilogramSquaredKelvin
+- Unit:JoulePerGramSquaredKelvin
+- JoulePerGramSquaredKelvin.ConversionFactorA = 0
+- JoulePerGramSquaredKelvin.ConversionFactorB = 0.001
+- JoulePerGramSquaredKelvin.Symbol = jPerg.Ksquare
+- JoulePerGramSquaredKelvin IsUnitForQuantity IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity
+- Unit:JoulePerGramDegreeSquaredCelsius
+- JoulePerGramDegreeSquaredCelsius.ConversionFactorA = 0
+- JoulePerGramDegreeSquaredCelsius.ConversionFactorB = 0.001
+- JoulePerGramDegreeSquaredCelsius.Symbol = jPerg.degCsquare
+- JoulePerGramDegreeSquaredCelsius IsUnitForQuantity IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity
+- Unit:CaloriePerGramDegreeSquaredCelsius
+- CaloriePerGramDegreeSquaredCelsius.ConversionFactorA = 0
+- CaloriePerGramDegreeSquaredCelsius.ConversionFactorB = 0.0002390057361376673
+- CaloriePerGramDegreeSquaredCelsius.Symbol = calPerg.degCsquare
+- CaloriePerGramDegreeSquaredCelsius IsUnitForQuantity IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity
+- Unit:BritishThermalUnitPerPoundSquaredDegreeFahrenheit
+- BritishThermalUnitPerPoundSquaredDegreeFahrenheit.ConversionFactorA = 0
+- BritishThermalUnitPerPoundSquaredDegreeFahrenheit.ConversionFactorB = 0.00013278099782968505
+- BritishThermalUnitPerPoundSquaredDegreeFahrenheit.Symbol = bTUPerlb.degFsquare
+- BritishThermalUnitPerPoundSquaredDegreeFahrenheit IsUnitForQuantity IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity
+- Quantity:StickDurationDrillingQuantity
+- StickDurationDrillingQuantity.L = 0
+- StickDurationDrillingQuantity.M = 0
+- StickDurationDrillingQuantity.T = 1
+- StickDurationDrillingQuantity.I = 0
+- StickDurationDrillingQuantity.ThT = 0
+- StickDurationDrillingQuantity.N = 0
+- StickDurationDrillingQuantity.J = 0
+- StickDurationDrillingQuantity.Theta = 0
+- StickDurationDrillingQuantity.Omega = 0
+- Unit:Second
+- Second.ConversionFactorA = 0
+- Second.ConversionFactorB = 1
+- Second.Symbol = s
+- Second IsUnitForQuantity StickDurationDrillingQuantity
+- StickDurationDrillingQuantity HasSIUnit Second
+- Unit:Millisecond
+- Millisecond.ConversionFactorA = 0
+- Millisecond.ConversionFactorB = 1000
+- Millisecond.Symbol = ms
+- Millisecond IsUnitForQuantity StickDurationDrillingQuantity
+- Quantity:ReciprocalLengthSurveyInstrumentDrillingQuantity
+- ReciprocalLengthSurveyInstrumentDrillingQuantity.L = -1
+- ReciprocalLengthSurveyInstrumentDrillingQuantity.M = 0
+- ReciprocalLengthSurveyInstrumentDrillingQuantity.T = 0
+- ReciprocalLengthSurveyInstrumentDrillingQuantity.I = 0
+- ReciprocalLengthSurveyInstrumentDrillingQuantity.ThT = 0
+- ReciprocalLengthSurveyInstrumentDrillingQuantity.N = 0
+- ReciprocalLengthSurveyInstrumentDrillingQuantity.J = 0
+- ReciprocalLengthSurveyInstrumentDrillingQuantity.Theta = 0
+- ReciprocalLengthSurveyInstrumentDrillingQuantity.Omega = 0
+- Unit:ReciprocalMetre
+- ReciprocalMetre.ConversionFactorA = 0
+- ReciprocalMetre.ConversionFactorB = 1
+- ReciprocalMetre.Symbol = 1Perm
+- ReciprocalMetre IsUnitForQuantity ReciprocalLengthSurveyInstrumentDrillingQuantity
+- ReciprocalLengthSurveyInstrumentDrillingQuantity HasSIUnit ReciprocalMetre
+- Unit:ReciprocalDecametre
+- ReciprocalDecametre.ConversionFactorA = 0
+- ReciprocalDecametre.ConversionFactorB = 10
+- ReciprocalDecametre.Symbol = 1Perdam
+- ReciprocalDecametre IsUnitForQuantity ReciprocalLengthSurveyInstrumentDrillingQuantity
+- Unit:ReciprocalHectometre
+- ReciprocalHectometre.ConversionFactorA = 0
+- ReciprocalHectometre.ConversionFactorB = 100
+- ReciprocalHectometre.Symbol = 1Perhm
+- ReciprocalHectometre IsUnitForQuantity ReciprocalLengthSurveyInstrumentDrillingQuantity
+- Unit:ReciprocalKilometre
+- ReciprocalKilometre.ConversionFactorA = 0
+- ReciprocalKilometre.ConversionFactorB = 1000
+- ReciprocalKilometre.Symbol = 1Perkm
+- ReciprocalKilometre IsUnitForQuantity ReciprocalLengthSurveyInstrumentDrillingQuantity
+- Unit:ReciprocalFoot
+- ReciprocalFoot.ConversionFactorA = 0
+- ReciprocalFoot.ConversionFactorB = 0.30479999999999996
+- ReciprocalFoot.Symbol = 1Perft
+- ReciprocalFoot IsUnitForQuantity ReciprocalLengthSurveyInstrumentDrillingQuantity
+- Unit:ReciprocalYard
+- ReciprocalYard.ConversionFactorA = 0
+- ReciprocalYard.ConversionFactorB = 0.9143999999999999
+- ReciprocalYard.Symbol = 1Peryd
+- ReciprocalYard IsUnitForQuantity ReciprocalLengthSurveyInstrumentDrillingQuantity
+- Unit:ReciprocalMile
+- ReciprocalMile.ConversionFactorA = 0
+- ReciprocalMile.ConversionFactorB = 1609.3439999999998
+- ReciprocalMile.Symbol = 1Permi
+- ReciprocalMile IsUnitForQuantity ReciprocalLengthSurveyInstrumentDrillingQuantity
+- Quantity:TemperatureGradientPerLengthDrillingQuantity
+- TemperatureGradientPerLengthDrillingQuantity.L = -1
+- TemperatureGradientPerLengthDrillingQuantity.M = 0
+- TemperatureGradientPerLengthDrillingQuantity.T = 0
+- TemperatureGradientPerLengthDrillingQuantity.I = 0
+- TemperatureGradientPerLengthDrillingQuantity.ThT = 1
+- TemperatureGradientPerLengthDrillingQuantity.N = 0
+- TemperatureGradientPerLengthDrillingQuantity.J = 0
+- TemperatureGradientPerLengthDrillingQuantity.Theta = 0
+- TemperatureGradientPerLengthDrillingQuantity.Omega = 0
+- Unit:KelvinPerMetre
+- KelvinPerMetre.ConversionFactorA = 0
+- KelvinPerMetre.ConversionFactorB = 1
+- KelvinPerMetre.Symbol = kPerm
+- KelvinPerMetre IsUnitForQuantity TemperatureGradientPerLengthDrillingQuantity
+- TemperatureGradientPerLengthDrillingQuantity HasSIUnit KelvinPerMetre
+- Unit:CelsiusPerMetre
+- CelsiusPerMetre.ConversionFactorA = 0
+- CelsiusPerMetre.ConversionFactorB = 1
+- CelsiusPerMetre.Symbol = degCPerm
+- CelsiusPerMetre IsUnitForQuantity TemperatureGradientPerLengthDrillingQuantity
+- Unit:CelsiusPer10Metre
+- CelsiusPer10Metre.ConversionFactorA = 0
+- CelsiusPer10Metre.ConversionFactorB = 10
+- CelsiusPer10Metre.Symbol = degCPer10m
+- CelsiusPer10Metre IsUnitForQuantity TemperatureGradientPerLengthDrillingQuantity
+- Unit:CelsiusPer30Metre
+- CelsiusPer30Metre.ConversionFactorA = 0
+- CelsiusPer30Metre.ConversionFactorB = 30
+- CelsiusPer30Metre.Symbol = degCPer30m
+- CelsiusPer30Metre IsUnitForQuantity TemperatureGradientPerLengthDrillingQuantity
+- Unit:CelsiusPer100Metre
+- CelsiusPer100Metre.ConversionFactorA = 0
+- CelsiusPer100Metre.ConversionFactorB = 100
+- CelsiusPer100Metre.Symbol = degCPer100m
+- CelsiusPer100Metre IsUnitForQuantity TemperatureGradientPerLengthDrillingQuantity
+- Unit:CelsiusPerFoot
+- CelsiusPerFoot.ConversionFactorA = 0
+- CelsiusPerFoot.ConversionFactorB = 0.30479999999999996
+- CelsiusPerFoot.Symbol = degCPerft
+- CelsiusPerFoot IsUnitForQuantity TemperatureGradientPerLengthDrillingQuantity
+- Unit:CelsiusPer30Foot
+- CelsiusPer30Foot.ConversionFactorA = 0
+- CelsiusPer30Foot.ConversionFactorB = 9.143999999999998
+- CelsiusPer30Foot.Symbol = degCPer30ft
+- CelsiusPer30Foot IsUnitForQuantity TemperatureGradientPerLengthDrillingQuantity
+- Unit:CelsiusPer100Foot
+- CelsiusPer100Foot.ConversionFactorA = 0
+- CelsiusPer100Foot.ConversionFactorB = 30.479999999999997
+- CelsiusPer100Foot.Symbol = degCPer100ft
+- CelsiusPer100Foot IsUnitForQuantity TemperatureGradientPerLengthDrillingQuantity
+- Unit:FahrenheitPerFoot
+- FahrenheitPerFoot.ConversionFactorA = 0
+- FahrenheitPerFoot.ConversionFactorB = 0.5486399999999999
+- FahrenheitPerFoot.Symbol = degFPerft
+- FahrenheitPerFoot IsUnitForQuantity TemperatureGradientPerLengthDrillingQuantity
+- Unit:FahrenheitPer30Foot
+- FahrenheitPer30Foot.ConversionFactorA = 0
+- FahrenheitPer30Foot.ConversionFactorB = 16.459199999999996
+- FahrenheitPer30Foot.Symbol = degFPer30ft
+- FahrenheitPer30Foot IsUnitForQuantity TemperatureGradientPerLengthDrillingQuantity
+- Unit:FahrenheitPer100Foot
+- FahrenheitPer100Foot.ConversionFactorA = 0
+- FahrenheitPer100Foot.ConversionFactorB = 54.86399999999999
+- FahrenheitPer100Foot.Symbol = degFPer100ft
+- FahrenheitPer100Foot IsUnitForQuantity TemperatureGradientPerLengthDrillingQuantity
+- Quantity:TemperatureDrillingQuantity
+- TemperatureDrillingQuantity.L = 0
+- TemperatureDrillingQuantity.M = 0
+- TemperatureDrillingQuantity.T = 0
+- TemperatureDrillingQuantity.I = 0
+- TemperatureDrillingQuantity.ThT = 1
+- TemperatureDrillingQuantity.N = 0
+- TemperatureDrillingQuantity.J = 0
+- TemperatureDrillingQuantity.Theta = 0
+- TemperatureDrillingQuantity.Omega = 0
+- Unit:Kelvin
+- Kelvin.ConversionFactorA = 0
+- Kelvin.ConversionFactorB = 1
+- Kelvin.Symbol = k
+- Kelvin IsUnitForQuantity TemperatureDrillingQuantity
+- TemperatureDrillingQuantity HasSIUnit Kelvin
+- Unit:Celsius
+- Celsius.ConversionFactorA = -273.15
+- Celsius.ConversionFactorB = 1
+- Celsius.Symbol = degC
+- Celsius IsUnitForQuantity TemperatureDrillingQuantity
+- Unit:Fahrenheit
+- Fahrenheit.ConversionFactorA = -459.67
+- Fahrenheit.ConversionFactorB = 1.7999999999999998
+- Fahrenheit.Symbol = degF
+- Fahrenheit IsUnitForQuantity TemperatureDrillingQuantity
+- Quantity:TensionDrillingQuantity
+- TensionDrillingQuantity.L = 1
+- TensionDrillingQuantity.M = 1
+- TensionDrillingQuantity.T = -2
+- TensionDrillingQuantity.I = 0
+- TensionDrillingQuantity.ThT = 0
+- TensionDrillingQuantity.N = 0
+- TensionDrillingQuantity.J = 0
+- TensionDrillingQuantity.Theta = 0
+- TensionDrillingQuantity.Omega = 0
+- Unit:Newton
+- Newton.ConversionFactorA = 0
+- Newton.ConversionFactorB = 1
+- Newton.Symbol = n
+- Newton IsUnitForQuantity TensionDrillingQuantity
+- TensionDrillingQuantity HasSIUnit Newton
+- Unit:Decanewton
+- Decanewton.ConversionFactorA = 0
+- Decanewton.ConversionFactorB = 0.1
+- Decanewton.Symbol = daN
+- Decanewton IsUnitForQuantity TensionDrillingQuantity
+- Unit:Kilodecanewton
+- Kilodecanewton.ConversionFactorA = 0
+- Kilodecanewton.ConversionFactorB = 0.0001
+- Kilodecanewton.Symbol = kdaN
+- Kilodecanewton IsUnitForQuantity TensionDrillingQuantity
+- Unit:KilogramForce
+- KilogramForce.ConversionFactorA = 0
+- KilogramForce.ConversionFactorB = 0.10197162129779283
+- KilogramForce.Symbol = kgf
+- KilogramForce IsUnitForQuantity TensionDrillingQuantity
+- Unit:Kilonewton
+- Kilonewton.ConversionFactorA = 0
+- Kilonewton.ConversionFactorB = 0.001
+- Kilonewton.Symbol = kN
+- Kilonewton IsUnitForQuantity TensionDrillingQuantity
+- Unit:KilopoundForce
+- KilopoundForce.ConversionFactorA = 0
+- KilopoundForce.ConversionFactorB = 0.0002248089430997105
+- KilopoundForce.Symbol = klbf
+- KilopoundForce IsUnitForQuantity TensionDrillingQuantity
+- Unit:PoundForce
+- PoundForce.ConversionFactorA = 0
+- PoundForce.ConversionFactorB = 0.2248089430997105
+- PoundForce.Symbol = lbf
+- PoundForce IsUnitForQuantity TensionDrillingQuantity
+- Quantity:ThermalConductivityDrillingQuantity
+- ThermalConductivityDrillingQuantity.L = 1
+- ThermalConductivityDrillingQuantity.M = 1
+- ThermalConductivityDrillingQuantity.T = -3
+- ThermalConductivityDrillingQuantity.I = 0
+- ThermalConductivityDrillingQuantity.ThT = -1
+- ThermalConductivityDrillingQuantity.N = 0
+- ThermalConductivityDrillingQuantity.J = 0
+- ThermalConductivityDrillingQuantity.Theta = 0
+- ThermalConductivityDrillingQuantity.Omega = 0
+- Unit:WattPerMetreKelvin
+- WattPerMetreKelvin.ConversionFactorA = 0
+- WattPerMetreKelvin.ConversionFactorB = 1
+- WattPerMetreKelvin.Symbol = wPerm.K
+- WattPerMetreKelvin IsUnitForQuantity ThermalConductivityDrillingQuantity
+- ThermalConductivityDrillingQuantity HasSIUnit WattPerMetreKelvin
+- Unit:CaloriePerMetreSecondDegreeCelsius
+- CaloriePerMetreSecondDegreeCelsius.ConversionFactorA = 0
+- CaloriePerMetreSecondDegreeCelsius.ConversionFactorB = 0.2390057361376673
+- CaloriePerMetreSecondDegreeCelsius.Symbol = calPerm.s.degC
+- CaloriePerMetreSecondDegreeCelsius IsUnitForQuantity ThermalConductivityDrillingQuantity
+- Unit:CaloriePerCentimetreSecondDegreeCelsius
+- CaloriePerCentimetreSecondDegreeCelsius.ConversionFactorA = 0
+- CaloriePerCentimetreSecondDegreeCelsius.ConversionFactorB = 0.002390057361376673
+- CaloriePerCentimetreSecondDegreeCelsius.Symbol = calPercm.s.degC
+- CaloriePerCentimetreSecondDegreeCelsius IsUnitForQuantity ThermalConductivityDrillingQuantity
+- Unit:BritishThermalUnitPerHourFootDegreeFahrenheit
+- BritishThermalUnitPerHourFootDegreeFahrenheit.ConversionFactorA = 0
+- BritishThermalUnitPerHourFootDegreeFahrenheit.ConversionFactorB = 0.5781761274719021
+- BritishThermalUnitPerHourFootDegreeFahrenheit.Symbol = bTUPerh.ft.degF
+- BritishThermalUnitPerHourFootDegreeFahrenheit IsUnitForQuantity ThermalConductivityDrillingQuantity
+- Unit:BritishThermalUnitInchPerHourSquareFootDegreeFahrenheit
+- BritishThermalUnitInchPerHourSquareFootDegreeFahrenheit.ConversionFactorA = 0
+- BritishThermalUnitInchPerHourSquareFootDegreeFahrenheit.ConversionFactorB = 6.938113529662824
+- BritishThermalUnitInchPerHourSquareFootDegreeFahrenheit.Symbol = bTU.inPerh.ftsquare.degF
+- BritishThermalUnitInchPerHourSquareFootDegreeFahrenheit IsUnitForQuantity ThermalConductivityDrillingQuantity
+- Quantity:TorqueDrillingQuantity
+- TorqueDrillingQuantity.L = 2
+- TorqueDrillingQuantity.M = 1
+- TorqueDrillingQuantity.T = -2
+- TorqueDrillingQuantity.I = 0
+- TorqueDrillingQuantity.ThT = 0
+- TorqueDrillingQuantity.N = 0
+- TorqueDrillingQuantity.J = 0
+- TorqueDrillingQuantity.Theta = 0
+- TorqueDrillingQuantity.Omega = 0
+- Unit:NewtonMetre
+- NewtonMetre.ConversionFactorA = 0
+- NewtonMetre.ConversionFactorB = 1
+- NewtonMetre.Symbol = n.m
+- NewtonMetre IsUnitForQuantity TorqueDrillingQuantity
+- TorqueDrillingQuantity HasSIUnit NewtonMetre
+- Unit:FootPound
+- FootPound.ConversionFactorA = 0
+- FootPound.ConversionFactorB = 0.7375621492772655
+- FootPound.Symbol = ft.lbf
+- FootPound IsUnitForQuantity TorqueDrillingQuantity
+- Unit:KilofootPound
+- KilofootPound.ConversionFactorA = 0
+- KilofootPound.ConversionFactorB = 0.0007375621492772656
+- KilofootPound.Symbol = kft.lbf
+- KilofootPound IsUnitForQuantity TorqueDrillingQuantity
+- Unit:DecanewtonMetre
+- DecanewtonMetre.ConversionFactorA = 0
+- DecanewtonMetre.ConversionFactorB = 0.1
+- DecanewtonMetre.Symbol = daN.m
+- DecanewtonMetre IsUnitForQuantity TorqueDrillingQuantity
+- Unit:KilogramForceMetre
+- KilogramForceMetre.ConversionFactorA = 0
+- KilogramForceMetre.ConversionFactorB = 0.10197162129779283
+- KilogramForceMetre.Symbol = kgf.m
+- KilogramForceMetre IsUnitForQuantity TorqueDrillingQuantity
+- Unit:KilonewtonMetre
+- KilonewtonMetre.ConversionFactorA = 0
+- KilonewtonMetre.ConversionFactorB = 0.001
+- KilonewtonMetre.Symbol = kN.m
+- KilonewtonMetre IsUnitForQuantity TorqueDrillingQuantity
+- Quantity:VolumeDrillingQuantity
+- VolumeDrillingQuantity.L = 3
+- VolumeDrillingQuantity.M = 0
+- VolumeDrillingQuantity.T = 0
+- VolumeDrillingQuantity.I = 0
+- VolumeDrillingQuantity.ThT = 0
+- VolumeDrillingQuantity.N = 0
+- VolumeDrillingQuantity.J = 0
+- VolumeDrillingQuantity.Theta = 0
+- VolumeDrillingQuantity.Omega = 0
+- Unit:CubicMetre
+- CubicMetre.ConversionFactorA = 0
+- CubicMetre.ConversionFactorB = 1
+- CubicMetre.Symbol = mcubic
+- CubicMetre IsUnitForQuantity VolumeDrillingQuantity
+- VolumeDrillingQuantity HasSIUnit CubicMetre
+- Unit:Litre
+- Litre.ConversionFactorA = 0
+- Litre.ConversionFactorB = 1000
+- Litre.Symbol = l
+- Litre IsUnitForQuantity VolumeDrillingQuantity
+- Unit:UsGallon
+- UsGallon.ConversionFactorA = 0
+- UsGallon.ConversionFactorB = 264.17205235814845
+- UsGallon.Symbol = uSGal.
+- UsGallon IsUnitForQuantity VolumeDrillingQuantity
+- Unit:UkGallon
+- UkGallon.ConversionFactorA = 0
+- UkGallon.ConversionFactorB = 219.96924829908778
+- UkGallon.Symbol = uKGal.
+- UkGallon IsUnitForQuantity VolumeDrillingQuantity
+- Quantity:VolumetricFlowRateOfChangeDrillingQuantity
+- VolumetricFlowRateOfChangeDrillingQuantity.L = 3
+- VolumetricFlowRateOfChangeDrillingQuantity.M = 0
+- VolumetricFlowRateOfChangeDrillingQuantity.T = -2
+- VolumetricFlowRateOfChangeDrillingQuantity.I = 0
+- VolumetricFlowRateOfChangeDrillingQuantity.ThT = 0
+- VolumetricFlowRateOfChangeDrillingQuantity.N = 0
+- VolumetricFlowRateOfChangeDrillingQuantity.J = 0
+- VolumetricFlowRateOfChangeDrillingQuantity.Theta = 0
+- VolumetricFlowRateOfChangeDrillingQuantity.Omega = 0
+- Unit:CubicMetrePerSecondSquared
+- CubicMetrePerSecondSquared.ConversionFactorA = 0
+- CubicMetrePerSecondSquared.ConversionFactorB = 1
+- CubicMetrePerSecondSquared.Symbol = mcubicPerssquare
+- CubicMetrePerSecondSquared IsUnitForQuantity VolumetricFlowRateOfChangeDrillingQuantity
+- VolumetricFlowRateOfChangeDrillingQuantity HasSIUnit CubicMetrePerSecondSquared
+- Unit:LitrePerMinutePerSecond
+- LitrePerMinutePerSecond.ConversionFactorA = 0
+- LitrePerMinutePerSecond.ConversionFactorB = 60000
+- LitrePerMinutePerSecond.Symbol = lPerminPers
+- LitrePerMinutePerSecond IsUnitForQuantity VolumetricFlowRateOfChangeDrillingQuantity
+- Unit:UkGallonPerMinutePerSecond
+- UkGallonPerMinutePerSecond.ConversionFactorA = 0
+- UkGallonPerMinutePerSecond.ConversionFactorB = 13198.154897945267
+- UkGallonPerMinutePerSecond.Symbol = uKGalPerminPers
+- UkGallonPerMinutePerSecond IsUnitForQuantity VolumetricFlowRateOfChangeDrillingQuantity
+- Unit:UsGallonPerMinutePerSecond
+- UsGallonPerMinutePerSecond.ConversionFactorA = 0
+- UsGallonPerMinutePerSecond.ConversionFactorB = 15850.323141488907
+- UsGallonPerMinutePerSecond.Symbol = uSGalPerminPers
+- UsGallonPerMinutePerSecond IsUnitForQuantity VolumetricFlowRateOfChangeDrillingQuantity
+- Quantity:VolumetricFlowrateDrillingQuantity
+- VolumetricFlowrateDrillingQuantity.L = 3
+- VolumetricFlowrateDrillingQuantity.M = 0
+- VolumetricFlowrateDrillingQuantity.T = -1
+- VolumetricFlowrateDrillingQuantity.I = 0
+- VolumetricFlowrateDrillingQuantity.ThT = 0
+- VolumetricFlowrateDrillingQuantity.N = 0
+- VolumetricFlowrateDrillingQuantity.J = 0
+- VolumetricFlowrateDrillingQuantity.Theta = 0
+- VolumetricFlowrateDrillingQuantity.Omega = 0
+- Unit:CubicMetrePerSecond
+- CubicMetrePerSecond.ConversionFactorA = 0
+- CubicMetrePerSecond.ConversionFactorB = 1
+- CubicMetrePerSecond.Symbol = mcubicPers
+- CubicMetrePerSecond IsUnitForQuantity VolumetricFlowrateDrillingQuantity
+- VolumetricFlowrateDrillingQuantity HasSIUnit CubicMetrePerSecond
+- Unit:LitrePerMinute
+- LitrePerMinute.ConversionFactorA = 0
+- LitrePerMinute.ConversionFactorB = 60000
+- LitrePerMinute.Symbol = lPermin
+- LitrePerMinute IsUnitForQuantity VolumetricFlowrateDrillingQuantity
+- Unit:UkGallonPerMinute
+- UkGallonPerMinute.ConversionFactorA = 0
+- UkGallonPerMinute.ConversionFactorB = 13198.154897945267
+- UkGallonPerMinute.Symbol = gpmUK
+- UkGallonPerMinute IsUnitForQuantity VolumetricFlowrateDrillingQuantity
+- Unit:UsGallonPerMinute
+- UsGallonPerMinute.ConversionFactorA = 0
+- UsGallonPerMinute.ConversionFactorB = 15850.323141488907
+- UsGallonPerMinute.Symbol = gpmUS
+- UsGallonPerMinute IsUnitForQuantity VolumetricFlowrateDrillingQuantity
+- Quantity:FormationResistivityDrillingQuantity
+- FormationResistivityDrillingQuantity.L = 3
+- FormationResistivityDrillingQuantity.M = 1
+- FormationResistivityDrillingQuantity.T = -3
+- FormationResistivityDrillingQuantity.I = -2
+- FormationResistivityDrillingQuantity.ThT = 0
+- FormationResistivityDrillingQuantity.N = 0
+- FormationResistivityDrillingQuantity.J = 0
+- FormationResistivityDrillingQuantity.Theta = 0
+- FormationResistivityDrillingQuantity.Omega = 0
+- Unit:OhmMetre
+- OhmMetre.ConversionFactorA = 0
+- OhmMetre.ConversionFactorB = 1
+- OhmMetre.Symbol = ω.m
+- OhmMetre IsUnitForQuantity FormationResistivityDrillingQuantity
+- FormationResistivityDrillingQuantity HasSIUnit OhmMetre
+- Quantity:FormationStrengthDrillingQuantity
+- FormationStrengthDrillingQuantity.L = -1
+- FormationStrengthDrillingQuantity.M = 1
+- FormationStrengthDrillingQuantity.T = -2
+- FormationStrengthDrillingQuantity.I = 0
+- FormationStrengthDrillingQuantity.ThT = 0
+- FormationStrengthDrillingQuantity.N = 0
+- FormationStrengthDrillingQuantity.J = 0
+- FormationStrengthDrillingQuantity.Theta = 0
+- FormationStrengthDrillingQuantity.Omega = 0
+- Unit:Gigapascal
+- Gigapascal.ConversionFactorA = 0
+- Gigapascal.ConversionFactorB = 1E-09
+- Gigapascal.Symbol = gPa
+- Gigapascal IsUnitForQuantity FormationStrengthDrillingQuantity
+- Unit:Megapascal
+- Megapascal.ConversionFactorA = 0
+- Megapascal.ConversionFactorB = 1E-06
+- Megapascal.Symbol = mPa
+- Megapascal IsUnitForQuantity FormationStrengthDrillingQuantity
+- Unit:MegapoundPerSquareInch
+- MegapoundPerSquareInch.ConversionFactorA = 0
+- MegapoundPerSquareInch.ConversionFactorB = 1.4503773773020922E-10
+- MegapoundPerSquareInch.Symbol = mpsi
+- MegapoundPerSquareInch IsUnitForQuantity FormationStrengthDrillingQuantity
+- Unit:Pascal
+- Pascal.ConversionFactorA = 0
+- Pascal.ConversionFactorB = 1
+- Pascal.Symbol = pa
+- Pascal IsUnitForQuantity FormationStrengthDrillingQuantity
+- FormationStrengthDrillingQuantity HasSIUnit Pascal
+- Unit:PoundPer100SquareFoot
+- PoundPer100SquareFoot.ConversionFactorA = 0
+- PoundPer100SquareFoot.ConversionFactorB = 2.0885434233150124
+- PoundPer100SquareFoot.Symbol = lbfPer100ftsquare
+- PoundPer100SquareFoot IsUnitForQuantity FormationStrengthDrillingQuantity
+- Unit:Psi
+- Psi.ConversionFactorA = 0
+- Psi.ConversionFactorB = 0.00014503773773020924
+- Psi.Symbol = psi
+- Psi IsUnitForQuantity FormationStrengthDrillingQuantity
+- Quantity:GammaRayIndexDrillingQuantity
+- GammaRayIndexDrillingQuantity.L = 0
+- GammaRayIndexDrillingQuantity.M = 0
+- GammaRayIndexDrillingQuantity.T = 0
+- GammaRayIndexDrillingQuantity.I = 0
+- GammaRayIndexDrillingQuantity.ThT = 0
+- GammaRayIndexDrillingQuantity.N = 0
+- GammaRayIndexDrillingQuantity.J = 0
+- GammaRayIndexDrillingQuantity.Theta = 0
+- GammaRayIndexDrillingQuantity.Omega = 0
+- Unit:Dimensionless
+- Dimensionless.ConversionFactorA = 0
+- Dimensionless.ConversionFactorB = 1
+- Dimensionless IsUnitForQuantity GammaRayIndexDrillingQuantity
+- GammaRayIndexDrillingQuantity HasSIUnit Dimensionless
+- Quantity:GasShowDrillingQuantity
+- GasShowDrillingQuantity.L = 0
+- GasShowDrillingQuantity.M = 0
+- GasShowDrillingQuantity.T = 0
+- GasShowDrillingQuantity.I = 0
+- GasShowDrillingQuantity.ThT = 0
+- GasShowDrillingQuantity.N = 0
+- GasShowDrillingQuantity.J = 0
+- GasShowDrillingQuantity.Theta = 0
+- GasShowDrillingQuantity.Omega = 0
+- Unit:Proportion
+- Proportion.ConversionFactorA = 0
+- Proportion.ConversionFactorB = 1
+- Proportion IsUnitForQuantity GasShowDrillingQuantity
+- GasShowDrillingQuantity HasSIUnit Proportion
+- Unit:Percent
+- Percent.ConversionFactorA = 0
+- Percent.ConversionFactorB = 100
+- Percent.Symbol = %
+- Percent IsUnitForQuantity GasShowDrillingQuantity
+- Unit:PerThousand
+- PerThousand.ConversionFactorA = 0
+- PerThousand.ConversionFactorB = 1000
+- PerThousand.Symbol = perThousands
+- PerThousand IsUnitForQuantity GasShowDrillingQuantity
+- Unit:PartPerMillion
+- PartPerMillion.ConversionFactorA = 0
+- PartPerMillion.ConversionFactorB = 1000000
+- PartPerMillion.Symbol = ppm
+- PartPerMillion IsUnitForQuantity GasShowDrillingQuantity
+- Quantity:GasVolumetricFlowRateDrillingQuantity
+- GasVolumetricFlowRateDrillingQuantity.L = 3
+- GasVolumetricFlowRateDrillingQuantity.M = 0
+- GasVolumetricFlowRateDrillingQuantity.T = -1
+- GasVolumetricFlowRateDrillingQuantity.I = 0
+- GasVolumetricFlowRateDrillingQuantity.ThT = 0
+- GasVolumetricFlowRateDrillingQuantity.N = 0
+- GasVolumetricFlowRateDrillingQuantity.J = 0
+- GasVolumetricFlowRateDrillingQuantity.Theta = 0
+- GasVolumetricFlowRateDrillingQuantity.Omega = 0
+- Unit:CubicMetrePerSecond
+- CubicMetrePerSecond.ConversionFactorA = 0
+- CubicMetrePerSecond.ConversionFactorB = 1
+- CubicMetrePerSecond.Symbol = mcubicPers
+- CubicMetrePerSecond IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- GasVolumetricFlowRateDrillingQuantity HasSIUnit CubicMetrePerSecond
+- Unit:CubicFootPerSecond
+- CubicFootPerSecond.ConversionFactorA = 0
+- CubicFootPerSecond.ConversionFactorB = 35.3146667214886
+- CubicFootPerSecond.Symbol = ftcubicPers
+- CubicFootPerSecond IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:LitrePerSecond
+- LitrePerSecond.ConversionFactorA = 0
+- LitrePerSecond.ConversionFactorB = 1000
+- LitrePerSecond.Symbol = lPers
+- LitrePerSecond IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:UkGallonPerSecond
+- UkGallonPerSecond.ConversionFactorA = 0
+- UkGallonPerSecond.ConversionFactorB = 219.96924829908778
+- UkGallonPerSecond.Symbol = gpsUK
+- UkGallonPerSecond IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:UsGallonPerSecond
+- UsGallonPerSecond.ConversionFactorA = 0
+- UsGallonPerSecond.ConversionFactorB = 264.17205235814845
+- UsGallonPerSecond.Symbol = gpsUS
+- UsGallonPerSecond IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:BarrelPerSecond
+- BarrelPerSecond.ConversionFactorA = 0
+- BarrelPerSecond.ConversionFactorB = 6.289810770432106
+- BarrelPerSecond.Symbol = bblPers
+- BarrelPerSecond IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:CubicMetrePerMinute
+- CubicMetrePerMinute.ConversionFactorA = 0
+- CubicMetrePerMinute.ConversionFactorB = 60
+- CubicMetrePerMinute.Symbol = mcubicPermin
+- CubicMetrePerMinute IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:CubicFootPerMinute
+- CubicFootPerMinute.ConversionFactorA = 0
+- CubicFootPerMinute.ConversionFactorB = 2118.880003289316
+- CubicFootPerMinute.Symbol = ftcubicPermin
+- CubicFootPerMinute IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:LitrePerMinute
+- LitrePerMinute.ConversionFactorA = 0
+- LitrePerMinute.ConversionFactorB = 60000
+- LitrePerMinute.Symbol = lPermin
+- LitrePerMinute IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:UkGallonPerMinute
+- UkGallonPerMinute.ConversionFactorA = 0
+- UkGallonPerMinute.ConversionFactorB = 13198.154897945267
+- UkGallonPerMinute.Symbol = gpmUK
+- UkGallonPerMinute IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:UsGallonPerMinute
+- UsGallonPerMinute.ConversionFactorA = 0
+- UsGallonPerMinute.ConversionFactorB = 15850.323141488907
+- UsGallonPerMinute.Symbol = gpmUS
+- UsGallonPerMinute IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:BarrelPerMinute
+- BarrelPerMinute.ConversionFactorA = 0
+- BarrelPerMinute.ConversionFactorB = 377.3886462259263
+- BarrelPerMinute.Symbol = bblPerm
+- BarrelPerMinute IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:CubicMetrePerHour
+- CubicMetrePerHour.ConversionFactorA = 0
+- CubicMetrePerHour.ConversionFactorB = 3600
+- CubicMetrePerHour.Symbol = mcubicPerh
+- CubicMetrePerHour IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:CubicFootPerHour
+- CubicFootPerHour.ConversionFactorA = 0
+- CubicFootPerHour.ConversionFactorB = 127132.80019735897
+- CubicFootPerHour.Symbol = ftcubicPerh
+- CubicFootPerHour IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:LitrePerHour
+- LitrePerHour.ConversionFactorA = 0
+- LitrePerHour.ConversionFactorB = 3600000
+- LitrePerHour.Symbol = lPerh
+- LitrePerHour IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:UkGallonPerHour
+- UkGallonPerHour.ConversionFactorA = 0
+- UkGallonPerHour.ConversionFactorB = 791889.293876716
+- UkGallonPerHour.Symbol = gphUK
+- UkGallonPerHour IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:UsGallonPerHour
+- UsGallonPerHour.ConversionFactorA = 0
+- UsGallonPerHour.ConversionFactorB = 951019.3884893344
+- UsGallonPerHour.Symbol = gphUS
+- UsGallonPerHour IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:BarrelPerHour
+- BarrelPerHour.ConversionFactorA = 0
+- BarrelPerHour.ConversionFactorB = 22643.31877355558
+- BarrelPerHour.Symbol = bblPerh
+- BarrelPerHour IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:CubicMetrePerDay
+- CubicMetrePerDay.ConversionFactorA = 0
+- CubicMetrePerDay.ConversionFactorB = 86400
+- CubicMetrePerDay.Symbol = mcubicPerd
+- CubicMetrePerDay IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:CubicFootPerDay
+- CubicFootPerDay.ConversionFactorA = 0
+- CubicFootPerDay.ConversionFactorB = 3051187.204736615
+- CubicFootPerDay.Symbol = ftcubicPerd
+- CubicFootPerDay IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:LitrePerDay
+- LitrePerDay.ConversionFactorA = 0
+- LitrePerDay.ConversionFactorB = 86400000
+- LitrePerDay.Symbol = lPerd
+- LitrePerDay IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:UkGallonPerDay
+- UkGallonPerDay.ConversionFactorA = 0
+- UkGallonPerDay.ConversionFactorB = 19005343.053041186
+- UkGallonPerDay.Symbol = gpdUK
+- UkGallonPerDay IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:UsGallonPerDay
+- UsGallonPerDay.ConversionFactorA = 0
+- UsGallonPerDay.ConversionFactorB = 22824465.323744025
+- UsGallonPerDay.Symbol = gpdUS
+- UsGallonPerDay IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:BarrelPerDay
+- BarrelPerDay.ConversionFactorA = 0
+- BarrelPerDay.ConversionFactorB = 543439.6505653339
+- BarrelPerDay.Symbol = bblPerd
+- BarrelPerDay IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:ThousandStandardCubicFootPerDay
+- ThousandStandardCubicFootPerDay.ConversionFactorA = 0
+- ThousandStandardCubicFootPerDay.ConversionFactorB = 3051.187204736615
+- ThousandStandardCubicFootPerDay.Symbol = mscfPerd
+- ThousandStandardCubicFootPerDay IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:MillionCubicMetrePerDay
+- MillionCubicMetrePerDay.ConversionFactorA = 0
+- MillionCubicMetrePerDay.ConversionFactorB = 0.0864
+- MillionCubicMetrePerDay.Symbol = mmcubicPerd
+- MillionCubicMetrePerDay IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:MillionLiterPerDay
+- MillionLiterPerDay.ConversionFactorA = 0
+- MillionLiterPerDay.ConversionFactorB = 86.4
+- MillionLiterPerDay.Symbol = millionLiterPerDay
+- MillionLiterPerDay IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:MillionStandardCubicFootPerDay
+- MillionStandardCubicFootPerDay.ConversionFactorA = 0
+- MillionStandardCubicFootPerDay.ConversionFactorB = 3.0511872047366158
+- MillionStandardCubicFootPerDay.Symbol = mMscfPerd
+- MillionStandardCubicFootPerDay IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:MillionUkGallonPerDay
+- MillionUkGallonPerDay.ConversionFactorA = 0
+- MillionUkGallonPerDay.ConversionFactorB = 19.005343053041184
+- MillionUkGallonPerDay.Symbol = millionUKGallonPerDay
+- MillionUkGallonPerDay IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Unit:MillionUsGallonPerDay
+- MillionUsGallonPerDay.ConversionFactorA = 0
+- MillionUsGallonPerDay.ConversionFactorB = 22.824465323744025
+- MillionUsGallonPerDay.Symbol = millionUSGallonPerDay
+- MillionUsGallonPerDay IsUnitForQuantity GasVolumetricFlowRateDrillingQuantity
+- Quantity:HeightDrillingQuantity
+- HeightDrillingQuantity.L = 1
+- HeightDrillingQuantity.M = 0
+- HeightDrillingQuantity.T = 0
+- HeightDrillingQuantity.I = 0
+- HeightDrillingQuantity.ThT = 0
+- HeightDrillingQuantity.N = 0
+- HeightDrillingQuantity.J = 0
+- HeightDrillingQuantity.Theta = 0
+- HeightDrillingQuantity.Omega = 0
+- Unit:Metre
+- Metre.ConversionFactorA = 0
+- Metre.ConversionFactorB = 1
+- Metre.Symbol = m
+- Metre IsUnitForQuantity HeightDrillingQuantity
+- HeightDrillingQuantity HasSIUnit Metre
+- Unit:Millimetre
+- Millimetre.ConversionFactorA = 0
+- Millimetre.ConversionFactorB = 1000
+- Millimetre.Symbol = mm
+- Millimetre IsUnitForQuantity HeightDrillingQuantity
+- Unit:Centimetre
+- Centimetre.ConversionFactorA = 0
+- Centimetre.ConversionFactorB = 100
+- Centimetre.Symbol = cm
+- Centimetre IsUnitForQuantity HeightDrillingQuantity
+- Unit:Decimetre
+- Decimetre.ConversionFactorA = 0
+- Decimetre.ConversionFactorB = 10
+- Decimetre.Symbol = dm
+- Decimetre IsUnitForQuantity HeightDrillingQuantity
+- Unit:Hectometre
+- Hectometre.ConversionFactorA = 0
+- Hectometre.ConversionFactorB = 0.01
+- Hectometre.Symbol = hm
+- Hectometre IsUnitForQuantity HeightDrillingQuantity
+- Unit:Kilometre
+- Kilometre.ConversionFactorA = 0
+- Kilometre.ConversionFactorB = 0.001
+- Kilometre.Symbol = km
+- Kilometre IsUnitForQuantity HeightDrillingQuantity
+- Unit:Inch
+- Inch.ConversionFactorA = 0
+- Inch.ConversionFactorB = 39.37007874015748
+- Inch.Symbol = in
+- Inch IsUnitForQuantity HeightDrillingQuantity
+- Unit:Foot
+- Foot.ConversionFactorA = 0
+- Foot.ConversionFactorB = 3.280839895013124
+- Foot.Symbol = ft
+- Foot IsUnitForQuantity HeightDrillingQuantity
+- Unit:Yard
+- Yard.ConversionFactorA = 0
+- Yard.ConversionFactorB = 1.093613298337708
+- Yard.Symbol = yd
+- Yard IsUnitForQuantity HeightDrillingQuantity
+- Unit:Mile
+- Mile.ConversionFactorA = 0
+- Mile.ConversionFactorB = 0.000621371192237334
+- Mile.Symbol = mi
+- Mile IsUnitForQuantity HeightDrillingQuantity
+- Quantity:HookLoadDrillingQuantity
+- HookLoadDrillingQuantity.L = 0
+- HookLoadDrillingQuantity.M = 1
+- HookLoadDrillingQuantity.T = 0
+- HookLoadDrillingQuantity.I = 0
+- HookLoadDrillingQuantity.ThT = 0
+- HookLoadDrillingQuantity.N = 0
+- HookLoadDrillingQuantity.J = 0
+- HookLoadDrillingQuantity.Theta = 0
+- HookLoadDrillingQuantity.Omega = 0
+- Unit:Kilogram
+- Kilogram.ConversionFactorA = 0
+- Kilogram.ConversionFactorB = 1
+- Kilogram.Symbol = kg
+- Kilogram IsUnitForQuantity HookLoadDrillingQuantity
+- HookLoadDrillingQuantity HasSIUnit Kilogram
+- Unit:TonneMetric
+- TonneMetric.ConversionFactorA = 0
+- TonneMetric.ConversionFactorB = 0.001
+- TonneMetric.Symbol = t
+- TonneMetric IsUnitForQuantity HookLoadDrillingQuantity
+- Unit:Pound
+- Pound.ConversionFactorA = 0
+- Pound.ConversionFactorB = 2.2046226218487757
+- Pound.Symbol = lb
+- Pound IsUnitForQuantity HookLoadDrillingQuantity
+- Unit:Kilopound
+- Kilopound.ConversionFactorA = 0
+- Kilopound.ConversionFactorB = 0.002204622621848776
+- Kilopound.Symbol = klb
+- Kilopound IsUnitForQuantity HookLoadDrillingQuantity
+- Unit:TonUk
+- TonUk.ConversionFactorA = 0
+- TonUk.ConversionFactorB = 0.0009842065276110606
+- TonUk.Symbol = lT
+- TonUk IsUnitForQuantity HookLoadDrillingQuantity
+- Quantity:NozzleDiameterDrillingQuantity
+- NozzleDiameterDrillingQuantity.L = 1
+- NozzleDiameterDrillingQuantity.M = 0
+- NozzleDiameterDrillingQuantity.T = 0
+- NozzleDiameterDrillingQuantity.I = 0
+- NozzleDiameterDrillingQuantity.ThT = 0
+- NozzleDiameterDrillingQuantity.N = 0
+- NozzleDiameterDrillingQuantity.J = 0
+- NozzleDiameterDrillingQuantity.Theta = 0
+- NozzleDiameterDrillingQuantity.Omega = 0
+- Unit:Centimetre
+- Centimetre.ConversionFactorA = 0
+- Centimetre.ConversionFactorB = 100
+- Centimetre.Symbol = cm
+- Centimetre IsUnitForQuantity NozzleDiameterDrillingQuantity
+- Unit:Decimetre
+- Decimetre.ConversionFactorA = 0
+- Decimetre.ConversionFactorB = 10
+- Decimetre.Symbol = dm
+- Decimetre IsUnitForQuantity NozzleDiameterDrillingQuantity
+- Unit:Foot
+- Foot.ConversionFactorA = 0
+- Foot.ConversionFactorB = 3.280839895013124
+- Foot.Symbol = ft
+- Foot IsUnitForQuantity NozzleDiameterDrillingQuantity
+- Unit:Inch
+- Inch.ConversionFactorA = 0
+- Inch.ConversionFactorB = 39.37007874015748
+- Inch.Symbol = in
+- Inch IsUnitForQuantity NozzleDiameterDrillingQuantity
+- Unit:Metre
+- Metre.ConversionFactorA = 0
+- Metre.ConversionFactorB = 1
+- Metre.Symbol = m
+- Metre IsUnitForQuantity NozzleDiameterDrillingQuantity
+- NozzleDiameterDrillingQuantity HasSIUnit Metre
+- Unit:Micrometre
+- Micrometre.ConversionFactorA = 0
+- Micrometre.ConversionFactorB = 1000000
+- Micrometre.Symbol = mum
+- Micrometre IsUnitForQuantity NozzleDiameterDrillingQuantity
+- Unit:Millimetre
+- Millimetre.ConversionFactorA = 0
+- Millimetre.ConversionFactorB = 1000
+- Millimetre.Symbol = mm
+- Millimetre IsUnitForQuantity NozzleDiameterDrillingQuantity
+- Unit:Nanometre
+- Nanometre.ConversionFactorA = 0
+- Nanometre.ConversionFactorB = 999999999.9999999
+- Nanometre.Symbol = nm
+- Nanometre IsUnitForQuantity NozzleDiameterDrillingQuantity
+- Unit:Picometre
+- Picometre.ConversionFactorA = 0
+- Picometre.ConversionFactorB = 1000000000000
+- Picometre.Symbol = pm
+- Picometre IsUnitForQuantity NozzleDiameterDrillingQuantity
+- Unit:Aangstroem
+- Aangstroem.ConversionFactorA = 0
+- Aangstroem.ConversionFactorB = 10000000000
+- Aangstroem.Symbol = aa
+- Aangstroem IsUnitForQuantity NozzleDiameterDrillingQuantity
+- Unit:InchPer32
+- InchPer32.ConversionFactorA = 0
+- InchPer32.ConversionFactorB = 1259.8425196850394
+- InchPer32.Symbol = inPer32
+- InchPer32 IsUnitForQuantity NozzleDiameterDrillingQuantity
+- Quantity:SurfacePoreDrillingQuantity
+- SurfacePoreDrillingQuantity.L = 2
+- SurfacePoreDrillingQuantity.M = 0
+- SurfacePoreDrillingQuantity.T = 0
+- SurfacePoreDrillingQuantity.I = 0
+- SurfacePoreDrillingQuantity.ThT = 0
+- SurfacePoreDrillingQuantity.N = 0
+- SurfacePoreDrillingQuantity.J = 0
+- SurfacePoreDrillingQuantity.Theta = 0
+- SurfacePoreDrillingQuantity.Omega = 0
+- Unit:SquareMetre
+- SquareMetre.ConversionFactorA = 0
+- SquareMetre.ConversionFactorB = 1
+- SquareMetre.Symbol = msquare
+- SquareMetre IsUnitForQuantity SurfacePoreDrillingQuantity
+- SurfacePoreDrillingQuantity HasSIUnit SquareMetre
+- Unit:SquareMillimetre
+- SquareMillimetre.ConversionFactorA = 0
+- SquareMillimetre.ConversionFactorB = 1000000
+- SquareMillimetre.Symbol = mmsquare
+- SquareMillimetre IsUnitForQuantity SurfacePoreDrillingQuantity
+- Unit:SquareMicrometre
+- SquareMicrometre.ConversionFactorA = 0
+- SquareMicrometre.ConversionFactorB = 1000000000000
+- SquareMicrometre.Symbol = mumsquare
+- SquareMicrometre IsUnitForQuantity SurfacePoreDrillingQuantity
+- Unit:SquareFoot
+- SquareFoot.ConversionFactorA = 0
+- SquareFoot.ConversionFactorB = 10.763910416709725
+- SquareFoot.Symbol = ftsquare
+- SquareFoot IsUnitForQuantity SurfacePoreDrillingQuantity
+- Quantity:PositionDrillingQuantity
+- PositionDrillingQuantity.L = 1
+- PositionDrillingQuantity.M = 0
+- PositionDrillingQuantity.T = 0
+- PositionDrillingQuantity.I = 0
+- PositionDrillingQuantity.ThT = 0
+- PositionDrillingQuantity.N = 0
+- PositionDrillingQuantity.J = 0
+- PositionDrillingQuantity.Theta = 0
+- PositionDrillingQuantity.Omega = 0
+- Unit:Metre
+- Metre.ConversionFactorA = 0
+- Metre.ConversionFactorB = 1
+- Metre.Symbol = m
+- Metre IsUnitForQuantity PositionDrillingQuantity
+- PositionDrillingQuantity HasSIUnit Metre
+- Unit:Kilometre
+- Kilometre.ConversionFactorA = 0
+- Kilometre.ConversionFactorB = 0.001
+- Kilometre.Symbol = km
+- Kilometre IsUnitForQuantity PositionDrillingQuantity
+- Unit:Foot
+- Foot.ConversionFactorA = 0
+- Foot.ConversionFactorB = 3.280839895013124
+- Foot.Symbol = ft
+- Foot IsUnitForQuantity PositionDrillingQuantity
+- Unit:UsSurveyFoot
+- UsSurveyFoot.ConversionFactorA = 0
+- UsSurveyFoot.ConversionFactorB = 3.2808333333333337
+- UsSurveyFoot.Symbol = ft
+- UsSurveyFoot IsUnitForQuantity PositionDrillingQuantity
+- Unit:Yard
+- Yard.ConversionFactorA = 0
+- Yard.ConversionFactorB = 1.093613298337708
+- Yard.Symbol = yd
+- Yard IsUnitForQuantity PositionDrillingQuantity
+- Unit:SurveyorSChain
+- SurveyorSChain.ConversionFactorA = 0
+- SurveyorSChain.ConversionFactorB = 0.04970969537898672
+- SurveyorSChain.Symbol = chain
+- SurveyorSChain IsUnitForQuantity PositionDrillingQuantity
+- Unit:Mile
+- Mile.ConversionFactorA = 0
+- Mile.ConversionFactorB = 0.000621371192237334
+- Mile.Symbol = mi
+- Mile IsUnitForQuantity PositionDrillingQuantity
+- Quantity:RateOfPenetrationDrillingQuantity
+- RateOfPenetrationDrillingQuantity.L = 1
+- RateOfPenetrationDrillingQuantity.M = 0
+- RateOfPenetrationDrillingQuantity.T = -1
+- RateOfPenetrationDrillingQuantity.I = 0
+- RateOfPenetrationDrillingQuantity.ThT = 0
+- RateOfPenetrationDrillingQuantity.N = 0
+- RateOfPenetrationDrillingQuantity.J = 0
+- RateOfPenetrationDrillingQuantity.Theta = 0
+- RateOfPenetrationDrillingQuantity.Omega = 0
+- Unit:MetrePerSecond
+- MetrePerSecond.ConversionFactorA = 0
+- MetrePerSecond.ConversionFactorB = 1
+- MetrePerSecond.Symbol = mPers
+- MetrePerSecond IsUnitForQuantity RateOfPenetrationDrillingQuantity
+- RateOfPenetrationDrillingQuantity HasSIUnit MetrePerSecond
+- Unit:MetrePerHour
+- MetrePerHour.ConversionFactorA = 0
+- MetrePerHour.ConversionFactorB = 3600
+- MetrePerHour.Symbol = mPerh
+- MetrePerHour IsUnitForQuantity RateOfPenetrationDrillingQuantity
+- Unit:FootPerSecond
+- FootPerSecond.ConversionFactorA = 0
+- FootPerSecond.ConversionFactorB = 3.280839895013124
+- FootPerSecond.Symbol = ftPers
+- FootPerSecond IsUnitForQuantity RateOfPenetrationDrillingQuantity
+- Unit:FootPerHour
+- FootPerHour.ConversionFactorA = 0
+- FootPerHour.ConversionFactorB = 11811.023622047245
+- FootPerHour.Symbol = ftPerh
+- FootPerHour IsUnitForQuantity RateOfPenetrationDrillingQuantity
+- Quantity:WeightOnBitDrillingQuantity
+- WeightOnBitDrillingQuantity.L = 0
+- WeightOnBitDrillingQuantity.M = 1
+- WeightOnBitDrillingQuantity.T = 0
+- WeightOnBitDrillingQuantity.I = 0
+- WeightOnBitDrillingQuantity.ThT = 0
+- WeightOnBitDrillingQuantity.N = 0
+- WeightOnBitDrillingQuantity.J = 0
+- WeightOnBitDrillingQuantity.Theta = 0
+- WeightOnBitDrillingQuantity.Omega = 0
+- Unit:Kilogram
+- Kilogram.ConversionFactorA = 0
+- Kilogram.ConversionFactorB = 1
+- Kilogram.Symbol = kg
+- Kilogram IsUnitForQuantity WeightOnBitDrillingQuantity
+- WeightOnBitDrillingQuantity HasSIUnit Kilogram
+- Unit:TonneMetric
+- TonneMetric.ConversionFactorA = 0
+- TonneMetric.ConversionFactorB = 0.001
+- TonneMetric.Symbol = t
+- TonneMetric IsUnitForQuantity WeightOnBitDrillingQuantity
+- Unit:Pound
+- Pound.ConversionFactorA = 0
+- Pound.ConversionFactorB = 2.2046226218487757
+- Pound.Symbol = lb
+- Pound IsUnitForQuantity WeightOnBitDrillingQuantity
+- Unit:Kilopound
+- Kilopound.ConversionFactorA = 0
+- Kilopound.ConversionFactorB = 0.002204622621848776
+- Kilopound.Symbol = klb
+- Kilopound IsUnitForQuantity WeightOnBitDrillingQuantity
+- Unit:TonUk
+- TonUk.ConversionFactorA = 0
+- TonUk.ConversionFactorB = 0.0009842065276110606
+- TonUk.Symbol = lT
+- TonUk IsUnitForQuantity WeightOnBitDrillingQuantity
+- Quantity:ThermalConductivityGradientPerTemperatureDrillingQuantity
+- ThermalConductivityGradientPerTemperatureDrillingQuantity.L = 1
+- ThermalConductivityGradientPerTemperatureDrillingQuantity.M = 1
+- ThermalConductivityGradientPerTemperatureDrillingQuantity.T = -3
+- ThermalConductivityGradientPerTemperatureDrillingQuantity.I = 0
+- ThermalConductivityGradientPerTemperatureDrillingQuantity.ThT = -2
+- ThermalConductivityGradientPerTemperatureDrillingQuantity.N = 0
+- ThermalConductivityGradientPerTemperatureDrillingQuantity.J = 0
+- ThermalConductivityGradientPerTemperatureDrillingQuantity.Theta = 0
+- ThermalConductivityGradientPerTemperatureDrillingQuantity.Omega = 0
+- Unit:WattPerMetreKelvinPerKelvin
+- WattPerMetreKelvinPerKelvin.ConversionFactorA = 0
+- WattPerMetreKelvinPerKelvin.ConversionFactorB = 1
+- WattPerMetreKelvinPerKelvin.Symbol = (WPer(m.K))PerK
+- WattPerMetreKelvinPerKelvin IsUnitForQuantity ThermalConductivityGradientPerTemperatureDrillingQuantity
+- ThermalConductivityGradientPerTemperatureDrillingQuantity HasSIUnit WattPerMetreKelvinPerKelvin
+- Unit:BritishThermalUnitInchPerHourSquareFootDegreeFahrenheitSquared
+- BritishThermalUnitInchPerHourSquareFootDegreeFahrenheitSquared.ConversionFactorA = 0
+- BritishThermalUnitInchPerHourSquareFootDegreeFahrenheitSquared.ConversionFactorB = 3.8545075164793468
+- BritishThermalUnitInchPerHourSquareFootDegreeFahrenheitSquared.Symbol = bTU.inPerh.ftsquare.degFsquare
+- BritishThermalUnitInchPerHourSquareFootDegreeFahrenheitSquared IsUnitForQuantity ThermalConductivityGradientPerTemperatureDrillingQuantity
+- Unit:BritishThermalUnitPerHourFootDegreeFahrenheitSquared
+- BritishThermalUnitPerHourFootDegreeFahrenheitSquared.ConversionFactorA = 0
+- BritishThermalUnitPerHourFootDegreeFahrenheitSquared.ConversionFactorB = 0.3212089597066123
+- BritishThermalUnitPerHourFootDegreeFahrenheitSquared.Symbol = bTUPerh.ft.degFsquare
+- BritishThermalUnitPerHourFootDegreeFahrenheitSquared IsUnitForQuantity ThermalConductivityGradientPerTemperatureDrillingQuantity
+- Unit:CaloriePerCentimetreSecondDegreeCelsiusSquared
+- CaloriePerCentimetreSecondDegreeCelsiusSquared.ConversionFactorA = 0
+- CaloriePerCentimetreSecondDegreeCelsiusSquared.ConversionFactorB = 0.002390057361376673
+- CaloriePerCentimetreSecondDegreeCelsiusSquared.Symbol = calPercm.s.degCsquare
+- CaloriePerCentimetreSecondDegreeCelsiusSquared IsUnitForQuantity ThermalConductivityGradientPerTemperatureDrillingQuantity
+- Unit:CaloriePerMetreSecondDegreeCelsiusSquared
+- CaloriePerMetreSecondDegreeCelsiusSquared.ConversionFactorA = 0
+- CaloriePerMetreSecondDegreeCelsiusSquared.ConversionFactorB = 0.2390057361376673
+- CaloriePerMetreSecondDegreeCelsiusSquared.Symbol = calPerm.s.degCsquare
+- CaloriePerMetreSecondDegreeCelsiusSquared IsUnitForQuantity ThermalConductivityGradientPerTemperatureDrillingQuantity
+- Quantity:TorqueGradientPerLengthDrillingQuantity
+- TorqueGradientPerLengthDrillingQuantity.L = 1
+- TorqueGradientPerLengthDrillingQuantity.M = 1
+- TorqueGradientPerLengthDrillingQuantity.T = -2
+- TorqueGradientPerLengthDrillingQuantity.I = 0
+- TorqueGradientPerLengthDrillingQuantity.ThT = 0
+- TorqueGradientPerLengthDrillingQuantity.N = 0
+- TorqueGradientPerLengthDrillingQuantity.J = 0
+- TorqueGradientPerLengthDrillingQuantity.Theta = 0
+- TorqueGradientPerLengthDrillingQuantity.Omega = 0
+- Unit:NewtonMetrePerMetre
+- NewtonMetrePerMetre.ConversionFactorA = 0
+- NewtonMetrePerMetre.ConversionFactorB = 1
+- NewtonMetrePerMetre.Symbol = n.mPerm
+- NewtonMetrePerMetre IsUnitForQuantity TorqueGradientPerLengthDrillingQuantity
+- TorqueGradientPerLengthDrillingQuantity HasSIUnit NewtonMetrePerMetre
+- Unit:KilonewtonMetrePerMetre
+- KilonewtonMetrePerMetre.ConversionFactorA = 0
+- KilonewtonMetrePerMetre.ConversionFactorB = 0.001
+- KilonewtonMetrePerMetre.Symbol = kN.mPerm
+- KilonewtonMetrePerMetre IsUnitForQuantity TorqueGradientPerLengthDrillingQuantity
+- Unit:DecanewtonMetrePerMetre
+- DecanewtonMetrePerMetre.ConversionFactorA = 0
+- DecanewtonMetrePerMetre.ConversionFactorB = 0.1
+- DecanewtonMetrePerMetre.Symbol = daN.mPerm
+- DecanewtonMetrePerMetre IsUnitForQuantity TorqueGradientPerLengthDrillingQuantity
+- Unit:FootPoundPerFoot
+- FootPoundPerFoot.ConversionFactorA = 0
+- FootPoundPerFoot.ConversionFactorB = 0.2248089430997105
+- FootPoundPerFoot.Symbol = ft.lbfPerft
+- FootPoundPerFoot IsUnitForQuantity TorqueGradientPerLengthDrillingQuantity
+- Unit:KilofootPoundPerFoot
+- KilofootPoundPerFoot.ConversionFactorA = 0
+- KilofootPoundPerFoot.ConversionFactorB = 0.00022480894309971053
+- KilofootPoundPerFoot.Symbol = kft.lbfPerft
+- KilofootPoundPerFoot IsUnitForQuantity TorqueGradientPerLengthDrillingQuantity
+- Unit:FootPoundPerMetre
+- FootPoundPerMetre.ConversionFactorA = 0
+- FootPoundPerMetre.ConversionFactorB = 0.7375621492772655
+- FootPoundPerMetre.Symbol = ft.lbfPerm
+- FootPoundPerMetre IsUnitForQuantity TorqueGradientPerLengthDrillingQuantity
+- Unit:KilofootPoundPerMetre
+- KilofootPoundPerMetre.ConversionFactorA = 0
+- KilofootPoundPerMetre.ConversionFactorB = 0.0007375621492772654
+- KilofootPoundPerMetre.Symbol = kft.lbfPerm
+- KilofootPoundPerMetre IsUnitForQuantity TorqueGradientPerLengthDrillingQuantity
+- Quantity:PorousMediumPermeabilityDrillingQuantity
+- PorousMediumPermeabilityDrillingQuantity.L = 2
+- PorousMediumPermeabilityDrillingQuantity.M = 0
+- PorousMediumPermeabilityDrillingQuantity.T = 0
+- PorousMediumPermeabilityDrillingQuantity.I = 0
+- PorousMediumPermeabilityDrillingQuantity.ThT = 0
+- PorousMediumPermeabilityDrillingQuantity.N = 0
+- PorousMediumPermeabilityDrillingQuantity.J = 0
+- PorousMediumPermeabilityDrillingQuantity.Theta = 0
+- PorousMediumPermeabilityDrillingQuantity.Omega = 0
+- Unit:SquareMetre
+- SquareMetre.ConversionFactorA = 0
+- SquareMetre.ConversionFactorB = 1
+- SquareMetre.Symbol = msquare
+- SquareMetre IsUnitForQuantity PorousMediumPermeabilityDrillingQuantity
+- PorousMediumPermeabilityDrillingQuantity HasSIUnit SquareMetre
+- Unit:Darcy
+- Darcy.ConversionFactorA = 0
+- Darcy.ConversionFactorB = 1013250000000
+- Darcy.Symbol = d
+- Darcy IsUnitForQuantity PorousMediumPermeabilityDrillingQuantity
+- Unit:Millidarcy
+- Millidarcy.ConversionFactorA = 0
+- Millidarcy.ConversionFactorB = 1013250000000000.1
+- Millidarcy.Symbol = mD
+- Millidarcy IsUnitForQuantity PorousMediumPermeabilityDrillingQuantity
+- Unit:Microdarcy
+- Microdarcy.ConversionFactorA = 0
+- Microdarcy.ConversionFactorB = 1.01325E+18
+- Microdarcy.Symbol = muD
+- Microdarcy IsUnitForQuantity PorousMediumPermeabilityDrillingQuantity
+- Unit:Nanodarcy
+- Nanodarcy.ConversionFactorA = 0
+- Nanodarcy.ConversionFactorB = 1.01325E+21
+- Nanodarcy.Symbol = nD
+- Nanodarcy IsUnitForQuantity PorousMediumPermeabilityDrillingQuantity

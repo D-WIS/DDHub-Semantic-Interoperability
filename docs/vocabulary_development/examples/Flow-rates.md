@@ -1,10 +1,10 @@
 # Flow-rates
 - DrillingDataPoint:DrillingDataPoint_0
-- DrillingVolumetricFlowrateQuantity:FlowRateQuantity_0
+- VolumetricFlowrateDrillingQuantity:FlowRateQuantity_0
 - DrillingDataPoint:DrillingDataPoint_1
 - DrillingDataPoint:DrillingDataPoint_2
 - PumpRate:PumpRate_0
-- RotationFrequencyQuantity:PumpRateQuantity_0
+- RotationalFrequencyQuantity:PumpRateQuantity_0
 - PumpRate:PumpRate_1
 - PumpRate:PumpRate_2
 - DrillingDataPoint:DrillingDataPoint_3

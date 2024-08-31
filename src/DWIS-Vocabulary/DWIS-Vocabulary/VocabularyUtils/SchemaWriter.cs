@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using DWIS.Vocabulary.Development;
+using Microsoft.CodeAnalysis.CSharp;
+using OSDC.UnitConversion.Conversion;
+using OSDC.UnitConversion.Conversion.DrillingEngineering;
 
 namespace DWIS.Vocabulary.Utils
 {
@@ -127,6 +130,44 @@ namespace DWIS.Vocabulary.Utils
             builder.AppendLine("{");
             builder.AppendLine("public static class Attributes");
             builder.AppendLine("{");
+            List<string> attributes = new List<string>(); 
+            if (vocabulary != null && vocabulary.Nouns != null)
+            {
+                foreach (Noun noun in vocabulary.Nouns)
+                {
+                    if (noun != null && !string.IsNullOrEmpty(noun.Name) && noun.NounAttributes != null && noun.NounAttributes.Length > 0)
+                    {
+                        foreach (NounAttribute attribute in noun.NounAttributes)
+                        {
+                            if (attribute != null && !string.IsNullOrEmpty(attribute.Name))
+                            {
+                                string attributeName = noun.Name + "_" + attribute.Name;
+                                if (!attributes.Contains(attributeName))
+                                {
+                                    attributes.Add(attributeName);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (attributes.Count > 0)
+            {
+                builder.AppendLine("public enum Enum");
+                builder.AppendLine("{");
+                foreach (string attribute in attributes)
+                {
+                    if (attribute != attributes.Last())
+                    {
+                        builder.AppendLine(attribute + ",");
+                    }
+                    else
+                    {
+                        builder.AppendLine(attribute);
+                    }
+                }
+                builder.AppendLine("}");
+            }
             foreach (string line in GetAttributes(vocabulary))
             {
                 builder.AppendLine(line);
@@ -166,6 +207,132 @@ namespace DWIS.Vocabulary.Utils
             builder.AppendLine("}");
 
             System.IO.File.WriteAllText(verbsFileName, builder.ToString());
+        }
+
+        public static void WriteQuantitiesAndUnits(string quantitiesFileName, string unitsFileName)
+        {
+            List<string> quantities = new List<string>();
+            List<string> units = new List<string>();
+            if (BasePhysicalQuantity.AvailableBasePhysicalQuantities != null)
+            {
+                foreach (BasePhysicalQuantity quantity in BasePhysicalQuantity.AvailableBasePhysicalQuantities)
+                {
+                    if (quantity != null && !string.IsNullOrEmpty(quantity.GetType()?.Name))
+                    {
+                        string name = quantity.GetType()!.Name;
+                        if (!quantities.Contains(name))
+                        {
+                            quantities.Add(name);
+                            if (quantity.UnitChoices != null)
+                            {
+                                foreach (UnitChoice choice in quantity.UnitChoices)
+                                {
+                                    if (choice != null)
+                                    {
+                                        string unitName = choice.GetVariableName();
+                                        if (!string.IsNullOrEmpty(unitName) && !units.Contains(unitName))
+                                        {
+                                            units.Add(unitName);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (PhysicalQuantity.AvailablePhysicalQuantities != null)
+            {
+                foreach (BasePhysicalQuantity quantity in PhysicalQuantity.AvailablePhysicalQuantities)
+                {
+                    if (quantity != null && !string.IsNullOrEmpty(quantity.GetType()?.Name))
+                    {
+                        string name = quantity.GetType()!.Name;
+                        if (!quantities.Contains(name))
+                        {
+                            quantities.Add(name);
+                            if (quantity.UnitChoices != null)
+                            {
+                                foreach (UnitChoice choice in quantity.UnitChoices)
+                                {
+                                    if (choice != null)
+                                    {
+                                        string unitName = choice.GetVariableName();
+                                        if (!string.IsNullOrEmpty(unitName) && !units.Contains(unitName))
+                                        {
+                                            units.Add(unitName);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (quantities.Count > 0)
+            {
+                StringBuilder builder = new StringBuilder();
+
+                builder.AppendLine("using System;");
+                builder.AppendLine("namespace DWIS.Vocabulary.Schemas");
+                builder.AppendLine("{");
+                builder.AppendLine("public static class Quantities");
+                builder.AppendLine("{");
+                builder.AppendLine("public enum Enum");
+                builder.AppendLine("{");
+                foreach (string quantity in quantities)
+                {
+                    if (quantity != quantities.Last())
+                    {
+                        builder.AppendLine(quantity + ",");
+                    }
+                    else
+                    {
+                        builder.AppendLine(quantity);
+                    }
+                }
+                builder.AppendLine("}");
+                foreach (string quantity in quantities)
+                {
+                    builder.AppendLine("public static string " + quantity + " = \"" + quantity + "\";");
+                }
+                builder.AppendLine("}");
+                builder.AppendLine("}");
+
+                System.IO.File.WriteAllText(quantitiesFileName, builder.ToString());
+            }
+            if (units.Count > 0)
+            {
+                StringBuilder builder = new StringBuilder();
+
+                builder.AppendLine("using System;");
+                builder.AppendLine("namespace DWIS.Vocabulary.Schemas");
+                builder.AppendLine("{");
+                builder.AppendLine("public static class Units");
+                builder.AppendLine("{");
+                builder.AppendLine("public enum Enum");
+                builder.AppendLine("{");
+                foreach (string unit in units)
+                {
+                    if (unit != units.Last())
+                    {
+                        builder.AppendLine(unit + ",");
+                    }
+                    else
+                    {
+                        builder.AppendLine(unit);
+                    }
+                }
+                builder.AppendLine("}");
+                foreach (string unit in units)
+                {
+                    builder.AppendLine("public static string " + unit + " = \"" + unit + "\";");
+                }
+                builder.AppendLine("}");
+                builder.AppendLine("}");
+
+                System.IO.File.WriteAllText(unitsFileName, builder.ToString());
+            }
         }
 
         public static IEnumerable<string> GetVerbs(Development.Vocabulary vocabulary)

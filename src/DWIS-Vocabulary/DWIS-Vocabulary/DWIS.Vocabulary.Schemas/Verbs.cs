@@ -16,6 +16,7 @@ IsTriggeredSignalFor,
 IsIdlingAfterTriggeredSignalFor,
 IsImpactDescriptionSignalFor,
 IsDependentOn,
+IsObservableFrom,
 HasPressureReference,
 HasTemperatureReference,
 HasElevationReference,
@@ -122,7 +123,7 @@ IsPhysicallyLocatedAt,
 AssociatesMeasurableQuantity,
 AssociatesUnit,
 HasUnitAssociation,
-IsObservableFrom,
+HasMeasurableQuantity,
 IsOfBaseQuantity,
 IsOfMeasurableQuantity,
 IsUnitForQuantity,
@@ -159,6 +160,7 @@ HasUncertaintyHistogram
 	public static string IsIdlingAfterTriggeredSignalFor = "IsIdlingAfterTriggeredSignalFor";
 	public static string IsImpactDescriptionSignalFor = "IsImpactDescriptionSignalFor";
 	public static string IsDependentOn = "IsDependentOn";
+	public static string IsObservableFrom = "IsObservableFrom";
 	public static string HasPressureReference = "HasPressureReference";
 	public static string HasTemperatureReference = "HasTemperatureReference";
 	public static string HasElevationReference = "HasElevationReference";
@@ -265,7 +267,7 @@ HasUncertaintyHistogram
 	public static string AssociatesMeasurableQuantity = "AssociatesMeasurableQuantity";
 	public static string AssociatesUnit = "AssociatesUnit";
 	public static string HasUnitAssociation = "HasUnitAssociation";
-	public static string IsObservableFrom = "IsObservableFrom";
+	public static string HasMeasurableQuantity = "HasMeasurableQuantity";
 	public static string IsOfBaseQuantity = "IsOfBaseQuantity";
 	public static string IsOfMeasurableQuantity = "IsOfMeasurableQuantity";
 	public static string IsUnitForQuantity = "IsUnitForQuantity";

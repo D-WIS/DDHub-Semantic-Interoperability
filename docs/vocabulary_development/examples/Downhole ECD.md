@@ -1,18 +1,18 @@
 # Downhole ECD
-- DrillingPressureQuantity:DownholePressureQuantity_0
+- PressureDrillingQuantity:DownholePressureQuantity_0
 - PressureQuantity:PressureQuantity_0
 - DownholeECD:DownholeECD_0
-- DrillingDensityQuantity:EMWQuantity_0
+- MassDensityDrilling:EMWQuantity_0
 - DownholePressure:DownholePressure_0
 - DrillingDataPoint:DrillingDataPoint_0
-- DepthQuantity:TVDQuantity_0
+- DepthDrillingQuantity:TVDQuantity_0
 - DrillingDataPoint:DrillingDataPoint_1
 - AccelerationQuantity:AccelerationQuantity_0
 - DrillingDataPoint:DrillingDataPoint_2
 - DrillingDataPoint:DrillingDataPoint_3
 - LengthQuantity:LengthQuantity_0
 - DrillingDataPoint:DrillingDataPoint_4
-- DepthQuantity:DepthQuantity_0
+- DepthDrillingQuantity:DepthQuantity_0
 - BitDepth:BitDepth_0
 - DirectTransformation:DirectTransformation_0
 - DirectTransformation:DirectTransformation_1
