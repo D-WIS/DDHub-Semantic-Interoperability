@@ -48,8 +48,8 @@
 - DrillingDataPoint:DrillingDataPoint_11
 - ProportionQuantity:ProportionQuantity_0
 - VolumeQuantity:VolumeQuantity_0
-- DrillingVolumetricFlowrateQuantity:FlowRateQuantity_0
-- RotationFrequencyQuantity:PumpRateQuantity_0
+- VolumetricFlowrateDrillingQuantity:FlowRateQuantity_0
+- RotationalFrequencyQuantity:PumpRateQuantity_0
 - Transformation:Transformation_0
 - Transformation:Transformation_1
 - Transformation:Transformation_2
@@ -59,35 +59,31 @@
 - FlowRateIn:FlowRateIn_1
 - MudStandpipe:StandPipe_0
 - Transformation:Transformation_3
-- DrillingTorqueQuantity:BitTorqueQuantity_0
+- TorqueDrillingQuantity:BitTorqueQuantity_0
 - TorqueQuantity:TorqueQuantity_0
-- DrillingAccelerationQuantity:BlockAccelerationQuantity_0
+- AccelerationDrillingQuantity:BlockAccelerationQuantity_0
 - AccelerationQuantity:AccelerationQuantity_0
-- PositionQuantity:BlockPositionQuantity_0
+- PositionDrillingQuantity:BlockPositionQuantity_0
 - LengthQuantity:LengthQuantity_0
-- BlockVelocityQuantity:BlockVelocityQuantity_0
+- BlockVelocityDrillingQuantity:BlockVelocityQuantity_0
 - VelocityQuantity:VelocityQuantity_0
-- DepthQuantity:DepthQuantity_0
-- DrillingDensityQuantity:EMWQuantity_0
-- DrillingDensityQuantity:MassDensityQuantity_0
-- DrillingVolumetricFlowrateQuantity:VolumetricRateQuantity_0
-- DrillingDensityQuantity:FluidDensityInQuantity_0
-- DrillingTemperatureQuantity:FluidTemperatureInQuantity_0
+- DepthDrillingQuantity:DepthQuantity_0
+- VolumetricFlowrateDrillingQuantity:VolumetricRateQuantity_0
+- TemperatureDrillingQuantity:FluidTemperatureInQuantity_0
 - TemperatureQuantity:TemperatureQuantity_0
-- HookLoadQuantity:HookloadQuantity_0
+- HookLoadDrillingQuantity:HookloadQuantity_0
 - MassQuantity:MassQuantity_0
 - FrequencyQuantity:FrequencyQuantity_0
-- DrillingPressureQuantity:SPPQuantity_0
+- PressureDrillingQuantity:SPPQuantity_0
 - PressureQuantity:PressureQuantity_0
-- RotationFrequencyQuantity:SurfaceRPMQuantity_0
-- DrillingTorqueQuantity:SurfaceTorqueQuantity_0
-- DrillingForceQuantity:TopOfStringForceQuantity_0
+- RotationalFrequencyQuantity:SurfaceRPMQuantity_0
+- TorqueDrillingQuantity:SurfaceTorqueQuantity_0
+- ForceDrillingQuantity:TopOfStringForceQuantity_0
 - ForceQuantity:ForceQuantity_0
-- DepthQuantity:TVDQuantity_0
-- WeightOnBitQuantity:WOBQuantity_0
-- FormationResistivityQuantity:Resistivity_0
-- FormationResistivityQuantity:ElectricResistivityQuantity_0
-- DrillingDensityQuantity:RockDensityQuantity_0
+- DepthDrillingQuantity:TVDQuantity_0
+- WeightOnBitDrillingQuantity:WOBQuantity_0
+- FormationResistivityDrillingQuantity:Resistivity_0
+- FormationResistivityDrillingQuantity:ElectricResistivityQuantity_0
 - PorosityQuantity:FormationPorosityQuantity_0
 - ProportionQuantity:ProportionQuantity_1
 - Quill:TopDriveShaft_0
@@ -123,7 +119,7 @@
 - ConnectedCondition:ConnectedCondition_0
 - DownholePressure:DownholePressure_2
 - DrillingDataPoint:DrillingDataPoint_13
-- DrillingPressureQuantity:DownholePressureQuantity_0
+- PressureDrillingQuantity:DownholePressureQuantity_0
 - DrillingDataPoint:DrillingDataPoint_14
 - DrillingDataPoint:DrillingDataPoint_15
 - DrillingDataPoint:DrillingDataPoint_16
@@ -286,9 +282,7 @@
 - BlockPositionQuantity_0 IsObservableFrom LengthQuantity_0
 - BlockVelocityQuantity_0 IsObservableFrom VelocityQuantity_0
 - DepthQuantity_0 IsObservableFrom LengthQuantity_0
-- EMWQuantity_0 IsObservableFrom MassDensityQuantity_0
 - FlowRateQuantity_0 IsObservableFrom VolumetricRateQuantity_0
-- FluidDensityInQuantity_0 IsObservableFrom MassDensityQuantity_0
 - FluidTemperatureInQuantity_0 IsObservableFrom TemperatureQuantity_0
 - HookloadQuantity_0 IsObservableFrom MassQuantity_0
 - PumpRateQuantity_0 IsObservableFrom FrequencyQuantity_0
@@ -299,7 +293,6 @@
 - TVDQuantity_0 IsObservableFrom LengthQuantity_0
 - WOBQuantity_0 IsObservableFrom MassQuantity_0
 - Resistivity_0 IsObservableFrom ElectricResistivityQuantity_0
-- RockDensityQuantity_0 IsObservableFrom MassDensityQuantity_0
 - FormationPorosityQuantity_0 IsObservableFrom ProportionQuantity_1
 - StandPipe_0 IsHydraulicConnectedTo TopDriveShaft_0
 - TopDriveShaft_0 IsHydraulicConnectedTo TopDrive_0
@@ -350,8 +343,6 @@
 - DrillingDataPoint_15 IsOfBaseQuantity AccelerationQuantity_0
 - DrillingDataPoint_16 IsOfBaseQuantity LengthQuantity_0
 - BitDepth_0 IsOfMeasurableQuantity DepthQuantity_0
-- DownholeECD_0 IsOfMeasurableQuantity EMWQuantity_0
-- DownholeECD_1 IsOfMeasurableQuantity EMWQuantity_0
 - DownholeECD_2 IsOfMeasurableQuantity DepthQuantity_0
 - DownholePressure_3 IsOfMeasurableQuantity DownholePressureQuantity_0
 - DrillingDataPoint_17 IsOfMeasurableQuantity TVDQuantity_0
@@ -392,9 +383,6 @@
 - DensityIn_1 IsHydraulicallyLocatedAt StandPipe_0
 - TemperatureOut_0 IsMechanicallyLocatedAt ReturnFlowLine_0
 - TemperatureIn_0 IsOfMeasurableQuantity FluidTemperatureInQuantity_0
-- DensityOut_0 IsOfMeasurableQuantity FluidDensityInQuantity_0
-- DensityIn_0 IsOfMeasurableQuantity FluidDensityInQuantity_0
-- DensityIn_1 IsOfMeasurableQuantity FluidDensityInQuantity_0
 - TemperatureIn_1 IsOfMeasurableQuantity FluidTemperatureInQuantity_0
 - TemperatureOut_0 IsOfMeasurableQuantity FluidTemperatureInQuantity_0
 - SPP_1 IsProcessedBy TimeWindowMovingAverage_0
@@ -500,7 +488,6 @@
 - DrillingDataPoint_26 IsPhysicallyLocatedAt Location_0
 - DrillingDataPoint_26 IsTransmittedBy MudPulseTelemetry_0
 - DrillingDataPoint_26 IsProvidedBy DataFlowNode_3
-- DrillingDataPoint_27 IsOfMeasurableQuantity RockDensityQuantity_0
 - DrillingDataPoint_27 IsPhysicallyLocatedAt Location_1
 - DrillingDataPoint_27 IsTransmittedBy MudPulseTelemetry_0
 - DrillingDataPoint_27 IsProvidedBy DataFlowNode_3
@@ -571,8 +558,8 @@ flowchart TD
 	DrillingDataPoint_11([DrillingDataPoint_11]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	ProportionQuantity_0([ProportionQuantity_0]) --> ProportionQuantity[[ProportionQuantity]]:::typeClass
 	VolumeQuantity_0([VolumeQuantity_0]) --> VolumeQuantity[[VolumeQuantity]]:::typeClass
-	FlowRateQuantity_0([FlowRateQuantity_0]) --> DrillingVolumetricFlowrateQuantity[[DrillingVolumetricFlowrateQuantity]]:::typeClass
-	PumpRateQuantity_0([PumpRateQuantity_0]) --> RotationFrequencyQuantity[[RotationFrequencyQuantity]]:::typeClass
+	FlowRateQuantity_0([FlowRateQuantity_0]) --> VolumetricFlowrateDrillingQuantity[[VolumetricFlowrateDrillingQuantity]]:::typeClass
+	PumpRateQuantity_0([PumpRateQuantity_0]) --> RotationalFrequencyQuantity[[RotationalFrequencyQuantity]]:::typeClass
 	Transformation_0([Transformation_0]) --> Transformation[[Transformation]]:::typeClass
 	Transformation_1([Transformation_1]) --> Transformation[[Transformation]]:::typeClass
 	Transformation_2([Transformation_2]) --> Transformation[[Transformation]]:::typeClass
@@ -582,35 +569,31 @@ flowchart TD
 	FlowRateIn_1([FlowRateIn_1]) --> FlowRateIn[[FlowRateIn]]:::typeClass
 	StandPipe_0([StandPipe_0]) --> MudStandpipe[[MudStandpipe]]:::typeClass
 	Transformation_3([Transformation_3]) --> Transformation[[Transformation]]:::typeClass
-	BitTorqueQuantity_0([BitTorqueQuantity_0]) --> DrillingTorqueQuantity[[DrillingTorqueQuantity]]:::typeClass
+	BitTorqueQuantity_0([BitTorqueQuantity_0]) --> TorqueDrillingQuantity[[TorqueDrillingQuantity]]:::typeClass
 	TorqueQuantity_0([TorqueQuantity_0]) --> TorqueQuantity[[TorqueQuantity]]:::typeClass
-	BlockAccelerationQuantity_0([BlockAccelerationQuantity_0]) --> DrillingAccelerationQuantity[[DrillingAccelerationQuantity]]:::typeClass
+	BlockAccelerationQuantity_0([BlockAccelerationQuantity_0]) --> AccelerationDrillingQuantity[[AccelerationDrillingQuantity]]:::typeClass
 	AccelerationQuantity_0([AccelerationQuantity_0]) --> AccelerationQuantity[[AccelerationQuantity]]:::typeClass
-	BlockPositionQuantity_0([BlockPositionQuantity_0]) --> PositionQuantity[[PositionQuantity]]:::typeClass
+	BlockPositionQuantity_0([BlockPositionQuantity_0]) --> PositionDrillingQuantity[[PositionDrillingQuantity]]:::typeClass
 	LengthQuantity_0([LengthQuantity_0]) --> LengthQuantity[[LengthQuantity]]:::typeClass
-	BlockVelocityQuantity_0([BlockVelocityQuantity_0]) --> BlockVelocityQuantity[[BlockVelocityQuantity]]:::typeClass
+	BlockVelocityQuantity_0([BlockVelocityQuantity_0]) --> BlockVelocityDrillingQuantity[[BlockVelocityDrillingQuantity]]:::typeClass
 	VelocityQuantity_0([VelocityQuantity_0]) --> VelocityQuantity[[VelocityQuantity]]:::typeClass
-	DepthQuantity_0([DepthQuantity_0]) --> DepthQuantity[[DepthQuantity]]:::typeClass
-	EMWQuantity_0([EMWQuantity_0]) --> DrillingDensityQuantity[[DrillingDensityQuantity]]:::typeClass
-	MassDensityQuantity_0([MassDensityQuantity_0]) --> DrillingDensityQuantity[[DrillingDensityQuantity]]:::typeClass
-	VolumetricRateQuantity_0([VolumetricRateQuantity_0]) --> DrillingVolumetricFlowrateQuantity[[DrillingVolumetricFlowrateQuantity]]:::typeClass
-	FluidDensityInQuantity_0([FluidDensityInQuantity_0]) --> DrillingDensityQuantity[[DrillingDensityQuantity]]:::typeClass
-	FluidTemperatureInQuantity_0([FluidTemperatureInQuantity_0]) --> DrillingTemperatureQuantity[[DrillingTemperatureQuantity]]:::typeClass
+	DepthQuantity_0([DepthQuantity_0]) --> DepthDrillingQuantity[[DepthDrillingQuantity]]:::typeClass
+	VolumetricRateQuantity_0([VolumetricRateQuantity_0]) --> VolumetricFlowrateDrillingQuantity[[VolumetricFlowrateDrillingQuantity]]:::typeClass
+	FluidTemperatureInQuantity_0([FluidTemperatureInQuantity_0]) --> TemperatureDrillingQuantity[[TemperatureDrillingQuantity]]:::typeClass
 	TemperatureQuantity_0([TemperatureQuantity_0]) --> TemperatureQuantity[[TemperatureQuantity]]:::typeClass
-	HookloadQuantity_0([HookloadQuantity_0]) --> HookLoadQuantity[[HookLoadQuantity]]:::typeClass
+	HookloadQuantity_0([HookloadQuantity_0]) --> HookLoadDrillingQuantity[[HookLoadDrillingQuantity]]:::typeClass
 	MassQuantity_0([MassQuantity_0]) --> MassQuantity[[MassQuantity]]:::typeClass
 	FrequencyQuantity_0([FrequencyQuantity_0]) --> FrequencyQuantity[[FrequencyQuantity]]:::typeClass
-	SPPQuantity_0([SPPQuantity_0]) --> DrillingPressureQuantity[[DrillingPressureQuantity]]:::typeClass
+	SPPQuantity_0([SPPQuantity_0]) --> PressureDrillingQuantity[[PressureDrillingQuantity]]:::typeClass
 	PressureQuantity_0([PressureQuantity_0]) --> PressureQuantity[[PressureQuantity]]:::typeClass
-	SurfaceRPMQuantity_0([SurfaceRPMQuantity_0]) --> RotationFrequencyQuantity[[RotationFrequencyQuantity]]:::typeClass
-	SurfaceTorqueQuantity_0([SurfaceTorqueQuantity_0]) --> DrillingTorqueQuantity[[DrillingTorqueQuantity]]:::typeClass
-	TopOfStringForceQuantity_0([TopOfStringForceQuantity_0]) --> DrillingForceQuantity[[DrillingForceQuantity]]:::typeClass
+	SurfaceRPMQuantity_0([SurfaceRPMQuantity_0]) --> RotationalFrequencyQuantity[[RotationalFrequencyQuantity]]:::typeClass
+	SurfaceTorqueQuantity_0([SurfaceTorqueQuantity_0]) --> TorqueDrillingQuantity[[TorqueDrillingQuantity]]:::typeClass
+	TopOfStringForceQuantity_0([TopOfStringForceQuantity_0]) --> ForceDrillingQuantity[[ForceDrillingQuantity]]:::typeClass
 	ForceQuantity_0([ForceQuantity_0]) --> ForceQuantity[[ForceQuantity]]:::typeClass
-	TVDQuantity_0([TVDQuantity_0]) --> DepthQuantity[[DepthQuantity]]:::typeClass
-	WOBQuantity_0([WOBQuantity_0]) --> WeightOnBitQuantity[[WeightOnBitQuantity]]:::typeClass
-	Resistivity_0([Resistivity_0]) --> FormationResistivityQuantity[[FormationResistivityQuantity]]:::typeClass
-	ElectricResistivityQuantity_0([ElectricResistivityQuantity_0]) --> FormationResistivityQuantity[[FormationResistivityQuantity]]:::typeClass
-	RockDensityQuantity_0([RockDensityQuantity_0]) --> DrillingDensityQuantity[[DrillingDensityQuantity]]:::typeClass
+	TVDQuantity_0([TVDQuantity_0]) --> DepthDrillingQuantity[[DepthDrillingQuantity]]:::typeClass
+	WOBQuantity_0([WOBQuantity_0]) --> WeightOnBitDrillingQuantity[[WeightOnBitDrillingQuantity]]:::typeClass
+	Resistivity_0([Resistivity_0]) --> FormationResistivityDrillingQuantity[[FormationResistivityDrillingQuantity]]:::typeClass
+	ElectricResistivityQuantity_0([ElectricResistivityQuantity_0]) --> FormationResistivityDrillingQuantity[[FormationResistivityDrillingQuantity]]:::typeClass
 	FormationPorosityQuantity_0([FormationPorosityQuantity_0]) --> PorosityQuantity[[PorosityQuantity]]:::typeClass
 	ProportionQuantity_1([ProportionQuantity_1]) --> ProportionQuantity[[ProportionQuantity]]:::typeClass
 	TopDriveShaft_0([TopDriveShaft_0]) --> Quill[[Quill]]:::typeClass
@@ -646,7 +629,7 @@ flowchart TD
 	ConnectedCondition_0([ConnectedCondition_0]) --> ConnectedCondition[[ConnectedCondition]]:::typeClass
 	DownholePressure_2([DownholePressure_2]) --> DownholePressure[[DownholePressure]]:::typeClass
 	DrillingDataPoint_13([DrillingDataPoint_13]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
-	DownholePressureQuantity_0([DownholePressureQuantity_0]) --> DrillingPressureQuantity[[DrillingPressureQuantity]]:::typeClass
+	DownholePressureQuantity_0([DownholePressureQuantity_0]) --> PressureDrillingQuantity[[PressureDrillingQuantity]]:::typeClass
 	DrillingDataPoint_14([DrillingDataPoint_14]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	DrillingDataPoint_15([DrillingDataPoint_15]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	DrillingDataPoint_16([DrillingDataPoint_16]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
@@ -809,9 +792,7 @@ flowchart TD
 	 BlockPositionQuantity_0 -- IsObservableFrom --> LengthQuantity_0 
 	 BlockVelocityQuantity_0 -- IsObservableFrom --> VelocityQuantity_0 
 	 DepthQuantity_0 -- IsObservableFrom --> LengthQuantity_0 
-	 EMWQuantity_0 -- IsObservableFrom --> MassDensityQuantity_0 
 	 FlowRateQuantity_0 -- IsObservableFrom --> VolumetricRateQuantity_0 
-	 FluidDensityInQuantity_0 -- IsObservableFrom --> MassDensityQuantity_0 
 	 FluidTemperatureInQuantity_0 -- IsObservableFrom --> TemperatureQuantity_0 
 	 HookloadQuantity_0 -- IsObservableFrom --> MassQuantity_0 
 	 PumpRateQuantity_0 -- IsObservableFrom --> FrequencyQuantity_0 
@@ -822,7 +803,6 @@ flowchart TD
 	 TVDQuantity_0 -- IsObservableFrom --> LengthQuantity_0 
 	 WOBQuantity_0 -- IsObservableFrom --> MassQuantity_0 
 	 Resistivity_0 -- IsObservableFrom --> ElectricResistivityQuantity_0 
-	 RockDensityQuantity_0 -- IsObservableFrom --> MassDensityQuantity_0 
 	 FormationPorosityQuantity_0 -- IsObservableFrom --> ProportionQuantity_1 
 	 StandPipe_0 -- IsHydraulicConnectedTo --> TopDriveShaft_0 
 	 TopDriveShaft_0 -- IsHydraulicConnectedTo --> TopDrive_0 
@@ -873,8 +853,6 @@ flowchart TD
 	 DrillingDataPoint_15 -- IsOfBaseQuantity --> AccelerationQuantity_0 
 	 DrillingDataPoint_16 -- IsOfBaseQuantity --> LengthQuantity_0 
 	 BitDepth_0 -- IsOfMeasurableQuantity --> DepthQuantity_0 
-	 DownholeECD_0 -- IsOfMeasurableQuantity --> EMWQuantity_0 
-	 DownholeECD_1 -- IsOfMeasurableQuantity --> EMWQuantity_0 
 	 DownholeECD_2 -- IsOfMeasurableQuantity --> DepthQuantity_0 
 	 DownholePressure_3 -- IsOfMeasurableQuantity --> DownholePressureQuantity_0 
 	 DrillingDataPoint_17 -- IsOfMeasurableQuantity --> TVDQuantity_0 
@@ -915,9 +893,6 @@ flowchart TD
 	 DensityIn_1 -- IsHydraulicallyLocatedAt --> StandPipe_0 
 	 TemperatureOut_0 -- IsMechanicallyLocatedAt --> ReturnFlowLine_0 
 	 TemperatureIn_0 -- IsOfMeasurableQuantity --> FluidTemperatureInQuantity_0 
-	 DensityOut_0 -- IsOfMeasurableQuantity --> FluidDensityInQuantity_0 
-	 DensityIn_0 -- IsOfMeasurableQuantity --> FluidDensityInQuantity_0 
-	 DensityIn_1 -- IsOfMeasurableQuantity --> FluidDensityInQuantity_0 
 	 TemperatureIn_1 -- IsOfMeasurableQuantity --> FluidTemperatureInQuantity_0 
 	 TemperatureOut_0 -- IsOfMeasurableQuantity --> FluidTemperatureInQuantity_0 
 	 SPP_1 -- IsProcessedBy --> TimeWindowMovingAverage_0 
@@ -1023,7 +998,6 @@ flowchart TD
 	 DrillingDataPoint_26 -- IsPhysicallyLocatedAt --> Location_0 
 	 DrillingDataPoint_26 -- IsTransmittedBy --> MudPulseTelemetry_0 
 	 DrillingDataPoint_26 -- IsProvidedBy --> DataFlowNode_3 
-	 DrillingDataPoint_27 -- IsOfMeasurableQuantity --> RockDensityQuantity_0 
 	 DrillingDataPoint_27 -- IsPhysicallyLocatedAt --> Location_1 
 	 DrillingDataPoint_27 -- IsTransmittedBy --> MudPulseTelemetry_0 
 	 DrillingDataPoint_27 -- IsProvidedBy --> DataFlowNode_3 

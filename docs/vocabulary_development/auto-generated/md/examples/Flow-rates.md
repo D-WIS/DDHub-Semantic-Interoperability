@@ -1,10 +1,10 @@
 # Flow-rates
 - DrillingDataPoint:DrillingDataPoint_0
-- DrillingVolumetricFlowrateQuantity:FlowRateQuantity_0
+- VolumetricFlowrateDrillingQuantity:FlowRateQuantity_0
 - DrillingDataPoint:DrillingDataPoint_1
 - DrillingDataPoint:DrillingDataPoint_2
 - PumpRate:PumpRate_0
-- RotationFrequencyQuantity:PumpRateQuantity_0
+- RotationalFrequencyQuantity:PumpRateQuantity_0
 - PumpRate:PumpRate_1
 - PumpRate:PumpRate_2
 - DrillingDataPoint:DrillingDataPoint_3
@@ -83,11 +83,11 @@ flowchart TD
 	 classDef typeClass fill:#f96;
 	 classDef classClass fill:#9dd0ff;
 	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
-	FlowRateQuantity_0([FlowRateQuantity_0]) --> DrillingVolumetricFlowrateQuantity[[DrillingVolumetricFlowrateQuantity]]:::typeClass
+	FlowRateQuantity_0([FlowRateQuantity_0]) --> VolumetricFlowrateDrillingQuantity[[VolumetricFlowrateDrillingQuantity]]:::typeClass
 	DrillingDataPoint_1([DrillingDataPoint_1]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	DrillingDataPoint_2([DrillingDataPoint_2]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	PumpRate_0([PumpRate_0]) --> PumpRate[[PumpRate]]:::typeClass
-	PumpRateQuantity_0([PumpRateQuantity_0]) --> RotationFrequencyQuantity[[RotationFrequencyQuantity]]:::typeClass
+	PumpRateQuantity_0([PumpRateQuantity_0]) --> RotationalFrequencyQuantity[[RotationalFrequencyQuantity]]:::typeClass
 	PumpRate_1([PumpRate_1]) --> PumpRate[[PumpRate]]:::typeClass
 	PumpRate_2([PumpRate_2]) --> PumpRate[[PumpRate]]:::typeClass
 	DrillingDataPoint_3([DrillingDataPoint_3]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass

@@ -18,10 +18,7 @@ DWISNoun <|-- EndPointMapping
   - EndPointDescription
     - Type: string
     - Description: 
-- Description: 
-
 - Definition set: EndPoints
-- Examples:
 ## WitsMLTimeBasedLogEndPoint <!-- NOUN -->
 - Display name: WitsMLTimeBasedLogEndPoint
 - Parent class: [DataEndPoint](./EndPoints.md#DataEndPoint)
@@ -47,10 +44,7 @@ DWISNoun <|-- EndPointMapping
   - Mnemonic
     - Type: string
     - Description: 
-- Description: 
-
 - Definition set: EndPoints
-- Examples:
 ## EndPointMapping <!-- NOUN -->
 - Display name: EndPointMapping
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
@@ -64,10 +58,7 @@ DWISNoun <|-- EndPointMapping
   - MeasurementIndex
     - Type: int
     - Description: 
-- Description: 
-
 - Definition set: EndPoints
-- Examples:
 # Verbs
 ## Class Inheritance for Verbs
 Here is a class inheritance diagram for the verbs contained in this definition set.
@@ -87,6 +78,3 @@ DrillingSignal ||--o{ DataEndPoint : HasEndPoint
 - Subject class: [DrillingSignal](./DrillingDataSemantics.md#DrillingSignal)
 - Object class: [DataEndPoint](./EndPoints.md#DataEndPoint)
 - Definition set: EndPoints
-- Description: 
-
-- Examples:

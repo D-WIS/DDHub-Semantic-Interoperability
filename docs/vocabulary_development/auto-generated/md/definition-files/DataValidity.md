@@ -16,38 +16,23 @@ ValidityCondition <|-- LT
 ## ValidityCondition <!-- NOUN -->
 - Display name: ValidityCondition
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Description: 
-
 - Definition set: DataValidity
-- Examples:
 ## ConnectedCondition <!-- NOUN -->
 - Display name: ConnectedCondition
 - Parent class: [ValidityCondition](./DataValidity.md#ValidityCondition)
-- Description: 
-
 - Definition set: DataValidity
-- Examples:
 ## EQ <!-- NOUN -->
 - Display name: EQ
 - Parent class: [ValidityCondition](./DataValidity.md#ValidityCondition)
-- Description: 
-
 - Definition set: DataValidity
-- Examples:
 ## GT <!-- NOUN -->
 - Display name: GT
 - Parent class: [ValidityCondition](./DataValidity.md#ValidityCondition)
-- Description: 
-
 - Definition set: DataValidity
-- Examples:
 ## LT <!-- NOUN -->
 - Display name: LT
 - Parent class: [ValidityCondition](./DataValidity.md#ValidityCondition)
-- Description: 
-
 - Definition set: DataValidity
-- Examples:
 # Verbs
 ## Class Inheritance for Verbs
 Here is a class inheritance diagram for the verbs contained in this definition set.
@@ -75,42 +60,27 @@ DWISNoun ||--o{ DWISNoun : IsValidBy
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [ValidityCondition](./DataValidity.md#ValidityCondition)
 - Definition set: DataValidity
-- Description: 
-
-- Examples:
 ## IsConditionInput <!-- VERB -->
 - Display name: IsConditionInput
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [ValidityCondition](./DataValidity.md#ValidityCondition)
 - Definition set: DataValidity
-- Description: 
-
-- Examples:
 ## IsConditionLeft <!-- VERB -->
 - Display name: IsConditionLeft
 - Parent verb: [IsConditionInput](./DataValidity.md#IsConditionInput)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Definition set: DataValidity
-- Description: 
-
-- Examples:
 ## IsConditionRight <!-- VERB -->
 - Display name: IsConditionRight
 - Parent verb: [IsConditionInput](./DataValidity.md#IsConditionInput)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Definition set: DataValidity
-- Description: 
-
-- Examples:
 ## IsValidBy <!-- VERB -->
 - Display name: IsValidBy
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Definition set: DataValidity
-- Description: 
-
-- Examples:

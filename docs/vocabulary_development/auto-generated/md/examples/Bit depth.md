@@ -1,6 +1,6 @@
 # Bit depth
 - DrillingDataPoint:DrillingDataPoint_0
-- DepthQuantity:DepthQuantity_0
+- DepthDrillingQuantity:DepthQuantity_0
 - BitDepth:BitDepth_0
 - BottomOfStringReferenceLocation:BottomOfStringReferenceLocation_0
 - HoleBottomLocation:HoleBottomLocation_0
@@ -42,7 +42,7 @@ flowchart TD
 	 classDef typeClass fill:#f96;
 	 classDef classClass fill:#9dd0ff;
 	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
-	DepthQuantity_0([DepthQuantity_0]) --> DepthQuantity[[DepthQuantity]]:::typeClass
+	DepthQuantity_0([DepthQuantity_0]) --> DepthDrillingQuantity[[DepthDrillingQuantity]]:::typeClass
 	BitDepth_0([BitDepth_0]) --> BitDepth[[BitDepth]]:::typeClass
 	BottomOfStringReferenceLocation_0([BottomOfStringReferenceLocation_0]) --> BottomOfStringReferenceLocation[[BottomOfStringReferenceLocation]]:::typeClass
 	HoleBottomLocation_0([HoleBottomLocation_0]) --> HoleBottomLocation[[HoleBottomLocation]]:::typeClass

@@ -30,12 +30,9 @@ Telemetry <|-- TopSideTelemetry
 - Description: 
 Technology used for transferring the data from its main origin.
 - Definition set: DataTransmission
-- Examples:
 ## DownHoleTelemetry <!-- NOUN -->
 - Display name: DownHoleTelemetry
 - Parent class: [Telemetry](./DataTransmission.md#Telemetry)
-- Description: 
-
 - Definition set: DataTransmission
 - Examples:
 Technology that allows transfer of downhole data to the surface.
