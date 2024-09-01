@@ -36,8 +36,8 @@ namespace DWIS.Vocabulary.Utils
                         if (!string.IsNullOrEmpty(quantityName))
                         {
                             semanticBuilder.AppendLine("- Quantity:" + quantityName);
-                            semanticBuilder.AppendLine("- " + quantityName+ ".L = " + quantity.LengthDimension.ToString(CultureInfo.InvariantCulture));
-                            semanticBuilder.AppendLine("- " + quantityName+ ".M = " + quantity.MassDimension.ToString(CultureInfo.InvariantCulture));
+                            semanticBuilder.AppendLine("- " + quantityName + ".L = " + quantity.LengthDimension.ToString(CultureInfo.InvariantCulture));
+                            semanticBuilder.AppendLine("- " + quantityName + ".M = " + quantity.MassDimension.ToString(CultureInfo.InvariantCulture));
                             semanticBuilder.AppendLine("- " + quantityName + ".T = " + quantity.TimeDimension.ToString(CultureInfo.InvariantCulture));
                             semanticBuilder.AppendLine("- " + quantityName + ".I = " + quantity.ElectricCurrentDimension.ToString(CultureInfo.InvariantCulture));
                             semanticBuilder.AppendLine("- " + quantityName + ".ThT = " + quantity.TemperatureDimension.ToString(CultureInfo.InvariantCulture));
