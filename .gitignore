@@ -9,3 +9,4 @@
 .vs/
 UpgradeLog*.htm
 .env*
+/docs/vocabulary_development/auto-generated/md/definition-files/UnitTypes.md

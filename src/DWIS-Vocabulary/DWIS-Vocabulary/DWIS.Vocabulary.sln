@@ -48,7 +48,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWIS.Vocabulary.Controls", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWIS.Vocabulary.InstanceEdition", "DWIS.Vocabulary.InstanceEdition\DWIS.Vocabulary.InstanceEdition.csproj", "{58E8D84D-6055-4C30-986E-CAC6B892E8ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DWIS.RenameNounsInExamples", "DWIS.RenameNounsInExamples\DWIS.RenameNounsInExamples.csproj", "{F80F4165-8844-4887-A8EA-D613165C1103}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWIS.RenameNounsInExamples", "DWIS.RenameNounsInExamples\DWIS.RenameNounsInExamples.csproj", "{F80F4165-8844-4887-A8EA-D613165C1103}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
