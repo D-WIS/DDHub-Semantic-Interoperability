@@ -87,6 +87,10 @@ ddhub:Accuracy a owl:DatatypeProperty, owl:FunctionalProperty;
 ddhub:Acoustic a owl:Class; 
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:EquipmentTelemetry. 
+ddhub:AcousticTelemetry a owl:Class; 
+                        rdfs:comment """A method that allows transfer of downhole data to the surface via acoustic waves along the drill-string.
+"""@EN; 
+                        rdfs:subClassOf ddhub:DownHoleTelemetry. 
 ddhub:Acre a owl:Class; 
            rdfs:comment """[v] = a * [SI]
 where
@@ -2969,7 +2973,8 @@ ddhub:DownholeRPM a owl:Class;
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:PrototypeData. 
 ddhub:DownHoleTelemetry a owl:Class; 
-                        rdfs:comment ""@EN; 
+                        rdfs:comment """Technology that allows transfer of downhole data to the surface.
+"""@EN; 
                         rdfs:subClassOf ddhub:Telemetry. 
 ddhub:DownholeTemperature a owl:Class; 
                           rdfs:comment ""@EN; 
@@ -3289,8 +3294,12 @@ The SI unit for **electric tension** is: volt with the associated unit label $V$
 ddhub:Electromagnetic a owl:Class; 
                       rdfs:comment ""@EN; 
                       rdfs:subClassOf ddhub:EquipmentTelemetry. 
+ddhub:ElectromagneticCouplingDownholeTelemetry a owl:Class; 
+                                               rdfs:comment """A method that allows transfer of downhole data to the surface via electromagnetic coupling between pipes along the drill-string.
+"""@EN; 
+                                               rdfs:subClassOf ddhub:WiredPipeTelemetry. 
 ddhub:ElectromagneticTelemetry a owl:Class; 
-                               rdfs:comment """A method that allows transfer of downhole data to the surface via electromagnetic waves sent trough the drilling formation.
+                               rdfs:comment """A method that allows transfer of downhole data to the surface via electromagnetic waves sent through the drilling formation.
 """@EN; 
                                rdfs:subClassOf ddhub:DownHoleTelemetry. 
 ddhub:ElevatorBailsLinks a owl:Class; 
@@ -3955,6 +3964,10 @@ and
 Centi = 0.01
 """@EN; 
               rdfs:subClassOf ddhub:Unit. 
+ddhub:GalvanicCouplingDownholeTelemetry a owl:Class; 
+                                        rdfs:comment """A method that allows transfer of downhole data to the surface via galvanic coupling between pipes along the drill-string.
+"""@EN; 
+                                        rdfs:subClassOf ddhub:WiredPipeTelemetry. 
 ddhub:GammaRayIndexDrillingQuantity a owl:Class; 
                                     rdfs:comment """The Gamma Ray API is a unit used in the petroleum industry to measure the natural gamma radiation of formations. Specifically, the Gamma Ray Index (GRI) is used in well logging to measure the gamma ray activity of the rock surrounding the borehole.
 Gamma rays are a form of electromagnetic radiation, and in well logging, they are used to assess the radioactive content of the formations, which helps in identifying rock types (shales, sandstones, etc.).
@@ -5249,6 +5262,10 @@ InchWater4degC = 249.082 reference: https://en.wikipedia.org/wiki/Inch_of_water
 ddhub:Inclination a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:PrototypeData. 
+ddhub:InductionCouplingDownholeTelemetry a owl:Class; 
+                                         rdfs:comment """A method that allows transfer of downhole data to the surface via induction coupling between pipes along the drill-string.
+"""@EN; 
+                                         rdfs:subClassOf ddhub:WiredPipeTelemetry. 
 ddhub:Influx a owl:Class; 
              rdfs:comment ""@EN; 
              rdfs:subClassOf ddhub:DrillingIncident. 
@@ -9040,7 +9057,7 @@ ddhub:MudPulse a owl:Class;
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:EquipmentTelemetry. 
 ddhub:MudPulseTelemetry a owl:Class; 
-                        rdfs:comment """A method that allows transfer of downhole data to the surface via pressure pulses sent trough the drilling fluid.
+                        rdfs:comment """A method that allows transfer of downhole data to the surface via pressure pulses sent through the drilling fluid.
 """@EN; 
                         rdfs:subClassOf ddhub:DownHoleTelemetry. 
 ddhub:MudPump a owl:Class; 
@@ -13808,7 +13825,7 @@ ddhub:WiredPipe a owl:Class;
                 rdfs:comment ""@EN; 
                 rdfs:subClassOf ddhub:EquipmentTelemetry. 
 ddhub:WiredPipeTelemetry a owl:Class; 
-                         rdfs:comment """A method that allows transfer of downhole data to the surface via electrical connections through the drill string.
+                         rdfs:comment """A method that allows transfer of downhole data to the surface via electrical connections along the drill string.
 """@EN; 
                          rdfs:subClassOf ddhub:DownHoleTelemetry. 
 ddhub:WirelineLoggingTools a owl:Class; 

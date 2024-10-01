@@ -85,7 +85,11 @@ Telemetry,
 DownHoleTelemetry,
 MudPulseTelemetry,
 ElectromagneticTelemetry,
+AcousticTelemetry,
 WiredPipeTelemetry,
+InductionCouplingDownholeTelemetry,
+ElectromagneticCouplingDownholeTelemetry,
+GalvanicCouplingDownholeTelemetry,
 TopSideTelemetry,
 ValidityCondition,
 ConnectedCondition,
@@ -1894,7 +1898,11 @@ MegaBritishThermalUnit
 	public static string DownHoleTelemetry = "DownHoleTelemetry";
 	public static string MudPulseTelemetry = "MudPulseTelemetry";
 	public static string ElectromagneticTelemetry = "ElectromagneticTelemetry";
+	public static string AcousticTelemetry = "AcousticTelemetry";
 	public static string WiredPipeTelemetry = "WiredPipeTelemetry";
+	public static string InductionCouplingDownholeTelemetry = "InductionCouplingDownholeTelemetry";
+	public static string ElectromagneticCouplingDownholeTelemetry = "ElectromagneticCouplingDownholeTelemetry";
+	public static string GalvanicCouplingDownholeTelemetry = "GalvanicCouplingDownholeTelemetry";
 	public static string TopSideTelemetry = "TopSideTelemetry";
 	public static string ValidityCondition = "ValidityCondition";
 	public static string ConnectedCondition = "ConnectedCondition";

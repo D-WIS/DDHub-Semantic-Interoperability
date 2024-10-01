@@ -202,8 +202,16 @@
 <http://ddhub.no/MudPulseTelemetry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownHoleTelemetry> .
 <http://ddhub.no/ElectromagneticTelemetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ElectromagneticTelemetry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownHoleTelemetry> .
+<http://ddhub.no/AcousticTelemetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/AcousticTelemetry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownHoleTelemetry> .
 <http://ddhub.no/WiredPipeTelemetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/WiredPipeTelemetry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownHoleTelemetry> .
+<http://ddhub.no/InductionCouplingDownholeTelemetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/InductionCouplingDownholeTelemetry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/WiredPipeTelemetry> .
+<http://ddhub.no/ElectromagneticCouplingDownholeTelemetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ElectromagneticCouplingDownholeTelemetry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/WiredPipeTelemetry> .
+<http://ddhub.no/GalvanicCouplingDownholeTelemetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/GalvanicCouplingDownholeTelemetry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/WiredPipeTelemetry> .
 <http://ddhub.no/TopSideTelemetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/TopSideTelemetry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Telemetry> .
 <http://ddhub.no/ValidityCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -3795,10 +3803,14 @@
 <http://ddhub.no/DWISADCSInterface> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/DWISADCSCapabilityDescriptor> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/Telemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "Technology used for transferring the data from its main origin.\n"@EN .
-<http://ddhub.no/DownHoleTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/MudPulseTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "A method that allows transfer of downhole data to the surface via pressure pulses sent trough the drilling fluid.\n"@EN .
-<http://ddhub.no/ElectromagneticTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "A method that allows transfer of downhole data to the surface via electromagnetic waves sent trough the drilling formation.\n"@EN .
-<http://ddhub.no/WiredPipeTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "A method that allows transfer of downhole data to the surface via electrical connections through the drill string.\n"@EN .
+<http://ddhub.no/DownHoleTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "Technology that allows transfer of downhole data to the surface.\n"@EN .
+<http://ddhub.no/MudPulseTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "A method that allows transfer of downhole data to the surface via pressure pulses sent through the drilling fluid.\n"@EN .
+<http://ddhub.no/ElectromagneticTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "A method that allows transfer of downhole data to the surface via electromagnetic waves sent through the drilling formation.\n"@EN .
+<http://ddhub.no/AcousticTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "A method that allows transfer of downhole data to the surface via acoustic waves along the drill-string.\n"@EN .
+<http://ddhub.no/WiredPipeTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "A method that allows transfer of downhole data to the surface via electrical connections along the drill string.\n"@EN .
+<http://ddhub.no/InductionCouplingDownholeTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "A method that allows transfer of downhole data to the surface via induction coupling between pipes along the drill-string.\n"@EN .
+<http://ddhub.no/ElectromagneticCouplingDownholeTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "A method that allows transfer of downhole data to the surface via electromagnetic coupling between pipes along the drill-string.\n"@EN .
+<http://ddhub.no/GalvanicCouplingDownholeTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "A method that allows transfer of downhole data to the surface via galvanic coupling between pipes along the drill-string.\n"@EN .
 <http://ddhub.no/TopSideTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "Method that allows transfer of data from surface systems.\n"@EN .
 <http://ddhub.no/ValidityCondition> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/ConnectedCondition> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
