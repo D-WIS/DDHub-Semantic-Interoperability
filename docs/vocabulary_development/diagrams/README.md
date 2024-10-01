@@ -25,6 +25,11 @@
 [<img src="generated/DataDependencies.png" width="600px">](./generated/DataDependencies.png)
 
 ---
+[UnitTypes.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/UnitTypes.md)
+
+[<img src="generated/UnitTypes.png" width="600px">](./generated/UnitTypes.png)
+
+---
 [MeasurableQuantityTypes.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/MeasurableQuantityTypes.md)
 
 [<img src="generated/MeasurableQuantityTypes.png" width="600px">](./generated/MeasurableQuantityTypes.png)
@@ -128,7 +133,6 @@ The following top level relationships have been omitted from the diagrams due to
 | DWISNoun | IsDerivedFrom | DWISNoun |
 | DWISNoun | IsIntegratedFrom | DWISNoun |
 | DWISNoun | IsProcessedBy | DWISNoun |
-| DWISNoun | IsObservableFrom | DWISNoun |
 | DWISNoun | DWISVerb | DWISNoun |
 | DWISNoun | BelongsToClass | DWISNoun |
 | DWISNoun | HasHydraulicStateValueFrom | DWISNoun |

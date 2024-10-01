@@ -1,18 +1,17 @@
 # Downhole ECD
-- DrillingPressureQuantity:DownholePressureQuantity_0
+- PressureDrillingQuantity:DownholePressureQuantity_0
 - PressureQuantity:PressureQuantity_0
 - DownholeECD:DownholeECD_0
-- DrillingDensityQuantity:EMWQuantity_0
 - DownholePressure:DownholePressure_0
 - DrillingDataPoint:DrillingDataPoint_0
-- DepthQuantity:TVDQuantity_0
+- DepthDrillingQuantity:TVDQuantity_0
 - DrillingDataPoint:DrillingDataPoint_1
 - AccelerationQuantity:AccelerationQuantity_0
 - DrillingDataPoint:DrillingDataPoint_2
 - DrillingDataPoint:DrillingDataPoint_3
 - LengthQuantity:LengthQuantity_0
 - DrillingDataPoint:DrillingDataPoint_4
-- DepthQuantity:DepthQuantity_0
+- DepthDrillingQuantity:DepthQuantity_0
 - BitDepth:BitDepth_0
 - DirectTransformation:DirectTransformation_0
 - DirectTransformation:DirectTransformation_1
@@ -26,7 +25,6 @@
 - Quill:TopDriveShaft_0
 - ConnectedCondition:ConnectedCondition_0
 - DownholePressureQuantity_0 IsObservableFrom PressureQuantity_0
-- DownholeECD_0 IsOfMeasurableQuantity EMWQuantity_0
 - DownholePressure_0 IsOfMeasurableQuantity DownholePressureQuantity_0
 - DrillingDataPoint_0 IsOfMeasurableQuantity TVDQuantity_0
 - DrillingDataPoint_1 IsOfBaseQuantity AccelerationQuantity_0
@@ -58,20 +56,19 @@
 flowchart TD
 	 classDef typeClass fill:#f96;
 	 classDef classClass fill:#9dd0ff;
-	DownholePressureQuantity_0([DownholePressureQuantity_0]) --> DrillingPressureQuantity[[DrillingPressureQuantity]]:::typeClass
+	DownholePressureQuantity_0([DownholePressureQuantity_0]) --> PressureDrillingQuantity[[PressureDrillingQuantity]]:::typeClass
 	PressureQuantity_0([PressureQuantity_0]) --> PressureQuantity[[PressureQuantity]]:::typeClass
 	DownholeECD_0([DownholeECD_0]) --> DownholeECD[[DownholeECD]]:::typeClass
-	EMWQuantity_0([EMWQuantity_0]) --> DrillingDensityQuantity[[DrillingDensityQuantity]]:::typeClass
 	DownholePressure_0([DownholePressure_0]) --> DownholePressure[[DownholePressure]]:::typeClass
 	DrillingDataPoint_0([DrillingDataPoint_0]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
-	TVDQuantity_0([TVDQuantity_0]) --> DepthQuantity[[DepthQuantity]]:::typeClass
+	TVDQuantity_0([TVDQuantity_0]) --> DepthDrillingQuantity[[DepthDrillingQuantity]]:::typeClass
 	DrillingDataPoint_1([DrillingDataPoint_1]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	AccelerationQuantity_0([AccelerationQuantity_0]) --> AccelerationQuantity[[AccelerationQuantity]]:::typeClass
 	DrillingDataPoint_2([DrillingDataPoint_2]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	DrillingDataPoint_3([DrillingDataPoint_3]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
 	LengthQuantity_0([LengthQuantity_0]) --> LengthQuantity[[LengthQuantity]]:::typeClass
 	DrillingDataPoint_4([DrillingDataPoint_4]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass
-	DepthQuantity_0([DepthQuantity_0]) --> DepthQuantity[[DepthQuantity]]:::typeClass
+	DepthQuantity_0([DepthQuantity_0]) --> DepthDrillingQuantity[[DepthDrillingQuantity]]:::typeClass
 	BitDepth_0([BitDepth_0]) --> BitDepth[[BitDepth]]:::typeClass
 	DirectTransformation_0([DirectTransformation_0]) --> DirectTransformation[[DirectTransformation]]:::typeClass
 	DirectTransformation_1([DirectTransformation_1]) --> DirectTransformation[[DirectTransformation]]:::typeClass
@@ -85,7 +82,6 @@ flowchart TD
 	TopDriveShaft_0([TopDriveShaft_0]) --> Quill[[Quill]]:::typeClass
 	ConnectedCondition_0([ConnectedCondition_0]) --> ConnectedCondition[[ConnectedCondition]]:::typeClass
 	 DownholePressureQuantity_0 -- IsObservableFrom --> PressureQuantity_0 
-	 DownholeECD_0 -- IsOfMeasurableQuantity --> EMWQuantity_0 
 	 DownholePressure_0 -- IsOfMeasurableQuantity --> DownholePressureQuantity_0 
 	 DrillingDataPoint_0 -- IsOfMeasurableQuantity --> TVDQuantity_0 
 	 DrillingDataPoint_1 -- IsOfBaseQuantity --> AccelerationQuantity_0 

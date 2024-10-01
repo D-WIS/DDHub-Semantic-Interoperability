@@ -1,6 +1,6 @@
 # DWIS-SPP1
 - MudStandpipe:StandPipe_0
-- DrillingPressureQuantity:SPPQuantity_0
+- PressureDrillingQuantity:SPPQuantity_0
 - Location:StandPipeLocation
 - DerrickFloorVerticalLocation:DrillFloorLocation
 - DrillingDataPoint:StandPipeElevation
@@ -31,7 +31,7 @@ flowchart TD
 	 classDef typeClass fill:#f96;
 	 classDef classClass fill:#9dd0ff;
 	StandPipe_0([StandPipe_0]) --> MudStandpipe[[MudStandpipe]]:::typeClass
-	SPPQuantity_0([SPPQuantity_0]) --> DrillingPressureQuantity[[DrillingPressureQuantity]]:::typeClass
+	SPPQuantity_0([SPPQuantity_0]) --> PressureDrillingQuantity[[PressureDrillingQuantity]]:::typeClass
 	StandPipeLocation([StandPipeLocation]) --> Location[[Location]]:::typeClass
 	DrillFloorLocation([DrillFloorLocation]) --> DerrickFloorVerticalLocation[[DerrickFloorVerticalLocation]]:::typeClass
 	StandPipeElevation([StandPipeElevation]) --> DrillingDataPoint[[DrillingDataPoint]]:::typeClass

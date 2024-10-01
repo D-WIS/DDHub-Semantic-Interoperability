@@ -69,11 +69,11 @@ defined as a `ControlSystem` provided by a drilling contractor.
   - IsAuxiliary
     - Type: boolean
     - Description: This attribute specifies if the function is a main or an auxilary one. A main function impacts
-        substantially the drilling process while an auxiliary function does not impact or only in limited fashion the
-        drilling process. Example of a main functions are: Hoist, Tag Bottom, Start Circulation, Start Rotation, 
-        Stop Circulation, Stop Rotation, Drill, Pull Out,Run In, Pull Out With Lubrication, Run In With Lubrication, Ream Up, 
-        Ream Down,Test Friction, Reciprocate, Test Pressure Integrity, Place Cement, .... Example of auxiliary functions
-        are: Boost Riser Flow, Down Link from ADCS, Rock Pipe, ...
+    substantially the drilling process while an auxiliary function does not impact or only in limited fashion the
+    drilling process. Example of a main functions are: Hoist, Tag Bottom, Start Circulation, Start Rotation,
+    Stop Circulation, Stop Rotation, Drill, Pull Out,Run In, Pull Out With Lubrication, Run In With Lubrication, Ream Up,
+    Ream Down,Test Friction, Reciprocate, Test Pressure Integrity, Place Cement, .... Example of auxiliary functions
+    are: Boost Riser Flow, Down Link from ADCS, Rock Pipe, ...
 - Description: 
 A runnable function is a function that starts to run immediately when activated.
 - Definition set: ADCS

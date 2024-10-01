@@ -17,42 +17,142 @@
 - Specialization:
 - Description: Technology used for transferring the data from its main origin. 
 - Examples:
+``` dwis downholePressure_1
+DrillingDataPoint: downholePressure_1
+downholePressure_1 BelongsToClass DownholePressure
+downholePressure_1 IsOfMeasurableQuantity PressureDrillingQuantity
+AcousticTelemetry: acousticTelemetry
+acousticTelemetry.NumberOfRepeaters = 3
+acousticTelemetry.DistanceBetweenRepeaters = 2000
+acousticTelemetry.AverageDelayByRepeater = 1
+downholePressure_1 IsTransmittedBy acousticTelemetry
+```
 ## DownHoleTelemetry <!-- NOUN -->
 - Display name: DownHoleTelemetry
 - Parent class: Telemetry
 - Attributes:
 - Specialization:
-- Description: 
-- Examples: Technology that allows transfer of downhole data to the surface.
+- Description: Technology that allows transfer of downhole data to the surface.
+- Examples: 
+``` dwis downholePressure_1
+DrillingDataPoint: downholePressure_1
+downholePressure_1 BelongsToClass DownholePressure
+downholePressure_1 IsOfMeasurableQuantity PressureDrillingQuantity
+DownHoleTelemetry: downholeTelemetry
+downholePressure_1 IsTransmittedBy downholeTelemetry
+```
 ## MudPulseTelemetry <!-- NOUN -->
 - Display name: MudPulseTelemetry
 - Parent class: DownHoleTelemetry
 - Attributes:
 - Specialization:
-- Description: A method that allows transfer of downhole data to the surface via pressure pulses sent trough the drilling fluid.
-- Examples: NOV BlackStar II dual-telemetry MWD
+- Description: A method that allows transfer of downhole data to the surface via pressure pulses sent through the drilling fluid.
+- Examples:
+``` dwis downholePressure_1
+DrillingDataPoint: downholePressure_1
+downholePressure_1 BelongsToClass DownholePressure
+downholePressure_1 IsOfMeasurableQuantity PressureDrillingQuantity
+MudPulseTelemetry: mudPulseTelemetry
+downholePressure_1 IsTransmittedBy mudPulseTelemetry
+```
 ## ElectromagneticTelemetry <!-- NOUN -->
 - Display name: ElectromagneticTelemetry
 - Parent class: DownHoleTelemetry
 - Attributes:
 - Specialization:
-- Description: A method that allows transfer of downhole data to the surface via electromagnetic waves sent trough the drilling formation.
-- Examples: APS SureShot-EM, NOV BlackStar II EM MWD
+- Description: A method that allows transfer of downhole data to the surface via electromagnetic waves sent through the drilling formation.
+- Examples:
+``` dwis downholePressure_1
+DrillingDataPoint: downholePressure_1
+downholePressure_1 BelongsToClass DownholePressure
+downholePressure_1 IsOfMeasurableQuantity PressureDrillingQuantity
+ElectromagneticTelemetry: electromagneticTelemetry
+downholePressure_1 IsTransmittedBy electromagneticTelemetry
+```
+## AcousticTelemetry <!-- NOUN -->
+- Display name: AcousticTelemetry
+- Parent class: DownHoleTelemetry
+- Attributes:
+- Specialization:
+- Description: A method that allows transfer of downhole data to the surface via acoustic waves along the drill-string.
+- Examples:
+``` dwis downholePressure_1
+DrillingDataPoint: downholePressure_1
+downholePressure_1 BelongsToClass DownholePressure
+downholePressure_1 IsOfMeasurableQuantity PressureDrillingQuantity
+AcousticTelemetry: acousticTelemetry
+downholePressure_1 IsTransmittedBy acousticTelemetry
+```
 ## WiredPipeTelemetry <!-- NOUN -->
 - Display name: WiredPipeTelemetry
 - Parent class: DownHoleTelemetry
 - Attributes:
 - Specialization:
-- Description: A method that allows transfer of downhole data to the surface via electrical connections through the drill string.
-- Examples: Intelliserv Wired Drill Pipe, Reelwell DualLink
+- Description: A method that allows transfer of downhole data to the surface via electrical connections along the drill string.
+- Examples:
+``` dwis downholePressure_1
+DrillingDataPoint: downholePressure_1
+downholePressure_1 BelongsToClass DownholePressure
+downholePressure_1 IsOfMeasurableQuantity PressureDrillingQuantity
+WiredPipeTelemetry: wiredPipeTelemetry
+downholePressure_1 IsTransmittedBy wiredPipeTelemetry
+```
+## InductionCouplingDownholeTelemetry <!-- NOUN -->
+- Display name: InductionCouplingDownholeTelemetry
+- Parent class: WiredPipeTelemetry
+- Attributes:
+- Specialization:
+- Description: A method that allows transfer of downhole data to the surface via induction coupling between pipes along the drill-string.
+- Examples:
+``` dwis downholePressure_1
+DrillingDataPoint: downholePressure_1
+downholePressure_1 BelongsToClass DownholePressure
+downholePressure_1 IsOfMeasurableQuantity PressureDrillingQuantity
+InductionCouplingDownholeTelemetry: inductionCouplingTelemetry
+downholePressure_1 IsTransmittedBy inductionCouplingTelemetry
+```
+## ElectromagneticCouplingDownholeTelemetry <!-- NOUN -->
+- Display name: ElectromagneticCouplingDownholeTelemetry
+- Parent class: WiredPipeTelemetry
+- Attributes:
+- Specialization:
+- Description: A method that allows transfer of downhole data to the surface via electromagnetic coupling between pipes along the drill-string.
+- Examples:
+``` dwis downholePressure_1
+DrillingDataPoint: downholePressure_1
+downholePressure_1 BelongsToClass DownholePressure
+downholePressure_1 IsOfMeasurableQuantity PressureDrillingQuantity
+ElectromagneticCouplingDownholeTelemetry: electromagneticCouplingTelemetry
+downholePressure_1 IsTransmittedBy electromagneticCouplingTelemetry
+```
+## GalvanicCouplingDownholeTelemetry <!-- NOUN -->
+- Display name: GalvanicCouplingDownholeTelemetry
+- Parent class: WiredPipeTelemetry
+- Attributes:
+- Specialization:
+- Description: A method that allows transfer of downhole data to the surface via galvanic coupling between pipes along the drill-string.
+- Examples:
+``` dwis downholePressure_1
+DrillingDataPoint: downholePressure_1
+downholePressure_1 BelongsToClass DownholePressure
+downholePressure_1 IsOfMeasurableQuantity PressureDrillingQuantity
+GalvanicCouplingDownholeTelemetry: galvanicCouplingTelemetry
+downholePressure_1 IsTransmittedBy galvanicCouplingTelemetry
+```
 ## TopSideTelemetry <!-- NOUN -->
 - Display name: TopSideTelemetry
 - Parent class: Telemetry
 - Attributes:
 - Specialization:
 - Description: Method that allows transfer of data from surface systems.
-- Examples: NOVOS, Cyberbase, DEAL
-
+- Examples: 
+``` dwis SPP_1
+DrillingDataPoint: SPP_1
+SPP BelongsToClass SPP
+SPP_1 IsOfMeasurableQuantity PressureDrillingQuantity
+TopSideTelemetry: topSideTelemetry
+SPP_1 IsTransmittedBy topSideTelemetry
+```
 
 # VERBS
 ## IsTransmittedBy <!-- VERB -->
@@ -61,4 +161,11 @@
 - Subject class: DrillingDataPoint
 - Object class: Telemetry
 - Description: Expresses that a signal is transmitted by some given telemetry system
-- Examples: EMS DWOB is transmitted by WiredPipeTelemetry
+- Examples:
+``` dwis downholeWOB_1
+DrillingDataPoint: downholeWOB_1
+downholeWOB_1 BelongsToClass WOB
+downholeWOB_1 IsOfMeasurableQuantity ForceQuantity
+InductionCouplingDownholeTelemetry: inductionCouplingTelemetry
+downholeWOB_1 IsTransmittedBy inductionCouplingTelemetry
+```

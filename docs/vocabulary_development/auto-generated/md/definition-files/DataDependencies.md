@@ -9,6 +9,7 @@ Here is a class inheritance diagram for the verbs contained in this definition s
 ```mermaid
 classDiagram
 DWISVerb <|-- IsDependentOn
+DWISVerb <|-- IsObservableFrom
 IsDependentOn <|-- HasPressureReference
 IsDependentOn <|-- HasTemperatureReference
 IsDependentOn <|-- HasElevationReference
@@ -18,6 +19,7 @@ Here is a graph representing the relations that can be made with the verbs defin
 ```mermaid
 erDiagram
 DrillingDataPoint ||--o{ DWISNoun : IsDependentOn
+DWISNoun ||--o{ DrillingDataPoint : IsObservableFrom
 DrillingDataPoint ||--o{ DrillingDataPoint : HasPressureReference
 DrillingDataPoint ||--o{ DrillingDataPoint : HasTemperatureReference
 DrillingDataPoint ||--o{ Location : HasElevationReference
@@ -78,6 +80,31 @@ WHERE {
 ```
 In this example, it is described that the derrick floor elevation, `DerrickFloorElevation`, 
 depends on the heave measurement, `HeaveElevation`, and the tide measurement, `TideElevation`.
+## IsObservableFrom <!-- VERB -->
+- Display name: IsObservableFrom
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Definition set: DataDependencies
+- Description: 
+This `Verb` means that something can be seen, detected, or noticed from a particular
+location or perspective. It implies that there is a clear view or means of perception from one point 
+to another.
+- Examples:
+``` dwis
+Overpull:overpull_event
+DrillingDataPoint:hook_load
+hook_load BelongsToClass HookLoad
+overpull_event IsObservableFrom hook_load
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[overpull_event] -->|BelongsToClass| N0001(Overpull) 
+	N0002[hook_load] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[hook_load] -->|BelongsToClass| N0004(HookLoad) 
+	N0000[overpull_event] -->|IsObservableFrom| N0002[hook_load] 
+```
 ## HasPressureReference <!-- VERB -->
 - Display name: HasPressureReference
 - Parent verb: [IsDependentOn](./DataDependencies.md#IsDependentOn)
