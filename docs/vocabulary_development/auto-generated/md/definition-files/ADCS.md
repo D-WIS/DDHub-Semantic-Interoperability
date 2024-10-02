@@ -16,12 +16,8 @@ ProtectionFunction <|-- FDIRFunction
 ProtectionFunction <|-- SOEFunction
 ```
 ## ActivableFunction <!-- NOUN -->
-- Display name: Activable Function
+- Display name: ActivableFunction
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
-- Attributes:
-  - HasFunction
-    - Type: string
-    - Description: this attribute describes the purpose of the activable function.
 - Description: 
 An `ActivableFunction` is an ADCS function that can be activated. Here activation means that the
 function may run immediately or that it is enabled and can trigger if some conditions are respected.
@@ -63,7 +59,7 @@ WHERE {
 This example describes all `ActivableFunction` provided by the drilling control system, `DCS`. The `DCS` is 
 defined as a `ControlSystem` provided by a drilling contractor.
 ## RunnableFunction <!-- NOUN -->
-- Display name: Runnable Function
+- Display name: RunnableFunction
 - Parent class: [ActivableFunction](./ADCS.md#ActivableFunction)
 - Attributes:
   - IsAuxiliary
@@ -106,7 +102,6 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?runnableFunction
 WHERE {
 	?runnableFunction rdf:type ddhub:RunnableFunction .
-	?runnableFunction ddhub:IsAuxiliary ?Attribute000 .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
 	?DCS ddhub:IsProvidedBy ?Contractor .
@@ -130,7 +125,8 @@ follows as closely as possible, for instance, a desired `WOB`.
 - Examples:
 ```dwis autoDriller
 ControllerFunction:autoDriller
-autoDriller HasFunction "Drill"
+StableAxiaVelocityObjective: stableROP
+autoDriller ImplementsObjective stableROP
 autoDriller IsAuxiliary false
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -142,7 +138,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[autoDriller] -->|BelongsToClass| N0001(ControllerFunction) 
-	N0000[autoDriller] -->|HasFunction| N0002["Drill"] 
+	N0000[autoDriller] -->|ImplementsObjective| N0002[stableROP] 
 	N0000[autoDriller] -->|IsAuxiliary| N0003((false)) 
 	N0004[DCS] -->|BelongsToClass| N0005(ControlSystem) 
 	N0006[Contractor] -->|BelongsToClass| N0007(DrillingContractor) 
@@ -158,8 +154,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?autoDriller
 WHERE {
 	?autoDriller rdf:type ddhub:ControllerFunction .
-	?autoDriller ddhub:HasFunction ?"Drill" .
-	?autoDriller ddhub:IsAuxiliary ?Attribute000 .
+	?autoDriller ddhub:ImplementsObjective ?stableROP .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
 	?DCS ddhub:IsProvidedBy ?Contractor .
@@ -186,7 +181,8 @@ the rotational speed and one that controls the axial speed.
 - Examples:
 ```dwis frictionTest
 ProcedureFunction:frictionTest
-frictionTest HasFunction "FrictionTest"
+FrictionTestProcedure: frictionTest
+frictionTest ImplementsProcedure frictionTest
 FrictionTest IsAuxiliary false
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -198,13 +194,13 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[frictionTest] -->|BelongsToClass| N0001(ProcedureFunction) 
-	N0000[frictionTest] -->|HasFunction| N0002["FrictionTest"] 
-	N0003[FrictionTest] -->|IsAuxiliary| N0004((false)) 
-	N0005[DCS] -->|BelongsToClass| N0006(ControlSystem) 
-	N0007[Contractor] -->|BelongsToClass| N0008(DrillingContractor) 
-	N0005[DCS] -->|IsProvidedBy| N0007[Contractor] 
-	N0005[DCS] -->|BelongsToClass| N0009(DataProvider) 
-	N0000[frictionTest] -->|IsProvidedBy| N0005[DCS] 
+	N0000[frictionTest] -->|ImplementsProcedure| N0000[frictionTest] 
+	N0002[FrictionTest] -->|IsAuxiliary| N0003((false)) 
+	N0004[DCS] -->|BelongsToClass| N0005(ControlSystem) 
+	N0006[Contractor] -->|BelongsToClass| N0007(DrillingContractor) 
+	N0004[DCS] -->|IsProvidedBy| N0006[Contractor] 
+	N0004[DCS] -->|BelongsToClass| N0008(DataProvider) 
+	N0000[frictionTest] -->|IsProvidedBy| N0004[DCS] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -214,8 +210,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?frictionTest
 WHERE {
 	?frictionTest rdf:type ddhub:ProcedureFunction .
-	?frictionTest ddhub:HasFunction ?"FrictionTest" .
-	?FrictionTest ddhub:IsAuxiliary ?Attribute000 .
+	?frictionTest ddhub:ImplementsProcedure ?frictionTest .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
 	?DCS ddhub:IsProvidedBy ?Contractor .
@@ -279,11 +274,17 @@ defined as a `ControlSystem` provided by a drilling contractor.
 - Parent class: [ProtectionFunction](./ADCS.md#ProtectionFunction)
 - Description: 
 A `FDIRFunction` is a `ProtectionFunction` that reacts to a particular state of the drilling process. FDIR
+stands for Fault Detection, Isolation and Recovery. An FDIR protects the drilling process by looking at its outputs.
+When that state is detected, then an isolation procedure is run, and if successful and defined, a recovery procedure is
+thereafter executed. In case of success of the recovery procedure, the drilling process is resumed. In all other cases,
+the system returns in manual mode, usually using the safe mode management procedure. An example of `FDIRFunction` is an
+packoff detection and reaction procedure.
 - Definition set: ADCS
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -294,7 +295,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
-	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002["PackOffFDIR"] 
+	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002[packOffIncident] 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
@@ -309,7 +310,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
-	?packOffDetectionAndReaction ddhub:HasFunction ?"PackOffFDIR" .
+	?packOffDetectionAndReaction ddhub:ManagesIncident ?packOffIncident .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
 	?DCS ddhub:IsProvidedBy ?Contractor .
@@ -332,7 +333,8 @@ surging pressure above the fracturing pressure.
 - Examples:
 ```dwis swabSurgeLimits
 SOEFunction:swabSurgeLimits
-swabSurgeLimits HasFunction "SwabSurgeSOE"
+AxialVelocityLimit: swabSurgeLimit
+swabSurgeLimits ImplementsLimit swabSurgeLimit
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -343,7 +345,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[swabSurgeLimits] -->|BelongsToClass| N0001(SOEFunction) 
-	N0000[swabSurgeLimits] -->|HasFunction| N0002["SwabSurgeSOE"] 
+	N0000[swabSurgeLimits] -->|ImplementsLimit| N0002[swabSurgeLimit] 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
@@ -358,7 +360,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?swabSurgeLimits
 WHERE {
 	?swabSurgeLimits rdf:type ddhub:SOEFunction .
-	?swabSurgeLimits ddhub:HasFunction ?"SwabSurgeSOE" .
+	?swabSurgeLimits ddhub:ImplementsLimit ?swabSurgeLimit .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
 	?DCS ddhub:IsProvidedBy ?Contractor .
@@ -411,7 +413,8 @@ It is expected that the `DrillingDataPoint` is a Boolean value.
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -425,7 +428,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
-	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002["PackOffFDIR"] 
+	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002[packOffIncident] 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
@@ -443,7 +446,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
-	?packOffDetectionAndReaction ddhub:HasFunction ?"PackOffFDIR" .
+	?packOffDetectionAndReaction ddhub:ManagesIncident ?packOffIncident .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
 	?DCS ddhub:IsProvidedBy ?Contractor .
@@ -467,7 +470,8 @@ not. It is expected that the `DrillingDataPoint` is a Boolean value.
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -481,7 +485,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
-	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002["PackOffFDIR"] 
+	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002[packOffIncident] 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
@@ -499,7 +503,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
-	?packOffDetectionAndReaction ddhub:HasFunction ?"PackOffFDIR" .
+	?packOffDetectionAndReaction ddhub:ManagesIncident ?packOffIncident .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
 	?DCS ddhub:IsProvidedBy ?Contractor .
@@ -527,7 +531,8 @@ is ignored.
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -544,7 +549,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
-	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002["PackOffFDIR"] 
+	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002[packOffIncident] 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
@@ -565,7 +570,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
-	?packOffDetectionAndReaction ddhub:HasFunction ?"PackOffFDIR" .
+	?packOffDetectionAndReaction ddhub:ManagesIncident ?packOffIncident .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
 	?DCS ddhub:IsProvidedBy ?Contractor .
@@ -598,7 +603,8 @@ within the limits, but if the limits are applied then the idle state is false, b
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -615,7 +621,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
-	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002["PackOffFDIR"] 
+	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002[packOffIncident] 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
@@ -636,7 +642,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
-	?packOffDetectionAndReaction ddhub:HasFunction ?"PackOffFDIR" .
+	?packOffDetectionAndReaction ddhub:ManagesIncident ?packOffIncident .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
 	?DCS ddhub:IsProvidedBy ?Contractor .
@@ -667,7 +673,8 @@ detection of an incident.
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -681,7 +688,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
-	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002["PackOffFDIR"] 
+	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002[packOffIncident] 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
@@ -699,7 +706,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
-	?packOffDetectionAndReaction ddhub:HasFunction ?"PackOffFDIR" .
+	?packOffDetectionAndReaction ddhub:ManagesIncident ?packOffIncident .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
 	?DCS ddhub:IsProvidedBy ?Contractor .
@@ -724,7 +731,8 @@ extra margin signal is used or not by the FDIR function. This signal is expected
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -741,7 +749,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
-	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002["PackOffFDIR"] 
+	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002[packOffIncident] 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
@@ -762,7 +770,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
-	?packOffDetectionAndReaction ddhub:HasFunction ?"PackOffFDIR" .
+	?packOffDetectionAndReaction ddhub:ManagesIncident ?packOffIncident .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
 	?DCS ddhub:IsProvidedBy ?Contractor .
@@ -792,7 +800,8 @@ triggered. For instance, a pack-off FDIR may be active but would react only if t
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -809,7 +818,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
-	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002["PackOffFDIR"] 
+	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002[packOffIncident] 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
@@ -830,7 +839,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
-	?packOffDetectionAndReaction ddhub:HasFunction ?"PackOffFDIR" .
+	?packOffDetectionAndReaction ddhub:ManagesIncident ?packOffIncident .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
 	?DCS ddhub:IsProvidedBy ?Contractor .
@@ -860,7 +869,8 @@ back to the end-user, in case of failure of the recovery procedure or at the end
 - Examples:
  ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -874,7 +884,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
-	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002["PackOffFDIR"] 
+	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002[packOffIncident] 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
@@ -892,7 +902,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
-	?packOffDetectionAndReaction ddhub:HasFunction ?"PackOffFDIR" .
+	?packOffDetectionAndReaction ddhub:ManagesIncident ?packOffIncident .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
 	?DCS ddhub:IsProvidedBy ?Contractor .
@@ -916,7 +926,8 @@ This verb is used to indicate that a `DrillingDataPoint` tells whether the isola
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -933,7 +944,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
-	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002["PackOffFDIR"] 
+	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002[packOffIncident] 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
@@ -954,7 +965,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
-	?packOffDetectionAndReaction ddhub:HasFunction ?"PackOffFDIR" .
+	?packOffDetectionAndReaction ddhub:ManagesIncident ?packOffIncident .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
 	?DCS ddhub:IsProvidedBy ?Contractor .
@@ -984,7 +995,8 @@ describe the impact of the function on the drilling process. This signal is supp
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -998,7 +1010,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
-	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002["PackOffFDIR"] 
+	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002[packOffIncident] 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
@@ -1016,7 +1028,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
-	?packOffDetectionAndReaction ddhub:HasFunction ?"PackOffFDIR" .
+	?packOffDetectionAndReaction ddhub:ManagesIncident ?packOffIncident .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
 	?DCS ddhub:IsProvidedBy ?Contractor .

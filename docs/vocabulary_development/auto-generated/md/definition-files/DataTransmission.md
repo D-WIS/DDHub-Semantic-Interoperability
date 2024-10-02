@@ -24,13 +24,13 @@ Telemetry <|-- TopSideTelemetry
 - Attributes:
   - NumberOfRepeaters
     - Type: int
-    - Description: 
+    - Description: The number of repeaters between the source of the signal and the receiver.
   - DistanceBetweenRepeaters
     - Type: double
-    - Description: 
+    - Description: The average distance between two repeaters. The physical quantity is Length and the unit is metre.
   - AverageDelayByRepeater
     - Type: double
-    - Description: 
+    - Description: The average delay caused by each repeater. The physical quantity is Time and the unit is second.
 - Description: 
 Technology used for transferring the data from its main origin.
 - Definition set: DataTransmission
@@ -64,9 +64,9 @@ SELECT ?downholePressure_1
 WHERE {
 	?downholePressure_1 rdf:type ddhub:DownholePressure .
 	?downholePressure_1 ddhub:IsOfMeasurableQuantity ?PressureDrillingQuantity .
-	?acousticTelemetry.NumberOfRepeaters ddhub:= ?Attribute000 .
-	?acousticTelemetry.DistanceBetweenRepeaters ddhub:= ?Attribute001 .
-	?acousticTelemetry.AverageDelayByRepeater ddhub:= ?Attribute002 .
+	?acousticTelemetry ddhub:NumberOfRepeaters ?Attribute000 .
+	?acousticTelemetry ddhub:DistanceBetweenRepeaters ?Attribute001 .
+	?acousticTelemetry ddhub:AverageDelayByRepeater ?Attribute002 .
 	?downholePressure_1 ddhub:IsTransmittedBy ?acousticTelemetry .
   FILTER (
 	?Attribute000 = 3
@@ -348,7 +348,7 @@ Method that allows transfer of data from surface systems.
 - Examples:
 ``` dwis SPP_1
 DrillingDataPoint: SPP_1
-SPP BelongsToClass SPP
+SPP_1 BelongsToClass SPP
 SPP_1 IsOfMeasurableQuantity PressureDrillingQuantity
 TopSideTelemetry: topSideTelemetry
 SPP_1 IsTransmittedBy topSideTelemetry
@@ -356,9 +356,9 @@ SPP_1 IsTransmittedBy topSideTelemetry
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[SPP] -->|BelongsToClass| N0000(SPP) 
-	N0001[SPP_1] -->|IsOfMeasurableQuantity| N0002[PressureDrillingQuantity] 
-	N0001[SPP_1] -->|IsTransmittedBy| N0003[topSideTelemetry] 
+	N0000[SPP_1] -->|BelongsToClass| N0001(SPP) 
+	N0000[SPP_1] -->|IsOfMeasurableQuantity| N0002[PressureDrillingQuantity] 
+	N0000[SPP_1] -->|IsTransmittedBy| N0003[topSideTelemetry] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -367,7 +367,7 @@ PREFIX ddhub: <http://ddhub.no/>
 PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?SPP_1
 WHERE {
-	?SPP rdf:type ddhub:SPP .
+	?SPP_1 rdf:type ddhub:SPP .
 	?SPP_1 ddhub:IsOfMeasurableQuantity ?PressureDrillingQuantity .
 	?SPP_1 ddhub:IsTransmittedBy ?topSideTelemetry .
 }

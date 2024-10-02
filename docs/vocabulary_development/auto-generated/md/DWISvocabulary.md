@@ -3,6 +3,10 @@
 - Description: 
 this definition set refers to the various functions an ADCS implements. It is to be used for the ADCS capability description.
 
+## AdvisorySystemAdvice<!-- DEFINITION SET HEADER -->
+- Description: 
+this is the part associated to advices provided by advisory systems.
+
 ## DataDependencies<!-- DEFINITION SET HEADER -->
 - Description: 
 this definition set covers the physical dependence of a `DrillingDatPoint` on something else.
@@ -34,6 +38,18 @@ in this category fall all the standard equipment encountered on a drilling rig. 
 ## DrillingIncident<!-- DEFINITION SET HEADER -->
 - Description: 
 this category refers mostly to the description of drilling incidents.
+
+## DrillingLimit<!-- DEFINITION SET HEADER -->
+- Description: 
+this category refers mostly to the description of drilling limits.
+
+## DrillingObjective<!-- DEFINITION SET HEADER -->
+- Description: 
+this category refers mostly to the description of drilling objectives.
+
+## DrillingProcedure<!-- DEFINITION SET HEADER -->
+- Description: 
+this category refers mostly to the description of drilling procedures.
 
 ## DWISSemantics<!-- DEFINITION SET HEADER -->
 - Description: 
@@ -84,12 +100,8 @@ this category contains the nouns and verbs required to describe the various type
 ## UnitTypes<!-- DEFINITION SET HEADER -->
 # Nouns
 ## ActivableFunction <!-- NOUN -->
-- Display name: Activable Function
+- Display name: ActivableFunction
 - Parent class: [DWISNoun](#DWISNoun)
-- Attributes:
-  - HasFunction
-    - Type: string
-    - Description: this attribute describes the purpose of the activable function.
 - Description: 
 An `ActivableFunction` is an ADCS function that can be activated. Here activation means that the
 function may run immediately or that it is enabled and can trigger if some conditions are respected.
@@ -123,9 +135,7 @@ WHERE {
 	?ADCSFunction rdf:type ddhub:ActivableFunction .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
-	?DCS ddhub:IsProvidedBy ?Attribute000 .
 	?DCS rdf:type ddhub:DataProvider .
-	?ActivableFunction ddhub:IsProvidedBy ?Attribute001 .
   FILTER (
 	?Attribute000 = Contractor
 	&& 	?Attribute001 = DCS
@@ -135,7 +145,7 @@ WHERE {
 This example describes all `ActivableFunction` provided by the drilling control system, `DCS`. The `DCS` is 
 defined as a `ControlSystem` provided by a drilling contractor.
 ## RunnableFunction <!-- NOUN -->
-- Display name: Runnable Function
+- Display name: RunnableFunction
 - Parent class: [ActivableFunction](#ActivableFunction)
 - Attributes:
   - IsAuxiliary
@@ -178,12 +188,9 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?runnableFunction
 WHERE {
 	?runnableFunction rdf:type ddhub:RunnableFunction .
-	?runnableFunction ddhub:IsAuxiliary ?Attribute000 .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
-	?DCS ddhub:IsProvidedBy ?Attribute001 .
 	?DCS rdf:type ddhub:DataProvider .
-	?runnableFunction ddhub:IsProvidedBy ?Attribute002 .
   FILTER (
 	?Attribute000 = false
 	&& 	?Attribute001 = Contractor
@@ -204,7 +211,8 @@ follows as closely as possible, for instance, a desired `WOB`.
 - Examples:
 ```dwis autoDriller
 ControllerFunction:autoDriller
-autoDriller HasFunction "Drill"
+StableAxiaVelocityObjective: stableROP
+autoDriller ImplementsObjective stableROP
 autoDriller IsAuxiliary false
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -216,7 +224,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[autoDriller] -->|BelongsToClass| N0001(ControllerFunction) 
-	N0000[autoDriller] -->|HasFunction| N0002(("Drill")) 
+	N0000[autoDriller] -->|ImplementsObjective| N0002((stableROP)) 
 	N0000[autoDriller] -->|IsAuxiliary| N0003((false)) 
 	N0004[DCS] -->|BelongsToClass| N0005(ControlSystem) 
 	N0006[Contractor] -->|BelongsToClass| N0007(DrillingContractor) 
@@ -232,15 +240,11 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?autoDriller
 WHERE {
 	?autoDriller rdf:type ddhub:ControllerFunction .
-	?autoDriller ddhub:HasFunction ?Attribute000 .
-	?autoDriller ddhub:IsAuxiliary ?Attribute001 .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
-	?DCS ddhub:IsProvidedBy ?Attribute002 .
 	?DCS rdf:type ddhub:DataProvider .
-	?autoDriller ddhub:IsProvidedBy ?Attribute003 .
   FILTER (
-	?Attribute000 = "Drill"
+	?Attribute000 = stableROP
 	&& 	?Attribute001 = false
 	&& 	?Attribute002 = Contractor
 	&& 	?Attribute003 = DCS
@@ -263,7 +267,8 @@ the rotational speed and one that controls the axial speed.
 - Examples:
 ```dwis frictionTest
 ProcedureFunction:frictionTest
-frictionTest HasFunction "FrictionTest"
+FrictionTestProcedure: frictionTest
+frictionTest ImplementsProcedure frictionTest
 FrictionTest IsAuxiliary false
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -275,13 +280,13 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[frictionTest] -->|BelongsToClass| N0001(ProcedureFunction) 
-	N0000[frictionTest] -->|HasFunction| N0002(("FrictionTest")) 
-	N0003[FrictionTest] -->|IsAuxiliary| N0004((false)) 
-	N0005[DCS] -->|BelongsToClass| N0006(ControlSystem) 
-	N0007[Contractor] -->|BelongsToClass| N0008(DrillingContractor) 
-	N0005[DCS] -->|IsProvidedBy| N0007((Contractor)) 
-	N0005[DCS] -->|BelongsToClass| N0009(DataProvider) 
-	N0000[frictionTest] -->|IsProvidedBy| N0005((DCS)) 
+	N0000[frictionTest] -->|ImplementsProcedure| N0000((frictionTest)) 
+	N0002[FrictionTest] -->|IsAuxiliary| N0003((false)) 
+	N0004[DCS] -->|BelongsToClass| N0005(ControlSystem) 
+	N0006[Contractor] -->|BelongsToClass| N0007(DrillingContractor) 
+	N0004[DCS] -->|IsProvidedBy| N0006((Contractor)) 
+	N0004[DCS] -->|BelongsToClass| N0008(DataProvider) 
+	N0000[frictionTest] -->|IsProvidedBy| N0004((DCS)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -291,15 +296,11 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?frictionTest
 WHERE {
 	?frictionTest rdf:type ddhub:ProcedureFunction .
-	?frictionTest ddhub:HasFunction ?Attribute000 .
-	?FrictionTest ddhub:IsAuxiliary ?Attribute001 .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
-	?DCS ddhub:IsProvidedBy ?Attribute002 .
 	?DCS rdf:type ddhub:DataProvider .
-	?frictionTest ddhub:IsProvidedBy ?Attribute003 .
   FILTER (
-	?Attribute000 = "FrictionTest"
+	?Attribute000 = frictionTest
 	&& 	?Attribute001 = false
 	&& 	?Attribute002 = Contractor
 	&& 	?Attribute003 = DCS
@@ -347,9 +348,7 @@ WHERE {
 	?protectionFunction rdf:type ddhub:ProtectionFunction .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
-	?DCS ddhub:IsProvidedBy ?Attribute000 .
 	?DCS rdf:type ddhub:DataProvider .
-	?protectionFunction ddhub:IsProvidedBy ?Attribute001 .
   FILTER (
 	?Attribute000 = Contractor
 	&& 	?Attribute001 = DCS
@@ -363,11 +362,17 @@ defined as a `ControlSystem` provided by a drilling contractor.
 - Parent class: [ProtectionFunction](#ProtectionFunction)
 - Description: 
 A `FDIRFunction` is a `ProtectionFunction` that reacts to a particular state of the drilling process. FDIR
+stands for Fault Detection, Isolation and Recovery. An FDIR protects the drilling process by looking at its outputs.
+When that state is detected, then an isolation procedure is run, and if successful and defined, a recovery procedure is
+thereafter executed. In case of success of the recovery procedure, the drilling process is resumed. In all other cases,
+the system returns in manual mode, usually using the safe mode management procedure. An example of `FDIRFunction` is an
+packoff detection and reaction procedure.
 - Definition set: ADCS
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -378,7 +383,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
-	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002(("PackOffFDIR")) 
+	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002((packOffIncident)) 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
@@ -393,14 +398,11 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
-	?packOffDetectionAndReaction ddhub:HasFunction ?Attribute000 .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
-	?DCS ddhub:IsProvidedBy ?Attribute001 .
 	?DCS rdf:type ddhub:DataProvider .
-	?packOffDetectionAndReaction ddhub:IsProvidedBy ?Attribute002 .
   FILTER (
-	?Attribute000 = "PackOffFDIR"
+	?Attribute000 = packOffIncident
 	&& 	?Attribute001 = Contractor
 	&& 	?Attribute002 = DCS
   )
@@ -421,7 +423,8 @@ surging pressure above the fracturing pressure.
 - Examples:
 ```dwis swabSurgeLimits
 SOEFunction:swabSurgeLimits
-swabSurgeLimits HasFunction "SwabSurgeSOE"
+AxialVelocityLimit: swabSurgeLimit
+swabSurgeLimits ImplementsLimit swabSurgeLimit
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -432,7 +435,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[swabSurgeLimits] -->|BelongsToClass| N0001(SOEFunction) 
-	N0000[swabSurgeLimits] -->|HasFunction| N0002(("SwabSurgeSOE")) 
+	N0000[swabSurgeLimits] -->|ImplementsLimit| N0002((swabSurgeLimit)) 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
@@ -447,14 +450,11 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?swabSurgeLimits
 WHERE {
 	?swabSurgeLimits rdf:type ddhub:SOEFunction .
-	?swabSurgeLimits ddhub:HasFunction ?Attribute000 .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
-	?DCS ddhub:IsProvidedBy ?Attribute001 .
 	?DCS rdf:type ddhub:DataProvider .
-	?swabSurgeLimits ddhub:IsProvidedBy ?Attribute002 .
   FILTER (
-	?Attribute000 = "SwabSurgeSOE"
+	?Attribute000 = swabSurgeLimit
 	&& 	?Attribute001 = Contractor
 	&& 	?Attribute002 = DCS
   )
@@ -462,6 +462,1847 @@ WHERE {
 ```
 This example describes the `swabSurgeLimits` safe operating envelope limits to avoid detrimental swab/surge pressures in 
 the open hole section of the borehole. 
+## AdvisorySystemAdvice <!-- NOUN -->
+- Display name: Advisory System Advice
+- Parent class: [JSonDataType](#JSonDataType)
+- Description: 
+An advisory system provides one or several advices. These advices are structured data that are stored as a JSon
+string. 
+- Definition set: AdvisorySystemAdvice
+- Examples:
+``` dwis adviceInfo
+DynamicDrillingSignal: adviceInfo
+AdvisorySystemAdvice: adviceInfo_1
+adviceInfo_1 HasDynamicValue adviceInfo
+ServiceCompany: serviceCompany
+adviceInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+adviceInfo_1 IsRecommendedBy computationUnit
+ActivableFunction: activableFunction
+adviceInfo_1 IsRecommendedFor activableFunction
+DWISAdviceComposer: adviceComposer
+adviceInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+adviceInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[adviceInfo_1] -->|HasDynamicValue| N0001((adviceInfo)) 
+	N0000[adviceInfo_1] -->|IsProvidedBy| N0002((serviceCompany)) 
+	N0000[adviceInfo_1] -->|IsRecommendedBy| N0003((computationUnit)) 
+	N0000[adviceInfo_1] -->|IsRecommendedFor| N0004((activableFunction)) 
+	N0000[adviceInfo_1] -->|IsProvidedTo| N0005((adviceComposer)) 
+	N0000[adviceInfo_1] -->|IsProvidedTo| N0006((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?adviceInfo
+WHERE {
+  FILTER (
+	?Attribute000 = adviceInfo
+	&& 	?Attribute001 = serviceCompany
+	&& 	?Attribute002 = computationUnit
+	&& 	?Attribute003 = activableFunction
+	&& 	?Attribute004 = adviceComposer
+	&& 	?Attribute005 = scheduler
+  )
+}
+```
+## DigitalTwinAdvice <!-- NOUN -->
+- Display name: Digital Twin Advice
+- Parent class: [AdvisorySystemAdvice](#AdvisorySystemAdvice)
+- Description: 
+A digital twin simulates the drilling operation using the boundary conditions applied to the drilling system.
+It provides information about the plausible values that can be expected anywhere along the drilling system. These results
+are stored in a DigitalTwinAdvice.
+- Definition set: AdvisorySystemAdvice
+- Examples:
+``` dwis digitalTwinAdvice
+DynamicDrillingSignal: digitalTwinAdvice
+DigitalTwinAdvice: digitalTwinAdvice_1
+digitalTwinAdvice_1 HasDynamicValue digitalTwinAdvice
+OperatingCompany: operatingCompany
+digitalTwinAdvice_1 IsProvidedBy operatingCompany
+Simulator: simulator
+digitalTwinAdvice_1 IsRecommendedBy simulator
+DWISDrillingProcessStateInterpreter: microStateInterpreter
+digitalTwinAdvice_1 IsProvidedTo microStateInterpreter
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[digitalTwinAdvice_1] -->|HasDynamicValue| N0001((digitalTwinAdvice)) 
+	N0000[digitalTwinAdvice_1] -->|IsProvidedBy| N0002((operatingCompany)) 
+	N0000[digitalTwinAdvice_1] -->|IsRecommendedBy| N0003((simulator)) 
+	N0000[digitalTwinAdvice_1] -->|IsProvidedTo| N0004((microStateInterpreter)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?digitalTwinAdvice
+WHERE {
+  FILTER (
+	?Attribute000 = digitalTwinAdvice
+	&& 	?Attribute001 = operatingCompany
+	&& 	?Attribute002 = simulator
+	&& 	?Attribute003 = microStateInterpreter
+  )
+}
+```
+## DrillingStandardProcedureAdvice <!-- NOUN -->
+- Display name: Drilling Standard Procedure Advice
+- Parent class: [AdvisorySystemAdvice](#AdvisorySystemAdvice)
+- Description: 
+A drilling standard procedure advisor provides parameters for a standard procedure like starting the mud pumps or
+running a friction test.
+- Definition set: AdvisorySystemAdvice
+- Examples:
+The circulation startup procedure defines how to start the mud pumps in order to fill the pipes, break circulation and 
+establish a suitable flowrate in the drill-stem.
+``` dwis circulationStartupProcedureInfo
+DynamicDrillingSignal: circulationStartupProcedureInfo
+DrillingStandardProcedureAdvice: circulationStartupProcedureInfo_1
+circulationStartupProcedureInfo_1 HasDynamicValue circulationStartupProcedureInfo
+CirculationStartupProcedure: circulationStartupProcedure
+circulationStartupProcedureInfo_1 IsRelatedToDrillingProcedure circulationStartupProcedure
+ServiceCompany: serviceCompany
+circulationStartupProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+circulationStartupProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure circulationStartupProcedure
+circulationStartupProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+circulationStartupProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+circulationStartupProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[circulationStartupProcedureInfo_1] -->|HasDynamicValue| N0001((circulationStartupProcedureInfo)) 
+	N0000[circulationStartupProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((circulationStartupProcedure)) 
+	N0000[circulationStartupProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[circulationStartupProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((circulationStartupProcedure)) 
+	N0000[circulationStartupProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[circulationStartupProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[circulationStartupProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?circulationStartupProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = circulationStartupProcedureInfo
+	&& 	?Attribute001 = circulationStartupProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = circulationStartupProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+The circulation stop procedure defines how to stop the mud pumps in a way that limit potential bull-heading effects 
+that could result in undesired downhole pressure conditions with regards to the geo-pressure window.
+``` dwis circulationStopProcedureInfo
+DynamicDrillingSignal: circulationStopProcedureInfo
+DrillingStandardProcedureAdvice: circulationStopProcedureInfo_1
+circulationStopProcedureInfo_1 HasDynamicValue circulationStopProcedureInfo
+CirculationStopProcedure: circulationStopProcedure
+circulationStopProcedureInfo_1 IsRelatedToDrillingProcedure circulationStopProcedure
+ServiceCompany: serviceCompany
+circulationStopProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+circulationStopProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure circulationStopProcedure
+circulationStopProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+circulationStopProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+circulationStopProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[circulationStopProcedureInfo_1] -->|HasDynamicValue| N0001((circulationStopProcedureInfo)) 
+	N0000[circulationStopProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((circulationStopProcedure)) 
+	N0000[circulationStopProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[circulationStopProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((circulationStopProcedure)) 
+	N0000[circulationStopProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[circulationStopProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[circulationStopProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?circulationStopProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = circulationStopProcedureInfo
+	&& 	?Attribute001 = circulationStopProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = circulationStopProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+The rotation startup procedure controls the steps to start the rotation of the drill-stem to reach a target rotational
+speed while attempting to avoid having too large torsional oscillations.
+``` dwis rotationStartupProcedureInfo
+DynamicDrillingSignal: rotationStartupProcedureInfo
+DrillingStandardProcedureAdvice: rotationStartupProcedureInfo_1
+rotationStartupProcedureInfo_1 HasDynamicValue rotationStartupProcedureInfo
+RotationStartupProcedure: rotationStartupProcedure
+rotationStartupProcedureInfo_1 IsRelatedToDrillingProcedure rotationStartupProcedure
+ServiceCompany: serviceCompany
+rotationStartupProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+rotationStartupProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure rotationStartupProcedure
+rotationStartupProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+rotationStartupProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+rotationStartupProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rotationStartupProcedureInfo_1] -->|HasDynamicValue| N0001((rotationStartupProcedureInfo)) 
+	N0000[rotationStartupProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((rotationStartupProcedure)) 
+	N0000[rotationStartupProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[rotationStartupProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((rotationStartupProcedure)) 
+	N0000[rotationStartupProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[rotationStartupProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[rotationStartupProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rotationStartupProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = rotationStartupProcedureInfo
+	&& 	?Attribute001 = rotationStartupProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = rotationStartupProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+The rotation stop procedure controls the path for stopping the rotation of the drill-stem and remove as much torque 
+along the drill-stem as possible.
+``` dwis rotationStopProcedureInfo
+DynamicDrillingSignal: rotationStopProcedureInfo
+DrillingStandardProcedureAdvice: rotationStopProcedureInfo_1
+rotationStopProcedureInfo_1 HasDynamicValue rotationStopProcedureInfo
+RotationStopProcedure: rotationStopProcedure
+rotationStopProcedureInfo_1 IsRelatedToDrillingProcedure rotationStopProcedure
+ServiceCompany: serviceCompany
+rotationStopProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+rotationStopProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure rotationStopProcedure
+rotationStopProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+rotationStopProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+rotationStopProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rotationStopProcedureInfo_1] -->|HasDynamicValue| N0001((rotationStopProcedureInfo)) 
+	N0000[rotationStopProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((rotationStopProcedure)) 
+	N0000[rotationStopProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[rotationStopProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((rotationStopProcedure)) 
+	N0000[rotationStopProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[rotationStopProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[rotationStopProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rotationStopProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = rotationStopProcedureInfo
+	&& 	?Attribute001 = rotationStopProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = rotationStopProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+The hoist procedure is used to move the top of the drill-stem from one elevation to another elevation while minimizing
+the side effects of swab and surge.
+``` dwis hoistProcedureInfo
+DynamicDrillingSignal: hoistProcedureInfo
+DrillingStandardProcedureAdvice: hoistProcedureInfo_1
+hoistProcedureInfo_1 HasDynamicValue hoistProcedureInfo
+HoistProcedure: hoistProcedure
+hoistProcedureInfo_1 IsRelatedToDrillingProcedure hoistProcedure
+ServiceCompany: serviceCompany
+hoistProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+hoistProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure hoistProcedure
+hoistProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+hoistProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+hoistProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hoistProcedureInfo_1] -->|HasDynamicValue| N0001((hoistProcedureInfo)) 
+	N0000[hoistProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((hoistProcedure)) 
+	N0000[hoistProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[hoistProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((hoistProcedure)) 
+	N0000[hoistProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[hoistProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[hoistProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hoistProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = hoistProcedureInfo
+	&& 	?Attribute001 = hoistProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = hoistProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+The tag bottom procedure is used to tag the bottom hole and establish the drilling parameters.
+``` dwis tagBottomProcedureInfo
+DynamicDrillingSignal: tagBottomProcedureInfo
+DrillingStandardProcedureAdvice: tagBottomProcedureInfo_1
+tagBottomProcedureInfo_1 HasDynamicValue tagBottomProcedureInfo
+TagBottomProcedure: tagBottomProcedure
+tagBottomProcedureInfo_1 IsRelatedToDrillingProcedure tagBottomProcedure
+ServiceCompany: serviceCompany
+tagBottomProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+tagBottomProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure tagBottomProcedure
+tagBottomProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+tagBottomProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+tagBottomProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[tagBottomProcedureInfo_1] -->|HasDynamicValue| N0001((tagBottomProcedureInfo)) 
+	N0000[tagBottomProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((tagBottomProcedure)) 
+	N0000[tagBottomProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[tagBottomProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((tagBottomProcedure)) 
+	N0000[tagBottomProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[tagBottomProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[tagBottomProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?tagBottomProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = tagBottomProcedureInfo
+	&& 	?Attribute001 = tagBottomProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = tagBottomProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+The reciprocation procedure is used to ream up and down with the same stand. The main purpose is often to clean the hole
+while avoiding to wash out the formation.
+``` dwis reciprocationProcedureInfo
+DynamicDrillingSignal: reciprocationProcedureInfo
+DrillingStandardProcedureAdvice: reciprocationProcedureInfo_1
+reciprocationProcedureInfo_1 HasDynamicValue reciprocationProcedureInfo
+ReciprocationProcedure: reciprocationProcedure
+reciprocationProcedureInfo_1 IsRelatedToDrillingProcedure reciprocationProcedure
+ServiceCompany: serviceCompany
+reciprocationProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+reciprocationProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure reciprocationProcedure
+reciprocationProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+reciprocationProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+reciprocationProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[reciprocationProcedureInfo_1] -->|HasDynamicValue| N0001((reciprocationProcedureInfo)) 
+	N0000[reciprocationProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((reciprocationProcedure)) 
+	N0000[reciprocationProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[reciprocationProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((reciprocationProcedure)) 
+	N0000[reciprocationProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[reciprocationProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[reciprocationProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?reciprocationProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = reciprocationProcedureInfo
+	&& 	?Attribute001 = reciprocationProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = reciprocationProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+A friction test procedure is used to measure the free rotating weight and torque and the pick-up and slack-off weights.
+``` dwis frictionTestProcedureInfo
+DynamicDrillingSignal: frictionTestProcedureInfo
+DrillingStandardProcedureAdvice: frictionTestProcedureInfo_1
+frictionTestProcedureInfo_1 HasDynamicValue frictionTestProcedureInfo
+FrictionTestProcedure: frictionTestProcedure
+frictionTestProcedureInfo_1 IsRelatedToDrillingProcedure frictionTestProcedure
+ServiceCompany: serviceCompany
+frictionTestProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+frictionTestProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure frictionTestProcedure
+frictionTestProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+frictionTestProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+frictionTestProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[frictionTestProcedureInfo_1] -->|HasDynamicValue| N0001((frictionTestProcedureInfo)) 
+	N0000[frictionTestProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((frictionTestProcedure)) 
+	N0000[frictionTestProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[frictionTestProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((frictionTestProcedure)) 
+	N0000[frictionTestProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[frictionTestProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[frictionTestProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?frictionTestProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = frictionTestProcedureInfo
+	&& 	?Attribute001 = frictionTestProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = frictionTestProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+The slow circulation rate procedure is used to measure the pressure losses of the drilling system in conditions close
+to what would be necessary while circulating out a kick.
+``` dwis slowCirculationRateProcedureInfo
+DynamicDrillingSignal: slowCirculationRateProcedureInfo
+DrillingStandardProcedureAdvice: slowCirculationRateProcedureInfo_1
+slowCirculationRateProcedureInfo_1 HasDynamicValue slowCirculationRateProcedureInfo
+SlowCirculationRateProcedure: slowCirculationRateProcedure
+slowCirculationRateProcedureInfo_1 IsRelatedToDrillingProcedure slowCirculationRateProcedure
+ServiceCompany: serviceCompany
+slowCirculationRateProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+slowCirculationRateProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure slowCirculationRateProcedure
+slowCirculationRateProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+slowCirculationRateProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+slowCirculationRateProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[slowCirculationRateProcedureInfo_1] -->|HasDynamicValue| N0001((slowCirculationRateProcedureInfo)) 
+	N0000[slowCirculationRateProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((slowCirculationRateProcedure)) 
+	N0000[slowCirculationRateProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[slowCirculationRateProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((slowCirculationRateProcedure)) 
+	N0000[slowCirculationRateProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[slowCirculationRateProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[slowCirculationRateProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?slowCirculationRateProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = slowCirculationRateProcedureInfo
+	&& 	?Attribute001 = slowCirculationRateProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = slowCirculationRateProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+The pressure integrity test procedure is used to either check that the formation can hold the maximum expected downhole
+pressure (formation integrity test) or to test the strength of the formation and the minimum horizontal stress (leak-off test and 
+extended leakoff test).
+``` dwis pressureIntegrityTestProcedureInfo
+DynamicDrillingSignal: pressureIntegrityTestProcedureInfo
+DrillingStandardProcedureAdvice: pressureIntegrityTestProcedureInfo_1
+pressureIntegrityTestProcedureInfo_1 HasDynamicValue pressureIntegrityTestProcedureInfo
+PressureIntegrityTestProcedure: pressureIntegrityTestProcedure
+pressureIntegrityTestProcedureInfo_1 IsRelatedToDrillingProcedure pressureIntegrityTestProcedure
+ServiceCompany: serviceCompany
+pressureIntegrityTestProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+pressureIntegrityTestProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure pressureIntegrityTestProcedure
+pressureIntegrityTestProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+pressureIntegrityTestProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+pressureIntegrityTestProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pressureIntegrityTestProcedureInfo_1] -->|HasDynamicValue| N0001((pressureIntegrityTestProcedureInfo)) 
+	N0000[pressureIntegrityTestProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((pressureIntegrityTestProcedure)) 
+	N0000[pressureIntegrityTestProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[pressureIntegrityTestProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((pressureIntegrityTestProcedure)) 
+	N0000[pressureIntegrityTestProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[pressureIntegrityTestProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[pressureIntegrityTestProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pressureIntegrityTestProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = pressureIntegrityTestProcedureInfo
+	&& 	?Attribute001 = pressureIntegrityTestProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = pressureIntegrityTestProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+The flow-check procedure is used to check the well is stable (no influx of formation fluids) while ensuring that the
+drill-stem will not get stuck during the test.
+``` dwis flowCheckProcedureInfo
+DynamicDrillingSignal: flowCheckProcedureInfo
+DrillingStandardProcedureAdvice: flowCheckProcedureInfo_1
+flowCheckProcedureInfo_1 HasDynamicValue flowCheckProcedureInfo
+FlowCheckProcedure: flowCheckProcedure
+flowCheckProcedureInfo_1 IsRelatedToDrillingProcedure flowCheckProcedure
+ServiceCompany: serviceCompany
+flowCheckProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+flowCheckProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure flowCheckProcedure
+flowCheckProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+flowCheckProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+flowCheckProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[flowCheckProcedureInfo_1] -->|HasDynamicValue| N0001((flowCheckProcedureInfo)) 
+	N0000[flowCheckProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((flowCheckProcedure)) 
+	N0000[flowCheckProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[flowCheckProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((flowCheckProcedure)) 
+	N0000[flowCheckProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[flowCheckProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[flowCheckProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?flowCheckProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = flowCheckProcedureInfo
+	&& 	?Attribute001 = flowCheckProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = flowCheckProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+The cementing procedure is used to displace the correct amount of cement at the right position while cleaning the borehole
+to ensure good conditions for the cement setting.
+``` dwis cementProcedureInfo
+DynamicDrillingSignal: cementProcedureInfo
+DrillingStandardProcedureAdvice: cementProcedureInfo_1
+cementProcedureInfo_1 HasDynamicValue cementProcedureInfo
+CementingProcedure: cementingProcedure
+cementProcedureInfo_1 IsRelatedToDrillingProcedure cementingProcedure
+ServiceCompany: serviceCompany
+cementProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+cementProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure cementingProcedure
+cementProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+cementProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+cementProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[cementProcedureInfo_1] -->|HasDynamicValue| N0001((cementProcedureInfo)) 
+	N0000[cementProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((cementingProcedure)) 
+	N0000[cementProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[cementProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((cementingProcedure)) 
+	N0000[cementProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[cementProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[cementProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?cementProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = cementProcedureInfo
+	&& 	?Attribute001 = cementingProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = cementingProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+The downlinking procedure is used to manipulate the flowrate/pressure or rotational speed to send a coded message to 
+the rotary steerable system.
+``` dwis downlinkProcedureInfo
+DynamicDrillingSignal: downlinkProcedureInfo
+DrillingStandardProcedureAdvice: downlinkProcedureInfo_1
+downlinkProcedureInfo_1 HasDynamicValue downlinkProcedureInfo
+DownlinkingProcedure: downlinkingProcedure
+downlinkProcedureInfo_1 IsRelatedToDrillingProcedure downlinkingProcedure
+ServiceCompany: serviceCompany
+downlinkProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+downlinkProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure downlinkingProcedure
+downlinkProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+downlinkProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+downlinkProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[downlinkProcedureInfo_1] -->|HasDynamicValue| N0001((downlinkProcedureInfo)) 
+	N0000[downlinkProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((downlinkingProcedure)) 
+	N0000[downlinkProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[downlinkProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((downlinkingProcedure)) 
+	N0000[downlinkProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[downlinkProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[downlinkProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?downlinkProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = downlinkProcedureInfo
+	&& 	?Attribute001 = downlinkingProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = downlinkingProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+The toolface orientation procedure is used to manipulate the top of string angular position to ensure that the downhole
+motor toolface is set to a desired set-point.
+``` dwis toolfaceOrientationProcedureInfo
+DynamicDrillingSignal: toolfaceOrientationProcedureInfo
+DrillingStandardProcedureAdvice: toolfaceOrientationProcedureInfo_1
+toolfaceOrientationProcedureInfo_1 HasDynamicValue toolfaceOrientationProcedureInfo
+ToolfaceOrientationProcedure: toolfaceOrientationProcedure
+toolfaceOrientationProcedureInfo_1 IsRelatedToDrillingProcedure toolfaceOrientationProcedure
+ServiceCompany: serviceCompany
+toolfaceOrientationProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+toolfaceOrientationProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure toolfaceOrientationProcedure
+toolfaceOrientationProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+toolfaceOrientationProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+toolfaceOrientationProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[toolfaceOrientationProcedureInfo_1] -->|HasDynamicValue| N0001((toolfaceOrientationProcedureInfo)) 
+	N0000[toolfaceOrientationProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((toolfaceOrientationProcedure)) 
+	N0000[toolfaceOrientationProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[toolfaceOrientationProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((toolfaceOrientationProcedure)) 
+	N0000[toolfaceOrientationProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[toolfaceOrientationProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[toolfaceOrientationProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?toolfaceOrientationProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = toolfaceOrientationProcedureInfo
+	&& 	?Attribute001 = toolfaceOrientationProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = toolfaceOrientationProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+## DrillingControlAdvice <!-- NOUN -->
+- Display name: Drilling Control Advice
+- Parent class: [AdvisorySystemAdvice](#AdvisorySystemAdvice)
+- Description: 
+A drilling control advisor provides information on how to control a part of the drilling process to stay as close
+as possible to one or several desired values.
+- Definition set: AdvisorySystemAdvice
+- Examples:
+A ROP management controller adjusts the parameters of the auto-driller to manage the ROP. The ROP management may concern
+potential problems with drill-string buckling, passing the bit founder point, vibration and cuttings transport.
+``` dwis ROPManagementControllerInfo
+DynamicDrillingSignal: ROPManagementControllerInfo
+DrillingControlAdvice: ROPManagementControllerInfo_1
+ROPManagementControllerInfo_1 HasDynamicValue ROPManagementControllerInfo
+ROPLimit: ROPLimit
+ROPManagementControllerInfo_1 HasControlLimit ROPLimit
+WOBLimit: WOBLimit
+ROPManagementControllerInfo_1 HasControlLimit WOBLimit
+DifferentialPressureLimit: differentialPressureLimit
+ROPManagementControllerInfo_1 HasControlLimit differentialPressureLimit
+StableAxialVelocityObjective: stableAxialVelocityObjective
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableAxialVelocityObjective
+StableAxialForceObjective: stableWOBObjective
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableWOBObjective
+StablePressureObjective: stableDifferentialPressure
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableDifferentialPressure
+ServiceCompany: serviceCompany
+ROPManagementControllerInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+ROPManagementControllerInfo_1 IsRecommendedBy computationUnit
+ControllerFunction: autoDriller
+autoDriller ImplementsObjective stableAxialVelocityObjective
+autoDriller ImplementsObjective stableWOBObjective
+autoDriller ImplementsObjective stableDifferentialPressure
+ROPManagementControllerInfo_1 IsRecommendedFor autoDriller
+DWISAdviceComposer: adviceComposer
+ROPManagementControllerInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+ROPManagementControllerInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ROPManagementControllerInfo_1] -->|HasDynamicValue| N0001((ROPManagementControllerInfo)) 
+	N0000[ROPManagementControllerInfo_1] -->|HasControlLimit| N0002((ROPLimit)) 
+	N0000[ROPManagementControllerInfo_1] -->|HasControlLimit| N0003((WOBLimit)) 
+	N0000[ROPManagementControllerInfo_1] -->|HasControlLimit| N0004((differentialPressureLimit)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0005((stableAxialVelocityObjective)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0006((stableWOBObjective)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0007((stableDifferentialPressure)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsProvidedBy| N0008((serviceCompany)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRecommendedBy| N0009((computationUnit)) 
+	N0010[autoDriller] -->|ImplementsObjective| N0005((stableAxialVelocityObjective)) 
+	N0010[autoDriller] -->|ImplementsObjective| N0006((stableWOBObjective)) 
+	N0010[autoDriller] -->|ImplementsObjective| N0007((stableDifferentialPressure)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRecommendedFor| N0010((autoDriller)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0011((adviceComposer)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0012((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ROPManagementControllerInfo
+WHERE {
+  FILTER (
+	?Attribute000 = ROPManagementControllerInfo
+	&& 	?Attribute001 = ROPLimit
+	&& 	?Attribute002 = WOBLimit
+	&& 	?Attribute003 = differentialPressureLimit
+	&& 	?Attribute004 = stableAxialVelocityObjective
+	&& 	?Attribute005 = stableWOBObjective
+	&& 	?Attribute006 = stableDifferentialPressure
+	&& 	?Attribute007 = serviceCompany
+	&& 	?Attribute008 = computationUnit
+	&& 	?Attribute009 = stableAxialVelocityObjective
+	&& 	?Attribute010 = stableWOBObjective
+	&& 	?Attribute011 = stableDifferentialPressure
+	&& 	?Attribute012 = autoDriller
+	&& 	?Attribute013 = adviceComposer
+	&& 	?Attribute014 = scheduler
+  )
+}
+```
+When using a downhole motor for directional drilling, pipe rocking is used to assist with weight transmission during
+slide periods.
+``` dwis pipeRockingControllerInfo
+DynamicDrillingSignal: pipeRockingControllerInfo
+DrillingControlAdvice: pipeRockingControllerInfo_1
+pipeRockingControllerInfo_1 HasDynamicValue pipeRockingControllerInfo
+WeightTransferObjective: weightTransferObjective
+pipeRockingControllerInfo_1 IsRelatedToDrillingObjective weightTransferObjective
+ServiceCompany: serviceCompany
+pipeRockingControllerInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+pipeRockingControllerInfo_1 IsRecommendedBy computationUnit
+ControllerFunction: pipeRocking
+pipeRocking ImplementsObjective weightTransferObjective
+pipeRockingControllerInfo_1 IsRecommendedFor pipeRocking
+DWISAdviceComposer: adviceComposer
+pipeRockingControllerInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+pipeRockingControllerInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pipeRockingControllerInfo_1] -->|HasDynamicValue| N0001((pipeRockingControllerInfo)) 
+	N0000[pipeRockingControllerInfo_1] -->|IsRelatedToDrillingObjective| N0002((weightTransferObjective)) 
+	N0000[pipeRockingControllerInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[pipeRockingControllerInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[pipeRocking] -->|ImplementsObjective| N0002((weightTransferObjective)) 
+	N0000[pipeRockingControllerInfo_1] -->|IsRecommendedFor| N0005((pipeRocking)) 
+	N0000[pipeRockingControllerInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[pipeRockingControllerInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pipeRockingControllerInfo
+WHERE {
+  FILTER (
+	?Attribute000 = pipeRockingControllerInfo
+	&& 	?Attribute001 = weightTransferObjective
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = weightTransferObjective
+	&& 	?Attribute005 = pipeRocking
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+A stick-slip mitigation controller attempts at damping stick-slip oscillations by controlling the drill-string rotation 
+system.
+``` dwis stickSlipMitigationControllerInfo
+DynamicDrillingSignal: stickSlipMitigationControllerInfo
+DrillingControlAdvice: stickSlipMitigationControllerInfo_1
+stickSlipMitigationControllerInfo_1 HasDynamicValue stickSlipMitigationControllerInfo
+StableRotationalVelocityObjective: stableRotationalVelocityObjective
+stickSlipMitigationControllerInfo_1 IsRelatedToDrillingObjective stableRotationalVelocityObjective
+ServiceCompany: serviceCompany
+stickSlipMitigationControllerInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+stickSlipMitigationControllerInfo_1 IsRecommendedBy computationUnit
+ControllerFunction: stickSlipMitigation
+stickSlipMitigation ImplementsObjective stableRotationalVelocityObjective
+stickSlipMitigationControllerInfo_1 IsRecommendedFor stickSlipMitigation
+DWISAdviceComposer: adviceComposer
+stickSlipMitigationControllerInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+stickSlipMitigationControllerInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stickSlipMitigationControllerInfo_1] -->|HasDynamicValue| N0001((stickSlipMitigationControllerInfo)) 
+	N0000[stickSlipMitigationControllerInfo_1] -->|IsRelatedToDrillingObjective| N0002((stableRotationalVelocityObjective)) 
+	N0000[stickSlipMitigationControllerInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[stickSlipMitigationControllerInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[stickSlipMitigation] -->|ImplementsObjective| N0002((stableRotationalVelocityObjective)) 
+	N0000[stickSlipMitigationControllerInfo_1] -->|IsRecommendedFor| N0005((stickSlipMitigation)) 
+	N0000[stickSlipMitigationControllerInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[stickSlipMitigationControllerInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stickSlipMitigationControllerInfo
+WHERE {
+  FILTER (
+	?Attribute000 = stickSlipMitigationControllerInfo
+	&& 	?Attribute001 = stableRotationalVelocityObjective
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = stableRotationalVelocityObjective
+	&& 	?Attribute005 = stickSlipMitigation
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+## DrillingSafeOperatingEnvelopeAdvice <!-- NOUN -->
+- Display name: Drilling Safe Operating Envelope Advice
+- Parent class: [AdvisorySystemAdvice](#AdvisorySystemAdvice)
+- Description: 
+A safe operating envelope (SOE) advisor provides information on the limits that shall be used when controlling the drilling
+process to avoid possible drilling incidents.
+- Definition set: AdvisorySystemAdvice
+- Examples:
+The min-max axial velocity SOE is used to limit the axial drill-strem velocity to avoid generating swab and surge 
+pressures that exceeds the geo-pressure window.
+``` dwis minMaxAxialVelocitySOEInfo
+DynamicDrillingSignal: minMaxAxialVelocitySOEInfo
+DrillingSafeOperatingEnvelopeAdvice: minMaxAxialVelocitySOEInfo_1
+minMaxAxialVelocitySOEInfo_1 HasDynamicValue minMaxAxialVelocitySOEInfo
+AxialVelocityLimit: axialVelocityLimit
+minMaxAxialVelocitySOEInfo_1 IsRelatedToDrillingLimit axialVelocityLimit
+ServiceCompany: serviceCompany
+minMaxAxialVelocitySOEInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+minMaxAxialVelocitySOEInfo_1 IsRecommendedBy computationUnit
+SOEFunction: soeFunction
+soeFunction ImplementsLimit axialVelocityLimit
+minMaxAxialVelocitySOEInfo_1 IsRecommendedFor soeFunction
+DWISAdviceComposer: adviceComposer
+minMaxAxialVelocitySOEInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+minMaxAxialVelocitySOEInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[minMaxAxialVelocitySOEInfo_1] -->|HasDynamicValue| N0001((minMaxAxialVelocitySOEInfo)) 
+	N0000[minMaxAxialVelocitySOEInfo_1] -->|IsRelatedToDrillingLimit| N0002((axialVelocityLimit)) 
+	N0000[minMaxAxialVelocitySOEInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[minMaxAxialVelocitySOEInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[soeFunction] -->|ImplementsLimit| N0002((axialVelocityLimit)) 
+	N0000[minMaxAxialVelocitySOEInfo_1] -->|IsRecommendedFor| N0005((soeFunction)) 
+	N0000[minMaxAxialVelocitySOEInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[minMaxAxialVelocitySOEInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?minMaxAxialVelocitySOEInfo
+WHERE {
+  FILTER (
+	?Attribute000 = minMaxAxialVelocitySOEInfo
+	&& 	?Attribute001 = axialVelocityLimit
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = axialVelocityLimit
+	&& 	?Attribute005 = soeFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+The min-max flowrate SOE is used to limit the flowrate in order to stay below the fracturing pressure limit of the open
+hole formation and have a sufficient flowrate to transport cuttings to the surface.
+``` dwis minMaxFlowRateSOEInfo
+DynamicDrillingSignal: minMaxFlowRateSOEInfo
+DrillingSafeOperatingEnvelopeAdvice: minMaxFlowRateSOEInfo_1
+minMaxFlowRateSOEInfo_1 HasDynamicValue minMaxFlowRateSOEInfo
+FlowrateLimit: flowrateLimit
+minMaxFlowRateSOEInfo_1 IsRelatedToDrillingLimit flowrateLimit
+ServiceCompany: serviceCompany
+minMaxFlowRateSOEInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+minMaxFlowRateSOEInfo_1 IsRecommendedBy computationUnit
+SOEFunction: soeFunction
+soeFunction ImplementsLimit flowrateLimit
+minMaxFlowRateSOEInfo_1 IsRecommendedFor soeFunction
+DWISAdviceComposer: adviceComposer
+minMaxFlowRateSOEInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+minMaxFlowRateSOEInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[minMaxFlowRateSOEInfo_1] -->|HasDynamicValue| N0001((minMaxFlowRateSOEInfo)) 
+	N0000[minMaxFlowRateSOEInfo_1] -->|IsRelatedToDrillingLimit| N0002((flowrateLimit)) 
+	N0000[minMaxFlowRateSOEInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[minMaxFlowRateSOEInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[soeFunction] -->|ImplementsLimit| N0002((flowrateLimit)) 
+	N0000[minMaxFlowRateSOEInfo_1] -->|IsRecommendedFor| N0005((soeFunction)) 
+	N0000[minMaxFlowRateSOEInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[minMaxFlowRateSOEInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?minMaxFlowRateSOEInfo
+WHERE {
+  FILTER (
+	?Attribute000 = minMaxFlowRateSOEInfo
+	&& 	?Attribute001 = flowrateLimit
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = flowrateLimit
+	&& 	?Attribute005 = soeFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+The min-max rotational speed SOE limits the drill-stem rotational speed to avoid unwanted drill-stem vibrations while at
+the same time be sufficient to facilitate cuttings transport.
+``` dwis minMaxRotationalSpeedSOEInfo
+DynamicDrillingSignal: minMaxRotationalSpeedSOEInfo
+DrillingSafeOperatingEnvelopeAdvice: minMaxRotationalSpeedSOEInfo_1
+minMaxRotationalSpeedSOEInfo_1 HasDynamicValue minMaxRotationalSpeedSOEInfo
+RotationalVelocityLimit: rotationalVelocityLimit
+minMaxRotationalSpeedSOEInfo_1 IsRelatedToDrillingLimit rotationalVelocityLimit
+ServiceCompany: serviceCompany
+minMaxRotationalSpeedSOEInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+minMaxRotationalSpeedSOEInfo_1 IsRecommendedBy computationUnit
+SOEFunction: soeFunction
+soeFunction ImplementsLimit rotationalVelocityLimit
+minMaxRotationalSpeedSOEInfo_1 IsRecommendedFor soeFunction
+DWISAdviceComposer: adviceComposer
+minMaxRotationalSpeedSOEInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+minMaxRotationalSpeedSOEInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[minMaxRotationalSpeedSOEInfo_1] -->|HasDynamicValue| N0001((minMaxRotationalSpeedSOEInfo)) 
+	N0000[minMaxRotationalSpeedSOEInfo_1] -->|IsRelatedToDrillingLimit| N0002((rotationalVelocityLimit)) 
+	N0000[minMaxRotationalSpeedSOEInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[minMaxRotationalSpeedSOEInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[soeFunction] -->|ImplementsLimit| N0002((rotationalVelocityLimit)) 
+	N0000[minMaxRotationalSpeedSOEInfo_1] -->|IsRecommendedFor| N0005((soeFunction)) 
+	N0000[minMaxRotationalSpeedSOEInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[minMaxRotationalSpeedSOEInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?minMaxRotationalSpeedSOEInfo
+WHERE {
+  FILTER (
+	?Attribute000 = minMaxRotationalSpeedSOEInfo
+	&& 	?Attribute001 = rotationalVelocityLimit
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = rotationalVelocityLimit
+	&& 	?Attribute005 = soeFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+## DrillingFaultDetectionIsolationAndRecoveryAdvice <!-- NOUN -->
+- Display name: Drilling Fault Detection Isolation and Recovery Advice
+- Parent class: [AdvisorySystemAdvice](#AdvisorySystemAdvice)
+- Description: 
+A fault detection, isolation and recovery (FDIR) advisor provides information on how to detect an drilling incident
+and parameters to procedure that is executed when a drilling incident is detected in order to first to isolate the drilling incident
+and then possibly recover from that incident.
+- Definition set: AdvisorySystemAdvice
+- Examples:
+A pack-off FDIR function detects an abornormal dowhole pressure and executes a procedure to avoid fracturing the
+open hole formation and possibly continues with a procedure to remediate the cause of the pack-off and return to normal conditions.
+``` dwis PackOffFDIRInfo
+DynamicDrillingSignal: PackOffFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: PackOffFDIRInfo_1
+PackOffFDIRInfo_1 HasDynamicValue PackOffFDIRInfo
+PackOff: packOffIncident
+PackOffFDIRInfo_1 IsRelatedToDrillingIncident packOffIncident
+ServiceCompany: serviceCompany
+PackOffFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+PackOffFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident packOffIncident
+PackOffFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+PackOffFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PackOffFDIRInfo_1] -->|HasDynamicValue| N0001((PackOffFDIRInfo)) 
+	N0000[PackOffFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((packOffIncident)) 
+	N0000[PackOffFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[PackOffFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|ManagesIncident| N0002((packOffIncident)) 
+	N0000[PackOffFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[PackOffFDIRInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?PackOffFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = PackOffFDIRInfo
+	&& 	?Attribute001 = packOffIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = packOffIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
+An overpull/underpull function detects an abnormal hook-load either while moving upward (overpull) or downward (underpull).
+It reacts to the situation by stopping the axial movement and possibly starts other actions to remediate for the cause of the abnormal
+hook-load with the objective to return to normal conditions.
+``` dwis overpullUnderpullFDIRInfo
+DynamicDrillingSignal: overpullUnderpullFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: overpullUnderpullFDIRInfo_1
+overpullUnderpullFDIRInfo_1 HasDynamicValue overpullUnderpullFDIRInfo
+Overpull: overpullIncident
+overpullUnderpullFDIRInfo_1 IsRelatedToDrillingIncident overpullIncident
+Underpull: underpullIncident
+overpullUnderpullFDIRInfo_1 IsRelatedToDrillingIncident underpullIncident
+ServiceCompany: serviceCompany
+overpullUnderpullFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+overpullUnderpullFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident overpullIncident
+FDIRFunction_1 ManagesIncident underpullIncident
+overpullUnderpullFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+overpullUnderpullFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[overpullUnderpullFDIRInfo_1] -->|HasDynamicValue| N0001((overpullUnderpullFDIRInfo)) 
+	N0000[overpullUnderpullFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((overpullIncident)) 
+	N0000[overpullUnderpullFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0003((underpullIncident)) 
+	N0000[overpullUnderpullFDIRInfo_1] -->|IsProvidedBy| N0004((serviceCompany)) 
+	N0000[overpullUnderpullFDIRInfo_1] -->|IsRecommendedBy| N0005((computationUnit)) 
+	N0006[FDIRFunction_1] -->|ManagesIncident| N0002((overpullIncident)) 
+	N0006[FDIRFunction_1] -->|ManagesIncident| N0003((underpullIncident)) 
+	N0000[overpullUnderpullFDIRInfo_1] -->|IsRecommendedFor| N0006((FDIRFunction_1)) 
+	N0000[overpullUnderpullFDIRInfo_1] -->|IsProvidedTo| N0007((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?overpullUnderpullFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = overpullUnderpullFDIRInfo
+	&& 	?Attribute001 = overpullIncident
+	&& 	?Attribute002 = underpullIncident
+	&& 	?Attribute003 = serviceCompany
+	&& 	?Attribute004 = computationUnit
+	&& 	?Attribute005 = overpullIncident
+	&& 	?Attribute006 = underpullIncident
+	&& 	?Attribute007 = FDIRFunction_1
+	&& 	?Attribute008 = adviceComposer
+  )
+}
+```
+This is the same as for an OverpullUnderpullFDIRAdvice but only deals with overpulls.
+``` dwis overpullFDIRInfo
+DynamicDrillingSignal: overpullFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: overpullFDIRInfo_1
+overpullFDIRInfo_1 HasDynamicValue overpullFDIRInfo
+Overpull: overpullIncident
+overpullFDIRInfo_1 IsRelatedToDrillingIncident overpullIncident
+ServiceCompany: serviceCompany
+overpullFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+overpullFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident overpullIncident
+overpullFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+overpullFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[overpullFDIRInfo_1] -->|HasDynamicValue| N0001((overpullFDIRInfo)) 
+	N0000[overpullFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((overpullIncident)) 
+	N0000[overpullFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[overpullFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|ManagesIncident| N0002((overpullIncident)) 
+	N0000[overpullFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[overpullFDIRInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?overpullFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = overpullFDIRInfo
+	&& 	?Attribute001 = overpullIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = overpullIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
+This is the same as for an OverpullUnderpullFDIRAdvice but only deals with underpulls.
+``` dwis underpullFDIRInfo
+DynamicDrillingSignal: underpullFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: underpullFDIRInfo_1
+underpullFDIRInfo_1 HasDynamicValue underpullFDIRInfo
+Underpull: underpullIncident
+underpullFDIRInfo_1 IsRelatedToDrillingIncident underpullIncident
+ServiceCompany: serviceCompany
+underpullFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+underpullFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident underpullIncident
+underpullFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+underpullFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[underpullFDIRInfo_1] -->|HasDynamicValue| N0001((underpullFDIRInfo)) 
+	N0000[underpullFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((underpullIncident)) 
+	N0000[underpullFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[underpullFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|ManagesIncident| N0002((underpullIncident)) 
+	N0000[underpullFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[underpullFDIRInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?underpullFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = underpullFDIRInfo
+	&& 	?Attribute001 = underpullIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = underpullIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
+An overtorque FDIR function reacts to abnormal torque conditions. The rotation is stopped and possibly counter measures
+are applied to remediate the cause of the overtorque with the objective to return to normal conditions.
+``` dwis overtorqueFDIRInfo
+DynamicDrillingSignal: overtorqueFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: overtorqueFDIRInfo_1
+overtorqueFDIRInfo_1 HasDynamicValue overtorqueFDIRInfo
+OverTorque: overTorqueIncident
+overtorqueFDIRInfo_1 IsRelatedToDrillingIncident overTorqueIncident
+ServiceCompany: serviceCompany
+overtorqueFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+overtorqueFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident overTorqueIncident
+overtorqueFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+overtorqueFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[overtorqueFDIRInfo_1] -->|HasDynamicValue| N0001((overtorqueFDIRInfo)) 
+	N0000[overtorqueFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((overTorqueIncident)) 
+	N0000[overtorqueFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[overtorqueFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|ManagesIncident| N0002((overTorqueIncident)) 
+	N0000[overtorqueFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[overtorqueFDIRInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?overtorqueFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = overtorqueFDIRInfo
+	&& 	?Attribute001 = overTorqueIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = overTorqueIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
+A gain-loss FDIR reacts to influx of formation fluids in the borehole or losses of drilling fluids to the formation. 
+After detection, procedures may be applied to control the gain or loss situation.
+``` dwis gainLossFDIRInfo
+DynamicDrillingSignal: gainLossFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: gainLossFDIRInfo_1
+gainLossFDIRInfo_1 HasDynamicValue gainLossFDIRInfo
+Influx: influxIncident
+gainLossFDIRInfo_1 IsRelatedToDrillingIncident influxIncident
+LossCirculation: lossCirculationIncident
+gainLossFDIRInfo_1 IsRelatedToDrillingIncident lossCirculationIncident
+ServiceCompany: serviceCompany
+gainLossFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+gainLossFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident influxIncident
+FDIRFunction_1 ManagesIncident lossCirculationIncident
+gainLossFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+gainLossFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[gainLossFDIRInfo_1] -->|HasDynamicValue| N0001((gainLossFDIRInfo)) 
+	N0000[gainLossFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((influxIncident)) 
+	N0000[gainLossFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0003((lossCirculationIncident)) 
+	N0000[gainLossFDIRInfo_1] -->|IsProvidedBy| N0004((serviceCompany)) 
+	N0000[gainLossFDIRInfo_1] -->|IsRecommendedBy| N0005((computationUnit)) 
+	N0006[FDIRFunction_1] -->|ManagesIncident| N0002((influxIncident)) 
+	N0006[FDIRFunction_1] -->|ManagesIncident| N0003((lossCirculationIncident)) 
+	N0000[gainLossFDIRInfo_1] -->|IsRecommendedFor| N0006((FDIRFunction_1)) 
+	N0000[gainLossFDIRInfo_1] -->|IsProvidedTo| N0007((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?gainLossFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = gainLossFDIRInfo
+	&& 	?Attribute001 = influxIncident
+	&& 	?Attribute002 = lossCirculationIncident
+	&& 	?Attribute003 = serviceCompany
+	&& 	?Attribute004 = computationUnit
+	&& 	?Attribute005 = influxIncident
+	&& 	?Attribute006 = lossCirculationIncident
+	&& 	?Attribute007 = FDIRFunction_1
+	&& 	?Attribute008 = adviceComposer
+  )
+}
+```
+It is similar to the gain-loss FDIR advice but only focuses on a kick situation.
+``` dwis kickFDIRInfo
+DynamicDrillingSignal: kickFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: kickFDIRInfo_1
+kickFDIRInfo_1 HasDynamicValue kickFDIRInfo
+Influx: influxIncident
+kickFDIRInfo_1 IsRelatedToDrillingIncident influxIncident
+ServiceCompany: serviceCompany
+kickFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+kickFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident influxIncident
+kickFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+kickFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[kickFDIRInfo_1] -->|HasDynamicValue| N0001((kickFDIRInfo)) 
+	N0000[kickFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((influxIncident)) 
+	N0000[kickFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[kickFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|ManagesIncident| N0002((influxIncident)) 
+	N0000[kickFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[kickFDIRInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?kickFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = kickFDIRInfo
+	&& 	?Attribute001 = influxIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = influxIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
+It is similar to the gain-loss FDIR advice but only focuses on a loss circulation situation.
+``` dwis lossCirculationFDIRInfo
+DynamicDrillingSignal: lossCirculationFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: lossCirculationFDIRInfo_1
+lossCirculationFDIRInfo_1 HasDynamicValue lossCirculationFDIRInfo
+LossCirculation: lossCirculationIncident
+lossCirculationFDIRInfo_1 IsRelatedToDrillingIncident lossCirculationIncident
+ServiceCompany: serviceCompany
+lossCirculationFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+lossCirculationFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident lossCirculationIncident
+lossCirculationFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+lossCirculationFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[lossCirculationFDIRInfo_1] -->|HasDynamicValue| N0001((lossCirculationFDIRInfo)) 
+	N0000[lossCirculationFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((lossCirculationIncident)) 
+	N0000[lossCirculationFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[lossCirculationFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|ManagesIncident| N0002((lossCirculationIncident)) 
+	N0000[lossCirculationFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[lossCirculationFDIRInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?lossCirculationFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = lossCirculationFDIRInfo
+	&& 	?Attribute001 = lossCirculationIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = lossCirculationIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
+A hole collapse FDIR detects whether a formation collapse is occurring. Possibly counter measures are applied to contain
+the side effects of the hole collapse.
+``` dwis HoleCollapseFDIRInfo
+DynamicDrillingSignal: HoleCollapseFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: HoleCollapseFDIRInfo_1
+HoleCollapseFDIRInfo_1 HasDynamicValue HoleCollapseFDIRInfo
+HoleCollapse: holeCollapseIncident
+HoleCollapseFDIRInfo_1 IsRelatedToDrillingIncident holeCollapseIncident
+ServiceCompany: serviceCompany
+HoleCollapseFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+HoleCollapseFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident holeCollapseIncident
+HoleCollapseFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+HoleCollapseFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[HoleCollapseFDIRInfo_1] -->|HasDynamicValue| N0001((HoleCollapseFDIRInfo)) 
+	N0000[HoleCollapseFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((holeCollapseIncident)) 
+	N0000[HoleCollapseFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[HoleCollapseFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|ManagesIncident| N0002((holeCollapseIncident)) 
+	N0000[HoleCollapseFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[HoleCollapseFDIRInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?HoleCollapseFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = HoleCollapseFDIRInfo
+	&& 	?Attribute001 = holeCollapseIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = holeCollapseIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
+A pipe washout FDIR reacts to a situation during which a leak between the drill-string and the annulus is detected. Possible
+remedial actions may be applied to limit the side effects of the pipe washout.
+``` dwis pipeWashoutFDIRInfo
+DynamicDrillingSignal: pipeWashoutFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: pipeWashoutFDIRInfo_1
+pipeWashoutFDIRInfo_1 HasDynamicValue pipeWashoutFDIRInfo
+PipeWashout: pipeWashoutIncident
+pipeWashoutFDIRInfo_1 IsRelatedToDrillingIncident pipeWashoutIncident
+ServiceCompany: serviceCompany
+pipeWashoutFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+pipeWashoutFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident pipeWashoutIncident
+pipeWashoutFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+pipeWashoutFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pipeWashoutFDIRInfo_1] -->|HasDynamicValue| N0001((pipeWashoutFDIRInfo)) 
+	N0000[pipeWashoutFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((pipeWashoutIncident)) 
+	N0000[pipeWashoutFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[pipeWashoutFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|ManagesIncident| N0002((pipeWashoutIncident)) 
+	N0000[pipeWashoutFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[pipeWashoutFDIRInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pipeWashoutFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = pipeWashoutFDIRInfo
+	&& 	?Attribute001 = pipeWashoutIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = pipeWashoutIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
+A twist-off FDIR reacts to the case of the undesired separation of part of the drill-stem. Possibly, a procedure may
+be applied to remediate the parting of the drill-stem, like trying to reconnect if the cause of the separation was a back-off at the
+level of one connection.
+``` dwis twistOffFDIRInfo
+DynamicDrillingSignal: twistOffFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: twistOffFDIRInfo_1
+twistOffFDIRInfo_1 HasDynamicValue twistOffFDIRInfo
+TwistOff: twistOffIncident
+twistOffFDIRInfo_1 IsRelatedToDrillingIncident twistOffIncident
+ServiceCompany: serviceCompany
+twistOffFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+twistOffFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident twistOffIncident
+twistOffFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+twistOffFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[twistOffFDIRInfo_1] -->|HasDynamicValue| N0001((twistOffFDIRInfo)) 
+	N0000[twistOffFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((twistOffIncident)) 
+	N0000[twistOffFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[twistOffFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|ManagesIncident| N0002((twistOffIncident)) 
+	N0000[twistOffFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[twistOffFDIRInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?twistOffFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = twistOffFDIRInfo
+	&& 	?Attribute001 = twistOffIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = twistOffIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
+A motor stall FDIR detects when a downhole motor stalls. A procedure is applied to regain rotation of the rotor of the
+downhole motor.
+``` dwis motorStallFDIRInfo
+DynamicDrillingSignal: motorStallFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: motorStallFDIRInfo_1
+motorStallFDIRInfo_1 HasDynamicValue motorStallFDIRInfo
+MotorStall: motorStallIncident
+motorStallFDIRInfo_1 IsRelatedToDrillingIncident motorStallIncident
+ServiceCompany: serviceCompany
+motorStallFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+motorStallFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident motorStallIncident
+motorStallFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+motorStallFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[motorStallFDIRInfo_1] -->|HasDynamicValue| N0001((motorStallFDIRInfo)) 
+	N0000[motorStallFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((motorStallIncident)) 
+	N0000[motorStallFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[motorStallFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|ManagesIncident| N0002((motorStallIncident)) 
+	N0000[motorStallFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[motorStallFDIRInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?motorStallFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = motorStallFDIRInfo
+	&& 	?Attribute001 = motorStallIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = motorStallIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
+A whirl FDIR reacts to situation during which there is possibly harming whirling along the drill-stem. Counter-measures
+may be applied to stop the whirling and return to normal conditions.
+``` dwis whirlFDIRInfo
+DynamicDrillingSignal: whirlFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: whirlFDIRInfo_1
+whirlFDIRInfo_1 HasDynamicValue whirlFDIRInfo
+Whirling: whirlingIncident
+whirlFDIRInfo_1 IsRelatedToDrillingIncident whirlingIncident
+ServiceCompany: serviceCompany
+whirlFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+whirlFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident whirlingIncident
+whirlFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+whirlFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[whirlFDIRInfo_1] -->|HasDynamicValue| N0001((whirlFDIRInfo)) 
+	N0000[whirlFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((whirlingIncident)) 
+	N0000[whirlFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[whirlFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|ManagesIncident| N0002((whirlingIncident)) 
+	N0000[whirlFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[whirlFDIRInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?whirlFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = whirlFDIRInfo
+	&& 	?Attribute001 = whirlingIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = whirlingIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
+A differential sticking FDIR detects when the drill-stem is differentially stuck. It possibly applies counter-measures 
+to free the drill-stem.
+``` dwis differentialStickingFDIRInfo
+DynamicDrillingSignal: differentialStickingFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: differentialStickingFDIRInfo_1
+differentialStickingFDIRInfo_1 HasDynamicValue differentialStickingFDIRInfo
+DifferentiallyStuck: differentiallyStuckIncident
+differentialStickingFDIRInfo_1 IsRelatedToDrillingIncident differentiallyStuckIncident
+ServiceCompany: serviceCompany
+differentialStickingFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+differentialStickingFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident differentiallyStuckIncident
+differentialStickingFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+differentialStickingFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[differentialStickingFDIRInfo_1] -->|HasDynamicValue| N0001((differentialStickingFDIRInfo)) 
+	N0000[differentialStickingFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((differentiallyStuckIncident)) 
+	N0000[differentialStickingFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[differentialStickingFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|ManagesIncident| N0002((differentiallyStuckIncident)) 
+	N0000[differentialStickingFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[differentialStickingFDIRInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?differentialStickingFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = differentialStickingFDIRInfo
+	&& 	?Attribute001 = differentiallyStuckIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = differentiallyStuckIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
 ## DataFlowNode <!-- NOUN -->
 - Display name: DataFlowNode
 - Parent class: [DWISNoun](#DWISNoun)
@@ -825,36 +2666,36 @@ A data analysis service company is an entity that analyses measured data and pro
 - Description: 
 A DWIS internal service is an internal component of the DWIS infrastructure that generates information that can be used by any systems connected to the DWIS infrastructure.
 - Definition set: DataProviders
-## DWISDDHub <!-- NOUN -->
-- Display name: DWISDDHub
+## DWISBlackboard <!-- NOUN -->
+- Display name: DWIS Blackboard
 - Parent class: [DWISInternalService](#DWISInternalService)
 - Definition set: DataProviders
 ## DWISDrillingProcessStateInterpreter <!-- NOUN -->
-- Display name: DWISDrillingProcessStateInterpreter
+- Display name: DWIS Drilling Process State Interpreter
 - Parent class: [DWISInternalService](#DWISInternalService)
 - Definition set: DataProviders
 ## DWISAdviceComposer <!-- NOUN -->
-- Display name: DWISAdviceComposer
+- Display name: DWIS Advice Composer
 - Parent class: [DWISInternalService](#DWISInternalService)
 - Definition set: DataProviders
 ## DWISScheduler <!-- NOUN -->
-- Display name: DWISScheduler
+- Display name: DWIS Scheduler
 - Parent class: [DWISInternalService](#DWISInternalService)
 - Definition set: DataProviders
 ## DWISContextualDataBuilder <!-- NOUN -->
-- Display name: DWISContextualDataBuilder
+- Display name: DWIS Contextual Data Builder
 - Parent class: [DWISInternalService](#DWISInternalService)
 - Definition set: DataProviders
 ## DWISLogger <!-- NOUN -->
-- Display name: DWISLogger
+- Display name: DWIS Logger
 - Parent class: [DWISInternalService](#DWISInternalService)
 - Definition set: DataProviders
 ## DWISADCSInterface <!-- NOUN -->
-- Display name: DWISADCSInterface
+- Display name: DWIS ADCS Interface
 - Parent class: [DWISInternalService](#DWISInternalService)
 - Definition set: DataProviders
 ## DWISADCSCapabilityDescriptor <!-- NOUN -->
-- Display name: DWISADCSCapabilityDescriptor
+- Display name: DWIS ADCS Capability Descriptor
 - Parent class: [DWISInternalService](#DWISInternalService)
 - Definition set: DataProviders
 ## Telemetry <!-- NOUN -->
@@ -863,13 +2704,13 @@ A DWIS internal service is an internal component of the DWIS infrastructure that
 - Attributes:
   - NumberOfRepeaters
     - Type: int
-    - Description: 
+    - Description: The number of repeaters between the source of the signal and the receiver.
   - DistanceBetweenRepeaters
     - Type: double
-    - Description: 
+    - Description: The average distance between two repeaters. The physical quantity is Length and the unit is metre.
   - AverageDelayByRepeater
     - Type: double
-    - Description: 
+    - Description: The average delay caused by each repeater. The physical quantity is Time and the unit is second.
 - Description: 
 Technology used for transferring the data from its main origin.
 - Definition set: DataTransmission
@@ -902,11 +2743,9 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?downholePressure_1
 WHERE {
 	?downholePressure_1 rdf:type ddhub:DownholePressure .
-	?downholePressure_1 ddhub:IsOfMeasurableQuantity ?Attribute000 .
-	?acousticTelemetry.NumberOfRepeaters ddhub:= ?Attribute001 .
-	?acousticTelemetry.DistanceBetweenRepeaters ddhub:= ?Attribute002 .
-	?acousticTelemetry.AverageDelayByRepeater ddhub:= ?Attribute003 .
-	?downholePressure_1 ddhub:IsTransmittedBy ?Attribute004 .
+	?acousticTelemetry ddhub:NumberOfRepeaters ?Attribute001 .
+	?acousticTelemetry ddhub:DistanceBetweenRepeaters ?Attribute002 .
+	?acousticTelemetry ddhub:AverageDelayByRepeater ?Attribute003 .
   FILTER (
 	?Attribute000 = PressureDrillingQuantity
 	&& 	?Attribute001 = 3
@@ -945,8 +2784,6 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?downholePressure_1
 WHERE {
 	?downholePressure_1 rdf:type ddhub:DownholePressure .
-	?downholePressure_1 ddhub:IsOfMeasurableQuantity ?Attribute000 .
-	?downholePressure_1 ddhub:IsTransmittedBy ?Attribute001 .
   FILTER (
 	?Attribute000 = PressureDrillingQuantity
 	&& 	?Attribute001 = downholeTelemetry
@@ -982,8 +2819,6 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?downholePressure_1
 WHERE {
 	?downholePressure_1 rdf:type ddhub:DownholePressure .
-	?downholePressure_1 ddhub:IsOfMeasurableQuantity ?Attribute000 .
-	?downholePressure_1 ddhub:IsTransmittedBy ?Attribute001 .
   FILTER (
 	?Attribute000 = PressureDrillingQuantity
 	&& 	?Attribute001 = mudPulseTelemetry
@@ -1019,8 +2854,6 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?downholePressure_1
 WHERE {
 	?downholePressure_1 rdf:type ddhub:DownholePressure .
-	?downholePressure_1 ddhub:IsOfMeasurableQuantity ?Attribute000 .
-	?downholePressure_1 ddhub:IsTransmittedBy ?Attribute001 .
   FILTER (
 	?Attribute000 = PressureDrillingQuantity
 	&& 	?Attribute001 = electromagneticTelemetry
@@ -1056,8 +2889,6 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?downholePressure_1
 WHERE {
 	?downholePressure_1 rdf:type ddhub:DownholePressure .
-	?downholePressure_1 ddhub:IsOfMeasurableQuantity ?Attribute000 .
-	?downholePressure_1 ddhub:IsTransmittedBy ?Attribute001 .
   FILTER (
 	?Attribute000 = PressureDrillingQuantity
 	&& 	?Attribute001 = acousticTelemetry
@@ -1093,8 +2924,6 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?downholePressure_1
 WHERE {
 	?downholePressure_1 rdf:type ddhub:DownholePressure .
-	?downholePressure_1 ddhub:IsOfMeasurableQuantity ?Attribute000 .
-	?downholePressure_1 ddhub:IsTransmittedBy ?Attribute001 .
   FILTER (
 	?Attribute000 = PressureDrillingQuantity
 	&& 	?Attribute001 = wiredPipeTelemetry
@@ -1130,8 +2959,6 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?downholePressure_1
 WHERE {
 	?downholePressure_1 rdf:type ddhub:DownholePressure .
-	?downholePressure_1 ddhub:IsOfMeasurableQuantity ?Attribute000 .
-	?downholePressure_1 ddhub:IsTransmittedBy ?Attribute001 .
   FILTER (
 	?Attribute000 = PressureDrillingQuantity
 	&& 	?Attribute001 = inductionCouplingTelemetry
@@ -1167,8 +2994,6 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?downholePressure_1
 WHERE {
 	?downholePressure_1 rdf:type ddhub:DownholePressure .
-	?downholePressure_1 ddhub:IsOfMeasurableQuantity ?Attribute000 .
-	?downholePressure_1 ddhub:IsTransmittedBy ?Attribute001 .
   FILTER (
 	?Attribute000 = PressureDrillingQuantity
 	&& 	?Attribute001 = electromagneticCouplingTelemetry
@@ -1204,8 +3029,6 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?downholePressure_1
 WHERE {
 	?downholePressure_1 rdf:type ddhub:DownholePressure .
-	?downholePressure_1 ddhub:IsOfMeasurableQuantity ?Attribute000 .
-	?downholePressure_1 ddhub:IsTransmittedBy ?Attribute001 .
   FILTER (
 	?Attribute000 = PressureDrillingQuantity
 	&& 	?Attribute001 = galvanicCouplingTelemetry
@@ -1221,7 +3044,7 @@ Method that allows transfer of data from surface systems.
 - Examples:
 ``` dwis SPP_1
 DrillingDataPoint: SPP_1
-SPP BelongsToClass SPP
+SPP_1 BelongsToClass SPP
 SPP_1 IsOfMeasurableQuantity PressureDrillingQuantity
 TopSideTelemetry: topSideTelemetry
 SPP_1 IsTransmittedBy topSideTelemetry
@@ -1229,9 +3052,9 @@ SPP_1 IsTransmittedBy topSideTelemetry
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[SPP] -->|BelongsToClass| N0000(SPP) 
-	N0001[SPP_1] -->|IsOfMeasurableQuantity| N0002((PressureDrillingQuantity)) 
-	N0001[SPP_1] -->|IsTransmittedBy| N0003((topSideTelemetry)) 
+	N0000[SPP_1] -->|BelongsToClass| N0001(SPP) 
+	N0000[SPP_1] -->|IsOfMeasurableQuantity| N0002((PressureDrillingQuantity)) 
+	N0000[SPP_1] -->|IsTransmittedBy| N0003((topSideTelemetry)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -1240,9 +3063,7 @@ PREFIX ddhub: <http://ddhub.no/>
 PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?SPP_1
 WHERE {
-	?SPP rdf:type ddhub:SPP .
-	?SPP_1 ddhub:IsOfMeasurableQuantity ?Attribute000 .
-	?SPP_1 ddhub:IsTransmittedBy ?Attribute001 .
+	?SPP_1 rdf:type ddhub:SPP .
   FILTER (
 	?Attribute000 = PressureDrillingQuantity
 	&& 	?Attribute001 = topSideTelemetry
@@ -1298,6 +3119,12 @@ between 0 and 1
 ## StringDataType <!-- NOUN -->
 - Display name: String Data Type
 - Parent class: [DataType](#DataType)
+- Definition set: DrillingDataSemantics
+## JSonDataType <!-- NOUN -->
+- Display name: JSon Data Type
+- Parent class: [StringDataType](#StringDataType)
+- Description: 
+A string that contained the serialization in Json of an object.
 - Definition set: DrillingDataSemantics
 ## DrillingDataPoint <!-- NOUN -->
 - Display name: DrillingDataPoint
@@ -3186,97 +5013,2257 @@ Data structure used to store the streaming drilling data.
 - Parent class: [GenericEquipment](#GenericEquipment)
 - Definition set: DrillingEquipment
 ## DrillingIncident <!-- NOUN -->
-- Display name: DrillingIncident
+- Display name: Drilling Incident
 - Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+This is the parent class for drilling incidents. A drilling incident is often detectable by an abnormal value of a process variable, i.e., a variable that is influenced
+by the drilling process.
 - Definition set: DrillingIncident
 ## AbnormalOscillation <!-- NOUN -->
 - Display name: Abnormal Oscillation
 - Parent class: [DrillingIncident](#DrillingIncident)
+- Description: 
+This Noun represents abnormal oscillations along the drill-stem.
 - Definition set: DrillingIncident
 ## AbnormalAxialOscillation <!-- NOUN -->
 - Display name: Abnormal Axial Oscillation
 - Parent class: [AbnormalOscillation](#AbnormalOscillation)
+- Description: 
+This Noun is used to refer to abnormal axial oscillations.
 - Definition set: DrillingIncident
 ## AbnormalTorsionalOscillation <!-- NOUN -->
 - Display name: Abnormal Torsional Oscillation
 - Parent class: [AbnormalOscillation](#AbnormalOscillation)
+- Description: 
+This Noun is used to refer to abnormal torsional oscillations.
 - Definition set: DrillingIncident
 ## AbnormalLateralOscillation <!-- NOUN -->
 - Display name: Abnormal Lateral Oscillation
 - Parent class: [AbnormalOscillation](#AbnormalOscillation)
+- Description: 
+This Noun is used to refer to abnormal lateral oscillations.
 - Definition set: DrillingIncident
 ## StickSlip <!-- NOUN -->
 - Display name: Stick-slip
 - Parent class: [AbnormalTorsionalOscillation](#AbnormalTorsionalOscillation)
+- Description: 
+This Noun is used to refer to stick-slips.
 - Definition set: DrillingIncident
 ## HFTO <!-- NOUN -->
 - Display name: High Frequency Torsional Oscillation
 - Parent class: [AbnormalTorsionalOscillation](#AbnormalTorsionalOscillation)
+- Description: 
+This Noun is used to refer to high frequency torsional oscillations.
 - Definition set: DrillingIncident
 ## Whirling <!-- NOUN -->
 - Display name: Whirling
 - Parent class: [AbnormalLateralOscillation](#AbnormalLateralOscillation)
+- Description: 
+This Noun is used to refer to abnormal lateral oscillations.
 - Definition set: DrillingIncident
+- Examples:
+``` dwis whirlFDIRInfo
+DynamicDrillingSignal: whirlFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: whirlFDIRInfo_1
+whirlFDIRInfo_1 HasDynamicValue whirlFDIRInfo
+Whirling: whirlingIncident
+whirlFDIRInfo_1 IsRelatedToDrillingIncident whirlingIncident
+ServiceCompany: serviceCompany
+whirlFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+whirlFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident whirlingIncident
+whirlFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+whirlFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[whirlFDIRInfo_1] -->|HasDynamicValue| N0001((whirlFDIRInfo)) 
+	N0000[whirlFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((whirlingIncident)) 
+	N0000[whirlFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[whirlFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|ManagesIncident| N0002((whirlingIncident)) 
+	N0000[whirlFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[whirlFDIRInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?whirlFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = whirlFDIRInfo
+	&& 	?Attribute001 = whirlingIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = whirlingIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
 ## ForwardWhirl <!-- NOUN -->
 - Display name: Forward Whirl
 - Parent class: [Whirling](#Whirling)
+- Description: 
+This Noun is used to refer to forward whirl.
 - Definition set: DrillingIncident
 ## BackwardWhirl <!-- NOUN -->
 - Display name: Backward Whirl
 - Parent class: [Whirling](#Whirling)
+- Description: 
+This Noun is used to refer to backward whirl.
 - Definition set: DrillingIncident
 ## ChaoticWhirl <!-- NOUN -->
 - Display name: Chaotic Whirl
 - Parent class: [Whirling](#Whirling)
+- Description: 
+This Noun is used to refer to chaotic whirl.
 - Definition set: DrillingIncident
 ## Shock <!-- NOUN -->
 - Display name: Shock
 - Parent class: [AbnormalLateralOscillation](#AbnormalLateralOscillation)
+- Description: 
+This Noun is used to refer to lateral shocks.
 - Definition set: DrillingIncident
 ## TwistOff <!-- NOUN -->
-- Display name: TwistOff
+- Display name: Twist-off
 - Parent class: [DrillingIncident](#DrillingIncident)
+- Description: 
+This Noun is used to refer to a twist-off situation.
 - Definition set: DrillingIncident
+- Examples:
+``` dwis twistOffFDIRInfo
+DynamicDrillingSignal: twistOffFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: twistOffFDIRInfo_1
+twistOffFDIRInfo_1 HasDynamicValue twistOffFDIRInfo
+TwistOff: twistOffIncident
+twistOffFDIRInfo_1 IsRelatedToDrillingIncident twistOffIncident
+ServiceCompany: serviceCompany
+twistOffFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+twistOffFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident twistOffIncident
+twistOffFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+twistOffFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[twistOffFDIRInfo_1] -->|HasDynamicValue| N0001((twistOffFDIRInfo)) 
+	N0000[twistOffFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((twistOffIncident)) 
+	N0000[twistOffFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[twistOffFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|ManagesIncident| N0002((twistOffIncident)) 
+	N0000[twistOffFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[twistOffFDIRInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?twistOffFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = twistOffFDIRInfo
+	&& 	?Attribute001 = twistOffIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = twistOffIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
 ## Overpull <!-- NOUN -->
 - Display name: Overpull
 - Parent class: [DrillingIncident](#DrillingIncident)
+- Description: 
+This Noun is used to refer to a situation during which the drill-stem hangs in something in the upward direction.
 - Definition set: DrillingIncident
+- Examples:
+``` dwis overpullFDIRInfo
+DynamicDrillingSignal: overpullFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: overpullFDIRInfo_1
+overpullFDIRInfo_1 HasDynamicValue overpullFDIRInfo
+Overpull: overpullIncident
+overpullFDIRInfo_1 IsRelatedToDrillingIncident overpullIncident
+ServiceCompany: serviceCompany
+overpullFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+overpullFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1. ManagesIncident overpullIncident
+overpullFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+overpullFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[overpullFDIRInfo_1] -->|HasDynamicValue| N0001((overpullFDIRInfo)) 
+	N0000[overpullFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((overpullIncident)) 
+	N0000[overpullFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[overpullFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1.] -->|ManagesIncident| N0002((overpullIncident)) 
+	N0000[overpullFDIRInfo_1] -->|IsRecommendedFor| N0006((FDIRFunction_1)) 
+	N0000[overpullFDIRInfo_1] -->|IsProvidedTo| N0007((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?overpullFDIRInfo
+WHERE {
+	?FDIRFunction_1 ddhub: ?Attribute004 .
+  FILTER (
+	?Attribute000 = overpullFDIRInfo
+	&& 	?Attribute001 = overpullIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = overpullIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
 ## Underpull <!-- NOUN -->
 - Display name: Underpull
 - Parent class: [DrillingIncident](#DrillingIncident)
+- Description: 
+This Noun is used to refer to a situation during which the drill-stem hangs in something in the downward direction.
 - Definition set: DrillingIncident
+- Examples:
+``` dwis underpullFDIRInfo
+DynamicDrillingSignal: underpullFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: underpullFDIRInfo_1
+underpullFDIRInfo_1 HasDynamicValue underpullFDIRInfo
+Underpull: underpullIncident
+underpullFDIRInfo_1 IsRelatedToDrillingIncident underpullIncident
+ServiceCompany: serviceCompany
+underpullFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+underpullFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident underpullIncident
+underpullFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+underpullFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[underpullFDIRInfo_1] -->|HasDynamicValue| N0001((underpullFDIRInfo)) 
+	N0000[underpullFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((underpullIncident)) 
+	N0000[underpullFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[underpullFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|ManagesIncident| N0002((underpullIncident)) 
+	N0000[underpullFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[underpullFDIRInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?underpullFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = underpullFDIRInfo
+	&& 	?Attribute001 = underpullIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = underpullIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
 ## Influx <!-- NOUN -->
 - Display name: Influx
 - Parent class: [DrillingIncident](#DrillingIncident)
+- Description: 
+This Noun is used to refer to a situation during which there is an influx of formation fluids in the borehole.
 - Definition set: DrillingIncident
+- Examples:
+``` dwis kickFDIRInfo
+DynamicDrillingSignal: kickFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: kickFDIRInfo_1
+kickFDIRInfo_1 HasDynamicValue kickFDIRInfo
+Influx: influxIncident
+kickFDIRInfo_1 IsRelatedToDrillingIncident influxIncident
+ServiceCompany: serviceCompany
+kickFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+kickFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident influxIncident
+kickFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+kickFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[kickFDIRInfo_1] -->|HasDynamicValue| N0001((kickFDIRInfo)) 
+	N0000[kickFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((influxIncident)) 
+	N0000[kickFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[kickFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|ManagesIncident| N0002((influxIncident)) 
+	N0000[kickFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[kickFDIRInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?kickFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = kickFDIRInfo
+	&& 	?Attribute001 = influxIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = influxIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
 ## LossCirculation <!-- NOUN -->
-- Display name: LossCirculation
+- Display name: Loss Circulation
 - Parent class: [DrillingIncident](#DrillingIncident)
+- Description: 
+This Noun is used to refer to a situation during which drilling fluid is lost to the formation.
 - Definition set: DrillingIncident
+- Examples:
+``` dwis lossCirculationFDIRInfo
+DynamicDrillingSignal: lossCirculationFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: lossCirculationFDIRInfo_1
+lossCirculationFDIRInfo_1 HasDynamicValue lossCirculationFDIRInfo
+LossCirculation: lossCirculationIncident
+lossCirculationFDIRInfo_1 IsRelatedToDrillingIncident lossCirculationIncident
+ServiceCompany: serviceCompany
+lossCirculationFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+lossCirculationFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident lossCirculationIncident
+lossCirculationFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+lossCirculationFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[lossCirculationFDIRInfo_1] -->|HasDynamicValue| N0001((lossCirculationFDIRInfo)) 
+	N0000[lossCirculationFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((lossCirculationIncident)) 
+	N0000[lossCirculationFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[lossCirculationFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|ManagesIncident| N0002((lossCirculationIncident)) 
+	N0000[lossCirculationFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[lossCirculationFDIRInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?lossCirculationFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = lossCirculationFDIRInfo
+	&& 	?Attribute001 = lossCirculationIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = lossCirculationIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
 ## HoleCollapse <!-- NOUN -->
-- Display name: HoleCollapse
+- Display name: Hole Collapse
 - Parent class: [DrillingIncident](#DrillingIncident)
+- Description: 
+This Noun is used to refer to a situation during which there is a hole collapse.
 - Definition set: DrillingIncident
+- Examples:
+``` dwis HoleCollapseFDIRInfo
+DynamicDrillingSignal: HoleCollapseFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: HoleCollapseFDIRInfo_1
+HoleCollapseFDIRInfo_1 HasDynamicValue HoleCollapseFDIRInfo
+HoleCollapse: holeCollapseIncident
+HoleCollapseFDIRInfo_1 IsRelatedToDrillingIncident holeCollapseIncident
+ServiceCompany: serviceCompany
+HoleCollapseFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+HoleCollapseFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident holeCollapseIncident
+HoleCollapseFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+HoleCollapseFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[HoleCollapseFDIRInfo_1] -->|HasDynamicValue| N0001((HoleCollapseFDIRInfo)) 
+	N0000[HoleCollapseFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((holeCollapseIncident)) 
+	N0000[HoleCollapseFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[HoleCollapseFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|ManagesIncident| N0002((holeCollapseIncident)) 
+	N0000[HoleCollapseFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[HoleCollapseFDIRInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?HoleCollapseFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = HoleCollapseFDIRInfo
+	&& 	?Attribute001 = holeCollapseIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = holeCollapseIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
 ## StuckPipe <!-- NOUN -->
-- Display name: StuckPipe
+- Display name: Stuck-pipe
 - Parent class: [DrillingIncident](#DrillingIncident)
+- Description: 
+This Noun is used to refer to a situation during which the drill-stem is impeded to move either axially or rotationally or both.
 - Definition set: DrillingIncident
+## DifferentiallyStuck <!-- NOUN -->
+- Display name: Differentially Stuck
+- Parent class: [StuckPipe](#StuckPipe)
+- Description: 
+This Noun is used to refer to a situation during which the drill-stem is stuck because of differential sticking.
+- Definition set: DrillingIncident
+- Examples:
+``` dwis differentialStickingFDIRInfo
+DynamicDrillingSignal: differentialStickingFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: differentialStickingFDIRInfo_1
+differentialStickingFDIRInfo_1 HasDynamicValue differentialStickingFDIRInfo
+DifferentiallyStuck: differentiallyStuckIncident
+differentialStickingFDIRInfo_1 IsRelatedToDrillingIncident differentiallyStuckIncident
+ServiceCompany: serviceCompany
+differentialStickingFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+differentialStickingFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident differentiallyStuckIncident
+differentialStickingFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+differentialStickingFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[differentialStickingFDIRInfo_1] -->|HasDynamicValue| N0001((differentialStickingFDIRInfo)) 
+	N0000[differentialStickingFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((differentiallyStuckIncident)) 
+	N0000[differentialStickingFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[differentialStickingFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|ManagesIncident| N0002((differentiallyStuckIncident)) 
+	N0000[differentialStickingFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[differentialStickingFDIRInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?differentialStickingFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = differentialStickingFDIRInfo
+	&& 	?Attribute001 = differentiallyStuckIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = differentiallyStuckIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
 ## PipeWashout <!-- NOUN -->
-- Display name: PipeWashout
+- Display name: Pipe Washout
 - Parent class: [DrillingIncident](#DrillingIncident)
+- Description: 
+This Noun is used to refer to a situation during which there is leak between the inside of the drill-stem and the annulus.
 - Definition set: DrillingIncident
+- Examples:
+``` dwis pipeWashoutFDIRInfo
+DynamicDrillingSignal: pipeWashoutFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: pipeWashoutFDIRInfo_1
+pipeWashoutFDIRInfo_1 HasDynamicValue pipeWashoutFDIRInfo
+PipeWashout: pipeWashoutIncident
+pipeWashoutFDIRInfo_1 IsRelatedToDrillingIncident pipeWashoutIncident
+ServiceCompany: serviceCompany
+pipeWashoutFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+pipeWashoutFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident pipeWashoutIncident
+pipeWashoutFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+pipeWashoutFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pipeWashoutFDIRInfo_1] -->|HasDynamicValue| N0001((pipeWashoutFDIRInfo)) 
+	N0000[pipeWashoutFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((pipeWashoutIncident)) 
+	N0000[pipeWashoutFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[pipeWashoutFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|ManagesIncident| N0002((pipeWashoutIncident)) 
+	N0000[pipeWashoutFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[pipeWashoutFDIRInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pipeWashoutFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = pipeWashoutFDIRInfo
+	&& 	?Attribute001 = pipeWashoutIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = pipeWashoutIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
 ## FormationWashout <!-- NOUN -->
-- Display name: FormationWashout
+- Display name: Formation Washout
 - Parent class: [DrillingIncident](#DrillingIncident)
+- Description: 
+This Noun is used to refer to a situation during which the formation is being washed out.
 - Definition set: DrillingIncident
 ## OverTorque <!-- NOUN -->
-- Display name: OverTorque
+- Display name: Over-torque
 - Parent class: [DrillingIncident](#DrillingIncident)
+- Description: 
+This Noun is used to refer to a situation during which the rotation of the drill-stem is impeded.
 - Definition set: DrillingIncident
+- Examples:
+``` dwis overtorqueFDIRInfo
+DynamicDrillingSignal: overtorqueFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: overtorqueFDIRInfo_1
+overtorqueFDIRInfo_1 HasDynamicValue overtorqueFDIRInfo
+OverTorque: overTorqueIncident
+overtorqueFDIRInfo_1 IsRelatedToDrillingIncident overTorqueIncident
+ServiceCompany: serviceCompany
+overtorqueFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+overtorqueFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident overTorqueIncident
+overtorqueFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+overtorqueFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[overtorqueFDIRInfo_1] -->|HasDynamicValue| N0001((overtorqueFDIRInfo)) 
+	N0000[overtorqueFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((overTorqueIncident)) 
+	N0000[overtorqueFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[overtorqueFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|ManagesIncident| N0002((overTorqueIncident)) 
+	N0000[overtorqueFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[overtorqueFDIRInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?overtorqueFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = overtorqueFDIRInfo
+	&& 	?Attribute001 = overTorqueIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = overTorqueIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
 ## Plugged <!-- NOUN -->
 - Display name: Plugged
 - Parent class: [DrillingIncident](#DrillingIncident)
+- Description: 
+This Noun is used to refer to a situation during which the hydraulic flow-path is partially or fully blocked.
 - Definition set: DrillingIncident
+## PackOff <!-- NOUN -->
+- Display name: Pack-off
+- Parent class: [Plugged](#Plugged)
+- Description: 
+This Noun is used to refer to a situation during which the annulus hydraulic flow-path is partially or fully blocked.
+- Definition set: DrillingIncident
+- Examples:
+``` dwis PackOffFDIRInfo
+DynamicDrillingSignal: PackOffFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: PackOffFDIRInfo_1
+PackOffFDIRInfo_1 HasDynamicValue PackOffFDIRInfo
+PackOff: packOffIncident
+PackOffFDIRInfo_1 IsRelatedToDrillingIncident packOffIncident
+ServiceCompany: serviceCompany
+PackOffFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+PackOffFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident packOffIncident
+PackOffFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+PackOffFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PackOffFDIRInfo_1] -->|HasDynamicValue| N0001((PackOffFDIRInfo)) 
+	N0000[PackOffFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((packOffIncident)) 
+	N0000[PackOffFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[PackOffFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|ManagesIncident| N0002((packOffIncident)) 
+	N0000[PackOffFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[PackOffFDIRInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?PackOffFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = PackOffFDIRInfo
+	&& 	?Attribute001 = packOffIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = packOffIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
+## MotorStall <!-- NOUN -->
+- Display name: Motor-stall
+- Parent class: [DrillingIncident](#DrillingIncident)
+- Description: 
+This Noun is used to refer to a situation during which the downhole motor is stalled.
+- Definition set: DrillingIncident
+- Examples:
+``` dwis motorStallFDIRInfo
+DynamicDrillingSignal: motorStallFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: motorStallFDIRInfo_1
+motorStallFDIRInfo_1 HasDynamicValue motorStallFDIRInfo
+MotorStall: motorStallIncident
+motorStallFDIRInfo_1 IsRelatedToDrillingIncident motorStallIncident
+ServiceCompany: serviceCompany
+motorStallFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+motorStallFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1 ManagesIncident motorStallIncident
+motorStallFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+motorStallFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[motorStallFDIRInfo_1] -->|HasDynamicValue| N0001((motorStallFDIRInfo)) 
+	N0000[motorStallFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((motorStallIncident)) 
+	N0000[motorStallFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[motorStallFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|ManagesIncident| N0002((motorStallIncident)) 
+	N0000[motorStallFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[motorStallFDIRInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?motorStallFDIRInfo
+WHERE {
+  FILTER (
+	?Attribute000 = motorStallFDIRInfo
+	&& 	?Attribute001 = motorStallIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = motorStallIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
+## DrillingLimit <!-- NOUN -->
+- Display name: Drilling Limit
+- Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+This is the parent class for drilling limits. A limit applies typically on a desired value as controlled by a controller.
+- Definition set: DrillingLimit
+## AxialVelocityLimit <!-- NOUN -->
+- Display name: Axial Velocity Limit
+- Parent class: [DrillingLimit](#DrillingLimit)
+- Description: 
+This Noun is used to refer to an axial velocity limit.
+- Definition set: DrillingLimit
+- Examples:
+``` dwis minMaxAxialVelocitySOEInfo
+DynamicDrillingSignal: minMaxAxialVelocitySOEInfo
+DrillingSafeOperatingEnvelopeAdvice: minMaxAxialVelocitySOEInfo_1
+minMaxAxialVelocitySOEInfo_1 HasDynamicValue minMaxAxialVelocitySOEInfo
+AxialVelocityLimit: axialVelocityLimit
+minMaxAxialVelocitySOEInfo_1 IsRelatedToDrillingLimit axialVelocityLimit
+ServiceCompany: serviceCompany
+minMaxAxialVelocitySOEInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+minMaxAxialVelocitySOEInfo_1 IsRecommendedBy computationUnit
+SOEFunction: soeFunction
+soeFunction ImplementsLimit axialVelocityLimit
+minMaxAxialVelocitySOEInfo_1 IsRecommendedFor soeFunction
+DWISAdviceComposer: adviceComposer
+minMaxAxialVelocitySOEInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+minMaxAxialVelocitySOEInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[minMaxAxialVelocitySOEInfo_1] -->|HasDynamicValue| N0001((minMaxAxialVelocitySOEInfo)) 
+	N0000[minMaxAxialVelocitySOEInfo_1] -->|IsRelatedToDrillingLimit| N0002((axialVelocityLimit)) 
+	N0000[minMaxAxialVelocitySOEInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[minMaxAxialVelocitySOEInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[soeFunction] -->|ImplementsLimit| N0002((axialVelocityLimit)) 
+	N0000[minMaxAxialVelocitySOEInfo_1] -->|IsRecommendedFor| N0005((soeFunction)) 
+	N0000[minMaxAxialVelocitySOEInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[minMaxAxialVelocitySOEInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?minMaxAxialVelocitySOEInfo
+WHERE {
+  FILTER (
+	?Attribute000 = minMaxAxialVelocitySOEInfo
+	&& 	?Attribute001 = axialVelocityLimit
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = axialVelocityLimit
+	&& 	?Attribute005 = soeFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+## RotationalVelocityLimit <!-- NOUN -->
+- Display name: Rotational Velocity Limit
+- Parent class: [DrillingLimit](#DrillingLimit)
+- Description: 
+This Noun is used to refer to a rotational velocity limit.
+- Definition set: DrillingLimit
+- Examples:
+``` dwis minMaxRotationalSpeedSOEInfo
+DynamicDrillingSignal: minMaxRotationalSpeedSOEInfo
+DrillingSafeOperatingEnvelopeAdvice: minMaxRotationalSpeedSOEInfo_1
+minMaxRotationalSpeedSOEInfo_1 HasDynamicValue minMaxRotationalSpeedSOEInfo
+RotationalVelocityLimit: rotationalVelocityLimit
+minMaxRotationalSpeedSOEInfo_1 IsRelatedToDrillingLimit rotationalVelocityLimit
+ServiceCompany: serviceCompany
+minMaxRotationalSpeedSOEInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+minMaxRotationalSpeedSOEInfo_1 IsRecommendedBy computationUnit
+SOEFunction: soeFunction
+soeFunction ImplementsLimit rotationalVelocityLimit
+minMaxRotationalSpeedSOEInfo_1 IsRecommendedFor soeFunction
+DWISAdviceComposer: adviceComposer
+minMaxRotationalSpeedSOEInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+minMaxRotationalSpeedSOEInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[minMaxRotationalSpeedSOEInfo_1] -->|HasDynamicValue| N0001((minMaxRotationalSpeedSOEInfo)) 
+	N0000[minMaxRotationalSpeedSOEInfo_1] -->|IsRelatedToDrillingLimit| N0002((rotationalVelocityLimit)) 
+	N0000[minMaxRotationalSpeedSOEInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[minMaxRotationalSpeedSOEInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[soeFunction] -->|ImplementsLimit| N0002((rotationalVelocityLimit)) 
+	N0000[minMaxRotationalSpeedSOEInfo_1] -->|IsRecommendedFor| N0005((soeFunction)) 
+	N0000[minMaxRotationalSpeedSOEInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[minMaxRotationalSpeedSOEInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?minMaxRotationalSpeedSOEInfo
+WHERE {
+  FILTER (
+	?Attribute000 = minMaxRotationalSpeedSOEInfo
+	&& 	?Attribute001 = rotationalVelocityLimit
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = rotationalVelocityLimit
+	&& 	?Attribute005 = soeFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+## FlowrateLimit <!-- NOUN -->
+- Display name: Flowrate Limit
+- Parent class: [DrillingLimit](#DrillingLimit)
+- Description: 
+This Noun is used to refer to a flowrate limit.
+- Definition set: DrillingLimit
+- Examples:
+``` dwis minMaxFlowRateSOEInfo
+DynamicDrillingSignal: minMaxFlowRateSOEInfo
+DrillingSafeOperatingEnvelopeAdvice: minMaxFlowRateSOEInfo_1
+minMaxFlowRateSOEInfo_1 HasDynamicValue minMaxFlowRateSOEInfo
+FlowrateLimit: flowrateLimit
+minMaxFlowRateSOEInfo_1 IsRelatedToDrillingLimit flowrateLimit
+ServiceCompany: serviceCompany
+minMaxFlowRateSOEInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+minMaxFlowRateSOEInfo_1 IsRecommendedBy computationUnit
+SOEFunction: soeFunction
+soeFunction ImplementsLimit flowrateLimit
+minMaxFlowRateSOEInfo_1 IsRecommendedFor soeFunction
+DWISAdviceComposer: adviceComposer
+minMaxFlowRateSOEInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+minMaxFlowRateSOEInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[minMaxFlowRateSOEInfo_1] -->|HasDynamicValue| N0001((minMaxFlowRateSOEInfo)) 
+	N0000[minMaxFlowRateSOEInfo_1] -->|IsRelatedToDrillingLimit| N0002((flowrateLimit)) 
+	N0000[minMaxFlowRateSOEInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[minMaxFlowRateSOEInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[soeFunction] -->|ImplementsLimit| N0002((flowrateLimit)) 
+	N0000[minMaxFlowRateSOEInfo_1] -->|IsRecommendedFor| N0005((soeFunction)) 
+	N0000[minMaxFlowRateSOEInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[minMaxFlowRateSOEInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?minMaxFlowRateSOEInfo
+WHERE {
+  FILTER (
+	?Attribute000 = minMaxFlowRateSOEInfo
+	&& 	?Attribute001 = flowrateLimit
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = flowrateLimit
+	&& 	?Attribute005 = soeFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+## ROPLimit <!-- NOUN -->
+- Display name: ROP Limit
+- Parent class: [DrillingLimit](#DrillingLimit)
+- Description: 
+This Noun is used to refer to a rate of penetration limit.
+- Definition set: DrillingLimit
+- Examples:
+``` dwis ROPManagementControllerInfo
+DynamicDrillingSignal: ROPManagementControllerInfo
+ROPManagementContolAdvice: ROPManagementControllerInfo_1
+ROPManagementControllerInfo_1 HasDynamicValue ROPManagementControllerInfo
+ROPLimit: ROPLimit
+ROPManagementControllerInfo_1 IsRelatedToDrillingLimit ROPLimit
+WOBLimit: WOBLimit
+ROPManagementControllerInfo_1 IsRelatedToDrillingLimit WOBLimit
+DifferentialPressureLimit: differentialPressureLimit
+ROPManagementControllerInfo_1 IsRelatedToDrillingLimit differentialPressureLimit
+ServiceCompany: serviceCompany
+ROPManagementControllerInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+ROPManagementControllerInfo_1 IsRecommendedBy computationUnit
+ControllerFunction: autoDriller
+autoDriller.HasFunction = "AutoDriller"
+ROPManagementControllerInfo_1 IsRecommendedFor autoDriller
+DWISAdviceComposer: adviceComposer
+ROPManagementControllerInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+ROPManagementControllerInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ROPManagementControllerInfo_1] -->|HasDynamicValue| N0001((ROPManagementControllerInfo)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingLimit| N0002((ROPLimit)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingLimit| N0003((WOBLimit)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingLimit| N0004((differentialPressureLimit)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsProvidedBy| N0005((serviceCompany)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRecommendedBy| N0006((computationUnit)) 
+	N0007[autoDriller] -->|HasFunction| N0008(("AutoDriller")) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRecommendedFor| N0007((autoDriller)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0009((adviceComposer)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0010((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ROPManagementControllerInfo
+WHERE {
+	?autoDriller ddhub:HasFunction ?Attribute006 .
+  FILTER (
+	?Attribute000 = ROPManagementControllerInfo
+	&& 	?Attribute001 = ROPLimit
+	&& 	?Attribute002 = WOBLimit
+	&& 	?Attribute003 = differentialPressureLimit
+	&& 	?Attribute004 = serviceCompany
+	&& 	?Attribute005 = computationUnit
+	&& 	?Attribute006 = "AutoDriller"
+	&& 	?Attribute007 = autoDriller
+	&& 	?Attribute008 = adviceComposer
+	&& 	?Attribute009 = scheduler
+  )
+}
+```
+## WOBLimit <!-- NOUN -->
+- Display name: WOB Limit
+- Parent class: [DrillingLimit](#DrillingLimit)
+- Description: 
+This Noun is used to refer to a weight on bit limit.
+- Definition set: DrillingLimit
+- Examples:
+``` dwis ROPManagementControllerInfo
+DynamicDrillingSignal: ROPManagementControllerInfo
+ROPManagementContolAdvice: ROPManagementControllerInfo_1
+ROPManagementControllerInfo_1 HasDynamicValue ROPManagementControllerInfo
+ROPLimit: ROPLimit
+ROPManagementControllerInfo_1 IsRelatedToDrillingLimit ROPLimit
+WOBLimit: WOBLimit
+ROPManagementControllerInfo_1 IsRelatedToDrillingLimit WOBLimit
+DifferentialPressureLimit: differentialPressureLimit
+ROPManagementControllerInfo_1 IsRelatedToDrillingLimit differentialPressureLimit
+ServiceCompany: serviceCompany
+ROPManagementControllerInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+ROPManagementControllerInfo_1 IsRecommendedBy computationUnit
+ControllerFunction: autoDriller
+autoDriller.HasFunction = "AutoDriller"
+ROPManagementControllerInfo_1 IsRecommendedFor autoDriller
+DWISAdviceComposer: adviceComposer
+ROPManagementControllerInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+ROPManagementControllerInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ROPManagementControllerInfo_1] -->|HasDynamicValue| N0001((ROPManagementControllerInfo)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingLimit| N0002((ROPLimit)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingLimit| N0003((WOBLimit)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingLimit| N0004((differentialPressureLimit)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsProvidedBy| N0005((serviceCompany)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRecommendedBy| N0006((computationUnit)) 
+	N0007[autoDriller] -->|HasFunction| N0008(("AutoDriller")) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRecommendedFor| N0007((autoDriller)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0009((adviceComposer)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0010((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ROPManagementControllerInfo
+WHERE {
+	?autoDriller ddhub:HasFunction ?Attribute006 .
+  FILTER (
+	?Attribute000 = ROPManagementControllerInfo
+	&& 	?Attribute001 = ROPLimit
+	&& 	?Attribute002 = WOBLimit
+	&& 	?Attribute003 = differentialPressureLimit
+	&& 	?Attribute004 = serviceCompany
+	&& 	?Attribute005 = computationUnit
+	&& 	?Attribute006 = "AutoDriller"
+	&& 	?Attribute007 = autoDriller
+	&& 	?Attribute008 = adviceComposer
+	&& 	?Attribute009 = scheduler
+  )
+}
+```
+## DifferentialPressureLimit <!-- NOUN -->
+- Display name: Differential Pressure Limit
+- Parent class: [DrillingLimit](#DrillingLimit)
+- Description: 
+This Noun is used to refer to a differential pressure limit.
+- Definition set: DrillingLimit
+- Examples:
+``` dwis ROPManagementControllerInfo
+DynamicDrillingSignal: ROPManagementControllerInfo
+ROPManagementContolAdvice: ROPManagementControllerInfo_1
+ROPManagementControllerInfo_1 HasDynamicValue ROPManagementControllerInfo
+ROPLimit: ROPLimit
+ROPManagementControllerInfo_1 HasControlLimit ROPLimit
+WOBLimit: WOBLimit
+ROPManagementControllerInfo_1 HasControlLimit WOBLimit
+DifferentialPressureLimit: differentialPressureLimit
+ROPManagementControllerInfo_1 HasControlLimit differentialPressureLimit
+ServiceCompany: serviceCompany
+ROPManagementControllerInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+ROPManagementControllerInfo_1 IsRecommendedBy computationUnit
+ControllerFunction: autoDriller
+autoDriller.HasFunction = "AutoDriller"
+ROPManagementControllerInfo_1 IsRecommendedFor autoDriller
+DWISAdviceComposer: adviceComposer
+ROPManagementControllerInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+ROPManagementControllerInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ROPManagementControllerInfo_1] -->|HasDynamicValue| N0001((ROPManagementControllerInfo)) 
+	N0000[ROPManagementControllerInfo_1] -->|HasControlLimit| N0002((ROPLimit)) 
+	N0000[ROPManagementControllerInfo_1] -->|HasControlLimit| N0003((WOBLimit)) 
+	N0000[ROPManagementControllerInfo_1] -->|HasControlLimit| N0004((differentialPressureLimit)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsProvidedBy| N0005((serviceCompany)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRecommendedBy| N0006((computationUnit)) 
+	N0007[autoDriller] -->|HasFunction| N0008(("AutoDriller")) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRecommendedFor| N0007((autoDriller)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0009((adviceComposer)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0010((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ROPManagementControllerInfo
+WHERE {
+	?autoDriller ddhub:HasFunction ?Attribute006 .
+  FILTER (
+	?Attribute000 = ROPManagementControllerInfo
+	&& 	?Attribute001 = ROPLimit
+	&& 	?Attribute002 = WOBLimit
+	&& 	?Attribute003 = differentialPressureLimit
+	&& 	?Attribute004 = serviceCompany
+	&& 	?Attribute005 = computationUnit
+	&& 	?Attribute006 = "AutoDriller"
+	&& 	?Attribute007 = autoDriller
+	&& 	?Attribute008 = adviceComposer
+	&& 	?Attribute009 = scheduler
+  )
+}
+```
+## DrillingObjective <!-- NOUN -->
+- Display name: Drilling Objective
+- Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+This is the parent class for drilling objectives.
+- Definition set: DrillingObjective
+## StableAxialVelocityObjective <!-- NOUN -->
+- Display name: Stable Axial Velocity Objective
+- Parent class: [DrillingObjective](#DrillingObjective)
+- Description: 
+This Noun is used to refer to the objective of obtaining stable axial velocity.
+- Definition set: DrillingObjective
+- Examples:
+``` dwis ROPManagementControllerInfo
+DynamicDrillingSignal: ROPManagementControllerInfo
+DrillingControlAdvice: ROPManagementControllerInfo_1
+ROPManagementControllerInfo_1 HasDynamicValue ROPManagementControllerInfo
+ROPLimit: ROPLimit
+ROPManagementControllerInfo_1 HasControlLimit ROPLimit
+WOBLimit: WOBLimit
+ROPManagementControllerInfo_1 HasControlLimit WOBLimit
+DifferentialPressureLimit: differentialPressureLimit
+ROPManagementControllerInfo_1 HasControlLimit differentialPressureLimit
+StableAxialVelocityObjective: stableAxialVelocityObjective
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableAxialVelocityObjective
+StableAxialForceObjective: stableWOBObjective
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableWOBObjective
+StablePressureObjective: stableDifferentialPressure
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableDifferentialPressure
+ServiceCompany: serviceCompany
+ROPManagementControllerInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+ROPManagementControllerInfo_1 IsRecommendedBy computationUnit
+ControllerFunction: autoDriller
+autoDriller ImplementsObjective stableAxialVelocityObjective
+autoDriller ImplementsObjective stableWOBObjective
+autoDriller ImplementsObjective stableDifferentialPressure
+ROPManagementControllerInfo_1 IsRecommendedFor autoDriller
+DWISAdviceComposer: adviceComposer
+ROPManagementControllerInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+ROPManagementControllerInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ROPManagementControllerInfo_1] -->|HasDynamicValue| N0001((ROPManagementControllerInfo)) 
+	N0000[ROPManagementControllerInfo_1] -->|HasControlLimit| N0002((ROPLimit)) 
+	N0000[ROPManagementControllerInfo_1] -->|HasControlLimit| N0003((WOBLimit)) 
+	N0000[ROPManagementControllerInfo_1] -->|HasControlLimit| N0004((differentialPressureLimit)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0005((stableAxialVelocityObjective)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0006((stableWOBObjective)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0007((stableDifferentialPressure)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsProvidedBy| N0008((serviceCompany)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRecommendedBy| N0009((computationUnit)) 
+	N0010[autoDriller] -->|ImplementsObjective| N0005((stableAxialVelocityObjective)) 
+	N0010[autoDriller] -->|ImplementsObjective| N0006((stableWOBObjective)) 
+	N0010[autoDriller] -->|ImplementsObjective| N0007((stableDifferentialPressure)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRecommendedFor| N0010((autoDriller)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0011((adviceComposer)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0012((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ROPManagementControllerInfo
+WHERE {
+  FILTER (
+	?Attribute000 = ROPManagementControllerInfo
+	&& 	?Attribute001 = ROPLimit
+	&& 	?Attribute002 = WOBLimit
+	&& 	?Attribute003 = differentialPressureLimit
+	&& 	?Attribute004 = stableAxialVelocityObjective
+	&& 	?Attribute005 = stableWOBObjective
+	&& 	?Attribute006 = stableDifferentialPressure
+	&& 	?Attribute007 = serviceCompany
+	&& 	?Attribute008 = computationUnit
+	&& 	?Attribute009 = stableAxialVelocityObjective
+	&& 	?Attribute010 = stableWOBObjective
+	&& 	?Attribute011 = stableDifferentialPressure
+	&& 	?Attribute012 = autoDriller
+	&& 	?Attribute013 = adviceComposer
+	&& 	?Attribute014 = scheduler
+  )
+}
+```
+## StableRotationalVelocityObjective <!-- NOUN -->
+- Display name: Stable Rotational Velocity Objective
+- Parent class: [DrillingObjective](#DrillingObjective)
+- Description: 
+This Noun is used to refer to the objective of obtaining stable rotational velocity.
+- Definition set: DrillingObjective
+- Examples:
+``` dwis stickSlipMitigationControllerInfo
+DynamicDrillingSignal: stickSlipMitigationControllerInfo
+DrillingControlAdvice: stickSlipMitigationControllerInfo_1
+stickSlipMitigationControllerInfo_1 HasDynamicValue stickSlipMitigationControllerInfo
+StableRotationalVelocityObjective: stableRotationalVelocityObjective
+stickSlipMitigationControllerInfo_1 IsRelatedToDrillingObjective stableRotationalVelocityObjective
+ServiceCompany: serviceCompany
+stickSlipMitigationControllerInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+stickSlipMitigationControllerInfo_1 IsRecommendedBy computationUnit
+ControllerFunction: stickSlipMitigation
+stickSlipMitigation ImplementsObjective stableRotationalVelocityObjective
+stickSlipMitigationControllerInfo_1 IsRecommendedFor stickSlipMitigation
+DWISAdviceComposer: adviceComposer
+stickSlipMitigationControllerInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+stickSlipMitigationControllerInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stickSlipMitigationControllerInfo_1] -->|HasDynamicValue| N0001((stickSlipMitigationControllerInfo)) 
+	N0000[stickSlipMitigationControllerInfo_1] -->|IsRelatedToDrillingObjective| N0002((stableRotationalVelocityObjective)) 
+	N0000[stickSlipMitigationControllerInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[stickSlipMitigationControllerInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[stickSlipMitigation] -->|ImplementsObjective| N0002((stableRotationalVelocityObjective)) 
+	N0000[stickSlipMitigationControllerInfo_1] -->|IsRecommendedFor| N0005((stickSlipMitigation)) 
+	N0000[stickSlipMitigationControllerInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[stickSlipMitigationControllerInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stickSlipMitigationControllerInfo
+WHERE {
+  FILTER (
+	?Attribute000 = stickSlipMitigationControllerInfo
+	&& 	?Attribute001 = stableRotationalVelocityObjective
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = stableRotationalVelocityObjective
+	&& 	?Attribute005 = stickSlipMitigation
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+## StablePressureObjective <!-- NOUN -->
+- Display name: Stable Pressure Objective
+- Parent class: [DrillingObjective](#DrillingObjective)
+- Description: 
+This Noun is used to refer to the objective of obtaining stable pressure.
+- Definition set: DrillingObjective
+- Examples:
+``` dwis ROPManagementControllerInfo
+DynamicDrillingSignal: ROPManagementControllerInfo
+DrillingControlAdvice: ROPManagementControllerInfo_1
+ROPManagementControllerInfo_1 HasDynamicValue ROPManagementControllerInfo
+ROPLimit: ROPLimit
+ROPManagementControllerInfo_1 HasControlLimit ROPLimit
+WOBLimit: WOBLimit
+ROPManagementControllerInfo_1 HasControlLimit WOBLimit
+DifferentialPressureLimit: differentialPressureLimit
+ROPManagementControllerInfo_1 HasControlLimit differentialPressureLimit
+StableAxialVelocityObjective: stableAxialVelocityObjective
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableAxialVelocityObjective
+StableAxialForceObjective: stableWOBObjective
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableWOBObjective
+StablePressureObjective: stableDifferentialPressure
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableDifferentialPressure
+ServiceCompany: serviceCompany
+ROPManagementControllerInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+ROPManagementControllerInfo_1 IsRecommendedBy computationUnit
+ControllerFunction: autoDriller
+autoDriller ImplementsObjective stableAxialVelocityObjective
+autoDriller ImplementsObjective stableWOBObjective
+autoDriller ImplementsObjective stableDifferentialPressure
+ROPManagementControllerInfo_1 IsRecommendedFor autoDriller
+DWISAdviceComposer: adviceComposer
+ROPManagementControllerInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+ROPManagementControllerInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ROPManagementControllerInfo_1] -->|HasDynamicValue| N0001((ROPManagementControllerInfo)) 
+	N0000[ROPManagementControllerInfo_1] -->|HasControlLimit| N0002((ROPLimit)) 
+	N0000[ROPManagementControllerInfo_1] -->|HasControlLimit| N0003((WOBLimit)) 
+	N0000[ROPManagementControllerInfo_1] -->|HasControlLimit| N0004((differentialPressureLimit)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0005((stableAxialVelocityObjective)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0006((stableWOBObjective)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0007((stableDifferentialPressure)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsProvidedBy| N0008((serviceCompany)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRecommendedBy| N0009((computationUnit)) 
+	N0010[autoDriller] -->|ImplementsObjective| N0005((stableAxialVelocityObjective)) 
+	N0010[autoDriller] -->|ImplementsObjective| N0006((stableWOBObjective)) 
+	N0010[autoDriller] -->|ImplementsObjective| N0007((stableDifferentialPressure)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRecommendedFor| N0010((autoDriller)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0011((adviceComposer)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0012((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ROPManagementControllerInfo
+WHERE {
+  FILTER (
+	?Attribute000 = ROPManagementControllerInfo
+	&& 	?Attribute001 = ROPLimit
+	&& 	?Attribute002 = WOBLimit
+	&& 	?Attribute003 = differentialPressureLimit
+	&& 	?Attribute004 = stableAxialVelocityObjective
+	&& 	?Attribute005 = stableWOBObjective
+	&& 	?Attribute006 = stableDifferentialPressure
+	&& 	?Attribute007 = serviceCompany
+	&& 	?Attribute008 = computationUnit
+	&& 	?Attribute009 = stableAxialVelocityObjective
+	&& 	?Attribute010 = stableWOBObjective
+	&& 	?Attribute011 = stableDifferentialPressure
+	&& 	?Attribute012 = autoDriller
+	&& 	?Attribute013 = adviceComposer
+	&& 	?Attribute014 = scheduler
+  )
+}
+```
+## StableTorqueObjective <!-- NOUN -->
+- Display name: Stable Torque Objective
+- Parent class: [DrillingObjective](#DrillingObjective)
+- Description: 
+This Noun is used to refer to the objective of obtaining stable torque.
+- Definition set: DrillingObjective
+## StableAxialForceObjective <!-- NOUN -->
+- Display name: Stable Axial Force Objective
+- Parent class: [DrillingObjective](#DrillingObjective)
+- Description: 
+This Noun is used to refer to the objective of obtaining stable axial force.
+- Definition set: DrillingObjective
+- Examples:
+``` dwis ROPManagementControllerInfo
+DynamicDrillingSignal: ROPManagementControllerInfo
+DrillingControlAdvice: ROPManagementControllerInfo_1
+ROPManagementControllerInfo_1 HasDynamicValue ROPManagementControllerInfo
+ROPLimit: ROPLimit
+ROPManagementControllerInfo_1 HasControlLimit ROPLimit
+WOBLimit: WOBLimit
+ROPManagementControllerInfo_1 HasControlLimit WOBLimit
+DifferentialPressureLimit: differentialPressureLimit
+ROPManagementControllerInfo_1 HasControlLimit differentialPressureLimit
+StableAxialVelocityObjective: stableAxialVelocityObjective
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableAxialVelocityObjective
+StableAxialForceObjective: stableWOBObjective
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableWOBObjective
+StablePressureObjective: stableDifferentialPressure
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableDifferentialPressure
+ServiceCompany: serviceCompany
+ROPManagementControllerInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+ROPManagementControllerInfo_1 IsRecommendedBy computationUnit
+ControllerFunction: autoDriller
+autoDriller ImplementsObjective stableAxialVelocityObjective
+autoDriller ImplementsObjective stableWOBObjective
+autoDriller ImplementsObjective stableDifferentialPressure
+ROPManagementControllerInfo_1 IsRecommendedFor autoDriller
+DWISAdviceComposer: adviceComposer
+ROPManagementControllerInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+ROPManagementControllerInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ROPManagementControllerInfo_1] -->|HasDynamicValue| N0001((ROPManagementControllerInfo)) 
+	N0000[ROPManagementControllerInfo_1] -->|HasControlLimit| N0002((ROPLimit)) 
+	N0000[ROPManagementControllerInfo_1] -->|HasControlLimit| N0003((WOBLimit)) 
+	N0000[ROPManagementControllerInfo_1] -->|HasControlLimit| N0004((differentialPressureLimit)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0005((stableAxialVelocityObjective)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0006((stableWOBObjective)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0007((stableDifferentialPressure)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsProvidedBy| N0008((serviceCompany)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRecommendedBy| N0009((computationUnit)) 
+	N0010[autoDriller] -->|ImplementsObjective| N0005((stableAxialVelocityObjective)) 
+	N0010[autoDriller] -->|ImplementsObjective| N0006((stableWOBObjective)) 
+	N0010[autoDriller] -->|ImplementsObjective| N0007((stableDifferentialPressure)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsRecommendedFor| N0010((autoDriller)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0011((adviceComposer)) 
+	N0000[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0012((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ROPManagementControllerInfo
+WHERE {
+  FILTER (
+	?Attribute000 = ROPManagementControllerInfo
+	&& 	?Attribute001 = ROPLimit
+	&& 	?Attribute002 = WOBLimit
+	&& 	?Attribute003 = differentialPressureLimit
+	&& 	?Attribute004 = stableAxialVelocityObjective
+	&& 	?Attribute005 = stableWOBObjective
+	&& 	?Attribute006 = stableDifferentialPressure
+	&& 	?Attribute007 = serviceCompany
+	&& 	?Attribute008 = computationUnit
+	&& 	?Attribute009 = stableAxialVelocityObjective
+	&& 	?Attribute010 = stableWOBObjective
+	&& 	?Attribute011 = stableDifferentialPressure
+	&& 	?Attribute012 = autoDriller
+	&& 	?Attribute013 = adviceComposer
+	&& 	?Attribute014 = scheduler
+  )
+}
+```
+## WeightTransferObjective <!-- NOUN -->
+- Display name: Weight Transfer Objective
+- Parent class: [DrillingObjective](#DrillingObjective)
+- Description: 
+This Noun is used to refer to the objective of transferring weight to the bottom of the drill-stem.
+- Definition set: DrillingObjective
+- Examples:
+``` dwis pipeRockingControllerInfo
+DynamicDrillingSignal: pipeRockingControllerInfo
+DrillingControlAdvice: pipeRockingControllerInfo_1
+pipeRockingControllerInfo_1 HasDynamicValue pipeRockingControllerInfo
+WeightTransferObjective: weightTransferObjective
+pipeRockingControllerInfo_1 IsRelatedToDrillingObjective weightTransferObjective
+ServiceCompany: serviceCompany
+pipeRockingControllerInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+pipeRockingControllerInfo_1 IsRecommendedBy computationUnit
+ControllerFunction: pipeRocking
+pipeRocking ImplementsObjective weightTransferObjective
+pipeRockingControllerInfo_1 IsRecommendedFor pipeRocking
+DWISAdviceComposer: adviceComposer
+pipeRockingControllerInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+pipeRockingControllerInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pipeRockingControllerInfo_1] -->|HasDynamicValue| N0001((pipeRockingControllerInfo)) 
+	N0000[pipeRockingControllerInfo_1] -->|IsRelatedToDrillingObjective| N0002((weightTransferObjective)) 
+	N0000[pipeRockingControllerInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[pipeRockingControllerInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[pipeRocking] -->|ImplementsObjective| N0002((weightTransferObjective)) 
+	N0000[pipeRockingControllerInfo_1] -->|IsRecommendedFor| N0005((pipeRocking)) 
+	N0000[pipeRockingControllerInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[pipeRockingControllerInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pipeRockingControllerInfo
+WHERE {
+  FILTER (
+	?Attribute000 = pipeRockingControllerInfo
+	&& 	?Attribute001 = weightTransferObjective
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = weightTransferObjective
+	&& 	?Attribute005 = pipeRocking
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+## DrillingProcedure <!-- NOUN -->
+- Display name: Drilling Procedure
+- Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+This is the parent class for drilling procedures.
+- Definition set: DrillingProcedure
+## CirculationStartupProcedure <!-- NOUN -->
+- Display name: Circulation Startup Procedure
+- Parent class: [DrillingProcedure](#DrillingProcedure)
+- Description: 
+The circulation stop procedure defines how to stop the mud pumps in a way that limit potential bull-heading effects
+that could result in undesired downhole pressure conditions with regards to the geo-pressure window.
+- Definition set: DrillingProcedure
+- Examples:
+``` dwis circulationStartupProcedureInfo
+DynamicDrillingSignal: circulationStartupProcedureInfo
+DrillingStandardProcedureAdvice: circulationStartupProcedureInfo_1
+circulationStartupProcedureInfo_1 HasDynamicValue circulationStartupProcedureInfo
+CirculationStartupProcedure: circulationStartupProcedure
+circulationStartupProcedureInfo_1 IsRelatedToDrillingProcedure circulationStartupProcedure
+ServiceCompany: serviceCompany
+circulationStartupProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+circulationStartupProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure circulationStartupProcedure
+circulationStartupProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+circulationStartupProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+circulationStartupProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[circulationStartupProcedureInfo_1] -->|HasDynamicValue| N0001((circulationStartupProcedureInfo)) 
+	N0000[circulationStartupProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((circulationStartupProcedure)) 
+	N0000[circulationStartupProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[circulationStartupProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((circulationStartupProcedure)) 
+	N0000[circulationStartupProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[circulationStartupProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[circulationStartupProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?circulationStartupProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = circulationStartupProcedureInfo
+	&& 	?Attribute001 = circulationStartupProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = circulationStartupProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+## CirculationStopProcedure <!-- NOUN -->
+- Display name: Circulation Stop Procedure
+- Parent class: [DrillingProcedure](#DrillingProcedure)
+- Description: 
+The rotation startup procedure controls the steps to start the rotation of the drill-stem to reach a target rotational
+speed while attempting to avoid having too large torsional oscillations.
+- Definition set: DrillingProcedure
+- Examples:
+``` dwis circulationStopProcedureInfo
+DynamicDrillingSignal: circulationStopProcedureInfo
+DrillingStandardProcedureAdvice: circulationStopProcedureInfo_1
+circulationStopProcedureInfo_1 HasDynamicValue circulationStopProcedureInfo
+CirculationStopProcedure: circulationStopProcedure
+circulationStopProcedureInfo_1 IsRelatedToDrillingProcedure circulationStopProcedure
+ServiceCompany: serviceCompany
+circulationStopProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+circulationStopProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure circulationStopProcedure
+circulationStopProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+circulationStopProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+circulationStopProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[circulationStopProcedureInfo_1] -->|HasDynamicValue| N0001((circulationStopProcedureInfo)) 
+	N0000[circulationStopProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((circulationStopProcedure)) 
+	N0000[circulationStopProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[circulationStopProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((circulationStopProcedure)) 
+	N0000[circulationStopProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[circulationStopProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[circulationStopProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?circulationStopProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = circulationStopProcedureInfo
+	&& 	?Attribute001 = circulationStopProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = circulationStopProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+## RotationStartupProcedure <!-- NOUN -->
+- Display name: Rotation Startup Procedure
+- Parent class: [DrillingProcedure](#DrillingProcedure)
+- Description: 
+The rotation startup procedure controls the steps to start the rotation of the drill-stem to reach a target rotational
+speed while attempting to avoid having too large torsional oscillations.
+- Definition set: DrillingProcedure
+- Examples:
+``` dwis rotationStartupProcedureInfo
+DynamicDrillingSignal: rotationStartupProcedureInfo
+DrillingStandardProcedureAdvice: rotationStartupProcedureInfo_1
+rotationStartupProcedureInfo_1 HasDynamicValue rotationStartupProcedureInfo
+RotationStartupProcedure: rotationStartupProcedure
+rotationStartupProcedureInfo_1 IsRelatedToDrillingProcedure rotationStartupProcedure
+ServiceCompany: serviceCompany
+rotationStartupProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+rotationStartupProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure rotationStartupProcedure
+rotationStartupProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+rotationStartupProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+rotationStartupProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rotationStartupProcedureInfo_1] -->|HasDynamicValue| N0001((rotationStartupProcedureInfo)) 
+	N0000[rotationStartupProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((rotationStartupProcedure)) 
+	N0000[rotationStartupProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[rotationStartupProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((rotationStartupProcedure)) 
+	N0000[rotationStartupProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[rotationStartupProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[rotationStartupProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rotationStartupProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = rotationStartupProcedureInfo
+	&& 	?Attribute001 = rotationStartupProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = rotationStartupProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+## RotationStopProcedure <!-- NOUN -->
+- Display name: Rotation Stop Procedure
+- Parent class: [DrillingProcedure](#DrillingProcedure)
+- Description: 
+The rotation stop procedure controls the path for stopping the rotation of the drill-stem and remove as much torque
+along the drill-stem as possible.
+- Definition set: DrillingProcedure
+- Examples:
+``` dwis rotationStopProcedureInfo
+DynamicDrillingSignal: rotationStopProcedureInfo
+DrillingStandardProcedureAdvice: rotationStopProcedureInfo_1
+rotationStopProcedureInfo_1 HasDynamicValue rotationStopProcedureInfo
+RotationStopProcedure: rotationStopProcedure
+rotationStopProcedureInfo_1 IsRelatedToDrillingProcedure rotationStopProcedure
+ServiceCompany: serviceCompany
+rotationStopProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+rotationStopProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure rotationStopProcedure
+rotationStopProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+rotationStopProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+rotationStopProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rotationStopProcedureInfo_1] -->|HasDynamicValue| N0001((rotationStopProcedureInfo)) 
+	N0000[rotationStopProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((rotationStopProcedure)) 
+	N0000[rotationStopProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[rotationStopProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((rotationStopProcedure)) 
+	N0000[rotationStopProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[rotationStopProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[rotationStopProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rotationStopProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = rotationStopProcedureInfo
+	&& 	?Attribute001 = rotationStopProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = rotationStopProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+## HoistProcedure <!-- NOUN -->
+- Display name: Hoist Procedure
+- Parent class: [DrillingProcedure](#DrillingProcedure)
+- Description: 
+The hoist procedure is used to move the top of the drill-stem from one elevation to another elevation while minimizing
+the side effects of swab and surge. 
+- Definition set: DrillingProcedure
+- Examples:
+``` dwis hoistProcedureInfo
+DynamicDrillingSignal: hoistProcedureInfo
+DrillingStandardProcedureAdvice: hoistProcedureInfo_1
+hoistProcedureInfo_1 HasDynamicValue hoistProcedureInfo
+HoistProcedure: hoistProcedure
+hoistProcedureInfo_1 IsRelatedToDrillingProcedure hoistProcedure
+ServiceCompany: serviceCompany
+hoistProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+hoistProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure hoistProcedure
+hoistProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+hoistProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+hoistProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hoistProcedureInfo_1] -->|HasDynamicValue| N0001((hoistProcedureInfo)) 
+	N0000[hoistProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((hoistProcedure)) 
+	N0000[hoistProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[hoistProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((hoistProcedure)) 
+	N0000[hoistProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[hoistProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[hoistProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hoistProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = hoistProcedureInfo
+	&& 	?Attribute001 = hoistProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = hoistProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+## TagBottomProcedure <!-- NOUN -->
+- Display name: Tag Bottom Procedure
+- Parent class: [DrillingProcedure](#DrillingProcedure)
+- Description: 
+The tag bottom procedure is used to tag the bottom hole and establish the drilling parameters.
+- Definition set: DrillingProcedure
+- Examples:
+``` dwis tagBottomProcedureInfo
+DynamicDrillingSignal: tagBottomProcedureInfo
+DrillingStandardProcedureAdvice: tagBottomProcedureInfo_1
+tagBottomProcedureInfo_1 HasDynamicValue tagBottomProcedureInfo
+TagBottomProcedure: tagBottomProcedure
+tagBottomProcedureInfo_1 IsRelatedToDrillingProcedure tagBottomProcedure
+ServiceCompany: serviceCompany
+tagBottomProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+tagBottomProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure tagBottomProcedure"
+tagBottomProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+tagBottomProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+tagBottomProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[tagBottomProcedureInfo_1] -->|HasDynamicValue| N0001((tagBottomProcedureInfo)) 
+	N0000[tagBottomProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((tagBottomProcedure)) 
+	N0000[tagBottomProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[tagBottomProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0006((tagBottomProcedure")) 
+	N0000[tagBottomProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[tagBottomProcedureInfo_1] -->|IsProvidedTo| N0007((adviceComposer)) 
+	N0000[tagBottomProcedureInfo_1] -->|IsProvidedTo| N0008((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?tagBottomProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = tagBottomProcedureInfo
+	&& 	?Attribute001 = tagBottomProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = tagBottomProcedure"
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+## ReciprocationProcedure <!-- NOUN -->
+- Display name: Reciprocation Procedure
+- Parent class: [DrillingProcedure](#DrillingProcedure)
+- Description: 
+The reciprocation procedure is used to ream up and down with the same stand. The main purpose is often to clean the hole
+while avoiding to wash out the formation. 
+- Definition set: DrillingProcedure
+- Examples:
+``` dwis reciprocationProcedureInfo
+DynamicDrillingSignal: reciprocationProcedureInfo
+DrillingStandardProcedureAdvice: reciprocationProcedureInfo_1
+reciprocationProcedureInfo_1 HasDynamicValue reciprocationProcedureInfo
+ReciprocationProcedure: reciprocationProcedure
+reciprocationProcedureInfo_1 IsRelatedToDrillingProcedure reciprocationProcedure
+ServiceCompany: serviceCompany
+reciprocationProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+reciprocationProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure reciprocationProcedure
+reciprocationProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+reciprocationProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+reciprocationProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[reciprocationProcedureInfo_1] -->|HasDynamicValue| N0001((reciprocationProcedureInfo)) 
+	N0000[reciprocationProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((reciprocationProcedure)) 
+	N0000[reciprocationProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[reciprocationProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((reciprocationProcedure)) 
+	N0000[reciprocationProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[reciprocationProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[reciprocationProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?reciprocationProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = reciprocationProcedureInfo
+	&& 	?Attribute001 = reciprocationProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = reciprocationProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+## FrictionTestProcedure <!-- NOUN -->
+- Display name: Friction Test Procedure
+- Parent class: [DrillingProcedure](#DrillingProcedure)
+- Description: 
+A friction test procedure is used to measure the free rotating weight and torque and the pick-up and slack-off weights.
+- Definition set: DrillingProcedure
+- Examples:
+``` dwis frictionTestProcedureInfo
+DynamicDrillingSignal: frictionTestProcedureInfo
+DrillingStandardProcedureAdvice: frictionTestProcedureInfo_1
+frictionTestProcedureInfo_1 HasDynamicValue frictionTestProcedureInfo
+FrictionTestProcedure: frictionTestProcedure
+frictionTestProcedureInfo_1 IsRelatedToDrillingProcedure frictionTestProcedure
+ServiceCompany: serviceCompany
+frictionTestProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+frictionTestProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure frictionTestProcedure
+frictionTestProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+frictionTestProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+frictionTestProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[frictionTestProcedureInfo_1] -->|HasDynamicValue| N0001((frictionTestProcedureInfo)) 
+	N0000[frictionTestProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((frictionTestProcedure)) 
+	N0000[frictionTestProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[frictionTestProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((frictionTestProcedure)) 
+	N0000[frictionTestProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[frictionTestProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[frictionTestProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?frictionTestProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = frictionTestProcedureInfo
+	&& 	?Attribute001 = frictionTestProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = frictionTestProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+## SlowCirculationRateProcedure <!-- NOUN -->
+- Display name: Slow Circulation Rate Procedure
+- Parent class: [DrillingProcedure](#DrillingProcedure)
+- Description: 
+The slow circulation rate procedure is used to measure the pressure losses of the drilling system in conditions close
+to what would be necessary while circulating out a kick.
+- Definition set: DrillingProcedure
+- Examples:
+``` dwis slowCirculationRateProcedureInfo
+DynamicDrillingSignal: slowCirculationRateProcedureInfo
+DrillingStandardProcedureAdvice: slowCirculationRateProcedureInfo_1
+slowCirculationRateProcedureInfo_1 HasDynamicValue slowCirculationRateProcedureInfo
+SlowCirculationRateProcedure: slowCirculationRateProcedure
+slowCirculationRateProcedureInfo_1 IsRelatedToDrillingProcedure slowCirculationRateProcedure
+ServiceCompany: serviceCompany
+slowCirculationRateProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+slowCirculationRateProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure slowCirculationRateProcedure
+slowCirculationRateProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+slowCirculationRateProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+slowCirculationRateProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[slowCirculationRateProcedureInfo_1] -->|HasDynamicValue| N0001((slowCirculationRateProcedureInfo)) 
+	N0000[slowCirculationRateProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((slowCirculationRateProcedure)) 
+	N0000[slowCirculationRateProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[slowCirculationRateProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((slowCirculationRateProcedure)) 
+	N0000[slowCirculationRateProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[slowCirculationRateProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[slowCirculationRateProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?slowCirculationRateProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = slowCirculationRateProcedureInfo
+	&& 	?Attribute001 = slowCirculationRateProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = slowCirculationRateProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+## PressureIntegrityTestProcedure <!-- NOUN -->
+- Display name: Pressure Integrity Test Procedure
+- Parent class: [DrillingProcedure](#DrillingProcedure)
+- Description: 
+The pressure integrity test procedure is used to either check that the formation can hold the maximum expected downhole
+pressure (formation integrity test) or to test the strength of the formation and the minimum horizontal stress (leak-off test and 
+extended leakoff test). 
+- Definition set: DrillingProcedure
+- Examples:
+``` dwis pressureIntegrityTestProcedureInfo
+DynamicDrillingSignal: pressureIntegrityTestProcedureInfo
+DrillingStandardProcedureAdvice: pressureIntegrityTestProcedureInfo_1
+pressureIntegrityTestProcedureInfo_1 HasDynamicValue pressureIntegrityTestProcedureInfo
+PressureIntegrityTestProcedure: pressureIntegrityTestProcedure
+pressureIntegrityTestProcedureInfo_1 IsRelatedToDrillingProcedure pressureIntegrityTestProcedure
+ServiceCompany: serviceCompany
+pressureIntegrityTestProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+pressureIntegrityTestProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure pressureIntegrityTestProcedure
+pressureIntegrityTestProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+pressureIntegrityTestProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+pressureIntegrityTestProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pressureIntegrityTestProcedureInfo_1] -->|HasDynamicValue| N0001((pressureIntegrityTestProcedureInfo)) 
+	N0000[pressureIntegrityTestProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((pressureIntegrityTestProcedure)) 
+	N0000[pressureIntegrityTestProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[pressureIntegrityTestProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((pressureIntegrityTestProcedure)) 
+	N0000[pressureIntegrityTestProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[pressureIntegrityTestProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[pressureIntegrityTestProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pressureIntegrityTestProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = pressureIntegrityTestProcedureInfo
+	&& 	?Attribute001 = pressureIntegrityTestProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = pressureIntegrityTestProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+## FlowCheckProcedure <!-- NOUN -->
+- Display name: Flow Check Procedure
+- Parent class: [DrillingProcedure](#DrillingProcedure)
+- Description: 
+The flow-check procedure is used to check the well is stable (no influx of formation fluids) while ensuring that the
+drill-stem will not get stuck during the test.
+- Definition set: DrillingProcedure
+- Examples:
+``` dwis flowCheckProcedureInfo
+DynamicDrillingSignal: flowCheckProcedureInfo
+DrillingStandardProcedureAdvice: flowCheckProcedureInfo_1
+flowCheckProcedureInfo_1 HasDynamicValue flowCheckProcedureInfo
+FlowCheckProcedure: flowCheckProcedure
+flowCheckProcedureInfo_1 IsRelatedToDrillingProcedure flowCheckProcedure
+ServiceCompany: serviceCompany
+flowCheckProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+flowCheckProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure flowCheckProcedure
+flowCheckProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+flowCheckProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+flowCheckProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[flowCheckProcedureInfo_1] -->|HasDynamicValue| N0001((flowCheckProcedureInfo)) 
+	N0000[flowCheckProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((flowCheckProcedure)) 
+	N0000[flowCheckProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[flowCheckProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((flowCheckProcedure)) 
+	N0000[flowCheckProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[flowCheckProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[flowCheckProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?flowCheckProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = flowCheckProcedureInfo
+	&& 	?Attribute001 = flowCheckProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = flowCheckProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+## CementingProcedure <!-- NOUN -->
+- Display name: Cementing Procedure
+- Parent class: [DrillingProcedure](#DrillingProcedure)
+- Description: 
+The cementing procedure is used to displace the correct amount of cement at the right position while cleaning the borehole
+to ensure good conditions for the cement setting.
+- Definition set: DrillingProcedure
+- Examples:
+``` dwis cementProcedureInfo
+DynamicDrillingSignal: cementProcedureInfo
+DrillingStandardProcedureAdvice: cementProcedureInfo_1
+cementProcedureInfo_1 HasDynamicValue cementProcedureInfo
+CementingProcedure: cementingProcedure
+cementProcedureInfo_1 IsRelatedToDrillingProcedure cementingProcedure
+ServiceCompany: serviceCompany
+cementProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+cementProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure cementingProcedure
+cementProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+cementProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+cementProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[cementProcedureInfo_1] -->|HasDynamicValue| N0001((cementProcedureInfo)) 
+	N0000[cementProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((cementingProcedure)) 
+	N0000[cementProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[cementProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((cementingProcedure)) 
+	N0000[cementProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[cementProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[cementProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?cementProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = cementProcedureInfo
+	&& 	?Attribute001 = cementingProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = cementingProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+## DownlinkingProcedure <!-- NOUN -->
+- Display name: Downlinking Procedure
+- Parent class: [DrillingProcedure](#DrillingProcedure)
+- Description: 
+The downlinking procedure is used to manipulate the flowrate/pressure or rotational speed to send a coded message to
+the rotary steerable system.
+- Definition set: DrillingProcedure
+- Examples:
+``` dwis downlinkProcedureInfo
+DynamicDrillingSignal: downlinkProcedureInfo
+DrillingStandardProcedureAdvice: downlinkProcedureInfo_1
+downlinkProcedureInfo_1 HasDynamicValue downlinkProcedureInfo
+DownlinkingProcedure: downlinkingProcedure
+downlinkProcedureInfo_1 IsRelatedToDrillingProcedure downlinkingProcedure
+ServiceCompany: serviceCompany
+downlinkProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+downlinkProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure downlinkingProcedure
+downlinkProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+downlinkProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+downlinkProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[downlinkProcedureInfo_1] -->|HasDynamicValue| N0001((downlinkProcedureInfo)) 
+	N0000[downlinkProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((downlinkingProcedure)) 
+	N0000[downlinkProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[downlinkProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((downlinkingProcedure)) 
+	N0000[downlinkProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[downlinkProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[downlinkProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?downlinkProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = downlinkProcedureInfo
+	&& 	?Attribute001 = downlinkingProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = downlinkingProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+## ToolfaceOrientationProcedure <!-- NOUN -->
+- Display name: Toolface Orientation Procedure
+- Parent class: [DrillingProcedure](#DrillingProcedure)
+- Description: 
+The toolface orientation procedure is used to manipulate the top of string angular position to ensure that the downhole
+motor toolface is set to a desired set-point.
+- Definition set: DrillingProcedure
+- Examples:
+``` dwis toolfaceOrientationProcedureInfo
+DynamicDrillingSignal: toolfaceOrientationProcedureInfo
+DrillingStandardProcedureAdvice: toolfaceOrientationProcedureInfo_1
+toolfaceOrientationProcedureInfo_1 HasDynamicValue toolfaceOrientationProcedureInfo
+ToolfaceOrientationProcedure: toolfaceOrientationProcedure
+toolfaceOrientationProcedureInfo_1 IsRelatedToDrillingProcedure toolfaceOrientationProcedure
+ServiceCompany: serviceCompany
+toolfaceOrientationProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+toolfaceOrientationProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction ImplementsProcedure toolfaceOrientationProcedure
+toolfaceOrientationProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+toolfaceOrientationProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+toolfaceOrientationProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[toolfaceOrientationProcedureInfo_1] -->|HasDynamicValue| N0001((toolfaceOrientationProcedureInfo)) 
+	N0000[toolfaceOrientationProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0002((toolfaceOrientationProcedure)) 
+	N0000[toolfaceOrientationProcedureInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[toolfaceOrientationProcedureInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[procedureFunction] -->|ImplementsProcedure| N0002((toolfaceOrientationProcedure)) 
+	N0000[toolfaceOrientationProcedureInfo_1] -->|IsRecommendedFor| N0005((procedureFunction)) 
+	N0000[toolfaceOrientationProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[toolfaceOrientationProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?toolfaceOrientationProcedureInfo
+WHERE {
+  FILTER (
+	?Attribute000 = toolfaceOrientationProcedureInfo
+	&& 	?Attribute001 = toolfaceOrientationProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = toolfaceOrientationProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
 ## DWISNoun <!-- NOUN -->
 - Display name: DWIS noun
 - Description: 
@@ -6708,7 +10695,6 @@ PREFIX ddhub: <http://ddhub.no/>
 PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?signal_1
 WHERE {
-	?acceleration_1 ddhub:IsOfMeasurableQuantity ?Attribute000 .
   FILTER (
 	?Attribute000 = AccelerationDrillingQuantity
   )
@@ -17738,7 +21724,6 @@ SELECT ?dataPoint
 WHERE {
 	?dataPoint rdf:type ddhub:DrillingDataPoint .
 	?uncertainty rdf:type ddhub:SignalUncertainty .
-	?dataPoint ddhub:HasUncertainty ?Attribute000 .
   FILTER (
 	?Attribute000 = uncertainty
   )
@@ -17789,15 +21774,10 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:GaussianUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?Mean#01 rdf:type ddhub:DrillingDataPoint .
 	?StdDev#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasUncertaintyMean ?Attribute001 .
-	?GU#01 ddhub:HasUncertaintyStandardDeviation ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
 	?Signal#02 rdf:type ddhub:DynamicDrillingSignal .
-	?Mean#01 ddhub:HasDynamicValue ?Attribute003 .
-	?StdDev#01 ddhub:HasDynamicValue ?Attribute004 .
   FILTER (
 	?Attribute000 = GU#01
 	&& 	?Attribute001 = Mean#01
@@ -17844,11 +21824,8 @@ SELECT ?Signal#01
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:GenericUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?Histo#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasUncertaintyHistogram ?Attribute001 .
 	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
-	?Histo#01 ddhub:HasDynamicValue ?Attribute002 .
   FILTER (
 	?Attribute000 = GU#01
 	&& 	?Attribute001 = Histo#01
@@ -17901,15 +21878,10 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:MinMaxUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?Min#01 rdf:type ddhub:DrillingDataPoint .
 	?Max#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasUncertaintyMin ?Attribute001 .
-	?GU#01 ddhub:HasUncertaintyMax ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
 	?Signal#02 rdf:type ddhub:DynamicDrillingSignal .
-	?Min#01 ddhub:HasDynamicValue ?Attribute003 .
-	?Max#01 ddhub:HasDynamicValue ?Attribute004 .
   FILTER (
 	?Attribute000 = GU#01
 	&& 	?Attribute001 = Min#01
@@ -17971,15 +21943,10 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:FullScaleUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?FullScale#01 rdf:type ddhub:DrillingDataPoint .
 	?ErrProp#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasFullScale ?Attribute001 .
-	?GU#01 ddhub:HasProportionError ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DrillingSignal .
 	?Signal#02 rdf:type ddhub:DrillingSignal .
-	?FullScale#01 ddhub:HasStaticValue ?Attribute003 .
-	?ErrProp#01 ddhub:HasStaticValue ?Attribute004 .
   FILTER (
 	?Attribute000 = GU#01
 	&& 	?Attribute001 = FullScale#01
@@ -18041,15 +22008,10 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:SensorUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?Acc#01 rdf:type ddhub:DrillingDataPoint .
 	?Prec#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasUncertaintyAccuracy ?Attribute001 .
-	?GU#01 ddhub:HasUncertaintyPrecision ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DrillingSignal .
 	?Signal#02 rdf:type ddhub:DrillingSignal .
-	?Acc#01 ddhub:HasStaticValue ?Attribute003 .
-	?Prec#01 ddhub:HasStaticValue ?Attribute004 .
   FILTER (
 	?Attribute000 = GU#01
 	&& 	?Attribute001 = Acc#01
@@ -41083,7 +45045,8 @@ It is expected that the `DrillingDataPoint` is a Boolean value.
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -41097,7 +45060,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
-	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002(("PackOffFDIR")) 
+	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002((packOffIncident)) 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
@@ -41115,17 +45078,13 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
-	?packOffDetectionAndReaction ddhub:HasFunction ?Attribute000 .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
-	?DCS ddhub:IsProvidedBy ?Attribute001 .
 	?DCS rdf:type ddhub:DataProvider .
-	?packOffDetectionAndReaction ddhub:IsProvidedBy ?Attribute002 .
 	?enableSignalPackOffDetectionFDIR rdf:type ddhub:Command .
 	?enableSignalPackOffDetectionFDIR rdf:type ddhub:BooleanDataType .
-	?enableSignalPackOffDetectionFDIR ddhub:IsEnablingSignalFor ?Attribute003 .
   FILTER (
-	?Attribute000 = "PackOffFDIR"
+	?Attribute000 = packOffIncident
 	&& 	?Attribute001 = Contractor
 	&& 	?Attribute002 = DCS
 	&& 	?Attribute003 = packOffDetectionAndReaction
@@ -41145,7 +45104,8 @@ not. It is expected that the `DrillingDataPoint` is a Boolean value.
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -41159,7 +45119,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
-	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002(("PackOffFDIR")) 
+	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002((packOffIncident)) 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
@@ -41177,17 +45137,13 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
-	?packOffDetectionAndReaction ddhub:HasFunction ?Attribute000 .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
-	?DCS ddhub:IsProvidedBy ?Attribute001 .
 	?DCS rdf:type ddhub:DataProvider .
-	?packOffDetectionAndReaction ddhub:IsProvidedBy ?Attribute002 .
 	?activatedSignalPackOffDetectionFDIR rdf:type ddhub:ComputedData .
 	?activatedSignalPackOffDetectionFDIR rdf:type ddhub:BooleanDataType .
-	?activatedSignalPackOffDetectionFDIR ddhub:IsEnablingSignalFor ?Attribute003 .
   FILTER (
-	?Attribute000 = "PackOffFDIR"
+	?Attribute000 = packOffIncident
 	&& 	?Attribute001 = Contractor
 	&& 	?Attribute002 = DCS
 	&& 	?Attribute003 = packOffDetectionAndReaction
@@ -41211,7 +45167,8 @@ is ignored.
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -41228,7 +45185,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
-	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002(("PackOffFDIR")) 
+	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002((packOffIncident)) 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
@@ -41249,20 +45206,15 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
-	?packOffDetectionAndReaction ddhub:HasFunction ?Attribute000 .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
-	?DCS ddhub:IsProvidedBy ?Attribute001 .
 	?DCS rdf:type ddhub:DataProvider .
-	?packOffDetectionAndReaction ddhub:IsProvidedBy ?Attribute002 .
 	?allowEnablementSignalPackOffDetectionFDIR rdf:type ddhub:ComputedData .
 	?allowEnablementSignalPackOffDetectionFDIR rdf:type ddhub:BooleanDataType .
-	?allowEnablementSignalPackOffDetectionFDIR ddhub:IsEnablingSignalFor ?Attribute003 .
 	?enableSignalPackOffDetectionFDIR rdf:type ddhub:Command .
 	?enableSignalPackOffDetectionFDIR rdf:type ddhub:BooleanDataType .
-	?enableSignalPackOffDetectionFDIR ddhub:IsEnablingSignalFor ?Attribute004 .
   FILTER (
-	?Attribute000 = "PackOffFDIR"
+	?Attribute000 = packOffIncident
 	&& 	?Attribute001 = Contractor
 	&& 	?Attribute002 = DCS
 	&& 	?Attribute003 = packOffDetectionAndReaction
@@ -41289,7 +45241,8 @@ within the limits, but if the limits are applied then the idle state is false, b
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -41306,7 +45259,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
-	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002(("PackOffFDIR")) 
+	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002((packOffIncident)) 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
@@ -41327,20 +45280,15 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
-	?packOffDetectionAndReaction ddhub:HasFunction ?Attribute000 .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
-	?DCS ddhub:IsProvidedBy ?Attribute001 .
 	?DCS rdf:type ddhub:DataProvider .
-	?packOffDetectionAndReaction ddhub:IsProvidedBy ?Attribute002 .
 	?idlingSignalPackOffDetectionFDIR rdf:type ddhub:ComputedData .
 	?idlingSignalPackOffDetectionFDIR rdf:type ddhub:BooleanDataType .
-	?idlingSignalPackOffDetectionFDIR ddhub:IsIdlingSignalFor ?Attribute003 .
 	?activatedSignalPackOffDetectionFDIR rdf:type ddhub:ComputedData .
 	?activatedSignalPackOffDetectionFDIR rdf:type ddhub:BooleanDataType .
-	?activatedSignalPackOffDetectionFDIR ddhub:IsEnablingSignalFor ?Attribute004 .
   FILTER (
-	?Attribute000 = "PackOffFDIR"
+	?Attribute000 = packOffIncident
 	&& 	?Attribute001 = Contractor
 	&& 	?Attribute002 = DCS
 	&& 	?Attribute003 = packOffDetectionAndReaction
@@ -41365,7 +45313,8 @@ detection of an incident.
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -41379,7 +45328,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
-	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002(("PackOffFDIR")) 
+	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002((packOffIncident)) 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
@@ -41397,17 +45346,13 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
-	?packOffDetectionAndReaction ddhub:HasFunction ?Attribute000 .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
-	?DCS ddhub:IsProvidedBy ?Attribute001 .
 	?DCS rdf:type ddhub:DataProvider .
-	?packOffDetectionAndReaction ddhub:IsProvidedBy ?Attribute002 .
 	?extraMarginUserDefinedSignalPackOffDetectionFDIR rdf:type ddhub:Command .
 	?extraMarginUserDefinedSignalPackOffDetectionFDIR rdf:type ddhub:ContinuousDataType .
-	?extraMarginUserDefinedSignalPackOffDetectionFDIR ddhub:IsUserControllableExtraMarginSignalFor ?Attribute003 .
   FILTER (
-	?Attribute000 = "PackOffFDIR"
+	?Attribute000 = packOffIncident
 	&& 	?Attribute001 = Contractor
 	&& 	?Attribute002 = DCS
 	&& 	?Attribute003 = packOffDetectionAndReaction
@@ -41428,7 +45373,8 @@ extra margin signal is used or not by the FDIR function. This signal is expected
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -41445,7 +45391,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
-	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002(("PackOffFDIR")) 
+	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002((packOffIncident)) 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
@@ -41466,20 +45412,15 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
-	?packOffDetectionAndReaction ddhub:HasFunction ?Attribute000 .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
-	?DCS ddhub:IsProvidedBy ?Attribute001 .
 	?DCS rdf:type ddhub:DataProvider .
-	?packOffDetectionAndReaction ddhub:IsProvidedBy ?Attribute002 .
 	?usedExtraMarginSignal rdf:type ddhub:ComputedData .
 	?usedExtraMarginSignal rdf:type ddhub:BooleanDataType .
-	?usedExtraMarginSignal ddhub:IsUsedExtraMarginSignalFor ?Attribute003 .
 	?extraMarginUserDefinedSignalPackOffDetectionFDIR rdf:type ddhub:Command .
 	?extraMarginUserDefinedSignalPackOffDetectionFDIR rdf:type ddhub:ContinuousDataType .
-	?extraMarginUserDefinedSignalPackOffDetectionFDIR ddhub:IsUserControllableExtraMarginSignalFor ?Attribute004 .
   FILTER (
-	?Attribute000 = "PackOffFDIR"
+	?Attribute000 = packOffIncident
 	&& 	?Attribute001 = Contractor
 	&& 	?Attribute002 = DCS
 	&& 	?Attribute003 = packOffDetectionAndReaction
@@ -41503,7 +45444,8 @@ triggered. For instance, a pack-off FDIR may be active but would react only if t
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -41520,7 +45462,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
-	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002(("PackOffFDIR")) 
+	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002((packOffIncident)) 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
@@ -41541,20 +45483,15 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
-	?packOffDetectionAndReaction ddhub:HasFunction ?Attribute000 .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
-	?DCS ddhub:IsProvidedBy ?Attribute001 .
 	?DCS rdf:type ddhub:DataProvider .
-	?packOffDetectionAndReaction ddhub:IsProvidedBy ?Attribute002 .
 	?armedSignalPackOffDetectionFDIR rdf:type ddhub:ComputedData .
 	?armedSignalPackOffDetectionFDIR rdf:type ddhub:BooleanValue .
-	?armedSignalPackOffDetectionFDIR ddhub:IsArmedSignalFor ?Attribute003 .
 	?activatedSignalPackOffDetectionFDIR rdf:type ddhub:ComputedData .
 	?activatedSignalPackOffDetectionFDIR rdf:type ddhub:BooleanDataType .
-	?activatedSignalPackOffDetectionFDIR ddhub:IsEnablingSignalFor ?Attribute004 .
   FILTER (
-	?Attribute000 = "PackOffFDIR"
+	?Attribute000 = packOffIncident
 	&& 	?Attribute001 = Contractor
 	&& 	?Attribute002 = DCS
 	&& 	?Attribute003 = packOffDetectionAndReaction
@@ -41578,7 +45515,8 @@ back to the end-user, in case of failure of the recovery procedure or at the end
 - Examples:
  ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -41592,7 +45530,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
-	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002(("PackOffFDIR")) 
+	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002((packOffIncident)) 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
@@ -41610,17 +45548,13 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
-	?packOffDetectionAndReaction ddhub:HasFunction ?Attribute000 .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
-	?DCS ddhub:IsProvidedBy ?Attribute001 .
 	?DCS rdf:type ddhub:DataProvider .
-	?packOffDetectionAndReaction ddhub:IsProvidedBy ?Attribute002 .
 	?triggeredSignalPackOffDetectionFDIR rdf:type ddhub:ComputedData .
 	?triggeredSignalPackOffDetectionFDIR rdf:type ddhub:BooleanValue .
-	?triggeredSignalPackOffDetectionFDIR ddhub:IsTriggeredSignalFor ?Attribute003 .
   FILTER (
-	?Attribute000 = "PackOffFDIR"
+	?Attribute000 = packOffIncident
 	&& 	?Attribute001 = Contractor
 	&& 	?Attribute002 = DCS
 	&& 	?Attribute003 = packOffDetectionAndReaction
@@ -41640,7 +45574,8 @@ This verb is used to indicate that a `DrillingDataPoint` tells whether the isola
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -41657,7 +45592,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
-	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002(("PackOffFDIR")) 
+	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002((packOffIncident)) 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
@@ -41678,20 +45613,15 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
-	?packOffDetectionAndReaction ddhub:HasFunction ?Attribute000 .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
-	?DCS ddhub:IsProvidedBy ?Attribute001 .
 	?DCS rdf:type ddhub:DataProvider .
-	?packOffDetectionAndReaction ddhub:IsProvidedBy ?Attribute002 .
 	?idleAfterTriggeredSignalPackOffDetectionFDIR rdf:type ddhub:ComputedData .
 	?idleAfterTriggeredSignalPackOffDetectionFDIR rdf:type ddhub:BooleanValue .
-	?idleAfterTriggeredSignalPackOffDetectionFDIR ddhub:IsIdlingAfterTriggeredSignalFor ?Attribute003 .
 	?triggeredSignalPackOffDetectionFDIR rdf:type ddhub:ComputedData .
 	?triggeredSignalPackOffDetectionFDIR rdf:type ddhub:BooleanValue .
-	?triggeredSignalPackOffDetectionFDIR ddhub:IsTriggeredSignalFor ?Attribute004 .
   FILTER (
-	?Attribute000 = "PackOffFDIR"
+	?Attribute000 = packOffIncident
 	&& 	?Attribute001 = Contractor
 	&& 	?Attribute002 = DCS
 	&& 	?Attribute003 = packOffDetectionAndReaction
@@ -41715,7 +45645,8 @@ describe the impact of the function on the drilling process. This signal is supp
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -41729,7 +45660,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
-	N0000[packOffDetectionAndReaction] -->|HasFunction| N0002(("PackOffFDIR")) 
+	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002((packOffIncident)) 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005((Contractor)) 
@@ -41747,17 +45678,13 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
-	?packOffDetectionAndReaction ddhub:HasFunction ?Attribute000 .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
-	?DCS ddhub:IsProvidedBy ?Attribute001 .
 	?DCS rdf:type ddhub:DataProvider .
-	?packOffDetectionAndReaction ddhub:IsProvidedBy ?Attribute002 .
 	?impactDescriptionSignalPackOffDetectionFDIR rdf:type ddhub:Command .
 	?impactDescriptionSignalPackOffDetectionFDIR rdf:type ddhub:StringDataType .
-	?impactDescriptionSignalPackOffDetectionFDIR ddhub:IsImpactDescriptionSignalFor ?Attribute003 .
   FILTER (
-	?Attribute000 = "PackOffFDIR"
+	?Attribute000 = packOffIncident
 	&& 	?Attribute001 = Contractor
 	&& 	?Attribute002 = DCS
 	&& 	?Attribute003 = packOffDetectionAndReaction
@@ -41766,6 +45693,116 @@ WHERE {
 ```
 This example describes a `Command` signal of an `FDIRFunction` that is used to inform the ADCS about the impact of
 triggering the FDIR function.
+## IsRecommendedBy <!-- VERB -->
+- Display name: Is Recommended By
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [AdvisorySystemAdvice](#AdvisorySystemAdvice)
+- Object class: [ComputationUnit](#ComputationUnit)
+- Definition set: AdvisorySystemAdvice
+- Description: 
+Indicates that the AdvisorySystemAdvice is recommended by an Advisor
+- Examples:
+``` dwis toolfaceOrientationProcedureInfo
+DynamicDrillingSignal: toolfaceOrientationProcedureInfo
+ToolfaceOrientationProcedureAdvice: toolfaceOrientationProcedureInfo_1
+toolfaceOrientationProcedureInfo_1 HasDynamicValue toolfaceOrientationProcedureInfo
+ServiceCompany: serviceCompany
+toolfaceOrientationProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+toolfaceOrientationProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction: procedureFunction
+procedureFunction.HasFunction = "ToolfaceOrientationProcedure"
+toolfaceOrientationProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer: adviceComposer
+toolfaceOrientationProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler: scheduler
+toolfaceOrientationProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[toolfaceOrientationProcedureInfo_1] -->|HasDynamicValue| N0001((toolfaceOrientationProcedureInfo)) 
+	N0000[toolfaceOrientationProcedureInfo_1] -->|IsProvidedBy| N0002((serviceCompany)) 
+	N0000[toolfaceOrientationProcedureInfo_1] -->|IsRecommendedBy| N0003((computationUnit)) 
+	N0004[procedureFunction] -->|HasFunction| N0005(("ToolfaceOrientationProcedure")) 
+	N0000[toolfaceOrientationProcedureInfo_1] -->|IsRecommendedFor| N0004((procedureFunction)) 
+	N0000[toolfaceOrientationProcedureInfo_1] -->|IsProvidedTo| N0006((adviceComposer)) 
+	N0000[toolfaceOrientationProcedureInfo_1] -->|IsProvidedTo| N0007((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?toolfaceOrientationProcedureInfo
+WHERE {
+	?procedureFunction ddhub:HasFunction ?Attribute003 .
+  FILTER (
+	?Attribute000 = toolfaceOrientationProcedureInfo
+	&& 	?Attribute001 = serviceCompany
+	&& 	?Attribute002 = computationUnit
+	&& 	?Attribute003 = "ToolfaceOrientationProcedure"
+	&& 	?Attribute004 = procedureFunction
+	&& 	?Attribute005 = adviceComposer
+	&& 	?Attribute006 = scheduler
+  )
+}
+```
+## IsRecommendedFor <!-- VERB -->
+- Display name: Is Recommended For
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [AdvisorySystemAdvice](#AdvisorySystemAdvice)
+- Object class: [ActivableFunction](#ActivableFunction)
+- Definition set: AdvisorySystemAdvice
+- Description: 
+Indicates that the AdvisorySystemAdvice is recommended for an ADCS Activable Function
+- Examples:
+``` dwis toolfaceOrientationProcedureInfo
+DynamicDrillingSignal: toolfaceOrientationProcedureInfo
+ToolfaceOrientationProcedureAdvice: toolfaceOrientationProcedureInfo_1
+toolfaceOrientationProcedureInfo_1 HasDynamicValue toolfaceOrientationProcedureInfo
+ProcedureFunction: procedureFunction
+procedureFunction.HasFunction = "ToolfaceOrientationProcedure"
+toolfaceOrientationProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISADCSInterface: ADCSInterface
+toolfaceOrientationProcedureInfo_1 IsProvidedTo ADCSInterface
+DWISAdviceComposer: adviceComposer
+toolfaceOrientationProcedureInfo_1 IsProvidedBy adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[toolfaceOrientationProcedureInfo_1] -->|HasDynamicValue| N0001((toolfaceOrientationProcedureInfo)) 
+	N0002[procedureFunction] -->|HasFunction| N0003(("ToolfaceOrientationProcedure")) 
+	N0000[toolfaceOrientationProcedureInfo_1] -->|IsRecommendedFor| N0002((procedureFunction)) 
+	N0000[toolfaceOrientationProcedureInfo_1] -->|IsProvidedTo| N0004((ADCSInterface)) 
+	N0000[toolfaceOrientationProcedureInfo_1] -->|IsProvidedBy| N0005((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?toolfaceOrientationProcedureInfo
+WHERE {
+	?procedureFunction ddhub:HasFunction ?Attribute001 .
+  FILTER (
+	?Attribute000 = toolfaceOrientationProcedureInfo
+	&& 	?Attribute001 = "ToolfaceOrientationProcedure"
+	&& 	?Attribute002 = procedureFunction
+	&& 	?Attribute003 = ADCSInterface
+	&& 	?Attribute004 = adviceComposer
+  )
+}
+```
+## HasControlLimit <!-- VERB -->
+- Display name: Has Control Limit
+- Parent verb: [IsRelatedToDrillingLimit](#IsRelatedToDrillingLimit)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingLimit](#DrillingLimit)
+- Definition set: AdvisorySystemAdvice
+- Description: 
+This Verb is used to indicate that a drilling data point has a control limit.
 ## IsDependentOn <!-- VERB -->
 - Display name: IsDependentOn
 - Parent verb: [DWISVerb](#DWISVerb)
@@ -41812,12 +45849,6 @@ WHERE {
 	?DerrickFloorElevation rdf:type ddhub:DerivedMeasurement .
 	?HeaveElevation rdf:type ddhub:Measurement .
 	?TideElevation rdf:type ddhub:Measurement .
-	?DerrickFloorElevation ddhub:IsOfMeasurableQuantity ?Attribute000 .
-	?DerrickFloorElevation ddhub:IsPhysicallyLocatedAt ?Attribute001 .
-	?HeaveElevation ddhub:IsOfMeasurableQuantity ?Attribute002 .
-	?TideElevation ddhub:IsOfMeasurableQuantity ?Attribute003 .
-	?DerrickFloorElevation ddhub:IsDependentOn ?Attribute004 .
-	?DerrickFloorElevation ddhub:IsDependentOn ?Attribute005 .
   FILTER (
 	?Attribute000 = Height
 	&& 	?Attribute001 = DerrickFloor
@@ -41896,11 +45927,6 @@ WHERE {
 	?MeasuredDrillingFluidDensity rdf:type ddhub:Measurement .
 	?MeasuredTemperature rdf:type ddhub:Measurement .
 	?MeasuredPressure rdf:type ddhub:Measurement .
-	?MeasuredDrillingFluidDensity ddhub:IsOfMeasurableQuantity ?Attribute000 .
-	?MeasuredTemperature ddhub:IsOfMeasurableQuantity ?Attribute001 .
-	?MeasuredPressure ddhub:IsOfMeasurableQuantity ?Attribute002 .
-	?MeasuredDrillingFluidDensity ddhub:HasTemperatureReference ?Attribute003 .
-	?MeasuredDrillingFluidDensity ddhub:HasPressureReference ?Attribute004 .
   FILTER (
 	?Attribute000 = DrillingDensity
 	&& 	?Attribute001 = DrillingTemperature
@@ -41954,11 +45980,6 @@ WHERE {
 	?MeasuredDrillingFluidDensity rdf:type ddhub:Measurement .
 	?MeasuredTemperature rdf:type ddhub:Measurement .
 	?MeasuredPressure rdf:type ddhub:Measurement .
-	?MeasuredDrillingFluidDensity ddhub:IsOfMeasurableQuantity ?Attribute000 .
-	?MeasuredTemperature ddhub:IsOfMeasurableQuantity ?Attribute001 .
-	?MeasuredPressure ddhub:IsOfMeasurableQuantity ?Attribute002 .
-	?MeasuredDrillingFluidDensity ddhub:HasTemperatureReference ?Attribute003 .
-	?MeasuredDrillingFluidDensity ddhub:HasPressureReference ?Attribute004 .
   FILTER (
 	?Attribute000 = DrillingDensity
 	&& 	?Attribute001 = DrillingTemperature
@@ -42040,19 +46061,7 @@ WHERE {
 	?TideElevation rdf:type ddhub:Measurement .
 	?StandPipeElement rdf:type ddhub:StandPipe .
 	?LogicalRepresentationStandPipe rdf:type ddhub:MechanicalLogicalElement .
-	?MeasuredStandPipePressure ddhub:HasElevationReference ?Attribute000 .
-	?LogicalRepresentationStandPipe ddhub:IsAMechanicalRepresentationFor ?Attribute001 .
-	?MeasuredStandPipePressure ddhub:IsMechanicallyLocatedAt ?Attribute002 .
-	?MeasuredStandPipePressure ddhub:IsOfMeasurableQuantity ?Attribute003 .
-	?DerrickFloorElevation ddhub:IsOfMeasurableQuantity ?Attribute004 .
-	?DerrickFloorElevation ddhub:IsPhysicallyLocatedAt ?Attribute005 .
-	?HeaveElevation ddhub:IsOfMeasurableQuantity ?Attribute006 .
-	?TideElevation ddhub:IsOfMeasurableQuantity ?Attribute007 .
 	?VerticalDatum rdf:type ddhub:WGS84VerticalLocation .
-	?HeaveElevation ddhub:HasElevationReference ?Attribute008 .
-	?TideElevation ddhub:HasElevationReference ?Attribute009 .
-	?DerrickFloorElevation ddhub:IsDependentOn ?Attribute010 .
-	?DerrickFloorElevation ddhub:IsDependentOn ?Attribute011 .
   FILTER (
 	?Attribute000 = DerrickFloor
 	&& 	?Attribute001 = StandPipeElement
@@ -42296,8 +46305,6 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?downholeWOB_1
 WHERE {
 	?downholeWOB_1 rdf:type ddhub:WOB .
-	?downholeWOB_1 ddhub:IsOfMeasurableQuantity ?Attribute000 .
-	?downholeWOB_1 ddhub:IsTransmittedBy ?Attribute001 .
   FILTER (
 	?Attribute000 = ForceQuantity
 	&& 	?Attribute001 = inductionCouplingTelemetry
@@ -42425,11 +46432,163 @@ WHERE {
 - Object class: [DrillingEquipment](#DrillingEquipment)
 - Definition set: DrillingEquipment
 ## IsRelatedToDrillingIncident <!-- VERB -->
-- Display name: IsRelatedToDrillingIncident
+- Display name: Is Related to Drilling Incident
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DrillingIncident](#DrillingIncident)
 - Definition set: DrillingIncident
+- Description: 
+This Verb is used to indicate that a drilling data point is related to a drilling incident.
+- Examples:
+``` dwis motorStallFDIRInfo
+DynamicDrillingSignal: motorStallFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: motorStallFDIRInfo_1
+motorStallFDIRInfo_1 HasDynamicValue motorStallFDIRInfo
+MotorStall: motorStallIncident
+motorStallFDIRInfo_1 IsRelatedToDrillingIncident motorStallIncident
+ServiceCompany: serviceCompany
+motorStallFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+motorStallFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1.HasFunction = "MotorStallFDIR"
+motorStallFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+motorStallFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[motorStallFDIRInfo_1] -->|HasDynamicValue| N0001((motorStallFDIRInfo)) 
+	N0000[motorStallFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((motorStallIncident)) 
+	N0000[motorStallFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[motorStallFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|HasFunction| N0006(("MotorStallFDIR")) 
+	N0000[motorStallFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[motorStallFDIRInfo_1] -->|IsProvidedTo| N0007((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?motorStallFDIRInfo
+WHERE {
+	?FDIRFunction_1 ddhub:HasFunction ?Attribute004 .
+  FILTER (
+	?Attribute000 = motorStallFDIRInfo
+	&& 	?Attribute001 = motorStallIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = "MotorStallFDIR"
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
+## ManagesIncident <!-- VERB -->
+- Display name: Manages Incident
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [FDIRFunction](#FDIRFunction)
+- Object class: [DrillingIncident](#DrillingIncident)
+- Definition set: DrillingIncident
+- Description: 
+This Verb is used to indicate that a fault detection isolation and recovery function manages a drilling incident.
+## IsRelatedToDrillingLimit <!-- VERB -->
+- Display name: Is Related to Drilling Limit
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingLimit](#DrillingLimit)
+- Definition set: DrillingLimit
+- Description: 
+This Verb is used to indicate that a drilling data point is related to a drilling incident.
+- Examples:
+``` dwis motorStallFDIRInfo
+DynamicDrillingSignal: motorStallFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice: motorStallFDIRInfo_1
+motorStallFDIRInfo_1 HasDynamicValue motorStallFDIRInfo
+MotorStall: motorStallIncident
+motorStallFDIRInfo_1 IsRelatedToDrillingIncident motorStallIncident
+ServiceCompany: serviceCompany
+motorStallFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor: computationUnit
+motorStallFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction: FDIRFunction_1
+FDIRFunction_1.HasFunction = "MotorStallFDIR"
+motorStallFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer: adviceComposer
+motorStallFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[motorStallFDIRInfo_1] -->|HasDynamicValue| N0001((motorStallFDIRInfo)) 
+	N0000[motorStallFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0002((motorStallIncident)) 
+	N0000[motorStallFDIRInfo_1] -->|IsProvidedBy| N0003((serviceCompany)) 
+	N0000[motorStallFDIRInfo_1] -->|IsRecommendedBy| N0004((computationUnit)) 
+	N0005[FDIRFunction_1] -->|HasFunction| N0006(("MotorStallFDIR")) 
+	N0000[motorStallFDIRInfo_1] -->|IsRecommendedFor| N0005((FDIRFunction_1)) 
+	N0000[motorStallFDIRInfo_1] -->|IsProvidedTo| N0007((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?motorStallFDIRInfo
+WHERE {
+	?FDIRFunction_1 ddhub:HasFunction ?Attribute004 .
+  FILTER (
+	?Attribute000 = motorStallFDIRInfo
+	&& 	?Attribute001 = motorStallIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = "MotorStallFDIR"
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
+## ImplementsLimit <!-- VERB -->
+- Display name: Implements Limit
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [SOEFunction](#SOEFunction)
+- Object class: [DrillingLimit](#DrillingLimit)
+- Definition set: DrillingLimit
+- Description: 
+This Verb is used to indicate that a safe operating envelope function implements a drilling limit.
+## IsRelatedToDrillingObjective <!-- VERB -->
+- Display name: Is Related To Drilling Objective
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingObjective](#DrillingObjective)
+- Definition set: DrillingObjective
+- Description: 
+This Verb is used to indicate that a drilling data point is related to a drilling objective.
+## ImplementsObjective <!-- VERB -->
+- Display name: Implements Objective
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [ControlFunction](#ControlFunction)
+- Object class: [DrillingObjective](#DrillingObjective)
+- Definition set: DrillingObjective
+- Description: 
+This Verb is used to indicate that a control function implements a drilling objective.
+## IsRelatedToDrillingProcedure <!-- VERB -->
+- Display name: Is Related to Drilling Procedure
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DrillingProcedure](#DrillingProcedure)
+- Definition set: DrillingProcedure
+- Description: 
+This Verb is used to indicate that a drilling data point is related to a drilling procedure.
+## ImplementsProcedure <!-- VERB -->
+- Display name: Implements Procedure
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [ProcedureFunction](#ProcedureFunction)
+- Object class: [DrillingProcedure](#DrillingProcedure)
+- Definition set: DrillingProcedure
+- Description: 
+This Verb is used to indicate that a Procedure Function implements a drilling procedure.
 ## DWISVerb <!-- VERB -->
 - Display name: DWIS verb
 - Subject class: [DWISNoun](#DWISNoun)
@@ -43085,15 +47244,10 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:GaussianUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?Mean#01 rdf:type ddhub:DrillingDataPoint .
 	?StdDev#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasUncertaintyMean ?Attribute001 .
-	?GU#01 ddhub:HasUncertaintyStandardDeviation ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
 	?Signal#02 rdf:type ddhub:DynamicDrillingSignal .
-	?Mean#01 ddhub:HasDynamicValue ?Attribute003 .
-	?StdDev#01 ddhub:HasDynamicValue ?Attribute004 .
   FILTER (
 	?Attribute000 = GU#01
 	&& 	?Attribute001 = Mean#01
@@ -43149,15 +47303,10 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:SensorUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?Acc#01 rdf:type ddhub:DrillingDataPoint .
 	?Prec#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasUncertaintyAccuracy ?Attribute001 .
-	?GU#01 ddhub:HasUncertaintyPrecision ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DrillingSignal .
 	?Signal#02 rdf:type ddhub:DrillingSignal .
-	?Acc#01 ddhub:HasStaticValue ?Attribute003 .
-	?Prec#01 ddhub:HasStaticValue ?Attribute004 .
   FILTER (
 	?Attribute000 = GU#01
 	&& 	?Attribute001 = Acc#01
@@ -43214,15 +47363,10 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:SensorUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?Acc#01 rdf:type ddhub:DrillingDataPoint .
 	?Prec#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasUncertaintyAccuracy ?Attribute001 .
-	?GU#01 ddhub:HasUncertaintyPrecision ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DrillingSignal .
 	?Signal#02 rdf:type ddhub:DrillingSignal .
-	?Acc#01 ddhub:HasStaticValue ?Attribute003 .
-	?Prec#01 ddhub:HasStaticValue ?Attribute004 .
   FILTER (
 	?Attribute000 = GU#01
 	&& 	?Attribute001 = Acc#01
@@ -43279,15 +47423,10 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:MinMaxUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?Min#01 rdf:type ddhub:DrillingDataPoint .
 	?Max#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasUncertaintyMin ?Attribute001 .
-	?GU#01 ddhub:HasUncertaintyMax ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
 	?Signal#02 rdf:type ddhub:DynamicDrillingSignal .
-	?Min#01 ddhub:HasDynamicValue ?Attribute003 .
-	?Max#01 ddhub:HasDynamicValue ?Attribute004 .
   FILTER (
 	?Attribute000 = GU#01
 	&& 	?Attribute001 = Min#01
@@ -43344,15 +47483,10 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:MinMaxUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?Min#01 rdf:type ddhub:DrillingDataPoint .
 	?Max#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasUncertaintyMin ?Attribute001 .
-	?GU#01 ddhub:HasUncertaintyMax ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
 	?Signal#02 rdf:type ddhub:DynamicDrillingSignal .
-	?Min#01 ddhub:HasDynamicValue ?Attribute003 .
-	?Max#01 ddhub:HasDynamicValue ?Attribute004 .
   FILTER (
 	?Attribute000 = GU#01
 	&& 	?Attribute001 = Min#01
@@ -43409,15 +47543,10 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:GaussianUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?Mean#01 rdf:type ddhub:DrillingDataPoint .
 	?StdDev#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasUncertaintyMean ?Attribute001 .
-	?GU#01 ddhub:HasUncertaintyStandardDeviation ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
 	?Signal#02 rdf:type ddhub:DynamicDrillingSignal .
-	?Mean#01 ddhub:HasDynamicValue ?Attribute003 .
-	?StdDev#01 ddhub:HasDynamicValue ?Attribute004 .
   FILTER (
 	?Attribute000 = GU#01
 	&& 	?Attribute001 = Mean#01
@@ -43473,15 +47602,10 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:GaussianUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?Mean#01 rdf:type ddhub:DrillingDataPoint .
 	?StdDev#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasUncertaintyMean ?Attribute001 .
-	?GU#01 ddhub:HasUncertaintyStandardDeviation ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
 	?Signal#02 rdf:type ddhub:DynamicDrillingSignal .
-	?Mean#01 ddhub:HasDynamicValue ?Attribute003 .
-	?StdDev#01 ddhub:HasDynamicValue ?Attribute004 .
   FILTER (
 	?Attribute000 = GU#01
 	&& 	?Attribute001 = Mean#01
@@ -43537,15 +47661,10 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:FullScaleUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?FullScale#01 rdf:type ddhub:DrillingDataPoint .
 	?ErrProp#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasFullScale ?Attribute001 .
-	?GU#01 ddhub:HasProportionError ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DrillingSignal .
 	?Signal#02 rdf:type ddhub:DrillingSignal .
-	?FullScale#01 ddhub:HasStaticValue ?Attribute003 .
-	?ErrProp#01 ddhub:HasStaticValue ?Attribute004 .
   FILTER (
 	?Attribute000 = GU#01
 	&& 	?Attribute001 = FullScale#01
@@ -43602,15 +47721,10 @@ SELECT ?Signal#01, ?Signal#02
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:FullScaleUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?FullScale#01 rdf:type ddhub:DrillingDataPoint .
 	?ErrProp#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasFullScale ?Attribute001 .
-	?GU#01 ddhub:HasProportionError ?Attribute002 .
 	?Signal#01 rdf:type ddhub:DrillingSignal .
 	?Signal#02 rdf:type ddhub:DrillingSignal .
-	?FullScale#01 ddhub:HasStaticValue ?Attribute003 .
-	?ErrProp#01 ddhub:HasStaticValue ?Attribute004 .
   FILTER (
 	?Attribute000 = GU#01
 	&& 	?Attribute001 = FullScale#01
@@ -43659,11 +47773,8 @@ SELECT ?Signal#01
 WHERE {
 	?ddp#01 rdf:type ddhub:DrillingDataPoint .
 	?GU#01 rdf:type ddhub:GenericUncertainty .
-	?ddp#01 ddhub:HasUncertainty ?Attribute000 .
 	?Histo#01 rdf:type ddhub:DrillingDataPoint .
-	?GU#01 ddhub:HasUncertaintyHistogram ?Attribute001 .
 	?Signal#01 rdf:type ddhub:DynamicDrillingSignal .
-	?Histo#01 ddhub:HasDynamicValue ?Attribute002 .
   FILTER (
 	?Attribute000 = GU#01
 	&& 	?Attribute001 = Histo#01

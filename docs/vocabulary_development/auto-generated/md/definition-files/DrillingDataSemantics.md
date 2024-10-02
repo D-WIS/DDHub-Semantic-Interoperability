@@ -14,6 +14,7 @@ DataType <|-- DiscreteDataType
 DiscreteDataType <|-- EnumerationDataType
 EnumerationDataType <|-- BooleanDataType
 DataType <|-- StringDataType
+StringDataType <|-- JSonDataType
 DWISNoun <|-- DrillingDataPoint
 DrillingDataPoint <|-- PrototypeData
 DrillingDataPoint <|-- ProcessData
@@ -67,6 +68,12 @@ between 0 and 1
 ## StringDataType <!-- NOUN -->
 - Display name: String Data Type
 - Parent class: [DataType](./DrillingDataSemantics.md#DataType)
+- Definition set: DrillingDataSemantics
+## JSonDataType <!-- NOUN -->
+- Display name: JSon Data Type
+- Parent class: [StringDataType](./DrillingDataSemantics.md#StringDataType)
+- Description: 
+A string that contained the serialization in Json of an object.
 - Definition set: DrillingDataSemantics
 ## DrillingDataPoint <!-- NOUN -->
 - Display name: DrillingDataPoint

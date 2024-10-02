@@ -13,7 +13,7 @@ $$[ML^{-1}T^{-1}]$$.
 
 The SI unit for **dynamic viscosity** is: pascal second with the associated unit label $Pa \cdot s$
 The consistency index in rheology measures a fluid's resistance to flow; it quantifies the fluid's viscosity and how it changes with shear rate.
-The meaningful precision of a consistency index in rheology is typically: 0,0001 Pa•s
+The meaningful precision of a consistency index in rheology is typically: 0.0001 Pa•s
 
 - Examples: 
 ``` dwis
@@ -75,7 +75,7 @@ $$[L]$$.
 
 The SI unit for **length** is: metre with the associated unit label $m$
 
-The meaningful precision of small diameter is typically: 0,0001 m
+The meaningful precision of small diameter is typically: 0.0001 m
 
 - Examples: 
 ``` dwis
@@ -93,7 +93,7 @@ DiameterSmall_Signal HasUnitOfMeasure Metre
 - Description: 
 As its name indicates, a dimensionless quantity has no dimension:
 
-The meaningful precision of standard dimensionless values is typically: 0,001 
+The meaningful precision of standard dimensionless values is typically: 0.001 
 
 - Examples: 
 ``` dwis
@@ -199,7 +199,7 @@ $$[L^{3}]$$.
 
 The SI unit for **volume** is: cubic metre with the associated unit label $m^{3}$
 
-The meaningful precision of a large volume is typically: 0,1 m³
+The meaningful precision of a large volume is typically: 0.1 m³
 
 - Examples: 
 ``` dwis
@@ -218,7 +218,7 @@ VolumeLarge_Signal HasUnitOfMeasure CubicMetre
 A proportion is the ratio of two quantities with the same dimension. It represents how one quantity compares to another in relative terms.
 A proportion is dimensionless:
 
-The meaningful precision of a standard proportion is typically: 0,001 
+The meaningful precision of a standard proportion is typically: 0.001 
 
 - Examples: 
 ``` dwis
@@ -240,7 +240,7 @@ $$[L]$$.
 
 The SI unit for **length** is: metre with the associated unit label $m$
 
-The meaningful precision of a standard length is typically: 0,001 m
+The meaningful precision of a standard length is typically: 0.001 m
 
 - Examples: 
 ``` dwis
@@ -263,7 +263,7 @@ $$[T^{-1}]$$.
 The SI unit for **frequency** is: hertz with the associated unit label $Hz$
 Shear rate in a fluid is the rate at which adjacent layers of the fluid move relative to each other, typically expressed as the change in velocity per unit distance between the layers. It measures how quickly the fluid is being deformed by shear stress.
 
-The meaningful precision of a shear rate for a fluid is typically: 0,01 Hz
+The meaningful precision of a shear rate for a fluid is typically: 0.01 Hz
 
 - Examples: 
 ``` dwis
@@ -285,7 +285,7 @@ $$[ML^{-1}T^{-2}]$$.
 
 The SI unit for **pressure** is: pascal with the associated unit label $Pa$
 Shear stress in a fluid is the force per unit area exerted parallel to the fluid's surface, causing layers of the fluid to slide relative to each other. It measures the fluid's resistance to this shearing action.
-The meaningful precision of a shear stress for a fluid is typically: 0,0001 Pa
+The meaningful precision of a shear stress for a fluid is typically: 0.0001 Pa
 
 - Examples: 
 ``` dwis
@@ -327,7 +327,7 @@ Rotation frequency is the number of complete rotations or cycles an object makes
 The dimension of rotational frequency is:
 $$[T^{-1}]$$.
 
-The meaningful precision of small rotational frequency is typically: 0,00016666 Hz
+The meaningful precision of small rotational frequency is typically: 0.00016666 Hz
 
 - Examples: 
 ``` dwis
@@ -365,7 +365,7 @@ ProportionSmall_Signal HasUnitOfMeasure Proportion
 A proportion is the ratio of two quantities with the same dimension. It represents how one quantity compares to another in relative terms.
 A proportion is dimensionless:
 Porosity is the measure of the void spaces or pores within a material, expressed as a fraction or percentage of the total volume.
-The meaningful precision of porosity is typically: 0,001 
+The meaningful precision of porosity is typically: 0.001 
 
 - Examples: 
 ``` dwis
@@ -382,7 +382,7 @@ Porosity_Signal HasUnitOfMeasure Proportion
   - MeaningfulPrecision = 0.016666666666666666
 - Description: 
 A stroke frequency is the number of stokes per unit time
-The meaningful precision of a stroke frequency is typically: 0,016666666666666666 Hz
+The meaningful precision of a stroke frequency is typically: 0.016666666666666666 Hz
 
 - Examples: 
 ``` dwis
@@ -399,7 +399,7 @@ StrokeFrequency_Signal HasUnitOfMeasure Hertz
   - MeaningfulPrecision = 0.016666666666666666
 - Description: 
 A shock rate is the number of shocks per unit time.
-The meaningful precision of shock rate is typically: 0,016666666666666666 Hz/s
+The meaningful precision of shock rate is typically: 0.016666666666666666 Hz/s
 
 - Examples: 
 ``` dwis
@@ -431,7 +431,7 @@ Therefore, the dimension of acceleration is $[LT^{-2}]$.
 
 The SI unit for **acceleration** is: metre per second squared with the associated unit label $\frac{m}{s^{2}}$
 
-The meaningful precision of acceleration in the drilling context is typically: 0,001 m/s²
+The meaningful precision of acceleration in the drilling context is typically: 0.001 m/s²
 
 - Examples: 
 ``` dwis
@@ -459,7 +459,7 @@ $$[{\theta}L^{-1}]$$
 
 The SI unit for **angle gradient per length** is: radian per metre with the associated unit label $\frac{rad}{m}$
 
-In a drilling engineering perspective, the meaningful precision of an angle gradient per length is: 0,00017453292519943296 rad/m
+In a drilling engineering perspective, the meaningful precision of an angle gradient per length is: 0.00017453292519943296 rad/m
 
 - Examples: 
 ``` dwis
@@ -513,7 +513,7 @@ $$[{\theta}T^{-2}]$$.
 
 The SI unit for **angular acceleration** is: radian per second squared with the associated unit label $\frac{rad}{s^{2}}$
 
-The meaningful precision of angular acceleration in the drilling context is typically: 0,01 rad/s²
+The meaningful precision of angular acceleration in the drilling context is typically: 0.01 rad/s²
 
 - Examples: 
 ``` dwis
@@ -535,7 +535,7 @@ $$[{\theta}T^{-1}]$$.
 
 The SI unit for **angular velocity** is: radian per second with the associated unit label $\frac{rad}{s}$
 
-The meaningful precision of angular velocity in the drilling context is typically: 0,01 rad/s
+The meaningful precision of angular velocity in the drilling context is typically: 0.01 rad/s
 
 - Examples: 
 ``` dwis
@@ -601,7 +601,7 @@ $$[LT^{-1}]$$.
 
 The SI unit for **velocity** is: metre per second with the associated unit label $\frac{m}{s}$
 
-The meaningful precision of velocity in the drilling context is typically: 0,01 m/s
+The meaningful precision of velocity in the drilling context is typically: 0.01 m/s
 
 - Examples: 
 ``` dwis
@@ -623,7 +623,7 @@ $$[LT^{-1}]$$.
 
 The SI unit for **velocity** is: metre per second with the associated unit label $\frac{m}{s}$
 
-The meaningful precision of block velocity in the drilling context is typically: 0,01 m/s
+The meaningful precision of block velocity in the drilling context is typically: 0.01 m/s
 
 - Examples: 
 ``` dwis
@@ -645,9 +645,9 @@ $$[L]$$.
 
 The SI unit for **length** is: metre with the associated unit label $m$
 
-The meaningful precision of small length is typically: 0,0005 m
+The meaningful precision of small length is typically: 0.0005 m
 
-The meaningful precision of a cable diameter in the drilling context is typically: 0,0005 m
+The meaningful precision of a cable diameter in the drilling context is typically: 0.0005 m
 
 - Examples: 
 ``` dwis
@@ -669,7 +669,7 @@ $$[ML^{-1}T^{-2}]$$.
 
 The SI unit for **pressure** is: pascal with the associated unit label $Pa$
 
-The meaningful precision of capilary pressure in the drilling context is typically: 0,1 Pa
+The meaningful precision of capilary pressure in the drilling context is typically: 0.1 Pa
 
 - Examples: 
 ``` dwis
@@ -713,7 +713,7 @@ $$[{\theta}L^{-1}]$$.
 
 The SI unit for **curvature** is: radian per metre with the associated unit label $\frac{rad}{m}$
 
-The meaningful precision of curvature in the drilling context is typically: 5,817764173314432E-06 rad/m
+The meaningful precision of curvature in the drilling context is typically: 5.817764173314432E-06 rad/m
 
 - Examples: 
 ``` dwis
@@ -735,7 +735,7 @@ $$[L]$$.
 
 The SI unit for **length** is: metre with the associated unit label $m$
 
-The meaningful precision of depth in the drilling context is typically: 0,001 m
+The meaningful precision of depth in the drilling context is typically: 0.001 m
 
 - Examples: 
 ``` dwis
@@ -757,9 +757,9 @@ $$[L]$$.
 
 The SI unit for **length** is: metre with the associated unit label $m$
 
-The meaningful precision of small length is typically: 0,0001 m
+The meaningful precision of small length is typically: 0.0001 m
 
-The meaningful precision of pipe diameter in the drilling context is typically: 0,0001 m
+The meaningful precision of pipe diameter in the drilling context is typically: 0.0001 m
 
 - Examples: 
 ``` dwis
@@ -849,7 +849,7 @@ $$[T]$$.
 
 The SI unit for **time** is: second with the associated unit label $s$
 
-The meaningful precision of time in the drilling context is typically: 0,001 s
+The meaningful precision of time in the drilling context is typically: 0.001 s
 
 - Examples: 
 ``` dwis
@@ -871,7 +871,7 @@ $$[ML^{-1}T^{-1}]$$.
 
 The SI unit for **dynamic viscosity** is: pascal second with the associated unit label $Pa \cdot s$
 
-The meaningful precision of dynamic viscosity in the drilling context is typically: 0,0001 Pa•s
+The meaningful precision of dynamic viscosity in the drilling context is typically: 0.0001 Pa•s
 
 - Examples: 
 ``` dwis
@@ -914,7 +914,7 @@ $$[ML^{-1}T^{-2}]$$.
 
 The SI unit for **energy density** is: joule per cubic metre with the associated unit label $\frac{J}{m^{3}}$
 
-The meaningful precision of energy density in the drilling context is typically: 0,01 J/m³
+The meaningful precision of energy density in the drilling context is typically: 0.01 J/m³
 
 - Examples: 
 ``` dwis
@@ -936,7 +936,7 @@ $$[MT^{-1}L^{-3}]$$.
 
 The SI unit for **mass density rate of change** is: kilogram per cubic metre per second with the associated unit label $\frac{\frac{kg}{m^{3}}}{s}$
 
-The meaningful precision of mass density rate of change in the drilling context is typically: 0,001 kg/m³/s
+The meaningful precision of mass density rate of change in the drilling context is typically: 0.001 kg/m³/s
 
 - Examples: 
 ``` dwis
@@ -958,7 +958,7 @@ $$[MK^{-1}L^{-3}]$$.
 
 The SI unit for **mass density gradient per temperature** is: kilogram per cubic metre per kelvin with the associated unit label $\frac{\frac{kg}{m^{3}}}{K}$
 
-The meaningful precision of mass density gradient per temperature in the drilling context is typically: 0,001 kg/m³/K
+The meaningful precision of mass density gradient per temperature in the drilling context is typically: 0.001 kg/m³/K
 
 - Examples: 
 ``` dwis
@@ -980,7 +980,7 @@ $$[ML^{-4}]$$.
 
 The SI unit for **mass density gradient per length** is: kilogram per cubic metre per metre with the associated unit label $\frac{\frac{kg}{m^{3}}}{m}$
 
-The meaningful precision of mass density gradient per length in the drilling context is typically: 0,001 kg/m³/m
+The meaningful precision of mass density gradient per length in the drilling context is typically: 0.001 kg/m³/m
 
 - Examples: 
 ``` dwis
@@ -1024,7 +1024,7 @@ $$[LT^{-1}]$$.
 
 The SI unit for **velocity** is: metre per second with the associated unit label $\frac{m}{s}$
 
-The meaningful precision of fluid velocity in the drilling context is typically: 0,01 m/s
+The meaningful precision of fluid velocity in the drilling context is typically: 0.01 m/s
 
 - Examples: 
 ``` dwis
@@ -1068,7 +1068,7 @@ $$[LMT^{-2}]$$.
 
 The SI unit for **force** is: newton with the associated unit label $N$
 
-The meaningful precision of force in the drilling context is typically: 0,1 N
+The meaningful precision of force in the drilling context is typically: 0.1 N
 
 - Examples: 
 ``` dwis
@@ -1090,7 +1090,7 @@ $$[MK^{-1}T^{-3}]$$.
 
 The SI unit for **heat transfer coefficient** is: watt per square metre per kelvin with the associated unit label $\frac{W}{m^{2} \cdot K}$
 
-The meaningful precision of heat transfer coefficient in the drilling context is typically: 0,0001 W/m²/K
+The meaningful precision of heat transfer coefficient in the drilling context is typically: 0.0001 W/m²/K
 
 - Examples: 
 ``` dwis
@@ -1112,7 +1112,7 @@ $$[LT^{-1}]$$.
 
 The SI unit for **velocity** is: metre per second with the associated unit label $\frac{m}{s}$
 
-The meaningful precision of hydraulic conductivity in the drilling context is typically: 0,001 m/s
+The meaningful precision of hydraulic conductivity in the drilling context is typically: 0.001 m/s
 
 - Examples: 
 ``` dwis
@@ -1134,7 +1134,7 @@ $$[MT^{-2}]$$.
 
 The SI unit for **interfacial tension** is: newton per metre with the associated unit label $\frac{N}{m}$
 
-The meaningful precision of interfacial tension in the drilling context is typically: 0,0001 N/m
+The meaningful precision of interfacial tension in the drilling context is typically: 0.0001 N/m
 
 - Examples: 
 ``` dwis
@@ -1156,7 +1156,7 @@ $$[ML^{-1}]$$.
 
 The SI unit for **mass gradient per length** is: kilogram per metre with the associated unit label $\frac{kg}{m}$
 
-The meaningful precision of mass gradient per length in the drilling context is typically: 0,05 kg/m
+The meaningful precision of mass gradient per length in the drilling context is typically: 0.05 kg/m
 
 - Examples: 
 ``` dwis
@@ -1178,7 +1178,7 @@ $$[M]$$.
 
 The SI unit for **mass** is: kilogram with the associated unit label $kg$
 
-The meaningful precision of mass density in the drilling context is typically: 0,1 kg
+The meaningful precision of mass density in the drilling context is typically: 0.1 kg
 
 - Examples: 
 ``` dwis
@@ -1200,7 +1200,7 @@ $$[MT^{-1}]$$.
 
 The SI unit for **mass rate** is: kilogram per second with the associated unit label $\frac{kg}{s}$
 
-The meaningful precision of mass rate in the drilling context is typically: 0,0001 kg/s
+The meaningful precision of mass rate in the drilling context is typically: 0.0001 kg/s
 
 - Examples: 
 ``` dwis
@@ -1222,7 +1222,7 @@ $$[{\theta}]$$.
 
 The SI unit for **plane angle** is: radian with the associated unit label $rad$
 
-The meaningful precision of plane angle in the drilling context is typically: 0,00017453292519943296 rad
+The meaningful precision of plane angle in the drilling context is typically: 0.00017453292519943296 rad
 
 - Examples: 
 ``` dwis
@@ -1244,7 +1244,7 @@ $$[L^{2}MT^{-3}]$$.
 
 The SI unit for **power** is: watt with the associated unit label $W$
 
-The meaningful precision of power in the drilling context is typically: 0,1 W
+The meaningful precision of power in the drilling context is typically: 0.1 W
 
 - Examples: 
 ``` dwis
@@ -1288,7 +1288,7 @@ $$[L^{4}]$$.
 
 The SI unit for **pressure loss constant** is: pressure loss constant SI with the associated unit label $(\frac{m^{3}}{s})^{2} \cdot \frac{(\frac{kg}{m^{3}})}{Pa}$
 
-The meaningful precision of pressure loss constant in the drilling context is typically: 0,1 (m³/s)²•(kg/m³)/Pa
+The meaningful precision of pressure loss constant in the drilling context is typically: 0.1 (m³/s)²•(kg/m³)/Pa
 
 - Examples: 
 ``` dwis
@@ -1328,7 +1328,7 @@ PressureDrilling_Signal HasUnitOfMeasure Pascal
 - Description: 
 A random walk is a mathematical concept describing a path consisting of a series of random steps or movements, where each step's direction or magnitude is determined probabilistically. It is used to model various phenomena in fields like physics, finance, and computer science.
 The dimension of random walk is:
-$$[{\theta}T^{-0,5}]$$.
+$$[{\theta}T^{-0.5}]$$.
 
 The SI unit for **random walk** is: radian per square root second with the associated unit label $\frac{rad}{\sqrt{s}}$
 
@@ -1354,9 +1354,9 @@ $$[T^{-2}]$$.
 
 The SI unit for **frequency rate of change** is: hertz per second with the associated unit label $\frac{Hz}{s}$
 A rotation frequency rate of change is the time derivative of a rotation frequency.
-The meaningful precision of rotational frequency is typically: 0,016666666666666666 Hz/s
+The meaningful precision of rotational frequency is typically: 0.016666666666666666 Hz/s
 
-The meaningful precision of rotational frequency rate of change in the drilling context is typically: 0,016666666666666666 Hz/s
+The meaningful precision of rotational frequency rate of change in the drilling context is typically: 0.016666666666666666 Hz/s
 
 - Examples: 
 ``` dwis
@@ -1378,7 +1378,7 @@ $$[L^{2}K^{-1}T^{-2}]$$.
 
 The SI unit for **isobaric specific heat capacity** is: joule per kilogram kelvin with the associated unit label $\frac{J}{kg \cdot K}$
 
-The meaningful precision of specific heat capacity in the drilling context is typically: 0,01 J/kg•K
+The meaningful precision of specific heat capacity in the drilling context is typically: 0.01 J/kg•K
 
 - Examples: 
 ``` dwis
@@ -1400,7 +1400,7 @@ $$[L^{2}T^{-2}K^{-2}]$$.
 
 The SI unit for **isobaric specific heat capacity gradient per temperature** is: joule per kilogram squared kelvin with the associated unit label $\frac{J}{kg \cdot K^{2}}$
 
-The meaningful precision of isobaric specific heat capacity gradient per temperature in the drilling context is typically: 0,01 J/kg•K²
+The meaningful precision of isobaric specific heat capacity gradient per temperature in the drilling context is typically: 0.01 J/kg•K²
 
 - Examples: 
 ``` dwis
@@ -1422,7 +1422,7 @@ $$[T]$$.
 
 The SI unit for **time** is: second with the associated unit label $s$
 
-The meaningful precision of stick duration in the drilling context is typically: 0,001 s
+The meaningful precision of stick duration in the drilling context is typically: 0.001 s
 
 - Examples: 
 ``` dwis
@@ -1466,7 +1466,7 @@ $$[KL^{-1}]$$.
 
 The SI unit for **temperature gradient per length** is: kelvin per metre with the associated unit label $\frac{K}{m}$
 
-The meaningful precision of temperature gradient per length in the drilling context is typically: 0,001 K/m
+The meaningful precision of temperature gradient per length in the drilling context is typically: 0.001 K/m
 
 - Examples: 
 ``` dwis
@@ -1488,7 +1488,7 @@ $$[K]$$.
 
 The SI unit for **temperature** is: kelvin with the associated unit label $K$
 
-The meaningful precision of temperature in the drilling context is typically: 0,01 K
+The meaningful precision of temperature in the drilling context is typically: 0.01 K
 
 - Examples: 
 ``` dwis
@@ -1530,7 +1530,7 @@ $$[LMK^{-1}T^{-3}]$$.
 
 The SI unit for **thermal conductivity** is: watt per metre kelvin with the associated unit label $\frac{W}{m \cdot K}$
 
-The meaningful precision of thermal conductivity in the drilling context is typically: 0,01 W/m•K
+The meaningful precision of thermal conductivity in the drilling context is typically: 0.01 W/m•K
 
 - Examples: 
 ``` dwis
@@ -1552,7 +1552,7 @@ $$[L^{2}MT^{-2}]$$.
 
 The SI unit for **torque** is: newton metre with the associated unit label $N \cdot m$
 
-The meaningful precision of torque in the drilling context is typically: 0,1 N•m
+The meaningful precision of torque in the drilling context is typically: 0.1 N•m
 
 - Examples: 
 ``` dwis
@@ -1574,7 +1574,7 @@ $$[L^{3}]$$.
 
 The SI unit for **volume** is: cubic metre with the associated unit label $m^{3}$
 
-The meaningful precision of volume in the drilling context is typically: 0,0001 m³
+The meaningful precision of volume in the drilling context is typically: 0.0001 m³
 
 - Examples: 
 ``` dwis
@@ -1618,7 +1618,7 @@ $$[L^{3}T^{-1}]$$.
 
 The SI unit for **volumetric flow rate** is: cubic metre per second with the associated unit label $\frac{m^{3}}{s}$
 
-The meaningful precision of volumetric flowrate in the drilling context is typically: 0,0001 ft³/s
+The meaningful precision of volumetric flowrate in the drilling context is typically: 0.0001 ft³/s
 
 - Examples: 
 ``` dwis
@@ -1640,7 +1640,7 @@ $$[L^{3}MI^{-2}T^{-3}]$$.
 
 The SI unit for **electric resistivity** is: ohm metre with the associated unit label $\Omega \cdot m$
 
-The meaningful precision of formation electric resistivity in the drilling context is typically: 0,01 Ω•m
+The meaningful precision of formation electric resistivity in the drilling context is typically: 0.01 Ω•m
 
 - Examples: 
 ``` dwis
@@ -1684,7 +1684,7 @@ Since the Gamma Ray API is a measure of gamma radiation intensity, let's break d
 - Gamma rays are photons, and their intensity is measured in counts per second, which can be related to energy or radiation dose.
 - The Gamma Ray API is a unit-less scale used to compare different gamma ray intensity levels, and therefore the Gamma Ray API is fundamentally dimensionless.
 
-The meaningful precision of gamma ray in the drilling context is typically: 0,001 
+The meaningful precision of gamma ray in the drilling context is typically: 0.001 
 
 - Examples: 
 ``` dwis
@@ -1725,7 +1725,7 @@ $$[L^{3}T^{-1}]$$.
 
 The SI unit for **volumetric flow rate** is: cubic metre per second with the associated unit label $\frac{m^{3}}{s}$
 
-The meaningful precision of gas volumetric flowrate in the drilling context is typically: 0,01 m³/s
+The meaningful precision of gas volumetric flowrate in the drilling context is typically: 0.01 m³/s
 
 - Examples: 
 ``` dwis
@@ -1747,7 +1747,7 @@ $$[L]$$.
 
 The SI unit for **length** is: metre with the associated unit label $m$
 
-The meaningful precision of height in the drilling context is typically: 0,001 m
+The meaningful precision of height in the drilling context is typically: 0.001 m
 
 - Examples: 
 ``` dwis
@@ -1791,9 +1791,9 @@ $$[L]$$.
 
 The SI unit for **length** is: metre with the associated unit label $m$
 
-The meaningful precision of small length is typically: 0,0001 m
+The meaningful precision of small length is typically: 0.0001 m
 
-The meaningful precision of nozzle diameter in the drilling context is typically: 0,0001 m
+The meaningful precision of nozzle diameter in the drilling context is typically: 0.0001 m
 
 - Examples: 
 ``` dwis
@@ -1837,7 +1837,7 @@ $$[L]$$.
 
 The SI unit for **length** is: metre with the associated unit label $m$
 
-The meaningful precision of position in the drilling context is typically: 0,01 m
+The meaningful precision of position in the drilling context is typically: 0.01 m
 
 - Examples: 
 ``` dwis
@@ -1859,7 +1859,7 @@ $$[LT^{-1}]$$.
 
 The SI unit for **velocity** is: metre per second with the associated unit label $\frac{m}{s}$
 
-The meaningful precision of rate of penetration in the drilling context is typically: 2,77778E-05 m/min
+The meaningful precision of rate of penetration in the drilling context is typically: 2.77778E-05 m/min
 
 - Examples: 
 ``` dwis
@@ -1903,7 +1903,7 @@ $$[LMK^{-2}T^{-3}]$$.
 
 The SI unit for **thermal conductivity gradient per temperature** is: watt per metre kelvin per kelvin with the associated unit label $\frac{(\frac{W}{(m \cdot K)}}{K}$
 
-The meaningful precision of thermal conductivity gradient per temperature in the drilling context is typically: 0,01 (W/(m•K))/K
+The meaningful precision of thermal conductivity gradient per temperature in the drilling context is typically: 0.01 (W/(m•K))/K
 
 - Examples: 
 ``` dwis

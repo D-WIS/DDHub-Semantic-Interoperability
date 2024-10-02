@@ -26,16 +26,20 @@ Deca = 10.0
 """@EN; 
                rdfs:subClassOf ddhub:Unit. 
 ddhub:AbnormalAxialOscillation a owl:Class; 
-                               rdfs:comment ""@EN; 
+                               rdfs:comment """This Noun is used to refer to abnormal axial oscillations.
+"""@EN; 
                                rdfs:subClassOf ddhub:AbnormalOscillation. 
 ddhub:AbnormalLateralOscillation a owl:Class; 
-                                 rdfs:comment ""@EN; 
+                                 rdfs:comment """This Noun is used to refer to abnormal lateral oscillations.
+"""@EN; 
                                  rdfs:subClassOf ddhub:AbnormalOscillation. 
 ddhub:AbnormalOscillation a owl:Class; 
-                          rdfs:comment ""@EN; 
+                          rdfs:comment """This Noun represents abnormal oscillations along the drill-stem.
+"""@EN; 
                           rdfs:subClassOf ddhub:DrillingIncident. 
 ddhub:AbnormalTorsionalOscillation a owl:Class; 
-                                   rdfs:comment ""@EN; 
+                                   rdfs:comment """This Noun is used to refer to abnormal torsional oscillations.
+"""@EN; 
                                    rdfs:subClassOf ddhub:AbnormalOscillation. 
 ddhub:AbscissaReferenceLocation a owl:Class; 
                                 rdfs:comment ""@EN; 
@@ -152,6 +156,11 @@ ddhub:AdvisedTarget a owl:Class;
 ddhub:Advisor a owl:Class; 
               rdfs:comment ""@EN; 
               rdfs:subClassOf ddhub:ComputationUnit. 
+ddhub:AdvisorySystemAdvice a owl:Class; 
+                           rdfs:comment """An advisory system provides one or several advices. These advices are structured data that are stored as a JSon
+string. 
+"""@EN; 
+                           rdfs:subClassOf ddhub:JSonDataType. 
 ddhub:AfmAutofluidMeasSkid a owl:Class; 
                            rdfs:comment ""@EN; 
                            rdfs:subClassOf ddhub:CirculationSystem. 
@@ -343,7 +352,7 @@ Atto = 1e-18
 """@EN; 
                rdfs:subClassOf ddhub:Unit. 
 ddhub:AverageDelayByRepeater a owl:DatatypeProperty, owl:FunctionalProperty; 
-                             rdfs:comment """
+                             rdfs:comment """The average delay caused by each repeater. The physical quantity is Time and the unit is second.
 """@EN; 
                              rdfs:domain ddhub:Telemetry; 
                              rdfs:range xsd:double. 
@@ -365,6 +374,10 @@ The SI unit for **velocity** is: metre per second with the associated unit label
 The meaningful precision of velocity in the drilling context is typically: 0.01 m/s
 """@EN; 
                                     rdfs:subClassOf ddhub:MeasurableQuantity. 
+ddhub:AxialVelocityLimit a owl:Class; 
+                         rdfs:comment """This Noun is used to refer to an axial velocity limit.
+"""@EN; 
+                         rdfs:subClassOf ddhub:DrillingLimit. 
 ddhub:Azimuth a owl:Class; 
               rdfs:comment ""@EN; 
               rdfs:subClassOf ddhub:PrototypeData. 
@@ -381,7 +394,8 @@ ddhub:BackPressurePumpPressure a owl:Class;
                                rdfs:comment ""@EN; 
                                rdfs:subClassOf ddhub:PrototypeData. 
 ddhub:BackwardWhirl a owl:Class; 
-                    rdfs:comment ""@EN; 
+                    rdfs:comment """This Noun is used to refer to backward whirl.
+"""@EN; 
                     rdfs:subClassOf ddhub:Whirling. 
 ddhub:BallastSystem a owl:Class; 
                     rdfs:comment ""@EN; 
@@ -1132,6 +1146,11 @@ ddhub:CementHead a owl:Class;
 ddhub:CementingEquipment a owl:Class; 
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:RigEquipment. 
+ddhub:CementingProcedure a owl:Class; 
+                         rdfs:comment """The cementing procedure is used to displace the correct amount of cement at the right position while cleaning the borehole
+to ensure good conditions for the cement setting.
+"""@EN; 
+                         rdfs:subClassOf ddhub:DrillingProcedure. 
 ddhub:CementingServiceCompany a owl:Class; 
                               rdfs:comment ""@EN; 
                               rdfs:subClassOf ddhub:ServiceCompany. 
@@ -1392,7 +1411,8 @@ Minute = 60.0
 """@EN; 
               rdfs:subClassOf ddhub:Unit. 
 ddhub:ChaoticWhirl a owl:Class; 
-                   rdfs:comment ""@EN; 
+                   rdfs:comment """This Noun is used to refer to chaotic whirl.
+"""@EN; 
                    rdfs:subClassOf ddhub:Whirling. 
 ddhub:ChemicalTank a owl:Class; 
                    rdfs:comment ""@EN; 
@@ -1417,6 +1437,16 @@ where
 a = 1.0/(2.0*PI), i.e., 0.15915494309189535
 """@EN; 
              rdfs:subClassOf ddhub:Unit. 
+ddhub:CirculationStartupProcedure a owl:Class; 
+                                  rdfs:comment """The circulation stop procedure defines how to stop the mud pumps in a way that limit potential bull-heading effects
+that could result in undesired downhole pressure conditions with regards to the geo-pressure window.
+"""@EN; 
+                                  rdfs:subClassOf ddhub:DrillingProcedure. 
+ddhub:CirculationStopProcedure a owl:Class; 
+                               rdfs:comment """The rotation startup procedure controls the steps to start the rotation of the drill-stem to reach a target rotational
+speed while attempting to avoid having too large torsional oscillations.
+"""@EN; 
+                               rdfs:subClassOf ddhub:DrillingProcedure. 
 ddhub:CirculationSub a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:DrillingEquipment. 
@@ -2846,9 +2876,23 @@ ddhub:DiaphragmMudPump a owl:Class;
 ddhub:DieselElectricalDrawworks a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:Drawworks. 
+ddhub:DifferentiallyStuck a owl:Class; 
+                          rdfs:comment """This Noun is used to refer to a situation during which the drill-stem is stuck because of differential sticking.
+"""@EN; 
+                          rdfs:subClassOf ddhub:StuckPipe. 
+ddhub:DifferentialPressureLimit a owl:Class; 
+                                rdfs:comment """This Noun is used to refer to a differential pressure limit.
+"""@EN; 
+                                rdfs:subClassOf ddhub:DrillingLimit. 
 ddhub:DifferentialStickingLocation a owl:Class; 
                                    rdfs:comment ""@EN; 
                                    rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
+ddhub:DigitalTwinAdvice a owl:Class; 
+                        rdfs:comment """A digital twin simulates the drilling operation using the boundary conditions applied to the drilling system.
+It provides information about the plausible values that can be expected anywhere along the drilling system. These results
+are stored in a DigitalTwinAdvice.
+"""@EN; 
+                        rdfs:subClassOf ddhub:AdvisorySystemAdvice. 
 ddhub:Dimensionless a owl:Class; 
                     rdfs:comment """No conversion necessary as the unit choice is SI
 """@EN; 
@@ -2883,7 +2927,7 @@ ddhub:DiscreteDataType a owl:Class;
                        rdfs:comment ""@EN; 
                        rdfs:subClassOf ddhub:DataType. 
 ddhub:DistanceBetweenRepeaters a owl:DatatypeProperty, owl:FunctionalProperty; 
-                               rdfs:comment """
+                               rdfs:comment """The average distance between two repeaters. The physical quantity is Length and the unit is metre.
 """@EN; 
                                rdfs:domain ddhub:Telemetry; 
                                rdfs:range xsd:double. 
@@ -2985,6 +3029,11 @@ ddhub:DownholeTorque a owl:Class;
 ddhub:DownholeValveAssembly a owl:Class; 
                             rdfs:comment ""@EN; 
                             rdfs:subClassOf ddhub:CasingEquipment. 
+ddhub:DownlinkingProcedure a owl:Class; 
+                           rdfs:comment """The downlinking procedure is used to manipulate the flowrate/pressure or rotational speed to send a coded message to
+the rotary steerable system.
+"""@EN; 
+                           rdfs:subClassOf ddhub:DrillingProcedure. 
 ddhub:Drawworks a owl:Class; 
                 rdfs:comment ""@EN; 
                 rdfs:subClassOf ddhub:HoistingSystem. 
@@ -3015,6 +3064,11 @@ ddhub:DrillingBit a owl:Class;
 ddhub:DrillingContractor a owl:Class; 
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:DataProvider. 
+ddhub:DrillingControlAdvice a owl:Class; 
+                            rdfs:comment """A drilling control advisor provides information on how to control a part of the drilling process to stay as close
+as possible to one or several desired values.
+"""@EN; 
+                            rdfs:subClassOf ddhub:AdvisorySystemAdvice. 
 ddhub:DrillingDataPoint a owl:Class; 
                         rdfs:comment """Main type of DDHub data. Represents a drilling signal.
 Can be a dynamic signal (linked to a ValueNode) or a static parameter. 
@@ -3023,6 +3077,12 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 ddhub:DrillingEquipment a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:DownholeEquipment. 
+ddhub:DrillingFaultDetectionIsolationAndRecoveryAdvice a owl:Class; 
+                                                       rdfs:comment """A fault detection, isolation and recovery (FDIR) advisor provides information on how to detect an drilling incident
+and parameters to procedure that is executed when a drilling incident is detected in order to first to isolate the drilling incident
+and then possibly recover from that incident.
+"""@EN; 
+                                                       rdfs:subClassOf ddhub:AdvisorySystemAdvice. 
 ddhub:DrillingFluid a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:CirculationSystem. 
@@ -3046,18 +3106,42 @@ ddhub:DrillingFluidWaterComponent a owl:Class;
                                   rdfs:comment ""@EN; 
                                   rdfs:subClassOf ddhub:DrillingFluidLiquidComponent. 
 ddhub:DrillingIncident a owl:Class; 
-                       rdfs:comment ""@EN; 
+                       rdfs:comment """This is the parent class for drilling incidents. A drilling incident is often detectable by an abnormal value of a process variable, i.e., a variable that is influenced
+by the drilling process.
+"""@EN; 
                        rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:DrillingLimit a owl:Class; 
+                    rdfs:comment """This is the parent class for drilling limits. A limit applies typically on a desired value as controlled by a controller.
+"""@EN; 
+                    rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:DrillingObjective a owl:Class; 
+                        rdfs:comment """This is the parent class for drilling objectives.
+"""@EN; 
+                        rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:DrillingProcedure a owl:Class; 
+                        rdfs:comment """This is the parent class for drilling procedures.
+"""@EN; 
+                        rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:DrillingProgram a owl:Class; 
                       rdfs:comment ""@EN; 
                       rdfs:subClassOf ddhub:Plan. 
 ddhub:DrillingRiser a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:MarineSystem. 
+ddhub:DrillingSafeOperatingEnvelopeAdvice a owl:Class; 
+                                          rdfs:comment """A safe operating envelope (SOE) advisor provides information on the limits that shall be used when controlling the drilling
+process to avoid possible drilling incidents.
+"""@EN; 
+                                          rdfs:subClassOf ddhub:AdvisorySystemAdvice. 
 ddhub:DrillingSignal a owl:Class; 
                      rdfs:comment """Data structure used to store the streaming drilling data.
 """@EN; 
                      rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:DrillingStandardProcedureAdvice a owl:Class; 
+                                      rdfs:comment """A drilling standard procedure advisor provides parameters for a standard procedure like starting the mud pumps or
+running a friction test.
+"""@EN; 
+                                      rdfs:subClassOf ddhub:AdvisorySystemAdvice. 
 ddhub:DrillLine a owl:Class; 
                 rdfs:comment ""@EN; 
                 rdfs:subClassOf ddhub:HoistingSystem. 
@@ -3143,15 +3227,15 @@ ddhub:DWISAdviceComposer a owl:Class;
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:DWISInternalService. 
 ddhub:DWISAttributeCardinalityRestriction a owl:Class, owl:Restriction; 
-                                          owl:onClass ddhub:ActivableFunction, ddhub:RunnableFunction, ddhub:Advisor, ddhub:BandPassFilter, ddhub:HighPassFilter, ddhub:LowPassFilter, ddhub:NumberOfSampleMovingAverage, ddhub:TimeWindowMovingAverage, ddhub:Buffering, ddhub:NumberOfItemsRangeExtraction, ddhub:TimeWindowRangeExtraction, ddhub:Resampling, ddhub:DataProvider, ddhub:OperatingCompany, ddhub:ServiceCompany, ddhub:DirectionalServiceCompany, ddhub:DrillingFluidProvider, ddhub:LoggingServiceCompany, ddhub:CementingServiceCompany, ddhub:DataAnalysisServiceCompany, ddhub:DrillingContractor, ddhub:DWISInternalService, ddhub:Telemetry, ddhub:DrillingDataPoint, ddhub:DrillingSignal, ddhub:DynamicDrillingSignal, ddhub:DataEndPoint, ddhub:WitsMLTimeBasedLogEndPoint, ddhub:EndPointMapping, ddhub:HydraulicConnectedState, ddhub:HydraulicJunction, ddhub:MeasurableQuantity, ddhub:MechanicalElementState, ddhub:OneDimensionalReferenceFrame, ddhub:Quantity, ddhub:Unit, ddhub:Clock, ddhub:SynchronizationGroup, ddhub:FullScaleUncertainty, ddhub:SensorUncertainty; 
-                                          owl:onProperty ddhub:HasFunction, ddhub:IsAuxiliary, ddhub:AdviceType, ddhub:MinFrequency, ddhub:MaxFrequency, ddhub:CutOffFrequency, ddhub:NumberOfSamples, ddhub:TimeWindow, ddhub:BufferingInterval, ddhub:NumberOfItems, ddhub:ResamplingRate, ddhub:ResamplingDelay, ddhub:Validity, ddhub:ProviderName, ddhub:NumberOfRepeaters, ddhub:DistanceBetweenRepeaters, ddhub:AverageDelayByRepeater, ddhub:IsValid, ddhub:Value, ddhub:TimeStampAtSource, ddhub:TimeStampAcquisition, ddhub:EndPointDescription, ddhub:WellUID, ddhub:WellName, ddhub:WellboreUID, ddhub:WellboreName, ddhub:LogUID, ddhub:LogName, ddhub:Mnemonic, ddhub:FixedIndices, ddhub:ValuesIndices, ddhub:MeasurementIndex, ddhub:LeftToRight, ddhub:RightToLeft, ddhub:MeaningfulPrecision, ddhub:PostiveUpward, ddhub:L, ddhub:M, ddhub:T, ddhub:I, ddhub:ThT, ddhub:N, ddhub:J, ddhub:Theta, ddhub:Omega, ddhub:SIUnit, ddhub:Symbol, ddhub:ConversionFactorA, ddhub:ConversionFactorB, ddhub:LeapSeconds, ddhub:Stratum, ddhub:NetworkSynchronizationLatencyAverage, ddhub:NetworkSynchronizationLatencyStandardDeviation, ddhub:Resolution, ddhub:MaximumFluctuations, ddhub:SynchronizationDelay, ddhub:SamplingRate, ddhub:FullScale, ddhub:ProportionError, ddhub:Accuracy, ddhub:Precision; 
+                                          owl:onClass ddhub:RunnableFunction, ddhub:Advisor, ddhub:BandPassFilter, ddhub:HighPassFilter, ddhub:LowPassFilter, ddhub:NumberOfSampleMovingAverage, ddhub:TimeWindowMovingAverage, ddhub:Buffering, ddhub:NumberOfItemsRangeExtraction, ddhub:TimeWindowRangeExtraction, ddhub:Resampling, ddhub:DataProvider, ddhub:OperatingCompany, ddhub:ServiceCompany, ddhub:DirectionalServiceCompany, ddhub:DrillingFluidProvider, ddhub:LoggingServiceCompany, ddhub:CementingServiceCompany, ddhub:DataAnalysisServiceCompany, ddhub:DrillingContractor, ddhub:DWISInternalService, ddhub:Telemetry, ddhub:DrillingDataPoint, ddhub:DrillingSignal, ddhub:DynamicDrillingSignal, ddhub:DataEndPoint, ddhub:WitsMLTimeBasedLogEndPoint, ddhub:EndPointMapping, ddhub:HydraulicConnectedState, ddhub:HydraulicJunction, ddhub:MeasurableQuantity, ddhub:MechanicalElementState, ddhub:OneDimensionalReferenceFrame, ddhub:Quantity, ddhub:Unit, ddhub:Clock, ddhub:SynchronizationGroup, ddhub:FullScaleUncertainty, ddhub:SensorUncertainty; 
+                                          owl:onProperty ddhub:IsAuxiliary, ddhub:AdviceType, ddhub:MinFrequency, ddhub:MaxFrequency, ddhub:CutOffFrequency, ddhub:NumberOfSamples, ddhub:TimeWindow, ddhub:BufferingInterval, ddhub:NumberOfItems, ddhub:ResamplingRate, ddhub:ResamplingDelay, ddhub:Validity, ddhub:ProviderName, ddhub:NumberOfRepeaters, ddhub:DistanceBetweenRepeaters, ddhub:AverageDelayByRepeater, ddhub:IsValid, ddhub:Value, ddhub:TimeStampAtSource, ddhub:TimeStampAcquisition, ddhub:EndPointDescription, ddhub:WellUID, ddhub:WellName, ddhub:WellboreUID, ddhub:WellboreName, ddhub:LogUID, ddhub:LogName, ddhub:Mnemonic, ddhub:FixedIndices, ddhub:ValuesIndices, ddhub:MeasurementIndex, ddhub:LeftToRight, ddhub:RightToLeft, ddhub:MeaningfulPrecision, ddhub:PostiveUpward, ddhub:L, ddhub:M, ddhub:T, ddhub:I, ddhub:ThT, ddhub:N, ddhub:J, ddhub:Theta, ddhub:Omega, ddhub:SIUnit, ddhub:Symbol, ddhub:ConversionFactorA, ddhub:ConversionFactorB, ddhub:LeapSeconds, ddhub:Stratum, ddhub:NetworkSynchronizationLatencyAverage, ddhub:NetworkSynchronizationLatencyStandardDeviation, ddhub:Resolution, ddhub:MaximumFluctuations, ddhub:SynchronizationDelay, ddhub:SamplingRate, ddhub:FullScale, ddhub:ProportionError, ddhub:Accuracy, ddhub:Precision; 
                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger. 
+ddhub:DWISBlackboard a owl:Class; 
+                     rdfs:comment ""@EN; 
+                     rdfs:subClassOf ddhub:DWISInternalService. 
 ddhub:DWISContextualDataBuilder a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:DWISInternalService. 
-ddhub:DWISDDHub a owl:Class; 
-                rdfs:comment ""@EN; 
-                rdfs:subClassOf ddhub:DWISInternalService. 
 ddhub:DWISDrillingProcessStateInterpreter a owl:Class; 
                                           rdfs:comment ""@EN; 
                                           rdfs:subClassOf ddhub:DWISInternalService. 
@@ -3450,6 +3534,11 @@ Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
              rdfs:subClassOf ddhub:Unit. 
 ddhub:FDIRFunction a owl:Class; 
                    rdfs:comment """A `FDIRFunction` is a `ProtectionFunction` that reacts to a particular state of the drilling process. FDIR
+stands for Fault Detection, Isolation and Recovery. An FDIR protects the drilling process by looking at its outputs.
+When that state is detected, then an isolation procedure is run, and if successful and defined, a recovery procedure is
+thereafter executed. In case of success of the recovery procedure, the drilling process is resumed. In all other cases,
+the system returns in manual mode, usually using the safe mode management procedure. An example of `FDIRFunction` is an
+packoff detection and reaction procedure.
 """@EN; 
                    rdfs:subClassOf ddhub:ProtectionFunction. 
 ddhub:Femtowatt a owl:Class; 
@@ -3506,6 +3595,11 @@ ddhub:FloatValveNonreturnValve a owl:Class;
 ddhub:FlowAnalysisEquipment a owl:Class; 
                             rdfs:comment ""@EN; 
                             rdfs:subClassOf ddhub:MudLoggingEquipment. 
+ddhub:FlowCheckProcedure a owl:Class; 
+                         rdfs:comment """The flow-check procedure is used to check the well is stable (no influx of formation fluids) while ensuring that the
+drill-stem will not get stuck during the test.
+"""@EN; 
+                         rdfs:subClassOf ddhub:DrillingProcedure. 
 ddhub:FlowLine a owl:Class; 
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:MudLines. 
@@ -3515,6 +3609,10 @@ ddhub:FlowmeterTools a owl:Class;
 ddhub:FlowRateIn a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:PrototypeData. 
+ddhub:FlowrateLimit a owl:Class; 
+                    rdfs:comment """This Noun is used to refer to a flowrate limit.
+"""@EN; 
+                    rdfs:subClassOf ddhub:DrillingLimit. 
 ddhub:FlowRateOut a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:PrototypeData. 
@@ -3870,7 +3968,8 @@ ddhub:FormationTestTools a owl:Class;
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:LoggingWhileDrillingTools. 
 ddhub:FormationWashout a owl:Class; 
-                       rdfs:comment ""@EN; 
+                       rdfs:comment """This Noun is used to refer to a situation during which the formation is being washed out.
+"""@EN; 
                        rdfs:subClassOf ddhub:DrillingIncident. 
 ddhub:FormationWashoutLocation a owl:Class; 
                                rdfs:comment ""@EN; 
@@ -3889,7 +3988,8 @@ Minute = 60.0
 """@EN; 
                 rdfs:subClassOf ddhub:Unit. 
 ddhub:ForwardWhirl a owl:Class; 
-                   rdfs:comment ""@EN; 
+                   rdfs:comment """This Noun is used to refer to forward whirl.
+"""@EN; 
                    rdfs:subClassOf ddhub:Whirling. 
 ddhub:FourDimensionalReferenceFrame a owl:Class; 
                                     rdfs:comment ""@EN; 
@@ -3917,6 +4017,10 @@ $$[T^{-2}]$$.
 The SI unit for **frequency rate of change** is: hertz per second with the associated unit label $\\frac{Hz}{s}$
 """@EN; 
                                     rdfs:subClassOf ddhub:Quantity. 
+ddhub:FrictionTestProcedure a owl:Class; 
+                            rdfs:comment """A friction test procedure is used to measure the free rotating weight and torque and the pick-up and slack-off weights.
+"""@EN; 
+                            rdfs:subClassOf ddhub:DrillingProcedure. 
 ddhub:FullScale a owl:DatatypeProperty, owl:FunctionalProperty; 
                 rdfs:comment """The total range of measurement of the signal, i.e., $\\left| max - min \\right|$. The value is expected to be in the same physical quantity as the sensor value.
 """@EN; 
@@ -4483,6 +4587,12 @@ ddhub:HasBranchCoordinateSystem a owl:ObjectProperty;
                                 rdfs:domain ddhub:HydraulicBranch; 
                                 rdfs:range ddhub:ReferenceFrame; 
                                 rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:HasControlLimit a owl:ObjectProperty; 
+                      rdfs:comment """This Verb is used to indicate that a drilling data point has a control limit.
+"""@EN; 
+                      rdfs:domain ddhub:DrillingDataPoint; 
+                      rdfs:range ddhub:DrillingLimit; 
+                      rdfs:subPropertyOf ddhub:IsRelatedToDrillingLimit. 
 ddhub:HasCoordinates a owl:ObjectProperty; 
                      rdfs:comment ""@EN; 
                      rdfs:domain ddhub:Location; 
@@ -4520,11 +4630,10 @@ ddhub:HasFullScale a owl:ObjectProperty;
                    rdfs:domain ddhub:FullScaleUncertainty; 
                    rdfs:range ddhub:DrillingDataPoint; 
                    rdfs:subPropertyOf ddhub:DWISVerb. 
-ddhub:HasFunction a owl:DatatypeProperty, owl:FunctionalProperty, owl:ObjectProperty; 
-                  rdfs:comment """this attribute describes the purpose of the activable function.
-"""@EN, ""@EN; 
-                  rdfs:domain ddhub:ActivableFunction, ddhub:DrillingDataPoint; 
-                  rdfs:range xsd:string, ddhub:DataFlowNode; 
+ddhub:HasFunction a owl:ObjectProperty; 
+                  rdfs:comment ""@EN; 
+                  rdfs:domain ddhub:DrillingDataPoint; 
+                  rdfs:range ddhub:DataFlowNode; 
                   rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasHydraulicState a owl:ObjectProperty; 
                         rdfs:comment ""@EN; 
@@ -4855,7 +4964,8 @@ Minute = 60.0
 """@EN; 
                    rdfs:subClassOf ddhub:Unit. 
 ddhub:HFTO a owl:Class; 
-           rdfs:comment ""@EN; 
+           rdfs:comment """This Noun is used to refer to high frequency torsional oscillations.
+"""@EN; 
            rdfs:subClassOf ddhub:AbnormalTorsionalOscillation. 
 ddhub:HighGravitySolidComponent a owl:Class; 
                                 rdfs:comment ""@EN; 
@@ -4869,11 +4979,17 @@ ddhub:HighPressureRiser a owl:Class;
 ddhub:HoistingSystem a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:RigEquipment. 
+ddhub:HoistProcedure a owl:Class; 
+                     rdfs:comment """The hoist procedure is used to move the top of the drill-stem from one elevation to another elevation while minimizing
+the side effects of swab and surge. 
+"""@EN; 
+                     rdfs:subClassOf ddhub:DrillingProcedure. 
 ddhub:HoleBottomLocation a owl:Class; 
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
 ddhub:HoleCollapse a owl:Class; 
-                   rdfs:comment ""@EN; 
+                   rdfs:comment """This Noun is used to refer to a situation during which there is a hole collapse.
+"""@EN; 
                    rdfs:subClassOf ddhub:DrillingIncident. 
 ddhub:HoleDepth a owl:Class; 
                 rdfs:comment ""@EN; 
@@ -4996,6 +5112,24 @@ The SI unit for **image scale** is: dot per metre with the associated unit label
 ddhub:ImagingTools a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:LoggingWhileDrillingTools. 
+ddhub:ImplementsLimit a owl:ObjectProperty; 
+                      rdfs:comment """This Verb is used to indicate that a safe operating envelope function implements a drilling limit.
+"""@EN; 
+                      rdfs:domain ddhub:SOEFunction; 
+                      rdfs:range ddhub:DrillingLimit; 
+                      rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:ImplementsObjective a owl:ObjectProperty; 
+                          rdfs:comment """This Verb is used to indicate that a control function implements a drilling objective.
+"""@EN; 
+                          rdfs:domain ddhub:ControlFunction; 
+                          rdfs:range ddhub:DrillingObjective; 
+                          rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:ImplementsProcedure a owl:ObjectProperty; 
+                          rdfs:comment """This Verb is used to indicate that a Procedure Function implements a drilling procedure.
+"""@EN; 
+                          rdfs:domain ddhub:ProcedureFunction; 
+                          rdfs:range ddhub:DrillingProcedure; 
+                          rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:Inch a owl:Class; 
            rdfs:comment """[v] = a * [SI]
 where
@@ -5267,7 +5401,8 @@ ddhub:InductionCouplingDownholeTelemetry a owl:Class;
 """@EN; 
                                          rdfs:subClassOf ddhub:WiredPipeTelemetry. 
 ddhub:Influx a owl:Class; 
-             rdfs:comment ""@EN; 
+             rdfs:comment """This Noun is used to refer to a situation during which there is an influx of formation fluids in the borehole.
+"""@EN; 
              rdfs:subClassOf ddhub:DrillingIncident. 
 ddhub:InjectorHead a owl:Class; 
                    rdfs:comment ""@EN; 
@@ -5689,16 +5824,47 @@ ddhub:IsProvidedTo a owl:ObjectProperty;
                    rdfs:domain ddhub:DWISNoun; 
                    rdfs:range ddhub:DataProvider; 
                    rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsRecommendedBy a owl:ObjectProperty; 
+                      rdfs:comment """Indicates that the AdvisorySystemAdvice is recommended by an Advisor
+"""@EN; 
+                      rdfs:domain ddhub:AdvisorySystemAdvice; 
+                      rdfs:range ddhub:ComputationUnit; 
+                      rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsRecommendedFor a owl:ObjectProperty; 
+                       rdfs:comment """Indicates that the AdvisorySystemAdvice is recommended for an ADCS Activable Function
+"""@EN; 
+                       rdfs:domain ddhub:AdvisorySystemAdvice; 
+                       rdfs:range ddhub:ActivableFunction; 
+                       rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsRecordedFrom a owl:ObjectProperty; 
                      rdfs:comment ""@EN; 
                      rdfs:domain ddhub:DWISNoun; 
                      rdfs:range ddhub:DWISNoun; 
                      rdfs:subPropertyOf ddhub:IsGeneratedBy. 
 ddhub:IsRelatedToDrillingIncident a owl:ObjectProperty; 
-                                  rdfs:comment ""@EN; 
+                                  rdfs:comment """This Verb is used to indicate that a drilling data point is related to a drilling incident.
+"""@EN; 
                                   rdfs:domain ddhub:DrillingDataPoint; 
                                   rdfs:range ddhub:DrillingIncident; 
                                   rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsRelatedToDrillingLimit a owl:ObjectProperty; 
+                               rdfs:comment """This Verb is used to indicate that a drilling data point is related to a drilling incident.
+"""@EN; 
+                               rdfs:domain ddhub:DrillingDataPoint; 
+                               rdfs:range ddhub:DrillingLimit; 
+                               rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsRelatedToDrillingObjective a owl:ObjectProperty; 
+                                   rdfs:comment """This Verb is used to indicate that a drilling data point is related to a drilling objective.
+"""@EN; 
+                                   rdfs:domain ddhub:DrillingDataPoint; 
+                                   rdfs:range ddhub:DrillingObjective; 
+                                   rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsRelatedToDrillingProcedure a owl:ObjectProperty; 
+                                   rdfs:comment """This Verb is used to indicate that a drilling data point is related to a drilling procedure.
+"""@EN; 
+                                   rdfs:domain ddhub:DrillingDataPoint; 
+                                   rdfs:range ddhub:DrillingProcedure; 
+                                   rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsResampledBy a owl:ObjectProperty; 
                     rdfs:comment ""@EN; 
                     rdfs:domain ddhub:DrillingDataPoint; 
@@ -6014,6 +6180,10 @@ Litre = 0.001
 Unit = 1.0
 """@EN; 
                     rdfs:subClassOf ddhub:Unit. 
+ddhub:JSonDataType a owl:Class; 
+                   rdfs:comment """A string that contained the serialization in Json of an object.
+"""@EN; 
+                   rdfs:subClassOf ddhub:StringDataType. 
 ddhub:JunkBasket a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:FishingTools. 
@@ -7404,7 +7574,8 @@ ddhub:LogUID a owl:DatatypeProperty, owl:FunctionalProperty;
              rdfs:domain ddhub:WitsMLTimeBasedLogEndPoint; 
              rdfs:range xsd:string. 
 ddhub:LossCirculation a owl:Class; 
-                      rdfs:comment ""@EN; 
+                      rdfs:comment """This Noun is used to refer to a situation during which drilling fluid is lost to the formation.
+"""@EN; 
                       rdfs:subClassOf ddhub:DrillingIncident. 
 ddhub:LowerMarineRiserPackageLmrp a owl:Class; 
                                   rdfs:comment ""@EN; 
@@ -7482,6 +7653,12 @@ ddhub:MagneticNorthAzimuthLocation a owl:Class;
 ddhub:MainframeAssembly a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:TopDrive. 
+ddhub:ManagesIncident a owl:ObjectProperty; 
+                      rdfs:comment """This Verb is used to indicate that a fault detection isolation and recovery function manages a drilling incident.
+"""@EN; 
+                      rdfs:domain ddhub:FDIRFunction; 
+                      rdfs:range ddhub:DrillingIncident; 
+                      rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:Mandrel a owl:Class; 
               rdfs:comment ""@EN; 
               rdfs:subClassOf ddhub:Connection. 
@@ -8996,6 +9173,10 @@ ddhub:MooringSystem a owl:Class;
 ddhub:MotionType a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:MotorStall a owl:Class; 
+                 rdfs:comment """This Noun is used to refer to a situation during which the downhole motor is stalled.
+"""@EN; 
+                 rdfs:subClassOf ddhub:DrillingIncident. 
 ddhub:Mousehole a owl:Class; 
                 rdfs:comment ""@EN; 
                 rdfs:subClassOf ddhub:DrillFloorStructure. 
@@ -9627,7 +9808,7 @@ ddhub:NumberOfItemsRangeExtraction a owl:Class;
                                    rdfs:comment ""@EN; 
                                    rdfs:subClassOf ddhub:RangeExtraction. 
 ddhub:NumberOfRepeaters a owl:DatatypeProperty, owl:FunctionalProperty; 
-                        rdfs:comment """
+                        rdfs:comment """The number of repeaters between the source of the signal and the receiver.
 """@EN; 
                         rdfs:domain ddhub:Telemetry; 
                         rdfs:range xsd:int. 
@@ -9713,14 +9894,20 @@ ddhub:OverburdenPressureGradient a owl:Class;
                                  rdfs:comment ""@EN; 
                                  rdfs:subClassOf ddhub:PrototypeData. 
 ddhub:Overpull a owl:Class; 
-               rdfs:comment ""@EN; 
+               rdfs:comment """This Noun is used to refer to a situation during which the drill-stem hangs in something in the upward direction.
+"""@EN; 
                rdfs:subClassOf ddhub:DrillingIncident. 
 ddhub:Overshot a owl:Class; 
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:FishingTools. 
 ddhub:OverTorque a owl:Class; 
-                 rdfs:comment ""@EN; 
+                 rdfs:comment """This Noun is used to refer to a situation during which the rotation of the drill-stem is impeded.
+"""@EN; 
                  rdfs:subClassOf ddhub:DrillingIncident. 
+ddhub:PackOff a owl:Class; 
+              rdfs:comment """This Noun is used to refer to a situation during which the annulus hydraulic flow-path is partially or fully blocked.
+"""@EN; 
+              rdfs:subClassOf ddhub:Plugged. 
 ddhub:Parsec a owl:Class; 
              rdfs:comment """[v] = a * [SI]
 where
@@ -9891,7 +10078,8 @@ ddhub:PipeRam a owl:Class;
               rdfs:comment ""@EN; 
               rdfs:subClassOf ddhub:BopElement. 
 ddhub:PipeWashout a owl:Class; 
-                  rdfs:comment ""@EN; 
+                  rdfs:comment """This Noun is used to refer to a situation during which there is leak between the inside of the drill-stem and the annulus.
+"""@EN; 
                   rdfs:subClassOf ddhub:DrillingIncident. 
 ddhub:PipeWashoutLocation a owl:Class; 
                           rdfs:comment ""@EN; 
@@ -9921,7 +10109,8 @@ The SI unit for **plane angle** is: radian with the associated unit label $rad$
 """@EN; 
                          rdfs:subClassOf ddhub:Quantity. 
 ddhub:Plugged a owl:Class; 
-              rdfs:comment ""@EN; 
+              rdfs:comment """This Noun is used to refer to a situation during which the hydraulic flow-path is partially or fully blocked.
+"""@EN; 
               rdfs:subClassOf ddhub:DrillingIncident. 
 ddhub:Plugs a owl:Class; 
             rdfs:comment ""@EN; 
@@ -10737,6 +10926,12 @@ $$[ML^{-2}T^{-2}]$$.
 The SI unit for **pressure gradient per length** is: pascal per metre with the associated unit label $\\frac{Pa}{m}$
 """@EN; 
                                         rdfs:subClassOf ddhub:Quantity. 
+ddhub:PressureIntegrityTestProcedure a owl:Class; 
+                                     rdfs:comment """The pressure integrity test procedure is used to either check that the formation can hold the maximum expected downhole
+pressure (formation integrity test) or to test the strength of the formation and the minimum horizontal stress (leak-off test and 
+extended leakoff test). 
+"""@EN; 
+                                     rdfs:subClassOf ddhub:DrillingProcedure. 
 ddhub:PressureLoggingTools a owl:Class; 
                            rdfs:comment ""@EN; 
                            rdfs:subClassOf ddhub:WirelineLoggingTools. 
@@ -11860,6 +12055,11 @@ Foot = 12.0 * Inch
 Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
 """@EN; 
                      rdfs:subClassOf ddhub:Unit. 
+ddhub:ReciprocationProcedure a owl:Class; 
+                             rdfs:comment """The reciprocation procedure is used to ream up and down with the same stand. The main purpose is often to clean the hole
+while avoiding to wash out the formation. 
+"""@EN; 
+                             rdfs:subClassOf ddhub:DrillingProcedure. 
 ddhub:Recommendation a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:ProcessData. 
@@ -11981,6 +12181,10 @@ ddhub:RollingCutter a owl:Class;
 ddhub:ROP a owl:Class; 
           rdfs:comment ""@EN; 
           rdfs:subClassOf ddhub:PrototypeData. 
+ddhub:ROPLimit a owl:Class; 
+               rdfs:comment """This Noun is used to refer to a rate of penetration limit.
+"""@EN; 
+               rdfs:subClassOf ddhub:DrillingLimit. 
 ddhub:RotarySlips a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:DrillFloorEquipment. 
@@ -12035,6 +12239,10 @@ ddhub:RotationalModelling a owl:Class;
                           rdfs:comment """The model accounts for the rotational movement of some parts of the physical system.
 """@EN; 
                           rdfs:subClassOf ddhub:ModelledDegreeOfFreedom. 
+ddhub:RotationalVelocityLimit a owl:Class; 
+                              rdfs:comment """This Noun is used to refer to a rotational velocity limit.
+"""@EN; 
+                              rdfs:subClassOf ddhub:DrillingLimit. 
 ddhub:RotationPerHour a owl:Class; 
                       rdfs:comment """[v] = a * [SI]
 where
@@ -12056,6 +12264,16 @@ and
 Unit = 1.0
 """@EN; 
                         rdfs:subClassOf ddhub:Unit. 
+ddhub:RotationStartupProcedure a owl:Class; 
+                               rdfs:comment """The rotation startup procedure controls the steps to start the rotation of the drill-stem to reach a target rotational
+speed while attempting to avoid having too large torsional oscillations.
+"""@EN; 
+                               rdfs:subClassOf ddhub:DrillingProcedure. 
+ddhub:RotationStopProcedure a owl:Class; 
+                            rdfs:comment """The rotation stop procedure controls the path for stopping the rotation of the drill-stem and remove as much torque
+along the drill-stem as possible.
+"""@EN; 
+                            rdfs:subClassOf ddhub:DrillingProcedure. 
 ddhub:Rov a owl:Class; 
           rdfs:comment ""@EN; 
           rdfs:subClassOf ddhub:MarineSystem. 
@@ -12182,7 +12400,8 @@ ddhub:ShearStress a owl:Class;
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:PrototypeData. 
 ddhub:Shock a owl:Class; 
-            rdfs:comment ""@EN; 
+            rdfs:comment """This Noun is used to refer to lateral shocks.
+"""@EN; 
             rdfs:subClassOf ddhub:AbnormalLateralOscillation. 
 ddhub:ShockPerHour a owl:Class; 
                    rdfs:comment """[v] = a * [SI]
@@ -12273,6 +12492,11 @@ ddhub:SlickLine a owl:Class;
 ddhub:SlipJoint a owl:Class; 
                 rdfs:comment ""@EN; 
                 rdfs:subClassOf ddhub:MarineSystem. 
+ddhub:SlowCirculationRateProcedure a owl:Class; 
+                                   rdfs:comment """The slow circulation rate procedure is used to measure the pressure losses of the drilling system in conditions close
+to what would be necessary while circulating out a kick.
+"""@EN; 
+                                   rdfs:subClassOf ddhub:DrillingProcedure. 
 ddhub:SlugSettlingPit a owl:Class; 
                       rdfs:comment ""@EN; 
                       rdfs:subClassOf ddhub:MudPits. 
@@ -12568,6 +12792,26 @@ ddhub:StabbingGuide a owl:Class;
 ddhub:Stabilizers a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:DrillString. 
+ddhub:StableAxialForceObjective a owl:Class; 
+                                rdfs:comment """This Noun is used to refer to the objective of obtaining stable axial force.
+"""@EN; 
+                                rdfs:subClassOf ddhub:DrillingObjective. 
+ddhub:StableAxialVelocityObjective a owl:Class; 
+                                   rdfs:comment """This Noun is used to refer to the objective of obtaining stable axial velocity.
+"""@EN; 
+                                   rdfs:subClassOf ddhub:DrillingObjective. 
+ddhub:StablePressureObjective a owl:Class; 
+                              rdfs:comment """This Noun is used to refer to the objective of obtaining stable pressure.
+"""@EN; 
+                              rdfs:subClassOf ddhub:DrillingObjective. 
+ddhub:StableRotationalVelocityObjective a owl:Class; 
+                                        rdfs:comment """This Noun is used to refer to the objective of obtaining stable rotational velocity.
+"""@EN; 
+                                        rdfs:subClassOf ddhub:DrillingObjective. 
+ddhub:StableTorqueObjective a owl:Class; 
+                            rdfs:comment """This Noun is used to refer to the objective of obtaining stable torque.
+"""@EN; 
+                            rdfs:subClassOf ddhub:DrillingObjective. 
 ddhub:StandardAtmosphere a owl:Class; 
                          rdfs:comment """[v] = a * [SI]
 where
@@ -12625,7 +12869,8 @@ The meaningful precision of stick duration in the drilling context is typically:
 """@EN; 
                                     rdfs:subClassOf ddhub:MeasurableQuantity. 
 ddhub:StickSlip a owl:Class; 
-                rdfs:comment ""@EN; 
+                rdfs:comment """This Noun is used to refer to stick-slips.
+"""@EN; 
                 rdfs:subClassOf ddhub:AbnormalTorsionalOscillation. 
 ddhub:StickUpHeightVerticalLocation a owl:Class; 
                                     rdfs:comment ""@EN; 
@@ -12699,7 +12944,8 @@ Unit = 1.0
 """@EN; 
                       rdfs:subClassOf ddhub:Unit. 
 ddhub:StuckPipe a owl:Class; 
-                rdfs:comment ""@EN; 
+                rdfs:comment """This Noun is used to refer to a situation during which the drill-stem is impeded to move either axially or rotationally or both.
+"""@EN; 
                 rdfs:subClassOf ddhub:DrillingIncident. 
 ddhub:Subbent a owl:Class; 
               rdfs:comment ""@EN; 
@@ -12840,6 +13086,10 @@ SI Unit: Second (s)
 """@EN; 
         rdfs:domain ddhub:Quantity; 
         rdfs:range xsd:double. 
+ddhub:TagBottomProcedure a owl:Class; 
+                         rdfs:comment """The tag bottom procedure is used to tag the bottom hole and establish the drilling parameters.
+"""@EN; 
+                         rdfs:subClassOf ddhub:DrillingProcedure. 
 ddhub:TangencyLength a owl:Class; 
                      rdfs:comment """the position along the drill-string, counted from the bit, from which we can consider that the pipes direction is tangential with the borehole direction.
 """@EN; 
@@ -13140,6 +13390,11 @@ TonUS = 2000.0 * Pound reference: https://en.wikipedia.org/wiki/Ton
 Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
 """@EN; 
             rdfs:subClassOf ddhub:Unit. 
+ddhub:ToolfaceOrientationProcedure a owl:Class; 
+                                   rdfs:comment """The toolface orientation procedure is used to manipulate the top of string angular position to ensure that the downhole
+motor toolface is set to a desired set-point.
+"""@EN; 
+                                   rdfs:subClassOf ddhub:DrillingProcedure. 
 ddhub:ToolJoint1ReferenceLocation a owl:Class; 
                                   rdfs:comment ""@EN; 
                                   rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
@@ -13283,7 +13538,8 @@ ddhub:TurbineMotor a owl:Class;
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:DownholeMotor. 
 ddhub:TwistOff a owl:Class; 
-               rdfs:comment ""@EN; 
+               rdfs:comment """This Noun is used to refer to a twist-off situation.
+"""@EN; 
                rdfs:subClassOf ddhub:DrillingIncident. 
 ddhub:TwoDimensionalReferenceFrame a owl:Class; 
                                    rdfs:comment ""@EN; 
@@ -13398,7 +13654,8 @@ Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
 """@EN; 
                      rdfs:subClassOf ddhub:Unit. 
 ddhub:Underpull a owl:Class; 
-                rdfs:comment ""@EN; 
+                rdfs:comment """This Noun is used to refer to a situation during which the drill-stem hangs in something in the downward direction.
+"""@EN; 
                 rdfs:subClassOf ddhub:DrillingIncident. 
 ddhub:Underreamers a owl:Class; 
                    rdfs:comment ""@EN; 
@@ -13765,6 +14022,10 @@ The SI unit for **mass** is: kilogram with the associated unit label $kg$
 The meaningful precision of weight on bit in the drilling context is typically: 10 kg
 """@EN; 
                                   rdfs:subClassOf ddhub:MeasurableQuantity. 
+ddhub:WeightTransferObjective a owl:Class; 
+                              rdfs:comment """This Noun is used to refer to the objective of transferring weight to the bottom of the drill-stem.
+"""@EN; 
+                              rdfs:subClassOf ddhub:DrillingObjective. 
 ddhub:WellboreCenterLineFrame a owl:Class; 
                               rdfs:comment ""@EN; 
                               rdfs:subClassOf ddhub:OneDimensionalCurviLinearReferenceFrame. 
@@ -13816,7 +14077,8 @@ ddhub:Whipstock a owl:Class;
                 rdfs:comment ""@EN; 
                 rdfs:subClassOf ddhub:DrillingEquipment. 
 ddhub:Whirling a owl:Class; 
-               rdfs:comment ""@EN; 
+               rdfs:comment """This Noun is used to refer to abnormal lateral oscillations.
+"""@EN; 
                rdfs:subClassOf ddhub:AbnormalLateralOscillation. 
 ddhub:WireCable a owl:Class; 
                 rdfs:comment ""@EN; 
@@ -13855,6 +14117,10 @@ ddhub:WitsMLTimeBasedLogEndPoint a owl:Class;
 ddhub:WOB a owl:Class; 
           rdfs:comment ""@EN; 
           rdfs:subClassOf ddhub:PrototypeData. 
+ddhub:WOBLimit a owl:Class; 
+               rdfs:comment """This Noun is used to refer to a weight on bit limit.
+"""@EN; 
+               rdfs:subClassOf ddhub:DrillingLimit. 
 ddhub:Yard a owl:Class; 
            rdfs:comment """[v] = a * [SI]
 where

@@ -17,7 +17,7 @@ ServiceCompany <|-- CementingServiceCompany
 ServiceCompany <|-- DataAnalysisServiceCompany
 DataProvider <|-- DrillingContractor
 DataProvider <|-- DWISInternalService
-DWISInternalService <|-- DWISDDHub
+DWISInternalService <|-- DWISBlackboard
 DWISInternalService <|-- DWISDrillingProcessStateInterpreter
 DWISInternalService <|-- DWISAdviceComposer
 DWISInternalService <|-- DWISScheduler
@@ -122,36 +122,36 @@ A data analysis service company is an entity that analyses measured data and pro
 - Description: 
 A DWIS internal service is an internal component of the DWIS infrastructure that generates information that can be used by any systems connected to the DWIS infrastructure.
 - Definition set: DataProviders
-## DWISDDHub <!-- NOUN -->
-- Display name: DWISDDHub
+## DWISBlackboard <!-- NOUN -->
+- Display name: DWIS Blackboard
 - Parent class: [DWISInternalService](./DataProviders.md#DWISInternalService)
 - Definition set: DataProviders
 ## DWISDrillingProcessStateInterpreter <!-- NOUN -->
-- Display name: DWISDrillingProcessStateInterpreter
+- Display name: DWIS Drilling Process State Interpreter
 - Parent class: [DWISInternalService](./DataProviders.md#DWISInternalService)
 - Definition set: DataProviders
 ## DWISAdviceComposer <!-- NOUN -->
-- Display name: DWISAdviceComposer
+- Display name: DWIS Advice Composer
 - Parent class: [DWISInternalService](./DataProviders.md#DWISInternalService)
 - Definition set: DataProviders
 ## DWISScheduler <!-- NOUN -->
-- Display name: DWISScheduler
+- Display name: DWIS Scheduler
 - Parent class: [DWISInternalService](./DataProviders.md#DWISInternalService)
 - Definition set: DataProviders
 ## DWISContextualDataBuilder <!-- NOUN -->
-- Display name: DWISContextualDataBuilder
+- Display name: DWIS Contextual Data Builder
 - Parent class: [DWISInternalService](./DataProviders.md#DWISInternalService)
 - Definition set: DataProviders
 ## DWISLogger <!-- NOUN -->
-- Display name: DWISLogger
+- Display name: DWIS Logger
 - Parent class: [DWISInternalService](./DataProviders.md#DWISInternalService)
 - Definition set: DataProviders
 ## DWISADCSInterface <!-- NOUN -->
-- Display name: DWISADCSInterface
+- Display name: DWIS ADCS Interface
 - Parent class: [DWISInternalService](./DataProviders.md#DWISInternalService)
 - Definition set: DataProviders
 ## DWISADCSCapabilityDescriptor <!-- NOUN -->
-- Display name: DWISADCSCapabilityDescriptor
+- Display name: DWIS ADCS Capability Descriptor
 - Parent class: [DWISInternalService](./DataProviders.md#DWISInternalService)
 - Definition set: DataProviders
 # Verbs
