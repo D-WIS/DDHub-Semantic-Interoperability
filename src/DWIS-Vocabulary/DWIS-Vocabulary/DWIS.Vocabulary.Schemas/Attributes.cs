@@ -5,7 +5,6 @@ public static class Attributes
 {
 public enum Enum
 {
-ActivableFunction_HasFunction,
 RunnableFunction_IsAuxiliary,
 Advisor_AdviceType,
 BandPassFilter_MinFrequency,
@@ -80,8 +79,6 @@ FullScaleUncertainty_ProportionError,
 SensorUncertainty_Accuracy,
 SensorUncertainty_Precision
 }
-	public static string ActivableFunction_HasFunction = "HasFunction";
-	public static string ActivableFunction_HasFunction_Type = "string";
 	public static string RunnableFunction_IsAuxiliary = "IsAuxiliary";
 	public static string RunnableFunction_IsAuxiliary_Type = "boolean";
 	public static string Advisor_AdviceType = "AdviceType";

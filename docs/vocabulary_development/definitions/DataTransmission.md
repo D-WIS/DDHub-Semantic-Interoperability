@@ -7,13 +7,13 @@
 - Attributes:
   - NumberOfRepeaters
     - Type: int
-    - Description: 
+    - Description: The number of repeaters between the source of the signal and the receiver.
   - DistanceBetweenRepeaters
     - Type: double
-    - Description:
+    - Description: The average distance between two repeaters. The physical quantity is Length and the unit is metre.
   - AverageDelayByRepeater
     - Type: double
-    - Description: 
+    - Description: The average delay caused by each repeater. The physical quantity is Time and the unit is second.
 - Specialization:
 - Description: Technology used for transferring the data from its main origin. 
 - Examples:
@@ -148,7 +148,7 @@ downholePressure_1 IsTransmittedBy galvanicCouplingTelemetry
 - Examples: 
 ``` dwis SPP_1
 DrillingDataPoint: SPP_1
-SPP BelongsToClass SPP
+SPP_1 BelongsToClass SPP
 SPP_1 IsOfMeasurableQuantity PressureDrillingQuantity
 TopSideTelemetry: topSideTelemetry
 SPP_1 IsTransmittedBy topSideTelemetry

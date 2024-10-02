@@ -102,57 +102,57 @@
 - Specialization:
 - Description: A DWIS internal service is an internal component of the DWIS infrastructure that generates information that can be used by any systems connected to the DWIS infrastructure.
 - Examples:
-## DWISDDHub <!-- NOUN -->
-- Display name: DWISDDHub
+## DWISBlackboard <!-- NOUN -->
+- Display name: DWIS Blackboard
 - Parent class: DWISInternalService
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## DWISDrillingProcessStateInterpreter <!-- NOUN -->
-- Display name: DWISDrillingProcessStateInterpreter
+- Display name: DWIS Drilling Process State Interpreter
 - Parent class: DWISInternalService
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## DWISAdviceComposer <!-- NOUN -->
-- Display name: DWISAdviceComposer
+- Display name: DWIS Advice Composer
 - Parent class: DWISInternalService
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## DWISScheduler <!-- NOUN -->
-- Display name: DWISScheduler
+- Display name: DWIS Scheduler
 - Parent class: DWISInternalService
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## DWISContextualDataBuilder <!-- NOUN -->
-- Display name: DWISContextualDataBuilder
+- Display name: DWIS Contextual Data Builder
 - Parent class: DWISInternalService
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## DWISLogger <!-- NOUN -->
-- Display name: DWISLogger
+- Display name: DWIS Logger
 - Parent class: DWISInternalService
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## DWISADCSInterface <!-- NOUN -->
-- Display name: DWISADCSInterface
+- Display name: DWIS ADCS Interface
 - Parent class: DWISInternalService
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## DWISADCSCapabilityDescriptor <!-- NOUN -->
-- Display name: DWISADCSCapabilityDescriptor
+- Display name: DWIS ADCS Capability Descriptor
 - Parent class: DWISInternalService
 - Attributes:
 - Specialization:

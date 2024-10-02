@@ -415,11 +415,29 @@ namespace DWIS.Vocabulary.Utils
                     }
                     else if (isVerb)
                     {
-                        str = "\t" + ProcessSparQLVariable(fact.Item1) + " ddhub:" + fact.Item2 + " " + ProcessSparQLVariable(fact.Item3) + " .";
+                        if (fact.Item2 == "=" && fact.Item1.Contains('.'))
+                        {
+                            string[] tokens = fact.Item1.Split('.');
+                            if (tokens != null && tokens.Length > 1)
+                            {
+                                str = "\t" + ProcessSparQLVariable(tokens[0]) + " ddhub:" + tokens[1] + " " + ProcessSparQLVariable(fact.Item3) + " .";
+                            }
+                        }
+                        else
+                        {
+                            str = "\t" + ProcessSparQLVariable(fact.Item1) + " ddhub:" + fact.Item2 + " " + ProcessSparQLVariable(fact.Item3) + " .";
+                        }
                     }
                     else
                     {
-                        str = "\t" + ProcessSparQLVariable(fact.Item1) + " ddhub:" + fact.Item2 + " " + "?Attribute" + attrCount.ToString("000") + " .";
+                        if (fact.Item1.Contains('.'))
+                        {
+                            string[] tokens = fact.Item1.Split('.');
+                            if (tokens != null && tokens.Length > 1)
+                            {
+                                str = "\t" + ProcessSparQLVariable(tokens[0]) + " ddhub:" + tokens[1] + " " + "?Attribute" + attrCount.ToString("000") + " .";
+                            }
+                        }
                         filters.Add("\t" + "?Attribute" + attrCount.ToString("000") + " = " + fact.Item3);
                         attrCount++;
                     }

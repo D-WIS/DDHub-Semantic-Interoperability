@@ -15,6 +15,9 @@ IsArmedSignalFor,
 IsTriggeredSignalFor,
 IsIdlingAfterTriggeredSignalFor,
 IsImpactDescriptionSignalFor,
+IsRecommendedBy,
+IsRecommendedFor,
+HasControlLimit,
 IsDependentOn,
 IsObservableFrom,
 HasPressureReference,
@@ -74,6 +77,13 @@ IsToBeEqualTo,
 IsToBeDifferentFrom,
 IsSubPartOf,
 IsRelatedToDrillingIncident,
+ManagesIncident,
+IsRelatedToDrillingLimit,
+ImplementsLimit,
+IsRelatedToDrillingObjective,
+ImplementsObjective,
+IsRelatedToDrillingProcedure,
+ImplementsProcedure,
 DWISVerb,
 BelongsToClass,
 HasEndPoint,
@@ -159,6 +169,9 @@ HasUncertaintyHistogram
 	public static string IsTriggeredSignalFor = "IsTriggeredSignalFor";
 	public static string IsIdlingAfterTriggeredSignalFor = "IsIdlingAfterTriggeredSignalFor";
 	public static string IsImpactDescriptionSignalFor = "IsImpactDescriptionSignalFor";
+	public static string IsRecommendedBy = "IsRecommendedBy";
+	public static string IsRecommendedFor = "IsRecommendedFor";
+	public static string HasControlLimit = "HasControlLimit";
 	public static string IsDependentOn = "IsDependentOn";
 	public static string IsObservableFrom = "IsObservableFrom";
 	public static string HasPressureReference = "HasPressureReference";
@@ -218,6 +231,13 @@ HasUncertaintyHistogram
 	public static string IsToBeDifferentFrom = "IsToBeDifferentFrom";
 	public static string IsSubPartOf = "IsSubPartOf";
 	public static string IsRelatedToDrillingIncident = "IsRelatedToDrillingIncident";
+	public static string ManagesIncident = "ManagesIncident";
+	public static string IsRelatedToDrillingLimit = "IsRelatedToDrillingLimit";
+	public static string ImplementsLimit = "ImplementsLimit";
+	public static string IsRelatedToDrillingObjective = "IsRelatedToDrillingObjective";
+	public static string ImplementsObjective = "ImplementsObjective";
+	public static string IsRelatedToDrillingProcedure = "IsRelatedToDrillingProcedure";
+	public static string ImplementsProcedure = "ImplementsProcedure";
 	public static string DWISVerb = "DWISVerb";
 	public static string BelongsToClass = "BelongsToClass";
 	public static string HasEndPoint = "HasEndPoint";

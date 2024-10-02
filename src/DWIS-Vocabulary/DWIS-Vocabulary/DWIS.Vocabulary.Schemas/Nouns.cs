@@ -12,6 +12,12 @@ ProcedureFunction,
 ProtectionFunction,
 FDIRFunction,
 SOEFunction,
+AdvisorySystemAdvice,
+DigitalTwinAdvice,
+DrillingStandardProcedureAdvice,
+DrillingControlAdvice,
+DrillingSafeOperatingEnvelopeAdvice,
+DrillingFaultDetectionIsolationAndRecoveryAdvice,
 DataFlowNode,
 Plan,
 OperationalPlan,
@@ -73,7 +79,7 @@ CementingServiceCompany,
 DataAnalysisServiceCompany,
 DrillingContractor,
 DWISInternalService,
-DWISDDHub,
+DWISBlackboard,
 DWISDrillingProcessStateInterpreter,
 DWISAdviceComposer,
 DWISScheduler,
@@ -103,6 +109,7 @@ DiscreteDataType,
 EnumerationDataType,
 BooleanDataType,
 StringDataType,
+JSonDataType,
 DrillingDataPoint,
 PrototypeData,
 ProcessData,
@@ -588,10 +595,42 @@ Influx,
 LossCirculation,
 HoleCollapse,
 StuckPipe,
+DifferentiallyStuck,
 PipeWashout,
 FormationWashout,
 OverTorque,
 Plugged,
+PackOff,
+MotorStall,
+DrillingLimit,
+AxialVelocityLimit,
+RotationalVelocityLimit,
+FlowrateLimit,
+ROPLimit,
+WOBLimit,
+DifferentialPressureLimit,
+DrillingObjective,
+StableAxialVelocityObjective,
+StableRotationalVelocityObjective,
+StablePressureObjective,
+StableTorqueObjective,
+StableAxialForceObjective,
+WeightTransferObjective,
+DrillingProcedure,
+CirculationStartupProcedure,
+CirculationStopProcedure,
+RotationStartupProcedure,
+RotationStopProcedure,
+HoistProcedure,
+TagBottomProcedure,
+ReciprocationProcedure,
+FrictionTestProcedure,
+SlowCirculationRateProcedure,
+PressureIntegrityTestProcedure,
+FlowCheckProcedure,
+CementingProcedure,
+DownlinkingProcedure,
+ToolfaceOrientationProcedure,
 DWISNoun,
 DataEndPoint,
 WitsMLTimeBasedLogEndPoint,
@@ -1825,6 +1864,12 @@ MegaBritishThermalUnit
 	public static string ProtectionFunction = "ProtectionFunction";
 	public static string FDIRFunction = "FDIRFunction";
 	public static string SOEFunction = "SOEFunction";
+	public static string AdvisorySystemAdvice = "AdvisorySystemAdvice";
+	public static string DigitalTwinAdvice = "DigitalTwinAdvice";
+	public static string DrillingStandardProcedureAdvice = "DrillingStandardProcedureAdvice";
+	public static string DrillingControlAdvice = "DrillingControlAdvice";
+	public static string DrillingSafeOperatingEnvelopeAdvice = "DrillingSafeOperatingEnvelopeAdvice";
+	public static string DrillingFaultDetectionIsolationAndRecoveryAdvice = "DrillingFaultDetectionIsolationAndRecoveryAdvice";
 	public static string DataFlowNode = "DataFlowNode";
 	public static string Plan = "Plan";
 	public static string OperationalPlan = "OperationalPlan";
@@ -1886,7 +1931,7 @@ MegaBritishThermalUnit
 	public static string DataAnalysisServiceCompany = "DataAnalysisServiceCompany";
 	public static string DrillingContractor = "DrillingContractor";
 	public static string DWISInternalService = "DWISInternalService";
-	public static string DWISDDHub = "DWISDDHub";
+	public static string DWISBlackboard = "DWISBlackboard";
 	public static string DWISDrillingProcessStateInterpreter = "DWISDrillingProcessStateInterpreter";
 	public static string DWISAdviceComposer = "DWISAdviceComposer";
 	public static string DWISScheduler = "DWISScheduler";
@@ -1916,6 +1961,7 @@ MegaBritishThermalUnit
 	public static string EnumerationDataType = "EnumerationDataType";
 	public static string BooleanDataType = "BooleanDataType";
 	public static string StringDataType = "StringDataType";
+	public static string JSonDataType = "JSonDataType";
 	public static string DrillingDataPoint = "DrillingDataPoint";
 	public static string PrototypeData = "PrototypeData";
 	public static string ProcessData = "ProcessData";
@@ -2401,10 +2447,42 @@ MegaBritishThermalUnit
 	public static string LossCirculation = "LossCirculation";
 	public static string HoleCollapse = "HoleCollapse";
 	public static string StuckPipe = "StuckPipe";
+	public static string DifferentiallyStuck = "DifferentiallyStuck";
 	public static string PipeWashout = "PipeWashout";
 	public static string FormationWashout = "FormationWashout";
 	public static string OverTorque = "OverTorque";
 	public static string Plugged = "Plugged";
+	public static string PackOff = "PackOff";
+	public static string MotorStall = "MotorStall";
+	public static string DrillingLimit = "DrillingLimit";
+	public static string AxialVelocityLimit = "AxialVelocityLimit";
+	public static string RotationalVelocityLimit = "RotationalVelocityLimit";
+	public static string FlowrateLimit = "FlowrateLimit";
+	public static string ROPLimit = "ROPLimit";
+	public static string WOBLimit = "WOBLimit";
+	public static string DifferentialPressureLimit = "DifferentialPressureLimit";
+	public static string DrillingObjective = "DrillingObjective";
+	public static string StableAxialVelocityObjective = "StableAxialVelocityObjective";
+	public static string StableRotationalVelocityObjective = "StableRotationalVelocityObjective";
+	public static string StablePressureObjective = "StablePressureObjective";
+	public static string StableTorqueObjective = "StableTorqueObjective";
+	public static string StableAxialForceObjective = "StableAxialForceObjective";
+	public static string WeightTransferObjective = "WeightTransferObjective";
+	public static string DrillingProcedure = "DrillingProcedure";
+	public static string CirculationStartupProcedure = "CirculationStartupProcedure";
+	public static string CirculationStopProcedure = "CirculationStopProcedure";
+	public static string RotationStartupProcedure = "RotationStartupProcedure";
+	public static string RotationStopProcedure = "RotationStopProcedure";
+	public static string HoistProcedure = "HoistProcedure";
+	public static string TagBottomProcedure = "TagBottomProcedure";
+	public static string ReciprocationProcedure = "ReciprocationProcedure";
+	public static string FrictionTestProcedure = "FrictionTestProcedure";
+	public static string SlowCirculationRateProcedure = "SlowCirculationRateProcedure";
+	public static string PressureIntegrityTestProcedure = "PressureIntegrityTestProcedure";
+	public static string FlowCheckProcedure = "FlowCheckProcedure";
+	public static string CementingProcedure = "CementingProcedure";
+	public static string DownlinkingProcedure = "DownlinkingProcedure";
+	public static string ToolfaceOrientationProcedure = "ToolfaceOrientationProcedure";
 	public static string DWISNoun = "DWISNoun";
 	public static string DataEndPoint = "DataEndPoint";
 	public static string WitsMLTimeBasedLogEndPoint = "WitsMLTimeBasedLogEndPoint";

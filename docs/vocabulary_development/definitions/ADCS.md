@@ -2,12 +2,9 @@
 
 # NOUNS
 ## ActivableFunction <!-- NOUN -->
-- Display name: Activable Function
+- Display name: ActivableFunction
 - Parent class: DWISNoun
 - Attributes:
-  - HasFunction 
-    - Type: string
-    - Description: this attribute describes the purpose of the activable function.
 - Description: An `ActivableFunction` is an ADCS function that can be activated. Here activation means that the
 function may run immediately or that it is enabled and can trigger if some conditions are respected.
 - Examples:
@@ -22,7 +19,7 @@ ActivableFunction IsProvidedBy DCS
 This example describes all `ActivableFunction` provided by the drilling control system, `DCS`. The `DCS` is 
 defined as a `ControlSystem` provided by a drilling contractor.
 ## RunnableFunction  <!-- NOUN -->
-- Display name: Runnable Function 
+- Display name: RunnableFunction 
 - Parent class: ActivableFunction
 - Attributes:
   - IsAuxiliary 
@@ -55,7 +52,8 @@ follows as closely as possible, for instance, a desired `WOB`.
 - Examples:
 ```dwis autoDriller
 ControllerFunction:autoDriller
-autoDriller HasFunction "Drill"
+StableAxiaVelocityObjective: stableROP
+autoDriller ImplementsObjective stableROP
 autoDriller IsAuxiliary false
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -77,7 +75,8 @@ the rotational speed and one that controls the axial speed.
 - Examples:
 ```dwis frictionTest
 ProcedureFunction:frictionTest
-frictionTest HasFunction "FrictionTest"
+FrictionTestProcedure: frictionTest
+frictionTest ImplementsProcedure frictionTest
 FrictionTest IsAuxiliary false
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -110,7 +109,7 @@ defined as a `ControlSystem` provided by a drilling contractor.
 - Display name: FDIR Function
 - Parent class: ProtectionFunction
 - Description: A `FDIRFunction` is a `ProtectionFunction` that reacts to a particular state of the drilling process. FDIR 
-- stands for Fault Detection, Isolation and Recovery. An FDIR protects the drilling process by looking at its outputs.
+stands for Fault Detection, Isolation and Recovery. An FDIR protects the drilling process by looking at its outputs.
 When that state is detected, then an isolation procedure is run, and if successful and defined, a recovery procedure is
 thereafter executed. In case of success of the recovery procedure, the drilling process is resumed. In all other cases,
 the system returns in manual mode, usually using the safe mode management procedure. An example of `FDIRFunction` is an
@@ -118,7 +117,8 @@ packoff detection and reaction procedure.
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -138,7 +138,8 @@ surging pressure above the fracturing pressure.
 - Examples:
 ```dwis swabSurgeLimits
 SOEFunction:swabSurgeLimits
-swabSurgeLimits HasFunction "SwabSurgeSOE"
+AxialVelocityLimit: swabSurgeLimit
+swabSurgeLimits ImplementsLimit swabSurgeLimit
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -159,7 +160,8 @@ It is expected that the `DrillingDataPoint` is a Boolean value.
 - Examples: 
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -180,7 +182,8 @@ not. It is expected that the `DrillingDataPoint` is a Boolean value.
 - Examples: 
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -205,7 +208,8 @@ is ignored.
 - Examples: 
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -235,7 +239,8 @@ within the limits, but if the limits are applied then the idle state is false, b
 - Examples: 
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -263,7 +268,8 @@ detection of an incident.
 - Examples: 
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -285,7 +291,8 @@ extra margin signal is used or not by the FDIR function. This signal is expected
 - Examples: 
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -312,7 +319,8 @@ triggered. For instance, a pack-off FDIR may be active but would react only if t
 - Examples: 
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -339,7 +347,8 @@ back to the end-user, in case of failure of the recovery procedure or at the end
 - Examples:
  ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -363,7 +372,8 @@ is triggered.
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -390,7 +400,8 @@ describe the impact of the function on the drilling process. This signal is supp
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-packOffDetectionAndReaction HasFunction "PackOffFDIR"
+PackOffIncident: packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor

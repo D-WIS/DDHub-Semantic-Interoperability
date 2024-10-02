@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using DWIS.Vocabulary.Utils;
 using System.Diagnostics.Eventing.Reader;
 using System.Diagnostics.Metrics;
+using System.IO;
 
 namespace DWIS.Vocabulary.Development.Actions
 {
@@ -243,6 +244,19 @@ namespace DWIS.Vocabulary.Development.Actions
             _vocabulary.ToTrees(out nounTree, out verbTree);
             ok = previousOK && nounTree.Count() == _vocabulary.Nouns.Count && verbTree.Count() == _vocabulary.Verbs.Count;
 
+            List<string> missingInNounTree = new List<string>();
+            List<string> missingInVocabulary = new List<string>();
+            foreach (var item in _vocabulary.Nouns)
+            {
+                if (item != null && !string.IsNullOrEmpty(item.Name))
+                {
+                    if (!Search(item.Name, nounTree))
+                    {
+                        missingInNounTree.Add(item.Name);
+                    }
+                }  
+            }
+            Missing(nounTree, _vocabulary.Nouns, missingInVocabulary);
             if (previousOK && !ok)
             {
                 _logger.Log(LogLevel.Error, $"Nouns tree items: {nounTree.Count()} vs {_vocabulary.Nouns.Count})");
@@ -251,7 +265,65 @@ namespace DWIS.Vocabulary.Development.Actions
 
             return this;
         }
+        private bool Search(string noun, Tree<Noun> nounTree)
+        {
+            bool found = false;
+            if (nounTree != null)
+            {
+                if (nounTree.RootItem != null && !string.IsNullOrEmpty(nounTree.RootItem.Name) && nounTree.RootItem.Name.Equals(noun))
+                {
+                    found = true;
+                }
+                else
+                {
+                    if (nounTree.Children != null) {
+                        foreach (var child in nounTree.Children)
+                        {
+                            if (Search(noun, child))
+                            {
+                                found = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            return found;
+        }
 
+        private bool Missing(Tree<Noun> nounTree, List<Noun> nouns, List<string> missings)
+        {
+            if (nounTree != null)
+            {
+                if (nounTree.RootItem != null && !string.IsNullOrEmpty(nounTree.RootItem.Name))
+                {
+                    bool found = false;
+                    foreach (var noun in nouns)
+                    {
+                        if (noun != null && nounTree.RootItem.Name.Equals(noun.Name))
+                        {
+                            found = true; 
+                            break;
+                        }
+                    }
+                    if (!found)
+                    {
+                        missings.Add(nounTree.RootItem.Name);
+                    }
+                }
+                else
+                {
+                    if (nounTree.Children != null)
+                    {
+                        foreach (var child in nounTree.Children)
+                        {
+                            Missing(child, nouns, missings);
+                        }
+                    }
+                }
+            }
+            return missings.Any();
+        }
         private VocabularyActioner ParseExamples()
         {
             var files = System.IO.Directory.GetFiles(_paths.ExamplesSourceFolder).Where(f => f.EndsWith(".md"));

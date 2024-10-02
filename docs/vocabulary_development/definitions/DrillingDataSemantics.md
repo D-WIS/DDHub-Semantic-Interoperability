@@ -50,6 +50,13 @@
 - Specialization:
 - Description: 
 - Examples:
+## JSonDataType <!-- NOUN -->
+- Display name: JSon Data Type
+- Parent class: StringDataType
+- Attributes:
+- Specialization:
+- Description: A string that contained the serialization in Json of an object.
+- Examples:
 ## DrillingDataPoint <!-- NOUN -->
 - Display name: DrillingDataPoint
 - Parent class: DWISNoun
