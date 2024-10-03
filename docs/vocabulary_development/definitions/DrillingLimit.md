@@ -16,21 +16,21 @@
 - Description: This Noun is used to refer to an axial velocity limit.
 - Examples:
 ``` dwis minMaxAxialVelocitySOEInfo
-DynamicDrillingSignal: minMaxAxialVelocitySOEInfo
-DrillingSafeOperatingEnvelopeAdvice: minMaxAxialVelocitySOEInfo_1
+DynamicDrillingSignal:minMaxAxialVelocitySOEInfo
+DrillingSafeOperatingEnvelopeAdvice:minMaxAxialVelocitySOEInfo_1
 minMaxAxialVelocitySOEInfo_1 HasDynamicValue minMaxAxialVelocitySOEInfo
-AxialVelocityLimit: axialVelocityLimit
+AxialVelocityLimit:axialVelocityLimit
 minMaxAxialVelocitySOEInfo_1 IsRelatedToDrillingLimit axialVelocityLimit
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 minMaxAxialVelocitySOEInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 minMaxAxialVelocitySOEInfo_1 IsRecommendedBy computationUnit
-SOEFunction: soeFunction
+SOEFunction:soeFunction
 soeFunction ImplementsLimit axialVelocityLimit
 minMaxAxialVelocitySOEInfo_1 IsRecommendedFor soeFunction
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 minMaxAxialVelocitySOEInfo_1 IsProvidedTo adviceComposer
-DWISScheduler: scheduler
+DWISScheduler:scheduler
 minMaxAxialVelocitySOEInfo_1 IsProvidedTo scheduler
 ```
 ## RotationalVelocityLimit <!-- NOUN -->
@@ -41,21 +41,21 @@ minMaxAxialVelocitySOEInfo_1 IsProvidedTo scheduler
 - Description: This Noun is used to refer to a rotational velocity limit.
 - Examples:
 ``` dwis minMaxRotationalSpeedSOEInfo
-DynamicDrillingSignal: minMaxRotationalSpeedSOEInfo
-DrillingSafeOperatingEnvelopeAdvice: minMaxRotationalSpeedSOEInfo_1
+DynamicDrillingSignal:minMaxRotationalSpeedSOEInfo
+DrillingSafeOperatingEnvelopeAdvice:minMaxRotationalSpeedSOEInfo_1
 minMaxRotationalSpeedSOEInfo_1 HasDynamicValue minMaxRotationalSpeedSOEInfo
-RotationalVelocityLimit: rotationalVelocityLimit
+RotationalVelocityLimit:rotationalVelocityLimit
 minMaxRotationalSpeedSOEInfo_1 IsRelatedToDrillingLimit rotationalVelocityLimit
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 minMaxRotationalSpeedSOEInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 minMaxRotationalSpeedSOEInfo_1 IsRecommendedBy computationUnit
-SOEFunction: soeFunction
+SOEFunction:soeFunction
 soeFunction ImplementsLimit rotationalVelocityLimit
 minMaxRotationalSpeedSOEInfo_1 IsRecommendedFor soeFunction
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 minMaxRotationalSpeedSOEInfo_1 IsProvidedTo adviceComposer
-DWISScheduler: scheduler
+DWISScheduler:scheduler
 minMaxRotationalSpeedSOEInfo_1 IsProvidedTo scheduler
 ```
 ## FlowrateLimit <!-- NOUN -->
@@ -66,21 +66,21 @@ minMaxRotationalSpeedSOEInfo_1 IsProvidedTo scheduler
 - Description: This Noun is used to refer to a flowrate limit.
 - Examples:
 ``` dwis minMaxFlowRateSOEInfo
-DynamicDrillingSignal: minMaxFlowRateSOEInfo
-DrillingSafeOperatingEnvelopeAdvice: minMaxFlowRateSOEInfo_1
+DynamicDrillingSignal:minMaxFlowRateSOEInfo
+DrillingSafeOperatingEnvelopeAdvice:minMaxFlowRateSOEInfo_1
 minMaxFlowRateSOEInfo_1 HasDynamicValue minMaxFlowRateSOEInfo
-FlowrateLimit: flowrateLimit
+FlowrateLimit:flowrateLimit
 minMaxFlowRateSOEInfo_1 IsRelatedToDrillingLimit flowrateLimit
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 minMaxFlowRateSOEInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 minMaxFlowRateSOEInfo_1 IsRecommendedBy computationUnit
-SOEFunction: soeFunction
+SOEFunction:soeFunction
 soeFunction ImplementsLimit flowrateLimit
 minMaxFlowRateSOEInfo_1 IsRecommendedFor soeFunction
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 minMaxFlowRateSOEInfo_1 IsProvidedTo adviceComposer
-DWISScheduler: scheduler
+DWISScheduler:scheduler
 minMaxFlowRateSOEInfo_1 IsProvidedTo scheduler
 ```
 ## ROPLimit <!-- NOUN -->
@@ -91,25 +91,36 @@ minMaxFlowRateSOEInfo_1 IsProvidedTo scheduler
 - Description: This Noun is used to refer to a rate of penetration limit.
 - Examples:
 ``` dwis ROPManagementControllerInfo
-DynamicDrillingSignal: ROPManagementControllerInfo
-ROPManagementContolAdvice: ROPManagementControllerInfo_1
+DynamicDrillingSignal:ROPManagementControllerInfo
+DrillingControlAdvice:ROPManagementControllerInfo_1
 ROPManagementControllerInfo_1 HasDynamicValue ROPManagementControllerInfo
-ROPLimit: ROPLimit
-ROPManagementControllerInfo_1 IsRelatedToDrillingLimit ROPLimit
-WOBLimit: WOBLimit
-ROPManagementControllerInfo_1 IsRelatedToDrillingLimit WOBLimit
-DifferentialPressureLimit: differentialPressureLimit
-ROPManagementControllerInfo_1 IsRelatedToDrillingLimit differentialPressureLimit
-ServiceCompany: serviceCompany
+ROPLimit:ROPLimit_1
+ROPManagementControllerInfo_1 HasControlLimit ROPLimit_1
+WOBLimit:WOBLimit_1
+ROPManagementControllerInfo_1 HasControlLimit WOBLimit_1
+DifferentialPressureLimit:differentialPressureLimit
+ROPManagementControllerInfo_1 HasControlLimit differentialPressureLimit
+BottomOfStringReferenceLocation:bottomOfStringLocation
+StableAxialVelocityObjective:stableAxialVelocityObjective
+stableAxialVelocityObjective IsPhysicallyLocatedAt bottomOfStringLocation
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableAxialVelocityObjective
+StableAxialForceObjective:stableWOBObjective
+stableWOBObjective IsPhysicallyLocatedAt bottomOfStringLocation
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableWOBObjective
+StablePressureObjective:stableDifferentialPressure
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableDifferentialPressure
+ServiceCompany:serviceCompany
 ROPManagementControllerInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 ROPManagementControllerInfo_1 IsRecommendedBy computationUnit
-ControllerFunction: autoDriller
-autoDriller.HasFunction = "AutoDriller"
+ControllerFunction:autoDriller
+autoDriller ImplementsObjective stableAxialVelocityObjective
+autoDriller ImplementsObjective stableWOBObjective
+autoDriller ImplementsObjective stableDifferentialPressure
 ROPManagementControllerInfo_1 IsRecommendedFor autoDriller
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 ROPManagementControllerInfo_1 IsProvidedTo adviceComposer
-DWISScheduler: scheduler
+DWISScheduler:scheduler
 ROPManagementControllerInfo_1 IsProvidedTo scheduler
 ```
 ## WOBLimit <!-- NOUN -->
@@ -120,25 +131,36 @@ ROPManagementControllerInfo_1 IsProvidedTo scheduler
 - Description: This Noun is used to refer to a weight on bit limit.
 - Examples:
 ``` dwis ROPManagementControllerInfo
-DynamicDrillingSignal: ROPManagementControllerInfo
-ROPManagementContolAdvice: ROPManagementControllerInfo_1
+DynamicDrillingSignal:ROPManagementControllerInfo
+DrillingControlAdvice:ROPManagementControllerInfo_1
 ROPManagementControllerInfo_1 HasDynamicValue ROPManagementControllerInfo
-ROPLimit: ROPLimit
-ROPManagementControllerInfo_1 IsRelatedToDrillingLimit ROPLimit
-WOBLimit: WOBLimit
-ROPManagementControllerInfo_1 IsRelatedToDrillingLimit WOBLimit
-DifferentialPressureLimit: differentialPressureLimit
-ROPManagementControllerInfo_1 IsRelatedToDrillingLimit differentialPressureLimit
-ServiceCompany: serviceCompany
+ROPLimit:ROPLimit_1
+ROPManagementControllerInfo_1 HasControlLimit ROPLimit_1
+WOBLimit:WOBLimit_1
+ROPManagementControllerInfo_1 HasControlLimit WOBLimit_1
+DifferentialPressureLimit:differentialPressureLimit
+ROPManagementControllerInfo_1 HasControlLimit differentialPressureLimit
+BottomOfStringReferenceLocation:bottomOfStringLocation
+StableAxialVelocityObjective:stableAxialVelocityObjective
+stableAxialVelocityObjective IsPhysicallyLocatedAt bottomOfStringLocation
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableAxialVelocityObjective
+StableAxialForceObjective:stableWOBObjective
+stableWOBObjective IsPhysicallyLocatedAt bottomOfStringLocation
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableWOBObjective
+StablePressureObjective:stableDifferentialPressure
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableDifferentialPressure
+ServiceCompany:serviceCompany
 ROPManagementControllerInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 ROPManagementControllerInfo_1 IsRecommendedBy computationUnit
-ControllerFunction: autoDriller
-autoDriller.HasFunction = "AutoDriller"
+ControllerFunction:autoDriller
+autoDriller ImplementsObjective stableAxialVelocityObjective
+autoDriller ImplementsObjective stableWOBObjective
+autoDriller ImplementsObjective stableDifferentialPressure
 ROPManagementControllerInfo_1 IsRecommendedFor autoDriller
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 ROPManagementControllerInfo_1 IsProvidedTo adviceComposer
-DWISScheduler: scheduler
+DWISScheduler:scheduler
 ROPManagementControllerInfo_1 IsProvidedTo scheduler
 ```
 ## DifferentialPressureLimit <!-- NOUN -->
@@ -149,25 +171,36 @@ ROPManagementControllerInfo_1 IsProvidedTo scheduler
 - Description: This Noun is used to refer to a differential pressure limit.
 - Examples:
 ``` dwis ROPManagementControllerInfo
-DynamicDrillingSignal: ROPManagementControllerInfo
-ROPManagementContolAdvice: ROPManagementControllerInfo_1
+DynamicDrillingSignal:ROPManagementControllerInfo
+DrillingControlAdvice:ROPManagementControllerInfo_1
 ROPManagementControllerInfo_1 HasDynamicValue ROPManagementControllerInfo
-ROPLimit: ROPLimit
-ROPManagementControllerInfo_1 HasControlLimit ROPLimit
-WOBLimit: WOBLimit
-ROPManagementControllerInfo_1 HasControlLimit WOBLimit
-DifferentialPressureLimit: differentialPressureLimit
+ROPLimit:ROPLimit_1
+ROPManagementControllerInfo_1 HasControlLimit ROPLimit_1
+WOBLimit:WOBLimit_1
+ROPManagementControllerInfo_1 HasControlLimit WOBLimit_1
+DifferentialPressureLimit:differentialPressureLimit
 ROPManagementControllerInfo_1 HasControlLimit differentialPressureLimit
-ServiceCompany: serviceCompany
+BottomOfStringReferenceLocation:bottomOfStringLocation
+StableAxialVelocityObjective:stableAxialVelocityObjective
+stableAxialVelocityObjective IsPhysicallyLocatedAt bottomOfStringLocation
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableAxialVelocityObjective
+StableAxialForceObjective:stableWOBObjective
+stableWOBObjective IsPhysicallyLocatedAt bottomOfStringLocation
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableWOBObjective
+StablePressureObjective:stableDifferentialPressure
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableDifferentialPressure
+ServiceCompany:serviceCompany
 ROPManagementControllerInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 ROPManagementControllerInfo_1 IsRecommendedBy computationUnit
-ControllerFunction: autoDriller
-autoDriller.HasFunction = "AutoDriller"
+ControllerFunction:autoDriller
+autoDriller ImplementsObjective stableAxialVelocityObjective
+autoDriller ImplementsObjective stableWOBObjective
+autoDriller ImplementsObjective stableDifferentialPressure
 ROPManagementControllerInfo_1 IsRecommendedFor autoDriller
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 ROPManagementControllerInfo_1 IsProvidedTo adviceComposer
-DWISScheduler: scheduler
+DWISScheduler:scheduler
 ROPManagementControllerInfo_1 IsProvidedTo scheduler
 ```
 # VERBS
@@ -179,19 +212,19 @@ ROPManagementControllerInfo_1 IsProvidedTo scheduler
 - Description: This Verb is used to indicate that a drilling data point is related to a drilling incident.
 - Examples: 
 ``` dwis motorStallFDIRInfo
-DynamicDrillingSignal: motorStallFDIRInfo
-DrillingFaultDetectionIsolationAndRecoveryAdvice: motorStallFDIRInfo_1
+DynamicDrillingSignal:motorStallFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice:motorStallFDIRInfo_1
 motorStallFDIRInfo_1 HasDynamicValue motorStallFDIRInfo
-MotorStall: motorStallIncident
+MotorStall:motorStallIncident
 motorStallFDIRInfo_1 IsRelatedToDrillingIncident motorStallIncident
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 motorStallFDIRInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 motorStallFDIRInfo_1 IsRecommendedBy computationUnit
-FDIRFunction: FDIRFunction_1
+FDIRFunction:FDIRFunction_1
 FDIRFunction_1.HasFunction = "MotorStallFDIR"
 motorStallFDIRInfo_1 IsRecommendedFor FDIRFunction_1
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 motorStallFDIRInfo_1 IsProvidedTo adviceComposer
 ```
 ## ImplementsLimit <!-- VERB -->
@@ -201,3 +234,21 @@ motorStallFDIRInfo_1 IsProvidedTo adviceComposer
 - Object class: DrillingLimit
 - Description: This Verb is used to indicate that a safe operating envelope function implements a drilling limit.
 - Examples:
+``` dwis minMaxAxialVelocitySOEInfo
+DynamicDrillingSignal:minMaxAxialVelocitySOEInfo
+DrillingSafeOperatingEnvelopeAdvice:minMaxAxialVelocitySOEInfo_1
+minMaxAxialVelocitySOEInfo_1 HasDynamicValue minMaxAxialVelocitySOEInfo
+AxialVelocityLimit:axialVelocityLimit
+minMaxAxialVelocitySOEInfo_1 IsRelatedToDrillingLimit axialVelocityLimit
+ServiceCompany:serviceCompany
+minMaxAxialVelocitySOEInfo_1 IsProvidedBy serviceCompany
+Advisor:computationUnit
+minMaxAxialVelocitySOEInfo_1 IsRecommendedBy computationUnit
+SOEFunction:soeFunction
+soeFunction ImplementsLimit axialVelocityLimit
+minMaxAxialVelocitySOEInfo_1 IsRecommendedFor soeFunction
+DWISAdviceComposer:adviceComposer
+minMaxAxialVelocitySOEInfo_1 IsProvidedTo adviceComposer
+DWISScheduler:scheduler
+minMaxAxialVelocitySOEInfo_1 IsProvidedTo scheduler
+```

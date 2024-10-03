@@ -59,19 +59,19 @@ by the drilling process.
 - Description: This Noun is used to refer to abnormal lateral oscillations.
 - Examples:
 ``` dwis whirlFDIRInfo
-DynamicDrillingSignal: whirlFDIRInfo
-DrillingFaultDetectionIsolationAndRecoveryAdvice: whirlFDIRInfo_1
+DynamicDrillingSignal:whirlFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice:whirlFDIRInfo_1
 whirlFDIRInfo_1 HasDynamicValue whirlFDIRInfo
-Whirling: whirlingIncident
+Whirling:whirlingIncident
 whirlFDIRInfo_1 IsRelatedToDrillingIncident whirlingIncident
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 whirlFDIRInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 whirlFDIRInfo_1 IsRecommendedBy computationUnit
-FDIRFunction: FDIRFunction_1
+FDIRFunction:FDIRFunction_1
 FDIRFunction_1 ManagesIncident whirlingIncident
 whirlFDIRInfo_1 IsRecommendedFor FDIRFunction_1
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 whirlFDIRInfo_1 IsProvidedTo adviceComposer
 ```
 ## ForwardWhirl <!-- NOUN -->
@@ -110,19 +110,19 @@ whirlFDIRInfo_1 IsProvidedTo adviceComposer
 - Description: This Noun is used to refer to a twist-off situation.
 - Examples:
 ``` dwis twistOffFDIRInfo
-DynamicDrillingSignal: twistOffFDIRInfo
-DrillingFaultDetectionIsolationAndRecoveryAdvice: twistOffFDIRInfo_1
+DynamicDrillingSignal:twistOffFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice:twistOffFDIRInfo_1
 twistOffFDIRInfo_1 HasDynamicValue twistOffFDIRInfo
-TwistOff: twistOffIncident
+TwistOff:twistOffIncident
 twistOffFDIRInfo_1 IsRelatedToDrillingIncident twistOffIncident
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 twistOffFDIRInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 twistOffFDIRInfo_1 IsRecommendedBy computationUnit
-FDIRFunction: FDIRFunction_1
+FDIRFunction:FDIRFunction_1
 FDIRFunction_1 ManagesIncident twistOffIncident
 twistOffFDIRInfo_1 IsRecommendedFor FDIRFunction_1
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 twistOffFDIRInfo_1 IsProvidedTo adviceComposer
 ```
 ## Overpull <!-- NOUN -->
@@ -133,19 +133,19 @@ twistOffFDIRInfo_1 IsProvidedTo adviceComposer
 - Description: This Noun is used to refer to a situation during which the drill-stem hangs in something in the upward direction.
 - Examples:
 ``` dwis overpullFDIRInfo
-DynamicDrillingSignal: overpullFDIRInfo
-DrillingFaultDetectionIsolationAndRecoveryAdvice: overpullFDIRInfo_1
+DynamicDrillingSignal:overpullFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice:overpullFDIRInfo_1
 overpullFDIRInfo_1 HasDynamicValue overpullFDIRInfo
-Overpull: overpullIncident
+Overpull:overpullIncident
 overpullFDIRInfo_1 IsRelatedToDrillingIncident overpullIncident
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 overpullFDIRInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 overpullFDIRInfo_1 IsRecommendedBy computationUnit
-FDIRFunction: FDIRFunction_1
-FDIRFunction_1. ManagesIncident overpullIncident
+FDIRFunction:FDIRFunction_1
+FDIRFunction_1 ManagesIncident overpullIncident
 overpullFDIRInfo_1 IsRecommendedFor FDIRFunction_1
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 overpullFDIRInfo_1 IsProvidedTo adviceComposer
 ```
 ## Underpull <!-- NOUN -->
@@ -156,19 +156,19 @@ overpullFDIRInfo_1 IsProvidedTo adviceComposer
 - Description: This Noun is used to refer to a situation during which the drill-stem hangs in something in the downward direction.
 - Examples:
 ``` dwis underpullFDIRInfo
-DynamicDrillingSignal: underpullFDIRInfo
-DrillingFaultDetectionIsolationAndRecoveryAdvice: underpullFDIRInfo_1
+DynamicDrillingSignal:underpullFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice:underpullFDIRInfo_1
 underpullFDIRInfo_1 HasDynamicValue underpullFDIRInfo
-Underpull: underpullIncident
+Underpull:underpullIncident
 underpullFDIRInfo_1 IsRelatedToDrillingIncident underpullIncident
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 underpullFDIRInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 underpullFDIRInfo_1 IsRecommendedBy computationUnit
-FDIRFunction: FDIRFunction_1
+FDIRFunction:FDIRFunction_1
 FDIRFunction_1 ManagesIncident underpullIncident
 underpullFDIRInfo_1 IsRecommendedFor FDIRFunction_1
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 underpullFDIRInfo_1 IsProvidedTo adviceComposer
 ```
 ## Influx <!-- NOUN -->
@@ -179,19 +179,19 @@ underpullFDIRInfo_1 IsProvidedTo adviceComposer
 - Description: This Noun is used to refer to a situation during which there is an influx of formation fluids in the borehole.
 - Examples:
 ``` dwis kickFDIRInfo
-DynamicDrillingSignal: kickFDIRInfo
-DrillingFaultDetectionIsolationAndRecoveryAdvice: kickFDIRInfo_1
+DynamicDrillingSignal:kickFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice:kickFDIRInfo_1
 kickFDIRInfo_1 HasDynamicValue kickFDIRInfo
-Influx: influxIncident
+Influx:influxIncident
 kickFDIRInfo_1 IsRelatedToDrillingIncident influxIncident
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 kickFDIRInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 kickFDIRInfo_1 IsRecommendedBy computationUnit
-FDIRFunction: FDIRFunction_1
+FDIRFunction:FDIRFunction_1
 FDIRFunction_1 ManagesIncident influxIncident
 kickFDIRInfo_1 IsRecommendedFor FDIRFunction_1
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 kickFDIRInfo_1 IsProvidedTo adviceComposer
 ```
 ## LossCirculation <!-- NOUN -->
@@ -202,19 +202,19 @@ kickFDIRInfo_1 IsProvidedTo adviceComposer
 - Description: This Noun is used to refer to a situation during which drilling fluid is lost to the formation.
 - Examples:
 ``` dwis lossCirculationFDIRInfo
-DynamicDrillingSignal: lossCirculationFDIRInfo
-DrillingFaultDetectionIsolationAndRecoveryAdvice: lossCirculationFDIRInfo_1
+DynamicDrillingSignal:lossCirculationFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice:lossCirculationFDIRInfo_1
 lossCirculationFDIRInfo_1 HasDynamicValue lossCirculationFDIRInfo
-LossCirculation: lossCirculationIncident
+LossCirculation:lossCirculationIncident
 lossCirculationFDIRInfo_1 IsRelatedToDrillingIncident lossCirculationIncident
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 lossCirculationFDIRInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 lossCirculationFDIRInfo_1 IsRecommendedBy computationUnit
-FDIRFunction: FDIRFunction_1
+FDIRFunction:FDIRFunction_1
 FDIRFunction_1 ManagesIncident lossCirculationIncident
 lossCirculationFDIRInfo_1 IsRecommendedFor FDIRFunction_1
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 lossCirculationFDIRInfo_1 IsProvidedTo adviceComposer
 ```
 ## HoleCollapse <!-- NOUN -->
@@ -225,19 +225,19 @@ lossCirculationFDIRInfo_1 IsProvidedTo adviceComposer
 - Description: This Noun is used to refer to a situation during which there is a hole collapse.
 - Examples:
 ``` dwis HoleCollapseFDIRInfo
-DynamicDrillingSignal: HoleCollapseFDIRInfo
-DrillingFaultDetectionIsolationAndRecoveryAdvice: HoleCollapseFDIRInfo_1
+DynamicDrillingSignal:HoleCollapseFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice:HoleCollapseFDIRInfo_1
 HoleCollapseFDIRInfo_1 HasDynamicValue HoleCollapseFDIRInfo
-HoleCollapse: holeCollapseIncident
+HoleCollapse:holeCollapseIncident
 HoleCollapseFDIRInfo_1 IsRelatedToDrillingIncident holeCollapseIncident
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 HoleCollapseFDIRInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 HoleCollapseFDIRInfo_1 IsRecommendedBy computationUnit
-FDIRFunction: FDIRFunction_1
+FDIRFunction:FDIRFunction_1
 FDIRFunction_1 ManagesIncident holeCollapseIncident
 HoleCollapseFDIRInfo_1 IsRecommendedFor FDIRFunction_1
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 HoleCollapseFDIRInfo_1 IsProvidedTo adviceComposer
 ```
 ## StuckPipe <!-- NOUN -->
@@ -255,19 +255,19 @@ HoleCollapseFDIRInfo_1 IsProvidedTo adviceComposer
 - Description: This Noun is used to refer to a situation during which the drill-stem is stuck because of differential sticking.
 - Examples:
 ``` dwis differentialStickingFDIRInfo
-DynamicDrillingSignal: differentialStickingFDIRInfo
-DrillingFaultDetectionIsolationAndRecoveryAdvice: differentialStickingFDIRInfo_1
+DynamicDrillingSignal:differentialStickingFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice:differentialStickingFDIRInfo_1
 differentialStickingFDIRInfo_1 HasDynamicValue differentialStickingFDIRInfo
-DifferentiallyStuck: differentiallyStuckIncident
+DifferentiallyStuck:differentiallyStuckIncident
 differentialStickingFDIRInfo_1 IsRelatedToDrillingIncident differentiallyStuckIncident
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 differentialStickingFDIRInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 differentialStickingFDIRInfo_1 IsRecommendedBy computationUnit
-FDIRFunction: FDIRFunction_1
+FDIRFunction:FDIRFunction_1
 FDIRFunction_1 ManagesIncident differentiallyStuckIncident
 differentialStickingFDIRInfo_1 IsRecommendedFor FDIRFunction_1
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 differentialStickingFDIRInfo_1 IsProvidedTo adviceComposer
 ```
 ## PipeWashout <!-- NOUN -->
@@ -278,19 +278,19 @@ differentialStickingFDIRInfo_1 IsProvidedTo adviceComposer
 - Description: This Noun is used to refer to a situation during which there is leak between the inside of the drill-stem and the annulus.
 - Examples:
 ``` dwis pipeWashoutFDIRInfo
-DynamicDrillingSignal: pipeWashoutFDIRInfo
-DrillingFaultDetectionIsolationAndRecoveryAdvice: pipeWashoutFDIRInfo_1
+DynamicDrillingSignal:pipeWashoutFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice:pipeWashoutFDIRInfo_1
 pipeWashoutFDIRInfo_1 HasDynamicValue pipeWashoutFDIRInfo
-PipeWashout: pipeWashoutIncident
+PipeWashout:pipeWashoutIncident
 pipeWashoutFDIRInfo_1 IsRelatedToDrillingIncident pipeWashoutIncident
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 pipeWashoutFDIRInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 pipeWashoutFDIRInfo_1 IsRecommendedBy computationUnit
-FDIRFunction: FDIRFunction_1
+FDIRFunction:FDIRFunction_1
 FDIRFunction_1 ManagesIncident pipeWashoutIncident
 pipeWashoutFDIRInfo_1 IsRecommendedFor FDIRFunction_1
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 pipeWashoutFDIRInfo_1 IsProvidedTo adviceComposer
 ```
 ## FormationWashout <!-- NOUN -->
@@ -308,19 +308,19 @@ pipeWashoutFDIRInfo_1 IsProvidedTo adviceComposer
 - Description: This Noun is used to refer to a situation during which the rotation of the drill-stem is impeded.
 - Examples:
 ``` dwis overtorqueFDIRInfo
-DynamicDrillingSignal: overtorqueFDIRInfo
-DrillingFaultDetectionIsolationAndRecoveryAdvice: overtorqueFDIRInfo_1
+DynamicDrillingSignal:overtorqueFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice:overtorqueFDIRInfo_1
 overtorqueFDIRInfo_1 HasDynamicValue overtorqueFDIRInfo
-OverTorque: overTorqueIncident
+OverTorque:overTorqueIncident
 overtorqueFDIRInfo_1 IsRelatedToDrillingIncident overTorqueIncident
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 overtorqueFDIRInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 overtorqueFDIRInfo_1 IsRecommendedBy computationUnit
-FDIRFunction: FDIRFunction_1
+FDIRFunction:FDIRFunction_1
 FDIRFunction_1 ManagesIncident overTorqueIncident
 overtorqueFDIRInfo_1 IsRecommendedFor FDIRFunction_1
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 overtorqueFDIRInfo_1 IsProvidedTo adviceComposer
 ```
 ## Plugged <!-- NOUN -->
@@ -338,19 +338,19 @@ overtorqueFDIRInfo_1 IsProvidedTo adviceComposer
 - Description: This Noun is used to refer to a situation during which the annulus hydraulic flow-path is partially or fully blocked.
 - Examples:
 ``` dwis PackOffFDIRInfo
-DynamicDrillingSignal: PackOffFDIRInfo
-DrillingFaultDetectionIsolationAndRecoveryAdvice: PackOffFDIRInfo_1
+DynamicDrillingSignal:PackOffFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice:PackOffFDIRInfo_1
 PackOffFDIRInfo_1 HasDynamicValue PackOffFDIRInfo
-PackOff: packOffIncident
+PackOff:packOffIncident
 PackOffFDIRInfo_1 IsRelatedToDrillingIncident packOffIncident
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 PackOffFDIRInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 PackOffFDIRInfo_1 IsRecommendedBy computationUnit
-FDIRFunction: FDIRFunction_1
+FDIRFunction:FDIRFunction_1
 FDIRFunction_1 ManagesIncident packOffIncident
 PackOffFDIRInfo_1 IsRecommendedFor FDIRFunction_1
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 PackOffFDIRInfo_1 IsProvidedTo adviceComposer
 ```
 ## MotorStall <!-- NOUN -->
@@ -361,19 +361,19 @@ PackOffFDIRInfo_1 IsProvidedTo adviceComposer
 - Description: This Noun is used to refer to a situation during which the downhole motor is stalled.
 - Examples:
 ``` dwis motorStallFDIRInfo
-DynamicDrillingSignal: motorStallFDIRInfo
-DrillingFaultDetectionIsolationAndRecoveryAdvice: motorStallFDIRInfo_1
+DynamicDrillingSignal:motorStallFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice:motorStallFDIRInfo_1
 motorStallFDIRInfo_1 HasDynamicValue motorStallFDIRInfo
-MotorStall: motorStallIncident
+MotorStall:motorStallIncident
 motorStallFDIRInfo_1 IsRelatedToDrillingIncident motorStallIncident
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 motorStallFDIRInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 motorStallFDIRInfo_1 IsRecommendedBy computationUnit
-FDIRFunction: FDIRFunction_1
+FDIRFunction:FDIRFunction_1
 FDIRFunction_1 ManagesIncident motorStallIncident
 motorStallFDIRInfo_1 IsRecommendedFor FDIRFunction_1
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 motorStallFDIRInfo_1 IsProvidedTo adviceComposer
 ```
 
@@ -386,19 +386,19 @@ motorStallFDIRInfo_1 IsProvidedTo adviceComposer
 - Description: This Verb is used to indicate that a drilling data point is related to a drilling incident.
 - Examples: 
 ``` dwis motorStallFDIRInfo
-DynamicDrillingSignal: motorStallFDIRInfo
-DrillingFaultDetectionIsolationAndRecoveryAdvice: motorStallFDIRInfo_1
+DynamicDrillingSignal:motorStallFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice:motorStallFDIRInfo_1
 motorStallFDIRInfo_1 HasDynamicValue motorStallFDIRInfo
-MotorStall: motorStallIncident
+MotorStall:motorStallIncident
 motorStallFDIRInfo_1 IsRelatedToDrillingIncident motorStallIncident
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 motorStallFDIRInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 motorStallFDIRInfo_1 IsRecommendedBy computationUnit
-FDIRFunction: FDIRFunction_1
-FDIRFunction_1.HasFunction = "MotorStallFDIR"
+FDIRFunction:FDIRFunction_1
+FDIRFunction_1 ManagesIncident motorStallIncident
 motorStallFDIRInfo_1 IsRecommendedFor FDIRFunction_1
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 motorStallFDIRInfo_1 IsProvidedTo adviceComposer
 ```
 ## ManagesIncident <!-- VERB -->
@@ -408,3 +408,19 @@ motorStallFDIRInfo_1 IsProvidedTo adviceComposer
 - Object class: DrillingIncident
 - Description: This Verb is used to indicate that a fault detection isolation and recovery function manages a drilling incident.
 - Examples:
+``` dwis motorStallFDIRInfo
+DynamicDrillingSignal:motorStallFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice:motorStallFDIRInfo_1
+motorStallFDIRInfo_1 HasDynamicValue motorStallFDIRInfo
+MotorStall:motorStallIncident
+motorStallFDIRInfo_1 IsRelatedToDrillingIncident motorStallIncident
+ServiceCompany:serviceCompany
+motorStallFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor:computationUnit
+motorStallFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction:FDIRFunction_1
+FDIRFunction_1 ManagesIncident motorStallIncident
+motorStallFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer:adviceComposer
+motorStallFDIRInfo_1 IsProvidedTo adviceComposer
+```

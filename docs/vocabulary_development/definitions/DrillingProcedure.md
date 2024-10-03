@@ -17,21 +17,21 @@
 that could result in undesired downhole pressure conditions with regards to the geo-pressure window.
 - Examples:
 ``` dwis circulationStartupProcedureInfo
-DynamicDrillingSignal: circulationStartupProcedureInfo
-DrillingStandardProcedureAdvice: circulationStartupProcedureInfo_1
+DynamicDrillingSignal:circulationStartupProcedureInfo
+DrillingStandardProcedureAdvice:circulationStartupProcedureInfo_1
 circulationStartupProcedureInfo_1 HasDynamicValue circulationStartupProcedureInfo
-CirculationStartupProcedure: circulationStartupProcedure
+CirculationStartupProcedure:circulationStartupProcedure
 circulationStartupProcedureInfo_1 IsRelatedToDrillingProcedure circulationStartupProcedure
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 circulationStartupProcedureInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 circulationStartupProcedureInfo_1 IsRecommendedBy computationUnit
-ProcedureFunction: procedureFunction
+ProcedureFunction:procedureFunction
 procedureFunction ImplementsProcedure circulationStartupProcedure
 circulationStartupProcedureInfo_1 IsRecommendedFor procedureFunction
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 circulationStartupProcedureInfo_1 IsProvidedTo adviceComposer
-DWISScheduler: scheduler
+DWISScheduler:scheduler
 circulationStartupProcedureInfo_1 IsProvidedTo scheduler
 ```
 ## CirculationStopProcedure <!-- NOUN -->
@@ -43,21 +43,21 @@ circulationStartupProcedureInfo_1 IsProvidedTo scheduler
 speed while attempting to avoid having too large torsional oscillations.
 - Examples:
 ``` dwis circulationStopProcedureInfo
-DynamicDrillingSignal: circulationStopProcedureInfo
-DrillingStandardProcedureAdvice: circulationStopProcedureInfo_1
+DynamicDrillingSignal:circulationStopProcedureInfo
+DrillingStandardProcedureAdvice:circulationStopProcedureInfo_1
 circulationStopProcedureInfo_1 HasDynamicValue circulationStopProcedureInfo
-CirculationStopProcedure: circulationStopProcedure
+CirculationStopProcedure:circulationStopProcedure
 circulationStopProcedureInfo_1 IsRelatedToDrillingProcedure circulationStopProcedure
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 circulationStopProcedureInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 circulationStopProcedureInfo_1 IsRecommendedBy computationUnit
-ProcedureFunction: procedureFunction
+ProcedureFunction:procedureFunction
 procedureFunction ImplementsProcedure circulationStopProcedure
 circulationStopProcedureInfo_1 IsRecommendedFor procedureFunction
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 circulationStopProcedureInfo_1 IsProvidedTo adviceComposer
-DWISScheduler: scheduler
+DWISScheduler:scheduler
 circulationStopProcedureInfo_1 IsProvidedTo scheduler
 ```
 ## RotationStartupProcedure <!-- NOUN -->
@@ -69,21 +69,21 @@ circulationStopProcedureInfo_1 IsProvidedTo scheduler
 speed while attempting to avoid having too large torsional oscillations.
 - Examples:
 ``` dwis rotationStartupProcedureInfo
-DynamicDrillingSignal: rotationStartupProcedureInfo
-DrillingStandardProcedureAdvice: rotationStartupProcedureInfo_1
+DynamicDrillingSignal:rotationStartupProcedureInfo
+DrillingStandardProcedureAdvice:rotationStartupProcedureInfo_1
 rotationStartupProcedureInfo_1 HasDynamicValue rotationStartupProcedureInfo
-RotationStartupProcedure: rotationStartupProcedure
+RotationStartupProcedure:rotationStartupProcedure
 rotationStartupProcedureInfo_1 IsRelatedToDrillingProcedure rotationStartupProcedure
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 rotationStartupProcedureInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 rotationStartupProcedureInfo_1 IsRecommendedBy computationUnit
-ProcedureFunction: procedureFunction
+ProcedureFunction:procedureFunction
 procedureFunction ImplementsProcedure rotationStartupProcedure
 rotationStartupProcedureInfo_1 IsRecommendedFor procedureFunction
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 rotationStartupProcedureInfo_1 IsProvidedTo adviceComposer
-DWISScheduler: scheduler
+DWISScheduler:scheduler
 rotationStartupProcedureInfo_1 IsProvidedTo scheduler
 ```
 ## RotationStopProcedure <!-- NOUN -->
@@ -95,21 +95,21 @@ rotationStartupProcedureInfo_1 IsProvidedTo scheduler
 along the drill-stem as possible.
 - Examples:
 ``` dwis rotationStopProcedureInfo
-DynamicDrillingSignal: rotationStopProcedureInfo
-DrillingStandardProcedureAdvice: rotationStopProcedureInfo_1
+DynamicDrillingSignal:rotationStopProcedureInfo
+DrillingStandardProcedureAdvice:rotationStopProcedureInfo_1
 rotationStopProcedureInfo_1 HasDynamicValue rotationStopProcedureInfo
-RotationStopProcedure: rotationStopProcedure
+RotationStopProcedure:rotationStopProcedure
 rotationStopProcedureInfo_1 IsRelatedToDrillingProcedure rotationStopProcedure
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 rotationStopProcedureInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 rotationStopProcedureInfo_1 IsRecommendedBy computationUnit
-ProcedureFunction: procedureFunction
+ProcedureFunction:procedureFunction
 procedureFunction ImplementsProcedure rotationStopProcedure
 rotationStopProcedureInfo_1 IsRecommendedFor procedureFunction
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 rotationStopProcedureInfo_1 IsProvidedTo adviceComposer
-DWISScheduler: scheduler
+DWISScheduler:scheduler
 rotationStopProcedureInfo_1 IsProvidedTo scheduler
 ```
 ## HoistProcedure <!-- NOUN -->
@@ -121,21 +121,21 @@ rotationStopProcedureInfo_1 IsProvidedTo scheduler
 the side effects of swab and surge. 
 - Examples:
 ``` dwis hoistProcedureInfo
-DynamicDrillingSignal: hoistProcedureInfo
-DrillingStandardProcedureAdvice: hoistProcedureInfo_1
+DynamicDrillingSignal:hoistProcedureInfo
+DrillingStandardProcedureAdvice:hoistProcedureInfo_1
 hoistProcedureInfo_1 HasDynamicValue hoistProcedureInfo
-HoistProcedure: hoistProcedure
+HoistProcedure:hoistProcedure
 hoistProcedureInfo_1 IsRelatedToDrillingProcedure hoistProcedure
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 hoistProcedureInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 hoistProcedureInfo_1 IsRecommendedBy computationUnit
-ProcedureFunction: procedureFunction
+ProcedureFunction:procedureFunction
 procedureFunction ImplementsProcedure hoistProcedure
 hoistProcedureInfo_1 IsRecommendedFor procedureFunction
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 hoistProcedureInfo_1 IsProvidedTo adviceComposer
-DWISScheduler: scheduler
+DWISScheduler:scheduler
 hoistProcedureInfo_1 IsProvidedTo scheduler
 ```
 ## TagBottomProcedure <!-- NOUN -->
@@ -146,21 +146,21 @@ hoistProcedureInfo_1 IsProvidedTo scheduler
 - Description: The tag bottom procedure is used to tag the bottom hole and establish the drilling parameters.
 - Examples:
 ``` dwis tagBottomProcedureInfo
-DynamicDrillingSignal: tagBottomProcedureInfo
-DrillingStandardProcedureAdvice: tagBottomProcedureInfo_1
+DynamicDrillingSignal:tagBottomProcedureInfo
+DrillingStandardProcedureAdvice:tagBottomProcedureInfo_1
 tagBottomProcedureInfo_1 HasDynamicValue tagBottomProcedureInfo
-TagBottomProcedure: tagBottomProcedure
+TagBottomProcedure:tagBottomProcedure
 tagBottomProcedureInfo_1 IsRelatedToDrillingProcedure tagBottomProcedure
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 tagBottomProcedureInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 tagBottomProcedureInfo_1 IsRecommendedBy computationUnit
-ProcedureFunction: procedureFunction
-procedureFunction ImplementsProcedure tagBottomProcedure"
+ProcedureFunction:procedureFunction
+procedureFunction ImplementsProcedure tagBottomProcedure
 tagBottomProcedureInfo_1 IsRecommendedFor procedureFunction
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 tagBottomProcedureInfo_1 IsProvidedTo adviceComposer
-DWISScheduler: scheduler
+DWISScheduler:scheduler
 tagBottomProcedureInfo_1 IsProvidedTo scheduler
 ```
 ## ReciprocationProcedure <!-- NOUN -->
@@ -172,21 +172,21 @@ tagBottomProcedureInfo_1 IsProvidedTo scheduler
 while avoiding to wash out the formation. 
 - Examples:
 ``` dwis reciprocationProcedureInfo
-DynamicDrillingSignal: reciprocationProcedureInfo
-DrillingStandardProcedureAdvice: reciprocationProcedureInfo_1
+DynamicDrillingSignal:reciprocationProcedureInfo
+DrillingStandardProcedureAdvice:reciprocationProcedureInfo_1
 reciprocationProcedureInfo_1 HasDynamicValue reciprocationProcedureInfo
-ReciprocationProcedure: reciprocationProcedure
+ReciprocationProcedure:reciprocationProcedure
 reciprocationProcedureInfo_1 IsRelatedToDrillingProcedure reciprocationProcedure
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 reciprocationProcedureInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 reciprocationProcedureInfo_1 IsRecommendedBy computationUnit
-ProcedureFunction: procedureFunction
+ProcedureFunction:procedureFunction
 procedureFunction ImplementsProcedure reciprocationProcedure
 reciprocationProcedureInfo_1 IsRecommendedFor procedureFunction
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 reciprocationProcedureInfo_1 IsProvidedTo adviceComposer
-DWISScheduler: scheduler
+DWISScheduler:scheduler
 reciprocationProcedureInfo_1 IsProvidedTo scheduler
 ```
 ## FrictionTestProcedure <!-- NOUN -->
@@ -197,21 +197,21 @@ reciprocationProcedureInfo_1 IsProvidedTo scheduler
 - Description: A friction test procedure is used to measure the free rotating weight and torque and the pick-up and slack-off weights. 
 - Examples:
 ``` dwis frictionTestProcedureInfo
-DynamicDrillingSignal: frictionTestProcedureInfo
-DrillingStandardProcedureAdvice: frictionTestProcedureInfo_1
+DynamicDrillingSignal:frictionTestProcedureInfo
+DrillingStandardProcedureAdvice:frictionTestProcedureInfo_1
 frictionTestProcedureInfo_1 HasDynamicValue frictionTestProcedureInfo
-FrictionTestProcedure: frictionTestProcedure
+FrictionTestProcedure:frictionTestProcedure
 frictionTestProcedureInfo_1 IsRelatedToDrillingProcedure frictionTestProcedure
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 frictionTestProcedureInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 frictionTestProcedureInfo_1 IsRecommendedBy computationUnit
-ProcedureFunction: procedureFunction
+ProcedureFunction:procedureFunction
 procedureFunction ImplementsProcedure frictionTestProcedure
 frictionTestProcedureInfo_1 IsRecommendedFor procedureFunction
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 frictionTestProcedureInfo_1 IsProvidedTo adviceComposer
-DWISScheduler: scheduler
+DWISScheduler:scheduler
 frictionTestProcedureInfo_1 IsProvidedTo scheduler
 ```
 ## SlowCirculationRateProcedure <!-- NOUN -->
@@ -223,21 +223,21 @@ frictionTestProcedureInfo_1 IsProvidedTo scheduler
 to what would be necessary while circulating out a kick.
 - Examples:
 ``` dwis slowCirculationRateProcedureInfo
-DynamicDrillingSignal: slowCirculationRateProcedureInfo
-DrillingStandardProcedureAdvice: slowCirculationRateProcedureInfo_1
+DynamicDrillingSignal:slowCirculationRateProcedureInfo
+DrillingStandardProcedureAdvice:slowCirculationRateProcedureInfo_1
 slowCirculationRateProcedureInfo_1 HasDynamicValue slowCirculationRateProcedureInfo
-SlowCirculationRateProcedure: slowCirculationRateProcedure
+SlowCirculationRateProcedure:slowCirculationRateProcedure
 slowCirculationRateProcedureInfo_1 IsRelatedToDrillingProcedure slowCirculationRateProcedure
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 slowCirculationRateProcedureInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 slowCirculationRateProcedureInfo_1 IsRecommendedBy computationUnit
-ProcedureFunction: procedureFunction
+ProcedureFunction:procedureFunction
 procedureFunction ImplementsProcedure slowCirculationRateProcedure
 slowCirculationRateProcedureInfo_1 IsRecommendedFor procedureFunction
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 slowCirculationRateProcedureInfo_1 IsProvidedTo adviceComposer
-DWISScheduler: scheduler
+DWISScheduler:scheduler
 slowCirculationRateProcedureInfo_1 IsProvidedTo scheduler
 ```
 ## PressureIntegrityTestProcedure <!-- NOUN -->
@@ -250,21 +250,21 @@ pressure (formation integrity test) or to test the strength of the formation and
 extended leakoff test). 
 - Examples:
 ``` dwis pressureIntegrityTestProcedureInfo
-DynamicDrillingSignal: pressureIntegrityTestProcedureInfo
-DrillingStandardProcedureAdvice: pressureIntegrityTestProcedureInfo_1
+DynamicDrillingSignal:pressureIntegrityTestProcedureInfo
+DrillingStandardProcedureAdvice:pressureIntegrityTestProcedureInfo_1
 pressureIntegrityTestProcedureInfo_1 HasDynamicValue pressureIntegrityTestProcedureInfo
-PressureIntegrityTestProcedure: pressureIntegrityTestProcedure
+PressureIntegrityTestProcedure:pressureIntegrityTestProcedure
 pressureIntegrityTestProcedureInfo_1 IsRelatedToDrillingProcedure pressureIntegrityTestProcedure
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 pressureIntegrityTestProcedureInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 pressureIntegrityTestProcedureInfo_1 IsRecommendedBy computationUnit
-ProcedureFunction: procedureFunction
+ProcedureFunction:procedureFunction
 procedureFunction ImplementsProcedure pressureIntegrityTestProcedure
 pressureIntegrityTestProcedureInfo_1 IsRecommendedFor procedureFunction
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 pressureIntegrityTestProcedureInfo_1 IsProvidedTo adviceComposer
-DWISScheduler: scheduler
+DWISScheduler:scheduler
 pressureIntegrityTestProcedureInfo_1 IsProvidedTo scheduler
 ```
 ## FlowCheckProcedure <!-- NOUN -->
@@ -276,21 +276,21 @@ pressureIntegrityTestProcedureInfo_1 IsProvidedTo scheduler
 drill-stem will not get stuck during the test.
 - Examples:
 ``` dwis flowCheckProcedureInfo
-DynamicDrillingSignal: flowCheckProcedureInfo
-DrillingStandardProcedureAdvice: flowCheckProcedureInfo_1
+DynamicDrillingSignal:flowCheckProcedureInfo
+DrillingStandardProcedureAdvice:flowCheckProcedureInfo_1
 flowCheckProcedureInfo_1 HasDynamicValue flowCheckProcedureInfo
-FlowCheckProcedure: flowCheckProcedure
+FlowCheckProcedure:flowCheckProcedure
 flowCheckProcedureInfo_1 IsRelatedToDrillingProcedure flowCheckProcedure
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 flowCheckProcedureInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 flowCheckProcedureInfo_1 IsRecommendedBy computationUnit
-ProcedureFunction: procedureFunction
+ProcedureFunction:procedureFunction
 procedureFunction ImplementsProcedure flowCheckProcedure
 flowCheckProcedureInfo_1 IsRecommendedFor procedureFunction
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 flowCheckProcedureInfo_1 IsProvidedTo adviceComposer
-DWISScheduler: scheduler
+DWISScheduler:scheduler
 flowCheckProcedureInfo_1 IsProvidedTo scheduler
 ```
 ## CementingProcedure <!-- NOUN -->
@@ -302,21 +302,21 @@ flowCheckProcedureInfo_1 IsProvidedTo scheduler
 to ensure good conditions for the cement setting.
 - Examples:
 ``` dwis cementProcedureInfo
-DynamicDrillingSignal: cementProcedureInfo
-DrillingStandardProcedureAdvice: cementProcedureInfo_1
+DynamicDrillingSignal:cementProcedureInfo
+DrillingStandardProcedureAdvice:cementProcedureInfo_1
 cementProcedureInfo_1 HasDynamicValue cementProcedureInfo
-CementingProcedure: cementingProcedure
+CementingProcedure:cementingProcedure
 cementProcedureInfo_1 IsRelatedToDrillingProcedure cementingProcedure
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 cementProcedureInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 cementProcedureInfo_1 IsRecommendedBy computationUnit
-ProcedureFunction: procedureFunction
+ProcedureFunction:procedureFunction
 procedureFunction ImplementsProcedure cementingProcedure
 cementProcedureInfo_1 IsRecommendedFor procedureFunction
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 cementProcedureInfo_1 IsProvidedTo adviceComposer
-DWISScheduler: scheduler
+DWISScheduler:scheduler
 cementProcedureInfo_1 IsProvidedTo scheduler
 ```
 ## DownlinkingProcedure <!-- NOUN -->
@@ -328,21 +328,21 @@ cementProcedureInfo_1 IsProvidedTo scheduler
 the rotary steerable system.
 - Examples:
 ``` dwis downlinkProcedureInfo
-DynamicDrillingSignal: downlinkProcedureInfo
-DrillingStandardProcedureAdvice: downlinkProcedureInfo_1
+DynamicDrillingSignal:downlinkProcedureInfo
+DrillingStandardProcedureAdvice:downlinkProcedureInfo_1
 downlinkProcedureInfo_1 HasDynamicValue downlinkProcedureInfo
-DownlinkingProcedure: downlinkingProcedure
+DownlinkingProcedure:downlinkingProcedure
 downlinkProcedureInfo_1 IsRelatedToDrillingProcedure downlinkingProcedure
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 downlinkProcedureInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 downlinkProcedureInfo_1 IsRecommendedBy computationUnit
-ProcedureFunction: procedureFunction
+ProcedureFunction:procedureFunction
 procedureFunction ImplementsProcedure downlinkingProcedure
 downlinkProcedureInfo_1 IsRecommendedFor procedureFunction
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 downlinkProcedureInfo_1 IsProvidedTo adviceComposer
-DWISScheduler: scheduler
+DWISScheduler:scheduler
 downlinkProcedureInfo_1 IsProvidedTo scheduler
 ```
 ## ToolfaceOrientationProcedure <!-- NOUN -->
@@ -354,21 +354,21 @@ downlinkProcedureInfo_1 IsProvidedTo scheduler
 motor toolface is set to a desired set-point.
 - Examples:
 ``` dwis toolfaceOrientationProcedureInfo
-DynamicDrillingSignal: toolfaceOrientationProcedureInfo
-DrillingStandardProcedureAdvice: toolfaceOrientationProcedureInfo_1
+DynamicDrillingSignal:toolfaceOrientationProcedureInfo
+DrillingStandardProcedureAdvice:toolfaceOrientationProcedureInfo_1
 toolfaceOrientationProcedureInfo_1 HasDynamicValue toolfaceOrientationProcedureInfo
-ToolfaceOrientationProcedure: toolfaceOrientationProcedure
+ToolfaceOrientationProcedure:toolfaceOrientationProcedure
 toolfaceOrientationProcedureInfo_1 IsRelatedToDrillingProcedure toolfaceOrientationProcedure
-ServiceCompany: serviceCompany
+ServiceCompany:serviceCompany
 toolfaceOrientationProcedureInfo_1 IsProvidedBy serviceCompany
-Advisor: computationUnit
+Advisor:computationUnit
 toolfaceOrientationProcedureInfo_1 IsRecommendedBy computationUnit
-ProcedureFunction: procedureFunction
+ProcedureFunction:procedureFunction
 procedureFunction ImplementsProcedure toolfaceOrientationProcedure
 toolfaceOrientationProcedureInfo_1 IsRecommendedFor procedureFunction
-DWISAdviceComposer: adviceComposer
+DWISAdviceComposer:adviceComposer
 toolfaceOrientationProcedureInfo_1 IsProvidedTo adviceComposer
-DWISScheduler: scheduler
+DWISScheduler:scheduler
 toolfaceOrientationProcedureInfo_1 IsProvidedTo scheduler
 ```
 # VERBS
@@ -379,6 +379,24 @@ toolfaceOrientationProcedureInfo_1 IsProvidedTo scheduler
 - Object class: DrillingProcedure
 - Description: This Verb is used to indicate that a drilling data point is related to a drilling procedure.
 - Examples: 
+``` dwis circulationStartupProcedureInfo
+DynamicDrillingSignal:circulationStartupProcedureInfo
+DrillingStandardProcedureAdvice:circulationStartupProcedureInfo_1
+circulationStartupProcedureInfo_1 HasDynamicValue circulationStartupProcedureInfo
+CirculationStartupProcedure:circulationStartupProcedure
+circulationStartupProcedureInfo_1 IsRelatedToDrillingProcedure circulationStartupProcedure
+ServiceCompany:serviceCompany
+circulationStartupProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor:computationUnit
+circulationStartupProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction:procedureFunction
+procedureFunction ImplementsProcedure circulationStartupProcedure
+circulationStartupProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer:adviceComposer
+circulationStartupProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler:scheduler
+circulationStartupProcedureInfo_1 IsProvidedTo scheduler
+```
 ## ImplementsProcedure <!-- VERB -->
 - Display name: Implements Procedure
 - Parent verb: DWISVerb
@@ -386,3 +404,21 @@ toolfaceOrientationProcedureInfo_1 IsProvidedTo scheduler
 - Object class: DrillingProcedure
 - Description: This Verb is used to indicate that a Procedure Function implements a drilling procedure.
 - Examples: 
+``` dwis circulationStartupProcedureInfo
+DynamicDrillingSignal:circulationStartupProcedureInfo
+DrillingStandardProcedureAdvice:circulationStartupProcedureInfo_1
+circulationStartupProcedureInfo_1 HasDynamicValue circulationStartupProcedureInfo
+CirculationStartupProcedure:circulationStartupProcedure
+circulationStartupProcedureInfo_1 IsRelatedToDrillingProcedure circulationStartupProcedure
+ServiceCompany:serviceCompany
+circulationStartupProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor:computationUnit
+circulationStartupProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction:procedureFunction
+procedureFunction ImplementsProcedure circulationStartupProcedure
+circulationStartupProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer:adviceComposer
+circulationStartupProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler:scheduler
+circulationStartupProcedureInfo_1 IsProvidedTo scheduler
+```

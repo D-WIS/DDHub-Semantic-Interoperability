@@ -584,7 +584,7 @@
 ## IsPhysicallyLocatedAt <!-- VERB -->
 - Display name: IsPhysicallyLocatedAt
 - Parent verb: DWISVerb
-- Subject class: DrillingDataPoint
+- Subject class: DWISNoun
 - Object class: Location
 - Description: 
 - Examples: 

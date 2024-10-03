@@ -34,7 +34,7 @@ defined as a `ControlSystem` provided by a drilling contractor.
 - Examples:
 ```dwis runnableFunction
 RunnableFunction:runnableFunction
-runnableFunction IsAuxiliary false
+runnableFunction.IsAuxiliary = "false"
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -52,9 +52,9 @@ follows as closely as possible, for instance, a desired `WOB`.
 - Examples:
 ```dwis autoDriller
 ControllerFunction:autoDriller
-StableAxiaVelocityObjective: stableROP
+StableAxiaVelocityObjective:stableROP
 autoDriller ImplementsObjective stableROP
-autoDriller IsAuxiliary false
+autoDriller.IsAuxiliary = "false"
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -75,9 +75,9 @@ the rotational speed and one that controls the axial speed.
 - Examples:
 ```dwis frictionTest
 ProcedureFunction:frictionTest
-FrictionTestProcedure: frictionTest
-frictionTest ImplementsProcedure frictionTest
-FrictionTest IsAuxiliary false
+FrictionTestProcedure:frictionTestProcedure
+frictionTest ImplementsProcedure frictionTestProcedure
+FrictionTest.IsAuxiliary = "false"
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -117,7 +117,7 @@ packoff detection and reaction procedure.
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-PackOffIncident: packOffIncident
+PackOffIncident:packOffIncident
 packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -138,7 +138,7 @@ surging pressure above the fracturing pressure.
 - Examples:
 ```dwis swabSurgeLimits
 SOEFunction:swabSurgeLimits
-AxialVelocityLimit: swabSurgeLimit
+AxialVelocityLimit:swabSurgeLimit
 swabSurgeLimits ImplementsLimit swabSurgeLimit
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -160,7 +160,7 @@ It is expected that the `DrillingDataPoint` is a Boolean value.
 - Examples: 
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-PackOffIncident: packOffIncident
+PackOffIncident:packOffIncident
 packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -182,7 +182,7 @@ not. It is expected that the `DrillingDataPoint` is a Boolean value.
 - Examples: 
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-PackOffIncident: packOffIncident
+PackOffIncident:packOffIncident
 packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -208,7 +208,7 @@ is ignored.
 - Examples: 
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-PackOffIncident: packOffIncident
+PackOffIncident:packOffIncident
 packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -239,7 +239,7 @@ within the limits, but if the limits are applied then the idle state is false, b
 - Examples: 
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-PackOffIncident: packOffIncident
+PackOffIncident:packOffIncident
 packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -268,7 +268,7 @@ detection of an incident.
 - Examples: 
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-PackOffIncident: packOffIncident
+PackOffIncident:packOffIncident
 packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -291,7 +291,7 @@ extra margin signal is used or not by the FDIR function. This signal is expected
 - Examples: 
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-PackOffIncident: packOffIncident
+PackOffIncident:packOffIncident
 packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -319,7 +319,7 @@ triggered. For instance, a pack-off FDIR may be active but would react only if t
 - Examples: 
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-PackOffIncident: packOffIncident
+PackOffIncident:packOffIncident
 packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -345,9 +345,9 @@ or not. This signal is expected to be a Boolean value. The signal is expected to
 to the moment it has recovered from the incident, if it has a recovery procedure, or to the moment the control is given
 back to the end-user, in case of failure of the recovery procedure or at the end of the isolation procedure.
 - Examples:
- ```dwis packOffDectionAndReaction
+```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-PackOffIncident: packOffIncident
+PackOffIncident:packOffIncident
 packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -372,7 +372,7 @@ is triggered.
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-PackOffIncident: packOffIncident
+PackOffIncident:packOffIncident
 packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -400,7 +400,7 @@ describe the impact of the function on the drilling process. This signal is supp
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-PackOffIncident: packOffIncident
+PackOffIncident:packOffIncident
 packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
