@@ -19118,7 +19118,7 @@ to another.
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsPhysicallyLocatedAt">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
     <rdfs:range rdf:resource="http://ddhub.no/Location" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
     <rdfs:comment xml:lang="EN">

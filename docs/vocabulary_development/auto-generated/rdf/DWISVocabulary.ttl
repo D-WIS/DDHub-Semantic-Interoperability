@@ -5796,7 +5796,7 @@ ddhub:IsOpeningRatioAt a owl:ObjectProperty;
                        rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 ddhub:IsPhysicallyLocatedAt a owl:ObjectProperty; 
                             rdfs:comment ""@EN; 
-                            rdfs:domain ddhub:DrillingDataPoint; 
+                            rdfs:domain ddhub:DWISNoun; 
                             rdfs:range ddhub:Location; 
                             rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsPressureAt a owl:ObjectProperty; 

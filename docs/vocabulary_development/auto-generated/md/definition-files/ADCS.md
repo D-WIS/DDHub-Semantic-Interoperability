@@ -76,7 +76,7 @@ A runnable function is a function that starts to run immediately when activated.
 - Examples:
 ```dwis runnableFunction
 RunnableFunction:runnableFunction
-runnableFunction IsAuxiliary false
+runnableFunction.IsAuxiliary = "false"
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -87,7 +87,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[runnableFunction] -->|BelongsToClass| N0001(RunnableFunction) 
-	N0000[runnableFunction] -->|IsAuxiliary| N0002((false)) 
+	N0000[runnableFunction] -->|IsAuxiliary| N0002(("false")) 
 	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
 	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
 	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
@@ -102,13 +102,14 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?runnableFunction
 WHERE {
 	?runnableFunction rdf:type ddhub:RunnableFunction .
+	?runnableFunction ddhub:IsAuxiliary ?Attribute000 .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
 	?DCS ddhub:IsProvidedBy ?Contractor .
 	?DCS rdf:type ddhub:DataProvider .
 	?runnableFunction ddhub:IsProvidedBy ?DCS .
   FILTER (
-	?Attribute000 = false
+	?Attribute000 = "false"
   )
 }
 ```
@@ -125,9 +126,9 @@ follows as closely as possible, for instance, a desired `WOB`.
 - Examples:
 ```dwis autoDriller
 ControllerFunction:autoDriller
-StableAxiaVelocityObjective: stableROP
+StableAxiaVelocityObjective:stableROP
 autoDriller ImplementsObjective stableROP
-autoDriller IsAuxiliary false
+autoDriller.IsAuxiliary = "false"
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -138,13 +139,14 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[autoDriller] -->|BelongsToClass| N0001(ControllerFunction) 
+	N0002[stableROP] -->|BelongsToClass| N0003(StableAxiaVelocityObjective) 
 	N0000[autoDriller] -->|ImplementsObjective| N0002[stableROP] 
-	N0000[autoDriller] -->|IsAuxiliary| N0003((false)) 
-	N0004[DCS] -->|BelongsToClass| N0005(ControlSystem) 
-	N0006[Contractor] -->|BelongsToClass| N0007(DrillingContractor) 
-	N0004[DCS] -->|IsProvidedBy| N0006[Contractor] 
-	N0004[DCS] -->|BelongsToClass| N0008(DataProvider) 
-	N0000[autoDriller] -->|IsProvidedBy| N0004[DCS] 
+	N0000[autoDriller] -->|IsAuxiliary| N0004(("false")) 
+	N0005[DCS] -->|BelongsToClass| N0006(ControlSystem) 
+	N0007[Contractor] -->|BelongsToClass| N0008(DrillingContractor) 
+	N0005[DCS] -->|IsProvidedBy| N0007[Contractor] 
+	N0005[DCS] -->|BelongsToClass| N0009(DataProvider) 
+	N0000[autoDriller] -->|IsProvidedBy| N0005[DCS] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -154,14 +156,16 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?autoDriller
 WHERE {
 	?autoDriller rdf:type ddhub:ControllerFunction .
+	?stableROP rdf:type ddhub:StableAxiaVelocityObjective .
 	?autoDriller ddhub:ImplementsObjective ?stableROP .
+	?autoDriller ddhub:IsAuxiliary ?Attribute000 .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
 	?DCS ddhub:IsProvidedBy ?Contractor .
 	?DCS rdf:type ddhub:DataProvider .
 	?autoDriller ddhub:IsProvidedBy ?DCS .
   FILTER (
-	?Attribute000 = false
+	?Attribute000 = "false"
   )
 }
 ```
@@ -181,9 +185,9 @@ the rotational speed and one that controls the axial speed.
 - Examples:
 ```dwis frictionTest
 ProcedureFunction:frictionTest
-FrictionTestProcedure: frictionTest
-frictionTest ImplementsProcedure frictionTest
-FrictionTest IsAuxiliary false
+FrictionTestProcedure:frictionTestProcedure
+frictionTest ImplementsProcedure frictionTestProcedure
+FrictionTest.IsAuxiliary = "false"
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
@@ -194,13 +198,14 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[frictionTest] -->|BelongsToClass| N0001(ProcedureFunction) 
-	N0000[frictionTest] -->|ImplementsProcedure| N0000[frictionTest] 
-	N0002[FrictionTest] -->|IsAuxiliary| N0003((false)) 
-	N0004[DCS] -->|BelongsToClass| N0005(ControlSystem) 
-	N0006[Contractor] -->|BelongsToClass| N0007(DrillingContractor) 
-	N0004[DCS] -->|IsProvidedBy| N0006[Contractor] 
-	N0004[DCS] -->|BelongsToClass| N0008(DataProvider) 
-	N0000[frictionTest] -->|IsProvidedBy| N0004[DCS] 
+	N0002[frictionTestProcedure] -->|BelongsToClass| N0003(FrictionTestProcedure) 
+	N0000[frictionTest] -->|ImplementsProcedure| N0002[frictionTestProcedure] 
+	N0004[FrictionTest] -->|IsAuxiliary| N0005(("false")) 
+	N0006[DCS] -->|BelongsToClass| N0007(ControlSystem) 
+	N0008[Contractor] -->|BelongsToClass| N0009(DrillingContractor) 
+	N0006[DCS] -->|IsProvidedBy| N0008[Contractor] 
+	N0006[DCS] -->|BelongsToClass| N0010(DataProvider) 
+	N0000[frictionTest] -->|IsProvidedBy| N0006[DCS] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -210,14 +215,16 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?frictionTest
 WHERE {
 	?frictionTest rdf:type ddhub:ProcedureFunction .
-	?frictionTest ddhub:ImplementsProcedure ?frictionTest .
+	?frictionTestProcedure rdf:type ddhub:FrictionTestProcedure .
+	?frictionTest ddhub:ImplementsProcedure ?frictionTestProcedure .
+	?FrictionTest ddhub:IsAuxiliary ?Attribute000 .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
 	?DCS ddhub:IsProvidedBy ?Contractor .
 	?DCS rdf:type ddhub:DataProvider .
 	?frictionTest ddhub:IsProvidedBy ?DCS .
   FILTER (
-	?Attribute000 = false
+	?Attribute000 = "false"
   )
 }
 ```
@@ -283,7 +290,7 @@ packoff detection and reaction procedure.
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-PackOffIncident: packOffIncident
+PackOffIncident:packOffIncident
 packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -295,12 +302,13 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
+	N0002[packOffIncident] -->|BelongsToClass| N0003(PackOffIncident) 
 	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002[packOffIncident] 
-	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
-	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
-	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
-	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
-	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0003[DCS] 
+	N0004[DCS] -->|BelongsToClass| N0005(ControlSystem) 
+	N0006[Contractor] -->|BelongsToClass| N0007(DrillingContractor) 
+	N0004[DCS] -->|IsProvidedBy| N0006[Contractor] 
+	N0004[DCS] -->|BelongsToClass| N0008(DataProvider) 
+	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0004[DCS] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -310,6 +318,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
+	?packOffIncident rdf:type ddhub:PackOffIncident .
 	?packOffDetectionAndReaction ddhub:ManagesIncident ?packOffIncident .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
@@ -333,7 +342,7 @@ surging pressure above the fracturing pressure.
 - Examples:
 ```dwis swabSurgeLimits
 SOEFunction:swabSurgeLimits
-AxialVelocityLimit: swabSurgeLimit
+AxialVelocityLimit:swabSurgeLimit
 swabSurgeLimits ImplementsLimit swabSurgeLimit
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -345,12 +354,13 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[swabSurgeLimits] -->|BelongsToClass| N0001(SOEFunction) 
+	N0002[swabSurgeLimit] -->|BelongsToClass| N0003(AxialVelocityLimit) 
 	N0000[swabSurgeLimits] -->|ImplementsLimit| N0002[swabSurgeLimit] 
-	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
-	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
-	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
-	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
-	N0000[swabSurgeLimits] -->|IsProvidedBy| N0003[DCS] 
+	N0004[DCS] -->|BelongsToClass| N0005(ControlSystem) 
+	N0006[Contractor] -->|BelongsToClass| N0007(DrillingContractor) 
+	N0004[DCS] -->|IsProvidedBy| N0006[Contractor] 
+	N0004[DCS] -->|BelongsToClass| N0008(DataProvider) 
+	N0000[swabSurgeLimits] -->|IsProvidedBy| N0004[DCS] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -360,6 +370,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?swabSurgeLimits
 WHERE {
 	?swabSurgeLimits rdf:type ddhub:SOEFunction .
+	?swabSurgeLimit rdf:type ddhub:AxialVelocityLimit .
 	?swabSurgeLimits ddhub:ImplementsLimit ?swabSurgeLimit .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
@@ -413,7 +424,7 @@ It is expected that the `DrillingDataPoint` is a Boolean value.
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-PackOffIncident: packOffIncident
+PackOffIncident:packOffIncident
 packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -428,15 +439,16 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
+	N0002[packOffIncident] -->|BelongsToClass| N0003(PackOffIncident) 
 	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002[packOffIncident] 
-	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
-	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
-	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
-	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
-	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0003[DCS] 
-	N0008[enableSignalPackOffDetectionFDIR] -->|BelongsToClass| N0009(Command) 
-	N0008[enableSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(BooleanDataType) 
-	N0008[enableSignalPackOffDetectionFDIR] -->|IsEnablingSignalFor| N0000[packOffDetectionAndReaction] 
+	N0004[DCS] -->|BelongsToClass| N0005(ControlSystem) 
+	N0006[Contractor] -->|BelongsToClass| N0007(DrillingContractor) 
+	N0004[DCS] -->|IsProvidedBy| N0006[Contractor] 
+	N0004[DCS] -->|BelongsToClass| N0008(DataProvider) 
+	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0004[DCS] 
+	N0009[enableSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(Command) 
+	N0009[enableSignalPackOffDetectionFDIR] -->|BelongsToClass| N0011(BooleanDataType) 
+	N0009[enableSignalPackOffDetectionFDIR] -->|IsEnablingSignalFor| N0000[packOffDetectionAndReaction] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -446,6 +458,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
+	?packOffIncident rdf:type ddhub:PackOffIncident .
 	?packOffDetectionAndReaction ddhub:ManagesIncident ?packOffIncident .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
@@ -470,7 +483,7 @@ not. It is expected that the `DrillingDataPoint` is a Boolean value.
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-PackOffIncident: packOffIncident
+PackOffIncident:packOffIncident
 packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -485,15 +498,16 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
+	N0002[packOffIncident] -->|BelongsToClass| N0003(PackOffIncident) 
 	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002[packOffIncident] 
-	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
-	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
-	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
-	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
-	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0003[DCS] 
-	N0008[activatedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0009(ComputedData) 
-	N0008[activatedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(BooleanDataType) 
-	N0008[activatedSignalPackOffDetectionFDIR] -->|IsEnablingSignalFor| N0000[packOffDetectionAndReaction] 
+	N0004[DCS] -->|BelongsToClass| N0005(ControlSystem) 
+	N0006[Contractor] -->|BelongsToClass| N0007(DrillingContractor) 
+	N0004[DCS] -->|IsProvidedBy| N0006[Contractor] 
+	N0004[DCS] -->|BelongsToClass| N0008(DataProvider) 
+	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0004[DCS] 
+	N0009[activatedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(ComputedData) 
+	N0009[activatedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0011(BooleanDataType) 
+	N0009[activatedSignalPackOffDetectionFDIR] -->|IsEnablingSignalFor| N0000[packOffDetectionAndReaction] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -503,6 +517,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
+	?packOffIncident rdf:type ddhub:PackOffIncident .
 	?packOffDetectionAndReaction ddhub:ManagesIncident ?packOffIncident .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
@@ -531,7 +546,7 @@ is ignored.
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-PackOffIncident: packOffIncident
+PackOffIncident:packOffIncident
 packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -549,18 +564,19 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
+	N0002[packOffIncident] -->|BelongsToClass| N0003(PackOffIncident) 
 	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002[packOffIncident] 
-	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
-	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
-	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
-	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
-	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0003[DCS] 
-	N0008[allowEnablementSignalPackOffDetectionFDIR] -->|BelongsToClass| N0009(ComputedData) 
-	N0008[allowEnablementSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(BooleanDataType) 
-	N0008[allowEnablementSignalPackOffDetectionFDIR] -->|IsEnablingSignalFor| N0000[packOffDetectionAndReaction] 
-	N0011[enableSignalPackOffDetectionFDIR] -->|BelongsToClass| N0012(Command) 
-	N0011[enableSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(BooleanDataType) 
-	N0011[enableSignalPackOffDetectionFDIR] -->|IsEnablingSignalFor| N0000[packOffDetectionAndReaction] 
+	N0004[DCS] -->|BelongsToClass| N0005(ControlSystem) 
+	N0006[Contractor] -->|BelongsToClass| N0007(DrillingContractor) 
+	N0004[DCS] -->|IsProvidedBy| N0006[Contractor] 
+	N0004[DCS] -->|BelongsToClass| N0008(DataProvider) 
+	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0004[DCS] 
+	N0009[allowEnablementSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(ComputedData) 
+	N0009[allowEnablementSignalPackOffDetectionFDIR] -->|BelongsToClass| N0011(BooleanDataType) 
+	N0009[allowEnablementSignalPackOffDetectionFDIR] -->|IsEnablingSignalFor| N0000[packOffDetectionAndReaction] 
+	N0012[enableSignalPackOffDetectionFDIR] -->|BelongsToClass| N0013(Command) 
+	N0012[enableSignalPackOffDetectionFDIR] -->|BelongsToClass| N0011(BooleanDataType) 
+	N0012[enableSignalPackOffDetectionFDIR] -->|IsEnablingSignalFor| N0000[packOffDetectionAndReaction] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -570,6 +586,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
+	?packOffIncident rdf:type ddhub:PackOffIncident .
 	?packOffDetectionAndReaction ddhub:ManagesIncident ?packOffIncident .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
@@ -603,7 +620,7 @@ within the limits, but if the limits are applied then the idle state is false, b
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-PackOffIncident: packOffIncident
+PackOffIncident:packOffIncident
 packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -621,18 +638,19 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
+	N0002[packOffIncident] -->|BelongsToClass| N0003(PackOffIncident) 
 	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002[packOffIncident] 
-	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
-	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
-	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
-	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
-	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0003[DCS] 
-	N0008[idlingSignalPackOffDetectionFDIR] -->|BelongsToClass| N0009(ComputedData) 
-	N0008[idlingSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(BooleanDataType) 
-	N0008[idlingSignalPackOffDetectionFDIR] -->|IsIdlingSignalFor| N0000[packOffDetectionAndReaction] 
-	N0011[activatedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0009(ComputedData) 
-	N0011[activatedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(BooleanDataType) 
-	N0011[activatedSignalPackOffDetectionFDIR] -->|IsEnablingSignalFor| N0000[packOffDetectionAndReaction] 
+	N0004[DCS] -->|BelongsToClass| N0005(ControlSystem) 
+	N0006[Contractor] -->|BelongsToClass| N0007(DrillingContractor) 
+	N0004[DCS] -->|IsProvidedBy| N0006[Contractor] 
+	N0004[DCS] -->|BelongsToClass| N0008(DataProvider) 
+	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0004[DCS] 
+	N0009[idlingSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(ComputedData) 
+	N0009[idlingSignalPackOffDetectionFDIR] -->|BelongsToClass| N0011(BooleanDataType) 
+	N0009[idlingSignalPackOffDetectionFDIR] -->|IsIdlingSignalFor| N0000[packOffDetectionAndReaction] 
+	N0012[activatedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(ComputedData) 
+	N0012[activatedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0011(BooleanDataType) 
+	N0012[activatedSignalPackOffDetectionFDIR] -->|IsEnablingSignalFor| N0000[packOffDetectionAndReaction] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -642,6 +660,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
+	?packOffIncident rdf:type ddhub:PackOffIncident .
 	?packOffDetectionAndReaction ddhub:ManagesIncident ?packOffIncident .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
@@ -673,7 +692,7 @@ detection of an incident.
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-PackOffIncident: packOffIncident
+PackOffIncident:packOffIncident
 packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -688,15 +707,16 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
+	N0002[packOffIncident] -->|BelongsToClass| N0003(PackOffIncident) 
 	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002[packOffIncident] 
-	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
-	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
-	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
-	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
-	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0003[DCS] 
-	N0008[extraMarginUserDefinedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0009(Command) 
-	N0008[extraMarginUserDefinedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(ContinuousDataType) 
-	N0008[extraMarginUserDefinedSignalPackOffDetectionFDIR] -->|IsUserControllableExtraMarginSignalFor| N0000[packOffDetectionAndReaction] 
+	N0004[DCS] -->|BelongsToClass| N0005(ControlSystem) 
+	N0006[Contractor] -->|BelongsToClass| N0007(DrillingContractor) 
+	N0004[DCS] -->|IsProvidedBy| N0006[Contractor] 
+	N0004[DCS] -->|BelongsToClass| N0008(DataProvider) 
+	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0004[DCS] 
+	N0009[extraMarginUserDefinedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(Command) 
+	N0009[extraMarginUserDefinedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0011(ContinuousDataType) 
+	N0009[extraMarginUserDefinedSignalPackOffDetectionFDIR] -->|IsUserControllableExtraMarginSignalFor| N0000[packOffDetectionAndReaction] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -706,6 +726,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
+	?packOffIncident rdf:type ddhub:PackOffIncident .
 	?packOffDetectionAndReaction ddhub:ManagesIncident ?packOffIncident .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
@@ -731,7 +752,7 @@ extra margin signal is used or not by the FDIR function. This signal is expected
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-PackOffIncident: packOffIncident
+PackOffIncident:packOffIncident
 packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -749,18 +770,19 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
+	N0002[packOffIncident] -->|BelongsToClass| N0003(PackOffIncident) 
 	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002[packOffIncident] 
-	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
-	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
-	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
-	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
-	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0003[DCS] 
-	N0008[usedExtraMarginSignal] -->|BelongsToClass| N0009(ComputedData) 
-	N0008[usedExtraMarginSignal] -->|BelongsToClass| N0010(BooleanDataType) 
-	N0008[usedExtraMarginSignal] -->|IsUsedExtraMarginSignalFor| N0000[packOffDetectionAndReaction] 
-	N0011[extraMarginUserDefinedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0012(Command) 
-	N0011[extraMarginUserDefinedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0013(ContinuousDataType) 
-	N0011[extraMarginUserDefinedSignalPackOffDetectionFDIR] -->|IsUserControllableExtraMarginSignalFor| N0000[packOffDetectionAndReaction] 
+	N0004[DCS] -->|BelongsToClass| N0005(ControlSystem) 
+	N0006[Contractor] -->|BelongsToClass| N0007(DrillingContractor) 
+	N0004[DCS] -->|IsProvidedBy| N0006[Contractor] 
+	N0004[DCS] -->|BelongsToClass| N0008(DataProvider) 
+	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0004[DCS] 
+	N0009[usedExtraMarginSignal] -->|BelongsToClass| N0010(ComputedData) 
+	N0009[usedExtraMarginSignal] -->|BelongsToClass| N0011(BooleanDataType) 
+	N0009[usedExtraMarginSignal] -->|IsUsedExtraMarginSignalFor| N0000[packOffDetectionAndReaction] 
+	N0012[extraMarginUserDefinedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0013(Command) 
+	N0012[extraMarginUserDefinedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0014(ContinuousDataType) 
+	N0012[extraMarginUserDefinedSignalPackOffDetectionFDIR] -->|IsUserControllableExtraMarginSignalFor| N0000[packOffDetectionAndReaction] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -770,6 +792,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
+	?packOffIncident rdf:type ddhub:PackOffIncident .
 	?packOffDetectionAndReaction ddhub:ManagesIncident ?packOffIncident .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
@@ -800,7 +823,7 @@ triggered. For instance, a pack-off FDIR may be active but would react only if t
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-PackOffIncident: packOffIncident
+PackOffIncident:packOffIncident
 packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -818,18 +841,19 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
+	N0002[packOffIncident] -->|BelongsToClass| N0003(PackOffIncident) 
 	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002[packOffIncident] 
-	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
-	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
-	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
-	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
-	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0003[DCS] 
-	N0008[armedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0009(ComputedData) 
-	N0008[armedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(BooleanValue) 
-	N0008[armedSignalPackOffDetectionFDIR] -->|IsArmedSignalFor| N0000[packOffDetectionAndReaction] 
-	N0011[activatedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0009(ComputedData) 
-	N0011[activatedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0012(BooleanDataType) 
-	N0011[activatedSignalPackOffDetectionFDIR] -->|IsEnablingSignalFor| N0000[packOffDetectionAndReaction] 
+	N0004[DCS] -->|BelongsToClass| N0005(ControlSystem) 
+	N0006[Contractor] -->|BelongsToClass| N0007(DrillingContractor) 
+	N0004[DCS] -->|IsProvidedBy| N0006[Contractor] 
+	N0004[DCS] -->|BelongsToClass| N0008(DataProvider) 
+	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0004[DCS] 
+	N0009[armedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(ComputedData) 
+	N0009[armedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0011(BooleanValue) 
+	N0009[armedSignalPackOffDetectionFDIR] -->|IsArmedSignalFor| N0000[packOffDetectionAndReaction] 
+	N0012[activatedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(ComputedData) 
+	N0012[activatedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0013(BooleanDataType) 
+	N0012[activatedSignalPackOffDetectionFDIR] -->|IsEnablingSignalFor| N0000[packOffDetectionAndReaction] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -839,6 +863,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
+	?packOffIncident rdf:type ddhub:PackOffIncident .
 	?packOffDetectionAndReaction ddhub:ManagesIncident ?packOffIncident .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
@@ -867,9 +892,9 @@ or not. This signal is expected to be a Boolean value. The signal is expected to
 to the moment it has recovered from the incident, if it has a recovery procedure, or to the moment the control is given
 back to the end-user, in case of failure of the recovery procedure or at the end of the isolation procedure.
 - Examples:
- ```dwis packOffDectionAndReaction
+```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-PackOffIncident: packOffIncident
+PackOffIncident:packOffIncident
 packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -884,15 +909,16 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
+	N0002[packOffIncident] -->|BelongsToClass| N0003(PackOffIncident) 
 	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002[packOffIncident] 
-	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
-	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
-	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
-	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
-	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0003[DCS] 
-	N0008[triggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0009(ComputedData) 
-	N0008[triggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(BooleanValue) 
-	N0008[triggeredSignalPackOffDetectionFDIR] -->|IsTriggeredSignalFor| N0000[packOffDetectionAndReaction] 
+	N0004[DCS] -->|BelongsToClass| N0005(ControlSystem) 
+	N0006[Contractor] -->|BelongsToClass| N0007(DrillingContractor) 
+	N0004[DCS] -->|IsProvidedBy| N0006[Contractor] 
+	N0004[DCS] -->|BelongsToClass| N0008(DataProvider) 
+	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0004[DCS] 
+	N0009[triggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(ComputedData) 
+	N0009[triggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0011(BooleanValue) 
+	N0009[triggeredSignalPackOffDetectionFDIR] -->|IsTriggeredSignalFor| N0000[packOffDetectionAndReaction] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -902,6 +928,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
+	?packOffIncident rdf:type ddhub:PackOffIncident .
 	?packOffDetectionAndReaction ddhub:ManagesIncident ?packOffIncident .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
@@ -926,7 +953,7 @@ This verb is used to indicate that a `DrillingDataPoint` tells whether the isola
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-PackOffIncident: packOffIncident
+PackOffIncident:packOffIncident
 packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -944,18 +971,19 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
+	N0002[packOffIncident] -->|BelongsToClass| N0003(PackOffIncident) 
 	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002[packOffIncident] 
-	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
-	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
-	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
-	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
-	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0003[DCS] 
-	N0008[idleAfterTriggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0009(ComputedData) 
-	N0008[idleAfterTriggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(BooleanValue) 
-	N0008[idleAfterTriggeredSignalPackOffDetectionFDIR] -->|IsIdlingAfterTriggeredSignalFor| N0000[packOffDetectionAndReaction] 
-	N0011[triggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0009(ComputedData) 
-	N0011[triggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(BooleanValue) 
-	N0011[triggeredSignalPackOffDetectionFDIR] -->|IsTriggeredSignalFor| N0000[packOffDetectionAndReaction] 
+	N0004[DCS] -->|BelongsToClass| N0005(ControlSystem) 
+	N0006[Contractor] -->|BelongsToClass| N0007(DrillingContractor) 
+	N0004[DCS] -->|IsProvidedBy| N0006[Contractor] 
+	N0004[DCS] -->|BelongsToClass| N0008(DataProvider) 
+	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0004[DCS] 
+	N0009[idleAfterTriggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(ComputedData) 
+	N0009[idleAfterTriggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0011(BooleanValue) 
+	N0009[idleAfterTriggeredSignalPackOffDetectionFDIR] -->|IsIdlingAfterTriggeredSignalFor| N0000[packOffDetectionAndReaction] 
+	N0012[triggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(ComputedData) 
+	N0012[triggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0011(BooleanValue) 
+	N0012[triggeredSignalPackOffDetectionFDIR] -->|IsTriggeredSignalFor| N0000[packOffDetectionAndReaction] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -965,6 +993,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
+	?packOffIncident rdf:type ddhub:PackOffIncident .
 	?packOffDetectionAndReaction ddhub:ManagesIncident ?packOffIncident .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
@@ -995,7 +1024,7 @@ describe the impact of the function on the drilling process. This signal is supp
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
-PackOffIncident: packOffIncident
+PackOffIncident:packOffIncident
 packOffDetectionAndReaction ManagesIncident packOffIncident
 ControlSystem:DCS
 DrillingContractor:Contractor
@@ -1010,15 +1039,16 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
+	N0002[packOffIncident] -->|BelongsToClass| N0003(PackOffIncident) 
 	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002[packOffIncident] 
-	N0003[DCS] -->|BelongsToClass| N0004(ControlSystem) 
-	N0005[Contractor] -->|BelongsToClass| N0006(DrillingContractor) 
-	N0003[DCS] -->|IsProvidedBy| N0005[Contractor] 
-	N0003[DCS] -->|BelongsToClass| N0007(DataProvider) 
-	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0003[DCS] 
-	N0008[impactDescriptionSignalPackOffDetectionFDIR] -->|BelongsToClass| N0009(Command) 
-	N0008[impactDescriptionSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(StringDataType) 
-	N0008[impactDescriptionSignalPackOffDetectionFDIR] -->|IsImpactDescriptionSignalFor| N0000[packOffDetectionAndReaction] 
+	N0004[DCS] -->|BelongsToClass| N0005(ControlSystem) 
+	N0006[Contractor] -->|BelongsToClass| N0007(DrillingContractor) 
+	N0004[DCS] -->|IsProvidedBy| N0006[Contractor] 
+	N0004[DCS] -->|BelongsToClass| N0008(DataProvider) 
+	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0004[DCS] 
+	N0009[impactDescriptionSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(Command) 
+	N0009[impactDescriptionSignalPackOffDetectionFDIR] -->|BelongsToClass| N0011(StringDataType) 
+	N0009[impactDescriptionSignalPackOffDetectionFDIR] -->|IsImpactDescriptionSignalFor| N0000[packOffDetectionAndReaction] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -1028,6 +1058,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?packOffDectionAndReaction
 WHERE {
 	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
+	?packOffIncident rdf:type ddhub:PackOffIncident .
 	?packOffDetectionAndReaction ddhub:ManagesIncident ?packOffIncident .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .

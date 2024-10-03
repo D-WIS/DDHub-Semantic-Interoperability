@@ -429,7 +429,7 @@ erDiagram
 Location ||--o{ DrillingDataPoint : HasCoordinates
 DrillingDataPoint ||--o{ ReferenceFrame : HasReferenceFrame
 ReferenceFrame ||--o{ Location : HasReferenceFrameOrigin
-DrillingDataPoint ||--o{ Location : IsPhysicallyLocatedAt
+DWISNoun ||--o{ Location : IsPhysicallyLocatedAt
 ```
 ## HasCoordinates <!-- VERB -->
 - Display name: HasCoordinates
@@ -452,6 +452,6 @@ DrillingDataPoint ||--o{ Location : IsPhysicallyLocatedAt
 ## IsPhysicallyLocatedAt <!-- VERB -->
 - Display name: IsPhysicallyLocatedAt
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [Location](./PhysicalLocation.md#Location)
 - Definition set: PhysicalLocation
