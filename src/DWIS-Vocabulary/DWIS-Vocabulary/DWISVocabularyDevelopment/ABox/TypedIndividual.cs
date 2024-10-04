@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace DWIS.Vocabulary.Development
 {
@@ -7,16 +8,19 @@ namespace DWIS.Vocabulary.Development
         public string TypeName { get; set; }
         protected TypedIndividual() : base() { }
 
-        public TypedIndividual(string name, string typeName, DWISVocabulary vocabulary) : this(name, vocabulary.Nouns.Find(n => n.Name == typeName))
+        public TypedIndividual(string name, string typeName, DWISVocabulary vocabulary) : this(name, vocabulary.Nouns.Find(n => n.Name == typeName) ,vocabulary)
         {
         }
 
-        public TypedIndividual(string name, Noun noun) : base(name)
+        public TypedIndividual(string name, Noun noun, DWISVocabulary vocabulary) : base(name)
         {
             TypeName = noun.Name;
-            if (noun.NounAttributes != null)
+
+            var attributes = noun.GetAllAttributes(vocabulary);       
+
+            if (attributes.Any())
             {
-                Attributes = noun.NounAttributes.Select(na => new IndividualAttribute(na)).ToArray();
+                Attributes = attributes.Select(na => new IndividualAttribute(na)).ToArray();
             }
         }
 

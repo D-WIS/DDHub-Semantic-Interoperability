@@ -239,11 +239,12 @@ namespace DWIS.Vocabulary.OWL
 
                     if (individual.Attributes != null)
                     {
+                        var allAttributes = noun.GetAllAttributes(vocabulary);
                         foreach (var attribute in individual.Attributes)
                         {
                             if (!string.IsNullOrEmpty(attribute.AttributeValue))
                             {
-                                string attributeType = noun.NounAttributes.FirstOrDefault(na => na.Name == attribute.AttributeName).Type;
+                                string attributeType = allAttributes.FirstOrDefault(na => na.Name == attribute.AttributeName).Type;
                                 string attributeValue = attribute.AttributeValue.Replace(",", ".");
                                 if (System.Text.Encoding.UTF8.GetByteCount(attributeValue) == attributeValue.Length)
                                 {

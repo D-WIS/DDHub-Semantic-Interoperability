@@ -688,13 +688,13 @@ namespace DWIS.Vocabulary.Utils
                                     if (vocabulary.GetNoun(nounName, out Noun noun))
                                     {
                                         string name = elements[1].Trim();
-                                        instance.Population.Add(new TypedIndividual(name, noun));
+                                        instance.Population.Add(new TypedIndividual(name, noun, vocabulary));
                                         return true;
                                     }
                                     else if (instance.InstanceVocabulary.GetNoun(nounName, out noun))
                                     {
                                         string name = elements[1].Trim();
-                                        instance.Population.Add(new TypedIndividual(name, noun));
+                                        instance.Population.Add(new TypedIndividual(name, noun, vocabulary));
                                         return true;
                                     }
                                     else return false;

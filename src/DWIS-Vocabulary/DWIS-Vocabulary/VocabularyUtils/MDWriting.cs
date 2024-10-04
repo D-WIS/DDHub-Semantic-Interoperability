@@ -21,10 +21,18 @@ namespace DWIS.Vocabulary.Utils
             List<BasePhysicalQuantity> basePhysicalQuantities = BasePhysicalQuantity.AvailableBasePhysicalQuantities;
             UnitsAndQuantitiesToMDFile(semanticBuilder, basePhysicalQuantities);
             List<BasePhysicalQuantity> physicalQuantities = PhysicalQuantity.AvailablePhysicalQuantities;
-            UnitsAndQuantitiesToMDFile(semanticBuilder, physicalQuantities);
+            UnitsAndQuantitiesToMDFile(semanticBuilder, physicalQuantities, true, basePhysicalQuantities);
             System.IO.File.WriteAllText(path, semanticBuilder.ToString());
         }
-        private static void UnitsAndQuantitiesToMDFile(StringBuilder semanticBuilder, List<BasePhysicalQuantity> quantities)
+
+        private static string GetInstanceName(string className)
+        {
+            char first = char.ToLower(className[0]);
+
+            return first + className.Remove(0, 1);
+            
+        }
+        private static void UnitsAndQuantitiesToMDFile(StringBuilder semanticBuilder, List<BasePhysicalQuantity> quantities, bool measurable = false, List<BasePhysicalQuantity> baseQuantities = null)
         {
             if (quantities != null)
             {
@@ -33,42 +41,68 @@ namespace DWIS.Vocabulary.Utils
                     if (quantity != null)
                     {
                         string quantityName = quantity.GetType().Name;
+                        string instanceName = GetInstanceName(quantity.Name);
+                        
                         if (!string.IsNullOrEmpty(quantityName))
                         {
-                            semanticBuilder.AppendLine("- Quantity:" + quantityName);
-                            semanticBuilder.AppendLine("- " + quantityName + ".L = " + quantity.LengthDimension.ToString(CultureInfo.InvariantCulture));
-                            semanticBuilder.AppendLine("- " + quantityName + ".M = " + quantity.MassDimension.ToString(CultureInfo.InvariantCulture));
-                            semanticBuilder.AppendLine("- " + quantityName + ".T = " + quantity.TimeDimension.ToString(CultureInfo.InvariantCulture));
-                            semanticBuilder.AppendLine("- " + quantityName + ".I = " + quantity.ElectricCurrentDimension.ToString(CultureInfo.InvariantCulture));
-                            semanticBuilder.AppendLine("- " + quantityName + ".ThT = " + quantity.TemperatureDimension.ToString(CultureInfo.InvariantCulture));
-                            semanticBuilder.AppendLine("- " + quantityName + ".N = " + quantity.AmountSubstanceDimension.ToString(CultureInfo.InvariantCulture));
-                            semanticBuilder.AppendLine("- " + quantityName + ".J = " + quantity.LuminousIntensityDimension.ToString(CultureInfo.InvariantCulture));
-                            semanticBuilder.AppendLine("- " + quantityName + ".Theta = " + quantity.PlaneAngleDimension.ToString(CultureInfo.InvariantCulture));
-                            semanticBuilder.AppendLine("- " + quantityName + ".Omega = " + quantity.SolidAngleDimension.ToString(CultureInfo.InvariantCulture));
-                            if (quantity.UnitChoices != null)
+                            if (!measurable)
                             {
-                                foreach (var unitChoice in quantity.UnitChoices)
+                                semanticBuilder.AppendLine("- " + quantityName + ":" + instanceName);
+                                semanticBuilder.AppendLine("- " + instanceName + ".L = " + quantity.LengthDimension.ToString(CultureInfo.InvariantCulture));
+                                semanticBuilder.AppendLine("- " + instanceName + ".M = " + quantity.MassDimension.ToString(CultureInfo.InvariantCulture));
+                                semanticBuilder.AppendLine("- " + instanceName + ".T = " + quantity.TimeDimension.ToString(CultureInfo.InvariantCulture));
+                                semanticBuilder.AppendLine("- " + instanceName + ".I = " + quantity.ElectricCurrentDimension.ToString(CultureInfo.InvariantCulture));
+                                semanticBuilder.AppendLine("- " + instanceName + ".ThT = " + quantity.TemperatureDimension.ToString(CultureInfo.InvariantCulture));
+                                semanticBuilder.AppendLine("- " + instanceName + ".N = " + quantity.AmountSubstanceDimension.ToString(CultureInfo.InvariantCulture));
+                                semanticBuilder.AppendLine("- " + instanceName + ".J = " + quantity.LuminousIntensityDimension.ToString(CultureInfo.InvariantCulture));
+                                semanticBuilder.AppendLine("- " + instanceName + ".Theta = " + quantity.PlaneAngleDimension.ToString(CultureInfo.InvariantCulture));
+                                semanticBuilder.AppendLine("- " + instanceName + ".Omega = " + quantity.SolidAngleDimension.ToString(CultureInfo.InvariantCulture));
+                                if (quantity.UnitChoices != null)
                                 {
-                                    if (unitChoice != null)
+                                    foreach (var unitChoice in quantity.UnitChoices)
                                     {
-                                        string unitName = unitChoice.GetVariableName();
-                                        if (!string.IsNullOrEmpty(unitName))
+                                        if (unitChoice != null)
                                         {
-                                            semanticBuilder.AppendLine("- Unit:" + unitName);
-                                            semanticBuilder.AppendLine("- " + unitName + ".ConversionFactorA = " + unitChoice.ConversionBiasFromSI.ToString(CultureInfo.InvariantCulture));
-                                            semanticBuilder.AppendLine("- " + unitName + ".ConversionFactorB = " + unitChoice.ConversionFactorFromSI.ToString(CultureInfo.InvariantCulture));
-                                            string unitLabel = GetValidName(unitChoice.UnitLabel);
-                                            if (!string.IsNullOrEmpty(unitLabel))
+                                            string unitName = unitChoice.GetVariableName();
+                                            if (!string.IsNullOrEmpty(unitName))
                                             {
-                                                semanticBuilder.AppendLine("- " + unitName + ".Symbol = " + unitLabel);
-                                            }
-                                            semanticBuilder.AppendLine("- " + unitName + " IsUnitForQuantity " + quantityName);
-                                            if (unitChoice.IsSI)
-                                            {
-                                                semanticBuilder.AppendLine("- " + quantityName + " HasSIUnit " + unitName);
+                                                semanticBuilder.AppendLine("- Unit:" + unitName);
+                                                semanticBuilder.AppendLine("- " + unitName + ".ConversionFactorA = " + unitChoice.ConversionBiasFromSI.ToString(CultureInfo.InvariantCulture));
+                                                semanticBuilder.AppendLine("- " + unitName + ".ConversionFactorB = " + unitChoice.ConversionFactorFromSI.ToString(CultureInfo.InvariantCulture));
+                                                string unitLabel = GetValidName(unitChoice.UnitLabel);
+                                                if (!string.IsNullOrEmpty(unitLabel))
+                                                {
+                                                    semanticBuilder.AppendLine("- " + unitName + ".Symbol = " + unitLabel);
+                                                }
+                                                semanticBuilder.AppendLine("- " + unitName + " IsUnitForQuantity " + instanceName);
+                                                if (unitChoice.IsSI)
+                                                {
+                                                    semanticBuilder.AppendLine("- " + instanceName + " HasSIUnit " + unitName);
+                                                }
                                             }
                                         }
                                     }
+                                }
+                            }
+                            else if(baseQuantities != null)
+                            {
+                                var baseQ = baseQuantities.FirstOrDefault(q =>
+                                q.AmountSubstanceDimension == quantity.AmountSubstanceDimension
+                                && q.ElectricCurrentDimension == quantity.ElectricCurrentDimension
+                                && q.LengthDimension == quantity.LengthDimension
+                                && q.MassDimension == quantity.MassDimension
+                                && q.TimeDimension == quantity.TimeDimension
+                                && q.PlaneAngleDimension == quantity.PlaneAngleDimension
+                                && q.TemperatureDimension == quantity.TemperatureDimension
+                                && q.LuminousIntensityDimension == quantity.LuminousIntensityDimension
+                                 && q.SolidAngleDimension == quantity.SolidAngleDimension);
+
+                                if (baseQ != null) 
+                                {
+                                    string baseQInstance = GetInstanceName(baseQ.Name);
+                                    semanticBuilder.AppendLine("- " + quantityName + ":" + instanceName);
+                                    semanticBuilder.AppendLine("- " + instanceName + " IsOfBaseQuantity " + baseQInstance);
+                                    semanticBuilder.AppendLine("- " + instanceName + ".MeaningfulPrecision = " + quantity.MeaningfulPrecisionInSI.ToString());
                                 }
                             }
                         }

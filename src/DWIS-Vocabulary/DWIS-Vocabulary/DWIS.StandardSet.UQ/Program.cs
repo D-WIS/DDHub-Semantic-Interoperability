@@ -2,12 +2,28 @@
 // See https://aka.ms/new-console-template for more information
 
 var ontology = DWIS.Vocabulary.Standard.OntologyProvider.DWISOntology;// DWIS.Vocabulary.OWL.OntologyGeneration.GetOntology(vocabulary);
+DWISVocabulary vocabulary = DWIS.Vocabulary.Standard.VocabularyProvider.Vocabulary;
+string uqFolder = @"C:\temp\uq";
+
+string mdFileName = uqFolder + System.IO.Path.DirectorySeparatorChar + "uq.md";
+
+MDWriting.UnitsAndQuantitiesToMDFile(mdFileName);
+
+VocabularyParsing.FromMDFile(mdFileName, vocabulary, out var uqInstance);
+
+var uqOntology = DWIS.Vocabulary.OWL.OntologyGeneration.AddInstance(ontology, vocabulary, uqInstance);
+
+string ontologyFileName = uqFolder + System.IO.Path.DirectorySeparatorChar + "uq";
+
+DWIS.Vocabulary.OWL.OntologyGeneration.WriteOntology(uqOntology, ontologyFileName, true);
+
+Console.ReadLine();
 
 
 Console.WriteLine("Quantities export");
 string folder = "C:\\Users\\beda\\source\\repos\\D-WIS\\DDHub-Semantic-Interoperability\\docs\\vocabulary_development\\definitions";
 
-DWISVocabulary vocabulary = DWIS.Vocabulary.Standard.VocabularyProvider.Vocabulary;
+
 
 DWISInstance uaq = DWIS.Vocabulary.Standard.StandardSetProvider.GetUnitsAndQuantities();
 
