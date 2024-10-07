@@ -1524,8 +1524,8 @@ DrillingFaultDetectionIsolationAndRecoveryAdvice:PackOffFDIRInfo_1
 PackOffFDIRInfo_1 HasDynamicValue PackOffFDIRInfo
 PackOff:packOffIncident
 PackOffFDIRInfo_1 IsRelatedToDrillingIncident packOffIncident
-ServiceCompany:serviceCompany
-PackOffFDIRInfo_1 IsProvidedBy serviceCompany
+DataAnalysisServiceCompany:dataAnalysisServiceCompany_1
+PackOffFDIRInfo_1 IsProvidedBy dataAnalysisServiceCompany_1
 Advisor:computationUnit
 PackOffFDIRInfo_1 IsRecommendedBy computationUnit
 FDIRFunction:FDIRFunction_1
@@ -1542,8 +1542,8 @@ graph LR
 	N0002[PackOffFDIRInfo_1] -->|HasDynamicValue| N0000[PackOffFDIRInfo] 
 	N0004[packOffIncident] -->|BelongsToClass| N0005(PackOff) 
 	N0002[PackOffFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0004[packOffIncident] 
-	N0006[serviceCompany] -->|BelongsToClass| N0007(ServiceCompany) 
-	N0002[PackOffFDIRInfo_1] -->|IsProvidedBy| N0006[serviceCompany] 
+	N0006[dataAnalysisServiceCompany_1] -->|BelongsToClass| N0007(DataAnalysisServiceCompany) 
+	N0002[PackOffFDIRInfo_1] -->|IsProvidedBy| N0006[dataAnalysisServiceCompany_1] 
 	N0008[computationUnit] -->|BelongsToClass| N0009(Advisor) 
 	N0002[PackOffFDIRInfo_1] -->|IsRecommendedBy| N0008[computationUnit] 
 	N0010[FDIRFunction_1] -->|BelongsToClass| N0011(FDIRFunction) 
@@ -1564,8 +1564,8 @@ WHERE {
 	?PackOffFDIRInfo_1 ddhub:HasDynamicValue ?PackOffFDIRInfo .
 	?packOffIncident rdf:type ddhub:PackOff .
 	?PackOffFDIRInfo_1 ddhub:IsRelatedToDrillingIncident ?packOffIncident .
-	?serviceCompany rdf:type ddhub:ServiceCompany .
-	?PackOffFDIRInfo_1 ddhub:IsProvidedBy ?serviceCompany .
+	?dataAnalysisServiceCompany_1 rdf:type ddhub:DataAnalysisServiceCompany .
+	?PackOffFDIRInfo_1 ddhub:IsProvidedBy ?dataAnalysisServiceCompany_1 .
 	?computationUnit rdf:type ddhub:Advisor .
 	?PackOffFDIRInfo_1 ddhub:IsRecommendedBy ?computationUnit .
 	?FDIRFunction_1 rdf:type ddhub:FDIRFunction .

@@ -8,10 +8,6 @@ Here is a class inheritance diagram for the nouns contained in this definition s
 ```mermaid
 classDiagram
 DWISNoun <|-- DataFlowNode
-DataFlowNode <|-- Plan
-Plan <|-- OperationalPlan
-Plan <|-- DrillingProgram
-Plan <|-- RigActionPlan
 ComputationUnit <|-- ComputedState
 ComputedState <|-- ProceduralState
 ComputedState <|-- ProcessState
@@ -19,11 +15,12 @@ ComputedState <|-- PhysicalState
 DataFlowNode <|-- ComputationUnit
 ComputationUnit <|-- Advisor
 ComputationUnit <|-- Simulator
+ComputationUnit <|-- Interpreter
 DataFlowNode <|-- Controller
 DataFlowNode <|-- ControlSystem
-ControlSystem <|-- DrawWorksControlSystem
-ControlSystem <|-- MudPumpsControlSystem
-ControlSystem <|-- TopDriveControlSystem
+ControlSystem <|-- HoistingControlSystem
+ControlSystem <|-- CirculationControlSystem
+ControlSystem <|-- RotationControlSystem
 ControlSystem <|-- BOPControlSystem
 ControlSystem <|-- RigChokeControlSystem
 DataFlowNode <|-- MeasurementDevice
@@ -60,45 +57,29 @@ DataFlowNode <|-- TransmissionLine
 DataFlowNode <|-- UserInterface
 ```
 ## DataFlowNode <!-- NOUN -->
-- Display name: DataFlowNode
+- Display name: Data Flow Node
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Definition set: DataFlow
-## Plan <!-- NOUN -->
-- Display name: Plan
-- Parent class: [DataFlowNode](./DataFlow.md#DataFlowNode)
-- Definition set: DataFlow
-## OperationalPlan <!-- NOUN -->
-- Display name: OperationalPlan
-- Parent class: [Plan](./DataFlow.md#Plan)
-- Definition set: DataFlow
-## DrillingProgram <!-- NOUN -->
-- Display name: DrillingProgram
-- Parent class: [Plan](./DataFlow.md#Plan)
-- Definition set: DataFlow
-## RigActionPlan <!-- NOUN -->
-- Display name: RigActionPlan
-- Parent class: [Plan](./DataFlow.md#Plan)
-- Definition set: DataFlow
 ## ComputedState <!-- NOUN -->
-- Display name: ComputedState
+- Display name: Computed State
 - Parent class: [ComputationUnit](./DataFlow.md#ComputationUnit)
 - Description: 
 A state represents the current configuation of a system.
 - Definition set: DataFlow
 ## ProceduralState <!-- NOUN -->
-- Display name: ComputedProceduralState
+- Display name: Procedural State
 - Parent class: [ComputedState](./DataFlow.md#ComputedState)
 - Definition set: DataFlow
 ## ProcessState <!-- NOUN -->
-- Display name: ComputedProcessState
+- Display name: Process State
 - Parent class: [ComputedState](./DataFlow.md#ComputedState)
 - Definition set: DataFlow
 ## PhysicalState <!-- NOUN -->
-- Display name: ComputedPhysicalState
+- Display name: Physical State
 - Parent class: [ComputedState](./DataFlow.md#ComputedState)
 - Definition set: DataFlow
 ## ComputationUnit <!-- NOUN -->
-- Display name: ComputationUnit
+- Display name: Computation Unit
 - Parent class: [DataFlowNode](./DataFlow.md#DataFlowNode)
 - Description: 
 Denotes a complex computation unit, typically based on advanced numerical modeling
@@ -110,10 +91,23 @@ Denotes a complex computation unit, typically based on advanced numerical modeli
   - AdviceType
     - Type: string
     - Description: 
+- Description: 
+An advisor is a computation unit that produces an advice on how to control a process. Its output is typically
+an AdvisorySystemAdvice.
 - Definition set: DataFlow
 ## Simulator <!-- NOUN -->
 - Display name: Simulator
 - Parent class: [ComputationUnit](./DataFlow.md#ComputationUnit)
+- Description: 
+A simulator is a computation unit that tries to replicate the outputs of a process. Its output is typically
+a set of ComputedData, i.e., a specialisation of DrillingDataPoint.
+- Definition set: DataFlow
+## Interpreter <!-- NOUN -->
+- Display name: Interpreter
+- Parent class: [ComputationUnit](./DataFlow.md#ComputationUnit)
+- Description: 
+An interpreter is a computation unit that interprets the state of a process. Its output is typically a
+ComputedState.
 - Definition set: DataFlow
 ## Controller <!-- NOUN -->
 - Display name: Controller
@@ -123,28 +117,28 @@ Denotes a complex computation unit, typically based on advanced numerical modeli
 - Display name: ControlSystem
 - Parent class: [DataFlowNode](./DataFlow.md#DataFlowNode)
 - Definition set: DataFlow
-## DrawWorksControlSystem <!-- NOUN -->
-- Display name: DrawWorksControlSystem
+## HoistingControlSystem <!-- NOUN -->
+- Display name: Hoisting Control System
 - Parent class: [ControlSystem](./DataFlow.md#ControlSystem)
 - Definition set: DataFlow
-## MudPumpsControlSystem <!-- NOUN -->
-- Display name: MudPumpsControlSystem
+## CirculationControlSystem <!-- NOUN -->
+- Display name: Circulation Control System
 - Parent class: [ControlSystem](./DataFlow.md#ControlSystem)
 - Definition set: DataFlow
-## TopDriveControlSystem <!-- NOUN -->
-- Display name: TopDriveControlSystem
+## RotationControlSystem <!-- NOUN -->
+- Display name: Rotation Control System
 - Parent class: [ControlSystem](./DataFlow.md#ControlSystem)
 - Definition set: DataFlow
 ## BOPControlSystem <!-- NOUN -->
-- Display name: BOPControlSystem
+- Display name: BOP Control System
 - Parent class: [ControlSystem](./DataFlow.md#ControlSystem)
 - Definition set: DataFlow
 ## RigChokeControlSystem <!-- NOUN -->
-- Display name: RigChokeControlSystem
+- Display name: Rig Choke Control System
 - Parent class: [ControlSystem](./DataFlow.md#ControlSystem)
 - Definition set: DataFlow
 ## MeasurementDevice <!-- NOUN -->
-- Display name: MeasurementDevice
+- Display name: Measurement Device
 - Parent class: [DataFlowNode](./DataFlow.md#DataFlowNode)
 - Description: 
 Denotes a physical sensor
@@ -156,7 +150,7 @@ Denotes a physical sensor
 Represents a transformation applied to some signals that produces other signals
 - Definition set: DataFlow
 ## DirectTransformation <!-- NOUN -->
-- Display name: DirectTransformation
+- Display name: Direct Transformation
 - Parent class: [Transformation](./DataFlow.md#Transformation)
 - Description: 
 Direct transformations are performed using only the current value of their inputs, time is not involved
@@ -166,35 +160,35 @@ Direct transformations are performed using only the current value of their input
 - Parent class: [DirectTransformation](./DataFlow.md#DirectTransformation)
 - Definition set: DataFlow
 ## ForceFromLoadPinsTransformation <!-- NOUN -->
-- Display name: ForceFromLoadPinsTransformation
+- Display name: Force From Load Pins Transformation
 - Parent class: [DirectTransformation](./DataFlow.md#DirectTransformation)
 - Definition set: DataFlow
 ## ForceToLoadTransformation <!-- NOUN -->
-- Display name: ForceToLoadTransformation
+- Display name: Force To Load Transformation
 - Parent class: [DirectTransformation](./DataFlow.md#DirectTransformation)
 - Definition set: DataFlow
 ## MeasuredDepthToTrueVerticalDepthTransformation <!-- NOUN -->
-- Display name: MeasuredDepthToTrueVerticalDepthTransformation
+- Display name: Measured Depth To True Vertical Depth Transformation
 - Parent class: [DirectTransformation](./DataFlow.md#DirectTransformation)
 - Definition set: DataFlow
 ## MeasuredDepthTranslation <!-- NOUN -->
-- Display name: MeasuredDepthTranslation
+- Display name: Measured Depth Translation
 - Parent class: [DirectTransformation](./DataFlow.md#DirectTransformation)
 - Definition set: DataFlow
 ## PressureToEquivalentDensityTransformation <!-- NOUN -->
-- Display name: PressureToEquivalentDensityTransformation
+- Display name: Pressure To Equivalent Density Transformation
 - Parent class: [DirectTransformation](./DataFlow.md#DirectTransformation)
 - Definition set: DataFlow
 ## PressureToForceTransformation <!-- NOUN -->
-- Display name: PressureToForceTransformation
+- Display name: Pressure To Force Transformation
 - Parent class: [DirectTransformation](./DataFlow.md#DirectTransformation)
 - Definition set: DataFlow
 ## TorqueToForceTransformation <!-- NOUN -->
-- Display name: TorqueToForceTransformation
+- Display name: Torque To Force Transformation
 - Parent class: [DirectTransformation](./DataFlow.md#DirectTransformation)
 - Definition set: DataFlow
 ## SignalProcessingUnit <!-- NOUN -->
-- Display name: SignalProcessingUnit
+- Display name: Signal Processing Unit
 - Parent class: [Transformation](./DataFlow.md#Transformation)
 - Description: 
 Represent any signal processing applied prior to the distribution of the considered signal. Signal processing refers to e.g. noise removal, filtering,..
@@ -204,7 +198,7 @@ Represent any signal processing applied prior to the distribution of the conside
 - Parent class: [SignalProcessingUnit](./DataFlow.md#SignalProcessingUnit)
 - Definition set: DataFlow
 ## BandPassFilter <!-- NOUN -->
-- Display name: BandPassFilter
+- Display name: Band Pass Filter
 - Parent class: [Filter](./DataFlow.md#Filter)
 - Attributes:
   - MinFrequency
@@ -215,7 +209,7 @@ Represent any signal processing applied prior to the distribution of the conside
     - Description: 
 - Definition set: DataFlow
 ## HighPassFilter <!-- NOUN -->
-- Display name: HighPassFilter
+- Display name: High Pass Filter
 - Parent class: [Filter](./DataFlow.md#Filter)
 - Attributes:
   - CutOffFrequency
@@ -223,7 +217,7 @@ Represent any signal processing applied prior to the distribution of the conside
     - Description: 
 - Definition set: DataFlow
 ## LowPassFilter <!-- NOUN -->
-- Display name: LowPassFilter
+- Display name: Low Pass Filter
 - Parent class: [Filter](./DataFlow.md#Filter)
 - Attributes:
   - CutOffFrequency
@@ -231,23 +225,23 @@ Represent any signal processing applied prior to the distribution of the conside
     - Description: 
 - Definition set: DataFlow
 ## MovingAverage <!-- NOUN -->
-- Display name: MovingAverage
+- Display name: Moving Average
 - Parent class: [Filter](./DataFlow.md#Filter)
 - Definition set: DataFlow
 ## MovingStandardDeviation <!-- NOUN -->
-- Display name: MovingStandardDeviation
+- Display name: Moving Standard Deviation
 - Parent class: [Filter](./DataFlow.md#Filter)
 - Definition set: DataFlow
 ## MovingMin <!-- NOUN -->
-- Display name: MovingMin
+- Display name: Moving Min
 - Parent class: [Filter](./DataFlow.md#Filter)
 - Definition set: DataFlow
 ## MovingMax <!-- NOUN -->
-- Display name: MovingMax
+- Display name: Moving Max
 - Parent class: [Filter](./DataFlow.md#Filter)
 - Definition set: DataFlow
 ## NumberOfSampleMovingAverage <!-- NOUN -->
-- Display name: NumberOfSampleMovingAverage
+- Display name: Number Of Sample Moving Average
 - Parent class: [MovingAverage](./DataFlow.md#MovingAverage)
 - Attributes:
   - NumberOfSamples
@@ -255,7 +249,7 @@ Represent any signal processing applied prior to the distribution of the conside
     - Description: 
 - Definition set: DataFlow
 ## TimeWindowMovingAverage <!-- NOUN -->
-- Display name: TimeWindowMovingAverage
+- Display name: Time Window Moving Average
 - Parent class: [MovingAverage](./DataFlow.md#MovingAverage)
 - Attributes:
   - TimeWindow
@@ -263,7 +257,7 @@ Represent any signal processing applied prior to the distribution of the conside
     - Description: 
 - Definition set: DataFlow
 ## TimeBasedTransformation <!-- NOUN -->
-- Display name: TimeBasedTransformation
+- Display name: Time Based Transformation
 - Parent class: [Transformation](./DataFlow.md#Transformation)
 - Description: 
 Transformations that apply only to time series: time derivations, time integration, averaging...
@@ -285,11 +279,11 @@ Transformations that apply only to time series: time derivations, time integrati
 - Parent class: [TimeBasedTransformation](./DataFlow.md#TimeBasedTransformation)
 - Definition set: DataFlow
 ## RangeExtraction <!-- NOUN -->
-- Display name: RangeExtraction
+- Display name: Range Extraction
 - Parent class: [TimeBasedTransformation](./DataFlow.md#TimeBasedTransformation)
 - Definition set: DataFlow
 ## NumberOfItemsRangeExtraction <!-- NOUN -->
-- Display name: NumberOfItemsRangeExtraction
+- Display name: Number Of Items Range Extraction
 - Parent class: [RangeExtraction](./DataFlow.md#RangeExtraction)
 - Attributes:
   - NumberOfItems
@@ -297,7 +291,7 @@ Transformations that apply only to time series: time derivations, time integrati
     - Description: 
 - Definition set: DataFlow
 ## TimeWindowRangeExtraction <!-- NOUN -->
-- Display name: TimeWindowRangeExtraction
+- Display name: Time Window Range Extraction
 - Parent class: [RangeExtraction](./DataFlow.md#RangeExtraction)
 - Attributes:
   - TimeWindow
@@ -319,11 +313,11 @@ Transformations that apply only to time series: time derivations, time integrati
     - Description: 
 - Definition set: DataFlow
 ## TransmissionLine <!-- NOUN -->
-- Display name: TransmissionLine
+- Display name: Transmission Line
 - Parent class: [DataFlowNode](./DataFlow.md#DataFlowNode)
 - Definition set: DataFlow
 ## UserInterface <!-- NOUN -->
-- Display name: UserInterface
+- Display name: User Interface
 - Parent class: [DataFlowNode](./DataFlow.md#DataFlowNode)
 - Definition set: DataFlow
 # Verbs
@@ -404,13 +398,13 @@ DWISNoun ||--o{ DWISNoun : IsProcessedBy
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Definition set: DataFlow
 ## HasFunction <!-- VERB -->
-- Display name: HasFunction
+- Display name: Has Function
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [DataFlowNode](./DataFlow.md#DataFlowNode)
 - Definition set: DataFlow
 ## IsCommandFor <!-- VERB -->
-- Display name: IsCommandFor
+- Display name: Is Command For
 - Parent verb: [HasFunction](./DataFlow.md#HasFunction)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
@@ -482,97 +476,97 @@ DWISNoun ||--o{ DWISNoun : IsProcessedBy
 - Object class: [ControlSystem](./DataFlow.md#ControlSystem)
 - Definition set: DataFlow
 ## IsTransformationInput <!-- VERB -->
-- Display name: IsTransformationInput
+- Display name: Is Transformation Input
 - Parent verb: [HasFunction](./DataFlow.md#HasFunction)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [Transformation](./DataFlow.md#Transformation)
 - Definition set: DataFlow
 ## IsBufferingInput <!-- VERB -->
-- Display name: IsBufferingInput
+- Display name: Is Buffering Input
 - Parent verb: [IsTransformationInput](./DataFlow.md#IsTransformationInput)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [Buffering](./DataFlow.md#Buffering)
 - Definition set: DataFlow
 ## IsDerivationInput <!-- VERB -->
-- Display name: IsDerivationInput
+- Display name: Is Derivation Input
 - Parent verb: [IsTransformationInput](./DataFlow.md#IsTransformationInput)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Definition set: DataFlow
 ## IsResamplingInput <!-- VERB -->
-- Display name: IsResamplingInput
+- Display name: Is Resampling Input
 - Parent verb: [IsTransformationInput](./DataFlow.md#IsTransformationInput)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [Resampling](./DataFlow.md#Resampling)
 - Definition set: DataFlow
 ## IsTransmissionInput <!-- VERB -->
-- Display name: IsTransmissionInput
+- Display name: Is Transmission Input
 - Parent verb: [HasFunction](./DataFlow.md#HasFunction)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [TransmissionLine](./DataFlow.md#TransmissionLine)
 - Definition set: DataFlow
 ## IsGeneratedBy <!-- VERB -->
-- Display name: IsGeneratedBy
+- Display name: Is Generated By
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [DataFlowNode](./DataFlow.md#DataFlowNode)
 - Definition set: DataFlow
 ## IsComputedBy <!-- VERB -->
-- Display name: IsComputedBy
+- Display name: Is Computed By
 - Parent verb: [IsGeneratedBy](./DataFlow.md#IsGeneratedBy)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Definition set: DataFlow
 ## IsMeasuredBy <!-- VERB -->
-- Display name: IsMeasuredBy
+- Display name: Is Measured By
 - Parent verb: [IsGeneratedBy](./DataFlow.md#IsGeneratedBy)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Definition set: DataFlow
 ## IsRecordedFrom <!-- VERB -->
-- Display name: IsRecordedFrom
+- Display name: Is Recorded From
 - Parent verb: [IsGeneratedBy](./DataFlow.md#IsGeneratedBy)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Definition set: DataFlow
 ## IsTransformationOutput <!-- VERB -->
-- Display name: IsTransformationOutput
+- Display name: Is Transformation Output
 - Parent verb: [IsGeneratedBy](./DataFlow.md#IsGeneratedBy)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [DataFlowNode](./DataFlow.md#DataFlowNode)
 - Definition set: DataFlow
 ## IsBufferingOutput <!-- VERB -->
-- Display name: IsBufferingOutput
+- Display name: Is Buffering Output
 - Parent verb: [IsTransformationOutput](./DataFlow.md#IsTransformationOutput)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [Buffering](./DataFlow.md#Buffering)
 - Definition set: DataFlow
 ## IsDerivedFrom <!-- VERB -->
-- Display name: IsDerivedFrom
+- Display name: Is Derived From
 - Parent verb: [IsTransformationOutput](./DataFlow.md#IsTransformationOutput)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Definition set: DataFlow
 ## IsIntegratedFrom <!-- VERB -->
-- Display name: IsIntegratedFrom
+- Display name: Is Integrated From
 - Parent verb: [IsTransformationOutput](./DataFlow.md#IsTransformationOutput)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Definition set: DataFlow
 ## IsResampledBy <!-- VERB -->
-- Display name: IsResampledBy
+- Display name: Is Resampled By
 - Parent verb: [IsTransformationOutput](./DataFlow.md#IsTransformationOutput)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [Resampling](./DataFlow.md#Resampling)
 - Definition set: DataFlow
 ## IsTransmissionOutput <!-- VERB -->
-- Display name: IsTransmissionOutput
+- Display name: Is Transmission Output
 - Parent verb: [IsGeneratedBy](./DataFlow.md#IsGeneratedBy)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [TransmissionLine](./DataFlow.md#TransmissionLine)
 - Definition set: DataFlow
 ## IsProcessedBy <!-- VERB -->
-- Display name: IsProcessedBy
+- Display name: Is Processed By
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)

@@ -7,6 +7,10 @@ this definition set refers to the various functions an ADCS implements. It is to
 - Description: 
 this is the part associated to advices provided by advisory systems.
 
+## ContextualData<!-- DEFINITION SET HEADER -->
+- Description: 
+This category defines the vocabulary to describe contextual data.
+
 ## DataDependencies<!-- DEFINITION SET HEADER -->
 - Description: 
 this definition set covers the physical dependence of a `DrillingDatPoint` on something else.
@@ -2027,8 +2031,8 @@ DrillingFaultDetectionIsolationAndRecoveryAdvice:PackOffFDIRInfo_1
 PackOffFDIRInfo_1 HasDynamicValue PackOffFDIRInfo
 PackOff:packOffIncident
 PackOffFDIRInfo_1 IsRelatedToDrillingIncident packOffIncident
-ServiceCompany:serviceCompany
-PackOffFDIRInfo_1 IsProvidedBy serviceCompany
+DataAnalysisServiceCompany:dataAnalysisServiceCompany_1
+PackOffFDIRInfo_1 IsProvidedBy dataAnalysisServiceCompany_1
 Advisor:computationUnit
 PackOffFDIRInfo_1 IsRecommendedBy computationUnit
 FDIRFunction:FDIRFunction_1
@@ -2045,8 +2049,8 @@ graph LR
 	N0002[PackOffFDIRInfo_1] -->|HasDynamicValue| N0000((PackOffFDIRInfo)) 
 	N0004[packOffIncident] -->|BelongsToClass| N0005(PackOff) 
 	N0002[PackOffFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0004((packOffIncident)) 
-	N0006[serviceCompany] -->|BelongsToClass| N0007(ServiceCompany) 
-	N0002[PackOffFDIRInfo_1] -->|IsProvidedBy| N0006((serviceCompany)) 
+	N0006[dataAnalysisServiceCompany_1] -->|BelongsToClass| N0007(DataAnalysisServiceCompany) 
+	N0002[PackOffFDIRInfo_1] -->|IsProvidedBy| N0006((dataAnalysisServiceCompany_1)) 
 	N0008[computationUnit] -->|BelongsToClass| N0009(Advisor) 
 	N0002[PackOffFDIRInfo_1] -->|IsRecommendedBy| N0008((computationUnit)) 
 	N0010[FDIRFunction_1] -->|BelongsToClass| N0011(FDIRFunction) 
@@ -2065,14 +2069,14 @@ WHERE {
 	?PackOffFDIRInfo rdf:type ddhub:DynamicDrillingSignal .
 	?PackOffFDIRInfo_1 rdf:type ddhub:DrillingFaultDetectionIsolationAndRecoveryAdvice .
 	?packOffIncident rdf:type ddhub:PackOff .
-	?serviceCompany rdf:type ddhub:ServiceCompany .
+	?dataAnalysisServiceCompany_1 rdf:type ddhub:DataAnalysisServiceCompany .
 	?computationUnit rdf:type ddhub:Advisor .
 	?FDIRFunction_1 rdf:type ddhub:FDIRFunction .
 	?adviceComposer rdf:type ddhub:DWISAdviceComposer .
   FILTER (
 	?Attribute000 = PackOffFDIRInfo
 	&& 	?Attribute001 = packOffIncident
-	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute002 = dataAnalysisServiceCompany_1
 	&& 	?Attribute003 = computationUnit
 	&& 	?Attribute004 = packOffIncident
 	&& 	?Attribute005 = FDIRFunction_1
@@ -2889,46 +2893,1322 @@ WHERE {
   )
 }
 ```
-## DataFlowNode <!-- NOUN -->
-- Display name: DataFlowNode
-- Parent class: [DWISNoun](#DWISNoun)
-- Definition set: DataFlow
+## ContextualData <!-- NOUN -->
+- Display name: Contextual Data
+- Parent class: [JSonDataType](#JSonDataType)
+- Description: 
+Contextual data are structured objects stored in a JSon string.
+- Definition set: ContextualData
 ## Plan <!-- NOUN -->
 - Display name: Plan
-- Parent class: [DataFlowNode](#DataFlowNode)
-- Definition set: DataFlow
+- Parent class: [ContextualData](#ContextualData)
+- Definition set: ContextualData
 ## OperationalPlan <!-- NOUN -->
-- Display name: OperationalPlan
+- Display name: Operational Plan
 - Parent class: [Plan](#Plan)
-- Definition set: DataFlow
+- Definition set: ContextualData
+- Examples:
+``` dwis operationalPlan_0
+DynamicDrillingSignal:operationalPlan_0
+OperationalPlan:OperationalPlan_1
+OperationalPlan_1 HasDynamicValue operationalPlan_0
+OperatingCompany:operatingCompany_1
+OperationalPlan_1 IsProvidedBy operatingCompany_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[operationalPlan_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[OperationalPlan_1] -->|BelongsToClass| N0003(OperationalPlan) 
+	N0002[OperationalPlan_1] -->|HasDynamicValue| N0000((operationalPlan_0)) 
+	N0004[operatingCompany_1] -->|BelongsToClass| N0005(OperatingCompany) 
+	N0002[OperationalPlan_1] -->|IsProvidedBy| N0004((operatingCompany_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?operationalPlan_0
+WHERE {
+	?operationalPlan_0 rdf:type ddhub:DynamicDrillingSignal .
+	?OperationalPlan_1 rdf:type ddhub:OperationalPlan .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+  FILTER (
+	?Attribute000 = operationalPlan_0
+	&& 	?Attribute001 = operatingCompany_1
+  )
+}
+```
 ## DrillingProgram <!-- NOUN -->
-- Display name: DrillingProgram
+- Display name: Drilling Program
 - Parent class: [Plan](#Plan)
-- Definition set: DataFlow
+- Definition set: ContextualData
+- Examples:
+``` dwis drillingProgram_0
+DynamicDrillingSignal:drillingProgram_0
+DrillingProgram:drillingProgram_1
+drillingProgram_1 HasDynamicValue drillingProgram_0
+OperatingCompany:operatingCompany_1
+drillingProgram_1 IsProvidedBy operatingCompany_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingProgram_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[drillingProgram_1] -->|BelongsToClass| N0003(DrillingProgram) 
+	N0002[drillingProgram_1] -->|HasDynamicValue| N0000((drillingProgram_0)) 
+	N0004[operatingCompany_1] -->|BelongsToClass| N0005(OperatingCompany) 
+	N0002[drillingProgram_1] -->|IsProvidedBy| N0004((operatingCompany_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillingProgram_0
+WHERE {
+	?drillingProgram_0 rdf:type ddhub:DynamicDrillingSignal .
+	?drillingProgram_1 rdf:type ddhub:DrillingProgram .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+  FILTER (
+	?Attribute000 = drillingProgram_0
+	&& 	?Attribute001 = operatingCompany_1
+  )
+}
+```
 ## RigActionPlan <!-- NOUN -->
-- Display name: RigActionPlan
+- Display name: Rig Action Plan
 - Parent class: [Plan](#Plan)
+- Definition set: ContextualData
+- Examples:
+``` dwis rigActionPlan_0
+DynamicDrillingSignal:rigActionPlan_0
+RigActionPlan:rigActionPlan_1
+rigActionPlan_1 HasDynamicValue rigActionPlan_0
+OperatingCompany:operatingCompany_1
+rigActionPlan_1 IsProvidedBy operatingCompany_1
+DWISScheduler:scheduler_1
+rigActionPlan_1 IsProvidedTo scheduler_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rigActionPlan_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[rigActionPlan_1] -->|BelongsToClass| N0003(RigActionPlan) 
+	N0002[rigActionPlan_1] -->|HasDynamicValue| N0000((rigActionPlan_0)) 
+	N0004[operatingCompany_1] -->|BelongsToClass| N0005(OperatingCompany) 
+	N0002[rigActionPlan_1] -->|IsProvidedBy| N0004((operatingCompany_1)) 
+	N0006[scheduler_1] -->|BelongsToClass| N0007(DWISScheduler) 
+	N0002[rigActionPlan_1] -->|IsProvidedTo| N0006((scheduler_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rigActionPlan_0
+WHERE {
+	?rigActionPlan_0 rdf:type ddhub:DynamicDrillingSignal .
+	?rigActionPlan_1 rdf:type ddhub:RigActionPlan .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?scheduler_1 rdf:type ddhub:DWISScheduler .
+  FILTER (
+	?Attribute000 = rigActionPlan_0
+	&& 	?Attribute001 = operatingCompany_1
+	&& 	?Attribute002 = scheduler_1
+  )
+}
+```
+## ConfigurationData <!-- NOUN -->
+- Display name: Configuration Data
+- Parent class: [ContextualData](#ContextualData)
+- Definition set: ContextualData
+- Examples:
+``` dwis configurationData_0
+DynamicDrillingSignal:configurationData_0
+ConfigurationData:configurationData_1
+configurationData_1 HasDynamicValue configurationData_0
+OperatingCompany:operatingCompany_1
+configurationData_1 IsProvidedBy operatingCompany_1
+DWISDrillingProcessStateInterpreter:microStateInterpreter_1
+configurationData_1 IsProvidedTo microStateInterpreter_1
+configurationData_1 IsLimitFor microStateInterpreter_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[configurationData_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[configurationData_1] -->|BelongsToClass| N0003(ConfigurationData) 
+	N0002[configurationData_1] -->|HasDynamicValue| N0000((configurationData_0)) 
+	N0004[operatingCompany_1] -->|BelongsToClass| N0005(OperatingCompany) 
+	N0002[configurationData_1] -->|IsProvidedBy| N0004((operatingCompany_1)) 
+	N0006[microStateInterpreter_1] -->|BelongsToClass| N0007(DWISDrillingProcessStateInterpreter) 
+	N0002[configurationData_1] -->|IsProvidedTo| N0006((microStateInterpreter_1)) 
+	N0002[configurationData_1] -->|IsLimitFor| N0006((microStateInterpreter_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?configurationData_0
+WHERE {
+	?configurationData_0 rdf:type ddhub:DynamicDrillingSignal .
+	?configurationData_1 rdf:type ddhub:ConfigurationData .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?microStateInterpreter_1 rdf:type ddhub:DWISDrillingProcessStateInterpreter .
+  FILTER (
+	?Attribute000 = configurationData_0
+	&& 	?Attribute001 = operatingCompany_1
+	&& 	?Attribute002 = microStateInterpreter_1
+	&& 	?Attribute003 = microStateInterpreter_1
+  )
+}
+```
+## WellBoreData <!-- NOUN -->
+- Display name: Wellbore Data
+- Parent class: [ContextualData](#ContextualData)
+- Definition set: ContextualData
+- Examples:
+``` dwis wellBoreData_0
+DynamicDrillingSignal:wellBoreData_0
+WellBoreData:wellBoreData_1
+wellBoreData_1 HasDynamicValue wellBoreData_0
+OperatingCompany:operatingCompany_1
+wellBoreData_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+wellBoreData_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wellBoreData_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[wellBoreData_1] -->|BelongsToClass| N0003(WellBoreData) 
+	N0002[wellBoreData_1] -->|HasDynamicValue| N0000((wellBoreData_0)) 
+	N0004[operatingCompany_1] -->|BelongsToClass| N0005(OperatingCompany) 
+	N0002[wellBoreData_1] -->|IsProvidedBy| N0004((operatingCompany_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[wellBoreData_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wellBoreData_0
+WHERE {
+	?wellBoreData_0 rdf:type ddhub:DynamicDrillingSignal .
+	?wellBoreData_1 rdf:type ddhub:WellBoreData .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+  FILTER (
+	?Attribute000 = wellBoreData_0
+	&& 	?Attribute001 = operatingCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+  )
+}
+```
+## TrajectoryDescription <!-- NOUN -->
+- Display name: Trajectory Description
+- Parent class: [WellBoreData](#WellBoreData)
+- Description: 
+A trajectory contains information about the position of the wellbore.
+- Definition set: ContextualData
+- Examples:
+``` dwis trajectoryDescription_0
+DynamicDrillingSignal:trajectoryDescription_0
+TrajectoryDescription:trajectoryDescription_1
+trajectoryDescription_1 HasDynamicValue trajectoryDescription_0
+DirectionalServiceCompany:directionalServiceCompany_1
+trajectoryDescription_1 IsProvidedBy directionalServiceCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+trajectoryDescription_1 IsProvidedTo contextualDataBuilder_1
+Current:current_1
+trajectoryDescription_1 IsCharacterizedBy current_1
+Extrapolated: extrapolated_1
+trajectoryDescription_1 IsCharacterizedBy extrapolated_1
+Measured:measured_1
+trajectoryDescription_1 IsCharacterizedBy measured_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[trajectoryDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[trajectoryDescription_1] -->|BelongsToClass| N0003(TrajectoryDescription) 
+	N0002[trajectoryDescription_1] -->|HasDynamicValue| N0000((trajectoryDescription_0)) 
+	N0004[directionalServiceCompany_1] -->|BelongsToClass| N0005(DirectionalServiceCompany) 
+	N0002[trajectoryDescription_1] -->|IsProvidedBy| N0004((directionalServiceCompany_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[trajectoryDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[current_1] -->|BelongsToClass| N0009(Current) 
+	N0002[trajectoryDescription_1] -->|IsCharacterizedBy| N0008((current_1)) 
+	N0002[trajectoryDescription_1] -->|IsCharacterizedBy| N0010((extrapolated_1)) 
+	N0011[measured_1] -->|BelongsToClass| N0012(Measured) 
+	N0002[trajectoryDescription_1] -->|IsCharacterizedBy| N0011((measured_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?trajectoryDescription_0
+WHERE {
+	?trajectoryDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?trajectoryDescription_1 rdf:type ddhub:TrajectoryDescription .
+	?directionalServiceCompany_1 rdf:type ddhub:DirectionalServiceCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?current_1 rdf:type ddhub:Current .
+	?measured_1 rdf:type ddhub:Measured .
+  FILTER (
+	?Attribute000 = trajectoryDescription_0
+	&& 	?Attribute001 = directionalServiceCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = current_1
+	&& 	?Attribute004 = extrapolated_1
+	&& 	?Attribute005 = measured_1
+  )
+}
+```
+## FluidDescription <!-- NOUN -->
+- Display name: Fluid Description
+- Parent class: [WellBoreData](#WellBoreData)
+- Description: 
+Drilling fluid contains information about the density, rheological behavior, thermo-physical and chemical characteristics of a fluid
+used during a drilling operation.
+- Definition set: ContextualData
+- Examples:
+``` dwis fluidDescription_0
+DynamicDrillingSignal:fluidDescription_0
+FluidDescription:fluidDescription_1
+fluidDescription_1 HasDynamicValue fluidDescription_0
+DrillingFluidProvider:drillingFluidProvider_1
+fluidDescription_1 IsProvidedBy drillingFluidProvider_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+fluidDescription_1 IsProvidedTo contextualDataBuilder_1
+Current:current_1
+fluidDescription_1 IsCharacterizedBy current_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[fluidDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[fluidDescription_1] -->|BelongsToClass| N0003(FluidDescription) 
+	N0002[fluidDescription_1] -->|HasDynamicValue| N0000((fluidDescription_0)) 
+	N0004[drillingFluidProvider_1] -->|BelongsToClass| N0005(DrillingFluidProvider) 
+	N0002[fluidDescription_1] -->|IsProvidedBy| N0004((drillingFluidProvider_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[fluidDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[current_1] -->|BelongsToClass| N0009(Current) 
+	N0002[fluidDescription_1] -->|IsCharacterizedBy| N0008((current_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?fluidDescription_0
+WHERE {
+	?fluidDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?fluidDescription_1 rdf:type ddhub:FluidDescription .
+	?drillingFluidProvider_1 rdf:type ddhub:DrillingFluidProvider .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?current_1 rdf:type ddhub:Current .
+  FILTER (
+	?Attribute000 = fluidDescription_0
+	&& 	?Attribute001 = drillingFluidProvider_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = current_1
+  )
+}
+```
+## DrillingFluidDescription <!-- NOUN -->
+- Display name: Drilling Fluid Description
+- Parent class: [FluidDescription](#FluidDescription)
+- Description: 
+A drilling fluid is a fluid that is used well
+used during a drilling operation.
+- Definition set: ContextualData
+- Examples:
+``` dwis fluidDescription_0
+DynamicDrillingSignal:fluidDescription_0
+DrillingFluidDescription:fluidDescription_1
+fluidDescription_1 HasDynamicValue fluidDescription_0
+DrillingFluidProvider:drillingFluidProvider_1
+fluidDescription_1 IsProvidedBy drillingFluidProvider_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+fluidDescription_1 IsProvidedTo contextualDataBuilder_1
+Current:current_1
+fluidDescription_1 IsCharacterizedBy current_1
+Measured:measured_1
+fluidDescription_1 IsCharacterizedBy measured_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[fluidDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[fluidDescription_1] -->|BelongsToClass| N0003(DrillingFluidDescription) 
+	N0002[fluidDescription_1] -->|HasDynamicValue| N0000((fluidDescription_0)) 
+	N0004[drillingFluidProvider_1] -->|BelongsToClass| N0005(DrillingFluidProvider) 
+	N0002[fluidDescription_1] -->|IsProvidedBy| N0004((drillingFluidProvider_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[fluidDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[current_1] -->|BelongsToClass| N0009(Current) 
+	N0002[fluidDescription_1] -->|IsCharacterizedBy| N0008((current_1)) 
+	N0010[measured_1] -->|BelongsToClass| N0011(Measured) 
+	N0002[fluidDescription_1] -->|IsCharacterizedBy| N0010((measured_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?fluidDescription_0
+WHERE {
+	?fluidDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?fluidDescription_1 rdf:type ddhub:DrillingFluidDescription .
+	?drillingFluidProvider_1 rdf:type ddhub:DrillingFluidProvider .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?current_1 rdf:type ddhub:Current .
+	?measured_1 rdf:type ddhub:Measured .
+  FILTER (
+	?Attribute000 = fluidDescription_0
+	&& 	?Attribute001 = drillingFluidProvider_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = current_1
+	&& 	?Attribute004 = measured_1
+  )
+}
+```
+## CementFluidDescription <!-- NOUN -->
+- Display name: Cement Fluid Description
+- Parent class: [FluidDescription](#FluidDescription)
+- Description: 
+Cement fluid contains information about the density, rheological behavior and chemical characteristics of fluids
+used during a cementing operation, e.g., cement slurry but also spacer.
+- Definition set: ContextualData
+- Examples:
+``` dwis fluidDescription_0
+DynamicDrillingSignal:fluidDescription_0
+CementFluidDescription:fluidDescription_1
+fluidDescription_1 HasDynamicValue fluidDescription_0
+CementingServiceCompany:cementFluidProvider_1
+fluidDescription_1 IsProvidedBy cementFluidProvider_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+fluidDescription_1 IsProvidedTo contextualDataBuilder_1
+Measured:measured_1
+fluidDescription_1 IsCharacterizedBy measured_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[fluidDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[fluidDescription_1] -->|BelongsToClass| N0003(CementFluidDescription) 
+	N0002[fluidDescription_1] -->|HasDynamicValue| N0000((fluidDescription_0)) 
+	N0004[cementFluidProvider_1] -->|BelongsToClass| N0005(CementingServiceCompany) 
+	N0002[fluidDescription_1] -->|IsProvidedBy| N0004((cementFluidProvider_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[fluidDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[measured_1] -->|BelongsToClass| N0009(Measured) 
+	N0002[fluidDescription_1] -->|IsCharacterizedBy| N0008((measured_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?fluidDescription_0
+WHERE {
+	?fluidDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?fluidDescription_1 rdf:type ddhub:CementFluidDescription .
+	?cementFluidProvider_1 rdf:type ddhub:CementingServiceCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?measured_1 rdf:type ddhub:Measured .
+  FILTER (
+	?Attribute000 = fluidDescription_0
+	&& 	?Attribute001 = cementFluidProvider_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = measured_1
+  )
+}
+```
+## CompletionFluidDescription <!-- NOUN -->
+- Display name: Completion Fluid Description
+- Parent class: [FluidDescription](#FluidDescription)
+- Description: 
+Completion fluid contains information about the density, rheological behavior and chemical characteristics of a
+fluid used during a completion operation.
+- Definition set: ContextualData
+- Examples:
+``` dwis fluidDescription_0
+DynamicDrillingSignal:fluidDescription_0
+CompletionFluidDescription:fluidDescription_1
+fluidDescription_1 HasDynamicValue fluidDescription_0
+CompletionServiceCompany:completionFluidProvider_1
+fluidDescription_1 IsProvidedBy completionFluidProvider_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+fluidDescription_1 IsProvidedTo contextualDataBuilder_1
+Current:current_1
+fluidDescription_1 IsCharacterizedBy current_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[fluidDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[fluidDescription_1] -->|BelongsToClass| N0003(CompletionFluidDescription) 
+	N0002[fluidDescription_1] -->|HasDynamicValue| N0000((fluidDescription_0)) 
+	N0004[completionFluidProvider_1] -->|BelongsToClass| N0005(CompletionServiceCompany) 
+	N0002[fluidDescription_1] -->|IsProvidedBy| N0004((completionFluidProvider_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[fluidDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[current_1] -->|BelongsToClass| N0009(Current) 
+	N0002[fluidDescription_1] -->|IsCharacterizedBy| N0008((current_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?fluidDescription_0
+WHERE {
+	?fluidDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?fluidDescription_1 rdf:type ddhub:CompletionFluidDescription .
+	?completionFluidProvider_1 rdf:type ddhub:CompletionServiceCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?current_1 rdf:type ddhub:Current .
+  FILTER (
+	?Attribute000 = fluidDescription_0
+	&& 	?Attribute001 = completionFluidProvider_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = current_1
+  )
+}
+```
+## WellboreArchitectureDescription <!-- NOUN -->
+- Display name: Wellbore Architecture Description
+- Parent class: [WellBoreData](#WellBoreData)
+- Description: 
+The wellbore architecture provides information about the casings and liners in place as well as the current
+open hole configuration. Also the surface architecture, i.e., everything above the wellhead, is also described, e.g., BOP, high 
+pressure riser, low pressure riser, expansion joint,...
+- Definition set: ContextualData
+- Examples:
+``` dwis wellBoreArchitectureDescription_0
+DynamicDrillingSignal:wellBoreArchitectureDescription_0
+WellboreArchitectureDescription:wellBoreArchitectureDescription_1
+wellBoreArchitectureDescription_1 HasDynamicValue wellBoreArchitectureDescription_0
+OperatingCompany:operatingCompany_1
+wellBoreArchitectureDescription_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+wellBoreArchitectureDescription_1 IsProvidedTo contextualDataBuilder_1
+Planned:planned_1
+wellBoreArchitectureDescription_1 IsCharacterizedBy planned_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wellBoreArchitectureDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[wellBoreArchitectureDescription_1] -->|BelongsToClass| N0003(WellboreArchitectureDescription) 
+	N0002[wellBoreArchitectureDescription_1] -->|HasDynamicValue| N0000((wellBoreArchitectureDescription_0)) 
+	N0004[operatingCompany_1] -->|BelongsToClass| N0005(OperatingCompany) 
+	N0002[wellBoreArchitectureDescription_1] -->|IsProvidedBy| N0004((operatingCompany_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[wellBoreArchitectureDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[planned_1] -->|BelongsToClass| N0009(Planned) 
+	N0002[wellBoreArchitectureDescription_1] -->|IsCharacterizedBy| N0008((planned_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wellBoreArchitectureDescription_0
+WHERE {
+	?wellBoreArchitectureDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?wellBoreArchitectureDescription_1 rdf:type ddhub:WellboreArchitectureDescription .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?planned_1 rdf:type ddhub:Planned .
+  FILTER (
+	?Attribute000 = wellBoreArchitectureDescription_0
+	&& 	?Attribute001 = operatingCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = planned_1
+  )
+}
+```
+## DrillStemDescription <!-- NOUN -->
+- Display name: Drill-stem Description
+- Parent class: [WellBoreData](#WellBoreData)
+- Description: 
+A dill-stem is a generic term for all strings that are run in a borehole. The drill-stem describes the geometrical
+and mechanical characteristics of such a string. 
+- Definition set: ContextualData
+## DrillStringDescription <!-- NOUN -->
+- Display name: Drill-string Description
+- Parent class: [DrillStemDescription](#DrillStemDescription)
+- Description: 
+A drill-string is a drill-stem that is used during a drilling operation. It is composed of drill-pipes, drill-collars,
+BHA elements and is terminated either by a bit, a bull-nose, or other special elements such as fishing equipment, etc.
+- Definition set: ContextualData
+- Examples:
+``` dwis drillStringDescription_0
+DynamicDrillingSignal:drillStringDescription_0
+DrillStringDescription:drillStringDescription_1
+drillStringDescription_1 HasDynamicValue drillStringDescription_0
+DrillingContractor:drillingContractor_1
+drillStringDescription_1 IsProvidedBy drillingContractor_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+drillStringDescription_1 IsProvidedTo contextualDataBuilder_1
+Planned:planned_1
+drillStringDescription_1 IsCharacterizedBy planned_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillStringDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[drillStringDescription_1] -->|BelongsToClass| N0003(DrillStringDescription) 
+	N0002[drillStringDescription_1] -->|HasDynamicValue| N0000((drillStringDescription_0)) 
+	N0004[drillingContractor_1] -->|BelongsToClass| N0005(DrillingContractor) 
+	N0002[drillStringDescription_1] -->|IsProvidedBy| N0004((drillingContractor_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[drillStringDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[planned_1] -->|BelongsToClass| N0009(Planned) 
+	N0002[drillStringDescription_1] -->|IsCharacterizedBy| N0008((planned_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillStringDescription_0
+WHERE {
+	?drillStringDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?drillStringDescription_1 rdf:type ddhub:DrillStringDescription .
+	?drillingContractor_1 rdf:type ddhub:DrillingContractor .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?planned_1 rdf:type ddhub:Planned .
+  FILTER (
+	?Attribute000 = drillStringDescription_0
+	&& 	?Attribute001 = drillingContractor_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = planned_1
+  )
+}
+```
+## CasingStringDescription <!-- NOUN -->
+- Display name: Casing-string Description
+- Parent class: [DrillStemDescription](#DrillStemDescription)
+- Description: 
+A casing string is a drill-stem that is used to complete a section. It is composed of casing joints and a shoe track.
+- Definition set: ContextualData
+- Examples:
+``` dwis casingStringDescription_0
+DynamicDrillingSignal:casingStringDescription_0
+CasingStringDescription:casingStringDescription_1
+casingStringDescription_1 HasDynamicValue casingStringDescription_0
+DrillingContractor:drillingContractor_1
+casingStringDescription_1 IsProvidedBy drillingContractor_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+casingStringDescription_1 IsProvidedTo contextualDataBuilder_1
+Planned:planned_1
+casingStringDescription_1 IsCharacterizedBy planned_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[casingStringDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[casingStringDescription_1] -->|BelongsToClass| N0003(CasingStringDescription) 
+	N0002[casingStringDescription_1] -->|HasDynamicValue| N0000((casingStringDescription_0)) 
+	N0004[drillingContractor_1] -->|BelongsToClass| N0005(DrillingContractor) 
+	N0002[casingStringDescription_1] -->|IsProvidedBy| N0004((drillingContractor_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[casingStringDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[planned_1] -->|BelongsToClass| N0009(Planned) 
+	N0002[casingStringDescription_1] -->|IsCharacterizedBy| N0008((planned_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?casingStringDescription_0
+WHERE {
+	?casingStringDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?casingStringDescription_1 rdf:type ddhub:CasingStringDescription .
+	?drillingContractor_1 rdf:type ddhub:DrillingContractor .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?planned_1 rdf:type ddhub:Planned .
+  FILTER (
+	?Attribute000 = casingStringDescription_0
+	&& 	?Attribute001 = drillingContractor_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = planned_1
+  )
+}
+```
+## LinerStringDescription <!-- NOUN -->
+- Display name: Liner-string Description
+- Parent class: [DrillStemDescription](#DrillStemDescription)
+- Description: 
+A liner string is a drill-stem that is used to complete a section. It is composed of casing joints, possibly a shoe track
+a liner hanger and drill-pipes.
+- Definition set: ContextualData
+- Examples:
+``` dwis linerStringDescription_0
+DynamicDrillingSignal:linerStringDescription_0
+LinerStringDescription:linerStringDescription_1
+linerStringDescription_1 HasDynamicValue linerStringDescription_0
+DrillingContractor:drillingContractor_1
+linerStringDescription_1 IsProvidedBy drillingContractor_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+linerStringDescription_1 IsProvidedTo contextualDataBuilder_1
+Planned:planned_1
+linerStringDescription_1 IsCharacterizedBy planned_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[linerStringDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[linerStringDescription_1] -->|BelongsToClass| N0003(LinerStringDescription) 
+	N0002[linerStringDescription_1] -->|HasDynamicValue| N0000((linerStringDescription_0)) 
+	N0004[drillingContractor_1] -->|BelongsToClass| N0005(DrillingContractor) 
+	N0002[linerStringDescription_1] -->|IsProvidedBy| N0004((drillingContractor_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[linerStringDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[planned_1] -->|BelongsToClass| N0009(Planned) 
+	N0002[linerStringDescription_1] -->|IsCharacterizedBy| N0008((planned_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?linerStringDescription_0
+WHERE {
+	?linerStringDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?linerStringDescription_1 rdf:type ddhub:LinerStringDescription .
+	?drillingContractor_1 rdf:type ddhub:DrillingContractor .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?planned_1 rdf:type ddhub:Planned .
+  FILTER (
+	?Attribute000 = linerStringDescription_0
+	&& 	?Attribute001 = drillingContractor_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = planned_1
+  )
+}
+```
+## ProductionStringDescription <!-- NOUN -->
+- Display name: Production-string Description
+- Parent class: [DrillStemDescription](#DrillStemDescription)
+- Description: 
+A production string is a drill-stem that is used to complete a wellbore. It is composed of tubings, expansion joints,
+packers, etc.
+- Definition set: ContextualData
+- Examples:
+``` dwis productionStringDescription_0
+DynamicDrillingSignal:productionStringDescription_0
+ProductionStringDescription:productionStringDescription_1
+productionStringDescription_1 HasDynamicValue productionStringDescription_0
+CompletionServiceCompany:completionServiceCompany_1
+productionStringDescription_1 IsProvidedBy completionServiceCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+productionStringDescription_1 IsProvidedTo contextualDataBuilder_1
+Planned:planned_1
+productionStringDescription_1 IsCharacterizedBy planned_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[productionStringDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[productionStringDescription_1] -->|BelongsToClass| N0003(ProductionStringDescription) 
+	N0002[productionStringDescription_1] -->|HasDynamicValue| N0000((productionStringDescription_0)) 
+	N0004[completionServiceCompany_1] -->|BelongsToClass| N0005(CompletionServiceCompany) 
+	N0002[productionStringDescription_1] -->|IsProvidedBy| N0004((completionServiceCompany_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[productionStringDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[planned_1] -->|BelongsToClass| N0009(Planned) 
+	N0002[productionStringDescription_1] -->|IsCharacterizedBy| N0008((planned_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?productionStringDescription_0
+WHERE {
+	?productionStringDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?productionStringDescription_1 rdf:type ddhub:ProductionStringDescription .
+	?completionServiceCompany_1 rdf:type ddhub:CompletionServiceCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?planned_1 rdf:type ddhub:Planned .
+  FILTER (
+	?Attribute000 = productionStringDescription_0
+	&& 	?Attribute001 = completionServiceCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = planned_1
+  )
+}
+```
+## GeoPressuresDescription <!-- NOUN -->
+- Display name: Geo-pressures Description
+- Parent class: [WellBoreData](#WellBoreData)
+- Description: 
+The geo-pressure data structure describes the pore pressure, collapse pressure, min horizontal stress, fracturing pressure
+along the wellbore.
+- Definition set: ContextualData
+- Examples:
+``` dwis geoPressuresDescription_0
+DynamicDrillingSignal:geoPressuresDescription_0
+GeoPressuresDescription:geoPressuresDescription_1
+geoPressuresDescription_1 HasDynamicValue geoPressuresDescription_0
+OperatingCompany:operatingCompany_1
+geoPressuresDescription_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+geoPressuresDescription_1 IsProvidedTo contextualDataBuilder_1
+Prognosed:prognosed_1
+geoPressuresDescription_1 IsCharacterizedBy prognosed_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[geoPressuresDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[geoPressuresDescription_1] -->|BelongsToClass| N0003(GeoPressuresDescription) 
+	N0002[geoPressuresDescription_1] -->|HasDynamicValue| N0000((geoPressuresDescription_0)) 
+	N0004[operatingCompany_1] -->|BelongsToClass| N0005(OperatingCompany) 
+	N0002[geoPressuresDescription_1] -->|IsProvidedBy| N0004((operatingCompany_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[geoPressuresDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[prognosed_1] -->|BelongsToClass| N0009(Prognosed) 
+	N0002[geoPressuresDescription_1] -->|IsCharacterizedBy| N0008((prognosed_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?geoPressuresDescription_0
+WHERE {
+	?geoPressuresDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?geoPressuresDescription_1 rdf:type ddhub:GeoPressuresDescription .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?prognosed_1 rdf:type ddhub:Prognosed .
+  FILTER (
+	?Attribute000 = geoPressuresDescription_0
+	&& 	?Attribute001 = operatingCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = prognosed_1
+  )
+}
+```
+## GeoThermalDescription <!-- NOUN -->
+- Display name: Geo-thermal Description
+- Parent class: [WellBoreData](#WellBoreData)
+- Description: 
+The geothermal data structure describes the temperature and thermophysical properties of the formation encountered
+along the wellbore.
+- Definition set: ContextualData
+- Examples:
+``` dwis geoThermalDescription_0
+DynamicDrillingSignal:geoThermalDescription_0
+GeoThermalDescription:geoThermalDescription_1
+geoThermalDescription_1 HasDynamicValue geoThermalDescription_0
+OperatingCompany:operatingCompany_1
+geoThermalDescription_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+geoThermalDescription_1 IsProvidedTo contextualDataBuilder_1
+Prognosed:prognosed_1
+geoThermalDescription_1 IsCharacterizedBy prognosed_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[geoThermalDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[geoThermalDescription_1] -->|BelongsToClass| N0003(GeoThermalDescription) 
+	N0002[geoThermalDescription_1] -->|HasDynamicValue| N0000((geoThermalDescription_0)) 
+	N0004[operatingCompany_1] -->|BelongsToClass| N0005(OperatingCompany) 
+	N0002[geoThermalDescription_1] -->|IsProvidedBy| N0004((operatingCompany_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[geoThermalDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[prognosed_1] -->|BelongsToClass| N0009(Prognosed) 
+	N0002[geoThermalDescription_1] -->|IsCharacterizedBy| N0008((prognosed_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?geoThermalDescription_0
+WHERE {
+	?geoThermalDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?geoThermalDescription_1 rdf:type ddhub:GeoThermalDescription .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?prognosed_1 rdf:type ddhub:Prognosed .
+  FILTER (
+	?Attribute000 = geoThermalDescription_0
+	&& 	?Attribute001 = operatingCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = prognosed_1
+  )
+}
+```
+## FormationStrengthDescription <!-- NOUN -->
+- Display name: Formation strengths Description
+- Parent class: [WellBoreData](#WellBoreData)
+- Description: 
+The formation strength data structure describes the formation strength and internal friction angle of the formation
+encountered along the wellbore.
+- Definition set: ContextualData
+- Examples:
+``` dwis formationStrengthDescription_0
+DynamicDrillingSignal:formationStrengthDescription_0
+FormationStrengthDescription:formationStrengthDescription_1
+formationStrengthDescription_1 HasDynamicValue formationStrengthDescription_0
+OperatingCompany:operatingCompany_1
+formationStrengthDescription_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+formationStrengthDescription_1 IsProvidedTo contextualDataBuilder_1
+Prognosed:prognosed_1
+formationStrengthDescription_1 IsCharacterizedBy prognosed_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[formationStrengthDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[formationStrengthDescription_1] -->|BelongsToClass| N0003(FormationStrengthDescription) 
+	N0002[formationStrengthDescription_1] -->|HasDynamicValue| N0000((formationStrengthDescription_0)) 
+	N0004[operatingCompany_1] -->|BelongsToClass| N0005(OperatingCompany) 
+	N0002[formationStrengthDescription_1] -->|IsProvidedBy| N0004((operatingCompany_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[formationStrengthDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[prognosed_1] -->|BelongsToClass| N0009(Prognosed) 
+	N0002[formationStrengthDescription_1] -->|IsCharacterizedBy| N0008((prognosed_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?formationStrengthDescription_0
+WHERE {
+	?formationStrengthDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?formationStrengthDescription_1 rdf:type ddhub:FormationStrengthDescription .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?prognosed_1 rdf:type ddhub:Prognosed .
+  FILTER (
+	?Attribute000 = formationStrengthDescription_0
+	&& 	?Attribute001 = operatingCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = prognosed_1
+  )
+}
+```
+## StratigraphyDescription <!-- NOUN -->
+- Display name: Stratigraphy Description
+- Parent class: [WellBoreData](#WellBoreData)
+- Description: 
+The stratigraphy data structure describes the type of rock, the porosity, permeability and fluid saturations
+of the formation layers that are encountered along the wellbore.
+- Definition set: ContextualData
+- Examples:
+``` dwis stratigraphyDescription_0
+DynamicDrillingSignal:stratigraphyDescription_0
+StratigraphyDescription:stratigraphyDescription_1
+stratigraphyDescription_1 HasDynamicValue stratigraphyDescription_0
+LoggingServiceCompany:logginServiceCompany_1
+stratigraphyDescription_1 IsProvidedBy logginServiceCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+stratigraphyDescription_1 IsProvidedTo contextualDataBuilder_1
+Measured:measured_1
+stratigraphyDescription_1 IsCharacterizedBy measured_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stratigraphyDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[stratigraphyDescription_1] -->|BelongsToClass| N0003(StratigraphyDescription) 
+	N0002[stratigraphyDescription_1] -->|HasDynamicValue| N0000((stratigraphyDescription_0)) 
+	N0004[logginServiceCompany_1] -->|BelongsToClass| N0005(LoggingServiceCompany) 
+	N0002[stratigraphyDescription_1] -->|IsProvidedBy| N0004((logginServiceCompany_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[stratigraphyDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[measured_1] -->|BelongsToClass| N0009(Measured) 
+	N0002[stratigraphyDescription_1] -->|IsCharacterizedBy| N0008((measured_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stratigraphyDescription_0
+WHERE {
+	?stratigraphyDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?stratigraphyDescription_1 rdf:type ddhub:StratigraphyDescription .
+	?logginServiceCompany_1 rdf:type ddhub:LoggingServiceCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?measured_1 rdf:type ddhub:Measured .
+  FILTER (
+	?Attribute000 = stratigraphyDescription_0
+	&& 	?Attribute001 = logginServiceCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = measured_1
+  )
+}
+```
+## RigDescription <!-- NOUN -->
+- Display name: Rig Description
+- Parent class: [WellBoreData](#WellBoreData)
+- Description: 
+The rig data structure describes the characteristics of the drilling equipment and any additional equipment
+associated with non-standard drilling methods, e.g., back-pressure MPD, dual-gradient,...
+- Definition set: ContextualData
+- Examples:
+``` dwis rigDescription_0
+DynamicDrillingSignal:rigDescription_0
+RigDescription:rigDescription_1
+rigDescription_1 HasDynamicValue rigDescription_0
+DrillingContractor:drillingContractor_1
+rigDescription_1 IsProvidedBy drillingContractor_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+rigDescription_1 IsProvidedTo contextualDataBuilder_1
+Current:current_1
+rigDescription_1 IsCharacterizedBy current_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rigDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[rigDescription_1] -->|BelongsToClass| N0003(RigDescription) 
+	N0002[rigDescription_1] -->|HasDynamicValue| N0000((rigDescription_0)) 
+	N0004[drillingContractor_1] -->|BelongsToClass| N0005(DrillingContractor) 
+	N0002[rigDescription_1] -->|IsProvidedBy| N0004((drillingContractor_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[rigDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[current_1] -->|BelongsToClass| N0009(Current) 
+	N0002[rigDescription_1] -->|IsCharacterizedBy| N0008((current_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rigDescription_0
+WHERE {
+	?rigDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?rigDescription_1 rdf:type ddhub:RigDescription .
+	?drillingContractor_1 rdf:type ddhub:DrillingContractor .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?current_1 rdf:type ddhub:Current .
+  FILTER (
+	?Attribute000 = rigDescription_0
+	&& 	?Attribute001 = drillingContractor_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = current_1
+  )
+}
+```
+## WellBoreDataCharateristic <!-- NOUN -->
+- Display name: Wellbore Data Charateristic
+- Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+This Noun is used to characterize a piece of wellbore data.
+- Definition set: ContextualData
+## Planned <!-- NOUN -->
+- Display name: Planned
+- Parent class: [WellBoreDataCharateristic](#WellBoreDataCharateristic)
+- Description: 
+Planned characterizes that the wellbore data is described in its planned stage. This applies to wellbore data
+that is intended to be constructed.
+- Definition set: ContextualData
+- Examples:
+``` dwis productionStringDescription_0
+DynamicDrillingSignal:productionStringDescription_0
+ProductionStringDescription:productionStringDescription_1
+productionStringDescription_1 HasDynamicValue productionStringDescription_0
+CompletionServiceCompany:completionServiceCompany_1
+productionStringDescription_1 IsProvidedBy completionServiceCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+productionStringDescription_1 IsProvidedTo contextualDataBuilder_1
+Planned:planned_1
+productionStringDescription_1 IsCharacterizedBy planned_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[productionStringDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[productionStringDescription_1] -->|BelongsToClass| N0003(ProductionStringDescription) 
+	N0002[productionStringDescription_1] -->|HasDynamicValue| N0000((productionStringDescription_0)) 
+	N0004[completionServiceCompany_1] -->|BelongsToClass| N0005(CompletionServiceCompany) 
+	N0002[productionStringDescription_1] -->|IsProvidedBy| N0004((completionServiceCompany_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[productionStringDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[planned_1] -->|BelongsToClass| N0009(Planned) 
+	N0002[productionStringDescription_1] -->|IsCharacterizedBy| N0008((planned_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?productionStringDescription_0
+WHERE {
+	?productionStringDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?productionStringDescription_1 rdf:type ddhub:ProductionStringDescription .
+	?completionServiceCompany_1 rdf:type ddhub:CompletionServiceCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?planned_1 rdf:type ddhub:Planned .
+  FILTER (
+	?Attribute000 = productionStringDescription_0
+	&& 	?Attribute001 = completionServiceCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = planned_1
+  )
+}
+```
+## Prognosed <!-- NOUN -->
+- Display name: Prognosed
+- Parent class: [WellBoreDataCharateristic](#WellBoreDataCharateristic)
+- Description: 
+Prognosed characterizes that the wellbore data is described in its prognosed stage. This applies to wellbore
+data that exists from before but that may be associated with uncertainty like the geology.
+- Definition set: ContextualData
+- Examples:
+``` dwis stratigraphyDescription_0
+DynamicDrillingSignal:stratigraphyDescription_0
+StratigraphyDescription:stratigraphyDescription_1
+stratigraphyDescription_1 HasDynamicValue stratigraphyDescription_0
+OperatingCompany:operatingCompany_1
+stratigraphyDescription_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+stratigraphyDescription_1 IsProvidedTo contextualDataBuilder_1
+Prognosed:prognosed_1
+stratigraphyDescription_1 IsCharacterizedBy prognosed_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stratigraphyDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[stratigraphyDescription_1] -->|BelongsToClass| N0003(StratigraphyDescription) 
+	N0002[stratigraphyDescription_1] -->|HasDynamicValue| N0000((stratigraphyDescription_0)) 
+	N0004[operatingCompany_1] -->|BelongsToClass| N0005(OperatingCompany) 
+	N0002[stratigraphyDescription_1] -->|IsProvidedBy| N0004((operatingCompany_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[stratigraphyDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[prognosed_1] -->|BelongsToClass| N0009(Prognosed) 
+	N0002[stratigraphyDescription_1] -->|IsCharacterizedBy| N0008((prognosed_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stratigraphyDescription_0
+WHERE {
+	?stratigraphyDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?stratigraphyDescription_1 rdf:type ddhub:StratigraphyDescription .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?prognosed_1 rdf:type ddhub:Prognosed .
+  FILTER (
+	?Attribute000 = stratigraphyDescription_0
+	&& 	?Attribute001 = operatingCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = prognosed_1
+  )
+}
+```
+## Measured <!-- NOUN -->
+- Display name: Measured
+- Parent class: [WellBoreDataCharateristic](#WellBoreDataCharateristic)
+- Description: 
+Measured characterizes that the wellbore data has been measured or observed.
+- Definition set: ContextualData
+- Examples:
+``` dwis fluidDescription_0
+DynamicDrillingSignal:fluidDescription_0
+CementFluidDescription:fluidDescription_1
+fluidDescription_1 HasDynamicValue fluidDescription_0
+CementingServiceCompany:cementFluidProvider_1
+fluidDescription_1 IsProvidedBy cementFluidProvider_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+fluidDescription_1 IsProvidedTo contextualDataBuilder_1
+Measured:measured_1
+fluidDescription_1 IsCharacterizedBy measured_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[fluidDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[fluidDescription_1] -->|BelongsToClass| N0003(CementFluidDescription) 
+	N0002[fluidDescription_1] -->|HasDynamicValue| N0000((fluidDescription_0)) 
+	N0004[cementFluidProvider_1] -->|BelongsToClass| N0005(CementingServiceCompany) 
+	N0002[fluidDescription_1] -->|IsProvidedBy| N0004((cementFluidProvider_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[fluidDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[measured_1] -->|BelongsToClass| N0009(Measured) 
+	N0002[fluidDescription_1] -->|IsCharacterizedBy| N0008((measured_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?fluidDescription_0
+WHERE {
+	?fluidDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?fluidDescription_1 rdf:type ddhub:CementFluidDescription .
+	?cementFluidProvider_1 rdf:type ddhub:CementingServiceCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?measured_1 rdf:type ddhub:Measured .
+  FILTER (
+	?Attribute000 = fluidDescription_0
+	&& 	?Attribute001 = cementFluidProvider_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = measured_1
+  )
+}
+```
+## Current <!-- NOUN -->
+- Display name: Current
+- Parent class: [WellBoreDataCharateristic](#WellBoreDataCharateristic)
+- Description: 
+Current characterizes that the wellbore data is the currently selected one as the official one.
+- Definition set: ContextualData
+- Examples:
+``` dwis rigDescription_0
+DynamicDrillingSignal:rigDescription_0
+RigDescription:rigDescription_1
+rigDescription_1 HasDynamicValue rigDescription_0
+DrillingContractor:drillingContractor_1
+rigDescription_1 IsProvidedBy drillingContractor_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+rigDescription_1 IsProvidedTo contextualDataBuilder_1
+Current:current_1
+rigDescription_1 IsCharacterizedBy current_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rigDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[rigDescription_1] -->|BelongsToClass| N0003(RigDescription) 
+	N0002[rigDescription_1] -->|HasDynamicValue| N0000((rigDescription_0)) 
+	N0004[drillingContractor_1] -->|BelongsToClass| N0005(DrillingContractor) 
+	N0002[rigDescription_1] -->|IsProvidedBy| N0004((drillingContractor_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[rigDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[current_1] -->|BelongsToClass| N0009(Current) 
+	N0002[rigDescription_1] -->|IsCharacterizedBy| N0008((current_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rigDescription_0
+WHERE {
+	?rigDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?rigDescription_1 rdf:type ddhub:RigDescription .
+	?drillingContractor_1 rdf:type ddhub:DrillingContractor .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?current_1 rdf:type ddhub:Current .
+  FILTER (
+	?Attribute000 = rigDescription_0
+	&& 	?Attribute001 = drillingContractor_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = current_1
+  )
+}
+```
+## Extrapolated <!-- NOUN -->
+- Display name: Extrapolated
+- Parent class: [WellBoreDataCharateristic](#WellBoreDataCharateristic)
+- Description: 
+Extrapolated characterizes that the wellbore data is being partially measured/observed and also extended to
+positions that have not been measured/observed yet.
+- Definition set: ContextualData
+- Examples:
+``` dwis trajectoryDescription_0
+DynamicDrillingSignal:trajectoryDescription_0
+TrajectoryDescription:trajectoryDescription_1
+trajectoryDescription_1 HasDynamicValue trajectoryDescription_0
+DirectionalServiceCompany:directionalServiceCompany_1
+trajectoryDescription_1 IsProvidedBy directionalServiceCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+trajectoryDescription_1 IsProvidedTo contextualDataBuilder_1
+Current:current_1
+trajectoryDescription_1 IsCharacterizedBy current_1
+Extrapolated: extrapolated_1
+trajectoryDescription_1 IsCharacterizedBy extrapolated_1
+Measured:measured_1
+trajectoryDescription_1 IsCharacterizedBy measured_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[trajectoryDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[trajectoryDescription_1] -->|BelongsToClass| N0003(TrajectoryDescription) 
+	N0002[trajectoryDescription_1] -->|HasDynamicValue| N0000((trajectoryDescription_0)) 
+	N0004[directionalServiceCompany_1] -->|BelongsToClass| N0005(DirectionalServiceCompany) 
+	N0002[trajectoryDescription_1] -->|IsProvidedBy| N0004((directionalServiceCompany_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[trajectoryDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[current_1] -->|BelongsToClass| N0009(Current) 
+	N0002[trajectoryDescription_1] -->|IsCharacterizedBy| N0008((current_1)) 
+	N0002[trajectoryDescription_1] -->|IsCharacterizedBy| N0010((extrapolated_1)) 
+	N0011[measured_1] -->|BelongsToClass| N0012(Measured) 
+	N0002[trajectoryDescription_1] -->|IsCharacterizedBy| N0011((measured_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?trajectoryDescription_0
+WHERE {
+	?trajectoryDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?trajectoryDescription_1 rdf:type ddhub:TrajectoryDescription .
+	?directionalServiceCompany_1 rdf:type ddhub:DirectionalServiceCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?current_1 rdf:type ddhub:Current .
+	?measured_1 rdf:type ddhub:Measured .
+  FILTER (
+	?Attribute000 = trajectoryDescription_0
+	&& 	?Attribute001 = directionalServiceCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = current_1
+	&& 	?Attribute004 = extrapolated_1
+	&& 	?Attribute005 = measured_1
+  )
+}
+```
+## DataFlowNode <!-- NOUN -->
+- Display name: Data Flow Node
+- Parent class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
 ## ComputedState <!-- NOUN -->
-- Display name: ComputedState
+- Display name: Computed State
 - Parent class: [ComputationUnit](#ComputationUnit)
 - Description: 
 A state represents the current configuation of a system.
 - Definition set: DataFlow
 ## ProceduralState <!-- NOUN -->
-- Display name: ComputedProceduralState
+- Display name: Procedural State
 - Parent class: [ComputedState](#ComputedState)
 - Definition set: DataFlow
 ## ProcessState <!-- NOUN -->
-- Display name: ComputedProcessState
+- Display name: Process State
 - Parent class: [ComputedState](#ComputedState)
 - Definition set: DataFlow
 ## PhysicalState <!-- NOUN -->
-- Display name: ComputedPhysicalState
+- Display name: Physical State
 - Parent class: [ComputedState](#ComputedState)
 - Definition set: DataFlow
 ## ComputationUnit <!-- NOUN -->
-- Display name: ComputationUnit
+- Display name: Computation Unit
 - Parent class: [DataFlowNode](#DataFlowNode)
 - Description: 
 Denotes a complex computation unit, typically based on advanced numerical modeling
@@ -2940,10 +4220,23 @@ Denotes a complex computation unit, typically based on advanced numerical modeli
   - AdviceType
     - Type: string
     - Description: 
+- Description: 
+An advisor is a computation unit that produces an advice on how to control a process. Its output is typically
+an AdvisorySystemAdvice.
 - Definition set: DataFlow
 ## Simulator <!-- NOUN -->
 - Display name: Simulator
 - Parent class: [ComputationUnit](#ComputationUnit)
+- Description: 
+A simulator is a computation unit that tries to replicate the outputs of a process. Its output is typically
+a set of ComputedData, i.e., a specialisation of DrillingDataPoint.
+- Definition set: DataFlow
+## Interpreter <!-- NOUN -->
+- Display name: Interpreter
+- Parent class: [ComputationUnit](#ComputationUnit)
+- Description: 
+An interpreter is a computation unit that interprets the state of a process. Its output is typically a
+ComputedState.
 - Definition set: DataFlow
 ## Controller <!-- NOUN -->
 - Display name: Controller
@@ -2953,28 +4246,28 @@ Denotes a complex computation unit, typically based on advanced numerical modeli
 - Display name: ControlSystem
 - Parent class: [DataFlowNode](#DataFlowNode)
 - Definition set: DataFlow
-## DrawWorksControlSystem <!-- NOUN -->
-- Display name: DrawWorksControlSystem
+## HoistingControlSystem <!-- NOUN -->
+- Display name: Hoisting Control System
 - Parent class: [ControlSystem](#ControlSystem)
 - Definition set: DataFlow
-## MudPumpsControlSystem <!-- NOUN -->
-- Display name: MudPumpsControlSystem
+## CirculationControlSystem <!-- NOUN -->
+- Display name: Circulation Control System
 - Parent class: [ControlSystem](#ControlSystem)
 - Definition set: DataFlow
-## TopDriveControlSystem <!-- NOUN -->
-- Display name: TopDriveControlSystem
+## RotationControlSystem <!-- NOUN -->
+- Display name: Rotation Control System
 - Parent class: [ControlSystem](#ControlSystem)
 - Definition set: DataFlow
 ## BOPControlSystem <!-- NOUN -->
-- Display name: BOPControlSystem
+- Display name: BOP Control System
 - Parent class: [ControlSystem](#ControlSystem)
 - Definition set: DataFlow
 ## RigChokeControlSystem <!-- NOUN -->
-- Display name: RigChokeControlSystem
+- Display name: Rig Choke Control System
 - Parent class: [ControlSystem](#ControlSystem)
 - Definition set: DataFlow
 ## MeasurementDevice <!-- NOUN -->
-- Display name: MeasurementDevice
+- Display name: Measurement Device
 - Parent class: [DataFlowNode](#DataFlowNode)
 - Description: 
 Denotes a physical sensor
@@ -2986,7 +4279,7 @@ Denotes a physical sensor
 Represents a transformation applied to some signals that produces other signals
 - Definition set: DataFlow
 ## DirectTransformation <!-- NOUN -->
-- Display name: DirectTransformation
+- Display name: Direct Transformation
 - Parent class: [Transformation](#Transformation)
 - Description: 
 Direct transformations are performed using only the current value of their inputs, time is not involved
@@ -2996,35 +4289,35 @@ Direct transformations are performed using only the current value of their input
 - Parent class: [DirectTransformation](#DirectTransformation)
 - Definition set: DataFlow
 ## ForceFromLoadPinsTransformation <!-- NOUN -->
-- Display name: ForceFromLoadPinsTransformation
+- Display name: Force From Load Pins Transformation
 - Parent class: [DirectTransformation](#DirectTransformation)
 - Definition set: DataFlow
 ## ForceToLoadTransformation <!-- NOUN -->
-- Display name: ForceToLoadTransformation
+- Display name: Force To Load Transformation
 - Parent class: [DirectTransformation](#DirectTransformation)
 - Definition set: DataFlow
 ## MeasuredDepthToTrueVerticalDepthTransformation <!-- NOUN -->
-- Display name: MeasuredDepthToTrueVerticalDepthTransformation
+- Display name: Measured Depth To True Vertical Depth Transformation
 - Parent class: [DirectTransformation](#DirectTransformation)
 - Definition set: DataFlow
 ## MeasuredDepthTranslation <!-- NOUN -->
-- Display name: MeasuredDepthTranslation
+- Display name: Measured Depth Translation
 - Parent class: [DirectTransformation](#DirectTransformation)
 - Definition set: DataFlow
 ## PressureToEquivalentDensityTransformation <!-- NOUN -->
-- Display name: PressureToEquivalentDensityTransformation
+- Display name: Pressure To Equivalent Density Transformation
 - Parent class: [DirectTransformation](#DirectTransformation)
 - Definition set: DataFlow
 ## PressureToForceTransformation <!-- NOUN -->
-- Display name: PressureToForceTransformation
+- Display name: Pressure To Force Transformation
 - Parent class: [DirectTransformation](#DirectTransformation)
 - Definition set: DataFlow
 ## TorqueToForceTransformation <!-- NOUN -->
-- Display name: TorqueToForceTransformation
+- Display name: Torque To Force Transformation
 - Parent class: [DirectTransformation](#DirectTransformation)
 - Definition set: DataFlow
 ## SignalProcessingUnit <!-- NOUN -->
-- Display name: SignalProcessingUnit
+- Display name: Signal Processing Unit
 - Parent class: [Transformation](#Transformation)
 - Description: 
 Represent any signal processing applied prior to the distribution of the considered signal. Signal processing refers to e.g. noise removal, filtering,..
@@ -3034,7 +4327,7 @@ Represent any signal processing applied prior to the distribution of the conside
 - Parent class: [SignalProcessingUnit](#SignalProcessingUnit)
 - Definition set: DataFlow
 ## BandPassFilter <!-- NOUN -->
-- Display name: BandPassFilter
+- Display name: Band Pass Filter
 - Parent class: [Filter](#Filter)
 - Attributes:
   - MinFrequency
@@ -3045,7 +4338,7 @@ Represent any signal processing applied prior to the distribution of the conside
     - Description: 
 - Definition set: DataFlow
 ## HighPassFilter <!-- NOUN -->
-- Display name: HighPassFilter
+- Display name: High Pass Filter
 - Parent class: [Filter](#Filter)
 - Attributes:
   - CutOffFrequency
@@ -3053,7 +4346,7 @@ Represent any signal processing applied prior to the distribution of the conside
     - Description: 
 - Definition set: DataFlow
 ## LowPassFilter <!-- NOUN -->
-- Display name: LowPassFilter
+- Display name: Low Pass Filter
 - Parent class: [Filter](#Filter)
 - Attributes:
   - CutOffFrequency
@@ -3061,23 +4354,23 @@ Represent any signal processing applied prior to the distribution of the conside
     - Description: 
 - Definition set: DataFlow
 ## MovingAverage <!-- NOUN -->
-- Display name: MovingAverage
+- Display name: Moving Average
 - Parent class: [Filter](#Filter)
 - Definition set: DataFlow
 ## MovingStandardDeviation <!-- NOUN -->
-- Display name: MovingStandardDeviation
+- Display name: Moving Standard Deviation
 - Parent class: [Filter](#Filter)
 - Definition set: DataFlow
 ## MovingMin <!-- NOUN -->
-- Display name: MovingMin
+- Display name: Moving Min
 - Parent class: [Filter](#Filter)
 - Definition set: DataFlow
 ## MovingMax <!-- NOUN -->
-- Display name: MovingMax
+- Display name: Moving Max
 - Parent class: [Filter](#Filter)
 - Definition set: DataFlow
 ## NumberOfSampleMovingAverage <!-- NOUN -->
-- Display name: NumberOfSampleMovingAverage
+- Display name: Number Of Sample Moving Average
 - Parent class: [MovingAverage](#MovingAverage)
 - Attributes:
   - NumberOfSamples
@@ -3085,7 +4378,7 @@ Represent any signal processing applied prior to the distribution of the conside
     - Description: 
 - Definition set: DataFlow
 ## TimeWindowMovingAverage <!-- NOUN -->
-- Display name: TimeWindowMovingAverage
+- Display name: Time Window Moving Average
 - Parent class: [MovingAverage](#MovingAverage)
 - Attributes:
   - TimeWindow
@@ -3093,7 +4386,7 @@ Represent any signal processing applied prior to the distribution of the conside
     - Description: 
 - Definition set: DataFlow
 ## TimeBasedTransformation <!-- NOUN -->
-- Display name: TimeBasedTransformation
+- Display name: Time Based Transformation
 - Parent class: [Transformation](#Transformation)
 - Description: 
 Transformations that apply only to time series: time derivations, time integration, averaging...
@@ -3115,11 +4408,11 @@ Transformations that apply only to time series: time derivations, time integrati
 - Parent class: [TimeBasedTransformation](#TimeBasedTransformation)
 - Definition set: DataFlow
 ## RangeExtraction <!-- NOUN -->
-- Display name: RangeExtraction
+- Display name: Range Extraction
 - Parent class: [TimeBasedTransformation](#TimeBasedTransformation)
 - Definition set: DataFlow
 ## NumberOfItemsRangeExtraction <!-- NOUN -->
-- Display name: NumberOfItemsRangeExtraction
+- Display name: Number Of Items Range Extraction
 - Parent class: [RangeExtraction](#RangeExtraction)
 - Attributes:
   - NumberOfItems
@@ -3127,7 +4420,7 @@ Transformations that apply only to time series: time derivations, time integrati
     - Description: 
 - Definition set: DataFlow
 ## TimeWindowRangeExtraction <!-- NOUN -->
-- Display name: TimeWindowRangeExtraction
+- Display name: Time Window Range Extraction
 - Parent class: [RangeExtraction](#RangeExtraction)
 - Attributes:
   - TimeWindow
@@ -3149,11 +4442,11 @@ Transformations that apply only to time series: time derivations, time integrati
     - Description: 
 - Definition set: DataFlow
 ## TransmissionLine <!-- NOUN -->
-- Display name: TransmissionLine
+- Display name: Transmission Line
 - Parent class: [DataFlowNode](#DataFlowNode)
 - Definition set: DataFlow
 ## UserInterface <!-- NOUN -->
-- Display name: UserInterface
+- Display name: User Interface
 - Parent class: [DataFlowNode](#DataFlowNode)
 - Definition set: DataFlow
 ## DataProvider <!-- NOUN -->
@@ -3164,7 +4457,7 @@ Transformations that apply only to time series: time derivations, time integrati
     - Type: string
     - Description: 
 - Description: 
-A data provider is any sources for data
+A data provider is any sources for data.
 - Definition set: DataProviders
 ## OperatingCompany <!-- NOUN -->
 - Display name: OperatingCompany
@@ -3176,6 +4469,51 @@ A data provider is any sources for data
 - Description: 
 An operating company is an entity that holds the rights to explore, develop, and produce hydrocarbon resources from a particular oil or gas field or lease
 - Definition set: DataProviders
+- Examples:
+``` dwis stratigraphyDescription_0
+DynamicDrillingSignal:stratigraphyDescription_0
+StratigraphyDescription:stratigraphyDescription_1
+stratigraphyDescription_1 HasDynamicValue stratigraphyDescription_0
+OperatingCompany:operatingCompany_1
+stratigraphyDescription_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+stratigraphyDescription_1 IsProvidedTo contextualDataBuilder_1
+Prognosed:prognosed_1
+stratigraphyDescription_1 IsCharacterizedBy prognosed_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stratigraphyDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[stratigraphyDescription_1] -->|BelongsToClass| N0003(StratigraphyDescription) 
+	N0002[stratigraphyDescription_1] -->|HasDynamicValue| N0000((stratigraphyDescription_0)) 
+	N0004[operatingCompany_1] -->|BelongsToClass| N0005(OperatingCompany) 
+	N0002[stratigraphyDescription_1] -->|IsProvidedBy| N0004((operatingCompany_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[stratigraphyDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[prognosed_1] -->|BelongsToClass| N0009(Prognosed) 
+	N0002[stratigraphyDescription_1] -->|IsCharacterizedBy| N0008((prognosed_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stratigraphyDescription_0
+WHERE {
+	?stratigraphyDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?stratigraphyDescription_1 rdf:type ddhub:StratigraphyDescription .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?prognosed_1 rdf:type ddhub:Prognosed .
+  FILTER (
+	?Attribute000 = stratigraphyDescription_0
+	&& 	?Attribute001 = operatingCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = prognosed_1
+  )
+}
+```
 ## ServiceCompany <!-- NOUN -->
 - Display name: ServiceCompany
 - Parent class: [DataProvider](#DataProvider)
@@ -3196,6 +4534,61 @@ A service company is an entity that provides services during the well constructi
 - Description: 
 A directional service company is an entity that provides services for downhole directional drilling and downhole measurements.
 - Definition set: DataProviders
+- Examples:
+``` dwis trajectoryDescription_0
+DynamicDrillingSignal:trajectoryDescription_0
+TrajectoryDescription:trajectoryDescription_1
+trajectoryDescription_1 HasDynamicValue trajectoryDescription_0
+DirectionalServiceCompany:directionalServiceCompany_1
+trajectoryDescription_1 IsProvidedBy directionalServiceCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+trajectoryDescription_1 IsProvidedTo contextualDataBuilder_1
+Current:current_1
+trajectoryDescription_1 IsCharacterizedBy current_1
+Extrapolated: extrapolated_1
+trajectoryDescription_1 IsCharacterizedBy extrapolated_1
+Measured:measured_1
+trajectoryDescription_1 IsCharacterizedBy measured_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[trajectoryDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[trajectoryDescription_1] -->|BelongsToClass| N0003(TrajectoryDescription) 
+	N0002[trajectoryDescription_1] -->|HasDynamicValue| N0000((trajectoryDescription_0)) 
+	N0004[directionalServiceCompany_1] -->|BelongsToClass| N0005(DirectionalServiceCompany) 
+	N0002[trajectoryDescription_1] -->|IsProvidedBy| N0004((directionalServiceCompany_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[trajectoryDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[current_1] -->|BelongsToClass| N0009(Current) 
+	N0002[trajectoryDescription_1] -->|IsCharacterizedBy| N0008((current_1)) 
+	N0002[trajectoryDescription_1] -->|IsCharacterizedBy| N0010((extrapolated_1)) 
+	N0011[measured_1] -->|BelongsToClass| N0012(Measured) 
+	N0002[trajectoryDescription_1] -->|IsCharacterizedBy| N0011((measured_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?trajectoryDescription_0
+WHERE {
+	?trajectoryDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?trajectoryDescription_1 rdf:type ddhub:TrajectoryDescription .
+	?directionalServiceCompany_1 rdf:type ddhub:DirectionalServiceCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?current_1 rdf:type ddhub:Current .
+	?measured_1 rdf:type ddhub:Measured .
+  FILTER (
+	?Attribute000 = trajectoryDescription_0
+	&& 	?Attribute001 = directionalServiceCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = current_1
+	&& 	?Attribute004 = extrapolated_1
+	&& 	?Attribute005 = measured_1
+  )
+}
+```
 ## DrillingFluidProvider <!-- NOUN -->
 - Display name: DrillingFluidProvider
 - Parent class: [ServiceCompany](#ServiceCompany)
@@ -3206,6 +4599,57 @@ A directional service company is an entity that provides services for downhole d
 - Description: 
 A drilling fluid provider is a company that provides and maintains the drilling fluids during well construction.
 - Definition set: DataProviders
+- Examples:
+``` dwis fluidDescription_0
+DynamicDrillingSignal:fluidDescription_0
+DrillingFluidDescription:fluidDescription_1
+fluidDescription_1 HasDynamicValue fluidDescription_0
+DrillingFluidProvider:drillingFluidProvider_1
+fluidDescription_1 IsProvidedBy drillingFluidProvider_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+fluidDescription_1 IsProvidedTo contextualDataBuilder_1
+Current:current_1
+fluidDescription_1 IsCharacterizedBy current_1
+Measured:measured_1
+fluidDescription_1 IsCharacterizedBy measured_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[fluidDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[fluidDescription_1] -->|BelongsToClass| N0003(DrillingFluidDescription) 
+	N0002[fluidDescription_1] -->|HasDynamicValue| N0000((fluidDescription_0)) 
+	N0004[drillingFluidProvider_1] -->|BelongsToClass| N0005(DrillingFluidProvider) 
+	N0002[fluidDescription_1] -->|IsProvidedBy| N0004((drillingFluidProvider_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[fluidDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[current_1] -->|BelongsToClass| N0009(Current) 
+	N0002[fluidDescription_1] -->|IsCharacterizedBy| N0008((current_1)) 
+	N0010[measured_1] -->|BelongsToClass| N0011(Measured) 
+	N0002[fluidDescription_1] -->|IsCharacterizedBy| N0010((measured_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?fluidDescription_0
+WHERE {
+	?fluidDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?fluidDescription_1 rdf:type ddhub:DrillingFluidDescription .
+	?drillingFluidProvider_1 rdf:type ddhub:DrillingFluidProvider .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?current_1 rdf:type ddhub:Current .
+	?measured_1 rdf:type ddhub:Measured .
+  FILTER (
+	?Attribute000 = fluidDescription_0
+	&& 	?Attribute001 = drillingFluidProvider_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = current_1
+	&& 	?Attribute004 = measured_1
+  )
+}
+```
 ## LoggingServiceCompany <!-- NOUN -->
 - Display name: LoggingServiceCompany
 - Parent class: [ServiceCompany](#ServiceCompany)
@@ -3216,6 +4660,51 @@ A drilling fluid provider is a company that provides and maintains the drilling 
 - Description: 
 A logging service company is an entity that gathers measured information during well construction.
 - Definition set: DataProviders
+- Examples:
+``` dwis stratigraphyDescription_0
+DynamicDrillingSignal:stratigraphyDescription_0
+StratigraphyDescription:stratigraphyDescription_1
+stratigraphyDescription_1 HasDynamicValue stratigraphyDescription_0
+LoggingServiceCompany:logginServiceCompany_1
+stratigraphyDescription_1 IsProvidedBy logginServiceCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+stratigraphyDescription_1 IsProvidedTo contextualDataBuilder_1
+Measured:measured_1
+stratigraphyDescription_1 IsCharacterizedBy measured_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stratigraphyDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[stratigraphyDescription_1] -->|BelongsToClass| N0003(StratigraphyDescription) 
+	N0002[stratigraphyDescription_1] -->|HasDynamicValue| N0000((stratigraphyDescription_0)) 
+	N0004[logginServiceCompany_1] -->|BelongsToClass| N0005(LoggingServiceCompany) 
+	N0002[stratigraphyDescription_1] -->|IsProvidedBy| N0004((logginServiceCompany_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[stratigraphyDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[measured_1] -->|BelongsToClass| N0009(Measured) 
+	N0002[stratigraphyDescription_1] -->|IsCharacterizedBy| N0008((measured_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stratigraphyDescription_0
+WHERE {
+	?stratigraphyDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?stratigraphyDescription_1 rdf:type ddhub:StratigraphyDescription .
+	?logginServiceCompany_1 rdf:type ddhub:LoggingServiceCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?measured_1 rdf:type ddhub:Measured .
+  FILTER (
+	?Attribute000 = stratigraphyDescription_0
+	&& 	?Attribute001 = logginServiceCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = measured_1
+  )
+}
+```
 ## CementingServiceCompany <!-- NOUN -->
 - Display name: CementingServiceCompany
 - Parent class: [ServiceCompany](#ServiceCompany)
@@ -3224,6 +4713,104 @@ A logging service company is an entity that gathers measured information during 
     - Type: string
     - Description: 
 - Definition set: DataProviders
+- Examples:
+``` dwis fluidDescription_0
+DynamicDrillingSignal:fluidDescription_0
+CementFluidDescription:fluidDescription_1
+fluidDescription_1 HasDynamicValue fluidDescription_0
+CementingServiceCompany:cementFluidProvider_1
+fluidDescription_1 IsProvidedBy cementFluidProvider_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+fluidDescription_1 IsProvidedTo contextualDataBuilder_1
+Measured:measured_1
+fluidDescription_1 IsCharacterizedBy measured_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[fluidDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[fluidDescription_1] -->|BelongsToClass| N0003(CementFluidDescription) 
+	N0002[fluidDescription_1] -->|HasDynamicValue| N0000((fluidDescription_0)) 
+	N0004[cementFluidProvider_1] -->|BelongsToClass| N0005(CementingServiceCompany) 
+	N0002[fluidDescription_1] -->|IsProvidedBy| N0004((cementFluidProvider_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[fluidDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[measured_1] -->|BelongsToClass| N0009(Measured) 
+	N0002[fluidDescription_1] -->|IsCharacterizedBy| N0008((measured_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?fluidDescription_0
+WHERE {
+	?fluidDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?fluidDescription_1 rdf:type ddhub:CementFluidDescription .
+	?cementFluidProvider_1 rdf:type ddhub:CementingServiceCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?measured_1 rdf:type ddhub:Measured .
+  FILTER (
+	?Attribute000 = fluidDescription_0
+	&& 	?Attribute001 = cementFluidProvider_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = measured_1
+  )
+}
+```
+## CompletionServiceCompany <!-- NOUN -->
+- Display name: CompletionServiceCompany
+- Parent class: [ServiceCompany](#ServiceCompany)
+- Attributes:
+  - ProviderName
+    - Type: string
+    - Description: 
+- Definition set: DataProviders
+- Examples:
+``` dwis fluidDescription_0
+DynamicDrillingSignal:fluidDescription_0
+CompletionFluidDescription:fluidDescription_1
+fluidDescription_1 HasDynamicValue fluidDescription_0
+CompletionServiceCompany:completionFluidProvider_1
+fluidDescription_1 IsProvidedBy completionFluidProvider_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+fluidDescription_1 IsProvidedTo contextualDataBuilder_1
+Current:current_1
+fluidDescription_1 IsCharacterizedBy current_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[fluidDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[fluidDescription_1] -->|BelongsToClass| N0003(CompletionFluidDescription) 
+	N0002[fluidDescription_1] -->|HasDynamicValue| N0000((fluidDescription_0)) 
+	N0004[completionFluidProvider_1] -->|BelongsToClass| N0005(CompletionServiceCompany) 
+	N0002[fluidDescription_1] -->|IsProvidedBy| N0004((completionFluidProvider_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[fluidDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[current_1] -->|BelongsToClass| N0009(Current) 
+	N0002[fluidDescription_1] -->|IsCharacterizedBy| N0008((current_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?fluidDescription_0
+WHERE {
+	?fluidDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?fluidDescription_1 rdf:type ddhub:CompletionFluidDescription .
+	?completionFluidProvider_1 rdf:type ddhub:CompletionServiceCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?current_1 rdf:type ddhub:Current .
+  FILTER (
+	?Attribute000 = fluidDescription_0
+	&& 	?Attribute001 = completionFluidProvider_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = current_1
+  )
+}
+```
 ## DataAnalysisServiceCompany <!-- NOUN -->
 - Display name: DataAnalysisServiceCompany
 - Parent class: [ServiceCompany](#ServiceCompany)
@@ -3234,6 +4821,66 @@ A logging service company is an entity that gathers measured information during 
 - Description: 
 A data analysis service company is an entity that analyses measured data and provide new information from these measurements.
 - Definition set: DataProviders
+- Examples:
+``` dwis PackOffFDIRInfo
+DynamicDrillingSignal:PackOffFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice:PackOffFDIRInfo_1
+PackOffFDIRInfo_1 HasDynamicValue PackOffFDIRInfo
+PackOff:packOffIncident
+PackOffFDIRInfo_1 IsRelatedToDrillingIncident packOffIncident
+DataAnalysisServiceCompany:dataAnalysisServiceCompany_1
+PackOffFDIRInfo_1 IsProvidedBy dataAnalysisServiceCompany_1
+Advisor:computationUnit
+PackOffFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction:FDIRFunction_1
+FDIRFunction_1 ManagesIncident packOffIncident
+PackOffFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer:adviceComposer
+PackOffFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PackOffFDIRInfo] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[PackOffFDIRInfo_1] -->|BelongsToClass| N0003(DrillingFaultDetectionIsolationAndRecoveryAdvice) 
+	N0002[PackOffFDIRInfo_1] -->|HasDynamicValue| N0000((PackOffFDIRInfo)) 
+	N0004[packOffIncident] -->|BelongsToClass| N0005(PackOff) 
+	N0002[PackOffFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0004((packOffIncident)) 
+	N0006[dataAnalysisServiceCompany_1] -->|BelongsToClass| N0007(DataAnalysisServiceCompany) 
+	N0002[PackOffFDIRInfo_1] -->|IsProvidedBy| N0006((dataAnalysisServiceCompany_1)) 
+	N0008[computationUnit] -->|BelongsToClass| N0009(Advisor) 
+	N0002[PackOffFDIRInfo_1] -->|IsRecommendedBy| N0008((computationUnit)) 
+	N0010[FDIRFunction_1] -->|BelongsToClass| N0011(FDIRFunction) 
+	N0010[FDIRFunction_1] -->|ManagesIncident| N0004((packOffIncident)) 
+	N0002[PackOffFDIRInfo_1] -->|IsRecommendedFor| N0010((FDIRFunction_1)) 
+	N0012[adviceComposer] -->|BelongsToClass| N0013(DWISAdviceComposer) 
+	N0002[PackOffFDIRInfo_1] -->|IsProvidedTo| N0012((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?PackOffFDIRInfo
+WHERE {
+	?PackOffFDIRInfo rdf:type ddhub:DynamicDrillingSignal .
+	?PackOffFDIRInfo_1 rdf:type ddhub:DrillingFaultDetectionIsolationAndRecoveryAdvice .
+	?packOffIncident rdf:type ddhub:PackOff .
+	?dataAnalysisServiceCompany_1 rdf:type ddhub:DataAnalysisServiceCompany .
+	?computationUnit rdf:type ddhub:Advisor .
+	?FDIRFunction_1 rdf:type ddhub:FDIRFunction .
+	?adviceComposer rdf:type ddhub:DWISAdviceComposer .
+  FILTER (
+	?Attribute000 = PackOffFDIRInfo
+	&& 	?Attribute001 = packOffIncident
+	&& 	?Attribute002 = dataAnalysisServiceCompany_1
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = packOffIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
 ## DrillingContractor <!-- NOUN -->
 - Display name: DrillingContractor
 - Parent class: [DataProvider](#DataProvider)
@@ -3242,6 +4889,51 @@ A data analysis service company is an entity that analyses measured data and pro
     - Type: string
     - Description: 
 - Definition set: DataProviders
+- Examples:
+``` dwis rigDescription_0
+DynamicDrillingSignal:rigDescription_0
+RigDescription:rigDescription_1
+rigDescription_1 HasDynamicValue rigDescription_0
+DrillingContractor:drillingContractor_1
+rigDescription_1 IsProvidedBy drillingContractor_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+rigDescription_1 IsProvidedTo contextualDataBuilder_1
+Current:current_1
+rigDescription_1 IsCharacterizedBy current_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rigDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[rigDescription_1] -->|BelongsToClass| N0003(RigDescription) 
+	N0002[rigDescription_1] -->|HasDynamicValue| N0000((rigDescription_0)) 
+	N0004[drillingContractor_1] -->|BelongsToClass| N0005(DrillingContractor) 
+	N0002[rigDescription_1] -->|IsProvidedBy| N0004((drillingContractor_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[rigDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[current_1] -->|BelongsToClass| N0009(Current) 
+	N0002[rigDescription_1] -->|IsCharacterizedBy| N0008((current_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rigDescription_0
+WHERE {
+	?rigDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?rigDescription_1 rdf:type ddhub:RigDescription .
+	?drillingContractor_1 rdf:type ddhub:DrillingContractor .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?current_1 rdf:type ddhub:Current .
+  FILTER (
+	?Attribute000 = rigDescription_0
+	&& 	?Attribute001 = drillingContractor_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = current_1
+  )
+}
+```
 ## DWISInternalService <!-- NOUN -->
 - Display name: DWISInternalService
 - Parent class: [DataProvider](#DataProvider)
@@ -3260,18 +4952,255 @@ A DWIS internal service is an internal component of the DWIS infrastructure that
 - Display name: DWIS Drilling Process State Interpreter
 - Parent class: [DWISInternalService](#DWISInternalService)
 - Definition set: DataProviders
+- Examples:
+``` dwis configurationData_0
+DynamicDrillingSignal:configurationData_0
+ConfigurationData:configurationData_1
+configurationData_1 HasDynamicValue configurationData_0
+OperatingCompany:operatingCompany_1
+configurationData_1 IsProvidedBy operatingCompany_1
+DWISDrillingProcessStateInterpreter:microStateInterpreter_1
+configurationData_1 IsProvidedTo microStateInterpreter_1
+configurationData_1 IsLimitFor microStateInterpreter_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[configurationData_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[configurationData_1] -->|BelongsToClass| N0003(ConfigurationData) 
+	N0002[configurationData_1] -->|HasDynamicValue| N0000((configurationData_0)) 
+	N0004[operatingCompany_1] -->|BelongsToClass| N0005(OperatingCompany) 
+	N0002[configurationData_1] -->|IsProvidedBy| N0004((operatingCompany_1)) 
+	N0006[microStateInterpreter_1] -->|BelongsToClass| N0007(DWISDrillingProcessStateInterpreter) 
+	N0002[configurationData_1] -->|IsProvidedTo| N0006((microStateInterpreter_1)) 
+	N0002[configurationData_1] -->|IsLimitFor| N0006((microStateInterpreter_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?configurationData_0
+WHERE {
+	?configurationData_0 rdf:type ddhub:DynamicDrillingSignal .
+	?configurationData_1 rdf:type ddhub:ConfigurationData .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?microStateInterpreter_1 rdf:type ddhub:DWISDrillingProcessStateInterpreter .
+  FILTER (
+	?Attribute000 = configurationData_0
+	&& 	?Attribute001 = operatingCompany_1
+	&& 	?Attribute002 = microStateInterpreter_1
+	&& 	?Attribute003 = microStateInterpreter_1
+  )
+}
+```
 ## DWISAdviceComposer <!-- NOUN -->
 - Display name: DWIS Advice Composer
 - Parent class: [DWISInternalService](#DWISInternalService)
 - Definition set: DataProviders
+- Examples:
+``` dwis ROPManagementControllerInfo
+DynamicDrillingSignal:ROPManagementControllerInfo
+DrillingControlAdvice:ROPManagementControllerInfo_1
+ROPManagementControllerInfo_1 HasDynamicValue ROPManagementControllerInfo
+ROPLimit:ROPLimit_1
+ROPManagementControllerInfo_1 HasControlLimit ROPLimit_1
+WOBLimit:WOBLimit_1
+ROPManagementControllerInfo_1 HasControlLimit WOBLimit_1
+DifferentialPressureLimit:differentialPressureLimit
+ROPManagementControllerInfo_1 HasControlLimit differentialPressureLimit
+BottomOfStringReferenceLocation:bottomOfStringLocation
+StableAxialVelocityObjective:stableAxialVelocityObjective
+stableAxialVelocityObjective IsPhysicallyLocatedAt bottomOfStringLocation
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableAxialVelocityObjective
+StableAxialForceObjective:stableWOBObjective
+stableWOBObjective IsPhysicallyLocatedAt bottomOfStringLocation
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableWOBObjective
+StablePressureObjective:stableDifferentialPressure
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableDifferentialPressure
+ServiceCompany:serviceCompany
+ROPManagementControllerInfo_1 IsProvidedBy serviceCompany
+Advisor:computationUnit
+ROPManagementControllerInfo_1 IsRecommendedBy computationUnit
+ControllerFunction:autoDriller
+autoDriller ImplementsObjective stableAxialVelocityObjective
+autoDriller ImplementsObjective stableWOBObjective
+autoDriller ImplementsObjective stableDifferentialPressure
+ROPManagementControllerInfo_1 IsRecommendedFor autoDriller
+DWISAdviceComposer:adviceComposer
+ROPManagementControllerInfo_1 IsProvidedTo adviceComposer
+DWISScheduler:scheduler
+ROPManagementControllerInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ROPManagementControllerInfo] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[ROPManagementControllerInfo_1] -->|BelongsToClass| N0003(DrillingControlAdvice) 
+	N0002[ROPManagementControllerInfo_1] -->|HasDynamicValue| N0000((ROPManagementControllerInfo)) 
+	N0004[ROPLimit_1] -->|BelongsToClass| N0005(ROPLimit) 
+	N0002[ROPManagementControllerInfo_1] -->|HasControlLimit| N0004((ROPLimit_1)) 
+	N0006[WOBLimit_1] -->|BelongsToClass| N0007(WOBLimit) 
+	N0002[ROPManagementControllerInfo_1] -->|HasControlLimit| N0006((WOBLimit_1)) 
+	N0008[differentialPressureLimit] -->|BelongsToClass| N0009(DifferentialPressureLimit) 
+	N0002[ROPManagementControllerInfo_1] -->|HasControlLimit| N0008((differentialPressureLimit)) 
+	N0010[bottomOfStringLocation] -->|BelongsToClass| N0011(BottomOfStringReferenceLocation) 
+	N0012[stableAxialVelocityObjective] -->|BelongsToClass| N0013(StableAxialVelocityObjective) 
+	N0012[stableAxialVelocityObjective] -->|IsPhysicallyLocatedAt| N0010((bottomOfStringLocation)) 
+	N0002[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0012((stableAxialVelocityObjective)) 
+	N0014[stableWOBObjective] -->|BelongsToClass| N0015(StableAxialForceObjective) 
+	N0014[stableWOBObjective] -->|IsPhysicallyLocatedAt| N0010((bottomOfStringLocation)) 
+	N0002[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0014((stableWOBObjective)) 
+	N0016[stableDifferentialPressure] -->|BelongsToClass| N0017(StablePressureObjective) 
+	N0002[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0016((stableDifferentialPressure)) 
+	N0018[serviceCompany] -->|BelongsToClass| N0019(ServiceCompany) 
+	N0002[ROPManagementControllerInfo_1] -->|IsProvidedBy| N0018((serviceCompany)) 
+	N0020[computationUnit] -->|BelongsToClass| N0021(Advisor) 
+	N0002[ROPManagementControllerInfo_1] -->|IsRecommendedBy| N0020((computationUnit)) 
+	N0022[autoDriller] -->|BelongsToClass| N0023(ControllerFunction) 
+	N0022[autoDriller] -->|ImplementsObjective| N0012((stableAxialVelocityObjective)) 
+	N0022[autoDriller] -->|ImplementsObjective| N0014((stableWOBObjective)) 
+	N0022[autoDriller] -->|ImplementsObjective| N0016((stableDifferentialPressure)) 
+	N0002[ROPManagementControllerInfo_1] -->|IsRecommendedFor| N0022((autoDriller)) 
+	N0024[adviceComposer] -->|BelongsToClass| N0025(DWISAdviceComposer) 
+	N0002[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0024((adviceComposer)) 
+	N0026[scheduler] -->|BelongsToClass| N0027(DWISScheduler) 
+	N0002[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0026((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ROPManagementControllerInfo
+WHERE {
+	?ROPManagementControllerInfo rdf:type ddhub:DynamicDrillingSignal .
+	?ROPManagementControllerInfo_1 rdf:type ddhub:DrillingControlAdvice .
+	?ROPLimit_1 rdf:type ddhub:ROPLimit .
+	?WOBLimit_1 rdf:type ddhub:WOBLimit .
+	?differentialPressureLimit rdf:type ddhub:DifferentialPressureLimit .
+	?bottomOfStringLocation rdf:type ddhub:BottomOfStringReferenceLocation .
+	?stableAxialVelocityObjective rdf:type ddhub:StableAxialVelocityObjective .
+	?stableWOBObjective rdf:type ddhub:StableAxialForceObjective .
+	?stableDifferentialPressure rdf:type ddhub:StablePressureObjective .
+	?serviceCompany rdf:type ddhub:ServiceCompany .
+	?computationUnit rdf:type ddhub:Advisor .
+	?autoDriller rdf:type ddhub:ControllerFunction .
+	?adviceComposer rdf:type ddhub:DWISAdviceComposer .
+	?scheduler rdf:type ddhub:DWISScheduler .
+  FILTER (
+	?Attribute000 = ROPManagementControllerInfo
+	&& 	?Attribute001 = ROPLimit_1
+	&& 	?Attribute002 = WOBLimit_1
+	&& 	?Attribute003 = differentialPressureLimit
+	&& 	?Attribute004 = bottomOfStringLocation
+	&& 	?Attribute005 = stableAxialVelocityObjective
+	&& 	?Attribute006 = bottomOfStringLocation
+	&& 	?Attribute007 = stableWOBObjective
+	&& 	?Attribute008 = stableDifferentialPressure
+	&& 	?Attribute009 = serviceCompany
+	&& 	?Attribute010 = computationUnit
+	&& 	?Attribute011 = stableAxialVelocityObjective
+	&& 	?Attribute012 = stableWOBObjective
+	&& 	?Attribute013 = stableDifferentialPressure
+	&& 	?Attribute014 = autoDriller
+	&& 	?Attribute015 = adviceComposer
+	&& 	?Attribute016 = scheduler
+  )
+}
+```
 ## DWISScheduler <!-- NOUN -->
 - Display name: DWIS Scheduler
 - Parent class: [DWISInternalService](#DWISInternalService)
 - Definition set: DataProviders
+- Examples:
+``` dwis rigActionPlan_0
+DynamicDrillingSignal:rigActionPlan_0
+RigActionPlan:rigActionPlan_1
+rigActionPlan_1 HasDynamicValue rigActionPlan_0
+OperatingCompany:operatingCompany_1
+rigActionPlan_1 IsProvidedBy operatingCompany_1
+DWISScheduler:scheduler_1
+rigActionPlan_1 IsProvidedTo scheduler_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rigActionPlan_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[rigActionPlan_1] -->|BelongsToClass| N0003(RigActionPlan) 
+	N0002[rigActionPlan_1] -->|HasDynamicValue| N0000((rigActionPlan_0)) 
+	N0004[operatingCompany_1] -->|BelongsToClass| N0005(OperatingCompany) 
+	N0002[rigActionPlan_1] -->|IsProvidedBy| N0004((operatingCompany_1)) 
+	N0006[scheduler_1] -->|BelongsToClass| N0007(DWISScheduler) 
+	N0002[rigActionPlan_1] -->|IsProvidedTo| N0006((scheduler_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rigActionPlan_0
+WHERE {
+	?rigActionPlan_0 rdf:type ddhub:DynamicDrillingSignal .
+	?rigActionPlan_1 rdf:type ddhub:RigActionPlan .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?scheduler_1 rdf:type ddhub:DWISScheduler .
+  FILTER (
+	?Attribute000 = rigActionPlan_0
+	&& 	?Attribute001 = operatingCompany_1
+	&& 	?Attribute002 = scheduler_1
+  )
+}
+```
 ## DWISContextualDataBuilder <!-- NOUN -->
 - Display name: DWIS Contextual Data Builder
 - Parent class: [DWISInternalService](#DWISInternalService)
 - Definition set: DataProviders
+- Examples:
+``` dwis fluidDescription_0
+DynamicDrillingSignal:fluidDescription_0
+FluidDescription:fluidDescription_1
+fluidDescription_1 HasDynamicValue fluidDescription_0
+DrillingFluidProvider:drillingFluidProvider_1
+fluidDescription_1 IsProvidedBy drillingFluidProvider_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+fluidDescription_1 IsProvidedTo contextualDataBuilder_1
+Current:current_1
+fluidDescription_1 IsCharacterizedBy current_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[fluidDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[fluidDescription_1] -->|BelongsToClass| N0003(FluidDescription) 
+	N0002[fluidDescription_1] -->|HasDynamicValue| N0000((fluidDescription_0)) 
+	N0004[drillingFluidProvider_1] -->|BelongsToClass| N0005(DrillingFluidProvider) 
+	N0002[fluidDescription_1] -->|IsProvidedBy| N0004((drillingFluidProvider_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[fluidDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[current_1] -->|BelongsToClass| N0009(Current) 
+	N0002[fluidDescription_1] -->|IsCharacterizedBy| N0008((current_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?fluidDescription_0
+WHERE {
+	?fluidDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?fluidDescription_1 rdf:type ddhub:FluidDescription .
+	?drillingFluidProvider_1 rdf:type ddhub:DrillingFluidProvider .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?current_1 rdf:type ddhub:Current .
+  FILTER (
+	?Attribute000 = fluidDescription_0
+	&& 	?Attribute001 = drillingFluidProvider_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = current_1
+  )
+}
+```
 ## DWISLogger <!-- NOUN -->
 - Display name: DWIS Logger
 - Parent class: [DWISInternalService](#DWISInternalService)
@@ -3280,10 +5209,112 @@ A DWIS internal service is an internal component of the DWIS infrastructure that
 - Display name: DWIS ADCS Interface
 - Parent class: [DWISInternalService](#DWISInternalService)
 - Definition set: DataProviders
+- Examples:
+``` dwis overpullUnderpullFDIRInfo
+DynamicDrillingSignal:overpullUnderpullFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice:overpullUnderpullFDIRInfo_1
+overpullUnderpullFDIRInfo_1 HasDynamicValue overpullUnderpullFDIRInfo
+Overpull:overpullIncident
+overpullUnderpullFDIRInfo_1 IsRelatedToDrillingIncident overpullIncident
+Underpull:underpullIncident
+overpullUnderpullFDIRInfo_1 IsRelatedToDrillingIncident underpullIncident
+ServiceCompany:serviceCompany
+overpullUnderpullFDIRInfo_1 IsProvidedBy serviceCompany
+DWISAdviceComposer:adviceComposer_1
+overpullUnderpullFDIRInfo_1 IsRecommendedBy adviceComposer_1
+FDIRFunction:FDIRFunction_1
+FDIRFunction_1 ManagesIncident overpullIncident
+FDIRFunction_1 ManagesIncident underpullIncident
+overpullUnderpullFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISADCSInterface:ADCSInterface_1
+overpullUnderpullFDIRInfo_1 IsProvidedTo ADCSInterface_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[overpullUnderpullFDIRInfo] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[overpullUnderpullFDIRInfo_1] -->|BelongsToClass| N0003(DrillingFaultDetectionIsolationAndRecoveryAdvice) 
+	N0002[overpullUnderpullFDIRInfo_1] -->|HasDynamicValue| N0000((overpullUnderpullFDIRInfo)) 
+	N0004[overpullIncident] -->|BelongsToClass| N0005(Overpull) 
+	N0002[overpullUnderpullFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0004((overpullIncident)) 
+	N0006[underpullIncident] -->|BelongsToClass| N0007(Underpull) 
+	N0002[overpullUnderpullFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0006((underpullIncident)) 
+	N0008[serviceCompany] -->|BelongsToClass| N0009(ServiceCompany) 
+	N0002[overpullUnderpullFDIRInfo_1] -->|IsProvidedBy| N0008((serviceCompany)) 
+	N0010[adviceComposer_1] -->|BelongsToClass| N0011(DWISAdviceComposer) 
+	N0002[overpullUnderpullFDIRInfo_1] -->|IsRecommendedBy| N0010((adviceComposer_1)) 
+	N0012[FDIRFunction_1] -->|BelongsToClass| N0013(FDIRFunction) 
+	N0012[FDIRFunction_1] -->|ManagesIncident| N0004((overpullIncident)) 
+	N0012[FDIRFunction_1] -->|ManagesIncident| N0006((underpullIncident)) 
+	N0002[overpullUnderpullFDIRInfo_1] -->|IsRecommendedFor| N0012((FDIRFunction_1)) 
+	N0014[ADCSInterface_1] -->|BelongsToClass| N0015(DWISADCSInterface) 
+	N0002[overpullUnderpullFDIRInfo_1] -->|IsProvidedTo| N0014((ADCSInterface_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?overpullUnderpullFDIRInfo
+WHERE {
+	?overpullUnderpullFDIRInfo rdf:type ddhub:DynamicDrillingSignal .
+	?overpullUnderpullFDIRInfo_1 rdf:type ddhub:DrillingFaultDetectionIsolationAndRecoveryAdvice .
+	?overpullIncident rdf:type ddhub:Overpull .
+	?underpullIncident rdf:type ddhub:Underpull .
+	?serviceCompany rdf:type ddhub:ServiceCompany .
+	?adviceComposer_1 rdf:type ddhub:DWISAdviceComposer .
+	?FDIRFunction_1 rdf:type ddhub:FDIRFunction .
+	?ADCSInterface_1 rdf:type ddhub:DWISADCSInterface .
+  FILTER (
+	?Attribute000 = overpullUnderpullFDIRInfo
+	&& 	?Attribute001 = overpullIncident
+	&& 	?Attribute002 = underpullIncident
+	&& 	?Attribute003 = serviceCompany
+	&& 	?Attribute004 = adviceComposer_1
+	&& 	?Attribute005 = overpullIncident
+	&& 	?Attribute006 = underpullIncident
+	&& 	?Attribute007 = FDIRFunction_1
+	&& 	?Attribute008 = ADCSInterface_1
+  )
+}
+```
 ## DWISADCSCapabilityDescriptor <!-- NOUN -->
 - Display name: DWIS ADCS Capability Descriptor
 - Parent class: [DWISInternalService](#DWISInternalService)
 - Definition set: DataProviders
+- Examples:
+``` dwis configurationData_0
+DynamicDrillingSignal:configurationData_0
+ConfigurationData:configurationData_1
+configurationData_1 HasDynamicValue configurationData_0
+DWISADCSInterface:ADCSCapabilityDescriptor_1
+configurationData_1 IsProvidedBy ADCSCapabilityDescriptor_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[configurationData_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[configurationData_1] -->|BelongsToClass| N0003(ConfigurationData) 
+	N0002[configurationData_1] -->|HasDynamicValue| N0000((configurationData_0)) 
+	N0004[ADCSCapabilityDescriptor_1] -->|BelongsToClass| N0005(DWISADCSInterface) 
+	N0002[configurationData_1] -->|IsProvidedBy| N0004((ADCSCapabilityDescriptor_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?configurationData_0
+WHERE {
+	?configurationData_0 rdf:type ddhub:DynamicDrillingSignal .
+	?configurationData_1 rdf:type ddhub:ConfigurationData .
+	?ADCSCapabilityDescriptor_1 rdf:type ddhub:DWISADCSInterface .
+  FILTER (
+	?Attribute000 = configurationData_0
+	&& 	?Attribute001 = ADCSCapabilityDescriptor_1
+  )
+}
+```
 ## Telemetry <!-- NOUN -->
 - Display name: Telemetry
 - Parent class: [DWISNoun](#DWISNoun)
@@ -47298,6 +49329,69 @@ WHERE {
   )
 }
 ```
+## IsCharacterizedBy <!-- VERB -->
+- Display name: Is Characterized By
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [WellBoreData](#WellBoreData)
+- Object class: [WellBoreDataCharateristic](#WellBoreDataCharateristic)
+- Definition set: ContextualData
+- Description: 
+this Verb is used to state some characteristics of a well bore data.
+- Examples:
+``` dwis trajectoryDescription_0
+DynamicDrillingSignal:trajectoryDescription_0
+TrajectoryDescription:trajectoryDescription_1
+trajectoryDescription_1 HasDynamicValue trajectoryDescription_0
+DirectionalServiceCompany:directionalServiceCompany_1
+trajectoryDescription_1 IsProvidedBy directionalServiceCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+trajectoryDescription_1 IsProvidedTo contextualDataBuilder_1
+Current:current_1
+trajectoryDescription_1 IsCharacterizedBy current_1
+Extrapolated: extrapolated_1
+trajectoryDescription_1 IsCharacterizedBy extrapolated_1
+Measured:measured_1
+trajectoryDescription_1 IsCharacterizedBy measured_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[trajectoryDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[trajectoryDescription_1] -->|BelongsToClass| N0003(TrajectoryDescription) 
+	N0002[trajectoryDescription_1] -->|HasDynamicValue| N0000((trajectoryDescription_0)) 
+	N0004[directionalServiceCompany_1] -->|BelongsToClass| N0005(DirectionalServiceCompany) 
+	N0002[trajectoryDescription_1] -->|IsProvidedBy| N0004((directionalServiceCompany_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[trajectoryDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[current_1] -->|BelongsToClass| N0009(Current) 
+	N0002[trajectoryDescription_1] -->|IsCharacterizedBy| N0008((current_1)) 
+	N0002[trajectoryDescription_1] -->|IsCharacterizedBy| N0010((extrapolated_1)) 
+	N0011[measured_1] -->|BelongsToClass| N0012(Measured) 
+	N0002[trajectoryDescription_1] -->|IsCharacterizedBy| N0011((measured_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?trajectoryDescription_0
+WHERE {
+	?trajectoryDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?trajectoryDescription_1 rdf:type ddhub:TrajectoryDescription .
+	?directionalServiceCompany_1 rdf:type ddhub:DirectionalServiceCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?current_1 rdf:type ddhub:Current .
+	?measured_1 rdf:type ddhub:Measured .
+  FILTER (
+	?Attribute000 = trajectoryDescription_0
+	&& 	?Attribute001 = directionalServiceCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = current_1
+	&& 	?Attribute004 = extrapolated_1
+	&& 	?Attribute005 = measured_1
+  )
+}
+```
 ## IsDependentOn <!-- VERB -->
 - Display name: IsDependentOn
 - Parent verb: [DWISVerb](#DWISVerb)
@@ -47584,13 +49678,13 @@ here is WGS84.
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
 ## HasFunction <!-- VERB -->
-- Display name: HasFunction
+- Display name: Has Function
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DataFlowNode](#DataFlowNode)
 - Definition set: DataFlow
 ## IsCommandFor <!-- VERB -->
-- Display name: IsCommandFor
+- Display name: Is Command For
 - Parent verb: [HasFunction](#HasFunction)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DWISNoun](#DWISNoun)
@@ -47662,97 +49756,97 @@ here is WGS84.
 - Object class: [ControlSystem](#ControlSystem)
 - Definition set: DataFlow
 ## IsTransformationInput <!-- VERB -->
-- Display name: IsTransformationInput
+- Display name: Is Transformation Input
 - Parent verb: [HasFunction](#HasFunction)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [Transformation](#Transformation)
 - Definition set: DataFlow
 ## IsBufferingInput <!-- VERB -->
-- Display name: IsBufferingInput
+- Display name: Is Buffering Input
 - Parent verb: [IsTransformationInput](#IsTransformationInput)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [Buffering](#Buffering)
 - Definition set: DataFlow
 ## IsDerivationInput <!-- VERB -->
-- Display name: IsDerivationInput
+- Display name: Is Derivation Input
 - Parent verb: [IsTransformationInput](#IsTransformationInput)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
 ## IsResamplingInput <!-- VERB -->
-- Display name: IsResamplingInput
+- Display name: Is Resampling Input
 - Parent verb: [IsTransformationInput](#IsTransformationInput)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [Resampling](#Resampling)
 - Definition set: DataFlow
 ## IsTransmissionInput <!-- VERB -->
-- Display name: IsTransmissionInput
+- Display name: Is Transmission Input
 - Parent verb: [HasFunction](#HasFunction)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [TransmissionLine](#TransmissionLine)
 - Definition set: DataFlow
 ## IsGeneratedBy <!-- VERB -->
-- Display name: IsGeneratedBy
+- Display name: Is Generated By
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DataFlowNode](#DataFlowNode)
 - Definition set: DataFlow
 ## IsComputedBy <!-- VERB -->
-- Display name: IsComputedBy
+- Display name: Is Computed By
 - Parent verb: [IsGeneratedBy](#IsGeneratedBy)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
 ## IsMeasuredBy <!-- VERB -->
-- Display name: IsMeasuredBy
+- Display name: Is Measured By
 - Parent verb: [IsGeneratedBy](#IsGeneratedBy)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
 ## IsRecordedFrom <!-- VERB -->
-- Display name: IsRecordedFrom
+- Display name: Is Recorded From
 - Parent verb: [IsGeneratedBy](#IsGeneratedBy)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
 ## IsTransformationOutput <!-- VERB -->
-- Display name: IsTransformationOutput
+- Display name: Is Transformation Output
 - Parent verb: [IsGeneratedBy](#IsGeneratedBy)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DataFlowNode](#DataFlowNode)
 - Definition set: DataFlow
 ## IsBufferingOutput <!-- VERB -->
-- Display name: IsBufferingOutput
+- Display name: Is Buffering Output
 - Parent verb: [IsTransformationOutput](#IsTransformationOutput)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [Buffering](#Buffering)
 - Definition set: DataFlow
 ## IsDerivedFrom <!-- VERB -->
-- Display name: IsDerivedFrom
+- Display name: Is Derived From
 - Parent verb: [IsTransformationOutput](#IsTransformationOutput)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
 ## IsIntegratedFrom <!-- VERB -->
-- Display name: IsIntegratedFrom
+- Display name: Is Integrated From
 - Parent verb: [IsTransformationOutput](#IsTransformationOutput)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
 ## IsResampledBy <!-- VERB -->
-- Display name: IsResampledBy
+- Display name: Is Resampled By
 - Parent verb: [IsTransformationOutput](#IsTransformationOutput)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [Resampling](#Resampling)
 - Definition set: DataFlow
 ## IsTransmissionOutput <!-- VERB -->
-- Display name: IsTransmissionOutput
+- Display name: Is Transmission Output
 - Parent verb: [IsGeneratedBy](#IsGeneratedBy)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [TransmissionLine](#TransmissionLine)
 - Definition set: DataFlow
 ## IsProcessedBy <!-- VERB -->
-- Display name: IsProcessedBy
+- Display name: Is Processed By
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DWISNoun](#DWISNoun)
@@ -47763,12 +49857,102 @@ here is WGS84.
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DataProvider](#DataProvider)
 - Definition set: DataProviders
+- Examples:
+``` dwis rigDescription_0
+DynamicDrillingSignal:rigDescription_0
+RigDescription:rigDescription_1
+rigDescription_1 HasDynamicValue rigDescription_0
+DrillingContractor:drillingContractor_1
+rigDescription_1 IsProvidedBy drillingContractor_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+rigDescription_1 IsProvidedTo contextualDataBuilder_1
+Current:current_1
+rigDescription_1 IsCharacterizedBy current_1
+``` 
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rigDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[rigDescription_1] -->|BelongsToClass| N0003(RigDescription) 
+	N0002[rigDescription_1] -->|HasDynamicValue| N0000((rigDescription_0)) 
+	N0004[drillingContractor_1] -->|BelongsToClass| N0005(DrillingContractor) 
+	N0002[rigDescription_1] -->|IsProvidedBy| N0004((drillingContractor_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[rigDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[current_1] -->|BelongsToClass| N0009(Current) 
+	N0002[rigDescription_1] -->|IsCharacterizedBy| N0008((current_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rigDescription_0
+WHERE {
+	?rigDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?rigDescription_1 rdf:type ddhub:RigDescription .
+	?drillingContractor_1 rdf:type ddhub:DrillingContractor .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?current_1 rdf:type ddhub:Current .
+  FILTER (
+	?Attribute000 = rigDescription_0
+	&& 	?Attribute001 = drillingContractor_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = current_1
+  )
+}
+```
 ## IsProvidedTo <!-- VERB -->
 - Display name: IsProvidedTo
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DataProvider](#DataProvider)
 - Definition set: DataProviders
+- Examples:
+``` dwis rigDescription_0
+DynamicDrillingSignal:rigDescription_0
+RigDescription:rigDescription_1
+rigDescription_1 HasDynamicValue rigDescription_0
+DrillingContractor:drillingContractor_1
+rigDescription_1 IsProvidedBy drillingContractor_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+rigDescription_1 IsProvidedTo contextualDataBuilder_1
+Current:current_1
+rigDescription_1 IsCharacterizedBy current_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rigDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[rigDescription_1] -->|BelongsToClass| N0003(RigDescription) 
+	N0002[rigDescription_1] -->|HasDynamicValue| N0000((rigDescription_0)) 
+	N0004[drillingContractor_1] -->|BelongsToClass| N0005(DrillingContractor) 
+	N0002[rigDescription_1] -->|IsProvidedBy| N0004((drillingContractor_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[rigDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[current_1] -->|BelongsToClass| N0009(Current) 
+	N0002[rigDescription_1] -->|IsCharacterizedBy| N0008((current_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rigDescription_0
+WHERE {
+	?rigDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?rigDescription_1 rdf:type ddhub:RigDescription .
+	?drillingContractor_1 rdf:type ddhub:DrillingContractor .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?current_1 rdf:type ddhub:Current .
+  FILTER (
+	?Attribute000 = rigDescription_0
+	&& 	?Attribute001 = drillingContractor_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = current_1
+  )
+}
+```
 ## IsTransmittedBy <!-- VERB -->
 - Display name: IsTransmittedBy
 - Parent verb: [DWISVerb](#DWISVerb)

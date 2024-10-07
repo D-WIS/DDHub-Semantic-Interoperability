@@ -154,7 +154,9 @@ ddhub:AdvisedTarget a owl:Class;
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:Advice. 
 ddhub:Advisor a owl:Class; 
-              rdfs:comment ""@EN; 
+              rdfs:comment """An advisor is a computation unit that produces an advice on how to control a process. Its output is typically
+an AdvisorySystemAdvice.
+"""@EN; 
               rdfs:subClassOf ddhub:ComputationUnit. 
 ddhub:AdvisorySystemAdvice a owl:Class; 
                            rdfs:comment """An advisory system provides one or several advices. These advices are structured data that are stored as a JSon
@@ -1037,6 +1039,10 @@ ddhub:CasingShoe a owl:Class;
 ddhub:CasingString a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:Tubulars. 
+ddhub:CasingStringDescription a owl:Class; 
+                              rdfs:comment """A casing string is a drill-stem that is used to complete a section. It is composed of casing joints and a shoe track.
+"""@EN; 
+                              rdfs:subClassOf ddhub:DrillStemDescription. 
 ddhub:CasingTongs a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:DrillPipeTongs. 
@@ -1140,6 +1146,11 @@ Unit = 1.0
 ddhub:CementBondLoggingTools a owl:Class; 
                              rdfs:comment ""@EN; 
                              rdfs:subClassOf ddhub:WirelineLoggingTools. 
+ddhub:CementFluidDescription a owl:Class; 
+                             rdfs:comment """Cement fluid contains information about the density, rheological behavior and chemical characteristics of fluids
+used during a cementing operation, e.g., cement slurry but also spacer.
+"""@EN; 
+                             rdfs:subClassOf ddhub:FluidDescription. 
 ddhub:CementHead a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:CementingEquipment. 
@@ -1437,6 +1448,9 @@ where
 a = 1.0/(2.0*PI), i.e., 0.15915494309189535
 """@EN; 
              rdfs:subClassOf ddhub:Unit. 
+ddhub:CirculationControlSystem a owl:Class; 
+                               rdfs:comment ""@EN; 
+                               rdfs:subClassOf ddhub:ControlSystem. 
 ddhub:CirculationStartupProcedure a owl:Class; 
                                   rdfs:comment """The circulation stop procedure defines how to stop the mud pumps in a way that limit potential bull-heading effects
 that could result in undesired downhole pressure conditions with regards to the geo-pressure window.
@@ -1478,6 +1492,14 @@ ddhub:CollapsePressureGradient a owl:Class;
 ddhub:Command a owl:Class; 
               rdfs:comment ""@EN; 
               rdfs:subClassOf ddhub:ProcessData. 
+ddhub:CompletionFluidDescription a owl:Class; 
+                                 rdfs:comment """Completion fluid contains information about the density, rheological behavior and chemical characteristics of a
+fluid used during a completion operation.
+"""@EN; 
+                                 rdfs:subClassOf ddhub:FluidDescription. 
+ddhub:CompletionServiceCompany a owl:Class; 
+                               rdfs:comment ""@EN; 
+                               rdfs:subClassOf ddhub:ServiceCompany. 
 ddhub:CompletionWorkoverRiser a owl:Class; 
                               rdfs:comment ""@EN; 
                               rdfs:subClassOf ddhub:MarineSystem. 
@@ -1521,6 +1543,9 @@ ddhub:ConductorDrivePipe a owl:Class;
 ddhub:ConductorTensioners a owl:Class; 
                           rdfs:comment ""@EN; 
                           rdfs:subClassOf ddhub:MarineSystem. 
+ddhub:ConfigurationData a owl:Class; 
+                        rdfs:comment ""@EN; 
+                        rdfs:subClassOf ddhub:ContextualData. 
 ddhub:ConnectedCondition a owl:Class; 
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:ValidityCondition. 
@@ -1539,6 +1564,10 @@ The consistency index in rheology measures a fluid's resistance to flow; it quan
 The meaningful precision of a consistency index in rheology is typically: 0.0001 Pa•s
 """@EN; 
                                        rdfs:subClassOf ddhub:MeasurableQuantity. 
+ddhub:ContextualData a owl:Class; 
+                     rdfs:comment """Contextual data are structured objects stored in a JSon string.
+"""@EN; 
+                     rdfs:subClassOf ddhub:JSonDataType. 
 ddhub:ContinuousDataType a owl:Class; 
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:DataType. 
@@ -1775,6 +1804,10 @@ Hour = 60.0 * Minute
 Minute = 60.0
 """@EN; 
                         rdfs:subClassOf ddhub:Unit. 
+ddhub:Current a owl:Class; 
+              rdfs:comment """Current characterizes that the wellbore data is the currently selected one as the official one.
+"""@EN; 
+              rdfs:subClassOf ddhub:WellBoreDataCharateristic. 
 ddhub:CurvatureDrillingQuantity a owl:Class; 
                                 rdfs:comment """A curvature is the second derivative of a position compared to the curvilinear abscissa: $\\frac{d^2x}{ds^2}$, where $x$ is the position and $s$ is the curvilinear abscissa.
 The dimension of curvature is:
@@ -1835,7 +1868,7 @@ ddhub:DataFlowNode a owl:Class;
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:DataProvider a owl:Class; 
-                   rdfs:comment """A data provider is any sources for data
+                   rdfs:comment """A data provider is any sources for data.
 """@EN; 
                    rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:DataType a owl:Class; 
@@ -3037,9 +3070,6 @@ the rotary steerable system.
 ddhub:Drawworks a owl:Class; 
                 rdfs:comment ""@EN; 
                 rdfs:subClassOf ddhub:HoistingSystem. 
-ddhub:DrawWorksControlSystem a owl:Class; 
-                             rdfs:comment ""@EN; 
-                             rdfs:subClassOf ddhub:ControlSystem. 
 ddhub:DrillCollars a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:DrillString. 
@@ -3086,6 +3116,11 @@ and then possibly recover from that incident.
 ddhub:DrillingFluid a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:CirculationSystem. 
+ddhub:DrillingFluidDescription a owl:Class; 
+                               rdfs:comment """A drilling fluid is a fluid that is used well
+used during a drilling operation.
+"""@EN; 
+                               rdfs:subClassOf ddhub:FluidDescription. 
 ddhub:DrillingFluidGasComponent a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:GasComponent. 
@@ -3163,6 +3198,11 @@ ddhub:DrillPipesInner a owl:Class;
 ddhub:DrillPipeTongs a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:DrillFloorEquipment. 
+ddhub:DrillStemDescription a owl:Class; 
+                           rdfs:comment """A dill-stem is a generic term for all strings that are run in a borehole. The drill-stem describes the geometrical
+and mechanical characteristics of such a string. 
+"""@EN; 
+                           rdfs:subClassOf ddhub:WellBoreData. 
 ddhub:DrillStemMaterialStrengthDrillingQuantity a owl:Class; 
                                                 rdfs:comment """Material strength refers to the ability of a material to withstand an applied force or load without failing or deforming. It measures how much stress a material can endure before it breaks, bends, or permanently deforms, often categorized into types like tensile, compressive, and shear strength.
 The dimension of material strength is:
@@ -3184,6 +3224,11 @@ ddhub:DrillString a owl:Class;
 ddhub:DrillStringCenterLineFrame a owl:Class; 
                                  rdfs:comment ""@EN; 
                                  rdfs:subClassOf ddhub:OneDimensionalCurviLinearReferenceFrame. 
+ddhub:DrillStringDescription a owl:Class; 
+                             rdfs:comment """A drill-string is a drill-stem that is used during a drilling operation. It is composed of drill-pipes, drill-collars,
+BHA elements and is terminated either by a bit, a bull-nose, or other special elements such as fishing equipment, etc.
+"""@EN; 
+                             rdfs:subClassOf ddhub:DrillStemDescription. 
 ddhub:DrillStringMagneticFluxDrillingQuantity a owl:Class; 
                                               rdfs:comment """Magnetic flux is the measure of the total magnetic field passing through a given area. It quantifies the strength and distribution of a magnetic field over a surface.
 The dimension of magnetic flux is:
@@ -3227,7 +3272,7 @@ ddhub:DWISAdviceComposer a owl:Class;
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:DWISInternalService. 
 ddhub:DWISAttributeCardinalityRestriction a owl:Class, owl:Restriction; 
-                                          owl:onClass ddhub:RunnableFunction, ddhub:Advisor, ddhub:BandPassFilter, ddhub:HighPassFilter, ddhub:LowPassFilter, ddhub:NumberOfSampleMovingAverage, ddhub:TimeWindowMovingAverage, ddhub:Buffering, ddhub:NumberOfItemsRangeExtraction, ddhub:TimeWindowRangeExtraction, ddhub:Resampling, ddhub:DataProvider, ddhub:OperatingCompany, ddhub:ServiceCompany, ddhub:DirectionalServiceCompany, ddhub:DrillingFluidProvider, ddhub:LoggingServiceCompany, ddhub:CementingServiceCompany, ddhub:DataAnalysisServiceCompany, ddhub:DrillingContractor, ddhub:DWISInternalService, ddhub:Telemetry, ddhub:DrillingDataPoint, ddhub:DrillingSignal, ddhub:DynamicDrillingSignal, ddhub:DataEndPoint, ddhub:WitsMLTimeBasedLogEndPoint, ddhub:EndPointMapping, ddhub:HydraulicConnectedState, ddhub:HydraulicJunction, ddhub:MeasurableQuantity, ddhub:MechanicalElementState, ddhub:OneDimensionalReferenceFrame, ddhub:Quantity, ddhub:Unit, ddhub:Clock, ddhub:SynchronizationGroup, ddhub:FullScaleUncertainty, ddhub:SensorUncertainty; 
+                                          owl:onClass ddhub:RunnableFunction, ddhub:Advisor, ddhub:BandPassFilter, ddhub:HighPassFilter, ddhub:LowPassFilter, ddhub:NumberOfSampleMovingAverage, ddhub:TimeWindowMovingAverage, ddhub:Buffering, ddhub:NumberOfItemsRangeExtraction, ddhub:TimeWindowRangeExtraction, ddhub:Resampling, ddhub:DataProvider, ddhub:OperatingCompany, ddhub:ServiceCompany, ddhub:DirectionalServiceCompany, ddhub:DrillingFluidProvider, ddhub:LoggingServiceCompany, ddhub:CementingServiceCompany, ddhub:CompletionServiceCompany, ddhub:DataAnalysisServiceCompany, ddhub:DrillingContractor, ddhub:DWISInternalService, ddhub:Telemetry, ddhub:DrillingDataPoint, ddhub:DrillingSignal, ddhub:DynamicDrillingSignal, ddhub:DataEndPoint, ddhub:WitsMLTimeBasedLogEndPoint, ddhub:EndPointMapping, ddhub:HydraulicConnectedState, ddhub:HydraulicJunction, ddhub:MeasurableQuantity, ddhub:MechanicalElementState, ddhub:OneDimensionalReferenceFrame, ddhub:Quantity, ddhub:Unit, ddhub:Clock, ddhub:SynchronizationGroup, ddhub:FullScaleUncertainty, ddhub:SensorUncertainty; 
                                           owl:onProperty ddhub:IsAuxiliary, ddhub:AdviceType, ddhub:MinFrequency, ddhub:MaxFrequency, ddhub:CutOffFrequency, ddhub:NumberOfSamples, ddhub:TimeWindow, ddhub:BufferingInterval, ddhub:NumberOfItems, ddhub:ResamplingRate, ddhub:ResamplingDelay, ddhub:Validity, ddhub:ProviderName, ddhub:NumberOfRepeaters, ddhub:DistanceBetweenRepeaters, ddhub:AverageDelayByRepeater, ddhub:IsValid, ddhub:Value, ddhub:TimeStampAtSource, ddhub:TimeStampAcquisition, ddhub:EndPointDescription, ddhub:WellUID, ddhub:WellName, ddhub:WellboreUID, ddhub:WellboreName, ddhub:LogUID, ddhub:LogName, ddhub:Mnemonic, ddhub:FixedIndices, ddhub:ValuesIndices, ddhub:MeasurementIndex, ddhub:LeftToRight, ddhub:RightToLeft, ddhub:MeaningfulPrecision, ddhub:PostiveUpward, ddhub:L, ddhub:M, ddhub:T, ddhub:I, ddhub:ThT, ddhub:N, ddhub:J, ddhub:Theta, ddhub:Omega, ddhub:SIUnit, ddhub:Symbol, ddhub:ConversionFactorA, ddhub:ConversionFactorB, ddhub:LeapSeconds, ddhub:Stratum, ddhub:NetworkSynchronizationLatencyAverage, ddhub:NetworkSynchronizationLatencyStandardDeviation, ddhub:Resolution, ddhub:MaximumFluctuations, ddhub:SynchronizationDelay, ddhub:SamplingRate, ddhub:FullScale, ddhub:ProportionError, ddhub:Accuracy, ddhub:Precision; 
                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger. 
 ddhub:DWISBlackboard a owl:Class; 
@@ -3468,6 +3513,11 @@ ddhub:Expandables a owl:Class;
 ddhub:ExtendFrame a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:TopDrive. 
+ddhub:Extrapolated a owl:Class; 
+                   rdfs:comment """Extrapolated characterizes that the wellbore data is being partially measured/observed and also extended to
+positions that have not been measured/observed yet.
+"""@EN; 
+                   rdfs:subClassOf ddhub:WellBoreDataCharateristic. 
 ddhub:Fahrenheit a owl:Class; 
                  rdfs:comment """[v] = a * [SI] + b
 where
@@ -3622,6 +3672,11 @@ ddhub:FluidComponent a owl:Class;
 ddhub:FluidDensityTools a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:WirelineLoggingTools. 
+ddhub:FluidDescription a owl:Class; 
+                       rdfs:comment """Drilling fluid contains information about the density, rheological behavior, thermo-physical and chemical characteristics of a fluid
+used during a drilling operation.
+"""@EN; 
+                       rdfs:subClassOf ddhub:WellBoreData. 
 ddhub:FluidShearRateQuantity a owl:Class; 
                              rdfs:comment """Frequency is the number of occurrences of a repeating event per unit of time.
 The dimension of frequency is:
@@ -3953,6 +4008,11 @@ The meaningful precision of formation electric resistivity in the drilling conte
 ddhub:FormationSolidComponent a owl:Class; 
                               rdfs:comment ""@EN; 
                               rdfs:subClassOf ddhub:SolidComponent. 
+ddhub:FormationStrengthDescription a owl:Class; 
+                                   rdfs:comment """The formation strength data structure describes the formation strength and internal friction angle of the formation
+encountered along the wellbore.
+"""@EN; 
+                                   rdfs:subClassOf ddhub:WellBoreData. 
 ddhub:FormationStrengthDrillingQuantity a owl:Class; 
                                         rdfs:comment """Material strength refers to the ability of a material to withstand an applied force or load without failing or deforming. It measures how much stress a material can endure before it breaks, bends, or permanently deforms, often categorized into types like tensile, compressive, and shear strength.
 The dimension of material strength is:
@@ -4142,6 +4202,16 @@ ddhub:GenericUncertainty a owl:Class;
                          rdfs:comment """The uncertainty is represented by a `Histogram`.
 """@EN; 
                          rdfs:subClassOf ddhub:SignalUncertainty. 
+ddhub:GeoPressuresDescription a owl:Class; 
+                              rdfs:comment """The geo-pressure data structure describes the pore pressure, collapse pressure, min horizontal stress, fracturing pressure
+along the wellbore.
+"""@EN; 
+                              rdfs:subClassOf ddhub:WellBoreData. 
+ddhub:GeoThermalDescription a owl:Class; 
+                            rdfs:comment """The geothermal data structure describes the temperature and thermophysical properties of the formation encountered
+along the wellbore.
+"""@EN; 
+                            rdfs:subClassOf ddhub:WellBoreData. 
 ddhub:Gigaampere a owl:Class; 
                  rdfs:comment """[v] = a * [SI]
 where
@@ -4976,6 +5046,9 @@ ddhub:HighPassFilter a owl:Class;
 ddhub:HighPressureRiser a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:SurfaceRiser. 
+ddhub:HoistingControlSystem a owl:Class; 
+                            rdfs:comment ""@EN; 
+                            rdfs:subClassOf ddhub:ControlSystem. 
 ddhub:HoistingSystem a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:RigEquipment. 
@@ -5460,6 +5533,11 @@ and
 InternationalNauticalMile = 1852.0 reference: https://www.merriam-webster.com/dictionary/nautical%20mile
 """@EN; 
                                 rdfs:subClassOf ddhub:Unit. 
+ddhub:Interpreter a owl:Class; 
+                  rdfs:comment """An interpreter is a computation unit that interprets the state of a process. Its output is typically a
+ComputedState.
+"""@EN; 
+                  rdfs:subClassOf ddhub:ComputationUnit. 
 ddhub:InverseAtmosphere a owl:Class; 
                         rdfs:comment """[v] = a * [SI]
 where
@@ -5547,6 +5625,12 @@ ddhub:IsBufferingOutput a owl:ObjectProperty;
                         rdfs:domain ddhub:DrillingDataPoint; 
                         rdfs:range ddhub:Buffering; 
                         rdfs:subPropertyOf ddhub:IsTransformationOutput. 
+ddhub:IsCharacterizedBy a owl:ObjectProperty; 
+                        rdfs:comment """this Verb is used to state some characteristics of a well bore data.
+"""@EN; 
+                        rdfs:domain ddhub:WellBoreData; 
+                        rdfs:range ddhub:WellBoreDataCharateristic; 
+                        rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsCommandFor a owl:ObjectProperty; 
                    rdfs:comment ""@EN; 
                    rdfs:domain ddhub:DrillingDataPoint; 
@@ -7419,6 +7503,11 @@ ddhub:LinerPacker a owl:Class;
 ddhub:Liners a owl:Class; 
              rdfs:comment ""@EN; 
              rdfs:subClassOf ddhub:CasingString. 
+ddhub:LinerStringDescription a owl:Class; 
+                             rdfs:comment """A liner string is a drill-stem that is used to complete a section. It is composed of casing joints, possibly a shoe track
+a liner hanger and drill-pipes.
+"""@EN; 
+                             rdfs:subClassOf ddhub:DrillStemDescription. 
 ddhub:LiquidComponent a owl:Class; 
                       rdfs:comment ""@EN; 
                       rdfs:subClassOf ddhub:FluidComponent. 
@@ -7879,6 +7968,10 @@ ddhub:MeasurableQuantityUnitAssociation a owl:Class;
 and a `Unit` as for example when defining a `UnitSystem`.
 """@EN; 
                                         rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:Measured a owl:Class; 
+               rdfs:comment """Measured characterizes that the wellbore data has been measured or observed.
+"""@EN; 
+               rdfs:subClassOf ddhub:WellBoreDataCharateristic. 
 ddhub:MeasuredDepth a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:PrototypeData. 
@@ -9244,9 +9337,6 @@ ddhub:MudPulseTelemetry a owl:Class;
 ddhub:MudPump a owl:Class; 
               rdfs:comment ""@EN; 
               rdfs:subClassOf ddhub:CirculationSystem. 
-ddhub:MudPumpsControlSystem a owl:Class; 
-                            rdfs:comment ""@EN; 
-                            rdfs:subClassOf ddhub:ControlSystem. 
 ddhub:MudStandpipe a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:MudLines. 
@@ -10092,7 +10182,7 @@ ddhub:PistonMudPump a owl:Class;
                     rdfs:subClassOf ddhub:MudPump. 
 ddhub:Plan a owl:Class; 
            rdfs:comment ""@EN; 
-           rdfs:subClassOf ddhub:DataFlowNode. 
+           rdfs:subClassOf ddhub:ContextualData. 
 ddhub:PlaneAngleDrillingQuantity a owl:Class; 
                                  rdfs:comment """A plane angle is the angle formed between two intersecting lines or planes in a two-dimensional or three-dimensional space.
 The dimension of plane angle is:
@@ -10108,6 +10198,11 @@ $$[{\\theta}]$$.
 The SI unit for **plane angle** is: radian with the associated unit label $rad$
 """@EN; 
                          rdfs:subClassOf ddhub:Quantity. 
+ddhub:Planned a owl:Class; 
+              rdfs:comment """Planned characterizes that the wellbore data is described in its planned stage. This applies to wellbore data
+that is intended to be constructed.
+"""@EN; 
+              rdfs:subClassOf ddhub:WellBoreDataCharateristic. 
 ddhub:Plugged a owl:Class; 
               rdfs:comment """This Noun is used to refer to a situation during which the hydraulic flow-path is partially or fully blocked.
 """@EN; 
@@ -11036,9 +11131,19 @@ ddhub:ProcessData a owl:Class;
 ddhub:ProcessState a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:ComputedState. 
+ddhub:ProductionStringDescription a owl:Class; 
+                                  rdfs:comment """A production string is a drill-stem that is used to complete a wellbore. It is composed of tubings, expansion joints,
+packers, etc.
+"""@EN; 
+                                  rdfs:subClassOf ddhub:DrillStemDescription. 
 ddhub:ProductionTools a owl:Class; 
                       rdfs:comment ""@EN; 
                       rdfs:subClassOf ddhub:WirelineLoggingTools. 
+ddhub:Prognosed a owl:Class; 
+                rdfs:comment """Prognosed characterizes that the wellbore data is described in its prognosed stage. This applies to wellbore
+data that exists from before but that may be associated with uncertainty like the geology.
+"""@EN; 
+                rdfs:subClassOf ddhub:WellBoreDataCharateristic. 
 ddhub:Proportion a owl:Class; 
                  rdfs:comment """No conversion necessary as the unit choice is SI
 """@EN; 
@@ -11078,7 +11183,7 @@ ddhub:PrototypeData a owl:Class;
 ddhub:ProviderName a owl:DatatypeProperty, owl:FunctionalProperty; 
                    rdfs:comment """
 """@EN; 
-                   rdfs:domain ddhub:DataProvider, ddhub:OperatingCompany, ddhub:ServiceCompany, ddhub:DirectionalServiceCompany, ddhub:DrillingFluidProvider, ddhub:LoggingServiceCompany, ddhub:CementingServiceCompany, ddhub:DataAnalysisServiceCompany, ddhub:DrillingContractor, ddhub:DWISInternalService; 
+                   rdfs:domain ddhub:DataProvider, ddhub:OperatingCompany, ddhub:ServiceCompany, ddhub:DirectionalServiceCompany, ddhub:DrillingFluidProvider, ddhub:LoggingServiceCompany, ddhub:CementingServiceCompany, ddhub:CompletionServiceCompany, ddhub:DataAnalysisServiceCompany, ddhub:DrillingContractor, ddhub:DWISInternalService; 
                    rdfs:range xsd:string. 
 ddhub:Psi a owl:Class; 
           rdfs:comment """[v] = a * [SI]
@@ -12152,6 +12257,11 @@ ddhub:RigActionPlan a owl:Class;
 ddhub:RigChokeControlSystem a owl:Class; 
                             rdfs:comment ""@EN; 
                             rdfs:subClassOf ddhub:ControlSystem. 
+ddhub:RigDescription a owl:Class; 
+                     rdfs:comment """The rig data structure describes the characteristics of the drilling equipment and any additional equipment
+associated with non-standard drilling methods, e.g., back-pressure MPD, dual-gradient,...
+"""@EN; 
+                     rdfs:subClassOf ddhub:WellBoreData. 
 ddhub:RigEquipment a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:Equipment. 
@@ -12243,6 +12353,9 @@ ddhub:RotationalVelocityLimit a owl:Class;
                               rdfs:comment """This Noun is used to refer to a rotational velocity limit.
 """@EN; 
                               rdfs:subClassOf ddhub:DrillingLimit. 
+ddhub:RotationControlSystem a owl:Class; 
+                            rdfs:comment ""@EN; 
+                            rdfs:subClassOf ddhub:ControlSystem. 
 ddhub:RotationPerHour a owl:Class; 
                       rdfs:comment """[v] = a * [SI]
 where
@@ -12464,7 +12577,9 @@ ddhub:SignalUncertainty a owl:Class;
 """@EN; 
                         rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:Simulator a owl:Class; 
-                rdfs:comment ""@EN; 
+                rdfs:comment """A simulator is a computation unit that tries to replicate the outputs of a process. Its output is typically
+a set of ComputedData, i.e., a specialisation of DrillingDataPoint.
+"""@EN; 
                 rdfs:subClassOf ddhub:ComputationUnit. 
 ddhub:SingleActing a owl:Class; 
                    rdfs:comment ""@EN; 
@@ -12902,6 +13017,11 @@ ddhub:StrainWaveBasedDiscretization a owl:Class;
                                     rdfs:comment """A model can properly estimate values at the level of strain wave propagation.
 """@EN; 
                                     rdfs:subClassOf ddhub:ModellingDiscretization. 
+ddhub:StratigraphyDescription a owl:Class; 
+                              rdfs:comment """The stratigraphy data structure describes the type of rock, the porosity, permeability and fluid saturations
+of the formation layers that are encountered along the wellbore.
+"""@EN; 
+                              rdfs:subClassOf ddhub:WellBoreData. 
 ddhub:Stratum a owl:DatatypeProperty, owl:FunctionalProperty; 
               rdfs:comment """
 """@EN; 
@@ -13410,9 +13530,6 @@ ddhub:ToolJoint4ReferenceLocation a owl:Class;
 ddhub:TopDrive a owl:Class; 
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:SurfaceRotationSystem. 
-ddhub:TopDriveControlSystem a owl:Class; 
-                            rdfs:comment ""@EN; 
-                            rdfs:subClassOf ddhub:ControlSystem. 
 ddhub:TopOfRatHoleLocation a owl:Class; 
                            rdfs:comment ""@EN; 
                            rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
@@ -13493,6 +13610,10 @@ Atmosphere = 101325.0 reference: https://en.wikipedia.org/wiki/Atmospheric_press
 ddhub:TorsionalMotionType a owl:Class; 
                           rdfs:comment ""@EN; 
                           rdfs:subClassOf ddhub:MotionType. 
+ddhub:TrajectoryDescription a owl:Class; 
+                            rdfs:comment """A trajectory contains information about the position of the wellbore.
+"""@EN; 
+                            rdfs:subClassOf ddhub:WellBoreData. 
 ddhub:Transformation a owl:Class; 
                      rdfs:comment """Represents a transformation applied to some signals that produces other signals
 """@EN; 
@@ -14026,9 +14147,22 @@ ddhub:WeightTransferObjective a owl:Class;
                               rdfs:comment """This Noun is used to refer to the objective of transferring weight to the bottom of the drill-stem.
 """@EN; 
                               rdfs:subClassOf ddhub:DrillingObjective. 
+ddhub:WellboreArchitectureDescription a owl:Class; 
+                                      rdfs:comment """The wellbore architecture provides information about the casings and liners in place as well as the current
+open hole configuration. Also the surface architecture, i.e., everything above the wellhead, is also described, e.g., BOP, high 
+pressure riser, low pressure riser, expansion joint,...
+"""@EN; 
+                                      rdfs:subClassOf ddhub:WellBoreData. 
 ddhub:WellboreCenterLineFrame a owl:Class; 
                               rdfs:comment ""@EN; 
                               rdfs:subClassOf ddhub:OneDimensionalCurviLinearReferenceFrame. 
+ddhub:WellBoreData a owl:Class; 
+                   rdfs:comment ""@EN; 
+                   rdfs:subClassOf ddhub:ContextualData. 
+ddhub:WellBoreDataCharateristic a owl:Class; 
+                                rdfs:comment """This Noun is used to characterize a piece of wellbore data.
+"""@EN; 
+                                rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:WellboreName a owl:DatatypeProperty, owl:FunctionalProperty; 
                    rdfs:comment """
 """@EN; 
