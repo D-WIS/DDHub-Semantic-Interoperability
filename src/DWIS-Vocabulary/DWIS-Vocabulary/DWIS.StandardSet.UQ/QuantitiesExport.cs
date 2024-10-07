@@ -64,7 +64,7 @@ namespace DWIS.StandardSet.UQ
                 {
                     foreach (var quantity in BasePhysicalQuantity.AvailableBasePhysicalQuantities)
                     {
-                        TypedIndividual quantityIndividual = new TypedIndividual(GetValidName(quantity.Name), quantityNoun);
+                        TypedIndividual quantityIndividual = new TypedIndividual(GetValidName(quantity.Name), quantityNoun, vocabulary);
                         quantities.Population.Add(quantityIndividual);
 
                         IndividualAttribute att;
@@ -104,7 +104,7 @@ namespace DWIS.StandardSet.UQ
                         {
                             foreach (var unit in quantity.UnitChoices)
                             {
-                                TypedIndividual unitIndividual = new TypedIndividual(GetValidName(unit.UnitName), unitNoun);
+                                TypedIndividual unitIndividual = new TypedIndividual(GetValidName(unit.UnitName), unitNoun, vocabulary);
 
                                 if (unitIndividual.Name == "arcsecond")
                                 {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Security.Principal;
 
@@ -113,6 +114,26 @@ namespace DWIS.Vocabulary.Development
         {
             if (other == null) return 1;
             return Name.CompareTo(other.Name);
+        }
+
+        public NounAttribute[] GetAllAttributes(DWISVocabulary vocabulary)
+        {
+            List<NounAttribute> attributes = new List<NounAttribute>();
+            if (NounAttributes != null)
+            {
+                attributes.AddRange(NounAttributes);
+            }
+            Noun parent = null;
+            Noun current = this;
+            while (vocabulary.GetNoun(current.ParentNounName, out parent) && parent != null)
+            {
+                if (parent.NounAttributes != null)
+                {
+                    attributes.AddRange(parent.NounAttributes);
+                }
+                current = parent;
+            }
+            return attributes.ToArray();
         }
     }
 }
