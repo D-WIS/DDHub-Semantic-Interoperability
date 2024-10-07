@@ -18,6 +18,7 @@ IsImpactDescriptionSignalFor,
 IsRecommendedBy,
 IsRecommendedFor,
 HasControlLimit,
+IsCharacterizedBy,
 IsDependentOn,
 IsObservableFrom,
 HasPressureReference,
@@ -172,6 +173,7 @@ HasUncertaintyHistogram
 	public static string IsRecommendedBy = "IsRecommendedBy";
 	public static string IsRecommendedFor = "IsRecommendedFor";
 	public static string HasControlLimit = "HasControlLimit";
+	public static string IsCharacterizedBy = "IsCharacterizedBy";
 	public static string IsDependentOn = "IsDependentOn";
 	public static string IsObservableFrom = "IsObservableFrom";
 	public static string HasPressureReference = "HasPressureReference";

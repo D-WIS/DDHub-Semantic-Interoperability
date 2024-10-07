@@ -50,6 +50,40 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWIS.Vocabulary.InstanceEdi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DWIS.RenameNounsInExamples", "DWIS.RenameNounsInExamples\DWIS.RenameNounsInExamples.csproj", "{F80F4165-8844-4887-A8EA-D613165C1103}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vocabulary", "Vocabulary", "{CF2537FB-A715-4093-A40E-155C61C6CF17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Definitions", "Definitions", "{6448F601-D036-4F89-AACB-0D3B783F7EC1}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\docs\vocabulary_development\definitions\ADCS.md = ..\..\..\docs\vocabulary_development\definitions\ADCS.md
+		..\..\..\docs\vocabulary_development\definitions\AdvisorySystemAdvice.md = ..\..\..\docs\vocabulary_development\definitions\AdvisorySystemAdvice.md
+		..\..\..\docs\vocabulary_development\definitions\ContextualData.md = ..\..\..\docs\vocabulary_development\definitions\ContextualData.md
+		..\..\..\docs\vocabulary_development\definitions\DataDependencies.md = ..\..\..\docs\vocabulary_development\definitions\DataDependencies.md
+		..\..\..\docs\vocabulary_development\definitions\DataFlow.md = ..\..\..\docs\vocabulary_development\definitions\DataFlow.md
+		..\..\..\docs\vocabulary_development\definitions\DataProviders.md = ..\..\..\docs\vocabulary_development\definitions\DataProviders.md
+		..\..\..\docs\vocabulary_development\definitions\DataTransmission.md = ..\..\..\docs\vocabulary_development\definitions\DataTransmission.md
+		..\..\..\docs\vocabulary_development\definitions\DataValidity.md = ..\..\..\docs\vocabulary_development\definitions\DataValidity.md
+		..\..\..\docs\vocabulary_development\definitions\DrillingDataSemantics.md = ..\..\..\docs\vocabulary_development\definitions\DrillingDataSemantics.md
+		..\..\..\docs\vocabulary_development\definitions\DrillingEquipment.md = ..\..\..\docs\vocabulary_development\definitions\DrillingEquipment.md
+		..\..\..\docs\vocabulary_development\definitions\DrillingIncident.md = ..\..\..\docs\vocabulary_development\definitions\DrillingIncident.md
+		..\..\..\docs\vocabulary_development\definitions\DrillingLimit.md = ..\..\..\docs\vocabulary_development\definitions\DrillingLimit.md
+		..\..\..\docs\vocabulary_development\definitions\DrillingObjective.md = ..\..\..\docs\vocabulary_development\definitions\DrillingObjective.md
+		..\..\..\docs\vocabulary_development\definitions\DrillingProcedure.md = ..\..\..\docs\vocabulary_development\definitions\DrillingProcedure.md
+		..\..\..\docs\vocabulary_development\definitions\DWISSemantics.md = ..\..\..\docs\vocabulary_development\definitions\DWISSemantics.md
+		..\..\..\docs\vocabulary_development\definitions\EndPoints.md = ..\..\..\docs\vocabulary_development\definitions\EndPoints.md
+		..\..\..\docs\vocabulary_development\definitions\Hydraulics.md = ..\..\..\docs\vocabulary_development\definitions\Hydraulics.md
+		..\..\..\docs\vocabulary_development\definitions\MeasurableQuantityTypes.md = ..\..\..\docs\vocabulary_development\definitions\MeasurableQuantityTypes.md
+		..\..\..\docs\vocabulary_development\definitions\MechanicalModel.md = ..\..\..\docs\vocabulary_development\definitions\MechanicalModel.md
+		..\..\..\docs\vocabulary_development\definitions\Mechanics.md = ..\..\..\docs\vocabulary_development\definitions\Mechanics.md
+		..\..\..\docs\vocabulary_development\definitions\Model.md = ..\..\..\docs\vocabulary_development\definitions\Model.md
+		..\..\..\docs\vocabulary_development\definitions\PhysicalLocation.md = ..\..\..\docs\vocabulary_development\definitions\PhysicalLocation.md
+		..\..\..\docs\vocabulary_development\definitions\Quantities.md = ..\..\..\docs\vocabulary_development\definitions\Quantities.md
+		..\..\..\docs\vocabulary_development\definitions\QuantityTypes.md = ..\..\..\docs\vocabulary_development\definitions\QuantityTypes.md
+		..\..\..\docs\vocabulary_development\definitions\SignalPrototypes.md = ..\..\..\docs\vocabulary_development\definitions\SignalPrototypes.md
+		..\..\..\docs\vocabulary_development\definitions\TimeManagement.md = ..\..\..\docs\vocabulary_development\definitions\TimeManagement.md
+		..\..\..\docs\vocabulary_development\definitions\Uncertainty.md = ..\..\..\docs\vocabulary_development\definitions\Uncertainty.md
+		..\..\..\docs\vocabulary_development\definitions\UnitTypes.md = ..\..\..\docs\vocabulary_development\definitions\UnitTypes.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +169,7 @@ Global
 		{A9B77ADA-3D81-4FA3-AEAD-E8F80D5278E2} = {0CFDA729-1E00-47DF-A107-C10B039092DB}
 		{58E8D84D-6055-4C30-986E-CAC6B892E8ED} = {0CFDA729-1E00-47DF-A107-C10B039092DB}
 		{F80F4165-8844-4887-A8EA-D613165C1103} = {A6B119D7-8E09-4B79-9D51-4E867667EF47}
+		{6448F601-D036-4F89-AACB-0D3B783F7EC1} = {CF2537FB-A715-4093-A40E-155C61C6CF17}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F325564A-BA5A-4860-BA83-72F0743F08F9}

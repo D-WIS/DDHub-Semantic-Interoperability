@@ -2,70 +2,42 @@
 
 # NOUNS
 ## DataFlowNode <!-- NOUN -->
-- Display name: DataFlowNode
+- Display name: Data Flow Node
 - Parent class: DWISNoun
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
-## Plan <!-- NOUN -->
-- Display name: Plan
-- Parent class: DataFlowNode
-- Attributes:
-- Specialization: A plan is a description of the actions that shall be undertaken to reach an objective
-- Description: 
-- Examples:
-## OperationalPlan <!-- NOUN -->
-- Display name: OperationalPlan
-- Parent class: Plan
-- Attributes:
-- Specialization: An operational plan is the day-to-day list of activities that shall be performed to contruct a well.
-- Description: 
-- Examples:
-## DrillingProgram <!-- NOUN -->
-- Display name: DrillingProgram
-- Parent class: Plan
-- Attributes:
-- Specialization: A drilling program is a set of procedures that are necessary to construct a well.
-- Description: 
-- Examples:
-## RigActionPlan <!-- NOUN -->
-- Display name: RigActionPlan
-- Parent class: Plan
-- Attributes:
-- Specialization: A rig action plan is a set of steps and rules that shall be conducted to fulfil a particulat activity when constructing a well.
-- Description: 
-- Examples:
 ## ComputedState <!-- NOUN -->
-- Display name: ComputedState
+- Display name: Computed State
 - Parent class: ComputationUnit
 - Attributes:
 - Specialization:
 - Description: A state represents the current configuation of a system.
 - Examples:
 ## ProceduralState <!-- NOUN -->
-- Display name: ComputedProceduralState
+- Display name: Procedural State
 - Parent class: ComputedState
 - Attributes:
 - Specialization: A procedural state describes the state of a running procedure.
 - Description: 
 - Examples:
 ## ProcessState <!-- NOUN -->
-- Display name: ComputedProcessState
+- Display name: Process State
 - Parent class: ComputedState
 - Attributes:
 - Specialization: A process state describes the state of a process.
 - Description: 
 - Examples:
 ## PhysicalState <!-- NOUN -->
-- Display name: ComputedPhysicalState
+- Display name: Physical State
 - Parent class: ComputedState
 - Attributes:
 - Specialization: A physical state describes the phyiscal state of a system.
 - Description: 
 - Examples:
 ## ComputationUnit <!-- NOUN -->
-- Display name: ComputationUnit
+- Display name: Computation Unit
 - Parent class: DataFlowNode
 - Attributes:
 - Specialization:
@@ -79,14 +51,24 @@
     - Type: string
     - Description: 
 - Specialization:
-- Description: 
+- Description: An advisor is a computation unit that produces an advice on how to control a process. Its output is typically
+an AdvisorySystemAdvice.
 - Examples:
 ## Simulator <!-- NOUN -->
 - Display name: Simulator
 - Parent class: ComputationUnit
 - Attributes:
 - Specialization:
-- Description: 
+- Description: A simulator is a computation unit that tries to replicate the outputs of a process. Its output is typically 
+a set of ComputedData, i.e., a specialisation of DrillingDataPoint.
+- Examples:
+## Interpreter <!-- NOUN -->
+- Display name: Interpreter
+- Parent class: ComputationUnit
+- Attributes:
+- Specialization:
+- Description: An interpreter is a computation unit that interprets the state of a process. Its output is typically a 
+ComputedState.
 - Examples:
 ## Controller <!-- NOUN -->
 - Display name: Controller
@@ -102,43 +84,43 @@
 - Specialization:
 - Description: 
 - Examples:
-## DrawWorksControlSystem <!-- NOUN -->
-- Display name: DrawWorksControlSystem
+## HoistingControlSystem <!-- NOUN -->
+- Display name: Hoisting Control System
 - Parent class: ControlSystem
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
-## MudPumpsControlSystem <!-- NOUN -->
-- Display name: MudPumpsControlSystem
+## CirculationControlSystem <!-- NOUN -->
+- Display name: Circulation Control System
 - Parent class: ControlSystem
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
-## TopDriveControlSystem <!-- NOUN -->
-- Display name: TopDriveControlSystem
+## RotationControlSystem <!-- NOUN -->
+- Display name: Rotation Control System
 - Parent class: ControlSystem
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## BOPControlSystem <!-- NOUN -->
-- Display name: BOPControlSystem
+- Display name: BOP Control System
 - Parent class: ControlSystem
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## RigChokeControlSystem <!-- NOUN -->
-- Display name: RigChokeControlSystem
+- Display name: Rig Choke Control System
 - Parent class: ControlSystem
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## MeasurementDevice <!-- NOUN -->
-- Display name: MeasurementDevice
+- Display name: Measurement Device
 - Parent class: DataFlowNode
 - Attributes:
 - Specialization:
@@ -152,7 +134,7 @@
 - Description: Represents a transformation applied to some signals that produces other signals
 - Examples:
 ## DirectTransformation <!-- NOUN -->
-- Display name: DirectTransformation
+- Display name: Direct Transformation
 - Parent class: Transformation
 - Attributes:
 - Specialization:
@@ -166,56 +148,56 @@
 - Description: 
 - Examples:
 ## ForceFromLoadPinsTransformation <!-- NOUN -->
-- Display name: ForceFromLoadPinsTransformation
+- Display name: Force From Load Pins Transformation
 - Parent class: DirectTransformation
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## ForceToLoadTransformation <!-- NOUN -->
-- Display name: ForceToLoadTransformation
+- Display name: Force To Load Transformation
 - Parent class: DirectTransformation
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## MeasuredDepthToTrueVerticalDepthTransformation <!-- NOUN -->
-- Display name: MeasuredDepthToTrueVerticalDepthTransformation
+- Display name: Measured Depth To True Vertical Depth Transformation
 - Parent class: DirectTransformation
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## MeasuredDepthTranslation <!-- NOUN -->
-- Display name: MeasuredDepthTranslation
+- Display name: Measured Depth Translation
 - Parent class: DirectTransformation
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## PressureToEquivalentDensityTransformation <!-- NOUN -->
-- Display name: PressureToEquivalentDensityTransformation
+- Display name: Pressure To Equivalent Density Transformation
 - Parent class: DirectTransformation
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## PressureToForceTransformation <!-- NOUN -->
-- Display name: PressureToForceTransformation
+- Display name: Pressure To Force Transformation
 - Parent class: DirectTransformation
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## TorqueToForceTransformation <!-- NOUN -->
-- Display name: TorqueToForceTransformation
+- Display name: Torque To Force Transformation
 - Parent class: DirectTransformation
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## SignalProcessingUnit <!-- NOUN -->
-- Display name: SignalProcessingUnit
+- Display name: Signal Processing Unit
 - Parent class: Transformation
 - Attributes:
 - Specialization:
@@ -229,7 +211,7 @@
 - Description: 
 - Examples:
 ## BandPassFilter <!-- NOUN -->
-- Display name: BandPassFilter
+- Display name: Band Pass Filter
 - Parent class: Filter
 - Attributes:
   - MinFrequency
@@ -242,7 +224,7 @@
 - Description: 
 - Examples:
 ## HighPassFilter <!-- NOUN -->
-- Display name: HighPassFilter
+- Display name: High Pass Filter
 - Parent class: Filter
 - Attributes:
   - CutOffFrequency
@@ -252,7 +234,7 @@
 - Description: 
 - Examples:
 ## LowPassFilter <!-- NOUN -->
-- Display name: LowPassFilter
+- Display name: Low Pass Filter
 - Parent class: Filter
 - Attributes:
   - CutOffFrequency
@@ -262,35 +244,35 @@
 - Description: 
 - Examples:
 ## MovingAverage <!-- NOUN -->
-- Display name: MovingAverage
+- Display name: Moving Average
 - Parent class: Filter
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## MovingStandardDeviation <!-- NOUN -->
-- Display name: MovingStandardDeviation
+- Display name: Moving Standard Deviation
 - Parent class: Filter
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## MovingMin <!-- NOUN -->
-- Display name: MovingMin
+- Display name: Moving Min
 - Parent class: Filter
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## MovingMax <!-- NOUN -->
-- Display name: MovingMax
+- Display name: Moving Max
 - Parent class: Filter
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## NumberOfSampleMovingAverage <!-- NOUN -->
-- Display name: NumberOfSampleMovingAverage
+- Display name: Number Of Sample Moving Average
 - Parent class: MovingAverage
 - Attributes:
   - NumberOfSamples
@@ -300,7 +282,7 @@
 - Description: 
 - Examples:
 ## TimeWindowMovingAverage <!-- NOUN -->
-- Display name: TimeWindowMovingAverage
+- Display name: Time Window Moving Average
 - Parent class: MovingAverage
 - Attributes:
   - TimeWindow
@@ -310,7 +292,7 @@
 - Description: 
 - Examples:
 ## TimeBasedTransformation <!-- NOUN -->
-- Display name: TimeBasedTransformation
+- Display name: Time Based Transformation
 - Parent class: Transformation
 - Attributes:
 - Specialization:
@@ -341,14 +323,14 @@
 - Description: 
 - Examples:
 ## RangeExtraction <!-- NOUN -->
-- Display name: RangeExtraction
+- Display name: Range Extraction
 - Parent class: TimeBasedTransformation
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## NumberOfItemsRangeExtraction <!-- NOUN -->
-- Display name: NumberOfItemsRangeExtraction
+- Display name: Number Of Items Range Extraction
 - Parent class: RangeExtraction
 - Attributes:
   - NumberOfItems
@@ -358,7 +340,7 @@
 - Description: 
 - Examples:
 ## TimeWindowRangeExtraction <!-- NOUN -->
-- Display name: TimeWindowRangeExtraction
+- Display name: Time Window Range Extraction
 - Parent class: RangeExtraction
 - Attributes:
   - TimeWindow
@@ -384,14 +366,14 @@
 - Description: 
 - Examples:
 ## TransmissionLine <!-- NOUN -->
-- Display name: TransmissionLine
+- Display name: Transmission Line
 - Parent class: DataFlowNode
 - Attributes:
 - Specialization:
 - Description: 
 - Examples:
 ## UserInterface <!-- NOUN -->
-- Display name: UserInterface
+- Display name: User Interface
 - Parent class: DataFlowNode
 - Attributes:
 - Specialization:
@@ -408,14 +390,14 @@
 - Description: 
 - Examples: 
 ## HasFunction <!-- VERB -->
-- Display name: HasFunction
+- Display name: Has Function
 - Parent verb: DWISVerb
 - Subject class: DrillingDataPoint
 - Object class: DataFlowNode
 - Description: 
 - Examples: 
 ## IsCommandFor <!-- VERB -->
-- Display name: IsCommandFor
+- Display name: Is Command For
 - Parent verb: HasFunction
 - Subject class: DrillingDataPoint
 - Object class: DWISNoun
@@ -499,112 +481,112 @@
 - Description: 
 - Examples: 
 ## IsTransformationInput <!-- VERB -->
-- Display name: IsTransformationInput
+- Display name: Is Transformation Input
 - Parent verb: HasFunction
 - Subject class: DrillingDataPoint
 - Object class: Transformation
 - Description: 
 - Examples: 
 ## IsBufferingInput <!-- VERB -->
-- Display name: IsBufferingInput
+- Display name: Is Buffering Input
 - Parent verb: IsTransformationInput
 - Subject class: DrillingDataPoint
 - Object class: Buffering
 - Description: 
 - Examples: 
 ## IsDerivationInput <!-- VERB -->
-- Display name: IsDerivationInput
+- Display name: Is Derivation Input
 - Parent verb: IsTransformationInput
 - Subject class: DWISNoun
 - Object class: DWISNoun
 - Description: 
 - Examples: 
 ## IsResamplingInput <!-- VERB -->
-- Display name: IsResamplingInput
+- Display name: Is Resampling Input
 - Parent verb: IsTransformationInput
 - Subject class: DrillingDataPoint
 - Object class: Resampling
 - Description: 
 - Examples: 
 ## IsTransmissionInput <!-- VERB -->
-- Display name: IsTransmissionInput
+- Display name: Is Transmission Input
 - Parent verb: HasFunction
 - Subject class: DrillingDataPoint
 - Object class: TransmissionLine
 - Description: 
 - Examples: 
 ## IsGeneratedBy <!-- VERB -->
-- Display name: IsGeneratedBy
+- Display name: Is Generated By
 - Parent verb: DWISVerb
 - Subject class: DrillingDataPoint
 - Object class: DataFlowNode
 - Description: 
 - Examples: 
 ## IsComputedBy <!-- VERB -->
-- Display name: IsComputedBy
+- Display name: Is Computed By
 - Parent verb: IsGeneratedBy
 - Subject class: DWISNoun
 - Object class: DWISNoun
 - Description: 
 - Examples: 
 ## IsMeasuredBy <!-- VERB -->
-- Display name: IsMeasuredBy
+- Display name: Is Measured By
 - Parent verb: IsGeneratedBy
 - Subject class: DWISNoun
 - Object class: DWISNoun
 - Description: 
 - Examples: 
 ## IsRecordedFrom <!-- VERB -->
-- Display name: IsRecordedFrom
+- Display name: Is Recorded From
 - Parent verb: IsGeneratedBy
 - Subject class: DWISNoun
 - Object class: DWISNoun
 - Description: 
 - Examples: 
 ## IsTransformationOutput <!-- VERB -->
-- Display name: IsTransformationOutput
+- Display name: Is Transformation Output
 - Parent verb: IsGeneratedBy
 - Subject class: DrillingDataPoint
 - Object class: DataFlowNode
 - Description: 
 - Examples: 
 ## IsBufferingOutput <!-- VERB -->
-- Display name: IsBufferingOutput
+- Display name: Is Buffering Output
 - Parent verb: IsTransformationOutput
 - Subject class: DrillingDataPoint
 - Object class: Buffering
 - Description: 
 - Examples: 
 ## IsDerivedFrom <!-- VERB -->
-- Display name: IsDerivedFrom
+- Display name: Is Derived From
 - Parent verb: IsTransformationOutput
 - Subject class: DWISNoun
 - Object class: DWISNoun
 - Description: 
 - Examples: 
 ## IsIntegratedFrom <!-- VERB -->
-- Display name: IsIntegratedFrom
+- Display name: Is Integrated From
 - Parent verb: IsTransformationOutput
 - Subject class: DWISNoun
 - Object class: DWISNoun
 - Description: 
 - Examples: 
 ## IsResampledBy <!-- VERB -->
-- Display name: IsResampledBy
+- Display name: Is Resampled By
 - Parent verb: IsTransformationOutput
 - Subject class: DrillingDataPoint
 - Object class: Resampling
 - Description: 
 - Examples: 
 ## IsTransmissionOutput <!-- VERB -->
-- Display name: IsTransmissionOutput
+- Display name: Is Transmission Output
 - Parent verb: IsGeneratedBy
 - Subject class: DrillingDataPoint
 - Object class: TransmissionLine
 - Description: 
 - Examples: 
 ## IsProcessedBy <!-- VERB -->
-- Display name: IsProcessedBy
+- Display name: Is Processed By
 - Parent verb: DWISVerb
 - Subject class: DWISNoun
 - Object class: DWISNoun

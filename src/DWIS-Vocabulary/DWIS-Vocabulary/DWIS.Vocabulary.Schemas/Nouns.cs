@@ -18,11 +18,36 @@ DrillingStandardProcedureAdvice,
 DrillingControlAdvice,
 DrillingSafeOperatingEnvelopeAdvice,
 DrillingFaultDetectionIsolationAndRecoveryAdvice,
-DataFlowNode,
+ContextualData,
 Plan,
 OperationalPlan,
 DrillingProgram,
 RigActionPlan,
+ConfigurationData,
+WellBoreData,
+TrajectoryDescription,
+FluidDescription,
+DrillingFluidDescription,
+CementFluidDescription,
+CompletionFluidDescription,
+WellboreArchitectureDescription,
+DrillStemDescription,
+DrillStringDescription,
+CasingStringDescription,
+LinerStringDescription,
+ProductionStringDescription,
+GeoPressuresDescription,
+GeoThermalDescription,
+FormationStrengthDescription,
+StratigraphyDescription,
+RigDescription,
+WellBoreDataCharateristic,
+Planned,
+Prognosed,
+Measured,
+Current,
+Extrapolated,
+DataFlowNode,
 ComputedState,
 ProceduralState,
 ProcessState,
@@ -30,11 +55,12 @@ PhysicalState,
 ComputationUnit,
 Advisor,
 Simulator,
+Interpreter,
 Controller,
 ControlSystem,
-DrawWorksControlSystem,
-MudPumpsControlSystem,
-TopDriveControlSystem,
+HoistingControlSystem,
+CirculationControlSystem,
+RotationControlSystem,
 BOPControlSystem,
 RigChokeControlSystem,
 MeasurementDevice,
@@ -76,6 +102,7 @@ DirectionalServiceCompany,
 DrillingFluidProvider,
 LoggingServiceCompany,
 CementingServiceCompany,
+CompletionServiceCompany,
 DataAnalysisServiceCompany,
 DrillingContractor,
 DWISInternalService,
@@ -1870,11 +1897,36 @@ MegaBritishThermalUnit
 	public static string DrillingControlAdvice = "DrillingControlAdvice";
 	public static string DrillingSafeOperatingEnvelopeAdvice = "DrillingSafeOperatingEnvelopeAdvice";
 	public static string DrillingFaultDetectionIsolationAndRecoveryAdvice = "DrillingFaultDetectionIsolationAndRecoveryAdvice";
-	public static string DataFlowNode = "DataFlowNode";
+	public static string ContextualData = "ContextualData";
 	public static string Plan = "Plan";
 	public static string OperationalPlan = "OperationalPlan";
 	public static string DrillingProgram = "DrillingProgram";
 	public static string RigActionPlan = "RigActionPlan";
+	public static string ConfigurationData = "ConfigurationData";
+	public static string WellBoreData = "WellBoreData";
+	public static string TrajectoryDescription = "TrajectoryDescription";
+	public static string FluidDescription = "FluidDescription";
+	public static string DrillingFluidDescription = "DrillingFluidDescription";
+	public static string CementFluidDescription = "CementFluidDescription";
+	public static string CompletionFluidDescription = "CompletionFluidDescription";
+	public static string WellboreArchitectureDescription = "WellboreArchitectureDescription";
+	public static string DrillStemDescription = "DrillStemDescription";
+	public static string DrillStringDescription = "DrillStringDescription";
+	public static string CasingStringDescription = "CasingStringDescription";
+	public static string LinerStringDescription = "LinerStringDescription";
+	public static string ProductionStringDescription = "ProductionStringDescription";
+	public static string GeoPressuresDescription = "GeoPressuresDescription";
+	public static string GeoThermalDescription = "GeoThermalDescription";
+	public static string FormationStrengthDescription = "FormationStrengthDescription";
+	public static string StratigraphyDescription = "StratigraphyDescription";
+	public static string RigDescription = "RigDescription";
+	public static string WellBoreDataCharateristic = "WellBoreDataCharateristic";
+	public static string Planned = "Planned";
+	public static string Prognosed = "Prognosed";
+	public static string Measured = "Measured";
+	public static string Current = "Current";
+	public static string Extrapolated = "Extrapolated";
+	public static string DataFlowNode = "DataFlowNode";
 	public static string ComputedState = "ComputedState";
 	public static string ProceduralState = "ProceduralState";
 	public static string ProcessState = "ProcessState";
@@ -1882,11 +1934,12 @@ MegaBritishThermalUnit
 	public static string ComputationUnit = "ComputationUnit";
 	public static string Advisor = "Advisor";
 	public static string Simulator = "Simulator";
+	public static string Interpreter = "Interpreter";
 	public static string Controller = "Controller";
 	public static string ControlSystem = "ControlSystem";
-	public static string DrawWorksControlSystem = "DrawWorksControlSystem";
-	public static string MudPumpsControlSystem = "MudPumpsControlSystem";
-	public static string TopDriveControlSystem = "TopDriveControlSystem";
+	public static string HoistingControlSystem = "HoistingControlSystem";
+	public static string CirculationControlSystem = "CirculationControlSystem";
+	public static string RotationControlSystem = "RotationControlSystem";
 	public static string BOPControlSystem = "BOPControlSystem";
 	public static string RigChokeControlSystem = "RigChokeControlSystem";
 	public static string MeasurementDevice = "MeasurementDevice";
@@ -1928,6 +1981,7 @@ MegaBritishThermalUnit
 	public static string DrillingFluidProvider = "DrillingFluidProvider";
 	public static string LoggingServiceCompany = "LoggingServiceCompany";
 	public static string CementingServiceCompany = "CementingServiceCompany";
+	public static string CompletionServiceCompany = "CompletionServiceCompany";
 	public static string DataAnalysisServiceCompany = "DataAnalysisServiceCompany";
 	public static string DrillingContractor = "DrillingContractor";
 	public static string DWISInternalService = "DWISInternalService";
