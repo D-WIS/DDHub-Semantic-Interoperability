@@ -815,9 +815,38 @@ LateralMotionType,
 ModelType,
 DeterministicModel,
 StochasticModel,
-MathematicalModel,
+TemporalBehaviorModel,
 SteadyStateModel,
 TransientModel,
+ModelingApproach,
+ForwardModel,
+InversionModel,
+HybridAnalysisModel,
+ModelingParadigm,
+EmpiricalModel,
+MechanisticModel,
+PhysicsInformedDataDrivenModel,
+MathematicalFormulation,
+AlgebraicModel,
+OrdinaryDifferentialEquationModel,
+PartialDifferentialEquationModel,
+IntegralModel,
+ModelingObjective,
+PredictiveModel,
+DescriptiveModel,
+CalibrationModel,
+ControlModel,
+ModelScope,
+GeneralModel,
+SpecializedModel,
+ModelTransparency,
+BlackBoxModel,
+GrayBoxModel,
+WhiteBoxModel,
+DataIntegrationStrategy,
+DataLevelIntegationModel,
+FeatureLevelIntegationModel,
+DecisionLevelIntegationModel,
 ModelledDegreeOfFreedom,
 AxialModelling,
 RotationalModelling,
@@ -2694,9 +2723,38 @@ MegaBritishThermalUnit
 	public static string ModelType = "ModelType";
 	public static string DeterministicModel = "DeterministicModel";
 	public static string StochasticModel = "StochasticModel";
-	public static string MathematicalModel = "MathematicalModel";
+	public static string TemporalBehaviorModel = "TemporalBehaviorModel";
 	public static string SteadyStateModel = "SteadyStateModel";
 	public static string TransientModel = "TransientModel";
+	public static string ModelingApproach = "ModelingApproach";
+	public static string ForwardModel = "ForwardModel";
+	public static string InversionModel = "InversionModel";
+	public static string HybridAnalysisModel = "HybridAnalysisModel";
+	public static string ModelingParadigm = "ModelingParadigm";
+	public static string EmpiricalModel = "EmpiricalModel";
+	public static string MechanisticModel = "MechanisticModel";
+	public static string PhysicsInformedDataDrivenModel = "PhysicsInformedDataDrivenModel";
+	public static string MathematicalFormulation = "MathematicalFormulation";
+	public static string AlgebraicModel = "AlgebraicModel";
+	public static string OrdinaryDifferentialEquationModel = "OrdinaryDifferentialEquationModel";
+	public static string PartialDifferentialEquationModel = "PartialDifferentialEquationModel";
+	public static string IntegralModel = "IntegralModel";
+	public static string ModelingObjective = "ModelingObjective";
+	public static string PredictiveModel = "PredictiveModel";
+	public static string DescriptiveModel = "DescriptiveModel";
+	public static string CalibrationModel = "CalibrationModel";
+	public static string ControlModel = "ControlModel";
+	public static string ModelScope = "ModelScope";
+	public static string GeneralModel = "GeneralModel";
+	public static string SpecializedModel = "SpecializedModel";
+	public static string ModelTransparency = "ModelTransparency";
+	public static string BlackBoxModel = "BlackBoxModel";
+	public static string GrayBoxModel = "GrayBoxModel";
+	public static string WhiteBoxModel = "WhiteBoxModel";
+	public static string DataIntegrationStrategy = "DataIntegrationStrategy";
+	public static string DataLevelIntegationModel = "DataLevelIntegationModel";
+	public static string FeatureLevelIntegationModel = "FeatureLevelIntegationModel";
+	public static string DecisionLevelIntegationModel = "DecisionLevelIntegationModel";
 	public static string ModelledDegreeOfFreedom = "ModelledDegreeOfFreedom";
 	public static string AxialModelling = "AxialModelling";
 	public static string RotationalModelling = "RotationalModelling";
