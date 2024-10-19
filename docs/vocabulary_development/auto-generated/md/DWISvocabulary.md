@@ -13443,7 +13443,7 @@ graph LR
 - Display name: Drill-stem mechanical model
 - Parent class: [MathematicalModel](#MathematicalModel)
 - Description: 
-A mechanical model for a drill-stem. Another name for drill-stem mechanical models is a torque and drag model.
+A mechanical model for a drill-stem. Another standard name for drill-stem mechanical models is a torque and drag model.
 - Definition set: MechanicalModel
 ## MechanicalStiffnessType <!-- NOUN -->
 - Display name: Mechanical stiffness type
