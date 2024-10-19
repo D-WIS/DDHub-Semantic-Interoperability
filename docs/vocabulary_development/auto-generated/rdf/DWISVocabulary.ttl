@@ -5252,7 +5252,7 @@ ddhub:ImplementsLimit a owl:ObjectProperty;
 ddhub:ImplementsObjective a owl:ObjectProperty; 
                           rdfs:comment """This Verb is used to indicate that a control function implements a drilling objective.
 """@EN; 
-                          rdfs:domain ddhub:ControlFunction; 
+                          rdfs:domain ddhub:ControllerFunction; 
                           rdfs:range ddhub:DrillingObjective; 
                           rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:ImplementsProcedure a owl:ObjectProperty; 

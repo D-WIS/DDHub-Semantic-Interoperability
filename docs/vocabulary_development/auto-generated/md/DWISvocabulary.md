@@ -50687,7 +50687,7 @@ WHERE {
 ## ImplementsObjective <!-- VERB -->
 - Display name: Implements Objective
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [ControlFunction](#ControlFunction)
+- Subject class: [ControllerFunction](#ControllerFunction)
 - Object class: [DrillingObjective](#DrillingObjective)
 - Definition set: DrillingObjective
 - Description: 
