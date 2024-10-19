@@ -162,8 +162,3 @@ The following top level relationships have been omitted from the diagrams due to
 | DWISNoun | IsProcessedBy | DWISNoun |
 | DWISNoun | DWISVerb | DWISNoun |
 | DWISNoun | BelongsToClass | DWISNoun |
-
-# Disconnected Nodes
-
-The following nodes do not have links to the toplevel node (DWISNoun):
-* MathematicalModel
