@@ -7,7 +7,7 @@ specialized vocabulary for the modelling of the drilling mechanics. Covers in pa
 Here is a class inheritance diagram for the nouns contained in this definition set.
 ```mermaid
 classDiagram
-MathematicalModel <|-- DrillStemMechanicalModel
+ModelType <|-- DrillStemMechanicalModel
 DWISNoun <|-- MechanicalStiffnessType
 MechanicalStiffnessType <|-- MechanicalSoftModel
 MechanicalStiffnessType <|-- MechanicalStiffModel
@@ -17,7 +17,7 @@ DWISNoun <|-- TangencyLength
 ```
 ## DrillStemMechanicalModel <!-- NOUN -->
 - Display name: Drill-stem mechanical model
-- Parent class: [MathematicalModel](./.md#MathematicalModel)
+- Parent class: [ModelType](./Model.md#ModelType)
 - Description: 
 A mechanical model for a drill-stem. Another standard name for drill-stem mechanical models is a torque and drag model.
 - Definition set: MechanicalModel
