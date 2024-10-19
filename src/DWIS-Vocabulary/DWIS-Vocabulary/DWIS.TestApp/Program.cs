@@ -5,6 +5,15 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 Console.WriteLine("Hello, World!");
+
+
+
+var voc1 = DWIS.Vocabulary.Standard.VocabularyProvider.Vocabulary;
+
+voc1.ToTrees(out var nounTree, out var verbTree);
+
+
+
 var builder = Host.CreateDefaultBuilder();
 
 builder.ConfigureLogging(fs => fs.AddConsole());

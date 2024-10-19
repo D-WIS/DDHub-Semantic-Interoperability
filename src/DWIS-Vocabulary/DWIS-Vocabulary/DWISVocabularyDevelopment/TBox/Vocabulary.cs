@@ -80,6 +80,9 @@ namespace DWIS.Vocabulary.Development
         public void ToTrees(out Tree<Noun> nounTree, out Tree<Verb> verbTree)
         {
             nounTree = new Tree<Noun>();
+
+           
+
             foreach (Noun n in Nouns)
             {
                 if (nounTree.GetOrDefault(n) == null)
