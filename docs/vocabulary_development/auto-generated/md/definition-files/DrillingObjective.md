@@ -537,7 +537,7 @@ Here is a graph representing the relations that can be made with the verbs defin
 ```mermaid
 erDiagram
 DrillingDataPoint ||--o{ DrillingObjective : IsRelatedToDrillingObjective
-ControlFunction ||--o{ DrillingObjective : ImplementsObjective
+ControllerFunction ||--o{ DrillingObjective : ImplementsObjective
 ```
 ## IsRelatedToDrillingObjective <!-- VERB -->
 - Display name: Is Related To Drilling Objective
@@ -659,7 +659,7 @@ WHERE {
 ## ImplementsObjective <!-- VERB -->
 - Display name: Implements Objective
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [ControlFunction](./.md#ControlFunction)
+- Subject class: [ControllerFunction](./ADCS.md#ControllerFunction)
 - Object class: [DrillingObjective](./DrillingObjective.md#DrillingObjective)
 - Definition set: DrillingObjective
 - Description: 

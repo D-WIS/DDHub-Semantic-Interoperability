@@ -19111,7 +19111,7 @@ to another.
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ImplementsObjective">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/ControlFunction" />
+    <rdfs:domain rdf:resource="http://ddhub.no/ControllerFunction" />
     <rdfs:range rdf:resource="http://ddhub.no/DrillingObjective" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
     <rdfs:comment xml:lang="EN">This Verb is used to indicate that a control function implements a drilling objective.
