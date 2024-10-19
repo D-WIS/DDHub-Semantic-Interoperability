@@ -234,7 +234,7 @@ ROPManagementControllerInfo_1 IsProvidedTo scheduler
 ## ImplementsObjective <!-- VERB -->
 - Display name: Implements Objective
 - Parent verb: DWISVerb
-- Subject class: ControlFunction
+- Subject class: ControllerFunction
 - Object class: DrillingObjective
 - Description: This Verb is used to indicate that a control function implements a drilling objective.
 - Examples:
