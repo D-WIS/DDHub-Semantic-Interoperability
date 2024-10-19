@@ -1,6 +1,46 @@
 ﻿
 
 <MudThemeProvider />
+
+<MudDataGrid @ref="dataGrid" Items="_searchVocabularyItems" T="VocabularyItem" SortMode="SortMode.Single" Groupable="true" GroupExpanded="false" Filterable="true" Hideable="true">
+    <ToolBarContent>
+        <MudText Typo="Typo.h6">Vocabulary</MudText>
+        <MudSpacer />
+        <MudTextField @bind-Value="_searchString" Placeholder="Search" Adornment="Adornment.Start" Immediate="true" Clearable="true"
+                      AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0" OnClearButtonClick="() => updateSearch()" TextChanged="() => updateSearch()"></MudTextField>
+    </ToolBarContent>
+    <Columns>
+        <HierarchyColumn T="VocabularyItem"></HierarchyColumn>
+        <PropertyColumn Property="x => x.DisplayName" Title="Display name"></PropertyColumn>
+        <PropertyColumn Property="x => x.Name" Title="Name"></PropertyColumn>
+        <PropertyColumn Property="x => x.Description" Title="Description"></PropertyColumn>
+        <PropertyColumn Property="x => x.DefinitionSet" Title="Set" Grouping GroupBy="@_groupByNoun"></PropertyColumn>
+        <PropertyColumn Property="x => x.Parent" Title="Parent"></PropertyColumn>
+        <PropertyColumn Property="x => x.Nature" Title="Nature"></PropertyColumn>
+    </Columns>
+    <ChildRowContent>
+        @if (context.Item.IsNoun)
+        {
+            <MudCard>
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.h6">Attributes</MudText>
+                    </CardHeaderContent>
+                </MudCardHeader>
+                <MudCardContent>
+                    @foreach (var att in context.Item.Attributes)
+                    {
+                        <MudText>@att.attribute  (@att.type) : @att.description  </MudText>
+                    }
+
+                </MudCardContent>
+            </MudCard>
+        }
+    </ChildRowContent>
+</MudDataGrid>
+
+
+
 <div style="height:1500px">
 <MudGrid >
     <MudItem xs="4" >
@@ -21,4 +61,88 @@
     public bool ShowNouns { get; set; } = true;
 
     private DWISMermaidDiagram _mermaidDiagram;
+
+    private List<VocabularyItem> _vocabularyItems;
+    private List<VocabularyItem> _searchVocabularyItems;
+    private MudDataGrid<VocabularyItem> dataGrid;
+    private string _lastWord;
+
+    private string _searchString;
+    private Func<VocabularyItem, bool> _quickFilter => x =>
+    {
+        if (string.IsNullOrWhiteSpace(_searchString))
+            return true;
+
+        if (x.Name.Contains(_searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (x.DisplayName.Contains(_searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+
+        return false;
+    };
+    Func<VocabularyItem, object> _groupByNoun = x =>
+      {
+
+      return x.DefinitionSet;
+      };
+
+    public class VocabularyItem
+    {
+        public bool IsNoun { get; set; }
+        public string Name { get; set; }
+        public string DisplayName { get; set; }
+        public string DefinitionSet { get; set; }
+        public string[] Description { get; set; }
+        public string Parent { get; set; }
+        public IEnumerable<(string attribute, string type, string[] description)> Attributes;
+        public string Nature
+        {
+            get { return IsNoun ? "Nouns" : "Verb"; }
+        }
+
+        public VocabularyItem(Noun noun)
+        {
+            IsNoun = true;
+            Name = noun.Name;
+            DisplayName = noun.DisplayName;
+            DefinitionSet = noun.DefinitionSetName;
+            Description = noun.Description;
+            Parent = noun.ParentNounName;
+            Attributes = noun.NounAttributes != null ? noun.NounAttributes.Select(na => (na.Name, na.Type, na.Description)) : new List<(string, string, string[])>();
+        }
+        public VocabularyItem(Verb noun)
+        {
+            IsNoun = false;
+            Name = noun.Name;
+            DisplayName = noun.DisplayName;
+            DefinitionSet = noun.DefinitionSetName;
+            Description = noun.Description;
+            Parent = noun.ParentVerbName;
+        }
+    }
+
+
+
+    protected override Task OnParametersSetAsync()
+    {
+        _vocabularyItems = Vocabulary.Nouns.Select(n => new VocabularyItem(n)).ToList();
+        _vocabularyItems.AddRange(Vocabulary.Verbs.Select(v => new VocabularyItem(v)));
+        _searchVocabularyItems = _vocabularyItems.ToList();
+
+        return base.OnInitializedAsync();
+    }
+    private void updateSearch()
+    {
+        if (string.IsNullOrEmpty(_searchString))
+        {
+            _searchVocabularyItems = _vocabularyItems.ToList();
+            dataGrid?.CollapseAllGroups();
+        }
+        else
+        {
+
+            _searchVocabularyItems = _vocabularyItems.Where(x => x.Name.Contains(_searchString, StringComparison.OrdinalIgnoreCase) || x.DisplayName.Contains(_searchString, StringComparison.OrdinalIgnoreCase)).ToList();
+            dataGrid?.ExpandAllGroups();
+        }
+    }
 }
