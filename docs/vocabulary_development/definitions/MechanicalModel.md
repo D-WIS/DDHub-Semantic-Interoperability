@@ -6,7 +6,7 @@
 - Parent class: MathematicalModel
 - Attributes:
 - Specialization: 
-- Description: A mechanical model for a drill-stem. Another name for drill-stem mechanical models is a torque and drag model.
+- Description: A mechanical model for a drill-stem. Another standard name for drill-stem mechanical models is a torque and drag model.
 - Examples:
 ## MechanicalStiffnessType <!-- NOUN -->
 - Display name: Mechanical stiffness type

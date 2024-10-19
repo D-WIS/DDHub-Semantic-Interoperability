@@ -16,6 +16,7 @@ namespace DWIS.Vocabulary.Utils
     {
         public static void UnitsAndQuantitiesToMDFile(string path)
         {
+            
             StringBuilder semanticBuilder = new StringBuilder();
             semanticBuilder.AppendLine("# Quantities");
             List<BasePhysicalQuantity> basePhysicalQuantities = BasePhysicalQuantity.AvailableBasePhysicalQuantities;
@@ -64,20 +65,21 @@ namespace DWIS.Vocabulary.Utils
                                         if (unitChoice != null)
                                         {
                                             string unitName = unitChoice.GetVariableName();
-                                            if (!string.IsNullOrEmpty(unitName))
+                                            string unitInstanceName = GetInstanceName(unitName);
+                                            if (!string.IsNullOrEmpty(unitName) && unitName != unitInstanceName)
                                             {
-                                                semanticBuilder.AppendLine("- Unit:" + unitName);
-                                                semanticBuilder.AppendLine("- " + unitName + ".ConversionFactorA = " + unitChoice.ConversionBiasFromSI.ToString(CultureInfo.InvariantCulture));
-                                                semanticBuilder.AppendLine("- " + unitName + ".ConversionFactorB = " + unitChoice.ConversionFactorFromSI.ToString(CultureInfo.InvariantCulture));
+                                                semanticBuilder.AppendLine("- " + unitName+":" + unitInstanceName);
+                                                semanticBuilder.AppendLine("- " + unitInstanceName + ".ConversionFactorA = " + unitChoice.ConversionBiasFromSI.ToString(CultureInfo.InvariantCulture));
+                                                semanticBuilder.AppendLine("- " + unitInstanceName + ".ConversionFactorB = " + unitChoice.ConversionFactorFromSI.ToString(CultureInfo.InvariantCulture));
                                                 string unitLabel = GetValidName(unitChoice.UnitLabel);
                                                 if (!string.IsNullOrEmpty(unitLabel))
                                                 {
-                                                    semanticBuilder.AppendLine("- " + unitName + ".Symbol = " + unitLabel);
+                                                    semanticBuilder.AppendLine("- " + unitInstanceName + ".Symbol = " + unitLabel);
                                                 }
-                                                semanticBuilder.AppendLine("- " + unitName + " IsUnitForQuantity " + instanceName);
+                                                semanticBuilder.AppendLine("- " + unitInstanceName + " IsUnitForQuantity " + instanceName);
                                                 if (unitChoice.IsSI)
                                                 {
-                                                    semanticBuilder.AppendLine("- " + instanceName + " HasSIUnit " + unitName);
+                                                    semanticBuilder.AppendLine("- " + instanceName + " HasSIUnit " + unitInstanceName);
                                                 }
                                             }
                                         }
