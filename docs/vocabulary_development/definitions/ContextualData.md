@@ -12,15 +12,15 @@
 - Display name: Plan
 - Parent class: ContextualData
 - Attributes:
-- Specialization: A plan is a description of the actions that shall be undertaken to reach an objective
-- Description: 
+- Specialization: 
+- Description: A plan is a description of the actions that shall be undertaken to reach an objective
 - Examples:
 ## OperationalPlan <!-- NOUN -->
 - Display name: Operational Plan
 - Parent class: Plan
 - Attributes:
-- Specialization: An operational plan is the day-to-day list of activities that shall be performed to contruct a well.
-- Description: 
+- Specialization: 
+- Description: An operational plan is the day-to-day list of activities that shall be performed to contruct a well.
 - Examples:
 ``` dwis operationalPlan_0
 DynamicDrillingSignal:operationalPlan_0
@@ -33,8 +33,8 @@ OperationalPlan_1 IsProvidedBy operatingCompany_1
 - Display name: Drilling Program
 - Parent class: Plan
 - Attributes:
-- Specialization: A drilling program is a set of procedures that are necessary to construct a well.
-- Description: 
+- Specialization: 
+- Description: A drilling program is a set of procedures that are necessary to construct a well.
 - Examples:
 ``` dwis drillingProgram_0
 DynamicDrillingSignal:drillingProgram_0
@@ -47,8 +47,8 @@ drillingProgram_1 IsProvidedBy operatingCompany_1
 - Display name: Rig Action Plan
 - Parent class: Plan
 - Attributes:
-- Specialization: A rig action plan is a set of steps and rules that shall be conducted to fulfil a particulat activity when constructing a well.
-- Description: 
+- Specialization: 
+- Description: A rig action plan is a set of steps and rules that shall be conducted to fulfil a particulat activity when constructing a well.
 - Examples:
 ``` dwis rigActionPlan_0
 DynamicDrillingSignal:rigActionPlan_0
@@ -63,8 +63,8 @@ rigActionPlan_1 IsProvidedTo scheduler_1
 - Display name: Configuration Data
 - Parent class: ContextualData
 - Attributes:
-- Specialization: Configuration data is used to configure a computation unit.
-- Description: 
+- Specialization: 
+- Description: Configuration data is used to configure a computation unit.
 - Examples:
 ``` dwis configurationData_0
 DynamicDrillingSignal:configurationData_0
@@ -75,6 +75,101 @@ configurationData_1 IsProvidedBy operatingCompany_1
 DWISDrillingProcessStateInterpreter:microStateInterpreter_1
 configurationData_1 IsProvidedTo microStateInterpreter_1
 configurationData_1 IsLimitFor microStateInterpreter_1
+```
+## OperationalStep <!-- NOUN -->
+- Display name: Operational Step
+- Parent class: ContextualData
+- Attributes:
+- Specialization: 
+- Description: An operation step is a possible element of a rig action plan.
+- Examples:
+## PhaseStep <!-- NOUN -->
+- Display name: Phase Step
+- Parent class: OperationalStep
+- Attributes:
+- Specialization: 
+- Description: A phase step is at the first level of a rig action plan.
+- Examples: 
+``` dwis rigActionPlan_0 phaseStep_0
+DynamicDrillingSignal:phaseStep_0
+PhaseStep:phaseStep_1
+phaseStep_1 HasDynamicValue phaseStep_0
+DynamicDrillingSignal:rigActionPlan_0
+RigActionPlan:rigActionPlan_1
+rigActionPlan_1 HasDynamicValue rigActionPlan_0
+rigActionPlan_1 HasOperationalStep phaseStep_1
+```
+## ActionStep <!-- NOUN -->
+- Display name: Action Step
+- Parent class: OperationalStep
+- Attributes:
+- Specialization: 
+- Description: An action step is at the second level of a rig action plan.
+- Examples:
+``` dwis rigActionPlan_0 phaseStep_0 actionStep_0
+DynamicDrillingSignal:actionStep_0
+ActionStep:actionStep_1
+actionStep_1 HasDynamicValue actionStep_0
+DynamicDrillingSignal:phaseStep_0
+PhaseStep:phaseStep_1
+phaseStep_1 HasDynamicValue phaseStep_0
+DynamicDrillingSignal:rigActionPlan_0
+RigActionPlan:rigActionPlan_1
+rigActionPlan_1 HasDynamicValue rigActionPlan_0
+rigActionPlan_1 HasOperationalStep phaseStep_1
+actionStep_1 IsAnActionOf phaseStep_1
+```
+## TaskStep <!-- NOUN -->
+- Display name: Task Step
+- Parent class: OperationalStep
+- Attributes:
+- Specialization: 
+- Description: A task step is at the third level of a rig action plan.
+- Examples:
+``` dwis rigActionPlan_0 phaseStep_0 actionStep_0 taskStep_0
+DynamicDrillingSignal:taskStep_0
+TaskStep:taskStep_1
+taskStep_1 HasDynamicValue taskStep_0
+DynamicDrillingSignal:actionStep_0
+ActionStep:actionStep_1
+actionStep_1 HasDynamicValue actionStep_0
+DynamicDrillingSignal:phaseStep_0
+PhaseStep:phaseStep_1
+phaseStep_1 HasDynamicValue phaseStep_0
+DynamicDrillingSignal:rigActionPlan_0
+RigActionPlan:rigActionPlan_1
+rigActionPlan_1 HasDynamicValue rigActionPlan_0
+rigActionPlan_1 HasOperationalStep phaseStep_1
+actionStep_1 IsAnActionOf phaseStep_1
+taskStep_1 IsATaskOf actionStep_1
+```
+## Context <!-- NOUN -->
+- Display name: Context
+- Parent class: OperationalStep
+- Attributes:
+- Specialization: 
+- Description: A context is at the fourth level of a rig action plan.
+- Examples:
+``` dwis rigActionPlan_0 phaseStep_0 actionStep_0 taskStep_0 context_0
+DynamicDrillingSignal:contextStep_0
+Context:contextStep_1
+contextStep_1 HasDynamicValue contextStep_0
+DynamicDrillingSignal:taskStep_0
+TaskStep:taskStep_1
+taskStep_1 HasDynamicValue taskStep_0
+DynamicDrillingSignal:actionStep_0
+ActionStep:actionStep_1
+actionStep_1 HasDynamicValue actionStep_0
+DynamicDrillingSignal:phaseStep_0
+PhaseStep:phaseStep_1
+phaseStep_1 HasDynamicValue phaseStep_0
+DynamicDrillingSignal:rigActionPlan_0
+RigActionPlan:rigActionPlan_1
+rigActionPlan_1 HasDynamicValue rigActionPlan_0
+rigActionPlan_1 HasOperationalStep phaseStep_1
+actionStep_1 IsAnActionOf phaseStep_1
+taskStep_1 IsATaskOf actionStep_1
+contextStep_1 IsAContextOf taskStep_1
 ```
 ## WellBoreData <!-- NOUN -->
 - Display name: Wellbore Data
@@ -516,4 +611,92 @@ Extrapolated: extrapolated_1
 trajectoryDescription_1 IsCharacterizedBy extrapolated_1
 Measured:measured_1
 trajectoryDescription_1 IsCharacterizedBy measured_1
+```
+## HasOperationalStep <!-- VERB -->
+- Display name: Has Operational Step
+- Parent verb: DWISVerb
+- Subject class: OperationalStep
+- Object class: OperationalStep
+- Description: this Verb is used to relate an operational step to a rig action plan.
+- Examples: 
+``` dwis rigActionPlan_0 phaseStep_0
+DynamicDrillingSignal:phaseStep_0
+PhaseStep:phaseStep_1
+phaseStep_1 HasDynamicValue phaseStep_0
+DynamicDrillingSignal:rigActionPlan_0
+RigActionPlan:rigActionPlan_1
+rigActionPlan_1 HasDynamicValue rigActionPlan_0
+rigActionPlan_1 HasOperationalStep phaseStep_1
+```
+## IsAnActionOf <!-- VERB -->
+- Display name: Is an Action of
+- Parent verb: DWISVerb
+- Subject class: ActionStep
+- Object class: PhaseStep
+- Description: this Verb is used to relate an action step to its parent phase step.
+- Examples: 
+``` dwis rigActionPlan_0 phaseStep_0 actionStep_0
+DynamicDrillingSignal:actionStep_0
+ActionStep:actionStep_1
+actionStep_1 HasDynamicValue actionStep_0
+DynamicDrillingSignal:phaseStep_0
+PhaseStep:phaseStep_1
+phaseStep_1 HasDynamicValue phaseStep_0
+DynamicDrillingSignal:rigActionPlan_0
+RigActionPlan:rigActionPlan_1
+rigActionPlan_1 HasDynamicValue rigActionPlan_0
+rigActionPlan_1 HasOperationalStep phaseStep_1
+actionStep_1 IsAnActionOf phaseStep_1
+```
+## IsATaskOf <!-- VERB -->
+- Display name: Is an Action of
+- Parent verb: DWISVerb
+- Subject class: TaskStep
+- Object class: ActionStep
+- Description: this Verb is used to relate an task step to its parent action step.
+- Examples: 
+``` dwis rigActionPlan_0 phaseStep_0 actionStep_0 taskStep_0
+DynamicDrillingSignal:taskStep_0
+TaskStep:taskStep_1
+taskStep_1 HasDynamicValue taskStep_0
+DynamicDrillingSignal:actionStep_0
+ActionStep:actionStep_1
+actionStep_1 HasDynamicValue actionStep_0
+DynamicDrillingSignal:phaseStep_0
+PhaseStep:phaseStep_1
+phaseStep_1 HasDynamicValue phaseStep_0
+DynamicDrillingSignal:rigActionPlan_0
+RigActionPlan:rigActionPlan_1
+rigActionPlan_1 HasDynamicValue rigActionPlan_0
+rigActionPlan_1 HasOperationalStep phaseStep_1
+actionStep_1 IsAnActionOf phaseStep_1
+taskStep_1 IsATaskOf actionStep_1
+```
+## IsAContextOf <!-- VERB -->
+- Display name: Is an Action of
+- Parent verb: DWISVerb
+- Subject class: Context
+- Object class: TaskStep
+- Description: this Verb is used to relate a context to its parent task step.
+- Examples:
+``` dwis rigActionPlan_0 phaseStep_0 actionStep_0 taskStep_0 context_0
+DynamicDrillingSignal:contextStep_0
+Context:contextStep_1
+contextStep_1 HasDynamicValue contextStep_0
+DynamicDrillingSignal:taskStep_0
+TaskStep:taskStep_1
+taskStep_1 HasDynamicValue taskStep_0
+DynamicDrillingSignal:actionStep_0
+ActionStep:actionStep_1
+actionStep_1 HasDynamicValue actionStep_0
+DynamicDrillingSignal:phaseStep_0
+PhaseStep:phaseStep_1
+phaseStep_1 HasDynamicValue phaseStep_0
+DynamicDrillingSignal:rigActionPlan_0
+RigActionPlan:rigActionPlan_1
+rigActionPlan_1 HasDynamicValue rigActionPlan_0
+rigActionPlan_1 HasOperationalStep phaseStep_1
+actionStep_1 IsAnActionOf phaseStep_1
+taskStep_1 IsATaskOf actionStep_1
+contextStep_1 IsAContextOf taskStep_1
 ```
