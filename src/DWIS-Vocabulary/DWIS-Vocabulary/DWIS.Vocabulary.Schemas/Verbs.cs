@@ -19,6 +19,10 @@ IsRecommendedBy,
 IsRecommendedFor,
 HasControlLimit,
 IsCharacterizedBy,
+HasOperationalStep,
+IsAnActionOf,
+IsATaskOf,
+IsAContextOf,
 IsDependentOn,
 IsObservableFrom,
 HasPressureReference,
@@ -174,6 +178,10 @@ HasUncertaintyHistogram
 	public static string IsRecommendedFor = "IsRecommendedFor";
 	public static string HasControlLimit = "HasControlLimit";
 	public static string IsCharacterizedBy = "IsCharacterizedBy";
+	public static string HasOperationalStep = "HasOperationalStep";
+	public static string IsAnActionOf = "IsAnActionOf";
+	public static string IsATaskOf = "IsATaskOf";
+	public static string IsAContextOf = "IsAContextOf";
 	public static string IsDependentOn = "IsDependentOn";
 	public static string IsObservableFrom = "IsObservableFrom";
 	public static string HasPressureReference = "HasPressureReference";

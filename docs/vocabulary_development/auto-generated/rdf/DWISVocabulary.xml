@@ -243,32 +243,62 @@ and then possibly recover from that incident.
   <rdf:Description rdf:about="http://ddhub.no/Plan">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/ContextualData" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+    <rdfs:comment xml:lang="EN">A plan is a description of the actions that shall be undertaken to reach an objective
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/OperationalPlan">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Plan" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+    <rdfs:comment xml:lang="EN">An operational plan is the day-to-day list of activities that shall be performed to contruct a well.
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DrillingProgram">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Plan" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+    <rdfs:comment xml:lang="EN">A drilling program is a set of procedures that are necessary to construct a well.
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/RigActionPlan">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Plan" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+    <rdfs:comment xml:lang="EN">A rig action plan is a set of steps and rules that shall be conducted to fulfil a particulat activity when constructing a well.
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ConfigurationData">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/ContextualData" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+    <rdfs:comment xml:lang="EN">Configuration data is used to configure a computation unit.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/OperationalStep">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ContextualData" />
+    <rdfs:comment xml:lang="EN">An operation step is a possible element of a rig action plan.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PhaseStep">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/OperationalStep" />
+    <rdfs:comment xml:lang="EN">A phase step is at the first level of a rig action plan.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ActionStep">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/OperationalStep" />
+    <rdfs:comment xml:lang="EN">An action step is at the second level of a rig action plan.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TaskStep">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/OperationalStep" />
+    <rdfs:comment xml:lang="EN">A task step is at the third level of a rig action plan.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Context">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/OperationalStep" />
+    <rdfs:comment xml:lang="EN">A context is at the fourth level of a rig action plan.
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/WellBoreData">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
@@ -18609,6 +18639,38 @@ describe the impact of the function on the drilling process. This signal is supp
     <rdfs:range rdf:resource="http://ddhub.no/WellBoreDataCharateristic" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
     <rdfs:comment xml:lang="EN">this Verb is used to state some characteristics of a well bore data.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HasOperationalStep">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/OperationalStep" />
+    <rdfs:range rdf:resource="http://ddhub.no/OperationalStep" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
+    <rdfs:comment xml:lang="EN">this Verb is used to relate an operational step to a rig action plan.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsAnActionOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/ActionStep" />
+    <rdfs:range rdf:resource="http://ddhub.no/PhaseStep" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
+    <rdfs:comment xml:lang="EN">this Verb is used to relate an action step to its parent phase step.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsATaskOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/TaskStep" />
+    <rdfs:range rdf:resource="http://ddhub.no/ActionStep" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
+    <rdfs:comment xml:lang="EN">this Verb is used to relate an task step to its parent action step.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsAContextOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/Context" />
+    <rdfs:range rdf:resource="http://ddhub.no/TaskStep" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
+    <rdfs:comment xml:lang="EN">this Verb is used to relate a context to its parent task step.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsDependentOn">

@@ -48,6 +48,16 @@
 <http://ddhub.no/RigActionPlan> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Plan> .
 <http://ddhub.no/ConfigurationData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ConfigurationData> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ContextualData> .
+<http://ddhub.no/OperationalStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/OperationalStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ContextualData> .
+<http://ddhub.no/PhaseStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/PhaseStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OperationalStep> .
+<http://ddhub.no/ActionStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ActionStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OperationalStep> .
+<http://ddhub.no/TaskStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/TaskStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OperationalStep> .
+<http://ddhub.no/Context> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Context> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OperationalStep> .
 <http://ddhub.no/WellBoreData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/WellBoreData> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ContextualData> .
 <http://ddhub.no/TrajectoryDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -3932,11 +3942,16 @@
 <http://ddhub.no/DrillingSafeOperatingEnvelopeAdvice> <http://www.w3.org/2000/01/rdf-schema#comment> "A safe operating envelope (SOE) advisor provides information on the limits that shall be used when controlling the drilling\nprocess to avoid possible drilling incidents.\n"@EN .
 <http://ddhub.no/DrillingFaultDetectionIsolationAndRecoveryAdvice> <http://www.w3.org/2000/01/rdf-schema#comment> "A fault detection, isolation and recovery (FDIR) advisor provides information on how to detect an drilling incident\nand parameters to procedure that is executed when a drilling incident is detected in order to first to isolate the drilling incident\nand then possibly recover from that incident.\n"@EN .
 <http://ddhub.no/ContextualData> <http://www.w3.org/2000/01/rdf-schema#comment> "Contextual data are structured objects stored in a JSon string.\n"@EN .
-<http://ddhub.no/Plan> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/OperationalPlan> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/DrillingProgram> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/RigActionPlan> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/ConfigurationData> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/Plan> <http://www.w3.org/2000/01/rdf-schema#comment> "A plan is a description of the actions that shall be undertaken to reach an objective\n"@EN .
+<http://ddhub.no/OperationalPlan> <http://www.w3.org/2000/01/rdf-schema#comment> "An operational plan is the day-to-day list of activities that shall be performed to contruct a well.\n"@EN .
+<http://ddhub.no/DrillingProgram> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling program is a set of procedures that are necessary to construct a well.\n"@EN .
+<http://ddhub.no/RigActionPlan> <http://www.w3.org/2000/01/rdf-schema#comment> "A rig action plan is a set of steps and rules that shall be conducted to fulfil a particulat activity when constructing a well.\n"@EN .
+<http://ddhub.no/ConfigurationData> <http://www.w3.org/2000/01/rdf-schema#comment> "Configuration data is used to configure a computation unit.\n"@EN .
+<http://ddhub.no/OperationalStep> <http://www.w3.org/2000/01/rdf-schema#comment> "An operation step is a possible element of a rig action plan.\n"@EN .
+<http://ddhub.no/PhaseStep> <http://www.w3.org/2000/01/rdf-schema#comment> "A phase step is at the first level of a rig action plan.\n"@EN .
+<http://ddhub.no/ActionStep> <http://www.w3.org/2000/01/rdf-schema#comment> "An action step is at the second level of a rig action plan.\n"@EN .
+<http://ddhub.no/TaskStep> <http://www.w3.org/2000/01/rdf-schema#comment> "A task step is at the third level of a rig action plan.\n"@EN .
+<http://ddhub.no/Context> <http://www.w3.org/2000/01/rdf-schema#comment> "A context is at the fourth level of a rig action plan.\n"@EN .
 <http://ddhub.no/WellBoreData> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/TrajectoryDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "A trajectory contains information about the position of the wellbore.\n"@EN .
 <http://ddhub.no/FluidDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "Drilling fluid contains information about the density, rheological behavior, thermo-physical and chemical characteristics of a fluid\nused during a drilling operation.\n"@EN .
@@ -6139,6 +6154,22 @@
 <http://ddhub.no/IsCharacterizedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/WellBoreData> .
 <http://ddhub.no/IsCharacterizedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/WellBoreDataCharateristic> .
 <http://ddhub.no/IsCharacterizedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/HasOperationalStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/HasOperationalStep> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/OperationalStep> .
+<http://ddhub.no/HasOperationalStep> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/OperationalStep> .
+<http://ddhub.no/HasOperationalStep> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsAnActionOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsAnActionOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/ActionStep> .
+<http://ddhub.no/IsAnActionOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/PhaseStep> .
+<http://ddhub.no/IsAnActionOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsATaskOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsATaskOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/TaskStep> .
+<http://ddhub.no/IsATaskOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ActionStep> .
+<http://ddhub.no/IsATaskOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsAContextOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsAContextOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/Context> .
+<http://ddhub.no/IsAContextOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/TaskStep> .
+<http://ddhub.no/IsAContextOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
 <http://ddhub.no/IsDependentOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://ddhub.no/IsDependentOn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
 <http://ddhub.no/IsDependentOn> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
@@ -6767,6 +6798,10 @@
 <http://ddhub.no/IsRelatedToDrillingLimit> <http://www.w3.org/2000/01/rdf-schema#comment> "This Verb is used to indicate that a drilling data point is related to a drilling incident.\n"@EN .
 <http://ddhub.no/HasControlLimit> <http://www.w3.org/2000/01/rdf-schema#comment> "This Verb is used to indicate that a drilling data point has a control limit.\n"@EN .
 <http://ddhub.no/IsCharacterizedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "this Verb is used to state some characteristics of a well bore data.\n"@EN .
+<http://ddhub.no/HasOperationalStep> <http://www.w3.org/2000/01/rdf-schema#comment> "this Verb is used to relate an operational step to a rig action plan.\n"@EN .
+<http://ddhub.no/IsAnActionOf> <http://www.w3.org/2000/01/rdf-schema#comment> "this Verb is used to relate an action step to its parent phase step.\n"@EN .
+<http://ddhub.no/IsATaskOf> <http://www.w3.org/2000/01/rdf-schema#comment> "this Verb is used to relate an task step to its parent action step.\n"@EN .
+<http://ddhub.no/IsAContextOf> <http://www.w3.org/2000/01/rdf-schema#comment> "this Verb is used to relate a context to its parent task step.\n"@EN .
 <http://ddhub.no/IsDependentOn> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to describe a general dependence relationship between a `DrillingDataPoint` and something else.\n"@EN .
 <http://ddhub.no/HasPressureReference> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is a specialization of `IsDependentOn` and refers to the specific dependence on a pressure reference.\n"@EN .
 <http://ddhub.no/HasTemperatureReference> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is a specialization of `IsDependentOn` and refers to the specific dependence on a temperature reference.\n"@EN .

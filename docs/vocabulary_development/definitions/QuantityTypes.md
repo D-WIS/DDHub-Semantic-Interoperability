@@ -3474,12 +3474,12 @@ PartPerMillion IsUnitForQuantity ProportionQuantity
 - Display name: RandomWalk
 - Parent class: Quantity
 - Specialization: 
-  - T = -0,5
+  - T = -0.5
   - Theta = 1
 - Description: 
 A random walk is a mathematical concept describing a path consisting of a series of random steps or movements, where each step's direction or magnitude is determined probabilistically. It is used to model various phenomena in fields like physics, finance, and computer science.
 The dimension of random walk is:
-$$[{\theta}T^{-0,5}]$$.
+$$[{\theta}T^{-0.5}]$$.
 
 The SI unit for **random walk** is: radian per square root second with the associated unit label $\frac{rad}{\sqrt{s}}$
 

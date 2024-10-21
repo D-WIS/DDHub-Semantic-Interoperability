@@ -2902,10 +2902,14 @@ Contextual data are structured objects stored in a JSon string.
 ## Plan <!-- NOUN -->
 - Display name: Plan
 - Parent class: [ContextualData](#ContextualData)
+- Description: 
+A plan is a description of the actions that shall be undertaken to reach an objective
 - Definition set: ContextualData
 ## OperationalPlan <!-- NOUN -->
 - Display name: Operational Plan
 - Parent class: [Plan](#Plan)
+- Description: 
+An operational plan is the day-to-day list of activities that shall be performed to contruct a well.
 - Definition set: ContextualData
 - Examples:
 ``` dwis operationalPlan_0
@@ -2943,6 +2947,8 @@ WHERE {
 ## DrillingProgram <!-- NOUN -->
 - Display name: Drilling Program
 - Parent class: [Plan](#Plan)
+- Description: 
+A drilling program is a set of procedures that are necessary to construct a well.
 - Definition set: ContextualData
 - Examples:
 ``` dwis drillingProgram_0
@@ -2980,6 +2986,8 @@ WHERE {
 ## RigActionPlan <!-- NOUN -->
 - Display name: Rig Action Plan
 - Parent class: [Plan](#Plan)
+- Description: 
+A rig action plan is a set of steps and rules that shall be conducted to fulfil a particulat activity when constructing a well.
 - Definition set: ContextualData
 - Examples:
 ``` dwis rigActionPlan_0
@@ -3023,6 +3031,8 @@ WHERE {
 ## ConfigurationData <!-- NOUN -->
 - Display name: Configuration Data
 - Parent class: [ContextualData](#ContextualData)
+- Description: 
+Configuration data is used to configure a computation unit.
 - Definition set: ContextualData
 - Examples:
 ``` dwis configurationData_0
@@ -3063,6 +3073,264 @@ WHERE {
 	&& 	?Attribute001 = operatingCompany_1
 	&& 	?Attribute002 = microStateInterpreter_1
 	&& 	?Attribute003 = microStateInterpreter_1
+  )
+}
+```
+## OperationalStep <!-- NOUN -->
+- Display name: Operational Step
+- Parent class: [ContextualData](#ContextualData)
+- Description: 
+An operation step is a possible element of a rig action plan.
+- Definition set: ContextualData
+## PhaseStep <!-- NOUN -->
+- Display name: Phase Step
+- Parent class: [OperationalStep](#OperationalStep)
+- Description: 
+A phase step is at the first level of a rig action plan.
+- Definition set: ContextualData
+- Examples:
+``` dwis rigActionPlan_0 phaseStep_0
+DynamicDrillingSignal:phaseStep_0
+PhaseStep:phaseStep_1
+phaseStep_1 HasDynamicValue phaseStep_0
+DynamicDrillingSignal:rigActionPlan_0
+RigActionPlan:rigActionPlan_1
+rigActionPlan_1 HasDynamicValue rigActionPlan_0
+rigActionPlan_1 HasOperationalStep phaseStep_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[phaseStep_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[phaseStep_1] -->|BelongsToClass| N0003(PhaseStep) 
+	N0002[phaseStep_1] -->|HasDynamicValue| N0000((phaseStep_0)) 
+	N0004[rigActionPlan_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0005[rigActionPlan_1] -->|BelongsToClass| N0006(RigActionPlan) 
+	N0005[rigActionPlan_1] -->|HasDynamicValue| N0004((rigActionPlan_0)) 
+	N0005[rigActionPlan_1] -->|HasOperationalStep| N0002((phaseStep_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rigActionPlan_0, ?phaseStep_0
+WHERE {
+	?phaseStep_0 rdf:type ddhub:DynamicDrillingSignal .
+	?phaseStep_1 rdf:type ddhub:PhaseStep .
+	?rigActionPlan_0 rdf:type ddhub:DynamicDrillingSignal .
+	?rigActionPlan_1 rdf:type ddhub:RigActionPlan .
+  FILTER (
+	?Attribute000 = phaseStep_0
+	&& 	?Attribute001 = rigActionPlan_0
+	&& 	?Attribute002 = phaseStep_1
+  )
+}
+```
+## ActionStep <!-- NOUN -->
+- Display name: Action Step
+- Parent class: [OperationalStep](#OperationalStep)
+- Description: 
+An action step is at the second level of a rig action plan.
+- Definition set: ContextualData
+- Examples:
+``` dwis rigActionPlan_0 phaseStep_0 actionStep_0
+DynamicDrillingSignal:actionStep_0
+ActionStep:actionStep_1
+actionStep_1 HasDynamicValue actionStep_0
+DynamicDrillingSignal:phaseStep_0
+PhaseStep:phaseStep_1
+phaseStep_1 HasDynamicValue phaseStep_0
+DynamicDrillingSignal:rigActionPlan_0
+RigActionPlan:rigActionPlan_1
+rigActionPlan_1 HasDynamicValue rigActionPlan_0
+rigActionPlan_1 HasOperationalStep phaseStep_1
+actionStep_1 IsAnActionOf phaseStep_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[actionStep_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[actionStep_1] -->|BelongsToClass| N0003(ActionStep) 
+	N0002[actionStep_1] -->|HasDynamicValue| N0000((actionStep_0)) 
+	N0004[phaseStep_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0005[phaseStep_1] -->|BelongsToClass| N0006(PhaseStep) 
+	N0005[phaseStep_1] -->|HasDynamicValue| N0004((phaseStep_0)) 
+	N0007[rigActionPlan_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0008[rigActionPlan_1] -->|BelongsToClass| N0009(RigActionPlan) 
+	N0008[rigActionPlan_1] -->|HasDynamicValue| N0007((rigActionPlan_0)) 
+	N0008[rigActionPlan_1] -->|HasOperationalStep| N0005((phaseStep_1)) 
+	N0002[actionStep_1] -->|IsAnActionOf| N0005((phaseStep_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rigActionPlan_0, ?phaseStep_0, ?actionStep_0
+WHERE {
+	?actionStep_0 rdf:type ddhub:DynamicDrillingSignal .
+	?actionStep_1 rdf:type ddhub:ActionStep .
+	?phaseStep_0 rdf:type ddhub:DynamicDrillingSignal .
+	?phaseStep_1 rdf:type ddhub:PhaseStep .
+	?rigActionPlan_0 rdf:type ddhub:DynamicDrillingSignal .
+	?rigActionPlan_1 rdf:type ddhub:RigActionPlan .
+  FILTER (
+	?Attribute000 = actionStep_0
+	&& 	?Attribute001 = phaseStep_0
+	&& 	?Attribute002 = rigActionPlan_0
+	&& 	?Attribute003 = phaseStep_1
+	&& 	?Attribute004 = phaseStep_1
+  )
+}
+```
+## TaskStep <!-- NOUN -->
+- Display name: Task Step
+- Parent class: [OperationalStep](#OperationalStep)
+- Description: 
+A task step is at the third level of a rig action plan.
+- Definition set: ContextualData
+- Examples:
+``` dwis rigActionPlan_0 phaseStep_0 actionStep_0 taskStep_0
+DynamicDrillingSignal:taskStep_0
+TaskStep:taskStep_1
+taskStep_1 HasDynamicValue taskStep_0
+DynamicDrillingSignal:actionStep_0
+ActionStep:actionStep_1
+actionStep_1 HasDynamicValue actionStep_0
+DynamicDrillingSignal:phaseStep_0
+PhaseStep:phaseStep_1
+phaseStep_1 HasDynamicValue phaseStep_0
+DynamicDrillingSignal:rigActionPlan_0
+RigActionPlan:rigActionPlan_1
+rigActionPlan_1 HasDynamicValue rigActionPlan_0
+rigActionPlan_1 HasOperationalStep phaseStep_1
+actionStep_1 IsAnActionOf phaseStep_1
+taskStep_1 IsATaskOf actionStep_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[taskStep_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[taskStep_1] -->|BelongsToClass| N0003(TaskStep) 
+	N0002[taskStep_1] -->|HasDynamicValue| N0000((taskStep_0)) 
+	N0004[actionStep_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0005[actionStep_1] -->|BelongsToClass| N0006(ActionStep) 
+	N0005[actionStep_1] -->|HasDynamicValue| N0004((actionStep_0)) 
+	N0007[phaseStep_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0008[phaseStep_1] -->|BelongsToClass| N0009(PhaseStep) 
+	N0008[phaseStep_1] -->|HasDynamicValue| N0007((phaseStep_0)) 
+	N0010[rigActionPlan_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0011[rigActionPlan_1] -->|BelongsToClass| N0012(RigActionPlan) 
+	N0011[rigActionPlan_1] -->|HasDynamicValue| N0010((rigActionPlan_0)) 
+	N0011[rigActionPlan_1] -->|HasOperationalStep| N0008((phaseStep_1)) 
+	N0005[actionStep_1] -->|IsAnActionOf| N0008((phaseStep_1)) 
+	N0002[taskStep_1] -->|IsATaskOf| N0005((actionStep_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rigActionPlan_0, ?phaseStep_0, ?actionStep_0, ?taskStep_0
+WHERE {
+	?taskStep_0 rdf:type ddhub:DynamicDrillingSignal .
+	?taskStep_1 rdf:type ddhub:TaskStep .
+	?actionStep_0 rdf:type ddhub:DynamicDrillingSignal .
+	?actionStep_1 rdf:type ddhub:ActionStep .
+	?phaseStep_0 rdf:type ddhub:DynamicDrillingSignal .
+	?phaseStep_1 rdf:type ddhub:PhaseStep .
+	?rigActionPlan_0 rdf:type ddhub:DynamicDrillingSignal .
+	?rigActionPlan_1 rdf:type ddhub:RigActionPlan .
+  FILTER (
+	?Attribute000 = taskStep_0
+	&& 	?Attribute001 = actionStep_0
+	&& 	?Attribute002 = phaseStep_0
+	&& 	?Attribute003 = rigActionPlan_0
+	&& 	?Attribute004 = phaseStep_1
+	&& 	?Attribute005 = phaseStep_1
+	&& 	?Attribute006 = actionStep_1
+  )
+}
+```
+## Context <!-- NOUN -->
+- Display name: Context
+- Parent class: [OperationalStep](#OperationalStep)
+- Description: 
+A context is at the fourth level of a rig action plan.
+- Definition set: ContextualData
+- Examples:
+``` dwis rigActionPlan_0 phaseStep_0 actionStep_0 taskStep_0 context_0
+DynamicDrillingSignal:contextStep_0
+Context:contextStep_1
+contextStep_1 HasDynamicValue contextStep_0
+DynamicDrillingSignal:taskStep_0
+TaskStep:taskStep_1
+taskStep_1 HasDynamicValue taskStep_0
+DynamicDrillingSignal:actionStep_0
+ActionStep:actionStep_1
+actionStep_1 HasDynamicValue actionStep_0
+DynamicDrillingSignal:phaseStep_0
+PhaseStep:phaseStep_1
+phaseStep_1 HasDynamicValue phaseStep_0
+DynamicDrillingSignal:rigActionPlan_0
+RigActionPlan:rigActionPlan_1
+rigActionPlan_1 HasDynamicValue rigActionPlan_0
+rigActionPlan_1 HasOperationalStep phaseStep_1
+actionStep_1 IsAnActionOf phaseStep_1
+taskStep_1 IsATaskOf actionStep_1
+contextStep_1 IsAContextOf taskStep_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[contextStep_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[contextStep_1] -->|BelongsToClass| N0003(Context) 
+	N0002[contextStep_1] -->|HasDynamicValue| N0000((contextStep_0)) 
+	N0004[taskStep_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0005[taskStep_1] -->|BelongsToClass| N0006(TaskStep) 
+	N0005[taskStep_1] -->|HasDynamicValue| N0004((taskStep_0)) 
+	N0007[actionStep_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0008[actionStep_1] -->|BelongsToClass| N0009(ActionStep) 
+	N0008[actionStep_1] -->|HasDynamicValue| N0007((actionStep_0)) 
+	N0010[phaseStep_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0011[phaseStep_1] -->|BelongsToClass| N0012(PhaseStep) 
+	N0011[phaseStep_1] -->|HasDynamicValue| N0010((phaseStep_0)) 
+	N0013[rigActionPlan_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0014[rigActionPlan_1] -->|BelongsToClass| N0015(RigActionPlan) 
+	N0014[rigActionPlan_1] -->|HasDynamicValue| N0013((rigActionPlan_0)) 
+	N0014[rigActionPlan_1] -->|HasOperationalStep| N0011((phaseStep_1)) 
+	N0008[actionStep_1] -->|IsAnActionOf| N0011((phaseStep_1)) 
+	N0005[taskStep_1] -->|IsATaskOf| N0008((actionStep_1)) 
+	N0002[contextStep_1] -->|IsAContextOf| N0005((taskStep_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rigActionPlan_0, ?phaseStep_0, ?actionStep_0, ?taskStep_0, ?context_0
+WHERE {
+	?contextStep_0 rdf:type ddhub:DynamicDrillingSignal .
+	?contextStep_1 rdf:type ddhub:Context .
+	?taskStep_0 rdf:type ddhub:DynamicDrillingSignal .
+	?taskStep_1 rdf:type ddhub:TaskStep .
+	?actionStep_0 rdf:type ddhub:DynamicDrillingSignal .
+	?actionStep_1 rdf:type ddhub:ActionStep .
+	?phaseStep_0 rdf:type ddhub:DynamicDrillingSignal .
+	?phaseStep_1 rdf:type ddhub:PhaseStep .
+	?rigActionPlan_0 rdf:type ddhub:DynamicDrillingSignal .
+	?rigActionPlan_1 rdf:type ddhub:RigActionPlan .
+  FILTER (
+	?Attribute000 = contextStep_0
+	&& 	?Attribute001 = taskStep_0
+	&& 	?Attribute002 = actionStep_0
+	&& 	?Attribute003 = phaseStep_0
+	&& 	?Attribute004 = rigActionPlan_0
+	&& 	?Attribute005 = phaseStep_1
+	&& 	?Attribute006 = phaseStep_1
+	&& 	?Attribute007 = actionStep_1
+	&& 	?Attribute008 = taskStep_1
   )
 }
 ```
@@ -49565,6 +49833,266 @@ WHERE {
 	&& 	?Attribute003 = current_1
 	&& 	?Attribute004 = extrapolated_1
 	&& 	?Attribute005 = measured_1
+  )
+}
+```
+## HasOperationalStep <!-- VERB -->
+- Display name: Has Operational Step
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [OperationalStep](#OperationalStep)
+- Object class: [OperationalStep](#OperationalStep)
+- Definition set: ContextualData
+- Description: 
+this Verb is used to relate an operational step to a rig action plan.
+- Examples:
+``` dwis rigActionPlan_0 phaseStep_0
+DynamicDrillingSignal:phaseStep_0
+PhaseStep:phaseStep_1
+phaseStep_1 HasDynamicValue phaseStep_0
+DynamicDrillingSignal:rigActionPlan_0
+RigActionPlan:rigActionPlan_1
+rigActionPlan_1 HasDynamicValue rigActionPlan_0
+rigActionPlan_1 HasOperationalStep phaseStep_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[phaseStep_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[phaseStep_1] -->|BelongsToClass| N0003(PhaseStep) 
+	N0002[phaseStep_1] -->|HasDynamicValue| N0000((phaseStep_0)) 
+	N0004[rigActionPlan_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0005[rigActionPlan_1] -->|BelongsToClass| N0006(RigActionPlan) 
+	N0005[rigActionPlan_1] -->|HasDynamicValue| N0004((rigActionPlan_0)) 
+	N0005[rigActionPlan_1] -->|HasOperationalStep| N0002((phaseStep_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rigActionPlan_0, ?phaseStep_0
+WHERE {
+	?phaseStep_0 rdf:type ddhub:DynamicDrillingSignal .
+	?phaseStep_1 rdf:type ddhub:PhaseStep .
+	?rigActionPlan_0 rdf:type ddhub:DynamicDrillingSignal .
+	?rigActionPlan_1 rdf:type ddhub:RigActionPlan .
+  FILTER (
+	?Attribute000 = phaseStep_0
+	&& 	?Attribute001 = rigActionPlan_0
+	&& 	?Attribute002 = phaseStep_1
+  )
+}
+```
+## IsAnActionOf <!-- VERB -->
+- Display name: Is an Action of
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [ActionStep](#ActionStep)
+- Object class: [PhaseStep](#PhaseStep)
+- Definition set: ContextualData
+- Description: 
+this Verb is used to relate an action step to its parent phase step.
+- Examples:
+``` dwis rigActionPlan_0 phaseStep_0 actionStep_0
+DynamicDrillingSignal:actionStep_0
+ActionStep:actionStep_1
+actionStep_1 HasDynamicValue actionStep_0
+DynamicDrillingSignal:phaseStep_0
+PhaseStep:phaseStep_1
+phaseStep_1 HasDynamicValue phaseStep_0
+DynamicDrillingSignal:rigActionPlan_0
+RigActionPlan:rigActionPlan_1
+rigActionPlan_1 HasDynamicValue rigActionPlan_0
+rigActionPlan_1 HasOperationalStep phaseStep_1
+actionStep_1 IsAnActionOf phaseStep_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[actionStep_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[actionStep_1] -->|BelongsToClass| N0003(ActionStep) 
+	N0002[actionStep_1] -->|HasDynamicValue| N0000((actionStep_0)) 
+	N0004[phaseStep_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0005[phaseStep_1] -->|BelongsToClass| N0006(PhaseStep) 
+	N0005[phaseStep_1] -->|HasDynamicValue| N0004((phaseStep_0)) 
+	N0007[rigActionPlan_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0008[rigActionPlan_1] -->|BelongsToClass| N0009(RigActionPlan) 
+	N0008[rigActionPlan_1] -->|HasDynamicValue| N0007((rigActionPlan_0)) 
+	N0008[rigActionPlan_1] -->|HasOperationalStep| N0005((phaseStep_1)) 
+	N0002[actionStep_1] -->|IsAnActionOf| N0005((phaseStep_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rigActionPlan_0, ?phaseStep_0, ?actionStep_0
+WHERE {
+	?actionStep_0 rdf:type ddhub:DynamicDrillingSignal .
+	?actionStep_1 rdf:type ddhub:ActionStep .
+	?phaseStep_0 rdf:type ddhub:DynamicDrillingSignal .
+	?phaseStep_1 rdf:type ddhub:PhaseStep .
+	?rigActionPlan_0 rdf:type ddhub:DynamicDrillingSignal .
+	?rigActionPlan_1 rdf:type ddhub:RigActionPlan .
+  FILTER (
+	?Attribute000 = actionStep_0
+	&& 	?Attribute001 = phaseStep_0
+	&& 	?Attribute002 = rigActionPlan_0
+	&& 	?Attribute003 = phaseStep_1
+	&& 	?Attribute004 = phaseStep_1
+  )
+}
+```
+## IsATaskOf <!-- VERB -->
+- Display name: Is an Action of
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [TaskStep](#TaskStep)
+- Object class: [ActionStep](#ActionStep)
+- Definition set: ContextualData
+- Description: 
+this Verb is used to relate an task step to its parent action step.
+- Examples:
+``` dwis rigActionPlan_0 phaseStep_0 actionStep_0 taskStep_0
+DynamicDrillingSignal:taskStep_0
+TaskStep:taskStep_1
+taskStep_1 HasDynamicValue taskStep_0
+DynamicDrillingSignal:actionStep_0
+ActionStep:actionStep_1
+actionStep_1 HasDynamicValue actionStep_0
+DynamicDrillingSignal:phaseStep_0
+PhaseStep:phaseStep_1
+phaseStep_1 HasDynamicValue phaseStep_0
+DynamicDrillingSignal:rigActionPlan_0
+RigActionPlan:rigActionPlan_1
+rigActionPlan_1 HasDynamicValue rigActionPlan_0
+rigActionPlan_1 HasOperationalStep phaseStep_1
+actionStep_1 IsAnActionOf phaseStep_1
+taskStep_1 IsATaskOf actionStep_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[taskStep_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[taskStep_1] -->|BelongsToClass| N0003(TaskStep) 
+	N0002[taskStep_1] -->|HasDynamicValue| N0000((taskStep_0)) 
+	N0004[actionStep_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0005[actionStep_1] -->|BelongsToClass| N0006(ActionStep) 
+	N0005[actionStep_1] -->|HasDynamicValue| N0004((actionStep_0)) 
+	N0007[phaseStep_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0008[phaseStep_1] -->|BelongsToClass| N0009(PhaseStep) 
+	N0008[phaseStep_1] -->|HasDynamicValue| N0007((phaseStep_0)) 
+	N0010[rigActionPlan_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0011[rigActionPlan_1] -->|BelongsToClass| N0012(RigActionPlan) 
+	N0011[rigActionPlan_1] -->|HasDynamicValue| N0010((rigActionPlan_0)) 
+	N0011[rigActionPlan_1] -->|HasOperationalStep| N0008((phaseStep_1)) 
+	N0005[actionStep_1] -->|IsAnActionOf| N0008((phaseStep_1)) 
+	N0002[taskStep_1] -->|IsATaskOf| N0005((actionStep_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rigActionPlan_0, ?phaseStep_0, ?actionStep_0, ?taskStep_0
+WHERE {
+	?taskStep_0 rdf:type ddhub:DynamicDrillingSignal .
+	?taskStep_1 rdf:type ddhub:TaskStep .
+	?actionStep_0 rdf:type ddhub:DynamicDrillingSignal .
+	?actionStep_1 rdf:type ddhub:ActionStep .
+	?phaseStep_0 rdf:type ddhub:DynamicDrillingSignal .
+	?phaseStep_1 rdf:type ddhub:PhaseStep .
+	?rigActionPlan_0 rdf:type ddhub:DynamicDrillingSignal .
+	?rigActionPlan_1 rdf:type ddhub:RigActionPlan .
+  FILTER (
+	?Attribute000 = taskStep_0
+	&& 	?Attribute001 = actionStep_0
+	&& 	?Attribute002 = phaseStep_0
+	&& 	?Attribute003 = rigActionPlan_0
+	&& 	?Attribute004 = phaseStep_1
+	&& 	?Attribute005 = phaseStep_1
+	&& 	?Attribute006 = actionStep_1
+  )
+}
+```
+## IsAContextOf <!-- VERB -->
+- Display name: Is an Action of
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [Context](#Context)
+- Object class: [TaskStep](#TaskStep)
+- Definition set: ContextualData
+- Description: 
+this Verb is used to relate a context to its parent task step.
+- Examples:
+``` dwis rigActionPlan_0 phaseStep_0 actionStep_0 taskStep_0 context_0
+DynamicDrillingSignal:contextStep_0
+Context:contextStep_1
+contextStep_1 HasDynamicValue contextStep_0
+DynamicDrillingSignal:taskStep_0
+TaskStep:taskStep_1
+taskStep_1 HasDynamicValue taskStep_0
+DynamicDrillingSignal:actionStep_0
+ActionStep:actionStep_1
+actionStep_1 HasDynamicValue actionStep_0
+DynamicDrillingSignal:phaseStep_0
+PhaseStep:phaseStep_1
+phaseStep_1 HasDynamicValue phaseStep_0
+DynamicDrillingSignal:rigActionPlan_0
+RigActionPlan:rigActionPlan_1
+rigActionPlan_1 HasDynamicValue rigActionPlan_0
+rigActionPlan_1 HasOperationalStep phaseStep_1
+actionStep_1 IsAnActionOf phaseStep_1
+taskStep_1 IsATaskOf actionStep_1
+contextStep_1 IsAContextOf taskStep_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[contextStep_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[contextStep_1] -->|BelongsToClass| N0003(Context) 
+	N0002[contextStep_1] -->|HasDynamicValue| N0000((contextStep_0)) 
+	N0004[taskStep_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0005[taskStep_1] -->|BelongsToClass| N0006(TaskStep) 
+	N0005[taskStep_1] -->|HasDynamicValue| N0004((taskStep_0)) 
+	N0007[actionStep_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0008[actionStep_1] -->|BelongsToClass| N0009(ActionStep) 
+	N0008[actionStep_1] -->|HasDynamicValue| N0007((actionStep_0)) 
+	N0010[phaseStep_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0011[phaseStep_1] -->|BelongsToClass| N0012(PhaseStep) 
+	N0011[phaseStep_1] -->|HasDynamicValue| N0010((phaseStep_0)) 
+	N0013[rigActionPlan_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0014[rigActionPlan_1] -->|BelongsToClass| N0015(RigActionPlan) 
+	N0014[rigActionPlan_1] -->|HasDynamicValue| N0013((rigActionPlan_0)) 
+	N0014[rigActionPlan_1] -->|HasOperationalStep| N0011((phaseStep_1)) 
+	N0008[actionStep_1] -->|IsAnActionOf| N0011((phaseStep_1)) 
+	N0005[taskStep_1] -->|IsATaskOf| N0008((actionStep_1)) 
+	N0002[contextStep_1] -->|IsAContextOf| N0005((taskStep_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rigActionPlan_0, ?phaseStep_0, ?actionStep_0, ?taskStep_0, ?context_0
+WHERE {
+	?contextStep_0 rdf:type ddhub:DynamicDrillingSignal .
+	?contextStep_1 rdf:type ddhub:Context .
+	?taskStep_0 rdf:type ddhub:DynamicDrillingSignal .
+	?taskStep_1 rdf:type ddhub:TaskStep .
+	?actionStep_0 rdf:type ddhub:DynamicDrillingSignal .
+	?actionStep_1 rdf:type ddhub:ActionStep .
+	?phaseStep_0 rdf:type ddhub:DynamicDrillingSignal .
+	?phaseStep_1 rdf:type ddhub:PhaseStep .
+	?rigActionPlan_0 rdf:type ddhub:DynamicDrillingSignal .
+	?rigActionPlan_1 rdf:type ddhub:RigActionPlan .
+  FILTER (
+	?Attribute000 = contextStep_0
+	&& 	?Attribute001 = taskStep_0
+	&& 	?Attribute002 = actionStep_0
+	&& 	?Attribute003 = phaseStep_0
+	&& 	?Attribute004 = rigActionPlan_0
+	&& 	?Attribute005 = phaseStep_1
+	&& 	?Attribute006 = phaseStep_1
+	&& 	?Attribute007 = actionStep_1
+	&& 	?Attribute008 = taskStep_1
   )
 }
 ```

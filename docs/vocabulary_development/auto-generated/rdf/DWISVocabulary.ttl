@@ -113,6 +113,10 @@ Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
 ddhub:Action a owl:Class; 
              rdfs:comment ""@EN; 
              rdfs:subClassOf ddhub:PistonMudPump. 
+ddhub:ActionStep a owl:Class; 
+                 rdfs:comment """An action step is at the second level of a rig action plan.
+"""@EN; 
+                 rdfs:subClassOf ddhub:OperationalStep. 
 ddhub:ActivableFunction a owl:Class; 
                         rdfs:comment """An `ActivableFunction` is an ADCS function that can be activated. Here activation means that the
 function may run immediately or that it is enabled and can trigger if some conditions are respected.
@@ -1556,7 +1560,8 @@ ddhub:ConductorTensioners a owl:Class;
                           rdfs:comment ""@EN; 
                           rdfs:subClassOf ddhub:MarineSystem. 
 ddhub:ConfigurationData a owl:Class; 
-                        rdfs:comment ""@EN; 
+                        rdfs:comment """Configuration data is used to configure a computation unit.
+"""@EN; 
                         rdfs:subClassOf ddhub:ContextualData. 
 ddhub:ConnectedCondition a owl:Class; 
                          rdfs:comment ""@EN; 
@@ -1576,6 +1581,10 @@ The consistency index in rheology measures a fluid's resistance to flow; it quan
 The meaningful precision of a consistency index in rheology is typically: 0.0001 Pa•s
 """@EN; 
                                        rdfs:subClassOf ddhub:MeasurableQuantity. 
+ddhub:Context a owl:Class; 
+              rdfs:comment """A context is at the fourth level of a rig action plan.
+"""@EN; 
+              rdfs:subClassOf ddhub:OperationalStep. 
 ddhub:ContextualData a owl:Class; 
                      rdfs:comment """Contextual data are structured objects stored in a JSon string.
 """@EN; 
@@ -3191,7 +3200,8 @@ ddhub:DrillingProcedure a owl:Class;
 """@EN; 
                         rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:DrillingProgram a owl:Class; 
-                      rdfs:comment ""@EN; 
+                      rdfs:comment """A drilling program is a set of procedures that are necessary to construct a well.
+"""@EN; 
                       rdfs:subClassOf ddhub:Plan. 
 ddhub:DrillingRiser a owl:Class; 
                     rdfs:comment ""@EN; 
@@ -4801,6 +4811,12 @@ ddhub:HasMotionType a owl:ObjectProperty;
                     rdfs:domain ddhub:MechanicalLogicalElement; 
                     rdfs:range ddhub:MotionType; 
                     rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:HasOperationalStep a owl:ObjectProperty; 
+                         rdfs:comment """this Verb is used to relate an operational step to a rig action plan.
+"""@EN; 
+                         rdfs:domain ddhub:OperationalStep; 
+                         rdfs:range ddhub:OperationalStep; 
+                         rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasPressureReference a owl:ObjectProperty; 
                            rdfs:comment """This verb is a specialization of `IsDependentOn` and refers to the specific dependence on a pressure reference.
 """@EN; 
@@ -5645,6 +5661,12 @@ ddhub:InversionModel a owl:Class;
 ddhub:IronRoughneck a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:DrillFloorEquipment. 
+ddhub:IsAContextOf a owl:ObjectProperty; 
+                   rdfs:comment """this Verb is used to relate a context to its parent task step.
+"""@EN; 
+                   rdfs:domain ddhub:Context; 
+                   rdfs:range ddhub:TaskStep; 
+                   rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsActivatedSignalFor a owl:ObjectProperty; 
                            rdfs:comment """This verb is used to define a `DrillingDataPoint` that indicates if the `ActivableFunction` is activated or
 not. It is expected that the `DrillingDataPoint` is a Boolean value.
@@ -5662,6 +5684,12 @@ ddhub:IsAMechanicalRepresentationFor a owl:ObjectProperty;
                                      rdfs:domain ddhub:MechanicalLogicalElement; 
                                      rdfs:range ddhub:DrillingEquipment; 
                                      rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsAnActionOf a owl:ObjectProperty; 
+                   rdfs:comment """this Verb is used to relate an action step to its parent phase step.
+"""@EN; 
+                   rdfs:domain ddhub:ActionStep; 
+                   rdfs:range ddhub:PhaseStep; 
+                   rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsArmedSignalFor a owl:ObjectProperty; 
                        rdfs:comment """This verb is used to indicate a `DrillingDataPoint` used by an `FDIRFunction` tells if the FDIR function is armed and operative.
 The signal is supposed to be a Boolean value.
@@ -5671,6 +5699,12 @@ triggered. For instance, a pack-off FDIR may be active but would react only if t
                        rdfs:domain ddhub:DrillingDataPoint; 
                        rdfs:range ddhub:FDIRFunction; 
                        rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsATaskOf a owl:ObjectProperty; 
+                rdfs:comment """this Verb is used to relate an task step to its parent action step.
+"""@EN; 
+                rdfs:domain ddhub:TaskStep; 
+                rdfs:range ddhub:ActionStep; 
+                rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsAuxiliary a owl:DatatypeProperty, owl:FunctionalProperty; 
                   rdfs:comment """This attribute specifies if the function is a main or an auxilary one. A main function impacts
 substantially the drilling process while an auxiliary function does not impact or only in limited fashion the
@@ -10051,8 +10085,13 @@ ddhub:OperatingCompany a owl:Class;
 """@EN; 
                        rdfs:subClassOf ddhub:DataProvider. 
 ddhub:OperationalPlan a owl:Class; 
-                      rdfs:comment ""@EN; 
+                      rdfs:comment """An operational plan is the day-to-day list of activities that shall be performed to contruct a well.
+"""@EN; 
                       rdfs:subClassOf ddhub:Plan. 
+ddhub:OperationalStep a owl:Class; 
+                      rdfs:comment """An operation step is a possible element of a rig action plan.
+"""@EN; 
+                      rdfs:subClassOf ddhub:ContextualData. 
 ddhub:OrdinaryDifferentialEquationModel a owl:Class; 
                                         rdfs:comment """A model that uses ordinary differential equations.
 """@EN; 
@@ -10171,6 +10210,10 @@ and
 Peta = 1e15
 """@EN; 
                rdfs:subClassOf ddhub:Unit. 
+ddhub:PhaseStep a owl:Class; 
+                rdfs:comment """A phase step is at the first level of a rig action plan.
+"""@EN; 
+                rdfs:subClassOf ddhub:OperationalStep. 
 ddhub:PhysicalData a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:DrillingDataPoint. 
@@ -10283,7 +10326,8 @@ ddhub:PistonMudPump a owl:Class;
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:MudPump. 
 ddhub:Plan a owl:Class; 
-           rdfs:comment ""@EN; 
+           rdfs:comment """A plan is a description of the actions that shall be undertaken to reach an objective
+"""@EN; 
            rdfs:subClassOf ddhub:ContextualData. 
 ddhub:PlaneAngleDrillingQuantity a owl:Class; 
                                  rdfs:comment """A plane angle is the angle formed between two intersecting lines or planes in a two-dimensional or three-dimensional space.
@@ -12358,7 +12402,8 @@ ddhub:RiemannianManifoldTwoDimensionalReferenceFrame a owl:Class;
                                                      rdfs:comment ""@EN; 
                                                      rdfs:subClassOf ddhub:TwoDimensionalReferenceFrame. 
 ddhub:RigActionPlan a owl:Class; 
-                    rdfs:comment ""@EN; 
+                    rdfs:comment """A rig action plan is a set of steps and rules that shall be conducted to fulfil a particulat activity when constructing a well.
+"""@EN; 
                     rdfs:subClassOf ddhub:Plan. 
 ddhub:RigChokeControlSystem a owl:Class; 
                             rdfs:comment ""@EN; 
@@ -13331,6 +13376,10 @@ ddhub:TangentialModelling a owl:Class;
 ddhub:Tank a owl:Class; 
            rdfs:comment ""@EN; 
            rdfs:subClassOf ddhub:HydraulicLogicalElement. 
+ddhub:TaskStep a owl:Class; 
+               rdfs:comment """A task step is at the third level of a rig action plan.
+"""@EN; 
+               rdfs:subClassOf ddhub:OperationalStep. 
 ddhub:Telemetry a owl:Class; 
                 rdfs:comment """Technology used for transferring the data from its main origin.
 """@EN; 

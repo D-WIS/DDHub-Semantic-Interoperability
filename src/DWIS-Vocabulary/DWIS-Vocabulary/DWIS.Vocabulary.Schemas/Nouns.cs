@@ -24,6 +24,11 @@ OperationalPlan,
 DrillingProgram,
 RigActionPlan,
 ConfigurationData,
+OperationalStep,
+PhaseStep,
+ActionStep,
+TaskStep,
+Context,
 WellBoreData,
 TrajectoryDescription,
 FluidDescription,
@@ -1932,6 +1937,11 @@ MegaBritishThermalUnit
 	public static string DrillingProgram = "DrillingProgram";
 	public static string RigActionPlan = "RigActionPlan";
 	public static string ConfigurationData = "ConfigurationData";
+	public static string OperationalStep = "OperationalStep";
+	public static string PhaseStep = "PhaseStep";
+	public static string ActionStep = "ActionStep";
+	public static string TaskStep = "TaskStep";
+	public static string Context = "Context";
 	public static string WellBoreData = "WellBoreData";
 	public static string TrajectoryDescription = "TrajectoryDescription";
 	public static string FluidDescription = "FluidDescription";
