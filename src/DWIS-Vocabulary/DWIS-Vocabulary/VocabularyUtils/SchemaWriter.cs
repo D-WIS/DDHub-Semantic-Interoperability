@@ -285,13 +285,14 @@ namespace DWIS.Vocabulary.Utils
                 builder.AppendLine("{");
                 foreach (string quantity in quantities)
                 {
+                    int hash = quantity.GetHashCode();
                     if (quantity != quantities.Last())
                     {
-                        builder.AppendLine(quantity + ",");
+                        builder.AppendLine(quantity + " = " + hash.ToString() + ",");
                     }
                     else
                     {
-                        builder.AppendLine(quantity);
+                        builder.AppendLine(quantity + " = " + hash.ToString());
                     }
                 }
                 builder.AppendLine("}");
@@ -317,13 +318,14 @@ namespace DWIS.Vocabulary.Utils
                 builder.AppendLine("{");
                 foreach (string unit in units)
                 {
+                    int hash = unit.GetHashCode();
                     if (unit != units.Last())
                     {
-                        builder.AppendLine(unit + ",");
+                        builder.AppendLine(unit + " = " + hash.ToString() + ",");
                     }
                     else
                     {
-                        builder.AppendLine(unit);
+                        builder.AppendLine(unit + " = " + hash.ToString());
                     }
                 }
                 builder.AppendLine("}");
