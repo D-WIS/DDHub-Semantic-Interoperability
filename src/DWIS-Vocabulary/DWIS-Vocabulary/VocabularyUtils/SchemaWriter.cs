@@ -90,7 +90,7 @@ namespace DWIS.Vocabulary.Utils
         {
             return input.Replace("'", "").Replace(" ", "");
         }
-
+        
         public static void WriteSchema(Development.Vocabulary vocabulary, string nounsFileName, string verbsFileName, string attributesFileName)
         {
             StringBuilder builder = new StringBuilder();
@@ -104,13 +104,14 @@ namespace DWIS.Vocabulary.Utils
             builder.AppendLine("{");
             foreach (Noun noun in vocabulary.Nouns)
             {
+                int hash = noun.Name.GetHashCode();
                 if (noun != vocabulary.Nouns.Last())
                 {
-                    builder.AppendLine(noun.Name + ",");
+                    builder.AppendLine(noun.Name + " = " + hash.ToString() +  ",");
                 }
                 else
                 {
-                    builder.AppendLine(noun.Name);
+                    builder.AppendLine(noun.Name + " = " + hash.ToString());
                 }
             }
             builder.AppendLine("}");
@@ -157,13 +158,14 @@ namespace DWIS.Vocabulary.Utils
                 builder.AppendLine("{");
                 foreach (string attribute in attributes)
                 {
+                    int hash = attribute.GetHashCode();
                     if (attribute != attributes.Last())
                     {
-                        builder.AppendLine(attribute + ",");
+                        builder.AppendLine(attribute + " = " + hash.ToString() + ",");
                     }
                     else
                     {
-                        builder.AppendLine(attribute);
+                        builder.AppendLine(attribute + " = " + hash.ToString());
                     }
                 }
                 builder.AppendLine("}");
@@ -188,13 +190,14 @@ namespace DWIS.Vocabulary.Utils
             builder.AppendLine("{");
             foreach (Verb verb in vocabulary.Verbs)
             {
+                int hash = verb.Name.GetHashCode();
                 if (verb != vocabulary.Verbs.Last())
                 {
-                    builder.AppendLine(verb.Name + ",");
+                    builder.AppendLine(verb.Name + " = " + hash.ToString() + ",");
                 }
                 else
                 {
-                    builder.AppendLine(verb.Name);
+                    builder.AppendLine(verb.Name + " = " + hash.ToString());
                 }
             }
             builder.AppendLine("}");
