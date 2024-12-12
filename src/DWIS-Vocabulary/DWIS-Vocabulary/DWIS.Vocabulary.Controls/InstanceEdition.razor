@@ -7,13 +7,13 @@
         <MudText Typo="Typo.h6">Vocabulary</MudText>
         <MudSpacer />
         <MudTextField @bind-Value="_searchString" Placeholder="Search" Adornment="Adornment.Start" Immediate="true" Clearable="true"
-                      AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0" OnClearButtonClick="() => updateSearch()" TextChanged="() => updateSearch()"></MudTextField>
+        AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0" OnClearButtonClick="() => updateSearch()" TextChanged="() => updateSearch()"></MudTextField>
     </ToolBarContent>
     <Columns>
         <HierarchyColumn T="VocabularyItem"></HierarchyColumn>
         <PropertyColumn Property="x => x.DisplayName" Title="Display name"></PropertyColumn>
         <PropertyColumn Property="x => x.Name" Title="Name"></PropertyColumn>
-        <PropertyColumn Property="x => x.Description" Title="Description"></PropertyColumn>
+        <PropertyColumn Property="x => GetDescription(x)" Title="Description"></PropertyColumn>
         <PropertyColumn Property="x => x.DefinitionSet" Title="Set" Grouping GroupBy="@_groupByNoun"></PropertyColumn>
         <PropertyColumn Property="x => x.Parent" Title="Parent"></PropertyColumn>
         <PropertyColumn Property="x => x.Nature" Title="Nature"></PropertyColumn>
@@ -42,14 +42,14 @@
 
 
 <div style="height:1500px">
-<MudGrid >
-    <MudItem xs="4" >
-       <GraphInstanceTextEditor   DWISInstance="DWISInstance" Vocabulary="Vocabulary" DWISInstanceChanged="()=>{ _mermaidDiagram.UpdateDiagram();}"></GraphInstanceTextEditor>
-    </MudItem>
-    <MudItem xs="8">
+    <MudGrid >
+        <MudItem xs="4" >
+            <GraphInstanceTextEditor   DWISInstance="DWISInstance" Vocabulary="Vocabulary" DWISInstanceChanged="()=>{ _mermaidDiagram.UpdateDiagram();}"></GraphInstanceTextEditor>
+        </MudItem>
+        <MudItem xs="8">
             <DWISMermaidDiagram DWISInstance="DWISInstance" ShowNouns="@ShowNouns" @ref="_mermaidDiagram"></DWISMermaidDiagram>
-    </MudItem>
-</MudGrid>
+        </MudItem>
+    </MudGrid>
 </div>
 @code {
     [Parameter]
@@ -60,14 +60,28 @@
     [Parameter]
     public bool ShowNouns { get; set; } = true;
 
+
+    private string GetDescription(VocabularyItem noun)
+    {
+        string description = "";
+        if (noun.Description != null)
+        {
+            for (int i = 0; i < noun.Description.Length; i++)
+            {
+                description += noun.Description[i] + "\r\n";
+            }
+        }
+        return description;
+    }
+
     private DWISMermaidDiagram _mermaidDiagram;
 
     private List<VocabularyItem> _vocabularyItems;
     private List<VocabularyItem> _searchVocabularyItems;
     private MudDataGrid<VocabularyItem> dataGrid;
     private string _lastWord;
-
     private string _searchString;
+
     private Func<VocabularyItem, bool> _quickFilter => x =>
     {
         if (string.IsNullOrWhiteSpace(_searchString))
@@ -80,9 +94,9 @@
 
         return false;
     };
+
     Func<VocabularyItem, object> _groupByNoun = x =>
       {
-
       return x.DefinitionSet;
       };
 

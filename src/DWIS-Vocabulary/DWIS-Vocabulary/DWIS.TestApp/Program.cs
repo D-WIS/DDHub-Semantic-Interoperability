@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using DWIS.Vocabulary.Development.Actions;
+using DWIS.Vocabulary.Schemas;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -10,7 +11,18 @@ Console.WriteLine("Hello, World!");
 
 var voc1 = DWIS.Vocabulary.Standard.VocabularyProvider.Vocabulary;
 
+var signals =  voc1.Nouns.Where(n => n.ParentNounName == Nouns.PrototypeData && n.DefinitionSetName == "SignalPrototypes").Select(n=>n.Name).ToArray();
+
+System.IO.File.WriteAllLines(@"C:\temp\signals.txt", signals);
+
+
+
+
 voc1.ToTrees(out var nounTree, out var verbTree);
+
+
+
+
 
 
 
