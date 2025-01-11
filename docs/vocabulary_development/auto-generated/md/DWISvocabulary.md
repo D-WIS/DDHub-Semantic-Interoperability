@@ -216,7 +216,7 @@ follows as closely as possible, for instance, a desired `WOB`.
 - Examples:
 ```dwis autoDriller
 ControllerFunction:autoDriller
-StableAxiaVelocityObjective:stableROP
+StableAxialVelocityObjective:stableROP
 autoDriller ImplementsObjective stableROP
 autoDriller.IsAuxiliary = "false"
 ControlSystem:DCS
@@ -229,7 +229,7 @@ An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[autoDriller] -->|BelongsToClass| N0001(ControllerFunction) 
-	N0002[stableROP] -->|BelongsToClass| N0003(StableAxiaVelocityObjective) 
+	N0002[stableROP] -->|BelongsToClass| N0003(StableAxialVelocityObjective) 
 	N0000[autoDriller] -->|ImplementsObjective| N0002((stableROP)) 
 	N0000[autoDriller] -->|IsAuxiliary| N0004(("false")) 
 	N0005[DCS] -->|BelongsToClass| N0006(ControlSystem) 
@@ -246,7 +246,7 @@ PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?autoDriller
 WHERE {
 	?autoDriller rdf:type ddhub:ControllerFunction .
-	?stableROP rdf:type ddhub:StableAxiaVelocityObjective .
+	?stableROP rdf:type ddhub:StableAxialVelocityObjective .
 	?autoDriller ddhub:IsAuxiliary ?Attribute001 .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
