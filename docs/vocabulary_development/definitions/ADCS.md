@@ -52,7 +52,7 @@ follows as closely as possible, for instance, a desired `WOB`.
 - Examples:
 ```dwis autoDriller
 ControllerFunction:autoDriller
-StableAxiaVelocityObjective:stableROP
+StableAxialVelocityObjective:stableROP
 autoDriller ImplementsObjective stableROP
 autoDriller.IsAuxiliary = "false"
 ControlSystem:DCS
