@@ -419,6 +419,8 @@
 <http://ddhub.no/MechanicalSpecificEnergy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/PrototypeData> .
 <http://ddhub.no/ProcessData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ProcessData> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/ProcessFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ProcessFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ProcessData> .
 <http://ddhub.no/SetPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/SetPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ProcessData> .
 <http://ddhub.no/Command> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -4113,6 +4115,7 @@
 <http://ddhub.no/BackPressurePumpPressure> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/MechanicalSpecificEnergy> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/ProcessData> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/ProcessFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "This Noun is used for signals that describe a process feature, typically assuming that this is a static signal.\n"@EN .
 <http://ddhub.no/SetPoint> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/Command> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/Recommendation> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .

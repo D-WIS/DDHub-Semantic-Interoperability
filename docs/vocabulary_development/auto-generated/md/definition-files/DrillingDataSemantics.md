@@ -18,6 +18,7 @@ StringDataType <|-- JSonDataType
 DWISNoun <|-- DrillingDataPoint
 DrillingDataPoint <|-- PrototypeData
 DrillingDataPoint <|-- ProcessData
+ProcessData <|-- ProcessFeature
 ProcessData <|-- SetPoint
 ProcessData <|-- Command
 ProcessData <|-- Recommendation
@@ -94,6 +95,37 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Display name: ProcessData
 - Parent class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Definition set: DrillingDataSemantics
+## ProcessFeature <!-- NOUN -->
+- Display name: Process feature
+- Parent class: [ProcessData](./DrillingDataSemantics.md#ProcessData)
+- Description: 
+This Noun is used for signals that describe a process feature, typically assuming that this is a static signal.
+- Definition set: DrillingDataSemantics
+- Examples:
+``` dwis
+DrillingSignal:isUsedAutoDrillerWithOnlyLimit
+ProcessFeature:isUsedAutoDrillerWithOnlyLimit#01
+BooleanDataType:isUsedAutoDrillerWithOnlyLimit#01
+isUsedAutoDrillerWithOnlyLimit#01 HasStaticValue isUsedAutoDrillerWithOnlyLimit
+ControllerFunction:AutoDriller
+StableAxialVelocityObjective:stableROP
+StableAxialForceObjective:stableWOB
+AutoDriller ImplementsObjective stableROP
+AutoDriller ImplementsObjective stableWOB
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[isUsedAutoDrillerWithOnlyLimit] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[isUsedAutoDrillerWithOnlyLimit#01] -->|BelongsToClass| N0003(ProcessFeature) 
+	N0002[isUsedAutoDrillerWithOnlyLimit#01] -->|BelongsToClass| N0004(BooleanDataType) 
+	N0002[isUsedAutoDrillerWithOnlyLimit#01] -->|HasStaticValue| N0000[isUsedAutoDrillerWithOnlyLimit] 
+	N0005[AutoDriller] -->|BelongsToClass| N0006(ControllerFunction) 
+	N0007[stableROP] -->|BelongsToClass| N0008(StableAxialVelocityObjective) 
+	N0009[stableWOB] -->|BelongsToClass| N0010(StableAxialForceObjective) 
+	N0005[AutoDriller] -->|ImplementsObjective| N0007[stableROP] 
+	N0005[AutoDriller] -->|ImplementsObjective| N0009[stableWOB] 
+```
 ## SetPoint <!-- NOUN -->
 - Display name: Set-point
 - Parent class: [ProcessData](./DrillingDataSemantics.md#ProcessData)
