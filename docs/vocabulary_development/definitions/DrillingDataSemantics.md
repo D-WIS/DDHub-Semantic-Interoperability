@@ -82,6 +82,24 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Specialization:
 - Description: 
 - Examples:
+## ProcessFeature <!-- NOUN -->
+- Display name: Process feature
+- Parent class: ProcessData
+- Attributes:
+- Specialization:
+- Description: This Noun is used for signals that describe a process feature, typically assuming that this is a static signal.
+- Examples:
+``` dwis
+DrillingSignal:isUsedAutoDrillerWithOnlyLimit
+ProcessFeature:isUsedAutoDrillerWithOnlyLimit#01
+BooleanDataType:isUsedAutoDrillerWithOnlyLimit#01
+isUsedAutoDrillerWithOnlyLimit#01 HasStaticValue isUsedAutoDrillerWithOnlyLimit
+ControllerFunction:AutoDriller
+StableAxialVelocityObjective:stableROP
+StableAxialForceObjective:stableWOB
+AutoDriller ImplementsObjective stableROP
+AutoDriller ImplementsObjective stableWOB
+```
 ## SetPoint <!-- NOUN -->
 - Display name: Set-point
 - Parent class: ProcessData
