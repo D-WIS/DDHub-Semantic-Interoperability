@@ -102,7 +102,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 This Noun is used for signals that describe a process feature, typically assuming that this is a static signal.
 - Definition set: DrillingDataSemantics
 - Examples:
-``` dwis
+```dwis isUsedAutoDrillerWithOnlyLimit
 DrillingSignal:isUsedAutoDrillerWithOnlyLimit
 ProcessFeature:isUsedAutoDrillerWithOnlyLimit#01
 BooleanDataType:isUsedAutoDrillerWithOnlyLimit#01
@@ -112,6 +112,9 @@ StableAxialVelocityObjective:stableROP
 StableAxialForceObjective:stableWOB
 AutoDriller ImplementsObjective stableROP
 AutoDriller ImplementsObjective stableWOB
+isUsedAutoDrillerWithOnlyLimit#01 IsFeatureSignalFor AutoDriller
+OnlyLimits:onlyLimits
+isUsedAutoDrillerWithOnlyLimit#01 IsRelatedToDrillingLimit onlyLimits
 ```
 An example semantic graph looks like as follow:
 ```mermaid
@@ -125,6 +128,30 @@ graph LR
 	N0009[stableWOB] -->|BelongsToClass| N0010(StableAxialForceObjective) 
 	N0005[AutoDriller] -->|ImplementsObjective| N0007[stableROP] 
 	N0005[AutoDriller] -->|ImplementsObjective| N0009[stableWOB] 
+	N0002[isUsedAutoDrillerWithOnlyLimit#01] -->|IsFeatureSignalFor| N0005[AutoDriller] 
+	N0011[onlyLimits] -->|BelongsToClass| N0012(OnlyLimits) 
+	N0002[isUsedAutoDrillerWithOnlyLimit#01] -->|IsRelatedToDrillingLimit| N0011[onlyLimits] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?isUsedAutoDrillerWithOnlyLimit
+WHERE {
+	?isUsedAutoDrillerWithOnlyLimit rdf:type ddhub:DrillingSignal .
+	?isUsedAutoDrillerWithOnlyLimit#01 rdf:type ddhub:ProcessFeature .
+	?isUsedAutoDrillerWithOnlyLimit#01 rdf:type ddhub:BooleanDataType .
+	?isUsedAutoDrillerWithOnlyLimit#01 ddhub:HasStaticValue ?isUsedAutoDrillerWithOnlyLimit .
+	?AutoDriller rdf:type ddhub:ControllerFunction .
+	?stableROP rdf:type ddhub:StableAxialVelocityObjective .
+	?stableWOB rdf:type ddhub:StableAxialForceObjective .
+	?AutoDriller ddhub:ImplementsObjective ?stableROP .
+	?AutoDriller ddhub:ImplementsObjective ?stableWOB .
+	?isUsedAutoDrillerWithOnlyLimit#01 ddhub:IsFeatureSignalFor ?AutoDriller .
+	?onlyLimits rdf:type ddhub:OnlyLimits .
+	?isUsedAutoDrillerWithOnlyLimit#01 ddhub:IsRelatedToDrillingLimit ?onlyLimits .
+}
 ```
 ## SetPoint <!-- NOUN -->
 - Display name: Set-point

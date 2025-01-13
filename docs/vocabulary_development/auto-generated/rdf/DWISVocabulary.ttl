@@ -5794,6 +5794,12 @@ ddhub:IsEquivalentCirculationDensityAt a owl:ObjectProperty;
                                        rdfs:domain ddhub:DrillingDataPoint; 
                                        rdfs:range ddhub:HydraulicLogicalElement; 
                                        rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
+ddhub:IsFeatureSignalFor a owl:ObjectProperty; 
+                         rdfs:comment """This verbs is used to indicate that a `DrillingDataPoint` describes a feature of an `ActivableFunction`
+"""@EN; 
+                         rdfs:domain ddhub:DrillingDataPoint; 
+                         rdfs:range ddhub:ActivableFunction; 
+                         rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsFluidDensityAt a owl:ObjectProperty; 
                        rdfs:comment ""@EN; 
                        rdfs:domain ddhub:DrillingDataPoint; 
@@ -10071,6 +10077,10 @@ ddhub:OneDModelling a owl:Class;
                     rdfs:comment """The model only accounts for one dimension
 """@EN; 
                     rdfs:subClassOf ddhub:ModellingDimensions. 
+ddhub:OnlyLimits a owl:Class; 
+                 rdfs:comment """This noun states that something works with only limits, for example excluding the relation to set-points, etc.
+"""@EN; 
+                 rdfs:subClassOf ddhub:DrillingLimit. 
 ddhub:OpenChannel a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:HydraulicBranch. 
@@ -13742,6 +13752,10 @@ $$[LMT^{-2}]$$.
 The SI unit for **torque gradient per length** is: newton metre per metre with the associated unit label $\\frac{N \\cdot m}{m}$
 """@EN; 
                                       rdfs:subClassOf ddhub:Quantity. 
+ddhub:TorqueLimit a owl:Class; 
+                  rdfs:comment """This Noun is used to refer to a torque limit.
+"""@EN; 
+                  rdfs:subClassOf ddhub:DrillingLimit. 
 ddhub:TorqueQuantity a owl:Class; 
                      rdfs:comment """A torque is a measure of the rotational force applied to a body around an axis.
 The dimension of torque is:

@@ -396,6 +396,7 @@ DWISVerb <|-- IsArmedSignalFor
 DWISVerb <|-- IsTriggeredSignalFor
 DWISVerb <|-- IsIdlingAfterTriggeredSignalFor
 DWISVerb <|-- IsImpactDescriptionSignalFor
+DWISVerb <|-- IsFeatureSignalFor
 ```
 ## Relations
 Here is a graph representing the relations that can be made with the verbs defined in this definition set.
@@ -411,6 +412,7 @@ DrillingDataPoint ||--o{ FDIRFunction : IsArmedSignalFor
 DrillingDataPoint ||--o{ FDIRFunction : IsTriggeredSignalFor
 DrillingDataPoint ||--o{ FDIRFunction : IsIdlingAfterTriggeredSignalFor
 DrillingDataPoint ||--o{ FDIRFunction : IsImpactDescriptionSignalFor
+DrillingDataPoint ||--o{ ActivableFunction : IsFeatureSignalFor
 ```
 ## IsEnablingSignalFor <!-- VERB -->
 - Display name: Is Enabling Signal For
@@ -1072,3 +1074,63 @@ WHERE {
 ```
 This example describes a `Command` signal of an `FDIRFunction` that is used to inform the ADCS about the impact of
 triggering the FDIR function.
+## IsFeatureSignalFor <!-- VERB -->
+- Display name: Is Feature Signal For
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [ActivableFunction](./ADCS.md#ActivableFunction)
+- Definition set: ADCS
+- Description: 
+This verbs is used to indicate that a `DrillingDataPoint` describes a feature of an `ActivableFunction`
+- Examples:
+```dwis isUsedAutoDrillerWithOnlyLimit
+DrillingSignal:isUsedAutoDrillerWithOnlyLimit
+ProcessFeature:isUsedAutoDrillerWithOnlyLimit#01
+BooleanDataType:isUsedAutoDrillerWithOnlyLimit#01
+isUsedAutoDrillerWithOnlyLimit#01 HasStaticValue isUsedAutoDrillerWithOnlyLimit
+ControllerFunction:AutoDriller
+StableAxialVelocityObjective:stableROP
+StableAxialForceObjective:stableWOB
+AutoDriller ImplementsObjective stableROP
+AutoDriller ImplementsObjective stableWOB
+isUsedAutoDrillerWithOnlyLimit#01 IsFeatureSignalFor AutoDriller
+OnlyLimits:onlyLimits
+isUsedAutoDrillerWithOnlyLimit#01 IsRelatedToDrillingLimit onlyLimits
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[isUsedAutoDrillerWithOnlyLimit] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[isUsedAutoDrillerWithOnlyLimit#01] -->|BelongsToClass| N0003(ProcessFeature) 
+	N0002[isUsedAutoDrillerWithOnlyLimit#01] -->|BelongsToClass| N0004(BooleanDataType) 
+	N0002[isUsedAutoDrillerWithOnlyLimit#01] -->|HasStaticValue| N0000[isUsedAutoDrillerWithOnlyLimit] 
+	N0005[AutoDriller] -->|BelongsToClass| N0006(ControllerFunction) 
+	N0007[stableROP] -->|BelongsToClass| N0008(StableAxialVelocityObjective) 
+	N0009[stableWOB] -->|BelongsToClass| N0010(StableAxialForceObjective) 
+	N0005[AutoDriller] -->|ImplementsObjective| N0007[stableROP] 
+	N0005[AutoDriller] -->|ImplementsObjective| N0009[stableWOB] 
+	N0002[isUsedAutoDrillerWithOnlyLimit#01] -->|IsFeatureSignalFor| N0005[AutoDriller] 
+	N0011[onlyLimits] -->|BelongsToClass| N0012(OnlyLimits) 
+	N0002[isUsedAutoDrillerWithOnlyLimit#01] -->|IsRelatedToDrillingLimit| N0011[onlyLimits] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?isUsedAutoDrillerWithOnlyLimit
+WHERE {
+	?isUsedAutoDrillerWithOnlyLimit rdf:type ddhub:DrillingSignal .
+	?isUsedAutoDrillerWithOnlyLimit#01 rdf:type ddhub:ProcessFeature .
+	?isUsedAutoDrillerWithOnlyLimit#01 rdf:type ddhub:BooleanDataType .
+	?isUsedAutoDrillerWithOnlyLimit#01 ddhub:HasStaticValue ?isUsedAutoDrillerWithOnlyLimit .
+	?AutoDriller rdf:type ddhub:ControllerFunction .
+	?stableROP rdf:type ddhub:StableAxialVelocityObjective .
+	?stableWOB rdf:type ddhub:StableAxialForceObjective .
+	?AutoDriller ddhub:ImplementsObjective ?stableROP .
+	?AutoDriller ddhub:ImplementsObjective ?stableWOB .
+	?isUsedAutoDrillerWithOnlyLimit#01 ddhub:IsFeatureSignalFor ?AutoDriller .
+	?onlyLimits rdf:type ddhub:OnlyLimits .
+	?isUsedAutoDrillerWithOnlyLimit#01 ddhub:IsRelatedToDrillingLimit ?onlyLimits .
+}
+```
