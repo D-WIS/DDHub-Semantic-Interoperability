@@ -89,7 +89,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Specialization:
 - Description: This Noun is used for signals that describe a process feature, typically assuming that this is a static signal.
 - Examples:
-``` dwis
+```dwis isUsedAutoDrillerWithOnlyLimit
 DrillingSignal:isUsedAutoDrillerWithOnlyLimit
 ProcessFeature:isUsedAutoDrillerWithOnlyLimit#01
 BooleanDataType:isUsedAutoDrillerWithOnlyLimit#01
@@ -99,6 +99,9 @@ StableAxialVelocityObjective:stableROP
 StableAxialForceObjective:stableWOB
 AutoDriller ImplementsObjective stableROP
 AutoDriller ImplementsObjective stableWOB
+isUsedAutoDrillerWithOnlyLimit#01 IsFeatureSignalFor AutoDriller
+OnlyLimits:onlyLimits
+isUsedAutoDrillerWithOnlyLimit#01 IsRelatedToDrillingLimit onlyLimits
 ```
 ## SetPoint <!-- NOUN -->
 - Display name: Set-point

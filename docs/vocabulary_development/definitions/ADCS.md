@@ -413,3 +413,24 @@ impactDescriptionSignalPackOffDetectionFDIR IsImpactDescriptionSignalFor packOff
 ```
 This example describes a `Command` signal of an `FDIRFunction` that is used to inform the ADCS about the impact of
 triggering the FDIR function.
+## IsFeatureSignalFor  <!-- VERB -->
+- Display name: Is Feature Signal For  
+- Parent verb: DWISVerb
+- Subject class: DrillingDataPoint
+- Object class: ActivableFunction
+- Description: This verbs is used to indicate that a `DrillingDataPoint` describes a feature of an `ActivableFunction` 
+- Examples:
+```dwis isUsedAutoDrillerWithOnlyLimit
+DrillingSignal:isUsedAutoDrillerWithOnlyLimit
+ProcessFeature:isUsedAutoDrillerWithOnlyLimit#01
+BooleanDataType:isUsedAutoDrillerWithOnlyLimit#01
+isUsedAutoDrillerWithOnlyLimit#01 HasStaticValue isUsedAutoDrillerWithOnlyLimit
+ControllerFunction:AutoDriller
+StableAxialVelocityObjective:stableROP
+StableAxialForceObjective:stableWOB
+AutoDriller ImplementsObjective stableROP
+AutoDriller ImplementsObjective stableWOB
+isUsedAutoDrillerWithOnlyLimit#01 IsFeatureSignalFor AutoDriller
+OnlyLimits:onlyLimits
+isUsedAutoDrillerWithOnlyLimit#01 IsRelatedToDrillingLimit onlyLimits
+```

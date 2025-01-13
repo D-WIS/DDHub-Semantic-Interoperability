@@ -8,6 +8,27 @@
 - Specialization:
 - Description: This is the parent class for drilling limits. A limit applies typically on a desired value as controlled by a controller.
 - Examples:
+## OnlyLimits <!-- NOUN -->
+- Display name: Only Limits
+- Parent class: DrillingLimit
+- Attributes:
+- Specialization:
+- Description: This noun states that something works with only limits, for example excluding the relation to set-points, etc.
+- Examples:
+```dwis isUsedAutoDrillerWithOnlyLimit
+DrillingSignal:isUsedAutoDrillerWithOnlyLimit
+ProcessFeature:isUsedAutoDrillerWithOnlyLimit#01
+BooleanDataType:isUsedAutoDrillerWithOnlyLimit#01
+isUsedAutoDrillerWithOnlyLimit#01 HasStaticValue isUsedAutoDrillerWithOnlyLimit
+ControllerFunction:AutoDriller
+StableAxialVelocityObjective:stableROP
+StableAxialForceObjective:stableWOB
+AutoDriller ImplementsObjective stableROP
+AutoDriller ImplementsObjective stableWOB
+isUsedAutoDrillerWithOnlyLimit#01 IsFeatureSignalFor AutoDriller
+OnlyLimits:onlyLimits
+isUsedAutoDrillerWithOnlyLimit#01 IsRelatedToDrillingLimit onlyLimits
+```
 ## AxialVelocityLimit <!-- NOUN -->
 - Display name: Axial Velocity Limit
 - Parent class: DrillingLimit
@@ -203,6 +224,13 @@ ROPManagementControllerInfo_1 IsProvidedTo adviceComposer
 DWISScheduler:scheduler
 ROPManagementControllerInfo_1 IsProvidedTo scheduler
 ```
+## TorqueLimit <!-- NOUN -->
+- Display name: Torque Limit
+- Parent class: DrillingLimit
+- Attributes:
+- Specialization:
+- Description: This Noun is used to refer to a torque limit.
+- Examples:
 # VERBS
 ## IsRelatedToDrillingLimit <!-- VERB -->
 - Display name: Is Related to Drilling Limit
