@@ -122,6 +122,9 @@ ddhub:ActivableFunction a owl:Class;
 function may run immediately or that it is enabled and can trigger if some conditions are respected.
 """@EN; 
                         rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:ActivationState a owl:Class; 
+                      rdfs:comment ""@EN; 
+                      rdfs:subClassOf ddhub:ProceduralState. 
 ddhub:ActiveDrillingSystem a owl:Class; 
                            rdfs:comment ""@EN; 
                            rdfs:subClassOf ddhub:MudPits. 
@@ -3494,6 +3497,9 @@ ddhub:EmpiricalModel a owl:Class;
                      rdfs:comment """A model that heavily rely on data without using explicitly physical laws.
 """@EN; 
                      rdfs:subClassOf ddhub:ModelingParadigm. 
+ddhub:EnablementState a owl:Class; 
+                      rdfs:comment ""@EN; 
+                      rdfs:subClassOf ddhub:ProceduralState. 
 ddhub:EndPointDescription a owl:DatatypeProperty, owl:FunctionalProperty; 
                           rdfs:comment """
 """@EN; 
@@ -5249,6 +5255,9 @@ SI Unit: Ampere (A)
 ddhub:Ibop a owl:Class; 
            rdfs:comment ""@EN; 
            rdfs:subClassOf ddhub:WellControlSystem. 
+ddhub:IdlingState a owl:Class; 
+                  rdfs:comment ""@EN; 
+                  rdfs:subClassOf ddhub:ProceduralState. 
 ddhub:ImageScaleQuantity a owl:Class; 
                          rdfs:comment """Image scale refers to the resolution or level of detail in an image.
 The dimension of image scale is:
