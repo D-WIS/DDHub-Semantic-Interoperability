@@ -6037,7 +6037,7 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 This Noun is used for signals that describe a process feature, typically assuming that this is a static signal.
 - Definition set: DrillingDataSemantics
 - Examples:
-``` dwis
+```dwis isUsedAutoDrillerWithOnlyLimit
 DrillingSignal:isUsedAutoDrillerWithOnlyLimit
 ProcessFeature:isUsedAutoDrillerWithOnlyLimit#01
 BooleanDataType:isUsedAutoDrillerWithOnlyLimit#01
@@ -6047,6 +6047,9 @@ StableAxialVelocityObjective:stableROP
 StableAxialForceObjective:stableWOB
 AutoDriller ImplementsObjective stableROP
 AutoDriller ImplementsObjective stableWOB
+isUsedAutoDrillerWithOnlyLimit#01 IsFeatureSignalFor AutoDriller
+OnlyLimits:onlyLimits
+isUsedAutoDrillerWithOnlyLimit#01 IsRelatedToDrillingLimit onlyLimits
 ```
 An example semantic graph looks like as follow:
 ```mermaid
@@ -6060,6 +6063,32 @@ graph LR
 	N0009[stableWOB] -->|BelongsToClass| N0010(StableAxialForceObjective) 
 	N0005[AutoDriller] -->|ImplementsObjective| N0007((stableROP)) 
 	N0005[AutoDriller] -->|ImplementsObjective| N0009((stableWOB)) 
+	N0002[isUsedAutoDrillerWithOnlyLimit#01] -->|IsFeatureSignalFor| N0005((AutoDriller)) 
+	N0011[onlyLimits] -->|BelongsToClass| N0012(OnlyLimits) 
+	N0002[isUsedAutoDrillerWithOnlyLimit#01] -->|IsRelatedToDrillingLimit| N0011((onlyLimits)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?isUsedAutoDrillerWithOnlyLimit
+WHERE {
+	?isUsedAutoDrillerWithOnlyLimit rdf:type ddhub:DrillingSignal .
+	?isUsedAutoDrillerWithOnlyLimit#01 rdf:type ddhub:ProcessFeature .
+	?isUsedAutoDrillerWithOnlyLimit#01 rdf:type ddhub:BooleanDataType .
+	?AutoDriller rdf:type ddhub:ControllerFunction .
+	?stableROP rdf:type ddhub:StableAxialVelocityObjective .
+	?stableWOB rdf:type ddhub:StableAxialForceObjective .
+	?onlyLimits rdf:type ddhub:OnlyLimits .
+  FILTER (
+	?Attribute000 = isUsedAutoDrillerWithOnlyLimit
+	&& 	?Attribute001 = stableROP
+	&& 	?Attribute002 = stableWOB
+	&& 	?Attribute003 = AutoDriller
+	&& 	?Attribute004 = onlyLimits
+  )
+}
 ```
 ## SetPoint <!-- NOUN -->
 - Display name: Set-point
@@ -8811,6 +8840,66 @@ WHERE {
 - Description: 
 This is the parent class for drilling limits. A limit applies typically on a desired value as controlled by a controller.
 - Definition set: DrillingLimit
+## OnlyLimits <!-- NOUN -->
+- Display name: Only Limits
+- Parent class: [DrillingLimit](#DrillingLimit)
+- Description: 
+This noun states that something works with only limits, for example excluding the relation to set-points, etc.
+- Definition set: DrillingLimit
+- Examples:
+```dwis isUsedAutoDrillerWithOnlyLimit
+DrillingSignal:isUsedAutoDrillerWithOnlyLimit
+ProcessFeature:isUsedAutoDrillerWithOnlyLimit#01
+BooleanDataType:isUsedAutoDrillerWithOnlyLimit#01
+isUsedAutoDrillerWithOnlyLimit#01 HasStaticValue isUsedAutoDrillerWithOnlyLimit
+ControllerFunction:AutoDriller
+StableAxialVelocityObjective:stableROP
+StableAxialForceObjective:stableWOB
+AutoDriller ImplementsObjective stableROP
+AutoDriller ImplementsObjective stableWOB
+isUsedAutoDrillerWithOnlyLimit#01 IsFeatureSignalFor AutoDriller
+OnlyLimits:onlyLimits
+isUsedAutoDrillerWithOnlyLimit#01 IsRelatedToDrillingLimit onlyLimits
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[isUsedAutoDrillerWithOnlyLimit] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[isUsedAutoDrillerWithOnlyLimit#01] -->|BelongsToClass| N0003(ProcessFeature) 
+	N0002[isUsedAutoDrillerWithOnlyLimit#01] -->|BelongsToClass| N0004(BooleanDataType) 
+	N0002[isUsedAutoDrillerWithOnlyLimit#01] -->|HasStaticValue| N0000((isUsedAutoDrillerWithOnlyLimit)) 
+	N0005[AutoDriller] -->|BelongsToClass| N0006(ControllerFunction) 
+	N0007[stableROP] -->|BelongsToClass| N0008(StableAxialVelocityObjective) 
+	N0009[stableWOB] -->|BelongsToClass| N0010(StableAxialForceObjective) 
+	N0005[AutoDriller] -->|ImplementsObjective| N0007((stableROP)) 
+	N0005[AutoDriller] -->|ImplementsObjective| N0009((stableWOB)) 
+	N0002[isUsedAutoDrillerWithOnlyLimit#01] -->|IsFeatureSignalFor| N0005((AutoDriller)) 
+	N0011[onlyLimits] -->|BelongsToClass| N0012(OnlyLimits) 
+	N0002[isUsedAutoDrillerWithOnlyLimit#01] -->|IsRelatedToDrillingLimit| N0011((onlyLimits)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?isUsedAutoDrillerWithOnlyLimit
+WHERE {
+	?isUsedAutoDrillerWithOnlyLimit rdf:type ddhub:DrillingSignal .
+	?isUsedAutoDrillerWithOnlyLimit#01 rdf:type ddhub:ProcessFeature .
+	?isUsedAutoDrillerWithOnlyLimit#01 rdf:type ddhub:BooleanDataType .
+	?AutoDriller rdf:type ddhub:ControllerFunction .
+	?stableROP rdf:type ddhub:StableAxialVelocityObjective .
+	?stableWOB rdf:type ddhub:StableAxialForceObjective .
+	?onlyLimits rdf:type ddhub:OnlyLimits .
+  FILTER (
+	?Attribute000 = isUsedAutoDrillerWithOnlyLimit
+	&& 	?Attribute001 = stableROP
+	&& 	?Attribute002 = stableWOB
+	&& 	?Attribute003 = AutoDriller
+	&& 	?Attribute004 = onlyLimits
+  )
+}
+```
 ## AxialVelocityLimit <!-- NOUN -->
 - Display name: Axial Velocity Limit
 - Parent class: [DrillingLimit](#DrillingLimit)
@@ -9378,6 +9467,12 @@ WHERE {
   )
 }
 ```
+## TorqueLimit <!-- NOUN -->
+- Display name: Torque Limit
+- Parent class: [DrillingLimit](#DrillingLimit)
+- Description: 
+This Noun is used to refer to a torque limit.
+- Definition set: DrillingLimit
 ## DrillingObjective <!-- NOUN -->
 - Display name: Drilling Objective
 - Parent class: [DWISNoun](#DWISNoun)
@@ -49549,6 +49644,68 @@ WHERE {
 ```
 This example describes a `Command` signal of an `FDIRFunction` that is used to inform the ADCS about the impact of
 triggering the FDIR function.
+## IsFeatureSignalFor <!-- VERB -->
+- Display name: Is Feature Signal For
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [ActivableFunction](#ActivableFunction)
+- Definition set: ADCS
+- Description: 
+This verbs is used to indicate that a `DrillingDataPoint` describes a feature of an `ActivableFunction`
+- Examples:
+```dwis isUsedAutoDrillerWithOnlyLimit
+DrillingSignal:isUsedAutoDrillerWithOnlyLimit
+ProcessFeature:isUsedAutoDrillerWithOnlyLimit#01
+BooleanDataType:isUsedAutoDrillerWithOnlyLimit#01
+isUsedAutoDrillerWithOnlyLimit#01 HasStaticValue isUsedAutoDrillerWithOnlyLimit
+ControllerFunction:AutoDriller
+StableAxialVelocityObjective:stableROP
+StableAxialForceObjective:stableWOB
+AutoDriller ImplementsObjective stableROP
+AutoDriller ImplementsObjective stableWOB
+isUsedAutoDrillerWithOnlyLimit#01 IsFeatureSignalFor AutoDriller
+OnlyLimits:onlyLimits
+isUsedAutoDrillerWithOnlyLimit#01 IsRelatedToDrillingLimit onlyLimits
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[isUsedAutoDrillerWithOnlyLimit] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[isUsedAutoDrillerWithOnlyLimit#01] -->|BelongsToClass| N0003(ProcessFeature) 
+	N0002[isUsedAutoDrillerWithOnlyLimit#01] -->|BelongsToClass| N0004(BooleanDataType) 
+	N0002[isUsedAutoDrillerWithOnlyLimit#01] -->|HasStaticValue| N0000((isUsedAutoDrillerWithOnlyLimit)) 
+	N0005[AutoDriller] -->|BelongsToClass| N0006(ControllerFunction) 
+	N0007[stableROP] -->|BelongsToClass| N0008(StableAxialVelocityObjective) 
+	N0009[stableWOB] -->|BelongsToClass| N0010(StableAxialForceObjective) 
+	N0005[AutoDriller] -->|ImplementsObjective| N0007((stableROP)) 
+	N0005[AutoDriller] -->|ImplementsObjective| N0009((stableWOB)) 
+	N0002[isUsedAutoDrillerWithOnlyLimit#01] -->|IsFeatureSignalFor| N0005((AutoDriller)) 
+	N0011[onlyLimits] -->|BelongsToClass| N0012(OnlyLimits) 
+	N0002[isUsedAutoDrillerWithOnlyLimit#01] -->|IsRelatedToDrillingLimit| N0011((onlyLimits)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?isUsedAutoDrillerWithOnlyLimit
+WHERE {
+	?isUsedAutoDrillerWithOnlyLimit rdf:type ddhub:DrillingSignal .
+	?isUsedAutoDrillerWithOnlyLimit#01 rdf:type ddhub:ProcessFeature .
+	?isUsedAutoDrillerWithOnlyLimit#01 rdf:type ddhub:BooleanDataType .
+	?AutoDriller rdf:type ddhub:ControllerFunction .
+	?stableROP rdf:type ddhub:StableAxialVelocityObjective .
+	?stableWOB rdf:type ddhub:StableAxialForceObjective .
+	?onlyLimits rdf:type ddhub:OnlyLimits .
+  FILTER (
+	?Attribute000 = isUsedAutoDrillerWithOnlyLimit
+	&& 	?Attribute001 = stableROP
+	&& 	?Attribute002 = stableWOB
+	&& 	?Attribute003 = AutoDriller
+	&& 	?Attribute004 = onlyLimits
+  )
+}
+```
 ## IsRecommendedBy <!-- VERB -->
 - Display name: Is Recommended By
 - Parent verb: [DWISVerb](#DWISVerb)
