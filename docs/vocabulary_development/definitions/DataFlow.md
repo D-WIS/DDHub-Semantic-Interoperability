@@ -22,6 +22,27 @@
 - Specialization: A procedural state describes the state of a running procedure.
 - Description: 
 - Examples:
+## EnablementState <!-- NOUN -->
+- Display name: Enablement State
+- Parent class: ProceduralState
+- Attributes:
+- Specialization: This noun describes some information about the state of enablement of a procedure.
+- Description: 
+- Examples:
+## ActivationState <!-- NOUN -->
+- Display name: Activation State
+- Parent class: ProceduralState
+- Attributes:
+- Specialization: This noun describes some information about the state of activation of a procedure.
+- Description: 
+- Examples:
+## IdlingState <!-- NOUN -->
+- Display name: Idling State
+- Parent class: ProceduralState
+- Attributes:
+- Specialization: This noun describes some information about the idling state of a procedure.
+- Description: 
+- Examples:
 ## ProcessState <!-- NOUN -->
 - Display name: Process State
 - Parent class: ComputedState
