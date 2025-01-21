@@ -10,6 +10,9 @@ classDiagram
 DWISNoun <|-- DataFlowNode
 ComputationUnit <|-- ComputedState
 ComputedState <|-- ProceduralState
+ProceduralState <|-- EnablementState
+ProceduralState <|-- ActivationState
+ProceduralState <|-- IdlingState
 ComputedState <|-- ProcessState
 ComputedState <|-- PhysicalState
 DataFlowNode <|-- ComputationUnit
@@ -69,6 +72,18 @@ A state represents the current configuation of a system.
 ## ProceduralState <!-- NOUN -->
 - Display name: Procedural State
 - Parent class: [ComputedState](./DataFlow.md#ComputedState)
+- Definition set: DataFlow
+## EnablementState <!-- NOUN -->
+- Display name: Enablement State
+- Parent class: [ProceduralState](./DataFlow.md#ProceduralState)
+- Definition set: DataFlow
+## ActivationState <!-- NOUN -->
+- Display name: Activation State
+- Parent class: [ProceduralState](./DataFlow.md#ProceduralState)
+- Definition set: DataFlow
+## IdlingState <!-- NOUN -->
+- Display name: Idling State
+- Parent class: [ProceduralState](./DataFlow.md#ProceduralState)
 - Definition set: DataFlow
 ## ProcessState <!-- NOUN -->
 - Display name: Process State

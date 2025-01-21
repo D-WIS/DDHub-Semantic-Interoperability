@@ -122,6 +122,12 @@
 <http://ddhub.no/ComputedState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ComputationUnit> .
 <http://ddhub.no/ProceduralState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ProceduralState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ComputedState> .
+<http://ddhub.no/EnablementState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/EnablementState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ProceduralState> .
+<http://ddhub.no/ActivationState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ActivationState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ProceduralState> .
+<http://ddhub.no/IdlingState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/IdlingState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ProceduralState> .
 <http://ddhub.no/ProcessState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ProcessState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ComputedState> .
 <http://ddhub.no/PhysicalState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -3990,6 +3996,9 @@
 <http://ddhub.no/ComputationUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes a complex computation unit, typically based on advanced numerical modeling\n"@EN .
 <http://ddhub.no/ComputedState> <http://www.w3.org/2000/01/rdf-schema#comment> "A state represents the current configuation of a system.\n"@EN .
 <http://ddhub.no/ProceduralState> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/EnablementState> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/ActivationState> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/IdlingState> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/ProcessState> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/PhysicalState> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/Advisor> <http://www.w3.org/2000/01/rdf-schema#comment> "An advisor is a computation unit that produces an advice on how to control a process. Its output is typically\nan AdvisorySystemAdvice.\n"@EN .

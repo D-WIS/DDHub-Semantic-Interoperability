@@ -4467,6 +4467,18 @@ A state represents the current configuation of a system.
 - Display name: Procedural State
 - Parent class: [ComputedState](#ComputedState)
 - Definition set: DataFlow
+## EnablementState <!-- NOUN -->
+- Display name: Enablement State
+- Parent class: [ProceduralState](#ProceduralState)
+- Definition set: DataFlow
+## ActivationState <!-- NOUN -->
+- Display name: Activation State
+- Parent class: [ProceduralState](#ProceduralState)
+- Definition set: DataFlow
+## IdlingState <!-- NOUN -->
+- Display name: Idling State
+- Parent class: [ProceduralState](#ProceduralState)
+- Definition set: DataFlow
 ## ProcessState <!-- NOUN -->
 - Display name: Process State
 - Parent class: [ComputedState](#ComputedState)
