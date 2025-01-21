@@ -4331,6 +4331,18 @@ by the drilling process.
     <rdfs:comment xml:lang="EN">This Noun is used to refer to the objective of obtaining stable torque.
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/StableDrillingObjective">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingObjective" />
+    <rdfs:comment xml:lang="EN">This Noun is used to refer to the objective of obtaining stable torque.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/StableFlowrateObjective">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingObjective" />
+    <rdfs:comment xml:lang="EN">This Noun is used to refer to the objective of obtaining stable torque.
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/StableAxialForceObjective">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingObjective" />

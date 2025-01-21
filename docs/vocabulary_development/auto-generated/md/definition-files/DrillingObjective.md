@@ -12,6 +12,8 @@ DrillingObjective <|-- StableAxialVelocityObjective
 DrillingObjective <|-- StableRotationalVelocityObjective
 DrillingObjective <|-- StablePressureObjective
 DrillingObjective <|-- StableTorqueObjective
+DrillingObjective <|-- StableDrillingObjective
+DrillingObjective <|-- StableFlowrateObjective
 DrillingObjective <|-- StableAxialForceObjective
 DrillingObjective <|-- WeightTransferObjective
 ```
@@ -38,23 +40,20 @@ WOBLimit:WOBLimit_1
 ROPManagementControllerInfo_1 HasControlLimit WOBLimit_1
 DifferentialPressureLimit:differentialPressureLimit
 ROPManagementControllerInfo_1 HasControlLimit differentialPressureLimit
+StableDrillingObjective:stableDrillingObjective
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableDrillingObjective
 BottomOfStringReferenceLocation:bottomOfStringLocation
 StableAxialVelocityObjective:stableAxialVelocityObjective
 stableAxialVelocityObjective IsPhysicallyLocatedAt bottomOfStringLocation
 ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableAxialVelocityObjective
-StableAxialForceObjective:stableWOBObjective
-stableWOBObjective IsPhysicallyLocatedAt bottomOfStringLocation
-ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableWOBObjective
-StablePressureObjective:stableDifferentialPressure
-ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableDifferentialPressure
 ServiceCompany:serviceCompany
 ROPManagementControllerInfo_1 IsProvidedBy serviceCompany
 Advisor:computationUnit
 ROPManagementControllerInfo_1 IsRecommendedBy computationUnit
+StableDrillingObject:stableDrillingObjective
 ControllerFunction:autoDriller
+autoDriller ImplementsObjective stableDrillingObjective
 autoDriller ImplementsObjective stableAxialVelocityObjective
-autoDriller ImplementsObjective stableWOBObjective
-autoDriller ImplementsObjective stableDifferentialPressure
 ROPManagementControllerInfo_1 IsRecommendedFor autoDriller
 DWISAdviceComposer:adviceComposer
 ROPManagementControllerInfo_1 IsProvidedTo adviceComposer
@@ -73,28 +72,25 @@ graph LR
 	N0002[ROPManagementControllerInfo_1] -->|HasControlLimit| N0006[WOBLimit_1] 
 	N0008[differentialPressureLimit] -->|BelongsToClass| N0009(DifferentialPressureLimit) 
 	N0002[ROPManagementControllerInfo_1] -->|HasControlLimit| N0008[differentialPressureLimit] 
-	N0010[bottomOfStringLocation] -->|BelongsToClass| N0011(BottomOfStringReferenceLocation) 
-	N0012[stableAxialVelocityObjective] -->|BelongsToClass| N0013(StableAxialVelocityObjective) 
-	N0012[stableAxialVelocityObjective] -->|IsPhysicallyLocatedAt| N0010[bottomOfStringLocation] 
-	N0002[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0012[stableAxialVelocityObjective] 
-	N0014[stableWOBObjective] -->|BelongsToClass| N0015(StableAxialForceObjective) 
-	N0014[stableWOBObjective] -->|IsPhysicallyLocatedAt| N0010[bottomOfStringLocation] 
-	N0002[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0014[stableWOBObjective] 
-	N0016[stableDifferentialPressure] -->|BelongsToClass| N0017(StablePressureObjective) 
-	N0002[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0016[stableDifferentialPressure] 
-	N0018[serviceCompany] -->|BelongsToClass| N0019(ServiceCompany) 
-	N0002[ROPManagementControllerInfo_1] -->|IsProvidedBy| N0018[serviceCompany] 
-	N0020[computationUnit] -->|BelongsToClass| N0021(Advisor) 
-	N0002[ROPManagementControllerInfo_1] -->|IsRecommendedBy| N0020[computationUnit] 
-	N0022[autoDriller] -->|BelongsToClass| N0023(ControllerFunction) 
-	N0022[autoDriller] -->|ImplementsObjective| N0012[stableAxialVelocityObjective] 
-	N0022[autoDriller] -->|ImplementsObjective| N0014[stableWOBObjective] 
-	N0022[autoDriller] -->|ImplementsObjective| N0016[stableDifferentialPressure] 
-	N0002[ROPManagementControllerInfo_1] -->|IsRecommendedFor| N0022[autoDriller] 
-	N0024[adviceComposer] -->|BelongsToClass| N0025(DWISAdviceComposer) 
-	N0002[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0024[adviceComposer] 
-	N0026[scheduler] -->|BelongsToClass| N0027(DWISScheduler) 
-	N0002[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0026[scheduler] 
+	N0010[stableDrillingObjective] -->|BelongsToClass| N0011(StableDrillingObjective) 
+	N0002[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0010[stableDrillingObjective] 
+	N0012[bottomOfStringLocation] -->|BelongsToClass| N0013(BottomOfStringReferenceLocation) 
+	N0014[stableAxialVelocityObjective] -->|BelongsToClass| N0015(StableAxialVelocityObjective) 
+	N0014[stableAxialVelocityObjective] -->|IsPhysicallyLocatedAt| N0012[bottomOfStringLocation] 
+	N0002[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0014[stableAxialVelocityObjective] 
+	N0016[serviceCompany] -->|BelongsToClass| N0017(ServiceCompany) 
+	N0002[ROPManagementControllerInfo_1] -->|IsProvidedBy| N0016[serviceCompany] 
+	N0018[computationUnit] -->|BelongsToClass| N0019(Advisor) 
+	N0002[ROPManagementControllerInfo_1] -->|IsRecommendedBy| N0018[computationUnit] 
+	N0010[stableDrillingObjective] -->|BelongsToClass| N0020(StableDrillingObject) 
+	N0021[autoDriller] -->|BelongsToClass| N0022(ControllerFunction) 
+	N0021[autoDriller] -->|ImplementsObjective| N0010[stableDrillingObjective] 
+	N0021[autoDriller] -->|ImplementsObjective| N0014[stableAxialVelocityObjective] 
+	N0002[ROPManagementControllerInfo_1] -->|IsRecommendedFor| N0021[autoDriller] 
+	N0023[adviceComposer] -->|BelongsToClass| N0024(DWISAdviceComposer) 
+	N0002[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0023[adviceComposer] 
+	N0025[scheduler] -->|BelongsToClass| N0026(DWISScheduler) 
+	N0002[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0025[scheduler] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -112,23 +108,20 @@ WHERE {
 	?ROPManagementControllerInfo_1 ddhub:HasControlLimit ?WOBLimit_1 .
 	?differentialPressureLimit rdf:type ddhub:DifferentialPressureLimit .
 	?ROPManagementControllerInfo_1 ddhub:HasControlLimit ?differentialPressureLimit .
+	?stableDrillingObjective rdf:type ddhub:StableDrillingObjective .
+	?ROPManagementControllerInfo_1 ddhub:IsRelatedToDrillingObjective ?stableDrillingObjective .
 	?bottomOfStringLocation rdf:type ddhub:BottomOfStringReferenceLocation .
 	?stableAxialVelocityObjective rdf:type ddhub:StableAxialVelocityObjective .
 	?stableAxialVelocityObjective ddhub:IsPhysicallyLocatedAt ?bottomOfStringLocation .
 	?ROPManagementControllerInfo_1 ddhub:IsRelatedToDrillingObjective ?stableAxialVelocityObjective .
-	?stableWOBObjective rdf:type ddhub:StableAxialForceObjective .
-	?stableWOBObjective ddhub:IsPhysicallyLocatedAt ?bottomOfStringLocation .
-	?ROPManagementControllerInfo_1 ddhub:IsRelatedToDrillingObjective ?stableWOBObjective .
-	?stableDifferentialPressure rdf:type ddhub:StablePressureObjective .
-	?ROPManagementControllerInfo_1 ddhub:IsRelatedToDrillingObjective ?stableDifferentialPressure .
 	?serviceCompany rdf:type ddhub:ServiceCompany .
 	?ROPManagementControllerInfo_1 ddhub:IsProvidedBy ?serviceCompany .
 	?computationUnit rdf:type ddhub:Advisor .
 	?ROPManagementControllerInfo_1 ddhub:IsRecommendedBy ?computationUnit .
+	?stableDrillingObjective rdf:type ddhub:StableDrillingObject .
 	?autoDriller rdf:type ddhub:ControllerFunction .
+	?autoDriller ddhub:ImplementsObjective ?stableDrillingObjective .
 	?autoDriller ddhub:ImplementsObjective ?stableAxialVelocityObjective .
-	?autoDriller ddhub:ImplementsObjective ?stableWOBObjective .
-	?autoDriller ddhub:ImplementsObjective ?stableDifferentialPressure .
 	?ROPManagementControllerInfo_1 ddhub:IsRecommendedFor ?autoDriller .
 	?adviceComposer rdf:type ddhub:DWISAdviceComposer .
 	?ROPManagementControllerInfo_1 ddhub:IsProvidedTo ?adviceComposer .
@@ -229,13 +222,9 @@ WOBLimit:WOBLimit_1
 ROPManagementControllerInfo_1 HasControlLimit WOBLimit_1
 DifferentialPressureLimit:differentialPressureLimit
 ROPManagementControllerInfo_1 HasControlLimit differentialPressureLimit
+StableDrillingObjective:stableDrillingObjective
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableDrillingObjective
 BottomOfStringReferenceLocation:bottomOfStringLocation
-StableAxialVelocityObjective:stableAxialVelocityObjective
-stableAxialVelocityObjective IsPhysicallyLocatedAt bottomOfStringLocation
-ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableAxialVelocityObjective
-StableAxialForceObjective:stableWOBObjective
-stableWOBObjective IsPhysicallyLocatedAt bottomOfStringLocation
-ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableWOBObjective
 StablePressureObjective:stableDifferentialPressure
 ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableDifferentialPressure
 ServiceCompany:serviceCompany
@@ -243,8 +232,7 @@ ROPManagementControllerInfo_1 IsProvidedBy serviceCompany
 Advisor:computationUnit
 ROPManagementControllerInfo_1 IsRecommendedBy computationUnit
 ControllerFunction:autoDriller
-autoDriller ImplementsObjective stableAxialVelocityObjective
-autoDriller ImplementsObjective stableWOBObjective
+autoDriller ImplementsObjective stableDrillingObjective
 autoDriller ImplementsObjective stableDifferentialPressure
 ROPManagementControllerInfo_1 IsRecommendedFor autoDriller
 DWISAdviceComposer:adviceComposer
@@ -264,28 +252,23 @@ graph LR
 	N0002[ROPManagementControllerInfo_1] -->|HasControlLimit| N0006[WOBLimit_1] 
 	N0008[differentialPressureLimit] -->|BelongsToClass| N0009(DifferentialPressureLimit) 
 	N0002[ROPManagementControllerInfo_1] -->|HasControlLimit| N0008[differentialPressureLimit] 
-	N0010[bottomOfStringLocation] -->|BelongsToClass| N0011(BottomOfStringReferenceLocation) 
-	N0012[stableAxialVelocityObjective] -->|BelongsToClass| N0013(StableAxialVelocityObjective) 
-	N0012[stableAxialVelocityObjective] -->|IsPhysicallyLocatedAt| N0010[bottomOfStringLocation] 
-	N0002[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0012[stableAxialVelocityObjective] 
-	N0014[stableWOBObjective] -->|BelongsToClass| N0015(StableAxialForceObjective) 
-	N0014[stableWOBObjective] -->|IsPhysicallyLocatedAt| N0010[bottomOfStringLocation] 
-	N0002[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0014[stableWOBObjective] 
-	N0016[stableDifferentialPressure] -->|BelongsToClass| N0017(StablePressureObjective) 
-	N0002[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0016[stableDifferentialPressure] 
-	N0018[serviceCompany] -->|BelongsToClass| N0019(ServiceCompany) 
-	N0002[ROPManagementControllerInfo_1] -->|IsProvidedBy| N0018[serviceCompany] 
-	N0020[computationUnit] -->|BelongsToClass| N0021(Advisor) 
-	N0002[ROPManagementControllerInfo_1] -->|IsRecommendedBy| N0020[computationUnit] 
-	N0022[autoDriller] -->|BelongsToClass| N0023(ControllerFunction) 
-	N0022[autoDriller] -->|ImplementsObjective| N0012[stableAxialVelocityObjective] 
-	N0022[autoDriller] -->|ImplementsObjective| N0014[stableWOBObjective] 
-	N0022[autoDriller] -->|ImplementsObjective| N0016[stableDifferentialPressure] 
-	N0002[ROPManagementControllerInfo_1] -->|IsRecommendedFor| N0022[autoDriller] 
-	N0024[adviceComposer] -->|BelongsToClass| N0025(DWISAdviceComposer) 
-	N0002[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0024[adviceComposer] 
-	N0026[scheduler] -->|BelongsToClass| N0027(DWISScheduler) 
-	N0002[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0026[scheduler] 
+	N0010[stableDrillingObjective] -->|BelongsToClass| N0011(StableDrillingObjective) 
+	N0002[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0010[stableDrillingObjective] 
+	N0012[bottomOfStringLocation] -->|BelongsToClass| N0013(BottomOfStringReferenceLocation) 
+	N0014[stableDifferentialPressure] -->|BelongsToClass| N0015(StablePressureObjective) 
+	N0002[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0014[stableDifferentialPressure] 
+	N0016[serviceCompany] -->|BelongsToClass| N0017(ServiceCompany) 
+	N0002[ROPManagementControllerInfo_1] -->|IsProvidedBy| N0016[serviceCompany] 
+	N0018[computationUnit] -->|BelongsToClass| N0019(Advisor) 
+	N0002[ROPManagementControllerInfo_1] -->|IsRecommendedBy| N0018[computationUnit] 
+	N0020[autoDriller] -->|BelongsToClass| N0021(ControllerFunction) 
+	N0020[autoDriller] -->|ImplementsObjective| N0010[stableDrillingObjective] 
+	N0020[autoDriller] -->|ImplementsObjective| N0014[stableDifferentialPressure] 
+	N0002[ROPManagementControllerInfo_1] -->|IsRecommendedFor| N0020[autoDriller] 
+	N0022[adviceComposer] -->|BelongsToClass| N0023(DWISAdviceComposer) 
+	N0002[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0022[adviceComposer] 
+	N0024[scheduler] -->|BelongsToClass| N0025(DWISScheduler) 
+	N0002[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0024[scheduler] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -303,13 +286,9 @@ WHERE {
 	?ROPManagementControllerInfo_1 ddhub:HasControlLimit ?WOBLimit_1 .
 	?differentialPressureLimit rdf:type ddhub:DifferentialPressureLimit .
 	?ROPManagementControllerInfo_1 ddhub:HasControlLimit ?differentialPressureLimit .
+	?stableDrillingObjective rdf:type ddhub:StableDrillingObjective .
+	?ROPManagementControllerInfo_1 ddhub:IsRelatedToDrillingObjective ?stableDrillingObjective .
 	?bottomOfStringLocation rdf:type ddhub:BottomOfStringReferenceLocation .
-	?stableAxialVelocityObjective rdf:type ddhub:StableAxialVelocityObjective .
-	?stableAxialVelocityObjective ddhub:IsPhysicallyLocatedAt ?bottomOfStringLocation .
-	?ROPManagementControllerInfo_1 ddhub:IsRelatedToDrillingObjective ?stableAxialVelocityObjective .
-	?stableWOBObjective rdf:type ddhub:StableAxialForceObjective .
-	?stableWOBObjective ddhub:IsPhysicallyLocatedAt ?bottomOfStringLocation .
-	?ROPManagementControllerInfo_1 ddhub:IsRelatedToDrillingObjective ?stableWOBObjective .
 	?stableDifferentialPressure rdf:type ddhub:StablePressureObjective .
 	?ROPManagementControllerInfo_1 ddhub:IsRelatedToDrillingObjective ?stableDifferentialPressure .
 	?serviceCompany rdf:type ddhub:ServiceCompany .
@@ -317,8 +296,7 @@ WHERE {
 	?computationUnit rdf:type ddhub:Advisor .
 	?ROPManagementControllerInfo_1 ddhub:IsRecommendedBy ?computationUnit .
 	?autoDriller rdf:type ddhub:ControllerFunction .
-	?autoDriller ddhub:ImplementsObjective ?stableAxialVelocityObjective .
-	?autoDriller ddhub:ImplementsObjective ?stableWOBObjective .
+	?autoDriller ddhub:ImplementsObjective ?stableDrillingObjective .
 	?autoDriller ddhub:ImplementsObjective ?stableDifferentialPressure .
 	?ROPManagementControllerInfo_1 ddhub:IsRecommendedFor ?autoDriller .
 	?adviceComposer rdf:type ddhub:DWISAdviceComposer .
@@ -329,6 +307,18 @@ WHERE {
 ```
 ## StableTorqueObjective <!-- NOUN -->
 - Display name: Stable Torque Objective
+- Parent class: [DrillingObjective](./DrillingObjective.md#DrillingObjective)
+- Description: 
+This Noun is used to refer to the objective of obtaining stable torque.
+- Definition set: DrillingObjective
+## StableDrillingObjective <!-- NOUN -->
+- Display name: Stable Drilling Objective
+- Parent class: [DrillingObjective](./DrillingObjective.md#DrillingObjective)
+- Description: 
+This Noun is used to refer to the objective of obtaining stable torque.
+- Definition set: DrillingObjective
+## StableFlowrateObjective <!-- NOUN -->
+- Display name: Stable Flowrate Objective
 - Parent class: [DrillingObjective](./DrillingObjective.md#DrillingObjective)
 - Description: 
 This Noun is used to refer to the objective of obtaining stable torque.
@@ -351,22 +341,18 @@ ROPManagementControllerInfo_1 HasControlLimit WOBLimit_1
 DifferentialPressureLimit:differentialPressureLimit
 ROPManagementControllerInfo_1 HasControlLimit differentialPressureLimit
 BottomOfStringReferenceLocation:bottomOfStringLocation
-StableAxialVelocityObjective:stableAxialVelocityObjective
-stableAxialVelocityObjective IsPhysicallyLocatedAt bottomOfStringLocation
-ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableAxialVelocityObjective
+StableDrillingObjective:stableDrillingObjective
+ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableDrillingObjective
 StableAxialForceObjective:stableWOBObjective
 stableWOBObjective IsPhysicallyLocatedAt bottomOfStringLocation
 ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableWOBObjective
-StablePressureObjective:stableDifferentialPressure
-ROPManagementControllerInfo_1 IsRelatedToDrillingObjective stableDifferentialPressure
 ServiceCompany:serviceCompany
 ROPManagementControllerInfo_1 IsProvidedBy serviceCompany
 Advisor:computationUnit
 ROPManagementControllerInfo_1 IsRecommendedBy computationUnit
 ControllerFunction:autoDriller
-autoDriller ImplementsObjective stableAxialVelocityObjective
+autoDriller ImplementsObjective stableDrillingObjective
 autoDriller ImplementsObjective stableWOBObjective
-autoDriller ImplementsObjective stableDifferentialPressure
 ROPManagementControllerInfo_1 IsRecommendedFor autoDriller
 DWISAdviceComposer:adviceComposer
 ROPManagementControllerInfo_1 IsProvidedTo adviceComposer
@@ -386,27 +372,23 @@ graph LR
 	N0008[differentialPressureLimit] -->|BelongsToClass| N0009(DifferentialPressureLimit) 
 	N0002[ROPManagementControllerInfo_1] -->|HasControlLimit| N0008[differentialPressureLimit] 
 	N0010[bottomOfStringLocation] -->|BelongsToClass| N0011(BottomOfStringReferenceLocation) 
-	N0012[stableAxialVelocityObjective] -->|BelongsToClass| N0013(StableAxialVelocityObjective) 
-	N0012[stableAxialVelocityObjective] -->|IsPhysicallyLocatedAt| N0010[bottomOfStringLocation] 
-	N0002[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0012[stableAxialVelocityObjective] 
+	N0012[stableDrillingObjective] -->|BelongsToClass| N0013(StableDrillingObjective) 
+	N0002[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0012[stableDrillingObjective] 
 	N0014[stableWOBObjective] -->|BelongsToClass| N0015(StableAxialForceObjective) 
 	N0014[stableWOBObjective] -->|IsPhysicallyLocatedAt| N0010[bottomOfStringLocation] 
 	N0002[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0014[stableWOBObjective] 
-	N0016[stableDifferentialPressure] -->|BelongsToClass| N0017(StablePressureObjective) 
-	N0002[ROPManagementControllerInfo_1] -->|IsRelatedToDrillingObjective| N0016[stableDifferentialPressure] 
-	N0018[serviceCompany] -->|BelongsToClass| N0019(ServiceCompany) 
-	N0002[ROPManagementControllerInfo_1] -->|IsProvidedBy| N0018[serviceCompany] 
-	N0020[computationUnit] -->|BelongsToClass| N0021(Advisor) 
-	N0002[ROPManagementControllerInfo_1] -->|IsRecommendedBy| N0020[computationUnit] 
-	N0022[autoDriller] -->|BelongsToClass| N0023(ControllerFunction) 
-	N0022[autoDriller] -->|ImplementsObjective| N0012[stableAxialVelocityObjective] 
-	N0022[autoDriller] -->|ImplementsObjective| N0014[stableWOBObjective] 
-	N0022[autoDriller] -->|ImplementsObjective| N0016[stableDifferentialPressure] 
-	N0002[ROPManagementControllerInfo_1] -->|IsRecommendedFor| N0022[autoDriller] 
-	N0024[adviceComposer] -->|BelongsToClass| N0025(DWISAdviceComposer) 
-	N0002[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0024[adviceComposer] 
-	N0026[scheduler] -->|BelongsToClass| N0027(DWISScheduler) 
-	N0002[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0026[scheduler] 
+	N0016[serviceCompany] -->|BelongsToClass| N0017(ServiceCompany) 
+	N0002[ROPManagementControllerInfo_1] -->|IsProvidedBy| N0016[serviceCompany] 
+	N0018[computationUnit] -->|BelongsToClass| N0019(Advisor) 
+	N0002[ROPManagementControllerInfo_1] -->|IsRecommendedBy| N0018[computationUnit] 
+	N0020[autoDriller] -->|BelongsToClass| N0021(ControllerFunction) 
+	N0020[autoDriller] -->|ImplementsObjective| N0012[stableDrillingObjective] 
+	N0020[autoDriller] -->|ImplementsObjective| N0014[stableWOBObjective] 
+	N0002[ROPManagementControllerInfo_1] -->|IsRecommendedFor| N0020[autoDriller] 
+	N0022[adviceComposer] -->|BelongsToClass| N0023(DWISAdviceComposer) 
+	N0002[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0022[adviceComposer] 
+	N0024[scheduler] -->|BelongsToClass| N0025(DWISScheduler) 
+	N0002[ROPManagementControllerInfo_1] -->|IsProvidedTo| N0024[scheduler] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -425,22 +407,18 @@ WHERE {
 	?differentialPressureLimit rdf:type ddhub:DifferentialPressureLimit .
 	?ROPManagementControllerInfo_1 ddhub:HasControlLimit ?differentialPressureLimit .
 	?bottomOfStringLocation rdf:type ddhub:BottomOfStringReferenceLocation .
-	?stableAxialVelocityObjective rdf:type ddhub:StableAxialVelocityObjective .
-	?stableAxialVelocityObjective ddhub:IsPhysicallyLocatedAt ?bottomOfStringLocation .
-	?ROPManagementControllerInfo_1 ddhub:IsRelatedToDrillingObjective ?stableAxialVelocityObjective .
+	?stableDrillingObjective rdf:type ddhub:StableDrillingObjective .
+	?ROPManagementControllerInfo_1 ddhub:IsRelatedToDrillingObjective ?stableDrillingObjective .
 	?stableWOBObjective rdf:type ddhub:StableAxialForceObjective .
 	?stableWOBObjective ddhub:IsPhysicallyLocatedAt ?bottomOfStringLocation .
 	?ROPManagementControllerInfo_1 ddhub:IsRelatedToDrillingObjective ?stableWOBObjective .
-	?stableDifferentialPressure rdf:type ddhub:StablePressureObjective .
-	?ROPManagementControllerInfo_1 ddhub:IsRelatedToDrillingObjective ?stableDifferentialPressure .
 	?serviceCompany rdf:type ddhub:ServiceCompany .
 	?ROPManagementControllerInfo_1 ddhub:IsProvidedBy ?serviceCompany .
 	?computationUnit rdf:type ddhub:Advisor .
 	?ROPManagementControllerInfo_1 ddhub:IsRecommendedBy ?computationUnit .
 	?autoDriller rdf:type ddhub:ControllerFunction .
-	?autoDriller ddhub:ImplementsObjective ?stableAxialVelocityObjective .
+	?autoDriller ddhub:ImplementsObjective ?stableDrillingObjective .
 	?autoDriller ddhub:ImplementsObjective ?stableWOBObjective .
-	?autoDriller ddhub:ImplementsObjective ?stableDifferentialPressure .
 	?ROPManagementControllerInfo_1 ddhub:IsRecommendedFor ?autoDriller .
 	?adviceComposer rdf:type ddhub:DWISAdviceComposer .
 	?ROPManagementControllerInfo_1 ddhub:IsProvidedTo ?adviceComposer .

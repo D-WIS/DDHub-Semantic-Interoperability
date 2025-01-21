@@ -1438,6 +1438,10 @@
 <http://ddhub.no/StablePressureObjective> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingObjective> .
 <http://ddhub.no/StableTorqueObjective> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/StableTorqueObjective> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingObjective> .
+<http://ddhub.no/StableDrillingObjective> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/StableDrillingObjective> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingObjective> .
+<http://ddhub.no/StableFlowrateObjective> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/StableFlowrateObjective> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingObjective> .
 <http://ddhub.no/StableAxialForceObjective> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/StableAxialForceObjective> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingObjective> .
 <http://ddhub.no/WeightTransferObjective> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -4632,6 +4636,8 @@
 <http://ddhub.no/StableRotationalVelocityObjective> <http://www.w3.org/2000/01/rdf-schema#comment> "This Noun is used to refer to the objective of obtaining stable rotational velocity.\n"@EN .
 <http://ddhub.no/StablePressureObjective> <http://www.w3.org/2000/01/rdf-schema#comment> "This Noun is used to refer to the objective of obtaining stable pressure.\n"@EN .
 <http://ddhub.no/StableTorqueObjective> <http://www.w3.org/2000/01/rdf-schema#comment> "This Noun is used to refer to the objective of obtaining stable torque.\n"@EN .
+<http://ddhub.no/StableDrillingObjective> <http://www.w3.org/2000/01/rdf-schema#comment> "This Noun is used to refer to the objective of obtaining stable torque.\n"@EN .
+<http://ddhub.no/StableFlowrateObjective> <http://www.w3.org/2000/01/rdf-schema#comment> "This Noun is used to refer to the objective of obtaining stable torque.\n"@EN .
 <http://ddhub.no/StableAxialForceObjective> <http://www.w3.org/2000/01/rdf-schema#comment> "This Noun is used to refer to the objective of obtaining stable axial force.\n"@EN .
 <http://ddhub.no/WeightTransferObjective> <http://www.w3.org/2000/01/rdf-schema#comment> "This Noun is used to refer to the objective of transferring weight to the bottom of the drill-stem.\n"@EN .
 <http://ddhub.no/DrillingProcedure> <http://www.w3.org/2000/01/rdf-schema#comment> "This is the parent class for drilling procedures.\n"@EN .

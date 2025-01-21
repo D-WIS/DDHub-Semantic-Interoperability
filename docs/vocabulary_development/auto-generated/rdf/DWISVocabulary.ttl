@@ -13093,6 +13093,14 @@ ddhub:StableAxialVelocityObjective a owl:Class;
                                    rdfs:comment """This Noun is used to refer to the objective of obtaining stable axial velocity.
 """@EN; 
                                    rdfs:subClassOf ddhub:DrillingObjective. 
+ddhub:StableDrillingObjective a owl:Class; 
+                              rdfs:comment """This Noun is used to refer to the objective of obtaining stable torque.
+"""@EN; 
+                              rdfs:subClassOf ddhub:DrillingObjective. 
+ddhub:StableFlowrateObjective a owl:Class; 
+                              rdfs:comment """This Noun is used to refer to the objective of obtaining stable torque.
+"""@EN; 
+                              rdfs:subClassOf ddhub:DrillingObjective. 
 ddhub:StablePressureObjective a owl:Class; 
                               rdfs:comment """This Noun is used to refer to the objective of obtaining stable pressure.
 """@EN; 
