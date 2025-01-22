@@ -214,12 +214,6 @@ a cement operation.
 - Attributes:
 - Description: A drill-stem buckling feature indicates that something accounts for drill-stem buckling.
 - Examples:
-## DrillStemBucklingFeature <!-- NOUN -->
-- Display name: Drill-stem Buckling Feature
-- Parent class: DrillingManagementFeature
-- Attributes:
-- Description: A drill-stem buckling feature indicates that something accounts for drill-stem buckling.
-- Examples:
 ## HeatTransferFeature <!-- NOUN -->
 - Display name: Heat Transfer Feature
 - Parent class: DrillingManagementFeature
