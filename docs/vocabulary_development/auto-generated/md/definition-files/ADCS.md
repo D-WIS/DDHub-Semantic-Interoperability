@@ -494,7 +494,7 @@ DCS BelongsToClass DataProvider
 packOffDetectionAndReaction IsProvidedBy DCS
 ComputedData:activatedSignalPackOffDetectionFDIR
 activatedSignalPackOffDetectionFDIR BelongsToClass BooleanDataType
-activatedSignalPackOffDetectionFDIR IsEnablingSignalFor packOffDetectionAndReaction
+activatedSignalPackOffDetectionFDIR IsActivatedSignalFor packOffDetectionAndReaction
 ```
 An example semantic graph looks like as follow:
 ```mermaid
@@ -509,7 +509,7 @@ graph LR
 	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0004[DCS] 
 	N0009[activatedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(ComputedData) 
 	N0009[activatedSignalPackOffDetectionFDIR] -->|BelongsToClass| N0011(BooleanDataType) 
-	N0009[activatedSignalPackOffDetectionFDIR] -->|IsEnablingSignalFor| N0000[packOffDetectionAndReaction] 
+	N0009[activatedSignalPackOffDetectionFDIR] -->|IsActivatedSignalFor| N0000[packOffDetectionAndReaction] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -528,7 +528,7 @@ WHERE {
 	?packOffDetectionAndReaction ddhub:IsProvidedBy ?DCS .
 	?activatedSignalPackOffDetectionFDIR rdf:type ddhub:ComputedData .
 	?activatedSignalPackOffDetectionFDIR rdf:type ddhub:BooleanDataType .
-	?activatedSignalPackOffDetectionFDIR ddhub:IsEnablingSignalFor ?packOffDetectionAndReaction .
+	?activatedSignalPackOffDetectionFDIR ddhub:IsActivatedSignalFor ?packOffDetectionAndReaction .
 }
 ```
 This example describes that the `ComputedData` signal `activatedSignalPackOffDetectionFDIR` informs whether the 
@@ -557,7 +557,7 @@ DCS BelongsToClass DataProvider
 packOffDetectionAndReaction IsProvidedBy DCS
 ComputedData:allowEnablementSignalPackOffDetectionFDIR
 allowEnablementSignalPackOffDetectionFDIR BelongsToClass BooleanDataType
-allowEnablementSignalPackOffDetectionFDIR IsEnablingSignalFor packOffDetectionAndReaction
+allowEnablementSignalPackOffDetectionFDIR AllowEnablementSignalFor packOffDetectionAndReaction
 Command:enableSignalPackOffDetectionFDIR
 enableSignalPackOffDetectionFDIR BelongsToClass BooleanDataType
 enableSignalPackOffDetectionFDIR IsEnablingSignalFor packOffDetectionAndReaction
@@ -575,7 +575,7 @@ graph LR
 	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0004[DCS] 
 	N0009[allowEnablementSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(ComputedData) 
 	N0009[allowEnablementSignalPackOffDetectionFDIR] -->|BelongsToClass| N0011(BooleanDataType) 
-	N0009[allowEnablementSignalPackOffDetectionFDIR] -->|IsEnablingSignalFor| N0000[packOffDetectionAndReaction] 
+	N0009[allowEnablementSignalPackOffDetectionFDIR] -->|AllowEnablementSignalFor| N0000[packOffDetectionAndReaction] 
 	N0012[enableSignalPackOffDetectionFDIR] -->|BelongsToClass| N0013(Command) 
 	N0012[enableSignalPackOffDetectionFDIR] -->|BelongsToClass| N0011(BooleanDataType) 
 	N0012[enableSignalPackOffDetectionFDIR] -->|IsEnablingSignalFor| N0000[packOffDetectionAndReaction] 
@@ -597,7 +597,7 @@ WHERE {
 	?packOffDetectionAndReaction ddhub:IsProvidedBy ?DCS .
 	?allowEnablementSignalPackOffDetectionFDIR rdf:type ddhub:ComputedData .
 	?allowEnablementSignalPackOffDetectionFDIR rdf:type ddhub:BooleanDataType .
-	?allowEnablementSignalPackOffDetectionFDIR ddhub:IsEnablingSignalFor ?packOffDetectionAndReaction .
+	?allowEnablementSignalPackOffDetectionFDIR ddhub:AllowEnablementSignalFor ?packOffDetectionAndReaction .
 	?enableSignalPackOffDetectionFDIR rdf:type ddhub:Command .
 	?enableSignalPackOffDetectionFDIR rdf:type ddhub:BooleanDataType .
 	?enableSignalPackOffDetectionFDIR ddhub:IsEnablingSignalFor ?packOffDetectionAndReaction .
