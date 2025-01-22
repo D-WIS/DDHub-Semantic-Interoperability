@@ -148,8 +148,8 @@ swabSurgeLimits IsProvidedBy DCS
 ```
 This example describes the `swabSurgeLimits` safe operating envelope limits to avoid detrimental swab/surge pressures in 
 the open hole section of the borehole. 
-# VERBS
 
+# VERBS
 ## IsEnablingSignalFor <!-- VERB -->
 - Display name: Is Enabling Signal For
 - Parent verb: DWISVerb
@@ -191,7 +191,7 @@ DCS BelongsToClass DataProvider
 packOffDetectionAndReaction IsProvidedBy DCS
 ComputedData:activatedSignalPackOffDetectionFDIR
 activatedSignalPackOffDetectionFDIR BelongsToClass BooleanDataType
-activatedSignalPackOffDetectionFDIR IsEnablingSignalFor packOffDetectionAndReaction
+activatedSignalPackOffDetectionFDIR IsActivatedSignalFor packOffDetectionAndReaction
 ```
 This example describes that the `ComputedData` signal `activatedSignalPackOffDetectionFDIR` informs whether the 
 `packOffDetectionAndReaction` FDIR function is activated or not.
@@ -217,7 +217,7 @@ DCS BelongsToClass DataProvider
 packOffDetectionAndReaction IsProvidedBy DCS
 ComputedData:allowEnablementSignalPackOffDetectionFDIR
 allowEnablementSignalPackOffDetectionFDIR BelongsToClass BooleanDataType
-allowEnablementSignalPackOffDetectionFDIR IsEnablingSignalFor packOffDetectionAndReaction
+allowEnablementSignalPackOffDetectionFDIR AllowEnablementSignalFor packOffDetectionAndReaction
 Command:enableSignalPackOffDetectionFDIR
 enableSignalPackOffDetectionFDIR BelongsToClass BooleanDataType
 enableSignalPackOffDetectionFDIR IsEnablingSignalFor packOffDetectionAndReaction

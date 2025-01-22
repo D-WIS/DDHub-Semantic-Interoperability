@@ -64,6 +64,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Definitions", "Definitions"
 		..\..\..\docs\vocabulary_development\definitions\DataValidity.md = ..\..\..\docs\vocabulary_development\definitions\DataValidity.md
 		..\..\..\docs\vocabulary_development\definitions\DrillingDataSemantics.md = ..\..\..\docs\vocabulary_development\definitions\DrillingDataSemantics.md
 		..\..\..\docs\vocabulary_development\definitions\DrillingEquipment.md = ..\..\..\docs\vocabulary_development\definitions\DrillingEquipment.md
+		DrillingFeature.md = DrillingFeature.md
 		..\..\..\docs\vocabulary_development\definitions\DrillingIncident.md = ..\..\..\docs\vocabulary_development\definitions\DrillingIncident.md
 		..\..\..\docs\vocabulary_development\definitions\DrillingLimit.md = ..\..\..\docs\vocabulary_development\definitions\DrillingLimit.md
 		..\..\..\docs\vocabulary_development\definitions\DrillingObjective.md = ..\..\..\docs\vocabulary_development\definitions\DrillingObjective.md
