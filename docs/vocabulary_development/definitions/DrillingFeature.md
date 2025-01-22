@@ -172,6 +172,12 @@ a cement operation.
 - Attributes:
 - Description: An under-balance feature indicates that something accounts for under-balance conditions.
 - Examples:
+## GasAbsorptionFeature <!-- NOUN -->
+- Display name: Gas Absorption Feature
+- Parent class: DownholePressureFeature
+- Attributes:
+- Description: A gas absorption feature indicates that something accounts for conditions by which gas can be absorbed by the drilling fluid.
+- Examples:
 ## FormationFracturingFeature <!-- NOUN -->
 - Display name: Formation Fracturing Feature
 - Parent class: DownholePressureFeature
