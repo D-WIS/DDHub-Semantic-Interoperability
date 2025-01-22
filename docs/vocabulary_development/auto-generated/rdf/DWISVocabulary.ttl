@@ -80,6 +80,12 @@ The SI unit for **acceleration** is: metre per second squared with the associate
 ddhub:Accelerator a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:JarringAssembly. 
+ddhub:AccountsFor a owl:ObjectProperty; 
+                  rdfs:comment """This verb is used to indicate something accounts for a drilling management feature.
+"""@EN; 
+                  rdfs:domain ddhub:DWISNoun; 
+                  rdfs:range ddhub:DrillingManagementFeature; 
+                  rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:Accumulator a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:WellControlSystem. 
@@ -1176,6 +1182,11 @@ ddhub:CementHead a owl:Class;
 ddhub:CementingEquipment a owl:Class; 
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:RigEquipment. 
+ddhub:CementingFeature a owl:Class; 
+                       rdfs:comment """A cementing feature indicates that something accounts for displacing a train of drilling fluids and cement slurries to perform
+a cement operation.
+"""@EN; 
+                       rdfs:subClassOf ddhub:DrillingFluidDisplacementFeature. 
 ddhub:CementingProcedure a owl:Class; 
                          rdfs:comment """The cementing procedure is used to displace the correct amount of cement at the right position while cleaning the borehole
 to ensure good conditions for the cement setting.
@@ -1470,6 +1481,10 @@ a = 1.0/(2.0*PI), i.e., 0.15915494309189535
 ddhub:CirculationControlSystem a owl:Class; 
                                rdfs:comment ""@EN; 
                                rdfs:subClassOf ddhub:ControlSystem. 
+ddhub:CirculationFeature a owl:Class; 
+                         rdfs:comment """A circulation feature indicates that something accounts for circulation.
+"""@EN; 
+                         rdfs:subClassOf ddhub:DrillingManagementFeature. 
 ddhub:CirculationStartupProcedure a owl:Class; 
                                   rdfs:comment """The circulation stop procedure defines how to stop the mud pumps in a way that limit potential bull-heading effects
 that could result in undesired downhole pressure conditions with regards to the geo-pressure window.
@@ -1868,6 +1883,10 @@ ddhub:CuttingsComponent a owl:Class;
 ddhub:CuttingsSamplingEquipment a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:MudLoggingEquipment. 
+ddhub:CuttingsTransportFeature a owl:Class; 
+                               rdfs:comment """A cuttings transport feature indicates that something accounts for cuttings transport while circulating.
+"""@EN; 
+                               rdfs:subClassOf ddhub:CirculationFeature. 
 ddhub:Cylinders a owl:Class; 
                 rdfs:comment ""@EN; 
                 rdfs:subClassOf ddhub:PistonMudPump. 
@@ -3091,6 +3110,10 @@ ddhub:DownholeMotor a owl:Class;
 ddhub:DownholePressure a owl:Class; 
                        rdfs:comment ""@EN; 
                        rdfs:subClassOf ddhub:PrototypeData. 
+ddhub:DownholePressureFeature a owl:Class; 
+                              rdfs:comment """A downhole pressure feature indicates that something accounts for downhole pressure.
+"""@EN; 
+                              rdfs:subClassOf ddhub:DrillingManagementFeature. 
 ddhub:DownholeRPM a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:PrototypeData. 
@@ -3166,6 +3189,10 @@ ddhub:DrillingFluidDescription a owl:Class;
 used during a drilling operation.
 """@EN; 
                                rdfs:subClassOf ddhub:FluidDescription. 
+ddhub:DrillingFluidDisplacementFeature a owl:Class; 
+                                       rdfs:comment """A drilling fluid displacement feature indicates that something accounts for displacing a drilling fluid with another.
+"""@EN; 
+                                       rdfs:subClassOf ddhub:CirculationFeature. 
 ddhub:DrillingFluidGasComponent a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:GasComponent. 
@@ -3182,6 +3209,11 @@ ddhub:DrillingFluidProvider a owl:Class;
 ddhub:DrillingFluidSolidComponent a owl:Class; 
                                   rdfs:comment ""@EN; 
                                   rdfs:subClassOf ddhub:SolidComponent. 
+ddhub:DrillingFluidSweepFeature a owl:Class; 
+                                rdfs:comment """A drilling fluid sweep feature indicates that something accounts for sweeping the borehole with one or several fluids of
+different densities and/or viscosities.
+"""@EN; 
+                                rdfs:subClassOf ddhub:CirculationFeature. 
 ddhub:DrillingFluidWaterComponent a owl:Class; 
                                   rdfs:comment ""@EN; 
                                   rdfs:subClassOf ddhub:DrillingFluidLiquidComponent. 
@@ -3194,6 +3226,11 @@ ddhub:DrillingLimit a owl:Class;
                     rdfs:comment """This is the parent class for drilling limits. A limit applies typically on a desired value as controlled by a controller.
 """@EN; 
                     rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:DrillingManagementFeature a owl:Class; 
+                                rdfs:comment """A drilling management feature is a drilling management characteristic that is supported by something. For instance
+an advisory system may provide ROP management parameters accounting for cuttings transport.
+"""@EN; 
+                                rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:DrillingObjective a owl:Class; 
                         rdfs:comment """This is the parent class for drilling objectives.
 """@EN; 
@@ -3244,11 +3281,47 @@ ddhub:DrillPipesInner a owl:Class;
 ddhub:DrillPipeTongs a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:DrillFloorEquipment. 
+ddhub:DrillStemAxialImpedimentFeature a owl:Class; 
+                                      rdfs:comment """A drill-stem axial impediment feature indicates that something accounts for drill-stem axial impediment.
+"""@EN; 
+                                      rdfs:subClassOf ddhub:StuckPipeFeature. 
+ddhub:DrillStemAxialMovementFeature a owl:Class; 
+                                    rdfs:comment """A drill-stem axial movement feature indicates that something accounts for drill-stem axial movement.
+"""@EN; 
+                                    rdfs:subClassOf ddhub:DrillStemMovementFeature. 
+ddhub:DrillStemAxialStickSlipFeature a owl:Class; 
+                                     rdfs:comment """A drill-stem axial stick-slip feature indicates that something acconts for in particular axial stick-slip drill-stem vibrations.
+"""@EN; 
+                                     rdfs:subClassOf ddhub:DrillStemAxialVibrationFeature. 
+ddhub:DrillStemAxialVibrationFeature a owl:Class; 
+                                     rdfs:comment """A drill-stem axial vibration feature indicates that something accounts for in particular axial drill-stem vibrations.
+"""@EN; 
+                                     rdfs:subClassOf ddhub:DrillStemVibrationFeature. 
+ddhub:DrillStemBackwardWhirlingFeature a owl:Class; 
+                                       rdfs:comment """A drill-stem backward whirling feature indicates that something accounts for in particular drill-stem backward whirling.
+"""@EN; 
+                                       rdfs:subClassOf ddhub:DrillStemWhirlingFeature. 
+ddhub:DrillStemBucklingFeature a owl:Class; 
+                               rdfs:comment """A drill-stem buckling feature indicates that something accounts for drill-stem buckling.
+"""@EN; 
+                               rdfs:subClassOf ddhub:DrillingManagementFeature. 
+ddhub:DrillStemChaoticWhirlingFeature a owl:Class; 
+                                      rdfs:comment """A drill-stem chaotic whirling feature indicates that something accounts for in particular drill-stem chaotic whirling.
+"""@EN; 
+                                      rdfs:subClassOf ddhub:DrillStemWhirlingFeature. 
 ddhub:DrillStemDescription a owl:Class; 
                            rdfs:comment """A dill-stem is a generic term for all strings that are run in a borehole. The drill-stem describes the geometrical
 and mechanical characteristics of such a string. 
 """@EN; 
                            rdfs:subClassOf ddhub:WellBoreData. 
+ddhub:DrillStemForwardWhirlingFeature a owl:Class; 
+                                      rdfs:comment """A drill-stem forward whirling feature indicates that something accounts for in particular drill-stem forward whirling.
+"""@EN; 
+                                      rdfs:subClassOf ddhub:DrillStemWhirlingFeature. 
+ddhub:DrillStemLateralVibrationFeature a owl:Class; 
+                                       rdfs:comment """A drill-stem lateral vibration feature indicates that something accounts for in particular lateral drill-stem vibrations.
+"""@EN; 
+                                       rdfs:subClassOf ddhub:DrillStemVibrationFeature. 
 ddhub:DrillStemMaterialStrengthDrillingQuantity a owl:Class; 
                                                 rdfs:comment """Material strength refers to the ability of a material to withstand an applied force or load without failing or deforming. It measures how much stress a material can endure before it breaks, bends, or permanently deforms, often categorized into types like tensile, compressive, and shear strength.
 The dimension of material strength is:
@@ -3261,9 +3334,37 @@ ddhub:DrillStemMechanicalModel a owl:Class;
                                rdfs:comment """A mechanical model for a drill-stem. Another standard name for drill-stem mechanical models is a torque and drag model.
 """@EN; 
                                rdfs:subClassOf ddhub:ModelType. 
+ddhub:DrillStemMovementFeature a owl:Class; 
+                               rdfs:comment """A drill-stem movement feature indicates that something accounts for the drill-stem movement.
+"""@EN; 
+                               rdfs:subClassOf ddhub:DrillingManagementFeature. 
+ddhub:DrillStemRotationalMovementFeature a owl:Class; 
+                                         rdfs:comment """A drill-stem rotational movement feature indicates that something accounts for drill-stem rotational movement.
+"""@EN; 
+                                         rdfs:subClassOf ddhub:DrillStemMovementFeature. 
 ddhub:DrillstemTerminator a owl:Class; 
                           rdfs:comment ""@EN; 
                           rdfs:subClassOf ddhub:DrillingEquipment. 
+ddhub:DrillStemTorsionalStickSlipFeature a owl:Class; 
+                                         rdfs:comment """A drill-stem torsional stick-slip feature indicates that something acconts for in particular torsional stick-slip drill-stem vibrations.
+"""@EN; 
+                                         rdfs:subClassOf ddhub:DrillStemTorsionalVibrationFeature. 
+ddhub:DrillStemTorsionalVibrationFeature a owl:Class; 
+                                         rdfs:comment """A drill-stem torsional vibration feature indicates that something acconts for in particular torsional drill-stem vibrations.
+"""@EN; 
+                                         rdfs:subClassOf ddhub:DrillStemVibrationFeature. 
+ddhub:DrillStemVibrationFeature a owl:Class; 
+                                rdfs:comment """A drill-stem vibration feature indicates that something accounts for drill-stem vibrations.
+"""@EN; 
+                                rdfs:subClassOf ddhub:DrillStemMovementFeature. 
+ddhub:DrillStemWhirlingFeature a owl:Class; 
+                               rdfs:comment """A drill-stem whirling feature indicates that something accounts for in particular drill-stem whirling.
+"""@EN; 
+                               rdfs:subClassOf ddhub:DrillStemLateralVibrationFeature. 
+ddhub:DrillSteRotationalImpedimentFeature a owl:Class; 
+                                          rdfs:comment """A drill-stem rotational impediment feature indicates that something accounts for drill-stem rotational impediment.
+"""@EN; 
+                                          rdfs:subClassOf ddhub:StuckPipeFeature. 
 ddhub:DrillString a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:Tubulars. 
@@ -4043,12 +4144,20 @@ The SI unit for **force** is: newton with the associated unit label $N$
 ddhub:ForceToLoadTransformation a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:DirectTransformation. 
+ddhub:FormationCollapseFeature a owl:Class; 
+                               rdfs:comment """A formation collapse feature indicates that something accounts for formation collapse limits.
+"""@EN; 
+                               rdfs:subClassOf ddhub:DownholePressureFeature. 
 ddhub:FormationCollapseLocation a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
 ddhub:FormationFluidTransferLocation a owl:Class; 
                                      rdfs:comment ""@EN; 
                                      rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
+ddhub:FormationFracturingFeature a owl:Class; 
+                                 rdfs:comment """A formation fracturing feature indicates that something accounts for formation fracturing limits.
+"""@EN; 
+                                 rdfs:subClassOf ddhub:DownholePressureFeature. 
 ddhub:FormationGasComponent a owl:Class; 
                             rdfs:comment ""@EN; 
                             rdfs:subClassOf ddhub:GasComponent. 
@@ -4089,6 +4198,10 @@ ddhub:FormationWashout a owl:Class;
                        rdfs:comment """This Noun is used to refer to a situation during which the formation is being washed out.
 """@EN; 
                        rdfs:subClassOf ddhub:DrillingIncident. 
+ddhub:FormationWashoutFeature a owl:Class; 
+                              rdfs:comment """A formation washout feature indicates that something accounts for formation washout while circulating.
+"""@EN; 
+                              rdfs:subClassOf ddhub:CirculationFeature. 
 ddhub:FormationWashoutLocation a owl:Class; 
                                rdfs:comment ""@EN; 
                                rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
@@ -4200,6 +4313,10 @@ Gamma rays are a form of electromagnetic radiation, and in well logging, they ar
 Since the Gamma Ray API is a measure of gamma radiation intensity, let's break down its physical nature:
 """@EN; 
                                     rdfs:subClassOf ddhub:MeasurableQuantity. 
+ddhub:GasAbsorptionFeature a owl:Class; 
+                           rdfs:comment """A gas absorption feature indicates that something accounts for conditions by which gas can be absorbed by the drilling fluid.
+"""@EN; 
+                           rdfs:subClassOf ddhub:DownholePressureFeature. 
 ddhub:GasAnalysisEquipment a owl:Class; 
                            rdfs:comment ""@EN; 
                            rdfs:subClassOf ddhub:MudLoggingEquipment. 
@@ -4987,6 +5104,10 @@ $$[MK^{-1}T^{-3}]$$.
 The SI unit for **heat transfer coefficient** is: watt per square metre per kelvin with the associated unit label $\\frac{W}{m^{2} \\cdot K}$
 """@EN; 
                                       rdfs:subClassOf ddhub:Quantity. 
+ddhub:HeatTransferFeature a owl:Class; 
+                          rdfs:comment """A heat transfer feature indicates that something accounts for heat transfer.
+"""@EN; 
+                          rdfs:subClassOf ddhub:DrillingManagementFeature. 
 ddhub:HeaveCompensationSystem a owl:Class; 
                               rdfs:comment ""@EN; 
                               rdfs:subClassOf ddhub:MarineSystem. 
@@ -5146,6 +5267,10 @@ ddhub:HoleDepth a owl:Class;
 ddhub:HoleOpener a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:DrillingEquipment. 
+ddhub:HoleOpeningFeature a owl:Class; 
+                         rdfs:comment """An hole opening feature indicates that something accounts for opening the borehole diameter.
+"""@EN; 
+                         rdfs:subClassOf ddhub:OnBottomDrillingFeature. 
 ddhub:Hook a owl:Class; 
            rdfs:comment ""@EN; 
            rdfs:subClassOf ddhub:HoistingSystem. 
@@ -7857,6 +7982,10 @@ ddhub:MagneticNorthAzimuthLocation a owl:Class;
 ddhub:MainframeAssembly a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:TopDrive. 
+ddhub:ManagedDownholePressureFeature a owl:Class; 
+                                     rdfs:comment """A managed downhole pressure feature indicates that something manages downhole pressure.
+"""@EN; 
+                                     rdfs:subClassOf ddhub:DownholePressureFeature. 
 ddhub:ManagesIncident a owl:ObjectProperty; 
                       rdfs:comment """This Verb is used to indicate that a fault detection isolation and recovery function manages a drilling incident.
 """@EN; 
@@ -10073,6 +10202,10 @@ SI Unit: steradian (sr)
 """@EN; 
             rdfs:domain ddhub:Quantity; 
             rdfs:range xsd:double. 
+ddhub:OnBottomDrillingFeature a owl:Class; 
+                              rdfs:comment """An on bottom drilling feature indicates that something accounts for on bottom drilling.
+"""@EN; 
+                              rdfs:subClassOf ddhub:DrillingManagementFeature. 
 ddhub:OneDimensionalCartesianReferenceFrame a owl:Class; 
                                             rdfs:comment ""@EN; 
                                             rdfs:subClassOf ddhub:OneDimensionalReferenceFrame. 
@@ -10150,6 +10283,10 @@ ddhub:PackOff a owl:Class;
               rdfs:comment """This Noun is used to refer to a situation during which the annulus hydraulic flow-path is partially or fully blocked.
 """@EN; 
               rdfs:subClassOf ddhub:Plugged. 
+ddhub:PackOffFeature a owl:Class; 
+                     rdfs:comment """A pack-off feature indicates that something accounts for the possibility to pack-off while circulating cuttings.
+"""@EN; 
+                     rdfs:subClassOf ddhub:CuttingsTransportFeature. 
 ddhub:Parsec a owl:Class; 
              rdfs:comment """[v] = a * [SI]
 where
@@ -13253,6 +13390,10 @@ ddhub:StuckPipe a owl:Class;
                 rdfs:comment """This Noun is used to refer to a situation during which the drill-stem is impeded to move either axially or rotationally or both.
 """@EN; 
                 rdfs:subClassOf ddhub:DrillingIncident. 
+ddhub:StuckPipeFeature a owl:Class; 
+                       rdfs:comment """A stuck-pipe feature indicates that something accounts for stuck-pipes.
+"""@EN; 
+                       rdfs:subClassOf ddhub:DrillStemMovementFeature. 
 ddhub:Subbent a owl:Class; 
               rdfs:comment ""@EN; 
               rdfs:subClassOf ddhub:MiscSubs. 
@@ -13367,6 +13508,10 @@ Foot = 12.0 * Inch
 Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
 """@EN; 
                      rdfs:subClassOf ddhub:Unit. 
+ddhub:SwabSurgeFeature a owl:Class; 
+                       rdfs:comment """A swab and surge feature indicates that something accounts for swab and surge pressure variations.
+"""@EN; 
+                       rdfs:subClassOf ddhub:DownholePressureFeature. 
 ddhub:SwivelSub a owl:Class; 
                 rdfs:comment ""@EN; 
                 rdfs:subClassOf ddhub:TopDrive. 
@@ -13972,6 +14117,10 @@ Foot = 12.0 * Inch
 Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
 """@EN; 
                      rdfs:subClassOf ddhub:Unit. 
+ddhub:UnderBalanceFeature a owl:Class; 
+                          rdfs:comment """An under-balance feature indicates that something accounts for under-balance conditions.
+"""@EN; 
+                          rdfs:subClassOf ddhub:DownholePressureFeature. 
 ddhub:Underpull a owl:Class; 
                 rdfs:comment """This Noun is used to refer to a situation during which the drill-stem hangs in something in the downward direction.
 """@EN; 
@@ -13979,6 +14128,10 @@ ddhub:Underpull a owl:Class;
 ddhub:Underreamers a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:HoleOpener. 
+ddhub:UnderReamingFeature a owl:Class; 
+                          rdfs:comment """An under-reaming feature indicates that something accounts for under-reaming a borehole.
+"""@EN; 
+                          rdfs:subClassOf ddhub:HoleOpeningFeature. 
 ddhub:Unit a owl:Class; 
            rdfs:comment """Physical quantities, such as length, mass, time, temperature, and
 electric current, are described using both a numerical value and a `Unit`. The `Unit` defines what 

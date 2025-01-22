@@ -1358,6 +1358,78 @@
 <http://ddhub.no/ThreeWayManifold> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/GenericEquipment> .
 <http://ddhub.no/ThreeWayValve> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ThreeWayValve> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/GenericEquipment> .
+<http://ddhub.no/DrillingManagementFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillingManagementFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/CirculationFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/CirculationFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingManagementFeature> .
+<http://ddhub.no/DrillingFluidDisplacementFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillingFluidDisplacementFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/CirculationFeature> .
+<http://ddhub.no/CementingFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/CementingFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingFluidDisplacementFeature> .
+<http://ddhub.no/DrillingFluidSweepFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillingFluidSweepFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/CirculationFeature> .
+<http://ddhub.no/FormationWashoutFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/FormationWashoutFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/CirculationFeature> .
+<http://ddhub.no/CuttingsTransportFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/CuttingsTransportFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/CirculationFeature> .
+<http://ddhub.no/PackOffFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/PackOffFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/CuttingsTransportFeature> .
+<http://ddhub.no/DrillStemMovementFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillStemMovementFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingManagementFeature> .
+<http://ddhub.no/DrillStemAxialMovementFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillStemAxialMovementFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillStemMovementFeature> .
+<http://ddhub.no/DrillStemRotationalMovementFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillStemRotationalMovementFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillStemMovementFeature> .
+<http://ddhub.no/StuckPipeFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/StuckPipeFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillStemMovementFeature> .
+<http://ddhub.no/DrillStemAxialImpedimentFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillStemAxialImpedimentFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/StuckPipeFeature> .
+<http://ddhub.no/DrillSteRotationalImpedimentFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillSteRotationalImpedimentFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/StuckPipeFeature> .
+<http://ddhub.no/DrillStemVibrationFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillStemVibrationFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillStemMovementFeature> .
+<http://ddhub.no/DrillStemAxialVibrationFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillStemAxialVibrationFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillStemVibrationFeature> .
+<http://ddhub.no/DrillStemAxialStickSlipFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillStemAxialStickSlipFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillStemAxialVibrationFeature> .
+<http://ddhub.no/DrillStemTorsionalVibrationFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillStemTorsionalVibrationFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillStemVibrationFeature> .
+<http://ddhub.no/DrillStemTorsionalStickSlipFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillStemTorsionalStickSlipFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillStemTorsionalVibrationFeature> .
+<http://ddhub.no/DrillStemLateralVibrationFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillStemLateralVibrationFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillStemVibrationFeature> .
+<http://ddhub.no/DrillStemWhirlingFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillStemWhirlingFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillStemLateralVibrationFeature> .
+<http://ddhub.no/DrillStemForwardWhirlingFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillStemForwardWhirlingFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillStemWhirlingFeature> .
+<http://ddhub.no/DrillStemBackwardWhirlingFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillStemBackwardWhirlingFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillStemWhirlingFeature> .
+<http://ddhub.no/DrillStemChaoticWhirlingFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillStemChaoticWhirlingFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillStemWhirlingFeature> .
+<http://ddhub.no/DownholePressureFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DownholePressureFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingManagementFeature> .
+<http://ddhub.no/SwabSurgeFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/SwabSurgeFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownholePressureFeature> .
+<http://ddhub.no/ManagedDownholePressureFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ManagedDownholePressureFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownholePressureFeature> .
+<http://ddhub.no/UnderBalanceFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/UnderBalanceFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownholePressureFeature> .
+<http://ddhub.no/GasAbsorptionFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/GasAbsorptionFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownholePressureFeature> .
+<http://ddhub.no/FormationFracturingFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/FormationFracturingFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownholePressureFeature> .
+<http://ddhub.no/FormationCollapseFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/FormationCollapseFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownholePressureFeature> .
+<http://ddhub.no/OnBottomDrillingFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/OnBottomDrillingFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingManagementFeature> .
+<http://ddhub.no/HoleOpeningFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/HoleOpeningFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OnBottomDrillingFeature> .
+<http://ddhub.no/UnderReamingFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/UnderReamingFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/HoleOpeningFeature> .
+<http://ddhub.no/DrillStemBucklingFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillStemBucklingFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingManagementFeature> .
+<http://ddhub.no/HeatTransferFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/HeatTransferFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingManagementFeature> .
 <http://ddhub.no/DrillingIncident> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/DrillingIncident> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/AbnormalOscillation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -4596,6 +4668,42 @@
 <http://ddhub.no/GenericEquipmentGatevalve> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/ThreeWayManifold> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/ThreeWayValve> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/DrillingManagementFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling management feature is a drilling management characteristic that is supported by something. For instance\nan advisory system may provide ROP management parameters accounting for cuttings transport.\n"@EN .
+<http://ddhub.no/CirculationFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A circulation feature indicates that something accounts for circulation.\n"@EN .
+<http://ddhub.no/DrillingFluidDisplacementFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling fluid displacement feature indicates that something accounts for displacing a drilling fluid with another.\n"@EN .
+<http://ddhub.no/CementingFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A cementing feature indicates that something accounts for displacing a train of drilling fluids and cement slurries to perform\na cement operation.\n"@EN .
+<http://ddhub.no/DrillingFluidSweepFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling fluid sweep feature indicates that something accounts for sweeping the borehole with one or several fluids of\ndifferent densities and/or viscosities.\n"@EN .
+<http://ddhub.no/FormationWashoutFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A formation washout feature indicates that something accounts for formation washout while circulating.\n"@EN .
+<http://ddhub.no/CuttingsTransportFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A cuttings transport feature indicates that something accounts for cuttings transport while circulating.\n"@EN .
+<http://ddhub.no/PackOffFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A pack-off feature indicates that something accounts for the possibility to pack-off while circulating cuttings.\n"@EN .
+<http://ddhub.no/DrillStemMovementFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A drill-stem movement feature indicates that something accounts for the drill-stem movement.\n"@EN .
+<http://ddhub.no/DrillStemAxialMovementFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A drill-stem axial movement feature indicates that something accounts for drill-stem axial movement.\n"@EN .
+<http://ddhub.no/DrillStemRotationalMovementFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A drill-stem rotational movement feature indicates that something accounts for drill-stem rotational movement.\n"@EN .
+<http://ddhub.no/StuckPipeFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A stuck-pipe feature indicates that something accounts for stuck-pipes.\n"@EN .
+<http://ddhub.no/DrillStemAxialImpedimentFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A drill-stem axial impediment feature indicates that something accounts for drill-stem axial impediment.\n"@EN .
+<http://ddhub.no/DrillSteRotationalImpedimentFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A drill-stem rotational impediment feature indicates that something accounts for drill-stem rotational impediment.\n"@EN .
+<http://ddhub.no/DrillStemVibrationFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A drill-stem vibration feature indicates that something accounts for drill-stem vibrations.\n"@EN .
+<http://ddhub.no/DrillStemAxialVibrationFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A drill-stem axial vibration feature indicates that something accounts for in particular axial drill-stem vibrations.\n"@EN .
+<http://ddhub.no/DrillStemAxialStickSlipFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A drill-stem axial stick-slip feature indicates that something acconts for in particular axial stick-slip drill-stem vibrations.\n"@EN .
+<http://ddhub.no/DrillStemTorsionalVibrationFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A drill-stem torsional vibration feature indicates that something acconts for in particular torsional drill-stem vibrations.\n"@EN .
+<http://ddhub.no/DrillStemTorsionalStickSlipFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A drill-stem torsional stick-slip feature indicates that something acconts for in particular torsional stick-slip drill-stem vibrations.\n"@EN .
+<http://ddhub.no/DrillStemLateralVibrationFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A drill-stem lateral vibration feature indicates that something accounts for in particular lateral drill-stem vibrations.\n"@EN .
+<http://ddhub.no/DrillStemWhirlingFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A drill-stem whirling feature indicates that something accounts for in particular drill-stem whirling.\n"@EN .
+<http://ddhub.no/DrillStemForwardWhirlingFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A drill-stem forward whirling feature indicates that something accounts for in particular drill-stem forward whirling.\n"@EN .
+<http://ddhub.no/DrillStemBackwardWhirlingFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A drill-stem backward whirling feature indicates that something accounts for in particular drill-stem backward whirling.\n"@EN .
+<http://ddhub.no/DrillStemChaoticWhirlingFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A drill-stem chaotic whirling feature indicates that something accounts for in particular drill-stem chaotic whirling.\n"@EN .
+<http://ddhub.no/DownholePressureFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A downhole pressure feature indicates that something accounts for downhole pressure.\n"@EN .
+<http://ddhub.no/SwabSurgeFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A swab and surge feature indicates that something accounts for swab and surge pressure variations.\n"@EN .
+<http://ddhub.no/ManagedDownholePressureFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A managed downhole pressure feature indicates that something manages downhole pressure.\n"@EN .
+<http://ddhub.no/UnderBalanceFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "An under-balance feature indicates that something accounts for under-balance conditions.\n"@EN .
+<http://ddhub.no/GasAbsorptionFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A gas absorption feature indicates that something accounts for conditions by which gas can be absorbed by the drilling fluid.\n"@EN .
+<http://ddhub.no/FormationFracturingFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A formation fracturing feature indicates that something accounts for formation fracturing limits.\n"@EN .
+<http://ddhub.no/FormationCollapseFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A formation collapse feature indicates that something accounts for formation collapse limits.\n"@EN .
+<http://ddhub.no/OnBottomDrillingFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "An on bottom drilling feature indicates that something accounts for on bottom drilling.\n"@EN .
+<http://ddhub.no/HoleOpeningFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "An hole opening feature indicates that something accounts for opening the borehole diameter.\n"@EN .
+<http://ddhub.no/UnderReamingFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "An under-reaming feature indicates that something accounts for under-reaming a borehole.\n"@EN .
+<http://ddhub.no/DrillStemBucklingFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A drill-stem buckling feature indicates that something accounts for drill-stem buckling.\n"@EN .
+<http://ddhub.no/HeatTransferFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A heat transfer feature indicates that something accounts for heat transfer.\n"@EN .
 <http://ddhub.no/DrillingIncident> <http://www.w3.org/2000/01/rdf-schema#comment> "This is the parent class for drilling incidents. A drilling incident is often detectable by an abnormal value of a process variable, i.e., a variable that is influenced\nby the drilling process.\n"@EN .
 <http://ddhub.no/AbnormalOscillation> <http://www.w3.org/2000/01/rdf-schema#comment> "This Noun represents abnormal oscillations along the drill-stem.\n"@EN .
 <http://ddhub.no/AbnormalAxialOscillation> <http://www.w3.org/2000/01/rdf-schema#comment> "This Noun is used to refer to abnormal axial oscillations.\n"@EN .
@@ -6430,6 +6538,10 @@
 <http://ddhub.no/IsSubPartOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingEquipment> .
 <http://ddhub.no/IsSubPartOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingEquipment> .
 <http://ddhub.no/IsSubPartOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/AccountsFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/AccountsFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/AccountsFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingManagementFeature> .
+<http://ddhub.no/AccountsFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
 <http://ddhub.no/IsRelatedToDrillingIncident> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://ddhub.no/IsRelatedToDrillingIncident> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
 <http://ddhub.no/IsRelatedToDrillingIncident> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingIncident> .
@@ -6889,6 +7001,7 @@
 <http://ddhub.no/IsToBeEqualTo> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/IsToBeDifferentFrom> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/IsSubPartOf> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/AccountsFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to indicate something accounts for a drilling management feature.\n"@EN .
 <http://ddhub.no/IsRelatedToDrillingIncident> <http://www.w3.org/2000/01/rdf-schema#comment> "This Verb is used to indicate that a drilling data point is related to a drilling incident.\n"@EN .
 <http://ddhub.no/ManagesIncident> <http://www.w3.org/2000/01/rdf-schema#comment> "This Verb is used to indicate that a fault detection isolation and recovery function manages a drilling incident.\n"@EN .
 <http://ddhub.no/ImplementsLimit> <http://www.w3.org/2000/01/rdf-schema#comment> "This Verb is used to indicate that a safe operating envelope function implements a drilling limit.\n"@EN .
