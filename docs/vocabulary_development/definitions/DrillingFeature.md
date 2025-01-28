@@ -220,6 +220,18 @@ a cement operation.
 - Attributes:
 - Description: A heat transfer feature indicates that something accounts for heat transfer.
 - Examples:
+## RigActionPlanFeature <!-- NOUN -->
+- Display name: Rig Action Plan Feature
+- Parent class: DrillingManagementFeature
+- Attributes:
+- Description: A rig action plan feature indicates that something accounts for the rig action plan.
+- Examples:
+## DrillingProgramFeature <!-- NOUN -->
+- Display name: Drilling Program Feature
+- Parent class: DrillingManagementFeature
+- Attributes:
+- Description: A drilling program feature indicates that something accounts for the drilling program.
+- Examples:
 
 # VERBS
 ## AccountsFor <!-- VERB -->
