@@ -4309,6 +4309,18 @@ different densities and/or viscosities.
     <rdfs:comment xml:lang="EN">A heat transfer feature indicates that something accounts for heat transfer.
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RigActionPlanFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingManagementFeature" />
+    <rdfs:comment xml:lang="EN">A rig action plan feature indicates that something accounts for the rig action plan.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingProgramFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingManagementFeature" />
+    <rdfs:comment xml:lang="EN">A drilling program feature indicates that something accounts for the drilling program.
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DrillingIncident">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
