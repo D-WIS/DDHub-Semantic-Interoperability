@@ -43,6 +43,8 @@ OnBottomDrillingFeature <|-- HoleOpeningFeature
 HoleOpeningFeature <|-- UnderReamingFeature
 DrillingManagementFeature <|-- DrillStemBucklingFeature
 DrillingManagementFeature <|-- HeatTransferFeature
+DrillingManagementFeature <|-- RigActionPlanFeature
+DrillingManagementFeature <|-- DrillingProgramFeature
 ```
 ## DrillingManagementFeature <!-- NOUN -->
 - Display name: Drilling Management Feature
@@ -262,6 +264,18 @@ A drill-stem buckling feature indicates that something accounts for drill-stem b
 - Parent class: [DrillingManagementFeature](./DrillingFeature.md#DrillingManagementFeature)
 - Description: 
 A heat transfer feature indicates that something accounts for heat transfer.
+- Definition set: DrillingFeature
+## RigActionPlanFeature <!-- NOUN -->
+- Display name: Rig Action Plan Feature
+- Parent class: [DrillingManagementFeature](./DrillingFeature.md#DrillingManagementFeature)
+- Description: 
+A rig action plan feature indicates that something accounts for the rig action plan.
+- Definition set: DrillingFeature
+## DrillingProgramFeature <!-- NOUN -->
+- Display name: Drilling Program Feature
+- Parent class: [DrillingManagementFeature](./DrillingFeature.md#DrillingManagementFeature)
+- Description: 
+A drilling program feature indicates that something accounts for the drilling program.
 - Definition set: DrillingFeature
 # Verbs
 ## Class Inheritance for Verbs

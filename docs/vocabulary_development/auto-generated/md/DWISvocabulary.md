@@ -8192,6 +8192,18 @@ A drill-stem buckling feature indicates that something accounts for drill-stem b
 - Description: 
 A heat transfer feature indicates that something accounts for heat transfer.
 - Definition set: DrillingFeature
+## RigActionPlanFeature <!-- NOUN -->
+- Display name: Rig Action Plan Feature
+- Parent class: [DrillingManagementFeature](#DrillingManagementFeature)
+- Description: 
+A rig action plan feature indicates that something accounts for the rig action plan.
+- Definition set: DrillingFeature
+## DrillingProgramFeature <!-- NOUN -->
+- Display name: Drilling Program Feature
+- Parent class: [DrillingManagementFeature](#DrillingManagementFeature)
+- Description: 
+A drilling program feature indicates that something accounts for the drilling program.
+- Definition set: DrillingFeature
 ## DrillingIncident <!-- NOUN -->
 - Display name: Drilling Incident
 - Parent class: [DWISNoun](#DWISNoun)

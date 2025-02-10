@@ -1430,6 +1430,10 @@
 <http://ddhub.no/DrillStemBucklingFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingManagementFeature> .
 <http://ddhub.no/HeatTransferFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/HeatTransferFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingManagementFeature> .
+<http://ddhub.no/RigActionPlanFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/RigActionPlanFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingManagementFeature> .
+<http://ddhub.no/DrillingProgramFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillingProgramFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingManagementFeature> .
 <http://ddhub.no/DrillingIncident> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/DrillingIncident> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/AbnormalOscillation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -4704,6 +4708,8 @@
 <http://ddhub.no/UnderReamingFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "An under-reaming feature indicates that something accounts for under-reaming a borehole.\n"@EN .
 <http://ddhub.no/DrillStemBucklingFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A drill-stem buckling feature indicates that something accounts for drill-stem buckling.\n"@EN .
 <http://ddhub.no/HeatTransferFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A heat transfer feature indicates that something accounts for heat transfer.\n"@EN .
+<http://ddhub.no/RigActionPlanFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A rig action plan feature indicates that something accounts for the rig action plan.\n"@EN .
+<http://ddhub.no/DrillingProgramFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling program feature indicates that something accounts for the drilling program.\n"@EN .
 <http://ddhub.no/DrillingIncident> <http://www.w3.org/2000/01/rdf-schema#comment> "This is the parent class for drilling incidents. A drilling incident is often detectable by an abnormal value of a process variable, i.e., a variable that is influenced\nby the drilling process.\n"@EN .
 <http://ddhub.no/AbnormalOscillation> <http://www.w3.org/2000/01/rdf-schema#comment> "This Noun represents abnormal oscillations along the drill-stem.\n"@EN .
 <http://ddhub.no/AbnormalAxialOscillation> <http://www.w3.org/2000/01/rdf-schema#comment> "This Noun is used to refer to abnormal axial oscillations.\n"@EN .

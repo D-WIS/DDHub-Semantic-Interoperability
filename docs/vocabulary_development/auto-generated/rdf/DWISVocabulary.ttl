@@ -3243,6 +3243,10 @@ ddhub:DrillingProgram a owl:Class;
                       rdfs:comment """A drilling program is a set of procedures that are necessary to construct a well.
 """@EN; 
                       rdfs:subClassOf ddhub:Plan. 
+ddhub:DrillingProgramFeature a owl:Class; 
+                             rdfs:comment """A drilling program feature indicates that something accounts for the drilling program.
+"""@EN; 
+                             rdfs:subClassOf ddhub:DrillingManagementFeature. 
 ddhub:DrillingRiser a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:MarineSystem. 
@@ -12565,6 +12569,10 @@ ddhub:RigActionPlan a owl:Class;
                     rdfs:comment """A rig action plan is a set of steps and rules that shall be conducted to fulfil a particulat activity when constructing a well.
 """@EN; 
                     rdfs:subClassOf ddhub:Plan. 
+ddhub:RigActionPlanFeature a owl:Class; 
+                           rdfs:comment """A rig action plan feature indicates that something accounts for the rig action plan.
+"""@EN; 
+                           rdfs:subClassOf ddhub:DrillingManagementFeature. 
 ddhub:RigChokeControlSystem a owl:Class; 
                             rdfs:comment ""@EN; 
                             rdfs:subClassOf ddhub:ControlSystem. 
