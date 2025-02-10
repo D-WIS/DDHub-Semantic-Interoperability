@@ -6,7 +6,7 @@
 - Parent class: DWISNoun
 - Attributes:
 - Specialization:
-- Description: 
+- Description: A data flow node is a generic term for any node in the data flow graph.
 - Examples:
 ## ComputedState <!-- NOUN -->
 - Display name: Computed State
