@@ -63,7 +63,7 @@ jobs:
           git push
 
       - name: 'Upload the generated files as artifacts'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: generated-md-files
           path: "${{ github.workspace }}/docs/vocabulary_development/auto-generated/md"
@@ -84,7 +84,7 @@ jobs:
           cd "${{ github.workspace }}\\src\\DWIS-Vocabulary\\DWIS-Vocabulary\\DWIS.Vocabulary.Schemas"
           dotnet pack --output $Env:PACKAGE_OUTPUT_FOLDER -p:PackageVersion=1.0."${{ github.run_number }}" 
       - name: 'Upload the generated packages as artifacts'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: generated-nuget-packages
           path: "${{ github.workspace }}/packages"
