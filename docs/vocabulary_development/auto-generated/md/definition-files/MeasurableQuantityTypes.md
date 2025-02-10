@@ -93,6 +93,9 @@ MeasurableQuantity <|-- WeightOnBitDrillingQuantity
 MeasurableQuantity <|-- ThermalConductivityGradientPerTemperatureDrillingQuantity
 MeasurableQuantity <|-- TorqueGradientPerLengthDrillingQuantity
 MeasurableQuantity <|-- PorousMediumPermeabilityDrillingQuantity
+MeasurableQuantity <|-- ForceRateOfChangeDrillingQuantity
+MeasurableQuantity <|-- PressureRateOfChangeDrillingQuantity
+MeasurableQuantity <|-- TorqueRateOfChangeDrillingQuantity
 ```
 ## ConsistencyIndexRheologyQuantity <!-- NOUN -->
 - Display name: ConsistencyIndexRheology
@@ -2664,5 +2667,92 @@ graph LR
 	N0002[PorousMediumPermeabilityDrilling_DataPoint] -->|HasValue| N0000[PorousMediumPermeabilityDrilling_Signal] 
 	N0002[PorousMediumPermeabilityDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004[PorousMediumPermeabilityDrillingQuantity] 
 	N0000[PorousMediumPermeabilityDrilling_Signal] -->|HasUnitOfMeasure| N0005[SquareMetre] 
+```
+## ForceRateOfChangeDrillingQuantity <!-- NOUN -->
+- Display name: ForceRateOfChangeDrilling
+- Parent class: [MeasurableQuantity](./Quantities.md#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.1
+- Description: 
+A force rate of change is the time derivative of a force: $\frac{dF}{dt}$, where $F$ is the mass density and $t$ is time.
+The dimension of force rate of change is:
+$$[LMT^{-3}]$$.
+The SI unit for **force rate of change** is: Newton per second with the associated unit label $\frac{N}{s}$
+The meaningful precision of force rate of change in the drilling context is typically: 0.1 N/s
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:ForceRateOfChangeDrilling_Signal
+DrillingDataPoint:ForceRateOfChangeDrilling_DataPoint
+ForceRateOfChangeDrilling_DataPoint HasValue ForceRateOfChangeDrilling_Signal
+ForceRateOfChangeDrilling_DataPoint IsOfMeasurableQuantity ForceRateOfChangeDrillingQuantity
+ForceRateOfChangeDrilling_Signal HasUnitOfMeasure NewtonPerSecond
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ForceRateOfChangeDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[ForceRateOfChangeDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[ForceRateOfChangeDrilling_DataPoint] -->|HasValue| N0000[ForceRateOfChangeDrilling_Signal] 
+	N0002[ForceRateOfChangeDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004[ForceRateOfChangeDrillingQuantity] 
+	N0000[ForceRateOfChangeDrilling_Signal] -->|HasUnitOfMeasure| N0005[NewtonPerSecond] 
+```
+## PressureRateOfChangeDrillingQuantity <!-- NOUN -->
+- Display name: PressureRateOfChangeDrilling
+- Parent class: [MeasurableQuantity](./Quantities.md#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 10000
+- Description: 
+A pressure rate of change is the time derivative of a pressure.
+The dimension of pressure rate of change is:
+$$[ML^{-1}T^{-3}]$$.
+The SI unit for **pressure rate of change** is: pascal per second with the associated unit label $\frac{Pa}{s}$
+The meaningful precision of pressure rate of change in the drilling context is typically: 10000 Pa/s
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:PressureRateOfChangeDrilling_Signal
+DrillingDataPoint:PressureRateOfChangeDrilling_DataPoint
+PressureRateOfChangeDrilling_DataPoint HasValue PressureRateOfChangeDrilling_Signal
+PressureRateOfChangeDrilling_DataPoint IsOfMeasurableQuantity PressureRateOfChangeDrillingQuantity
+PressureRateOfChangeDrilling_Signal HasUnitOfMeasure PascalPerSecond
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PressureRateOfChangeDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[PressureRateOfChangeDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[PressureRateOfChangeDrilling_DataPoint] -->|HasValue| N0000[PressureRateOfChangeDrilling_Signal] 
+	N0002[PressureRateOfChangeDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004[PressureRateOfChangeDrillingQuantity] 
+	N0000[PressureRateOfChangeDrilling_Signal] -->|HasUnitOfMeasure| N0005[PascalPerSecond] 
+```
+## TorqueRateOfChangeDrillingQuantity <!-- NOUN -->
+- Display name: TorqueRateOfChangeDrilling
+- Parent class: [MeasurableQuantity](./Quantities.md#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.1
+- Description: 
+A torque rate of change is the time derivative of a torque.
+The dimension of torque rate of change is:
+$$[L^{2}MT^{-3}]$$.
+The SI unit for **torque** is: newton metre per second with the associated unit label $\frac{N \cdot m}{s}$
+The meaningful precision of torque rate of change in the drilling context is typically: 0.1 N•m/s
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:TorqueRateOfChangeDrilling_Signal
+DrillingDataPoint:TorqueRateOfChangeDrilling_DataPoint
+TorqueRateOfChangeDrilling_DataPoint HasValue TorqueRateOfChangeDrilling_Signal
+TorqueRateOfChangeDrilling_DataPoint IsOfMeasurableQuantity TorqueRateOfChangeDrillingQuantity
+TorqueRateOfChangeDrilling_Signal HasUnitOfMeasure NewtonMetrePerSecond
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[TorqueRateOfChangeDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[TorqueRateOfChangeDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[TorqueRateOfChangeDrilling_DataPoint] -->|HasValue| N0000[TorqueRateOfChangeDrilling_Signal] 
+	N0002[TorqueRateOfChangeDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004[TorqueRateOfChangeDrillingQuantity] 
+	N0000[TorqueRateOfChangeDrilling_Signal] -->|HasUnitOfMeasure| N0005[NewtonMetrePerSecond] 
 ```
 # Verbs

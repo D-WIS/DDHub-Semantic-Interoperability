@@ -62,6 +62,8 @@ DataFlowNode <|-- UserInterface
 ## DataFlowNode <!-- NOUN -->
 - Display name: Data Flow Node
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Description: 
+A data flow node is a generic term for any node in the data flow graph.
 - Definition set: DataFlow
 ## ComputedState <!-- NOUN -->
 - Display name: Computed State

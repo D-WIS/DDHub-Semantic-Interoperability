@@ -435,6 +435,18 @@ and
 Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
 """@EN; 
           rdfs:subClassOf ddhub:Unit. 
+ddhub:BarPerHour a owl:Class; 
+                 rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in bar per hour
+[SI] is the value in SI
+a = Hour/Bar, i.e., 0.036
+and
+Hour = 60.0 * Minute
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Minute = 60.0
+"""@EN; 
+                 rdfs:subClassOf ddhub:Unit. 
 ddhub:BarPerMetre a owl:Class; 
                   rdfs:comment """[v] = a * [SI]
 where
@@ -445,6 +457,27 @@ and
 Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
 """@EN; 
                   rdfs:subClassOf ddhub:Unit. 
+ddhub:BarPerMinute a owl:Class; 
+                   rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in bar per minute
+[SI] is the value in SI
+a = Minute/Bar, i.e., 0.0006
+and
+Minute = 60.0
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+"""@EN; 
+                   rdfs:subClassOf ddhub:Unit. 
+ddhub:BarPerSecond a owl:Class; 
+                   rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in bar per second
+[SI] is the value in SI
+a = 1.0/Bar, i.e., 1E-05
+and
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+"""@EN; 
+                   rdfs:subClassOf ddhub:Unit. 
 ddhub:Barrel a owl:Class; 
              rdfs:comment """[v] = a * [SI]
 where
@@ -1271,6 +1304,42 @@ Deca = 10.0
 MillimetreMercury = 133.322387415 reference: https://en.wikipedia.org/wiki/Millimetre_of_mercury
 """@EN; 
                                            rdfs:subClassOf ddhub:Unit. 
+ddhub:CentimetreMercuryAtZeroDegreeCelsiusPerHour a owl:Class; 
+                                                  rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in centimetre mercury at zero degree celsius per hour
+[SI] is the value in SI
+a = Hour/(Deca*MillimetreMercury), i.e., 2.700221673044363
+and
+Hour = 60.0 * Minute
+Deca = 10.0
+MillimetreMercury = 133.322387415 reference: https://en.wikipedia.org/wiki/Millimetre_of_mercury
+Minute = 60.0
+"""@EN; 
+                                                  rdfs:subClassOf ddhub:Unit. 
+ddhub:CentimetreMercuryAtZeroDegreeCelsiusPerMinute a owl:Class; 
+                                                    rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in centimetre mercury at zero degree celsius per minute
+[SI] is the value in SI
+a = Minute/(Deca*MillimetreMercury), i.e., 0.04500369455073938
+and
+Minute = 60.0
+Deca = 10.0
+MillimetreMercury = 133.322387415 reference: https://en.wikipedia.org/wiki/Millimetre_of_mercury
+"""@EN; 
+                                                    rdfs:subClassOf ddhub:Unit. 
+ddhub:CentimetreMercuryAtZeroDegreeCelsiusPerSecond a owl:Class; 
+                                                    rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in centimetre mercury at zero degree celsius per second
+[SI] is the value in SI
+a = 1.0/(Deca*MillimetreMercury), i.e., 0.0007500615758456563
+and
+Deca = 10.0
+MillimetreMercury = 133.322387415 reference: https://en.wikipedia.org/wiki/Millimetre_of_mercury
+"""@EN; 
+                                                    rdfs:subClassOf ddhub:Unit. 
 ddhub:CentimetrePerDay a owl:Class; 
                        rdfs:comment """[v] = a * [SI]
 where
@@ -1383,6 +1452,42 @@ Deca = 10.0
 MillimetreWater4degC = 9.89665 reference: https://en.wikipedia.org/wiki/Centimetre_or_millimetre_of_water
 """@EN; 
                                       rdfs:subClassOf ddhub:Unit. 
+ddhub:CentimetreWaterAt4DegreeCelsiusPerHour a owl:Class; 
+                                             rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in centimetre water at 4 degree celsius per hour
+[SI] is the value in SI
+a = Hour/(Deca*MillimetreWater4degC), i.e., 36.37594539566419
+and
+Hour = 60.0 * Minute
+Deca = 10.0
+MillimetreWater4degC = 9.89665 reference: https://en.wikipedia.org/wiki/Centimetre_or_millimetre_of_water
+Minute = 60.0
+"""@EN; 
+                                             rdfs:subClassOf ddhub:Unit. 
+ddhub:CentimetreWaterAt4DegreeCelsiusPerMinute a owl:Class; 
+                                               rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in centimetre water at 4 degree celsius per minute
+[SI] is the value in SI
+a = Minute/(Deca*MillimetreWater4degC), i.e., 0.6062657565944032
+and
+Minute = 60.0
+Deca = 10.0
+MillimetreWater4degC = 9.89665 reference: https://en.wikipedia.org/wiki/Centimetre_or_millimetre_of_water
+"""@EN; 
+                                               rdfs:subClassOf ddhub:Unit. 
+ddhub:CentimetreWaterAt4DegreeCelsiusPerSecond a owl:Class; 
+                                               rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in centimetre water at 4 degree celsius per second
+[SI] is the value in SI
+a = 1.0/(Deca*MillimetreWater4degC), i.e., 0.010104429276573386
+and
+Deca = 10.0
+MillimetreWater4degC = 9.89665 reference: https://en.wikipedia.org/wiki/Centimetre_or_millimetre_of_water
+"""@EN; 
+                                               rdfs:subClassOf ddhub:Unit. 
 ddhub:Centimole a owl:Class; 
                 rdfs:comment """[v] = a * [SI]
 where
@@ -1912,7 +2017,8 @@ ddhub:DataEndPoint a owl:Class;
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:DataFlowNode a owl:Class; 
-                   rdfs:comment ""@EN; 
+                   rdfs:comment """A data flow node is a generic term for any node in the data flow graph.
+"""@EN; 
                    rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:DataIntegrationStrategy a owl:Class; 
                               rdfs:comment """A classification of a model with regards to its strategy for integrating data.
@@ -2035,6 +2141,18 @@ Deca = 10.0
 Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
 """@EN; 
                              rdfs:subClassOf ddhub:Unit. 
+ddhub:DecanewtonMetrePerHour a owl:Class; 
+                             rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in decanewton metre per hour
+[SI] is the value in SI
+a = Hour/(Deca), i.e., 360
+and
+Hour = 60.0 * Minute
+Deca = 10.0
+Minute = 60.0
+"""@EN; 
+                             rdfs:subClassOf ddhub:Unit. 
 ddhub:DecanewtonMetrePerInch a owl:Class; 
                              rdfs:comment """[v] = a * [SI]
 where
@@ -2068,6 +2186,27 @@ Milli = 0.001
 Deca = 10.0
 """@EN; 
                                    rdfs:subClassOf ddhub:Unit. 
+ddhub:DecanewtonMetrePerMinute a owl:Class; 
+                               rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in decanewton metre per minute
+[SI] is the value in SI
+a = Minute/(Deca), i.e., 6
+and
+Minute = 60.0
+Deca = 10.0
+"""@EN; 
+                               rdfs:subClassOf ddhub:Unit. 
+ddhub:DecanewtonMetrePerSecond a owl:Class; 
+                               rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in decanewton metre per second
+[SI] is the value in SI
+a = 1.0/(Deca), i.e., 0.1
+and
+Deca = 10.0
+"""@EN; 
+                               rdfs:subClassOf ddhub:Unit. 
 ddhub:DecanewtonPer10Metre a owl:Class; 
                            rdfs:comment """[v] = a * [SI]
 where
@@ -2110,6 +2249,18 @@ Deci = 0.1
 Deca = 10.0
 """@EN; 
                              rdfs:subClassOf ddhub:Unit. 
+ddhub:DecanewtonPerHour a owl:Class; 
+                        rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in decanewton per hour
+[SI] is the value in SI
+a = Hour/(Deca), i.e., 360
+and
+Hour = 60.0 * Minute
+Deca = 10.0
+Minute = 60.0
+"""@EN; 
+                        rdfs:subClassOf ddhub:Unit. 
 ddhub:DecanewtonPerMetre a owl:Class; 
                          rdfs:comment """[v] = a * [SI]
 where
@@ -2131,6 +2282,27 @@ Milli = 0.001
 Deca = 10.0
 """@EN; 
                               rdfs:subClassOf ddhub:Unit. 
+ddhub:DecanewtonPerMinute a owl:Class; 
+                          rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in decanewton per minute
+[SI] is the value in SI
+a = Minute/(Deca), i.e., 6
+and
+Minute = 60.0
+Deca = 10.0
+"""@EN; 
+                          rdfs:subClassOf ddhub:Unit. 
+ddhub:DecanewtonPerSecond a owl:Class; 
+                          rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in decanewton per second
+[SI] is the value in SI
+a = 1.0/(Deca), i.e., 0.1
+and
+Deca = 10.0
+"""@EN; 
+                          rdfs:subClassOf ddhub:Unit. 
 ddhub:Decawatt a owl:Class; 
                rdfs:comment """[v] = a * [SI]
 where
@@ -3502,6 +3674,42 @@ Centi = 0.01
 Dyne = 1e-5 reference: https://en.wikipedia.org/wiki/Dyne
 """@EN; 
                               rdfs:subClassOf ddhub:Unit. 
+ddhub:DynePerSquareCentimetrePerHour a owl:Class; 
+                                     rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in dyne per square centimetre per hour
+[SI] is the value in SI
+a = Hour*Centi*Centi/Dyne, i.e., 35999.99999999999
+and
+Hour = 60.0 * Minute
+Centi = 0.01
+Dyne = 1e-5 reference: https://en.wikipedia.org/wiki/Dyne
+Minute = 60.0
+"""@EN; 
+                                     rdfs:subClassOf ddhub:Unit. 
+ddhub:DynePerSquareCentimetrePerMinute a owl:Class; 
+                                       rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in dyne per square centimetre per minute
+[SI] is the value in SI
+a = Minute*Centi*Centi/Dyne, i.e., 600
+and
+Minute = 60.0
+Centi = 0.01
+Dyne = 1e-5 reference: https://en.wikipedia.org/wiki/Dyne
+"""@EN; 
+                                       rdfs:subClassOf ddhub:Unit. 
+ddhub:DynePerSquareCentimetrePerSecond a owl:Class; 
+                                       rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in dyne per square centimetre per second
+[SI] is the value in SI
+a = Centi*Centi/Dyne, i.e., 10
+and
+Centi = 0.01
+Dyne = 1e-5 reference: https://en.wikipedia.org/wiki/Dyne
+"""@EN; 
+                                       rdfs:subClassOf ddhub:Unit. 
 ddhub:DyneSecondPerSquareCentimetre a owl:Class; 
                                     rdfs:comment """[v] = a * [SI]
 where
@@ -4058,6 +4266,22 @@ Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
 G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
 """@EN; 
                        rdfs:subClassOf ddhub:Unit. 
+ddhub:FootPoundPerHour a owl:Class; 
+                       rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in foot pound per hour
+[SI] is the value in SI
+a = Hour/(Foot*PoundForce), i.e., 2655.2237373981557
+and
+Hour = 60.0 * Minute
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Minute = 60.0
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                       rdfs:subClassOf ddhub:Unit. 
 ddhub:FootPoundPerInch a owl:Class; 
                        rdfs:comment """[v] = a * [SI]
 where
@@ -4102,6 +4326,35 @@ Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
 G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
 """@EN; 
                              rdfs:subClassOf ddhub:Unit. 
+ddhub:FootPoundPerMinute a owl:Class; 
+                         rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in foot pound per minute
+[SI] is the value in SI
+a = Minute/(Foot*PoundForce), i.e., 44.25372895663593
+and
+Minute = 60.0
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                         rdfs:subClassOf ddhub:Unit. 
+ddhub:FootPoundPerSecond a owl:Class; 
+                         rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in foot pound per second
+[SI] is the value in SI
+a = 1.0/(Foot*PoundForce), i.e., 0.7375621492772655
+and
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                         rdfs:subClassOf ddhub:Unit. 
 ddhub:FootWaterAt4DegreeCelsius a owl:Class; 
                                 rdfs:comment """[v] = a * [SI]
 where
@@ -4112,6 +4365,39 @@ and
 FootWater4degC = 2989.067 reference: https://en.wikipedia.org/wiki/Inch_of_water
 """@EN; 
                                 rdfs:subClassOf ddhub:Unit. 
+ddhub:FootWaterAt4DegreeCelsiusPerHour a owl:Class; 
+                                       rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in foot water at 4 degree celsius per hour
+[SI] is the value in SI
+a = Hour/FootWater4degC, i.e., 1.2043891956921675
+and
+Hour = 60.0 * Minute
+FootWater4degC = 2989.067 reference: https://en.wikipedia.org/wiki/Inch_of_water
+Minute = 60.0
+"""@EN; 
+                                       rdfs:subClassOf ddhub:Unit. 
+ddhub:FootWaterAt4DegreeCelsiusPerMinute a owl:Class; 
+                                         rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in foot water at 4 degree celsius per minute
+[SI] is the value in SI
+a = Minute/FootWater4degC, i.e., 0.020073153261536126
+and
+Minute = 60.0
+FootWater4degC = 2989.067 reference: https://en.wikipedia.org/wiki/Inch_of_water
+"""@EN; 
+                                         rdfs:subClassOf ddhub:Unit. 
+ddhub:FootWaterAt4DegreeCelsiusPerSecond a owl:Class; 
+                                         rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in foot water at 4 degree celsius per second
+[SI] is the value in SI
+a = 1.0/FootWater4degC, i.e., 0.0003345525543589354
+and
+FootWater4degC = 2989.067 reference: https://en.wikipedia.org/wiki/Inch_of_water
+"""@EN; 
+                                         rdfs:subClassOf ddhub:Unit. 
 ddhub:ForceDrillingQuantity a owl:Class; 
                             rdfs:comment """A force is an influence that can cause an object to change its velocity unless counterbalanced by other forces.
 The dimension of force is:
@@ -4145,6 +4431,21 @@ $$[LMT^{-2}]$$.
 The SI unit for **force** is: newton with the associated unit label $N$
 """@EN; 
                     rdfs:subClassOf ddhub:Quantity. 
+ddhub:ForceRateOfChangeDrillingQuantity a owl:Class; 
+                                        rdfs:comment """A force rate of change is the time derivative of a force: $\\frac{dF}{dt}$, where $F$ is the mass density and $t$ is time.
+The dimension of force rate of change is:
+$$[LMT^{-3}]$$.
+The SI unit for **force rate of change** is: Newton per second with the associated unit label $\\frac{N}{s}$
+The meaningful precision of force rate of change in the drilling context is typically: 0.1 N/s
+"""@EN; 
+                                        rdfs:subClassOf ddhub:MeasurableQuantity. 
+ddhub:ForceRateOfChangeQuantity a owl:Class; 
+                                rdfs:comment """A force rate of change is the time derivative of a force: $\\frac{dF}{dt}$, where $F$ is the mass density and $t$ is time.
+The dimension of force rate of change is:
+$$[LMT^{-3}]$$.
+The SI unit for **force rate of change** is: Newton per second with the associated unit label $\\frac{N}{s}$
+"""@EN; 
+                                rdfs:subClassOf ddhub:Quantity. 
 ddhub:ForceToLoadTransformation a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:DirectTransformation. 
@@ -4576,6 +4877,39 @@ and
 Giga = 1e9
 """@EN; 
                  rdfs:subClassOf ddhub:Unit. 
+ddhub:GigapascalPerHour a owl:Class; 
+                        rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in gigapascal per hour
+[SI] is the value in SI
+a = Hour/Giga, i.e., 3.6E-06
+and
+Hour = 60.0 * Minute
+Giga = 1e9
+Minute = 60.0
+"""@EN; 
+                        rdfs:subClassOf ddhub:Unit. 
+ddhub:GigapascalPerMinute a owl:Class; 
+                          rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in gigapascal per minute
+[SI] is the value in SI
+a = Minute/Giga, i.e., 6E-08
+and
+Minute = 60.0
+Giga = 1e9
+"""@EN; 
+                          rdfs:subClassOf ddhub:Unit. 
+ddhub:GigapascalPerSecond a owl:Class; 
+                          rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in gigapascal per second
+[SI] is the value in SI
+a = 1.0/Giga, i.e., 1E-09
+and
+Giga = 1e9
+"""@EN; 
+                          rdfs:subClassOf ddhub:Unit. 
 ddhub:Gigatonne a owl:Class; 
                 rdfs:comment """[v] = a * [SI]
 where
@@ -5435,6 +5769,39 @@ and
 InchMercury32degF = 1.0/3386.389 reference: https://en.wikipedia.org/wiki/Inch_of_mercury
 """@EN; 
                                       rdfs:subClassOf ddhub:Unit. 
+ddhub:InchMercuryAt32DegreeFahrenheitPerHour a owl:Class; 
+                                             rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in inch mercury at 32 degree fahrenheit per hour
+[SI] is the value in SI
+a = Hour/InchMercury32degF, i.e., 12191000.400000002
+and
+Hour = 60.0 * Minute
+InchMercury32degF = 1.0/3386.389 reference: https://en.wikipedia.org/wiki/Inch_of_mercury
+Minute = 60.0
+"""@EN; 
+                                             rdfs:subClassOf ddhub:Unit. 
+ddhub:InchMercuryAt32DegreeFahrenheitPerMinute a owl:Class; 
+                                               rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in inch mercury at 32 degree fahrenheit per minute
+[SI] is the value in SI
+a = Minute/InchMercury32degF, i.e., 203183.34000000003
+and
+Minute = 60.0
+InchMercury32degF = 1.0/3386.389 reference: https://en.wikipedia.org/wiki/Inch_of_mercury
+"""@EN; 
+                                               rdfs:subClassOf ddhub:Unit. 
+ddhub:InchMercuryAt32DegreeFahrenheitPerSecond a owl:Class; 
+                                               rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in inch mercury at 32 degree fahrenheit per second
+[SI] is the value in SI
+a = 1.0/InchMercury32degF, i.e., 3386.3890000000006
+and
+InchMercury32degF = 1.0/3386.389 reference: https://en.wikipedia.org/wiki/Inch_of_mercury
+"""@EN; 
+                                               rdfs:subClassOf ddhub:Unit. 
 ddhub:InchMercuryAt60DegreeFahrenheit a owl:Class; 
                                       rdfs:comment """[v] = a * [SI]
 where
@@ -5445,6 +5812,39 @@ and
 InchMercury60degF = 1.0 / 3376.85 reference: https://en.wikipedia.org/wiki/Inch_of_mercury
 """@EN; 
                                       rdfs:subClassOf ddhub:Unit. 
+ddhub:InchMercuryAt60DegreeFahrenheitPerHour a owl:Class; 
+                                             rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in inch mercury at 60 degree fahrenheit per hour
+[SI] is the value in SI
+a = Hour/InchMercury60degF, i.e., 12156660
+and
+Hour = 60.0 * Minute
+InchMercury60degF = 1.0 / 3376.85 reference: https://en.wikipedia.org/wiki/Inch_of_mercury
+Minute = 60.0
+"""@EN; 
+                                             rdfs:subClassOf ddhub:Unit. 
+ddhub:InchMercuryAt60DegreeFahrenheitPerMinute a owl:Class; 
+                                               rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in inch mercury at 60 degree fahrenheit per minute
+[SI] is the value in SI
+a = Minute/InchMercury60degF, i.e., 202611
+and
+Minute = 60.0
+InchMercury60degF = 1.0 / 3376.85 reference: https://en.wikipedia.org/wiki/Inch_of_mercury
+"""@EN; 
+                                               rdfs:subClassOf ddhub:Unit. 
+ddhub:InchMercuryAt60DegreeFahrenheitPerSecond a owl:Class; 
+                                               rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in inch mercury at 60 degree fahrenheit per second
+[SI] is the value in SI
+a = 1.0/InchMercury60degF, i.e., 3376.85
+and
+InchMercury60degF = 1.0 / 3376.85 reference: https://en.wikipedia.org/wiki/Inch_of_mercury
+"""@EN; 
+                                               rdfs:subClassOf ddhub:Unit. 
 ddhub:InchPer32 a owl:Class; 
                 rdfs:comment """[v] = a * [SI]
 where
@@ -5627,6 +6027,21 @@ Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
 G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
 """@EN; 
                        rdfs:subClassOf ddhub:Unit. 
+ddhub:InchPoundPerHour a owl:Class; 
+                       rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in inch pound per hour
+[SI] is the value in SI
+a = Hour/(PoundForce*Inch), i.e., 31862.68484877787
+and
+Hour = 60.0 * Minute
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Minute = 60.0
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                       rdfs:subClassOf ddhub:Unit. 
 ddhub:InchPoundPerInch a owl:Class; 
                        rdfs:comment """[v] = a * [SI]
 where
@@ -5668,6 +6083,33 @@ Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
 G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
 """@EN; 
                              rdfs:subClassOf ddhub:Unit. 
+ddhub:InchPoundPerMinute a owl:Class; 
+                         rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in inch pound per minute
+[SI] is the value in SI
+a = Minute/(PoundForce*Inch), i.e., 531.0447474796312
+and
+Minute = 60.0
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                         rdfs:subClassOf ddhub:Unit. 
+ddhub:InchPoundPerSecond a owl:Class; 
+                         rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in inch pound per second
+[SI] is the value in SI
+a = 1.0/(PoundForce*Inch), i.e., 8.850745791327185
+and
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                         rdfs:subClassOf ddhub:Unit. 
 ddhub:InchWaterAt4DegreeCelsius a owl:Class; 
                                 rdfs:comment """[v] = a * [SI]
 where
@@ -5678,6 +6120,39 @@ and
 InchWater4degC = 249.082 reference: https://en.wikipedia.org/wiki/Inch_of_water
 """@EN; 
                                 rdfs:subClassOf ddhub:Unit. 
+ddhub:InchWaterAt4DegreeCelsiusPerHour a owl:Class; 
+                                       rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in inch water at 4 degree celsius per hour
+[SI] is the value in SI
+a = Hour/InchWater4degC, i.e., 14.453071679206046
+and
+Hour = 60.0 * Minute
+InchWater4degC = 249.082 reference: https://en.wikipedia.org/wiki/Inch_of_water
+Minute = 60.0
+"""@EN; 
+                                       rdfs:subClassOf ddhub:Unit. 
+ddhub:InchWaterAt4DegreeCelsiusPerMinute a owl:Class; 
+                                         rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in inch water at 4 degree celsius per minute
+[SI] is the value in SI
+a = Minute/InchWater4degC, i.e., 0.2408845279867674
+and
+Minute = 60.0
+InchWater4degC = 249.082 reference: https://en.wikipedia.org/wiki/Inch_of_water
+"""@EN; 
+                                         rdfs:subClassOf ddhub:Unit. 
+ddhub:InchWaterAt4DegreeCelsiusPerSecond a owl:Class; 
+                                         rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in inch water at 4 degree celsius per second
+[SI] is the value in SI
+a = 1.0/InchWater4degC, i.e., 0.00401474213311279
+and
+InchWater4degC = 249.082 reference: https://en.wikipedia.org/wiki/Inch_of_water
+"""@EN; 
+                                         rdfs:subClassOf ddhub:Unit. 
 ddhub:Inclination a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:PrototypeData. 
@@ -6761,6 +7236,42 @@ Kilo = 1000.0
 Deca = 10.0
 """@EN; 
                      rdfs:subClassOf ddhub:Unit. 
+ddhub:KilodecanewtonPerHour a owl:Class; 
+                            rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilodecanewton per hour
+[SI] is the value in SI
+a = Hour/(Kilo*Deca), i.e., 0.36
+and
+Hour = 60.0 * Minute
+Kilo = 1000.0
+Deca = 10.0
+Minute = 60.0
+"""@EN; 
+                            rdfs:subClassOf ddhub:Unit. 
+ddhub:KilodecanewtonPerMinute a owl:Class; 
+                              rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilodecanewton per minute
+[SI] is the value in SI
+a = Minute/(Kilo*Deca), i.e., 0.006
+and
+Minute = 60.0
+Kilo = 1000.0
+Deca = 10.0
+"""@EN; 
+                              rdfs:subClassOf ddhub:Unit. 
+ddhub:KilodecanewtonPerSecond a owl:Class; 
+                              rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilodecanewton per second
+[SI] is the value in SI
+a = 1.0/(Kilo*Deca), i.e., 0.0001
+and
+Kilo = 1000.0
+Deca = 10.0
+"""@EN; 
+                              rdfs:subClassOf ddhub:Unit. 
 ddhub:KilofootPound a owl:Class; 
                     rdfs:comment """[v] = a * [SI]
 where
@@ -6823,6 +7334,23 @@ Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
 G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
 """@EN; 
                            rdfs:subClassOf ddhub:Unit. 
+ddhub:KilofootPoundPerHour a owl:Class; 
+                           rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilofoot pound per hour
+[SI] is the value in SI
+a = Hour/(Kilo*Foot*PoundForce), i.e., 2.655223737398156
+and
+Hour = 60.0 * Minute
+Kilo = 1000.0
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Minute = 60.0
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                           rdfs:subClassOf ddhub:Unit. 
 ddhub:KilofootPoundPerInch a owl:Class; 
                            rdfs:comment """[v] = a * [SI]
 where
@@ -6870,6 +7398,37 @@ Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
 G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
 """@EN; 
                                  rdfs:subClassOf ddhub:Unit. 
+ddhub:KilofootPoundPerMinute a owl:Class; 
+                             rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilofoot pound per minute
+[SI] is the value in SI
+a = Minute/(Kilo*Foot*PoundForce), i.e., 0.044253728956635936
+and
+Minute = 60.0
+Kilo = 1000.0
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                             rdfs:subClassOf ddhub:Unit. 
+ddhub:KilofootPoundPerSecond a owl:Class; 
+                             rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilofoot pound per second
+[SI] is the value in SI
+a = 1.0/(Kilo*Foot*PoundForce), i.e., 0.0007375621492772656
+and
+Kilo = 1000.0
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                             rdfs:subClassOf ddhub:Unit. 
 ddhub:Kilogram a owl:Class; 
                rdfs:comment """No conversion necessary as the unit choice is SI
 """@EN; 
@@ -6933,6 +7492,19 @@ Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
 G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
 """@EN; 
                                 rdfs:subClassOf ddhub:Unit. 
+ddhub:KilogramForceMetrePerHour a owl:Class; 
+                                rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilogram force metre per hour
+[SI] is the value in SI
+a = Hour/ KilogramForce, i.e., 367.0978366720542
+and
+Hour = 60.0 * Minute
+KilogramForce = 1.0 * G reference: https://en.wikipedia.org/wiki/Kilogram-force
+Minute = 60.0
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                                rdfs:subClassOf ddhub:Unit. 
 ddhub:KilogramForceMetrePerInch a owl:Class; 
                                 rdfs:comment """[v] = a * [SI]
 where
@@ -6969,6 +7541,65 @@ KilogramForce = 1.0 * G reference: https://en.wikipedia.org/wiki/Kilogram-force
 G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
 """@EN; 
                                       rdfs:subClassOf ddhub:Unit. 
+ddhub:KilogramForceMetrePerMinute a owl:Class; 
+                                  rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilogram force metre per minute
+[SI] is the value in SI
+a = Minute/ KilogramForce, i.e., 6.11829727786757
+and
+Minute = 60.0
+KilogramForce = 1.0 * G reference: https://en.wikipedia.org/wiki/Kilogram-force
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                                  rdfs:subClassOf ddhub:Unit. 
+ddhub:KilogramForceMetrePerSecond a owl:Class; 
+                                  rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilogram force metre per second
+[SI] is the value in SI
+a = 1.0/ KilogramForce, i.e., 0.10197162129779283
+and
+KilogramForce = 1.0 * G reference: https://en.wikipedia.org/wiki/Kilogram-force
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                                  rdfs:subClassOf ddhub:Unit. 
+ddhub:KilogramForcePerHour a owl:Class; 
+                           rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilogram force per hour
+[SI] is the value in SI
+a = Hour/KilogramForce, i.e., 367.0978366720542
+and
+Hour = 60.0 * Minute
+KilogramForce = 1.0 * G reference: https://en.wikipedia.org/wiki/Kilogram-force
+Minute = 60.0
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                           rdfs:subClassOf ddhub:Unit. 
+ddhub:KilogramForcePerMinute a owl:Class; 
+                             rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilogram force per minute
+[SI] is the value in SI
+a = Minute/KilogramForce, i.e., 6.11829727786757
+and
+Minute = 60.0
+KilogramForce = 1.0 * G reference: https://en.wikipedia.org/wiki/Kilogram-force
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                             rdfs:subClassOf ddhub:Unit. 
+ddhub:KilogramForcePerSecond a owl:Class; 
+                             rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilogram force per second
+[SI] is the value in SI
+a = 1.0/KilogramForce, i.e., 0.10197162129779283
+and
+KilogramForce = 1.0 * G reference: https://en.wikipedia.org/wiki/Kilogram-force
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                             rdfs:subClassOf ddhub:Unit. 
 ddhub:KilogramPerCubicMetre a owl:Class; 
                             rdfs:comment """No conversion necessary as the unit choice is SI
 """@EN; 
@@ -7376,6 +8007,18 @@ Kilo = 1000.0
 Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
 """@EN; 
                              rdfs:subClassOf ddhub:Unit. 
+ddhub:KilonewtonMetrePerHour a owl:Class; 
+                             rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilonewton metre per hour
+[SI] is the value in SI
+a = Hour/Kilo, i.e., 3.6
+and
+Hour = 60.0 * Minute
+Kilo = 1000.0
+Minute = 60.0
+"""@EN; 
+                             rdfs:subClassOf ddhub:Unit. 
 ddhub:KilonewtonMetrePerInch a owl:Class; 
                              rdfs:comment """[v] = a * [SI]
 where
@@ -7409,6 +8052,27 @@ Milli = 0.001
 Kilo = 1000.0
 """@EN; 
                                    rdfs:subClassOf ddhub:Unit. 
+ddhub:KilonewtonMetrePerMinute a owl:Class; 
+                               rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilonewton metre per minute
+[SI] is the value in SI
+a = Minute/Kilo, i.e., 0.06
+and
+Minute = 60.0
+Kilo = 1000.0
+"""@EN; 
+                               rdfs:subClassOf ddhub:Unit. 
+ddhub:KilonewtonMetrePerSecond a owl:Class; 
+                               rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilonewton metre per second
+[SI] is the value in SI
+a = 1.0/Kilo, i.e., 0.001
+and
+Kilo = 1000.0
+"""@EN; 
+                               rdfs:subClassOf ddhub:Unit. 
 ddhub:KilonewtonPer10Metre a owl:Class; 
                            rdfs:comment """[v] = a * [SI]
 where
@@ -7453,6 +8117,18 @@ Deci = 0.1
 Kilo = 1000.0
 """@EN; 
                              rdfs:subClassOf ddhub:Unit. 
+ddhub:KilonewtonPerHour a owl:Class; 
+                        rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilonewton per hour
+[SI] is the value in SI
+a = Hour/Kilo, i.e., 3.6
+and
+Hour = 60.0 * Minute
+Kilo = 1000.0
+Minute = 60.0
+"""@EN; 
+                        rdfs:subClassOf ddhub:Unit. 
 ddhub:KilonewtonPerMetre a owl:Class; 
                          rdfs:comment """[v] = a * [SI]
 where
@@ -7474,6 +8150,27 @@ Milli = 0.001
 Kilo = 1000.0
 """@EN; 
                               rdfs:subClassOf ddhub:Unit. 
+ddhub:KilonewtonPerMinute a owl:Class; 
+                          rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilonewton per minute
+[SI] is the value in SI
+a = Minute/Kilo, i.e., 0.06
+and
+Minute = 60.0
+Kilo = 1000.0
+"""@EN; 
+                          rdfs:subClassOf ddhub:Unit. 
+ddhub:KilonewtonPerSecond a owl:Class; 
+                          rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilonewton per second
+[SI] is the value in SI
+a = 1.0/Kilo, i.e., 0.001
+and
+Kilo = 1000.0
+"""@EN; 
+                          rdfs:subClassOf ddhub:Unit. 
 ddhub:KilonewtonPerSquareMetre a owl:Class; 
                                rdfs:comment """[v] = a * [SI]
 where
@@ -7484,6 +8181,39 @@ and
 Kilo = 1000.0
 """@EN; 
                                rdfs:subClassOf ddhub:Unit. 
+ddhub:KilonewtonPerSquareMetrePerHour a owl:Class; 
+                                      rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilonewton per square metre per hour
+[SI] is the value in SI
+a = Hour/Kilo, i.e., 3.6
+and
+Hour = 60.0 * Minute
+Kilo = 1000.0
+Minute = 60.0
+"""@EN; 
+                                      rdfs:subClassOf ddhub:Unit. 
+ddhub:KilonewtonPerSquareMetrePerMinute a owl:Class; 
+                                        rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilonewton per square metre per minute
+[SI] is the value in SI
+a = Minute/Kilo, i.e., 0.06
+and
+Minute = 60.0
+Kilo = 1000.0
+"""@EN; 
+                                        rdfs:subClassOf ddhub:Unit. 
+ddhub:KilonewtonPerSquareMetrePerSecond a owl:Class; 
+                                        rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilonewton per square metre per second
+[SI] is the value in SI
+a = 1.0/Kilo, i.e., 0.001
+and
+Kilo = 1000.0
+"""@EN; 
+                                        rdfs:subClassOf ddhub:Unit. 
 ddhub:KiloOhmMetre a owl:Class; 
                    rdfs:comment """[v] = a * [SI]
 where
@@ -7504,6 +8234,39 @@ and
 Kilo = 1000.0
 """@EN; 
                  rdfs:subClassOf ddhub:Unit. 
+ddhub:KilopascalPerHour a owl:Class; 
+                        rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilopascal per hour
+[SI] is the value in SI
+a = Hour/Kilo, i.e., 3.6
+and
+Hour = 60.0 * Minute
+Kilo = 1000.0
+Minute = 60.0
+"""@EN; 
+                        rdfs:subClassOf ddhub:Unit. 
+ddhub:KilopascalPerMinute a owl:Class; 
+                          rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilopascal per minute
+[SI] is the value in SI
+a = Minute/Kilo, i.e., 0.06
+and
+Minute = 60.0
+Kilo = 1000.0
+"""@EN; 
+                          rdfs:subClassOf ddhub:Unit. 
+ddhub:KilopascalPerSecond a owl:Class; 
+                          rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilopascal per second
+[SI] is the value in SI
+a = 1.0/Kilo, i.e., 0.001
+and
+Kilo = 1000.0
+"""@EN; 
+                          rdfs:subClassOf ddhub:Unit. 
 ddhub:Kilopound a owl:Class; 
                 rdfs:comment """[v] = a * [SI]
 where
@@ -7528,6 +8291,48 @@ Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
 G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
 """@EN; 
                      rdfs:subClassOf ddhub:Unit. 
+ddhub:KilopoundForcePerHour a owl:Class; 
+                            rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilopound force per hour
+[SI] is the value in SI
+a = Hour/(Kilo*PoundForce), i.e., 0.8093121951589578
+and
+Hour = 60.0 * Minute
+Kilo = 1000.0
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Minute = 60.0
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                            rdfs:subClassOf ddhub:Unit. 
+ddhub:KilopoundForcePerMinute a owl:Class; 
+                              rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilopound force per minute
+[SI] is the value in SI
+a = Minute/(Kilo*PoundForce), i.e., 0.01348853658598263
+and
+Minute = 60.0
+Kilo = 1000.0
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                              rdfs:subClassOf ddhub:Unit. 
+ddhub:KilopoundForcePerSecond a owl:Class; 
+                              rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilopound force per second
+[SI] is the value in SI
+a = 1.0/(Kilo*PoundForce), i.e., 0.0002248089430997105
+and
+Kilo = 1000.0
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                              rdfs:subClassOf ddhub:Unit. 
 ddhub:KilopoundPer100Foot a owl:Class; 
                           rdfs:comment """[v] = a * [SI]
 where
@@ -7602,6 +8407,54 @@ Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
 G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
 """@EN; 
                              rdfs:subClassOf ddhub:Unit. 
+ddhub:KilopoundPerSquareInchPerHour a owl:Class; 
+                                    rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilopound per square inch per hour
+[SI] is the value in SI
+a = Hour/(Kilo*PSI), i.e., 0.0005221358558287532
+and
+Hour = 60.0 * Minute
+Kilo = 1000.0
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Minute = 60.0
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                                    rdfs:subClassOf ddhub:Unit. 
+ddhub:KilopoundPerSquareInchPerMinute a owl:Class; 
+                                      rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilopound per square inch per minute
+[SI] is the value in SI
+a = Minute/(Kilo*PSI), i.e., 8.702264263812555E-06
+and
+Minute = 60.0
+Kilo = 1000.0
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                                      rdfs:subClassOf ddhub:Unit. 
+ddhub:KilopoundPerSquareInchPerSecond a owl:Class; 
+                                      rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in kilopound per square inch per second
+[SI] is the value in SI
+a = 1.0/(Kilo*PSI), i.e., 1.4503773773020924E-07
+and
+Kilo = 1000.0
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                                      rdfs:subClassOf ddhub:Unit. 
 ddhub:Kilotonne a owl:Class; 
                 rdfs:comment """[v] = a * [SI]
 where
@@ -8504,6 +9357,39 @@ and
 Mega = 1e6
 """@EN; 
                  rdfs:subClassOf ddhub:Unit. 
+ddhub:MegapascalPerHour a owl:Class; 
+                        rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in megapascal per hour
+[SI] is the value in SI
+a = Hour/Mega, i.e., 0.0036
+and
+Hour = 60.0 * Minute
+Mega = 1e6
+Minute = 60.0
+"""@EN; 
+                        rdfs:subClassOf ddhub:Unit. 
+ddhub:MegapascalPerMinute a owl:Class; 
+                          rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in megapascal per minute
+[SI] is the value in SI
+a = Minute/Mega, i.e., 6E-05
+and
+Minute = 60.0
+Mega = 1e6
+"""@EN; 
+                          rdfs:subClassOf ddhub:Unit. 
+ddhub:MegapascalPerSecond a owl:Class; 
+                          rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in megapascal per second
+[SI] is the value in SI
+a = 1.0/Mega, i.e., 1E-06
+and
+Mega = 1e6
+"""@EN; 
+                          rdfs:subClassOf ddhub:Unit. 
 ddhub:MegapoundPerSquareInch a owl:Class; 
                              rdfs:comment """[v] = a * [SI]
 where
@@ -8519,6 +9405,51 @@ Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
 G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
 """@EN; 
                              rdfs:subClassOf ddhub:Unit. 
+ddhub:MegapoundPerSquareInchPerHour a owl:Class; 
+                                    rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in megapound per square inch per hour
+[SI] is the value in SI
+a = Hour*Inch*Inch/(Mega*PoundForce), i.e., 5.221358558287532E-07
+and
+Hour = 60.0 * Minute
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Mega = 1e6
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Minute = 60.0
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                                    rdfs:subClassOf ddhub:Unit. 
+ddhub:MegapoundPerSquareInchPerMinute a owl:Class; 
+                                      rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in megapound per square inch per minute
+[SI] is the value in SI
+a = Minute*Inch*Inch/(Mega*PoundForce), i.e., 8.702264263812553E-09
+and
+Minute = 60.0
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Mega = 1e6
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                                      rdfs:subClassOf ddhub:Unit. 
+ddhub:MegapoundPerSquareInchPerSecond a owl:Class; 
+                                      rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in megapound per square inch per second
+[SI] is the value in SI
+a = Inch*Inch/(Mega*PoundForce), i.e., 1.4503773773020922E-10
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Mega = 1e6
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                                      rdfs:subClassOf ddhub:Unit. 
 ddhub:Megatonne a owl:Class; 
                 rdfs:comment """[v] = a * [SI]
 where
@@ -8647,6 +9578,42 @@ Micro = 1e-6
 Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
 """@EN; 
                rdfs:subClassOf ddhub:Unit. 
+ddhub:MicrobarPerHour a owl:Class; 
+                      rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in microbar per hour
+[SI] is the value in SI
+a = Hour/(Micro*Bar), i.e., 36000
+and
+Hour = 60.0 * Minute
+Micro = 1e-6
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Minute = 60.0
+"""@EN; 
+                      rdfs:subClassOf ddhub:Unit. 
+ddhub:MicrobarPerMinute a owl:Class; 
+                        rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in microbar per minute
+[SI] is the value in SI
+a = Minute/(Micro*Bar), i.e., 600
+and
+Minute = 60.0
+Micro = 1e-6
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+"""@EN; 
+                        rdfs:subClassOf ddhub:Unit. 
+ddhub:MicrobarPerSecond a owl:Class; 
+                        rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in microbar per second
+[SI] is the value in SI
+a = 1.0/(Micro*Bar), i.e., 10
+and
+Micro = 1e-6
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+"""@EN; 
+                        rdfs:subClassOf ddhub:Unit. 
 ddhub:Microdarcy a owl:Class; 
                  rdfs:comment """[v] = a * [SI]
 where
@@ -8965,6 +9932,42 @@ Milli = 0.001
 Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
 """@EN; 
                rdfs:subClassOf ddhub:Unit. 
+ddhub:MillibarPerHour a owl:Class; 
+                      rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in millibar per hour
+[SI] is the value in SI
+a = Hour/(Milli*Bar), i.e., 36
+and
+Hour = 60.0 * Minute
+Milli = 0.001
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Minute = 60.0
+"""@EN; 
+                      rdfs:subClassOf ddhub:Unit. 
+ddhub:MillibarPerMinute a owl:Class; 
+                        rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in millibar per minute
+[SI] is the value in SI
+a = Minute/(Milli*Bar), i.e., 0.6
+and
+Minute = 60.0
+Milli = 0.001
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+"""@EN; 
+                        rdfs:subClassOf ddhub:Unit. 
+ddhub:MillibarPerSecond a owl:Class; 
+                        rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in millibar per second
+[SI] is the value in SI
+a = 1.0/(Milli*Bar), i.e., 0.01
+and
+Milli = 0.001
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+"""@EN; 
+                        rdfs:subClassOf ddhub:Unit. 
 ddhub:Millicandela a owl:Class; 
                    rdfs:comment """[v] = a * [SI]
 where
@@ -9048,6 +10051,39 @@ and
 MillimetreMercury = 133.322387415 reference: https://en.wikipedia.org/wiki/Millimetre_of_mercury
 """@EN; 
                                            rdfs:subClassOf ddhub:Unit. 
+ddhub:MillimetreMercuryAtZeroDegreeCelsiusPerHour a owl:Class; 
+                                                  rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in millimetre mercury at zero degree celsius per hour
+[SI] is the value in SI
+a = Hour/MillimetreMercury, i.e., 27.002216730443628
+and
+Hour = 60.0 * Minute
+MillimetreMercury = 133.322387415 reference: https://en.wikipedia.org/wiki/Millimetre_of_mercury
+Minute = 60.0
+"""@EN; 
+                                                  rdfs:subClassOf ddhub:Unit. 
+ddhub:MillimetreMercuryAtZeroDegreeCelsiusPerMinute a owl:Class; 
+                                                    rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in millimetre mercury at zero degree celsius per minute
+[SI] is the value in SI
+a = Minute/MillimetreMercury, i.e., 0.45003694550739376
+and
+Minute = 60.0
+MillimetreMercury = 133.322387415 reference: https://en.wikipedia.org/wiki/Millimetre_of_mercury
+"""@EN; 
+                                                    rdfs:subClassOf ddhub:Unit. 
+ddhub:MillimetreMercuryAtZeroDegreeCelsiusPerSecond a owl:Class; 
+                                                    rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in millimetre mercury at zero degree celsius per second
+[SI] is the value in SI
+a = 1.0/MillimetreMercury, i.e., 0.007500615758456563
+and
+MillimetreMercury = 133.322387415 reference: https://en.wikipedia.org/wiki/Millimetre_of_mercury
+"""@EN; 
+                                                    rdfs:subClassOf ddhub:Unit. 
 ddhub:MillimetrePerDay a owl:Class; 
                        rdfs:comment """[v] = a * [SI]
 where
@@ -9126,6 +10162,39 @@ and
 MillimetreWater4degC = 9.89665 reference: https://en.wikipedia.org/wiki/Centimetre_or_millimetre_of_water
 """@EN; 
                                       rdfs:subClassOf ddhub:Unit. 
+ddhub:MillimetreWaterAt4DegreeCelsiusPerHour a owl:Class; 
+                                             rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in millimetre water at 4 degree celsius per hour
+[SI] is the value in SI
+a = Hour/MillimetreWater4degC, i.e., 363.75945395664195
+and
+Hour = 60.0 * Minute
+MillimetreWater4degC = 9.89665 reference: https://en.wikipedia.org/wiki/Centimetre_or_millimetre_of_water
+Minute = 60.0
+"""@EN; 
+                                             rdfs:subClassOf ddhub:Unit. 
+ddhub:MillimetreWaterAt4DegreeCelsiusPerMinute a owl:Class; 
+                                               rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in millimetre water at 4 degree celsius per minute
+[SI] is the value in SI
+a = Minute/MillimetreWater4degC, i.e., 6.062657565944032
+and
+Minute = 60.0
+MillimetreWater4degC = 9.89665 reference: https://en.wikipedia.org/wiki/Centimetre_or_millimetre_of_water
+"""@EN; 
+                                               rdfs:subClassOf ddhub:Unit. 
+ddhub:MillimetreWaterAt4DegreeCelsiusPerSecond a owl:Class; 
+                                               rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in millimetre water at 4 degree celsius per second
+[SI] is the value in SI
+a = 1.0/MillimetreWater4degC, i.e., 0.10104429276573387
+and
+MillimetreWater4degC = 9.89665 reference: https://en.wikipedia.org/wiki/Centimetre_or_millimetre_of_water
+"""@EN; 
+                                               rdfs:subClassOf ddhub:Unit. 
 ddhub:Millimole a owl:Class; 
                 rdfs:comment """[v] = a * [SI]
 where
@@ -9790,6 +10859,18 @@ Centi = 0.01
 Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
 """@EN; 
                               rdfs:subClassOf ddhub:Unit. 
+ddhub:NewtonCentimetrePerHour a owl:Class; 
+                              rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in newton centimetre per hour
+[SI] is the value in SI
+a = Hour/Centi, i.e., 360000
+and
+Hour = 60.0 * Minute
+Centi = 0.01
+Minute = 60.0
+"""@EN; 
+                              rdfs:subClassOf ddhub:Unit. 
 ddhub:NewtonCentimetrePerInch a owl:Class; 
                               rdfs:comment """[v] = a * [SI]
 where
@@ -9823,6 +10904,27 @@ Milli = 0.001
 Centi = 0.01
 """@EN; 
                                     rdfs:subClassOf ddhub:Unit. 
+ddhub:NewtonCentimetrePerMinute a owl:Class; 
+                                rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in newton centimetre per minute
+[SI] is the value in SI
+a = Minute/Centi, i.e., 6000
+and
+Minute = 60.0
+Centi = 0.01
+"""@EN; 
+                                rdfs:subClassOf ddhub:Unit. 
+ddhub:NewtonCentimetrePerSecond a owl:Class; 
+                                rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in newton centimetre per second
+[SI] is the value in SI
+a = 1.0/Centi, i.e., 100
+and
+Centi = 0.01
+"""@EN; 
+                                rdfs:subClassOf ddhub:Unit. 
 ddhub:NewtonDecimetre a owl:Class; 
                       rdfs:comment """[v] = a * [SI]
 where
@@ -9867,6 +10969,18 @@ Deci = 0.1
 Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
 """@EN; 
                              rdfs:subClassOf ddhub:Unit. 
+ddhub:NewtonDecimetrePerHour a owl:Class; 
+                             rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in newton decimetre per hour
+[SI] is the value in SI
+a = Hour/Deci, i.e., 36000
+and
+Hour = 60.0 * Minute
+Deci = 0.1
+Minute = 60.0
+"""@EN; 
+                             rdfs:subClassOf ddhub:Unit. 
 ddhub:NewtonDecimetrePerInch a owl:Class; 
                              rdfs:comment """[v] = a * [SI]
 where
@@ -9900,6 +11014,27 @@ Milli = 0.001
 Deci = 0.1
 """@EN; 
                                    rdfs:subClassOf ddhub:Unit. 
+ddhub:NewtonDecimetrePerMinute a owl:Class; 
+                               rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in newton decimetre per minute
+[SI] is the value in SI
+a = Minute/Deci, i.e., 600
+and
+Minute = 60.0
+Deci = 0.1
+"""@EN; 
+                               rdfs:subClassOf ddhub:Unit. 
+ddhub:NewtonDecimetrePerSecond a owl:Class; 
+                               rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in newton decimetre per second
+[SI] is the value in SI
+a = 1.0/Deci, i.e., 10
+and
+Deci = 0.1
+"""@EN; 
+                               rdfs:subClassOf ddhub:Unit. 
 ddhub:NewtonMetre a owl:Class; 
                   rdfs:comment """No conversion necessary as the unit choice is SI
 """@EN; 
@@ -9938,6 +11073,10 @@ Unit = 1.0
 Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
 """@EN; 
                          rdfs:subClassOf ddhub:Unit. 
+ddhub:NewtonMetrePerHour a owl:Class; 
+                         rdfs:comment """No conversion necessary as the unit choice is SI
+"""@EN; 
+                         rdfs:subClassOf ddhub:Unit. 
 ddhub:NewtonMetrePerInch a owl:Class; 
                          rdfs:comment """[v] = a * [SI]
 where
@@ -9964,6 +11103,14 @@ Milli = 0.001
 Unit = 1.0
 """@EN; 
                                rdfs:subClassOf ddhub:Unit. 
+ddhub:NewtonMetrePerMinute a owl:Class; 
+                           rdfs:comment """No conversion necessary as the unit choice is SI
+"""@EN; 
+                           rdfs:subClassOf ddhub:Unit. 
+ddhub:NewtonMetrePerSecond a owl:Class; 
+                           rdfs:comment """No conversion necessary as the unit choice is SI
+"""@EN; 
+                           rdfs:subClassOf ddhub:Unit. 
 ddhub:NewtonMillimetre a owl:Class; 
                        rdfs:comment """[v] = a * [SI]
 where
@@ -10009,6 +11156,18 @@ Milli = 0.001
 Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
 """@EN; 
                               rdfs:subClassOf ddhub:Unit. 
+ddhub:NewtonMillimetrePerHour a owl:Class; 
+                              rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in newton millimetre per hour
+[SI] is the value in SI
+a = Hour/Milli, i.e., 3600000
+and
+Hour = 60.0 * Minute
+Milli = 0.001
+Minute = 60.0
+"""@EN; 
+                              rdfs:subClassOf ddhub:Unit. 
 ddhub:NewtonMillimetrePerInch a owl:Class; 
                               rdfs:comment """[v] = a * [SI]
 where
@@ -10041,6 +11200,27 @@ and
 Milli = 0.001
 """@EN; 
                                     rdfs:subClassOf ddhub:Unit. 
+ddhub:NewtonMillimetrePerMinute a owl:Class; 
+                                rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in newton millimetre per minute
+[SI] is the value in SI
+a = Minute/Milli, i.e., 60000
+and
+Minute = 60.0
+Milli = 0.001
+"""@EN; 
+                                rdfs:subClassOf ddhub:Unit. 
+ddhub:NewtonMillimetrePerSecond a owl:Class; 
+                                rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in newton millimetre per second
+[SI] is the value in SI
+a = 1.0/Milli, i.e., 1000
+and
+Milli = 0.001
+"""@EN; 
+                                rdfs:subClassOf ddhub:Unit. 
 ddhub:NewtonPer10Metre a owl:Class; 
                        rdfs:comment """[v] = a * [SI]
 where
@@ -10085,6 +11265,10 @@ Deci = 0.1
 Unit = 1.0
 """@EN; 
                          rdfs:subClassOf ddhub:Unit. 
+ddhub:NewtonPerHour a owl:Class; 
+                    rdfs:comment """No conversion necessary as the unit choice is SI
+"""@EN; 
+                    rdfs:subClassOf ddhub:Unit. 
 ddhub:NewtonPerMetre a owl:Class; 
                      rdfs:comment """No conversion necessary as the unit choice is SI
 """@EN; 
@@ -10100,6 +11284,14 @@ Milli = 0.001
 Unit = 1.0
 """@EN; 
                           rdfs:subClassOf ddhub:Unit. 
+ddhub:NewtonPerMinute a owl:Class; 
+                      rdfs:comment """No conversion necessary as the unit choice is SI
+"""@EN; 
+                      rdfs:subClassOf ddhub:Unit. 
+ddhub:NewtonPerSecond a owl:Class; 
+                      rdfs:comment """No conversion necessary as the unit choice is SI
+"""@EN; 
+                      rdfs:subClassOf ddhub:Unit. 
 ddhub:NewtonPerSquareCentimetre a owl:Class; 
                                 rdfs:comment """[v] = a * [SI]
 where
@@ -10110,6 +11302,39 @@ and
 Centi = 0.01
 """@EN; 
                                 rdfs:subClassOf ddhub:Unit. 
+ddhub:NewtonPerSquareCentimetrePerHour a owl:Class; 
+                                       rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in newton per square centimetre per hour
+[SI] is the value in SI
+a = Hour*Centi*Centi, i.e., 0.36
+and
+Hour = 60.0 * Minute
+Centi = 0.01
+Minute = 60.0
+"""@EN; 
+                                       rdfs:subClassOf ddhub:Unit. 
+ddhub:NewtonPerSquareCentimetrePerMinute a owl:Class; 
+                                         rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in newton per square centimetre per minute
+[SI] is the value in SI
+a = Minute*Centi*Centi, i.e., 0.006
+and
+Minute = 60.0
+Centi = 0.01
+"""@EN; 
+                                         rdfs:subClassOf ddhub:Unit. 
+ddhub:NewtonPerSquareCentimetrePerSecond a owl:Class; 
+                                         rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in newton per square centimetre per second
+[SI] is the value in SI
+a = Centi*Centi, i.e., 0.0001
+and
+Centi = 0.01
+"""@EN; 
+                                         rdfs:subClassOf ddhub:Unit. 
 ddhub:NewtonPerSquareMetre a owl:Class; 
                            rdfs:comment """[v] = a * [SI]
 where
@@ -10120,6 +11345,39 @@ and
 Unit = 1.0
 """@EN; 
                            rdfs:subClassOf ddhub:Unit. 
+ddhub:NewtonPerSquareMetrePerHour a owl:Class; 
+                                  rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in newton per square metre per hour
+[SI] is the value in SI
+a = Hour/Unit, i.e., 3600
+and
+Hour = 60.0 * Minute
+Unit = 1.0
+Minute = 60.0
+"""@EN; 
+                                  rdfs:subClassOf ddhub:Unit. 
+ddhub:NewtonPerSquareMetrePerMinute a owl:Class; 
+                                    rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in newton per square metre per minute
+[SI] is the value in SI
+a = Minute/Unit, i.e., 60
+and
+Minute = 60.0
+Unit = 1.0
+"""@EN; 
+                                    rdfs:subClassOf ddhub:Unit. 
+ddhub:NewtonPerSquareMetrePerSecond a owl:Class; 
+                                    rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in newton per square metre per second
+[SI] is the value in SI
+a = 1.0/Unit, i.e., 1
+and
+Unit = 1.0
+"""@EN; 
+                                    rdfs:subClassOf ddhub:Unit. 
 ddhub:NewtonPerSquareMillimetre a owl:Class; 
                                 rdfs:comment """[v] = a * [SI]
 where
@@ -10130,6 +11388,39 @@ and
 Milli = 0.001
 """@EN; 
                                 rdfs:subClassOf ddhub:Unit. 
+ddhub:NewtonPerSquareMillimetrePerHour a owl:Class; 
+                                       rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in newton per square millimetre per hour
+[SI] is the value in SI
+a = Hour*Milli*Milli, i.e., 0.0036000000000000003
+and
+Hour = 60.0 * Minute
+Milli = 0.001
+Minute = 60.0
+"""@EN; 
+                                       rdfs:subClassOf ddhub:Unit. 
+ddhub:NewtonPerSquareMillimetrePerMinute a owl:Class; 
+                                         rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in newton per square millimetre per minute
+[SI] is the value in SI
+a = Minute*Milli*Milli, i.e., 6E-05
+and
+Minute = 60.0
+Milli = 0.001
+"""@EN; 
+                                         rdfs:subClassOf ddhub:Unit. 
+ddhub:NewtonPerSquareMillimetrePerSecond a owl:Class; 
+                                         rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in newton per square millimetre per second
+[SI] is the value in SI
+a = Milli*Milli, i.e., 1E-06
+and
+Milli = 0.001
+"""@EN; 
+                                         rdfs:subClassOf ddhub:Unit. 
 ddhub:Nonmagnetic a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:Stabilizers. 
@@ -10320,10 +11611,22 @@ ddhub:Pascal a owl:Class;
              rdfs:comment """No conversion necessary as the unit choice is SI
 """@EN; 
              rdfs:subClassOf ddhub:Unit. 
+ddhub:PascalPerHour a owl:Class; 
+                    rdfs:comment """No conversion necessary as the unit choice is SI
+"""@EN; 
+                    rdfs:subClassOf ddhub:Unit. 
 ddhub:PascalPerMetre a owl:Class; 
                      rdfs:comment """No conversion necessary as the unit choice is SI
 """@EN; 
                      rdfs:subClassOf ddhub:Unit. 
+ddhub:PascalPerMinute a owl:Class; 
+                      rdfs:comment """No conversion necessary as the unit choice is SI
+"""@EN; 
+                      rdfs:subClassOf ddhub:Unit. 
+ddhub:PascalPerSecond a owl:Class; 
+                      rdfs:comment """No conversion necessary as the unit choice is SI
+"""@EN; 
+                      rdfs:subClassOf ddhub:Unit. 
 ddhub:PascalSecond a owl:Class; 
                    rdfs:comment """No conversion necessary as the unit choice is SI
 """@EN; 
@@ -10616,6 +11919,45 @@ Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
 G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
 """@EN; 
                  rdfs:subClassOf ddhub:Unit. 
+ddhub:PoundForcePerHour a owl:Class; 
+                        rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in pound force per hour
+[SI] is the value in SI
+a = Hour/PoundForce, i.e., 809.3121951589578
+and
+Hour = 60.0 * Minute
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Minute = 60.0
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                        rdfs:subClassOf ddhub:Unit. 
+ddhub:PoundForcePerMinute a owl:Class; 
+                          rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in pound force per minute
+[SI] is the value in SI
+a = Minute/PoundForce, i.e., 13.48853658598263
+and
+Minute = 60.0
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                          rdfs:subClassOf ddhub:Unit. 
+ddhub:PoundForcePerSecond a owl:Class; 
+                          rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in pound force per second
+[SI] is the value in SI
+a = 1.0/PoundForce, i.e., 0.2248089430997105
+and
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                          rdfs:subClassOf ddhub:Unit. 
 ddhub:PoundPer100Foot a owl:Class; 
                       rdfs:comment """[v] = a * [SI]
 where
@@ -10644,6 +11986,51 @@ Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
 G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
 """@EN; 
                             rdfs:subClassOf ddhub:Unit. 
+ddhub:PoundPer100SquareFootPerHour a owl:Class; 
+                                   rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in pound per 100 square foot per hour
+[SI] is the value in SI
+a = Hour*100.0*Foot*Foot/PoundForce, i.e., 7518.756323934045
+and
+Hour = 60.0 * Minute
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Minute = 60.0
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                                   rdfs:subClassOf ddhub:Unit. 
+ddhub:PoundPer100SquareFootPerMinute a owl:Class; 
+                                     rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in pound per 100 square foot per minute
+[SI] is the value in SI
+a = Minute*100.0*Foot*Foot/PoundForce, i.e., 125.31260539890074
+and
+Minute = 60.0
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                                     rdfs:subClassOf ddhub:Unit. 
+ddhub:PoundPer100SquareFootPerSecond a owl:Class; 
+                                     rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in pound per 100 square foot per second
+[SI] is the value in SI
+a = 100.0*Foot*Foot/PoundForce, i.e., 2.0885434233150124
+and
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                                     rdfs:subClassOf ddhub:Unit. 
 ddhub:PoundPer30Foot a owl:Class; 
                      rdfs:comment """[v] = a * [SI]
 where
@@ -11197,6 +12584,51 @@ Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
 G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
 """@EN; 
                          rdfs:subClassOf ddhub:Unit. 
+ddhub:PoundPerSquareFootPerHour a owl:Class; 
+                                rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in pound per square foot per hour
+[SI] is the value in SI
+a = Hour*Foot*Foot/PoundForce, i.e., 75.18756323934043
+and
+Hour = 60.0 * Minute
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Minute = 60.0
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                                rdfs:subClassOf ddhub:Unit. 
+ddhub:PoundPerSquareFootPerMinute a owl:Class; 
+                                  rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in pound per square foot per minute
+[SI] is the value in SI
+a = Minute*Foot*Foot/PoundForce, i.e., 1.2531260539890072
+and
+Minute = 60.0
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                                  rdfs:subClassOf ddhub:Unit. 
+ddhub:PoundPerSquareFootPerSecond a owl:Class; 
+                                  rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in pound per square foot per second
+[SI] is the value in SI
+a = Foot*Foot/PoundForce, i.e., 0.020885434233150126
+and
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                                  rdfs:subClassOf ddhub:Unit. 
 ddhub:PoundPerSquareInch a owl:Class; 
                          rdfs:comment """[v] = a * [SI]
 where
@@ -11211,6 +12643,51 @@ Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
 G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
 """@EN; 
                          rdfs:subClassOf ddhub:Unit. 
+ddhub:PoundPerSquareInchPerHour a owl:Class; 
+                                rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in pound per square inch per hour
+[SI] is the value in SI
+a = Hour/PSI, i.e., 0.5221358558287532
+and
+Hour = 60.0 * Minute
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Minute = 60.0
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                                rdfs:subClassOf ddhub:Unit. 
+ddhub:PoundPerSquareInchPerMinute a owl:Class; 
+                                  rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in pound per square inch per minute
+[SI] is the value in SI
+a = Minute/PSI, i.e., 0.008702264263812553
+and
+Minute = 60.0
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                                  rdfs:subClassOf ddhub:Unit. 
+ddhub:PoundPerSquareInchPerSecond a owl:Class; 
+                                  rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in pound per square inch per second
+[SI] is the value in SI
+a = 1.0/PSI, i.e., 0.00014503773773020924
+and
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                                  rdfs:subClassOf ddhub:Unit. 
 ddhub:PoundPerYear a owl:Class; 
                    rdfs:comment """[v] = a * [SI]
 where
@@ -11414,6 +12891,21 @@ $$[ML^{-1}T^{-2}]$$.
 The SI unit for **pressure** is: pascal with the associated unit label $Pa$
 """@EN; 
                        rdfs:subClassOf ddhub:Quantity. 
+ddhub:PressureRateOfChangeDrillingQuantity a owl:Class; 
+                                           rdfs:comment """A pressure rate of change is the time derivative of a pressure.
+The dimension of pressure rate of change is:
+$$[ML^{-1}T^{-3}]$$.
+The SI unit for **pressure rate of change** is: pascal per second with the associated unit label $\\frac{Pa}{s}$
+The meaningful precision of pressure rate of change in the drilling context is typically: 10000 Pa/s
+"""@EN; 
+                                           rdfs:subClassOf ddhub:MeasurableQuantity. 
+ddhub:PressureRateOfChangeQuantity a owl:Class; 
+                                   rdfs:comment """A pressure rate of change is the time derivative of a pressure.
+The dimension of pressure rate of change is:
+$$[ML^{-1}T^{-3}]$$.
+The SI unit for **pressure rate of change** is: pascal per second with the associated unit label $\\frac{Pa}{s}$
+"""@EN; 
+                                   rdfs:subClassOf ddhub:Quantity. 
 ddhub:PressureReference a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:DWISNoun. 
@@ -13268,6 +14760,39 @@ and
 Atmosphere = 101325.0 reference: https://en.wikipedia.org/wiki/Atmospheric_pressure
 """@EN; 
                          rdfs:subClassOf ddhub:Unit. 
+ddhub:StandardAtmospherePerHour a owl:Class; 
+                                rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in standard atmosphere per hour
+[SI] is the value in SI
+a = Hour/Atmosphere, i.e., 0.03552923760177646
+and
+Hour = 60.0 * Minute
+Atmosphere = 101325.0 reference: https://en.wikipedia.org/wiki/Atmospheric_pressure
+Minute = 60.0
+"""@EN; 
+                                rdfs:subClassOf ddhub:Unit. 
+ddhub:StandardAtmospherePerMinute a owl:Class; 
+                                  rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in standard atmosphere per minute
+[SI] is the value in SI
+a = Minute/Atmosphere, i.e., 0.0005921539600296077
+and
+Minute = 60.0
+Atmosphere = 101325.0 reference: https://en.wikipedia.org/wiki/Atmospheric_pressure
+"""@EN; 
+                                  rdfs:subClassOf ddhub:Unit. 
+ddhub:StandardAtmospherePerSecond a owl:Class; 
+                                  rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in standard atmosphere per second
+[SI] is the value in SI
+a = 1.0/Atmosphere, i.e., 9.869232667160129E-06
+and
+Atmosphere = 101325.0 reference: https://en.wikipedia.org/wiki/Atmospheric_pressure
+"""@EN; 
+                                  rdfs:subClassOf ddhub:Unit. 
 ddhub:StandardElectricalDrawworks a owl:Class; 
                                   rdfs:comment ""@EN; 
                                   rdfs:subClassOf ddhub:Drawworks. 
@@ -13933,6 +15458,21 @@ $$[L^{2}MT^{-2}]$$.
 The SI unit for **torque** is: newton metre with the associated unit label $N \\cdot m$
 """@EN; 
                      rdfs:subClassOf ddhub:Quantity. 
+ddhub:TorqueRateOfChangeDrillingQuantity a owl:Class; 
+                                         rdfs:comment """A torque rate of change is the time derivative of a torque.
+The dimension of torque rate of change is:
+$$[L^{2}MT^{-3}]$$.
+The SI unit for **torque** is: newton metre per second with the associated unit label $\\frac{N \\cdot m}{s}$
+The meaningful precision of torque rate of change in the drilling context is typically: 0.1 N•m/s
+"""@EN; 
+                                         rdfs:subClassOf ddhub:MeasurableQuantity. 
+ddhub:TorqueRateOfChangeQuantity a owl:Class; 
+                                 rdfs:comment """A torque rate of change is the time derivative of a torque.
+The dimension of torque rate of change is:
+$$[L^{2}MT^{-3}]$$.
+The SI unit for **torque** is: newton metre per second with the associated unit label $\\frac{N \\cdot m}{s}$
+"""@EN; 
+                                 rdfs:subClassOf ddhub:Quantity. 
 ddhub:TorqueSmallQuantity a owl:Class; 
                           rdfs:comment """A torque is a measure of the rotational force applied to a body around an axis.
 The dimension of torque is:
@@ -13958,6 +15498,42 @@ Torr = (1.0 / 760.0) * Atmosphere reference: https://en.wikipedia.org/wiki/Torr
 Atmosphere = 101325.0 reference: https://en.wikipedia.org/wiki/Atmospheric_pressure
 """@EN; 
            rdfs:subClassOf ddhub:Unit. 
+ddhub:TorrPerHour a owl:Class; 
+                  rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in torr per hour
+[SI] is the value in SI
+a = Hour/Torr, i.e., 27.002220577350112
+and
+Hour = 60.0 * Minute
+Torr = (1.0 / 760.0) * Atmosphere reference: https://en.wikipedia.org/wiki/Torr
+Minute = 60.0
+Atmosphere = 101325.0 reference: https://en.wikipedia.org/wiki/Atmospheric_pressure
+"""@EN; 
+                  rdfs:subClassOf ddhub:Unit. 
+ddhub:TorrPerMinute a owl:Class; 
+                    rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in torr per minute
+[SI] is the value in SI
+a = Minute/Torr, i.e., 0.45003700962250187
+and
+Minute = 60.0
+Torr = (1.0 / 760.0) * Atmosphere reference: https://en.wikipedia.org/wiki/Torr
+Atmosphere = 101325.0 reference: https://en.wikipedia.org/wiki/Atmospheric_pressure
+"""@EN; 
+                    rdfs:subClassOf ddhub:Unit. 
+ddhub:TorrPerSecond a owl:Class; 
+                    rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in torr per second
+[SI] is the value in SI
+a = 1.0/Torr, i.e., 0.007500616827041697
+and
+Torr = (1.0 / 760.0) * Atmosphere reference: https://en.wikipedia.org/wiki/Torr
+Atmosphere = 101325.0 reference: https://en.wikipedia.org/wiki/Atmospheric_pressure
+"""@EN; 
+                    rdfs:subClassOf ddhub:Unit. 
 ddhub:TorsionalMotionType a owl:Class; 
                           rdfs:comment ""@EN; 
                           rdfs:subClassOf ddhub:MotionType. 

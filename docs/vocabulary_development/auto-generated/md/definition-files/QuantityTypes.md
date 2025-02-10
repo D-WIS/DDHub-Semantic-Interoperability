@@ -64,6 +64,9 @@ Quantity <|-- VolumetricFlowRateQuantity
 Quantity <|-- WaveNumberQuantity
 Quantity <|-- MassQuantity
 Quantity <|-- EnergyQuantity
+Quantity <|-- ForceRateOfChangeQuantity
+Quantity <|-- PressureRateOfChangeQuantity
+Quantity <|-- TorqueRateOfChangeQuantity
 Quantity <|-- GravitationalLoadQuantity
 Quantity <|-- HydraulicConductivityQuantity
 Quantity <|-- RotationalFrequencyRateOfChangeQuantity
@@ -10251,6 +10254,1428 @@ graph LR
 	N0030[MegaBritishThermalUnit] -->|ConversionFactorB| N0031(("9.48451652677005E-10")) 
 	N0030[MegaBritishThermalUnit] -->|Symbol| N0032(("MMBTU")) 
 	N0030[MegaBritishThermalUnit] -->|IsUnitForQuantity| N0000[EnergyQuantity] 
+```
+## ForceRateOfChangeQuantity <!-- NOUN -->
+- Display name: ForceRateOfChange
+- Parent class: [Quantity](./Quantities.md#Quantity)
+- Specialization:
+  - L = 1
+  - M = 1
+  - T = -3
+- Description: 
+A force rate of change is the time derivative of a force: $\frac{dF}{dt}$, where $F$ is the mass density and $t$ is time.
+The dimension of force rate of change is:
+$$[LMT^{-3}]$$.
+The SI unit for **force rate of change** is: Newton per second with the associated unit label $\frac{N}{s}$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:ForceRateOfChangeQuantity
+ForceRateOfChangeQuantity.L = 1
+ForceRateOfChangeQuantity.M = 1
+ForceRateOfChangeQuantity.T = -3
+Unit:NewtonPerSecond
+NewtonPerSecond.ConversionFactorA = 0
+NewtonPerSecond.ConversionFactorB = 1
+NewtonPerSecond.Symbol = "N/s"
+NewtonPerSecond IsUnitForQuantity ForceRateOfChangeQuantity
+ForceRateOfChangeQuantity HasSIUnit NewtonPerSecond
+Unit:DecanewtonPerSecond
+DecanewtonPerSecond.ConversionFactorA = 0
+DecanewtonPerSecond.ConversionFactorB = 0.1
+DecanewtonPerSecond.Symbol = "daN/s"
+DecanewtonPerSecond IsUnitForQuantity ForceRateOfChangeQuantity
+Unit:KilonewtonPerSecond
+KilonewtonPerSecond.ConversionFactorA = 0
+KilonewtonPerSecond.ConversionFactorB = 0.001
+KilonewtonPerSecond.Symbol = "kN/s"
+KilonewtonPerSecond IsUnitForQuantity ForceRateOfChangeQuantity
+Unit:KilodecanewtonPerSecond
+KilodecanewtonPerSecond.ConversionFactorA = 0
+KilodecanewtonPerSecond.ConversionFactorB = 0.0001
+KilodecanewtonPerSecond.Symbol = "kdaN/s"
+KilodecanewtonPerSecond IsUnitForQuantity ForceRateOfChangeQuantity
+Unit:KilogramForcePerSecond
+KilogramForcePerSecond.ConversionFactorA = 0
+KilogramForcePerSecond.ConversionFactorB = 0.10197162129779283
+KilogramForcePerSecond.Symbol = "kgf/s"
+KilogramForcePerSecond IsUnitForQuantity ForceRateOfChangeQuantity
+Unit:PoundForcePerSecond
+PoundForcePerSecond.ConversionFactorA = 0
+PoundForcePerSecond.ConversionFactorB = 0.2248089430997105
+PoundForcePerSecond.Symbol = "lbf/s"
+PoundForcePerSecond IsUnitForQuantity ForceRateOfChangeQuantity
+Unit:KilopoundForcePerSecond
+KilopoundForcePerSecond.ConversionFactorA = 0
+KilopoundForcePerSecond.ConversionFactorB = 0.0002248089430997105
+KilopoundForcePerSecond.Symbol = "klbf/s"
+KilopoundForcePerSecond IsUnitForQuantity ForceRateOfChangeQuantity
+Unit:NewtonPerMinute
+NewtonPerMinute.ConversionFactorA = 0
+NewtonPerMinute.ConversionFactorB = 60
+NewtonPerMinute.Symbol = "N/min"
+NewtonPerMinute IsUnitForQuantity ForceRateOfChangeQuantity
+ForceRateOfChangeQuantity HasSIUnit NewtonPerMinute
+Unit:DecanewtonPerMinute
+DecanewtonPerMinute.ConversionFactorA = 0
+DecanewtonPerMinute.ConversionFactorB = 6
+DecanewtonPerMinute.Symbol = "daN/min"
+DecanewtonPerMinute IsUnitForQuantity ForceRateOfChangeQuantity
+Unit:KilonewtonPerMinute
+KilonewtonPerMinute.ConversionFactorA = 0
+KilonewtonPerMinute.ConversionFactorB = 0.06
+KilonewtonPerMinute.Symbol = "kN/min"
+KilonewtonPerMinute IsUnitForQuantity ForceRateOfChangeQuantity
+Unit:KilodecanewtonPerMinute
+KilodecanewtonPerMinute.ConversionFactorA = 0
+KilodecanewtonPerMinute.ConversionFactorB = 0.006
+KilodecanewtonPerMinute.Symbol = "kdaN/min"
+KilodecanewtonPerMinute IsUnitForQuantity ForceRateOfChangeQuantity
+Unit:KilogramForcePerMinute
+KilogramForcePerMinute.ConversionFactorA = 0
+KilogramForcePerMinute.ConversionFactorB = 6.11829727786757
+KilogramForcePerMinute.Symbol = "kgf/min"
+KilogramForcePerMinute IsUnitForQuantity ForceRateOfChangeQuantity
+Unit:PoundForcePerMinute
+PoundForcePerMinute.ConversionFactorA = 0
+PoundForcePerMinute.ConversionFactorB = 13.48853658598263
+PoundForcePerMinute.Symbol = "lbf/min"
+PoundForcePerMinute IsUnitForQuantity ForceRateOfChangeQuantity
+Unit:KilopoundForcePerMinute
+KilopoundForcePerMinute.ConversionFactorA = 0
+KilopoundForcePerMinute.ConversionFactorB = 0.01348853658598263
+KilopoundForcePerMinute.Symbol = "klbf/min"
+KilopoundForcePerMinute IsUnitForQuantity ForceRateOfChangeQuantity
+Unit:NewtonPerHour
+NewtonPerHour.ConversionFactorA = 0
+NewtonPerHour.ConversionFactorB = 3600
+NewtonPerHour.Symbol = "N/h"
+NewtonPerHour IsUnitForQuantity ForceRateOfChangeQuantity
+ForceRateOfChangeQuantity HasSIUnit NewtonPerHour
+Unit:DecanewtonPerHour
+DecanewtonPerHour.ConversionFactorA = 0
+DecanewtonPerHour.ConversionFactorB = 360
+DecanewtonPerHour.Symbol = "daN/h"
+DecanewtonPerHour IsUnitForQuantity ForceRateOfChangeQuantity
+Unit:KilonewtonPerHour
+KilonewtonPerHour.ConversionFactorA = 0
+KilonewtonPerHour.ConversionFactorB = 3.6
+KilonewtonPerHour.Symbol = "kN/h"
+KilonewtonPerHour IsUnitForQuantity ForceRateOfChangeQuantity
+Unit:KilodecanewtonPerHour
+KilodecanewtonPerHour.ConversionFactorA = 0
+KilodecanewtonPerHour.ConversionFactorB = 0.36
+KilodecanewtonPerHour.Symbol = "kdaN/h"
+KilodecanewtonPerHour IsUnitForQuantity ForceRateOfChangeQuantity
+Unit:KilogramForcePerHour
+KilogramForcePerHour.ConversionFactorA = 0
+KilogramForcePerHour.ConversionFactorB = 367.0978366720542
+KilogramForcePerHour.Symbol = "kgf/h"
+KilogramForcePerHour IsUnitForQuantity ForceRateOfChangeQuantity
+Unit:PoundForcePerHour
+PoundForcePerHour.ConversionFactorA = 0
+PoundForcePerHour.ConversionFactorB = 809.3121951589578
+PoundForcePerHour.Symbol = "lbf/h"
+PoundForcePerHour IsUnitForQuantity ForceRateOfChangeQuantity
+Unit:KilopoundForcePerHour
+KilopoundForcePerHour.ConversionFactorA = 0
+KilopoundForcePerHour.ConversionFactorB = 0.8093121951589578
+KilopoundForcePerHour.Symbol = "klbf/h"
+KilopoundForcePerHour IsUnitForQuantity ForceRateOfChangeQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ForceRateOfChangeQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[ForceRateOfChangeQuantity] -->|L| N0002(("1")) 
+	N0000[ForceRateOfChangeQuantity] -->|M| N0002(("1")) 
+	N0000[ForceRateOfChangeQuantity] -->|T| N0003(("-3")) 
+	N0004[NewtonPerSecond] -->|BelongsToClass| N0005(Unit) 
+	N0004[NewtonPerSecond] -->|ConversionFactorA| N0006(("0")) 
+	N0004[NewtonPerSecond] -->|ConversionFactorB| N0002(("1")) 
+	N0004[NewtonPerSecond] -->|Symbol| N0007(("N/s")) 
+	N0004[NewtonPerSecond] -->|IsUnitForQuantity| N0000[ForceRateOfChangeQuantity] 
+	N0000[ForceRateOfChangeQuantity] -->|HasSIUnit| N0004[NewtonPerSecond] 
+	N0008[DecanewtonPerSecond] -->|BelongsToClass| N0005(Unit) 
+	N0008[DecanewtonPerSecond] -->|ConversionFactorA| N0006(("0")) 
+	N0008[DecanewtonPerSecond] -->|ConversionFactorB| N0009(("0.1")) 
+	N0008[DecanewtonPerSecond] -->|Symbol| N0010(("daN/s")) 
+	N0008[DecanewtonPerSecond] -->|IsUnitForQuantity| N0000[ForceRateOfChangeQuantity] 
+	N0011[KilonewtonPerSecond] -->|BelongsToClass| N0005(Unit) 
+	N0011[KilonewtonPerSecond] -->|ConversionFactorA| N0006(("0")) 
+	N0011[KilonewtonPerSecond] -->|ConversionFactorB| N0012(("0.001")) 
+	N0011[KilonewtonPerSecond] -->|Symbol| N0013(("kN/s")) 
+	N0011[KilonewtonPerSecond] -->|IsUnitForQuantity| N0000[ForceRateOfChangeQuantity] 
+	N0014[KilodecanewtonPerSecond] -->|BelongsToClass| N0005(Unit) 
+	N0014[KilodecanewtonPerSecond] -->|ConversionFactorA| N0006(("0")) 
+	N0014[KilodecanewtonPerSecond] -->|ConversionFactorB| N0015(("0.0001")) 
+	N0014[KilodecanewtonPerSecond] -->|Symbol| N0016(("kdaN/s")) 
+	N0014[KilodecanewtonPerSecond] -->|IsUnitForQuantity| N0000[ForceRateOfChangeQuantity] 
+	N0017[KilogramForcePerSecond] -->|BelongsToClass| N0005(Unit) 
+	N0017[KilogramForcePerSecond] -->|ConversionFactorA| N0006(("0")) 
+	N0017[KilogramForcePerSecond] -->|ConversionFactorB| N0018(("0.10197162129779283")) 
+	N0017[KilogramForcePerSecond] -->|Symbol| N0019(("kgf/s")) 
+	N0017[KilogramForcePerSecond] -->|IsUnitForQuantity| N0000[ForceRateOfChangeQuantity] 
+	N0020[PoundForcePerSecond] -->|BelongsToClass| N0005(Unit) 
+	N0020[PoundForcePerSecond] -->|ConversionFactorA| N0006(("0")) 
+	N0020[PoundForcePerSecond] -->|ConversionFactorB| N0021(("0.2248089430997105")) 
+	N0020[PoundForcePerSecond] -->|Symbol| N0022(("lbf/s")) 
+	N0020[PoundForcePerSecond] -->|IsUnitForQuantity| N0000[ForceRateOfChangeQuantity] 
+	N0023[KilopoundForcePerSecond] -->|BelongsToClass| N0005(Unit) 
+	N0023[KilopoundForcePerSecond] -->|ConversionFactorA| N0006(("0")) 
+	N0023[KilopoundForcePerSecond] -->|ConversionFactorB| N0024(("0.0002248089430997105")) 
+	N0023[KilopoundForcePerSecond] -->|Symbol| N0025(("klbf/s")) 
+	N0023[KilopoundForcePerSecond] -->|IsUnitForQuantity| N0000[ForceRateOfChangeQuantity] 
+	N0026[NewtonPerMinute] -->|BelongsToClass| N0005(Unit) 
+	N0026[NewtonPerMinute] -->|ConversionFactorA| N0006(("0")) 
+	N0026[NewtonPerMinute] -->|ConversionFactorB| N0027(("60")) 
+	N0026[NewtonPerMinute] -->|Symbol| N0028(("N/min")) 
+	N0026[NewtonPerMinute] -->|IsUnitForQuantity| N0000[ForceRateOfChangeQuantity] 
+	N0000[ForceRateOfChangeQuantity] -->|HasSIUnit| N0026[NewtonPerMinute] 
+	N0029[DecanewtonPerMinute] -->|BelongsToClass| N0005(Unit) 
+	N0029[DecanewtonPerMinute] -->|ConversionFactorA| N0006(("0")) 
+	N0029[DecanewtonPerMinute] -->|ConversionFactorB| N0030(("6")) 
+	N0029[DecanewtonPerMinute] -->|Symbol| N0031(("daN/min")) 
+	N0029[DecanewtonPerMinute] -->|IsUnitForQuantity| N0000[ForceRateOfChangeQuantity] 
+	N0032[KilonewtonPerMinute] -->|BelongsToClass| N0005(Unit) 
+	N0032[KilonewtonPerMinute] -->|ConversionFactorA| N0006(("0")) 
+	N0032[KilonewtonPerMinute] -->|ConversionFactorB| N0033(("0.06")) 
+	N0032[KilonewtonPerMinute] -->|Symbol| N0034(("kN/min")) 
+	N0032[KilonewtonPerMinute] -->|IsUnitForQuantity| N0000[ForceRateOfChangeQuantity] 
+	N0035[KilodecanewtonPerMinute] -->|BelongsToClass| N0005(Unit) 
+	N0035[KilodecanewtonPerMinute] -->|ConversionFactorA| N0006(("0")) 
+	N0035[KilodecanewtonPerMinute] -->|ConversionFactorB| N0036(("0.006")) 
+	N0035[KilodecanewtonPerMinute] -->|Symbol| N0037(("kdaN/min")) 
+	N0035[KilodecanewtonPerMinute] -->|IsUnitForQuantity| N0000[ForceRateOfChangeQuantity] 
+	N0038[KilogramForcePerMinute] -->|BelongsToClass| N0005(Unit) 
+	N0038[KilogramForcePerMinute] -->|ConversionFactorA| N0006(("0")) 
+	N0038[KilogramForcePerMinute] -->|ConversionFactorB| N0039(("6.11829727786757")) 
+	N0038[KilogramForcePerMinute] -->|Symbol| N0040(("kgf/min")) 
+	N0038[KilogramForcePerMinute] -->|IsUnitForQuantity| N0000[ForceRateOfChangeQuantity] 
+	N0041[PoundForcePerMinute] -->|BelongsToClass| N0005(Unit) 
+	N0041[PoundForcePerMinute] -->|ConversionFactorA| N0006(("0")) 
+	N0041[PoundForcePerMinute] -->|ConversionFactorB| N0042(("13.48853658598263")) 
+	N0041[PoundForcePerMinute] -->|Symbol| N0043(("lbf/min")) 
+	N0041[PoundForcePerMinute] -->|IsUnitForQuantity| N0000[ForceRateOfChangeQuantity] 
+	N0044[KilopoundForcePerMinute] -->|BelongsToClass| N0005(Unit) 
+	N0044[KilopoundForcePerMinute] -->|ConversionFactorA| N0006(("0")) 
+	N0044[KilopoundForcePerMinute] -->|ConversionFactorB| N0045(("0.01348853658598263")) 
+	N0044[KilopoundForcePerMinute] -->|Symbol| N0046(("klbf/min")) 
+	N0044[KilopoundForcePerMinute] -->|IsUnitForQuantity| N0000[ForceRateOfChangeQuantity] 
+	N0047[NewtonPerHour] -->|BelongsToClass| N0005(Unit) 
+	N0047[NewtonPerHour] -->|ConversionFactorA| N0006(("0")) 
+	N0047[NewtonPerHour] -->|ConversionFactorB| N0048(("3600")) 
+	N0047[NewtonPerHour] -->|Symbol| N0049(("N/h")) 
+	N0047[NewtonPerHour] -->|IsUnitForQuantity| N0000[ForceRateOfChangeQuantity] 
+	N0000[ForceRateOfChangeQuantity] -->|HasSIUnit| N0047[NewtonPerHour] 
+	N0050[DecanewtonPerHour] -->|BelongsToClass| N0005(Unit) 
+	N0050[DecanewtonPerHour] -->|ConversionFactorA| N0006(("0")) 
+	N0050[DecanewtonPerHour] -->|ConversionFactorB| N0051(("360")) 
+	N0050[DecanewtonPerHour] -->|Symbol| N0052(("daN/h")) 
+	N0050[DecanewtonPerHour] -->|IsUnitForQuantity| N0000[ForceRateOfChangeQuantity] 
+	N0053[KilonewtonPerHour] -->|BelongsToClass| N0005(Unit) 
+	N0053[KilonewtonPerHour] -->|ConversionFactorA| N0006(("0")) 
+	N0053[KilonewtonPerHour] -->|ConversionFactorB| N0054(("3.6")) 
+	N0053[KilonewtonPerHour] -->|Symbol| N0055(("kN/h")) 
+	N0053[KilonewtonPerHour] -->|IsUnitForQuantity| N0000[ForceRateOfChangeQuantity] 
+	N0056[KilodecanewtonPerHour] -->|BelongsToClass| N0005(Unit) 
+	N0056[KilodecanewtonPerHour] -->|ConversionFactorA| N0006(("0")) 
+	N0056[KilodecanewtonPerHour] -->|ConversionFactorB| N0057(("0.36")) 
+	N0056[KilodecanewtonPerHour] -->|Symbol| N0058(("kdaN/h")) 
+	N0056[KilodecanewtonPerHour] -->|IsUnitForQuantity| N0000[ForceRateOfChangeQuantity] 
+	N0059[KilogramForcePerHour] -->|BelongsToClass| N0005(Unit) 
+	N0059[KilogramForcePerHour] -->|ConversionFactorA| N0006(("0")) 
+	N0059[KilogramForcePerHour] -->|ConversionFactorB| N0060(("367.0978366720542")) 
+	N0059[KilogramForcePerHour] -->|Symbol| N0061(("kgf/h")) 
+	N0059[KilogramForcePerHour] -->|IsUnitForQuantity| N0000[ForceRateOfChangeQuantity] 
+	N0062[PoundForcePerHour] -->|BelongsToClass| N0005(Unit) 
+	N0062[PoundForcePerHour] -->|ConversionFactorA| N0006(("0")) 
+	N0062[PoundForcePerHour] -->|ConversionFactorB| N0063(("809.3121951589578")) 
+	N0062[PoundForcePerHour] -->|Symbol| N0064(("lbf/h")) 
+	N0062[PoundForcePerHour] -->|IsUnitForQuantity| N0000[ForceRateOfChangeQuantity] 
+	N0065[KilopoundForcePerHour] -->|BelongsToClass| N0005(Unit) 
+	N0065[KilopoundForcePerHour] -->|ConversionFactorA| N0006(("0")) 
+	N0065[KilopoundForcePerHour] -->|ConversionFactorB| N0066(("0.8093121951589578")) 
+	N0065[KilopoundForcePerHour] -->|Symbol| N0067(("klbf/h")) 
+	N0065[KilopoundForcePerHour] -->|IsUnitForQuantity| N0000[ForceRateOfChangeQuantity] 
+```
+## PressureRateOfChangeQuantity <!-- NOUN -->
+- Display name: PressureRateOfChange
+- Parent class: [Quantity](./Quantities.md#Quantity)
+- Specialization:
+  - L = -1
+  - M = 1
+  - T = -3
+- Description: 
+A pressure rate of change is the time derivative of a pressure.
+The dimension of pressure rate of change is:
+$$[ML^{-1}T^{-3}]$$.
+The SI unit for **pressure rate of change** is: pascal per second with the associated unit label $\frac{Pa}{s}$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:PressureRateOfChangeQuantity
+PressureRateOfChangeQuantity.L = -1
+PressureRateOfChangeQuantity.M = 1
+PressureRateOfChangeQuantity.T = -3
+Unit:PascalPerSecond
+PascalPerSecond.ConversionFactorA = 0
+PascalPerSecond.ConversionFactorB = 1
+PascalPerSecond.Symbol = "Pa/s"
+PascalPerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+PressureRateOfChangeQuantity HasSIUnit PascalPerSecond
+Unit:KilopascalPerSecond
+KilopascalPerSecond.ConversionFactorA = 0
+KilopascalPerSecond.ConversionFactorB = 0.001
+KilopascalPerSecond.Symbol = "KPa/s"
+KilopascalPerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:BarPerSecond
+BarPerSecond.ConversionFactorA = 0
+BarPerSecond.ConversionFactorB = 1E-05
+BarPerSecond.Symbol = "bar/s"
+BarPerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:MillibarPerSecond
+MillibarPerSecond.ConversionFactorA = 0
+MillibarPerSecond.ConversionFactorB = 0.01
+MillibarPerSecond.Symbol = "mbar/s"
+MillibarPerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:MicrobarPerSecond
+MicrobarPerSecond.ConversionFactorA = 0
+MicrobarPerSecond.ConversionFactorB = 10
+MicrobarPerSecond.Symbol = "µbar/s"
+MicrobarPerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:PoundPerSquareInchPerSecond
+PoundPerSquareInchPerSecond.ConversionFactorA = 0
+PoundPerSquareInchPerSecond.ConversionFactorB = 0.00014503773773020924
+PoundPerSquareInchPerSecond.Symbol = "psi/s"
+PoundPerSquareInchPerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:PoundPer100SquareFootPerSecond
+PoundPer100SquareFootPerSecond.ConversionFactorA = 0
+PoundPer100SquareFootPerSecond.ConversionFactorB = 2.0885434233150124
+PoundPer100SquareFootPerSecond.Symbol = "lbf/100ft²/s"
+PoundPer100SquareFootPerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:KilopoundPerSquareInchPerSecond
+KilopoundPerSquareInchPerSecond.ConversionFactorA = 0
+KilopoundPerSquareInchPerSecond.ConversionFactorB = 1.4503773773020924E-07
+KilopoundPerSquareInchPerSecond.Symbol = "ksi/s"
+KilopoundPerSquareInchPerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:StandardAtmospherePerSecond
+StandardAtmospherePerSecond.ConversionFactorA = 0
+StandardAtmospherePerSecond.ConversionFactorB = 9.869232667160129E-06
+StandardAtmospherePerSecond.Symbol = "atm/s"
+StandardAtmospherePerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:PoundPerSquareFootPerSecond
+PoundPerSquareFootPerSecond.ConversionFactorA = 0
+PoundPerSquareFootPerSecond.ConversionFactorB = 0.020885434233150126
+PoundPerSquareFootPerSecond.Symbol = "lb/ft²/s"
+PoundPerSquareFootPerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:MegapascalPerSecond
+MegapascalPerSecond.ConversionFactorA = 0
+MegapascalPerSecond.ConversionFactorB = 1E-06
+MegapascalPerSecond.Symbol = "MPa/s"
+MegapascalPerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:GigapascalPerSecond
+GigapascalPerSecond.ConversionFactorA = 0
+GigapascalPerSecond.ConversionFactorB = 1E-09
+GigapascalPerSecond.Symbol = "GPa/s"
+GigapascalPerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:NewtonPerSquareMetrePerSecond
+NewtonPerSquareMetrePerSecond.ConversionFactorA = 0
+NewtonPerSquareMetrePerSecond.ConversionFactorB = 1
+NewtonPerSquareMetrePerSecond.Symbol = "N/m²/s"
+NewtonPerSquareMetrePerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:NewtonPerSquareCentimetrePerSecond
+NewtonPerSquareCentimetrePerSecond.ConversionFactorA = 0
+NewtonPerSquareCentimetrePerSecond.ConversionFactorB = 0.0001
+NewtonPerSquareCentimetrePerSecond.Symbol = "N/cm²/s"
+NewtonPerSquareCentimetrePerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:NewtonPerSquareMillimetrePerSecond
+NewtonPerSquareMillimetrePerSecond.ConversionFactorA = 0
+NewtonPerSquareMillimetrePerSecond.ConversionFactorB = 1E-06
+NewtonPerSquareMillimetrePerSecond.Symbol = "N/mm²/s"
+NewtonPerSquareMillimetrePerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:KilonewtonPerSquareMetrePerSecond
+KilonewtonPerSquareMetrePerSecond.ConversionFactorA = 0
+KilonewtonPerSquareMetrePerSecond.ConversionFactorB = 0.001
+KilonewtonPerSquareMetrePerSecond.Symbol = "kN/m²/s"
+KilonewtonPerSquareMetrePerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:MegapoundPerSquareInchPerSecond
+MegapoundPerSquareInchPerSecond.ConversionFactorA = 0
+MegapoundPerSquareInchPerSecond.ConversionFactorB = 1.4503773773020922E-10
+MegapoundPerSquareInchPerSecond.Symbol = "Mpsi/s"
+MegapoundPerSquareInchPerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:TorrPerSecond
+TorrPerSecond.ConversionFactorA = 0
+TorrPerSecond.ConversionFactorB = 0.007500616827041697
+TorrPerSecond.Symbol = "Torr/s"
+TorrPerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:CentimetreMercuryAtZeroDegreeCelsiusPerSecond
+CentimetreMercuryAtZeroDegreeCelsiusPerSecond.ConversionFactorA = 0
+CentimetreMercuryAtZeroDegreeCelsiusPerSecond.ConversionFactorB = 0.0007500615758456563
+CentimetreMercuryAtZeroDegreeCelsiusPerSecond.Symbol = "cm Hg 0°C/s"
+CentimetreMercuryAtZeroDegreeCelsiusPerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:MillimetreMercuryAtZeroDegreeCelsiusPerSecond
+MillimetreMercuryAtZeroDegreeCelsiusPerSecond.ConversionFactorA = 0
+MillimetreMercuryAtZeroDegreeCelsiusPerSecond.ConversionFactorB = 0.007500615758456563
+MillimetreMercuryAtZeroDegreeCelsiusPerSecond.Symbol = "mm Hg 0°C/s"
+MillimetreMercuryAtZeroDegreeCelsiusPerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:InchMercuryAt32DegreeFahrenheitPerSecond
+InchMercuryAt32DegreeFahrenheitPerSecond.ConversionFactorA = 0
+InchMercuryAt32DegreeFahrenheitPerSecond.ConversionFactorB = 3386.3890000000006
+InchMercuryAt32DegreeFahrenheitPerSecond.Symbol = "in Hg 32°F/s"
+InchMercuryAt32DegreeFahrenheitPerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:InchMercuryAt60DegreeFahrenheitPerSecond
+InchMercuryAt60DegreeFahrenheitPerSecond.ConversionFactorA = 0
+InchMercuryAt60DegreeFahrenheitPerSecond.ConversionFactorB = 3376.85
+InchMercuryAt60DegreeFahrenheitPerSecond.Symbol = "in Hg 60°F/s"
+InchMercuryAt60DegreeFahrenheitPerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:CentimetreWaterAt4DegreeCelsiusPerSecond
+CentimetreWaterAt4DegreeCelsiusPerSecond.ConversionFactorA = 0
+CentimetreWaterAt4DegreeCelsiusPerSecond.ConversionFactorB = 0.010104429276573386
+CentimetreWaterAt4DegreeCelsiusPerSecond.Symbol = "cm Aq 4°C/s"
+CentimetreWaterAt4DegreeCelsiusPerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:MillimetreWaterAt4DegreeCelsiusPerSecond
+MillimetreWaterAt4DegreeCelsiusPerSecond.ConversionFactorA = 0
+MillimetreWaterAt4DegreeCelsiusPerSecond.ConversionFactorB = 0.10104429276573387
+MillimetreWaterAt4DegreeCelsiusPerSecond.Symbol = "mm Aq 4°C/s"
+MillimetreWaterAt4DegreeCelsiusPerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:InchWaterAt4DegreeCelsiusPerSecond
+InchWaterAt4DegreeCelsiusPerSecond.ConversionFactorA = 0
+InchWaterAt4DegreeCelsiusPerSecond.ConversionFactorB = 0.00401474213311279
+InchWaterAt4DegreeCelsiusPerSecond.Symbol = "in Aq 4°C/s"
+InchWaterAt4DegreeCelsiusPerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:FootWaterAt4DegreeCelsiusPerSecond
+FootWaterAt4DegreeCelsiusPerSecond.ConversionFactorA = 0
+FootWaterAt4DegreeCelsiusPerSecond.ConversionFactorB = 0.0003345525543589354
+FootWaterAt4DegreeCelsiusPerSecond.Symbol = "ft Aq 4°C/s"
+FootWaterAt4DegreeCelsiusPerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:DynePerSquareCentimetrePerSecond
+DynePerSquareCentimetrePerSecond.ConversionFactorA = 0
+DynePerSquareCentimetrePerSecond.ConversionFactorB = 10
+DynePerSquareCentimetrePerSecond.Symbol = "dyne/cm²/s"
+DynePerSquareCentimetrePerSecond IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:PascalPerMinute
+PascalPerMinute.ConversionFactorA = 0
+PascalPerMinute.ConversionFactorB = 60
+PascalPerMinute.Symbol = "Pa/min"
+PascalPerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+PressureRateOfChangeQuantity HasSIUnit PascalPerMinute
+Unit:KilopascalPerMinute
+KilopascalPerMinute.ConversionFactorA = 0
+KilopascalPerMinute.ConversionFactorB = 0.06
+KilopascalPerMinute.Symbol = "KPa/min"
+KilopascalPerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:BarPerMinute
+BarPerMinute.ConversionFactorA = 0
+BarPerMinute.ConversionFactorB = 0.0006
+BarPerMinute.Symbol = "bar/min"
+BarPerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:MillibarPerMinute
+MillibarPerMinute.ConversionFactorA = 0
+MillibarPerMinute.ConversionFactorB = 0.6
+MillibarPerMinute.Symbol = "mbar/min"
+MillibarPerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:MicrobarPerMinute
+MicrobarPerMinute.ConversionFactorA = 0
+MicrobarPerMinute.ConversionFactorB = 600
+MicrobarPerMinute.Symbol = "µbar/min"
+MicrobarPerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:PoundPerSquareInchPerMinute
+PoundPerSquareInchPerMinute.ConversionFactorA = 0
+PoundPerSquareInchPerMinute.ConversionFactorB = 0.008702264263812553
+PoundPerSquareInchPerMinute.Symbol = "psi/min"
+PoundPerSquareInchPerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:PoundPer100SquareFootPerMinute
+PoundPer100SquareFootPerMinute.ConversionFactorA = 0
+PoundPer100SquareFootPerMinute.ConversionFactorB = 125.31260539890074
+PoundPer100SquareFootPerMinute.Symbol = "lbf/100ft²/min"
+PoundPer100SquareFootPerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:KilopoundPerSquareInchPerMinute
+KilopoundPerSquareInchPerMinute.ConversionFactorA = 0
+KilopoundPerSquareInchPerMinute.ConversionFactorB = 8.702264263812555E-06
+KilopoundPerSquareInchPerMinute.Symbol = "ksi/min"
+KilopoundPerSquareInchPerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:StandardAtmospherePerMinute
+StandardAtmospherePerMinute.ConversionFactorA = 0
+StandardAtmospherePerMinute.ConversionFactorB = 0.0005921539600296077
+StandardAtmospherePerMinute.Symbol = "atm/min"
+StandardAtmospherePerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:PoundPerSquareFootPerMinute
+PoundPerSquareFootPerMinute.ConversionFactorA = 0
+PoundPerSquareFootPerMinute.ConversionFactorB = 1.2531260539890072
+PoundPerSquareFootPerMinute.Symbol = "lb/ft²/min"
+PoundPerSquareFootPerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:MegapascalPerMinute
+MegapascalPerMinute.ConversionFactorA = 0
+MegapascalPerMinute.ConversionFactorB = 6E-05
+MegapascalPerMinute.Symbol = "MPa/min"
+MegapascalPerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:GigapascalPerMinute
+GigapascalPerMinute.ConversionFactorA = 0
+GigapascalPerMinute.ConversionFactorB = 6E-08
+GigapascalPerMinute.Symbol = "GPa/min"
+GigapascalPerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:NewtonPerSquareMetrePerMinute
+NewtonPerSquareMetrePerMinute.ConversionFactorA = 0
+NewtonPerSquareMetrePerMinute.ConversionFactorB = 60
+NewtonPerSquareMetrePerMinute.Symbol = "N/m²/min"
+NewtonPerSquareMetrePerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:NewtonPerSquareCentimetrePerMinute
+NewtonPerSquareCentimetrePerMinute.ConversionFactorA = 0
+NewtonPerSquareCentimetrePerMinute.ConversionFactorB = 0.006
+NewtonPerSquareCentimetrePerMinute.Symbol = "N/cm²/min"
+NewtonPerSquareCentimetrePerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:NewtonPerSquareMillimetrePerMinute
+NewtonPerSquareMillimetrePerMinute.ConversionFactorA = 0
+NewtonPerSquareMillimetrePerMinute.ConversionFactorB = 6E-05
+NewtonPerSquareMillimetrePerMinute.Symbol = "N/mm²/min"
+NewtonPerSquareMillimetrePerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:KilonewtonPerSquareMetrePerMinute
+KilonewtonPerSquareMetrePerMinute.ConversionFactorA = 0
+KilonewtonPerSquareMetrePerMinute.ConversionFactorB = 0.06
+KilonewtonPerSquareMetrePerMinute.Symbol = "kN/m²/min"
+KilonewtonPerSquareMetrePerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:MegapoundPerSquareInchPerMinute
+MegapoundPerSquareInchPerMinute.ConversionFactorA = 0
+MegapoundPerSquareInchPerMinute.ConversionFactorB = 8.702264263812553E-09
+MegapoundPerSquareInchPerMinute.Symbol = "Mpsi/min"
+MegapoundPerSquareInchPerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:TorrPerMinute
+TorrPerMinute.ConversionFactorA = 0
+TorrPerMinute.ConversionFactorB = 0.45003700962250187
+TorrPerMinute.Symbol = "Torr/min"
+TorrPerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:CentimetreMercuryAtZeroDegreeCelsiusPerMinute
+CentimetreMercuryAtZeroDegreeCelsiusPerMinute.ConversionFactorA = 0
+CentimetreMercuryAtZeroDegreeCelsiusPerMinute.ConversionFactorB = 0.04500369455073938
+CentimetreMercuryAtZeroDegreeCelsiusPerMinute.Symbol = "cm Hg 0°C/min"
+CentimetreMercuryAtZeroDegreeCelsiusPerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:MillimetreMercuryAtZeroDegreeCelsiusPerMinute
+MillimetreMercuryAtZeroDegreeCelsiusPerMinute.ConversionFactorA = 0
+MillimetreMercuryAtZeroDegreeCelsiusPerMinute.ConversionFactorB = 0.45003694550739376
+MillimetreMercuryAtZeroDegreeCelsiusPerMinute.Symbol = "mm Hg 0°C/min"
+MillimetreMercuryAtZeroDegreeCelsiusPerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:InchMercuryAt32DegreeFahrenheitPerMinute
+InchMercuryAt32DegreeFahrenheitPerMinute.ConversionFactorA = 0
+InchMercuryAt32DegreeFahrenheitPerMinute.ConversionFactorB = 203183.34000000003
+InchMercuryAt32DegreeFahrenheitPerMinute.Symbol = "in Hg 32°F/min"
+InchMercuryAt32DegreeFahrenheitPerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:InchMercuryAt60DegreeFahrenheitPerMinute
+InchMercuryAt60DegreeFahrenheitPerMinute.ConversionFactorA = 0
+InchMercuryAt60DegreeFahrenheitPerMinute.ConversionFactorB = 202611
+InchMercuryAt60DegreeFahrenheitPerMinute.Symbol = "in Hg 60°F/min"
+InchMercuryAt60DegreeFahrenheitPerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:CentimetreWaterAt4DegreeCelsiusPerMinute
+CentimetreWaterAt4DegreeCelsiusPerMinute.ConversionFactorA = 0
+CentimetreWaterAt4DegreeCelsiusPerMinute.ConversionFactorB = 0.6062657565944032
+CentimetreWaterAt4DegreeCelsiusPerMinute.Symbol = "cm Aq 4°C/min"
+CentimetreWaterAt4DegreeCelsiusPerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:MillimetreWaterAt4DegreeCelsiusPerMinute
+MillimetreWaterAt4DegreeCelsiusPerMinute.ConversionFactorA = 0
+MillimetreWaterAt4DegreeCelsiusPerMinute.ConversionFactorB = 6.062657565944032
+MillimetreWaterAt4DegreeCelsiusPerMinute.Symbol = "mm Aq 4°C/min"
+MillimetreWaterAt4DegreeCelsiusPerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:InchWaterAt4DegreeCelsiusPerMinute
+InchWaterAt4DegreeCelsiusPerMinute.ConversionFactorA = 0
+InchWaterAt4DegreeCelsiusPerMinute.ConversionFactorB = 0.2408845279867674
+InchWaterAt4DegreeCelsiusPerMinute.Symbol = "in Aq 4°C/min"
+InchWaterAt4DegreeCelsiusPerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:FootWaterAt4DegreeCelsiusPerMinute
+FootWaterAt4DegreeCelsiusPerMinute.ConversionFactorA = 0
+FootWaterAt4DegreeCelsiusPerMinute.ConversionFactorB = 0.020073153261536126
+FootWaterAt4DegreeCelsiusPerMinute.Symbol = "ft Aq 4°C/min"
+FootWaterAt4DegreeCelsiusPerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:DynePerSquareCentimetrePerMinute
+DynePerSquareCentimetrePerMinute.ConversionFactorA = 0
+DynePerSquareCentimetrePerMinute.ConversionFactorB = 600
+DynePerSquareCentimetrePerMinute.Symbol = "dyne/cm²/min"
+DynePerSquareCentimetrePerMinute IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:PascalPerHour
+PascalPerHour.ConversionFactorA = 0
+PascalPerHour.ConversionFactorB = 3600
+PascalPerHour.Symbol = "Pa/h"
+PascalPerHour IsUnitForQuantity PressureRateOfChangeQuantity
+PressureRateOfChangeQuantity HasSIUnit PascalPerHour
+Unit:KilopascalPerHour
+KilopascalPerHour.ConversionFactorA = 0
+KilopascalPerHour.ConversionFactorB = 3.6
+KilopascalPerHour.Symbol = "KPa/h"
+KilopascalPerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:BarPerHour
+BarPerHour.ConversionFactorA = 0
+BarPerHour.ConversionFactorB = 0.036
+BarPerHour.Symbol = "bar/h"
+BarPerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:MillibarPerHour
+MillibarPerHour.ConversionFactorA = 0
+MillibarPerHour.ConversionFactorB = 36
+MillibarPerHour.Symbol = "mbar/h"
+MillibarPerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:MicrobarPerHour
+MicrobarPerHour.ConversionFactorA = 0
+MicrobarPerHour.ConversionFactorB = 36000
+MicrobarPerHour.Symbol = "µbar/h"
+MicrobarPerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:PoundPerSquareInchPerHour
+PoundPerSquareInchPerHour.ConversionFactorA = 0
+PoundPerSquareInchPerHour.ConversionFactorB = 0.5221358558287532
+PoundPerSquareInchPerHour.Symbol = "psi/h"
+PoundPerSquareInchPerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:PoundPer100SquareFootPerHour
+PoundPer100SquareFootPerHour.ConversionFactorA = 0
+PoundPer100SquareFootPerHour.ConversionFactorB = 7518.756323934045
+PoundPer100SquareFootPerHour.Symbol = "lbf/100ft²/h"
+PoundPer100SquareFootPerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:KilopoundPerSquareInchPerHour
+KilopoundPerSquareInchPerHour.ConversionFactorA = 0
+KilopoundPerSquareInchPerHour.ConversionFactorB = 0.0005221358558287532
+KilopoundPerSquareInchPerHour.Symbol = "ksi/h"
+KilopoundPerSquareInchPerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:StandardAtmospherePerHour
+StandardAtmospherePerHour.ConversionFactorA = 0
+StandardAtmospherePerHour.ConversionFactorB = 0.03552923760177646
+StandardAtmospherePerHour.Symbol = "atm/h"
+StandardAtmospherePerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:PoundPerSquareFootPerHour
+PoundPerSquareFootPerHour.ConversionFactorA = 0
+PoundPerSquareFootPerHour.ConversionFactorB = 75.18756323934043
+PoundPerSquareFootPerHour.Symbol = "lb/ft²/h"
+PoundPerSquareFootPerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:MegapascalPerHour
+MegapascalPerHour.ConversionFactorA = 0
+MegapascalPerHour.ConversionFactorB = 0.0036
+MegapascalPerHour.Symbol = "MPa/h"
+MegapascalPerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:GigapascalPerHour
+GigapascalPerHour.ConversionFactorA = 0
+GigapascalPerHour.ConversionFactorB = 3.6E-06
+GigapascalPerHour.Symbol = "GPa/h"
+GigapascalPerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:NewtonPerSquareMetrePerHour
+NewtonPerSquareMetrePerHour.ConversionFactorA = 0
+NewtonPerSquareMetrePerHour.ConversionFactorB = 3600
+NewtonPerSquareMetrePerHour.Symbol = "N/m²/h"
+NewtonPerSquareMetrePerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:NewtonPerSquareCentimetrePerHour
+NewtonPerSquareCentimetrePerHour.ConversionFactorA = 0
+NewtonPerSquareCentimetrePerHour.ConversionFactorB = 0.36
+NewtonPerSquareCentimetrePerHour.Symbol = "N/cm²/h"
+NewtonPerSquareCentimetrePerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:NewtonPerSquareMillimetrePerHour
+NewtonPerSquareMillimetrePerHour.ConversionFactorA = 0
+NewtonPerSquareMillimetrePerHour.ConversionFactorB = 0.0036000000000000003
+NewtonPerSquareMillimetrePerHour.Symbol = "N/mm²/h"
+NewtonPerSquareMillimetrePerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:KilonewtonPerSquareMetrePerHour
+KilonewtonPerSquareMetrePerHour.ConversionFactorA = 0
+KilonewtonPerSquareMetrePerHour.ConversionFactorB = 3.6
+KilonewtonPerSquareMetrePerHour.Symbol = "kN/m²/h"
+KilonewtonPerSquareMetrePerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:MegapoundPerSquareInchPerHour
+MegapoundPerSquareInchPerHour.ConversionFactorA = 0
+MegapoundPerSquareInchPerHour.ConversionFactorB = 5.221358558287532E-07
+MegapoundPerSquareInchPerHour.Symbol = "Mpsi/h"
+MegapoundPerSquareInchPerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:TorrPerHour
+TorrPerHour.ConversionFactorA = 0
+TorrPerHour.ConversionFactorB = 27.002220577350112
+TorrPerHour.Symbol = "Torr/h"
+TorrPerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:CentimetreMercuryAtZeroDegreeCelsiusPerHour
+CentimetreMercuryAtZeroDegreeCelsiusPerHour.ConversionFactorA = 0
+CentimetreMercuryAtZeroDegreeCelsiusPerHour.ConversionFactorB = 2.700221673044363
+CentimetreMercuryAtZeroDegreeCelsiusPerHour.Symbol = "cm Hg 0°C/h"
+CentimetreMercuryAtZeroDegreeCelsiusPerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:MillimetreMercuryAtZeroDegreeCelsiusPerHour
+MillimetreMercuryAtZeroDegreeCelsiusPerHour.ConversionFactorA = 0
+MillimetreMercuryAtZeroDegreeCelsiusPerHour.ConversionFactorB = 27.002216730443628
+MillimetreMercuryAtZeroDegreeCelsiusPerHour.Symbol = "mm Hg 0°C/h"
+MillimetreMercuryAtZeroDegreeCelsiusPerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:InchMercuryAt32DegreeFahrenheitPerHour
+InchMercuryAt32DegreeFahrenheitPerHour.ConversionFactorA = 0
+InchMercuryAt32DegreeFahrenheitPerHour.ConversionFactorB = 12191000.400000002
+InchMercuryAt32DegreeFahrenheitPerHour.Symbol = "in Hg 32°F/h"
+InchMercuryAt32DegreeFahrenheitPerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:InchMercuryAt60DegreeFahrenheitPerHour
+InchMercuryAt60DegreeFahrenheitPerHour.ConversionFactorA = 0
+InchMercuryAt60DegreeFahrenheitPerHour.ConversionFactorB = 12156660
+InchMercuryAt60DegreeFahrenheitPerHour.Symbol = "in Hg 60°F/h"
+InchMercuryAt60DegreeFahrenheitPerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:CentimetreWaterAt4DegreeCelsiusPerHour
+CentimetreWaterAt4DegreeCelsiusPerHour.ConversionFactorA = 0
+CentimetreWaterAt4DegreeCelsiusPerHour.ConversionFactorB = 36.37594539566419
+CentimetreWaterAt4DegreeCelsiusPerHour.Symbol = "cm Aq 4°C/h"
+CentimetreWaterAt4DegreeCelsiusPerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:MillimetreWaterAt4DegreeCelsiusPerHour
+MillimetreWaterAt4DegreeCelsiusPerHour.ConversionFactorA = 0
+MillimetreWaterAt4DegreeCelsiusPerHour.ConversionFactorB = 363.75945395664195
+MillimetreWaterAt4DegreeCelsiusPerHour.Symbol = "mm Aq 4°C/h"
+MillimetreWaterAt4DegreeCelsiusPerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:InchWaterAt4DegreeCelsiusPerHour
+InchWaterAt4DegreeCelsiusPerHour.ConversionFactorA = 0
+InchWaterAt4DegreeCelsiusPerHour.ConversionFactorB = 14.453071679206046
+InchWaterAt4DegreeCelsiusPerHour.Symbol = "in Aq 4°C/h"
+InchWaterAt4DegreeCelsiusPerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:FootWaterAt4DegreeCelsiusPerHour
+FootWaterAt4DegreeCelsiusPerHour.ConversionFactorA = 0
+FootWaterAt4DegreeCelsiusPerHour.ConversionFactorB = 1.2043891956921675
+FootWaterAt4DegreeCelsiusPerHour.Symbol = "ft Aq 4°C/h"
+FootWaterAt4DegreeCelsiusPerHour IsUnitForQuantity PressureRateOfChangeQuantity
+Unit:DynePerSquareCentimetrePerHour
+DynePerSquareCentimetrePerHour.ConversionFactorA = 0
+DynePerSquareCentimetrePerHour.ConversionFactorB = 35999.99999999999
+DynePerSquareCentimetrePerHour.Symbol = "dyne/cm²/h"
+DynePerSquareCentimetrePerHour IsUnitForQuantity PressureRateOfChangeQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PressureRateOfChangeQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[PressureRateOfChangeQuantity] -->|L| N0002(("-1")) 
+	N0000[PressureRateOfChangeQuantity] -->|M| N0003(("1")) 
+	N0000[PressureRateOfChangeQuantity] -->|T| N0004(("-3")) 
+	N0005[PascalPerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0005[PascalPerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0005[PascalPerSecond] -->|ConversionFactorB| N0003(("1")) 
+	N0005[PascalPerSecond] -->|Symbol| N0008(("Pa/s")) 
+	N0005[PascalPerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0000[PressureRateOfChangeQuantity] -->|HasSIUnit| N0005[PascalPerSecond] 
+	N0009[KilopascalPerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0009[KilopascalPerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0009[KilopascalPerSecond] -->|ConversionFactorB| N0010(("0.001")) 
+	N0009[KilopascalPerSecond] -->|Symbol| N0011(("KPa/s")) 
+	N0009[KilopascalPerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0012[BarPerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0012[BarPerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0012[BarPerSecond] -->|ConversionFactorB| N0013(("1E-05")) 
+	N0012[BarPerSecond] -->|Symbol| N0014(("bar/s")) 
+	N0012[BarPerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0015[MillibarPerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0015[MillibarPerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0015[MillibarPerSecond] -->|ConversionFactorB| N0016(("0.01")) 
+	N0015[MillibarPerSecond] -->|Symbol| N0017(("mbar/s")) 
+	N0015[MillibarPerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0018[MicrobarPerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0018[MicrobarPerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0018[MicrobarPerSecond] -->|ConversionFactorB| N0019(("10")) 
+	N0018[MicrobarPerSecond] -->|Symbol| N0020(("µbar/s")) 
+	N0018[MicrobarPerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0021[PoundPerSquareInchPerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0021[PoundPerSquareInchPerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0021[PoundPerSquareInchPerSecond] -->|ConversionFactorB| N0022(("0.00014503773773020924")) 
+	N0021[PoundPerSquareInchPerSecond] -->|Symbol| N0023(("psi/s")) 
+	N0021[PoundPerSquareInchPerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0024[PoundPer100SquareFootPerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0024[PoundPer100SquareFootPerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0024[PoundPer100SquareFootPerSecond] -->|ConversionFactorB| N0025(("2.0885434233150124")) 
+	N0024[PoundPer100SquareFootPerSecond] -->|Symbol| N0026(("lbf/100ft²/s")) 
+	N0024[PoundPer100SquareFootPerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0027[KilopoundPerSquareInchPerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0027[KilopoundPerSquareInchPerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0027[KilopoundPerSquareInchPerSecond] -->|ConversionFactorB| N0028(("1.4503773773020924E-07")) 
+	N0027[KilopoundPerSquareInchPerSecond] -->|Symbol| N0029(("ksi/s")) 
+	N0027[KilopoundPerSquareInchPerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0030[StandardAtmospherePerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0030[StandardAtmospherePerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0030[StandardAtmospherePerSecond] -->|ConversionFactorB| N0031(("9.869232667160129E-06")) 
+	N0030[StandardAtmospherePerSecond] -->|Symbol| N0032(("atm/s")) 
+	N0030[StandardAtmospherePerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0033[PoundPerSquareFootPerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0033[PoundPerSquareFootPerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0033[PoundPerSquareFootPerSecond] -->|ConversionFactorB| N0034(("0.020885434233150126")) 
+	N0033[PoundPerSquareFootPerSecond] -->|Symbol| N0035(("lb/ft²/s")) 
+	N0033[PoundPerSquareFootPerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0036[MegapascalPerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0036[MegapascalPerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0036[MegapascalPerSecond] -->|ConversionFactorB| N0037(("1E-06")) 
+	N0036[MegapascalPerSecond] -->|Symbol| N0038(("MPa/s")) 
+	N0036[MegapascalPerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0039[GigapascalPerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0039[GigapascalPerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0039[GigapascalPerSecond] -->|ConversionFactorB| N0040(("1E-09")) 
+	N0039[GigapascalPerSecond] -->|Symbol| N0041(("GPa/s")) 
+	N0039[GigapascalPerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0042[NewtonPerSquareMetrePerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0042[NewtonPerSquareMetrePerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0042[NewtonPerSquareMetrePerSecond] -->|ConversionFactorB| N0003(("1")) 
+	N0042[NewtonPerSquareMetrePerSecond] -->|Symbol| N0043(("N/m²/s")) 
+	N0042[NewtonPerSquareMetrePerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0044[NewtonPerSquareCentimetrePerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0044[NewtonPerSquareCentimetrePerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0044[NewtonPerSquareCentimetrePerSecond] -->|ConversionFactorB| N0045(("0.0001")) 
+	N0044[NewtonPerSquareCentimetrePerSecond] -->|Symbol| N0046(("N/cm²/s")) 
+	N0044[NewtonPerSquareCentimetrePerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0047[NewtonPerSquareMillimetrePerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0047[NewtonPerSquareMillimetrePerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0047[NewtonPerSquareMillimetrePerSecond] -->|ConversionFactorB| N0037(("1E-06")) 
+	N0047[NewtonPerSquareMillimetrePerSecond] -->|Symbol| N0048(("N/mm²/s")) 
+	N0047[NewtonPerSquareMillimetrePerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0049[KilonewtonPerSquareMetrePerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0049[KilonewtonPerSquareMetrePerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0049[KilonewtonPerSquareMetrePerSecond] -->|ConversionFactorB| N0010(("0.001")) 
+	N0049[KilonewtonPerSquareMetrePerSecond] -->|Symbol| N0050(("kN/m²/s")) 
+	N0049[KilonewtonPerSquareMetrePerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0051[MegapoundPerSquareInchPerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0051[MegapoundPerSquareInchPerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0051[MegapoundPerSquareInchPerSecond] -->|ConversionFactorB| N0052(("1.4503773773020922E-10")) 
+	N0051[MegapoundPerSquareInchPerSecond] -->|Symbol| N0053(("Mpsi/s")) 
+	N0051[MegapoundPerSquareInchPerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0054[TorrPerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0054[TorrPerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0054[TorrPerSecond] -->|ConversionFactorB| N0055(("0.007500616827041697")) 
+	N0054[TorrPerSecond] -->|Symbol| N0056(("Torr/s")) 
+	N0054[TorrPerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0057[CentimetreMercuryAtZeroDegreeCelsiusPerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0057[CentimetreMercuryAtZeroDegreeCelsiusPerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0057[CentimetreMercuryAtZeroDegreeCelsiusPerSecond] -->|ConversionFactorB| N0058(("0.0007500615758456563")) 
+	N0057[CentimetreMercuryAtZeroDegreeCelsiusPerSecond] -->|Symbol| N0059(("cm Hg 0°C/s")) 
+	N0057[CentimetreMercuryAtZeroDegreeCelsiusPerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0060[MillimetreMercuryAtZeroDegreeCelsiusPerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0060[MillimetreMercuryAtZeroDegreeCelsiusPerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0060[MillimetreMercuryAtZeroDegreeCelsiusPerSecond] -->|ConversionFactorB| N0061(("0.007500615758456563")) 
+	N0060[MillimetreMercuryAtZeroDegreeCelsiusPerSecond] -->|Symbol| N0062(("mm Hg 0°C/s")) 
+	N0060[MillimetreMercuryAtZeroDegreeCelsiusPerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0063[InchMercuryAt32DegreeFahrenheitPerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0063[InchMercuryAt32DegreeFahrenheitPerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0063[InchMercuryAt32DegreeFahrenheitPerSecond] -->|ConversionFactorB| N0064(("3386.3890000000006")) 
+	N0063[InchMercuryAt32DegreeFahrenheitPerSecond] -->|Symbol| N0065(("in Hg 32°F/s")) 
+	N0063[InchMercuryAt32DegreeFahrenheitPerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0066[InchMercuryAt60DegreeFahrenheitPerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0066[InchMercuryAt60DegreeFahrenheitPerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0066[InchMercuryAt60DegreeFahrenheitPerSecond] -->|ConversionFactorB| N0067(("3376.85")) 
+	N0066[InchMercuryAt60DegreeFahrenheitPerSecond] -->|Symbol| N0068(("in Hg 60°F/s")) 
+	N0066[InchMercuryAt60DegreeFahrenheitPerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0069[CentimetreWaterAt4DegreeCelsiusPerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0069[CentimetreWaterAt4DegreeCelsiusPerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0069[CentimetreWaterAt4DegreeCelsiusPerSecond] -->|ConversionFactorB| N0070(("0.010104429276573386")) 
+	N0069[CentimetreWaterAt4DegreeCelsiusPerSecond] -->|Symbol| N0071(("cm Aq 4°C/s")) 
+	N0069[CentimetreWaterAt4DegreeCelsiusPerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0072[MillimetreWaterAt4DegreeCelsiusPerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0072[MillimetreWaterAt4DegreeCelsiusPerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0072[MillimetreWaterAt4DegreeCelsiusPerSecond] -->|ConversionFactorB| N0073(("0.10104429276573387")) 
+	N0072[MillimetreWaterAt4DegreeCelsiusPerSecond] -->|Symbol| N0074(("mm Aq 4°C/s")) 
+	N0072[MillimetreWaterAt4DegreeCelsiusPerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0075[InchWaterAt4DegreeCelsiusPerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0075[InchWaterAt4DegreeCelsiusPerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0075[InchWaterAt4DegreeCelsiusPerSecond] -->|ConversionFactorB| N0076(("0.00401474213311279")) 
+	N0075[InchWaterAt4DegreeCelsiusPerSecond] -->|Symbol| N0077(("in Aq 4°C/s")) 
+	N0075[InchWaterAt4DegreeCelsiusPerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0078[FootWaterAt4DegreeCelsiusPerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0078[FootWaterAt4DegreeCelsiusPerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0078[FootWaterAt4DegreeCelsiusPerSecond] -->|ConversionFactorB| N0079(("0.0003345525543589354")) 
+	N0078[FootWaterAt4DegreeCelsiusPerSecond] -->|Symbol| N0080(("ft Aq 4°C/s")) 
+	N0078[FootWaterAt4DegreeCelsiusPerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0081[DynePerSquareCentimetrePerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0081[DynePerSquareCentimetrePerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0081[DynePerSquareCentimetrePerSecond] -->|ConversionFactorB| N0019(("10")) 
+	N0081[DynePerSquareCentimetrePerSecond] -->|Symbol| N0082(("dyne/cm²/s")) 
+	N0081[DynePerSquareCentimetrePerSecond] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0083[PascalPerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0083[PascalPerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0083[PascalPerMinute] -->|ConversionFactorB| N0084(("60")) 
+	N0083[PascalPerMinute] -->|Symbol| N0085(("Pa/min")) 
+	N0083[PascalPerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0000[PressureRateOfChangeQuantity] -->|HasSIUnit| N0083[PascalPerMinute] 
+	N0086[KilopascalPerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0086[KilopascalPerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0086[KilopascalPerMinute] -->|ConversionFactorB| N0087(("0.06")) 
+	N0086[KilopascalPerMinute] -->|Symbol| N0088(("KPa/min")) 
+	N0086[KilopascalPerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0089[BarPerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0089[BarPerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0089[BarPerMinute] -->|ConversionFactorB| N0090(("0.0006")) 
+	N0089[BarPerMinute] -->|Symbol| N0091(("bar/min")) 
+	N0089[BarPerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0092[MillibarPerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0092[MillibarPerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0092[MillibarPerMinute] -->|ConversionFactorB| N0093(("0.6")) 
+	N0092[MillibarPerMinute] -->|Symbol| N0094(("mbar/min")) 
+	N0092[MillibarPerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0095[MicrobarPerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0095[MicrobarPerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0095[MicrobarPerMinute] -->|ConversionFactorB| N0096(("600")) 
+	N0095[MicrobarPerMinute] -->|Symbol| N0097(("µbar/min")) 
+	N0095[MicrobarPerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0098[PoundPerSquareInchPerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0098[PoundPerSquareInchPerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0098[PoundPerSquareInchPerMinute] -->|ConversionFactorB| N0099(("0.008702264263812553")) 
+	N0098[PoundPerSquareInchPerMinute] -->|Symbol| N0100(("psi/min")) 
+	N0098[PoundPerSquareInchPerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0101[PoundPer100SquareFootPerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0101[PoundPer100SquareFootPerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0101[PoundPer100SquareFootPerMinute] -->|ConversionFactorB| N0102(("125.31260539890074")) 
+	N0101[PoundPer100SquareFootPerMinute] -->|Symbol| N0103(("lbf/100ft²/min")) 
+	N0101[PoundPer100SquareFootPerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0104[KilopoundPerSquareInchPerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0104[KilopoundPerSquareInchPerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0104[KilopoundPerSquareInchPerMinute] -->|ConversionFactorB| N0105(("8.702264263812555E-06")) 
+	N0104[KilopoundPerSquareInchPerMinute] -->|Symbol| N0106(("ksi/min")) 
+	N0104[KilopoundPerSquareInchPerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0107[StandardAtmospherePerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0107[StandardAtmospherePerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0107[StandardAtmospherePerMinute] -->|ConversionFactorB| N0108(("0.0005921539600296077")) 
+	N0107[StandardAtmospherePerMinute] -->|Symbol| N0109(("atm/min")) 
+	N0107[StandardAtmospherePerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0110[PoundPerSquareFootPerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0110[PoundPerSquareFootPerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0110[PoundPerSquareFootPerMinute] -->|ConversionFactorB| N0111(("1.2531260539890072")) 
+	N0110[PoundPerSquareFootPerMinute] -->|Symbol| N0112(("lb/ft²/min")) 
+	N0110[PoundPerSquareFootPerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0113[MegapascalPerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0113[MegapascalPerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0113[MegapascalPerMinute] -->|ConversionFactorB| N0114(("6E-05")) 
+	N0113[MegapascalPerMinute] -->|Symbol| N0115(("MPa/min")) 
+	N0113[MegapascalPerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0116[GigapascalPerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0116[GigapascalPerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0116[GigapascalPerMinute] -->|ConversionFactorB| N0117(("6E-08")) 
+	N0116[GigapascalPerMinute] -->|Symbol| N0118(("GPa/min")) 
+	N0116[GigapascalPerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0119[NewtonPerSquareMetrePerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0119[NewtonPerSquareMetrePerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0119[NewtonPerSquareMetrePerMinute] -->|ConversionFactorB| N0084(("60")) 
+	N0119[NewtonPerSquareMetrePerMinute] -->|Symbol| N0120(("N/m²/min")) 
+	N0119[NewtonPerSquareMetrePerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0121[NewtonPerSquareCentimetrePerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0121[NewtonPerSquareCentimetrePerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0121[NewtonPerSquareCentimetrePerMinute] -->|ConversionFactorB| N0122(("0.006")) 
+	N0121[NewtonPerSquareCentimetrePerMinute] -->|Symbol| N0123(("N/cm²/min")) 
+	N0121[NewtonPerSquareCentimetrePerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0124[NewtonPerSquareMillimetrePerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0124[NewtonPerSquareMillimetrePerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0124[NewtonPerSquareMillimetrePerMinute] -->|ConversionFactorB| N0114(("6E-05")) 
+	N0124[NewtonPerSquareMillimetrePerMinute] -->|Symbol| N0125(("N/mm²/min")) 
+	N0124[NewtonPerSquareMillimetrePerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0126[KilonewtonPerSquareMetrePerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0126[KilonewtonPerSquareMetrePerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0126[KilonewtonPerSquareMetrePerMinute] -->|ConversionFactorB| N0087(("0.06")) 
+	N0126[KilonewtonPerSquareMetrePerMinute] -->|Symbol| N0127(("kN/m²/min")) 
+	N0126[KilonewtonPerSquareMetrePerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0128[MegapoundPerSquareInchPerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0128[MegapoundPerSquareInchPerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0128[MegapoundPerSquareInchPerMinute] -->|ConversionFactorB| N0129(("8.702264263812553E-09")) 
+	N0128[MegapoundPerSquareInchPerMinute] -->|Symbol| N0130(("Mpsi/min")) 
+	N0128[MegapoundPerSquareInchPerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0131[TorrPerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0131[TorrPerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0131[TorrPerMinute] -->|ConversionFactorB| N0132(("0.45003700962250187")) 
+	N0131[TorrPerMinute] -->|Symbol| N0133(("Torr/min")) 
+	N0131[TorrPerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0134[CentimetreMercuryAtZeroDegreeCelsiusPerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0134[CentimetreMercuryAtZeroDegreeCelsiusPerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0134[CentimetreMercuryAtZeroDegreeCelsiusPerMinute] -->|ConversionFactorB| N0135(("0.04500369455073938")) 
+	N0134[CentimetreMercuryAtZeroDegreeCelsiusPerMinute] -->|Symbol| N0136(("cm Hg 0°C/min")) 
+	N0134[CentimetreMercuryAtZeroDegreeCelsiusPerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0137[MillimetreMercuryAtZeroDegreeCelsiusPerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0137[MillimetreMercuryAtZeroDegreeCelsiusPerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0137[MillimetreMercuryAtZeroDegreeCelsiusPerMinute] -->|ConversionFactorB| N0138(("0.45003694550739376")) 
+	N0137[MillimetreMercuryAtZeroDegreeCelsiusPerMinute] -->|Symbol| N0139(("mm Hg 0°C/min")) 
+	N0137[MillimetreMercuryAtZeroDegreeCelsiusPerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0140[InchMercuryAt32DegreeFahrenheitPerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0140[InchMercuryAt32DegreeFahrenheitPerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0140[InchMercuryAt32DegreeFahrenheitPerMinute] -->|ConversionFactorB| N0141(("203183.34000000003")) 
+	N0140[InchMercuryAt32DegreeFahrenheitPerMinute] -->|Symbol| N0142(("in Hg 32°F/min")) 
+	N0140[InchMercuryAt32DegreeFahrenheitPerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0143[InchMercuryAt60DegreeFahrenheitPerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0143[InchMercuryAt60DegreeFahrenheitPerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0143[InchMercuryAt60DegreeFahrenheitPerMinute] -->|ConversionFactorB| N0144(("202611")) 
+	N0143[InchMercuryAt60DegreeFahrenheitPerMinute] -->|Symbol| N0145(("in Hg 60°F/min")) 
+	N0143[InchMercuryAt60DegreeFahrenheitPerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0146[CentimetreWaterAt4DegreeCelsiusPerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0146[CentimetreWaterAt4DegreeCelsiusPerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0146[CentimetreWaterAt4DegreeCelsiusPerMinute] -->|ConversionFactorB| N0147(("0.6062657565944032")) 
+	N0146[CentimetreWaterAt4DegreeCelsiusPerMinute] -->|Symbol| N0148(("cm Aq 4°C/min")) 
+	N0146[CentimetreWaterAt4DegreeCelsiusPerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0149[MillimetreWaterAt4DegreeCelsiusPerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0149[MillimetreWaterAt4DegreeCelsiusPerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0149[MillimetreWaterAt4DegreeCelsiusPerMinute] -->|ConversionFactorB| N0150(("6.062657565944032")) 
+	N0149[MillimetreWaterAt4DegreeCelsiusPerMinute] -->|Symbol| N0151(("mm Aq 4°C/min")) 
+	N0149[MillimetreWaterAt4DegreeCelsiusPerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0152[InchWaterAt4DegreeCelsiusPerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0152[InchWaterAt4DegreeCelsiusPerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0152[InchWaterAt4DegreeCelsiusPerMinute] -->|ConversionFactorB| N0153(("0.2408845279867674")) 
+	N0152[InchWaterAt4DegreeCelsiusPerMinute] -->|Symbol| N0154(("in Aq 4°C/min")) 
+	N0152[InchWaterAt4DegreeCelsiusPerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0155[FootWaterAt4DegreeCelsiusPerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0155[FootWaterAt4DegreeCelsiusPerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0155[FootWaterAt4DegreeCelsiusPerMinute] -->|ConversionFactorB| N0156(("0.020073153261536126")) 
+	N0155[FootWaterAt4DegreeCelsiusPerMinute] -->|Symbol| N0157(("ft Aq 4°C/min")) 
+	N0155[FootWaterAt4DegreeCelsiusPerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0158[DynePerSquareCentimetrePerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0158[DynePerSquareCentimetrePerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0158[DynePerSquareCentimetrePerMinute] -->|ConversionFactorB| N0096(("600")) 
+	N0158[DynePerSquareCentimetrePerMinute] -->|Symbol| N0159(("dyne/cm²/min")) 
+	N0158[DynePerSquareCentimetrePerMinute] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0160[PascalPerHour] -->|BelongsToClass| N0006(Unit) 
+	N0160[PascalPerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0160[PascalPerHour] -->|ConversionFactorB| N0161(("3600")) 
+	N0160[PascalPerHour] -->|Symbol| N0162(("Pa/h")) 
+	N0160[PascalPerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0000[PressureRateOfChangeQuantity] -->|HasSIUnit| N0160[PascalPerHour] 
+	N0163[KilopascalPerHour] -->|BelongsToClass| N0006(Unit) 
+	N0163[KilopascalPerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0163[KilopascalPerHour] -->|ConversionFactorB| N0164(("3.6")) 
+	N0163[KilopascalPerHour] -->|Symbol| N0165(("KPa/h")) 
+	N0163[KilopascalPerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0166[BarPerHour] -->|BelongsToClass| N0006(Unit) 
+	N0166[BarPerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0166[BarPerHour] -->|ConversionFactorB| N0167(("0.036")) 
+	N0166[BarPerHour] -->|Symbol| N0168(("bar/h")) 
+	N0166[BarPerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0169[MillibarPerHour] -->|BelongsToClass| N0006(Unit) 
+	N0169[MillibarPerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0169[MillibarPerHour] -->|ConversionFactorB| N0170(("36")) 
+	N0169[MillibarPerHour] -->|Symbol| N0171(("mbar/h")) 
+	N0169[MillibarPerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0172[MicrobarPerHour] -->|BelongsToClass| N0006(Unit) 
+	N0172[MicrobarPerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0172[MicrobarPerHour] -->|ConversionFactorB| N0173(("36000")) 
+	N0172[MicrobarPerHour] -->|Symbol| N0174(("µbar/h")) 
+	N0172[MicrobarPerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0175[PoundPerSquareInchPerHour] -->|BelongsToClass| N0006(Unit) 
+	N0175[PoundPerSquareInchPerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0175[PoundPerSquareInchPerHour] -->|ConversionFactorB| N0176(("0.5221358558287532")) 
+	N0175[PoundPerSquareInchPerHour] -->|Symbol| N0177(("psi/h")) 
+	N0175[PoundPerSquareInchPerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0178[PoundPer100SquareFootPerHour] -->|BelongsToClass| N0006(Unit) 
+	N0178[PoundPer100SquareFootPerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0178[PoundPer100SquareFootPerHour] -->|ConversionFactorB| N0179(("7518.756323934045")) 
+	N0178[PoundPer100SquareFootPerHour] -->|Symbol| N0180(("lbf/100ft²/h")) 
+	N0178[PoundPer100SquareFootPerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0181[KilopoundPerSquareInchPerHour] -->|BelongsToClass| N0006(Unit) 
+	N0181[KilopoundPerSquareInchPerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0181[KilopoundPerSquareInchPerHour] -->|ConversionFactorB| N0182(("0.0005221358558287532")) 
+	N0181[KilopoundPerSquareInchPerHour] -->|Symbol| N0183(("ksi/h")) 
+	N0181[KilopoundPerSquareInchPerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0184[StandardAtmospherePerHour] -->|BelongsToClass| N0006(Unit) 
+	N0184[StandardAtmospherePerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0184[StandardAtmospherePerHour] -->|ConversionFactorB| N0185(("0.03552923760177646")) 
+	N0184[StandardAtmospherePerHour] -->|Symbol| N0186(("atm/h")) 
+	N0184[StandardAtmospherePerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0187[PoundPerSquareFootPerHour] -->|BelongsToClass| N0006(Unit) 
+	N0187[PoundPerSquareFootPerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0187[PoundPerSquareFootPerHour] -->|ConversionFactorB| N0188(("75.18756323934043")) 
+	N0187[PoundPerSquareFootPerHour] -->|Symbol| N0189(("lb/ft²/h")) 
+	N0187[PoundPerSquareFootPerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0190[MegapascalPerHour] -->|BelongsToClass| N0006(Unit) 
+	N0190[MegapascalPerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0190[MegapascalPerHour] -->|ConversionFactorB| N0191(("0.0036")) 
+	N0190[MegapascalPerHour] -->|Symbol| N0192(("MPa/h")) 
+	N0190[MegapascalPerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0193[GigapascalPerHour] -->|BelongsToClass| N0006(Unit) 
+	N0193[GigapascalPerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0193[GigapascalPerHour] -->|ConversionFactorB| N0194(("3.6E-06")) 
+	N0193[GigapascalPerHour] -->|Symbol| N0195(("GPa/h")) 
+	N0193[GigapascalPerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0196[NewtonPerSquareMetrePerHour] -->|BelongsToClass| N0006(Unit) 
+	N0196[NewtonPerSquareMetrePerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0196[NewtonPerSquareMetrePerHour] -->|ConversionFactorB| N0161(("3600")) 
+	N0196[NewtonPerSquareMetrePerHour] -->|Symbol| N0197(("N/m²/h")) 
+	N0196[NewtonPerSquareMetrePerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0198[NewtonPerSquareCentimetrePerHour] -->|BelongsToClass| N0006(Unit) 
+	N0198[NewtonPerSquareCentimetrePerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0198[NewtonPerSquareCentimetrePerHour] -->|ConversionFactorB| N0199(("0.36")) 
+	N0198[NewtonPerSquareCentimetrePerHour] -->|Symbol| N0200(("N/cm²/h")) 
+	N0198[NewtonPerSquareCentimetrePerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0201[NewtonPerSquareMillimetrePerHour] -->|BelongsToClass| N0006(Unit) 
+	N0201[NewtonPerSquareMillimetrePerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0201[NewtonPerSquareMillimetrePerHour] -->|ConversionFactorB| N0202(("0.0036000000000000003")) 
+	N0201[NewtonPerSquareMillimetrePerHour] -->|Symbol| N0203(("N/mm²/h")) 
+	N0201[NewtonPerSquareMillimetrePerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0204[KilonewtonPerSquareMetrePerHour] -->|BelongsToClass| N0006(Unit) 
+	N0204[KilonewtonPerSquareMetrePerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0204[KilonewtonPerSquareMetrePerHour] -->|ConversionFactorB| N0164(("3.6")) 
+	N0204[KilonewtonPerSquareMetrePerHour] -->|Symbol| N0205(("kN/m²/h")) 
+	N0204[KilonewtonPerSquareMetrePerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0206[MegapoundPerSquareInchPerHour] -->|BelongsToClass| N0006(Unit) 
+	N0206[MegapoundPerSquareInchPerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0206[MegapoundPerSquareInchPerHour] -->|ConversionFactorB| N0207(("5.221358558287532E-07")) 
+	N0206[MegapoundPerSquareInchPerHour] -->|Symbol| N0208(("Mpsi/h")) 
+	N0206[MegapoundPerSquareInchPerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0209[TorrPerHour] -->|BelongsToClass| N0006(Unit) 
+	N0209[TorrPerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0209[TorrPerHour] -->|ConversionFactorB| N0210(("27.002220577350112")) 
+	N0209[TorrPerHour] -->|Symbol| N0211(("Torr/h")) 
+	N0209[TorrPerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0212[CentimetreMercuryAtZeroDegreeCelsiusPerHour] -->|BelongsToClass| N0006(Unit) 
+	N0212[CentimetreMercuryAtZeroDegreeCelsiusPerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0212[CentimetreMercuryAtZeroDegreeCelsiusPerHour] -->|ConversionFactorB| N0213(("2.700221673044363")) 
+	N0212[CentimetreMercuryAtZeroDegreeCelsiusPerHour] -->|Symbol| N0214(("cm Hg 0°C/h")) 
+	N0212[CentimetreMercuryAtZeroDegreeCelsiusPerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0215[MillimetreMercuryAtZeroDegreeCelsiusPerHour] -->|BelongsToClass| N0006(Unit) 
+	N0215[MillimetreMercuryAtZeroDegreeCelsiusPerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0215[MillimetreMercuryAtZeroDegreeCelsiusPerHour] -->|ConversionFactorB| N0216(("27.002216730443628")) 
+	N0215[MillimetreMercuryAtZeroDegreeCelsiusPerHour] -->|Symbol| N0217(("mm Hg 0°C/h")) 
+	N0215[MillimetreMercuryAtZeroDegreeCelsiusPerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0218[InchMercuryAt32DegreeFahrenheitPerHour] -->|BelongsToClass| N0006(Unit) 
+	N0218[InchMercuryAt32DegreeFahrenheitPerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0218[InchMercuryAt32DegreeFahrenheitPerHour] -->|ConversionFactorB| N0219(("12191000.400000002")) 
+	N0218[InchMercuryAt32DegreeFahrenheitPerHour] -->|Symbol| N0220(("in Hg 32°F/h")) 
+	N0218[InchMercuryAt32DegreeFahrenheitPerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0221[InchMercuryAt60DegreeFahrenheitPerHour] -->|BelongsToClass| N0006(Unit) 
+	N0221[InchMercuryAt60DegreeFahrenheitPerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0221[InchMercuryAt60DegreeFahrenheitPerHour] -->|ConversionFactorB| N0222(("12156660")) 
+	N0221[InchMercuryAt60DegreeFahrenheitPerHour] -->|Symbol| N0223(("in Hg 60°F/h")) 
+	N0221[InchMercuryAt60DegreeFahrenheitPerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0224[CentimetreWaterAt4DegreeCelsiusPerHour] -->|BelongsToClass| N0006(Unit) 
+	N0224[CentimetreWaterAt4DegreeCelsiusPerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0224[CentimetreWaterAt4DegreeCelsiusPerHour] -->|ConversionFactorB| N0225(("36.37594539566419")) 
+	N0224[CentimetreWaterAt4DegreeCelsiusPerHour] -->|Symbol| N0226(("cm Aq 4°C/h")) 
+	N0224[CentimetreWaterAt4DegreeCelsiusPerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0227[MillimetreWaterAt4DegreeCelsiusPerHour] -->|BelongsToClass| N0006(Unit) 
+	N0227[MillimetreWaterAt4DegreeCelsiusPerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0227[MillimetreWaterAt4DegreeCelsiusPerHour] -->|ConversionFactorB| N0228(("363.75945395664195")) 
+	N0227[MillimetreWaterAt4DegreeCelsiusPerHour] -->|Symbol| N0229(("mm Aq 4°C/h")) 
+	N0227[MillimetreWaterAt4DegreeCelsiusPerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0230[InchWaterAt4DegreeCelsiusPerHour] -->|BelongsToClass| N0006(Unit) 
+	N0230[InchWaterAt4DegreeCelsiusPerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0230[InchWaterAt4DegreeCelsiusPerHour] -->|ConversionFactorB| N0231(("14.453071679206046")) 
+	N0230[InchWaterAt4DegreeCelsiusPerHour] -->|Symbol| N0232(("in Aq 4°C/h")) 
+	N0230[InchWaterAt4DegreeCelsiusPerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0233[FootWaterAt4DegreeCelsiusPerHour] -->|BelongsToClass| N0006(Unit) 
+	N0233[FootWaterAt4DegreeCelsiusPerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0233[FootWaterAt4DegreeCelsiusPerHour] -->|ConversionFactorB| N0234(("1.2043891956921675")) 
+	N0233[FootWaterAt4DegreeCelsiusPerHour] -->|Symbol| N0235(("ft Aq 4°C/h")) 
+	N0233[FootWaterAt4DegreeCelsiusPerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+	N0236[DynePerSquareCentimetrePerHour] -->|BelongsToClass| N0006(Unit) 
+	N0236[DynePerSquareCentimetrePerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0236[DynePerSquareCentimetrePerHour] -->|ConversionFactorB| N0237(("35999.99999999999")) 
+	N0236[DynePerSquareCentimetrePerHour] -->|Symbol| N0238(("dyne/cm²/h")) 
+	N0236[DynePerSquareCentimetrePerHour] -->|IsUnitForQuantity| N0000[PressureRateOfChangeQuantity] 
+```
+## TorqueRateOfChangeQuantity <!-- NOUN -->
+- Display name: TorqueRateOfChange
+- Parent class: [Quantity](./Quantities.md#Quantity)
+- Specialization:
+  - L = 2
+  - M = 1
+  - T = -3
+- Description: 
+A torque rate of change is the time derivative of a torque.
+The dimension of torque rate of change is:
+$$[L^{2}MT^{-3}]$$.
+The SI unit for **torque** is: newton metre per second with the associated unit label $\frac{N \cdot m}{s}$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:TorqueRateOfChangeQuantity
+TorqueRateOfChangeQuantity.L = 2
+TorqueRateOfChangeQuantity.M = 1
+TorqueRateOfChangeQuantity.T = -3
+Unit:NewtonMetrePerSecond
+NewtonMetrePerSecond.ConversionFactorA = 0
+NewtonMetrePerSecond.ConversionFactorB = 1
+NewtonMetrePerSecond.Symbol = "N•m/s"
+NewtonMetrePerSecond IsUnitForQuantity TorqueRateOfChangeQuantity
+TorqueRateOfChangeQuantity HasSIUnit NewtonMetrePerSecond
+Unit:DecanewtonMetrePerSecond
+DecanewtonMetrePerSecond.ConversionFactorA = 0
+DecanewtonMetrePerSecond.ConversionFactorB = 0.1
+DecanewtonMetrePerSecond.Symbol = "daN•m/s"
+DecanewtonMetrePerSecond IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:KilogramForceMetrePerSecond
+KilogramForceMetrePerSecond.ConversionFactorA = 0
+KilogramForceMetrePerSecond.ConversionFactorB = 0.10197162129779283
+KilogramForceMetrePerSecond.Symbol = "kgf•m/s"
+KilogramForceMetrePerSecond IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:KilonewtonMetrePerSecond
+KilonewtonMetrePerSecond.ConversionFactorA = 0
+KilonewtonMetrePerSecond.ConversionFactorB = 0.001
+KilonewtonMetrePerSecond.Symbol = "kN•m/s"
+KilonewtonMetrePerSecond IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:FootPoundPerSecond
+FootPoundPerSecond.ConversionFactorA = 0
+FootPoundPerSecond.ConversionFactorB = 0.7375621492772655
+FootPoundPerSecond.Symbol = "ft•lbf/s"
+FootPoundPerSecond IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:KilofootPoundPerSecond
+KilofootPoundPerSecond.ConversionFactorA = 0
+KilofootPoundPerSecond.ConversionFactorB = 0.0007375621492772656
+KilofootPoundPerSecond.Symbol = "kft•lbf/s"
+KilofootPoundPerSecond IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:NewtonDecimetrePerSecond
+NewtonDecimetrePerSecond.ConversionFactorA = 0
+NewtonDecimetrePerSecond.ConversionFactorB = 10
+NewtonDecimetrePerSecond.Symbol = "N•dm/s"
+NewtonDecimetrePerSecond IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:NewtonCentimetrePerSecond
+NewtonCentimetrePerSecond.ConversionFactorA = 0
+NewtonCentimetrePerSecond.ConversionFactorB = 100
+NewtonCentimetrePerSecond.Symbol = "N•cm/s"
+NewtonCentimetrePerSecond IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:NewtonMillimetrePerSecond
+NewtonMillimetrePerSecond.ConversionFactorA = 0
+NewtonMillimetrePerSecond.ConversionFactorB = 1000
+NewtonMillimetrePerSecond.Symbol = "N•mm/s"
+NewtonMillimetrePerSecond IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:InchPoundPerSecond
+InchPoundPerSecond.ConversionFactorA = 0
+InchPoundPerSecond.ConversionFactorB = 8.850745791327185
+InchPoundPerSecond.Symbol = "in•lbf/s"
+InchPoundPerSecond IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:NewtonMetrePerMinute
+NewtonMetrePerMinute.ConversionFactorA = 0
+NewtonMetrePerMinute.ConversionFactorB = 60
+NewtonMetrePerMinute.Symbol = "N•m/min"
+NewtonMetrePerMinute IsUnitForQuantity TorqueRateOfChangeQuantity
+TorqueRateOfChangeQuantity HasSIUnit NewtonMetrePerMinute
+Unit:DecanewtonMetrePerMinute
+DecanewtonMetrePerMinute.ConversionFactorA = 0
+DecanewtonMetrePerMinute.ConversionFactorB = 6
+DecanewtonMetrePerMinute.Symbol = "daN•m/min"
+DecanewtonMetrePerMinute IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:KilogramForceMetrePerMinute
+KilogramForceMetrePerMinute.ConversionFactorA = 0
+KilogramForceMetrePerMinute.ConversionFactorB = 6.11829727786757
+KilogramForceMetrePerMinute.Symbol = "kgf•m/min"
+KilogramForceMetrePerMinute IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:KilonewtonMetrePerMinute
+KilonewtonMetrePerMinute.ConversionFactorA = 0
+KilonewtonMetrePerMinute.ConversionFactorB = 0.06
+KilonewtonMetrePerMinute.Symbol = "kN•m/min"
+KilonewtonMetrePerMinute IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:FootPoundPerMinute
+FootPoundPerMinute.ConversionFactorA = 0
+FootPoundPerMinute.ConversionFactorB = 44.25372895663593
+FootPoundPerMinute.Symbol = "ft•lbf/min"
+FootPoundPerMinute IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:KilofootPoundPerMinute
+KilofootPoundPerMinute.ConversionFactorA = 0
+KilofootPoundPerMinute.ConversionFactorB = 0.044253728956635936
+KilofootPoundPerMinute.Symbol = "kft•lbf/min"
+KilofootPoundPerMinute IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:NewtonDecimetrePerMinute
+NewtonDecimetrePerMinute.ConversionFactorA = 0
+NewtonDecimetrePerMinute.ConversionFactorB = 600
+NewtonDecimetrePerMinute.Symbol = "N•dm/min"
+NewtonDecimetrePerMinute IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:NewtonCentimetrePerMinute
+NewtonCentimetrePerMinute.ConversionFactorA = 0
+NewtonCentimetrePerMinute.ConversionFactorB = 6000
+NewtonCentimetrePerMinute.Symbol = "N•cm/min"
+NewtonCentimetrePerMinute IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:NewtonMillimetrePerMinute
+NewtonMillimetrePerMinute.ConversionFactorA = 0
+NewtonMillimetrePerMinute.ConversionFactorB = 60000
+NewtonMillimetrePerMinute.Symbol = "N•mm/min"
+NewtonMillimetrePerMinute IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:InchPoundPerMinute
+InchPoundPerMinute.ConversionFactorA = 0
+InchPoundPerMinute.ConversionFactorB = 531.0447474796312
+InchPoundPerMinute.Symbol = "in•lbf/min"
+InchPoundPerMinute IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:NewtonMetrePerHour
+NewtonMetrePerHour.ConversionFactorA = 0
+NewtonMetrePerHour.ConversionFactorB = 3600
+NewtonMetrePerHour.Symbol = "N•m/h"
+NewtonMetrePerHour IsUnitForQuantity TorqueRateOfChangeQuantity
+TorqueRateOfChangeQuantity HasSIUnit NewtonMetrePerHour
+Unit:DecanewtonMetrePerHour
+DecanewtonMetrePerHour.ConversionFactorA = 0
+DecanewtonMetrePerHour.ConversionFactorB = 360
+DecanewtonMetrePerHour.Symbol = "daN•m/h"
+DecanewtonMetrePerHour IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:KilogramForceMetrePerHour
+KilogramForceMetrePerHour.ConversionFactorA = 0
+KilogramForceMetrePerHour.ConversionFactorB = 367.0978366720542
+KilogramForceMetrePerHour.Symbol = "kgf•m/h"
+KilogramForceMetrePerHour IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:KilonewtonMetrePerHour
+KilonewtonMetrePerHour.ConversionFactorA = 0
+KilonewtonMetrePerHour.ConversionFactorB = 3.6
+KilonewtonMetrePerHour.Symbol = "kN•m/h"
+KilonewtonMetrePerHour IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:FootPoundPerHour
+FootPoundPerHour.ConversionFactorA = 0
+FootPoundPerHour.ConversionFactorB = 2655.2237373981557
+FootPoundPerHour.Symbol = "ft•lbf/h"
+FootPoundPerHour IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:KilofootPoundPerHour
+KilofootPoundPerHour.ConversionFactorA = 0
+KilofootPoundPerHour.ConversionFactorB = 2.655223737398156
+KilofootPoundPerHour.Symbol = "kft•lbf/h"
+KilofootPoundPerHour IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:NewtonDecimetrePerHour
+NewtonDecimetrePerHour.ConversionFactorA = 0
+NewtonDecimetrePerHour.ConversionFactorB = 36000
+NewtonDecimetrePerHour.Symbol = "N•dm/h"
+NewtonDecimetrePerHour IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:NewtonCentimetrePerHour
+NewtonCentimetrePerHour.ConversionFactorA = 0
+NewtonCentimetrePerHour.ConversionFactorB = 360000
+NewtonCentimetrePerHour.Symbol = "N•cm/h"
+NewtonCentimetrePerHour IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:NewtonMillimetrePerHour
+NewtonMillimetrePerHour.ConversionFactorA = 0
+NewtonMillimetrePerHour.ConversionFactorB = 3600000
+NewtonMillimetrePerHour.Symbol = "N•mm/h"
+NewtonMillimetrePerHour IsUnitForQuantity TorqueRateOfChangeQuantity
+Unit:InchPoundPerHour
+InchPoundPerHour.ConversionFactorA = 0
+InchPoundPerHour.ConversionFactorB = 31862.68484877787
+InchPoundPerHour.Symbol = "in•lbf/h"
+InchPoundPerHour IsUnitForQuantity TorqueRateOfChangeQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[TorqueRateOfChangeQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[TorqueRateOfChangeQuantity] -->|L| N0002(("2")) 
+	N0000[TorqueRateOfChangeQuantity] -->|M| N0003(("1")) 
+	N0000[TorqueRateOfChangeQuantity] -->|T| N0004(("-3")) 
+	N0005[NewtonMetrePerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0005[NewtonMetrePerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0005[NewtonMetrePerSecond] -->|ConversionFactorB| N0003(("1")) 
+	N0005[NewtonMetrePerSecond] -->|Symbol| N0008(("N•m/s")) 
+	N0005[NewtonMetrePerSecond] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0000[TorqueRateOfChangeQuantity] -->|HasSIUnit| N0005[NewtonMetrePerSecond] 
+	N0009[DecanewtonMetrePerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0009[DecanewtonMetrePerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0009[DecanewtonMetrePerSecond] -->|ConversionFactorB| N0010(("0.1")) 
+	N0009[DecanewtonMetrePerSecond] -->|Symbol| N0011(("daN•m/s")) 
+	N0009[DecanewtonMetrePerSecond] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0012[KilogramForceMetrePerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0012[KilogramForceMetrePerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0012[KilogramForceMetrePerSecond] -->|ConversionFactorB| N0013(("0.10197162129779283")) 
+	N0012[KilogramForceMetrePerSecond] -->|Symbol| N0014(("kgf•m/s")) 
+	N0012[KilogramForceMetrePerSecond] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0015[KilonewtonMetrePerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0015[KilonewtonMetrePerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0015[KilonewtonMetrePerSecond] -->|ConversionFactorB| N0016(("0.001")) 
+	N0015[KilonewtonMetrePerSecond] -->|Symbol| N0017(("kN•m/s")) 
+	N0015[KilonewtonMetrePerSecond] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0018[FootPoundPerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0018[FootPoundPerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0018[FootPoundPerSecond] -->|ConversionFactorB| N0019(("0.7375621492772655")) 
+	N0018[FootPoundPerSecond] -->|Symbol| N0020(("ft•lbf/s")) 
+	N0018[FootPoundPerSecond] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0021[KilofootPoundPerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0021[KilofootPoundPerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0021[KilofootPoundPerSecond] -->|ConversionFactorB| N0022(("0.0007375621492772656")) 
+	N0021[KilofootPoundPerSecond] -->|Symbol| N0023(("kft•lbf/s")) 
+	N0021[KilofootPoundPerSecond] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0024[NewtonDecimetrePerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0024[NewtonDecimetrePerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0024[NewtonDecimetrePerSecond] -->|ConversionFactorB| N0025(("10")) 
+	N0024[NewtonDecimetrePerSecond] -->|Symbol| N0026(("N•dm/s")) 
+	N0024[NewtonDecimetrePerSecond] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0027[NewtonCentimetrePerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0027[NewtonCentimetrePerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0027[NewtonCentimetrePerSecond] -->|ConversionFactorB| N0028(("100")) 
+	N0027[NewtonCentimetrePerSecond] -->|Symbol| N0029(("N•cm/s")) 
+	N0027[NewtonCentimetrePerSecond] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0030[NewtonMillimetrePerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0030[NewtonMillimetrePerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0030[NewtonMillimetrePerSecond] -->|ConversionFactorB| N0031(("1000")) 
+	N0030[NewtonMillimetrePerSecond] -->|Symbol| N0032(("N•mm/s")) 
+	N0030[NewtonMillimetrePerSecond] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0033[InchPoundPerSecond] -->|BelongsToClass| N0006(Unit) 
+	N0033[InchPoundPerSecond] -->|ConversionFactorA| N0007(("0")) 
+	N0033[InchPoundPerSecond] -->|ConversionFactorB| N0034(("8.850745791327185")) 
+	N0033[InchPoundPerSecond] -->|Symbol| N0035(("in•lbf/s")) 
+	N0033[InchPoundPerSecond] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0036[NewtonMetrePerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0036[NewtonMetrePerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0036[NewtonMetrePerMinute] -->|ConversionFactorB| N0037(("60")) 
+	N0036[NewtonMetrePerMinute] -->|Symbol| N0038(("N•m/min")) 
+	N0036[NewtonMetrePerMinute] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0000[TorqueRateOfChangeQuantity] -->|HasSIUnit| N0036[NewtonMetrePerMinute] 
+	N0039[DecanewtonMetrePerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0039[DecanewtonMetrePerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0039[DecanewtonMetrePerMinute] -->|ConversionFactorB| N0040(("6")) 
+	N0039[DecanewtonMetrePerMinute] -->|Symbol| N0041(("daN•m/min")) 
+	N0039[DecanewtonMetrePerMinute] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0042[KilogramForceMetrePerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0042[KilogramForceMetrePerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0042[KilogramForceMetrePerMinute] -->|ConversionFactorB| N0043(("6.11829727786757")) 
+	N0042[KilogramForceMetrePerMinute] -->|Symbol| N0044(("kgf•m/min")) 
+	N0042[KilogramForceMetrePerMinute] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0045[KilonewtonMetrePerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0045[KilonewtonMetrePerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0045[KilonewtonMetrePerMinute] -->|ConversionFactorB| N0046(("0.06")) 
+	N0045[KilonewtonMetrePerMinute] -->|Symbol| N0047(("kN•m/min")) 
+	N0045[KilonewtonMetrePerMinute] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0048[FootPoundPerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0048[FootPoundPerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0048[FootPoundPerMinute] -->|ConversionFactorB| N0049(("44.25372895663593")) 
+	N0048[FootPoundPerMinute] -->|Symbol| N0050(("ft•lbf/min")) 
+	N0048[FootPoundPerMinute] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0051[KilofootPoundPerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0051[KilofootPoundPerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0051[KilofootPoundPerMinute] -->|ConversionFactorB| N0052(("0.044253728956635936")) 
+	N0051[KilofootPoundPerMinute] -->|Symbol| N0053(("kft•lbf/min")) 
+	N0051[KilofootPoundPerMinute] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0054[NewtonDecimetrePerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0054[NewtonDecimetrePerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0054[NewtonDecimetrePerMinute] -->|ConversionFactorB| N0055(("600")) 
+	N0054[NewtonDecimetrePerMinute] -->|Symbol| N0056(("N•dm/min")) 
+	N0054[NewtonDecimetrePerMinute] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0057[NewtonCentimetrePerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0057[NewtonCentimetrePerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0057[NewtonCentimetrePerMinute] -->|ConversionFactorB| N0058(("6000")) 
+	N0057[NewtonCentimetrePerMinute] -->|Symbol| N0059(("N•cm/min")) 
+	N0057[NewtonCentimetrePerMinute] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0060[NewtonMillimetrePerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0060[NewtonMillimetrePerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0060[NewtonMillimetrePerMinute] -->|ConversionFactorB| N0061(("60000")) 
+	N0060[NewtonMillimetrePerMinute] -->|Symbol| N0062(("N•mm/min")) 
+	N0060[NewtonMillimetrePerMinute] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0063[InchPoundPerMinute] -->|BelongsToClass| N0006(Unit) 
+	N0063[InchPoundPerMinute] -->|ConversionFactorA| N0007(("0")) 
+	N0063[InchPoundPerMinute] -->|ConversionFactorB| N0064(("531.0447474796312")) 
+	N0063[InchPoundPerMinute] -->|Symbol| N0065(("in•lbf/min")) 
+	N0063[InchPoundPerMinute] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0066[NewtonMetrePerHour] -->|BelongsToClass| N0006(Unit) 
+	N0066[NewtonMetrePerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0066[NewtonMetrePerHour] -->|ConversionFactorB| N0067(("3600")) 
+	N0066[NewtonMetrePerHour] -->|Symbol| N0068(("N•m/h")) 
+	N0066[NewtonMetrePerHour] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0000[TorqueRateOfChangeQuantity] -->|HasSIUnit| N0066[NewtonMetrePerHour] 
+	N0069[DecanewtonMetrePerHour] -->|BelongsToClass| N0006(Unit) 
+	N0069[DecanewtonMetrePerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0069[DecanewtonMetrePerHour] -->|ConversionFactorB| N0070(("360")) 
+	N0069[DecanewtonMetrePerHour] -->|Symbol| N0071(("daN•m/h")) 
+	N0069[DecanewtonMetrePerHour] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0072[KilogramForceMetrePerHour] -->|BelongsToClass| N0006(Unit) 
+	N0072[KilogramForceMetrePerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0072[KilogramForceMetrePerHour] -->|ConversionFactorB| N0073(("367.0978366720542")) 
+	N0072[KilogramForceMetrePerHour] -->|Symbol| N0074(("kgf•m/h")) 
+	N0072[KilogramForceMetrePerHour] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0075[KilonewtonMetrePerHour] -->|BelongsToClass| N0006(Unit) 
+	N0075[KilonewtonMetrePerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0075[KilonewtonMetrePerHour] -->|ConversionFactorB| N0076(("3.6")) 
+	N0075[KilonewtonMetrePerHour] -->|Symbol| N0077(("kN•m/h")) 
+	N0075[KilonewtonMetrePerHour] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0078[FootPoundPerHour] -->|BelongsToClass| N0006(Unit) 
+	N0078[FootPoundPerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0078[FootPoundPerHour] -->|ConversionFactorB| N0079(("2655.2237373981557")) 
+	N0078[FootPoundPerHour] -->|Symbol| N0080(("ft•lbf/h")) 
+	N0078[FootPoundPerHour] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0081[KilofootPoundPerHour] -->|BelongsToClass| N0006(Unit) 
+	N0081[KilofootPoundPerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0081[KilofootPoundPerHour] -->|ConversionFactorB| N0082(("2.655223737398156")) 
+	N0081[KilofootPoundPerHour] -->|Symbol| N0083(("kft•lbf/h")) 
+	N0081[KilofootPoundPerHour] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0084[NewtonDecimetrePerHour] -->|BelongsToClass| N0006(Unit) 
+	N0084[NewtonDecimetrePerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0084[NewtonDecimetrePerHour] -->|ConversionFactorB| N0085(("36000")) 
+	N0084[NewtonDecimetrePerHour] -->|Symbol| N0086(("N•dm/h")) 
+	N0084[NewtonDecimetrePerHour] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0087[NewtonCentimetrePerHour] -->|BelongsToClass| N0006(Unit) 
+	N0087[NewtonCentimetrePerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0087[NewtonCentimetrePerHour] -->|ConversionFactorB| N0088(("360000")) 
+	N0087[NewtonCentimetrePerHour] -->|Symbol| N0089(("N•cm/h")) 
+	N0087[NewtonCentimetrePerHour] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0090[NewtonMillimetrePerHour] -->|BelongsToClass| N0006(Unit) 
+	N0090[NewtonMillimetrePerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0090[NewtonMillimetrePerHour] -->|ConversionFactorB| N0091(("3600000")) 
+	N0090[NewtonMillimetrePerHour] -->|Symbol| N0092(("N•mm/h")) 
+	N0090[NewtonMillimetrePerHour] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
+	N0093[InchPoundPerHour] -->|BelongsToClass| N0006(Unit) 
+	N0093[InchPoundPerHour] -->|ConversionFactorA| N0007(("0")) 
+	N0093[InchPoundPerHour] -->|ConversionFactorB| N0094(("31862.68484877787")) 
+	N0093[InchPoundPerHour] -->|Symbol| N0095(("in•lbf/h")) 
+	N0093[InchPoundPerHour] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
 ```
 ## GravitationalLoadQuantity <!-- NOUN -->
 - Display name: GravitationalLoad

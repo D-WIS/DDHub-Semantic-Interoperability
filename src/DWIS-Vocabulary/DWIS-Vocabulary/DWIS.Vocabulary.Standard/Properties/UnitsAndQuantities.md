@@ -5059,6 +5059,705 @@
 - megaBritishThermalUnit.ConversionFactorB = 9.48451652677005E-10
 - megaBritishThermalUnit.Symbol = mMBTU
 - megaBritishThermalUnit IsUnitForQuantity energy
+- ForceRateOfChangeQuantity:forceRateOfChange
+- forceRateOfChange.L = 1
+- forceRateOfChange.M = 1
+- forceRateOfChange.T = -3
+- forceRateOfChange.I = 0
+- forceRateOfChange.ThT = 0
+- forceRateOfChange.N = 0
+- forceRateOfChange.J = 0
+- forceRateOfChange.Theta = 0
+- forceRateOfChange.Omega = 0
+- NewtonPerSecond:newtonPerSecond
+- newtonPerSecond.ConversionFactorA = 0
+- newtonPerSecond.ConversionFactorB = 1
+- newtonPerSecond.Symbol = nPers
+- newtonPerSecond IsUnitForQuantity forceRateOfChange
+- forceRateOfChange HasSIUnit newtonPerSecond
+- DecanewtonPerSecond:decanewtonPerSecond
+- decanewtonPerSecond.ConversionFactorA = 0
+- decanewtonPerSecond.ConversionFactorB = 0.1
+- decanewtonPerSecond.Symbol = daNPers
+- decanewtonPerSecond IsUnitForQuantity forceRateOfChange
+- KilonewtonPerSecond:kilonewtonPerSecond
+- kilonewtonPerSecond.ConversionFactorA = 0
+- kilonewtonPerSecond.ConversionFactorB = 0.001
+- kilonewtonPerSecond.Symbol = kNPers
+- kilonewtonPerSecond IsUnitForQuantity forceRateOfChange
+- KilodecanewtonPerSecond:kilodecanewtonPerSecond
+- kilodecanewtonPerSecond.ConversionFactorA = 0
+- kilodecanewtonPerSecond.ConversionFactorB = 0.0001
+- kilodecanewtonPerSecond.Symbol = kdaNPers
+- kilodecanewtonPerSecond IsUnitForQuantity forceRateOfChange
+- KilogramForcePerSecond:kilogramForcePerSecond
+- kilogramForcePerSecond.ConversionFactorA = 0
+- kilogramForcePerSecond.ConversionFactorB = 0.10197162129779283
+- kilogramForcePerSecond.Symbol = kgfPers
+- kilogramForcePerSecond IsUnitForQuantity forceRateOfChange
+- PoundForcePerSecond:poundForcePerSecond
+- poundForcePerSecond.ConversionFactorA = 0
+- poundForcePerSecond.ConversionFactorB = 0.2248089430997105
+- poundForcePerSecond.Symbol = lbfPers
+- poundForcePerSecond IsUnitForQuantity forceRateOfChange
+- KilopoundForcePerSecond:kilopoundForcePerSecond
+- kilopoundForcePerSecond.ConversionFactorA = 0
+- kilopoundForcePerSecond.ConversionFactorB = 0.0002248089430997105
+- kilopoundForcePerSecond.Symbol = klbfPers
+- kilopoundForcePerSecond IsUnitForQuantity forceRateOfChange
+- NewtonPerMinute:newtonPerMinute
+- newtonPerMinute.ConversionFactorA = 0
+- newtonPerMinute.ConversionFactorB = 60
+- newtonPerMinute.Symbol = nPermin
+- newtonPerMinute IsUnitForQuantity forceRateOfChange
+- forceRateOfChange HasSIUnit newtonPerMinute
+- DecanewtonPerMinute:decanewtonPerMinute
+- decanewtonPerMinute.ConversionFactorA = 0
+- decanewtonPerMinute.ConversionFactorB = 6
+- decanewtonPerMinute.Symbol = daNPermin
+- decanewtonPerMinute IsUnitForQuantity forceRateOfChange
+- KilonewtonPerMinute:kilonewtonPerMinute
+- kilonewtonPerMinute.ConversionFactorA = 0
+- kilonewtonPerMinute.ConversionFactorB = 0.06
+- kilonewtonPerMinute.Symbol = kNPermin
+- kilonewtonPerMinute IsUnitForQuantity forceRateOfChange
+- KilodecanewtonPerMinute:kilodecanewtonPerMinute
+- kilodecanewtonPerMinute.ConversionFactorA = 0
+- kilodecanewtonPerMinute.ConversionFactorB = 0.006
+- kilodecanewtonPerMinute.Symbol = kdaNPermin
+- kilodecanewtonPerMinute IsUnitForQuantity forceRateOfChange
+- KilogramForcePerMinute:kilogramForcePerMinute
+- kilogramForcePerMinute.ConversionFactorA = 0
+- kilogramForcePerMinute.ConversionFactorB = 6.11829727786757
+- kilogramForcePerMinute.Symbol = kgfPermin
+- kilogramForcePerMinute IsUnitForQuantity forceRateOfChange
+- PoundForcePerMinute:poundForcePerMinute
+- poundForcePerMinute.ConversionFactorA = 0
+- poundForcePerMinute.ConversionFactorB = 13.48853658598263
+- poundForcePerMinute.Symbol = lbfPermin
+- poundForcePerMinute IsUnitForQuantity forceRateOfChange
+- KilopoundForcePerMinute:kilopoundForcePerMinute
+- kilopoundForcePerMinute.ConversionFactorA = 0
+- kilopoundForcePerMinute.ConversionFactorB = 0.01348853658598263
+- kilopoundForcePerMinute.Symbol = klbfPermin
+- kilopoundForcePerMinute IsUnitForQuantity forceRateOfChange
+- NewtonPerHour:newtonPerHour
+- newtonPerHour.ConversionFactorA = 0
+- newtonPerHour.ConversionFactorB = 3600
+- newtonPerHour.Symbol = nPerh
+- newtonPerHour IsUnitForQuantity forceRateOfChange
+- forceRateOfChange HasSIUnit newtonPerHour
+- DecanewtonPerHour:decanewtonPerHour
+- decanewtonPerHour.ConversionFactorA = 0
+- decanewtonPerHour.ConversionFactorB = 360
+- decanewtonPerHour.Symbol = daNPerh
+- decanewtonPerHour IsUnitForQuantity forceRateOfChange
+- KilonewtonPerHour:kilonewtonPerHour
+- kilonewtonPerHour.ConversionFactorA = 0
+- kilonewtonPerHour.ConversionFactorB = 3.6
+- kilonewtonPerHour.Symbol = kNPerh
+- kilonewtonPerHour IsUnitForQuantity forceRateOfChange
+- KilodecanewtonPerHour:kilodecanewtonPerHour
+- kilodecanewtonPerHour.ConversionFactorA = 0
+- kilodecanewtonPerHour.ConversionFactorB = 0.36
+- kilodecanewtonPerHour.Symbol = kdaNPerh
+- kilodecanewtonPerHour IsUnitForQuantity forceRateOfChange
+- KilogramForcePerHour:kilogramForcePerHour
+- kilogramForcePerHour.ConversionFactorA = 0
+- kilogramForcePerHour.ConversionFactorB = 367.0978366720542
+- kilogramForcePerHour.Symbol = kgfPerh
+- kilogramForcePerHour IsUnitForQuantity forceRateOfChange
+- PoundForcePerHour:poundForcePerHour
+- poundForcePerHour.ConversionFactorA = 0
+- poundForcePerHour.ConversionFactorB = 809.3121951589578
+- poundForcePerHour.Symbol = lbfPerh
+- poundForcePerHour IsUnitForQuantity forceRateOfChange
+- KilopoundForcePerHour:kilopoundForcePerHour
+- kilopoundForcePerHour.ConversionFactorA = 0
+- kilopoundForcePerHour.ConversionFactorB = 0.8093121951589578
+- kilopoundForcePerHour.Symbol = klbfPerh
+- kilopoundForcePerHour IsUnitForQuantity forceRateOfChange
+- PressureRateOfChangeQuantity:pressureRateOfChange
+- pressureRateOfChange.L = -1
+- pressureRateOfChange.M = 1
+- pressureRateOfChange.T = -3
+- pressureRateOfChange.I = 0
+- pressureRateOfChange.ThT = 0
+- pressureRateOfChange.N = 0
+- pressureRateOfChange.J = 0
+- pressureRateOfChange.Theta = 0
+- pressureRateOfChange.Omega = 0
+- PascalPerSecond:pascalPerSecond
+- pascalPerSecond.ConversionFactorA = 0
+- pascalPerSecond.ConversionFactorB = 1
+- pascalPerSecond.Symbol = paPers
+- pascalPerSecond IsUnitForQuantity pressureRateOfChange
+- pressureRateOfChange HasSIUnit pascalPerSecond
+- KilopascalPerSecond:kilopascalPerSecond
+- kilopascalPerSecond.ConversionFactorA = 0
+- kilopascalPerSecond.ConversionFactorB = 0.001
+- kilopascalPerSecond.Symbol = kPaPers
+- kilopascalPerSecond IsUnitForQuantity pressureRateOfChange
+- BarPerSecond:barPerSecond
+- barPerSecond.ConversionFactorA = 0
+- barPerSecond.ConversionFactorB = 1E-05
+- barPerSecond.Symbol = barPers
+- barPerSecond IsUnitForQuantity pressureRateOfChange
+- MillibarPerSecond:millibarPerSecond
+- millibarPerSecond.ConversionFactorA = 0
+- millibarPerSecond.ConversionFactorB = 0.01
+- millibarPerSecond.Symbol = mbarPers
+- millibarPerSecond IsUnitForQuantity pressureRateOfChange
+- MicrobarPerSecond:microbarPerSecond
+- microbarPerSecond.ConversionFactorA = 0
+- microbarPerSecond.ConversionFactorB = 10
+- microbarPerSecond.Symbol = mubarPers
+- microbarPerSecond IsUnitForQuantity pressureRateOfChange
+- PoundPerSquareInchPerSecond:poundPerSquareInchPerSecond
+- poundPerSquareInchPerSecond.ConversionFactorA = 0
+- poundPerSquareInchPerSecond.ConversionFactorB = 0.00014503773773020924
+- poundPerSquareInchPerSecond.Symbol = psiPers
+- poundPerSquareInchPerSecond IsUnitForQuantity pressureRateOfChange
+- PoundPer100SquareFootPerSecond:poundPer100SquareFootPerSecond
+- poundPer100SquareFootPerSecond.ConversionFactorA = 0
+- poundPer100SquareFootPerSecond.ConversionFactorB = 2.0885434233150124
+- poundPer100SquareFootPerSecond.Symbol = lbfPer100ftsquarePers
+- poundPer100SquareFootPerSecond IsUnitForQuantity pressureRateOfChange
+- KilopoundPerSquareInchPerSecond:kilopoundPerSquareInchPerSecond
+- kilopoundPerSquareInchPerSecond.ConversionFactorA = 0
+- kilopoundPerSquareInchPerSecond.ConversionFactorB = 1.4503773773020924E-07
+- kilopoundPerSquareInchPerSecond.Symbol = ksiPers
+- kilopoundPerSquareInchPerSecond IsUnitForQuantity pressureRateOfChange
+- StandardAtmospherePerSecond:standardAtmospherePerSecond
+- standardAtmospherePerSecond.ConversionFactorA = 0
+- standardAtmospherePerSecond.ConversionFactorB = 9.869232667160129E-06
+- standardAtmospherePerSecond.Symbol = atmPers
+- standardAtmospherePerSecond IsUnitForQuantity pressureRateOfChange
+- PoundPerSquareFootPerSecond:poundPerSquareFootPerSecond
+- poundPerSquareFootPerSecond.ConversionFactorA = 0
+- poundPerSquareFootPerSecond.ConversionFactorB = 0.020885434233150126
+- poundPerSquareFootPerSecond.Symbol = lbPerftsquarePers
+- poundPerSquareFootPerSecond IsUnitForQuantity pressureRateOfChange
+- MegapascalPerSecond:megapascalPerSecond
+- megapascalPerSecond.ConversionFactorA = 0
+- megapascalPerSecond.ConversionFactorB = 1E-06
+- megapascalPerSecond.Symbol = mPaPers
+- megapascalPerSecond IsUnitForQuantity pressureRateOfChange
+- GigapascalPerSecond:gigapascalPerSecond
+- gigapascalPerSecond.ConversionFactorA = 0
+- gigapascalPerSecond.ConversionFactorB = 1E-09
+- gigapascalPerSecond.Symbol = gPaPers
+- gigapascalPerSecond IsUnitForQuantity pressureRateOfChange
+- NewtonPerSquareMetrePerSecond:newtonPerSquareMetrePerSecond
+- newtonPerSquareMetrePerSecond.ConversionFactorA = 0
+- newtonPerSquareMetrePerSecond.ConversionFactorB = 1
+- newtonPerSquareMetrePerSecond.Symbol = nPermsquarePers
+- newtonPerSquareMetrePerSecond IsUnitForQuantity pressureRateOfChange
+- NewtonPerSquareCentimetrePerSecond:newtonPerSquareCentimetrePerSecond
+- newtonPerSquareCentimetrePerSecond.ConversionFactorA = 0
+- newtonPerSquareCentimetrePerSecond.ConversionFactorB = 0.0001
+- newtonPerSquareCentimetrePerSecond.Symbol = nPercmsquarePers
+- newtonPerSquareCentimetrePerSecond IsUnitForQuantity pressureRateOfChange
+- NewtonPerSquareMillimetrePerSecond:newtonPerSquareMillimetrePerSecond
+- newtonPerSquareMillimetrePerSecond.ConversionFactorA = 0
+- newtonPerSquareMillimetrePerSecond.ConversionFactorB = 1E-06
+- newtonPerSquareMillimetrePerSecond.Symbol = nPermmsquarePers
+- newtonPerSquareMillimetrePerSecond IsUnitForQuantity pressureRateOfChange
+- KilonewtonPerSquareMetrePerSecond:kilonewtonPerSquareMetrePerSecond
+- kilonewtonPerSquareMetrePerSecond.ConversionFactorA = 0
+- kilonewtonPerSquareMetrePerSecond.ConversionFactorB = 0.001
+- kilonewtonPerSquareMetrePerSecond.Symbol = kNPermsquarePers
+- kilonewtonPerSquareMetrePerSecond IsUnitForQuantity pressureRateOfChange
+- MegapoundPerSquareInchPerSecond:megapoundPerSquareInchPerSecond
+- megapoundPerSquareInchPerSecond.ConversionFactorA = 0
+- megapoundPerSquareInchPerSecond.ConversionFactorB = 1.4503773773020922E-10
+- megapoundPerSquareInchPerSecond.Symbol = mpsiPers
+- megapoundPerSquareInchPerSecond IsUnitForQuantity pressureRateOfChange
+- TorrPerSecond:torrPerSecond
+- torrPerSecond.ConversionFactorA = 0
+- torrPerSecond.ConversionFactorB = 0.007500616827041697
+- torrPerSecond.Symbol = torrPers
+- torrPerSecond IsUnitForQuantity pressureRateOfChange
+- CentimetreMercuryAtZeroDegreeCelsiusPerSecond:centimetreMercuryAtZeroDegreeCelsiusPerSecond
+- centimetreMercuryAtZeroDegreeCelsiusPerSecond.ConversionFactorA = 0
+- centimetreMercuryAtZeroDegreeCelsiusPerSecond.ConversionFactorB = 0.0007500615758456563
+- centimetreMercuryAtZeroDegreeCelsiusPerSecond.Symbol = cmHg0degCPers
+- centimetreMercuryAtZeroDegreeCelsiusPerSecond IsUnitForQuantity pressureRateOfChange
+- MillimetreMercuryAtZeroDegreeCelsiusPerSecond:millimetreMercuryAtZeroDegreeCelsiusPerSecond
+- millimetreMercuryAtZeroDegreeCelsiusPerSecond.ConversionFactorA = 0
+- millimetreMercuryAtZeroDegreeCelsiusPerSecond.ConversionFactorB = 0.007500615758456563
+- millimetreMercuryAtZeroDegreeCelsiusPerSecond.Symbol = mmHg0degCPers
+- millimetreMercuryAtZeroDegreeCelsiusPerSecond IsUnitForQuantity pressureRateOfChange
+- InchMercuryAt32DegreeFahrenheitPerSecond:inchMercuryAt32DegreeFahrenheitPerSecond
+- inchMercuryAt32DegreeFahrenheitPerSecond.ConversionFactorA = 0
+- inchMercuryAt32DegreeFahrenheitPerSecond.ConversionFactorB = 3386.3890000000006
+- inchMercuryAt32DegreeFahrenheitPerSecond.Symbol = inHg32degFPers
+- inchMercuryAt32DegreeFahrenheitPerSecond IsUnitForQuantity pressureRateOfChange
+- InchMercuryAt60DegreeFahrenheitPerSecond:inchMercuryAt60DegreeFahrenheitPerSecond
+- inchMercuryAt60DegreeFahrenheitPerSecond.ConversionFactorA = 0
+- inchMercuryAt60DegreeFahrenheitPerSecond.ConversionFactorB = 3376.85
+- inchMercuryAt60DegreeFahrenheitPerSecond.Symbol = inHg60degFPers
+- inchMercuryAt60DegreeFahrenheitPerSecond IsUnitForQuantity pressureRateOfChange
+- CentimetreWaterAt4DegreeCelsiusPerSecond:centimetreWaterAt4DegreeCelsiusPerSecond
+- centimetreWaterAt4DegreeCelsiusPerSecond.ConversionFactorA = 0
+- centimetreWaterAt4DegreeCelsiusPerSecond.ConversionFactorB = 0.010104429276573386
+- centimetreWaterAt4DegreeCelsiusPerSecond.Symbol = cmAq4degCPers
+- centimetreWaterAt4DegreeCelsiusPerSecond IsUnitForQuantity pressureRateOfChange
+- MillimetreWaterAt4DegreeCelsiusPerSecond:millimetreWaterAt4DegreeCelsiusPerSecond
+- millimetreWaterAt4DegreeCelsiusPerSecond.ConversionFactorA = 0
+- millimetreWaterAt4DegreeCelsiusPerSecond.ConversionFactorB = 0.10104429276573387
+- millimetreWaterAt4DegreeCelsiusPerSecond.Symbol = mmAq4degCPers
+- millimetreWaterAt4DegreeCelsiusPerSecond IsUnitForQuantity pressureRateOfChange
+- InchWaterAt4DegreeCelsiusPerSecond:inchWaterAt4DegreeCelsiusPerSecond
+- inchWaterAt4DegreeCelsiusPerSecond.ConversionFactorA = 0
+- inchWaterAt4DegreeCelsiusPerSecond.ConversionFactorB = 0.00401474213311279
+- inchWaterAt4DegreeCelsiusPerSecond.Symbol = inAq4degCPers
+- inchWaterAt4DegreeCelsiusPerSecond IsUnitForQuantity pressureRateOfChange
+- FootWaterAt4DegreeCelsiusPerSecond:footWaterAt4DegreeCelsiusPerSecond
+- footWaterAt4DegreeCelsiusPerSecond.ConversionFactorA = 0
+- footWaterAt4DegreeCelsiusPerSecond.ConversionFactorB = 0.0003345525543589354
+- footWaterAt4DegreeCelsiusPerSecond.Symbol = ftAq4degCPers
+- footWaterAt4DegreeCelsiusPerSecond IsUnitForQuantity pressureRateOfChange
+- DynePerSquareCentimetrePerSecond:dynePerSquareCentimetrePerSecond
+- dynePerSquareCentimetrePerSecond.ConversionFactorA = 0
+- dynePerSquareCentimetrePerSecond.ConversionFactorB = 10
+- dynePerSquareCentimetrePerSecond.Symbol = dynePercmsquarePers
+- dynePerSquareCentimetrePerSecond IsUnitForQuantity pressureRateOfChange
+- PascalPerMinute:pascalPerMinute
+- pascalPerMinute.ConversionFactorA = 0
+- pascalPerMinute.ConversionFactorB = 60
+- pascalPerMinute.Symbol = paPermin
+- pascalPerMinute IsUnitForQuantity pressureRateOfChange
+- pressureRateOfChange HasSIUnit pascalPerMinute
+- KilopascalPerMinute:kilopascalPerMinute
+- kilopascalPerMinute.ConversionFactorA = 0
+- kilopascalPerMinute.ConversionFactorB = 0.06
+- kilopascalPerMinute.Symbol = kPaPermin
+- kilopascalPerMinute IsUnitForQuantity pressureRateOfChange
+- BarPerMinute:barPerMinute
+- barPerMinute.ConversionFactorA = 0
+- barPerMinute.ConversionFactorB = 0.0006
+- barPerMinute.Symbol = barPermin
+- barPerMinute IsUnitForQuantity pressureRateOfChange
+- MillibarPerMinute:millibarPerMinute
+- millibarPerMinute.ConversionFactorA = 0
+- millibarPerMinute.ConversionFactorB = 0.6
+- millibarPerMinute.Symbol = mbarPermin
+- millibarPerMinute IsUnitForQuantity pressureRateOfChange
+- MicrobarPerMinute:microbarPerMinute
+- microbarPerMinute.ConversionFactorA = 0
+- microbarPerMinute.ConversionFactorB = 600
+- microbarPerMinute.Symbol = mubarPermin
+- microbarPerMinute IsUnitForQuantity pressureRateOfChange
+- PoundPerSquareInchPerMinute:poundPerSquareInchPerMinute
+- poundPerSquareInchPerMinute.ConversionFactorA = 0
+- poundPerSquareInchPerMinute.ConversionFactorB = 0.008702264263812553
+- poundPerSquareInchPerMinute.Symbol = psiPermin
+- poundPerSquareInchPerMinute IsUnitForQuantity pressureRateOfChange
+- PoundPer100SquareFootPerMinute:poundPer100SquareFootPerMinute
+- poundPer100SquareFootPerMinute.ConversionFactorA = 0
+- poundPer100SquareFootPerMinute.ConversionFactorB = 125.31260539890074
+- poundPer100SquareFootPerMinute.Symbol = lbfPer100ftsquarePermin
+- poundPer100SquareFootPerMinute IsUnitForQuantity pressureRateOfChange
+- KilopoundPerSquareInchPerMinute:kilopoundPerSquareInchPerMinute
+- kilopoundPerSquareInchPerMinute.ConversionFactorA = 0
+- kilopoundPerSquareInchPerMinute.ConversionFactorB = 8.702264263812555E-06
+- kilopoundPerSquareInchPerMinute.Symbol = ksiPermin
+- kilopoundPerSquareInchPerMinute IsUnitForQuantity pressureRateOfChange
+- StandardAtmospherePerMinute:standardAtmospherePerMinute
+- standardAtmospherePerMinute.ConversionFactorA = 0
+- standardAtmospherePerMinute.ConversionFactorB = 0.0005921539600296077
+- standardAtmospherePerMinute.Symbol = atmPermin
+- standardAtmospherePerMinute IsUnitForQuantity pressureRateOfChange
+- PoundPerSquareFootPerMinute:poundPerSquareFootPerMinute
+- poundPerSquareFootPerMinute.ConversionFactorA = 0
+- poundPerSquareFootPerMinute.ConversionFactorB = 1.2531260539890072
+- poundPerSquareFootPerMinute.Symbol = lbPerftsquarePermin
+- poundPerSquareFootPerMinute IsUnitForQuantity pressureRateOfChange
+- MegapascalPerMinute:megapascalPerMinute
+- megapascalPerMinute.ConversionFactorA = 0
+- megapascalPerMinute.ConversionFactorB = 6E-05
+- megapascalPerMinute.Symbol = mPaPermin
+- megapascalPerMinute IsUnitForQuantity pressureRateOfChange
+- GigapascalPerMinute:gigapascalPerMinute
+- gigapascalPerMinute.ConversionFactorA = 0
+- gigapascalPerMinute.ConversionFactorB = 6E-08
+- gigapascalPerMinute.Symbol = gPaPermin
+- gigapascalPerMinute IsUnitForQuantity pressureRateOfChange
+- NewtonPerSquareMetrePerMinute:newtonPerSquareMetrePerMinute
+- newtonPerSquareMetrePerMinute.ConversionFactorA = 0
+- newtonPerSquareMetrePerMinute.ConversionFactorB = 60
+- newtonPerSquareMetrePerMinute.Symbol = nPermsquarePermin
+- newtonPerSquareMetrePerMinute IsUnitForQuantity pressureRateOfChange
+- NewtonPerSquareCentimetrePerMinute:newtonPerSquareCentimetrePerMinute
+- newtonPerSquareCentimetrePerMinute.ConversionFactorA = 0
+- newtonPerSquareCentimetrePerMinute.ConversionFactorB = 0.006
+- newtonPerSquareCentimetrePerMinute.Symbol = nPercmsquarePermin
+- newtonPerSquareCentimetrePerMinute IsUnitForQuantity pressureRateOfChange
+- NewtonPerSquareMillimetrePerMinute:newtonPerSquareMillimetrePerMinute
+- newtonPerSquareMillimetrePerMinute.ConversionFactorA = 0
+- newtonPerSquareMillimetrePerMinute.ConversionFactorB = 6E-05
+- newtonPerSquareMillimetrePerMinute.Symbol = nPermmsquarePermin
+- newtonPerSquareMillimetrePerMinute IsUnitForQuantity pressureRateOfChange
+- KilonewtonPerSquareMetrePerMinute:kilonewtonPerSquareMetrePerMinute
+- kilonewtonPerSquareMetrePerMinute.ConversionFactorA = 0
+- kilonewtonPerSquareMetrePerMinute.ConversionFactorB = 0.06
+- kilonewtonPerSquareMetrePerMinute.Symbol = kNPermsquarePermin
+- kilonewtonPerSquareMetrePerMinute IsUnitForQuantity pressureRateOfChange
+- MegapoundPerSquareInchPerMinute:megapoundPerSquareInchPerMinute
+- megapoundPerSquareInchPerMinute.ConversionFactorA = 0
+- megapoundPerSquareInchPerMinute.ConversionFactorB = 8.702264263812553E-09
+- megapoundPerSquareInchPerMinute.Symbol = mpsiPermin
+- megapoundPerSquareInchPerMinute IsUnitForQuantity pressureRateOfChange
+- TorrPerMinute:torrPerMinute
+- torrPerMinute.ConversionFactorA = 0
+- torrPerMinute.ConversionFactorB = 0.45003700962250187
+- torrPerMinute.Symbol = torrPermin
+- torrPerMinute IsUnitForQuantity pressureRateOfChange
+- CentimetreMercuryAtZeroDegreeCelsiusPerMinute:centimetreMercuryAtZeroDegreeCelsiusPerMinute
+- centimetreMercuryAtZeroDegreeCelsiusPerMinute.ConversionFactorA = 0
+- centimetreMercuryAtZeroDegreeCelsiusPerMinute.ConversionFactorB = 0.04500369455073938
+- centimetreMercuryAtZeroDegreeCelsiusPerMinute.Symbol = cmHg0degCPermin
+- centimetreMercuryAtZeroDegreeCelsiusPerMinute IsUnitForQuantity pressureRateOfChange
+- MillimetreMercuryAtZeroDegreeCelsiusPerMinute:millimetreMercuryAtZeroDegreeCelsiusPerMinute
+- millimetreMercuryAtZeroDegreeCelsiusPerMinute.ConversionFactorA = 0
+- millimetreMercuryAtZeroDegreeCelsiusPerMinute.ConversionFactorB = 0.45003694550739376
+- millimetreMercuryAtZeroDegreeCelsiusPerMinute.Symbol = mmHg0degCPermin
+- millimetreMercuryAtZeroDegreeCelsiusPerMinute IsUnitForQuantity pressureRateOfChange
+- InchMercuryAt32DegreeFahrenheitPerMinute:inchMercuryAt32DegreeFahrenheitPerMinute
+- inchMercuryAt32DegreeFahrenheitPerMinute.ConversionFactorA = 0
+- inchMercuryAt32DegreeFahrenheitPerMinute.ConversionFactorB = 203183.34000000003
+- inchMercuryAt32DegreeFahrenheitPerMinute.Symbol = inHg32degFPermin
+- inchMercuryAt32DegreeFahrenheitPerMinute IsUnitForQuantity pressureRateOfChange
+- InchMercuryAt60DegreeFahrenheitPerMinute:inchMercuryAt60DegreeFahrenheitPerMinute
+- inchMercuryAt60DegreeFahrenheitPerMinute.ConversionFactorA = 0
+- inchMercuryAt60DegreeFahrenheitPerMinute.ConversionFactorB = 202611
+- inchMercuryAt60DegreeFahrenheitPerMinute.Symbol = inHg60degFPermin
+- inchMercuryAt60DegreeFahrenheitPerMinute IsUnitForQuantity pressureRateOfChange
+- CentimetreWaterAt4DegreeCelsiusPerMinute:centimetreWaterAt4DegreeCelsiusPerMinute
+- centimetreWaterAt4DegreeCelsiusPerMinute.ConversionFactorA = 0
+- centimetreWaterAt4DegreeCelsiusPerMinute.ConversionFactorB = 0.6062657565944032
+- centimetreWaterAt4DegreeCelsiusPerMinute.Symbol = cmAq4degCPermin
+- centimetreWaterAt4DegreeCelsiusPerMinute IsUnitForQuantity pressureRateOfChange
+- MillimetreWaterAt4DegreeCelsiusPerMinute:millimetreWaterAt4DegreeCelsiusPerMinute
+- millimetreWaterAt4DegreeCelsiusPerMinute.ConversionFactorA = 0
+- millimetreWaterAt4DegreeCelsiusPerMinute.ConversionFactorB = 6.062657565944032
+- millimetreWaterAt4DegreeCelsiusPerMinute.Symbol = mmAq4degCPermin
+- millimetreWaterAt4DegreeCelsiusPerMinute IsUnitForQuantity pressureRateOfChange
+- InchWaterAt4DegreeCelsiusPerMinute:inchWaterAt4DegreeCelsiusPerMinute
+- inchWaterAt4DegreeCelsiusPerMinute.ConversionFactorA = 0
+- inchWaterAt4DegreeCelsiusPerMinute.ConversionFactorB = 0.2408845279867674
+- inchWaterAt4DegreeCelsiusPerMinute.Symbol = inAq4degCPermin
+- inchWaterAt4DegreeCelsiusPerMinute IsUnitForQuantity pressureRateOfChange
+- FootWaterAt4DegreeCelsiusPerMinute:footWaterAt4DegreeCelsiusPerMinute
+- footWaterAt4DegreeCelsiusPerMinute.ConversionFactorA = 0
+- footWaterAt4DegreeCelsiusPerMinute.ConversionFactorB = 0.020073153261536126
+- footWaterAt4DegreeCelsiusPerMinute.Symbol = ftAq4degCPermin
+- footWaterAt4DegreeCelsiusPerMinute IsUnitForQuantity pressureRateOfChange
+- DynePerSquareCentimetrePerMinute:dynePerSquareCentimetrePerMinute
+- dynePerSquareCentimetrePerMinute.ConversionFactorA = 0
+- dynePerSquareCentimetrePerMinute.ConversionFactorB = 600
+- dynePerSquareCentimetrePerMinute.Symbol = dynePercmsquarePermin
+- dynePerSquareCentimetrePerMinute IsUnitForQuantity pressureRateOfChange
+- PascalPerHour:pascalPerHour
+- pascalPerHour.ConversionFactorA = 0
+- pascalPerHour.ConversionFactorB = 3600
+- pascalPerHour.Symbol = paPerh
+- pascalPerHour IsUnitForQuantity pressureRateOfChange
+- pressureRateOfChange HasSIUnit pascalPerHour
+- KilopascalPerHour:kilopascalPerHour
+- kilopascalPerHour.ConversionFactorA = 0
+- kilopascalPerHour.ConversionFactorB = 3.6
+- kilopascalPerHour.Symbol = kPaPerh
+- kilopascalPerHour IsUnitForQuantity pressureRateOfChange
+- BarPerHour:barPerHour
+- barPerHour.ConversionFactorA = 0
+- barPerHour.ConversionFactorB = 0.036
+- barPerHour.Symbol = barPerh
+- barPerHour IsUnitForQuantity pressureRateOfChange
+- MillibarPerHour:millibarPerHour
+- millibarPerHour.ConversionFactorA = 0
+- millibarPerHour.ConversionFactorB = 36
+- millibarPerHour.Symbol = mbarPerh
+- millibarPerHour IsUnitForQuantity pressureRateOfChange
+- MicrobarPerHour:microbarPerHour
+- microbarPerHour.ConversionFactorA = 0
+- microbarPerHour.ConversionFactorB = 36000
+- microbarPerHour.Symbol = mubarPerh
+- microbarPerHour IsUnitForQuantity pressureRateOfChange
+- PoundPerSquareInchPerHour:poundPerSquareInchPerHour
+- poundPerSquareInchPerHour.ConversionFactorA = 0
+- poundPerSquareInchPerHour.ConversionFactorB = 0.5221358558287532
+- poundPerSquareInchPerHour.Symbol = psiPerh
+- poundPerSquareInchPerHour IsUnitForQuantity pressureRateOfChange
+- PoundPer100SquareFootPerHour:poundPer100SquareFootPerHour
+- poundPer100SquareFootPerHour.ConversionFactorA = 0
+- poundPer100SquareFootPerHour.ConversionFactorB = 7518.756323934045
+- poundPer100SquareFootPerHour.Symbol = lbfPer100ftsquarePerh
+- poundPer100SquareFootPerHour IsUnitForQuantity pressureRateOfChange
+- KilopoundPerSquareInchPerHour:kilopoundPerSquareInchPerHour
+- kilopoundPerSquareInchPerHour.ConversionFactorA = 0
+- kilopoundPerSquareInchPerHour.ConversionFactorB = 0.0005221358558287532
+- kilopoundPerSquareInchPerHour.Symbol = ksiPerh
+- kilopoundPerSquareInchPerHour IsUnitForQuantity pressureRateOfChange
+- StandardAtmospherePerHour:standardAtmospherePerHour
+- standardAtmospherePerHour.ConversionFactorA = 0
+- standardAtmospherePerHour.ConversionFactorB = 0.03552923760177646
+- standardAtmospherePerHour.Symbol = atmPerh
+- standardAtmospherePerHour IsUnitForQuantity pressureRateOfChange
+- PoundPerSquareFootPerHour:poundPerSquareFootPerHour
+- poundPerSquareFootPerHour.ConversionFactorA = 0
+- poundPerSquareFootPerHour.ConversionFactorB = 75.18756323934043
+- poundPerSquareFootPerHour.Symbol = lbPerftsquarePerh
+- poundPerSquareFootPerHour IsUnitForQuantity pressureRateOfChange
+- MegapascalPerHour:megapascalPerHour
+- megapascalPerHour.ConversionFactorA = 0
+- megapascalPerHour.ConversionFactorB = 0.0036
+- megapascalPerHour.Symbol = mPaPerh
+- megapascalPerHour IsUnitForQuantity pressureRateOfChange
+- GigapascalPerHour:gigapascalPerHour
+- gigapascalPerHour.ConversionFactorA = 0
+- gigapascalPerHour.ConversionFactorB = 3.6E-06
+- gigapascalPerHour.Symbol = gPaPerh
+- gigapascalPerHour IsUnitForQuantity pressureRateOfChange
+- NewtonPerSquareMetrePerHour:newtonPerSquareMetrePerHour
+- newtonPerSquareMetrePerHour.ConversionFactorA = 0
+- newtonPerSquareMetrePerHour.ConversionFactorB = 3600
+- newtonPerSquareMetrePerHour.Symbol = nPermsquarePerh
+- newtonPerSquareMetrePerHour IsUnitForQuantity pressureRateOfChange
+- NewtonPerSquareCentimetrePerHour:newtonPerSquareCentimetrePerHour
+- newtonPerSquareCentimetrePerHour.ConversionFactorA = 0
+- newtonPerSquareCentimetrePerHour.ConversionFactorB = 0.36
+- newtonPerSquareCentimetrePerHour.Symbol = nPercmsquarePerh
+- newtonPerSquareCentimetrePerHour IsUnitForQuantity pressureRateOfChange
+- NewtonPerSquareMillimetrePerHour:newtonPerSquareMillimetrePerHour
+- newtonPerSquareMillimetrePerHour.ConversionFactorA = 0
+- newtonPerSquareMillimetrePerHour.ConversionFactorB = 0.0036000000000000003
+- newtonPerSquareMillimetrePerHour.Symbol = nPermmsquarePerh
+- newtonPerSquareMillimetrePerHour IsUnitForQuantity pressureRateOfChange
+- KilonewtonPerSquareMetrePerHour:kilonewtonPerSquareMetrePerHour
+- kilonewtonPerSquareMetrePerHour.ConversionFactorA = 0
+- kilonewtonPerSquareMetrePerHour.ConversionFactorB = 3.6
+- kilonewtonPerSquareMetrePerHour.Symbol = kNPermsquarePerh
+- kilonewtonPerSquareMetrePerHour IsUnitForQuantity pressureRateOfChange
+- MegapoundPerSquareInchPerHour:megapoundPerSquareInchPerHour
+- megapoundPerSquareInchPerHour.ConversionFactorA = 0
+- megapoundPerSquareInchPerHour.ConversionFactorB = 5.221358558287532E-07
+- megapoundPerSquareInchPerHour.Symbol = mpsiPerh
+- megapoundPerSquareInchPerHour IsUnitForQuantity pressureRateOfChange
+- TorrPerHour:torrPerHour
+- torrPerHour.ConversionFactorA = 0
+- torrPerHour.ConversionFactorB = 27.002220577350112
+- torrPerHour.Symbol = torrPerh
+- torrPerHour IsUnitForQuantity pressureRateOfChange
+- CentimetreMercuryAtZeroDegreeCelsiusPerHour:centimetreMercuryAtZeroDegreeCelsiusPerHour
+- centimetreMercuryAtZeroDegreeCelsiusPerHour.ConversionFactorA = 0
+- centimetreMercuryAtZeroDegreeCelsiusPerHour.ConversionFactorB = 2.700221673044363
+- centimetreMercuryAtZeroDegreeCelsiusPerHour.Symbol = cmHg0degCPerh
+- centimetreMercuryAtZeroDegreeCelsiusPerHour IsUnitForQuantity pressureRateOfChange
+- MillimetreMercuryAtZeroDegreeCelsiusPerHour:millimetreMercuryAtZeroDegreeCelsiusPerHour
+- millimetreMercuryAtZeroDegreeCelsiusPerHour.ConversionFactorA = 0
+- millimetreMercuryAtZeroDegreeCelsiusPerHour.ConversionFactorB = 27.002216730443628
+- millimetreMercuryAtZeroDegreeCelsiusPerHour.Symbol = mmHg0degCPerh
+- millimetreMercuryAtZeroDegreeCelsiusPerHour IsUnitForQuantity pressureRateOfChange
+- InchMercuryAt32DegreeFahrenheitPerHour:inchMercuryAt32DegreeFahrenheitPerHour
+- inchMercuryAt32DegreeFahrenheitPerHour.ConversionFactorA = 0
+- inchMercuryAt32DegreeFahrenheitPerHour.ConversionFactorB = 12191000.400000002
+- inchMercuryAt32DegreeFahrenheitPerHour.Symbol = inHg32degFPerh
+- inchMercuryAt32DegreeFahrenheitPerHour IsUnitForQuantity pressureRateOfChange
+- InchMercuryAt60DegreeFahrenheitPerHour:inchMercuryAt60DegreeFahrenheitPerHour
+- inchMercuryAt60DegreeFahrenheitPerHour.ConversionFactorA = 0
+- inchMercuryAt60DegreeFahrenheitPerHour.ConversionFactorB = 12156660
+- inchMercuryAt60DegreeFahrenheitPerHour.Symbol = inHg60degFPerh
+- inchMercuryAt60DegreeFahrenheitPerHour IsUnitForQuantity pressureRateOfChange
+- CentimetreWaterAt4DegreeCelsiusPerHour:centimetreWaterAt4DegreeCelsiusPerHour
+- centimetreWaterAt4DegreeCelsiusPerHour.ConversionFactorA = 0
+- centimetreWaterAt4DegreeCelsiusPerHour.ConversionFactorB = 36.37594539566419
+- centimetreWaterAt4DegreeCelsiusPerHour.Symbol = cmAq4degCPerh
+- centimetreWaterAt4DegreeCelsiusPerHour IsUnitForQuantity pressureRateOfChange
+- MillimetreWaterAt4DegreeCelsiusPerHour:millimetreWaterAt4DegreeCelsiusPerHour
+- millimetreWaterAt4DegreeCelsiusPerHour.ConversionFactorA = 0
+- millimetreWaterAt4DegreeCelsiusPerHour.ConversionFactorB = 363.75945395664195
+- millimetreWaterAt4DegreeCelsiusPerHour.Symbol = mmAq4degCPerh
+- millimetreWaterAt4DegreeCelsiusPerHour IsUnitForQuantity pressureRateOfChange
+- InchWaterAt4DegreeCelsiusPerHour:inchWaterAt4DegreeCelsiusPerHour
+- inchWaterAt4DegreeCelsiusPerHour.ConversionFactorA = 0
+- inchWaterAt4DegreeCelsiusPerHour.ConversionFactorB = 14.453071679206046
+- inchWaterAt4DegreeCelsiusPerHour.Symbol = inAq4degCPerh
+- inchWaterAt4DegreeCelsiusPerHour IsUnitForQuantity pressureRateOfChange
+- FootWaterAt4DegreeCelsiusPerHour:footWaterAt4DegreeCelsiusPerHour
+- footWaterAt4DegreeCelsiusPerHour.ConversionFactorA = 0
+- footWaterAt4DegreeCelsiusPerHour.ConversionFactorB = 1.2043891956921675
+- footWaterAt4DegreeCelsiusPerHour.Symbol = ftAq4degCPerh
+- footWaterAt4DegreeCelsiusPerHour IsUnitForQuantity pressureRateOfChange
+- DynePerSquareCentimetrePerHour:dynePerSquareCentimetrePerHour
+- dynePerSquareCentimetrePerHour.ConversionFactorA = 0
+- dynePerSquareCentimetrePerHour.ConversionFactorB = 35999.99999999999
+- dynePerSquareCentimetrePerHour.Symbol = dynePercmsquarePerh
+- dynePerSquareCentimetrePerHour IsUnitForQuantity pressureRateOfChange
+- TorqueRateOfChangeQuantity:torqueRateOfChange
+- torqueRateOfChange.L = 2
+- torqueRateOfChange.M = 1
+- torqueRateOfChange.T = -3
+- torqueRateOfChange.I = 0
+- torqueRateOfChange.ThT = 0
+- torqueRateOfChange.N = 0
+- torqueRateOfChange.J = 0
+- torqueRateOfChange.Theta = 0
+- torqueRateOfChange.Omega = 0
+- NewtonMetrePerSecond:newtonMetrePerSecond
+- newtonMetrePerSecond.ConversionFactorA = 0
+- newtonMetrePerSecond.ConversionFactorB = 1
+- newtonMetrePerSecond.Symbol = n.mPers
+- newtonMetrePerSecond IsUnitForQuantity torqueRateOfChange
+- torqueRateOfChange HasSIUnit newtonMetrePerSecond
+- DecanewtonMetrePerSecond:decanewtonMetrePerSecond
+- decanewtonMetrePerSecond.ConversionFactorA = 0
+- decanewtonMetrePerSecond.ConversionFactorB = 0.1
+- decanewtonMetrePerSecond.Symbol = daN.mPers
+- decanewtonMetrePerSecond IsUnitForQuantity torqueRateOfChange
+- KilogramForceMetrePerSecond:kilogramForceMetrePerSecond
+- kilogramForceMetrePerSecond.ConversionFactorA = 0
+- kilogramForceMetrePerSecond.ConversionFactorB = 0.10197162129779283
+- kilogramForceMetrePerSecond.Symbol = kgf.mPers
+- kilogramForceMetrePerSecond IsUnitForQuantity torqueRateOfChange
+- KilonewtonMetrePerSecond:kilonewtonMetrePerSecond
+- kilonewtonMetrePerSecond.ConversionFactorA = 0
+- kilonewtonMetrePerSecond.ConversionFactorB = 0.001
+- kilonewtonMetrePerSecond.Symbol = kN.mPers
+- kilonewtonMetrePerSecond IsUnitForQuantity torqueRateOfChange
+- FootPoundPerSecond:footPoundPerSecond
+- footPoundPerSecond.ConversionFactorA = 0
+- footPoundPerSecond.ConversionFactorB = 0.7375621492772655
+- footPoundPerSecond.Symbol = ft.lbfPers
+- footPoundPerSecond IsUnitForQuantity torqueRateOfChange
+- KilofootPoundPerSecond:kilofootPoundPerSecond
+- kilofootPoundPerSecond.ConversionFactorA = 0
+- kilofootPoundPerSecond.ConversionFactorB = 0.0007375621492772656
+- kilofootPoundPerSecond.Symbol = kft.lbfPers
+- kilofootPoundPerSecond IsUnitForQuantity torqueRateOfChange
+- NewtonDecimetrePerSecond:newtonDecimetrePerSecond
+- newtonDecimetrePerSecond.ConversionFactorA = 0
+- newtonDecimetrePerSecond.ConversionFactorB = 10
+- newtonDecimetrePerSecond.Symbol = n.dmPers
+- newtonDecimetrePerSecond IsUnitForQuantity torqueRateOfChange
+- NewtonCentimetrePerSecond:newtonCentimetrePerSecond
+- newtonCentimetrePerSecond.ConversionFactorA = 0
+- newtonCentimetrePerSecond.ConversionFactorB = 100
+- newtonCentimetrePerSecond.Symbol = n.cmPers
+- newtonCentimetrePerSecond IsUnitForQuantity torqueRateOfChange
+- NewtonMillimetrePerSecond:newtonMillimetrePerSecond
+- newtonMillimetrePerSecond.ConversionFactorA = 0
+- newtonMillimetrePerSecond.ConversionFactorB = 1000
+- newtonMillimetrePerSecond.Symbol = n.mmPers
+- newtonMillimetrePerSecond IsUnitForQuantity torqueRateOfChange
+- InchPoundPerSecond:inchPoundPerSecond
+- inchPoundPerSecond.ConversionFactorA = 0
+- inchPoundPerSecond.ConversionFactorB = 8.850745791327185
+- inchPoundPerSecond.Symbol = in.lbfPers
+- inchPoundPerSecond IsUnitForQuantity torqueRateOfChange
+- NewtonMetrePerMinute:newtonMetrePerMinute
+- newtonMetrePerMinute.ConversionFactorA = 0
+- newtonMetrePerMinute.ConversionFactorB = 60
+- newtonMetrePerMinute.Symbol = n.mPermin
+- newtonMetrePerMinute IsUnitForQuantity torqueRateOfChange
+- torqueRateOfChange HasSIUnit newtonMetrePerMinute
+- DecanewtonMetrePerMinute:decanewtonMetrePerMinute
+- decanewtonMetrePerMinute.ConversionFactorA = 0
+- decanewtonMetrePerMinute.ConversionFactorB = 6
+- decanewtonMetrePerMinute.Symbol = daN.mPermin
+- decanewtonMetrePerMinute IsUnitForQuantity torqueRateOfChange
+- KilogramForceMetrePerMinute:kilogramForceMetrePerMinute
+- kilogramForceMetrePerMinute.ConversionFactorA = 0
+- kilogramForceMetrePerMinute.ConversionFactorB = 6.11829727786757
+- kilogramForceMetrePerMinute.Symbol = kgf.mPermin
+- kilogramForceMetrePerMinute IsUnitForQuantity torqueRateOfChange
+- KilonewtonMetrePerMinute:kilonewtonMetrePerMinute
+- kilonewtonMetrePerMinute.ConversionFactorA = 0
+- kilonewtonMetrePerMinute.ConversionFactorB = 0.06
+- kilonewtonMetrePerMinute.Symbol = kN.mPermin
+- kilonewtonMetrePerMinute IsUnitForQuantity torqueRateOfChange
+- FootPoundPerMinute:footPoundPerMinute
+- footPoundPerMinute.ConversionFactorA = 0
+- footPoundPerMinute.ConversionFactorB = 44.25372895663593
+- footPoundPerMinute.Symbol = ft.lbfPermin
+- footPoundPerMinute IsUnitForQuantity torqueRateOfChange
+- KilofootPoundPerMinute:kilofootPoundPerMinute
+- kilofootPoundPerMinute.ConversionFactorA = 0
+- kilofootPoundPerMinute.ConversionFactorB = 0.044253728956635936
+- kilofootPoundPerMinute.Symbol = kft.lbfPermin
+- kilofootPoundPerMinute IsUnitForQuantity torqueRateOfChange
+- NewtonDecimetrePerMinute:newtonDecimetrePerMinute
+- newtonDecimetrePerMinute.ConversionFactorA = 0
+- newtonDecimetrePerMinute.ConversionFactorB = 600
+- newtonDecimetrePerMinute.Symbol = n.dmPermin
+- newtonDecimetrePerMinute IsUnitForQuantity torqueRateOfChange
+- NewtonCentimetrePerMinute:newtonCentimetrePerMinute
+- newtonCentimetrePerMinute.ConversionFactorA = 0
+- newtonCentimetrePerMinute.ConversionFactorB = 6000
+- newtonCentimetrePerMinute.Symbol = n.cmPermin
+- newtonCentimetrePerMinute IsUnitForQuantity torqueRateOfChange
+- NewtonMillimetrePerMinute:newtonMillimetrePerMinute
+- newtonMillimetrePerMinute.ConversionFactorA = 0
+- newtonMillimetrePerMinute.ConversionFactorB = 60000
+- newtonMillimetrePerMinute.Symbol = n.mmPermin
+- newtonMillimetrePerMinute IsUnitForQuantity torqueRateOfChange
+- InchPoundPerMinute:inchPoundPerMinute
+- inchPoundPerMinute.ConversionFactorA = 0
+- inchPoundPerMinute.ConversionFactorB = 531.0447474796312
+- inchPoundPerMinute.Symbol = in.lbfPermin
+- inchPoundPerMinute IsUnitForQuantity torqueRateOfChange
+- NewtonMetrePerHour:newtonMetrePerHour
+- newtonMetrePerHour.ConversionFactorA = 0
+- newtonMetrePerHour.ConversionFactorB = 3600
+- newtonMetrePerHour.Symbol = n.mPerh
+- newtonMetrePerHour IsUnitForQuantity torqueRateOfChange
+- torqueRateOfChange HasSIUnit newtonMetrePerHour
+- DecanewtonMetrePerHour:decanewtonMetrePerHour
+- decanewtonMetrePerHour.ConversionFactorA = 0
+- decanewtonMetrePerHour.ConversionFactorB = 360
+- decanewtonMetrePerHour.Symbol = daN.mPerh
+- decanewtonMetrePerHour IsUnitForQuantity torqueRateOfChange
+- KilogramForceMetrePerHour:kilogramForceMetrePerHour
+- kilogramForceMetrePerHour.ConversionFactorA = 0
+- kilogramForceMetrePerHour.ConversionFactorB = 367.0978366720542
+- kilogramForceMetrePerHour.Symbol = kgf.mPerh
+- kilogramForceMetrePerHour IsUnitForQuantity torqueRateOfChange
+- KilonewtonMetrePerHour:kilonewtonMetrePerHour
+- kilonewtonMetrePerHour.ConversionFactorA = 0
+- kilonewtonMetrePerHour.ConversionFactorB = 3.6
+- kilonewtonMetrePerHour.Symbol = kN.mPerh
+- kilonewtonMetrePerHour IsUnitForQuantity torqueRateOfChange
+- FootPoundPerHour:footPoundPerHour
+- footPoundPerHour.ConversionFactorA = 0
+- footPoundPerHour.ConversionFactorB = 2655.2237373981557
+- footPoundPerHour.Symbol = ft.lbfPerh
+- footPoundPerHour IsUnitForQuantity torqueRateOfChange
+- KilofootPoundPerHour:kilofootPoundPerHour
+- kilofootPoundPerHour.ConversionFactorA = 0
+- kilofootPoundPerHour.ConversionFactorB = 2.655223737398156
+- kilofootPoundPerHour.Symbol = kft.lbfPerh
+- kilofootPoundPerHour IsUnitForQuantity torqueRateOfChange
+- NewtonDecimetrePerHour:newtonDecimetrePerHour
+- newtonDecimetrePerHour.ConversionFactorA = 0
+- newtonDecimetrePerHour.ConversionFactorB = 36000
+- newtonDecimetrePerHour.Symbol = n.dmPerh
+- newtonDecimetrePerHour IsUnitForQuantity torqueRateOfChange
+- NewtonCentimetrePerHour:newtonCentimetrePerHour
+- newtonCentimetrePerHour.ConversionFactorA = 0
+- newtonCentimetrePerHour.ConversionFactorB = 360000
+- newtonCentimetrePerHour.Symbol = n.cmPerh
+- newtonCentimetrePerHour IsUnitForQuantity torqueRateOfChange
+- NewtonMillimetrePerHour:newtonMillimetrePerHour
+- newtonMillimetrePerHour.ConversionFactorA = 0
+- newtonMillimetrePerHour.ConversionFactorB = 3600000
+- newtonMillimetrePerHour.Symbol = n.mmPerh
+- newtonMillimetrePerHour IsUnitForQuantity torqueRateOfChange
+- InchPoundPerHour:inchPoundPerHour
+- inchPoundPerHour.ConversionFactorA = 0
+- inchPoundPerHour.ConversionFactorB = 31862.68484877787
+- inchPoundPerHour.Symbol = in.lbfPerh
+- inchPoundPerHour IsUnitForQuantity torqueRateOfChange
 - DiameterSmallQuantity:diameterSmall
 - diameterSmall.L = 1
 - diameterSmall.M = 0
@@ -6043,3 +6742,12 @@
 - PorousMediumPermeabilityDrillingQuantity:porousMediumPermeabilityDrilling
 - porousMediumPermeabilityDrilling IsOfBaseQuantity area
 - porousMediumPermeabilityDrilling.MeaningfulPrecision = 1E-10
+- ForceRateOfChangeDrillingQuantity:forceRateOfChangeDrilling
+- forceRateOfChangeDrilling IsOfBaseQuantity forceRateOfChange
+- forceRateOfChangeDrilling.MeaningfulPrecision = 0.1
+- PressureRateOfChangeDrillingQuantity:pressureRateOfChangeDrilling
+- pressureRateOfChangeDrilling IsOfBaseQuantity pressureRateOfChange
+- pressureRateOfChangeDrilling.MeaningfulPrecision = 10000
+- TorqueRateOfChangeDrillingQuantity:torqueRateOfChangeDrilling
+- torqueRateOfChangeDrilling IsOfBaseQuantity power
+- torqueRateOfChangeDrilling.MeaningfulPrecision = 0.1

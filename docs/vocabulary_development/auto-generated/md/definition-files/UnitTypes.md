@@ -841,6 +841,138 @@ Unit <|-- Kilocalorie
 Unit <|-- BritishThermalUnit
 Unit <|-- KiloBritishThermalUnit
 Unit <|-- MegaBritishThermalUnit
+Unit <|-- NewtonPerSecond
+Unit <|-- DecanewtonPerSecond
+Unit <|-- KilonewtonPerSecond
+Unit <|-- KilodecanewtonPerSecond
+Unit <|-- KilogramForcePerSecond
+Unit <|-- PoundForcePerSecond
+Unit <|-- KilopoundForcePerSecond
+Unit <|-- NewtonPerMinute
+Unit <|-- DecanewtonPerMinute
+Unit <|-- KilonewtonPerMinute
+Unit <|-- KilodecanewtonPerMinute
+Unit <|-- KilogramForcePerMinute
+Unit <|-- PoundForcePerMinute
+Unit <|-- KilopoundForcePerMinute
+Unit <|-- NewtonPerHour
+Unit <|-- DecanewtonPerHour
+Unit <|-- KilonewtonPerHour
+Unit <|-- KilodecanewtonPerHour
+Unit <|-- KilogramForcePerHour
+Unit <|-- PoundForcePerHour
+Unit <|-- KilopoundForcePerHour
+Unit <|-- PascalPerSecond
+Unit <|-- KilopascalPerSecond
+Unit <|-- BarPerSecond
+Unit <|-- MillibarPerSecond
+Unit <|-- MicrobarPerSecond
+Unit <|-- PoundPerSquareInchPerSecond
+Unit <|-- PoundPer100SquareFootPerSecond
+Unit <|-- KilopoundPerSquareInchPerSecond
+Unit <|-- StandardAtmospherePerSecond
+Unit <|-- PoundPerSquareFootPerSecond
+Unit <|-- MegapascalPerSecond
+Unit <|-- GigapascalPerSecond
+Unit <|-- NewtonPerSquareMetrePerSecond
+Unit <|-- NewtonPerSquareCentimetrePerSecond
+Unit <|-- NewtonPerSquareMillimetrePerSecond
+Unit <|-- KilonewtonPerSquareMetrePerSecond
+Unit <|-- MegapoundPerSquareInchPerSecond
+Unit <|-- TorrPerSecond
+Unit <|-- CentimetreMercuryAtZeroDegreeCelsiusPerSecond
+Unit <|-- MillimetreMercuryAtZeroDegreeCelsiusPerSecond
+Unit <|-- InchMercuryAt32DegreeFahrenheitPerSecond
+Unit <|-- InchMercuryAt60DegreeFahrenheitPerSecond
+Unit <|-- CentimetreWaterAt4DegreeCelsiusPerSecond
+Unit <|-- MillimetreWaterAt4DegreeCelsiusPerSecond
+Unit <|-- InchWaterAt4DegreeCelsiusPerSecond
+Unit <|-- FootWaterAt4DegreeCelsiusPerSecond
+Unit <|-- DynePerSquareCentimetrePerSecond
+Unit <|-- PascalPerMinute
+Unit <|-- KilopascalPerMinute
+Unit <|-- BarPerMinute
+Unit <|-- MillibarPerMinute
+Unit <|-- MicrobarPerMinute
+Unit <|-- PoundPerSquareInchPerMinute
+Unit <|-- PoundPer100SquareFootPerMinute
+Unit <|-- KilopoundPerSquareInchPerMinute
+Unit <|-- StandardAtmospherePerMinute
+Unit <|-- PoundPerSquareFootPerMinute
+Unit <|-- MegapascalPerMinute
+Unit <|-- GigapascalPerMinute
+Unit <|-- NewtonPerSquareMetrePerMinute
+Unit <|-- NewtonPerSquareCentimetrePerMinute
+Unit <|-- NewtonPerSquareMillimetrePerMinute
+Unit <|-- KilonewtonPerSquareMetrePerMinute
+Unit <|-- MegapoundPerSquareInchPerMinute
+Unit <|-- TorrPerMinute
+Unit <|-- CentimetreMercuryAtZeroDegreeCelsiusPerMinute
+Unit <|-- MillimetreMercuryAtZeroDegreeCelsiusPerMinute
+Unit <|-- InchMercuryAt32DegreeFahrenheitPerMinute
+Unit <|-- InchMercuryAt60DegreeFahrenheitPerMinute
+Unit <|-- CentimetreWaterAt4DegreeCelsiusPerMinute
+Unit <|-- MillimetreWaterAt4DegreeCelsiusPerMinute
+Unit <|-- InchWaterAt4DegreeCelsiusPerMinute
+Unit <|-- FootWaterAt4DegreeCelsiusPerMinute
+Unit <|-- DynePerSquareCentimetrePerMinute
+Unit <|-- PascalPerHour
+Unit <|-- KilopascalPerHour
+Unit <|-- BarPerHour
+Unit <|-- MillibarPerHour
+Unit <|-- MicrobarPerHour
+Unit <|-- PoundPerSquareInchPerHour
+Unit <|-- PoundPer100SquareFootPerHour
+Unit <|-- KilopoundPerSquareInchPerHour
+Unit <|-- StandardAtmospherePerHour
+Unit <|-- PoundPerSquareFootPerHour
+Unit <|-- MegapascalPerHour
+Unit <|-- GigapascalPerHour
+Unit <|-- NewtonPerSquareMetrePerHour
+Unit <|-- NewtonPerSquareCentimetrePerHour
+Unit <|-- NewtonPerSquareMillimetrePerHour
+Unit <|-- KilonewtonPerSquareMetrePerHour
+Unit <|-- MegapoundPerSquareInchPerHour
+Unit <|-- TorrPerHour
+Unit <|-- CentimetreMercuryAtZeroDegreeCelsiusPerHour
+Unit <|-- MillimetreMercuryAtZeroDegreeCelsiusPerHour
+Unit <|-- InchMercuryAt32DegreeFahrenheitPerHour
+Unit <|-- InchMercuryAt60DegreeFahrenheitPerHour
+Unit <|-- CentimetreWaterAt4DegreeCelsiusPerHour
+Unit <|-- MillimetreWaterAt4DegreeCelsiusPerHour
+Unit <|-- InchWaterAt4DegreeCelsiusPerHour
+Unit <|-- FootWaterAt4DegreeCelsiusPerHour
+Unit <|-- DynePerSquareCentimetrePerHour
+Unit <|-- NewtonMetrePerSecond
+Unit <|-- DecanewtonMetrePerSecond
+Unit <|-- KilogramForceMetrePerSecond
+Unit <|-- KilonewtonMetrePerSecond
+Unit <|-- FootPoundPerSecond
+Unit <|-- KilofootPoundPerSecond
+Unit <|-- NewtonDecimetrePerSecond
+Unit <|-- NewtonCentimetrePerSecond
+Unit <|-- NewtonMillimetrePerSecond
+Unit <|-- InchPoundPerSecond
+Unit <|-- NewtonMetrePerMinute
+Unit <|-- DecanewtonMetrePerMinute
+Unit <|-- KilogramForceMetrePerMinute
+Unit <|-- KilonewtonMetrePerMinute
+Unit <|-- FootPoundPerMinute
+Unit <|-- KilofootPoundPerMinute
+Unit <|-- NewtonDecimetrePerMinute
+Unit <|-- NewtonCentimetrePerMinute
+Unit <|-- NewtonMillimetrePerMinute
+Unit <|-- InchPoundPerMinute
+Unit <|-- NewtonMetrePerHour
+Unit <|-- DecanewtonMetrePerHour
+Unit <|-- KilogramForceMetrePerHour
+Unit <|-- KilonewtonMetrePerHour
+Unit <|-- FootPoundPerHour
+Unit <|-- KilofootPoundPerHour
+Unit <|-- NewtonDecimetrePerHour
+Unit <|-- NewtonCentimetrePerHour
+Unit <|-- NewtonMillimetrePerHour
+Unit <|-- InchPoundPerHour
 ```
 ## MetrePerSecondSquared <!-- NOUN -->
 - Display name: metre per second squared
@@ -23851,5 +23983,3763 @@ graph LR
 	N0000[MegaBritishThermalUnit_1] -->|BelongsToClass| N0001(MegaBritishThermalUnit) 
 	N0000[MegaBritishThermalUnit_1] -->|ConversionFactorB| N0002(("9.48451652677005E-10")) 
 	N0000[MegaBritishThermalUnit_1] -->|Symbol| N0003(("MMBTU")) 
+```
+## NewtonPerSecond <!-- NOUN -->
+- Display name: newton per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonPerSecond:NewtonPerSecond_1
+NewtonPerSecond_1.Symbol = "N/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonPerSecond_1] -->|BelongsToClass| N0001(NewtonPerSecond) 
+	N0000[NewtonPerSecond_1] -->|Symbol| N0002(("N/s")) 
+```
+## DecanewtonPerSecond <!-- NOUN -->
+- Display name: decanewton per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.1
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in decanewton per second
+[SI] is the value in SI
+a = 1.0/(Deca), i.e., 0.1
+and
+Deca = 10.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+DecanewtonPerSecond:DecanewtonPerSecond_1
+DecanewtonPerSecond_1.ConversionFactorB = "0.1"
+DecanewtonPerSecond_1.Symbol = "daN/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[DecanewtonPerSecond_1] -->|BelongsToClass| N0001(DecanewtonPerSecond) 
+	N0000[DecanewtonPerSecond_1] -->|ConversionFactorB| N0002(("0.1")) 
+	N0000[DecanewtonPerSecond_1] -->|Symbol| N0003(("daN/s")) 
+```
+## KilonewtonPerSecond <!-- NOUN -->
+- Display name: kilonewton per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.001
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilonewton per second
+[SI] is the value in SI
+a = 1.0/Kilo, i.e., 0.001
+and
+Kilo = 1000.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilonewtonPerSecond:KilonewtonPerSecond_1
+KilonewtonPerSecond_1.ConversionFactorB = "0.001"
+KilonewtonPerSecond_1.Symbol = "kN/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilonewtonPerSecond_1] -->|BelongsToClass| N0001(KilonewtonPerSecond) 
+	N0000[KilonewtonPerSecond_1] -->|ConversionFactorB| N0002(("0.001")) 
+	N0000[KilonewtonPerSecond_1] -->|Symbol| N0003(("kN/s")) 
+```
+## KilodecanewtonPerSecond <!-- NOUN -->
+- Display name: kilodecanewton per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0001
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilodecanewton per second
+[SI] is the value in SI
+a = 1.0/(Kilo*Deca), i.e., 0.0001
+and
+Kilo = 1000.0
+Deca = 10.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilodecanewtonPerSecond:KilodecanewtonPerSecond_1
+KilodecanewtonPerSecond_1.ConversionFactorB = "0.0001"
+KilodecanewtonPerSecond_1.Symbol = "kdaN/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilodecanewtonPerSecond_1] -->|BelongsToClass| N0001(KilodecanewtonPerSecond) 
+	N0000[KilodecanewtonPerSecond_1] -->|ConversionFactorB| N0002(("0.0001")) 
+	N0000[KilodecanewtonPerSecond_1] -->|Symbol| N0003(("kdaN/s")) 
+```
+## KilogramForcePerSecond <!-- NOUN -->
+- Display name: kilogram force per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.10197162129779283
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram force per second
+[SI] is the value in SI
+a = 1.0/KilogramForce, i.e., 0.10197162129779283
+and
+KilogramForce = 1.0 * G reference: https://en.wikipedia.org/wiki/Kilogram-force
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramForcePerSecond:KilogramForcePerSecond_1
+KilogramForcePerSecond_1.ConversionFactorB = "0.10197162129779283"
+KilogramForcePerSecond_1.Symbol = "kgf/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramForcePerSecond_1] -->|BelongsToClass| N0001(KilogramForcePerSecond) 
+	N0000[KilogramForcePerSecond_1] -->|ConversionFactorB| N0002(("0.10197162129779283")) 
+	N0000[KilogramForcePerSecond_1] -->|Symbol| N0003(("kgf/s")) 
+```
+## PoundForcePerSecond <!-- NOUN -->
+- Display name: pound force per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.2248089430997105
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound force per second
+[SI] is the value in SI
+a = 1.0/PoundForce, i.e., 0.2248089430997105
+and
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundForcePerSecond:PoundForcePerSecond_1
+PoundForcePerSecond_1.ConversionFactorB = "0.2248089430997105"
+PoundForcePerSecond_1.Symbol = "lbf/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundForcePerSecond_1] -->|BelongsToClass| N0001(PoundForcePerSecond) 
+	N0000[PoundForcePerSecond_1] -->|ConversionFactorB| N0002(("0.2248089430997105")) 
+	N0000[PoundForcePerSecond_1] -->|Symbol| N0003(("lbf/s")) 
+```
+## KilopoundForcePerSecond <!-- NOUN -->
+- Display name: kilopound force per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0002248089430997105
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilopound force per second
+[SI] is the value in SI
+a = 1.0/(Kilo*PoundForce), i.e., 0.0002248089430997105
+and
+Kilo = 1000.0
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilopoundForcePerSecond:KilopoundForcePerSecond_1
+KilopoundForcePerSecond_1.ConversionFactorB = "0.0002248089430997105"
+KilopoundForcePerSecond_1.Symbol = "klbf/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilopoundForcePerSecond_1] -->|BelongsToClass| N0001(KilopoundForcePerSecond) 
+	N0000[KilopoundForcePerSecond_1] -->|ConversionFactorB| N0002(("0.0002248089430997105")) 
+	N0000[KilopoundForcePerSecond_1] -->|Symbol| N0003(("klbf/s")) 
+```
+## NewtonPerMinute <!-- NOUN -->
+- Display name: newton per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 60
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonPerMinute:NewtonPerMinute_1
+NewtonPerMinute_1.ConversionFactorB = "60"
+NewtonPerMinute_1.Symbol = "N/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonPerMinute_1] -->|BelongsToClass| N0001(NewtonPerMinute) 
+	N0000[NewtonPerMinute_1] -->|ConversionFactorB| N0002(("60")) 
+	N0000[NewtonPerMinute_1] -->|Symbol| N0003(("N/min")) 
+```
+## DecanewtonPerMinute <!-- NOUN -->
+- Display name: decanewton per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 6
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in decanewton per minute
+[SI] is the value in SI
+a = Minute/(Deca), i.e., 6
+and
+Minute = 60.0
+Deca = 10.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+DecanewtonPerMinute:DecanewtonPerMinute_1
+DecanewtonPerMinute_1.ConversionFactorB = "6"
+DecanewtonPerMinute_1.Symbol = "daN/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[DecanewtonPerMinute_1] -->|BelongsToClass| N0001(DecanewtonPerMinute) 
+	N0000[DecanewtonPerMinute_1] -->|ConversionFactorB| N0002(("6")) 
+	N0000[DecanewtonPerMinute_1] -->|Symbol| N0003(("daN/min")) 
+```
+## KilonewtonPerMinute <!-- NOUN -->
+- Display name: kilonewton per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.06
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilonewton per minute
+[SI] is the value in SI
+a = Minute/Kilo, i.e., 0.06
+and
+Minute = 60.0
+Kilo = 1000.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilonewtonPerMinute:KilonewtonPerMinute_1
+KilonewtonPerMinute_1.ConversionFactorB = "0.06"
+KilonewtonPerMinute_1.Symbol = "kN/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilonewtonPerMinute_1] -->|BelongsToClass| N0001(KilonewtonPerMinute) 
+	N0000[KilonewtonPerMinute_1] -->|ConversionFactorB| N0002(("0.06")) 
+	N0000[KilonewtonPerMinute_1] -->|Symbol| N0003(("kN/min")) 
+```
+## KilodecanewtonPerMinute <!-- NOUN -->
+- Display name: kilodecanewton per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.006
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilodecanewton per minute
+[SI] is the value in SI
+a = Minute/(Kilo*Deca), i.e., 0.006
+and
+Minute = 60.0
+Kilo = 1000.0
+Deca = 10.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilodecanewtonPerMinute:KilodecanewtonPerMinute_1
+KilodecanewtonPerMinute_1.ConversionFactorB = "0.006"
+KilodecanewtonPerMinute_1.Symbol = "kdaN/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilodecanewtonPerMinute_1] -->|BelongsToClass| N0001(KilodecanewtonPerMinute) 
+	N0000[KilodecanewtonPerMinute_1] -->|ConversionFactorB| N0002(("0.006")) 
+	N0000[KilodecanewtonPerMinute_1] -->|Symbol| N0003(("kdaN/min")) 
+```
+## KilogramForcePerMinute <!-- NOUN -->
+- Display name: kilogram force per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 6.11829727786757
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram force per minute
+[SI] is the value in SI
+a = Minute/KilogramForce, i.e., 6.11829727786757
+and
+Minute = 60.0
+KilogramForce = 1.0 * G reference: https://en.wikipedia.org/wiki/Kilogram-force
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramForcePerMinute:KilogramForcePerMinute_1
+KilogramForcePerMinute_1.ConversionFactorB = "6.11829727786757"
+KilogramForcePerMinute_1.Symbol = "kgf/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramForcePerMinute_1] -->|BelongsToClass| N0001(KilogramForcePerMinute) 
+	N0000[KilogramForcePerMinute_1] -->|ConversionFactorB| N0002(("6.11829727786757")) 
+	N0000[KilogramForcePerMinute_1] -->|Symbol| N0003(("kgf/min")) 
+```
+## PoundForcePerMinute <!-- NOUN -->
+- Display name: pound force per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 13.48853658598263
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound force per minute
+[SI] is the value in SI
+a = Minute/PoundForce, i.e., 13.48853658598263
+and
+Minute = 60.0
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundForcePerMinute:PoundForcePerMinute_1
+PoundForcePerMinute_1.ConversionFactorB = "13.48853658598263"
+PoundForcePerMinute_1.Symbol = "lbf/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundForcePerMinute_1] -->|BelongsToClass| N0001(PoundForcePerMinute) 
+	N0000[PoundForcePerMinute_1] -->|ConversionFactorB| N0002(("13.48853658598263")) 
+	N0000[PoundForcePerMinute_1] -->|Symbol| N0003(("lbf/min")) 
+```
+## KilopoundForcePerMinute <!-- NOUN -->
+- Display name: kilopound force per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.01348853658598263
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilopound force per minute
+[SI] is the value in SI
+a = Minute/(Kilo*PoundForce), i.e., 0.01348853658598263
+and
+Minute = 60.0
+Kilo = 1000.0
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilopoundForcePerMinute:KilopoundForcePerMinute_1
+KilopoundForcePerMinute_1.ConversionFactorB = "0.01348853658598263"
+KilopoundForcePerMinute_1.Symbol = "klbf/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilopoundForcePerMinute_1] -->|BelongsToClass| N0001(KilopoundForcePerMinute) 
+	N0000[KilopoundForcePerMinute_1] -->|ConversionFactorB| N0002(("0.01348853658598263")) 
+	N0000[KilopoundForcePerMinute_1] -->|Symbol| N0003(("klbf/min")) 
+```
+## NewtonPerHour <!-- NOUN -->
+- Display name: newton per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 3600
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonPerHour:NewtonPerHour_1
+NewtonPerHour_1.ConversionFactorB = "3600"
+NewtonPerHour_1.Symbol = "N/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonPerHour_1] -->|BelongsToClass| N0001(NewtonPerHour) 
+	N0000[NewtonPerHour_1] -->|ConversionFactorB| N0002(("3600")) 
+	N0000[NewtonPerHour_1] -->|Symbol| N0003(("N/h")) 
+```
+## DecanewtonPerHour <!-- NOUN -->
+- Display name: decanewton per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 360
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in decanewton per hour
+[SI] is the value in SI
+a = Hour/(Deca), i.e., 360
+and
+Hour = 60.0 * Minute
+Deca = 10.0
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+DecanewtonPerHour:DecanewtonPerHour_1
+DecanewtonPerHour_1.ConversionFactorB = "360"
+DecanewtonPerHour_1.Symbol = "daN/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[DecanewtonPerHour_1] -->|BelongsToClass| N0001(DecanewtonPerHour) 
+	N0000[DecanewtonPerHour_1] -->|ConversionFactorB| N0002(("360")) 
+	N0000[DecanewtonPerHour_1] -->|Symbol| N0003(("daN/h")) 
+```
+## KilonewtonPerHour <!-- NOUN -->
+- Display name: kilonewton per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 3.6
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilonewton per hour
+[SI] is the value in SI
+a = Hour/Kilo, i.e., 3.6
+and
+Hour = 60.0 * Minute
+Kilo = 1000.0
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilonewtonPerHour:KilonewtonPerHour_1
+KilonewtonPerHour_1.ConversionFactorB = "3.6"
+KilonewtonPerHour_1.Symbol = "kN/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilonewtonPerHour_1] -->|BelongsToClass| N0001(KilonewtonPerHour) 
+	N0000[KilonewtonPerHour_1] -->|ConversionFactorB| N0002(("3.6")) 
+	N0000[KilonewtonPerHour_1] -->|Symbol| N0003(("kN/h")) 
+```
+## KilodecanewtonPerHour <!-- NOUN -->
+- Display name: kilodecanewton per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.36
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilodecanewton per hour
+[SI] is the value in SI
+a = Hour/(Kilo*Deca), i.e., 0.36
+and
+Hour = 60.0 * Minute
+Kilo = 1000.0
+Deca = 10.0
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilodecanewtonPerHour:KilodecanewtonPerHour_1
+KilodecanewtonPerHour_1.ConversionFactorB = "0.36"
+KilodecanewtonPerHour_1.Symbol = "kdaN/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilodecanewtonPerHour_1] -->|BelongsToClass| N0001(KilodecanewtonPerHour) 
+	N0000[KilodecanewtonPerHour_1] -->|ConversionFactorB| N0002(("0.36")) 
+	N0000[KilodecanewtonPerHour_1] -->|Symbol| N0003(("kdaN/h")) 
+```
+## KilogramForcePerHour <!-- NOUN -->
+- Display name: kilogram force per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 367.0978366720542
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram force per hour
+[SI] is the value in SI
+a = Hour/KilogramForce, i.e., 367.0978366720542
+and
+Hour = 60.0 * Minute
+KilogramForce = 1.0 * G reference: https://en.wikipedia.org/wiki/Kilogram-force
+Minute = 60.0
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramForcePerHour:KilogramForcePerHour_1
+KilogramForcePerHour_1.ConversionFactorB = "367.0978366720542"
+KilogramForcePerHour_1.Symbol = "kgf/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramForcePerHour_1] -->|BelongsToClass| N0001(KilogramForcePerHour) 
+	N0000[KilogramForcePerHour_1] -->|ConversionFactorB| N0002(("367.0978366720542")) 
+	N0000[KilogramForcePerHour_1] -->|Symbol| N0003(("kgf/h")) 
+```
+## PoundForcePerHour <!-- NOUN -->
+- Display name: pound force per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 809.3121951589578
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound force per hour
+[SI] is the value in SI
+a = Hour/PoundForce, i.e., 809.3121951589578
+and
+Hour = 60.0 * Minute
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Minute = 60.0
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundForcePerHour:PoundForcePerHour_1
+PoundForcePerHour_1.ConversionFactorB = "809.3121951589578"
+PoundForcePerHour_1.Symbol = "lbf/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundForcePerHour_1] -->|BelongsToClass| N0001(PoundForcePerHour) 
+	N0000[PoundForcePerHour_1] -->|ConversionFactorB| N0002(("809.3121951589578")) 
+	N0000[PoundForcePerHour_1] -->|Symbol| N0003(("lbf/h")) 
+```
+## KilopoundForcePerHour <!-- NOUN -->
+- Display name: kilopound force per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.8093121951589578
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilopound force per hour
+[SI] is the value in SI
+a = Hour/(Kilo*PoundForce), i.e., 0.8093121951589578
+and
+Hour = 60.0 * Minute
+Kilo = 1000.0
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Minute = 60.0
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilopoundForcePerHour:KilopoundForcePerHour_1
+KilopoundForcePerHour_1.ConversionFactorB = "0.8093121951589578"
+KilopoundForcePerHour_1.Symbol = "klbf/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilopoundForcePerHour_1] -->|BelongsToClass| N0001(KilopoundForcePerHour) 
+	N0000[KilopoundForcePerHour_1] -->|ConversionFactorB| N0002(("0.8093121951589578")) 
+	N0000[KilopoundForcePerHour_1] -->|Symbol| N0003(("klbf/h")) 
+```
+## PascalPerSecond <!-- NOUN -->
+- Display name: pascal per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PascalPerSecond:PascalPerSecond_1
+PascalPerSecond_1.Symbol = "Pa/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PascalPerSecond_1] -->|BelongsToClass| N0001(PascalPerSecond) 
+	N0000[PascalPerSecond_1] -->|Symbol| N0002(("Pa/s")) 
+```
+## KilopascalPerSecond <!-- NOUN -->
+- Display name: kilopascal per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.001
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilopascal per second
+[SI] is the value in SI
+a = 1.0/Kilo, i.e., 0.001
+and
+Kilo = 1000.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilopascalPerSecond:KilopascalPerSecond_1
+KilopascalPerSecond_1.ConversionFactorB = "0.001"
+KilopascalPerSecond_1.Symbol = "KPa/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilopascalPerSecond_1] -->|BelongsToClass| N0001(KilopascalPerSecond) 
+	N0000[KilopascalPerSecond_1] -->|ConversionFactorB| N0002(("0.001")) 
+	N0000[KilopascalPerSecond_1] -->|Symbol| N0003(("KPa/s")) 
+```
+## BarPerSecond <!-- NOUN -->
+- Display name: bar per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 1E-05
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in bar per second
+[SI] is the value in SI
+a = 1.0/Bar, i.e., 1E-05
+and
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+BarPerSecond:BarPerSecond_1
+BarPerSecond_1.ConversionFactorB = "1E-05"
+BarPerSecond_1.Symbol = "bar/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[BarPerSecond_1] -->|BelongsToClass| N0001(BarPerSecond) 
+	N0000[BarPerSecond_1] -->|ConversionFactorB| N0002(("1E-05")) 
+	N0000[BarPerSecond_1] -->|Symbol| N0003(("bar/s")) 
+```
+## MillibarPerSecond <!-- NOUN -->
+- Display name: millibar per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.01
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in millibar per second
+[SI] is the value in SI
+a = 1.0/(Milli*Bar), i.e., 0.01
+and
+Milli = 0.001
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MillibarPerSecond:MillibarPerSecond_1
+MillibarPerSecond_1.ConversionFactorB = "0.01"
+MillibarPerSecond_1.Symbol = "mbar/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MillibarPerSecond_1] -->|BelongsToClass| N0001(MillibarPerSecond) 
+	N0000[MillibarPerSecond_1] -->|ConversionFactorB| N0002(("0.01")) 
+	N0000[MillibarPerSecond_1] -->|Symbol| N0003(("mbar/s")) 
+```
+## MicrobarPerSecond <!-- NOUN -->
+- Display name: microbar per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 10
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in microbar per second
+[SI] is the value in SI
+a = 1.0/(Micro*Bar), i.e., 10
+and
+Micro = 1e-6
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MicrobarPerSecond:MicrobarPerSecond_1
+MicrobarPerSecond_1.ConversionFactorB = "10"
+MicrobarPerSecond_1.Symbol = "µbar/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MicrobarPerSecond_1] -->|BelongsToClass| N0001(MicrobarPerSecond) 
+	N0000[MicrobarPerSecond_1] -->|ConversionFactorB| N0002(("10")) 
+	N0000[MicrobarPerSecond_1] -->|Symbol| N0003(("µbar/s")) 
+```
+## PoundPerSquareInchPerSecond <!-- NOUN -->
+- Display name: pound per square inch per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.00014503773773020924
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per square inch per second
+[SI] is the value in SI
+a = 1.0/PSI, i.e., 0.00014503773773020924
+and
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerSquareInchPerSecond:PoundPerSquareInchPerSecond_1
+PoundPerSquareInchPerSecond_1.ConversionFactorB = "0.00014503773773020924"
+PoundPerSquareInchPerSecond_1.Symbol = "psi/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerSquareInchPerSecond_1] -->|BelongsToClass| N0001(PoundPerSquareInchPerSecond) 
+	N0000[PoundPerSquareInchPerSecond_1] -->|ConversionFactorB| N0002(("0.00014503773773020924")) 
+	N0000[PoundPerSquareInchPerSecond_1] -->|Symbol| N0003(("psi/s")) 
+```
+## PoundPer100SquareFootPerSecond <!-- NOUN -->
+- Display name: pound per 100 square foot per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 2.0885434233150124
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per 100 square foot per second
+[SI] is the value in SI
+a = 100.0*Foot*Foot/PoundForce, i.e., 2.0885434233150124
+and
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPer100SquareFootPerSecond:PoundPer100SquareFootPerSecond_1
+PoundPer100SquareFootPerSecond_1.ConversionFactorB = "2.0885434233150124"
+PoundPer100SquareFootPerSecond_1.Symbol = "lbf/100ft²/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPer100SquareFootPerSecond_1] -->|BelongsToClass| N0001(PoundPer100SquareFootPerSecond) 
+	N0000[PoundPer100SquareFootPerSecond_1] -->|ConversionFactorB| N0002(("2.0885434233150124")) 
+	N0000[PoundPer100SquareFootPerSecond_1] -->|Symbol| N0003(("lbf/100ft²/s")) 
+```
+## KilopoundPerSquareInchPerSecond <!-- NOUN -->
+- Display name: kilopound per square inch per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 1.4503773773020924E-07
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilopound per square inch per second
+[SI] is the value in SI
+a = 1.0/(Kilo*PSI), i.e., 1.4503773773020924E-07
+and
+Kilo = 1000.0
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilopoundPerSquareInchPerSecond:KilopoundPerSquareInchPerSecond_1
+KilopoundPerSquareInchPerSecond_1.ConversionFactorB = "1.4503773773020924E-07"
+KilopoundPerSquareInchPerSecond_1.Symbol = "ksi/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilopoundPerSquareInchPerSecond_1] -->|BelongsToClass| N0001(KilopoundPerSquareInchPerSecond) 
+	N0000[KilopoundPerSquareInchPerSecond_1] -->|ConversionFactorB| N0002(("1.4503773773020924E-07")) 
+	N0000[KilopoundPerSquareInchPerSecond_1] -->|Symbol| N0003(("ksi/s")) 
+```
+## StandardAtmospherePerSecond <!-- NOUN -->
+- Display name: standard atmosphere per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 9.869232667160129E-06
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in standard atmosphere per second
+[SI] is the value in SI
+a = 1.0/Atmosphere, i.e., 9.869232667160129E-06
+and
+Atmosphere = 101325.0 reference: https://en.wikipedia.org/wiki/Atmospheric_pressure
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+StandardAtmospherePerSecond:StandardAtmospherePerSecond_1
+StandardAtmospherePerSecond_1.ConversionFactorB = "9.869232667160129E-06"
+StandardAtmospherePerSecond_1.Symbol = "atm/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[StandardAtmospherePerSecond_1] -->|BelongsToClass| N0001(StandardAtmospherePerSecond) 
+	N0000[StandardAtmospherePerSecond_1] -->|ConversionFactorB| N0002(("9.869232667160129E-06")) 
+	N0000[StandardAtmospherePerSecond_1] -->|Symbol| N0003(("atm/s")) 
+```
+## PoundPerSquareFootPerSecond <!-- NOUN -->
+- Display name: pound per square foot per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.020885434233150126
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per square foot per second
+[SI] is the value in SI
+a = Foot*Foot/PoundForce, i.e., 0.020885434233150126
+and
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerSquareFootPerSecond:PoundPerSquareFootPerSecond_1
+PoundPerSquareFootPerSecond_1.ConversionFactorB = "0.020885434233150126"
+PoundPerSquareFootPerSecond_1.Symbol = "lb/ft²/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerSquareFootPerSecond_1] -->|BelongsToClass| N0001(PoundPerSquareFootPerSecond) 
+	N0000[PoundPerSquareFootPerSecond_1] -->|ConversionFactorB| N0002(("0.020885434233150126")) 
+	N0000[PoundPerSquareFootPerSecond_1] -->|Symbol| N0003(("lb/ft²/s")) 
+```
+## MegapascalPerSecond <!-- NOUN -->
+- Display name: megapascal per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 1E-06
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in megapascal per second
+[SI] is the value in SI
+a = 1.0/Mega, i.e., 1E-06
+and
+Mega = 1e6
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MegapascalPerSecond:MegapascalPerSecond_1
+MegapascalPerSecond_1.ConversionFactorB = "1E-06"
+MegapascalPerSecond_1.Symbol = "MPa/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MegapascalPerSecond_1] -->|BelongsToClass| N0001(MegapascalPerSecond) 
+	N0000[MegapascalPerSecond_1] -->|ConversionFactorB| N0002(("1E-06")) 
+	N0000[MegapascalPerSecond_1] -->|Symbol| N0003(("MPa/s")) 
+```
+## GigapascalPerSecond <!-- NOUN -->
+- Display name: gigapascal per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 1E-09
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gigapascal per second
+[SI] is the value in SI
+a = 1.0/Giga, i.e., 1E-09
+and
+Giga = 1e9
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GigapascalPerSecond:GigapascalPerSecond_1
+GigapascalPerSecond_1.ConversionFactorB = "1E-09"
+GigapascalPerSecond_1.Symbol = "GPa/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GigapascalPerSecond_1] -->|BelongsToClass| N0001(GigapascalPerSecond) 
+	N0000[GigapascalPerSecond_1] -->|ConversionFactorB| N0002(("1E-09")) 
+	N0000[GigapascalPerSecond_1] -->|Symbol| N0003(("GPa/s")) 
+```
+## NewtonPerSquareMetrePerSecond <!-- NOUN -->
+- Display name: newton per square metre per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in newton per square metre per second
+[SI] is the value in SI
+a = 1.0/Unit, i.e., 1
+and
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonPerSquareMetrePerSecond:NewtonPerSquareMetrePerSecond_1
+NewtonPerSquareMetrePerSecond_1.Symbol = "N/m²/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonPerSquareMetrePerSecond_1] -->|BelongsToClass| N0001(NewtonPerSquareMetrePerSecond) 
+	N0000[NewtonPerSquareMetrePerSecond_1] -->|Symbol| N0002(("N/m²/s")) 
+```
+## NewtonPerSquareCentimetrePerSecond <!-- NOUN -->
+- Display name: newton per square centimetre per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0001
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in newton per square centimetre per second
+[SI] is the value in SI
+a = Centi*Centi, i.e., 0.0001
+and
+Centi = 0.01
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonPerSquareCentimetrePerSecond:NewtonPerSquareCentimetrePerSecond_1
+NewtonPerSquareCentimetrePerSecond_1.ConversionFactorB = "0.0001"
+NewtonPerSquareCentimetrePerSecond_1.Symbol = "N/cm²/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonPerSquareCentimetrePerSecond_1] -->|BelongsToClass| N0001(NewtonPerSquareCentimetrePerSecond) 
+	N0000[NewtonPerSquareCentimetrePerSecond_1] -->|ConversionFactorB| N0002(("0.0001")) 
+	N0000[NewtonPerSquareCentimetrePerSecond_1] -->|Symbol| N0003(("N/cm²/s")) 
+```
+## NewtonPerSquareMillimetrePerSecond <!-- NOUN -->
+- Display name: newton per square millimetre per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 1E-06
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in newton per square millimetre per second
+[SI] is the value in SI
+a = Milli*Milli, i.e., 1E-06
+and
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonPerSquareMillimetrePerSecond:NewtonPerSquareMillimetrePerSecond_1
+NewtonPerSquareMillimetrePerSecond_1.ConversionFactorB = "1E-06"
+NewtonPerSquareMillimetrePerSecond_1.Symbol = "N/mm²/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonPerSquareMillimetrePerSecond_1] -->|BelongsToClass| N0001(NewtonPerSquareMillimetrePerSecond) 
+	N0000[NewtonPerSquareMillimetrePerSecond_1] -->|ConversionFactorB| N0002(("1E-06")) 
+	N0000[NewtonPerSquareMillimetrePerSecond_1] -->|Symbol| N0003(("N/mm²/s")) 
+```
+## KilonewtonPerSquareMetrePerSecond <!-- NOUN -->
+- Display name: kilonewton per square metre per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.001
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilonewton per square metre per second
+[SI] is the value in SI
+a = 1.0/Kilo, i.e., 0.001
+and
+Kilo = 1000.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilonewtonPerSquareMetrePerSecond:KilonewtonPerSquareMetrePerSecond_1
+KilonewtonPerSquareMetrePerSecond_1.ConversionFactorB = "0.001"
+KilonewtonPerSquareMetrePerSecond_1.Symbol = "kN/m²/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilonewtonPerSquareMetrePerSecond_1] -->|BelongsToClass| N0001(KilonewtonPerSquareMetrePerSecond) 
+	N0000[KilonewtonPerSquareMetrePerSecond_1] -->|ConversionFactorB| N0002(("0.001")) 
+	N0000[KilonewtonPerSquareMetrePerSecond_1] -->|Symbol| N0003(("kN/m²/s")) 
+```
+## MegapoundPerSquareInchPerSecond <!-- NOUN -->
+- Display name: megapound per square inch per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 1.4503773773020922E-10
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in megapound per square inch per second
+[SI] is the value in SI
+a = Inch*Inch/(Mega*PoundForce), i.e., 1.4503773773020922E-10
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Mega = 1e6
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MegapoundPerSquareInchPerSecond:MegapoundPerSquareInchPerSecond_1
+MegapoundPerSquareInchPerSecond_1.ConversionFactorB = "1.4503773773020922E-10"
+MegapoundPerSquareInchPerSecond_1.Symbol = "Mpsi/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MegapoundPerSquareInchPerSecond_1] -->|BelongsToClass| N0001(MegapoundPerSquareInchPerSecond) 
+	N0000[MegapoundPerSquareInchPerSecond_1] -->|ConversionFactorB| N0002(("1.4503773773020922E-10")) 
+	N0000[MegapoundPerSquareInchPerSecond_1] -->|Symbol| N0003(("Mpsi/s")) 
+```
+## TorrPerSecond <!-- NOUN -->
+- Display name: torr per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.007500616827041697
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in torr per second
+[SI] is the value in SI
+a = 1.0/Torr, i.e., 0.007500616827041697
+and
+Torr = (1.0 / 760.0) * Atmosphere reference: https://en.wikipedia.org/wiki/Torr
+Atmosphere = 101325.0 reference: https://en.wikipedia.org/wiki/Atmospheric_pressure
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+TorrPerSecond:TorrPerSecond_1
+TorrPerSecond_1.ConversionFactorB = "0.007500616827041697"
+TorrPerSecond_1.Symbol = "Torr/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[TorrPerSecond_1] -->|BelongsToClass| N0001(TorrPerSecond) 
+	N0000[TorrPerSecond_1] -->|ConversionFactorB| N0002(("0.007500616827041697")) 
+	N0000[TorrPerSecond_1] -->|Symbol| N0003(("Torr/s")) 
+```
+## CentimetreMercuryAtZeroDegreeCelsiusPerSecond <!-- NOUN -->
+- Display name: centimetre mercury at zero degree celsius per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0007500615758456563
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in centimetre mercury at zero degree celsius per second
+[SI] is the value in SI
+a = 1.0/(Deca*MillimetreMercury), i.e., 0.0007500615758456563
+and
+Deca = 10.0
+MillimetreMercury = 133.322387415 reference: https://en.wikipedia.org/wiki/Millimetre_of_mercury
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CentimetreMercuryAtZeroDegreeCelsiusPerSecond:CentimetreMercuryAtZeroDegreeCelsiusPerSecond_1
+CentimetreMercuryAtZeroDegreeCelsiusPerSecond_1.ConversionFactorB = "0.0007500615758456563"
+CentimetreMercuryAtZeroDegreeCelsiusPerSecond_1.Symbol = "cm Hg 0°C/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CentimetreMercuryAtZeroDegreeCelsiusPerSecond_1] -->|BelongsToClass| N0001(CentimetreMercuryAtZeroDegreeCelsiusPerSecond) 
+	N0000[CentimetreMercuryAtZeroDegreeCelsiusPerSecond_1] -->|ConversionFactorB| N0002(("0.0007500615758456563")) 
+	N0000[CentimetreMercuryAtZeroDegreeCelsiusPerSecond_1] -->|Symbol| N0003(("cm Hg 0°C/s")) 
+```
+## MillimetreMercuryAtZeroDegreeCelsiusPerSecond <!-- NOUN -->
+- Display name: millimetre mercury at zero degree celsius per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.007500615758456563
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in millimetre mercury at zero degree celsius per second
+[SI] is the value in SI
+a = 1.0/MillimetreMercury, i.e., 0.007500615758456563
+and
+MillimetreMercury = 133.322387415 reference: https://en.wikipedia.org/wiki/Millimetre_of_mercury
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MillimetreMercuryAtZeroDegreeCelsiusPerSecond:MillimetreMercuryAtZeroDegreeCelsiusPerSecond_1
+MillimetreMercuryAtZeroDegreeCelsiusPerSecond_1.ConversionFactorB = "0.007500615758456563"
+MillimetreMercuryAtZeroDegreeCelsiusPerSecond_1.Symbol = "mm Hg 0°C/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MillimetreMercuryAtZeroDegreeCelsiusPerSecond_1] -->|BelongsToClass| N0001(MillimetreMercuryAtZeroDegreeCelsiusPerSecond) 
+	N0000[MillimetreMercuryAtZeroDegreeCelsiusPerSecond_1] -->|ConversionFactorB| N0002(("0.007500615758456563")) 
+	N0000[MillimetreMercuryAtZeroDegreeCelsiusPerSecond_1] -->|Symbol| N0003(("mm Hg 0°C/s")) 
+```
+## InchMercuryAt32DegreeFahrenheitPerSecond <!-- NOUN -->
+- Display name: inch mercury at 32 degree fahrenheit per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 3386.3890000000006
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in inch mercury at 32 degree fahrenheit per second
+[SI] is the value in SI
+a = 1.0/InchMercury32degF, i.e., 3386.3890000000006
+and
+InchMercury32degF = 1.0/3386.389 reference: https://en.wikipedia.org/wiki/Inch_of_mercury
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+InchMercuryAt32DegreeFahrenheitPerSecond:InchMercuryAt32DegreeFahrenheitPerSecond_1
+InchMercuryAt32DegreeFahrenheitPerSecond_1.ConversionFactorB = "3386.3890000000006"
+InchMercuryAt32DegreeFahrenheitPerSecond_1.Symbol = "in Hg 32°F/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[InchMercuryAt32DegreeFahrenheitPerSecond_1] -->|BelongsToClass| N0001(InchMercuryAt32DegreeFahrenheitPerSecond) 
+	N0000[InchMercuryAt32DegreeFahrenheitPerSecond_1] -->|ConversionFactorB| N0002(("3386.3890000000006")) 
+	N0000[InchMercuryAt32DegreeFahrenheitPerSecond_1] -->|Symbol| N0003(("in Hg 32°F/s")) 
+```
+## InchMercuryAt60DegreeFahrenheitPerSecond <!-- NOUN -->
+- Display name: inch mercury at 60 degree fahrenheit per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 3376.85
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in inch mercury at 60 degree fahrenheit per second
+[SI] is the value in SI
+a = 1.0/InchMercury60degF, i.e., 3376.85
+and
+InchMercury60degF = 1.0 / 3376.85 reference: https://en.wikipedia.org/wiki/Inch_of_mercury
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+InchMercuryAt60DegreeFahrenheitPerSecond:InchMercuryAt60DegreeFahrenheitPerSecond_1
+InchMercuryAt60DegreeFahrenheitPerSecond_1.ConversionFactorB = "3376.85"
+InchMercuryAt60DegreeFahrenheitPerSecond_1.Symbol = "in Hg 60°F/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[InchMercuryAt60DegreeFahrenheitPerSecond_1] -->|BelongsToClass| N0001(InchMercuryAt60DegreeFahrenheitPerSecond) 
+	N0000[InchMercuryAt60DegreeFahrenheitPerSecond_1] -->|ConversionFactorB| N0002(("3376.85")) 
+	N0000[InchMercuryAt60DegreeFahrenheitPerSecond_1] -->|Symbol| N0003(("in Hg 60°F/s")) 
+```
+## CentimetreWaterAt4DegreeCelsiusPerSecond <!-- NOUN -->
+- Display name: centimetre water at 4 degree celsius per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.010104429276573386
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in centimetre water at 4 degree celsius per second
+[SI] is the value in SI
+a = 1.0/(Deca*MillimetreWater4degC), i.e., 0.010104429276573386
+and
+Deca = 10.0
+MillimetreWater4degC = 9.89665 reference: https://en.wikipedia.org/wiki/Centimetre_or_millimetre_of_water
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CentimetreWaterAt4DegreeCelsiusPerSecond:CentimetreWaterAt4DegreeCelsiusPerSecond_1
+CentimetreWaterAt4DegreeCelsiusPerSecond_1.ConversionFactorB = "0.010104429276573386"
+CentimetreWaterAt4DegreeCelsiusPerSecond_1.Symbol = "cm Aq 4°C/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CentimetreWaterAt4DegreeCelsiusPerSecond_1] -->|BelongsToClass| N0001(CentimetreWaterAt4DegreeCelsiusPerSecond) 
+	N0000[CentimetreWaterAt4DegreeCelsiusPerSecond_1] -->|ConversionFactorB| N0002(("0.010104429276573386")) 
+	N0000[CentimetreWaterAt4DegreeCelsiusPerSecond_1] -->|Symbol| N0003(("cm Aq 4°C/s")) 
+```
+## MillimetreWaterAt4DegreeCelsiusPerSecond <!-- NOUN -->
+- Display name: millimetre water at 4 degree celsius per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.10104429276573387
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in millimetre water at 4 degree celsius per second
+[SI] is the value in SI
+a = 1.0/MillimetreWater4degC, i.e., 0.10104429276573387
+and
+MillimetreWater4degC = 9.89665 reference: https://en.wikipedia.org/wiki/Centimetre_or_millimetre_of_water
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MillimetreWaterAt4DegreeCelsiusPerSecond:MillimetreWaterAt4DegreeCelsiusPerSecond_1
+MillimetreWaterAt4DegreeCelsiusPerSecond_1.ConversionFactorB = "0.10104429276573387"
+MillimetreWaterAt4DegreeCelsiusPerSecond_1.Symbol = "mm Aq 4°C/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MillimetreWaterAt4DegreeCelsiusPerSecond_1] -->|BelongsToClass| N0001(MillimetreWaterAt4DegreeCelsiusPerSecond) 
+	N0000[MillimetreWaterAt4DegreeCelsiusPerSecond_1] -->|ConversionFactorB| N0002(("0.10104429276573387")) 
+	N0000[MillimetreWaterAt4DegreeCelsiusPerSecond_1] -->|Symbol| N0003(("mm Aq 4°C/s")) 
+```
+## InchWaterAt4DegreeCelsiusPerSecond <!-- NOUN -->
+- Display name: inch water at 4 degree celsius per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.00401474213311279
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in inch water at 4 degree celsius per second
+[SI] is the value in SI
+a = 1.0/InchWater4degC, i.e., 0.00401474213311279
+and
+InchWater4degC = 249.082 reference: https://en.wikipedia.org/wiki/Inch_of_water
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+InchWaterAt4DegreeCelsiusPerSecond:InchWaterAt4DegreeCelsiusPerSecond_1
+InchWaterAt4DegreeCelsiusPerSecond_1.ConversionFactorB = "0.00401474213311279"
+InchWaterAt4DegreeCelsiusPerSecond_1.Symbol = "in Aq 4°C/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[InchWaterAt4DegreeCelsiusPerSecond_1] -->|BelongsToClass| N0001(InchWaterAt4DegreeCelsiusPerSecond) 
+	N0000[InchWaterAt4DegreeCelsiusPerSecond_1] -->|ConversionFactorB| N0002(("0.00401474213311279")) 
+	N0000[InchWaterAt4DegreeCelsiusPerSecond_1] -->|Symbol| N0003(("in Aq 4°C/s")) 
+```
+## FootWaterAt4DegreeCelsiusPerSecond <!-- NOUN -->
+- Display name: foot water at 4 degree celsius per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0003345525543589354
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in foot water at 4 degree celsius per second
+[SI] is the value in SI
+a = 1.0/FootWater4degC, i.e., 0.0003345525543589354
+and
+FootWater4degC = 2989.067 reference: https://en.wikipedia.org/wiki/Inch_of_water
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+FootWaterAt4DegreeCelsiusPerSecond:FootWaterAt4DegreeCelsiusPerSecond_1
+FootWaterAt4DegreeCelsiusPerSecond_1.ConversionFactorB = "0.0003345525543589354"
+FootWaterAt4DegreeCelsiusPerSecond_1.Symbol = "ft Aq 4°C/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[FootWaterAt4DegreeCelsiusPerSecond_1] -->|BelongsToClass| N0001(FootWaterAt4DegreeCelsiusPerSecond) 
+	N0000[FootWaterAt4DegreeCelsiusPerSecond_1] -->|ConversionFactorB| N0002(("0.0003345525543589354")) 
+	N0000[FootWaterAt4DegreeCelsiusPerSecond_1] -->|Symbol| N0003(("ft Aq 4°C/s")) 
+```
+## DynePerSquareCentimetrePerSecond <!-- NOUN -->
+- Display name: dyne per square centimetre per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 10
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in dyne per square centimetre per second
+[SI] is the value in SI
+a = Centi*Centi/Dyne, i.e., 10
+and
+Centi = 0.01
+Dyne = 1e-5 reference: https://en.wikipedia.org/wiki/Dyne
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+DynePerSquareCentimetrePerSecond:DynePerSquareCentimetrePerSecond_1
+DynePerSquareCentimetrePerSecond_1.ConversionFactorB = "10"
+DynePerSquareCentimetrePerSecond_1.Symbol = "dyne/cm²/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[DynePerSquareCentimetrePerSecond_1] -->|BelongsToClass| N0001(DynePerSquareCentimetrePerSecond) 
+	N0000[DynePerSquareCentimetrePerSecond_1] -->|ConversionFactorB| N0002(("10")) 
+	N0000[DynePerSquareCentimetrePerSecond_1] -->|Symbol| N0003(("dyne/cm²/s")) 
+```
+## PascalPerMinute <!-- NOUN -->
+- Display name: pascal per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 60
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PascalPerMinute:PascalPerMinute_1
+PascalPerMinute_1.ConversionFactorB = "60"
+PascalPerMinute_1.Symbol = "Pa/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PascalPerMinute_1] -->|BelongsToClass| N0001(PascalPerMinute) 
+	N0000[PascalPerMinute_1] -->|ConversionFactorB| N0002(("60")) 
+	N0000[PascalPerMinute_1] -->|Symbol| N0003(("Pa/min")) 
+```
+## KilopascalPerMinute <!-- NOUN -->
+- Display name: kilopascal per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.06
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilopascal per minute
+[SI] is the value in SI
+a = Minute/Kilo, i.e., 0.06
+and
+Minute = 60.0
+Kilo = 1000.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilopascalPerMinute:KilopascalPerMinute_1
+KilopascalPerMinute_1.ConversionFactorB = "0.06"
+KilopascalPerMinute_1.Symbol = "KPa/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilopascalPerMinute_1] -->|BelongsToClass| N0001(KilopascalPerMinute) 
+	N0000[KilopascalPerMinute_1] -->|ConversionFactorB| N0002(("0.06")) 
+	N0000[KilopascalPerMinute_1] -->|Symbol| N0003(("KPa/min")) 
+```
+## BarPerMinute <!-- NOUN -->
+- Display name: bar per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0006
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in bar per minute
+[SI] is the value in SI
+a = Minute/Bar, i.e., 0.0006
+and
+Minute = 60.0
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+BarPerMinute:BarPerMinute_1
+BarPerMinute_1.ConversionFactorB = "0.0006"
+BarPerMinute_1.Symbol = "bar/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[BarPerMinute_1] -->|BelongsToClass| N0001(BarPerMinute) 
+	N0000[BarPerMinute_1] -->|ConversionFactorB| N0002(("0.0006")) 
+	N0000[BarPerMinute_1] -->|Symbol| N0003(("bar/min")) 
+```
+## MillibarPerMinute <!-- NOUN -->
+- Display name: millibar per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.6
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in millibar per minute
+[SI] is the value in SI
+a = Minute/(Milli*Bar), i.e., 0.6
+and
+Minute = 60.0
+Milli = 0.001
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MillibarPerMinute:MillibarPerMinute_1
+MillibarPerMinute_1.ConversionFactorB = "0.6"
+MillibarPerMinute_1.Symbol = "mbar/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MillibarPerMinute_1] -->|BelongsToClass| N0001(MillibarPerMinute) 
+	N0000[MillibarPerMinute_1] -->|ConversionFactorB| N0002(("0.6")) 
+	N0000[MillibarPerMinute_1] -->|Symbol| N0003(("mbar/min")) 
+```
+## MicrobarPerMinute <!-- NOUN -->
+- Display name: microbar per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 600
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in microbar per minute
+[SI] is the value in SI
+a = Minute/(Micro*Bar), i.e., 600
+and
+Minute = 60.0
+Micro = 1e-6
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MicrobarPerMinute:MicrobarPerMinute_1
+MicrobarPerMinute_1.ConversionFactorB = "600"
+MicrobarPerMinute_1.Symbol = "µbar/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MicrobarPerMinute_1] -->|BelongsToClass| N0001(MicrobarPerMinute) 
+	N0000[MicrobarPerMinute_1] -->|ConversionFactorB| N0002(("600")) 
+	N0000[MicrobarPerMinute_1] -->|Symbol| N0003(("µbar/min")) 
+```
+## PoundPerSquareInchPerMinute <!-- NOUN -->
+- Display name: pound per square inch per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.008702264263812553
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per square inch per minute
+[SI] is the value in SI
+a = Minute/PSI, i.e., 0.008702264263812553
+and
+Minute = 60.0
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerSquareInchPerMinute:PoundPerSquareInchPerMinute_1
+PoundPerSquareInchPerMinute_1.ConversionFactorB = "0.008702264263812553"
+PoundPerSquareInchPerMinute_1.Symbol = "psi/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerSquareInchPerMinute_1] -->|BelongsToClass| N0001(PoundPerSquareInchPerMinute) 
+	N0000[PoundPerSquareInchPerMinute_1] -->|ConversionFactorB| N0002(("0.008702264263812553")) 
+	N0000[PoundPerSquareInchPerMinute_1] -->|Symbol| N0003(("psi/min")) 
+```
+## PoundPer100SquareFootPerMinute <!-- NOUN -->
+- Display name: pound per 100 square foot per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 125.31260539890074
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per 100 square foot per minute
+[SI] is the value in SI
+a = Minute*100.0*Foot*Foot/PoundForce, i.e., 125.31260539890074
+and
+Minute = 60.0
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPer100SquareFootPerMinute:PoundPer100SquareFootPerMinute_1
+PoundPer100SquareFootPerMinute_1.ConversionFactorB = "125.31260539890074"
+PoundPer100SquareFootPerMinute_1.Symbol = "lbf/100ft²/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPer100SquareFootPerMinute_1] -->|BelongsToClass| N0001(PoundPer100SquareFootPerMinute) 
+	N0000[PoundPer100SquareFootPerMinute_1] -->|ConversionFactorB| N0002(("125.31260539890074")) 
+	N0000[PoundPer100SquareFootPerMinute_1] -->|Symbol| N0003(("lbf/100ft²/min")) 
+```
+## KilopoundPerSquareInchPerMinute <!-- NOUN -->
+- Display name: kilopound per square inch per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 8.702264263812555E-06
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilopound per square inch per minute
+[SI] is the value in SI
+a = Minute/(Kilo*PSI), i.e., 8.702264263812555E-06
+and
+Minute = 60.0
+Kilo = 1000.0
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilopoundPerSquareInchPerMinute:KilopoundPerSquareInchPerMinute_1
+KilopoundPerSquareInchPerMinute_1.ConversionFactorB = "8.702264263812555E-06"
+KilopoundPerSquareInchPerMinute_1.Symbol = "ksi/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilopoundPerSquareInchPerMinute_1] -->|BelongsToClass| N0001(KilopoundPerSquareInchPerMinute) 
+	N0000[KilopoundPerSquareInchPerMinute_1] -->|ConversionFactorB| N0002(("8.702264263812555E-06")) 
+	N0000[KilopoundPerSquareInchPerMinute_1] -->|Symbol| N0003(("ksi/min")) 
+```
+## StandardAtmospherePerMinute <!-- NOUN -->
+- Display name: standard atmosphere per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0005921539600296077
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in standard atmosphere per minute
+[SI] is the value in SI
+a = Minute/Atmosphere, i.e., 0.0005921539600296077
+and
+Minute = 60.0
+Atmosphere = 101325.0 reference: https://en.wikipedia.org/wiki/Atmospheric_pressure
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+StandardAtmospherePerMinute:StandardAtmospherePerMinute_1
+StandardAtmospherePerMinute_1.ConversionFactorB = "0.0005921539600296077"
+StandardAtmospherePerMinute_1.Symbol = "atm/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[StandardAtmospherePerMinute_1] -->|BelongsToClass| N0001(StandardAtmospherePerMinute) 
+	N0000[StandardAtmospherePerMinute_1] -->|ConversionFactorB| N0002(("0.0005921539600296077")) 
+	N0000[StandardAtmospherePerMinute_1] -->|Symbol| N0003(("atm/min")) 
+```
+## PoundPerSquareFootPerMinute <!-- NOUN -->
+- Display name: pound per square foot per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 1.2531260539890072
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per square foot per minute
+[SI] is the value in SI
+a = Minute*Foot*Foot/PoundForce, i.e., 1.2531260539890072
+and
+Minute = 60.0
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerSquareFootPerMinute:PoundPerSquareFootPerMinute_1
+PoundPerSquareFootPerMinute_1.ConversionFactorB = "1.2531260539890072"
+PoundPerSquareFootPerMinute_1.Symbol = "lb/ft²/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerSquareFootPerMinute_1] -->|BelongsToClass| N0001(PoundPerSquareFootPerMinute) 
+	N0000[PoundPerSquareFootPerMinute_1] -->|ConversionFactorB| N0002(("1.2531260539890072")) 
+	N0000[PoundPerSquareFootPerMinute_1] -->|Symbol| N0003(("lb/ft²/min")) 
+```
+## MegapascalPerMinute <!-- NOUN -->
+- Display name: megapascal per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 6E-05
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in megapascal per minute
+[SI] is the value in SI
+a = Minute/Mega, i.e., 6E-05
+and
+Minute = 60.0
+Mega = 1e6
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MegapascalPerMinute:MegapascalPerMinute_1
+MegapascalPerMinute_1.ConversionFactorB = "6E-05"
+MegapascalPerMinute_1.Symbol = "MPa/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MegapascalPerMinute_1] -->|BelongsToClass| N0001(MegapascalPerMinute) 
+	N0000[MegapascalPerMinute_1] -->|ConversionFactorB| N0002(("6E-05")) 
+	N0000[MegapascalPerMinute_1] -->|Symbol| N0003(("MPa/min")) 
+```
+## GigapascalPerMinute <!-- NOUN -->
+- Display name: gigapascal per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 6E-08
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gigapascal per minute
+[SI] is the value in SI
+a = Minute/Giga, i.e., 6E-08
+and
+Minute = 60.0
+Giga = 1e9
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GigapascalPerMinute:GigapascalPerMinute_1
+GigapascalPerMinute_1.ConversionFactorB = "6E-08"
+GigapascalPerMinute_1.Symbol = "GPa/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GigapascalPerMinute_1] -->|BelongsToClass| N0001(GigapascalPerMinute) 
+	N0000[GigapascalPerMinute_1] -->|ConversionFactorB| N0002(("6E-08")) 
+	N0000[GigapascalPerMinute_1] -->|Symbol| N0003(("GPa/min")) 
+```
+## NewtonPerSquareMetrePerMinute <!-- NOUN -->
+- Display name: newton per square metre per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 60
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in newton per square metre per minute
+[SI] is the value in SI
+a = Minute/Unit, i.e., 60
+and
+Minute = 60.0
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonPerSquareMetrePerMinute:NewtonPerSquareMetrePerMinute_1
+NewtonPerSquareMetrePerMinute_1.ConversionFactorB = "60"
+NewtonPerSquareMetrePerMinute_1.Symbol = "N/m²/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonPerSquareMetrePerMinute_1] -->|BelongsToClass| N0001(NewtonPerSquareMetrePerMinute) 
+	N0000[NewtonPerSquareMetrePerMinute_1] -->|ConversionFactorB| N0002(("60")) 
+	N0000[NewtonPerSquareMetrePerMinute_1] -->|Symbol| N0003(("N/m²/min")) 
+```
+## NewtonPerSquareCentimetrePerMinute <!-- NOUN -->
+- Display name: newton per square centimetre per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.006
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in newton per square centimetre per minute
+[SI] is the value in SI
+a = Minute*Centi*Centi, i.e., 0.006
+and
+Minute = 60.0
+Centi = 0.01
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonPerSquareCentimetrePerMinute:NewtonPerSquareCentimetrePerMinute_1
+NewtonPerSquareCentimetrePerMinute_1.ConversionFactorB = "0.006"
+NewtonPerSquareCentimetrePerMinute_1.Symbol = "N/cm²/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonPerSquareCentimetrePerMinute_1] -->|BelongsToClass| N0001(NewtonPerSquareCentimetrePerMinute) 
+	N0000[NewtonPerSquareCentimetrePerMinute_1] -->|ConversionFactorB| N0002(("0.006")) 
+	N0000[NewtonPerSquareCentimetrePerMinute_1] -->|Symbol| N0003(("N/cm²/min")) 
+```
+## NewtonPerSquareMillimetrePerMinute <!-- NOUN -->
+- Display name: newton per square millimetre per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 6E-05
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in newton per square millimetre per minute
+[SI] is the value in SI
+a = Minute*Milli*Milli, i.e., 6E-05
+and
+Minute = 60.0
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonPerSquareMillimetrePerMinute:NewtonPerSquareMillimetrePerMinute_1
+NewtonPerSquareMillimetrePerMinute_1.ConversionFactorB = "6E-05"
+NewtonPerSquareMillimetrePerMinute_1.Symbol = "N/mm²/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonPerSquareMillimetrePerMinute_1] -->|BelongsToClass| N0001(NewtonPerSquareMillimetrePerMinute) 
+	N0000[NewtonPerSquareMillimetrePerMinute_1] -->|ConversionFactorB| N0002(("6E-05")) 
+	N0000[NewtonPerSquareMillimetrePerMinute_1] -->|Symbol| N0003(("N/mm²/min")) 
+```
+## KilonewtonPerSquareMetrePerMinute <!-- NOUN -->
+- Display name: kilonewton per square metre per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.06
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilonewton per square metre per minute
+[SI] is the value in SI
+a = Minute/Kilo, i.e., 0.06
+and
+Minute = 60.0
+Kilo = 1000.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilonewtonPerSquareMetrePerMinute:KilonewtonPerSquareMetrePerMinute_1
+KilonewtonPerSquareMetrePerMinute_1.ConversionFactorB = "0.06"
+KilonewtonPerSquareMetrePerMinute_1.Symbol = "kN/m²/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilonewtonPerSquareMetrePerMinute_1] -->|BelongsToClass| N0001(KilonewtonPerSquareMetrePerMinute) 
+	N0000[KilonewtonPerSquareMetrePerMinute_1] -->|ConversionFactorB| N0002(("0.06")) 
+	N0000[KilonewtonPerSquareMetrePerMinute_1] -->|Symbol| N0003(("kN/m²/min")) 
+```
+## MegapoundPerSquareInchPerMinute <!-- NOUN -->
+- Display name: megapound per square inch per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 8.702264263812553E-09
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in megapound per square inch per minute
+[SI] is the value in SI
+a = Minute*Inch*Inch/(Mega*PoundForce), i.e., 8.702264263812553E-09
+and
+Minute = 60.0
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Mega = 1e6
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MegapoundPerSquareInchPerMinute:MegapoundPerSquareInchPerMinute_1
+MegapoundPerSquareInchPerMinute_1.ConversionFactorB = "8.702264263812553E-09"
+MegapoundPerSquareInchPerMinute_1.Symbol = "Mpsi/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MegapoundPerSquareInchPerMinute_1] -->|BelongsToClass| N0001(MegapoundPerSquareInchPerMinute) 
+	N0000[MegapoundPerSquareInchPerMinute_1] -->|ConversionFactorB| N0002(("8.702264263812553E-09")) 
+	N0000[MegapoundPerSquareInchPerMinute_1] -->|Symbol| N0003(("Mpsi/min")) 
+```
+## TorrPerMinute <!-- NOUN -->
+- Display name: torr per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.45003700962250187
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in torr per minute
+[SI] is the value in SI
+a = Minute/Torr, i.e., 0.45003700962250187
+and
+Minute = 60.0
+Torr = (1.0 / 760.0) * Atmosphere reference: https://en.wikipedia.org/wiki/Torr
+Atmosphere = 101325.0 reference: https://en.wikipedia.org/wiki/Atmospheric_pressure
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+TorrPerMinute:TorrPerMinute_1
+TorrPerMinute_1.ConversionFactorB = "0.45003700962250187"
+TorrPerMinute_1.Symbol = "Torr/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[TorrPerMinute_1] -->|BelongsToClass| N0001(TorrPerMinute) 
+	N0000[TorrPerMinute_1] -->|ConversionFactorB| N0002(("0.45003700962250187")) 
+	N0000[TorrPerMinute_1] -->|Symbol| N0003(("Torr/min")) 
+```
+## CentimetreMercuryAtZeroDegreeCelsiusPerMinute <!-- NOUN -->
+- Display name: centimetre mercury at zero degree celsius per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.04500369455073938
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in centimetre mercury at zero degree celsius per minute
+[SI] is the value in SI
+a = Minute/(Deca*MillimetreMercury), i.e., 0.04500369455073938
+and
+Minute = 60.0
+Deca = 10.0
+MillimetreMercury = 133.322387415 reference: https://en.wikipedia.org/wiki/Millimetre_of_mercury
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CentimetreMercuryAtZeroDegreeCelsiusPerMinute:CentimetreMercuryAtZeroDegreeCelsiusPerMinute_1
+CentimetreMercuryAtZeroDegreeCelsiusPerMinute_1.ConversionFactorB = "0.04500369455073938"
+CentimetreMercuryAtZeroDegreeCelsiusPerMinute_1.Symbol = "cm Hg 0°C/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CentimetreMercuryAtZeroDegreeCelsiusPerMinute_1] -->|BelongsToClass| N0001(CentimetreMercuryAtZeroDegreeCelsiusPerMinute) 
+	N0000[CentimetreMercuryAtZeroDegreeCelsiusPerMinute_1] -->|ConversionFactorB| N0002(("0.04500369455073938")) 
+	N0000[CentimetreMercuryAtZeroDegreeCelsiusPerMinute_1] -->|Symbol| N0003(("cm Hg 0°C/min")) 
+```
+## MillimetreMercuryAtZeroDegreeCelsiusPerMinute <!-- NOUN -->
+- Display name: millimetre mercury at zero degree celsius per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.45003694550739376
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in millimetre mercury at zero degree celsius per minute
+[SI] is the value in SI
+a = Minute/MillimetreMercury, i.e., 0.45003694550739376
+and
+Minute = 60.0
+MillimetreMercury = 133.322387415 reference: https://en.wikipedia.org/wiki/Millimetre_of_mercury
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MillimetreMercuryAtZeroDegreeCelsiusPerMinute:MillimetreMercuryAtZeroDegreeCelsiusPerMinute_1
+MillimetreMercuryAtZeroDegreeCelsiusPerMinute_1.ConversionFactorB = "0.45003694550739376"
+MillimetreMercuryAtZeroDegreeCelsiusPerMinute_1.Symbol = "mm Hg 0°C/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MillimetreMercuryAtZeroDegreeCelsiusPerMinute_1] -->|BelongsToClass| N0001(MillimetreMercuryAtZeroDegreeCelsiusPerMinute) 
+	N0000[MillimetreMercuryAtZeroDegreeCelsiusPerMinute_1] -->|ConversionFactorB| N0002(("0.45003694550739376")) 
+	N0000[MillimetreMercuryAtZeroDegreeCelsiusPerMinute_1] -->|Symbol| N0003(("mm Hg 0°C/min")) 
+```
+## InchMercuryAt32DegreeFahrenheitPerMinute <!-- NOUN -->
+- Display name: inch mercury at 32 degree fahrenheit per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 203183.34000000003
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in inch mercury at 32 degree fahrenheit per minute
+[SI] is the value in SI
+a = Minute/InchMercury32degF, i.e., 203183.34000000003
+and
+Minute = 60.0
+InchMercury32degF = 1.0/3386.389 reference: https://en.wikipedia.org/wiki/Inch_of_mercury
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+InchMercuryAt32DegreeFahrenheitPerMinute:InchMercuryAt32DegreeFahrenheitPerMinute_1
+InchMercuryAt32DegreeFahrenheitPerMinute_1.ConversionFactorB = "203183.34000000003"
+InchMercuryAt32DegreeFahrenheitPerMinute_1.Symbol = "in Hg 32°F/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[InchMercuryAt32DegreeFahrenheitPerMinute_1] -->|BelongsToClass| N0001(InchMercuryAt32DegreeFahrenheitPerMinute) 
+	N0000[InchMercuryAt32DegreeFahrenheitPerMinute_1] -->|ConversionFactorB| N0002(("203183.34000000003")) 
+	N0000[InchMercuryAt32DegreeFahrenheitPerMinute_1] -->|Symbol| N0003(("in Hg 32°F/min")) 
+```
+## InchMercuryAt60DegreeFahrenheitPerMinute <!-- NOUN -->
+- Display name: inch mercury at 60 degree fahrenheit per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 202611
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in inch mercury at 60 degree fahrenheit per minute
+[SI] is the value in SI
+a = Minute/InchMercury60degF, i.e., 202611
+and
+Minute = 60.0
+InchMercury60degF = 1.0 / 3376.85 reference: https://en.wikipedia.org/wiki/Inch_of_mercury
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+InchMercuryAt60DegreeFahrenheitPerMinute:InchMercuryAt60DegreeFahrenheitPerMinute_1
+InchMercuryAt60DegreeFahrenheitPerMinute_1.ConversionFactorB = "202611"
+InchMercuryAt60DegreeFahrenheitPerMinute_1.Symbol = "in Hg 60°F/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[InchMercuryAt60DegreeFahrenheitPerMinute_1] -->|BelongsToClass| N0001(InchMercuryAt60DegreeFahrenheitPerMinute) 
+	N0000[InchMercuryAt60DegreeFahrenheitPerMinute_1] -->|ConversionFactorB| N0002(("202611")) 
+	N0000[InchMercuryAt60DegreeFahrenheitPerMinute_1] -->|Symbol| N0003(("in Hg 60°F/min")) 
+```
+## CentimetreWaterAt4DegreeCelsiusPerMinute <!-- NOUN -->
+- Display name: centimetre water at 4 degree celsius per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.6062657565944032
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in centimetre water at 4 degree celsius per minute
+[SI] is the value in SI
+a = Minute/(Deca*MillimetreWater4degC), i.e., 0.6062657565944032
+and
+Minute = 60.0
+Deca = 10.0
+MillimetreWater4degC = 9.89665 reference: https://en.wikipedia.org/wiki/Centimetre_or_millimetre_of_water
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CentimetreWaterAt4DegreeCelsiusPerMinute:CentimetreWaterAt4DegreeCelsiusPerMinute_1
+CentimetreWaterAt4DegreeCelsiusPerMinute_1.ConversionFactorB = "0.6062657565944032"
+CentimetreWaterAt4DegreeCelsiusPerMinute_1.Symbol = "cm Aq 4°C/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CentimetreWaterAt4DegreeCelsiusPerMinute_1] -->|BelongsToClass| N0001(CentimetreWaterAt4DegreeCelsiusPerMinute) 
+	N0000[CentimetreWaterAt4DegreeCelsiusPerMinute_1] -->|ConversionFactorB| N0002(("0.6062657565944032")) 
+	N0000[CentimetreWaterAt4DegreeCelsiusPerMinute_1] -->|Symbol| N0003(("cm Aq 4°C/min")) 
+```
+## MillimetreWaterAt4DegreeCelsiusPerMinute <!-- NOUN -->
+- Display name: millimetre water at 4 degree celsius per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 6.062657565944032
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in millimetre water at 4 degree celsius per minute
+[SI] is the value in SI
+a = Minute/MillimetreWater4degC, i.e., 6.062657565944032
+and
+Minute = 60.0
+MillimetreWater4degC = 9.89665 reference: https://en.wikipedia.org/wiki/Centimetre_or_millimetre_of_water
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MillimetreWaterAt4DegreeCelsiusPerMinute:MillimetreWaterAt4DegreeCelsiusPerMinute_1
+MillimetreWaterAt4DegreeCelsiusPerMinute_1.ConversionFactorB = "6.062657565944032"
+MillimetreWaterAt4DegreeCelsiusPerMinute_1.Symbol = "mm Aq 4°C/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MillimetreWaterAt4DegreeCelsiusPerMinute_1] -->|BelongsToClass| N0001(MillimetreWaterAt4DegreeCelsiusPerMinute) 
+	N0000[MillimetreWaterAt4DegreeCelsiusPerMinute_1] -->|ConversionFactorB| N0002(("6.062657565944032")) 
+	N0000[MillimetreWaterAt4DegreeCelsiusPerMinute_1] -->|Symbol| N0003(("mm Aq 4°C/min")) 
+```
+## InchWaterAt4DegreeCelsiusPerMinute <!-- NOUN -->
+- Display name: inch water at 4 degree celsius per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.2408845279867674
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in inch water at 4 degree celsius per minute
+[SI] is the value in SI
+a = Minute/InchWater4degC, i.e., 0.2408845279867674
+and
+Minute = 60.0
+InchWater4degC = 249.082 reference: https://en.wikipedia.org/wiki/Inch_of_water
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+InchWaterAt4DegreeCelsiusPerMinute:InchWaterAt4DegreeCelsiusPerMinute_1
+InchWaterAt4DegreeCelsiusPerMinute_1.ConversionFactorB = "0.2408845279867674"
+InchWaterAt4DegreeCelsiusPerMinute_1.Symbol = "in Aq 4°C/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[InchWaterAt4DegreeCelsiusPerMinute_1] -->|BelongsToClass| N0001(InchWaterAt4DegreeCelsiusPerMinute) 
+	N0000[InchWaterAt4DegreeCelsiusPerMinute_1] -->|ConversionFactorB| N0002(("0.2408845279867674")) 
+	N0000[InchWaterAt4DegreeCelsiusPerMinute_1] -->|Symbol| N0003(("in Aq 4°C/min")) 
+```
+## FootWaterAt4DegreeCelsiusPerMinute <!-- NOUN -->
+- Display name: foot water at 4 degree celsius per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.020073153261536126
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in foot water at 4 degree celsius per minute
+[SI] is the value in SI
+a = Minute/FootWater4degC, i.e., 0.020073153261536126
+and
+Minute = 60.0
+FootWater4degC = 2989.067 reference: https://en.wikipedia.org/wiki/Inch_of_water
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+FootWaterAt4DegreeCelsiusPerMinute:FootWaterAt4DegreeCelsiusPerMinute_1
+FootWaterAt4DegreeCelsiusPerMinute_1.ConversionFactorB = "0.020073153261536126"
+FootWaterAt4DegreeCelsiusPerMinute_1.Symbol = "ft Aq 4°C/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[FootWaterAt4DegreeCelsiusPerMinute_1] -->|BelongsToClass| N0001(FootWaterAt4DegreeCelsiusPerMinute) 
+	N0000[FootWaterAt4DegreeCelsiusPerMinute_1] -->|ConversionFactorB| N0002(("0.020073153261536126")) 
+	N0000[FootWaterAt4DegreeCelsiusPerMinute_1] -->|Symbol| N0003(("ft Aq 4°C/min")) 
+```
+## DynePerSquareCentimetrePerMinute <!-- NOUN -->
+- Display name: dyne per square centimetre per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 600
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in dyne per square centimetre per minute
+[SI] is the value in SI
+a = Minute*Centi*Centi/Dyne, i.e., 600
+and
+Minute = 60.0
+Centi = 0.01
+Dyne = 1e-5 reference: https://en.wikipedia.org/wiki/Dyne
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+DynePerSquareCentimetrePerMinute:DynePerSquareCentimetrePerMinute_1
+DynePerSquareCentimetrePerMinute_1.ConversionFactorB = "600"
+DynePerSquareCentimetrePerMinute_1.Symbol = "dyne/cm²/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[DynePerSquareCentimetrePerMinute_1] -->|BelongsToClass| N0001(DynePerSquareCentimetrePerMinute) 
+	N0000[DynePerSquareCentimetrePerMinute_1] -->|ConversionFactorB| N0002(("600")) 
+	N0000[DynePerSquareCentimetrePerMinute_1] -->|Symbol| N0003(("dyne/cm²/min")) 
+```
+## PascalPerHour <!-- NOUN -->
+- Display name: pascal per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 3600
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PascalPerHour:PascalPerHour_1
+PascalPerHour_1.ConversionFactorB = "3600"
+PascalPerHour_1.Symbol = "Pa/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PascalPerHour_1] -->|BelongsToClass| N0001(PascalPerHour) 
+	N0000[PascalPerHour_1] -->|ConversionFactorB| N0002(("3600")) 
+	N0000[PascalPerHour_1] -->|Symbol| N0003(("Pa/h")) 
+```
+## KilopascalPerHour <!-- NOUN -->
+- Display name: kilopascal per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 3.6
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilopascal per hour
+[SI] is the value in SI
+a = Hour/Kilo, i.e., 3.6
+and
+Hour = 60.0 * Minute
+Kilo = 1000.0
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilopascalPerHour:KilopascalPerHour_1
+KilopascalPerHour_1.ConversionFactorB = "3.6"
+KilopascalPerHour_1.Symbol = "KPa/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilopascalPerHour_1] -->|BelongsToClass| N0001(KilopascalPerHour) 
+	N0000[KilopascalPerHour_1] -->|ConversionFactorB| N0002(("3.6")) 
+	N0000[KilopascalPerHour_1] -->|Symbol| N0003(("KPa/h")) 
+```
+## BarPerHour <!-- NOUN -->
+- Display name: bar per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.036
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in bar per hour
+[SI] is the value in SI
+a = Hour/Bar, i.e., 0.036
+and
+Hour = 60.0 * Minute
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+BarPerHour:BarPerHour_1
+BarPerHour_1.ConversionFactorB = "0.036"
+BarPerHour_1.Symbol = "bar/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[BarPerHour_1] -->|BelongsToClass| N0001(BarPerHour) 
+	N0000[BarPerHour_1] -->|ConversionFactorB| N0002(("0.036")) 
+	N0000[BarPerHour_1] -->|Symbol| N0003(("bar/h")) 
+```
+## MillibarPerHour <!-- NOUN -->
+- Display name: millibar per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 36
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in millibar per hour
+[SI] is the value in SI
+a = Hour/(Milli*Bar), i.e., 36
+and
+Hour = 60.0 * Minute
+Milli = 0.001
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MillibarPerHour:MillibarPerHour_1
+MillibarPerHour_1.ConversionFactorB = "36"
+MillibarPerHour_1.Symbol = "mbar/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MillibarPerHour_1] -->|BelongsToClass| N0001(MillibarPerHour) 
+	N0000[MillibarPerHour_1] -->|ConversionFactorB| N0002(("36")) 
+	N0000[MillibarPerHour_1] -->|Symbol| N0003(("mbar/h")) 
+```
+## MicrobarPerHour <!-- NOUN -->
+- Display name: microbar per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 36000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in microbar per hour
+[SI] is the value in SI
+a = Hour/(Micro*Bar), i.e., 36000
+and
+Hour = 60.0 * Minute
+Micro = 1e-6
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MicrobarPerHour:MicrobarPerHour_1
+MicrobarPerHour_1.ConversionFactorB = "36000"
+MicrobarPerHour_1.Symbol = "µbar/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MicrobarPerHour_1] -->|BelongsToClass| N0001(MicrobarPerHour) 
+	N0000[MicrobarPerHour_1] -->|ConversionFactorB| N0002(("36000")) 
+	N0000[MicrobarPerHour_1] -->|Symbol| N0003(("µbar/h")) 
+```
+## PoundPerSquareInchPerHour <!-- NOUN -->
+- Display name: pound per square inch per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.5221358558287532
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per square inch per hour
+[SI] is the value in SI
+a = Hour/PSI, i.e., 0.5221358558287532
+and
+Hour = 60.0 * Minute
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Minute = 60.0
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerSquareInchPerHour:PoundPerSquareInchPerHour_1
+PoundPerSquareInchPerHour_1.ConversionFactorB = "0.5221358558287532"
+PoundPerSquareInchPerHour_1.Symbol = "psi/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerSquareInchPerHour_1] -->|BelongsToClass| N0001(PoundPerSquareInchPerHour) 
+	N0000[PoundPerSquareInchPerHour_1] -->|ConversionFactorB| N0002(("0.5221358558287532")) 
+	N0000[PoundPerSquareInchPerHour_1] -->|Symbol| N0003(("psi/h")) 
+```
+## PoundPer100SquareFootPerHour <!-- NOUN -->
+- Display name: pound per 100 square foot per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 7518.756323934045
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per 100 square foot per hour
+[SI] is the value in SI
+a = Hour*100.0*Foot*Foot/PoundForce, i.e., 7518.756323934045
+and
+Hour = 60.0 * Minute
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Minute = 60.0
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPer100SquareFootPerHour:PoundPer100SquareFootPerHour_1
+PoundPer100SquareFootPerHour_1.ConversionFactorB = "7518.756323934045"
+PoundPer100SquareFootPerHour_1.Symbol = "lbf/100ft²/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPer100SquareFootPerHour_1] -->|BelongsToClass| N0001(PoundPer100SquareFootPerHour) 
+	N0000[PoundPer100SquareFootPerHour_1] -->|ConversionFactorB| N0002(("7518.756323934045")) 
+	N0000[PoundPer100SquareFootPerHour_1] -->|Symbol| N0003(("lbf/100ft²/h")) 
+```
+## KilopoundPerSquareInchPerHour <!-- NOUN -->
+- Display name: kilopound per square inch per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0005221358558287532
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilopound per square inch per hour
+[SI] is the value in SI
+a = Hour/(Kilo*PSI), i.e., 0.0005221358558287532
+and
+Hour = 60.0 * Minute
+Kilo = 1000.0
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Minute = 60.0
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilopoundPerSquareInchPerHour:KilopoundPerSquareInchPerHour_1
+KilopoundPerSquareInchPerHour_1.ConversionFactorB = "0.0005221358558287532"
+KilopoundPerSquareInchPerHour_1.Symbol = "ksi/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilopoundPerSquareInchPerHour_1] -->|BelongsToClass| N0001(KilopoundPerSquareInchPerHour) 
+	N0000[KilopoundPerSquareInchPerHour_1] -->|ConversionFactorB| N0002(("0.0005221358558287532")) 
+	N0000[KilopoundPerSquareInchPerHour_1] -->|Symbol| N0003(("ksi/h")) 
+```
+## StandardAtmospherePerHour <!-- NOUN -->
+- Display name: standard atmosphere per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.03552923760177646
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in standard atmosphere per hour
+[SI] is the value in SI
+a = Hour/Atmosphere, i.e., 0.03552923760177646
+and
+Hour = 60.0 * Minute
+Atmosphere = 101325.0 reference: https://en.wikipedia.org/wiki/Atmospheric_pressure
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+StandardAtmospherePerHour:StandardAtmospherePerHour_1
+StandardAtmospherePerHour_1.ConversionFactorB = "0.03552923760177646"
+StandardAtmospherePerHour_1.Symbol = "atm/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[StandardAtmospherePerHour_1] -->|BelongsToClass| N0001(StandardAtmospherePerHour) 
+	N0000[StandardAtmospherePerHour_1] -->|ConversionFactorB| N0002(("0.03552923760177646")) 
+	N0000[StandardAtmospherePerHour_1] -->|Symbol| N0003(("atm/h")) 
+```
+## PoundPerSquareFootPerHour <!-- NOUN -->
+- Display name: pound per square foot per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 75.18756323934043
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per square foot per hour
+[SI] is the value in SI
+a = Hour*Foot*Foot/PoundForce, i.e., 75.18756323934043
+and
+Hour = 60.0 * Minute
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Minute = 60.0
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerSquareFootPerHour:PoundPerSquareFootPerHour_1
+PoundPerSquareFootPerHour_1.ConversionFactorB = "75.18756323934043"
+PoundPerSquareFootPerHour_1.Symbol = "lb/ft²/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerSquareFootPerHour_1] -->|BelongsToClass| N0001(PoundPerSquareFootPerHour) 
+	N0000[PoundPerSquareFootPerHour_1] -->|ConversionFactorB| N0002(("75.18756323934043")) 
+	N0000[PoundPerSquareFootPerHour_1] -->|Symbol| N0003(("lb/ft²/h")) 
+```
+## MegapascalPerHour <!-- NOUN -->
+- Display name: megapascal per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0036
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in megapascal per hour
+[SI] is the value in SI
+a = Hour/Mega, i.e., 0.0036
+and
+Hour = 60.0 * Minute
+Mega = 1e6
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MegapascalPerHour:MegapascalPerHour_1
+MegapascalPerHour_1.ConversionFactorB = "0.0036"
+MegapascalPerHour_1.Symbol = "MPa/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MegapascalPerHour_1] -->|BelongsToClass| N0001(MegapascalPerHour) 
+	N0000[MegapascalPerHour_1] -->|ConversionFactorB| N0002(("0.0036")) 
+	N0000[MegapascalPerHour_1] -->|Symbol| N0003(("MPa/h")) 
+```
+## GigapascalPerHour <!-- NOUN -->
+- Display name: gigapascal per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 3.6E-06
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gigapascal per hour
+[SI] is the value in SI
+a = Hour/Giga, i.e., 3.6E-06
+and
+Hour = 60.0 * Minute
+Giga = 1e9
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GigapascalPerHour:GigapascalPerHour_1
+GigapascalPerHour_1.ConversionFactorB = "3.6E-06"
+GigapascalPerHour_1.Symbol = "GPa/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GigapascalPerHour_1] -->|BelongsToClass| N0001(GigapascalPerHour) 
+	N0000[GigapascalPerHour_1] -->|ConversionFactorB| N0002(("3.6E-06")) 
+	N0000[GigapascalPerHour_1] -->|Symbol| N0003(("GPa/h")) 
+```
+## NewtonPerSquareMetrePerHour <!-- NOUN -->
+- Display name: newton per square metre per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 3600
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in newton per square metre per hour
+[SI] is the value in SI
+a = Hour/Unit, i.e., 3600
+and
+Hour = 60.0 * Minute
+Unit = 1.0
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonPerSquareMetrePerHour:NewtonPerSquareMetrePerHour_1
+NewtonPerSquareMetrePerHour_1.ConversionFactorB = "3600"
+NewtonPerSquareMetrePerHour_1.Symbol = "N/m²/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonPerSquareMetrePerHour_1] -->|BelongsToClass| N0001(NewtonPerSquareMetrePerHour) 
+	N0000[NewtonPerSquareMetrePerHour_1] -->|ConversionFactorB| N0002(("3600")) 
+	N0000[NewtonPerSquareMetrePerHour_1] -->|Symbol| N0003(("N/m²/h")) 
+```
+## NewtonPerSquareCentimetrePerHour <!-- NOUN -->
+- Display name: newton per square centimetre per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.36
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in newton per square centimetre per hour
+[SI] is the value in SI
+a = Hour*Centi*Centi, i.e., 0.36
+and
+Hour = 60.0 * Minute
+Centi = 0.01
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonPerSquareCentimetrePerHour:NewtonPerSquareCentimetrePerHour_1
+NewtonPerSquareCentimetrePerHour_1.ConversionFactorB = "0.36"
+NewtonPerSquareCentimetrePerHour_1.Symbol = "N/cm²/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonPerSquareCentimetrePerHour_1] -->|BelongsToClass| N0001(NewtonPerSquareCentimetrePerHour) 
+	N0000[NewtonPerSquareCentimetrePerHour_1] -->|ConversionFactorB| N0002(("0.36")) 
+	N0000[NewtonPerSquareCentimetrePerHour_1] -->|Symbol| N0003(("N/cm²/h")) 
+```
+## NewtonPerSquareMillimetrePerHour <!-- NOUN -->
+- Display name: newton per square millimetre per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0036000000000000003
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in newton per square millimetre per hour
+[SI] is the value in SI
+a = Hour*Milli*Milli, i.e., 0.0036000000000000003
+and
+Hour = 60.0 * Minute
+Milli = 0.001
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonPerSquareMillimetrePerHour:NewtonPerSquareMillimetrePerHour_1
+NewtonPerSquareMillimetrePerHour_1.ConversionFactorB = "0.0036000000000000003"
+NewtonPerSquareMillimetrePerHour_1.Symbol = "N/mm²/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonPerSquareMillimetrePerHour_1] -->|BelongsToClass| N0001(NewtonPerSquareMillimetrePerHour) 
+	N0000[NewtonPerSquareMillimetrePerHour_1] -->|ConversionFactorB| N0002(("0.0036000000000000003")) 
+	N0000[NewtonPerSquareMillimetrePerHour_1] -->|Symbol| N0003(("N/mm²/h")) 
+```
+## KilonewtonPerSquareMetrePerHour <!-- NOUN -->
+- Display name: kilonewton per square metre per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 3.6
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilonewton per square metre per hour
+[SI] is the value in SI
+a = Hour/Kilo, i.e., 3.6
+and
+Hour = 60.0 * Minute
+Kilo = 1000.0
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilonewtonPerSquareMetrePerHour:KilonewtonPerSquareMetrePerHour_1
+KilonewtonPerSquareMetrePerHour_1.ConversionFactorB = "3.6"
+KilonewtonPerSquareMetrePerHour_1.Symbol = "kN/m²/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilonewtonPerSquareMetrePerHour_1] -->|BelongsToClass| N0001(KilonewtonPerSquareMetrePerHour) 
+	N0000[KilonewtonPerSquareMetrePerHour_1] -->|ConversionFactorB| N0002(("3.6")) 
+	N0000[KilonewtonPerSquareMetrePerHour_1] -->|Symbol| N0003(("kN/m²/h")) 
+```
+## MegapoundPerSquareInchPerHour <!-- NOUN -->
+- Display name: megapound per square inch per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 5.221358558287532E-07
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in megapound per square inch per hour
+[SI] is the value in SI
+a = Hour*Inch*Inch/(Mega*PoundForce), i.e., 5.221358558287532E-07
+and
+Hour = 60.0 * Minute
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Mega = 1e6
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Minute = 60.0
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MegapoundPerSquareInchPerHour:MegapoundPerSquareInchPerHour_1
+MegapoundPerSquareInchPerHour_1.ConversionFactorB = "5.221358558287532E-07"
+MegapoundPerSquareInchPerHour_1.Symbol = "Mpsi/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MegapoundPerSquareInchPerHour_1] -->|BelongsToClass| N0001(MegapoundPerSquareInchPerHour) 
+	N0000[MegapoundPerSquareInchPerHour_1] -->|ConversionFactorB| N0002(("5.221358558287532E-07")) 
+	N0000[MegapoundPerSquareInchPerHour_1] -->|Symbol| N0003(("Mpsi/h")) 
+```
+## TorrPerHour <!-- NOUN -->
+- Display name: torr per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 27.002220577350112
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in torr per hour
+[SI] is the value in SI
+a = Hour/Torr, i.e., 27.002220577350112
+and
+Hour = 60.0 * Minute
+Torr = (1.0 / 760.0) * Atmosphere reference: https://en.wikipedia.org/wiki/Torr
+Minute = 60.0
+Atmosphere = 101325.0 reference: https://en.wikipedia.org/wiki/Atmospheric_pressure
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+TorrPerHour:TorrPerHour_1
+TorrPerHour_1.ConversionFactorB = "27.002220577350112"
+TorrPerHour_1.Symbol = "Torr/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[TorrPerHour_1] -->|BelongsToClass| N0001(TorrPerHour) 
+	N0000[TorrPerHour_1] -->|ConversionFactorB| N0002(("27.002220577350112")) 
+	N0000[TorrPerHour_1] -->|Symbol| N0003(("Torr/h")) 
+```
+## CentimetreMercuryAtZeroDegreeCelsiusPerHour <!-- NOUN -->
+- Display name: centimetre mercury at zero degree celsius per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 2.700221673044363
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in centimetre mercury at zero degree celsius per hour
+[SI] is the value in SI
+a = Hour/(Deca*MillimetreMercury), i.e., 2.700221673044363
+and
+Hour = 60.0 * Minute
+Deca = 10.0
+MillimetreMercury = 133.322387415 reference: https://en.wikipedia.org/wiki/Millimetre_of_mercury
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CentimetreMercuryAtZeroDegreeCelsiusPerHour:CentimetreMercuryAtZeroDegreeCelsiusPerHour_1
+CentimetreMercuryAtZeroDegreeCelsiusPerHour_1.ConversionFactorB = "2.700221673044363"
+CentimetreMercuryAtZeroDegreeCelsiusPerHour_1.Symbol = "cm Hg 0°C/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CentimetreMercuryAtZeroDegreeCelsiusPerHour_1] -->|BelongsToClass| N0001(CentimetreMercuryAtZeroDegreeCelsiusPerHour) 
+	N0000[CentimetreMercuryAtZeroDegreeCelsiusPerHour_1] -->|ConversionFactorB| N0002(("2.700221673044363")) 
+	N0000[CentimetreMercuryAtZeroDegreeCelsiusPerHour_1] -->|Symbol| N0003(("cm Hg 0°C/h")) 
+```
+## MillimetreMercuryAtZeroDegreeCelsiusPerHour <!-- NOUN -->
+- Display name: millimetre mercury at zero degree celsius per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 27.002216730443628
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in millimetre mercury at zero degree celsius per hour
+[SI] is the value in SI
+a = Hour/MillimetreMercury, i.e., 27.002216730443628
+and
+Hour = 60.0 * Minute
+MillimetreMercury = 133.322387415 reference: https://en.wikipedia.org/wiki/Millimetre_of_mercury
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MillimetreMercuryAtZeroDegreeCelsiusPerHour:MillimetreMercuryAtZeroDegreeCelsiusPerHour_1
+MillimetreMercuryAtZeroDegreeCelsiusPerHour_1.ConversionFactorB = "27.002216730443628"
+MillimetreMercuryAtZeroDegreeCelsiusPerHour_1.Symbol = "mm Hg 0°C/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MillimetreMercuryAtZeroDegreeCelsiusPerHour_1] -->|BelongsToClass| N0001(MillimetreMercuryAtZeroDegreeCelsiusPerHour) 
+	N0000[MillimetreMercuryAtZeroDegreeCelsiusPerHour_1] -->|ConversionFactorB| N0002(("27.002216730443628")) 
+	N0000[MillimetreMercuryAtZeroDegreeCelsiusPerHour_1] -->|Symbol| N0003(("mm Hg 0°C/h")) 
+```
+## InchMercuryAt32DegreeFahrenheitPerHour <!-- NOUN -->
+- Display name: inch mercury at 32 degree fahrenheit per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 12191000.400000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in inch mercury at 32 degree fahrenheit per hour
+[SI] is the value in SI
+a = Hour/InchMercury32degF, i.e., 12191000.400000002
+and
+Hour = 60.0 * Minute
+InchMercury32degF = 1.0/3386.389 reference: https://en.wikipedia.org/wiki/Inch_of_mercury
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+InchMercuryAt32DegreeFahrenheitPerHour:InchMercuryAt32DegreeFahrenheitPerHour_1
+InchMercuryAt32DegreeFahrenheitPerHour_1.ConversionFactorB = "12191000.400000002"
+InchMercuryAt32DegreeFahrenheitPerHour_1.Symbol = "in Hg 32°F/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[InchMercuryAt32DegreeFahrenheitPerHour_1] -->|BelongsToClass| N0001(InchMercuryAt32DegreeFahrenheitPerHour) 
+	N0000[InchMercuryAt32DegreeFahrenheitPerHour_1] -->|ConversionFactorB| N0002(("12191000.400000002")) 
+	N0000[InchMercuryAt32DegreeFahrenheitPerHour_1] -->|Symbol| N0003(("in Hg 32°F/h")) 
+```
+## InchMercuryAt60DegreeFahrenheitPerHour <!-- NOUN -->
+- Display name: inch mercury at 60 degree fahrenheit per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 12156660
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in inch mercury at 60 degree fahrenheit per hour
+[SI] is the value in SI
+a = Hour/InchMercury60degF, i.e., 12156660
+and
+Hour = 60.0 * Minute
+InchMercury60degF = 1.0 / 3376.85 reference: https://en.wikipedia.org/wiki/Inch_of_mercury
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+InchMercuryAt60DegreeFahrenheitPerHour:InchMercuryAt60DegreeFahrenheitPerHour_1
+InchMercuryAt60DegreeFahrenheitPerHour_1.ConversionFactorB = "12156660"
+InchMercuryAt60DegreeFahrenheitPerHour_1.Symbol = "in Hg 60°F/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[InchMercuryAt60DegreeFahrenheitPerHour_1] -->|BelongsToClass| N0001(InchMercuryAt60DegreeFahrenheitPerHour) 
+	N0000[InchMercuryAt60DegreeFahrenheitPerHour_1] -->|ConversionFactorB| N0002(("12156660")) 
+	N0000[InchMercuryAt60DegreeFahrenheitPerHour_1] -->|Symbol| N0003(("in Hg 60°F/h")) 
+```
+## CentimetreWaterAt4DegreeCelsiusPerHour <!-- NOUN -->
+- Display name: centimetre water at 4 degree celsius per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 36.37594539566419
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in centimetre water at 4 degree celsius per hour
+[SI] is the value in SI
+a = Hour/(Deca*MillimetreWater4degC), i.e., 36.37594539566419
+and
+Hour = 60.0 * Minute
+Deca = 10.0
+MillimetreWater4degC = 9.89665 reference: https://en.wikipedia.org/wiki/Centimetre_or_millimetre_of_water
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CentimetreWaterAt4DegreeCelsiusPerHour:CentimetreWaterAt4DegreeCelsiusPerHour_1
+CentimetreWaterAt4DegreeCelsiusPerHour_1.ConversionFactorB = "36.37594539566419"
+CentimetreWaterAt4DegreeCelsiusPerHour_1.Symbol = "cm Aq 4°C/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CentimetreWaterAt4DegreeCelsiusPerHour_1] -->|BelongsToClass| N0001(CentimetreWaterAt4DegreeCelsiusPerHour) 
+	N0000[CentimetreWaterAt4DegreeCelsiusPerHour_1] -->|ConversionFactorB| N0002(("36.37594539566419")) 
+	N0000[CentimetreWaterAt4DegreeCelsiusPerHour_1] -->|Symbol| N0003(("cm Aq 4°C/h")) 
+```
+## MillimetreWaterAt4DegreeCelsiusPerHour <!-- NOUN -->
+- Display name: millimetre water at 4 degree celsius per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 363.75945395664195
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in millimetre water at 4 degree celsius per hour
+[SI] is the value in SI
+a = Hour/MillimetreWater4degC, i.e., 363.75945395664195
+and
+Hour = 60.0 * Minute
+MillimetreWater4degC = 9.89665 reference: https://en.wikipedia.org/wiki/Centimetre_or_millimetre_of_water
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MillimetreWaterAt4DegreeCelsiusPerHour:MillimetreWaterAt4DegreeCelsiusPerHour_1
+MillimetreWaterAt4DegreeCelsiusPerHour_1.ConversionFactorB = "363.75945395664195"
+MillimetreWaterAt4DegreeCelsiusPerHour_1.Symbol = "mm Aq 4°C/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MillimetreWaterAt4DegreeCelsiusPerHour_1] -->|BelongsToClass| N0001(MillimetreWaterAt4DegreeCelsiusPerHour) 
+	N0000[MillimetreWaterAt4DegreeCelsiusPerHour_1] -->|ConversionFactorB| N0002(("363.75945395664195")) 
+	N0000[MillimetreWaterAt4DegreeCelsiusPerHour_1] -->|Symbol| N0003(("mm Aq 4°C/h")) 
+```
+## InchWaterAt4DegreeCelsiusPerHour <!-- NOUN -->
+- Display name: inch water at 4 degree celsius per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 14.453071679206046
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in inch water at 4 degree celsius per hour
+[SI] is the value in SI
+a = Hour/InchWater4degC, i.e., 14.453071679206046
+and
+Hour = 60.0 * Minute
+InchWater4degC = 249.082 reference: https://en.wikipedia.org/wiki/Inch_of_water
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+InchWaterAt4DegreeCelsiusPerHour:InchWaterAt4DegreeCelsiusPerHour_1
+InchWaterAt4DegreeCelsiusPerHour_1.ConversionFactorB = "14.453071679206046"
+InchWaterAt4DegreeCelsiusPerHour_1.Symbol = "in Aq 4°C/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[InchWaterAt4DegreeCelsiusPerHour_1] -->|BelongsToClass| N0001(InchWaterAt4DegreeCelsiusPerHour) 
+	N0000[InchWaterAt4DegreeCelsiusPerHour_1] -->|ConversionFactorB| N0002(("14.453071679206046")) 
+	N0000[InchWaterAt4DegreeCelsiusPerHour_1] -->|Symbol| N0003(("in Aq 4°C/h")) 
+```
+## FootWaterAt4DegreeCelsiusPerHour <!-- NOUN -->
+- Display name: foot water at 4 degree celsius per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 1.2043891956921675
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in foot water at 4 degree celsius per hour
+[SI] is the value in SI
+a = Hour/FootWater4degC, i.e., 1.2043891956921675
+and
+Hour = 60.0 * Minute
+FootWater4degC = 2989.067 reference: https://en.wikipedia.org/wiki/Inch_of_water
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+FootWaterAt4DegreeCelsiusPerHour:FootWaterAt4DegreeCelsiusPerHour_1
+FootWaterAt4DegreeCelsiusPerHour_1.ConversionFactorB = "1.2043891956921675"
+FootWaterAt4DegreeCelsiusPerHour_1.Symbol = "ft Aq 4°C/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[FootWaterAt4DegreeCelsiusPerHour_1] -->|BelongsToClass| N0001(FootWaterAt4DegreeCelsiusPerHour) 
+	N0000[FootWaterAt4DegreeCelsiusPerHour_1] -->|ConversionFactorB| N0002(("1.2043891956921675")) 
+	N0000[FootWaterAt4DegreeCelsiusPerHour_1] -->|Symbol| N0003(("ft Aq 4°C/h")) 
+```
+## DynePerSquareCentimetrePerHour <!-- NOUN -->
+- Display name: dyne per square centimetre per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 35999.99999999999
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in dyne per square centimetre per hour
+[SI] is the value in SI
+a = Hour*Centi*Centi/Dyne, i.e., 35999.99999999999
+and
+Hour = 60.0 * Minute
+Centi = 0.01
+Dyne = 1e-5 reference: https://en.wikipedia.org/wiki/Dyne
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+DynePerSquareCentimetrePerHour:DynePerSquareCentimetrePerHour_1
+DynePerSquareCentimetrePerHour_1.ConversionFactorB = "35999.99999999999"
+DynePerSquareCentimetrePerHour_1.Symbol = "dyne/cm²/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[DynePerSquareCentimetrePerHour_1] -->|BelongsToClass| N0001(DynePerSquareCentimetrePerHour) 
+	N0000[DynePerSquareCentimetrePerHour_1] -->|ConversionFactorB| N0002(("35999.99999999999")) 
+	N0000[DynePerSquareCentimetrePerHour_1] -->|Symbol| N0003(("dyne/cm²/h")) 
+```
+## NewtonMetrePerSecond <!-- NOUN -->
+- Display name: newton metre per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonMetrePerSecond:NewtonMetrePerSecond_1
+NewtonMetrePerSecond_1.Symbol = "N•m/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonMetrePerSecond_1] -->|BelongsToClass| N0001(NewtonMetrePerSecond) 
+	N0000[NewtonMetrePerSecond_1] -->|Symbol| N0002(("N•m/s")) 
+```
+## DecanewtonMetrePerSecond <!-- NOUN -->
+- Display name: decanewton metre per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.1
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in decanewton metre per second
+[SI] is the value in SI
+a = 1.0/(Deca), i.e., 0.1
+and
+Deca = 10.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+DecanewtonMetrePerSecond:DecanewtonMetrePerSecond_1
+DecanewtonMetrePerSecond_1.ConversionFactorB = "0.1"
+DecanewtonMetrePerSecond_1.Symbol = "daN•m/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[DecanewtonMetrePerSecond_1] -->|BelongsToClass| N0001(DecanewtonMetrePerSecond) 
+	N0000[DecanewtonMetrePerSecond_1] -->|ConversionFactorB| N0002(("0.1")) 
+	N0000[DecanewtonMetrePerSecond_1] -->|Symbol| N0003(("daN•m/s")) 
+```
+## KilogramForceMetrePerSecond <!-- NOUN -->
+- Display name: kilogram force metre per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.10197162129779283
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram force metre per second
+[SI] is the value in SI
+a = 1.0/ KilogramForce, i.e., 0.10197162129779283
+and
+KilogramForce = 1.0 * G reference: https://en.wikipedia.org/wiki/Kilogram-force
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramForceMetrePerSecond:KilogramForceMetrePerSecond_1
+KilogramForceMetrePerSecond_1.ConversionFactorB = "0.10197162129779283"
+KilogramForceMetrePerSecond_1.Symbol = "kgf•m/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramForceMetrePerSecond_1] -->|BelongsToClass| N0001(KilogramForceMetrePerSecond) 
+	N0000[KilogramForceMetrePerSecond_1] -->|ConversionFactorB| N0002(("0.10197162129779283")) 
+	N0000[KilogramForceMetrePerSecond_1] -->|Symbol| N0003(("kgf•m/s")) 
+```
+## KilonewtonMetrePerSecond <!-- NOUN -->
+- Display name: kilonewton metre per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.001
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilonewton metre per second
+[SI] is the value in SI
+a = 1.0/Kilo, i.e., 0.001
+and
+Kilo = 1000.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilonewtonMetrePerSecond:KilonewtonMetrePerSecond_1
+KilonewtonMetrePerSecond_1.ConversionFactorB = "0.001"
+KilonewtonMetrePerSecond_1.Symbol = "kN•m/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilonewtonMetrePerSecond_1] -->|BelongsToClass| N0001(KilonewtonMetrePerSecond) 
+	N0000[KilonewtonMetrePerSecond_1] -->|ConversionFactorB| N0002(("0.001")) 
+	N0000[KilonewtonMetrePerSecond_1] -->|Symbol| N0003(("kN•m/s")) 
+```
+## FootPoundPerSecond <!-- NOUN -->
+- Display name: foot pound per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.7375621492772655
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in foot pound per second
+[SI] is the value in SI
+a = 1.0/(Foot*PoundForce), i.e., 0.7375621492772655
+and
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+FootPoundPerSecond:FootPoundPerSecond_1
+FootPoundPerSecond_1.ConversionFactorB = "0.7375621492772655"
+FootPoundPerSecond_1.Symbol = "ft•lbf/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[FootPoundPerSecond_1] -->|BelongsToClass| N0001(FootPoundPerSecond) 
+	N0000[FootPoundPerSecond_1] -->|ConversionFactorB| N0002(("0.7375621492772655")) 
+	N0000[FootPoundPerSecond_1] -->|Symbol| N0003(("ft•lbf/s")) 
+```
+## KilofootPoundPerSecond <!-- NOUN -->
+- Display name: kilofoot pound per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0007375621492772656
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilofoot pound per second
+[SI] is the value in SI
+a = 1.0/(Kilo*Foot*PoundForce), i.e., 0.0007375621492772656
+and
+Kilo = 1000.0
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilofootPoundPerSecond:KilofootPoundPerSecond_1
+KilofootPoundPerSecond_1.ConversionFactorB = "0.0007375621492772656"
+KilofootPoundPerSecond_1.Symbol = "kft•lbf/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilofootPoundPerSecond_1] -->|BelongsToClass| N0001(KilofootPoundPerSecond) 
+	N0000[KilofootPoundPerSecond_1] -->|ConversionFactorB| N0002(("0.0007375621492772656")) 
+	N0000[KilofootPoundPerSecond_1] -->|Symbol| N0003(("kft•lbf/s")) 
+```
+## NewtonDecimetrePerSecond <!-- NOUN -->
+- Display name: newton decimetre per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 10
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in newton decimetre per second
+[SI] is the value in SI
+a = 1.0/Deci, i.e., 10
+and
+Deci = 0.1
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonDecimetrePerSecond:NewtonDecimetrePerSecond_1
+NewtonDecimetrePerSecond_1.ConversionFactorB = "10"
+NewtonDecimetrePerSecond_1.Symbol = "N•dm/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonDecimetrePerSecond_1] -->|BelongsToClass| N0001(NewtonDecimetrePerSecond) 
+	N0000[NewtonDecimetrePerSecond_1] -->|ConversionFactorB| N0002(("10")) 
+	N0000[NewtonDecimetrePerSecond_1] -->|Symbol| N0003(("N•dm/s")) 
+```
+## NewtonCentimetrePerSecond <!-- NOUN -->
+- Display name: newton centimetre per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 100
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in newton centimetre per second
+[SI] is the value in SI
+a = 1.0/Centi, i.e., 100
+and
+Centi = 0.01
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonCentimetrePerSecond:NewtonCentimetrePerSecond_1
+NewtonCentimetrePerSecond_1.ConversionFactorB = "100"
+NewtonCentimetrePerSecond_1.Symbol = "N•cm/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonCentimetrePerSecond_1] -->|BelongsToClass| N0001(NewtonCentimetrePerSecond) 
+	N0000[NewtonCentimetrePerSecond_1] -->|ConversionFactorB| N0002(("100")) 
+	N0000[NewtonCentimetrePerSecond_1] -->|Symbol| N0003(("N•cm/s")) 
+```
+## NewtonMillimetrePerSecond <!-- NOUN -->
+- Display name: newton millimetre per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 1000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in newton millimetre per second
+[SI] is the value in SI
+a = 1.0/Milli, i.e., 1000
+and
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonMillimetrePerSecond:NewtonMillimetrePerSecond_1
+NewtonMillimetrePerSecond_1.ConversionFactorB = "1000"
+NewtonMillimetrePerSecond_1.Symbol = "N•mm/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonMillimetrePerSecond_1] -->|BelongsToClass| N0001(NewtonMillimetrePerSecond) 
+	N0000[NewtonMillimetrePerSecond_1] -->|ConversionFactorB| N0002(("1000")) 
+	N0000[NewtonMillimetrePerSecond_1] -->|Symbol| N0003(("N•mm/s")) 
+```
+## InchPoundPerSecond <!-- NOUN -->
+- Display name: inch pound per second
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 8.850745791327185
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in inch pound per second
+[SI] is the value in SI
+a = 1.0/(PoundForce*Inch), i.e., 8.850745791327185
+and
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+InchPoundPerSecond:InchPoundPerSecond_1
+InchPoundPerSecond_1.ConversionFactorB = "8.850745791327185"
+InchPoundPerSecond_1.Symbol = "in•lbf/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[InchPoundPerSecond_1] -->|BelongsToClass| N0001(InchPoundPerSecond) 
+	N0000[InchPoundPerSecond_1] -->|ConversionFactorB| N0002(("8.850745791327185")) 
+	N0000[InchPoundPerSecond_1] -->|Symbol| N0003(("in•lbf/s")) 
+```
+## NewtonMetrePerMinute <!-- NOUN -->
+- Display name: newton metre per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 60
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonMetrePerMinute:NewtonMetrePerMinute_1
+NewtonMetrePerMinute_1.ConversionFactorB = "60"
+NewtonMetrePerMinute_1.Symbol = "N•m/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonMetrePerMinute_1] -->|BelongsToClass| N0001(NewtonMetrePerMinute) 
+	N0000[NewtonMetrePerMinute_1] -->|ConversionFactorB| N0002(("60")) 
+	N0000[NewtonMetrePerMinute_1] -->|Symbol| N0003(("N•m/min")) 
+```
+## DecanewtonMetrePerMinute <!-- NOUN -->
+- Display name: decanewton metre per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 6
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in decanewton metre per minute
+[SI] is the value in SI
+a = Minute/(Deca), i.e., 6
+and
+Minute = 60.0
+Deca = 10.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+DecanewtonMetrePerMinute:DecanewtonMetrePerMinute_1
+DecanewtonMetrePerMinute_1.ConversionFactorB = "6"
+DecanewtonMetrePerMinute_1.Symbol = "daN•m/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[DecanewtonMetrePerMinute_1] -->|BelongsToClass| N0001(DecanewtonMetrePerMinute) 
+	N0000[DecanewtonMetrePerMinute_1] -->|ConversionFactorB| N0002(("6")) 
+	N0000[DecanewtonMetrePerMinute_1] -->|Symbol| N0003(("daN•m/min")) 
+```
+## KilogramForceMetrePerMinute <!-- NOUN -->
+- Display name: kilogram force metre per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 6.11829727786757
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram force metre per minute
+[SI] is the value in SI
+a = Minute/ KilogramForce, i.e., 6.11829727786757
+and
+Minute = 60.0
+KilogramForce = 1.0 * G reference: https://en.wikipedia.org/wiki/Kilogram-force
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramForceMetrePerMinute:KilogramForceMetrePerMinute_1
+KilogramForceMetrePerMinute_1.ConversionFactorB = "6.11829727786757"
+KilogramForceMetrePerMinute_1.Symbol = "kgf•m/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramForceMetrePerMinute_1] -->|BelongsToClass| N0001(KilogramForceMetrePerMinute) 
+	N0000[KilogramForceMetrePerMinute_1] -->|ConversionFactorB| N0002(("6.11829727786757")) 
+	N0000[KilogramForceMetrePerMinute_1] -->|Symbol| N0003(("kgf•m/min")) 
+```
+## KilonewtonMetrePerMinute <!-- NOUN -->
+- Display name: kilonewton metre per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.06
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilonewton metre per minute
+[SI] is the value in SI
+a = Minute/Kilo, i.e., 0.06
+and
+Minute = 60.0
+Kilo = 1000.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilonewtonMetrePerMinute:KilonewtonMetrePerMinute_1
+KilonewtonMetrePerMinute_1.ConversionFactorB = "0.06"
+KilonewtonMetrePerMinute_1.Symbol = "kN•m/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilonewtonMetrePerMinute_1] -->|BelongsToClass| N0001(KilonewtonMetrePerMinute) 
+	N0000[KilonewtonMetrePerMinute_1] -->|ConversionFactorB| N0002(("0.06")) 
+	N0000[KilonewtonMetrePerMinute_1] -->|Symbol| N0003(("kN•m/min")) 
+```
+## FootPoundPerMinute <!-- NOUN -->
+- Display name: foot pound per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 44.25372895663593
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in foot pound per minute
+[SI] is the value in SI
+a = Minute/(Foot*PoundForce), i.e., 44.25372895663593
+and
+Minute = 60.0
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+FootPoundPerMinute:FootPoundPerMinute_1
+FootPoundPerMinute_1.ConversionFactorB = "44.25372895663593"
+FootPoundPerMinute_1.Symbol = "ft•lbf/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[FootPoundPerMinute_1] -->|BelongsToClass| N0001(FootPoundPerMinute) 
+	N0000[FootPoundPerMinute_1] -->|ConversionFactorB| N0002(("44.25372895663593")) 
+	N0000[FootPoundPerMinute_1] -->|Symbol| N0003(("ft•lbf/min")) 
+```
+## KilofootPoundPerMinute <!-- NOUN -->
+- Display name: kilofoot pound per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 0.044253728956635936
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilofoot pound per minute
+[SI] is the value in SI
+a = Minute/(Kilo*Foot*PoundForce), i.e., 0.044253728956635936
+and
+Minute = 60.0
+Kilo = 1000.0
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilofootPoundPerMinute:KilofootPoundPerMinute_1
+KilofootPoundPerMinute_1.ConversionFactorB = "0.044253728956635936"
+KilofootPoundPerMinute_1.Symbol = "kft•lbf/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilofootPoundPerMinute_1] -->|BelongsToClass| N0001(KilofootPoundPerMinute) 
+	N0000[KilofootPoundPerMinute_1] -->|ConversionFactorB| N0002(("0.044253728956635936")) 
+	N0000[KilofootPoundPerMinute_1] -->|Symbol| N0003(("kft•lbf/min")) 
+```
+## NewtonDecimetrePerMinute <!-- NOUN -->
+- Display name: newton decimetre per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 600
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in newton decimetre per minute
+[SI] is the value in SI
+a = Minute/Deci, i.e., 600
+and
+Minute = 60.0
+Deci = 0.1
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonDecimetrePerMinute:NewtonDecimetrePerMinute_1
+NewtonDecimetrePerMinute_1.ConversionFactorB = "600"
+NewtonDecimetrePerMinute_1.Symbol = "N•dm/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonDecimetrePerMinute_1] -->|BelongsToClass| N0001(NewtonDecimetrePerMinute) 
+	N0000[NewtonDecimetrePerMinute_1] -->|ConversionFactorB| N0002(("600")) 
+	N0000[NewtonDecimetrePerMinute_1] -->|Symbol| N0003(("N•dm/min")) 
+```
+## NewtonCentimetrePerMinute <!-- NOUN -->
+- Display name: newton centimetre per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 6000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in newton centimetre per minute
+[SI] is the value in SI
+a = Minute/Centi, i.e., 6000
+and
+Minute = 60.0
+Centi = 0.01
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonCentimetrePerMinute:NewtonCentimetrePerMinute_1
+NewtonCentimetrePerMinute_1.ConversionFactorB = "6000"
+NewtonCentimetrePerMinute_1.Symbol = "N•cm/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonCentimetrePerMinute_1] -->|BelongsToClass| N0001(NewtonCentimetrePerMinute) 
+	N0000[NewtonCentimetrePerMinute_1] -->|ConversionFactorB| N0002(("6000")) 
+	N0000[NewtonCentimetrePerMinute_1] -->|Symbol| N0003(("N•cm/min")) 
+```
+## NewtonMillimetrePerMinute <!-- NOUN -->
+- Display name: newton millimetre per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 60000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in newton millimetre per minute
+[SI] is the value in SI
+a = Minute/Milli, i.e., 60000
+and
+Minute = 60.0
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonMillimetrePerMinute:NewtonMillimetrePerMinute_1
+NewtonMillimetrePerMinute_1.ConversionFactorB = "60000"
+NewtonMillimetrePerMinute_1.Symbol = "N•mm/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonMillimetrePerMinute_1] -->|BelongsToClass| N0001(NewtonMillimetrePerMinute) 
+	N0000[NewtonMillimetrePerMinute_1] -->|ConversionFactorB| N0002(("60000")) 
+	N0000[NewtonMillimetrePerMinute_1] -->|Symbol| N0003(("N•mm/min")) 
+```
+## InchPoundPerMinute <!-- NOUN -->
+- Display name: inch pound per minute
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 531.0447474796312
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in inch pound per minute
+[SI] is the value in SI
+a = Minute/(PoundForce*Inch), i.e., 531.0447474796312
+and
+Minute = 60.0
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+InchPoundPerMinute:InchPoundPerMinute_1
+InchPoundPerMinute_1.ConversionFactorB = "531.0447474796312"
+InchPoundPerMinute_1.Symbol = "in•lbf/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[InchPoundPerMinute_1] -->|BelongsToClass| N0001(InchPoundPerMinute) 
+	N0000[InchPoundPerMinute_1] -->|ConversionFactorB| N0002(("531.0447474796312")) 
+	N0000[InchPoundPerMinute_1] -->|Symbol| N0003(("in•lbf/min")) 
+```
+## NewtonMetrePerHour <!-- NOUN -->
+- Display name: newton metre per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 3600
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonMetrePerHour:NewtonMetrePerHour_1
+NewtonMetrePerHour_1.ConversionFactorB = "3600"
+NewtonMetrePerHour_1.Symbol = "N•m/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonMetrePerHour_1] -->|BelongsToClass| N0001(NewtonMetrePerHour) 
+	N0000[NewtonMetrePerHour_1] -->|ConversionFactorB| N0002(("3600")) 
+	N0000[NewtonMetrePerHour_1] -->|Symbol| N0003(("N•m/h")) 
+```
+## DecanewtonMetrePerHour <!-- NOUN -->
+- Display name: decanewton metre per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 360
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in decanewton metre per hour
+[SI] is the value in SI
+a = Hour/(Deca), i.e., 360
+and
+Hour = 60.0 * Minute
+Deca = 10.0
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+DecanewtonMetrePerHour:DecanewtonMetrePerHour_1
+DecanewtonMetrePerHour_1.ConversionFactorB = "360"
+DecanewtonMetrePerHour_1.Symbol = "daN•m/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[DecanewtonMetrePerHour_1] -->|BelongsToClass| N0001(DecanewtonMetrePerHour) 
+	N0000[DecanewtonMetrePerHour_1] -->|ConversionFactorB| N0002(("360")) 
+	N0000[DecanewtonMetrePerHour_1] -->|Symbol| N0003(("daN•m/h")) 
+```
+## KilogramForceMetrePerHour <!-- NOUN -->
+- Display name: kilogram force metre per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 367.0978366720542
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram force metre per hour
+[SI] is the value in SI
+a = Hour/ KilogramForce, i.e., 367.0978366720542
+and
+Hour = 60.0 * Minute
+KilogramForce = 1.0 * G reference: https://en.wikipedia.org/wiki/Kilogram-force
+Minute = 60.0
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramForceMetrePerHour:KilogramForceMetrePerHour_1
+KilogramForceMetrePerHour_1.ConversionFactorB = "367.0978366720542"
+KilogramForceMetrePerHour_1.Symbol = "kgf•m/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramForceMetrePerHour_1] -->|BelongsToClass| N0001(KilogramForceMetrePerHour) 
+	N0000[KilogramForceMetrePerHour_1] -->|ConversionFactorB| N0002(("367.0978366720542")) 
+	N0000[KilogramForceMetrePerHour_1] -->|Symbol| N0003(("kgf•m/h")) 
+```
+## KilonewtonMetrePerHour <!-- NOUN -->
+- Display name: kilonewton metre per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 3.6
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilonewton metre per hour
+[SI] is the value in SI
+a = Hour/Kilo, i.e., 3.6
+and
+Hour = 60.0 * Minute
+Kilo = 1000.0
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilonewtonMetrePerHour:KilonewtonMetrePerHour_1
+KilonewtonMetrePerHour_1.ConversionFactorB = "3.6"
+KilonewtonMetrePerHour_1.Symbol = "kN•m/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilonewtonMetrePerHour_1] -->|BelongsToClass| N0001(KilonewtonMetrePerHour) 
+	N0000[KilonewtonMetrePerHour_1] -->|ConversionFactorB| N0002(("3.6")) 
+	N0000[KilonewtonMetrePerHour_1] -->|Symbol| N0003(("kN•m/h")) 
+```
+## FootPoundPerHour <!-- NOUN -->
+- Display name: foot pound per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 2655.2237373981557
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in foot pound per hour
+[SI] is the value in SI
+a = Hour/(Foot*PoundForce), i.e., 2655.2237373981557
+and
+Hour = 60.0 * Minute
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Minute = 60.0
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+FootPoundPerHour:FootPoundPerHour_1
+FootPoundPerHour_1.ConversionFactorB = "2655.2237373981557"
+FootPoundPerHour_1.Symbol = "ft•lbf/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[FootPoundPerHour_1] -->|BelongsToClass| N0001(FootPoundPerHour) 
+	N0000[FootPoundPerHour_1] -->|ConversionFactorB| N0002(("2655.2237373981557")) 
+	N0000[FootPoundPerHour_1] -->|Symbol| N0003(("ft•lbf/h")) 
+```
+## KilofootPoundPerHour <!-- NOUN -->
+- Display name: kilofoot pound per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 2.655223737398156
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilofoot pound per hour
+[SI] is the value in SI
+a = Hour/(Kilo*Foot*PoundForce), i.e., 2.655223737398156
+and
+Hour = 60.0 * Minute
+Kilo = 1000.0
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Minute = 60.0
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilofootPoundPerHour:KilofootPoundPerHour_1
+KilofootPoundPerHour_1.ConversionFactorB = "2.655223737398156"
+KilofootPoundPerHour_1.Symbol = "kft•lbf/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilofootPoundPerHour_1] -->|BelongsToClass| N0001(KilofootPoundPerHour) 
+	N0000[KilofootPoundPerHour_1] -->|ConversionFactorB| N0002(("2.655223737398156")) 
+	N0000[KilofootPoundPerHour_1] -->|Symbol| N0003(("kft•lbf/h")) 
+```
+## NewtonDecimetrePerHour <!-- NOUN -->
+- Display name: newton decimetre per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 36000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in newton decimetre per hour
+[SI] is the value in SI
+a = Hour/Deci, i.e., 36000
+and
+Hour = 60.0 * Minute
+Deci = 0.1
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonDecimetrePerHour:NewtonDecimetrePerHour_1
+NewtonDecimetrePerHour_1.ConversionFactorB = "36000"
+NewtonDecimetrePerHour_1.Symbol = "N•dm/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonDecimetrePerHour_1] -->|BelongsToClass| N0001(NewtonDecimetrePerHour) 
+	N0000[NewtonDecimetrePerHour_1] -->|ConversionFactorB| N0002(("36000")) 
+	N0000[NewtonDecimetrePerHour_1] -->|Symbol| N0003(("N•dm/h")) 
+```
+## NewtonCentimetrePerHour <!-- NOUN -->
+- Display name: newton centimetre per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 360000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in newton centimetre per hour
+[SI] is the value in SI
+a = Hour/Centi, i.e., 360000
+and
+Hour = 60.0 * Minute
+Centi = 0.01
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonCentimetrePerHour:NewtonCentimetrePerHour_1
+NewtonCentimetrePerHour_1.ConversionFactorB = "360000"
+NewtonCentimetrePerHour_1.Symbol = "N•cm/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonCentimetrePerHour_1] -->|BelongsToClass| N0001(NewtonCentimetrePerHour) 
+	N0000[NewtonCentimetrePerHour_1] -->|ConversionFactorB| N0002(("360000")) 
+	N0000[NewtonCentimetrePerHour_1] -->|Symbol| N0003(("N•cm/h")) 
+```
+## NewtonMillimetrePerHour <!-- NOUN -->
+- Display name: newton millimetre per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 3600000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in newton millimetre per hour
+[SI] is the value in SI
+a = Hour/Milli, i.e., 3600000
+and
+Hour = 60.0 * Minute
+Milli = 0.001
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonMillimetrePerHour:NewtonMillimetrePerHour_1
+NewtonMillimetrePerHour_1.ConversionFactorB = "3600000"
+NewtonMillimetrePerHour_1.Symbol = "N•mm/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonMillimetrePerHour_1] -->|BelongsToClass| N0001(NewtonMillimetrePerHour) 
+	N0000[NewtonMillimetrePerHour_1] -->|ConversionFactorB| N0002(("3600000")) 
+	N0000[NewtonMillimetrePerHour_1] -->|Symbol| N0003(("N•mm/h")) 
+```
+## InchPoundPerHour <!-- NOUN -->
+- Display name: inch pound per hour
+- Parent class: [Unit](./Quantities.md#Unit)
+- Specialization:
+  - ConversionFactorB = 31862.68484877787
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in inch pound per hour
+[SI] is the value in SI
+a = Hour/(PoundForce*Inch), i.e., 31862.68484877787
+and
+Hour = 60.0 * Minute
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Minute = 60.0
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+InchPoundPerHour:InchPoundPerHour_1
+InchPoundPerHour_1.ConversionFactorB = "31862.68484877787"
+InchPoundPerHour_1.Symbol = "in•lbf/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[InchPoundPerHour_1] -->|BelongsToClass| N0001(InchPoundPerHour) 
+	N0000[InchPoundPerHour_1] -->|ConversionFactorB| N0002(("31862.68484877787")) 
+	N0000[InchPoundPerHour_1] -->|Symbol| N0003(("in•lbf/h")) 
 ```
 # Verbs
