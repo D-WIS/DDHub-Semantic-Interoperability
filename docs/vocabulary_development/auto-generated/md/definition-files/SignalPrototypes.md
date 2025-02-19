@@ -55,6 +55,9 @@ PrototypeData <|-- MPDPumpFlowRate
 PrototypeData <|-- GasFlowRate
 PrototypeData <|-- BackPressurePumpPressure
 PrototypeData <|-- MechanicalSpecificEnergy
+PrototypeData <|-- DownholeAxialAcceleration
+PrototypeData <|-- DownholeAngularAcceleration
+PrototypeData <|-- StickSlipSeverityIndex
 ```
 ## ActiveVolume <!-- NOUN -->
 - Display name: ActiveVolume
@@ -248,6 +251,18 @@ Curvilinear abscissa of the bottom of the bit, in the reference frame centered i
 - Definition set: SignalPrototypes
 ## MechanicalSpecificEnergy <!-- NOUN -->
 - Display name: Mechanical Specific Energy
+- Parent class: [PrototypeData](./DrillingDataSemantics.md#PrototypeData)
+- Definition set: SignalPrototypes
+## DownholeAxialAcceleration <!-- NOUN -->
+- Display name: Downhole Axial Acceleration
+- Parent class: [PrototypeData](./DrillingDataSemantics.md#PrototypeData)
+- Definition set: SignalPrototypes
+## DownholeAngularAcceleration <!-- NOUN -->
+- Display name: Downhole Angular Acceleration
+- Parent class: [PrototypeData](./DrillingDataSemantics.md#PrototypeData)
+- Definition set: SignalPrototypes
+## StickSlipSeverityIndex <!-- NOUN -->
+- Display name: Stickslip Severity Index
 - Parent class: [PrototypeData](./DrillingDataSemantics.md#PrototypeData)
 - Definition set: SignalPrototypes
 # Verbs

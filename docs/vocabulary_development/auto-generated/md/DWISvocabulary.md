@@ -27294,6 +27294,18 @@ Curvilinear abscissa of the bottom of the bit, in the reference frame centered i
 - Display name: Mechanical Specific Energy
 - Parent class: [PrototypeData](#PrototypeData)
 - Definition set: SignalPrototypes
+## DownholeAxialAcceleration <!-- NOUN -->
+- Display name: Downhole Axial Acceleration
+- Parent class: [PrototypeData](#PrototypeData)
+- Definition set: SignalPrototypes
+## DownholeAngularAcceleration <!-- NOUN -->
+- Display name: Downhole Angular Acceleration
+- Parent class: [PrototypeData](#PrototypeData)
+- Definition set: SignalPrototypes
+## StickSlipSeverityIndex <!-- NOUN -->
+- Display name: Stickslip Severity Index
+- Parent class: [PrototypeData](#PrototypeData)
+- Definition set: SignalPrototypes
 ## Clock <!-- NOUN -->
 - Display name: Clock
 - Parent class: [DWISNoun](#DWISNoun)

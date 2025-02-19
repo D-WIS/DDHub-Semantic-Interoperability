@@ -3261,6 +3261,12 @@ ddhub:DoubleStandDerrick a owl:Class;
 ddhub:DownholeAlternator a owl:Class; 
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:PowerSystems. 
+ddhub:DownholeAngularAcceleration a owl:Class; 
+                                  rdfs:comment ""@EN; 
+                                  rdfs:subClassOf ddhub:PrototypeData. 
+ddhub:DownholeAxialAcceleration a owl:Class; 
+                                rdfs:comment ""@EN; 
+                                rdfs:subClassOf ddhub:PrototypeData. 
 ddhub:DownholeBatteries a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:PowerSystems. 
@@ -14843,6 +14849,9 @@ ddhub:StickSlip a owl:Class;
                 rdfs:comment """This Noun is used to refer to stick-slips.
 """@EN; 
                 rdfs:subClassOf ddhub:AbnormalTorsionalOscillation. 
+ddhub:StickSlipSeverityIndex a owl:Class; 
+                             rdfs:comment ""@EN; 
+                             rdfs:subClassOf ddhub:PrototypeData. 
 ddhub:StickUpHeightVerticalLocation a owl:Class; 
                                     rdfs:comment ""@EN; 
                                     rdfs:subClassOf ddhub:VerticalReferenceLocation. 
