@@ -337,5 +337,25 @@
 - Specialization:
 - Description: 
 - Examples:
-
+## DownholeAxialAcceleration <!-- NOUN -->
+- Display name: Downhole Axial Acceleration
+- Parent class: PrototypeData
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## DownholeAngularAcceleration <!-- NOUN -->
+- Display name: Downhole Angular Acceleration
+- Parent class: PrototypeData
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## StickSlipSeverityIndex <!-- NOUN -->
+- Display name: Stickslip Severity Index
+- Parent class: PrototypeData
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 # VERBS
