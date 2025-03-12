@@ -644,7 +644,8 @@ The meaningful precision of block velocity in the drilling context is typically:
 """@EN; 
                                     rdfs:subClassOf ddhub:MeasurableQuantity. 
 ddhub:BooleanDataType a owl:Class; 
-                      rdfs:comment ""@EN; 
+                      rdfs:comment """Indicates that the data is a boolean.
+"""@EN; 
                       rdfs:subClassOf ddhub:EnumerationDataType. 
 ddhub:BoosterLine a owl:Class; 
                   rdfs:comment ""@EN; 
@@ -1713,7 +1714,8 @@ ddhub:ContextualData a owl:Class;
 """@EN; 
                      rdfs:subClassOf ddhub:JSonDataType. 
 ddhub:ContinuousDataType a owl:Class; 
-                         rdfs:comment ""@EN; 
+                         rdfs:comment """Specifies that the data is continuous.
+"""@EN; 
                          rdfs:subClassOf ddhub:DataType. 
 ddhub:ContinuousProportional a owl:Class; 
                              rdfs:comment ""@EN; 
@@ -2032,9 +2034,18 @@ ddhub:DataProvider a owl:Class;
                    rdfs:comment """A data provider is any sources for data.
 """@EN; 
                    rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:DataTransmissionFeature a owl:Class; 
+                              rdfs:comment """A data transmission feature is a characteristic about how data is transferred from one place to another.
+"""@EN; 
+                              rdfs:subClassOf ddhub:Feature. 
 ddhub:DataType a owl:Class; 
-               rdfs:comment ""@EN; 
+               rdfs:comment """Characterizes the type of data that is stored in a signal.
+"""@EN; 
                rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:DateDataType a owl:Class; 
+                   rdfs:comment """Indicates that the data is a date.
+"""@EN; 
+                   rdfs:subClassOf ddhub:ContinuousDataType. 
 ddhub:Day a owl:Class; 
           rdfs:comment """[v] = a * [SI]
 where
@@ -3193,7 +3204,8 @@ ddhub:DirectTransformation a owl:Class;
 """@EN; 
                            rdfs:subClassOf ddhub:Transformation. 
 ddhub:DiscreteDataType a owl:Class; 
-                       rdfs:comment ""@EN; 
+                       rdfs:comment """Specifies that the data is discrete.
+"""@EN; 
                        rdfs:subClassOf ddhub:DataType. 
 ddhub:DistanceBetweenRepeaters a owl:DatatypeProperty, owl:FunctionalProperty; 
                                rdfs:comment """The average distance between two repeaters. The physical quantity is Length and the unit is metre.
@@ -3408,7 +3420,7 @@ ddhub:DrillingManagementFeature a owl:Class;
                                 rdfs:comment """A drilling management feature is a drilling management characteristic that is supported by something. For instance
 an advisory system may provide ROP management parameters accounting for cuttings transport.
 """@EN; 
-                                rdfs:subClassOf ddhub:DWISNoun. 
+                                rdfs:subClassOf ddhub:Feature. 
 ddhub:DrillingObjective a owl:Class; 
                         rdfs:comment """This is the parent class for drilling objectives.
 """@EN; 
@@ -3520,6 +3532,10 @@ ddhub:DrillStemMovementFeature a owl:Class;
                                rdfs:comment """A drill-stem movement feature indicates that something accounts for the drill-stem movement.
 """@EN; 
                                rdfs:subClassOf ddhub:DrillingManagementFeature. 
+ddhub:DrillStemRotationalImpedimentFeature a owl:Class; 
+                                           rdfs:comment """A drill-stem rotational impediment feature indicates that something accounts for drill-stem rotational impediment.
+"""@EN; 
+                                           rdfs:subClassOf ddhub:StuckPipeFeature. 
 ddhub:DrillStemRotationalMovementFeature a owl:Class; 
                                          rdfs:comment """A drill-stem rotational movement feature indicates that something accounts for drill-stem rotational movement.
 """@EN; 
@@ -3543,10 +3559,6 @@ ddhub:DrillStemWhirlingFeature a owl:Class;
                                rdfs:comment """A drill-stem whirling feature indicates that something accounts for in particular drill-stem whirling.
 """@EN; 
                                rdfs:subClassOf ddhub:DrillStemLateralVibrationFeature. 
-ddhub:DrillSteRotationalImpedimentFeature a owl:Class; 
-                                          rdfs:comment """A drill-stem rotational impediment feature indicates that something accounts for drill-stem rotational impediment.
-"""@EN; 
-                                          rdfs:subClassOf ddhub:StuckPipeFeature. 
 ddhub:DrillString a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:Tubulars. 
@@ -3745,6 +3757,10 @@ and
 EarthMass = 5.9722e24 reference: https://en.wikipedia.org/wiki/Earth_mass
 """@EN; 
                 rdfs:subClassOf ddhub:Unit. 
+ddhub:ElapsedTimeDataType a owl:Class; 
+                          rdfs:comment """Indicates that the data is an elapsed time.
+"""@EN; 
+                          rdfs:subClassOf ddhub:ContinuousDataType. 
 ddhub:ElasticModulusQuantity a owl:Class; 
                              rdfs:comment """Pressure is the force applied per unit area on a surface.
 The dimension of pressure is:
@@ -3855,7 +3871,8 @@ The SI unit for **energy** is: joule with the associated unit label $J$
 """@EN; 
                      rdfs:subClassOf ddhub:Quantity. 
 ddhub:EnumerationDataType a owl:Class; 
-                          rdfs:comment ""@EN; 
+                          rdfs:comment """Indicates that the data is an enumeration.
+"""@EN; 
                           rdfs:subClassOf ddhub:DiscreteDataType. 
 ddhub:EQ a owl:Class; 
          rdfs:comment ""@EN; 
@@ -3963,6 +3980,10 @@ the system returns in manual mode, usually using the safe mode management proced
 packoff detection and reaction procedure.
 """@EN; 
                    rdfs:subClassOf ddhub:ProtectionFunction. 
+ddhub:Feature a owl:Class; 
+              rdfs:comment """A feature is a characteristic of something.
+"""@EN; 
+              rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:FeatureLevelIntegationModel a owl:Class; 
                                   rdfs:comment """A model that integrates data at a medium-level like using feature extraction and merging, reducing dimensionality,
 weighting features, or correlating features.
@@ -3978,6 +3999,10 @@ and
 Femto = 1e-15
 """@EN; 
                 rdfs:subClassOf ddhub:Unit. 
+ddhub:FillPipeFeature a owl:Class; 
+                      rdfs:comment """A fill pipe feature indicates that something accounts for filling the pipe when there is an air gap.
+"""@EN; 
+                      rdfs:subClassOf ddhub:DrillingManagementFeature. 
 ddhub:FillPump a owl:Class; 
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:CirculationSystem. 
@@ -4682,6 +4707,11 @@ Gauss = 1e-4 reference: https://en.wikipedia.org/wiki/Gauss_(unit)
 Centi = 0.01
 """@EN; 
                             rdfs:subClassOf ddhub:Unit. 
+ddhub:GelBreakingFeature a owl:Class; 
+                         rdfs:comment """A gel breaking feature indicates that something accounts for breaking the gel in a drilling fluid that has stayed
+quiet for some time.
+"""@EN; 
+                         rdfs:subClassOf ddhub:DrillingManagementFeature. 
 ddhub:GeneralModel a owl:Class; 
                    rdfs:comment """A model with a broad range of application across various systems or phenomena.
 """@EN; 
@@ -6385,6 +6415,11 @@ ddhub:IsConditionRight a owl:ObjectProperty;
                        rdfs:domain ddhub:DWISNoun; 
                        rdfs:range ddhub:DWISNoun; 
                        rdfs:subPropertyOf ddhub:IsConditionInput. 
+ddhub:IsCurrentStateFor a owl:ObjectProperty; 
+                        rdfs:comment ""@EN; 
+                        rdfs:domain ddhub:ComputedState; 
+                        rdfs:range ddhub:DWISNoun; 
+                        rdfs:subPropertyOf ddhub:HasFunction. 
 ddhub:IsDependentOn a owl:ObjectProperty; 
                     rdfs:comment """This verb is used to describe a general dependence relationship between a `DrillingDataPoint` and something else.
 """@EN; 
@@ -6498,6 +6533,11 @@ describe the impact of the function on the drilling process. This signal is supp
                                    rdfs:domain ddhub:DrillingDataPoint; 
                                    rdfs:range ddhub:FDIRFunction; 
                                    rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsInformationForCurrentStateOf a owl:ObjectProperty; 
+                                     rdfs:comment ""@EN; 
+                                     rdfs:domain ddhub:ComputedState; 
+                                     rdfs:range ddhub:DWISNoun; 
+                                     rdfs:subPropertyOf ddhub:HasFunction. 
 ddhub:IsIntegratedFrom a owl:ObjectProperty; 
                        rdfs:comment ""@EN; 
                        rdfs:domain ddhub:DWISNoun; 
@@ -6990,7 +7030,7 @@ Unit = 1.0
 """@EN; 
                     rdfs:subClassOf ddhub:Unit. 
 ddhub:JSonDataType a owl:Class; 
-                   rdfs:comment """A string that contained the serialization in Json of an object.
+                   rdfs:comment """Specifies that the data is a string that contain the serialization in Json of an object.
 """@EN; 
                    rdfs:subClassOf ddhub:StringDataType. 
 ddhub:JunkBasket a owl:Class; 
@@ -8765,6 +8805,10 @@ ddhub:LogUID a owl:DatatypeProperty, owl:FunctionalProperty;
 """@EN; 
              rdfs:domain ddhub:WitsMLTimeBasedLogEndPoint; 
              rdfs:range xsd:string. 
+ddhub:LookupTableFeature a owl:Class; 
+                         rdfs:comment """Such a feature indicates that something accounts for lookup table.
+"""@EN; 
+                         rdfs:subClassOf ddhub:DataTransmissionFeature. 
 ddhub:LossCirculation a owl:Class; 
                       rdfs:comment """This Noun is used to refer to a situation during which drilling fluid is lost to the formation.
 """@EN; 
@@ -11437,7 +11481,7 @@ ddhub:Nonrotating a owl:Class;
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:Stabilizers. 
 ddhub:NormalizedDataType a owl:Class; 
-                         rdfs:comment """between 0 and 1
+                         rdfs:comment """Indicates that the data has been normalized and stays between 0 and 1
 """@EN; 
                          rdfs:subClassOf ddhub:ContinuousDataType. 
 ddhub:NorthEastFrame a owl:Class; 
@@ -11693,6 +11737,10 @@ ddhub:PhysicsInformedDataDrivenModel a owl:Class;
                                      rdfs:comment """A hybrid model that uses both physical laws and data.
 """@EN; 
                                      rdfs:subClassOf ddhub:ModelingParadigm. 
+ddhub:PickOffBottomProcedure a owl:Class; 
+                             rdfs:comment """The pick off bottom procedure is used to pick off bottom when the bit is on bottom.
+"""@EN; 
+                             rdfs:subClassOf ddhub:DrillingProcedure. 
 ddhub:Picoampere a owl:Class; 
                  rdfs:comment """[v] = a * [SI]
 where
@@ -14900,7 +14948,8 @@ The SI unit for **stress** is: pascal with the associated unit label $Pa$
 """@EN; 
                      rdfs:subClassOf ddhub:Quantity. 
 ddhub:StringDataType a owl:Class; 
-                     rdfs:comment ""@EN; 
+                     rdfs:comment """Specifies that the data is a string.
+"""@EN; 
                      rdfs:subClassOf ddhub:DataType. 
 ddhub:StrokeFrequencyQuantity a owl:Class; 
                               rdfs:comment """A stroke frequency is the number of stokes per unit time

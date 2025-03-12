@@ -9,6 +9,8 @@ Here is a class inheritance diagram for the nouns contained in this definition s
 classDiagram
 DWISNoun <|-- DataType
 DataType <|-- ContinuousDataType
+ContinuousDataType <|-- DateDataType
+ContinuousDataType <|-- ElapsedTimeDataType
 ContinuousDataType <|-- NormalizedDataType
 DataType <|-- DiscreteDataType
 DiscreteDataType <|-- EnumerationDataType
@@ -43,38 +45,62 @@ DrillingSignal <|-- DynamicDrillingSignal
 ## DataType <!-- NOUN -->
 - Display name: Data Type
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Description: 
+Characterizes the type of data that is stored in a signal.
 - Definition set: DrillingDataSemantics
 ## ContinuousDataType <!-- NOUN -->
 - Display name: Continuous Data Type
 - Parent class: [DataType](./DrillingDataSemantics.md#DataType)
+- Description: 
+Specifies that the data is continuous.
+- Definition set: DrillingDataSemantics
+## DateDataType <!-- NOUN -->
+- Display name: Date Data Type
+- Parent class: [ContinuousDataType](./DrillingDataSemantics.md#ContinuousDataType)
+- Description: 
+Indicates that the data is a date.
+- Definition set: DrillingDataSemantics
+## ElapsedTimeDataType <!-- NOUN -->
+- Display name: Elapsed Time Data Type
+- Parent class: [ContinuousDataType](./DrillingDataSemantics.md#ContinuousDataType)
+- Description: 
+Indicates that the data is an elapsed time.
 - Definition set: DrillingDataSemantics
 ## NormalizedDataType <!-- NOUN -->
 - Display name: Normalized Data Type
 - Parent class: [ContinuousDataType](./DrillingDataSemantics.md#ContinuousDataType)
 - Description: 
-between 0 and 1
+Indicates that the data has been normalized and stays between 0 and 1
 - Definition set: DrillingDataSemantics
 ## DiscreteDataType <!-- NOUN -->
 - Display name: Discrete Data Type
 - Parent class: [DataType](./DrillingDataSemantics.md#DataType)
+- Description: 
+Specifies that the data is discrete.
 - Definition set: DrillingDataSemantics
 ## EnumerationDataType <!-- NOUN -->
 - Display name: Enumeration Data Type
 - Parent class: [DiscreteDataType](./DrillingDataSemantics.md#DiscreteDataType)
+- Description: 
+Indicates that the data is an enumeration.
 - Definition set: DrillingDataSemantics
 ## BooleanDataType <!-- NOUN -->
 - Display name: Boolean Data Type
 - Parent class: [EnumerationDataType](./DrillingDataSemantics.md#EnumerationDataType)
+- Description: 
+Indicates that the data is a boolean.
 - Definition set: DrillingDataSemantics
 ## StringDataType <!-- NOUN -->
 - Display name: String Data Type
 - Parent class: [DataType](./DrillingDataSemantics.md#DataType)
+- Description: 
+Specifies that the data is a string.
 - Definition set: DrillingDataSemantics
 ## JSonDataType <!-- NOUN -->
 - Display name: JSon Data Type
 - Parent class: [StringDataType](./DrillingDataSemantics.md#StringDataType)
 - Description: 
-A string that contained the serialization in Json of an object.
+Specifies that the data is a string that contain the serialization in Json of an object.
 - Definition set: DrillingDataSemantics
 ## DrillingDataPoint <!-- NOUN -->
 - Display name: DrillingDataPoint

@@ -5996,38 +5996,62 @@ WHERE {
 ## DataType <!-- NOUN -->
 - Display name: Data Type
 - Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+Characterizes the type of data that is stored in a signal.
 - Definition set: DrillingDataSemantics
 ## ContinuousDataType <!-- NOUN -->
 - Display name: Continuous Data Type
 - Parent class: [DataType](#DataType)
+- Description: 
+Specifies that the data is continuous.
+- Definition set: DrillingDataSemantics
+## DateDataType <!-- NOUN -->
+- Display name: Date Data Type
+- Parent class: [ContinuousDataType](#ContinuousDataType)
+- Description: 
+Indicates that the data is a date.
+- Definition set: DrillingDataSemantics
+## ElapsedTimeDataType <!-- NOUN -->
+- Display name: Elapsed Time Data Type
+- Parent class: [ContinuousDataType](#ContinuousDataType)
+- Description: 
+Indicates that the data is an elapsed time.
 - Definition set: DrillingDataSemantics
 ## NormalizedDataType <!-- NOUN -->
 - Display name: Normalized Data Type
 - Parent class: [ContinuousDataType](#ContinuousDataType)
 - Description: 
-between 0 and 1
+Indicates that the data has been normalized and stays between 0 and 1
 - Definition set: DrillingDataSemantics
 ## DiscreteDataType <!-- NOUN -->
 - Display name: Discrete Data Type
 - Parent class: [DataType](#DataType)
+- Description: 
+Specifies that the data is discrete.
 - Definition set: DrillingDataSemantics
 ## EnumerationDataType <!-- NOUN -->
 - Display name: Enumeration Data Type
 - Parent class: [DiscreteDataType](#DiscreteDataType)
+- Description: 
+Indicates that the data is an enumeration.
 - Definition set: DrillingDataSemantics
 ## BooleanDataType <!-- NOUN -->
 - Display name: Boolean Data Type
 - Parent class: [EnumerationDataType](#EnumerationDataType)
+- Description: 
+Indicates that the data is a boolean.
 - Definition set: DrillingDataSemantics
 ## StringDataType <!-- NOUN -->
 - Display name: String Data Type
 - Parent class: [DataType](#DataType)
+- Description: 
+Specifies that the data is a string.
 - Definition set: DrillingDataSemantics
 ## JSonDataType <!-- NOUN -->
 - Display name: JSon Data Type
 - Parent class: [StringDataType](#StringDataType)
 - Description: 
-A string that contained the serialization in Json of an object.
+Specifies that the data is a string that contain the serialization in Json of an object.
 - Definition set: DrillingDataSemantics
 ## DrillingDataPoint <!-- NOUN -->
 - Display name: DrillingDataPoint
@@ -7975,12 +7999,43 @@ Data structure used to store the streaming drilling data.
 - Display name: Three Way Valve
 - Parent class: [GenericEquipment](#GenericEquipment)
 - Definition set: DrillingEquipment
+## Feature <!-- NOUN -->
+- Display name: Feature
+- Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+A feature is a characteristic of something.
+- Definition set: DrillingFeature
+## DataTransmissionFeature <!-- NOUN -->
+- Display name: Data Transmission Feature
+- Parent class: [Feature](#Feature)
+- Description: 
+A data transmission feature is a characteristic about how data is transferred from one place to another.
+- Definition set: DrillingFeature
+## LookupTableFeature <!-- NOUN -->
+- Display name: Lookup Table Feature
+- Parent class: [DataTransmissionFeature](#DataTransmissionFeature)
+- Description: 
+Such a feature indicates that something accounts for lookup table.
+- Definition set: DrillingFeature
 ## DrillingManagementFeature <!-- NOUN -->
 - Display name: Drilling Management Feature
-- Parent class: [DWISNoun](#DWISNoun)
+- Parent class: [Feature](#Feature)
 - Description: 
 A drilling management feature is a drilling management characteristic that is supported by something. For instance
 an advisory system may provide ROP management parameters accounting for cuttings transport.
+- Definition set: DrillingFeature
+## FillPipeFeature <!-- NOUN -->
+- Display name: Fill Pipe Feature
+- Parent class: [DrillingManagementFeature](#DrillingManagementFeature)
+- Description: 
+A fill pipe feature indicates that something accounts for filling the pipe when there is an air gap.
+- Definition set: DrillingFeature
+## GelBreakingFeature <!-- NOUN -->
+- Display name: Gel Breaking Feature
+- Parent class: [DrillingManagementFeature](#DrillingManagementFeature)
+- Description: 
+A gel breaking feature indicates that something accounts for breaking the gel in a drilling fluid that has stayed
+quiet for some time.
 - Definition set: DrillingFeature
 ## CirculationFeature <!-- NOUN -->
 - Display name: Circulation Feature
@@ -8056,7 +8111,7 @@ A stuck-pipe feature indicates that something accounts for stuck-pipes.
 - Description: 
 A drill-stem axial impediment feature indicates that something accounts for drill-stem axial impediment.
 - Definition set: DrillingFeature
-## DrillSteRotationalImpedimentFeature <!-- NOUN -->
+## DrillStemRotationalImpedimentFeature <!-- NOUN -->
 - Display name: Drill-stem Rotational Impediment Feature
 - Parent class: [StuckPipeFeature](#StuckPipeFeature)
 - Description: 
@@ -10654,6 +10709,78 @@ WHERE {
 	&& 	?Attribute002 = serviceCompany
 	&& 	?Attribute003 = computationUnit
 	&& 	?Attribute004 = tagBottomProcedure
+	&& 	?Attribute005 = procedureFunction
+	&& 	?Attribute006 = adviceComposer
+	&& 	?Attribute007 = scheduler
+  )
+}
+```
+## PickOffBottomProcedure <!-- NOUN -->
+- Display name: Pick Off Bottom Procedure
+- Parent class: [DrillingProcedure](#DrillingProcedure)
+- Description: 
+The pick off bottom procedure is used to pick off bottom when the bit is on bottom.
+- Definition set: DrillingProcedure
+- Examples:
+``` dwis pickOffBottomProcedureInfo
+DynamicDrillingSignal:pickOffBottomProcedureInfo
+DrillingStandardProcedureAdvice:pickOffBottomProcedureInfo_1
+pickOffBottomProcedureInfo_1 HasDynamicValue pickOffBottomProcedureInfo
+PickOffBottomProcedure:pickOffBottomProcedure
+pickOffBottomProcedureInfo_1 IsRelatedToDrillingProcedure pickOffBottomProcedure
+ServiceCompany:serviceCompany
+pickOffBottomProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor:computationUnit
+pickOffBottomProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction:procedureFunction
+procedureFunction ImplementsProcedure pickOffBottomProcedure
+pickOffBottomProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer:adviceComposer
+pickOffBottomProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler:scheduler
+pickOffBottomProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pickOffBottomProcedureInfo] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[pickOffBottomProcedureInfo_1] -->|BelongsToClass| N0003(DrillingStandardProcedureAdvice) 
+	N0002[pickOffBottomProcedureInfo_1] -->|HasDynamicValue| N0000((pickOffBottomProcedureInfo)) 
+	N0004[pickOffBottomProcedure] -->|BelongsToClass| N0005(PickOffBottomProcedure) 
+	N0002[pickOffBottomProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0004((pickOffBottomProcedure)) 
+	N0006[serviceCompany] -->|BelongsToClass| N0007(ServiceCompany) 
+	N0002[pickOffBottomProcedureInfo_1] -->|IsProvidedBy| N0006((serviceCompany)) 
+	N0008[computationUnit] -->|BelongsToClass| N0009(Advisor) 
+	N0002[pickOffBottomProcedureInfo_1] -->|IsRecommendedBy| N0008((computationUnit)) 
+	N0010[procedureFunction] -->|BelongsToClass| N0011(ProcedureFunction) 
+	N0010[procedureFunction] -->|ImplementsProcedure| N0004((pickOffBottomProcedure)) 
+	N0002[pickOffBottomProcedureInfo_1] -->|IsRecommendedFor| N0010((procedureFunction)) 
+	N0012[adviceComposer] -->|BelongsToClass| N0013(DWISAdviceComposer) 
+	N0002[pickOffBottomProcedureInfo_1] -->|IsProvidedTo| N0012((adviceComposer)) 
+	N0014[scheduler] -->|BelongsToClass| N0015(DWISScheduler) 
+	N0002[pickOffBottomProcedureInfo_1] -->|IsProvidedTo| N0014((scheduler)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pickOffBottomProcedureInfo
+WHERE {
+	?pickOffBottomProcedureInfo rdf:type ddhub:DynamicDrillingSignal .
+	?pickOffBottomProcedureInfo_1 rdf:type ddhub:DrillingStandardProcedureAdvice .
+	?pickOffBottomProcedure rdf:type ddhub:PickOffBottomProcedure .
+	?serviceCompany rdf:type ddhub:ServiceCompany .
+	?computationUnit rdf:type ddhub:Advisor .
+	?procedureFunction rdf:type ddhub:ProcedureFunction .
+	?adviceComposer rdf:type ddhub:DWISAdviceComposer .
+	?scheduler rdf:type ddhub:DWISScheduler .
+  FILTER (
+	?Attribute000 = pickOffBottomProcedureInfo
+	&& 	?Attribute001 = pickOffBottomProcedure
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = pickOffBottomProcedure
 	&& 	?Attribute005 = procedureFunction
 	&& 	?Attribute006 = adviceComposer
 	&& 	?Attribute007 = scheduler
@@ -56107,6 +56234,18 @@ here is WGS84.
 - Display name: Is Maximum Limit For
 - Parent verb: [IsLimitFor](#IsLimitFor)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DWISNoun](#DWISNoun)
+- Definition set: DataFlow
+## IsCurrentStateFor <!-- VERB -->
+- Display name: Is Current State For
+- Parent verb: [HasFunction](#HasFunction)
+- Subject class: [ComputedState](#ComputedState)
+- Object class: [DWISNoun](#DWISNoun)
+- Definition set: DataFlow
+## IsInformationForCurrentStateOf <!-- VERB -->
+- Display name: Is Information For Current State Of
+- Parent verb: [HasFunction](#HasFunction)
+- Subject class: [ComputedState](#ComputedState)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
 ## IsSetPointFor <!-- VERB -->
