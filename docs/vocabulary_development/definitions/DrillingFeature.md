@@ -1,12 +1,43 @@
 - Description: this definition set refers various drilling features that something may support. 
 
 # NOUNS
+## Feature <!-- NOUN -->
+- Display name: Feature
+- Parent class: DWISNoun
+- Attributes:
+- Description: A feature is a characteristic of something.
+- Examples:
+## DataTransmissionFeature <!-- NOUN -->
+- Display name: Data Transmission Feature
+- Parent class: Feature
+- Attributes:
+- Description: A data transmission feature is a characteristic about how data is transferred from one place to another.
+- Examples:
+## LookupTableFeature <!-- NOUN -->
+- Display name: Lookup Table Feature
+- Parent class: DataTransmissionFeature
+- Attributes:
+- Description: Such a feature indicates that something accounts for lookup table.
+- Examples:
 ## DrillingManagementFeature <!-- NOUN -->
 - Display name: Drilling Management Feature
-- Parent class: DWISNoun
+- Parent class: Feature
 - Attributes:
 - Description: A drilling management feature is a drilling management characteristic that is supported by something. For instance
 an advisory system may provide ROP management parameters accounting for cuttings transport.
+- Examples:
+## FillPipeFeature <!-- NOUN -->
+- Display name: Fill Pipe Feature
+- Parent class: DrillingManagementFeature
+- Attributes:
+- Description: A fill pipe feature indicates that something accounts for filling the pipe when there is an air gap.
+- Examples:
+## GelBreakingFeature <!-- NOUN -->
+- Display name: Gel Breaking Feature
+- Parent class: DrillingManagementFeature
+- Attributes:
+- Description: A gel breaking feature indicates that something accounts for breaking the gel in a drilling fluid that has stayed
+quiet for some time.
 - Examples:
 ## CirculationFeature <!-- NOUN -->
 - Display name: Circulation Feature
@@ -82,7 +113,7 @@ a cement operation.
 - Attributes:
 - Description: A drill-stem axial impediment feature indicates that something accounts for drill-stem axial impediment.
 - Examples:
-## DrillSteRotationalImpedimentFeature <!-- NOUN -->
+## DrillStemRotationalImpedimentFeature <!-- NOUN -->
 - Display name: Drill-stem Rotational Impediment Feature
 - Parent class: StuckPipeFeature
 - Attributes:

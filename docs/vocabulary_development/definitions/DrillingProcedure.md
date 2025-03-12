@@ -163,6 +163,31 @@ tagBottomProcedureInfo_1 IsProvidedTo adviceComposer
 DWISScheduler:scheduler
 tagBottomProcedureInfo_1 IsProvidedTo scheduler
 ```
+## PickOffBottomProcedure <!-- NOUN -->
+- Display name: Pick Off Bottom Procedure
+- Parent class: DrillingProcedure
+- Attributes:
+- Specialization:
+- Description: The pick off bottom procedure is used to pick off bottom when the bit is on bottom.
+- Examples:
+``` dwis pickOffBottomProcedureInfo
+DynamicDrillingSignal:pickOffBottomProcedureInfo
+DrillingStandardProcedureAdvice:pickOffBottomProcedureInfo_1
+pickOffBottomProcedureInfo_1 HasDynamicValue pickOffBottomProcedureInfo
+PickOffBottomProcedure:pickOffBottomProcedure
+pickOffBottomProcedureInfo_1 IsRelatedToDrillingProcedure pickOffBottomProcedure
+ServiceCompany:serviceCompany
+pickOffBottomProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor:computationUnit
+pickOffBottomProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction:procedureFunction
+procedureFunction ImplementsProcedure pickOffBottomProcedure
+pickOffBottomProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer:adviceComposer
+pickOffBottomProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler:scheduler
+pickOffBottomProcedureInfo_1 IsProvidedTo scheduler
+```
 ## ReciprocationProcedure <!-- NOUN -->
 - Display name: Reciprocation Procedure
 - Parent class: DrillingProcedure

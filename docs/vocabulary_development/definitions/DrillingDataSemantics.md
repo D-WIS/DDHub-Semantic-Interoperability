@@ -6,56 +6,70 @@
 - Parent class: DWISNoun
 - Attributes:
 - Specialization:
-- Description: 
+- Description: Characterizes the type of data that is stored in a signal.
 - Examples:
 ## ContinuousDataType <!-- NOUN -->
 - Display name: Continuous Data Type
 - Parent class: DataType
 - Attributes:
 - Specialization:
-- Description: 
+- Description: Specifies that the data is continuous.
+- Examples:
+## DateDataType <!-- NOUN -->
+- Display name: Date Data Type
+- Parent class: ContinuousDataType
+- Attributes:
+- Specialization:
+- Description: Indicates that the data is a date.
+- Examples:
+## ElapsedTimeDataType <!-- NOUN -->
+- Display name: Elapsed Time Data Type
+- Parent class: ContinuousDataType
+- Attributes:
+- Specialization:
+- Description: Indicates that the data is an elapsed time.
 - Examples:
 ## NormalizedDataType <!-- NOUN -->
 - Display name: Normalized Data Type
 - Parent class: ContinuousDataType
 - Attributes:
 - Specialization:
-- Description: between 0 and 1
+- Description: Indicates that the data has been normalized and stays between 0 and 1
 - Examples:
 ## DiscreteDataType <!-- NOUN -->
 - Display name: Discrete Data Type
 - Parent class: DataType
 - Attributes:
 - Specialization:
-- Description: 
+- Description: Specifies that the data is discrete.
 - Examples:
 ## EnumerationDataType <!-- NOUN -->
 - Display name: Enumeration Data Type
 - Parent class: DiscreteDataType
 - Attributes:
 - Specialization:
-- Description: 
+- Description: Indicates that the data is an enumeration.
 - Examples:
 ## BooleanDataType <!-- NOUN -->
 - Display name: Boolean Data Type
 - Parent class: EnumerationDataType
 - Attributes:
 - Specialization:
-- Description: 
+- Description: Indicates that the data is a boolean.
 - Examples:
 ## StringDataType <!-- NOUN -->
 - Display name: String Data Type
 - Parent class: DataType
 - Attributes:
 - Specialization:
-- Description: 
+- Description: Specifies that the data is a string.
 - Examples:
 ## JSonDataType <!-- NOUN -->
 - Display name: JSon Data Type
 - Parent class: StringDataType
 - Attributes:
 - Specialization:
-- Description: A string that contained the serialization in Json of an object.
+- Description: Specifies that the data is a string that contain the serialization in Json of an object.
 - Examples:
 ## DrillingDataPoint <!-- NOUN -->
 - Display name: DrillingDataPoint

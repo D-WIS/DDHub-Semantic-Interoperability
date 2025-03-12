@@ -452,6 +452,20 @@ ComputedState.
 - Object class: DWISNoun
 - Description: 
 - Examples: 
+## IsCurrentStateFor <!-- VERB -->
+- Display name: Is Current State For
+- Parent verb: HasFunction
+- Subject class: ComputedState
+- Object class: DWISNoun
+- Description: 
+- Examples: 
+## IsInformationForCurrentStateOf <!-- VERB -->
+- Display name: Is Information For Current State Of
+- Parent verb: HasFunction
+- Subject class: ComputedState
+- Object class: DWISNoun
+- Description: 
+- Examples: 
 ## IsSetPointFor <!-- VERB -->
 - Display name: Is Set-Point For
 - Parent verb: HasFunction
