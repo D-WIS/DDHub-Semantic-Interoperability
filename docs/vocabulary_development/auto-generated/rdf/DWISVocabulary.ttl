@@ -6328,6 +6328,24 @@ ddhub:IsAHydraulicRepresentationFor a owl:ObjectProperty;
                                     rdfs:domain ddhub:HydraulicLogicalElement; 
                                     rdfs:range ddhub:DrillingEquipment; 
                                     rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsAlarmTriggeredSignalFor a owl:ObjectProperty; 
+                                rdfs:comment """This verb is used to indicate a `DrillingDataPoint` tells whether an `FDIRFunction` has its alarm level
+being triggered or not. This signal is expected to be a Boolean value. The signal is expected to be true from the 
+moment the FDIR has triggered to the moment it has recovered from the incident, if it has a recovery procedure, or to
+the moment the control is given back to the end-user, in case of failure of the recovery procedure or at the end of 
+the isolation procedure.
+"""@EN; 
+                                rdfs:domain ddhub:DrillingDataPoint; 
+                                rdfs:range ddhub:FDIRFunction; 
+                                rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsAlertTriggeredSignalFor a owl:ObjectProperty; 
+                                rdfs:comment """This verb is used to indicate a `DrillingDataPoint` tells whether an `FDIRFunction` has its alert level
+being triggered or not. This signal is expected to be a Boolean value. The signal is expected to be true from the 
+moment the FDIR has triggered  on the alert level to the moment the signal is below the alert level.
+"""@EN; 
+                                rdfs:domain ddhub:DrillingDataPoint; 
+                                rdfs:range ddhub:FDIRFunction; 
+                                rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsAMechanicalRepresentationFor a owl:ObjectProperty; 
                                      rdfs:comment ""@EN; 
                                      rdfs:domain ddhub:MechanicalLogicalElement; 
@@ -6510,7 +6528,9 @@ ddhub:IsHydraulicMeasurementAt a owl:ObjectProperty;
                                rdfs:range ddhub:HydraulicLogicalElement; 
                                rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 ddhub:IsIdlingAfterTriggeredSignalFor a owl:ObjectProperty; 
-                                      rdfs:comment """This verb is used to indicate that a `DrillingDataPoint` tells whether the isolation or the recovery
+                                      rdfs:comment """This verb is used to indicate that a `DrillingDataPoint` tells whether the isolation
+procedure has reached its terminal state and is in an idle state until the system is returned to manual mode. 
+The value can only turn true when the tiggered signal is true. This signal is supposed to be a boolean value.
 """@EN; 
                                       rdfs:domain ddhub:DrillingDataPoint; 
                                       rdfs:range ddhub:FDIRFunction; 
@@ -6538,6 +6558,14 @@ ddhub:IsInformationForCurrentStateOf a owl:ObjectProperty;
                                      rdfs:domain ddhub:ComputedState; 
                                      rdfs:range ddhub:DWISNoun; 
                                      rdfs:subPropertyOf ddhub:HasFunction. 
+ddhub:IsInSafeModeSignalFor a owl:ObjectProperty; 
+                            rdfs:comment """This verb is used to indicate that a `DrillingDataPoint` tells whether the isolation or the recovery
+procedures have been aborted and the system has been set in safe mode. The value can only turn true when the tiggered 
+signal is true. This signal is supposed to be a boolean value.
+"""@EN; 
+                            rdfs:domain ddhub:DrillingDataPoint; 
+                            rdfs:range ddhub:FDIRFunction; 
+                            rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsIntegratedFrom a owl:ObjectProperty; 
                        rdfs:comment ""@EN; 
                        rdfs:domain ddhub:DWISNoun; 
@@ -6845,15 +6873,6 @@ ddhub:IsTransmittedBy a owl:ObjectProperty;
                       rdfs:domain ddhub:DrillingDataPoint; 
                       rdfs:range ddhub:Telemetry; 
                       rdfs:subPropertyOf ddhub:DWISVerb. 
-ddhub:IsTriggeredSignalFor a owl:ObjectProperty; 
-                           rdfs:comment """This verb is used to indicate a `DrillingDataPoint` tells whether an `FDIRFunction` has been triggered
-or not. This signal is expected to be a Boolean value. The signal is expected to be true from the moment the FDIR has triggered
-to the moment it has recovered from the incident, if it has a recovery procedure, or to the moment the control is given
-back to the end-user, in case of failure of the recovery procedure or at the end of the isolation procedure.
-"""@EN; 
-                           rdfs:domain ddhub:DrillingDataPoint; 
-                           rdfs:range ddhub:FDIRFunction; 
-                           rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsUnitForQuantity a owl:ObjectProperty; 
                         rdfs:comment """This `verb` is used to relate a `Unit` with a `Quantity`.
 """@EN; 

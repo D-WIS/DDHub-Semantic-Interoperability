@@ -6707,14 +6707,22 @@
 <http://ddhub.no/IsArmedSignalFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
 <http://ddhub.no/IsArmedSignalFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/FDIRFunction> .
 <http://ddhub.no/IsArmedSignalFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
-<http://ddhub.no/IsTriggeredSignalFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/IsTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/FDIRFunction> .
-<http://ddhub.no/IsTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsAlertTriggeredSignalFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsAlertTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsAlertTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/FDIRFunction> .
+<http://ddhub.no/IsAlertTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsAlarmTriggeredSignalFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsAlarmTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsAlarmTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/FDIRFunction> .
+<http://ddhub.no/IsAlarmTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
 <http://ddhub.no/IsIdlingAfterTriggeredSignalFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://ddhub.no/IsIdlingAfterTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
 <http://ddhub.no/IsIdlingAfterTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/FDIRFunction> .
 <http://ddhub.no/IsIdlingAfterTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsInSafeModeSignalFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsInSafeModeSignalFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsInSafeModeSignalFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/FDIRFunction> .
+<http://ddhub.no/IsInSafeModeSignalFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
 <http://ddhub.no/IsImpactDescriptionSignalFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://ddhub.no/IsImpactDescriptionSignalFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
 <http://ddhub.no/IsImpactDescriptionSignalFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/FDIRFunction> .
@@ -7391,8 +7399,10 @@
 <http://ddhub.no/IsUserControllableExtraMarginSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to indicate that a `DrillingDataPoint` used by an `FDIRFunction`, extends the calculated\nthreshold value for the fault detection by a user-defined amount. The value of this signal is supposed to be interpreted\nin absolute value. If it is negative, then it is its magnitude that is used. This allows the end-user to increase the margin for\ndetection of an incident. \n"@EN .
 <http://ddhub.no/IsUsedExtraMarginSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to indicate a `DrillingDataPoint` used by an `FDIRFunction` tells whether the\nextra margin signal is used or not by the FDIR function. This signal is expected to be a boolean value.\n"@EN .
 <http://ddhub.no/IsArmedSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to indicate a `DrillingDataPoint` used by an `FDIRFunction` tells if the FDIR function is armed and operative.\nThe signal is supposed to be a Boolean value.\nThe FDIR function may be active, but the current state of the drilling process may imply that the function cannot be\ntriggered. For instance, a pack-off FDIR may be active but would react only if the flow is supposed to be steady state.\n"@EN .
-<http://ddhub.no/IsTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to indicate a `DrillingDataPoint` tells whether an `FDIRFunction` has been triggered\nor not. This signal is expected to be a Boolean value. The signal is expected to be true from the moment the FDIR has triggered\nto the moment it has recovered from the incident, if it has a recovery procedure, or to the moment the control is given\nback to the end-user, in case of failure of the recovery procedure or at the end of the isolation procedure.\n"@EN .
-<http://ddhub.no/IsIdlingAfterTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to indicate that a `DrillingDataPoint` tells whether the isolation or the recovery\n"@EN .
+<http://ddhub.no/IsAlertTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to indicate a `DrillingDataPoint` tells whether an `FDIRFunction` has its alert level\nbeing triggered or not. This signal is expected to be a Boolean value. The signal is expected to be true from the \nmoment the FDIR has triggered  on the alert level to the moment the signal is below the alert level.\n"@EN .
+<http://ddhub.no/IsAlarmTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to indicate a `DrillingDataPoint` tells whether an `FDIRFunction` has its alarm level\nbeing triggered or not. This signal is expected to be a Boolean value. The signal is expected to be true from the \nmoment the FDIR has triggered to the moment it has recovered from the incident, if it has a recovery procedure, or to\nthe moment the control is given back to the end-user, in case of failure of the recovery procedure or at the end of \nthe isolation procedure.\n"@EN .
+<http://ddhub.no/IsIdlingAfterTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to indicate that a `DrillingDataPoint` tells whether the isolation\nprocedure has reached its terminal state and is in an idle state until the system is returned to manual mode. \nThe value can only turn true when the tiggered signal is true. This signal is supposed to be a boolean value.\n"@EN .
+<http://ddhub.no/IsInSafeModeSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to indicate that a `DrillingDataPoint` tells whether the isolation or the recovery\nprocedures have been aborted and the system has been set in safe mode. The value can only turn true when the tiggered \nsignal is true. This signal is supposed to be a boolean value.\n"@EN .
 <http://ddhub.no/IsImpactDescriptionSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verbs is used to indicate that a `DrillingDataPoint` used by an `FDIRFunction` can be used to\ndescribe the impact of the function on the drilling process. This signal is supposed to be string value.\n"@EN .
 <http://ddhub.no/IsFeatureSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verbs is used to indicate that a `DrillingDataPoint` describes a feature of an `ActivableFunction`\n"@EN .
 <http://ddhub.no/IsRecommendedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the AdvisorySystemAdvice is recommended by an Advisor\n"@EN .
