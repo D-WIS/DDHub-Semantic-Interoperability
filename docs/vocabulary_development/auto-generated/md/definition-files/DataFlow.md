@@ -349,6 +349,8 @@ HasFunction <|-- IsComputationInput
 HasFunction <|-- IsLimitFor
 IsLimitFor <|-- IsMinimumLimitFor
 IsLimitFor <|-- IsMaximumLimitFor
+HasFunction <|-- IsCurrentStateFor
+HasFunction <|-- IsInformationForCurrentStateOf
 HasFunction <|-- IsSetPointFor
 HasFunction <|-- IsSetPointRecommendationFor
 HasFunction <|-- IsSetPointAdviceFor
@@ -384,6 +386,8 @@ DrillingDataPoint ||--o{ ComputationUnit : IsComputationInput
 DrillingDataPoint ||--o{ DWISNoun : IsLimitFor
 DrillingDataPoint ||--o{ DWISNoun : IsMinimumLimitFor
 DrillingDataPoint ||--o{ DWISNoun : IsMaximumLimitFor
+ComputedState ||--o{ DWISNoun : IsCurrentStateFor
+ComputedState ||--o{ DWISNoun : IsInformationForCurrentStateOf
 DrillingDataPoint ||--o{ Controller : IsSetPointFor
 DrillingDataPoint ||--o{ ControlSystem : IsSetPointRecommendationFor
 DrillingDataPoint ||--o{ ControlSystem : IsSetPointAdviceFor
@@ -448,6 +452,18 @@ DWISNoun ||--o{ DWISNoun : IsProcessedBy
 - Display name: Is Maximum Limit For
 - Parent verb: [IsLimitFor](./DataFlow.md#IsLimitFor)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Definition set: DataFlow
+## IsCurrentStateFor <!-- VERB -->
+- Display name: Is Current State For
+- Parent verb: [HasFunction](./DataFlow.md#HasFunction)
+- Subject class: [ComputedState](./DataFlow.md#ComputedState)
+- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Definition set: DataFlow
+## IsInformationForCurrentStateOf <!-- VERB -->
+- Display name: Is Information For Current State Of
+- Parent verb: [HasFunction](./DataFlow.md#HasFunction)
+- Subject class: [ComputedState](./DataFlow.md#ComputedState)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Definition set: DataFlow
 ## IsSetPointFor <!-- VERB -->

@@ -175,19 +175,19 @@ surging pressure above the fracturing pressure.
   <rdf:Description rdf:about="http://ddhub.no/DataType">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+    <rdfs:comment xml:lang="EN">Characterizes the type of data that is stored in a signal.
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/StringDataType">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DataType" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+    <rdfs:comment xml:lang="EN">Specifies that the data is a string.
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/JSonDataType">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/StringDataType" />
-    <rdfs:comment xml:lang="EN">A string that contained the serialization in Json of an object.
+    <rdfs:comment xml:lang="EN">Specifies that the data is a string that contain the serialization in Json of an object.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/AdvisorySystemAdvice">
@@ -420,32 +420,44 @@ associated with non-standard drilling methods, e.g., back-pressure MPD, dual-gra
   <rdf:Description rdf:about="http://ddhub.no/ContinuousDataType">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DataType" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+    <rdfs:comment xml:lang="EN">Specifies that the data is continuous.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DateDataType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ContinuousDataType" />
+    <rdfs:comment xml:lang="EN">Indicates that the data is a date.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ElapsedTimeDataType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ContinuousDataType" />
+    <rdfs:comment xml:lang="EN">Indicates that the data is an elapsed time.
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/NormalizedDataType">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/ContinuousDataType" />
-    <rdfs:comment xml:lang="EN">between 0 and 1
+    <rdfs:comment xml:lang="EN">Indicates that the data has been normalized and stays between 0 and 1
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DiscreteDataType">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DataType" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+    <rdfs:comment xml:lang="EN">Specifies that the data is discrete.
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/EnumerationDataType">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DiscreteDataType" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+    <rdfs:comment xml:lang="EN">Indicates that the data is an enumeration.
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/BooleanDataType">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/EnumerationDataType" />
-    <rdfs:comment xml:lang="EN">
-    </rdfs:comment>
+    <rdfs:comment xml:lang="EN">Indicates that the data is a boolean.
+</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/WellBoreDataCharateristic">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
@@ -4108,11 +4120,42 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DrillingManagementFeature">
+  <rdf:Description rdf:about="http://ddhub.no/Feature">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:comment xml:lang="EN">A feature is a characteristic of something.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DataTransmissionFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Feature" />
+    <rdfs:comment xml:lang="EN">A data transmission feature is a characteristic about how data is transferred from one place to another.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/LookupTableFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DataTransmissionFeature" />
+    <rdfs:comment xml:lang="EN">Such a feature indicates that something accounts for lookup table.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingManagementFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Feature" />
     <rdfs:comment xml:lang="EN">A drilling management feature is a drilling management characteristic that is supported by something. For instance
 an advisory system may provide ROP management parameters accounting for cuttings transport.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/FillPipeFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingManagementFeature" />
+    <rdfs:comment xml:lang="EN">A fill pipe feature indicates that something accounts for filling the pipe when there is an air gap.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GelBreakingFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingManagementFeature" />
+    <rdfs:comment xml:lang="EN">A gel breaking feature indicates that something accounts for breaking the gel in a drilling fluid that has stayed
+quiet for some time.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/CirculationFeature">
@@ -4189,7 +4232,7 @@ different densities and/or viscosities.
     <rdfs:comment xml:lang="EN">A drill-stem axial impediment feature indicates that something accounts for drill-stem axial impediment.
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DrillSteRotationalImpedimentFeature">
+  <rdf:Description rdf:about="http://ddhub.no/DrillStemRotationalImpedimentFeature">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/StuckPipeFeature" />
     <rdfs:comment xml:lang="EN">A drill-stem rotational impediment feature indicates that something accounts for drill-stem rotational impediment.
@@ -4649,6 +4692,12 @@ the side effects of swab and surge.
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingProcedure" />
     <rdfs:comment xml:lang="EN">The tag bottom procedure is used to tag the bottom hole and establish the drilling parameters.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PickOffBottomProcedure">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingProcedure" />
+    <rdfs:comment xml:lang="EN">The pick off bottom procedure is used to pick off bottom when the bit is on bottom.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ReciprocationProcedure">
@@ -20924,6 +20973,22 @@ to another.
     <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
     <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsLimitFor" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsCurrentStateFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/ComputedState" />
+    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsInformationForCurrentStateOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/ComputedState" />
+    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>

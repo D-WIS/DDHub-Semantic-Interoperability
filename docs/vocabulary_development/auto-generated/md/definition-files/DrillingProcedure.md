@@ -14,6 +14,7 @@ DrillingProcedure <|-- RotationStartupProcedure
 DrillingProcedure <|-- RotationStopProcedure
 DrillingProcedure <|-- HoistProcedure
 DrillingProcedure <|-- TagBottomProcedure
+DrillingProcedure <|-- PickOffBottomProcedure
 DrillingProcedure <|-- ReciprocationProcedure
 DrillingProcedure <|-- FrictionTestProcedure
 DrillingProcedure <|-- SlowCirculationRateProcedure
@@ -452,6 +453,76 @@ WHERE {
 	?tagBottomProcedureInfo_1 ddhub:IsProvidedTo ?adviceComposer .
 	?scheduler rdf:type ddhub:DWISScheduler .
 	?tagBottomProcedureInfo_1 ddhub:IsProvidedTo ?scheduler .
+}
+```
+## PickOffBottomProcedure <!-- NOUN -->
+- Display name: Pick Off Bottom Procedure
+- Parent class: [DrillingProcedure](./DrillingProcedure.md#DrillingProcedure)
+- Description: 
+The pick off bottom procedure is used to pick off bottom when the bit is on bottom.
+- Definition set: DrillingProcedure
+- Examples:
+``` dwis pickOffBottomProcedureInfo
+DynamicDrillingSignal:pickOffBottomProcedureInfo
+DrillingStandardProcedureAdvice:pickOffBottomProcedureInfo_1
+pickOffBottomProcedureInfo_1 HasDynamicValue pickOffBottomProcedureInfo
+PickOffBottomProcedure:pickOffBottomProcedure
+pickOffBottomProcedureInfo_1 IsRelatedToDrillingProcedure pickOffBottomProcedure
+ServiceCompany:serviceCompany
+pickOffBottomProcedureInfo_1 IsProvidedBy serviceCompany
+Advisor:computationUnit
+pickOffBottomProcedureInfo_1 IsRecommendedBy computationUnit
+ProcedureFunction:procedureFunction
+procedureFunction ImplementsProcedure pickOffBottomProcedure
+pickOffBottomProcedureInfo_1 IsRecommendedFor procedureFunction
+DWISAdviceComposer:adviceComposer
+pickOffBottomProcedureInfo_1 IsProvidedTo adviceComposer
+DWISScheduler:scheduler
+pickOffBottomProcedureInfo_1 IsProvidedTo scheduler
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pickOffBottomProcedureInfo] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[pickOffBottomProcedureInfo_1] -->|BelongsToClass| N0003(DrillingStandardProcedureAdvice) 
+	N0002[pickOffBottomProcedureInfo_1] -->|HasDynamicValue| N0000[pickOffBottomProcedureInfo] 
+	N0004[pickOffBottomProcedure] -->|BelongsToClass| N0005(PickOffBottomProcedure) 
+	N0002[pickOffBottomProcedureInfo_1] -->|IsRelatedToDrillingProcedure| N0004[pickOffBottomProcedure] 
+	N0006[serviceCompany] -->|BelongsToClass| N0007(ServiceCompany) 
+	N0002[pickOffBottomProcedureInfo_1] -->|IsProvidedBy| N0006[serviceCompany] 
+	N0008[computationUnit] -->|BelongsToClass| N0009(Advisor) 
+	N0002[pickOffBottomProcedureInfo_1] -->|IsRecommendedBy| N0008[computationUnit] 
+	N0010[procedureFunction] -->|BelongsToClass| N0011(ProcedureFunction) 
+	N0010[procedureFunction] -->|ImplementsProcedure| N0004[pickOffBottomProcedure] 
+	N0002[pickOffBottomProcedureInfo_1] -->|IsRecommendedFor| N0010[procedureFunction] 
+	N0012[adviceComposer] -->|BelongsToClass| N0013(DWISAdviceComposer) 
+	N0002[pickOffBottomProcedureInfo_1] -->|IsProvidedTo| N0012[adviceComposer] 
+	N0014[scheduler] -->|BelongsToClass| N0015(DWISScheduler) 
+	N0002[pickOffBottomProcedureInfo_1] -->|IsProvidedTo| N0014[scheduler] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pickOffBottomProcedureInfo
+WHERE {
+	?pickOffBottomProcedureInfo rdf:type ddhub:DynamicDrillingSignal .
+	?pickOffBottomProcedureInfo_1 rdf:type ddhub:DrillingStandardProcedureAdvice .
+	?pickOffBottomProcedureInfo_1 ddhub:HasDynamicValue ?pickOffBottomProcedureInfo .
+	?pickOffBottomProcedure rdf:type ddhub:PickOffBottomProcedure .
+	?pickOffBottomProcedureInfo_1 ddhub:IsRelatedToDrillingProcedure ?pickOffBottomProcedure .
+	?serviceCompany rdf:type ddhub:ServiceCompany .
+	?pickOffBottomProcedureInfo_1 ddhub:IsProvidedBy ?serviceCompany .
+	?computationUnit rdf:type ddhub:Advisor .
+	?pickOffBottomProcedureInfo_1 ddhub:IsRecommendedBy ?computationUnit .
+	?procedureFunction rdf:type ddhub:ProcedureFunction .
+	?procedureFunction ddhub:ImplementsProcedure ?pickOffBottomProcedure .
+	?pickOffBottomProcedureInfo_1 ddhub:IsRecommendedFor ?procedureFunction .
+	?adviceComposer rdf:type ddhub:DWISAdviceComposer .
+	?pickOffBottomProcedureInfo_1 ddhub:IsProvidedTo ?adviceComposer .
+	?scheduler rdf:type ddhub:DWISScheduler .
+	?pickOffBottomProcedureInfo_1 ddhub:IsProvidedTo ?scheduler .
 }
 ```
 ## ReciprocationProcedure <!-- NOUN -->

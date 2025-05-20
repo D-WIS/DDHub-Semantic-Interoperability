@@ -7,7 +7,12 @@ this definition set refers various drilling features that something may support.
 Here is a class inheritance diagram for the nouns contained in this definition set.
 ```mermaid
 classDiagram
-DWISNoun <|-- DrillingManagementFeature
+DWISNoun <|-- Feature
+Feature <|-- DataTransmissionFeature
+DataTransmissionFeature <|-- LookupTableFeature
+Feature <|-- DrillingManagementFeature
+DrillingManagementFeature <|-- FillPipeFeature
+DrillingManagementFeature <|-- GelBreakingFeature
 DrillingManagementFeature <|-- CirculationFeature
 CirculationFeature <|-- DrillingFluidDisplacementFeature
 CirculationFeature <|-- DrillingFluidSweepFeature
@@ -20,7 +25,7 @@ DrillStemMovementFeature <|-- DrillStemAxialMovementFeature
 DrillStemMovementFeature <|-- DrillStemRotationalMovementFeature
 DrillStemMovementFeature <|-- StuckPipeFeature
 StuckPipeFeature <|-- DrillStemAxialImpedimentFeature
-StuckPipeFeature <|-- DrillSteRotationalImpedimentFeature
+StuckPipeFeature <|-- DrillStemRotationalImpedimentFeature
 DrillStemMovementFeature <|-- DrillStemVibrationFeature
 DrillStemVibrationFeature <|-- DrillStemAxialVibrationFeature
 DrillStemAxialVibrationFeature <|-- DrillStemAxialStickSlipFeature
@@ -46,12 +51,43 @@ DrillingManagementFeature <|-- HeatTransferFeature
 DrillingManagementFeature <|-- RigActionPlanFeature
 DrillingManagementFeature <|-- DrillingProgramFeature
 ```
+## Feature <!-- NOUN -->
+- Display name: Feature
+- Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Description: 
+A feature is a characteristic of something.
+- Definition set: DrillingFeature
+## DataTransmissionFeature <!-- NOUN -->
+- Display name: Data Transmission Feature
+- Parent class: [Feature](./DrillingFeature.md#Feature)
+- Description: 
+A data transmission feature is a characteristic about how data is transferred from one place to another.
+- Definition set: DrillingFeature
+## LookupTableFeature <!-- NOUN -->
+- Display name: Lookup Table Feature
+- Parent class: [DataTransmissionFeature](./DrillingFeature.md#DataTransmissionFeature)
+- Description: 
+Such a feature indicates that something accounts for lookup table.
+- Definition set: DrillingFeature
 ## DrillingManagementFeature <!-- NOUN -->
 - Display name: Drilling Management Feature
-- Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Parent class: [Feature](./DrillingFeature.md#Feature)
 - Description: 
 A drilling management feature is a drilling management characteristic that is supported by something. For instance
 an advisory system may provide ROP management parameters accounting for cuttings transport.
+- Definition set: DrillingFeature
+## FillPipeFeature <!-- NOUN -->
+- Display name: Fill Pipe Feature
+- Parent class: [DrillingManagementFeature](./DrillingFeature.md#DrillingManagementFeature)
+- Description: 
+A fill pipe feature indicates that something accounts for filling the pipe when there is an air gap.
+- Definition set: DrillingFeature
+## GelBreakingFeature <!-- NOUN -->
+- Display name: Gel Breaking Feature
+- Parent class: [DrillingManagementFeature](./DrillingFeature.md#DrillingManagementFeature)
+- Description: 
+A gel breaking feature indicates that something accounts for breaking the gel in a drilling fluid that has stayed
+quiet for some time.
 - Definition set: DrillingFeature
 ## CirculationFeature <!-- NOUN -->
 - Display name: Circulation Feature
@@ -127,7 +163,7 @@ A stuck-pipe feature indicates that something accounts for stuck-pipes.
 - Description: 
 A drill-stem axial impediment feature indicates that something accounts for drill-stem axial impediment.
 - Definition set: DrillingFeature
-## DrillSteRotationalImpedimentFeature <!-- NOUN -->
+## DrillStemRotationalImpedimentFeature <!-- NOUN -->
 - Display name: Drill-stem Rotational Impediment Feature
 - Parent class: [StuckPipeFeature](./DrillingFeature.md#StuckPipeFeature)
 - Description: 

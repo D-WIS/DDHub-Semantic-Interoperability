@@ -48,7 +48,7 @@ namespace DWIS.Vocabulary.Utils
                     string s = CorrectString(unit.Name);
                     if (!written.Contains(s))
                     {
-                        string line = $"\tpublic static string {s} = \"{s}\";";
+                        string line = $"\tpublic const string {s} = \"{s}\";";
                         builder.AppendLine(line);
                         written.Add(s);
                     }
@@ -73,7 +73,7 @@ namespace DWIS.Vocabulary.Utils
                     string s = CorrectString(quantity.Name);
                     if (!written.Contains(s))
                     {
-                        string line = $"\tpublic static string {s} = \"{s}\";";
+                        string line = $"\tpublic const string {s} = \"{s}\";";
                     builder.AppendLine(line);
                         written.Add(s);
                     }
@@ -298,7 +298,7 @@ namespace DWIS.Vocabulary.Utils
                 builder.AppendLine("}");
                 foreach (string quantity in quantities)
                 {
-                    builder.AppendLine("public static string " + quantity + " = \"" + quantity + "\";");
+                    builder.AppendLine("public const string " + quantity + " = \"" + quantity + "\";");
                 }
                 builder.AppendLine("}");
                 builder.AppendLine("}");
@@ -331,7 +331,7 @@ namespace DWIS.Vocabulary.Utils
                 builder.AppendLine("}");
                 foreach (string unit in units)
                 {
-                    builder.AppendLine("public static string " + unit + " = \"" + unit + "\";");
+                    builder.AppendLine("public const string " + unit + " = \"" + unit + "\";");
                 }
                 builder.AppendLine("}");
                 builder.AppendLine("}");
@@ -347,7 +347,7 @@ namespace DWIS.Vocabulary.Utils
 
         private static string GetSchema(Development.Noun noun)
         {
-            return $"\tpublic static string {noun.Name} = \"{noun.Name}\";";
+            return $"\tpublic const string {noun.Name} = \"{noun.Name}\";";
         }
 
         private static IList<string> GetAttributesSchema(Noun noun, Development.Vocabulary vocabulary)
@@ -366,8 +366,8 @@ namespace DWIS.Vocabulary.Utils
 
                     if (proceed)
                     {
-                        result.Add($"\tpublic static string {noun.Name}_{att.Name} = \"{att.Name}\";");
-                        result.Add($"\tpublic static string {noun.Name}_{att.Name}_Type = \"{att.Type}\";");
+                        result.Add($"\tpublic const string {noun.Name}_{att.Name} = \"{att.Name}\";");
+                        result.Add($"\tpublic const string {noun.Name}_{att.Name}_Type = \"{att.Type}\";");
                     }
                 }
                 return result;
@@ -377,7 +377,7 @@ namespace DWIS.Vocabulary.Utils
 
         private static string GetSchema(Development.Verb verb)
         {
-            return $"\tpublic static string {verb.Name} = \"{verb.Name}\";";
+            return $"\tpublic const string {verb.Name} = \"{verb.Name}\";";
         }
     }
 }
