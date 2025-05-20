@@ -335,15 +335,14 @@ activatedSignalPackOffDetectionFDIR IsEnablingSignalFor packOffDetectionAndReact
 ```
 This example describes a `ComputedData` signal used by an `FDIRFunction` to indicate when the packoff detection can trigger.
 It also uses an `activatedSignalPackOffDetectionFDIR` signal that indicates when the function is active or not.
-## IsTriggeredSignalFor <!-- VERB -->
-- Display name: Is Triggered Signal For  
+## IsAlertTriggeredSignalFor <!-- VERB -->
+- Display name: Is Alert Triggered Signal For  
 - Parent verb: DWISVerb
 - Subject class: DrillingDataPoint
 - Object class: FDIRFunction
-- Description: This verb is used to indicate a `DrillingDataPoint` tells whether an `FDIRFunction` has been triggered
-or not. This signal is expected to be a Boolean value. The signal is expected to be true from the moment the FDIR has triggered
-to the moment it has recovered from the incident, if it has a recovery procedure, or to the moment the control is given
-back to the end-user, in case of failure of the recovery procedure or at the end of the isolation procedure.
+- Description: This verb is used to indicate a `DrillingDataPoint` tells whether an `FDIRFunction` has its alert level 
+being triggered or not. This signal is expected to be a Boolean value. The signal is expected to be true from the 
+moment the FDIR has triggered  on the alert level to the moment the signal is below the alert level.
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
@@ -356,7 +355,33 @@ DCS BelongsToClass DataProvider
 packOffDetectionAndReaction IsProvidedBy DCS
 ComputedData:triggeredSignalPackOffDetectionFDIR
 triggeredSignalPackOffDetectionFDIR BelongsToClass BooleanValue
-triggeredSignalPackOffDetectionFDIR IsTriggeredSignalFor packOffDetectionAndReaction
+triggeredSignalPackOffDetectionFDIR IsAlertTriggeredSignalFor packOffDetectionAndReaction
+```
+This example describes a `ComputedData` signal used by an `FDIRFunction` to indicate when whether the packoff detection
+is triggered. 
+## IsAlarmTriggeredSignalFor <!-- VERB -->
+- Display name: Is Alarm Triggered Signal For  
+- Parent verb: DWISVerb
+- Subject class: DrillingDataPoint
+- Object class: FDIRFunction
+- Description: This verb is used to indicate a `DrillingDataPoint` tells whether an `FDIRFunction` has its alarm level 
+being triggered or not. This signal is expected to be a Boolean value. The signal is expected to be true from the 
+moment the FDIR has triggered to the moment it has recovered from the incident, if it has a recovery procedure, or to
+the moment the control is given back to the end-user, in case of failure of the recovery procedure or at the end of 
+the isolation procedure.
+- Examples:
+```dwis packOffDectionAndReaction
+FDIRFunction:packOffDetectionAndReaction
+PackOffIncident:packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+packOffDetectionAndReaction IsProvidedBy DCS
+ComputedData:triggeredSignalPackOffDetectionFDIR
+triggeredSignalPackOffDetectionFDIR BelongsToClass BooleanValue
+triggeredSignalPackOffDetectionFDIR IsAlarmTriggeredSignalFor packOffDetectionAndReaction
 ```
 This example describes a `ComputedData` signal used by an `FDIRFunction` to indicate when whether the packoff detection
 is triggered. 
@@ -365,10 +390,9 @@ is triggered.
 - Parent verb: DWISVerb
 - Subject class: DrillingDataPoint
 - Object class: FDIRFunction
-- Description: This verb is used to indicate that a `DrillingDataPoint` tells whether the isolation or the recovery
-- procedures have reached their terminal state and are in an idle state until the system is returned to manual mode. In case
-- the recovery procedure has been successful, the system will not enter an idle state as it will exit completely the triggered
-- state of the `FDIRFunction`. The value can only turn true when the tiggered signal is true. This signal is supposed to be a boolean value.
+- Description: This verb is used to indicate that a `DrillingDataPoint` tells whether the isolation 
+procedure has reached its terminal state and is in an idle state until the system is returned to manual mode. 
+The value can only turn true when the tiggered signal is true. This signal is supposed to be a boolean value.
 - Examples:
 ```dwis packOffDectionAndReaction
 FDIRFunction:packOffDetectionAndReaction
@@ -384,7 +408,36 @@ idleAfterTriggeredSignalPackOffDetectionFDIR BelongsToClass BooleanValue
 idleAfterTriggeredSignalPackOffDetectionFDIR IsIdlingAfterTriggeredSignalFor packOffDetectionAndReaction
 ComputedData:triggeredSignalPackOffDetectionFDIR
 triggeredSignalPackOffDetectionFDIR BelongsToClass BooleanValue
-triggeredSignalPackOffDetectionFDIR IsTriggeredSignalFor packOffDetectionAndReaction
+triggeredSignalPackOffDetectionFDIR IsAlarmTriggeredSignalFor packOffDetectionAndReaction
+```
+This example describes a `ComputedData` signal of an `FDIRFunction` that tells whether the isolation or the recovery 
+procedures have reached a terminal state and have not managed to recover from the incident, therefore waiting to
+return to manual mode. There is also an `triggeredSignalPackOffDetectionFDIR` signal that tells whether the function
+has triggered or not.
+## IsInSafeModeSignalFor <!-- VERB -->
+- Display name: Is In Safe Mode Signal For  
+- Parent verb: DWISVerb
+- Subject class: DrillingDataPoint
+- Object class: FDIRFunction
+- Description: This verb is used to indicate that a `DrillingDataPoint` tells whether the isolation or the recovery
+procedures have been aborted and the system has been set in safe mode. The value can only turn true when the tiggered 
+signal is true. This signal is supposed to be a boolean value.
+- Examples:
+```dwis packOffDectionAndReaction
+FDIRFunction:packOffDetectionAndReaction
+PackOffIncident:packOffIncident
+packOffDetectionAndReaction ManagesIncident packOffIncident
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+packOffDetectionAndReaction IsProvidedBy DCS
+ComputedData:idleAfterTriggeredSignalPackOffDetectionFDIR
+idleAfterTriggeredSignalPackOffDetectionFDIR BelongsToClass BooleanValue
+idleAfterTriggeredSignalPackOffDetectionFDIR IsIdlingAfterTriggeredSignalFor packOffDetectionAndReaction
+ComputedData:triggeredSignalPackOffDetectionFDIR
+triggeredSignalPackOffDetectionFDIR BelongsToClass BooleanValue
+triggeredSignalPackOffDetectionFDIR IsAlarmTriggeredSignalFor packOffDetectionAndReaction
 ```
 This example describes a `ComputedData` signal of an `FDIRFunction` that tells whether the isolation or the recovery 
 procedures have reached a terminal state and have not managed to recover from the incident, therefore waiting to
