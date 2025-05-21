@@ -6527,14 +6527,6 @@ ddhub:IsHydraulicMeasurementAt a owl:ObjectProperty;
                                rdfs:domain ddhub:DrillingDataPoint; 
                                rdfs:range ddhub:HydraulicLogicalElement; 
                                rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
-ddhub:IsIdlingAfterTriggeredSignalFor a owl:ObjectProperty; 
-                                      rdfs:comment """This verb is used to indicate that a `DrillingDataPoint` tells whether the isolation
-procedure has reached its terminal state and is in an idle state until the system is returned to manual mode. 
-The value can only turn true when the tiggered signal is true. This signal is supposed to be a boolean value.
-"""@EN; 
-                                      rdfs:domain ddhub:DrillingDataPoint; 
-                                      rdfs:range ddhub:FDIRFunction; 
-                                      rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsIdlingSignalFor a owl:ObjectProperty; 
                         rdfs:comment """This verb is used to indicate a `DrillingDataPoint` that tells if the function is in an idle state.
 A function that is idle must be enabled but does not perform any particular control on the machines. For instance, a 
@@ -6558,11 +6550,6 @@ ddhub:IsInformationForCurrentStateOf a owl:ObjectProperty;
                                      rdfs:domain ddhub:ComputedState; 
                                      rdfs:range ddhub:DWISNoun; 
                                      rdfs:subPropertyOf ddhub:HasFunction. 
-ddhub:IsInIdlingStateFor a owl:ObjectProperty; 
-                         rdfs:comment ""@EN; 
-                         rdfs:domain ddhub:ComputedState; 
-                         rdfs:range ddhub:DWISNoun; 
-                         rdfs:subPropertyOf ddhub:IsInformationForCurrentStateOf. 
 ddhub:IsInSafeModeSignalFor a owl:ObjectProperty; 
                             rdfs:comment """This verb is used to indicate that a `DrillingDataPoint` tells whether the isolation or the recovery
 procedures have been aborted and the system has been set in safe mode. The value can only turn true when the tiggered 
