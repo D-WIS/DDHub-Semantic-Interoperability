@@ -351,6 +351,8 @@ IsLimitFor <|-- IsMinimumLimitFor
 IsLimitFor <|-- IsMaximumLimitFor
 HasFunction <|-- IsCurrentStateFor
 HasFunction <|-- IsInformationForCurrentStateOf
+IsInformationForCurrentStateOf <|-- IsInSafeModeStateFor
+IsInformationForCurrentStateOf <|-- IsInIdlingStateFor
 HasFunction <|-- IsSetPointFor
 HasFunction <|-- IsSetPointRecommendationFor
 HasFunction <|-- IsSetPointAdviceFor
@@ -388,6 +390,8 @@ DrillingDataPoint ||--o{ DWISNoun : IsMinimumLimitFor
 DrillingDataPoint ||--o{ DWISNoun : IsMaximumLimitFor
 ComputedState ||--o{ DWISNoun : IsCurrentStateFor
 ComputedState ||--o{ DWISNoun : IsInformationForCurrentStateOf
+ComputedState ||--o{ DWISNoun : IsInSafeModeStateFor
+ComputedState ||--o{ DWISNoun : IsInIdlingStateFor
 DrillingDataPoint ||--o{ Controller : IsSetPointFor
 DrillingDataPoint ||--o{ ControlSystem : IsSetPointRecommendationFor
 DrillingDataPoint ||--o{ ControlSystem : IsSetPointAdviceFor
@@ -463,6 +467,18 @@ DWISNoun ||--o{ DWISNoun : IsProcessedBy
 ## IsInformationForCurrentStateOf <!-- VERB -->
 - Display name: Is Information For Current State Of
 - Parent verb: [HasFunction](./DataFlow.md#HasFunction)
+- Subject class: [ComputedState](./DataFlow.md#ComputedState)
+- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Definition set: DataFlow
+## IsInSafeModeStateFor <!-- VERB -->
+- Display name: Is In Safe Mode State For
+- Parent verb: [IsInformationForCurrentStateOf](./DataFlow.md#IsInformationForCurrentStateOf)
+- Subject class: [ComputedState](./DataFlow.md#ComputedState)
+- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Definition set: DataFlow
+## IsInIdlingStateFor <!-- VERB -->
+- Display name: Is In Idling State For
+- Parent verb: [IsInformationForCurrentStateOf](./DataFlow.md#IsInformationForCurrentStateOf)
 - Subject class: [ComputedState](./DataFlow.md#ComputedState)
 - Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Definition set: DataFlow

@@ -21015,6 +21015,22 @@ to another.
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsInSafeModeStateFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/ComputedState" />
+    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsInformationForCurrentStateOf" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsInIdlingStateFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/ComputedState" />
+    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsInformationForCurrentStateOf" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsSetPointFor">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
