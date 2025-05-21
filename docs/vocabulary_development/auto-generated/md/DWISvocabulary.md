@@ -56388,6 +56388,18 @@ here is WGS84.
 - Subject class: [ComputedState](#ComputedState)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
+## IsInSafeModeStateFor <!-- VERB -->
+- Display name: Is In Safe Mode State For
+- Parent verb: [IsInformationForCurrentStateOf](#IsInformationForCurrentStateOf)
+- Subject class: [ComputedState](#ComputedState)
+- Object class: [DWISNoun](#DWISNoun)
+- Definition set: DataFlow
+## IsInIdlingStateFor <!-- VERB -->
+- Display name: Is In Idling State For
+- Parent verb: [IsInformationForCurrentStateOf](#IsInformationForCurrentStateOf)
+- Subject class: [ComputedState](#ComputedState)
+- Object class: [DWISNoun](#DWISNoun)
+- Definition set: DataFlow
 ## IsSetPointFor <!-- VERB -->
 - Display name: Is Set-Point For
 - Parent verb: [HasFunction](#HasFunction)

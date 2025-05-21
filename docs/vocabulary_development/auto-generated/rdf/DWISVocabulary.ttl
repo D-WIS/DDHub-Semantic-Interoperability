@@ -6558,6 +6558,11 @@ ddhub:IsInformationForCurrentStateOf a owl:ObjectProperty;
                                      rdfs:domain ddhub:ComputedState; 
                                      rdfs:range ddhub:DWISNoun; 
                                      rdfs:subPropertyOf ddhub:HasFunction. 
+ddhub:IsInIdlingStateFor a owl:ObjectProperty; 
+                         rdfs:comment ""@EN; 
+                         rdfs:domain ddhub:ComputedState; 
+                         rdfs:range ddhub:DWISNoun; 
+                         rdfs:subPropertyOf ddhub:IsInformationForCurrentStateOf. 
 ddhub:IsInSafeModeSignalFor a owl:ObjectProperty; 
                             rdfs:comment """This verb is used to indicate that a `DrillingDataPoint` tells whether the isolation or the recovery
 procedures have been aborted and the system has been set in safe mode. The value can only turn true when the tiggered 
@@ -6566,6 +6571,11 @@ signal is true. This signal is supposed to be a boolean value.
                             rdfs:domain ddhub:DrillingDataPoint; 
                             rdfs:range ddhub:FDIRFunction; 
                             rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsInSafeModeStateFor a owl:ObjectProperty; 
+                           rdfs:comment ""@EN; 
+                           rdfs:domain ddhub:ComputedState; 
+                           rdfs:range ddhub:DWISNoun; 
+                           rdfs:subPropertyOf ddhub:IsInformationForCurrentStateOf. 
 ddhub:IsIntegratedFrom a owl:ObjectProperty; 
                        rdfs:comment ""@EN; 
                        rdfs:domain ddhub:DWISNoun; 
