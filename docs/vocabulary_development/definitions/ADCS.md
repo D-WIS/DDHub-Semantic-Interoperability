@@ -385,35 +385,6 @@ triggeredSignalPackOffDetectionFDIR IsAlarmTriggeredSignalFor packOffDetectionAn
 ```
 This example describes a `ComputedData` signal used by an `FDIRFunction` to indicate when whether the packoff detection
 is triggered. 
-## IsIdlingAfterTriggeredSignalFor <!-- VERB -->
-- Display name: Is Idling After Triggered Signal For  
-- Parent verb: DWISVerb
-- Subject class: DrillingDataPoint
-- Object class: FDIRFunction
-- Description: This verb is used to indicate that a `DrillingDataPoint` tells whether the isolation 
-procedure has reached its terminal state and is in an idle state until the system is returned to manual mode. 
-The value can only turn true when the tiggered signal is true. This signal is supposed to be a boolean value.
-- Examples:
-```dwis packOffDectionAndReaction
-FDIRFunction:packOffDetectionAndReaction
-PackOffIncident:packOffIncident
-packOffDetectionAndReaction ManagesIncident packOffIncident
-ControlSystem:DCS
-DrillingContractor:Contractor
-DCS IsProvidedBy Contractor
-DCS BelongsToClass DataProvider
-packOffDetectionAndReaction IsProvidedBy DCS
-ComputedData:idleAfterTriggeredSignalPackOffDetectionFDIR
-idleAfterTriggeredSignalPackOffDetectionFDIR BelongsToClass BooleanValue
-idleAfterTriggeredSignalPackOffDetectionFDIR IsIdlingAfterTriggeredSignalFor packOffDetectionAndReaction
-ComputedData:triggeredSignalPackOffDetectionFDIR
-triggeredSignalPackOffDetectionFDIR BelongsToClass BooleanValue
-triggeredSignalPackOffDetectionFDIR IsAlarmTriggeredSignalFor packOffDetectionAndReaction
-```
-This example describes a `ComputedData` signal of an `FDIRFunction` that tells whether the isolation or the recovery 
-procedures have reached a terminal state and have not managed to recover from the incident, therefore waiting to
-return to manual mode. There is also an `triggeredSignalPackOffDetectionFDIR` signal that tells whether the function
-has triggered or not.
 ## IsInSafeModeSignalFor <!-- VERB -->
 - Display name: Is In Safe Mode Signal For  
 - Parent verb: DWISVerb
@@ -434,7 +405,7 @@ DCS BelongsToClass DataProvider
 packOffDetectionAndReaction IsProvidedBy DCS
 ComputedData:idleAfterTriggeredSignalPackOffDetectionFDIR
 idleAfterTriggeredSignalPackOffDetectionFDIR BelongsToClass BooleanValue
-idleAfterTriggeredSignalPackOffDetectionFDIR IsIdlingAfterTriggeredSignalFor packOffDetectionAndReaction
+idleAfterTriggeredSignalPackOffDetectionFDIR IsIdlingSignalFor packOffDetectionAndReaction
 ComputedData:triggeredSignalPackOffDetectionFDIR
 triggeredSignalPackOffDetectionFDIR BelongsToClass BooleanValue
 triggeredSignalPackOffDetectionFDIR IsAlarmTriggeredSignalFor packOffDetectionAndReaction

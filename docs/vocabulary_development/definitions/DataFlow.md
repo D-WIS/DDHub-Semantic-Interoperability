@@ -473,13 +473,6 @@ ComputedState.
 - Object class: DWISNoun
 - Description: 
 - Examples:
-## IsInIdlingStateFor <!-- VERB -->
-- Display name: Is In Idling State For
-- Parent verb: IsInformationForCurrentStateOf
-- Subject class: ComputedState
-- Object class: DWISNoun
-- Description: 
-- Examples:
 ## IsSetPointFor <!-- VERB -->
 - Display name: Is Set-Point For
 - Parent verb: HasFunction
