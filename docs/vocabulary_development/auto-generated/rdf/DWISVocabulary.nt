@@ -6715,10 +6715,6 @@
 <http://ddhub.no/IsAlarmTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
 <http://ddhub.no/IsAlarmTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/FDIRFunction> .
 <http://ddhub.no/IsAlarmTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
-<http://ddhub.no/IsIdlingAfterTriggeredSignalFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsIdlingAfterTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/IsIdlingAfterTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/FDIRFunction> .
-<http://ddhub.no/IsIdlingAfterTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
 <http://ddhub.no/IsInSafeModeSignalFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://ddhub.no/IsInSafeModeSignalFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
 <http://ddhub.no/IsInSafeModeSignalFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/FDIRFunction> .
@@ -6827,10 +6823,6 @@
 <http://ddhub.no/IsInSafeModeStateFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/ComputedState> .
 <http://ddhub.no/IsInSafeModeStateFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/IsInSafeModeStateFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsInformationForCurrentStateOf> .
-<http://ddhub.no/IsInIdlingStateFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsInIdlingStateFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/ComputedState> .
-<http://ddhub.no/IsInIdlingStateFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
-<http://ddhub.no/IsInIdlingStateFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsInformationForCurrentStateOf> .
 <http://ddhub.no/IsSetPointFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://ddhub.no/IsSetPointFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
 <http://ddhub.no/IsSetPointFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Controller> .
@@ -7409,7 +7401,6 @@
 <http://ddhub.no/IsArmedSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to indicate a `DrillingDataPoint` used by an `FDIRFunction` tells if the FDIR function is armed and operative.\nThe signal is supposed to be a Boolean value.\nThe FDIR function may be active, but the current state of the drilling process may imply that the function cannot be\ntriggered. For instance, a pack-off FDIR may be active but would react only if the flow is supposed to be steady state.\n"@EN .
 <http://ddhub.no/IsAlertTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to indicate a `DrillingDataPoint` tells whether an `FDIRFunction` has its alert level\nbeing triggered or not. This signal is expected to be a Boolean value. The signal is expected to be true from the \nmoment the FDIR has triggered  on the alert level to the moment the signal is below the alert level.\n"@EN .
 <http://ddhub.no/IsAlarmTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to indicate a `DrillingDataPoint` tells whether an `FDIRFunction` has its alarm level\nbeing triggered or not. This signal is expected to be a Boolean value. The signal is expected to be true from the \nmoment the FDIR has triggered to the moment it has recovered from the incident, if it has a recovery procedure, or to\nthe moment the control is given back to the end-user, in case of failure of the recovery procedure or at the end of \nthe isolation procedure.\n"@EN .
-<http://ddhub.no/IsIdlingAfterTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to indicate that a `DrillingDataPoint` tells whether the isolation\nprocedure has reached its terminal state and is in an idle state until the system is returned to manual mode. \nThe value can only turn true when the tiggered signal is true. This signal is supposed to be a boolean value.\n"@EN .
 <http://ddhub.no/IsInSafeModeSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to indicate that a `DrillingDataPoint` tells whether the isolation or the recovery\nprocedures have been aborted and the system has been set in safe mode. The value can only turn true when the tiggered \nsignal is true. This signal is supposed to be a boolean value.\n"@EN .
 <http://ddhub.no/IsImpactDescriptionSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verbs is used to indicate that a `DrillingDataPoint` used by an `FDIRFunction` can be used to\ndescribe the impact of the function on the drilling process. This signal is supposed to be string value.\n"@EN .
 <http://ddhub.no/IsFeatureSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verbs is used to indicate that a `DrillingDataPoint` describes a feature of an `ActivableFunction`\n"@EN .
@@ -7437,7 +7428,6 @@
 <http://ddhub.no/IsCurrentStateFor> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/IsInformationForCurrentStateOf> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/IsInSafeModeStateFor> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
-<http://ddhub.no/IsInIdlingStateFor> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/IsSetPointFor> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/IsSetPointRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/IsSetPointAdviceFor> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .

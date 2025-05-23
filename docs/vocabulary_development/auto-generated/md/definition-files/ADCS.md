@@ -395,7 +395,6 @@ DWISVerb <|-- IsUsedExtraMarginSignalFor
 DWISVerb <|-- IsArmedSignalFor
 DWISVerb <|-- IsAlertTriggeredSignalFor
 DWISVerb <|-- IsAlarmTriggeredSignalFor
-DWISVerb <|-- IsIdlingAfterTriggeredSignalFor
 DWISVerb <|-- IsInSafeModeSignalFor
 DWISVerb <|-- IsImpactDescriptionSignalFor
 DWISVerb <|-- IsFeatureSignalFor
@@ -413,7 +412,6 @@ DrillingDataPoint ||--o{ FDIRFunction : IsUsedExtraMarginSignalFor
 DrillingDataPoint ||--o{ FDIRFunction : IsArmedSignalFor
 DrillingDataPoint ||--o{ FDIRFunction : IsAlertTriggeredSignalFor
 DrillingDataPoint ||--o{ FDIRFunction : IsAlarmTriggeredSignalFor
-DrillingDataPoint ||--o{ FDIRFunction : IsIdlingAfterTriggeredSignalFor
 DrillingDataPoint ||--o{ FDIRFunction : IsInSafeModeSignalFor
 DrillingDataPoint ||--o{ FDIRFunction : IsImpactDescriptionSignalFor
 DrillingDataPoint ||--o{ ActivableFunction : IsFeatureSignalFor
@@ -1010,78 +1008,6 @@ WHERE {
 ```
 This example describes a `ComputedData` signal used by an `FDIRFunction` to indicate when whether the packoff detection
 is triggered. 
-## IsIdlingAfterTriggeredSignalFor <!-- VERB -->
-- Display name: Is Idling After Triggered Signal For
-- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
-- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
-- Object class: [FDIRFunction](./ADCS.md#FDIRFunction)
-- Definition set: ADCS
-- Description: 
-This verb is used to indicate that a `DrillingDataPoint` tells whether the isolation
-procedure has reached its terminal state and is in an idle state until the system is returned to manual mode. 
-The value can only turn true when the tiggered signal is true. This signal is supposed to be a boolean value.
-- Examples:
-```dwis packOffDectionAndReaction
-FDIRFunction:packOffDetectionAndReaction
-PackOffIncident:packOffIncident
-packOffDetectionAndReaction ManagesIncident packOffIncident
-ControlSystem:DCS
-DrillingContractor:Contractor
-DCS IsProvidedBy Contractor
-DCS BelongsToClass DataProvider
-packOffDetectionAndReaction IsProvidedBy DCS
-ComputedData:idleAfterTriggeredSignalPackOffDetectionFDIR
-idleAfterTriggeredSignalPackOffDetectionFDIR BelongsToClass BooleanValue
-idleAfterTriggeredSignalPackOffDetectionFDIR IsIdlingAfterTriggeredSignalFor packOffDetectionAndReaction
-ComputedData:triggeredSignalPackOffDetectionFDIR
-triggeredSignalPackOffDetectionFDIR BelongsToClass BooleanValue
-triggeredSignalPackOffDetectionFDIR IsAlarmTriggeredSignalFor packOffDetectionAndReaction
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[packOffDetectionAndReaction] -->|BelongsToClass| N0001(FDIRFunction) 
-	N0002[packOffIncident] -->|BelongsToClass| N0003(PackOffIncident) 
-	N0000[packOffDetectionAndReaction] -->|ManagesIncident| N0002[packOffIncident] 
-	N0004[DCS] -->|BelongsToClass| N0005(ControlSystem) 
-	N0006[Contractor] -->|BelongsToClass| N0007(DrillingContractor) 
-	N0004[DCS] -->|IsProvidedBy| N0006[Contractor] 
-	N0004[DCS] -->|BelongsToClass| N0008(DataProvider) 
-	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0004[DCS] 
-	N0009[idleAfterTriggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(ComputedData) 
-	N0009[idleAfterTriggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0011(BooleanValue) 
-	N0009[idleAfterTriggeredSignalPackOffDetectionFDIR] -->|IsIdlingAfterTriggeredSignalFor| N0000[packOffDetectionAndReaction] 
-	N0012[triggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(ComputedData) 
-	N0012[triggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0011(BooleanValue) 
-	N0012[triggeredSignalPackOffDetectionFDIR] -->|IsAlarmTriggeredSignalFor| N0000[packOffDetectionAndReaction] 
-```
-An example SparQL query looks like this:
-```sparql
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX ddhub: <http://ddhub.no/>
-PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
-SELECT ?packOffDectionAndReaction
-WHERE {
-	?packOffDetectionAndReaction rdf:type ddhub:FDIRFunction .
-	?packOffIncident rdf:type ddhub:PackOffIncident .
-	?packOffDetectionAndReaction ddhub:ManagesIncident ?packOffIncident .
-	?DCS rdf:type ddhub:ControlSystem .
-	?Contractor rdf:type ddhub:DrillingContractor .
-	?DCS ddhub:IsProvidedBy ?Contractor .
-	?DCS rdf:type ddhub:DataProvider .
-	?packOffDetectionAndReaction ddhub:IsProvidedBy ?DCS .
-	?idleAfterTriggeredSignalPackOffDetectionFDIR rdf:type ddhub:ComputedData .
-	?idleAfterTriggeredSignalPackOffDetectionFDIR rdf:type ddhub:BooleanValue .
-	?idleAfterTriggeredSignalPackOffDetectionFDIR ddhub:IsIdlingAfterTriggeredSignalFor ?packOffDetectionAndReaction .
-	?triggeredSignalPackOffDetectionFDIR rdf:type ddhub:ComputedData .
-	?triggeredSignalPackOffDetectionFDIR rdf:type ddhub:BooleanValue .
-	?triggeredSignalPackOffDetectionFDIR ddhub:IsAlarmTriggeredSignalFor ?packOffDetectionAndReaction .
-}
-```
-This example describes a `ComputedData` signal of an `FDIRFunction` that tells whether the isolation or the recovery 
-procedures have reached a terminal state and have not managed to recover from the incident, therefore waiting to
-return to manual mode. There is also an `triggeredSignalPackOffDetectionFDIR` signal that tells whether the function
-has triggered or not.
 ## IsInSafeModeSignalFor <!-- VERB -->
 - Display name: Is In Safe Mode Signal For
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
@@ -1104,7 +1030,7 @@ DCS BelongsToClass DataProvider
 packOffDetectionAndReaction IsProvidedBy DCS
 ComputedData:idleAfterTriggeredSignalPackOffDetectionFDIR
 idleAfterTriggeredSignalPackOffDetectionFDIR BelongsToClass BooleanValue
-idleAfterTriggeredSignalPackOffDetectionFDIR IsIdlingAfterTriggeredSignalFor packOffDetectionAndReaction
+idleAfterTriggeredSignalPackOffDetectionFDIR IsIdlingSignalFor packOffDetectionAndReaction
 ComputedData:triggeredSignalPackOffDetectionFDIR
 triggeredSignalPackOffDetectionFDIR BelongsToClass BooleanValue
 triggeredSignalPackOffDetectionFDIR IsAlarmTriggeredSignalFor packOffDetectionAndReaction
@@ -1122,7 +1048,7 @@ graph LR
 	N0000[packOffDetectionAndReaction] -->|IsProvidedBy| N0004[DCS] 
 	N0009[idleAfterTriggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(ComputedData) 
 	N0009[idleAfterTriggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0011(BooleanValue) 
-	N0009[idleAfterTriggeredSignalPackOffDetectionFDIR] -->|IsIdlingAfterTriggeredSignalFor| N0000[packOffDetectionAndReaction] 
+	N0009[idleAfterTriggeredSignalPackOffDetectionFDIR] -->|IsIdlingSignalFor| N0000[packOffDetectionAndReaction] 
 	N0012[triggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0010(ComputedData) 
 	N0012[triggeredSignalPackOffDetectionFDIR] -->|BelongsToClass| N0011(BooleanValue) 
 	N0012[triggeredSignalPackOffDetectionFDIR] -->|IsAlarmTriggeredSignalFor| N0000[packOffDetectionAndReaction] 
@@ -1144,7 +1070,7 @@ WHERE {
 	?packOffDetectionAndReaction ddhub:IsProvidedBy ?DCS .
 	?idleAfterTriggeredSignalPackOffDetectionFDIR rdf:type ddhub:ComputedData .
 	?idleAfterTriggeredSignalPackOffDetectionFDIR rdf:type ddhub:BooleanValue .
-	?idleAfterTriggeredSignalPackOffDetectionFDIR ddhub:IsIdlingAfterTriggeredSignalFor ?packOffDetectionAndReaction .
+	?idleAfterTriggeredSignalPackOffDetectionFDIR ddhub:IsIdlingSignalFor ?packOffDetectionAndReaction .
 	?triggeredSignalPackOffDetectionFDIR rdf:type ddhub:ComputedData .
 	?triggeredSignalPackOffDetectionFDIR rdf:type ddhub:BooleanValue .
 	?triggeredSignalPackOffDetectionFDIR ddhub:IsAlarmTriggeredSignalFor ?packOffDetectionAndReaction .
