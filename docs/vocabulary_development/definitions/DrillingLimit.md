@@ -231,6 +231,34 @@ ROPManagementControllerInfo_1 IsProvidedTo scheduler
 - Specialization:
 - Description: This Noun is used to refer to a torque limit.
 - Examples:
+## AxialLoadLimit <!-- NOUN -->
+- Display name: Axial Load Limit
+- Parent class: DrillingLimit
+- Attributes:
+- Specialization:
+- Description: This Noun is used to refer to an axial load limit.
+- Examples:
+## PressureLimit <!-- NOUN -->
+- Display name: Pressure Limit
+- Parent class: DrillingLimit
+- Attributes:
+- Specialization:
+- Description: This Noun is used to refer to an pressure limit.
+- Examples:
+## AnnulusPressureLimit <!-- NOUN -->
+- Display name: Annulus Pressure Limit
+- Parent class: PressureLimit
+- Attributes:
+- Specialization:
+- Description: This Noun is used to refer to an annulus pressure limit.
+- Examples:
+## StringPressureLimit <!-- NOUN -->
+- Display name: String Pressure Limit
+- Parent class: PressureLimit
+- Attributes:
+- Specialization:
+- Description: This Noun is used to refer to a string pressure limit.
+- Examples:
 # VERBS
 ## IsRelatedToDrillingLimit <!-- VERB -->
 - Display name: Is Related to Drilling Limit
