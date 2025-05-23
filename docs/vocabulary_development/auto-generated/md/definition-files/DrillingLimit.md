@@ -16,6 +16,10 @@ DrillingLimit <|-- ROPLimit
 DrillingLimit <|-- WOBLimit
 DrillingLimit <|-- DifferentialPressureLimit
 DrillingLimit <|-- TorqueLimit
+DrillingLimit <|-- AxialLoadLimit
+DrillingLimit <|-- PressureLimit
+PressureLimit <|-- AnnulusPressureLimit
+PressureLimit <|-- StringPressureLimit
 ```
 ## DrillingLimit <!-- NOUN -->
 - Display name: Drilling Limit
@@ -641,6 +645,30 @@ WHERE {
 - Parent class: [DrillingLimit](./DrillingLimit.md#DrillingLimit)
 - Description: 
 This Noun is used to refer to a torque limit.
+- Definition set: DrillingLimit
+## AxialLoadLimit <!-- NOUN -->
+- Display name: Axial Load Limit
+- Parent class: [DrillingLimit](./DrillingLimit.md#DrillingLimit)
+- Description: 
+This Noun is used to refer to an axial load limit.
+- Definition set: DrillingLimit
+## PressureLimit <!-- NOUN -->
+- Display name: Pressure Limit
+- Parent class: [DrillingLimit](./DrillingLimit.md#DrillingLimit)
+- Description: 
+This Noun is used to refer to an pressure limit.
+- Definition set: DrillingLimit
+## AnnulusPressureLimit <!-- NOUN -->
+- Display name: Annulus Pressure Limit
+- Parent class: [PressureLimit](./DrillingLimit.md#PressureLimit)
+- Description: 
+This Noun is used to refer to an annulus pressure limit.
+- Definition set: DrillingLimit
+## StringPressureLimit <!-- NOUN -->
+- Display name: String Pressure Limit
+- Parent class: [PressureLimit](./DrillingLimit.md#PressureLimit)
+- Description: 
+This Noun is used to refer to a string pressure limit.
 - Definition set: DrillingLimit
 # Verbs
 ## Class Inheritance for Verbs
