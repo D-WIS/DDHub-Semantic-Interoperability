@@ -313,6 +313,55 @@
 - Specialization:
 - Description: 
 - Examples:
+## FluidInterface <!-- NOUN -->
+- Display name: Fluid Interface
+- Parent class: DWISNoun
+- Attributes:
+- Specialization:
+- Description: The interface between two fluids in a hydraulic system.
+- Examples:
+## FluidType <!-- NOUN -->
+- Display name: Fluid Type
+- Parent class: DWISNoun
+- Attributes:
+- Specialization:
+- Description: A symbolic representation of the type of a fluid to be found in a hydraulic system.
+- Examples:
+## Gas <!-- NOUN -->
+- Display name: Gas
+- Parent class: FluidType
+- Attributes:
+- Specialization:
+- Description: A symbolic representation of gas when encountered in a hydraulic system.
+- Examples:
+## Air <!-- NOUN -->
+- Display name: Air
+- Parent class: Gas
+- Attributes:
+- Specialization:
+- Description: A symbolic representation of air when encountered in a hydraulic system.
+- Examples:
+## FormationGas <!-- NOUN -->
+- Display name: Formation Gas
+- Parent class: Gas
+- Attributes:
+- Specialization:
+- Description: A symbolic representation of formation gas when encountered in a hydraulic system.
+- Examples:
+## Liquid <!-- NOUN -->
+- Display name: Liquid
+- Parent class: FluidType
+- Attributes:
+- Specialization:
+- Description: A symbolic representation of liquid when encountered in a hydraulic system.
+- Examples:
+## DrillingLiquid <!-- NOUN -->
+- Display name: Drilling Liquid
+- Parent class: Liquid
+- Attributes:
+- Specialization:
+- Description: A symbolic representation of drilling liquid when encountered in a hydraulic system.
+- Examples:
   
 # VERBS
 ## HasPressureReferenceType <!-- VERB -->
@@ -530,5 +579,19 @@
 - Parent verb: DWISVerb
 - Subject class: DrillingDataPoint
 - Object class: FluidComponent
+- Description: 
+- Examples:
+## IsUpstreamOf <!-- VERB -->
+- Display name: Is Upstream Of
+- Parent verb: DWISVerb
+- Subject class: FluidType
+- Object class: FluidInterface
+- Description: 
+- Examples:
+## IsDownstreamOf <!-- VERB -->
+- Display name: Is downstream of
+- Parent verb: DWISVerb
+- Subject class: FluidType
+- Object class: FluidInterface
 - Description: 
 - Examples:
