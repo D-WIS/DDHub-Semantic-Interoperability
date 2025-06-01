@@ -627,6 +627,66 @@ DegreePerMinute.ConversionFactorA = 0
 DegreePerMinute.ConversionFactorB = 3437.746770784939
 DegreePerMinute.Symbol = "°/min"
 DegreePerMinute IsUnitForQuantity AngularVelocityQuantity
+Unit:RevolutionPerSecond
+RevolutionPerSecond.ConversionFactorA = 0
+RevolutionPerSecond.ConversionFactorB = 0.15915494309189535
+RevolutionPerSecond.Symbol = "rps"
+RevolutionPerSecond IsUnitForQuantity AngularVelocityQuantity
+Unit:RevolutionPerMinute
+RevolutionPerMinute.ConversionFactorA = 0
+RevolutionPerMinute.ConversionFactorB = 9.549296585513721
+RevolutionPerMinute.Symbol = "rpm"
+RevolutionPerMinute IsUnitForQuantity AngularVelocityQuantity
+Unit:RevolutionPerHour
+RevolutionPerHour.ConversionFactorA = 0
+RevolutionPerHour.ConversionFactorB = 572.9577951308232
+RevolutionPerHour.Symbol = "rph"
+RevolutionPerHour IsUnitForQuantity AngularVelocityQuantity
+Unit:ThousandRevolutionPerSecond
+ThousandRevolutionPerSecond.ConversionFactorA = 0
+ThousandRevolutionPerSecond.ConversionFactorB = 0.00015915494309189535
+ThousandRevolutionPerSecond.Symbol = "1000xrps"
+ThousandRevolutionPerSecond IsUnitForQuantity AngularVelocityQuantity
+Unit:ThousandRevolutionPerMinute
+ThousandRevolutionPerMinute.ConversionFactorA = 0
+ThousandRevolutionPerMinute.ConversionFactorB = 0.009549296585513721
+ThousandRevolutionPerMinute.Symbol = "1000xrpm"
+ThousandRevolutionPerMinute IsUnitForQuantity AngularVelocityQuantity
+Unit:ThousandRevolutionPerHour
+ThousandRevolutionPerHour.ConversionFactorA = 0
+ThousandRevolutionPerHour.ConversionFactorB = 0.5729577951308232
+ThousandRevolutionPerHour.Symbol = "1000xrph"
+ThousandRevolutionPerHour IsUnitForQuantity AngularVelocityQuantity
+Unit:StrokePerSecond
+StrokePerSecond.ConversionFactorA = 0
+StrokePerSecond.ConversionFactorB = 0.15915494309189535
+StrokePerSecond.Symbol = "sps"
+StrokePerSecond IsUnitForQuantity AngularVelocityQuantity
+Unit:StrokePerMinute
+StrokePerMinute.ConversionFactorA = 0
+StrokePerMinute.ConversionFactorB = 9.549296585513721
+StrokePerMinute.Symbol = "spm"
+StrokePerMinute IsUnitForQuantity AngularVelocityQuantity
+Unit:StrokePerHour
+StrokePerHour.ConversionFactorA = 0
+StrokePerHour.ConversionFactorB = 572.9577951308232
+StrokePerHour.Symbol = "sph"
+StrokePerHour IsUnitForQuantity AngularVelocityQuantity
+Unit:ThousandStrokePerSecond
+ThousandStrokePerSecond.ConversionFactorA = 0
+ThousandStrokePerSecond.ConversionFactorB = 0.00015915494309189535
+ThousandStrokePerSecond.Symbol = "1000xsps"
+ThousandStrokePerSecond IsUnitForQuantity AngularVelocityQuantity
+Unit:ThousandStrokePerMinute
+ThousandStrokePerMinute.ConversionFactorA = 0
+ThousandStrokePerMinute.ConversionFactorB = 0.009549296585513721
+ThousandStrokePerMinute.Symbol = "1000xspm"
+ThousandStrokePerMinute IsUnitForQuantity AngularVelocityQuantity
+Unit:ThousandStrokePerHour
+ThousandStrokePerHour.ConversionFactorA = 0
+ThousandStrokePerHour.ConversionFactorB = 0.5729577951308232
+ThousandStrokePerHour.Symbol = "1000xsph"
+ThousandStrokePerHour IsUnitForQuantity AngularVelocityQuantity
 ```
 ## AreaQuantity <!-- NOUN -->
 - Display name: Area
@@ -912,6 +972,749 @@ RadianPerMile.ConversionFactorA = 0
 RadianPerMile.ConversionFactorB = 1609.3439999999998
 RadianPerMile.Symbol = "rad/mi"
 RadianPerMile IsUnitForQuantity CurvatureQuantity
+```
+## DimensionlessQuantity <!-- NOUN -->
+- Display name: Dimensionless
+- Parent class: Quantity
+- Specialization: 
+- Description: 
+As its name indicates, a dimensionless quantity has no dimension:
+
+- Examples: 
+``` dwis
+Quantity:DimensionlessQuantity
+Unit:Dimensionless
+Dimensionless.ConversionFactorA = 0
+Dimensionless.ConversionFactorB = 1
+Dimensionless IsUnitForQuantity DimensionlessQuantity
+DimensionlessQuantity HasSIUnit Dimensionless
+```
+## DynamicViscosityQuantity <!-- NOUN -->
+- Display name: DynamicViscosity
+- Parent class: Quantity
+- Specialization: 
+  - L = -1
+  - M = 1
+  - T = -1
+- Description: 
+Dynamic viscosity is a measure of a fluid's resistance to shear or flow when a force is applied. It quantifies how thick or thin the fluid is.
+The dimension of dynamic viscosity is:
+$$[ML^{-1}T^{-1}]$$.
+
+The SI unit for **dynamic viscosity** is: pascal second with the associated unit label $Pa \cdot s$
+
+- Examples: 
+``` dwis
+Quantity:DynamicViscosityQuantity
+DynamicViscosityQuantity.L = -1
+DynamicViscosityQuantity.M = 1
+DynamicViscosityQuantity.T = -1
+Unit:PascalSecond
+PascalSecond.ConversionFactorA = 0
+PascalSecond.ConversionFactorB = 1
+PascalSecond.Symbol = "Pa•s"
+PascalSecond IsUnitForQuantity DynamicViscosityQuantity
+DynamicViscosityQuantity HasSIUnit PascalSecond
+Unit:MillipascalSecond
+MillipascalSecond.ConversionFactorA = 0
+MillipascalSecond.ConversionFactorB = 1000
+MillipascalSecond.Symbol = "mPa•s"
+MillipascalSecond IsUnitForQuantity DynamicViscosityQuantity
+Unit:MicropascalSecond
+MicropascalSecond.ConversionFactorA = 0
+MicropascalSecond.ConversionFactorB = 1000000
+MicropascalSecond.Symbol = "µPa•s"
+MicropascalSecond IsUnitForQuantity DynamicViscosityQuantity
+Unit:Poise
+Poise.ConversionFactorA = 0
+Poise.ConversionFactorB = 10
+Poise.Symbol = "P"
+Poise IsUnitForQuantity DynamicViscosityQuantity
+Unit:Centipoise
+Centipoise.ConversionFactorA = 0
+Centipoise.ConversionFactorB = 1000
+Centipoise.Symbol = "cP"
+Centipoise IsUnitForQuantity DynamicViscosityQuantity
+Unit:Millipoise
+Millipoise.ConversionFactorA = 0
+Millipoise.ConversionFactorB = 10000
+Millipoise.Symbol = "mP"
+Millipoise IsUnitForQuantity DynamicViscosityQuantity
+Unit:Micropoise
+Micropoise.ConversionFactorA = 0
+Micropoise.ConversionFactorB = 10000000
+Micropoise.Symbol = "µP"
+Micropoise IsUnitForQuantity DynamicViscosityQuantity
+Unit:PoundSecondPerSquareFoot
+PoundSecondPerSquareFoot.ConversionFactorA = 0
+PoundSecondPerSquareFoot.ConversionFactorB = 0.020885434233150126
+PoundSecondPerSquareFoot.Symbol = "lb•s/ft²"
+PoundSecondPerSquareFoot IsUnitForQuantity DynamicViscosityQuantity
+Unit:PoundSecondPer100SquareFoot
+PoundSecondPer100SquareFoot.ConversionFactorA = 0
+PoundSecondPer100SquareFoot.ConversionFactorB = 2.0885434233150124
+PoundSecondPer100SquareFoot.Symbol = "lb•s/100ft²"
+PoundSecondPer100SquareFoot IsUnitForQuantity DynamicViscosityQuantity
+Unit:PoundSecondPerSquareInch
+PoundSecondPerSquareInch.ConversionFactorA = 0
+PoundSecondPerSquareInch.ConversionFactorB = 0.0001450377377302092
+PoundSecondPerSquareInch.Symbol = "lb•s/in²"
+PoundSecondPerSquareInch IsUnitForQuantity DynamicViscosityQuantity
+Unit:DyneSecondPerSquareCentimetre
+DyneSecondPerSquareCentimetre.ConversionFactorA = 0
+DyneSecondPerSquareCentimetre.ConversionFactorB = 10
+DyneSecondPerSquareCentimetre.Symbol = "dyne•s/cm²"
+DyneSecondPerSquareCentimetre IsUnitForQuantity DynamicViscosityQuantity
+```
+## ElectricCapacitanceQuantity <!-- NOUN -->
+- Display name: ElectricCapacitance
+- Parent class: Quantity
+- Specialization: 
+  - L = -2
+  - M = -1
+  - T = 4
+  - I = 2
+- Description: 
+lectric capacitance is the ability of a capacitor or a component to store electrical charge per unit voltage applied across it.
+The dimension of electric capacitance is:
+$$[T^{4}I^{2}M^{-1}L^{-2}]$$.
+
+The SI unit for **electric capacitance** is: farad with the associated unit label $F$
+
+- Examples: 
+``` dwis
+Quantity:ElectricCapacitanceQuantity
+ElectricCapacitanceQuantity.L = -2
+ElectricCapacitanceQuantity.M = -1
+ElectricCapacitanceQuantity.T = 4
+ElectricCapacitanceQuantity.I = 2
+Unit:Farad
+Farad.ConversionFactorA = 0
+Farad.ConversionFactorB = 1
+Farad.Symbol = "F"
+Farad IsUnitForQuantity ElectricCapacitanceQuantity
+ElectricCapacitanceQuantity HasSIUnit Farad
+Unit:CoulombPerVolt
+CoulombPerVolt.ConversionFactorA = 0
+CoulombPerVolt.ConversionFactorB = 1
+CoulombPerVolt.Symbol = "C/V"
+CoulombPerVolt IsUnitForQuantity ElectricCapacitanceQuantity
+Unit:Millifarad
+Millifarad.ConversionFactorA = 0
+Millifarad.ConversionFactorB = 1000
+Millifarad.Symbol = "mF"
+Millifarad IsUnitForQuantity ElectricCapacitanceQuantity
+Unit:Microfarad
+Microfarad.ConversionFactorA = 0
+Microfarad.ConversionFactorB = 1000000
+Microfarad.Symbol = "μF"
+Microfarad IsUnitForQuantity ElectricCapacitanceQuantity
+Unit:Nanofarad
+Nanofarad.ConversionFactorA = 0
+Nanofarad.ConversionFactorB = 999999999.9999999
+Nanofarad.Symbol = "nF"
+Nanofarad IsUnitForQuantity ElectricCapacitanceQuantity
+Unit:Picofarad
+Picofarad.ConversionFactorA = 0
+Picofarad.ConversionFactorB = 1000000000000
+Picofarad.Symbol = "pF"
+Picofarad IsUnitForQuantity ElectricCapacitanceQuantity
+```
+## ElectricCurrentQuantity <!-- NOUN -->
+- Display name: ElectricCurrent
+- Parent class: Quantity
+- Specialization: 
+  - I = 1
+- Description: 
+Electric current is the flow of electric charge through a conductor or circuit.
+The dimension of electric current is:
+$$[I]$$.
+
+The SI unit for **electric current** is: ampere with the associated unit label $A$
+
+- Examples: 
+``` dwis
+Quantity:ElectricCurrentQuantity
+ElectricCurrentQuantity.I = 1
+Unit:Ampere
+Ampere.ConversionFactorA = 0
+Ampere.ConversionFactorB = 1
+Ampere.Symbol = "A"
+Ampere IsUnitForQuantity ElectricCurrentQuantity
+ElectricCurrentQuantity HasSIUnit Ampere
+Unit:CoulombPerSecond
+CoulombPerSecond.ConversionFactorA = 0
+CoulombPerSecond.ConversionFactorB = 1
+CoulombPerSecond.Symbol = "C/s"
+CoulombPerSecond IsUnitForQuantity ElectricCurrentQuantity
+Unit:SiemensVolt
+SiemensVolt.ConversionFactorA = 0
+SiemensVolt.ConversionFactorB = 1
+SiemensVolt.Symbol = "S•V"
+SiemensVolt IsUnitForQuantity ElectricCurrentQuantity
+Unit:VoltPerOhm
+VoltPerOhm.ConversionFactorA = 0
+VoltPerOhm.ConversionFactorB = 1
+VoltPerOhm.Symbol = "V/Ω"
+VoltPerOhm IsUnitForQuantity ElectricCurrentQuantity
+Unit:WattPerVolt
+WattPerVolt.ConversionFactorA = 0
+WattPerVolt.ConversionFactorB = 1
+WattPerVolt.Symbol = "W/V"
+WattPerVolt IsUnitForQuantity ElectricCurrentQuantity
+Unit:WeberPerHenry
+WeberPerHenry.ConversionFactorA = 0
+WeberPerHenry.ConversionFactorB = 1
+WeberPerHenry.Symbol = "Wb/H"
+WeberPerHenry IsUnitForQuantity ElectricCurrentQuantity
+Unit:Deciampere
+Deciampere.ConversionFactorA = 0
+Deciampere.ConversionFactorB = 10
+Deciampere.Symbol = "dA"
+Deciampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Centiampere
+Centiampere.ConversionFactorA = 0
+Centiampere.ConversionFactorB = 100
+Centiampere.Symbol = "cA"
+Centiampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Milliampere
+Milliampere.ConversionFactorA = 0
+Milliampere.ConversionFactorB = 1000
+Milliampere.Symbol = "mA"
+Milliampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Microampere
+Microampere.ConversionFactorA = 0
+Microampere.ConversionFactorB = 1000000
+Microampere.Symbol = "µA"
+Microampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Nanoampere
+Nanoampere.ConversionFactorA = 0
+Nanoampere.ConversionFactorB = 999999999.9999999
+Nanoampere.Symbol = "nA"
+Nanoampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Picoampere
+Picoampere.ConversionFactorA = 0
+Picoampere.ConversionFactorB = 1000000000000
+Picoampere.Symbol = "pA"
+Picoampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Biot
+Biot.ConversionFactorA = 0
+Biot.ConversionFactorB = 0.1
+Biot.Symbol = "Bi"
+Biot IsUnitForQuantity ElectricCurrentQuantity
+Unit:Abampere
+Abampere.ConversionFactorA = 0
+Abampere.ConversionFactorB = 0.1
+Abampere.Symbol = "abA"
+Abampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Kiloampere
+Kiloampere.ConversionFactorA = 0
+Kiloampere.ConversionFactorB = 0.001
+Kiloampere.Symbol = "kA"
+Kiloampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Megaampere
+Megaampere.ConversionFactorA = 0
+Megaampere.ConversionFactorB = 1E-06
+Megaampere.Symbol = "MA"
+Megaampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Gigaampere
+Gigaampere.ConversionFactorA = 0
+Gigaampere.ConversionFactorB = 1E-09
+Gigaampere.Symbol = "GA"
+Gigaampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Teraampere
+Teraampere.ConversionFactorA = 0
+Teraampere.ConversionFactorB = 1E-12
+Teraampere.Symbol = "TA"
+Teraampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Statampere
+Statampere.ConversionFactorA = 0
+Statampere.ConversionFactorB = 2997924580
+Statampere.Symbol = "stA"
+Statampere IsUnitForQuantity ElectricCurrentQuantity
+```
+## ElectricResistivityQuantity <!-- NOUN -->
+- Display name: ElectricResistivity
+- Parent class: Quantity
+- Specialization: 
+  - L = 3
+  - M = 1
+  - T = -3
+  - I = -2
+- Description: 
+Electric resistivity is a material's inherent property that measures how strongly it resists the flow of electric current.
+The dimension of resistivity is:
+$$[L^{3}MI^{-2}T^{-3}]$$.
+
+The SI unit for **electric resistivity** is: ohm metre with the associated unit label $\Omega \cdot m$
+
+- Examples: 
+``` dwis
+Quantity:ElectricResistivityQuantity
+ElectricResistivityQuantity.L = 3
+ElectricResistivityQuantity.M = 1
+ElectricResistivityQuantity.T = -3
+ElectricResistivityQuantity.I = -2
+Unit:OhmMetre
+OhmMetre.ConversionFactorA = 0
+OhmMetre.ConversionFactorB = 1
+OhmMetre.Symbol = "Ω•m"
+OhmMetre IsUnitForQuantity ElectricResistivityQuantity
+ElectricResistivityQuantity HasSIUnit OhmMetre
+Unit:KiloOhmMetre
+KiloOhmMetre.ConversionFactorA = 0
+KiloOhmMetre.ConversionFactorB = 0.001
+KiloOhmMetre.Symbol = "kΩ•m"
+KiloOhmMetre IsUnitForQuantity ElectricResistivityQuantity
+Unit:MegaOhmMetre
+MegaOhmMetre.ConversionFactorA = 0
+MegaOhmMetre.ConversionFactorB = 1E-06
+MegaOhmMetre.Symbol = "MΩ•m"
+MegaOhmMetre IsUnitForQuantity ElectricResistivityQuantity
+Unit:GigaOhmMetre
+GigaOhmMetre.ConversionFactorA = 0
+GigaOhmMetre.ConversionFactorB = 1E-09
+GigaOhmMetre.Symbol = "GΩ•m"
+GigaOhmMetre IsUnitForQuantity ElectricResistivityQuantity
+```
+## ElongationGradientPerLengthQuantity <!-- NOUN -->
+- Display name: ElongationGradientPerLength
+- Parent class: Quantity
+- Specialization: 
+- Description: 
+An elongation gradient per length is the first derivative of an elongation compared to a distance: $\frac{d\epsilon}{ds}$, where $\epsilon$ is an elongation and $s$ is a distance.
+It is dimensionless.
+
+The SI unit for **elongation gradient per length** is: metre per metre with the associated unit label $\frac{m}{m}$
+
+- Examples: 
+``` dwis
+Quantity:ElongationGradientPerLengthQuantity
+Unit:MetrePerMetre
+MetrePerMetre.ConversionFactorA = 0
+MetrePerMetre.ConversionFactorB = 1
+MetrePerMetre.Symbol = "m/m"
+MetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
+ElongationGradientPerLengthQuantity HasSIUnit MetrePerMetre
+Unit:DecimetrePerMetre
+DecimetrePerMetre.ConversionFactorA = 0
+DecimetrePerMetre.ConversionFactorB = 10
+DecimetrePerMetre.Symbol = "dm/m"
+DecimetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:CentimetrePerMetre
+CentimetrePerMetre.ConversionFactorA = 0
+CentimetrePerMetre.ConversionFactorB = 100
+CentimetrePerMetre.Symbol = "cm/m"
+CentimetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:MillimetrePerMetre
+MillimetrePerMetre.ConversionFactorA = 0
+MillimetrePerMetre.ConversionFactorB = 1000
+MillimetrePerMetre.Symbol = "mm/m"
+MillimetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:MicrometrePerMetre
+MicrometrePerMetre.ConversionFactorA = 0
+MicrometrePerMetre.ConversionFactorB = 1000000
+MicrometrePerMetre.Symbol = "µm/m"
+MicrometrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:MetrePerKilometre
+MetrePerKilometre.ConversionFactorA = 0
+MetrePerKilometre.ConversionFactorB = 1000
+MetrePerKilometre.Symbol = "m/km"
+MetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:DecimetrePerKilometre
+DecimetrePerKilometre.ConversionFactorA = 0
+DecimetrePerKilometre.ConversionFactorB = 10000
+DecimetrePerKilometre.Symbol = "dm/km"
+DecimetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:CentimetrePerKilometre
+CentimetrePerKilometre.ConversionFactorA = 0
+CentimetrePerKilometre.ConversionFactorB = 100000
+CentimetrePerKilometre.Symbol = "cm/km"
+CentimetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:MillimetrePerKilometre
+MillimetrePerKilometre.ConversionFactorA = 0
+MillimetrePerKilometre.ConversionFactorB = 1000000
+MillimetrePerKilometre.Symbol = "mm/km"
+MillimetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:MicrometrePerKilometre
+MicrometrePerKilometre.ConversionFactorA = 0
+MicrometrePerKilometre.ConversionFactorB = 1000000000
+MicrometrePerKilometre.Symbol = "µm/km"
+MicrometrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:InchPerFoot
+InchPerFoot.ConversionFactorA = 0
+InchPerFoot.ConversionFactorB = 11.999999999999998
+InchPerFoot.Symbol = "in/ft"
+InchPerFoot IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:InchPerYard
+InchPerYard.ConversionFactorA = 0
+InchPerYard.ConversionFactorB = 36
+InchPerYard.Symbol = "in/yd"
+InchPerYard IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:InchPerMile
+InchPerMile.ConversionFactorA = 0
+InchPerMile.ConversionFactorB = 63359.99999999999
+InchPerMile.Symbol = "in/mi"
+InchPerMile IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:FootPerFoot
+FootPerFoot.ConversionFactorA = 0
+FootPerFoot.ConversionFactorB = 1
+FootPerFoot.Symbol = "ft/ft"
+FootPerFoot IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:FootPerYard
+FootPerYard.ConversionFactorA = 0
+FootPerYard.ConversionFactorB = 3
+FootPerYard.Symbol = "ft/yd"
+FootPerYard IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:FootPerMile
+FootPerMile.ConversionFactorA = 0
+FootPerMile.ConversionFactorB = 5280
+FootPerMile.Symbol = "ft/mi"
+FootPerMile IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:YardPerFoot
+YardPerFoot.ConversionFactorA = 0
+YardPerFoot.ConversionFactorB = 0.3333333333333333
+YardPerFoot.Symbol = "yd/ft"
+YardPerFoot IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:YardPerYard
+YardPerYard.ConversionFactorA = 0
+YardPerYard.ConversionFactorB = 1
+YardPerYard.Symbol = "yd/yd"
+YardPerYard IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:YardPerMile
+YardPerMile.ConversionFactorA = 0
+YardPerMile.ConversionFactorB = 1760
+YardPerMile.Symbol = "yd/mi"
+YardPerMile IsUnitForQuantity ElongationGradientPerLengthQuantity
+```
+## EnergyDensityQuantity <!-- NOUN -->
+- Display name: EnergyDensity
+- Parent class: Quantity
+- Specialization: 
+  - L = -1
+  - M = 1
+  - T = -2
+- Description: 
+Energy density is the amount of energy stored per unit volume or mass of a substance or system.
+The dimension of energy density is:
+$$[ML^{-1}T^{-2}]$$.
+
+The SI unit for **energy density** is: joule per cubic metre with the associated unit label $\frac{J}{m^{3}}$
+
+- Examples: 
+``` dwis
+Quantity:EnergyDensityQuantity
+EnergyDensityQuantity.L = -1
+EnergyDensityQuantity.M = 1
+EnergyDensityQuantity.T = -2
+Unit:JoulePerCubicMetre
+JoulePerCubicMetre.ConversionFactorA = 0
+JoulePerCubicMetre.ConversionFactorB = 1
+JoulePerCubicMetre.Symbol = "J/m³"
+JoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+EnergyDensityQuantity HasSIUnit JoulePerCubicMetre
+Unit:JoulePerLitre
+JoulePerLitre.ConversionFactorA = 0
+JoulePerLitre.ConversionFactorB = 0.001
+JoulePerLitre.Symbol = "J/L"
+JoulePerLitre IsUnitForQuantity EnergyDensityQuantity
+Unit:KilojoulePerCubicMetre
+KilojoulePerCubicMetre.ConversionFactorA = 0
+KilojoulePerCubicMetre.ConversionFactorB = 0.001
+KilojoulePerCubicMetre.Symbol = "kJ/m³"
+KilojoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+Unit:KilojoulePerLitre
+KilojoulePerLitre.ConversionFactorA = 0
+KilojoulePerLitre.ConversionFactorB = 1E-06
+KilojoulePerLitre.Symbol = "kJ/L"
+KilojoulePerLitre IsUnitForQuantity EnergyDensityQuantity
+Unit:MegajoulePerCubicMetre
+MegajoulePerCubicMetre.ConversionFactorA = 0
+MegajoulePerCubicMetre.ConversionFactorB = 1E-06
+MegajoulePerCubicMetre.Symbol = "MJ/m³"
+MegajoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+Unit:MegajoulePerLitre
+MegajoulePerLitre.ConversionFactorA = 0
+MegajoulePerLitre.ConversionFactorB = 1E-09
+MegajoulePerLitre.Symbol = "MJ/L"
+MegajoulePerLitre IsUnitForQuantity EnergyDensityQuantity
+Unit:GigajoulePerCubicMetre
+GigajoulePerCubicMetre.ConversionFactorA = 0
+GigajoulePerCubicMetre.ConversionFactorB = 1E-09
+GigajoulePerCubicMetre.Symbol = "GJ/m³"
+GigajoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+Unit:GigajoulePerLitre
+GigajoulePerLitre.ConversionFactorA = 0
+GigajoulePerLitre.ConversionFactorB = 1E-12
+GigajoulePerLitre.Symbol = "GJ/L"
+GigajoulePerLitre IsUnitForQuantity EnergyDensityQuantity
+Unit:CaloriePerCubicMetre
+CaloriePerCubicMetre.ConversionFactorA = 0
+CaloriePerCubicMetre.ConversionFactorB = 0.2390057361376673
+CaloriePerCubicMetre.Symbol = "cal/m³"
+CaloriePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+Unit:CaloriePerLitre
+CaloriePerLitre.ConversionFactorA = 0
+CaloriePerLitre.ConversionFactorB = 0.0002390057361376673
+CaloriePerLitre.Symbol = "cal/L"
+CaloriePerLitre IsUnitForQuantity EnergyDensityQuantity
+Unit:KilocaloriePerCubicMetre
+KilocaloriePerCubicMetre.ConversionFactorA = 0
+KilocaloriePerCubicMetre.ConversionFactorB = 0.0002390057361376673
+KilocaloriePerCubicMetre.Symbol = "Cal/m³"
+KilocaloriePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+Unit:KilocaloriePerLitre
+KilocaloriePerLitre.ConversionFactorA = 0
+KilocaloriePerLitre.ConversionFactorB = 2.390057361376673E-07
+KilocaloriePerLitre.Symbol = "Cal/L"
+KilocaloriePerLitre IsUnitForQuantity EnergyDensityQuantity
+Unit:JoulePerCubicFoot
+JoulePerCubicFoot.ConversionFactorA = 0
+JoulePerCubicFoot.ConversionFactorB = 0.02831684659199999
+JoulePerCubicFoot.Symbol = "J/ft³"
+JoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+Unit:KilojoulePerCubicFoot
+KilojoulePerCubicFoot.ConversionFactorA = 0
+KilojoulePerCubicFoot.ConversionFactorB = 2.831684659199999E-05
+KilojoulePerCubicFoot.Symbol = "kJ/ft³"
+KilojoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+Unit:MegajoulePerCubicFoot
+MegajoulePerCubicFoot.ConversionFactorA = 0
+MegajoulePerCubicFoot.ConversionFactorB = 2.831684659199999E-08
+MegajoulePerCubicFoot.Symbol = "MJ/ft³"
+MegajoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+Unit:GigajoulePerCubicFoot
+GigajoulePerCubicFoot.ConversionFactorA = 0
+GigajoulePerCubicFoot.ConversionFactorB = 2.831684659199999E-11
+GigajoulePerCubicFoot.Symbol = "GJ/ft³"
+GigajoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+Unit:CaloriePerCubicFoot
+CaloriePerCubicFoot.ConversionFactorA = 0
+CaloriePerCubicFoot.ConversionFactorB = 0.006767888764818353
+CaloriePerCubicFoot.Symbol = "cal/ft³"
+CaloriePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+Unit:KilocaloriePerCubicFoot
+KilocaloriePerCubicFoot.ConversionFactorA = 0
+KilocaloriePerCubicFoot.ConversionFactorB = 6.767888764818354E-06
+KilocaloriePerCubicFoot.Symbol = "Cal/ft³"
+KilocaloriePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+Unit:JoulePerCubicInch
+JoulePerCubicInch.ConversionFactorA = 0
+JoulePerCubicInch.ConversionFactorB = 1.6387064E-05
+JoulePerCubicInch.Symbol = "J/in³"
+JoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
+Unit:KilojoulePerCubicInch
+KilojoulePerCubicInch.ConversionFactorA = 0
+KilojoulePerCubicInch.ConversionFactorB = 1.6387064E-08
+KilojoulePerCubicInch.Symbol = "kJ/in³"
+KilojoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
+Unit:MegajoulePerCubicInch
+MegajoulePerCubicInch.ConversionFactorA = 0
+MegajoulePerCubicInch.ConversionFactorB = 1.6387064E-11
+MegajoulePerCubicInch.Symbol = "MJ/in³"
+MegajoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
+Unit:GigajoulePerCubicInch
+GigajoulePerCubicInch.ConversionFactorA = 0
+GigajoulePerCubicInch.ConversionFactorB = 1.6387064E-14
+GigajoulePerCubicInch.Symbol = "GJ/in³"
+GigajoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
+Unit:CaloriePerCubicInch
+CaloriePerCubicInch.ConversionFactorA = 0
+CaloriePerCubicInch.ConversionFactorB = 3.916602294455067E-06
+CaloriePerCubicInch.Symbol = "cal/in³"
+CaloriePerCubicInch IsUnitForQuantity EnergyDensityQuantity
+Unit:KilocaloriePerCubicInch
+KilocaloriePerCubicInch.ConversionFactorA = 0
+KilocaloriePerCubicInch.ConversionFactorB = 3.916602294455067E-09
+KilocaloriePerCubicInch.Symbol = "Cal/in³"
+KilocaloriePerCubicInch IsUnitForQuantity EnergyDensityQuantity
+Unit:JoulePerGallonUk
+JoulePerGallonUk.ConversionFactorA = 0
+JoulePerGallonUk.ConversionFactorB = 0.00454609
+JoulePerGallonUk.Symbol = "J/gal(UK)"
+JoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
+Unit:KilojoulePerGallonUk
+KilojoulePerGallonUk.ConversionFactorA = 0
+KilojoulePerGallonUk.ConversionFactorB = 4.54609E-06
+KilojoulePerGallonUk.Symbol = "kJ/gal(UK)"
+KilojoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
+Unit:MegajoulePerGallonUk
+MegajoulePerGallonUk.ConversionFactorA = 0
+MegajoulePerGallonUk.ConversionFactorB = 4.54609E-09
+MegajoulePerGallonUk.Symbol = "MJ/gal(UK)"
+MegajoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
+Unit:GigajoulePerGallonUk
+GigajoulePerGallonUk.ConversionFactorA = 0
+GigajoulePerGallonUk.ConversionFactorB = 4.54609E-12
+GigajoulePerGallonUk.Symbol = "GJ/gal(UK)"
+GigajoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
+Unit:CaloriePerGallonUk
+CaloriePerGallonUk.ConversionFactorA = 0
+CaloriePerGallonUk.ConversionFactorB = 0.0010865415869980878
+CaloriePerGallonUk.Symbol = "cal/gal(UK)"
+CaloriePerGallonUk IsUnitForQuantity EnergyDensityQuantity
+Unit:KilocaloriePerGallonUk
+KilocaloriePerGallonUk.ConversionFactorA = 0
+KilocaloriePerGallonUk.ConversionFactorB = 1.086541586998088E-06
+KilocaloriePerGallonUk.Symbol = "Cal/gal(UK)"
+KilocaloriePerGallonUk IsUnitForQuantity EnergyDensityQuantity
+Unit:JoulePerGallonUs
+JoulePerGallonUs.ConversionFactorA = 0
+JoulePerGallonUs.ConversionFactorB = 0.0037854117839999997
+JoulePerGallonUs.Symbol = "J/gal(US)"
+JoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
+Unit:KilojoulePerGallonUs
+KilojoulePerGallonUs.ConversionFactorA = 0
+KilojoulePerGallonUs.ConversionFactorB = 3.7854117839999998E-06
+KilojoulePerGallonUs.Symbol = "kJ/gal(US)"
+KilojoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
+Unit:MegajoulePerGallonUs
+MegajoulePerGallonUs.ConversionFactorA = 0
+MegajoulePerGallonUs.ConversionFactorB = 3.7854117839999995E-09
+MegajoulePerGallonUs.Symbol = "MJ/gal(US)"
+MegajoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
+Unit:GigajoulePerGallonUs
+GigajoulePerGallonUs.ConversionFactorA = 0
+GigajoulePerGallonUs.ConversionFactorB = 3.785411784E-12
+GigajoulePerGallonUs.Symbol = "GJ/gal(US)"
+GigajoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
+Unit:CaloriePerGallonUs
+CaloriePerGallonUs.ConversionFactorA = 0
+CaloriePerGallonUs.ConversionFactorB = 0.0009047351300191204
+CaloriePerGallonUs.Symbol = "cal/gal(US)"
+CaloriePerGallonUs IsUnitForQuantity EnergyDensityQuantity
+Unit:KilocaloriePerGallonUs
+KilocaloriePerGallonUs.ConversionFactorA = 0
+KilocaloriePerGallonUs.ConversionFactorB = 9.047351300191203E-07
+KilocaloriePerGallonUs.Symbol = "Cal/gal(US)"
+KilocaloriePerGallonUs IsUnitForQuantity EnergyDensityQuantity
+Unit:BritishThermalUnitPerCubicMetre
+BritishThermalUnitPerCubicMetre.ConversionFactorA = 0
+BritishThermalUnitPerCubicMetre.ConversionFactorB = 0.0009484516526770049
+BritishThermalUnitPerCubicMetre.Symbol = "BTU/m³"
+BritishThermalUnitPerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+Unit:BritishThermalUnitPerLitre
+BritishThermalUnitPerLitre.ConversionFactorA = 0
+BritishThermalUnitPerLitre.ConversionFactorB = 9.484516526770049E-07
+BritishThermalUnitPerLitre.Symbol = "BTU/L"
+BritishThermalUnitPerLitre IsUnitForQuantity EnergyDensityQuantity
+Unit:BritishThermalUnitPerCubicFoot
+BritishThermalUnitPerCubicFoot.ConversionFactorA = 0
+BritishThermalUnitPerCubicFoot.ConversionFactorB = 2.6857159948783606E-05
+BritishThermalUnitPerCubicFoot.Symbol = "BTU/ft³"
+BritishThermalUnitPerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+Unit:BritishThermalUnitPerCubicInch
+BritishThermalUnitPerCubicInch.ConversionFactorA = 0
+BritishThermalUnitPerCubicInch.ConversionFactorB = 1.554233793332385E-08
+BritishThermalUnitPerCubicInch.Symbol = "BTU/in³"
+BritishThermalUnitPerCubicInch IsUnitForQuantity EnergyDensityQuantity
+Unit:BritishThermalUnitPerGallonUk
+BritishThermalUnitPerGallonUk.ConversionFactorA = 0
+BritishThermalUnitPerGallonUk.ConversionFactorB = 4.311746573718405E-06
+BritishThermalUnitPerGallonUk.Symbol = "BTU/gal(UK)"
+BritishThermalUnitPerGallonUk IsUnitForQuantity EnergyDensityQuantity
+Unit:BritishThermalUnitPerGallonUs
+BritishThermalUnitPerGallonUs.ConversionFactorA = 0
+BritishThermalUnitPerGallonUs.ConversionFactorB = 3.5902800625978092E-06
+BritishThermalUnitPerGallonUs.Symbol = "BTU/gal(US)"
+BritishThermalUnitPerGallonUs IsUnitForQuantity EnergyDensityQuantity
+Unit:KiloBritishThermalUnitPerCubicMetre
+KiloBritishThermalUnitPerCubicMetre.ConversionFactorA = 0
+KiloBritishThermalUnitPerCubicMetre.ConversionFactorB = 9.484516526770048E-07
+KiloBritishThermalUnitPerCubicMetre.Symbol = "kBTU/m³"
+KiloBritishThermalUnitPerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+Unit:KiloBritishThermalUnitPerLitre
+KiloBritishThermalUnitPerLitre.ConversionFactorA = 0
+KiloBritishThermalUnitPerLitre.ConversionFactorB = 9.48451652677005E-10
+KiloBritishThermalUnitPerLitre.Symbol = "kBTU/L"
+KiloBritishThermalUnitPerLitre IsUnitForQuantity EnergyDensityQuantity
+Unit:KiloBritishThermalUnitPerCubicFoot
+KiloBritishThermalUnitPerCubicFoot.ConversionFactorA = 0
+KiloBritishThermalUnitPerCubicFoot.ConversionFactorB = 2.6857159948783602E-08
+KiloBritishThermalUnitPerCubicFoot.Symbol = "kBTU/ft³"
+KiloBritishThermalUnitPerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+Unit:KiloBritishThermalUnitPerCubicInch
+KiloBritishThermalUnitPerCubicInch.ConversionFactorA = 0
+KiloBritishThermalUnitPerCubicInch.ConversionFactorB = 1.5542337933323848E-11
+KiloBritishThermalUnitPerCubicInch.Symbol = "kBTU/in³"
+KiloBritishThermalUnitPerCubicInch IsUnitForQuantity EnergyDensityQuantity
+Unit:KiloBritishThermalUnitPerGallonUk
+KiloBritishThermalUnitPerGallonUk.ConversionFactorA = 0
+KiloBritishThermalUnitPerGallonUk.ConversionFactorB = 4.311746573718405E-09
+KiloBritishThermalUnitPerGallonUk.Symbol = "kBTU/gal(UK)"
+KiloBritishThermalUnitPerGallonUk IsUnitForQuantity EnergyDensityQuantity
+Unit:KiloBritishThermalUnitPerGallonUs
+KiloBritishThermalUnitPerGallonUs.ConversionFactorA = 0
+KiloBritishThermalUnitPerGallonUs.ConversionFactorB = 3.5902800625978087E-09
+KiloBritishThermalUnitPerGallonUs.Symbol = "kBTU/gal(US)"
+KiloBritishThermalUnitPerGallonUs IsUnitForQuantity EnergyDensityQuantity
+```
+## EnergyQuantity <!-- NOUN -->
+- Display name: Energy
+- Parent class: Quantity
+- Specialization: 
+  - L = 2
+  - M = 1
+  - T = -2
+- Description: 
+Energy is the quantitative property that is transferred to a body or to a physical system, recognizable in the performance of work and in the form of heat and light. Energy is a conserved quantity—the law of conservation of energy states that energy can be converted in form, but not created or destroyed; matter and energy may also be converted to one another.
+The dimension of energy is:
+$$[L^{2}MT^{-2}]$$.
+
+The SI unit for **energy** is: joule with the associated unit label $J$
+
+- Examples: 
+``` dwis
+Quantity:EnergyQuantity
+EnergyQuantity.L = 2
+EnergyQuantity.M = 1
+EnergyQuantity.T = -2
+Unit:Joule
+Joule.ConversionFactorA = 0
+Joule.ConversionFactorB = 1
+Joule.Symbol = "J"
+Joule IsUnitForQuantity EnergyQuantity
+EnergyQuantity HasSIUnit Joule
+Unit:Kilojoule
+Kilojoule.ConversionFactorA = 0
+Kilojoule.ConversionFactorB = 0.001
+Kilojoule.Symbol = "kJ"
+Kilojoule IsUnitForQuantity EnergyQuantity
+Unit:Megajoule
+Megajoule.ConversionFactorA = 0
+Megajoule.ConversionFactorB = 1E-06
+Megajoule.Symbol = "MJ"
+Megajoule IsUnitForQuantity EnergyQuantity
+Unit:Gigajoule
+Gigajoule.ConversionFactorA = 0
+Gigajoule.ConversionFactorB = 1E-09
+Gigajoule.Symbol = "GJ"
+Gigajoule IsUnitForQuantity EnergyQuantity
+Unit:Calorie
+Calorie.ConversionFactorA = 0
+Calorie.ConversionFactorB = 0.2390057361376673
+Calorie.Symbol = "cal"
+Calorie IsUnitForQuantity EnergyQuantity
+Unit:Kilocalorie
+Kilocalorie.ConversionFactorA = 0
+Kilocalorie.ConversionFactorB = 0.0002390057361376673
+Kilocalorie.Symbol = "Cal"
+Kilocalorie IsUnitForQuantity EnergyQuantity
+Unit:BritishThermalUnit
+BritishThermalUnit.ConversionFactorA = 0
+BritishThermalUnit.ConversionFactorB = 0.0009484516526770049
+BritishThermalUnit.Symbol = "BTU"
+BritishThermalUnit IsUnitForQuantity EnergyQuantity
+Unit:KiloBritishThermalUnit
+KiloBritishThermalUnit.ConversionFactorA = 0
+KiloBritishThermalUnit.ConversionFactorB = 9.484516526770048E-07
+KiloBritishThermalUnit.Symbol = "kBTU"
+KiloBritishThermalUnit IsUnitForQuantity EnergyQuantity
+Unit:MegaBritishThermalUnit
+MegaBritishThermalUnit.ConversionFactorA = 0
+MegaBritishThermalUnit.ConversionFactorB = 9.48451652677005E-10
+MegaBritishThermalUnit.Symbol = "MMBTU"
+MegaBritishThermalUnit IsUnitForQuantity EnergyQuantity
 ```
 ## MassDensityGradientPerLengthQuantity <!-- NOUN -->
 - Display name: MassDensityGradientPerLength
@@ -1307,638 +2110,6 @@ PoundPerGallonUsPerHour.ConversionFactorB = 30.043456027269592
 PoundPerGallonUsPerHour.Symbol = "ppgUS/h"
 PoundPerGallonUsPerHour IsUnitForQuantity MassDensityRateOfChangeQuantity
 ```
-## DimensionlessQuantity <!-- NOUN -->
-- Display name: Dimensionless
-- Parent class: Quantity
-- Specialization: 
-- Description: 
-As its name indicates, a dimensionless quantity has no dimension:
-
-- Examples: 
-``` dwis
-Quantity:DimensionlessQuantity
-Unit:Dimensionless
-Dimensionless.ConversionFactorA = 0
-Dimensionless.ConversionFactorB = 1
-Dimensionless IsUnitForQuantity DimensionlessQuantity
-DimensionlessQuantity HasSIUnit Dimensionless
-```
-## DynamicViscosityQuantity <!-- NOUN -->
-- Display name: DynamicViscosity
-- Parent class: Quantity
-- Specialization: 
-  - L = -1
-  - M = 1
-  - T = -1
-- Description: 
-Dynamic viscosity is a measure of a fluid's resistance to shear or flow when a force is applied. It quantifies how thick or thin the fluid is.
-The dimension of dynamic viscosity is:
-$$[ML^{-1}T^{-1}]$$.
-
-The SI unit for **dynamic viscosity** is: pascal second with the associated unit label $Pa \cdot s$
-
-- Examples: 
-``` dwis
-Quantity:DynamicViscosityQuantity
-DynamicViscosityQuantity.L = -1
-DynamicViscosityQuantity.M = 1
-DynamicViscosityQuantity.T = -1
-Unit:PascalSecond
-PascalSecond.ConversionFactorA = 0
-PascalSecond.ConversionFactorB = 1
-PascalSecond.Symbol = "Pa•s"
-PascalSecond IsUnitForQuantity DynamicViscosityQuantity
-DynamicViscosityQuantity HasSIUnit PascalSecond
-Unit:MillipascalSecond
-MillipascalSecond.ConversionFactorA = 0
-MillipascalSecond.ConversionFactorB = 1000
-MillipascalSecond.Symbol = "mPa•s"
-MillipascalSecond IsUnitForQuantity DynamicViscosityQuantity
-Unit:MicropascalSecond
-MicropascalSecond.ConversionFactorA = 0
-MicropascalSecond.ConversionFactorB = 1000000
-MicropascalSecond.Symbol = "µPa•s"
-MicropascalSecond IsUnitForQuantity DynamicViscosityQuantity
-Unit:Poise
-Poise.ConversionFactorA = 0
-Poise.ConversionFactorB = 10
-Poise.Symbol = "P"
-Poise IsUnitForQuantity DynamicViscosityQuantity
-Unit:Centipoise
-Centipoise.ConversionFactorA = 0
-Centipoise.ConversionFactorB = 1000
-Centipoise.Symbol = "cP"
-Centipoise IsUnitForQuantity DynamicViscosityQuantity
-Unit:Millipoise
-Millipoise.ConversionFactorA = 0
-Millipoise.ConversionFactorB = 10000
-Millipoise.Symbol = "mP"
-Millipoise IsUnitForQuantity DynamicViscosityQuantity
-Unit:Micropoise
-Micropoise.ConversionFactorA = 0
-Micropoise.ConversionFactorB = 10000000
-Micropoise.Symbol = "µP"
-Micropoise IsUnitForQuantity DynamicViscosityQuantity
-Unit:PoundSecondPerSquareFoot
-PoundSecondPerSquareFoot.ConversionFactorA = 0
-PoundSecondPerSquareFoot.ConversionFactorB = 0.020885434233150126
-PoundSecondPerSquareFoot.Symbol = "lb•s/ft²"
-PoundSecondPerSquareFoot IsUnitForQuantity DynamicViscosityQuantity
-Unit:PoundSecondPer100SquareFoot
-PoundSecondPer100SquareFoot.ConversionFactorA = 0
-PoundSecondPer100SquareFoot.ConversionFactorB = 2.0885434233150124
-PoundSecondPer100SquareFoot.Symbol = "lb•s/100ft²"
-PoundSecondPer100SquareFoot IsUnitForQuantity DynamicViscosityQuantity
-Unit:PoundSecondPerSquareInch
-PoundSecondPerSquareInch.ConversionFactorA = 0
-PoundSecondPerSquareInch.ConversionFactorB = 0.0001450377377302092
-PoundSecondPerSquareInch.Symbol = "lb•s/in²"
-PoundSecondPerSquareInch IsUnitForQuantity DynamicViscosityQuantity
-Unit:DyneSecondPerSquareCentimetre
-DyneSecondPerSquareCentimetre.ConversionFactorA = 0
-DyneSecondPerSquareCentimetre.ConversionFactorB = 10
-DyneSecondPerSquareCentimetre.Symbol = "dyne•s/cm²"
-DyneSecondPerSquareCentimetre IsUnitForQuantity DynamicViscosityQuantity
-```
-## ElectricCapacitanceQuantity <!-- NOUN -->
-- Display name: ElectricCapacitance
-- Parent class: Quantity
-- Specialization: 
-  - L = -2
-  - M = -1
-  - T = 4
-  - I = 2
-- Description: 
-lectric capacitance is the ability of a capacitor or a component to store electrical charge per unit voltage applied across it.
-The dimension of electric capacitance is:
-$$[T^{4}I^{2}M^{-1}L^{-2}]$$.
-
-The SI unit for **electric capacitance** is: farad with the associated unit label $F$
-
-- Examples: 
-``` dwis
-Quantity:ElectricCapacitanceQuantity
-ElectricCapacitanceQuantity.L = -2
-ElectricCapacitanceQuantity.M = -1
-ElectricCapacitanceQuantity.T = 4
-ElectricCapacitanceQuantity.I = 2
-Unit:Farad
-Farad.ConversionFactorA = 0
-Farad.ConversionFactorB = 1
-Farad.Symbol = "F"
-Farad IsUnitForQuantity ElectricCapacitanceQuantity
-ElectricCapacitanceQuantity HasSIUnit Farad
-Unit:CoulombPerVolt
-CoulombPerVolt.ConversionFactorA = 0
-CoulombPerVolt.ConversionFactorB = 1
-CoulombPerVolt.Symbol = "C/V"
-CoulombPerVolt IsUnitForQuantity ElectricCapacitanceQuantity
-Unit:Millifarad
-Millifarad.ConversionFactorA = 0
-Millifarad.ConversionFactorB = 1000
-Millifarad.Symbol = "mF"
-Millifarad IsUnitForQuantity ElectricCapacitanceQuantity
-Unit:Microfarad
-Microfarad.ConversionFactorA = 0
-Microfarad.ConversionFactorB = 1000000
-Microfarad.Symbol = "μF"
-Microfarad IsUnitForQuantity ElectricCapacitanceQuantity
-Unit:Nanofarad
-Nanofarad.ConversionFactorA = 0
-Nanofarad.ConversionFactorB = 999999999.9999999
-Nanofarad.Symbol = "nF"
-Nanofarad IsUnitForQuantity ElectricCapacitanceQuantity
-Unit:Picofarad
-Picofarad.ConversionFactorA = 0
-Picofarad.ConversionFactorB = 1000000000000
-Picofarad.Symbol = "pF"
-Picofarad IsUnitForQuantity ElectricCapacitanceQuantity
-```
-## ElectricCurrentQuantity <!-- NOUN -->
-- Display name: ElectricCurrent
-- Parent class: Quantity
-- Specialization: 
-  - I = 1
-- Description: 
-Electric current is the flow of electric charge through a conductor or circuit.
-The dimension of electric current is:
-$$[I]$$.
-
-The SI unit for **electric current** is: ampere with the associated unit label $A$
-
-- Examples: 
-``` dwis
-Quantity:ElectricCurrentQuantity
-ElectricCurrentQuantity.I = 1
-Unit:Ampere
-Ampere.ConversionFactorA = 0
-Ampere.ConversionFactorB = 1
-Ampere.Symbol = "A"
-Ampere IsUnitForQuantity ElectricCurrentQuantity
-ElectricCurrentQuantity HasSIUnit Ampere
-Unit:CoulombPerSecond
-CoulombPerSecond.ConversionFactorA = 0
-CoulombPerSecond.ConversionFactorB = 1
-CoulombPerSecond.Symbol = "C/s"
-CoulombPerSecond IsUnitForQuantity ElectricCurrentQuantity
-Unit:SiemensVolt
-SiemensVolt.ConversionFactorA = 0
-SiemensVolt.ConversionFactorB = 1
-SiemensVolt.Symbol = "S•V"
-SiemensVolt IsUnitForQuantity ElectricCurrentQuantity
-Unit:VoltPerOhm
-VoltPerOhm.ConversionFactorA = 0
-VoltPerOhm.ConversionFactorB = 1
-VoltPerOhm.Symbol = "V/Ω"
-VoltPerOhm IsUnitForQuantity ElectricCurrentQuantity
-Unit:WattPerVolt
-WattPerVolt.ConversionFactorA = 0
-WattPerVolt.ConversionFactorB = 1
-WattPerVolt.Symbol = "W/V"
-WattPerVolt IsUnitForQuantity ElectricCurrentQuantity
-Unit:WeberPerHenry
-WeberPerHenry.ConversionFactorA = 0
-WeberPerHenry.ConversionFactorB = 1
-WeberPerHenry.Symbol = "Wb/H"
-WeberPerHenry IsUnitForQuantity ElectricCurrentQuantity
-Unit:Deciampere
-Deciampere.ConversionFactorA = 0
-Deciampere.ConversionFactorB = 10
-Deciampere.Symbol = "dA"
-Deciampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Centiampere
-Centiampere.ConversionFactorA = 0
-Centiampere.ConversionFactorB = 100
-Centiampere.Symbol = "cA"
-Centiampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Milliampere
-Milliampere.ConversionFactorA = 0
-Milliampere.ConversionFactorB = 1000
-Milliampere.Symbol = "mA"
-Milliampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Microampere
-Microampere.ConversionFactorA = 0
-Microampere.ConversionFactorB = 1000000
-Microampere.Symbol = "µA"
-Microampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Nanoampere
-Nanoampere.ConversionFactorA = 0
-Nanoampere.ConversionFactorB = 999999999.9999999
-Nanoampere.Symbol = "nA"
-Nanoampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Picoampere
-Picoampere.ConversionFactorA = 0
-Picoampere.ConversionFactorB = 1000000000000
-Picoampere.Symbol = "pA"
-Picoampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Biot
-Biot.ConversionFactorA = 0
-Biot.ConversionFactorB = 0.1
-Biot.Symbol = "Bi"
-Biot IsUnitForQuantity ElectricCurrentQuantity
-Unit:Abampere
-Abampere.ConversionFactorA = 0
-Abampere.ConversionFactorB = 0.1
-Abampere.Symbol = "abA"
-Abampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Kiloampere
-Kiloampere.ConversionFactorA = 0
-Kiloampere.ConversionFactorB = 0.001
-Kiloampere.Symbol = "kA"
-Kiloampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Megaampere
-Megaampere.ConversionFactorA = 0
-Megaampere.ConversionFactorB = 1E-06
-Megaampere.Symbol = "MA"
-Megaampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Gigaampere
-Gigaampere.ConversionFactorA = 0
-Gigaampere.ConversionFactorB = 1E-09
-Gigaampere.Symbol = "GA"
-Gigaampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Teraampere
-Teraampere.ConversionFactorA = 0
-Teraampere.ConversionFactorB = 1E-12
-Teraampere.Symbol = "TA"
-Teraampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Statampere
-Statampere.ConversionFactorA = 0
-Statampere.ConversionFactorB = 2997924580
-Statampere.Symbol = "stA"
-Statampere IsUnitForQuantity ElectricCurrentQuantity
-```
-## ElongationGradientPerLengthQuantity <!-- NOUN -->
-- Display name: ElongationGradientPerLength
-- Parent class: Quantity
-- Specialization: 
-- Description: 
-An elongation gradient per length is the first derivative of an elongation compared to a distance: $\frac{d\epsilon}{ds}$, where $\epsilon$ is an elongation and $s$ is a distance.
-It is dimensionless.
-
-The SI unit for **elongation gradient per length** is: metre per metre with the associated unit label $\frac{m}{m}$
-
-- Examples: 
-``` dwis
-Quantity:ElongationGradientPerLengthQuantity
-Unit:MetrePerMetre
-MetrePerMetre.ConversionFactorA = 0
-MetrePerMetre.ConversionFactorB = 1
-MetrePerMetre.Symbol = "m/m"
-MetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
-ElongationGradientPerLengthQuantity HasSIUnit MetrePerMetre
-Unit:DecimetrePerMetre
-DecimetrePerMetre.ConversionFactorA = 0
-DecimetrePerMetre.ConversionFactorB = 10
-DecimetrePerMetre.Symbol = "dm/m"
-DecimetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:CentimetrePerMetre
-CentimetrePerMetre.ConversionFactorA = 0
-CentimetrePerMetre.ConversionFactorB = 100
-CentimetrePerMetre.Symbol = "cm/m"
-CentimetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:MillimetrePerMetre
-MillimetrePerMetre.ConversionFactorA = 0
-MillimetrePerMetre.ConversionFactorB = 1000
-MillimetrePerMetre.Symbol = "mm/m"
-MillimetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:MicrometrePerMetre
-MicrometrePerMetre.ConversionFactorA = 0
-MicrometrePerMetre.ConversionFactorB = 1000000
-MicrometrePerMetre.Symbol = "µm/m"
-MicrometrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:MetrePerKilometre
-MetrePerKilometre.ConversionFactorA = 0
-MetrePerKilometre.ConversionFactorB = 1000
-MetrePerKilometre.Symbol = "m/km"
-MetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:DecimetrePerKilometre
-DecimetrePerKilometre.ConversionFactorA = 0
-DecimetrePerKilometre.ConversionFactorB = 10000
-DecimetrePerKilometre.Symbol = "dm/km"
-DecimetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:CentimetrePerKilometre
-CentimetrePerKilometre.ConversionFactorA = 0
-CentimetrePerKilometre.ConversionFactorB = 100000
-CentimetrePerKilometre.Symbol = "cm/km"
-CentimetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:MillimetrePerKilometre
-MillimetrePerKilometre.ConversionFactorA = 0
-MillimetrePerKilometre.ConversionFactorB = 1000000
-MillimetrePerKilometre.Symbol = "mm/km"
-MillimetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:MicrometrePerKilometre
-MicrometrePerKilometre.ConversionFactorA = 0
-MicrometrePerKilometre.ConversionFactorB = 1000000000
-MicrometrePerKilometre.Symbol = "µm/km"
-MicrometrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:InchPerFoot
-InchPerFoot.ConversionFactorA = 0
-InchPerFoot.ConversionFactorB = 11.999999999999998
-InchPerFoot.Symbol = "in/ft"
-InchPerFoot IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:InchPerYard
-InchPerYard.ConversionFactorA = 0
-InchPerYard.ConversionFactorB = 36
-InchPerYard.Symbol = "in/yd"
-InchPerYard IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:InchPerMile
-InchPerMile.ConversionFactorA = 0
-InchPerMile.ConversionFactorB = 63359.99999999999
-InchPerMile.Symbol = "in/mi"
-InchPerMile IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:FootPerFoot
-FootPerFoot.ConversionFactorA = 0
-FootPerFoot.ConversionFactorB = 1
-FootPerFoot.Symbol = "ft/ft"
-FootPerFoot IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:FootPerYard
-FootPerYard.ConversionFactorA = 0
-FootPerYard.ConversionFactorB = 3
-FootPerYard.Symbol = "ft/yd"
-FootPerYard IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:FootPerMile
-FootPerMile.ConversionFactorA = 0
-FootPerMile.ConversionFactorB = 5280
-FootPerMile.Symbol = "ft/mi"
-FootPerMile IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:YardPerFoot
-YardPerFoot.ConversionFactorA = 0
-YardPerFoot.ConversionFactorB = 0.3333333333333333
-YardPerFoot.Symbol = "yd/ft"
-YardPerFoot IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:YardPerYard
-YardPerYard.ConversionFactorA = 0
-YardPerYard.ConversionFactorB = 1
-YardPerYard.Symbol = "yd/yd"
-YardPerYard IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:YardPerMile
-YardPerMile.ConversionFactorA = 0
-YardPerMile.ConversionFactorB = 1760
-YardPerMile.Symbol = "yd/mi"
-YardPerMile IsUnitForQuantity ElongationGradientPerLengthQuantity
-```
-## EnergyDensityQuantity <!-- NOUN -->
-- Display name: EnergyDensity
-- Parent class: Quantity
-- Specialization: 
-  - L = -1
-  - M = 1
-  - T = -2
-- Description: 
-Energy density is the amount of energy stored per unit volume or mass of a substance or system.
-The dimension of energy density is:
-$$[ML^{-1}T^{-2}]$$.
-
-The SI unit for **energy density** is: joule per cubic metre with the associated unit label $\frac{J}{m^{3}}$
-
-- Examples: 
-``` dwis
-Quantity:EnergyDensityQuantity
-EnergyDensityQuantity.L = -1
-EnergyDensityQuantity.M = 1
-EnergyDensityQuantity.T = -2
-Unit:JoulePerCubicMetre
-JoulePerCubicMetre.ConversionFactorA = 0
-JoulePerCubicMetre.ConversionFactorB = 1
-JoulePerCubicMetre.Symbol = "J/m³"
-JoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
-EnergyDensityQuantity HasSIUnit JoulePerCubicMetre
-Unit:JoulePerLitre
-JoulePerLitre.ConversionFactorA = 0
-JoulePerLitre.ConversionFactorB = 0.001
-JoulePerLitre.Symbol = "J/L"
-JoulePerLitre IsUnitForQuantity EnergyDensityQuantity
-Unit:KilojoulePerCubicMetre
-KilojoulePerCubicMetre.ConversionFactorA = 0
-KilojoulePerCubicMetre.ConversionFactorB = 0.001
-KilojoulePerCubicMetre.Symbol = "kJ/m³"
-KilojoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
-Unit:KilojoulePerLitre
-KilojoulePerLitre.ConversionFactorA = 0
-KilojoulePerLitre.ConversionFactorB = 1E-06
-KilojoulePerLitre.Symbol = "kJ/L"
-KilojoulePerLitre IsUnitForQuantity EnergyDensityQuantity
-Unit:MegajoulePerCubicMetre
-MegajoulePerCubicMetre.ConversionFactorA = 0
-MegajoulePerCubicMetre.ConversionFactorB = 1E-06
-MegajoulePerCubicMetre.Symbol = "MJ/m³"
-MegajoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
-Unit:MegajoulePerLitre
-MegajoulePerLitre.ConversionFactorA = 0
-MegajoulePerLitre.ConversionFactorB = 1E-09
-MegajoulePerLitre.Symbol = "MJ/L"
-MegajoulePerLitre IsUnitForQuantity EnergyDensityQuantity
-Unit:GigajoulePerCubicMetre
-GigajoulePerCubicMetre.ConversionFactorA = 0
-GigajoulePerCubicMetre.ConversionFactorB = 1E-09
-GigajoulePerCubicMetre.Symbol = "GJ/m³"
-GigajoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
-Unit:GigajoulePerLitre
-GigajoulePerLitre.ConversionFactorA = 0
-GigajoulePerLitre.ConversionFactorB = 1E-12
-GigajoulePerLitre.Symbol = "GJ/L"
-GigajoulePerLitre IsUnitForQuantity EnergyDensityQuantity
-Unit:CaloriePerCubicMetre
-CaloriePerCubicMetre.ConversionFactorA = 0
-CaloriePerCubicMetre.ConversionFactorB = 0.2390057361376673
-CaloriePerCubicMetre.Symbol = "cal/m³"
-CaloriePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
-Unit:CaloriePerLitre
-CaloriePerLitre.ConversionFactorA = 0
-CaloriePerLitre.ConversionFactorB = 0.0002390057361376673
-CaloriePerLitre.Symbol = "cal/L"
-CaloriePerLitre IsUnitForQuantity EnergyDensityQuantity
-Unit:KilocaloriePerCubicMetre
-KilocaloriePerCubicMetre.ConversionFactorA = 0
-KilocaloriePerCubicMetre.ConversionFactorB = 0.0002390057361376673
-KilocaloriePerCubicMetre.Symbol = "Cal/m³"
-KilocaloriePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
-Unit:KilocaloriePerLitre
-KilocaloriePerLitre.ConversionFactorA = 0
-KilocaloriePerLitre.ConversionFactorB = 2.390057361376673E-07
-KilocaloriePerLitre.Symbol = "Cal/L"
-KilocaloriePerLitre IsUnitForQuantity EnergyDensityQuantity
-Unit:JoulePerCubicFoot
-JoulePerCubicFoot.ConversionFactorA = 0
-JoulePerCubicFoot.ConversionFactorB = 0.02831684659199999
-JoulePerCubicFoot.Symbol = "J/ft³"
-JoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
-Unit:KilojoulePerCubicFoot
-KilojoulePerCubicFoot.ConversionFactorA = 0
-KilojoulePerCubicFoot.ConversionFactorB = 2.831684659199999E-05
-KilojoulePerCubicFoot.Symbol = "kJ/ft³"
-KilojoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
-Unit:MegajoulePerCubicFoot
-MegajoulePerCubicFoot.ConversionFactorA = 0
-MegajoulePerCubicFoot.ConversionFactorB = 2.831684659199999E-08
-MegajoulePerCubicFoot.Symbol = "MJ/ft³"
-MegajoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
-Unit:GigajoulePerCubicFoot
-GigajoulePerCubicFoot.ConversionFactorA = 0
-GigajoulePerCubicFoot.ConversionFactorB = 2.831684659199999E-11
-GigajoulePerCubicFoot.Symbol = "GJ/ft³"
-GigajoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
-Unit:CaloriePerCubicFoot
-CaloriePerCubicFoot.ConversionFactorA = 0
-CaloriePerCubicFoot.ConversionFactorB = 0.006767888764818353
-CaloriePerCubicFoot.Symbol = "cal/ft³"
-CaloriePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
-Unit:KilocaloriePerCubicFoot
-KilocaloriePerCubicFoot.ConversionFactorA = 0
-KilocaloriePerCubicFoot.ConversionFactorB = 6.767888764818354E-06
-KilocaloriePerCubicFoot.Symbol = "Cal/ft³"
-KilocaloriePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
-Unit:JoulePerCubicInch
-JoulePerCubicInch.ConversionFactorA = 0
-JoulePerCubicInch.ConversionFactorB = 1.6387064E-05
-JoulePerCubicInch.Symbol = "J/in³"
-JoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
-Unit:KilojoulePerCubicInch
-KilojoulePerCubicInch.ConversionFactorA = 0
-KilojoulePerCubicInch.ConversionFactorB = 1.6387064E-08
-KilojoulePerCubicInch.Symbol = "kJ/in³"
-KilojoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
-Unit:MegajoulePerCubicInch
-MegajoulePerCubicInch.ConversionFactorA = 0
-MegajoulePerCubicInch.ConversionFactorB = 1.6387064E-11
-MegajoulePerCubicInch.Symbol = "MJ/in³"
-MegajoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
-Unit:GigajoulePerCubicInch
-GigajoulePerCubicInch.ConversionFactorA = 0
-GigajoulePerCubicInch.ConversionFactorB = 1.6387064E-14
-GigajoulePerCubicInch.Symbol = "GJ/in³"
-GigajoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
-Unit:CaloriePerCubicInch
-CaloriePerCubicInch.ConversionFactorA = 0
-CaloriePerCubicInch.ConversionFactorB = 3.916602294455067E-06
-CaloriePerCubicInch.Symbol = "cal/in³"
-CaloriePerCubicInch IsUnitForQuantity EnergyDensityQuantity
-Unit:KilocaloriePerCubicInch
-KilocaloriePerCubicInch.ConversionFactorA = 0
-KilocaloriePerCubicInch.ConversionFactorB = 3.916602294455067E-09
-KilocaloriePerCubicInch.Symbol = "Cal/in³"
-KilocaloriePerCubicInch IsUnitForQuantity EnergyDensityQuantity
-Unit:JoulePerGallonUk
-JoulePerGallonUk.ConversionFactorA = 0
-JoulePerGallonUk.ConversionFactorB = 0.00454609
-JoulePerGallonUk.Symbol = "J/gal(UK)"
-JoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
-Unit:KilojoulePerGallonUk
-KilojoulePerGallonUk.ConversionFactorA = 0
-KilojoulePerGallonUk.ConversionFactorB = 4.54609E-06
-KilojoulePerGallonUk.Symbol = "kJ/gal(UK)"
-KilojoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
-Unit:MegajoulePerGallonUk
-MegajoulePerGallonUk.ConversionFactorA = 0
-MegajoulePerGallonUk.ConversionFactorB = 4.54609E-09
-MegajoulePerGallonUk.Symbol = "MJ/gal(UK)"
-MegajoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
-Unit:GigajoulePerGallonUk
-GigajoulePerGallonUk.ConversionFactorA = 0
-GigajoulePerGallonUk.ConversionFactorB = 4.54609E-12
-GigajoulePerGallonUk.Symbol = "GJ/gal(UK)"
-GigajoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
-Unit:CaloriePerGallonUk
-CaloriePerGallonUk.ConversionFactorA = 0
-CaloriePerGallonUk.ConversionFactorB = 0.0010865415869980878
-CaloriePerGallonUk.Symbol = "cal/gal(UK)"
-CaloriePerGallonUk IsUnitForQuantity EnergyDensityQuantity
-Unit:KilocaloriePerGallonUk
-KilocaloriePerGallonUk.ConversionFactorA = 0
-KilocaloriePerGallonUk.ConversionFactorB = 1.086541586998088E-06
-KilocaloriePerGallonUk.Symbol = "Cal/gal(UK)"
-KilocaloriePerGallonUk IsUnitForQuantity EnergyDensityQuantity
-Unit:JoulePerGallonUs
-JoulePerGallonUs.ConversionFactorA = 0
-JoulePerGallonUs.ConversionFactorB = 0.0037854117839999997
-JoulePerGallonUs.Symbol = "J/gal(US)"
-JoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
-Unit:KilojoulePerGallonUs
-KilojoulePerGallonUs.ConversionFactorA = 0
-KilojoulePerGallonUs.ConversionFactorB = 3.7854117839999998E-06
-KilojoulePerGallonUs.Symbol = "kJ/gal(US)"
-KilojoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
-Unit:MegajoulePerGallonUs
-MegajoulePerGallonUs.ConversionFactorA = 0
-MegajoulePerGallonUs.ConversionFactorB = 3.7854117839999995E-09
-MegajoulePerGallonUs.Symbol = "MJ/gal(US)"
-MegajoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
-Unit:GigajoulePerGallonUs
-GigajoulePerGallonUs.ConversionFactorA = 0
-GigajoulePerGallonUs.ConversionFactorB = 3.785411784E-12
-GigajoulePerGallonUs.Symbol = "GJ/gal(US)"
-GigajoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
-Unit:CaloriePerGallonUs
-CaloriePerGallonUs.ConversionFactorA = 0
-CaloriePerGallonUs.ConversionFactorB = 0.0009047351300191204
-CaloriePerGallonUs.Symbol = "cal/gal(US)"
-CaloriePerGallonUs IsUnitForQuantity EnergyDensityQuantity
-Unit:KilocaloriePerGallonUs
-KilocaloriePerGallonUs.ConversionFactorA = 0
-KilocaloriePerGallonUs.ConversionFactorB = 9.047351300191203E-07
-KilocaloriePerGallonUs.Symbol = "Cal/gal(US)"
-KilocaloriePerGallonUs IsUnitForQuantity EnergyDensityQuantity
-Unit:BritishThermalUnitPerCubicMetre
-BritishThermalUnitPerCubicMetre.ConversionFactorA = 0
-BritishThermalUnitPerCubicMetre.ConversionFactorB = 0.0009484516526770049
-BritishThermalUnitPerCubicMetre.Symbol = "BTU/m³"
-BritishThermalUnitPerCubicMetre IsUnitForQuantity EnergyDensityQuantity
-Unit:BritishThermalUnitPerLitre
-BritishThermalUnitPerLitre.ConversionFactorA = 0
-BritishThermalUnitPerLitre.ConversionFactorB = 9.484516526770049E-07
-BritishThermalUnitPerLitre.Symbol = "BTU/L"
-BritishThermalUnitPerLitre IsUnitForQuantity EnergyDensityQuantity
-Unit:BritishThermalUnitPerCubicFoot
-BritishThermalUnitPerCubicFoot.ConversionFactorA = 0
-BritishThermalUnitPerCubicFoot.ConversionFactorB = 2.6857159948783606E-05
-BritishThermalUnitPerCubicFoot.Symbol = "BTU/ft³"
-BritishThermalUnitPerCubicFoot IsUnitForQuantity EnergyDensityQuantity
-Unit:BritishThermalUnitPerCubicInch
-BritishThermalUnitPerCubicInch.ConversionFactorA = 0
-BritishThermalUnitPerCubicInch.ConversionFactorB = 1.554233793332385E-08
-BritishThermalUnitPerCubicInch.Symbol = "BTU/in³"
-BritishThermalUnitPerCubicInch IsUnitForQuantity EnergyDensityQuantity
-Unit:BritishThermalUnitPerGallonUk
-BritishThermalUnitPerGallonUk.ConversionFactorA = 0
-BritishThermalUnitPerGallonUk.ConversionFactorB = 4.311746573718405E-06
-BritishThermalUnitPerGallonUk.Symbol = "BTU/gal(UK)"
-BritishThermalUnitPerGallonUk IsUnitForQuantity EnergyDensityQuantity
-Unit:BritishThermalUnitPerGallonUs
-BritishThermalUnitPerGallonUs.ConversionFactorA = 0
-BritishThermalUnitPerGallonUs.ConversionFactorB = 3.5902800625978092E-06
-BritishThermalUnitPerGallonUs.Symbol = "BTU/gal(US)"
-BritishThermalUnitPerGallonUs IsUnitForQuantity EnergyDensityQuantity
-Unit:KiloBritishThermalUnitPerCubicMetre
-KiloBritishThermalUnitPerCubicMetre.ConversionFactorA = 0
-KiloBritishThermalUnitPerCubicMetre.ConversionFactorB = 9.484516526770048E-07
-KiloBritishThermalUnitPerCubicMetre.Symbol = "kBTU/m³"
-KiloBritishThermalUnitPerCubicMetre IsUnitForQuantity EnergyDensityQuantity
-Unit:KiloBritishThermalUnitPerLitre
-KiloBritishThermalUnitPerLitre.ConversionFactorA = 0
-KiloBritishThermalUnitPerLitre.ConversionFactorB = 9.48451652677005E-10
-KiloBritishThermalUnitPerLitre.Symbol = "kBTU/L"
-KiloBritishThermalUnitPerLitre IsUnitForQuantity EnergyDensityQuantity
-Unit:KiloBritishThermalUnitPerCubicFoot
-KiloBritishThermalUnitPerCubicFoot.ConversionFactorA = 0
-KiloBritishThermalUnitPerCubicFoot.ConversionFactorB = 2.6857159948783602E-08
-KiloBritishThermalUnitPerCubicFoot.Symbol = "kBTU/ft³"
-KiloBritishThermalUnitPerCubicFoot IsUnitForQuantity EnergyDensityQuantity
-Unit:KiloBritishThermalUnitPerCubicInch
-KiloBritishThermalUnitPerCubicInch.ConversionFactorA = 0
-KiloBritishThermalUnitPerCubicInch.ConversionFactorB = 1.5542337933323848E-11
-KiloBritishThermalUnitPerCubicInch.Symbol = "kBTU/in³"
-KiloBritishThermalUnitPerCubicInch IsUnitForQuantity EnergyDensityQuantity
-Unit:KiloBritishThermalUnitPerGallonUk
-KiloBritishThermalUnitPerGallonUk.ConversionFactorA = 0
-KiloBritishThermalUnitPerGallonUk.ConversionFactorB = 4.311746573718405E-09
-KiloBritishThermalUnitPerGallonUk.Symbol = "kBTU/gal(UK)"
-KiloBritishThermalUnitPerGallonUk IsUnitForQuantity EnergyDensityQuantity
-Unit:KiloBritishThermalUnitPerGallonUs
-KiloBritishThermalUnitPerGallonUs.ConversionFactorA = 0
-KiloBritishThermalUnitPerGallonUs.ConversionFactorB = 3.5902800625978087E-09
-KiloBritishThermalUnitPerGallonUs.Symbol = "kBTU/gal(US)"
-KiloBritishThermalUnitPerGallonUs IsUnitForQuantity EnergyDensityQuantity
-```
 ## ForceGradientPerLengthQuantity <!-- NOUN -->
 - Display name: ForceGradientPerLength
 - Parent class: Quantity
@@ -2135,6 +2306,11 @@ KilogramForce.ConversionFactorA = 0
 KilogramForce.ConversionFactorB = 0.10197162129779283
 KilogramForce.Symbol = "kgf"
 KilogramForce IsUnitForQuantity ForceQuantity
+Unit:TonneForce
+TonneForce.ConversionFactorA = 0
+TonneForce.ConversionFactorB = 0.00010197162129779283
+TonneForce.Symbol = "tf"
+TonneForce IsUnitForQuantity ForceQuantity
 Unit:PoundForce
 PoundForce.ConversionFactorA = 0
 PoundForce.ConversionFactorB = 0.2248089430997105
@@ -2238,6 +2414,47 @@ ShockPerHour.ConversionFactorA = 0
 ShockPerHour.ConversionFactorB = 3600
 ShockPerHour.Symbol = "spm"
 ShockPerHour IsUnitForQuantity FrequencyQuantity
+Unit:RadianPerSecond
+RadianPerSecond.ConversionFactorA = 0
+RadianPerSecond.ConversionFactorB = 6.283185307179586
+RadianPerSecond.Symbol = "rad/s"
+RadianPerSecond IsUnitForQuantity FrequencyQuantity
+FrequencyQuantity HasSIUnit RadianPerSecond
+Unit:DegreePerSecond
+DegreePerSecond.ConversionFactorA = 0
+DegreePerSecond.ConversionFactorB = 360
+DegreePerSecond.Symbol = "°/s"
+DegreePerSecond IsUnitForQuantity FrequencyQuantity
+Unit:RadianPerDay
+RadianPerDay.ConversionFactorA = 0
+RadianPerDay.ConversionFactorB = 542867.2105403163
+RadianPerDay.Symbol = "rad/d"
+RadianPerDay IsUnitForQuantity FrequencyQuantity
+Unit:RadianPerHour
+RadianPerHour.ConversionFactorA = 0
+RadianPerHour.ConversionFactorB = 22619.46710584651
+RadianPerHour.Symbol = "rad/h"
+RadianPerHour IsUnitForQuantity FrequencyQuantity
+Unit:RadianPerMinute
+RadianPerMinute.ConversionFactorA = 0
+RadianPerMinute.ConversionFactorB = 376.99111843077515
+RadianPerMinute.Symbol = "rad/min"
+RadianPerMinute IsUnitForQuantity FrequencyQuantity
+Unit:DegreePerDay
+DegreePerDay.ConversionFactorA = 0
+DegreePerDay.ConversionFactorB = 31104000
+DegreePerDay.Symbol = "°/d"
+DegreePerDay IsUnitForQuantity FrequencyQuantity
+Unit:DegreePerHour
+DegreePerHour.ConversionFactorA = 0
+DegreePerHour.ConversionFactorB = 1296000
+DegreePerHour.Symbol = "°/h"
+DegreePerHour IsUnitForQuantity FrequencyQuantity
+Unit:DegreePerMinute
+DegreePerMinute.ConversionFactorA = 0
+DegreePerMinute.ConversionFactorB = 21600
+DegreePerMinute.Symbol = "°/min"
+DegreePerMinute IsUnitForQuantity FrequencyQuantity
 ```
 ## FrequencyRateOfChangeQuantity <!-- NOUN -->
 - Display name: FrequencyRateOfChange
@@ -3562,50 +3779,6 @@ Rankine.ConversionFactorA = 0
 Rankine.ConversionFactorB = 1.7999999999999998
 Rankine.Symbol = "°R"
 Rankine IsUnitForQuantity RelativeTemperatureQuantity
-```
-## ElectricResistivityQuantity <!-- NOUN -->
-- Display name: ElectricResistivity
-- Parent class: Quantity
-- Specialization: 
-  - L = 3
-  - M = 1
-  - T = -3
-  - I = -2
-- Description: 
-Electric resistivity is a material's inherent property that measures how strongly it resists the flow of electric current.
-The dimension of resistivity is:
-$$[L^{3}MI^{-2}T^{-3}]$$.
-
-The SI unit for **electric resistivity** is: ohm metre with the associated unit label $\Omega \cdot m$
-
-- Examples: 
-``` dwis
-Quantity:ElectricResistivityQuantity
-ElectricResistivityQuantity.L = 3
-ElectricResistivityQuantity.M = 1
-ElectricResistivityQuantity.T = -3
-ElectricResistivityQuantity.I = -2
-Unit:OhmMetre
-OhmMetre.ConversionFactorA = 0
-OhmMetre.ConversionFactorB = 1
-OhmMetre.Symbol = "Ω•m"
-OhmMetre IsUnitForQuantity ElectricResistivityQuantity
-ElectricResistivityQuantity HasSIUnit OhmMetre
-Unit:KiloOhmMetre
-KiloOhmMetre.ConversionFactorA = 0
-KiloOhmMetre.ConversionFactorB = 0.001
-KiloOhmMetre.Symbol = "kΩ•m"
-KiloOhmMetre IsUnitForQuantity ElectricResistivityQuantity
-Unit:MegaOhmMetre
-MegaOhmMetre.ConversionFactorA = 0
-MegaOhmMetre.ConversionFactorB = 1E-06
-MegaOhmMetre.Symbol = "MΩ•m"
-MegaOhmMetre IsUnitForQuantity ElectricResistivityQuantity
-Unit:GigaOhmMetre
-GigaOhmMetre.ConversionFactorA = 0
-GigaOhmMetre.ConversionFactorB = 1E-09
-GigaOhmMetre.Symbol = "GΩ•m"
-GigaOhmMetre IsUnitForQuantity ElectricResistivityQuantity
 ```
 ## SolidAngleQuantity <!-- NOUN -->
 - Display name: SolidAngle
@@ -5438,73 +5611,6 @@ HundredWeights.ConversionFactorB = 0.022046226218487758
 HundredWeights.Symbol = "cwt"
 HundredWeights IsUnitForQuantity MassQuantity
 ```
-## EnergyQuantity <!-- NOUN -->
-- Display name: Energy
-- Parent class: Quantity
-- Specialization: 
-  - L = 2
-  - M = 1
-  - T = -2
-- Description: 
-Energy is the quantitative property that is transferred to a body or to a physical system, recognizable in the performance of work and in the form of heat and light. Energy is a conserved quantity—the law of conservation of energy states that energy can be converted in form, but not created or destroyed; matter and energy may also be converted to one another.
-The dimension of energy is:
-$$[L^{2}MT^{-2}]$$.
-
-The SI unit for **energy** is: joule with the associated unit label $J$
-
-- Examples: 
-``` dwis
-Quantity:EnergyQuantity
-EnergyQuantity.L = 2
-EnergyQuantity.M = 1
-EnergyQuantity.T = -2
-Unit:Joule
-Joule.ConversionFactorA = 0
-Joule.ConversionFactorB = 1
-Joule.Symbol = "J"
-Joule IsUnitForQuantity EnergyQuantity
-EnergyQuantity HasSIUnit Joule
-Unit:Kilojoule
-Kilojoule.ConversionFactorA = 0
-Kilojoule.ConversionFactorB = 0.001
-Kilojoule.Symbol = "kJ"
-Kilojoule IsUnitForQuantity EnergyQuantity
-Unit:Megajoule
-Megajoule.ConversionFactorA = 0
-Megajoule.ConversionFactorB = 1E-06
-Megajoule.Symbol = "MJ"
-Megajoule IsUnitForQuantity EnergyQuantity
-Unit:Gigajoule
-Gigajoule.ConversionFactorA = 0
-Gigajoule.ConversionFactorB = 1E-09
-Gigajoule.Symbol = "GJ"
-Gigajoule IsUnitForQuantity EnergyQuantity
-Unit:Calorie
-Calorie.ConversionFactorA = 0
-Calorie.ConversionFactorB = 0.2390057361376673
-Calorie.Symbol = "cal"
-Calorie IsUnitForQuantity EnergyQuantity
-Unit:Kilocalorie
-Kilocalorie.ConversionFactorA = 0
-Kilocalorie.ConversionFactorB = 0.0002390057361376673
-Kilocalorie.Symbol = "Cal"
-Kilocalorie IsUnitForQuantity EnergyQuantity
-Unit:BritishThermalUnit
-BritishThermalUnit.ConversionFactorA = 0
-BritishThermalUnit.ConversionFactorB = 0.0009484516526770049
-BritishThermalUnit.Symbol = "BTU"
-BritishThermalUnit IsUnitForQuantity EnergyQuantity
-Unit:KiloBritishThermalUnit
-KiloBritishThermalUnit.ConversionFactorA = 0
-KiloBritishThermalUnit.ConversionFactorB = 9.484516526770048E-07
-KiloBritishThermalUnit.Symbol = "kBTU"
-KiloBritishThermalUnit IsUnitForQuantity EnergyQuantity
-Unit:MegaBritishThermalUnit
-MegaBritishThermalUnit.ConversionFactorA = 0
-MegaBritishThermalUnit.ConversionFactorB = 9.48451652677005E-10
-MegaBritishThermalUnit.Symbol = "MMBTU"
-MegaBritishThermalUnit IsUnitForQuantity EnergyQuantity
-```
 ## ForceRateOfChangeQuantity <!-- NOUN -->
 - Display name: ForceRateOfChange
 - Parent class: Quantity
@@ -6237,48 +6343,86 @@ InchPoundPerHour.ConversionFactorB = 31862.68484877787
 InchPoundPerHour.Symbol = "in•lbf/h"
 InchPoundPerHour IsUnitForQuantity TorqueRateOfChangeQuantity
 ```
-## GravitationalLoadQuantity <!-- NOUN -->
-- Display name: GravitationalLoad
+## MomentOfAreaQuantity <!-- NOUN -->
+- Display name: MomentOfArea
 - Parent class: Quantity
 - Specialization: 
-  - M = 1
+  - L = 4
 - Description: 
-Mass can be experimentally defined as a measure of the body's inertia, meaning the resistance to acceleration (change of velocity) when a net force is applied. The object's mass also determines the strength of its gravitational attraction to other bodies.
-The dimension of mass is:
-$$[M]$$.
+A moment of area is a geometrical property of an area which reflects how its points are distributed with regard to an arbitrary axis. It is used in the study of beam bending and deflection in structural engineering.
+The dimension of moment of area is:
+$$[L^{4}]$$.
 
-The SI unit for **mass** is: kilogram with the associated unit label $kg$
+The SI unit for **moment of area** is: metres to the fourth power with the associated unit label $m^{4}$
 
 - Examples: 
 ``` dwis
-Quantity:GravitationalLoadQuantity
-GravitationalLoadQuantity.M = 1
-Unit:Kilogram
-Kilogram.ConversionFactorA = 0
-Kilogram.ConversionFactorB = 1
-Kilogram.Symbol = "kg"
-Kilogram IsUnitForQuantity GravitationalLoadQuantity
-GravitationalLoadQuantity HasSIUnit Kilogram
-Unit:TonneMetric
-TonneMetric.ConversionFactorA = 0
-TonneMetric.ConversionFactorB = 0.001
-TonneMetric.Symbol = "t"
-TonneMetric IsUnitForQuantity GravitationalLoadQuantity
-Unit:Pound
-Pound.ConversionFactorA = 0
-Pound.ConversionFactorB = 2.2046226218487757
-Pound.Symbol = "lb"
-Pound IsUnitForQuantity GravitationalLoadQuantity
-Unit:Kilopound
-Kilopound.ConversionFactorA = 0
-Kilopound.ConversionFactorB = 0.002204622621848776
-Kilopound.Symbol = "klb"
-Kilopound IsUnitForQuantity GravitationalLoadQuantity
-Unit:TonUk
-TonUk.ConversionFactorA = 0
-TonUk.ConversionFactorB = 0.0009842065276110606
-TonUk.Symbol = "LT"
-TonUk IsUnitForQuantity GravitationalLoadQuantity
+Quantity:MomentOfAreaQuantity
+MomentOfAreaQuantity.L = 4
+Unit:MetresToTheFourthPower
+MetresToTheFourthPower.ConversionFactorA = 0
+MetresToTheFourthPower.ConversionFactorB = 1
+MetresToTheFourthPower.Symbol = "m⁴"
+MetresToTheFourthPower IsUnitForQuantity MomentOfAreaQuantity
+MomentOfAreaQuantity HasSIUnit MetresToTheFourthPower
+Unit:CentimetresToTheFourthPower
+CentimetresToTheFourthPower.ConversionFactorA = 0
+CentimetresToTheFourthPower.ConversionFactorB = 99999999.99999999
+CentimetresToTheFourthPower.Symbol = "cm⁴"
+CentimetresToTheFourthPower IsUnitForQuantity MomentOfAreaQuantity
+Unit:InchesToTheFourthPower
+InchesToTheFourthPower.ConversionFactorA = 0
+InchesToTheFourthPower.ConversionFactorB = 2402509.6100288304
+InchesToTheFourthPower.Symbol = "in⁴"
+InchesToTheFourthPower IsUnitForQuantity MomentOfAreaQuantity
+Unit:FeetToTheFourthPower
+FeetToTheFourthPower.ConversionFactorA = 0
+FeetToTheFourthPower.ConversionFactorB = 115.86176745895213
+FeetToTheFourthPower.Symbol = "ft⁴"
+FeetToTheFourthPower IsUnitForQuantity MomentOfAreaQuantity
+```
+## MomentOfInertiaQuantity <!-- NOUN -->
+- Display name: MomentOfInertia
+- Parent class: Quantity
+- Specialization: 
+  - L = 2
+  - M = 1
+- Description: 
+The moment of inertia is is a measure of an object's resistance to changes in its rotation rate. It is the rotational analog of mass for linear motion. The moment of inertia depends on the mass distribution of an object and the axis of rotation.
+The dimension of moment of inertia is:
+$$[L^{2}M]$$.
+
+The SI unit for **moment of inertia** is: kilogram metre squared with the associated unit label $kg \cdot m^{2}}$
+
+- Examples: 
+``` dwis
+Quantity:MomentOfInertiaQuantity
+MomentOfInertiaQuantity.L = 2
+MomentOfInertiaQuantity.M = 1
+Unit:KilogramMetreSquared
+KilogramMetreSquared.ConversionFactorA = 0
+KilogramMetreSquared.ConversionFactorB = 1
+KilogramMetreSquared.Symbol = "kg.m²"
+KilogramMetreSquared IsUnitForQuantity MomentOfInertiaQuantity
+MomentOfInertiaQuantity HasSIUnit KilogramMetreSquared
+Unit:GramCentimetreSquared
+GramCentimetreSquared.ConversionFactorA = 0
+GramCentimetreSquared.ConversionFactorB = 10000000
+GramCentimetreSquared.Symbol = "g.cm²"
+GramCentimetreSquared IsUnitForQuantity MomentOfInertiaQuantity
+MomentOfInertiaQuantity HasSIUnit GramCentimetreSquared
+Unit:PoundFootSquared
+PoundFootSquared.ConversionFactorA = 0
+PoundFootSquared.ConversionFactorB = 23.73036040423194
+PoundFootSquared.Symbol = "lb.ft²"
+PoundFootSquared IsUnitForQuantity MomentOfInertiaQuantity
+MomentOfInertiaQuantity HasSIUnit PoundFootSquared
+Unit:PoundInchSquared
+PoundInchSquared.ConversionFactorA = 0
+PoundInchSquared.ConversionFactorB = 3417.171898209399
+PoundInchSquared.Symbol = "lb.in²"
+PoundInchSquared IsUnitForQuantity MomentOfInertiaQuantity
+MomentOfInertiaQuantity HasSIUnit PoundInchSquared
 ```
 ## HydraulicConductivityQuantity <!-- NOUN -->
 - Display name: HydraulicConductivity

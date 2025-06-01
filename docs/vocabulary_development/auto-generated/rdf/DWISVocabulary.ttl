@@ -182,6 +182,10 @@ ddhub:AfmAutofluidMeasSkid a owl:Class;
 ddhub:Aggregation a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:DirectTransformation. 
+ddhub:Air a owl:Class; 
+          rdfs:comment """A symbolic representation of air when encountered in a hydraulic system.
+"""@EN; 
+          rdfs:subClassOf ddhub:Gas. 
 ddhub:AlgebraicModel a owl:Class; 
                      rdfs:comment """A model that uses algebraic equations.
 """@EN; 
@@ -1450,6 +1454,16 @@ and
 Centi = 0.01
 """@EN; 
                                  rdfs:subClassOf ddhub:Unit. 
+ddhub:CentimetresToTheFourthPower a owl:Class; 
+                                  rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in centimetres to the fourth power
+[SI] is the value in SI
+a = 1.0/(Centi*Centi*Centi*Centi), i.e., 99999999.99999999
+and
+Centi = 0.01
+"""@EN; 
+                                  rdfs:subClassOf ddhub:Unit. 
 ddhub:CentimetreWaterAt4DegreeCelsius a owl:Class; 
                                       rdfs:comment """[v] = a * [SI]
 where
@@ -3424,6 +3438,10 @@ ddhub:DrillingLimit a owl:Class;
                     rdfs:comment """This is the parent class for drilling limits. A limit applies typically on a desired value as controlled by a controller.
 """@EN; 
                     rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:DrillingLiquid a owl:Class; 
+                     rdfs:comment """A symbolic representation of drilling liquid when encountered in a hydraulic system.
+"""@EN; 
+                     rdfs:subClassOf ddhub:Liquid. 
 ddhub:DrillingManagementFeature a owl:Class; 
                                 rdfs:comment """A drilling management feature is a drilling management characteristic that is supported by something. For instance
 an advisory system may provide ROP management parameters accounting for cuttings transport.
@@ -3997,6 +4015,17 @@ ddhub:FeatureLevelIntegationModel a owl:Class;
 weighting features, or correlating features.
 """@EN; 
                                   rdfs:subClassOf ddhub:DataIntegrationStrategy. 
+ddhub:FeetToTheFourthPower a owl:Class; 
+                           rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in feet to the fourth power
+[SI] is the value in SI
+a = 1.0/(Foot*Foot*Foot*Foot), i.e., 115.86176745895213
+and
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+"""@EN; 
+                           rdfs:subClassOf ddhub:Unit. 
 ddhub:Femtowatt a owl:Class; 
                 rdfs:comment """[v] = a * [SI]
 where
@@ -4087,6 +4116,10 @@ ddhub:FluidDescription a owl:Class;
 used during a drilling operation.
 """@EN; 
                        rdfs:subClassOf ddhub:WellBoreData. 
+ddhub:FluidInterface a owl:Class; 
+                     rdfs:comment """The interface between two fluids in a hydraulic system.
+"""@EN; 
+                     rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:FluidShearRateQuantity a owl:Class; 
                              rdfs:comment """Frequency is the number of occurrences of a repeating event per unit of time.
 The dimension of frequency is:
@@ -4105,6 +4138,10 @@ Shear stress in a fluid is the force per unit area exerted parallel to the fluid
 The meaningful precision of a shear stress for a fluid is typically: 0.0001 Pa
 """@EN; 
                                rdfs:subClassOf ddhub:MeasurableQuantity. 
+ddhub:FluidType a owl:Class; 
+                rdfs:comment """A symbolic representation of the type of a fluid to be found in a hydraulic system.
+"""@EN; 
+                rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:FluidVelocityDrillingQuantity a owl:Class; 
                                     rdfs:comment """A velocity is the time derivative of a position or a displacement: $\\frac{dx}{dt}$, where $x$ is a position and $t$ is time.
 The dimension of velocity is:
@@ -4502,6 +4539,10 @@ ddhub:FormationFracturingFeature a owl:Class;
                                  rdfs:comment """A formation fracturing feature indicates that something accounts for formation fracturing limits.
 """@EN; 
                                  rdfs:subClassOf ddhub:DownholePressureFeature. 
+ddhub:FormationGas a owl:Class; 
+                   rdfs:comment """A symbolic representation of formation gas when encountered in a hydraulic system.
+"""@EN; 
+                   rdfs:subClassOf ddhub:Gas. 
 ddhub:FormationGasComponent a owl:Class; 
                             rdfs:comment ""@EN; 
                             rdfs:subClassOf ddhub:GasComponent. 
@@ -4657,6 +4698,10 @@ Gamma rays are a form of electromagnetic radiation, and in well logging, they ar
 Since the Gamma Ray API is a measure of gamma radiation intensity, let's break down its physical nature:
 """@EN; 
                                     rdfs:subClassOf ddhub:MeasurableQuantity. 
+ddhub:Gas a owl:Class; 
+          rdfs:comment """A symbolic representation of gas when encountered in a hydraulic system.
+"""@EN; 
+          rdfs:subClassOf ddhub:FluidType. 
 ddhub:GasAbsorptionFeature a owl:Class; 
                            rdfs:comment """A gas absorption feature indicates that something accounts for conditions by which gas can be absorbed by the drilling fluid.
 """@EN; 
@@ -5031,6 +5076,10 @@ and
 Milli = 0.001
 """@EN; 
            rdfs:subClassOf ddhub:Unit. 
+ddhub:GramCentimetreSquared a owl:Class; 
+                            rdfs:comment """No conversion necessary as the unit choice is SI
+"""@EN; 
+                            rdfs:subClassOf ddhub:Unit. 
 ddhub:GramPerCubicCentimetre a owl:Class; 
                              rdfs:comment """[v] = a * [SI]
 where
@@ -5153,13 +5202,6 @@ and
 Milli = 0.001
 """@EN; 
                    rdfs:subClassOf ddhub:Unit. 
-ddhub:GravitationalLoadQuantity a owl:Class; 
-                                rdfs:comment """Mass can be experimentally defined as a measure of the body's inertia, meaning the resistance to acceleration (change of velocity) when a net force is applied. The object's mass also determines the strength of its gravitational attraction to other bodies.
-The dimension of mass is:
-$$[M]$$.
-The SI unit for **mass** is: kilogram with the associated unit label $kg$
-"""@EN; 
-                                rdfs:subClassOf ddhub:Quantity. 
 ddhub:GravityHighSideAngleLocation a owl:Class; 
                                    rdfs:comment ""@EN; 
                                    rdfs:subClassOf ddhub:AngleReferenceLocation. 
@@ -5660,11 +5702,11 @@ ddhub:HookLoad a owl:Class;
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:PrototypeData. 
 ddhub:HookLoadDrillingQuantity a owl:Class; 
-                               rdfs:comment """Mass can be experimentally defined as a measure of the body's inertia, meaning the resistance to acceleration (change of velocity) when a net force is applied. The object's mass also determines the strength of its gravitational attraction to other bodies.
-The dimension of mass is:
-$$[M]$$.
-The SI unit for **mass** is: kilogram with the associated unit label $kg$
-The meaningful precision of hook load in the drilling context is typically: 100 kg
+                               rdfs:comment """A force is an influence that can cause an object to change its velocity unless counterbalanced by other forces.
+The dimension of force is:
+$$[LMT^{-2}]$$.
+The SI unit for **force** is: newton with the associated unit label $N$
+The meaningful precision of hook load in the drilling context is typically: 1000 N
 """@EN; 
                                rdfs:subClassOf ddhub:MeasurableQuantity. 
 ddhub:HookPosition a owl:Class; 
@@ -5803,6 +5845,16 @@ and
 Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
 """@EN; 
            rdfs:subClassOf ddhub:Unit. 
+ddhub:InchesToTheFourthPower a owl:Class; 
+                             rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in inches to the fourth power
+[SI] is the value in SI
+a = 1.0/(Inch*Inch*Inch*Inch), i.e., 2402509.6100288304
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+"""@EN; 
+                             rdfs:subClassOf ddhub:Unit. 
 ddhub:InchMercuryAt32DegreeFahrenheit a owl:Class; 
                                       rdfs:comment """[v] = a * [SI]
 where
@@ -6462,6 +6514,11 @@ ddhub:IsDerivedFrom a owl:ObjectProperty;
                     rdfs:domain ddhub:DWISNoun; 
                     rdfs:range ddhub:DWISNoun; 
                     rdfs:subPropertyOf ddhub:IsTransformationOutput. 
+ddhub:IsDownstreamOf a owl:ObjectProperty; 
+                     rdfs:comment ""@EN; 
+                     rdfs:domain ddhub:FluidType; 
+                     rdfs:range ddhub:FluidInterface; 
+                     rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsEnablingSignalFor a owl:ObjectProperty; 
                           rdfs:comment """This verb is used to define a `DrillingDataPoint` that is used to enable or disable an `ActivableFunction`.
 It is expected that the `DrillingDataPoint` is a Boolean value.
@@ -6884,6 +6941,11 @@ ddhub:IsUnitForQuantity a owl:ObjectProperty;
                         rdfs:domain ddhub:Unit; 
                         rdfs:range ddhub:Quantity; 
                         rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsUpstreamOf a owl:ObjectProperty; 
+                   rdfs:comment ""@EN; 
+                   rdfs:domain ddhub:FluidType; 
+                   rdfs:range ddhub:FluidInterface; 
+                   rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsUsedExtraMarginSignalFor a owl:ObjectProperty; 
                                  rdfs:comment """This verb is used to indicate a `DrillingDataPoint` used by an `FDIRFunction` tells whether the
 extra margin signal is used or not by the FDIR function. This signal is expected to be a boolean value.
@@ -7670,6 +7732,10 @@ KilogramForce = 1.0 * G reference: https://en.wikipedia.org/wiki/Kilogram-force
 G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
 """@EN; 
                              rdfs:subClassOf ddhub:Unit. 
+ddhub:KilogramMetreSquared a owl:Class; 
+                           rdfs:comment """No conversion necessary as the unit choice is SI
+"""@EN; 
+                           rdfs:subClassOf ddhub:Unit. 
 ddhub:KilogramPerCubicMetre a owl:Class; 
                             rdfs:comment """No conversion necessary as the unit choice is SI
 """@EN; 
@@ -8675,6 +8741,10 @@ ddhub:LinerStringDescription a owl:Class;
 a liner hanger and drill-pipes.
 """@EN; 
                              rdfs:subClassOf ddhub:DrillStemDescription. 
+ddhub:Liquid a owl:Class; 
+             rdfs:comment """A symbolic representation of liquid when encountered in a hydraulic system.
+"""@EN; 
+             rdfs:subClassOf ddhub:FluidType. 
 ddhub:LiquidComponent a owl:Class; 
                       rdfs:comment ""@EN; 
                       rdfs:subClassOf ddhub:FluidComponent. 
@@ -9631,6 +9701,10 @@ ddhub:MetrePerSecondSquared a owl:Class;
                             rdfs:comment """No conversion necessary as the unit choice is SI
 """@EN; 
                             rdfs:subClassOf ddhub:Unit. 
+ddhub:MetresToTheFourthPower a owl:Class; 
+                             rdfs:comment """No conversion necessary as the unit choice is SI
+"""@EN; 
+                             rdfs:subClassOf ddhub:Unit. 
 ddhub:Microampere a owl:Class; 
                   rdfs:comment """[v] = a * [SI]
 where
@@ -10632,6 +10706,36 @@ ddhub:Mole a owl:Class;
            rdfs:comment """No conversion necessary as the unit choice is SI
 """@EN; 
            rdfs:subClassOf ddhub:Unit. 
+ddhub:MomentOfAreaDrillingQuantity a owl:Class; 
+                                   rdfs:comment """A moment of area is a geometrical property of an area which reflects how its points are distributed with regard to an arbitrary axis. It is used in the study of beam bending and deflection in structural engineering.
+The dimension of moment of area is:
+$$[L^{4}]$$.
+The SI unit for **moment of area** is: metres to the fourth power with the associated unit label $m^{4}$
+The meaningful precision of the moment of area in the drilling context is typically: 1E-16 N
+"""@EN; 
+                                   rdfs:subClassOf ddhub:MeasurableQuantity. 
+ddhub:MomentOfAreaQuantity a owl:Class; 
+                           rdfs:comment """A moment of area is a geometrical property of an area which reflects how its points are distributed with regard to an arbitrary axis. It is used in the study of beam bending and deflection in structural engineering.
+The dimension of moment of area is:
+$$[L^{4}]$$.
+The SI unit for **moment of area** is: metres to the fourth power with the associated unit label $m^{4}$
+"""@EN; 
+                           rdfs:subClassOf ddhub:Quantity. 
+ddhub:MomentOfInertiaDrillingQuantity a owl:Class; 
+                                      rdfs:comment """The moment of inertia is is a measure of an object's resistance to changes in its rotation rate. It is the rotational analog of mass for linear motion. The moment of inertia depends on the mass distribution of an object and the axis of rotation.
+The dimension of moment of inertia is:
+$$[L^{2}M]$$.
+The SI unit for **moment of inertia** is: kilogram metre squared with the associated unit label $kg \\cdot m^{2}}$
+The meaningful precision of the moment of inertia in the drilling context is typically: 1E-11 N
+"""@EN; 
+                                      rdfs:subClassOf ddhub:MeasurableQuantity. 
+ddhub:MomentOfInertiaQuantity a owl:Class; 
+                              rdfs:comment """The moment of inertia is is a measure of an object's resistance to changes in its rotation rate. It is the rotational analog of mass for linear motion. The moment of inertia depends on the mass distribution of an object and the axis of rotation.
+The dimension of moment of inertia is:
+$$[L^{2}M]$$.
+The SI unit for **moment of inertia** is: kilogram metre squared with the associated unit label $kg \\cdot m^{2}}$
+"""@EN; 
+                              rdfs:subClassOf ddhub:Quantity. 
 ddhub:MonthCommon a owl:Class; 
                   rdfs:comment """[v] = a * [SI]
 where
@@ -11985,6 +12089,10 @@ and
 Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
 """@EN; 
             rdfs:subClassOf ddhub:Unit. 
+ddhub:PoundFootSquared a owl:Class; 
+                       rdfs:comment """No conversion necessary as the unit choice is SI
+"""@EN; 
+                       rdfs:subClassOf ddhub:Unit. 
 ddhub:PoundForce a owl:Class; 
                  rdfs:comment """[v] = a * [SI]
 where
@@ -12036,6 +12144,10 @@ Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
 G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
 """@EN; 
                           rdfs:subClassOf ddhub:Unit. 
+ddhub:PoundInchSquared a owl:Class; 
+                       rdfs:comment """No conversion necessary as the unit choice is SI
+"""@EN; 
+                       rdfs:subClassOf ddhub:Unit. 
 ddhub:PoundPer100Foot a owl:Class; 
                       rdfs:comment """[v] = a * [SI]
 where
@@ -14127,6 +14239,40 @@ where
 a = 1.0/(2.0*PI), i.e., 0.15915494309189535
 """@EN; 
                  rdfs:subClassOf ddhub:Unit. 
+ddhub:RevolutionPerHour a owl:Class; 
+                        rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in revolution per hour
+[SI] is the value in SI
+a = Hour / Revolution, i.e., 572.9577951308232
+and
+Hour = 60.0 * Minute
+Revolution = 2.0 * System.Math.PI
+Minute = 60.0
+"""@EN; 
+                        rdfs:subClassOf ddhub:Unit. 
+ddhub:RevolutionPerMinute a owl:Class; 
+                          rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in revolution per minute
+[SI] is the value in SI
+a = Minute / Revolution, i.e., 9.549296585513721
+and
+Minute = 60.0
+Revolution = 2.0 * System.Math.PI
+"""@EN; 
+                          rdfs:subClassOf ddhub:Unit. 
+ddhub:RevolutionPerSecond a owl:Class; 
+                          rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in revolution per second
+[SI] is the value in SI
+a = Unit / Revolution, i.e., 0.15915494309189535
+and
+Unit = 1.0
+Revolution = 2.0 * System.Math.PI
+"""@EN; 
+                          rdfs:subClassOf ddhub:Unit. 
 ddhub:RfidReamers a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:Reamers. 
@@ -14993,20 +15139,33 @@ ddhub:StrokePerHour a owl:Class;
 where
 [v] is the value in stroke per hour
 [SI] is the value in SI
-a = Hour, i.e., 3600
+a = Hour / Revolution, i.e., 572.9577951308232
 and
 Hour = 60.0 * Minute
+Revolution = 2.0 * System.Math.PI
 Minute = 60.0
 """@EN; 
                     rdfs:subClassOf ddhub:Unit. 
+ddhub:StrokePerMinute a owl:Class; 
+                      rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in stroke per minute
+[SI] is the value in SI
+a = Minute / Revolution, i.e., 9.549296585513721
+and
+Minute = 60.0
+Revolution = 2.0 * System.Math.PI
+"""@EN; 
+                      rdfs:subClassOf ddhub:Unit. 
 ddhub:StrokePerSecond a owl:Class; 
                       rdfs:comment """[v] = a * [SI]
 where
 [v] is the value in stroke per second
 [SI] is the value in SI
-a = Unit, i.e., 1
+a = Unit / Revolution, i.e., 0.15915494309189535
 and
 Unit = 1.0
+Revolution = 2.0 * System.Math.PI
 """@EN; 
                       rdfs:subClassOf ddhub:Unit. 
 ddhub:StuckPipe a owl:Class; 
@@ -15354,6 +15513,43 @@ Mil = 0.001 * Inch reference: https://en.wikipedia.org/wiki/Thousandth_of_an_inc
 Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
 """@EN; 
            rdfs:subClassOf ddhub:Unit. 
+ddhub:ThousandRevolutionPerHour a owl:Class; 
+                                rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in thousand revolution per hour
+[SI] is the value in SI
+a = Hour / (Kilo*Revolution), i.e., 0.5729577951308232
+and
+Hour = 60.0 * Minute
+Kilo = 1000.0
+Revolution = 2.0 * System.Math.PI
+Minute = 60.0
+"""@EN; 
+                                rdfs:subClassOf ddhub:Unit. 
+ddhub:ThousandRevolutionPerMinute a owl:Class; 
+                                  rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in thousand revolution per minute
+[SI] is the value in SI
+a = Minute / (Kilo*Revolution), i.e., 0.009549296585513721
+and
+Minute = 60.0
+Kilo = 1000.0
+Revolution = 2.0 * System.Math.PI
+"""@EN; 
+                                  rdfs:subClassOf ddhub:Unit. 
+ddhub:ThousandRevolutionPerSecond a owl:Class; 
+                                  rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in thousand revolution per second
+[SI] is the value in SI
+a = Unit / (Kilo*Revolution), i.e., 0.00015915494309189535
+and
+Unit = 1.0
+Kilo = 1000.0
+Revolution = 2.0 * System.Math.PI
+"""@EN; 
+                                  rdfs:subClassOf ddhub:Unit. 
 ddhub:ThousandStandardCubicFoot a owl:Class; 
                                 rdfs:comment """[v] = a * [SI]
 where
@@ -15380,6 +15576,43 @@ Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
 Minute = 60.0
 """@EN; 
                                       rdfs:subClassOf ddhub:Unit. 
+ddhub:ThousandStrokePerHour a owl:Class; 
+                            rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in thousand stroke per hour
+[SI] is the value in SI
+a = Hour / (Kilo*Revolution), i.e., 0.5729577951308232
+and
+Hour = 60.0 * Minute
+Kilo = 1000.0
+Revolution = 2.0 * System.Math.PI
+Minute = 60.0
+"""@EN; 
+                            rdfs:subClassOf ddhub:Unit. 
+ddhub:ThousandStrokePerMinute a owl:Class; 
+                              rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in thousand stroke per minute
+[SI] is the value in SI
+a = Minute / (Kilo*Revolution), i.e., 0.009549296585513721
+and
+Minute = 60.0
+Kilo = 1000.0
+Revolution = 2.0 * System.Math.PI
+"""@EN; 
+                              rdfs:subClassOf ddhub:Unit. 
+ddhub:ThousandStrokePerSecond a owl:Class; 
+                              rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in thousand stroke per second
+[SI] is the value in SI
+a = Unit / (Kilo*Revolution), i.e., 0.00015915494309189535
+and
+Unit = 1.0
+Kilo = 1000.0
+Revolution = 2.0 * System.Math.PI
+"""@EN; 
+                              rdfs:subClassOf ddhub:Unit. 
 ddhub:ThreeDimensionalReferenceFrame a owl:Class; 
                                      rdfs:comment ""@EN; 
                                      rdfs:subClassOf ddhub:ReferenceFrame. 
@@ -15440,6 +15673,18 @@ ddhub:TimeWindowMovingAverage a owl:Class;
 ddhub:TimeWindowRangeExtraction a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:RangeExtraction. 
+ddhub:TonneForce a owl:Class; 
+                 rdfs:comment """[v] = a * [SI]
+where
+[v] is the value in tonne force
+[SI] is the value in SI
+a = 1.0/(Kilo*KilogramForce), i.e., 0.00010197162129779283
+and
+Kilo = 1000.0
+KilogramForce = 1.0 * G reference: https://en.wikipedia.org/wiki/Kilogram-force
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+"""@EN; 
+                 rdfs:subClassOf ddhub:Unit. 
 ddhub:TonneMetric a owl:Class; 
                   rdfs:comment """[v] = a * [SI]
 where
@@ -16161,11 +16406,11 @@ Minute = 60.0
 """@EN; 
            rdfs:subClassOf ddhub:Unit. 
 ddhub:WeightOnBitDrillingQuantity a owl:Class; 
-                                  rdfs:comment """Mass can be experimentally defined as a measure of the body's inertia, meaning the resistance to acceleration (change of velocity) when a net force is applied. The object's mass also determines the strength of its gravitational attraction to other bodies.
-The dimension of mass is:
-$$[M]$$.
-The SI unit for **mass** is: kilogram with the associated unit label $kg$
-The meaningful precision of weight on bit in the drilling context is typically: 10 kg
+                                  rdfs:comment """A force is an influence that can cause an object to change its velocity unless counterbalanced by other forces.
+The dimension of force is:
+$$[LMT^{-2}]$$.
+The SI unit for **force** is: newton with the associated unit label $N$
+The meaningful precision of weight on bit in the drilling context is typically: 100 N
 """@EN; 
                                   rdfs:subClassOf ddhub:MeasurableQuantity. 
 ddhub:WeightTransferObjective a owl:Class; 

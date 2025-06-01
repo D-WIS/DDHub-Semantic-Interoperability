@@ -13,16 +13,18 @@ Quantity <|-- AngularVelocityQuantity
 Quantity <|-- AreaQuantity
 Quantity <|-- CompressibilityQuantity
 Quantity <|-- CurvatureQuantity
-Quantity <|-- MassDensityGradientPerLengthQuantity
-Quantity <|-- MassDensityGradientPerTemperatureQuantity
-Quantity <|-- MassDensityQuantity
-Quantity <|-- MassDensityRateOfChangeQuantity
 Quantity <|-- DimensionlessQuantity
 Quantity <|-- DynamicViscosityQuantity
 Quantity <|-- ElectricCapacitanceQuantity
 Quantity <|-- ElectricCurrentQuantity
+Quantity <|-- ElectricResistivityQuantity
 Quantity <|-- ElongationGradientPerLengthQuantity
 Quantity <|-- EnergyDensityQuantity
+Quantity <|-- EnergyQuantity
+Quantity <|-- MassDensityGradientPerLengthQuantity
+Quantity <|-- MassDensityGradientPerTemperatureQuantity
+Quantity <|-- MassDensityQuantity
+Quantity <|-- MassDensityRateOfChangeQuantity
 Quantity <|-- ForceGradientPerLengthQuantity
 Quantity <|-- ForceQuantity
 Quantity <|-- FrequencyQuantity
@@ -45,7 +47,6 @@ Quantity <|-- PressureQuantity
 Quantity <|-- ProportionQuantity
 Quantity <|-- RandomWalkQuantity
 Quantity <|-- RelativeTemperatureQuantity
-Quantity <|-- ElectricResistivityQuantity
 Quantity <|-- SolidAngleQuantity
 Quantity <|-- IsobaricSpecificHeatCapacityQuantity
 Quantity <|-- IsobaricSpecificHeatCapacityGradientPerTemperatureQuantity
@@ -63,11 +64,11 @@ Quantity <|-- VolumetricFlowRateOfChangeQuantity
 Quantity <|-- VolumetricFlowRateQuantity
 Quantity <|-- WaveNumberQuantity
 Quantity <|-- MassQuantity
-Quantity <|-- EnergyQuantity
 Quantity <|-- ForceRateOfChangeQuantity
 Quantity <|-- PressureRateOfChangeQuantity
 Quantity <|-- TorqueRateOfChangeQuantity
-Quantity <|-- GravitationalLoadQuantity
+Quantity <|-- MomentOfAreaQuantity
+Quantity <|-- MomentOfInertiaQuantity
 Quantity <|-- HydraulicConductivityQuantity
 Quantity <|-- RotationalFrequencyRateOfChangeQuantity
 Quantity <|-- TensionQuantity
@@ -1153,6 +1154,66 @@ DegreePerMinute.ConversionFactorA = 0
 DegreePerMinute.ConversionFactorB = 3437.746770784939
 DegreePerMinute.Symbol = "°/min"
 DegreePerMinute IsUnitForQuantity AngularVelocityQuantity
+Unit:RevolutionPerSecond
+RevolutionPerSecond.ConversionFactorA = 0
+RevolutionPerSecond.ConversionFactorB = 0.15915494309189535
+RevolutionPerSecond.Symbol = "rps"
+RevolutionPerSecond IsUnitForQuantity AngularVelocityQuantity
+Unit:RevolutionPerMinute
+RevolutionPerMinute.ConversionFactorA = 0
+RevolutionPerMinute.ConversionFactorB = 9.549296585513721
+RevolutionPerMinute.Symbol = "rpm"
+RevolutionPerMinute IsUnitForQuantity AngularVelocityQuantity
+Unit:RevolutionPerHour
+RevolutionPerHour.ConversionFactorA = 0
+RevolutionPerHour.ConversionFactorB = 572.9577951308232
+RevolutionPerHour.Symbol = "rph"
+RevolutionPerHour IsUnitForQuantity AngularVelocityQuantity
+Unit:ThousandRevolutionPerSecond
+ThousandRevolutionPerSecond.ConversionFactorA = 0
+ThousandRevolutionPerSecond.ConversionFactorB = 0.00015915494309189535
+ThousandRevolutionPerSecond.Symbol = "1000xrps"
+ThousandRevolutionPerSecond IsUnitForQuantity AngularVelocityQuantity
+Unit:ThousandRevolutionPerMinute
+ThousandRevolutionPerMinute.ConversionFactorA = 0
+ThousandRevolutionPerMinute.ConversionFactorB = 0.009549296585513721
+ThousandRevolutionPerMinute.Symbol = "1000xrpm"
+ThousandRevolutionPerMinute IsUnitForQuantity AngularVelocityQuantity
+Unit:ThousandRevolutionPerHour
+ThousandRevolutionPerHour.ConversionFactorA = 0
+ThousandRevolutionPerHour.ConversionFactorB = 0.5729577951308232
+ThousandRevolutionPerHour.Symbol = "1000xrph"
+ThousandRevolutionPerHour IsUnitForQuantity AngularVelocityQuantity
+Unit:StrokePerSecond
+StrokePerSecond.ConversionFactorA = 0
+StrokePerSecond.ConversionFactorB = 0.15915494309189535
+StrokePerSecond.Symbol = "sps"
+StrokePerSecond IsUnitForQuantity AngularVelocityQuantity
+Unit:StrokePerMinute
+StrokePerMinute.ConversionFactorA = 0
+StrokePerMinute.ConversionFactorB = 9.549296585513721
+StrokePerMinute.Symbol = "spm"
+StrokePerMinute IsUnitForQuantity AngularVelocityQuantity
+Unit:StrokePerHour
+StrokePerHour.ConversionFactorA = 0
+StrokePerHour.ConversionFactorB = 572.9577951308232
+StrokePerHour.Symbol = "sph"
+StrokePerHour IsUnitForQuantity AngularVelocityQuantity
+Unit:ThousandStrokePerSecond
+ThousandStrokePerSecond.ConversionFactorA = 0
+ThousandStrokePerSecond.ConversionFactorB = 0.00015915494309189535
+ThousandStrokePerSecond.Symbol = "1000xsps"
+ThousandStrokePerSecond IsUnitForQuantity AngularVelocityQuantity
+Unit:ThousandStrokePerMinute
+ThousandStrokePerMinute.ConversionFactorA = 0
+ThousandStrokePerMinute.ConversionFactorB = 0.009549296585513721
+ThousandStrokePerMinute.Symbol = "1000xspm"
+ThousandStrokePerMinute IsUnitForQuantity AngularVelocityQuantity
+Unit:ThousandStrokePerHour
+ThousandStrokePerHour.ConversionFactorA = 0
+ThousandStrokePerHour.ConversionFactorB = 0.5729577951308232
+ThousandStrokePerHour.Symbol = "1000xsph"
+ThousandStrokePerHour IsUnitForQuantity AngularVelocityQuantity
 ```
 An example semantic graph looks like as follow:
 ```mermaid
@@ -1201,6 +1262,66 @@ graph LR
 	N0026[DegreePerMinute] -->|ConversionFactorB| N0027(("3437.746770784939")) 
 	N0026[DegreePerMinute] -->|Symbol| N0028(("°/min")) 
 	N0026[DegreePerMinute] -->|IsUnitForQuantity| N0000[AngularVelocityQuantity] 
+	N0029[RevolutionPerSecond] -->|BelongsToClass| N0005(Unit) 
+	N0029[RevolutionPerSecond] -->|ConversionFactorA| N0006(("0")) 
+	N0029[RevolutionPerSecond] -->|ConversionFactorB| N0030(("0.15915494309189535")) 
+	N0029[RevolutionPerSecond] -->|Symbol| N0031(("rps")) 
+	N0029[RevolutionPerSecond] -->|IsUnitForQuantity| N0000[AngularVelocityQuantity] 
+	N0032[RevolutionPerMinute] -->|BelongsToClass| N0005(Unit) 
+	N0032[RevolutionPerMinute] -->|ConversionFactorA| N0006(("0")) 
+	N0032[RevolutionPerMinute] -->|ConversionFactorB| N0033(("9.549296585513721")) 
+	N0032[RevolutionPerMinute] -->|Symbol| N0034(("rpm")) 
+	N0032[RevolutionPerMinute] -->|IsUnitForQuantity| N0000[AngularVelocityQuantity] 
+	N0035[RevolutionPerHour] -->|BelongsToClass| N0005(Unit) 
+	N0035[RevolutionPerHour] -->|ConversionFactorA| N0006(("0")) 
+	N0035[RevolutionPerHour] -->|ConversionFactorB| N0036(("572.9577951308232")) 
+	N0035[RevolutionPerHour] -->|Symbol| N0037(("rph")) 
+	N0035[RevolutionPerHour] -->|IsUnitForQuantity| N0000[AngularVelocityQuantity] 
+	N0038[ThousandRevolutionPerSecond] -->|BelongsToClass| N0005(Unit) 
+	N0038[ThousandRevolutionPerSecond] -->|ConversionFactorA| N0006(("0")) 
+	N0038[ThousandRevolutionPerSecond] -->|ConversionFactorB| N0039(("0.00015915494309189535")) 
+	N0038[ThousandRevolutionPerSecond] -->|Symbol| N0040(("1000xrps")) 
+	N0038[ThousandRevolutionPerSecond] -->|IsUnitForQuantity| N0000[AngularVelocityQuantity] 
+	N0041[ThousandRevolutionPerMinute] -->|BelongsToClass| N0005(Unit) 
+	N0041[ThousandRevolutionPerMinute] -->|ConversionFactorA| N0006(("0")) 
+	N0041[ThousandRevolutionPerMinute] -->|ConversionFactorB| N0042(("0.009549296585513721")) 
+	N0041[ThousandRevolutionPerMinute] -->|Symbol| N0043(("1000xrpm")) 
+	N0041[ThousandRevolutionPerMinute] -->|IsUnitForQuantity| N0000[AngularVelocityQuantity] 
+	N0044[ThousandRevolutionPerHour] -->|BelongsToClass| N0005(Unit) 
+	N0044[ThousandRevolutionPerHour] -->|ConversionFactorA| N0006(("0")) 
+	N0044[ThousandRevolutionPerHour] -->|ConversionFactorB| N0045(("0.5729577951308232")) 
+	N0044[ThousandRevolutionPerHour] -->|Symbol| N0046(("1000xrph")) 
+	N0044[ThousandRevolutionPerHour] -->|IsUnitForQuantity| N0000[AngularVelocityQuantity] 
+	N0047[StrokePerSecond] -->|BelongsToClass| N0005(Unit) 
+	N0047[StrokePerSecond] -->|ConversionFactorA| N0006(("0")) 
+	N0047[StrokePerSecond] -->|ConversionFactorB| N0030(("0.15915494309189535")) 
+	N0047[StrokePerSecond] -->|Symbol| N0048(("sps")) 
+	N0047[StrokePerSecond] -->|IsUnitForQuantity| N0000[AngularVelocityQuantity] 
+	N0049[StrokePerMinute] -->|BelongsToClass| N0005(Unit) 
+	N0049[StrokePerMinute] -->|ConversionFactorA| N0006(("0")) 
+	N0049[StrokePerMinute] -->|ConversionFactorB| N0033(("9.549296585513721")) 
+	N0049[StrokePerMinute] -->|Symbol| N0050(("spm")) 
+	N0049[StrokePerMinute] -->|IsUnitForQuantity| N0000[AngularVelocityQuantity] 
+	N0051[StrokePerHour] -->|BelongsToClass| N0005(Unit) 
+	N0051[StrokePerHour] -->|ConversionFactorA| N0006(("0")) 
+	N0051[StrokePerHour] -->|ConversionFactorB| N0036(("572.9577951308232")) 
+	N0051[StrokePerHour] -->|Symbol| N0052(("sph")) 
+	N0051[StrokePerHour] -->|IsUnitForQuantity| N0000[AngularVelocityQuantity] 
+	N0053[ThousandStrokePerSecond] -->|BelongsToClass| N0005(Unit) 
+	N0053[ThousandStrokePerSecond] -->|ConversionFactorA| N0006(("0")) 
+	N0053[ThousandStrokePerSecond] -->|ConversionFactorB| N0039(("0.00015915494309189535")) 
+	N0053[ThousandStrokePerSecond] -->|Symbol| N0054(("1000xsps")) 
+	N0053[ThousandStrokePerSecond] -->|IsUnitForQuantity| N0000[AngularVelocityQuantity] 
+	N0055[ThousandStrokePerMinute] -->|BelongsToClass| N0005(Unit) 
+	N0055[ThousandStrokePerMinute] -->|ConversionFactorA| N0006(("0")) 
+	N0055[ThousandStrokePerMinute] -->|ConversionFactorB| N0042(("0.009549296585513721")) 
+	N0055[ThousandStrokePerMinute] -->|Symbol| N0056(("1000xspm")) 
+	N0055[ThousandStrokePerMinute] -->|IsUnitForQuantity| N0000[AngularVelocityQuantity] 
+	N0057[ThousandStrokePerHour] -->|BelongsToClass| N0005(Unit) 
+	N0057[ThousandStrokePerHour] -->|ConversionFactorA| N0006(("0")) 
+	N0057[ThousandStrokePerHour] -->|ConversionFactorB| N0045(("0.5729577951308232")) 
+	N0057[ThousandStrokePerHour] -->|Symbol| N0058(("1000xsph")) 
+	N0057[ThousandStrokePerHour] -->|IsUnitForQuantity| N0000[AngularVelocityQuantity] 
 ```
 ## AreaQuantity <!-- NOUN -->
 - Display name: Area
@@ -1732,6 +1853,1390 @@ graph LR
 	N0081[RadianPerMile] -->|ConversionFactorB| N0082(("1609.3439999999998")) 
 	N0081[RadianPerMile] -->|Symbol| N0083(("rad/mi")) 
 	N0081[RadianPerMile] -->|IsUnitForQuantity| N0000[CurvatureQuantity] 
+```
+## DimensionlessQuantity <!-- NOUN -->
+- Display name: Dimensionless
+- Parent class: [Quantity](./Quantities.md#Quantity)
+- Description: 
+As its name indicates, a dimensionless quantity has no dimension:
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:DimensionlessQuantity
+Unit:Dimensionless
+Dimensionless.ConversionFactorA = 0
+Dimensionless.ConversionFactorB = 1
+Dimensionless IsUnitForQuantity DimensionlessQuantity
+DimensionlessQuantity HasSIUnit Dimensionless
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[DimensionlessQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0002[Dimensionless] -->|BelongsToClass| N0003(Unit) 
+	N0002[Dimensionless] -->|ConversionFactorA| N0004(("0")) 
+	N0002[Dimensionless] -->|ConversionFactorB| N0005(("1")) 
+	N0002[Dimensionless] -->|IsUnitForQuantity| N0000[DimensionlessQuantity] 
+	N0000[DimensionlessQuantity] -->|HasSIUnit| N0002[Dimensionless] 
+```
+## DynamicViscosityQuantity <!-- NOUN -->
+- Display name: DynamicViscosity
+- Parent class: [Quantity](./Quantities.md#Quantity)
+- Specialization:
+  - L = -1
+  - M = 1
+  - T = -1
+- Description: 
+Dynamic viscosity is a measure of a fluid's resistance to shear or flow when a force is applied. It quantifies how thick or thin the fluid is.
+The dimension of dynamic viscosity is:
+$$[ML^{-1}T^{-1}]$$.
+The SI unit for **dynamic viscosity** is: pascal second with the associated unit label $Pa \cdot s$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:DynamicViscosityQuantity
+DynamicViscosityQuantity.L = -1
+DynamicViscosityQuantity.M = 1
+DynamicViscosityQuantity.T = -1
+Unit:PascalSecond
+PascalSecond.ConversionFactorA = 0
+PascalSecond.ConversionFactorB = 1
+PascalSecond.Symbol = "Pa•s"
+PascalSecond IsUnitForQuantity DynamicViscosityQuantity
+DynamicViscosityQuantity HasSIUnit PascalSecond
+Unit:MillipascalSecond
+MillipascalSecond.ConversionFactorA = 0
+MillipascalSecond.ConversionFactorB = 1000
+MillipascalSecond.Symbol = "mPa•s"
+MillipascalSecond IsUnitForQuantity DynamicViscosityQuantity
+Unit:MicropascalSecond
+MicropascalSecond.ConversionFactorA = 0
+MicropascalSecond.ConversionFactorB = 1000000
+MicropascalSecond.Symbol = "µPa•s"
+MicropascalSecond IsUnitForQuantity DynamicViscosityQuantity
+Unit:Poise
+Poise.ConversionFactorA = 0
+Poise.ConversionFactorB = 10
+Poise.Symbol = "P"
+Poise IsUnitForQuantity DynamicViscosityQuantity
+Unit:Centipoise
+Centipoise.ConversionFactorA = 0
+Centipoise.ConversionFactorB = 1000
+Centipoise.Symbol = "cP"
+Centipoise IsUnitForQuantity DynamicViscosityQuantity
+Unit:Millipoise
+Millipoise.ConversionFactorA = 0
+Millipoise.ConversionFactorB = 10000
+Millipoise.Symbol = "mP"
+Millipoise IsUnitForQuantity DynamicViscosityQuantity
+Unit:Micropoise
+Micropoise.ConversionFactorA = 0
+Micropoise.ConversionFactorB = 10000000
+Micropoise.Symbol = "µP"
+Micropoise IsUnitForQuantity DynamicViscosityQuantity
+Unit:PoundSecondPerSquareFoot
+PoundSecondPerSquareFoot.ConversionFactorA = 0
+PoundSecondPerSquareFoot.ConversionFactorB = 0.020885434233150126
+PoundSecondPerSquareFoot.Symbol = "lb•s/ft²"
+PoundSecondPerSquareFoot IsUnitForQuantity DynamicViscosityQuantity
+Unit:PoundSecondPer100SquareFoot
+PoundSecondPer100SquareFoot.ConversionFactorA = 0
+PoundSecondPer100SquareFoot.ConversionFactorB = 2.0885434233150124
+PoundSecondPer100SquareFoot.Symbol = "lb•s/100ft²"
+PoundSecondPer100SquareFoot IsUnitForQuantity DynamicViscosityQuantity
+Unit:PoundSecondPerSquareInch
+PoundSecondPerSquareInch.ConversionFactorA = 0
+PoundSecondPerSquareInch.ConversionFactorB = 0.0001450377377302092
+PoundSecondPerSquareInch.Symbol = "lb•s/in²"
+PoundSecondPerSquareInch IsUnitForQuantity DynamicViscosityQuantity
+Unit:DyneSecondPerSquareCentimetre
+DyneSecondPerSquareCentimetre.ConversionFactorA = 0
+DyneSecondPerSquareCentimetre.ConversionFactorB = 10
+DyneSecondPerSquareCentimetre.Symbol = "dyne•s/cm²"
+DyneSecondPerSquareCentimetre IsUnitForQuantity DynamicViscosityQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[DynamicViscosityQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[DynamicViscosityQuantity] -->|L| N0002(("-1")) 
+	N0000[DynamicViscosityQuantity] -->|M| N0003(("1")) 
+	N0000[DynamicViscosityQuantity] -->|T| N0002(("-1")) 
+	N0004[PascalSecond] -->|BelongsToClass| N0005(Unit) 
+	N0004[PascalSecond] -->|ConversionFactorA| N0006(("0")) 
+	N0004[PascalSecond] -->|ConversionFactorB| N0003(("1")) 
+	N0004[PascalSecond] -->|Symbol| N0007(("Pa•s")) 
+	N0004[PascalSecond] -->|IsUnitForQuantity| N0000[DynamicViscosityQuantity] 
+	N0000[DynamicViscosityQuantity] -->|HasSIUnit| N0004[PascalSecond] 
+	N0008[MillipascalSecond] -->|BelongsToClass| N0005(Unit) 
+	N0008[MillipascalSecond] -->|ConversionFactorA| N0006(("0")) 
+	N0008[MillipascalSecond] -->|ConversionFactorB| N0009(("1000")) 
+	N0008[MillipascalSecond] -->|Symbol| N0010(("mPa•s")) 
+	N0008[MillipascalSecond] -->|IsUnitForQuantity| N0000[DynamicViscosityQuantity] 
+	N0011[MicropascalSecond] -->|BelongsToClass| N0005(Unit) 
+	N0011[MicropascalSecond] -->|ConversionFactorA| N0006(("0")) 
+	N0011[MicropascalSecond] -->|ConversionFactorB| N0012(("1000000")) 
+	N0011[MicropascalSecond] -->|Symbol| N0013(("µPa•s")) 
+	N0011[MicropascalSecond] -->|IsUnitForQuantity| N0000[DynamicViscosityQuantity] 
+	N0014[Poise] -->|BelongsToClass| N0005(Unit) 
+	N0014[Poise] -->|ConversionFactorA| N0006(("0")) 
+	N0014[Poise] -->|ConversionFactorB| N0015(("10")) 
+	N0014[Poise] -->|Symbol| N0016(("P")) 
+	N0014[Poise] -->|IsUnitForQuantity| N0000[DynamicViscosityQuantity] 
+	N0017[Centipoise] -->|BelongsToClass| N0005(Unit) 
+	N0017[Centipoise] -->|ConversionFactorA| N0006(("0")) 
+	N0017[Centipoise] -->|ConversionFactorB| N0009(("1000")) 
+	N0017[Centipoise] -->|Symbol| N0018(("cP")) 
+	N0017[Centipoise] -->|IsUnitForQuantity| N0000[DynamicViscosityQuantity] 
+	N0019[Millipoise] -->|BelongsToClass| N0005(Unit) 
+	N0019[Millipoise] -->|ConversionFactorA| N0006(("0")) 
+	N0019[Millipoise] -->|ConversionFactorB| N0020(("10000")) 
+	N0019[Millipoise] -->|Symbol| N0021(("mP")) 
+	N0019[Millipoise] -->|IsUnitForQuantity| N0000[DynamicViscosityQuantity] 
+	N0022[Micropoise] -->|BelongsToClass| N0005(Unit) 
+	N0022[Micropoise] -->|ConversionFactorA| N0006(("0")) 
+	N0022[Micropoise] -->|ConversionFactorB| N0023(("10000000")) 
+	N0022[Micropoise] -->|Symbol| N0024(("µP")) 
+	N0022[Micropoise] -->|IsUnitForQuantity| N0000[DynamicViscosityQuantity] 
+	N0025[PoundSecondPerSquareFoot] -->|BelongsToClass| N0005(Unit) 
+	N0025[PoundSecondPerSquareFoot] -->|ConversionFactorA| N0006(("0")) 
+	N0025[PoundSecondPerSquareFoot] -->|ConversionFactorB| N0026(("0.020885434233150126")) 
+	N0025[PoundSecondPerSquareFoot] -->|Symbol| N0027(("lb•s/ft²")) 
+	N0025[PoundSecondPerSquareFoot] -->|IsUnitForQuantity| N0000[DynamicViscosityQuantity] 
+	N0028[PoundSecondPer100SquareFoot] -->|BelongsToClass| N0005(Unit) 
+	N0028[PoundSecondPer100SquareFoot] -->|ConversionFactorA| N0006(("0")) 
+	N0028[PoundSecondPer100SquareFoot] -->|ConversionFactorB| N0029(("2.0885434233150124")) 
+	N0028[PoundSecondPer100SquareFoot] -->|Symbol| N0030(("lb•s/100ft²")) 
+	N0028[PoundSecondPer100SquareFoot] -->|IsUnitForQuantity| N0000[DynamicViscosityQuantity] 
+	N0031[PoundSecondPerSquareInch] -->|BelongsToClass| N0005(Unit) 
+	N0031[PoundSecondPerSquareInch] -->|ConversionFactorA| N0006(("0")) 
+	N0031[PoundSecondPerSquareInch] -->|ConversionFactorB| N0032(("0.0001450377377302092")) 
+	N0031[PoundSecondPerSquareInch] -->|Symbol| N0033(("lb•s/in²")) 
+	N0031[PoundSecondPerSquareInch] -->|IsUnitForQuantity| N0000[DynamicViscosityQuantity] 
+	N0034[DyneSecondPerSquareCentimetre] -->|BelongsToClass| N0005(Unit) 
+	N0034[DyneSecondPerSquareCentimetre] -->|ConversionFactorA| N0006(("0")) 
+	N0034[DyneSecondPerSquareCentimetre] -->|ConversionFactorB| N0015(("10")) 
+	N0034[DyneSecondPerSquareCentimetre] -->|Symbol| N0035(("dyne•s/cm²")) 
+	N0034[DyneSecondPerSquareCentimetre] -->|IsUnitForQuantity| N0000[DynamicViscosityQuantity] 
+```
+## ElectricCapacitanceQuantity <!-- NOUN -->
+- Display name: ElectricCapacitance
+- Parent class: [Quantity](./Quantities.md#Quantity)
+- Specialization:
+  - L = -2
+  - M = -1
+  - T = 4
+  - I = 2
+- Description: 
+lectric capacitance is the ability of a capacitor or a component to store electrical charge per unit voltage applied across it.
+The dimension of electric capacitance is:
+$$[T^{4}I^{2}M^{-1}L^{-2}]$$.
+The SI unit for **electric capacitance** is: farad with the associated unit label $F$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:ElectricCapacitanceQuantity
+ElectricCapacitanceQuantity.L = -2
+ElectricCapacitanceQuantity.M = -1
+ElectricCapacitanceQuantity.T = 4
+ElectricCapacitanceQuantity.I = 2
+Unit:Farad
+Farad.ConversionFactorA = 0
+Farad.ConversionFactorB = 1
+Farad.Symbol = "F"
+Farad IsUnitForQuantity ElectricCapacitanceQuantity
+ElectricCapacitanceQuantity HasSIUnit Farad
+Unit:CoulombPerVolt
+CoulombPerVolt.ConversionFactorA = 0
+CoulombPerVolt.ConversionFactorB = 1
+CoulombPerVolt.Symbol = "C/V"
+CoulombPerVolt IsUnitForQuantity ElectricCapacitanceQuantity
+Unit:Millifarad
+Millifarad.ConversionFactorA = 0
+Millifarad.ConversionFactorB = 1000
+Millifarad.Symbol = "mF"
+Millifarad IsUnitForQuantity ElectricCapacitanceQuantity
+Unit:Microfarad
+Microfarad.ConversionFactorA = 0
+Microfarad.ConversionFactorB = 1000000
+Microfarad.Symbol = "μF"
+Microfarad IsUnitForQuantity ElectricCapacitanceQuantity
+Unit:Nanofarad
+Nanofarad.ConversionFactorA = 0
+Nanofarad.ConversionFactorB = 999999999.9999999
+Nanofarad.Symbol = "nF"
+Nanofarad IsUnitForQuantity ElectricCapacitanceQuantity
+Unit:Picofarad
+Picofarad.ConversionFactorA = 0
+Picofarad.ConversionFactorB = 1000000000000
+Picofarad.Symbol = "pF"
+Picofarad IsUnitForQuantity ElectricCapacitanceQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ElectricCapacitanceQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[ElectricCapacitanceQuantity] -->|L| N0002(("-2")) 
+	N0000[ElectricCapacitanceQuantity] -->|M| N0003(("-1")) 
+	N0000[ElectricCapacitanceQuantity] -->|T| N0004(("4")) 
+	N0000[ElectricCapacitanceQuantity] -->|I| N0005(("2")) 
+	N0006[Farad] -->|BelongsToClass| N0007(Unit) 
+	N0006[Farad] -->|ConversionFactorA| N0008(("0")) 
+	N0006[Farad] -->|ConversionFactorB| N0009(("1")) 
+	N0006[Farad] -->|Symbol| N0010(("F")) 
+	N0006[Farad] -->|IsUnitForQuantity| N0000[ElectricCapacitanceQuantity] 
+	N0000[ElectricCapacitanceQuantity] -->|HasSIUnit| N0006[Farad] 
+	N0011[CoulombPerVolt] -->|BelongsToClass| N0007(Unit) 
+	N0011[CoulombPerVolt] -->|ConversionFactorA| N0008(("0")) 
+	N0011[CoulombPerVolt] -->|ConversionFactorB| N0009(("1")) 
+	N0011[CoulombPerVolt] -->|Symbol| N0012(("C/V")) 
+	N0011[CoulombPerVolt] -->|IsUnitForQuantity| N0000[ElectricCapacitanceQuantity] 
+	N0013[Millifarad] -->|BelongsToClass| N0007(Unit) 
+	N0013[Millifarad] -->|ConversionFactorA| N0008(("0")) 
+	N0013[Millifarad] -->|ConversionFactorB| N0014(("1000")) 
+	N0013[Millifarad] -->|Symbol| N0015(("mF")) 
+	N0013[Millifarad] -->|IsUnitForQuantity| N0000[ElectricCapacitanceQuantity] 
+	N0016[Microfarad] -->|BelongsToClass| N0007(Unit) 
+	N0016[Microfarad] -->|ConversionFactorA| N0008(("0")) 
+	N0016[Microfarad] -->|ConversionFactorB| N0017(("1000000")) 
+	N0016[Microfarad] -->|Symbol| N0018(("μF")) 
+	N0016[Microfarad] -->|IsUnitForQuantity| N0000[ElectricCapacitanceQuantity] 
+	N0019[Nanofarad] -->|BelongsToClass| N0007(Unit) 
+	N0019[Nanofarad] -->|ConversionFactorA| N0008(("0")) 
+	N0019[Nanofarad] -->|ConversionFactorB| N0020(("999999999.9999999")) 
+	N0019[Nanofarad] -->|Symbol| N0021(("nF")) 
+	N0019[Nanofarad] -->|IsUnitForQuantity| N0000[ElectricCapacitanceQuantity] 
+	N0022[Picofarad] -->|BelongsToClass| N0007(Unit) 
+	N0022[Picofarad] -->|ConversionFactorA| N0008(("0")) 
+	N0022[Picofarad] -->|ConversionFactorB| N0023(("1000000000000")) 
+	N0022[Picofarad] -->|Symbol| N0024(("pF")) 
+	N0022[Picofarad] -->|IsUnitForQuantity| N0000[ElectricCapacitanceQuantity] 
+```
+## ElectricCurrentQuantity <!-- NOUN -->
+- Display name: ElectricCurrent
+- Parent class: [Quantity](./Quantities.md#Quantity)
+- Specialization:
+  - I = 1
+- Description: 
+Electric current is the flow of electric charge through a conductor or circuit.
+The dimension of electric current is:
+$$[I]$$.
+The SI unit for **electric current** is: ampere with the associated unit label $A$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:ElectricCurrentQuantity
+ElectricCurrentQuantity.I = 1
+Unit:Ampere
+Ampere.ConversionFactorA = 0
+Ampere.ConversionFactorB = 1
+Ampere.Symbol = "A"
+Ampere IsUnitForQuantity ElectricCurrentQuantity
+ElectricCurrentQuantity HasSIUnit Ampere
+Unit:CoulombPerSecond
+CoulombPerSecond.ConversionFactorA = 0
+CoulombPerSecond.ConversionFactorB = 1
+CoulombPerSecond.Symbol = "C/s"
+CoulombPerSecond IsUnitForQuantity ElectricCurrentQuantity
+Unit:SiemensVolt
+SiemensVolt.ConversionFactorA = 0
+SiemensVolt.ConversionFactorB = 1
+SiemensVolt.Symbol = "S•V"
+SiemensVolt IsUnitForQuantity ElectricCurrentQuantity
+Unit:VoltPerOhm
+VoltPerOhm.ConversionFactorA = 0
+VoltPerOhm.ConversionFactorB = 1
+VoltPerOhm.Symbol = "V/Ω"
+VoltPerOhm IsUnitForQuantity ElectricCurrentQuantity
+Unit:WattPerVolt
+WattPerVolt.ConversionFactorA = 0
+WattPerVolt.ConversionFactorB = 1
+WattPerVolt.Symbol = "W/V"
+WattPerVolt IsUnitForQuantity ElectricCurrentQuantity
+Unit:WeberPerHenry
+WeberPerHenry.ConversionFactorA = 0
+WeberPerHenry.ConversionFactorB = 1
+WeberPerHenry.Symbol = "Wb/H"
+WeberPerHenry IsUnitForQuantity ElectricCurrentQuantity
+Unit:Deciampere
+Deciampere.ConversionFactorA = 0
+Deciampere.ConversionFactorB = 10
+Deciampere.Symbol = "dA"
+Deciampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Centiampere
+Centiampere.ConversionFactorA = 0
+Centiampere.ConversionFactorB = 100
+Centiampere.Symbol = "cA"
+Centiampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Milliampere
+Milliampere.ConversionFactorA = 0
+Milliampere.ConversionFactorB = 1000
+Milliampere.Symbol = "mA"
+Milliampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Microampere
+Microampere.ConversionFactorA = 0
+Microampere.ConversionFactorB = 1000000
+Microampere.Symbol = "µA"
+Microampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Nanoampere
+Nanoampere.ConversionFactorA = 0
+Nanoampere.ConversionFactorB = 999999999.9999999
+Nanoampere.Symbol = "nA"
+Nanoampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Picoampere
+Picoampere.ConversionFactorA = 0
+Picoampere.ConversionFactorB = 1000000000000
+Picoampere.Symbol = "pA"
+Picoampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Biot
+Biot.ConversionFactorA = 0
+Biot.ConversionFactorB = 0.1
+Biot.Symbol = "Bi"
+Biot IsUnitForQuantity ElectricCurrentQuantity
+Unit:Abampere
+Abampere.ConversionFactorA = 0
+Abampere.ConversionFactorB = 0.1
+Abampere.Symbol = "abA"
+Abampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Kiloampere
+Kiloampere.ConversionFactorA = 0
+Kiloampere.ConversionFactorB = 0.001
+Kiloampere.Symbol = "kA"
+Kiloampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Megaampere
+Megaampere.ConversionFactorA = 0
+Megaampere.ConversionFactorB = 1E-06
+Megaampere.Symbol = "MA"
+Megaampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Gigaampere
+Gigaampere.ConversionFactorA = 0
+Gigaampere.ConversionFactorB = 1E-09
+Gigaampere.Symbol = "GA"
+Gigaampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Teraampere
+Teraampere.ConversionFactorA = 0
+Teraampere.ConversionFactorB = 1E-12
+Teraampere.Symbol = "TA"
+Teraampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Statampere
+Statampere.ConversionFactorA = 0
+Statampere.ConversionFactorB = 2997924580
+Statampere.Symbol = "stA"
+Statampere IsUnitForQuantity ElectricCurrentQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ElectricCurrentQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[ElectricCurrentQuantity] -->|I| N0002(("1")) 
+	N0003[Ampere] -->|BelongsToClass| N0004(Unit) 
+	N0003[Ampere] -->|ConversionFactorA| N0005(("0")) 
+	N0003[Ampere] -->|ConversionFactorB| N0002(("1")) 
+	N0003[Ampere] -->|Symbol| N0006(("A")) 
+	N0003[Ampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
+	N0000[ElectricCurrentQuantity] -->|HasSIUnit| N0003[Ampere] 
+	N0007[CoulombPerSecond] -->|BelongsToClass| N0004(Unit) 
+	N0007[CoulombPerSecond] -->|ConversionFactorA| N0005(("0")) 
+	N0007[CoulombPerSecond] -->|ConversionFactorB| N0002(("1")) 
+	N0007[CoulombPerSecond] -->|Symbol| N0008(("C/s")) 
+	N0007[CoulombPerSecond] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
+	N0009[SiemensVolt] -->|BelongsToClass| N0004(Unit) 
+	N0009[SiemensVolt] -->|ConversionFactorA| N0005(("0")) 
+	N0009[SiemensVolt] -->|ConversionFactorB| N0002(("1")) 
+	N0009[SiemensVolt] -->|Symbol| N0010(("S•V")) 
+	N0009[SiemensVolt] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
+	N0011[VoltPerOhm] -->|BelongsToClass| N0004(Unit) 
+	N0011[VoltPerOhm] -->|ConversionFactorA| N0005(("0")) 
+	N0011[VoltPerOhm] -->|ConversionFactorB| N0002(("1")) 
+	N0011[VoltPerOhm] -->|Symbol| N0012(("V/Ω")) 
+	N0011[VoltPerOhm] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
+	N0013[WattPerVolt] -->|BelongsToClass| N0004(Unit) 
+	N0013[WattPerVolt] -->|ConversionFactorA| N0005(("0")) 
+	N0013[WattPerVolt] -->|ConversionFactorB| N0002(("1")) 
+	N0013[WattPerVolt] -->|Symbol| N0014(("W/V")) 
+	N0013[WattPerVolt] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
+	N0015[WeberPerHenry] -->|BelongsToClass| N0004(Unit) 
+	N0015[WeberPerHenry] -->|ConversionFactorA| N0005(("0")) 
+	N0015[WeberPerHenry] -->|ConversionFactorB| N0002(("1")) 
+	N0015[WeberPerHenry] -->|Symbol| N0016(("Wb/H")) 
+	N0015[WeberPerHenry] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
+	N0017[Deciampere] -->|BelongsToClass| N0004(Unit) 
+	N0017[Deciampere] -->|ConversionFactorA| N0005(("0")) 
+	N0017[Deciampere] -->|ConversionFactorB| N0018(("10")) 
+	N0017[Deciampere] -->|Symbol| N0019(("dA")) 
+	N0017[Deciampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
+	N0020[Centiampere] -->|BelongsToClass| N0004(Unit) 
+	N0020[Centiampere] -->|ConversionFactorA| N0005(("0")) 
+	N0020[Centiampere] -->|ConversionFactorB| N0021(("100")) 
+	N0020[Centiampere] -->|Symbol| N0022(("cA")) 
+	N0020[Centiampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
+	N0023[Milliampere] -->|BelongsToClass| N0004(Unit) 
+	N0023[Milliampere] -->|ConversionFactorA| N0005(("0")) 
+	N0023[Milliampere] -->|ConversionFactorB| N0024(("1000")) 
+	N0023[Milliampere] -->|Symbol| N0025(("mA")) 
+	N0023[Milliampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
+	N0026[Microampere] -->|BelongsToClass| N0004(Unit) 
+	N0026[Microampere] -->|ConversionFactorA| N0005(("0")) 
+	N0026[Microampere] -->|ConversionFactorB| N0027(("1000000")) 
+	N0026[Microampere] -->|Symbol| N0028(("µA")) 
+	N0026[Microampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
+	N0029[Nanoampere] -->|BelongsToClass| N0004(Unit) 
+	N0029[Nanoampere] -->|ConversionFactorA| N0005(("0")) 
+	N0029[Nanoampere] -->|ConversionFactorB| N0030(("999999999.9999999")) 
+	N0029[Nanoampere] -->|Symbol| N0031(("nA")) 
+	N0029[Nanoampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
+	N0032[Picoampere] -->|BelongsToClass| N0004(Unit) 
+	N0032[Picoampere] -->|ConversionFactorA| N0005(("0")) 
+	N0032[Picoampere] -->|ConversionFactorB| N0033(("1000000000000")) 
+	N0032[Picoampere] -->|Symbol| N0034(("pA")) 
+	N0032[Picoampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
+	N0035[Biot] -->|BelongsToClass| N0004(Unit) 
+	N0035[Biot] -->|ConversionFactorA| N0005(("0")) 
+	N0035[Biot] -->|ConversionFactorB| N0036(("0.1")) 
+	N0035[Biot] -->|Symbol| N0037(("Bi")) 
+	N0035[Biot] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
+	N0038[Abampere] -->|BelongsToClass| N0004(Unit) 
+	N0038[Abampere] -->|ConversionFactorA| N0005(("0")) 
+	N0038[Abampere] -->|ConversionFactorB| N0036(("0.1")) 
+	N0038[Abampere] -->|Symbol| N0039(("abA")) 
+	N0038[Abampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
+	N0040[Kiloampere] -->|BelongsToClass| N0004(Unit) 
+	N0040[Kiloampere] -->|ConversionFactorA| N0005(("0")) 
+	N0040[Kiloampere] -->|ConversionFactorB| N0041(("0.001")) 
+	N0040[Kiloampere] -->|Symbol| N0042(("kA")) 
+	N0040[Kiloampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
+	N0043[Megaampere] -->|BelongsToClass| N0004(Unit) 
+	N0043[Megaampere] -->|ConversionFactorA| N0005(("0")) 
+	N0043[Megaampere] -->|ConversionFactorB| N0044(("1E-06")) 
+	N0043[Megaampere] -->|Symbol| N0045(("MA")) 
+	N0043[Megaampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
+	N0046[Gigaampere] -->|BelongsToClass| N0004(Unit) 
+	N0046[Gigaampere] -->|ConversionFactorA| N0005(("0")) 
+	N0046[Gigaampere] -->|ConversionFactorB| N0047(("1E-09")) 
+	N0046[Gigaampere] -->|Symbol| N0048(("GA")) 
+	N0046[Gigaampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
+	N0049[Teraampere] -->|BelongsToClass| N0004(Unit) 
+	N0049[Teraampere] -->|ConversionFactorA| N0005(("0")) 
+	N0049[Teraampere] -->|ConversionFactorB| N0050(("1E-12")) 
+	N0049[Teraampere] -->|Symbol| N0051(("TA")) 
+	N0049[Teraampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
+	N0052[Statampere] -->|BelongsToClass| N0004(Unit) 
+	N0052[Statampere] -->|ConversionFactorA| N0005(("0")) 
+	N0052[Statampere] -->|ConversionFactorB| N0053(("2997924580")) 
+	N0052[Statampere] -->|Symbol| N0054(("stA")) 
+	N0052[Statampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
+```
+## ElectricResistivityQuantity <!-- NOUN -->
+- Display name: ElectricResistivity
+- Parent class: [Quantity](./Quantities.md#Quantity)
+- Specialization:
+  - L = 3
+  - M = 1
+  - T = -3
+  - I = -2
+- Description: 
+Electric resistivity is a material's inherent property that measures how strongly it resists the flow of electric current.
+The dimension of resistivity is:
+$$[L^{3}MI^{-2}T^{-3}]$$.
+The SI unit for **electric resistivity** is: ohm metre with the associated unit label $\Omega \cdot m$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:ElectricResistivityQuantity
+ElectricResistivityQuantity.L = 3
+ElectricResistivityQuantity.M = 1
+ElectricResistivityQuantity.T = -3
+ElectricResistivityQuantity.I = -2
+Unit:OhmMetre
+OhmMetre.ConversionFactorA = 0
+OhmMetre.ConversionFactorB = 1
+OhmMetre.Symbol = "Ω•m"
+OhmMetre IsUnitForQuantity ElectricResistivityQuantity
+ElectricResistivityQuantity HasSIUnit OhmMetre
+Unit:KiloOhmMetre
+KiloOhmMetre.ConversionFactorA = 0
+KiloOhmMetre.ConversionFactorB = 0.001
+KiloOhmMetre.Symbol = "kΩ•m"
+KiloOhmMetre IsUnitForQuantity ElectricResistivityQuantity
+Unit:MegaOhmMetre
+MegaOhmMetre.ConversionFactorA = 0
+MegaOhmMetre.ConversionFactorB = 1E-06
+MegaOhmMetre.Symbol = "MΩ•m"
+MegaOhmMetre IsUnitForQuantity ElectricResistivityQuantity
+Unit:GigaOhmMetre
+GigaOhmMetre.ConversionFactorA = 0
+GigaOhmMetre.ConversionFactorB = 1E-09
+GigaOhmMetre.Symbol = "GΩ•m"
+GigaOhmMetre IsUnitForQuantity ElectricResistivityQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ElectricResistivityQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[ElectricResistivityQuantity] -->|L| N0002(("3")) 
+	N0000[ElectricResistivityQuantity] -->|M| N0003(("1")) 
+	N0000[ElectricResistivityQuantity] -->|T| N0004(("-3")) 
+	N0000[ElectricResistivityQuantity] -->|I| N0005(("-2")) 
+	N0006[OhmMetre] -->|BelongsToClass| N0007(Unit) 
+	N0006[OhmMetre] -->|ConversionFactorA| N0008(("0")) 
+	N0006[OhmMetre] -->|ConversionFactorB| N0003(("1")) 
+	N0006[OhmMetre] -->|Symbol| N0009(("Ω•m")) 
+	N0006[OhmMetre] -->|IsUnitForQuantity| N0000[ElectricResistivityQuantity] 
+	N0000[ElectricResistivityQuantity] -->|HasSIUnit| N0006[OhmMetre] 
+	N0010[KiloOhmMetre] -->|BelongsToClass| N0007(Unit) 
+	N0010[KiloOhmMetre] -->|ConversionFactorA| N0008(("0")) 
+	N0010[KiloOhmMetre] -->|ConversionFactorB| N0011(("0.001")) 
+	N0010[KiloOhmMetre] -->|Symbol| N0012(("kΩ•m")) 
+	N0010[KiloOhmMetre] -->|IsUnitForQuantity| N0000[ElectricResistivityQuantity] 
+	N0013[MegaOhmMetre] -->|BelongsToClass| N0007(Unit) 
+	N0013[MegaOhmMetre] -->|ConversionFactorA| N0008(("0")) 
+	N0013[MegaOhmMetre] -->|ConversionFactorB| N0014(("1E-06")) 
+	N0013[MegaOhmMetre] -->|Symbol| N0015(("MΩ•m")) 
+	N0013[MegaOhmMetre] -->|IsUnitForQuantity| N0000[ElectricResistivityQuantity] 
+	N0016[GigaOhmMetre] -->|BelongsToClass| N0007(Unit) 
+	N0016[GigaOhmMetre] -->|ConversionFactorA| N0008(("0")) 
+	N0016[GigaOhmMetre] -->|ConversionFactorB| N0017(("1E-09")) 
+	N0016[GigaOhmMetre] -->|Symbol| N0018(("GΩ•m")) 
+	N0016[GigaOhmMetre] -->|IsUnitForQuantity| N0000[ElectricResistivityQuantity] 
+```
+## ElongationGradientPerLengthQuantity <!-- NOUN -->
+- Display name: ElongationGradientPerLength
+- Parent class: [Quantity](./Quantities.md#Quantity)
+- Description: 
+An elongation gradient per length is the first derivative of an elongation compared to a distance: $\frac{d\epsilon}{ds}$, where $\epsilon$ is an elongation and $s$ is a distance.
+It is dimensionless.
+The SI unit for **elongation gradient per length** is: metre per metre with the associated unit label $\frac{m}{m}$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:ElongationGradientPerLengthQuantity
+Unit:MetrePerMetre
+MetrePerMetre.ConversionFactorA = 0
+MetrePerMetre.ConversionFactorB = 1
+MetrePerMetre.Symbol = "m/m"
+MetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
+ElongationGradientPerLengthQuantity HasSIUnit MetrePerMetre
+Unit:DecimetrePerMetre
+DecimetrePerMetre.ConversionFactorA = 0
+DecimetrePerMetre.ConversionFactorB = 10
+DecimetrePerMetre.Symbol = "dm/m"
+DecimetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:CentimetrePerMetre
+CentimetrePerMetre.ConversionFactorA = 0
+CentimetrePerMetre.ConversionFactorB = 100
+CentimetrePerMetre.Symbol = "cm/m"
+CentimetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:MillimetrePerMetre
+MillimetrePerMetre.ConversionFactorA = 0
+MillimetrePerMetre.ConversionFactorB = 1000
+MillimetrePerMetre.Symbol = "mm/m"
+MillimetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:MicrometrePerMetre
+MicrometrePerMetre.ConversionFactorA = 0
+MicrometrePerMetre.ConversionFactorB = 1000000
+MicrometrePerMetre.Symbol = "µm/m"
+MicrometrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:MetrePerKilometre
+MetrePerKilometre.ConversionFactorA = 0
+MetrePerKilometre.ConversionFactorB = 1000
+MetrePerKilometre.Symbol = "m/km"
+MetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:DecimetrePerKilometre
+DecimetrePerKilometre.ConversionFactorA = 0
+DecimetrePerKilometre.ConversionFactorB = 10000
+DecimetrePerKilometre.Symbol = "dm/km"
+DecimetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:CentimetrePerKilometre
+CentimetrePerKilometre.ConversionFactorA = 0
+CentimetrePerKilometre.ConversionFactorB = 100000
+CentimetrePerKilometre.Symbol = "cm/km"
+CentimetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:MillimetrePerKilometre
+MillimetrePerKilometre.ConversionFactorA = 0
+MillimetrePerKilometre.ConversionFactorB = 1000000
+MillimetrePerKilometre.Symbol = "mm/km"
+MillimetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:MicrometrePerKilometre
+MicrometrePerKilometre.ConversionFactorA = 0
+MicrometrePerKilometre.ConversionFactorB = 1000000000
+MicrometrePerKilometre.Symbol = "µm/km"
+MicrometrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:InchPerFoot
+InchPerFoot.ConversionFactorA = 0
+InchPerFoot.ConversionFactorB = 11.999999999999998
+InchPerFoot.Symbol = "in/ft"
+InchPerFoot IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:InchPerYard
+InchPerYard.ConversionFactorA = 0
+InchPerYard.ConversionFactorB = 36
+InchPerYard.Symbol = "in/yd"
+InchPerYard IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:InchPerMile
+InchPerMile.ConversionFactorA = 0
+InchPerMile.ConversionFactorB = 63359.99999999999
+InchPerMile.Symbol = "in/mi"
+InchPerMile IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:FootPerFoot
+FootPerFoot.ConversionFactorA = 0
+FootPerFoot.ConversionFactorB = 1
+FootPerFoot.Symbol = "ft/ft"
+FootPerFoot IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:FootPerYard
+FootPerYard.ConversionFactorA = 0
+FootPerYard.ConversionFactorB = 3
+FootPerYard.Symbol = "ft/yd"
+FootPerYard IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:FootPerMile
+FootPerMile.ConversionFactorA = 0
+FootPerMile.ConversionFactorB = 5280
+FootPerMile.Symbol = "ft/mi"
+FootPerMile IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:YardPerFoot
+YardPerFoot.ConversionFactorA = 0
+YardPerFoot.ConversionFactorB = 0.3333333333333333
+YardPerFoot.Symbol = "yd/ft"
+YardPerFoot IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:YardPerYard
+YardPerYard.ConversionFactorA = 0
+YardPerYard.ConversionFactorB = 1
+YardPerYard.Symbol = "yd/yd"
+YardPerYard IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:YardPerMile
+YardPerMile.ConversionFactorA = 0
+YardPerMile.ConversionFactorB = 1760
+YardPerMile.Symbol = "yd/mi"
+YardPerMile IsUnitForQuantity ElongationGradientPerLengthQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ElongationGradientPerLengthQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0002[MetrePerMetre] -->|BelongsToClass| N0003(Unit) 
+	N0002[MetrePerMetre] -->|ConversionFactorA| N0004(("0")) 
+	N0002[MetrePerMetre] -->|ConversionFactorB| N0005(("1")) 
+	N0002[MetrePerMetre] -->|Symbol| N0006(("m/m")) 
+	N0002[MetrePerMetre] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
+	N0000[ElongationGradientPerLengthQuantity] -->|HasSIUnit| N0002[MetrePerMetre] 
+	N0007[DecimetrePerMetre] -->|BelongsToClass| N0003(Unit) 
+	N0007[DecimetrePerMetre] -->|ConversionFactorA| N0004(("0")) 
+	N0007[DecimetrePerMetre] -->|ConversionFactorB| N0008(("10")) 
+	N0007[DecimetrePerMetre] -->|Symbol| N0009(("dm/m")) 
+	N0007[DecimetrePerMetre] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
+	N0010[CentimetrePerMetre] -->|BelongsToClass| N0003(Unit) 
+	N0010[CentimetrePerMetre] -->|ConversionFactorA| N0004(("0")) 
+	N0010[CentimetrePerMetre] -->|ConversionFactorB| N0011(("100")) 
+	N0010[CentimetrePerMetre] -->|Symbol| N0012(("cm/m")) 
+	N0010[CentimetrePerMetre] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
+	N0013[MillimetrePerMetre] -->|BelongsToClass| N0003(Unit) 
+	N0013[MillimetrePerMetre] -->|ConversionFactorA| N0004(("0")) 
+	N0013[MillimetrePerMetre] -->|ConversionFactorB| N0014(("1000")) 
+	N0013[MillimetrePerMetre] -->|Symbol| N0015(("mm/m")) 
+	N0013[MillimetrePerMetre] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
+	N0016[MicrometrePerMetre] -->|BelongsToClass| N0003(Unit) 
+	N0016[MicrometrePerMetre] -->|ConversionFactorA| N0004(("0")) 
+	N0016[MicrometrePerMetre] -->|ConversionFactorB| N0017(("1000000")) 
+	N0016[MicrometrePerMetre] -->|Symbol| N0018(("µm/m")) 
+	N0016[MicrometrePerMetre] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
+	N0019[MetrePerKilometre] -->|BelongsToClass| N0003(Unit) 
+	N0019[MetrePerKilometre] -->|ConversionFactorA| N0004(("0")) 
+	N0019[MetrePerKilometre] -->|ConversionFactorB| N0014(("1000")) 
+	N0019[MetrePerKilometre] -->|Symbol| N0020(("m/km")) 
+	N0019[MetrePerKilometre] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
+	N0021[DecimetrePerKilometre] -->|BelongsToClass| N0003(Unit) 
+	N0021[DecimetrePerKilometre] -->|ConversionFactorA| N0004(("0")) 
+	N0021[DecimetrePerKilometre] -->|ConversionFactorB| N0022(("10000")) 
+	N0021[DecimetrePerKilometre] -->|Symbol| N0023(("dm/km")) 
+	N0021[DecimetrePerKilometre] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
+	N0024[CentimetrePerKilometre] -->|BelongsToClass| N0003(Unit) 
+	N0024[CentimetrePerKilometre] -->|ConversionFactorA| N0004(("0")) 
+	N0024[CentimetrePerKilometre] -->|ConversionFactorB| N0025(("100000")) 
+	N0024[CentimetrePerKilometre] -->|Symbol| N0026(("cm/km")) 
+	N0024[CentimetrePerKilometre] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
+	N0027[MillimetrePerKilometre] -->|BelongsToClass| N0003(Unit) 
+	N0027[MillimetrePerKilometre] -->|ConversionFactorA| N0004(("0")) 
+	N0027[MillimetrePerKilometre] -->|ConversionFactorB| N0017(("1000000")) 
+	N0027[MillimetrePerKilometre] -->|Symbol| N0028(("mm/km")) 
+	N0027[MillimetrePerKilometre] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
+	N0029[MicrometrePerKilometre] -->|BelongsToClass| N0003(Unit) 
+	N0029[MicrometrePerKilometre] -->|ConversionFactorA| N0004(("0")) 
+	N0029[MicrometrePerKilometre] -->|ConversionFactorB| N0030(("1000000000")) 
+	N0029[MicrometrePerKilometre] -->|Symbol| N0031(("µm/km")) 
+	N0029[MicrometrePerKilometre] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
+	N0032[InchPerFoot] -->|BelongsToClass| N0003(Unit) 
+	N0032[InchPerFoot] -->|ConversionFactorA| N0004(("0")) 
+	N0032[InchPerFoot] -->|ConversionFactorB| N0033(("11.999999999999998")) 
+	N0032[InchPerFoot] -->|Symbol| N0034(("in/ft")) 
+	N0032[InchPerFoot] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
+	N0035[InchPerYard] -->|BelongsToClass| N0003(Unit) 
+	N0035[InchPerYard] -->|ConversionFactorA| N0004(("0")) 
+	N0035[InchPerYard] -->|ConversionFactorB| N0036(("36")) 
+	N0035[InchPerYard] -->|Symbol| N0037(("in/yd")) 
+	N0035[InchPerYard] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
+	N0038[InchPerMile] -->|BelongsToClass| N0003(Unit) 
+	N0038[InchPerMile] -->|ConversionFactorA| N0004(("0")) 
+	N0038[InchPerMile] -->|ConversionFactorB| N0039(("63359.99999999999")) 
+	N0038[InchPerMile] -->|Symbol| N0040(("in/mi")) 
+	N0038[InchPerMile] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
+	N0041[FootPerFoot] -->|BelongsToClass| N0003(Unit) 
+	N0041[FootPerFoot] -->|ConversionFactorA| N0004(("0")) 
+	N0041[FootPerFoot] -->|ConversionFactorB| N0005(("1")) 
+	N0041[FootPerFoot] -->|Symbol| N0042(("ft/ft")) 
+	N0041[FootPerFoot] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
+	N0043[FootPerYard] -->|BelongsToClass| N0003(Unit) 
+	N0043[FootPerYard] -->|ConversionFactorA| N0004(("0")) 
+	N0043[FootPerYard] -->|ConversionFactorB| N0044(("3")) 
+	N0043[FootPerYard] -->|Symbol| N0045(("ft/yd")) 
+	N0043[FootPerYard] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
+	N0046[FootPerMile] -->|BelongsToClass| N0003(Unit) 
+	N0046[FootPerMile] -->|ConversionFactorA| N0004(("0")) 
+	N0046[FootPerMile] -->|ConversionFactorB| N0047(("5280")) 
+	N0046[FootPerMile] -->|Symbol| N0048(("ft/mi")) 
+	N0046[FootPerMile] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
+	N0049[YardPerFoot] -->|BelongsToClass| N0003(Unit) 
+	N0049[YardPerFoot] -->|ConversionFactorA| N0004(("0")) 
+	N0049[YardPerFoot] -->|ConversionFactorB| N0050(("0.3333333333333333")) 
+	N0049[YardPerFoot] -->|Symbol| N0051(("yd/ft")) 
+	N0049[YardPerFoot] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
+	N0052[YardPerYard] -->|BelongsToClass| N0003(Unit) 
+	N0052[YardPerYard] -->|ConversionFactorA| N0004(("0")) 
+	N0052[YardPerYard] -->|ConversionFactorB| N0005(("1")) 
+	N0052[YardPerYard] -->|Symbol| N0053(("yd/yd")) 
+	N0052[YardPerYard] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
+	N0054[YardPerMile] -->|BelongsToClass| N0003(Unit) 
+	N0054[YardPerMile] -->|ConversionFactorA| N0004(("0")) 
+	N0054[YardPerMile] -->|ConversionFactorB| N0055(("1760")) 
+	N0054[YardPerMile] -->|Symbol| N0056(("yd/mi")) 
+	N0054[YardPerMile] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
+```
+## EnergyDensityQuantity <!-- NOUN -->
+- Display name: EnergyDensity
+- Parent class: [Quantity](./Quantities.md#Quantity)
+- Specialization:
+  - L = -1
+  - M = 1
+  - T = -2
+- Description: 
+Energy density is the amount of energy stored per unit volume or mass of a substance or system.
+The dimension of energy density is:
+$$[ML^{-1}T^{-2}]$$.
+The SI unit for **energy density** is: joule per cubic metre with the associated unit label $\frac{J}{m^{3}}$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:EnergyDensityQuantity
+EnergyDensityQuantity.L = -1
+EnergyDensityQuantity.M = 1
+EnergyDensityQuantity.T = -2
+Unit:JoulePerCubicMetre
+JoulePerCubicMetre.ConversionFactorA = 0
+JoulePerCubicMetre.ConversionFactorB = 1
+JoulePerCubicMetre.Symbol = "J/m³"
+JoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+EnergyDensityQuantity HasSIUnit JoulePerCubicMetre
+Unit:JoulePerLitre
+JoulePerLitre.ConversionFactorA = 0
+JoulePerLitre.ConversionFactorB = 0.001
+JoulePerLitre.Symbol = "J/L"
+JoulePerLitre IsUnitForQuantity EnergyDensityQuantity
+Unit:KilojoulePerCubicMetre
+KilojoulePerCubicMetre.ConversionFactorA = 0
+KilojoulePerCubicMetre.ConversionFactorB = 0.001
+KilojoulePerCubicMetre.Symbol = "kJ/m³"
+KilojoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+Unit:KilojoulePerLitre
+KilojoulePerLitre.ConversionFactorA = 0
+KilojoulePerLitre.ConversionFactorB = 1E-06
+KilojoulePerLitre.Symbol = "kJ/L"
+KilojoulePerLitre IsUnitForQuantity EnergyDensityQuantity
+Unit:MegajoulePerCubicMetre
+MegajoulePerCubicMetre.ConversionFactorA = 0
+MegajoulePerCubicMetre.ConversionFactorB = 1E-06
+MegajoulePerCubicMetre.Symbol = "MJ/m³"
+MegajoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+Unit:MegajoulePerLitre
+MegajoulePerLitre.ConversionFactorA = 0
+MegajoulePerLitre.ConversionFactorB = 1E-09
+MegajoulePerLitre.Symbol = "MJ/L"
+MegajoulePerLitre IsUnitForQuantity EnergyDensityQuantity
+Unit:GigajoulePerCubicMetre
+GigajoulePerCubicMetre.ConversionFactorA = 0
+GigajoulePerCubicMetre.ConversionFactorB = 1E-09
+GigajoulePerCubicMetre.Symbol = "GJ/m³"
+GigajoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+Unit:GigajoulePerLitre
+GigajoulePerLitre.ConversionFactorA = 0
+GigajoulePerLitre.ConversionFactorB = 1E-12
+GigajoulePerLitre.Symbol = "GJ/L"
+GigajoulePerLitre IsUnitForQuantity EnergyDensityQuantity
+Unit:CaloriePerCubicMetre
+CaloriePerCubicMetre.ConversionFactorA = 0
+CaloriePerCubicMetre.ConversionFactorB = 0.2390057361376673
+CaloriePerCubicMetre.Symbol = "cal/m³"
+CaloriePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+Unit:CaloriePerLitre
+CaloriePerLitre.ConversionFactorA = 0
+CaloriePerLitre.ConversionFactorB = 0.0002390057361376673
+CaloriePerLitre.Symbol = "cal/L"
+CaloriePerLitre IsUnitForQuantity EnergyDensityQuantity
+Unit:KilocaloriePerCubicMetre
+KilocaloriePerCubicMetre.ConversionFactorA = 0
+KilocaloriePerCubicMetre.ConversionFactorB = 0.0002390057361376673
+KilocaloriePerCubicMetre.Symbol = "Cal/m³"
+KilocaloriePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+Unit:KilocaloriePerLitre
+KilocaloriePerLitre.ConversionFactorA = 0
+KilocaloriePerLitre.ConversionFactorB = 2.390057361376673E-07
+KilocaloriePerLitre.Symbol = "Cal/L"
+KilocaloriePerLitre IsUnitForQuantity EnergyDensityQuantity
+Unit:JoulePerCubicFoot
+JoulePerCubicFoot.ConversionFactorA = 0
+JoulePerCubicFoot.ConversionFactorB = 0.02831684659199999
+JoulePerCubicFoot.Symbol = "J/ft³"
+JoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+Unit:KilojoulePerCubicFoot
+KilojoulePerCubicFoot.ConversionFactorA = 0
+KilojoulePerCubicFoot.ConversionFactorB = 2.831684659199999E-05
+KilojoulePerCubicFoot.Symbol = "kJ/ft³"
+KilojoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+Unit:MegajoulePerCubicFoot
+MegajoulePerCubicFoot.ConversionFactorA = 0
+MegajoulePerCubicFoot.ConversionFactorB = 2.831684659199999E-08
+MegajoulePerCubicFoot.Symbol = "MJ/ft³"
+MegajoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+Unit:GigajoulePerCubicFoot
+GigajoulePerCubicFoot.ConversionFactorA = 0
+GigajoulePerCubicFoot.ConversionFactorB = 2.831684659199999E-11
+GigajoulePerCubicFoot.Symbol = "GJ/ft³"
+GigajoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+Unit:CaloriePerCubicFoot
+CaloriePerCubicFoot.ConversionFactorA = 0
+CaloriePerCubicFoot.ConversionFactorB = 0.006767888764818353
+CaloriePerCubicFoot.Symbol = "cal/ft³"
+CaloriePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+Unit:KilocaloriePerCubicFoot
+KilocaloriePerCubicFoot.ConversionFactorA = 0
+KilocaloriePerCubicFoot.ConversionFactorB = 6.767888764818354E-06
+KilocaloriePerCubicFoot.Symbol = "Cal/ft³"
+KilocaloriePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+Unit:JoulePerCubicInch
+JoulePerCubicInch.ConversionFactorA = 0
+JoulePerCubicInch.ConversionFactorB = 1.6387064E-05
+JoulePerCubicInch.Symbol = "J/in³"
+JoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
+Unit:KilojoulePerCubicInch
+KilojoulePerCubicInch.ConversionFactorA = 0
+KilojoulePerCubicInch.ConversionFactorB = 1.6387064E-08
+KilojoulePerCubicInch.Symbol = "kJ/in³"
+KilojoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
+Unit:MegajoulePerCubicInch
+MegajoulePerCubicInch.ConversionFactorA = 0
+MegajoulePerCubicInch.ConversionFactorB = 1.6387064E-11
+MegajoulePerCubicInch.Symbol = "MJ/in³"
+MegajoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
+Unit:GigajoulePerCubicInch
+GigajoulePerCubicInch.ConversionFactorA = 0
+GigajoulePerCubicInch.ConversionFactorB = 1.6387064E-14
+GigajoulePerCubicInch.Symbol = "GJ/in³"
+GigajoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
+Unit:CaloriePerCubicInch
+CaloriePerCubicInch.ConversionFactorA = 0
+CaloriePerCubicInch.ConversionFactorB = 3.916602294455067E-06
+CaloriePerCubicInch.Symbol = "cal/in³"
+CaloriePerCubicInch IsUnitForQuantity EnergyDensityQuantity
+Unit:KilocaloriePerCubicInch
+KilocaloriePerCubicInch.ConversionFactorA = 0
+KilocaloriePerCubicInch.ConversionFactorB = 3.916602294455067E-09
+KilocaloriePerCubicInch.Symbol = "Cal/in³"
+KilocaloriePerCubicInch IsUnitForQuantity EnergyDensityQuantity
+Unit:JoulePerGallonUk
+JoulePerGallonUk.ConversionFactorA = 0
+JoulePerGallonUk.ConversionFactorB = 0.00454609
+JoulePerGallonUk.Symbol = "J/gal(UK)"
+JoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
+Unit:KilojoulePerGallonUk
+KilojoulePerGallonUk.ConversionFactorA = 0
+KilojoulePerGallonUk.ConversionFactorB = 4.54609E-06
+KilojoulePerGallonUk.Symbol = "kJ/gal(UK)"
+KilojoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
+Unit:MegajoulePerGallonUk
+MegajoulePerGallonUk.ConversionFactorA = 0
+MegajoulePerGallonUk.ConversionFactorB = 4.54609E-09
+MegajoulePerGallonUk.Symbol = "MJ/gal(UK)"
+MegajoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
+Unit:GigajoulePerGallonUk
+GigajoulePerGallonUk.ConversionFactorA = 0
+GigajoulePerGallonUk.ConversionFactorB = 4.54609E-12
+GigajoulePerGallonUk.Symbol = "GJ/gal(UK)"
+GigajoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
+Unit:CaloriePerGallonUk
+CaloriePerGallonUk.ConversionFactorA = 0
+CaloriePerGallonUk.ConversionFactorB = 0.0010865415869980878
+CaloriePerGallonUk.Symbol = "cal/gal(UK)"
+CaloriePerGallonUk IsUnitForQuantity EnergyDensityQuantity
+Unit:KilocaloriePerGallonUk
+KilocaloriePerGallonUk.ConversionFactorA = 0
+KilocaloriePerGallonUk.ConversionFactorB = 1.086541586998088E-06
+KilocaloriePerGallonUk.Symbol = "Cal/gal(UK)"
+KilocaloriePerGallonUk IsUnitForQuantity EnergyDensityQuantity
+Unit:JoulePerGallonUs
+JoulePerGallonUs.ConversionFactorA = 0
+JoulePerGallonUs.ConversionFactorB = 0.0037854117839999997
+JoulePerGallonUs.Symbol = "J/gal(US)"
+JoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
+Unit:KilojoulePerGallonUs
+KilojoulePerGallonUs.ConversionFactorA = 0
+KilojoulePerGallonUs.ConversionFactorB = 3.7854117839999998E-06
+KilojoulePerGallonUs.Symbol = "kJ/gal(US)"
+KilojoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
+Unit:MegajoulePerGallonUs
+MegajoulePerGallonUs.ConversionFactorA = 0
+MegajoulePerGallonUs.ConversionFactorB = 3.7854117839999995E-09
+MegajoulePerGallonUs.Symbol = "MJ/gal(US)"
+MegajoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
+Unit:GigajoulePerGallonUs
+GigajoulePerGallonUs.ConversionFactorA = 0
+GigajoulePerGallonUs.ConversionFactorB = 3.785411784E-12
+GigajoulePerGallonUs.Symbol = "GJ/gal(US)"
+GigajoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
+Unit:CaloriePerGallonUs
+CaloriePerGallonUs.ConversionFactorA = 0
+CaloriePerGallonUs.ConversionFactorB = 0.0009047351300191204
+CaloriePerGallonUs.Symbol = "cal/gal(US)"
+CaloriePerGallonUs IsUnitForQuantity EnergyDensityQuantity
+Unit:KilocaloriePerGallonUs
+KilocaloriePerGallonUs.ConversionFactorA = 0
+KilocaloriePerGallonUs.ConversionFactorB = 9.047351300191203E-07
+KilocaloriePerGallonUs.Symbol = "Cal/gal(US)"
+KilocaloriePerGallonUs IsUnitForQuantity EnergyDensityQuantity
+Unit:BritishThermalUnitPerCubicMetre
+BritishThermalUnitPerCubicMetre.ConversionFactorA = 0
+BritishThermalUnitPerCubicMetre.ConversionFactorB = 0.0009484516526770049
+BritishThermalUnitPerCubicMetre.Symbol = "BTU/m³"
+BritishThermalUnitPerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+Unit:BritishThermalUnitPerLitre
+BritishThermalUnitPerLitre.ConversionFactorA = 0
+BritishThermalUnitPerLitre.ConversionFactorB = 9.484516526770049E-07
+BritishThermalUnitPerLitre.Symbol = "BTU/L"
+BritishThermalUnitPerLitre IsUnitForQuantity EnergyDensityQuantity
+Unit:BritishThermalUnitPerCubicFoot
+BritishThermalUnitPerCubicFoot.ConversionFactorA = 0
+BritishThermalUnitPerCubicFoot.ConversionFactorB = 2.6857159948783606E-05
+BritishThermalUnitPerCubicFoot.Symbol = "BTU/ft³"
+BritishThermalUnitPerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+Unit:BritishThermalUnitPerCubicInch
+BritishThermalUnitPerCubicInch.ConversionFactorA = 0
+BritishThermalUnitPerCubicInch.ConversionFactorB = 1.554233793332385E-08
+BritishThermalUnitPerCubicInch.Symbol = "BTU/in³"
+BritishThermalUnitPerCubicInch IsUnitForQuantity EnergyDensityQuantity
+Unit:BritishThermalUnitPerGallonUk
+BritishThermalUnitPerGallonUk.ConversionFactorA = 0
+BritishThermalUnitPerGallonUk.ConversionFactorB = 4.311746573718405E-06
+BritishThermalUnitPerGallonUk.Symbol = "BTU/gal(UK)"
+BritishThermalUnitPerGallonUk IsUnitForQuantity EnergyDensityQuantity
+Unit:BritishThermalUnitPerGallonUs
+BritishThermalUnitPerGallonUs.ConversionFactorA = 0
+BritishThermalUnitPerGallonUs.ConversionFactorB = 3.5902800625978092E-06
+BritishThermalUnitPerGallonUs.Symbol = "BTU/gal(US)"
+BritishThermalUnitPerGallonUs IsUnitForQuantity EnergyDensityQuantity
+Unit:KiloBritishThermalUnitPerCubicMetre
+KiloBritishThermalUnitPerCubicMetre.ConversionFactorA = 0
+KiloBritishThermalUnitPerCubicMetre.ConversionFactorB = 9.484516526770048E-07
+KiloBritishThermalUnitPerCubicMetre.Symbol = "kBTU/m³"
+KiloBritishThermalUnitPerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+Unit:KiloBritishThermalUnitPerLitre
+KiloBritishThermalUnitPerLitre.ConversionFactorA = 0
+KiloBritishThermalUnitPerLitre.ConversionFactorB = 9.48451652677005E-10
+KiloBritishThermalUnitPerLitre.Symbol = "kBTU/L"
+KiloBritishThermalUnitPerLitre IsUnitForQuantity EnergyDensityQuantity
+Unit:KiloBritishThermalUnitPerCubicFoot
+KiloBritishThermalUnitPerCubicFoot.ConversionFactorA = 0
+KiloBritishThermalUnitPerCubicFoot.ConversionFactorB = 2.6857159948783602E-08
+KiloBritishThermalUnitPerCubicFoot.Symbol = "kBTU/ft³"
+KiloBritishThermalUnitPerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+Unit:KiloBritishThermalUnitPerCubicInch
+KiloBritishThermalUnitPerCubicInch.ConversionFactorA = 0
+KiloBritishThermalUnitPerCubicInch.ConversionFactorB = 1.5542337933323848E-11
+KiloBritishThermalUnitPerCubicInch.Symbol = "kBTU/in³"
+KiloBritishThermalUnitPerCubicInch IsUnitForQuantity EnergyDensityQuantity
+Unit:KiloBritishThermalUnitPerGallonUk
+KiloBritishThermalUnitPerGallonUk.ConversionFactorA = 0
+KiloBritishThermalUnitPerGallonUk.ConversionFactorB = 4.311746573718405E-09
+KiloBritishThermalUnitPerGallonUk.Symbol = "kBTU/gal(UK)"
+KiloBritishThermalUnitPerGallonUk IsUnitForQuantity EnergyDensityQuantity
+Unit:KiloBritishThermalUnitPerGallonUs
+KiloBritishThermalUnitPerGallonUs.ConversionFactorA = 0
+KiloBritishThermalUnitPerGallonUs.ConversionFactorB = 3.5902800625978087E-09
+KiloBritishThermalUnitPerGallonUs.Symbol = "kBTU/gal(US)"
+KiloBritishThermalUnitPerGallonUs IsUnitForQuantity EnergyDensityQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[EnergyDensityQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[EnergyDensityQuantity] -->|L| N0002(("-1")) 
+	N0000[EnergyDensityQuantity] -->|M| N0003(("1")) 
+	N0000[EnergyDensityQuantity] -->|T| N0004(("-2")) 
+	N0005[JoulePerCubicMetre] -->|BelongsToClass| N0006(Unit) 
+	N0005[JoulePerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
+	N0005[JoulePerCubicMetre] -->|ConversionFactorB| N0003(("1")) 
+	N0005[JoulePerCubicMetre] -->|Symbol| N0008(("J/m³")) 
+	N0005[JoulePerCubicMetre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0000[EnergyDensityQuantity] -->|HasSIUnit| N0005[JoulePerCubicMetre] 
+	N0009[JoulePerLitre] -->|BelongsToClass| N0006(Unit) 
+	N0009[JoulePerLitre] -->|ConversionFactorA| N0007(("0")) 
+	N0009[JoulePerLitre] -->|ConversionFactorB| N0010(("0.001")) 
+	N0009[JoulePerLitre] -->|Symbol| N0011(("J/L")) 
+	N0009[JoulePerLitre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0012[KilojoulePerCubicMetre] -->|BelongsToClass| N0006(Unit) 
+	N0012[KilojoulePerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
+	N0012[KilojoulePerCubicMetre] -->|ConversionFactorB| N0010(("0.001")) 
+	N0012[KilojoulePerCubicMetre] -->|Symbol| N0013(("kJ/m³")) 
+	N0012[KilojoulePerCubicMetre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0014[KilojoulePerLitre] -->|BelongsToClass| N0006(Unit) 
+	N0014[KilojoulePerLitre] -->|ConversionFactorA| N0007(("0")) 
+	N0014[KilojoulePerLitre] -->|ConversionFactorB| N0015(("1E-06")) 
+	N0014[KilojoulePerLitre] -->|Symbol| N0016(("kJ/L")) 
+	N0014[KilojoulePerLitre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0017[MegajoulePerCubicMetre] -->|BelongsToClass| N0006(Unit) 
+	N0017[MegajoulePerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
+	N0017[MegajoulePerCubicMetre] -->|ConversionFactorB| N0015(("1E-06")) 
+	N0017[MegajoulePerCubicMetre] -->|Symbol| N0018(("MJ/m³")) 
+	N0017[MegajoulePerCubicMetre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0019[MegajoulePerLitre] -->|BelongsToClass| N0006(Unit) 
+	N0019[MegajoulePerLitre] -->|ConversionFactorA| N0007(("0")) 
+	N0019[MegajoulePerLitre] -->|ConversionFactorB| N0020(("1E-09")) 
+	N0019[MegajoulePerLitre] -->|Symbol| N0021(("MJ/L")) 
+	N0019[MegajoulePerLitre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0022[GigajoulePerCubicMetre] -->|BelongsToClass| N0006(Unit) 
+	N0022[GigajoulePerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
+	N0022[GigajoulePerCubicMetre] -->|ConversionFactorB| N0020(("1E-09")) 
+	N0022[GigajoulePerCubicMetre] -->|Symbol| N0023(("GJ/m³")) 
+	N0022[GigajoulePerCubicMetre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0024[GigajoulePerLitre] -->|BelongsToClass| N0006(Unit) 
+	N0024[GigajoulePerLitre] -->|ConversionFactorA| N0007(("0")) 
+	N0024[GigajoulePerLitre] -->|ConversionFactorB| N0025(("1E-12")) 
+	N0024[GigajoulePerLitre] -->|Symbol| N0026(("GJ/L")) 
+	N0024[GigajoulePerLitre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0027[CaloriePerCubicMetre] -->|BelongsToClass| N0006(Unit) 
+	N0027[CaloriePerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
+	N0027[CaloriePerCubicMetre] -->|ConversionFactorB| N0028(("0.2390057361376673")) 
+	N0027[CaloriePerCubicMetre] -->|Symbol| N0029(("cal/m³")) 
+	N0027[CaloriePerCubicMetre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0030[CaloriePerLitre] -->|BelongsToClass| N0006(Unit) 
+	N0030[CaloriePerLitre] -->|ConversionFactorA| N0007(("0")) 
+	N0030[CaloriePerLitre] -->|ConversionFactorB| N0031(("0.0002390057361376673")) 
+	N0030[CaloriePerLitre] -->|Symbol| N0032(("cal/L")) 
+	N0030[CaloriePerLitre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0033[KilocaloriePerCubicMetre] -->|BelongsToClass| N0006(Unit) 
+	N0033[KilocaloriePerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
+	N0033[KilocaloriePerCubicMetre] -->|ConversionFactorB| N0031(("0.0002390057361376673")) 
+	N0033[KilocaloriePerCubicMetre] -->|Symbol| N0034(("Cal/m³")) 
+	N0033[KilocaloriePerCubicMetre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0035[KilocaloriePerLitre] -->|BelongsToClass| N0006(Unit) 
+	N0035[KilocaloriePerLitre] -->|ConversionFactorA| N0007(("0")) 
+	N0035[KilocaloriePerLitre] -->|ConversionFactorB| N0036(("2.390057361376673E-07")) 
+	N0035[KilocaloriePerLitre] -->|Symbol| N0037(("Cal/L")) 
+	N0035[KilocaloriePerLitre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0038[JoulePerCubicFoot] -->|BelongsToClass| N0006(Unit) 
+	N0038[JoulePerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
+	N0038[JoulePerCubicFoot] -->|ConversionFactorB| N0039(("0.02831684659199999")) 
+	N0038[JoulePerCubicFoot] -->|Symbol| N0040(("J/ft³")) 
+	N0038[JoulePerCubicFoot] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0041[KilojoulePerCubicFoot] -->|BelongsToClass| N0006(Unit) 
+	N0041[KilojoulePerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
+	N0041[KilojoulePerCubicFoot] -->|ConversionFactorB| N0042(("2.831684659199999E-05")) 
+	N0041[KilojoulePerCubicFoot] -->|Symbol| N0043(("kJ/ft³")) 
+	N0041[KilojoulePerCubicFoot] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0044[MegajoulePerCubicFoot] -->|BelongsToClass| N0006(Unit) 
+	N0044[MegajoulePerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
+	N0044[MegajoulePerCubicFoot] -->|ConversionFactorB| N0045(("2.831684659199999E-08")) 
+	N0044[MegajoulePerCubicFoot] -->|Symbol| N0046(("MJ/ft³")) 
+	N0044[MegajoulePerCubicFoot] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0047[GigajoulePerCubicFoot] -->|BelongsToClass| N0006(Unit) 
+	N0047[GigajoulePerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
+	N0047[GigajoulePerCubicFoot] -->|ConversionFactorB| N0048(("2.831684659199999E-11")) 
+	N0047[GigajoulePerCubicFoot] -->|Symbol| N0049(("GJ/ft³")) 
+	N0047[GigajoulePerCubicFoot] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0050[CaloriePerCubicFoot] -->|BelongsToClass| N0006(Unit) 
+	N0050[CaloriePerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
+	N0050[CaloriePerCubicFoot] -->|ConversionFactorB| N0051(("0.006767888764818353")) 
+	N0050[CaloriePerCubicFoot] -->|Symbol| N0052(("cal/ft³")) 
+	N0050[CaloriePerCubicFoot] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0053[KilocaloriePerCubicFoot] -->|BelongsToClass| N0006(Unit) 
+	N0053[KilocaloriePerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
+	N0053[KilocaloriePerCubicFoot] -->|ConversionFactorB| N0054(("6.767888764818354E-06")) 
+	N0053[KilocaloriePerCubicFoot] -->|Symbol| N0055(("Cal/ft³")) 
+	N0053[KilocaloriePerCubicFoot] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0056[JoulePerCubicInch] -->|BelongsToClass| N0006(Unit) 
+	N0056[JoulePerCubicInch] -->|ConversionFactorA| N0007(("0")) 
+	N0056[JoulePerCubicInch] -->|ConversionFactorB| N0057(("1.6387064E-05")) 
+	N0056[JoulePerCubicInch] -->|Symbol| N0058(("J/in³")) 
+	N0056[JoulePerCubicInch] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0059[KilojoulePerCubicInch] -->|BelongsToClass| N0006(Unit) 
+	N0059[KilojoulePerCubicInch] -->|ConversionFactorA| N0007(("0")) 
+	N0059[KilojoulePerCubicInch] -->|ConversionFactorB| N0060(("1.6387064E-08")) 
+	N0059[KilojoulePerCubicInch] -->|Symbol| N0061(("kJ/in³")) 
+	N0059[KilojoulePerCubicInch] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0062[MegajoulePerCubicInch] -->|BelongsToClass| N0006(Unit) 
+	N0062[MegajoulePerCubicInch] -->|ConversionFactorA| N0007(("0")) 
+	N0062[MegajoulePerCubicInch] -->|ConversionFactorB| N0063(("1.6387064E-11")) 
+	N0062[MegajoulePerCubicInch] -->|Symbol| N0064(("MJ/in³")) 
+	N0062[MegajoulePerCubicInch] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0065[GigajoulePerCubicInch] -->|BelongsToClass| N0006(Unit) 
+	N0065[GigajoulePerCubicInch] -->|ConversionFactorA| N0007(("0")) 
+	N0065[GigajoulePerCubicInch] -->|ConversionFactorB| N0066(("1.6387064E-14")) 
+	N0065[GigajoulePerCubicInch] -->|Symbol| N0067(("GJ/in³")) 
+	N0065[GigajoulePerCubicInch] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0068[CaloriePerCubicInch] -->|BelongsToClass| N0006(Unit) 
+	N0068[CaloriePerCubicInch] -->|ConversionFactorA| N0007(("0")) 
+	N0068[CaloriePerCubicInch] -->|ConversionFactorB| N0069(("3.916602294455067E-06")) 
+	N0068[CaloriePerCubicInch] -->|Symbol| N0070(("cal/in³")) 
+	N0068[CaloriePerCubicInch] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0071[KilocaloriePerCubicInch] -->|BelongsToClass| N0006(Unit) 
+	N0071[KilocaloriePerCubicInch] -->|ConversionFactorA| N0007(("0")) 
+	N0071[KilocaloriePerCubicInch] -->|ConversionFactorB| N0072(("3.916602294455067E-09")) 
+	N0071[KilocaloriePerCubicInch] -->|Symbol| N0073(("Cal/in³")) 
+	N0071[KilocaloriePerCubicInch] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0074[JoulePerGallonUk] -->|BelongsToClass| N0006(Unit) 
+	N0074[JoulePerGallonUk] -->|ConversionFactorA| N0007(("0")) 
+	N0074[JoulePerGallonUk] -->|ConversionFactorB| N0075(("0.00454609")) 
+	N0074[JoulePerGallonUk] -->|Symbol| N0076(("J/gal(UK)")) 
+	N0074[JoulePerGallonUk] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0077[KilojoulePerGallonUk] -->|BelongsToClass| N0006(Unit) 
+	N0077[KilojoulePerGallonUk] -->|ConversionFactorA| N0007(("0")) 
+	N0077[KilojoulePerGallonUk] -->|ConversionFactorB| N0078(("4.54609E-06")) 
+	N0077[KilojoulePerGallonUk] -->|Symbol| N0079(("kJ/gal(UK)")) 
+	N0077[KilojoulePerGallonUk] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0080[MegajoulePerGallonUk] -->|BelongsToClass| N0006(Unit) 
+	N0080[MegajoulePerGallonUk] -->|ConversionFactorA| N0007(("0")) 
+	N0080[MegajoulePerGallonUk] -->|ConversionFactorB| N0081(("4.54609E-09")) 
+	N0080[MegajoulePerGallonUk] -->|Symbol| N0082(("MJ/gal(UK)")) 
+	N0080[MegajoulePerGallonUk] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0083[GigajoulePerGallonUk] -->|BelongsToClass| N0006(Unit) 
+	N0083[GigajoulePerGallonUk] -->|ConversionFactorA| N0007(("0")) 
+	N0083[GigajoulePerGallonUk] -->|ConversionFactorB| N0084(("4.54609E-12")) 
+	N0083[GigajoulePerGallonUk] -->|Symbol| N0085(("GJ/gal(UK)")) 
+	N0083[GigajoulePerGallonUk] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0086[CaloriePerGallonUk] -->|BelongsToClass| N0006(Unit) 
+	N0086[CaloriePerGallonUk] -->|ConversionFactorA| N0007(("0")) 
+	N0086[CaloriePerGallonUk] -->|ConversionFactorB| N0087(("0.0010865415869980878")) 
+	N0086[CaloriePerGallonUk] -->|Symbol| N0088(("cal/gal(UK)")) 
+	N0086[CaloriePerGallonUk] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0089[KilocaloriePerGallonUk] -->|BelongsToClass| N0006(Unit) 
+	N0089[KilocaloriePerGallonUk] -->|ConversionFactorA| N0007(("0")) 
+	N0089[KilocaloriePerGallonUk] -->|ConversionFactorB| N0090(("1.086541586998088E-06")) 
+	N0089[KilocaloriePerGallonUk] -->|Symbol| N0091(("Cal/gal(UK)")) 
+	N0089[KilocaloriePerGallonUk] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0092[JoulePerGallonUs] -->|BelongsToClass| N0006(Unit) 
+	N0092[JoulePerGallonUs] -->|ConversionFactorA| N0007(("0")) 
+	N0092[JoulePerGallonUs] -->|ConversionFactorB| N0093(("0.0037854117839999997")) 
+	N0092[JoulePerGallonUs] -->|Symbol| N0094(("J/gal(US)")) 
+	N0092[JoulePerGallonUs] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0095[KilojoulePerGallonUs] -->|BelongsToClass| N0006(Unit) 
+	N0095[KilojoulePerGallonUs] -->|ConversionFactorA| N0007(("0")) 
+	N0095[KilojoulePerGallonUs] -->|ConversionFactorB| N0096(("3.7854117839999998E-06")) 
+	N0095[KilojoulePerGallonUs] -->|Symbol| N0097(("kJ/gal(US)")) 
+	N0095[KilojoulePerGallonUs] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0098[MegajoulePerGallonUs] -->|BelongsToClass| N0006(Unit) 
+	N0098[MegajoulePerGallonUs] -->|ConversionFactorA| N0007(("0")) 
+	N0098[MegajoulePerGallonUs] -->|ConversionFactorB| N0099(("3.7854117839999995E-09")) 
+	N0098[MegajoulePerGallonUs] -->|Symbol| N0100(("MJ/gal(US)")) 
+	N0098[MegajoulePerGallonUs] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0101[GigajoulePerGallonUs] -->|BelongsToClass| N0006(Unit) 
+	N0101[GigajoulePerGallonUs] -->|ConversionFactorA| N0007(("0")) 
+	N0101[GigajoulePerGallonUs] -->|ConversionFactorB| N0102(("3.785411784E-12")) 
+	N0101[GigajoulePerGallonUs] -->|Symbol| N0103(("GJ/gal(US)")) 
+	N0101[GigajoulePerGallonUs] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0104[CaloriePerGallonUs] -->|BelongsToClass| N0006(Unit) 
+	N0104[CaloriePerGallonUs] -->|ConversionFactorA| N0007(("0")) 
+	N0104[CaloriePerGallonUs] -->|ConversionFactorB| N0105(("0.0009047351300191204")) 
+	N0104[CaloriePerGallonUs] -->|Symbol| N0106(("cal/gal(US)")) 
+	N0104[CaloriePerGallonUs] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0107[KilocaloriePerGallonUs] -->|BelongsToClass| N0006(Unit) 
+	N0107[KilocaloriePerGallonUs] -->|ConversionFactorA| N0007(("0")) 
+	N0107[KilocaloriePerGallonUs] -->|ConversionFactorB| N0108(("9.047351300191203E-07")) 
+	N0107[KilocaloriePerGallonUs] -->|Symbol| N0109(("Cal/gal(US)")) 
+	N0107[KilocaloriePerGallonUs] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0110[BritishThermalUnitPerCubicMetre] -->|BelongsToClass| N0006(Unit) 
+	N0110[BritishThermalUnitPerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
+	N0110[BritishThermalUnitPerCubicMetre] -->|ConversionFactorB| N0111(("0.0009484516526770049")) 
+	N0110[BritishThermalUnitPerCubicMetre] -->|Symbol| N0112(("BTU/m³")) 
+	N0110[BritishThermalUnitPerCubicMetre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0113[BritishThermalUnitPerLitre] -->|BelongsToClass| N0006(Unit) 
+	N0113[BritishThermalUnitPerLitre] -->|ConversionFactorA| N0007(("0")) 
+	N0113[BritishThermalUnitPerLitre] -->|ConversionFactorB| N0114(("9.484516526770049E-07")) 
+	N0113[BritishThermalUnitPerLitre] -->|Symbol| N0115(("BTU/L")) 
+	N0113[BritishThermalUnitPerLitre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0116[BritishThermalUnitPerCubicFoot] -->|BelongsToClass| N0006(Unit) 
+	N0116[BritishThermalUnitPerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
+	N0116[BritishThermalUnitPerCubicFoot] -->|ConversionFactorB| N0117(("2.6857159948783606E-05")) 
+	N0116[BritishThermalUnitPerCubicFoot] -->|Symbol| N0118(("BTU/ft³")) 
+	N0116[BritishThermalUnitPerCubicFoot] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0119[BritishThermalUnitPerCubicInch] -->|BelongsToClass| N0006(Unit) 
+	N0119[BritishThermalUnitPerCubicInch] -->|ConversionFactorA| N0007(("0")) 
+	N0119[BritishThermalUnitPerCubicInch] -->|ConversionFactorB| N0120(("1.554233793332385E-08")) 
+	N0119[BritishThermalUnitPerCubicInch] -->|Symbol| N0121(("BTU/in³")) 
+	N0119[BritishThermalUnitPerCubicInch] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0122[BritishThermalUnitPerGallonUk] -->|BelongsToClass| N0006(Unit) 
+	N0122[BritishThermalUnitPerGallonUk] -->|ConversionFactorA| N0007(("0")) 
+	N0122[BritishThermalUnitPerGallonUk] -->|ConversionFactorB| N0123(("4.311746573718405E-06")) 
+	N0122[BritishThermalUnitPerGallonUk] -->|Symbol| N0124(("BTU/gal(UK)")) 
+	N0122[BritishThermalUnitPerGallonUk] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0125[BritishThermalUnitPerGallonUs] -->|BelongsToClass| N0006(Unit) 
+	N0125[BritishThermalUnitPerGallonUs] -->|ConversionFactorA| N0007(("0")) 
+	N0125[BritishThermalUnitPerGallonUs] -->|ConversionFactorB| N0126(("3.5902800625978092E-06")) 
+	N0125[BritishThermalUnitPerGallonUs] -->|Symbol| N0127(("BTU/gal(US)")) 
+	N0125[BritishThermalUnitPerGallonUs] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0128[KiloBritishThermalUnitPerCubicMetre] -->|BelongsToClass| N0006(Unit) 
+	N0128[KiloBritishThermalUnitPerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
+	N0128[KiloBritishThermalUnitPerCubicMetre] -->|ConversionFactorB| N0129(("9.484516526770048E-07")) 
+	N0128[KiloBritishThermalUnitPerCubicMetre] -->|Symbol| N0130(("kBTU/m³")) 
+	N0128[KiloBritishThermalUnitPerCubicMetre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0131[KiloBritishThermalUnitPerLitre] -->|BelongsToClass| N0006(Unit) 
+	N0131[KiloBritishThermalUnitPerLitre] -->|ConversionFactorA| N0007(("0")) 
+	N0131[KiloBritishThermalUnitPerLitre] -->|ConversionFactorB| N0132(("9.48451652677005E-10")) 
+	N0131[KiloBritishThermalUnitPerLitre] -->|Symbol| N0133(("kBTU/L")) 
+	N0131[KiloBritishThermalUnitPerLitre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0134[KiloBritishThermalUnitPerCubicFoot] -->|BelongsToClass| N0006(Unit) 
+	N0134[KiloBritishThermalUnitPerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
+	N0134[KiloBritishThermalUnitPerCubicFoot] -->|ConversionFactorB| N0135(("2.6857159948783602E-08")) 
+	N0134[KiloBritishThermalUnitPerCubicFoot] -->|Symbol| N0136(("kBTU/ft³")) 
+	N0134[KiloBritishThermalUnitPerCubicFoot] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0137[KiloBritishThermalUnitPerCubicInch] -->|BelongsToClass| N0006(Unit) 
+	N0137[KiloBritishThermalUnitPerCubicInch] -->|ConversionFactorA| N0007(("0")) 
+	N0137[KiloBritishThermalUnitPerCubicInch] -->|ConversionFactorB| N0138(("1.5542337933323848E-11")) 
+	N0137[KiloBritishThermalUnitPerCubicInch] -->|Symbol| N0139(("kBTU/in³")) 
+	N0137[KiloBritishThermalUnitPerCubicInch] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0140[KiloBritishThermalUnitPerGallonUk] -->|BelongsToClass| N0006(Unit) 
+	N0140[KiloBritishThermalUnitPerGallonUk] -->|ConversionFactorA| N0007(("0")) 
+	N0140[KiloBritishThermalUnitPerGallonUk] -->|ConversionFactorB| N0141(("4.311746573718405E-09")) 
+	N0140[KiloBritishThermalUnitPerGallonUk] -->|Symbol| N0142(("kBTU/gal(UK)")) 
+	N0140[KiloBritishThermalUnitPerGallonUk] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+	N0143[KiloBritishThermalUnitPerGallonUs] -->|BelongsToClass| N0006(Unit) 
+	N0143[KiloBritishThermalUnitPerGallonUs] -->|ConversionFactorA| N0007(("0")) 
+	N0143[KiloBritishThermalUnitPerGallonUs] -->|ConversionFactorB| N0144(("3.5902800625978087E-09")) 
+	N0143[KiloBritishThermalUnitPerGallonUs] -->|Symbol| N0145(("kBTU/gal(US)")) 
+	N0143[KiloBritishThermalUnitPerGallonUs] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
+```
+## EnergyQuantity <!-- NOUN -->
+- Display name: Energy
+- Parent class: [Quantity](./Quantities.md#Quantity)
+- Specialization:
+  - L = 2
+  - M = 1
+  - T = -2
+- Description: 
+Energy is the quantitative property that is transferred to a body or to a physical system, recognizable in the performance of work and in the form of heat and light. Energy is a conserved quantity—the law of conservation of energy states that energy can be converted in form, but not created or destroyed; matter and energy may also be converted to one another.
+The dimension of energy is:
+$$[L^{2}MT^{-2}]$$.
+The SI unit for **energy** is: joule with the associated unit label $J$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:EnergyQuantity
+EnergyQuantity.L = 2
+EnergyQuantity.M = 1
+EnergyQuantity.T = -2
+Unit:Joule
+Joule.ConversionFactorA = 0
+Joule.ConversionFactorB = 1
+Joule.Symbol = "J"
+Joule IsUnitForQuantity EnergyQuantity
+EnergyQuantity HasSIUnit Joule
+Unit:Kilojoule
+Kilojoule.ConversionFactorA = 0
+Kilojoule.ConversionFactorB = 0.001
+Kilojoule.Symbol = "kJ"
+Kilojoule IsUnitForQuantity EnergyQuantity
+Unit:Megajoule
+Megajoule.ConversionFactorA = 0
+Megajoule.ConversionFactorB = 1E-06
+Megajoule.Symbol = "MJ"
+Megajoule IsUnitForQuantity EnergyQuantity
+Unit:Gigajoule
+Gigajoule.ConversionFactorA = 0
+Gigajoule.ConversionFactorB = 1E-09
+Gigajoule.Symbol = "GJ"
+Gigajoule IsUnitForQuantity EnergyQuantity
+Unit:Calorie
+Calorie.ConversionFactorA = 0
+Calorie.ConversionFactorB = 0.2390057361376673
+Calorie.Symbol = "cal"
+Calorie IsUnitForQuantity EnergyQuantity
+Unit:Kilocalorie
+Kilocalorie.ConversionFactorA = 0
+Kilocalorie.ConversionFactorB = 0.0002390057361376673
+Kilocalorie.Symbol = "Cal"
+Kilocalorie IsUnitForQuantity EnergyQuantity
+Unit:BritishThermalUnit
+BritishThermalUnit.ConversionFactorA = 0
+BritishThermalUnit.ConversionFactorB = 0.0009484516526770049
+BritishThermalUnit.Symbol = "BTU"
+BritishThermalUnit IsUnitForQuantity EnergyQuantity
+Unit:KiloBritishThermalUnit
+KiloBritishThermalUnit.ConversionFactorA = 0
+KiloBritishThermalUnit.ConversionFactorB = 9.484516526770048E-07
+KiloBritishThermalUnit.Symbol = "kBTU"
+KiloBritishThermalUnit IsUnitForQuantity EnergyQuantity
+Unit:MegaBritishThermalUnit
+MegaBritishThermalUnit.ConversionFactorA = 0
+MegaBritishThermalUnit.ConversionFactorB = 9.48451652677005E-10
+MegaBritishThermalUnit.Symbol = "MMBTU"
+MegaBritishThermalUnit IsUnitForQuantity EnergyQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[EnergyQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[EnergyQuantity] -->|L| N0002(("2")) 
+	N0000[EnergyQuantity] -->|M| N0003(("1")) 
+	N0000[EnergyQuantity] -->|T| N0004(("-2")) 
+	N0005[Joule] -->|BelongsToClass| N0006(Unit) 
+	N0005[Joule] -->|ConversionFactorA| N0007(("0")) 
+	N0005[Joule] -->|ConversionFactorB| N0003(("1")) 
+	N0005[Joule] -->|Symbol| N0008(("J")) 
+	N0005[Joule] -->|IsUnitForQuantity| N0000[EnergyQuantity] 
+	N0000[EnergyQuantity] -->|HasSIUnit| N0005[Joule] 
+	N0009[Kilojoule] -->|BelongsToClass| N0006(Unit) 
+	N0009[Kilojoule] -->|ConversionFactorA| N0007(("0")) 
+	N0009[Kilojoule] -->|ConversionFactorB| N0010(("0.001")) 
+	N0009[Kilojoule] -->|Symbol| N0011(("kJ")) 
+	N0009[Kilojoule] -->|IsUnitForQuantity| N0000[EnergyQuantity] 
+	N0012[Megajoule] -->|BelongsToClass| N0006(Unit) 
+	N0012[Megajoule] -->|ConversionFactorA| N0007(("0")) 
+	N0012[Megajoule] -->|ConversionFactorB| N0013(("1E-06")) 
+	N0012[Megajoule] -->|Symbol| N0014(("MJ")) 
+	N0012[Megajoule] -->|IsUnitForQuantity| N0000[EnergyQuantity] 
+	N0015[Gigajoule] -->|BelongsToClass| N0006(Unit) 
+	N0015[Gigajoule] -->|ConversionFactorA| N0007(("0")) 
+	N0015[Gigajoule] -->|ConversionFactorB| N0016(("1E-09")) 
+	N0015[Gigajoule] -->|Symbol| N0017(("GJ")) 
+	N0015[Gigajoule] -->|IsUnitForQuantity| N0000[EnergyQuantity] 
+	N0018[Calorie] -->|BelongsToClass| N0006(Unit) 
+	N0018[Calorie] -->|ConversionFactorA| N0007(("0")) 
+	N0018[Calorie] -->|ConversionFactorB| N0019(("0.2390057361376673")) 
+	N0018[Calorie] -->|Symbol| N0020(("cal")) 
+	N0018[Calorie] -->|IsUnitForQuantity| N0000[EnergyQuantity] 
+	N0021[Kilocalorie] -->|BelongsToClass| N0006(Unit) 
+	N0021[Kilocalorie] -->|ConversionFactorA| N0007(("0")) 
+	N0021[Kilocalorie] -->|ConversionFactorB| N0022(("0.0002390057361376673")) 
+	N0021[Kilocalorie] -->|Symbol| N0023(("Cal")) 
+	N0021[Kilocalorie] -->|IsUnitForQuantity| N0000[EnergyQuantity] 
+	N0024[BritishThermalUnit] -->|BelongsToClass| N0006(Unit) 
+	N0024[BritishThermalUnit] -->|ConversionFactorA| N0007(("0")) 
+	N0024[BritishThermalUnit] -->|ConversionFactorB| N0025(("0.0009484516526770049")) 
+	N0024[BritishThermalUnit] -->|Symbol| N0026(("BTU")) 
+	N0024[BritishThermalUnit] -->|IsUnitForQuantity| N0000[EnergyQuantity] 
+	N0027[KiloBritishThermalUnit] -->|BelongsToClass| N0006(Unit) 
+	N0027[KiloBritishThermalUnit] -->|ConversionFactorA| N0007(("0")) 
+	N0027[KiloBritishThermalUnit] -->|ConversionFactorB| N0028(("9.484516526770048E-07")) 
+	N0027[KiloBritishThermalUnit] -->|Symbol| N0029(("kBTU")) 
+	N0027[KiloBritishThermalUnit] -->|IsUnitForQuantity| N0000[EnergyQuantity] 
+	N0030[MegaBritishThermalUnit] -->|BelongsToClass| N0006(Unit) 
+	N0030[MegaBritishThermalUnit] -->|ConversionFactorA| N0007(("0")) 
+	N0030[MegaBritishThermalUnit] -->|ConversionFactorB| N0031(("9.48451652677005E-10")) 
+	N0030[MegaBritishThermalUnit] -->|Symbol| N0032(("MMBTU")) 
+	N0030[MegaBritishThermalUnit] -->|IsUnitForQuantity| N0000[EnergyQuantity] 
 ```
 ## MassDensityGradientPerLengthQuantity <!-- NOUN -->
 - Display name: MassDensityGradientPerLength
@@ -2467,1197 +3972,6 @@ graph LR
 	N0042[PoundPerGallonUsPerHour] -->|Symbol| N0044(("ppgUS/h")) 
 	N0042[PoundPerGallonUsPerHour] -->|IsUnitForQuantity| N0000[MassDensityRateOfChangeQuantity] 
 ```
-## DimensionlessQuantity <!-- NOUN -->
-- Display name: Dimensionless
-- Parent class: [Quantity](./Quantities.md#Quantity)
-- Description: 
-As its name indicates, a dimensionless quantity has no dimension:
-- Definition set: QuantityTypes
-- Examples:
-``` dwis
-Quantity:DimensionlessQuantity
-Unit:Dimensionless
-Dimensionless.ConversionFactorA = 0
-Dimensionless.ConversionFactorB = 1
-Dimensionless IsUnitForQuantity DimensionlessQuantity
-DimensionlessQuantity HasSIUnit Dimensionless
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[DimensionlessQuantity] -->|BelongsToClass| N0001(Quantity) 
-	N0002[Dimensionless] -->|BelongsToClass| N0003(Unit) 
-	N0002[Dimensionless] -->|ConversionFactorA| N0004(("0")) 
-	N0002[Dimensionless] -->|ConversionFactorB| N0005(("1")) 
-	N0002[Dimensionless] -->|IsUnitForQuantity| N0000[DimensionlessQuantity] 
-	N0000[DimensionlessQuantity] -->|HasSIUnit| N0002[Dimensionless] 
-```
-## DynamicViscosityQuantity <!-- NOUN -->
-- Display name: DynamicViscosity
-- Parent class: [Quantity](./Quantities.md#Quantity)
-- Specialization:
-  - L = -1
-  - M = 1
-  - T = -1
-- Description: 
-Dynamic viscosity is a measure of a fluid's resistance to shear or flow when a force is applied. It quantifies how thick or thin the fluid is.
-The dimension of dynamic viscosity is:
-$$[ML^{-1}T^{-1}]$$.
-The SI unit for **dynamic viscosity** is: pascal second with the associated unit label $Pa \cdot s$
-- Definition set: QuantityTypes
-- Examples:
-``` dwis
-Quantity:DynamicViscosityQuantity
-DynamicViscosityQuantity.L = -1
-DynamicViscosityQuantity.M = 1
-DynamicViscosityQuantity.T = -1
-Unit:PascalSecond
-PascalSecond.ConversionFactorA = 0
-PascalSecond.ConversionFactorB = 1
-PascalSecond.Symbol = "Pa•s"
-PascalSecond IsUnitForQuantity DynamicViscosityQuantity
-DynamicViscosityQuantity HasSIUnit PascalSecond
-Unit:MillipascalSecond
-MillipascalSecond.ConversionFactorA = 0
-MillipascalSecond.ConversionFactorB = 1000
-MillipascalSecond.Symbol = "mPa•s"
-MillipascalSecond IsUnitForQuantity DynamicViscosityQuantity
-Unit:MicropascalSecond
-MicropascalSecond.ConversionFactorA = 0
-MicropascalSecond.ConversionFactorB = 1000000
-MicropascalSecond.Symbol = "µPa•s"
-MicropascalSecond IsUnitForQuantity DynamicViscosityQuantity
-Unit:Poise
-Poise.ConversionFactorA = 0
-Poise.ConversionFactorB = 10
-Poise.Symbol = "P"
-Poise IsUnitForQuantity DynamicViscosityQuantity
-Unit:Centipoise
-Centipoise.ConversionFactorA = 0
-Centipoise.ConversionFactorB = 1000
-Centipoise.Symbol = "cP"
-Centipoise IsUnitForQuantity DynamicViscosityQuantity
-Unit:Millipoise
-Millipoise.ConversionFactorA = 0
-Millipoise.ConversionFactorB = 10000
-Millipoise.Symbol = "mP"
-Millipoise IsUnitForQuantity DynamicViscosityQuantity
-Unit:Micropoise
-Micropoise.ConversionFactorA = 0
-Micropoise.ConversionFactorB = 10000000
-Micropoise.Symbol = "µP"
-Micropoise IsUnitForQuantity DynamicViscosityQuantity
-Unit:PoundSecondPerSquareFoot
-PoundSecondPerSquareFoot.ConversionFactorA = 0
-PoundSecondPerSquareFoot.ConversionFactorB = 0.020885434233150126
-PoundSecondPerSquareFoot.Symbol = "lb•s/ft²"
-PoundSecondPerSquareFoot IsUnitForQuantity DynamicViscosityQuantity
-Unit:PoundSecondPer100SquareFoot
-PoundSecondPer100SquareFoot.ConversionFactorA = 0
-PoundSecondPer100SquareFoot.ConversionFactorB = 2.0885434233150124
-PoundSecondPer100SquareFoot.Symbol = "lb•s/100ft²"
-PoundSecondPer100SquareFoot IsUnitForQuantity DynamicViscosityQuantity
-Unit:PoundSecondPerSquareInch
-PoundSecondPerSquareInch.ConversionFactorA = 0
-PoundSecondPerSquareInch.ConversionFactorB = 0.0001450377377302092
-PoundSecondPerSquareInch.Symbol = "lb•s/in²"
-PoundSecondPerSquareInch IsUnitForQuantity DynamicViscosityQuantity
-Unit:DyneSecondPerSquareCentimetre
-DyneSecondPerSquareCentimetre.ConversionFactorA = 0
-DyneSecondPerSquareCentimetre.ConversionFactorB = 10
-DyneSecondPerSquareCentimetre.Symbol = "dyne•s/cm²"
-DyneSecondPerSquareCentimetre IsUnitForQuantity DynamicViscosityQuantity
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[DynamicViscosityQuantity] -->|BelongsToClass| N0001(Quantity) 
-	N0000[DynamicViscosityQuantity] -->|L| N0002(("-1")) 
-	N0000[DynamicViscosityQuantity] -->|M| N0003(("1")) 
-	N0000[DynamicViscosityQuantity] -->|T| N0002(("-1")) 
-	N0004[PascalSecond] -->|BelongsToClass| N0005(Unit) 
-	N0004[PascalSecond] -->|ConversionFactorA| N0006(("0")) 
-	N0004[PascalSecond] -->|ConversionFactorB| N0003(("1")) 
-	N0004[PascalSecond] -->|Symbol| N0007(("Pa•s")) 
-	N0004[PascalSecond] -->|IsUnitForQuantity| N0000[DynamicViscosityQuantity] 
-	N0000[DynamicViscosityQuantity] -->|HasSIUnit| N0004[PascalSecond] 
-	N0008[MillipascalSecond] -->|BelongsToClass| N0005(Unit) 
-	N0008[MillipascalSecond] -->|ConversionFactorA| N0006(("0")) 
-	N0008[MillipascalSecond] -->|ConversionFactorB| N0009(("1000")) 
-	N0008[MillipascalSecond] -->|Symbol| N0010(("mPa•s")) 
-	N0008[MillipascalSecond] -->|IsUnitForQuantity| N0000[DynamicViscosityQuantity] 
-	N0011[MicropascalSecond] -->|BelongsToClass| N0005(Unit) 
-	N0011[MicropascalSecond] -->|ConversionFactorA| N0006(("0")) 
-	N0011[MicropascalSecond] -->|ConversionFactorB| N0012(("1000000")) 
-	N0011[MicropascalSecond] -->|Symbol| N0013(("µPa•s")) 
-	N0011[MicropascalSecond] -->|IsUnitForQuantity| N0000[DynamicViscosityQuantity] 
-	N0014[Poise] -->|BelongsToClass| N0005(Unit) 
-	N0014[Poise] -->|ConversionFactorA| N0006(("0")) 
-	N0014[Poise] -->|ConversionFactorB| N0015(("10")) 
-	N0014[Poise] -->|Symbol| N0016(("P")) 
-	N0014[Poise] -->|IsUnitForQuantity| N0000[DynamicViscosityQuantity] 
-	N0017[Centipoise] -->|BelongsToClass| N0005(Unit) 
-	N0017[Centipoise] -->|ConversionFactorA| N0006(("0")) 
-	N0017[Centipoise] -->|ConversionFactorB| N0009(("1000")) 
-	N0017[Centipoise] -->|Symbol| N0018(("cP")) 
-	N0017[Centipoise] -->|IsUnitForQuantity| N0000[DynamicViscosityQuantity] 
-	N0019[Millipoise] -->|BelongsToClass| N0005(Unit) 
-	N0019[Millipoise] -->|ConversionFactorA| N0006(("0")) 
-	N0019[Millipoise] -->|ConversionFactorB| N0020(("10000")) 
-	N0019[Millipoise] -->|Symbol| N0021(("mP")) 
-	N0019[Millipoise] -->|IsUnitForQuantity| N0000[DynamicViscosityQuantity] 
-	N0022[Micropoise] -->|BelongsToClass| N0005(Unit) 
-	N0022[Micropoise] -->|ConversionFactorA| N0006(("0")) 
-	N0022[Micropoise] -->|ConversionFactorB| N0023(("10000000")) 
-	N0022[Micropoise] -->|Symbol| N0024(("µP")) 
-	N0022[Micropoise] -->|IsUnitForQuantity| N0000[DynamicViscosityQuantity] 
-	N0025[PoundSecondPerSquareFoot] -->|BelongsToClass| N0005(Unit) 
-	N0025[PoundSecondPerSquareFoot] -->|ConversionFactorA| N0006(("0")) 
-	N0025[PoundSecondPerSquareFoot] -->|ConversionFactorB| N0026(("0.020885434233150126")) 
-	N0025[PoundSecondPerSquareFoot] -->|Symbol| N0027(("lb•s/ft²")) 
-	N0025[PoundSecondPerSquareFoot] -->|IsUnitForQuantity| N0000[DynamicViscosityQuantity] 
-	N0028[PoundSecondPer100SquareFoot] -->|BelongsToClass| N0005(Unit) 
-	N0028[PoundSecondPer100SquareFoot] -->|ConversionFactorA| N0006(("0")) 
-	N0028[PoundSecondPer100SquareFoot] -->|ConversionFactorB| N0029(("2.0885434233150124")) 
-	N0028[PoundSecondPer100SquareFoot] -->|Symbol| N0030(("lb•s/100ft²")) 
-	N0028[PoundSecondPer100SquareFoot] -->|IsUnitForQuantity| N0000[DynamicViscosityQuantity] 
-	N0031[PoundSecondPerSquareInch] -->|BelongsToClass| N0005(Unit) 
-	N0031[PoundSecondPerSquareInch] -->|ConversionFactorA| N0006(("0")) 
-	N0031[PoundSecondPerSquareInch] -->|ConversionFactorB| N0032(("0.0001450377377302092")) 
-	N0031[PoundSecondPerSquareInch] -->|Symbol| N0033(("lb•s/in²")) 
-	N0031[PoundSecondPerSquareInch] -->|IsUnitForQuantity| N0000[DynamicViscosityQuantity] 
-	N0034[DyneSecondPerSquareCentimetre] -->|BelongsToClass| N0005(Unit) 
-	N0034[DyneSecondPerSquareCentimetre] -->|ConversionFactorA| N0006(("0")) 
-	N0034[DyneSecondPerSquareCentimetre] -->|ConversionFactorB| N0015(("10")) 
-	N0034[DyneSecondPerSquareCentimetre] -->|Symbol| N0035(("dyne•s/cm²")) 
-	N0034[DyneSecondPerSquareCentimetre] -->|IsUnitForQuantity| N0000[DynamicViscosityQuantity] 
-```
-## ElectricCapacitanceQuantity <!-- NOUN -->
-- Display name: ElectricCapacitance
-- Parent class: [Quantity](./Quantities.md#Quantity)
-- Specialization:
-  - L = -2
-  - M = -1
-  - T = 4
-  - I = 2
-- Description: 
-lectric capacitance is the ability of a capacitor or a component to store electrical charge per unit voltage applied across it.
-The dimension of electric capacitance is:
-$$[T^{4}I^{2}M^{-1}L^{-2}]$$.
-The SI unit for **electric capacitance** is: farad with the associated unit label $F$
-- Definition set: QuantityTypes
-- Examples:
-``` dwis
-Quantity:ElectricCapacitanceQuantity
-ElectricCapacitanceQuantity.L = -2
-ElectricCapacitanceQuantity.M = -1
-ElectricCapacitanceQuantity.T = 4
-ElectricCapacitanceQuantity.I = 2
-Unit:Farad
-Farad.ConversionFactorA = 0
-Farad.ConversionFactorB = 1
-Farad.Symbol = "F"
-Farad IsUnitForQuantity ElectricCapacitanceQuantity
-ElectricCapacitanceQuantity HasSIUnit Farad
-Unit:CoulombPerVolt
-CoulombPerVolt.ConversionFactorA = 0
-CoulombPerVolt.ConversionFactorB = 1
-CoulombPerVolt.Symbol = "C/V"
-CoulombPerVolt IsUnitForQuantity ElectricCapacitanceQuantity
-Unit:Millifarad
-Millifarad.ConversionFactorA = 0
-Millifarad.ConversionFactorB = 1000
-Millifarad.Symbol = "mF"
-Millifarad IsUnitForQuantity ElectricCapacitanceQuantity
-Unit:Microfarad
-Microfarad.ConversionFactorA = 0
-Microfarad.ConversionFactorB = 1000000
-Microfarad.Symbol = "μF"
-Microfarad IsUnitForQuantity ElectricCapacitanceQuantity
-Unit:Nanofarad
-Nanofarad.ConversionFactorA = 0
-Nanofarad.ConversionFactorB = 999999999.9999999
-Nanofarad.Symbol = "nF"
-Nanofarad IsUnitForQuantity ElectricCapacitanceQuantity
-Unit:Picofarad
-Picofarad.ConversionFactorA = 0
-Picofarad.ConversionFactorB = 1000000000000
-Picofarad.Symbol = "pF"
-Picofarad IsUnitForQuantity ElectricCapacitanceQuantity
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[ElectricCapacitanceQuantity] -->|BelongsToClass| N0001(Quantity) 
-	N0000[ElectricCapacitanceQuantity] -->|L| N0002(("-2")) 
-	N0000[ElectricCapacitanceQuantity] -->|M| N0003(("-1")) 
-	N0000[ElectricCapacitanceQuantity] -->|T| N0004(("4")) 
-	N0000[ElectricCapacitanceQuantity] -->|I| N0005(("2")) 
-	N0006[Farad] -->|BelongsToClass| N0007(Unit) 
-	N0006[Farad] -->|ConversionFactorA| N0008(("0")) 
-	N0006[Farad] -->|ConversionFactorB| N0009(("1")) 
-	N0006[Farad] -->|Symbol| N0010(("F")) 
-	N0006[Farad] -->|IsUnitForQuantity| N0000[ElectricCapacitanceQuantity] 
-	N0000[ElectricCapacitanceQuantity] -->|HasSIUnit| N0006[Farad] 
-	N0011[CoulombPerVolt] -->|BelongsToClass| N0007(Unit) 
-	N0011[CoulombPerVolt] -->|ConversionFactorA| N0008(("0")) 
-	N0011[CoulombPerVolt] -->|ConversionFactorB| N0009(("1")) 
-	N0011[CoulombPerVolt] -->|Symbol| N0012(("C/V")) 
-	N0011[CoulombPerVolt] -->|IsUnitForQuantity| N0000[ElectricCapacitanceQuantity] 
-	N0013[Millifarad] -->|BelongsToClass| N0007(Unit) 
-	N0013[Millifarad] -->|ConversionFactorA| N0008(("0")) 
-	N0013[Millifarad] -->|ConversionFactorB| N0014(("1000")) 
-	N0013[Millifarad] -->|Symbol| N0015(("mF")) 
-	N0013[Millifarad] -->|IsUnitForQuantity| N0000[ElectricCapacitanceQuantity] 
-	N0016[Microfarad] -->|BelongsToClass| N0007(Unit) 
-	N0016[Microfarad] -->|ConversionFactorA| N0008(("0")) 
-	N0016[Microfarad] -->|ConversionFactorB| N0017(("1000000")) 
-	N0016[Microfarad] -->|Symbol| N0018(("μF")) 
-	N0016[Microfarad] -->|IsUnitForQuantity| N0000[ElectricCapacitanceQuantity] 
-	N0019[Nanofarad] -->|BelongsToClass| N0007(Unit) 
-	N0019[Nanofarad] -->|ConversionFactorA| N0008(("0")) 
-	N0019[Nanofarad] -->|ConversionFactorB| N0020(("999999999.9999999")) 
-	N0019[Nanofarad] -->|Symbol| N0021(("nF")) 
-	N0019[Nanofarad] -->|IsUnitForQuantity| N0000[ElectricCapacitanceQuantity] 
-	N0022[Picofarad] -->|BelongsToClass| N0007(Unit) 
-	N0022[Picofarad] -->|ConversionFactorA| N0008(("0")) 
-	N0022[Picofarad] -->|ConversionFactorB| N0023(("1000000000000")) 
-	N0022[Picofarad] -->|Symbol| N0024(("pF")) 
-	N0022[Picofarad] -->|IsUnitForQuantity| N0000[ElectricCapacitanceQuantity] 
-```
-## ElectricCurrentQuantity <!-- NOUN -->
-- Display name: ElectricCurrent
-- Parent class: [Quantity](./Quantities.md#Quantity)
-- Specialization:
-  - I = 1
-- Description: 
-Electric current is the flow of electric charge through a conductor or circuit.
-The dimension of electric current is:
-$$[I]$$.
-The SI unit for **electric current** is: ampere with the associated unit label $A$
-- Definition set: QuantityTypes
-- Examples:
-``` dwis
-Quantity:ElectricCurrentQuantity
-ElectricCurrentQuantity.I = 1
-Unit:Ampere
-Ampere.ConversionFactorA = 0
-Ampere.ConversionFactorB = 1
-Ampere.Symbol = "A"
-Ampere IsUnitForQuantity ElectricCurrentQuantity
-ElectricCurrentQuantity HasSIUnit Ampere
-Unit:CoulombPerSecond
-CoulombPerSecond.ConversionFactorA = 0
-CoulombPerSecond.ConversionFactorB = 1
-CoulombPerSecond.Symbol = "C/s"
-CoulombPerSecond IsUnitForQuantity ElectricCurrentQuantity
-Unit:SiemensVolt
-SiemensVolt.ConversionFactorA = 0
-SiemensVolt.ConversionFactorB = 1
-SiemensVolt.Symbol = "S•V"
-SiemensVolt IsUnitForQuantity ElectricCurrentQuantity
-Unit:VoltPerOhm
-VoltPerOhm.ConversionFactorA = 0
-VoltPerOhm.ConversionFactorB = 1
-VoltPerOhm.Symbol = "V/Ω"
-VoltPerOhm IsUnitForQuantity ElectricCurrentQuantity
-Unit:WattPerVolt
-WattPerVolt.ConversionFactorA = 0
-WattPerVolt.ConversionFactorB = 1
-WattPerVolt.Symbol = "W/V"
-WattPerVolt IsUnitForQuantity ElectricCurrentQuantity
-Unit:WeberPerHenry
-WeberPerHenry.ConversionFactorA = 0
-WeberPerHenry.ConversionFactorB = 1
-WeberPerHenry.Symbol = "Wb/H"
-WeberPerHenry IsUnitForQuantity ElectricCurrentQuantity
-Unit:Deciampere
-Deciampere.ConversionFactorA = 0
-Deciampere.ConversionFactorB = 10
-Deciampere.Symbol = "dA"
-Deciampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Centiampere
-Centiampere.ConversionFactorA = 0
-Centiampere.ConversionFactorB = 100
-Centiampere.Symbol = "cA"
-Centiampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Milliampere
-Milliampere.ConversionFactorA = 0
-Milliampere.ConversionFactorB = 1000
-Milliampere.Symbol = "mA"
-Milliampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Microampere
-Microampere.ConversionFactorA = 0
-Microampere.ConversionFactorB = 1000000
-Microampere.Symbol = "µA"
-Microampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Nanoampere
-Nanoampere.ConversionFactorA = 0
-Nanoampere.ConversionFactorB = 999999999.9999999
-Nanoampere.Symbol = "nA"
-Nanoampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Picoampere
-Picoampere.ConversionFactorA = 0
-Picoampere.ConversionFactorB = 1000000000000
-Picoampere.Symbol = "pA"
-Picoampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Biot
-Biot.ConversionFactorA = 0
-Biot.ConversionFactorB = 0.1
-Biot.Symbol = "Bi"
-Biot IsUnitForQuantity ElectricCurrentQuantity
-Unit:Abampere
-Abampere.ConversionFactorA = 0
-Abampere.ConversionFactorB = 0.1
-Abampere.Symbol = "abA"
-Abampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Kiloampere
-Kiloampere.ConversionFactorA = 0
-Kiloampere.ConversionFactorB = 0.001
-Kiloampere.Symbol = "kA"
-Kiloampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Megaampere
-Megaampere.ConversionFactorA = 0
-Megaampere.ConversionFactorB = 1E-06
-Megaampere.Symbol = "MA"
-Megaampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Gigaampere
-Gigaampere.ConversionFactorA = 0
-Gigaampere.ConversionFactorB = 1E-09
-Gigaampere.Symbol = "GA"
-Gigaampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Teraampere
-Teraampere.ConversionFactorA = 0
-Teraampere.ConversionFactorB = 1E-12
-Teraampere.Symbol = "TA"
-Teraampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Statampere
-Statampere.ConversionFactorA = 0
-Statampere.ConversionFactorB = 2997924580
-Statampere.Symbol = "stA"
-Statampere IsUnitForQuantity ElectricCurrentQuantity
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[ElectricCurrentQuantity] -->|BelongsToClass| N0001(Quantity) 
-	N0000[ElectricCurrentQuantity] -->|I| N0002(("1")) 
-	N0003[Ampere] -->|BelongsToClass| N0004(Unit) 
-	N0003[Ampere] -->|ConversionFactorA| N0005(("0")) 
-	N0003[Ampere] -->|ConversionFactorB| N0002(("1")) 
-	N0003[Ampere] -->|Symbol| N0006(("A")) 
-	N0003[Ampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
-	N0000[ElectricCurrentQuantity] -->|HasSIUnit| N0003[Ampere] 
-	N0007[CoulombPerSecond] -->|BelongsToClass| N0004(Unit) 
-	N0007[CoulombPerSecond] -->|ConversionFactorA| N0005(("0")) 
-	N0007[CoulombPerSecond] -->|ConversionFactorB| N0002(("1")) 
-	N0007[CoulombPerSecond] -->|Symbol| N0008(("C/s")) 
-	N0007[CoulombPerSecond] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
-	N0009[SiemensVolt] -->|BelongsToClass| N0004(Unit) 
-	N0009[SiemensVolt] -->|ConversionFactorA| N0005(("0")) 
-	N0009[SiemensVolt] -->|ConversionFactorB| N0002(("1")) 
-	N0009[SiemensVolt] -->|Symbol| N0010(("S•V")) 
-	N0009[SiemensVolt] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
-	N0011[VoltPerOhm] -->|BelongsToClass| N0004(Unit) 
-	N0011[VoltPerOhm] -->|ConversionFactorA| N0005(("0")) 
-	N0011[VoltPerOhm] -->|ConversionFactorB| N0002(("1")) 
-	N0011[VoltPerOhm] -->|Symbol| N0012(("V/Ω")) 
-	N0011[VoltPerOhm] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
-	N0013[WattPerVolt] -->|BelongsToClass| N0004(Unit) 
-	N0013[WattPerVolt] -->|ConversionFactorA| N0005(("0")) 
-	N0013[WattPerVolt] -->|ConversionFactorB| N0002(("1")) 
-	N0013[WattPerVolt] -->|Symbol| N0014(("W/V")) 
-	N0013[WattPerVolt] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
-	N0015[WeberPerHenry] -->|BelongsToClass| N0004(Unit) 
-	N0015[WeberPerHenry] -->|ConversionFactorA| N0005(("0")) 
-	N0015[WeberPerHenry] -->|ConversionFactorB| N0002(("1")) 
-	N0015[WeberPerHenry] -->|Symbol| N0016(("Wb/H")) 
-	N0015[WeberPerHenry] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
-	N0017[Deciampere] -->|BelongsToClass| N0004(Unit) 
-	N0017[Deciampere] -->|ConversionFactorA| N0005(("0")) 
-	N0017[Deciampere] -->|ConversionFactorB| N0018(("10")) 
-	N0017[Deciampere] -->|Symbol| N0019(("dA")) 
-	N0017[Deciampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
-	N0020[Centiampere] -->|BelongsToClass| N0004(Unit) 
-	N0020[Centiampere] -->|ConversionFactorA| N0005(("0")) 
-	N0020[Centiampere] -->|ConversionFactorB| N0021(("100")) 
-	N0020[Centiampere] -->|Symbol| N0022(("cA")) 
-	N0020[Centiampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
-	N0023[Milliampere] -->|BelongsToClass| N0004(Unit) 
-	N0023[Milliampere] -->|ConversionFactorA| N0005(("0")) 
-	N0023[Milliampere] -->|ConversionFactorB| N0024(("1000")) 
-	N0023[Milliampere] -->|Symbol| N0025(("mA")) 
-	N0023[Milliampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
-	N0026[Microampere] -->|BelongsToClass| N0004(Unit) 
-	N0026[Microampere] -->|ConversionFactorA| N0005(("0")) 
-	N0026[Microampere] -->|ConversionFactorB| N0027(("1000000")) 
-	N0026[Microampere] -->|Symbol| N0028(("µA")) 
-	N0026[Microampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
-	N0029[Nanoampere] -->|BelongsToClass| N0004(Unit) 
-	N0029[Nanoampere] -->|ConversionFactorA| N0005(("0")) 
-	N0029[Nanoampere] -->|ConversionFactorB| N0030(("999999999.9999999")) 
-	N0029[Nanoampere] -->|Symbol| N0031(("nA")) 
-	N0029[Nanoampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
-	N0032[Picoampere] -->|BelongsToClass| N0004(Unit) 
-	N0032[Picoampere] -->|ConversionFactorA| N0005(("0")) 
-	N0032[Picoampere] -->|ConversionFactorB| N0033(("1000000000000")) 
-	N0032[Picoampere] -->|Symbol| N0034(("pA")) 
-	N0032[Picoampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
-	N0035[Biot] -->|BelongsToClass| N0004(Unit) 
-	N0035[Biot] -->|ConversionFactorA| N0005(("0")) 
-	N0035[Biot] -->|ConversionFactorB| N0036(("0.1")) 
-	N0035[Biot] -->|Symbol| N0037(("Bi")) 
-	N0035[Biot] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
-	N0038[Abampere] -->|BelongsToClass| N0004(Unit) 
-	N0038[Abampere] -->|ConversionFactorA| N0005(("0")) 
-	N0038[Abampere] -->|ConversionFactorB| N0036(("0.1")) 
-	N0038[Abampere] -->|Symbol| N0039(("abA")) 
-	N0038[Abampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
-	N0040[Kiloampere] -->|BelongsToClass| N0004(Unit) 
-	N0040[Kiloampere] -->|ConversionFactorA| N0005(("0")) 
-	N0040[Kiloampere] -->|ConversionFactorB| N0041(("0.001")) 
-	N0040[Kiloampere] -->|Symbol| N0042(("kA")) 
-	N0040[Kiloampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
-	N0043[Megaampere] -->|BelongsToClass| N0004(Unit) 
-	N0043[Megaampere] -->|ConversionFactorA| N0005(("0")) 
-	N0043[Megaampere] -->|ConversionFactorB| N0044(("1E-06")) 
-	N0043[Megaampere] -->|Symbol| N0045(("MA")) 
-	N0043[Megaampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
-	N0046[Gigaampere] -->|BelongsToClass| N0004(Unit) 
-	N0046[Gigaampere] -->|ConversionFactorA| N0005(("0")) 
-	N0046[Gigaampere] -->|ConversionFactorB| N0047(("1E-09")) 
-	N0046[Gigaampere] -->|Symbol| N0048(("GA")) 
-	N0046[Gigaampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
-	N0049[Teraampere] -->|BelongsToClass| N0004(Unit) 
-	N0049[Teraampere] -->|ConversionFactorA| N0005(("0")) 
-	N0049[Teraampere] -->|ConversionFactorB| N0050(("1E-12")) 
-	N0049[Teraampere] -->|Symbol| N0051(("TA")) 
-	N0049[Teraampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
-	N0052[Statampere] -->|BelongsToClass| N0004(Unit) 
-	N0052[Statampere] -->|ConversionFactorA| N0005(("0")) 
-	N0052[Statampere] -->|ConversionFactorB| N0053(("2997924580")) 
-	N0052[Statampere] -->|Symbol| N0054(("stA")) 
-	N0052[Statampere] -->|IsUnitForQuantity| N0000[ElectricCurrentQuantity] 
-```
-## ElongationGradientPerLengthQuantity <!-- NOUN -->
-- Display name: ElongationGradientPerLength
-- Parent class: [Quantity](./Quantities.md#Quantity)
-- Description: 
-An elongation gradient per length is the first derivative of an elongation compared to a distance: $\frac{d\epsilon}{ds}$, where $\epsilon$ is an elongation and $s$ is a distance.
-It is dimensionless.
-The SI unit for **elongation gradient per length** is: metre per metre with the associated unit label $\frac{m}{m}$
-- Definition set: QuantityTypes
-- Examples:
-``` dwis
-Quantity:ElongationGradientPerLengthQuantity
-Unit:MetrePerMetre
-MetrePerMetre.ConversionFactorA = 0
-MetrePerMetre.ConversionFactorB = 1
-MetrePerMetre.Symbol = "m/m"
-MetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
-ElongationGradientPerLengthQuantity HasSIUnit MetrePerMetre
-Unit:DecimetrePerMetre
-DecimetrePerMetre.ConversionFactorA = 0
-DecimetrePerMetre.ConversionFactorB = 10
-DecimetrePerMetre.Symbol = "dm/m"
-DecimetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:CentimetrePerMetre
-CentimetrePerMetre.ConversionFactorA = 0
-CentimetrePerMetre.ConversionFactorB = 100
-CentimetrePerMetre.Symbol = "cm/m"
-CentimetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:MillimetrePerMetre
-MillimetrePerMetre.ConversionFactorA = 0
-MillimetrePerMetre.ConversionFactorB = 1000
-MillimetrePerMetre.Symbol = "mm/m"
-MillimetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:MicrometrePerMetre
-MicrometrePerMetre.ConversionFactorA = 0
-MicrometrePerMetre.ConversionFactorB = 1000000
-MicrometrePerMetre.Symbol = "µm/m"
-MicrometrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:MetrePerKilometre
-MetrePerKilometre.ConversionFactorA = 0
-MetrePerKilometre.ConversionFactorB = 1000
-MetrePerKilometre.Symbol = "m/km"
-MetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:DecimetrePerKilometre
-DecimetrePerKilometre.ConversionFactorA = 0
-DecimetrePerKilometre.ConversionFactorB = 10000
-DecimetrePerKilometre.Symbol = "dm/km"
-DecimetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:CentimetrePerKilometre
-CentimetrePerKilometre.ConversionFactorA = 0
-CentimetrePerKilometre.ConversionFactorB = 100000
-CentimetrePerKilometre.Symbol = "cm/km"
-CentimetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:MillimetrePerKilometre
-MillimetrePerKilometre.ConversionFactorA = 0
-MillimetrePerKilometre.ConversionFactorB = 1000000
-MillimetrePerKilometre.Symbol = "mm/km"
-MillimetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:MicrometrePerKilometre
-MicrometrePerKilometre.ConversionFactorA = 0
-MicrometrePerKilometre.ConversionFactorB = 1000000000
-MicrometrePerKilometre.Symbol = "µm/km"
-MicrometrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:InchPerFoot
-InchPerFoot.ConversionFactorA = 0
-InchPerFoot.ConversionFactorB = 11.999999999999998
-InchPerFoot.Symbol = "in/ft"
-InchPerFoot IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:InchPerYard
-InchPerYard.ConversionFactorA = 0
-InchPerYard.ConversionFactorB = 36
-InchPerYard.Symbol = "in/yd"
-InchPerYard IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:InchPerMile
-InchPerMile.ConversionFactorA = 0
-InchPerMile.ConversionFactorB = 63359.99999999999
-InchPerMile.Symbol = "in/mi"
-InchPerMile IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:FootPerFoot
-FootPerFoot.ConversionFactorA = 0
-FootPerFoot.ConversionFactorB = 1
-FootPerFoot.Symbol = "ft/ft"
-FootPerFoot IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:FootPerYard
-FootPerYard.ConversionFactorA = 0
-FootPerYard.ConversionFactorB = 3
-FootPerYard.Symbol = "ft/yd"
-FootPerYard IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:FootPerMile
-FootPerMile.ConversionFactorA = 0
-FootPerMile.ConversionFactorB = 5280
-FootPerMile.Symbol = "ft/mi"
-FootPerMile IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:YardPerFoot
-YardPerFoot.ConversionFactorA = 0
-YardPerFoot.ConversionFactorB = 0.3333333333333333
-YardPerFoot.Symbol = "yd/ft"
-YardPerFoot IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:YardPerYard
-YardPerYard.ConversionFactorA = 0
-YardPerYard.ConversionFactorB = 1
-YardPerYard.Symbol = "yd/yd"
-YardPerYard IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:YardPerMile
-YardPerMile.ConversionFactorA = 0
-YardPerMile.ConversionFactorB = 1760
-YardPerMile.Symbol = "yd/mi"
-YardPerMile IsUnitForQuantity ElongationGradientPerLengthQuantity
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[ElongationGradientPerLengthQuantity] -->|BelongsToClass| N0001(Quantity) 
-	N0002[MetrePerMetre] -->|BelongsToClass| N0003(Unit) 
-	N0002[MetrePerMetre] -->|ConversionFactorA| N0004(("0")) 
-	N0002[MetrePerMetre] -->|ConversionFactorB| N0005(("1")) 
-	N0002[MetrePerMetre] -->|Symbol| N0006(("m/m")) 
-	N0002[MetrePerMetre] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
-	N0000[ElongationGradientPerLengthQuantity] -->|HasSIUnit| N0002[MetrePerMetre] 
-	N0007[DecimetrePerMetre] -->|BelongsToClass| N0003(Unit) 
-	N0007[DecimetrePerMetre] -->|ConversionFactorA| N0004(("0")) 
-	N0007[DecimetrePerMetre] -->|ConversionFactorB| N0008(("10")) 
-	N0007[DecimetrePerMetre] -->|Symbol| N0009(("dm/m")) 
-	N0007[DecimetrePerMetre] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
-	N0010[CentimetrePerMetre] -->|BelongsToClass| N0003(Unit) 
-	N0010[CentimetrePerMetre] -->|ConversionFactorA| N0004(("0")) 
-	N0010[CentimetrePerMetre] -->|ConversionFactorB| N0011(("100")) 
-	N0010[CentimetrePerMetre] -->|Symbol| N0012(("cm/m")) 
-	N0010[CentimetrePerMetre] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
-	N0013[MillimetrePerMetre] -->|BelongsToClass| N0003(Unit) 
-	N0013[MillimetrePerMetre] -->|ConversionFactorA| N0004(("0")) 
-	N0013[MillimetrePerMetre] -->|ConversionFactorB| N0014(("1000")) 
-	N0013[MillimetrePerMetre] -->|Symbol| N0015(("mm/m")) 
-	N0013[MillimetrePerMetre] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
-	N0016[MicrometrePerMetre] -->|BelongsToClass| N0003(Unit) 
-	N0016[MicrometrePerMetre] -->|ConversionFactorA| N0004(("0")) 
-	N0016[MicrometrePerMetre] -->|ConversionFactorB| N0017(("1000000")) 
-	N0016[MicrometrePerMetre] -->|Symbol| N0018(("µm/m")) 
-	N0016[MicrometrePerMetre] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
-	N0019[MetrePerKilometre] -->|BelongsToClass| N0003(Unit) 
-	N0019[MetrePerKilometre] -->|ConversionFactorA| N0004(("0")) 
-	N0019[MetrePerKilometre] -->|ConversionFactorB| N0014(("1000")) 
-	N0019[MetrePerKilometre] -->|Symbol| N0020(("m/km")) 
-	N0019[MetrePerKilometre] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
-	N0021[DecimetrePerKilometre] -->|BelongsToClass| N0003(Unit) 
-	N0021[DecimetrePerKilometre] -->|ConversionFactorA| N0004(("0")) 
-	N0021[DecimetrePerKilometre] -->|ConversionFactorB| N0022(("10000")) 
-	N0021[DecimetrePerKilometre] -->|Symbol| N0023(("dm/km")) 
-	N0021[DecimetrePerKilometre] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
-	N0024[CentimetrePerKilometre] -->|BelongsToClass| N0003(Unit) 
-	N0024[CentimetrePerKilometre] -->|ConversionFactorA| N0004(("0")) 
-	N0024[CentimetrePerKilometre] -->|ConversionFactorB| N0025(("100000")) 
-	N0024[CentimetrePerKilometre] -->|Symbol| N0026(("cm/km")) 
-	N0024[CentimetrePerKilometre] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
-	N0027[MillimetrePerKilometre] -->|BelongsToClass| N0003(Unit) 
-	N0027[MillimetrePerKilometre] -->|ConversionFactorA| N0004(("0")) 
-	N0027[MillimetrePerKilometre] -->|ConversionFactorB| N0017(("1000000")) 
-	N0027[MillimetrePerKilometre] -->|Symbol| N0028(("mm/km")) 
-	N0027[MillimetrePerKilometre] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
-	N0029[MicrometrePerKilometre] -->|BelongsToClass| N0003(Unit) 
-	N0029[MicrometrePerKilometre] -->|ConversionFactorA| N0004(("0")) 
-	N0029[MicrometrePerKilometre] -->|ConversionFactorB| N0030(("1000000000")) 
-	N0029[MicrometrePerKilometre] -->|Symbol| N0031(("µm/km")) 
-	N0029[MicrometrePerKilometre] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
-	N0032[InchPerFoot] -->|BelongsToClass| N0003(Unit) 
-	N0032[InchPerFoot] -->|ConversionFactorA| N0004(("0")) 
-	N0032[InchPerFoot] -->|ConversionFactorB| N0033(("11.999999999999998")) 
-	N0032[InchPerFoot] -->|Symbol| N0034(("in/ft")) 
-	N0032[InchPerFoot] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
-	N0035[InchPerYard] -->|BelongsToClass| N0003(Unit) 
-	N0035[InchPerYard] -->|ConversionFactorA| N0004(("0")) 
-	N0035[InchPerYard] -->|ConversionFactorB| N0036(("36")) 
-	N0035[InchPerYard] -->|Symbol| N0037(("in/yd")) 
-	N0035[InchPerYard] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
-	N0038[InchPerMile] -->|BelongsToClass| N0003(Unit) 
-	N0038[InchPerMile] -->|ConversionFactorA| N0004(("0")) 
-	N0038[InchPerMile] -->|ConversionFactorB| N0039(("63359.99999999999")) 
-	N0038[InchPerMile] -->|Symbol| N0040(("in/mi")) 
-	N0038[InchPerMile] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
-	N0041[FootPerFoot] -->|BelongsToClass| N0003(Unit) 
-	N0041[FootPerFoot] -->|ConversionFactorA| N0004(("0")) 
-	N0041[FootPerFoot] -->|ConversionFactorB| N0005(("1")) 
-	N0041[FootPerFoot] -->|Symbol| N0042(("ft/ft")) 
-	N0041[FootPerFoot] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
-	N0043[FootPerYard] -->|BelongsToClass| N0003(Unit) 
-	N0043[FootPerYard] -->|ConversionFactorA| N0004(("0")) 
-	N0043[FootPerYard] -->|ConversionFactorB| N0044(("3")) 
-	N0043[FootPerYard] -->|Symbol| N0045(("ft/yd")) 
-	N0043[FootPerYard] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
-	N0046[FootPerMile] -->|BelongsToClass| N0003(Unit) 
-	N0046[FootPerMile] -->|ConversionFactorA| N0004(("0")) 
-	N0046[FootPerMile] -->|ConversionFactorB| N0047(("5280")) 
-	N0046[FootPerMile] -->|Symbol| N0048(("ft/mi")) 
-	N0046[FootPerMile] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
-	N0049[YardPerFoot] -->|BelongsToClass| N0003(Unit) 
-	N0049[YardPerFoot] -->|ConversionFactorA| N0004(("0")) 
-	N0049[YardPerFoot] -->|ConversionFactorB| N0050(("0.3333333333333333")) 
-	N0049[YardPerFoot] -->|Symbol| N0051(("yd/ft")) 
-	N0049[YardPerFoot] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
-	N0052[YardPerYard] -->|BelongsToClass| N0003(Unit) 
-	N0052[YardPerYard] -->|ConversionFactorA| N0004(("0")) 
-	N0052[YardPerYard] -->|ConversionFactorB| N0005(("1")) 
-	N0052[YardPerYard] -->|Symbol| N0053(("yd/yd")) 
-	N0052[YardPerYard] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
-	N0054[YardPerMile] -->|BelongsToClass| N0003(Unit) 
-	N0054[YardPerMile] -->|ConversionFactorA| N0004(("0")) 
-	N0054[YardPerMile] -->|ConversionFactorB| N0055(("1760")) 
-	N0054[YardPerMile] -->|Symbol| N0056(("yd/mi")) 
-	N0054[YardPerMile] -->|IsUnitForQuantity| N0000[ElongationGradientPerLengthQuantity] 
-```
-## EnergyDensityQuantity <!-- NOUN -->
-- Display name: EnergyDensity
-- Parent class: [Quantity](./Quantities.md#Quantity)
-- Specialization:
-  - L = -1
-  - M = 1
-  - T = -2
-- Description: 
-Energy density is the amount of energy stored per unit volume or mass of a substance or system.
-The dimension of energy density is:
-$$[ML^{-1}T^{-2}]$$.
-The SI unit for **energy density** is: joule per cubic metre with the associated unit label $\frac{J}{m^{3}}$
-- Definition set: QuantityTypes
-- Examples:
-``` dwis
-Quantity:EnergyDensityQuantity
-EnergyDensityQuantity.L = -1
-EnergyDensityQuantity.M = 1
-EnergyDensityQuantity.T = -2
-Unit:JoulePerCubicMetre
-JoulePerCubicMetre.ConversionFactorA = 0
-JoulePerCubicMetre.ConversionFactorB = 1
-JoulePerCubicMetre.Symbol = "J/m³"
-JoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
-EnergyDensityQuantity HasSIUnit JoulePerCubicMetre
-Unit:JoulePerLitre
-JoulePerLitre.ConversionFactorA = 0
-JoulePerLitre.ConversionFactorB = 0.001
-JoulePerLitre.Symbol = "J/L"
-JoulePerLitre IsUnitForQuantity EnergyDensityQuantity
-Unit:KilojoulePerCubicMetre
-KilojoulePerCubicMetre.ConversionFactorA = 0
-KilojoulePerCubicMetre.ConversionFactorB = 0.001
-KilojoulePerCubicMetre.Symbol = "kJ/m³"
-KilojoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
-Unit:KilojoulePerLitre
-KilojoulePerLitre.ConversionFactorA = 0
-KilojoulePerLitre.ConversionFactorB = 1E-06
-KilojoulePerLitre.Symbol = "kJ/L"
-KilojoulePerLitre IsUnitForQuantity EnergyDensityQuantity
-Unit:MegajoulePerCubicMetre
-MegajoulePerCubicMetre.ConversionFactorA = 0
-MegajoulePerCubicMetre.ConversionFactorB = 1E-06
-MegajoulePerCubicMetre.Symbol = "MJ/m³"
-MegajoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
-Unit:MegajoulePerLitre
-MegajoulePerLitre.ConversionFactorA = 0
-MegajoulePerLitre.ConversionFactorB = 1E-09
-MegajoulePerLitre.Symbol = "MJ/L"
-MegajoulePerLitre IsUnitForQuantity EnergyDensityQuantity
-Unit:GigajoulePerCubicMetre
-GigajoulePerCubicMetre.ConversionFactorA = 0
-GigajoulePerCubicMetre.ConversionFactorB = 1E-09
-GigajoulePerCubicMetre.Symbol = "GJ/m³"
-GigajoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
-Unit:GigajoulePerLitre
-GigajoulePerLitre.ConversionFactorA = 0
-GigajoulePerLitre.ConversionFactorB = 1E-12
-GigajoulePerLitre.Symbol = "GJ/L"
-GigajoulePerLitre IsUnitForQuantity EnergyDensityQuantity
-Unit:CaloriePerCubicMetre
-CaloriePerCubicMetre.ConversionFactorA = 0
-CaloriePerCubicMetre.ConversionFactorB = 0.2390057361376673
-CaloriePerCubicMetre.Symbol = "cal/m³"
-CaloriePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
-Unit:CaloriePerLitre
-CaloriePerLitre.ConversionFactorA = 0
-CaloriePerLitre.ConversionFactorB = 0.0002390057361376673
-CaloriePerLitre.Symbol = "cal/L"
-CaloriePerLitre IsUnitForQuantity EnergyDensityQuantity
-Unit:KilocaloriePerCubicMetre
-KilocaloriePerCubicMetre.ConversionFactorA = 0
-KilocaloriePerCubicMetre.ConversionFactorB = 0.0002390057361376673
-KilocaloriePerCubicMetre.Symbol = "Cal/m³"
-KilocaloriePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
-Unit:KilocaloriePerLitre
-KilocaloriePerLitre.ConversionFactorA = 0
-KilocaloriePerLitre.ConversionFactorB = 2.390057361376673E-07
-KilocaloriePerLitre.Symbol = "Cal/L"
-KilocaloriePerLitre IsUnitForQuantity EnergyDensityQuantity
-Unit:JoulePerCubicFoot
-JoulePerCubicFoot.ConversionFactorA = 0
-JoulePerCubicFoot.ConversionFactorB = 0.02831684659199999
-JoulePerCubicFoot.Symbol = "J/ft³"
-JoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
-Unit:KilojoulePerCubicFoot
-KilojoulePerCubicFoot.ConversionFactorA = 0
-KilojoulePerCubicFoot.ConversionFactorB = 2.831684659199999E-05
-KilojoulePerCubicFoot.Symbol = "kJ/ft³"
-KilojoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
-Unit:MegajoulePerCubicFoot
-MegajoulePerCubicFoot.ConversionFactorA = 0
-MegajoulePerCubicFoot.ConversionFactorB = 2.831684659199999E-08
-MegajoulePerCubicFoot.Symbol = "MJ/ft³"
-MegajoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
-Unit:GigajoulePerCubicFoot
-GigajoulePerCubicFoot.ConversionFactorA = 0
-GigajoulePerCubicFoot.ConversionFactorB = 2.831684659199999E-11
-GigajoulePerCubicFoot.Symbol = "GJ/ft³"
-GigajoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
-Unit:CaloriePerCubicFoot
-CaloriePerCubicFoot.ConversionFactorA = 0
-CaloriePerCubicFoot.ConversionFactorB = 0.006767888764818353
-CaloriePerCubicFoot.Symbol = "cal/ft³"
-CaloriePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
-Unit:KilocaloriePerCubicFoot
-KilocaloriePerCubicFoot.ConversionFactorA = 0
-KilocaloriePerCubicFoot.ConversionFactorB = 6.767888764818354E-06
-KilocaloriePerCubicFoot.Symbol = "Cal/ft³"
-KilocaloriePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
-Unit:JoulePerCubicInch
-JoulePerCubicInch.ConversionFactorA = 0
-JoulePerCubicInch.ConversionFactorB = 1.6387064E-05
-JoulePerCubicInch.Symbol = "J/in³"
-JoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
-Unit:KilojoulePerCubicInch
-KilojoulePerCubicInch.ConversionFactorA = 0
-KilojoulePerCubicInch.ConversionFactorB = 1.6387064E-08
-KilojoulePerCubicInch.Symbol = "kJ/in³"
-KilojoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
-Unit:MegajoulePerCubicInch
-MegajoulePerCubicInch.ConversionFactorA = 0
-MegajoulePerCubicInch.ConversionFactorB = 1.6387064E-11
-MegajoulePerCubicInch.Symbol = "MJ/in³"
-MegajoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
-Unit:GigajoulePerCubicInch
-GigajoulePerCubicInch.ConversionFactorA = 0
-GigajoulePerCubicInch.ConversionFactorB = 1.6387064E-14
-GigajoulePerCubicInch.Symbol = "GJ/in³"
-GigajoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
-Unit:CaloriePerCubicInch
-CaloriePerCubicInch.ConversionFactorA = 0
-CaloriePerCubicInch.ConversionFactorB = 3.916602294455067E-06
-CaloriePerCubicInch.Symbol = "cal/in³"
-CaloriePerCubicInch IsUnitForQuantity EnergyDensityQuantity
-Unit:KilocaloriePerCubicInch
-KilocaloriePerCubicInch.ConversionFactorA = 0
-KilocaloriePerCubicInch.ConversionFactorB = 3.916602294455067E-09
-KilocaloriePerCubicInch.Symbol = "Cal/in³"
-KilocaloriePerCubicInch IsUnitForQuantity EnergyDensityQuantity
-Unit:JoulePerGallonUk
-JoulePerGallonUk.ConversionFactorA = 0
-JoulePerGallonUk.ConversionFactorB = 0.00454609
-JoulePerGallonUk.Symbol = "J/gal(UK)"
-JoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
-Unit:KilojoulePerGallonUk
-KilojoulePerGallonUk.ConversionFactorA = 0
-KilojoulePerGallonUk.ConversionFactorB = 4.54609E-06
-KilojoulePerGallonUk.Symbol = "kJ/gal(UK)"
-KilojoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
-Unit:MegajoulePerGallonUk
-MegajoulePerGallonUk.ConversionFactorA = 0
-MegajoulePerGallonUk.ConversionFactorB = 4.54609E-09
-MegajoulePerGallonUk.Symbol = "MJ/gal(UK)"
-MegajoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
-Unit:GigajoulePerGallonUk
-GigajoulePerGallonUk.ConversionFactorA = 0
-GigajoulePerGallonUk.ConversionFactorB = 4.54609E-12
-GigajoulePerGallonUk.Symbol = "GJ/gal(UK)"
-GigajoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
-Unit:CaloriePerGallonUk
-CaloriePerGallonUk.ConversionFactorA = 0
-CaloriePerGallonUk.ConversionFactorB = 0.0010865415869980878
-CaloriePerGallonUk.Symbol = "cal/gal(UK)"
-CaloriePerGallonUk IsUnitForQuantity EnergyDensityQuantity
-Unit:KilocaloriePerGallonUk
-KilocaloriePerGallonUk.ConversionFactorA = 0
-KilocaloriePerGallonUk.ConversionFactorB = 1.086541586998088E-06
-KilocaloriePerGallonUk.Symbol = "Cal/gal(UK)"
-KilocaloriePerGallonUk IsUnitForQuantity EnergyDensityQuantity
-Unit:JoulePerGallonUs
-JoulePerGallonUs.ConversionFactorA = 0
-JoulePerGallonUs.ConversionFactorB = 0.0037854117839999997
-JoulePerGallonUs.Symbol = "J/gal(US)"
-JoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
-Unit:KilojoulePerGallonUs
-KilojoulePerGallonUs.ConversionFactorA = 0
-KilojoulePerGallonUs.ConversionFactorB = 3.7854117839999998E-06
-KilojoulePerGallonUs.Symbol = "kJ/gal(US)"
-KilojoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
-Unit:MegajoulePerGallonUs
-MegajoulePerGallonUs.ConversionFactorA = 0
-MegajoulePerGallonUs.ConversionFactorB = 3.7854117839999995E-09
-MegajoulePerGallonUs.Symbol = "MJ/gal(US)"
-MegajoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
-Unit:GigajoulePerGallonUs
-GigajoulePerGallonUs.ConversionFactorA = 0
-GigajoulePerGallonUs.ConversionFactorB = 3.785411784E-12
-GigajoulePerGallonUs.Symbol = "GJ/gal(US)"
-GigajoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
-Unit:CaloriePerGallonUs
-CaloriePerGallonUs.ConversionFactorA = 0
-CaloriePerGallonUs.ConversionFactorB = 0.0009047351300191204
-CaloriePerGallonUs.Symbol = "cal/gal(US)"
-CaloriePerGallonUs IsUnitForQuantity EnergyDensityQuantity
-Unit:KilocaloriePerGallonUs
-KilocaloriePerGallonUs.ConversionFactorA = 0
-KilocaloriePerGallonUs.ConversionFactorB = 9.047351300191203E-07
-KilocaloriePerGallonUs.Symbol = "Cal/gal(US)"
-KilocaloriePerGallonUs IsUnitForQuantity EnergyDensityQuantity
-Unit:BritishThermalUnitPerCubicMetre
-BritishThermalUnitPerCubicMetre.ConversionFactorA = 0
-BritishThermalUnitPerCubicMetre.ConversionFactorB = 0.0009484516526770049
-BritishThermalUnitPerCubicMetre.Symbol = "BTU/m³"
-BritishThermalUnitPerCubicMetre IsUnitForQuantity EnergyDensityQuantity
-Unit:BritishThermalUnitPerLitre
-BritishThermalUnitPerLitre.ConversionFactorA = 0
-BritishThermalUnitPerLitre.ConversionFactorB = 9.484516526770049E-07
-BritishThermalUnitPerLitre.Symbol = "BTU/L"
-BritishThermalUnitPerLitre IsUnitForQuantity EnergyDensityQuantity
-Unit:BritishThermalUnitPerCubicFoot
-BritishThermalUnitPerCubicFoot.ConversionFactorA = 0
-BritishThermalUnitPerCubicFoot.ConversionFactorB = 2.6857159948783606E-05
-BritishThermalUnitPerCubicFoot.Symbol = "BTU/ft³"
-BritishThermalUnitPerCubicFoot IsUnitForQuantity EnergyDensityQuantity
-Unit:BritishThermalUnitPerCubicInch
-BritishThermalUnitPerCubicInch.ConversionFactorA = 0
-BritishThermalUnitPerCubicInch.ConversionFactorB = 1.554233793332385E-08
-BritishThermalUnitPerCubicInch.Symbol = "BTU/in³"
-BritishThermalUnitPerCubicInch IsUnitForQuantity EnergyDensityQuantity
-Unit:BritishThermalUnitPerGallonUk
-BritishThermalUnitPerGallonUk.ConversionFactorA = 0
-BritishThermalUnitPerGallonUk.ConversionFactorB = 4.311746573718405E-06
-BritishThermalUnitPerGallonUk.Symbol = "BTU/gal(UK)"
-BritishThermalUnitPerGallonUk IsUnitForQuantity EnergyDensityQuantity
-Unit:BritishThermalUnitPerGallonUs
-BritishThermalUnitPerGallonUs.ConversionFactorA = 0
-BritishThermalUnitPerGallonUs.ConversionFactorB = 3.5902800625978092E-06
-BritishThermalUnitPerGallonUs.Symbol = "BTU/gal(US)"
-BritishThermalUnitPerGallonUs IsUnitForQuantity EnergyDensityQuantity
-Unit:KiloBritishThermalUnitPerCubicMetre
-KiloBritishThermalUnitPerCubicMetre.ConversionFactorA = 0
-KiloBritishThermalUnitPerCubicMetre.ConversionFactorB = 9.484516526770048E-07
-KiloBritishThermalUnitPerCubicMetre.Symbol = "kBTU/m³"
-KiloBritishThermalUnitPerCubicMetre IsUnitForQuantity EnergyDensityQuantity
-Unit:KiloBritishThermalUnitPerLitre
-KiloBritishThermalUnitPerLitre.ConversionFactorA = 0
-KiloBritishThermalUnitPerLitre.ConversionFactorB = 9.48451652677005E-10
-KiloBritishThermalUnitPerLitre.Symbol = "kBTU/L"
-KiloBritishThermalUnitPerLitre IsUnitForQuantity EnergyDensityQuantity
-Unit:KiloBritishThermalUnitPerCubicFoot
-KiloBritishThermalUnitPerCubicFoot.ConversionFactorA = 0
-KiloBritishThermalUnitPerCubicFoot.ConversionFactorB = 2.6857159948783602E-08
-KiloBritishThermalUnitPerCubicFoot.Symbol = "kBTU/ft³"
-KiloBritishThermalUnitPerCubicFoot IsUnitForQuantity EnergyDensityQuantity
-Unit:KiloBritishThermalUnitPerCubicInch
-KiloBritishThermalUnitPerCubicInch.ConversionFactorA = 0
-KiloBritishThermalUnitPerCubicInch.ConversionFactorB = 1.5542337933323848E-11
-KiloBritishThermalUnitPerCubicInch.Symbol = "kBTU/in³"
-KiloBritishThermalUnitPerCubicInch IsUnitForQuantity EnergyDensityQuantity
-Unit:KiloBritishThermalUnitPerGallonUk
-KiloBritishThermalUnitPerGallonUk.ConversionFactorA = 0
-KiloBritishThermalUnitPerGallonUk.ConversionFactorB = 4.311746573718405E-09
-KiloBritishThermalUnitPerGallonUk.Symbol = "kBTU/gal(UK)"
-KiloBritishThermalUnitPerGallonUk IsUnitForQuantity EnergyDensityQuantity
-Unit:KiloBritishThermalUnitPerGallonUs
-KiloBritishThermalUnitPerGallonUs.ConversionFactorA = 0
-KiloBritishThermalUnitPerGallonUs.ConversionFactorB = 3.5902800625978087E-09
-KiloBritishThermalUnitPerGallonUs.Symbol = "kBTU/gal(US)"
-KiloBritishThermalUnitPerGallonUs IsUnitForQuantity EnergyDensityQuantity
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[EnergyDensityQuantity] -->|BelongsToClass| N0001(Quantity) 
-	N0000[EnergyDensityQuantity] -->|L| N0002(("-1")) 
-	N0000[EnergyDensityQuantity] -->|M| N0003(("1")) 
-	N0000[EnergyDensityQuantity] -->|T| N0004(("-2")) 
-	N0005[JoulePerCubicMetre] -->|BelongsToClass| N0006(Unit) 
-	N0005[JoulePerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
-	N0005[JoulePerCubicMetre] -->|ConversionFactorB| N0003(("1")) 
-	N0005[JoulePerCubicMetre] -->|Symbol| N0008(("J/m³")) 
-	N0005[JoulePerCubicMetre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0000[EnergyDensityQuantity] -->|HasSIUnit| N0005[JoulePerCubicMetre] 
-	N0009[JoulePerLitre] -->|BelongsToClass| N0006(Unit) 
-	N0009[JoulePerLitre] -->|ConversionFactorA| N0007(("0")) 
-	N0009[JoulePerLitre] -->|ConversionFactorB| N0010(("0.001")) 
-	N0009[JoulePerLitre] -->|Symbol| N0011(("J/L")) 
-	N0009[JoulePerLitre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0012[KilojoulePerCubicMetre] -->|BelongsToClass| N0006(Unit) 
-	N0012[KilojoulePerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
-	N0012[KilojoulePerCubicMetre] -->|ConversionFactorB| N0010(("0.001")) 
-	N0012[KilojoulePerCubicMetre] -->|Symbol| N0013(("kJ/m³")) 
-	N0012[KilojoulePerCubicMetre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0014[KilojoulePerLitre] -->|BelongsToClass| N0006(Unit) 
-	N0014[KilojoulePerLitre] -->|ConversionFactorA| N0007(("0")) 
-	N0014[KilojoulePerLitre] -->|ConversionFactorB| N0015(("1E-06")) 
-	N0014[KilojoulePerLitre] -->|Symbol| N0016(("kJ/L")) 
-	N0014[KilojoulePerLitre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0017[MegajoulePerCubicMetre] -->|BelongsToClass| N0006(Unit) 
-	N0017[MegajoulePerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
-	N0017[MegajoulePerCubicMetre] -->|ConversionFactorB| N0015(("1E-06")) 
-	N0017[MegajoulePerCubicMetre] -->|Symbol| N0018(("MJ/m³")) 
-	N0017[MegajoulePerCubicMetre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0019[MegajoulePerLitre] -->|BelongsToClass| N0006(Unit) 
-	N0019[MegajoulePerLitre] -->|ConversionFactorA| N0007(("0")) 
-	N0019[MegajoulePerLitre] -->|ConversionFactorB| N0020(("1E-09")) 
-	N0019[MegajoulePerLitre] -->|Symbol| N0021(("MJ/L")) 
-	N0019[MegajoulePerLitre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0022[GigajoulePerCubicMetre] -->|BelongsToClass| N0006(Unit) 
-	N0022[GigajoulePerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
-	N0022[GigajoulePerCubicMetre] -->|ConversionFactorB| N0020(("1E-09")) 
-	N0022[GigajoulePerCubicMetre] -->|Symbol| N0023(("GJ/m³")) 
-	N0022[GigajoulePerCubicMetre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0024[GigajoulePerLitre] -->|BelongsToClass| N0006(Unit) 
-	N0024[GigajoulePerLitre] -->|ConversionFactorA| N0007(("0")) 
-	N0024[GigajoulePerLitre] -->|ConversionFactorB| N0025(("1E-12")) 
-	N0024[GigajoulePerLitre] -->|Symbol| N0026(("GJ/L")) 
-	N0024[GigajoulePerLitre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0027[CaloriePerCubicMetre] -->|BelongsToClass| N0006(Unit) 
-	N0027[CaloriePerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
-	N0027[CaloriePerCubicMetre] -->|ConversionFactorB| N0028(("0.2390057361376673")) 
-	N0027[CaloriePerCubicMetre] -->|Symbol| N0029(("cal/m³")) 
-	N0027[CaloriePerCubicMetre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0030[CaloriePerLitre] -->|BelongsToClass| N0006(Unit) 
-	N0030[CaloriePerLitre] -->|ConversionFactorA| N0007(("0")) 
-	N0030[CaloriePerLitre] -->|ConversionFactorB| N0031(("0.0002390057361376673")) 
-	N0030[CaloriePerLitre] -->|Symbol| N0032(("cal/L")) 
-	N0030[CaloriePerLitre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0033[KilocaloriePerCubicMetre] -->|BelongsToClass| N0006(Unit) 
-	N0033[KilocaloriePerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
-	N0033[KilocaloriePerCubicMetre] -->|ConversionFactorB| N0031(("0.0002390057361376673")) 
-	N0033[KilocaloriePerCubicMetre] -->|Symbol| N0034(("Cal/m³")) 
-	N0033[KilocaloriePerCubicMetre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0035[KilocaloriePerLitre] -->|BelongsToClass| N0006(Unit) 
-	N0035[KilocaloriePerLitre] -->|ConversionFactorA| N0007(("0")) 
-	N0035[KilocaloriePerLitre] -->|ConversionFactorB| N0036(("2.390057361376673E-07")) 
-	N0035[KilocaloriePerLitre] -->|Symbol| N0037(("Cal/L")) 
-	N0035[KilocaloriePerLitre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0038[JoulePerCubicFoot] -->|BelongsToClass| N0006(Unit) 
-	N0038[JoulePerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
-	N0038[JoulePerCubicFoot] -->|ConversionFactorB| N0039(("0.02831684659199999")) 
-	N0038[JoulePerCubicFoot] -->|Symbol| N0040(("J/ft³")) 
-	N0038[JoulePerCubicFoot] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0041[KilojoulePerCubicFoot] -->|BelongsToClass| N0006(Unit) 
-	N0041[KilojoulePerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
-	N0041[KilojoulePerCubicFoot] -->|ConversionFactorB| N0042(("2.831684659199999E-05")) 
-	N0041[KilojoulePerCubicFoot] -->|Symbol| N0043(("kJ/ft³")) 
-	N0041[KilojoulePerCubicFoot] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0044[MegajoulePerCubicFoot] -->|BelongsToClass| N0006(Unit) 
-	N0044[MegajoulePerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
-	N0044[MegajoulePerCubicFoot] -->|ConversionFactorB| N0045(("2.831684659199999E-08")) 
-	N0044[MegajoulePerCubicFoot] -->|Symbol| N0046(("MJ/ft³")) 
-	N0044[MegajoulePerCubicFoot] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0047[GigajoulePerCubicFoot] -->|BelongsToClass| N0006(Unit) 
-	N0047[GigajoulePerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
-	N0047[GigajoulePerCubicFoot] -->|ConversionFactorB| N0048(("2.831684659199999E-11")) 
-	N0047[GigajoulePerCubicFoot] -->|Symbol| N0049(("GJ/ft³")) 
-	N0047[GigajoulePerCubicFoot] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0050[CaloriePerCubicFoot] -->|BelongsToClass| N0006(Unit) 
-	N0050[CaloriePerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
-	N0050[CaloriePerCubicFoot] -->|ConversionFactorB| N0051(("0.006767888764818353")) 
-	N0050[CaloriePerCubicFoot] -->|Symbol| N0052(("cal/ft³")) 
-	N0050[CaloriePerCubicFoot] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0053[KilocaloriePerCubicFoot] -->|BelongsToClass| N0006(Unit) 
-	N0053[KilocaloriePerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
-	N0053[KilocaloriePerCubicFoot] -->|ConversionFactorB| N0054(("6.767888764818354E-06")) 
-	N0053[KilocaloriePerCubicFoot] -->|Symbol| N0055(("Cal/ft³")) 
-	N0053[KilocaloriePerCubicFoot] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0056[JoulePerCubicInch] -->|BelongsToClass| N0006(Unit) 
-	N0056[JoulePerCubicInch] -->|ConversionFactorA| N0007(("0")) 
-	N0056[JoulePerCubicInch] -->|ConversionFactorB| N0057(("1.6387064E-05")) 
-	N0056[JoulePerCubicInch] -->|Symbol| N0058(("J/in³")) 
-	N0056[JoulePerCubicInch] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0059[KilojoulePerCubicInch] -->|BelongsToClass| N0006(Unit) 
-	N0059[KilojoulePerCubicInch] -->|ConversionFactorA| N0007(("0")) 
-	N0059[KilojoulePerCubicInch] -->|ConversionFactorB| N0060(("1.6387064E-08")) 
-	N0059[KilojoulePerCubicInch] -->|Symbol| N0061(("kJ/in³")) 
-	N0059[KilojoulePerCubicInch] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0062[MegajoulePerCubicInch] -->|BelongsToClass| N0006(Unit) 
-	N0062[MegajoulePerCubicInch] -->|ConversionFactorA| N0007(("0")) 
-	N0062[MegajoulePerCubicInch] -->|ConversionFactorB| N0063(("1.6387064E-11")) 
-	N0062[MegajoulePerCubicInch] -->|Symbol| N0064(("MJ/in³")) 
-	N0062[MegajoulePerCubicInch] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0065[GigajoulePerCubicInch] -->|BelongsToClass| N0006(Unit) 
-	N0065[GigajoulePerCubicInch] -->|ConversionFactorA| N0007(("0")) 
-	N0065[GigajoulePerCubicInch] -->|ConversionFactorB| N0066(("1.6387064E-14")) 
-	N0065[GigajoulePerCubicInch] -->|Symbol| N0067(("GJ/in³")) 
-	N0065[GigajoulePerCubicInch] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0068[CaloriePerCubicInch] -->|BelongsToClass| N0006(Unit) 
-	N0068[CaloriePerCubicInch] -->|ConversionFactorA| N0007(("0")) 
-	N0068[CaloriePerCubicInch] -->|ConversionFactorB| N0069(("3.916602294455067E-06")) 
-	N0068[CaloriePerCubicInch] -->|Symbol| N0070(("cal/in³")) 
-	N0068[CaloriePerCubicInch] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0071[KilocaloriePerCubicInch] -->|BelongsToClass| N0006(Unit) 
-	N0071[KilocaloriePerCubicInch] -->|ConversionFactorA| N0007(("0")) 
-	N0071[KilocaloriePerCubicInch] -->|ConversionFactorB| N0072(("3.916602294455067E-09")) 
-	N0071[KilocaloriePerCubicInch] -->|Symbol| N0073(("Cal/in³")) 
-	N0071[KilocaloriePerCubicInch] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0074[JoulePerGallonUk] -->|BelongsToClass| N0006(Unit) 
-	N0074[JoulePerGallonUk] -->|ConversionFactorA| N0007(("0")) 
-	N0074[JoulePerGallonUk] -->|ConversionFactorB| N0075(("0.00454609")) 
-	N0074[JoulePerGallonUk] -->|Symbol| N0076(("J/gal(UK)")) 
-	N0074[JoulePerGallonUk] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0077[KilojoulePerGallonUk] -->|BelongsToClass| N0006(Unit) 
-	N0077[KilojoulePerGallonUk] -->|ConversionFactorA| N0007(("0")) 
-	N0077[KilojoulePerGallonUk] -->|ConversionFactorB| N0078(("4.54609E-06")) 
-	N0077[KilojoulePerGallonUk] -->|Symbol| N0079(("kJ/gal(UK)")) 
-	N0077[KilojoulePerGallonUk] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0080[MegajoulePerGallonUk] -->|BelongsToClass| N0006(Unit) 
-	N0080[MegajoulePerGallonUk] -->|ConversionFactorA| N0007(("0")) 
-	N0080[MegajoulePerGallonUk] -->|ConversionFactorB| N0081(("4.54609E-09")) 
-	N0080[MegajoulePerGallonUk] -->|Symbol| N0082(("MJ/gal(UK)")) 
-	N0080[MegajoulePerGallonUk] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0083[GigajoulePerGallonUk] -->|BelongsToClass| N0006(Unit) 
-	N0083[GigajoulePerGallonUk] -->|ConversionFactorA| N0007(("0")) 
-	N0083[GigajoulePerGallonUk] -->|ConversionFactorB| N0084(("4.54609E-12")) 
-	N0083[GigajoulePerGallonUk] -->|Symbol| N0085(("GJ/gal(UK)")) 
-	N0083[GigajoulePerGallonUk] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0086[CaloriePerGallonUk] -->|BelongsToClass| N0006(Unit) 
-	N0086[CaloriePerGallonUk] -->|ConversionFactorA| N0007(("0")) 
-	N0086[CaloriePerGallonUk] -->|ConversionFactorB| N0087(("0.0010865415869980878")) 
-	N0086[CaloriePerGallonUk] -->|Symbol| N0088(("cal/gal(UK)")) 
-	N0086[CaloriePerGallonUk] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0089[KilocaloriePerGallonUk] -->|BelongsToClass| N0006(Unit) 
-	N0089[KilocaloriePerGallonUk] -->|ConversionFactorA| N0007(("0")) 
-	N0089[KilocaloriePerGallonUk] -->|ConversionFactorB| N0090(("1.086541586998088E-06")) 
-	N0089[KilocaloriePerGallonUk] -->|Symbol| N0091(("Cal/gal(UK)")) 
-	N0089[KilocaloriePerGallonUk] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0092[JoulePerGallonUs] -->|BelongsToClass| N0006(Unit) 
-	N0092[JoulePerGallonUs] -->|ConversionFactorA| N0007(("0")) 
-	N0092[JoulePerGallonUs] -->|ConversionFactorB| N0093(("0.0037854117839999997")) 
-	N0092[JoulePerGallonUs] -->|Symbol| N0094(("J/gal(US)")) 
-	N0092[JoulePerGallonUs] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0095[KilojoulePerGallonUs] -->|BelongsToClass| N0006(Unit) 
-	N0095[KilojoulePerGallonUs] -->|ConversionFactorA| N0007(("0")) 
-	N0095[KilojoulePerGallonUs] -->|ConversionFactorB| N0096(("3.7854117839999998E-06")) 
-	N0095[KilojoulePerGallonUs] -->|Symbol| N0097(("kJ/gal(US)")) 
-	N0095[KilojoulePerGallonUs] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0098[MegajoulePerGallonUs] -->|BelongsToClass| N0006(Unit) 
-	N0098[MegajoulePerGallonUs] -->|ConversionFactorA| N0007(("0")) 
-	N0098[MegajoulePerGallonUs] -->|ConversionFactorB| N0099(("3.7854117839999995E-09")) 
-	N0098[MegajoulePerGallonUs] -->|Symbol| N0100(("MJ/gal(US)")) 
-	N0098[MegajoulePerGallonUs] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0101[GigajoulePerGallonUs] -->|BelongsToClass| N0006(Unit) 
-	N0101[GigajoulePerGallonUs] -->|ConversionFactorA| N0007(("0")) 
-	N0101[GigajoulePerGallonUs] -->|ConversionFactorB| N0102(("3.785411784E-12")) 
-	N0101[GigajoulePerGallonUs] -->|Symbol| N0103(("GJ/gal(US)")) 
-	N0101[GigajoulePerGallonUs] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0104[CaloriePerGallonUs] -->|BelongsToClass| N0006(Unit) 
-	N0104[CaloriePerGallonUs] -->|ConversionFactorA| N0007(("0")) 
-	N0104[CaloriePerGallonUs] -->|ConversionFactorB| N0105(("0.0009047351300191204")) 
-	N0104[CaloriePerGallonUs] -->|Symbol| N0106(("cal/gal(US)")) 
-	N0104[CaloriePerGallonUs] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0107[KilocaloriePerGallonUs] -->|BelongsToClass| N0006(Unit) 
-	N0107[KilocaloriePerGallonUs] -->|ConversionFactorA| N0007(("0")) 
-	N0107[KilocaloriePerGallonUs] -->|ConversionFactorB| N0108(("9.047351300191203E-07")) 
-	N0107[KilocaloriePerGallonUs] -->|Symbol| N0109(("Cal/gal(US)")) 
-	N0107[KilocaloriePerGallonUs] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0110[BritishThermalUnitPerCubicMetre] -->|BelongsToClass| N0006(Unit) 
-	N0110[BritishThermalUnitPerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
-	N0110[BritishThermalUnitPerCubicMetre] -->|ConversionFactorB| N0111(("0.0009484516526770049")) 
-	N0110[BritishThermalUnitPerCubicMetre] -->|Symbol| N0112(("BTU/m³")) 
-	N0110[BritishThermalUnitPerCubicMetre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0113[BritishThermalUnitPerLitre] -->|BelongsToClass| N0006(Unit) 
-	N0113[BritishThermalUnitPerLitre] -->|ConversionFactorA| N0007(("0")) 
-	N0113[BritishThermalUnitPerLitre] -->|ConversionFactorB| N0114(("9.484516526770049E-07")) 
-	N0113[BritishThermalUnitPerLitre] -->|Symbol| N0115(("BTU/L")) 
-	N0113[BritishThermalUnitPerLitre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0116[BritishThermalUnitPerCubicFoot] -->|BelongsToClass| N0006(Unit) 
-	N0116[BritishThermalUnitPerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
-	N0116[BritishThermalUnitPerCubicFoot] -->|ConversionFactorB| N0117(("2.6857159948783606E-05")) 
-	N0116[BritishThermalUnitPerCubicFoot] -->|Symbol| N0118(("BTU/ft³")) 
-	N0116[BritishThermalUnitPerCubicFoot] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0119[BritishThermalUnitPerCubicInch] -->|BelongsToClass| N0006(Unit) 
-	N0119[BritishThermalUnitPerCubicInch] -->|ConversionFactorA| N0007(("0")) 
-	N0119[BritishThermalUnitPerCubicInch] -->|ConversionFactorB| N0120(("1.554233793332385E-08")) 
-	N0119[BritishThermalUnitPerCubicInch] -->|Symbol| N0121(("BTU/in³")) 
-	N0119[BritishThermalUnitPerCubicInch] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0122[BritishThermalUnitPerGallonUk] -->|BelongsToClass| N0006(Unit) 
-	N0122[BritishThermalUnitPerGallonUk] -->|ConversionFactorA| N0007(("0")) 
-	N0122[BritishThermalUnitPerGallonUk] -->|ConversionFactorB| N0123(("4.311746573718405E-06")) 
-	N0122[BritishThermalUnitPerGallonUk] -->|Symbol| N0124(("BTU/gal(UK)")) 
-	N0122[BritishThermalUnitPerGallonUk] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0125[BritishThermalUnitPerGallonUs] -->|BelongsToClass| N0006(Unit) 
-	N0125[BritishThermalUnitPerGallonUs] -->|ConversionFactorA| N0007(("0")) 
-	N0125[BritishThermalUnitPerGallonUs] -->|ConversionFactorB| N0126(("3.5902800625978092E-06")) 
-	N0125[BritishThermalUnitPerGallonUs] -->|Symbol| N0127(("BTU/gal(US)")) 
-	N0125[BritishThermalUnitPerGallonUs] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0128[KiloBritishThermalUnitPerCubicMetre] -->|BelongsToClass| N0006(Unit) 
-	N0128[KiloBritishThermalUnitPerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
-	N0128[KiloBritishThermalUnitPerCubicMetre] -->|ConversionFactorB| N0129(("9.484516526770048E-07")) 
-	N0128[KiloBritishThermalUnitPerCubicMetre] -->|Symbol| N0130(("kBTU/m³")) 
-	N0128[KiloBritishThermalUnitPerCubicMetre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0131[KiloBritishThermalUnitPerLitre] -->|BelongsToClass| N0006(Unit) 
-	N0131[KiloBritishThermalUnitPerLitre] -->|ConversionFactorA| N0007(("0")) 
-	N0131[KiloBritishThermalUnitPerLitre] -->|ConversionFactorB| N0132(("9.48451652677005E-10")) 
-	N0131[KiloBritishThermalUnitPerLitre] -->|Symbol| N0133(("kBTU/L")) 
-	N0131[KiloBritishThermalUnitPerLitre] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0134[KiloBritishThermalUnitPerCubicFoot] -->|BelongsToClass| N0006(Unit) 
-	N0134[KiloBritishThermalUnitPerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
-	N0134[KiloBritishThermalUnitPerCubicFoot] -->|ConversionFactorB| N0135(("2.6857159948783602E-08")) 
-	N0134[KiloBritishThermalUnitPerCubicFoot] -->|Symbol| N0136(("kBTU/ft³")) 
-	N0134[KiloBritishThermalUnitPerCubicFoot] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0137[KiloBritishThermalUnitPerCubicInch] -->|BelongsToClass| N0006(Unit) 
-	N0137[KiloBritishThermalUnitPerCubicInch] -->|ConversionFactorA| N0007(("0")) 
-	N0137[KiloBritishThermalUnitPerCubicInch] -->|ConversionFactorB| N0138(("1.5542337933323848E-11")) 
-	N0137[KiloBritishThermalUnitPerCubicInch] -->|Symbol| N0139(("kBTU/in³")) 
-	N0137[KiloBritishThermalUnitPerCubicInch] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0140[KiloBritishThermalUnitPerGallonUk] -->|BelongsToClass| N0006(Unit) 
-	N0140[KiloBritishThermalUnitPerGallonUk] -->|ConversionFactorA| N0007(("0")) 
-	N0140[KiloBritishThermalUnitPerGallonUk] -->|ConversionFactorB| N0141(("4.311746573718405E-09")) 
-	N0140[KiloBritishThermalUnitPerGallonUk] -->|Symbol| N0142(("kBTU/gal(UK)")) 
-	N0140[KiloBritishThermalUnitPerGallonUk] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-	N0143[KiloBritishThermalUnitPerGallonUs] -->|BelongsToClass| N0006(Unit) 
-	N0143[KiloBritishThermalUnitPerGallonUs] -->|ConversionFactorA| N0007(("0")) 
-	N0143[KiloBritishThermalUnitPerGallonUs] -->|ConversionFactorB| N0144(("3.5902800625978087E-09")) 
-	N0143[KiloBritishThermalUnitPerGallonUs] -->|Symbol| N0145(("kBTU/gal(US)")) 
-	N0143[KiloBritishThermalUnitPerGallonUs] -->|IsUnitForQuantity| N0000[EnergyDensityQuantity] 
-```
 ## ForceGradientPerLengthQuantity <!-- NOUN -->
 - Display name: ForceGradientPerLength
 - Parent class: [Quantity](./Quantities.md#Quantity)
@@ -3990,6 +4304,11 @@ KilogramForce.ConversionFactorA = 0
 KilogramForce.ConversionFactorB = 0.10197162129779283
 KilogramForce.Symbol = "kgf"
 KilogramForce IsUnitForQuantity ForceQuantity
+Unit:TonneForce
+TonneForce.ConversionFactorA = 0
+TonneForce.ConversionFactorB = 0.00010197162129779283
+TonneForce.Symbol = "tf"
+TonneForce IsUnitForQuantity ForceQuantity
 Unit:PoundForce
 PoundForce.ConversionFactorA = 0
 PoundForce.ConversionFactorB = 0.2248089430997105
@@ -4034,16 +4353,21 @@ graph LR
 	N0017[KilogramForce] -->|ConversionFactorB| N0018(("0.10197162129779283")) 
 	N0017[KilogramForce] -->|Symbol| N0019(("kgf")) 
 	N0017[KilogramForce] -->|IsUnitForQuantity| N0000[ForceQuantity] 
-	N0020[PoundForce] -->|BelongsToClass| N0005(Unit) 
-	N0020[PoundForce] -->|ConversionFactorA| N0006(("0")) 
-	N0020[PoundForce] -->|ConversionFactorB| N0021(("0.2248089430997105")) 
-	N0020[PoundForce] -->|Symbol| N0022(("lbf")) 
-	N0020[PoundForce] -->|IsUnitForQuantity| N0000[ForceQuantity] 
-	N0023[KilopoundForce] -->|BelongsToClass| N0005(Unit) 
-	N0023[KilopoundForce] -->|ConversionFactorA| N0006(("0")) 
-	N0023[KilopoundForce] -->|ConversionFactorB| N0024(("0.0002248089430997105")) 
-	N0023[KilopoundForce] -->|Symbol| N0025(("klbf")) 
-	N0023[KilopoundForce] -->|IsUnitForQuantity| N0000[ForceQuantity] 
+	N0020[TonneForce] -->|BelongsToClass| N0005(Unit) 
+	N0020[TonneForce] -->|ConversionFactorA| N0006(("0")) 
+	N0020[TonneForce] -->|ConversionFactorB| N0021(("0.00010197162129779283")) 
+	N0020[TonneForce] -->|Symbol| N0022(("tf")) 
+	N0020[TonneForce] -->|IsUnitForQuantity| N0000[ForceQuantity] 
+	N0023[PoundForce] -->|BelongsToClass| N0005(Unit) 
+	N0023[PoundForce] -->|ConversionFactorA| N0006(("0")) 
+	N0023[PoundForce] -->|ConversionFactorB| N0024(("0.2248089430997105")) 
+	N0023[PoundForce] -->|Symbol| N0025(("lbf")) 
+	N0023[PoundForce] -->|IsUnitForQuantity| N0000[ForceQuantity] 
+	N0026[KilopoundForce] -->|BelongsToClass| N0005(Unit) 
+	N0026[KilopoundForce] -->|ConversionFactorA| N0006(("0")) 
+	N0026[KilopoundForce] -->|ConversionFactorB| N0027(("0.0002248089430997105")) 
+	N0026[KilopoundForce] -->|Symbol| N0028(("klbf")) 
+	N0026[KilopoundForce] -->|IsUnitForQuantity| N0000[ForceQuantity] 
 ```
 ## FrequencyQuantity <!-- NOUN -->
 - Display name: Frequency
@@ -4136,6 +4460,47 @@ ShockPerHour.ConversionFactorA = 0
 ShockPerHour.ConversionFactorB = 3600
 ShockPerHour.Symbol = "spm"
 ShockPerHour IsUnitForQuantity FrequencyQuantity
+Unit:RadianPerSecond
+RadianPerSecond.ConversionFactorA = 0
+RadianPerSecond.ConversionFactorB = 6.283185307179586
+RadianPerSecond.Symbol = "rad/s"
+RadianPerSecond IsUnitForQuantity FrequencyQuantity
+FrequencyQuantity HasSIUnit RadianPerSecond
+Unit:DegreePerSecond
+DegreePerSecond.ConversionFactorA = 0
+DegreePerSecond.ConversionFactorB = 360
+DegreePerSecond.Symbol = "°/s"
+DegreePerSecond IsUnitForQuantity FrequencyQuantity
+Unit:RadianPerDay
+RadianPerDay.ConversionFactorA = 0
+RadianPerDay.ConversionFactorB = 542867.2105403163
+RadianPerDay.Symbol = "rad/d"
+RadianPerDay IsUnitForQuantity FrequencyQuantity
+Unit:RadianPerHour
+RadianPerHour.ConversionFactorA = 0
+RadianPerHour.ConversionFactorB = 22619.46710584651
+RadianPerHour.Symbol = "rad/h"
+RadianPerHour IsUnitForQuantity FrequencyQuantity
+Unit:RadianPerMinute
+RadianPerMinute.ConversionFactorA = 0
+RadianPerMinute.ConversionFactorB = 376.99111843077515
+RadianPerMinute.Symbol = "rad/min"
+RadianPerMinute IsUnitForQuantity FrequencyQuantity
+Unit:DegreePerDay
+DegreePerDay.ConversionFactorA = 0
+DegreePerDay.ConversionFactorB = 31104000
+DegreePerDay.Symbol = "°/d"
+DegreePerDay IsUnitForQuantity FrequencyQuantity
+Unit:DegreePerHour
+DegreePerHour.ConversionFactorA = 0
+DegreePerHour.ConversionFactorB = 1296000
+DegreePerHour.Symbol = "°/h"
+DegreePerHour IsUnitForQuantity FrequencyQuantity
+Unit:DegreePerMinute
+DegreePerMinute.ConversionFactorA = 0
+DegreePerMinute.ConversionFactorB = 21600
+DegreePerMinute.Symbol = "°/min"
+DegreePerMinute IsUnitForQuantity FrequencyQuantity
 ```
 An example semantic graph looks like as follow:
 ```mermaid
@@ -4218,6 +4583,47 @@ graph LR
 	N0038[ShockPerHour] -->|ConversionFactorB| N0032(("3600")) 
 	N0038[ShockPerHour] -->|Symbol| N0026(("spm")) 
 	N0038[ShockPerHour] -->|IsUnitForQuantity| N0000[FrequencyQuantity] 
+	N0039[RadianPerSecond] -->|BelongsToClass| N0004(Unit) 
+	N0039[RadianPerSecond] -->|ConversionFactorA| N0005(("0")) 
+	N0039[RadianPerSecond] -->|ConversionFactorB| N0040(("6.283185307179586")) 
+	N0039[RadianPerSecond] -->|Symbol| N0041(("rad/s")) 
+	N0039[RadianPerSecond] -->|IsUnitForQuantity| N0000[FrequencyQuantity] 
+	N0000[FrequencyQuantity] -->|HasSIUnit| N0039[RadianPerSecond] 
+	N0042[DegreePerSecond] -->|BelongsToClass| N0004(Unit) 
+	N0042[DegreePerSecond] -->|ConversionFactorA| N0005(("0")) 
+	N0042[DegreePerSecond] -->|ConversionFactorB| N0043(("360")) 
+	N0042[DegreePerSecond] -->|Symbol| N0044(("°/s")) 
+	N0042[DegreePerSecond] -->|IsUnitForQuantity| N0000[FrequencyQuantity] 
+	N0045[RadianPerDay] -->|BelongsToClass| N0004(Unit) 
+	N0045[RadianPerDay] -->|ConversionFactorA| N0005(("0")) 
+	N0045[RadianPerDay] -->|ConversionFactorB| N0046(("542867.2105403163")) 
+	N0045[RadianPerDay] -->|Symbol| N0047(("rad/d")) 
+	N0045[RadianPerDay] -->|IsUnitForQuantity| N0000[FrequencyQuantity] 
+	N0048[RadianPerHour] -->|BelongsToClass| N0004(Unit) 
+	N0048[RadianPerHour] -->|ConversionFactorA| N0005(("0")) 
+	N0048[RadianPerHour] -->|ConversionFactorB| N0049(("22619.46710584651")) 
+	N0048[RadianPerHour] -->|Symbol| N0050(("rad/h")) 
+	N0048[RadianPerHour] -->|IsUnitForQuantity| N0000[FrequencyQuantity] 
+	N0051[RadianPerMinute] -->|BelongsToClass| N0004(Unit) 
+	N0051[RadianPerMinute] -->|ConversionFactorA| N0005(("0")) 
+	N0051[RadianPerMinute] -->|ConversionFactorB| N0052(("376.99111843077515")) 
+	N0051[RadianPerMinute] -->|Symbol| N0053(("rad/min")) 
+	N0051[RadianPerMinute] -->|IsUnitForQuantity| N0000[FrequencyQuantity] 
+	N0054[DegreePerDay] -->|BelongsToClass| N0004(Unit) 
+	N0054[DegreePerDay] -->|ConversionFactorA| N0005(("0")) 
+	N0054[DegreePerDay] -->|ConversionFactorB| N0055(("31104000")) 
+	N0054[DegreePerDay] -->|Symbol| N0056(("°/d")) 
+	N0054[DegreePerDay] -->|IsUnitForQuantity| N0000[FrequencyQuantity] 
+	N0057[DegreePerHour] -->|BelongsToClass| N0004(Unit) 
+	N0057[DegreePerHour] -->|ConversionFactorA| N0005(("0")) 
+	N0057[DegreePerHour] -->|ConversionFactorB| N0058(("1296000")) 
+	N0057[DegreePerHour] -->|Symbol| N0059(("°/h")) 
+	N0057[DegreePerHour] -->|IsUnitForQuantity| N0000[FrequencyQuantity] 
+	N0060[DegreePerMinute] -->|BelongsToClass| N0004(Unit) 
+	N0060[DegreePerMinute] -->|ConversionFactorA| N0005(("0")) 
+	N0060[DegreePerMinute] -->|ConversionFactorB| N0061(("21600")) 
+	N0060[DegreePerMinute] -->|Symbol| N0062(("°/min")) 
+	N0060[DegreePerMinute] -->|IsUnitForQuantity| N0000[FrequencyQuantity] 
 ```
 ## FrequencyRateOfChangeQuantity <!-- NOUN -->
 - Display name: FrequencyRateOfChange
@@ -6623,79 +7029,6 @@ graph LR
 	N0009[Rankine] -->|ConversionFactorB| N0010(("1.7999999999999998")) 
 	N0009[Rankine] -->|Symbol| N0011(("°R")) 
 	N0009[Rankine] -->|IsUnitForQuantity| N0000[RelativeTemperatureQuantity] 
-```
-## ElectricResistivityQuantity <!-- NOUN -->
-- Display name: ElectricResistivity
-- Parent class: [Quantity](./Quantities.md#Quantity)
-- Specialization:
-  - L = 3
-  - M = 1
-  - T = -3
-  - I = -2
-- Description: 
-Electric resistivity is a material's inherent property that measures how strongly it resists the flow of electric current.
-The dimension of resistivity is:
-$$[L^{3}MI^{-2}T^{-3}]$$.
-The SI unit for **electric resistivity** is: ohm metre with the associated unit label $\Omega \cdot m$
-- Definition set: QuantityTypes
-- Examples:
-``` dwis
-Quantity:ElectricResistivityQuantity
-ElectricResistivityQuantity.L = 3
-ElectricResistivityQuantity.M = 1
-ElectricResistivityQuantity.T = -3
-ElectricResistivityQuantity.I = -2
-Unit:OhmMetre
-OhmMetre.ConversionFactorA = 0
-OhmMetre.ConversionFactorB = 1
-OhmMetre.Symbol = "Ω•m"
-OhmMetre IsUnitForQuantity ElectricResistivityQuantity
-ElectricResistivityQuantity HasSIUnit OhmMetre
-Unit:KiloOhmMetre
-KiloOhmMetre.ConversionFactorA = 0
-KiloOhmMetre.ConversionFactorB = 0.001
-KiloOhmMetre.Symbol = "kΩ•m"
-KiloOhmMetre IsUnitForQuantity ElectricResistivityQuantity
-Unit:MegaOhmMetre
-MegaOhmMetre.ConversionFactorA = 0
-MegaOhmMetre.ConversionFactorB = 1E-06
-MegaOhmMetre.Symbol = "MΩ•m"
-MegaOhmMetre IsUnitForQuantity ElectricResistivityQuantity
-Unit:GigaOhmMetre
-GigaOhmMetre.ConversionFactorA = 0
-GigaOhmMetre.ConversionFactorB = 1E-09
-GigaOhmMetre.Symbol = "GΩ•m"
-GigaOhmMetre IsUnitForQuantity ElectricResistivityQuantity
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[ElectricResistivityQuantity] -->|BelongsToClass| N0001(Quantity) 
-	N0000[ElectricResistivityQuantity] -->|L| N0002(("3")) 
-	N0000[ElectricResistivityQuantity] -->|M| N0003(("1")) 
-	N0000[ElectricResistivityQuantity] -->|T| N0004(("-3")) 
-	N0000[ElectricResistivityQuantity] -->|I| N0005(("-2")) 
-	N0006[OhmMetre] -->|BelongsToClass| N0007(Unit) 
-	N0006[OhmMetre] -->|ConversionFactorA| N0008(("0")) 
-	N0006[OhmMetre] -->|ConversionFactorB| N0003(("1")) 
-	N0006[OhmMetre] -->|Symbol| N0009(("Ω•m")) 
-	N0006[OhmMetre] -->|IsUnitForQuantity| N0000[ElectricResistivityQuantity] 
-	N0000[ElectricResistivityQuantity] -->|HasSIUnit| N0006[OhmMetre] 
-	N0010[KiloOhmMetre] -->|BelongsToClass| N0007(Unit) 
-	N0010[KiloOhmMetre] -->|ConversionFactorA| N0008(("0")) 
-	N0010[KiloOhmMetre] -->|ConversionFactorB| N0011(("0.001")) 
-	N0010[KiloOhmMetre] -->|Symbol| N0012(("kΩ•m")) 
-	N0010[KiloOhmMetre] -->|IsUnitForQuantity| N0000[ElectricResistivityQuantity] 
-	N0013[MegaOhmMetre] -->|BelongsToClass| N0007(Unit) 
-	N0013[MegaOhmMetre] -->|ConversionFactorA| N0008(("0")) 
-	N0013[MegaOhmMetre] -->|ConversionFactorB| N0014(("1E-06")) 
-	N0013[MegaOhmMetre] -->|Symbol| N0015(("MΩ•m")) 
-	N0013[MegaOhmMetre] -->|IsUnitForQuantity| N0000[ElectricResistivityQuantity] 
-	N0016[GigaOhmMetre] -->|BelongsToClass| N0007(Unit) 
-	N0016[GigaOhmMetre] -->|ConversionFactorA| N0008(("0")) 
-	N0016[GigaOhmMetre] -->|ConversionFactorB| N0017(("1E-09")) 
-	N0016[GigaOhmMetre] -->|Symbol| N0018(("GΩ•m")) 
-	N0016[GigaOhmMetre] -->|IsUnitForQuantity| N0000[ElectricResistivityQuantity] 
 ```
 ## SolidAngleQuantity <!-- NOUN -->
 - Display name: SolidAngle
@@ -10135,126 +10468,6 @@ graph LR
 	N0070[HundredWeights] -->|Symbol| N0072(("cwt")) 
 	N0070[HundredWeights] -->|IsUnitForQuantity| N0000[MassQuantity] 
 ```
-## EnergyQuantity <!-- NOUN -->
-- Display name: Energy
-- Parent class: [Quantity](./Quantities.md#Quantity)
-- Specialization:
-  - L = 2
-  - M = 1
-  - T = -2
-- Description: 
-Energy is the quantitative property that is transferred to a body or to a physical system, recognizable in the performance of work and in the form of heat and light. Energy is a conserved quantity—the law of conservation of energy states that energy can be converted in form, but not created or destroyed; matter and energy may also be converted to one another.
-The dimension of energy is:
-$$[L^{2}MT^{-2}]$$.
-The SI unit for **energy** is: joule with the associated unit label $J$
-- Definition set: QuantityTypes
-- Examples:
-``` dwis
-Quantity:EnergyQuantity
-EnergyQuantity.L = 2
-EnergyQuantity.M = 1
-EnergyQuantity.T = -2
-Unit:Joule
-Joule.ConversionFactorA = 0
-Joule.ConversionFactorB = 1
-Joule.Symbol = "J"
-Joule IsUnitForQuantity EnergyQuantity
-EnergyQuantity HasSIUnit Joule
-Unit:Kilojoule
-Kilojoule.ConversionFactorA = 0
-Kilojoule.ConversionFactorB = 0.001
-Kilojoule.Symbol = "kJ"
-Kilojoule IsUnitForQuantity EnergyQuantity
-Unit:Megajoule
-Megajoule.ConversionFactorA = 0
-Megajoule.ConversionFactorB = 1E-06
-Megajoule.Symbol = "MJ"
-Megajoule IsUnitForQuantity EnergyQuantity
-Unit:Gigajoule
-Gigajoule.ConversionFactorA = 0
-Gigajoule.ConversionFactorB = 1E-09
-Gigajoule.Symbol = "GJ"
-Gigajoule IsUnitForQuantity EnergyQuantity
-Unit:Calorie
-Calorie.ConversionFactorA = 0
-Calorie.ConversionFactorB = 0.2390057361376673
-Calorie.Symbol = "cal"
-Calorie IsUnitForQuantity EnergyQuantity
-Unit:Kilocalorie
-Kilocalorie.ConversionFactorA = 0
-Kilocalorie.ConversionFactorB = 0.0002390057361376673
-Kilocalorie.Symbol = "Cal"
-Kilocalorie IsUnitForQuantity EnergyQuantity
-Unit:BritishThermalUnit
-BritishThermalUnit.ConversionFactorA = 0
-BritishThermalUnit.ConversionFactorB = 0.0009484516526770049
-BritishThermalUnit.Symbol = "BTU"
-BritishThermalUnit IsUnitForQuantity EnergyQuantity
-Unit:KiloBritishThermalUnit
-KiloBritishThermalUnit.ConversionFactorA = 0
-KiloBritishThermalUnit.ConversionFactorB = 9.484516526770048E-07
-KiloBritishThermalUnit.Symbol = "kBTU"
-KiloBritishThermalUnit IsUnitForQuantity EnergyQuantity
-Unit:MegaBritishThermalUnit
-MegaBritishThermalUnit.ConversionFactorA = 0
-MegaBritishThermalUnit.ConversionFactorB = 9.48451652677005E-10
-MegaBritishThermalUnit.Symbol = "MMBTU"
-MegaBritishThermalUnit IsUnitForQuantity EnergyQuantity
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[EnergyQuantity] -->|BelongsToClass| N0001(Quantity) 
-	N0000[EnergyQuantity] -->|L| N0002(("2")) 
-	N0000[EnergyQuantity] -->|M| N0003(("1")) 
-	N0000[EnergyQuantity] -->|T| N0004(("-2")) 
-	N0005[Joule] -->|BelongsToClass| N0006(Unit) 
-	N0005[Joule] -->|ConversionFactorA| N0007(("0")) 
-	N0005[Joule] -->|ConversionFactorB| N0003(("1")) 
-	N0005[Joule] -->|Symbol| N0008(("J")) 
-	N0005[Joule] -->|IsUnitForQuantity| N0000[EnergyQuantity] 
-	N0000[EnergyQuantity] -->|HasSIUnit| N0005[Joule] 
-	N0009[Kilojoule] -->|BelongsToClass| N0006(Unit) 
-	N0009[Kilojoule] -->|ConversionFactorA| N0007(("0")) 
-	N0009[Kilojoule] -->|ConversionFactorB| N0010(("0.001")) 
-	N0009[Kilojoule] -->|Symbol| N0011(("kJ")) 
-	N0009[Kilojoule] -->|IsUnitForQuantity| N0000[EnergyQuantity] 
-	N0012[Megajoule] -->|BelongsToClass| N0006(Unit) 
-	N0012[Megajoule] -->|ConversionFactorA| N0007(("0")) 
-	N0012[Megajoule] -->|ConversionFactorB| N0013(("1E-06")) 
-	N0012[Megajoule] -->|Symbol| N0014(("MJ")) 
-	N0012[Megajoule] -->|IsUnitForQuantity| N0000[EnergyQuantity] 
-	N0015[Gigajoule] -->|BelongsToClass| N0006(Unit) 
-	N0015[Gigajoule] -->|ConversionFactorA| N0007(("0")) 
-	N0015[Gigajoule] -->|ConversionFactorB| N0016(("1E-09")) 
-	N0015[Gigajoule] -->|Symbol| N0017(("GJ")) 
-	N0015[Gigajoule] -->|IsUnitForQuantity| N0000[EnergyQuantity] 
-	N0018[Calorie] -->|BelongsToClass| N0006(Unit) 
-	N0018[Calorie] -->|ConversionFactorA| N0007(("0")) 
-	N0018[Calorie] -->|ConversionFactorB| N0019(("0.2390057361376673")) 
-	N0018[Calorie] -->|Symbol| N0020(("cal")) 
-	N0018[Calorie] -->|IsUnitForQuantity| N0000[EnergyQuantity] 
-	N0021[Kilocalorie] -->|BelongsToClass| N0006(Unit) 
-	N0021[Kilocalorie] -->|ConversionFactorA| N0007(("0")) 
-	N0021[Kilocalorie] -->|ConversionFactorB| N0022(("0.0002390057361376673")) 
-	N0021[Kilocalorie] -->|Symbol| N0023(("Cal")) 
-	N0021[Kilocalorie] -->|IsUnitForQuantity| N0000[EnergyQuantity] 
-	N0024[BritishThermalUnit] -->|BelongsToClass| N0006(Unit) 
-	N0024[BritishThermalUnit] -->|ConversionFactorA| N0007(("0")) 
-	N0024[BritishThermalUnit] -->|ConversionFactorB| N0025(("0.0009484516526770049")) 
-	N0024[BritishThermalUnit] -->|Symbol| N0026(("BTU")) 
-	N0024[BritishThermalUnit] -->|IsUnitForQuantity| N0000[EnergyQuantity] 
-	N0027[KiloBritishThermalUnit] -->|BelongsToClass| N0006(Unit) 
-	N0027[KiloBritishThermalUnit] -->|ConversionFactorA| N0007(("0")) 
-	N0027[KiloBritishThermalUnit] -->|ConversionFactorB| N0028(("9.484516526770048E-07")) 
-	N0027[KiloBritishThermalUnit] -->|Symbol| N0029(("kBTU")) 
-	N0027[KiloBritishThermalUnit] -->|IsUnitForQuantity| N0000[EnergyQuantity] 
-	N0030[MegaBritishThermalUnit] -->|BelongsToClass| N0006(Unit) 
-	N0030[MegaBritishThermalUnit] -->|ConversionFactorA| N0007(("0")) 
-	N0030[MegaBritishThermalUnit] -->|ConversionFactorB| N0031(("9.48451652677005E-10")) 
-	N0030[MegaBritishThermalUnit] -->|Symbol| N0032(("MMBTU")) 
-	N0030[MegaBritishThermalUnit] -->|IsUnitForQuantity| N0000[EnergyQuantity] 
-```
 ## ForceRateOfChangeQuantity <!-- NOUN -->
 - Display name: ForceRateOfChange
 - Parent class: [Quantity](./Quantities.md#Quantity)
@@ -11677,79 +11890,142 @@ graph LR
 	N0093[InchPoundPerHour] -->|Symbol| N0095(("in•lbf/h")) 
 	N0093[InchPoundPerHour] -->|IsUnitForQuantity| N0000[TorqueRateOfChangeQuantity] 
 ```
-## GravitationalLoadQuantity <!-- NOUN -->
-- Display name: GravitationalLoad
+## MomentOfAreaQuantity <!-- NOUN -->
+- Display name: MomentOfArea
 - Parent class: [Quantity](./Quantities.md#Quantity)
 - Specialization:
-  - M = 1
+  - L = 4
 - Description: 
-Mass can be experimentally defined as a measure of the body's inertia, meaning the resistance to acceleration (change of velocity) when a net force is applied. The object's mass also determines the strength of its gravitational attraction to other bodies.
-The dimension of mass is:
-$$[M]$$.
-The SI unit for **mass** is: kilogram with the associated unit label $kg$
+A moment of area is a geometrical property of an area which reflects how its points are distributed with regard to an arbitrary axis. It is used in the study of beam bending and deflection in structural engineering.
+The dimension of moment of area is:
+$$[L^{4}]$$.
+The SI unit for **moment of area** is: metres to the fourth power with the associated unit label $m^{4}$
 - Definition set: QuantityTypes
 - Examples:
 ``` dwis
-Quantity:GravitationalLoadQuantity
-GravitationalLoadQuantity.M = 1
-Unit:Kilogram
-Kilogram.ConversionFactorA = 0
-Kilogram.ConversionFactorB = 1
-Kilogram.Symbol = "kg"
-Kilogram IsUnitForQuantity GravitationalLoadQuantity
-GravitationalLoadQuantity HasSIUnit Kilogram
-Unit:TonneMetric
-TonneMetric.ConversionFactorA = 0
-TonneMetric.ConversionFactorB = 0.001
-TonneMetric.Symbol = "t"
-TonneMetric IsUnitForQuantity GravitationalLoadQuantity
-Unit:Pound
-Pound.ConversionFactorA = 0
-Pound.ConversionFactorB = 2.2046226218487757
-Pound.Symbol = "lb"
-Pound IsUnitForQuantity GravitationalLoadQuantity
-Unit:Kilopound
-Kilopound.ConversionFactorA = 0
-Kilopound.ConversionFactorB = 0.002204622621848776
-Kilopound.Symbol = "klb"
-Kilopound IsUnitForQuantity GravitationalLoadQuantity
-Unit:TonUk
-TonUk.ConversionFactorA = 0
-TonUk.ConversionFactorB = 0.0009842065276110606
-TonUk.Symbol = "LT"
-TonUk IsUnitForQuantity GravitationalLoadQuantity
+Quantity:MomentOfAreaQuantity
+MomentOfAreaQuantity.L = 4
+Unit:MetresToTheFourthPower
+MetresToTheFourthPower.ConversionFactorA = 0
+MetresToTheFourthPower.ConversionFactorB = 1
+MetresToTheFourthPower.Symbol = "m⁴"
+MetresToTheFourthPower IsUnitForQuantity MomentOfAreaQuantity
+MomentOfAreaQuantity HasSIUnit MetresToTheFourthPower
+Unit:CentimetresToTheFourthPower
+CentimetresToTheFourthPower.ConversionFactorA = 0
+CentimetresToTheFourthPower.ConversionFactorB = 99999999.99999999
+CentimetresToTheFourthPower.Symbol = "cm⁴"
+CentimetresToTheFourthPower IsUnitForQuantity MomentOfAreaQuantity
+Unit:InchesToTheFourthPower
+InchesToTheFourthPower.ConversionFactorA = 0
+InchesToTheFourthPower.ConversionFactorB = 2402509.6100288304
+InchesToTheFourthPower.Symbol = "in⁴"
+InchesToTheFourthPower IsUnitForQuantity MomentOfAreaQuantity
+Unit:FeetToTheFourthPower
+FeetToTheFourthPower.ConversionFactorA = 0
+FeetToTheFourthPower.ConversionFactorB = 115.86176745895213
+FeetToTheFourthPower.Symbol = "ft⁴"
+FeetToTheFourthPower IsUnitForQuantity MomentOfAreaQuantity
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[GravitationalLoadQuantity] -->|BelongsToClass| N0001(Quantity) 
-	N0000[GravitationalLoadQuantity] -->|M| N0002(("1")) 
-	N0003[Kilogram] -->|BelongsToClass| N0004(Unit) 
-	N0003[Kilogram] -->|ConversionFactorA| N0005(("0")) 
-	N0003[Kilogram] -->|ConversionFactorB| N0002(("1")) 
-	N0003[Kilogram] -->|Symbol| N0006(("kg")) 
-	N0003[Kilogram] -->|IsUnitForQuantity| N0000[GravitationalLoadQuantity] 
-	N0000[GravitationalLoadQuantity] -->|HasSIUnit| N0003[Kilogram] 
-	N0007[TonneMetric] -->|BelongsToClass| N0004(Unit) 
-	N0007[TonneMetric] -->|ConversionFactorA| N0005(("0")) 
-	N0007[TonneMetric] -->|ConversionFactorB| N0008(("0.001")) 
-	N0007[TonneMetric] -->|Symbol| N0009(("t")) 
-	N0007[TonneMetric] -->|IsUnitForQuantity| N0000[GravitationalLoadQuantity] 
-	N0010[Pound] -->|BelongsToClass| N0004(Unit) 
-	N0010[Pound] -->|ConversionFactorA| N0005(("0")) 
-	N0010[Pound] -->|ConversionFactorB| N0011(("2.2046226218487757")) 
-	N0010[Pound] -->|Symbol| N0012(("lb")) 
-	N0010[Pound] -->|IsUnitForQuantity| N0000[GravitationalLoadQuantity] 
-	N0013[Kilopound] -->|BelongsToClass| N0004(Unit) 
-	N0013[Kilopound] -->|ConversionFactorA| N0005(("0")) 
-	N0013[Kilopound] -->|ConversionFactorB| N0014(("0.002204622621848776")) 
-	N0013[Kilopound] -->|Symbol| N0015(("klb")) 
-	N0013[Kilopound] -->|IsUnitForQuantity| N0000[GravitationalLoadQuantity] 
-	N0016[TonUk] -->|BelongsToClass| N0004(Unit) 
-	N0016[TonUk] -->|ConversionFactorA| N0005(("0")) 
-	N0016[TonUk] -->|ConversionFactorB| N0017(("0.0009842065276110606")) 
-	N0016[TonUk] -->|Symbol| N0018(("LT")) 
-	N0016[TonUk] -->|IsUnitForQuantity| N0000[GravitationalLoadQuantity] 
+	N0000[MomentOfAreaQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[MomentOfAreaQuantity] -->|L| N0002(("4")) 
+	N0003[MetresToTheFourthPower] -->|BelongsToClass| N0004(Unit) 
+	N0003[MetresToTheFourthPower] -->|ConversionFactorA| N0005(("0")) 
+	N0003[MetresToTheFourthPower] -->|ConversionFactorB| N0006(("1")) 
+	N0003[MetresToTheFourthPower] -->|Symbol| N0007(("m⁴")) 
+	N0003[MetresToTheFourthPower] -->|IsUnitForQuantity| N0000[MomentOfAreaQuantity] 
+	N0000[MomentOfAreaQuantity] -->|HasSIUnit| N0003[MetresToTheFourthPower] 
+	N0008[CentimetresToTheFourthPower] -->|BelongsToClass| N0004(Unit) 
+	N0008[CentimetresToTheFourthPower] -->|ConversionFactorA| N0005(("0")) 
+	N0008[CentimetresToTheFourthPower] -->|ConversionFactorB| N0009(("99999999.99999999")) 
+	N0008[CentimetresToTheFourthPower] -->|Symbol| N0010(("cm⁴")) 
+	N0008[CentimetresToTheFourthPower] -->|IsUnitForQuantity| N0000[MomentOfAreaQuantity] 
+	N0011[InchesToTheFourthPower] -->|BelongsToClass| N0004(Unit) 
+	N0011[InchesToTheFourthPower] -->|ConversionFactorA| N0005(("0")) 
+	N0011[InchesToTheFourthPower] -->|ConversionFactorB| N0012(("2402509.6100288304")) 
+	N0011[InchesToTheFourthPower] -->|Symbol| N0013(("in⁴")) 
+	N0011[InchesToTheFourthPower] -->|IsUnitForQuantity| N0000[MomentOfAreaQuantity] 
+	N0014[FeetToTheFourthPower] -->|BelongsToClass| N0004(Unit) 
+	N0014[FeetToTheFourthPower] -->|ConversionFactorA| N0005(("0")) 
+	N0014[FeetToTheFourthPower] -->|ConversionFactorB| N0015(("115.86176745895213")) 
+	N0014[FeetToTheFourthPower] -->|Symbol| N0016(("ft⁴")) 
+	N0014[FeetToTheFourthPower] -->|IsUnitForQuantity| N0000[MomentOfAreaQuantity] 
+```
+## MomentOfInertiaQuantity <!-- NOUN -->
+- Display name: MomentOfInertia
+- Parent class: [Quantity](./Quantities.md#Quantity)
+- Specialization:
+  - L = 2
+  - M = 1
+- Description: 
+The moment of inertia is is a measure of an object's resistance to changes in its rotation rate. It is the rotational analog of mass for linear motion. The moment of inertia depends on the mass distribution of an object and the axis of rotation.
+The dimension of moment of inertia is:
+$$[L^{2}M]$$.
+The SI unit for **moment of inertia** is: kilogram metre squared with the associated unit label $kg \cdot m^{2}}$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:MomentOfInertiaQuantity
+MomentOfInertiaQuantity.L = 2
+MomentOfInertiaQuantity.M = 1
+Unit:KilogramMetreSquared
+KilogramMetreSquared.ConversionFactorA = 0
+KilogramMetreSquared.ConversionFactorB = 1
+KilogramMetreSquared.Symbol = "kg.m²"
+KilogramMetreSquared IsUnitForQuantity MomentOfInertiaQuantity
+MomentOfInertiaQuantity HasSIUnit KilogramMetreSquared
+Unit:GramCentimetreSquared
+GramCentimetreSquared.ConversionFactorA = 0
+GramCentimetreSquared.ConversionFactorB = 10000000
+GramCentimetreSquared.Symbol = "g.cm²"
+GramCentimetreSquared IsUnitForQuantity MomentOfInertiaQuantity
+MomentOfInertiaQuantity HasSIUnit GramCentimetreSquared
+Unit:PoundFootSquared
+PoundFootSquared.ConversionFactorA = 0
+PoundFootSquared.ConversionFactorB = 23.73036040423194
+PoundFootSquared.Symbol = "lb.ft²"
+PoundFootSquared IsUnitForQuantity MomentOfInertiaQuantity
+MomentOfInertiaQuantity HasSIUnit PoundFootSquared
+Unit:PoundInchSquared
+PoundInchSquared.ConversionFactorA = 0
+PoundInchSquared.ConversionFactorB = 3417.171898209399
+PoundInchSquared.Symbol = "lb.in²"
+PoundInchSquared IsUnitForQuantity MomentOfInertiaQuantity
+MomentOfInertiaQuantity HasSIUnit PoundInchSquared
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MomentOfInertiaQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[MomentOfInertiaQuantity] -->|L| N0002(("2")) 
+	N0000[MomentOfInertiaQuantity] -->|M| N0003(("1")) 
+	N0004[KilogramMetreSquared] -->|BelongsToClass| N0005(Unit) 
+	N0004[KilogramMetreSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0004[KilogramMetreSquared] -->|ConversionFactorB| N0003(("1")) 
+	N0004[KilogramMetreSquared] -->|Symbol| N0007(("kg.m²")) 
+	N0004[KilogramMetreSquared] -->|IsUnitForQuantity| N0000[MomentOfInertiaQuantity] 
+	N0000[MomentOfInertiaQuantity] -->|HasSIUnit| N0004[KilogramMetreSquared] 
+	N0008[GramCentimetreSquared] -->|BelongsToClass| N0005(Unit) 
+	N0008[GramCentimetreSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0008[GramCentimetreSquared] -->|ConversionFactorB| N0009(("10000000")) 
+	N0008[GramCentimetreSquared] -->|Symbol| N0010(("g.cm²")) 
+	N0008[GramCentimetreSquared] -->|IsUnitForQuantity| N0000[MomentOfInertiaQuantity] 
+	N0000[MomentOfInertiaQuantity] -->|HasSIUnit| N0008[GramCentimetreSquared] 
+	N0011[PoundFootSquared] -->|BelongsToClass| N0005(Unit) 
+	N0011[PoundFootSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0011[PoundFootSquared] -->|ConversionFactorB| N0012(("23.73036040423194")) 
+	N0011[PoundFootSquared] -->|Symbol| N0013(("lb.ft²")) 
+	N0011[PoundFootSquared] -->|IsUnitForQuantity| N0000[MomentOfInertiaQuantity] 
+	N0000[MomentOfInertiaQuantity] -->|HasSIUnit| N0011[PoundFootSquared] 
+	N0014[PoundInchSquared] -->|BelongsToClass| N0005(Unit) 
+	N0014[PoundInchSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0014[PoundInchSquared] -->|ConversionFactorB| N0015(("3417.171898209399")) 
+	N0014[PoundInchSquared] -->|Symbol| N0016(("lb.in²")) 
+	N0014[PoundInchSquared] -->|IsUnitForQuantity| N0000[MomentOfInertiaQuantity] 
+	N0000[MomentOfInertiaQuantity] -->|HasSIUnit| N0014[PoundInchSquared] 
 ```
 ## HydraulicConductivityQuantity <!-- NOUN -->
 - Display name: HydraulicConductivity

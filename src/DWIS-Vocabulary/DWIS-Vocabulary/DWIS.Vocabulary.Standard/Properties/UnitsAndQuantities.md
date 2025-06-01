@@ -545,6 +545,66 @@
 - degreePerMinute.ConversionFactorB = 3437.746770784939
 - degreePerMinute.Symbol = degPermin
 - degreePerMinute IsUnitForQuantity angularVelocity
+- RevolutionPerSecond:revolutionPerSecond
+- revolutionPerSecond.ConversionFactorA = 0
+- revolutionPerSecond.ConversionFactorB = 0.15915494309189535
+- revolutionPerSecond.Symbol = rps
+- revolutionPerSecond IsUnitForQuantity angularVelocity
+- RevolutionPerMinute:revolutionPerMinute
+- revolutionPerMinute.ConversionFactorA = 0
+- revolutionPerMinute.ConversionFactorB = 9.549296585513721
+- revolutionPerMinute.Symbol = rpm
+- revolutionPerMinute IsUnitForQuantity angularVelocity
+- RevolutionPerHour:revolutionPerHour
+- revolutionPerHour.ConversionFactorA = 0
+- revolutionPerHour.ConversionFactorB = 572.9577951308232
+- revolutionPerHour.Symbol = rph
+- revolutionPerHour IsUnitForQuantity angularVelocity
+- ThousandRevolutionPerSecond:thousandRevolutionPerSecond
+- thousandRevolutionPerSecond.ConversionFactorA = 0
+- thousandRevolutionPerSecond.ConversionFactorB = 0.00015915494309189535
+- thousandRevolutionPerSecond.Symbol = 1000xrps
+- thousandRevolutionPerSecond IsUnitForQuantity angularVelocity
+- ThousandRevolutionPerMinute:thousandRevolutionPerMinute
+- thousandRevolutionPerMinute.ConversionFactorA = 0
+- thousandRevolutionPerMinute.ConversionFactorB = 0.009549296585513721
+- thousandRevolutionPerMinute.Symbol = 1000xrpm
+- thousandRevolutionPerMinute IsUnitForQuantity angularVelocity
+- ThousandRevolutionPerHour:thousandRevolutionPerHour
+- thousandRevolutionPerHour.ConversionFactorA = 0
+- thousandRevolutionPerHour.ConversionFactorB = 0.5729577951308232
+- thousandRevolutionPerHour.Symbol = 1000xrph
+- thousandRevolutionPerHour IsUnitForQuantity angularVelocity
+- StrokePerSecond:strokePerSecond
+- strokePerSecond.ConversionFactorA = 0
+- strokePerSecond.ConversionFactorB = 0.15915494309189535
+- strokePerSecond.Symbol = sps
+- strokePerSecond IsUnitForQuantity angularVelocity
+- StrokePerMinute:strokePerMinute
+- strokePerMinute.ConversionFactorA = 0
+- strokePerMinute.ConversionFactorB = 9.549296585513721
+- strokePerMinute.Symbol = spm
+- strokePerMinute IsUnitForQuantity angularVelocity
+- StrokePerHour:strokePerHour
+- strokePerHour.ConversionFactorA = 0
+- strokePerHour.ConversionFactorB = 572.9577951308232
+- strokePerHour.Symbol = sph
+- strokePerHour IsUnitForQuantity angularVelocity
+- ThousandStrokePerSecond:thousandStrokePerSecond
+- thousandStrokePerSecond.ConversionFactorA = 0
+- thousandStrokePerSecond.ConversionFactorB = 0.00015915494309189535
+- thousandStrokePerSecond.Symbol = 1000xsps
+- thousandStrokePerSecond IsUnitForQuantity angularVelocity
+- ThousandStrokePerMinute:thousandStrokePerMinute
+- thousandStrokePerMinute.ConversionFactorA = 0
+- thousandStrokePerMinute.ConversionFactorB = 0.009549296585513721
+- thousandStrokePerMinute.Symbol = 1000xspm
+- thousandStrokePerMinute IsUnitForQuantity angularVelocity
+- ThousandStrokePerHour:thousandStrokePerHour
+- thousandStrokePerHour.ConversionFactorA = 0
+- thousandStrokePerHour.ConversionFactorB = 0.5729577951308232
+- thousandStrokePerHour.Symbol = 1000xsph
+- thousandStrokePerHour IsUnitForQuantity angularVelocity
 - AreaQuantity:area
 - area.L = 2
 - area.M = 0
@@ -844,360 +904,6 @@
 - radianPerMile.ConversionFactorB = 1609.3439999999998
 - radianPerMile.Symbol = radPermi
 - radianPerMile IsUnitForQuantity curvature
-- MassDensityGradientPerLengthQuantity:massDensityGradientPerLength
-- massDensityGradientPerLength.L = -4
-- massDensityGradientPerLength.M = 1
-- massDensityGradientPerLength.T = 0
-- massDensityGradientPerLength.I = 0
-- massDensityGradientPerLength.ThT = 0
-- massDensityGradientPerLength.N = 0
-- massDensityGradientPerLength.J = 0
-- massDensityGradientPerLength.Theta = 0
-- massDensityGradientPerLength.Omega = 0
-- KilogramPerCubicMetrePerMetre:kilogramPerCubicMetrePerMetre
-- kilogramPerCubicMetrePerMetre.ConversionFactorA = 0
-- kilogramPerCubicMetrePerMetre.ConversionFactorB = 1
-- kilogramPerCubicMetrePerMetre.Symbol = kgPermcubicPerm
-- kilogramPerCubicMetrePerMetre IsUnitForQuantity massDensityGradientPerLength
-- massDensityGradientPerLength HasSIUnit kilogramPerCubicMetrePerMetre
-- SpecificGravityPerMetre:specificGravityPerMetre
-- specificGravityPerMetre.ConversionFactorA = 0
-- specificGravityPerMetre.ConversionFactorB = 0.001000028000784022
-- specificGravityPerMetre.Symbol = sgPerm
-- specificGravityPerMetre IsUnitForQuantity massDensityGradientPerLength
-- SpecificGravityPer10Metre:specificGravityPer10Metre
-- specificGravityPer10Metre.ConversionFactorA = 0
-- specificGravityPer10Metre.ConversionFactorB = 0.01000028000784022
-- specificGravityPer10Metre.Symbol = sgPer10m
-- specificGravityPer10Metre IsUnitForQuantity massDensityGradientPerLength
-- SpecificGravityPer30Metre:specificGravityPer30Metre
-- specificGravityPer30Metre.ConversionFactorA = 0
-- specificGravityPer30Metre.ConversionFactorB = 0.03000084002352066
-- specificGravityPer30Metre.Symbol = sgPer30m
-- specificGravityPer30Metre IsUnitForQuantity massDensityGradientPerLength
-- SpecificGravityPer100Metre:specificGravityPer100Metre
-- specificGravityPer100Metre.ConversionFactorA = 0
-- specificGravityPer100Metre.ConversionFactorB = 0.10000280007840219
-- specificGravityPer100Metre.Symbol = sgPer100m
-- specificGravityPer100Metre IsUnitForQuantity massDensityGradientPerLength
-- GramPerCubicCentimetrePer100Metre:gramPerCubicCentimetrePer100Metre
-- gramPerCubicCentimetrePer100Metre.ConversionFactorA = 0
-- gramPerCubicCentimetrePer100Metre.ConversionFactorB = 0.10000000000000002
-- gramPerCubicCentimetrePer100Metre.Symbol = gPercmcubicPer100m
-- gramPerCubicCentimetrePer100Metre IsUnitForQuantity massDensityGradientPerLength
-- PoundPerGallonUkPerFoot:poundPerGallonUkPerFoot
-- poundPerGallonUkPerFoot.ConversionFactorA = 0
-- poundPerGallonUkPerFoot.ConversionFactorB = 0.00305483143819196
-- poundPerGallonUkPerFoot.Symbol = ppgUKPerft
-- poundPerGallonUkPerFoot IsUnitForQuantity massDensityGradientPerLength
-- PoundPerGallonUkPer30Foot:poundPerGallonUkPer30Foot
-- poundPerGallonUkPer30Foot.ConversionFactorA = 0
-- poundPerGallonUkPer30Foot.ConversionFactorB = 0.0916449431457588
-- poundPerGallonUkPer30Foot.Symbol = ppgUKPer30ft
-- poundPerGallonUkPer30Foot IsUnitForQuantity massDensityGradientPerLength
-- PoundPerGallonUkPer100Foot:poundPerGallonUkPer100Foot
-- poundPerGallonUkPer100Foot.ConversionFactorA = 0
-- poundPerGallonUkPer100Foot.ConversionFactorB = 0.305483143819196
-- poundPerGallonUkPer100Foot.Symbol = ppgUKPer100ft
-- poundPerGallonUkPer100Foot IsUnitForQuantity massDensityGradientPerLength
-- PoundPerGallonUsPerFoot:poundPerGallonUsPerFoot
-- poundPerGallonUsPerFoot.ConversionFactorA = 0
-- poundPerGallonUsPerFoot.ConversionFactorB = 0.0025436792769754917
-- poundPerGallonUsPerFoot.Symbol = ppgUSPerft
-- poundPerGallonUsPerFoot IsUnitForQuantity massDensityGradientPerLength
-- PoundPerGallonUsPer30Foot:poundPerGallonUsPer30Foot
-- poundPerGallonUsPer30Foot.ConversionFactorA = 0
-- poundPerGallonUsPer30Foot.ConversionFactorB = 0.07631037830926475
-- poundPerGallonUsPer30Foot.Symbol = ppgUSPer30ft
-- poundPerGallonUsPer30Foot IsUnitForQuantity massDensityGradientPerLength
-- PoundPerGallonUsPer100Foot:poundPerGallonUsPer100Foot
-- poundPerGallonUsPer100Foot.ConversionFactorA = 0
-- poundPerGallonUsPer100Foot.ConversionFactorB = 0.2543679276975492
-- poundPerGallonUsPer100Foot.Symbol = ppgUSPer100ft
-- poundPerGallonUsPer100Foot IsUnitForQuantity massDensityGradientPerLength
-- KilogramPerCubicMetrePer10Metre:kilogramPerCubicMetrePer10Metre
-- kilogramPerCubicMetrePer10Metre.ConversionFactorA = 0
-- kilogramPerCubicMetrePer10Metre.ConversionFactorB = 10
-- kilogramPerCubicMetrePer10Metre.Symbol = kgPermcubicPer10m
-- kilogramPerCubicMetrePer10Metre IsUnitForQuantity massDensityGradientPerLength
-- KilogramPerCubicMetrePer30Metre:kilogramPerCubicMetrePer30Metre
-- kilogramPerCubicMetrePer30Metre.ConversionFactorA = 0
-- kilogramPerCubicMetrePer30Metre.ConversionFactorB = 30
-- kilogramPerCubicMetrePer30Metre.Symbol = kgPermcubicPer30m
-- kilogramPerCubicMetrePer30Metre IsUnitForQuantity massDensityGradientPerLength
-- KilogramPerCubicMetrePer100Metre:kilogramPerCubicMetrePer100Metre
-- kilogramPerCubicMetrePer100Metre.ConversionFactorA = 0
-- kilogramPerCubicMetrePer100Metre.ConversionFactorB = 100
-- kilogramPerCubicMetrePer100Metre.Symbol = kgPermcubicPer30m
-- kilogramPerCubicMetrePer100Metre IsUnitForQuantity massDensityGradientPerLength
-- GramPerCubicCentimetrePerMetre:gramPerCubicCentimetrePerMetre
-- gramPerCubicCentimetrePerMetre.ConversionFactorA = 0
-- gramPerCubicCentimetrePerMetre.ConversionFactorB = 0.0010000000000000002
-- gramPerCubicCentimetrePerMetre.Symbol = gPercmcubicPerm
-- gramPerCubicCentimetrePerMetre IsUnitForQuantity massDensityGradientPerLength
-- GramPerCubicCentimetrePer10Metre:gramPerCubicCentimetrePer10Metre
-- gramPerCubicCentimetrePer10Metre.ConversionFactorA = 0
-- gramPerCubicCentimetrePer10Metre.ConversionFactorB = 0.010000000000000002
-- gramPerCubicCentimetrePer10Metre.Symbol = gPercmcubicPer10m
-- gramPerCubicCentimetrePer10Metre IsUnitForQuantity massDensityGradientPerLength
-- GramPerCubicCentimetrePer30Metre:gramPerCubicCentimetrePer30Metre
-- gramPerCubicCentimetrePer30Metre.ConversionFactorA = 0
-- gramPerCubicCentimetrePer30Metre.ConversionFactorB = 0.030000000000000002
-- gramPerCubicCentimetrePer30Metre.Symbol = gPercmcubicPer30m
-- gramPerCubicCentimetrePer30Metre IsUnitForQuantity massDensityGradientPerLength
-- PoundPerCubicFootPerFoot:poundPerCubicFootPerFoot
-- poundPerCubicFootPerFoot.ConversionFactorA = 0
-- poundPerCubicFootPerFoot.ConversionFactorB = 0.019028042383608865
-- poundPerCubicFootPerFoot.Symbol = lbPerftcubicPerft
-- poundPerCubicFootPerFoot IsUnitForQuantity massDensityGradientPerLength
-- PoundPerCubicFootPer30Foot:poundPerCubicFootPer30Foot
-- poundPerCubicFootPer30Foot.ConversionFactorA = 0
-- poundPerCubicFootPer30Foot.ConversionFactorB = 0.570841271508266
-- poundPerCubicFootPer30Foot.Symbol = lbPerftcubicPer30ft
-- poundPerCubicFootPer30Foot IsUnitForQuantity massDensityGradientPerLength
-- PoundPerCubicFootPer100Foot:poundPerCubicFootPer100Foot
-- poundPerCubicFootPer100Foot.ConversionFactorA = 0
-- poundPerCubicFootPer100Foot.ConversionFactorB = 1.902804238360887
-- poundPerCubicFootPer100Foot.Symbol = lbPerftcubicPer100ft
-- poundPerCubicFootPer100Foot IsUnitForQuantity massDensityGradientPerLength
-- PoundPerCubicInchPerFoot:poundPerCubicInchPerFoot
-- poundPerCubicInchPerFoot.ConversionFactorA = 0
-- poundPerCubicInchPerFoot.ConversionFactorB = 1.1011598601625506E-05
-- poundPerCubicInchPerFoot.Symbol = lbPerincubicPerft
-- poundPerCubicInchPerFoot IsUnitForQuantity massDensityGradientPerLength
-- PoundPerCubicInchPer30Foot:poundPerCubicInchPer30Foot
-- poundPerCubicInchPer30Foot.ConversionFactorA = 0
-- poundPerCubicInchPer30Foot.ConversionFactorB = 0.00033034795804876514
-- poundPerCubicInchPer30Foot.Symbol = lbPerincubicPer30ft
-- poundPerCubicInchPer30Foot IsUnitForQuantity massDensityGradientPerLength
-- PoundPerCubicInchPer100Foot:poundPerCubicInchPer100Foot
-- poundPerCubicInchPer100Foot.ConversionFactorA = 0
-- poundPerCubicInchPer100Foot.ConversionFactorB = 0.0011011598601625506
-- poundPerCubicInchPer100Foot.Symbol = lbPerincubicPer100ft
-- poundPerCubicInchPer100Foot IsUnitForQuantity massDensityGradientPerLength
-- PoundPerCubicYardPerFoot:poundPerCubicYardPerFoot
-- poundPerCubicYardPerFoot.ConversionFactorA = 0
-- poundPerCubicYardPerFoot.ConversionFactorB = 0.5137571443574394
-- poundPerCubicYardPerFoot.Symbol = lbPerydcubicPerft
-- poundPerCubicYardPerFoot IsUnitForQuantity massDensityGradientPerLength
-- PoundPerCubicYardPer30Foot:poundPerCubicYardPer30Foot
-- poundPerCubicYardPer30Foot.ConversionFactorA = 0
-- poundPerCubicYardPer30Foot.ConversionFactorB = 15.412714330723183
-- poundPerCubicYardPer30Foot.Symbol = lbPerydcubicPer30ft
-- poundPerCubicYardPer30Foot IsUnitForQuantity massDensityGradientPerLength
-- PoundPerCubicYardPer100Foot:poundPerCubicYardPer100Foot
-- poundPerCubicYardPer100Foot.ConversionFactorA = 0
-- poundPerCubicYardPer100Foot.ConversionFactorB = 51.37571443574393
-- poundPerCubicYardPer100Foot.Symbol = lbPerydcubicPer100ft
-- poundPerCubicYardPer100Foot IsUnitForQuantity massDensityGradientPerLength
-- MassDensityGradientPerTemperatureQuantity:massDensityGradientPerTemperature
-- massDensityGradientPerTemperature.L = -3
-- massDensityGradientPerTemperature.M = 1
-- massDensityGradientPerTemperature.T = 0
-- massDensityGradientPerTemperature.I = 0
-- massDensityGradientPerTemperature.ThT = -1
-- massDensityGradientPerTemperature.N = 0
-- massDensityGradientPerTemperature.J = 0
-- massDensityGradientPerTemperature.Theta = 0
-- massDensityGradientPerTemperature.Omega = 0
-- KilogramPerCubicMetrePerKelvin:kilogramPerCubicMetrePerKelvin
-- kilogramPerCubicMetrePerKelvin.ConversionFactorA = 0
-- kilogramPerCubicMetrePerKelvin.ConversionFactorB = 1
-- kilogramPerCubicMetrePerKelvin.Symbol = kgPermcubicPerK
-- kilogramPerCubicMetrePerKelvin IsUnitForQuantity massDensityGradientPerTemperature
-- massDensityGradientPerTemperature HasSIUnit kilogramPerCubicMetrePerKelvin
-- SpecificGravityPerCelsius:specificGravityPerCelsius
-- specificGravityPerCelsius.ConversionFactorA = 0
-- specificGravityPerCelsius.ConversionFactorB = 0.001000028000784022
-- specificGravityPerCelsius.Symbol = sgPerdegC
-- specificGravityPerCelsius IsUnitForQuantity massDensityGradientPerTemperature
-- GramPerCubicCentimetrePerCelsius:gramPerCubicCentimetrePerCelsius
-- gramPerCubicCentimetrePerCelsius.ConversionFactorA = 0
-- gramPerCubicCentimetrePerCelsius.ConversionFactorB = 0.0010000000000000002
-- gramPerCubicCentimetrePerCelsius.Symbol = gPercmcubicPerdegC
-- gramPerCubicCentimetrePerCelsius IsUnitForQuantity massDensityGradientPerTemperature
-- PoundPerGallonUkPerCelsius:poundPerGallonUkPerCelsius
-- poundPerGallonUkPerCelsius.ConversionFactorA = 0
-- poundPerGallonUkPerCelsius.ConversionFactorB = 0.010022412854960501
-- poundPerGallonUkPerCelsius.Symbol = ppgUKPerdegC
-- poundPerGallonUkPerCelsius IsUnitForQuantity massDensityGradientPerTemperature
-- PoundPerGallonUsPerFahrenheit:poundPerGallonUsPerFahrenheit
-- poundPerGallonUsPerFahrenheit.ConversionFactorA = 0
-- poundPerGallonUsPerFahrenheit.ConversionFactorB = 0.004636335806677406
-- poundPerGallonUsPerFahrenheit.Symbol = ppgUSPerdegF
-- poundPerGallonUsPerFahrenheit IsUnitForQuantity massDensityGradientPerTemperature
-- PoundPerGallonUkPerFahrenheit:poundPerGallonUkPerFahrenheit
-- poundPerGallonUkPerFahrenheit.ConversionFactorA = 0
-- poundPerGallonUkPerFahrenheit.ConversionFactorB = 0.005568007141644723
-- poundPerGallonUkPerFahrenheit.Symbol = ppgUKPerdegF
-- poundPerGallonUkPerFahrenheit IsUnitForQuantity massDensityGradientPerTemperature
-- PoundPerGallonUsPerCelsius:poundPerGallonUsPerCelsius
-- poundPerGallonUsPerCelsius.ConversionFactorA = 0
-- poundPerGallonUsPerCelsius.ConversionFactorB = 0.00834540445201933
-- poundPerGallonUsPerCelsius.Symbol = ppgUSPerdegC
-- poundPerGallonUsPerCelsius IsUnitForQuantity massDensityGradientPerTemperature
-- PoundPerCubicFootPerCelsius:poundPerCubicFootPerCelsius
-- poundPerCubicFootPerCelsius.ConversionFactorA = 0
-- poundPerCubicFootPerCelsius.ConversionFactorB = 0.06242796057614459
-- poundPerCubicFootPerCelsius.Symbol = lbPerftcubicPerdegC
-- poundPerCubicFootPerCelsius IsUnitForQuantity massDensityGradientPerTemperature
-- PoundPerCubicFootPerFahrenheit:poundPerCubicFootPerFahrenheit
-- poundPerCubicFootPerFahrenheit.ConversionFactorA = 0
-- poundPerCubicFootPerFahrenheit.ConversionFactorB = 0.03468220032008033
-- poundPerCubicFootPerFahrenheit.Symbol = lbPerftcubicPerdegF
-- poundPerCubicFootPerFahrenheit IsUnitForQuantity massDensityGradientPerTemperature
-- PoundPerCubicInchPerCelsius:poundPerCubicInchPerCelsius
-- poundPerCubicInchPerCelsius.ConversionFactorA = 0
-- poundPerCubicInchPerCelsius.ConversionFactorB = 3.612729200008369E-05
-- poundPerCubicInchPerCelsius.Symbol = lbPerincubicPerdegC
-- poundPerCubicInchPerCelsius IsUnitForQuantity massDensityGradientPerTemperature
-- PoundPerCubicInchPerFahrenheit:poundPerCubicInchPerFahrenheit
-- poundPerCubicInchPerFahrenheit.ConversionFactorA = 0
-- poundPerCubicInchPerFahrenheit.ConversionFactorB = 2.0070717777824268E-05
-- poundPerCubicInchPerFahrenheit.Symbol = lbPerincubicPerdegF
-- poundPerCubicInchPerFahrenheit IsUnitForQuantity massDensityGradientPerTemperature
-- PoundPerCubicYardPerCelsius:poundPerCubicYardPerCelsius
-- poundPerCubicYardPerCelsius.ConversionFactorA = 0
-- poundPerCubicYardPerCelsius.ConversionFactorB = 1.6855549355559039
-- poundPerCubicYardPerCelsius.Symbol = lbPerydcubicPerdegC
-- poundPerCubicYardPerCelsius IsUnitForQuantity massDensityGradientPerTemperature
-- PoundPerCubicYeardPerFahrenheit:poundPerCubicYeardPerFahrenheit
-- poundPerCubicYeardPerFahrenheit.ConversionFactorA = 0
-- poundPerCubicYeardPerFahrenheit.ConversionFactorB = 0.9364194086421688
-- poundPerCubicYeardPerFahrenheit.Symbol = lbPerydcubicPerdegF
-- poundPerCubicYeardPerFahrenheit IsUnitForQuantity massDensityGradientPerTemperature
-- MassDensityQuantity:massDensity
-- massDensity.L = -3
-- massDensity.M = 1
-- massDensity.T = 0
-- massDensity.I = 0
-- massDensity.ThT = 0
-- massDensity.N = 0
-- massDensity.J = 0
-- massDensity.Theta = 0
-- massDensity.Omega = 0
-- KilogramPerCubicMetre:kilogramPerCubicMetre
-- kilogramPerCubicMetre.ConversionFactorA = 0
-- kilogramPerCubicMetre.ConversionFactorB = 1
-- kilogramPerCubicMetre.Symbol = kgPermcubic
-- kilogramPerCubicMetre IsUnitForQuantity massDensity
-- massDensity HasSIUnit kilogramPerCubicMetre
-- GramPerCubicMetre:gramPerCubicMetre
-- gramPerCubicMetre.ConversionFactorA = 0
-- gramPerCubicMetre.ConversionFactorB = 1000
-- gramPerCubicMetre.Symbol = gPermcubic
-- gramPerCubicMetre IsUnitForQuantity massDensity
-- SpecificGravity:specificGravity
-- specificGravity.ConversionFactorA = 0
-- specificGravity.ConversionFactorB = 999.972
-- specificGravity.Symbol = s.g.
-- specificGravity IsUnitForQuantity massDensity
-- GramPerCubicCentimetre:gramPerCubicCentimetre
-- gramPerCubicCentimetre.ConversionFactorA = 0
-- gramPerCubicCentimetre.ConversionFactorB = 0.0010000000000000002
-- gramPerCubicCentimetre.Symbol = gPercmcubic
-- gramPerCubicCentimetre IsUnitForQuantity massDensity
-- PoundPerGallonUk:poundPerGallonUk
-- poundPerGallonUk.ConversionFactorA = 0
-- poundPerGallonUk.ConversionFactorB = 0.010022412854960501
-- poundPerGallonUk.Symbol = ppgUK
-- poundPerGallonUk IsUnitForQuantity massDensity
-- PoundPerGallonUs:poundPerGallonUs
-- poundPerGallonUs.ConversionFactorA = 0
-- poundPerGallonUs.ConversionFactorB = 0.00834540445201933
-- poundPerGallonUs.Symbol = ppgUS
-- poundPerGallonUs IsUnitForQuantity massDensity
-- PoundPerCubicFoot:poundPerCubicFoot
-- poundPerCubicFoot.ConversionFactorA = 0
-- poundPerCubicFoot.ConversionFactorB = 0.06242796057614459
-- poundPerCubicFoot.Symbol = lbPerftcubic
-- poundPerCubicFoot IsUnitForQuantity massDensity
-- PoundPerCubicInch:poundPerCubicInch
-- poundPerCubicInch.ConversionFactorA = 0
-- poundPerCubicInch.ConversionFactorB = 3.612729200008369E-05
-- poundPerCubicInch.Symbol = lbPerincubic
-- poundPerCubicInch IsUnitForQuantity massDensity
-- PoundPerCubicYard:poundPerCubicYard
-- poundPerCubicYard.ConversionFactorA = 0
-- poundPerCubicYard.ConversionFactorB = 1.6855549355559039
-- poundPerCubicYard.Symbol = lbPerydcubic
-- poundPerCubicYard IsUnitForQuantity massDensity
-- MassDensityRateOfChangeQuantity:massDensityRateOfChange
-- massDensityRateOfChange.L = -3
-- massDensityRateOfChange.M = 1
-- massDensityRateOfChange.T = -1
-- massDensityRateOfChange.I = 0
-- massDensityRateOfChange.ThT = 0
-- massDensityRateOfChange.N = 0
-- massDensityRateOfChange.J = 0
-- massDensityRateOfChange.Theta = 0
-- massDensityRateOfChange.Omega = 0
-- KilogramPerCubicMetrePerSecond:kilogramPerCubicMetrePerSecond
-- kilogramPerCubicMetrePerSecond.ConversionFactorA = 0
-- kilogramPerCubicMetrePerSecond.ConversionFactorB = 1
-- kilogramPerCubicMetrePerSecond.Symbol = kgPermcubicPers
-- kilogramPerCubicMetrePerSecond IsUnitForQuantity massDensityRateOfChange
-- massDensityRateOfChange HasSIUnit kilogramPerCubicMetrePerSecond
-- SpecificGravityPerSecond:specificGravityPerSecond
-- specificGravityPerSecond.ConversionFactorA = 0
-- specificGravityPerSecond.ConversionFactorB = 0.001000028000784022
-- specificGravityPerSecond.Symbol = sgPers
-- specificGravityPerSecond IsUnitForQuantity massDensityRateOfChange
-- SpecificGravityPerMinute:specificGravityPerMinute
-- specificGravityPerMinute.ConversionFactorA = 0
-- specificGravityPerMinute.ConversionFactorB = 0.06000168004704132
-- specificGravityPerMinute.Symbol = sgPermin
-- specificGravityPerMinute IsUnitForQuantity massDensityRateOfChange
-- SpecificGravityPerHour:specificGravityPerHour
-- specificGravityPerHour.ConversionFactorA = 0
-- specificGravityPerHour.ConversionFactorB = 3.600100802822479
-- specificGravityPerHour.Symbol = sgPerh
-- specificGravityPerHour IsUnitForQuantity massDensityRateOfChange
-- GramPerCubicCentimetrePerSecond:gramPerCubicCentimetrePerSecond
-- gramPerCubicCentimetrePerSecond.ConversionFactorA = 0
-- gramPerCubicCentimetrePerSecond.ConversionFactorB = 0.001
-- gramPerCubicCentimetrePerSecond.Symbol = gPercmcubicPers
-- gramPerCubicCentimetrePerSecond IsUnitForQuantity massDensityRateOfChange
-- GramPerCubicCentimetrePerMinute:gramPerCubicCentimetrePerMinute
-- gramPerCubicCentimetrePerMinute.ConversionFactorA = 0
-- gramPerCubicCentimetrePerMinute.ConversionFactorB = 0.06
-- gramPerCubicCentimetrePerMinute.Symbol = gPercmcubicPermin
-- gramPerCubicCentimetrePerMinute IsUnitForQuantity massDensityRateOfChange
-- GramPerCubicCentimetrePerHour:gramPerCubicCentimetrePerHour
-- gramPerCubicCentimetrePerHour.ConversionFactorA = 0
-- gramPerCubicCentimetrePerHour.ConversionFactorB = 3.6
-- gramPerCubicCentimetrePerHour.Symbol = gPercmcubicPerh
-- gramPerCubicCentimetrePerHour IsUnitForQuantity massDensityRateOfChange
-- PoundPerGallonUkPerSecond:poundPerGallonUkPerSecond
-- poundPerGallonUkPerSecond.ConversionFactorA = 0
-- poundPerGallonUkPerSecond.ConversionFactorB = 0.010022412854960501
-- poundPerGallonUkPerSecond.Symbol = ppgUKPers
-- poundPerGallonUkPerSecond IsUnitForQuantity massDensityRateOfChange
-- PoundPerGallonUkPerMinute:poundPerGallonUkPerMinute
-- poundPerGallonUkPerMinute.ConversionFactorA = 0
-- poundPerGallonUkPerMinute.ConversionFactorB = 0.6013447712976301
-- poundPerGallonUkPerMinute.Symbol = ppgUKPermin
-- poundPerGallonUkPerMinute IsUnitForQuantity massDensityRateOfChange
-- PoundPerGallonUkPerHour:poundPerGallonUkPerHour
-- poundPerGallonUkPerHour.ConversionFactorA = 0
-- poundPerGallonUkPerHour.ConversionFactorB = 36.08068627785781
-- poundPerGallonUkPerHour.Symbol = ppgUKPerh
-- poundPerGallonUkPerHour IsUnitForQuantity massDensityRateOfChange
-- PoundPerGallonUsPerSecond:poundPerGallonUsPerSecond
-- poundPerGallonUsPerSecond.ConversionFactorA = 0
-- poundPerGallonUsPerSecond.ConversionFactorB = 0.00834540445201933
-- poundPerGallonUsPerSecond.Symbol = ppgUSPers
-- poundPerGallonUsPerSecond IsUnitForQuantity massDensityRateOfChange
-- PoundPerGallonUsPerMinute:poundPerGallonUsPerMinute
-- poundPerGallonUsPerMinute.ConversionFactorA = 0
-- poundPerGallonUsPerMinute.ConversionFactorB = 0.5007242671211598
-- poundPerGallonUsPerMinute.Symbol = ppgUSPermin
-- poundPerGallonUsPerMinute IsUnitForQuantity massDensityRateOfChange
-- PoundPerGallonUsPerHour:poundPerGallonUsPerHour
-- poundPerGallonUsPerHour.ConversionFactorA = 0
-- poundPerGallonUsPerHour.ConversionFactorB = 30.043456027269592
-- poundPerGallonUsPerHour.Symbol = ppgUSPerh
-- poundPerGallonUsPerHour IsUnitForQuantity massDensityRateOfChange
 - DimensionlessQuantity:dimensionless
 - dimensionless.L = 0
 - dimensionless.M = 0
@@ -1426,6 +1132,37 @@
 - statampere.ConversionFactorB = 2997924580
 - statampere.Symbol = stA
 - statampere IsUnitForQuantity electricCurrent
+- ElectricResistivityQuantity:electricResistivity
+- electricResistivity.L = 3
+- electricResistivity.M = 1
+- electricResistivity.T = -3
+- electricResistivity.I = -2
+- electricResistivity.ThT = 0
+- electricResistivity.N = 0
+- electricResistivity.J = 0
+- electricResistivity.Theta = 0
+- electricResistivity.Omega = 0
+- OhmMetre:ohmMetre
+- ohmMetre.ConversionFactorA = 0
+- ohmMetre.ConversionFactorB = 1
+- ohmMetre.Symbol = ω.m
+- ohmMetre IsUnitForQuantity electricResistivity
+- electricResistivity HasSIUnit ohmMetre
+- KiloOhmMetre:kiloOhmMetre
+- kiloOhmMetre.ConversionFactorA = 0
+- kiloOhmMetre.ConversionFactorB = 0.001
+- kiloOhmMetre.Symbol = kΩ.m
+- kiloOhmMetre IsUnitForQuantity electricResistivity
+- MegaOhmMetre:megaOhmMetre
+- megaOhmMetre.ConversionFactorA = 0
+- megaOhmMetre.ConversionFactorB = 1E-06
+- megaOhmMetre.Symbol = mΩ.m
+- megaOhmMetre IsUnitForQuantity electricResistivity
+- GigaOhmMetre:gigaOhmMetre
+- gigaOhmMetre.ConversionFactorA = 0
+- gigaOhmMetre.ConversionFactorB = 1E-09
+- gigaOhmMetre.Symbol = gΩ.m
+- gigaOhmMetre IsUnitForQuantity electricResistivity
 - ElectricTensionQuantity:electricTension
 - electricTension.L = 2
 - electricTension.M = 1
@@ -1839,6 +1576,416 @@
 - kiloBritishThermalUnitPerGallonUs.ConversionFactorB = 3.5902800625978087E-09
 - kiloBritishThermalUnitPerGallonUs.Symbol = kBTUPergal(US)
 - kiloBritishThermalUnitPerGallonUs IsUnitForQuantity energyDensity
+- EnergyQuantity:energy
+- energy.L = 2
+- energy.M = 1
+- energy.T = -2
+- energy.I = 0
+- energy.ThT = 0
+- energy.N = 0
+- energy.J = 0
+- energy.Theta = 0
+- energy.Omega = 0
+- Joule:joule
+- joule.ConversionFactorA = 0
+- joule.ConversionFactorB = 1
+- joule.Symbol = j
+- joule IsUnitForQuantity energy
+- energy HasSIUnit joule
+- Kilojoule:kilojoule
+- kilojoule.ConversionFactorA = 0
+- kilojoule.ConversionFactorB = 0.001
+- kilojoule.Symbol = kJ
+- kilojoule IsUnitForQuantity energy
+- Megajoule:megajoule
+- megajoule.ConversionFactorA = 0
+- megajoule.ConversionFactorB = 1E-06
+- megajoule.Symbol = mJ
+- megajoule IsUnitForQuantity energy
+- Gigajoule:gigajoule
+- gigajoule.ConversionFactorA = 0
+- gigajoule.ConversionFactorB = 1E-09
+- gigajoule.Symbol = gJ
+- gigajoule IsUnitForQuantity energy
+- Calorie:calorie
+- calorie.ConversionFactorA = 0
+- calorie.ConversionFactorB = 0.2390057361376673
+- calorie.Symbol = cal
+- calorie IsUnitForQuantity energy
+- Kilocalorie:kilocalorie
+- kilocalorie.ConversionFactorA = 0
+- kilocalorie.ConversionFactorB = 0.0002390057361376673
+- kilocalorie.Symbol = cal
+- kilocalorie IsUnitForQuantity energy
+- BritishThermalUnit:britishThermalUnit
+- britishThermalUnit.ConversionFactorA = 0
+- britishThermalUnit.ConversionFactorB = 0.0009484516526770049
+- britishThermalUnit.Symbol = bTU
+- britishThermalUnit IsUnitForQuantity energy
+- KiloBritishThermalUnit:kiloBritishThermalUnit
+- kiloBritishThermalUnit.ConversionFactorA = 0
+- kiloBritishThermalUnit.ConversionFactorB = 9.484516526770048E-07
+- kiloBritishThermalUnit.Symbol = kBTU
+- kiloBritishThermalUnit IsUnitForQuantity energy
+- MegaBritishThermalUnit:megaBritishThermalUnit
+- megaBritishThermalUnit.ConversionFactorA = 0
+- megaBritishThermalUnit.ConversionFactorB = 9.48451652677005E-10
+- megaBritishThermalUnit.Symbol = mMBTU
+- megaBritishThermalUnit IsUnitForQuantity energy
+- MassDensityGradientPerLengthQuantity:massDensityGradientPerLength
+- massDensityGradientPerLength.L = -4
+- massDensityGradientPerLength.M = 1
+- massDensityGradientPerLength.T = 0
+- massDensityGradientPerLength.I = 0
+- massDensityGradientPerLength.ThT = 0
+- massDensityGradientPerLength.N = 0
+- massDensityGradientPerLength.J = 0
+- massDensityGradientPerLength.Theta = 0
+- massDensityGradientPerLength.Omega = 0
+- KilogramPerCubicMetrePerMetre:kilogramPerCubicMetrePerMetre
+- kilogramPerCubicMetrePerMetre.ConversionFactorA = 0
+- kilogramPerCubicMetrePerMetre.ConversionFactorB = 1
+- kilogramPerCubicMetrePerMetre.Symbol = kgPermcubicPerm
+- kilogramPerCubicMetrePerMetre IsUnitForQuantity massDensityGradientPerLength
+- massDensityGradientPerLength HasSIUnit kilogramPerCubicMetrePerMetre
+- SpecificGravityPerMetre:specificGravityPerMetre
+- specificGravityPerMetre.ConversionFactorA = 0
+- specificGravityPerMetre.ConversionFactorB = 0.001000028000784022
+- specificGravityPerMetre.Symbol = sgPerm
+- specificGravityPerMetre IsUnitForQuantity massDensityGradientPerLength
+- SpecificGravityPer10Metre:specificGravityPer10Metre
+- specificGravityPer10Metre.ConversionFactorA = 0
+- specificGravityPer10Metre.ConversionFactorB = 0.01000028000784022
+- specificGravityPer10Metre.Symbol = sgPer10m
+- specificGravityPer10Metre IsUnitForQuantity massDensityGradientPerLength
+- SpecificGravityPer30Metre:specificGravityPer30Metre
+- specificGravityPer30Metre.ConversionFactorA = 0
+- specificGravityPer30Metre.ConversionFactorB = 0.03000084002352066
+- specificGravityPer30Metre.Symbol = sgPer30m
+- specificGravityPer30Metre IsUnitForQuantity massDensityGradientPerLength
+- SpecificGravityPer100Metre:specificGravityPer100Metre
+- specificGravityPer100Metre.ConversionFactorA = 0
+- specificGravityPer100Metre.ConversionFactorB = 0.10000280007840219
+- specificGravityPer100Metre.Symbol = sgPer100m
+- specificGravityPer100Metre IsUnitForQuantity massDensityGradientPerLength
+- GramPerCubicCentimetrePer100Metre:gramPerCubicCentimetrePer100Metre
+- gramPerCubicCentimetrePer100Metre.ConversionFactorA = 0
+- gramPerCubicCentimetrePer100Metre.ConversionFactorB = 0.10000000000000002
+- gramPerCubicCentimetrePer100Metre.Symbol = gPercmcubicPer100m
+- gramPerCubicCentimetrePer100Metre IsUnitForQuantity massDensityGradientPerLength
+- PoundPerGallonUkPerFoot:poundPerGallonUkPerFoot
+- poundPerGallonUkPerFoot.ConversionFactorA = 0
+- poundPerGallonUkPerFoot.ConversionFactorB = 0.00305483143819196
+- poundPerGallonUkPerFoot.Symbol = ppgUKPerft
+- poundPerGallonUkPerFoot IsUnitForQuantity massDensityGradientPerLength
+- PoundPerGallonUkPer30Foot:poundPerGallonUkPer30Foot
+- poundPerGallonUkPer30Foot.ConversionFactorA = 0
+- poundPerGallonUkPer30Foot.ConversionFactorB = 0.0916449431457588
+- poundPerGallonUkPer30Foot.Symbol = ppgUKPer30ft
+- poundPerGallonUkPer30Foot IsUnitForQuantity massDensityGradientPerLength
+- PoundPerGallonUkPer100Foot:poundPerGallonUkPer100Foot
+- poundPerGallonUkPer100Foot.ConversionFactorA = 0
+- poundPerGallonUkPer100Foot.ConversionFactorB = 0.305483143819196
+- poundPerGallonUkPer100Foot.Symbol = ppgUKPer100ft
+- poundPerGallonUkPer100Foot IsUnitForQuantity massDensityGradientPerLength
+- PoundPerGallonUsPerFoot:poundPerGallonUsPerFoot
+- poundPerGallonUsPerFoot.ConversionFactorA = 0
+- poundPerGallonUsPerFoot.ConversionFactorB = 0.0025436792769754917
+- poundPerGallonUsPerFoot.Symbol = ppgUSPerft
+- poundPerGallonUsPerFoot IsUnitForQuantity massDensityGradientPerLength
+- PoundPerGallonUsPer30Foot:poundPerGallonUsPer30Foot
+- poundPerGallonUsPer30Foot.ConversionFactorA = 0
+- poundPerGallonUsPer30Foot.ConversionFactorB = 0.07631037830926475
+- poundPerGallonUsPer30Foot.Symbol = ppgUSPer30ft
+- poundPerGallonUsPer30Foot IsUnitForQuantity massDensityGradientPerLength
+- PoundPerGallonUsPer100Foot:poundPerGallonUsPer100Foot
+- poundPerGallonUsPer100Foot.ConversionFactorA = 0
+- poundPerGallonUsPer100Foot.ConversionFactorB = 0.2543679276975492
+- poundPerGallonUsPer100Foot.Symbol = ppgUSPer100ft
+- poundPerGallonUsPer100Foot IsUnitForQuantity massDensityGradientPerLength
+- KilogramPerCubicMetrePer10Metre:kilogramPerCubicMetrePer10Metre
+- kilogramPerCubicMetrePer10Metre.ConversionFactorA = 0
+- kilogramPerCubicMetrePer10Metre.ConversionFactorB = 10
+- kilogramPerCubicMetrePer10Metre.Symbol = kgPermcubicPer10m
+- kilogramPerCubicMetrePer10Metre IsUnitForQuantity massDensityGradientPerLength
+- KilogramPerCubicMetrePer30Metre:kilogramPerCubicMetrePer30Metre
+- kilogramPerCubicMetrePer30Metre.ConversionFactorA = 0
+- kilogramPerCubicMetrePer30Metre.ConversionFactorB = 30
+- kilogramPerCubicMetrePer30Metre.Symbol = kgPermcubicPer30m
+- kilogramPerCubicMetrePer30Metre IsUnitForQuantity massDensityGradientPerLength
+- KilogramPerCubicMetrePer100Metre:kilogramPerCubicMetrePer100Metre
+- kilogramPerCubicMetrePer100Metre.ConversionFactorA = 0
+- kilogramPerCubicMetrePer100Metre.ConversionFactorB = 100
+- kilogramPerCubicMetrePer100Metre.Symbol = kgPermcubicPer30m
+- kilogramPerCubicMetrePer100Metre IsUnitForQuantity massDensityGradientPerLength
+- GramPerCubicCentimetrePerMetre:gramPerCubicCentimetrePerMetre
+- gramPerCubicCentimetrePerMetre.ConversionFactorA = 0
+- gramPerCubicCentimetrePerMetre.ConversionFactorB = 0.0010000000000000002
+- gramPerCubicCentimetrePerMetre.Symbol = gPercmcubicPerm
+- gramPerCubicCentimetrePerMetre IsUnitForQuantity massDensityGradientPerLength
+- GramPerCubicCentimetrePer10Metre:gramPerCubicCentimetrePer10Metre
+- gramPerCubicCentimetrePer10Metre.ConversionFactorA = 0
+- gramPerCubicCentimetrePer10Metre.ConversionFactorB = 0.010000000000000002
+- gramPerCubicCentimetrePer10Metre.Symbol = gPercmcubicPer10m
+- gramPerCubicCentimetrePer10Metre IsUnitForQuantity massDensityGradientPerLength
+- GramPerCubicCentimetrePer30Metre:gramPerCubicCentimetrePer30Metre
+- gramPerCubicCentimetrePer30Metre.ConversionFactorA = 0
+- gramPerCubicCentimetrePer30Metre.ConversionFactorB = 0.030000000000000002
+- gramPerCubicCentimetrePer30Metre.Symbol = gPercmcubicPer30m
+- gramPerCubicCentimetrePer30Metre IsUnitForQuantity massDensityGradientPerLength
+- PoundPerCubicFootPerFoot:poundPerCubicFootPerFoot
+- poundPerCubicFootPerFoot.ConversionFactorA = 0
+- poundPerCubicFootPerFoot.ConversionFactorB = 0.019028042383608865
+- poundPerCubicFootPerFoot.Symbol = lbPerftcubicPerft
+- poundPerCubicFootPerFoot IsUnitForQuantity massDensityGradientPerLength
+- PoundPerCubicFootPer30Foot:poundPerCubicFootPer30Foot
+- poundPerCubicFootPer30Foot.ConversionFactorA = 0
+- poundPerCubicFootPer30Foot.ConversionFactorB = 0.570841271508266
+- poundPerCubicFootPer30Foot.Symbol = lbPerftcubicPer30ft
+- poundPerCubicFootPer30Foot IsUnitForQuantity massDensityGradientPerLength
+- PoundPerCubicFootPer100Foot:poundPerCubicFootPer100Foot
+- poundPerCubicFootPer100Foot.ConversionFactorA = 0
+- poundPerCubicFootPer100Foot.ConversionFactorB = 1.902804238360887
+- poundPerCubicFootPer100Foot.Symbol = lbPerftcubicPer100ft
+- poundPerCubicFootPer100Foot IsUnitForQuantity massDensityGradientPerLength
+- PoundPerCubicInchPerFoot:poundPerCubicInchPerFoot
+- poundPerCubicInchPerFoot.ConversionFactorA = 0
+- poundPerCubicInchPerFoot.ConversionFactorB = 1.1011598601625506E-05
+- poundPerCubicInchPerFoot.Symbol = lbPerincubicPerft
+- poundPerCubicInchPerFoot IsUnitForQuantity massDensityGradientPerLength
+- PoundPerCubicInchPer30Foot:poundPerCubicInchPer30Foot
+- poundPerCubicInchPer30Foot.ConversionFactorA = 0
+- poundPerCubicInchPer30Foot.ConversionFactorB = 0.00033034795804876514
+- poundPerCubicInchPer30Foot.Symbol = lbPerincubicPer30ft
+- poundPerCubicInchPer30Foot IsUnitForQuantity massDensityGradientPerLength
+- PoundPerCubicInchPer100Foot:poundPerCubicInchPer100Foot
+- poundPerCubicInchPer100Foot.ConversionFactorA = 0
+- poundPerCubicInchPer100Foot.ConversionFactorB = 0.0011011598601625506
+- poundPerCubicInchPer100Foot.Symbol = lbPerincubicPer100ft
+- poundPerCubicInchPer100Foot IsUnitForQuantity massDensityGradientPerLength
+- PoundPerCubicYardPerFoot:poundPerCubicYardPerFoot
+- poundPerCubicYardPerFoot.ConversionFactorA = 0
+- poundPerCubicYardPerFoot.ConversionFactorB = 0.5137571443574394
+- poundPerCubicYardPerFoot.Symbol = lbPerydcubicPerft
+- poundPerCubicYardPerFoot IsUnitForQuantity massDensityGradientPerLength
+- PoundPerCubicYardPer30Foot:poundPerCubicYardPer30Foot
+- poundPerCubicYardPer30Foot.ConversionFactorA = 0
+- poundPerCubicYardPer30Foot.ConversionFactorB = 15.412714330723183
+- poundPerCubicYardPer30Foot.Symbol = lbPerydcubicPer30ft
+- poundPerCubicYardPer30Foot IsUnitForQuantity massDensityGradientPerLength
+- PoundPerCubicYardPer100Foot:poundPerCubicYardPer100Foot
+- poundPerCubicYardPer100Foot.ConversionFactorA = 0
+- poundPerCubicYardPer100Foot.ConversionFactorB = 51.37571443574393
+- poundPerCubicYardPer100Foot.Symbol = lbPerydcubicPer100ft
+- poundPerCubicYardPer100Foot IsUnitForQuantity massDensityGradientPerLength
+- MassDensityGradientPerTemperatureQuantity:massDensityGradientPerTemperature
+- massDensityGradientPerTemperature.L = -3
+- massDensityGradientPerTemperature.M = 1
+- massDensityGradientPerTemperature.T = 0
+- massDensityGradientPerTemperature.I = 0
+- massDensityGradientPerTemperature.ThT = -1
+- massDensityGradientPerTemperature.N = 0
+- massDensityGradientPerTemperature.J = 0
+- massDensityGradientPerTemperature.Theta = 0
+- massDensityGradientPerTemperature.Omega = 0
+- KilogramPerCubicMetrePerKelvin:kilogramPerCubicMetrePerKelvin
+- kilogramPerCubicMetrePerKelvin.ConversionFactorA = 0
+- kilogramPerCubicMetrePerKelvin.ConversionFactorB = 1
+- kilogramPerCubicMetrePerKelvin.Symbol = kgPermcubicPerK
+- kilogramPerCubicMetrePerKelvin IsUnitForQuantity massDensityGradientPerTemperature
+- massDensityGradientPerTemperature HasSIUnit kilogramPerCubicMetrePerKelvin
+- SpecificGravityPerCelsius:specificGravityPerCelsius
+- specificGravityPerCelsius.ConversionFactorA = 0
+- specificGravityPerCelsius.ConversionFactorB = 0.001000028000784022
+- specificGravityPerCelsius.Symbol = sgPerdegC
+- specificGravityPerCelsius IsUnitForQuantity massDensityGradientPerTemperature
+- GramPerCubicCentimetrePerCelsius:gramPerCubicCentimetrePerCelsius
+- gramPerCubicCentimetrePerCelsius.ConversionFactorA = 0
+- gramPerCubicCentimetrePerCelsius.ConversionFactorB = 0.0010000000000000002
+- gramPerCubicCentimetrePerCelsius.Symbol = gPercmcubicPerdegC
+- gramPerCubicCentimetrePerCelsius IsUnitForQuantity massDensityGradientPerTemperature
+- PoundPerGallonUkPerCelsius:poundPerGallonUkPerCelsius
+- poundPerGallonUkPerCelsius.ConversionFactorA = 0
+- poundPerGallonUkPerCelsius.ConversionFactorB = 0.010022412854960501
+- poundPerGallonUkPerCelsius.Symbol = ppgUKPerdegC
+- poundPerGallonUkPerCelsius IsUnitForQuantity massDensityGradientPerTemperature
+- PoundPerGallonUsPerFahrenheit:poundPerGallonUsPerFahrenheit
+- poundPerGallonUsPerFahrenheit.ConversionFactorA = 0
+- poundPerGallonUsPerFahrenheit.ConversionFactorB = 0.004636335806677406
+- poundPerGallonUsPerFahrenheit.Symbol = ppgUSPerdegF
+- poundPerGallonUsPerFahrenheit IsUnitForQuantity massDensityGradientPerTemperature
+- PoundPerGallonUkPerFahrenheit:poundPerGallonUkPerFahrenheit
+- poundPerGallonUkPerFahrenheit.ConversionFactorA = 0
+- poundPerGallonUkPerFahrenheit.ConversionFactorB = 0.005568007141644723
+- poundPerGallonUkPerFahrenheit.Symbol = ppgUKPerdegF
+- poundPerGallonUkPerFahrenheit IsUnitForQuantity massDensityGradientPerTemperature
+- PoundPerGallonUsPerCelsius:poundPerGallonUsPerCelsius
+- poundPerGallonUsPerCelsius.ConversionFactorA = 0
+- poundPerGallonUsPerCelsius.ConversionFactorB = 0.00834540445201933
+- poundPerGallonUsPerCelsius.Symbol = ppgUSPerdegC
+- poundPerGallonUsPerCelsius IsUnitForQuantity massDensityGradientPerTemperature
+- PoundPerCubicFootPerCelsius:poundPerCubicFootPerCelsius
+- poundPerCubicFootPerCelsius.ConversionFactorA = 0
+- poundPerCubicFootPerCelsius.ConversionFactorB = 0.06242796057614459
+- poundPerCubicFootPerCelsius.Symbol = lbPerftcubicPerdegC
+- poundPerCubicFootPerCelsius IsUnitForQuantity massDensityGradientPerTemperature
+- PoundPerCubicFootPerFahrenheit:poundPerCubicFootPerFahrenheit
+- poundPerCubicFootPerFahrenheit.ConversionFactorA = 0
+- poundPerCubicFootPerFahrenheit.ConversionFactorB = 0.03468220032008033
+- poundPerCubicFootPerFahrenheit.Symbol = lbPerftcubicPerdegF
+- poundPerCubicFootPerFahrenheit IsUnitForQuantity massDensityGradientPerTemperature
+- PoundPerCubicInchPerCelsius:poundPerCubicInchPerCelsius
+- poundPerCubicInchPerCelsius.ConversionFactorA = 0
+- poundPerCubicInchPerCelsius.ConversionFactorB = 3.612729200008369E-05
+- poundPerCubicInchPerCelsius.Symbol = lbPerincubicPerdegC
+- poundPerCubicInchPerCelsius IsUnitForQuantity massDensityGradientPerTemperature
+- PoundPerCubicInchPerFahrenheit:poundPerCubicInchPerFahrenheit
+- poundPerCubicInchPerFahrenheit.ConversionFactorA = 0
+- poundPerCubicInchPerFahrenheit.ConversionFactorB = 2.0070717777824268E-05
+- poundPerCubicInchPerFahrenheit.Symbol = lbPerincubicPerdegF
+- poundPerCubicInchPerFahrenheit IsUnitForQuantity massDensityGradientPerTemperature
+- PoundPerCubicYardPerCelsius:poundPerCubicYardPerCelsius
+- poundPerCubicYardPerCelsius.ConversionFactorA = 0
+- poundPerCubicYardPerCelsius.ConversionFactorB = 1.6855549355559039
+- poundPerCubicYardPerCelsius.Symbol = lbPerydcubicPerdegC
+- poundPerCubicYardPerCelsius IsUnitForQuantity massDensityGradientPerTemperature
+- PoundPerCubicYeardPerFahrenheit:poundPerCubicYeardPerFahrenheit
+- poundPerCubicYeardPerFahrenheit.ConversionFactorA = 0
+- poundPerCubicYeardPerFahrenheit.ConversionFactorB = 0.9364194086421688
+- poundPerCubicYeardPerFahrenheit.Symbol = lbPerydcubicPerdegF
+- poundPerCubicYeardPerFahrenheit IsUnitForQuantity massDensityGradientPerTemperature
+- MassDensityQuantity:massDensity
+- massDensity.L = -3
+- massDensity.M = 1
+- massDensity.T = 0
+- massDensity.I = 0
+- massDensity.ThT = 0
+- massDensity.N = 0
+- massDensity.J = 0
+- massDensity.Theta = 0
+- massDensity.Omega = 0
+- KilogramPerCubicMetre:kilogramPerCubicMetre
+- kilogramPerCubicMetre.ConversionFactorA = 0
+- kilogramPerCubicMetre.ConversionFactorB = 1
+- kilogramPerCubicMetre.Symbol = kgPermcubic
+- kilogramPerCubicMetre IsUnitForQuantity massDensity
+- massDensity HasSIUnit kilogramPerCubicMetre
+- GramPerCubicMetre:gramPerCubicMetre
+- gramPerCubicMetre.ConversionFactorA = 0
+- gramPerCubicMetre.ConversionFactorB = 1000
+- gramPerCubicMetre.Symbol = gPermcubic
+- gramPerCubicMetre IsUnitForQuantity massDensity
+- SpecificGravity:specificGravity
+- specificGravity.ConversionFactorA = 0
+- specificGravity.ConversionFactorB = 999.972
+- specificGravity.Symbol = s.g.
+- specificGravity IsUnitForQuantity massDensity
+- GramPerCubicCentimetre:gramPerCubicCentimetre
+- gramPerCubicCentimetre.ConversionFactorA = 0
+- gramPerCubicCentimetre.ConversionFactorB = 0.0010000000000000002
+- gramPerCubicCentimetre.Symbol = gPercmcubic
+- gramPerCubicCentimetre IsUnitForQuantity massDensity
+- PoundPerGallonUk:poundPerGallonUk
+- poundPerGallonUk.ConversionFactorA = 0
+- poundPerGallonUk.ConversionFactorB = 0.010022412854960501
+- poundPerGallonUk.Symbol = ppgUK
+- poundPerGallonUk IsUnitForQuantity massDensity
+- PoundPerGallonUs:poundPerGallonUs
+- poundPerGallonUs.ConversionFactorA = 0
+- poundPerGallonUs.ConversionFactorB = 0.00834540445201933
+- poundPerGallonUs.Symbol = ppgUS
+- poundPerGallonUs IsUnitForQuantity massDensity
+- PoundPerCubicFoot:poundPerCubicFoot
+- poundPerCubicFoot.ConversionFactorA = 0
+- poundPerCubicFoot.ConversionFactorB = 0.06242796057614459
+- poundPerCubicFoot.Symbol = lbPerftcubic
+- poundPerCubicFoot IsUnitForQuantity massDensity
+- PoundPerCubicInch:poundPerCubicInch
+- poundPerCubicInch.ConversionFactorA = 0
+- poundPerCubicInch.ConversionFactorB = 3.612729200008369E-05
+- poundPerCubicInch.Symbol = lbPerincubic
+- poundPerCubicInch IsUnitForQuantity massDensity
+- PoundPerCubicYard:poundPerCubicYard
+- poundPerCubicYard.ConversionFactorA = 0
+- poundPerCubicYard.ConversionFactorB = 1.6855549355559039
+- poundPerCubicYard.Symbol = lbPerydcubic
+- poundPerCubicYard IsUnitForQuantity massDensity
+- MassDensityRateOfChangeQuantity:massDensityRateOfChange
+- massDensityRateOfChange.L = -3
+- massDensityRateOfChange.M = 1
+- massDensityRateOfChange.T = -1
+- massDensityRateOfChange.I = 0
+- massDensityRateOfChange.ThT = 0
+- massDensityRateOfChange.N = 0
+- massDensityRateOfChange.J = 0
+- massDensityRateOfChange.Theta = 0
+- massDensityRateOfChange.Omega = 0
+- KilogramPerCubicMetrePerSecond:kilogramPerCubicMetrePerSecond
+- kilogramPerCubicMetrePerSecond.ConversionFactorA = 0
+- kilogramPerCubicMetrePerSecond.ConversionFactorB = 1
+- kilogramPerCubicMetrePerSecond.Symbol = kgPermcubicPers
+- kilogramPerCubicMetrePerSecond IsUnitForQuantity massDensityRateOfChange
+- massDensityRateOfChange HasSIUnit kilogramPerCubicMetrePerSecond
+- SpecificGravityPerSecond:specificGravityPerSecond
+- specificGravityPerSecond.ConversionFactorA = 0
+- specificGravityPerSecond.ConversionFactorB = 0.001000028000784022
+- specificGravityPerSecond.Symbol = sgPers
+- specificGravityPerSecond IsUnitForQuantity massDensityRateOfChange
+- SpecificGravityPerMinute:specificGravityPerMinute
+- specificGravityPerMinute.ConversionFactorA = 0
+- specificGravityPerMinute.ConversionFactorB = 0.06000168004704132
+- specificGravityPerMinute.Symbol = sgPermin
+- specificGravityPerMinute IsUnitForQuantity massDensityRateOfChange
+- SpecificGravityPerHour:specificGravityPerHour
+- specificGravityPerHour.ConversionFactorA = 0
+- specificGravityPerHour.ConversionFactorB = 3.600100802822479
+- specificGravityPerHour.Symbol = sgPerh
+- specificGravityPerHour IsUnitForQuantity massDensityRateOfChange
+- GramPerCubicCentimetrePerSecond:gramPerCubicCentimetrePerSecond
+- gramPerCubicCentimetrePerSecond.ConversionFactorA = 0
+- gramPerCubicCentimetrePerSecond.ConversionFactorB = 0.001
+- gramPerCubicCentimetrePerSecond.Symbol = gPercmcubicPers
+- gramPerCubicCentimetrePerSecond IsUnitForQuantity massDensityRateOfChange
+- GramPerCubicCentimetrePerMinute:gramPerCubicCentimetrePerMinute
+- gramPerCubicCentimetrePerMinute.ConversionFactorA = 0
+- gramPerCubicCentimetrePerMinute.ConversionFactorB = 0.06
+- gramPerCubicCentimetrePerMinute.Symbol = gPercmcubicPermin
+- gramPerCubicCentimetrePerMinute IsUnitForQuantity massDensityRateOfChange
+- GramPerCubicCentimetrePerHour:gramPerCubicCentimetrePerHour
+- gramPerCubicCentimetrePerHour.ConversionFactorA = 0
+- gramPerCubicCentimetrePerHour.ConversionFactorB = 3.6
+- gramPerCubicCentimetrePerHour.Symbol = gPercmcubicPerh
+- gramPerCubicCentimetrePerHour IsUnitForQuantity massDensityRateOfChange
+- PoundPerGallonUkPerSecond:poundPerGallonUkPerSecond
+- poundPerGallonUkPerSecond.ConversionFactorA = 0
+- poundPerGallonUkPerSecond.ConversionFactorB = 0.010022412854960501
+- poundPerGallonUkPerSecond.Symbol = ppgUKPers
+- poundPerGallonUkPerSecond IsUnitForQuantity massDensityRateOfChange
+- PoundPerGallonUkPerMinute:poundPerGallonUkPerMinute
+- poundPerGallonUkPerMinute.ConversionFactorA = 0
+- poundPerGallonUkPerMinute.ConversionFactorB = 0.6013447712976301
+- poundPerGallonUkPerMinute.Symbol = ppgUKPermin
+- poundPerGallonUkPerMinute IsUnitForQuantity massDensityRateOfChange
+- PoundPerGallonUkPerHour:poundPerGallonUkPerHour
+- poundPerGallonUkPerHour.ConversionFactorA = 0
+- poundPerGallonUkPerHour.ConversionFactorB = 36.08068627785781
+- poundPerGallonUkPerHour.Symbol = ppgUKPerh
+- poundPerGallonUkPerHour IsUnitForQuantity massDensityRateOfChange
+- PoundPerGallonUsPerSecond:poundPerGallonUsPerSecond
+- poundPerGallonUsPerSecond.ConversionFactorA = 0
+- poundPerGallonUsPerSecond.ConversionFactorB = 0.00834540445201933
+- poundPerGallonUsPerSecond.Symbol = ppgUSPers
+- poundPerGallonUsPerSecond IsUnitForQuantity massDensityRateOfChange
+- PoundPerGallonUsPerMinute:poundPerGallonUsPerMinute
+- poundPerGallonUsPerMinute.ConversionFactorA = 0
+- poundPerGallonUsPerMinute.ConversionFactorB = 0.5007242671211598
+- poundPerGallonUsPerMinute.Symbol = ppgUSPermin
+- poundPerGallonUsPerMinute IsUnitForQuantity massDensityRateOfChange
+- PoundPerGallonUsPerHour:poundPerGallonUsPerHour
+- poundPerGallonUsPerHour.ConversionFactorA = 0
+- poundPerGallonUsPerHour.ConversionFactorB = 30.043456027269592
+- poundPerGallonUsPerHour.Symbol = ppgUSPerh
+- poundPerGallonUsPerHour IsUnitForQuantity massDensityRateOfChange
 - ForceGradientPerLengthQuantity:forceGradientPerLength
 - forceGradientPerLength.L = 0
 - forceGradientPerLength.M = 1
@@ -2016,6 +2163,11 @@
 - kilogramForce.ConversionFactorB = 0.10197162129779283
 - kilogramForce.Symbol = kgf
 - kilogramForce IsUnitForQuantity force
+- TonneForce:tonneForce
+- tonneForce.ConversionFactorA = 0
+- tonneForce.ConversionFactorB = 0.00010197162129779283
+- tonneForce.Symbol = tf
+- tonneForce IsUnitForQuantity force
 - PoundForce:poundForce
 - poundForce.ConversionFactorA = 0
 - poundForce.ConversionFactorB = 0.2248089430997105
@@ -2112,6 +2264,47 @@
 - shockPerHour.ConversionFactorB = 3600
 - shockPerHour.Symbol = spm
 - shockPerHour IsUnitForQuantity frequency
+- RadianPerSecond:radianPerSecond
+- radianPerSecond.ConversionFactorA = 0
+- radianPerSecond.ConversionFactorB = 6.283185307179586
+- radianPerSecond.Symbol = radPers
+- radianPerSecond IsUnitForQuantity frequency
+- frequency HasSIUnit radianPerSecond
+- DegreePerSecond:degreePerSecond
+- degreePerSecond.ConversionFactorA = 0
+- degreePerSecond.ConversionFactorB = 360
+- degreePerSecond.Symbol = degPers
+- degreePerSecond IsUnitForQuantity frequency
+- RadianPerDay:radianPerDay
+- radianPerDay.ConversionFactorA = 0
+- radianPerDay.ConversionFactorB = 542867.2105403163
+- radianPerDay.Symbol = radPerd
+- radianPerDay IsUnitForQuantity frequency
+- RadianPerHour:radianPerHour
+- radianPerHour.ConversionFactorA = 0
+- radianPerHour.ConversionFactorB = 22619.46710584651
+- radianPerHour.Symbol = radPerh
+- radianPerHour IsUnitForQuantity frequency
+- RadianPerMinute:radianPerMinute
+- radianPerMinute.ConversionFactorA = 0
+- radianPerMinute.ConversionFactorB = 376.99111843077515
+- radianPerMinute.Symbol = radPermin
+- radianPerMinute IsUnitForQuantity frequency
+- DegreePerDay:degreePerDay
+- degreePerDay.ConversionFactorA = 0
+- degreePerDay.ConversionFactorB = 31104000
+- degreePerDay.Symbol = degPerd
+- degreePerDay IsUnitForQuantity frequency
+- DegreePerHour:degreePerHour
+- degreePerHour.ConversionFactorA = 0
+- degreePerHour.ConversionFactorB = 1296000
+- degreePerHour.Symbol = degPerh
+- degreePerHour IsUnitForQuantity frequency
+- DegreePerMinute:degreePerMinute
+- degreePerMinute.ConversionFactorA = 0
+- degreePerMinute.ConversionFactorB = 21600
+- degreePerMinute.Symbol = degPermin
+- degreePerMinute IsUnitForQuantity frequency
 - FrequencyRateOfChangeQuantity:frequencyRateOfChange
 - frequencyRateOfChange.L = 0
 - frequencyRateOfChange.M = 0
@@ -3300,37 +3493,6 @@
 - rankine.ConversionFactorB = 1.7999999999999998
 - rankine.Symbol = degR
 - rankine IsUnitForQuantity relativeTemperature
-- ElectricResistivityQuantity:electricResistivity
-- electricResistivity.L = 3
-- electricResistivity.M = 1
-- electricResistivity.T = -3
-- electricResistivity.I = -2
-- electricResistivity.ThT = 0
-- electricResistivity.N = 0
-- electricResistivity.J = 0
-- electricResistivity.Theta = 0
-- electricResistivity.Omega = 0
-- OhmMetre:ohmMetre
-- ohmMetre.ConversionFactorA = 0
-- ohmMetre.ConversionFactorB = 1
-- ohmMetre.Symbol = ω.m
-- ohmMetre IsUnitForQuantity electricResistivity
-- electricResistivity HasSIUnit ohmMetre
-- KiloOhmMetre:kiloOhmMetre
-- kiloOhmMetre.ConversionFactorA = 0
-- kiloOhmMetre.ConversionFactorB = 0.001
-- kiloOhmMetre.Symbol = kΩ.m
-- kiloOhmMetre IsUnitForQuantity electricResistivity
-- MegaOhmMetre:megaOhmMetre
-- megaOhmMetre.ConversionFactorA = 0
-- megaOhmMetre.ConversionFactorB = 1E-06
-- megaOhmMetre.Symbol = mΩ.m
-- megaOhmMetre IsUnitForQuantity electricResistivity
-- GigaOhmMetre:gigaOhmMetre
-- gigaOhmMetre.ConversionFactorA = 0
-- gigaOhmMetre.ConversionFactorB = 1E-09
-- gigaOhmMetre.Symbol = gΩ.m
-- gigaOhmMetre IsUnitForQuantity electricResistivity
 - SolidAngleQuantity:solidAngle
 - solidAngle.L = 0
 - solidAngle.M = 0
@@ -5003,62 +5165,6 @@
 - hundredWeights.ConversionFactorB = 0.022046226218487758
 - hundredWeights.Symbol = cwt
 - hundredWeights IsUnitForQuantity mass
-- EnergyQuantity:energy
-- energy.L = 2
-- energy.M = 1
-- energy.T = -2
-- energy.I = 0
-- energy.ThT = 0
-- energy.N = 0
-- energy.J = 0
-- energy.Theta = 0
-- energy.Omega = 0
-- Joule:joule
-- joule.ConversionFactorA = 0
-- joule.ConversionFactorB = 1
-- joule.Symbol = j
-- joule IsUnitForQuantity energy
-- energy HasSIUnit joule
-- Kilojoule:kilojoule
-- kilojoule.ConversionFactorA = 0
-- kilojoule.ConversionFactorB = 0.001
-- kilojoule.Symbol = kJ
-- kilojoule IsUnitForQuantity energy
-- Megajoule:megajoule
-- megajoule.ConversionFactorA = 0
-- megajoule.ConversionFactorB = 1E-06
-- megajoule.Symbol = mJ
-- megajoule IsUnitForQuantity energy
-- Gigajoule:gigajoule
-- gigajoule.ConversionFactorA = 0
-- gigajoule.ConversionFactorB = 1E-09
-- gigajoule.Symbol = gJ
-- gigajoule IsUnitForQuantity energy
-- Calorie:calorie
-- calorie.ConversionFactorA = 0
-- calorie.ConversionFactorB = 0.2390057361376673
-- calorie.Symbol = cal
-- calorie IsUnitForQuantity energy
-- Kilocalorie:kilocalorie
-- kilocalorie.ConversionFactorA = 0
-- kilocalorie.ConversionFactorB = 0.0002390057361376673
-- kilocalorie.Symbol = cal
-- kilocalorie IsUnitForQuantity energy
-- BritishThermalUnit:britishThermalUnit
-- britishThermalUnit.ConversionFactorA = 0
-- britishThermalUnit.ConversionFactorB = 0.0009484516526770049
-- britishThermalUnit.Symbol = bTU
-- britishThermalUnit IsUnitForQuantity energy
-- KiloBritishThermalUnit:kiloBritishThermalUnit
-- kiloBritishThermalUnit.ConversionFactorA = 0
-- kiloBritishThermalUnit.ConversionFactorB = 9.484516526770048E-07
-- kiloBritishThermalUnit.Symbol = kBTU
-- kiloBritishThermalUnit IsUnitForQuantity energy
-- MegaBritishThermalUnit:megaBritishThermalUnit
-- megaBritishThermalUnit.ConversionFactorA = 0
-- megaBritishThermalUnit.ConversionFactorB = 9.48451652677005E-10
-- megaBritishThermalUnit.Symbol = mMBTU
-- megaBritishThermalUnit IsUnitForQuantity energy
 - ForceRateOfChangeQuantity:forceRateOfChange
 - forceRateOfChange.L = 1
 - forceRateOfChange.M = 1
@@ -5758,6 +5864,71 @@
 - inchPoundPerHour.ConversionFactorB = 31862.68484877787
 - inchPoundPerHour.Symbol = in.lbfPerh
 - inchPoundPerHour IsUnitForQuantity torqueRateOfChange
+- MomentOfAreaQuantity:momentOfArea
+- momentOfArea.L = 4
+- momentOfArea.M = 0
+- momentOfArea.T = 0
+- momentOfArea.I = 0
+- momentOfArea.ThT = 0
+- momentOfArea.N = 0
+- momentOfArea.J = 0
+- momentOfArea.Theta = 0
+- momentOfArea.Omega = 0
+- MetresToTheFourthPower:metresToTheFourthPower
+- metresToTheFourthPower.ConversionFactorA = 0
+- metresToTheFourthPower.ConversionFactorB = 1
+- metresToTheFourthPower.Symbol = m⁴
+- metresToTheFourthPower IsUnitForQuantity momentOfArea
+- momentOfArea HasSIUnit metresToTheFourthPower
+- CentimetresToTheFourthPower:centimetresToTheFourthPower
+- centimetresToTheFourthPower.ConversionFactorA = 0
+- centimetresToTheFourthPower.ConversionFactorB = 99999999.99999999
+- centimetresToTheFourthPower.Symbol = cm⁴
+- centimetresToTheFourthPower IsUnitForQuantity momentOfArea
+- InchesToTheFourthPower:inchesToTheFourthPower
+- inchesToTheFourthPower.ConversionFactorA = 0
+- inchesToTheFourthPower.ConversionFactorB = 2402509.6100288304
+- inchesToTheFourthPower.Symbol = in⁴
+- inchesToTheFourthPower IsUnitForQuantity momentOfArea
+- FeetToTheFourthPower:feetToTheFourthPower
+- feetToTheFourthPower.ConversionFactorA = 0
+- feetToTheFourthPower.ConversionFactorB = 115.86176745895213
+- feetToTheFourthPower.Symbol = ft⁴
+- feetToTheFourthPower IsUnitForQuantity momentOfArea
+- MomentOfInertiaQuantity:momentOfInertia
+- momentOfInertia.L = 2
+- momentOfInertia.M = 1
+- momentOfInertia.T = 0
+- momentOfInertia.I = 0
+- momentOfInertia.ThT = 0
+- momentOfInertia.N = 0
+- momentOfInertia.J = 0
+- momentOfInertia.Theta = 0
+- momentOfInertia.Omega = 0
+- KilogramMetreSquared:kilogramMetreSquared
+- kilogramMetreSquared.ConversionFactorA = 0
+- kilogramMetreSquared.ConversionFactorB = 1
+- kilogramMetreSquared.Symbol = kg.msquare
+- kilogramMetreSquared IsUnitForQuantity momentOfInertia
+- momentOfInertia HasSIUnit kilogramMetreSquared
+- GramCentimetreSquared:gramCentimetreSquared
+- gramCentimetreSquared.ConversionFactorA = 0
+- gramCentimetreSquared.ConversionFactorB = 10000000
+- gramCentimetreSquared.Symbol = g.cmsquare
+- gramCentimetreSquared IsUnitForQuantity momentOfInertia
+- momentOfInertia HasSIUnit gramCentimetreSquared
+- PoundFootSquared:poundFootSquared
+- poundFootSquared.ConversionFactorA = 0
+- poundFootSquared.ConversionFactorB = 23.73036040423194
+- poundFootSquared.Symbol = lb.ftsquare
+- poundFootSquared IsUnitForQuantity momentOfInertia
+- momentOfInertia HasSIUnit poundFootSquared
+- PoundInchSquared:poundInchSquared
+- poundInchSquared.ConversionFactorA = 0
+- poundInchSquared.ConversionFactorB = 3417.171898209399
+- poundInchSquared.Symbol = lb.insquare
+- poundInchSquared IsUnitForQuantity momentOfInertia
+- momentOfInertia HasSIUnit poundInchSquared
 - DiameterSmallQuantity:diameterSmall
 - diameterSmall.L = 1
 - diameterSmall.M = 0
@@ -5998,42 +6169,6 @@
 - rpm.ConversionFactorB = 60
 - rpm.Symbol = rpm
 - rpm IsUnitForQuantity rotationalFrequency
-- GravitationalLoadQuantity:gravitationalLoad
-- gravitationalLoad.L = 0
-- gravitationalLoad.M = 1
-- gravitationalLoad.T = 0
-- gravitationalLoad.I = 0
-- gravitationalLoad.ThT = 0
-- gravitationalLoad.N = 0
-- gravitationalLoad.J = 0
-- gravitationalLoad.Theta = 0
-- gravitationalLoad.Omega = 0
-- Kilogram:kilogram
-- kilogram.ConversionFactorA = 0
-- kilogram.ConversionFactorB = 1
-- kilogram.Symbol = kg
-- kilogram IsUnitForQuantity gravitationalLoad
-- gravitationalLoad HasSIUnit kilogram
-- TonneMetric:tonneMetric
-- tonneMetric.ConversionFactorA = 0
-- tonneMetric.ConversionFactorB = 0.001
-- tonneMetric.Symbol = t
-- tonneMetric IsUnitForQuantity gravitationalLoad
-- Pound:pound
-- pound.ConversionFactorA = 0
-- pound.ConversionFactorB = 2.2046226218487757
-- pound.Symbol = lb
-- pound IsUnitForQuantity gravitationalLoad
-- Kilopound:kilopound
-- kilopound.ConversionFactorA = 0
-- kilopound.ConversionFactorB = 0.002204622621848776
-- kilopound.Symbol = klb
-- kilopound IsUnitForQuantity gravitationalLoad
-- TonUk:tonUk
-- tonUk.ConversionFactorA = 0
-- tonUk.ConversionFactorB = 0.0009842065276110606
-- tonUk.Symbol = lT
-- tonUk IsUnitForQuantity gravitationalLoad
 - HydraulicConductivityQuantity:hydraulicConductivity
 - hydraulicConductivity.L = 1
 - hydraulicConductivity.M = 0
@@ -6601,102 +6736,18 @@
 - EnergyDensityDrillingQuantity:energyDensityDrilling
 - energyDensityDrilling IsOfBaseQuantity energyDensity
 - energyDensityDrilling.MeaningfulPrecision = 0.01
-- MassDensityRateOfChangeDrillingQuantity:massDensityRateOfChangeDrilling
-- massDensityRateOfChangeDrilling IsOfBaseQuantity massDensityRateOfChange
-- massDensityRateOfChangeDrilling.MeaningfulPrecision = 0.001
-- MassDensityGradientPerTemperatureDrillingQuantity:massDensityGradientPerTemperatureDrilling
-- massDensityGradientPerTemperatureDrilling IsOfBaseQuantity massDensityGradientPerTemperature
-- massDensityGradientPerTemperatureDrilling.MeaningfulPrecision = 0.001
-- MassDensityGradientPerLengthDrillingQuantity:massDensityGradientPerLengthDrilling
-- massDensityGradientPerLengthDrilling IsOfBaseQuantity massDensityGradientPerLength
-- massDensityGradientPerLengthDrilling.MeaningfulPrecision = 0.001
-- MassDensityDrillingQuantity:massDensityDrilling
-- massDensityDrilling IsOfBaseQuantity massDensity
-- massDensityDrilling.MeaningfulPrecision = 1
 - FluidVelocityDrillingQuantity:fluidVelocityDrilling
 - fluidVelocityDrilling IsOfBaseQuantity velocity
 - fluidVelocityDrilling.MeaningfulPrecision = 0.01
-- ForceGradientPerLengthDrillingQuantity:forceGradientPerLengthDrilling
-- forceGradientPerLengthDrilling IsOfBaseQuantity forceGradientPerLength
-- forceGradientPerLengthDrilling.MeaningfulPrecision = 1
 - ForceDrillingQuantity:forceDrilling
 - forceDrilling IsOfBaseQuantity force
 - forceDrilling.MeaningfulPrecision = 0.1
-- HeatTransferCoefficientDrillingQuantity:heatTransferCoefficientDrilling
-- heatTransferCoefficientDrilling IsOfBaseQuantity heatTransferCoefficient
-- heatTransferCoefficientDrilling.MeaningfulPrecision = 0.0001
-- HydraulicConductivityDrillingQuantity:hydraulicConductivityDrilling
-- hydraulicConductivityDrilling IsOfBaseQuantity velocity
-- hydraulicConductivityDrilling.MeaningfulPrecision = 0.001
-- InterfacialTensionDrillingQuantity:interfacialTensionDrilling
-- interfacialTensionDrilling IsOfBaseQuantity forceGradientPerLength
-- interfacialTensionDrilling.MeaningfulPrecision = 0.0001
-- MassGradientPerLengthDrillingQuantity:massGradientPerLengthDrilling
-- massGradientPerLengthDrilling IsOfBaseQuantity massGradientPerLength
-- massGradientPerLengthDrilling.MeaningfulPrecision = 0.05
-- MassDrillingQuantity:massDrilling
-- massDrilling IsOfBaseQuantity mass
-- massDrilling.MeaningfulPrecision = 0.1
-- MassRateDrillingQuantity:massRateDrilling
-- massRateDrilling IsOfBaseQuantity massRate
-- massRateDrilling.MeaningfulPrecision = 0.0001
-- PlaneAngleDrillingQuantity:planeAngleDrilling
-- planeAngleDrilling IsOfBaseQuantity planeAngle
-- planeAngleDrilling.MeaningfulPrecision = 0.00017453292519943296
-- PowerDrillingQuantity:powerDrilling
-- powerDrilling IsOfBaseQuantity power
-- powerDrilling.MeaningfulPrecision = 0.1
-- PressureGradientPerLengthDrillingQuantity:pressureGradientPerLengthDrilling
-- pressureGradientPerLengthDrilling IsOfBaseQuantity pressureGradientPerLength
-- pressureGradientPerLengthDrilling.MeaningfulPrecision = 10000
-- PressureLossConstantDrillingQuantity:pressureLossConstantDrilling
-- pressureLossConstantDrilling IsOfBaseQuantity pressureLossConstant
-- pressureLossConstantDrilling.MeaningfulPrecision = 0.1
-- PressureDrillingQuantity:pressureDrilling
-- pressureDrilling IsOfBaseQuantity energyDensity
-- pressureDrilling.MeaningfulPrecision = 10000
-- RandomWalkDrillingQuantity:randomWalkDrilling
-- randomWalkDrilling IsOfBaseQuantity randomWalk
-- randomWalkDrilling.MeaningfulPrecision = 1E-05
-- RotationalFrequencyRateOfChangeDrillingQuantity:rotationalFrequencyRateOfChangeDrilling
-- rotationalFrequencyRateOfChangeDrilling IsOfBaseQuantity frequencyRateOfChange
-- rotationalFrequencyRateOfChangeDrilling.MeaningfulPrecision = 0.016666666666666666
-- IsobaricSpecificHeatCapacityDrillingQuantity:isobaricSpecificHeatCapacityDrilling
-- isobaricSpecificHeatCapacityDrilling IsOfBaseQuantity isobaricSpecificHeatCapacity
-- isobaricSpecificHeatCapacityDrilling.MeaningfulPrecision = 0.01
-- IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity:isobaricSpecificHeatCapacityGradientPerTemperatureDrilling
-- isobaricSpecificHeatCapacityGradientPerTemperatureDrilling IsOfBaseQuantity isobaricSpecificHeatCapacityGradientPerTemperature
-- isobaricSpecificHeatCapacityGradientPerTemperatureDrilling.MeaningfulPrecision = 0.01
-- StickDurationDrillingQuantity:stickDurationDrilling
-- stickDurationDrilling IsOfBaseQuantity time
-- stickDurationDrilling.MeaningfulPrecision = 0.001
-- ReciprocalLengthSurveyInstrumentDrillingQuantity:reciprocalLengthSurveyInstrumentDrilling
-- reciprocalLengthSurveyInstrumentDrilling IsOfBaseQuantity imageScale
-- reciprocalLengthSurveyInstrumentDrilling.MeaningfulPrecision = 1E-08
-- TemperatureGradientPerLengthDrillingQuantity:temperatureGradientPerLengthDrilling
-- temperatureGradientPerLengthDrilling IsOfBaseQuantity temperatureGradientPerLength
-- temperatureGradientPerLengthDrilling.MeaningfulPrecision = 0.001
-- TemperatureDrillingQuantity:temperatureDrilling
-- temperatureDrilling IsOfBaseQuantity relativeTemperature
-- temperatureDrilling.MeaningfulPrecision = 0.01
-- TensionDrillingQuantity:tensionDrilling
-- tensionDrilling IsOfBaseQuantity force
-- tensionDrilling.MeaningfulPrecision = 100
-- ThermalConductivityDrillingQuantity:thermalConductivityDrilling
-- thermalConductivityDrilling IsOfBaseQuantity thermalConductivity
-- thermalConductivityDrilling.MeaningfulPrecision = 0.01
-- TorqueDrillingQuantity:torqueDrilling
-- torqueDrilling IsOfBaseQuantity torque
-- torqueDrilling.MeaningfulPrecision = 0.1
-- VolumeDrillingQuantity:volumeDrilling
-- volumeDrilling IsOfBaseQuantity volume
-- volumeDrilling.MeaningfulPrecision = 0.0001
-- VolumetricFlowRateOfChangeDrillingQuantity:volumetricFlowRateOfChangeDrilling
-- volumetricFlowRateOfChangeDrilling IsOfBaseQuantity volumetricFlowRateOfChange
-- volumetricFlowRateOfChangeDrilling.MeaningfulPrecision = 1E-06
-- VolumetricFlowrateDrillingQuantity:volumetricFlowrateDrilling
-- volumetricFlowrateDrilling IsOfBaseQuantity volumetricFlowRate
-- volumetricFlowrateDrilling.MeaningfulPrecision = 0.0001
+- ForceGradientPerLengthDrillingQuantity:forceGradientPerLengthDrilling
+- forceGradientPerLengthDrilling IsOfBaseQuantity forceGradientPerLength
+- forceGradientPerLengthDrilling.MeaningfulPrecision = 1
+- ForceRateOfChangeDrillingQuantity:forceRateOfChangeDrilling
+- forceRateOfChangeDrilling IsOfBaseQuantity forceRateOfChange
+- forceRateOfChangeDrilling.MeaningfulPrecision = 0.1
 - FormationResistivityDrillingQuantity:formationResistivityDrilling
 - formationResistivityDrilling IsOfBaseQuantity electricResistivity
 - formationResistivityDrilling.MeaningfulPrecision = 0.01
@@ -6712,42 +6763,132 @@
 - GasVolumetricFlowRateDrillingQuantity:gasVolumetricFlowRateDrilling
 - gasVolumetricFlowRateDrilling IsOfBaseQuantity volumetricFlowRate
 - gasVolumetricFlowRateDrilling.MeaningfulPrecision = 0.01
+- HeatTransferCoefficientDrillingQuantity:heatTransferCoefficientDrilling
+- heatTransferCoefficientDrilling IsOfBaseQuantity heatTransferCoefficient
+- heatTransferCoefficientDrilling.MeaningfulPrecision = 0.0001
 - HeightDrillingQuantity:heightDrilling
 - heightDrilling IsOfBaseQuantity length
 - heightDrilling.MeaningfulPrecision = 0.001
 - HookLoadDrillingQuantity:hookLoadDrilling
-- hookLoadDrilling IsOfBaseQuantity mass
-- hookLoadDrilling.MeaningfulPrecision = 100
+- hookLoadDrilling IsOfBaseQuantity force
+- hookLoadDrilling.MeaningfulPrecision = 1000
+- HydraulicConductivityDrillingQuantity:hydraulicConductivityDrilling
+- hydraulicConductivityDrilling IsOfBaseQuantity velocity
+- hydraulicConductivityDrilling.MeaningfulPrecision = 0.001
+- InterfacialTensionDrillingQuantity:interfacialTensionDrilling
+- interfacialTensionDrilling IsOfBaseQuantity forceGradientPerLength
+- interfacialTensionDrilling.MeaningfulPrecision = 0.0001
+- IsobaricSpecificHeatCapacityDrillingQuantity:isobaricSpecificHeatCapacityDrilling
+- isobaricSpecificHeatCapacityDrilling IsOfBaseQuantity isobaricSpecificHeatCapacity
+- isobaricSpecificHeatCapacityDrilling.MeaningfulPrecision = 0.01
+- IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity:isobaricSpecificHeatCapacityGradientPerTemperatureDrilling
+- isobaricSpecificHeatCapacityGradientPerTemperatureDrilling IsOfBaseQuantity isobaricSpecificHeatCapacityGradientPerTemperature
+- isobaricSpecificHeatCapacityGradientPerTemperatureDrilling.MeaningfulPrecision = 0.01
+- MassDensityDrillingQuantity:massDensityDrilling
+- massDensityDrilling IsOfBaseQuantity massDensity
+- massDensityDrilling.MeaningfulPrecision = 1
+- MassDensityGradientPerLengthDrillingQuantity:massDensityGradientPerLengthDrilling
+- massDensityGradientPerLengthDrilling IsOfBaseQuantity massDensityGradientPerLength
+- massDensityGradientPerLengthDrilling.MeaningfulPrecision = 0.001
+- MassDensityGradientPerTemperatureDrillingQuantity:massDensityGradientPerTemperatureDrilling
+- massDensityGradientPerTemperatureDrilling IsOfBaseQuantity massDensityGradientPerTemperature
+- massDensityGradientPerTemperatureDrilling.MeaningfulPrecision = 0.001
+- MassDensityRateOfChangeDrillingQuantity:massDensityRateOfChangeDrilling
+- massDensityRateOfChangeDrilling IsOfBaseQuantity massDensityRateOfChange
+- massDensityRateOfChangeDrilling.MeaningfulPrecision = 0.001
+- MassDrillingQuantity:massDrilling
+- massDrilling IsOfBaseQuantity mass
+- massDrilling.MeaningfulPrecision = 0.1
+- MassGradientPerLengthDrillingQuantity:massGradientPerLengthDrilling
+- massGradientPerLengthDrilling IsOfBaseQuantity massGradientPerLength
+- massGradientPerLengthDrilling.MeaningfulPrecision = 0.05
+- MassRateDrillingQuantity:massRateDrilling
+- massRateDrilling IsOfBaseQuantity massRate
+- massRateDrilling.MeaningfulPrecision = 0.0001
 - NozzleDiameterDrillingQuantity:nozzleDiameterDrilling
 - nozzleDiameterDrilling IsOfBaseQuantity length
 - nozzleDiameterDrilling.MeaningfulPrecision = 0.0001
-- SurfacePoreDrillingQuantity:surfacePoreDrilling
-- surfacePoreDrilling IsOfBaseQuantity area
-- surfacePoreDrilling.MeaningfulPrecision = 1E-13
-- PositionDrillingQuantity:positionDrilling
-- positionDrilling IsOfBaseQuantity length
-- positionDrilling.MeaningfulPrecision = 0.01
-- RateOfPenetrationDrillingQuantity:rateOfPenetrationDrilling
-- rateOfPenetrationDrilling IsOfBaseQuantity velocity
-- rateOfPenetrationDrilling.MeaningfulPrecision = 2.77778E-05
-- WeightOnBitDrillingQuantity:weightOnBitDrilling
-- weightOnBitDrilling IsOfBaseQuantity mass
-- weightOnBitDrilling.MeaningfulPrecision = 10
-- ThermalConductivityGradientPerTemperatureDrillingQuantity:thermalConductivityGradientPerTemperatureDrilling
-- thermalConductivityGradientPerTemperatureDrilling IsOfBaseQuantity thermalConductivityGradientPerTemperature
-- thermalConductivityGradientPerTemperatureDrilling.MeaningfulPrecision = 0.01
-- TorqueGradientPerLengthDrillingQuantity:torqueGradientPerLengthDrilling
-- torqueGradientPerLengthDrilling IsOfBaseQuantity force
-- torqueGradientPerLengthDrilling.MeaningfulPrecision = 1
+- PlaneAngleDrillingQuantity:planeAngleDrilling
+- planeAngleDrilling IsOfBaseQuantity planeAngle
+- planeAngleDrilling.MeaningfulPrecision = 0.00017453292519943296
 - PorousMediumPermeabilityDrillingQuantity:porousMediumPermeabilityDrilling
 - porousMediumPermeabilityDrilling IsOfBaseQuantity area
 - porousMediumPermeabilityDrilling.MeaningfulPrecision = 1E-10
-- ForceRateOfChangeDrillingQuantity:forceRateOfChangeDrilling
-- forceRateOfChangeDrilling IsOfBaseQuantity forceRateOfChange
-- forceRateOfChangeDrilling.MeaningfulPrecision = 0.1
+- PositionDrillingQuantity:positionDrilling
+- positionDrilling IsOfBaseQuantity length
+- positionDrilling.MeaningfulPrecision = 0.01
+- PowerDrillingQuantity:powerDrilling
+- powerDrilling IsOfBaseQuantity power
+- powerDrilling.MeaningfulPrecision = 0.1
+- PressureDrillingQuantity:pressureDrilling
+- pressureDrilling IsOfBaseQuantity energyDensity
+- pressureDrilling.MeaningfulPrecision = 10000
+- PressureGradientPerLengthDrillingQuantity:pressureGradientPerLengthDrilling
+- pressureGradientPerLengthDrilling IsOfBaseQuantity pressureGradientPerLength
+- pressureGradientPerLengthDrilling.MeaningfulPrecision = 10000
+- PressureLossConstantDrillingQuantity:pressureLossConstantDrilling
+- pressureLossConstantDrilling IsOfBaseQuantity pressureLossConstant
+- pressureLossConstantDrilling.MeaningfulPrecision = 0.1
 - PressureRateOfChangeDrillingQuantity:pressureRateOfChangeDrilling
 - pressureRateOfChangeDrilling IsOfBaseQuantity pressureRateOfChange
 - pressureRateOfChangeDrilling.MeaningfulPrecision = 10000
+- RandomWalkDrillingQuantity:randomWalkDrilling
+- randomWalkDrilling IsOfBaseQuantity randomWalk
+- randomWalkDrilling.MeaningfulPrecision = 1E-05
+- RateOfPenetrationDrillingQuantity:rateOfPenetrationDrilling
+- rateOfPenetrationDrilling IsOfBaseQuantity velocity
+- rateOfPenetrationDrilling.MeaningfulPrecision = 2.77778E-05
+- ReciprocalLengthSurveyInstrumentDrillingQuantity:reciprocalLengthSurveyInstrumentDrilling
+- reciprocalLengthSurveyInstrumentDrilling IsOfBaseQuantity imageScale
+- reciprocalLengthSurveyInstrumentDrilling.MeaningfulPrecision = 1E-08
+- RotationalFrequencyRateOfChangeDrillingQuantity:rotationalFrequencyRateOfChangeDrilling
+- rotationalFrequencyRateOfChangeDrilling IsOfBaseQuantity frequencyRateOfChange
+- rotationalFrequencyRateOfChangeDrilling.MeaningfulPrecision = 0.016666666666666666
+- StickDurationDrillingQuantity:stickDurationDrilling
+- stickDurationDrilling IsOfBaseQuantity time
+- stickDurationDrilling.MeaningfulPrecision = 0.001
+- SurfacePoreDrillingQuantity:surfacePoreDrilling
+- surfacePoreDrilling IsOfBaseQuantity area
+- surfacePoreDrilling.MeaningfulPrecision = 1E-13
+- TemperatureDrillingQuantity:temperatureDrilling
+- temperatureDrilling IsOfBaseQuantity relativeTemperature
+- temperatureDrilling.MeaningfulPrecision = 0.01
+- TemperatureGradientPerLengthDrillingQuantity:temperatureGradientPerLengthDrilling
+- temperatureGradientPerLengthDrilling IsOfBaseQuantity temperatureGradientPerLength
+- temperatureGradientPerLengthDrilling.MeaningfulPrecision = 0.001
+- TensionDrillingQuantity:tensionDrilling
+- tensionDrilling IsOfBaseQuantity force
+- tensionDrilling.MeaningfulPrecision = 100
+- ThermalConductivityDrillingQuantity:thermalConductivityDrilling
+- thermalConductivityDrilling IsOfBaseQuantity thermalConductivity
+- thermalConductivityDrilling.MeaningfulPrecision = 0.01
+- ThermalConductivityGradientPerTemperatureDrillingQuantity:thermalConductivityGradientPerTemperatureDrilling
+- thermalConductivityGradientPerTemperatureDrilling IsOfBaseQuantity thermalConductivityGradientPerTemperature
+- thermalConductivityGradientPerTemperatureDrilling.MeaningfulPrecision = 0.01
+- TorqueDrillingQuantity:torqueDrilling
+- torqueDrilling IsOfBaseQuantity energy
+- torqueDrilling.MeaningfulPrecision = 0.1
+- TorqueGradientPerLengthDrillingQuantity:torqueGradientPerLengthDrilling
+- torqueGradientPerLengthDrilling IsOfBaseQuantity force
+- torqueGradientPerLengthDrilling.MeaningfulPrecision = 1
 - TorqueRateOfChangeDrillingQuantity:torqueRateOfChangeDrilling
 - torqueRateOfChangeDrilling IsOfBaseQuantity power
 - torqueRateOfChangeDrilling.MeaningfulPrecision = 0.1
+- VolumeDrillingQuantity:volumeDrilling
+- volumeDrilling IsOfBaseQuantity volume
+- volumeDrilling.MeaningfulPrecision = 0.0001
+- VolumetricFlowrateDrillingQuantity:volumetricFlowrateDrilling
+- volumetricFlowrateDrilling IsOfBaseQuantity volumetricFlowRate
+- volumetricFlowrateDrilling.MeaningfulPrecision = 0.0001
+- VolumetricFlowRateOfChangeDrillingQuantity:volumetricFlowRateOfChangeDrilling
+- volumetricFlowRateOfChangeDrilling IsOfBaseQuantity volumetricFlowRateOfChange
+- volumetricFlowRateOfChangeDrilling.MeaningfulPrecision = 1E-06
+- MomentOfInertiaDrillingQuantity:momentOfInertiaDrilling
+- momentOfInertiaDrilling IsOfBaseQuantity momentOfInertia
+- momentOfInertiaDrilling.MeaningfulPrecision = 1E-11
+- WeightOnBitDrillingQuantity:weightOnBitDrilling
+- weightOnBitDrilling IsOfBaseQuantity force
+- weightOnBitDrilling.MeaningfulPrecision = 100
+- MomentOfAreaDrillingQuantity:momentOfAreaDrilling
+- momentOfAreaDrilling IsOfBaseQuantity pressureLossConstant
+- momentOfAreaDrilling.MeaningfulPrecision = 1E-16

@@ -1987,6 +1987,268 @@ DegreePerMinute:DegreePerMinute_1
 DegreePerMinute_1.ConversionFactorB = "3437.746770784939"
 DegreePerMinute_1.Symbol = "°/min"
 ```
+## RevolutionPerSecond <!-- NOUN -->
+- Display name: revolution per second
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.15915494309189535
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in revolution per second
+[SI] is the value in SI
+a = Unit / Revolution, i.e., 0.15915494309189535
+and
+Unit = 1.0
+Revolution = 2.0 * System.Math.PI
+
+- Examples: 
+``` dwis
+RevolutionPerSecond:RevolutionPerSecond_1
+RevolutionPerSecond_1.ConversionFactorB = "0.15915494309189535"
+RevolutionPerSecond_1.Symbol = "rps"
+```
+## RevolutionPerMinute <!-- NOUN -->
+- Display name: revolution per minute
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 9.549296585513721
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in revolution per minute
+[SI] is the value in SI
+a = Minute / Revolution, i.e., 9.549296585513721
+and
+Minute = 60.0
+Revolution = 2.0 * System.Math.PI
+
+- Examples: 
+``` dwis
+RevolutionPerMinute:RevolutionPerMinute_1
+RevolutionPerMinute_1.ConversionFactorB = "9.549296585513721"
+RevolutionPerMinute_1.Symbol = "rpm"
+```
+## RevolutionPerHour <!-- NOUN -->
+- Display name: revolution per hour
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 572.9577951308232
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in revolution per hour
+[SI] is the value in SI
+a = Hour / Revolution, i.e., 572.9577951308232
+and
+Hour = 60.0 * Minute
+Revolution = 2.0 * System.Math.PI
+Minute = 60.0
+
+- Examples: 
+``` dwis
+RevolutionPerHour:RevolutionPerHour_1
+RevolutionPerHour_1.ConversionFactorB = "572.9577951308232"
+RevolutionPerHour_1.Symbol = "rph"
+```
+## ThousandRevolutionPerSecond <!-- NOUN -->
+- Display name: thousand revolution per second
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.00015915494309189535
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in thousand revolution per second
+[SI] is the value in SI
+a = Unit / (Kilo*Revolution), i.e., 0.00015915494309189535
+and
+Unit = 1.0
+Kilo = 1000.0
+Revolution = 2.0 * System.Math.PI
+
+- Examples: 
+``` dwis
+ThousandRevolutionPerSecond:ThousandRevolutionPerSecond_1
+ThousandRevolutionPerSecond_1.ConversionFactorB = "0.00015915494309189535"
+ThousandRevolutionPerSecond_1.Symbol = "1000xrps"
+```
+## ThousandRevolutionPerMinute <!-- NOUN -->
+- Display name: thousand revolution per minute
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.009549296585513721
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in thousand revolution per minute
+[SI] is the value in SI
+a = Minute / (Kilo*Revolution), i.e., 0.009549296585513721
+and
+Minute = 60.0
+Kilo = 1000.0
+Revolution = 2.0 * System.Math.PI
+
+- Examples: 
+``` dwis
+ThousandRevolutionPerMinute:ThousandRevolutionPerMinute_1
+ThousandRevolutionPerMinute_1.ConversionFactorB = "0.009549296585513721"
+ThousandRevolutionPerMinute_1.Symbol = "1000xrpm"
+```
+## ThousandRevolutionPerHour <!-- NOUN -->
+- Display name: thousand revolution per hour
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.5729577951308232
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in thousand revolution per hour
+[SI] is the value in SI
+a = Hour / (Kilo*Revolution), i.e., 0.5729577951308232
+and
+Hour = 60.0 * Minute
+Kilo = 1000.0
+Revolution = 2.0 * System.Math.PI
+Minute = 60.0
+
+- Examples: 
+``` dwis
+ThousandRevolutionPerHour:ThousandRevolutionPerHour_1
+ThousandRevolutionPerHour_1.ConversionFactorB = "0.5729577951308232"
+ThousandRevolutionPerHour_1.Symbol = "1000xrph"
+```
+## StrokePerSecond <!-- NOUN -->
+- Display name: stroke per second
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.15915494309189535
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in stroke per second
+[SI] is the value in SI
+a = Unit / Revolution, i.e., 0.15915494309189535
+and
+Unit = 1.0
+Revolution = 2.0 * System.Math.PI
+
+- Examples: 
+``` dwis
+StrokePerSecond:StrokePerSecond_1
+StrokePerSecond_1.ConversionFactorB = "0.15915494309189535"
+StrokePerSecond_1.Symbol = "sps"
+```
+## StrokePerMinute <!-- NOUN -->
+- Display name: stroke per minute
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 9.549296585513721
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in stroke per minute
+[SI] is the value in SI
+a = Minute / Revolution, i.e., 9.549296585513721
+and
+Minute = 60.0
+Revolution = 2.0 * System.Math.PI
+
+- Examples: 
+``` dwis
+StrokePerMinute:StrokePerMinute_1
+StrokePerMinute_1.ConversionFactorB = "9.549296585513721"
+StrokePerMinute_1.Symbol = "spm"
+```
+## StrokePerHour <!-- NOUN -->
+- Display name: stroke per hour
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 572.9577951308232
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in stroke per hour
+[SI] is the value in SI
+a = Hour / Revolution, i.e., 572.9577951308232
+and
+Hour = 60.0 * Minute
+Revolution = 2.0 * System.Math.PI
+Minute = 60.0
+
+- Examples: 
+``` dwis
+StrokePerHour:StrokePerHour_1
+StrokePerHour_1.ConversionFactorB = "572.9577951308232"
+StrokePerHour_1.Symbol = "sph"
+```
+## ThousandStrokePerSecond <!-- NOUN -->
+- Display name: thousand stroke per second
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.00015915494309189535
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in thousand stroke per second
+[SI] is the value in SI
+a = Unit / (Kilo*Revolution), i.e., 0.00015915494309189535
+and
+Unit = 1.0
+Kilo = 1000.0
+Revolution = 2.0 * System.Math.PI
+
+- Examples: 
+``` dwis
+ThousandStrokePerSecond:ThousandStrokePerSecond_1
+ThousandStrokePerSecond_1.ConversionFactorB = "0.00015915494309189535"
+ThousandStrokePerSecond_1.Symbol = "1000xsps"
+```
+## ThousandStrokePerMinute <!-- NOUN -->
+- Display name: thousand stroke per minute
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.009549296585513721
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in thousand stroke per minute
+[SI] is the value in SI
+a = Minute / (Kilo*Revolution), i.e., 0.009549296585513721
+and
+Minute = 60.0
+Kilo = 1000.0
+Revolution = 2.0 * System.Math.PI
+
+- Examples: 
+``` dwis
+ThousandStrokePerMinute:ThousandStrokePerMinute_1
+ThousandStrokePerMinute_1.ConversionFactorB = "0.009549296585513721"
+ThousandStrokePerMinute_1.Symbol = "1000xspm"
+```
+## ThousandStrokePerHour <!-- NOUN -->
+- Display name: thousand stroke per hour
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.5729577951308232
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in thousand stroke per hour
+[SI] is the value in SI
+a = Hour / (Kilo*Revolution), i.e., 0.5729577951308232
+and
+Hour = 60.0 * Minute
+Kilo = 1000.0
+Revolution = 2.0 * System.Math.PI
+Minute = 60.0
+
+- Examples: 
+``` dwis
+ThousandStrokePerHour:ThousandStrokePerHour_1
+ThousandStrokePerHour_1.ConversionFactorB = "0.5729577951308232"
+ThousandStrokePerHour_1.Symbol = "1000xsph"
+```
 ## SquareMetre <!-- NOUN -->
 - Display name: square metre
 - Parent class: Unit
@@ -2947,1335 +3209,6 @@ RadianPerMile:RadianPerMile_1
 RadianPerMile_1.ConversionFactorB = "1609.3439999999998"
 RadianPerMile_1.Symbol = "rad/mi"
 ```
-## KilogramPerCubicMetrePerMetre <!-- NOUN -->
-- Display name: kilogram per cubic metre per metre
-- Parent class: Unit
-- Specialization: 
-- Description: 
-No conversion necessary as the unit choice is SI
-
-- Examples: 
-``` dwis
-KilogramPerCubicMetrePerMetre:KilogramPerCubicMetrePerMetre_1
-KilogramPerCubicMetrePerMetre_1.Symbol = "kg/m³/m"
-```
-## SpecificGravityPerMetre <!-- NOUN -->
-- Display name: specific gravity per metre
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.001000028000784022
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in specific gravity per metre
-[SI] is the value in SI
-a = SpecificGavity4degC, i.e., 0.001000028000784022
-and
-SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-
-- Examples: 
-``` dwis
-SpecificGravityPerMetre:SpecificGravityPerMetre_1
-SpecificGravityPerMetre_1.ConversionFactorB = "0.001000028000784022"
-SpecificGravityPerMetre_1.Symbol = "sg/m"
-```
-## SpecificGravityPer10Metre <!-- NOUN -->
-- Display name: specific gravity per 10 metre
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.01000028000784022
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in specific gravity per 10 metre
-[SI] is the value in SI
-a = Deca*SpecificGavity4degC, i.e., 0.01000028000784022
-and
-Deca = 10.0
-SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-
-- Examples: 
-``` dwis
-SpecificGravityPer10Metre:SpecificGravityPer10Metre_1
-SpecificGravityPer10Metre_1.ConversionFactorB = "0.01000028000784022"
-SpecificGravityPer10Metre_1.Symbol = "sg/10m"
-```
-## SpecificGravityPer30Metre <!-- NOUN -->
-- Display name: specific gravity per 30 metre
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.03000084002352066
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in specific gravity per 30 metre
-[SI] is the value in SI
-a = 3.0*Deca*SpecificGavity4degC, i.e., 0.03000084002352066
-and
-Deca = 10.0
-SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-
-- Examples: 
-``` dwis
-SpecificGravityPer30Metre:SpecificGravityPer30Metre_1
-SpecificGravityPer30Metre_1.ConversionFactorB = "0.03000084002352066"
-SpecificGravityPer30Metre_1.Symbol = "sg/30m"
-```
-## SpecificGravityPer100Metre <!-- NOUN -->
-- Display name: specific gravity per 100 metre
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.10000280007840219
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in specific gravity per 100 metre
-[SI] is the value in SI
-a = Hecto*SpecificGavity4degC, i.e., 0.10000280007840219
-and
-Hecto = 100.0
-SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-
-- Examples: 
-``` dwis
-SpecificGravityPer100Metre:SpecificGravityPer100Metre_1
-SpecificGravityPer100Metre_1.ConversionFactorB = "0.10000280007840219"
-SpecificGravityPer100Metre_1.Symbol = "sg/100m"
-```
-## GramPerCubicCentimetrePer100Metre <!-- NOUN -->
-- Display name: gram per cubic centimetre per 100 metre
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.10000000000000002
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre per 100 metre
-[SI] is the value in SI
-a = Centi*Centi*Centi*Hecto/Milli, i.e., 0.10000000000000002
-and
-Centi = 0.01
-Hecto = 100.0
-Milli = 0.001
-
-- Examples: 
-``` dwis
-GramPerCubicCentimetrePer100Metre:GramPerCubicCentimetrePer100Metre_1
-GramPerCubicCentimetrePer100Metre_1.ConversionFactorB = "0.10000000000000002"
-GramPerCubicCentimetrePer100Metre_1.Symbol = "g/cm³/100m"
-```
-## PoundPerGallonUkPerFoot <!-- NOUN -->
-- Display name: pound per gallon (UK) per foot
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.00305483143819196
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK) per foot
-[SI] is the value in SI
-a = GallonUK*Foot/Pound, i.e., 0.00305483143819196
-and
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-
-- Examples: 
-``` dwis
-PoundPerGallonUkPerFoot:PoundPerGallonUkPerFoot_1
-PoundPerGallonUkPerFoot_1.ConversionFactorB = "0.00305483143819196"
-PoundPerGallonUkPerFoot_1.Symbol = "ppgUK/ft"
-```
-## PoundPerGallonUkPer30Foot <!-- NOUN -->
-- Display name: pound per gallon (UK) per 30 foot
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.0916449431457588
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK) per 30 foot
-[SI] is the value in SI
-a = GallonUK*30.0*Foot/Pound, i.e., 0.0916449431457588
-and
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-
-- Examples: 
-``` dwis
-PoundPerGallonUkPer30Foot:PoundPerGallonUkPer30Foot_1
-PoundPerGallonUkPer30Foot_1.ConversionFactorB = "0.0916449431457588"
-PoundPerGallonUkPer30Foot_1.Symbol = "ppgUK/30ft"
-```
-## PoundPerGallonUkPer100Foot <!-- NOUN -->
-- Display name: pound per gallon (UK) per 100 foot
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.305483143819196
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK) per 100 foot
-[SI] is the value in SI
-a = GallonUK*100.0*Foot/Pound, i.e., 0.305483143819196
-and
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-
-- Examples: 
-``` dwis
-PoundPerGallonUkPer100Foot:PoundPerGallonUkPer100Foot_1
-PoundPerGallonUkPer100Foot_1.ConversionFactorB = "0.305483143819196"
-PoundPerGallonUkPer100Foot_1.Symbol = "ppgUK/100ft"
-```
-## PoundPerGallonUsPerFoot <!-- NOUN -->
-- Display name: pound per gallon (US) per foot
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.0025436792769754917
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US) per foot
-[SI] is the value in SI
-a = GallonUS*Foot/Pound, i.e., 0.0025436792769754917
-and
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-
-- Examples: 
-``` dwis
-PoundPerGallonUsPerFoot:PoundPerGallonUsPerFoot_1
-PoundPerGallonUsPerFoot_1.ConversionFactorB = "0.0025436792769754917"
-PoundPerGallonUsPerFoot_1.Symbol = "ppgUS/ft"
-```
-## PoundPerGallonUsPer30Foot <!-- NOUN -->
-- Display name: pound per gallon (US) per 30 foot
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.07631037830926475
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US) per 30 foot
-[SI] is the value in SI
-a = GallonUS*30.0*Foot/Pound, i.e., 0.07631037830926475
-and
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-
-- Examples: 
-``` dwis
-PoundPerGallonUsPer30Foot:PoundPerGallonUsPer30Foot_1
-PoundPerGallonUsPer30Foot_1.ConversionFactorB = "0.07631037830926475"
-PoundPerGallonUsPer30Foot_1.Symbol = "ppgUS/30ft"
-```
-## PoundPerGallonUsPer100Foot <!-- NOUN -->
-- Display name: pound per gallon (US) per 100 foot
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.2543679276975492
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US) per 100 foot
-[SI] is the value in SI
-a = GallonUS*100.0*Foot/Pound, i.e., 0.2543679276975492
-and
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-
-- Examples: 
-``` dwis
-PoundPerGallonUsPer100Foot:PoundPerGallonUsPer100Foot_1
-PoundPerGallonUsPer100Foot_1.ConversionFactorB = "0.2543679276975492"
-PoundPerGallonUsPer100Foot_1.Symbol = "ppgUS/100ft"
-```
-## KilogramPerCubicMetrePer10Metre <!-- NOUN -->
-- Display name: kilogram per cubic metre per 10 metre
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 10
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in kilogram per cubic metre per 10 metre
-[SI] is the value in SI
-a = Deca/Unit, i.e., 10
-and
-Deca = 10.0
-Unit = 1.0
-
-- Examples: 
-``` dwis
-KilogramPerCubicMetrePer10Metre:KilogramPerCubicMetrePer10Metre_1
-KilogramPerCubicMetrePer10Metre_1.ConversionFactorB = "10"
-KilogramPerCubicMetrePer10Metre_1.Symbol = "kg/m³/10m"
-```
-## KilogramPerCubicMetrePer30Metre <!-- NOUN -->
-- Display name: kilogram per cubic metre per 30 metre
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 30
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in kilogram per cubic metre per 30 metre
-[SI] is the value in SI
-a = 3.0 *Deca/Unit, i.e., 30
-and
-Deca = 10.0
-Unit = 1.0
-
-- Examples: 
-``` dwis
-KilogramPerCubicMetrePer30Metre:KilogramPerCubicMetrePer30Metre_1
-KilogramPerCubicMetrePer30Metre_1.ConversionFactorB = "30"
-KilogramPerCubicMetrePer30Metre_1.Symbol = "kg/m³/30m"
-```
-## KilogramPerCubicMetrePer100Metre <!-- NOUN -->
-- Display name: kilogram per cubic metre per 100 metre
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 100
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in kilogram per cubic metre per 100 metre
-[SI] is the value in SI
-a = Hecto/Unit, i.e., 100
-and
-Hecto = 100.0
-Unit = 1.0
-
-- Examples: 
-``` dwis
-KilogramPerCubicMetrePer100Metre:KilogramPerCubicMetrePer100Metre_1
-KilogramPerCubicMetrePer100Metre_1.ConversionFactorB = "100"
-KilogramPerCubicMetrePer100Metre_1.Symbol = "kg/m³/30m"
-```
-## GramPerCubicCentimetrePerMetre <!-- NOUN -->
-- Display name: gram per cubic centimetre per metre
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.0010000000000000002
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre per metre
-[SI] is the value in SI
-a = Centi*Centi*Centi/Milli, i.e., 0.0010000000000000002
-and
-Centi = 0.01
-Milli = 0.001
-
-- Examples: 
-``` dwis
-GramPerCubicCentimetrePerMetre:GramPerCubicCentimetrePerMetre_1
-GramPerCubicCentimetrePerMetre_1.ConversionFactorB = "0.0010000000000000002"
-GramPerCubicCentimetrePerMetre_1.Symbol = "g/cm³/m"
-```
-## GramPerCubicCentimetrePer10Metre <!-- NOUN -->
-- Display name: gram per cubic centimetre per 10 metre
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.010000000000000002
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre per 10 metre
-[SI] is the value in SI
-a = Centi*Centi*Centi*Deca/Milli, i.e., 0.010000000000000002
-and
-Centi = 0.01
-Deca = 10.0
-Milli = 0.001
-
-- Examples: 
-``` dwis
-GramPerCubicCentimetrePer10Metre:GramPerCubicCentimetrePer10Metre_1
-GramPerCubicCentimetrePer10Metre_1.ConversionFactorB = "0.010000000000000002"
-GramPerCubicCentimetrePer10Metre_1.Symbol = "g/cm³/10m"
-```
-## GramPerCubicCentimetrePer30Metre <!-- NOUN -->
-- Display name: gram per cubic centimetre per 30 metre
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.030000000000000002
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre per 30 metre
-[SI] is the value in SI
-a = Centi*Centi*Centi*3.0*Deca/Milli, i.e., 0.030000000000000002
-and
-Centi = 0.01
-Deca = 10.0
-Milli = 0.001
-
-- Examples: 
-``` dwis
-GramPerCubicCentimetrePer30Metre:GramPerCubicCentimetrePer30Metre_1
-GramPerCubicCentimetrePer30Metre_1.ConversionFactorB = "0.030000000000000002"
-GramPerCubicCentimetrePer30Metre_1.Symbol = "g/cm³/30m"
-```
-## PoundPerCubicFootPerFoot <!-- NOUN -->
-- Display name: pound per cubic foot per foot
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.019028042383608865
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic foot per foot
-[SI] is the value in SI
-a = Foot*Foot*Foot*Foot/Pound, i.e., 0.019028042383608865
-and
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-
-- Examples: 
-``` dwis
-PoundPerCubicFootPerFoot:PoundPerCubicFootPerFoot_1
-PoundPerCubicFootPerFoot_1.ConversionFactorB = "0.019028042383608865"
-PoundPerCubicFootPerFoot_1.Symbol = "lb/ft³/ft"
-```
-## PoundPerCubicFootPer30Foot <!-- NOUN -->
-- Display name: pound per cubic foot per 30 foot
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.570841271508266
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic foot per 30 foot
-[SI] is the value in SI
-a = Foot*Foot*Foot*30.0*Foot/Pound, i.e., 0.570841271508266
-and
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-
-- Examples: 
-``` dwis
-PoundPerCubicFootPer30Foot:PoundPerCubicFootPer30Foot_1
-PoundPerCubicFootPer30Foot_1.ConversionFactorB = "0.570841271508266"
-PoundPerCubicFootPer30Foot_1.Symbol = "lb/ft³/30ft"
-```
-## PoundPerCubicFootPer100Foot <!-- NOUN -->
-- Display name: pound per cubic foot per 100 foot
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 1.902804238360887
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic foot per 100 foot
-[SI] is the value in SI
-a = Foot*Foot*Foot*100.0*Foot/Pound, i.e., 1.902804238360887
-and
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-
-- Examples: 
-``` dwis
-PoundPerCubicFootPer100Foot:PoundPerCubicFootPer100Foot_1
-PoundPerCubicFootPer100Foot_1.ConversionFactorB = "1.902804238360887"
-PoundPerCubicFootPer100Foot_1.Symbol = "lb/ft³/100ft"
-```
-## PoundPerCubicInchPerFoot <!-- NOUN -->
-- Display name: pound per cubic inch per foot
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 1.1011598601625506E-05
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic inch per foot
-[SI] is the value in SI
-a = Inch*Inch*Inch*Foot/Pound, i.e., 1.1011598601625506E-05
-and
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-
-- Examples: 
-``` dwis
-PoundPerCubicInchPerFoot:PoundPerCubicInchPerFoot_1
-PoundPerCubicInchPerFoot_1.ConversionFactorB = "1.1011598601625506E-05"
-PoundPerCubicInchPerFoot_1.Symbol = "lb/in³/ft"
-```
-## PoundPerCubicInchPer30Foot <!-- NOUN -->
-- Display name: pound per cubic inch per 30 foot
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.00033034795804876514
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic inch per 30 foot
-[SI] is the value in SI
-a = Inch*Inch*Inch*30.0*Foot/Pound, i.e., 0.00033034795804876514
-and
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-
-- Examples: 
-``` dwis
-PoundPerCubicInchPer30Foot:PoundPerCubicInchPer30Foot_1
-PoundPerCubicInchPer30Foot_1.ConversionFactorB = "0.00033034795804876514"
-PoundPerCubicInchPer30Foot_1.Symbol = "lb/in³/30ft"
-```
-## PoundPerCubicInchPer100Foot <!-- NOUN -->
-- Display name: pound per cubic inch per 100 foot
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.0011011598601625506
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic inch per 100 foot
-[SI] is the value in SI
-a = Inch*Inch*Inch*100.0*Foot/Pound, i.e., 0.0011011598601625506
-and
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-
-- Examples: 
-``` dwis
-PoundPerCubicInchPer100Foot:PoundPerCubicInchPer100Foot_1
-PoundPerCubicInchPer100Foot_1.ConversionFactorB = "0.0011011598601625506"
-PoundPerCubicInchPer100Foot_1.Symbol = "lb/in³/100ft"
-```
-## PoundPerCubicYardPerFoot <!-- NOUN -->
-- Display name: pound per cubic yard per foot
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.5137571443574394
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic yard per foot
-[SI] is the value in SI
-a = Yard*Yard*Yard*Foot/Pound, i.e., 0.5137571443574394
-and
-Yard = 3.0 * Foot
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-
-- Examples: 
-``` dwis
-PoundPerCubicYardPerFoot:PoundPerCubicYardPerFoot_1
-PoundPerCubicYardPerFoot_1.ConversionFactorB = "0.5137571443574394"
-PoundPerCubicYardPerFoot_1.Symbol = "lb/yd³/ft"
-```
-## PoundPerCubicYardPer30Foot <!-- NOUN -->
-- Display name: pound per cubic yard per 30 foot
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 15.412714330723183
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic yard per 30 foot
-[SI] is the value in SI
-a = Yard*Yard*Yard*30.0*Foot/Pound, i.e., 15.412714330723183
-and
-Yard = 3.0 * Foot
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-
-- Examples: 
-``` dwis
-PoundPerCubicYardPer30Foot:PoundPerCubicYardPer30Foot_1
-PoundPerCubicYardPer30Foot_1.ConversionFactorB = "15.412714330723183"
-PoundPerCubicYardPer30Foot_1.Symbol = "lb/yd³/30ft"
-```
-## PoundPerCubicYardPer100Foot <!-- NOUN -->
-- Display name: pound per cubic yard per 100 foot
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 51.37571443574393
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic yard per 100 foot
-[SI] is the value in SI
-a = Yard*Yard*Yard*100.0*Foot/Pound, i.e., 51.37571443574393
-and
-Yard = 3.0 * Foot
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-
-- Examples: 
-``` dwis
-PoundPerCubicYardPer100Foot:PoundPerCubicYardPer100Foot_1
-PoundPerCubicYardPer100Foot_1.ConversionFactorB = "51.37571443574393"
-PoundPerCubicYardPer100Foot_1.Symbol = "lb/yd³/100ft"
-```
-## KilogramPerCubicMetrePerKelvin <!-- NOUN -->
-- Display name: kilogram per cubic metre per kelvin
-- Parent class: Unit
-- Specialization: 
-- Description: 
-No conversion necessary as the unit choice is SI
-
-- Examples: 
-``` dwis
-KilogramPerCubicMetrePerKelvin:KilogramPerCubicMetrePerKelvin_1
-KilogramPerCubicMetrePerKelvin_1.Symbol = "kg/m³/K"
-```
-## SpecificGravityPerCelsius <!-- NOUN -->
-- Display name: specific gravity per celsius
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.001000028000784022
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in specific gravity per celsius
-[SI] is the value in SI
-a = SpecificGavity4degC, i.e., 0.001000028000784022
-and
-SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-
-- Examples: 
-``` dwis
-SpecificGravityPerCelsius:SpecificGravityPerCelsius_1
-SpecificGravityPerCelsius_1.ConversionFactorB = "0.001000028000784022"
-SpecificGravityPerCelsius_1.Symbol = "sg/°C"
-```
-## GramPerCubicCentimetrePerCelsius <!-- NOUN -->
-- Display name: gram per cubic centimetre per celsius
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.0010000000000000002
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre per celsius
-[SI] is the value in SI
-a = Centi*Centi*Centi/Milli, i.e., 0.0010000000000000002
-and
-Centi = 0.01
-Milli = 0.001
-
-- Examples: 
-``` dwis
-GramPerCubicCentimetrePerCelsius:GramPerCubicCentimetrePerCelsius_1
-GramPerCubicCentimetrePerCelsius_1.ConversionFactorB = "0.0010000000000000002"
-GramPerCubicCentimetrePerCelsius_1.Symbol = "g/cm³/°C"
-```
-## PoundPerGallonUkPerCelsius <!-- NOUN -->
-- Display name: pound per gallon (UK) per celsius
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.010022412854960501
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK) per celsius
-[SI] is the value in SI
-a = GallonUK/Pound, i.e., 0.010022412854960501
-and
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-
-- Examples: 
-``` dwis
-PoundPerGallonUkPerCelsius:PoundPerGallonUkPerCelsius_1
-PoundPerGallonUkPerCelsius_1.ConversionFactorB = "0.010022412854960501"
-PoundPerGallonUkPerCelsius_1.Symbol = "ppgUK/°C"
-```
-## PoundPerGallonUsPerFahrenheit <!-- NOUN -->
-- Display name: pound per gallon (US) per fahrenheit
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.004636335806677406
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US) per fahrenheit
-[SI] is the value in SI
-a = GallonUS*FahrenheitSlope/Pound, i.e., 0.004636335806677406
-and
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-
-- Examples: 
-``` dwis
-PoundPerGallonUsPerFahrenheit:PoundPerGallonUsPerFahrenheit_1
-PoundPerGallonUsPerFahrenheit_1.ConversionFactorB = "0.004636335806677406"
-PoundPerGallonUsPerFahrenheit_1.Symbol = "ppgUS/°F"
-```
-## PoundPerGallonUkPerFahrenheit <!-- NOUN -->
-- Display name: pound per gallon (UK) per fahrenheit
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.005568007141644723
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK) per fahrenheit
-[SI] is the value in SI
-a = GallonUK*FahrenheitSlope/Pound, i.e., 0.005568007141644723
-and
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-
-- Examples: 
-``` dwis
-PoundPerGallonUkPerFahrenheit:PoundPerGallonUkPerFahrenheit_1
-PoundPerGallonUkPerFahrenheit_1.ConversionFactorB = "0.005568007141644723"
-PoundPerGallonUkPerFahrenheit_1.Symbol = "ppgUK/°F"
-```
-## PoundPerGallonUsPerCelsius <!-- NOUN -->
-- Display name: pound per gallon (US) per celsius
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.00834540445201933
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US) per celsius
-[SI] is the value in SI
-a = GallonUS/Pound, i.e., 0.00834540445201933
-and
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-
-- Examples: 
-``` dwis
-PoundPerGallonUsPerCelsius:PoundPerGallonUsPerCelsius_1
-PoundPerGallonUsPerCelsius_1.ConversionFactorB = "0.00834540445201933"
-PoundPerGallonUsPerCelsius_1.Symbol = "ppgUS/°C"
-```
-## PoundPerCubicFootPerCelsius <!-- NOUN -->
-- Display name: pound per cubic foot per celsius
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.06242796057614459
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic foot per celsius
-[SI] is the value in SI
-a = Foot*Foot*Foot/Pound, i.e., 0.06242796057614459
-and
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-
-- Examples: 
-``` dwis
-PoundPerCubicFootPerCelsius:PoundPerCubicFootPerCelsius_1
-PoundPerCubicFootPerCelsius_1.ConversionFactorB = "0.06242796057614459"
-PoundPerCubicFootPerCelsius_1.Symbol = "lb/ft³/°C"
-```
-## PoundPerCubicFootPerFahrenheit <!-- NOUN -->
-- Display name: pound per cubic foot per fahrenheit
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.03468220032008033
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic foot per fahrenheit
-[SI] is the value in SI
-a = Foot*Foot*Foot*FahrenheitSlope/Pound, i.e., 0.03468220032008033
-and
-Foot = 12.0 * Inch
-FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-
-- Examples: 
-``` dwis
-PoundPerCubicFootPerFahrenheit:PoundPerCubicFootPerFahrenheit_1
-PoundPerCubicFootPerFahrenheit_1.ConversionFactorB = "0.03468220032008033"
-PoundPerCubicFootPerFahrenheit_1.Symbol = "lb/ft³/°F"
-```
-## PoundPerCubicInchPerCelsius <!-- NOUN -->
-- Display name: pound per cubic inch per celsius
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 3.612729200008369E-05
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic inch per celsius
-[SI] is the value in SI
-a = Inch*Inch*Inch/Pound, i.e., 3.612729200008369E-05
-and
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-
-- Examples: 
-``` dwis
-PoundPerCubicInchPerCelsius:PoundPerCubicInchPerCelsius_1
-PoundPerCubicInchPerCelsius_1.ConversionFactorB = "3.612729200008369E-05"
-PoundPerCubicInchPerCelsius_1.Symbol = "lb/in³/°C"
-```
-## PoundPerCubicInchPerFahrenheit <!-- NOUN -->
-- Display name: pound per cubic inch per fahrenheit
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 2.0070717777824268E-05
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic inch per fahrenheit
-[SI] is the value in SI
-a = Inch*Inch*Inch*FahrenheitSlope/Pound, i.e., 2.0070717777824268E-05
-and
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-
-- Examples: 
-``` dwis
-PoundPerCubicInchPerFahrenheit:PoundPerCubicInchPerFahrenheit_1
-PoundPerCubicInchPerFahrenheit_1.ConversionFactorB = "2.0070717777824268E-05"
-PoundPerCubicInchPerFahrenheit_1.Symbol = "lb/in³/°F"
-```
-## PoundPerCubicYardPerCelsius <!-- NOUN -->
-- Display name: pound per cubic yard per celsius
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 1.6855549355559039
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic yard per celsius
-[SI] is the value in SI
-a = Yard*Yard*Yard/Pound, i.e., 1.6855549355559039
-and
-Yard = 3.0 * Foot
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Foot = 12.0 * Inch
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-
-- Examples: 
-``` dwis
-PoundPerCubicYardPerCelsius:PoundPerCubicYardPerCelsius_1
-PoundPerCubicYardPerCelsius_1.ConversionFactorB = "1.6855549355559039"
-PoundPerCubicYardPerCelsius_1.Symbol = "lb/yd³/°C"
-```
-## PoundPerCubicYeardPerFahrenheit <!-- NOUN -->
-- Display name: pound per cubic yeard per fahrenheit
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.9364194086421688
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic yeard per fahrenheit
-[SI] is the value in SI
-a = Yard*Yard*Yard*FahrenheitSlope/Pound, i.e., 0.9364194086421688
-and
-Yard = 3.0 * Foot
-FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Foot = 12.0 * Inch
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-
-- Examples: 
-``` dwis
-PoundPerCubicYeardPerFahrenheit:PoundPerCubicYeardPerFahrenheit_1
-PoundPerCubicYeardPerFahrenheit_1.ConversionFactorB = "0.9364194086421688"
-PoundPerCubicYeardPerFahrenheit_1.Symbol = "lb/yd³/°F"
-```
-## KilogramPerCubicMetre <!-- NOUN -->
-- Display name: kilogram per cubic metre
-- Parent class: Unit
-- Specialization: 
-- Description: 
-No conversion necessary as the unit choice is SI
-
-- Examples: 
-``` dwis
-KilogramPerCubicMetre:KilogramPerCubicMetre_1
-KilogramPerCubicMetre_1.Symbol = "kg/m³"
-```
-## GramPerCubicMetre <!-- NOUN -->
-- Display name: gram per cubic metre
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 1000
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in gram per cubic metre
-[SI] is the value in SI
-a = 1.0/Milli, i.e., 1000
-and
-Milli = 0.001
-
-- Examples: 
-``` dwis
-GramPerCubicMetre:GramPerCubicMetre_1
-GramPerCubicMetre_1.ConversionFactorB = "1000"
-GramPerCubicMetre_1.Symbol = "g/m³"
-```
-## SpecificGravity <!-- NOUN -->
-- Display name: specific gravity
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 999.972
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in specific gravity
-[SI] is the value in SI
-a = 1.0/SpecificGavity4degC, i.e., 999.972
-and
-SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-
-- Examples: 
-``` dwis
-SpecificGravity:SpecificGravity_1
-SpecificGravity_1.ConversionFactorB = "999.972"
-SpecificGravity_1.Symbol = "s.g."
-```
-## GramPerCubicCentimetre <!-- NOUN -->
-- Display name: gram per cubic centimetre
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.0010000000000000002
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre
-[SI] is the value in SI
-a = Centi*Centi*Centi / Milli, i.e., 0.0010000000000000002
-and
-Centi = 0.01
-Milli = 0.001
-
-- Examples: 
-``` dwis
-GramPerCubicCentimetre:GramPerCubicCentimetre_1
-GramPerCubicCentimetre_1.ConversionFactorB = "0.0010000000000000002"
-GramPerCubicCentimetre_1.Symbol = "g/cm³"
-```
-## PoundPerGallonUk <!-- NOUN -->
-- Display name: pound per gallon (UK)
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.010022412854960501
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK)
-[SI] is the value in SI
-a = 1.0/PPGUK, i.e., 0.010022412854960501
-and
-PPGUK = Pound / GallonUK
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-
-- Examples: 
-``` dwis
-PoundPerGallonUk:PoundPerGallonUk_1
-PoundPerGallonUk_1.ConversionFactorB = "0.010022412854960501"
-PoundPerGallonUk_1.Symbol = "ppgUK"
-```
-## PoundPerGallonUs <!-- NOUN -->
-- Display name: pound per gallon (US)
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.00834540445201933
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US)
-[SI] is the value in SI
-a = 1.0/PPGUS, i.e., 0.00834540445201933
-and
-PPGUS = Pound / GallonUS
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-
-- Examples: 
-``` dwis
-PoundPerGallonUs:PoundPerGallonUs_1
-PoundPerGallonUs_1.ConversionFactorB = "0.00834540445201933"
-PoundPerGallonUs_1.Symbol = "ppgUS"
-```
-## PoundPerCubicFoot <!-- NOUN -->
-- Display name: pound per cubic foot
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.06242796057614459
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic foot
-[SI] is the value in SI
-a = Foot*Foot*Foot/Pound, i.e., 0.06242796057614459
-and
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-
-- Examples: 
-``` dwis
-PoundPerCubicFoot:PoundPerCubicFoot_1
-PoundPerCubicFoot_1.ConversionFactorB = "0.06242796057614459"
-PoundPerCubicFoot_1.Symbol = "lb/ft³"
-```
-## PoundPerCubicInch <!-- NOUN -->
-- Display name: pound per cubic inch
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 3.612729200008369E-05
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic inch
-[SI] is the value in SI
-a = Inch*Inch*Inch/Pound, i.e., 3.612729200008369E-05
-and
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-
-- Examples: 
-``` dwis
-PoundPerCubicInch:PoundPerCubicInch_1
-PoundPerCubicInch_1.ConversionFactorB = "3.612729200008369E-05"
-PoundPerCubicInch_1.Symbol = "lb/in³"
-```
-## PoundPerCubicYard <!-- NOUN -->
-- Display name: pound per cubic yard
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 1.6855549355559039
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic yard
-[SI] is the value in SI
-a = Yard*Yard*Yard/Pound, i.e., 1.6855549355559039
-and
-Yard = 3.0 * Foot
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Foot = 12.0 * Inch
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-
-- Examples: 
-``` dwis
-PoundPerCubicYard:PoundPerCubicYard_1
-PoundPerCubicYard_1.ConversionFactorB = "1.6855549355559039"
-PoundPerCubicYard_1.Symbol = "lb/yd³"
-```
-## KilogramPerCubicMetrePerSecond <!-- NOUN -->
-- Display name: kilogram per cubic metre per second
-- Parent class: Unit
-- Specialization: 
-- Description: 
-No conversion necessary as the unit choice is SI
-
-- Examples: 
-``` dwis
-KilogramPerCubicMetrePerSecond:KilogramPerCubicMetrePerSecond_1
-KilogramPerCubicMetrePerSecond_1.Symbol = "kg/m³/s"
-```
-## SpecificGravityPerSecond <!-- NOUN -->
-- Display name: specific gravity per second
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.001000028000784022
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in specific gravity per second
-[SI] is the value in SI
-a = 1.0/WaterDensity4degC1Atm, i.e., 0.001000028000784022
-and
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-
-- Examples: 
-``` dwis
-SpecificGravityPerSecond:SpecificGravityPerSecond_1
-SpecificGravityPerSecond_1.ConversionFactorB = "0.001000028000784022"
-SpecificGravityPerSecond_1.Symbol = "sg/s"
-```
-## SpecificGravityPerMinute <!-- NOUN -->
-- Display name: specific gravity per minute
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.06000168004704132
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in specific gravity per minute
-[SI] is the value in SI
-a = Minute / WaterDensity4degC1Atm, i.e., 0.06000168004704132
-and
-Minute = 60.0
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-
-- Examples: 
-``` dwis
-SpecificGravityPerMinute:SpecificGravityPerMinute_1
-SpecificGravityPerMinute_1.ConversionFactorB = "0.06000168004704132"
-SpecificGravityPerMinute_1.Symbol = "sg/min"
-```
-## SpecificGravityPerHour <!-- NOUN -->
-- Display name: specific gravity per hour
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 3.600100802822479
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in specific gravity per hour
-[SI] is the value in SI
-a = Hour / WaterDensity4degC1Atm, i.e., 3.600100802822479
-and
-Hour = 60.0 * Minute
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-Minute = 60.0
-
-- Examples: 
-``` dwis
-SpecificGravityPerHour:SpecificGravityPerHour_1
-SpecificGravityPerHour_1.ConversionFactorB = "3.600100802822479"
-SpecificGravityPerHour_1.Symbol = "sg/h"
-```
-## GramPerCubicCentimetrePerSecond <!-- NOUN -->
-- Display name: gram per cubic centimetre per second
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.001
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre per second
-[SI] is the value in SI
-a = Milli, i.e., 0.001
-and
-Milli = 0.001
-
-- Examples: 
-``` dwis
-GramPerCubicCentimetrePerSecond:GramPerCubicCentimetrePerSecond_1
-GramPerCubicCentimetrePerSecond_1.ConversionFactorB = "0.001"
-GramPerCubicCentimetrePerSecond_1.Symbol = "g/cm³/s"
-```
-## GramPerCubicCentimetrePerMinute <!-- NOUN -->
-- Display name: gram per cubic centimetre per minute
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.06
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre per minute
-[SI] is the value in SI
-a = Minute * Milli, i.e., 0.06
-and
-Minute = 60.0
-Milli = 0.001
-
-- Examples: 
-``` dwis
-GramPerCubicCentimetrePerMinute:GramPerCubicCentimetrePerMinute_1
-GramPerCubicCentimetrePerMinute_1.ConversionFactorB = "0.06"
-GramPerCubicCentimetrePerMinute_1.Symbol = "g/cm³/min"
-```
-## GramPerCubicCentimetrePerHour <!-- NOUN -->
-- Display name: gram per cubic centimetre per hour
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 3.6
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre per hour
-[SI] is the value in SI
-a = Hour *Milli, i.e., 3.6
-and
-Hour = 60.0 * Minute
-Milli = 0.001
-Minute = 60.0
-
-- Examples: 
-``` dwis
-GramPerCubicCentimetrePerHour:GramPerCubicCentimetrePerHour_1
-GramPerCubicCentimetrePerHour_1.ConversionFactorB = "3.6"
-GramPerCubicCentimetrePerHour_1.Symbol = "g/cm³/h"
-```
-## PoundPerGallonUkPerSecond <!-- NOUN -->
-- Display name: pound per gallon (UK) per second
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.010022412854960501
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK) per second
-[SI] is the value in SI
-a = 1.0 / PPGUK, i.e., 0.010022412854960501
-and
-PPGUK = Pound / GallonUK
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-
-- Examples: 
-``` dwis
-PoundPerGallonUkPerSecond:PoundPerGallonUkPerSecond_1
-PoundPerGallonUkPerSecond_1.ConversionFactorB = "0.010022412854960501"
-PoundPerGallonUkPerSecond_1.Symbol = "ppgUK/s"
-```
-## PoundPerGallonUkPerMinute <!-- NOUN -->
-- Display name: pound per gallon (UK) per minute
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.6013447712976301
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK) per minute
-[SI] is the value in SI
-a = Minute / PPGUK, i.e., 0.6013447712976301
-and
-Minute = 60.0
-PPGUK = Pound / GallonUK
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-
-- Examples: 
-``` dwis
-PoundPerGallonUkPerMinute:PoundPerGallonUkPerMinute_1
-PoundPerGallonUkPerMinute_1.ConversionFactorB = "0.6013447712976301"
-PoundPerGallonUkPerMinute_1.Symbol = "ppgUK/min"
-```
-## PoundPerGallonUkPerHour <!-- NOUN -->
-- Display name: pound per gallon (UK) per hour
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 36.08068627785781
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK) per hour
-[SI] is the value in SI
-a = Hour / PPGUK, i.e., 36.08068627785781
-and
-Hour = 60.0 * Minute
-PPGUK = Pound / GallonUK
-Minute = 60.0
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-
-- Examples: 
-``` dwis
-PoundPerGallonUkPerHour:PoundPerGallonUkPerHour_1
-PoundPerGallonUkPerHour_1.ConversionFactorB = "36.08068627785781"
-PoundPerGallonUkPerHour_1.Symbol = "ppgUK/h"
-```
-## PoundPerGallonUsPerSecond <!-- NOUN -->
-- Display name: pound per gallon (US) per second
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.00834540445201933
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US) per second
-[SI] is the value in SI
-a = 1.0 /PPGUS, i.e., 0.00834540445201933
-and
-PPGUS = Pound / GallonUS
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-
-- Examples: 
-``` dwis
-PoundPerGallonUsPerSecond:PoundPerGallonUsPerSecond_1
-PoundPerGallonUsPerSecond_1.ConversionFactorB = "0.00834540445201933"
-PoundPerGallonUsPerSecond_1.Symbol = "ppgUS/s"
-```
-## PoundPerGallonUsPerMinute <!-- NOUN -->
-- Display name: pound per gallon (US) per minute
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.5007242671211598
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US) per minute
-[SI] is the value in SI
-a = Minute / PPGUS, i.e., 0.5007242671211598
-and
-Minute = 60.0
-PPGUS = Pound / GallonUS
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-
-- Examples: 
-``` dwis
-PoundPerGallonUsPerMinute:PoundPerGallonUsPerMinute_1
-PoundPerGallonUsPerMinute_1.ConversionFactorB = "0.5007242671211598"
-PoundPerGallonUsPerMinute_1.Symbol = "ppgUS/min"
-```
-## PoundPerGallonUsPerHour <!-- NOUN -->
-- Display name: pound per gallon (US) per hour
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 30.043456027269592
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US) per hour
-[SI] is the value in SI
-a = Hour / PPGUS, i.e., 30.043456027269592
-and
-Hour = 60.0 * Minute
-PPGUS = Pound / GallonUS
-Minute = 60.0
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-
-- Examples: 
-``` dwis
-PoundPerGallonUsPerHour:PoundPerGallonUsPerHour_1
-PoundPerGallonUsPerHour_1.ConversionFactorB = "30.043456027269592"
-PoundPerGallonUsPerHour_1.Symbol = "ppgUS/h"
-```
 ## Dimensionless <!-- NOUN -->
 - Display name: dimensionless
 - Parent class: Unit
@@ -4864,6 +3797,78 @@ C_cgs = 2.99792458e10 reference: https://en.wikipedia.org/wiki/Statampere
 Statampere:Statampere_1
 Statampere_1.ConversionFactorB = "2997924580"
 Statampere_1.Symbol = "stA"
+```
+## OhmMetre <!-- NOUN -->
+- Display name: ohm metre
+- Parent class: Unit
+- Specialization: 
+- Description: 
+No conversion necessary as the unit choice is SI
+
+- Examples: 
+``` dwis
+OhmMetre:OhmMetre_1
+OhmMetre_1.Symbol = "Ω•m"
+```
+## KiloOhmMetre <!-- NOUN -->
+- Display name: kilo ohm metre
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.001
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilo ohm metre
+[SI] is the value in SI
+a = 1.0/Kilo, i.e., 0.001
+and
+Kilo = 1000.0
+
+- Examples: 
+``` dwis
+KiloOhmMetre:KiloOhmMetre_1
+KiloOhmMetre_1.ConversionFactorB = "0.001"
+KiloOhmMetre_1.Symbol = "kΩ•m"
+```
+## MegaOhmMetre <!-- NOUN -->
+- Display name: mega ohm metre
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 1E-06
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in mega ohm metre
+[SI] is the value in SI
+a = 1.0/Mega, i.e., 1E-06
+and
+Mega = 1e6
+
+- Examples: 
+``` dwis
+MegaOhmMetre:MegaOhmMetre_1
+MegaOhmMetre_1.ConversionFactorB = "1E-06"
+MegaOhmMetre_1.Symbol = "MΩ•m"
+```
+## GigaOhmMetre <!-- NOUN -->
+- Display name: giga ohm metre
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 1E-09
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in giga ohm metre
+[SI] is the value in SI
+a = 1.0/Giga, i.e., 1E-09
+and
+Giga = 1e9
+
+- Examples: 
+``` dwis
+GigaOhmMetre:GigaOhmMetre_1
+GigaOhmMetre_1.ConversionFactorB = "1E-09"
+GigaOhmMetre_1.Symbol = "GΩ•m"
 ```
 ## Volt <!-- NOUN -->
 - Display name: volt
@@ -6449,6 +5454,1510 @@ KiloBritishThermalUnitPerGallonUs:KiloBritishThermalUnitPerGallonUs_1
 KiloBritishThermalUnitPerGallonUs_1.ConversionFactorB = "3.5902800625978087E-09"
 KiloBritishThermalUnitPerGallonUs_1.Symbol = "kBTU/gal(US)"
 ```
+## Joule <!-- NOUN -->
+- Display name: joule
+- Parent class: Unit
+- Specialization: 
+- Description: 
+No conversion necessary as the unit choice is SI
+
+- Examples: 
+``` dwis
+Joule:Joule_1
+Joule_1.Symbol = "J"
+```
+## Kilojoule <!-- NOUN -->
+- Display name: kilojoule
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.001
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilojoule
+[SI] is the value in SI
+a = 1.0/Kilo, i.e., 0.001
+and
+Kilo = 1000.0
+
+- Examples: 
+``` dwis
+Kilojoule:Kilojoule_1
+Kilojoule_1.ConversionFactorB = "0.001"
+Kilojoule_1.Symbol = "kJ"
+```
+## Megajoule <!-- NOUN -->
+- Display name: megajoule
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 1E-06
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in megajoule
+[SI] is the value in SI
+a = 1.0/Mega, i.e., 1E-06
+and
+Mega = 1e6
+
+- Examples: 
+``` dwis
+Megajoule:Megajoule_1
+Megajoule_1.ConversionFactorB = "1E-06"
+Megajoule_1.Symbol = "MJ"
+```
+## Gigajoule <!-- NOUN -->
+- Display name: gigajoule
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 1E-09
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gigajoule
+[SI] is the value in SI
+a = 1.0/Giga, i.e., 1E-09
+and
+Giga = 1e9
+
+- Examples: 
+``` dwis
+Gigajoule:Gigajoule_1
+Gigajoule_1.ConversionFactorB = "1E-09"
+Gigajoule_1.Symbol = "GJ"
+```
+## Calorie <!-- NOUN -->
+- Display name: calorie
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.2390057361376673
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in calorie
+[SI] is the value in SI
+a = 1.0/Calorie, i.e., 0.2390057361376673
+and
+Calorie = 4.184 reference: https://en.wikipedia.org/wiki/Calorie
+
+- Examples: 
+``` dwis
+Calorie:Calorie_1
+Calorie_1.ConversionFactorB = "0.2390057361376673"
+Calorie_1.Symbol = "cal"
+```
+## Kilocalorie <!-- NOUN -->
+- Display name: kilocalorie
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.0002390057361376673
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilocalorie
+[SI] is the value in SI
+a = 1.0/(Kilo * Calorie), i.e., 0.0002390057361376673
+and
+Kilo = 1000.0
+Calorie = 4.184 reference: https://en.wikipedia.org/wiki/Calorie
+
+- Examples: 
+``` dwis
+Kilocalorie:Kilocalorie_1
+Kilocalorie_1.ConversionFactorB = "0.0002390057361376673"
+Kilocalorie_1.Symbol = "Cal"
+```
+## BritishThermalUnit <!-- NOUN -->
+- Display name: british thermal unit
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.0009484516526770049
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in british thermal unit
+[SI] is the value in SI
+a = 1.0/BTU, i.e., 0.0009484516526770049
+and
+BTU = 1054.35 reference: https://en.wikipedia.org/wiki/British_thermal_unit
+
+- Examples: 
+``` dwis
+BritishThermalUnit:BritishThermalUnit_1
+BritishThermalUnit_1.ConversionFactorB = "0.0009484516526770049"
+BritishThermalUnit_1.Symbol = "BTU"
+```
+## KiloBritishThermalUnit <!-- NOUN -->
+- Display name: kilo british thermal unit
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 9.484516526770048E-07
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilo british thermal unit
+[SI] is the value in SI
+a = 1.0/(Kilo * BTU), i.e., 9.484516526770048E-07
+and
+Kilo = 1000.0
+BTU = 1054.35 reference: https://en.wikipedia.org/wiki/British_thermal_unit
+
+- Examples: 
+``` dwis
+KiloBritishThermalUnit:KiloBritishThermalUnit_1
+KiloBritishThermalUnit_1.ConversionFactorB = "9.484516526770048E-07"
+KiloBritishThermalUnit_1.Symbol = "kBTU"
+```
+## MegaBritishThermalUnit <!-- NOUN -->
+- Display name: mega british thermal unit
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 9.48451652677005E-10
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in mega british thermal unit
+[SI] is the value in SI
+a = 1.0/(Mega * BTU), i.e., 9.48451652677005E-10
+and
+Mega = 1e6
+BTU = 1054.35 reference: https://en.wikipedia.org/wiki/British_thermal_unit
+
+- Examples: 
+``` dwis
+MegaBritishThermalUnit:MegaBritishThermalUnit_1
+MegaBritishThermalUnit_1.ConversionFactorB = "9.48451652677005E-10"
+MegaBritishThermalUnit_1.Symbol = "MMBTU"
+```
+## KilogramPerCubicMetrePerMetre <!-- NOUN -->
+- Display name: kilogram per cubic metre per metre
+- Parent class: Unit
+- Specialization: 
+- Description: 
+No conversion necessary as the unit choice is SI
+
+- Examples: 
+``` dwis
+KilogramPerCubicMetrePerMetre:KilogramPerCubicMetrePerMetre_1
+KilogramPerCubicMetrePerMetre_1.Symbol = "kg/m³/m"
+```
+## SpecificGravityPerMetre <!-- NOUN -->
+- Display name: specific gravity per metre
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.001000028000784022
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per metre
+[SI] is the value in SI
+a = SpecificGavity4degC, i.e., 0.001000028000784022
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+
+- Examples: 
+``` dwis
+SpecificGravityPerMetre:SpecificGravityPerMetre_1
+SpecificGravityPerMetre_1.ConversionFactorB = "0.001000028000784022"
+SpecificGravityPerMetre_1.Symbol = "sg/m"
+```
+## SpecificGravityPer10Metre <!-- NOUN -->
+- Display name: specific gravity per 10 metre
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.01000028000784022
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per 10 metre
+[SI] is the value in SI
+a = Deca*SpecificGavity4degC, i.e., 0.01000028000784022
+and
+Deca = 10.0
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+
+- Examples: 
+``` dwis
+SpecificGravityPer10Metre:SpecificGravityPer10Metre_1
+SpecificGravityPer10Metre_1.ConversionFactorB = "0.01000028000784022"
+SpecificGravityPer10Metre_1.Symbol = "sg/10m"
+```
+## SpecificGravityPer30Metre <!-- NOUN -->
+- Display name: specific gravity per 30 metre
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.03000084002352066
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per 30 metre
+[SI] is the value in SI
+a = 3.0*Deca*SpecificGavity4degC, i.e., 0.03000084002352066
+and
+Deca = 10.0
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+
+- Examples: 
+``` dwis
+SpecificGravityPer30Metre:SpecificGravityPer30Metre_1
+SpecificGravityPer30Metre_1.ConversionFactorB = "0.03000084002352066"
+SpecificGravityPer30Metre_1.Symbol = "sg/30m"
+```
+## SpecificGravityPer100Metre <!-- NOUN -->
+- Display name: specific gravity per 100 metre
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.10000280007840219
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per 100 metre
+[SI] is the value in SI
+a = Hecto*SpecificGavity4degC, i.e., 0.10000280007840219
+and
+Hecto = 100.0
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+
+- Examples: 
+``` dwis
+SpecificGravityPer100Metre:SpecificGravityPer100Metre_1
+SpecificGravityPer100Metre_1.ConversionFactorB = "0.10000280007840219"
+SpecificGravityPer100Metre_1.Symbol = "sg/100m"
+```
+## GramPerCubicCentimetrePer100Metre <!-- NOUN -->
+- Display name: gram per cubic centimetre per 100 metre
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.10000000000000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per 100 metre
+[SI] is the value in SI
+a = Centi*Centi*Centi*Hecto/Milli, i.e., 0.10000000000000002
+and
+Centi = 0.01
+Hecto = 100.0
+Milli = 0.001
+
+- Examples: 
+``` dwis
+GramPerCubicCentimetrePer100Metre:GramPerCubicCentimetrePer100Metre_1
+GramPerCubicCentimetrePer100Metre_1.ConversionFactorB = "0.10000000000000002"
+GramPerCubicCentimetrePer100Metre_1.Symbol = "g/cm³/100m"
+```
+## PoundPerGallonUkPerFoot <!-- NOUN -->
+- Display name: pound per gallon (UK) per foot
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.00305483143819196
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per foot
+[SI] is the value in SI
+a = GallonUK*Foot/Pound, i.e., 0.00305483143819196
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+PoundPerGallonUkPerFoot:PoundPerGallonUkPerFoot_1
+PoundPerGallonUkPerFoot_1.ConversionFactorB = "0.00305483143819196"
+PoundPerGallonUkPerFoot_1.Symbol = "ppgUK/ft"
+```
+## PoundPerGallonUkPer30Foot <!-- NOUN -->
+- Display name: pound per gallon (UK) per 30 foot
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.0916449431457588
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per 30 foot
+[SI] is the value in SI
+a = GallonUK*30.0*Foot/Pound, i.e., 0.0916449431457588
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+PoundPerGallonUkPer30Foot:PoundPerGallonUkPer30Foot_1
+PoundPerGallonUkPer30Foot_1.ConversionFactorB = "0.0916449431457588"
+PoundPerGallonUkPer30Foot_1.Symbol = "ppgUK/30ft"
+```
+## PoundPerGallonUkPer100Foot <!-- NOUN -->
+- Display name: pound per gallon (UK) per 100 foot
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.305483143819196
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per 100 foot
+[SI] is the value in SI
+a = GallonUK*100.0*Foot/Pound, i.e., 0.305483143819196
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+PoundPerGallonUkPer100Foot:PoundPerGallonUkPer100Foot_1
+PoundPerGallonUkPer100Foot_1.ConversionFactorB = "0.305483143819196"
+PoundPerGallonUkPer100Foot_1.Symbol = "ppgUK/100ft"
+```
+## PoundPerGallonUsPerFoot <!-- NOUN -->
+- Display name: pound per gallon (US) per foot
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.0025436792769754917
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per foot
+[SI] is the value in SI
+a = GallonUS*Foot/Pound, i.e., 0.0025436792769754917
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+PoundPerGallonUsPerFoot:PoundPerGallonUsPerFoot_1
+PoundPerGallonUsPerFoot_1.ConversionFactorB = "0.0025436792769754917"
+PoundPerGallonUsPerFoot_1.Symbol = "ppgUS/ft"
+```
+## PoundPerGallonUsPer30Foot <!-- NOUN -->
+- Display name: pound per gallon (US) per 30 foot
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.07631037830926475
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per 30 foot
+[SI] is the value in SI
+a = GallonUS*30.0*Foot/Pound, i.e., 0.07631037830926475
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+PoundPerGallonUsPer30Foot:PoundPerGallonUsPer30Foot_1
+PoundPerGallonUsPer30Foot_1.ConversionFactorB = "0.07631037830926475"
+PoundPerGallonUsPer30Foot_1.Symbol = "ppgUS/30ft"
+```
+## PoundPerGallonUsPer100Foot <!-- NOUN -->
+- Display name: pound per gallon (US) per 100 foot
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.2543679276975492
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per 100 foot
+[SI] is the value in SI
+a = GallonUS*100.0*Foot/Pound, i.e., 0.2543679276975492
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+PoundPerGallonUsPer100Foot:PoundPerGallonUsPer100Foot_1
+PoundPerGallonUsPer100Foot_1.ConversionFactorB = "0.2543679276975492"
+PoundPerGallonUsPer100Foot_1.Symbol = "ppgUS/100ft"
+```
+## KilogramPerCubicMetrePer10Metre <!-- NOUN -->
+- Display name: kilogram per cubic metre per 10 metre
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 10
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per 10 metre
+[SI] is the value in SI
+a = Deca/Unit, i.e., 10
+and
+Deca = 10.0
+Unit = 1.0
+
+- Examples: 
+``` dwis
+KilogramPerCubicMetrePer10Metre:KilogramPerCubicMetrePer10Metre_1
+KilogramPerCubicMetrePer10Metre_1.ConversionFactorB = "10"
+KilogramPerCubicMetrePer10Metre_1.Symbol = "kg/m³/10m"
+```
+## KilogramPerCubicMetrePer30Metre <!-- NOUN -->
+- Display name: kilogram per cubic metre per 30 metre
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 30
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per 30 metre
+[SI] is the value in SI
+a = 3.0 *Deca/Unit, i.e., 30
+and
+Deca = 10.0
+Unit = 1.0
+
+- Examples: 
+``` dwis
+KilogramPerCubicMetrePer30Metre:KilogramPerCubicMetrePer30Metre_1
+KilogramPerCubicMetrePer30Metre_1.ConversionFactorB = "30"
+KilogramPerCubicMetrePer30Metre_1.Symbol = "kg/m³/30m"
+```
+## KilogramPerCubicMetrePer100Metre <!-- NOUN -->
+- Display name: kilogram per cubic metre per 100 metre
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 100
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per 100 metre
+[SI] is the value in SI
+a = Hecto/Unit, i.e., 100
+and
+Hecto = 100.0
+Unit = 1.0
+
+- Examples: 
+``` dwis
+KilogramPerCubicMetrePer100Metre:KilogramPerCubicMetrePer100Metre_1
+KilogramPerCubicMetrePer100Metre_1.ConversionFactorB = "100"
+KilogramPerCubicMetrePer100Metre_1.Symbol = "kg/m³/30m"
+```
+## GramPerCubicCentimetrePerMetre <!-- NOUN -->
+- Display name: gram per cubic centimetre per metre
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.0010000000000000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per metre
+[SI] is the value in SI
+a = Centi*Centi*Centi/Milli, i.e., 0.0010000000000000002
+and
+Centi = 0.01
+Milli = 0.001
+
+- Examples: 
+``` dwis
+GramPerCubicCentimetrePerMetre:GramPerCubicCentimetrePerMetre_1
+GramPerCubicCentimetrePerMetre_1.ConversionFactorB = "0.0010000000000000002"
+GramPerCubicCentimetrePerMetre_1.Symbol = "g/cm³/m"
+```
+## GramPerCubicCentimetrePer10Metre <!-- NOUN -->
+- Display name: gram per cubic centimetre per 10 metre
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.010000000000000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per 10 metre
+[SI] is the value in SI
+a = Centi*Centi*Centi*Deca/Milli, i.e., 0.010000000000000002
+and
+Centi = 0.01
+Deca = 10.0
+Milli = 0.001
+
+- Examples: 
+``` dwis
+GramPerCubicCentimetrePer10Metre:GramPerCubicCentimetrePer10Metre_1
+GramPerCubicCentimetrePer10Metre_1.ConversionFactorB = "0.010000000000000002"
+GramPerCubicCentimetrePer10Metre_1.Symbol = "g/cm³/10m"
+```
+## GramPerCubicCentimetrePer30Metre <!-- NOUN -->
+- Display name: gram per cubic centimetre per 30 metre
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.030000000000000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per 30 metre
+[SI] is the value in SI
+a = Centi*Centi*Centi*3.0*Deca/Milli, i.e., 0.030000000000000002
+and
+Centi = 0.01
+Deca = 10.0
+Milli = 0.001
+
+- Examples: 
+``` dwis
+GramPerCubicCentimetrePer30Metre:GramPerCubicCentimetrePer30Metre_1
+GramPerCubicCentimetrePer30Metre_1.ConversionFactorB = "0.030000000000000002"
+GramPerCubicCentimetrePer30Metre_1.Symbol = "g/cm³/30m"
+```
+## PoundPerCubicFootPerFoot <!-- NOUN -->
+- Display name: pound per cubic foot per foot
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.019028042383608865
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per foot
+[SI] is the value in SI
+a = Foot*Foot*Foot*Foot/Pound, i.e., 0.019028042383608865
+and
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+PoundPerCubicFootPerFoot:PoundPerCubicFootPerFoot_1
+PoundPerCubicFootPerFoot_1.ConversionFactorB = "0.019028042383608865"
+PoundPerCubicFootPerFoot_1.Symbol = "lb/ft³/ft"
+```
+## PoundPerCubicFootPer30Foot <!-- NOUN -->
+- Display name: pound per cubic foot per 30 foot
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.570841271508266
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per 30 foot
+[SI] is the value in SI
+a = Foot*Foot*Foot*30.0*Foot/Pound, i.e., 0.570841271508266
+and
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+PoundPerCubicFootPer30Foot:PoundPerCubicFootPer30Foot_1
+PoundPerCubicFootPer30Foot_1.ConversionFactorB = "0.570841271508266"
+PoundPerCubicFootPer30Foot_1.Symbol = "lb/ft³/30ft"
+```
+## PoundPerCubicFootPer100Foot <!-- NOUN -->
+- Display name: pound per cubic foot per 100 foot
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 1.902804238360887
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per 100 foot
+[SI] is the value in SI
+a = Foot*Foot*Foot*100.0*Foot/Pound, i.e., 1.902804238360887
+and
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+PoundPerCubicFootPer100Foot:PoundPerCubicFootPer100Foot_1
+PoundPerCubicFootPer100Foot_1.ConversionFactorB = "1.902804238360887"
+PoundPerCubicFootPer100Foot_1.Symbol = "lb/ft³/100ft"
+```
+## PoundPerCubicInchPerFoot <!-- NOUN -->
+- Display name: pound per cubic inch per foot
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 1.1011598601625506E-05
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per foot
+[SI] is the value in SI
+a = Inch*Inch*Inch*Foot/Pound, i.e., 1.1011598601625506E-05
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+
+- Examples: 
+``` dwis
+PoundPerCubicInchPerFoot:PoundPerCubicInchPerFoot_1
+PoundPerCubicInchPerFoot_1.ConversionFactorB = "1.1011598601625506E-05"
+PoundPerCubicInchPerFoot_1.Symbol = "lb/in³/ft"
+```
+## PoundPerCubicInchPer30Foot <!-- NOUN -->
+- Display name: pound per cubic inch per 30 foot
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.00033034795804876514
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per 30 foot
+[SI] is the value in SI
+a = Inch*Inch*Inch*30.0*Foot/Pound, i.e., 0.00033034795804876514
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+
+- Examples: 
+``` dwis
+PoundPerCubicInchPer30Foot:PoundPerCubicInchPer30Foot_1
+PoundPerCubicInchPer30Foot_1.ConversionFactorB = "0.00033034795804876514"
+PoundPerCubicInchPer30Foot_1.Symbol = "lb/in³/30ft"
+```
+## PoundPerCubicInchPer100Foot <!-- NOUN -->
+- Display name: pound per cubic inch per 100 foot
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.0011011598601625506
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per 100 foot
+[SI] is the value in SI
+a = Inch*Inch*Inch*100.0*Foot/Pound, i.e., 0.0011011598601625506
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+
+- Examples: 
+``` dwis
+PoundPerCubicInchPer100Foot:PoundPerCubicInchPer100Foot_1
+PoundPerCubicInchPer100Foot_1.ConversionFactorB = "0.0011011598601625506"
+PoundPerCubicInchPer100Foot_1.Symbol = "lb/in³/100ft"
+```
+## PoundPerCubicYardPerFoot <!-- NOUN -->
+- Display name: pound per cubic yard per foot
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.5137571443574394
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per foot
+[SI] is the value in SI
+a = Yard*Yard*Yard*Foot/Pound, i.e., 0.5137571443574394
+and
+Yard = 3.0 * Foot
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+PoundPerCubicYardPerFoot:PoundPerCubicYardPerFoot_1
+PoundPerCubicYardPerFoot_1.ConversionFactorB = "0.5137571443574394"
+PoundPerCubicYardPerFoot_1.Symbol = "lb/yd³/ft"
+```
+## PoundPerCubicYardPer30Foot <!-- NOUN -->
+- Display name: pound per cubic yard per 30 foot
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 15.412714330723183
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per 30 foot
+[SI] is the value in SI
+a = Yard*Yard*Yard*30.0*Foot/Pound, i.e., 15.412714330723183
+and
+Yard = 3.0 * Foot
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+PoundPerCubicYardPer30Foot:PoundPerCubicYardPer30Foot_1
+PoundPerCubicYardPer30Foot_1.ConversionFactorB = "15.412714330723183"
+PoundPerCubicYardPer30Foot_1.Symbol = "lb/yd³/30ft"
+```
+## PoundPerCubicYardPer100Foot <!-- NOUN -->
+- Display name: pound per cubic yard per 100 foot
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 51.37571443574393
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per 100 foot
+[SI] is the value in SI
+a = Yard*Yard*Yard*100.0*Foot/Pound, i.e., 51.37571443574393
+and
+Yard = 3.0 * Foot
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+PoundPerCubicYardPer100Foot:PoundPerCubicYardPer100Foot_1
+PoundPerCubicYardPer100Foot_1.ConversionFactorB = "51.37571443574393"
+PoundPerCubicYardPer100Foot_1.Symbol = "lb/yd³/100ft"
+```
+## KilogramPerCubicMetrePerKelvin <!-- NOUN -->
+- Display name: kilogram per cubic metre per kelvin
+- Parent class: Unit
+- Specialization: 
+- Description: 
+No conversion necessary as the unit choice is SI
+
+- Examples: 
+``` dwis
+KilogramPerCubicMetrePerKelvin:KilogramPerCubicMetrePerKelvin_1
+KilogramPerCubicMetrePerKelvin_1.Symbol = "kg/m³/K"
+```
+## SpecificGravityPerCelsius <!-- NOUN -->
+- Display name: specific gravity per celsius
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.001000028000784022
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per celsius
+[SI] is the value in SI
+a = SpecificGavity4degC, i.e., 0.001000028000784022
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+
+- Examples: 
+``` dwis
+SpecificGravityPerCelsius:SpecificGravityPerCelsius_1
+SpecificGravityPerCelsius_1.ConversionFactorB = "0.001000028000784022"
+SpecificGravityPerCelsius_1.Symbol = "sg/°C"
+```
+## GramPerCubicCentimetrePerCelsius <!-- NOUN -->
+- Display name: gram per cubic centimetre per celsius
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.0010000000000000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per celsius
+[SI] is the value in SI
+a = Centi*Centi*Centi/Milli, i.e., 0.0010000000000000002
+and
+Centi = 0.01
+Milli = 0.001
+
+- Examples: 
+``` dwis
+GramPerCubicCentimetrePerCelsius:GramPerCubicCentimetrePerCelsius_1
+GramPerCubicCentimetrePerCelsius_1.ConversionFactorB = "0.0010000000000000002"
+GramPerCubicCentimetrePerCelsius_1.Symbol = "g/cm³/°C"
+```
+## PoundPerGallonUkPerCelsius <!-- NOUN -->
+- Display name: pound per gallon (UK) per celsius
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.010022412854960501
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per celsius
+[SI] is the value in SI
+a = GallonUK/Pound, i.e., 0.010022412854960501
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+
+- Examples: 
+``` dwis
+PoundPerGallonUkPerCelsius:PoundPerGallonUkPerCelsius_1
+PoundPerGallonUkPerCelsius_1.ConversionFactorB = "0.010022412854960501"
+PoundPerGallonUkPerCelsius_1.Symbol = "ppgUK/°C"
+```
+## PoundPerGallonUsPerFahrenheit <!-- NOUN -->
+- Display name: pound per gallon (US) per fahrenheit
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.004636335806677406
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per fahrenheit
+[SI] is the value in SI
+a = GallonUS*FahrenheitSlope/Pound, i.e., 0.004636335806677406
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+PoundPerGallonUsPerFahrenheit:PoundPerGallonUsPerFahrenheit_1
+PoundPerGallonUsPerFahrenheit_1.ConversionFactorB = "0.004636335806677406"
+PoundPerGallonUsPerFahrenheit_1.Symbol = "ppgUS/°F"
+```
+## PoundPerGallonUkPerFahrenheit <!-- NOUN -->
+- Display name: pound per gallon (UK) per fahrenheit
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.005568007141644723
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per fahrenheit
+[SI] is the value in SI
+a = GallonUK*FahrenheitSlope/Pound, i.e., 0.005568007141644723
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+
+- Examples: 
+``` dwis
+PoundPerGallonUkPerFahrenheit:PoundPerGallonUkPerFahrenheit_1
+PoundPerGallonUkPerFahrenheit_1.ConversionFactorB = "0.005568007141644723"
+PoundPerGallonUkPerFahrenheit_1.Symbol = "ppgUK/°F"
+```
+## PoundPerGallonUsPerCelsius <!-- NOUN -->
+- Display name: pound per gallon (US) per celsius
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.00834540445201933
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per celsius
+[SI] is the value in SI
+a = GallonUS/Pound, i.e., 0.00834540445201933
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+PoundPerGallonUsPerCelsius:PoundPerGallonUsPerCelsius_1
+PoundPerGallonUsPerCelsius_1.ConversionFactorB = "0.00834540445201933"
+PoundPerGallonUsPerCelsius_1.Symbol = "ppgUS/°C"
+```
+## PoundPerCubicFootPerCelsius <!-- NOUN -->
+- Display name: pound per cubic foot per celsius
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.06242796057614459
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per celsius
+[SI] is the value in SI
+a = Foot*Foot*Foot/Pound, i.e., 0.06242796057614459
+and
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+PoundPerCubicFootPerCelsius:PoundPerCubicFootPerCelsius_1
+PoundPerCubicFootPerCelsius_1.ConversionFactorB = "0.06242796057614459"
+PoundPerCubicFootPerCelsius_1.Symbol = "lb/ft³/°C"
+```
+## PoundPerCubicFootPerFahrenheit <!-- NOUN -->
+- Display name: pound per cubic foot per fahrenheit
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.03468220032008033
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per fahrenheit
+[SI] is the value in SI
+a = Foot*Foot*Foot*FahrenheitSlope/Pound, i.e., 0.03468220032008033
+and
+Foot = 12.0 * Inch
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+PoundPerCubicFootPerFahrenheit:PoundPerCubicFootPerFahrenheit_1
+PoundPerCubicFootPerFahrenheit_1.ConversionFactorB = "0.03468220032008033"
+PoundPerCubicFootPerFahrenheit_1.Symbol = "lb/ft³/°F"
+```
+## PoundPerCubicInchPerCelsius <!-- NOUN -->
+- Display name: pound per cubic inch per celsius
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 3.612729200008369E-05
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per celsius
+[SI] is the value in SI
+a = Inch*Inch*Inch/Pound, i.e., 3.612729200008369E-05
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+
+- Examples: 
+``` dwis
+PoundPerCubicInchPerCelsius:PoundPerCubicInchPerCelsius_1
+PoundPerCubicInchPerCelsius_1.ConversionFactorB = "3.612729200008369E-05"
+PoundPerCubicInchPerCelsius_1.Symbol = "lb/in³/°C"
+```
+## PoundPerCubicInchPerFahrenheit <!-- NOUN -->
+- Display name: pound per cubic inch per fahrenheit
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 2.0070717777824268E-05
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per fahrenheit
+[SI] is the value in SI
+a = Inch*Inch*Inch*FahrenheitSlope/Pound, i.e., 2.0070717777824268E-05
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+
+- Examples: 
+``` dwis
+PoundPerCubicInchPerFahrenheit:PoundPerCubicInchPerFahrenheit_1
+PoundPerCubicInchPerFahrenheit_1.ConversionFactorB = "2.0070717777824268E-05"
+PoundPerCubicInchPerFahrenheit_1.Symbol = "lb/in³/°F"
+```
+## PoundPerCubicYardPerCelsius <!-- NOUN -->
+- Display name: pound per cubic yard per celsius
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 1.6855549355559039
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per celsius
+[SI] is the value in SI
+a = Yard*Yard*Yard/Pound, i.e., 1.6855549355559039
+and
+Yard = 3.0 * Foot
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+PoundPerCubicYardPerCelsius:PoundPerCubicYardPerCelsius_1
+PoundPerCubicYardPerCelsius_1.ConversionFactorB = "1.6855549355559039"
+PoundPerCubicYardPerCelsius_1.Symbol = "lb/yd³/°C"
+```
+## PoundPerCubicYeardPerFahrenheit <!-- NOUN -->
+- Display name: pound per cubic yeard per fahrenheit
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.9364194086421688
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yeard per fahrenheit
+[SI] is the value in SI
+a = Yard*Yard*Yard*FahrenheitSlope/Pound, i.e., 0.9364194086421688
+and
+Yard = 3.0 * Foot
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+PoundPerCubicYeardPerFahrenheit:PoundPerCubicYeardPerFahrenheit_1
+PoundPerCubicYeardPerFahrenheit_1.ConversionFactorB = "0.9364194086421688"
+PoundPerCubicYeardPerFahrenheit_1.Symbol = "lb/yd³/°F"
+```
+## KilogramPerCubicMetre <!-- NOUN -->
+- Display name: kilogram per cubic metre
+- Parent class: Unit
+- Specialization: 
+- Description: 
+No conversion necessary as the unit choice is SI
+
+- Examples: 
+``` dwis
+KilogramPerCubicMetre:KilogramPerCubicMetre_1
+KilogramPerCubicMetre_1.Symbol = "kg/m³"
+```
+## GramPerCubicMetre <!-- NOUN -->
+- Display name: gram per cubic metre
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 1000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic metre
+[SI] is the value in SI
+a = 1.0/Milli, i.e., 1000
+and
+Milli = 0.001
+
+- Examples: 
+``` dwis
+GramPerCubicMetre:GramPerCubicMetre_1
+GramPerCubicMetre_1.ConversionFactorB = "1000"
+GramPerCubicMetre_1.Symbol = "g/m³"
+```
+## SpecificGravity <!-- NOUN -->
+- Display name: specific gravity
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 999.972
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity
+[SI] is the value in SI
+a = 1.0/SpecificGavity4degC, i.e., 999.972
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+
+- Examples: 
+``` dwis
+SpecificGravity:SpecificGravity_1
+SpecificGravity_1.ConversionFactorB = "999.972"
+SpecificGravity_1.Symbol = "s.g."
+```
+## GramPerCubicCentimetre <!-- NOUN -->
+- Display name: gram per cubic centimetre
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.0010000000000000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre
+[SI] is the value in SI
+a = Centi*Centi*Centi / Milli, i.e., 0.0010000000000000002
+and
+Centi = 0.01
+Milli = 0.001
+
+- Examples: 
+``` dwis
+GramPerCubicCentimetre:GramPerCubicCentimetre_1
+GramPerCubicCentimetre_1.ConversionFactorB = "0.0010000000000000002"
+GramPerCubicCentimetre_1.Symbol = "g/cm³"
+```
+## PoundPerGallonUk <!-- NOUN -->
+- Display name: pound per gallon (UK)
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.010022412854960501
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK)
+[SI] is the value in SI
+a = 1.0/PPGUK, i.e., 0.010022412854960501
+and
+PPGUK = Pound / GallonUK
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+
+- Examples: 
+``` dwis
+PoundPerGallonUk:PoundPerGallonUk_1
+PoundPerGallonUk_1.ConversionFactorB = "0.010022412854960501"
+PoundPerGallonUk_1.Symbol = "ppgUK"
+```
+## PoundPerGallonUs <!-- NOUN -->
+- Display name: pound per gallon (US)
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.00834540445201933
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US)
+[SI] is the value in SI
+a = 1.0/PPGUS, i.e., 0.00834540445201933
+and
+PPGUS = Pound / GallonUS
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+PoundPerGallonUs:PoundPerGallonUs_1
+PoundPerGallonUs_1.ConversionFactorB = "0.00834540445201933"
+PoundPerGallonUs_1.Symbol = "ppgUS"
+```
+## PoundPerCubicFoot <!-- NOUN -->
+- Display name: pound per cubic foot
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.06242796057614459
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot
+[SI] is the value in SI
+a = Foot*Foot*Foot/Pound, i.e., 0.06242796057614459
+and
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+PoundPerCubicFoot:PoundPerCubicFoot_1
+PoundPerCubicFoot_1.ConversionFactorB = "0.06242796057614459"
+PoundPerCubicFoot_1.Symbol = "lb/ft³"
+```
+## PoundPerCubicInch <!-- NOUN -->
+- Display name: pound per cubic inch
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 3.612729200008369E-05
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch
+[SI] is the value in SI
+a = Inch*Inch*Inch/Pound, i.e., 3.612729200008369E-05
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+
+- Examples: 
+``` dwis
+PoundPerCubicInch:PoundPerCubicInch_1
+PoundPerCubicInch_1.ConversionFactorB = "3.612729200008369E-05"
+PoundPerCubicInch_1.Symbol = "lb/in³"
+```
+## PoundPerCubicYard <!-- NOUN -->
+- Display name: pound per cubic yard
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 1.6855549355559039
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard
+[SI] is the value in SI
+a = Yard*Yard*Yard/Pound, i.e., 1.6855549355559039
+and
+Yard = 3.0 * Foot
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+PoundPerCubicYard:PoundPerCubicYard_1
+PoundPerCubicYard_1.ConversionFactorB = "1.6855549355559039"
+PoundPerCubicYard_1.Symbol = "lb/yd³"
+```
+## KilogramPerCubicMetrePerSecond <!-- NOUN -->
+- Display name: kilogram per cubic metre per second
+- Parent class: Unit
+- Specialization: 
+- Description: 
+No conversion necessary as the unit choice is SI
+
+- Examples: 
+``` dwis
+KilogramPerCubicMetrePerSecond:KilogramPerCubicMetrePerSecond_1
+KilogramPerCubicMetrePerSecond_1.Symbol = "kg/m³/s"
+```
+## SpecificGravityPerSecond <!-- NOUN -->
+- Display name: specific gravity per second
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.001000028000784022
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per second
+[SI] is the value in SI
+a = 1.0/WaterDensity4degC1Atm, i.e., 0.001000028000784022
+and
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+
+- Examples: 
+``` dwis
+SpecificGravityPerSecond:SpecificGravityPerSecond_1
+SpecificGravityPerSecond_1.ConversionFactorB = "0.001000028000784022"
+SpecificGravityPerSecond_1.Symbol = "sg/s"
+```
+## SpecificGravityPerMinute <!-- NOUN -->
+- Display name: specific gravity per minute
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.06000168004704132
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per minute
+[SI] is the value in SI
+a = Minute / WaterDensity4degC1Atm, i.e., 0.06000168004704132
+and
+Minute = 60.0
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+
+- Examples: 
+``` dwis
+SpecificGravityPerMinute:SpecificGravityPerMinute_1
+SpecificGravityPerMinute_1.ConversionFactorB = "0.06000168004704132"
+SpecificGravityPerMinute_1.Symbol = "sg/min"
+```
+## SpecificGravityPerHour <!-- NOUN -->
+- Display name: specific gravity per hour
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 3.600100802822479
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per hour
+[SI] is the value in SI
+a = Hour / WaterDensity4degC1Atm, i.e., 3.600100802822479
+and
+Hour = 60.0 * Minute
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+Minute = 60.0
+
+- Examples: 
+``` dwis
+SpecificGravityPerHour:SpecificGravityPerHour_1
+SpecificGravityPerHour_1.ConversionFactorB = "3.600100802822479"
+SpecificGravityPerHour_1.Symbol = "sg/h"
+```
+## GramPerCubicCentimetrePerSecond <!-- NOUN -->
+- Display name: gram per cubic centimetre per second
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.001
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per second
+[SI] is the value in SI
+a = Milli, i.e., 0.001
+and
+Milli = 0.001
+
+- Examples: 
+``` dwis
+GramPerCubicCentimetrePerSecond:GramPerCubicCentimetrePerSecond_1
+GramPerCubicCentimetrePerSecond_1.ConversionFactorB = "0.001"
+GramPerCubicCentimetrePerSecond_1.Symbol = "g/cm³/s"
+```
+## GramPerCubicCentimetrePerMinute <!-- NOUN -->
+- Display name: gram per cubic centimetre per minute
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.06
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per minute
+[SI] is the value in SI
+a = Minute * Milli, i.e., 0.06
+and
+Minute = 60.0
+Milli = 0.001
+
+- Examples: 
+``` dwis
+GramPerCubicCentimetrePerMinute:GramPerCubicCentimetrePerMinute_1
+GramPerCubicCentimetrePerMinute_1.ConversionFactorB = "0.06"
+GramPerCubicCentimetrePerMinute_1.Symbol = "g/cm³/min"
+```
+## GramPerCubicCentimetrePerHour <!-- NOUN -->
+- Display name: gram per cubic centimetre per hour
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 3.6
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per hour
+[SI] is the value in SI
+a = Hour *Milli, i.e., 3.6
+and
+Hour = 60.0 * Minute
+Milli = 0.001
+Minute = 60.0
+
+- Examples: 
+``` dwis
+GramPerCubicCentimetrePerHour:GramPerCubicCentimetrePerHour_1
+GramPerCubicCentimetrePerHour_1.ConversionFactorB = "3.6"
+GramPerCubicCentimetrePerHour_1.Symbol = "g/cm³/h"
+```
+## PoundPerGallonUkPerSecond <!-- NOUN -->
+- Display name: pound per gallon (UK) per second
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.010022412854960501
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per second
+[SI] is the value in SI
+a = 1.0 / PPGUK, i.e., 0.010022412854960501
+and
+PPGUK = Pound / GallonUK
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+
+- Examples: 
+``` dwis
+PoundPerGallonUkPerSecond:PoundPerGallonUkPerSecond_1
+PoundPerGallonUkPerSecond_1.ConversionFactorB = "0.010022412854960501"
+PoundPerGallonUkPerSecond_1.Symbol = "ppgUK/s"
+```
+## PoundPerGallonUkPerMinute <!-- NOUN -->
+- Display name: pound per gallon (UK) per minute
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.6013447712976301
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per minute
+[SI] is the value in SI
+a = Minute / PPGUK, i.e., 0.6013447712976301
+and
+Minute = 60.0
+PPGUK = Pound / GallonUK
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+
+- Examples: 
+``` dwis
+PoundPerGallonUkPerMinute:PoundPerGallonUkPerMinute_1
+PoundPerGallonUkPerMinute_1.ConversionFactorB = "0.6013447712976301"
+PoundPerGallonUkPerMinute_1.Symbol = "ppgUK/min"
+```
+## PoundPerGallonUkPerHour <!-- NOUN -->
+- Display name: pound per gallon (UK) per hour
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 36.08068627785781
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per hour
+[SI] is the value in SI
+a = Hour / PPGUK, i.e., 36.08068627785781
+and
+Hour = 60.0 * Minute
+PPGUK = Pound / GallonUK
+Minute = 60.0
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+
+- Examples: 
+``` dwis
+PoundPerGallonUkPerHour:PoundPerGallonUkPerHour_1
+PoundPerGallonUkPerHour_1.ConversionFactorB = "36.08068627785781"
+PoundPerGallonUkPerHour_1.Symbol = "ppgUK/h"
+```
+## PoundPerGallonUsPerSecond <!-- NOUN -->
+- Display name: pound per gallon (US) per second
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.00834540445201933
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per second
+[SI] is the value in SI
+a = 1.0 /PPGUS, i.e., 0.00834540445201933
+and
+PPGUS = Pound / GallonUS
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+PoundPerGallonUsPerSecond:PoundPerGallonUsPerSecond_1
+PoundPerGallonUsPerSecond_1.ConversionFactorB = "0.00834540445201933"
+PoundPerGallonUsPerSecond_1.Symbol = "ppgUS/s"
+```
+## PoundPerGallonUsPerMinute <!-- NOUN -->
+- Display name: pound per gallon (US) per minute
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.5007242671211598
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per minute
+[SI] is the value in SI
+a = Minute / PPGUS, i.e., 0.5007242671211598
+and
+Minute = 60.0
+PPGUS = Pound / GallonUS
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+PoundPerGallonUsPerMinute:PoundPerGallonUsPerMinute_1
+PoundPerGallonUsPerMinute_1.ConversionFactorB = "0.5007242671211598"
+PoundPerGallonUsPerMinute_1.Symbol = "ppgUS/min"
+```
+## PoundPerGallonUsPerHour <!-- NOUN -->
+- Display name: pound per gallon (US) per hour
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 30.043456027269592
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per hour
+[SI] is the value in SI
+a = Hour / PPGUS, i.e., 30.043456027269592
+and
+Hour = 60.0 * Minute
+PPGUS = Pound / GallonUS
+Minute = 60.0
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+PoundPerGallonUsPerHour:PoundPerGallonUsPerHour_1
+PoundPerGallonUsPerHour_1.ConversionFactorB = "30.043456027269592"
+PoundPerGallonUsPerHour_1.Symbol = "ppgUS/h"
+```
 ## NewtonPerMetre <!-- NOUN -->
 - Display name: newton per metre
 - Parent class: Unit
@@ -7100,6 +7609,28 @@ KilogramForce:KilogramForce_1
 KilogramForce_1.ConversionFactorB = "0.10197162129779283"
 KilogramForce_1.Symbol = "kgf"
 ```
+## TonneForce <!-- NOUN -->
+- Display name: tonne force
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 0.00010197162129779283
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in tonne force
+[SI] is the value in SI
+a = 1.0/(Kilo*KilogramForce), i.e., 0.00010197162129779283
+and
+Kilo = 1000.0
+KilogramForce = 1.0 * G reference: https://en.wikipedia.org/wiki/Kilogram-force
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+
+- Examples: 
+``` dwis
+TonneForce:TonneForce_1
+TonneForce_1.ConversionFactorB = "0.00010197162129779283"
+TonneForce_1.Symbol = "tf"
+```
 ## PoundForce <!-- NOUN -->
 - Display name: pound force
 - Parent class: Unit
@@ -7312,45 +7843,6 @@ Unit = 1.0
 ``` dwis
 RotationPerSecond:RotationPerSecond_1
 RotationPerSecond_1.Symbol = "rps"
-```
-## StrokePerSecond <!-- NOUN -->
-- Display name: stroke per second
-- Parent class: Unit
-- Specialization: 
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in stroke per second
-[SI] is the value in SI
-a = Unit, i.e., 1
-and
-Unit = 1.0
-
-- Examples: 
-``` dwis
-StrokePerSecond:StrokePerSecond_1
-StrokePerSecond_1.Symbol = "sps"
-```
-## StrokePerHour <!-- NOUN -->
-- Display name: stroke per hour
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 3600
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in stroke per hour
-[SI] is the value in SI
-a = Hour, i.e., 3600
-and
-Hour = 60.0 * Minute
-Minute = 60.0
-
-- Examples: 
-``` dwis
-StrokePerHour:StrokePerHour_1
-StrokePerHour_1.ConversionFactorB = "3600"
-StrokePerHour_1.Symbol = "sph"
 ```
 ## RotationPerHour <!-- NOUN -->
 - Display name: rotation per hour
@@ -11134,78 +11626,6 @@ FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
 Rankine:Rankine_1
 Rankine_1.ConversionFactorB = "1.7999999999999998"
 Rankine_1.Symbol = "°R"
-```
-## OhmMetre <!-- NOUN -->
-- Display name: ohm metre
-- Parent class: Unit
-- Specialization: 
-- Description: 
-No conversion necessary as the unit choice is SI
-
-- Examples: 
-``` dwis
-OhmMetre:OhmMetre_1
-OhmMetre_1.Symbol = "Ω•m"
-```
-## KiloOhmMetre <!-- NOUN -->
-- Display name: kilo ohm metre
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.001
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in kilo ohm metre
-[SI] is the value in SI
-a = 1.0/Kilo, i.e., 0.001
-and
-Kilo = 1000.0
-
-- Examples: 
-``` dwis
-KiloOhmMetre:KiloOhmMetre_1
-KiloOhmMetre_1.ConversionFactorB = "0.001"
-KiloOhmMetre_1.Symbol = "kΩ•m"
-```
-## MegaOhmMetre <!-- NOUN -->
-- Display name: mega ohm metre
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 1E-06
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in mega ohm metre
-[SI] is the value in SI
-a = 1.0/Mega, i.e., 1E-06
-and
-Mega = 1e6
-
-- Examples: 
-``` dwis
-MegaOhmMetre:MegaOhmMetre_1
-MegaOhmMetre_1.ConversionFactorB = "1E-06"
-MegaOhmMetre_1.Symbol = "MΩ•m"
-```
-## GigaOhmMetre <!-- NOUN -->
-- Display name: giga ohm metre
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 1E-09
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in giga ohm metre
-[SI] is the value in SI
-a = 1.0/Giga, i.e., 1E-09
-and
-Giga = 1e9
-
-- Examples: 
-``` dwis
-GigaOhmMetre:GigaOhmMetre_1
-GigaOhmMetre_1.ConversionFactorB = "1E-09"
-GigaOhmMetre_1.Symbol = "GΩ•m"
 ```
 ## Steradian <!-- NOUN -->
 - Display name: steradian
@@ -17143,181 +17563,6 @@ HundredWeights:HundredWeights_1
 HundredWeights_1.ConversionFactorB = "0.022046226218487758"
 HundredWeights_1.Symbol = "cwt"
 ```
-## Joule <!-- NOUN -->
-- Display name: joule
-- Parent class: Unit
-- Specialization: 
-- Description: 
-No conversion necessary as the unit choice is SI
-
-- Examples: 
-``` dwis
-Joule:Joule_1
-Joule_1.Symbol = "J"
-```
-## Kilojoule <!-- NOUN -->
-- Display name: kilojoule
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.001
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in kilojoule
-[SI] is the value in SI
-a = 1.0/Kilo, i.e., 0.001
-and
-Kilo = 1000.0
-
-- Examples: 
-``` dwis
-Kilojoule:Kilojoule_1
-Kilojoule_1.ConversionFactorB = "0.001"
-Kilojoule_1.Symbol = "kJ"
-```
-## Megajoule <!-- NOUN -->
-- Display name: megajoule
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 1E-06
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in megajoule
-[SI] is the value in SI
-a = 1.0/Mega, i.e., 1E-06
-and
-Mega = 1e6
-
-- Examples: 
-``` dwis
-Megajoule:Megajoule_1
-Megajoule_1.ConversionFactorB = "1E-06"
-Megajoule_1.Symbol = "MJ"
-```
-## Gigajoule <!-- NOUN -->
-- Display name: gigajoule
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 1E-09
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in gigajoule
-[SI] is the value in SI
-a = 1.0/Giga, i.e., 1E-09
-and
-Giga = 1e9
-
-- Examples: 
-``` dwis
-Gigajoule:Gigajoule_1
-Gigajoule_1.ConversionFactorB = "1E-09"
-Gigajoule_1.Symbol = "GJ"
-```
-## Calorie <!-- NOUN -->
-- Display name: calorie
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.2390057361376673
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in calorie
-[SI] is the value in SI
-a = 1.0/Calorie, i.e., 0.2390057361376673
-and
-Calorie = 4.184 reference: https://en.wikipedia.org/wiki/Calorie
-
-- Examples: 
-``` dwis
-Calorie:Calorie_1
-Calorie_1.ConversionFactorB = "0.2390057361376673"
-Calorie_1.Symbol = "cal"
-```
-## Kilocalorie <!-- NOUN -->
-- Display name: kilocalorie
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.0002390057361376673
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in kilocalorie
-[SI] is the value in SI
-a = 1.0/(Kilo * Calorie), i.e., 0.0002390057361376673
-and
-Kilo = 1000.0
-Calorie = 4.184 reference: https://en.wikipedia.org/wiki/Calorie
-
-- Examples: 
-``` dwis
-Kilocalorie:Kilocalorie_1
-Kilocalorie_1.ConversionFactorB = "0.0002390057361376673"
-Kilocalorie_1.Symbol = "Cal"
-```
-## BritishThermalUnit <!-- NOUN -->
-- Display name: british thermal unit
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 0.0009484516526770049
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in british thermal unit
-[SI] is the value in SI
-a = 1.0/BTU, i.e., 0.0009484516526770049
-and
-BTU = 1054.35 reference: https://en.wikipedia.org/wiki/British_thermal_unit
-
-- Examples: 
-``` dwis
-BritishThermalUnit:BritishThermalUnit_1
-BritishThermalUnit_1.ConversionFactorB = "0.0009484516526770049"
-BritishThermalUnit_1.Symbol = "BTU"
-```
-## KiloBritishThermalUnit <!-- NOUN -->
-- Display name: kilo british thermal unit
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 9.484516526770048E-07
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in kilo british thermal unit
-[SI] is the value in SI
-a = 1.0/(Kilo * BTU), i.e., 9.484516526770048E-07
-and
-Kilo = 1000.0
-BTU = 1054.35 reference: https://en.wikipedia.org/wiki/British_thermal_unit
-
-- Examples: 
-``` dwis
-KiloBritishThermalUnit:KiloBritishThermalUnit_1
-KiloBritishThermalUnit_1.ConversionFactorB = "9.484516526770048E-07"
-KiloBritishThermalUnit_1.Symbol = "kBTU"
-```
-## MegaBritishThermalUnit <!-- NOUN -->
-- Display name: mega british thermal unit
-- Parent class: Unit
-- Specialization: 
-  - ConversionFactorB = 9.48451652677005E-10
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in mega british thermal unit
-[SI] is the value in SI
-a = 1.0/(Mega * BTU), i.e., 9.48451652677005E-10
-and
-Mega = 1e6
-BTU = 1054.35 reference: https://en.wikipedia.org/wiki/British_thermal_unit
-
-- Examples: 
-``` dwis
-MegaBritishThermalUnit:MegaBritishThermalUnit_1
-MegaBritishThermalUnit_1.ConversionFactorB = "9.48451652677005E-10"
-MegaBritishThermalUnit_1.Symbol = "MMBTU"
-```
 ## NewtonPerSecond <!-- NOUN -->
 - Display name: newton per second
 - Parent class: Unit
@@ -20159,4 +20404,131 @@ G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
 InchPoundPerHour:InchPoundPerHour_1
 InchPoundPerHour_1.ConversionFactorB = "31862.68484877787"
 InchPoundPerHour_1.Symbol = "in•lbf/h"
+```
+## MetresToTheFourthPower <!-- NOUN -->
+- Display name: metres to the fourth power
+- Parent class: Unit
+- Specialization: 
+- Description: 
+No conversion necessary as the unit choice is SI
+
+- Examples: 
+``` dwis
+MetresToTheFourthPower:MetresToTheFourthPower_1
+MetresToTheFourthPower_1.Symbol = "m⁴"
+```
+## CentimetresToTheFourthPower <!-- NOUN -->
+- Display name: centimetres to the fourth power
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 99999999.99999999
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in centimetres to the fourth power
+[SI] is the value in SI
+a = 1.0/(Centi*Centi*Centi*Centi), i.e., 99999999.99999999
+and
+Centi = 0.01
+
+- Examples: 
+``` dwis
+CentimetresToTheFourthPower:CentimetresToTheFourthPower_1
+CentimetresToTheFourthPower_1.ConversionFactorB = "99999999.99999999"
+CentimetresToTheFourthPower_1.Symbol = "cm⁴"
+```
+## InchesToTheFourthPower <!-- NOUN -->
+- Display name: inches to the fourth power
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 2402509.6100288304
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in inches to the fourth power
+[SI] is the value in SI
+a = 1.0/(Inch*Inch*Inch*Inch), i.e., 2402509.6100288304
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+InchesToTheFourthPower:InchesToTheFourthPower_1
+InchesToTheFourthPower_1.ConversionFactorB = "2402509.6100288304"
+InchesToTheFourthPower_1.Symbol = "in⁴"
+```
+## FeetToTheFourthPower <!-- NOUN -->
+- Display name: feet to the fourth power
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 115.86176745895213
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in feet to the fourth power
+[SI] is the value in SI
+a = 1.0/(Foot*Foot*Foot*Foot), i.e., 115.86176745895213
+and
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+
+- Examples: 
+``` dwis
+FeetToTheFourthPower:FeetToTheFourthPower_1
+FeetToTheFourthPower_1.ConversionFactorB = "115.86176745895213"
+FeetToTheFourthPower_1.Symbol = "ft⁴"
+```
+## KilogramMetreSquared <!-- NOUN -->
+- Display name: kilogram metre squared
+- Parent class: Unit
+- Specialization: 
+- Description: 
+No conversion necessary as the unit choice is SI
+
+- Examples: 
+``` dwis
+KilogramMetreSquared:KilogramMetreSquared_1
+KilogramMetreSquared_1.Symbol = "kg.m²"
+```
+## GramCentimetreSquared <!-- NOUN -->
+- Display name: gram centimetre squared
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 10000000
+- Description: 
+No conversion necessary as the unit choice is SI
+
+- Examples: 
+``` dwis
+GramCentimetreSquared:GramCentimetreSquared_1
+GramCentimetreSquared_1.ConversionFactorB = "10000000"
+GramCentimetreSquared_1.Symbol = "g.cm²"
+```
+## PoundFootSquared <!-- NOUN -->
+- Display name: pound foot squared
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 23.73036040423194
+- Description: 
+No conversion necessary as the unit choice is SI
+
+- Examples: 
+``` dwis
+PoundFootSquared:PoundFootSquared_1
+PoundFootSquared_1.ConversionFactorB = "23.73036040423194"
+PoundFootSquared_1.Symbol = "lb.ft²"
+```
+## PoundInchSquared <!-- NOUN -->
+- Display name: pound inch squared
+- Parent class: Unit
+- Specialization: 
+  - ConversionFactorB = 3417.171898209399
+- Description: 
+No conversion necessary as the unit choice is SI
+
+- Examples: 
+``` dwis
+PoundInchSquared:PoundInchSquared_1
+PoundInchSquared_1.ConversionFactorB = "3417.171898209399"
+PoundInchSquared_1.Symbol = "lb.in²"
 ```

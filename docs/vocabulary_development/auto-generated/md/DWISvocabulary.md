@@ -11636,6 +11636,48 @@ Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a
 - Display name: CavingsComponent
 - Parent class: [FormationSolidComponent](#FormationSolidComponent)
 - Definition set: Hydraulics
+## FluidInterface <!-- NOUN -->
+- Display name: Fluid Interface
+- Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+The interface between two fluids in a hydraulic system.
+- Definition set: Hydraulics
+## FluidType <!-- NOUN -->
+- Display name: Fluid Type
+- Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+A symbolic representation of the type of a fluid to be found in a hydraulic system.
+- Definition set: Hydraulics
+## Gas <!-- NOUN -->
+- Display name: Gas
+- Parent class: [FluidType](#FluidType)
+- Description: 
+A symbolic representation of gas when encountered in a hydraulic system.
+- Definition set: Hydraulics
+## Air <!-- NOUN -->
+- Display name: Air
+- Parent class: [Gas](#Gas)
+- Description: 
+A symbolic representation of air when encountered in a hydraulic system.
+- Definition set: Hydraulics
+## FormationGas <!-- NOUN -->
+- Display name: Formation Gas
+- Parent class: [Gas](#Gas)
+- Description: 
+A symbolic representation of formation gas when encountered in a hydraulic system.
+- Definition set: Hydraulics
+## Liquid <!-- NOUN -->
+- Display name: Liquid
+- Parent class: [FluidType](#FluidType)
+- Description: 
+A symbolic representation of liquid when encountered in a hydraulic system.
+- Definition set: Hydraulics
+## DrillingLiquid <!-- NOUN -->
+- Display name: Drilling Liquid
+- Parent class: [Liquid](#Liquid)
+- Description: 
+A symbolic representation of drilling liquid when encountered in a hydraulic system.
+- Definition set: Hydraulics
 - Examples:
   
 ## ConsistencyIndexRheologyQuantity <!-- NOUN -->
@@ -12848,122 +12890,6 @@ graph LR
 	N0002[EnergyDensityDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((EnergyDensityDrillingQuantity)) 
 	N0000[EnergyDensityDrilling_Signal] -->|HasUnitOfMeasure| N0005((JoulePerCubicMetre)) 
 ```
-## MassDensityRateOfChangeDrillingQuantity <!-- NOUN -->
-- Display name: MassDensityRateOfChangeDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 0.001
-- Description: 
-A mass density rate of change is the time derivative of a mass density: $\frac{d\rho}{dt}$, where $\rho$ is the mass density and $t$ is time.
-The dimension of mass density rate of change is:
-$$[MT^{-1}L^{-3}]$$.
-The SI unit for **mass density rate of change** is: kilogram per cubic metre per second with the associated unit label $\frac{\frac{kg}{m^{3}}}{s}$
-The meaningful precision of mass density rate of change in the drilling context is typically: 0.001 kg/m³/s
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:MassDensityRateOfChangeDrilling_Signal
-DrillingDataPoint:MassDensityRateOfChangeDrilling_DataPoint
-MassDensityRateOfChangeDrilling_DataPoint HasValue MassDensityRateOfChangeDrilling_Signal
-MassDensityRateOfChangeDrilling_DataPoint IsOfMeasurableQuantity MassDensityRateOfChangeDrillingQuantity
-MassDensityRateOfChangeDrilling_Signal HasUnitOfMeasure KilogramPerCubicMetrePerSecond
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[MassDensityRateOfChangeDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[MassDensityRateOfChangeDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[MassDensityRateOfChangeDrilling_DataPoint] -->|HasValue| N0000((MassDensityRateOfChangeDrilling_Signal)) 
-	N0002[MassDensityRateOfChangeDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((MassDensityRateOfChangeDrillingQuantity)) 
-	N0000[MassDensityRateOfChangeDrilling_Signal] -->|HasUnitOfMeasure| N0005((KilogramPerCubicMetrePerSecond)) 
-```
-## MassDensityGradientPerTemperatureDrillingQuantity <!-- NOUN -->
-- Display name: MassDensityGradientPerTemperatureDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 0.001
-- Description: 
-A mass density gradient per temperature is the first derivative of a mass density compared to temperature: $\frac{d\rho}{dT}$, where $\rho$ is a mass density and $T$ is temperature.
-The dimension of mass density gradient per temperature is:
-$$[MK^{-1}L^{-3}]$$.
-The SI unit for **mass density gradient per temperature** is: kilogram per cubic metre per kelvin with the associated unit label $\frac{\frac{kg}{m^{3}}}{K}$
-The meaningful precision of mass density gradient per temperature in the drilling context is typically: 0.001 kg/m³/K
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:MassDensityGradientPerTemperatureDrilling_Signal
-DrillingDataPoint:MassDensityGradientPerTemperatureDrilling_DataPoint
-MassDensityGradientPerTemperatureDrilling_DataPoint HasValue MassDensityGradientPerTemperatureDrilling_Signal
-MassDensityGradientPerTemperatureDrilling_DataPoint IsOfMeasurableQuantity MassDensityGradientPerTemperatureDrillingQuantity
-MassDensityGradientPerTemperatureDrilling_Signal HasUnitOfMeasure KilogramPerCubicMetrePerKelvin
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[MassDensityGradientPerTemperatureDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[MassDensityGradientPerTemperatureDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[MassDensityGradientPerTemperatureDrilling_DataPoint] -->|HasValue| N0000((MassDensityGradientPerTemperatureDrilling_Signal)) 
-	N0002[MassDensityGradientPerTemperatureDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((MassDensityGradientPerTemperatureDrillingQuantity)) 
-	N0000[MassDensityGradientPerTemperatureDrilling_Signal] -->|HasUnitOfMeasure| N0005((KilogramPerCubicMetrePerKelvin)) 
-```
-## MassDensityGradientPerLengthDrillingQuantity <!-- NOUN -->
-- Display name: MassDensityGradientPerLengthDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 0.001
-- Description: 
-A mass density gradient per length is the first derivative of a mass density compared to a distance: $\frac{d\rho}{ds}$, where $\rho$ is the mass density and $s$ is a distance.
-The dimension of mass density gradient per length is:
-$$[ML^{-4}]$$.
-The SI unit for **mass density gradient per length** is: kilogram per cubic metre per metre with the associated unit label $\frac{\frac{kg}{m^{3}}}{m}$
-The meaningful precision of mass density gradient per length in the drilling context is typically: 0.001 kg/m³/m
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:MassDensityGradientPerLengthDrilling_Signal
-DrillingDataPoint:MassDensityGradientPerLengthDrilling_DataPoint
-MassDensityGradientPerLengthDrilling_DataPoint HasValue MassDensityGradientPerLengthDrilling_Signal
-MassDensityGradientPerLengthDrilling_DataPoint IsOfMeasurableQuantity MassDensityGradientPerLengthDrillingQuantity
-MassDensityGradientPerLengthDrilling_Signal HasUnitOfMeasure KilogramPerCubicMetrePerMetre
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[MassDensityGradientPerLengthDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[MassDensityGradientPerLengthDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[MassDensityGradientPerLengthDrilling_DataPoint] -->|HasValue| N0000((MassDensityGradientPerLengthDrilling_Signal)) 
-	N0002[MassDensityGradientPerLengthDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((MassDensityGradientPerLengthDrillingQuantity)) 
-	N0000[MassDensityGradientPerLengthDrilling_Signal] -->|HasUnitOfMeasure| N0005((KilogramPerCubicMetrePerMetre)) 
-```
-## MassDensityDrillingQuantity <!-- NOUN -->
-- Display name: MassDensityDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 1
-- Description: 
-Mass density is the amount of mass per unit volume of a substance.
-The dimension of mass density is:
-$$[ML^{-3}]$$.
-The SI unit for **mass density** is: kilogram per cubic metre with the associated unit label $\frac{kg}{m^{3}}$
-The meaningful precision of mass density in the drilling context is typically: 1 kg/m³
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:MassDensityDrilling_Signal
-DrillingDataPoint:MassDensityDrilling_DataPoint
-MassDensityDrilling_DataPoint HasValue MassDensityDrilling_Signal
-MassDensityDrilling_DataPoint IsOfMeasurableQuantity MassDensityDrillingQuantity
-MassDensityDrilling_Signal HasUnitOfMeasure KilogramPerCubicMetre
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[MassDensityDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[MassDensityDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[MassDensityDrilling_DataPoint] -->|HasValue| N0000((MassDensityDrilling_Signal)) 
-	N0002[MassDensityDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((MassDensityDrillingQuantity)) 
-	N0000[MassDensityDrilling_Signal] -->|HasUnitOfMeasure| N0005((KilogramPerCubicMetre)) 
-```
 ## FluidVelocityDrillingQuantity <!-- NOUN -->
 - Display name: FluidVelocityDrilling
 - Parent class: [MeasurableQuantity](#MeasurableQuantity)
@@ -12992,35 +12918,6 @@ graph LR
 	N0002[FluidVelocityDrilling_DataPoint] -->|HasValue| N0000((FluidVelocityDrilling_Signal)) 
 	N0002[FluidVelocityDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((FluidVelocityDrillingQuantity)) 
 	N0000[FluidVelocityDrilling_Signal] -->|HasUnitOfMeasure| N0005((MetrePerSecond)) 
-```
-## ForceGradientPerLengthDrillingQuantity <!-- NOUN -->
-- Display name: ForceGradientPerLengthDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 1
-- Description: 
-A force gradient per length is the first derivative compared to a distance of a force: $\frac{dF}{ds}$ where $F$ is a force and $s$ is a distance.
-The dimension of force gradient per length is:
-$$[MT^{-2}]$$.
-The SI unit for **force gradient per length** is: newton per metre with the associated unit label $\frac{N}{m}$
-The meaningful precision of force gradient per length in the drilling context is typically: 1 N/m
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:ForceGradientPerLengthDrilling_Signal
-DrillingDataPoint:ForceGradientPerLengthDrilling_DataPoint
-ForceGradientPerLengthDrilling_DataPoint HasValue ForceGradientPerLengthDrilling_Signal
-ForceGradientPerLengthDrilling_DataPoint IsOfMeasurableQuantity ForceGradientPerLengthDrillingQuantity
-ForceGradientPerLengthDrilling_Signal HasUnitOfMeasure NewtonPerMetre
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[ForceGradientPerLengthDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[ForceGradientPerLengthDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[ForceGradientPerLengthDrilling_DataPoint] -->|HasValue| N0000((ForceGradientPerLengthDrilling_Signal)) 
-	N0002[ForceGradientPerLengthDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((ForceGradientPerLengthDrillingQuantity)) 
-	N0000[ForceGradientPerLengthDrilling_Signal] -->|HasUnitOfMeasure| N0005((NewtonPerMetre)) 
 ```
 ## ForceDrillingQuantity <!-- NOUN -->
 - Display name: ForceDrilling
@@ -13051,731 +12948,63 @@ graph LR
 	N0002[ForceDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((ForceDrillingQuantity)) 
 	N0000[ForceDrilling_Signal] -->|HasUnitOfMeasure| N0005((Newton)) 
 ```
-## HeatTransferCoefficientDrillingQuantity <!-- NOUN -->
-- Display name: HeatTransferCoefficientDrilling
+## ForceGradientPerLengthDrillingQuantity <!-- NOUN -->
+- Display name: ForceGradientPerLengthDrilling
 - Parent class: [MeasurableQuantity](#MeasurableQuantity)
 - Specialization:
-  - MeaningfulPrecision = 0.0001
+  - MeaningfulPrecision = 1
 - Description: 
-Heat transfer coefficient is a measure of the efficiency with which heat is transferred between a solid surface and a fluid (or between two fluids) per unit area and temperature difference.
-The dimension of heat transfer coefficient is:
-$$[MK^{-1}T^{-3}]$$.
-The SI unit for **heat transfer coefficient** is: watt per square metre per kelvin with the associated unit label $\frac{W}{m^{2} \cdot K}$
-The meaningful precision of heat transfer coefficient in the drilling context is typically: 0.0001 W/m²/K
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:HeatTransferCoefficientDrilling_Signal
-DrillingDataPoint:HeatTransferCoefficientDrilling_DataPoint
-HeatTransferCoefficientDrilling_DataPoint HasValue HeatTransferCoefficientDrilling_Signal
-HeatTransferCoefficientDrilling_DataPoint IsOfMeasurableQuantity HeatTransferCoefficientDrillingQuantity
-HeatTransferCoefficientDrilling_Signal HasUnitOfMeasure WattPerSquareMetrePerKelvin
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[HeatTransferCoefficientDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[HeatTransferCoefficientDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[HeatTransferCoefficientDrilling_DataPoint] -->|HasValue| N0000((HeatTransferCoefficientDrilling_Signal)) 
-	N0002[HeatTransferCoefficientDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((HeatTransferCoefficientDrillingQuantity)) 
-	N0000[HeatTransferCoefficientDrilling_Signal] -->|HasUnitOfMeasure| N0005((WattPerSquareMetrePerKelvin)) 
-```
-## HydraulicConductivityDrillingQuantity <!-- NOUN -->
-- Display name: HydraulicConductivityDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 0.001
-- Description: 
-A velocity is the time derivative of a position or a displacement: $\frac{dx}{dt}$, where $x$ is a position and $t$ is time.
-The dimension of velocity is:
-$$[LT^{-1}]$$.
-The SI unit for **velocity** is: metre per second with the associated unit label $\frac{m}{s}$
-The meaningful precision of hydraulic conductivity in the drilling context is typically: 0.001 m/s
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:HydraulicConductivityDrilling_Signal
-DrillingDataPoint:HydraulicConductivityDrilling_DataPoint
-HydraulicConductivityDrilling_DataPoint HasValue HydraulicConductivityDrilling_Signal
-HydraulicConductivityDrilling_DataPoint IsOfMeasurableQuantity HydraulicConductivityDrillingQuantity
-HydraulicConductivityDrilling_Signal HasUnitOfMeasure MetrePerSecond
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[HydraulicConductivityDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[HydraulicConductivityDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[HydraulicConductivityDrilling_DataPoint] -->|HasValue| N0000((HydraulicConductivityDrilling_Signal)) 
-	N0002[HydraulicConductivityDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((HydraulicConductivityDrillingQuantity)) 
-	N0000[HydraulicConductivityDrilling_Signal] -->|HasUnitOfMeasure| N0005((MetrePerSecond)) 
-```
-## InterfacialTensionDrillingQuantity <!-- NOUN -->
-- Display name: InterfacialTensionDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 0.0001
-- Description: 
-Interfacial tension is the force per unit length acting along the boundary between two immiscible liquids, resisting their mixing.
-The dimension of interfacial tension is:
+A force gradient per length is the first derivative compared to a distance of a force: $\frac{dF}{ds}$ where $F$ is a force and $s$ is a distance.
+The dimension of force gradient per length is:
 $$[MT^{-2}]$$.
-The SI unit for **interfacial tension** is: newton per metre with the associated unit label $\frac{N}{m}$
-The meaningful precision of interfacial tension in the drilling context is typically: 0.0001 N/m
+The SI unit for **force gradient per length** is: newton per metre with the associated unit label $\frac{N}{m}$
+The meaningful precision of force gradient per length in the drilling context is typically: 1 N/m
 - Definition set: MeasurableQuantityTypes
 - Examples:
 ``` dwis
-DrillingSignal:InterfacialTensionDrilling_Signal
-DrillingDataPoint:InterfacialTensionDrilling_DataPoint
-InterfacialTensionDrilling_DataPoint HasValue InterfacialTensionDrilling_Signal
-InterfacialTensionDrilling_DataPoint IsOfMeasurableQuantity InterfacialTensionDrillingQuantity
-InterfacialTensionDrilling_Signal HasUnitOfMeasure NewtonPerMetre
+DrillingSignal:ForceGradientPerLengthDrilling_Signal
+DrillingDataPoint:ForceGradientPerLengthDrilling_DataPoint
+ForceGradientPerLengthDrilling_DataPoint HasValue ForceGradientPerLengthDrilling_Signal
+ForceGradientPerLengthDrilling_DataPoint IsOfMeasurableQuantity ForceGradientPerLengthDrillingQuantity
+ForceGradientPerLengthDrilling_Signal HasUnitOfMeasure NewtonPerMetre
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[InterfacialTensionDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[InterfacialTensionDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[InterfacialTensionDrilling_DataPoint] -->|HasValue| N0000((InterfacialTensionDrilling_Signal)) 
-	N0002[InterfacialTensionDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((InterfacialTensionDrillingQuantity)) 
-	N0000[InterfacialTensionDrilling_Signal] -->|HasUnitOfMeasure| N0005((NewtonPerMetre)) 
+	N0000[ForceGradientPerLengthDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[ForceGradientPerLengthDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[ForceGradientPerLengthDrilling_DataPoint] -->|HasValue| N0000((ForceGradientPerLengthDrilling_Signal)) 
+	N0002[ForceGradientPerLengthDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((ForceGradientPerLengthDrillingQuantity)) 
+	N0000[ForceGradientPerLengthDrilling_Signal] -->|HasUnitOfMeasure| N0005((NewtonPerMetre)) 
 ```
-## MassGradientPerLengthDrillingQuantity <!-- NOUN -->
-- Display name: MassGradientPerLengthDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 0.05
-- Description: 
-A mass gradient per length is the first derivative of a mass compared to a distance: $\frac{dm}{ds}$, where $m$ is a mass and $s$ is a distance.
-The dimension of mass gradient per length is:
-$$[ML^{-1}]$$.
-The SI unit for **mass gradient per length** is: kilogram per metre with the associated unit label $\frac{kg}{m}$
-The meaningful precision of mass gradient per length in the drilling context is typically: 0.05 kg/m
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:MassGradientPerLengthDrilling_Signal
-DrillingDataPoint:MassGradientPerLengthDrilling_DataPoint
-MassGradientPerLengthDrilling_DataPoint HasValue MassGradientPerLengthDrilling_Signal
-MassGradientPerLengthDrilling_DataPoint IsOfMeasurableQuantity MassGradientPerLengthDrillingQuantity
-MassGradientPerLengthDrilling_Signal HasUnitOfMeasure KilogramPerMetre
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[MassGradientPerLengthDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[MassGradientPerLengthDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[MassGradientPerLengthDrilling_DataPoint] -->|HasValue| N0000((MassGradientPerLengthDrilling_Signal)) 
-	N0002[MassGradientPerLengthDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((MassGradientPerLengthDrillingQuantity)) 
-	N0000[MassGradientPerLengthDrilling_Signal] -->|HasUnitOfMeasure| N0005((KilogramPerMetre)) 
-```
-## MassDrillingQuantity <!-- NOUN -->
-- Display name: MassDrilling
+## ForceRateOfChangeDrillingQuantity <!-- NOUN -->
+- Display name: ForceRateOfChangeDrilling
 - Parent class: [MeasurableQuantity](#MeasurableQuantity)
 - Specialization:
   - MeaningfulPrecision = 0.1
 - Description: 
-Mass can be experimentally defined as a measure of the body's inertia, meaning the resistance to acceleration (change of velocity) when a net force is applied. The object's mass also determines the strength of its gravitational attraction to other bodies.
-The dimension of mass is:
-$$[M]$$.
-The SI unit for **mass** is: kilogram with the associated unit label $kg$
-The meaningful precision of mass density in the drilling context is typically: 0.1 kg
+A force rate of change is the time derivative of a force: $\frac{dF}{dt}$, where $F$ is the mass density and $t$ is time.
+The dimension of force rate of change is:
+$$[LMT^{-3}]$$.
+The SI unit for **force rate of change** is: Newton per second with the associated unit label $\frac{N}{s}$
+The meaningful precision of force rate of change in the drilling context is typically: 0.1 N/s
 - Definition set: MeasurableQuantityTypes
 - Examples:
 ``` dwis
-DrillingSignal:MassDrilling_Signal
-DrillingDataPoint:MassDrilling_DataPoint
-MassDrilling_DataPoint HasValue MassDrilling_Signal
-MassDrilling_DataPoint IsOfMeasurableQuantity MassDrillingQuantity
-MassDrilling_Signal HasUnitOfMeasure Kilogram
+DrillingSignal:ForceRateOfChangeDrilling_Signal
+DrillingDataPoint:ForceRateOfChangeDrilling_DataPoint
+ForceRateOfChangeDrilling_DataPoint HasValue ForceRateOfChangeDrilling_Signal
+ForceRateOfChangeDrilling_DataPoint IsOfMeasurableQuantity ForceRateOfChangeDrillingQuantity
+ForceRateOfChangeDrilling_Signal HasUnitOfMeasure NewtonPerSecond
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[MassDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[MassDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[MassDrilling_DataPoint] -->|HasValue| N0000((MassDrilling_Signal)) 
-	N0002[MassDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((MassDrillingQuantity)) 
-	N0000[MassDrilling_Signal] -->|HasUnitOfMeasure| N0005((Kilogram)) 
-```
-## MassRateDrillingQuantity <!-- NOUN -->
-- Display name: MassRateDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 0.0001
-- Description: 
-A mass rate is the time derivative of a mass: $\frac{dm}{dt}$, where $m$ is a mass and $t$ is time.
-The dimension of mass rate is:
-$$[MT^{-1}]$$.
-The SI unit for **mass rate** is: kilogram per second with the associated unit label $\frac{kg}{s}$
-The meaningful precision of mass rate in the drilling context is typically: 0.0001 kg/s
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:MassRateDrilling_Signal
-DrillingDataPoint:MassRateDrilling_DataPoint
-MassRateDrilling_DataPoint HasValue MassRateDrilling_Signal
-MassRateDrilling_DataPoint IsOfMeasurableQuantity MassRateDrillingQuantity
-MassRateDrilling_Signal HasUnitOfMeasure KilogramPerSecond
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[MassRateDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[MassRateDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[MassRateDrilling_DataPoint] -->|HasValue| N0000((MassRateDrilling_Signal)) 
-	N0002[MassRateDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((MassRateDrillingQuantity)) 
-	N0000[MassRateDrilling_Signal] -->|HasUnitOfMeasure| N0005((KilogramPerSecond)) 
-```
-## PlaneAngleDrillingQuantity <!-- NOUN -->
-- Display name: PlaneAngleDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 0.00017453292519943296
-- Description: 
-A plane angle is the angle formed between two intersecting lines or planes in a two-dimensional or three-dimensional space.
-The dimension of plane angle is:
-$$[{\theta}]$$.
-The SI unit for **plane angle** is: radian with the associated unit label $rad$
-The meaningful precision of plane angle in the drilling context is typically: 0.00017453292519943296 rad
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:PlaneAngleDrilling_Signal
-DrillingDataPoint:PlaneAngleDrilling_DataPoint
-PlaneAngleDrilling_DataPoint HasValue PlaneAngleDrilling_Signal
-PlaneAngleDrilling_DataPoint IsOfMeasurableQuantity PlaneAngleDrillingQuantity
-PlaneAngleDrilling_Signal HasUnitOfMeasure Radian
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PlaneAngleDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[PlaneAngleDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[PlaneAngleDrilling_DataPoint] -->|HasValue| N0000((PlaneAngleDrilling_Signal)) 
-	N0002[PlaneAngleDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((PlaneAngleDrillingQuantity)) 
-	N0000[PlaneAngleDrilling_Signal] -->|HasUnitOfMeasure| N0005((Radian)) 
-```
-## PowerDrillingQuantity <!-- NOUN -->
-- Display name: PowerDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 0.1
-- Description: 
-Power is the rate at which work is done or energy is transferred over time.
-The dimension of power is:
-$$[L^{2}MT^{-3}]$$.
-The SI unit for **power** is: watt with the associated unit label $W$
-The meaningful precision of power in the drilling context is typically: 0.1 W
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:PowerDrilling_Signal
-DrillingDataPoint:PowerDrilling_DataPoint
-PowerDrilling_DataPoint HasValue PowerDrilling_Signal
-PowerDrilling_DataPoint IsOfMeasurableQuantity PowerDrillingQuantity
-PowerDrilling_Signal HasUnitOfMeasure Watt
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PowerDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[PowerDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[PowerDrilling_DataPoint] -->|HasValue| N0000((PowerDrilling_Signal)) 
-	N0002[PowerDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((PowerDrillingQuantity)) 
-	N0000[PowerDrilling_Signal] -->|HasUnitOfMeasure| N0005((Watt)) 
-```
-## PressureGradientPerLengthDrillingQuantity <!-- NOUN -->
-- Display name: PressureGradientPerLengthDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 10000
-- Description: 
-A pressure gradient per length is the first derivative of a pressure compared to a distance: $\frac{dp}{ds}$, where $p$ is a pressure and $s$ is a distance.
-The dimension of pressure gradient per length is:
-$$[ML^{-2}T^{-2}]$$.
-The SI unit for **pressure gradient per length** is: pascal per metre with the associated unit label $\frac{Pa}{m}$
-The meaningful precision of pressure gradient per length in the drilling context is typically: 10000 Pa/m
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:PressureGradientPerLengthDrilling_Signal
-DrillingDataPoint:PressureGradientPerLengthDrilling_DataPoint
-PressureGradientPerLengthDrilling_DataPoint HasValue PressureGradientPerLengthDrilling_Signal
-PressureGradientPerLengthDrilling_DataPoint IsOfMeasurableQuantity PressureGradientPerLengthDrillingQuantity
-PressureGradientPerLengthDrilling_Signal HasUnitOfMeasure PascalPerMetre
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PressureGradientPerLengthDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[PressureGradientPerLengthDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[PressureGradientPerLengthDrilling_DataPoint] -->|HasValue| N0000((PressureGradientPerLengthDrilling_Signal)) 
-	N0002[PressureGradientPerLengthDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((PressureGradientPerLengthDrillingQuantity)) 
-	N0000[PressureGradientPerLengthDrilling_Signal] -->|HasUnitOfMeasure| N0005((PascalPerMetre)) 
-```
-## PressureLossConstantDrillingQuantity <!-- NOUN -->
-- Display name: PressureLossConstantDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 0.1
-- Description: 
-The pressure loss constant is a parameter used to quantify the resistance to flow in a system, such as a pipe or more complex tubulars, which leads to a reduction in pressure. It helps in calculating the pressure drop due to friction or other factors in fluid dynamics.
-The dimension of pressure loss constant is:
-$$[L^{4}]$$.
-The SI unit for **pressure loss constant** is: pressure loss constant SI with the associated unit label $(\frac{m^{3}}{s})^{2} \cdot \frac{(\frac{kg}{m^{3}})}{Pa}$
-The meaningful precision of pressure loss constant in the drilling context is typically: 0.1 (m³/s)²•(kg/m³)/Pa
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:PressureLossConstantDrilling_Signal
-DrillingDataPoint:PressureLossConstantDrilling_DataPoint
-PressureLossConstantDrilling_DataPoint HasValue PressureLossConstantDrilling_Signal
-PressureLossConstantDrilling_DataPoint IsOfMeasurableQuantity PressureLossConstantDrillingQuantity
-PressureLossConstantDrilling_Signal HasUnitOfMeasure PressureLossConstantSi
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PressureLossConstantDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[PressureLossConstantDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[PressureLossConstantDrilling_DataPoint] -->|HasValue| N0000((PressureLossConstantDrilling_Signal)) 
-	N0002[PressureLossConstantDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((PressureLossConstantDrillingQuantity)) 
-	N0000[PressureLossConstantDrilling_Signal] -->|HasUnitOfMeasure| N0005((PressureLossConstantSi)) 
-```
-## PressureDrillingQuantity <!-- NOUN -->
-- Display name: PressureDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 10000
-- Description: 
-Pressure is the force applied per unit area on a surface.
-The dimension of pressure is:
-$$[ML^{-1}T^{-2}]$$.
-The SI unit for **pressure** is: pascal with the associated unit label $Pa$
-The meaningful precision of pressure in the drilling context is typically: 10000 Pa
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:PressureDrilling_Signal
-DrillingDataPoint:PressureDrilling_DataPoint
-PressureDrilling_DataPoint HasValue PressureDrilling_Signal
-PressureDrilling_DataPoint IsOfMeasurableQuantity PressureDrillingQuantity
-PressureDrilling_Signal HasUnitOfMeasure Pascal
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PressureDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[PressureDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[PressureDrilling_DataPoint] -->|HasValue| N0000((PressureDrilling_Signal)) 
-	N0002[PressureDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((PressureDrillingQuantity)) 
-	N0000[PressureDrilling_Signal] -->|HasUnitOfMeasure| N0005((Pascal)) 
-```
-## RandomWalkDrillingQuantity <!-- NOUN -->
-- Display name: RandomWalkDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 1E-05
-- Description: 
-A random walk is a mathematical concept describing a path consisting of a series of random steps or movements, where each step's direction or magnitude is determined probabilistically. It is used to model various phenomena in fields like physics, finance, and computer science.
-The dimension of random walk is:
-$$[{\theta}T^{-0.5}]$$.
-The SI unit for **random walk** is: radian per square root second with the associated unit label $\frac{rad}{\sqrt{s}}$
-The meaningful precision of random walk in the drilling context is typically: 1E-05 rad/√s
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:RandomWalkDrilling_Signal
-DrillingDataPoint:RandomWalkDrilling_DataPoint
-RandomWalkDrilling_DataPoint HasValue RandomWalkDrilling_Signal
-RandomWalkDrilling_DataPoint IsOfMeasurableQuantity RandomWalkDrillingQuantity
-RandomWalkDrilling_Signal HasUnitOfMeasure RadianPerSquareRootSecond
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[RandomWalkDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[RandomWalkDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[RandomWalkDrilling_DataPoint] -->|HasValue| N0000((RandomWalkDrilling_Signal)) 
-	N0002[RandomWalkDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((RandomWalkDrillingQuantity)) 
-	N0000[RandomWalkDrilling_Signal] -->|HasUnitOfMeasure| N0005((RadianPerSquareRootSecond)) 
-```
-## RotationalFrequencyRateOfChangeDrillingQuantity <!-- NOUN -->
-- Display name: RotationalFrequencyRateOfChangeDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 0.016666666666666666
-- Description: 
-A frequency rate of change is the time derivative of a frequency: $\frac{df}{dt}$, where $f$ is a frequency and $t$ is time.
-The dimension of frequency rate of change is:
-$$[T^{-2}]$$.
-The SI unit for **frequency rate of change** is: hertz per second with the associated unit label $\frac{Hz}{s}$
-A rotation frequency rate of change is the time derivative of a rotation frequency.
-The meaningful precision of rotational frequency is typically: 0.016666666666666666 Hz/s
-The meaningful precision of rotational frequency rate of change in the drilling context is typically: 0.016666666666666666 Hz/s
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:RotationalFrequencyRateOfChangeDrilling_Signal
-DrillingDataPoint:RotationalFrequencyRateOfChangeDrilling_DataPoint
-RotationalFrequencyRateOfChangeDrilling_DataPoint HasValue RotationalFrequencyRateOfChangeDrilling_Signal
-RotationalFrequencyRateOfChangeDrilling_DataPoint IsOfMeasurableQuantity RotationalFrequencyRateOfChangeDrillingQuantity
-RotationalFrequencyRateOfChangeDrilling_Signal HasUnitOfMeasure HertzPerSecond
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[RotationalFrequencyRateOfChangeDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[RotationalFrequencyRateOfChangeDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[RotationalFrequencyRateOfChangeDrilling_DataPoint] -->|HasValue| N0000((RotationalFrequencyRateOfChangeDrilling_Signal)) 
-	N0002[RotationalFrequencyRateOfChangeDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((RotationalFrequencyRateOfChangeDrillingQuantity)) 
-	N0000[RotationalFrequencyRateOfChangeDrilling_Signal] -->|HasUnitOfMeasure| N0005((HertzPerSecond)) 
-```
-## IsobaricSpecificHeatCapacityDrillingQuantity <!-- NOUN -->
-- Display name: IsobaricSpecificHeatCapacityDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 0.01
-- Description: 
-Isobaric specific heat capacity is the amount of heat required to raise the temperature of one unit mass of a substance by one unit of temperature at constant pressure. It indicates how much heat energy a material can store.
-The dimension of specific heat capacity is:
-$$[L^{2}K^{-1}T^{-2}]$$.
-The SI unit for **isobaric specific heat capacity** is: joule per kilogram kelvin with the associated unit label $\frac{J}{kg \cdot K}$
-The meaningful precision of specific heat capacity in the drilling context is typically: 0.01 J/kg•K
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:IsobaricSpecificHeatCapacityDrilling_Signal
-DrillingDataPoint:IsobaricSpecificHeatCapacityDrilling_DataPoint
-IsobaricSpecificHeatCapacityDrilling_DataPoint HasValue IsobaricSpecificHeatCapacityDrilling_Signal
-IsobaricSpecificHeatCapacityDrilling_DataPoint IsOfMeasurableQuantity IsobaricSpecificHeatCapacityDrillingQuantity
-IsobaricSpecificHeatCapacityDrilling_Signal HasUnitOfMeasure JoulePerKilogramKelvin
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[IsobaricSpecificHeatCapacityDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[IsobaricSpecificHeatCapacityDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[IsobaricSpecificHeatCapacityDrilling_DataPoint] -->|HasValue| N0000((IsobaricSpecificHeatCapacityDrilling_Signal)) 
-	N0002[IsobaricSpecificHeatCapacityDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((IsobaricSpecificHeatCapacityDrillingQuantity)) 
-	N0000[IsobaricSpecificHeatCapacityDrilling_Signal] -->|HasUnitOfMeasure| N0005((JoulePerKilogramKelvin)) 
-```
-## IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity <!-- NOUN -->
-- Display name: IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 0.01
-- Description: 
-An isobaric specific heat capacity gradient per temperature is the first derivative of an isobaric specific heat capacity compared to temperature: $\frac{dC_p}{dT}$, where $C_p$ is a isobaric specific heat capacity and $T$ is a temperature.
-The dimension of specific heat capacity gradient per temperature is:
-$$[L^{2}T^{-2}K^{-2}]$$.
-The SI unit for **isobaric specific heat capacity gradient per temperature** is: joule per kilogram squared kelvin with the associated unit label $\frac{J}{kg \cdot K^{2}}$
-The meaningful precision of isobaric specific heat capacity gradient per temperature in the drilling context is typically: 0.01 J/kg•K²
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_Signal
-DrillingDataPoint:IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_DataPoint
-IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_DataPoint HasValue IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_Signal
-IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_DataPoint IsOfMeasurableQuantity IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity
-IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_Signal HasUnitOfMeasure JoulePerKilogramSquaredKelvin
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_DataPoint] -->|HasValue| N0000((IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_Signal)) 
-	N0002[IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity)) 
-	N0000[IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_Signal] -->|HasUnitOfMeasure| N0005((JoulePerKilogramSquaredKelvin)) 
-```
-## StickDurationDrillingQuantity <!-- NOUN -->
-- Display name: StickDurationDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 0.001
-- Description: 
-Time is a continuous, measurable progression in which events occur, from the past through the present to the future.
-The dimension of time is:
-$$[T]$$.
-The SI unit for **time** is: second with the associated unit label $s$
-The meaningful precision of stick duration in the drilling context is typically: 0.001 s
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:StickDurationDrilling_Signal
-DrillingDataPoint:StickDurationDrilling_DataPoint
-StickDurationDrilling_DataPoint HasValue StickDurationDrilling_Signal
-StickDurationDrilling_DataPoint IsOfMeasurableQuantity StickDurationDrillingQuantity
-StickDurationDrilling_Signal HasUnitOfMeasure Second
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[StickDurationDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[StickDurationDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[StickDurationDrilling_DataPoint] -->|HasValue| N0000((StickDurationDrilling_Signal)) 
-	N0002[StickDurationDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((StickDurationDrillingQuantity)) 
-	N0000[StickDurationDrilling_Signal] -->|HasUnitOfMeasure| N0005((Second)) 
-```
-## ReciprocalLengthSurveyInstrumentDrillingQuantity <!-- NOUN -->
-- Display name: ReciprocalLengthSurveyInstrumentDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 1E-08
-- Description: 
-A wave number is the number of wave lengths per unit distance.
-The dimension of wave number is:
-$$[L^{-1}]$$.
-The SI unit for **wave number** is: reciprocal metre with the associated unit label $\frac{1}{m}$
-The meaningful precision of reciprocal length related to survey instrument performance models in the drilling context is typically: 1E-08 1/m
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:ReciprocalLengthSurveyInstrumentDrilling_Signal
-DrillingDataPoint:ReciprocalLengthSurveyInstrumentDrilling_DataPoint
-ReciprocalLengthSurveyInstrumentDrilling_DataPoint HasValue ReciprocalLengthSurveyInstrumentDrilling_Signal
-ReciprocalLengthSurveyInstrumentDrilling_DataPoint IsOfMeasurableQuantity ReciprocalLengthSurveyInstrumentDrillingQuantity
-ReciprocalLengthSurveyInstrumentDrilling_Signal HasUnitOfMeasure ReciprocalMetre
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[ReciprocalLengthSurveyInstrumentDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[ReciprocalLengthSurveyInstrumentDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[ReciprocalLengthSurveyInstrumentDrilling_DataPoint] -->|HasValue| N0000((ReciprocalLengthSurveyInstrumentDrilling_Signal)) 
-	N0002[ReciprocalLengthSurveyInstrumentDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((ReciprocalLengthSurveyInstrumentDrillingQuantity)) 
-	N0000[ReciprocalLengthSurveyInstrumentDrilling_Signal] -->|HasUnitOfMeasure| N0005((ReciprocalMetre)) 
-```
-## TemperatureGradientPerLengthDrillingQuantity <!-- NOUN -->
-- Display name: TemperatureGradientPerLengthDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 0.001
-- Description: 
-A temperature gradient per lenth is the first derivative of a temperature compared to a distance: $\frac{dT}{ds}$, where $T$ is a temperature and $s$ is a distance.
-The dimension of temperature gradient per length is:
-$$[KL^{-1}]$$.
-The SI unit for **temperature gradient per length** is: kelvin per metre with the associated unit label $\frac{K}{m}$
-The meaningful precision of temperature gradient per length in the drilling context is typically: 0.001 K/m
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:TemperatureGradientPerLengthDrilling_Signal
-DrillingDataPoint:TemperatureGradientPerLengthDrilling_DataPoint
-TemperatureGradientPerLengthDrilling_DataPoint HasValue TemperatureGradientPerLengthDrilling_Signal
-TemperatureGradientPerLengthDrilling_DataPoint IsOfMeasurableQuantity TemperatureGradientPerLengthDrillingQuantity
-TemperatureGradientPerLengthDrilling_Signal HasUnitOfMeasure KelvinPerMetre
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[TemperatureGradientPerLengthDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[TemperatureGradientPerLengthDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[TemperatureGradientPerLengthDrilling_DataPoint] -->|HasValue| N0000((TemperatureGradientPerLengthDrilling_Signal)) 
-	N0002[TemperatureGradientPerLengthDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((TemperatureGradientPerLengthDrillingQuantity)) 
-	N0000[TemperatureGradientPerLengthDrilling_Signal] -->|HasUnitOfMeasure| N0005((KelvinPerMetre)) 
-```
-## TemperatureDrillingQuantity <!-- NOUN -->
-- Display name: TemperatureDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 0.01
-- Description: 
-Temperature is a measure of the average kinetic energy of particles in a substance, indicating how hot or cold the substance is.
-The dimension of temperature is:
-$$[K]$$.
-The SI unit for **temperature** is: kelvin with the associated unit label $K$
-The meaningful precision of temperature in the drilling context is typically: 0.01 K
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:TemperatureDrilling_Signal
-DrillingDataPoint:TemperatureDrilling_DataPoint
-TemperatureDrilling_DataPoint HasValue TemperatureDrilling_Signal
-TemperatureDrilling_DataPoint IsOfMeasurableQuantity TemperatureDrillingQuantity
-TemperatureDrilling_Signal HasUnitOfMeasure Kelvin
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[TemperatureDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[TemperatureDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[TemperatureDrilling_DataPoint] -->|HasValue| N0000((TemperatureDrilling_Signal)) 
-	N0002[TemperatureDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((TemperatureDrillingQuantity)) 
-	N0000[TemperatureDrilling_Signal] -->|HasUnitOfMeasure| N0005((Kelvin)) 
-```
-## TensionDrillingQuantity <!-- NOUN -->
-- Display name: TensionDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 100
-- Description: 
-Tension is the pulling or stretching force transmitted axially along an object such as a string, rope, chain, rod, truss member, or other object, so as to stretch or pull apart the object. In terms of force, it is the opposite of compression. Tension might also be described as the action-reaction pair of forces acting at each end of an object.
-The dimension of tension is:
-$$[LMT^{-2}]$$.
-The meaningful precision of tension in the drilling context is typically: 100 N
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:TensionDrilling_Signal
-DrillingDataPoint:TensionDrilling_DataPoint
-TensionDrilling_DataPoint HasValue TensionDrilling_Signal
-TensionDrilling_DataPoint IsOfMeasurableQuantity TensionDrillingQuantity
-TensionDrilling_Signal HasUnitOfMeasure Newton
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[TensionDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[TensionDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[TensionDrilling_DataPoint] -->|HasValue| N0000((TensionDrilling_Signal)) 
-	N0002[TensionDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((TensionDrillingQuantity)) 
-	N0000[TensionDrilling_Signal] -->|HasUnitOfMeasure| N0005((Newton)) 
-```
-## ThermalConductivityDrillingQuantity <!-- NOUN -->
-- Display name: ThermalConductivityDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 0.01
-- Description: 
-Thermal conductivity is a material's ability to conduct heat. It measures how efficiently heat is transferred through a material when there is a temperature difference.
-The dimension of thermal conductivity is:
-$$[LMK^{-1}T^{-3}]$$.
-The SI unit for **thermal conductivity** is: watt per metre kelvin with the associated unit label $\frac{W}{m \cdot K}$
-The meaningful precision of thermal conductivity in the drilling context is typically: 0.01 W/m•K
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:ThermalConductivityDrilling_Signal
-DrillingDataPoint:ThermalConductivityDrilling_DataPoint
-ThermalConductivityDrilling_DataPoint HasValue ThermalConductivityDrilling_Signal
-ThermalConductivityDrilling_DataPoint IsOfMeasurableQuantity ThermalConductivityDrillingQuantity
-ThermalConductivityDrilling_Signal HasUnitOfMeasure WattPerMetreKelvin
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[ThermalConductivityDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[ThermalConductivityDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[ThermalConductivityDrilling_DataPoint] -->|HasValue| N0000((ThermalConductivityDrilling_Signal)) 
-	N0002[ThermalConductivityDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((ThermalConductivityDrillingQuantity)) 
-	N0000[ThermalConductivityDrilling_Signal] -->|HasUnitOfMeasure| N0005((WattPerMetreKelvin)) 
-```
-## TorqueDrillingQuantity <!-- NOUN -->
-- Display name: TorqueDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 0.1
-- Description: 
-A torque is a measure of the rotational force applied to a body around an axis.
-The dimension of torque is:
-$$[L^{2}MT^{-2}]$$.
-The SI unit for **torque** is: newton metre with the associated unit label $N \cdot m$
-The meaningful precision of torque in the drilling context is typically: 0.1 N•m
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:TorqueDrilling_Signal
-DrillingDataPoint:TorqueDrilling_DataPoint
-TorqueDrilling_DataPoint HasValue TorqueDrilling_Signal
-TorqueDrilling_DataPoint IsOfMeasurableQuantity TorqueDrillingQuantity
-TorqueDrilling_Signal HasUnitOfMeasure NewtonMetre
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[TorqueDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[TorqueDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[TorqueDrilling_DataPoint] -->|HasValue| N0000((TorqueDrilling_Signal)) 
-	N0002[TorqueDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((TorqueDrillingQuantity)) 
-	N0000[TorqueDrilling_Signal] -->|HasUnitOfMeasure| N0005((NewtonMetre)) 
-```
-## VolumeDrillingQuantity <!-- NOUN -->
-- Display name: VolumeDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 0.0001
-- Description: 
-A volume is the amount of three-dimensional space occupied by a body.
-The dimension of volume is:
-$$[L^{3}]$$.
-The SI unit for **volume** is: cubic metre with the associated unit label $m^{3}$
-The meaningful precision of volume in the drilling context is typically: 0.0001 m³
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:VolumeDrilling_Signal
-DrillingDataPoint:VolumeDrilling_DataPoint
-VolumeDrilling_DataPoint HasValue VolumeDrilling_Signal
-VolumeDrilling_DataPoint IsOfMeasurableQuantity VolumeDrillingQuantity
-VolumeDrilling_Signal HasUnitOfMeasure CubicMetre
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[VolumeDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[VolumeDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[VolumeDrilling_DataPoint] -->|HasValue| N0000((VolumeDrilling_Signal)) 
-	N0002[VolumeDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((VolumeDrillingQuantity)) 
-	N0000[VolumeDrilling_Signal] -->|HasUnitOfMeasure| N0005((CubicMetre)) 
-```
-## VolumetricFlowRateOfChangeDrillingQuantity <!-- NOUN -->
-- Display name: VolumetricFlowRateOfChangeDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 1E-06
-- Description: 
-A volumetric flow rate of change is the time derivative of a volumetric flowrate: $\frac{dQ}{dt}$, where $Q$ is a volumetric flowrate and $t$ is time.
-The dimension of volumetric flow rate of change is:
-$$[L^{3}T^{-2}]$$.
-The SI unit for **volumetric flow Rate rate of change** is: cubic metre per second squared with the associated unit label $\frac{m^{3}}{s^{2}}$
-The meaningful precision of volumetric flow rate of change in the drilling context is typically: 1E-06 m³/s²
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:VolumetricFlowRateOfChangeDrilling_Signal
-DrillingDataPoint:VolumetricFlowRateOfChangeDrilling_DataPoint
-VolumetricFlowRateOfChangeDrilling_DataPoint HasValue VolumetricFlowRateOfChangeDrilling_Signal
-VolumetricFlowRateOfChangeDrilling_DataPoint IsOfMeasurableQuantity VolumetricFlowRateOfChangeDrillingQuantity
-VolumetricFlowRateOfChangeDrilling_Signal HasUnitOfMeasure CubicMetrePerSecondSquared
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[VolumetricFlowRateOfChangeDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[VolumetricFlowRateOfChangeDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[VolumetricFlowRateOfChangeDrilling_DataPoint] -->|HasValue| N0000((VolumetricFlowRateOfChangeDrilling_Signal)) 
-	N0002[VolumetricFlowRateOfChangeDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((VolumetricFlowRateOfChangeDrillingQuantity)) 
-	N0000[VolumetricFlowRateOfChangeDrilling_Signal] -->|HasUnitOfMeasure| N0005((CubicMetrePerSecondSquared)) 
-```
-## VolumetricFlowrateDrillingQuantity <!-- NOUN -->
-- Display name: VolumetricFlowrateDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 0.0001
-- Description: 
-A volumetric flowrate is the volume of fluid that passes per unit time: $\frac{dV}{dt}$, where $V$ is a volume and $t$ is time.
-The dimension of volumetric flowrate is:
-$$[L^{3}T^{-1}]$$.
-The SI unit for **volumetric flow rate** is: cubic metre per second with the associated unit label $\frac{m^{3}}{s}$
-The meaningful precision of volumetric flowrate in the drilling context is typically: 0.0001 ft³/s
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:VolumetricFlowrateDrilling_Signal
-DrillingDataPoint:VolumetricFlowrateDrilling_DataPoint
-VolumetricFlowrateDrilling_DataPoint HasValue VolumetricFlowrateDrilling_Signal
-VolumetricFlowrateDrilling_DataPoint IsOfMeasurableQuantity VolumetricFlowrateDrillingQuantity
-VolumetricFlowrateDrilling_Signal HasUnitOfMeasure CubicMetrePerSecond
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[VolumetricFlowrateDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[VolumetricFlowrateDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[VolumetricFlowrateDrilling_DataPoint] -->|HasValue| N0000((VolumetricFlowrateDrilling_Signal)) 
-	N0002[VolumetricFlowrateDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((VolumetricFlowrateDrillingQuantity)) 
-	N0000[VolumetricFlowrateDrilling_Signal] -->|HasUnitOfMeasure| N0005((CubicMetrePerSecond)) 
+	N0000[ForceRateOfChangeDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[ForceRateOfChangeDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[ForceRateOfChangeDrilling_DataPoint] -->|HasValue| N0000((ForceRateOfChangeDrilling_Signal)) 
+	N0002[ForceRateOfChangeDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((ForceRateOfChangeDrillingQuantity)) 
+	N0000[ForceRateOfChangeDrilling_Signal] -->|HasUnitOfMeasure| N0005((NewtonPerSecond)) 
 ```
 ## FormationResistivityDrillingQuantity <!-- NOUN -->
 - Display name: FormationResistivityDrilling
@@ -13918,6 +13147,35 @@ graph LR
 	N0002[GasVolumetricFlowRateDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((GasVolumetricFlowRateDrillingQuantity)) 
 	N0000[GasVolumetricFlowRateDrilling_Signal] -->|HasUnitOfMeasure| N0005((CubicMetrePerSecond)) 
 ```
+## HeatTransferCoefficientDrillingQuantity <!-- NOUN -->
+- Display name: HeatTransferCoefficientDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.0001
+- Description: 
+Heat transfer coefficient is a measure of the efficiency with which heat is transferred between a solid surface and a fluid (or between two fluids) per unit area and temperature difference.
+The dimension of heat transfer coefficient is:
+$$[MK^{-1}T^{-3}]$$.
+The SI unit for **heat transfer coefficient** is: watt per square metre per kelvin with the associated unit label $\frac{W}{m^{2} \cdot K}$
+The meaningful precision of heat transfer coefficient in the drilling context is typically: 0.0001 W/m²/K
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:HeatTransferCoefficientDrilling_Signal
+DrillingDataPoint:HeatTransferCoefficientDrilling_DataPoint
+HeatTransferCoefficientDrilling_DataPoint HasValue HeatTransferCoefficientDrilling_Signal
+HeatTransferCoefficientDrilling_DataPoint IsOfMeasurableQuantity HeatTransferCoefficientDrillingQuantity
+HeatTransferCoefficientDrilling_Signal HasUnitOfMeasure WattPerSquareMetrePerKelvin
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[HeatTransferCoefficientDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[HeatTransferCoefficientDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[HeatTransferCoefficientDrilling_DataPoint] -->|HasValue| N0000((HeatTransferCoefficientDrilling_Signal)) 
+	N0002[HeatTransferCoefficientDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((HeatTransferCoefficientDrillingQuantity)) 
+	N0000[HeatTransferCoefficientDrilling_Signal] -->|HasUnitOfMeasure| N0005((WattPerSquareMetrePerKelvin)) 
+```
 ## HeightDrillingQuantity <!-- NOUN -->
 - Display name: HeightDrilling
 - Parent class: [MeasurableQuantity](#MeasurableQuantity)
@@ -13951,13 +13209,13 @@ graph LR
 - Display name: HookLoadDrilling
 - Parent class: [MeasurableQuantity](#MeasurableQuantity)
 - Specialization:
-  - MeaningfulPrecision = 100
+  - MeaningfulPrecision = 1000
 - Description: 
-Mass can be experimentally defined as a measure of the body's inertia, meaning the resistance to acceleration (change of velocity) when a net force is applied. The object's mass also determines the strength of its gravitational attraction to other bodies.
-The dimension of mass is:
-$$[M]$$.
-The SI unit for **mass** is: kilogram with the associated unit label $kg$
-The meaningful precision of hook load in the drilling context is typically: 100 kg
+A force is an influence that can cause an object to change its velocity unless counterbalanced by other forces.
+The dimension of force is:
+$$[LMT^{-2}]$$.
+The SI unit for **force** is: newton with the associated unit label $N$
+The meaningful precision of hook load in the drilling context is typically: 1000 N
 - Definition set: MeasurableQuantityTypes
 - Examples:
 ``` dwis
@@ -13965,7 +13223,7 @@ DrillingSignal:HookLoadDrilling_Signal
 DrillingDataPoint:HookLoadDrilling_DataPoint
 HookLoadDrilling_DataPoint HasValue HookLoadDrilling_Signal
 HookLoadDrilling_DataPoint IsOfMeasurableQuantity HookLoadDrillingQuantity
-HookLoadDrilling_Signal HasUnitOfMeasure Kilogram
+HookLoadDrilling_Signal HasUnitOfMeasure Newton
 ```
 An example semantic graph looks like as follow:
 ```mermaid
@@ -13974,7 +13232,326 @@ graph LR
 	N0002[HookLoadDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
 	N0002[HookLoadDrilling_DataPoint] -->|HasValue| N0000((HookLoadDrilling_Signal)) 
 	N0002[HookLoadDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((HookLoadDrillingQuantity)) 
-	N0000[HookLoadDrilling_Signal] -->|HasUnitOfMeasure| N0005((Kilogram)) 
+	N0000[HookLoadDrilling_Signal] -->|HasUnitOfMeasure| N0005((Newton)) 
+```
+## HydraulicConductivityDrillingQuantity <!-- NOUN -->
+- Display name: HydraulicConductivityDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.001
+- Description: 
+A velocity is the time derivative of a position or a displacement: $\frac{dx}{dt}$, where $x$ is a position and $t$ is time.
+The dimension of velocity is:
+$$[LT^{-1}]$$.
+The SI unit for **velocity** is: metre per second with the associated unit label $\frac{m}{s}$
+The meaningful precision of hydraulic conductivity in the drilling context is typically: 0.001 m/s
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:HydraulicConductivityDrilling_Signal
+DrillingDataPoint:HydraulicConductivityDrilling_DataPoint
+HydraulicConductivityDrilling_DataPoint HasValue HydraulicConductivityDrilling_Signal
+HydraulicConductivityDrilling_DataPoint IsOfMeasurableQuantity HydraulicConductivityDrillingQuantity
+HydraulicConductivityDrilling_Signal HasUnitOfMeasure MetrePerSecond
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[HydraulicConductivityDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[HydraulicConductivityDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[HydraulicConductivityDrilling_DataPoint] -->|HasValue| N0000((HydraulicConductivityDrilling_Signal)) 
+	N0002[HydraulicConductivityDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((HydraulicConductivityDrillingQuantity)) 
+	N0000[HydraulicConductivityDrilling_Signal] -->|HasUnitOfMeasure| N0005((MetrePerSecond)) 
+```
+## InterfacialTensionDrillingQuantity <!-- NOUN -->
+- Display name: InterfacialTensionDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.0001
+- Description: 
+Interfacial tension is the force per unit length acting along the boundary between two immiscible liquids, resisting their mixing.
+The dimension of interfacial tension is:
+$$[MT^{-2}]$$.
+The SI unit for **interfacial tension** is: newton per metre with the associated unit label $\frac{N}{m}$
+The meaningful precision of interfacial tension in the drilling context is typically: 0.0001 N/m
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:InterfacialTensionDrilling_Signal
+DrillingDataPoint:InterfacialTensionDrilling_DataPoint
+InterfacialTensionDrilling_DataPoint HasValue InterfacialTensionDrilling_Signal
+InterfacialTensionDrilling_DataPoint IsOfMeasurableQuantity InterfacialTensionDrillingQuantity
+InterfacialTensionDrilling_Signal HasUnitOfMeasure NewtonPerMetre
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[InterfacialTensionDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[InterfacialTensionDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[InterfacialTensionDrilling_DataPoint] -->|HasValue| N0000((InterfacialTensionDrilling_Signal)) 
+	N0002[InterfacialTensionDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((InterfacialTensionDrillingQuantity)) 
+	N0000[InterfacialTensionDrilling_Signal] -->|HasUnitOfMeasure| N0005((NewtonPerMetre)) 
+```
+## IsobaricSpecificHeatCapacityDrillingQuantity <!-- NOUN -->
+- Display name: IsobaricSpecificHeatCapacityDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.01
+- Description: 
+Isobaric specific heat capacity is the amount of heat required to raise the temperature of one unit mass of a substance by one unit of temperature at constant pressure. It indicates how much heat energy a material can store.
+The dimension of specific heat capacity is:
+$$[L^{2}K^{-1}T^{-2}]$$.
+The SI unit for **isobaric specific heat capacity** is: joule per kilogram kelvin with the associated unit label $\frac{J}{kg \cdot K}$
+The meaningful precision of specific heat capacity in the drilling context is typically: 0.01 J/kg•K
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:IsobaricSpecificHeatCapacityDrilling_Signal
+DrillingDataPoint:IsobaricSpecificHeatCapacityDrilling_DataPoint
+IsobaricSpecificHeatCapacityDrilling_DataPoint HasValue IsobaricSpecificHeatCapacityDrilling_Signal
+IsobaricSpecificHeatCapacityDrilling_DataPoint IsOfMeasurableQuantity IsobaricSpecificHeatCapacityDrillingQuantity
+IsobaricSpecificHeatCapacityDrilling_Signal HasUnitOfMeasure JoulePerKilogramKelvin
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[IsobaricSpecificHeatCapacityDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[IsobaricSpecificHeatCapacityDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[IsobaricSpecificHeatCapacityDrilling_DataPoint] -->|HasValue| N0000((IsobaricSpecificHeatCapacityDrilling_Signal)) 
+	N0002[IsobaricSpecificHeatCapacityDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((IsobaricSpecificHeatCapacityDrillingQuantity)) 
+	N0000[IsobaricSpecificHeatCapacityDrilling_Signal] -->|HasUnitOfMeasure| N0005((JoulePerKilogramKelvin)) 
+```
+## IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity <!-- NOUN -->
+- Display name: IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.01
+- Description: 
+An isobaric specific heat capacity gradient per temperature is the first derivative of an isobaric specific heat capacity compared to temperature: $\frac{dC_p}{dT}$, where $C_p$ is a isobaric specific heat capacity and $T$ is a temperature.
+The dimension of specific heat capacity gradient per temperature is:
+$$[L^{2}T^{-2}K^{-2}]$$.
+The SI unit for **isobaric specific heat capacity gradient per temperature** is: joule per kilogram squared kelvin with the associated unit label $\frac{J}{kg \cdot K^{2}}$
+The meaningful precision of isobaric specific heat capacity gradient per temperature in the drilling context is typically: 0.01 J/kg•K²
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_Signal
+DrillingDataPoint:IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_DataPoint
+IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_DataPoint HasValue IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_Signal
+IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_DataPoint IsOfMeasurableQuantity IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity
+IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_Signal HasUnitOfMeasure JoulePerKilogramSquaredKelvin
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_DataPoint] -->|HasValue| N0000((IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_Signal)) 
+	N0002[IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity)) 
+	N0000[IsobaricSpecificHeatCapacityGradientPerTemperatureDrilling_Signal] -->|HasUnitOfMeasure| N0005((JoulePerKilogramSquaredKelvin)) 
+```
+## MassDensityDrillingQuantity <!-- NOUN -->
+- Display name: MassDensityDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1
+- Description: 
+Mass density is the amount of mass per unit volume of a substance.
+The dimension of mass density is:
+$$[ML^{-3}]$$.
+The SI unit for **mass density** is: kilogram per cubic metre with the associated unit label $\frac{kg}{m^{3}}$
+The meaningful precision of mass density in the drilling context is typically: 1 kg/m³
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:MassDensityDrilling_Signal
+DrillingDataPoint:MassDensityDrilling_DataPoint
+MassDensityDrilling_DataPoint HasValue MassDensityDrilling_Signal
+MassDensityDrilling_DataPoint IsOfMeasurableQuantity MassDensityDrillingQuantity
+MassDensityDrilling_Signal HasUnitOfMeasure KilogramPerCubicMetre
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MassDensityDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[MassDensityDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[MassDensityDrilling_DataPoint] -->|HasValue| N0000((MassDensityDrilling_Signal)) 
+	N0002[MassDensityDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((MassDensityDrillingQuantity)) 
+	N0000[MassDensityDrilling_Signal] -->|HasUnitOfMeasure| N0005((KilogramPerCubicMetre)) 
+```
+## MassDensityGradientPerLengthDrillingQuantity <!-- NOUN -->
+- Display name: MassDensityGradientPerLengthDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.001
+- Description: 
+A mass density gradient per length is the first derivative of a mass density compared to a distance: $\frac{d\rho}{ds}$, where $\rho$ is the mass density and $s$ is a distance.
+The dimension of mass density gradient per length is:
+$$[ML^{-4}]$$.
+The SI unit for **mass density gradient per length** is: kilogram per cubic metre per metre with the associated unit label $\frac{\frac{kg}{m^{3}}}{m}$
+The meaningful precision of mass density gradient per length in the drilling context is typically: 0.001 kg/m³/m
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:MassDensityGradientPerLengthDrilling_Signal
+DrillingDataPoint:MassDensityGradientPerLengthDrilling_DataPoint
+MassDensityGradientPerLengthDrilling_DataPoint HasValue MassDensityGradientPerLengthDrilling_Signal
+MassDensityGradientPerLengthDrilling_DataPoint IsOfMeasurableQuantity MassDensityGradientPerLengthDrillingQuantity
+MassDensityGradientPerLengthDrilling_Signal HasUnitOfMeasure KilogramPerCubicMetrePerMetre
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MassDensityGradientPerLengthDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[MassDensityGradientPerLengthDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[MassDensityGradientPerLengthDrilling_DataPoint] -->|HasValue| N0000((MassDensityGradientPerLengthDrilling_Signal)) 
+	N0002[MassDensityGradientPerLengthDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((MassDensityGradientPerLengthDrillingQuantity)) 
+	N0000[MassDensityGradientPerLengthDrilling_Signal] -->|HasUnitOfMeasure| N0005((KilogramPerCubicMetrePerMetre)) 
+```
+## MassDensityGradientPerTemperatureDrillingQuantity <!-- NOUN -->
+- Display name: MassDensityGradientPerTemperatureDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.001
+- Description: 
+A mass density gradient per temperature is the first derivative of a mass density compared to temperature: $\frac{d\rho}{dT}$, where $\rho$ is a mass density and $T$ is temperature.
+The dimension of mass density gradient per temperature is:
+$$[MK^{-1}L^{-3}]$$.
+The SI unit for **mass density gradient per temperature** is: kilogram per cubic metre per kelvin with the associated unit label $\frac{\frac{kg}{m^{3}}}{K}$
+The meaningful precision of mass density gradient per temperature in the drilling context is typically: 0.001 kg/m³/K
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:MassDensityGradientPerTemperatureDrilling_Signal
+DrillingDataPoint:MassDensityGradientPerTemperatureDrilling_DataPoint
+MassDensityGradientPerTemperatureDrilling_DataPoint HasValue MassDensityGradientPerTemperatureDrilling_Signal
+MassDensityGradientPerTemperatureDrilling_DataPoint IsOfMeasurableQuantity MassDensityGradientPerTemperatureDrillingQuantity
+MassDensityGradientPerTemperatureDrilling_Signal HasUnitOfMeasure KilogramPerCubicMetrePerKelvin
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MassDensityGradientPerTemperatureDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[MassDensityGradientPerTemperatureDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[MassDensityGradientPerTemperatureDrilling_DataPoint] -->|HasValue| N0000((MassDensityGradientPerTemperatureDrilling_Signal)) 
+	N0002[MassDensityGradientPerTemperatureDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((MassDensityGradientPerTemperatureDrillingQuantity)) 
+	N0000[MassDensityGradientPerTemperatureDrilling_Signal] -->|HasUnitOfMeasure| N0005((KilogramPerCubicMetrePerKelvin)) 
+```
+## MassDensityRateOfChangeDrillingQuantity <!-- NOUN -->
+- Display name: MassDensityRateOfChangeDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.001
+- Description: 
+A mass density rate of change is the time derivative of a mass density: $\frac{d\rho}{dt}$, where $\rho$ is the mass density and $t$ is time.
+The dimension of mass density rate of change is:
+$$[MT^{-1}L^{-3}]$$.
+The SI unit for **mass density rate of change** is: kilogram per cubic metre per second with the associated unit label $\frac{\frac{kg}{m^{3}}}{s}$
+The meaningful precision of mass density rate of change in the drilling context is typically: 0.001 kg/m³/s
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:MassDensityRateOfChangeDrilling_Signal
+DrillingDataPoint:MassDensityRateOfChangeDrilling_DataPoint
+MassDensityRateOfChangeDrilling_DataPoint HasValue MassDensityRateOfChangeDrilling_Signal
+MassDensityRateOfChangeDrilling_DataPoint IsOfMeasurableQuantity MassDensityRateOfChangeDrillingQuantity
+MassDensityRateOfChangeDrilling_Signal HasUnitOfMeasure KilogramPerCubicMetrePerSecond
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MassDensityRateOfChangeDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[MassDensityRateOfChangeDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[MassDensityRateOfChangeDrilling_DataPoint] -->|HasValue| N0000((MassDensityRateOfChangeDrilling_Signal)) 
+	N0002[MassDensityRateOfChangeDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((MassDensityRateOfChangeDrillingQuantity)) 
+	N0000[MassDensityRateOfChangeDrilling_Signal] -->|HasUnitOfMeasure| N0005((KilogramPerCubicMetrePerSecond)) 
+```
+## MassDrillingQuantity <!-- NOUN -->
+- Display name: MassDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.1
+- Description: 
+Mass can be experimentally defined as a measure of the body's inertia, meaning the resistance to acceleration (change of velocity) when a net force is applied. The object's mass also determines the strength of its gravitational attraction to other bodies.
+The dimension of mass is:
+$$[M]$$.
+The SI unit for **mass** is: kilogram with the associated unit label $kg$
+The meaningful precision of mass density in the drilling context is typically: 0.1 kg
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:MassDrilling_Signal
+DrillingDataPoint:MassDrilling_DataPoint
+MassDrilling_DataPoint HasValue MassDrilling_Signal
+MassDrilling_DataPoint IsOfMeasurableQuantity MassDrillingQuantity
+MassDrilling_Signal HasUnitOfMeasure Kilogram
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MassDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[MassDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[MassDrilling_DataPoint] -->|HasValue| N0000((MassDrilling_Signal)) 
+	N0002[MassDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((MassDrillingQuantity)) 
+	N0000[MassDrilling_Signal] -->|HasUnitOfMeasure| N0005((Kilogram)) 
+```
+## MassGradientPerLengthDrillingQuantity <!-- NOUN -->
+- Display name: MassGradientPerLengthDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.05
+- Description: 
+A mass gradient per length is the first derivative of a mass compared to a distance: $\frac{dm}{ds}$, where $m$ is a mass and $s$ is a distance.
+The dimension of mass gradient per length is:
+$$[ML^{-1}]$$.
+The SI unit for **mass gradient per length** is: kilogram per metre with the associated unit label $\frac{kg}{m}$
+The meaningful precision of mass gradient per length in the drilling context is typically: 0.05 kg/m
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:MassGradientPerLengthDrilling_Signal
+DrillingDataPoint:MassGradientPerLengthDrilling_DataPoint
+MassGradientPerLengthDrilling_DataPoint HasValue MassGradientPerLengthDrilling_Signal
+MassGradientPerLengthDrilling_DataPoint IsOfMeasurableQuantity MassGradientPerLengthDrillingQuantity
+MassGradientPerLengthDrilling_Signal HasUnitOfMeasure KilogramPerMetre
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MassGradientPerLengthDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[MassGradientPerLengthDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[MassGradientPerLengthDrilling_DataPoint] -->|HasValue| N0000((MassGradientPerLengthDrilling_Signal)) 
+	N0002[MassGradientPerLengthDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((MassGradientPerLengthDrillingQuantity)) 
+	N0000[MassGradientPerLengthDrilling_Signal] -->|HasUnitOfMeasure| N0005((KilogramPerMetre)) 
+```
+## MassRateDrillingQuantity <!-- NOUN -->
+- Display name: MassRateDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.0001
+- Description: 
+A mass rate is the time derivative of a mass: $\frac{dm}{dt}$, where $m$ is a mass and $t$ is time.
+The dimension of mass rate is:
+$$[MT^{-1}]$$.
+The SI unit for **mass rate** is: kilogram per second with the associated unit label $\frac{kg}{s}$
+The meaningful precision of mass rate in the drilling context is typically: 0.0001 kg/s
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:MassRateDrilling_Signal
+DrillingDataPoint:MassRateDrilling_DataPoint
+MassRateDrilling_DataPoint HasValue MassRateDrilling_Signal
+MassRateDrilling_DataPoint IsOfMeasurableQuantity MassRateDrillingQuantity
+MassRateDrilling_Signal HasUnitOfMeasure KilogramPerSecond
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MassRateDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[MassRateDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[MassRateDrilling_DataPoint] -->|HasValue| N0000((MassRateDrilling_Signal)) 
+	N0002[MassRateDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((MassRateDrillingQuantity)) 
+	N0000[MassRateDrilling_Signal] -->|HasUnitOfMeasure| N0005((KilogramPerSecond)) 
 ```
 ## NozzleDiameterDrillingQuantity <!-- NOUN -->
 - Display name: NozzleDiameterDrilling
@@ -14006,179 +13583,34 @@ graph LR
 	N0002[NozzleDiameterDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((NozzleDiameterDrillingQuantity)) 
 	N0000[NozzleDiameterDrilling_Signal] -->|HasUnitOfMeasure| N0005((Metre)) 
 ```
-## SurfacePoreDrillingQuantity <!-- NOUN -->
-- Display name: SurfacePoreDrilling
+## PlaneAngleDrillingQuantity <!-- NOUN -->
+- Display name: PlaneAngleDrilling
 - Parent class: [MeasurableQuantity](#MeasurableQuantity)
 - Specialization:
-  - MeaningfulPrecision = 1E-13
+  - MeaningfulPrecision = 0.00017453292519943296
 - Description: 
-Area is the measure of the extent of a surface or the size of a two-dimensional shape.
-The dimension of area is:
-$$[L^{2}]$$.
-The SI unit for **area** is: square metre with the associated unit label $m^{2}$
-The meaningful precision of pore surface in the drilling context is typically: 1E-13 m²
+A plane angle is the angle formed between two intersecting lines or planes in a two-dimensional or three-dimensional space.
+The dimension of plane angle is:
+$$[{\theta}]$$.
+The SI unit for **plane angle** is: radian with the associated unit label $rad$
+The meaningful precision of plane angle in the drilling context is typically: 0.00017453292519943296 rad
 - Definition set: MeasurableQuantityTypes
 - Examples:
 ``` dwis
-DrillingSignal:SurfacePoreDrilling_Signal
-DrillingDataPoint:SurfacePoreDrilling_DataPoint
-SurfacePoreDrilling_DataPoint HasValue SurfacePoreDrilling_Signal
-SurfacePoreDrilling_DataPoint IsOfMeasurableQuantity SurfacePoreDrillingQuantity
-SurfacePoreDrilling_Signal HasUnitOfMeasure SquareMetre
+DrillingSignal:PlaneAngleDrilling_Signal
+DrillingDataPoint:PlaneAngleDrilling_DataPoint
+PlaneAngleDrilling_DataPoint HasValue PlaneAngleDrilling_Signal
+PlaneAngleDrilling_DataPoint IsOfMeasurableQuantity PlaneAngleDrillingQuantity
+PlaneAngleDrilling_Signal HasUnitOfMeasure Radian
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[SurfacePoreDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[SurfacePoreDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[SurfacePoreDrilling_DataPoint] -->|HasValue| N0000((SurfacePoreDrilling_Signal)) 
-	N0002[SurfacePoreDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((SurfacePoreDrillingQuantity)) 
-	N0000[SurfacePoreDrilling_Signal] -->|HasUnitOfMeasure| N0005((SquareMetre)) 
-```
-## PositionDrillingQuantity <!-- NOUN -->
-- Display name: PositionDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 0.01
-- Description: 
-Length is a measure of distance.
-The dimension of length is:
-$$[L]$$.
-The SI unit for **length** is: metre with the associated unit label $m$
-The meaningful precision of position in the drilling context is typically: 0.01 m
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:PositionDrilling_Signal
-DrillingDataPoint:PositionDrilling_DataPoint
-PositionDrilling_DataPoint HasValue PositionDrilling_Signal
-PositionDrilling_DataPoint IsOfMeasurableQuantity PositionDrillingQuantity
-PositionDrilling_Signal HasUnitOfMeasure Metre
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PositionDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[PositionDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[PositionDrilling_DataPoint] -->|HasValue| N0000((PositionDrilling_Signal)) 
-	N0002[PositionDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((PositionDrillingQuantity)) 
-	N0000[PositionDrilling_Signal] -->|HasUnitOfMeasure| N0005((Metre)) 
-```
-## RateOfPenetrationDrillingQuantity <!-- NOUN -->
-- Display name: RateOfPenetrationDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 2.77778E-05
-- Description: 
-A velocity is the time derivative of a position or a displacement: $\frac{dx}{dt}$, where $x$ is a position and $t$ is time.
-The dimension of velocity is:
-$$[LT^{-1}]$$.
-The SI unit for **velocity** is: metre per second with the associated unit label $\frac{m}{s}$
-The meaningful precision of rate of penetration in the drilling context is typically: 2.77778E-05 m/min
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:RateOfPenetrationDrilling_Signal
-DrillingDataPoint:RateOfPenetrationDrilling_DataPoint
-RateOfPenetrationDrilling_DataPoint HasValue RateOfPenetrationDrilling_Signal
-RateOfPenetrationDrilling_DataPoint IsOfMeasurableQuantity RateOfPenetrationDrillingQuantity
-RateOfPenetrationDrilling_Signal HasUnitOfMeasure MetrePerSecond
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[RateOfPenetrationDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[RateOfPenetrationDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[RateOfPenetrationDrilling_DataPoint] -->|HasValue| N0000((RateOfPenetrationDrilling_Signal)) 
-	N0002[RateOfPenetrationDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((RateOfPenetrationDrillingQuantity)) 
-	N0000[RateOfPenetrationDrilling_Signal] -->|HasUnitOfMeasure| N0005((MetrePerSecond)) 
-```
-## WeightOnBitDrillingQuantity <!-- NOUN -->
-- Display name: WeightOnBitDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 10
-- Description: 
-Mass can be experimentally defined as a measure of the body's inertia, meaning the resistance to acceleration (change of velocity) when a net force is applied. The object's mass also determines the strength of its gravitational attraction to other bodies.
-The dimension of mass is:
-$$[M]$$.
-The SI unit for **mass** is: kilogram with the associated unit label $kg$
-The meaningful precision of weight on bit in the drilling context is typically: 10 kg
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:WeightOnBitDrilling_Signal
-DrillingDataPoint:WeightOnBitDrilling_DataPoint
-WeightOnBitDrilling_DataPoint HasValue WeightOnBitDrilling_Signal
-WeightOnBitDrilling_DataPoint IsOfMeasurableQuantity WeightOnBitDrillingQuantity
-WeightOnBitDrilling_Signal HasUnitOfMeasure Kilogram
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[WeightOnBitDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[WeightOnBitDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[WeightOnBitDrilling_DataPoint] -->|HasValue| N0000((WeightOnBitDrilling_Signal)) 
-	N0002[WeightOnBitDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((WeightOnBitDrillingQuantity)) 
-	N0000[WeightOnBitDrilling_Signal] -->|HasUnitOfMeasure| N0005((Kilogram)) 
-```
-## ThermalConductivityGradientPerTemperatureDrillingQuantity <!-- NOUN -->
-- Display name: ThermalConductivityGradientPerTemperatureDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 0.01
-- Description: 
-A thermal conductivity gradient per temperature is the first derivative of a thermal conductivity compared to temperature: $\frac{dk}{dT}$, where $k$ is a thermal conductivity and $T$ is temperature. 
-The dimension of thermal conductivity gradient per temperature is:
-$$[LMK^{-2}T^{-3}]$$.
-The SI unit for **thermal conductivity gradient per temperature** is: watt per metre kelvin per kelvin with the associated unit label $\frac{(\frac{W}{(m \cdot K)}}{K}$
-The meaningful precision of thermal conductivity gradient per temperature in the drilling context is typically: 0.01 (W/(m•K))/K
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:ThermalConductivityGradientPerTemperatureDrilling_Signal
-DrillingDataPoint:ThermalConductivityGradientPerTemperatureDrilling_DataPoint
-ThermalConductivityGradientPerTemperatureDrilling_DataPoint HasValue ThermalConductivityGradientPerTemperatureDrilling_Signal
-ThermalConductivityGradientPerTemperatureDrilling_DataPoint IsOfMeasurableQuantity ThermalConductivityGradientPerTemperatureDrillingQuantity
-ThermalConductivityGradientPerTemperatureDrilling_Signal HasUnitOfMeasure WattPerMetreKelvinPerKelvin
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[ThermalConductivityGradientPerTemperatureDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[ThermalConductivityGradientPerTemperatureDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[ThermalConductivityGradientPerTemperatureDrilling_DataPoint] -->|HasValue| N0000((ThermalConductivityGradientPerTemperatureDrilling_Signal)) 
-	N0002[ThermalConductivityGradientPerTemperatureDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((ThermalConductivityGradientPerTemperatureDrillingQuantity)) 
-	N0000[ThermalConductivityGradientPerTemperatureDrilling_Signal] -->|HasUnitOfMeasure| N0005((WattPerMetreKelvinPerKelvin)) 
-```
-## TorqueGradientPerLengthDrillingQuantity <!-- NOUN -->
-- Display name: TorqueGradientPerLengthDrilling
-- Parent class: [MeasurableQuantity](#MeasurableQuantity)
-- Specialization:
-  - MeaningfulPrecision = 1
-- Description: 
-A torque gradient per length is the first derivative of torque compared to a distance: $\frac{d\tau}{ds}$, where $\tau$ is a torque and $s$ is a distance.
-The dimension of torque gradient per length is:
-$$[LMT^{-2}]$$.
-The SI unit for **torque gradient per length** is: newton metre per metre with the associated unit label $\frac{N \cdot m}{m}$
-The meaningful precision of torque gradient per length in the drilling context is typically: 1 N•m/m
-- Definition set: MeasurableQuantityTypes
-- Examples:
-``` dwis
-DrillingSignal:TorqueGradientPerLengthDrilling_Signal
-DrillingDataPoint:TorqueGradientPerLengthDrilling_DataPoint
-TorqueGradientPerLengthDrilling_DataPoint HasValue TorqueGradientPerLengthDrilling_Signal
-TorqueGradientPerLengthDrilling_DataPoint IsOfMeasurableQuantity TorqueGradientPerLengthDrillingQuantity
-TorqueGradientPerLengthDrilling_Signal HasUnitOfMeasure NewtonMetrePerMetre
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[TorqueGradientPerLengthDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[TorqueGradientPerLengthDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[TorqueGradientPerLengthDrilling_DataPoint] -->|HasValue| N0000((TorqueGradientPerLengthDrilling_Signal)) 
-	N0002[TorqueGradientPerLengthDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((TorqueGradientPerLengthDrillingQuantity)) 
-	N0000[TorqueGradientPerLengthDrilling_Signal] -->|HasUnitOfMeasure| N0005((NewtonMetrePerMetre)) 
+	N0000[PlaneAngleDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[PlaneAngleDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[PlaneAngleDrilling_DataPoint] -->|HasValue| N0000((PlaneAngleDrilling_Signal)) 
+	N0002[PlaneAngleDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((PlaneAngleDrillingQuantity)) 
+	N0000[PlaneAngleDrilling_Signal] -->|HasUnitOfMeasure| N0005((Radian)) 
 ```
 ## PorousMediumPermeabilityDrillingQuantity <!-- NOUN -->
 - Display name: PorousMediumPermeabilityDrilling
@@ -14209,34 +13641,150 @@ graph LR
 	N0002[PorousMediumPermeabilityDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((PorousMediumPermeabilityDrillingQuantity)) 
 	N0000[PorousMediumPermeabilityDrilling_Signal] -->|HasUnitOfMeasure| N0005((SquareMetre)) 
 ```
-## ForceRateOfChangeDrillingQuantity <!-- NOUN -->
-- Display name: ForceRateOfChangeDrilling
+## PositionDrillingQuantity <!-- NOUN -->
+- Display name: PositionDrilling
 - Parent class: [MeasurableQuantity](#MeasurableQuantity)
 - Specialization:
-  - MeaningfulPrecision = 0.1
+  - MeaningfulPrecision = 0.01
 - Description: 
-A force rate of change is the time derivative of a force: $\frac{dF}{dt}$, where $F$ is the mass density and $t$ is time.
-The dimension of force rate of change is:
-$$[LMT^{-3}]$$.
-The SI unit for **force rate of change** is: Newton per second with the associated unit label $\frac{N}{s}$
-The meaningful precision of force rate of change in the drilling context is typically: 0.1 N/s
+Length is a measure of distance.
+The dimension of length is:
+$$[L]$$.
+The SI unit for **length** is: metre with the associated unit label $m$
+The meaningful precision of position in the drilling context is typically: 0.01 m
 - Definition set: MeasurableQuantityTypes
 - Examples:
 ``` dwis
-DrillingSignal:ForceRateOfChangeDrilling_Signal
-DrillingDataPoint:ForceRateOfChangeDrilling_DataPoint
-ForceRateOfChangeDrilling_DataPoint HasValue ForceRateOfChangeDrilling_Signal
-ForceRateOfChangeDrilling_DataPoint IsOfMeasurableQuantity ForceRateOfChangeDrillingQuantity
-ForceRateOfChangeDrilling_Signal HasUnitOfMeasure NewtonPerSecond
+DrillingSignal:PositionDrilling_Signal
+DrillingDataPoint:PositionDrilling_DataPoint
+PositionDrilling_DataPoint HasValue PositionDrilling_Signal
+PositionDrilling_DataPoint IsOfMeasurableQuantity PositionDrillingQuantity
+PositionDrilling_Signal HasUnitOfMeasure Metre
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ForceRateOfChangeDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
-	N0002[ForceRateOfChangeDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
-	N0002[ForceRateOfChangeDrilling_DataPoint] -->|HasValue| N0000((ForceRateOfChangeDrilling_Signal)) 
-	N0002[ForceRateOfChangeDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((ForceRateOfChangeDrillingQuantity)) 
-	N0000[ForceRateOfChangeDrilling_Signal] -->|HasUnitOfMeasure| N0005((NewtonPerSecond)) 
+	N0000[PositionDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[PositionDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[PositionDrilling_DataPoint] -->|HasValue| N0000((PositionDrilling_Signal)) 
+	N0002[PositionDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((PositionDrillingQuantity)) 
+	N0000[PositionDrilling_Signal] -->|HasUnitOfMeasure| N0005((Metre)) 
+```
+## PowerDrillingQuantity <!-- NOUN -->
+- Display name: PowerDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.1
+- Description: 
+Power is the rate at which work is done or energy is transferred over time.
+The dimension of power is:
+$$[L^{2}MT^{-3}]$$.
+The SI unit for **power** is: watt with the associated unit label $W$
+The meaningful precision of power in the drilling context is typically: 0.1 W
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:PowerDrilling_Signal
+DrillingDataPoint:PowerDrilling_DataPoint
+PowerDrilling_DataPoint HasValue PowerDrilling_Signal
+PowerDrilling_DataPoint IsOfMeasurableQuantity PowerDrillingQuantity
+PowerDrilling_Signal HasUnitOfMeasure Watt
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PowerDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[PowerDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[PowerDrilling_DataPoint] -->|HasValue| N0000((PowerDrilling_Signal)) 
+	N0002[PowerDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((PowerDrillingQuantity)) 
+	N0000[PowerDrilling_Signal] -->|HasUnitOfMeasure| N0005((Watt)) 
+```
+## PressureDrillingQuantity <!-- NOUN -->
+- Display name: PressureDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 10000
+- Description: 
+Pressure is the force applied per unit area on a surface.
+The dimension of pressure is:
+$$[ML^{-1}T^{-2}]$$.
+The SI unit for **pressure** is: pascal with the associated unit label $Pa$
+The meaningful precision of pressure in the drilling context is typically: 10000 Pa
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:PressureDrilling_Signal
+DrillingDataPoint:PressureDrilling_DataPoint
+PressureDrilling_DataPoint HasValue PressureDrilling_Signal
+PressureDrilling_DataPoint IsOfMeasurableQuantity PressureDrillingQuantity
+PressureDrilling_Signal HasUnitOfMeasure Pascal
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PressureDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[PressureDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[PressureDrilling_DataPoint] -->|HasValue| N0000((PressureDrilling_Signal)) 
+	N0002[PressureDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((PressureDrillingQuantity)) 
+	N0000[PressureDrilling_Signal] -->|HasUnitOfMeasure| N0005((Pascal)) 
+```
+## PressureGradientPerLengthDrillingQuantity <!-- NOUN -->
+- Display name: PressureGradientPerLengthDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 10000
+- Description: 
+A pressure gradient per length is the first derivative of a pressure compared to a distance: $\frac{dp}{ds}$, where $p$ is a pressure and $s$ is a distance.
+The dimension of pressure gradient per length is:
+$$[ML^{-2}T^{-2}]$$.
+The SI unit for **pressure gradient per length** is: pascal per metre with the associated unit label $\frac{Pa}{m}$
+The meaningful precision of pressure gradient per length in the drilling context is typically: 10000 Pa/m
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:PressureGradientPerLengthDrilling_Signal
+DrillingDataPoint:PressureGradientPerLengthDrilling_DataPoint
+PressureGradientPerLengthDrilling_DataPoint HasValue PressureGradientPerLengthDrilling_Signal
+PressureGradientPerLengthDrilling_DataPoint IsOfMeasurableQuantity PressureGradientPerLengthDrillingQuantity
+PressureGradientPerLengthDrilling_Signal HasUnitOfMeasure PascalPerMetre
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PressureGradientPerLengthDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[PressureGradientPerLengthDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[PressureGradientPerLengthDrilling_DataPoint] -->|HasValue| N0000((PressureGradientPerLengthDrilling_Signal)) 
+	N0002[PressureGradientPerLengthDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((PressureGradientPerLengthDrillingQuantity)) 
+	N0000[PressureGradientPerLengthDrilling_Signal] -->|HasUnitOfMeasure| N0005((PascalPerMetre)) 
+```
+## PressureLossConstantDrillingQuantity <!-- NOUN -->
+- Display name: PressureLossConstantDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.1
+- Description: 
+The pressure loss constant is a parameter used to quantify the resistance to flow in a system, such as a pipe or more complex tubulars, which leads to a reduction in pressure. It helps in calculating the pressure drop due to friction or other factors in fluid dynamics.
+The dimension of pressure loss constant is:
+$$[L^{4}]$$.
+The SI unit for **pressure loss constant** is: pressure loss constant SI with the associated unit label $(\frac{m^{3}}{s})^{2} \cdot \frac{(\frac{kg}{m^{3}})}{Pa}$
+The meaningful precision of pressure loss constant in the drilling context is typically: 0.1 (m³/s)²•(kg/m³)/Pa
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:PressureLossConstantDrilling_Signal
+DrillingDataPoint:PressureLossConstantDrilling_DataPoint
+PressureLossConstantDrilling_DataPoint HasValue PressureLossConstantDrilling_Signal
+PressureLossConstantDrilling_DataPoint IsOfMeasurableQuantity PressureLossConstantDrillingQuantity
+PressureLossConstantDrilling_Signal HasUnitOfMeasure PressureLossConstantSi
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PressureLossConstantDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[PressureLossConstantDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[PressureLossConstantDrilling_DataPoint] -->|HasValue| N0000((PressureLossConstantDrilling_Signal)) 
+	N0002[PressureLossConstantDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((PressureLossConstantDrillingQuantity)) 
+	N0000[PressureLossConstantDrilling_Signal] -->|HasUnitOfMeasure| N0005((PressureLossConstantSi)) 
 ```
 ## PressureRateOfChangeDrillingQuantity <!-- NOUN -->
 - Display name: PressureRateOfChangeDrilling
@@ -14267,6 +13815,384 @@ graph LR
 	N0002[PressureRateOfChangeDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((PressureRateOfChangeDrillingQuantity)) 
 	N0000[PressureRateOfChangeDrilling_Signal] -->|HasUnitOfMeasure| N0005((PascalPerSecond)) 
 ```
+## RandomWalkDrillingQuantity <!-- NOUN -->
+- Display name: RandomWalkDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-05
+- Description: 
+A random walk is a mathematical concept describing a path consisting of a series of random steps or movements, where each step's direction or magnitude is determined probabilistically. It is used to model various phenomena in fields like physics, finance, and computer science.
+The dimension of random walk is:
+$$[{\theta}T^{-0.5}]$$.
+The SI unit for **random walk** is: radian per square root second with the associated unit label $\frac{rad}{\sqrt{s}}$
+The meaningful precision of random walk in the drilling context is typically: 1E-05 rad/√s
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:RandomWalkDrilling_Signal
+DrillingDataPoint:RandomWalkDrilling_DataPoint
+RandomWalkDrilling_DataPoint HasValue RandomWalkDrilling_Signal
+RandomWalkDrilling_DataPoint IsOfMeasurableQuantity RandomWalkDrillingQuantity
+RandomWalkDrilling_Signal HasUnitOfMeasure RadianPerSquareRootSecond
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[RandomWalkDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[RandomWalkDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[RandomWalkDrilling_DataPoint] -->|HasValue| N0000((RandomWalkDrilling_Signal)) 
+	N0002[RandomWalkDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((RandomWalkDrillingQuantity)) 
+	N0000[RandomWalkDrilling_Signal] -->|HasUnitOfMeasure| N0005((RadianPerSquareRootSecond)) 
+```
+## RateOfPenetrationDrillingQuantity <!-- NOUN -->
+- Display name: RateOfPenetrationDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 2.77778E-05
+- Description: 
+A velocity is the time derivative of a position or a displacement: $\frac{dx}{dt}$, where $x$ is a position and $t$ is time.
+The dimension of velocity is:
+$$[LT^{-1}]$$.
+The SI unit for **velocity** is: metre per second with the associated unit label $\frac{m}{s}$
+The meaningful precision of rate of penetration in the drilling context is typically: 2.77778E-05 m/min
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:RateOfPenetrationDrilling_Signal
+DrillingDataPoint:RateOfPenetrationDrilling_DataPoint
+RateOfPenetrationDrilling_DataPoint HasValue RateOfPenetrationDrilling_Signal
+RateOfPenetrationDrilling_DataPoint IsOfMeasurableQuantity RateOfPenetrationDrillingQuantity
+RateOfPenetrationDrilling_Signal HasUnitOfMeasure MetrePerSecond
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[RateOfPenetrationDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[RateOfPenetrationDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[RateOfPenetrationDrilling_DataPoint] -->|HasValue| N0000((RateOfPenetrationDrilling_Signal)) 
+	N0002[RateOfPenetrationDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((RateOfPenetrationDrillingQuantity)) 
+	N0000[RateOfPenetrationDrilling_Signal] -->|HasUnitOfMeasure| N0005((MetrePerSecond)) 
+```
+## ReciprocalLengthSurveyInstrumentDrillingQuantity <!-- NOUN -->
+- Display name: ReciprocalLengthSurveyInstrumentDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-08
+- Description: 
+A wave number is the number of wave lengths per unit distance.
+The dimension of wave number is:
+$$[L^{-1}]$$.
+The SI unit for **wave number** is: reciprocal metre with the associated unit label $\frac{1}{m}$
+The meaningful precision of reciprocal length related to survey instrument performance models in the drilling context is typically: 1E-08 1/m
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:ReciprocalLengthSurveyInstrumentDrilling_Signal
+DrillingDataPoint:ReciprocalLengthSurveyInstrumentDrilling_DataPoint
+ReciprocalLengthSurveyInstrumentDrilling_DataPoint HasValue ReciprocalLengthSurveyInstrumentDrilling_Signal
+ReciprocalLengthSurveyInstrumentDrilling_DataPoint IsOfMeasurableQuantity ReciprocalLengthSurveyInstrumentDrillingQuantity
+ReciprocalLengthSurveyInstrumentDrilling_Signal HasUnitOfMeasure ReciprocalMetre
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ReciprocalLengthSurveyInstrumentDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[ReciprocalLengthSurveyInstrumentDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[ReciprocalLengthSurveyInstrumentDrilling_DataPoint] -->|HasValue| N0000((ReciprocalLengthSurveyInstrumentDrilling_Signal)) 
+	N0002[ReciprocalLengthSurveyInstrumentDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((ReciprocalLengthSurveyInstrumentDrillingQuantity)) 
+	N0000[ReciprocalLengthSurveyInstrumentDrilling_Signal] -->|HasUnitOfMeasure| N0005((ReciprocalMetre)) 
+```
+## RotationalFrequencyRateOfChangeDrillingQuantity <!-- NOUN -->
+- Display name: RotationalFrequencyRateOfChangeDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.016666666666666666
+- Description: 
+A frequency rate of change is the time derivative of a frequency: $\frac{df}{dt}$, where $f$ is a frequency and $t$ is time.
+The dimension of frequency rate of change is:
+$$[T^{-2}]$$.
+The SI unit for **frequency rate of change** is: hertz per second with the associated unit label $\frac{Hz}{s}$
+A rotation frequency rate of change is the time derivative of a rotation frequency.
+The meaningful precision of rotational frequency is typically: 0.016666666666666666 Hz/s
+The meaningful precision of rotational frequency rate of change in the drilling context is typically: 0.016666666666666666 Hz/s
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:RotationalFrequencyRateOfChangeDrilling_Signal
+DrillingDataPoint:RotationalFrequencyRateOfChangeDrilling_DataPoint
+RotationalFrequencyRateOfChangeDrilling_DataPoint HasValue RotationalFrequencyRateOfChangeDrilling_Signal
+RotationalFrequencyRateOfChangeDrilling_DataPoint IsOfMeasurableQuantity RotationalFrequencyRateOfChangeDrillingQuantity
+RotationalFrequencyRateOfChangeDrilling_Signal HasUnitOfMeasure HertzPerSecond
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[RotationalFrequencyRateOfChangeDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[RotationalFrequencyRateOfChangeDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[RotationalFrequencyRateOfChangeDrilling_DataPoint] -->|HasValue| N0000((RotationalFrequencyRateOfChangeDrilling_Signal)) 
+	N0002[RotationalFrequencyRateOfChangeDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((RotationalFrequencyRateOfChangeDrillingQuantity)) 
+	N0000[RotationalFrequencyRateOfChangeDrilling_Signal] -->|HasUnitOfMeasure| N0005((HertzPerSecond)) 
+```
+## StickDurationDrillingQuantity <!-- NOUN -->
+- Display name: StickDurationDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.001
+- Description: 
+Time is a continuous, measurable progression in which events occur, from the past through the present to the future.
+The dimension of time is:
+$$[T]$$.
+The SI unit for **time** is: second with the associated unit label $s$
+The meaningful precision of stick duration in the drilling context is typically: 0.001 s
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:StickDurationDrilling_Signal
+DrillingDataPoint:StickDurationDrilling_DataPoint
+StickDurationDrilling_DataPoint HasValue StickDurationDrilling_Signal
+StickDurationDrilling_DataPoint IsOfMeasurableQuantity StickDurationDrillingQuantity
+StickDurationDrilling_Signal HasUnitOfMeasure Second
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[StickDurationDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[StickDurationDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[StickDurationDrilling_DataPoint] -->|HasValue| N0000((StickDurationDrilling_Signal)) 
+	N0002[StickDurationDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((StickDurationDrillingQuantity)) 
+	N0000[StickDurationDrilling_Signal] -->|HasUnitOfMeasure| N0005((Second)) 
+```
+## SurfacePoreDrillingQuantity <!-- NOUN -->
+- Display name: SurfacePoreDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-13
+- Description: 
+Area is the measure of the extent of a surface or the size of a two-dimensional shape.
+The dimension of area is:
+$$[L^{2}]$$.
+The SI unit for **area** is: square metre with the associated unit label $m^{2}$
+The meaningful precision of pore surface in the drilling context is typically: 1E-13 m²
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:SurfacePoreDrilling_Signal
+DrillingDataPoint:SurfacePoreDrilling_DataPoint
+SurfacePoreDrilling_DataPoint HasValue SurfacePoreDrilling_Signal
+SurfacePoreDrilling_DataPoint IsOfMeasurableQuantity SurfacePoreDrillingQuantity
+SurfacePoreDrilling_Signal HasUnitOfMeasure SquareMetre
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SurfacePoreDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[SurfacePoreDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[SurfacePoreDrilling_DataPoint] -->|HasValue| N0000((SurfacePoreDrilling_Signal)) 
+	N0002[SurfacePoreDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((SurfacePoreDrillingQuantity)) 
+	N0000[SurfacePoreDrilling_Signal] -->|HasUnitOfMeasure| N0005((SquareMetre)) 
+```
+## TemperatureDrillingQuantity <!-- NOUN -->
+- Display name: TemperatureDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.01
+- Description: 
+Temperature is a measure of the average kinetic energy of particles in a substance, indicating how hot or cold the substance is.
+The dimension of temperature is:
+$$[K]$$.
+The SI unit for **temperature** is: kelvin with the associated unit label $K$
+The meaningful precision of temperature in the drilling context is typically: 0.01 K
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:TemperatureDrilling_Signal
+DrillingDataPoint:TemperatureDrilling_DataPoint
+TemperatureDrilling_DataPoint HasValue TemperatureDrilling_Signal
+TemperatureDrilling_DataPoint IsOfMeasurableQuantity TemperatureDrillingQuantity
+TemperatureDrilling_Signal HasUnitOfMeasure Kelvin
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[TemperatureDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[TemperatureDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[TemperatureDrilling_DataPoint] -->|HasValue| N0000((TemperatureDrilling_Signal)) 
+	N0002[TemperatureDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((TemperatureDrillingQuantity)) 
+	N0000[TemperatureDrilling_Signal] -->|HasUnitOfMeasure| N0005((Kelvin)) 
+```
+## TemperatureGradientPerLengthDrillingQuantity <!-- NOUN -->
+- Display name: TemperatureGradientPerLengthDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.001
+- Description: 
+A temperature gradient per lenth is the first derivative of a temperature compared to a distance: $\frac{dT}{ds}$, where $T$ is a temperature and $s$ is a distance.
+The dimension of temperature gradient per length is:
+$$[KL^{-1}]$$.
+The SI unit for **temperature gradient per length** is: kelvin per metre with the associated unit label $\frac{K}{m}$
+The meaningful precision of temperature gradient per length in the drilling context is typically: 0.001 K/m
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:TemperatureGradientPerLengthDrilling_Signal
+DrillingDataPoint:TemperatureGradientPerLengthDrilling_DataPoint
+TemperatureGradientPerLengthDrilling_DataPoint HasValue TemperatureGradientPerLengthDrilling_Signal
+TemperatureGradientPerLengthDrilling_DataPoint IsOfMeasurableQuantity TemperatureGradientPerLengthDrillingQuantity
+TemperatureGradientPerLengthDrilling_Signal HasUnitOfMeasure KelvinPerMetre
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[TemperatureGradientPerLengthDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[TemperatureGradientPerLengthDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[TemperatureGradientPerLengthDrilling_DataPoint] -->|HasValue| N0000((TemperatureGradientPerLengthDrilling_Signal)) 
+	N0002[TemperatureGradientPerLengthDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((TemperatureGradientPerLengthDrillingQuantity)) 
+	N0000[TemperatureGradientPerLengthDrilling_Signal] -->|HasUnitOfMeasure| N0005((KelvinPerMetre)) 
+```
+## TensionDrillingQuantity <!-- NOUN -->
+- Display name: TensionDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 100
+- Description: 
+Tension is the pulling or stretching force transmitted axially along an object such as a string, rope, chain, rod, truss member, or other object, so as to stretch or pull apart the object. In terms of force, it is the opposite of compression. Tension might also be described as the action-reaction pair of forces acting at each end of an object.
+The dimension of tension is:
+$$[LMT^{-2}]$$.
+The meaningful precision of tension in the drilling context is typically: 100 N
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:TensionDrilling_Signal
+DrillingDataPoint:TensionDrilling_DataPoint
+TensionDrilling_DataPoint HasValue TensionDrilling_Signal
+TensionDrilling_DataPoint IsOfMeasurableQuantity TensionDrillingQuantity
+TensionDrilling_Signal HasUnitOfMeasure Newton
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[TensionDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[TensionDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[TensionDrilling_DataPoint] -->|HasValue| N0000((TensionDrilling_Signal)) 
+	N0002[TensionDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((TensionDrillingQuantity)) 
+	N0000[TensionDrilling_Signal] -->|HasUnitOfMeasure| N0005((Newton)) 
+```
+## ThermalConductivityDrillingQuantity <!-- NOUN -->
+- Display name: ThermalConductivityDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.01
+- Description: 
+Thermal conductivity is a material's ability to conduct heat. It measures how efficiently heat is transferred through a material when there is a temperature difference.
+The dimension of thermal conductivity is:
+$$[LMK^{-1}T^{-3}]$$.
+The SI unit for **thermal conductivity** is: watt per metre kelvin with the associated unit label $\frac{W}{m \cdot K}$
+The meaningful precision of thermal conductivity in the drilling context is typically: 0.01 W/m•K
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:ThermalConductivityDrilling_Signal
+DrillingDataPoint:ThermalConductivityDrilling_DataPoint
+ThermalConductivityDrilling_DataPoint HasValue ThermalConductivityDrilling_Signal
+ThermalConductivityDrilling_DataPoint IsOfMeasurableQuantity ThermalConductivityDrillingQuantity
+ThermalConductivityDrilling_Signal HasUnitOfMeasure WattPerMetreKelvin
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ThermalConductivityDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[ThermalConductivityDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[ThermalConductivityDrilling_DataPoint] -->|HasValue| N0000((ThermalConductivityDrilling_Signal)) 
+	N0002[ThermalConductivityDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((ThermalConductivityDrillingQuantity)) 
+	N0000[ThermalConductivityDrilling_Signal] -->|HasUnitOfMeasure| N0005((WattPerMetreKelvin)) 
+```
+## ThermalConductivityGradientPerTemperatureDrillingQuantity <!-- NOUN -->
+- Display name: ThermalConductivityGradientPerTemperatureDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.01
+- Description: 
+A thermal conductivity gradient per temperature is the first derivative of a thermal conductivity compared to temperature: $\frac{dk}{dT}$, where $k$ is a thermal conductivity and $T$ is temperature. 
+The dimension of thermal conductivity gradient per temperature is:
+$$[LMK^{-2}T^{-3}]$$.
+The SI unit for **thermal conductivity gradient per temperature** is: watt per metre kelvin per kelvin with the associated unit label $\frac{(\frac{W}{(m \cdot K)}}{K}$
+The meaningful precision of thermal conductivity gradient per temperature in the drilling context is typically: 0.01 (W/(m•K))/K
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:ThermalConductivityGradientPerTemperatureDrilling_Signal
+DrillingDataPoint:ThermalConductivityGradientPerTemperatureDrilling_DataPoint
+ThermalConductivityGradientPerTemperatureDrilling_DataPoint HasValue ThermalConductivityGradientPerTemperatureDrilling_Signal
+ThermalConductivityGradientPerTemperatureDrilling_DataPoint IsOfMeasurableQuantity ThermalConductivityGradientPerTemperatureDrillingQuantity
+ThermalConductivityGradientPerTemperatureDrilling_Signal HasUnitOfMeasure WattPerMetreKelvinPerKelvin
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ThermalConductivityGradientPerTemperatureDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[ThermalConductivityGradientPerTemperatureDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[ThermalConductivityGradientPerTemperatureDrilling_DataPoint] -->|HasValue| N0000((ThermalConductivityGradientPerTemperatureDrilling_Signal)) 
+	N0002[ThermalConductivityGradientPerTemperatureDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((ThermalConductivityGradientPerTemperatureDrillingQuantity)) 
+	N0000[ThermalConductivityGradientPerTemperatureDrilling_Signal] -->|HasUnitOfMeasure| N0005((WattPerMetreKelvinPerKelvin)) 
+```
+## TorqueDrillingQuantity <!-- NOUN -->
+- Display name: TorqueDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.1
+- Description: 
+A torque is a measure of the rotational force applied to a body around an axis.
+The dimension of torque is:
+$$[L^{2}MT^{-2}]$$.
+The SI unit for **torque** is: newton metre with the associated unit label $N \cdot m$
+The meaningful precision of torque in the drilling context is typically: 0.1 N•m
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:TorqueDrilling_Signal
+DrillingDataPoint:TorqueDrilling_DataPoint
+TorqueDrilling_DataPoint HasValue TorqueDrilling_Signal
+TorqueDrilling_DataPoint IsOfMeasurableQuantity TorqueDrillingQuantity
+TorqueDrilling_Signal HasUnitOfMeasure NewtonMetre
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[TorqueDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[TorqueDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[TorqueDrilling_DataPoint] -->|HasValue| N0000((TorqueDrilling_Signal)) 
+	N0002[TorqueDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((TorqueDrillingQuantity)) 
+	N0000[TorqueDrilling_Signal] -->|HasUnitOfMeasure| N0005((NewtonMetre)) 
+```
+## TorqueGradientPerLengthDrillingQuantity <!-- NOUN -->
+- Display name: TorqueGradientPerLengthDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1
+- Description: 
+A torque gradient per length is the first derivative of torque compared to a distance: $\frac{d\tau}{ds}$, where $\tau$ is a torque and $s$ is a distance.
+The dimension of torque gradient per length is:
+$$[LMT^{-2}]$$.
+The SI unit for **torque gradient per length** is: newton metre per metre with the associated unit label $\frac{N \cdot m}{m}$
+The meaningful precision of torque gradient per length in the drilling context is typically: 1 N•m/m
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:TorqueGradientPerLengthDrilling_Signal
+DrillingDataPoint:TorqueGradientPerLengthDrilling_DataPoint
+TorqueGradientPerLengthDrilling_DataPoint HasValue TorqueGradientPerLengthDrilling_Signal
+TorqueGradientPerLengthDrilling_DataPoint IsOfMeasurableQuantity TorqueGradientPerLengthDrillingQuantity
+TorqueGradientPerLengthDrilling_Signal HasUnitOfMeasure NewtonMetrePerMetre
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[TorqueGradientPerLengthDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[TorqueGradientPerLengthDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[TorqueGradientPerLengthDrilling_DataPoint] -->|HasValue| N0000((TorqueGradientPerLengthDrilling_Signal)) 
+	N0002[TorqueGradientPerLengthDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((TorqueGradientPerLengthDrillingQuantity)) 
+	N0000[TorqueGradientPerLengthDrilling_Signal] -->|HasUnitOfMeasure| N0005((NewtonMetrePerMetre)) 
+```
 ## TorqueRateOfChangeDrillingQuantity <!-- NOUN -->
 - Display name: TorqueRateOfChangeDrilling
 - Parent class: [MeasurableQuantity](#MeasurableQuantity)
@@ -14295,6 +14221,180 @@ graph LR
 	N0002[TorqueRateOfChangeDrilling_DataPoint] -->|HasValue| N0000((TorqueRateOfChangeDrilling_Signal)) 
 	N0002[TorqueRateOfChangeDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((TorqueRateOfChangeDrillingQuantity)) 
 	N0000[TorqueRateOfChangeDrilling_Signal] -->|HasUnitOfMeasure| N0005((NewtonMetrePerSecond)) 
+```
+## VolumeDrillingQuantity <!-- NOUN -->
+- Display name: VolumeDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.0001
+- Description: 
+A volume is the amount of three-dimensional space occupied by a body.
+The dimension of volume is:
+$$[L^{3}]$$.
+The SI unit for **volume** is: cubic metre with the associated unit label $m^{3}$
+The meaningful precision of volume in the drilling context is typically: 0.0001 m³
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:VolumeDrilling_Signal
+DrillingDataPoint:VolumeDrilling_DataPoint
+VolumeDrilling_DataPoint HasValue VolumeDrilling_Signal
+VolumeDrilling_DataPoint IsOfMeasurableQuantity VolumeDrillingQuantity
+VolumeDrilling_Signal HasUnitOfMeasure CubicMetre
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[VolumeDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[VolumeDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[VolumeDrilling_DataPoint] -->|HasValue| N0000((VolumeDrilling_Signal)) 
+	N0002[VolumeDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((VolumeDrillingQuantity)) 
+	N0000[VolumeDrilling_Signal] -->|HasUnitOfMeasure| N0005((CubicMetre)) 
+```
+## VolumetricFlowrateDrillingQuantity <!-- NOUN -->
+- Display name: VolumetricFlowrateDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.0001
+- Description: 
+A volumetric flowrate is the volume of fluid that passes per unit time: $\frac{dV}{dt}$, where $V$ is a volume and $t$ is time.
+The dimension of volumetric flowrate is:
+$$[L^{3}T^{-1}]$$.
+The SI unit for **volumetric flow rate** is: cubic metre per second with the associated unit label $\frac{m^{3}}{s}$
+The meaningful precision of volumetric flowrate in the drilling context is typically: 0.0001 ft³/s
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:VolumetricFlowrateDrilling_Signal
+DrillingDataPoint:VolumetricFlowrateDrilling_DataPoint
+VolumetricFlowrateDrilling_DataPoint HasValue VolumetricFlowrateDrilling_Signal
+VolumetricFlowrateDrilling_DataPoint IsOfMeasurableQuantity VolumetricFlowrateDrillingQuantity
+VolumetricFlowrateDrilling_Signal HasUnitOfMeasure CubicMetrePerSecond
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[VolumetricFlowrateDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[VolumetricFlowrateDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[VolumetricFlowrateDrilling_DataPoint] -->|HasValue| N0000((VolumetricFlowrateDrilling_Signal)) 
+	N0002[VolumetricFlowrateDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((VolumetricFlowrateDrillingQuantity)) 
+	N0000[VolumetricFlowrateDrilling_Signal] -->|HasUnitOfMeasure| N0005((CubicMetrePerSecond)) 
+```
+## VolumetricFlowRateOfChangeDrillingQuantity <!-- NOUN -->
+- Display name: VolumetricFlowRateOfChangeDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-06
+- Description: 
+A volumetric flow rate of change is the time derivative of a volumetric flowrate: $\frac{dQ}{dt}$, where $Q$ is a volumetric flowrate and $t$ is time.
+The dimension of volumetric flow rate of change is:
+$$[L^{3}T^{-2}]$$.
+The SI unit for **volumetric flow Rate rate of change** is: cubic metre per second squared with the associated unit label $\frac{m^{3}}{s^{2}}$
+The meaningful precision of volumetric flow rate of change in the drilling context is typically: 1E-06 m³/s²
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:VolumetricFlowRateOfChangeDrilling_Signal
+DrillingDataPoint:VolumetricFlowRateOfChangeDrilling_DataPoint
+VolumetricFlowRateOfChangeDrilling_DataPoint HasValue VolumetricFlowRateOfChangeDrilling_Signal
+VolumetricFlowRateOfChangeDrilling_DataPoint IsOfMeasurableQuantity VolumetricFlowRateOfChangeDrillingQuantity
+VolumetricFlowRateOfChangeDrilling_Signal HasUnitOfMeasure CubicMetrePerSecondSquared
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[VolumetricFlowRateOfChangeDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[VolumetricFlowRateOfChangeDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[VolumetricFlowRateOfChangeDrilling_DataPoint] -->|HasValue| N0000((VolumetricFlowRateOfChangeDrilling_Signal)) 
+	N0002[VolumetricFlowRateOfChangeDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((VolumetricFlowRateOfChangeDrillingQuantity)) 
+	N0000[VolumetricFlowRateOfChangeDrilling_Signal] -->|HasUnitOfMeasure| N0005((CubicMetrePerSecondSquared)) 
+```
+## MomentOfInertiaDrillingQuantity <!-- NOUN -->
+- Display name: MomentOfInertiaDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-11
+- Description: 
+The moment of inertia is is a measure of an object's resistance to changes in its rotation rate. It is the rotational analog of mass for linear motion. The moment of inertia depends on the mass distribution of an object and the axis of rotation.
+The dimension of moment of inertia is:
+$$[L^{2}M]$$.
+The SI unit for **moment of inertia** is: kilogram metre squared with the associated unit label $kg \cdot m^{2}}$
+The meaningful precision of the moment of inertia in the drilling context is typically: 1E-11 N
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:MomentOfInertiaDrilling_Signal
+DrillingDataPoint:MomentOfInertiaDrilling_DataPoint
+MomentOfInertiaDrilling_DataPoint HasValue MomentOfInertiaDrilling_Signal
+MomentOfInertiaDrilling_DataPoint IsOfMeasurableQuantity MomentOfInertiaDrillingQuantity
+MomentOfInertiaDrilling_Signal HasUnitOfMeasure GramCentimetreSquared
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MomentOfInertiaDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[MomentOfInertiaDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[MomentOfInertiaDrilling_DataPoint] -->|HasValue| N0000((MomentOfInertiaDrilling_Signal)) 
+	N0002[MomentOfInertiaDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((MomentOfInertiaDrillingQuantity)) 
+	N0000[MomentOfInertiaDrilling_Signal] -->|HasUnitOfMeasure| N0005((GramCentimetreSquared)) 
+```
+## WeightOnBitDrillingQuantity <!-- NOUN -->
+- Display name: WeightOnBitDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 100
+- Description: 
+A force is an influence that can cause an object to change its velocity unless counterbalanced by other forces.
+The dimension of force is:
+$$[LMT^{-2}]$$.
+The SI unit for **force** is: newton with the associated unit label $N$
+The meaningful precision of weight on bit in the drilling context is typically: 100 N
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:WeightOnBitDrilling_Signal
+DrillingDataPoint:WeightOnBitDrilling_DataPoint
+WeightOnBitDrilling_DataPoint HasValue WeightOnBitDrilling_Signal
+WeightOnBitDrilling_DataPoint IsOfMeasurableQuantity WeightOnBitDrillingQuantity
+WeightOnBitDrilling_Signal HasUnitOfMeasure Newton
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[WeightOnBitDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[WeightOnBitDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[WeightOnBitDrilling_DataPoint] -->|HasValue| N0000((WeightOnBitDrilling_Signal)) 
+	N0002[WeightOnBitDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((WeightOnBitDrillingQuantity)) 
+	N0000[WeightOnBitDrilling_Signal] -->|HasUnitOfMeasure| N0005((Newton)) 
+```
+## MomentOfAreaDrillingQuantity <!-- NOUN -->
+- Display name: MomentOfAreaDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-16
+- Description: 
+A moment of area is a geometrical property of an area which reflects how its points are distributed with regard to an arbitrary axis. It is used in the study of beam bending and deflection in structural engineering.
+The dimension of moment of area is:
+$$[L^{4}]$$.
+The SI unit for **moment of area** is: metres to the fourth power with the associated unit label $m^{4}$
+The meaningful precision of the moment of area in the drilling context is typically: 1E-16 N
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:MomentOfAreaDrilling_Signal
+DrillingDataPoint:MomentOfAreaDrilling_DataPoint
+MomentOfAreaDrilling_DataPoint HasValue MomentOfAreaDrilling_Signal
+MomentOfAreaDrilling_DataPoint IsOfMeasurableQuantity MomentOfAreaDrillingQuantity
+MomentOfAreaDrilling_Signal HasUnitOfMeasure MetresToTheFourthPower
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MomentOfAreaDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[MomentOfAreaDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[MomentOfAreaDrilling_DataPoint] -->|HasValue| N0000((MomentOfAreaDrilling_Signal)) 
+	N0002[MomentOfAreaDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((MomentOfAreaDrillingQuantity)) 
+	N0000[MomentOfAreaDrilling_Signal] -->|HasUnitOfMeasure| N0005((MetresToTheFourthPower)) 
 ```
 ## DrillStemMechanicalModel <!-- NOUN -->
 - Display name: Drill-stem mechanical model
@@ -16381,6 +16481,66 @@ DegreePerMinute.ConversionFactorA = 0
 DegreePerMinute.ConversionFactorB = 3437.746770784939
 DegreePerMinute.Symbol = "°/min"
 DegreePerMinute IsUnitForQuantity AngularVelocityQuantity
+Unit:RevolutionPerSecond
+RevolutionPerSecond.ConversionFactorA = 0
+RevolutionPerSecond.ConversionFactorB = 0.15915494309189535
+RevolutionPerSecond.Symbol = "rps"
+RevolutionPerSecond IsUnitForQuantity AngularVelocityQuantity
+Unit:RevolutionPerMinute
+RevolutionPerMinute.ConversionFactorA = 0
+RevolutionPerMinute.ConversionFactorB = 9.549296585513721
+RevolutionPerMinute.Symbol = "rpm"
+RevolutionPerMinute IsUnitForQuantity AngularVelocityQuantity
+Unit:RevolutionPerHour
+RevolutionPerHour.ConversionFactorA = 0
+RevolutionPerHour.ConversionFactorB = 572.9577951308232
+RevolutionPerHour.Symbol = "rph"
+RevolutionPerHour IsUnitForQuantity AngularVelocityQuantity
+Unit:ThousandRevolutionPerSecond
+ThousandRevolutionPerSecond.ConversionFactorA = 0
+ThousandRevolutionPerSecond.ConversionFactorB = 0.00015915494309189535
+ThousandRevolutionPerSecond.Symbol = "1000xrps"
+ThousandRevolutionPerSecond IsUnitForQuantity AngularVelocityQuantity
+Unit:ThousandRevolutionPerMinute
+ThousandRevolutionPerMinute.ConversionFactorA = 0
+ThousandRevolutionPerMinute.ConversionFactorB = 0.009549296585513721
+ThousandRevolutionPerMinute.Symbol = "1000xrpm"
+ThousandRevolutionPerMinute IsUnitForQuantity AngularVelocityQuantity
+Unit:ThousandRevolutionPerHour
+ThousandRevolutionPerHour.ConversionFactorA = 0
+ThousandRevolutionPerHour.ConversionFactorB = 0.5729577951308232
+ThousandRevolutionPerHour.Symbol = "1000xrph"
+ThousandRevolutionPerHour IsUnitForQuantity AngularVelocityQuantity
+Unit:StrokePerSecond
+StrokePerSecond.ConversionFactorA = 0
+StrokePerSecond.ConversionFactorB = 0.15915494309189535
+StrokePerSecond.Symbol = "sps"
+StrokePerSecond IsUnitForQuantity AngularVelocityQuantity
+Unit:StrokePerMinute
+StrokePerMinute.ConversionFactorA = 0
+StrokePerMinute.ConversionFactorB = 9.549296585513721
+StrokePerMinute.Symbol = "spm"
+StrokePerMinute IsUnitForQuantity AngularVelocityQuantity
+Unit:StrokePerHour
+StrokePerHour.ConversionFactorA = 0
+StrokePerHour.ConversionFactorB = 572.9577951308232
+StrokePerHour.Symbol = "sph"
+StrokePerHour IsUnitForQuantity AngularVelocityQuantity
+Unit:ThousandStrokePerSecond
+ThousandStrokePerSecond.ConversionFactorA = 0
+ThousandStrokePerSecond.ConversionFactorB = 0.00015915494309189535
+ThousandStrokePerSecond.Symbol = "1000xsps"
+ThousandStrokePerSecond IsUnitForQuantity AngularVelocityQuantity
+Unit:ThousandStrokePerMinute
+ThousandStrokePerMinute.ConversionFactorA = 0
+ThousandStrokePerMinute.ConversionFactorB = 0.009549296585513721
+ThousandStrokePerMinute.Symbol = "1000xspm"
+ThousandStrokePerMinute IsUnitForQuantity AngularVelocityQuantity
+Unit:ThousandStrokePerHour
+ThousandStrokePerHour.ConversionFactorA = 0
+ThousandStrokePerHour.ConversionFactorB = 0.5729577951308232
+ThousandStrokePerHour.Symbol = "1000xsph"
+ThousandStrokePerHour IsUnitForQuantity AngularVelocityQuantity
 ```
 An example semantic graph looks like as follow:
 ```mermaid
@@ -16429,6 +16589,66 @@ graph LR
 	N0026[DegreePerMinute] -->|ConversionFactorB| N0027(("3437.746770784939")) 
 	N0026[DegreePerMinute] -->|Symbol| N0028(("°/min")) 
 	N0026[DegreePerMinute] -->|IsUnitForQuantity| N0000((AngularVelocityQuantity)) 
+	N0029[RevolutionPerSecond] -->|BelongsToClass| N0005(Unit) 
+	N0029[RevolutionPerSecond] -->|ConversionFactorA| N0006(("0")) 
+	N0029[RevolutionPerSecond] -->|ConversionFactorB| N0030(("0.15915494309189535")) 
+	N0029[RevolutionPerSecond] -->|Symbol| N0031(("rps")) 
+	N0029[RevolutionPerSecond] -->|IsUnitForQuantity| N0000((AngularVelocityQuantity)) 
+	N0032[RevolutionPerMinute] -->|BelongsToClass| N0005(Unit) 
+	N0032[RevolutionPerMinute] -->|ConversionFactorA| N0006(("0")) 
+	N0032[RevolutionPerMinute] -->|ConversionFactorB| N0033(("9.549296585513721")) 
+	N0032[RevolutionPerMinute] -->|Symbol| N0034(("rpm")) 
+	N0032[RevolutionPerMinute] -->|IsUnitForQuantity| N0000((AngularVelocityQuantity)) 
+	N0035[RevolutionPerHour] -->|BelongsToClass| N0005(Unit) 
+	N0035[RevolutionPerHour] -->|ConversionFactorA| N0006(("0")) 
+	N0035[RevolutionPerHour] -->|ConversionFactorB| N0036(("572.9577951308232")) 
+	N0035[RevolutionPerHour] -->|Symbol| N0037(("rph")) 
+	N0035[RevolutionPerHour] -->|IsUnitForQuantity| N0000((AngularVelocityQuantity)) 
+	N0038[ThousandRevolutionPerSecond] -->|BelongsToClass| N0005(Unit) 
+	N0038[ThousandRevolutionPerSecond] -->|ConversionFactorA| N0006(("0")) 
+	N0038[ThousandRevolutionPerSecond] -->|ConversionFactorB| N0039(("0.00015915494309189535")) 
+	N0038[ThousandRevolutionPerSecond] -->|Symbol| N0040(("1000xrps")) 
+	N0038[ThousandRevolutionPerSecond] -->|IsUnitForQuantity| N0000((AngularVelocityQuantity)) 
+	N0041[ThousandRevolutionPerMinute] -->|BelongsToClass| N0005(Unit) 
+	N0041[ThousandRevolutionPerMinute] -->|ConversionFactorA| N0006(("0")) 
+	N0041[ThousandRevolutionPerMinute] -->|ConversionFactorB| N0042(("0.009549296585513721")) 
+	N0041[ThousandRevolutionPerMinute] -->|Symbol| N0043(("1000xrpm")) 
+	N0041[ThousandRevolutionPerMinute] -->|IsUnitForQuantity| N0000((AngularVelocityQuantity)) 
+	N0044[ThousandRevolutionPerHour] -->|BelongsToClass| N0005(Unit) 
+	N0044[ThousandRevolutionPerHour] -->|ConversionFactorA| N0006(("0")) 
+	N0044[ThousandRevolutionPerHour] -->|ConversionFactorB| N0045(("0.5729577951308232")) 
+	N0044[ThousandRevolutionPerHour] -->|Symbol| N0046(("1000xrph")) 
+	N0044[ThousandRevolutionPerHour] -->|IsUnitForQuantity| N0000((AngularVelocityQuantity)) 
+	N0047[StrokePerSecond] -->|BelongsToClass| N0005(Unit) 
+	N0047[StrokePerSecond] -->|ConversionFactorA| N0006(("0")) 
+	N0047[StrokePerSecond] -->|ConversionFactorB| N0030(("0.15915494309189535")) 
+	N0047[StrokePerSecond] -->|Symbol| N0048(("sps")) 
+	N0047[StrokePerSecond] -->|IsUnitForQuantity| N0000((AngularVelocityQuantity)) 
+	N0049[StrokePerMinute] -->|BelongsToClass| N0005(Unit) 
+	N0049[StrokePerMinute] -->|ConversionFactorA| N0006(("0")) 
+	N0049[StrokePerMinute] -->|ConversionFactorB| N0033(("9.549296585513721")) 
+	N0049[StrokePerMinute] -->|Symbol| N0050(("spm")) 
+	N0049[StrokePerMinute] -->|IsUnitForQuantity| N0000((AngularVelocityQuantity)) 
+	N0051[StrokePerHour] -->|BelongsToClass| N0005(Unit) 
+	N0051[StrokePerHour] -->|ConversionFactorA| N0006(("0")) 
+	N0051[StrokePerHour] -->|ConversionFactorB| N0036(("572.9577951308232")) 
+	N0051[StrokePerHour] -->|Symbol| N0052(("sph")) 
+	N0051[StrokePerHour] -->|IsUnitForQuantity| N0000((AngularVelocityQuantity)) 
+	N0053[ThousandStrokePerSecond] -->|BelongsToClass| N0005(Unit) 
+	N0053[ThousandStrokePerSecond] -->|ConversionFactorA| N0006(("0")) 
+	N0053[ThousandStrokePerSecond] -->|ConversionFactorB| N0039(("0.00015915494309189535")) 
+	N0053[ThousandStrokePerSecond] -->|Symbol| N0054(("1000xsps")) 
+	N0053[ThousandStrokePerSecond] -->|IsUnitForQuantity| N0000((AngularVelocityQuantity)) 
+	N0055[ThousandStrokePerMinute] -->|BelongsToClass| N0005(Unit) 
+	N0055[ThousandStrokePerMinute] -->|ConversionFactorA| N0006(("0")) 
+	N0055[ThousandStrokePerMinute] -->|ConversionFactorB| N0042(("0.009549296585513721")) 
+	N0055[ThousandStrokePerMinute] -->|Symbol| N0056(("1000xspm")) 
+	N0055[ThousandStrokePerMinute] -->|IsUnitForQuantity| N0000((AngularVelocityQuantity)) 
+	N0057[ThousandStrokePerHour] -->|BelongsToClass| N0005(Unit) 
+	N0057[ThousandStrokePerHour] -->|ConversionFactorA| N0006(("0")) 
+	N0057[ThousandStrokePerHour] -->|ConversionFactorB| N0045(("0.5729577951308232")) 
+	N0057[ThousandStrokePerHour] -->|Symbol| N0058(("1000xsph")) 
+	N0057[ThousandStrokePerHour] -->|IsUnitForQuantity| N0000((AngularVelocityQuantity)) 
 ```
 ## AreaQuantity <!-- NOUN -->
 - Display name: Area
@@ -16960,6 +17180,1390 @@ graph LR
 	N0081[RadianPerMile] -->|ConversionFactorB| N0082(("1609.3439999999998")) 
 	N0081[RadianPerMile] -->|Symbol| N0083(("rad/mi")) 
 	N0081[RadianPerMile] -->|IsUnitForQuantity| N0000((CurvatureQuantity)) 
+```
+## DimensionlessQuantity <!-- NOUN -->
+- Display name: Dimensionless
+- Parent class: [Quantity](#Quantity)
+- Description: 
+As its name indicates, a dimensionless quantity has no dimension:
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:DimensionlessQuantity
+Unit:Dimensionless
+Dimensionless.ConversionFactorA = 0
+Dimensionless.ConversionFactorB = 1
+Dimensionless IsUnitForQuantity DimensionlessQuantity
+DimensionlessQuantity HasSIUnit Dimensionless
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[DimensionlessQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0002[Dimensionless] -->|BelongsToClass| N0003(Unit) 
+	N0002[Dimensionless] -->|ConversionFactorA| N0004(("0")) 
+	N0002[Dimensionless] -->|ConversionFactorB| N0005(("1")) 
+	N0002[Dimensionless] -->|IsUnitForQuantity| N0000((DimensionlessQuantity)) 
+	N0000[DimensionlessQuantity] -->|HasSIUnit| N0002((Dimensionless)) 
+```
+## DynamicViscosityQuantity <!-- NOUN -->
+- Display name: DynamicViscosity
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = -1
+  - M = 1
+  - T = -1
+- Description: 
+Dynamic viscosity is a measure of a fluid's resistance to shear or flow when a force is applied. It quantifies how thick or thin the fluid is.
+The dimension of dynamic viscosity is:
+$$[ML^{-1}T^{-1}]$$.
+The SI unit for **dynamic viscosity** is: pascal second with the associated unit label $Pa \cdot s$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:DynamicViscosityQuantity
+DynamicViscosityQuantity.L = -1
+DynamicViscosityQuantity.M = 1
+DynamicViscosityQuantity.T = -1
+Unit:PascalSecond
+PascalSecond.ConversionFactorA = 0
+PascalSecond.ConversionFactorB = 1
+PascalSecond.Symbol = "Pa•s"
+PascalSecond IsUnitForQuantity DynamicViscosityQuantity
+DynamicViscosityQuantity HasSIUnit PascalSecond
+Unit:MillipascalSecond
+MillipascalSecond.ConversionFactorA = 0
+MillipascalSecond.ConversionFactorB = 1000
+MillipascalSecond.Symbol = "mPa•s"
+MillipascalSecond IsUnitForQuantity DynamicViscosityQuantity
+Unit:MicropascalSecond
+MicropascalSecond.ConversionFactorA = 0
+MicropascalSecond.ConversionFactorB = 1000000
+MicropascalSecond.Symbol = "µPa•s"
+MicropascalSecond IsUnitForQuantity DynamicViscosityQuantity
+Unit:Poise
+Poise.ConversionFactorA = 0
+Poise.ConversionFactorB = 10
+Poise.Symbol = "P"
+Poise IsUnitForQuantity DynamicViscosityQuantity
+Unit:Centipoise
+Centipoise.ConversionFactorA = 0
+Centipoise.ConversionFactorB = 1000
+Centipoise.Symbol = "cP"
+Centipoise IsUnitForQuantity DynamicViscosityQuantity
+Unit:Millipoise
+Millipoise.ConversionFactorA = 0
+Millipoise.ConversionFactorB = 10000
+Millipoise.Symbol = "mP"
+Millipoise IsUnitForQuantity DynamicViscosityQuantity
+Unit:Micropoise
+Micropoise.ConversionFactorA = 0
+Micropoise.ConversionFactorB = 10000000
+Micropoise.Symbol = "µP"
+Micropoise IsUnitForQuantity DynamicViscosityQuantity
+Unit:PoundSecondPerSquareFoot
+PoundSecondPerSquareFoot.ConversionFactorA = 0
+PoundSecondPerSquareFoot.ConversionFactorB = 0.020885434233150126
+PoundSecondPerSquareFoot.Symbol = "lb•s/ft²"
+PoundSecondPerSquareFoot IsUnitForQuantity DynamicViscosityQuantity
+Unit:PoundSecondPer100SquareFoot
+PoundSecondPer100SquareFoot.ConversionFactorA = 0
+PoundSecondPer100SquareFoot.ConversionFactorB = 2.0885434233150124
+PoundSecondPer100SquareFoot.Symbol = "lb•s/100ft²"
+PoundSecondPer100SquareFoot IsUnitForQuantity DynamicViscosityQuantity
+Unit:PoundSecondPerSquareInch
+PoundSecondPerSquareInch.ConversionFactorA = 0
+PoundSecondPerSquareInch.ConversionFactorB = 0.0001450377377302092
+PoundSecondPerSquareInch.Symbol = "lb•s/in²"
+PoundSecondPerSquareInch IsUnitForQuantity DynamicViscosityQuantity
+Unit:DyneSecondPerSquareCentimetre
+DyneSecondPerSquareCentimetre.ConversionFactorA = 0
+DyneSecondPerSquareCentimetre.ConversionFactorB = 10
+DyneSecondPerSquareCentimetre.Symbol = "dyne•s/cm²"
+DyneSecondPerSquareCentimetre IsUnitForQuantity DynamicViscosityQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[DynamicViscosityQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[DynamicViscosityQuantity] -->|L| N0002(("-1")) 
+	N0000[DynamicViscosityQuantity] -->|M| N0003(("1")) 
+	N0000[DynamicViscosityQuantity] -->|T| N0002(("-1")) 
+	N0004[PascalSecond] -->|BelongsToClass| N0005(Unit) 
+	N0004[PascalSecond] -->|ConversionFactorA| N0006(("0")) 
+	N0004[PascalSecond] -->|ConversionFactorB| N0003(("1")) 
+	N0004[PascalSecond] -->|Symbol| N0007(("Pa•s")) 
+	N0004[PascalSecond] -->|IsUnitForQuantity| N0000((DynamicViscosityQuantity)) 
+	N0000[DynamicViscosityQuantity] -->|HasSIUnit| N0004((PascalSecond)) 
+	N0008[MillipascalSecond] -->|BelongsToClass| N0005(Unit) 
+	N0008[MillipascalSecond] -->|ConversionFactorA| N0006(("0")) 
+	N0008[MillipascalSecond] -->|ConversionFactorB| N0009(("1000")) 
+	N0008[MillipascalSecond] -->|Symbol| N0010(("mPa•s")) 
+	N0008[MillipascalSecond] -->|IsUnitForQuantity| N0000((DynamicViscosityQuantity)) 
+	N0011[MicropascalSecond] -->|BelongsToClass| N0005(Unit) 
+	N0011[MicropascalSecond] -->|ConversionFactorA| N0006(("0")) 
+	N0011[MicropascalSecond] -->|ConversionFactorB| N0012(("1000000")) 
+	N0011[MicropascalSecond] -->|Symbol| N0013(("µPa•s")) 
+	N0011[MicropascalSecond] -->|IsUnitForQuantity| N0000((DynamicViscosityQuantity)) 
+	N0014[Poise] -->|BelongsToClass| N0005(Unit) 
+	N0014[Poise] -->|ConversionFactorA| N0006(("0")) 
+	N0014[Poise] -->|ConversionFactorB| N0015(("10")) 
+	N0014[Poise] -->|Symbol| N0016(("P")) 
+	N0014[Poise] -->|IsUnitForQuantity| N0000((DynamicViscosityQuantity)) 
+	N0017[Centipoise] -->|BelongsToClass| N0005(Unit) 
+	N0017[Centipoise] -->|ConversionFactorA| N0006(("0")) 
+	N0017[Centipoise] -->|ConversionFactorB| N0009(("1000")) 
+	N0017[Centipoise] -->|Symbol| N0018(("cP")) 
+	N0017[Centipoise] -->|IsUnitForQuantity| N0000((DynamicViscosityQuantity)) 
+	N0019[Millipoise] -->|BelongsToClass| N0005(Unit) 
+	N0019[Millipoise] -->|ConversionFactorA| N0006(("0")) 
+	N0019[Millipoise] -->|ConversionFactorB| N0020(("10000")) 
+	N0019[Millipoise] -->|Symbol| N0021(("mP")) 
+	N0019[Millipoise] -->|IsUnitForQuantity| N0000((DynamicViscosityQuantity)) 
+	N0022[Micropoise] -->|BelongsToClass| N0005(Unit) 
+	N0022[Micropoise] -->|ConversionFactorA| N0006(("0")) 
+	N0022[Micropoise] -->|ConversionFactorB| N0023(("10000000")) 
+	N0022[Micropoise] -->|Symbol| N0024(("µP")) 
+	N0022[Micropoise] -->|IsUnitForQuantity| N0000((DynamicViscosityQuantity)) 
+	N0025[PoundSecondPerSquareFoot] -->|BelongsToClass| N0005(Unit) 
+	N0025[PoundSecondPerSquareFoot] -->|ConversionFactorA| N0006(("0")) 
+	N0025[PoundSecondPerSquareFoot] -->|ConversionFactorB| N0026(("0.020885434233150126")) 
+	N0025[PoundSecondPerSquareFoot] -->|Symbol| N0027(("lb•s/ft²")) 
+	N0025[PoundSecondPerSquareFoot] -->|IsUnitForQuantity| N0000((DynamicViscosityQuantity)) 
+	N0028[PoundSecondPer100SquareFoot] -->|BelongsToClass| N0005(Unit) 
+	N0028[PoundSecondPer100SquareFoot] -->|ConversionFactorA| N0006(("0")) 
+	N0028[PoundSecondPer100SquareFoot] -->|ConversionFactorB| N0029(("2.0885434233150124")) 
+	N0028[PoundSecondPer100SquareFoot] -->|Symbol| N0030(("lb•s/100ft²")) 
+	N0028[PoundSecondPer100SquareFoot] -->|IsUnitForQuantity| N0000((DynamicViscosityQuantity)) 
+	N0031[PoundSecondPerSquareInch] -->|BelongsToClass| N0005(Unit) 
+	N0031[PoundSecondPerSquareInch] -->|ConversionFactorA| N0006(("0")) 
+	N0031[PoundSecondPerSquareInch] -->|ConversionFactorB| N0032(("0.0001450377377302092")) 
+	N0031[PoundSecondPerSquareInch] -->|Symbol| N0033(("lb•s/in²")) 
+	N0031[PoundSecondPerSquareInch] -->|IsUnitForQuantity| N0000((DynamicViscosityQuantity)) 
+	N0034[DyneSecondPerSquareCentimetre] -->|BelongsToClass| N0005(Unit) 
+	N0034[DyneSecondPerSquareCentimetre] -->|ConversionFactorA| N0006(("0")) 
+	N0034[DyneSecondPerSquareCentimetre] -->|ConversionFactorB| N0015(("10")) 
+	N0034[DyneSecondPerSquareCentimetre] -->|Symbol| N0035(("dyne•s/cm²")) 
+	N0034[DyneSecondPerSquareCentimetre] -->|IsUnitForQuantity| N0000((DynamicViscosityQuantity)) 
+```
+## ElectricCapacitanceQuantity <!-- NOUN -->
+- Display name: ElectricCapacitance
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = -2
+  - M = -1
+  - T = 4
+  - I = 2
+- Description: 
+lectric capacitance is the ability of a capacitor or a component to store electrical charge per unit voltage applied across it.
+The dimension of electric capacitance is:
+$$[T^{4}I^{2}M^{-1}L^{-2}]$$.
+The SI unit for **electric capacitance** is: farad with the associated unit label $F$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:ElectricCapacitanceQuantity
+ElectricCapacitanceQuantity.L = -2
+ElectricCapacitanceQuantity.M = -1
+ElectricCapacitanceQuantity.T = 4
+ElectricCapacitanceQuantity.I = 2
+Unit:Farad
+Farad.ConversionFactorA = 0
+Farad.ConversionFactorB = 1
+Farad.Symbol = "F"
+Farad IsUnitForQuantity ElectricCapacitanceQuantity
+ElectricCapacitanceQuantity HasSIUnit Farad
+Unit:CoulombPerVolt
+CoulombPerVolt.ConversionFactorA = 0
+CoulombPerVolt.ConversionFactorB = 1
+CoulombPerVolt.Symbol = "C/V"
+CoulombPerVolt IsUnitForQuantity ElectricCapacitanceQuantity
+Unit:Millifarad
+Millifarad.ConversionFactorA = 0
+Millifarad.ConversionFactorB = 1000
+Millifarad.Symbol = "mF"
+Millifarad IsUnitForQuantity ElectricCapacitanceQuantity
+Unit:Microfarad
+Microfarad.ConversionFactorA = 0
+Microfarad.ConversionFactorB = 1000000
+Microfarad.Symbol = "μF"
+Microfarad IsUnitForQuantity ElectricCapacitanceQuantity
+Unit:Nanofarad
+Nanofarad.ConversionFactorA = 0
+Nanofarad.ConversionFactorB = 999999999.9999999
+Nanofarad.Symbol = "nF"
+Nanofarad IsUnitForQuantity ElectricCapacitanceQuantity
+Unit:Picofarad
+Picofarad.ConversionFactorA = 0
+Picofarad.ConversionFactorB = 1000000000000
+Picofarad.Symbol = "pF"
+Picofarad IsUnitForQuantity ElectricCapacitanceQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ElectricCapacitanceQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[ElectricCapacitanceQuantity] -->|L| N0002(("-2")) 
+	N0000[ElectricCapacitanceQuantity] -->|M| N0003(("-1")) 
+	N0000[ElectricCapacitanceQuantity] -->|T| N0004(("4")) 
+	N0000[ElectricCapacitanceQuantity] -->|I| N0005(("2")) 
+	N0006[Farad] -->|BelongsToClass| N0007(Unit) 
+	N0006[Farad] -->|ConversionFactorA| N0008(("0")) 
+	N0006[Farad] -->|ConversionFactorB| N0009(("1")) 
+	N0006[Farad] -->|Symbol| N0010(("F")) 
+	N0006[Farad] -->|IsUnitForQuantity| N0000((ElectricCapacitanceQuantity)) 
+	N0000[ElectricCapacitanceQuantity] -->|HasSIUnit| N0006((Farad)) 
+	N0011[CoulombPerVolt] -->|BelongsToClass| N0007(Unit) 
+	N0011[CoulombPerVolt] -->|ConversionFactorA| N0008(("0")) 
+	N0011[CoulombPerVolt] -->|ConversionFactorB| N0009(("1")) 
+	N0011[CoulombPerVolt] -->|Symbol| N0012(("C/V")) 
+	N0011[CoulombPerVolt] -->|IsUnitForQuantity| N0000((ElectricCapacitanceQuantity)) 
+	N0013[Millifarad] -->|BelongsToClass| N0007(Unit) 
+	N0013[Millifarad] -->|ConversionFactorA| N0008(("0")) 
+	N0013[Millifarad] -->|ConversionFactorB| N0014(("1000")) 
+	N0013[Millifarad] -->|Symbol| N0015(("mF")) 
+	N0013[Millifarad] -->|IsUnitForQuantity| N0000((ElectricCapacitanceQuantity)) 
+	N0016[Microfarad] -->|BelongsToClass| N0007(Unit) 
+	N0016[Microfarad] -->|ConversionFactorA| N0008(("0")) 
+	N0016[Microfarad] -->|ConversionFactorB| N0017(("1000000")) 
+	N0016[Microfarad] -->|Symbol| N0018(("μF")) 
+	N0016[Microfarad] -->|IsUnitForQuantity| N0000((ElectricCapacitanceQuantity)) 
+	N0019[Nanofarad] -->|BelongsToClass| N0007(Unit) 
+	N0019[Nanofarad] -->|ConversionFactorA| N0008(("0")) 
+	N0019[Nanofarad] -->|ConversionFactorB| N0020(("999999999.9999999")) 
+	N0019[Nanofarad] -->|Symbol| N0021(("nF")) 
+	N0019[Nanofarad] -->|IsUnitForQuantity| N0000((ElectricCapacitanceQuantity)) 
+	N0022[Picofarad] -->|BelongsToClass| N0007(Unit) 
+	N0022[Picofarad] -->|ConversionFactorA| N0008(("0")) 
+	N0022[Picofarad] -->|ConversionFactorB| N0023(("1000000000000")) 
+	N0022[Picofarad] -->|Symbol| N0024(("pF")) 
+	N0022[Picofarad] -->|IsUnitForQuantity| N0000((ElectricCapacitanceQuantity)) 
+```
+## ElectricCurrentQuantity <!-- NOUN -->
+- Display name: ElectricCurrent
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - I = 1
+- Description: 
+Electric current is the flow of electric charge through a conductor or circuit.
+The dimension of electric current is:
+$$[I]$$.
+The SI unit for **electric current** is: ampere with the associated unit label $A$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:ElectricCurrentQuantity
+ElectricCurrentQuantity.I = 1
+Unit:Ampere
+Ampere.ConversionFactorA = 0
+Ampere.ConversionFactorB = 1
+Ampere.Symbol = "A"
+Ampere IsUnitForQuantity ElectricCurrentQuantity
+ElectricCurrentQuantity HasSIUnit Ampere
+Unit:CoulombPerSecond
+CoulombPerSecond.ConversionFactorA = 0
+CoulombPerSecond.ConversionFactorB = 1
+CoulombPerSecond.Symbol = "C/s"
+CoulombPerSecond IsUnitForQuantity ElectricCurrentQuantity
+Unit:SiemensVolt
+SiemensVolt.ConversionFactorA = 0
+SiemensVolt.ConversionFactorB = 1
+SiemensVolt.Symbol = "S•V"
+SiemensVolt IsUnitForQuantity ElectricCurrentQuantity
+Unit:VoltPerOhm
+VoltPerOhm.ConversionFactorA = 0
+VoltPerOhm.ConversionFactorB = 1
+VoltPerOhm.Symbol = "V/Ω"
+VoltPerOhm IsUnitForQuantity ElectricCurrentQuantity
+Unit:WattPerVolt
+WattPerVolt.ConversionFactorA = 0
+WattPerVolt.ConversionFactorB = 1
+WattPerVolt.Symbol = "W/V"
+WattPerVolt IsUnitForQuantity ElectricCurrentQuantity
+Unit:WeberPerHenry
+WeberPerHenry.ConversionFactorA = 0
+WeberPerHenry.ConversionFactorB = 1
+WeberPerHenry.Symbol = "Wb/H"
+WeberPerHenry IsUnitForQuantity ElectricCurrentQuantity
+Unit:Deciampere
+Deciampere.ConversionFactorA = 0
+Deciampere.ConversionFactorB = 10
+Deciampere.Symbol = "dA"
+Deciampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Centiampere
+Centiampere.ConversionFactorA = 0
+Centiampere.ConversionFactorB = 100
+Centiampere.Symbol = "cA"
+Centiampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Milliampere
+Milliampere.ConversionFactorA = 0
+Milliampere.ConversionFactorB = 1000
+Milliampere.Symbol = "mA"
+Milliampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Microampere
+Microampere.ConversionFactorA = 0
+Microampere.ConversionFactorB = 1000000
+Microampere.Symbol = "µA"
+Microampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Nanoampere
+Nanoampere.ConversionFactorA = 0
+Nanoampere.ConversionFactorB = 999999999.9999999
+Nanoampere.Symbol = "nA"
+Nanoampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Picoampere
+Picoampere.ConversionFactorA = 0
+Picoampere.ConversionFactorB = 1000000000000
+Picoampere.Symbol = "pA"
+Picoampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Biot
+Biot.ConversionFactorA = 0
+Biot.ConversionFactorB = 0.1
+Biot.Symbol = "Bi"
+Biot IsUnitForQuantity ElectricCurrentQuantity
+Unit:Abampere
+Abampere.ConversionFactorA = 0
+Abampere.ConversionFactorB = 0.1
+Abampere.Symbol = "abA"
+Abampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Kiloampere
+Kiloampere.ConversionFactorA = 0
+Kiloampere.ConversionFactorB = 0.001
+Kiloampere.Symbol = "kA"
+Kiloampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Megaampere
+Megaampere.ConversionFactorA = 0
+Megaampere.ConversionFactorB = 1E-06
+Megaampere.Symbol = "MA"
+Megaampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Gigaampere
+Gigaampere.ConversionFactorA = 0
+Gigaampere.ConversionFactorB = 1E-09
+Gigaampere.Symbol = "GA"
+Gigaampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Teraampere
+Teraampere.ConversionFactorA = 0
+Teraampere.ConversionFactorB = 1E-12
+Teraampere.Symbol = "TA"
+Teraampere IsUnitForQuantity ElectricCurrentQuantity
+Unit:Statampere
+Statampere.ConversionFactorA = 0
+Statampere.ConversionFactorB = 2997924580
+Statampere.Symbol = "stA"
+Statampere IsUnitForQuantity ElectricCurrentQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ElectricCurrentQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[ElectricCurrentQuantity] -->|I| N0002(("1")) 
+	N0003[Ampere] -->|BelongsToClass| N0004(Unit) 
+	N0003[Ampere] -->|ConversionFactorA| N0005(("0")) 
+	N0003[Ampere] -->|ConversionFactorB| N0002(("1")) 
+	N0003[Ampere] -->|Symbol| N0006(("A")) 
+	N0003[Ampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
+	N0000[ElectricCurrentQuantity] -->|HasSIUnit| N0003((Ampere)) 
+	N0007[CoulombPerSecond] -->|BelongsToClass| N0004(Unit) 
+	N0007[CoulombPerSecond] -->|ConversionFactorA| N0005(("0")) 
+	N0007[CoulombPerSecond] -->|ConversionFactorB| N0002(("1")) 
+	N0007[CoulombPerSecond] -->|Symbol| N0008(("C/s")) 
+	N0007[CoulombPerSecond] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
+	N0009[SiemensVolt] -->|BelongsToClass| N0004(Unit) 
+	N0009[SiemensVolt] -->|ConversionFactorA| N0005(("0")) 
+	N0009[SiemensVolt] -->|ConversionFactorB| N0002(("1")) 
+	N0009[SiemensVolt] -->|Symbol| N0010(("S•V")) 
+	N0009[SiemensVolt] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
+	N0011[VoltPerOhm] -->|BelongsToClass| N0004(Unit) 
+	N0011[VoltPerOhm] -->|ConversionFactorA| N0005(("0")) 
+	N0011[VoltPerOhm] -->|ConversionFactorB| N0002(("1")) 
+	N0011[VoltPerOhm] -->|Symbol| N0012(("V/Ω")) 
+	N0011[VoltPerOhm] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
+	N0013[WattPerVolt] -->|BelongsToClass| N0004(Unit) 
+	N0013[WattPerVolt] -->|ConversionFactorA| N0005(("0")) 
+	N0013[WattPerVolt] -->|ConversionFactorB| N0002(("1")) 
+	N0013[WattPerVolt] -->|Symbol| N0014(("W/V")) 
+	N0013[WattPerVolt] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
+	N0015[WeberPerHenry] -->|BelongsToClass| N0004(Unit) 
+	N0015[WeberPerHenry] -->|ConversionFactorA| N0005(("0")) 
+	N0015[WeberPerHenry] -->|ConversionFactorB| N0002(("1")) 
+	N0015[WeberPerHenry] -->|Symbol| N0016(("Wb/H")) 
+	N0015[WeberPerHenry] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
+	N0017[Deciampere] -->|BelongsToClass| N0004(Unit) 
+	N0017[Deciampere] -->|ConversionFactorA| N0005(("0")) 
+	N0017[Deciampere] -->|ConversionFactorB| N0018(("10")) 
+	N0017[Deciampere] -->|Symbol| N0019(("dA")) 
+	N0017[Deciampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
+	N0020[Centiampere] -->|BelongsToClass| N0004(Unit) 
+	N0020[Centiampere] -->|ConversionFactorA| N0005(("0")) 
+	N0020[Centiampere] -->|ConversionFactorB| N0021(("100")) 
+	N0020[Centiampere] -->|Symbol| N0022(("cA")) 
+	N0020[Centiampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
+	N0023[Milliampere] -->|BelongsToClass| N0004(Unit) 
+	N0023[Milliampere] -->|ConversionFactorA| N0005(("0")) 
+	N0023[Milliampere] -->|ConversionFactorB| N0024(("1000")) 
+	N0023[Milliampere] -->|Symbol| N0025(("mA")) 
+	N0023[Milliampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
+	N0026[Microampere] -->|BelongsToClass| N0004(Unit) 
+	N0026[Microampere] -->|ConversionFactorA| N0005(("0")) 
+	N0026[Microampere] -->|ConversionFactorB| N0027(("1000000")) 
+	N0026[Microampere] -->|Symbol| N0028(("µA")) 
+	N0026[Microampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
+	N0029[Nanoampere] -->|BelongsToClass| N0004(Unit) 
+	N0029[Nanoampere] -->|ConversionFactorA| N0005(("0")) 
+	N0029[Nanoampere] -->|ConversionFactorB| N0030(("999999999.9999999")) 
+	N0029[Nanoampere] -->|Symbol| N0031(("nA")) 
+	N0029[Nanoampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
+	N0032[Picoampere] -->|BelongsToClass| N0004(Unit) 
+	N0032[Picoampere] -->|ConversionFactorA| N0005(("0")) 
+	N0032[Picoampere] -->|ConversionFactorB| N0033(("1000000000000")) 
+	N0032[Picoampere] -->|Symbol| N0034(("pA")) 
+	N0032[Picoampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
+	N0035[Biot] -->|BelongsToClass| N0004(Unit) 
+	N0035[Biot] -->|ConversionFactorA| N0005(("0")) 
+	N0035[Biot] -->|ConversionFactorB| N0036(("0.1")) 
+	N0035[Biot] -->|Symbol| N0037(("Bi")) 
+	N0035[Biot] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
+	N0038[Abampere] -->|BelongsToClass| N0004(Unit) 
+	N0038[Abampere] -->|ConversionFactorA| N0005(("0")) 
+	N0038[Abampere] -->|ConversionFactorB| N0036(("0.1")) 
+	N0038[Abampere] -->|Symbol| N0039(("abA")) 
+	N0038[Abampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
+	N0040[Kiloampere] -->|BelongsToClass| N0004(Unit) 
+	N0040[Kiloampere] -->|ConversionFactorA| N0005(("0")) 
+	N0040[Kiloampere] -->|ConversionFactorB| N0041(("0.001")) 
+	N0040[Kiloampere] -->|Symbol| N0042(("kA")) 
+	N0040[Kiloampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
+	N0043[Megaampere] -->|BelongsToClass| N0004(Unit) 
+	N0043[Megaampere] -->|ConversionFactorA| N0005(("0")) 
+	N0043[Megaampere] -->|ConversionFactorB| N0044(("1E-06")) 
+	N0043[Megaampere] -->|Symbol| N0045(("MA")) 
+	N0043[Megaampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
+	N0046[Gigaampere] -->|BelongsToClass| N0004(Unit) 
+	N0046[Gigaampere] -->|ConversionFactorA| N0005(("0")) 
+	N0046[Gigaampere] -->|ConversionFactorB| N0047(("1E-09")) 
+	N0046[Gigaampere] -->|Symbol| N0048(("GA")) 
+	N0046[Gigaampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
+	N0049[Teraampere] -->|BelongsToClass| N0004(Unit) 
+	N0049[Teraampere] -->|ConversionFactorA| N0005(("0")) 
+	N0049[Teraampere] -->|ConversionFactorB| N0050(("1E-12")) 
+	N0049[Teraampere] -->|Symbol| N0051(("TA")) 
+	N0049[Teraampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
+	N0052[Statampere] -->|BelongsToClass| N0004(Unit) 
+	N0052[Statampere] -->|ConversionFactorA| N0005(("0")) 
+	N0052[Statampere] -->|ConversionFactorB| N0053(("2997924580")) 
+	N0052[Statampere] -->|Symbol| N0054(("stA")) 
+	N0052[Statampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
+```
+## ElectricResistivityQuantity <!-- NOUN -->
+- Display name: ElectricResistivity
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 3
+  - M = 1
+  - T = -3
+  - I = -2
+- Description: 
+Electric resistivity is a material's inherent property that measures how strongly it resists the flow of electric current.
+The dimension of resistivity is:
+$$[L^{3}MI^{-2}T^{-3}]$$.
+The SI unit for **electric resistivity** is: ohm metre with the associated unit label $\Omega \cdot m$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:ElectricResistivityQuantity
+ElectricResistivityQuantity.L = 3
+ElectricResistivityQuantity.M = 1
+ElectricResistivityQuantity.T = -3
+ElectricResistivityQuantity.I = -2
+Unit:OhmMetre
+OhmMetre.ConversionFactorA = 0
+OhmMetre.ConversionFactorB = 1
+OhmMetre.Symbol = "Ω•m"
+OhmMetre IsUnitForQuantity ElectricResistivityQuantity
+ElectricResistivityQuantity HasSIUnit OhmMetre
+Unit:KiloOhmMetre
+KiloOhmMetre.ConversionFactorA = 0
+KiloOhmMetre.ConversionFactorB = 0.001
+KiloOhmMetre.Symbol = "kΩ•m"
+KiloOhmMetre IsUnitForQuantity ElectricResistivityQuantity
+Unit:MegaOhmMetre
+MegaOhmMetre.ConversionFactorA = 0
+MegaOhmMetre.ConversionFactorB = 1E-06
+MegaOhmMetre.Symbol = "MΩ•m"
+MegaOhmMetre IsUnitForQuantity ElectricResistivityQuantity
+Unit:GigaOhmMetre
+GigaOhmMetre.ConversionFactorA = 0
+GigaOhmMetre.ConversionFactorB = 1E-09
+GigaOhmMetre.Symbol = "GΩ•m"
+GigaOhmMetre IsUnitForQuantity ElectricResistivityQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ElectricResistivityQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[ElectricResistivityQuantity] -->|L| N0002(("3")) 
+	N0000[ElectricResistivityQuantity] -->|M| N0003(("1")) 
+	N0000[ElectricResistivityQuantity] -->|T| N0004(("-3")) 
+	N0000[ElectricResistivityQuantity] -->|I| N0005(("-2")) 
+	N0006[OhmMetre] -->|BelongsToClass| N0007(Unit) 
+	N0006[OhmMetre] -->|ConversionFactorA| N0008(("0")) 
+	N0006[OhmMetre] -->|ConversionFactorB| N0003(("1")) 
+	N0006[OhmMetre] -->|Symbol| N0009(("Ω•m")) 
+	N0006[OhmMetre] -->|IsUnitForQuantity| N0000((ElectricResistivityQuantity)) 
+	N0000[ElectricResistivityQuantity] -->|HasSIUnit| N0006((OhmMetre)) 
+	N0010[KiloOhmMetre] -->|BelongsToClass| N0007(Unit) 
+	N0010[KiloOhmMetre] -->|ConversionFactorA| N0008(("0")) 
+	N0010[KiloOhmMetre] -->|ConversionFactorB| N0011(("0.001")) 
+	N0010[KiloOhmMetre] -->|Symbol| N0012(("kΩ•m")) 
+	N0010[KiloOhmMetre] -->|IsUnitForQuantity| N0000((ElectricResistivityQuantity)) 
+	N0013[MegaOhmMetre] -->|BelongsToClass| N0007(Unit) 
+	N0013[MegaOhmMetre] -->|ConversionFactorA| N0008(("0")) 
+	N0013[MegaOhmMetre] -->|ConversionFactorB| N0014(("1E-06")) 
+	N0013[MegaOhmMetre] -->|Symbol| N0015(("MΩ•m")) 
+	N0013[MegaOhmMetre] -->|IsUnitForQuantity| N0000((ElectricResistivityQuantity)) 
+	N0016[GigaOhmMetre] -->|BelongsToClass| N0007(Unit) 
+	N0016[GigaOhmMetre] -->|ConversionFactorA| N0008(("0")) 
+	N0016[GigaOhmMetre] -->|ConversionFactorB| N0017(("1E-09")) 
+	N0016[GigaOhmMetre] -->|Symbol| N0018(("GΩ•m")) 
+	N0016[GigaOhmMetre] -->|IsUnitForQuantity| N0000((ElectricResistivityQuantity)) 
+```
+## ElongationGradientPerLengthQuantity <!-- NOUN -->
+- Display name: ElongationGradientPerLength
+- Parent class: [Quantity](#Quantity)
+- Description: 
+An elongation gradient per length is the first derivative of an elongation compared to a distance: $\frac{d\epsilon}{ds}$, where $\epsilon$ is an elongation and $s$ is a distance.
+It is dimensionless.
+The SI unit for **elongation gradient per length** is: metre per metre with the associated unit label $\frac{m}{m}$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:ElongationGradientPerLengthQuantity
+Unit:MetrePerMetre
+MetrePerMetre.ConversionFactorA = 0
+MetrePerMetre.ConversionFactorB = 1
+MetrePerMetre.Symbol = "m/m"
+MetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
+ElongationGradientPerLengthQuantity HasSIUnit MetrePerMetre
+Unit:DecimetrePerMetre
+DecimetrePerMetre.ConversionFactorA = 0
+DecimetrePerMetre.ConversionFactorB = 10
+DecimetrePerMetre.Symbol = "dm/m"
+DecimetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:CentimetrePerMetre
+CentimetrePerMetre.ConversionFactorA = 0
+CentimetrePerMetre.ConversionFactorB = 100
+CentimetrePerMetre.Symbol = "cm/m"
+CentimetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:MillimetrePerMetre
+MillimetrePerMetre.ConversionFactorA = 0
+MillimetrePerMetre.ConversionFactorB = 1000
+MillimetrePerMetre.Symbol = "mm/m"
+MillimetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:MicrometrePerMetre
+MicrometrePerMetre.ConversionFactorA = 0
+MicrometrePerMetre.ConversionFactorB = 1000000
+MicrometrePerMetre.Symbol = "µm/m"
+MicrometrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:MetrePerKilometre
+MetrePerKilometre.ConversionFactorA = 0
+MetrePerKilometre.ConversionFactorB = 1000
+MetrePerKilometre.Symbol = "m/km"
+MetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:DecimetrePerKilometre
+DecimetrePerKilometre.ConversionFactorA = 0
+DecimetrePerKilometre.ConversionFactorB = 10000
+DecimetrePerKilometre.Symbol = "dm/km"
+DecimetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:CentimetrePerKilometre
+CentimetrePerKilometre.ConversionFactorA = 0
+CentimetrePerKilometre.ConversionFactorB = 100000
+CentimetrePerKilometre.Symbol = "cm/km"
+CentimetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:MillimetrePerKilometre
+MillimetrePerKilometre.ConversionFactorA = 0
+MillimetrePerKilometre.ConversionFactorB = 1000000
+MillimetrePerKilometre.Symbol = "mm/km"
+MillimetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:MicrometrePerKilometre
+MicrometrePerKilometre.ConversionFactorA = 0
+MicrometrePerKilometre.ConversionFactorB = 1000000000
+MicrometrePerKilometre.Symbol = "µm/km"
+MicrometrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:InchPerFoot
+InchPerFoot.ConversionFactorA = 0
+InchPerFoot.ConversionFactorB = 11.999999999999998
+InchPerFoot.Symbol = "in/ft"
+InchPerFoot IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:InchPerYard
+InchPerYard.ConversionFactorA = 0
+InchPerYard.ConversionFactorB = 36
+InchPerYard.Symbol = "in/yd"
+InchPerYard IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:InchPerMile
+InchPerMile.ConversionFactorA = 0
+InchPerMile.ConversionFactorB = 63359.99999999999
+InchPerMile.Symbol = "in/mi"
+InchPerMile IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:FootPerFoot
+FootPerFoot.ConversionFactorA = 0
+FootPerFoot.ConversionFactorB = 1
+FootPerFoot.Symbol = "ft/ft"
+FootPerFoot IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:FootPerYard
+FootPerYard.ConversionFactorA = 0
+FootPerYard.ConversionFactorB = 3
+FootPerYard.Symbol = "ft/yd"
+FootPerYard IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:FootPerMile
+FootPerMile.ConversionFactorA = 0
+FootPerMile.ConversionFactorB = 5280
+FootPerMile.Symbol = "ft/mi"
+FootPerMile IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:YardPerFoot
+YardPerFoot.ConversionFactorA = 0
+YardPerFoot.ConversionFactorB = 0.3333333333333333
+YardPerFoot.Symbol = "yd/ft"
+YardPerFoot IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:YardPerYard
+YardPerYard.ConversionFactorA = 0
+YardPerYard.ConversionFactorB = 1
+YardPerYard.Symbol = "yd/yd"
+YardPerYard IsUnitForQuantity ElongationGradientPerLengthQuantity
+Unit:YardPerMile
+YardPerMile.ConversionFactorA = 0
+YardPerMile.ConversionFactorB = 1760
+YardPerMile.Symbol = "yd/mi"
+YardPerMile IsUnitForQuantity ElongationGradientPerLengthQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ElongationGradientPerLengthQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0002[MetrePerMetre] -->|BelongsToClass| N0003(Unit) 
+	N0002[MetrePerMetre] -->|ConversionFactorA| N0004(("0")) 
+	N0002[MetrePerMetre] -->|ConversionFactorB| N0005(("1")) 
+	N0002[MetrePerMetre] -->|Symbol| N0006(("m/m")) 
+	N0002[MetrePerMetre] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
+	N0000[ElongationGradientPerLengthQuantity] -->|HasSIUnit| N0002((MetrePerMetre)) 
+	N0007[DecimetrePerMetre] -->|BelongsToClass| N0003(Unit) 
+	N0007[DecimetrePerMetre] -->|ConversionFactorA| N0004(("0")) 
+	N0007[DecimetrePerMetre] -->|ConversionFactorB| N0008(("10")) 
+	N0007[DecimetrePerMetre] -->|Symbol| N0009(("dm/m")) 
+	N0007[DecimetrePerMetre] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
+	N0010[CentimetrePerMetre] -->|BelongsToClass| N0003(Unit) 
+	N0010[CentimetrePerMetre] -->|ConversionFactorA| N0004(("0")) 
+	N0010[CentimetrePerMetre] -->|ConversionFactorB| N0011(("100")) 
+	N0010[CentimetrePerMetre] -->|Symbol| N0012(("cm/m")) 
+	N0010[CentimetrePerMetre] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
+	N0013[MillimetrePerMetre] -->|BelongsToClass| N0003(Unit) 
+	N0013[MillimetrePerMetre] -->|ConversionFactorA| N0004(("0")) 
+	N0013[MillimetrePerMetre] -->|ConversionFactorB| N0014(("1000")) 
+	N0013[MillimetrePerMetre] -->|Symbol| N0015(("mm/m")) 
+	N0013[MillimetrePerMetre] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
+	N0016[MicrometrePerMetre] -->|BelongsToClass| N0003(Unit) 
+	N0016[MicrometrePerMetre] -->|ConversionFactorA| N0004(("0")) 
+	N0016[MicrometrePerMetre] -->|ConversionFactorB| N0017(("1000000")) 
+	N0016[MicrometrePerMetre] -->|Symbol| N0018(("µm/m")) 
+	N0016[MicrometrePerMetre] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
+	N0019[MetrePerKilometre] -->|BelongsToClass| N0003(Unit) 
+	N0019[MetrePerKilometre] -->|ConversionFactorA| N0004(("0")) 
+	N0019[MetrePerKilometre] -->|ConversionFactorB| N0014(("1000")) 
+	N0019[MetrePerKilometre] -->|Symbol| N0020(("m/km")) 
+	N0019[MetrePerKilometre] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
+	N0021[DecimetrePerKilometre] -->|BelongsToClass| N0003(Unit) 
+	N0021[DecimetrePerKilometre] -->|ConversionFactorA| N0004(("0")) 
+	N0021[DecimetrePerKilometre] -->|ConversionFactorB| N0022(("10000")) 
+	N0021[DecimetrePerKilometre] -->|Symbol| N0023(("dm/km")) 
+	N0021[DecimetrePerKilometre] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
+	N0024[CentimetrePerKilometre] -->|BelongsToClass| N0003(Unit) 
+	N0024[CentimetrePerKilometre] -->|ConversionFactorA| N0004(("0")) 
+	N0024[CentimetrePerKilometre] -->|ConversionFactorB| N0025(("100000")) 
+	N0024[CentimetrePerKilometre] -->|Symbol| N0026(("cm/km")) 
+	N0024[CentimetrePerKilometre] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
+	N0027[MillimetrePerKilometre] -->|BelongsToClass| N0003(Unit) 
+	N0027[MillimetrePerKilometre] -->|ConversionFactorA| N0004(("0")) 
+	N0027[MillimetrePerKilometre] -->|ConversionFactorB| N0017(("1000000")) 
+	N0027[MillimetrePerKilometre] -->|Symbol| N0028(("mm/km")) 
+	N0027[MillimetrePerKilometre] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
+	N0029[MicrometrePerKilometre] -->|BelongsToClass| N0003(Unit) 
+	N0029[MicrometrePerKilometre] -->|ConversionFactorA| N0004(("0")) 
+	N0029[MicrometrePerKilometre] -->|ConversionFactorB| N0030(("1000000000")) 
+	N0029[MicrometrePerKilometre] -->|Symbol| N0031(("µm/km")) 
+	N0029[MicrometrePerKilometre] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
+	N0032[InchPerFoot] -->|BelongsToClass| N0003(Unit) 
+	N0032[InchPerFoot] -->|ConversionFactorA| N0004(("0")) 
+	N0032[InchPerFoot] -->|ConversionFactorB| N0033(("11.999999999999998")) 
+	N0032[InchPerFoot] -->|Symbol| N0034(("in/ft")) 
+	N0032[InchPerFoot] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
+	N0035[InchPerYard] -->|BelongsToClass| N0003(Unit) 
+	N0035[InchPerYard] -->|ConversionFactorA| N0004(("0")) 
+	N0035[InchPerYard] -->|ConversionFactorB| N0036(("36")) 
+	N0035[InchPerYard] -->|Symbol| N0037(("in/yd")) 
+	N0035[InchPerYard] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
+	N0038[InchPerMile] -->|BelongsToClass| N0003(Unit) 
+	N0038[InchPerMile] -->|ConversionFactorA| N0004(("0")) 
+	N0038[InchPerMile] -->|ConversionFactorB| N0039(("63359.99999999999")) 
+	N0038[InchPerMile] -->|Symbol| N0040(("in/mi")) 
+	N0038[InchPerMile] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
+	N0041[FootPerFoot] -->|BelongsToClass| N0003(Unit) 
+	N0041[FootPerFoot] -->|ConversionFactorA| N0004(("0")) 
+	N0041[FootPerFoot] -->|ConversionFactorB| N0005(("1")) 
+	N0041[FootPerFoot] -->|Symbol| N0042(("ft/ft")) 
+	N0041[FootPerFoot] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
+	N0043[FootPerYard] -->|BelongsToClass| N0003(Unit) 
+	N0043[FootPerYard] -->|ConversionFactorA| N0004(("0")) 
+	N0043[FootPerYard] -->|ConversionFactorB| N0044(("3")) 
+	N0043[FootPerYard] -->|Symbol| N0045(("ft/yd")) 
+	N0043[FootPerYard] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
+	N0046[FootPerMile] -->|BelongsToClass| N0003(Unit) 
+	N0046[FootPerMile] -->|ConversionFactorA| N0004(("0")) 
+	N0046[FootPerMile] -->|ConversionFactorB| N0047(("5280")) 
+	N0046[FootPerMile] -->|Symbol| N0048(("ft/mi")) 
+	N0046[FootPerMile] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
+	N0049[YardPerFoot] -->|BelongsToClass| N0003(Unit) 
+	N0049[YardPerFoot] -->|ConversionFactorA| N0004(("0")) 
+	N0049[YardPerFoot] -->|ConversionFactorB| N0050(("0.3333333333333333")) 
+	N0049[YardPerFoot] -->|Symbol| N0051(("yd/ft")) 
+	N0049[YardPerFoot] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
+	N0052[YardPerYard] -->|BelongsToClass| N0003(Unit) 
+	N0052[YardPerYard] -->|ConversionFactorA| N0004(("0")) 
+	N0052[YardPerYard] -->|ConversionFactorB| N0005(("1")) 
+	N0052[YardPerYard] -->|Symbol| N0053(("yd/yd")) 
+	N0052[YardPerYard] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
+	N0054[YardPerMile] -->|BelongsToClass| N0003(Unit) 
+	N0054[YardPerMile] -->|ConversionFactorA| N0004(("0")) 
+	N0054[YardPerMile] -->|ConversionFactorB| N0055(("1760")) 
+	N0054[YardPerMile] -->|Symbol| N0056(("yd/mi")) 
+	N0054[YardPerMile] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
+```
+## EnergyDensityQuantity <!-- NOUN -->
+- Display name: EnergyDensity
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = -1
+  - M = 1
+  - T = -2
+- Description: 
+Energy density is the amount of energy stored per unit volume or mass of a substance or system.
+The dimension of energy density is:
+$$[ML^{-1}T^{-2}]$$.
+The SI unit for **energy density** is: joule per cubic metre with the associated unit label $\frac{J}{m^{3}}$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:EnergyDensityQuantity
+EnergyDensityQuantity.L = -1
+EnergyDensityQuantity.M = 1
+EnergyDensityQuantity.T = -2
+Unit:JoulePerCubicMetre
+JoulePerCubicMetre.ConversionFactorA = 0
+JoulePerCubicMetre.ConversionFactorB = 1
+JoulePerCubicMetre.Symbol = "J/m³"
+JoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+EnergyDensityQuantity HasSIUnit JoulePerCubicMetre
+Unit:JoulePerLitre
+JoulePerLitre.ConversionFactorA = 0
+JoulePerLitre.ConversionFactorB = 0.001
+JoulePerLitre.Symbol = "J/L"
+JoulePerLitre IsUnitForQuantity EnergyDensityQuantity
+Unit:KilojoulePerCubicMetre
+KilojoulePerCubicMetre.ConversionFactorA = 0
+KilojoulePerCubicMetre.ConversionFactorB = 0.001
+KilojoulePerCubicMetre.Symbol = "kJ/m³"
+KilojoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+Unit:KilojoulePerLitre
+KilojoulePerLitre.ConversionFactorA = 0
+KilojoulePerLitre.ConversionFactorB = 1E-06
+KilojoulePerLitre.Symbol = "kJ/L"
+KilojoulePerLitre IsUnitForQuantity EnergyDensityQuantity
+Unit:MegajoulePerCubicMetre
+MegajoulePerCubicMetre.ConversionFactorA = 0
+MegajoulePerCubicMetre.ConversionFactorB = 1E-06
+MegajoulePerCubicMetre.Symbol = "MJ/m³"
+MegajoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+Unit:MegajoulePerLitre
+MegajoulePerLitre.ConversionFactorA = 0
+MegajoulePerLitre.ConversionFactorB = 1E-09
+MegajoulePerLitre.Symbol = "MJ/L"
+MegajoulePerLitre IsUnitForQuantity EnergyDensityQuantity
+Unit:GigajoulePerCubicMetre
+GigajoulePerCubicMetre.ConversionFactorA = 0
+GigajoulePerCubicMetre.ConversionFactorB = 1E-09
+GigajoulePerCubicMetre.Symbol = "GJ/m³"
+GigajoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+Unit:GigajoulePerLitre
+GigajoulePerLitre.ConversionFactorA = 0
+GigajoulePerLitre.ConversionFactorB = 1E-12
+GigajoulePerLitre.Symbol = "GJ/L"
+GigajoulePerLitre IsUnitForQuantity EnergyDensityQuantity
+Unit:CaloriePerCubicMetre
+CaloriePerCubicMetre.ConversionFactorA = 0
+CaloriePerCubicMetre.ConversionFactorB = 0.2390057361376673
+CaloriePerCubicMetre.Symbol = "cal/m³"
+CaloriePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+Unit:CaloriePerLitre
+CaloriePerLitre.ConversionFactorA = 0
+CaloriePerLitre.ConversionFactorB = 0.0002390057361376673
+CaloriePerLitre.Symbol = "cal/L"
+CaloriePerLitre IsUnitForQuantity EnergyDensityQuantity
+Unit:KilocaloriePerCubicMetre
+KilocaloriePerCubicMetre.ConversionFactorA = 0
+KilocaloriePerCubicMetre.ConversionFactorB = 0.0002390057361376673
+KilocaloriePerCubicMetre.Symbol = "Cal/m³"
+KilocaloriePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+Unit:KilocaloriePerLitre
+KilocaloriePerLitre.ConversionFactorA = 0
+KilocaloriePerLitre.ConversionFactorB = 2.390057361376673E-07
+KilocaloriePerLitre.Symbol = "Cal/L"
+KilocaloriePerLitre IsUnitForQuantity EnergyDensityQuantity
+Unit:JoulePerCubicFoot
+JoulePerCubicFoot.ConversionFactorA = 0
+JoulePerCubicFoot.ConversionFactorB = 0.02831684659199999
+JoulePerCubicFoot.Symbol = "J/ft³"
+JoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+Unit:KilojoulePerCubicFoot
+KilojoulePerCubicFoot.ConversionFactorA = 0
+KilojoulePerCubicFoot.ConversionFactorB = 2.831684659199999E-05
+KilojoulePerCubicFoot.Symbol = "kJ/ft³"
+KilojoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+Unit:MegajoulePerCubicFoot
+MegajoulePerCubicFoot.ConversionFactorA = 0
+MegajoulePerCubicFoot.ConversionFactorB = 2.831684659199999E-08
+MegajoulePerCubicFoot.Symbol = "MJ/ft³"
+MegajoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+Unit:GigajoulePerCubicFoot
+GigajoulePerCubicFoot.ConversionFactorA = 0
+GigajoulePerCubicFoot.ConversionFactorB = 2.831684659199999E-11
+GigajoulePerCubicFoot.Symbol = "GJ/ft³"
+GigajoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+Unit:CaloriePerCubicFoot
+CaloriePerCubicFoot.ConversionFactorA = 0
+CaloriePerCubicFoot.ConversionFactorB = 0.006767888764818353
+CaloriePerCubicFoot.Symbol = "cal/ft³"
+CaloriePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+Unit:KilocaloriePerCubicFoot
+KilocaloriePerCubicFoot.ConversionFactorA = 0
+KilocaloriePerCubicFoot.ConversionFactorB = 6.767888764818354E-06
+KilocaloriePerCubicFoot.Symbol = "Cal/ft³"
+KilocaloriePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+Unit:JoulePerCubicInch
+JoulePerCubicInch.ConversionFactorA = 0
+JoulePerCubicInch.ConversionFactorB = 1.6387064E-05
+JoulePerCubicInch.Symbol = "J/in³"
+JoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
+Unit:KilojoulePerCubicInch
+KilojoulePerCubicInch.ConversionFactorA = 0
+KilojoulePerCubicInch.ConversionFactorB = 1.6387064E-08
+KilojoulePerCubicInch.Symbol = "kJ/in³"
+KilojoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
+Unit:MegajoulePerCubicInch
+MegajoulePerCubicInch.ConversionFactorA = 0
+MegajoulePerCubicInch.ConversionFactorB = 1.6387064E-11
+MegajoulePerCubicInch.Symbol = "MJ/in³"
+MegajoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
+Unit:GigajoulePerCubicInch
+GigajoulePerCubicInch.ConversionFactorA = 0
+GigajoulePerCubicInch.ConversionFactorB = 1.6387064E-14
+GigajoulePerCubicInch.Symbol = "GJ/in³"
+GigajoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
+Unit:CaloriePerCubicInch
+CaloriePerCubicInch.ConversionFactorA = 0
+CaloriePerCubicInch.ConversionFactorB = 3.916602294455067E-06
+CaloriePerCubicInch.Symbol = "cal/in³"
+CaloriePerCubicInch IsUnitForQuantity EnergyDensityQuantity
+Unit:KilocaloriePerCubicInch
+KilocaloriePerCubicInch.ConversionFactorA = 0
+KilocaloriePerCubicInch.ConversionFactorB = 3.916602294455067E-09
+KilocaloriePerCubicInch.Symbol = "Cal/in³"
+KilocaloriePerCubicInch IsUnitForQuantity EnergyDensityQuantity
+Unit:JoulePerGallonUk
+JoulePerGallonUk.ConversionFactorA = 0
+JoulePerGallonUk.ConversionFactorB = 0.00454609
+JoulePerGallonUk.Symbol = "J/gal(UK)"
+JoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
+Unit:KilojoulePerGallonUk
+KilojoulePerGallonUk.ConversionFactorA = 0
+KilojoulePerGallonUk.ConversionFactorB = 4.54609E-06
+KilojoulePerGallonUk.Symbol = "kJ/gal(UK)"
+KilojoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
+Unit:MegajoulePerGallonUk
+MegajoulePerGallonUk.ConversionFactorA = 0
+MegajoulePerGallonUk.ConversionFactorB = 4.54609E-09
+MegajoulePerGallonUk.Symbol = "MJ/gal(UK)"
+MegajoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
+Unit:GigajoulePerGallonUk
+GigajoulePerGallonUk.ConversionFactorA = 0
+GigajoulePerGallonUk.ConversionFactorB = 4.54609E-12
+GigajoulePerGallonUk.Symbol = "GJ/gal(UK)"
+GigajoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
+Unit:CaloriePerGallonUk
+CaloriePerGallonUk.ConversionFactorA = 0
+CaloriePerGallonUk.ConversionFactorB = 0.0010865415869980878
+CaloriePerGallonUk.Symbol = "cal/gal(UK)"
+CaloriePerGallonUk IsUnitForQuantity EnergyDensityQuantity
+Unit:KilocaloriePerGallonUk
+KilocaloriePerGallonUk.ConversionFactorA = 0
+KilocaloriePerGallonUk.ConversionFactorB = 1.086541586998088E-06
+KilocaloriePerGallonUk.Symbol = "Cal/gal(UK)"
+KilocaloriePerGallonUk IsUnitForQuantity EnergyDensityQuantity
+Unit:JoulePerGallonUs
+JoulePerGallonUs.ConversionFactorA = 0
+JoulePerGallonUs.ConversionFactorB = 0.0037854117839999997
+JoulePerGallonUs.Symbol = "J/gal(US)"
+JoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
+Unit:KilojoulePerGallonUs
+KilojoulePerGallonUs.ConversionFactorA = 0
+KilojoulePerGallonUs.ConversionFactorB = 3.7854117839999998E-06
+KilojoulePerGallonUs.Symbol = "kJ/gal(US)"
+KilojoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
+Unit:MegajoulePerGallonUs
+MegajoulePerGallonUs.ConversionFactorA = 0
+MegajoulePerGallonUs.ConversionFactorB = 3.7854117839999995E-09
+MegajoulePerGallonUs.Symbol = "MJ/gal(US)"
+MegajoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
+Unit:GigajoulePerGallonUs
+GigajoulePerGallonUs.ConversionFactorA = 0
+GigajoulePerGallonUs.ConversionFactorB = 3.785411784E-12
+GigajoulePerGallonUs.Symbol = "GJ/gal(US)"
+GigajoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
+Unit:CaloriePerGallonUs
+CaloriePerGallonUs.ConversionFactorA = 0
+CaloriePerGallonUs.ConversionFactorB = 0.0009047351300191204
+CaloriePerGallonUs.Symbol = "cal/gal(US)"
+CaloriePerGallonUs IsUnitForQuantity EnergyDensityQuantity
+Unit:KilocaloriePerGallonUs
+KilocaloriePerGallonUs.ConversionFactorA = 0
+KilocaloriePerGallonUs.ConversionFactorB = 9.047351300191203E-07
+KilocaloriePerGallonUs.Symbol = "Cal/gal(US)"
+KilocaloriePerGallonUs IsUnitForQuantity EnergyDensityQuantity
+Unit:BritishThermalUnitPerCubicMetre
+BritishThermalUnitPerCubicMetre.ConversionFactorA = 0
+BritishThermalUnitPerCubicMetre.ConversionFactorB = 0.0009484516526770049
+BritishThermalUnitPerCubicMetre.Symbol = "BTU/m³"
+BritishThermalUnitPerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+Unit:BritishThermalUnitPerLitre
+BritishThermalUnitPerLitre.ConversionFactorA = 0
+BritishThermalUnitPerLitre.ConversionFactorB = 9.484516526770049E-07
+BritishThermalUnitPerLitre.Symbol = "BTU/L"
+BritishThermalUnitPerLitre IsUnitForQuantity EnergyDensityQuantity
+Unit:BritishThermalUnitPerCubicFoot
+BritishThermalUnitPerCubicFoot.ConversionFactorA = 0
+BritishThermalUnitPerCubicFoot.ConversionFactorB = 2.6857159948783606E-05
+BritishThermalUnitPerCubicFoot.Symbol = "BTU/ft³"
+BritishThermalUnitPerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+Unit:BritishThermalUnitPerCubicInch
+BritishThermalUnitPerCubicInch.ConversionFactorA = 0
+BritishThermalUnitPerCubicInch.ConversionFactorB = 1.554233793332385E-08
+BritishThermalUnitPerCubicInch.Symbol = "BTU/in³"
+BritishThermalUnitPerCubicInch IsUnitForQuantity EnergyDensityQuantity
+Unit:BritishThermalUnitPerGallonUk
+BritishThermalUnitPerGallonUk.ConversionFactorA = 0
+BritishThermalUnitPerGallonUk.ConversionFactorB = 4.311746573718405E-06
+BritishThermalUnitPerGallonUk.Symbol = "BTU/gal(UK)"
+BritishThermalUnitPerGallonUk IsUnitForQuantity EnergyDensityQuantity
+Unit:BritishThermalUnitPerGallonUs
+BritishThermalUnitPerGallonUs.ConversionFactorA = 0
+BritishThermalUnitPerGallonUs.ConversionFactorB = 3.5902800625978092E-06
+BritishThermalUnitPerGallonUs.Symbol = "BTU/gal(US)"
+BritishThermalUnitPerGallonUs IsUnitForQuantity EnergyDensityQuantity
+Unit:KiloBritishThermalUnitPerCubicMetre
+KiloBritishThermalUnitPerCubicMetre.ConversionFactorA = 0
+KiloBritishThermalUnitPerCubicMetre.ConversionFactorB = 9.484516526770048E-07
+KiloBritishThermalUnitPerCubicMetre.Symbol = "kBTU/m³"
+KiloBritishThermalUnitPerCubicMetre IsUnitForQuantity EnergyDensityQuantity
+Unit:KiloBritishThermalUnitPerLitre
+KiloBritishThermalUnitPerLitre.ConversionFactorA = 0
+KiloBritishThermalUnitPerLitre.ConversionFactorB = 9.48451652677005E-10
+KiloBritishThermalUnitPerLitre.Symbol = "kBTU/L"
+KiloBritishThermalUnitPerLitre IsUnitForQuantity EnergyDensityQuantity
+Unit:KiloBritishThermalUnitPerCubicFoot
+KiloBritishThermalUnitPerCubicFoot.ConversionFactorA = 0
+KiloBritishThermalUnitPerCubicFoot.ConversionFactorB = 2.6857159948783602E-08
+KiloBritishThermalUnitPerCubicFoot.Symbol = "kBTU/ft³"
+KiloBritishThermalUnitPerCubicFoot IsUnitForQuantity EnergyDensityQuantity
+Unit:KiloBritishThermalUnitPerCubicInch
+KiloBritishThermalUnitPerCubicInch.ConversionFactorA = 0
+KiloBritishThermalUnitPerCubicInch.ConversionFactorB = 1.5542337933323848E-11
+KiloBritishThermalUnitPerCubicInch.Symbol = "kBTU/in³"
+KiloBritishThermalUnitPerCubicInch IsUnitForQuantity EnergyDensityQuantity
+Unit:KiloBritishThermalUnitPerGallonUk
+KiloBritishThermalUnitPerGallonUk.ConversionFactorA = 0
+KiloBritishThermalUnitPerGallonUk.ConversionFactorB = 4.311746573718405E-09
+KiloBritishThermalUnitPerGallonUk.Symbol = "kBTU/gal(UK)"
+KiloBritishThermalUnitPerGallonUk IsUnitForQuantity EnergyDensityQuantity
+Unit:KiloBritishThermalUnitPerGallonUs
+KiloBritishThermalUnitPerGallonUs.ConversionFactorA = 0
+KiloBritishThermalUnitPerGallonUs.ConversionFactorB = 3.5902800625978087E-09
+KiloBritishThermalUnitPerGallonUs.Symbol = "kBTU/gal(US)"
+KiloBritishThermalUnitPerGallonUs IsUnitForQuantity EnergyDensityQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[EnergyDensityQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[EnergyDensityQuantity] -->|L| N0002(("-1")) 
+	N0000[EnergyDensityQuantity] -->|M| N0003(("1")) 
+	N0000[EnergyDensityQuantity] -->|T| N0004(("-2")) 
+	N0005[JoulePerCubicMetre] -->|BelongsToClass| N0006(Unit) 
+	N0005[JoulePerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
+	N0005[JoulePerCubicMetre] -->|ConversionFactorB| N0003(("1")) 
+	N0005[JoulePerCubicMetre] -->|Symbol| N0008(("J/m³")) 
+	N0005[JoulePerCubicMetre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0000[EnergyDensityQuantity] -->|HasSIUnit| N0005((JoulePerCubicMetre)) 
+	N0009[JoulePerLitre] -->|BelongsToClass| N0006(Unit) 
+	N0009[JoulePerLitre] -->|ConversionFactorA| N0007(("0")) 
+	N0009[JoulePerLitre] -->|ConversionFactorB| N0010(("0.001")) 
+	N0009[JoulePerLitre] -->|Symbol| N0011(("J/L")) 
+	N0009[JoulePerLitre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0012[KilojoulePerCubicMetre] -->|BelongsToClass| N0006(Unit) 
+	N0012[KilojoulePerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
+	N0012[KilojoulePerCubicMetre] -->|ConversionFactorB| N0010(("0.001")) 
+	N0012[KilojoulePerCubicMetre] -->|Symbol| N0013(("kJ/m³")) 
+	N0012[KilojoulePerCubicMetre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0014[KilojoulePerLitre] -->|BelongsToClass| N0006(Unit) 
+	N0014[KilojoulePerLitre] -->|ConversionFactorA| N0007(("0")) 
+	N0014[KilojoulePerLitre] -->|ConversionFactorB| N0015(("1E-06")) 
+	N0014[KilojoulePerLitre] -->|Symbol| N0016(("kJ/L")) 
+	N0014[KilojoulePerLitre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0017[MegajoulePerCubicMetre] -->|BelongsToClass| N0006(Unit) 
+	N0017[MegajoulePerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
+	N0017[MegajoulePerCubicMetre] -->|ConversionFactorB| N0015(("1E-06")) 
+	N0017[MegajoulePerCubicMetre] -->|Symbol| N0018(("MJ/m³")) 
+	N0017[MegajoulePerCubicMetre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0019[MegajoulePerLitre] -->|BelongsToClass| N0006(Unit) 
+	N0019[MegajoulePerLitre] -->|ConversionFactorA| N0007(("0")) 
+	N0019[MegajoulePerLitre] -->|ConversionFactorB| N0020(("1E-09")) 
+	N0019[MegajoulePerLitre] -->|Symbol| N0021(("MJ/L")) 
+	N0019[MegajoulePerLitre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0022[GigajoulePerCubicMetre] -->|BelongsToClass| N0006(Unit) 
+	N0022[GigajoulePerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
+	N0022[GigajoulePerCubicMetre] -->|ConversionFactorB| N0020(("1E-09")) 
+	N0022[GigajoulePerCubicMetre] -->|Symbol| N0023(("GJ/m³")) 
+	N0022[GigajoulePerCubicMetre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0024[GigajoulePerLitre] -->|BelongsToClass| N0006(Unit) 
+	N0024[GigajoulePerLitre] -->|ConversionFactorA| N0007(("0")) 
+	N0024[GigajoulePerLitre] -->|ConversionFactorB| N0025(("1E-12")) 
+	N0024[GigajoulePerLitre] -->|Symbol| N0026(("GJ/L")) 
+	N0024[GigajoulePerLitre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0027[CaloriePerCubicMetre] -->|BelongsToClass| N0006(Unit) 
+	N0027[CaloriePerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
+	N0027[CaloriePerCubicMetre] -->|ConversionFactorB| N0028(("0.2390057361376673")) 
+	N0027[CaloriePerCubicMetre] -->|Symbol| N0029(("cal/m³")) 
+	N0027[CaloriePerCubicMetre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0030[CaloriePerLitre] -->|BelongsToClass| N0006(Unit) 
+	N0030[CaloriePerLitre] -->|ConversionFactorA| N0007(("0")) 
+	N0030[CaloriePerLitre] -->|ConversionFactorB| N0031(("0.0002390057361376673")) 
+	N0030[CaloriePerLitre] -->|Symbol| N0032(("cal/L")) 
+	N0030[CaloriePerLitre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0033[KilocaloriePerCubicMetre] -->|BelongsToClass| N0006(Unit) 
+	N0033[KilocaloriePerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
+	N0033[KilocaloriePerCubicMetre] -->|ConversionFactorB| N0031(("0.0002390057361376673")) 
+	N0033[KilocaloriePerCubicMetre] -->|Symbol| N0034(("Cal/m³")) 
+	N0033[KilocaloriePerCubicMetre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0035[KilocaloriePerLitre] -->|BelongsToClass| N0006(Unit) 
+	N0035[KilocaloriePerLitre] -->|ConversionFactorA| N0007(("0")) 
+	N0035[KilocaloriePerLitre] -->|ConversionFactorB| N0036(("2.390057361376673E-07")) 
+	N0035[KilocaloriePerLitre] -->|Symbol| N0037(("Cal/L")) 
+	N0035[KilocaloriePerLitre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0038[JoulePerCubicFoot] -->|BelongsToClass| N0006(Unit) 
+	N0038[JoulePerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
+	N0038[JoulePerCubicFoot] -->|ConversionFactorB| N0039(("0.02831684659199999")) 
+	N0038[JoulePerCubicFoot] -->|Symbol| N0040(("J/ft³")) 
+	N0038[JoulePerCubicFoot] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0041[KilojoulePerCubicFoot] -->|BelongsToClass| N0006(Unit) 
+	N0041[KilojoulePerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
+	N0041[KilojoulePerCubicFoot] -->|ConversionFactorB| N0042(("2.831684659199999E-05")) 
+	N0041[KilojoulePerCubicFoot] -->|Symbol| N0043(("kJ/ft³")) 
+	N0041[KilojoulePerCubicFoot] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0044[MegajoulePerCubicFoot] -->|BelongsToClass| N0006(Unit) 
+	N0044[MegajoulePerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
+	N0044[MegajoulePerCubicFoot] -->|ConversionFactorB| N0045(("2.831684659199999E-08")) 
+	N0044[MegajoulePerCubicFoot] -->|Symbol| N0046(("MJ/ft³")) 
+	N0044[MegajoulePerCubicFoot] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0047[GigajoulePerCubicFoot] -->|BelongsToClass| N0006(Unit) 
+	N0047[GigajoulePerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
+	N0047[GigajoulePerCubicFoot] -->|ConversionFactorB| N0048(("2.831684659199999E-11")) 
+	N0047[GigajoulePerCubicFoot] -->|Symbol| N0049(("GJ/ft³")) 
+	N0047[GigajoulePerCubicFoot] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0050[CaloriePerCubicFoot] -->|BelongsToClass| N0006(Unit) 
+	N0050[CaloriePerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
+	N0050[CaloriePerCubicFoot] -->|ConversionFactorB| N0051(("0.006767888764818353")) 
+	N0050[CaloriePerCubicFoot] -->|Symbol| N0052(("cal/ft³")) 
+	N0050[CaloriePerCubicFoot] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0053[KilocaloriePerCubicFoot] -->|BelongsToClass| N0006(Unit) 
+	N0053[KilocaloriePerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
+	N0053[KilocaloriePerCubicFoot] -->|ConversionFactorB| N0054(("6.767888764818354E-06")) 
+	N0053[KilocaloriePerCubicFoot] -->|Symbol| N0055(("Cal/ft³")) 
+	N0053[KilocaloriePerCubicFoot] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0056[JoulePerCubicInch] -->|BelongsToClass| N0006(Unit) 
+	N0056[JoulePerCubicInch] -->|ConversionFactorA| N0007(("0")) 
+	N0056[JoulePerCubicInch] -->|ConversionFactorB| N0057(("1.6387064E-05")) 
+	N0056[JoulePerCubicInch] -->|Symbol| N0058(("J/in³")) 
+	N0056[JoulePerCubicInch] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0059[KilojoulePerCubicInch] -->|BelongsToClass| N0006(Unit) 
+	N0059[KilojoulePerCubicInch] -->|ConversionFactorA| N0007(("0")) 
+	N0059[KilojoulePerCubicInch] -->|ConversionFactorB| N0060(("1.6387064E-08")) 
+	N0059[KilojoulePerCubicInch] -->|Symbol| N0061(("kJ/in³")) 
+	N0059[KilojoulePerCubicInch] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0062[MegajoulePerCubicInch] -->|BelongsToClass| N0006(Unit) 
+	N0062[MegajoulePerCubicInch] -->|ConversionFactorA| N0007(("0")) 
+	N0062[MegajoulePerCubicInch] -->|ConversionFactorB| N0063(("1.6387064E-11")) 
+	N0062[MegajoulePerCubicInch] -->|Symbol| N0064(("MJ/in³")) 
+	N0062[MegajoulePerCubicInch] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0065[GigajoulePerCubicInch] -->|BelongsToClass| N0006(Unit) 
+	N0065[GigajoulePerCubicInch] -->|ConversionFactorA| N0007(("0")) 
+	N0065[GigajoulePerCubicInch] -->|ConversionFactorB| N0066(("1.6387064E-14")) 
+	N0065[GigajoulePerCubicInch] -->|Symbol| N0067(("GJ/in³")) 
+	N0065[GigajoulePerCubicInch] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0068[CaloriePerCubicInch] -->|BelongsToClass| N0006(Unit) 
+	N0068[CaloriePerCubicInch] -->|ConversionFactorA| N0007(("0")) 
+	N0068[CaloriePerCubicInch] -->|ConversionFactorB| N0069(("3.916602294455067E-06")) 
+	N0068[CaloriePerCubicInch] -->|Symbol| N0070(("cal/in³")) 
+	N0068[CaloriePerCubicInch] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0071[KilocaloriePerCubicInch] -->|BelongsToClass| N0006(Unit) 
+	N0071[KilocaloriePerCubicInch] -->|ConversionFactorA| N0007(("0")) 
+	N0071[KilocaloriePerCubicInch] -->|ConversionFactorB| N0072(("3.916602294455067E-09")) 
+	N0071[KilocaloriePerCubicInch] -->|Symbol| N0073(("Cal/in³")) 
+	N0071[KilocaloriePerCubicInch] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0074[JoulePerGallonUk] -->|BelongsToClass| N0006(Unit) 
+	N0074[JoulePerGallonUk] -->|ConversionFactorA| N0007(("0")) 
+	N0074[JoulePerGallonUk] -->|ConversionFactorB| N0075(("0.00454609")) 
+	N0074[JoulePerGallonUk] -->|Symbol| N0076(("J/gal(UK)")) 
+	N0074[JoulePerGallonUk] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0077[KilojoulePerGallonUk] -->|BelongsToClass| N0006(Unit) 
+	N0077[KilojoulePerGallonUk] -->|ConversionFactorA| N0007(("0")) 
+	N0077[KilojoulePerGallonUk] -->|ConversionFactorB| N0078(("4.54609E-06")) 
+	N0077[KilojoulePerGallonUk] -->|Symbol| N0079(("kJ/gal(UK)")) 
+	N0077[KilojoulePerGallonUk] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0080[MegajoulePerGallonUk] -->|BelongsToClass| N0006(Unit) 
+	N0080[MegajoulePerGallonUk] -->|ConversionFactorA| N0007(("0")) 
+	N0080[MegajoulePerGallonUk] -->|ConversionFactorB| N0081(("4.54609E-09")) 
+	N0080[MegajoulePerGallonUk] -->|Symbol| N0082(("MJ/gal(UK)")) 
+	N0080[MegajoulePerGallonUk] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0083[GigajoulePerGallonUk] -->|BelongsToClass| N0006(Unit) 
+	N0083[GigajoulePerGallonUk] -->|ConversionFactorA| N0007(("0")) 
+	N0083[GigajoulePerGallonUk] -->|ConversionFactorB| N0084(("4.54609E-12")) 
+	N0083[GigajoulePerGallonUk] -->|Symbol| N0085(("GJ/gal(UK)")) 
+	N0083[GigajoulePerGallonUk] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0086[CaloriePerGallonUk] -->|BelongsToClass| N0006(Unit) 
+	N0086[CaloriePerGallonUk] -->|ConversionFactorA| N0007(("0")) 
+	N0086[CaloriePerGallonUk] -->|ConversionFactorB| N0087(("0.0010865415869980878")) 
+	N0086[CaloriePerGallonUk] -->|Symbol| N0088(("cal/gal(UK)")) 
+	N0086[CaloriePerGallonUk] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0089[KilocaloriePerGallonUk] -->|BelongsToClass| N0006(Unit) 
+	N0089[KilocaloriePerGallonUk] -->|ConversionFactorA| N0007(("0")) 
+	N0089[KilocaloriePerGallonUk] -->|ConversionFactorB| N0090(("1.086541586998088E-06")) 
+	N0089[KilocaloriePerGallonUk] -->|Symbol| N0091(("Cal/gal(UK)")) 
+	N0089[KilocaloriePerGallonUk] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0092[JoulePerGallonUs] -->|BelongsToClass| N0006(Unit) 
+	N0092[JoulePerGallonUs] -->|ConversionFactorA| N0007(("0")) 
+	N0092[JoulePerGallonUs] -->|ConversionFactorB| N0093(("0.0037854117839999997")) 
+	N0092[JoulePerGallonUs] -->|Symbol| N0094(("J/gal(US)")) 
+	N0092[JoulePerGallonUs] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0095[KilojoulePerGallonUs] -->|BelongsToClass| N0006(Unit) 
+	N0095[KilojoulePerGallonUs] -->|ConversionFactorA| N0007(("0")) 
+	N0095[KilojoulePerGallonUs] -->|ConversionFactorB| N0096(("3.7854117839999998E-06")) 
+	N0095[KilojoulePerGallonUs] -->|Symbol| N0097(("kJ/gal(US)")) 
+	N0095[KilojoulePerGallonUs] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0098[MegajoulePerGallonUs] -->|BelongsToClass| N0006(Unit) 
+	N0098[MegajoulePerGallonUs] -->|ConversionFactorA| N0007(("0")) 
+	N0098[MegajoulePerGallonUs] -->|ConversionFactorB| N0099(("3.7854117839999995E-09")) 
+	N0098[MegajoulePerGallonUs] -->|Symbol| N0100(("MJ/gal(US)")) 
+	N0098[MegajoulePerGallonUs] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0101[GigajoulePerGallonUs] -->|BelongsToClass| N0006(Unit) 
+	N0101[GigajoulePerGallonUs] -->|ConversionFactorA| N0007(("0")) 
+	N0101[GigajoulePerGallonUs] -->|ConversionFactorB| N0102(("3.785411784E-12")) 
+	N0101[GigajoulePerGallonUs] -->|Symbol| N0103(("GJ/gal(US)")) 
+	N0101[GigajoulePerGallonUs] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0104[CaloriePerGallonUs] -->|BelongsToClass| N0006(Unit) 
+	N0104[CaloriePerGallonUs] -->|ConversionFactorA| N0007(("0")) 
+	N0104[CaloriePerGallonUs] -->|ConversionFactorB| N0105(("0.0009047351300191204")) 
+	N0104[CaloriePerGallonUs] -->|Symbol| N0106(("cal/gal(US)")) 
+	N0104[CaloriePerGallonUs] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0107[KilocaloriePerGallonUs] -->|BelongsToClass| N0006(Unit) 
+	N0107[KilocaloriePerGallonUs] -->|ConversionFactorA| N0007(("0")) 
+	N0107[KilocaloriePerGallonUs] -->|ConversionFactorB| N0108(("9.047351300191203E-07")) 
+	N0107[KilocaloriePerGallonUs] -->|Symbol| N0109(("Cal/gal(US)")) 
+	N0107[KilocaloriePerGallonUs] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0110[BritishThermalUnitPerCubicMetre] -->|BelongsToClass| N0006(Unit) 
+	N0110[BritishThermalUnitPerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
+	N0110[BritishThermalUnitPerCubicMetre] -->|ConversionFactorB| N0111(("0.0009484516526770049")) 
+	N0110[BritishThermalUnitPerCubicMetre] -->|Symbol| N0112(("BTU/m³")) 
+	N0110[BritishThermalUnitPerCubicMetre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0113[BritishThermalUnitPerLitre] -->|BelongsToClass| N0006(Unit) 
+	N0113[BritishThermalUnitPerLitre] -->|ConversionFactorA| N0007(("0")) 
+	N0113[BritishThermalUnitPerLitre] -->|ConversionFactorB| N0114(("9.484516526770049E-07")) 
+	N0113[BritishThermalUnitPerLitre] -->|Symbol| N0115(("BTU/L")) 
+	N0113[BritishThermalUnitPerLitre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0116[BritishThermalUnitPerCubicFoot] -->|BelongsToClass| N0006(Unit) 
+	N0116[BritishThermalUnitPerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
+	N0116[BritishThermalUnitPerCubicFoot] -->|ConversionFactorB| N0117(("2.6857159948783606E-05")) 
+	N0116[BritishThermalUnitPerCubicFoot] -->|Symbol| N0118(("BTU/ft³")) 
+	N0116[BritishThermalUnitPerCubicFoot] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0119[BritishThermalUnitPerCubicInch] -->|BelongsToClass| N0006(Unit) 
+	N0119[BritishThermalUnitPerCubicInch] -->|ConversionFactorA| N0007(("0")) 
+	N0119[BritishThermalUnitPerCubicInch] -->|ConversionFactorB| N0120(("1.554233793332385E-08")) 
+	N0119[BritishThermalUnitPerCubicInch] -->|Symbol| N0121(("BTU/in³")) 
+	N0119[BritishThermalUnitPerCubicInch] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0122[BritishThermalUnitPerGallonUk] -->|BelongsToClass| N0006(Unit) 
+	N0122[BritishThermalUnitPerGallonUk] -->|ConversionFactorA| N0007(("0")) 
+	N0122[BritishThermalUnitPerGallonUk] -->|ConversionFactorB| N0123(("4.311746573718405E-06")) 
+	N0122[BritishThermalUnitPerGallonUk] -->|Symbol| N0124(("BTU/gal(UK)")) 
+	N0122[BritishThermalUnitPerGallonUk] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0125[BritishThermalUnitPerGallonUs] -->|BelongsToClass| N0006(Unit) 
+	N0125[BritishThermalUnitPerGallonUs] -->|ConversionFactorA| N0007(("0")) 
+	N0125[BritishThermalUnitPerGallonUs] -->|ConversionFactorB| N0126(("3.5902800625978092E-06")) 
+	N0125[BritishThermalUnitPerGallonUs] -->|Symbol| N0127(("BTU/gal(US)")) 
+	N0125[BritishThermalUnitPerGallonUs] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0128[KiloBritishThermalUnitPerCubicMetre] -->|BelongsToClass| N0006(Unit) 
+	N0128[KiloBritishThermalUnitPerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
+	N0128[KiloBritishThermalUnitPerCubicMetre] -->|ConversionFactorB| N0129(("9.484516526770048E-07")) 
+	N0128[KiloBritishThermalUnitPerCubicMetre] -->|Symbol| N0130(("kBTU/m³")) 
+	N0128[KiloBritishThermalUnitPerCubicMetre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0131[KiloBritishThermalUnitPerLitre] -->|BelongsToClass| N0006(Unit) 
+	N0131[KiloBritishThermalUnitPerLitre] -->|ConversionFactorA| N0007(("0")) 
+	N0131[KiloBritishThermalUnitPerLitre] -->|ConversionFactorB| N0132(("9.48451652677005E-10")) 
+	N0131[KiloBritishThermalUnitPerLitre] -->|Symbol| N0133(("kBTU/L")) 
+	N0131[KiloBritishThermalUnitPerLitre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0134[KiloBritishThermalUnitPerCubicFoot] -->|BelongsToClass| N0006(Unit) 
+	N0134[KiloBritishThermalUnitPerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
+	N0134[KiloBritishThermalUnitPerCubicFoot] -->|ConversionFactorB| N0135(("2.6857159948783602E-08")) 
+	N0134[KiloBritishThermalUnitPerCubicFoot] -->|Symbol| N0136(("kBTU/ft³")) 
+	N0134[KiloBritishThermalUnitPerCubicFoot] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0137[KiloBritishThermalUnitPerCubicInch] -->|BelongsToClass| N0006(Unit) 
+	N0137[KiloBritishThermalUnitPerCubicInch] -->|ConversionFactorA| N0007(("0")) 
+	N0137[KiloBritishThermalUnitPerCubicInch] -->|ConversionFactorB| N0138(("1.5542337933323848E-11")) 
+	N0137[KiloBritishThermalUnitPerCubicInch] -->|Symbol| N0139(("kBTU/in³")) 
+	N0137[KiloBritishThermalUnitPerCubicInch] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0140[KiloBritishThermalUnitPerGallonUk] -->|BelongsToClass| N0006(Unit) 
+	N0140[KiloBritishThermalUnitPerGallonUk] -->|ConversionFactorA| N0007(("0")) 
+	N0140[KiloBritishThermalUnitPerGallonUk] -->|ConversionFactorB| N0141(("4.311746573718405E-09")) 
+	N0140[KiloBritishThermalUnitPerGallonUk] -->|Symbol| N0142(("kBTU/gal(UK)")) 
+	N0140[KiloBritishThermalUnitPerGallonUk] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+	N0143[KiloBritishThermalUnitPerGallonUs] -->|BelongsToClass| N0006(Unit) 
+	N0143[KiloBritishThermalUnitPerGallonUs] -->|ConversionFactorA| N0007(("0")) 
+	N0143[KiloBritishThermalUnitPerGallonUs] -->|ConversionFactorB| N0144(("3.5902800625978087E-09")) 
+	N0143[KiloBritishThermalUnitPerGallonUs] -->|Symbol| N0145(("kBTU/gal(US)")) 
+	N0143[KiloBritishThermalUnitPerGallonUs] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
+```
+## EnergyQuantity <!-- NOUN -->
+- Display name: Energy
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 2
+  - M = 1
+  - T = -2
+- Description: 
+Energy is the quantitative property that is transferred to a body or to a physical system, recognizable in the performance of work and in the form of heat and light. Energy is a conserved quantity—the law of conservation of energy states that energy can be converted in form, but not created or destroyed; matter and energy may also be converted to one another.
+The dimension of energy is:
+$$[L^{2}MT^{-2}]$$.
+The SI unit for **energy** is: joule with the associated unit label $J$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:EnergyQuantity
+EnergyQuantity.L = 2
+EnergyQuantity.M = 1
+EnergyQuantity.T = -2
+Unit:Joule
+Joule.ConversionFactorA = 0
+Joule.ConversionFactorB = 1
+Joule.Symbol = "J"
+Joule IsUnitForQuantity EnergyQuantity
+EnergyQuantity HasSIUnit Joule
+Unit:Kilojoule
+Kilojoule.ConversionFactorA = 0
+Kilojoule.ConversionFactorB = 0.001
+Kilojoule.Symbol = "kJ"
+Kilojoule IsUnitForQuantity EnergyQuantity
+Unit:Megajoule
+Megajoule.ConversionFactorA = 0
+Megajoule.ConversionFactorB = 1E-06
+Megajoule.Symbol = "MJ"
+Megajoule IsUnitForQuantity EnergyQuantity
+Unit:Gigajoule
+Gigajoule.ConversionFactorA = 0
+Gigajoule.ConversionFactorB = 1E-09
+Gigajoule.Symbol = "GJ"
+Gigajoule IsUnitForQuantity EnergyQuantity
+Unit:Calorie
+Calorie.ConversionFactorA = 0
+Calorie.ConversionFactorB = 0.2390057361376673
+Calorie.Symbol = "cal"
+Calorie IsUnitForQuantity EnergyQuantity
+Unit:Kilocalorie
+Kilocalorie.ConversionFactorA = 0
+Kilocalorie.ConversionFactorB = 0.0002390057361376673
+Kilocalorie.Symbol = "Cal"
+Kilocalorie IsUnitForQuantity EnergyQuantity
+Unit:BritishThermalUnit
+BritishThermalUnit.ConversionFactorA = 0
+BritishThermalUnit.ConversionFactorB = 0.0009484516526770049
+BritishThermalUnit.Symbol = "BTU"
+BritishThermalUnit IsUnitForQuantity EnergyQuantity
+Unit:KiloBritishThermalUnit
+KiloBritishThermalUnit.ConversionFactorA = 0
+KiloBritishThermalUnit.ConversionFactorB = 9.484516526770048E-07
+KiloBritishThermalUnit.Symbol = "kBTU"
+KiloBritishThermalUnit IsUnitForQuantity EnergyQuantity
+Unit:MegaBritishThermalUnit
+MegaBritishThermalUnit.ConversionFactorA = 0
+MegaBritishThermalUnit.ConversionFactorB = 9.48451652677005E-10
+MegaBritishThermalUnit.Symbol = "MMBTU"
+MegaBritishThermalUnit IsUnitForQuantity EnergyQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[EnergyQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[EnergyQuantity] -->|L| N0002(("2")) 
+	N0000[EnergyQuantity] -->|M| N0003(("1")) 
+	N0000[EnergyQuantity] -->|T| N0004(("-2")) 
+	N0005[Joule] -->|BelongsToClass| N0006(Unit) 
+	N0005[Joule] -->|ConversionFactorA| N0007(("0")) 
+	N0005[Joule] -->|ConversionFactorB| N0003(("1")) 
+	N0005[Joule] -->|Symbol| N0008(("J")) 
+	N0005[Joule] -->|IsUnitForQuantity| N0000((EnergyQuantity)) 
+	N0000[EnergyQuantity] -->|HasSIUnit| N0005((Joule)) 
+	N0009[Kilojoule] -->|BelongsToClass| N0006(Unit) 
+	N0009[Kilojoule] -->|ConversionFactorA| N0007(("0")) 
+	N0009[Kilojoule] -->|ConversionFactorB| N0010(("0.001")) 
+	N0009[Kilojoule] -->|Symbol| N0011(("kJ")) 
+	N0009[Kilojoule] -->|IsUnitForQuantity| N0000((EnergyQuantity)) 
+	N0012[Megajoule] -->|BelongsToClass| N0006(Unit) 
+	N0012[Megajoule] -->|ConversionFactorA| N0007(("0")) 
+	N0012[Megajoule] -->|ConversionFactorB| N0013(("1E-06")) 
+	N0012[Megajoule] -->|Symbol| N0014(("MJ")) 
+	N0012[Megajoule] -->|IsUnitForQuantity| N0000((EnergyQuantity)) 
+	N0015[Gigajoule] -->|BelongsToClass| N0006(Unit) 
+	N0015[Gigajoule] -->|ConversionFactorA| N0007(("0")) 
+	N0015[Gigajoule] -->|ConversionFactorB| N0016(("1E-09")) 
+	N0015[Gigajoule] -->|Symbol| N0017(("GJ")) 
+	N0015[Gigajoule] -->|IsUnitForQuantity| N0000((EnergyQuantity)) 
+	N0018[Calorie] -->|BelongsToClass| N0006(Unit) 
+	N0018[Calorie] -->|ConversionFactorA| N0007(("0")) 
+	N0018[Calorie] -->|ConversionFactorB| N0019(("0.2390057361376673")) 
+	N0018[Calorie] -->|Symbol| N0020(("cal")) 
+	N0018[Calorie] -->|IsUnitForQuantity| N0000((EnergyQuantity)) 
+	N0021[Kilocalorie] -->|BelongsToClass| N0006(Unit) 
+	N0021[Kilocalorie] -->|ConversionFactorA| N0007(("0")) 
+	N0021[Kilocalorie] -->|ConversionFactorB| N0022(("0.0002390057361376673")) 
+	N0021[Kilocalorie] -->|Symbol| N0023(("Cal")) 
+	N0021[Kilocalorie] -->|IsUnitForQuantity| N0000((EnergyQuantity)) 
+	N0024[BritishThermalUnit] -->|BelongsToClass| N0006(Unit) 
+	N0024[BritishThermalUnit] -->|ConversionFactorA| N0007(("0")) 
+	N0024[BritishThermalUnit] -->|ConversionFactorB| N0025(("0.0009484516526770049")) 
+	N0024[BritishThermalUnit] -->|Symbol| N0026(("BTU")) 
+	N0024[BritishThermalUnit] -->|IsUnitForQuantity| N0000((EnergyQuantity)) 
+	N0027[KiloBritishThermalUnit] -->|BelongsToClass| N0006(Unit) 
+	N0027[KiloBritishThermalUnit] -->|ConversionFactorA| N0007(("0")) 
+	N0027[KiloBritishThermalUnit] -->|ConversionFactorB| N0028(("9.484516526770048E-07")) 
+	N0027[KiloBritishThermalUnit] -->|Symbol| N0029(("kBTU")) 
+	N0027[KiloBritishThermalUnit] -->|IsUnitForQuantity| N0000((EnergyQuantity)) 
+	N0030[MegaBritishThermalUnit] -->|BelongsToClass| N0006(Unit) 
+	N0030[MegaBritishThermalUnit] -->|ConversionFactorA| N0007(("0")) 
+	N0030[MegaBritishThermalUnit] -->|ConversionFactorB| N0031(("9.48451652677005E-10")) 
+	N0030[MegaBritishThermalUnit] -->|Symbol| N0032(("MMBTU")) 
+	N0030[MegaBritishThermalUnit] -->|IsUnitForQuantity| N0000((EnergyQuantity)) 
 ```
 ## MassDensityGradientPerLengthQuantity <!-- NOUN -->
 - Display name: MassDensityGradientPerLength
@@ -17695,1197 +19299,6 @@ graph LR
 	N0042[PoundPerGallonUsPerHour] -->|Symbol| N0044(("ppgUS/h")) 
 	N0042[PoundPerGallonUsPerHour] -->|IsUnitForQuantity| N0000((MassDensityRateOfChangeQuantity)) 
 ```
-## DimensionlessQuantity <!-- NOUN -->
-- Display name: Dimensionless
-- Parent class: [Quantity](#Quantity)
-- Description: 
-As its name indicates, a dimensionless quantity has no dimension:
-- Definition set: QuantityTypes
-- Examples:
-``` dwis
-Quantity:DimensionlessQuantity
-Unit:Dimensionless
-Dimensionless.ConversionFactorA = 0
-Dimensionless.ConversionFactorB = 1
-Dimensionless IsUnitForQuantity DimensionlessQuantity
-DimensionlessQuantity HasSIUnit Dimensionless
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[DimensionlessQuantity] -->|BelongsToClass| N0001(Quantity) 
-	N0002[Dimensionless] -->|BelongsToClass| N0003(Unit) 
-	N0002[Dimensionless] -->|ConversionFactorA| N0004(("0")) 
-	N0002[Dimensionless] -->|ConversionFactorB| N0005(("1")) 
-	N0002[Dimensionless] -->|IsUnitForQuantity| N0000((DimensionlessQuantity)) 
-	N0000[DimensionlessQuantity] -->|HasSIUnit| N0002((Dimensionless)) 
-```
-## DynamicViscosityQuantity <!-- NOUN -->
-- Display name: DynamicViscosity
-- Parent class: [Quantity](#Quantity)
-- Specialization:
-  - L = -1
-  - M = 1
-  - T = -1
-- Description: 
-Dynamic viscosity is a measure of a fluid's resistance to shear or flow when a force is applied. It quantifies how thick or thin the fluid is.
-The dimension of dynamic viscosity is:
-$$[ML^{-1}T^{-1}]$$.
-The SI unit for **dynamic viscosity** is: pascal second with the associated unit label $Pa \cdot s$
-- Definition set: QuantityTypes
-- Examples:
-``` dwis
-Quantity:DynamicViscosityQuantity
-DynamicViscosityQuantity.L = -1
-DynamicViscosityQuantity.M = 1
-DynamicViscosityQuantity.T = -1
-Unit:PascalSecond
-PascalSecond.ConversionFactorA = 0
-PascalSecond.ConversionFactorB = 1
-PascalSecond.Symbol = "Pa•s"
-PascalSecond IsUnitForQuantity DynamicViscosityQuantity
-DynamicViscosityQuantity HasSIUnit PascalSecond
-Unit:MillipascalSecond
-MillipascalSecond.ConversionFactorA = 0
-MillipascalSecond.ConversionFactorB = 1000
-MillipascalSecond.Symbol = "mPa•s"
-MillipascalSecond IsUnitForQuantity DynamicViscosityQuantity
-Unit:MicropascalSecond
-MicropascalSecond.ConversionFactorA = 0
-MicropascalSecond.ConversionFactorB = 1000000
-MicropascalSecond.Symbol = "µPa•s"
-MicropascalSecond IsUnitForQuantity DynamicViscosityQuantity
-Unit:Poise
-Poise.ConversionFactorA = 0
-Poise.ConversionFactorB = 10
-Poise.Symbol = "P"
-Poise IsUnitForQuantity DynamicViscosityQuantity
-Unit:Centipoise
-Centipoise.ConversionFactorA = 0
-Centipoise.ConversionFactorB = 1000
-Centipoise.Symbol = "cP"
-Centipoise IsUnitForQuantity DynamicViscosityQuantity
-Unit:Millipoise
-Millipoise.ConversionFactorA = 0
-Millipoise.ConversionFactorB = 10000
-Millipoise.Symbol = "mP"
-Millipoise IsUnitForQuantity DynamicViscosityQuantity
-Unit:Micropoise
-Micropoise.ConversionFactorA = 0
-Micropoise.ConversionFactorB = 10000000
-Micropoise.Symbol = "µP"
-Micropoise IsUnitForQuantity DynamicViscosityQuantity
-Unit:PoundSecondPerSquareFoot
-PoundSecondPerSquareFoot.ConversionFactorA = 0
-PoundSecondPerSquareFoot.ConversionFactorB = 0.020885434233150126
-PoundSecondPerSquareFoot.Symbol = "lb•s/ft²"
-PoundSecondPerSquareFoot IsUnitForQuantity DynamicViscosityQuantity
-Unit:PoundSecondPer100SquareFoot
-PoundSecondPer100SquareFoot.ConversionFactorA = 0
-PoundSecondPer100SquareFoot.ConversionFactorB = 2.0885434233150124
-PoundSecondPer100SquareFoot.Symbol = "lb•s/100ft²"
-PoundSecondPer100SquareFoot IsUnitForQuantity DynamicViscosityQuantity
-Unit:PoundSecondPerSquareInch
-PoundSecondPerSquareInch.ConversionFactorA = 0
-PoundSecondPerSquareInch.ConversionFactorB = 0.0001450377377302092
-PoundSecondPerSquareInch.Symbol = "lb•s/in²"
-PoundSecondPerSquareInch IsUnitForQuantity DynamicViscosityQuantity
-Unit:DyneSecondPerSquareCentimetre
-DyneSecondPerSquareCentimetre.ConversionFactorA = 0
-DyneSecondPerSquareCentimetre.ConversionFactorB = 10
-DyneSecondPerSquareCentimetre.Symbol = "dyne•s/cm²"
-DyneSecondPerSquareCentimetre IsUnitForQuantity DynamicViscosityQuantity
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[DynamicViscosityQuantity] -->|BelongsToClass| N0001(Quantity) 
-	N0000[DynamicViscosityQuantity] -->|L| N0002(("-1")) 
-	N0000[DynamicViscosityQuantity] -->|M| N0003(("1")) 
-	N0000[DynamicViscosityQuantity] -->|T| N0002(("-1")) 
-	N0004[PascalSecond] -->|BelongsToClass| N0005(Unit) 
-	N0004[PascalSecond] -->|ConversionFactorA| N0006(("0")) 
-	N0004[PascalSecond] -->|ConversionFactorB| N0003(("1")) 
-	N0004[PascalSecond] -->|Symbol| N0007(("Pa•s")) 
-	N0004[PascalSecond] -->|IsUnitForQuantity| N0000((DynamicViscosityQuantity)) 
-	N0000[DynamicViscosityQuantity] -->|HasSIUnit| N0004((PascalSecond)) 
-	N0008[MillipascalSecond] -->|BelongsToClass| N0005(Unit) 
-	N0008[MillipascalSecond] -->|ConversionFactorA| N0006(("0")) 
-	N0008[MillipascalSecond] -->|ConversionFactorB| N0009(("1000")) 
-	N0008[MillipascalSecond] -->|Symbol| N0010(("mPa•s")) 
-	N0008[MillipascalSecond] -->|IsUnitForQuantity| N0000((DynamicViscosityQuantity)) 
-	N0011[MicropascalSecond] -->|BelongsToClass| N0005(Unit) 
-	N0011[MicropascalSecond] -->|ConversionFactorA| N0006(("0")) 
-	N0011[MicropascalSecond] -->|ConversionFactorB| N0012(("1000000")) 
-	N0011[MicropascalSecond] -->|Symbol| N0013(("µPa•s")) 
-	N0011[MicropascalSecond] -->|IsUnitForQuantity| N0000((DynamicViscosityQuantity)) 
-	N0014[Poise] -->|BelongsToClass| N0005(Unit) 
-	N0014[Poise] -->|ConversionFactorA| N0006(("0")) 
-	N0014[Poise] -->|ConversionFactorB| N0015(("10")) 
-	N0014[Poise] -->|Symbol| N0016(("P")) 
-	N0014[Poise] -->|IsUnitForQuantity| N0000((DynamicViscosityQuantity)) 
-	N0017[Centipoise] -->|BelongsToClass| N0005(Unit) 
-	N0017[Centipoise] -->|ConversionFactorA| N0006(("0")) 
-	N0017[Centipoise] -->|ConversionFactorB| N0009(("1000")) 
-	N0017[Centipoise] -->|Symbol| N0018(("cP")) 
-	N0017[Centipoise] -->|IsUnitForQuantity| N0000((DynamicViscosityQuantity)) 
-	N0019[Millipoise] -->|BelongsToClass| N0005(Unit) 
-	N0019[Millipoise] -->|ConversionFactorA| N0006(("0")) 
-	N0019[Millipoise] -->|ConversionFactorB| N0020(("10000")) 
-	N0019[Millipoise] -->|Symbol| N0021(("mP")) 
-	N0019[Millipoise] -->|IsUnitForQuantity| N0000((DynamicViscosityQuantity)) 
-	N0022[Micropoise] -->|BelongsToClass| N0005(Unit) 
-	N0022[Micropoise] -->|ConversionFactorA| N0006(("0")) 
-	N0022[Micropoise] -->|ConversionFactorB| N0023(("10000000")) 
-	N0022[Micropoise] -->|Symbol| N0024(("µP")) 
-	N0022[Micropoise] -->|IsUnitForQuantity| N0000((DynamicViscosityQuantity)) 
-	N0025[PoundSecondPerSquareFoot] -->|BelongsToClass| N0005(Unit) 
-	N0025[PoundSecondPerSquareFoot] -->|ConversionFactorA| N0006(("0")) 
-	N0025[PoundSecondPerSquareFoot] -->|ConversionFactorB| N0026(("0.020885434233150126")) 
-	N0025[PoundSecondPerSquareFoot] -->|Symbol| N0027(("lb•s/ft²")) 
-	N0025[PoundSecondPerSquareFoot] -->|IsUnitForQuantity| N0000((DynamicViscosityQuantity)) 
-	N0028[PoundSecondPer100SquareFoot] -->|BelongsToClass| N0005(Unit) 
-	N0028[PoundSecondPer100SquareFoot] -->|ConversionFactorA| N0006(("0")) 
-	N0028[PoundSecondPer100SquareFoot] -->|ConversionFactorB| N0029(("2.0885434233150124")) 
-	N0028[PoundSecondPer100SquareFoot] -->|Symbol| N0030(("lb•s/100ft²")) 
-	N0028[PoundSecondPer100SquareFoot] -->|IsUnitForQuantity| N0000((DynamicViscosityQuantity)) 
-	N0031[PoundSecondPerSquareInch] -->|BelongsToClass| N0005(Unit) 
-	N0031[PoundSecondPerSquareInch] -->|ConversionFactorA| N0006(("0")) 
-	N0031[PoundSecondPerSquareInch] -->|ConversionFactorB| N0032(("0.0001450377377302092")) 
-	N0031[PoundSecondPerSquareInch] -->|Symbol| N0033(("lb•s/in²")) 
-	N0031[PoundSecondPerSquareInch] -->|IsUnitForQuantity| N0000((DynamicViscosityQuantity)) 
-	N0034[DyneSecondPerSquareCentimetre] -->|BelongsToClass| N0005(Unit) 
-	N0034[DyneSecondPerSquareCentimetre] -->|ConversionFactorA| N0006(("0")) 
-	N0034[DyneSecondPerSquareCentimetre] -->|ConversionFactorB| N0015(("10")) 
-	N0034[DyneSecondPerSquareCentimetre] -->|Symbol| N0035(("dyne•s/cm²")) 
-	N0034[DyneSecondPerSquareCentimetre] -->|IsUnitForQuantity| N0000((DynamicViscosityQuantity)) 
-```
-## ElectricCapacitanceQuantity <!-- NOUN -->
-- Display name: ElectricCapacitance
-- Parent class: [Quantity](#Quantity)
-- Specialization:
-  - L = -2
-  - M = -1
-  - T = 4
-  - I = 2
-- Description: 
-lectric capacitance is the ability of a capacitor or a component to store electrical charge per unit voltage applied across it.
-The dimension of electric capacitance is:
-$$[T^{4}I^{2}M^{-1}L^{-2}]$$.
-The SI unit for **electric capacitance** is: farad with the associated unit label $F$
-- Definition set: QuantityTypes
-- Examples:
-``` dwis
-Quantity:ElectricCapacitanceQuantity
-ElectricCapacitanceQuantity.L = -2
-ElectricCapacitanceQuantity.M = -1
-ElectricCapacitanceQuantity.T = 4
-ElectricCapacitanceQuantity.I = 2
-Unit:Farad
-Farad.ConversionFactorA = 0
-Farad.ConversionFactorB = 1
-Farad.Symbol = "F"
-Farad IsUnitForQuantity ElectricCapacitanceQuantity
-ElectricCapacitanceQuantity HasSIUnit Farad
-Unit:CoulombPerVolt
-CoulombPerVolt.ConversionFactorA = 0
-CoulombPerVolt.ConversionFactorB = 1
-CoulombPerVolt.Symbol = "C/V"
-CoulombPerVolt IsUnitForQuantity ElectricCapacitanceQuantity
-Unit:Millifarad
-Millifarad.ConversionFactorA = 0
-Millifarad.ConversionFactorB = 1000
-Millifarad.Symbol = "mF"
-Millifarad IsUnitForQuantity ElectricCapacitanceQuantity
-Unit:Microfarad
-Microfarad.ConversionFactorA = 0
-Microfarad.ConversionFactorB = 1000000
-Microfarad.Symbol = "μF"
-Microfarad IsUnitForQuantity ElectricCapacitanceQuantity
-Unit:Nanofarad
-Nanofarad.ConversionFactorA = 0
-Nanofarad.ConversionFactorB = 999999999.9999999
-Nanofarad.Symbol = "nF"
-Nanofarad IsUnitForQuantity ElectricCapacitanceQuantity
-Unit:Picofarad
-Picofarad.ConversionFactorA = 0
-Picofarad.ConversionFactorB = 1000000000000
-Picofarad.Symbol = "pF"
-Picofarad IsUnitForQuantity ElectricCapacitanceQuantity
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[ElectricCapacitanceQuantity] -->|BelongsToClass| N0001(Quantity) 
-	N0000[ElectricCapacitanceQuantity] -->|L| N0002(("-2")) 
-	N0000[ElectricCapacitanceQuantity] -->|M| N0003(("-1")) 
-	N0000[ElectricCapacitanceQuantity] -->|T| N0004(("4")) 
-	N0000[ElectricCapacitanceQuantity] -->|I| N0005(("2")) 
-	N0006[Farad] -->|BelongsToClass| N0007(Unit) 
-	N0006[Farad] -->|ConversionFactorA| N0008(("0")) 
-	N0006[Farad] -->|ConversionFactorB| N0009(("1")) 
-	N0006[Farad] -->|Symbol| N0010(("F")) 
-	N0006[Farad] -->|IsUnitForQuantity| N0000((ElectricCapacitanceQuantity)) 
-	N0000[ElectricCapacitanceQuantity] -->|HasSIUnit| N0006((Farad)) 
-	N0011[CoulombPerVolt] -->|BelongsToClass| N0007(Unit) 
-	N0011[CoulombPerVolt] -->|ConversionFactorA| N0008(("0")) 
-	N0011[CoulombPerVolt] -->|ConversionFactorB| N0009(("1")) 
-	N0011[CoulombPerVolt] -->|Symbol| N0012(("C/V")) 
-	N0011[CoulombPerVolt] -->|IsUnitForQuantity| N0000((ElectricCapacitanceQuantity)) 
-	N0013[Millifarad] -->|BelongsToClass| N0007(Unit) 
-	N0013[Millifarad] -->|ConversionFactorA| N0008(("0")) 
-	N0013[Millifarad] -->|ConversionFactorB| N0014(("1000")) 
-	N0013[Millifarad] -->|Symbol| N0015(("mF")) 
-	N0013[Millifarad] -->|IsUnitForQuantity| N0000((ElectricCapacitanceQuantity)) 
-	N0016[Microfarad] -->|BelongsToClass| N0007(Unit) 
-	N0016[Microfarad] -->|ConversionFactorA| N0008(("0")) 
-	N0016[Microfarad] -->|ConversionFactorB| N0017(("1000000")) 
-	N0016[Microfarad] -->|Symbol| N0018(("μF")) 
-	N0016[Microfarad] -->|IsUnitForQuantity| N0000((ElectricCapacitanceQuantity)) 
-	N0019[Nanofarad] -->|BelongsToClass| N0007(Unit) 
-	N0019[Nanofarad] -->|ConversionFactorA| N0008(("0")) 
-	N0019[Nanofarad] -->|ConversionFactorB| N0020(("999999999.9999999")) 
-	N0019[Nanofarad] -->|Symbol| N0021(("nF")) 
-	N0019[Nanofarad] -->|IsUnitForQuantity| N0000((ElectricCapacitanceQuantity)) 
-	N0022[Picofarad] -->|BelongsToClass| N0007(Unit) 
-	N0022[Picofarad] -->|ConversionFactorA| N0008(("0")) 
-	N0022[Picofarad] -->|ConversionFactorB| N0023(("1000000000000")) 
-	N0022[Picofarad] -->|Symbol| N0024(("pF")) 
-	N0022[Picofarad] -->|IsUnitForQuantity| N0000((ElectricCapacitanceQuantity)) 
-```
-## ElectricCurrentQuantity <!-- NOUN -->
-- Display name: ElectricCurrent
-- Parent class: [Quantity](#Quantity)
-- Specialization:
-  - I = 1
-- Description: 
-Electric current is the flow of electric charge through a conductor or circuit.
-The dimension of electric current is:
-$$[I]$$.
-The SI unit for **electric current** is: ampere with the associated unit label $A$
-- Definition set: QuantityTypes
-- Examples:
-``` dwis
-Quantity:ElectricCurrentQuantity
-ElectricCurrentQuantity.I = 1
-Unit:Ampere
-Ampere.ConversionFactorA = 0
-Ampere.ConversionFactorB = 1
-Ampere.Symbol = "A"
-Ampere IsUnitForQuantity ElectricCurrentQuantity
-ElectricCurrentQuantity HasSIUnit Ampere
-Unit:CoulombPerSecond
-CoulombPerSecond.ConversionFactorA = 0
-CoulombPerSecond.ConversionFactorB = 1
-CoulombPerSecond.Symbol = "C/s"
-CoulombPerSecond IsUnitForQuantity ElectricCurrentQuantity
-Unit:SiemensVolt
-SiemensVolt.ConversionFactorA = 0
-SiemensVolt.ConversionFactorB = 1
-SiemensVolt.Symbol = "S•V"
-SiemensVolt IsUnitForQuantity ElectricCurrentQuantity
-Unit:VoltPerOhm
-VoltPerOhm.ConversionFactorA = 0
-VoltPerOhm.ConversionFactorB = 1
-VoltPerOhm.Symbol = "V/Ω"
-VoltPerOhm IsUnitForQuantity ElectricCurrentQuantity
-Unit:WattPerVolt
-WattPerVolt.ConversionFactorA = 0
-WattPerVolt.ConversionFactorB = 1
-WattPerVolt.Symbol = "W/V"
-WattPerVolt IsUnitForQuantity ElectricCurrentQuantity
-Unit:WeberPerHenry
-WeberPerHenry.ConversionFactorA = 0
-WeberPerHenry.ConversionFactorB = 1
-WeberPerHenry.Symbol = "Wb/H"
-WeberPerHenry IsUnitForQuantity ElectricCurrentQuantity
-Unit:Deciampere
-Deciampere.ConversionFactorA = 0
-Deciampere.ConversionFactorB = 10
-Deciampere.Symbol = "dA"
-Deciampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Centiampere
-Centiampere.ConversionFactorA = 0
-Centiampere.ConversionFactorB = 100
-Centiampere.Symbol = "cA"
-Centiampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Milliampere
-Milliampere.ConversionFactorA = 0
-Milliampere.ConversionFactorB = 1000
-Milliampere.Symbol = "mA"
-Milliampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Microampere
-Microampere.ConversionFactorA = 0
-Microampere.ConversionFactorB = 1000000
-Microampere.Symbol = "µA"
-Microampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Nanoampere
-Nanoampere.ConversionFactorA = 0
-Nanoampere.ConversionFactorB = 999999999.9999999
-Nanoampere.Symbol = "nA"
-Nanoampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Picoampere
-Picoampere.ConversionFactorA = 0
-Picoampere.ConversionFactorB = 1000000000000
-Picoampere.Symbol = "pA"
-Picoampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Biot
-Biot.ConversionFactorA = 0
-Biot.ConversionFactorB = 0.1
-Biot.Symbol = "Bi"
-Biot IsUnitForQuantity ElectricCurrentQuantity
-Unit:Abampere
-Abampere.ConversionFactorA = 0
-Abampere.ConversionFactorB = 0.1
-Abampere.Symbol = "abA"
-Abampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Kiloampere
-Kiloampere.ConversionFactorA = 0
-Kiloampere.ConversionFactorB = 0.001
-Kiloampere.Symbol = "kA"
-Kiloampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Megaampere
-Megaampere.ConversionFactorA = 0
-Megaampere.ConversionFactorB = 1E-06
-Megaampere.Symbol = "MA"
-Megaampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Gigaampere
-Gigaampere.ConversionFactorA = 0
-Gigaampere.ConversionFactorB = 1E-09
-Gigaampere.Symbol = "GA"
-Gigaampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Teraampere
-Teraampere.ConversionFactorA = 0
-Teraampere.ConversionFactorB = 1E-12
-Teraampere.Symbol = "TA"
-Teraampere IsUnitForQuantity ElectricCurrentQuantity
-Unit:Statampere
-Statampere.ConversionFactorA = 0
-Statampere.ConversionFactorB = 2997924580
-Statampere.Symbol = "stA"
-Statampere IsUnitForQuantity ElectricCurrentQuantity
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[ElectricCurrentQuantity] -->|BelongsToClass| N0001(Quantity) 
-	N0000[ElectricCurrentQuantity] -->|I| N0002(("1")) 
-	N0003[Ampere] -->|BelongsToClass| N0004(Unit) 
-	N0003[Ampere] -->|ConversionFactorA| N0005(("0")) 
-	N0003[Ampere] -->|ConversionFactorB| N0002(("1")) 
-	N0003[Ampere] -->|Symbol| N0006(("A")) 
-	N0003[Ampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
-	N0000[ElectricCurrentQuantity] -->|HasSIUnit| N0003((Ampere)) 
-	N0007[CoulombPerSecond] -->|BelongsToClass| N0004(Unit) 
-	N0007[CoulombPerSecond] -->|ConversionFactorA| N0005(("0")) 
-	N0007[CoulombPerSecond] -->|ConversionFactorB| N0002(("1")) 
-	N0007[CoulombPerSecond] -->|Symbol| N0008(("C/s")) 
-	N0007[CoulombPerSecond] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
-	N0009[SiemensVolt] -->|BelongsToClass| N0004(Unit) 
-	N0009[SiemensVolt] -->|ConversionFactorA| N0005(("0")) 
-	N0009[SiemensVolt] -->|ConversionFactorB| N0002(("1")) 
-	N0009[SiemensVolt] -->|Symbol| N0010(("S•V")) 
-	N0009[SiemensVolt] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
-	N0011[VoltPerOhm] -->|BelongsToClass| N0004(Unit) 
-	N0011[VoltPerOhm] -->|ConversionFactorA| N0005(("0")) 
-	N0011[VoltPerOhm] -->|ConversionFactorB| N0002(("1")) 
-	N0011[VoltPerOhm] -->|Symbol| N0012(("V/Ω")) 
-	N0011[VoltPerOhm] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
-	N0013[WattPerVolt] -->|BelongsToClass| N0004(Unit) 
-	N0013[WattPerVolt] -->|ConversionFactorA| N0005(("0")) 
-	N0013[WattPerVolt] -->|ConversionFactorB| N0002(("1")) 
-	N0013[WattPerVolt] -->|Symbol| N0014(("W/V")) 
-	N0013[WattPerVolt] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
-	N0015[WeberPerHenry] -->|BelongsToClass| N0004(Unit) 
-	N0015[WeberPerHenry] -->|ConversionFactorA| N0005(("0")) 
-	N0015[WeberPerHenry] -->|ConversionFactorB| N0002(("1")) 
-	N0015[WeberPerHenry] -->|Symbol| N0016(("Wb/H")) 
-	N0015[WeberPerHenry] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
-	N0017[Deciampere] -->|BelongsToClass| N0004(Unit) 
-	N0017[Deciampere] -->|ConversionFactorA| N0005(("0")) 
-	N0017[Deciampere] -->|ConversionFactorB| N0018(("10")) 
-	N0017[Deciampere] -->|Symbol| N0019(("dA")) 
-	N0017[Deciampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
-	N0020[Centiampere] -->|BelongsToClass| N0004(Unit) 
-	N0020[Centiampere] -->|ConversionFactorA| N0005(("0")) 
-	N0020[Centiampere] -->|ConversionFactorB| N0021(("100")) 
-	N0020[Centiampere] -->|Symbol| N0022(("cA")) 
-	N0020[Centiampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
-	N0023[Milliampere] -->|BelongsToClass| N0004(Unit) 
-	N0023[Milliampere] -->|ConversionFactorA| N0005(("0")) 
-	N0023[Milliampere] -->|ConversionFactorB| N0024(("1000")) 
-	N0023[Milliampere] -->|Symbol| N0025(("mA")) 
-	N0023[Milliampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
-	N0026[Microampere] -->|BelongsToClass| N0004(Unit) 
-	N0026[Microampere] -->|ConversionFactorA| N0005(("0")) 
-	N0026[Microampere] -->|ConversionFactorB| N0027(("1000000")) 
-	N0026[Microampere] -->|Symbol| N0028(("µA")) 
-	N0026[Microampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
-	N0029[Nanoampere] -->|BelongsToClass| N0004(Unit) 
-	N0029[Nanoampere] -->|ConversionFactorA| N0005(("0")) 
-	N0029[Nanoampere] -->|ConversionFactorB| N0030(("999999999.9999999")) 
-	N0029[Nanoampere] -->|Symbol| N0031(("nA")) 
-	N0029[Nanoampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
-	N0032[Picoampere] -->|BelongsToClass| N0004(Unit) 
-	N0032[Picoampere] -->|ConversionFactorA| N0005(("0")) 
-	N0032[Picoampere] -->|ConversionFactorB| N0033(("1000000000000")) 
-	N0032[Picoampere] -->|Symbol| N0034(("pA")) 
-	N0032[Picoampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
-	N0035[Biot] -->|BelongsToClass| N0004(Unit) 
-	N0035[Biot] -->|ConversionFactorA| N0005(("0")) 
-	N0035[Biot] -->|ConversionFactorB| N0036(("0.1")) 
-	N0035[Biot] -->|Symbol| N0037(("Bi")) 
-	N0035[Biot] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
-	N0038[Abampere] -->|BelongsToClass| N0004(Unit) 
-	N0038[Abampere] -->|ConversionFactorA| N0005(("0")) 
-	N0038[Abampere] -->|ConversionFactorB| N0036(("0.1")) 
-	N0038[Abampere] -->|Symbol| N0039(("abA")) 
-	N0038[Abampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
-	N0040[Kiloampere] -->|BelongsToClass| N0004(Unit) 
-	N0040[Kiloampere] -->|ConversionFactorA| N0005(("0")) 
-	N0040[Kiloampere] -->|ConversionFactorB| N0041(("0.001")) 
-	N0040[Kiloampere] -->|Symbol| N0042(("kA")) 
-	N0040[Kiloampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
-	N0043[Megaampere] -->|BelongsToClass| N0004(Unit) 
-	N0043[Megaampere] -->|ConversionFactorA| N0005(("0")) 
-	N0043[Megaampere] -->|ConversionFactorB| N0044(("1E-06")) 
-	N0043[Megaampere] -->|Symbol| N0045(("MA")) 
-	N0043[Megaampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
-	N0046[Gigaampere] -->|BelongsToClass| N0004(Unit) 
-	N0046[Gigaampere] -->|ConversionFactorA| N0005(("0")) 
-	N0046[Gigaampere] -->|ConversionFactorB| N0047(("1E-09")) 
-	N0046[Gigaampere] -->|Symbol| N0048(("GA")) 
-	N0046[Gigaampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
-	N0049[Teraampere] -->|BelongsToClass| N0004(Unit) 
-	N0049[Teraampere] -->|ConversionFactorA| N0005(("0")) 
-	N0049[Teraampere] -->|ConversionFactorB| N0050(("1E-12")) 
-	N0049[Teraampere] -->|Symbol| N0051(("TA")) 
-	N0049[Teraampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
-	N0052[Statampere] -->|BelongsToClass| N0004(Unit) 
-	N0052[Statampere] -->|ConversionFactorA| N0005(("0")) 
-	N0052[Statampere] -->|ConversionFactorB| N0053(("2997924580")) 
-	N0052[Statampere] -->|Symbol| N0054(("stA")) 
-	N0052[Statampere] -->|IsUnitForQuantity| N0000((ElectricCurrentQuantity)) 
-```
-## ElongationGradientPerLengthQuantity <!-- NOUN -->
-- Display name: ElongationGradientPerLength
-- Parent class: [Quantity](#Quantity)
-- Description: 
-An elongation gradient per length is the first derivative of an elongation compared to a distance: $\frac{d\epsilon}{ds}$, where $\epsilon$ is an elongation and $s$ is a distance.
-It is dimensionless.
-The SI unit for **elongation gradient per length** is: metre per metre with the associated unit label $\frac{m}{m}$
-- Definition set: QuantityTypes
-- Examples:
-``` dwis
-Quantity:ElongationGradientPerLengthQuantity
-Unit:MetrePerMetre
-MetrePerMetre.ConversionFactorA = 0
-MetrePerMetre.ConversionFactorB = 1
-MetrePerMetre.Symbol = "m/m"
-MetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
-ElongationGradientPerLengthQuantity HasSIUnit MetrePerMetre
-Unit:DecimetrePerMetre
-DecimetrePerMetre.ConversionFactorA = 0
-DecimetrePerMetre.ConversionFactorB = 10
-DecimetrePerMetre.Symbol = "dm/m"
-DecimetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:CentimetrePerMetre
-CentimetrePerMetre.ConversionFactorA = 0
-CentimetrePerMetre.ConversionFactorB = 100
-CentimetrePerMetre.Symbol = "cm/m"
-CentimetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:MillimetrePerMetre
-MillimetrePerMetre.ConversionFactorA = 0
-MillimetrePerMetre.ConversionFactorB = 1000
-MillimetrePerMetre.Symbol = "mm/m"
-MillimetrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:MicrometrePerMetre
-MicrometrePerMetre.ConversionFactorA = 0
-MicrometrePerMetre.ConversionFactorB = 1000000
-MicrometrePerMetre.Symbol = "µm/m"
-MicrometrePerMetre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:MetrePerKilometre
-MetrePerKilometre.ConversionFactorA = 0
-MetrePerKilometre.ConversionFactorB = 1000
-MetrePerKilometre.Symbol = "m/km"
-MetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:DecimetrePerKilometre
-DecimetrePerKilometre.ConversionFactorA = 0
-DecimetrePerKilometre.ConversionFactorB = 10000
-DecimetrePerKilometre.Symbol = "dm/km"
-DecimetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:CentimetrePerKilometre
-CentimetrePerKilometre.ConversionFactorA = 0
-CentimetrePerKilometre.ConversionFactorB = 100000
-CentimetrePerKilometre.Symbol = "cm/km"
-CentimetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:MillimetrePerKilometre
-MillimetrePerKilometre.ConversionFactorA = 0
-MillimetrePerKilometre.ConversionFactorB = 1000000
-MillimetrePerKilometre.Symbol = "mm/km"
-MillimetrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:MicrometrePerKilometre
-MicrometrePerKilometre.ConversionFactorA = 0
-MicrometrePerKilometre.ConversionFactorB = 1000000000
-MicrometrePerKilometre.Symbol = "µm/km"
-MicrometrePerKilometre IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:InchPerFoot
-InchPerFoot.ConversionFactorA = 0
-InchPerFoot.ConversionFactorB = 11.999999999999998
-InchPerFoot.Symbol = "in/ft"
-InchPerFoot IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:InchPerYard
-InchPerYard.ConversionFactorA = 0
-InchPerYard.ConversionFactorB = 36
-InchPerYard.Symbol = "in/yd"
-InchPerYard IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:InchPerMile
-InchPerMile.ConversionFactorA = 0
-InchPerMile.ConversionFactorB = 63359.99999999999
-InchPerMile.Symbol = "in/mi"
-InchPerMile IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:FootPerFoot
-FootPerFoot.ConversionFactorA = 0
-FootPerFoot.ConversionFactorB = 1
-FootPerFoot.Symbol = "ft/ft"
-FootPerFoot IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:FootPerYard
-FootPerYard.ConversionFactorA = 0
-FootPerYard.ConversionFactorB = 3
-FootPerYard.Symbol = "ft/yd"
-FootPerYard IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:FootPerMile
-FootPerMile.ConversionFactorA = 0
-FootPerMile.ConversionFactorB = 5280
-FootPerMile.Symbol = "ft/mi"
-FootPerMile IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:YardPerFoot
-YardPerFoot.ConversionFactorA = 0
-YardPerFoot.ConversionFactorB = 0.3333333333333333
-YardPerFoot.Symbol = "yd/ft"
-YardPerFoot IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:YardPerYard
-YardPerYard.ConversionFactorA = 0
-YardPerYard.ConversionFactorB = 1
-YardPerYard.Symbol = "yd/yd"
-YardPerYard IsUnitForQuantity ElongationGradientPerLengthQuantity
-Unit:YardPerMile
-YardPerMile.ConversionFactorA = 0
-YardPerMile.ConversionFactorB = 1760
-YardPerMile.Symbol = "yd/mi"
-YardPerMile IsUnitForQuantity ElongationGradientPerLengthQuantity
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[ElongationGradientPerLengthQuantity] -->|BelongsToClass| N0001(Quantity) 
-	N0002[MetrePerMetre] -->|BelongsToClass| N0003(Unit) 
-	N0002[MetrePerMetre] -->|ConversionFactorA| N0004(("0")) 
-	N0002[MetrePerMetre] -->|ConversionFactorB| N0005(("1")) 
-	N0002[MetrePerMetre] -->|Symbol| N0006(("m/m")) 
-	N0002[MetrePerMetre] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
-	N0000[ElongationGradientPerLengthQuantity] -->|HasSIUnit| N0002((MetrePerMetre)) 
-	N0007[DecimetrePerMetre] -->|BelongsToClass| N0003(Unit) 
-	N0007[DecimetrePerMetre] -->|ConversionFactorA| N0004(("0")) 
-	N0007[DecimetrePerMetre] -->|ConversionFactorB| N0008(("10")) 
-	N0007[DecimetrePerMetre] -->|Symbol| N0009(("dm/m")) 
-	N0007[DecimetrePerMetre] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
-	N0010[CentimetrePerMetre] -->|BelongsToClass| N0003(Unit) 
-	N0010[CentimetrePerMetre] -->|ConversionFactorA| N0004(("0")) 
-	N0010[CentimetrePerMetre] -->|ConversionFactorB| N0011(("100")) 
-	N0010[CentimetrePerMetre] -->|Symbol| N0012(("cm/m")) 
-	N0010[CentimetrePerMetre] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
-	N0013[MillimetrePerMetre] -->|BelongsToClass| N0003(Unit) 
-	N0013[MillimetrePerMetre] -->|ConversionFactorA| N0004(("0")) 
-	N0013[MillimetrePerMetre] -->|ConversionFactorB| N0014(("1000")) 
-	N0013[MillimetrePerMetre] -->|Symbol| N0015(("mm/m")) 
-	N0013[MillimetrePerMetre] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
-	N0016[MicrometrePerMetre] -->|BelongsToClass| N0003(Unit) 
-	N0016[MicrometrePerMetre] -->|ConversionFactorA| N0004(("0")) 
-	N0016[MicrometrePerMetre] -->|ConversionFactorB| N0017(("1000000")) 
-	N0016[MicrometrePerMetre] -->|Symbol| N0018(("µm/m")) 
-	N0016[MicrometrePerMetre] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
-	N0019[MetrePerKilometre] -->|BelongsToClass| N0003(Unit) 
-	N0019[MetrePerKilometre] -->|ConversionFactorA| N0004(("0")) 
-	N0019[MetrePerKilometre] -->|ConversionFactorB| N0014(("1000")) 
-	N0019[MetrePerKilometre] -->|Symbol| N0020(("m/km")) 
-	N0019[MetrePerKilometre] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
-	N0021[DecimetrePerKilometre] -->|BelongsToClass| N0003(Unit) 
-	N0021[DecimetrePerKilometre] -->|ConversionFactorA| N0004(("0")) 
-	N0021[DecimetrePerKilometre] -->|ConversionFactorB| N0022(("10000")) 
-	N0021[DecimetrePerKilometre] -->|Symbol| N0023(("dm/km")) 
-	N0021[DecimetrePerKilometre] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
-	N0024[CentimetrePerKilometre] -->|BelongsToClass| N0003(Unit) 
-	N0024[CentimetrePerKilometre] -->|ConversionFactorA| N0004(("0")) 
-	N0024[CentimetrePerKilometre] -->|ConversionFactorB| N0025(("100000")) 
-	N0024[CentimetrePerKilometre] -->|Symbol| N0026(("cm/km")) 
-	N0024[CentimetrePerKilometre] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
-	N0027[MillimetrePerKilometre] -->|BelongsToClass| N0003(Unit) 
-	N0027[MillimetrePerKilometre] -->|ConversionFactorA| N0004(("0")) 
-	N0027[MillimetrePerKilometre] -->|ConversionFactorB| N0017(("1000000")) 
-	N0027[MillimetrePerKilometre] -->|Symbol| N0028(("mm/km")) 
-	N0027[MillimetrePerKilometre] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
-	N0029[MicrometrePerKilometre] -->|BelongsToClass| N0003(Unit) 
-	N0029[MicrometrePerKilometre] -->|ConversionFactorA| N0004(("0")) 
-	N0029[MicrometrePerKilometre] -->|ConversionFactorB| N0030(("1000000000")) 
-	N0029[MicrometrePerKilometre] -->|Symbol| N0031(("µm/km")) 
-	N0029[MicrometrePerKilometre] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
-	N0032[InchPerFoot] -->|BelongsToClass| N0003(Unit) 
-	N0032[InchPerFoot] -->|ConversionFactorA| N0004(("0")) 
-	N0032[InchPerFoot] -->|ConversionFactorB| N0033(("11.999999999999998")) 
-	N0032[InchPerFoot] -->|Symbol| N0034(("in/ft")) 
-	N0032[InchPerFoot] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
-	N0035[InchPerYard] -->|BelongsToClass| N0003(Unit) 
-	N0035[InchPerYard] -->|ConversionFactorA| N0004(("0")) 
-	N0035[InchPerYard] -->|ConversionFactorB| N0036(("36")) 
-	N0035[InchPerYard] -->|Symbol| N0037(("in/yd")) 
-	N0035[InchPerYard] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
-	N0038[InchPerMile] -->|BelongsToClass| N0003(Unit) 
-	N0038[InchPerMile] -->|ConversionFactorA| N0004(("0")) 
-	N0038[InchPerMile] -->|ConversionFactorB| N0039(("63359.99999999999")) 
-	N0038[InchPerMile] -->|Symbol| N0040(("in/mi")) 
-	N0038[InchPerMile] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
-	N0041[FootPerFoot] -->|BelongsToClass| N0003(Unit) 
-	N0041[FootPerFoot] -->|ConversionFactorA| N0004(("0")) 
-	N0041[FootPerFoot] -->|ConversionFactorB| N0005(("1")) 
-	N0041[FootPerFoot] -->|Symbol| N0042(("ft/ft")) 
-	N0041[FootPerFoot] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
-	N0043[FootPerYard] -->|BelongsToClass| N0003(Unit) 
-	N0043[FootPerYard] -->|ConversionFactorA| N0004(("0")) 
-	N0043[FootPerYard] -->|ConversionFactorB| N0044(("3")) 
-	N0043[FootPerYard] -->|Symbol| N0045(("ft/yd")) 
-	N0043[FootPerYard] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
-	N0046[FootPerMile] -->|BelongsToClass| N0003(Unit) 
-	N0046[FootPerMile] -->|ConversionFactorA| N0004(("0")) 
-	N0046[FootPerMile] -->|ConversionFactorB| N0047(("5280")) 
-	N0046[FootPerMile] -->|Symbol| N0048(("ft/mi")) 
-	N0046[FootPerMile] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
-	N0049[YardPerFoot] -->|BelongsToClass| N0003(Unit) 
-	N0049[YardPerFoot] -->|ConversionFactorA| N0004(("0")) 
-	N0049[YardPerFoot] -->|ConversionFactorB| N0050(("0.3333333333333333")) 
-	N0049[YardPerFoot] -->|Symbol| N0051(("yd/ft")) 
-	N0049[YardPerFoot] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
-	N0052[YardPerYard] -->|BelongsToClass| N0003(Unit) 
-	N0052[YardPerYard] -->|ConversionFactorA| N0004(("0")) 
-	N0052[YardPerYard] -->|ConversionFactorB| N0005(("1")) 
-	N0052[YardPerYard] -->|Symbol| N0053(("yd/yd")) 
-	N0052[YardPerYard] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
-	N0054[YardPerMile] -->|BelongsToClass| N0003(Unit) 
-	N0054[YardPerMile] -->|ConversionFactorA| N0004(("0")) 
-	N0054[YardPerMile] -->|ConversionFactorB| N0055(("1760")) 
-	N0054[YardPerMile] -->|Symbol| N0056(("yd/mi")) 
-	N0054[YardPerMile] -->|IsUnitForQuantity| N0000((ElongationGradientPerLengthQuantity)) 
-```
-## EnergyDensityQuantity <!-- NOUN -->
-- Display name: EnergyDensity
-- Parent class: [Quantity](#Quantity)
-- Specialization:
-  - L = -1
-  - M = 1
-  - T = -2
-- Description: 
-Energy density is the amount of energy stored per unit volume or mass of a substance or system.
-The dimension of energy density is:
-$$[ML^{-1}T^{-2}]$$.
-The SI unit for **energy density** is: joule per cubic metre with the associated unit label $\frac{J}{m^{3}}$
-- Definition set: QuantityTypes
-- Examples:
-``` dwis
-Quantity:EnergyDensityQuantity
-EnergyDensityQuantity.L = -1
-EnergyDensityQuantity.M = 1
-EnergyDensityQuantity.T = -2
-Unit:JoulePerCubicMetre
-JoulePerCubicMetre.ConversionFactorA = 0
-JoulePerCubicMetre.ConversionFactorB = 1
-JoulePerCubicMetre.Symbol = "J/m³"
-JoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
-EnergyDensityQuantity HasSIUnit JoulePerCubicMetre
-Unit:JoulePerLitre
-JoulePerLitre.ConversionFactorA = 0
-JoulePerLitre.ConversionFactorB = 0.001
-JoulePerLitre.Symbol = "J/L"
-JoulePerLitre IsUnitForQuantity EnergyDensityQuantity
-Unit:KilojoulePerCubicMetre
-KilojoulePerCubicMetre.ConversionFactorA = 0
-KilojoulePerCubicMetre.ConversionFactorB = 0.001
-KilojoulePerCubicMetre.Symbol = "kJ/m³"
-KilojoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
-Unit:KilojoulePerLitre
-KilojoulePerLitre.ConversionFactorA = 0
-KilojoulePerLitre.ConversionFactorB = 1E-06
-KilojoulePerLitre.Symbol = "kJ/L"
-KilojoulePerLitre IsUnitForQuantity EnergyDensityQuantity
-Unit:MegajoulePerCubicMetre
-MegajoulePerCubicMetre.ConversionFactorA = 0
-MegajoulePerCubicMetre.ConversionFactorB = 1E-06
-MegajoulePerCubicMetre.Symbol = "MJ/m³"
-MegajoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
-Unit:MegajoulePerLitre
-MegajoulePerLitre.ConversionFactorA = 0
-MegajoulePerLitre.ConversionFactorB = 1E-09
-MegajoulePerLitre.Symbol = "MJ/L"
-MegajoulePerLitre IsUnitForQuantity EnergyDensityQuantity
-Unit:GigajoulePerCubicMetre
-GigajoulePerCubicMetre.ConversionFactorA = 0
-GigajoulePerCubicMetre.ConversionFactorB = 1E-09
-GigajoulePerCubicMetre.Symbol = "GJ/m³"
-GigajoulePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
-Unit:GigajoulePerLitre
-GigajoulePerLitre.ConversionFactorA = 0
-GigajoulePerLitre.ConversionFactorB = 1E-12
-GigajoulePerLitre.Symbol = "GJ/L"
-GigajoulePerLitre IsUnitForQuantity EnergyDensityQuantity
-Unit:CaloriePerCubicMetre
-CaloriePerCubicMetre.ConversionFactorA = 0
-CaloriePerCubicMetre.ConversionFactorB = 0.2390057361376673
-CaloriePerCubicMetre.Symbol = "cal/m³"
-CaloriePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
-Unit:CaloriePerLitre
-CaloriePerLitre.ConversionFactorA = 0
-CaloriePerLitre.ConversionFactorB = 0.0002390057361376673
-CaloriePerLitre.Symbol = "cal/L"
-CaloriePerLitre IsUnitForQuantity EnergyDensityQuantity
-Unit:KilocaloriePerCubicMetre
-KilocaloriePerCubicMetre.ConversionFactorA = 0
-KilocaloriePerCubicMetre.ConversionFactorB = 0.0002390057361376673
-KilocaloriePerCubicMetre.Symbol = "Cal/m³"
-KilocaloriePerCubicMetre IsUnitForQuantity EnergyDensityQuantity
-Unit:KilocaloriePerLitre
-KilocaloriePerLitre.ConversionFactorA = 0
-KilocaloriePerLitre.ConversionFactorB = 2.390057361376673E-07
-KilocaloriePerLitre.Symbol = "Cal/L"
-KilocaloriePerLitre IsUnitForQuantity EnergyDensityQuantity
-Unit:JoulePerCubicFoot
-JoulePerCubicFoot.ConversionFactorA = 0
-JoulePerCubicFoot.ConversionFactorB = 0.02831684659199999
-JoulePerCubicFoot.Symbol = "J/ft³"
-JoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
-Unit:KilojoulePerCubicFoot
-KilojoulePerCubicFoot.ConversionFactorA = 0
-KilojoulePerCubicFoot.ConversionFactorB = 2.831684659199999E-05
-KilojoulePerCubicFoot.Symbol = "kJ/ft³"
-KilojoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
-Unit:MegajoulePerCubicFoot
-MegajoulePerCubicFoot.ConversionFactorA = 0
-MegajoulePerCubicFoot.ConversionFactorB = 2.831684659199999E-08
-MegajoulePerCubicFoot.Symbol = "MJ/ft³"
-MegajoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
-Unit:GigajoulePerCubicFoot
-GigajoulePerCubicFoot.ConversionFactorA = 0
-GigajoulePerCubicFoot.ConversionFactorB = 2.831684659199999E-11
-GigajoulePerCubicFoot.Symbol = "GJ/ft³"
-GigajoulePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
-Unit:CaloriePerCubicFoot
-CaloriePerCubicFoot.ConversionFactorA = 0
-CaloriePerCubicFoot.ConversionFactorB = 0.006767888764818353
-CaloriePerCubicFoot.Symbol = "cal/ft³"
-CaloriePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
-Unit:KilocaloriePerCubicFoot
-KilocaloriePerCubicFoot.ConversionFactorA = 0
-KilocaloriePerCubicFoot.ConversionFactorB = 6.767888764818354E-06
-KilocaloriePerCubicFoot.Symbol = "Cal/ft³"
-KilocaloriePerCubicFoot IsUnitForQuantity EnergyDensityQuantity
-Unit:JoulePerCubicInch
-JoulePerCubicInch.ConversionFactorA = 0
-JoulePerCubicInch.ConversionFactorB = 1.6387064E-05
-JoulePerCubicInch.Symbol = "J/in³"
-JoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
-Unit:KilojoulePerCubicInch
-KilojoulePerCubicInch.ConversionFactorA = 0
-KilojoulePerCubicInch.ConversionFactorB = 1.6387064E-08
-KilojoulePerCubicInch.Symbol = "kJ/in³"
-KilojoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
-Unit:MegajoulePerCubicInch
-MegajoulePerCubicInch.ConversionFactorA = 0
-MegajoulePerCubicInch.ConversionFactorB = 1.6387064E-11
-MegajoulePerCubicInch.Symbol = "MJ/in³"
-MegajoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
-Unit:GigajoulePerCubicInch
-GigajoulePerCubicInch.ConversionFactorA = 0
-GigajoulePerCubicInch.ConversionFactorB = 1.6387064E-14
-GigajoulePerCubicInch.Symbol = "GJ/in³"
-GigajoulePerCubicInch IsUnitForQuantity EnergyDensityQuantity
-Unit:CaloriePerCubicInch
-CaloriePerCubicInch.ConversionFactorA = 0
-CaloriePerCubicInch.ConversionFactorB = 3.916602294455067E-06
-CaloriePerCubicInch.Symbol = "cal/in³"
-CaloriePerCubicInch IsUnitForQuantity EnergyDensityQuantity
-Unit:KilocaloriePerCubicInch
-KilocaloriePerCubicInch.ConversionFactorA = 0
-KilocaloriePerCubicInch.ConversionFactorB = 3.916602294455067E-09
-KilocaloriePerCubicInch.Symbol = "Cal/in³"
-KilocaloriePerCubicInch IsUnitForQuantity EnergyDensityQuantity
-Unit:JoulePerGallonUk
-JoulePerGallonUk.ConversionFactorA = 0
-JoulePerGallonUk.ConversionFactorB = 0.00454609
-JoulePerGallonUk.Symbol = "J/gal(UK)"
-JoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
-Unit:KilojoulePerGallonUk
-KilojoulePerGallonUk.ConversionFactorA = 0
-KilojoulePerGallonUk.ConversionFactorB = 4.54609E-06
-KilojoulePerGallonUk.Symbol = "kJ/gal(UK)"
-KilojoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
-Unit:MegajoulePerGallonUk
-MegajoulePerGallonUk.ConversionFactorA = 0
-MegajoulePerGallonUk.ConversionFactorB = 4.54609E-09
-MegajoulePerGallonUk.Symbol = "MJ/gal(UK)"
-MegajoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
-Unit:GigajoulePerGallonUk
-GigajoulePerGallonUk.ConversionFactorA = 0
-GigajoulePerGallonUk.ConversionFactorB = 4.54609E-12
-GigajoulePerGallonUk.Symbol = "GJ/gal(UK)"
-GigajoulePerGallonUk IsUnitForQuantity EnergyDensityQuantity
-Unit:CaloriePerGallonUk
-CaloriePerGallonUk.ConversionFactorA = 0
-CaloriePerGallonUk.ConversionFactorB = 0.0010865415869980878
-CaloriePerGallonUk.Symbol = "cal/gal(UK)"
-CaloriePerGallonUk IsUnitForQuantity EnergyDensityQuantity
-Unit:KilocaloriePerGallonUk
-KilocaloriePerGallonUk.ConversionFactorA = 0
-KilocaloriePerGallonUk.ConversionFactorB = 1.086541586998088E-06
-KilocaloriePerGallonUk.Symbol = "Cal/gal(UK)"
-KilocaloriePerGallonUk IsUnitForQuantity EnergyDensityQuantity
-Unit:JoulePerGallonUs
-JoulePerGallonUs.ConversionFactorA = 0
-JoulePerGallonUs.ConversionFactorB = 0.0037854117839999997
-JoulePerGallonUs.Symbol = "J/gal(US)"
-JoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
-Unit:KilojoulePerGallonUs
-KilojoulePerGallonUs.ConversionFactorA = 0
-KilojoulePerGallonUs.ConversionFactorB = 3.7854117839999998E-06
-KilojoulePerGallonUs.Symbol = "kJ/gal(US)"
-KilojoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
-Unit:MegajoulePerGallonUs
-MegajoulePerGallonUs.ConversionFactorA = 0
-MegajoulePerGallonUs.ConversionFactorB = 3.7854117839999995E-09
-MegajoulePerGallonUs.Symbol = "MJ/gal(US)"
-MegajoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
-Unit:GigajoulePerGallonUs
-GigajoulePerGallonUs.ConversionFactorA = 0
-GigajoulePerGallonUs.ConversionFactorB = 3.785411784E-12
-GigajoulePerGallonUs.Symbol = "GJ/gal(US)"
-GigajoulePerGallonUs IsUnitForQuantity EnergyDensityQuantity
-Unit:CaloriePerGallonUs
-CaloriePerGallonUs.ConversionFactorA = 0
-CaloriePerGallonUs.ConversionFactorB = 0.0009047351300191204
-CaloriePerGallonUs.Symbol = "cal/gal(US)"
-CaloriePerGallonUs IsUnitForQuantity EnergyDensityQuantity
-Unit:KilocaloriePerGallonUs
-KilocaloriePerGallonUs.ConversionFactorA = 0
-KilocaloriePerGallonUs.ConversionFactorB = 9.047351300191203E-07
-KilocaloriePerGallonUs.Symbol = "Cal/gal(US)"
-KilocaloriePerGallonUs IsUnitForQuantity EnergyDensityQuantity
-Unit:BritishThermalUnitPerCubicMetre
-BritishThermalUnitPerCubicMetre.ConversionFactorA = 0
-BritishThermalUnitPerCubicMetre.ConversionFactorB = 0.0009484516526770049
-BritishThermalUnitPerCubicMetre.Symbol = "BTU/m³"
-BritishThermalUnitPerCubicMetre IsUnitForQuantity EnergyDensityQuantity
-Unit:BritishThermalUnitPerLitre
-BritishThermalUnitPerLitre.ConversionFactorA = 0
-BritishThermalUnitPerLitre.ConversionFactorB = 9.484516526770049E-07
-BritishThermalUnitPerLitre.Symbol = "BTU/L"
-BritishThermalUnitPerLitre IsUnitForQuantity EnergyDensityQuantity
-Unit:BritishThermalUnitPerCubicFoot
-BritishThermalUnitPerCubicFoot.ConversionFactorA = 0
-BritishThermalUnitPerCubicFoot.ConversionFactorB = 2.6857159948783606E-05
-BritishThermalUnitPerCubicFoot.Symbol = "BTU/ft³"
-BritishThermalUnitPerCubicFoot IsUnitForQuantity EnergyDensityQuantity
-Unit:BritishThermalUnitPerCubicInch
-BritishThermalUnitPerCubicInch.ConversionFactorA = 0
-BritishThermalUnitPerCubicInch.ConversionFactorB = 1.554233793332385E-08
-BritishThermalUnitPerCubicInch.Symbol = "BTU/in³"
-BritishThermalUnitPerCubicInch IsUnitForQuantity EnergyDensityQuantity
-Unit:BritishThermalUnitPerGallonUk
-BritishThermalUnitPerGallonUk.ConversionFactorA = 0
-BritishThermalUnitPerGallonUk.ConversionFactorB = 4.311746573718405E-06
-BritishThermalUnitPerGallonUk.Symbol = "BTU/gal(UK)"
-BritishThermalUnitPerGallonUk IsUnitForQuantity EnergyDensityQuantity
-Unit:BritishThermalUnitPerGallonUs
-BritishThermalUnitPerGallonUs.ConversionFactorA = 0
-BritishThermalUnitPerGallonUs.ConversionFactorB = 3.5902800625978092E-06
-BritishThermalUnitPerGallonUs.Symbol = "BTU/gal(US)"
-BritishThermalUnitPerGallonUs IsUnitForQuantity EnergyDensityQuantity
-Unit:KiloBritishThermalUnitPerCubicMetre
-KiloBritishThermalUnitPerCubicMetre.ConversionFactorA = 0
-KiloBritishThermalUnitPerCubicMetre.ConversionFactorB = 9.484516526770048E-07
-KiloBritishThermalUnitPerCubicMetre.Symbol = "kBTU/m³"
-KiloBritishThermalUnitPerCubicMetre IsUnitForQuantity EnergyDensityQuantity
-Unit:KiloBritishThermalUnitPerLitre
-KiloBritishThermalUnitPerLitre.ConversionFactorA = 0
-KiloBritishThermalUnitPerLitre.ConversionFactorB = 9.48451652677005E-10
-KiloBritishThermalUnitPerLitre.Symbol = "kBTU/L"
-KiloBritishThermalUnitPerLitre IsUnitForQuantity EnergyDensityQuantity
-Unit:KiloBritishThermalUnitPerCubicFoot
-KiloBritishThermalUnitPerCubicFoot.ConversionFactorA = 0
-KiloBritishThermalUnitPerCubicFoot.ConversionFactorB = 2.6857159948783602E-08
-KiloBritishThermalUnitPerCubicFoot.Symbol = "kBTU/ft³"
-KiloBritishThermalUnitPerCubicFoot IsUnitForQuantity EnergyDensityQuantity
-Unit:KiloBritishThermalUnitPerCubicInch
-KiloBritishThermalUnitPerCubicInch.ConversionFactorA = 0
-KiloBritishThermalUnitPerCubicInch.ConversionFactorB = 1.5542337933323848E-11
-KiloBritishThermalUnitPerCubicInch.Symbol = "kBTU/in³"
-KiloBritishThermalUnitPerCubicInch IsUnitForQuantity EnergyDensityQuantity
-Unit:KiloBritishThermalUnitPerGallonUk
-KiloBritishThermalUnitPerGallonUk.ConversionFactorA = 0
-KiloBritishThermalUnitPerGallonUk.ConversionFactorB = 4.311746573718405E-09
-KiloBritishThermalUnitPerGallonUk.Symbol = "kBTU/gal(UK)"
-KiloBritishThermalUnitPerGallonUk IsUnitForQuantity EnergyDensityQuantity
-Unit:KiloBritishThermalUnitPerGallonUs
-KiloBritishThermalUnitPerGallonUs.ConversionFactorA = 0
-KiloBritishThermalUnitPerGallonUs.ConversionFactorB = 3.5902800625978087E-09
-KiloBritishThermalUnitPerGallonUs.Symbol = "kBTU/gal(US)"
-KiloBritishThermalUnitPerGallonUs IsUnitForQuantity EnergyDensityQuantity
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[EnergyDensityQuantity] -->|BelongsToClass| N0001(Quantity) 
-	N0000[EnergyDensityQuantity] -->|L| N0002(("-1")) 
-	N0000[EnergyDensityQuantity] -->|M| N0003(("1")) 
-	N0000[EnergyDensityQuantity] -->|T| N0004(("-2")) 
-	N0005[JoulePerCubicMetre] -->|BelongsToClass| N0006(Unit) 
-	N0005[JoulePerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
-	N0005[JoulePerCubicMetre] -->|ConversionFactorB| N0003(("1")) 
-	N0005[JoulePerCubicMetre] -->|Symbol| N0008(("J/m³")) 
-	N0005[JoulePerCubicMetre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0000[EnergyDensityQuantity] -->|HasSIUnit| N0005((JoulePerCubicMetre)) 
-	N0009[JoulePerLitre] -->|BelongsToClass| N0006(Unit) 
-	N0009[JoulePerLitre] -->|ConversionFactorA| N0007(("0")) 
-	N0009[JoulePerLitre] -->|ConversionFactorB| N0010(("0.001")) 
-	N0009[JoulePerLitre] -->|Symbol| N0011(("J/L")) 
-	N0009[JoulePerLitre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0012[KilojoulePerCubicMetre] -->|BelongsToClass| N0006(Unit) 
-	N0012[KilojoulePerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
-	N0012[KilojoulePerCubicMetre] -->|ConversionFactorB| N0010(("0.001")) 
-	N0012[KilojoulePerCubicMetre] -->|Symbol| N0013(("kJ/m³")) 
-	N0012[KilojoulePerCubicMetre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0014[KilojoulePerLitre] -->|BelongsToClass| N0006(Unit) 
-	N0014[KilojoulePerLitre] -->|ConversionFactorA| N0007(("0")) 
-	N0014[KilojoulePerLitre] -->|ConversionFactorB| N0015(("1E-06")) 
-	N0014[KilojoulePerLitre] -->|Symbol| N0016(("kJ/L")) 
-	N0014[KilojoulePerLitre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0017[MegajoulePerCubicMetre] -->|BelongsToClass| N0006(Unit) 
-	N0017[MegajoulePerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
-	N0017[MegajoulePerCubicMetre] -->|ConversionFactorB| N0015(("1E-06")) 
-	N0017[MegajoulePerCubicMetre] -->|Symbol| N0018(("MJ/m³")) 
-	N0017[MegajoulePerCubicMetre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0019[MegajoulePerLitre] -->|BelongsToClass| N0006(Unit) 
-	N0019[MegajoulePerLitre] -->|ConversionFactorA| N0007(("0")) 
-	N0019[MegajoulePerLitre] -->|ConversionFactorB| N0020(("1E-09")) 
-	N0019[MegajoulePerLitre] -->|Symbol| N0021(("MJ/L")) 
-	N0019[MegajoulePerLitre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0022[GigajoulePerCubicMetre] -->|BelongsToClass| N0006(Unit) 
-	N0022[GigajoulePerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
-	N0022[GigajoulePerCubicMetre] -->|ConversionFactorB| N0020(("1E-09")) 
-	N0022[GigajoulePerCubicMetre] -->|Symbol| N0023(("GJ/m³")) 
-	N0022[GigajoulePerCubicMetre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0024[GigajoulePerLitre] -->|BelongsToClass| N0006(Unit) 
-	N0024[GigajoulePerLitre] -->|ConversionFactorA| N0007(("0")) 
-	N0024[GigajoulePerLitre] -->|ConversionFactorB| N0025(("1E-12")) 
-	N0024[GigajoulePerLitre] -->|Symbol| N0026(("GJ/L")) 
-	N0024[GigajoulePerLitre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0027[CaloriePerCubicMetre] -->|BelongsToClass| N0006(Unit) 
-	N0027[CaloriePerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
-	N0027[CaloriePerCubicMetre] -->|ConversionFactorB| N0028(("0.2390057361376673")) 
-	N0027[CaloriePerCubicMetre] -->|Symbol| N0029(("cal/m³")) 
-	N0027[CaloriePerCubicMetre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0030[CaloriePerLitre] -->|BelongsToClass| N0006(Unit) 
-	N0030[CaloriePerLitre] -->|ConversionFactorA| N0007(("0")) 
-	N0030[CaloriePerLitre] -->|ConversionFactorB| N0031(("0.0002390057361376673")) 
-	N0030[CaloriePerLitre] -->|Symbol| N0032(("cal/L")) 
-	N0030[CaloriePerLitre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0033[KilocaloriePerCubicMetre] -->|BelongsToClass| N0006(Unit) 
-	N0033[KilocaloriePerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
-	N0033[KilocaloriePerCubicMetre] -->|ConversionFactorB| N0031(("0.0002390057361376673")) 
-	N0033[KilocaloriePerCubicMetre] -->|Symbol| N0034(("Cal/m³")) 
-	N0033[KilocaloriePerCubicMetre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0035[KilocaloriePerLitre] -->|BelongsToClass| N0006(Unit) 
-	N0035[KilocaloriePerLitre] -->|ConversionFactorA| N0007(("0")) 
-	N0035[KilocaloriePerLitre] -->|ConversionFactorB| N0036(("2.390057361376673E-07")) 
-	N0035[KilocaloriePerLitre] -->|Symbol| N0037(("Cal/L")) 
-	N0035[KilocaloriePerLitre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0038[JoulePerCubicFoot] -->|BelongsToClass| N0006(Unit) 
-	N0038[JoulePerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
-	N0038[JoulePerCubicFoot] -->|ConversionFactorB| N0039(("0.02831684659199999")) 
-	N0038[JoulePerCubicFoot] -->|Symbol| N0040(("J/ft³")) 
-	N0038[JoulePerCubicFoot] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0041[KilojoulePerCubicFoot] -->|BelongsToClass| N0006(Unit) 
-	N0041[KilojoulePerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
-	N0041[KilojoulePerCubicFoot] -->|ConversionFactorB| N0042(("2.831684659199999E-05")) 
-	N0041[KilojoulePerCubicFoot] -->|Symbol| N0043(("kJ/ft³")) 
-	N0041[KilojoulePerCubicFoot] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0044[MegajoulePerCubicFoot] -->|BelongsToClass| N0006(Unit) 
-	N0044[MegajoulePerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
-	N0044[MegajoulePerCubicFoot] -->|ConversionFactorB| N0045(("2.831684659199999E-08")) 
-	N0044[MegajoulePerCubicFoot] -->|Symbol| N0046(("MJ/ft³")) 
-	N0044[MegajoulePerCubicFoot] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0047[GigajoulePerCubicFoot] -->|BelongsToClass| N0006(Unit) 
-	N0047[GigajoulePerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
-	N0047[GigajoulePerCubicFoot] -->|ConversionFactorB| N0048(("2.831684659199999E-11")) 
-	N0047[GigajoulePerCubicFoot] -->|Symbol| N0049(("GJ/ft³")) 
-	N0047[GigajoulePerCubicFoot] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0050[CaloriePerCubicFoot] -->|BelongsToClass| N0006(Unit) 
-	N0050[CaloriePerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
-	N0050[CaloriePerCubicFoot] -->|ConversionFactorB| N0051(("0.006767888764818353")) 
-	N0050[CaloriePerCubicFoot] -->|Symbol| N0052(("cal/ft³")) 
-	N0050[CaloriePerCubicFoot] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0053[KilocaloriePerCubicFoot] -->|BelongsToClass| N0006(Unit) 
-	N0053[KilocaloriePerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
-	N0053[KilocaloriePerCubicFoot] -->|ConversionFactorB| N0054(("6.767888764818354E-06")) 
-	N0053[KilocaloriePerCubicFoot] -->|Symbol| N0055(("Cal/ft³")) 
-	N0053[KilocaloriePerCubicFoot] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0056[JoulePerCubicInch] -->|BelongsToClass| N0006(Unit) 
-	N0056[JoulePerCubicInch] -->|ConversionFactorA| N0007(("0")) 
-	N0056[JoulePerCubicInch] -->|ConversionFactorB| N0057(("1.6387064E-05")) 
-	N0056[JoulePerCubicInch] -->|Symbol| N0058(("J/in³")) 
-	N0056[JoulePerCubicInch] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0059[KilojoulePerCubicInch] -->|BelongsToClass| N0006(Unit) 
-	N0059[KilojoulePerCubicInch] -->|ConversionFactorA| N0007(("0")) 
-	N0059[KilojoulePerCubicInch] -->|ConversionFactorB| N0060(("1.6387064E-08")) 
-	N0059[KilojoulePerCubicInch] -->|Symbol| N0061(("kJ/in³")) 
-	N0059[KilojoulePerCubicInch] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0062[MegajoulePerCubicInch] -->|BelongsToClass| N0006(Unit) 
-	N0062[MegajoulePerCubicInch] -->|ConversionFactorA| N0007(("0")) 
-	N0062[MegajoulePerCubicInch] -->|ConversionFactorB| N0063(("1.6387064E-11")) 
-	N0062[MegajoulePerCubicInch] -->|Symbol| N0064(("MJ/in³")) 
-	N0062[MegajoulePerCubicInch] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0065[GigajoulePerCubicInch] -->|BelongsToClass| N0006(Unit) 
-	N0065[GigajoulePerCubicInch] -->|ConversionFactorA| N0007(("0")) 
-	N0065[GigajoulePerCubicInch] -->|ConversionFactorB| N0066(("1.6387064E-14")) 
-	N0065[GigajoulePerCubicInch] -->|Symbol| N0067(("GJ/in³")) 
-	N0065[GigajoulePerCubicInch] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0068[CaloriePerCubicInch] -->|BelongsToClass| N0006(Unit) 
-	N0068[CaloriePerCubicInch] -->|ConversionFactorA| N0007(("0")) 
-	N0068[CaloriePerCubicInch] -->|ConversionFactorB| N0069(("3.916602294455067E-06")) 
-	N0068[CaloriePerCubicInch] -->|Symbol| N0070(("cal/in³")) 
-	N0068[CaloriePerCubicInch] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0071[KilocaloriePerCubicInch] -->|BelongsToClass| N0006(Unit) 
-	N0071[KilocaloriePerCubicInch] -->|ConversionFactorA| N0007(("0")) 
-	N0071[KilocaloriePerCubicInch] -->|ConversionFactorB| N0072(("3.916602294455067E-09")) 
-	N0071[KilocaloriePerCubicInch] -->|Symbol| N0073(("Cal/in³")) 
-	N0071[KilocaloriePerCubicInch] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0074[JoulePerGallonUk] -->|BelongsToClass| N0006(Unit) 
-	N0074[JoulePerGallonUk] -->|ConversionFactorA| N0007(("0")) 
-	N0074[JoulePerGallonUk] -->|ConversionFactorB| N0075(("0.00454609")) 
-	N0074[JoulePerGallonUk] -->|Symbol| N0076(("J/gal(UK)")) 
-	N0074[JoulePerGallonUk] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0077[KilojoulePerGallonUk] -->|BelongsToClass| N0006(Unit) 
-	N0077[KilojoulePerGallonUk] -->|ConversionFactorA| N0007(("0")) 
-	N0077[KilojoulePerGallonUk] -->|ConversionFactorB| N0078(("4.54609E-06")) 
-	N0077[KilojoulePerGallonUk] -->|Symbol| N0079(("kJ/gal(UK)")) 
-	N0077[KilojoulePerGallonUk] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0080[MegajoulePerGallonUk] -->|BelongsToClass| N0006(Unit) 
-	N0080[MegajoulePerGallonUk] -->|ConversionFactorA| N0007(("0")) 
-	N0080[MegajoulePerGallonUk] -->|ConversionFactorB| N0081(("4.54609E-09")) 
-	N0080[MegajoulePerGallonUk] -->|Symbol| N0082(("MJ/gal(UK)")) 
-	N0080[MegajoulePerGallonUk] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0083[GigajoulePerGallonUk] -->|BelongsToClass| N0006(Unit) 
-	N0083[GigajoulePerGallonUk] -->|ConversionFactorA| N0007(("0")) 
-	N0083[GigajoulePerGallonUk] -->|ConversionFactorB| N0084(("4.54609E-12")) 
-	N0083[GigajoulePerGallonUk] -->|Symbol| N0085(("GJ/gal(UK)")) 
-	N0083[GigajoulePerGallonUk] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0086[CaloriePerGallonUk] -->|BelongsToClass| N0006(Unit) 
-	N0086[CaloriePerGallonUk] -->|ConversionFactorA| N0007(("0")) 
-	N0086[CaloriePerGallonUk] -->|ConversionFactorB| N0087(("0.0010865415869980878")) 
-	N0086[CaloriePerGallonUk] -->|Symbol| N0088(("cal/gal(UK)")) 
-	N0086[CaloriePerGallonUk] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0089[KilocaloriePerGallonUk] -->|BelongsToClass| N0006(Unit) 
-	N0089[KilocaloriePerGallonUk] -->|ConversionFactorA| N0007(("0")) 
-	N0089[KilocaloriePerGallonUk] -->|ConversionFactorB| N0090(("1.086541586998088E-06")) 
-	N0089[KilocaloriePerGallonUk] -->|Symbol| N0091(("Cal/gal(UK)")) 
-	N0089[KilocaloriePerGallonUk] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0092[JoulePerGallonUs] -->|BelongsToClass| N0006(Unit) 
-	N0092[JoulePerGallonUs] -->|ConversionFactorA| N0007(("0")) 
-	N0092[JoulePerGallonUs] -->|ConversionFactorB| N0093(("0.0037854117839999997")) 
-	N0092[JoulePerGallonUs] -->|Symbol| N0094(("J/gal(US)")) 
-	N0092[JoulePerGallonUs] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0095[KilojoulePerGallonUs] -->|BelongsToClass| N0006(Unit) 
-	N0095[KilojoulePerGallonUs] -->|ConversionFactorA| N0007(("0")) 
-	N0095[KilojoulePerGallonUs] -->|ConversionFactorB| N0096(("3.7854117839999998E-06")) 
-	N0095[KilojoulePerGallonUs] -->|Symbol| N0097(("kJ/gal(US)")) 
-	N0095[KilojoulePerGallonUs] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0098[MegajoulePerGallonUs] -->|BelongsToClass| N0006(Unit) 
-	N0098[MegajoulePerGallonUs] -->|ConversionFactorA| N0007(("0")) 
-	N0098[MegajoulePerGallonUs] -->|ConversionFactorB| N0099(("3.7854117839999995E-09")) 
-	N0098[MegajoulePerGallonUs] -->|Symbol| N0100(("MJ/gal(US)")) 
-	N0098[MegajoulePerGallonUs] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0101[GigajoulePerGallonUs] -->|BelongsToClass| N0006(Unit) 
-	N0101[GigajoulePerGallonUs] -->|ConversionFactorA| N0007(("0")) 
-	N0101[GigajoulePerGallonUs] -->|ConversionFactorB| N0102(("3.785411784E-12")) 
-	N0101[GigajoulePerGallonUs] -->|Symbol| N0103(("GJ/gal(US)")) 
-	N0101[GigajoulePerGallonUs] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0104[CaloriePerGallonUs] -->|BelongsToClass| N0006(Unit) 
-	N0104[CaloriePerGallonUs] -->|ConversionFactorA| N0007(("0")) 
-	N0104[CaloriePerGallonUs] -->|ConversionFactorB| N0105(("0.0009047351300191204")) 
-	N0104[CaloriePerGallonUs] -->|Symbol| N0106(("cal/gal(US)")) 
-	N0104[CaloriePerGallonUs] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0107[KilocaloriePerGallonUs] -->|BelongsToClass| N0006(Unit) 
-	N0107[KilocaloriePerGallonUs] -->|ConversionFactorA| N0007(("0")) 
-	N0107[KilocaloriePerGallonUs] -->|ConversionFactorB| N0108(("9.047351300191203E-07")) 
-	N0107[KilocaloriePerGallonUs] -->|Symbol| N0109(("Cal/gal(US)")) 
-	N0107[KilocaloriePerGallonUs] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0110[BritishThermalUnitPerCubicMetre] -->|BelongsToClass| N0006(Unit) 
-	N0110[BritishThermalUnitPerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
-	N0110[BritishThermalUnitPerCubicMetre] -->|ConversionFactorB| N0111(("0.0009484516526770049")) 
-	N0110[BritishThermalUnitPerCubicMetre] -->|Symbol| N0112(("BTU/m³")) 
-	N0110[BritishThermalUnitPerCubicMetre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0113[BritishThermalUnitPerLitre] -->|BelongsToClass| N0006(Unit) 
-	N0113[BritishThermalUnitPerLitre] -->|ConversionFactorA| N0007(("0")) 
-	N0113[BritishThermalUnitPerLitre] -->|ConversionFactorB| N0114(("9.484516526770049E-07")) 
-	N0113[BritishThermalUnitPerLitre] -->|Symbol| N0115(("BTU/L")) 
-	N0113[BritishThermalUnitPerLitre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0116[BritishThermalUnitPerCubicFoot] -->|BelongsToClass| N0006(Unit) 
-	N0116[BritishThermalUnitPerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
-	N0116[BritishThermalUnitPerCubicFoot] -->|ConversionFactorB| N0117(("2.6857159948783606E-05")) 
-	N0116[BritishThermalUnitPerCubicFoot] -->|Symbol| N0118(("BTU/ft³")) 
-	N0116[BritishThermalUnitPerCubicFoot] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0119[BritishThermalUnitPerCubicInch] -->|BelongsToClass| N0006(Unit) 
-	N0119[BritishThermalUnitPerCubicInch] -->|ConversionFactorA| N0007(("0")) 
-	N0119[BritishThermalUnitPerCubicInch] -->|ConversionFactorB| N0120(("1.554233793332385E-08")) 
-	N0119[BritishThermalUnitPerCubicInch] -->|Symbol| N0121(("BTU/in³")) 
-	N0119[BritishThermalUnitPerCubicInch] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0122[BritishThermalUnitPerGallonUk] -->|BelongsToClass| N0006(Unit) 
-	N0122[BritishThermalUnitPerGallonUk] -->|ConversionFactorA| N0007(("0")) 
-	N0122[BritishThermalUnitPerGallonUk] -->|ConversionFactorB| N0123(("4.311746573718405E-06")) 
-	N0122[BritishThermalUnitPerGallonUk] -->|Symbol| N0124(("BTU/gal(UK)")) 
-	N0122[BritishThermalUnitPerGallonUk] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0125[BritishThermalUnitPerGallonUs] -->|BelongsToClass| N0006(Unit) 
-	N0125[BritishThermalUnitPerGallonUs] -->|ConversionFactorA| N0007(("0")) 
-	N0125[BritishThermalUnitPerGallonUs] -->|ConversionFactorB| N0126(("3.5902800625978092E-06")) 
-	N0125[BritishThermalUnitPerGallonUs] -->|Symbol| N0127(("BTU/gal(US)")) 
-	N0125[BritishThermalUnitPerGallonUs] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0128[KiloBritishThermalUnitPerCubicMetre] -->|BelongsToClass| N0006(Unit) 
-	N0128[KiloBritishThermalUnitPerCubicMetre] -->|ConversionFactorA| N0007(("0")) 
-	N0128[KiloBritishThermalUnitPerCubicMetre] -->|ConversionFactorB| N0129(("9.484516526770048E-07")) 
-	N0128[KiloBritishThermalUnitPerCubicMetre] -->|Symbol| N0130(("kBTU/m³")) 
-	N0128[KiloBritishThermalUnitPerCubicMetre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0131[KiloBritishThermalUnitPerLitre] -->|BelongsToClass| N0006(Unit) 
-	N0131[KiloBritishThermalUnitPerLitre] -->|ConversionFactorA| N0007(("0")) 
-	N0131[KiloBritishThermalUnitPerLitre] -->|ConversionFactorB| N0132(("9.48451652677005E-10")) 
-	N0131[KiloBritishThermalUnitPerLitre] -->|Symbol| N0133(("kBTU/L")) 
-	N0131[KiloBritishThermalUnitPerLitre] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0134[KiloBritishThermalUnitPerCubicFoot] -->|BelongsToClass| N0006(Unit) 
-	N0134[KiloBritishThermalUnitPerCubicFoot] -->|ConversionFactorA| N0007(("0")) 
-	N0134[KiloBritishThermalUnitPerCubicFoot] -->|ConversionFactorB| N0135(("2.6857159948783602E-08")) 
-	N0134[KiloBritishThermalUnitPerCubicFoot] -->|Symbol| N0136(("kBTU/ft³")) 
-	N0134[KiloBritishThermalUnitPerCubicFoot] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0137[KiloBritishThermalUnitPerCubicInch] -->|BelongsToClass| N0006(Unit) 
-	N0137[KiloBritishThermalUnitPerCubicInch] -->|ConversionFactorA| N0007(("0")) 
-	N0137[KiloBritishThermalUnitPerCubicInch] -->|ConversionFactorB| N0138(("1.5542337933323848E-11")) 
-	N0137[KiloBritishThermalUnitPerCubicInch] -->|Symbol| N0139(("kBTU/in³")) 
-	N0137[KiloBritishThermalUnitPerCubicInch] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0140[KiloBritishThermalUnitPerGallonUk] -->|BelongsToClass| N0006(Unit) 
-	N0140[KiloBritishThermalUnitPerGallonUk] -->|ConversionFactorA| N0007(("0")) 
-	N0140[KiloBritishThermalUnitPerGallonUk] -->|ConversionFactorB| N0141(("4.311746573718405E-09")) 
-	N0140[KiloBritishThermalUnitPerGallonUk] -->|Symbol| N0142(("kBTU/gal(UK)")) 
-	N0140[KiloBritishThermalUnitPerGallonUk] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-	N0143[KiloBritishThermalUnitPerGallonUs] -->|BelongsToClass| N0006(Unit) 
-	N0143[KiloBritishThermalUnitPerGallonUs] -->|ConversionFactorA| N0007(("0")) 
-	N0143[KiloBritishThermalUnitPerGallonUs] -->|ConversionFactorB| N0144(("3.5902800625978087E-09")) 
-	N0143[KiloBritishThermalUnitPerGallonUs] -->|Symbol| N0145(("kBTU/gal(US)")) 
-	N0143[KiloBritishThermalUnitPerGallonUs] -->|IsUnitForQuantity| N0000((EnergyDensityQuantity)) 
-```
 ## ForceGradientPerLengthQuantity <!-- NOUN -->
 - Display name: ForceGradientPerLength
 - Parent class: [Quantity](#Quantity)
@@ -19218,6 +19631,11 @@ KilogramForce.ConversionFactorA = 0
 KilogramForce.ConversionFactorB = 0.10197162129779283
 KilogramForce.Symbol = "kgf"
 KilogramForce IsUnitForQuantity ForceQuantity
+Unit:TonneForce
+TonneForce.ConversionFactorA = 0
+TonneForce.ConversionFactorB = 0.00010197162129779283
+TonneForce.Symbol = "tf"
+TonneForce IsUnitForQuantity ForceQuantity
 Unit:PoundForce
 PoundForce.ConversionFactorA = 0
 PoundForce.ConversionFactorB = 0.2248089430997105
@@ -19262,16 +19680,21 @@ graph LR
 	N0017[KilogramForce] -->|ConversionFactorB| N0018(("0.10197162129779283")) 
 	N0017[KilogramForce] -->|Symbol| N0019(("kgf")) 
 	N0017[KilogramForce] -->|IsUnitForQuantity| N0000((ForceQuantity)) 
-	N0020[PoundForce] -->|BelongsToClass| N0005(Unit) 
-	N0020[PoundForce] -->|ConversionFactorA| N0006(("0")) 
-	N0020[PoundForce] -->|ConversionFactorB| N0021(("0.2248089430997105")) 
-	N0020[PoundForce] -->|Symbol| N0022(("lbf")) 
-	N0020[PoundForce] -->|IsUnitForQuantity| N0000((ForceQuantity)) 
-	N0023[KilopoundForce] -->|BelongsToClass| N0005(Unit) 
-	N0023[KilopoundForce] -->|ConversionFactorA| N0006(("0")) 
-	N0023[KilopoundForce] -->|ConversionFactorB| N0024(("0.0002248089430997105")) 
-	N0023[KilopoundForce] -->|Symbol| N0025(("klbf")) 
-	N0023[KilopoundForce] -->|IsUnitForQuantity| N0000((ForceQuantity)) 
+	N0020[TonneForce] -->|BelongsToClass| N0005(Unit) 
+	N0020[TonneForce] -->|ConversionFactorA| N0006(("0")) 
+	N0020[TonneForce] -->|ConversionFactorB| N0021(("0.00010197162129779283")) 
+	N0020[TonneForce] -->|Symbol| N0022(("tf")) 
+	N0020[TonneForce] -->|IsUnitForQuantity| N0000((ForceQuantity)) 
+	N0023[PoundForce] -->|BelongsToClass| N0005(Unit) 
+	N0023[PoundForce] -->|ConversionFactorA| N0006(("0")) 
+	N0023[PoundForce] -->|ConversionFactorB| N0024(("0.2248089430997105")) 
+	N0023[PoundForce] -->|Symbol| N0025(("lbf")) 
+	N0023[PoundForce] -->|IsUnitForQuantity| N0000((ForceQuantity)) 
+	N0026[KilopoundForce] -->|BelongsToClass| N0005(Unit) 
+	N0026[KilopoundForce] -->|ConversionFactorA| N0006(("0")) 
+	N0026[KilopoundForce] -->|ConversionFactorB| N0027(("0.0002248089430997105")) 
+	N0026[KilopoundForce] -->|Symbol| N0028(("klbf")) 
+	N0026[KilopoundForce] -->|IsUnitForQuantity| N0000((ForceQuantity)) 
 ```
 ## FrequencyQuantity <!-- NOUN -->
 - Display name: Frequency
@@ -19364,6 +19787,47 @@ ShockPerHour.ConversionFactorA = 0
 ShockPerHour.ConversionFactorB = 3600
 ShockPerHour.Symbol = "spm"
 ShockPerHour IsUnitForQuantity FrequencyQuantity
+Unit:RadianPerSecond
+RadianPerSecond.ConversionFactorA = 0
+RadianPerSecond.ConversionFactorB = 6.283185307179586
+RadianPerSecond.Symbol = "rad/s"
+RadianPerSecond IsUnitForQuantity FrequencyQuantity
+FrequencyQuantity HasSIUnit RadianPerSecond
+Unit:DegreePerSecond
+DegreePerSecond.ConversionFactorA = 0
+DegreePerSecond.ConversionFactorB = 360
+DegreePerSecond.Symbol = "°/s"
+DegreePerSecond IsUnitForQuantity FrequencyQuantity
+Unit:RadianPerDay
+RadianPerDay.ConversionFactorA = 0
+RadianPerDay.ConversionFactorB = 542867.2105403163
+RadianPerDay.Symbol = "rad/d"
+RadianPerDay IsUnitForQuantity FrequencyQuantity
+Unit:RadianPerHour
+RadianPerHour.ConversionFactorA = 0
+RadianPerHour.ConversionFactorB = 22619.46710584651
+RadianPerHour.Symbol = "rad/h"
+RadianPerHour IsUnitForQuantity FrequencyQuantity
+Unit:RadianPerMinute
+RadianPerMinute.ConversionFactorA = 0
+RadianPerMinute.ConversionFactorB = 376.99111843077515
+RadianPerMinute.Symbol = "rad/min"
+RadianPerMinute IsUnitForQuantity FrequencyQuantity
+Unit:DegreePerDay
+DegreePerDay.ConversionFactorA = 0
+DegreePerDay.ConversionFactorB = 31104000
+DegreePerDay.Symbol = "°/d"
+DegreePerDay IsUnitForQuantity FrequencyQuantity
+Unit:DegreePerHour
+DegreePerHour.ConversionFactorA = 0
+DegreePerHour.ConversionFactorB = 1296000
+DegreePerHour.Symbol = "°/h"
+DegreePerHour IsUnitForQuantity FrequencyQuantity
+Unit:DegreePerMinute
+DegreePerMinute.ConversionFactorA = 0
+DegreePerMinute.ConversionFactorB = 21600
+DegreePerMinute.Symbol = "°/min"
+DegreePerMinute IsUnitForQuantity FrequencyQuantity
 ```
 An example semantic graph looks like as follow:
 ```mermaid
@@ -19446,6 +19910,47 @@ graph LR
 	N0038[ShockPerHour] -->|ConversionFactorB| N0032(("3600")) 
 	N0038[ShockPerHour] -->|Symbol| N0026(("spm")) 
 	N0038[ShockPerHour] -->|IsUnitForQuantity| N0000((FrequencyQuantity)) 
+	N0039[RadianPerSecond] -->|BelongsToClass| N0004(Unit) 
+	N0039[RadianPerSecond] -->|ConversionFactorA| N0005(("0")) 
+	N0039[RadianPerSecond] -->|ConversionFactorB| N0040(("6.283185307179586")) 
+	N0039[RadianPerSecond] -->|Symbol| N0041(("rad/s")) 
+	N0039[RadianPerSecond] -->|IsUnitForQuantity| N0000((FrequencyQuantity)) 
+	N0000[FrequencyQuantity] -->|HasSIUnit| N0039((RadianPerSecond)) 
+	N0042[DegreePerSecond] -->|BelongsToClass| N0004(Unit) 
+	N0042[DegreePerSecond] -->|ConversionFactorA| N0005(("0")) 
+	N0042[DegreePerSecond] -->|ConversionFactorB| N0043(("360")) 
+	N0042[DegreePerSecond] -->|Symbol| N0044(("°/s")) 
+	N0042[DegreePerSecond] -->|IsUnitForQuantity| N0000((FrequencyQuantity)) 
+	N0045[RadianPerDay] -->|BelongsToClass| N0004(Unit) 
+	N0045[RadianPerDay] -->|ConversionFactorA| N0005(("0")) 
+	N0045[RadianPerDay] -->|ConversionFactorB| N0046(("542867.2105403163")) 
+	N0045[RadianPerDay] -->|Symbol| N0047(("rad/d")) 
+	N0045[RadianPerDay] -->|IsUnitForQuantity| N0000((FrequencyQuantity)) 
+	N0048[RadianPerHour] -->|BelongsToClass| N0004(Unit) 
+	N0048[RadianPerHour] -->|ConversionFactorA| N0005(("0")) 
+	N0048[RadianPerHour] -->|ConversionFactorB| N0049(("22619.46710584651")) 
+	N0048[RadianPerHour] -->|Symbol| N0050(("rad/h")) 
+	N0048[RadianPerHour] -->|IsUnitForQuantity| N0000((FrequencyQuantity)) 
+	N0051[RadianPerMinute] -->|BelongsToClass| N0004(Unit) 
+	N0051[RadianPerMinute] -->|ConversionFactorA| N0005(("0")) 
+	N0051[RadianPerMinute] -->|ConversionFactorB| N0052(("376.99111843077515")) 
+	N0051[RadianPerMinute] -->|Symbol| N0053(("rad/min")) 
+	N0051[RadianPerMinute] -->|IsUnitForQuantity| N0000((FrequencyQuantity)) 
+	N0054[DegreePerDay] -->|BelongsToClass| N0004(Unit) 
+	N0054[DegreePerDay] -->|ConversionFactorA| N0005(("0")) 
+	N0054[DegreePerDay] -->|ConversionFactorB| N0055(("31104000")) 
+	N0054[DegreePerDay] -->|Symbol| N0056(("°/d")) 
+	N0054[DegreePerDay] -->|IsUnitForQuantity| N0000((FrequencyQuantity)) 
+	N0057[DegreePerHour] -->|BelongsToClass| N0004(Unit) 
+	N0057[DegreePerHour] -->|ConversionFactorA| N0005(("0")) 
+	N0057[DegreePerHour] -->|ConversionFactorB| N0058(("1296000")) 
+	N0057[DegreePerHour] -->|Symbol| N0059(("°/h")) 
+	N0057[DegreePerHour] -->|IsUnitForQuantity| N0000((FrequencyQuantity)) 
+	N0060[DegreePerMinute] -->|BelongsToClass| N0004(Unit) 
+	N0060[DegreePerMinute] -->|ConversionFactorA| N0005(("0")) 
+	N0060[DegreePerMinute] -->|ConversionFactorB| N0061(("21600")) 
+	N0060[DegreePerMinute] -->|Symbol| N0062(("°/min")) 
+	N0060[DegreePerMinute] -->|IsUnitForQuantity| N0000((FrequencyQuantity)) 
 ```
 ## FrequencyRateOfChangeQuantity <!-- NOUN -->
 - Display name: FrequencyRateOfChange
@@ -21851,79 +22356,6 @@ graph LR
 	N0009[Rankine] -->|ConversionFactorB| N0010(("1.7999999999999998")) 
 	N0009[Rankine] -->|Symbol| N0011(("°R")) 
 	N0009[Rankine] -->|IsUnitForQuantity| N0000((RelativeTemperatureQuantity)) 
-```
-## ElectricResistivityQuantity <!-- NOUN -->
-- Display name: ElectricResistivity
-- Parent class: [Quantity](#Quantity)
-- Specialization:
-  - L = 3
-  - M = 1
-  - T = -3
-  - I = -2
-- Description: 
-Electric resistivity is a material's inherent property that measures how strongly it resists the flow of electric current.
-The dimension of resistivity is:
-$$[L^{3}MI^{-2}T^{-3}]$$.
-The SI unit for **electric resistivity** is: ohm metre with the associated unit label $\Omega \cdot m$
-- Definition set: QuantityTypes
-- Examples:
-``` dwis
-Quantity:ElectricResistivityQuantity
-ElectricResistivityQuantity.L = 3
-ElectricResistivityQuantity.M = 1
-ElectricResistivityQuantity.T = -3
-ElectricResistivityQuantity.I = -2
-Unit:OhmMetre
-OhmMetre.ConversionFactorA = 0
-OhmMetre.ConversionFactorB = 1
-OhmMetre.Symbol = "Ω•m"
-OhmMetre IsUnitForQuantity ElectricResistivityQuantity
-ElectricResistivityQuantity HasSIUnit OhmMetre
-Unit:KiloOhmMetre
-KiloOhmMetre.ConversionFactorA = 0
-KiloOhmMetre.ConversionFactorB = 0.001
-KiloOhmMetre.Symbol = "kΩ•m"
-KiloOhmMetre IsUnitForQuantity ElectricResistivityQuantity
-Unit:MegaOhmMetre
-MegaOhmMetre.ConversionFactorA = 0
-MegaOhmMetre.ConversionFactorB = 1E-06
-MegaOhmMetre.Symbol = "MΩ•m"
-MegaOhmMetre IsUnitForQuantity ElectricResistivityQuantity
-Unit:GigaOhmMetre
-GigaOhmMetre.ConversionFactorA = 0
-GigaOhmMetre.ConversionFactorB = 1E-09
-GigaOhmMetre.Symbol = "GΩ•m"
-GigaOhmMetre IsUnitForQuantity ElectricResistivityQuantity
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[ElectricResistivityQuantity] -->|BelongsToClass| N0001(Quantity) 
-	N0000[ElectricResistivityQuantity] -->|L| N0002(("3")) 
-	N0000[ElectricResistivityQuantity] -->|M| N0003(("1")) 
-	N0000[ElectricResistivityQuantity] -->|T| N0004(("-3")) 
-	N0000[ElectricResistivityQuantity] -->|I| N0005(("-2")) 
-	N0006[OhmMetre] -->|BelongsToClass| N0007(Unit) 
-	N0006[OhmMetre] -->|ConversionFactorA| N0008(("0")) 
-	N0006[OhmMetre] -->|ConversionFactorB| N0003(("1")) 
-	N0006[OhmMetre] -->|Symbol| N0009(("Ω•m")) 
-	N0006[OhmMetre] -->|IsUnitForQuantity| N0000((ElectricResistivityQuantity)) 
-	N0000[ElectricResistivityQuantity] -->|HasSIUnit| N0006((OhmMetre)) 
-	N0010[KiloOhmMetre] -->|BelongsToClass| N0007(Unit) 
-	N0010[KiloOhmMetre] -->|ConversionFactorA| N0008(("0")) 
-	N0010[KiloOhmMetre] -->|ConversionFactorB| N0011(("0.001")) 
-	N0010[KiloOhmMetre] -->|Symbol| N0012(("kΩ•m")) 
-	N0010[KiloOhmMetre] -->|IsUnitForQuantity| N0000((ElectricResistivityQuantity)) 
-	N0013[MegaOhmMetre] -->|BelongsToClass| N0007(Unit) 
-	N0013[MegaOhmMetre] -->|ConversionFactorA| N0008(("0")) 
-	N0013[MegaOhmMetre] -->|ConversionFactorB| N0014(("1E-06")) 
-	N0013[MegaOhmMetre] -->|Symbol| N0015(("MΩ•m")) 
-	N0013[MegaOhmMetre] -->|IsUnitForQuantity| N0000((ElectricResistivityQuantity)) 
-	N0016[GigaOhmMetre] -->|BelongsToClass| N0007(Unit) 
-	N0016[GigaOhmMetre] -->|ConversionFactorA| N0008(("0")) 
-	N0016[GigaOhmMetre] -->|ConversionFactorB| N0017(("1E-09")) 
-	N0016[GigaOhmMetre] -->|Symbol| N0018(("GΩ•m")) 
-	N0016[GigaOhmMetre] -->|IsUnitForQuantity| N0000((ElectricResistivityQuantity)) 
 ```
 ## SolidAngleQuantity <!-- NOUN -->
 - Display name: SolidAngle
@@ -25363,126 +25795,6 @@ graph LR
 	N0070[HundredWeights] -->|Symbol| N0072(("cwt")) 
 	N0070[HundredWeights] -->|IsUnitForQuantity| N0000((MassQuantity)) 
 ```
-## EnergyQuantity <!-- NOUN -->
-- Display name: Energy
-- Parent class: [Quantity](#Quantity)
-- Specialization:
-  - L = 2
-  - M = 1
-  - T = -2
-- Description: 
-Energy is the quantitative property that is transferred to a body or to a physical system, recognizable in the performance of work and in the form of heat and light. Energy is a conserved quantity—the law of conservation of energy states that energy can be converted in form, but not created or destroyed; matter and energy may also be converted to one another.
-The dimension of energy is:
-$$[L^{2}MT^{-2}]$$.
-The SI unit for **energy** is: joule with the associated unit label $J$
-- Definition set: QuantityTypes
-- Examples:
-``` dwis
-Quantity:EnergyQuantity
-EnergyQuantity.L = 2
-EnergyQuantity.M = 1
-EnergyQuantity.T = -2
-Unit:Joule
-Joule.ConversionFactorA = 0
-Joule.ConversionFactorB = 1
-Joule.Symbol = "J"
-Joule IsUnitForQuantity EnergyQuantity
-EnergyQuantity HasSIUnit Joule
-Unit:Kilojoule
-Kilojoule.ConversionFactorA = 0
-Kilojoule.ConversionFactorB = 0.001
-Kilojoule.Symbol = "kJ"
-Kilojoule IsUnitForQuantity EnergyQuantity
-Unit:Megajoule
-Megajoule.ConversionFactorA = 0
-Megajoule.ConversionFactorB = 1E-06
-Megajoule.Symbol = "MJ"
-Megajoule IsUnitForQuantity EnergyQuantity
-Unit:Gigajoule
-Gigajoule.ConversionFactorA = 0
-Gigajoule.ConversionFactorB = 1E-09
-Gigajoule.Symbol = "GJ"
-Gigajoule IsUnitForQuantity EnergyQuantity
-Unit:Calorie
-Calorie.ConversionFactorA = 0
-Calorie.ConversionFactorB = 0.2390057361376673
-Calorie.Symbol = "cal"
-Calorie IsUnitForQuantity EnergyQuantity
-Unit:Kilocalorie
-Kilocalorie.ConversionFactorA = 0
-Kilocalorie.ConversionFactorB = 0.0002390057361376673
-Kilocalorie.Symbol = "Cal"
-Kilocalorie IsUnitForQuantity EnergyQuantity
-Unit:BritishThermalUnit
-BritishThermalUnit.ConversionFactorA = 0
-BritishThermalUnit.ConversionFactorB = 0.0009484516526770049
-BritishThermalUnit.Symbol = "BTU"
-BritishThermalUnit IsUnitForQuantity EnergyQuantity
-Unit:KiloBritishThermalUnit
-KiloBritishThermalUnit.ConversionFactorA = 0
-KiloBritishThermalUnit.ConversionFactorB = 9.484516526770048E-07
-KiloBritishThermalUnit.Symbol = "kBTU"
-KiloBritishThermalUnit IsUnitForQuantity EnergyQuantity
-Unit:MegaBritishThermalUnit
-MegaBritishThermalUnit.ConversionFactorA = 0
-MegaBritishThermalUnit.ConversionFactorB = 9.48451652677005E-10
-MegaBritishThermalUnit.Symbol = "MMBTU"
-MegaBritishThermalUnit IsUnitForQuantity EnergyQuantity
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[EnergyQuantity] -->|BelongsToClass| N0001(Quantity) 
-	N0000[EnergyQuantity] -->|L| N0002(("2")) 
-	N0000[EnergyQuantity] -->|M| N0003(("1")) 
-	N0000[EnergyQuantity] -->|T| N0004(("-2")) 
-	N0005[Joule] -->|BelongsToClass| N0006(Unit) 
-	N0005[Joule] -->|ConversionFactorA| N0007(("0")) 
-	N0005[Joule] -->|ConversionFactorB| N0003(("1")) 
-	N0005[Joule] -->|Symbol| N0008(("J")) 
-	N0005[Joule] -->|IsUnitForQuantity| N0000((EnergyQuantity)) 
-	N0000[EnergyQuantity] -->|HasSIUnit| N0005((Joule)) 
-	N0009[Kilojoule] -->|BelongsToClass| N0006(Unit) 
-	N0009[Kilojoule] -->|ConversionFactorA| N0007(("0")) 
-	N0009[Kilojoule] -->|ConversionFactorB| N0010(("0.001")) 
-	N0009[Kilojoule] -->|Symbol| N0011(("kJ")) 
-	N0009[Kilojoule] -->|IsUnitForQuantity| N0000((EnergyQuantity)) 
-	N0012[Megajoule] -->|BelongsToClass| N0006(Unit) 
-	N0012[Megajoule] -->|ConversionFactorA| N0007(("0")) 
-	N0012[Megajoule] -->|ConversionFactorB| N0013(("1E-06")) 
-	N0012[Megajoule] -->|Symbol| N0014(("MJ")) 
-	N0012[Megajoule] -->|IsUnitForQuantity| N0000((EnergyQuantity)) 
-	N0015[Gigajoule] -->|BelongsToClass| N0006(Unit) 
-	N0015[Gigajoule] -->|ConversionFactorA| N0007(("0")) 
-	N0015[Gigajoule] -->|ConversionFactorB| N0016(("1E-09")) 
-	N0015[Gigajoule] -->|Symbol| N0017(("GJ")) 
-	N0015[Gigajoule] -->|IsUnitForQuantity| N0000((EnergyQuantity)) 
-	N0018[Calorie] -->|BelongsToClass| N0006(Unit) 
-	N0018[Calorie] -->|ConversionFactorA| N0007(("0")) 
-	N0018[Calorie] -->|ConversionFactorB| N0019(("0.2390057361376673")) 
-	N0018[Calorie] -->|Symbol| N0020(("cal")) 
-	N0018[Calorie] -->|IsUnitForQuantity| N0000((EnergyQuantity)) 
-	N0021[Kilocalorie] -->|BelongsToClass| N0006(Unit) 
-	N0021[Kilocalorie] -->|ConversionFactorA| N0007(("0")) 
-	N0021[Kilocalorie] -->|ConversionFactorB| N0022(("0.0002390057361376673")) 
-	N0021[Kilocalorie] -->|Symbol| N0023(("Cal")) 
-	N0021[Kilocalorie] -->|IsUnitForQuantity| N0000((EnergyQuantity)) 
-	N0024[BritishThermalUnit] -->|BelongsToClass| N0006(Unit) 
-	N0024[BritishThermalUnit] -->|ConversionFactorA| N0007(("0")) 
-	N0024[BritishThermalUnit] -->|ConversionFactorB| N0025(("0.0009484516526770049")) 
-	N0024[BritishThermalUnit] -->|Symbol| N0026(("BTU")) 
-	N0024[BritishThermalUnit] -->|IsUnitForQuantity| N0000((EnergyQuantity)) 
-	N0027[KiloBritishThermalUnit] -->|BelongsToClass| N0006(Unit) 
-	N0027[KiloBritishThermalUnit] -->|ConversionFactorA| N0007(("0")) 
-	N0027[KiloBritishThermalUnit] -->|ConversionFactorB| N0028(("9.484516526770048E-07")) 
-	N0027[KiloBritishThermalUnit] -->|Symbol| N0029(("kBTU")) 
-	N0027[KiloBritishThermalUnit] -->|IsUnitForQuantity| N0000((EnergyQuantity)) 
-	N0030[MegaBritishThermalUnit] -->|BelongsToClass| N0006(Unit) 
-	N0030[MegaBritishThermalUnit] -->|ConversionFactorA| N0007(("0")) 
-	N0030[MegaBritishThermalUnit] -->|ConversionFactorB| N0031(("9.48451652677005E-10")) 
-	N0030[MegaBritishThermalUnit] -->|Symbol| N0032(("MMBTU")) 
-	N0030[MegaBritishThermalUnit] -->|IsUnitForQuantity| N0000((EnergyQuantity)) 
-```
 ## ForceRateOfChangeQuantity <!-- NOUN -->
 - Display name: ForceRateOfChange
 - Parent class: [Quantity](#Quantity)
@@ -26905,79 +27217,142 @@ graph LR
 	N0093[InchPoundPerHour] -->|Symbol| N0095(("in•lbf/h")) 
 	N0093[InchPoundPerHour] -->|IsUnitForQuantity| N0000((TorqueRateOfChangeQuantity)) 
 ```
-## GravitationalLoadQuantity <!-- NOUN -->
-- Display name: GravitationalLoad
+## MomentOfAreaQuantity <!-- NOUN -->
+- Display name: MomentOfArea
 - Parent class: [Quantity](#Quantity)
 - Specialization:
-  - M = 1
+  - L = 4
 - Description: 
-Mass can be experimentally defined as a measure of the body's inertia, meaning the resistance to acceleration (change of velocity) when a net force is applied. The object's mass also determines the strength of its gravitational attraction to other bodies.
-The dimension of mass is:
-$$[M]$$.
-The SI unit for **mass** is: kilogram with the associated unit label $kg$
+A moment of area is a geometrical property of an area which reflects how its points are distributed with regard to an arbitrary axis. It is used in the study of beam bending and deflection in structural engineering.
+The dimension of moment of area is:
+$$[L^{4}]$$.
+The SI unit for **moment of area** is: metres to the fourth power with the associated unit label $m^{4}$
 - Definition set: QuantityTypes
 - Examples:
 ``` dwis
-Quantity:GravitationalLoadQuantity
-GravitationalLoadQuantity.M = 1
-Unit:Kilogram
-Kilogram.ConversionFactorA = 0
-Kilogram.ConversionFactorB = 1
-Kilogram.Symbol = "kg"
-Kilogram IsUnitForQuantity GravitationalLoadQuantity
-GravitationalLoadQuantity HasSIUnit Kilogram
-Unit:TonneMetric
-TonneMetric.ConversionFactorA = 0
-TonneMetric.ConversionFactorB = 0.001
-TonneMetric.Symbol = "t"
-TonneMetric IsUnitForQuantity GravitationalLoadQuantity
-Unit:Pound
-Pound.ConversionFactorA = 0
-Pound.ConversionFactorB = 2.2046226218487757
-Pound.Symbol = "lb"
-Pound IsUnitForQuantity GravitationalLoadQuantity
-Unit:Kilopound
-Kilopound.ConversionFactorA = 0
-Kilopound.ConversionFactorB = 0.002204622621848776
-Kilopound.Symbol = "klb"
-Kilopound IsUnitForQuantity GravitationalLoadQuantity
-Unit:TonUk
-TonUk.ConversionFactorA = 0
-TonUk.ConversionFactorB = 0.0009842065276110606
-TonUk.Symbol = "LT"
-TonUk IsUnitForQuantity GravitationalLoadQuantity
+Quantity:MomentOfAreaQuantity
+MomentOfAreaQuantity.L = 4
+Unit:MetresToTheFourthPower
+MetresToTheFourthPower.ConversionFactorA = 0
+MetresToTheFourthPower.ConversionFactorB = 1
+MetresToTheFourthPower.Symbol = "m⁴"
+MetresToTheFourthPower IsUnitForQuantity MomentOfAreaQuantity
+MomentOfAreaQuantity HasSIUnit MetresToTheFourthPower
+Unit:CentimetresToTheFourthPower
+CentimetresToTheFourthPower.ConversionFactorA = 0
+CentimetresToTheFourthPower.ConversionFactorB = 99999999.99999999
+CentimetresToTheFourthPower.Symbol = "cm⁴"
+CentimetresToTheFourthPower IsUnitForQuantity MomentOfAreaQuantity
+Unit:InchesToTheFourthPower
+InchesToTheFourthPower.ConversionFactorA = 0
+InchesToTheFourthPower.ConversionFactorB = 2402509.6100288304
+InchesToTheFourthPower.Symbol = "in⁴"
+InchesToTheFourthPower IsUnitForQuantity MomentOfAreaQuantity
+Unit:FeetToTheFourthPower
+FeetToTheFourthPower.ConversionFactorA = 0
+FeetToTheFourthPower.ConversionFactorB = 115.86176745895213
+FeetToTheFourthPower.Symbol = "ft⁴"
+FeetToTheFourthPower IsUnitForQuantity MomentOfAreaQuantity
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[GravitationalLoadQuantity] -->|BelongsToClass| N0001(Quantity) 
-	N0000[GravitationalLoadQuantity] -->|M| N0002(("1")) 
-	N0003[Kilogram] -->|BelongsToClass| N0004(Unit) 
-	N0003[Kilogram] -->|ConversionFactorA| N0005(("0")) 
-	N0003[Kilogram] -->|ConversionFactorB| N0002(("1")) 
-	N0003[Kilogram] -->|Symbol| N0006(("kg")) 
-	N0003[Kilogram] -->|IsUnitForQuantity| N0000((GravitationalLoadQuantity)) 
-	N0000[GravitationalLoadQuantity] -->|HasSIUnit| N0003((Kilogram)) 
-	N0007[TonneMetric] -->|BelongsToClass| N0004(Unit) 
-	N0007[TonneMetric] -->|ConversionFactorA| N0005(("0")) 
-	N0007[TonneMetric] -->|ConversionFactorB| N0008(("0.001")) 
-	N0007[TonneMetric] -->|Symbol| N0009(("t")) 
-	N0007[TonneMetric] -->|IsUnitForQuantity| N0000((GravitationalLoadQuantity)) 
-	N0010[Pound] -->|BelongsToClass| N0004(Unit) 
-	N0010[Pound] -->|ConversionFactorA| N0005(("0")) 
-	N0010[Pound] -->|ConversionFactorB| N0011(("2.2046226218487757")) 
-	N0010[Pound] -->|Symbol| N0012(("lb")) 
-	N0010[Pound] -->|IsUnitForQuantity| N0000((GravitationalLoadQuantity)) 
-	N0013[Kilopound] -->|BelongsToClass| N0004(Unit) 
-	N0013[Kilopound] -->|ConversionFactorA| N0005(("0")) 
-	N0013[Kilopound] -->|ConversionFactorB| N0014(("0.002204622621848776")) 
-	N0013[Kilopound] -->|Symbol| N0015(("klb")) 
-	N0013[Kilopound] -->|IsUnitForQuantity| N0000((GravitationalLoadQuantity)) 
-	N0016[TonUk] -->|BelongsToClass| N0004(Unit) 
-	N0016[TonUk] -->|ConversionFactorA| N0005(("0")) 
-	N0016[TonUk] -->|ConversionFactorB| N0017(("0.0009842065276110606")) 
-	N0016[TonUk] -->|Symbol| N0018(("LT")) 
-	N0016[TonUk] -->|IsUnitForQuantity| N0000((GravitationalLoadQuantity)) 
+	N0000[MomentOfAreaQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[MomentOfAreaQuantity] -->|L| N0002(("4")) 
+	N0003[MetresToTheFourthPower] -->|BelongsToClass| N0004(Unit) 
+	N0003[MetresToTheFourthPower] -->|ConversionFactorA| N0005(("0")) 
+	N0003[MetresToTheFourthPower] -->|ConversionFactorB| N0006(("1")) 
+	N0003[MetresToTheFourthPower] -->|Symbol| N0007(("m⁴")) 
+	N0003[MetresToTheFourthPower] -->|IsUnitForQuantity| N0000((MomentOfAreaQuantity)) 
+	N0000[MomentOfAreaQuantity] -->|HasSIUnit| N0003((MetresToTheFourthPower)) 
+	N0008[CentimetresToTheFourthPower] -->|BelongsToClass| N0004(Unit) 
+	N0008[CentimetresToTheFourthPower] -->|ConversionFactorA| N0005(("0")) 
+	N0008[CentimetresToTheFourthPower] -->|ConversionFactorB| N0009(("99999999.99999999")) 
+	N0008[CentimetresToTheFourthPower] -->|Symbol| N0010(("cm⁴")) 
+	N0008[CentimetresToTheFourthPower] -->|IsUnitForQuantity| N0000((MomentOfAreaQuantity)) 
+	N0011[InchesToTheFourthPower] -->|BelongsToClass| N0004(Unit) 
+	N0011[InchesToTheFourthPower] -->|ConversionFactorA| N0005(("0")) 
+	N0011[InchesToTheFourthPower] -->|ConversionFactorB| N0012(("2402509.6100288304")) 
+	N0011[InchesToTheFourthPower] -->|Symbol| N0013(("in⁴")) 
+	N0011[InchesToTheFourthPower] -->|IsUnitForQuantity| N0000((MomentOfAreaQuantity)) 
+	N0014[FeetToTheFourthPower] -->|BelongsToClass| N0004(Unit) 
+	N0014[FeetToTheFourthPower] -->|ConversionFactorA| N0005(("0")) 
+	N0014[FeetToTheFourthPower] -->|ConversionFactorB| N0015(("115.86176745895213")) 
+	N0014[FeetToTheFourthPower] -->|Symbol| N0016(("ft⁴")) 
+	N0014[FeetToTheFourthPower] -->|IsUnitForQuantity| N0000((MomentOfAreaQuantity)) 
+```
+## MomentOfInertiaQuantity <!-- NOUN -->
+- Display name: MomentOfInertia
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 2
+  - M = 1
+- Description: 
+The moment of inertia is is a measure of an object's resistance to changes in its rotation rate. It is the rotational analog of mass for linear motion. The moment of inertia depends on the mass distribution of an object and the axis of rotation.
+The dimension of moment of inertia is:
+$$[L^{2}M]$$.
+The SI unit for **moment of inertia** is: kilogram metre squared with the associated unit label $kg \cdot m^{2}}$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:MomentOfInertiaQuantity
+MomentOfInertiaQuantity.L = 2
+MomentOfInertiaQuantity.M = 1
+Unit:KilogramMetreSquared
+KilogramMetreSquared.ConversionFactorA = 0
+KilogramMetreSquared.ConversionFactorB = 1
+KilogramMetreSquared.Symbol = "kg.m²"
+KilogramMetreSquared IsUnitForQuantity MomentOfInertiaQuantity
+MomentOfInertiaQuantity HasSIUnit KilogramMetreSquared
+Unit:GramCentimetreSquared
+GramCentimetreSquared.ConversionFactorA = 0
+GramCentimetreSquared.ConversionFactorB = 10000000
+GramCentimetreSquared.Symbol = "g.cm²"
+GramCentimetreSquared IsUnitForQuantity MomentOfInertiaQuantity
+MomentOfInertiaQuantity HasSIUnit GramCentimetreSquared
+Unit:PoundFootSquared
+PoundFootSquared.ConversionFactorA = 0
+PoundFootSquared.ConversionFactorB = 23.73036040423194
+PoundFootSquared.Symbol = "lb.ft²"
+PoundFootSquared IsUnitForQuantity MomentOfInertiaQuantity
+MomentOfInertiaQuantity HasSIUnit PoundFootSquared
+Unit:PoundInchSquared
+PoundInchSquared.ConversionFactorA = 0
+PoundInchSquared.ConversionFactorB = 3417.171898209399
+PoundInchSquared.Symbol = "lb.in²"
+PoundInchSquared IsUnitForQuantity MomentOfInertiaQuantity
+MomentOfInertiaQuantity HasSIUnit PoundInchSquared
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MomentOfInertiaQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[MomentOfInertiaQuantity] -->|L| N0002(("2")) 
+	N0000[MomentOfInertiaQuantity] -->|M| N0003(("1")) 
+	N0004[KilogramMetreSquared] -->|BelongsToClass| N0005(Unit) 
+	N0004[KilogramMetreSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0004[KilogramMetreSquared] -->|ConversionFactorB| N0003(("1")) 
+	N0004[KilogramMetreSquared] -->|Symbol| N0007(("kg.m²")) 
+	N0004[KilogramMetreSquared] -->|IsUnitForQuantity| N0000((MomentOfInertiaQuantity)) 
+	N0000[MomentOfInertiaQuantity] -->|HasSIUnit| N0004((KilogramMetreSquared)) 
+	N0008[GramCentimetreSquared] -->|BelongsToClass| N0005(Unit) 
+	N0008[GramCentimetreSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0008[GramCentimetreSquared] -->|ConversionFactorB| N0009(("10000000")) 
+	N0008[GramCentimetreSquared] -->|Symbol| N0010(("g.cm²")) 
+	N0008[GramCentimetreSquared] -->|IsUnitForQuantity| N0000((MomentOfInertiaQuantity)) 
+	N0000[MomentOfInertiaQuantity] -->|HasSIUnit| N0008((GramCentimetreSquared)) 
+	N0011[PoundFootSquared] -->|BelongsToClass| N0005(Unit) 
+	N0011[PoundFootSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0011[PoundFootSquared] -->|ConversionFactorB| N0012(("23.73036040423194")) 
+	N0011[PoundFootSquared] -->|Symbol| N0013(("lb.ft²")) 
+	N0011[PoundFootSquared] -->|IsUnitForQuantity| N0000((MomentOfInertiaQuantity)) 
+	N0000[MomentOfInertiaQuantity] -->|HasSIUnit| N0011((PoundFootSquared)) 
+	N0014[PoundInchSquared] -->|BelongsToClass| N0005(Unit) 
+	N0014[PoundInchSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0014[PoundInchSquared] -->|ConversionFactorB| N0015(("3417.171898209399")) 
+	N0014[PoundInchSquared] -->|Symbol| N0016(("lb.in²")) 
+	N0014[PoundInchSquared] -->|IsUnitForQuantity| N0000((MomentOfInertiaQuantity)) 
+	N0000[MomentOfInertiaQuantity] -->|HasSIUnit| N0014((PoundInchSquared)) 
 ```
 ## HydraulicConductivityQuantity <!-- NOUN -->
 - Display name: HydraulicConductivity
@@ -30494,6 +30869,352 @@ graph LR
 	N0000[DegreePerMinute_1] -->|ConversionFactorB| N0002(("3437.746770784939")) 
 	N0000[DegreePerMinute_1] -->|Symbol| N0003(("°/min")) 
 ```
+## RevolutionPerSecond <!-- NOUN -->
+- Display name: revolution per second
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.15915494309189535
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in revolution per second
+[SI] is the value in SI
+a = Unit / Revolution, i.e., 0.15915494309189535
+and
+Unit = 1.0
+Revolution = 2.0 * System.Math.PI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+RevolutionPerSecond:RevolutionPerSecond_1
+RevolutionPerSecond_1.ConversionFactorB = "0.15915494309189535"
+RevolutionPerSecond_1.Symbol = "rps"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[RevolutionPerSecond_1] -->|BelongsToClass| N0001(RevolutionPerSecond) 
+	N0000[RevolutionPerSecond_1] -->|ConversionFactorB| N0002(("0.15915494309189535")) 
+	N0000[RevolutionPerSecond_1] -->|Symbol| N0003(("rps")) 
+```
+## RevolutionPerMinute <!-- NOUN -->
+- Display name: revolution per minute
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 9.549296585513721
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in revolution per minute
+[SI] is the value in SI
+a = Minute / Revolution, i.e., 9.549296585513721
+and
+Minute = 60.0
+Revolution = 2.0 * System.Math.PI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+RevolutionPerMinute:RevolutionPerMinute_1
+RevolutionPerMinute_1.ConversionFactorB = "9.549296585513721"
+RevolutionPerMinute_1.Symbol = "rpm"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[RevolutionPerMinute_1] -->|BelongsToClass| N0001(RevolutionPerMinute) 
+	N0000[RevolutionPerMinute_1] -->|ConversionFactorB| N0002(("9.549296585513721")) 
+	N0000[RevolutionPerMinute_1] -->|Symbol| N0003(("rpm")) 
+```
+## RevolutionPerHour <!-- NOUN -->
+- Display name: revolution per hour
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 572.9577951308232
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in revolution per hour
+[SI] is the value in SI
+a = Hour / Revolution, i.e., 572.9577951308232
+and
+Hour = 60.0 * Minute
+Revolution = 2.0 * System.Math.PI
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+RevolutionPerHour:RevolutionPerHour_1
+RevolutionPerHour_1.ConversionFactorB = "572.9577951308232"
+RevolutionPerHour_1.Symbol = "rph"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[RevolutionPerHour_1] -->|BelongsToClass| N0001(RevolutionPerHour) 
+	N0000[RevolutionPerHour_1] -->|ConversionFactorB| N0002(("572.9577951308232")) 
+	N0000[RevolutionPerHour_1] -->|Symbol| N0003(("rph")) 
+```
+## ThousandRevolutionPerSecond <!-- NOUN -->
+- Display name: thousand revolution per second
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.00015915494309189535
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in thousand revolution per second
+[SI] is the value in SI
+a = Unit / (Kilo*Revolution), i.e., 0.00015915494309189535
+and
+Unit = 1.0
+Kilo = 1000.0
+Revolution = 2.0 * System.Math.PI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+ThousandRevolutionPerSecond:ThousandRevolutionPerSecond_1
+ThousandRevolutionPerSecond_1.ConversionFactorB = "0.00015915494309189535"
+ThousandRevolutionPerSecond_1.Symbol = "1000xrps"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ThousandRevolutionPerSecond_1] -->|BelongsToClass| N0001(ThousandRevolutionPerSecond) 
+	N0000[ThousandRevolutionPerSecond_1] -->|ConversionFactorB| N0002(("0.00015915494309189535")) 
+	N0000[ThousandRevolutionPerSecond_1] -->|Symbol| N0003(("1000xrps")) 
+```
+## ThousandRevolutionPerMinute <!-- NOUN -->
+- Display name: thousand revolution per minute
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.009549296585513721
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in thousand revolution per minute
+[SI] is the value in SI
+a = Minute / (Kilo*Revolution), i.e., 0.009549296585513721
+and
+Minute = 60.0
+Kilo = 1000.0
+Revolution = 2.0 * System.Math.PI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+ThousandRevolutionPerMinute:ThousandRevolutionPerMinute_1
+ThousandRevolutionPerMinute_1.ConversionFactorB = "0.009549296585513721"
+ThousandRevolutionPerMinute_1.Symbol = "1000xrpm"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ThousandRevolutionPerMinute_1] -->|BelongsToClass| N0001(ThousandRevolutionPerMinute) 
+	N0000[ThousandRevolutionPerMinute_1] -->|ConversionFactorB| N0002(("0.009549296585513721")) 
+	N0000[ThousandRevolutionPerMinute_1] -->|Symbol| N0003(("1000xrpm")) 
+```
+## ThousandRevolutionPerHour <!-- NOUN -->
+- Display name: thousand revolution per hour
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.5729577951308232
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in thousand revolution per hour
+[SI] is the value in SI
+a = Hour / (Kilo*Revolution), i.e., 0.5729577951308232
+and
+Hour = 60.0 * Minute
+Kilo = 1000.0
+Revolution = 2.0 * System.Math.PI
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+ThousandRevolutionPerHour:ThousandRevolutionPerHour_1
+ThousandRevolutionPerHour_1.ConversionFactorB = "0.5729577951308232"
+ThousandRevolutionPerHour_1.Symbol = "1000xrph"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ThousandRevolutionPerHour_1] -->|BelongsToClass| N0001(ThousandRevolutionPerHour) 
+	N0000[ThousandRevolutionPerHour_1] -->|ConversionFactorB| N0002(("0.5729577951308232")) 
+	N0000[ThousandRevolutionPerHour_1] -->|Symbol| N0003(("1000xrph")) 
+```
+## StrokePerSecond <!-- NOUN -->
+- Display name: stroke per second
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.15915494309189535
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in stroke per second
+[SI] is the value in SI
+a = Unit / Revolution, i.e., 0.15915494309189535
+and
+Unit = 1.0
+Revolution = 2.0 * System.Math.PI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+StrokePerSecond:StrokePerSecond_1
+StrokePerSecond_1.ConversionFactorB = "0.15915494309189535"
+StrokePerSecond_1.Symbol = "sps"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[StrokePerSecond_1] -->|BelongsToClass| N0001(StrokePerSecond) 
+	N0000[StrokePerSecond_1] -->|ConversionFactorB| N0002(("0.15915494309189535")) 
+	N0000[StrokePerSecond_1] -->|Symbol| N0003(("sps")) 
+```
+## StrokePerMinute <!-- NOUN -->
+- Display name: stroke per minute
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 9.549296585513721
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in stroke per minute
+[SI] is the value in SI
+a = Minute / Revolution, i.e., 9.549296585513721
+and
+Minute = 60.0
+Revolution = 2.0 * System.Math.PI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+StrokePerMinute:StrokePerMinute_1
+StrokePerMinute_1.ConversionFactorB = "9.549296585513721"
+StrokePerMinute_1.Symbol = "spm"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[StrokePerMinute_1] -->|BelongsToClass| N0001(StrokePerMinute) 
+	N0000[StrokePerMinute_1] -->|ConversionFactorB| N0002(("9.549296585513721")) 
+	N0000[StrokePerMinute_1] -->|Symbol| N0003(("spm")) 
+```
+## StrokePerHour <!-- NOUN -->
+- Display name: stroke per hour
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 572.9577951308232
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in stroke per hour
+[SI] is the value in SI
+a = Hour / Revolution, i.e., 572.9577951308232
+and
+Hour = 60.0 * Minute
+Revolution = 2.0 * System.Math.PI
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+StrokePerHour:StrokePerHour_1
+StrokePerHour_1.ConversionFactorB = "572.9577951308232"
+StrokePerHour_1.Symbol = "sph"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[StrokePerHour_1] -->|BelongsToClass| N0001(StrokePerHour) 
+	N0000[StrokePerHour_1] -->|ConversionFactorB| N0002(("572.9577951308232")) 
+	N0000[StrokePerHour_1] -->|Symbol| N0003(("sph")) 
+```
+## ThousandStrokePerSecond <!-- NOUN -->
+- Display name: thousand stroke per second
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.00015915494309189535
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in thousand stroke per second
+[SI] is the value in SI
+a = Unit / (Kilo*Revolution), i.e., 0.00015915494309189535
+and
+Unit = 1.0
+Kilo = 1000.0
+Revolution = 2.0 * System.Math.PI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+ThousandStrokePerSecond:ThousandStrokePerSecond_1
+ThousandStrokePerSecond_1.ConversionFactorB = "0.00015915494309189535"
+ThousandStrokePerSecond_1.Symbol = "1000xsps"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ThousandStrokePerSecond_1] -->|BelongsToClass| N0001(ThousandStrokePerSecond) 
+	N0000[ThousandStrokePerSecond_1] -->|ConversionFactorB| N0002(("0.00015915494309189535")) 
+	N0000[ThousandStrokePerSecond_1] -->|Symbol| N0003(("1000xsps")) 
+```
+## ThousandStrokePerMinute <!-- NOUN -->
+- Display name: thousand stroke per minute
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.009549296585513721
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in thousand stroke per minute
+[SI] is the value in SI
+a = Minute / (Kilo*Revolution), i.e., 0.009549296585513721
+and
+Minute = 60.0
+Kilo = 1000.0
+Revolution = 2.0 * System.Math.PI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+ThousandStrokePerMinute:ThousandStrokePerMinute_1
+ThousandStrokePerMinute_1.ConversionFactorB = "0.009549296585513721"
+ThousandStrokePerMinute_1.Symbol = "1000xspm"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ThousandStrokePerMinute_1] -->|BelongsToClass| N0001(ThousandStrokePerMinute) 
+	N0000[ThousandStrokePerMinute_1] -->|ConversionFactorB| N0002(("0.009549296585513721")) 
+	N0000[ThousandStrokePerMinute_1] -->|Symbol| N0003(("1000xspm")) 
+```
+## ThousandStrokePerHour <!-- NOUN -->
+- Display name: thousand stroke per hour
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.5729577951308232
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in thousand stroke per hour
+[SI] is the value in SI
+a = Hour / (Kilo*Revolution), i.e., 0.5729577951308232
+and
+Hour = 60.0 * Minute
+Kilo = 1000.0
+Revolution = 2.0 * System.Math.PI
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+ThousandStrokePerHour:ThousandStrokePerHour_1
+ThousandStrokePerHour_1.ConversionFactorB = "0.5729577951308232"
+ThousandStrokePerHour_1.Symbol = "1000xsph"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ThousandStrokePerHour_1] -->|BelongsToClass| N0001(ThousandStrokePerHour) 
+	N0000[ThousandStrokePerHour_1] -->|ConversionFactorB| N0002(("0.5729577951308232")) 
+	N0000[ThousandStrokePerHour_1] -->|Symbol| N0003(("1000xsph")) 
+```
 ## SquareMetre <!-- NOUN -->
 - Display name: square metre
 - Parent class: [Unit](#Unit)
@@ -31777,1761 +32498,6 @@ graph LR
 	N0000[RadianPerMile_1] -->|ConversionFactorB| N0002(("1609.3439999999998")) 
 	N0000[RadianPerMile_1] -->|Symbol| N0003(("rad/mi")) 
 ```
-## KilogramPerCubicMetrePerMetre <!-- NOUN -->
-- Display name: kilogram per cubic metre per metre
-- Parent class: [Unit](#Unit)
-- Description: 
-No conversion necessary as the unit choice is SI
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-KilogramPerCubicMetrePerMetre:KilogramPerCubicMetrePerMetre_1
-KilogramPerCubicMetrePerMetre_1.Symbol = "kg/m³/m"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[KilogramPerCubicMetrePerMetre_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerMetre) 
-	N0000[KilogramPerCubicMetrePerMetre_1] -->|Symbol| N0002(("kg/m³/m")) 
-```
-## SpecificGravityPerMetre <!-- NOUN -->
-- Display name: specific gravity per metre
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.001000028000784022
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in specific gravity per metre
-[SI] is the value in SI
-a = SpecificGavity4degC, i.e., 0.001000028000784022
-and
-SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-SpecificGravityPerMetre:SpecificGravityPerMetre_1
-SpecificGravityPerMetre_1.ConversionFactorB = "0.001000028000784022"
-SpecificGravityPerMetre_1.Symbol = "sg/m"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[SpecificGravityPerMetre_1] -->|BelongsToClass| N0001(SpecificGravityPerMetre) 
-	N0000[SpecificGravityPerMetre_1] -->|ConversionFactorB| N0002(("0.001000028000784022")) 
-	N0000[SpecificGravityPerMetre_1] -->|Symbol| N0003(("sg/m")) 
-```
-## SpecificGravityPer10Metre <!-- NOUN -->
-- Display name: specific gravity per 10 metre
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.01000028000784022
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in specific gravity per 10 metre
-[SI] is the value in SI
-a = Deca*SpecificGavity4degC, i.e., 0.01000028000784022
-and
-Deca = 10.0
-SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-SpecificGravityPer10Metre:SpecificGravityPer10Metre_1
-SpecificGravityPer10Metre_1.ConversionFactorB = "0.01000028000784022"
-SpecificGravityPer10Metre_1.Symbol = "sg/10m"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[SpecificGravityPer10Metre_1] -->|BelongsToClass| N0001(SpecificGravityPer10Metre) 
-	N0000[SpecificGravityPer10Metre_1] -->|ConversionFactorB| N0002(("0.01000028000784022")) 
-	N0000[SpecificGravityPer10Metre_1] -->|Symbol| N0003(("sg/10m")) 
-```
-## SpecificGravityPer30Metre <!-- NOUN -->
-- Display name: specific gravity per 30 metre
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.03000084002352066
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in specific gravity per 30 metre
-[SI] is the value in SI
-a = 3.0*Deca*SpecificGavity4degC, i.e., 0.03000084002352066
-and
-Deca = 10.0
-SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-SpecificGravityPer30Metre:SpecificGravityPer30Metre_1
-SpecificGravityPer30Metre_1.ConversionFactorB = "0.03000084002352066"
-SpecificGravityPer30Metre_1.Symbol = "sg/30m"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[SpecificGravityPer30Metre_1] -->|BelongsToClass| N0001(SpecificGravityPer30Metre) 
-	N0000[SpecificGravityPer30Metre_1] -->|ConversionFactorB| N0002(("0.03000084002352066")) 
-	N0000[SpecificGravityPer30Metre_1] -->|Symbol| N0003(("sg/30m")) 
-```
-## SpecificGravityPer100Metre <!-- NOUN -->
-- Display name: specific gravity per 100 metre
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.10000280007840219
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in specific gravity per 100 metre
-[SI] is the value in SI
-a = Hecto*SpecificGavity4degC, i.e., 0.10000280007840219
-and
-Hecto = 100.0
-SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-SpecificGravityPer100Metre:SpecificGravityPer100Metre_1
-SpecificGravityPer100Metre_1.ConversionFactorB = "0.10000280007840219"
-SpecificGravityPer100Metre_1.Symbol = "sg/100m"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[SpecificGravityPer100Metre_1] -->|BelongsToClass| N0001(SpecificGravityPer100Metre) 
-	N0000[SpecificGravityPer100Metre_1] -->|ConversionFactorB| N0002(("0.10000280007840219")) 
-	N0000[SpecificGravityPer100Metre_1] -->|Symbol| N0003(("sg/100m")) 
-```
-## GramPerCubicCentimetrePer100Metre <!-- NOUN -->
-- Display name: gram per cubic centimetre per 100 metre
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.10000000000000002
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre per 100 metre
-[SI] is the value in SI
-a = Centi*Centi*Centi*Hecto/Milli, i.e., 0.10000000000000002
-and
-Centi = 0.01
-Hecto = 100.0
-Milli = 0.001
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-GramPerCubicCentimetrePer100Metre:GramPerCubicCentimetrePer100Metre_1
-GramPerCubicCentimetrePer100Metre_1.ConversionFactorB = "0.10000000000000002"
-GramPerCubicCentimetrePer100Metre_1.Symbol = "g/cm³/100m"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[GramPerCubicCentimetrePer100Metre_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePer100Metre) 
-	N0000[GramPerCubicCentimetrePer100Metre_1] -->|ConversionFactorB| N0002(("0.10000000000000002")) 
-	N0000[GramPerCubicCentimetrePer100Metre_1] -->|Symbol| N0003(("g/cm³/100m")) 
-```
-## PoundPerGallonUkPerFoot <!-- NOUN -->
-- Display name: pound per gallon (UK) per foot
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.00305483143819196
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK) per foot
-[SI] is the value in SI
-a = GallonUK*Foot/Pound, i.e., 0.00305483143819196
-and
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerGallonUkPerFoot:PoundPerGallonUkPerFoot_1
-PoundPerGallonUkPerFoot_1.ConversionFactorB = "0.00305483143819196"
-PoundPerGallonUkPerFoot_1.Symbol = "ppgUK/ft"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerGallonUkPerFoot_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerFoot) 
-	N0000[PoundPerGallonUkPerFoot_1] -->|ConversionFactorB| N0002(("0.00305483143819196")) 
-	N0000[PoundPerGallonUkPerFoot_1] -->|Symbol| N0003(("ppgUK/ft")) 
-```
-## PoundPerGallonUkPer30Foot <!-- NOUN -->
-- Display name: pound per gallon (UK) per 30 foot
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.0916449431457588
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK) per 30 foot
-[SI] is the value in SI
-a = GallonUK*30.0*Foot/Pound, i.e., 0.0916449431457588
-and
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerGallonUkPer30Foot:PoundPerGallonUkPer30Foot_1
-PoundPerGallonUkPer30Foot_1.ConversionFactorB = "0.0916449431457588"
-PoundPerGallonUkPer30Foot_1.Symbol = "ppgUK/30ft"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerGallonUkPer30Foot_1] -->|BelongsToClass| N0001(PoundPerGallonUkPer30Foot) 
-	N0000[PoundPerGallonUkPer30Foot_1] -->|ConversionFactorB| N0002(("0.0916449431457588")) 
-	N0000[PoundPerGallonUkPer30Foot_1] -->|Symbol| N0003(("ppgUK/30ft")) 
-```
-## PoundPerGallonUkPer100Foot <!-- NOUN -->
-- Display name: pound per gallon (UK) per 100 foot
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.305483143819196
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK) per 100 foot
-[SI] is the value in SI
-a = GallonUK*100.0*Foot/Pound, i.e., 0.305483143819196
-and
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerGallonUkPer100Foot:PoundPerGallonUkPer100Foot_1
-PoundPerGallonUkPer100Foot_1.ConversionFactorB = "0.305483143819196"
-PoundPerGallonUkPer100Foot_1.Symbol = "ppgUK/100ft"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerGallonUkPer100Foot_1] -->|BelongsToClass| N0001(PoundPerGallonUkPer100Foot) 
-	N0000[PoundPerGallonUkPer100Foot_1] -->|ConversionFactorB| N0002(("0.305483143819196")) 
-	N0000[PoundPerGallonUkPer100Foot_1] -->|Symbol| N0003(("ppgUK/100ft")) 
-```
-## PoundPerGallonUsPerFoot <!-- NOUN -->
-- Display name: pound per gallon (US) per foot
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.0025436792769754917
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US) per foot
-[SI] is the value in SI
-a = GallonUS*Foot/Pound, i.e., 0.0025436792769754917
-and
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerGallonUsPerFoot:PoundPerGallonUsPerFoot_1
-PoundPerGallonUsPerFoot_1.ConversionFactorB = "0.0025436792769754917"
-PoundPerGallonUsPerFoot_1.Symbol = "ppgUS/ft"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerGallonUsPerFoot_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerFoot) 
-	N0000[PoundPerGallonUsPerFoot_1] -->|ConversionFactorB| N0002(("0.0025436792769754917")) 
-	N0000[PoundPerGallonUsPerFoot_1] -->|Symbol| N0003(("ppgUS/ft")) 
-```
-## PoundPerGallonUsPer30Foot <!-- NOUN -->
-- Display name: pound per gallon (US) per 30 foot
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.07631037830926475
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US) per 30 foot
-[SI] is the value in SI
-a = GallonUS*30.0*Foot/Pound, i.e., 0.07631037830926475
-and
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerGallonUsPer30Foot:PoundPerGallonUsPer30Foot_1
-PoundPerGallonUsPer30Foot_1.ConversionFactorB = "0.07631037830926475"
-PoundPerGallonUsPer30Foot_1.Symbol = "ppgUS/30ft"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerGallonUsPer30Foot_1] -->|BelongsToClass| N0001(PoundPerGallonUsPer30Foot) 
-	N0000[PoundPerGallonUsPer30Foot_1] -->|ConversionFactorB| N0002(("0.07631037830926475")) 
-	N0000[PoundPerGallonUsPer30Foot_1] -->|Symbol| N0003(("ppgUS/30ft")) 
-```
-## PoundPerGallonUsPer100Foot <!-- NOUN -->
-- Display name: pound per gallon (US) per 100 foot
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.2543679276975492
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US) per 100 foot
-[SI] is the value in SI
-a = GallonUS*100.0*Foot/Pound, i.e., 0.2543679276975492
-and
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerGallonUsPer100Foot:PoundPerGallonUsPer100Foot_1
-PoundPerGallonUsPer100Foot_1.ConversionFactorB = "0.2543679276975492"
-PoundPerGallonUsPer100Foot_1.Symbol = "ppgUS/100ft"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerGallonUsPer100Foot_1] -->|BelongsToClass| N0001(PoundPerGallonUsPer100Foot) 
-	N0000[PoundPerGallonUsPer100Foot_1] -->|ConversionFactorB| N0002(("0.2543679276975492")) 
-	N0000[PoundPerGallonUsPer100Foot_1] -->|Symbol| N0003(("ppgUS/100ft")) 
-```
-## KilogramPerCubicMetrePer10Metre <!-- NOUN -->
-- Display name: kilogram per cubic metre per 10 metre
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 10
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in kilogram per cubic metre per 10 metre
-[SI] is the value in SI
-a = Deca/Unit, i.e., 10
-and
-Deca = 10.0
-Unit = 1.0
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-KilogramPerCubicMetrePer10Metre:KilogramPerCubicMetrePer10Metre_1
-KilogramPerCubicMetrePer10Metre_1.ConversionFactorB = "10"
-KilogramPerCubicMetrePer10Metre_1.Symbol = "kg/m³/10m"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[KilogramPerCubicMetrePer10Metre_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePer10Metre) 
-	N0000[KilogramPerCubicMetrePer10Metre_1] -->|ConversionFactorB| N0002(("10")) 
-	N0000[KilogramPerCubicMetrePer10Metre_1] -->|Symbol| N0003(("kg/m³/10m")) 
-```
-## KilogramPerCubicMetrePer30Metre <!-- NOUN -->
-- Display name: kilogram per cubic metre per 30 metre
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 30
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in kilogram per cubic metre per 30 metre
-[SI] is the value in SI
-a = 3.0 *Deca/Unit, i.e., 30
-and
-Deca = 10.0
-Unit = 1.0
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-KilogramPerCubicMetrePer30Metre:KilogramPerCubicMetrePer30Metre_1
-KilogramPerCubicMetrePer30Metre_1.ConversionFactorB = "30"
-KilogramPerCubicMetrePer30Metre_1.Symbol = "kg/m³/30m"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[KilogramPerCubicMetrePer30Metre_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePer30Metre) 
-	N0000[KilogramPerCubicMetrePer30Metre_1] -->|ConversionFactorB| N0002(("30")) 
-	N0000[KilogramPerCubicMetrePer30Metre_1] -->|Symbol| N0003(("kg/m³/30m")) 
-```
-## KilogramPerCubicMetrePer100Metre <!-- NOUN -->
-- Display name: kilogram per cubic metre per 100 metre
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 100
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in kilogram per cubic metre per 100 metre
-[SI] is the value in SI
-a = Hecto/Unit, i.e., 100
-and
-Hecto = 100.0
-Unit = 1.0
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-KilogramPerCubicMetrePer100Metre:KilogramPerCubicMetrePer100Metre_1
-KilogramPerCubicMetrePer100Metre_1.ConversionFactorB = "100"
-KilogramPerCubicMetrePer100Metre_1.Symbol = "kg/m³/30m"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[KilogramPerCubicMetrePer100Metre_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePer100Metre) 
-	N0000[KilogramPerCubicMetrePer100Metre_1] -->|ConversionFactorB| N0002(("100")) 
-	N0000[KilogramPerCubicMetrePer100Metre_1] -->|Symbol| N0003(("kg/m³/30m")) 
-```
-## GramPerCubicCentimetrePerMetre <!-- NOUN -->
-- Display name: gram per cubic centimetre per metre
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.0010000000000000002
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre per metre
-[SI] is the value in SI
-a = Centi*Centi*Centi/Milli, i.e., 0.0010000000000000002
-and
-Centi = 0.01
-Milli = 0.001
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-GramPerCubicCentimetrePerMetre:GramPerCubicCentimetrePerMetre_1
-GramPerCubicCentimetrePerMetre_1.ConversionFactorB = "0.0010000000000000002"
-GramPerCubicCentimetrePerMetre_1.Symbol = "g/cm³/m"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[GramPerCubicCentimetrePerMetre_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerMetre) 
-	N0000[GramPerCubicCentimetrePerMetre_1] -->|ConversionFactorB| N0002(("0.0010000000000000002")) 
-	N0000[GramPerCubicCentimetrePerMetre_1] -->|Symbol| N0003(("g/cm³/m")) 
-```
-## GramPerCubicCentimetrePer10Metre <!-- NOUN -->
-- Display name: gram per cubic centimetre per 10 metre
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.010000000000000002
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre per 10 metre
-[SI] is the value in SI
-a = Centi*Centi*Centi*Deca/Milli, i.e., 0.010000000000000002
-and
-Centi = 0.01
-Deca = 10.0
-Milli = 0.001
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-GramPerCubicCentimetrePer10Metre:GramPerCubicCentimetrePer10Metre_1
-GramPerCubicCentimetrePer10Metre_1.ConversionFactorB = "0.010000000000000002"
-GramPerCubicCentimetrePer10Metre_1.Symbol = "g/cm³/10m"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[GramPerCubicCentimetrePer10Metre_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePer10Metre) 
-	N0000[GramPerCubicCentimetrePer10Metre_1] -->|ConversionFactorB| N0002(("0.010000000000000002")) 
-	N0000[GramPerCubicCentimetrePer10Metre_1] -->|Symbol| N0003(("g/cm³/10m")) 
-```
-## GramPerCubicCentimetrePer30Metre <!-- NOUN -->
-- Display name: gram per cubic centimetre per 30 metre
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.030000000000000002
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre per 30 metre
-[SI] is the value in SI
-a = Centi*Centi*Centi*3.0*Deca/Milli, i.e., 0.030000000000000002
-and
-Centi = 0.01
-Deca = 10.0
-Milli = 0.001
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-GramPerCubicCentimetrePer30Metre:GramPerCubicCentimetrePer30Metre_1
-GramPerCubicCentimetrePer30Metre_1.ConversionFactorB = "0.030000000000000002"
-GramPerCubicCentimetrePer30Metre_1.Symbol = "g/cm³/30m"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[GramPerCubicCentimetrePer30Metre_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePer30Metre) 
-	N0000[GramPerCubicCentimetrePer30Metre_1] -->|ConversionFactorB| N0002(("0.030000000000000002")) 
-	N0000[GramPerCubicCentimetrePer30Metre_1] -->|Symbol| N0003(("g/cm³/30m")) 
-```
-## PoundPerCubicFootPerFoot <!-- NOUN -->
-- Display name: pound per cubic foot per foot
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.019028042383608865
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic foot per foot
-[SI] is the value in SI
-a = Foot*Foot*Foot*Foot/Pound, i.e., 0.019028042383608865
-and
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerCubicFootPerFoot:PoundPerCubicFootPerFoot_1
-PoundPerCubicFootPerFoot_1.ConversionFactorB = "0.019028042383608865"
-PoundPerCubicFootPerFoot_1.Symbol = "lb/ft³/ft"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerCubicFootPerFoot_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerFoot) 
-	N0000[PoundPerCubicFootPerFoot_1] -->|ConversionFactorB| N0002(("0.019028042383608865")) 
-	N0000[PoundPerCubicFootPerFoot_1] -->|Symbol| N0003(("lb/ft³/ft")) 
-```
-## PoundPerCubicFootPer30Foot <!-- NOUN -->
-- Display name: pound per cubic foot per 30 foot
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.570841271508266
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic foot per 30 foot
-[SI] is the value in SI
-a = Foot*Foot*Foot*30.0*Foot/Pound, i.e., 0.570841271508266
-and
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerCubicFootPer30Foot:PoundPerCubicFootPer30Foot_1
-PoundPerCubicFootPer30Foot_1.ConversionFactorB = "0.570841271508266"
-PoundPerCubicFootPer30Foot_1.Symbol = "lb/ft³/30ft"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerCubicFootPer30Foot_1] -->|BelongsToClass| N0001(PoundPerCubicFootPer30Foot) 
-	N0000[PoundPerCubicFootPer30Foot_1] -->|ConversionFactorB| N0002(("0.570841271508266")) 
-	N0000[PoundPerCubicFootPer30Foot_1] -->|Symbol| N0003(("lb/ft³/30ft")) 
-```
-## PoundPerCubicFootPer100Foot <!-- NOUN -->
-- Display name: pound per cubic foot per 100 foot
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 1.902804238360887
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic foot per 100 foot
-[SI] is the value in SI
-a = Foot*Foot*Foot*100.0*Foot/Pound, i.e., 1.902804238360887
-and
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerCubicFootPer100Foot:PoundPerCubicFootPer100Foot_1
-PoundPerCubicFootPer100Foot_1.ConversionFactorB = "1.902804238360887"
-PoundPerCubicFootPer100Foot_1.Symbol = "lb/ft³/100ft"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerCubicFootPer100Foot_1] -->|BelongsToClass| N0001(PoundPerCubicFootPer100Foot) 
-	N0000[PoundPerCubicFootPer100Foot_1] -->|ConversionFactorB| N0002(("1.902804238360887")) 
-	N0000[PoundPerCubicFootPer100Foot_1] -->|Symbol| N0003(("lb/ft³/100ft")) 
-```
-## PoundPerCubicInchPerFoot <!-- NOUN -->
-- Display name: pound per cubic inch per foot
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 1.1011598601625506E-05
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic inch per foot
-[SI] is the value in SI
-a = Inch*Inch*Inch*Foot/Pound, i.e., 1.1011598601625506E-05
-and
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerCubicInchPerFoot:PoundPerCubicInchPerFoot_1
-PoundPerCubicInchPerFoot_1.ConversionFactorB = "1.1011598601625506E-05"
-PoundPerCubicInchPerFoot_1.Symbol = "lb/in³/ft"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerCubicInchPerFoot_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerFoot) 
-	N0000[PoundPerCubicInchPerFoot_1] -->|ConversionFactorB| N0002(("1.1011598601625506E-05")) 
-	N0000[PoundPerCubicInchPerFoot_1] -->|Symbol| N0003(("lb/in³/ft")) 
-```
-## PoundPerCubicInchPer30Foot <!-- NOUN -->
-- Display name: pound per cubic inch per 30 foot
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.00033034795804876514
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic inch per 30 foot
-[SI] is the value in SI
-a = Inch*Inch*Inch*30.0*Foot/Pound, i.e., 0.00033034795804876514
-and
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerCubicInchPer30Foot:PoundPerCubicInchPer30Foot_1
-PoundPerCubicInchPer30Foot_1.ConversionFactorB = "0.00033034795804876514"
-PoundPerCubicInchPer30Foot_1.Symbol = "lb/in³/30ft"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerCubicInchPer30Foot_1] -->|BelongsToClass| N0001(PoundPerCubicInchPer30Foot) 
-	N0000[PoundPerCubicInchPer30Foot_1] -->|ConversionFactorB| N0002(("0.00033034795804876514")) 
-	N0000[PoundPerCubicInchPer30Foot_1] -->|Symbol| N0003(("lb/in³/30ft")) 
-```
-## PoundPerCubicInchPer100Foot <!-- NOUN -->
-- Display name: pound per cubic inch per 100 foot
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.0011011598601625506
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic inch per 100 foot
-[SI] is the value in SI
-a = Inch*Inch*Inch*100.0*Foot/Pound, i.e., 0.0011011598601625506
-and
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerCubicInchPer100Foot:PoundPerCubicInchPer100Foot_1
-PoundPerCubicInchPer100Foot_1.ConversionFactorB = "0.0011011598601625506"
-PoundPerCubicInchPer100Foot_1.Symbol = "lb/in³/100ft"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerCubicInchPer100Foot_1] -->|BelongsToClass| N0001(PoundPerCubicInchPer100Foot) 
-	N0000[PoundPerCubicInchPer100Foot_1] -->|ConversionFactorB| N0002(("0.0011011598601625506")) 
-	N0000[PoundPerCubicInchPer100Foot_1] -->|Symbol| N0003(("lb/in³/100ft")) 
-```
-## PoundPerCubicYardPerFoot <!-- NOUN -->
-- Display name: pound per cubic yard per foot
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.5137571443574394
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic yard per foot
-[SI] is the value in SI
-a = Yard*Yard*Yard*Foot/Pound, i.e., 0.5137571443574394
-and
-Yard = 3.0 * Foot
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerCubicYardPerFoot:PoundPerCubicYardPerFoot_1
-PoundPerCubicYardPerFoot_1.ConversionFactorB = "0.5137571443574394"
-PoundPerCubicYardPerFoot_1.Symbol = "lb/yd³/ft"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerCubicYardPerFoot_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerFoot) 
-	N0000[PoundPerCubicYardPerFoot_1] -->|ConversionFactorB| N0002(("0.5137571443574394")) 
-	N0000[PoundPerCubicYardPerFoot_1] -->|Symbol| N0003(("lb/yd³/ft")) 
-```
-## PoundPerCubicYardPer30Foot <!-- NOUN -->
-- Display name: pound per cubic yard per 30 foot
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 15.412714330723183
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic yard per 30 foot
-[SI] is the value in SI
-a = Yard*Yard*Yard*30.0*Foot/Pound, i.e., 15.412714330723183
-and
-Yard = 3.0 * Foot
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerCubicYardPer30Foot:PoundPerCubicYardPer30Foot_1
-PoundPerCubicYardPer30Foot_1.ConversionFactorB = "15.412714330723183"
-PoundPerCubicYardPer30Foot_1.Symbol = "lb/yd³/30ft"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerCubicYardPer30Foot_1] -->|BelongsToClass| N0001(PoundPerCubicYardPer30Foot) 
-	N0000[PoundPerCubicYardPer30Foot_1] -->|ConversionFactorB| N0002(("15.412714330723183")) 
-	N0000[PoundPerCubicYardPer30Foot_1] -->|Symbol| N0003(("lb/yd³/30ft")) 
-```
-## PoundPerCubicYardPer100Foot <!-- NOUN -->
-- Display name: pound per cubic yard per 100 foot
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 51.37571443574393
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic yard per 100 foot
-[SI] is the value in SI
-a = Yard*Yard*Yard*100.0*Foot/Pound, i.e., 51.37571443574393
-and
-Yard = 3.0 * Foot
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerCubicYardPer100Foot:PoundPerCubicYardPer100Foot_1
-PoundPerCubicYardPer100Foot_1.ConversionFactorB = "51.37571443574393"
-PoundPerCubicYardPer100Foot_1.Symbol = "lb/yd³/100ft"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerCubicYardPer100Foot_1] -->|BelongsToClass| N0001(PoundPerCubicYardPer100Foot) 
-	N0000[PoundPerCubicYardPer100Foot_1] -->|ConversionFactorB| N0002(("51.37571443574393")) 
-	N0000[PoundPerCubicYardPer100Foot_1] -->|Symbol| N0003(("lb/yd³/100ft")) 
-```
-## KilogramPerCubicMetrePerKelvin <!-- NOUN -->
-- Display name: kilogram per cubic metre per kelvin
-- Parent class: [Unit](#Unit)
-- Description: 
-No conversion necessary as the unit choice is SI
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-KilogramPerCubicMetrePerKelvin:KilogramPerCubicMetrePerKelvin_1
-KilogramPerCubicMetrePerKelvin_1.Symbol = "kg/m³/K"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[KilogramPerCubicMetrePerKelvin_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerKelvin) 
-	N0000[KilogramPerCubicMetrePerKelvin_1] -->|Symbol| N0002(("kg/m³/K")) 
-```
-## SpecificGravityPerCelsius <!-- NOUN -->
-- Display name: specific gravity per celsius
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.001000028000784022
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in specific gravity per celsius
-[SI] is the value in SI
-a = SpecificGavity4degC, i.e., 0.001000028000784022
-and
-SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-SpecificGravityPerCelsius:SpecificGravityPerCelsius_1
-SpecificGravityPerCelsius_1.ConversionFactorB = "0.001000028000784022"
-SpecificGravityPerCelsius_1.Symbol = "sg/°C"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[SpecificGravityPerCelsius_1] -->|BelongsToClass| N0001(SpecificGravityPerCelsius) 
-	N0000[SpecificGravityPerCelsius_1] -->|ConversionFactorB| N0002(("0.001000028000784022")) 
-	N0000[SpecificGravityPerCelsius_1] -->|Symbol| N0003(("sg/°C")) 
-```
-## GramPerCubicCentimetrePerCelsius <!-- NOUN -->
-- Display name: gram per cubic centimetre per celsius
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.0010000000000000002
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre per celsius
-[SI] is the value in SI
-a = Centi*Centi*Centi/Milli, i.e., 0.0010000000000000002
-and
-Centi = 0.01
-Milli = 0.001
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-GramPerCubicCentimetrePerCelsius:GramPerCubicCentimetrePerCelsius_1
-GramPerCubicCentimetrePerCelsius_1.ConversionFactorB = "0.0010000000000000002"
-GramPerCubicCentimetrePerCelsius_1.Symbol = "g/cm³/°C"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[GramPerCubicCentimetrePerCelsius_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerCelsius) 
-	N0000[GramPerCubicCentimetrePerCelsius_1] -->|ConversionFactorB| N0002(("0.0010000000000000002")) 
-	N0000[GramPerCubicCentimetrePerCelsius_1] -->|Symbol| N0003(("g/cm³/°C")) 
-```
-## PoundPerGallonUkPerCelsius <!-- NOUN -->
-- Display name: pound per gallon (UK) per celsius
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.010022412854960501
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK) per celsius
-[SI] is the value in SI
-a = GallonUK/Pound, i.e., 0.010022412854960501
-and
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerGallonUkPerCelsius:PoundPerGallonUkPerCelsius_1
-PoundPerGallonUkPerCelsius_1.ConversionFactorB = "0.010022412854960501"
-PoundPerGallonUkPerCelsius_1.Symbol = "ppgUK/°C"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerGallonUkPerCelsius_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerCelsius) 
-	N0000[PoundPerGallonUkPerCelsius_1] -->|ConversionFactorB| N0002(("0.010022412854960501")) 
-	N0000[PoundPerGallonUkPerCelsius_1] -->|Symbol| N0003(("ppgUK/°C")) 
-```
-## PoundPerGallonUsPerFahrenheit <!-- NOUN -->
-- Display name: pound per gallon (US) per fahrenheit
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.004636335806677406
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US) per fahrenheit
-[SI] is the value in SI
-a = GallonUS*FahrenheitSlope/Pound, i.e., 0.004636335806677406
-and
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerGallonUsPerFahrenheit:PoundPerGallonUsPerFahrenheit_1
-PoundPerGallonUsPerFahrenheit_1.ConversionFactorB = "0.004636335806677406"
-PoundPerGallonUsPerFahrenheit_1.Symbol = "ppgUS/°F"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerGallonUsPerFahrenheit_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerFahrenheit) 
-	N0000[PoundPerGallonUsPerFahrenheit_1] -->|ConversionFactorB| N0002(("0.004636335806677406")) 
-	N0000[PoundPerGallonUsPerFahrenheit_1] -->|Symbol| N0003(("ppgUS/°F")) 
-```
-## PoundPerGallonUkPerFahrenheit <!-- NOUN -->
-- Display name: pound per gallon (UK) per fahrenheit
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.005568007141644723
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK) per fahrenheit
-[SI] is the value in SI
-a = GallonUK*FahrenheitSlope/Pound, i.e., 0.005568007141644723
-and
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerGallonUkPerFahrenheit:PoundPerGallonUkPerFahrenheit_1
-PoundPerGallonUkPerFahrenheit_1.ConversionFactorB = "0.005568007141644723"
-PoundPerGallonUkPerFahrenheit_1.Symbol = "ppgUK/°F"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerGallonUkPerFahrenheit_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerFahrenheit) 
-	N0000[PoundPerGallonUkPerFahrenheit_1] -->|ConversionFactorB| N0002(("0.005568007141644723")) 
-	N0000[PoundPerGallonUkPerFahrenheit_1] -->|Symbol| N0003(("ppgUK/°F")) 
-```
-## PoundPerGallonUsPerCelsius <!-- NOUN -->
-- Display name: pound per gallon (US) per celsius
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.00834540445201933
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US) per celsius
-[SI] is the value in SI
-a = GallonUS/Pound, i.e., 0.00834540445201933
-and
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerGallonUsPerCelsius:PoundPerGallonUsPerCelsius_1
-PoundPerGallonUsPerCelsius_1.ConversionFactorB = "0.00834540445201933"
-PoundPerGallonUsPerCelsius_1.Symbol = "ppgUS/°C"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerGallonUsPerCelsius_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerCelsius) 
-	N0000[PoundPerGallonUsPerCelsius_1] -->|ConversionFactorB| N0002(("0.00834540445201933")) 
-	N0000[PoundPerGallonUsPerCelsius_1] -->|Symbol| N0003(("ppgUS/°C")) 
-```
-## PoundPerCubicFootPerCelsius <!-- NOUN -->
-- Display name: pound per cubic foot per celsius
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.06242796057614459
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic foot per celsius
-[SI] is the value in SI
-a = Foot*Foot*Foot/Pound, i.e., 0.06242796057614459
-and
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerCubicFootPerCelsius:PoundPerCubicFootPerCelsius_1
-PoundPerCubicFootPerCelsius_1.ConversionFactorB = "0.06242796057614459"
-PoundPerCubicFootPerCelsius_1.Symbol = "lb/ft³/°C"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerCubicFootPerCelsius_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerCelsius) 
-	N0000[PoundPerCubicFootPerCelsius_1] -->|ConversionFactorB| N0002(("0.06242796057614459")) 
-	N0000[PoundPerCubicFootPerCelsius_1] -->|Symbol| N0003(("lb/ft³/°C")) 
-```
-## PoundPerCubicFootPerFahrenheit <!-- NOUN -->
-- Display name: pound per cubic foot per fahrenheit
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.03468220032008033
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic foot per fahrenheit
-[SI] is the value in SI
-a = Foot*Foot*Foot*FahrenheitSlope/Pound, i.e., 0.03468220032008033
-and
-Foot = 12.0 * Inch
-FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerCubicFootPerFahrenheit:PoundPerCubicFootPerFahrenheit_1
-PoundPerCubicFootPerFahrenheit_1.ConversionFactorB = "0.03468220032008033"
-PoundPerCubicFootPerFahrenheit_1.Symbol = "lb/ft³/°F"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerCubicFootPerFahrenheit_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerFahrenheit) 
-	N0000[PoundPerCubicFootPerFahrenheit_1] -->|ConversionFactorB| N0002(("0.03468220032008033")) 
-	N0000[PoundPerCubicFootPerFahrenheit_1] -->|Symbol| N0003(("lb/ft³/°F")) 
-```
-## PoundPerCubicInchPerCelsius <!-- NOUN -->
-- Display name: pound per cubic inch per celsius
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 3.612729200008369E-05
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic inch per celsius
-[SI] is the value in SI
-a = Inch*Inch*Inch/Pound, i.e., 3.612729200008369E-05
-and
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerCubicInchPerCelsius:PoundPerCubicInchPerCelsius_1
-PoundPerCubicInchPerCelsius_1.ConversionFactorB = "3.612729200008369E-05"
-PoundPerCubicInchPerCelsius_1.Symbol = "lb/in³/°C"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerCubicInchPerCelsius_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerCelsius) 
-	N0000[PoundPerCubicInchPerCelsius_1] -->|ConversionFactorB| N0002(("3.612729200008369E-05")) 
-	N0000[PoundPerCubicInchPerCelsius_1] -->|Symbol| N0003(("lb/in³/°C")) 
-```
-## PoundPerCubicInchPerFahrenheit <!-- NOUN -->
-- Display name: pound per cubic inch per fahrenheit
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 2.0070717777824268E-05
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic inch per fahrenheit
-[SI] is the value in SI
-a = Inch*Inch*Inch*FahrenheitSlope/Pound, i.e., 2.0070717777824268E-05
-and
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerCubicInchPerFahrenheit:PoundPerCubicInchPerFahrenheit_1
-PoundPerCubicInchPerFahrenheit_1.ConversionFactorB = "2.0070717777824268E-05"
-PoundPerCubicInchPerFahrenheit_1.Symbol = "lb/in³/°F"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerCubicInchPerFahrenheit_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerFahrenheit) 
-	N0000[PoundPerCubicInchPerFahrenheit_1] -->|ConversionFactorB| N0002(("2.0070717777824268E-05")) 
-	N0000[PoundPerCubicInchPerFahrenheit_1] -->|Symbol| N0003(("lb/in³/°F")) 
-```
-## PoundPerCubicYardPerCelsius <!-- NOUN -->
-- Display name: pound per cubic yard per celsius
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 1.6855549355559039
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic yard per celsius
-[SI] is the value in SI
-a = Yard*Yard*Yard/Pound, i.e., 1.6855549355559039
-and
-Yard = 3.0 * Foot
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Foot = 12.0 * Inch
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerCubicYardPerCelsius:PoundPerCubicYardPerCelsius_1
-PoundPerCubicYardPerCelsius_1.ConversionFactorB = "1.6855549355559039"
-PoundPerCubicYardPerCelsius_1.Symbol = "lb/yd³/°C"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerCubicYardPerCelsius_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerCelsius) 
-	N0000[PoundPerCubicYardPerCelsius_1] -->|ConversionFactorB| N0002(("1.6855549355559039")) 
-	N0000[PoundPerCubicYardPerCelsius_1] -->|Symbol| N0003(("lb/yd³/°C")) 
-```
-## PoundPerCubicYeardPerFahrenheit <!-- NOUN -->
-- Display name: pound per cubic yeard per fahrenheit
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.9364194086421688
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic yeard per fahrenheit
-[SI] is the value in SI
-a = Yard*Yard*Yard*FahrenheitSlope/Pound, i.e., 0.9364194086421688
-and
-Yard = 3.0 * Foot
-FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Foot = 12.0 * Inch
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerCubicYeardPerFahrenheit:PoundPerCubicYeardPerFahrenheit_1
-PoundPerCubicYeardPerFahrenheit_1.ConversionFactorB = "0.9364194086421688"
-PoundPerCubicYeardPerFahrenheit_1.Symbol = "lb/yd³/°F"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerCubicYeardPerFahrenheit_1] -->|BelongsToClass| N0001(PoundPerCubicYeardPerFahrenheit) 
-	N0000[PoundPerCubicYeardPerFahrenheit_1] -->|ConversionFactorB| N0002(("0.9364194086421688")) 
-	N0000[PoundPerCubicYeardPerFahrenheit_1] -->|Symbol| N0003(("lb/yd³/°F")) 
-```
-## KilogramPerCubicMetre <!-- NOUN -->
-- Display name: kilogram per cubic metre
-- Parent class: [Unit](#Unit)
-- Description: 
-No conversion necessary as the unit choice is SI
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-KilogramPerCubicMetre:KilogramPerCubicMetre_1
-KilogramPerCubicMetre_1.Symbol = "kg/m³"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[KilogramPerCubicMetre_1] -->|BelongsToClass| N0001(KilogramPerCubicMetre) 
-	N0000[KilogramPerCubicMetre_1] -->|Symbol| N0002(("kg/m³")) 
-```
-## GramPerCubicMetre <!-- NOUN -->
-- Display name: gram per cubic metre
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 1000
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in gram per cubic metre
-[SI] is the value in SI
-a = 1.0/Milli, i.e., 1000
-and
-Milli = 0.001
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-GramPerCubicMetre:GramPerCubicMetre_1
-GramPerCubicMetre_1.ConversionFactorB = "1000"
-GramPerCubicMetre_1.Symbol = "g/m³"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[GramPerCubicMetre_1] -->|BelongsToClass| N0001(GramPerCubicMetre) 
-	N0000[GramPerCubicMetre_1] -->|ConversionFactorB| N0002(("1000")) 
-	N0000[GramPerCubicMetre_1] -->|Symbol| N0003(("g/m³")) 
-```
-## SpecificGravity <!-- NOUN -->
-- Display name: specific gravity
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 999.972
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in specific gravity
-[SI] is the value in SI
-a = 1.0/SpecificGavity4degC, i.e., 999.972
-and
-SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-SpecificGravity:SpecificGravity_1
-SpecificGravity_1.ConversionFactorB = "999.972"
-SpecificGravity_1.Symbol = "s.g."
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[SpecificGravity_1] -->|BelongsToClass| N0001(SpecificGravity) 
-	N0000[SpecificGravity_1] -->|ConversionFactorB| N0002(("999.972")) 
-	N0000[SpecificGravity_1] -->|Symbol| N0003(("s.g.")) 
-```
-## GramPerCubicCentimetre <!-- NOUN -->
-- Display name: gram per cubic centimetre
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.0010000000000000002
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre
-[SI] is the value in SI
-a = Centi*Centi*Centi / Milli, i.e., 0.0010000000000000002
-and
-Centi = 0.01
-Milli = 0.001
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-GramPerCubicCentimetre:GramPerCubicCentimetre_1
-GramPerCubicCentimetre_1.ConversionFactorB = "0.0010000000000000002"
-GramPerCubicCentimetre_1.Symbol = "g/cm³"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[GramPerCubicCentimetre_1] -->|BelongsToClass| N0001(GramPerCubicCentimetre) 
-	N0000[GramPerCubicCentimetre_1] -->|ConversionFactorB| N0002(("0.0010000000000000002")) 
-	N0000[GramPerCubicCentimetre_1] -->|Symbol| N0003(("g/cm³")) 
-```
-## PoundPerGallonUk <!-- NOUN -->
-- Display name: pound per gallon (UK)
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.010022412854960501
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK)
-[SI] is the value in SI
-a = 1.0/PPGUK, i.e., 0.010022412854960501
-and
-PPGUK = Pound / GallonUK
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerGallonUk:PoundPerGallonUk_1
-PoundPerGallonUk_1.ConversionFactorB = "0.010022412854960501"
-PoundPerGallonUk_1.Symbol = "ppgUK"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerGallonUk_1] -->|BelongsToClass| N0001(PoundPerGallonUk) 
-	N0000[PoundPerGallonUk_1] -->|ConversionFactorB| N0002(("0.010022412854960501")) 
-	N0000[PoundPerGallonUk_1] -->|Symbol| N0003(("ppgUK")) 
-```
-## PoundPerGallonUs <!-- NOUN -->
-- Display name: pound per gallon (US)
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.00834540445201933
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US)
-[SI] is the value in SI
-a = 1.0/PPGUS, i.e., 0.00834540445201933
-and
-PPGUS = Pound / GallonUS
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerGallonUs:PoundPerGallonUs_1
-PoundPerGallonUs_1.ConversionFactorB = "0.00834540445201933"
-PoundPerGallonUs_1.Symbol = "ppgUS"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerGallonUs_1] -->|BelongsToClass| N0001(PoundPerGallonUs) 
-	N0000[PoundPerGallonUs_1] -->|ConversionFactorB| N0002(("0.00834540445201933")) 
-	N0000[PoundPerGallonUs_1] -->|Symbol| N0003(("ppgUS")) 
-```
-## PoundPerCubicFoot <!-- NOUN -->
-- Display name: pound per cubic foot
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.06242796057614459
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic foot
-[SI] is the value in SI
-a = Foot*Foot*Foot/Pound, i.e., 0.06242796057614459
-and
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerCubicFoot:PoundPerCubicFoot_1
-PoundPerCubicFoot_1.ConversionFactorB = "0.06242796057614459"
-PoundPerCubicFoot_1.Symbol = "lb/ft³"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerCubicFoot_1] -->|BelongsToClass| N0001(PoundPerCubicFoot) 
-	N0000[PoundPerCubicFoot_1] -->|ConversionFactorB| N0002(("0.06242796057614459")) 
-	N0000[PoundPerCubicFoot_1] -->|Symbol| N0003(("lb/ft³")) 
-```
-## PoundPerCubicInch <!-- NOUN -->
-- Display name: pound per cubic inch
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 3.612729200008369E-05
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic inch
-[SI] is the value in SI
-a = Inch*Inch*Inch/Pound, i.e., 3.612729200008369E-05
-and
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerCubicInch:PoundPerCubicInch_1
-PoundPerCubicInch_1.ConversionFactorB = "3.612729200008369E-05"
-PoundPerCubicInch_1.Symbol = "lb/in³"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerCubicInch_1] -->|BelongsToClass| N0001(PoundPerCubicInch) 
-	N0000[PoundPerCubicInch_1] -->|ConversionFactorB| N0002(("3.612729200008369E-05")) 
-	N0000[PoundPerCubicInch_1] -->|Symbol| N0003(("lb/in³")) 
-```
-## PoundPerCubicYard <!-- NOUN -->
-- Display name: pound per cubic yard
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 1.6855549355559039
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per cubic yard
-[SI] is the value in SI
-a = Yard*Yard*Yard/Pound, i.e., 1.6855549355559039
-and
-Yard = 3.0 * Foot
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Foot = 12.0 * Inch
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerCubicYard:PoundPerCubicYard_1
-PoundPerCubicYard_1.ConversionFactorB = "1.6855549355559039"
-PoundPerCubicYard_1.Symbol = "lb/yd³"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerCubicYard_1] -->|BelongsToClass| N0001(PoundPerCubicYard) 
-	N0000[PoundPerCubicYard_1] -->|ConversionFactorB| N0002(("1.6855549355559039")) 
-	N0000[PoundPerCubicYard_1] -->|Symbol| N0003(("lb/yd³")) 
-```
-## KilogramPerCubicMetrePerSecond <!-- NOUN -->
-- Display name: kilogram per cubic metre per second
-- Parent class: [Unit](#Unit)
-- Description: 
-No conversion necessary as the unit choice is SI
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-KilogramPerCubicMetrePerSecond:KilogramPerCubicMetrePerSecond_1
-KilogramPerCubicMetrePerSecond_1.Symbol = "kg/m³/s"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[KilogramPerCubicMetrePerSecond_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerSecond) 
-	N0000[KilogramPerCubicMetrePerSecond_1] -->|Symbol| N0002(("kg/m³/s")) 
-```
-## SpecificGravityPerSecond <!-- NOUN -->
-- Display name: specific gravity per second
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.001000028000784022
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in specific gravity per second
-[SI] is the value in SI
-a = 1.0/WaterDensity4degC1Atm, i.e., 0.001000028000784022
-and
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-SpecificGravityPerSecond:SpecificGravityPerSecond_1
-SpecificGravityPerSecond_1.ConversionFactorB = "0.001000028000784022"
-SpecificGravityPerSecond_1.Symbol = "sg/s"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[SpecificGravityPerSecond_1] -->|BelongsToClass| N0001(SpecificGravityPerSecond) 
-	N0000[SpecificGravityPerSecond_1] -->|ConversionFactorB| N0002(("0.001000028000784022")) 
-	N0000[SpecificGravityPerSecond_1] -->|Symbol| N0003(("sg/s")) 
-```
-## SpecificGravityPerMinute <!-- NOUN -->
-- Display name: specific gravity per minute
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.06000168004704132
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in specific gravity per minute
-[SI] is the value in SI
-a = Minute / WaterDensity4degC1Atm, i.e., 0.06000168004704132
-and
-Minute = 60.0
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-SpecificGravityPerMinute:SpecificGravityPerMinute_1
-SpecificGravityPerMinute_1.ConversionFactorB = "0.06000168004704132"
-SpecificGravityPerMinute_1.Symbol = "sg/min"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[SpecificGravityPerMinute_1] -->|BelongsToClass| N0001(SpecificGravityPerMinute) 
-	N0000[SpecificGravityPerMinute_1] -->|ConversionFactorB| N0002(("0.06000168004704132")) 
-	N0000[SpecificGravityPerMinute_1] -->|Symbol| N0003(("sg/min")) 
-```
-## SpecificGravityPerHour <!-- NOUN -->
-- Display name: specific gravity per hour
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 3.600100802822479
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in specific gravity per hour
-[SI] is the value in SI
-a = Hour / WaterDensity4degC1Atm, i.e., 3.600100802822479
-and
-Hour = 60.0 * Minute
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-Minute = 60.0
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-SpecificGravityPerHour:SpecificGravityPerHour_1
-SpecificGravityPerHour_1.ConversionFactorB = "3.600100802822479"
-SpecificGravityPerHour_1.Symbol = "sg/h"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[SpecificGravityPerHour_1] -->|BelongsToClass| N0001(SpecificGravityPerHour) 
-	N0000[SpecificGravityPerHour_1] -->|ConversionFactorB| N0002(("3.600100802822479")) 
-	N0000[SpecificGravityPerHour_1] -->|Symbol| N0003(("sg/h")) 
-```
-## GramPerCubicCentimetrePerSecond <!-- NOUN -->
-- Display name: gram per cubic centimetre per second
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.001
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre per second
-[SI] is the value in SI
-a = Milli, i.e., 0.001
-and
-Milli = 0.001
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-GramPerCubicCentimetrePerSecond:GramPerCubicCentimetrePerSecond_1
-GramPerCubicCentimetrePerSecond_1.ConversionFactorB = "0.001"
-GramPerCubicCentimetrePerSecond_1.Symbol = "g/cm³/s"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[GramPerCubicCentimetrePerSecond_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerSecond) 
-	N0000[GramPerCubicCentimetrePerSecond_1] -->|ConversionFactorB| N0002(("0.001")) 
-	N0000[GramPerCubicCentimetrePerSecond_1] -->|Symbol| N0003(("g/cm³/s")) 
-```
-## GramPerCubicCentimetrePerMinute <!-- NOUN -->
-- Display name: gram per cubic centimetre per minute
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.06
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre per minute
-[SI] is the value in SI
-a = Minute * Milli, i.e., 0.06
-and
-Minute = 60.0
-Milli = 0.001
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-GramPerCubicCentimetrePerMinute:GramPerCubicCentimetrePerMinute_1
-GramPerCubicCentimetrePerMinute_1.ConversionFactorB = "0.06"
-GramPerCubicCentimetrePerMinute_1.Symbol = "g/cm³/min"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[GramPerCubicCentimetrePerMinute_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerMinute) 
-	N0000[GramPerCubicCentimetrePerMinute_1] -->|ConversionFactorB| N0002(("0.06")) 
-	N0000[GramPerCubicCentimetrePerMinute_1] -->|Symbol| N0003(("g/cm³/min")) 
-```
-## GramPerCubicCentimetrePerHour <!-- NOUN -->
-- Display name: gram per cubic centimetre per hour
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 3.6
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre per hour
-[SI] is the value in SI
-a = Hour *Milli, i.e., 3.6
-and
-Hour = 60.0 * Minute
-Milli = 0.001
-Minute = 60.0
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-GramPerCubicCentimetrePerHour:GramPerCubicCentimetrePerHour_1
-GramPerCubicCentimetrePerHour_1.ConversionFactorB = "3.6"
-GramPerCubicCentimetrePerHour_1.Symbol = "g/cm³/h"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[GramPerCubicCentimetrePerHour_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerHour) 
-	N0000[GramPerCubicCentimetrePerHour_1] -->|ConversionFactorB| N0002(("3.6")) 
-	N0000[GramPerCubicCentimetrePerHour_1] -->|Symbol| N0003(("g/cm³/h")) 
-```
-## PoundPerGallonUkPerSecond <!-- NOUN -->
-- Display name: pound per gallon (UK) per second
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.010022412854960501
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK) per second
-[SI] is the value in SI
-a = 1.0 / PPGUK, i.e., 0.010022412854960501
-and
-PPGUK = Pound / GallonUK
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerGallonUkPerSecond:PoundPerGallonUkPerSecond_1
-PoundPerGallonUkPerSecond_1.ConversionFactorB = "0.010022412854960501"
-PoundPerGallonUkPerSecond_1.Symbol = "ppgUK/s"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerGallonUkPerSecond_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerSecond) 
-	N0000[PoundPerGallonUkPerSecond_1] -->|ConversionFactorB| N0002(("0.010022412854960501")) 
-	N0000[PoundPerGallonUkPerSecond_1] -->|Symbol| N0003(("ppgUK/s")) 
-```
-## PoundPerGallonUkPerMinute <!-- NOUN -->
-- Display name: pound per gallon (UK) per minute
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.6013447712976301
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK) per minute
-[SI] is the value in SI
-a = Minute / PPGUK, i.e., 0.6013447712976301
-and
-Minute = 60.0
-PPGUK = Pound / GallonUK
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerGallonUkPerMinute:PoundPerGallonUkPerMinute_1
-PoundPerGallonUkPerMinute_1.ConversionFactorB = "0.6013447712976301"
-PoundPerGallonUkPerMinute_1.Symbol = "ppgUK/min"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerGallonUkPerMinute_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerMinute) 
-	N0000[PoundPerGallonUkPerMinute_1] -->|ConversionFactorB| N0002(("0.6013447712976301")) 
-	N0000[PoundPerGallonUkPerMinute_1] -->|Symbol| N0003(("ppgUK/min")) 
-```
-## PoundPerGallonUkPerHour <!-- NOUN -->
-- Display name: pound per gallon (UK) per hour
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 36.08068627785781
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK) per hour
-[SI] is the value in SI
-a = Hour / PPGUK, i.e., 36.08068627785781
-and
-Hour = 60.0 * Minute
-PPGUK = Pound / GallonUK
-Minute = 60.0
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerGallonUkPerHour:PoundPerGallonUkPerHour_1
-PoundPerGallonUkPerHour_1.ConversionFactorB = "36.08068627785781"
-PoundPerGallonUkPerHour_1.Symbol = "ppgUK/h"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerGallonUkPerHour_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerHour) 
-	N0000[PoundPerGallonUkPerHour_1] -->|ConversionFactorB| N0002(("36.08068627785781")) 
-	N0000[PoundPerGallonUkPerHour_1] -->|Symbol| N0003(("ppgUK/h")) 
-```
-## PoundPerGallonUsPerSecond <!-- NOUN -->
-- Display name: pound per gallon (US) per second
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.00834540445201933
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US) per second
-[SI] is the value in SI
-a = 1.0 /PPGUS, i.e., 0.00834540445201933
-and
-PPGUS = Pound / GallonUS
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerGallonUsPerSecond:PoundPerGallonUsPerSecond_1
-PoundPerGallonUsPerSecond_1.ConversionFactorB = "0.00834540445201933"
-PoundPerGallonUsPerSecond_1.Symbol = "ppgUS/s"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerGallonUsPerSecond_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerSecond) 
-	N0000[PoundPerGallonUsPerSecond_1] -->|ConversionFactorB| N0002(("0.00834540445201933")) 
-	N0000[PoundPerGallonUsPerSecond_1] -->|Symbol| N0003(("ppgUS/s")) 
-```
-## PoundPerGallonUsPerMinute <!-- NOUN -->
-- Display name: pound per gallon (US) per minute
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.5007242671211598
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US) per minute
-[SI] is the value in SI
-a = Minute / PPGUS, i.e., 0.5007242671211598
-and
-Minute = 60.0
-PPGUS = Pound / GallonUS
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerGallonUsPerMinute:PoundPerGallonUsPerMinute_1
-PoundPerGallonUsPerMinute_1.ConversionFactorB = "0.5007242671211598"
-PoundPerGallonUsPerMinute_1.Symbol = "ppgUS/min"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerGallonUsPerMinute_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerMinute) 
-	N0000[PoundPerGallonUsPerMinute_1] -->|ConversionFactorB| N0002(("0.5007242671211598")) 
-	N0000[PoundPerGallonUsPerMinute_1] -->|Symbol| N0003(("ppgUS/min")) 
-```
-## PoundPerGallonUsPerHour <!-- NOUN -->
-- Display name: pound per gallon (US) per hour
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 30.043456027269592
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US) per hour
-[SI] is the value in SI
-a = Hour / PPGUS, i.e., 30.043456027269592
-and
-Hour = 60.0 * Minute
-PPGUS = Pound / GallonUS
-Minute = 60.0
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-PoundPerGallonUsPerHour:PoundPerGallonUsPerHour_1
-PoundPerGallonUsPerHour_1.ConversionFactorB = "30.043456027269592"
-PoundPerGallonUsPerHour_1.Symbol = "ppgUS/h"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[PoundPerGallonUsPerHour_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerHour) 
-	N0000[PoundPerGallonUsPerHour_1] -->|ConversionFactorB| N0002(("30.043456027269592")) 
-	N0000[PoundPerGallonUsPerHour_1] -->|Symbol| N0003(("ppgUS/h")) 
-```
 ## Dimensionless <!-- NOUN -->
 - Display name: dimensionless
 - Parent class: [Unit](#Unit)
@@ -34318,6 +33284,104 @@ graph LR
 	N0000[Statampere_1] -->|BelongsToClass| N0001(Statampere) 
 	N0000[Statampere_1] -->|ConversionFactorB| N0002(("2997924580")) 
 	N0000[Statampere_1] -->|Symbol| N0003(("stA")) 
+```
+## OhmMetre <!-- NOUN -->
+- Display name: ohm metre
+- Parent class: [Unit](#Unit)
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+OhmMetre:OhmMetre_1
+OhmMetre_1.Symbol = "Ω•m"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[OhmMetre_1] -->|BelongsToClass| N0001(OhmMetre) 
+	N0000[OhmMetre_1] -->|Symbol| N0002(("Ω•m")) 
+```
+## KiloOhmMetre <!-- NOUN -->
+- Display name: kilo ohm metre
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.001
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilo ohm metre
+[SI] is the value in SI
+a = 1.0/Kilo, i.e., 0.001
+and
+Kilo = 1000.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KiloOhmMetre:KiloOhmMetre_1
+KiloOhmMetre_1.ConversionFactorB = "0.001"
+KiloOhmMetre_1.Symbol = "kΩ•m"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KiloOhmMetre_1] -->|BelongsToClass| N0001(KiloOhmMetre) 
+	N0000[KiloOhmMetre_1] -->|ConversionFactorB| N0002(("0.001")) 
+	N0000[KiloOhmMetre_1] -->|Symbol| N0003(("kΩ•m")) 
+```
+## MegaOhmMetre <!-- NOUN -->
+- Display name: mega ohm metre
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1E-06
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in mega ohm metre
+[SI] is the value in SI
+a = 1.0/Mega, i.e., 1E-06
+and
+Mega = 1e6
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MegaOhmMetre:MegaOhmMetre_1
+MegaOhmMetre_1.ConversionFactorB = "1E-06"
+MegaOhmMetre_1.Symbol = "MΩ•m"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MegaOhmMetre_1] -->|BelongsToClass| N0001(MegaOhmMetre) 
+	N0000[MegaOhmMetre_1] -->|ConversionFactorB| N0002(("1E-06")) 
+	N0000[MegaOhmMetre_1] -->|Symbol| N0003(("MΩ•m")) 
+```
+## GigaOhmMetre <!-- NOUN -->
+- Display name: giga ohm metre
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1E-09
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in giga ohm metre
+[SI] is the value in SI
+a = 1.0/Giga, i.e., 1E-09
+and
+Giga = 1e9
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GigaOhmMetre:GigaOhmMetre_1
+GigaOhmMetre_1.ConversionFactorB = "1E-09"
+GigaOhmMetre_1.Symbol = "GΩ•m"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GigaOhmMetre_1] -->|BelongsToClass| N0001(GigaOhmMetre) 
+	N0000[GigaOhmMetre_1] -->|ConversionFactorB| N0002(("1E-09")) 
+	N0000[GigaOhmMetre_1] -->|Symbol| N0003(("GΩ•m")) 
 ```
 ## Volt <!-- NOUN -->
 - Display name: volt
@@ -36425,6 +35489,1997 @@ graph LR
 	N0000[KiloBritishThermalUnitPerGallonUs_1] -->|ConversionFactorB| N0002(("3.5902800625978087E-09")) 
 	N0000[KiloBritishThermalUnitPerGallonUs_1] -->|Symbol| N0003(("kBTU/gal(US)")) 
 ```
+## Joule <!-- NOUN -->
+- Display name: joule
+- Parent class: [Unit](#Unit)
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+Joule:Joule_1
+Joule_1.Symbol = "J"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[Joule_1] -->|BelongsToClass| N0001(Joule) 
+	N0000[Joule_1] -->|Symbol| N0002(("J")) 
+```
+## Kilojoule <!-- NOUN -->
+- Display name: kilojoule
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.001
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilojoule
+[SI] is the value in SI
+a = 1.0/Kilo, i.e., 0.001
+and
+Kilo = 1000.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+Kilojoule:Kilojoule_1
+Kilojoule_1.ConversionFactorB = "0.001"
+Kilojoule_1.Symbol = "kJ"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[Kilojoule_1] -->|BelongsToClass| N0001(Kilojoule) 
+	N0000[Kilojoule_1] -->|ConversionFactorB| N0002(("0.001")) 
+	N0000[Kilojoule_1] -->|Symbol| N0003(("kJ")) 
+```
+## Megajoule <!-- NOUN -->
+- Display name: megajoule
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1E-06
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in megajoule
+[SI] is the value in SI
+a = 1.0/Mega, i.e., 1E-06
+and
+Mega = 1e6
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+Megajoule:Megajoule_1
+Megajoule_1.ConversionFactorB = "1E-06"
+Megajoule_1.Symbol = "MJ"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[Megajoule_1] -->|BelongsToClass| N0001(Megajoule) 
+	N0000[Megajoule_1] -->|ConversionFactorB| N0002(("1E-06")) 
+	N0000[Megajoule_1] -->|Symbol| N0003(("MJ")) 
+```
+## Gigajoule <!-- NOUN -->
+- Display name: gigajoule
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1E-09
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gigajoule
+[SI] is the value in SI
+a = 1.0/Giga, i.e., 1E-09
+and
+Giga = 1e9
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+Gigajoule:Gigajoule_1
+Gigajoule_1.ConversionFactorB = "1E-09"
+Gigajoule_1.Symbol = "GJ"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[Gigajoule_1] -->|BelongsToClass| N0001(Gigajoule) 
+	N0000[Gigajoule_1] -->|ConversionFactorB| N0002(("1E-09")) 
+	N0000[Gigajoule_1] -->|Symbol| N0003(("GJ")) 
+```
+## Calorie <!-- NOUN -->
+- Display name: calorie
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.2390057361376673
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in calorie
+[SI] is the value in SI
+a = 1.0/Calorie, i.e., 0.2390057361376673
+and
+Calorie = 4.184 reference: https://en.wikipedia.org/wiki/Calorie
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+Calorie:Calorie_1
+Calorie_1.ConversionFactorB = "0.2390057361376673"
+Calorie_1.Symbol = "cal"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[Calorie_1] -->|BelongsToClass| N0001(Calorie) 
+	N0000[Calorie_1] -->|ConversionFactorB| N0002(("0.2390057361376673")) 
+	N0000[Calorie_1] -->|Symbol| N0003(("cal")) 
+```
+## Kilocalorie <!-- NOUN -->
+- Display name: kilocalorie
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0002390057361376673
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilocalorie
+[SI] is the value in SI
+a = 1.0/(Kilo * Calorie), i.e., 0.0002390057361376673
+and
+Kilo = 1000.0
+Calorie = 4.184 reference: https://en.wikipedia.org/wiki/Calorie
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+Kilocalorie:Kilocalorie_1
+Kilocalorie_1.ConversionFactorB = "0.0002390057361376673"
+Kilocalorie_1.Symbol = "Cal"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[Kilocalorie_1] -->|BelongsToClass| N0001(Kilocalorie) 
+	N0000[Kilocalorie_1] -->|ConversionFactorB| N0002(("0.0002390057361376673")) 
+	N0000[Kilocalorie_1] -->|Symbol| N0003(("Cal")) 
+```
+## BritishThermalUnit <!-- NOUN -->
+- Display name: british thermal unit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0009484516526770049
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in british thermal unit
+[SI] is the value in SI
+a = 1.0/BTU, i.e., 0.0009484516526770049
+and
+BTU = 1054.35 reference: https://en.wikipedia.org/wiki/British_thermal_unit
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+BritishThermalUnit:BritishThermalUnit_1
+BritishThermalUnit_1.ConversionFactorB = "0.0009484516526770049"
+BritishThermalUnit_1.Symbol = "BTU"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[BritishThermalUnit_1] -->|BelongsToClass| N0001(BritishThermalUnit) 
+	N0000[BritishThermalUnit_1] -->|ConversionFactorB| N0002(("0.0009484516526770049")) 
+	N0000[BritishThermalUnit_1] -->|Symbol| N0003(("BTU")) 
+```
+## KiloBritishThermalUnit <!-- NOUN -->
+- Display name: kilo british thermal unit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 9.484516526770048E-07
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilo british thermal unit
+[SI] is the value in SI
+a = 1.0/(Kilo * BTU), i.e., 9.484516526770048E-07
+and
+Kilo = 1000.0
+BTU = 1054.35 reference: https://en.wikipedia.org/wiki/British_thermal_unit
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KiloBritishThermalUnit:KiloBritishThermalUnit_1
+KiloBritishThermalUnit_1.ConversionFactorB = "9.484516526770048E-07"
+KiloBritishThermalUnit_1.Symbol = "kBTU"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KiloBritishThermalUnit_1] -->|BelongsToClass| N0001(KiloBritishThermalUnit) 
+	N0000[KiloBritishThermalUnit_1] -->|ConversionFactorB| N0002(("9.484516526770048E-07")) 
+	N0000[KiloBritishThermalUnit_1] -->|Symbol| N0003(("kBTU")) 
+```
+## MegaBritishThermalUnit <!-- NOUN -->
+- Display name: mega british thermal unit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 9.48451652677005E-10
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in mega british thermal unit
+[SI] is the value in SI
+a = 1.0/(Mega * BTU), i.e., 9.48451652677005E-10
+and
+Mega = 1e6
+BTU = 1054.35 reference: https://en.wikipedia.org/wiki/British_thermal_unit
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MegaBritishThermalUnit:MegaBritishThermalUnit_1
+MegaBritishThermalUnit_1.ConversionFactorB = "9.48451652677005E-10"
+MegaBritishThermalUnit_1.Symbol = "MMBTU"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MegaBritishThermalUnit_1] -->|BelongsToClass| N0001(MegaBritishThermalUnit) 
+	N0000[MegaBritishThermalUnit_1] -->|ConversionFactorB| N0002(("9.48451652677005E-10")) 
+	N0000[MegaBritishThermalUnit_1] -->|Symbol| N0003(("MMBTU")) 
+```
+## KilogramPerCubicMetrePerMetre <!-- NOUN -->
+- Display name: kilogram per cubic metre per metre
+- Parent class: [Unit](#Unit)
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerMetre:KilogramPerCubicMetrePerMetre_1
+KilogramPerCubicMetrePerMetre_1.Symbol = "kg/m³/m"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerMetre_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerMetre) 
+	N0000[KilogramPerCubicMetrePerMetre_1] -->|Symbol| N0002(("kg/m³/m")) 
+```
+## SpecificGravityPerMetre <!-- NOUN -->
+- Display name: specific gravity per metre
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.001000028000784022
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per metre
+[SI] is the value in SI
+a = SpecificGavity4degC, i.e., 0.001000028000784022
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerMetre:SpecificGravityPerMetre_1
+SpecificGravityPerMetre_1.ConversionFactorB = "0.001000028000784022"
+SpecificGravityPerMetre_1.Symbol = "sg/m"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerMetre_1] -->|BelongsToClass| N0001(SpecificGravityPerMetre) 
+	N0000[SpecificGravityPerMetre_1] -->|ConversionFactorB| N0002(("0.001000028000784022")) 
+	N0000[SpecificGravityPerMetre_1] -->|Symbol| N0003(("sg/m")) 
+```
+## SpecificGravityPer10Metre <!-- NOUN -->
+- Display name: specific gravity per 10 metre
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.01000028000784022
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per 10 metre
+[SI] is the value in SI
+a = Deca*SpecificGavity4degC, i.e., 0.01000028000784022
+and
+Deca = 10.0
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPer10Metre:SpecificGravityPer10Metre_1
+SpecificGravityPer10Metre_1.ConversionFactorB = "0.01000028000784022"
+SpecificGravityPer10Metre_1.Symbol = "sg/10m"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPer10Metre_1] -->|BelongsToClass| N0001(SpecificGravityPer10Metre) 
+	N0000[SpecificGravityPer10Metre_1] -->|ConversionFactorB| N0002(("0.01000028000784022")) 
+	N0000[SpecificGravityPer10Metre_1] -->|Symbol| N0003(("sg/10m")) 
+```
+## SpecificGravityPer30Metre <!-- NOUN -->
+- Display name: specific gravity per 30 metre
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.03000084002352066
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per 30 metre
+[SI] is the value in SI
+a = 3.0*Deca*SpecificGavity4degC, i.e., 0.03000084002352066
+and
+Deca = 10.0
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPer30Metre:SpecificGravityPer30Metre_1
+SpecificGravityPer30Metre_1.ConversionFactorB = "0.03000084002352066"
+SpecificGravityPer30Metre_1.Symbol = "sg/30m"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPer30Metre_1] -->|BelongsToClass| N0001(SpecificGravityPer30Metre) 
+	N0000[SpecificGravityPer30Metre_1] -->|ConversionFactorB| N0002(("0.03000084002352066")) 
+	N0000[SpecificGravityPer30Metre_1] -->|Symbol| N0003(("sg/30m")) 
+```
+## SpecificGravityPer100Metre <!-- NOUN -->
+- Display name: specific gravity per 100 metre
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.10000280007840219
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per 100 metre
+[SI] is the value in SI
+a = Hecto*SpecificGavity4degC, i.e., 0.10000280007840219
+and
+Hecto = 100.0
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPer100Metre:SpecificGravityPer100Metre_1
+SpecificGravityPer100Metre_1.ConversionFactorB = "0.10000280007840219"
+SpecificGravityPer100Metre_1.Symbol = "sg/100m"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPer100Metre_1] -->|BelongsToClass| N0001(SpecificGravityPer100Metre) 
+	N0000[SpecificGravityPer100Metre_1] -->|ConversionFactorB| N0002(("0.10000280007840219")) 
+	N0000[SpecificGravityPer100Metre_1] -->|Symbol| N0003(("sg/100m")) 
+```
+## GramPerCubicCentimetrePer100Metre <!-- NOUN -->
+- Display name: gram per cubic centimetre per 100 metre
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.10000000000000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per 100 metre
+[SI] is the value in SI
+a = Centi*Centi*Centi*Hecto/Milli, i.e., 0.10000000000000002
+and
+Centi = 0.01
+Hecto = 100.0
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePer100Metre:GramPerCubicCentimetrePer100Metre_1
+GramPerCubicCentimetrePer100Metre_1.ConversionFactorB = "0.10000000000000002"
+GramPerCubicCentimetrePer100Metre_1.Symbol = "g/cm³/100m"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePer100Metre_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePer100Metre) 
+	N0000[GramPerCubicCentimetrePer100Metre_1] -->|ConversionFactorB| N0002(("0.10000000000000002")) 
+	N0000[GramPerCubicCentimetrePer100Metre_1] -->|Symbol| N0003(("g/cm³/100m")) 
+```
+## PoundPerGallonUkPerFoot <!-- NOUN -->
+- Display name: pound per gallon (UK) per foot
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.00305483143819196
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per foot
+[SI] is the value in SI
+a = GallonUK*Foot/Pound, i.e., 0.00305483143819196
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerFoot:PoundPerGallonUkPerFoot_1
+PoundPerGallonUkPerFoot_1.ConversionFactorB = "0.00305483143819196"
+PoundPerGallonUkPerFoot_1.Symbol = "ppgUK/ft"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerFoot_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerFoot) 
+	N0000[PoundPerGallonUkPerFoot_1] -->|ConversionFactorB| N0002(("0.00305483143819196")) 
+	N0000[PoundPerGallonUkPerFoot_1] -->|Symbol| N0003(("ppgUK/ft")) 
+```
+## PoundPerGallonUkPer30Foot <!-- NOUN -->
+- Display name: pound per gallon (UK) per 30 foot
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0916449431457588
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per 30 foot
+[SI] is the value in SI
+a = GallonUK*30.0*Foot/Pound, i.e., 0.0916449431457588
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPer30Foot:PoundPerGallonUkPer30Foot_1
+PoundPerGallonUkPer30Foot_1.ConversionFactorB = "0.0916449431457588"
+PoundPerGallonUkPer30Foot_1.Symbol = "ppgUK/30ft"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPer30Foot_1] -->|BelongsToClass| N0001(PoundPerGallonUkPer30Foot) 
+	N0000[PoundPerGallonUkPer30Foot_1] -->|ConversionFactorB| N0002(("0.0916449431457588")) 
+	N0000[PoundPerGallonUkPer30Foot_1] -->|Symbol| N0003(("ppgUK/30ft")) 
+```
+## PoundPerGallonUkPer100Foot <!-- NOUN -->
+- Display name: pound per gallon (UK) per 100 foot
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.305483143819196
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per 100 foot
+[SI] is the value in SI
+a = GallonUK*100.0*Foot/Pound, i.e., 0.305483143819196
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPer100Foot:PoundPerGallonUkPer100Foot_1
+PoundPerGallonUkPer100Foot_1.ConversionFactorB = "0.305483143819196"
+PoundPerGallonUkPer100Foot_1.Symbol = "ppgUK/100ft"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPer100Foot_1] -->|BelongsToClass| N0001(PoundPerGallonUkPer100Foot) 
+	N0000[PoundPerGallonUkPer100Foot_1] -->|ConversionFactorB| N0002(("0.305483143819196")) 
+	N0000[PoundPerGallonUkPer100Foot_1] -->|Symbol| N0003(("ppgUK/100ft")) 
+```
+## PoundPerGallonUsPerFoot <!-- NOUN -->
+- Display name: pound per gallon (US) per foot
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0025436792769754917
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per foot
+[SI] is the value in SI
+a = GallonUS*Foot/Pound, i.e., 0.0025436792769754917
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerFoot:PoundPerGallonUsPerFoot_1
+PoundPerGallonUsPerFoot_1.ConversionFactorB = "0.0025436792769754917"
+PoundPerGallonUsPerFoot_1.Symbol = "ppgUS/ft"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerFoot_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerFoot) 
+	N0000[PoundPerGallonUsPerFoot_1] -->|ConversionFactorB| N0002(("0.0025436792769754917")) 
+	N0000[PoundPerGallonUsPerFoot_1] -->|Symbol| N0003(("ppgUS/ft")) 
+```
+## PoundPerGallonUsPer30Foot <!-- NOUN -->
+- Display name: pound per gallon (US) per 30 foot
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.07631037830926475
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per 30 foot
+[SI] is the value in SI
+a = GallonUS*30.0*Foot/Pound, i.e., 0.07631037830926475
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPer30Foot:PoundPerGallonUsPer30Foot_1
+PoundPerGallonUsPer30Foot_1.ConversionFactorB = "0.07631037830926475"
+PoundPerGallonUsPer30Foot_1.Symbol = "ppgUS/30ft"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPer30Foot_1] -->|BelongsToClass| N0001(PoundPerGallonUsPer30Foot) 
+	N0000[PoundPerGallonUsPer30Foot_1] -->|ConversionFactorB| N0002(("0.07631037830926475")) 
+	N0000[PoundPerGallonUsPer30Foot_1] -->|Symbol| N0003(("ppgUS/30ft")) 
+```
+## PoundPerGallonUsPer100Foot <!-- NOUN -->
+- Display name: pound per gallon (US) per 100 foot
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.2543679276975492
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per 100 foot
+[SI] is the value in SI
+a = GallonUS*100.0*Foot/Pound, i.e., 0.2543679276975492
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPer100Foot:PoundPerGallonUsPer100Foot_1
+PoundPerGallonUsPer100Foot_1.ConversionFactorB = "0.2543679276975492"
+PoundPerGallonUsPer100Foot_1.Symbol = "ppgUS/100ft"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPer100Foot_1] -->|BelongsToClass| N0001(PoundPerGallonUsPer100Foot) 
+	N0000[PoundPerGallonUsPer100Foot_1] -->|ConversionFactorB| N0002(("0.2543679276975492")) 
+	N0000[PoundPerGallonUsPer100Foot_1] -->|Symbol| N0003(("ppgUS/100ft")) 
+```
+## KilogramPerCubicMetrePer10Metre <!-- NOUN -->
+- Display name: kilogram per cubic metre per 10 metre
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 10
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per 10 metre
+[SI] is the value in SI
+a = Deca/Unit, i.e., 10
+and
+Deca = 10.0
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePer10Metre:KilogramPerCubicMetrePer10Metre_1
+KilogramPerCubicMetrePer10Metre_1.ConversionFactorB = "10"
+KilogramPerCubicMetrePer10Metre_1.Symbol = "kg/m³/10m"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePer10Metre_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePer10Metre) 
+	N0000[KilogramPerCubicMetrePer10Metre_1] -->|ConversionFactorB| N0002(("10")) 
+	N0000[KilogramPerCubicMetrePer10Metre_1] -->|Symbol| N0003(("kg/m³/10m")) 
+```
+## KilogramPerCubicMetrePer30Metre <!-- NOUN -->
+- Display name: kilogram per cubic metre per 30 metre
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 30
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per 30 metre
+[SI] is the value in SI
+a = 3.0 *Deca/Unit, i.e., 30
+and
+Deca = 10.0
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePer30Metre:KilogramPerCubicMetrePer30Metre_1
+KilogramPerCubicMetrePer30Metre_1.ConversionFactorB = "30"
+KilogramPerCubicMetrePer30Metre_1.Symbol = "kg/m³/30m"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePer30Metre_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePer30Metre) 
+	N0000[KilogramPerCubicMetrePer30Metre_1] -->|ConversionFactorB| N0002(("30")) 
+	N0000[KilogramPerCubicMetrePer30Metre_1] -->|Symbol| N0003(("kg/m³/30m")) 
+```
+## KilogramPerCubicMetrePer100Metre <!-- NOUN -->
+- Display name: kilogram per cubic metre per 100 metre
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 100
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per 100 metre
+[SI] is the value in SI
+a = Hecto/Unit, i.e., 100
+and
+Hecto = 100.0
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePer100Metre:KilogramPerCubicMetrePer100Metre_1
+KilogramPerCubicMetrePer100Metre_1.ConversionFactorB = "100"
+KilogramPerCubicMetrePer100Metre_1.Symbol = "kg/m³/30m"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePer100Metre_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePer100Metre) 
+	N0000[KilogramPerCubicMetrePer100Metre_1] -->|ConversionFactorB| N0002(("100")) 
+	N0000[KilogramPerCubicMetrePer100Metre_1] -->|Symbol| N0003(("kg/m³/30m")) 
+```
+## GramPerCubicCentimetrePerMetre <!-- NOUN -->
+- Display name: gram per cubic centimetre per metre
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0010000000000000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per metre
+[SI] is the value in SI
+a = Centi*Centi*Centi/Milli, i.e., 0.0010000000000000002
+and
+Centi = 0.01
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerMetre:GramPerCubicCentimetrePerMetre_1
+GramPerCubicCentimetrePerMetre_1.ConversionFactorB = "0.0010000000000000002"
+GramPerCubicCentimetrePerMetre_1.Symbol = "g/cm³/m"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerMetre_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerMetre) 
+	N0000[GramPerCubicCentimetrePerMetre_1] -->|ConversionFactorB| N0002(("0.0010000000000000002")) 
+	N0000[GramPerCubicCentimetrePerMetre_1] -->|Symbol| N0003(("g/cm³/m")) 
+```
+## GramPerCubicCentimetrePer10Metre <!-- NOUN -->
+- Display name: gram per cubic centimetre per 10 metre
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.010000000000000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per 10 metre
+[SI] is the value in SI
+a = Centi*Centi*Centi*Deca/Milli, i.e., 0.010000000000000002
+and
+Centi = 0.01
+Deca = 10.0
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePer10Metre:GramPerCubicCentimetrePer10Metre_1
+GramPerCubicCentimetrePer10Metre_1.ConversionFactorB = "0.010000000000000002"
+GramPerCubicCentimetrePer10Metre_1.Symbol = "g/cm³/10m"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePer10Metre_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePer10Metre) 
+	N0000[GramPerCubicCentimetrePer10Metre_1] -->|ConversionFactorB| N0002(("0.010000000000000002")) 
+	N0000[GramPerCubicCentimetrePer10Metre_1] -->|Symbol| N0003(("g/cm³/10m")) 
+```
+## GramPerCubicCentimetrePer30Metre <!-- NOUN -->
+- Display name: gram per cubic centimetre per 30 metre
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.030000000000000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per 30 metre
+[SI] is the value in SI
+a = Centi*Centi*Centi*3.0*Deca/Milli, i.e., 0.030000000000000002
+and
+Centi = 0.01
+Deca = 10.0
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePer30Metre:GramPerCubicCentimetrePer30Metre_1
+GramPerCubicCentimetrePer30Metre_1.ConversionFactorB = "0.030000000000000002"
+GramPerCubicCentimetrePer30Metre_1.Symbol = "g/cm³/30m"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePer30Metre_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePer30Metre) 
+	N0000[GramPerCubicCentimetrePer30Metre_1] -->|ConversionFactorB| N0002(("0.030000000000000002")) 
+	N0000[GramPerCubicCentimetrePer30Metre_1] -->|Symbol| N0003(("g/cm³/30m")) 
+```
+## PoundPerCubicFootPerFoot <!-- NOUN -->
+- Display name: pound per cubic foot per foot
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.019028042383608865
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per foot
+[SI] is the value in SI
+a = Foot*Foot*Foot*Foot/Pound, i.e., 0.019028042383608865
+and
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerFoot:PoundPerCubicFootPerFoot_1
+PoundPerCubicFootPerFoot_1.ConversionFactorB = "0.019028042383608865"
+PoundPerCubicFootPerFoot_1.Symbol = "lb/ft³/ft"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerFoot_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerFoot) 
+	N0000[PoundPerCubicFootPerFoot_1] -->|ConversionFactorB| N0002(("0.019028042383608865")) 
+	N0000[PoundPerCubicFootPerFoot_1] -->|Symbol| N0003(("lb/ft³/ft")) 
+```
+## PoundPerCubicFootPer30Foot <!-- NOUN -->
+- Display name: pound per cubic foot per 30 foot
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.570841271508266
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per 30 foot
+[SI] is the value in SI
+a = Foot*Foot*Foot*30.0*Foot/Pound, i.e., 0.570841271508266
+and
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPer30Foot:PoundPerCubicFootPer30Foot_1
+PoundPerCubicFootPer30Foot_1.ConversionFactorB = "0.570841271508266"
+PoundPerCubicFootPer30Foot_1.Symbol = "lb/ft³/30ft"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPer30Foot_1] -->|BelongsToClass| N0001(PoundPerCubicFootPer30Foot) 
+	N0000[PoundPerCubicFootPer30Foot_1] -->|ConversionFactorB| N0002(("0.570841271508266")) 
+	N0000[PoundPerCubicFootPer30Foot_1] -->|Symbol| N0003(("lb/ft³/30ft")) 
+```
+## PoundPerCubicFootPer100Foot <!-- NOUN -->
+- Display name: pound per cubic foot per 100 foot
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1.902804238360887
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per 100 foot
+[SI] is the value in SI
+a = Foot*Foot*Foot*100.0*Foot/Pound, i.e., 1.902804238360887
+and
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPer100Foot:PoundPerCubicFootPer100Foot_1
+PoundPerCubicFootPer100Foot_1.ConversionFactorB = "1.902804238360887"
+PoundPerCubicFootPer100Foot_1.Symbol = "lb/ft³/100ft"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPer100Foot_1] -->|BelongsToClass| N0001(PoundPerCubicFootPer100Foot) 
+	N0000[PoundPerCubicFootPer100Foot_1] -->|ConversionFactorB| N0002(("1.902804238360887")) 
+	N0000[PoundPerCubicFootPer100Foot_1] -->|Symbol| N0003(("lb/ft³/100ft")) 
+```
+## PoundPerCubicInchPerFoot <!-- NOUN -->
+- Display name: pound per cubic inch per foot
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1.1011598601625506E-05
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per foot
+[SI] is the value in SI
+a = Inch*Inch*Inch*Foot/Pound, i.e., 1.1011598601625506E-05
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerFoot:PoundPerCubicInchPerFoot_1
+PoundPerCubicInchPerFoot_1.ConversionFactorB = "1.1011598601625506E-05"
+PoundPerCubicInchPerFoot_1.Symbol = "lb/in³/ft"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerFoot_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerFoot) 
+	N0000[PoundPerCubicInchPerFoot_1] -->|ConversionFactorB| N0002(("1.1011598601625506E-05")) 
+	N0000[PoundPerCubicInchPerFoot_1] -->|Symbol| N0003(("lb/in³/ft")) 
+```
+## PoundPerCubicInchPer30Foot <!-- NOUN -->
+- Display name: pound per cubic inch per 30 foot
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.00033034795804876514
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per 30 foot
+[SI] is the value in SI
+a = Inch*Inch*Inch*30.0*Foot/Pound, i.e., 0.00033034795804876514
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPer30Foot:PoundPerCubicInchPer30Foot_1
+PoundPerCubicInchPer30Foot_1.ConversionFactorB = "0.00033034795804876514"
+PoundPerCubicInchPer30Foot_1.Symbol = "lb/in³/30ft"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPer30Foot_1] -->|BelongsToClass| N0001(PoundPerCubicInchPer30Foot) 
+	N0000[PoundPerCubicInchPer30Foot_1] -->|ConversionFactorB| N0002(("0.00033034795804876514")) 
+	N0000[PoundPerCubicInchPer30Foot_1] -->|Symbol| N0003(("lb/in³/30ft")) 
+```
+## PoundPerCubicInchPer100Foot <!-- NOUN -->
+- Display name: pound per cubic inch per 100 foot
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0011011598601625506
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per 100 foot
+[SI] is the value in SI
+a = Inch*Inch*Inch*100.0*Foot/Pound, i.e., 0.0011011598601625506
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPer100Foot:PoundPerCubicInchPer100Foot_1
+PoundPerCubicInchPer100Foot_1.ConversionFactorB = "0.0011011598601625506"
+PoundPerCubicInchPer100Foot_1.Symbol = "lb/in³/100ft"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPer100Foot_1] -->|BelongsToClass| N0001(PoundPerCubicInchPer100Foot) 
+	N0000[PoundPerCubicInchPer100Foot_1] -->|ConversionFactorB| N0002(("0.0011011598601625506")) 
+	N0000[PoundPerCubicInchPer100Foot_1] -->|Symbol| N0003(("lb/in³/100ft")) 
+```
+## PoundPerCubicYardPerFoot <!-- NOUN -->
+- Display name: pound per cubic yard per foot
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.5137571443574394
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per foot
+[SI] is the value in SI
+a = Yard*Yard*Yard*Foot/Pound, i.e., 0.5137571443574394
+and
+Yard = 3.0 * Foot
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerFoot:PoundPerCubicYardPerFoot_1
+PoundPerCubicYardPerFoot_1.ConversionFactorB = "0.5137571443574394"
+PoundPerCubicYardPerFoot_1.Symbol = "lb/yd³/ft"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerFoot_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerFoot) 
+	N0000[PoundPerCubicYardPerFoot_1] -->|ConversionFactorB| N0002(("0.5137571443574394")) 
+	N0000[PoundPerCubicYardPerFoot_1] -->|Symbol| N0003(("lb/yd³/ft")) 
+```
+## PoundPerCubicYardPer30Foot <!-- NOUN -->
+- Display name: pound per cubic yard per 30 foot
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 15.412714330723183
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per 30 foot
+[SI] is the value in SI
+a = Yard*Yard*Yard*30.0*Foot/Pound, i.e., 15.412714330723183
+and
+Yard = 3.0 * Foot
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPer30Foot:PoundPerCubicYardPer30Foot_1
+PoundPerCubicYardPer30Foot_1.ConversionFactorB = "15.412714330723183"
+PoundPerCubicYardPer30Foot_1.Symbol = "lb/yd³/30ft"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPer30Foot_1] -->|BelongsToClass| N0001(PoundPerCubicYardPer30Foot) 
+	N0000[PoundPerCubicYardPer30Foot_1] -->|ConversionFactorB| N0002(("15.412714330723183")) 
+	N0000[PoundPerCubicYardPer30Foot_1] -->|Symbol| N0003(("lb/yd³/30ft")) 
+```
+## PoundPerCubicYardPer100Foot <!-- NOUN -->
+- Display name: pound per cubic yard per 100 foot
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 51.37571443574393
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per 100 foot
+[SI] is the value in SI
+a = Yard*Yard*Yard*100.0*Foot/Pound, i.e., 51.37571443574393
+and
+Yard = 3.0 * Foot
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPer100Foot:PoundPerCubicYardPer100Foot_1
+PoundPerCubicYardPer100Foot_1.ConversionFactorB = "51.37571443574393"
+PoundPerCubicYardPer100Foot_1.Symbol = "lb/yd³/100ft"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPer100Foot_1] -->|BelongsToClass| N0001(PoundPerCubicYardPer100Foot) 
+	N0000[PoundPerCubicYardPer100Foot_1] -->|ConversionFactorB| N0002(("51.37571443574393")) 
+	N0000[PoundPerCubicYardPer100Foot_1] -->|Symbol| N0003(("lb/yd³/100ft")) 
+```
+## KilogramPerCubicMetrePerKelvin <!-- NOUN -->
+- Display name: kilogram per cubic metre per kelvin
+- Parent class: [Unit](#Unit)
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerKelvin:KilogramPerCubicMetrePerKelvin_1
+KilogramPerCubicMetrePerKelvin_1.Symbol = "kg/m³/K"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerKelvin_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerKelvin) 
+	N0000[KilogramPerCubicMetrePerKelvin_1] -->|Symbol| N0002(("kg/m³/K")) 
+```
+## SpecificGravityPerCelsius <!-- NOUN -->
+- Display name: specific gravity per celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.001000028000784022
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per celsius
+[SI] is the value in SI
+a = SpecificGavity4degC, i.e., 0.001000028000784022
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerCelsius:SpecificGravityPerCelsius_1
+SpecificGravityPerCelsius_1.ConversionFactorB = "0.001000028000784022"
+SpecificGravityPerCelsius_1.Symbol = "sg/°C"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerCelsius_1] -->|BelongsToClass| N0001(SpecificGravityPerCelsius) 
+	N0000[SpecificGravityPerCelsius_1] -->|ConversionFactorB| N0002(("0.001000028000784022")) 
+	N0000[SpecificGravityPerCelsius_1] -->|Symbol| N0003(("sg/°C")) 
+```
+## GramPerCubicCentimetrePerCelsius <!-- NOUN -->
+- Display name: gram per cubic centimetre per celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0010000000000000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per celsius
+[SI] is the value in SI
+a = Centi*Centi*Centi/Milli, i.e., 0.0010000000000000002
+and
+Centi = 0.01
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerCelsius:GramPerCubicCentimetrePerCelsius_1
+GramPerCubicCentimetrePerCelsius_1.ConversionFactorB = "0.0010000000000000002"
+GramPerCubicCentimetrePerCelsius_1.Symbol = "g/cm³/°C"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerCelsius_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerCelsius) 
+	N0000[GramPerCubicCentimetrePerCelsius_1] -->|ConversionFactorB| N0002(("0.0010000000000000002")) 
+	N0000[GramPerCubicCentimetrePerCelsius_1] -->|Symbol| N0003(("g/cm³/°C")) 
+```
+## PoundPerGallonUkPerCelsius <!-- NOUN -->
+- Display name: pound per gallon (UK) per celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.010022412854960501
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per celsius
+[SI] is the value in SI
+a = GallonUK/Pound, i.e., 0.010022412854960501
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerCelsius:PoundPerGallonUkPerCelsius_1
+PoundPerGallonUkPerCelsius_1.ConversionFactorB = "0.010022412854960501"
+PoundPerGallonUkPerCelsius_1.Symbol = "ppgUK/°C"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerCelsius_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerCelsius) 
+	N0000[PoundPerGallonUkPerCelsius_1] -->|ConversionFactorB| N0002(("0.010022412854960501")) 
+	N0000[PoundPerGallonUkPerCelsius_1] -->|Symbol| N0003(("ppgUK/°C")) 
+```
+## PoundPerGallonUsPerFahrenheit <!-- NOUN -->
+- Display name: pound per gallon (US) per fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.004636335806677406
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per fahrenheit
+[SI] is the value in SI
+a = GallonUS*FahrenheitSlope/Pound, i.e., 0.004636335806677406
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerFahrenheit:PoundPerGallonUsPerFahrenheit_1
+PoundPerGallonUsPerFahrenheit_1.ConversionFactorB = "0.004636335806677406"
+PoundPerGallonUsPerFahrenheit_1.Symbol = "ppgUS/°F"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerFahrenheit_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerFahrenheit) 
+	N0000[PoundPerGallonUsPerFahrenheit_1] -->|ConversionFactorB| N0002(("0.004636335806677406")) 
+	N0000[PoundPerGallonUsPerFahrenheit_1] -->|Symbol| N0003(("ppgUS/°F")) 
+```
+## PoundPerGallonUkPerFahrenheit <!-- NOUN -->
+- Display name: pound per gallon (UK) per fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.005568007141644723
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per fahrenheit
+[SI] is the value in SI
+a = GallonUK*FahrenheitSlope/Pound, i.e., 0.005568007141644723
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerFahrenheit:PoundPerGallonUkPerFahrenheit_1
+PoundPerGallonUkPerFahrenheit_1.ConversionFactorB = "0.005568007141644723"
+PoundPerGallonUkPerFahrenheit_1.Symbol = "ppgUK/°F"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerFahrenheit_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerFahrenheit) 
+	N0000[PoundPerGallonUkPerFahrenheit_1] -->|ConversionFactorB| N0002(("0.005568007141644723")) 
+	N0000[PoundPerGallonUkPerFahrenheit_1] -->|Symbol| N0003(("ppgUK/°F")) 
+```
+## PoundPerGallonUsPerCelsius <!-- NOUN -->
+- Display name: pound per gallon (US) per celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.00834540445201933
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per celsius
+[SI] is the value in SI
+a = GallonUS/Pound, i.e., 0.00834540445201933
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerCelsius:PoundPerGallonUsPerCelsius_1
+PoundPerGallonUsPerCelsius_1.ConversionFactorB = "0.00834540445201933"
+PoundPerGallonUsPerCelsius_1.Symbol = "ppgUS/°C"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerCelsius_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerCelsius) 
+	N0000[PoundPerGallonUsPerCelsius_1] -->|ConversionFactorB| N0002(("0.00834540445201933")) 
+	N0000[PoundPerGallonUsPerCelsius_1] -->|Symbol| N0003(("ppgUS/°C")) 
+```
+## PoundPerCubicFootPerCelsius <!-- NOUN -->
+- Display name: pound per cubic foot per celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.06242796057614459
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per celsius
+[SI] is the value in SI
+a = Foot*Foot*Foot/Pound, i.e., 0.06242796057614459
+and
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerCelsius:PoundPerCubicFootPerCelsius_1
+PoundPerCubicFootPerCelsius_1.ConversionFactorB = "0.06242796057614459"
+PoundPerCubicFootPerCelsius_1.Symbol = "lb/ft³/°C"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerCelsius_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerCelsius) 
+	N0000[PoundPerCubicFootPerCelsius_1] -->|ConversionFactorB| N0002(("0.06242796057614459")) 
+	N0000[PoundPerCubicFootPerCelsius_1] -->|Symbol| N0003(("lb/ft³/°C")) 
+```
+## PoundPerCubicFootPerFahrenheit <!-- NOUN -->
+- Display name: pound per cubic foot per fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.03468220032008033
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per fahrenheit
+[SI] is the value in SI
+a = Foot*Foot*Foot*FahrenheitSlope/Pound, i.e., 0.03468220032008033
+and
+Foot = 12.0 * Inch
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerFahrenheit:PoundPerCubicFootPerFahrenheit_1
+PoundPerCubicFootPerFahrenheit_1.ConversionFactorB = "0.03468220032008033"
+PoundPerCubicFootPerFahrenheit_1.Symbol = "lb/ft³/°F"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerFahrenheit_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerFahrenheit) 
+	N0000[PoundPerCubicFootPerFahrenheit_1] -->|ConversionFactorB| N0002(("0.03468220032008033")) 
+	N0000[PoundPerCubicFootPerFahrenheit_1] -->|Symbol| N0003(("lb/ft³/°F")) 
+```
+## PoundPerCubicInchPerCelsius <!-- NOUN -->
+- Display name: pound per cubic inch per celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 3.612729200008369E-05
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per celsius
+[SI] is the value in SI
+a = Inch*Inch*Inch/Pound, i.e., 3.612729200008369E-05
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerCelsius:PoundPerCubicInchPerCelsius_1
+PoundPerCubicInchPerCelsius_1.ConversionFactorB = "3.612729200008369E-05"
+PoundPerCubicInchPerCelsius_1.Symbol = "lb/in³/°C"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerCelsius_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerCelsius) 
+	N0000[PoundPerCubicInchPerCelsius_1] -->|ConversionFactorB| N0002(("3.612729200008369E-05")) 
+	N0000[PoundPerCubicInchPerCelsius_1] -->|Symbol| N0003(("lb/in³/°C")) 
+```
+## PoundPerCubicInchPerFahrenheit <!-- NOUN -->
+- Display name: pound per cubic inch per fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 2.0070717777824268E-05
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per fahrenheit
+[SI] is the value in SI
+a = Inch*Inch*Inch*FahrenheitSlope/Pound, i.e., 2.0070717777824268E-05
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerFahrenheit:PoundPerCubicInchPerFahrenheit_1
+PoundPerCubicInchPerFahrenheit_1.ConversionFactorB = "2.0070717777824268E-05"
+PoundPerCubicInchPerFahrenheit_1.Symbol = "lb/in³/°F"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerFahrenheit_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerFahrenheit) 
+	N0000[PoundPerCubicInchPerFahrenheit_1] -->|ConversionFactorB| N0002(("2.0070717777824268E-05")) 
+	N0000[PoundPerCubicInchPerFahrenheit_1] -->|Symbol| N0003(("lb/in³/°F")) 
+```
+## PoundPerCubicYardPerCelsius <!-- NOUN -->
+- Display name: pound per cubic yard per celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1.6855549355559039
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per celsius
+[SI] is the value in SI
+a = Yard*Yard*Yard/Pound, i.e., 1.6855549355559039
+and
+Yard = 3.0 * Foot
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerCelsius:PoundPerCubicYardPerCelsius_1
+PoundPerCubicYardPerCelsius_1.ConversionFactorB = "1.6855549355559039"
+PoundPerCubicYardPerCelsius_1.Symbol = "lb/yd³/°C"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerCelsius_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerCelsius) 
+	N0000[PoundPerCubicYardPerCelsius_1] -->|ConversionFactorB| N0002(("1.6855549355559039")) 
+	N0000[PoundPerCubicYardPerCelsius_1] -->|Symbol| N0003(("lb/yd³/°C")) 
+```
+## PoundPerCubicYeardPerFahrenheit <!-- NOUN -->
+- Display name: pound per cubic yeard per fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.9364194086421688
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yeard per fahrenheit
+[SI] is the value in SI
+a = Yard*Yard*Yard*FahrenheitSlope/Pound, i.e., 0.9364194086421688
+and
+Yard = 3.0 * Foot
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYeardPerFahrenheit:PoundPerCubicYeardPerFahrenheit_1
+PoundPerCubicYeardPerFahrenheit_1.ConversionFactorB = "0.9364194086421688"
+PoundPerCubicYeardPerFahrenheit_1.Symbol = "lb/yd³/°F"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYeardPerFahrenheit_1] -->|BelongsToClass| N0001(PoundPerCubicYeardPerFahrenheit) 
+	N0000[PoundPerCubicYeardPerFahrenheit_1] -->|ConversionFactorB| N0002(("0.9364194086421688")) 
+	N0000[PoundPerCubicYeardPerFahrenheit_1] -->|Symbol| N0003(("lb/yd³/°F")) 
+```
+## KilogramPerCubicMetre <!-- NOUN -->
+- Display name: kilogram per cubic metre
+- Parent class: [Unit](#Unit)
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetre:KilogramPerCubicMetre_1
+KilogramPerCubicMetre_1.Symbol = "kg/m³"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetre_1] -->|BelongsToClass| N0001(KilogramPerCubicMetre) 
+	N0000[KilogramPerCubicMetre_1] -->|Symbol| N0002(("kg/m³")) 
+```
+## GramPerCubicMetre <!-- NOUN -->
+- Display name: gram per cubic metre
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic metre
+[SI] is the value in SI
+a = 1.0/Milli, i.e., 1000
+and
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicMetre:GramPerCubicMetre_1
+GramPerCubicMetre_1.ConversionFactorB = "1000"
+GramPerCubicMetre_1.Symbol = "g/m³"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicMetre_1] -->|BelongsToClass| N0001(GramPerCubicMetre) 
+	N0000[GramPerCubicMetre_1] -->|ConversionFactorB| N0002(("1000")) 
+	N0000[GramPerCubicMetre_1] -->|Symbol| N0003(("g/m³")) 
+```
+## SpecificGravity <!-- NOUN -->
+- Display name: specific gravity
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 999.972
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity
+[SI] is the value in SI
+a = 1.0/SpecificGavity4degC, i.e., 999.972
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravity:SpecificGravity_1
+SpecificGravity_1.ConversionFactorB = "999.972"
+SpecificGravity_1.Symbol = "s.g."
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravity_1] -->|BelongsToClass| N0001(SpecificGravity) 
+	N0000[SpecificGravity_1] -->|ConversionFactorB| N0002(("999.972")) 
+	N0000[SpecificGravity_1] -->|Symbol| N0003(("s.g.")) 
+```
+## GramPerCubicCentimetre <!-- NOUN -->
+- Display name: gram per cubic centimetre
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0010000000000000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre
+[SI] is the value in SI
+a = Centi*Centi*Centi / Milli, i.e., 0.0010000000000000002
+and
+Centi = 0.01
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetre:GramPerCubicCentimetre_1
+GramPerCubicCentimetre_1.ConversionFactorB = "0.0010000000000000002"
+GramPerCubicCentimetre_1.Symbol = "g/cm³"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetre_1] -->|BelongsToClass| N0001(GramPerCubicCentimetre) 
+	N0000[GramPerCubicCentimetre_1] -->|ConversionFactorB| N0002(("0.0010000000000000002")) 
+	N0000[GramPerCubicCentimetre_1] -->|Symbol| N0003(("g/cm³")) 
+```
+## PoundPerGallonUk <!-- NOUN -->
+- Display name: pound per gallon (UK)
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.010022412854960501
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK)
+[SI] is the value in SI
+a = 1.0/PPGUK, i.e., 0.010022412854960501
+and
+PPGUK = Pound / GallonUK
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUk:PoundPerGallonUk_1
+PoundPerGallonUk_1.ConversionFactorB = "0.010022412854960501"
+PoundPerGallonUk_1.Symbol = "ppgUK"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUk_1] -->|BelongsToClass| N0001(PoundPerGallonUk) 
+	N0000[PoundPerGallonUk_1] -->|ConversionFactorB| N0002(("0.010022412854960501")) 
+	N0000[PoundPerGallonUk_1] -->|Symbol| N0003(("ppgUK")) 
+```
+## PoundPerGallonUs <!-- NOUN -->
+- Display name: pound per gallon (US)
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.00834540445201933
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US)
+[SI] is the value in SI
+a = 1.0/PPGUS, i.e., 0.00834540445201933
+and
+PPGUS = Pound / GallonUS
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUs:PoundPerGallonUs_1
+PoundPerGallonUs_1.ConversionFactorB = "0.00834540445201933"
+PoundPerGallonUs_1.Symbol = "ppgUS"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUs_1] -->|BelongsToClass| N0001(PoundPerGallonUs) 
+	N0000[PoundPerGallonUs_1] -->|ConversionFactorB| N0002(("0.00834540445201933")) 
+	N0000[PoundPerGallonUs_1] -->|Symbol| N0003(("ppgUS")) 
+```
+## PoundPerCubicFoot <!-- NOUN -->
+- Display name: pound per cubic foot
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.06242796057614459
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot
+[SI] is the value in SI
+a = Foot*Foot*Foot/Pound, i.e., 0.06242796057614459
+and
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFoot:PoundPerCubicFoot_1
+PoundPerCubicFoot_1.ConversionFactorB = "0.06242796057614459"
+PoundPerCubicFoot_1.Symbol = "lb/ft³"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFoot_1] -->|BelongsToClass| N0001(PoundPerCubicFoot) 
+	N0000[PoundPerCubicFoot_1] -->|ConversionFactorB| N0002(("0.06242796057614459")) 
+	N0000[PoundPerCubicFoot_1] -->|Symbol| N0003(("lb/ft³")) 
+```
+## PoundPerCubicInch <!-- NOUN -->
+- Display name: pound per cubic inch
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 3.612729200008369E-05
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch
+[SI] is the value in SI
+a = Inch*Inch*Inch/Pound, i.e., 3.612729200008369E-05
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInch:PoundPerCubicInch_1
+PoundPerCubicInch_1.ConversionFactorB = "3.612729200008369E-05"
+PoundPerCubicInch_1.Symbol = "lb/in³"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInch_1] -->|BelongsToClass| N0001(PoundPerCubicInch) 
+	N0000[PoundPerCubicInch_1] -->|ConversionFactorB| N0002(("3.612729200008369E-05")) 
+	N0000[PoundPerCubicInch_1] -->|Symbol| N0003(("lb/in³")) 
+```
+## PoundPerCubicYard <!-- NOUN -->
+- Display name: pound per cubic yard
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1.6855549355559039
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard
+[SI] is the value in SI
+a = Yard*Yard*Yard/Pound, i.e., 1.6855549355559039
+and
+Yard = 3.0 * Foot
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYard:PoundPerCubicYard_1
+PoundPerCubicYard_1.ConversionFactorB = "1.6855549355559039"
+PoundPerCubicYard_1.Symbol = "lb/yd³"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYard_1] -->|BelongsToClass| N0001(PoundPerCubicYard) 
+	N0000[PoundPerCubicYard_1] -->|ConversionFactorB| N0002(("1.6855549355559039")) 
+	N0000[PoundPerCubicYard_1] -->|Symbol| N0003(("lb/yd³")) 
+```
+## KilogramPerCubicMetrePerSecond <!-- NOUN -->
+- Display name: kilogram per cubic metre per second
+- Parent class: [Unit](#Unit)
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerSecond:KilogramPerCubicMetrePerSecond_1
+KilogramPerCubicMetrePerSecond_1.Symbol = "kg/m³/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerSecond_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerSecond) 
+	N0000[KilogramPerCubicMetrePerSecond_1] -->|Symbol| N0002(("kg/m³/s")) 
+```
+## SpecificGravityPerSecond <!-- NOUN -->
+- Display name: specific gravity per second
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.001000028000784022
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per second
+[SI] is the value in SI
+a = 1.0/WaterDensity4degC1Atm, i.e., 0.001000028000784022
+and
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerSecond:SpecificGravityPerSecond_1
+SpecificGravityPerSecond_1.ConversionFactorB = "0.001000028000784022"
+SpecificGravityPerSecond_1.Symbol = "sg/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerSecond_1] -->|BelongsToClass| N0001(SpecificGravityPerSecond) 
+	N0000[SpecificGravityPerSecond_1] -->|ConversionFactorB| N0002(("0.001000028000784022")) 
+	N0000[SpecificGravityPerSecond_1] -->|Symbol| N0003(("sg/s")) 
+```
+## SpecificGravityPerMinute <!-- NOUN -->
+- Display name: specific gravity per minute
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.06000168004704132
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per minute
+[SI] is the value in SI
+a = Minute / WaterDensity4degC1Atm, i.e., 0.06000168004704132
+and
+Minute = 60.0
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerMinute:SpecificGravityPerMinute_1
+SpecificGravityPerMinute_1.ConversionFactorB = "0.06000168004704132"
+SpecificGravityPerMinute_1.Symbol = "sg/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerMinute_1] -->|BelongsToClass| N0001(SpecificGravityPerMinute) 
+	N0000[SpecificGravityPerMinute_1] -->|ConversionFactorB| N0002(("0.06000168004704132")) 
+	N0000[SpecificGravityPerMinute_1] -->|Symbol| N0003(("sg/min")) 
+```
+## SpecificGravityPerHour <!-- NOUN -->
+- Display name: specific gravity per hour
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 3.600100802822479
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per hour
+[SI] is the value in SI
+a = Hour / WaterDensity4degC1Atm, i.e., 3.600100802822479
+and
+Hour = 60.0 * Minute
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerHour:SpecificGravityPerHour_1
+SpecificGravityPerHour_1.ConversionFactorB = "3.600100802822479"
+SpecificGravityPerHour_1.Symbol = "sg/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerHour_1] -->|BelongsToClass| N0001(SpecificGravityPerHour) 
+	N0000[SpecificGravityPerHour_1] -->|ConversionFactorB| N0002(("3.600100802822479")) 
+	N0000[SpecificGravityPerHour_1] -->|Symbol| N0003(("sg/h")) 
+```
+## GramPerCubicCentimetrePerSecond <!-- NOUN -->
+- Display name: gram per cubic centimetre per second
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.001
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per second
+[SI] is the value in SI
+a = Milli, i.e., 0.001
+and
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerSecond:GramPerCubicCentimetrePerSecond_1
+GramPerCubicCentimetrePerSecond_1.ConversionFactorB = "0.001"
+GramPerCubicCentimetrePerSecond_1.Symbol = "g/cm³/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerSecond_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerSecond) 
+	N0000[GramPerCubicCentimetrePerSecond_1] -->|ConversionFactorB| N0002(("0.001")) 
+	N0000[GramPerCubicCentimetrePerSecond_1] -->|Symbol| N0003(("g/cm³/s")) 
+```
+## GramPerCubicCentimetrePerMinute <!-- NOUN -->
+- Display name: gram per cubic centimetre per minute
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.06
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per minute
+[SI] is the value in SI
+a = Minute * Milli, i.e., 0.06
+and
+Minute = 60.0
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerMinute:GramPerCubicCentimetrePerMinute_1
+GramPerCubicCentimetrePerMinute_1.ConversionFactorB = "0.06"
+GramPerCubicCentimetrePerMinute_1.Symbol = "g/cm³/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerMinute_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerMinute) 
+	N0000[GramPerCubicCentimetrePerMinute_1] -->|ConversionFactorB| N0002(("0.06")) 
+	N0000[GramPerCubicCentimetrePerMinute_1] -->|Symbol| N0003(("g/cm³/min")) 
+```
+## GramPerCubicCentimetrePerHour <!-- NOUN -->
+- Display name: gram per cubic centimetre per hour
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 3.6
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per hour
+[SI] is the value in SI
+a = Hour *Milli, i.e., 3.6
+and
+Hour = 60.0 * Minute
+Milli = 0.001
+Minute = 60.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerHour:GramPerCubicCentimetrePerHour_1
+GramPerCubicCentimetrePerHour_1.ConversionFactorB = "3.6"
+GramPerCubicCentimetrePerHour_1.Symbol = "g/cm³/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerHour_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerHour) 
+	N0000[GramPerCubicCentimetrePerHour_1] -->|ConversionFactorB| N0002(("3.6")) 
+	N0000[GramPerCubicCentimetrePerHour_1] -->|Symbol| N0003(("g/cm³/h")) 
+```
+## PoundPerGallonUkPerSecond <!-- NOUN -->
+- Display name: pound per gallon (UK) per second
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.010022412854960501
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per second
+[SI] is the value in SI
+a = 1.0 / PPGUK, i.e., 0.010022412854960501
+and
+PPGUK = Pound / GallonUK
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerSecond:PoundPerGallonUkPerSecond_1
+PoundPerGallonUkPerSecond_1.ConversionFactorB = "0.010022412854960501"
+PoundPerGallonUkPerSecond_1.Symbol = "ppgUK/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerSecond_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerSecond) 
+	N0000[PoundPerGallonUkPerSecond_1] -->|ConversionFactorB| N0002(("0.010022412854960501")) 
+	N0000[PoundPerGallonUkPerSecond_1] -->|Symbol| N0003(("ppgUK/s")) 
+```
+## PoundPerGallonUkPerMinute <!-- NOUN -->
+- Display name: pound per gallon (UK) per minute
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.6013447712976301
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per minute
+[SI] is the value in SI
+a = Minute / PPGUK, i.e., 0.6013447712976301
+and
+Minute = 60.0
+PPGUK = Pound / GallonUK
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerMinute:PoundPerGallonUkPerMinute_1
+PoundPerGallonUkPerMinute_1.ConversionFactorB = "0.6013447712976301"
+PoundPerGallonUkPerMinute_1.Symbol = "ppgUK/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerMinute_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerMinute) 
+	N0000[PoundPerGallonUkPerMinute_1] -->|ConversionFactorB| N0002(("0.6013447712976301")) 
+	N0000[PoundPerGallonUkPerMinute_1] -->|Symbol| N0003(("ppgUK/min")) 
+```
+## PoundPerGallonUkPerHour <!-- NOUN -->
+- Display name: pound per gallon (UK) per hour
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 36.08068627785781
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per hour
+[SI] is the value in SI
+a = Hour / PPGUK, i.e., 36.08068627785781
+and
+Hour = 60.0 * Minute
+PPGUK = Pound / GallonUK
+Minute = 60.0
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerHour:PoundPerGallonUkPerHour_1
+PoundPerGallonUkPerHour_1.ConversionFactorB = "36.08068627785781"
+PoundPerGallonUkPerHour_1.Symbol = "ppgUK/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerHour_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerHour) 
+	N0000[PoundPerGallonUkPerHour_1] -->|ConversionFactorB| N0002(("36.08068627785781")) 
+	N0000[PoundPerGallonUkPerHour_1] -->|Symbol| N0003(("ppgUK/h")) 
+```
+## PoundPerGallonUsPerSecond <!-- NOUN -->
+- Display name: pound per gallon (US) per second
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.00834540445201933
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per second
+[SI] is the value in SI
+a = 1.0 /PPGUS, i.e., 0.00834540445201933
+and
+PPGUS = Pound / GallonUS
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerSecond:PoundPerGallonUsPerSecond_1
+PoundPerGallonUsPerSecond_1.ConversionFactorB = "0.00834540445201933"
+PoundPerGallonUsPerSecond_1.Symbol = "ppgUS/s"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerSecond_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerSecond) 
+	N0000[PoundPerGallonUsPerSecond_1] -->|ConversionFactorB| N0002(("0.00834540445201933")) 
+	N0000[PoundPerGallonUsPerSecond_1] -->|Symbol| N0003(("ppgUS/s")) 
+```
+## PoundPerGallonUsPerMinute <!-- NOUN -->
+- Display name: pound per gallon (US) per minute
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.5007242671211598
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per minute
+[SI] is the value in SI
+a = Minute / PPGUS, i.e., 0.5007242671211598
+and
+Minute = 60.0
+PPGUS = Pound / GallonUS
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerMinute:PoundPerGallonUsPerMinute_1
+PoundPerGallonUsPerMinute_1.ConversionFactorB = "0.5007242671211598"
+PoundPerGallonUsPerMinute_1.Symbol = "ppgUS/min"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerMinute_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerMinute) 
+	N0000[PoundPerGallonUsPerMinute_1] -->|ConversionFactorB| N0002(("0.5007242671211598")) 
+	N0000[PoundPerGallonUsPerMinute_1] -->|Symbol| N0003(("ppgUS/min")) 
+```
+## PoundPerGallonUsPerHour <!-- NOUN -->
+- Display name: pound per gallon (US) per hour
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 30.043456027269592
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per hour
+[SI] is the value in SI
+a = Hour / PPGUS, i.e., 30.043456027269592
+and
+Hour = 60.0 * Minute
+PPGUS = Pound / GallonUS
+Minute = 60.0
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerHour:PoundPerGallonUsPerHour_1
+PoundPerGallonUsPerHour_1.ConversionFactorB = "30.043456027269592"
+PoundPerGallonUsPerHour_1.Symbol = "ppgUS/h"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerHour_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerHour) 
+	N0000[PoundPerGallonUsPerHour_1] -->|ConversionFactorB| N0002(("30.043456027269592")) 
+	N0000[PoundPerGallonUsPerHour_1] -->|Symbol| N0003(("ppgUS/h")) 
+```
 ## NewtonPerMetre <!-- NOUN -->
 - Display name: newton per metre
 - Parent class: [Unit](#Unit)
@@ -37287,6 +38342,35 @@ graph LR
 	N0000[KilogramForce_1] -->|ConversionFactorB| N0002(("0.10197162129779283")) 
 	N0000[KilogramForce_1] -->|Symbol| N0003(("kgf")) 
 ```
+## TonneForce <!-- NOUN -->
+- Display name: tonne force
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.00010197162129779283
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in tonne force
+[SI] is the value in SI
+a = 1.0/(Kilo*KilogramForce), i.e., 0.00010197162129779283
+and
+Kilo = 1000.0
+KilogramForce = 1.0 * G reference: https://en.wikipedia.org/wiki/Kilogram-force
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+TonneForce:TonneForce_1
+TonneForce_1.ConversionFactorB = "0.00010197162129779283"
+TonneForce_1.Symbol = "tf"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[TonneForce_1] -->|BelongsToClass| N0001(TonneForce) 
+	N0000[TonneForce_1] -->|ConversionFactorB| N0002(("0.00010197162129779283")) 
+	N0000[TonneForce_1] -->|Symbol| N0003(("tf")) 
+```
 ## PoundForce <!-- NOUN -->
 - Display name: pound force
 - Parent class: [Unit](#Unit)
@@ -37570,57 +38654,6 @@ An example semantic graph looks like as follow:
 graph LR
 	N0000[RotationPerSecond_1] -->|BelongsToClass| N0001(RotationPerSecond) 
 	N0000[RotationPerSecond_1] -->|Symbol| N0002(("rps")) 
-```
-## StrokePerSecond <!-- NOUN -->
-- Display name: stroke per second
-- Parent class: [Unit](#Unit)
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in stroke per second
-[SI] is the value in SI
-a = Unit, i.e., 1
-and
-Unit = 1.0
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-StrokePerSecond:StrokePerSecond_1
-StrokePerSecond_1.Symbol = "sps"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[StrokePerSecond_1] -->|BelongsToClass| N0001(StrokePerSecond) 
-	N0000[StrokePerSecond_1] -->|Symbol| N0002(("sps")) 
-```
-## StrokePerHour <!-- NOUN -->
-- Display name: stroke per hour
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 3600
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in stroke per hour
-[SI] is the value in SI
-a = Hour, i.e., 3600
-and
-Hour = 60.0 * Minute
-Minute = 60.0
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-StrokePerHour:StrokePerHour_1
-StrokePerHour_1.ConversionFactorB = "3600"
-StrokePerHour_1.Symbol = "sph"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[StrokePerHour_1] -->|BelongsToClass| N0001(StrokePerHour) 
-	N0000[StrokePerHour_1] -->|ConversionFactorB| N0002(("3600")) 
-	N0000[StrokePerHour_1] -->|Symbol| N0003(("sph")) 
 ```
 ## RotationPerHour <!-- NOUN -->
 - Display name: rotation per hour
@@ -42679,104 +43712,6 @@ graph LR
 	N0000[Rankine_1] -->|BelongsToClass| N0001(Rankine) 
 	N0000[Rankine_1] -->|ConversionFactorB| N0002(("1.7999999999999998")) 
 	N0000[Rankine_1] -->|Symbol| N0003(("°R")) 
-```
-## OhmMetre <!-- NOUN -->
-- Display name: ohm metre
-- Parent class: [Unit](#Unit)
-- Description: 
-No conversion necessary as the unit choice is SI
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-OhmMetre:OhmMetre_1
-OhmMetre_1.Symbol = "Ω•m"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[OhmMetre_1] -->|BelongsToClass| N0001(OhmMetre) 
-	N0000[OhmMetre_1] -->|Symbol| N0002(("Ω•m")) 
-```
-## KiloOhmMetre <!-- NOUN -->
-- Display name: kilo ohm metre
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.001
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in kilo ohm metre
-[SI] is the value in SI
-a = 1.0/Kilo, i.e., 0.001
-and
-Kilo = 1000.0
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-KiloOhmMetre:KiloOhmMetre_1
-KiloOhmMetre_1.ConversionFactorB = "0.001"
-KiloOhmMetre_1.Symbol = "kΩ•m"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[KiloOhmMetre_1] -->|BelongsToClass| N0001(KiloOhmMetre) 
-	N0000[KiloOhmMetre_1] -->|ConversionFactorB| N0002(("0.001")) 
-	N0000[KiloOhmMetre_1] -->|Symbol| N0003(("kΩ•m")) 
-```
-## MegaOhmMetre <!-- NOUN -->
-- Display name: mega ohm metre
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 1E-06
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in mega ohm metre
-[SI] is the value in SI
-a = 1.0/Mega, i.e., 1E-06
-and
-Mega = 1e6
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-MegaOhmMetre:MegaOhmMetre_1
-MegaOhmMetre_1.ConversionFactorB = "1E-06"
-MegaOhmMetre_1.Symbol = "MΩ•m"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[MegaOhmMetre_1] -->|BelongsToClass| N0001(MegaOhmMetre) 
-	N0000[MegaOhmMetre_1] -->|ConversionFactorB| N0002(("1E-06")) 
-	N0000[MegaOhmMetre_1] -->|Symbol| N0003(("MΩ•m")) 
-```
-## GigaOhmMetre <!-- NOUN -->
-- Display name: giga ohm metre
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 1E-09
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in giga ohm metre
-[SI] is the value in SI
-a = 1.0/Giga, i.e., 1E-09
-and
-Giga = 1e9
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-GigaOhmMetre:GigaOhmMetre_1
-GigaOhmMetre_1.ConversionFactorB = "1E-09"
-GigaOhmMetre_1.Symbol = "GΩ•m"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[GigaOhmMetre_1] -->|BelongsToClass| N0001(GigaOhmMetre) 
-	N0000[GigaOhmMetre_1] -->|ConversionFactorB| N0002(("1E-09")) 
-	N0000[GigaOhmMetre_1] -->|Symbol| N0003(("GΩ•m")) 
 ```
 ## Steradian <!-- NOUN -->
 - Display name: steradian
@@ -50624,242 +51559,6 @@ graph LR
 	N0000[HundredWeights_1] -->|ConversionFactorB| N0002(("0.022046226218487758")) 
 	N0000[HundredWeights_1] -->|Symbol| N0003(("cwt")) 
 ```
-## Joule <!-- NOUN -->
-- Display name: joule
-- Parent class: [Unit](#Unit)
-- Description: 
-No conversion necessary as the unit choice is SI
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-Joule:Joule_1
-Joule_1.Symbol = "J"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[Joule_1] -->|BelongsToClass| N0001(Joule) 
-	N0000[Joule_1] -->|Symbol| N0002(("J")) 
-```
-## Kilojoule <!-- NOUN -->
-- Display name: kilojoule
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.001
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in kilojoule
-[SI] is the value in SI
-a = 1.0/Kilo, i.e., 0.001
-and
-Kilo = 1000.0
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-Kilojoule:Kilojoule_1
-Kilojoule_1.ConversionFactorB = "0.001"
-Kilojoule_1.Symbol = "kJ"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[Kilojoule_1] -->|BelongsToClass| N0001(Kilojoule) 
-	N0000[Kilojoule_1] -->|ConversionFactorB| N0002(("0.001")) 
-	N0000[Kilojoule_1] -->|Symbol| N0003(("kJ")) 
-```
-## Megajoule <!-- NOUN -->
-- Display name: megajoule
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 1E-06
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in megajoule
-[SI] is the value in SI
-a = 1.0/Mega, i.e., 1E-06
-and
-Mega = 1e6
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-Megajoule:Megajoule_1
-Megajoule_1.ConversionFactorB = "1E-06"
-Megajoule_1.Symbol = "MJ"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[Megajoule_1] -->|BelongsToClass| N0001(Megajoule) 
-	N0000[Megajoule_1] -->|ConversionFactorB| N0002(("1E-06")) 
-	N0000[Megajoule_1] -->|Symbol| N0003(("MJ")) 
-```
-## Gigajoule <!-- NOUN -->
-- Display name: gigajoule
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 1E-09
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in gigajoule
-[SI] is the value in SI
-a = 1.0/Giga, i.e., 1E-09
-and
-Giga = 1e9
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-Gigajoule:Gigajoule_1
-Gigajoule_1.ConversionFactorB = "1E-09"
-Gigajoule_1.Symbol = "GJ"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[Gigajoule_1] -->|BelongsToClass| N0001(Gigajoule) 
-	N0000[Gigajoule_1] -->|ConversionFactorB| N0002(("1E-09")) 
-	N0000[Gigajoule_1] -->|Symbol| N0003(("GJ")) 
-```
-## Calorie <!-- NOUN -->
-- Display name: calorie
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.2390057361376673
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in calorie
-[SI] is the value in SI
-a = 1.0/Calorie, i.e., 0.2390057361376673
-and
-Calorie = 4.184 reference: https://en.wikipedia.org/wiki/Calorie
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-Calorie:Calorie_1
-Calorie_1.ConversionFactorB = "0.2390057361376673"
-Calorie_1.Symbol = "cal"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[Calorie_1] -->|BelongsToClass| N0001(Calorie) 
-	N0000[Calorie_1] -->|ConversionFactorB| N0002(("0.2390057361376673")) 
-	N0000[Calorie_1] -->|Symbol| N0003(("cal")) 
-```
-## Kilocalorie <!-- NOUN -->
-- Display name: kilocalorie
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.0002390057361376673
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in kilocalorie
-[SI] is the value in SI
-a = 1.0/(Kilo * Calorie), i.e., 0.0002390057361376673
-and
-Kilo = 1000.0
-Calorie = 4.184 reference: https://en.wikipedia.org/wiki/Calorie
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-Kilocalorie:Kilocalorie_1
-Kilocalorie_1.ConversionFactorB = "0.0002390057361376673"
-Kilocalorie_1.Symbol = "Cal"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[Kilocalorie_1] -->|BelongsToClass| N0001(Kilocalorie) 
-	N0000[Kilocalorie_1] -->|ConversionFactorB| N0002(("0.0002390057361376673")) 
-	N0000[Kilocalorie_1] -->|Symbol| N0003(("Cal")) 
-```
-## BritishThermalUnit <!-- NOUN -->
-- Display name: british thermal unit
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.0009484516526770049
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in british thermal unit
-[SI] is the value in SI
-a = 1.0/BTU, i.e., 0.0009484516526770049
-and
-BTU = 1054.35 reference: https://en.wikipedia.org/wiki/British_thermal_unit
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-BritishThermalUnit:BritishThermalUnit_1
-BritishThermalUnit_1.ConversionFactorB = "0.0009484516526770049"
-BritishThermalUnit_1.Symbol = "BTU"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[BritishThermalUnit_1] -->|BelongsToClass| N0001(BritishThermalUnit) 
-	N0000[BritishThermalUnit_1] -->|ConversionFactorB| N0002(("0.0009484516526770049")) 
-	N0000[BritishThermalUnit_1] -->|Symbol| N0003(("BTU")) 
-```
-## KiloBritishThermalUnit <!-- NOUN -->
-- Display name: kilo british thermal unit
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 9.484516526770048E-07
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in kilo british thermal unit
-[SI] is the value in SI
-a = 1.0/(Kilo * BTU), i.e., 9.484516526770048E-07
-and
-Kilo = 1000.0
-BTU = 1054.35 reference: https://en.wikipedia.org/wiki/British_thermal_unit
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-KiloBritishThermalUnit:KiloBritishThermalUnit_1
-KiloBritishThermalUnit_1.ConversionFactorB = "9.484516526770048E-07"
-KiloBritishThermalUnit_1.Symbol = "kBTU"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[KiloBritishThermalUnit_1] -->|BelongsToClass| N0001(KiloBritishThermalUnit) 
-	N0000[KiloBritishThermalUnit_1] -->|ConversionFactorB| N0002(("9.484516526770048E-07")) 
-	N0000[KiloBritishThermalUnit_1] -->|Symbol| N0003(("kBTU")) 
-```
-## MegaBritishThermalUnit <!-- NOUN -->
-- Display name: mega british thermal unit
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 9.48451652677005E-10
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in mega british thermal unit
-[SI] is the value in SI
-a = 1.0/(Mega * BTU), i.e., 9.48451652677005E-10
-and
-Mega = 1e6
-BTU = 1054.35 reference: https://en.wikipedia.org/wiki/British_thermal_unit
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-MegaBritishThermalUnit:MegaBritishThermalUnit_1
-MegaBritishThermalUnit_1.ConversionFactorB = "9.48451652677005E-10"
-MegaBritishThermalUnit_1.Symbol = "MMBTU"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[MegaBritishThermalUnit_1] -->|BelongsToClass| N0001(MegaBritishThermalUnit) 
-	N0000[MegaBritishThermalUnit_1] -->|ConversionFactorB| N0002(("9.48451652677005E-10")) 
-	N0000[MegaBritishThermalUnit_1] -->|Symbol| N0003(("MMBTU")) 
-```
 ## NewtonPerSecond <!-- NOUN -->
 - Display name: newton per second
 - Parent class: [Unit](#Unit)
@@ -54618,6 +55317,185 @@ graph LR
 	N0000[InchPoundPerHour_1] -->|ConversionFactorB| N0002(("31862.68484877787")) 
 	N0000[InchPoundPerHour_1] -->|Symbol| N0003(("in•lbf/h")) 
 ```
+## MetresToTheFourthPower <!-- NOUN -->
+- Display name: metres to the fourth power
+- Parent class: [Unit](#Unit)
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MetresToTheFourthPower:MetresToTheFourthPower_1
+MetresToTheFourthPower_1.Symbol = "m⁴"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MetresToTheFourthPower_1] -->|BelongsToClass| N0001(MetresToTheFourthPower) 
+	N0000[MetresToTheFourthPower_1] -->|Symbol| N0002(("m⁴")) 
+```
+## CentimetresToTheFourthPower <!-- NOUN -->
+- Display name: centimetres to the fourth power
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 99999999.99999999
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in centimetres to the fourth power
+[SI] is the value in SI
+a = 1.0/(Centi*Centi*Centi*Centi), i.e., 99999999.99999999
+and
+Centi = 0.01
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CentimetresToTheFourthPower:CentimetresToTheFourthPower_1
+CentimetresToTheFourthPower_1.ConversionFactorB = "99999999.99999999"
+CentimetresToTheFourthPower_1.Symbol = "cm⁴"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CentimetresToTheFourthPower_1] -->|BelongsToClass| N0001(CentimetresToTheFourthPower) 
+	N0000[CentimetresToTheFourthPower_1] -->|ConversionFactorB| N0002(("99999999.99999999")) 
+	N0000[CentimetresToTheFourthPower_1] -->|Symbol| N0003(("cm⁴")) 
+```
+## InchesToTheFourthPower <!-- NOUN -->
+- Display name: inches to the fourth power
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 2402509.6100288304
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in inches to the fourth power
+[SI] is the value in SI
+a = 1.0/(Inch*Inch*Inch*Inch), i.e., 2402509.6100288304
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+InchesToTheFourthPower:InchesToTheFourthPower_1
+InchesToTheFourthPower_1.ConversionFactorB = "2402509.6100288304"
+InchesToTheFourthPower_1.Symbol = "in⁴"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[InchesToTheFourthPower_1] -->|BelongsToClass| N0001(InchesToTheFourthPower) 
+	N0000[InchesToTheFourthPower_1] -->|ConversionFactorB| N0002(("2402509.6100288304")) 
+	N0000[InchesToTheFourthPower_1] -->|Symbol| N0003(("in⁴")) 
+```
+## FeetToTheFourthPower <!-- NOUN -->
+- Display name: feet to the fourth power
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 115.86176745895213
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in feet to the fourth power
+[SI] is the value in SI
+a = 1.0/(Foot*Foot*Foot*Foot), i.e., 115.86176745895213
+and
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+FeetToTheFourthPower:FeetToTheFourthPower_1
+FeetToTheFourthPower_1.ConversionFactorB = "115.86176745895213"
+FeetToTheFourthPower_1.Symbol = "ft⁴"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[FeetToTheFourthPower_1] -->|BelongsToClass| N0001(FeetToTheFourthPower) 
+	N0000[FeetToTheFourthPower_1] -->|ConversionFactorB| N0002(("115.86176745895213")) 
+	N0000[FeetToTheFourthPower_1] -->|Symbol| N0003(("ft⁴")) 
+```
+## KilogramMetreSquared <!-- NOUN -->
+- Display name: kilogram metre squared
+- Parent class: [Unit](#Unit)
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramMetreSquared:KilogramMetreSquared_1
+KilogramMetreSquared_1.Symbol = "kg.m²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramMetreSquared_1] -->|BelongsToClass| N0001(KilogramMetreSquared) 
+	N0000[KilogramMetreSquared_1] -->|Symbol| N0002(("kg.m²")) 
+```
+## GramCentimetreSquared <!-- NOUN -->
+- Display name: gram centimetre squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 10000000
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramCentimetreSquared:GramCentimetreSquared_1
+GramCentimetreSquared_1.ConversionFactorB = "10000000"
+GramCentimetreSquared_1.Symbol = "g.cm²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramCentimetreSquared_1] -->|BelongsToClass| N0001(GramCentimetreSquared) 
+	N0000[GramCentimetreSquared_1] -->|ConversionFactorB| N0002(("10000000")) 
+	N0000[GramCentimetreSquared_1] -->|Symbol| N0003(("g.cm²")) 
+```
+## PoundFootSquared <!-- NOUN -->
+- Display name: pound foot squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 23.73036040423194
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundFootSquared:PoundFootSquared_1
+PoundFootSquared_1.ConversionFactorB = "23.73036040423194"
+PoundFootSquared_1.Symbol = "lb.ft²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundFootSquared_1] -->|BelongsToClass| N0001(PoundFootSquared) 
+	N0000[PoundFootSquared_1] -->|ConversionFactorB| N0002(("23.73036040423194")) 
+	N0000[PoundFootSquared_1] -->|Symbol| N0003(("lb.ft²")) 
+```
+## PoundInchSquared <!-- NOUN -->
+- Display name: pound inch squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 3417.171898209399
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundInchSquared:PoundInchSquared_1
+PoundInchSquared_1.ConversionFactorB = "3417.171898209399"
+PoundInchSquared_1.Symbol = "lb.in²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundInchSquared_1] -->|BelongsToClass| N0001(PoundInchSquared) 
+	N0000[PoundInchSquared_1] -->|ConversionFactorB| N0002(("3417.171898209399")) 
+	N0000[PoundInchSquared_1] -->|Symbol| N0003(("lb.in²")) 
+```
 # Verbs
 ## IsEnablingSignalFor <!-- VERB -->
 - Display name: Is Enabling Signal For
@@ -57657,6 +58535,18 @@ dat#01
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [FluidComponent](#FluidComponent)
+- Definition set: Hydraulics
+## IsUpstreamOf <!-- VERB -->
+- Display name: Is Upstream Of
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [FluidType](#FluidType)
+- Object class: [FluidInterface](#FluidInterface)
+- Definition set: Hydraulics
+## IsDownstreamOf <!-- VERB -->
+- Display name: Is downstream of
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [FluidType](#FluidType)
+- Object class: [FluidInterface](#FluidInterface)
 - Definition set: Hydraulics
 ## IsOfMechanicalStiffnessType <!-- VERB -->
 - Display name: Is of mechanical stiffness type

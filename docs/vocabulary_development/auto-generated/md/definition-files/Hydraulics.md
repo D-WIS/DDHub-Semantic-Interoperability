@@ -50,6 +50,13 @@ DrillingFluidSolidComponent <|-- LowGravitySolidComponent
 SolidComponent <|-- FormationSolidComponent
 FormationSolidComponent <|-- CuttingsComponent
 FormationSolidComponent <|-- CavingsComponent
+DWISNoun <|-- FluidInterface
+DWISNoun <|-- FluidType
+FluidType <|-- Gas
+Gas <|-- Air
+Gas <|-- FormationGas
+FluidType <|-- Liquid
+Liquid <|-- DrillingLiquid
 ```
 ## PressureReference <!-- NOUN -->
 - Display name: PressureReference
@@ -237,6 +244,48 @@ FormationSolidComponent <|-- CavingsComponent
 - Display name: CavingsComponent
 - Parent class: [FormationSolidComponent](./Hydraulics.md#FormationSolidComponent)
 - Definition set: Hydraulics
+## FluidInterface <!-- NOUN -->
+- Display name: Fluid Interface
+- Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Description: 
+The interface between two fluids in a hydraulic system.
+- Definition set: Hydraulics
+## FluidType <!-- NOUN -->
+- Display name: Fluid Type
+- Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Description: 
+A symbolic representation of the type of a fluid to be found in a hydraulic system.
+- Definition set: Hydraulics
+## Gas <!-- NOUN -->
+- Display name: Gas
+- Parent class: [FluidType](./Hydraulics.md#FluidType)
+- Description: 
+A symbolic representation of gas when encountered in a hydraulic system.
+- Definition set: Hydraulics
+## Air <!-- NOUN -->
+- Display name: Air
+- Parent class: [Gas](./Hydraulics.md#Gas)
+- Description: 
+A symbolic representation of air when encountered in a hydraulic system.
+- Definition set: Hydraulics
+## FormationGas <!-- NOUN -->
+- Display name: Formation Gas
+- Parent class: [Gas](./Hydraulics.md#Gas)
+- Description: 
+A symbolic representation of formation gas when encountered in a hydraulic system.
+- Definition set: Hydraulics
+## Liquid <!-- NOUN -->
+- Display name: Liquid
+- Parent class: [FluidType](./Hydraulics.md#FluidType)
+- Description: 
+A symbolic representation of liquid when encountered in a hydraulic system.
+- Definition set: Hydraulics
+## DrillingLiquid <!-- NOUN -->
+- Display name: Drilling Liquid
+- Parent class: [Liquid](./Hydraulics.md#Liquid)
+- Description: 
+A symbolic representation of drilling liquid when encountered in a hydraulic system.
+- Definition set: Hydraulics
 - Examples:
   
 # Verbs
@@ -275,6 +324,8 @@ IsHydraulicConnectedTo <|-- HasRightBranch
 IsHydraulicConnectedTo <|-- HasStartJunction
 DWISVerb <|-- StartsHydraulicBranchDecomposition
 DWISVerb <|-- ConcernsAFluidComponent
+DWISVerb <|-- IsUpstreamOf
+DWISVerb <|-- IsDownstreamOf
 ```
 ## Relations
 Here is a graph representing the relations that can be made with the verbs defined in this definition set.
@@ -311,6 +362,8 @@ HydraulicJunction ||--o{ HydraulicBranch : HasRightBranch
 HydraulicBranch ||--o{ HydraulicJunction : HasStartJunction
 DWISNoun ||--o{ DWISNoun : StartsHydraulicBranchDecomposition
 DrillingDataPoint ||--o{ FluidComponent : ConcernsAFluidComponent
+FluidType ||--o{ FluidInterface : IsUpstreamOf
+FluidType ||--o{ FluidInterface : IsDownstreamOf
 ```
 ## HasPressureReferenceType <!-- VERB -->
 - Display name: HasPressureReferenceType
@@ -497,4 +550,16 @@ DrillingDataPoint ||--o{ FluidComponent : ConcernsAFluidComponent
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [FluidComponent](./Hydraulics.md#FluidComponent)
+- Definition set: Hydraulics
+## IsUpstreamOf <!-- VERB -->
+- Display name: Is Upstream Of
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [FluidType](./Hydraulics.md#FluidType)
+- Object class: [FluidInterface](./Hydraulics.md#FluidInterface)
+- Definition set: Hydraulics
+## IsDownstreamOf <!-- VERB -->
+- Display name: Is downstream of
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [FluidType](./Hydraulics.md#FluidType)
+- Object class: [FluidInterface](./Hydraulics.md#FluidInterface)
 - Definition set: Hydraulics

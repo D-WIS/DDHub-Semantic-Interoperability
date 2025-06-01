@@ -5056,6 +5056,48 @@ motor toolface is set to a desired set-point.
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/FluidInterface">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:comment xml:lang="EN">The interface between two fluids in a hydraulic system.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/FluidType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:comment xml:lang="EN">A symbolic representation of the type of a fluid to be found in a hydraulic system.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Gas">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/FluidType" />
+    <rdfs:comment xml:lang="EN">A symbolic representation of gas when encountered in a hydraulic system.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Air">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Gas" />
+    <rdfs:comment xml:lang="EN">A symbolic representation of air when encountered in a hydraulic system.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/FormationGas">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Gas" />
+    <rdfs:comment xml:lang="EN">A symbolic representation of formation gas when encountered in a hydraulic system.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Liquid">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/FluidType" />
+    <rdfs:comment xml:lang="EN">A symbolic representation of liquid when encountered in a hydraulic system.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingLiquid">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Liquid" />
+    <rdfs:comment xml:lang="EN">A symbolic representation of drilling liquid when encountered in a hydraulic system.
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/MeasurableQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
@@ -5487,46 +5529,6 @@ The SI unit for **energy density** is: joule per cubic metre with the associated
 The meaningful precision of energy density in the drilling context is typically: 0.01 J/m³
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MassDensityRateOfChangeDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">A mass density rate of change is the time derivative of a mass density: $\frac{d\rho}{dt}$, where $\rho$ is the mass density and $t$ is time.
-The dimension of mass density rate of change is:
-$$[MT^{-1}L^{-3}]$$.
-The SI unit for **mass density rate of change** is: kilogram per cubic metre per second with the associated unit label $\frac{\frac{kg}{m^{3}}}{s}$
-The meaningful precision of mass density rate of change in the drilling context is typically: 0.001 kg/m³/s
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MassDensityGradientPerTemperatureDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">A mass density gradient per temperature is the first derivative of a mass density compared to temperature: $\frac{d\rho}{dT}$, where $\rho$ is a mass density and $T$ is temperature.
-The dimension of mass density gradient per temperature is:
-$$[MK^{-1}L^{-3}]$$.
-The SI unit for **mass density gradient per temperature** is: kilogram per cubic metre per kelvin with the associated unit label $\frac{\frac{kg}{m^{3}}}{K}$
-The meaningful precision of mass density gradient per temperature in the drilling context is typically: 0.001 kg/m³/K
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MassDensityGradientPerLengthDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">A mass density gradient per length is the first derivative of a mass density compared to a distance: $\frac{d\rho}{ds}$, where $\rho$ is the mass density and $s$ is a distance.
-The dimension of mass density gradient per length is:
-$$[ML^{-4}]$$.
-The SI unit for **mass density gradient per length** is: kilogram per cubic metre per metre with the associated unit label $\frac{\frac{kg}{m^{3}}}{m}$
-The meaningful precision of mass density gradient per length in the drilling context is typically: 0.001 kg/m³/m
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MassDensityDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">Mass density is the amount of mass per unit volume of a substance.
-The dimension of mass density is:
-$$[ML^{-3}]$$.
-The SI unit for **mass density** is: kilogram per cubic metre with the associated unit label $\frac{kg}{m^{3}}$
-The meaningful precision of mass density in the drilling context is typically: 1 kg/m³
-</rdfs:comment>
-  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/FluidVelocityDrillingQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
@@ -5535,16 +5537,6 @@ The dimension of velocity is:
 $$[LT^{-1}]$$.
 The SI unit for **velocity** is: metre per second with the associated unit label $\frac{m}{s}$
 The meaningful precision of fluid velocity in the drilling context is typically: 0.01 m/s
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ForceGradientPerLengthDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">A force gradient per length is the first derivative compared to a distance of a force: $\frac{dF}{ds}$ where $F$ is a force and $s$ is a distance.
-The dimension of force gradient per length is:
-$$[MT^{-2}]$$.
-The SI unit for **force gradient per length** is: newton per metre with the associated unit label $\frac{N}{m}$
-The meaningful precision of force gradient per length in the drilling context is typically: 1 N/m
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ForceDrillingQuantity">
@@ -5557,255 +5549,24 @@ The SI unit for **force** is: newton with the associated unit label $N$
 The meaningful precision of force in the drilling context is typically: 0.1 N
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/HeatTransferCoefficientDrillingQuantity">
+  <rdf:Description rdf:about="http://ddhub.no/ForceGradientPerLengthDrillingQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">Heat transfer coefficient is a measure of the efficiency with which heat is transferred between a solid surface and a fluid (or between two fluids) per unit area and temperature difference.
-The dimension of heat transfer coefficient is:
-$$[MK^{-1}T^{-3}]$$.
-The SI unit for **heat transfer coefficient** is: watt per square metre per kelvin with the associated unit label $\frac{W}{m^{2} \cdot K}$
-The meaningful precision of heat transfer coefficient in the drilling context is typically: 0.0001 W/m²/K
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/HydraulicConductivityDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">A velocity is the time derivative of a position or a displacement: $\frac{dx}{dt}$, where $x$ is a position and $t$ is time.
-The dimension of velocity is:
-$$[LT^{-1}]$$.
-The SI unit for **velocity** is: metre per second with the associated unit label $\frac{m}{s}$
-The meaningful precision of hydraulic conductivity in the drilling context is typically: 0.001 m/s
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/InterfacialTensionDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">Interfacial tension is the force per unit length acting along the boundary between two immiscible liquids, resisting their mixing.
-The dimension of interfacial tension is:
+    <rdfs:comment xml:lang="EN">A force gradient per length is the first derivative compared to a distance of a force: $\frac{dF}{ds}$ where $F$ is a force and $s$ is a distance.
+The dimension of force gradient per length is:
 $$[MT^{-2}]$$.
-The SI unit for **interfacial tension** is: newton per metre with the associated unit label $\frac{N}{m}$
-The meaningful precision of interfacial tension in the drilling context is typically: 0.0001 N/m
+The SI unit for **force gradient per length** is: newton per metre with the associated unit label $\frac{N}{m}$
+The meaningful precision of force gradient per length in the drilling context is typically: 1 N/m
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MassGradientPerLengthDrillingQuantity">
+  <rdf:Description rdf:about="http://ddhub.no/ForceRateOfChangeDrillingQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">A mass gradient per length is the first derivative of a mass compared to a distance: $\frac{dm}{ds}$, where $m$ is a mass and $s$ is a distance.
-The dimension of mass gradient per length is:
-$$[ML^{-1}]$$.
-The SI unit for **mass gradient per length** is: kilogram per metre with the associated unit label $\frac{kg}{m}$
-The meaningful precision of mass gradient per length in the drilling context is typically: 0.05 kg/m
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MassDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">Mass can be experimentally defined as a measure of the body's inertia, meaning the resistance to acceleration (change of velocity) when a net force is applied. The object's mass also determines the strength of its gravitational attraction to other bodies.
-The dimension of mass is:
-$$[M]$$.
-The SI unit for **mass** is: kilogram with the associated unit label $kg$
-The meaningful precision of mass density in the drilling context is typically: 0.1 kg
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MassRateDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">A mass rate is the time derivative of a mass: $\frac{dm}{dt}$, where $m$ is a mass and $t$ is time.
-The dimension of mass rate is:
-$$[MT^{-1}]$$.
-The SI unit for **mass rate** is: kilogram per second with the associated unit label $\frac{kg}{s}$
-The meaningful precision of mass rate in the drilling context is typically: 0.0001 kg/s
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PlaneAngleDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">A plane angle is the angle formed between two intersecting lines or planes in a two-dimensional or three-dimensional space.
-The dimension of plane angle is:
-$$[{\theta}]$$.
-The SI unit for **plane angle** is: radian with the associated unit label $rad$
-The meaningful precision of plane angle in the drilling context is typically: 0.00017453292519943296 rad
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PowerDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">Power is the rate at which work is done or energy is transferred over time.
-The dimension of power is:
-$$[L^{2}MT^{-3}]$$.
-The SI unit for **power** is: watt with the associated unit label $W$
-The meaningful precision of power in the drilling context is typically: 0.1 W
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PressureGradientPerLengthDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">A pressure gradient per length is the first derivative of a pressure compared to a distance: $\frac{dp}{ds}$, where $p$ is a pressure and $s$ is a distance.
-The dimension of pressure gradient per length is:
-$$[ML^{-2}T^{-2}]$$.
-The SI unit for **pressure gradient per length** is: pascal per metre with the associated unit label $\frac{Pa}{m}$
-The meaningful precision of pressure gradient per length in the drilling context is typically: 10000 Pa/m
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PressureLossConstantDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">The pressure loss constant is a parameter used to quantify the resistance to flow in a system, such as a pipe or more complex tubulars, which leads to a reduction in pressure. It helps in calculating the pressure drop due to friction or other factors in fluid dynamics.
-The dimension of pressure loss constant is:
-$$[L^{4}]$$.
-The SI unit for **pressure loss constant** is: pressure loss constant SI with the associated unit label $(\frac{m^{3}}{s})^{2} \cdot \frac{(\frac{kg}{m^{3}})}{Pa}$
-The meaningful precision of pressure loss constant in the drilling context is typically: 0.1 (m³/s)²•(kg/m³)/Pa
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PressureDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">Pressure is the force applied per unit area on a surface.
-The dimension of pressure is:
-$$[ML^{-1}T^{-2}]$$.
-The SI unit for **pressure** is: pascal with the associated unit label $Pa$
-The meaningful precision of pressure in the drilling context is typically: 10000 Pa
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/RandomWalkDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">A random walk is a mathematical concept describing a path consisting of a series of random steps or movements, where each step's direction or magnitude is determined probabilistically. It is used to model various phenomena in fields like physics, finance, and computer science.
-The dimension of random walk is:
-$$[{\theta}T^{-0.5}]$$.
-The SI unit for **random walk** is: radian per square root second with the associated unit label $\frac{rad}{\sqrt{s}}$
-The meaningful precision of random walk in the drilling context is typically: 1E-05 rad/√s
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/RotationalFrequencyRateOfChangeDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">A frequency rate of change is the time derivative of a frequency: $\frac{df}{dt}$, where $f$ is a frequency and $t$ is time.
-The dimension of frequency rate of change is:
-$$[T^{-2}]$$.
-The SI unit for **frequency rate of change** is: hertz per second with the associated unit label $\frac{Hz}{s}$
-A rotation frequency rate of change is the time derivative of a rotation frequency.
-The meaningful precision of rotational frequency is typically: 0.016666666666666666 Hz/s
-The meaningful precision of rotational frequency rate of change in the drilling context is typically: 0.016666666666666666 Hz/s
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsobaricSpecificHeatCapacityDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">Isobaric specific heat capacity is the amount of heat required to raise the temperature of one unit mass of a substance by one unit of temperature at constant pressure. It indicates how much heat energy a material can store.
-The dimension of specific heat capacity is:
-$$[L^{2}K^{-1}T^{-2}]$$.
-The SI unit for **isobaric specific heat capacity** is: joule per kilogram kelvin with the associated unit label $\frac{J}{kg \cdot K}$
-The meaningful precision of specific heat capacity in the drilling context is typically: 0.01 J/kg•K
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">An isobaric specific heat capacity gradient per temperature is the first derivative of an isobaric specific heat capacity compared to temperature: $\frac{dC_p}{dT}$, where $C_p$ is a isobaric specific heat capacity and $T$ is a temperature.
-The dimension of specific heat capacity gradient per temperature is:
-$$[L^{2}T^{-2}K^{-2}]$$.
-The SI unit for **isobaric specific heat capacity gradient per temperature** is: joule per kilogram squared kelvin with the associated unit label $\frac{J}{kg \cdot K^{2}}$
-The meaningful precision of isobaric specific heat capacity gradient per temperature in the drilling context is typically: 0.01 J/kg•K²
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/StickDurationDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">Time is a continuous, measurable progression in which events occur, from the past through the present to the future.
-The dimension of time is:
-$$[T]$$.
-The SI unit for **time** is: second with the associated unit label $s$
-The meaningful precision of stick duration in the drilling context is typically: 0.001 s
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ReciprocalLengthSurveyInstrumentDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">A wave number is the number of wave lengths per unit distance.
-The dimension of wave number is:
-$$[L^{-1}]$$.
-The SI unit for **wave number** is: reciprocal metre with the associated unit label $\frac{1}{m}$
-The meaningful precision of reciprocal length related to survey instrument performance models in the drilling context is typically: 1E-08 1/m
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/TemperatureGradientPerLengthDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">A temperature gradient per lenth is the first derivative of a temperature compared to a distance: $\frac{dT}{ds}$, where $T$ is a temperature and $s$ is a distance.
-The dimension of temperature gradient per length is:
-$$[KL^{-1}]$$.
-The SI unit for **temperature gradient per length** is: kelvin per metre with the associated unit label $\frac{K}{m}$
-The meaningful precision of temperature gradient per length in the drilling context is typically: 0.001 K/m
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/TemperatureDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">Temperature is a measure of the average kinetic energy of particles in a substance, indicating how hot or cold the substance is.
-The dimension of temperature is:
-$$[K]$$.
-The SI unit for **temperature** is: kelvin with the associated unit label $K$
-The meaningful precision of temperature in the drilling context is typically: 0.01 K
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/TensionDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">Tension is the pulling or stretching force transmitted axially along an object such as a string, rope, chain, rod, truss member, or other object, so as to stretch or pull apart the object. In terms of force, it is the opposite of compression. Tension might also be described as the action-reaction pair of forces acting at each end of an object.
-The dimension of tension is:
-$$[LMT^{-2}]$$.
-The meaningful precision of tension in the drilling context is typically: 100 N
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ThermalConductivityDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">Thermal conductivity is a material's ability to conduct heat. It measures how efficiently heat is transferred through a material when there is a temperature difference.
-The dimension of thermal conductivity is:
-$$[LMK^{-1}T^{-3}]$$.
-The SI unit for **thermal conductivity** is: watt per metre kelvin with the associated unit label $\frac{W}{m \cdot K}$
-The meaningful precision of thermal conductivity in the drilling context is typically: 0.01 W/m•K
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/TorqueDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">A torque is a measure of the rotational force applied to a body around an axis.
-The dimension of torque is:
-$$[L^{2}MT^{-2}]$$.
-The SI unit for **torque** is: newton metre with the associated unit label $N \cdot m$
-The meaningful precision of torque in the drilling context is typically: 0.1 N•m
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/VolumeDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">A volume is the amount of three-dimensional space occupied by a body.
-The dimension of volume is:
-$$[L^{3}]$$.
-The SI unit for **volume** is: cubic metre with the associated unit label $m^{3}$
-The meaningful precision of volume in the drilling context is typically: 0.0001 m³
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/VolumetricFlowRateOfChangeDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">A volumetric flow rate of change is the time derivative of a volumetric flowrate: $\frac{dQ}{dt}$, where $Q$ is a volumetric flowrate and $t$ is time.
-The dimension of volumetric flow rate of change is:
-$$[L^{3}T^{-2}]$$.
-The SI unit for **volumetric flow Rate rate of change** is: cubic metre per second squared with the associated unit label $\frac{m^{3}}{s^{2}}$
-The meaningful precision of volumetric flow rate of change in the drilling context is typically: 1E-06 m³/s²
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/VolumetricFlowrateDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">A volumetric flowrate is the volume of fluid that passes per unit time: $\frac{dV}{dt}$, where $V$ is a volume and $t$ is time.
-The dimension of volumetric flowrate is:
-$$[L^{3}T^{-1}]$$.
-The SI unit for **volumetric flow rate** is: cubic metre per second with the associated unit label $\frac{m^{3}}{s}$
-The meaningful precision of volumetric flowrate in the drilling context is typically: 0.0001 ft³/s
+    <rdfs:comment xml:lang="EN">A force rate of change is the time derivative of a force: $\frac{dF}{dt}$, where $F$ is the mass density and $t$ is time.
+The dimension of force rate of change is:
+$$[LMT^{-3}]$$.
+The SI unit for **force rate of change** is: Newton per second with the associated unit label $\frac{N}{s}$
+The meaningful precision of force rate of change in the drilling context is typically: 0.1 N/s
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/FormationResistivityDrillingQuantity">
@@ -5854,6 +5615,16 @@ The SI unit for **volumetric flow rate** is: cubic metre per second with the ass
 The meaningful precision of gas volumetric flowrate in the drilling context is typically: 0.01 m³/s
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HeatTransferCoefficientDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">Heat transfer coefficient is a measure of the efficiency with which heat is transferred between a solid surface and a fluid (or between two fluids) per unit area and temperature difference.
+The dimension of heat transfer coefficient is:
+$$[MK^{-1}T^{-3}]$$.
+The SI unit for **heat transfer coefficient** is: watt per square metre per kelvin with the associated unit label $\frac{W}{m^{2} \cdot K}$
+The meaningful precision of heat transfer coefficient in the drilling context is typically: 0.0001 W/m²/K
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/HeightDrillingQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
@@ -5867,11 +5638,121 @@ The meaningful precision of height in the drilling context is typically: 0.001 m
   <rdf:Description rdf:about="http://ddhub.no/HookLoadDrillingQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">A force is an influence that can cause an object to change its velocity unless counterbalanced by other forces.
+The dimension of force is:
+$$[LMT^{-2}]$$.
+The SI unit for **force** is: newton with the associated unit label $N$
+The meaningful precision of hook load in the drilling context is typically: 1000 N
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HydraulicConductivityDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">A velocity is the time derivative of a position or a displacement: $\frac{dx}{dt}$, where $x$ is a position and $t$ is time.
+The dimension of velocity is:
+$$[LT^{-1}]$$.
+The SI unit for **velocity** is: metre per second with the associated unit label $\frac{m}{s}$
+The meaningful precision of hydraulic conductivity in the drilling context is typically: 0.001 m/s
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/InterfacialTensionDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">Interfacial tension is the force per unit length acting along the boundary between two immiscible liquids, resisting their mixing.
+The dimension of interfacial tension is:
+$$[MT^{-2}]$$.
+The SI unit for **interfacial tension** is: newton per metre with the associated unit label $\frac{N}{m}$
+The meaningful precision of interfacial tension in the drilling context is typically: 0.0001 N/m
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsobaricSpecificHeatCapacityDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">Isobaric specific heat capacity is the amount of heat required to raise the temperature of one unit mass of a substance by one unit of temperature at constant pressure. It indicates how much heat energy a material can store.
+The dimension of specific heat capacity is:
+$$[L^{2}K^{-1}T^{-2}]$$.
+The SI unit for **isobaric specific heat capacity** is: joule per kilogram kelvin with the associated unit label $\frac{J}{kg \cdot K}$
+The meaningful precision of specific heat capacity in the drilling context is typically: 0.01 J/kg•K
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">An isobaric specific heat capacity gradient per temperature is the first derivative of an isobaric specific heat capacity compared to temperature: $\frac{dC_p}{dT}$, where $C_p$ is a isobaric specific heat capacity and $T$ is a temperature.
+The dimension of specific heat capacity gradient per temperature is:
+$$[L^{2}T^{-2}K^{-2}]$$.
+The SI unit for **isobaric specific heat capacity gradient per temperature** is: joule per kilogram squared kelvin with the associated unit label $\frac{J}{kg \cdot K^{2}}$
+The meaningful precision of isobaric specific heat capacity gradient per temperature in the drilling context is typically: 0.01 J/kg•K²
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MassDensityDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">Mass density is the amount of mass per unit volume of a substance.
+The dimension of mass density is:
+$$[ML^{-3}]$$.
+The SI unit for **mass density** is: kilogram per cubic metre with the associated unit label $\frac{kg}{m^{3}}$
+The meaningful precision of mass density in the drilling context is typically: 1 kg/m³
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MassDensityGradientPerLengthDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">A mass density gradient per length is the first derivative of a mass density compared to a distance: $\frac{d\rho}{ds}$, where $\rho$ is the mass density and $s$ is a distance.
+The dimension of mass density gradient per length is:
+$$[ML^{-4}]$$.
+The SI unit for **mass density gradient per length** is: kilogram per cubic metre per metre with the associated unit label $\frac{\frac{kg}{m^{3}}}{m}$
+The meaningful precision of mass density gradient per length in the drilling context is typically: 0.001 kg/m³/m
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MassDensityGradientPerTemperatureDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">A mass density gradient per temperature is the first derivative of a mass density compared to temperature: $\frac{d\rho}{dT}$, where $\rho$ is a mass density and $T$ is temperature.
+The dimension of mass density gradient per temperature is:
+$$[MK^{-1}L^{-3}]$$.
+The SI unit for **mass density gradient per temperature** is: kilogram per cubic metre per kelvin with the associated unit label $\frac{\frac{kg}{m^{3}}}{K}$
+The meaningful precision of mass density gradient per temperature in the drilling context is typically: 0.001 kg/m³/K
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MassDensityRateOfChangeDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">A mass density rate of change is the time derivative of a mass density: $\frac{d\rho}{dt}$, where $\rho$ is the mass density and $t$ is time.
+The dimension of mass density rate of change is:
+$$[MT^{-1}L^{-3}]$$.
+The SI unit for **mass density rate of change** is: kilogram per cubic metre per second with the associated unit label $\frac{\frac{kg}{m^{3}}}{s}$
+The meaningful precision of mass density rate of change in the drilling context is typically: 0.001 kg/m³/s
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MassDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
     <rdfs:comment xml:lang="EN">Mass can be experimentally defined as a measure of the body's inertia, meaning the resistance to acceleration (change of velocity) when a net force is applied. The object's mass also determines the strength of its gravitational attraction to other bodies.
 The dimension of mass is:
 $$[M]$$.
 The SI unit for **mass** is: kilogram with the associated unit label $kg$
-The meaningful precision of hook load in the drilling context is typically: 100 kg
+The meaningful precision of mass density in the drilling context is typically: 0.1 kg
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MassGradientPerLengthDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">A mass gradient per length is the first derivative of a mass compared to a distance: $\frac{dm}{ds}$, where $m$ is a mass and $s$ is a distance.
+The dimension of mass gradient per length is:
+$$[ML^{-1}]$$.
+The SI unit for **mass gradient per length** is: kilogram per metre with the associated unit label $\frac{kg}{m}$
+The meaningful precision of mass gradient per length in the drilling context is typically: 0.05 kg/m
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MassRateDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">A mass rate is the time derivative of a mass: $\frac{dm}{dt}$, where $m$ is a mass and $t$ is time.
+The dimension of mass rate is:
+$$[MT^{-1}]$$.
+The SI unit for **mass rate** is: kilogram per second with the associated unit label $\frac{kg}{s}$
+The meaningful precision of mass rate in the drilling context is typically: 0.0001 kg/s
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/NozzleDiameterDrillingQuantity">
@@ -5885,64 +5766,14 @@ The meaningful precision of small length is typically: 0.0001 m
 The meaningful precision of nozzle diameter in the drilling context is typically: 0.0001 m
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SurfacePoreDrillingQuantity">
+  <rdf:Description rdf:about="http://ddhub.no/PlaneAngleDrillingQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">Area is the measure of the extent of a surface or the size of a two-dimensional shape.
-The dimension of area is:
-$$[L^{2}]$$.
-The SI unit for **area** is: square metre with the associated unit label $m^{2}$
-The meaningful precision of pore surface in the drilling context is typically: 1E-13 m²
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PositionDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">Length is a measure of distance.
-The dimension of length is:
-$$[L]$$.
-The SI unit for **length** is: metre with the associated unit label $m$
-The meaningful precision of position in the drilling context is typically: 0.01 m
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/RateOfPenetrationDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">A velocity is the time derivative of a position or a displacement: $\frac{dx}{dt}$, where $x$ is a position and $t$ is time.
-The dimension of velocity is:
-$$[LT^{-1}]$$.
-The SI unit for **velocity** is: metre per second with the associated unit label $\frac{m}{s}$
-The meaningful precision of rate of penetration in the drilling context is typically: 2.77778E-05 m/min
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/WeightOnBitDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">Mass can be experimentally defined as a measure of the body's inertia, meaning the resistance to acceleration (change of velocity) when a net force is applied. The object's mass also determines the strength of its gravitational attraction to other bodies.
-The dimension of mass is:
-$$[M]$$.
-The SI unit for **mass** is: kilogram with the associated unit label $kg$
-The meaningful precision of weight on bit in the drilling context is typically: 10 kg
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ThermalConductivityGradientPerTemperatureDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">A thermal conductivity gradient per temperature is the first derivative of a thermal conductivity compared to temperature: $\frac{dk}{dT}$, where $k$ is a thermal conductivity and $T$ is temperature. 
-The dimension of thermal conductivity gradient per temperature is:
-$$[LMK^{-2}T^{-3}]$$.
-The SI unit for **thermal conductivity gradient per temperature** is: watt per metre kelvin per kelvin with the associated unit label $\frac{(\frac{W}{(m \cdot K)}}{K}$
-The meaningful precision of thermal conductivity gradient per temperature in the drilling context is typically: 0.01 (W/(m•K))/K
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/TorqueGradientPerLengthDrillingQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">A torque gradient per length is the first derivative of torque compared to a distance: $\frac{d\tau}{ds}$, where $\tau$ is a torque and $s$ is a distance.
-The dimension of torque gradient per length is:
-$$[LMT^{-2}]$$.
-The SI unit for **torque gradient per length** is: newton metre per metre with the associated unit label $\frac{N \cdot m}{m}$
-The meaningful precision of torque gradient per length in the drilling context is typically: 1 N•m/m
+    <rdfs:comment xml:lang="EN">A plane angle is the angle formed between two intersecting lines or planes in a two-dimensional or three-dimensional space.
+The dimension of plane angle is:
+$$[{\theta}]$$.
+The SI unit for **plane angle** is: radian with the associated unit label $rad$
+The meaningful precision of plane angle in the drilling context is typically: 0.00017453292519943296 rad
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/PorousMediumPermeabilityDrillingQuantity">
@@ -5955,14 +5786,54 @@ The SI unit for **porous medium permeability** is: square metre with the associa
 The meaningful precision of permeability in the drilling context is typically: 1E-10 m²
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ForceRateOfChangeDrillingQuantity">
+  <rdf:Description rdf:about="http://ddhub.no/PositionDrillingQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
-    <rdfs:comment xml:lang="EN">A force rate of change is the time derivative of a force: $\frac{dF}{dt}$, where $F$ is the mass density and $t$ is time.
-The dimension of force rate of change is:
-$$[LMT^{-3}]$$.
-The SI unit for **force rate of change** is: Newton per second with the associated unit label $\frac{N}{s}$
-The meaningful precision of force rate of change in the drilling context is typically: 0.1 N/s
+    <rdfs:comment xml:lang="EN">Length is a measure of distance.
+The dimension of length is:
+$$[L]$$.
+The SI unit for **length** is: metre with the associated unit label $m$
+The meaningful precision of position in the drilling context is typically: 0.01 m
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PowerDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">Power is the rate at which work is done or energy is transferred over time.
+The dimension of power is:
+$$[L^{2}MT^{-3}]$$.
+The SI unit for **power** is: watt with the associated unit label $W$
+The meaningful precision of power in the drilling context is typically: 0.1 W
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PressureDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">Pressure is the force applied per unit area on a surface.
+The dimension of pressure is:
+$$[ML^{-1}T^{-2}]$$.
+The SI unit for **pressure** is: pascal with the associated unit label $Pa$
+The meaningful precision of pressure in the drilling context is typically: 10000 Pa
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PressureGradientPerLengthDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">A pressure gradient per length is the first derivative of a pressure compared to a distance: $\frac{dp}{ds}$, where $p$ is a pressure and $s$ is a distance.
+The dimension of pressure gradient per length is:
+$$[ML^{-2}T^{-2}]$$.
+The SI unit for **pressure gradient per length** is: pascal per metre with the associated unit label $\frac{Pa}{m}$
+The meaningful precision of pressure gradient per length in the drilling context is typically: 10000 Pa/m
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PressureLossConstantDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">The pressure loss constant is a parameter used to quantify the resistance to flow in a system, such as a pipe or more complex tubulars, which leads to a reduction in pressure. It helps in calculating the pressure drop due to friction or other factors in fluid dynamics.
+The dimension of pressure loss constant is:
+$$[L^{4}]$$.
+The SI unit for **pressure loss constant** is: pressure loss constant SI with the associated unit label $(\frac{m^{3}}{s})^{2} \cdot \frac{(\frac{kg}{m^{3}})}{Pa}$
+The meaningful precision of pressure loss constant in the drilling context is typically: 0.1 (m³/s)²•(kg/m³)/Pa
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/PressureRateOfChangeDrillingQuantity">
@@ -5975,6 +5846,137 @@ The SI unit for **pressure rate of change** is: pascal per second with the assoc
 The meaningful precision of pressure rate of change in the drilling context is typically: 10000 Pa/s
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RandomWalkDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">A random walk is a mathematical concept describing a path consisting of a series of random steps or movements, where each step's direction or magnitude is determined probabilistically. It is used to model various phenomena in fields like physics, finance, and computer science.
+The dimension of random walk is:
+$$[{\theta}T^{-0.5}]$$.
+The SI unit for **random walk** is: radian per square root second with the associated unit label $\frac{rad}{\sqrt{s}}$
+The meaningful precision of random walk in the drilling context is typically: 1E-05 rad/√s
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RateOfPenetrationDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">A velocity is the time derivative of a position or a displacement: $\frac{dx}{dt}$, where $x$ is a position and $t$ is time.
+The dimension of velocity is:
+$$[LT^{-1}]$$.
+The SI unit for **velocity** is: metre per second with the associated unit label $\frac{m}{s}$
+The meaningful precision of rate of penetration in the drilling context is typically: 2.77778E-05 m/min
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ReciprocalLengthSurveyInstrumentDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">A wave number is the number of wave lengths per unit distance.
+The dimension of wave number is:
+$$[L^{-1}]$$.
+The SI unit for **wave number** is: reciprocal metre with the associated unit label $\frac{1}{m}$
+The meaningful precision of reciprocal length related to survey instrument performance models in the drilling context is typically: 1E-08 1/m
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RotationalFrequencyRateOfChangeDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">A frequency rate of change is the time derivative of a frequency: $\frac{df}{dt}$, where $f$ is a frequency and $t$ is time.
+The dimension of frequency rate of change is:
+$$[T^{-2}]$$.
+The SI unit for **frequency rate of change** is: hertz per second with the associated unit label $\frac{Hz}{s}$
+A rotation frequency rate of change is the time derivative of a rotation frequency.
+The meaningful precision of rotational frequency is typically: 0.016666666666666666 Hz/s
+The meaningful precision of rotational frequency rate of change in the drilling context is typically: 0.016666666666666666 Hz/s
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/StickDurationDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">Time is a continuous, measurable progression in which events occur, from the past through the present to the future.
+The dimension of time is:
+$$[T]$$.
+The SI unit for **time** is: second with the associated unit label $s$
+The meaningful precision of stick duration in the drilling context is typically: 0.001 s
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SurfacePoreDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">Area is the measure of the extent of a surface or the size of a two-dimensional shape.
+The dimension of area is:
+$$[L^{2}]$$.
+The SI unit for **area** is: square metre with the associated unit label $m^{2}$
+The meaningful precision of pore surface in the drilling context is typically: 1E-13 m²
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TemperatureDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">Temperature is a measure of the average kinetic energy of particles in a substance, indicating how hot or cold the substance is.
+The dimension of temperature is:
+$$[K]$$.
+The SI unit for **temperature** is: kelvin with the associated unit label $K$
+The meaningful precision of temperature in the drilling context is typically: 0.01 K
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TemperatureGradientPerLengthDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">A temperature gradient per lenth is the first derivative of a temperature compared to a distance: $\frac{dT}{ds}$, where $T$ is a temperature and $s$ is a distance.
+The dimension of temperature gradient per length is:
+$$[KL^{-1}]$$.
+The SI unit for **temperature gradient per length** is: kelvin per metre with the associated unit label $\frac{K}{m}$
+The meaningful precision of temperature gradient per length in the drilling context is typically: 0.001 K/m
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TensionDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">Tension is the pulling or stretching force transmitted axially along an object such as a string, rope, chain, rod, truss member, or other object, so as to stretch or pull apart the object. In terms of force, it is the opposite of compression. Tension might also be described as the action-reaction pair of forces acting at each end of an object.
+The dimension of tension is:
+$$[LMT^{-2}]$$.
+The meaningful precision of tension in the drilling context is typically: 100 N
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ThermalConductivityDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">Thermal conductivity is a material's ability to conduct heat. It measures how efficiently heat is transferred through a material when there is a temperature difference.
+The dimension of thermal conductivity is:
+$$[LMK^{-1}T^{-3}]$$.
+The SI unit for **thermal conductivity** is: watt per metre kelvin with the associated unit label $\frac{W}{m \cdot K}$
+The meaningful precision of thermal conductivity in the drilling context is typically: 0.01 W/m•K
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ThermalConductivityGradientPerTemperatureDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">A thermal conductivity gradient per temperature is the first derivative of a thermal conductivity compared to temperature: $\frac{dk}{dT}$, where $k$ is a thermal conductivity and $T$ is temperature. 
+The dimension of thermal conductivity gradient per temperature is:
+$$[LMK^{-2}T^{-3}]$$.
+The SI unit for **thermal conductivity gradient per temperature** is: watt per metre kelvin per kelvin with the associated unit label $\frac{(\frac{W}{(m \cdot K)}}{K}$
+The meaningful precision of thermal conductivity gradient per temperature in the drilling context is typically: 0.01 (W/(m•K))/K
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TorqueDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">A torque is a measure of the rotational force applied to a body around an axis.
+The dimension of torque is:
+$$[L^{2}MT^{-2}]$$.
+The SI unit for **torque** is: newton metre with the associated unit label $N \cdot m$
+The meaningful precision of torque in the drilling context is typically: 0.1 N•m
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TorqueGradientPerLengthDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">A torque gradient per length is the first derivative of torque compared to a distance: $\frac{d\tau}{ds}$, where $\tau$ is a torque and $s$ is a distance.
+The dimension of torque gradient per length is:
+$$[LMT^{-2}]$$.
+The SI unit for **torque gradient per length** is: newton metre per metre with the associated unit label $\frac{N \cdot m}{m}$
+The meaningful precision of torque gradient per length in the drilling context is typically: 1 N•m/m
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/TorqueRateOfChangeDrillingQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
@@ -5983,6 +5985,66 @@ The dimension of torque rate of change is:
 $$[L^{2}MT^{-3}]$$.
 The SI unit for **torque** is: newton metre per second with the associated unit label $\frac{N \cdot m}{s}$
 The meaningful precision of torque rate of change in the drilling context is typically: 0.1 N•m/s
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/VolumeDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">A volume is the amount of three-dimensional space occupied by a body.
+The dimension of volume is:
+$$[L^{3}]$$.
+The SI unit for **volume** is: cubic metre with the associated unit label $m^{3}$
+The meaningful precision of volume in the drilling context is typically: 0.0001 m³
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/VolumetricFlowrateDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">A volumetric flowrate is the volume of fluid that passes per unit time: $\frac{dV}{dt}$, where $V$ is a volume and $t$ is time.
+The dimension of volumetric flowrate is:
+$$[L^{3}T^{-1}]$$.
+The SI unit for **volumetric flow rate** is: cubic metre per second with the associated unit label $\frac{m^{3}}{s}$
+The meaningful precision of volumetric flowrate in the drilling context is typically: 0.0001 ft³/s
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/VolumetricFlowRateOfChangeDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">A volumetric flow rate of change is the time derivative of a volumetric flowrate: $\frac{dQ}{dt}$, where $Q$ is a volumetric flowrate and $t$ is time.
+The dimension of volumetric flow rate of change is:
+$$[L^{3}T^{-2}]$$.
+The SI unit for **volumetric flow Rate rate of change** is: cubic metre per second squared with the associated unit label $\frac{m^{3}}{s^{2}}$
+The meaningful precision of volumetric flow rate of change in the drilling context is typically: 1E-06 m³/s²
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MomentOfInertiaDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">The moment of inertia is is a measure of an object's resistance to changes in its rotation rate. It is the rotational analog of mass for linear motion. The moment of inertia depends on the mass distribution of an object and the axis of rotation.
+The dimension of moment of inertia is:
+$$[L^{2}M]$$.
+The SI unit for **moment of inertia** is: kilogram metre squared with the associated unit label $kg \cdot m^{2}}$
+The meaningful precision of the moment of inertia in the drilling context is typically: 1E-11 N
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/WeightOnBitDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">A force is an influence that can cause an object to change its velocity unless counterbalanced by other forces.
+The dimension of force is:
+$$[LMT^{-2}]$$.
+The SI unit for **force** is: newton with the associated unit label $N$
+The meaningful precision of weight on bit in the drilling context is typically: 100 N
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MomentOfAreaDrillingQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MeasurableQuantity" />
+    <rdfs:comment xml:lang="EN">A moment of area is a geometrical property of an area which reflects how its points are distributed with regard to an arbitrary axis. It is used in the study of beam bending and deflection in structural engineering.
+The dimension of moment of area is:
+$$[L^{4}]$$.
+The SI unit for **moment of area** is: metres to the fourth power with the associated unit label $m^{4}$
+The meaningful precision of the moment of area in the drilling context is typically: 1E-16 N
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ModelType">
@@ -6989,6 +7051,74 @@ $$[{\theta}L^{-1}]$$.
 The SI unit for **curvature** is: radian per metre with the associated unit label $\frac{rad}{m}$
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DimensionlessQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">As its name indicates, a dimensionless quantity has no dimension:
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DynamicViscosityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">Dynamic viscosity is a measure of a fluid's resistance to shear or flow when a force is applied. It quantifies how thick or thin the fluid is.
+The dimension of dynamic viscosity is:
+$$[ML^{-1}T^{-1}]$$.
+The SI unit for **dynamic viscosity** is: pascal second with the associated unit label $Pa \cdot s$
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ElectricCapacitanceQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">lectric capacitance is the ability of a capacitor or a component to store electrical charge per unit voltage applied across it.
+The dimension of electric capacitance is:
+$$[T^{4}I^{2}M^{-1}L^{-2}]$$.
+The SI unit for **electric capacitance** is: farad with the associated unit label $F$
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ElectricCurrentQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">Electric current is the flow of electric charge through a conductor or circuit.
+The dimension of electric current is:
+$$[I]$$.
+The SI unit for **electric current** is: ampere with the associated unit label $A$
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ElectricResistivityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">Electric resistivity is a material's inherent property that measures how strongly it resists the flow of electric current.
+The dimension of resistivity is:
+$$[L^{3}MI^{-2}T^{-3}]$$.
+The SI unit for **electric resistivity** is: ohm metre with the associated unit label $\Omega \cdot m$
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ElongationGradientPerLengthQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">An elongation gradient per length is the first derivative of an elongation compared to a distance: $\frac{d\epsilon}{ds}$, where $\epsilon$ is an elongation and $s$ is a distance.
+It is dimensionless.
+The SI unit for **elongation gradient per length** is: metre per metre with the associated unit label $\frac{m}{m}$
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/EnergyDensityQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">Energy density is the amount of energy stored per unit volume or mass of a substance or system.
+The dimension of energy density is:
+$$[ML^{-1}T^{-2}]$$.
+The SI unit for **energy density** is: joule per cubic metre with the associated unit label $\frac{J}{m^{3}}$
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/EnergyQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">Energy is the quantitative property that is transferred to a body or to a physical system, recognizable in the performance of work and in the form of heat and light. Energy is a conserved quantity—the law of conservation of energy states that energy can be converted in form, but not created or destroyed; matter and energy may also be converted to one another.
+The dimension of energy is:
+$$[L^{2}MT^{-2}]$$.
+The SI unit for **energy** is: joule with the associated unit label $J$
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/MassDensityGradientPerLengthQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
@@ -7023,56 +7153,6 @@ The SI unit for **mass density** is: kilogram per cubic metre with the associate
 The dimension of mass density rate of change is:
 $$[MT^{-1}L^{-3}]$$.
 The SI unit for **mass density rate of change** is: kilogram per cubic metre per second with the associated unit label $\frac{\frac{kg}{m^{3}}}{s}$
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DimensionlessQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
-    <rdfs:comment xml:lang="EN">As its name indicates, a dimensionless quantity has no dimension:
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/DynamicViscosityQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
-    <rdfs:comment xml:lang="EN">Dynamic viscosity is a measure of a fluid's resistance to shear or flow when a force is applied. It quantifies how thick or thin the fluid is.
-The dimension of dynamic viscosity is:
-$$[ML^{-1}T^{-1}]$$.
-The SI unit for **dynamic viscosity** is: pascal second with the associated unit label $Pa \cdot s$
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ElectricCapacitanceQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
-    <rdfs:comment xml:lang="EN">lectric capacitance is the ability of a capacitor or a component to store electrical charge per unit voltage applied across it.
-The dimension of electric capacitance is:
-$$[T^{4}I^{2}M^{-1}L^{-2}]$$.
-The SI unit for **electric capacitance** is: farad with the associated unit label $F$
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ElectricCurrentQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
-    <rdfs:comment xml:lang="EN">Electric current is the flow of electric charge through a conductor or circuit.
-The dimension of electric current is:
-$$[I]$$.
-The SI unit for **electric current** is: ampere with the associated unit label $A$
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ElongationGradientPerLengthQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
-    <rdfs:comment xml:lang="EN">An elongation gradient per length is the first derivative of an elongation compared to a distance: $\frac{d\epsilon}{ds}$, where $\epsilon$ is an elongation and $s$ is a distance.
-It is dimensionless.
-The SI unit for **elongation gradient per length** is: metre per metre with the associated unit label $\frac{m}{m}$
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/EnergyDensityQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
-    <rdfs:comment xml:lang="EN">Energy density is the amount of energy stored per unit volume or mass of a substance or system.
-The dimension of energy density is:
-$$[ML^{-1}T^{-2}]$$.
-The SI unit for **energy density** is: joule per cubic metre with the associated unit label $\frac{J}{m^{3}}$
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ForceGradientPerLengthQuantity">
@@ -7271,15 +7351,6 @@ $$[K]$$.
 The SI unit for **relative temperature** is: kelvin with the associated unit label $K$
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ElectricResistivityQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
-    <rdfs:comment xml:lang="EN">Electric resistivity is a material's inherent property that measures how strongly it resists the flow of electric current.
-The dimension of resistivity is:
-$$[L^{3}MI^{-2}T^{-3}]$$.
-The SI unit for **electric resistivity** is: ohm metre with the associated unit label $\Omega \cdot m$
-</rdfs:comment>
-  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/SolidAngleQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
@@ -7433,15 +7504,6 @@ $$[M]$$.
 The SI unit for **mass** is: kilogram with the associated unit label $kg$
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/EnergyQuantity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
-    <rdfs:comment xml:lang="EN">Energy is the quantitative property that is transferred to a body or to a physical system, recognizable in the performance of work and in the form of heat and light. Energy is a conserved quantity—the law of conservation of energy states that energy can be converted in form, but not created or destroyed; matter and energy may also be converted to one another.
-The dimension of energy is:
-$$[L^{2}MT^{-2}]$$.
-The SI unit for **energy** is: joule with the associated unit label $J$
-</rdfs:comment>
-  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ForceRateOfChangeQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
@@ -7469,13 +7531,22 @@ $$[L^{2}MT^{-3}]$$.
 The SI unit for **torque** is: newton metre per second with the associated unit label $\frac{N \cdot m}{s}$
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/GravitationalLoadQuantity">
+  <rdf:Description rdf:about="http://ddhub.no/MomentOfAreaQuantity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
-    <rdfs:comment xml:lang="EN">Mass can be experimentally defined as a measure of the body's inertia, meaning the resistance to acceleration (change of velocity) when a net force is applied. The object's mass also determines the strength of its gravitational attraction to other bodies.
-The dimension of mass is:
-$$[M]$$.
-The SI unit for **mass** is: kilogram with the associated unit label $kg$
+    <rdfs:comment xml:lang="EN">A moment of area is a geometrical property of an area which reflects how its points are distributed with regard to an arbitrary axis. It is used in the study of beam bending and deflection in structural engineering.
+The dimension of moment of area is:
+$$[L^{4}]$$.
+The SI unit for **moment of area** is: metres to the fourth power with the associated unit label $m^{4}$
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MomentOfInertiaQuantity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Quantity" />
+    <rdfs:comment xml:lang="EN">The moment of inertia is is a measure of an object's resistance to changes in its rotation rate. It is the rotational analog of mass for linear motion. The moment of inertia depends on the mass distribution of an object and the axis of rotation.
+The dimension of moment of inertia is:
+$$[L^{2}M]$$.
+The SI unit for **moment of inertia** is: kilogram metre squared with the associated unit label $kg \cdot m^{2}}$
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/HydraulicConductivityQuantity">
@@ -8755,6 +8826,172 @@ Degree = 180.0 / System.Math.PI
 Minute = 60.0
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RevolutionPerSecond">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in revolution per second
+[SI] is the value in SI
+a = Unit / Revolution, i.e., 0.15915494309189535
+and
+Unit = 1.0
+Revolution = 2.0 * System.Math.PI
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RevolutionPerMinute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in revolution per minute
+[SI] is the value in SI
+a = Minute / Revolution, i.e., 9.549296585513721
+and
+Minute = 60.0
+Revolution = 2.0 * System.Math.PI
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RevolutionPerHour">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in revolution per hour
+[SI] is the value in SI
+a = Hour / Revolution, i.e., 572.9577951308232
+and
+Hour = 60.0 * Minute
+Revolution = 2.0 * System.Math.PI
+Minute = 60.0
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ThousandRevolutionPerSecond">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in thousand revolution per second
+[SI] is the value in SI
+a = Unit / (Kilo*Revolution), i.e., 0.00015915494309189535
+and
+Unit = 1.0
+Kilo = 1000.0
+Revolution = 2.0 * System.Math.PI
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ThousandRevolutionPerMinute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in thousand revolution per minute
+[SI] is the value in SI
+a = Minute / (Kilo*Revolution), i.e., 0.009549296585513721
+and
+Minute = 60.0
+Kilo = 1000.0
+Revolution = 2.0 * System.Math.PI
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ThousandRevolutionPerHour">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in thousand revolution per hour
+[SI] is the value in SI
+a = Hour / (Kilo*Revolution), i.e., 0.5729577951308232
+and
+Hour = 60.0 * Minute
+Kilo = 1000.0
+Revolution = 2.0 * System.Math.PI
+Minute = 60.0
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/StrokePerSecond">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in stroke per second
+[SI] is the value in SI
+a = Unit / Revolution, i.e., 0.15915494309189535
+and
+Unit = 1.0
+Revolution = 2.0 * System.Math.PI
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/StrokePerMinute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in stroke per minute
+[SI] is the value in SI
+a = Minute / Revolution, i.e., 9.549296585513721
+and
+Minute = 60.0
+Revolution = 2.0 * System.Math.PI
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/StrokePerHour">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in stroke per hour
+[SI] is the value in SI
+a = Hour / Revolution, i.e., 572.9577951308232
+and
+Hour = 60.0 * Minute
+Revolution = 2.0 * System.Math.PI
+Minute = 60.0
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ThousandStrokePerSecond">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in thousand stroke per second
+[SI] is the value in SI
+a = Unit / (Kilo*Revolution), i.e., 0.00015915494309189535
+and
+Unit = 1.0
+Kilo = 1000.0
+Revolution = 2.0 * System.Math.PI
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ThousandStrokePerMinute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in thousand stroke per minute
+[SI] is the value in SI
+a = Minute / (Kilo*Revolution), i.e., 0.009549296585513721
+and
+Minute = 60.0
+Kilo = 1000.0
+Revolution = 2.0 * System.Math.PI
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ThousandStrokePerHour">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in thousand stroke per hour
+[SI] is the value in SI
+a = Hour / (Kilo*Revolution), i.e., 0.5729577951308232
+and
+Hour = 60.0 * Minute
+Kilo = 1000.0
+Revolution = 2.0 * System.Math.PI
+Minute = 60.0
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/SquareMetre">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
@@ -9345,847 +9582,6 @@ Foot = 12.0 * Inch
 Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/KilogramPerCubicMetrePerMetre">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">No conversion necessary as the unit choice is SI
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SpecificGravityPerMetre">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in specific gravity per metre
-[SI] is the value in SI
-a = SpecificGavity4degC, i.e., 0.001000028000784022
-and
-SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SpecificGravityPer10Metre">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in specific gravity per 10 metre
-[SI] is the value in SI
-a = Deca*SpecificGavity4degC, i.e., 0.01000028000784022
-and
-Deca = 10.0
-SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SpecificGravityPer30Metre">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in specific gravity per 30 metre
-[SI] is the value in SI
-a = 3.0*Deca*SpecificGavity4degC, i.e., 0.03000084002352066
-and
-Deca = 10.0
-SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SpecificGravityPer100Metre">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in specific gravity per 100 metre
-[SI] is the value in SI
-a = Hecto*SpecificGavity4degC, i.e., 0.10000280007840219
-and
-Hecto = 100.0
-SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/GramPerCubicCentimetrePer100Metre">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre per 100 metre
-[SI] is the value in SI
-a = Centi*Centi*Centi*Hecto/Milli, i.e., 0.10000000000000002
-and
-Centi = 0.01
-Hecto = 100.0
-Milli = 0.001
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUkPerFoot">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK) per foot
-[SI] is the value in SI
-a = GallonUK*Foot/Pound, i.e., 0.00305483143819196
-and
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUkPer30Foot">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK) per 30 foot
-[SI] is the value in SI
-a = GallonUK*30.0*Foot/Pound, i.e., 0.0916449431457588
-and
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUkPer100Foot">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK) per 100 foot
-[SI] is the value in SI
-a = GallonUK*100.0*Foot/Pound, i.e., 0.305483143819196
-and
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUsPerFoot">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US) per foot
-[SI] is the value in SI
-a = GallonUS*Foot/Pound, i.e., 0.0025436792769754917
-and
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUsPer30Foot">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US) per 30 foot
-[SI] is the value in SI
-a = GallonUS*30.0*Foot/Pound, i.e., 0.07631037830926475
-and
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUsPer100Foot">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US) per 100 foot
-[SI] is the value in SI
-a = GallonUS*100.0*Foot/Pound, i.e., 0.2543679276975492
-and
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/KilogramPerCubicMetrePer10Metre">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in kilogram per cubic metre per 10 metre
-[SI] is the value in SI
-a = Deca/Unit, i.e., 10
-and
-Deca = 10.0
-Unit = 1.0
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/KilogramPerCubicMetrePer30Metre">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in kilogram per cubic metre per 30 metre
-[SI] is the value in SI
-a = 3.0 *Deca/Unit, i.e., 30
-and
-Deca = 10.0
-Unit = 1.0
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/KilogramPerCubicMetrePer100Metre">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in kilogram per cubic metre per 100 metre
-[SI] is the value in SI
-a = Hecto/Unit, i.e., 100
-and
-Hecto = 100.0
-Unit = 1.0
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/GramPerCubicCentimetrePerMetre">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre per metre
-[SI] is the value in SI
-a = Centi*Centi*Centi/Milli, i.e., 0.0010000000000000002
-and
-Centi = 0.01
-Milli = 0.001
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/GramPerCubicCentimetrePer10Metre">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre per 10 metre
-[SI] is the value in SI
-a = Centi*Centi*Centi*Deca/Milli, i.e., 0.010000000000000002
-and
-Centi = 0.01
-Deca = 10.0
-Milli = 0.001
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/GramPerCubicCentimetrePer30Metre">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre per 30 metre
-[SI] is the value in SI
-a = Centi*Centi*Centi*3.0*Deca/Milli, i.e., 0.030000000000000002
-and
-Centi = 0.01
-Deca = 10.0
-Milli = 0.001
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicFootPerFoot">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per cubic foot per foot
-[SI] is the value in SI
-a = Foot*Foot*Foot*Foot/Pound, i.e., 0.019028042383608865
-and
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicFootPer30Foot">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per cubic foot per 30 foot
-[SI] is the value in SI
-a = Foot*Foot*Foot*30.0*Foot/Pound, i.e., 0.570841271508266
-and
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicFootPer100Foot">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per cubic foot per 100 foot
-[SI] is the value in SI
-a = Foot*Foot*Foot*100.0*Foot/Pound, i.e., 1.902804238360887
-and
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicInchPerFoot">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per cubic inch per foot
-[SI] is the value in SI
-a = Inch*Inch*Inch*Foot/Pound, i.e., 1.1011598601625506E-05
-and
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicInchPer30Foot">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per cubic inch per 30 foot
-[SI] is the value in SI
-a = Inch*Inch*Inch*30.0*Foot/Pound, i.e., 0.00033034795804876514
-and
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicInchPer100Foot">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per cubic inch per 100 foot
-[SI] is the value in SI
-a = Inch*Inch*Inch*100.0*Foot/Pound, i.e., 0.0011011598601625506
-and
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicYardPerFoot">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per cubic yard per foot
-[SI] is the value in SI
-a = Yard*Yard*Yard*Foot/Pound, i.e., 0.5137571443574394
-and
-Yard = 3.0 * Foot
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicYardPer30Foot">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per cubic yard per 30 foot
-[SI] is the value in SI
-a = Yard*Yard*Yard*30.0*Foot/Pound, i.e., 15.412714330723183
-and
-Yard = 3.0 * Foot
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicYardPer100Foot">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per cubic yard per 100 foot
-[SI] is the value in SI
-a = Yard*Yard*Yard*100.0*Foot/Pound, i.e., 51.37571443574393
-and
-Yard = 3.0 * Foot
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/KilogramPerCubicMetrePerKelvin">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">No conversion necessary as the unit choice is SI
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SpecificGravityPerCelsius">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in specific gravity per celsius
-[SI] is the value in SI
-a = SpecificGavity4degC, i.e., 0.001000028000784022
-and
-SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/GramPerCubicCentimetrePerCelsius">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre per celsius
-[SI] is the value in SI
-a = Centi*Centi*Centi/Milli, i.e., 0.0010000000000000002
-and
-Centi = 0.01
-Milli = 0.001
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUkPerCelsius">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK) per celsius
-[SI] is the value in SI
-a = GallonUK/Pound, i.e., 0.010022412854960501
-and
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUsPerFahrenheit">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US) per fahrenheit
-[SI] is the value in SI
-a = GallonUS*FahrenheitSlope/Pound, i.e., 0.004636335806677406
-and
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUkPerFahrenheit">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK) per fahrenheit
-[SI] is the value in SI
-a = GallonUK*FahrenheitSlope/Pound, i.e., 0.005568007141644723
-and
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUsPerCelsius">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US) per celsius
-[SI] is the value in SI
-a = GallonUS/Pound, i.e., 0.00834540445201933
-and
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicFootPerCelsius">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per cubic foot per celsius
-[SI] is the value in SI
-a = Foot*Foot*Foot/Pound, i.e., 0.06242796057614459
-and
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicFootPerFahrenheit">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per cubic foot per fahrenheit
-[SI] is the value in SI
-a = Foot*Foot*Foot*FahrenheitSlope/Pound, i.e., 0.03468220032008033
-and
-Foot = 12.0 * Inch
-FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicInchPerCelsius">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per cubic inch per celsius
-[SI] is the value in SI
-a = Inch*Inch*Inch/Pound, i.e., 3.612729200008369E-05
-and
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicInchPerFahrenheit">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per cubic inch per fahrenheit
-[SI] is the value in SI
-a = Inch*Inch*Inch*FahrenheitSlope/Pound, i.e., 2.0070717777824268E-05
-and
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicYardPerCelsius">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per cubic yard per celsius
-[SI] is the value in SI
-a = Yard*Yard*Yard/Pound, i.e., 1.6855549355559039
-and
-Yard = 3.0 * Foot
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Foot = 12.0 * Inch
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicYeardPerFahrenheit">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per cubic yeard per fahrenheit
-[SI] is the value in SI
-a = Yard*Yard*Yard*FahrenheitSlope/Pound, i.e., 0.9364194086421688
-and
-Yard = 3.0 * Foot
-FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Foot = 12.0 * Inch
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/KilogramPerCubicMetre">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">No conversion necessary as the unit choice is SI
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/GramPerCubicMetre">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in gram per cubic metre
-[SI] is the value in SI
-a = 1.0/Milli, i.e., 1000
-and
-Milli = 0.001
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SpecificGravity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in specific gravity
-[SI] is the value in SI
-a = 1.0/SpecificGavity4degC, i.e., 999.972
-and
-SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/GramPerCubicCentimetre">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre
-[SI] is the value in SI
-a = Centi*Centi*Centi / Milli, i.e., 0.0010000000000000002
-and
-Centi = 0.01
-Milli = 0.001
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUk">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK)
-[SI] is the value in SI
-a = 1.0/PPGUK, i.e., 0.010022412854960501
-and
-PPGUK = Pound / GallonUK
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUs">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US)
-[SI] is the value in SI
-a = 1.0/PPGUS, i.e., 0.00834540445201933
-and
-PPGUS = Pound / GallonUS
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicFoot">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per cubic foot
-[SI] is the value in SI
-a = Foot*Foot*Foot/Pound, i.e., 0.06242796057614459
-and
-Foot = 12.0 * Inch
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicInch">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per cubic inch
-[SI] is the value in SI
-a = Inch*Inch*Inch/Pound, i.e., 3.612729200008369E-05
-and
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicYard">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per cubic yard
-[SI] is the value in SI
-a = Yard*Yard*Yard/Pound, i.e., 1.6855549355559039
-and
-Yard = 3.0 * Foot
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-Foot = 12.0 * Inch
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/KilogramPerCubicMetrePerSecond">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">No conversion necessary as the unit choice is SI
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SpecificGravityPerSecond">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in specific gravity per second
-[SI] is the value in SI
-a = 1.0/WaterDensity4degC1Atm, i.e., 0.001000028000784022
-and
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SpecificGravityPerMinute">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in specific gravity per minute
-[SI] is the value in SI
-a = Minute / WaterDensity4degC1Atm, i.e., 0.06000168004704132
-and
-Minute = 60.0
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/SpecificGravityPerHour">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in specific gravity per hour
-[SI] is the value in SI
-a = Hour / WaterDensity4degC1Atm, i.e., 3.600100802822479
-and
-Hour = 60.0 * Minute
-WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
-Minute = 60.0
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/GramPerCubicCentimetrePerSecond">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre per second
-[SI] is the value in SI
-a = Milli, i.e., 0.001
-and
-Milli = 0.001
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/GramPerCubicCentimetrePerMinute">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre per minute
-[SI] is the value in SI
-a = Minute * Milli, i.e., 0.06
-and
-Minute = 60.0
-Milli = 0.001
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/GramPerCubicCentimetrePerHour">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in gram per cubic centimetre per hour
-[SI] is the value in SI
-a = Hour *Milli, i.e., 3.6
-and
-Hour = 60.0 * Minute
-Milli = 0.001
-Minute = 60.0
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUkPerSecond">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK) per second
-[SI] is the value in SI
-a = 1.0 / PPGUK, i.e., 0.010022412854960501
-and
-PPGUK = Pound / GallonUK
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUkPerMinute">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK) per minute
-[SI] is the value in SI
-a = Minute / PPGUK, i.e., 0.6013447712976301
-and
-Minute = 60.0
-PPGUK = Pound / GallonUK
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUkPerHour">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per gallon (UK) per hour
-[SI] is the value in SI
-a = Hour / PPGUK, i.e., 36.08068627785781
-and
-Hour = 60.0 * Minute
-PPGUK = Pound / GallonUK
-Minute = 60.0
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUsPerSecond">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US) per second
-[SI] is the value in SI
-a = 1.0 /PPGUS, i.e., 0.00834540445201933
-and
-PPGUS = Pound / GallonUS
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUsPerMinute">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US) per minute
-[SI] is the value in SI
-a = Minute / PPGUS, i.e., 0.5007242671211598
-and
-Minute = 60.0
-PPGUS = Pound / GallonUS
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUsPerHour">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in pound per gallon (US) per hour
-[SI] is the value in SI
-a = Hour / PPGUS, i.e., 30.043456027269592
-and
-Hour = 60.0 * Minute
-PPGUS = Pound / GallonUS
-Minute = 60.0
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-</rdfs:comment>
-  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Dimensionless">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
@@ -10544,6 +9940,48 @@ where
 a = C_cgs/10.0, i.e., 2997924580
 and
 C_cgs = 2.99792458e10 reference: https://en.wikipedia.org/wiki/Statampere
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/OhmMetre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">No conversion necessary as the unit choice is SI
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/KiloOhmMetre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in kilo ohm metre
+[SI] is the value in SI
+a = 1.0/Kilo, i.e., 0.001
+and
+Kilo = 1000.0
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MegaOhmMetre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in mega ohm metre
+[SI] is the value in SI
+a = 1.0/Mega, i.e., 1E-06
+and
+Mega = 1e6
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GigaOhmMetre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in giga ohm metre
+[SI] is the value in SI
+a = 1.0/Giga, i.e., 1E-09
+and
+Giga = 1e9
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Volt">
@@ -11532,6 +10970,952 @@ BTU = 1054.35 reference: https://en.wikipedia.org/wiki/British_thermal_unit
 Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Joule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">No conversion necessary as the unit choice is SI
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Kilojoule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in kilojoule
+[SI] is the value in SI
+a = 1.0/Kilo, i.e., 0.001
+and
+Kilo = 1000.0
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Megajoule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in megajoule
+[SI] is the value in SI
+a = 1.0/Mega, i.e., 1E-06
+and
+Mega = 1e6
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Gigajoule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in gigajoule
+[SI] is the value in SI
+a = 1.0/Giga, i.e., 1E-09
+and
+Giga = 1e9
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Calorie">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in calorie
+[SI] is the value in SI
+a = 1.0/Calorie, i.e., 0.2390057361376673
+and
+Calorie = 4.184 reference: https://en.wikipedia.org/wiki/Calorie
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Kilocalorie">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in kilocalorie
+[SI] is the value in SI
+a = 1.0/(Kilo * Calorie), i.e., 0.0002390057361376673
+and
+Kilo = 1000.0
+Calorie = 4.184 reference: https://en.wikipedia.org/wiki/Calorie
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/BritishThermalUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in british thermal unit
+[SI] is the value in SI
+a = 1.0/BTU, i.e., 0.0009484516526770049
+and
+BTU = 1054.35 reference: https://en.wikipedia.org/wiki/British_thermal_unit
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/KiloBritishThermalUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in kilo british thermal unit
+[SI] is the value in SI
+a = 1.0/(Kilo * BTU), i.e., 9.484516526770048E-07
+and
+Kilo = 1000.0
+BTU = 1054.35 reference: https://en.wikipedia.org/wiki/British_thermal_unit
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MegaBritishThermalUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in mega british thermal unit
+[SI] is the value in SI
+a = 1.0/(Mega * BTU), i.e., 9.48451652677005E-10
+and
+Mega = 1e6
+BTU = 1054.35 reference: https://en.wikipedia.org/wiki/British_thermal_unit
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/KilogramPerCubicMetrePerMetre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">No conversion necessary as the unit choice is SI
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SpecificGravityPerMetre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in specific gravity per metre
+[SI] is the value in SI
+a = SpecificGavity4degC, i.e., 0.001000028000784022
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SpecificGravityPer10Metre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in specific gravity per 10 metre
+[SI] is the value in SI
+a = Deca*SpecificGavity4degC, i.e., 0.01000028000784022
+and
+Deca = 10.0
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SpecificGravityPer30Metre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in specific gravity per 30 metre
+[SI] is the value in SI
+a = 3.0*Deca*SpecificGavity4degC, i.e., 0.03000084002352066
+and
+Deca = 10.0
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SpecificGravityPer100Metre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in specific gravity per 100 metre
+[SI] is the value in SI
+a = Hecto*SpecificGavity4degC, i.e., 0.10000280007840219
+and
+Hecto = 100.0
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GramPerCubicCentimetrePer100Metre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per 100 metre
+[SI] is the value in SI
+a = Centi*Centi*Centi*Hecto/Milli, i.e., 0.10000000000000002
+and
+Centi = 0.01
+Hecto = 100.0
+Milli = 0.001
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUkPerFoot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per foot
+[SI] is the value in SI
+a = GallonUK*Foot/Pound, i.e., 0.00305483143819196
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUkPer30Foot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per 30 foot
+[SI] is the value in SI
+a = GallonUK*30.0*Foot/Pound, i.e., 0.0916449431457588
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUkPer100Foot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per 100 foot
+[SI] is the value in SI
+a = GallonUK*100.0*Foot/Pound, i.e., 0.305483143819196
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUsPerFoot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per foot
+[SI] is the value in SI
+a = GallonUS*Foot/Pound, i.e., 0.0025436792769754917
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUsPer30Foot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per 30 foot
+[SI] is the value in SI
+a = GallonUS*30.0*Foot/Pound, i.e., 0.07631037830926475
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUsPer100Foot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per 100 foot
+[SI] is the value in SI
+a = GallonUS*100.0*Foot/Pound, i.e., 0.2543679276975492
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/KilogramPerCubicMetrePer10Metre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per 10 metre
+[SI] is the value in SI
+a = Deca/Unit, i.e., 10
+and
+Deca = 10.0
+Unit = 1.0
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/KilogramPerCubicMetrePer30Metre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per 30 metre
+[SI] is the value in SI
+a = 3.0 *Deca/Unit, i.e., 30
+and
+Deca = 10.0
+Unit = 1.0
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/KilogramPerCubicMetrePer100Metre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per 100 metre
+[SI] is the value in SI
+a = Hecto/Unit, i.e., 100
+and
+Hecto = 100.0
+Unit = 1.0
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GramPerCubicCentimetrePerMetre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per metre
+[SI] is the value in SI
+a = Centi*Centi*Centi/Milli, i.e., 0.0010000000000000002
+and
+Centi = 0.01
+Milli = 0.001
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GramPerCubicCentimetrePer10Metre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per 10 metre
+[SI] is the value in SI
+a = Centi*Centi*Centi*Deca/Milli, i.e., 0.010000000000000002
+and
+Centi = 0.01
+Deca = 10.0
+Milli = 0.001
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GramPerCubicCentimetrePer30Metre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per 30 metre
+[SI] is the value in SI
+a = Centi*Centi*Centi*3.0*Deca/Milli, i.e., 0.030000000000000002
+and
+Centi = 0.01
+Deca = 10.0
+Milli = 0.001
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicFootPerFoot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per foot
+[SI] is the value in SI
+a = Foot*Foot*Foot*Foot/Pound, i.e., 0.019028042383608865
+and
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicFootPer30Foot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per 30 foot
+[SI] is the value in SI
+a = Foot*Foot*Foot*30.0*Foot/Pound, i.e., 0.570841271508266
+and
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicFootPer100Foot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per 100 foot
+[SI] is the value in SI
+a = Foot*Foot*Foot*100.0*Foot/Pound, i.e., 1.902804238360887
+and
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicInchPerFoot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per foot
+[SI] is the value in SI
+a = Inch*Inch*Inch*Foot/Pound, i.e., 1.1011598601625506E-05
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicInchPer30Foot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per 30 foot
+[SI] is the value in SI
+a = Inch*Inch*Inch*30.0*Foot/Pound, i.e., 0.00033034795804876514
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicInchPer100Foot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per 100 foot
+[SI] is the value in SI
+a = Inch*Inch*Inch*100.0*Foot/Pound, i.e., 0.0011011598601625506
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicYardPerFoot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per foot
+[SI] is the value in SI
+a = Yard*Yard*Yard*Foot/Pound, i.e., 0.5137571443574394
+and
+Yard = 3.0 * Foot
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicYardPer30Foot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per 30 foot
+[SI] is the value in SI
+a = Yard*Yard*Yard*30.0*Foot/Pound, i.e., 15.412714330723183
+and
+Yard = 3.0 * Foot
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicYardPer100Foot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per 100 foot
+[SI] is the value in SI
+a = Yard*Yard*Yard*100.0*Foot/Pound, i.e., 51.37571443574393
+and
+Yard = 3.0 * Foot
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/KilogramPerCubicMetrePerKelvin">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">No conversion necessary as the unit choice is SI
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SpecificGravityPerCelsius">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in specific gravity per celsius
+[SI] is the value in SI
+a = SpecificGavity4degC, i.e., 0.001000028000784022
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GramPerCubicCentimetrePerCelsius">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per celsius
+[SI] is the value in SI
+a = Centi*Centi*Centi/Milli, i.e., 0.0010000000000000002
+and
+Centi = 0.01
+Milli = 0.001
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUkPerCelsius">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per celsius
+[SI] is the value in SI
+a = GallonUK/Pound, i.e., 0.010022412854960501
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUsPerFahrenheit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per fahrenheit
+[SI] is the value in SI
+a = GallonUS*FahrenheitSlope/Pound, i.e., 0.004636335806677406
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUkPerFahrenheit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per fahrenheit
+[SI] is the value in SI
+a = GallonUK*FahrenheitSlope/Pound, i.e., 0.005568007141644723
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUsPerCelsius">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per celsius
+[SI] is the value in SI
+a = GallonUS/Pound, i.e., 0.00834540445201933
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicFootPerCelsius">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per celsius
+[SI] is the value in SI
+a = Foot*Foot*Foot/Pound, i.e., 0.06242796057614459
+and
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicFootPerFahrenheit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per fahrenheit
+[SI] is the value in SI
+a = Foot*Foot*Foot*FahrenheitSlope/Pound, i.e., 0.03468220032008033
+and
+Foot = 12.0 * Inch
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicInchPerCelsius">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per celsius
+[SI] is the value in SI
+a = Inch*Inch*Inch/Pound, i.e., 3.612729200008369E-05
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicInchPerFahrenheit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per fahrenheit
+[SI] is the value in SI
+a = Inch*Inch*Inch*FahrenheitSlope/Pound, i.e., 2.0070717777824268E-05
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicYardPerCelsius">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per celsius
+[SI] is the value in SI
+a = Yard*Yard*Yard/Pound, i.e., 1.6855549355559039
+and
+Yard = 3.0 * Foot
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicYeardPerFahrenheit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per cubic yeard per fahrenheit
+[SI] is the value in SI
+a = Yard*Yard*Yard*FahrenheitSlope/Pound, i.e., 0.9364194086421688
+and
+Yard = 3.0 * Foot
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/KilogramPerCubicMetre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">No conversion necessary as the unit choice is SI
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GramPerCubicMetre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in gram per cubic metre
+[SI] is the value in SI
+a = 1.0/Milli, i.e., 1000
+and
+Milli = 0.001
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SpecificGravity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in specific gravity
+[SI] is the value in SI
+a = 1.0/SpecificGavity4degC, i.e., 999.972
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GramPerCubicCentimetre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre
+[SI] is the value in SI
+a = Centi*Centi*Centi / Milli, i.e., 0.0010000000000000002
+and
+Centi = 0.01
+Milli = 0.001
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUk">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK)
+[SI] is the value in SI
+a = 1.0/PPGUK, i.e., 0.010022412854960501
+and
+PPGUK = Pound / GallonUK
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUs">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US)
+[SI] is the value in SI
+a = 1.0/PPGUS, i.e., 0.00834540445201933
+and
+PPGUS = Pound / GallonUS
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicFoot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot
+[SI] is the value in SI
+a = Foot*Foot*Foot/Pound, i.e., 0.06242796057614459
+and
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicInch">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch
+[SI] is the value in SI
+a = Inch*Inch*Inch/Pound, i.e., 3.612729200008369E-05
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerCubicYard">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard
+[SI] is the value in SI
+a = Yard*Yard*Yard/Pound, i.e., 1.6855549355559039
+and
+Yard = 3.0 * Foot
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/KilogramPerCubicMetrePerSecond">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">No conversion necessary as the unit choice is SI
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SpecificGravityPerSecond">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in specific gravity per second
+[SI] is the value in SI
+a = 1.0/WaterDensity4degC1Atm, i.e., 0.001000028000784022
+and
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SpecificGravityPerMinute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in specific gravity per minute
+[SI] is the value in SI
+a = Minute / WaterDensity4degC1Atm, i.e., 0.06000168004704132
+and
+Minute = 60.0
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SpecificGravityPerHour">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in specific gravity per hour
+[SI] is the value in SI
+a = Hour / WaterDensity4degC1Atm, i.e., 3.600100802822479
+and
+Hour = 60.0 * Minute
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+Minute = 60.0
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GramPerCubicCentimetrePerSecond">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per second
+[SI] is the value in SI
+a = Milli, i.e., 0.001
+and
+Milli = 0.001
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GramPerCubicCentimetrePerMinute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per minute
+[SI] is the value in SI
+a = Minute * Milli, i.e., 0.06
+and
+Minute = 60.0
+Milli = 0.001
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GramPerCubicCentimetrePerHour">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per hour
+[SI] is the value in SI
+a = Hour *Milli, i.e., 3.6
+and
+Hour = 60.0 * Minute
+Milli = 0.001
+Minute = 60.0
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUkPerSecond">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per second
+[SI] is the value in SI
+a = 1.0 / PPGUK, i.e., 0.010022412854960501
+and
+PPGUK = Pound / GallonUK
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUkPerMinute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per minute
+[SI] is the value in SI
+a = Minute / PPGUK, i.e., 0.6013447712976301
+and
+Minute = 60.0
+PPGUK = Pound / GallonUK
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUkPerHour">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per hour
+[SI] is the value in SI
+a = Hour / PPGUK, i.e., 36.08068627785781
+and
+Hour = 60.0 * Minute
+PPGUK = Pound / GallonUK
+Minute = 60.0
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUsPerSecond">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per second
+[SI] is the value in SI
+a = 1.0 /PPGUS, i.e., 0.00834540445201933
+and
+PPGUS = Pound / GallonUS
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUsPerMinute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per minute
+[SI] is the value in SI
+a = Minute / PPGUS, i.e., 0.5007242671211598
+and
+Minute = 60.0
+PPGUS = Pound / GallonUS
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundPerGallonUsPerHour">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per hour
+[SI] is the value in SI
+a = Hour / PPGUS, i.e., 30.043456027269592
+and
+Hour = 60.0 * Minute
+PPGUS = Pound / GallonUS
+Minute = 60.0
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/NewtonPerMetre">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
@@ -11941,6 +12325,20 @@ KilogramForce = 1.0 * G reference: https://en.wikipedia.org/wiki/Kilogram-force
 G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TonneForce">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in tonne force
+[SI] is the value in SI
+a = 1.0/(Kilo*KilogramForce), i.e., 0.00010197162129779283
+and
+Kilo = 1000.0
+KilogramForce = 1.0 * G reference: https://en.wikipedia.org/wiki/Kilogram-force
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/PoundForce">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
@@ -12070,31 +12468,6 @@ where
 a = Unit, i.e., 1
 and
 Unit = 1.0
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/StrokePerSecond">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in stroke per second
-[SI] is the value in SI
-a = Unit, i.e., 1
-and
-Unit = 1.0
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/StrokePerHour">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in stroke per hour
-[SI] is the value in SI
-a = Hour, i.e., 3600
-and
-Hour = 60.0 * Minute
-Minute = 60.0
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/RotationPerHour">
@@ -14417,48 +14790,6 @@ where
 a = 1.0/FahrenheitSlope, i.e., 1.7999999999999998
 and
 FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/OhmMetre">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">No conversion necessary as the unit choice is SI
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/KiloOhmMetre">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in kilo ohm metre
-[SI] is the value in SI
-a = 1.0/Kilo, i.e., 0.001
-and
-Kilo = 1000.0
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MegaOhmMetre">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in mega ohm metre
-[SI] is the value in SI
-a = 1.0/Mega, i.e., 1E-06
-and
-Mega = 1e6
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/GigaOhmMetre">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in giga ohm metre
-[SI] is the value in SI
-a = 1.0/Giga, i.e., 1E-09
-and
-Giga = 1e9
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Steradian">
@@ -18207,111 +18538,6 @@ and
 Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Joule">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">No conversion necessary as the unit choice is SI
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Kilojoule">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in kilojoule
-[SI] is the value in SI
-a = 1.0/Kilo, i.e., 0.001
-and
-Kilo = 1000.0
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Megajoule">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in megajoule
-[SI] is the value in SI
-a = 1.0/Mega, i.e., 1E-06
-and
-Mega = 1e6
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Gigajoule">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in gigajoule
-[SI] is the value in SI
-a = 1.0/Giga, i.e., 1E-09
-and
-Giga = 1e9
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Calorie">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in calorie
-[SI] is the value in SI
-a = 1.0/Calorie, i.e., 0.2390057361376673
-and
-Calorie = 4.184 reference: https://en.wikipedia.org/wiki/Calorie
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/Kilocalorie">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in kilocalorie
-[SI] is the value in SI
-a = 1.0/(Kilo * Calorie), i.e., 0.0002390057361376673
-and
-Kilo = 1000.0
-Calorie = 4.184 reference: https://en.wikipedia.org/wiki/Calorie
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/BritishThermalUnit">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in british thermal unit
-[SI] is the value in SI
-a = 1.0/BTU, i.e., 0.0009484516526770049
-and
-BTU = 1054.35 reference: https://en.wikipedia.org/wiki/British_thermal_unit
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/KiloBritishThermalUnit">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in kilo british thermal unit
-[SI] is the value in SI
-a = 1.0/(Kilo * BTU), i.e., 9.484516526770048E-07
-and
-Kilo = 1000.0
-BTU = 1054.35 reference: https://en.wikipedia.org/wiki/British_thermal_unit
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/MegaBritishThermalUnit">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
-    <rdfs:comment xml:lang="EN">[v] = a * [SI]
-where
-[v] is the value in mega british thermal unit
-[SI] is the value in SI
-a = 1.0/(Mega * BTU), i.e., 9.48451652677005E-10
-and
-Mega = 1e6
-BTU = 1054.35 reference: https://en.wikipedia.org/wiki/British_thermal_unit
-</rdfs:comment>
-  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/NewtonPerSecond">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
@@ -20106,6 +20332,73 @@ Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
 G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MetresToTheFourthPower">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">No conversion necessary as the unit choice is SI
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/CentimetresToTheFourthPower">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in centimetres to the fourth power
+[SI] is the value in SI
+a = 1.0/(Centi*Centi*Centi*Centi), i.e., 99999999.99999999
+and
+Centi = 0.01
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/InchesToTheFourthPower">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in inches to the fourth power
+[SI] is the value in SI
+a = 1.0/(Inch*Inch*Inch*Inch), i.e., 2402509.6100288304
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/FeetToTheFourthPower">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">[v] = a * [SI]
+where
+[v] is the value in feet to the fourth power
+[SI] is the value in SI
+a = 1.0/(Foot*Foot*Foot*Foot), i.e., 115.86176745895213
+and
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/KilogramMetreSquared">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">No conversion necessary as the unit choice is SI
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GramCentimetreSquared">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">No conversion necessary as the unit choice is SI
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundFootSquared">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">No conversion necessary as the unit choice is SI
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PoundInchSquared">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Unit" />
+    <rdfs:comment xml:lang="EN">No conversion necessary as the unit choice is SI
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/UnitSystem">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
@@ -21729,6 +22022,22 @@ to another.
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
     <rdfs:range rdf:resource="http://ddhub.no/FluidComponent" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsUpstreamOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/FluidType" />
+    <rdfs:range rdf:resource="http://ddhub.no/FluidInterface" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
+    <rdfs:comment xml:lang="EN">
+    </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsDownstreamOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/FluidType" />
+    <rdfs:range rdf:resource="http://ddhub.no/FluidInterface" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
     <rdfs:comment xml:lang="EN">
     </rdfs:comment>
