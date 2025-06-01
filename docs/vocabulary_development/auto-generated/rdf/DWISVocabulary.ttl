@@ -291,6 +291,10 @@ ddhub:Annular a owl:Class;
 ddhub:AnnularPreventer a owl:Class; 
                        rdfs:comment ""@EN; 
                        rdfs:subClassOf ddhub:BopElement. 
+ddhub:AnnulusPressureLimit a owl:Class; 
+                           rdfs:comment """This Noun is used to refer to an annulus pressure limit.
+"""@EN; 
+                           rdfs:subClassOf ddhub:PressureLimit. 
 ddhub:ArcMinute a owl:Class; 
                 rdfs:comment """[v] = a * [SI]
 where
@@ -375,6 +379,10 @@ ddhub:AverageDelayByRepeater a owl:DatatypeProperty, owl:FunctionalProperty;
 """@EN; 
                              rdfs:domain ddhub:Telemetry; 
                              rdfs:range xsd:double. 
+ddhub:AxialLoadLimit a owl:Class; 
+                     rdfs:comment """This Noun is used to refer to an axial load limit.
+"""@EN; 
+                     rdfs:subClassOf ddhub:DrillingLimit. 
 ddhub:AxialModelling a owl:Class; 
                      rdfs:comment """The model accounts for the axial movement of some parts of the physical system.
 """@EN; 
@@ -12884,6 +12892,10 @@ pressure (formation integrity test) or to test the strength of the formation and
 extended leakoff test). 
 """@EN; 
                                      rdfs:subClassOf ddhub:DrillingProcedure. 
+ddhub:PressureLimit a owl:Class; 
+                    rdfs:comment """This Noun is used to refer to an pressure limit.
+"""@EN; 
+                    rdfs:subClassOf ddhub:DrillingLimit. 
 ddhub:PressureLoggingTools a owl:Class; 
                            rdfs:comment ""@EN; 
                            rdfs:subClassOf ddhub:WirelineLoggingTools. 
@@ -14967,6 +14979,10 @@ ddhub:StringDataType a owl:Class;
                      rdfs:comment """Specifies that the data is a string.
 """@EN; 
                      rdfs:subClassOf ddhub:DataType. 
+ddhub:StringPressureLimit a owl:Class; 
+                          rdfs:comment """This Noun is used to refer to a string pressure limit.
+"""@EN; 
+                          rdfs:subClassOf ddhub:PressureLimit. 
 ddhub:StrokeFrequencyQuantity a owl:Class; 
                               rdfs:comment """A stroke frequency is the number of stokes per unit time
 The meaningful precision of a stroke frequency is typically: 0.016666666666666666 Hz

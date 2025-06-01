@@ -1524,6 +1524,14 @@
 <http://ddhub.no/DifferentialPressureLimit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingLimit> .
 <http://ddhub.no/TorqueLimit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/TorqueLimit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingLimit> .
+<http://ddhub.no/AxialLoadLimit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/AxialLoadLimit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingLimit> .
+<http://ddhub.no/PressureLimit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/PressureLimit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingLimit> .
+<http://ddhub.no/AnnulusPressureLimit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/AnnulusPressureLimit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/PressureLimit> .
+<http://ddhub.no/StringPressureLimit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/StringPressureLimit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/PressureLimit> .
 <http://ddhub.no/DrillingObjective> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/DrillingObjective> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/StableAxialVelocityObjective> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -5053,6 +5061,10 @@
 <http://ddhub.no/WOBLimit> <http://www.w3.org/2000/01/rdf-schema#comment> "This Noun is used to refer to a weight on bit limit.\n"@EN .
 <http://ddhub.no/DifferentialPressureLimit> <http://www.w3.org/2000/01/rdf-schema#comment> "This Noun is used to refer to a differential pressure limit.\n"@EN .
 <http://ddhub.no/TorqueLimit> <http://www.w3.org/2000/01/rdf-schema#comment> "This Noun is used to refer to a torque limit.\n"@EN .
+<http://ddhub.no/AxialLoadLimit> <http://www.w3.org/2000/01/rdf-schema#comment> "This Noun is used to refer to an axial load limit.\n"@EN .
+<http://ddhub.no/PressureLimit> <http://www.w3.org/2000/01/rdf-schema#comment> "This Noun is used to refer to an pressure limit.\n"@EN .
+<http://ddhub.no/AnnulusPressureLimit> <http://www.w3.org/2000/01/rdf-schema#comment> "This Noun is used to refer to an annulus pressure limit.\n"@EN .
+<http://ddhub.no/StringPressureLimit> <http://www.w3.org/2000/01/rdf-schema#comment> "This Noun is used to refer to a string pressure limit.\n"@EN .
 <http://ddhub.no/DrillingObjective> <http://www.w3.org/2000/01/rdf-schema#comment> "This is the parent class for drilling objectives.\n"@EN .
 <http://ddhub.no/StableAxialVelocityObjective> <http://www.w3.org/2000/01/rdf-schema#comment> "This Noun is used to refer to the objective of obtaining stable axial velocity.\n"@EN .
 <http://ddhub.no/StableRotationalVelocityObjective> <http://www.w3.org/2000/01/rdf-schema#comment> "This Noun is used to refer to the objective of obtaining stable rotational velocity.\n"@EN .
