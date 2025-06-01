@@ -244,9 +244,9 @@ namespace DWIS.Vocabulary.Utils
                     }
                 }
             }
-            if (PhysicalQuantity.AvailablePhysicalQuantities != null)
+            if (DrillingPhysicalQuantity.AvailablePhysicalQuantities != null)
             {
-                foreach (BasePhysicalQuantity quantity in PhysicalQuantity.AvailablePhysicalQuantities)
+                foreach (BasePhysicalQuantity quantity in DrillingPhysicalQuantity.AvailablePhysicalQuantities)
                 {
                     if (quantity != null && !string.IsNullOrEmpty(quantity.GetType()?.Name))
                     {

@@ -21,7 +21,7 @@ namespace DWIS.Vocabulary.Utils
             semanticBuilder.AppendLine("# Quantities");
             List<BasePhysicalQuantity> basePhysicalQuantities = BasePhysicalQuantity.AvailableBasePhysicalQuantities;
             UnitsAndQuantitiesToMDFile(semanticBuilder, basePhysicalQuantities);
-            List<BasePhysicalQuantity> physicalQuantities = PhysicalQuantity.AvailablePhysicalQuantities;
+            List<BasePhysicalQuantity> physicalQuantities = DrillingPhysicalQuantity.AvailablePhysicalQuantities;
             UnitsAndQuantitiesToMDFile(semanticBuilder, physicalQuantities, true, basePhysicalQuantities);
             System.IO.File.WriteAllText(path, semanticBuilder.ToString());
         }

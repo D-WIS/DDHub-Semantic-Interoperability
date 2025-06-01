@@ -18,7 +18,7 @@ namespace DWIS.Vocabulary.Utils
             if (!string.IsNullOrEmpty(folder) && Directory.Exists(folder))
             {
                 List<BasePhysicalQuantity> quantities = BasePhysicalQuantity.AvailableBasePhysicalQuantities;
-                List<BasePhysicalQuantity> drillingQuantities = PhysicalQuantity.AvailablePhysicalQuantities;
+                List<BasePhysicalQuantity> drillingQuantities = DrillingPhysicalQuantity.AvailablePhysicalQuantities;
                 if (quantities != null || drillingQuantities != null)
                 {
                     using (StreamWriter writer = new StreamWriter(folder + Path.DirectorySeparatorChar + "QuantityTypes.md"))
