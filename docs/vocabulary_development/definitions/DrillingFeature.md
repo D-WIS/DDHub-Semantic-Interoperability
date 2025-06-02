@@ -19,6 +19,36 @@
 - Attributes:
 - Description: Such a feature indicates that something accounts for lookup table.
 - Examples:
+## ModellingFeature <!-- NOUN -->
+- Display name: Modelling Feature
+- Parent class: Feature
+- Attributes:
+- Description: A modelling feature is a characteristic about how system is modelled.
+- Examples:
+## SteadyStateFeature <!-- NOUN -->
+- Display name: Steady State Feature
+- Parent class: ModellingFeature
+- Attributes:
+- Description: A steady state feature is a characteristic about a model that only accounts for steady state conditions.
+- Examples:
+## TransientFeature <!-- NOUN -->
+- Display name: Transient Feature
+- Parent class: ModellingFeature
+- Attributes:
+- Description: A transient feature is a characteristic about a model that accounts for transient effects.
+- Examples:
+## GelledStateFeature <!-- NOUN -->
+- Display name: Gelled State Feature
+- Parent class: ModellingFeature
+- Attributes:
+- Description: A gelled state feature is a characteristic about a model that accounts for the gelled state of a fluid.
+- Examples:
+## AirGapInStringFeature <!-- NOUN -->
+- Display name: Air Gap In String Feature
+- Parent class: ModellingFeature
+- Attributes:
+- Description: An air gap in string feature is a characteristic about a model that accounts for the possible air gap at the top of the liquid column in the string.
+- Examples:
 ## DrillingManagementFeature <!-- NOUN -->
 - Display name: Drilling Management Feature
 - Parent class: Feature
@@ -213,13 +243,25 @@ a cement operation.
 - Display name: Formation Fracturing Feature
 - Parent class: DownholePressureFeature
 - Attributes:
-- Description: A formation fracturing feature indicates that something accounts for formation fracturing limits.
+- Description: A formation fracturing feature indicates that something accounts for formation fracturing pressure limits.
+- Examples:
+## FormationFluidInfluxFeature <!-- NOUN -->
+- Display name: Formation Fluid Influx Feature
+- Parent class: DownholePressureFeature
+- Attributes:
+- Description: A formation fluid influx feature indicates that something accounts for formation pore pressure limits.
 - Examples:
 ## FormationCollapseFeature <!-- NOUN -->
 - Display name: Formation Collapse Feature
 - Parent class: DownholePressureFeature
 - Attributes:
-- Description: A formation collapse feature indicates that something accounts for formation collapse limits.
+- Description: A formation collapse feature indicates that something accounts for formation collapse pressure limits.
+- Examples:
+## HeaveFeature <!-- NOUN -->
+- Display name: Heave Feature
+- Parent class: DownholePressureFeature
+- Attributes:
+- Description: A heave feature indicates that something accounts for the heave movement on downhole pressure effects.
 - Examples:
 ## OnBottomDrillingFeature <!-- NOUN -->
 - Display name: On Bottom Drilling Feature
