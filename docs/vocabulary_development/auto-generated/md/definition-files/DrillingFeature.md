@@ -10,6 +10,11 @@ classDiagram
 DWISNoun <|-- Feature
 Feature <|-- DataTransmissionFeature
 DataTransmissionFeature <|-- LookupTableFeature
+Feature <|-- ModellingFeature
+ModellingFeature <|-- SteadyStateFeature
+ModellingFeature <|-- TransientFeature
+ModellingFeature <|-- GelledStateFeature
+ModellingFeature <|-- AirGapInStringFeature
 Feature <|-- DrillingManagementFeature
 DrillingManagementFeature <|-- FillPipeFeature
 DrillingManagementFeature <|-- GelBreakingFeature
@@ -42,7 +47,9 @@ DownholePressureFeature <|-- ManagedDownholePressureFeature
 DownholePressureFeature <|-- UnderBalanceFeature
 DownholePressureFeature <|-- GasAbsorptionFeature
 DownholePressureFeature <|-- FormationFracturingFeature
+DownholePressureFeature <|-- FormationFluidInfluxFeature
 DownholePressureFeature <|-- FormationCollapseFeature
+DownholePressureFeature <|-- HeaveFeature
 DrillingManagementFeature <|-- OnBottomDrillingFeature
 OnBottomDrillingFeature <|-- HoleOpeningFeature
 HoleOpeningFeature <|-- UnderReamingFeature
@@ -68,6 +75,36 @@ A data transmission feature is a characteristic about how data is transferred fr
 - Parent class: [DataTransmissionFeature](./DrillingFeature.md#DataTransmissionFeature)
 - Description: 
 Such a feature indicates that something accounts for lookup table.
+- Definition set: DrillingFeature
+## ModellingFeature <!-- NOUN -->
+- Display name: Modelling Feature
+- Parent class: [Feature](./DrillingFeature.md#Feature)
+- Description: 
+A modelling feature is a characteristic about how system is modelled.
+- Definition set: DrillingFeature
+## SteadyStateFeature <!-- NOUN -->
+- Display name: Steady State Feature
+- Parent class: [ModellingFeature](./DrillingFeature.md#ModellingFeature)
+- Description: 
+A steady state feature is a characteristic about a model that only accounts for steady state conditions.
+- Definition set: DrillingFeature
+## TransientFeature <!-- NOUN -->
+- Display name: Transient Feature
+- Parent class: [ModellingFeature](./DrillingFeature.md#ModellingFeature)
+- Description: 
+A transient feature is a characteristic about a model that accounts for transient effects.
+- Definition set: DrillingFeature
+## GelledStateFeature <!-- NOUN -->
+- Display name: Gelled State Feature
+- Parent class: [ModellingFeature](./DrillingFeature.md#ModellingFeature)
+- Description: 
+A gelled state feature is a characteristic about a model that accounts for the gelled state of a fluid.
+- Definition set: DrillingFeature
+## AirGapInStringFeature <!-- NOUN -->
+- Display name: Air Gap In String Feature
+- Parent class: [ModellingFeature](./DrillingFeature.md#ModellingFeature)
+- Description: 
+An air gap in string feature is a characteristic about a model that accounts for the possible air gap at the top of the liquid column in the string.
 - Definition set: DrillingFeature
 ## DrillingManagementFeature <!-- NOUN -->
 - Display name: Drilling Management Feature
@@ -263,13 +300,25 @@ A gas absorption feature indicates that something accounts for conditions by whi
 - Display name: Formation Fracturing Feature
 - Parent class: [DownholePressureFeature](./DrillingFeature.md#DownholePressureFeature)
 - Description: 
-A formation fracturing feature indicates that something accounts for formation fracturing limits.
+A formation fracturing feature indicates that something accounts for formation fracturing pressure limits.
+- Definition set: DrillingFeature
+## FormationFluidInfluxFeature <!-- NOUN -->
+- Display name: Formation Fluid Influx Feature
+- Parent class: [DownholePressureFeature](./DrillingFeature.md#DownholePressureFeature)
+- Description: 
+A formation fluid influx feature indicates that something accounts for formation pore pressure limits.
 - Definition set: DrillingFeature
 ## FormationCollapseFeature <!-- NOUN -->
 - Display name: Formation Collapse Feature
 - Parent class: [DownholePressureFeature](./DrillingFeature.md#DownholePressureFeature)
 - Description: 
-A formation collapse feature indicates that something accounts for formation collapse limits.
+A formation collapse feature indicates that something accounts for formation collapse pressure limits.
+- Definition set: DrillingFeature
+## HeaveFeature <!-- NOUN -->
+- Display name: Heave Feature
+- Parent class: [DownholePressureFeature](./DrillingFeature.md#DownholePressureFeature)
+- Description: 
+A heave feature indicates that something accounts for the heave movement on downhole pressure effects.
 - Definition set: DrillingFeature
 ## OnBottomDrillingFeature <!-- NOUN -->
 - Display name: On Bottom Drilling Feature

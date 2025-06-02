@@ -1374,6 +1374,16 @@
 <http://ddhub.no/DataTransmissionFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Feature> .
 <http://ddhub.no/LookupTableFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/LookupTableFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DataTransmissionFeature> .
+<http://ddhub.no/ModellingFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ModellingFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Feature> .
+<http://ddhub.no/SteadyStateFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/SteadyStateFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingFeature> .
+<http://ddhub.no/TransientFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/TransientFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingFeature> .
+<http://ddhub.no/GelledStateFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/GelledStateFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingFeature> .
+<http://ddhub.no/AirGapInStringFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/AirGapInStringFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingFeature> .
 <http://ddhub.no/DrillingManagementFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/DrillingManagementFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Feature> .
 <http://ddhub.no/FillPipeFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1438,8 +1448,12 @@
 <http://ddhub.no/GasAbsorptionFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownholePressureFeature> .
 <http://ddhub.no/FormationFracturingFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/FormationFracturingFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownholePressureFeature> .
+<http://ddhub.no/FormationFluidInfluxFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/FormationFluidInfluxFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownholePressureFeature> .
 <http://ddhub.no/FormationCollapseFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/FormationCollapseFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownholePressureFeature> .
+<http://ddhub.no/HeaveFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/HeaveFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownholePressureFeature> .
 <http://ddhub.no/OnBottomDrillingFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/OnBottomDrillingFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingManagementFeature> .
 <http://ddhub.no/HoleOpeningFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -5044,6 +5058,11 @@
 <http://ddhub.no/Feature> <http://www.w3.org/2000/01/rdf-schema#comment> "A feature is a characteristic of something.\n"@EN .
 <http://ddhub.no/DataTransmissionFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A data transmission feature is a characteristic about how data is transferred from one place to another.\n"@EN .
 <http://ddhub.no/LookupTableFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "Such a feature indicates that something accounts for lookup table.\n"@EN .
+<http://ddhub.no/ModellingFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A modelling feature is a characteristic about how system is modelled.\n"@EN .
+<http://ddhub.no/SteadyStateFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A steady state feature is a characteristic about a model that only accounts for steady state conditions.\n"@EN .
+<http://ddhub.no/TransientFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A transient feature is a characteristic about a model that accounts for transient effects.\n"@EN .
+<http://ddhub.no/GelledStateFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A gelled state feature is a characteristic about a model that accounts for the gelled state of a fluid.\n"@EN .
+<http://ddhub.no/AirGapInStringFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "An air gap in string feature is a characteristic about a model that accounts for the possible air gap at the top of the liquid column in the string.\n"@EN .
 <http://ddhub.no/DrillingManagementFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling management feature is a drilling management characteristic that is supported by something. For instance\nan advisory system may provide ROP management parameters accounting for cuttings transport.\n"@EN .
 <http://ddhub.no/FillPipeFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A fill pipe feature indicates that something accounts for filling the pipe when there is an air gap.\n"@EN .
 <http://ddhub.no/GelBreakingFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A gel breaking feature indicates that something accounts for breaking the gel in a drilling fluid that has stayed\nquiet for some time.\n"@EN .
@@ -5075,8 +5094,10 @@
 <http://ddhub.no/ManagedDownholePressureFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A managed downhole pressure feature indicates that something manages downhole pressure.\n"@EN .
 <http://ddhub.no/UnderBalanceFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "An under-balance feature indicates that something accounts for under-balance conditions.\n"@EN .
 <http://ddhub.no/GasAbsorptionFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A gas absorption feature indicates that something accounts for conditions by which gas can be absorbed by the drilling fluid.\n"@EN .
-<http://ddhub.no/FormationFracturingFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A formation fracturing feature indicates that something accounts for formation fracturing limits.\n"@EN .
-<http://ddhub.no/FormationCollapseFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A formation collapse feature indicates that something accounts for formation collapse limits.\n"@EN .
+<http://ddhub.no/FormationFracturingFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A formation fracturing feature indicates that something accounts for formation fracturing pressure limits.\n"@EN .
+<http://ddhub.no/FormationFluidInfluxFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A formation fluid influx feature indicates that something accounts for formation pore pressure limits.\n"@EN .
+<http://ddhub.no/FormationCollapseFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A formation collapse feature indicates that something accounts for formation collapse pressure limits.\n"@EN .
+<http://ddhub.no/HeaveFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A heave feature indicates that something accounts for the heave movement on downhole pressure effects.\n"@EN .
 <http://ddhub.no/OnBottomDrillingFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "An on bottom drilling feature indicates that something accounts for on bottom drilling.\n"@EN .
 <http://ddhub.no/HoleOpeningFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "An hole opening feature indicates that something accounts for opening the borehole diameter.\n"@EN .
 <http://ddhub.no/UnderReamingFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "An under-reaming feature indicates that something accounts for under-reaming a borehole.\n"@EN .
