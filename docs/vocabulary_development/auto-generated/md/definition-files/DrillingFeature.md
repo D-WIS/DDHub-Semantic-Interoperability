@@ -14,6 +14,14 @@ Feature <|-- ModellingFeature
 ModellingFeature <|-- SteadyStateFeature
 ModellingFeature <|-- TransientFeature
 ModellingFeature <|-- GelledStateFeature
+ModellingFeature <|-- StaticFrictionFeature
+ModellingFeature <|-- HydraulicallyInducedForceFeature
+ModellingFeature <|-- ShockedModellingFeature
+ModellingFeature <|-- FluidCompressibilityFeature
+ModellingFeature <|-- StringElasticityFeature
+ModellingFeature <|-- FluidThermalExpansionFeature
+ModellingFeature <|-- StringThermalExpansionFeature
+ModellingFeature <|-- StringPressureBallooningFeature
 ModellingFeature <|-- AirGapInStringFeature
 Feature <|-- DrillingManagementFeature
 DrillingManagementFeature <|-- FillPipeFeature
@@ -99,6 +107,54 @@ A transient feature is a characteristic about a model that accounts for transien
 - Parent class: [ModellingFeature](./DrillingFeature.md#ModellingFeature)
 - Description: 
 A gelled state feature is a characteristic about a model that accounts for the gelled state of a fluid.
+- Definition set: DrillingFeature
+## StaticFrictionFeature <!-- NOUN -->
+- Display name: Static Friction Feature
+- Parent class: [ModellingFeature](./DrillingFeature.md#ModellingFeature)
+- Description: 
+A static friction feature is a characteristic about a model that accounts for the static friction along the string.
+- Definition set: DrillingFeature
+## HydraulicallyInducedForceFeature <!-- NOUN -->
+- Display name: Hydraulically Induced Force Feature
+- Parent class: [ModellingFeature](./DrillingFeature.md#ModellingFeature)
+- Description: 
+A hydraulically induced force feature is a characteristic about a model that accounts for hydraulically induced force on the string.
+- Definition set: DrillingFeature
+## ShockedModellingFeature <!-- NOUN -->
+- Display name: Shock Modelling Feature
+- Parent class: [ModellingFeature](./DrillingFeature.md#ModellingFeature)
+- Description: 
+A shock modelling feature is a characteristic about a model that accounts for shocks along the string.
+- Definition set: DrillingFeature
+## FluidCompressibilityFeature <!-- NOUN -->
+- Display name: Fluid Compressibility Feature
+- Parent class: [ModellingFeature](./DrillingFeature.md#ModellingFeature)
+- Description: 
+A fluid compressibility feature is a characteristic about a model that accounts for fluid compressibility.
+- Definition set: DrillingFeature
+## StringElasticityFeature <!-- NOUN -->
+- Display name: String Elasticity Feature
+- Parent class: [ModellingFeature](./DrillingFeature.md#ModellingFeature)
+- Description: 
+A string elasticity feature is a characteristic about a model that accounts for string elasticity.
+- Definition set: DrillingFeature
+## FluidThermalExpansionFeature <!-- NOUN -->
+- Display name: Fluid Thermal Expansion Feature
+- Parent class: [ModellingFeature](./DrillingFeature.md#ModellingFeature)
+- Description: 
+A fluid thermal expansion feature is a characteristic about a model that accounts for the fluid thermal expansion.
+- Definition set: DrillingFeature
+## StringThermalExpansionFeature <!-- NOUN -->
+- Display name: String Thermal Expansion Feature
+- Parent class: [ModellingFeature](./DrillingFeature.md#ModellingFeature)
+- Description: 
+A string thermal expansion feature is a characteristic about a model that accounts for the string thermal expansion.
+- Definition set: DrillingFeature
+## StringPressureBallooningFeature <!-- NOUN -->
+- Display name: String Pressure Ballooning Feature
+- Parent class: [ModellingFeature](./DrillingFeature.md#ModellingFeature)
+- Description: 
+A string pressure ballooning feature is a characteristic about a model that accounts for the string pressure ballooning.
 - Definition set: DrillingFeature
 ## AirGapInStringFeature <!-- NOUN -->
 - Display name: Air Gap In String Feature

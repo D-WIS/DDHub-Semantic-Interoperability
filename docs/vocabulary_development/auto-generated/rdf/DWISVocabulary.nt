@@ -1382,6 +1382,22 @@
 <http://ddhub.no/TransientFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingFeature> .
 <http://ddhub.no/GelledStateFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/GelledStateFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingFeature> .
+<http://ddhub.no/StaticFrictionFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/StaticFrictionFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingFeature> .
+<http://ddhub.no/HydraulicallyInducedForceFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/HydraulicallyInducedForceFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingFeature> .
+<http://ddhub.no/ShockedModellingFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ShockedModellingFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingFeature> .
+<http://ddhub.no/FluidCompressibilityFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/FluidCompressibilityFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingFeature> .
+<http://ddhub.no/StringElasticityFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/StringElasticityFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingFeature> .
+<http://ddhub.no/FluidThermalExpansionFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/FluidThermalExpansionFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingFeature> .
+<http://ddhub.no/StringThermalExpansionFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/StringThermalExpansionFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingFeature> .
+<http://ddhub.no/StringPressureBallooningFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/StringPressureBallooningFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingFeature> .
 <http://ddhub.no/AirGapInStringFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/AirGapInStringFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ModellingFeature> .
 <http://ddhub.no/DrillingManagementFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -5062,6 +5078,14 @@
 <http://ddhub.no/SteadyStateFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A steady state feature is a characteristic about a model that only accounts for steady state conditions.\n"@EN .
 <http://ddhub.no/TransientFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A transient feature is a characteristic about a model that accounts for transient effects.\n"@EN .
 <http://ddhub.no/GelledStateFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A gelled state feature is a characteristic about a model that accounts for the gelled state of a fluid.\n"@EN .
+<http://ddhub.no/StaticFrictionFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A static friction feature is a characteristic about a model that accounts for the static friction along the string.\n"@EN .
+<http://ddhub.no/HydraulicallyInducedForceFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A hydraulically induced force feature is a characteristic about a model that accounts for hydraulically induced force on the string.\n"@EN .
+<http://ddhub.no/ShockedModellingFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A shock modelling feature is a characteristic about a model that accounts for shocks along the string.\n"@EN .
+<http://ddhub.no/FluidCompressibilityFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A fluid compressibility feature is a characteristic about a model that accounts for fluid compressibility.\n"@EN .
+<http://ddhub.no/StringElasticityFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A string elasticity feature is a characteristic about a model that accounts for string elasticity.\n"@EN .
+<http://ddhub.no/FluidThermalExpansionFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A fluid thermal expansion feature is a characteristic about a model that accounts for the fluid thermal expansion.\n"@EN .
+<http://ddhub.no/StringThermalExpansionFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A string thermal expansion feature is a characteristic about a model that accounts for the string thermal expansion.\n"@EN .
+<http://ddhub.no/StringPressureBallooningFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A string pressure ballooning feature is a characteristic about a model that accounts for the string pressure ballooning.\n"@EN .
 <http://ddhub.no/AirGapInStringFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "An air gap in string feature is a characteristic about a model that accounts for the possible air gap at the top of the liquid column in the string.\n"@EN .
 <http://ddhub.no/DrillingManagementFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling management feature is a drilling management characteristic that is supported by something. For instance\nan advisory system may provide ROP management parameters accounting for cuttings transport.\n"@EN .
 <http://ddhub.no/FillPipeFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "A fill pipe feature indicates that something accounts for filling the pipe when there is an air gap.\n"@EN .

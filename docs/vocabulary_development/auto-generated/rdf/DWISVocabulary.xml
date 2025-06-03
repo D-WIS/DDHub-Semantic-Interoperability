@@ -4162,6 +4162,54 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">A gelled state feature is a characteristic about a model that accounts for the gelled state of a fluid.
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/StaticFrictionFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ModellingFeature" />
+    <rdfs:comment xml:lang="EN">A static friction feature is a characteristic about a model that accounts for the static friction along the string.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HydraulicallyInducedForceFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ModellingFeature" />
+    <rdfs:comment xml:lang="EN">A hydraulically induced force feature is a characteristic about a model that accounts for hydraulically induced force on the string.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ShockedModellingFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ModellingFeature" />
+    <rdfs:comment xml:lang="EN">A shock modelling feature is a characteristic about a model that accounts for shocks along the string.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/FluidCompressibilityFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ModellingFeature" />
+    <rdfs:comment xml:lang="EN">A fluid compressibility feature is a characteristic about a model that accounts for fluid compressibility.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/StringElasticityFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ModellingFeature" />
+    <rdfs:comment xml:lang="EN">A string elasticity feature is a characteristic about a model that accounts for string elasticity.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/FluidThermalExpansionFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ModellingFeature" />
+    <rdfs:comment xml:lang="EN">A fluid thermal expansion feature is a characteristic about a model that accounts for the fluid thermal expansion.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/StringThermalExpansionFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ModellingFeature" />
+    <rdfs:comment xml:lang="EN">A string thermal expansion feature is a characteristic about a model that accounts for the string thermal expansion.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/StringPressureBallooningFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ModellingFeature" />
+    <rdfs:comment xml:lang="EN">A string pressure ballooning feature is a characteristic about a model that accounts for the string pressure ballooning.
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/AirGapInStringFeature">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/ModellingFeature" />

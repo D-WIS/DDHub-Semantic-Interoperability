@@ -4112,6 +4112,10 @@ ddhub:FlowRateOut a owl:Class;
 ddhub:FluidComponent a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:FluidCompressibilityFeature a owl:Class; 
+                                  rdfs:comment """A fluid compressibility feature is a characteristic about a model that accounts for fluid compressibility.
+"""@EN; 
+                                  rdfs:subClassOf ddhub:ModellingFeature. 
 ddhub:FluidDensityTools a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:WirelineLoggingTools. 
@@ -4142,6 +4146,10 @@ Shear stress in a fluid is the force per unit area exerted parallel to the fluid
 The meaningful precision of a shear stress for a fluid is typically: 0.0001 Pa
 """@EN; 
                                rdfs:subClassOf ddhub:MeasurableQuantity. 
+ddhub:FluidThermalExpansionFeature a owl:Class; 
+                                   rdfs:comment """A fluid thermal expansion feature is a characteristic about a model that accounts for the fluid thermal expansion.
+"""@EN; 
+                                   rdfs:subClassOf ddhub:ModellingFeature. 
 ddhub:FluidType a owl:Class; 
                 rdfs:comment """A symbolic representation of the type of a fluid to be found in a hydraulic system.
 """@EN; 
@@ -5766,6 +5774,10 @@ ddhub:HybridAnalysisModel a owl:Class;
 ddhub:HybridKymera a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:DrillingBit. 
+ddhub:HydraulicallyInducedForceFeature a owl:Class; 
+                                       rdfs:comment """A hydraulically induced force feature is a characteristic about a model that accounts for hydraulically induced force on the string.
+"""@EN; 
+                                       rdfs:subClassOf ddhub:ModellingFeature. 
 ddhub:HydraulicBranch a owl:Class; 
                       rdfs:comment ""@EN; 
                       rdfs:subClassOf ddhub:HydraulicLogicalElement. 
@@ -14575,6 +14587,10 @@ ddhub:Shock a owl:Class;
             rdfs:comment """This Noun is used to refer to lateral shocks.
 """@EN; 
             rdfs:subClassOf ddhub:AbnormalLateralOscillation. 
+ddhub:ShockedModellingFeature a owl:Class; 
+                              rdfs:comment """A shock modelling feature is a characteristic about a model that accounts for shocks along the string.
+"""@EN; 
+                              rdfs:subClassOf ddhub:ModellingFeature. 
 ddhub:ShockPerHour a owl:Class; 
                    rdfs:comment """[v] = a * [SI]
 where
@@ -15062,6 +15078,10 @@ and
 C_cgs = 2.99792458e10 reference: https://en.wikipedia.org/wiki/Statampere
 """@EN; 
                  rdfs:subClassOf ddhub:Unit. 
+ddhub:StaticFrictionFeature a owl:Class; 
+                            rdfs:comment """A static friction feature is a characteristic about a model that accounts for the static friction along the string.
+"""@EN; 
+                            rdfs:subClassOf ddhub:ModellingFeature. 
 ddhub:SteadyStateFeature a owl:Class; 
                          rdfs:comment """A steady state feature is a characteristic about a model that only accounts for steady state conditions.
 """@EN; 
@@ -15149,10 +15169,22 @@ ddhub:StringDataType a owl:Class;
                      rdfs:comment """Specifies that the data is a string.
 """@EN; 
                      rdfs:subClassOf ddhub:DataType. 
+ddhub:StringElasticityFeature a owl:Class; 
+                              rdfs:comment """A string elasticity feature is a characteristic about a model that accounts for string elasticity.
+"""@EN; 
+                              rdfs:subClassOf ddhub:ModellingFeature. 
+ddhub:StringPressureBallooningFeature a owl:Class; 
+                                      rdfs:comment """A string pressure ballooning feature is a characteristic about a model that accounts for the string pressure ballooning.
+"""@EN; 
+                                      rdfs:subClassOf ddhub:ModellingFeature. 
 ddhub:StringPressureLimit a owl:Class; 
                           rdfs:comment """This Noun is used to refer to a string pressure limit.
 """@EN; 
                           rdfs:subClassOf ddhub:PressureLimit. 
+ddhub:StringThermalExpansionFeature a owl:Class; 
+                                    rdfs:comment """A string thermal expansion feature is a characteristic about a model that accounts for the string thermal expansion.
+"""@EN; 
+                                    rdfs:subClassOf ddhub:ModellingFeature. 
 ddhub:StrokeFrequencyQuantity a owl:Class; 
                               rdfs:comment """A stroke frequency is the number of stokes per unit time
 The meaningful precision of a stroke frequency is typically: 0.016666666666666666 Hz
