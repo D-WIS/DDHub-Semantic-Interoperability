@@ -4138,6 +4138,36 @@ Can be a dynamic signal (linked to a ValueNode) or a static parameter.
     <rdfs:comment xml:lang="EN">Such a feature indicates that something accounts for lookup table.
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ModellingFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Feature" />
+    <rdfs:comment xml:lang="EN">A modelling feature is a characteristic about how system is modelled.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SteadyStateFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ModellingFeature" />
+    <rdfs:comment xml:lang="EN">A steady state feature is a characteristic about a model that only accounts for steady state conditions.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TransientFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ModellingFeature" />
+    <rdfs:comment xml:lang="EN">A transient feature is a characteristic about a model that accounts for transient effects.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GelledStateFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ModellingFeature" />
+    <rdfs:comment xml:lang="EN">A gelled state feature is a characteristic about a model that accounts for the gelled state of a fluid.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AirGapInStringFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ModellingFeature" />
+    <rdfs:comment xml:lang="EN">An air gap in string feature is a characteristic about a model that accounts for the possible air gap at the top of the liquid column in the string.
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DrillingManagementFeature">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Feature" />
@@ -4331,13 +4361,25 @@ different densities and/or viscosities.
   <rdf:Description rdf:about="http://ddhub.no/FormationFracturingFeature">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DownholePressureFeature" />
-    <rdfs:comment xml:lang="EN">A formation fracturing feature indicates that something accounts for formation fracturing limits.
+    <rdfs:comment xml:lang="EN">A formation fracturing feature indicates that something accounts for formation fracturing pressure limits.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/FormationFluidInfluxFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DownholePressureFeature" />
+    <rdfs:comment xml:lang="EN">A formation fluid influx feature indicates that something accounts for formation pore pressure limits.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/FormationCollapseFeature">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DownholePressureFeature" />
-    <rdfs:comment xml:lang="EN">A formation collapse feature indicates that something accounts for formation collapse limits.
+    <rdfs:comment xml:lang="EN">A formation collapse feature indicates that something accounts for formation collapse pressure limits.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HeaveFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DownholePressureFeature" />
+    <rdfs:comment xml:lang="EN">A heave feature indicates that something accounts for the heave movement on downhole pressure effects.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/OnBottomDrillingFeature">

@@ -186,6 +186,10 @@ ddhub:Air a owl:Class;
           rdfs:comment """A symbolic representation of air when encountered in a hydraulic system.
 """@EN; 
           rdfs:subClassOf ddhub:Gas. 
+ddhub:AirGapInStringFeature a owl:Class; 
+                            rdfs:comment """An air gap in string feature is a characteristic about a model that accounts for the possible air gap at the top of the liquid column in the string.
+"""@EN; 
+                            rdfs:subClassOf ddhub:ModellingFeature. 
 ddhub:AlgebraicModel a owl:Class; 
                      rdfs:comment """A model that uses algebraic equations.
 """@EN; 
@@ -4526,17 +4530,21 @@ ddhub:ForceToLoadTransformation a owl:Class;
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:DirectTransformation. 
 ddhub:FormationCollapseFeature a owl:Class; 
-                               rdfs:comment """A formation collapse feature indicates that something accounts for formation collapse limits.
+                               rdfs:comment """A formation collapse feature indicates that something accounts for formation collapse pressure limits.
 """@EN; 
                                rdfs:subClassOf ddhub:DownholePressureFeature. 
 ddhub:FormationCollapseLocation a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
+ddhub:FormationFluidInfluxFeature a owl:Class; 
+                                  rdfs:comment """A formation fluid influx feature indicates that something accounts for formation pore pressure limits.
+"""@EN; 
+                                  rdfs:subClassOf ddhub:DownholePressureFeature. 
 ddhub:FormationFluidTransferLocation a owl:Class; 
                                      rdfs:comment ""@EN; 
                                      rdfs:subClassOf ddhub:AbscissaReferenceLocation. 
 ddhub:FormationFracturingFeature a owl:Class; 
-                                 rdfs:comment """A formation fracturing feature indicates that something accounts for formation fracturing limits.
+                                 rdfs:comment """A formation fracturing feature indicates that something accounts for formation fracturing pressure limits.
 """@EN; 
                                  rdfs:subClassOf ddhub:DownholePressureFeature. 
 ddhub:FormationGas a owl:Class; 
@@ -4765,6 +4773,10 @@ ddhub:GelBreakingFeature a owl:Class;
 quiet for some time.
 """@EN; 
                          rdfs:subClassOf ddhub:DrillingManagementFeature. 
+ddhub:GelledStateFeature a owl:Class; 
+                         rdfs:comment """A gelled state feature is a characteristic about a model that accounts for the gelled state of a fluid.
+"""@EN; 
+                         rdfs:subClassOf ddhub:ModellingFeature. 
 ddhub:GeneralModel a owl:Class; 
                    rdfs:comment """A model with a broad range of application across various systems or phenomena.
 """@EN; 
@@ -5535,6 +5547,10 @@ ddhub:HeatTransferFeature a owl:Class;
 ddhub:HeaveCompensationSystem a owl:Class; 
                               rdfs:comment ""@EN; 
                               rdfs:subClassOf ddhub:MarineSystem. 
+ddhub:HeaveFeature a owl:Class; 
+                   rdfs:comment """A heave feature indicates that something accounts for the heave movement on downhole pressure effects.
+"""@EN; 
+                   rdfs:subClassOf ddhub:DownholePressureFeature. 
 ddhub:Heavyweight a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:DrillString. 
@@ -10691,6 +10707,10 @@ ddhub:ModellingDiscretization a owl:Class;
                               rdfs:comment """A characteristic of the discretization made by the model.
 """@EN; 
                               rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:ModellingFeature a owl:Class; 
+                       rdfs:comment """A modelling feature is a characteristic about how system is modelled.
+"""@EN; 
+                       rdfs:subClassOf ddhub:Feature. 
 ddhub:ModelScope a owl:Class; 
                  rdfs:comment """A classification of a model with regards to its range of applicability.
 """@EN; 
@@ -15042,6 +15062,10 @@ and
 C_cgs = 2.99792458e10 reference: https://en.wikipedia.org/wiki/Statampere
 """@EN; 
                  rdfs:subClassOf ddhub:Unit. 
+ddhub:SteadyStateFeature a owl:Class; 
+                         rdfs:comment """A steady state feature is a characteristic about a model that only accounts for steady state conditions.
+"""@EN; 
+                         rdfs:subClassOf ddhub:ModellingFeature. 
 ddhub:SteadyStateModel a owl:Class; 
                        rdfs:comment """A model for which the state variables do not change with time.
 """@EN; 
@@ -15880,6 +15904,10 @@ ddhub:Transformation a owl:Class;
                      rdfs:comment """Represents a transformation applied to some signals that produces other signals
 """@EN; 
                      rdfs:subClassOf ddhub:DataFlowNode. 
+ddhub:TransientFeature a owl:Class; 
+                       rdfs:comment """A transient feature is a characteristic about a model that accounts for transient effects.
+"""@EN; 
+                       rdfs:subClassOf ddhub:ModellingFeature. 
 ddhub:TransientModel a owl:Class; 
                      rdfs:comment """A model for which the state variables changes with time.
 """@EN; 
