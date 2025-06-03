@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using DWIS.Vocabulary.Development;
 using Microsoft.CodeAnalysis.CSharp;
@@ -90,7 +91,16 @@ namespace DWIS.Vocabulary.Utils
         {
             return input.Replace("'", "").Replace(" ", "");
         }
-        
+        private static int GetCode(string input)
+        {
+            int code = 0;
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(input));
+                code = Math.Abs(BitConverter.ToInt32(bytes, 0));
+            }
+            return code;
+        }
         public static void WriteSchema(Development.Vocabulary vocabulary, string nounsFileName, string verbsFileName, string attributesFileName)
         {
             StringBuilder builder = new StringBuilder();
@@ -104,7 +114,7 @@ namespace DWIS.Vocabulary.Utils
             builder.AppendLine("{");
             foreach (Noun noun in vocabulary.Nouns)
             {
-                int hash = noun.Name.GetHashCode();
+                int hash = GetCode(noun.Name);
                 if (noun != vocabulary.Nouns.Last())
                 {
                     builder.AppendLine(noun.Name + " = " + hash.ToString() +  ",");
@@ -158,7 +168,7 @@ namespace DWIS.Vocabulary.Utils
                 builder.AppendLine("{");
                 foreach (string attribute in attributes)
                 {
-                    int hash = attribute.GetHashCode();
+                    int hash = GetCode(attribute);
                     if (attribute != attributes.Last())
                     {
                         builder.AppendLine(attribute + " = " + hash.ToString() + ",");
@@ -190,7 +200,7 @@ namespace DWIS.Vocabulary.Utils
             builder.AppendLine("{");
             foreach (Verb verb in vocabulary.Verbs)
             {
-                int hash = verb.Name.GetHashCode();
+                int hash = GetCode(verb.Name);
                 if (verb != vocabulary.Verbs.Last())
                 {
                     builder.AppendLine(verb.Name + " = " + hash.ToString() + ",");
@@ -285,7 +295,7 @@ namespace DWIS.Vocabulary.Utils
                 builder.AppendLine("{");
                 foreach (string quantity in quantities)
                 {
-                    int hash = quantity.GetHashCode();
+                    int hash = GetCode(quantity);
                     if (quantity != quantities.Last())
                     {
                         builder.AppendLine(quantity + " = " + hash.ToString() + ",");
@@ -318,7 +328,7 @@ namespace DWIS.Vocabulary.Utils
                 builder.AppendLine("{");
                 foreach (string unit in units)
                 {
-                    int hash = unit.GetHashCode();
+                    int hash = GetCode(unit);
                     if (unit != units.Last())
                     {
                         builder.AppendLine(unit + " = " + hash.ToString() + ",");

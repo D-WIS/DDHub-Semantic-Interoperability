@@ -43,6 +43,54 @@
 - Attributes:
 - Description: A gelled state feature is a characteristic about a model that accounts for the gelled state of a fluid.
 - Examples:
+## StaticFrictionFeature <!-- NOUN -->
+- Display name: Static Friction Feature
+- Parent class: ModellingFeature
+- Attributes:
+- Description: A static friction feature is a characteristic about a model that accounts for the static friction along the string.
+- Examples:
+## HydraulicallyInducedForceFeature <!-- NOUN -->
+- Display name: Hydraulically Induced Force Feature
+- Parent class: ModellingFeature
+- Attributes:
+- Description: A hydraulically induced force feature is a characteristic about a model that accounts for hydraulically induced force on the string.
+- Examples:
+## ShockedModellingFeature <!-- NOUN -->
+- Display name: Shock Modelling Feature
+- Parent class: ModellingFeature
+- Attributes:
+- Description: A shock modelling feature is a characteristic about a model that accounts for shocks along the string.
+- Examples:
+## FluidCompressibilityFeature <!-- NOUN -->
+- Display name: Fluid Compressibility Feature
+- Parent class: ModellingFeature
+- Attributes:
+- Description: A fluid compressibility feature is a characteristic about a model that accounts for fluid compressibility.
+- Examples:
+## StringElasticityFeature <!-- NOUN -->
+- Display name: String Elasticity Feature
+- Parent class: ModellingFeature
+- Attributes:
+- Description: A string elasticity feature is a characteristic about a model that accounts for string elasticity.
+- Examples:
+## FluidThermalExpansionFeature <!-- NOUN -->
+- Display name: Fluid Thermal Expansion Feature
+- Parent class: ModellingFeature
+- Attributes:
+- Description: A fluid thermal expansion feature is a characteristic about a model that accounts for the fluid thermal expansion.
+- Examples:
+## StringThermalExpansionFeature <!-- NOUN -->
+- Display name: String Thermal Expansion Feature
+- Parent class: ModellingFeature
+- Attributes:
+- Description: A string thermal expansion feature is a characteristic about a model that accounts for the string thermal expansion.
+- Examples:
+## StringPressureBallooningFeature <!-- NOUN -->
+- Display name: String Pressure Ballooning Feature
+- Parent class: ModellingFeature
+- Attributes:
+- Description: A string pressure ballooning feature is a characteristic about a model that accounts for the string pressure ballooning.
+- Examples:
 ## AirGapInStringFeature <!-- NOUN -->
 - Display name: Air Gap In String Feature
 - Parent class: ModellingFeature
