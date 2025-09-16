@@ -58,6 +58,12 @@ PrototypeData <|-- MechanicalSpecificEnergy
 PrototypeData <|-- DownholeAxialAcceleration
 PrototypeData <|-- DownholeAngularAcceleration
 PrototypeData <|-- StickSlipSeverityIndex
+PrototypeData <|-- FrictionCoefficient
+FrictionCoefficient <|-- MechanicalFrictionCoefficient
+MechanicalFrictionCoefficient <|-- StaticFrictionCoefficient
+MechanicalFrictionCoefficient <|-- KineticFrictionCoefficient
+MechanicalFrictionCoefficient <|-- AxialFrictionCoefficient
+MechanicalFrictionCoefficient <|-- RotationalFrictionCoefficient
 ```
 ## ActiveVolume <!-- NOUN -->
 - Display name: ActiveVolume
@@ -264,5 +270,29 @@ Curvilinear abscissa of the bottom of the bit, in the reference frame centered i
 ## StickSlipSeverityIndex <!-- NOUN -->
 - Display name: Stickslip Severity Index
 - Parent class: [PrototypeData](./DrillingDataSemantics.md#PrototypeData)
+- Definition set: SignalPrototypes
+## FrictionCoefficient <!-- NOUN -->
+- Display name: Friction coefficient
+- Parent class: [PrototypeData](./DrillingDataSemantics.md#PrototypeData)
+- Definition set: SignalPrototypes
+## MechanicalFrictionCoefficient <!-- NOUN -->
+- Display name: Mechanical Friction coefficient
+- Parent class: [FrictionCoefficient](./SignalPrototypes.md#FrictionCoefficient)
+- Definition set: SignalPrototypes
+## StaticFrictionCoefficient <!-- NOUN -->
+- Display name: Static Friction coefficient
+- Parent class: [MechanicalFrictionCoefficient](./SignalPrototypes.md#MechanicalFrictionCoefficient)
+- Definition set: SignalPrototypes
+## KineticFrictionCoefficient <!-- NOUN -->
+- Display name: Kinetic Friction coefficient
+- Parent class: [MechanicalFrictionCoefficient](./SignalPrototypes.md#MechanicalFrictionCoefficient)
+- Definition set: SignalPrototypes
+## AxialFrictionCoefficient <!-- NOUN -->
+- Display name: Axial Friction coefficient
+- Parent class: [MechanicalFrictionCoefficient](./SignalPrototypes.md#MechanicalFrictionCoefficient)
+- Definition set: SignalPrototypes
+## RotationalFrictionCoefficient <!-- NOUN -->
+- Display name: Rotational Friction coefficient
+- Parent class: [MechanicalFrictionCoefficient](./SignalPrototypes.md#MechanicalFrictionCoefficient)
 - Definition set: SignalPrototypes
 # Verbs
