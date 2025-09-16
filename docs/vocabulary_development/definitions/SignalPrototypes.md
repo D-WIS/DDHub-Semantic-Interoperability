@@ -358,4 +358,46 @@
 - Specialization:
 - Description: 
 - Examples:
+## FrictionCoefficient <!-- NOUN -->
+- Display name: Friction coefficient
+- Parent class: PrototypeData
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## MechanicalFrictionCoefficient <!-- NOUN -->
+- Display name: Mechanical Friction coefficient
+- Parent class: FrictionCoefficient
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## StaticFrictionCoefficient <!-- NOUN -->
+- Display name: Static Friction coefficient
+- Parent class: MechanicalFrictionCoefficient
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## KineticFrictionCoefficient <!-- NOUN -->
+- Display name: Kinetic Friction coefficient
+- Parent class: MechanicalFrictionCoefficient
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## AxialFrictionCoefficient <!-- NOUN -->
+- Display name: Axial Friction coefficient
+- Parent class: MechanicalFrictionCoefficient
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## RotationalFrictionCoefficient <!-- NOUN -->
+- Display name: Rotational Friction coefficient
+- Parent class: MechanicalFrictionCoefficient
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 # VERBS
