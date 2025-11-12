@@ -296,6 +296,9 @@ The meaningful precision of angular velocity related to survey instrument perfor
 ddhub:Annular a owl:Class; 
               rdfs:comment ""@EN; 
               rdfs:subClassOf ddhub:HydraulicBranch. 
+ddhub:AnnularHydraulicFrictionCoefficient a owl:Class; 
+                                          rdfs:comment ""@EN; 
+                                          rdfs:subClassOf ddhub:HydraulicFrictionCoefficient. 
 ddhub:AnnularPreventer a owl:Class; 
                        rdfs:comment ""@EN; 
                        rdfs:subClassOf ddhub:BopElement. 
@@ -5808,6 +5811,9 @@ ddhub:HydraulicConnectedState a owl:Class;
 ddhub:HydraulicElementState a owl:Class; 
                             rdfs:comment ""@EN; 
                             rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:HydraulicFrictionCoefficient a owl:Class; 
+                                   rdfs:comment ""@EN; 
+                                   rdfs:subClassOf ddhub:FrictionCoefficient. 
 ddhub:HydraulicJar a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:JarringAssembly. 

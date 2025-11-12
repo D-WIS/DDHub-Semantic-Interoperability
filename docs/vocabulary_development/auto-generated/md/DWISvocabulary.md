@@ -27946,6 +27946,14 @@ Curvilinear abscissa of the bottom of the bit, in the reference frame centered i
 - Display name: Rotational Friction coefficient
 - Parent class: [MechanicalFrictionCoefficient](#MechanicalFrictionCoefficient)
 - Definition set: SignalPrototypes
+## HydraulicFrictionCoefficient <!-- NOUN -->
+- Display name: Hydraulic Friction coefficient
+- Parent class: [FrictionCoefficient](#FrictionCoefficient)
+- Definition set: SignalPrototypes
+## AnnularHydraulicFrictionCoefficient <!-- NOUN -->
+- Display name: Annular Hydraulic Friction coefficient
+- Parent class: [HydraulicFrictionCoefficient](#HydraulicFrictionCoefficient)
+- Definition set: SignalPrototypes
 ## Clock <!-- NOUN -->
 - Display name: Clock
 - Parent class: [DWISNoun](#DWISNoun)

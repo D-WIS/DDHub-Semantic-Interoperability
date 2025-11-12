@@ -64,6 +64,8 @@ MechanicalFrictionCoefficient <|-- StaticFrictionCoefficient
 MechanicalFrictionCoefficient <|-- KineticFrictionCoefficient
 MechanicalFrictionCoefficient <|-- AxialFrictionCoefficient
 MechanicalFrictionCoefficient <|-- RotationalFrictionCoefficient
+FrictionCoefficient <|-- HydraulicFrictionCoefficient
+HydraulicFrictionCoefficient <|-- AnnularHydraulicFrictionCoefficient
 ```
 ## ActiveVolume <!-- NOUN -->
 - Display name: ActiveVolume
@@ -294,5 +296,13 @@ Curvilinear abscissa of the bottom of the bit, in the reference frame centered i
 ## RotationalFrictionCoefficient <!-- NOUN -->
 - Display name: Rotational Friction coefficient
 - Parent class: [MechanicalFrictionCoefficient](./SignalPrototypes.md#MechanicalFrictionCoefficient)
+- Definition set: SignalPrototypes
+## HydraulicFrictionCoefficient <!-- NOUN -->
+- Display name: Hydraulic Friction coefficient
+- Parent class: [FrictionCoefficient](./SignalPrototypes.md#FrictionCoefficient)
+- Definition set: SignalPrototypes
+## AnnularHydraulicFrictionCoefficient <!-- NOUN -->
+- Display name: Annular Hydraulic Friction coefficient
+- Parent class: [HydraulicFrictionCoefficient](./SignalPrototypes.md#HydraulicFrictionCoefficient)
 - Definition set: SignalPrototypes
 # Verbs
