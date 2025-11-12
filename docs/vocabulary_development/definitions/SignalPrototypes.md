@@ -400,4 +400,18 @@
 - Specialization:
 - Description: 
 - Examples:
+## HydraulicFrictionCoefficient <!-- NOUN -->
+- Display name: Hydraulic Friction coefficient
+- Parent class: FrictionCoefficient
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
+## AnnularHydraulicFrictionCoefficient <!-- NOUN -->
+- Display name: Annular Hydraulic Friction coefficient
+- Parent class: HydraulicFrictionCoefficient
+- Attributes:
+- Specialization:
+- Description: 
+- Examples:
 # VERBS
