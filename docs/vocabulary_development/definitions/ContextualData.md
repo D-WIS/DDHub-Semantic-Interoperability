@@ -59,6 +59,15 @@ rigActionPlan_1 IsProvidedBy operatingCompany_1
 DWISScheduler:scheduler_1
 rigActionPlan_1 IsProvidedTo scheduler_1
 ```
+
+## HierarchicalStateMachineRigActionPlan <!-- NOUN -->
+- Display name: HSM Rig Action Plan
+- Parent class: RigActionPlan
+- Attributes:
+- Specialization: 
+- Description: A rig action plan described as a hierarchical state machine (Harel chart). Such a machine is specific to a given task. The set of all available machine forms the overal rig action plan.
+- Examples:
+
 ## ConfigurationData <!-- NOUN -->
 - Display name: Configuration Data
 - Parent class: ContextualData
