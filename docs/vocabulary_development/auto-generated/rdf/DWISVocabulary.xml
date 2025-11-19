@@ -264,6 +264,12 @@ and then possibly recover from that incident.
     <rdfs:comment xml:lang="EN">A rig action plan is a set of steps and rules that shall be conducted to fulfil a particulat activity when constructing a well.
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HierarchicalStateMachineRigActionPlan">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/RigActionPlan" />
+    <rdfs:comment xml:lang="EN">A rig action plan described as a hierarchical state machine (Harel chart). Such a machine is specific to a given task. The set of all available machine forms the overal rig action plan.
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ConfigurationData">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/ContextualData" />

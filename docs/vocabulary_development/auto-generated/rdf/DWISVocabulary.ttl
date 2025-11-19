@@ -5691,6 +5691,10 @@ ddhub:HFTO a owl:Class;
            rdfs:comment """This Noun is used to refer to high frequency torsional oscillations.
 """@EN; 
            rdfs:subClassOf ddhub:AbnormalTorsionalOscillation. 
+ddhub:HierarchicalStateMachineRigActionPlan a owl:Class; 
+                                            rdfs:comment """A rig action plan described as a hierarchical state machine (Harel chart). Such a machine is specific to a given task. The set of all available machine forms the overal rig action plan.
+"""@EN; 
+                                            rdfs:subClassOf ddhub:RigActionPlan. 
 ddhub:HighGravitySolidComponent a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:DrillingFluidSolidComponent. 

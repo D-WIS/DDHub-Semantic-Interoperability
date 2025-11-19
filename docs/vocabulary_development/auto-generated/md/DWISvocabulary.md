@@ -3032,6 +3032,12 @@ WHERE {
   )
 }
 ```
+## HierarchicalStateMachineRigActionPlan <!-- NOUN -->
+- Display name: HSM Rig Action Plan
+- Parent class: [RigActionPlan](#RigActionPlan)
+- Description: 
+A rig action plan described as a hierarchical state machine (Harel chart). Such a machine is specific to a given task. The set of all available machine forms the overal rig action plan.
+- Definition set: ContextualData
 ## ConfigurationData <!-- NOUN -->
 - Display name: Configuration Data
 - Parent class: [ContextualData](#ContextualData)
