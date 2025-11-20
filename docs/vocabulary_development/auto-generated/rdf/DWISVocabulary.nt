@@ -94,6 +94,8 @@
 <http://ddhub.no/StratigraphyDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/WellBoreData> .
 <http://ddhub.no/RigDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/RigDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/WellBoreData> .
+<http://ddhub.no/RigActionPlanProcessingStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/RigActionPlanProcessingStatus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/JSonDataType> .
 <http://ddhub.no/ContinuousDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ContinuousDataType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DataType> .
 <http://ddhub.no/DateDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -4474,6 +4476,7 @@
 <http://ddhub.no/FormationStrengthDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "The formation strength data structure describes the formation strength and internal friction angle of the formation\nencountered along the wellbore.\n"@EN .
 <http://ddhub.no/StratigraphyDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "The stratigraphy data structure describes the type of rock, the porosity, permeability and fluid saturations\nof the formation layers that are encountered along the wellbore.\n"@EN .
 <http://ddhub.no/RigDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "The rig data structure describes the characteristics of the drilling equipment and any additional equipment\nassociated with non-standard drilling methods, e.g., back-pressure MPD, dual-gradient,...\n"@EN .
+<http://ddhub.no/RigActionPlanProcessingStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "The currently executed state of the rig action plan, stored in a JSon string.\n"@EN .
 <http://ddhub.no/ContinuousDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies that the data is continuous.\n"@EN .
 <http://ddhub.no/DateDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the data is a date.\n"@EN .
 <http://ddhub.no/ElapsedTimeDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the data is an elapsed time.\n"@EN .

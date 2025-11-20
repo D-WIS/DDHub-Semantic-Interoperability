@@ -423,6 +423,12 @@ of the formation layers that are encountered along the wellbore.
 associated with non-standard drilling methods, e.g., back-pressure MPD, dual-gradient,...
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RigActionPlanProcessingStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/JSonDataType" />
+    <rdfs:comment xml:lang="EN">The currently executed state of the rig action plan, stored in a JSon string.
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ContinuousDataType">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DataType" />

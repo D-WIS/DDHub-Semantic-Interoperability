@@ -13,6 +13,7 @@ Plan <|-- OperationalPlan
 Plan <|-- DrillingProgram
 Plan <|-- RigActionPlan
 RigActionPlan <|-- HierarchicalStateMachineRigActionPlan
+JSonDataType <|-- RigActionPlanProcessingStatus
 ContextualData <|-- ConfigurationData
 ContextualData <|-- OperationalStep
 OperationalStep <|-- PhaseStep
@@ -177,6 +178,12 @@ WHERE {
 - Parent class: [RigActionPlan](./ContextualData.md#RigActionPlan)
 - Description: 
 A rig action plan described as a hierarchical state machine (Harel chart). Such a machine is specific to a given task. The set of all available machine forms the overal rig action plan.
+- Definition set: ContextualData
+## RigActionPlanProcessingStatus <!-- NOUN -->
+- Display name: Rig Action Plan Processing Status
+- Parent class: [JSonDataType](./DrillingDataSemantics.md#JSonDataType)
+- Description: 
+The currently executed state of the rig action plan, stored in a JSon string.
 - Definition set: ContextualData
 ## ConfigurationData <!-- NOUN -->
 - Display name: Configuration Data

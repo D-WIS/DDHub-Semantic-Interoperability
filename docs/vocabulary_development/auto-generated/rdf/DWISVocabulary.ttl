@@ -14347,6 +14347,10 @@ ddhub:RigActionPlanFeature a owl:Class;
                            rdfs:comment """A rig action plan feature indicates that something accounts for the rig action plan.
 """@EN; 
                            rdfs:subClassOf ddhub:DrillingManagementFeature. 
+ddhub:RigActionPlanProcessingStatus a owl:Class; 
+                                    rdfs:comment """The currently executed state of the rig action plan, stored in a JSon string.
+"""@EN; 
+                                    rdfs:subClassOf ddhub:JSonDataType. 
 ddhub:RigChokeControlSystem a owl:Class; 
                             rdfs:comment ""@EN; 
                             rdfs:subClassOf ddhub:ControlSystem. 

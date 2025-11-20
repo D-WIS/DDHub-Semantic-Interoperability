@@ -3038,6 +3038,12 @@ WHERE {
 - Description: 
 A rig action plan described as a hierarchical state machine (Harel chart). Such a machine is specific to a given task. The set of all available machine forms the overal rig action plan.
 - Definition set: ContextualData
+## RigActionPlanProcessingStatus <!-- NOUN -->
+- Display name: Rig Action Plan Processing Status
+- Parent class: [JSonDataType](#JSonDataType)
+- Description: 
+The currently executed state of the rig action plan, stored in a JSon string.
+- Definition set: ContextualData
 ## ConfigurationData <!-- NOUN -->
 - Display name: Configuration Data
 - Parent class: [ContextualData](#ContextualData)
