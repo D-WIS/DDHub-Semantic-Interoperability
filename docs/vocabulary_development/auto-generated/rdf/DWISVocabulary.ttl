@@ -296,6 +296,9 @@ The meaningful precision of angular velocity related to survey instrument perfor
 ddhub:Annular a owl:Class; 
               rdfs:comment ""@EN; 
               rdfs:subClassOf ddhub:HydraulicBranch. 
+ddhub:AnnularHydraulicFrictionCoefficient a owl:Class; 
+                                          rdfs:comment ""@EN; 
+                                          rdfs:subClassOf ddhub:HydraulicFrictionCoefficient. 
 ddhub:AnnularPreventer a owl:Class; 
                        rdfs:comment ""@EN; 
                        rdfs:subClassOf ddhub:BopElement. 
@@ -387,6 +390,9 @@ ddhub:AverageDelayByRepeater a owl:DatatypeProperty, owl:FunctionalProperty;
 """@EN; 
                              rdfs:domain ddhub:Telemetry; 
                              rdfs:range xsd:double. 
+ddhub:AxialFrictionCoefficient a owl:Class; 
+                               rdfs:comment ""@EN; 
+                               rdfs:subClassOf ddhub:MechanicalFrictionCoefficient. 
 ddhub:AxialLoadLimit a owl:Class; 
                      rdfs:comment """This Noun is used to refer to an axial load limit.
 """@EN; 
@@ -4653,6 +4659,9 @@ $$[T^{-2}]$$.
 The SI unit for **frequency rate of change** is: hertz per second with the associated unit label $\\frac{Hz}{s}$
 """@EN; 
                                     rdfs:subClassOf ddhub:Quantity. 
+ddhub:FrictionCoefficient a owl:Class; 
+                          rdfs:comment ""@EN; 
+                          rdfs:subClassOf ddhub:PrototypeData. 
 ddhub:FrictionTestProcedure a owl:Class; 
                             rdfs:comment """A friction test procedure is used to measure the free rotating weight and torque and the pick-up and slack-off weights.
 """@EN; 
@@ -5682,6 +5691,10 @@ ddhub:HFTO a owl:Class;
            rdfs:comment """This Noun is used to refer to high frequency torsional oscillations.
 """@EN; 
            rdfs:subClassOf ddhub:AbnormalTorsionalOscillation. 
+ddhub:HierarchicalStateMachineRigActionPlan a owl:Class; 
+                                            rdfs:comment """A rig action plan described as a hierarchical state machine (Harel chart). Such a machine is specific to a given task. The set of all available machine forms the overal rig action plan.
+"""@EN; 
+                                            rdfs:subClassOf ddhub:RigActionPlan. 
 ddhub:HighGravitySolidComponent a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:DrillingFluidSolidComponent. 
@@ -5802,6 +5815,9 @@ ddhub:HydraulicConnectedState a owl:Class;
 ddhub:HydraulicElementState a owl:Class; 
                             rdfs:comment ""@EN; 
                             rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:HydraulicFrictionCoefficient a owl:Class; 
+                                   rdfs:comment ""@EN; 
+                                   rdfs:subClassOf ddhub:FrictionCoefficient. 
 ddhub:HydraulicJar a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:JarringAssembly. 
@@ -8649,6 +8665,9 @@ and
 Kilo = 1000.0
 """@EN; 
                rdfs:subClassOf ddhub:Unit. 
+ddhub:KineticFrictionCoefficient a owl:Class; 
+                                 rdfs:comment ""@EN; 
+                                 rdfs:subClassOf ddhub:MechanicalFrictionCoefficient. 
 ddhub:KnotPerSecond a owl:Class; 
                     rdfs:comment """[v] = a * [SI]
 where
@@ -9279,6 +9298,9 @@ ddhub:MechanicalDrawworks a owl:Class;
 ddhub:MechanicalElementState a owl:Class; 
                              rdfs:comment ""@EN; 
                              rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:MechanicalFrictionCoefficient a owl:Class; 
+                                    rdfs:comment ""@EN; 
+                                    rdfs:subClassOf ddhub:FrictionCoefficient. 
 ddhub:MechanicalJar a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:JarringAssembly. 
@@ -14325,6 +14347,10 @@ ddhub:RigActionPlanFeature a owl:Class;
                            rdfs:comment """A rig action plan feature indicates that something accounts for the rig action plan.
 """@EN; 
                            rdfs:subClassOf ddhub:DrillingManagementFeature. 
+ddhub:RigActionPlanProcessingStatus a owl:Class; 
+                                    rdfs:comment """The currently executed state of the rig action plan, stored in a JSon string.
+"""@EN; 
+                                    rdfs:subClassOf ddhub:JSonDataType. 
 ddhub:RigChokeControlSystem a owl:Class; 
                             rdfs:comment ""@EN; 
                             rdfs:subClassOf ddhub:ControlSystem. 
@@ -14416,6 +14442,9 @@ $$[T^{-1}]$$.
 The meaningful precision of small rotational frequency is typically: 0.00016666 Hz
 """@EN; 
                                        rdfs:subClassOf ddhub:MeasurableQuantity. 
+ddhub:RotationalFrictionCoefficient a owl:Class; 
+                                    rdfs:comment ""@EN; 
+                                    rdfs:subClassOf ddhub:MechanicalFrictionCoefficient. 
 ddhub:RotationalModelling a owl:Class; 
                           rdfs:comment """The model accounts for the rotational movement of some parts of the physical system.
 """@EN; 
@@ -15078,6 +15107,9 @@ and
 C_cgs = 2.99792458e10 reference: https://en.wikipedia.org/wiki/Statampere
 """@EN; 
                  rdfs:subClassOf ddhub:Unit. 
+ddhub:StaticFrictionCoefficient a owl:Class; 
+                                rdfs:comment ""@EN; 
+                                rdfs:subClassOf ddhub:MechanicalFrictionCoefficient. 
 ddhub:StaticFrictionFeature a owl:Class; 
                             rdfs:comment """A static friction feature is a characteristic about a model that accounts for the static friction along the string.
 """@EN; 

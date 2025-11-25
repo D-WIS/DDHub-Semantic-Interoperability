@@ -3032,6 +3032,18 @@ WHERE {
   )
 }
 ```
+## HierarchicalStateMachineRigActionPlan <!-- NOUN -->
+- Display name: HSM Rig Action Plan
+- Parent class: [RigActionPlan](#RigActionPlan)
+- Description: 
+A rig action plan described as a hierarchical state machine (Harel chart). Such a machine is specific to a given task. The set of all available machine forms the overal rig action plan.
+- Definition set: ContextualData
+## RigActionPlanProcessingStatus <!-- NOUN -->
+- Display name: Rig Action Plan Processing Status
+- Parent class: [JSonDataType](#JSonDataType)
+- Description: 
+The currently executed state of the rig action plan, stored in a JSon string.
+- Definition set: ContextualData
 ## ConfigurationData <!-- NOUN -->
 - Display name: Configuration Data
 - Parent class: [ContextualData](#ContextualData)
@@ -27921,6 +27933,38 @@ Curvilinear abscissa of the bottom of the bit, in the reference frame centered i
 ## StickSlipSeverityIndex <!-- NOUN -->
 - Display name: Stickslip Severity Index
 - Parent class: [PrototypeData](#PrototypeData)
+- Definition set: SignalPrototypes
+## FrictionCoefficient <!-- NOUN -->
+- Display name: Friction coefficient
+- Parent class: [PrototypeData](#PrototypeData)
+- Definition set: SignalPrototypes
+## MechanicalFrictionCoefficient <!-- NOUN -->
+- Display name: Mechanical Friction coefficient
+- Parent class: [FrictionCoefficient](#FrictionCoefficient)
+- Definition set: SignalPrototypes
+## StaticFrictionCoefficient <!-- NOUN -->
+- Display name: Static Friction coefficient
+- Parent class: [MechanicalFrictionCoefficient](#MechanicalFrictionCoefficient)
+- Definition set: SignalPrototypes
+## KineticFrictionCoefficient <!-- NOUN -->
+- Display name: Kinetic Friction coefficient
+- Parent class: [MechanicalFrictionCoefficient](#MechanicalFrictionCoefficient)
+- Definition set: SignalPrototypes
+## AxialFrictionCoefficient <!-- NOUN -->
+- Display name: Axial Friction coefficient
+- Parent class: [MechanicalFrictionCoefficient](#MechanicalFrictionCoefficient)
+- Definition set: SignalPrototypes
+## RotationalFrictionCoefficient <!-- NOUN -->
+- Display name: Rotational Friction coefficient
+- Parent class: [MechanicalFrictionCoefficient](#MechanicalFrictionCoefficient)
+- Definition set: SignalPrototypes
+## HydraulicFrictionCoefficient <!-- NOUN -->
+- Display name: Hydraulic Friction coefficient
+- Parent class: [FrictionCoefficient](#FrictionCoefficient)
+- Definition set: SignalPrototypes
+## AnnularHydraulicFrictionCoefficient <!-- NOUN -->
+- Display name: Annular Hydraulic Friction coefficient
+- Parent class: [HydraulicFrictionCoefficient](#HydraulicFrictionCoefficient)
 - Definition set: SignalPrototypes
 ## Clock <!-- NOUN -->
 - Display name: Clock

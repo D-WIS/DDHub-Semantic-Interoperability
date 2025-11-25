@@ -46,6 +46,8 @@
 <http://ddhub.no/DrillingProgram> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Plan> .
 <http://ddhub.no/RigActionPlan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/RigActionPlan> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Plan> .
+<http://ddhub.no/HierarchicalStateMachineRigActionPlan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/HierarchicalStateMachineRigActionPlan> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/RigActionPlan> .
 <http://ddhub.no/ConfigurationData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ConfigurationData> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ContextualData> .
 <http://ddhub.no/OperationalStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -92,6 +94,8 @@
 <http://ddhub.no/StratigraphyDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/WellBoreData> .
 <http://ddhub.no/RigDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/RigDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/WellBoreData> .
+<http://ddhub.no/RigActionPlanProcessingStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/RigActionPlanProcessingStatus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/JSonDataType> .
 <http://ddhub.no/ContinuousDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ContinuousDataType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DataType> .
 <http://ddhub.no/DateDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -433,6 +437,22 @@
 <http://ddhub.no/DownholeAngularAcceleration> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/PrototypeData> .
 <http://ddhub.no/StickSlipSeverityIndex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/StickSlipSeverityIndex> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/PrototypeData> .
+<http://ddhub.no/FrictionCoefficient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/FrictionCoefficient> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/PrototypeData> .
+<http://ddhub.no/MechanicalFrictionCoefficient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/MechanicalFrictionCoefficient> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/FrictionCoefficient> .
+<http://ddhub.no/StaticFrictionCoefficient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/StaticFrictionCoefficient> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/MechanicalFrictionCoefficient> .
+<http://ddhub.no/KineticFrictionCoefficient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/KineticFrictionCoefficient> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/MechanicalFrictionCoefficient> .
+<http://ddhub.no/AxialFrictionCoefficient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/AxialFrictionCoefficient> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/MechanicalFrictionCoefficient> .
+<http://ddhub.no/RotationalFrictionCoefficient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/RotationalFrictionCoefficient> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/MechanicalFrictionCoefficient> .
+<http://ddhub.no/HydraulicFrictionCoefficient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/HydraulicFrictionCoefficient> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/FrictionCoefficient> .
+<http://ddhub.no/AnnularHydraulicFrictionCoefficient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/AnnularHydraulicFrictionCoefficient> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/HydraulicFrictionCoefficient> .
 <http://ddhub.no/ProcessData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ProcessData> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingDataPoint> .
 <http://ddhub.no/ProcessFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -4432,6 +4452,7 @@
 <http://ddhub.no/OperationalPlan> <http://www.w3.org/2000/01/rdf-schema#comment> "An operational plan is the day-to-day list of activities that shall be performed to contruct a well.\n"@EN .
 <http://ddhub.no/DrillingProgram> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling program is a set of procedures that are necessary to construct a well.\n"@EN .
 <http://ddhub.no/RigActionPlan> <http://www.w3.org/2000/01/rdf-schema#comment> "A rig action plan is a set of steps and rules that shall be conducted to fulfil a particulat activity when constructing a well.\n"@EN .
+<http://ddhub.no/HierarchicalStateMachineRigActionPlan> <http://www.w3.org/2000/01/rdf-schema#comment> "A rig action plan described as a hierarchical state machine (Harel chart). Such a machine is specific to a given task. The set of all available machine forms the overal rig action plan.\n"@EN .
 <http://ddhub.no/ConfigurationData> <http://www.w3.org/2000/01/rdf-schema#comment> "Configuration data is used to configure a computation unit.\n"@EN .
 <http://ddhub.no/OperationalStep> <http://www.w3.org/2000/01/rdf-schema#comment> "An operation step is a possible element of a rig action plan.\n"@EN .
 <http://ddhub.no/PhaseStep> <http://www.w3.org/2000/01/rdf-schema#comment> "A phase step is at the first level of a rig action plan.\n"@EN .
@@ -4455,6 +4476,7 @@
 <http://ddhub.no/FormationStrengthDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "The formation strength data structure describes the formation strength and internal friction angle of the formation\nencountered along the wellbore.\n"@EN .
 <http://ddhub.no/StratigraphyDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "The stratigraphy data structure describes the type of rock, the porosity, permeability and fluid saturations\nof the formation layers that are encountered along the wellbore.\n"@EN .
 <http://ddhub.no/RigDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "The rig data structure describes the characteristics of the drilling equipment and any additional equipment\nassociated with non-standard drilling methods, e.g., back-pressure MPD, dual-gradient,...\n"@EN .
+<http://ddhub.no/RigActionPlanProcessingStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "The currently executed state of the rig action plan, stored in a JSon string.\n"@EN .
 <http://ddhub.no/ContinuousDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies that the data is continuous.\n"@EN .
 <http://ddhub.no/DateDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the data is a date.\n"@EN .
 <http://ddhub.no/ElapsedTimeDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the data is an elapsed time.\n"@EN .
@@ -4606,6 +4628,14 @@
 <http://ddhub.no/DownholeAxialAcceleration> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/DownholeAngularAcceleration> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/StickSlipSeverityIndex> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/FrictionCoefficient> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/MechanicalFrictionCoefficient> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/StaticFrictionCoefficient> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/KineticFrictionCoefficient> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/AxialFrictionCoefficient> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/RotationalFrictionCoefficient> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/HydraulicFrictionCoefficient> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/AnnularHydraulicFrictionCoefficient> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/ProcessData> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/ProcessFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "This Noun is used for signals that describe a process feature, typically assuming that this is a static signal.\n"@EN .
 <http://ddhub.no/SetPoint> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
