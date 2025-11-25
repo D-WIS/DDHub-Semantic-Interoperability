@@ -1,22 +1,16 @@
 ![DDHub](./docs/img/ddhubLogo.png)
 
 # DDHub Semantic Interoperability
-Repository for the DDHub semantical model. The main feature of this repo is the ontology. 
-Corresponds to the *Work Package 1* of the DSID project. 
+Work Package 1 (DSID): ontology, vocabulary, and examples for DDHub semantic interoperability across drilling data.
 
-The DDHub scope can be found [here](docs/DDHub_semantic_model.md).
+## Contents
+- `model/` - DDHub ontology in multiple serializations (XML, Turtle, JSON, Manchester, RTF) with generated HTML docs (`model/html/documentation`).
+- `examples/` - OWL examples for common signals and circuits (flow-rate, hookload, torque, ECD, hydraulic/mechanical circuits, LWD, HIL demo, manifests).
+- `docs/` - narrative docs for the semantic model, use cases, drilling signal descriptions, architecture draft, and vocabulary development notes.
+- `src/DWIS-Vocabulary/` - .NET solution `DWIS.Vocabulary.sln` containing vocabulary/schema tooling, instance editors, standard sets, controls, utilities, tests, and local NuGet packages for offline builds.
 
-Some uses cases can be found [here](docs/use_cases/Use_cases.md). 
-
-Some descriptions of typical drilling signals used for creating the semantical model can be found [here](docs/drilling_signals/home.md). 
-
-Some early architecture can be found [here](docs/architecture/DDHub_architecture.md). 
-
-The DDHub ontology can be found [here for the xml serialization](model/DDHub_xml.owl). Auto-generated documentation is [there](model/html/documentation/index-en.html), but it does not display well in the browser. 
-
-Vocabulary development takes place [here](docs/vocabulary_development/README.md). 
-
-```mermaid
-  graph TD;
-      Drilling-- Data -->Hub;      
-```
+## Quick start
+- Explore the model: open `model/DDHub_xml.owl` (or Turtle/JSON) in your OWL tool of choice; HTML docs live at `model/html/documentation/index-en.html`.
+- See example patterns: browse `examples/` for OWL instances of signals and circuits.
+- Build vocabulary tools: `dotnet build src/DWIS-Vocabulary/DWIS-Vocabulary.sln` (use `LocalPackages/` if offline).
+- Read background: `docs/DDHub_semantic_model.md`, `docs/use_cases/Use_cases.md`, `docs/drilling_signals/home.md`, `docs/architecture/DDHub_architecture.md`.
