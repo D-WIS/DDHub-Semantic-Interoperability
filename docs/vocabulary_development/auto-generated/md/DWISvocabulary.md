@@ -17,7 +17,7 @@ this definition set covers the physical dependence of a `DrillingDatPoint` on so
 
 ## DataFlow<!-- DEFINITION SET HEADER -->
 - Description: 
-this category refers to the data processing. It should probably be renamed accordingly. It should define and organize the different types of processing encountered during drilling operations. A Thursday session was devoted to those items. Note that in the current version, control flow is also included: a controller is seen as a special type of processing unit, that generates commands based on measurements and set-points. This can of course be modified if deemed necessary. Note also that transmission is included there as well. A telemetry system is seen as a processing unit that only duplicates a signal, and a delay is associated to the duplication process. While this is a useful way of looking at telemetry, it is probably not intuitive enough.
+This category captures how data and commands move through the drilling system, covering computation, control, signal conditioning, and telemetry. Controllers are treated as processing units that generate commands from set-points and measurements, and telemetry is treated as a special processing unit that forwards signals with an associated delay.
 
 ## DataProviders<!-- DEFINITION SET HEADER -->
 - Description: 
@@ -29,11 +29,11 @@ this category contains all nouns and verbs used to describe the rig's telemetry,
 
 ## DataValidity<!-- DEFINITION SET HEADER -->
 - Description: 
-this category contains all the nouns and verbs used to described the validity of signals. Some signals are for example only valid while off-slips, downhole signals transmitted via mud-pulse telemetry require circulation.
+This category groups the nouns and verbs used to describe when a drilling signal is valid. Typical cases include signals only valid off slips or downhole telemetry signals that are valid only while circulating.
 
 ## DrillingDataSemantics<!-- DEFINITION SET HEADER -->
 - Description: 
-this is the part associated to the signal's description themselves. Dimensionality, data type are the main items to be described.
+Describes the semantics of drilling signals: their data types, how values are carried, and how set-points, commands, recommendations, advices, limits, and measurements relate to each other.
 
 ## DrillingEquipment<!-- DEFINITION SET HEADER -->
 - Description: 
@@ -65,16 +65,20 @@ definitions of the base noun and verb. All verbs and nouns in the DWIS vocabular
 
 ## EndPoints<!-- DEFINITION SET HEADER -->
 - Description: 
-this is the part associated to the description of external end-points.
+Describes external endpoints where drilling data is sourced or delivered, and how signals map to those endpoints.
+
+## HydraulicModel<!-- DEFINITION SET HEADER -->
+- Description: 
+specialized vocabulary for the hydraulic modelling
 
 ## Hydraulics<!-- DEFINITION SET HEADER -->
 - Description: 
-this part refers to the hydraulic circuit, and should only contain the "abstract" or conceptual part of the vocabulary. Additional nouns coming from the drilling equipment category will be used when constructing the semantic graphs.
+Describes abstract hydraulic concepts used to model drilling circulation systems and fluids.
 
 ## MeasurableQuantityTypes<!-- DEFINITION SET HEADER -->
 ## MechanicalModel<!-- DEFINITION SET HEADER -->
 - Description: 
-specialized vocabulary for the modelling of the drilling mechanics. Covers in particular the so-called torque and drag models
+specialized vocabulary for the modelling of the drilling mechanics. Covers in particular torque and drag models
 
 ## Mechanics<!-- DEFINITION SET HEADER -->
 - Description: 
@@ -606,6 +610,28 @@ A drilling standard procedure advisor provides parameters for a standard procedu
 running a friction test.
 - Definition set: AdvisorySystemAdvice
 - Examples:
+```dwis drillingStandardProcedureAdvice
+DrillingDataPoint:drillingStandardProcedureAdvice
+drillingStandardProcedureAdvice BelongsToClass DrillingStandardProcedureAdvice
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingStandardProcedureAdvice] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[drillingStandardProcedureAdvice] -->|BelongsToClass| N0002(DrillingStandardProcedureAdvice) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillingStandardProcedureAdvice
+WHERE {
+	?drillingStandardProcedureAdvice rdf:type ddhub:DrillingDataPoint .
+	?drillingStandardProcedureAdvice rdf:type ddhub:DrillingStandardProcedureAdvice .
+}
+```
+This example links a drilling data point to the DrillingStandardProcedureAdvice definition.
 The circulation startup procedure defines how to start the mud pumps in order to fill the pipes, break circulation and 
 establish a suitable flowrate in the drill-stem.
 ``` dwis circulationStartupProcedureInfo
@@ -1551,6 +1577,28 @@ A drilling control advisor provides information on how to control a part of the 
 as possible to one or several desired values.
 - Definition set: AdvisorySystemAdvice
 - Examples:
+```dwis drillingControlAdvice
+DrillingDataPoint:drillingControlAdvice
+drillingControlAdvice BelongsToClass DrillingControlAdvice
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingControlAdvice] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[drillingControlAdvice] -->|BelongsToClass| N0002(DrillingControlAdvice) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillingControlAdvice
+WHERE {
+	?drillingControlAdvice rdf:type ddhub:DrillingDataPoint .
+	?drillingControlAdvice rdf:type ddhub:DrillingControlAdvice .
+}
+```
+This example links a drilling data point to the DrillingControlAdvice definition.
 A ROP management controller adjusts the parameters of the auto-driller to manage the ROP. The ROP management may concern
 potential problems with drill-string buckling, passing the bit founder point, vibration and cuttings transport.
 ``` dwis ROPManagementControllerInfo
@@ -1817,6 +1865,28 @@ A safe operating envelope (SOE) advisor provides information on the limits that 
 process to avoid possible drilling incidents.
 - Definition set: AdvisorySystemAdvice
 - Examples:
+```dwis drillingSafeOperatingEnvelopeAdvice
+DrillingDataPoint:drillingSafeOperatingEnvelopeAdvice
+drillingSafeOperatingEnvelopeAdvice BelongsToClass DrillingSafeOperatingEnvelopeAdvice
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingSafeOperatingEnvelopeAdvice] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[drillingSafeOperatingEnvelopeAdvice] -->|BelongsToClass| N0002(DrillingSafeOperatingEnvelopeAdvice) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillingSafeOperatingEnvelopeAdvice
+WHERE {
+	?drillingSafeOperatingEnvelopeAdvice rdf:type ddhub:DrillingDataPoint .
+	?drillingSafeOperatingEnvelopeAdvice rdf:type ddhub:DrillingSafeOperatingEnvelopeAdvice .
+}
+```
+This example links a drilling data point to the DrillingSafeOperatingEnvelopeAdvice definition.
 The min-max axial velocity SOE is used to limit the axial drill-strem velocity to avoid generating swab and surge 
 pressures that exceeds the geo-pressure window.
 ``` dwis minMaxAxialVelocitySOEInfo
@@ -2027,6 +2097,28 @@ and parameters to procedure that is executed when a drilling incident is detecte
 and then possibly recover from that incident.
 - Definition set: AdvisorySystemAdvice
 - Examples:
+```dwis drillingFaultDetectionIsolationAndRecoveryAdvice
+DrillingDataPoint:drillingFaultDetectionIsolationAndRecoveryAdvice
+drillingFaultDetectionIsolationAndRecoveryAdvice BelongsToClass DrillingFaultDetectionIsolationAndRecoveryAdvice
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingFaultDetectionIsolationAndRecoveryAdvice] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[drillingFaultDetectionIsolationAndRecoveryAdvice] -->|BelongsToClass| N0002(DrillingFaultDetectionIsolationAndRecoveryAdvice) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillingFaultDetectionIsolationAndRecoveryAdvice
+WHERE {
+	?drillingFaultDetectionIsolationAndRecoveryAdvice rdf:type ddhub:DrillingDataPoint .
+	?drillingFaultDetectionIsolationAndRecoveryAdvice rdf:type ddhub:DrillingFaultDetectionIsolationAndRecoveryAdvice .
+}
+```
+This example links a drilling data point to the DrillingFaultDetectionIsolationAndRecoveryAdvice definition.
 A pack-off FDIR function detects an abornormal dowhole pressure and executes a procedure to avoid fracturing the
 open hole formation and possibly continues with a procedure to remediate the cause of the pack-off and return to normal conditions.
 ``` dwis PackOffFDIRInfo
@@ -2903,12 +2995,58 @@ WHERE {
 - Description: 
 Contextual data are structured objects stored in a JSon string.
 - Definition set: ContextualData
+- Examples:
+```dwis contextualData
+DrillingDataPoint:contextualData
+contextualData BelongsToClass ContextualData
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[contextualData] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[contextualData] -->|BelongsToClass| N0002(ContextualData) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?contextualData
+WHERE {
+	?contextualData rdf:type ddhub:DrillingDataPoint .
+	?contextualData rdf:type ddhub:ContextualData .
+}
+```
+This example links a drilling data point to the ContextualData definition.
 ## Plan <!-- NOUN -->
 - Display name: Plan
 - Parent class: [ContextualData](#ContextualData)
 - Description: 
 A plan is a description of the actions that shall be undertaken to reach an objective
 - Definition set: ContextualData
+- Examples:
+```dwis plan
+DrillingDataPoint:plan
+plan BelongsToClass Plan
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[plan] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[plan] -->|BelongsToClass| N0002(Plan) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?plan
+WHERE {
+	?plan rdf:type ddhub:DrillingDataPoint .
+	?plan rdf:type ddhub:Plan .
+}
+```
+This example links a drilling data point to the Plan definition.
 ## OperationalPlan <!-- NOUN -->
 - Display name: Operational Plan
 - Parent class: [Plan](#Plan)
@@ -3038,12 +3176,58 @@ WHERE {
 - Description: 
 A rig action plan described as a hierarchical state machine (Harel chart). Such a machine is specific to a given task. The set of all available machine forms the overal rig action plan.
 - Definition set: ContextualData
+- Examples:
+```dwis hierarchicalStateMachineRigActionPlan
+DrillingDataPoint:hierarchicalStateMachineRigActionPlan
+hierarchicalStateMachineRigActionPlan BelongsToClass HierarchicalStateMachineRigActionPlan
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hierarchicalStateMachineRigActionPlan] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[hierarchicalStateMachineRigActionPlan] -->|BelongsToClass| N0002(HierarchicalStateMachineRigActionPlan) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hierarchicalStateMachineRigActionPlan
+WHERE {
+	?hierarchicalStateMachineRigActionPlan rdf:type ddhub:DrillingDataPoint .
+	?hierarchicalStateMachineRigActionPlan rdf:type ddhub:HierarchicalStateMachineRigActionPlan .
+}
+```
+This example links a drilling data point to the HierarchicalStateMachineRigActionPlan definition.
 ## RigActionPlanProcessingStatus <!-- NOUN -->
 - Display name: Rig Action Plan Processing Status
 - Parent class: [JSonDataType](#JSonDataType)
 - Description: 
 The currently executed state of the rig action plan, stored in a JSon string.
 - Definition set: ContextualData
+- Examples:
+```dwis rigActionPlanProcessingStatus
+DrillingDataPoint:rigActionPlanProcessingStatus
+rigActionPlanProcessingStatus BelongsToClass RigActionPlanProcessingStatus
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rigActionPlanProcessingStatus] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[rigActionPlanProcessingStatus] -->|BelongsToClass| N0002(RigActionPlanProcessingStatus) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rigActionPlanProcessingStatus
+WHERE {
+	?rigActionPlanProcessingStatus rdf:type ddhub:DrillingDataPoint .
+	?rigActionPlanProcessingStatus rdf:type ddhub:RigActionPlanProcessingStatus .
+}
+```
+This example links a drilling data point to the RigActionPlanProcessingStatus definition.
 ## ConfigurationData <!-- NOUN -->
 - Display name: Configuration Data
 - Parent class: [ContextualData](#ContextualData)
@@ -3098,6 +3282,29 @@ WHERE {
 - Description: 
 An operation step is a possible element of a rig action plan.
 - Definition set: ContextualData
+- Examples:
+```dwis operationalStep
+DrillingDataPoint:operationalStep
+operationalStep BelongsToClass OperationalStep
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[operationalStep] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[operationalStep] -->|BelongsToClass| N0002(OperationalStep) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?operationalStep
+WHERE {
+	?operationalStep rdf:type ddhub:DrillingDataPoint .
+	?operationalStep rdf:type ddhub:OperationalStep .
+}
+```
+This example links a drilling data point to the OperationalStep definition.
 ## PhaseStep <!-- NOUN -->
 - Display name: Phase Step
 - Parent class: [OperationalStep](#OperationalStep)
@@ -3353,6 +3560,8 @@ WHERE {
 ## WellBoreData <!-- NOUN -->
 - Display name: Wellbore Data
 - Parent class: [ContextualData](#ContextualData)
+- Description: 
+Captures contextual information describing wellbore characteristics and elements.
 - Definition set: ContextualData
 - Examples:
 ``` dwis wellBoreData_0
@@ -3728,6 +3937,29 @@ WHERE {
 A dill-stem is a generic term for all strings that are run in a borehole. The drill-stem describes the geometrical
 and mechanical characteristics of such a string. 
 - Definition set: ContextualData
+- Examples:
+```dwis drillStemDescription
+DrillingDataPoint:drillStemDescription
+drillStemDescription BelongsToClass DrillStemDescription
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillStemDescription] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[drillStemDescription] -->|BelongsToClass| N0002(DrillStemDescription) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillStemDescription
+WHERE {
+	?drillStemDescription rdf:type ddhub:DrillingDataPoint .
+	?drillStemDescription rdf:type ddhub:DrillStemDescription .
+}
+```
+This example links a drilling data point to the DrillStemDescription definition.
 ## DrillStringDescription <!-- NOUN -->
 - Display name: Drill-string Description
 - Parent class: [DrillStemDescription](#DrillStemDescription)
@@ -4201,6 +4433,29 @@ WHERE {
 - Description: 
 This Noun is used to characterize a piece of wellbore data.
 - Definition set: ContextualData
+- Examples:
+```dwis wellBoreDataCharateristic
+DrillingDataPoint:wellBoreDataCharateristic
+wellBoreDataCharateristic BelongsToClass WellBoreDataCharateristic
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wellBoreDataCharateristic] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[wellBoreDataCharateristic] -->|BelongsToClass| N0002(WellBoreDataCharateristic) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wellBoreDataCharateristic
+WHERE {
+	?wellBoreDataCharateristic rdf:type ddhub:DrillingDataPoint .
+	?wellBoreDataCharateristic rdf:type ddhub:WellBoreDataCharateristic .
+}
+```
+This example links a drilling data point to the WellBoreDataCharateristic definition.
 ## Planned <!-- NOUN -->
 - Display name: Planned
 - Parent class: [WellBoreDataCharateristic](#WellBoreDataCharateristic)
@@ -4475,42 +4730,324 @@ WHERE {
 - Description: 
 A data flow node is a generic term for any node in the data flow graph.
 - Definition set: DataFlow
+- Examples:
+```dwis dataFlowHookload
+MeasurementDevice:hookloadSensor
+DrillingDataPoint:hookloadSignal
+hookloadSignal IsGeneratedBy hookloadSensor
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hookloadSensor] -->|BelongsToClass| N0001(MeasurementDevice) 
+	N0002[hookloadSignal] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[hookloadSignal] -->|IsGeneratedBy| N0000((hookloadSensor)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?dataFlowHookload
+WHERE {
+	?hookloadSensor rdf:type ddhub:MeasurementDevice .
+	?hookloadSignal rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = hookloadSensor
+  )
+}
+```
+This example shows a measurement device acting as a `DataFlowNode` that generates the `hookloadSignal`.
 ## ComputedState <!-- NOUN -->
 - Display name: Computed State
 - Parent class: [ComputationUnit](#ComputationUnit)
 - Description: 
 A state represents the current configuation of a system.
 - Definition set: DataFlow
+- Examples:
+```dwis holeCleaningState
+Interpreter:holeCleaningInterpreter
+ComputedState:holeCleaningState
+DWISNoun:holeCleaningProcess
+holeCleaningState IsComputedBy holeCleaningInterpreter
+holeCleaningState IsCurrentStateFor holeCleaningProcess
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[holeCleaningInterpreter] -->|BelongsToClass| N0001(Interpreter) 
+	N0002[holeCleaningState] -->|BelongsToClass| N0003(ComputedState) 
+	N0004[holeCleaningProcess] -->|BelongsToClass| N0005(DWISNoun) 
+	N0002[holeCleaningState] -->|IsComputedBy| N0000((holeCleaningInterpreter)) 
+	N0002[holeCleaningState] -->|IsCurrentStateFor| N0004((holeCleaningProcess)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?holeCleaningState
+WHERE {
+	?holeCleaningInterpreter rdf:type ddhub:Interpreter .
+	?holeCleaningState rdf:type ddhub:ComputedState .
+	?holeCleaningProcess rdf:type ddhub:DWISNoun .
+  FILTER (
+	?Attribute000 = holeCleaningInterpreter
+	&& 	?Attribute001 = holeCleaningProcess
+  )
+}
+```
+This example shows an interpreter computing the current hole-cleaning state of the drilling process.
 ## ProceduralState <!-- NOUN -->
 - Display name: Procedural State
 - Parent class: [ComputedState](#ComputedState)
+- Description: 
+Describes the active state within a finite-state procedure such as startup, shutdown, or test sequences.
 - Definition set: DataFlow
+- Examples:
+```dwis circulationStartupState
+ProcedureFunction:circulationStartup
+ProceduralState:circulationStartupState
+circulationStartupState IsInformationForCurrentStateOf circulationStartup
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[circulationStartup] -->|BelongsToClass| N0001(ProcedureFunction) 
+	N0002[circulationStartupState] -->|BelongsToClass| N0003(ProceduralState) 
+	N0002[circulationStartupState] -->|IsInformationForCurrentStateOf| N0000((circulationStartup)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?circulationStartupState
+WHERE {
+	?circulationStartup rdf:type ddhub:ProcedureFunction .
+	?circulationStartupState rdf:type ddhub:ProceduralState .
+  FILTER (
+	?Attribute000 = circulationStartup
+  )
+}
+```
+This example captures the current state of a circulation startup procedure.
 ## EnablementState <!-- NOUN -->
 - Display name: Enablement State
 - Parent class: [ProceduralState](#ProceduralState)
+- Description: 
+Indicates whether a procedure or function is allowed to run based on permissives or user choices.
 - Definition set: DataFlow
+- Examples:
+```dwis autoDrillerEnablement
+ControllerFunction:autoDriller
+EnablementState:autoDrillerEnablement
+autoDrillerEnablement IsInformationForCurrentStateOf autoDriller
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[autoDriller] -->|BelongsToClass| N0001(ControllerFunction) 
+	N0002[autoDrillerEnablement] -->|BelongsToClass| N0003(EnablementState) 
+	N0002[autoDrillerEnablement] -->|IsInformationForCurrentStateOf| N0000((autoDriller)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?autoDrillerEnablement
+WHERE {
+	?autoDriller rdf:type ddhub:ControllerFunction .
+	?autoDrillerEnablement rdf:type ddhub:EnablementState .
+  FILTER (
+	?Attribute000 = autoDriller
+  )
+}
+```
+This example states whether the `autoDriller` can be enabled.
 ## ActivationState <!-- NOUN -->
 - Display name: Activation State
 - Parent class: [ProceduralState](#ProceduralState)
+- Description: 
+Indicates that a procedure or function is currently activated and executing its logic.
 - Definition set: DataFlow
+- Examples:
+```dwis autoDrillerActivation
+ControllerFunction:autoDriller
+ActivationState:autoDrillerActivation
+autoDrillerActivation IsInformationForCurrentStateOf autoDriller
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[autoDriller] -->|BelongsToClass| N0001(ControllerFunction) 
+	N0002[autoDrillerActivation] -->|BelongsToClass| N0003(ActivationState) 
+	N0002[autoDrillerActivation] -->|IsInformationForCurrentStateOf| N0000((autoDriller)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?autoDrillerActivation
+WHERE {
+	?autoDriller rdf:type ddhub:ControllerFunction .
+	?autoDrillerActivation rdf:type ddhub:ActivationState .
+  FILTER (
+	?Attribute000 = autoDriller
+  )
+}
+```
+This example shows the activation state of the `autoDriller`.
 ## IdlingState <!-- NOUN -->
 - Display name: Idling State
 - Parent class: [ProceduralState](#ProceduralState)
+- Description: 
+Indicates that a function is enabled but not acting on the process because no transition or control action is required.
 - Definition set: DataFlow
+- Examples:
+```dwis soeIdleState
+SOEFunction:swabSurgeLimits
+IdlingState:soeIdleState
+soeIdleState IsInformationForCurrentStateOf swabSurgeLimits
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[swabSurgeLimits] -->|BelongsToClass| N0001(SOEFunction) 
+	N0002[soeIdleState] -->|BelongsToClass| N0003(IdlingState) 
+	N0002[soeIdleState] -->|IsInformationForCurrentStateOf| N0000((swabSurgeLimits)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?soeIdleState
+WHERE {
+	?swabSurgeLimits rdf:type ddhub:SOEFunction .
+	?soeIdleState rdf:type ddhub:IdlingState .
+  FILTER (
+	?Attribute000 = swabSurgeLimits
+  )
+}
+```
+This example captures that the swab/surge limits function is currently idle.
 ## ProcessState <!-- NOUN -->
 - Display name: Process State
 - Parent class: [ComputedState](#ComputedState)
+- Description: 
+Describes the current operating condition of a continuous process such as circulation or drilling.
 - Definition set: DataFlow
+- Examples:
+```dwis circulationState
+DWISNoun:circulationProcess
+ProcessState:stableCirculation
+stableCirculation IsCurrentStateFor circulationProcess
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[circulationProcess] -->|BelongsToClass| N0001(DWISNoun) 
+	N0002[stableCirculation] -->|BelongsToClass| N0003(ProcessState) 
+	N0002[stableCirculation] -->|IsCurrentStateFor| N0000((circulationProcess)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?circulationState
+WHERE {
+	?circulationProcess rdf:type ddhub:DWISNoun .
+	?stableCirculation rdf:type ddhub:ProcessState .
+  FILTER (
+	?Attribute000 = circulationProcess
+  )
+}
+```
+This example expresses that the circulation process is currently stable.
 ## PhysicalState <!-- NOUN -->
 - Display name: Physical State
 - Parent class: [ComputedState](#ComputedState)
+- Description: 
+Captures a computed representation of the physical condition of equipment or the well (e.g., pressure regime, torque state).
 - Definition set: DataFlow
+- Examples:
+```dwis annulusPressureState
+Interpreter:wellIntegrityInterpreter
+PhysicalState:annulusPressureState
+DWISNoun:annulusSection
+annulusPressureState IsComputedBy wellIntegrityInterpreter
+annulusPressureState IsCurrentStateFor annulusSection
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wellIntegrityInterpreter] -->|BelongsToClass| N0001(Interpreter) 
+	N0002[annulusPressureState] -->|BelongsToClass| N0003(PhysicalState) 
+	N0004[annulusSection] -->|BelongsToClass| N0005(DWISNoun) 
+	N0002[annulusPressureState] -->|IsComputedBy| N0000((wellIntegrityInterpreter)) 
+	N0002[annulusPressureState] -->|IsCurrentStateFor| N0004((annulusSection)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?annulusPressureState
+WHERE {
+	?wellIntegrityInterpreter rdf:type ddhub:Interpreter .
+	?annulusPressureState rdf:type ddhub:PhysicalState .
+	?annulusSection rdf:type ddhub:DWISNoun .
+  FILTER (
+	?Attribute000 = wellIntegrityInterpreter
+	&& 	?Attribute001 = annulusSection
+  )
+}
+```
+This example shows an interpreter estimating the pressure state of an annulus section.
 ## ComputationUnit <!-- NOUN -->
 - Display name: Computation Unit
 - Parent class: [DataFlowNode](#DataFlowNode)
 - Description: 
 Denotes a complex computation unit, typically based on advanced numerical modeling
 - Definition set: DataFlow
+- Examples:
+```dwis hydraulicsModel
+ComputationUnit:hydraulicsModel
+DrillingDataPoint:standpipePressureRaw
+DrillingDataPoint:predictedStandpipePressure
+standpipePressureRaw IsComputationInput hydraulicsModel
+predictedStandpipePressure IsComputedBy hydraulicsModel
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hydraulicsModel] -->|BelongsToClass| N0001(ComputationUnit) 
+	N0002[standpipePressureRaw] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[predictedStandpipePressure] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[standpipePressureRaw] -->|IsComputationInput| N0000((hydraulicsModel)) 
+	N0004[predictedStandpipePressure] -->|IsComputedBy| N0000((hydraulicsModel)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hydraulicsModel
+WHERE {
+	?hydraulicsModel rdf:type ddhub:ComputationUnit .
+	?standpipePressureRaw rdf:type ddhub:DrillingDataPoint .
+	?predictedStandpipePressure rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = hydraulicsModel
+	&& 	?Attribute001 = hydraulicsModel
+  )
+}
+```
+This example models a hydraulics computation unit that predicts standpipe pressure.
 ## Advisor <!-- NOUN -->
 - Display name: Advisor
 - Parent class: [ComputationUnit](#ComputationUnit)
@@ -4522,6 +5059,34 @@ Denotes a complex computation unit, typically based on advanced numerical modeli
 An advisor is a computation unit that produces an advice on how to control a process. Its output is typically
 an AdvisorySystemAdvice.
 - Definition set: DataFlow
+- Examples:
+```dwis drillingAdvisor
+Advisor:drillingAdvisor
+DrillingControlAdvice:ropAdvice
+ropAdvice IsRecommendedBy drillingAdvisor
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingAdvisor] -->|BelongsToClass| N0001(Advisor) 
+	N0002[ropAdvice] -->|BelongsToClass| N0003(DrillingControlAdvice) 
+	N0002[ropAdvice] -->|IsRecommendedBy| N0000((drillingAdvisor)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillingAdvisor
+WHERE {
+	?drillingAdvisor rdf:type ddhub:Advisor .
+	?ropAdvice rdf:type ddhub:DrillingControlAdvice .
+  FILTER (
+	?Attribute000 = drillingAdvisor
+  )
+}
+```
+This example shows an advisor producing a drilling control advice.
 ## Simulator <!-- NOUN -->
 - Display name: Simulator
 - Parent class: [ComputationUnit](#ComputationUnit)
@@ -4529,6 +5094,108 @@ an AdvisorySystemAdvice.
 A simulator is a computation unit that tries to replicate the outputs of a process. Its output is typically
 a set of ComputedData, i.e., a specialisation of DrillingDataPoint.
 - Definition set: DataFlow
+- Examples:
+```dwis hydraulicsSimulator
+Simulator:hydraulicsSimulator
+DrillingDataPoint:annulusPressureForecast
+annulusPressureForecast IsComputedBy hydraulicsSimulator
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hydraulicsSimulator] -->|BelongsToClass| N0001(Simulator) 
+	N0002[annulusPressureForecast] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[annulusPressureForecast] -->|IsComputedBy| N0000((hydraulicsSimulator)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hydraulicsSimulator
+WHERE {
+	?hydraulicsSimulator rdf:type ddhub:Simulator .
+	?annulusPressureForecast rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = hydraulicsSimulator
+  )
+}
+```
+This example shows a simulator generating a forecast of annulus pressure.
+## Estimator <!-- NOUN -->
+- Display name: Estimator
+- Parent class: [ComputationUnit](#ComputationUnit)
+- Description: 
+An estimator is a computation unit that estimates unmeasured variables of a process. Its output is typically a set of ComputedData, i.e., a specialisation of DrillingDataPoint.
+- Definition set: DataFlow
+- Examples:
+```dwis EstimatorExample
+Estimator:cuttingFlowrateEstimator
+ComputedData:cuttingFlowrate
+cuttingFlowrate IsComputedBy cuttingFlowrateEstimator
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[cuttingFlowrateEstimator] -->|BelongsToClass| N0001(Estimator) 
+	N0002[cuttingFlowrate] -->|BelongsToClass| N0003(ComputedData) 
+	N0002[cuttingFlowrate] -->|IsComputedBy| N0000((cuttingFlowrateEstimator)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?EstimatorExample
+WHERE {
+	?cuttingFlowrateEstimator rdf:type ddhub:Estimator .
+	?cuttingFlowrate rdf:type ddhub:ComputedData .
+  FILTER (
+	?Attribute000 = cuttingFlowrateEstimator
+  )
+}
+```
+This example shows an estimator computing the cutting flowrate.
+## ModelFitter <!-- NOUN -->
+- Display name: Model Fitter
+- Parent class: [Estimator](#Estimator)
+- Description: 
+A model fitter is a computation unit that fits a model to observed data in order to estimate unmeasured variables of a process. Its output is typically a set of ComputedData, i.e., a specialisation of DrillingDataPoint.
+- Definition set: DataFlow
+- Examples:
+```dwis ModelFitterExample
+ModelFitter:YPLModelFitter
+DirectMeasurement:flowCurveData
+ComputedData:YPLModelParameters
+flowCurveData IsComputationInput YPLModelFitter
+YPLModelParameters IsComputedBy YPLModelFitter
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[YPLModelFitter] -->|BelongsToClass| N0001(ModelFitter) 
+	N0002[flowCurveData] -->|BelongsToClass| N0003(DirectMeasurement) 
+	N0004[YPLModelParameters] -->|BelongsToClass| N0005(ComputedData) 
+	N0002[flowCurveData] -->|IsComputationInput| N0000((YPLModelFitter)) 
+	N0004[YPLModelParameters] -->|IsComputedBy| N0000((YPLModelFitter)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ModelFitterExample
+WHERE {
+	?YPLModelFitter rdf:type ddhub:ModelFitter .
+	?flowCurveData rdf:type ddhub:DirectMeasurement .
+	?YPLModelParameters rdf:type ddhub:ComputedData .
+  FILTER (
+	?Attribute000 = YPLModelFitter
+	&& 	?Attribute001 = YPLModelFitter
+  )
+}
+```
+This example shows a model fitter estimating YPL model parameters from flow curve data.
 ## Interpreter <!-- NOUN -->
 - Display name: Interpreter
 - Parent class: [ComputationUnit](#ComputationUnit)
@@ -4536,94 +5203,965 @@ a set of ComputedData, i.e., a specialisation of DrillingDataPoint.
 An interpreter is a computation unit that interprets the state of a process. Its output is typically a
 ComputedState.
 - Definition set: DataFlow
+- Examples:
+```dwis stateInterpreter
+Interpreter:stateInterpreter
+ComputedState:circulationStable
+DWISNoun:circulationProcess
+circulationStable IsComputedBy stateInterpreter
+circulationStable IsCurrentStateFor circulationProcess
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stateInterpreter] -->|BelongsToClass| N0001(Interpreter) 
+	N0002[circulationStable] -->|BelongsToClass| N0003(ComputedState) 
+	N0004[circulationProcess] -->|BelongsToClass| N0005(DWISNoun) 
+	N0002[circulationStable] -->|IsComputedBy| N0000((stateInterpreter)) 
+	N0002[circulationStable] -->|IsCurrentStateFor| N0004((circulationProcess)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stateInterpreter
+WHERE {
+	?stateInterpreter rdf:type ddhub:Interpreter .
+	?circulationStable rdf:type ddhub:ComputedState .
+	?circulationProcess rdf:type ddhub:DWISNoun .
+  FILTER (
+	?Attribute000 = stateInterpreter
+	&& 	?Attribute001 = circulationProcess
+  )
+}
+```
+This example shows an interpreter computing whether circulation is stable.
+## ImageInterpreter <!-- NOUN -->
+- Display name: Image Interpreter
+- Parent class: [Interpreter](#Interpreter)
+- Description: 
+An image interpreter is a computation unit that interprets images to produce a computed state.
+- Definition set: DataFlow
+- Examples:
+```dwis stateInterpreter
+Interpreter:stateInterpreter
+ComputedState:circulationStable
+DWISNoun:circulationProcess
+circulationStable IsComputedBy stateInterpreter
+circulationStable IsCurrentStateFor circulationProcess
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stateInterpreter] -->|BelongsToClass| N0001(Interpreter) 
+	N0002[circulationStable] -->|BelongsToClass| N0003(ComputedState) 
+	N0004[circulationProcess] -->|BelongsToClass| N0005(DWISNoun) 
+	N0002[circulationStable] -->|IsComputedBy| N0000((stateInterpreter)) 
+	N0002[circulationStable] -->|IsCurrentStateFor| N0004((circulationProcess)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stateInterpreter
+WHERE {
+	?stateInterpreter rdf:type ddhub:Interpreter .
+	?circulationStable rdf:type ddhub:ComputedState .
+	?circulationProcess rdf:type ddhub:DWISNoun .
+  FILTER (
+	?Attribute000 = stateInterpreter
+	&& 	?Attribute001 = circulationProcess
+  )
+}
+```
+This example shows an interpreter computing whether circulation is stable.
 ## Controller <!-- NOUN -->
 - Display name: Controller
 - Parent class: [DataFlowNode](#DataFlowNode)
+- Description: 
+A processing unit that generates commands to drive equipment toward desired set-points using feedback.
 - Definition set: DataFlow
+- Examples:
+```dwis autoDrillerController
+Controller:autoDrillerController
+DrillingDataPoint:weightOnBitSetPoint
+DrillingDataPoint:hookloadSignal
+weightOnBitSetPoint IsSetPointFor autoDrillerController
+hookloadSignal IsComputationInput autoDrillerController
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[autoDrillerController] -->|BelongsToClass| N0001(Controller) 
+	N0002[weightOnBitSetPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[hookloadSignal] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[weightOnBitSetPoint] -->|IsSetPointFor| N0000((autoDrillerController)) 
+	N0004[hookloadSignal] -->|IsComputationInput| N0000((autoDrillerController)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?autoDrillerController
+WHERE {
+	?autoDrillerController rdf:type ddhub:Controller .
+	?weightOnBitSetPoint rdf:type ddhub:DrillingDataPoint .
+	?hookloadSignal rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = autoDrillerController
+	&& 	?Attribute001 = autoDrillerController
+  )
+}
+```
+This example shows an autodriller controller consuming measurements and a set-point.
 ## ControlSystem <!-- NOUN -->
 - Display name: ControlSystem
 - Parent class: [DataFlowNode](#DataFlowNode)
+- Description: 
+A collection of controllers, logic, and I/O that supervises a portion of the drilling process.
 - Definition set: DataFlow
+- Examples:
+```dwis drillingControlSystem
+ControlSystem:dcs
+Controller:autoDrillerController
+DWISNoun:topDrive
+autoDrillerController Controls topDrive
+dcs HasFunction autoDrillerController
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[dcs] -->|BelongsToClass| N0001(ControlSystem) 
+	N0002[autoDrillerController] -->|BelongsToClass| N0003(Controller) 
+	N0004[topDrive] -->|BelongsToClass| N0005(DWISNoun) 
+	N0002[autoDrillerController] -->|Controls| N0004((topDrive)) 
+	N0000[dcs] -->|HasFunction| N0002((autoDrillerController)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillingControlSystem
+WHERE {
+	?dcs rdf:type ddhub:ControlSystem .
+	?autoDrillerController rdf:type ddhub:Controller .
+	?topDrive rdf:type ddhub:DWISNoun .
+  FILTER (
+	?Attribute000 = topDrive
+	&& 	?Attribute001 = autoDrillerController
+  )
+}
+```
+This example shows a drilling control system that hosts an autodriller controller acting on the top drive.
 ## HoistingControlSystem <!-- NOUN -->
 - Display name: Hoisting Control System
 - Parent class: [ControlSystem](#ControlSystem)
+- Description: 
+A control system focused on hoisting equipment such as the drawworks and blocks.
 - Definition set: DataFlow
+- Examples:
+```dwis hoistingSystem
+HoistingControlSystem:hoistingDCS
+Controller:hoistController
+DWISNoun:drawworks
+DrillingDataPoint:hookloadSignal
+hookloadSignal IsComputationInput hoistController
+hoistController Controls drawworks
+hoistingDCS HasFunction hoistController
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hoistingDCS] -->|BelongsToClass| N0001(HoistingControlSystem) 
+	N0002[hoistController] -->|BelongsToClass| N0003(Controller) 
+	N0004[drawworks] -->|BelongsToClass| N0005(DWISNoun) 
+	N0006[hookloadSignal] -->|BelongsToClass| N0007(DrillingDataPoint) 
+	N0006[hookloadSignal] -->|IsComputationInput| N0002((hoistController)) 
+	N0002[hoistController] -->|Controls| N0004((drawworks)) 
+	N0000[hoistingDCS] -->|HasFunction| N0002((hoistController)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hoistingSystem
+WHERE {
+	?hoistingDCS rdf:type ddhub:HoistingControlSystem .
+	?hoistController rdf:type ddhub:Controller .
+	?drawworks rdf:type ddhub:DWISNoun .
+	?hookloadSignal rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = hoistController
+	&& 	?Attribute001 = drawworks
+	&& 	?Attribute002 = hoistController
+  )
+}
+```
+This example shows a hoisting control system governing the drawworks using hookload feedback.
 ## CirculationControlSystem <!-- NOUN -->
 - Display name: Circulation Control System
 - Parent class: [ControlSystem](#ControlSystem)
+- Description: 
+A control system that manages pumps, flow rate, and downhole pressure related to circulation.
 - Definition set: DataFlow
+- Examples:
+```dwis circulationSystem
+CirculationControlSystem:circulationDCS
+Controller:flowController
+DWISNoun:mudPumps
+DrillingDataPoint:flowSetPoint
+flowSetPoint IsSetPointFor flowController
+flowController Controls mudPumps
+circulationDCS HasFunction flowController
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[circulationDCS] -->|BelongsToClass| N0001(CirculationControlSystem) 
+	N0002[flowController] -->|BelongsToClass| N0003(Controller) 
+	N0004[mudPumps] -->|BelongsToClass| N0005(DWISNoun) 
+	N0006[flowSetPoint] -->|BelongsToClass| N0007(DrillingDataPoint) 
+	N0006[flowSetPoint] -->|IsSetPointFor| N0002((flowController)) 
+	N0002[flowController] -->|Controls| N0004((mudPumps)) 
+	N0000[circulationDCS] -->|HasFunction| N0002((flowController)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?circulationSystem
+WHERE {
+	?circulationDCS rdf:type ddhub:CirculationControlSystem .
+	?flowController rdf:type ddhub:Controller .
+	?mudPumps rdf:type ddhub:DWISNoun .
+	?flowSetPoint rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = flowController
+	&& 	?Attribute001 = mudPumps
+	&& 	?Attribute002 = flowController
+  )
+}
+```
+This example shows a circulation control system driving the mud pumps.
 ## RotationControlSystem <!-- NOUN -->
 - Display name: Rotation Control System
 - Parent class: [ControlSystem](#ControlSystem)
+- Description: 
+A control system managing rotary speed and torque for the drill-stem.
 - Definition set: DataFlow
+- Examples:
+```dwis rotationSystem
+RotationControlSystem:rotationDCS
+Controller:rotationController
+DWISNoun:topDrive
+DrillingDataPoint:rotationalSpeedSetPoint
+rotationalSpeedSetPoint IsSetPointFor rotationController
+rotationController Controls topDrive
+rotationDCS HasFunction rotationController
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rotationDCS] -->|BelongsToClass| N0001(RotationControlSystem) 
+	N0002[rotationController] -->|BelongsToClass| N0003(Controller) 
+	N0004[topDrive] -->|BelongsToClass| N0005(DWISNoun) 
+	N0006[rotationalSpeedSetPoint] -->|BelongsToClass| N0007(DrillingDataPoint) 
+	N0006[rotationalSpeedSetPoint] -->|IsSetPointFor| N0002((rotationController)) 
+	N0002[rotationController] -->|Controls| N0004((topDrive)) 
+	N0000[rotationDCS] -->|HasFunction| N0002((rotationController)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rotationSystem
+WHERE {
+	?rotationDCS rdf:type ddhub:RotationControlSystem .
+	?rotationController rdf:type ddhub:Controller .
+	?topDrive rdf:type ddhub:DWISNoun .
+	?rotationalSpeedSetPoint rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = rotationController
+	&& 	?Attribute001 = topDrive
+	&& 	?Attribute002 = rotationController
+  )
+}
+```
+This example shows a rotation control system adjusting the top-drive speed.
 ## BOPControlSystem <!-- NOUN -->
 - Display name: BOP Control System
 - Parent class: [ControlSystem](#ControlSystem)
+- Description: 
+A control system supervising blowout preventer functions such as rams and annulars.
 - Definition set: DataFlow
+- Examples:
+```dwis bopSystem
+BOPControlSystem:bopControl
+Controller:bopRamController
+DWISNoun:bopRams
+DrillingDataPoint:closeCommand
+closeCommand IsCommandFor bopRamController
+bopRamController Controls bopRams
+bopControl HasFunction bopRamController
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[bopControl] -->|BelongsToClass| N0001(BOPControlSystem) 
+	N0002[bopRamController] -->|BelongsToClass| N0003(Controller) 
+	N0004[bopRams] -->|BelongsToClass| N0005(DWISNoun) 
+	N0006[closeCommand] -->|BelongsToClass| N0007(DrillingDataPoint) 
+	N0006[closeCommand] -->|IsCommandFor| N0002((bopRamController)) 
+	N0002[bopRamController] -->|Controls| N0004((bopRams)) 
+	N0000[bopControl] -->|HasFunction| N0002((bopRamController)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?bopSystem
+WHERE {
+	?bopControl rdf:type ddhub:BOPControlSystem .
+	?bopRamController rdf:type ddhub:Controller .
+	?bopRams rdf:type ddhub:DWISNoun .
+	?closeCommand rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = bopRamController
+	&& 	?Attribute001 = bopRams
+	&& 	?Attribute002 = bopRamController
+  )
+}
+```
+This example shows a BOP control system issuing ram close commands.
 ## RigChokeControlSystem <!-- NOUN -->
 - Display name: Rig Choke Control System
 - Parent class: [ControlSystem](#ControlSystem)
+- Description: 
+A control system dedicated to surface choke management for well control operations.
 - Definition set: DataFlow
+- Examples:
+```dwis chokeSystem
+RigChokeControlSystem:chokeControl
+Controller:chokeController
+DWISNoun:surfaceChoke
+DrillingDataPoint:standpipePressureSignal
+standpipePressureSignal IsComputationInput chokeController
+chokeController Controls surfaceChoke
+chokeControl HasFunction chokeController
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[chokeControl] -->|BelongsToClass| N0001(RigChokeControlSystem) 
+	N0002[chokeController] -->|BelongsToClass| N0003(Controller) 
+	N0004[surfaceChoke] -->|BelongsToClass| N0005(DWISNoun) 
+	N0006[standpipePressureSignal] -->|BelongsToClass| N0007(DrillingDataPoint) 
+	N0006[standpipePressureSignal] -->|IsComputationInput| N0002((chokeController)) 
+	N0002[chokeController] -->|Controls| N0004((surfaceChoke)) 
+	N0000[chokeControl] -->|HasFunction| N0002((chokeController)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?chokeSystem
+WHERE {
+	?chokeControl rdf:type ddhub:RigChokeControlSystem .
+	?chokeController rdf:type ddhub:Controller .
+	?surfaceChoke rdf:type ddhub:DWISNoun .
+	?standpipePressureSignal rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = chokeController
+	&& 	?Attribute001 = surfaceChoke
+	&& 	?Attribute002 = chokeController
+  )
+}
+```
+This example shows choke control adjusting a surface choke using standpipe pressure feedback.
 ## MeasurementDevice <!-- NOUN -->
 - Display name: Measurement Device
 - Parent class: [DataFlowNode](#DataFlowNode)
 - Description: 
 Denotes a physical sensor
 - Definition set: DataFlow
+- Examples:
+```dwis standpipeSensor
+MeasurementDevice:standpipePressureSensor
+DrillingDataPoint:standpipePressureRaw
+standpipePressureRaw IsMeasuredBy standpipePressureSensor
+standpipePressureRaw IsGeneratedBy standpipePressureSensor
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipePressureSensor] -->|BelongsToClass| N0001(MeasurementDevice) 
+	N0002[standpipePressureRaw] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[standpipePressureRaw] -->|IsMeasuredBy| N0000((standpipePressureSensor)) 
+	N0002[standpipePressureRaw] -->|IsGeneratedBy| N0000((standpipePressureSensor)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?standpipeSensor
+WHERE {
+	?standpipePressureSensor rdf:type ddhub:MeasurementDevice .
+	?standpipePressureRaw rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = standpipePressureSensor
+	&& 	?Attribute001 = standpipePressureSensor
+  )
+}
+```
+This example shows a standpipe pressure sensor producing a raw signal.
 ## Transformation <!-- NOUN -->
 - Display name: Transformation
 - Parent class: [DataFlowNode](#DataFlowNode)
 - Description: 
 Represents a transformation applied to some signals that produces other signals
 - Definition set: DataFlow
+- Examples:
+```dwis depthMerge
+Transformation:depthMerge
+DrillingDataPoint:pipeTallyDepth
+DrillingDataPoint:blockHeightDepth
+DrillingDataPoint:computedDepth
+pipeTallyDepth IsTransformationInput depthMerge
+blockHeightDepth IsTransformationInput depthMerge
+computedDepth IsTransformationOutput depthMerge
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[depthMerge] -->|BelongsToClass| N0001(Transformation) 
+	N0002[pipeTallyDepth] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[blockHeightDepth] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0005[computedDepth] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[pipeTallyDepth] -->|IsTransformationInput| N0000((depthMerge)) 
+	N0004[blockHeightDepth] -->|IsTransformationInput| N0000((depthMerge)) 
+	N0005[computedDepth] -->|IsTransformationOutput| N0000((depthMerge)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?depthMerge
+WHERE {
+	?depthMerge rdf:type ddhub:Transformation .
+	?pipeTallyDepth rdf:type ddhub:DrillingDataPoint .
+	?blockHeightDepth rdf:type ddhub:DrillingDataPoint .
+	?computedDepth rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = depthMerge
+	&& 	?Attribute001 = depthMerge
+	&& 	?Attribute002 = depthMerge
+  )
+}
+```
+This example merges two depth sources into a computed depth signal.
 ## DirectTransformation <!-- NOUN -->
 - Display name: Direct Transformation
 - Parent class: [Transformation](#Transformation)
 - Description: 
 Direct transformations are performed using only the current value of their inputs, time is not involved
 - Definition set: DataFlow
+- Examples:
+```dwis densityFromPressure
+DirectTransformation:densityFromPressure
+DrillingDataPoint:standpipePressureRaw
+DrillingDataPoint:equivalentDensity
+standpipePressureRaw IsTransformationInput densityFromPressure
+equivalentDensity IsTransformationOutput densityFromPressure
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[densityFromPressure] -->|BelongsToClass| N0001(DirectTransformation) 
+	N0002[standpipePressureRaw] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[equivalentDensity] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[standpipePressureRaw] -->|IsTransformationInput| N0000((densityFromPressure)) 
+	N0004[equivalentDensity] -->|IsTransformationOutput| N0000((densityFromPressure)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?densityFromPressure
+WHERE {
+	?densityFromPressure rdf:type ddhub:DirectTransformation .
+	?standpipePressureRaw rdf:type ddhub:DrillingDataPoint .
+	?equivalentDensity rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = densityFromPressure
+	&& 	?Attribute001 = densityFromPressure
+  )
+}
+```
+This example converts a pressure measurement to an equivalent circulating density using only the latest value.
 ## Aggregation <!-- NOUN -->
 - Display name: Aggregation
 - Parent class: [DirectTransformation](#DirectTransformation)
+- Description: 
+Combines several input signals into a single representative value such as an average or sum.
 - Definition set: DataFlow
+- Examples:
+```dwis hookloadAggregation
+Aggregation:hookloadAggregation
+DrillingDataPoint:hookloadLeft
+DrillingDataPoint:hookloadRight
+DrillingDataPoint:hookloadAverage
+hookloadLeft IsTransformationInput hookloadAggregation
+hookloadRight IsTransformationInput hookloadAggregation
+hookloadAverage IsTransformationOutput hookloadAggregation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hookloadAggregation] -->|BelongsToClass| N0001(Aggregation) 
+	N0002[hookloadLeft] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[hookloadRight] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0005[hookloadAverage] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[hookloadLeft] -->|IsTransformationInput| N0000((hookloadAggregation)) 
+	N0004[hookloadRight] -->|IsTransformationInput| N0000((hookloadAggregation)) 
+	N0005[hookloadAverage] -->|IsTransformationOutput| N0000((hookloadAggregation)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hookloadAggregation
+WHERE {
+	?hookloadAggregation rdf:type ddhub:Aggregation .
+	?hookloadLeft rdf:type ddhub:DrillingDataPoint .
+	?hookloadRight rdf:type ddhub:DrillingDataPoint .
+	?hookloadAverage rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = hookloadAggregation
+	&& 	?Attribute001 = hookloadAggregation
+	&& 	?Attribute002 = hookloadAggregation
+  )
+}
+```
+This example averages two hookload measurements.
 ## ForceFromLoadPinsTransformation <!-- NOUN -->
 - Display name: Force From Load Pins Transformation
 - Parent class: [DirectTransformation](#DirectTransformation)
+- Description: 
+Converts raw load pin readings into a usable force signal.
 - Definition set: DataFlow
+- Examples:
+```dwis loadPinForce
+ForceFromLoadPinsTransformation:loadPinForce
+DrillingDataPoint:loadPinReading
+DrillingDataPoint:hookloadForce
+loadPinReading IsTransformationInput loadPinForce
+hookloadForce IsTransformationOutput loadPinForce
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[loadPinForce] -->|BelongsToClass| N0001(ForceFromLoadPinsTransformation) 
+	N0002[loadPinReading] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[hookloadForce] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[loadPinReading] -->|IsTransformationInput| N0000((loadPinForce)) 
+	N0004[hookloadForce] -->|IsTransformationOutput| N0000((loadPinForce)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?loadPinForce
+WHERE {
+	?loadPinForce rdf:type ddhub:ForceFromLoadPinsTransformation .
+	?loadPinReading rdf:type ddhub:DrillingDataPoint .
+	?hookloadForce rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = loadPinForce
+	&& 	?Attribute001 = loadPinForce
+  )
+}
+```
+This example derives hookload force from load pin readings.
 ## ForceToLoadTransformation <!-- NOUN -->
 - Display name: Force To Load Transformation
 - Parent class: [DirectTransformation](#DirectTransformation)
+- Description: 
+Converts a force signal into a load expressed for another context (e.g., block load).
 - Definition set: DataFlow
+- Examples:
+```dwis forceToBlockLoad
+ForceToLoadTransformation:forceToBlockLoad
+DrillingDataPoint:hookloadForce
+DrillingDataPoint:blockLoad
+hookloadForce IsTransformationInput forceToBlockLoad
+blockLoad IsTransformationOutput forceToBlockLoad
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[forceToBlockLoad] -->|BelongsToClass| N0001(ForceToLoadTransformation) 
+	N0002[hookloadForce] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[blockLoad] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[hookloadForce] -->|IsTransformationInput| N0000((forceToBlockLoad)) 
+	N0004[blockLoad] -->|IsTransformationOutput| N0000((forceToBlockLoad)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?forceToBlockLoad
+WHERE {
+	?forceToBlockLoad rdf:type ddhub:ForceToLoadTransformation .
+	?hookloadForce rdf:type ddhub:DrillingDataPoint .
+	?blockLoad rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = forceToBlockLoad
+	&& 	?Attribute001 = forceToBlockLoad
+  )
+}
+```
+This example converts hookload force into an equivalent block load.
 ## MeasuredDepthToTrueVerticalDepthTransformation <!-- NOUN -->
 - Display name: Measured Depth To True Vertical Depth Transformation
 - Parent class: [DirectTransformation](#DirectTransformation)
+- Description: 
+Converts measured depth to true vertical depth using well trajectory information.
 - Definition set: DataFlow
+- Examples:
+```dwis mdtvd
+MeasuredDepthToTrueVerticalDepthTransformation:mdToTvd
+DrillingDataPoint:measuredDepth
+DrillingDataPoint:trueVerticalDepth
+measuredDepth IsTransformationInput mdToTvd
+trueVerticalDepth IsTransformationOutput mdToTvd
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[mdToTvd] -->|BelongsToClass| N0001(MeasuredDepthToTrueVerticalDepthTransformation) 
+	N0002[measuredDepth] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[trueVerticalDepth] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[measuredDepth] -->|IsTransformationInput| N0000((mdToTvd)) 
+	N0004[trueVerticalDepth] -->|IsTransformationOutput| N0000((mdToTvd)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?mdtvd
+WHERE {
+	?mdToTvd rdf:type ddhub:MeasuredDepthToTrueVerticalDepthTransformation .
+	?measuredDepth rdf:type ddhub:DrillingDataPoint .
+	?trueVerticalDepth rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = mdToTvd
+	&& 	?Attribute001 = mdToTvd
+  )
+}
+```
+This example computes true vertical depth from measured depth.
+## SummationTransformation <!-- NOUN -->
+- Display name: SummationTransformation
+- Parent class: [DirectTransformation](#DirectTransformation)
+- Description: 
+Sums up all the input signals to produce the output signal.
+- Definition set: DataFlow
+- Examples:
+```dwis DWOBTaringExample
+SummationTransformation:taringTransformation
+DrillingDataPoint:rawAxialLoad
+DrillingDataPoint:tare
+DrillingDataPoint:WOBTared
+rawAxialLoad IsTransformationInput taringTransformation
+tare IsTransformationInput taringTransformation
+WOBTared IsTransformationOutput taringTransformation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[taringTransformation] -->|BelongsToClass| N0001(SummationTransformation) 
+	N0002[rawAxialLoad] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[tare] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0005[WOBTared] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[rawAxialLoad] -->|IsTransformationInput| N0000((taringTransformation)) 
+	N0004[tare] -->|IsTransformationInput| N0000((taringTransformation)) 
+	N0005[WOBTared] -->|IsTransformationOutput| N0000((taringTransformation)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?DWOBTaringExample
+WHERE {
+	?taringTransformation rdf:type ddhub:SummationTransformation .
+	?rawAxialLoad rdf:type ddhub:DrillingDataPoint .
+	?tare rdf:type ddhub:DrillingDataPoint .
+	?WOBTared rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = taringTransformation
+	&& 	?Attribute001 = taringTransformation
+	&& 	?Attribute002 = taringTransformation
+  )
+}
+```
+This example shows how the raw axial load is transformed into a tared WOB by adding a tare value.
 ## MeasuredDepthTranslation <!-- NOUN -->
 - Display name: Measured Depth Translation
-- Parent class: [DirectTransformation](#DirectTransformation)
+- Parent class: [SummationTransformation](#SummationTransformation)
+- Description: 
+Applies an offset or calibration factor to a measured depth signal.
 - Definition set: DataFlow
+- Examples:
+```dwis depthTranslation
+MeasuredDepthTranslation:depthTranslation
+DrillingDataPoint:rawMeasuredDepth
+DrillingDataPoint:correctedMeasuredDepth
+rawMeasuredDepth IsTransformationInput depthTranslation
+correctedMeasuredDepth IsTransformationOutput depthTranslation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[depthTranslation] -->|BelongsToClass| N0001(MeasuredDepthTranslation) 
+	N0002[rawMeasuredDepth] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[correctedMeasuredDepth] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[rawMeasuredDepth] -->|IsTransformationInput| N0000((depthTranslation)) 
+	N0004[correctedMeasuredDepth] -->|IsTransformationOutput| N0000((depthTranslation)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?depthTranslation
+WHERE {
+	?depthTranslation rdf:type ddhub:MeasuredDepthTranslation .
+	?rawMeasuredDepth rdf:type ddhub:DrillingDataPoint .
+	?correctedMeasuredDepth rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = depthTranslation
+	&& 	?Attribute001 = depthTranslation
+  )
+}
+```
+This example corrects a measured depth value with an offset.
 ## PressureToEquivalentDensityTransformation <!-- NOUN -->
 - Display name: Pressure To Equivalent Density Transformation
 - Parent class: [DirectTransformation](#DirectTransformation)
+- Description: 
+Converts a pressure measurement into an equivalent circulating density for pressure management.
 - Definition set: DataFlow
+- Examples:
+```dwis pressureToECD
+PressureToEquivalentDensityTransformation:pressureToEcd
+DrillingDataPoint:annulusPressure
+DrillingDataPoint:equivalentDensity
+annulusPressure IsTransformationInput pressureToEcd
+equivalentDensity IsTransformationOutput pressureToEcd
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pressureToEcd] -->|BelongsToClass| N0001(PressureToEquivalentDensityTransformation) 
+	N0002[annulusPressure] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[equivalentDensity] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[annulusPressure] -->|IsTransformationInput| N0000((pressureToEcd)) 
+	N0004[equivalentDensity] -->|IsTransformationOutput| N0000((pressureToEcd)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pressureToECD
+WHERE {
+	?pressureToEcd rdf:type ddhub:PressureToEquivalentDensityTransformation .
+	?annulusPressure rdf:type ddhub:DrillingDataPoint .
+	?equivalentDensity rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = pressureToEcd
+	&& 	?Attribute001 = pressureToEcd
+  )
+}
+```
+This example computes equivalent circulating density from annulus pressure.
 ## PressureToForceTransformation <!-- NOUN -->
 - Display name: Pressure To Force Transformation
 - Parent class: [DirectTransformation](#DirectTransformation)
+- Description: 
+Converts pressure over an area into a resulting force signal.
 - Definition set: DataFlow
+- Examples:
+```dwis pressureToForce
+PressureToForceTransformation:pressureToForce
+DrillingDataPoint:surfacePressure
+DrillingDataPoint:appliedForce
+surfacePressure IsTransformationInput pressureToForce
+appliedForce IsTransformationOutput pressureToForce
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pressureToForce] -->|BelongsToClass| N0001(PressureToForceTransformation) 
+	N0002[surfacePressure] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[appliedForce] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[surfacePressure] -->|IsTransformationInput| N0000((pressureToForce)) 
+	N0004[appliedForce] -->|IsTransformationOutput| N0000((pressureToForce)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pressureToForce
+WHERE {
+	?pressureToForce rdf:type ddhub:PressureToForceTransformation .
+	?surfacePressure rdf:type ddhub:DrillingDataPoint .
+	?appliedForce rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = pressureToForce
+	&& 	?Attribute001 = pressureToForce
+  )
+}
+```
+This example converts pressure at the surface into force on a piston.
 ## TorqueToForceTransformation <!-- NOUN -->
 - Display name: Torque To Force Transformation
 - Parent class: [DirectTransformation](#DirectTransformation)
+- Description: 
+Converts torque measured at a radius into an equivalent tangential force.
 - Definition set: DataFlow
+- Examples:
+```dwis torqueToForce
+TorqueToForceTransformation:torqueToForce
+DrillingDataPoint:surfaceTorque
+DrillingDataPoint:tangentialForce
+surfaceTorque IsTransformationInput torqueToForce
+tangentialForce IsTransformationOutput torqueToForce
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[torqueToForce] -->|BelongsToClass| N0001(TorqueToForceTransformation) 
+	N0002[surfaceTorque] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[tangentialForce] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[surfaceTorque] -->|IsTransformationInput| N0000((torqueToForce)) 
+	N0004[tangentialForce] -->|IsTransformationOutput| N0000((torqueToForce)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?torqueToForce
+WHERE {
+	?torqueToForce rdf:type ddhub:TorqueToForceTransformation .
+	?surfaceTorque rdf:type ddhub:DrillingDataPoint .
+	?tangentialForce rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = torqueToForce
+	&& 	?Attribute001 = torqueToForce
+  )
+}
+```
+This example converts surface torque into tangential force at the bit radius.
 ## SignalProcessingUnit <!-- NOUN -->
 - Display name: Signal Processing Unit
 - Parent class: [Transformation](#Transformation)
 - Description: 
-Represent any signal processing applied prior to the distribution of the considered signal. Signal processing refers to e.g. noise removal, filtering,..
+Represent any signal processing applied prior to the distribution of the considered signal. Signal processing refers to e.g. noise removal, filtering..
 - Definition set: DataFlow
+- Examples:
+```dwis standpipeSignalProcessing
+SignalProcessingUnit:standpipeSignalProcessing
+DrillingDataPoint:standpipePressureRaw
+DrillingDataPoint:standpipePressureFiltered
+standpipePressureRaw IsTransformationInput standpipeSignalProcessing
+standpipePressureFiltered IsTransformationOutput standpipeSignalProcessing
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipeSignalProcessing] -->|BelongsToClass| N0001(SignalProcessingUnit) 
+	N0002[standpipePressureRaw] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[standpipePressureFiltered] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[standpipePressureRaw] -->|IsTransformationInput| N0000((standpipeSignalProcessing)) 
+	N0004[standpipePressureFiltered] -->|IsTransformationOutput| N0000((standpipeSignalProcessing)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?standpipeSignalProcessing
+WHERE {
+	?standpipeSignalProcessing rdf:type ddhub:SignalProcessingUnit .
+	?standpipePressureRaw rdf:type ddhub:DrillingDataPoint .
+	?standpipePressureFiltered rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = standpipeSignalProcessing
+	&& 	?Attribute001 = standpipeSignalProcessing
+  )
+}
+```
+This example shows generic signal processing applied to standpipe pressure.
 ## Filter <!-- NOUN -->
 - Display name: Filter
 - Parent class: [SignalProcessingUnit](#SignalProcessingUnit)
+- Description: 
+A signal processing unit that attenuates unwanted frequency components.
 - Definition set: DataFlow
+- Examples:
+```dwis hookloadFilter
+Filter:hookloadFilter
+DrillingDataPoint:hookloadRaw
+DrillingDataPoint:hookloadFiltered
+hookloadRaw IsTransformationInput hookloadFilter
+hookloadFiltered IsTransformationOutput hookloadFilter
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hookloadFilter] -->|BelongsToClass| N0001(Filter) 
+	N0002[hookloadRaw] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[hookloadFiltered] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[hookloadRaw] -->|IsTransformationInput| N0000((hookloadFilter)) 
+	N0004[hookloadFiltered] -->|IsTransformationOutput| N0000((hookloadFilter)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hookloadFilter
+WHERE {
+	?hookloadFilter rdf:type ddhub:Filter .
+	?hookloadRaw rdf:type ddhub:DrillingDataPoint .
+	?hookloadFiltered rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = hookloadFilter
+	&& 	?Attribute001 = hookloadFilter
+  )
+}
+```
+This example filters high-frequency noise from a hookload signal.
 ## BandPassFilter <!-- NOUN -->
 - Display name: Band Pass Filter
 - Parent class: [Filter](#Filter)
@@ -4634,7 +6172,51 @@ Represent any signal processing applied prior to the distribution of the conside
   - MaxFrequency
     - Type: double
     - Description: 
+- Description: 
+A filter that only keeps signal components within a defined frequency band.
 - Definition set: DataFlow
+- Examples:
+```dwis vibrationBandPass
+BandPassFilter:vibrationBandPass
+vibrationBandPass.MinFrequency = "0.5"
+vibrationBandPass.MaxFrequency = "10.0"
+DrillingDataPoint:torsionalVibrationRaw
+DrillingDataPoint:torsionalVibrationBand
+torsionalVibrationRaw IsTransformationInput vibrationBandPass
+torsionalVibrationBand IsTransformationOutput vibrationBandPass
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[vibrationBandPass] -->|BelongsToClass| N0001(BandPassFilter) 
+	N0000[vibrationBandPass] -->|MinFrequency| N0002(("0.5")) 
+	N0000[vibrationBandPass] -->|MaxFrequency| N0003(("10.0")) 
+	N0004[torsionalVibrationRaw] -->|BelongsToClass| N0005(DrillingDataPoint) 
+	N0006[torsionalVibrationBand] -->|BelongsToClass| N0005(DrillingDataPoint) 
+	N0004[torsionalVibrationRaw] -->|IsTransformationInput| N0000((vibrationBandPass)) 
+	N0006[torsionalVibrationBand] -->|IsTransformationOutput| N0000((vibrationBandPass)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?vibrationBandPass
+WHERE {
+	?vibrationBandPass rdf:type ddhub:BandPassFilter .
+	?vibrationBandPass ddhub:MinFrequency ?Attribute000 .
+	?vibrationBandPass ddhub:MaxFrequency ?Attribute001 .
+	?torsionalVibrationRaw rdf:type ddhub:DrillingDataPoint .
+	?torsionalVibrationBand rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = "0.5"
+	&& 	?Attribute001 = "10.0"
+	&& 	?Attribute002 = vibrationBandPass
+	&& 	?Attribute003 = vibrationBandPass
+  )
+}
+```
+This example extracts torsional vibration content within a target band.
 ## HighPassFilter <!-- NOUN -->
 - Display name: High Pass Filter
 - Parent class: [Filter](#Filter)
@@ -4642,7 +6224,47 @@ Represent any signal processing applied prior to the distribution of the conside
   - CutOffFrequency
     - Type: double
     - Description: 
+- Description: 
+A filter that removes low-frequency content below a chosen cutoff.
 - Definition set: DataFlow
+- Examples:
+```dwis accelerationHighPass
+HighPassFilter:accelerationHighPass
+accelerationHighPass.CutOffFrequency = "0.2"
+DrillingDataPoint:accelerometerRaw
+DrillingDataPoint:accelerometerHighPassed
+accelerometerRaw IsTransformationInput accelerationHighPass
+accelerometerHighPassed IsTransformationOutput accelerationHighPass
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[accelerationHighPass] -->|BelongsToClass| N0001(HighPassFilter) 
+	N0000[accelerationHighPass] -->|CutOffFrequency| N0002(("0.2")) 
+	N0003[accelerometerRaw] -->|BelongsToClass| N0004(DrillingDataPoint) 
+	N0005[accelerometerHighPassed] -->|BelongsToClass| N0004(DrillingDataPoint) 
+	N0003[accelerometerRaw] -->|IsTransformationInput| N0000((accelerationHighPass)) 
+	N0005[accelerometerHighPassed] -->|IsTransformationOutput| N0000((accelerationHighPass)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?accelerationHighPass
+WHERE {
+	?accelerationHighPass rdf:type ddhub:HighPassFilter .
+	?accelerationHighPass ddhub:CutOffFrequency ?Attribute000 .
+	?accelerometerRaw rdf:type ddhub:DrillingDataPoint .
+	?accelerometerHighPassed rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = "0.2"
+	&& 	?Attribute001 = accelerationHighPass
+	&& 	?Attribute002 = accelerationHighPass
+  )
+}
+```
+This example high-pass filters an accelerometer signal.
 ## LowPassFilter <!-- NOUN -->
 - Display name: Low Pass Filter
 - Parent class: [Filter](#Filter)
@@ -4650,23 +6272,394 @@ Represent any signal processing applied prior to the distribution of the conside
   - CutOffFrequency
     - Type: double
     - Description: 
+- Description: 
+A filter that removes high-frequency content above a chosen cutoff.
 - Definition set: DataFlow
+- Examples:
+```dwis standpipeLowPass
+LowPassFilter:standpipeLowPass
+standpipeLowPass.CutOffFrequency = "2.5"
+DrillingDataPoint:standpipePressureRaw
+DrillingDataPoint:standpipePressureLowPassed
+standpipePressureRaw IsTransformationInput standpipeLowPass
+standpipePressureLowPassed IsTransformationOutput standpipeLowPass
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipeLowPass] -->|BelongsToClass| N0001(LowPassFilter) 
+	N0000[standpipeLowPass] -->|CutOffFrequency| N0002(("2.5")) 
+	N0003[standpipePressureRaw] -->|BelongsToClass| N0004(DrillingDataPoint) 
+	N0005[standpipePressureLowPassed] -->|BelongsToClass| N0004(DrillingDataPoint) 
+	N0003[standpipePressureRaw] -->|IsTransformationInput| N0000((standpipeLowPass)) 
+	N0005[standpipePressureLowPassed] -->|IsTransformationOutput| N0000((standpipeLowPass)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?standpipeLowPass
+WHERE {
+	?standpipeLowPass rdf:type ddhub:LowPassFilter .
+	?standpipeLowPass ddhub:CutOffFrequency ?Attribute000 .
+	?standpipePressureRaw rdf:type ddhub:DrillingDataPoint .
+	?standpipePressureLowPassed rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = "2.5"
+	&& 	?Attribute001 = standpipeLowPass
+	&& 	?Attribute002 = standpipeLowPass
+  )
+}
+```
+This example low-pass filters standpipe pressure to remove spikes.
 ## MovingAverage <!-- NOUN -->
 - Display name: Moving Average
 - Parent class: [Filter](#Filter)
+- Description: 
+A filter computing a rolling mean over a fixed window.
 - Definition set: DataFlow
+- Examples:
+```dwis hookloadMovingAverage
+MovingAverage:hookloadMovingAverage
+DrillingDataPoint:hookloadRaw
+DrillingDataPoint:hookloadMean
+hookloadRaw IsTransformationInput hookloadMovingAverage
+hookloadMean IsTransformationOutput hookloadMovingAverage
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hookloadMovingAverage] -->|BelongsToClass| N0001(MovingAverage) 
+	N0002[hookloadRaw] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[hookloadMean] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[hookloadRaw] -->|IsTransformationInput| N0000((hookloadMovingAverage)) 
+	N0004[hookloadMean] -->|IsTransformationOutput| N0000((hookloadMovingAverage)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hookloadMovingAverage
+WHERE {
+	?hookloadMovingAverage rdf:type ddhub:MovingAverage .
+	?hookloadRaw rdf:type ddhub:DrillingDataPoint .
+	?hookloadMean rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = hookloadMovingAverage
+	&& 	?Attribute001 = hookloadMovingAverage
+  )
+}
+```
+This example applies a moving average to smooth hookload.
 ## MovingStandardDeviation <!-- NOUN -->
 - Display name: Moving Standard Deviation
 - Parent class: [Filter](#Filter)
+- Description: 
+Computes the rolling standard deviation of an input signal.
 - Definition set: DataFlow
+- Examples:
+```dwis vibrationStd
+MovingStandardDeviation:vibrationStd
+DrillingDataPoint:torsionalVibrationBand
+DrillingDataPoint:torsionalVibrationStd
+torsionalVibrationBand IsTransformationInput vibrationStd
+torsionalVibrationStd IsTransformationOutput vibrationStd
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[vibrationStd] -->|BelongsToClass| N0001(MovingStandardDeviation) 
+	N0002[torsionalVibrationBand] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[torsionalVibrationStd] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[torsionalVibrationBand] -->|IsTransformationInput| N0000((vibrationStd)) 
+	N0004[torsionalVibrationStd] -->|IsTransformationOutput| N0000((vibrationStd)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?vibrationStd
+WHERE {
+	?vibrationStd rdf:type ddhub:MovingStandardDeviation .
+	?torsionalVibrationBand rdf:type ddhub:DrillingDataPoint .
+	?torsionalVibrationStd rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = vibrationStd
+	&& 	?Attribute001 = vibrationStd
+  )
+}
+```
+This example tracks the standard deviation of a vibration signal.
 ## MovingMin <!-- NOUN -->
 - Display name: Moving Min
 - Parent class: [Filter](#Filter)
+- Description: 
+Tracks the minimum value within a sliding window.
 - Definition set: DataFlow
+- Examples:
+```dwis hookloadMovingMin
+MovingMin:hookloadMovingMin
+DrillingDataPoint:hookloadRaw
+DrillingDataPoint:hookloadMin
+hookloadRaw IsTransformationInput hookloadMovingMin
+hookloadMin IsTransformationOutput hookloadMovingMin
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hookloadMovingMin] -->|BelongsToClass| N0001(MovingMin) 
+	N0002[hookloadRaw] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[hookloadMin] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[hookloadRaw] -->|IsTransformationInput| N0000((hookloadMovingMin)) 
+	N0004[hookloadMin] -->|IsTransformationOutput| N0000((hookloadMovingMin)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hookloadMovingMin
+WHERE {
+	?hookloadMovingMin rdf:type ddhub:MovingMin .
+	?hookloadRaw rdf:type ddhub:DrillingDataPoint .
+	?hookloadMin rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = hookloadMovingMin
+	&& 	?Attribute001 = hookloadMovingMin
+  )
+}
+```
+This example tracks the minimum hookload over a recent window.
 ## MovingMax <!-- NOUN -->
 - Display name: Moving Max
 - Parent class: [Filter](#Filter)
+- Description: 
+Tracks the maximum value within a sliding window.
 - Definition set: DataFlow
+- Examples:
+```dwis hookloadMovingMax
+MovingMax:hookloadMovingMax
+DrillingDataPoint:hookloadRaw
+DrillingDataPoint:hookloadMax
+hookloadRaw IsTransformationInput hookloadMovingMax
+hookloadMax IsTransformationOutput hookloadMovingMax
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hookloadMovingMax] -->|BelongsToClass| N0001(MovingMax) 
+	N0002[hookloadRaw] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[hookloadMax] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[hookloadRaw] -->|IsTransformationInput| N0000((hookloadMovingMax)) 
+	N0004[hookloadMax] -->|IsTransformationOutput| N0000((hookloadMovingMax)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hookloadMovingMax
+WHERE {
+	?hookloadMovingMax rdf:type ddhub:MovingMax .
+	?hookloadRaw rdf:type ddhub:DrillingDataPoint .
+	?hookloadMax rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = hookloadMovingMax
+	&& 	?Attribute001 = hookloadMovingMax
+  )
+}
+```
+This example tracks the maximum hookload over a recent window.
+```dwis shakerLoadMovingMaxExample
+DynamicDrillingSignal:CleanSightMaxCavingSize
+ComputedData:CleanSightMaxCavingSize#01
+CleanSightMaxCavingSize#01 BelongsToClass JSonDataType
+CleanSightMaxCavingSize#01 HasDynamicValue CleanSightMaxCavingSize
+CleanSightMaxCavingSize#01 IsOfMeasurableQuantity LengthSmall
+TopSideTelemetry:topSideTelemetry
+CleanSightMaxCavingSize#01 IsTransmittedBy topSideTelemetry
+MovingMax:movingMaxCleanSightMaxCavingSize
+CleanSightMaxCavingSize#01 IsTransformationOutput movingMaxCleanSightMaxCavingSize
+CuttingSeparatorLogical:ShaleShakerElement#01
+CleanSightMaxCavingSize#01 IsHydraulicEstimationAt ShaleShakerElement#01
+DrillingLiquidType:DrillingFluid#01
+DrillingFluid#01 IsFluidTypeLocatedAt ShaleShakerElement#01
+CuttingsComponent:Cuttings#01
+Cuttings#01 IsAComponentOf DrillingFluid#01
+CleanSightMaxCavingSize#01 ConcernsAFluidComponent Cuttings#01
+Interpreter:ImageInterprer#01
+CleanSightMaxCavingSize#01 IsComputedBy ImageInterprer#01
+InstrumentationCompany:DrillDocs#01
+CleanSightMaxCavingSize#01 IsProvidedBy DrillDocs#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CleanSightMaxCavingSize] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[CleanSightMaxCavingSize#01] -->|BelongsToClass| N0003(ComputedData) 
+	N0002[CleanSightMaxCavingSize#01] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[CleanSightMaxCavingSize#01] -->|HasDynamicValue| N0000((CleanSightMaxCavingSize)) 
+	N0002[CleanSightMaxCavingSize#01] -->|IsOfMeasurableQuantity| N0005((LengthSmall)) 
+	N0006[topSideTelemetry] -->|BelongsToClass| N0007(TopSideTelemetry) 
+	N0002[CleanSightMaxCavingSize#01] -->|IsTransmittedBy| N0006((topSideTelemetry)) 
+	N0008[movingMaxCleanSightMaxCavingSize] -->|BelongsToClass| N0009(MovingMax) 
+	N0002[CleanSightMaxCavingSize#01] -->|IsTransformationOutput| N0008((movingMaxCleanSightMaxCavingSize)) 
+	N0010[ShaleShakerElement#01] -->|BelongsToClass| N0011(CuttingSeparatorLogical) 
+	N0002[CleanSightMaxCavingSize#01] -->|IsHydraulicEstimationAt| N0010((ShaleShakerElement#01)) 
+	N0012[DrillingFluid#01] -->|BelongsToClass| N0013(DrillingLiquidType) 
+	N0012[DrillingFluid#01] -->|IsFluidTypeLocatedAt| N0010((ShaleShakerElement#01)) 
+	N0014[Cuttings#01] -->|BelongsToClass| N0015(CuttingsComponent) 
+	N0014[Cuttings#01] -->|IsAComponentOf| N0012((DrillingFluid#01)) 
+	N0002[CleanSightMaxCavingSize#01] -->|ConcernsAFluidComponent| N0014((Cuttings#01)) 
+	N0016[ImageInterprer#01] -->|BelongsToClass| N0017(Interpreter) 
+	N0002[CleanSightMaxCavingSize#01] -->|IsComputedBy| N0016((ImageInterprer#01)) 
+	N0018[DrillDocs#01] -->|BelongsToClass| N0019(InstrumentationCompany) 
+	N0002[CleanSightMaxCavingSize#01] -->|IsProvidedBy| N0018((DrillDocs#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?shakerLoadMovingMaxExample
+WHERE {
+	?CleanSightMaxCavingSize rdf:type ddhub:DynamicDrillingSignal .
+	?CleanSightMaxCavingSize#01 rdf:type ddhub:ComputedData .
+	?CleanSightMaxCavingSize#01 rdf:type ddhub:JSonDataType .
+	?topSideTelemetry rdf:type ddhub:TopSideTelemetry .
+	?movingMaxCleanSightMaxCavingSize rdf:type ddhub:MovingMax .
+	?ShaleShakerElement#01 rdf:type ddhub:CuttingSeparatorLogical .
+	?DrillingFluid#01 rdf:type ddhub:DrillingLiquidType .
+	?Cuttings#01 rdf:type ddhub:CuttingsComponent .
+	?ImageInterprer#01 rdf:type ddhub:Interpreter .
+	?DrillDocs#01 rdf:type ddhub:InstrumentationCompany .
+  FILTER (
+	?Attribute000 = CleanSightMaxCavingSize
+	&& 	?Attribute001 = LengthSmall
+	&& 	?Attribute002 = topSideTelemetry
+	&& 	?Attribute003 = movingMaxCleanSightMaxCavingSize
+	&& 	?Attribute004 = ShaleShakerElement#01
+	&& 	?Attribute005 = ShaleShakerElement#01
+	&& 	?Attribute006 = DrillingFluid#01
+	&& 	?Attribute007 = Cuttings#01
+	&& 	?Attribute008 = ImageInterprer#01
+	&& 	?Attribute009 = DrillDocs#01
+  )
+}
+```
+This example defines a moving max transformation that computes the maximum caving size from shaker load measurements.
+## MovingDistribution <!-- NOUN -->
+- Display name: Moving Distribution
+- Parent class: [Filter](#Filter)
+- Description: 
+Tracks the distribution of a value within a sliding window.
+- Definition set: DataFlow
+- Examples:
+```dwis hookloadMovingDistribution
+MovingDistribution:hookloadMovingDistribution
+Measurement:hookloadRaw
+JSonDataType:hookloadDistribution
+hookloadRaw IsTransformationInput hookloadMovingDistribution
+hookloadDistribution IsTransformationOutput hookloadMovingDistribution
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hookloadMovingDistribution] -->|BelongsToClass| N0001(MovingDistribution) 
+	N0002[hookloadRaw] -->|BelongsToClass| N0003(Measurement) 
+	N0004[hookloadDistribution] -->|BelongsToClass| N0005(JSonDataType) 
+	N0002[hookloadRaw] -->|IsTransformationInput| N0000((hookloadMovingDistribution)) 
+	N0004[hookloadDistribution] -->|IsTransformationOutput| N0000((hookloadMovingDistribution)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hookloadMovingDistribution
+WHERE {
+	?hookloadMovingDistribution rdf:type ddhub:MovingDistribution .
+	?hookloadRaw rdf:type ddhub:Measurement .
+	?hookloadDistribution rdf:type ddhub:JSonDataType .
+  FILTER (
+	?Attribute000 = hookloadMovingDistribution
+	&& 	?Attribute001 = hookloadMovingDistribution
+  )
+}
+```
+This example indicates that the hookload distribution is calculated from raw hook load measurements over a moving window.
+```dwis ShakerLoadDistributionExample
+DynamicDrillingSignal:CleanSightShakerLoadDistribution
+ComputedData:CleanSightShakerLoadDistribution#01
+CleanSightShakerLoadDistribution#01 BelongsToClass JSonDataType
+CleanSightShakerLoadDistribution#01 HasDynamicValue CleanSightShakerLoadDistribution
+CleanSightShakerLoadDistribution#01 IsOfMeasurableQuantity ProportionStandard
+TopSideTelemetry:topSideTelemetry
+CleanSightShakerLoadDistribution#01 IsTransmittedBy topSideTelemetry
+MovingDistribution:movingDistribution
+CleanSightShakerLoadDistribution#01 IsTransformationOutput movingDistribution
+CuttingSeparatorLogical:ShaleShakerElement#01
+CleanSightShakerLoadDistribution#01 IsHydraulicEstimationAt ShaleShakerElement#01
+DrillingLiquidType:DrillingFluid#01
+DrillingFluid#01 IsFluidTypeLocatedAt ShaleShakerElement#01
+Interpreter:ImageInterprer#01
+CleanSightShakerLoadDistribution#01 IsComputedBy ImageInterprer#01
+InstrumentationCompany:DrillDocs#01
+CleanSightShakerLoadDistribution#01 IsProvidedBy DrillDocs#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CleanSightShakerLoadDistribution] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[CleanSightShakerLoadDistribution#01] -->|BelongsToClass| N0003(ComputedData) 
+	N0002[CleanSightShakerLoadDistribution#01] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[CleanSightShakerLoadDistribution#01] -->|HasDynamicValue| N0000((CleanSightShakerLoadDistribution)) 
+	N0002[CleanSightShakerLoadDistribution#01] -->|IsOfMeasurableQuantity| N0005((ProportionStandard)) 
+	N0006[topSideTelemetry] -->|BelongsToClass| N0007(TopSideTelemetry) 
+	N0002[CleanSightShakerLoadDistribution#01] -->|IsTransmittedBy| N0006((topSideTelemetry)) 
+	N0008[movingDistribution] -->|BelongsToClass| N0009(MovingDistribution) 
+	N0002[CleanSightShakerLoadDistribution#01] -->|IsTransformationOutput| N0008((movingDistribution)) 
+	N0010[ShaleShakerElement#01] -->|BelongsToClass| N0011(CuttingSeparatorLogical) 
+	N0002[CleanSightShakerLoadDistribution#01] -->|IsHydraulicEstimationAt| N0010((ShaleShakerElement#01)) 
+	N0012[DrillingFluid#01] -->|BelongsToClass| N0013(DrillingLiquidType) 
+	N0012[DrillingFluid#01] -->|IsFluidTypeLocatedAt| N0010((ShaleShakerElement#01)) 
+	N0014[ImageInterprer#01] -->|BelongsToClass| N0015(Interpreter) 
+	N0002[CleanSightShakerLoadDistribution#01] -->|IsComputedBy| N0014((ImageInterprer#01)) 
+	N0016[DrillDocs#01] -->|BelongsToClass| N0017(InstrumentationCompany) 
+	N0002[CleanSightShakerLoadDistribution#01] -->|IsProvidedBy| N0016((DrillDocs#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ShakerLoadDistributionExample
+WHERE {
+	?CleanSightShakerLoadDistribution rdf:type ddhub:DynamicDrillingSignal .
+	?CleanSightShakerLoadDistribution#01 rdf:type ddhub:ComputedData .
+	?CleanSightShakerLoadDistribution#01 rdf:type ddhub:JSonDataType .
+	?topSideTelemetry rdf:type ddhub:TopSideTelemetry .
+	?movingDistribution rdf:type ddhub:MovingDistribution .
+	?ShaleShakerElement#01 rdf:type ddhub:CuttingSeparatorLogical .
+	?DrillingFluid#01 rdf:type ddhub:DrillingLiquidType .
+	?ImageInterprer#01 rdf:type ddhub:Interpreter .
+	?DrillDocs#01 rdf:type ddhub:InstrumentationCompany .
+  FILTER (
+	?Attribute000 = CleanSightShakerLoadDistribution
+	&& 	?Attribute001 = ProportionStandard
+	&& 	?Attribute002 = topSideTelemetry
+	&& 	?Attribute003 = movingDistribution
+	&& 	?Attribute004 = ShaleShakerElement#01
+	&& 	?Attribute005 = ShaleShakerElement#01
+	&& 	?Attribute006 = ImageInterprer#01
+	&& 	?Attribute007 = DrillDocs#01
+  )
+}
+```
+This example defines a moving distribution transformation that computes the distribution of shaker load measurements.
 ## NumberOfSampleMovingAverage <!-- NOUN -->
 - Display name: Number Of Sample Moving Average
 - Parent class: [MovingAverage](#MovingAverage)
@@ -4674,7 +6667,47 @@ Represent any signal processing applied prior to the distribution of the conside
   - NumberOfSamples
     - Type: int
     - Description: 
+- Description: 
+Moving average defined by a fixed number of samples.
 - Definition set: DataFlow
+- Examples:
+```dwis hookloadSampleAverage
+NumberOfSampleMovingAverage:hookloadSampleAverage
+hookloadSampleAverage.NumberOfSamples = "50"
+DrillingDataPoint:hookloadRaw
+DrillingDataPoint:hookloadMean50
+hookloadRaw IsTransformationInput hookloadSampleAverage
+hookloadMean50 IsTransformationOutput hookloadSampleAverage
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hookloadSampleAverage] -->|BelongsToClass| N0001(NumberOfSampleMovingAverage) 
+	N0000[hookloadSampleAverage] -->|NumberOfSamples| N0002(("50")) 
+	N0003[hookloadRaw] -->|BelongsToClass| N0004(DrillingDataPoint) 
+	N0005[hookloadMean50] -->|BelongsToClass| N0004(DrillingDataPoint) 
+	N0003[hookloadRaw] -->|IsTransformationInput| N0000((hookloadSampleAverage)) 
+	N0005[hookloadMean50] -->|IsTransformationOutput| N0000((hookloadSampleAverage)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hookloadSampleAverage
+WHERE {
+	?hookloadSampleAverage rdf:type ddhub:NumberOfSampleMovingAverage .
+	?hookloadSampleAverage ddhub:NumberOfSamples ?Attribute000 .
+	?hookloadRaw rdf:type ddhub:DrillingDataPoint .
+	?hookloadMean50 rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = "50"
+	&& 	?Attribute001 = hookloadSampleAverage
+	&& 	?Attribute002 = hookloadSampleAverage
+  )
+}
+```
+This example averages the last 50 hookload samples.
 ## TimeWindowMovingAverage <!-- NOUN -->
 - Display name: Time Window Moving Average
 - Parent class: [MovingAverage](#MovingAverage)
@@ -4682,13 +6715,87 @@ Represent any signal processing applied prior to the distribution of the conside
   - TimeWindow
     - Type: double
     - Description: 
+- Description: 
+Moving average defined by a time duration window.
 - Definition set: DataFlow
+- Examples:
+```dwis hookloadTimeAverage
+TimeWindowMovingAverage:hookloadTimeAverage
+hookloadTimeAverage.TimeWindow = "10.0"
+DrillingDataPoint:hookloadRaw
+DrillingDataPoint:hookloadMean10s
+hookloadRaw IsTransformationInput hookloadTimeAverage
+hookloadMean10s IsTransformationOutput hookloadTimeAverage
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hookloadTimeAverage] -->|BelongsToClass| N0001(TimeWindowMovingAverage) 
+	N0000[hookloadTimeAverage] -->|TimeWindow| N0002(("10.0")) 
+	N0003[hookloadRaw] -->|BelongsToClass| N0004(DrillingDataPoint) 
+	N0005[hookloadMean10s] -->|BelongsToClass| N0004(DrillingDataPoint) 
+	N0003[hookloadRaw] -->|IsTransformationInput| N0000((hookloadTimeAverage)) 
+	N0005[hookloadMean10s] -->|IsTransformationOutput| N0000((hookloadTimeAverage)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hookloadTimeAverage
+WHERE {
+	?hookloadTimeAverage rdf:type ddhub:TimeWindowMovingAverage .
+	?hookloadTimeAverage ddhub:TimeWindow ?Attribute000 .
+	?hookloadRaw rdf:type ddhub:DrillingDataPoint .
+	?hookloadMean10s rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = "10.0"
+	&& 	?Attribute001 = hookloadTimeAverage
+	&& 	?Attribute002 = hookloadTimeAverage
+  )
+}
+```
+This example averages hookload over the last ten seconds.
 ## TimeBasedTransformation <!-- NOUN -->
 - Display name: Time Based Transformation
 - Parent class: [Transformation](#Transformation)
 - Description: 
 Transformations that apply only to time series: time derivations, time integration, averaging...
 - Definition set: DataFlow
+- Examples:
+```dwis timeBasedDerivative
+TimeBasedTransformation:timeDerivative
+DrillingDataPoint:blockHeight
+DrillingDataPoint:blockVelocity
+blockHeight IsTransformationInput timeDerivative
+blockVelocity IsTransformationOutput timeDerivative
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[timeDerivative] -->|BelongsToClass| N0001(TimeBasedTransformation) 
+	N0002[blockHeight] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[blockVelocity] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[blockHeight] -->|IsTransformationInput| N0000((timeDerivative)) 
+	N0004[blockVelocity] -->|IsTransformationOutput| N0000((timeDerivative)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?timeBasedDerivative
+WHERE {
+	?timeDerivative rdf:type ddhub:TimeBasedTransformation .
+	?blockHeight rdf:type ddhub:DrillingDataPoint .
+	?blockVelocity rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = timeDerivative
+	&& 	?Attribute001 = timeDerivative
+  )
+}
+```
+This example represents a time-based derivative computing block velocity from height.
 ## Buffering <!-- NOUN -->
 - Display name: Buffering
 - Parent class: [TimeBasedTransformation](#TimeBasedTransformation)
@@ -4696,19 +6803,167 @@ Transformations that apply only to time series: time derivations, time integrati
   - BufferingInterval
     - Type: double
     - Description: 
+- Description: 
+Stores a time slice of data before forwarding it, often to align or batch records.
 - Definition set: DataFlow
+- Examples:
+```dwis blockHeightBuffer
+Buffering:blockHeightBuffer
+blockHeightBuffer.BufferingInterval = "5.0"
+DrillingDataPoint:blockHeight
+DrillingDataPoint:blockHeightBuffered
+blockHeight IsBufferingInput blockHeightBuffer
+blockHeightBuffered IsBufferingOutput blockHeightBuffer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[blockHeightBuffer] -->|BelongsToClass| N0001(Buffering) 
+	N0000[blockHeightBuffer] -->|BufferingInterval| N0002(("5.0")) 
+	N0003[blockHeight] -->|BelongsToClass| N0004(DrillingDataPoint) 
+	N0005[blockHeightBuffered] -->|BelongsToClass| N0004(DrillingDataPoint) 
+	N0003[blockHeight] -->|IsBufferingInput| N0000((blockHeightBuffer)) 
+	N0005[blockHeightBuffered] -->|IsBufferingOutput| N0000((blockHeightBuffer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?blockHeightBuffer
+WHERE {
+	?blockHeightBuffer rdf:type ddhub:Buffering .
+	?blockHeightBuffer ddhub:BufferingInterval ?Attribute000 .
+	?blockHeight rdf:type ddhub:DrillingDataPoint .
+	?blockHeightBuffered rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = "5.0"
+	&& 	?Attribute001 = blockHeightBuffer
+	&& 	?Attribute002 = blockHeightBuffer
+  )
+}
+```
+This example buffers block height values over a five-second interval.
 ## Derivation <!-- NOUN -->
 - Display name: Derivation
 - Parent class: [TimeBasedTransformation](#TimeBasedTransformation)
+- Description: 
+Computes the derivative of a time series.
 - Definition set: DataFlow
+- Examples:
+```dwis weightOnBitDerivative
+Derivation:weightOnBitDerivative
+DrillingDataPoint:weightOnBit
+DrillingDataPoint:weightOnBitRate
+weightOnBit IsDerivationInput weightOnBitDerivative
+weightOnBitRate IsDerivedFrom weightOnBit
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[weightOnBitDerivative] -->|BelongsToClass| N0001(Derivation) 
+	N0002[weightOnBit] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[weightOnBitRate] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[weightOnBit] -->|IsDerivationInput| N0000((weightOnBitDerivative)) 
+	N0004[weightOnBitRate] -->|IsDerivedFrom| N0002((weightOnBit)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?weightOnBitDerivative
+WHERE {
+	?weightOnBitDerivative rdf:type ddhub:Derivation .
+	?weightOnBit rdf:type ddhub:DrillingDataPoint .
+	?weightOnBitRate rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = weightOnBitDerivative
+	&& 	?Attribute001 = weightOnBit
+  )
+}
+```
+This example derives the rate of change of weight on bit.
 ## Integration <!-- NOUN -->
 - Display name: Integration
 - Parent class: [TimeBasedTransformation](#TimeBasedTransformation)
+- Description: 
+Integrates a time series over time.
 - Definition set: DataFlow
+- Examples:
+```dwis flowIntegration
+Integration:flowIntegration
+DrillingDataPoint:flowRate
+DrillingDataPoint:pumpedVolume
+flowRate IsTransformationInput flowIntegration
+pumpedVolume IsIntegratedFrom flowRate
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[flowIntegration] -->|BelongsToClass| N0001(Integration) 
+	N0002[flowRate] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[pumpedVolume] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[flowRate] -->|IsTransformationInput| N0000((flowIntegration)) 
+	N0004[pumpedVolume] -->|IsIntegratedFrom| N0002((flowRate)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?flowIntegration
+WHERE {
+	?flowIntegration rdf:type ddhub:Integration .
+	?flowRate rdf:type ddhub:DrillingDataPoint .
+	?pumpedVolume rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = flowIntegration
+	&& 	?Attribute001 = flowRate
+  )
+}
+```
+This example integrates flow rate to compute pumped volume.
 ## RangeExtraction <!-- NOUN -->
 - Display name: Range Extraction
 - Parent class: [TimeBasedTransformation](#TimeBasedTransformation)
+- Description: 
+Extracts a subset of data either by count or time span.
 - Definition set: DataFlow
+- Examples:
+```dwis windowSelection
+RangeExtraction:windowSelection
+DrillingDataPoint:standpipePressureRaw
+DrillingDataPoint:standpipePressureWindow
+standpipePressureRaw IsTransformationInput windowSelection
+standpipePressureWindow IsTransformationOutput windowSelection
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[windowSelection] -->|BelongsToClass| N0001(RangeExtraction) 
+	N0002[standpipePressureRaw] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[standpipePressureWindow] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[standpipePressureRaw] -->|IsTransformationInput| N0000((windowSelection)) 
+	N0004[standpipePressureWindow] -->|IsTransformationOutput| N0000((windowSelection)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?windowSelection
+WHERE {
+	?windowSelection rdf:type ddhub:RangeExtraction .
+	?standpipePressureRaw rdf:type ddhub:DrillingDataPoint .
+	?standpipePressureWindow rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = windowSelection
+	&& 	?Attribute001 = windowSelection
+  )
+}
+```
+This example extracts a recent window of standpipe pressure values.
 ## NumberOfItemsRangeExtraction <!-- NOUN -->
 - Display name: Number Of Items Range Extraction
 - Parent class: [RangeExtraction](#RangeExtraction)
@@ -4716,7 +6971,47 @@ Transformations that apply only to time series: time derivations, time integrati
   - NumberOfItems
     - Type: int
     - Description: 
+- Description: 
+Extracts the latest N samples from a signal.
 - Definition set: DataFlow
+- Examples:
+```dwis lastSamplesSelection
+NumberOfItemsRangeExtraction:lastSamplesSelection
+lastSamplesSelection.NumberOfItems = "200"
+DrillingDataPoint:hookloadRaw
+DrillingDataPoint:hookloadLast200
+hookloadRaw IsTransformationInput lastSamplesSelection
+hookloadLast200 IsTransformationOutput lastSamplesSelection
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[lastSamplesSelection] -->|BelongsToClass| N0001(NumberOfItemsRangeExtraction) 
+	N0000[lastSamplesSelection] -->|NumberOfItems| N0002(("200")) 
+	N0003[hookloadRaw] -->|BelongsToClass| N0004(DrillingDataPoint) 
+	N0005[hookloadLast200] -->|BelongsToClass| N0004(DrillingDataPoint) 
+	N0003[hookloadRaw] -->|IsTransformationInput| N0000((lastSamplesSelection)) 
+	N0005[hookloadLast200] -->|IsTransformationOutput| N0000((lastSamplesSelection)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?lastSamplesSelection
+WHERE {
+	?lastSamplesSelection rdf:type ddhub:NumberOfItemsRangeExtraction .
+	?lastSamplesSelection ddhub:NumberOfItems ?Attribute000 .
+	?hookloadRaw rdf:type ddhub:DrillingDataPoint .
+	?hookloadLast200 rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = "200"
+	&& 	?Attribute001 = lastSamplesSelection
+	&& 	?Attribute002 = lastSamplesSelection
+  )
+}
+```
+This example selects the last 200 hookload samples.
 ## TimeWindowRangeExtraction <!-- NOUN -->
 - Display name: Time Window Range Extraction
 - Parent class: [RangeExtraction](#RangeExtraction)
@@ -4724,7 +7019,47 @@ Transformations that apply only to time series: time derivations, time integrati
   - TimeWindow
     - Type: double
     - Description: 
+- Description: 
+Extracts samples from a signal over a defined time window.
 - Definition set: DataFlow
+- Examples:
+```dwis lastTenSeconds
+TimeWindowRangeExtraction:lastTenSeconds
+lastTenSeconds.TimeWindow = "10.0"
+DrillingDataPoint:standpipePressureRaw
+DrillingDataPoint:standpipePressure10s
+standpipePressureRaw IsTransformationInput lastTenSeconds
+standpipePressure10s IsTransformationOutput lastTenSeconds
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[lastTenSeconds] -->|BelongsToClass| N0001(TimeWindowRangeExtraction) 
+	N0000[lastTenSeconds] -->|TimeWindow| N0002(("10.0")) 
+	N0003[standpipePressureRaw] -->|BelongsToClass| N0004(DrillingDataPoint) 
+	N0005[standpipePressure10s] -->|BelongsToClass| N0004(DrillingDataPoint) 
+	N0003[standpipePressureRaw] -->|IsTransformationInput| N0000((lastTenSeconds)) 
+	N0005[standpipePressure10s] -->|IsTransformationOutput| N0000((lastTenSeconds)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?lastTenSeconds
+WHERE {
+	?lastTenSeconds rdf:type ddhub:TimeWindowRangeExtraction .
+	?lastTenSeconds ddhub:TimeWindow ?Attribute000 .
+	?standpipePressureRaw rdf:type ddhub:DrillingDataPoint .
+	?standpipePressure10s rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = "10.0"
+	&& 	?Attribute001 = lastTenSeconds
+	&& 	?Attribute002 = lastTenSeconds
+  )
+}
+```
+This example captures standpipe pressure values from the last ten seconds.
 ## Resampling <!-- NOUN -->
 - Display name: Resampling
 - Parent class: [TimeBasedTransformation](#TimeBasedTransformation)
@@ -4738,32 +7073,167 @@ Transformations that apply only to time series: time derivations, time integrati
   - Validity
     - Type: double
     - Description: 
+- Description: 
+Adjusts the sampling rate of a signal and can annotate the validity of the resampled points.
 - Definition set: DataFlow
+- Examples:
+```dwis resampleHookload
+Resampling:resampleHookload
+resampleHookload.ResamplingRate = "1.0"
+resampleHookload.ResamplingDelay = "0.1"
+DrillingDataPoint:hookloadRaw
+DrillingDataPoint:hookloadResampled
+hookloadRaw IsResamplingInput resampleHookload
+hookloadResampled IsResampledBy resampleHookload
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[resampleHookload] -->|BelongsToClass| N0001(Resampling) 
+	N0000[resampleHookload] -->|ResamplingRate| N0002(("1.0")) 
+	N0000[resampleHookload] -->|ResamplingDelay| N0003(("0.1")) 
+	N0004[hookloadRaw] -->|BelongsToClass| N0005(DrillingDataPoint) 
+	N0006[hookloadResampled] -->|BelongsToClass| N0005(DrillingDataPoint) 
+	N0004[hookloadRaw] -->|IsResamplingInput| N0000((resampleHookload)) 
+	N0006[hookloadResampled] -->|IsResampledBy| N0000((resampleHookload)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?resampleHookload
+WHERE {
+	?resampleHookload rdf:type ddhub:Resampling .
+	?resampleHookload ddhub:ResamplingRate ?Attribute000 .
+	?resampleHookload ddhub:ResamplingDelay ?Attribute001 .
+	?hookloadRaw rdf:type ddhub:DrillingDataPoint .
+	?hookloadResampled rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = "1.0"
+	&& 	?Attribute001 = "0.1"
+	&& 	?Attribute002 = resampleHookload
+	&& 	?Attribute003 = resampleHookload
+  )
+}
+```
+This example resamples hookload to 1 Hz with a small delay.
 ## TransmissionLine <!-- NOUN -->
 - Display name: Transmission Line
 - Parent class: [DataFlowNode](#DataFlowNode)
+- Description: 
+Represents telemetry or wiring that forwards a signal, potentially with delay or duplication.
 - Definition set: DataFlow
+- Examples:
+```dwis surfaceToDownholeTelemetry
+TransmissionLine:surfaceToDownholeTelemetry
+DrillingDataPoint:surfaceCommand
+DrillingDataPoint:downholeCommand
+surfaceCommand IsTransmissionInput surfaceToDownholeTelemetry
+downholeCommand IsTransmissionOutput surfaceToDownholeTelemetry
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[surfaceToDownholeTelemetry] -->|BelongsToClass| N0001(TransmissionLine) 
+	N0002[surfaceCommand] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[downholeCommand] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[surfaceCommand] -->|IsTransmissionInput| N0000((surfaceToDownholeTelemetry)) 
+	N0004[downholeCommand] -->|IsTransmissionOutput| N0000((surfaceToDownholeTelemetry)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?surfaceToDownholeTelemetry
+WHERE {
+	?surfaceToDownholeTelemetry rdf:type ddhub:TransmissionLine .
+	?surfaceCommand rdf:type ddhub:DrillingDataPoint .
+	?downholeCommand rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = surfaceToDownholeTelemetry
+	&& 	?Attribute001 = surfaceToDownholeTelemetry
+  )
+}
+```
+This example models a telemetry link forwarding a surface command to a downhole tool.
 ## UserInterface <!-- NOUN -->
 - Display name: User Interface
 - Parent class: [DataFlowNode](#DataFlowNode)
+- Description: 
+The human-machine interface through which operators view data and enter commands.
 - Definition set: DataFlow
+- Examples:
+```dwis drillerHMI
+UserInterface:drillerHMI
+DrillingDataPoint:standpipePressureDisplay
+DrillingDataPoint:flowRateCommand
+standpipePressureDisplay IsTransmissionOutput drillerHMI
+flowRateCommand IsCommandFor drillerHMI
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillerHMI] -->|BelongsToClass| N0001(UserInterface) 
+	N0002[standpipePressureDisplay] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[flowRateCommand] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[standpipePressureDisplay] -->|IsTransmissionOutput| N0000((drillerHMI)) 
+	N0004[flowRateCommand] -->|IsCommandFor| N0000((drillerHMI)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillerHMI
+WHERE {
+	?drillerHMI rdf:type ddhub:UserInterface .
+	?standpipePressureDisplay rdf:type ddhub:DrillingDataPoint .
+	?flowRateCommand rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = drillerHMI
+	&& 	?Attribute001 = drillerHMI
+  )
+}
+```
+This example shows an HMI displaying pressure and accepting a flow-rate command.
 ## DataProvider <!-- NOUN -->
 - Display name: DataProvider
 - Parent class: [DWISNoun](#DWISNoun)
 - Attributes:
   - ProviderName
     - Type: string
-    - Description: 
+    - Description: The name of the data provide.
 - Description: 
 A data provider is any sources for data.
 - Definition set: DataProviders
+- Examples:
+```dwis dataProvider
+DrillingDataPoint:dataProvider
+dataProvider BelongsToClass DataProvider
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[dataProvider] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[dataProvider] -->|BelongsToClass| N0002(DataProvider) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?dataProvider
+WHERE {
+	?dataProvider rdf:type ddhub:DrillingDataPoint .
+	?dataProvider rdf:type ddhub:DataProvider .
+}
+```
+This example links a drilling data point to the DataProvider definition.
 ## OperatingCompany <!-- NOUN -->
 - Display name: OperatingCompany
 - Parent class: [DataProvider](#DataProvider)
-- Attributes:
-  - ProviderName
-    - Type: string
-    - Description: 
 - Description: 
 An operating company is an entity that holds the rights to explore, develop, and produce hydrocarbon resources from a particular oil or gas field or lease
 - Definition set: DataProviders
@@ -4815,20 +7285,35 @@ WHERE {
 ## ServiceCompany <!-- NOUN -->
 - Display name: ServiceCompany
 - Parent class: [DataProvider](#DataProvider)
-- Attributes:
-  - ProviderName
-    - Type: string
-    - Description: 
 - Description: 
 A service company is an entity that provides services during the well construction.
 - Definition set: DataProviders
+- Examples:
+```dwis serviceCompany
+DrillingDataPoint:serviceCompany
+serviceCompany BelongsToClass ServiceCompany
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[serviceCompany] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[serviceCompany] -->|BelongsToClass| N0002(ServiceCompany) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?serviceCompany
+WHERE {
+	?serviceCompany rdf:type ddhub:DrillingDataPoint .
+	?serviceCompany rdf:type ddhub:ServiceCompany .
+}
+```
+This example links a drilling data point to the ServiceCompany definition.
 ## DirectionalServiceCompany <!-- NOUN -->
 - Display name: DirectionalServiceCompany
 - Parent class: [ServiceCompany](#ServiceCompany)
-- Attributes:
-  - ProviderName
-    - Type: string
-    - Description: 
 - Description: 
 A directional service company is an entity that provides services for downhole directional drilling and downhole measurements.
 - Definition set: DataProviders
@@ -4890,10 +7375,6 @@ WHERE {
 ## DrillingFluidProvider <!-- NOUN -->
 - Display name: DrillingFluidProvider
 - Parent class: [ServiceCompany](#ServiceCompany)
-- Attributes:
-  - ProviderName
-    - Type: string
-    - Description: 
 - Description: 
 A drilling fluid provider is a company that provides and maintains the drilling fluids during well construction.
 - Definition set: DataProviders
@@ -4951,12 +7432,59 @@ WHERE {
 ## LoggingServiceCompany <!-- NOUN -->
 - Display name: LoggingServiceCompany
 - Parent class: [ServiceCompany](#ServiceCompany)
-- Attributes:
-  - ProviderName
-    - Type: string
-    - Description: 
 - Description: 
 A logging service company is an entity that gathers measured information during well construction.
+- Definition set: DataProviders
+- Examples:
+``` dwis stratigraphyDescription_0
+DynamicDrillingSignal:stratigraphyDescription_0
+StratigraphyDescription:stratigraphyDescription_1
+stratigraphyDescription_1 HasDynamicValue stratigraphyDescription_0
+LoggingServiceCompany:logginServiceCompany_1
+stratigraphyDescription_1 IsProvidedBy logginServiceCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+stratigraphyDescription_1 IsProvidedTo contextualDataBuilder_1
+Measured:measured_1
+stratigraphyDescription_1 IsCharacterizedBy measured_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stratigraphyDescription_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[stratigraphyDescription_1] -->|BelongsToClass| N0003(StratigraphyDescription) 
+	N0002[stratigraphyDescription_1] -->|HasDynamicValue| N0000((stratigraphyDescription_0)) 
+	N0004[logginServiceCompany_1] -->|BelongsToClass| N0005(LoggingServiceCompany) 
+	N0002[stratigraphyDescription_1] -->|IsProvidedBy| N0004((logginServiceCompany_1)) 
+	N0006[contextualDataBuilder_1] -->|BelongsToClass| N0007(DWISContextualDataBuilder) 
+	N0002[stratigraphyDescription_1] -->|IsProvidedTo| N0006((contextualDataBuilder_1)) 
+	N0008[measured_1] -->|BelongsToClass| N0009(Measured) 
+	N0002[stratigraphyDescription_1] -->|IsCharacterizedBy| N0008((measured_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stratigraphyDescription_0
+WHERE {
+	?stratigraphyDescription_0 rdf:type ddhub:DynamicDrillingSignal .
+	?stratigraphyDescription_1 rdf:type ddhub:StratigraphyDescription .
+	?logginServiceCompany_1 rdf:type ddhub:LoggingServiceCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?measured_1 rdf:type ddhub:Measured .
+  FILTER (
+	?Attribute000 = stratigraphyDescription_0
+	&& 	?Attribute001 = logginServiceCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+	&& 	?Attribute003 = measured_1
+  )
+}
+```
+## InstrumentationCompany <!-- NOUN -->
+- Display name: Instrumentation Company
+- Parent class: [ServiceCompany](#ServiceCompany)
+- Description: 
+A service company providing measurement instruments and associated services.
 - Definition set: DataProviders
 - Examples:
 ``` dwis stratigraphyDescription_0
@@ -5006,10 +7534,8 @@ WHERE {
 ## CementingServiceCompany <!-- NOUN -->
 - Display name: CementingServiceCompany
 - Parent class: [ServiceCompany](#ServiceCompany)
-- Attributes:
-  - ProviderName
-    - Type: string
-    - Description: 
+- Description: 
+A cementing service company is an entity that provides the cement slurry used during cementing operations.
 - Definition set: DataProviders
 - Examples:
 ``` dwis fluidDescription_0
@@ -5059,10 +7585,8 @@ WHERE {
 ## CompletionServiceCompany <!-- NOUN -->
 - Display name: CompletionServiceCompany
 - Parent class: [ServiceCompany](#ServiceCompany)
-- Attributes:
-  - ProviderName
-    - Type: string
-    - Description: 
+- Description: 
+A completion service company is an entity that provides the completion equipment and fluids used during completion operations.
 - Definition set: DataProviders
 - Examples:
 ``` dwis fluidDescription_0
@@ -5112,10 +7636,6 @@ WHERE {
 ## DataAnalysisServiceCompany <!-- NOUN -->
 - Display name: DataAnalysisServiceCompany
 - Parent class: [ServiceCompany](#ServiceCompany)
-- Attributes:
-  - ProviderName
-    - Type: string
-    - Description: 
 - Description: 
 A data analysis service company is an entity that analyses measured data and provide new information from these measurements.
 - Definition set: DataProviders
@@ -5182,10 +7702,8 @@ WHERE {
 ## DrillingContractor <!-- NOUN -->
 - Display name: DrillingContractor
 - Parent class: [DataProvider](#DataProvider)
-- Attributes:
-  - ProviderName
-    - Type: string
-    - Description: 
+- Description: 
+A drilling contractor is a company that is primarily responsible for conducting drilling operations, including the construction and operation of drilling rigs.
 - Definition set: DataProviders
 - Examples:
 ``` dwis rigDescription_0
@@ -5235,20 +7753,66 @@ WHERE {
 ## DWISInternalService <!-- NOUN -->
 - Display name: DWISInternalService
 - Parent class: [DataProvider](#DataProvider)
-- Attributes:
-  - ProviderName
-    - Type: string
-    - Description: 
 - Description: 
 A DWIS internal service is an internal component of the DWIS infrastructure that generates information that can be used by any systems connected to the DWIS infrastructure.
 - Definition set: DataProviders
+- Examples:
+```dwis dWISInternalService
+DrillingDataPoint:dWISInternalService
+dWISInternalService BelongsToClass DWISInternalService
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[dWISInternalService] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[dWISInternalService] -->|BelongsToClass| N0002(DWISInternalService) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?dWISInternalService
+WHERE {
+	?dWISInternalService rdf:type ddhub:DrillingDataPoint .
+	?dWISInternalService rdf:type ddhub:DWISInternalService .
+}
+```
+This example links a drilling data point to the DWISInternalService definition.
 ## DWISBlackboard <!-- NOUN -->
 - Display name: DWIS Blackboard
 - Parent class: [DWISInternalService](#DWISInternalService)
+- Description: 
+The DWIS blackboard is a shared data structure that allows different DWIS components to share information and coordinate their activities.
 - Definition set: DataProviders
+- Examples:
+```dwis dWISBlackboard
+DrillingDataPoint:dWISBlackboard
+dWISBlackboard BelongsToClass DWISBlackboard
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[dWISBlackboard] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[dWISBlackboard] -->|BelongsToClass| N0002(DWISBlackboard) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?dWISBlackboard
+WHERE {
+	?dWISBlackboard rdf:type ddhub:DrillingDataPoint .
+	?dWISBlackboard rdf:type ddhub:DWISBlackboard .
+}
+```
+This example links a drilling data point to the DWISBlackboard definition.
 ## DWISDrillingProcessStateInterpreter <!-- NOUN -->
 - Display name: DWIS Drilling Process State Interpreter
 - Parent class: [DWISInternalService](#DWISInternalService)
+- Description: 
+The DWIS Drilling Process State Interpreter is a component that analyses drilling data to determine the current state of the drilling process.
 - Definition set: DataProviders
 - Examples:
 ``` dwis configurationData_0
@@ -5295,6 +7859,8 @@ WHERE {
 ## DWISAdviceComposer <!-- NOUN -->
 - Display name: DWIS Advice Composer
 - Parent class: [DWISInternalService](#DWISInternalService)
+- Description: 
+The DWIS Advice Composer is a component that composes different drilling advices based on priorities set by the DWIS Scheduler.
 - Definition set: DataProviders
 - Examples:
 ``` dwis ROPManagementControllerInfo
@@ -5410,6 +7976,8 @@ WHERE {
 ## DWISScheduler <!-- NOUN -->
 - Display name: DWIS Scheduler
 - Parent class: [DWISInternalService](#DWISInternalService)
+- Description: 
+The DWIS Scheduler is a component that schedules drilling activities based on the rig action plan and the current context estimated by the DWIS Microstate Interpretation engine.
 - Definition set: DataProviders
 - Examples:
 ``` dwis rigActionPlan_0
@@ -5453,6 +8021,8 @@ WHERE {
 ## DWISContextualDataBuilder <!-- NOUN -->
 - Display name: DWIS Contextual Data Builder
 - Parent class: [DWISInternalService](#DWISInternalService)
+- Description: 
+The DWIS Contextual Data Builder is a component that consolidates contextual data arising from multiple providers.
 - Definition set: DataProviders
 - Examples:
 ``` dwis fluidDescription_0
@@ -5502,10 +8072,37 @@ WHERE {
 ## DWISLogger <!-- NOUN -->
 - Display name: DWIS Logger
 - Parent class: [DWISInternalService](#DWISInternalService)
+- Description: 
+The DWIS Logger is a component that logs all the activity on DWIS Blackboard.
 - Definition set: DataProviders
+- Examples:
+```dwis dWISLogger
+DrillingDataPoint:dWISLogger
+dWISLogger BelongsToClass DWISLogger
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[dWISLogger] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[dWISLogger] -->|BelongsToClass| N0002(DWISLogger) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?dWISLogger
+WHERE {
+	?dWISLogger rdf:type ddhub:DrillingDataPoint .
+	?dWISLogger rdf:type ddhub:DWISLogger .
+}
+```
+This example links a drilling data point to the DWISLogger definition.
 ## DWISADCSInterface <!-- NOUN -->
 - Display name: DWIS ADCS Interface
 - Parent class: [DWISInternalService](#DWISInternalService)
+- Description: 
+The DWIS ADCS interface provides access to the actual ADCS.
 - Definition set: DataProviders
 - Examples:
 ``` dwis overpullUnderpullFDIRInfo
@@ -5579,6 +8176,8 @@ WHERE {
 ## DWISADCSCapabilityDescriptor <!-- NOUN -->
 - Display name: DWIS ADCS Capability Descriptor
 - Parent class: [DWISInternalService](#DWISInternalService)
+- Description: 
+The DWIS ADCS Capability descriptor describes the actual capabilities of the true ADCS.
 - Definition set: DataProviders
 - Examples:
 ``` dwis configurationData_0
@@ -5988,83 +8587,511 @@ WHERE {
 ## ValidityCondition <!-- NOUN -->
 - Display name: ValidityCondition
 - Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+A logical condition that must hold for a signal to be considered valid.
 - Definition set: DataValidity
+- Examples:
+```dwis circulationValidity
+ValidityCondition:circulationValidity
+DrillingDataPoint:circulationStatus
+circulationStatus IsConditionInput circulationValidity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[circulationValidity] -->|BelongsToClass| N0001(ValidityCondition) 
+	N0002[circulationStatus] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[circulationStatus] -->|IsConditionInput| N0000((circulationValidity)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?circulationValidity
+WHERE {
+	?circulationValidity rdf:type ddhub:ValidityCondition .
+	?circulationStatus rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = circulationValidity
+  )
+}
+```
+This example defines a validity condition driven by the circulation status signal.
 ## ConnectedCondition <!-- NOUN -->
 - Display name: ConnectedCondition
 - Parent class: [ValidityCondition](#ValidityCondition)
+- Description: 
+A condition expressing that a signal is valid only when two or more pieces of equipment are connected (e.g., toolface valid only when BHA is made up).
 - Definition set: DataValidity
+- Examples:
+```dwis bhaConnectedCondition
+ConnectedCondition:bhaConnected
+DrillingDataPoint:bhaConnectionStatus
+bhaConnectionStatus IsConditionInput bhaConnected
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[bhaConnected] -->|BelongsToClass| N0001(ConnectedCondition) 
+	N0002[bhaConnectionStatus] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[bhaConnectionStatus] -->|IsConditionInput| N0000((bhaConnected)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?bhaConnectedCondition
+WHERE {
+	?bhaConnected rdf:type ddhub:ConnectedCondition .
+	?bhaConnectionStatus rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = bhaConnected
+  )
+}
+```
+This example states that validity depends on the BHA connection status.
 ## EQ <!-- NOUN -->
 - Display name: EQ
 - Parent class: [ValidityCondition](#ValidityCondition)
+- Description: 
+A condition that is true when its left and right inputs are equal.
 - Definition set: DataValidity
+- Examples:
+```dwis slipsCondition
+EQ:slipsOffCondition
+DrillingDataPoint:slipsStatus
+DrillingDataPoint:slipsOffValue
+slipsStatus IsConditionLeft slipsOffCondition
+slipsOffValue IsConditionRight slipsOffCondition
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[slipsOffCondition] -->|BelongsToClass| N0001(EQ) 
+	N0002[slipsStatus] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[slipsOffValue] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[slipsStatus] -->|IsConditionLeft| N0000((slipsOffCondition)) 
+	N0004[slipsOffValue] -->|IsConditionRight| N0000((slipsOffCondition)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?slipsCondition
+WHERE {
+	?slipsOffCondition rdf:type ddhub:EQ .
+	?slipsStatus rdf:type ddhub:DrillingDataPoint .
+	?slipsOffValue rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = slipsOffCondition
+	&& 	?Attribute001 = slipsOffCondition
+  )
+}
+```
+This example models validity when the slips status equals the “off” value.
 ## GT <!-- NOUN -->
 - Display name: GT
 - Parent class: [ValidityCondition](#ValidityCondition)
+- Description: 
+A condition that is true when the left input is greater than the right input.
 - Definition set: DataValidity
+- Examples:
+```dwis pumpPressureCondition
+GT:pumpPressureCondition
+DrillingDataPoint:standpipePressure
+DrillingDataPoint:pressureThreshold
+standpipePressure IsConditionLeft pumpPressureCondition
+pressureThreshold IsConditionRight pumpPressureCondition
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pumpPressureCondition] -->|BelongsToClass| N0001(GT) 
+	N0002[standpipePressure] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[pressureThreshold] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[standpipePressure] -->|IsConditionLeft| N0000((pumpPressureCondition)) 
+	N0004[pressureThreshold] -->|IsConditionRight| N0000((pumpPressureCondition)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pumpPressureCondition
+WHERE {
+	?pumpPressureCondition rdf:type ddhub:GT .
+	?standpipePressure rdf:type ddhub:DrillingDataPoint .
+	?pressureThreshold rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = pumpPressureCondition
+	&& 	?Attribute001 = pumpPressureCondition
+  )
+}
+```
+This example makes validity depend on standpipe pressure being above a threshold.
 ## LT <!-- NOUN -->
 - Display name: LT
 - Parent class: [ValidityCondition](#ValidityCondition)
+- Description: 
+A condition that is true when the left input is lower than the right input.
 - Definition set: DataValidity
+- Examples:
+```dwis bitDepthCondition
+LT:bitDepthCondition
+DrillingDataPoint:bitDepth
+DrillingDataPoint:maxDepthForSensor
+bitDepth IsConditionLeft bitDepthCondition
+maxDepthForSensor IsConditionRight bitDepthCondition
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[bitDepthCondition] -->|BelongsToClass| N0001(LT) 
+	N0002[bitDepth] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0004[maxDepthForSensor] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[bitDepth] -->|IsConditionLeft| N0000((bitDepthCondition)) 
+	N0004[maxDepthForSensor] -->|IsConditionRight| N0000((bitDepthCondition)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?bitDepthCondition
+WHERE {
+	?bitDepthCondition rdf:type ddhub:LT .
+	?bitDepth rdf:type ddhub:DrillingDataPoint .
+	?maxDepthForSensor rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = bitDepthCondition
+	&& 	?Attribute001 = bitDepthCondition
+  )
+}
+```
+This example makes validity depend on bit depth being below a sensor limit.
 ## DataType <!-- NOUN -->
 - Display name: Data Type
 - Parent class: [DWISNoun](#DWISNoun)
 - Description: 
 Characterizes the type of data that is stored in a signal.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis wobType
+DataType:dataType
+DrillingDataPoint:weightOnBit
+weightOnBit BelongsToClass dataType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[dataType] -->|BelongsToClass| N0001(DataType) 
+	N0002[weightOnBit] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[weightOnBit] -->|BelongsToClass| N0000(dataType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wobType
+WHERE {
+	?dataType rdf:type ddhub:DataType .
+	?weightOnBit rdf:type ddhub:DrillingDataPoint .
+	?weightOnBit rdf:type ddhub:dataType .
+}
+```
+This example defines that the weight-on-bit signal has a data type.
 ## ContinuousDataType <!-- NOUN -->
 - Display name: Continuous Data Type
 - Parent class: [DataType](#DataType)
 - Description: 
 Specifies that the data is continuous.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis continuousWob
+ContinuousDataType:continuous
+DrillingDataPoint:weightOnBit
+weightOnBit BelongsToClass continuous
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[continuous] -->|BelongsToClass| N0001(ContinuousDataType) 
+	N0002[weightOnBit] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[weightOnBit] -->|BelongsToClass| N0000(continuous) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?continuousWob
+WHERE {
+	?continuous rdf:type ddhub:ContinuousDataType .
+	?weightOnBit rdf:type ddhub:DrillingDataPoint .
+	?weightOnBit rdf:type ddhub:continuous .
+}
+```
+This example assigns a continuous type to weight on bit.
 ## DateDataType <!-- NOUN -->
 - Display name: Date Data Type
 - Parent class: [ContinuousDataType](#ContinuousDataType)
 - Description: 
 Indicates that the data is a date.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis spudDateType
+DateDataType:dateType
+DrillingDataPoint:spudDate
+spudDate BelongsToClass dateType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[dateType] -->|BelongsToClass| N0001(DateDataType) 
+	N0002[spudDate] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[spudDate] -->|BelongsToClass| N0000(dateType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?spudDateType
+WHERE {
+	?dateType rdf:type ddhub:DateDataType .
+	?spudDate rdf:type ddhub:DrillingDataPoint .
+	?spudDate rdf:type ddhub:dateType .
+}
+```
+This example states that the spud date signal is a date.
 ## ElapsedTimeDataType <!-- NOUN -->
 - Display name: Elapsed Time Data Type
 - Parent class: [ContinuousDataType](#ContinuousDataType)
 - Description: 
 Indicates that the data is an elapsed time.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis circulationElapsed
+ElapsedTimeDataType:elapsedType
+DrillingDataPoint:circulationDuration
+circulationDuration BelongsToClass elapsedType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[elapsedType] -->|BelongsToClass| N0001(ElapsedTimeDataType) 
+	N0002[circulationDuration] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[circulationDuration] -->|BelongsToClass| N0000(elapsedType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?circulationElapsed
+WHERE {
+	?elapsedType rdf:type ddhub:ElapsedTimeDataType .
+	?circulationDuration rdf:type ddhub:DrillingDataPoint .
+	?circulationDuration rdf:type ddhub:elapsedType .
+}
+```
+This example tags circulation duration as elapsed time.
 ## NormalizedDataType <!-- NOUN -->
 - Display name: Normalized Data Type
 - Parent class: [ContinuousDataType](#ContinuousDataType)
 - Description: 
-Indicates that the data has been normalized and stays between 0 and 1
+Indicates that the data has been normalized and stays between 0 and 1.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis normalizedTorque
+NormalizedDataType:normalized
+DrillingDataPoint:normalizedTorqueRatio
+normalizedTorqueRatio BelongsToClass normalized
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[normalized] -->|BelongsToClass| N0001(NormalizedDataType) 
+	N0002[normalizedTorqueRatio] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[normalizedTorqueRatio] -->|BelongsToClass| N0000(normalized) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?normalizedTorque
+WHERE {
+	?normalized rdf:type ddhub:NormalizedDataType .
+	?normalizedTorqueRatio rdf:type ddhub:DrillingDataPoint .
+	?normalizedTorqueRatio rdf:type ddhub:normalized .
+}
+```
+This example marks a normalized torque ratio between 0 and 1.
 ## DiscreteDataType <!-- NOUN -->
 - Display name: Discrete Data Type
 - Parent class: [DataType](#DataType)
 - Description: 
 Specifies that the data is discrete.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis standStatusType
+DiscreteDataType:discrete
+DrillingDataPoint:standStatus
+standStatus BelongsToClass discrete
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[discrete] -->|BelongsToClass| N0001(DiscreteDataType) 
+	N0002[standStatus] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[standStatus] -->|BelongsToClass| N0000(discrete) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?standStatusType
+WHERE {
+	?discrete rdf:type ddhub:DiscreteDataType .
+	?standStatus rdf:type ddhub:DrillingDataPoint .
+	?standStatus rdf:type ddhub:discrete .
+}
+```
+This example declares a stand status as discrete.
 ## EnumerationDataType <!-- NOUN -->
 - Display name: Enumeration Data Type
 - Parent class: [DiscreteDataType](#DiscreteDataType)
 - Description: 
 Indicates that the data is an enumeration.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis connectionStateType
+EnumerationDataType:enumType
+DrillingDataPoint:connectionState
+connectionState BelongsToClass enumType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[enumType] -->|BelongsToClass| N0001(EnumerationDataType) 
+	N0002[connectionState] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[connectionState] -->|BelongsToClass| N0000(enumType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?connectionStateType
+WHERE {
+	?enumType rdf:type ddhub:EnumerationDataType .
+	?connectionState rdf:type ddhub:DrillingDataPoint .
+	?connectionState rdf:type ddhub:enumType .
+}
+```
+This example assigns an enumeration type to connection state.
 ## BooleanDataType <!-- NOUN -->
 - Display name: Boolean Data Type
 - Parent class: [EnumerationDataType](#EnumerationDataType)
 - Description: 
 Indicates that the data is a boolean.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis circulationFlagType
+BooleanDataType:booleanType
+DrillingDataPoint:isCirculating
+isCirculating BelongsToClass booleanType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[booleanType] -->|BelongsToClass| N0001(BooleanDataType) 
+	N0002[isCirculating] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[isCirculating] -->|BelongsToClass| N0000(booleanType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?circulationFlagType
+WHERE {
+	?booleanType rdf:type ddhub:BooleanDataType .
+	?isCirculating rdf:type ddhub:DrillingDataPoint .
+	?isCirculating rdf:type ddhub:booleanType .
+}
+```
+This example sets the circulation flag as boolean.
 ## StringDataType <!-- NOUN -->
 - Display name: String Data Type
 - Parent class: [DataType](#DataType)
 - Description: 
 Specifies that the data is a string.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis jobIdType
+StringDataType:stringType
+DrillingDataPoint:jobIdentifier
+jobIdentifier BelongsToClass stringType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stringType] -->|BelongsToClass| N0001(StringDataType) 
+	N0002[jobIdentifier] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[jobIdentifier] -->|BelongsToClass| N0000(stringType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?jobIdType
+WHERE {
+	?stringType rdf:type ddhub:StringDataType .
+	?jobIdentifier rdf:type ddhub:DrillingDataPoint .
+	?jobIdentifier rdf:type ddhub:stringType .
+}
+```
+This example marks a job identifier as string data.
 ## JSonDataType <!-- NOUN -->
 - Display name: JSon Data Type
 - Parent class: [StringDataType](#StringDataType)
 - Description: 
-Specifies that the data is a string that contain the serialization in Json of an object.
+Specifies that the data is a string that contains the serialization in Json of an object.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis bhaJson
+JSonDataType:jsonType
+DrillingDataPoint:bhaConfiguration
+bhaConfiguration BelongsToClass jsonType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[jsonType] -->|BelongsToClass| N0001(JSonDataType) 
+	N0002[bhaConfiguration] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[bhaConfiguration] -->|BelongsToClass| N0000(jsonType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?bhaJson
+WHERE {
+	?jsonType rdf:type ddhub:JSonDataType .
+	?bhaConfiguration rdf:type ddhub:DrillingDataPoint .
+	?bhaConfiguration rdf:type ddhub:jsonType .
+}
+```
+This example stores BHA configuration as JSON.
 ## DrillingDataPoint <!-- NOUN -->
 - Display name: DrillingDataPoint
 - Parent class: [DWISNoun](#DWISNoun)
@@ -6073,17 +9100,104 @@ Specifies that the data is a string that contain the serialization in Json of an
     - Type: bool
     - Description: 
 - Description: 
-Main type of DDHub data. Represents a drilling signal.
-Can be a dynamic signal (linked to a ValueNode) or a static parameter. 
+Main type of DDHub data. Represents a drilling signal. Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis wobSignal
+DrillingDataPoint:weightOnBit
+DynamicDrillingSignal:wobSeries
+weightOnBit HasDynamicValue wobSeries
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[weightOnBit] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[wobSeries] -->|BelongsToClass| N0003(DynamicDrillingSignal) 
+	N0000[weightOnBit] -->|HasDynamicValue| N0002((wobSeries)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wobSignal
+WHERE {
+	?weightOnBit rdf:type ddhub:DrillingDataPoint .
+	?wobSeries rdf:type ddhub:DynamicDrillingSignal .
+  FILTER (
+	?Attribute000 = wobSeries
+  )
+}
+```
+This example shows a drilling data point holding a dynamic time series.
 ## PrototypeData <!-- NOUN -->
 - Display name: PrototypeData
 - Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Description: 
+Represents a prototypical or design value of a drilling signal used for templates or baselines.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis prototypeWob
+PrototypeData:prototypeWob
+DrillingDataPoint:weightOnBit
+weightOnBit HasStaticValue prototypeWob
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[prototypeWob] -->|BelongsToClass| N0001(PrototypeData) 
+	N0002[weightOnBit] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[weightOnBit] -->|HasStaticValue| N0000((prototypeWob)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?prototypeWob
+WHERE {
+	?prototypeWob rdf:type ddhub:PrototypeData .
+	?weightOnBit rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = prototypeWob
+  )
+}
+```
+This example stores a prototype weight-on-bit value.
 ## ProcessData <!-- NOUN -->
 - Display name: ProcessData
 - Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Description: 
+A drilling signal directly tied to process control or monitoring.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis flowRateSignal
+ProcessData:flowRate
+DynamicDrillingSignal:flowRateSeries
+flowRate HasDynamicValue flowRateSeries
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[flowRate] -->|BelongsToClass| N0001(ProcessData) 
+	N0002[flowRateSeries] -->|BelongsToClass| N0003(DynamicDrillingSignal) 
+	N0000[flowRate] -->|HasDynamicValue| N0002((flowRateSeries)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?flowRateSignal
+WHERE {
+	?flowRate rdf:type ddhub:ProcessData .
+	?flowRateSeries rdf:type ddhub:DynamicDrillingSignal .
+  FILTER (
+	?Attribute000 = flowRateSeries
+  )
+}
+```
+This example captures flow rate as process data.
 ## ProcessFeature <!-- NOUN -->
 - Display name: Process feature
 - Parent class: [ProcessData](#ProcessData)
@@ -6147,77 +9261,772 @@ WHERE {
 ## SetPoint <!-- NOUN -->
 - Display name: Set-point
 - Parent class: [ProcessData](#ProcessData)
+- Description: 
+A process data point intended to serve as a target value for control.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis flowSetPoint
+SetPoint:flowSetPoint
+Controller:flowController
+flowSetPoint IsSetPointFor flowController
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[flowSetPoint] -->|BelongsToClass| N0001(SetPoint) 
+	N0002[flowController] -->|BelongsToClass| N0003(Controller) 
+	N0000[flowSetPoint] -->|IsSetPointFor| N0002((flowController)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?flowSetPoint
+WHERE {
+	?flowSetPoint rdf:type ddhub:SetPoint .
+	?flowController rdf:type ddhub:Controller .
+  FILTER (
+	?Attribute000 = flowController
+  )
+}
+```
+This example defines a flow-rate set-point for a controller.
 ## Command <!-- NOUN -->
 - Display name: Command
 - Parent class: [ProcessData](#ProcessData)
+- Description: 
+A process data point used to instruct equipment or a controller.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis pumpCommand
+Command:pumpStartCommand
+ControlSystem:circulationDCS
+pumpStartCommand IsCommandFor circulationDCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pumpStartCommand] -->|BelongsToClass| N0001(Command) 
+	N0002[circulationDCS] -->|BelongsToClass| N0003(ControlSystem) 
+	N0000[pumpStartCommand] -->|IsCommandFor| N0002((circulationDCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pumpCommand
+WHERE {
+	?pumpStartCommand rdf:type ddhub:Command .
+	?circulationDCS rdf:type ddhub:ControlSystem .
+  FILTER (
+	?Attribute000 = circulationDCS
+  )
+}
+```
+This example issues a start command to the circulation control system.
 ## Recommendation <!-- NOUN -->
 - Display name: Recommendation
 - Parent class: [ProcessData](#ProcessData)
+- Description: 
+A suggested value or range for a process variable prior to operator acceptance.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis flowRecommendation
+Recommendation:flowRateRecommendation
+ControlSystem:circulationDCS
+flowRateRecommendation IsSetPointRecommendationFor circulationDCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[flowRateRecommendation] -->|BelongsToClass| N0001(Recommendation) 
+	N0002[circulationDCS] -->|BelongsToClass| N0003(ControlSystem) 
+	N0000[flowRateRecommendation] -->|IsSetPointRecommendationFor| N0002((circulationDCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?flowRecommendation
+WHERE {
+	?flowRateRecommendation rdf:type ddhub:Recommendation .
+	?circulationDCS rdf:type ddhub:ControlSystem .
+  FILTER (
+	?Attribute000 = circulationDCS
+  )
+}
+```
+This example recommends a flow-rate to the circulation system.
 ## RecommendedTarget <!-- NOUN -->
 - Display name: RecommendedTarget
 - Parent class: [Recommendation](#Recommendation)
+- Description: 
+A recommended single target value.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis wobTarget
+RecommendedTarget:wobTarget
+Controller:autoDrillerController
+wobTarget IsSetPointRecommendationFor autoDrillerController
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wobTarget] -->|BelongsToClass| N0001(RecommendedTarget) 
+	N0002[autoDrillerController] -->|BelongsToClass| N0003(Controller) 
+	N0000[wobTarget] -->|IsSetPointRecommendationFor| N0002((autoDrillerController)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wobTarget
+WHERE {
+	?wobTarget rdf:type ddhub:RecommendedTarget .
+	?autoDrillerController rdf:type ddhub:Controller .
+  FILTER (
+	?Attribute000 = autoDrillerController
+  )
+}
+```
+This example recommends a weight-on-bit target to the autodriller.
 ## RecommendedMinimum <!-- NOUN -->
 - Display name: RecommendedMinimum
 - Parent class: [Recommendation](#Recommendation)
+- Description: 
+A recommended lower bound for a process variable.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis minRpmRec
+RecommendedMinimum:minRpmRecommendation
+RotationControlSystem:rotationDCS
+minRpmRecommendation IsSetPointMinimumRecommendationFor rotationDCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[minRpmRecommendation] -->|BelongsToClass| N0001(RecommendedMinimum) 
+	N0002[rotationDCS] -->|BelongsToClass| N0003(RotationControlSystem) 
+	N0000[minRpmRecommendation] -->|IsSetPointMinimumRecommendationFor| N0002((rotationDCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?minRpmRec
+WHERE {
+	?minRpmRecommendation rdf:type ddhub:RecommendedMinimum .
+	?rotationDCS rdf:type ddhub:RotationControlSystem .
+  FILTER (
+	?Attribute000 = rotationDCS
+  )
+}
+```
+This example provides a minimum RPM recommendation.
 ## RecommendedMaximum <!-- NOUN -->
 - Display name: RecommendedMaximum
 - Parent class: [Recommendation](#Recommendation)
+- Description: 
+A recommended upper bound for a process variable.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis maxRpmRec
+RecommendedMaximum:maxRpmRecommendation
+RotationControlSystem:rotationDCS
+maxRpmRecommendation IsSetPointMaximumRecommendationFor rotationDCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[maxRpmRecommendation] -->|BelongsToClass| N0001(RecommendedMaximum) 
+	N0002[rotationDCS] -->|BelongsToClass| N0003(RotationControlSystem) 
+	N0000[maxRpmRecommendation] -->|IsSetPointMaximumRecommendationFor| N0002((rotationDCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?maxRpmRec
+WHERE {
+	?maxRpmRecommendation rdf:type ddhub:RecommendedMaximum .
+	?rotationDCS rdf:type ddhub:RotationControlSystem .
+  FILTER (
+	?Attribute000 = rotationDCS
+  )
+}
+```
+This example provides a maximum RPM recommendation.
 ## Advice <!-- NOUN -->
 - Display name: Advice
 - Parent class: [ProcessData](#ProcessData)
+- Description: 
+An advisory value or range proposed by a system or expert, typically requiring confirmation.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis flowAdvice
+Advice:flowAdvice
+ControlSystem:circulationDCS
+flowAdvice IsSetPointAdviceFor circulationDCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[flowAdvice] -->|BelongsToClass| N0001(Advice) 
+	N0002[circulationDCS] -->|BelongsToClass| N0003(ControlSystem) 
+	N0000[flowAdvice] -->|IsSetPointAdviceFor| N0002((circulationDCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?flowAdvice
+WHERE {
+	?flowAdvice rdf:type ddhub:Advice .
+	?circulationDCS rdf:type ddhub:ControlSystem .
+  FILTER (
+	?Attribute000 = circulationDCS
+  )
+}
+```
+This example provides advisory flow guidance.
 ## AdvisedTarget <!-- NOUN -->
 - Display name: AdvisedTarget
 - Parent class: [Advice](#Advice)
+- Description: 
+An advised single target value.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis advisedWob
+AdvisedTarget:advisedWob
+Controller:autoDrillerController
+advisedWob IsSetPointAdviceFor autoDrillerController
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[advisedWob] -->|BelongsToClass| N0001(AdvisedTarget) 
+	N0002[autoDrillerController] -->|BelongsToClass| N0003(Controller) 
+	N0000[advisedWob] -->|IsSetPointAdviceFor| N0002((autoDrillerController)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?advisedWob
+WHERE {
+	?advisedWob rdf:type ddhub:AdvisedTarget .
+	?autoDrillerController rdf:type ddhub:Controller .
+  FILTER (
+	?Attribute000 = autoDrillerController
+  )
+}
+```
+This example advises a weight-on-bit target.
 ## AdvisedMinimum <!-- NOUN -->
 - Display name: AdvisedMinimum
 - Parent class: [Advice](#Advice)
+- Description: 
+An advised lower bound for a process variable.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis advisedMinFlow
+AdvisedMinimum:advisedMinFlow
+CirculationControlSystem:circulationDCS
+advisedMinFlow IsSetPointMinimumAdviceFor circulationDCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[advisedMinFlow] -->|BelongsToClass| N0001(AdvisedMinimum) 
+	N0002[circulationDCS] -->|BelongsToClass| N0003(CirculationControlSystem) 
+	N0000[advisedMinFlow] -->|IsSetPointMinimumAdviceFor| N0002((circulationDCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?advisedMinFlow
+WHERE {
+	?advisedMinFlow rdf:type ddhub:AdvisedMinimum .
+	?circulationDCS rdf:type ddhub:CirculationControlSystem .
+  FILTER (
+	?Attribute000 = circulationDCS
+  )
+}
+```
+This example advises a minimum flow limit.
 ## AdvisedMaximum <!-- NOUN -->
 - Display name: AdvisedMaximum
 - Parent class: [Advice](#Advice)
+- Description: 
+An advised upper bound for a process variable.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis advisedMaxTorque
+AdvisedMaximum:advisedMaxTorque
+RotationControlSystem:rotationDCS
+advisedMaxTorque IsSetPointMaximumAdviceFor rotationDCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[advisedMaxTorque] -->|BelongsToClass| N0001(AdvisedMaximum) 
+	N0002[rotationDCS] -->|BelongsToClass| N0003(RotationControlSystem) 
+	N0000[advisedMaxTorque] -->|IsSetPointMaximumAdviceFor| N0002((rotationDCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?advisedMaxTorque
+WHERE {
+	?advisedMaxTorque rdf:type ddhub:AdvisedMaximum .
+	?rotationDCS rdf:type ddhub:RotationControlSystem .
+  FILTER (
+	?Attribute000 = rotationDCS
+  )
+}
+```
+This example advises a maximum torque limit.
 ## Limit <!-- NOUN -->
 - Display name: Limit
 - Parent class: [ProcessData](#ProcessData)
+- Description: 
+A boundary value that should not be exceeded by a process variable.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis wobLimit
+Limit:wobLimit
+ControllerFunction:autoDriller
+wobLimit IsLimitFor autoDriller
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wobLimit] -->|BelongsToClass| N0001(Limit) 
+	N0002[autoDriller] -->|BelongsToClass| N0003(ControllerFunction) 
+	N0000[wobLimit] -->|IsLimitFor| N0002((autoDriller)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wobLimit
+WHERE {
+	?wobLimit rdf:type ddhub:Limit .
+	?autoDriller rdf:type ddhub:ControllerFunction .
+  FILTER (
+	?Attribute000 = autoDriller
+  )
+}
+```
+This example sets a WOB limit for the autodriller.
 ## MinimumLimit <!-- NOUN -->
 - Display name: Minimum Limit
 - Parent class: [Limit](#Limit)
+- Description: 
+A lower boundary for a process variable.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis minFlowLimit
+MinimumLimit:minFlowLimit
+CirculationControlSystem:circulationDCS
+minFlowLimit IsMinimumLimitFor circulationDCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[minFlowLimit] -->|BelongsToClass| N0001(MinimumLimit) 
+	N0002[circulationDCS] -->|BelongsToClass| N0003(CirculationControlSystem) 
+	N0000[minFlowLimit] -->|IsMinimumLimitFor| N0002((circulationDCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?minFlowLimit
+WHERE {
+	?minFlowLimit rdf:type ddhub:MinimumLimit .
+	?circulationDCS rdf:type ddhub:CirculationControlSystem .
+  FILTER (
+	?Attribute000 = circulationDCS
+  )
+}
+```
+This example provides a minimum flow limit.
 ## MaximumLimit <!-- NOUN -->
 - Display name: Maximum Limit
 - Parent class: [Limit](#Limit)
+- Description: 
+An upper boundary for a process variable.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis maxFlowLimit
+MaximumLimit:maxFlowLimit
+CirculationControlSystem:circulationDCS
+maxFlowLimit IsMaximumLimitFor circulationDCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[maxFlowLimit] -->|BelongsToClass| N0001(MaximumLimit) 
+	N0002[circulationDCS] -->|BelongsToClass| N0003(CirculationControlSystem) 
+	N0000[maxFlowLimit] -->|IsMaximumLimitFor| N0002((circulationDCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?maxFlowLimit
+WHERE {
+	?maxFlowLimit rdf:type ddhub:MaximumLimit .
+	?circulationDCS rdf:type ddhub:CirculationControlSystem .
+  FILTER (
+	?Attribute000 = circulationDCS
+  )
+}
+```
+This example provides a maximum flow limit.
 ## PhysicalData <!-- NOUN -->
 - Display name: PhysicalData
 - Parent class: [DrillingDataPoint](#DrillingDataPoint)
+- Description: 
+Represents a physical quantity measured or computed from the drilling system.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis standpipePressure
+PhysicalData:standpipePressure
+DynamicDrillingSignal:standpipeSeries
+standpipePressure HasDynamicValue standpipeSeries
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipePressure] -->|BelongsToClass| N0001(PhysicalData) 
+	N0002[standpipeSeries] -->|BelongsToClass| N0003(DynamicDrillingSignal) 
+	N0000[standpipePressure] -->|HasDynamicValue| N0002((standpipeSeries)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?standpipePressure
+WHERE {
+	?standpipePressure rdf:type ddhub:PhysicalData .
+	?standpipeSeries rdf:type ddhub:DynamicDrillingSignal .
+  FILTER (
+	?Attribute000 = standpipeSeries
+  )
+}
+```
+This example stores a physical standpipe pressure signal.
 ## Measurement <!-- NOUN -->
 - Display name: Measurement
 - Parent class: [PhysicalData](#PhysicalData)
 - Description: 
-The noun Measurement represents individuals that are measured by some instrument and which value can be compared with another measurement.
+Represents individuals that are measured by some instrument and whose value can be compared with another measurement.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis hookloadMeasurement
+Measurement:hookloadMeasurement
+DynamicDrillingSignal:hookloadSeries
+hookloadMeasurement HasDynamicValue hookloadSeries
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hookloadMeasurement] -->|BelongsToClass| N0001(Measurement) 
+	N0002[hookloadSeries] -->|BelongsToClass| N0003(DynamicDrillingSignal) 
+	N0000[hookloadMeasurement] -->|HasDynamicValue| N0002((hookloadSeries)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hookloadMeasurement
+WHERE {
+	?hookloadMeasurement rdf:type ddhub:Measurement .
+	?hookloadSeries rdf:type ddhub:DynamicDrillingSignal .
+  FILTER (
+	?Attribute000 = hookloadSeries
+  )
+}
+```
+This example captures hookload as a measurement.
+## DirectMeasurement <!-- NOUN -->
+- Display name: Direct Measurement
+- Parent class: [Measurement](#Measurement)
+- Description: 
+A measurement obtained directly without corrections or signal processing.
+- Definition set: DrillingDataSemantics
+- Examples:
+```dwis MeasuredPressureExample
+DirectMeasurement:OmniViewMeasuredPressure#01
+OmniViewMeasuredPressure#01 BelongsToClass ContinuousDataType
+OmniViewMeasuredPressure#01 HasDynamicValue OmniViewMeasuredPressure
+OmniViewMeasuredPressure#01 IsOfMeasurableQuantity PressureDrilling
+TopSideTelemetry:topSideTelemetry
+OmniViewMeasuredPressure#01 IsTransmittedBy topSideTelemetry
+DynamicDrillingSignal:Sigma_OmniViewMeasuredPressure
+DrillingDataPoint:Sigma_OmniViewMeasuredPressure#01
+Sigma_OmniViewMeasuredPressure#01 BelongsToClass ContinuousDataType
+Sigma_OmniViewMeasuredPressure#01 IsOfMeasurableQuantity PressureDrilling
+Sigma_OmniViewMeasuredPressure#01 HasDynamicValue Sigma_OmniViewMeasuredPressure
+GaussianUncertainty:OmniViewMeasuredPressureGaussianUncertainty#01
+OmniViewMeasuredPressure#01 HasUncertainty OmniViewMeasuredPressureGaussianUncertainty#01
+OmniViewMeasuredPressureGaussianUncertainty#01 HasUncertaintyMean OmniViewMeasuredPressure#01
+OmniViewMeasuredPressureGaussianUncertainty#01 HasUncertaintyStandardDeviation Sigma_OmniViewMeasuredPressure#01
+MeasurementDevice:OmniViewDevice#01
+OmniViewDevice#01 BelongsToClass HydraulicLogicalElement
+OmniViewMeasuredPressure#01 IsMeasuredBy OmniViewDevice#01
+SwivelLogical:SwivelLogical#01
+OmniViewDevice#01 IsHydraulicConnectedTo SwivelLogical#01
+OmniViewMeasuredPressure#01 IsHydraulicallyLocatedAt SwivelLogical#01
+TopOfStringJunction:topOfStringJunction#01
+HydraulicBranch:inletHydraulicBranch#01
+topOfStringJunction#01 HasUpstreamBranch inletHydraulicBranch#01
+OmniViewMeasuredPressure#01 IsAssociatedToHydraulicBranch inletHydraulicBranch#01
+InstrumentationCompany:Petromar#01
+OmniViewMeasuredPressure#01 IsProvidedBy Petromar#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[OmniViewMeasuredPressure#01] -->|BelongsToClass| N0001(DirectMeasurement) 
+	N0000[OmniViewMeasuredPressure#01] -->|BelongsToClass| N0002(ContinuousDataType) 
+	N0000[OmniViewMeasuredPressure#01] -->|HasDynamicValue| N0003((OmniViewMeasuredPressure)) 
+	N0000[OmniViewMeasuredPressure#01] -->|IsOfMeasurableQuantity| N0004((PressureDrilling)) 
+	N0005[topSideTelemetry] -->|BelongsToClass| N0006(TopSideTelemetry) 
+	N0000[OmniViewMeasuredPressure#01] -->|IsTransmittedBy| N0005((topSideTelemetry)) 
+	N0007[Sigma_OmniViewMeasuredPressure] -->|BelongsToClass| N0008(DynamicDrillingSignal) 
+	N0009[Sigma_OmniViewMeasuredPressure#01] -->|BelongsToClass| N0010(DrillingDataPoint) 
+	N0009[Sigma_OmniViewMeasuredPressure#01] -->|BelongsToClass| N0002(ContinuousDataType) 
+	N0009[Sigma_OmniViewMeasuredPressure#01] -->|IsOfMeasurableQuantity| N0004((PressureDrilling)) 
+	N0009[Sigma_OmniViewMeasuredPressure#01] -->|HasDynamicValue| N0007((Sigma_OmniViewMeasuredPressure)) 
+	N0011[OmniViewMeasuredPressureGaussianUncertainty#01] -->|BelongsToClass| N0012(GaussianUncertainty) 
+	N0000[OmniViewMeasuredPressure#01] -->|HasUncertainty| N0011((OmniViewMeasuredPressureGaussianUncertainty#01)) 
+	N0011[OmniViewMeasuredPressureGaussianUncertainty#01] -->|HasUncertaintyMean| N0000((OmniViewMeasuredPressure#01)) 
+	N0011[OmniViewMeasuredPressureGaussianUncertainty#01] -->|HasUncertaintyStandardDeviation| N0009((Sigma_OmniViewMeasuredPressure#01)) 
+	N0013[OmniViewDevice#01] -->|BelongsToClass| N0014(MeasurementDevice) 
+	N0013[OmniViewDevice#01] -->|BelongsToClass| N0015(HydraulicLogicalElement) 
+	N0000[OmniViewMeasuredPressure#01] -->|IsMeasuredBy| N0013((OmniViewDevice#01)) 
+	N0016[SwivelLogical#01] -->|BelongsToClass| N0017(SwivelLogical) 
+	N0013[OmniViewDevice#01] -->|IsHydraulicConnectedTo| N0016((SwivelLogical#01)) 
+	N0000[OmniViewMeasuredPressure#01] -->|IsHydraulicallyLocatedAt| N0016((SwivelLogical#01)) 
+	N0018[topOfStringJunction#01] -->|BelongsToClass| N0019(TopOfStringJunction) 
+	N0020[inletHydraulicBranch#01] -->|BelongsToClass| N0021(HydraulicBranch) 
+	N0018[topOfStringJunction#01] -->|HasUpstreamBranch| N0020((inletHydraulicBranch#01)) 
+	N0000[OmniViewMeasuredPressure#01] -->|IsAssociatedToHydraulicBranch| N0020((inletHydraulicBranch#01)) 
+	N0022[Petromar#01] -->|BelongsToClass| N0023(InstrumentationCompany) 
+	N0000[OmniViewMeasuredPressure#01] -->|IsProvidedBy| N0022((Petromar#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?MeasuredPressureExample
+WHERE {
+	?OmniViewMeasuredPressure#01 rdf:type ddhub:DirectMeasurement .
+	?OmniViewMeasuredPressure#01 rdf:type ddhub:ContinuousDataType .
+	?topSideTelemetry rdf:type ddhub:TopSideTelemetry .
+	?Sigma_OmniViewMeasuredPressure rdf:type ddhub:DynamicDrillingSignal .
+	?Sigma_OmniViewMeasuredPressure#01 rdf:type ddhub:DrillingDataPoint .
+	?Sigma_OmniViewMeasuredPressure#01 rdf:type ddhub:ContinuousDataType .
+	?OmniViewMeasuredPressureGaussianUncertainty#01 rdf:type ddhub:GaussianUncertainty .
+	?OmniViewDevice#01 rdf:type ddhub:MeasurementDevice .
+	?OmniViewDevice#01 rdf:type ddhub:HydraulicLogicalElement .
+	?SwivelLogical#01 rdf:type ddhub:SwivelLogical .
+	?topOfStringJunction#01 rdf:type ddhub:TopOfStringJunction .
+	?inletHydraulicBranch#01 rdf:type ddhub:HydraulicBranch .
+	?Petromar#01 rdf:type ddhub:InstrumentationCompany .
+  FILTER (
+	?Attribute000 = OmniViewMeasuredPressure
+	&& 	?Attribute001 = PressureDrilling
+	&& 	?Attribute002 = topSideTelemetry
+	&& 	?Attribute003 = PressureDrilling
+	&& 	?Attribute004 = Sigma_OmniViewMeasuredPressure
+	&& 	?Attribute005 = OmniViewMeasuredPressureGaussianUncertainty#01
+	&& 	?Attribute006 = OmniViewMeasuredPressure#01
+	&& 	?Attribute007 = Sigma_OmniViewMeasuredPressure#01
+	&& 	?Attribute008 = OmniViewDevice#01
+	&& 	?Attribute009 = SwivelLogical#01
+	&& 	?Attribute010 = SwivelLogical#01
+	&& 	?Attribute011 = inletHydraulicBranch#01
+	&& 	?Attribute012 = inletHydraulicBranch#01
+	&& 	?Attribute013 = Petromar#01
+  )
+}
+```
+This example defines a direct measurement of pressure from an instrumented sub.
 ## DerivedMeasurement <!-- NOUN -->
 - Display name: DerivedMeasurement
 - Parent class: [Measurement](#Measurement)
+- Description: 
+A measurement obtained through transformation or computation rather than direct sensing.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis equivalentDensity
+DynamicDrillingSignal:downholeECD
+DerivedMeasurement:downholeECD#01
+downholeECD#01 BelongsToClass ContinuousDataType
+downholeECD#01 HasDynamicValue downholeECD
+downholeECD#01 IsOfMeasurableQuantity MassDensityDrilling
+DirectMeasurement:downholePressure#01
+downholePressure#01 BelongsToClass ContinuousDataType
+downholePressure#01 IsOfMeasurableQuantity PressureDrilling
+PressureToEquivalentDensityTransformation:pressureToDownholeECD
+downholePressure#01 IsTransformationInput pressureToDownholeECD
+downholeECD#01 IsTransformationOutput pressureToDownholeECD
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[downholeECD] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[downholeECD#01] -->|BelongsToClass| N0003(DerivedMeasurement) 
+	N0002[downholeECD#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[downholeECD#01] -->|HasDynamicValue| N0000((downholeECD)) 
+	N0002[downholeECD#01] -->|IsOfMeasurableQuantity| N0005((MassDensityDrilling)) 
+	N0006[downholePressure#01] -->|BelongsToClass| N0007(DirectMeasurement) 
+	N0006[downholePressure#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0006[downholePressure#01] -->|IsOfMeasurableQuantity| N0008((PressureDrilling)) 
+	N0009[pressureToDownholeECD] -->|BelongsToClass| N0010(PressureToEquivalentDensityTransformation) 
+	N0006[downholePressure#01] -->|IsTransformationInput| N0009((pressureToDownholeECD)) 
+	N0002[downholeECD#01] -->|IsTransformationOutput| N0009((pressureToDownholeECD)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?equivalentDensity
+WHERE {
+	?downholeECD rdf:type ddhub:DynamicDrillingSignal .
+	?downholeECD#01 rdf:type ddhub:DerivedMeasurement .
+	?downholeECD#01 rdf:type ddhub:ContinuousDataType .
+	?downholePressure#01 rdf:type ddhub:DirectMeasurement .
+	?downholePressure#01 rdf:type ddhub:ContinuousDataType .
+	?pressureToDownholeECD rdf:type ddhub:PressureToEquivalentDensityTransformation .
+  FILTER (
+	?Attribute000 = downholeECD
+	&& 	?Attribute001 = MassDensityDrilling
+	&& 	?Attribute002 = PressureDrilling
+	&& 	?Attribute003 = pressureToDownholeECD
+	&& 	?Attribute004 = pressureToDownholeECD
+  )
+}
+```
+This example computes downhole equivalent circulating density from pressure.
+```dwis averageTemperatureExample
+DerivedMeasurement:averageMudTemperature
+MovingAverage:averageTemperatureCalculator
+averageMudTemperature IsTransformationOutput averageTemperatureCalculator
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[averageMudTemperature] -->|BelongsToClass| N0001(DerivedMeasurement) 
+	N0002[averageTemperatureCalculator] -->|BelongsToClass| N0003(MovingAverage) 
+	N0000[averageMudTemperature] -->|IsTransformationOutput| N0002((averageTemperatureCalculator)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?averageTemperatureExample
+WHERE {
+	?averageMudTemperature rdf:type ddhub:DerivedMeasurement .
+	?averageTemperatureCalculator rdf:type ddhub:MovingAverage .
+  FILTER (
+	?Attribute000 = averageTemperatureCalculator
+  )
+}
+```
+This example computes average mud temperature using a moving average.
 ## CorrectedMeasurement <!-- NOUN -->
 - Display name: CorrectedMeasurement
 - Parent class: [Measurement](#Measurement)
+- Description: 
+A measurement that has been corrected for bias or known offsets.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis correctedDepth
+CorrectedMeasurement:correctedDepth
+DrillingDataPoint:rawMeasuredDepth
+correctedDepth IsTransformationOutput depthTranslation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[correctedDepth] -->|BelongsToClass| N0001(CorrectedMeasurement) 
+	N0002[rawMeasuredDepth] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0000[correctedDepth] -->|IsTransformationOutput| N0004((depthTranslation)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?correctedDepth
+WHERE {
+	?correctedDepth rdf:type ddhub:CorrectedMeasurement .
+	?rawMeasuredDepth rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = depthTranslation
+  )
+}
+```
+This example records a depth after applying a correction.
 ## ComputedData <!-- NOUN -->
 - Display name: ComputedData
 - Parent class: [PhysicalData](#PhysicalData)
+- Description: 
+A physical data point generated by a computation or model rather than direct measurement.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis predictedStandpipePressure
+ComputedData:predictedStandpipePressure
+Simulator:hydraulicsSimulator
+predictedStandpipePressure IsComputedBy hydraulicsSimulator
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[predictedStandpipePressure] -->|BelongsToClass| N0001(ComputedData) 
+	N0002[hydraulicsSimulator] -->|BelongsToClass| N0003(Simulator) 
+	N0000[predictedStandpipePressure] -->|IsComputedBy| N0002((hydraulicsSimulator)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?predictedStandpipePressure
+WHERE {
+	?predictedStandpipePressure rdf:type ddhub:ComputedData .
+	?hydraulicsSimulator rdf:type ddhub:Simulator .
+  FILTER (
+	?Attribute000 = hydraulicsSimulator
+  )
+}
+```
+This example shows a computed standpipe pressure from a simulator.
 ## DrillingSignal <!-- NOUN -->
 - Display name: DrillingSignal
 - Parent class: [DWISNoun](#DWISNoun)
@@ -6228,6 +10037,34 @@ The noun Measurement represents individuals that are measured by some instrument
 - Description: 
 Data structure used to store the streaming drilling data.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis wobSignalValue
+DrillingSignal:wobSignal
+DrillingDataPoint:weightOnBit
+weightOnBit HasValue wobSignal
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wobSignal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[weightOnBit] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[weightOnBit] -->|HasValue| N0000((wobSignal)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wobSignalValue
+WHERE {
+	?wobSignal rdf:type ddhub:DrillingSignal .
+	?weightOnBit rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = wobSignal
+  )
+}
+```
+This example links a drilling data point to its signal value container.
 ## DynamicDrillingSignal <!-- NOUN -->
 - Display name: DynamicDrillingSignal
 - Parent class: [DrillingSignal](#DrillingSignal)
@@ -6238,7 +10075,43 @@ Data structure used to store the streaming drilling data.
   - TimeStampAcquisition
     - Type: DateTime
     - Description: this is a UTC date-time value at which the value has been acquired by the data acquisition system.
+- Description: 
+Represents a time-stamped drilling signal acquired or recorded over time.
 - Definition set: DrillingDataSemantics
+- Examples:
+```dwis timeStampedWob
+DynamicDrillingSignal:wobSeries
+DrillingDataPoint:weightOnBit
+weightOnBit HasDynamicValue wobSeries
+wobSeries.TimeStampAtSource = "2024-06-01T12:00:00Z"
+wobSeries.TimeStampAcquisition = "2024-06-01T12:00:00Z"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wobSeries] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[weightOnBit] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[weightOnBit] -->|HasDynamicValue| N0000((wobSeries)) 
+	N0004[=] -->|BelongsToClass| N0005(wobSeries.TimeStampAtSource) 
+	N0004[=] -->|BelongsToClass| N0006(wobSeries.TimeStampAcquisition) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?timeStampedWob
+WHERE {
+	?wobSeries rdf:type ddhub:DynamicDrillingSignal .
+	?weightOnBit rdf:type ddhub:DrillingDataPoint .
+	?= rdf:type ddhub:wobSeries.TimeStampAtSource .
+	?= rdf:type ddhub:wobSeries.TimeStampAcquisition .
+  FILTER (
+	?Attribute000 = wobSeries
+  )
+}
+```
+This example stores time-stamped weight-on-bit samples.
 ## Equipment <!-- NOUN -->
 - Display name: <equipment>
 - Parent class: [DWISNoun](#DWISNoun)
@@ -8017,96 +11890,560 @@ Data structure used to store the streaming drilling data.
 - Description: 
 A feature is a characteristic of something.
 - Definition set: DrillingFeature
+- Examples:
+```dwis genericFeature
+Feature:dataFeature
+DWISNoun:drillingSystem
+drillingSystem BelongsToClass DWISNoun
+dataFeature BelongsToClass Feature
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[dataFeature] -->|BelongsToClass| N0001(Feature) 
+	N0002[drillingSystem] -->|BelongsToClass| N0003(DWISNoun) 
+	N0002[drillingSystem] -->|BelongsToClass| N0003(DWISNoun) 
+	N0000[dataFeature] -->|BelongsToClass| N0001(Feature) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?genericFeature
+WHERE {
+	?dataFeature rdf:type ddhub:Feature .
+	?drillingSystem rdf:type ddhub:DWISNoun .
+	?drillingSystem rdf:type ddhub:DWISNoun .
+	?dataFeature rdf:type ddhub:Feature .
+}
+```
+This example declares a generic feature associated with a drilling system.
 ## DataTransmissionFeature <!-- NOUN -->
 - Display name: Data Transmission Feature
 - Parent class: [Feature](#Feature)
 - Description: 
 A data transmission feature is a characteristic about how data is transferred from one place to another.
 - Definition set: DrillingFeature
+- Examples:
+```dwis telemetryFeature
+DataTransmissionFeature:telemetryLatencySupport
+TransmissionLine:mudPulseTelemetry
+telemetryLatencySupport BelongsToClass DataTransmissionFeature
+mudPulseTelemetry BelongsToClass TransmissionLine
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[telemetryLatencySupport] -->|BelongsToClass| N0001(DataTransmissionFeature) 
+	N0002[mudPulseTelemetry] -->|BelongsToClass| N0003(TransmissionLine) 
+	N0000[telemetryLatencySupport] -->|BelongsToClass| N0001(DataTransmissionFeature) 
+	N0002[mudPulseTelemetry] -->|BelongsToClass| N0003(TransmissionLine) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?telemetryFeature
+WHERE {
+	?telemetryLatencySupport rdf:type ddhub:DataTransmissionFeature .
+	?mudPulseTelemetry rdf:type ddhub:TransmissionLine .
+	?telemetryLatencySupport rdf:type ddhub:DataTransmissionFeature .
+	?mudPulseTelemetry rdf:type ddhub:TransmissionLine .
+}
+```
+This example notes that mud-pulse telemetry supports a data transmission feature.
 ## LookupTableFeature <!-- NOUN -->
 - Display name: Lookup Table Feature
 - Parent class: [DataTransmissionFeature](#DataTransmissionFeature)
 - Description: 
 Such a feature indicates that something accounts for lookup table.
 - Definition set: DrillingFeature
+- Examples:
+```dwis lookupTable
+LookupTableFeature:lookupTable
+TransmissionLine:rigToDownholeTelemetry
+rigToDownholeTelemetry BelongsToClass TransmissionLine
+lookupTable BelongsToClass LookupTableFeature
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[lookupTable] -->|BelongsToClass| N0001(LookupTableFeature) 
+	N0002[rigToDownholeTelemetry] -->|BelongsToClass| N0003(TransmissionLine) 
+	N0002[rigToDownholeTelemetry] -->|BelongsToClass| N0003(TransmissionLine) 
+	N0000[lookupTable] -->|BelongsToClass| N0001(LookupTableFeature) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?lookupTable
+WHERE {
+	?lookupTable rdf:type ddhub:LookupTableFeature .
+	?rigToDownholeTelemetry rdf:type ddhub:TransmissionLine .
+	?rigToDownholeTelemetry rdf:type ddhub:TransmissionLine .
+	?lookupTable rdf:type ddhub:LookupTableFeature .
+}
+```
+This example highlights telemetry that uses lookup tables.
 ## ModellingFeature <!-- NOUN -->
 - Display name: Modelling Feature
 - Parent class: [Feature](#Feature)
 - Description: 
 A modelling feature is a characteristic about how system is modelled.
 - Definition set: DrillingFeature
+- Examples:
+```dwis modellingApproach
+ModellingFeature:modellingApproach
+Simulator:hydraulicsSimulator
+modellingApproach BelongsToClass ModellingFeature
+hydraulicsSimulator BelongsToClass Simulator
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[modellingApproach] -->|BelongsToClass| N0001(ModellingFeature) 
+	N0002[hydraulicsSimulator] -->|BelongsToClass| N0003(Simulator) 
+	N0000[modellingApproach] -->|BelongsToClass| N0001(ModellingFeature) 
+	N0002[hydraulicsSimulator] -->|BelongsToClass| N0003(Simulator) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?modellingApproach
+WHERE {
+	?modellingApproach rdf:type ddhub:ModellingFeature .
+	?hydraulicsSimulator rdf:type ddhub:Simulator .
+	?modellingApproach rdf:type ddhub:ModellingFeature .
+	?hydraulicsSimulator rdf:type ddhub:Simulator .
+}
+```
+This example links a modelling feature to a hydraulics simulator.
 ## SteadyStateFeature <!-- NOUN -->
 - Display name: Steady State Feature
 - Parent class: [ModellingFeature](#ModellingFeature)
 - Description: 
 A steady state feature is a characteristic about a model that only accounts for steady state conditions.
 - Definition set: DrillingFeature
+- Examples:
+```dwis steadyStateModel
+SteadyStateFeature:steadyStateAssumption
+Simulator:hydraulicsSimulator
+steadyStateAssumption BelongsToClass SteadyStateFeature
+hydraulicsSimulator BelongsToClass Simulator
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[steadyStateAssumption] -->|BelongsToClass| N0001(SteadyStateFeature) 
+	N0002[hydraulicsSimulator] -->|BelongsToClass| N0003(Simulator) 
+	N0000[steadyStateAssumption] -->|BelongsToClass| N0001(SteadyStateFeature) 
+	N0002[hydraulicsSimulator] -->|BelongsToClass| N0003(Simulator) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?steadyStateModel
+WHERE {
+	?steadyStateAssumption rdf:type ddhub:SteadyStateFeature .
+	?hydraulicsSimulator rdf:type ddhub:Simulator .
+	?steadyStateAssumption rdf:type ddhub:SteadyStateFeature .
+	?hydraulicsSimulator rdf:type ddhub:Simulator .
+}
+```
+This example marks that the hydraulics simulator assumes steady-state behavior.
 ## TransientFeature <!-- NOUN -->
 - Display name: Transient Feature
 - Parent class: [ModellingFeature](#ModellingFeature)
 - Description: 
 A transient feature is a characteristic about a model that accounts for transient effects.
 - Definition set: DrillingFeature
+- Examples:
+```dwis transientModel
+TransientFeature:transientEffects
+Simulator:surgeSwabSimulator
+transientEffects BelongsToClass TransientFeature
+surgeSwabSimulator BelongsToClass Simulator
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[transientEffects] -->|BelongsToClass| N0001(TransientFeature) 
+	N0002[surgeSwabSimulator] -->|BelongsToClass| N0003(Simulator) 
+	N0000[transientEffects] -->|BelongsToClass| N0001(TransientFeature) 
+	N0002[surgeSwabSimulator] -->|BelongsToClass| N0003(Simulator) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?transientModel
+WHERE {
+	?transientEffects rdf:type ddhub:TransientFeature .
+	?surgeSwabSimulator rdf:type ddhub:Simulator .
+	?transientEffects rdf:type ddhub:TransientFeature .
+	?surgeSwabSimulator rdf:type ddhub:Simulator .
+}
+```
+This example marks that a surge/swab simulator accounts for transient effects.
 ## GelledStateFeature <!-- NOUN -->
 - Display name: Gelled State Feature
 - Parent class: [ModellingFeature](#ModellingFeature)
 - Description: 
 A gelled state feature is a characteristic about a model that accounts for the gelled state of a fluid.
 - Definition set: DrillingFeature
+- Examples:
+```dwis gelledState
+GelledStateFeature:gelledState
+Simulator:fluidModel
+gelledState BelongsToClass GelledStateFeature
+fluidModel BelongsToClass Simulator
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[gelledState] -->|BelongsToClass| N0001(GelledStateFeature) 
+	N0002[fluidModel] -->|BelongsToClass| N0003(Simulator) 
+	N0000[gelledState] -->|BelongsToClass| N0001(GelledStateFeature) 
+	N0002[fluidModel] -->|BelongsToClass| N0003(Simulator) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?gelledState
+WHERE {
+	?gelledState rdf:type ddhub:GelledStateFeature .
+	?fluidModel rdf:type ddhub:Simulator .
+	?gelledState rdf:type ddhub:GelledStateFeature .
+	?fluidModel rdf:type ddhub:Simulator .
+}
+```
+This example notes that a fluid model captures gelled-state behavior.
 ## StaticFrictionFeature <!-- NOUN -->
 - Display name: Static Friction Feature
 - Parent class: [ModellingFeature](#ModellingFeature)
 - Description: 
 A static friction feature is a characteristic about a model that accounts for the static friction along the string.
 - Definition set: DrillingFeature
+- Examples:
+```dwis staticFriction
+StaticFrictionFeature:staticFriction
+Simulator:stringMechanicsModel
+staticFriction BelongsToClass StaticFrictionFeature
+stringMechanicsModel BelongsToClass Simulator
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[staticFriction] -->|BelongsToClass| N0001(StaticFrictionFeature) 
+	N0002[stringMechanicsModel] -->|BelongsToClass| N0003(Simulator) 
+	N0000[staticFriction] -->|BelongsToClass| N0001(StaticFrictionFeature) 
+	N0002[stringMechanicsModel] -->|BelongsToClass| N0003(Simulator) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?staticFriction
+WHERE {
+	?staticFriction rdf:type ddhub:StaticFrictionFeature .
+	?stringMechanicsModel rdf:type ddhub:Simulator .
+	?staticFriction rdf:type ddhub:StaticFrictionFeature .
+	?stringMechanicsModel rdf:type ddhub:Simulator .
+}
+```
+This example captures static friction in a string mechanics model.
 ## HydraulicallyInducedForceFeature <!-- NOUN -->
 - Display name: Hydraulically Induced Force Feature
 - Parent class: [ModellingFeature](#ModellingFeature)
 - Description: 
 A hydraulically induced force feature is a characteristic about a model that accounts for hydraulically induced force on the string.
 - Definition set: DrillingFeature
+- Examples:
+```dwis hydraulicForce
+HydraulicallyInducedForceFeature:hydraulicForce
+Simulator:hydraulicsSimulator
+hydraulicForce BelongsToClass HydraulicallyInducedForceFeature
+hydraulicsSimulator BelongsToClass Simulator
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hydraulicForce] -->|BelongsToClass| N0001(HydraulicallyInducedForceFeature) 
+	N0002[hydraulicsSimulator] -->|BelongsToClass| N0003(Simulator) 
+	N0000[hydraulicForce] -->|BelongsToClass| N0001(HydraulicallyInducedForceFeature) 
+	N0002[hydraulicsSimulator] -->|BelongsToClass| N0003(Simulator) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hydraulicForce
+WHERE {
+	?hydraulicForce rdf:type ddhub:HydraulicallyInducedForceFeature .
+	?hydraulicsSimulator rdf:type ddhub:Simulator .
+	?hydraulicForce rdf:type ddhub:HydraulicallyInducedForceFeature .
+	?hydraulicsSimulator rdf:type ddhub:Simulator .
+}
+```
+This example shows hydraulically induced forces included in a simulator.
 ## ShockedModellingFeature <!-- NOUN -->
 - Display name: Shock Modelling Feature
 - Parent class: [ModellingFeature](#ModellingFeature)
 - Description: 
 A shock modelling feature is a characteristic about a model that accounts for shocks along the string.
 - Definition set: DrillingFeature
+- Examples:
+```dwis shockModel
+ShockedModellingFeature:shockEffects
+Simulator:vibrationSimulator
+shockEffects BelongsToClass ShockedModellingFeature
+vibrationSimulator BelongsToClass Simulator
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[shockEffects] -->|BelongsToClass| N0001(ShockedModellingFeature) 
+	N0002[vibrationSimulator] -->|BelongsToClass| N0003(Simulator) 
+	N0000[shockEffects] -->|BelongsToClass| N0001(ShockedModellingFeature) 
+	N0002[vibrationSimulator] -->|BelongsToClass| N0003(Simulator) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?shockModel
+WHERE {
+	?shockEffects rdf:type ddhub:ShockedModellingFeature .
+	?vibrationSimulator rdf:type ddhub:Simulator .
+	?shockEffects rdf:type ddhub:ShockedModellingFeature .
+	?vibrationSimulator rdf:type ddhub:Simulator .
+}
+```
+This example indicates shock effects are modelled in a vibration simulator.
 ## FluidCompressibilityFeature <!-- NOUN -->
 - Display name: Fluid Compressibility Feature
 - Parent class: [ModellingFeature](#ModellingFeature)
 - Description: 
 A fluid compressibility feature is a characteristic about a model that accounts for fluid compressibility.
 - Definition set: DrillingFeature
+- Examples:
+```dwis fluidCompressibility
+FluidCompressibilityFeature:fluidCompressibility
+Simulator:hydraulicsSimulator
+fluidCompressibility BelongsToClass FluidCompressibilityFeature
+hydraulicsSimulator BelongsToClass Simulator
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[fluidCompressibility] -->|BelongsToClass| N0001(FluidCompressibilityFeature) 
+	N0002[hydraulicsSimulator] -->|BelongsToClass| N0003(Simulator) 
+	N0000[fluidCompressibility] -->|BelongsToClass| N0001(FluidCompressibilityFeature) 
+	N0002[hydraulicsSimulator] -->|BelongsToClass| N0003(Simulator) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?fluidCompressibility
+WHERE {
+	?fluidCompressibility rdf:type ddhub:FluidCompressibilityFeature .
+	?hydraulicsSimulator rdf:type ddhub:Simulator .
+	?fluidCompressibility rdf:type ddhub:FluidCompressibilityFeature .
+	?hydraulicsSimulator rdf:type ddhub:Simulator .
+}
+```
+This example notes fluid compressibility captured in hydraulics simulation.
 ## StringElasticityFeature <!-- NOUN -->
 - Display name: String Elasticity Feature
 - Parent class: [ModellingFeature](#ModellingFeature)
 - Description: 
 A string elasticity feature is a characteristic about a model that accounts for string elasticity.
 - Definition set: DrillingFeature
+- Examples:
+```dwis stringElasticity
+StringElasticityFeature:stringElasticity
+Simulator:stringMechanicsModel
+stringElasticity BelongsToClass StringElasticityFeature
+stringMechanicsModel BelongsToClass Simulator
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stringElasticity] -->|BelongsToClass| N0001(StringElasticityFeature) 
+	N0002[stringMechanicsModel] -->|BelongsToClass| N0003(Simulator) 
+	N0000[stringElasticity] -->|BelongsToClass| N0001(StringElasticityFeature) 
+	N0002[stringMechanicsModel] -->|BelongsToClass| N0003(Simulator) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stringElasticity
+WHERE {
+	?stringElasticity rdf:type ddhub:StringElasticityFeature .
+	?stringMechanicsModel rdf:type ddhub:Simulator .
+	?stringElasticity rdf:type ddhub:StringElasticityFeature .
+	?stringMechanicsModel rdf:type ddhub:Simulator .
+}
+```
+This example shows string elasticity represented in a mechanics model.
 ## FluidThermalExpansionFeature <!-- NOUN -->
 - Display name: Fluid Thermal Expansion Feature
 - Parent class: [ModellingFeature](#ModellingFeature)
 - Description: 
 A fluid thermal expansion feature is a characteristic about a model that accounts for the fluid thermal expansion.
 - Definition set: DrillingFeature
+- Examples:
+```dwis fluidThermalExpansion
+FluidThermalExpansionFeature:fluidThermalExpansion
+Simulator:hydraulicsSimulator
+fluidThermalExpansion BelongsToClass FluidThermalExpansionFeature
+hydraulicsSimulator BelongsToClass Simulator
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[fluidThermalExpansion] -->|BelongsToClass| N0001(FluidThermalExpansionFeature) 
+	N0002[hydraulicsSimulator] -->|BelongsToClass| N0003(Simulator) 
+	N0000[fluidThermalExpansion] -->|BelongsToClass| N0001(FluidThermalExpansionFeature) 
+	N0002[hydraulicsSimulator] -->|BelongsToClass| N0003(Simulator) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?fluidThermalExpansion
+WHERE {
+	?fluidThermalExpansion rdf:type ddhub:FluidThermalExpansionFeature .
+	?hydraulicsSimulator rdf:type ddhub:Simulator .
+	?fluidThermalExpansion rdf:type ddhub:FluidThermalExpansionFeature .
+	?hydraulicsSimulator rdf:type ddhub:Simulator .
+}
+```
+This example captures fluid thermal expansion in a hydraulics model.
 ## StringThermalExpansionFeature <!-- NOUN -->
 - Display name: String Thermal Expansion Feature
 - Parent class: [ModellingFeature](#ModellingFeature)
 - Description: 
 A string thermal expansion feature is a characteristic about a model that accounts for the string thermal expansion.
 - Definition set: DrillingFeature
+- Examples:
+```dwis stringThermalExpansion
+StringThermalExpansionFeature:stringThermalExpansion
+Simulator:stringMechanicsModel
+stringThermalExpansion BelongsToClass StringThermalExpansionFeature
+stringMechanicsModel BelongsToClass Simulator
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stringThermalExpansion] -->|BelongsToClass| N0001(StringThermalExpansionFeature) 
+	N0002[stringMechanicsModel] -->|BelongsToClass| N0003(Simulator) 
+	N0000[stringThermalExpansion] -->|BelongsToClass| N0001(StringThermalExpansionFeature) 
+	N0002[stringMechanicsModel] -->|BelongsToClass| N0003(Simulator) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stringThermalExpansion
+WHERE {
+	?stringThermalExpansion rdf:type ddhub:StringThermalExpansionFeature .
+	?stringMechanicsModel rdf:type ddhub:Simulator .
+	?stringThermalExpansion rdf:type ddhub:StringThermalExpansionFeature .
+	?stringMechanicsModel rdf:type ddhub:Simulator .
+}
+```
+This example captures string thermal expansion in a mechanics model.
 ## StringPressureBallooningFeature <!-- NOUN -->
 - Display name: String Pressure Ballooning Feature
 - Parent class: [ModellingFeature](#ModellingFeature)
 - Description: 
 A string pressure ballooning feature is a characteristic about a model that accounts for the string pressure ballooning.
 - Definition set: DrillingFeature
+- Examples:
+```dwis pressureBallooning
+StringPressureBallooningFeature:pressureBallooning
+Simulator:stringMechanicsModel
+pressureBallooning BelongsToClass StringPressureBallooningFeature
+stringMechanicsModel BelongsToClass Simulator
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pressureBallooning] -->|BelongsToClass| N0001(StringPressureBallooningFeature) 
+	N0002[stringMechanicsModel] -->|BelongsToClass| N0003(Simulator) 
+	N0000[pressureBallooning] -->|BelongsToClass| N0001(StringPressureBallooningFeature) 
+	N0002[stringMechanicsModel] -->|BelongsToClass| N0003(Simulator) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pressureBallooning
+WHERE {
+	?pressureBallooning rdf:type ddhub:StringPressureBallooningFeature .
+	?stringMechanicsModel rdf:type ddhub:Simulator .
+	?pressureBallooning rdf:type ddhub:StringPressureBallooningFeature .
+	?stringMechanicsModel rdf:type ddhub:Simulator .
+}
+```
+This example shows pressure ballooning effects included in a mechanics model.
 ## AirGapInStringFeature <!-- NOUN -->
 - Display name: Air Gap In String Feature
 - Parent class: [ModellingFeature](#ModellingFeature)
 - Description: 
 An air gap in string feature is a characteristic about a model that accounts for the possible air gap at the top of the liquid column in the string.
 - Definition set: DrillingFeature
+- Examples:
+```dwis airGapFeature
+AirGapInStringFeature:airGap
+Simulator:hydraulicsSimulator
+airGap BelongsToClass AirGapInStringFeature
+hydraulicsSimulator BelongsToClass Simulator
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[airGap] -->|BelongsToClass| N0001(AirGapInStringFeature) 
+	N0002[hydraulicsSimulator] -->|BelongsToClass| N0003(Simulator) 
+	N0000[airGap] -->|BelongsToClass| N0001(AirGapInStringFeature) 
+	N0002[hydraulicsSimulator] -->|BelongsToClass| N0003(Simulator) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?airGapFeature
+WHERE {
+	?airGap rdf:type ddhub:AirGapInStringFeature .
+	?hydraulicsSimulator rdf:type ddhub:Simulator .
+	?airGap rdf:type ddhub:AirGapInStringFeature .
+	?hydraulicsSimulator rdf:type ddhub:Simulator .
+}
+```
+This example notes air-gap effects captured in a hydraulics model.
 ## DrillingManagementFeature <!-- NOUN -->
 - Display name: Drilling Management Feature
 - Parent class: [Feature](#Feature)
@@ -8114,12 +12451,68 @@ An air gap in string feature is a characteristic about a model that accounts for
 A drilling management feature is a drilling management characteristic that is supported by something. For instance
 an advisory system may provide ROP management parameters accounting for cuttings transport.
 - Definition set: DrillingFeature
+- Examples:
+```dwis drillingManagement
+DrillingManagementFeature:drillingManagement
+Advisor:drillingAdvisor
+drillingAdvisor AccountsFor drillingManagement
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingManagement] -->|BelongsToClass| N0001(DrillingManagementFeature) 
+	N0002[drillingAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[drillingAdvisor] -->|AccountsFor| N0000((drillingManagement)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillingManagement
+WHERE {
+	?drillingManagement rdf:type ddhub:DrillingManagementFeature .
+	?drillingAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = drillingManagement
+  )
+}
+```
+This example shows an advisor accounting for a drilling management feature.
 ## FillPipeFeature <!-- NOUN -->
 - Display name: Fill Pipe Feature
 - Parent class: [DrillingManagementFeature](#DrillingManagementFeature)
 - Description: 
 A fill pipe feature indicates that something accounts for filling the pipe when there is an air gap.
 - Definition set: DrillingFeature
+- Examples:
+```dwis fillPipeFeature
+FillPipeFeature:fillPipe
+ControlSystem:circulationDCS
+circulationDCS AccountsFor fillPipe
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[fillPipe] -->|BelongsToClass| N0001(FillPipeFeature) 
+	N0002[circulationDCS] -->|BelongsToClass| N0003(ControlSystem) 
+	N0002[circulationDCS] -->|AccountsFor| N0000((fillPipe)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?fillPipeFeature
+WHERE {
+	?fillPipe rdf:type ddhub:FillPipeFeature .
+	?circulationDCS rdf:type ddhub:ControlSystem .
+  FILTER (
+	?Attribute000 = fillPipe
+  )
+}
+```
+This example shows a circulation control system accounting for pipe filling.
 ## GelBreakingFeature <!-- NOUN -->
 - Display name: Gel Breaking Feature
 - Parent class: [DrillingManagementFeature](#DrillingManagementFeature)
@@ -8127,18 +12520,102 @@ A fill pipe feature indicates that something accounts for filling the pipe when 
 A gel breaking feature indicates that something accounts for breaking the gel in a drilling fluid that has stayed
 quiet for some time.
 - Definition set: DrillingFeature
+- Examples:
+```dwis gelBreakFeature
+GelBreakingFeature:gelBreak
+Advisor:fluidAdvisor
+fluidAdvisor AccountsFor gelBreak
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[gelBreak] -->|BelongsToClass| N0001(GelBreakingFeature) 
+	N0002[fluidAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[fluidAdvisor] -->|AccountsFor| N0000((gelBreak)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?gelBreakFeature
+WHERE {
+	?gelBreak rdf:type ddhub:GelBreakingFeature .
+	?fluidAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = gelBreak
+  )
+}
+```
+This example shows an advisor accounting for gel breaking.
 ## CirculationFeature <!-- NOUN -->
 - Display name: Circulation Feature
 - Parent class: [DrillingManagementFeature](#DrillingManagementFeature)
 - Description: 
 A circulation feature indicates that something accounts for circulation.
 - Definition set: DrillingFeature
+- Examples:
+```dwis circulationFeature
+CirculationFeature:circulationSupport
+ControlSystem:circulationDCS
+circulationDCS AccountsFor circulationSupport
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[circulationSupport] -->|BelongsToClass| N0001(CirculationFeature) 
+	N0002[circulationDCS] -->|BelongsToClass| N0003(ControlSystem) 
+	N0002[circulationDCS] -->|AccountsFor| N0000((circulationSupport)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?circulationFeature
+WHERE {
+	?circulationSupport rdf:type ddhub:CirculationFeature .
+	?circulationDCS rdf:type ddhub:ControlSystem .
+  FILTER (
+	?Attribute000 = circulationSupport
+  )
+}
+```
+This example shows a control system accounting for circulation.
 ## DrillingFluidDisplacementFeature <!-- NOUN -->
 - Display name: Drilling Fluid Displacement Feature
 - Parent class: [CirculationFeature](#CirculationFeature)
 - Description: 
 A drilling fluid displacement feature indicates that something accounts for displacing a drilling fluid with another.
 - Definition set: DrillingFeature
+- Examples:
+```dwis displacementFeature
+DrillingFluidDisplacementFeature:fluidDisplacement
+ControlSystem:circulationDCS
+circulationDCS AccountsFor fluidDisplacement
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[fluidDisplacement] -->|BelongsToClass| N0001(DrillingFluidDisplacementFeature) 
+	N0002[circulationDCS] -->|BelongsToClass| N0003(ControlSystem) 
+	N0002[circulationDCS] -->|AccountsFor| N0000((fluidDisplacement)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?displacementFeature
+WHERE {
+	?fluidDisplacement rdf:type ddhub:DrillingFluidDisplacementFeature .
+	?circulationDCS rdf:type ddhub:ControlSystem .
+  FILTER (
+	?Attribute000 = fluidDisplacement
+  )
+}
+```
+This example shows support for displacing drilling fluids.
 ## DrillingFluidSweepFeature <!-- NOUN -->
 - Display name: Drilling Fluid Sweep Feature
 - Parent class: [CirculationFeature](#CirculationFeature)
@@ -8146,6 +12623,34 @@ A drilling fluid displacement feature indicates that something accounts for disp
 A drilling fluid sweep feature indicates that something accounts for sweeping the borehole with one or several fluids of
 different densities and/or viscosities.
 - Definition set: DrillingFeature
+- Examples:
+```dwis sweepFeature
+DrillingFluidSweepFeature:fluidSweep
+Advisor:drillingAdvisor
+drillingAdvisor AccountsFor fluidSweep
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[fluidSweep] -->|BelongsToClass| N0001(DrillingFluidSweepFeature) 
+	N0002[drillingAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[drillingAdvisor] -->|AccountsFor| N0000((fluidSweep)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?sweepFeature
+WHERE {
+	?fluidSweep rdf:type ddhub:DrillingFluidSweepFeature .
+	?drillingAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = fluidSweep
+  )
+}
+```
+This example shows advisory support for fluid sweeps.
 ## CementingFeature <!-- NOUN -->
 - Display name: Cementing Feature
 - Parent class: [DrillingFluidDisplacementFeature](#DrillingFluidDisplacementFeature)
@@ -8153,216 +12658,1224 @@ different densities and/or viscosities.
 A cementing feature indicates that something accounts for displacing a train of drilling fluids and cement slurries to perform
 a cement operation.
 - Definition set: DrillingFeature
+- Examples:
+```dwis cementingFeature
+CementingFeature:cementing
+Advisor:cementingAdvisor
+cementingAdvisor AccountsFor cementing
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[cementing] -->|BelongsToClass| N0001(CementingFeature) 
+	N0002[cementingAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[cementingAdvisor] -->|AccountsFor| N0000((cementing)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?cementingFeature
+WHERE {
+	?cementing rdf:type ddhub:CementingFeature .
+	?cementingAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = cementing
+  )
+}
+```
+This example shows a system accounting for cementing operations.
 ## FormationWashoutFeature <!-- NOUN -->
 - Display name: Formation Washout Feature
 - Parent class: [CirculationFeature](#CirculationFeature)
 - Description: 
 A formation washout feature indicates that something accounts for formation washout while circulating.
 - Definition set: DrillingFeature
+- Examples:
+```dwis washoutFeature
+FormationWashoutFeature:washout
+Advisor:circulationAdvisor
+circulationAdvisor AccountsFor washout
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[washout] -->|BelongsToClass| N0001(FormationWashoutFeature) 
+	N0002[circulationAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[circulationAdvisor] -->|AccountsFor| N0000((washout)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?washoutFeature
+WHERE {
+	?washout rdf:type ddhub:FormationWashoutFeature .
+	?circulationAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = washout
+  )
+}
+```
+This example captures formation washout considerations.
 ## CuttingsTransportFeature <!-- NOUN -->
 - Display name: Cuttings Transport Feature
 - Parent class: [CirculationFeature](#CirculationFeature)
 - Description: 
 A cuttings transport feature indicates that something accounts for cuttings transport while circulating.
 - Definition set: DrillingFeature
+- Examples:
+```dwis cuttingsTransport
+CuttingsTransportFeature:cuttingsTransport
+Advisor:drillingAdvisor
+drillingAdvisor AccountsFor cuttingsTransport
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[cuttingsTransport] -->|BelongsToClass| N0001(CuttingsTransportFeature) 
+	N0002[drillingAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[drillingAdvisor] -->|AccountsFor| N0000((cuttingsTransport)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?cuttingsTransport
+WHERE {
+	?cuttingsTransport rdf:type ddhub:CuttingsTransportFeature .
+	?drillingAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = cuttingsTransport
+  )
+}
+```
+This example shows accounting for cuttings transport.
 ## PackOffFeature <!-- NOUN -->
 - Display name: Pack-off Feature
 - Parent class: [CuttingsTransportFeature](#CuttingsTransportFeature)
 - Description: 
 A pack-off feature indicates that something accounts for the possibility to pack-off while circulating cuttings.
 - Definition set: DrillingFeature
+- Examples:
+```dwis packOffFeature
+PackOffFeature:packOff
+Advisor:drillingAdvisor
+drillingAdvisor AccountsFor packOff
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[packOff] -->|BelongsToClass| N0001(PackOffFeature) 
+	N0002[drillingAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[drillingAdvisor] -->|AccountsFor| N0000((packOff)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?packOffFeature
+WHERE {
+	?packOff rdf:type ddhub:PackOffFeature .
+	?drillingAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = packOff
+  )
+}
+```
+This example shows a system accounting for pack-off risk.
 ## DrillStemMovementFeature <!-- NOUN -->
 - Display name: Drill-stem Movement Feature
 - Parent class: [DrillingManagementFeature](#DrillingManagementFeature)
 - Description: 
 A drill-stem movement feature indicates that something accounts for the drill-stem movement.
 - Definition set: DrillingFeature
+- Examples:
+```dwis movementFeature
+DrillStemMovementFeature:movement
+ControlSystem:dcs
+dcs AccountsFor movement
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[movement] -->|BelongsToClass| N0001(DrillStemMovementFeature) 
+	N0002[dcs] -->|BelongsToClass| N0003(ControlSystem) 
+	N0002[dcs] -->|AccountsFor| N0000((movement)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?movementFeature
+WHERE {
+	?movement rdf:type ddhub:DrillStemMovementFeature .
+	?dcs rdf:type ddhub:ControlSystem .
+  FILTER (
+	?Attribute000 = movement
+  )
+}
+```
+This example shows a control system accounting for drill-stem movement.
 ## DrillStemAxialMovementFeature <!-- NOUN -->
 - Display name: Drill-stem Axial Movement Feature
 - Parent class: [DrillStemMovementFeature](#DrillStemMovementFeature)
 - Description: 
 A drill-stem axial movement feature indicates that something accounts for drill-stem axial movement.
 - Definition set: DrillingFeature
+- Examples:
+```dwis axialMovementFeature
+DrillStemAxialMovementFeature:axialMovement
+ControlSystem:dcs
+dcs AccountsFor axialMovement
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[axialMovement] -->|BelongsToClass| N0001(DrillStemAxialMovementFeature) 
+	N0002[dcs] -->|BelongsToClass| N0003(ControlSystem) 
+	N0002[dcs] -->|AccountsFor| N0000((axialMovement)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?axialMovementFeature
+WHERE {
+	?axialMovement rdf:type ddhub:DrillStemAxialMovementFeature .
+	?dcs rdf:type ddhub:ControlSystem .
+  FILTER (
+	?Attribute000 = axialMovement
+  )
+}
+```
+This example shows accounting for axial movement.
 ## DrillStemRotationalMovementFeature <!-- NOUN -->
 - Display name: Drill-stem Rotational Movement Feature
 - Parent class: [DrillStemMovementFeature](#DrillStemMovementFeature)
 - Description: 
 A drill-stem rotational movement feature indicates that something accounts for drill-stem rotational movement.
 - Definition set: DrillingFeature
+- Examples:
+```dwis rotationalMovementFeature
+DrillStemRotationalMovementFeature:rotationalMovement
+ControlSystem:rotationDCS
+rotationDCS AccountsFor rotationalMovement
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rotationalMovement] -->|BelongsToClass| N0001(DrillStemRotationalMovementFeature) 
+	N0002[rotationDCS] -->|BelongsToClass| N0003(ControlSystem) 
+	N0002[rotationDCS] -->|AccountsFor| N0000((rotationalMovement)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rotationalMovementFeature
+WHERE {
+	?rotationalMovement rdf:type ddhub:DrillStemRotationalMovementFeature .
+	?rotationDCS rdf:type ddhub:ControlSystem .
+  FILTER (
+	?Attribute000 = rotationalMovement
+  )
+}
+```
+This example shows accounting for rotational movement.
 ## StuckPipeFeature <!-- NOUN -->
 - Display name: Stuck-pipe Feature
 - Parent class: [DrillStemMovementFeature](#DrillStemMovementFeature)
 - Description: 
 A stuck-pipe feature indicates that something accounts for stuck-pipes.
 - Definition set: DrillingFeature
+- Examples:
+```dwis stuckPipeFeature
+StuckPipeFeature:stuckPipe
+Advisor:drillingAdvisor
+drillingAdvisor AccountsFor stuckPipe
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stuckPipe] -->|BelongsToClass| N0001(StuckPipeFeature) 
+	N0002[drillingAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[drillingAdvisor] -->|AccountsFor| N0000((stuckPipe)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stuckPipeFeature
+WHERE {
+	?stuckPipe rdf:type ddhub:StuckPipeFeature .
+	?drillingAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = stuckPipe
+  )
+}
+```
+This example shows an advisor considering stuck-pipe risk.
 ## DrillStemAxialImpedimentFeature <!-- NOUN -->
 - Display name: Drill-stem Axial Impediment Feature
 - Parent class: [StuckPipeFeature](#StuckPipeFeature)
 - Description: 
 A drill-stem axial impediment feature indicates that something accounts for drill-stem axial impediment.
 - Definition set: DrillingFeature
+- Examples:
+```dwis axialImpedimentFeature
+DrillStemAxialImpedimentFeature:axialImpediment
+Advisor:drillingAdvisor
+drillingAdvisor AccountsFor axialImpediment
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[axialImpediment] -->|BelongsToClass| N0001(DrillStemAxialImpedimentFeature) 
+	N0002[drillingAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[drillingAdvisor] -->|AccountsFor| N0000((axialImpediment)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?axialImpedimentFeature
+WHERE {
+	?axialImpediment rdf:type ddhub:DrillStemAxialImpedimentFeature .
+	?drillingAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = axialImpediment
+  )
+}
+```
+This example shows accounting for axial impediment.
 ## DrillStemRotationalImpedimentFeature <!-- NOUN -->
 - Display name: Drill-stem Rotational Impediment Feature
 - Parent class: [StuckPipeFeature](#StuckPipeFeature)
 - Description: 
 A drill-stem rotational impediment feature indicates that something accounts for drill-stem rotational impediment.
 - Definition set: DrillingFeature
+- Examples:
+```dwis rotationalImpedimentFeature
+DrillStemRotationalImpedimentFeature:rotationalImpediment
+Advisor:drillingAdvisor
+drillingAdvisor AccountsFor rotationalImpediment
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rotationalImpediment] -->|BelongsToClass| N0001(DrillStemRotationalImpedimentFeature) 
+	N0002[drillingAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[drillingAdvisor] -->|AccountsFor| N0000((rotationalImpediment)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rotationalImpedimentFeature
+WHERE {
+	?rotationalImpediment rdf:type ddhub:DrillStemRotationalImpedimentFeature .
+	?drillingAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = rotationalImpediment
+  )
+}
+```
+This example shows accounting for rotational impediment.
 ## DrillStemVibrationFeature <!-- NOUN -->
 - Display name: Drill-stem Vibration Feature
 - Parent class: [DrillStemMovementFeature](#DrillStemMovementFeature)
 - Description: 
 A drill-stem vibration feature indicates that something accounts for drill-stem vibrations.
 - Definition set: DrillingFeature
+- Examples:
+```dwis vibrationFeature
+DrillStemVibrationFeature:vibration
+Advisor:vibrationAdvisor
+vibrationAdvisor AccountsFor vibration
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[vibration] -->|BelongsToClass| N0001(DrillStemVibrationFeature) 
+	N0002[vibrationAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[vibrationAdvisor] -->|AccountsFor| N0000((vibration)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?vibrationFeature
+WHERE {
+	?vibration rdf:type ddhub:DrillStemVibrationFeature .
+	?vibrationAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = vibration
+  )
+}
+```
+This example shows accounting for drill-stem vibrations.
 ## DrillStemAxialVibrationFeature <!-- NOUN -->
 - Display name: Drill-stem Axial Vibration Feature
 - Parent class: [DrillStemVibrationFeature](#DrillStemVibrationFeature)
 - Description: 
 A drill-stem axial vibration feature indicates that something accounts for in particular axial drill-stem vibrations.
 - Definition set: DrillingFeature
+- Examples:
+```dwis axialVibrationFeature
+DrillStemAxialVibrationFeature:axialVibration
+Advisor:vibrationAdvisor
+vibrationAdvisor AccountsFor axialVibration
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[axialVibration] -->|BelongsToClass| N0001(DrillStemAxialVibrationFeature) 
+	N0002[vibrationAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[vibrationAdvisor] -->|AccountsFor| N0000((axialVibration)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?axialVibrationFeature
+WHERE {
+	?axialVibration rdf:type ddhub:DrillStemAxialVibrationFeature .
+	?vibrationAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = axialVibration
+  )
+}
+```
+This example shows axial vibration coverage.
 ## DrillStemAxialStickSlipFeature <!-- NOUN -->
 - Display name: Drill-stem Axial Stick-Slip Feature
 - Parent class: [DrillStemAxialVibrationFeature](#DrillStemAxialVibrationFeature)
 - Description: 
 A drill-stem axial stick-slip feature indicates that something acconts for in particular axial stick-slip drill-stem vibrations.
 - Definition set: DrillingFeature
+- Examples:
+```dwis axialStickSlipFeature
+DrillStemAxialStickSlipFeature:axialStickSlip
+Advisor:vibrationAdvisor
+vibrationAdvisor AccountsFor axialStickSlip
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[axialStickSlip] -->|BelongsToClass| N0001(DrillStemAxialStickSlipFeature) 
+	N0002[vibrationAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[vibrationAdvisor] -->|AccountsFor| N0000((axialStickSlip)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?axialStickSlipFeature
+WHERE {
+	?axialStickSlip rdf:type ddhub:DrillStemAxialStickSlipFeature .
+	?vibrationAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = axialStickSlip
+  )
+}
+```
+This example notes axial stick-slip is considered.
 ## DrillStemTorsionalVibrationFeature <!-- NOUN -->
 - Display name: Drill-stem Torsional Vibration Feature
 - Parent class: [DrillStemVibrationFeature](#DrillStemVibrationFeature)
 - Description: 
 A drill-stem torsional vibration feature indicates that something acconts for in particular torsional drill-stem vibrations.
 - Definition set: DrillingFeature
+- Examples:
+```dwis torsionalVibrationFeature
+DrillStemTorsionalVibrationFeature:torsionalVibration
+Advisor:vibrationAdvisor
+vibrationAdvisor AccountsFor torsionalVibration
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[torsionalVibration] -->|BelongsToClass| N0001(DrillStemTorsionalVibrationFeature) 
+	N0002[vibrationAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[vibrationAdvisor] -->|AccountsFor| N0000((torsionalVibration)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?torsionalVibrationFeature
+WHERE {
+	?torsionalVibration rdf:type ddhub:DrillStemTorsionalVibrationFeature .
+	?vibrationAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = torsionalVibration
+  )
+}
+```
+This example shows torsional vibrations covered.
 ## DrillStemTorsionalStickSlipFeature <!-- NOUN -->
 - Display name: Drill-stem Torsional Stick-Slip Feature
 - Parent class: [DrillStemTorsionalVibrationFeature](#DrillStemTorsionalVibrationFeature)
 - Description: 
 A drill-stem torsional stick-slip feature indicates that something acconts for in particular torsional stick-slip drill-stem vibrations.
 - Definition set: DrillingFeature
+- Examples:
+```dwis torsionalStickSlipFeature
+DrillStemTorsionalStickSlipFeature:torsionalStickSlip
+Advisor:vibrationAdvisor
+vibrationAdvisor AccountsFor torsionalStickSlip
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[torsionalStickSlip] -->|BelongsToClass| N0001(DrillStemTorsionalStickSlipFeature) 
+	N0002[vibrationAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[vibrationAdvisor] -->|AccountsFor| N0000((torsionalStickSlip)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?torsionalStickSlipFeature
+WHERE {
+	?torsionalStickSlip rdf:type ddhub:DrillStemTorsionalStickSlipFeature .
+	?vibrationAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = torsionalStickSlip
+  )
+}
+```
+This example shows torsional stick-slip considered.
 ## DrillStemLateralVibrationFeature <!-- NOUN -->
 - Display name: Drill-stem Lateral Vibration Feature
 - Parent class: [DrillStemVibrationFeature](#DrillStemVibrationFeature)
 - Description: 
 A drill-stem lateral vibration feature indicates that something accounts for in particular lateral drill-stem vibrations.
 - Definition set: DrillingFeature
+- Examples:
+```dwis lateralVibrationFeature
+DrillStemLateralVibrationFeature:lateralVibration
+Advisor:vibrationAdvisor
+vibrationAdvisor AccountsFor lateralVibration
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[lateralVibration] -->|BelongsToClass| N0001(DrillStemLateralVibrationFeature) 
+	N0002[vibrationAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[vibrationAdvisor] -->|AccountsFor| N0000((lateralVibration)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?lateralVibrationFeature
+WHERE {
+	?lateralVibration rdf:type ddhub:DrillStemLateralVibrationFeature .
+	?vibrationAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = lateralVibration
+  )
+}
+```
+This example shows lateral vibrations accounted for.
 ## DrillStemWhirlingFeature <!-- NOUN -->
 - Display name: Drill-stem Whirling Feature
 - Parent class: [DrillStemLateralVibrationFeature](#DrillStemLateralVibrationFeature)
 - Description: 
 A drill-stem whirling feature indicates that something accounts for in particular drill-stem whirling.
 - Definition set: DrillingFeature
+- Examples:
+```dwis whirlingFeature
+DrillStemWhirlingFeature:whirling
+Advisor:vibrationAdvisor
+vibrationAdvisor AccountsFor whirling
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[whirling] -->|BelongsToClass| N0001(DrillStemWhirlingFeature) 
+	N0002[vibrationAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[vibrationAdvisor] -->|AccountsFor| N0000((whirling)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?whirlingFeature
+WHERE {
+	?whirling rdf:type ddhub:DrillStemWhirlingFeature .
+	?vibrationAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = whirling
+  )
+}
+```
+This example shows whirling considered.
 ## DrillStemForwardWhirlingFeature <!-- NOUN -->
 - Display name: Drill-stem Forward Whirling Feature
 - Parent class: [DrillStemWhirlingFeature](#DrillStemWhirlingFeature)
 - Description: 
 A drill-stem forward whirling feature indicates that something accounts for in particular drill-stem forward whirling.
 - Definition set: DrillingFeature
+- Examples:
+```dwis forwardWhirlingFeature
+DrillStemForwardWhirlingFeature:forwardWhirling
+Advisor:vibrationAdvisor
+vibrationAdvisor AccountsFor forwardWhirling
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[forwardWhirling] -->|BelongsToClass| N0001(DrillStemForwardWhirlingFeature) 
+	N0002[vibrationAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[vibrationAdvisor] -->|AccountsFor| N0000((forwardWhirling)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?forwardWhirlingFeature
+WHERE {
+	?forwardWhirling rdf:type ddhub:DrillStemForwardWhirlingFeature .
+	?vibrationAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = forwardWhirling
+  )
+}
+```
+This example shows forward whirling covered.
 ## DrillStemBackwardWhirlingFeature <!-- NOUN -->
 - Display name: Drill-stem Backward Whirling Feature
 - Parent class: [DrillStemWhirlingFeature](#DrillStemWhirlingFeature)
 - Description: 
 A drill-stem backward whirling feature indicates that something accounts for in particular drill-stem backward whirling.
 - Definition set: DrillingFeature
+- Examples:
+```dwis backwardWhirlingFeature
+DrillStemBackwardWhirlingFeature:backwardWhirling
+Advisor:vibrationAdvisor
+vibrationAdvisor AccountsFor backwardWhirling
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[backwardWhirling] -->|BelongsToClass| N0001(DrillStemBackwardWhirlingFeature) 
+	N0002[vibrationAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[vibrationAdvisor] -->|AccountsFor| N0000((backwardWhirling)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?backwardWhirlingFeature
+WHERE {
+	?backwardWhirling rdf:type ddhub:DrillStemBackwardWhirlingFeature .
+	?vibrationAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = backwardWhirling
+  )
+}
+```
+This example shows backward whirling covered.
 ## DrillStemChaoticWhirlingFeature <!-- NOUN -->
 - Display name: Drill-stem Chaotic Whirling Feature
 - Parent class: [DrillStemWhirlingFeature](#DrillStemWhirlingFeature)
 - Description: 
 A drill-stem chaotic whirling feature indicates that something accounts for in particular drill-stem chaotic whirling.
 - Definition set: DrillingFeature
+- Examples:
+```dwis chaoticWhirlingFeature
+DrillStemChaoticWhirlingFeature:chaoticWhirling
+Advisor:vibrationAdvisor
+vibrationAdvisor AccountsFor chaoticWhirling
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[chaoticWhirling] -->|BelongsToClass| N0001(DrillStemChaoticWhirlingFeature) 
+	N0002[vibrationAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[vibrationAdvisor] -->|AccountsFor| N0000((chaoticWhirling)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?chaoticWhirlingFeature
+WHERE {
+	?chaoticWhirling rdf:type ddhub:DrillStemChaoticWhirlingFeature .
+	?vibrationAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = chaoticWhirling
+  )
+}
+```
+This example shows chaotic whirling covered.
 ## DownholePressureFeature <!-- NOUN -->
 - Display name: Downhole Pressure Feature
 - Parent class: [DrillingManagementFeature](#DrillingManagementFeature)
 - Description: 
 A downhole pressure feature indicates that something accounts for downhole pressure.
 - Definition set: DrillingFeature
+- Examples:
+```dwis downholePressureFeature
+DownholePressureFeature:downholePressure
+Advisor:pressureAdvisor
+pressureAdvisor AccountsFor downholePressure
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[downholePressure] -->|BelongsToClass| N0001(DownholePressureFeature) 
+	N0002[pressureAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[pressureAdvisor] -->|AccountsFor| N0000((downholePressure)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?downholePressureFeature
+WHERE {
+	?downholePressure rdf:type ddhub:DownholePressureFeature .
+	?pressureAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = downholePressure
+  )
+}
+```
+This example shows downhole pressure management considered.
 ## SwabSurgeFeature <!-- NOUN -->
 - Display name: Swab and Surge Feature
 - Parent class: [DownholePressureFeature](#DownholePressureFeature)
 - Description: 
 A swab and surge feature indicates that something accounts for swab and surge pressure variations.
 - Definition set: DrillingFeature
+- Examples:
+```dwis swabSurgeFeature
+SwabSurgeFeature:swabSurge
+Advisor:pressureAdvisor
+pressureAdvisor AccountsFor swabSurge
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[swabSurge] -->|BelongsToClass| N0001(SwabSurgeFeature) 
+	N0002[pressureAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[pressureAdvisor] -->|AccountsFor| N0000((swabSurge)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?swabSurgeFeature
+WHERE {
+	?swabSurge rdf:type ddhub:SwabSurgeFeature .
+	?pressureAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = swabSurge
+  )
+}
+```
+This example shows swab/surge variations considered.
 ## ManagedDownholePressureFeature <!-- NOUN -->
 - Display name: Managed Downhole Pressure Feature
 - Parent class: [DownholePressureFeature](#DownholePressureFeature)
 - Description: 
 A managed downhole pressure feature indicates that something manages downhole pressure.
 - Definition set: DrillingFeature
+- Examples:
+```dwis managedPressureFeature
+ManagedDownholePressureFeature:managedPressure
+Advisor:pressureAdvisor
+pressureAdvisor AccountsFor managedPressure
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[managedPressure] -->|BelongsToClass| N0001(ManagedDownholePressureFeature) 
+	N0002[pressureAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[pressureAdvisor] -->|AccountsFor| N0000((managedPressure)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?managedPressureFeature
+WHERE {
+	?managedPressure rdf:type ddhub:ManagedDownholePressureFeature .
+	?pressureAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = managedPressure
+  )
+}
+```
+This example shows managed pressure support.
 ## UnderBalanceFeature <!-- NOUN -->
 - Display name: Under-balance Feature
 - Parent class: [DownholePressureFeature](#DownholePressureFeature)
 - Description: 
 An under-balance feature indicates that something accounts for under-balance conditions.
 - Definition set: DrillingFeature
+- Examples:
+```dwis underBalanceFeature
+UnderBalanceFeature:underBalance
+Advisor:pressureAdvisor
+pressureAdvisor AccountsFor underBalance
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[underBalance] -->|BelongsToClass| N0001(UnderBalanceFeature) 
+	N0002[pressureAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[pressureAdvisor] -->|AccountsFor| N0000((underBalance)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?underBalanceFeature
+WHERE {
+	?underBalance rdf:type ddhub:UnderBalanceFeature .
+	?pressureAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = underBalance
+  )
+}
+```
+This example shows under-balance conditions considered.
 ## GasAbsorptionFeature <!-- NOUN -->
 - Display name: Gas Absorption Feature
 - Parent class: [DownholePressureFeature](#DownholePressureFeature)
 - Description: 
 A gas absorption feature indicates that something accounts for conditions by which gas can be absorbed by the drilling fluid.
 - Definition set: DrillingFeature
+- Examples:
+```dwis gasAbsorptionFeature
+GasAbsorptionFeature:gasAbsorption
+Advisor:pressureAdvisor
+pressureAdvisor AccountsFor gasAbsorption
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[gasAbsorption] -->|BelongsToClass| N0001(GasAbsorptionFeature) 
+	N0002[pressureAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[pressureAdvisor] -->|AccountsFor| N0000((gasAbsorption)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?gasAbsorptionFeature
+WHERE {
+	?gasAbsorption rdf:type ddhub:GasAbsorptionFeature .
+	?pressureAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = gasAbsorption
+  )
+}
+```
+This example shows gas absorption considered.
 ## FormationFracturingFeature <!-- NOUN -->
 - Display name: Formation Fracturing Feature
 - Parent class: [DownholePressureFeature](#DownholePressureFeature)
 - Description: 
 A formation fracturing feature indicates that something accounts for formation fracturing pressure limits.
 - Definition set: DrillingFeature
+- Examples:
+```dwis formationFractureFeature
+FormationFracturingFeature:formationFracture
+Advisor:pressureAdvisor
+pressureAdvisor AccountsFor formationFracture
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[formationFracture] -->|BelongsToClass| N0001(FormationFracturingFeature) 
+	N0002[pressureAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[pressureAdvisor] -->|AccountsFor| N0000((formationFracture)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?formationFractureFeature
+WHERE {
+	?formationFracture rdf:type ddhub:FormationFracturingFeature .
+	?pressureAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = formationFracture
+  )
+}
+```
+This example shows fracture pressure limits considered.
 ## FormationFluidInfluxFeature <!-- NOUN -->
 - Display name: Formation Fluid Influx Feature
 - Parent class: [DownholePressureFeature](#DownholePressureFeature)
 - Description: 
 A formation fluid influx feature indicates that something accounts for formation pore pressure limits.
 - Definition set: DrillingFeature
+- Examples:
+```dwis influxFeature
+FormationFluidInfluxFeature:fluidInflux
+Advisor:pressureAdvisor
+pressureAdvisor AccountsFor fluidInflux
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[fluidInflux] -->|BelongsToClass| N0001(FormationFluidInfluxFeature) 
+	N0002[pressureAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[pressureAdvisor] -->|AccountsFor| N0000((fluidInflux)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?influxFeature
+WHERE {
+	?fluidInflux rdf:type ddhub:FormationFluidInfluxFeature .
+	?pressureAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = fluidInflux
+  )
+}
+```
+This example shows pore pressure/influx considered.
 ## FormationCollapseFeature <!-- NOUN -->
 - Display name: Formation Collapse Feature
 - Parent class: [DownholePressureFeature](#DownholePressureFeature)
 - Description: 
 A formation collapse feature indicates that something accounts for formation collapse pressure limits.
 - Definition set: DrillingFeature
+- Examples:
+```dwis collapseFeature
+FormationCollapseFeature:collapse
+Advisor:pressureAdvisor
+pressureAdvisor AccountsFor collapse
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[collapse] -->|BelongsToClass| N0001(FormationCollapseFeature) 
+	N0002[pressureAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[pressureAdvisor] -->|AccountsFor| N0000((collapse)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?collapseFeature
+WHERE {
+	?collapse rdf:type ddhub:FormationCollapseFeature .
+	?pressureAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = collapse
+  )
+}
+```
+This example shows formation collapse limits considered.
 ## HeaveFeature <!-- NOUN -->
 - Display name: Heave Feature
 - Parent class: [DownholePressureFeature](#DownholePressureFeature)
 - Description: 
 A heave feature indicates that something accounts for the heave movement on downhole pressure effects.
 - Definition set: DrillingFeature
+- Examples:
+```dwis heaveFeature
+HeaveFeature:heave
+Advisor:pressureAdvisor
+pressureAdvisor AccountsFor heave
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[heave] -->|BelongsToClass| N0001(HeaveFeature) 
+	N0002[pressureAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[pressureAdvisor] -->|AccountsFor| N0000((heave)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?heaveFeature
+WHERE {
+	?heave rdf:type ddhub:HeaveFeature .
+	?pressureAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = heave
+  )
+}
+```
+This example shows heave effects considered.
 ## OnBottomDrillingFeature <!-- NOUN -->
 - Display name: On Bottom Drilling Feature
 - Parent class: [DrillingManagementFeature](#DrillingManagementFeature)
 - Description: 
 An on bottom drilling feature indicates that something accounts for on bottom drilling.
 - Definition set: DrillingFeature
+- Examples:
+```dwis onBottomFeature
+OnBottomDrillingFeature:onBottomDrilling
+ControlSystem:dcs
+dcs AccountsFor onBottomDrilling
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[onBottomDrilling] -->|BelongsToClass| N0001(OnBottomDrillingFeature) 
+	N0002[dcs] -->|BelongsToClass| N0003(ControlSystem) 
+	N0002[dcs] -->|AccountsFor| N0000((onBottomDrilling)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?onBottomFeature
+WHERE {
+	?onBottomDrilling rdf:type ddhub:OnBottomDrillingFeature .
+	?dcs rdf:type ddhub:ControlSystem .
+  FILTER (
+	?Attribute000 = onBottomDrilling
+  )
+}
+```
+This example shows on-bottom drilling coverage.
 ## HoleOpeningFeature <!-- NOUN -->
 - Display name: Hole Opening Feature
 - Parent class: [OnBottomDrillingFeature](#OnBottomDrillingFeature)
 - Description: 
 An hole opening feature indicates that something accounts for opening the borehole diameter.
 - Definition set: DrillingFeature
+- Examples:
+```dwis holeOpeningFeature
+HoleOpeningFeature:holeOpening
+Advisor:drillingAdvisor
+drillingAdvisor AccountsFor holeOpening
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[holeOpening] -->|BelongsToClass| N0001(HoleOpeningFeature) 
+	N0002[drillingAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[drillingAdvisor] -->|AccountsFor| N0000((holeOpening)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?holeOpeningFeature
+WHERE {
+	?holeOpening rdf:type ddhub:HoleOpeningFeature .
+	?drillingAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = holeOpening
+  )
+}
+```
+This example shows hole opening considered.
 ## UnderReamingFeature <!-- NOUN -->
 - Display name: Under-reaming Feature
 - Parent class: [HoleOpeningFeature](#HoleOpeningFeature)
 - Description: 
 An under-reaming feature indicates that something accounts for under-reaming a borehole.
 - Definition set: DrillingFeature
+- Examples:
+```dwis underReamingFeature
+UnderReamingFeature:underReaming
+Advisor:drillingAdvisor
+drillingAdvisor AccountsFor underReaming
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[underReaming] -->|BelongsToClass| N0001(UnderReamingFeature) 
+	N0002[drillingAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[drillingAdvisor] -->|AccountsFor| N0000((underReaming)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?underReamingFeature
+WHERE {
+	?underReaming rdf:type ddhub:UnderReamingFeature .
+	?drillingAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = underReaming
+  )
+}
+```
+This example shows under-reaming considered.
 ## DrillStemBucklingFeature <!-- NOUN -->
 - Display name: Drill-stem Buckling Feature
 - Parent class: [DrillingManagementFeature](#DrillingManagementFeature)
 - Description: 
 A drill-stem buckling feature indicates that something accounts for drill-stem buckling.
 - Definition set: DrillingFeature
+- Examples:
+```dwis bucklingFeature
+DrillStemBucklingFeature:buckling
+Advisor:drillingAdvisor
+drillingAdvisor AccountsFor buckling
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[buckling] -->|BelongsToClass| N0001(DrillStemBucklingFeature) 
+	N0002[drillingAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[drillingAdvisor] -->|AccountsFor| N0000((buckling)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?bucklingFeature
+WHERE {
+	?buckling rdf:type ddhub:DrillStemBucklingFeature .
+	?drillingAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = buckling
+  )
+}
+```
+This example shows buckling risk considered.
 ## HeatTransferFeature <!-- NOUN -->
 - Display name: Heat Transfer Feature
 - Parent class: [DrillingManagementFeature](#DrillingManagementFeature)
 - Description: 
 A heat transfer feature indicates that something accounts for heat transfer.
 - Definition set: DrillingFeature
+- Examples:
+```dwis heatTransferFeature
+HeatTransferFeature:heatTransfer
+Advisor:thermalAdvisor
+thermalAdvisor AccountsFor heatTransfer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[heatTransfer] -->|BelongsToClass| N0001(HeatTransferFeature) 
+	N0002[thermalAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[thermalAdvisor] -->|AccountsFor| N0000((heatTransfer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?heatTransferFeature
+WHERE {
+	?heatTransfer rdf:type ddhub:HeatTransferFeature .
+	?thermalAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = heatTransfer
+  )
+}
+```
+This example shows heat transfer considered.
 ## RigActionPlanFeature <!-- NOUN -->
 - Display name: Rig Action Plan Feature
 - Parent class: [DrillingManagementFeature](#DrillingManagementFeature)
 - Description: 
 A rig action plan feature indicates that something accounts for the rig action plan.
 - Definition set: DrillingFeature
+- Examples:
+```dwis rigActionPlanFeature
+RigActionPlanFeature:rigActionPlan
+ControlSystem:dcs
+dcs AccountsFor rigActionPlan
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rigActionPlan] -->|BelongsToClass| N0001(RigActionPlanFeature) 
+	N0002[dcs] -->|BelongsToClass| N0003(ControlSystem) 
+	N0002[dcs] -->|AccountsFor| N0000((rigActionPlan)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rigActionPlanFeature
+WHERE {
+	?rigActionPlan rdf:type ddhub:RigActionPlanFeature .
+	?dcs rdf:type ddhub:ControlSystem .
+  FILTER (
+	?Attribute000 = rigActionPlan
+  )
+}
+```
+This example shows accounting for rig action plans.
 ## DrillingProgramFeature <!-- NOUN -->
 - Display name: Drilling Program Feature
 - Parent class: [DrillingManagementFeature](#DrillingManagementFeature)
 - Description: 
 A drilling program feature indicates that something accounts for the drilling program.
 - Definition set: DrillingFeature
+- Examples:
+```dwis drillingProgramFeature
+DrillingProgramFeature:drillingProgram
+Advisor:drillingAdvisor
+drillingAdvisor AccountsFor drillingProgram
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingProgram] -->|BelongsToClass| N0001(DrillingProgramFeature) 
+	N0002[drillingAdvisor] -->|BelongsToClass| N0003(Advisor) 
+	N0002[drillingAdvisor] -->|AccountsFor| N0000((drillingProgram)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillingProgramFeature
+WHERE {
+	?drillingProgram rdf:type ddhub:DrillingProgramFeature .
+	?drillingAdvisor rdf:type ddhub:Advisor .
+  FILTER (
+	?Attribute000 = drillingProgram
+  )
+}
+```
+This example shows coverage of a drilling program.
 ## DrillingIncident <!-- NOUN -->
 - Display name: Drilling Incident
 - Parent class: [DWISNoun](#DWISNoun)
@@ -8370,42 +13883,238 @@ A drilling program feature indicates that something accounts for the drilling pr
 This is the parent class for drilling incidents. A drilling incident is often detectable by an abnormal value of a process variable, i.e., a variable that is influenced
 by the drilling process.
 - Definition set: DrillingIncident
+- Examples:
+```dwis genericIncident
+DrillingIncident:incident
+DrillingDataPoint:triggerSignal
+triggerSignal IsRelatedToDrillingIncident incident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[incident] -->|BelongsToClass| N0001(DrillingIncident) 
+	N0002[triggerSignal] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[triggerSignal] -->|IsRelatedToDrillingIncident| N0000((incident)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?genericIncident
+WHERE {
+	?incident rdf:type ddhub:DrillingIncident .
+	?triggerSignal rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = incident
+  )
+}
+```
+This example shows a generic incident associated with a trigger signal.
 ## AbnormalOscillation <!-- NOUN -->
 - Display name: Abnormal Oscillation
 - Parent class: [DrillingIncident](#DrillingIncident)
 - Description: 
 This Noun represents abnormal oscillations along the drill-stem.
 - Definition set: DrillingIncident
+- Examples:
+```dwis abnormalOscillation
+AbnormalOscillation:oscillationIncident
+DrillingDataPoint:vibrationSignal
+vibrationSignal IsRelatedToDrillingIncident oscillationIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[oscillationIncident] -->|BelongsToClass| N0001(AbnormalOscillation) 
+	N0002[vibrationSignal] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[vibrationSignal] -->|IsRelatedToDrillingIncident| N0000((oscillationIncident)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?abnormalOscillation
+WHERE {
+	?oscillationIncident rdf:type ddhub:AbnormalOscillation .
+	?vibrationSignal rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = oscillationIncident
+  )
+}
+```
+This example links an abnormal oscillation incident to a vibration signal.
 ## AbnormalAxialOscillation <!-- NOUN -->
 - Display name: Abnormal Axial Oscillation
 - Parent class: [AbnormalOscillation](#AbnormalOscillation)
 - Description: 
 This Noun is used to refer to abnormal axial oscillations.
 - Definition set: DrillingIncident
+- Examples:
+```dwis axialOscillation
+AbnormalAxialOscillation:axialOscillationIncident
+DrillingDataPoint:axialAcceleration
+axialAcceleration IsRelatedToDrillingIncident axialOscillationIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[axialOscillationIncident] -->|BelongsToClass| N0001(AbnormalAxialOscillation) 
+	N0002[axialAcceleration] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[axialAcceleration] -->|IsRelatedToDrillingIncident| N0000((axialOscillationIncident)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?axialOscillation
+WHERE {
+	?axialOscillationIncident rdf:type ddhub:AbnormalAxialOscillation .
+	?axialAcceleration rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = axialOscillationIncident
+  )
+}
+```
+This example associates axial acceleration anomalies with an axial oscillation incident.
 ## AbnormalTorsionalOscillation <!-- NOUN -->
 - Display name: Abnormal Torsional Oscillation
 - Parent class: [AbnormalOscillation](#AbnormalOscillation)
 - Description: 
 This Noun is used to refer to abnormal torsional oscillations.
 - Definition set: DrillingIncident
+- Examples:
+```dwis torsionalOscillation
+AbnormalTorsionalOscillation:torsionalOscillationIncident
+DrillingDataPoint:torsionalVibration
+torsionalVibration IsRelatedToDrillingIncident torsionalOscillationIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[torsionalOscillationIncident] -->|BelongsToClass| N0001(AbnormalTorsionalOscillation) 
+	N0002[torsionalVibration] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[torsionalVibration] -->|IsRelatedToDrillingIncident| N0000((torsionalOscillationIncident)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?torsionalOscillation
+WHERE {
+	?torsionalOscillationIncident rdf:type ddhub:AbnormalTorsionalOscillation .
+	?torsionalVibration rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = torsionalOscillationIncident
+  )
+}
+```
+This example links torsional vibration to an abnormal torsional oscillation.
 ## AbnormalLateralOscillation <!-- NOUN -->
 - Display name: Abnormal Lateral Oscillation
 - Parent class: [AbnormalOscillation](#AbnormalOscillation)
 - Description: 
 This Noun is used to refer to abnormal lateral oscillations.
 - Definition set: DrillingIncident
+- Examples:
+```dwis lateralOscillation
+AbnormalLateralOscillation:lateralOscillationIncident
+DrillingDataPoint:lateralAcceleration
+lateralAcceleration IsRelatedToDrillingIncident lateralOscillationIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[lateralOscillationIncident] -->|BelongsToClass| N0001(AbnormalLateralOscillation) 
+	N0002[lateralAcceleration] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[lateralAcceleration] -->|IsRelatedToDrillingIncident| N0000((lateralOscillationIncident)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?lateralOscillation
+WHERE {
+	?lateralOscillationIncident rdf:type ddhub:AbnormalLateralOscillation .
+	?lateralAcceleration rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = lateralOscillationIncident
+  )
+}
+```
+This example ties lateral acceleration anomalies to a lateral oscillation incident.
 ## StickSlip <!-- NOUN -->
 - Display name: Stick-slip
 - Parent class: [AbnormalTorsionalOscillation](#AbnormalTorsionalOscillation)
 - Description: 
 This Noun is used to refer to stick-slips.
 - Definition set: DrillingIncident
+- Examples:
+```dwis stickSlipIncident
+StickSlip:stickSlipIncident
+DrillingDataPoint:surfaceTorque
+surfaceTorque IsRelatedToDrillingIncident stickSlipIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stickSlipIncident] -->|BelongsToClass| N0001(StickSlip) 
+	N0002[surfaceTorque] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[surfaceTorque] -->|IsRelatedToDrillingIncident| N0000((stickSlipIncident)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stickSlipIncident
+WHERE {
+	?stickSlipIncident rdf:type ddhub:StickSlip .
+	?surfaceTorque rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = stickSlipIncident
+  )
+}
+```
+This example shows stick-slip identified from torque variations.
 ## HFTO <!-- NOUN -->
 - Display name: High Frequency Torsional Oscillation
 - Parent class: [AbnormalTorsionalOscillation](#AbnormalTorsionalOscillation)
 - Description: 
 This Noun is used to refer to high frequency torsional oscillations.
 - Definition set: DrillingIncident
+- Examples:
+```dwis hftoIncident
+HFTO:hftoIncident
+DrillingDataPoint:torsionalSpectrum
+torsionalSpectrum IsRelatedToDrillingIncident hftoIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hftoIncident] -->|BelongsToClass| N0001(HFTO) 
+	N0002[torsionalSpectrum] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[torsionalSpectrum] -->|IsRelatedToDrillingIncident| N0000((hftoIncident)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hftoIncident
+WHERE {
+	?hftoIncident rdf:type ddhub:HFTO .
+	?torsionalSpectrum rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = hftoIncident
+  )
+}
+```
+This example ties a torsional spectrum to an HFTO incident.
 ## Whirling <!-- NOUN -->
 - Display name: Whirling
 - Parent class: [AbnormalLateralOscillation](#AbnormalLateralOscillation)
@@ -8478,24 +14187,136 @@ WHERE {
 - Description: 
 This Noun is used to refer to forward whirl.
 - Definition set: DrillingIncident
+- Examples:
+```dwis forwardWhirlIncident
+ForwardWhirl:forwardWhirlIncident
+DrillingDataPoint:lateralVibration
+lateralVibration IsRelatedToDrillingIncident forwardWhirlIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[forwardWhirlIncident] -->|BelongsToClass| N0001(ForwardWhirl) 
+	N0002[lateralVibration] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[lateralVibration] -->|IsRelatedToDrillingIncident| N0000((forwardWhirlIncident)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?forwardWhirlIncident
+WHERE {
+	?forwardWhirlIncident rdf:type ddhub:ForwardWhirl .
+	?lateralVibration rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = forwardWhirlIncident
+  )
+}
+```
+This example links lateral vibration to forward whirl.
 ## BackwardWhirl <!-- NOUN -->
 - Display name: Backward Whirl
 - Parent class: [Whirling](#Whirling)
 - Description: 
 This Noun is used to refer to backward whirl.
 - Definition set: DrillingIncident
+- Examples:
+```dwis backwardWhirlIncident
+BackwardWhirl:backwardWhirlIncident
+DrillingDataPoint:lateralVibration
+lateralVibration IsRelatedToDrillingIncident backwardWhirlIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[backwardWhirlIncident] -->|BelongsToClass| N0001(BackwardWhirl) 
+	N0002[lateralVibration] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[lateralVibration] -->|IsRelatedToDrillingIncident| N0000((backwardWhirlIncident)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?backwardWhirlIncident
+WHERE {
+	?backwardWhirlIncident rdf:type ddhub:BackwardWhirl .
+	?lateralVibration rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = backwardWhirlIncident
+  )
+}
+```
+This example ties vibration to backward whirl.
 ## ChaoticWhirl <!-- NOUN -->
 - Display name: Chaotic Whirl
 - Parent class: [Whirling](#Whirling)
 - Description: 
 This Noun is used to refer to chaotic whirl.
 - Definition set: DrillingIncident
+- Examples:
+```dwis chaoticWhirlIncident
+ChaoticWhirl:chaoticWhirlIncident
+DrillingDataPoint:lateralVibration
+lateralVibration IsRelatedToDrillingIncident chaoticWhirlIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[chaoticWhirlIncident] -->|BelongsToClass| N0001(ChaoticWhirl) 
+	N0002[lateralVibration] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[lateralVibration] -->|IsRelatedToDrillingIncident| N0000((chaoticWhirlIncident)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?chaoticWhirlIncident
+WHERE {
+	?chaoticWhirlIncident rdf:type ddhub:ChaoticWhirl .
+	?lateralVibration rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = chaoticWhirlIncident
+  )
+}
+```
+This example links chaotic whirl to lateral vibration signatures.
 ## Shock <!-- NOUN -->
 - Display name: Shock
 - Parent class: [AbnormalLateralOscillation](#AbnormalLateralOscillation)
 - Description: 
 This Noun is used to refer to lateral shocks.
 - Definition set: DrillingIncident
+- Examples:
+```dwis shockIncident
+Shock:shockIncident
+DrillingDataPoint:shockSensorSignal
+shockSensorSignal IsRelatedToDrillingIncident shockIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[shockIncident] -->|BelongsToClass| N0001(Shock) 
+	N0002[shockSensorSignal] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[shockSensorSignal] -->|IsRelatedToDrillingIncident| N0000((shockIncident)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?shockIncident
+WHERE {
+	?shockIncident rdf:type ddhub:Shock .
+	?shockSensorSignal rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = shockIncident
+  )
+}
+```
+This example shows a shock sensor signal tied to a shock incident.
 ## TwistOff <!-- NOUN -->
 - Display name: Twist-off
 - Parent class: [DrillingIncident](#DrillingIncident)
@@ -8898,6 +14719,34 @@ WHERE {
 - Description: 
 This Noun is used to refer to a situation during which the drill-stem is impeded to move either axially or rotationally or both.
 - Definition set: DrillingIncident
+- Examples:
+```dwis stuckPipeIncident
+StuckPipe:stuckPipeIncident
+DrillingDataPoint:hookload
+hookload IsRelatedToDrillingIncident stuckPipeIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stuckPipeIncident] -->|BelongsToClass| N0001(StuckPipe) 
+	N0002[hookload] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[hookload] -->|IsRelatedToDrillingIncident| N0000((stuckPipeIncident)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stuckPipeIncident
+WHERE {
+	?stuckPipeIncident rdf:type ddhub:StuckPipe .
+	?hookload rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = stuckPipeIncident
+  )
+}
+```
+This example links abnormal hookload to a stuck-pipe incident.
 ## DifferentiallyStuck <!-- NOUN -->
 - Display name: Differentially Stuck
 - Parent class: [StuckPipe](#StuckPipe)
@@ -9036,6 +14885,34 @@ WHERE {
 - Description: 
 This Noun is used to refer to a situation during which the formation is being washed out.
 - Definition set: DrillingIncident
+- Examples:
+```dwis formationWashoutIncident
+FormationWashout:formationWashoutIncident
+DrillingDataPoint:lossCirculationIndicator
+lossCirculationIndicator IsRelatedToDrillingIncident formationWashoutIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[formationWashoutIncident] -->|BelongsToClass| N0001(FormationWashout) 
+	N0002[lossCirculationIndicator] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[lossCirculationIndicator] -->|IsRelatedToDrillingIncident| N0000((formationWashoutIncident)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?formationWashoutIncident
+WHERE {
+	?formationWashoutIncident rdf:type ddhub:FormationWashout .
+	?lossCirculationIndicator rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = formationWashoutIncident
+  )
+}
+```
+This example ties a loss indicator to formation washout.
 ## OverTorque <!-- NOUN -->
 - Display name: Over-torque
 - Parent class: [DrillingIncident](#DrillingIncident)
@@ -9108,6 +14985,34 @@ WHERE {
 - Description: 
 This Noun is used to refer to a situation during which the hydraulic flow-path is partially or fully blocked.
 - Definition set: DrillingIncident
+- Examples:
+```dwis pluggedIncident
+Plugged:pluggedIncident
+DrillingDataPoint:standpipePressure
+standpipePressure IsRelatedToDrillingIncident pluggedIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pluggedIncident] -->|BelongsToClass| N0001(Plugged) 
+	N0002[standpipePressure] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[standpipePressure] -->|IsRelatedToDrillingIncident| N0000((pluggedIncident)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pluggedIncident
+WHERE {
+	?pluggedIncident rdf:type ddhub:Plugged .
+	?standpipePressure rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = pluggedIncident
+  )
+}
+```
+This example relates rising standpipe pressure to a plugged condition.
 ## PackOff <!-- NOUN -->
 - Display name: Pack-off
 - Parent class: [Plugged](#Plugged)
@@ -9174,9 +15079,75 @@ WHERE {
   )
 }
 ```
-## MotorStall <!-- NOUN -->
+## StallIncident <!-- NOUN -->
 - Display name: Motor-stall
 - Parent class: [DrillingIncident](#DrillingIncident)
+- Description: 
+This Noun is used to refer to a situation during which the drill-stem rotation stalled.
+- Definition set: DrillingIncident
+- Examples:
+``` dwis motorStallFDIRInfo
+DynamicDrillingSignal:motorStallFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice:motorStallFDIRInfo_1
+motorStallFDIRInfo_1 HasDynamicValue motorStallFDIRInfo
+MotorStall:motorStallIncident
+motorStallFDIRInfo_1 IsRelatedToDrillingIncident motorStallIncident
+ServiceCompany:serviceCompany
+motorStallFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor:computationUnit
+motorStallFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction:FDIRFunction_1
+FDIRFunction_1 ManagesIncident motorStallIncident
+motorStallFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer:adviceComposer
+motorStallFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[motorStallFDIRInfo] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[motorStallFDIRInfo_1] -->|BelongsToClass| N0003(DrillingFaultDetectionIsolationAndRecoveryAdvice) 
+	N0002[motorStallFDIRInfo_1] -->|HasDynamicValue| N0000((motorStallFDIRInfo)) 
+	N0004[motorStallIncident] -->|BelongsToClass| N0005(MotorStall) 
+	N0002[motorStallFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0004((motorStallIncident)) 
+	N0006[serviceCompany] -->|BelongsToClass| N0007(ServiceCompany) 
+	N0002[motorStallFDIRInfo_1] -->|IsProvidedBy| N0006((serviceCompany)) 
+	N0008[computationUnit] -->|BelongsToClass| N0009(Advisor) 
+	N0002[motorStallFDIRInfo_1] -->|IsRecommendedBy| N0008((computationUnit)) 
+	N0010[FDIRFunction_1] -->|BelongsToClass| N0011(FDIRFunction) 
+	N0010[FDIRFunction_1] -->|ManagesIncident| N0004((motorStallIncident)) 
+	N0002[motorStallFDIRInfo_1] -->|IsRecommendedFor| N0010((FDIRFunction_1)) 
+	N0012[adviceComposer] -->|BelongsToClass| N0013(DWISAdviceComposer) 
+	N0002[motorStallFDIRInfo_1] -->|IsProvidedTo| N0012((adviceComposer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?motorStallFDIRInfo
+WHERE {
+	?motorStallFDIRInfo rdf:type ddhub:DynamicDrillingSignal .
+	?motorStallFDIRInfo_1 rdf:type ddhub:DrillingFaultDetectionIsolationAndRecoveryAdvice .
+	?motorStallIncident rdf:type ddhub:MotorStall .
+	?serviceCompany rdf:type ddhub:ServiceCompany .
+	?computationUnit rdf:type ddhub:Advisor .
+	?FDIRFunction_1 rdf:type ddhub:FDIRFunction .
+	?adviceComposer rdf:type ddhub:DWISAdviceComposer .
+  FILTER (
+	?Attribute000 = motorStallFDIRInfo
+	&& 	?Attribute001 = motorStallIncident
+	&& 	?Attribute002 = serviceCompany
+	&& 	?Attribute003 = computationUnit
+	&& 	?Attribute004 = motorStallIncident
+	&& 	?Attribute005 = FDIRFunction_1
+	&& 	?Attribute006 = adviceComposer
+  )
+}
+```
+## MotorStall <!-- NOUN -->
+- Display name: Motor-stall
+- Parent class: [StallIncident](#StallIncident)
 - Description: 
 This Noun is used to refer to a situation during which the downhole motor is stalled.
 - Definition set: DrillingIncident
@@ -9246,6 +15217,29 @@ WHERE {
 - Description: 
 This is the parent class for drilling limits. A limit applies typically on a desired value as controlled by a controller.
 - Definition set: DrillingLimit
+- Examples:
+```dwis drillingLimit
+DrillingDataPoint:drillingLimit
+drillingLimit BelongsToClass DrillingLimit
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingLimit] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[drillingLimit] -->|BelongsToClass| N0002(DrillingLimit) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillingLimit
+WHERE {
+	?drillingLimit rdf:type ddhub:DrillingDataPoint .
+	?drillingLimit rdf:type ddhub:DrillingLimit .
+}
+```
+This example links a drilling data point to the DrillingLimit definition.
 ## OnlyLimits <!-- NOUN -->
 - Display name: Only Limits
 - Parent class: [DrillingLimit](#DrillingLimit)
@@ -9879,36 +15873,174 @@ WHERE {
 - Description: 
 This Noun is used to refer to a torque limit.
 - Definition set: DrillingLimit
+- Examples:
+```dwis torqueLimit
+DrillingDataPoint:torqueLimit
+torqueLimit BelongsToClass TorqueLimit
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[torqueLimit] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[torqueLimit] -->|BelongsToClass| N0002(TorqueLimit) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?torqueLimit
+WHERE {
+	?torqueLimit rdf:type ddhub:DrillingDataPoint .
+	?torqueLimit rdf:type ddhub:TorqueLimit .
+}
+```
+This example links a drilling data point to the TorqueLimit definition.
 ## AxialLoadLimit <!-- NOUN -->
 - Display name: Axial Load Limit
 - Parent class: [DrillingLimit](#DrillingLimit)
 - Description: 
 This Noun is used to refer to an axial load limit.
 - Definition set: DrillingLimit
+- Examples:
+```dwis axialLoadLimit
+DrillingDataPoint:axialLoadLimit
+axialLoadLimit BelongsToClass AxialLoadLimit
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[axialLoadLimit] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[axialLoadLimit] -->|BelongsToClass| N0002(AxialLoadLimit) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?axialLoadLimit
+WHERE {
+	?axialLoadLimit rdf:type ddhub:DrillingDataPoint .
+	?axialLoadLimit rdf:type ddhub:AxialLoadLimit .
+}
+```
+This example links a drilling data point to the AxialLoadLimit definition.
 ## PressureLimit <!-- NOUN -->
 - Display name: Pressure Limit
 - Parent class: [DrillingLimit](#DrillingLimit)
 - Description: 
 This Noun is used to refer to an pressure limit.
 - Definition set: DrillingLimit
+- Examples:
+```dwis pressureLimit
+DrillingDataPoint:pressureLimit
+pressureLimit BelongsToClass PressureLimit
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pressureLimit] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[pressureLimit] -->|BelongsToClass| N0002(PressureLimit) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pressureLimit
+WHERE {
+	?pressureLimit rdf:type ddhub:DrillingDataPoint .
+	?pressureLimit rdf:type ddhub:PressureLimit .
+}
+```
+This example links a drilling data point to the PressureLimit definition.
 ## AnnulusPressureLimit <!-- NOUN -->
 - Display name: Annulus Pressure Limit
 - Parent class: [PressureLimit](#PressureLimit)
 - Description: 
 This Noun is used to refer to an annulus pressure limit.
 - Definition set: DrillingLimit
+- Examples:
+```dwis annulusPressureLimit
+DrillingDataPoint:annulusPressureLimit
+annulusPressureLimit BelongsToClass AnnulusPressureLimit
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[annulusPressureLimit] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[annulusPressureLimit] -->|BelongsToClass| N0002(AnnulusPressureLimit) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?annulusPressureLimit
+WHERE {
+	?annulusPressureLimit rdf:type ddhub:DrillingDataPoint .
+	?annulusPressureLimit rdf:type ddhub:AnnulusPressureLimit .
+}
+```
+This example links a drilling data point to the AnnulusPressureLimit definition.
 ## StringPressureLimit <!-- NOUN -->
 - Display name: String Pressure Limit
 - Parent class: [PressureLimit](#PressureLimit)
 - Description: 
 This Noun is used to refer to a string pressure limit.
 - Definition set: DrillingLimit
+- Examples:
+```dwis stringPressureLimit
+DrillingDataPoint:stringPressureLimit
+stringPressureLimit BelongsToClass StringPressureLimit
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stringPressureLimit] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[stringPressureLimit] -->|BelongsToClass| N0002(StringPressureLimit) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stringPressureLimit
+WHERE {
+	?stringPressureLimit rdf:type ddhub:DrillingDataPoint .
+	?stringPressureLimit rdf:type ddhub:StringPressureLimit .
+}
+```
+This example links a drilling data point to the StringPressureLimit definition.
 ## DrillingObjective <!-- NOUN -->
 - Display name: Drilling Objective
 - Parent class: [DWISNoun](#DWISNoun)
 - Description: 
 This is the parent class for drilling objectives.
 - Definition set: DrillingObjective
+- Examples:
+```dwis drillingObjective
+DrillingDataPoint:drillingObjective
+drillingObjective BelongsToClass DrillingObjective
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingObjective] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[drillingObjective] -->|BelongsToClass| N0002(DrillingObjective) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillingObjective
+WHERE {
+	?drillingObjective rdf:type ddhub:DrillingDataPoint .
+	?drillingObjective rdf:type ddhub:DrillingObjective .
+}
+```
+This example links a drilling data point to the DrillingObjective definition.
 ## StableAxialVelocityObjective <!-- NOUN -->
 - Display name: Stable Axial Velocity Objective
 - Parent class: [DrillingObjective](#DrillingObjective)
@@ -10203,18 +16335,87 @@ WHERE {
 - Description: 
 This Noun is used to refer to the objective of obtaining stable torque.
 - Definition set: DrillingObjective
+- Examples:
+```dwis stableTorqueObjective
+DrillingDataPoint:stableTorqueObjective
+stableTorqueObjective BelongsToClass StableTorqueObjective
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stableTorqueObjective] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[stableTorqueObjective] -->|BelongsToClass| N0002(StableTorqueObjective) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stableTorqueObjective
+WHERE {
+	?stableTorqueObjective rdf:type ddhub:DrillingDataPoint .
+	?stableTorqueObjective rdf:type ddhub:StableTorqueObjective .
+}
+```
+This example links a drilling data point to the StableTorqueObjective definition.
 ## StableDrillingObjective <!-- NOUN -->
 - Display name: Stable Drilling Objective
 - Parent class: [DrillingObjective](#DrillingObjective)
 - Description: 
 This Noun is used to refer to the objective of obtaining stable torque.
 - Definition set: DrillingObjective
+- Examples:
+```dwis stableDrillingObjective
+DrillingDataPoint:stableDrillingObjective
+stableDrillingObjective BelongsToClass StableDrillingObjective
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stableDrillingObjective] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[stableDrillingObjective] -->|BelongsToClass| N0002(StableDrillingObjective) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stableDrillingObjective
+WHERE {
+	?stableDrillingObjective rdf:type ddhub:DrillingDataPoint .
+	?stableDrillingObjective rdf:type ddhub:StableDrillingObjective .
+}
+```
+This example links a drilling data point to the StableDrillingObjective definition.
 ## StableFlowrateObjective <!-- NOUN -->
 - Display name: Stable Flowrate Objective
 - Parent class: [DrillingObjective](#DrillingObjective)
 - Description: 
 This Noun is used to refer to the objective of obtaining stable torque.
 - Definition set: DrillingObjective
+- Examples:
+```dwis stableFlowrateObjective
+DrillingDataPoint:stableFlowrateObjective
+stableFlowrateObjective BelongsToClass StableFlowrateObjective
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stableFlowrateObjective] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[stableFlowrateObjective] -->|BelongsToClass| N0002(StableFlowrateObjective) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stableFlowrateObjective
+WHERE {
+	?stableFlowrateObjective rdf:type ddhub:DrillingDataPoint .
+	?stableFlowrateObjective rdf:type ddhub:StableFlowrateObjective .
+}
+```
+This example links a drilling data point to the StableFlowrateObjective definition.
 ## StableAxialForceObjective <!-- NOUN -->
 - Display name: Stable Axial Force Objective
 - Parent class: [DrillingObjective](#DrillingObjective)
@@ -10404,6 +16605,29 @@ WHERE {
 - Description: 
 This is the parent class for drilling procedures.
 - Definition set: DrillingProcedure
+- Examples:
+```dwis drillingProcedure
+DrillingDataPoint:drillingProcedure
+drillingProcedure BelongsToClass DrillingProcedure
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingProcedure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[drillingProcedure] -->|BelongsToClass| N0002(DrillingProcedure) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillingProcedure
+WHERE {
+	?drillingProcedure rdf:type ddhub:DrillingDataPoint .
+	?drillingProcedure rdf:type ddhub:DrillingProcedure .
+}
+```
+This example links a drilling data point to the DrillingProcedure definition.
 ## CirculationStartupProcedure <!-- NOUN -->
 - Display name: Circulation Startup Procedure
 - Parent class: [DrillingProcedure](#DrillingProcedure)
@@ -11511,7 +17735,35 @@ Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a
   - EndPointDescription
     - Type: string
     - Description: 
+- Description: 
+A generic external endpoint for reading or writing drilling data.
 - Definition set: EndPoints
+- Examples:
+```dwis dataEndpointExample
+DataEndPoint:surfaceLogEndpoint
+surfaceLogEndpoint.EndPointDescription = "Surface logging service endpoint"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[surfaceLogEndpoint] -->|BelongsToClass| N0001(DataEndPoint) 
+	N0000[surfaceLogEndpoint] -->|EndPointDescription| N0002(("Surface logging service endpoint")) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?dataEndpointExample
+WHERE {
+	?surfaceLogEndpoint rdf:type ddhub:DataEndPoint .
+	?surfaceLogEndpoint ddhub:EndPointDescription ?Attribute000 .
+  FILTER (
+	?Attribute000 = "Surface logging service endpoint"
+  )
+}
+```
+This example declares a generic data endpoint for surface logging.
 ## WitsMLTimeBasedLogEndPoint <!-- NOUN -->
 - Display name: WitsMLTimeBasedLogEndPoint
 - Parent class: [DataEndPoint](#DataEndPoint)
@@ -11537,7 +17789,59 @@ Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a
   - Mnemonic
     - Type: string
     - Description: 
+- Description: 
+Represents a WITSML time-based log endpoint identifying a specific well, wellbore, log, and mnemonic.
 - Definition set: EndPoints
+- Examples:
+```dwis witsmlEndpoint
+WitsMLTimeBasedLogEndPoint:witsmlLog
+witsmlLog.WellUID = "well-123"
+witsmlLog.WellName = "Well A"
+witsmlLog.WellboreUID = "wellbore-1"
+witsmlLog.WellboreName = "Well A Main"
+witsmlLog.LogUID = "log-789"
+witsmlLog.LogName = "SurfaceLog"
+witsmlLog.Mnemonic = "SPPA"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[witsmlLog] -->|BelongsToClass| N0001(WitsMLTimeBasedLogEndPoint) 
+	N0000[witsmlLog] -->|WellUID| N0002(("well-123")) 
+	N0000[witsmlLog] -->|WellName| N0003(("Well A")) 
+	N0000[witsmlLog] -->|WellboreUID| N0004(("wellbore-1")) 
+	N0000[witsmlLog] -->|WellboreName| N0005(("Well A Main")) 
+	N0000[witsmlLog] -->|LogUID| N0006(("log-789")) 
+	N0000[witsmlLog] -->|LogName| N0007(("SurfaceLog")) 
+	N0000[witsmlLog] -->|Mnemonic| N0008(("SPPA")) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?witsmlEndpoint
+WHERE {
+	?witsmlLog rdf:type ddhub:WitsMLTimeBasedLogEndPoint .
+	?witsmlLog ddhub:WellUID ?Attribute000 .
+	?witsmlLog ddhub:WellName ?Attribute001 .
+	?witsmlLog ddhub:WellboreUID ?Attribute002 .
+	?witsmlLog ddhub:WellboreName ?Attribute003 .
+	?witsmlLog ddhub:LogUID ?Attribute004 .
+	?witsmlLog ddhub:LogName ?Attribute005 .
+	?witsmlLog ddhub:Mnemonic ?Attribute006 .
+  FILTER (
+	?Attribute000 = "well-123"
+	&& 	?Attribute001 = "Well A"
+	&& 	?Attribute002 = "wellbore-1"
+	&& 	?Attribute003 = "Well A Main"
+	&& 	?Attribute004 = "log-789"
+	&& 	?Attribute005 = "SurfaceLog"
+	&& 	?Attribute006 = "SPPA"
+  )
+}
+```
+This example defines a WITSML time-based log endpoint for standpipe pressure.
 ## EndPointMapping <!-- NOUN -->
 - Display name: EndPointMapping
 - Parent class: [DWISNoun](#DWISNoun)
@@ -11551,27 +17855,319 @@ Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a
   - MeasurementIndex
     - Type: int
     - Description: 
+- Description: 
+Describes how a signal’s fields map to indices within an external endpoint payload.
 - Definition set: EndPoints
+- Examples:
+```dwis endpointMapping
+EndPointMapping:standpipeMapping
+standpipeMapping.FixedIndices = "[0,1]"
+standpipeMapping.ValuesIndices = "[2]"
+standpipeMapping.MeasurementIndex = "2"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipeMapping] -->|BelongsToClass| N0001(EndPointMapping) 
+	N0000[standpipeMapping] -->|FixedIndices| N0002(("[0,1]")) 
+	N0000[standpipeMapping] -->|ValuesIndices| N0003(("[2]")) 
+	N0000[standpipeMapping] -->|MeasurementIndex| N0004(("2")) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?endpointMapping
+WHERE {
+	?standpipeMapping rdf:type ddhub:EndPointMapping .
+	?standpipeMapping ddhub:FixedIndices ?Attribute000 .
+	?standpipeMapping ddhub:ValuesIndices ?Attribute001 .
+	?standpipeMapping ddhub:MeasurementIndex ?Attribute002 .
+  FILTER (
+	?Attribute000 = "[0,1]"
+	&& 	?Attribute001 = "[2]"
+	&& 	?Attribute002 = "2"
+  )
+}
+```
+This example maps standpipe pressure values to positions in an endpoint payload.
+## DrillingHydraulicModel <!-- NOUN -->
+- Display name: Drilling Hydraulic Model
+- Parent class: [ModelType](#ModelType)
+- Description: 
+A hydraulic model for drilling operations. This model simulates the behavior of drilling fluids within the wellbore and their interaction with the drilling equipment.
+- Definition set: HydraulicModel
+- Examples:
+```dwis TotalTheoreticalAccumulatedCuttingsRecoveryExample
+DynamicDrillingSignal:CleanSightTotalTheoreticalAccumulatedCuttingsRecovery
+ComputedData:CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01
+CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01 BelongsToClass ContinuousDataType
+CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01 HasDynamicValue CleanSightTotalTheoreticalAccumulatedCuttingsRecovery
+CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01 IsOfMeasurableQuantity VolumeDrilling
+TopSideTelemetry:topSideTelemetry
+CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01 IsTransmittedBy topSideTelemetry
+MovingAverage:MovingAverage
+CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01 IsTransformationOutput MovingAverage
+DynamicDrillingSignal:Sigma_TotalTheoreticalAccumulatedCuttingsRecovery
+DrillingDataPoint:Sigma_TotalTheoreticalAccumulatedCuttingsRecovery#01
+Sigma_TotalTheoreticalAccumulatedCuttingsRecovery#01 HasDynamicValue Sigma_TotalTheoreticalAccumulatedCuttingsRecovery
+GaussianUncertainty:GaussianUncertainty#01
+CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01 HasUncertainty GaussianUncertainty#01
+GaussianUncertainty#01 HasUncertaintyMean CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01
+GaussianUncertainty#01 HasUncertaintyStandardDeviation Sigma_TotalTheoreticalAccumulatedCuttingsRecovery#01
+CuttingSeparatorLogical:ShaleShakerElement#01
+CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01 IsHydraulicEstimationAt ShaleShakerElement#01
+DrillingLiquidType:DrillingFluid#01
+DrillingFluid#01 IsFluidTypeLocatedAt ShaleShakerElement#01
+CuttingsComponent:Cuttings#01
+Cuttings#01 IsAComponentOf DrillingFluid#01
+CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01 ConcernsAFluidComponent Cuttings#01
+DrillingHydraulicModel:drillingHydraulicModel#01
+CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01 IsComputedBy drillingHydraulicModel#01
+InstrumentationCompany:DrillDocs#01
+CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01 IsProvidedBy DrillDocs#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CleanSightTotalTheoreticalAccumulatedCuttingsRecovery] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01] -->|BelongsToClass| N0003(ComputedData) 
+	N0002[CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01] -->|HasDynamicValue| N0000((CleanSightTotalTheoreticalAccumulatedCuttingsRecovery)) 
+	N0002[CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01] -->|IsOfMeasurableQuantity| N0005((VolumeDrilling)) 
+	N0006[topSideTelemetry] -->|BelongsToClass| N0007(TopSideTelemetry) 
+	N0002[CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01] -->|IsTransmittedBy| N0006((topSideTelemetry)) 
+	N0008[MovingAverage] -->|BelongsToClass| N0008(MovingAverage) 
+	N0002[CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01] -->|IsTransformationOutput| N0008((MovingAverage)) 
+	N0009[Sigma_TotalTheoreticalAccumulatedCuttingsRecovery] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0010[Sigma_TotalTheoreticalAccumulatedCuttingsRecovery#01] -->|BelongsToClass| N0011(DrillingDataPoint) 
+	N0010[Sigma_TotalTheoreticalAccumulatedCuttingsRecovery#01] -->|HasDynamicValue| N0009((Sigma_TotalTheoreticalAccumulatedCuttingsRecovery)) 
+	N0012[GaussianUncertainty#01] -->|BelongsToClass| N0013(GaussianUncertainty) 
+	N0002[CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01] -->|HasUncertainty| N0012((GaussianUncertainty#01)) 
+	N0012[GaussianUncertainty#01] -->|HasUncertaintyMean| N0002((CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01)) 
+	N0012[GaussianUncertainty#01] -->|HasUncertaintyStandardDeviation| N0010((Sigma_TotalTheoreticalAccumulatedCuttingsRecovery#01)) 
+	N0014[ShaleShakerElement#01] -->|BelongsToClass| N0015(CuttingSeparatorLogical) 
+	N0002[CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01] -->|IsHydraulicEstimationAt| N0014((ShaleShakerElement#01)) 
+	N0016[DrillingFluid#01] -->|BelongsToClass| N0017(DrillingLiquidType) 
+	N0016[DrillingFluid#01] -->|IsFluidTypeLocatedAt| N0014((ShaleShakerElement#01)) 
+	N0018[Cuttings#01] -->|BelongsToClass| N0019(CuttingsComponent) 
+	N0018[Cuttings#01] -->|IsAComponentOf| N0016((DrillingFluid#01)) 
+	N0002[CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01] -->|ConcernsAFluidComponent| N0018((Cuttings#01)) 
+	N0020[drillingHydraulicModel#01] -->|BelongsToClass| N0021(DrillingHydraulicModel) 
+	N0002[CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01] -->|IsComputedBy| N0020((drillingHydraulicModel#01)) 
+	N0022[DrillDocs#01] -->|BelongsToClass| N0023(InstrumentationCompany) 
+	N0002[CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01] -->|IsProvidedBy| N0022((DrillDocs#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?TotalTheoreticalAccumulatedCuttingsRecoveryExample
+WHERE {
+	?CleanSightTotalTheoreticalAccumulatedCuttingsRecovery rdf:type ddhub:DynamicDrillingSignal .
+	?CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01 rdf:type ddhub:ComputedData .
+	?CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01 rdf:type ddhub:ContinuousDataType .
+	?topSideTelemetry rdf:type ddhub:TopSideTelemetry .
+	?MovingAverage rdf:type ddhub:MovingAverage .
+	?Sigma_TotalTheoreticalAccumulatedCuttingsRecovery rdf:type ddhub:DynamicDrillingSignal .
+	?Sigma_TotalTheoreticalAccumulatedCuttingsRecovery#01 rdf:type ddhub:DrillingDataPoint .
+	?GaussianUncertainty#01 rdf:type ddhub:GaussianUncertainty .
+	?ShaleShakerElement#01 rdf:type ddhub:CuttingSeparatorLogical .
+	?DrillingFluid#01 rdf:type ddhub:DrillingLiquidType .
+	?Cuttings#01 rdf:type ddhub:CuttingsComponent .
+	?drillingHydraulicModel#01 rdf:type ddhub:DrillingHydraulicModel .
+	?DrillDocs#01 rdf:type ddhub:InstrumentationCompany .
+  FILTER (
+	?Attribute000 = CleanSightTotalTheoreticalAccumulatedCuttingsRecovery
+	&& 	?Attribute001 = VolumeDrilling
+	&& 	?Attribute002 = topSideTelemetry
+	&& 	?Attribute003 = MovingAverage
+	&& 	?Attribute004 = Sigma_TotalTheoreticalAccumulatedCuttingsRecovery
+	&& 	?Attribute005 = GaussianUncertainty#01
+	&& 	?Attribute006 = CleanSightTotalTheoreticalAccumulatedCuttingsRecovery#01
+	&& 	?Attribute007 = Sigma_TotalTheoreticalAccumulatedCuttingsRecovery#01
+	&& 	?Attribute008 = ShaleShakerElement#01
+	&& 	?Attribute009 = ShaleShakerElement#01
+	&& 	?Attribute010 = DrillingFluid#01
+	&& 	?Attribute011 = Cuttings#01
+	&& 	?Attribute012 = drillingHydraulicModel#01
+	&& 	?Attribute013 = DrillDocs#01
+  )
+}
+```
+This example defines a drilling hydraulic model and links it to a computed data point for accumulated cuttings recovery.
 ## PressureReference <!-- NOUN -->
 - Display name: PressureReference
 - Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+Indicates the reference basis used to express a pressure measurement.
 - Definition set: Hydraulics
+- Examples:
+```dwis pressureRef
+PressureReference:pressureReference
+DrillingDataPoint:standpipePressure
+standpipePressure HasPressureReferenceType pressureReference
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pressureReference] -->|BelongsToClass| N0001(PressureReference) 
+	N0002[standpipePressure] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[standpipePressure] -->|HasPressureReferenceType| N0000((pressureReference)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pressureRef
+WHERE {
+	?pressureReference rdf:type ddhub:PressureReference .
+	?standpipePressure rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = pressureReference
+  )
+}
+```
+This example shows a standpipe pressure tagged with a pressure reference.
 ## AbsolutePressureReference <!-- NOUN -->
 - Display name: AbsolutePressureReference
 - Parent class: [PressureReference](#PressureReference)
+- Description: 
+Pressure expressed relative to absolute vacuum.
 - Definition set: Hydraulics
+- Examples:
+```dwis absoluteRef
+AbsolutePressureReference:absolutePressure
+DrillingDataPoint:annulusPressure
+annulusPressure HasPressureReferenceType absolutePressure
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[absolutePressure] -->|BelongsToClass| N0001(AbsolutePressureReference) 
+	N0002[annulusPressure] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[annulusPressure] -->|HasPressureReferenceType| N0000((absolutePressure)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?absoluteRef
+WHERE {
+	?absolutePressure rdf:type ddhub:AbsolutePressureReference .
+	?annulusPressure rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = absolutePressure
+  )
+}
+```
+This example sets annulus pressure to absolute reference.
 ## RelativePressureReference <!-- NOUN -->
 - Display name: RelativePressureReference
 - Parent class: [PressureReference](#PressureReference)
+- Description: 
+Pressure expressed relative to another reference pressure.
 - Definition set: Hydraulics
+- Examples:
+```dwis relativeRef
+RelativePressureReference:relativePressure
+DrillingDataPoint:chokePressure
+chokePressure HasPressureReferenceType relativePressure
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[relativePressure] -->|BelongsToClass| N0001(RelativePressureReference) 
+	N0002[chokePressure] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[chokePressure] -->|HasPressureReferenceType| N0000((relativePressure)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?relativeRef
+WHERE {
+	?relativePressure rdf:type ddhub:RelativePressureReference .
+	?chokePressure rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = relativePressure
+  )
+}
+```
+This example marks choke pressure as relative.
 ## GaugePressureReference <!-- NOUN -->
 - Display name: GaugePressureReference
 - Parent class: [RelativePressureReference](#RelativePressureReference)
+- Description: 
+Pressure expressed relative to atmospheric pressure.
 - Definition set: Hydraulics
+- Examples:
+```dwis gaugeRef
+GaugePressureReference:gaugePressure
+DrillingDataPoint:standpipePressure
+standpipePressure HasPressureReferenceType gaugePressure
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[gaugePressure] -->|BelongsToClass| N0001(GaugePressureReference) 
+	N0002[standpipePressure] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[standpipePressure] -->|HasPressureReferenceType| N0000((gaugePressure)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?gaugeRef
+WHERE {
+	?gaugePressure rdf:type ddhub:GaugePressureReference .
+	?standpipePressure rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = gaugePressure
+  )
+}
+```
+This example sets standpipe pressure to gauge reference.
 ## HydraulicElementState <!-- NOUN -->
 - Display name: HydraulicElementState
 - Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+Represents the state of a hydraulic element such as open/closed or connected/disconnected.
 - Definition set: Hydraulics
+- Examples:
+```dwis elementState
+HydraulicElementState:elementState
+HydraulicJunction:standpipeJunction
+standpipeJunction HasHydraulicState elementState
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[elementState] -->|BelongsToClass| N0001(HydraulicElementState) 
+	N0002[standpipeJunction] -->|BelongsToClass| N0003(HydraulicJunction) 
+	N0002[standpipeJunction] -->|HasHydraulicState| N0000((elementState)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?elementState
+WHERE {
+	?elementState rdf:type ddhub:HydraulicElementState .
+	?standpipeJunction rdf:type ddhub:HydraulicJunction .
+  FILTER (
+	?Attribute000 = elementState
+  )
+}
+```
+This example attaches a state to a junction.
 ## HydraulicConnectedState <!-- NOUN -->
 - Display name: HydraulicConnectedState
 - Parent class: [HydraulicElementState](#HydraulicElementState)
@@ -11579,59 +18175,579 @@ Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a
   - Value
     - Type: bool
     - Description: 
+- Description: 
+Boolean state indicating if two hydraulic branches are connected.
 - Definition set: Hydraulics
+- Examples:
+```dwis connectedState
+HydraulicConnectedState:connectedState
+connectedState.Value = "true"
+HydraulicJunction:standpipeJunction
+standpipeJunction HasHydraulicState connectedState
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[connectedState] -->|BelongsToClass| N0001(HydraulicConnectedState) 
+	N0000[connectedState] -->|Value| N0002(("true")) 
+	N0003[standpipeJunction] -->|BelongsToClass| N0004(HydraulicJunction) 
+	N0003[standpipeJunction] -->|HasHydraulicState| N0000((connectedState)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?connectedState
+WHERE {
+	?connectedState rdf:type ddhub:HydraulicConnectedState .
+	?connectedState ddhub:Value ?Attribute000 .
+	?standpipeJunction rdf:type ddhub:HydraulicJunction .
+  FILTER (
+	?Attribute000 = "true"
+	&& 	?Attribute001 = connectedState
+  )
+}
+```
+This example records a connected state for a junction.
 ## HydraulicLogicalElement <!-- NOUN -->
 - Display name: HydraulicLogicalElement
 - Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+Abstract element in a hydraulic network (branch, junction, tank, etc.).
 - Definition set: Hydraulics
+- Examples:
+```dwis logicalElement
+HydraulicLogicalElement:logicalElement1
+HydraulicLogicalElement:logicalElement2
+logicalElement1 IsHydraulicConnectedTo logicalElement2
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[logicalElement1] -->|BelongsToClass| N0001(HydraulicLogicalElement) 
+	N0002[logicalElement2] -->|BelongsToClass| N0001(HydraulicLogicalElement) 
+	N0000[logicalElement1] -->|IsHydraulicConnectedTo| N0002((logicalElement2)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?logicalElement
+WHERE {
+	?logicalElement1 rdf:type ddhub:HydraulicLogicalElement .
+	?logicalElement2 rdf:type ddhub:HydraulicLogicalElement .
+  FILTER (
+	?Attribute000 = logicalElement2
+  )
+}
+```
+This example shows hydraulic logical element 1 is hydraulically connected to hydraulic logical element 2.
 ## HydraulicBranch <!-- NOUN -->
 - Display name: HydraulicBranch
 - Parent class: [HydraulicLogicalElement](#HydraulicLogicalElement)
+- Description: 
+A flow path segment in the hydraulic circuit.
 - Definition set: Hydraulics
+- Examples:
+```dwis branch
+HydraulicBranch:standpipeBranch
+HydraulicNetwork:topsideNetwork
+topsideNetwork HasBranchComponent standpipeBranch
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipeBranch] -->|BelongsToClass| N0001(HydraulicBranch) 
+	N0002[topsideNetwork] -->|BelongsToClass| N0003(HydraulicNetwork) 
+	N0002[topsideNetwork] -->|HasBranchComponent| N0000((standpipeBranch)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?branch
+WHERE {
+	?standpipeBranch rdf:type ddhub:HydraulicBranch .
+	?topsideNetwork rdf:type ddhub:HydraulicNetwork .
+  FILTER (
+	?Attribute000 = standpipeBranch
+  )
+}
+```
+This example defines a standpipe branch in the topside network.
+```dwis flowRateOutProportionExample
+DynamicDrillingSignal:flowRateOutProportion
+PhysicalData:flowRateOutProportion#01
+flowRateOutProportion#01 BelongsToClass ContinuousDataType
+flowRateOutProportion#01 HasDynamicValue flowRateOutProportion
+flowRateOutProportion#01 IsOfMeasurableQuantity ProportionStandard
+MovingAverage:movingAverageFlowRateOutProportion
+flowRateOutProportion#01 IsTransformationOutput movingAverageFlowRateOutProportion
+AnnulusOutletJunction:annulusOutletJunction#01
+HydraulicBranch:outletHydraulicBranch#01
+annulusOutletJunction#01 HasDownstreamBranch outletHydraulicBranch#01
+flowRateOutProportion#01 IsAssociatedToHydraulicBranch outletHydraulicBranch#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[flowRateOutProportion] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[flowRateOutProportion#01] -->|BelongsToClass| N0003(PhysicalData) 
+	N0002[flowRateOutProportion#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[flowRateOutProportion#01] -->|HasDynamicValue| N0000((flowRateOutProportion)) 
+	N0002[flowRateOutProportion#01] -->|IsOfMeasurableQuantity| N0005((ProportionStandard)) 
+	N0006[movingAverageFlowRateOutProportion] -->|BelongsToClass| N0007(MovingAverage) 
+	N0002[flowRateOutProportion#01] -->|IsTransformationOutput| N0006((movingAverageFlowRateOutProportion)) 
+	N0008[annulusOutletJunction#01] -->|BelongsToClass| N0009(AnnulusOutletJunction) 
+	N0010[outletHydraulicBranch#01] -->|BelongsToClass| N0011(HydraulicBranch) 
+	N0008[annulusOutletJunction#01] -->|HasDownstreamBranch| N0010((outletHydraulicBranch#01)) 
+	N0002[flowRateOutProportion#01] -->|IsAssociatedToHydraulicBranch| N0010((outletHydraulicBranch#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?flowRateOutProportionExample
+WHERE {
+	?flowRateOutProportion rdf:type ddhub:DynamicDrillingSignal .
+	?flowRateOutProportion#01 rdf:type ddhub:PhysicalData .
+	?flowRateOutProportion#01 rdf:type ddhub:ContinuousDataType .
+	?movingAverageFlowRateOutProportion rdf:type ddhub:MovingAverage .
+	?annulusOutletJunction#01 rdf:type ddhub:AnnulusOutletJunction .
+	?outletHydraulicBranch#01 rdf:type ddhub:HydraulicBranch .
+  FILTER (
+	?Attribute000 = flowRateOutProportion
+	&& 	?Attribute001 = ProportionStandard
+	&& 	?Attribute002 = movingAverageFlowRateOutProportion
+	&& 	?Attribute003 = outletHydraulicBranch#01
+	&& 	?Attribute004 = outletHydraulicBranch#01
+  )
+}
+```
+This example describes flow rate proportion in the outlet hydraulic branch.
 ## Annular <!-- NOUN -->
 - Display name: Annular
 - Parent class: [HydraulicBranch](#HydraulicBranch)
+- Description: 
+A branch representing the annular space between two cylindrical elements.
 - Definition set: Hydraulics
+- Examples:
+```dwis annularBranch
+Annular:annulus
+HydraulicNetwork:downholeNetwork
+downholeNetwork HasBranchComponent annulus
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[annulus] -->|BelongsToClass| N0001(Annular) 
+	N0002[downholeNetwork] -->|BelongsToClass| N0003(HydraulicNetwork) 
+	N0002[downholeNetwork] -->|HasBranchComponent| N0000((annulus)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?annularBranch
+WHERE {
+	?annulus rdf:type ddhub:Annular .
+	?downholeNetwork rdf:type ddhub:HydraulicNetwork .
+  FILTER (
+	?Attribute000 = annulus
+  )
+}
+```
+This example adds an annular branch to a downhole network.
 ## BHAAnnular <!-- NOUN -->
 - Display name: BHAAnnular
 - Parent class: [Annular](#Annular)
+- Description: 
+Annular space around the bottom-hole assembly.
 - Definition set: Hydraulics
+- Examples:
+```dwis bhaAnnular
+BHAAnnular:bhaAnnulus
+HydraulicNetwork:downholeNetwork
+downholeNetwork HasBranchComponent bhaAnnulus
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[bhaAnnulus] -->|BelongsToClass| N0001(BHAAnnular) 
+	N0002[downholeNetwork] -->|BelongsToClass| N0003(HydraulicNetwork) 
+	N0002[downholeNetwork] -->|HasBranchComponent| N0000((bhaAnnulus)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?bhaAnnular
+WHERE {
+	?bhaAnnulus rdf:type ddhub:BHAAnnular .
+	?downholeNetwork rdf:type ddhub:HydraulicNetwork .
+  FILTER (
+	?Attribute000 = bhaAnnulus
+  )
+}
+```
+This example represents the BHA annulus in the downhole network.
+```dwis downholeGammaRayExample
+DynamicDrillingSignal:downholeGammaRay
+PhysicalData:downholeGammaRay#01
+downholeGammaRay#01 BelongsToClass ContinuousDataType
+downholeGammaRay#01 HasDynamicValue downholeGammaRay
+downholeGammaRay#01 IsOfMeasurableQuantity GammaRayIndexDrilling
+MovingAverage:movingAverageDownholeGammaRay
+downholeGammaRay#01 IsTransformationOutput movingAverageDownholeGammaRay
+BHAAnnular:bhaAnnulus
+downholeGammaRay#01 IsPhysicallyLocatedAt bhaAnnulus
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[downholeGammaRay] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[downholeGammaRay#01] -->|BelongsToClass| N0003(PhysicalData) 
+	N0002[downholeGammaRay#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[downholeGammaRay#01] -->|HasDynamicValue| N0000((downholeGammaRay)) 
+	N0002[downholeGammaRay#01] -->|IsOfMeasurableQuantity| N0005((GammaRayIndexDrilling)) 
+	N0006[movingAverageDownholeGammaRay] -->|BelongsToClass| N0007(MovingAverage) 
+	N0002[downholeGammaRay#01] -->|IsTransformationOutput| N0006((movingAverageDownholeGammaRay)) 
+	N0008[bhaAnnulus] -->|BelongsToClass| N0009(BHAAnnular) 
+	N0002[downholeGammaRay#01] -->|IsPhysicallyLocatedAt| N0008((bhaAnnulus)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?downholeGammaRayExample
+WHERE {
+	?downholeGammaRay rdf:type ddhub:DynamicDrillingSignal .
+	?downholeGammaRay#01 rdf:type ddhub:PhysicalData .
+	?downholeGammaRay#01 rdf:type ddhub:ContinuousDataType .
+	?movingAverageDownholeGammaRay rdf:type ddhub:MovingAverage .
+	?bhaAnnulus rdf:type ddhub:BHAAnnular .
+  FILTER (
+	?Attribute000 = downholeGammaRay
+	&& 	?Attribute001 = GammaRayIndexDrilling
+	&& 	?Attribute002 = movingAverageDownholeGammaRay
+	&& 	?Attribute003 = bhaAnnulus
+  )
+}
+```
+This example describes downhole gamma ray located at the BHA annulus.
 ## DrillPipesAnnular <!-- NOUN -->
 - Display name: DrillPipesAnnular
 - Parent class: [Annular](#Annular)
+- Description: 
+Annular space around the drill pipe string.
 - Definition set: Hydraulics
+- Examples:
+```dwis dpAnnular
+DrillPipesAnnular:dpAnnulus
+HydraulicNetwork:downholeNetwork
+downholeNetwork HasBranchComponent dpAnnulus
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[dpAnnulus] -->|BelongsToClass| N0001(DrillPipesAnnular) 
+	N0002[downholeNetwork] -->|BelongsToClass| N0003(HydraulicNetwork) 
+	N0002[downholeNetwork] -->|HasBranchComponent| N0000((dpAnnulus)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?dpAnnular
+WHERE {
+	?dpAnnulus rdf:type ddhub:DrillPipesAnnular .
+	?downholeNetwork rdf:type ddhub:HydraulicNetwork .
+  FILTER (
+	?Attribute000 = dpAnnulus
+  )
+}
+```
+This example represents the drill pipe annulus.
 ## OpenChannel <!-- NOUN -->
 - Display name: OpenChannel
 - Parent class: [HydraulicBranch](#HydraulicBranch)
+- Description: 
+A branch representing an open-channel flow path.
 - Definition set: Hydraulics
+- Examples:
+```dwis openChannel
+OpenChannel:openChannel
+HydraulicNetwork:surfaceNetwork
+surfaceNetwork HasBranchComponent openChannel
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[openChannel] -->|BelongsToClass| N0001(OpenChannel) 
+	N0002[surfaceNetwork] -->|BelongsToClass| N0003(HydraulicNetwork) 
+	N0002[surfaceNetwork] -->|HasBranchComponent| N0000((openChannel)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?openChannel
+WHERE {
+	?openChannel rdf:type ddhub:OpenChannel .
+	?surfaceNetwork rdf:type ddhub:HydraulicNetwork .
+  FILTER (
+	?Attribute000 = openChannel
+  )
+}
+```
+This example adds an open channel to a surface network.
 ## RectangularChannel <!-- NOUN -->
 - Display name: RectangularChannel
 - Parent class: [OpenChannel](#OpenChannel)
+- Description: 
+An open channel with a rectangular cross-section.
 - Definition set: Hydraulics
+- Examples:
+```dwis rectangularChannel
+RectangularChannel:rectChannel
+HydraulicNetwork:surfaceNetwork
+surfaceNetwork HasBranchComponent rectChannel
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rectChannel] -->|BelongsToClass| N0001(RectangularChannel) 
+	N0002[surfaceNetwork] -->|BelongsToClass| N0003(HydraulicNetwork) 
+	N0002[surfaceNetwork] -->|HasBranchComponent| N0000((rectChannel)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rectangularChannel
+WHERE {
+	?rectChannel rdf:type ddhub:RectangularChannel .
+	?surfaceNetwork rdf:type ddhub:HydraulicNetwork .
+  FILTER (
+	?Attribute000 = rectChannel
+  )
+}
+```
+This example defines a rectangular channel branch.
 ## SemiCircularChannel <!-- NOUN -->
 - Display name: SemiCircularChannel
 - Parent class: [OpenChannel](#OpenChannel)
+- Description: 
+An open channel with a semi-circular cross-section.
 - Definition set: Hydraulics
+- Examples:
+```dwis semiCircularChannel
+SemiCircularChannel:semiChannel
+HydraulicNetwork:surfaceNetwork
+surfaceNetwork HasBranchComponent semiChannel
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[semiChannel] -->|BelongsToClass| N0001(SemiCircularChannel) 
+	N0002[surfaceNetwork] -->|BelongsToClass| N0003(HydraulicNetwork) 
+	N0002[surfaceNetwork] -->|HasBranchComponent| N0000((semiChannel)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?semiCircularChannel
+WHERE {
+	?semiChannel rdf:type ddhub:SemiCircularChannel .
+	?surfaceNetwork rdf:type ddhub:HydraulicNetwork .
+  FILTER (
+	?Attribute000 = semiChannel
+  )
+}
+```
+This example defines a semi-circular channel branch.
 ## Pipe <!-- NOUN -->
 - Display name: Pipe
 - Parent class: [HydraulicBranch](#HydraulicBranch)
+- Description: 
+A closed conduit branch used to transport fluid.
 - Definition set: Hydraulics
+- Examples:
+```dwis pipeBranch
+Pipe:standpipe
+HydraulicNetwork:surfaceNetwork
+surfaceNetwork HasBranchComponent standpipe
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipe] -->|BelongsToClass| N0001(Pipe) 
+	N0002[surfaceNetwork] -->|BelongsToClass| N0003(HydraulicNetwork) 
+	N0002[surfaceNetwork] -->|HasBranchComponent| N0000((standpipe)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pipeBranch
+WHERE {
+	?standpipe rdf:type ddhub:Pipe .
+	?surfaceNetwork rdf:type ddhub:HydraulicNetwork .
+  FILTER (
+	?Attribute000 = standpipe
+  )
+}
+```
+This example adds a standpipe branch.
 ## BHAInner <!-- NOUN -->
 - Display name: BHAInner
 - Parent class: [Pipe](#Pipe)
+- Description: 
+Inner flow path through the bottom-hole assembly.
 - Definition set: Hydraulics
+- Examples:
+```dwis bhaInner
+BHAInner:bhaInner
+HydraulicNetwork:downholeNetwork
+downholeNetwork HasBranchComponent bhaInner
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[bhaInner] -->|BelongsToClass| N0001(BHAInner) 
+	N0002[downholeNetwork] -->|BelongsToClass| N0003(HydraulicNetwork) 
+	N0002[downholeNetwork] -->|HasBranchComponent| N0000((bhaInner)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?bhaInner
+WHERE {
+	?bhaInner rdf:type ddhub:BHAInner .
+	?downholeNetwork rdf:type ddhub:HydraulicNetwork .
+  FILTER (
+	?Attribute000 = bhaInner
+  )
+}
+```
+This example represents the inner BHA flow path.
 ## DrillPipesInner <!-- NOUN -->
 - Display name: DrillPipesInner
 - Parent class: [Pipe](#Pipe)
+- Description: 
+Inner flow path through the drill pipes.
 - Definition set: Hydraulics
+- Examples:
+```dwis dpInner
+DrillPipesInner:dpInner
+HydraulicNetwork:downholeNetwork
+downholeNetwork HasBranchComponent dpInner
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[dpInner] -->|BelongsToClass| N0001(DrillPipesInner) 
+	N0002[downholeNetwork] -->|BelongsToClass| N0003(HydraulicNetwork) 
+	N0002[downholeNetwork] -->|HasBranchComponent| N0000((dpInner)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?dpInner
+WHERE {
+	?dpInner rdf:type ddhub:DrillPipesInner .
+	?downholeNetwork rdf:type ddhub:HydraulicNetwork .
+  FILTER (
+	?Attribute000 = dpInner
+  )
+}
+```
+This example represents the drill pipe inner flow path.
 ## OpenHole <!-- NOUN -->
 - Display name: OpenHole
 - Parent class: [Pipe](#Pipe)
+- Description: 
+Flow path within the uncased borehole section.
 - Definition set: Hydraulics
+- Examples:
+```dwis openHoleBranch
+OpenHole:openHole
+HydraulicNetwork:downholeNetwork
+downholeNetwork HasBranchComponent openHole
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[openHole] -->|BelongsToClass| N0001(OpenHole) 
+	N0002[downholeNetwork] -->|BelongsToClass| N0003(HydraulicNetwork) 
+	N0002[downholeNetwork] -->|HasBranchComponent| N0000((openHole)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?openHoleBranch
+WHERE {
+	?openHole rdf:type ddhub:OpenHole .
+	?downholeNetwork rdf:type ddhub:HydraulicNetwork .
+  FILTER (
+	?Attribute000 = openHole
+  )
+}
+```
+This example models the open hole as a hydraulic branch.
 ## ReturnFlowLine <!-- NOUN -->
 - Display name: ReturnFlowLine
 - Parent class: [Pipe](#Pipe)
+- Description: 
+Surface return line carrying mud back to tanks.
 - Definition set: Hydraulics
+- Examples:
+```dwis returnLine
+ReturnFlowLine:returnLine
+HydraulicNetwork:surfaceNetwork
+surfaceNetwork HasBranchComponent returnLine
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[returnLine] -->|BelongsToClass| N0001(ReturnFlowLine) 
+	N0002[surfaceNetwork] -->|BelongsToClass| N0003(HydraulicNetwork) 
+	N0002[surfaceNetwork] -->|HasBranchComponent| N0000((returnLine)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?returnLine
+WHERE {
+	?returnLine rdf:type ddhub:ReturnFlowLine .
+	?surfaceNetwork rdf:type ddhub:HydraulicNetwork .
+  FILTER (
+	?Attribute000 = returnLine
+  )
+}
+```
+This example adds a return flow line to the surface network.
 ## HydraulicJunction <!-- NOUN -->
 - Display name: HydraulicJunction
 - Parent class: [HydraulicLogicalElement](#HydraulicLogicalElement)
@@ -11645,143 +18761,2599 @@ Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a
 - Specialization:
   - LeftToRight = true
   - RightToLeft = true
+- Description: 
+Connection point where branches meet and flow can pass based on allowed directions.
 - Definition set: Hydraulics
-## Tank <!-- NOUN -->
-- Display name: Tank
+- Examples:
+```dwis junction
+HydraulicJunction:flowJunction
+HydraulicBranch:standpipe
+HydraulicBranch:returnLine
+flowJunction HasUpstreamBranch standpipe
+flowJunction HasDownstreamBranch returnLine
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[flowJunction] -->|BelongsToClass| N0001(HydraulicJunction) 
+	N0002[standpipe] -->|BelongsToClass| N0003(HydraulicBranch) 
+	N0004[returnLine] -->|BelongsToClass| N0003(HydraulicBranch) 
+	N0000[flowJunction] -->|HasUpstreamBranch| N0002((standpipe)) 
+	N0000[flowJunction] -->|HasDownstreamBranch| N0004((returnLine)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?junction
+WHERE {
+	?flowJunction rdf:type ddhub:HydraulicJunction .
+	?standpipe rdf:type ddhub:HydraulicBranch .
+	?returnLine rdf:type ddhub:HydraulicBranch .
+  FILTER (
+	?Attribute000 = standpipe
+	&& 	?Attribute001 = returnLine
+  )
+}
+```
+This example defines a junction connecting standpipe and return line.
+## SwivelLogical <!-- NOUN -->
+- Display name: Swivel Logical
 - Parent class: [HydraulicLogicalElement](#HydraulicLogicalElement)
+- Description: 
+A logical representation of a swivel like the one used for a top-drive or with a kelly.
 - Definition set: Hydraulics
+- Examples:
+```dwis SwivelLogicalExample
+SwivelLogical:swivelLogical
+TopsideHydraulicNetwork:surfaceNetwork
+surfaceNetwork HasLogicalElementComponent swivelLogical
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[swivelLogical] -->|BelongsToClass| N0001(SwivelLogical) 
+	N0002[surfaceNetwork] -->|BelongsToClass| N0003(TopsideHydraulicNetwork) 
+	N0002[surfaceNetwork] -->|HasLogicalElementComponent| N0000((swivelLogical)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?SwivelLogicalExample
+WHERE {
+	?swivelLogical rdf:type ddhub:SwivelLogical .
+	?surfaceNetwork rdf:type ddhub:TopsideHydraulicNetwork .
+  FILTER (
+	?Attribute000 = swivelLogical
+  )
+}
+```
+This example represents a swivel logical element in the surface network.
+## FlowLineLogical <!-- NOUN -->
+- Display name: Flow Line Logical
+- Parent class: [HydraulicLogicalElement](#HydraulicLogicalElement)
+- Description: 
+A logical representation of a flow line.
+- Definition set: Hydraulics
+- Examples:
+```dwis FlowLineLogicalExample
+FlowLineLogical:flowLineLogical
+TopsideHydraulicNetwork:surfaceNetwork
+surfaceNetwork HasLogicalElementComponent flowLineLogical
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[flowLineLogical] -->|BelongsToClass| N0001(FlowLineLogical) 
+	N0002[surfaceNetwork] -->|BelongsToClass| N0003(TopsideHydraulicNetwork) 
+	N0002[surfaceNetwork] -->|HasLogicalElementComponent| N0000((flowLineLogical)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?FlowLineLogicalExample
+WHERE {
+	?flowLineLogical rdf:type ddhub:FlowLineLogical .
+	?surfaceNetwork rdf:type ddhub:TopsideHydraulicNetwork .
+  FILTER (
+	?Attribute000 = flowLineLogical
+  )
+}
+```
+This example represents a flow-line logical element in the surface network.
+## SolidSeparatorLogical <!-- NOUN -->
+- Display name: Solid Separator
+- Parent class: [HydraulicLogicalElement](#HydraulicLogicalElement)
+- Description: 
+A logical element to separate solid components from the drilling fluid within the hydraulic system.
+- Definition set: Hydraulics
+- Examples:
+```dwis SolidSeparatorLogicalExample
+SolidSeparatorLogical:SolidSeparatorLogical
+TopsideHydraulicNetwork:surfaceNetwork
+surfaceNetwork HasLogicalElementComponent SolidSeparatorLogical
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SolidSeparatorLogical] -->|BelongsToClass| N0000(SolidSeparatorLogical) 
+	N0001[surfaceNetwork] -->|BelongsToClass| N0002(TopsideHydraulicNetwork) 
+	N0001[surfaceNetwork] -->|HasLogicalElementComponent| N0000((SolidSeparatorLogical)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?SolidSeparatorLogicalExample
+WHERE {
+	?SolidSeparatorLogical rdf:type ddhub:SolidSeparatorLogical .
+	?surfaceNetwork rdf:type ddhub:TopsideHydraulicNetwork .
+  FILTER (
+	?Attribute000 = SolidSeparatorLogical
+  )
+}
+```
+This example represents a solid separator logical element in the surface network.
+## CuttingSeparatorLogical <!-- NOUN -->
+- Display name: Cutting Separator
+- Parent class: [SolidSeparatorLogical](#SolidSeparatorLogical)
+- Description: 
+A logical element to separate cuttings from the drilling fluid within the hydraulic system.
+- Definition set: Hydraulics
+- Examples:
+```dwis CuttingSeparatorLogicalExample
+CuttingSeparatorLogical:CuttingSeparatorLogical
+TopsideHydraulicNetwork:surfaceNetwork
+surfaceNetwork HasLogicalElementComponent CuttingSeparatorLogical
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CuttingSeparatorLogical] -->|BelongsToClass| N0000(CuttingSeparatorLogical) 
+	N0001[surfaceNetwork] -->|BelongsToClass| N0002(TopsideHydraulicNetwork) 
+	N0001[surfaceNetwork] -->|HasLogicalElementComponent| N0000((CuttingSeparatorLogical)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?CuttingSeparatorLogicalExample
+WHERE {
+	?CuttingSeparatorLogical rdf:type ddhub:CuttingSeparatorLogical .
+	?surfaceNetwork rdf:type ddhub:TopsideHydraulicNetwork .
+  FILTER (
+	?Attribute000 = CuttingSeparatorLogical
+  )
+}
+```
+This example represents a cuttings separator, i.e., a shale shaker, logical element in the surface network.
+## SandSeparatorLogical <!-- NOUN -->
+- Display name: Sand Separator
+- Parent class: [SolidSeparatorLogical](#SolidSeparatorLogical)
+- Description: 
+A logical element to separate sand particles from the drilling fluid within the hydraulic system.
+- Definition set: Hydraulics
+- Examples:
+```dwis SandSeparatorLogicalExample
+SandSeparatorLogical:SandSeparatorLogical
+TopsideHydraulicNetwork:surfaceNetwork
+surfaceNetwork HasLogicalElementComponent SandSeparatorLogical
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SandSeparatorLogical] -->|BelongsToClass| N0000(SandSeparatorLogical) 
+	N0001[surfaceNetwork] -->|BelongsToClass| N0002(TopsideHydraulicNetwork) 
+	N0001[surfaceNetwork] -->|HasLogicalElementComponent| N0000((SandSeparatorLogical)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?SandSeparatorLogicalExample
+WHERE {
+	?SandSeparatorLogical rdf:type ddhub:SandSeparatorLogical .
+	?surfaceNetwork rdf:type ddhub:TopsideHydraulicNetwork .
+  FILTER (
+	?Attribute000 = SandSeparatorLogical
+  )
+}
+```
+This example represents a sand separator, i.e., a desander, logical element in the surface network.
+## SiltSeparatorLogical <!-- NOUN -->
+- Display name: Silt Separator
+- Parent class: [SolidSeparatorLogical](#SolidSeparatorLogical)
+- Description: 
+A logical element to separate silt particles from the drilling fluid within the hydraulic system.
+- Definition set: Hydraulics
+- Examples:
+```dwis SiltSeparatorLogicalExample
+SiltSeparatorLogical:SiltSeparatorLogical
+TopsideHydraulicNetwork:surfaceNetwork
+surfaceNetwork HasLogicalElementComponent SiltSeparatorLogical
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SiltSeparatorLogical] -->|BelongsToClass| N0000(SiltSeparatorLogical) 
+	N0001[surfaceNetwork] -->|BelongsToClass| N0002(TopsideHydraulicNetwork) 
+	N0001[surfaceNetwork] -->|HasLogicalElementComponent| N0000((SiltSeparatorLogical)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?SiltSeparatorLogicalExample
+WHERE {
+	?SiltSeparatorLogical rdf:type ddhub:SiltSeparatorLogical .
+	?surfaceNetwork rdf:type ddhub:TopsideHydraulicNetwork .
+  FILTER (
+	?Attribute000 = SiltSeparatorLogical
+  )
+}
+```
+This example represents a sand separator, i.e., a desander, logical element in the surface network.
+## TankLogical <!-- NOUN -->
+- Display name: TankLogical
+- Parent class: [HydraulicLogicalElement](#HydraulicLogicalElement)
+- Description: 
+A storage element for drilling fluid within the hydraulic system.
+- Definition set: Hydraulics
+- Examples:
+```dwis mudTankLogicalExample
+TankLogical:mudTankLogical
+TopsideHydraulicNetwork:surfaceNetwork
+surfaceNetwork HasLogicalElementComponent mudTankLogical
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[mudTankLogical] -->|BelongsToClass| N0001(TankLogical) 
+	N0002[surfaceNetwork] -->|BelongsToClass| N0003(TopsideHydraulicNetwork) 
+	N0002[surfaceNetwork] -->|HasLogicalElementComponent| N0000((mudTankLogical)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?mudTankLogicalExample
+WHERE {
+	?mudTankLogical rdf:type ddhub:TankLogical .
+	?surfaceNetwork rdf:type ddhub:TopsideHydraulicNetwork .
+  FILTER (
+	?Attribute000 = mudTankLogical
+  )
+}
+```
+This example represents a mud tank in the surface network.
+## ActivePitLogical <!-- NOUN -->
+- Display name: Active Pit
+- Parent class: [TankLogical](#TankLogical)
+- Description: 
+The active pit that is used during the drilling operation.
+- Definition set: Hydraulics
+- Examples:
+```dwis ActivePitLogicalExample
+ActivePitLogical:ActivePitLogical
+TopsideHydraulicNetwork:topsideHydraulicNetwork
+topsideHydraulicNetwork HasLogicalElementComponent ActivePitLogical
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ActivePitLogical] -->|BelongsToClass| N0000(ActivePitLogical) 
+	N0001[topsideHydraulicNetwork] -->|BelongsToClass| N0002(TopsideHydraulicNetwork) 
+	N0001[topsideHydraulicNetwork] -->|HasLogicalElementComponent| N0000((ActivePitLogical)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ActivePitLogicalExample
+WHERE {
+	?ActivePitLogical rdf:type ddhub:ActivePitLogical .
+	?topsideHydraulicNetwork rdf:type ddhub:TopsideHydraulicNetwork .
+  FILTER (
+	?Attribute000 = ActivePitLogical
+  )
+}
+```
+This example indicates that the top side hydraulic network has an active pit.
+## ReservePitLogical <!-- NOUN -->
+- Display name: Reserve Pit
+- Parent class: [TankLogical](#TankLogical)
+- Description: 
+The reserve pit that is used during the drilling operation.
+- Definition set: Hydraulics
+- Examples:
+```dwis ReservePitLogicalExample
+ReservePitLogical:ReservePitLogical
+TopsideHydraulicNetwork:topsideHydraulicNetwork
+topsideHydraulicNetwork HasLogicalElementComponent ReservePitLogical
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ReservePitLogical] -->|BelongsToClass| N0000(ReservePitLogical) 
+	N0001[topsideHydraulicNetwork] -->|BelongsToClass| N0002(TopsideHydraulicNetwork) 
+	N0001[topsideHydraulicNetwork] -->|HasLogicalElementComponent| N0000((ReservePitLogical)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ReservePitLogicalExample
+WHERE {
+	?ReservePitLogical rdf:type ddhub:ReservePitLogical .
+	?topsideHydraulicNetwork rdf:type ddhub:TopsideHydraulicNetwork .
+  FILTER (
+	?Attribute000 = ReservePitLogical
+  )
+}
+```
+This example indicates that the top side hydraulic network has an reserve pit.
+## SlugPitLogical <!-- NOUN -->
+- Display name: Slug Pit
+- Parent class: [TankLogical](#TankLogical)
+- Description: 
+The slug pit that is used during the drilling operation.
+- Definition set: Hydraulics
+- Examples:
+```dwis SlugPitLogicalExample
+SlugPitLogical:SlugPitLogical
+TopsideHydraulicNetwork:topsideHydraulicNetwork
+topsideHydraulicNetwork HasLogicalElementComponent SlugPitLogical
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SlugPitLogical] -->|BelongsToClass| N0000(SlugPitLogical) 
+	N0001[topsideHydraulicNetwork] -->|BelongsToClass| N0002(TopsideHydraulicNetwork) 
+	N0001[topsideHydraulicNetwork] -->|HasLogicalElementComponent| N0000((SlugPitLogical)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?SlugPitLogicalExample
+WHERE {
+	?SlugPitLogical rdf:type ddhub:SlugPitLogical .
+	?topsideHydraulicNetwork rdf:type ddhub:TopsideHydraulicNetwork .
+  FILTER (
+	?Attribute000 = SlugPitLogical
+  )
+}
+```
+This example indicates that the top side hydraulic network has an slug pit.
+## TripTankLogical <!-- NOUN -->
+- Display name: Trip-tank
+- Parent class: [TankLogical](#TankLogical)
+- Description: 
+The trip TankLogical that is used during the drilling operation.
+- Definition set: Hydraulics
+- Examples:
+```dwis TripTankLogicalExample
+TripTankLogical:TripTankLogical
+TopsideHydraulicNetwork:topsideHydraulicNetwork
+topsideHydraulicNetwork HasLogicalElementComponent TripTankLogical
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[TripTankLogical] -->|BelongsToClass| N0000(TripTankLogical) 
+	N0001[topsideHydraulicNetwork] -->|BelongsToClass| N0002(TopsideHydraulicNetwork) 
+	N0001[topsideHydraulicNetwork] -->|HasLogicalElementComponent| N0000((TripTankLogical)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?TripTankLogicalExample
+WHERE {
+	?TripTankLogical rdf:type ddhub:TripTankLogical .
+	?topsideHydraulicNetwork rdf:type ddhub:TopsideHydraulicNetwork .
+  FILTER (
+	?Attribute000 = TripTankLogical
+  )
+}
+```
+This example indicates that the top side hydraulic network has an trip tank.
 ## MudMixing <!-- NOUN -->
 - Display name: MudMixing
 - Parent class: [HydraulicJunction](#HydraulicJunction)
+- Description: 
+Junction where fluids are blended to create or condition drilling mud.
 - Definition set: Hydraulics
+- Examples:
+```dwis mixingJunction
+MudMixing:mudMixingJunction
+HydraulicBranch:returnLine
+HydraulicBranch:mudTankInlet
+mudMixingJunction HasLeftBranch returnLine
+mudMixingJunction HasRightBranch mudTankInlet
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[mudMixingJunction] -->|BelongsToClass| N0001(MudMixing) 
+	N0002[returnLine] -->|BelongsToClass| N0003(HydraulicBranch) 
+	N0004[mudTankInlet] -->|BelongsToClass| N0003(HydraulicBranch) 
+	N0000[mudMixingJunction] -->|HasLeftBranch| N0002((returnLine)) 
+	N0000[mudMixingJunction] -->|HasRightBranch| N0004((mudTankInlet)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?mixingJunction
+WHERE {
+	?mudMixingJunction rdf:type ddhub:MudMixing .
+	?returnLine rdf:type ddhub:HydraulicBranch .
+	?mudTankInlet rdf:type ddhub:HydraulicBranch .
+  FILTER (
+	?Attribute000 = returnLine
+	&& 	?Attribute001 = mudTankInlet
+  )
+}
+```
+This example shows a mud mixing junction between return line and tank inlet.
+## TopOfStringJunction <!-- NOUN -->
+- Display name: Top Of String Junction
+- Parent class: [HydraulicJunction](#HydraulicJunction)
+- Description: 
+the hydraulic junction at the top of the drill string where flow can enter the string.
+- Definition set: Hydraulics
+- Examples:
+```dwis TopOfStringJunctionExample
+TopOfStringJunction:topOfStringJunction
+HydraulicBranch:inletBranch
+topOfStringJunction HasUpstreamBranch inletBranch
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[topOfStringJunction] -->|BelongsToClass| N0001(TopOfStringJunction) 
+	N0002[inletBranch] -->|BelongsToClass| N0003(HydraulicBranch) 
+	N0000[topOfStringJunction] -->|HasUpstreamBranch| N0002((inletBranch)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?TopOfStringJunctionExample
+WHERE {
+	?topOfStringJunction rdf:type ddhub:TopOfStringJunction .
+	?inletBranch rdf:type ddhub:HydraulicBranch .
+  FILTER (
+	?Attribute000 = inletBranch
+  )
+}
+```
+This example shows top of string junction with an inlet branch.
+```dwis densityInExample
+DynamicDrillingSignal:densityIn
+PhysicalData:densityIn#01
+densityIn#01 BelongsToClass ContinuousDataType
+densityIn#01 HasDynamicValue densityIn
+densityIn#01 IsOfMeasurableQuantity MassDensityDrilling
+MovingAverage:movingAverageDensityIn
+densityIn#01 IsTransformationOutput movingAverageDensityIn
+TopOfStringJunction:topOfStringJunction#01
+HydraulicBranch:inletHydraulicBranch#01
+topOfStringJunction#01 HasUpstreamBranch inletHydraulicBranch#01
+densityIn#01 IsAssociatedToHydraulicBranch inletHydraulicBranch#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[densityIn] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[densityIn#01] -->|BelongsToClass| N0003(PhysicalData) 
+	N0002[densityIn#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[densityIn#01] -->|HasDynamicValue| N0000((densityIn)) 
+	N0002[densityIn#01] -->|IsOfMeasurableQuantity| N0005((MassDensityDrilling)) 
+	N0006[movingAverageDensityIn] -->|BelongsToClass| N0007(MovingAverage) 
+	N0002[densityIn#01] -->|IsTransformationOutput| N0006((movingAverageDensityIn)) 
+	N0008[topOfStringJunction#01] -->|BelongsToClass| N0009(TopOfStringJunction) 
+	N0010[inletHydraulicBranch#01] -->|BelongsToClass| N0011(HydraulicBranch) 
+	N0008[topOfStringJunction#01] -->|HasUpstreamBranch| N0010((inletHydraulicBranch#01)) 
+	N0002[densityIn#01] -->|IsAssociatedToHydraulicBranch| N0010((inletHydraulicBranch#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?densityInExample
+WHERE {
+	?densityIn rdf:type ddhub:DynamicDrillingSignal .
+	?densityIn#01 rdf:type ddhub:PhysicalData .
+	?densityIn#01 rdf:type ddhub:ContinuousDataType .
+	?movingAverageDensityIn rdf:type ddhub:MovingAverage .
+	?topOfStringJunction#01 rdf:type ddhub:TopOfStringJunction .
+	?inletHydraulicBranch#01 rdf:type ddhub:HydraulicBranch .
+  FILTER (
+	?Attribute000 = densityIn
+	&& 	?Attribute001 = MassDensityDrilling
+	&& 	?Attribute002 = movingAverageDensityIn
+	&& 	?Attribute003 = inletHydraulicBranch#01
+	&& 	?Attribute004 = inletHydraulicBranch#01
+  )
+}
+```
+This example describes the density of the fluid entering the drill string.
+## AnnulusOutletJunction <!-- NOUN -->
+- Display name: Annulus Outlet Junction
+- Parent class: [HydraulicJunction](#HydraulicJunction)
+- Description: 
+the hydraulic junction at the end of the annulus where flow can exit the annulus.
+- Definition set: Hydraulics
+- Examples:
+```dwis AnnulusOutletJunctionExample
+AnnulusOutletJunction:annulusOutletJunction
+HydraulicBranch:outletBranch
+annulusOutletJunction HasDownstreamBranch outletBranch
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[annulusOutletJunction] -->|BelongsToClass| N0001(AnnulusOutletJunction) 
+	N0002[outletBranch] -->|BelongsToClass| N0003(HydraulicBranch) 
+	N0000[annulusOutletJunction] -->|HasDownstreamBranch| N0002((outletBranch)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?AnnulusOutletJunctionExample
+WHERE {
+	?annulusOutletJunction rdf:type ddhub:AnnulusOutletJunction .
+	?outletBranch rdf:type ddhub:HydraulicBranch .
+  FILTER (
+	?Attribute000 = outletBranch
+  )
+}
+```
+This example shows annulus outlet junction with an outlet branch.
+```dwis densityOutExample
+DynamicDrillingSignal:densityOut
+PhysicalData:densityOut#01
+densityOut#01 BelongsToClass ContinuousDataType
+densityOut#01 HasDynamicValue densityOut
+densityOut#01 IsOfMeasurableQuantity MassDensityDrilling
+MovingAverage:movingAverageDensityOut
+densityOut#01 IsTransformationOutput movingAverageDensityOut
+ReturnFlowLine:returnFlowLine#01
+densityOut#01 IsPhysicallyLocatedAt returnFlowLine#01
+AnnulusOutletJunction:annulusOutletJunction#01
+HydraulicBranch:outletHydraulicBranch#01
+annulusOutletJunction#01 HasDownstreamBranch outletHydraulicBranch#01
+densityOut#01 IsAssociatedToHydraulicBranch outletHydraulicBranch#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[densityOut] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[densityOut#01] -->|BelongsToClass| N0003(PhysicalData) 
+	N0002[densityOut#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[densityOut#01] -->|HasDynamicValue| N0000((densityOut)) 
+	N0002[densityOut#01] -->|IsOfMeasurableQuantity| N0005((MassDensityDrilling)) 
+	N0006[movingAverageDensityOut] -->|BelongsToClass| N0007(MovingAverage) 
+	N0002[densityOut#01] -->|IsTransformationOutput| N0006((movingAverageDensityOut)) 
+	N0008[returnFlowLine#01] -->|BelongsToClass| N0009(ReturnFlowLine) 
+	N0002[densityOut#01] -->|IsPhysicallyLocatedAt| N0008((returnFlowLine#01)) 
+	N0010[annulusOutletJunction#01] -->|BelongsToClass| N0011(AnnulusOutletJunction) 
+	N0012[outletHydraulicBranch#01] -->|BelongsToClass| N0013(HydraulicBranch) 
+	N0010[annulusOutletJunction#01] -->|HasDownstreamBranch| N0012((outletHydraulicBranch#01)) 
+	N0002[densityOut#01] -->|IsAssociatedToHydraulicBranch| N0012((outletHydraulicBranch#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?densityOutExample
+WHERE {
+	?densityOut rdf:type ddhub:DynamicDrillingSignal .
+	?densityOut#01 rdf:type ddhub:PhysicalData .
+	?densityOut#01 rdf:type ddhub:ContinuousDataType .
+	?movingAverageDensityOut rdf:type ddhub:MovingAverage .
+	?returnFlowLine#01 rdf:type ddhub:ReturnFlowLine .
+	?annulusOutletJunction#01 rdf:type ddhub:AnnulusOutletJunction .
+	?outletHydraulicBranch#01 rdf:type ddhub:HydraulicBranch .
+  FILTER (
+	?Attribute000 = densityOut
+	&& 	?Attribute001 = MassDensityDrilling
+	&& 	?Attribute002 = movingAverageDensityOut
+	&& 	?Attribute003 = returnFlowLine#01
+	&& 	?Attribute004 = outletHydraulicBranch#01
+	&& 	?Attribute005 = outletHydraulicBranch#01
+  )
+}
+```
+This example describes the density of the fluid exiting the annulus.
 ## HydraulicNetwork <!-- NOUN -->
 - Display name: HydraulicNetwork
 - Parent class: [HydraulicLogicalElement](#HydraulicLogicalElement)
+- Description: 
+A collection of hydraulic elements representing a portion of the circulation system.
 - Definition set: Hydraulics
+- Examples:
+```dwis HydraulicNetworkExample
+HydraulicNetwork:overallNetwork
+TopsideHydraulicNetwork:topsideNetwork
+DownholeHydraulicNetwork:downholeNetwork
+topsideNetwork IsASubHydraulicNetwork overallNetwork
+downholeNetwork IsASubHydraulicNetwork overallNetwork
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[overallNetwork] -->|BelongsToClass| N0001(HydraulicNetwork) 
+	N0002[topsideNetwork] -->|BelongsToClass| N0003(TopsideHydraulicNetwork) 
+	N0004[downholeNetwork] -->|BelongsToClass| N0005(DownholeHydraulicNetwork) 
+	N0002[topsideNetwork] -->|IsASubHydraulicNetwork| N0000((overallNetwork)) 
+	N0004[downholeNetwork] -->|IsASubHydraulicNetwork| N0000((overallNetwork)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?HydraulicNetworkExample
+WHERE {
+	?overallNetwork rdf:type ddhub:HydraulicNetwork .
+	?topsideNetwork rdf:type ddhub:TopsideHydraulicNetwork .
+	?downholeNetwork rdf:type ddhub:DownholeHydraulicNetwork .
+  FILTER (
+	?Attribute000 = overallNetwork
+	&& 	?Attribute001 = overallNetwork
+  )
+}
+```
+This example defines a surface hydraulic network.
 ## DownholeHydraulicNetwork <!-- NOUN -->
 - Display name: DownholeHydraulicNetwork
 - Parent class: [HydraulicNetwork](#HydraulicNetwork)
+- Description: 
+Hydraulic network representing downhole flow paths.
 - Definition set: Hydraulics
+- Examples:
+```dwis DownholeHydraulicNetworkExample
+DownholeHydraulicNetwork:downholeNetwork
+Annular:annularBranch
+downholeNetwork HasBranchComponent annularBranch
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[downholeNetwork] -->|BelongsToClass| N0001(DownholeHydraulicNetwork) 
+	N0002[annularBranch] -->|BelongsToClass| N0003(Annular) 
+	N0000[downholeNetwork] -->|HasBranchComponent| N0002((annularBranch)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?DownholeHydraulicNetworkExample
+WHERE {
+	?downholeNetwork rdf:type ddhub:DownholeHydraulicNetwork .
+	?annularBranch rdf:type ddhub:Annular .
+  FILTER (
+	?Attribute000 = annularBranch
+  )
+}
+```
+This example identifies the downhole portion of the network.
 ## TopsideHydraulicNetwork <!-- NOUN -->
 - Display name: TopsideHydraulicNetwork
 - Parent class: [HydraulicNetwork](#HydraulicNetwork)
+- Description: 
+Hydraulic network representing surface flow paths.
 - Definition set: Hydraulics
+- Examples:
+```dwis TopsideHydraulicNetworkExample
+TopsideHydraulicNetwork:topsideNetwork
+ReturnFlowLine:returnLine
+topsideNetwork HasBranchComponent returnLine
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[topsideNetwork] -->|BelongsToClass| N0001(TopsideHydraulicNetwork) 
+	N0002[returnLine] -->|BelongsToClass| N0003(ReturnFlowLine) 
+	N0000[topsideNetwork] -->|HasBranchComponent| N0002((returnLine)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?TopsideHydraulicNetworkExample
+WHERE {
+	?topsideNetwork rdf:type ddhub:TopsideHydraulicNetwork .
+	?returnLine rdf:type ddhub:ReturnFlowLine .
+  FILTER (
+	?Attribute000 = returnLine
+  )
+}
+```
+This example identifies the topside network.
 ## MPDMainFlowPath <!-- NOUN -->
 - Display name: MPDMainFlowPath
 - Parent class: [TopsideHydraulicNetwork](#TopsideHydraulicNetwork)
+- Description: 
+Managed pressure drilling main flow path at surface.
 - Definition set: Hydraulics
+- Examples:
+```dwis MPDMainFlowPathExample
+TopsideHydraulicNetwork:surfaceNetwork
+MPDMainFlowPath:mainFlowPath
+mainFlowPath IsASubHydraulicNetwork surfaceNetwork
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[surfaceNetwork] -->|BelongsToClass| N0001(TopsideHydraulicNetwork) 
+	N0002[mainFlowPath] -->|BelongsToClass| N0003(MPDMainFlowPath) 
+	N0002[mainFlowPath] -->|IsASubHydraulicNetwork| N0000((surfaceNetwork)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?MPDMainFlowPathExample
+WHERE {
+	?surfaceNetwork rdf:type ddhub:TopsideHydraulicNetwork .
+	?mainFlowPath rdf:type ddhub:MPDMainFlowPath .
+  FILTER (
+	?Attribute000 = surfaceNetwork
+  )
+}
+```
+This example defines the MPD main flow path.
 ## MPDAlternateFlowPath <!-- NOUN -->
 - Display name: MPDAlternateFlowPath
 - Parent class: [TopsideHydraulicNetwork](#TopsideHydraulicNetwork)
+- Description: 
+Alternate managed pressure drilling flow path (e.g., bypass or choke line).
 - Definition set: Hydraulics
+- Examples:
+```dwis MPDAlternateFlowPathExample
+TopsideHydraulicNetwork:surfaceNetwork
+MPDAlternateFlowPath:alternateFlowPath
+alternateFlowPath IsASubHydraulicNetwork surfaceNetwork
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[surfaceNetwork] -->|BelongsToClass| N0001(TopsideHydraulicNetwork) 
+	N0002[alternateFlowPath] -->|BelongsToClass| N0003(MPDAlternateFlowPath) 
+	N0002[alternateFlowPath] -->|IsASubHydraulicNetwork| N0000((surfaceNetwork)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?MPDAlternateFlowPathExample
+WHERE {
+	?surfaceNetwork rdf:type ddhub:TopsideHydraulicNetwork .
+	?alternateFlowPath rdf:type ddhub:MPDAlternateFlowPath .
+  FILTER (
+	?Attribute000 = surfaceNetwork
+  )
+}
+```
+This example defines that an alternate MPD flow path is a sub-hydraulic network of the surface network.
+## HydraulicCondition <!-- NOUN -->
+- Display name: Hydraulic Condition
+- Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+A general category to describe high-level states of the hydraulic system.
+- Definition set: Hydraulics
+## HydraulicCirculationCondition <!-- NOUN -->
+- Display name: Hydraulic Circulation Condition
+- Parent class: [HydraulicCondition](#HydraulicCondition)
+- Description: 
+Represents a condition where circulation exists along the hydraulic logical element.
+- Definition set: Hydraulics
+- Examples:
+```dwis DownholeECD
+DynamicDrillingSignal:downholeECD
+PhysicalData:downholeECD#01
+downholeECD#01 BelongsToClass ContinuousDataType
+downholeECD#01 HasDynamicValue downholeECD
+downholeECD#01 IsOfMeasurableQuantity MassDensityDrilling
+Measurement:downholePressure#01
+downholePressure#01 BelongsToClass ContinuousDataType
+downholePressure#01 IsOfMeasurableQuantity PressureDrilling
+MovingAverage:movingAverageDownholePressure
+downholePressure#01 IsTransformationOutput movingAverageDownholePressure
+PressureToEquivalentDensityTransformation:pressureToDownholeECD
+downholePressure#01 IsTransformationInput pressureToDownholeECD
+downholeECD#01 IsTransformationOutput pressureToDownholeECD
+DownholeHydraulicNetwork:downholeNetwork
+BHAAnnular:bhaAnnulus
+downholeNetwork HasBranchComponent bhaAnnulus
+downholeECD#01 IsEquivalentCirculationDensityAt bhaAnnulus
+downholePressure#01 IsPressureAt bhaAnnulus
+HydraulicCirculationCondition:circulating
+circulating IsHydraulicConditionFor bhaAnnulus
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[downholeECD] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[downholeECD#01] -->|BelongsToClass| N0003(PhysicalData) 
+	N0002[downholeECD#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[downholeECD#01] -->|HasDynamicValue| N0000((downholeECD)) 
+	N0002[downholeECD#01] -->|IsOfMeasurableQuantity| N0005((MassDensityDrilling)) 
+	N0006[downholePressure#01] -->|BelongsToClass| N0007(Measurement) 
+	N0006[downholePressure#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0006[downholePressure#01] -->|IsOfMeasurableQuantity| N0008((PressureDrilling)) 
+	N0009[movingAverageDownholePressure] -->|BelongsToClass| N0010(MovingAverage) 
+	N0006[downholePressure#01] -->|IsTransformationOutput| N0009((movingAverageDownholePressure)) 
+	N0011[pressureToDownholeECD] -->|BelongsToClass| N0012(PressureToEquivalentDensityTransformation) 
+	N0006[downholePressure#01] -->|IsTransformationInput| N0011((pressureToDownholeECD)) 
+	N0002[downholeECD#01] -->|IsTransformationOutput| N0011((pressureToDownholeECD)) 
+	N0013[downholeNetwork] -->|BelongsToClass| N0014(DownholeHydraulicNetwork) 
+	N0015[bhaAnnulus] -->|BelongsToClass| N0016(BHAAnnular) 
+	N0013[downholeNetwork] -->|HasBranchComponent| N0015((bhaAnnulus)) 
+	N0002[downholeECD#01] -->|IsEquivalentCirculationDensityAt| N0015((bhaAnnulus)) 
+	N0006[downholePressure#01] -->|IsPressureAt| N0015((bhaAnnulus)) 
+	N0017[circulating] -->|BelongsToClass| N0018(HydraulicCirculationCondition) 
+	N0017[circulating] -->|IsHydraulicConditionFor| N0015((bhaAnnulus)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?DownholeECD
+WHERE {
+	?downholeECD rdf:type ddhub:DynamicDrillingSignal .
+	?downholeECD#01 rdf:type ddhub:PhysicalData .
+	?downholeECD#01 rdf:type ddhub:ContinuousDataType .
+	?downholePressure#01 rdf:type ddhub:Measurement .
+	?downholePressure#01 rdf:type ddhub:ContinuousDataType .
+	?movingAverageDownholePressure rdf:type ddhub:MovingAverage .
+	?pressureToDownholeECD rdf:type ddhub:PressureToEquivalentDensityTransformation .
+	?downholeNetwork rdf:type ddhub:DownholeHydraulicNetwork .
+	?bhaAnnulus rdf:type ddhub:BHAAnnular .
+	?circulating rdf:type ddhub:HydraulicCirculationCondition .
+  FILTER (
+	?Attribute000 = downholeECD
+	&& 	?Attribute001 = MassDensityDrilling
+	&& 	?Attribute002 = PressureDrilling
+	&& 	?Attribute003 = movingAverageDownholePressure
+	&& 	?Attribute004 = pressureToDownholeECD
+	&& 	?Attribute005 = pressureToDownholeECD
+	&& 	?Attribute006 = bhaAnnulus
+	&& 	?Attribute007 = bhaAnnulus
+	&& 	?Attribute008 = bhaAnnulus
+	&& 	?Attribute009 = bhaAnnulus
+  )
+}
+```
+This example describes the downhole ECD.
+## HydraulicStaticCondition <!-- NOUN -->
+- Display name: Hydraulic Static Condition
+- Parent class: [HydraulicCondition](#HydraulicCondition)
+- Description: 
+Represents a condition where the fluid in the hydraulic logical element is static (no circulation).
+- Definition set: Hydraulics
+- Examples:
+```dwis DownholeESDExample
+DynamicDrillingSignal:downholeESD
+PhysicalData:downholeESD#01
+downholeESD#01 BelongsToClass ContinuousDataType
+downholeESD#01 HasDynamicValue downholeESD
+downholeESD#01 IsOfMeasurableQuantity MassDensityDrilling
+Measurement:downholePressure#01
+downholePressure#01 BelongsToClass ContinuousDataType
+downholePressure#01 IsOfMeasurableQuantity PressureDrilling
+MovingAverage:movingAverageDownholePressure
+downholePressure#01 IsTransformationOutput movingAverageDownholePressure
+PressureToEquivalentDensityTransformation:pressureToDownholeESD
+downholePressure#01 IsTransformationInput pressureToDownholeESD
+downholeESD#01 IsTransformationOutput pressureToDownholeESD
+DownholeHydraulicNetwork:downholeNetwork
+BHAAnnular:bhaAnnulus
+downholeNetwork HasBranchComponent bhaAnnulus
+downholeESD#01 IsEquivalentCirculationDensityAt bhaAnnulus
+downholePressure#01 IsPressureAt bhaAnnulus
+HydraulicStaticCondition:static
+static IsHydraulicConditionFor bhaAnnulus
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[downholeESD] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[downholeESD#01] -->|BelongsToClass| N0003(PhysicalData) 
+	N0002[downholeESD#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[downholeESD#01] -->|HasDynamicValue| N0000((downholeESD)) 
+	N0002[downholeESD#01] -->|IsOfMeasurableQuantity| N0005((MassDensityDrilling)) 
+	N0006[downholePressure#01] -->|BelongsToClass| N0007(Measurement) 
+	N0006[downholePressure#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0006[downholePressure#01] -->|IsOfMeasurableQuantity| N0008((PressureDrilling)) 
+	N0009[movingAverageDownholePressure] -->|BelongsToClass| N0010(MovingAverage) 
+	N0006[downholePressure#01] -->|IsTransformationOutput| N0009((movingAverageDownholePressure)) 
+	N0011[pressureToDownholeESD] -->|BelongsToClass| N0012(PressureToEquivalentDensityTransformation) 
+	N0006[downholePressure#01] -->|IsTransformationInput| N0011((pressureToDownholeESD)) 
+	N0002[downholeESD#01] -->|IsTransformationOutput| N0011((pressureToDownholeESD)) 
+	N0013[downholeNetwork] -->|BelongsToClass| N0014(DownholeHydraulicNetwork) 
+	N0015[bhaAnnulus] -->|BelongsToClass| N0016(BHAAnnular) 
+	N0013[downholeNetwork] -->|HasBranchComponent| N0015((bhaAnnulus)) 
+	N0002[downholeESD#01] -->|IsEquivalentCirculationDensityAt| N0015((bhaAnnulus)) 
+	N0006[downholePressure#01] -->|IsPressureAt| N0015((bhaAnnulus)) 
+	N0017[static] -->|BelongsToClass| N0018(HydraulicStaticCondition) 
+	N0017[static] -->|IsHydraulicConditionFor| N0015((bhaAnnulus)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?DownholeESDExample
+WHERE {
+	?downholeESD rdf:type ddhub:DynamicDrillingSignal .
+	?downholeESD#01 rdf:type ddhub:PhysicalData .
+	?downholeESD#01 rdf:type ddhub:ContinuousDataType .
+	?downholePressure#01 rdf:type ddhub:Measurement .
+	?downholePressure#01 rdf:type ddhub:ContinuousDataType .
+	?movingAverageDownholePressure rdf:type ddhub:MovingAverage .
+	?pressureToDownholeESD rdf:type ddhub:PressureToEquivalentDensityTransformation .
+	?downholeNetwork rdf:type ddhub:DownholeHydraulicNetwork .
+	?bhaAnnulus rdf:type ddhub:BHAAnnular .
+	?static rdf:type ddhub:HydraulicStaticCondition .
+  FILTER (
+	?Attribute000 = downholeESD
+	&& 	?Attribute001 = MassDensityDrilling
+	&& 	?Attribute002 = PressureDrilling
+	&& 	?Attribute003 = movingAverageDownholePressure
+	&& 	?Attribute004 = pressureToDownholeESD
+	&& 	?Attribute005 = pressureToDownholeESD
+	&& 	?Attribute006 = bhaAnnulus
+	&& 	?Attribute007 = bhaAnnulus
+	&& 	?Attribute008 = bhaAnnulus
+	&& 	?Attribute009 = bhaAnnulus
+  )
+}
+```
+This example describes the downhole ESD.
 ## FluidComponent <!-- NOUN -->
 - Display name: FluidComponent
 - Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+Component substance of a fluid mixture.
 - Definition set: Hydraulics
+- Examples:
+```dwis fluidComponent
+FluidComponent:component
+DrillingDataPoint:componentFraction
+componentFraction ConcernsAFluidComponent component
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[component] -->|BelongsToClass| N0001(FluidComponent) 
+	N0002[componentFraction] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[componentFraction] -->|ConcernsAFluidComponent| N0000((component)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?fluidComponent
+WHERE {
+	?component rdf:type ddhub:FluidComponent .
+	?componentFraction rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = component
+  )
+}
+```
+This example links a component fraction to a fluid component.
 ## LiquidComponent <!-- NOUN -->
 - Display name: LiquidComponent
 - Parent class: [FluidComponent](#FluidComponent)
+- Description: 
+Liquid portion of a fluid mixture.
 - Definition set: Hydraulics
+- Examples:
+```dwis liquidComponent
+LiquidComponent:liquidComponent
+DrillingDataPoint:liquidFraction
+liquidFraction ConcernsAFluidComponent liquidComponent
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[liquidComponent] -->|BelongsToClass| N0001(LiquidComponent) 
+	N0002[liquidFraction] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[liquidFraction] -->|ConcernsAFluidComponent| N0000((liquidComponent)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?liquidComponent
+WHERE {
+	?liquidComponent rdf:type ddhub:LiquidComponent .
+	?liquidFraction rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = liquidComponent
+  )
+}
+```
+This example ties a liquid fraction to a liquid component.
 ## FormationLiquidComponent <!-- NOUN -->
 - Display name: FormationLiquidComponent
 - Parent class: [LiquidComponent](#LiquidComponent)
+- Description: 
+Liquid originating from the formation.
 - Definition set: Hydraulics
+- Examples:
+```dwis formationLiquid
+FormationLiquidComponent:formationLiquid
+DrillingDataPoint:formationLiquidFraction
+formationLiquidFraction ConcernsAFluidComponent formationLiquid
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[formationLiquid] -->|BelongsToClass| N0001(FormationLiquidComponent) 
+	N0002[formationLiquidFraction] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[formationLiquidFraction] -->|ConcernsAFluidComponent| N0000((formationLiquid)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?formationLiquid
+WHERE {
+	?formationLiquid rdf:type ddhub:FormationLiquidComponent .
+	?formationLiquidFraction rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = formationLiquid
+  )
+}
+```
+This example references formation liquid in the mixture.
 ## DrillingFluidLiquidComponent <!-- NOUN -->
 - Display name: DrillingFluidLiquidComponent
 - Parent class: [LiquidComponent](#LiquidComponent)
+- Description: 
+Liquid portion belonging to the drilling fluid.
 - Definition set: Hydraulics
+- Examples:
+```dwis mudLiquid
+DrillingFluidLiquidComponent:mudLiquid
+DrillingDataPoint:mudLiquidFraction
+mudLiquidFraction ConcernsAFluidComponent mudLiquid
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[mudLiquid] -->|BelongsToClass| N0001(DrillingFluidLiquidComponent) 
+	N0002[mudLiquidFraction] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[mudLiquidFraction] -->|ConcernsAFluidComponent| N0000((mudLiquid)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?mudLiquid
+WHERE {
+	?mudLiquid rdf:type ddhub:DrillingFluidLiquidComponent .
+	?mudLiquidFraction rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = mudLiquid
+  )
+}
+```
+This example links a mud liquid fraction.
 ## DrillingFluidOilComponent <!-- NOUN -->
 - Display name: OilComponent
 - Parent class: [DrillingFluidLiquidComponent](#DrillingFluidLiquidComponent)
+- Description: 
+Oil component of an oil- or synthetic-based mud.
 - Definition set: Hydraulics
+- Examples:
+```dwis oilComponent
+DrillingFluidOilComponent:oilComponent
+DrillingDataPoint:oilFraction
+oilFraction ConcernsAFluidComponent oilComponent
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[oilComponent] -->|BelongsToClass| N0001(DrillingFluidOilComponent) 
+	N0002[oilFraction] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[oilFraction] -->|ConcernsAFluidComponent| N0000((oilComponent)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?oilComponent
+WHERE {
+	?oilComponent rdf:type ddhub:DrillingFluidOilComponent .
+	?oilFraction rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = oilComponent
+  )
+}
+```
+This example references oil fraction in the mud.
 ## DrillingFluidWaterComponent <!-- NOUN -->
 - Display name: WaterComponent
 - Parent class: [DrillingFluidLiquidComponent](#DrillingFluidLiquidComponent)
+- Description: 
+Water component of the drilling fluid.
 - Definition set: Hydraulics
+- Examples:
+```dwis waterComponent
+DrillingFluidWaterComponent:waterComponent
+DrillingDataPoint:waterFraction
+waterFraction ConcernsAFluidComponent waterComponent
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[waterComponent] -->|BelongsToClass| N0001(DrillingFluidWaterComponent) 
+	N0002[waterFraction] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[waterFraction] -->|ConcernsAFluidComponent| N0000((waterComponent)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?waterComponent
+WHERE {
+	?waterComponent rdf:type ddhub:DrillingFluidWaterComponent .
+	?waterFraction rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = waterComponent
+  )
+}
+```
+This example references water fraction in the mud.
 ## GasComponent <!-- NOUN -->
 - Display name: GasComponent
 - Parent class: [FluidComponent](#FluidComponent)
+- Description: 
+Gas portion of a fluid mixture.
 - Definition set: Hydraulics
+- Examples:
+```dwis gasComponent
+GasComponent:gasComponent
+DrillingDataPoint:gasCut
+gasCut ConcernsAFluidComponent gasComponent
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[gasComponent] -->|BelongsToClass| N0001(GasComponent) 
+	N0002[gasCut] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[gasCut] -->|ConcernsAFluidComponent| N0000((gasComponent)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?gasComponent
+WHERE {
+	?gasComponent rdf:type ddhub:GasComponent .
+	?gasCut rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = gasComponent
+  )
+}
+```
+This example links gas cut to a gas component.
+```dwis gasProportionFlowOutProportionExample
+DynamicDrillingSignal:gasProportionFlowOutProportion
+PhysicalData:gasProportionFlowOutProportion#01
+gasProportionFlowOutProportion#01 BelongsToClass ContinuousDataType
+gasProportionFlowOutProportion#01 HasDynamicValue gasProportionFlowOutProportion
+gasProportionFlowOutProportion#01 IsOfMeasurableQuantity ProportionStandard
+MovingAverage:movingAverageGasProportionFlowOutProportion
+gasProportionFlowOutProportion#01 IsTransformationOutput movingAverageGasProportionFlowOutProportion
+FlowLine:returnFlowLine#01
+gasProportionFlowOutProportion#01 IsPhysicallyLocatedAt returnFlowLine#01
+GasComponent:GasComponent#01
+gasProportionFlowOutProportion#01 ConcernsAFluidComponent GasComponent#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[gasProportionFlowOutProportion] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[gasProportionFlowOutProportion#01] -->|BelongsToClass| N0003(PhysicalData) 
+	N0002[gasProportionFlowOutProportion#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[gasProportionFlowOutProportion#01] -->|HasDynamicValue| N0000((gasProportionFlowOutProportion)) 
+	N0002[gasProportionFlowOutProportion#01] -->|IsOfMeasurableQuantity| N0005((ProportionStandard)) 
+	N0006[movingAverageGasProportionFlowOutProportion] -->|BelongsToClass| N0007(MovingAverage) 
+	N0002[gasProportionFlowOutProportion#01] -->|IsTransformationOutput| N0006((movingAverageGasProportionFlowOutProportion)) 
+	N0008[returnFlowLine#01] -->|BelongsToClass| N0009(FlowLine) 
+	N0002[gasProportionFlowOutProportion#01] -->|IsPhysicallyLocatedAt| N0008((returnFlowLine#01)) 
+	N0010[GasComponent#01] -->|BelongsToClass| N0011(GasComponent) 
+	N0002[gasProportionFlowOutProportion#01] -->|ConcernsAFluidComponent| N0010((GasComponent#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?gasProportionFlowOutProportionExample
+WHERE {
+	?gasProportionFlowOutProportion rdf:type ddhub:DynamicDrillingSignal .
+	?gasProportionFlowOutProportion#01 rdf:type ddhub:PhysicalData .
+	?gasProportionFlowOutProportion#01 rdf:type ddhub:ContinuousDataType .
+	?movingAverageGasProportionFlowOutProportion rdf:type ddhub:MovingAverage .
+	?returnFlowLine#01 rdf:type ddhub:FlowLine .
+	?GasComponent#01 rdf:type ddhub:GasComponent .
+  FILTER (
+	?Attribute000 = gasProportionFlowOutProportion
+	&& 	?Attribute001 = ProportionStandard
+	&& 	?Attribute002 = movingAverageGasProportionFlowOutProportion
+	&& 	?Attribute003 = returnFlowLine#01
+	&& 	?Attribute004 = GasComponent#01
+  )
+}
+```
+This example describes gas proportion in the return flow line.
 ## FormationGasComponent <!-- NOUN -->
 - Display name: FormationGasComponent
 - Parent class: [GasComponent](#GasComponent)
+- Description: 
+Gas originating from the formation.
 - Definition set: Hydraulics
+- Examples:
+```dwis formationGas
+FormationGasComponent:formationGas
+DrillingDataPoint:formationGasFraction
+formationGasFraction ConcernsAFluidComponent formationGas
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[formationGas] -->|BelongsToClass| N0001(FormationGasComponent) 
+	N0002[formationGasFraction] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[formationGasFraction] -->|ConcernsAFluidComponent| N0000((formationGas)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?formationGas
+WHERE {
+	?formationGas rdf:type ddhub:FormationGasComponent .
+	?formationGasFraction rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = formationGas
+  )
+}
+```
+This example references formation gas in the mixture.
 ## DrillingFluidGasComponent <!-- NOUN -->
 - Display name: DrillingFluidGasComponent
 - Parent class: [GasComponent](#GasComponent)
+- Description: 
+Gas intentionally present in the drilling fluid (e.g., aerated mud).
 - Definition set: Hydraulics
+- Examples:
+```dwis drillingGas
+DrillingFluidGasComponent:drillingGas
+DrillingDataPoint:drillingGasFraction
+drillingGasFraction ConcernsAFluidComponent drillingGas
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingGas] -->|BelongsToClass| N0001(DrillingFluidGasComponent) 
+	N0002[drillingGasFraction] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[drillingGasFraction] -->|ConcernsAFluidComponent| N0000((drillingGas)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillingGas
+WHERE {
+	?drillingGas rdf:type ddhub:DrillingFluidGasComponent .
+	?drillingGasFraction rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = drillingGas
+  )
+}
+```
+This example notes gas component within the mud.
 ## SolidComponent <!-- NOUN -->
 - Display name: SolidComponent
 - Parent class: [FluidComponent](#FluidComponent)
+- Description: 
+Solid portion of a fluid mixture.
 - Definition set: Hydraulics
+- Examples:
+```dwis solidComponent
+SolidComponent:solidComponent
+DrillingDataPoint:solidsFraction
+solidsFraction ConcernsAFluidComponent solidComponent
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[solidComponent] -->|BelongsToClass| N0001(SolidComponent) 
+	N0002[solidsFraction] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[solidsFraction] -->|ConcernsAFluidComponent| N0000((solidComponent)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?solidComponent
+WHERE {
+	?solidComponent rdf:type ddhub:SolidComponent .
+	?solidsFraction rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = solidComponent
+  )
+}
+```
+This example references solids fraction.
 ## DrillingFluidSolidComponent <!-- NOUN -->
 - Display name: DrillingFluidSolidComponent
 - Parent class: [SolidComponent](#SolidComponent)
+- Description: 
+Solids intentionally present in the drilling fluid (e.g., barite, bentonite).
 - Definition set: Hydraulics
+- Examples:
+```dwis mudSolid
+DrillingFluidSolidComponent:mudSolid
+DrillingDataPoint:mudSolidFraction
+mudSolidFraction ConcernsAFluidComponent mudSolid
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[mudSolid] -->|BelongsToClass| N0001(DrillingFluidSolidComponent) 
+	N0002[mudSolidFraction] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[mudSolidFraction] -->|ConcernsAFluidComponent| N0000((mudSolid)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?mudSolid
+WHERE {
+	?mudSolid rdf:type ddhub:DrillingFluidSolidComponent .
+	?mudSolidFraction rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = mudSolid
+  )
+}
+```
+This example notes a mud solid component.
 ## HighGravitySolidComponent <!-- NOUN -->
 - Display name: HighGravitySolidComponent
 - Parent class: [DrillingFluidSolidComponent](#DrillingFluidSolidComponent)
+- Description: 
+High-density solids such as weighting agents.
 - Definition set: Hydraulics
+- Examples:
+```dwis hgsComponent
+HighGravitySolidComponent:hgsComponent
+DrillingDataPoint:bariteFraction
+bariteFraction ConcernsAFluidComponent hgsComponent
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hgsComponent] -->|BelongsToClass| N0001(HighGravitySolidComponent) 
+	N0002[bariteFraction] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[bariteFraction] -->|ConcernsAFluidComponent| N0000((hgsComponent)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hgsComponent
+WHERE {
+	?hgsComponent rdf:type ddhub:HighGravitySolidComponent .
+	?bariteFraction rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = hgsComponent
+  )
+}
+```
+This example references barite as a high-gravity solid.
 ## LowGravitySolidComponent <!-- NOUN -->
 - Display name: LowGravitySolidComponent
 - Parent class: [DrillingFluidSolidComponent](#DrillingFluidSolidComponent)
+- Description: 
+Low-density solids such as drilled solids and clays.
 - Definition set: Hydraulics
+- Examples:
+```dwis lgsComponent
+LowGravitySolidComponent:lgsComponent
+DrillingDataPoint:lgsFraction
+lgsFraction ConcernsAFluidComponent lgsComponent
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[lgsComponent] -->|BelongsToClass| N0001(LowGravitySolidComponent) 
+	N0002[lgsFraction] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[lgsFraction] -->|ConcernsAFluidComponent| N0000((lgsComponent)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?lgsComponent
+WHERE {
+	?lgsComponent rdf:type ddhub:LowGravitySolidComponent .
+	?lgsFraction rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = lgsComponent
+  )
+}
+```
+This example notes low-gravity solids fraction.
 ## FormationSolidComponent <!-- NOUN -->
 - Display name: FormationSolidComponent
 - Parent class: [SolidComponent](#SolidComponent)
+- Description: 
+Solids originating from the formation.
 - Definition set: Hydraulics
+- Examples:
+```dwis formationSolid
+FormationSolidComponent:formationSolid
+DrillingDataPoint:formationSolidFraction
+formationSolidFraction ConcernsAFluidComponent formationSolid
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[formationSolid] -->|BelongsToClass| N0001(FormationSolidComponent) 
+	N0002[formationSolidFraction] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[formationSolidFraction] -->|ConcernsAFluidComponent| N0000((formationSolid)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?formationSolid
+WHERE {
+	?formationSolid rdf:type ddhub:FormationSolidComponent .
+	?formationSolidFraction rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = formationSolid
+  )
+}
+```
+This example references formation solids.
 ## CuttingsComponent <!-- NOUN -->
 - Display name: CuttingsComponent
 - Parent class: [FormationSolidComponent](#FormationSolidComponent)
+- Description: 
+Solid component representing drilled cuttings.
 - Definition set: Hydraulics
+- Examples:
+```dwis cuttingsComponent
+CuttingsComponent:cuttings
+DrillingDataPoint:cuttingsFraction
+cuttingsFraction ConcernsAFluidComponent cuttings
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[cuttings] -->|BelongsToClass| N0001(CuttingsComponent) 
+	N0002[cuttingsFraction] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[cuttingsFraction] -->|ConcernsAFluidComponent| N0000((cuttings)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?cuttingsComponent
+WHERE {
+	?cuttings rdf:type ddhub:CuttingsComponent .
+	?cuttingsFraction rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = cuttings
+  )
+}
+```
+This example references cuttings fraction.
+```dwis lagTimeExample
+DynamicDrillingSignal:lagTime
+PhysicalData:lagTime#01
+lagTime#01 BelongsToClass ContinuousDataType
+lagTime#01 HasDynamicValue lagTime
+lagTime#01 IsOfMeasurableQuantity DurationDrilling
+MovingAverage:movingAverageLagTime
+lagTime#01 IsTransformationOutput movingAverageLagTime
+CuttingsComponent:cuttings
+lagTime#01 ConcernsAFluidComponent cuttings
+BottomOfStringReferenceLocation:bos#01
+ReturnFlowLine:returnFlowLine#01
+lagTime#01 IsDependentOn bos#01
+lagTime#01 IsDependentOn returnFlowLine#01
+lagTime#01 IsHydraulicallyLocatedAt returnFlowLine#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[lagTime] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[lagTime#01] -->|BelongsToClass| N0003(PhysicalData) 
+	N0002[lagTime#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[lagTime#01] -->|HasDynamicValue| N0000((lagTime)) 
+	N0002[lagTime#01] -->|IsOfMeasurableQuantity| N0005((DurationDrilling)) 
+	N0006[movingAverageLagTime] -->|BelongsToClass| N0007(MovingAverage) 
+	N0002[lagTime#01] -->|IsTransformationOutput| N0006((movingAverageLagTime)) 
+	N0008[cuttings] -->|BelongsToClass| N0009(CuttingsComponent) 
+	N0002[lagTime#01] -->|ConcernsAFluidComponent| N0008((cuttings)) 
+	N0010[bos#01] -->|BelongsToClass| N0011(BottomOfStringReferenceLocation) 
+	N0012[returnFlowLine#01] -->|BelongsToClass| N0013(ReturnFlowLine) 
+	N0002[lagTime#01] -->|IsDependentOn| N0010((bos#01)) 
+	N0002[lagTime#01] -->|IsDependentOn| N0012((returnFlowLine#01)) 
+	N0002[lagTime#01] -->|IsHydraulicallyLocatedAt| N0012((returnFlowLine#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?lagTimeExample
+WHERE {
+	?lagTime rdf:type ddhub:DynamicDrillingSignal .
+	?lagTime#01 rdf:type ddhub:PhysicalData .
+	?lagTime#01 rdf:type ddhub:ContinuousDataType .
+	?movingAverageLagTime rdf:type ddhub:MovingAverage .
+	?cuttings rdf:type ddhub:CuttingsComponent .
+	?bos#01 rdf:type ddhub:BottomOfStringReferenceLocation .
+	?returnFlowLine#01 rdf:type ddhub:ReturnFlowLine .
+  FILTER (
+	?Attribute000 = lagTime
+	&& 	?Attribute001 = DurationDrilling
+	&& 	?Attribute002 = movingAverageLagTime
+	&& 	?Attribute003 = cuttings
+	&& 	?Attribute004 = bos#01
+	&& 	?Attribute005 = returnFlowLine#01
+	&& 	?Attribute006 = returnFlowLine#01
+  )
+}
+```
+This example describes lag time for cuttings to reach the return flow line.
 ## CavingsComponent <!-- NOUN -->
 - Display name: CavingsComponent
 - Parent class: [FormationSolidComponent](#FormationSolidComponent)
+- Description: 
+Larger rock fragments (cavings) originating from unstable formations.
 - Definition set: Hydraulics
+- Examples:
+```dwis cavingsComponent
+CavingsComponent:cavings
+DrillingDataPoint:cavingsFraction
+cavingsFraction ConcernsAFluidComponent cavings
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[cavings] -->|BelongsToClass| N0001(CavingsComponent) 
+	N0002[cavingsFraction] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[cavingsFraction] -->|ConcernsAFluidComponent| N0000((cavings)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?cavingsComponent
+WHERE {
+	?cavings rdf:type ddhub:CavingsComponent .
+	?cavingsFraction rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = cavings
+  )
+}
+```
+This example references cavings fraction.
 ## FluidInterface <!-- NOUN -->
 - Display name: Fluid Interface
 - Parent class: [DWISNoun](#DWISNoun)
 - Description: 
 The interface between two fluids in a hydraulic system.
 - Definition set: Hydraulics
+- Examples:
+```dwis fluidInterface
+FluidInterface:fluidInterface
+DrillingLiquidType:drillingLiquidType
+FormationGas:formationGas
+formationGas IsUpstreamOf fluidInterface
+drillingLiquidType IsDownstreamOf fluidInterface
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[fluidInterface] -->|BelongsToClass| N0001(FluidInterface) 
+	N0002[drillingLiquidType] -->|BelongsToClass| N0003(DrillingLiquidType) 
+	N0004[formationGas] -->|BelongsToClass| N0005(FormationGas) 
+	N0004[formationGas] -->|IsUpstreamOf| N0000((fluidInterface)) 
+	N0002[drillingLiquidType] -->|IsDownstreamOf| N0000((fluidInterface)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?fluidInterface
+WHERE {
+	?fluidInterface rdf:type ddhub:FluidInterface .
+	?drillingLiquidType rdf:type ddhub:DrillingLiquidType .
+	?formationGas rdf:type ddhub:FormationGas .
+  FILTER (
+	?Attribute000 = fluidInterface
+	&& 	?Attribute001 = fluidInterface
+  )
+}
+```
+This example shows an interface between formation gas and drilling liquid.
 ## FluidType <!-- NOUN -->
 - Display name: Fluid Type
 - Parent class: [DWISNoun](#DWISNoun)
 - Description: 
 A symbolic representation of the type of a fluid to be found in a hydraulic system.
 - Definition set: Hydraulics
-## Gas <!-- NOUN -->
-- Display name: Gas
+- Examples:
+```dwis fluidTypeExample
+FluidInterface:fluidInterface
+DrillingLiquidType:drillingLiquidType
+FormationGas:formationGas
+formationGas IsUpstreamOf fluidInterface
+drillingLiquidType IsDownstreamOf fluidInterface
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[fluidInterface] -->|BelongsToClass| N0001(FluidInterface) 
+	N0002[drillingLiquidType] -->|BelongsToClass| N0003(DrillingLiquidType) 
+	N0004[formationGas] -->|BelongsToClass| N0005(FormationGas) 
+	N0004[formationGas] -->|IsUpstreamOf| N0000((fluidInterface)) 
+	N0002[drillingLiquidType] -->|IsDownstreamOf| N0000((fluidInterface)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?fluidTypeExample
+WHERE {
+	?fluidInterface rdf:type ddhub:FluidInterface .
+	?drillingLiquidType rdf:type ddhub:DrillingLiquidType .
+	?formationGas rdf:type ddhub:FormationGas .
+  FILTER (
+	?Attribute000 = fluidInterface
+	&& 	?Attribute001 = fluidInterface
+  )
+}
+```
+This example shows that there are fluid types for which gas is upstream of the drilling fluid.
+## GasType <!-- NOUN -->
+- Display name: Gas Type
 - Parent class: [FluidType](#FluidType)
 - Description: 
 A symbolic representation of gas when encountered in a hydraulic system.
 - Definition set: Hydraulics
-## Air <!-- NOUN -->
-- Display name: Air
-- Parent class: [Gas](#Gas)
+- Examples:
+```dwis gasTypeExample
+GasType:gasType
+FluidInterface:gasLiquidInterface
+gasType IsUpstreamOf gasLiquidInterface
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[gasType] -->|BelongsToClass| N0001(GasType) 
+	N0002[gasLiquidInterface] -->|BelongsToClass| N0003(FluidInterface) 
+	N0000[gasType] -->|IsUpstreamOf| N0002((gasLiquidInterface)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?gasTypeExample
+WHERE {
+	?gasType rdf:type ddhub:GasType .
+	?gasLiquidInterface rdf:type ddhub:FluidInterface .
+  FILTER (
+	?Attribute000 = gasLiquidInterface
+  )
+}
+```
+This example uses a gas type upstream of a gas–liquid interface.
+## AirType <!-- NOUN -->
+- Display name: Air Type
+- Parent class: [GasType](#GasType)
 - Description: 
 A symbolic representation of air when encountered in a hydraulic system.
 - Definition set: Hydraulics
-## FormationGas <!-- NOUN -->
-- Display name: Formation Gas
-- Parent class: [Gas](#Gas)
+- Examples:
+```dwis airTypeExample
+AirType:airType
+HydraulicLogicalElement:returnLine
+airType IsFluidTypeLocatedAt returnLine
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[airType] -->|BelongsToClass| N0001(AirType) 
+	N0002[returnLine] -->|BelongsToClass| N0003(HydraulicLogicalElement) 
+	N0000[airType] -->|IsFluidTypeLocatedAt| N0002((returnLine)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?airTypeExample
+WHERE {
+	?airType rdf:type ddhub:AirType .
+	?returnLine rdf:type ddhub:HydraulicLogicalElement .
+  FILTER (
+	?Attribute000 = returnLine
+  )
+}
+```
+This example places air within the return line context.
+## FormationGasType <!-- NOUN -->
+- Display name: Formation Gas Type
+- Parent class: [GasType](#GasType)
 - Description: 
 A symbolic representation of formation gas when encountered in a hydraulic system.
 - Definition set: Hydraulics
-## Liquid <!-- NOUN -->
-- Display name: Liquid
+- Examples:
+```dwis formationGasTypeExample
+FormationGasType:formationGasType
+FluidInterface:gasLiquidInterface
+formationGasType IsUpstreamOf gasLiquidInterface
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[formationGasType] -->|BelongsToClass| N0001(FormationGasType) 
+	N0002[gasLiquidInterface] -->|BelongsToClass| N0003(FluidInterface) 
+	N0000[formationGasType] -->|IsUpstreamOf| N0002((gasLiquidInterface)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?formationGasTypeExample
+WHERE {
+	?formationGasType rdf:type ddhub:FormationGasType .
+	?gasLiquidInterface rdf:type ddhub:FluidInterface .
+  FILTER (
+	?Attribute000 = gasLiquidInterface
+  )
+}
+```
+This example uses formation gas as the upstream fluid at an interface.
+## LiquidType <!-- NOUN -->
+- Display name: Liquid Type
 - Parent class: [FluidType](#FluidType)
 - Description: 
 A symbolic representation of liquid when encountered in a hydraulic system.
 - Definition set: Hydraulics
-## DrillingLiquid <!-- NOUN -->
-- Display name: Drilling Liquid
-- Parent class: [Liquid](#Liquid)
+- Examples:
+```dwis liquidTypeExample
+Liquid:liquid
+HydraulicLogicalElement:standpipe
+liquid IsFluidTypeLocatedAt standpipe
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[liquid] -->|BelongsToClass| N0001(Liquid) 
+	N0002[standpipe] -->|BelongsToClass| N0003(HydraulicLogicalElement) 
+	N0000[liquid] -->|IsFluidTypeLocatedAt| N0002((standpipe)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?liquidTypeExample
+WHERE {
+	?liquid rdf:type ddhub:Liquid .
+	?standpipe rdf:type ddhub:HydraulicLogicalElement .
+  FILTER (
+	?Attribute000 = standpipe
+  )
+}
+```
+This example assigns a liquid to the standpipe.
+## DrillingLiquidType <!-- NOUN -->
+- Display name: Drilling Liquid Type
+- Parent class: [LiquidType](#LiquidType)
 - Description: 
 A symbolic representation of drilling liquid when encountered in a hydraulic system.
 - Definition set: Hydraulics
 - Examples:
-  
+```dwis drillingLiquidType
+DrillingLiquidType:drillingLiquidType
+HydraulicLogicalElement:annulus
+drillingLiquidType IsFluidTypeLocatedAt annulus
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingLiquidType] -->|BelongsToClass| N0001(DrillingLiquidType) 
+	N0002[annulus] -->|BelongsToClass| N0003(HydraulicLogicalElement) 
+	N0000[drillingLiquidType] -->|IsFluidTypeLocatedAt| N0002((annulus)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillingLiquidType
+WHERE {
+	?drillingLiquidType rdf:type ddhub:DrillingLiquidType .
+	?annulus rdf:type ddhub:HydraulicLogicalElement .
+  FILTER (
+	?Attribute000 = annulus
+  )
+}
+```
+This example tags drilling liquid in the annulus.
+## FlowCurve <!-- NOUN -->
+- Display name: Flow Curve
+- Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+A flow curve defines the relationship between shear stress and shear rate for a given material.
+- Definition set: Hydraulics
+- Examples:
+```dwis flowCurveExample
+DrillingLiquidType:drillingFluidType
+FlowCurve:flowCurve
+drillingFluidType HasFlowCurve flowCurve
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingFluidType] -->|BelongsToClass| N0001(DrillingLiquidType) 
+	N0002[flowCurve] -->|BelongsToClass| N0003(FlowCurve) 
+	N0000[drillingFluidType] -->|HasFlowCurve| N0002((flowCurve)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?flowCurveExample
+WHERE {
+	?drillingFluidType rdf:type ddhub:DrillingLiquidType .
+	?flowCurve rdf:type ddhub:FlowCurve .
+  FILTER (
+	?Attribute000 = flowCurve
+  )
+}
+```
+This example states that a drilling liquid has a flow curve.
+## RheologicalBehavior <!-- NOUN -->
+- Display name: Rheological Behavior
+- Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+The rheological behavior defines how materials deform and flow under applied forces,
+spanning from viscous flow to elastic deformation. The rheological behavior of a FluidType depends in 
+a non-obvious way of the rheological behaviors of its components.
+- Definition set: Hydraulics
+- Examples:
+```dwis rheologicalBehaviorExample
+DrillingLiquidType:drillingLiquidType
+RheologicalBehavior:rheologicalBehavior
+drillingLiquidType HasRheologicalBehavior rheologicalBehavior
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingLiquidType] -->|BelongsToClass| N0001(DrillingLiquidType) 
+	N0002[rheologicalBehavior] -->|BelongsToClass| N0003(RheologicalBehavior) 
+	N0000[drillingLiquidType] -->|HasRheologicalBehavior| N0002((rheologicalBehavior)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rheologicalBehaviorExample
+WHERE {
+	?drillingLiquidType rdf:type ddhub:DrillingLiquidType .
+	?rheologicalBehavior rdf:type ddhub:RheologicalBehavior .
+  FILTER (
+	?Attribute000 = rheologicalBehavior
+  )
+}
+```
+This example states that a drilling liquid has a rheological behavior.
+## NewtonianFluid <!-- NOUN -->
+- Display name: Newtonian Fluid
+- Parent class: [RheologicalBehavior](#RheologicalBehavior)
+- Description: 
+A Newtonian rheological behavior is such that the shear stress is proportional to the shear rate at
+constant conditions of pressure and temperature, i.e., the viscosity remains constant regardless of the applied shear rate.
+- Definition set: Hydraulics
+- Examples:
+```dwis NewtonianFluidExample
+DrillingLiquidType:drillingLiquidType
+NewtonianFluid:newtonianFluid
+drillingLiquidType HasRheologicalBehavior newtonianFluid
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingLiquidType] -->|BelongsToClass| N0001(DrillingLiquidType) 
+	N0002[newtonianFluid] -->|BelongsToClass| N0003(NewtonianFluid) 
+	N0000[drillingLiquidType] -->|HasRheologicalBehavior| N0002((newtonianFluid)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?NewtonianFluidExample
+WHERE {
+	?drillingLiquidType rdf:type ddhub:DrillingLiquidType .
+	?newtonianFluid rdf:type ddhub:NewtonianFluid .
+  FILTER (
+	?Attribute000 = newtonianFluid
+  )
+}
+```
+This example states that a drilling liquid has a Newtonian rheological behavior.
+## NonNewtonianFluid <!-- NOUN -->
+- Display name: Non Newtonian Fluid
+- Parent class: [RheologicalBehavior](#RheologicalBehavior)
+- Description: 
+A non-Newtonian rheological behavior is such that the shear stress is not directly proportional
+to the shear rate when the pressure and temperature are constant, i.e., the viscosity changes with shear rate
+- Definition set: Hydraulics
+- Examples:
+```dwis NonNewtonianFluidExample
+DrillingLiquidType:drillingLiquidType
+NonNewtonianFluid:nonNewtonianFluid
+drillingLiquidType HasRheologicalBehavior nonNewtonianFluid
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingLiquidType] -->|BelongsToClass| N0001(DrillingLiquidType) 
+	N0002[nonNewtonianFluid] -->|BelongsToClass| N0003(NonNewtonianFluid) 
+	N0000[drillingLiquidType] -->|HasRheologicalBehavior| N0002((nonNewtonianFluid)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?NonNewtonianFluidExample
+WHERE {
+	?drillingLiquidType rdf:type ddhub:DrillingLiquidType .
+	?nonNewtonianFluid rdf:type ddhub:NonNewtonianFluid .
+  FILTER (
+	?Attribute000 = nonNewtonianFluid
+  )
+}
+```
+## BinghamPlastic <!-- NOUN -->
+- Display name: Bingham Plastic
+- Parent class: [NonNewtonianFluid](#NonNewtonianFluid)
+- Description: 
+A Bingham plastic rheological behavior is characterized by a yield stress that must be exceeded
+before the material begins to flow,
+- Definition set: Hydraulics
+- Examples:
+```dwis BinghamPlasticFluidExample
+DrillingLiquidType:drillingLiquidType
+BinghamPlastic:binghamPlastic
+drillingLiquidType HasRheologicalBehavior binghamPlastic
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingLiquidType] -->|BelongsToClass| N0001(DrillingLiquidType) 
+	N0002[binghamPlastic] -->|BelongsToClass| N0003(BinghamPlastic) 
+	N0000[drillingLiquidType] -->|HasRheologicalBehavior| N0002((binghamPlastic)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?BinghamPlasticFluidExample
+WHERE {
+	?drillingLiquidType rdf:type ddhub:DrillingLiquidType .
+	?binghamPlastic rdf:type ddhub:BinghamPlastic .
+  FILTER (
+	?Attribute000 = binghamPlastic
+  )
+}
+```
+This example states that a drilling liquid has a Bingham plastic rheological behavior.
+```dwis BinghamPlasticFluidExample2
+DynamicDrillingSignal:YieldPointInlet
+PhysicalData:YieldPointInlet#01
+YieldPointInlet#01 BelongsToClass ContinuousDataType
+YieldPointInlet#01 HasDynamicValue YieldPointInlet
+YieldPointInlet#01 IsOfMeasurableQuantity FluidShearStress
+MovingAverage:movingAverageYieldPointInlet
+YieldPointInlet#01 IsTransformationOutput movingAverageYieldPointInlet
+TopOfStringJunction:topOfStringJunction#01
+HydraulicBranch:inletHydraulicBranch#01
+topOfStringJunction#01 HasUpstreamBranch inletHydraulicBranch#01
+YieldPointInlet#01 IsAssociatedToHydraulicBranch inletHydraulicBranch#01
+BinghamPlastic:BinghamPlasticFluid#01
+BinghamPlasticFluid#01 HasYieldPoint YieldPointInlet#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[YieldPointInlet] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[YieldPointInlet#01] -->|BelongsToClass| N0003(PhysicalData) 
+	N0002[YieldPointInlet#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[YieldPointInlet#01] -->|HasDynamicValue| N0000((YieldPointInlet)) 
+	N0002[YieldPointInlet#01] -->|IsOfMeasurableQuantity| N0005((FluidShearStress)) 
+	N0006[movingAverageYieldPointInlet] -->|BelongsToClass| N0007(MovingAverage) 
+	N0002[YieldPointInlet#01] -->|IsTransformationOutput| N0006((movingAverageYieldPointInlet)) 
+	N0008[topOfStringJunction#01] -->|BelongsToClass| N0009(TopOfStringJunction) 
+	N0010[inletHydraulicBranch#01] -->|BelongsToClass| N0011(HydraulicBranch) 
+	N0008[topOfStringJunction#01] -->|HasUpstreamBranch| N0010((inletHydraulicBranch#01)) 
+	N0002[YieldPointInlet#01] -->|IsAssociatedToHydraulicBranch| N0010((inletHydraulicBranch#01)) 
+	N0012[BinghamPlasticFluid#01] -->|BelongsToClass| N0013(BinghamPlastic) 
+	N0012[BinghamPlasticFluid#01] -->|HasYieldPoint| N0002((YieldPointInlet#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?BinghamPlasticFluidExample2
+WHERE {
+	?YieldPointInlet rdf:type ddhub:DynamicDrillingSignal .
+	?YieldPointInlet#01 rdf:type ddhub:PhysicalData .
+	?YieldPointInlet#01 rdf:type ddhub:ContinuousDataType .
+	?movingAverageYieldPointInlet rdf:type ddhub:MovingAverage .
+	?topOfStringJunction#01 rdf:type ddhub:TopOfStringJunction .
+	?inletHydraulicBranch#01 rdf:type ddhub:HydraulicBranch .
+	?BinghamPlasticFluid#01 rdf:type ddhub:BinghamPlastic .
+  FILTER (
+	?Attribute000 = YieldPointInlet
+	&& 	?Attribute001 = FluidShearStress
+	&& 	?Attribute002 = movingAverageYieldPointInlet
+	&& 	?Attribute003 = inletHydraulicBranch#01
+	&& 	?Attribute004 = inletHydraulicBranch#01
+	&& 	?Attribute005 = YieldPointInlet#01
+  )
+}
+```
+This example describes the yield point of a Bingham plastic fluid at the inlet of the top of string junction.
+## YieldPowerLaw <!-- NOUN -->
+- Display name: Yield Power Law
+- Parent class: [NonNewtonianFluid](#NonNewtonianFluid)
+- Description: 
+A Yield Power Law rheological behavior is characterized by a yield stress and a shear thinning or shear thickening properties where the viscosity changes with shear rate
+before the material begins to flow,
+- Definition set: Hydraulics
+- Examples:
+```dwis YieldPowerLawFluidExample
+DrillingLiquidType:drillingLiquidType
+YieldPowerLaw:yieldPowerLaw
+drillingLiquidType HasRheologicalBehavior yieldPowerLaw
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingLiquidType] -->|BelongsToClass| N0001(DrillingLiquidType) 
+	N0002[yieldPowerLaw] -->|BelongsToClass| N0003(YieldPowerLaw) 
+	N0000[drillingLiquidType] -->|HasRheologicalBehavior| N0002((yieldPowerLaw)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?YieldPowerLawFluidExample
+WHERE {
+	?drillingLiquidType rdf:type ddhub:DrillingLiquidType .
+	?yieldPowerLaw rdf:type ddhub:YieldPowerLaw .
+  FILTER (
+	?Attribute000 = yieldPowerLaw
+  )
+}
+```
+This example states that a drilling liquid has a yield power law rheological behavior.
+## Quemada <!-- NOUN -->
+- Display name: Quemada
+- Parent class: [NonNewtonianFluid](#NonNewtonianFluid)
+- Description: 
+A Quemada rheological behavior exhibits shear thinning and shear thickening properties, yet with limits
+at low and high shear rates that tend to constant viscosity values.
+- Definition set: Hydraulics
+- Examples:
+```dwis QuemadaExample
+DrillingLiquidType:drillingLiquidType
+Quemada:quemada
+drillingLiquidType HasRheologicalBehavior quemada
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingLiquidType] -->|BelongsToClass| N0001(DrillingLiquidType) 
+	N0002[quemada] -->|BelongsToClass| N0003(Quemada) 
+	N0000[drillingLiquidType] -->|HasRheologicalBehavior| N0002((quemada)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?QuemadaExample
+WHERE {
+	?drillingLiquidType rdf:type ddhub:DrillingLiquidType .
+	?quemada rdf:type ddhub:Quemada .
+  FILTER (
+	?Attribute000 = quemada
+  )
+}
+```
+This example states that a drilling liquid has a Quemada rheological behavior.
+## FlowMeasurementPrinciple <!-- NOUN -->
+- Display name: Flow Measurement Principle
+- Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+Describes the underlying principle used to obtain a measurement about a flowing medium.
+- Definition set: Hydraulics
+- Examples:
+```dwis FlowMeasurementPrincipleExample
+DrillingDataPoint:realtimeSignal
+FlowMeasurementPrinciple:flowMeasurementPrinciple
+realtimeSignal UsesFlowMeasurementPrinciple flowMeasurementPrinciple
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[realtimeSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[flowMeasurementPrinciple] -->|BelongsToClass| N0003(FlowMeasurementPrinciple) 
+	N0000[realtimeSignal] -->|UsesFlowMeasurementPrinciple| N0002((flowMeasurementPrinciple)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?FlowMeasurementPrincipleExample
+WHERE {
+	?realtimeSignal rdf:type ddhub:DrillingDataPoint .
+	?flowMeasurementPrinciple rdf:type ddhub:FlowMeasurementPrinciple .
+  FILTER (
+	?Attribute000 = flowMeasurementPrinciple
+  )
+}
+```
+This example states that a realtime signal uses a flow mearurement principle.
+## ResonantMeasurementPrinciple <!-- NOUN -->
+- Display name: Resonant Measurement Principle
+- Parent class: [FlowMeasurementPrinciple](#FlowMeasurementPrinciple)
+- Description: 
+Describes that a resonant measurement principle is used to perform a measurement, e.g., vibrating tube or fork or cantilever.
+- Definition set: Hydraulics
+- Examples:
+```dwis ResonantMeasurementPrincipleExample
+DrillingDataPoint:densitySignal
+ResonantMeasurementPrinciple:resonantMeasurementPrinciple
+densitySignal UsesFlowMeasurementPrinciple resonantMeasurementPrinciple
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[densitySignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[resonantMeasurementPrinciple] -->|BelongsToClass| N0003(ResonantMeasurementPrinciple) 
+	N0000[densitySignal] -->|UsesFlowMeasurementPrinciple| N0002((resonantMeasurementPrinciple)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ResonantMeasurementPrincipleExample
+WHERE {
+	?densitySignal rdf:type ddhub:DrillingDataPoint .
+	?resonantMeasurementPrinciple rdf:type ddhub:ResonantMeasurementPrinciple .
+  FILTER (
+	?Attribute000 = resonantMeasurementPrinciple
+  )
+}
+```
+This example states that a mass density signal uses a resonant tube or fork or cantilever measurement principle.
+## ConcentricCylindersMeasurementPrinciple <!-- NOUN -->
+- Display name: Concentric Cylinder Measurement Principle
+- Parent class: [FlowMeasurementPrinciple](#FlowMeasurementPrinciple)
+- Description: 
+Describes that a measurement principle utilizing concentric cylinders is used to perform a measurement, like typically a Couette rheometer.
+- Definition set: Hydraulics
+- Examples:
+```dwis ConcentricCylindersMeasurementPrincipleExample
+DrillingDataPoint:shearStressSignal
+ConcentricCylindersMeasurementPrinciple:concentricCylindersMeasurementPrinciple
+shearStressSignal UsesFlowMeasurementPrinciple concentricCylindersMeasurementPrinciple
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[shearStressSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[concentricCylindersMeasurementPrinciple] -->|BelongsToClass| N0003(ConcentricCylindersMeasurementPrinciple) 
+	N0000[shearStressSignal] -->|UsesFlowMeasurementPrinciple| N0002((concentricCylindersMeasurementPrinciple)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ConcentricCylindersMeasurementPrincipleExample
+WHERE {
+	?shearStressSignal rdf:type ddhub:DrillingDataPoint .
+	?concentricCylindersMeasurementPrinciple rdf:type ddhub:ConcentricCylindersMeasurementPrinciple .
+  FILTER (
+	?Attribute000 = concentricCylindersMeasurementPrinciple
+  )
+}
+```
+This example states that a shear stress signal uses a measurement principle utilizing concentric cylinders.
+## DifferentialPressureMeasurementPrinciple <!-- NOUN -->
+- Display name: Vibrating Tube Measurement Principle
+- Parent class: [FlowMeasurementPrinciple](#FlowMeasurementPrinciple)
+- Description: 
+Describes that a differential pressure measurement principle is used to perform a measurement.
+- Definition set: Hydraulics
+- Examples:
+```dwis DifferentialPressureMeasurementPrincipleExample
+DrillingDataPoint:densitySignal
+DifferentialPressureMeasurementPrinciple:differentialPressureMeasurementPrinciple
+densitySignal UsesFlowMeasurementPrinciple differentialPressureMeasurementPrinciple
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[densitySignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[differentialPressureMeasurementPrinciple] -->|BelongsToClass| N0003(DifferentialPressureMeasurementPrinciple) 
+	N0000[densitySignal] -->|UsesFlowMeasurementPrinciple| N0002((differentialPressureMeasurementPrinciple)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?DifferentialPressureMeasurementPrincipleExample
+WHERE {
+	?densitySignal rdf:type ddhub:DrillingDataPoint .
+	?differentialPressureMeasurementPrinciple rdf:type ddhub:DifferentialPressureMeasurementPrinciple .
+  FILTER (
+	?Attribute000 = differentialPressureMeasurementPrinciple
+  )
+}
+```
+This example states that a mass density signal uses a differential pressure measurement principle.
+## RotatingWheelMeasurementPrinciple <!-- NOUN -->
+- Display name: Rotating Wheel Measurement Principle
+- Parent class: [FlowMeasurementPrinciple](#FlowMeasurementPrinciple)
+- Description: 
+Describes that a rotating wheel measurement principle is used to perform a measurement.
+- Definition set: Hydraulics
+- Examples:
+```dwis RotatingWheelMeasurementPrincipleExample
+DrillingDataPoint:massFlowRateSignal
+RotatingWheelMeasurementPrinciple:rotatingWheelMeasurementPrinciple
+massFlowRateSignal UsesFlowMeasurementPrinciple rotatingWheelMeasurementPrinciple
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[massFlowRateSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[rotatingWheelMeasurementPrinciple] -->|BelongsToClass| N0003(RotatingWheelMeasurementPrinciple) 
+	N0000[massFlowRateSignal] -->|UsesFlowMeasurementPrinciple| N0002((rotatingWheelMeasurementPrinciple)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?RotatingWheelMeasurementPrincipleExample
+WHERE {
+	?massFlowRateSignal rdf:type ddhub:DrillingDataPoint .
+	?rotatingWheelMeasurementPrinciple rdf:type ddhub:RotatingWheelMeasurementPrinciple .
+  FILTER (
+	?Attribute000 = rotatingWheelMeasurementPrinciple
+  )
+}
+```
+This example states that a mass flowrate signal uses a rotating wheel measurement principle.
+## MechanicalMomentumMeasurementPrinciple <!-- NOUN -->
+- Display name: Mechanical Momentum Measurement Principle
+- Parent class: [FlowMeasurementPrinciple](#FlowMeasurementPrinciple)
+- Description: 
+Describes that a mechanical momentum measurement principle is used to perform a measurement.
+- Definition set: Hydraulics
+- Examples:
+```dwis MechanicalMomentumMeasurementPrincipleExample
+DrillingDataPoint:volumetricFlowRateSignal
+MechanicalMomentumMeasurementPrinciple:mechanicalMomentumMeasurementPrinciple
+volumetricFlowRateSignal UsesFlowMeasurementPrinciple mechanicalMomentumMeasurementPrinciple
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[volumetricFlowRateSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[mechanicalMomentumMeasurementPrinciple] -->|BelongsToClass| N0003(MechanicalMomentumMeasurementPrinciple) 
+	N0000[volumetricFlowRateSignal] -->|UsesFlowMeasurementPrinciple| N0002((mechanicalMomentumMeasurementPrinciple)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?MechanicalMomentumMeasurementPrincipleExample
+WHERE {
+	?volumetricFlowRateSignal rdf:type ddhub:DrillingDataPoint .
+	?mechanicalMomentumMeasurementPrinciple rdf:type ddhub:MechanicalMomentumMeasurementPrinciple .
+  FILTER (
+	?Attribute000 = mechanicalMomentumMeasurementPrinciple
+  )
+}
+```
+This example states that a volumetric flowrate signal uses a mechanical momentum measurement principle.
+## CalorimetricMeasurementPrinciple <!-- NOUN -->
+- Display name: Calorimetric Measurement Principle
+- Parent class: [FlowMeasurementPrinciple](#FlowMeasurementPrinciple)
+- Description: 
+Describes that a calorimetric measurement principle is used to perform a measurement.
+- Definition set: Hydraulics
+- Examples:
+```dwis CalorimetricMeasurementPrincipleExample
+DrillingDataPoint:massFlowRateSignal
+CalorimetricMeasurementPrinciple:calorimetricMeasurementPrinciple
+massFlowRateSignal UsesFlowMeasurementPrinciple calorimetricMeasurementPrinciple
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[massFlowRateSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[calorimetricMeasurementPrinciple] -->|BelongsToClass| N0003(CalorimetricMeasurementPrinciple) 
+	N0000[massFlowRateSignal] -->|UsesFlowMeasurementPrinciple| N0002((calorimetricMeasurementPrinciple)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?CalorimetricMeasurementPrincipleExample
+WHERE {
+	?massFlowRateSignal rdf:type ddhub:DrillingDataPoint .
+	?calorimetricMeasurementPrinciple rdf:type ddhub:CalorimetricMeasurementPrinciple .
+  FILTER (
+	?Attribute000 = calorimetricMeasurementPrinciple
+  )
+}
+```
+This example states that a mass flowrate signal uses a calorimetric measurement principle.
+## AcousticMeasurementPrinciple <!-- NOUN -->
+- Display name: Acoustic Measurement Principle
+- Parent class: [FlowMeasurementPrinciple](#FlowMeasurementPrinciple)
+- Description: 
+Describes that an acoustic measurement principle is used to perform a measurement.
+- Definition set: Hydraulics
+- Examples:
+```dwis AcousticMeasurementPrincipleExample
+DrillingDataPoint:volumetricFlowRateSignal
+AcousticMeasurementPrinciple:acousticMeasurementPrinciple
+volumetricFlowRateSignal UsesFlowMeasurementPrinciple acousticMeasurementPrinciple
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[volumetricFlowRateSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[acousticMeasurementPrinciple] -->|BelongsToClass| N0003(AcousticMeasurementPrinciple) 
+	N0000[volumetricFlowRateSignal] -->|UsesFlowMeasurementPrinciple| N0002((acousticMeasurementPrinciple)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?AcousticMeasurementPrincipleExample
+WHERE {
+	?volumetricFlowRateSignal rdf:type ddhub:DrillingDataPoint .
+	?acousticMeasurementPrinciple rdf:type ddhub:AcousticMeasurementPrinciple .
+  FILTER (
+	?Attribute000 = acousticMeasurementPrinciple
+  )
+}
+```
+This example states that a volumetric flowrate signal uses an acoustic measurement principle.
+## ElectromagneticMeasurementPrinciple <!-- NOUN -->
+- Display name: Electromagnetic Measurement Principle
+- Parent class: [FlowMeasurementPrinciple](#FlowMeasurementPrinciple)
+- Description: 
+Describes that an electromagnetic measurement principle is used to perform a measurement.
+- Definition set: Hydraulics
+- Examples:
+```dwis ElectromagneticMeasurementPrincipleExample
+DrillingDataPoint:volumetricFlowRateSignal
+ElectromagneticMeasurementPrinciple:electromagneticMeasurementPrinciple
+volumetricFlowRateSignal UsesFlowMeasurementPrinciple electromagneticMeasurementPrinciple
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[volumetricFlowRateSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[electromagneticMeasurementPrinciple] -->|BelongsToClass| N0003(ElectromagneticMeasurementPrinciple) 
+	N0000[volumetricFlowRateSignal] -->|UsesFlowMeasurementPrinciple| N0002((electromagneticMeasurementPrinciple)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ElectromagneticMeasurementPrincipleExample
+WHERE {
+	?volumetricFlowRateSignal rdf:type ddhub:DrillingDataPoint .
+	?electromagneticMeasurementPrinciple rdf:type ddhub:ElectromagneticMeasurementPrinciple .
+  FILTER (
+	?Attribute000 = electromagneticMeasurementPrinciple
+  )
+}
+```
+This example states that a volumetric flowrate signal uses an electromagnetic measurement principle.
+## RadiometricMeasurementPrinciple <!-- NOUN -->
+- Display name: Radiometric Measurement Principle
+- Parent class: [FlowMeasurementPrinciple](#FlowMeasurementPrinciple)
+- Description: 
+Describes that an radiometric measurement principle is used to perform a measurement.
+- Definition set: Hydraulics
+- Examples:
+```dwis RadiometricMeasurementPrincipleExample
+DrillingDataPoint:densitySignal
+RadiometricMeasurementPrinciple:radiometricMeasurementPrinciple
+densitySignal UsesFlowMeasurementPrinciple radiometricMeasurementPrinciple
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[densitySignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[radiometricMeasurementPrinciple] -->|BelongsToClass| N0003(RadiometricMeasurementPrinciple) 
+	N0000[densitySignal] -->|UsesFlowMeasurementPrinciple| N0002((radiometricMeasurementPrinciple)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?RadiometricMeasurementPrincipleExample
+WHERE {
+	?densitySignal rdf:type ddhub:DrillingDataPoint .
+	?radiometricMeasurementPrinciple rdf:type ddhub:RadiometricMeasurementPrinciple .
+  FILTER (
+	?Attribute000 = radiometricMeasurementPrinciple
+  )
+}
+```
+This example states that a mass density signal uses an radiometric measurement principle.
+## OpticalMeasurementPrinciple <!-- NOUN -->
+- Display name: Optical Measurement Principle
+- Parent class: [FlowMeasurementPrinciple](#FlowMeasurementPrinciple)
+- Description: 
+Describes that an optical measurement principle is used to perform a measurement.
+- Definition set: Hydraulics
+- Examples:
+```dwis OpticalMeasurementPrincipleExample
+DrillingDataPoint:volumetricFlowRateSignal
+OpticalMeasurementPrinciple:opticalMeasurementPrinciple
+volumetricFlowRateSignal UsesFlowMeasurementPrinciple radiometricMeasurementPrinciple
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[volumetricFlowRateSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[opticalMeasurementPrinciple] -->|BelongsToClass| N0003(OpticalMeasurementPrinciple) 
+	N0000[volumetricFlowRateSignal] -->|UsesFlowMeasurementPrinciple| N0004((radiometricMeasurementPrinciple)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?OpticalMeasurementPrincipleExample
+WHERE {
+	?volumetricFlowRateSignal rdf:type ddhub:DrillingDataPoint .
+	?opticalMeasurementPrinciple rdf:type ddhub:OpticalMeasurementPrinciple .
+  FILTER (
+	?Attribute000 = radiometricMeasurementPrinciple
+  )
+}
+```
+This example states that a volumetric flowrate signal uses an optical measurement principle.
+## GravimetricMeasurementPrinciple <!-- NOUN -->
+- Display name: Gravimetric Measurement Principle
+- Parent class: [FlowMeasurementPrinciple](#FlowMeasurementPrinciple)
+- Description: 
+Describes that a gravimetric measurement principle is used to perform a measurement.
+- Definition set: Hydraulics
+- Examples:
+```dwis GravimetricMeasurementPrincipleExample
+DrillingDataPoint:densitySignal
+GravimetricMeasurementPrinciple:gravimetricMeasurementPrinciple
+densitySignal UsesFlowMeasurementPrinciple gravimetricMeasurementPrinciple
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[densitySignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[gravimetricMeasurementPrinciple] -->|BelongsToClass| N0003(GravimetricMeasurementPrinciple) 
+	N0000[densitySignal] -->|UsesFlowMeasurementPrinciple| N0002((gravimetricMeasurementPrinciple)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?GravimetricMeasurementPrincipleExample
+WHERE {
+	?densitySignal rdf:type ddhub:DrillingDataPoint .
+	?gravimetricMeasurementPrinciple rdf:type ddhub:GravimetricMeasurementPrinciple .
+  FILTER (
+	?Attribute000 = gravimetricMeasurementPrinciple
+  )
+}
+```
+This example states that a mass density signal uses an gravimetric measurement principle.
 ## ConsistencyIndexRheologyQuantity <!-- NOUN -->
 - Display name: ConsistencyIndexRheology
 - Parent class: [MeasurableQuantity](#MeasurableQuantity)
@@ -14504,42 +24076,222 @@ graph LR
 - Description: 
 A mechanical model for a drill-stem. Another standard name for drill-stem mechanical models is a torque and drag model.
 - Definition set: MechanicalModel
+- Examples:
+```dwis torqueDragModelExample
+DrillStemMechanicalModel:torqueAndDragModel
+DynamicDrillingSignal:topOfStringForceSignal
+DrillingDataPoint:topOfStringForce_01
+topOfStringForce_01 BelongsToClass ContinuousDataType
+topOfStringForce_01 HasDynamicValue topOfStringForceSignal
+topOfStringForce_01 IsOfMeasurableQuantity AxialForceDrilling
+topOfStringForce_01 IsComputedBy torqueAndDragModel
+TopOfStringReferenceLocation:topOfString
+topOfStringForce_01 IsPhysicallyLocatedAt topOfString
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[torqueAndDragModel] -->|BelongsToClass| N0001(DrillStemMechanicalModel) 
+	N0002[topOfStringForceSignal] -->|BelongsToClass| N0003(DynamicDrillingSignal) 
+	N0004[topOfStringForce_01] -->|BelongsToClass| N0005(DrillingDataPoint) 
+	N0004[topOfStringForce_01] -->|BelongsToClass| N0006(ContinuousDataType) 
+	N0004[topOfStringForce_01] -->|HasDynamicValue| N0002((topOfStringForceSignal)) 
+	N0004[topOfStringForce_01] -->|IsOfMeasurableQuantity| N0007((AxialForceDrilling)) 
+	N0004[topOfStringForce_01] -->|IsComputedBy| N0000((torqueAndDragModel)) 
+	N0008[topOfString] -->|BelongsToClass| N0009(TopOfStringReferenceLocation) 
+	N0004[topOfStringForce_01] -->|IsPhysicallyLocatedAt| N0008((topOfString)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?torqueDragModelExample
+WHERE {
+	?torqueAndDragModel rdf:type ddhub:DrillStemMechanicalModel .
+	?topOfStringForceSignal rdf:type ddhub:DynamicDrillingSignal .
+	?topOfStringForce_01 rdf:type ddhub:DrillingDataPoint .
+	?topOfStringForce_01 rdf:type ddhub:ContinuousDataType .
+	?topOfString rdf:type ddhub:TopOfStringReferenceLocation .
+  FILTER (
+	?Attribute000 = topOfStringForceSignal
+	&& 	?Attribute001 = AxialForceDrilling
+	&& 	?Attribute002 = torqueAndDragModel
+	&& 	?Attribute003 = topOfString
+  )
+}
+```
+This example defines a torque and drag model and links it to a computed top-of-string force data point.
 ## MechanicalStiffnessType <!-- NOUN -->
 - Display name: Mechanical stiffness type
 - Parent class: [DWISNoun](#DWISNoun)
 - Description: 
 A description of how the drill-stem stiffness is modelled.
 - Definition set: MechanicalModel
+- Examples:
+```dwis stiffnessTypeExample
+MechanicalStiffnessType:stiffnessAssumption
+DrillStemMechanicalModel:torqueDragModel
+torqueDragModel IsOfMechanicalStiffnessType stiffnessAssumption
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stiffnessAssumption] -->|BelongsToClass| N0001(MechanicalStiffnessType) 
+	N0002[torqueDragModel] -->|BelongsToClass| N0003(DrillStemMechanicalModel) 
+	N0002[torqueDragModel] -->|IsOfMechanicalStiffnessType| N0000((stiffnessAssumption)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stiffnessTypeExample
+WHERE {
+	?stiffnessAssumption rdf:type ddhub:MechanicalStiffnessType .
+	?torqueDragModel rdf:type ddhub:DrillStemMechanicalModel .
+  FILTER (
+	?Attribute000 = stiffnessAssumption
+  )
+}
+```
+This example attaches a stiffness assumption to a drill-stem mechanical model.
 ## MechanicalSoftModel <!-- NOUN -->
 - Display name: Mechanical soft model
 - Parent class: [MechanicalStiffnessType](#MechanicalStiffnessType)
 - Description: 
 An infinitively soft model assumes that the drill-stem deforms without any resistance when compressive loads are applied.
 - Definition set: MechanicalModel
+- Examples:
+```dwis softModelExample
+MechanicalSoftModel:softModel
+DrillStemMechanicalModel:torqueDragModel
+torqueDragModel IsOfMechanicalStiffnessType softModel
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[softModel] -->|BelongsToClass| N0001(MechanicalSoftModel) 
+	N0002[torqueDragModel] -->|BelongsToClass| N0003(DrillStemMechanicalModel) 
+	N0002[torqueDragModel] -->|IsOfMechanicalStiffnessType| N0000((softModel)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?softModelExample
+WHERE {
+	?softModel rdf:type ddhub:MechanicalSoftModel .
+	?torqueDragModel rdf:type ddhub:DrillStemMechanicalModel .
+  FILTER (
+	?Attribute000 = softModel
+  )
+}
+```
+This example sets a soft stiffness assumption.
 ## MechanicalStiffModel <!-- NOUN -->
 - Display name: Mechanical stiff model
 - Parent class: [MechanicalStiffnessType](#MechanicalStiffnessType)
 - Description: 
 A stiff mechanical model considers that the drill-stem can deform laterally when put in compression.
 - Definition set: MechanicalModel
+- Examples:
+```dwis stiffModelExample
+MechanicalStiffModel:stiffModel
+DrillStemMechanicalModel:torqueDragModel
+torqueDragModel IsOfMechanicalStiffnessType stiffModel
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stiffModel] -->|BelongsToClass| N0001(MechanicalStiffModel) 
+	N0002[torqueDragModel] -->|BelongsToClass| N0003(DrillStemMechanicalModel) 
+	N0002[torqueDragModel] -->|IsOfMechanicalStiffnessType| N0000((stiffModel)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stiffModelExample
+WHERE {
+	?stiffModel rdf:type ddhub:MechanicalStiffModel .
+	?torqueDragModel rdf:type ddhub:DrillStemMechanicalModel .
+  FILTER (
+	?Attribute000 = stiffModel
+  )
+}
+```
+This example sets a stiff stiffness assumption.
 ## MechanicalStiffModelAssumedContacts <!-- NOUN -->
 - Display name: Mechanical stiff model with assumed contacts
 - Parent class: [MechanicalStiffModel](#MechanicalStiffModel)
 - Description: 
 Such a stiff mechanical model presuposes the position of the contact points.
 - Definition set: MechanicalModel
+- Examples:
+```dwis stiffAssumedContactsExample
+MechanicalStiffModelAssumedContacts:assumedContactsModel
+DrillStemMechanicalModel:torqueDragModel
+torqueDragModel IsOfMechanicalStiffnessType assumedContactsModel
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[assumedContactsModel] -->|BelongsToClass| N0001(MechanicalStiffModelAssumedContacts) 
+	N0002[torqueDragModel] -->|BelongsToClass| N0003(DrillStemMechanicalModel) 
+	N0002[torqueDragModel] -->|IsOfMechanicalStiffnessType| N0000((assumedContactsModel)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stiffAssumedContactsExample
+WHERE {
+	?assumedContactsModel rdf:type ddhub:MechanicalStiffModelAssumedContacts .
+	?torqueDragModel rdf:type ddhub:DrillStemMechanicalModel .
+  FILTER (
+	?Attribute000 = assumedContactsModel
+  )
+}
+```
+This example uses assumed contact points.
 ## MechanicalStiffModelEstimatedContacts <!-- NOUN -->
 - Display name: Mechanical stiff model with estimated contacts
 - Parent class: [MechanicalStiffModel](#MechanicalStiffModel)
 - Description: 
 Such a stiff mechanical model estimates the position of the contact points.
 - Definition set: MechanicalModel
-## TangencyLength <!-- NOUN -->
-- Display name: Tangency length
-- Parent class: [DWISNoun](#DWISNoun)
-- Description: 
-the position along the drill-string, counted from the bit, from which we can consider that the pipes direction is tangential with the borehole direction.
-- Definition set: MechanicalModel
+- Examples:
+```dwis stiffEstimatedContactsExample
+MechanicalStiffModelEstimatedContacts:estimatedContactsModel
+DrillStemMechanicalModel:torqueDragModel
+torqueDragModel IsOfMechanicalStiffnessType estimatedContactsModel
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[estimatedContactsModel] -->|BelongsToClass| N0001(MechanicalStiffModelEstimatedContacts) 
+	N0002[torqueDragModel] -->|BelongsToClass| N0003(DrillStemMechanicalModel) 
+	N0002[torqueDragModel] -->|IsOfMechanicalStiffnessType| N0000((estimatedContactsModel)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stiffEstimatedContactsExample
+WHERE {
+	?estimatedContactsModel rdf:type ddhub:MechanicalStiffModelEstimatedContacts .
+	?torqueDragModel rdf:type ddhub:DrillStemMechanicalModel .
+  FILTER (
+	?Attribute000 = estimatedContactsModel
+  )
+}
+```
+This example uses estimated contact points.
 ## MechanicalElementState <!-- NOUN -->
 - Display name: MechanicalElementState
 - Parent class: [DWISNoun](#DWISNoun)
@@ -14547,239 +24299,1814 @@ the position along the drill-string, counted from the bit, from which we can con
   - Value
     - Type: bool
     - Description: 
+- Description: 
+Represents the state of a mechanical element such as open/closed or active/inactive.
 - Definition set: Mechanics
+- Examples:
+```dwis mechState
+MechanicalElementState:mechanicalState
+MechanicalLogicalElement:topDriveClutch
+topDriveClutch HasMechanicalState mechanicalState
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[mechanicalState] -->|BelongsToClass| N0001(MechanicalElementState) 
+	N0002[topDriveClutch] -->|BelongsToClass| N0003(MechanicalLogicalElement) 
+	N0002[topDriveClutch] -->|HasMechanicalState| N0000((mechanicalState)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?mechState
+WHERE {
+	?mechanicalState rdf:type ddhub:MechanicalElementState .
+	?topDriveClutch rdf:type ddhub:MechanicalLogicalElement .
+  FILTER (
+	?Attribute000 = mechanicalState
+  )
+}
+```
+This example assigns a state to a mechanical element.
 ## MechanicallyClosedState <!-- NOUN -->
 - Display name: MechanicallyClosedState
 - Parent class: [MechanicalElementState](#MechanicalElementState)
+- Description: 
+A state indicating a mechanical closure (e.g., valve closed).
 - Definition set: Mechanics
+- Examples:
+```dwis closedState
+MechanicallyClosedState:closedState
+MechanicalLogicalElement:blowoutPreventer
+blowoutPreventer HasMechanicalState closedState
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[closedState] -->|BelongsToClass| N0001(MechanicallyClosedState) 
+	N0002[blowoutPreventer] -->|BelongsToClass| N0003(MechanicalLogicalElement) 
+	N0002[blowoutPreventer] -->|HasMechanicalState| N0000((closedState)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?closedState
+WHERE {
+	?closedState rdf:type ddhub:MechanicallyClosedState .
+	?blowoutPreventer rdf:type ddhub:MechanicalLogicalElement .
+  FILTER (
+	?Attribute000 = closedState
+  )
+}
+```
+This example denotes a closed state on a BOP element.
 ## MechanicallyOpenState <!-- NOUN -->
 - Display name: MechanicallyOpenState
 - Parent class: [MechanicalElementState](#MechanicalElementState)
+- Description: 
+A state indicating a mechanical opening.
 - Definition set: Mechanics
+- Examples:
+```dwis openState
+MechanicallyOpenState:openState
+MechanicalLogicalElement:annularPreventer
+annularPreventer HasMechanicalState openState
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[openState] -->|BelongsToClass| N0001(MechanicallyOpenState) 
+	N0002[annularPreventer] -->|BelongsToClass| N0003(MechanicalLogicalElement) 
+	N0002[annularPreventer] -->|HasMechanicalState| N0000((openState)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?openState
+WHERE {
+	?openState rdf:type ddhub:MechanicallyOpenState .
+	?annularPreventer rdf:type ddhub:MechanicalLogicalElement .
+  FILTER (
+	?Attribute000 = openState
+  )
+}
+```
+This example sets an open state on an annular preventer.
 ## MechanicallyActiveState <!-- NOUN -->
 - Display name: MechanicallyActiveState
 - Parent class: [MechanicalElementState](#MechanicalElementState)
+- Description: 
+Indicates that a mechanical element is active/engaged.
 - Definition set: Mechanics
+- Examples:
+```dwis activeState
+MechanicallyActiveState:activeState
+MechanicalLogicalElement:topDrive
+topDrive HasMechanicalState activeState
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[activeState] -->|BelongsToClass| N0001(MechanicallyActiveState) 
+	N0002[topDrive] -->|BelongsToClass| N0003(MechanicalLogicalElement) 
+	N0002[topDrive] -->|HasMechanicalState| N0000((activeState)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?activeState
+WHERE {
+	?activeState rdf:type ddhub:MechanicallyActiveState .
+	?topDrive rdf:type ddhub:MechanicalLogicalElement .
+  FILTER (
+	?Attribute000 = activeState
+  )
+}
+```
+This example marks a top drive as active.
 ## MechanicallyInactiveState <!-- NOUN -->
 - Display name: MechanicallyInactiveState
 - Parent class: [MechanicalElementState](#MechanicalElementState)
+- Description: 
+Indicates that a mechanical element is inactive/disengaged.
 - Definition set: Mechanics
+- Examples:
+```dwis inactiveState
+MechanicallyInactiveState:inactiveState
+MechanicalLogicalElement:topDrive
+topDrive HasMechanicalState inactiveState
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[inactiveState] -->|BelongsToClass| N0001(MechanicallyInactiveState) 
+	N0002[topDrive] -->|BelongsToClass| N0003(MechanicalLogicalElement) 
+	N0002[topDrive] -->|HasMechanicalState| N0000((inactiveState)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?inactiveState
+WHERE {
+	?inactiveState rdf:type ddhub:MechanicallyInactiveState .
+	?topDrive rdf:type ddhub:MechanicalLogicalElement .
+  FILTER (
+	?Attribute000 = inactiveState
+  )
+}
+```
+This example marks a top drive as inactive.
 ## MechanicallyConnectedState <!-- NOUN -->
 - Display name: MechanicallyConnectedState
 - Parent class: [MechanicalElementState](#MechanicalElementState)
+- Description: 
+Indicates whether two mechanical elements are connected.
 - Definition set: Mechanics
+- Examples:
+```dwis connectedState
+MechanicallyConnectedState:connectedState
+MechanicalLogicalElement:pipeConnection
+pipeConnection HasMechanicalState connectedState
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[connectedState] -->|BelongsToClass| N0001(MechanicallyConnectedState) 
+	N0002[pipeConnection] -->|BelongsToClass| N0003(MechanicalLogicalElement) 
+	N0002[pipeConnection] -->|HasMechanicalState| N0000((connectedState)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?connectedState
+WHERE {
+	?connectedState rdf:type ddhub:MechanicallyConnectedState .
+	?pipeConnection rdf:type ddhub:MechanicalLogicalElement .
+  FILTER (
+	?Attribute000 = connectedState
+  )
+}
+```
+This example records a connection state for a pipe joint.
 ## MechanicalLogicalElement <!-- NOUN -->
-- Display name: MechanicalLogicalElement
+- Display name: Mechanical Logical Element
 - Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+Abstract mechanical element used to model kinematic or connection relationships.
 - Definition set: Mechanics
+- Examples:
+```dwis mechanicalElementExample
+MechanicalLogicalElement:topDrive
+DrillingEquipment:topDriveEquipment
+topDrive IsAMechanicalRepresentationFor topDriveEquipment
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[topDrive] -->|BelongsToClass| N0001(MechanicalLogicalElement) 
+	N0002[topDriveEquipment] -->|BelongsToClass| N0003(DrillingEquipment) 
+	N0000[topDrive] -->|IsAMechanicalRepresentationFor| N0002((topDriveEquipment)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?mechanicalElementExample
+WHERE {
+	?topDrive rdf:type ddhub:MechanicalLogicalElement .
+	?topDriveEquipment rdf:type ddhub:DrillingEquipment .
+  FILTER (
+	?Attribute000 = topDriveEquipment
+  )
+}
+```
+This example represents a top drive as a mechanical logical element.
+## TopSideMechanicalLogicalElement <!-- NOUN -->
+- Display name: Top Side Mechanical Logical Element
+- Parent class: [MechanicalLogicalElement](#MechanicalLogicalElement)
+- Description: 
+Abstract mechanical element concerning the top-side mechanical infrastructure like for instance the top-drive, the rotary table, the kelly.
+- Definition set: Mechanics
+- Examples:
+```dwis TopSideMechanicalLogicalElementExample
+TopSideMechanicalLogicalElement:topDriveLogical
+TopDrive:topDriveEquipment
+topDriveLogical IsAMechanicalRepresentationFor topDriveEquipment
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[topDriveLogical] -->|BelongsToClass| N0001(TopSideMechanicalLogicalElement) 
+	N0002[topDriveEquipment] -->|BelongsToClass| N0003(TopDrive) 
+	N0000[topDriveLogical] -->|IsAMechanicalRepresentationFor| N0002((topDriveEquipment)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?TopSideMechanicalLogicalElementExample
+WHERE {
+	?topDriveLogical rdf:type ddhub:TopSideMechanicalLogicalElement .
+	?topDriveEquipment rdf:type ddhub:TopDrive .
+  FILTER (
+	?Attribute000 = topDriveEquipment
+  )
+}
+```
+This example represents a top drive as a mechanical logical element.
+## DrillStemMechanicalLogicalElement <!-- NOUN -->
+- Display name: Drill-stem Mechanical Logical Element
+- Parent class: [MechanicalLogicalElement](#MechanicalLogicalElement)
+- Description: 
+Abstract mechanical representation of a drill-stem, e.g., a drill-string, a casing-string, a tubing-string.
+- Definition set: Mechanics
+- Examples:
+```dwis DrillStemMechanicalLogicalElementExample
+TopSideMechanicalLogicalElement:topSideHoistingAndRotationLogical
+DrillStemMechanicalLogicalElement:drillStemLogical
+topSideHoistingAndRotationLogical IsMechanicallyConnectedTo drillStemLogical
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[topSideHoistingAndRotationLogical] -->|BelongsToClass| N0001(TopSideMechanicalLogicalElement) 
+	N0002[drillStemLogical] -->|BelongsToClass| N0003(DrillStemMechanicalLogicalElement) 
+	N0000[topSideHoistingAndRotationLogical] -->|IsMechanicallyConnectedTo| N0002((drillStemLogical)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?DrillStemMechanicalLogicalElementExample
+WHERE {
+	?topSideHoistingAndRotationLogical rdf:type ddhub:TopSideMechanicalLogicalElement .
+	?drillStemLogical rdf:type ddhub:DrillStemMechanicalLogicalElement .
+  FILTER (
+	?Attribute000 = drillStemLogical
+  )
+}
+```
+This example describes that the top-drive or kelly is mechanically connected to the drill-stem.
+## DrillStringMechanicalLogicalElement <!-- NOUN -->
+- Display name: Drill-string Mechanical Logical Element
+- Parent class: [DrillStemMechanicalLogicalElement](#DrillStemMechanicalLogicalElement)
+- Description: 
+Abstract mechanical representation of a drill-string, i.e., a drill-stem that is used during a drilling operation.
+- Definition set: Mechanics
+- Examples:
+```dwis DrillStringMechanicalLogicalElementExample
+TopSideMechanicalLogicalElement:topSideHoistingAndRotationLogical
+DrillStemMechanicalLogicalElement:drillStemLogical
+topSideHoistingAndRotationLogical IsMechanicallyConnectedTo drillStemLogical
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[topSideHoistingAndRotationLogical] -->|BelongsToClass| N0001(TopSideMechanicalLogicalElement) 
+	N0002[drillStemLogical] -->|BelongsToClass| N0003(DrillStemMechanicalLogicalElement) 
+	N0000[topSideHoistingAndRotationLogical] -->|IsMechanicallyConnectedTo| N0002((drillStemLogical)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?DrillStringMechanicalLogicalElementExample
+WHERE {
+	?topSideHoistingAndRotationLogical rdf:type ddhub:TopSideMechanicalLogicalElement .
+	?drillStemLogical rdf:type ddhub:DrillStemMechanicalLogicalElement .
+  FILTER (
+	?Attribute000 = drillStemLogical
+  )
+}
+```
+This example describes that the top-drive or kelly is mechanically connected to the drill-stem.
+## CasingStringMechanicalLogicalElement <!-- NOUN -->
+- Display name: Casing-string Mechanical Logical Element
+- Parent class: [DrillStemMechanicalLogicalElement](#DrillStemMechanicalLogicalElement)
+- Description: 
+Abstract mechanical representation of a casing-string, i.e., a drill-stem that is composed of casing joints, a casing shoe and similar elements.
+- Definition set: Mechanics
+- Examples:
+```dwis CasingStringMechanicalLogicalElementExample
+TopSideMechanicalLogicalElement:topSideHoistingAndRotationLogical
+CasingStringMechanicalLogicalElement:casingStringLogical
+topSideHoistingAndRotationLogical IsMechanicallyConnectedTo casingStringLogical
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[topSideHoistingAndRotationLogical] -->|BelongsToClass| N0001(TopSideMechanicalLogicalElement) 
+	N0002[casingStringLogical] -->|BelongsToClass| N0003(CasingStringMechanicalLogicalElement) 
+	N0000[topSideHoistingAndRotationLogical] -->|IsMechanicallyConnectedTo| N0002((casingStringLogical)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?CasingStringMechanicalLogicalElementExample
+WHERE {
+	?topSideHoistingAndRotationLogical rdf:type ddhub:TopSideMechanicalLogicalElement .
+	?casingStringLogical rdf:type ddhub:CasingStringMechanicalLogicalElement .
+  FILTER (
+	?Attribute000 = casingStringLogical
+  )
+}
+```
+This example describes that the top-drive or kelly is mechanically connected to a casing string.
+## LinerStringMechanicalLogicalElement <!-- NOUN -->
+- Display name: Liner-string Mechanical Logical Element
+- Parent class: [DrillStemMechanicalLogicalElement](#DrillStemMechanicalLogicalElement)
+- Description: 
+Abstract mechanical representation of a liner-string, i.e., a drill-stem that is composed of a pipe section first and casing joints, a casing shoe and similar elements below.
+- Definition set: Mechanics
+- Examples:
+```dwis LinerStringMechanicalLogicalElementExample
+TopSideMechanicalLogicalElement:topSideHoistingAndRotationLogical
+LinerStringMechanicalLogicalElement:linerStringLogical
+topSideHoistingAndRotationLogical IsMechanicallyConnectedTo linerStringLogical
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[topSideHoistingAndRotationLogical] -->|BelongsToClass| N0001(TopSideMechanicalLogicalElement) 
+	N0002[linerStringLogical] -->|BelongsToClass| N0003(LinerStringMechanicalLogicalElement) 
+	N0000[topSideHoistingAndRotationLogical] -->|IsMechanicallyConnectedTo| N0002((linerStringLogical)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?LinerStringMechanicalLogicalElementExample
+WHERE {
+	?topSideHoistingAndRotationLogical rdf:type ddhub:TopSideMechanicalLogicalElement .
+	?linerStringLogical rdf:type ddhub:LinerStringMechanicalLogicalElement .
+  FILTER (
+	?Attribute000 = linerStringLogical
+  )
+}
+```
+This example describes that the top-drive or kelly is mechanically connected to a liner string.
+## TubingStringMechanicalLogicalElement <!-- NOUN -->
+- Display name: Tubing-string Mechanical Logical Element
+- Parent class: [DrillStemMechanicalLogicalElement](#DrillStemMechanicalLogicalElement)
+- Description: 
+Abstract mechanical representation of a tubing-string, i.e., a drill-stem that is composed of a tubings, expansion joint, packers and similar elements.
+- Definition set: Mechanics
+- Examples:
+```dwis TubingStringMechanicalLogicalElementExample
+TopSideMechanicalLogicalElement:topSideHoistingAndRotationLogical
+TubingStringMechanicalLogicalElement:tubingStringLogical
+topSideHoistingAndRotationLogical IsMechanicallyConnectedTo tubingStringLogical
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[topSideHoistingAndRotationLogical] -->|BelongsToClass| N0001(TopSideMechanicalLogicalElement) 
+	N0002[tubingStringLogical] -->|BelongsToClass| N0003(TubingStringMechanicalLogicalElement) 
+	N0000[topSideHoistingAndRotationLogical] -->|IsMechanicallyConnectedTo| N0002((tubingStringLogical)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?TubingStringMechanicalLogicalElementExample
+WHERE {
+	?topSideHoistingAndRotationLogical rdf:type ddhub:TopSideMechanicalLogicalElement .
+	?tubingStringLogical rdf:type ddhub:TubingStringMechanicalLogicalElement .
+  FILTER (
+	?Attribute000 = tubingStringLogical
+  )
+}
+```
+This example describes that the top-side hoisting system is mechanically connected to a tubing string.
+## PipeSectionMechanicalLogicalElement <!-- NOUN -->
+- Display name: Pipe Section Mechanical Logical Element
+- Parent class: [DrillStemMechanicalLogicalElement](#DrillStemMechanicalLogicalElement)
+- Description: 
+Abstract mechanical representation of the pipe section of a drill-stem. The pipe section contains drill-pipe,
+heavy-weight drill-pipe, jar, accelerator and other similar components.
+- Definition set: Mechanics
+- Examples:
+```dwis PipeSectionMechanicalLogicalElementExample
+PipeSectionMechanicalLogicalElement:pipeSectionLogical
+BHAMechanicalLogicalElement:BHALogical
+pipeSectionLogical IsMechanicallyConnectedTo BHALogical
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pipeSectionLogical] -->|BelongsToClass| N0001(PipeSectionMechanicalLogicalElement) 
+	N0002[BHALogical] -->|BelongsToClass| N0003(BHAMechanicalLogicalElement) 
+	N0000[pipeSectionLogical] -->|IsMechanicallyConnectedTo| N0002((BHALogical)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?PipeSectionMechanicalLogicalElementExample
+WHERE {
+	?pipeSectionLogical rdf:type ddhub:PipeSectionMechanicalLogicalElement .
+	?BHALogical rdf:type ddhub:BHAMechanicalLogicalElement .
+  FILTER (
+	?Attribute000 = BHALogical
+  )
+}
+```
+This example describes that the pipe section is mechanically connected to the BHA.
+## BHAMechanicalLogicalElement <!-- NOUN -->
+- Display name: BHA Mechanical Logical Element
+- Parent class: [DrillStemMechanicalLogicalElement](#DrillStemMechanicalLogicalElement)
+- Description: 
+Abstract mechanical representation of the BHA portion of a drill-string.
+- Definition set: Mechanics
+- Examples:
+```dwis BHAMechanicalLogicalElementExample
+PipeSectionMechanicalLogicalElement:pipeSectionLogical
+BHAMechanicalLogicalElement:BHALogical
+pipeSectionLogical IsMechanicallyConnectedTo BHALogical
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pipeSectionLogical] -->|BelongsToClass| N0001(PipeSectionMechanicalLogicalElement) 
+	N0002[BHALogical] -->|BelongsToClass| N0003(BHAMechanicalLogicalElement) 
+	N0000[pipeSectionLogical] -->|IsMechanicallyConnectedTo| N0002((BHALogical)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?BHAMechanicalLogicalElementExample
+WHERE {
+	?pipeSectionLogical rdf:type ddhub:PipeSectionMechanicalLogicalElement .
+	?BHALogical rdf:type ddhub:BHAMechanicalLogicalElement .
+  FILTER (
+	?Attribute000 = BHALogical
+  )
+}
+```
+This example describes that the pipe section is mechanically connected to the BHA.
+## EndOfStringMechanicalLogicalElement <!-- NOUN -->
+- Display name: End Of String Mechanical Logical Element
+- Parent class: [DrillStemMechanicalLogicalElement](#DrillStemMechanicalLogicalElement)
+- Description: 
+Abstract mechanical representation of the end of the drill-stem, e.g., bit, bull-nose, casing shoe, etc.
+- Definition set: Mechanics
+- Examples:
+```dwis EndOfStringMechanicalLogicalElementExample
+BHAMechanicalLogicalElement:BHALogical
+EndOfStringMechanicalLogicalElement:BitLogical
+BHALogical IsMechanicallyConnectedTo BitLogical
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[BHALogical] -->|BelongsToClass| N0001(BHAMechanicalLogicalElement) 
+	N0002[BitLogical] -->|BelongsToClass| N0003(EndOfStringMechanicalLogicalElement) 
+	N0000[BHALogical] -->|IsMechanicallyConnectedTo| N0002((BitLogical)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?EndOfStringMechanicalLogicalElementExample
+WHERE {
+	?BHALogical rdf:type ddhub:BHAMechanicalLogicalElement .
+	?BitLogical rdf:type ddhub:EndOfStringMechanicalLogicalElement .
+  FILTER (
+	?Attribute000 = BitLogical
+  )
+}
+```
+This example describes that the BHA is mechanically connected to the Bit.
+## CasingSectionMechanicalLogicalElement <!-- NOUN -->
+- Display name: Casing-section Mechanical Logical Element
+- Parent class: [DrillStemMechanicalLogicalElement](#DrillStemMechanicalLogicalElement)
+- Description: 
+Abstract mechanical representation of the casing-section portion of a casing or liner string.
+- Definition set: Mechanics
+- Examples:
+```dwis CasingSectionMechanicalLogicalElementExample
+PipeSectionMechanicalLogicalElement:pipeSectionLogical
+CasingSectionMechanicalLogicalElement:casingSectionLogical
+ShoeTrackMechanicalLogicalElement:shoeTrackLogical
+pipeSectionLogical IsMechanicallyConnectedTo casingSectionLogical
+casingSectionLogical IsMechanicallyConnectedTo shoeTrackLogical
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pipeSectionLogical] -->|BelongsToClass| N0001(PipeSectionMechanicalLogicalElement) 
+	N0002[casingSectionLogical] -->|BelongsToClass| N0003(CasingSectionMechanicalLogicalElement) 
+	N0004[shoeTrackLogical] -->|BelongsToClass| N0005(ShoeTrackMechanicalLogicalElement) 
+	N0000[pipeSectionLogical] -->|IsMechanicallyConnectedTo| N0002((casingSectionLogical)) 
+	N0002[casingSectionLogical] -->|IsMechanicallyConnectedTo| N0004((shoeTrackLogical)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?CasingSectionMechanicalLogicalElementExample
+WHERE {
+	?pipeSectionLogical rdf:type ddhub:PipeSectionMechanicalLogicalElement .
+	?casingSectionLogical rdf:type ddhub:CasingSectionMechanicalLogicalElement .
+	?shoeTrackLogical rdf:type ddhub:ShoeTrackMechanicalLogicalElement .
+  FILTER (
+	?Attribute000 = casingSectionLogical
+	&& 	?Attribute001 = shoeTrackLogical
+  )
+}
+```
+This example describes that the logical decomposition of a liner-string in a pipe section attached to a casing section attached to a shoe-track.
+## ShoeTrackMechanicalLogicalElement <!-- NOUN -->
+- Display name: Shoe-track Mechanical Logical Element
+- Parent class: [DrillStemMechanicalLogicalElement](#DrillStemMechanicalLogicalElement)
+- Description: 
+Abstract mechanical representation of the show-track portion of a casing or liner string.
+- Definition set: Mechanics
+- Examples:
+```dwis ShoeTrackMechanicalLogicalElementExample
+CasingSectionMechanicalLogicalElement:casingSectionLogical
+ShoeTrackMechanicalLogicalElement:shoeTrackLogical
+casingSectionLogical IsMechanicallyConnectedTo shoeTrackLogical
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[casingSectionLogical] -->|BelongsToClass| N0001(CasingSectionMechanicalLogicalElement) 
+	N0002[shoeTrackLogical] -->|BelongsToClass| N0003(ShoeTrackMechanicalLogicalElement) 
+	N0000[casingSectionLogical] -->|IsMechanicallyConnectedTo| N0002((shoeTrackLogical)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ShoeTrackMechanicalLogicalElementExample
+WHERE {
+	?casingSectionLogical rdf:type ddhub:CasingSectionMechanicalLogicalElement .
+	?shoeTrackLogical rdf:type ddhub:ShoeTrackMechanicalLogicalElement .
+  FILTER (
+	?Attribute000 = shoeTrackLogical
+  )
+}
+```
+This example describes that a casing-string that is composed of a casing-sectiond attached to a shoe-track.
 ## MotionType <!-- NOUN -->
 - Display name: MotionType
 - Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+Classifies the type of motion considered (axial, torsional, lateral).
 - Definition set: Mechanics
+- Examples:
+```dwis motionType
+MotionType:motion
+DrillingDataPoint:hookload
+hookload IsForMotionType motion
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[motion] -->|BelongsToClass| N0001(MotionType) 
+	N0002[hookload] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[hookload] -->|IsForMotionType| N0000((motion)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?motionType
+WHERE {
+	?motion rdf:type ddhub:MotionType .
+	?hookload rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = motion
+  )
+}
+```
+This example relates a signal to a motion type.
 ## AxialMotionType <!-- NOUN -->
 - Display name: AxialMotionType
 - Parent class: [MotionType](#MotionType)
+- Description: 
+Motion along the string axis.
 - Definition set: Mechanics
+- Examples:
+```dwis axialMotion
+AxialMotionType:axialMotion
+MechanicalLogicalElement:drillString
+drillString HasMotionType axialMotion
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[axialMotion] -->|BelongsToClass| N0001(AxialMotionType) 
+	N0002[drillString] -->|BelongsToClass| N0003(MechanicalLogicalElement) 
+	N0002[drillString] -->|HasMotionType| N0000((axialMotion)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?axialMotion
+WHERE {
+	?axialMotion rdf:type ddhub:AxialMotionType .
+	?drillString rdf:type ddhub:MechanicalLogicalElement .
+  FILTER (
+	?Attribute000 = axialMotion
+  )
+}
+```
+This example tags axial motion for a drill string element.
 ## TorsionalMotionType <!-- NOUN -->
 - Display name: TorsionalMotionType
 - Parent class: [MotionType](#MotionType)
+- Description: 
+Rotational motion around the axis.
 - Definition set: Mechanics
+- Examples:
+```dwis torsionalMotion
+TorsionalMotionType:torsionalMotion
+MechanicalLogicalElement:drillString
+drillString HasMotionType torsionalMotion
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[torsionalMotion] -->|BelongsToClass| N0001(TorsionalMotionType) 
+	N0002[drillString] -->|BelongsToClass| N0003(MechanicalLogicalElement) 
+	N0002[drillString] -->|HasMotionType| N0000((torsionalMotion)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?torsionalMotion
+WHERE {
+	?torsionalMotion rdf:type ddhub:TorsionalMotionType .
+	?drillString rdf:type ddhub:MechanicalLogicalElement .
+  FILTER (
+	?Attribute000 = torsionalMotion
+  )
+}
+```
+This example tags torsional motion for a drill string element.
 ## LateralMotionType <!-- NOUN -->
 - Display name: LateralMotionType
 - Parent class: [MotionType](#MotionType)
+- Description: 
+Motion perpendicular to the string axis.
 - Definition set: Mechanics
+- Examples:
+```dwis lateralMotion
+LateralMotionType:lateralMotion
+MechanicalLogicalElement:drillString
+drillString HasMotionType lateralMotion
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[lateralMotion] -->|BelongsToClass| N0001(LateralMotionType) 
+	N0002[drillString] -->|BelongsToClass| N0003(MechanicalLogicalElement) 
+	N0002[drillString] -->|HasMotionType| N0000((lateralMotion)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?lateralMotion
+WHERE {
+	?lateralMotion rdf:type ddhub:LateralMotionType .
+	?drillString rdf:type ddhub:MechanicalLogicalElement .
+  FILTER (
+	?Attribute000 = lateralMotion
+  )
+}
+```
+This example tags lateral motion for a drill string element.
 ## ModelType <!-- NOUN -->
 - Display name: ModelType
 - Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+Generic classification of a mathematical model for the drilling process.
 - Definition set: Model
+- Examples:
+```dwis modelTypeExample
+ModelType:modelType
+DrillStemMechanicalModel:torqueDragModel
+torqueDragModel BelongsToClass modelType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[modelType] -->|BelongsToClass| N0001(ModelType) 
+	N0002[torqueDragModel] -->|BelongsToClass| N0003(DrillStemMechanicalModel) 
+	N0002[torqueDragModel] -->|BelongsToClass| N0000(modelType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?modelTypeExample
+WHERE {
+	?modelType rdf:type ddhub:ModelType .
+	?torqueDragModel rdf:type ddhub:DrillStemMechanicalModel .
+	?torqueDragModel rdf:type ddhub:modelType .
+}
+```
+This example assigns a model type to a torque and drag model.
 ## DeterministicModel <!-- NOUN -->
 - Display name: DeterministicModel
 - Parent class: [ModelType](#ModelType)
+- Description: 
+A model whose outputs are fully determined by inputs and parameters without randomness.
 - Definition set: Model
+- Examples:
+```dwis deterministicModel
+DeterministicModel:detModel
+DrillStemMechanicalModel:torqueDragModel
+torqueDragModel BelongsToClass detModel
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[detModel] -->|BelongsToClass| N0001(DeterministicModel) 
+	N0002[torqueDragModel] -->|BelongsToClass| N0003(DrillStemMechanicalModel) 
+	N0002[torqueDragModel] -->|BelongsToClass| N0000(detModel) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?deterministicModel
+WHERE {
+	?detModel rdf:type ddhub:DeterministicModel .
+	?torqueDragModel rdf:type ddhub:DrillStemMechanicalModel .
+	?torqueDragModel rdf:type ddhub:detModel .
+}
+```
+This example marks a torque and drag model as deterministic.
 ## StochasticModel <!-- NOUN -->
 - Display name: StochasticModel
 - Parent class: [ModelType](#ModelType)
+- Description: 
+A model that incorporates randomness or probabilistic components.
 - Definition set: Model
+- Examples:
+```dwis stochasticModel
+StochasticModel:stochModel
+ModelType:modelType
+stochModel BelongsToClass ModelType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stochModel] -->|BelongsToClass| N0001(StochasticModel) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[stochModel] -->|BelongsToClass| N0003(ModelType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stochasticModel
+WHERE {
+	?stochModel rdf:type ddhub:StochasticModel .
+	?modelType rdf:type ddhub:ModelType .
+	?stochModel rdf:type ddhub:ModelType .
+}
+```
+This example defines a stochastic model classification.
 ## TemporalBehaviorModel <!-- NOUN -->
 - Display name: Temporal Behavior Model
 - Parent class: [DWISNoun](#DWISNoun)
 - Description: 
 A classification of a model as a function of its temporal behavior.
 - Definition set: Model
+- Examples:
+```dwis temporalBehavior
+TemporalBehaviorModel:temporalBehavior
+ModelType:modelType
+temporalBehavior BelongsToClass TemporalBehaviorModel
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[temporalBehavior] -->|BelongsToClass| N0001(TemporalBehaviorModel) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[temporalBehavior] -->|BelongsToClass| N0001(TemporalBehaviorModel) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?temporalBehavior
+WHERE {
+	?temporalBehavior rdf:type ddhub:TemporalBehaviorModel .
+	?modelType rdf:type ddhub:ModelType .
+	?temporalBehavior rdf:type ddhub:TemporalBehaviorModel .
+}
+```
+This example declares a temporal behavior classification.
 ## SteadyStateModel <!-- NOUN -->
 - Display name: Steady state model
 - Parent class: [TemporalBehaviorModel](#TemporalBehaviorModel)
 - Description: 
 A model for which the state variables do not change with time.
 - Definition set: Model
+- Examples:
+```dwis steadyStateModel
+SteadyStateModel:steadyModel
+DrillStemMechanicalModel:torqueDragModel
+torqueDragModel BelongsToClass steadyModel
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[steadyModel] -->|BelongsToClass| N0001(SteadyStateModel) 
+	N0002[torqueDragModel] -->|BelongsToClass| N0003(DrillStemMechanicalModel) 
+	N0002[torqueDragModel] -->|BelongsToClass| N0000(steadyModel) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?steadyStateModel
+WHERE {
+	?steadyModel rdf:type ddhub:SteadyStateModel .
+	?torqueDragModel rdf:type ddhub:DrillStemMechanicalModel .
+	?torqueDragModel rdf:type ddhub:steadyModel .
+}
+```
+This example tags a torque and drag model as steady-state.
 ## TransientModel <!-- NOUN -->
 - Display name: Transient model
 - Parent class: [TemporalBehaviorModel](#TemporalBehaviorModel)
 - Description: 
 A model for which the state variables changes with time.
 - Definition set: Model
+- Examples:
+```dwis transientModel
+TransientModel:transientModel
+HydraulicNetwork:downholeNetwork
+transientModel BelongsToClass TransientModel
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[transientModel] -->|BelongsToClass| N0001(TransientModel) 
+	N0002[downholeNetwork] -->|BelongsToClass| N0003(HydraulicNetwork) 
+	N0000[transientModel] -->|BelongsToClass| N0001(TransientModel) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?transientModel
+WHERE {
+	?transientModel rdf:type ddhub:TransientModel .
+	?downholeNetwork rdf:type ddhub:HydraulicNetwork .
+	?transientModel rdf:type ddhub:TransientModel .
+}
+```
+This example declares a transient hydraulic model.
 ## ModelingApproach <!-- NOUN -->
 - Display name: Modeling Approach
 - Parent class: [DWISNoun](#DWISNoun)
 - Description: 
 A classification of the modeling direction of a model.
 - Definition set: Model
+- Examples:
+```dwis modellingApproach
+ModelingApproach:approach
+ModelType:modelType
+approach BelongsToClass ModelingApproach
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[approach] -->|BelongsToClass| N0001(ModelingApproach) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[approach] -->|BelongsToClass| N0001(ModelingApproach) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?modellingApproach
+WHERE {
+	?approach rdf:type ddhub:ModelingApproach .
+	?modelType rdf:type ddhub:ModelType .
+	?approach rdf:type ddhub:ModelingApproach .
+}
+```
+This example introduces a modeling approach classification.
 ## ForwardModel <!-- NOUN -->
 - Display name: Forward Model
 - Parent class: [ModelingApproach](#ModelingApproach)
 - Description: 
 For a forward model, the inputs are used to predict outputs.
 - Definition set: Model
+- Examples:
+```dwis forwardModel
+ForwardModel:forwardModel
+DeterministicModel:detModel
+forwardModel BelongsToClass DeterministicModel
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[forwardModel] -->|BelongsToClass| N0001(ForwardModel) 
+	N0002[detModel] -->|BelongsToClass| N0003(DeterministicModel) 
+	N0000[forwardModel] -->|BelongsToClass| N0003(DeterministicModel) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?forwardModel
+WHERE {
+	?forwardModel rdf:type ddhub:ForwardModel .
+	?detModel rdf:type ddhub:DeterministicModel .
+	?forwardModel rdf:type ddhub:DeterministicModel .
+}
+```
+This example defines a forward deterministic model.
 ## InversionModel <!-- NOUN -->
 - Display name: Inversion Model
 - Parent class: [ModelingApproach](#ModelingApproach)
 - Description: 
 For an inversion model, the outputs are used to infer inputs or parameters.
 - Definition set: Model
+- Examples:
+```dwis inversionModel
+InversionModel:inverseModel
+StochasticModel:stochModel
+inverseModel BelongsToClass StochasticModel
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[inverseModel] -->|BelongsToClass| N0001(InversionModel) 
+	N0002[stochModel] -->|BelongsToClass| N0003(StochasticModel) 
+	N0000[inverseModel] -->|BelongsToClass| N0003(StochasticModel) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?inversionModel
+WHERE {
+	?inverseModel rdf:type ddhub:InversionModel .
+	?stochModel rdf:type ddhub:StochasticModel .
+	?inverseModel rdf:type ddhub:StochasticModel .
+}
+```
+This example defines an inversion model classification.
 ## HybridAnalysisModel <!-- NOUN -->
 - Display name: Hybrid Analysis Model
 - Parent class: [ModelingApproach](#ModelingApproach)
 - Description: 
 A hybrid analysis model may combine forward and inverse steps in an iterative approach.
 - Definition set: Model
+- Examples:
+```dwis hybridModel
+HybridAnalysisModel:hybridModel
+ModelType:modelType
+hybridModel BelongsToClass ModelType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hybridModel] -->|BelongsToClass| N0001(HybridAnalysisModel) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[hybridModel] -->|BelongsToClass| N0003(ModelType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hybridModel
+WHERE {
+	?hybridModel rdf:type ddhub:HybridAnalysisModel .
+	?modelType rdf:type ddhub:ModelType .
+	?hybridModel rdf:type ddhub:ModelType .
+}
+```
+This example represents a hybrid analysis model.
 ## ModelingParadigm <!-- NOUN -->
 - Display name: Modeling Paradigm
 - Parent class: [DWISNoun](#DWISNoun)
 - Description: 
 A classification of the relationship of the model to data or physical laws.
 - Definition set: Model
+- Examples:
+```dwis paradigm
+ModelingParadigm:paradigm
+ModelType:modelType
+paradigm BelongsToClass ModelingParadigm
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[paradigm] -->|BelongsToClass| N0001(ModelingParadigm) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[paradigm] -->|BelongsToClass| N0001(ModelingParadigm) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?paradigm
+WHERE {
+	?paradigm rdf:type ddhub:ModelingParadigm .
+	?modelType rdf:type ddhub:ModelType .
+	?paradigm rdf:type ddhub:ModelingParadigm .
+}
+```
+This example introduces a modeling paradigm classification.
 ## EmpiricalModel <!-- NOUN -->
 - Display name: Empirical Model
 - Parent class: [ModelingParadigm](#ModelingParadigm)
 - Description: 
 A model that heavily rely on data without using explicitly physical laws.
 - Definition set: Model
+- Examples:
+```dwis empiricalModel
+EmpiricalModel:empiricalModel
+ModelType:modelType
+empiricalModel BelongsToClass ModelType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[empiricalModel] -->|BelongsToClass| N0001(EmpiricalModel) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[empiricalModel] -->|BelongsToClass| N0003(ModelType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?empiricalModel
+WHERE {
+	?empiricalModel rdf:type ddhub:EmpiricalModel .
+	?modelType rdf:type ddhub:ModelType .
+	?empiricalModel rdf:type ddhub:ModelType .
+}
+```
+This example defines an empirical model class.
 ## MechanisticModel <!-- NOUN -->
 - Display name: Mechanistic Model
 - Parent class: [ModelingParadigm](#ModelingParadigm)
 - Description: 
 A model that is based on first principles or physical laws.
 - Definition set: Model
+- Examples:
+```dwis mechanisticModel
+MechanisticModel:mechanisticModel
+ModelType:modelType
+mechanisticModel BelongsToClass ModelType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[mechanisticModel] -->|BelongsToClass| N0001(MechanisticModel) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[mechanisticModel] -->|BelongsToClass| N0003(ModelType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?mechanisticModel
+WHERE {
+	?mechanisticModel rdf:type ddhub:MechanisticModel .
+	?modelType rdf:type ddhub:ModelType .
+	?mechanisticModel rdf:type ddhub:ModelType .
+}
+```
+This example defines a mechanistic model class.
 ## PhysicsInformedDataDrivenModel <!-- NOUN -->
 - Display name: Physics Informed Data Driven Model
 - Parent class: [ModelingParadigm](#ModelingParadigm)
 - Description: 
 A hybrid model that uses both physical laws and data.
 - Definition set: Model
+- Examples:
+```dwis pidddModel
+PhysicsInformedDataDrivenModel:pidddModel
+ModelType:modelType
+pidddModel BelongsToClass ModelType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pidddModel] -->|BelongsToClass| N0001(PhysicsInformedDataDrivenModel) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[pidddModel] -->|BelongsToClass| N0003(ModelType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pidddModel
+WHERE {
+	?pidddModel rdf:type ddhub:PhysicsInformedDataDrivenModel .
+	?modelType rdf:type ddhub:ModelType .
+	?pidddModel rdf:type ddhub:ModelType .
+}
+```
+This example defines a physics-informed data-driven model.
 ## MathematicalFormulation <!-- NOUN -->
 - Display name: Mathematical Formulation
 - Parent class: [DWISNoun](#DWISNoun)
 - Description: 
 A classification of the mathematical formulation used by a model.
 - Definition set: Model
+- Examples:
+```dwis formulation
+MathematicalFormulation:formulation
+ModelType:modelType
+formulation BelongsToClass MathematicalFormulation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[formulation] -->|BelongsToClass| N0001(MathematicalFormulation) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[formulation] -->|BelongsToClass| N0001(MathematicalFormulation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?formulation
+WHERE {
+	?formulation rdf:type ddhub:MathematicalFormulation .
+	?modelType rdf:type ddhub:ModelType .
+	?formulation rdf:type ddhub:MathematicalFormulation .
+}
+```
+This example introduces a mathematical formulation classification.
 ## AlgebraicModel <!-- NOUN -->
 - Display name: Algebraic Model
 - Parent class: [MathematicalFormulation](#MathematicalFormulation)
 - Description: 
 A model that uses algebraic equations.
 - Definition set: Model
+- Examples:
+```dwis algebraicModel
+AlgebraicModel:algebraicModel
+ModelType:modelType
+algebraicModel BelongsToClass ModelType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[algebraicModel] -->|BelongsToClass| N0001(AlgebraicModel) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[algebraicModel] -->|BelongsToClass| N0003(ModelType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?algebraicModel
+WHERE {
+	?algebraicModel rdf:type ddhub:AlgebraicModel .
+	?modelType rdf:type ddhub:ModelType .
+	?algebraicModel rdf:type ddhub:ModelType .
+}
+```
+This example defines an algebraic model class.
 ## OrdinaryDifferentialEquationModel <!-- NOUN -->
 - Display name: Ordinary Differential Equation Model
 - Parent class: [MathematicalFormulation](#MathematicalFormulation)
 - Description: 
 A model that uses ordinary differential equations.
 - Definition set: Model
+- Examples:
+```dwis odeModel
+OrdinaryDifferentialEquationModel:odeModel
+ModelType:modelType
+odeModel BelongsToClass ModelType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[odeModel] -->|BelongsToClass| N0001(OrdinaryDifferentialEquationModel) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[odeModel] -->|BelongsToClass| N0003(ModelType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?odeModel
+WHERE {
+	?odeModel rdf:type ddhub:OrdinaryDifferentialEquationModel .
+	?modelType rdf:type ddhub:ModelType .
+	?odeModel rdf:type ddhub:ModelType .
+}
+```
+This example defines an ODE-based model.
 ## PartialDifferentialEquationModel <!-- NOUN -->
 - Display name: Partial Differential Equation Model
 - Parent class: [MathematicalFormulation](#MathematicalFormulation)
 - Description: 
 A model that uses partial differential equations.
 - Definition set: Model
+- Examples:
+```dwis pdeModel
+PartialDifferentialEquationModel:pdeModel
+ModelType:modelType
+pdeModel BelongsToClass ModelType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pdeModel] -->|BelongsToClass| N0001(PartialDifferentialEquationModel) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[pdeModel] -->|BelongsToClass| N0003(ModelType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pdeModel
+WHERE {
+	?pdeModel rdf:type ddhub:PartialDifferentialEquationModel .
+	?modelType rdf:type ddhub:ModelType .
+	?pdeModel rdf:type ddhub:ModelType .
+}
+```
+This example defines a PDE-based model.
 ## IntegralModel <!-- NOUN -->
 - Display name: Integral Model
 - Parent class: [MathematicalFormulation](#MathematicalFormulation)
 - Description: 
 A model that uses integral equations.
 - Definition set: Model
+- Examples:
+```dwis integralModel
+IntegralModel:integralModel
+ModelType:modelType
+integralModel BelongsToClass ModelType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[integralModel] -->|BelongsToClass| N0001(IntegralModel) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[integralModel] -->|BelongsToClass| N0003(ModelType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?integralModel
+WHERE {
+	?integralModel rdf:type ddhub:IntegralModel .
+	?modelType rdf:type ddhub:ModelType .
+	?integralModel rdf:type ddhub:ModelType .
+}
+```
+This example defines an integral equation model.
 ## ModelingObjective <!-- NOUN -->
 - Display name: Modeling Objective
 - Parent class: [DWISNoun](#DWISNoun)
 - Description: 
 A classification of the objective/purpose of a model.
 - Definition set: Model
+- Examples:
+```dwis modellingObjective
+ModelingObjective:objective
+ModelType:modelType
+objective BelongsToClass ModelingObjective
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[objective] -->|BelongsToClass| N0001(ModelingObjective) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[objective] -->|BelongsToClass| N0001(ModelingObjective) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?modellingObjective
+WHERE {
+	?objective rdf:type ddhub:ModelingObjective .
+	?modelType rdf:type ddhub:ModelType .
+	?objective rdf:type ddhub:ModelingObjective .
+}
+```
+This example introduces a modeling objective classification.
 ## PredictiveModel <!-- NOUN -->
 - Display name: Predictive Model
 - Parent class: [ModelingObjective](#ModelingObjective)
 - Description: 
 A model that aims to forecast future behavior based on current data or conditions.
 - Definition set: Model
+- Examples:
+```dwis predictiveModel
+PredictiveModel:predictiveModel
+ModelType:modelType
+predictiveModel BelongsToClass ModelType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[predictiveModel] -->|BelongsToClass| N0001(PredictiveModel) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[predictiveModel] -->|BelongsToClass| N0003(ModelType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?predictiveModel
+WHERE {
+	?predictiveModel rdf:type ddhub:PredictiveModel .
+	?modelType rdf:type ddhub:ModelType .
+	?predictiveModel rdf:type ddhub:ModelType .
+}
+```
+This example defines a predictive model class.
 ## DescriptiveModel <!-- NOUN -->
 - Display name: Descriptive Model
 - Parent class: [ModelingObjective](#ModelingObjective)
 - Description: 
 A model that seeks to explain or describe a system's behavior or underlying mechanisms.
 - Definition set: Model
+- Examples:
+```dwis descriptiveModel
+DescriptiveModel:descriptiveModel
+ModelType:modelType
+descriptiveModel BelongsToClass ModelType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[descriptiveModel] -->|BelongsToClass| N0001(DescriptiveModel) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[descriptiveModel] -->|BelongsToClass| N0003(ModelType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?descriptiveModel
+WHERE {
+	?descriptiveModel rdf:type ddhub:DescriptiveModel .
+	?modelType rdf:type ddhub:ModelType .
+	?descriptiveModel rdf:type ddhub:ModelType .
+}
+```
+This example defines a descriptive model class.
 ## CalibrationModel <!-- NOUN -->
 - Display name: Calibration Model
 - Parent class: [ModelingObjective](#ModelingObjective)
 - Description: 
 A model that focuses on adjusting parameters to improve alignment with observed data.
 - Definition set: Model
+- Examples:
+```dwis calibrationModel
+CalibrationModel:calibrationModel
+ModelType:modelType
+calibrationModel BelongsToClass ModelType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[calibrationModel] -->|BelongsToClass| N0001(CalibrationModel) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[calibrationModel] -->|BelongsToClass| N0003(ModelType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?calibrationModel
+WHERE {
+	?calibrationModel rdf:type ddhub:CalibrationModel .
+	?modelType rdf:type ddhub:ModelType .
+	?calibrationModel rdf:type ddhub:ModelType .
+}
+```
+This example defines a calibration model class.
 ## ControlModel <!-- NOUN -->
 - Display name: Control Model
 - Parent class: [ModelingObjective](#ModelingObjective)
 - Description: 
 A model that regulate or steer a system's behavior toward a desired outcome through inputs.
 - Definition set: Model
+- Examples:
+```dwis controlModel
+ControlModel:controlModel
+ModelType:modelType
+controlModel BelongsToClass ModelType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[controlModel] -->|BelongsToClass| N0001(ControlModel) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[controlModel] -->|BelongsToClass| N0003(ModelType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?controlModel
+WHERE {
+	?controlModel rdf:type ddhub:ControlModel .
+	?modelType rdf:type ddhub:ModelType .
+	?controlModel rdf:type ddhub:ModelType .
+}
+```
+This example defines a control model class.
 ## ModelScope <!-- NOUN -->
 - Display name: Model Scope
 - Parent class: [DWISNoun](#DWISNoun)
 - Description: 
 A classification of a model with regards to its range of applicability.
 - Definition set: Model
+- Examples:
+```dwis modelScope
+ModelScope:modelScope
+ModelType:modelType
+modelScope BelongsToClass ModelScope
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[modelScope] -->|BelongsToClass| N0001(ModelScope) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[modelScope] -->|BelongsToClass| N0001(ModelScope) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?modelScope
+WHERE {
+	?modelScope rdf:type ddhub:ModelScope .
+	?modelType rdf:type ddhub:ModelType .
+	?modelScope rdf:type ddhub:ModelScope .
+}
+```
+This example introduces a model scope classification.
 ## GeneralModel <!-- NOUN -->
 - Display name: General Model
 - Parent class: [ModelScope](#ModelScope)
 - Description: 
 A model with a broad range of application across various systems or phenomena.
 - Definition set: Model
+- Examples:
+```dwis generalModel
+GeneralModel:generalModel
+ModelType:modelType
+generalModel BelongsToClass ModelType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[generalModel] -->|BelongsToClass| N0001(GeneralModel) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[generalModel] -->|BelongsToClass| N0003(ModelType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?generalModel
+WHERE {
+	?generalModel rdf:type ddhub:GeneralModel .
+	?modelType rdf:type ddhub:ModelType .
+	?generalModel rdf:type ddhub:ModelType .
+}
+```
+This example defines a general model class.
 ## SpecializedModel <!-- NOUN -->
 - Display name: Specialized Model
 - Parent class: [ModelScope](#ModelScope)
 - Description: 
 A model that is tailored to specific systems, scenarios or conditions.
 - Definition set: Model
+- Examples:
+```dwis specializedModel
+SpecializedModel:specializedModel
+ModelType:modelType
+specializedModel BelongsToClass ModelType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[specializedModel] -->|BelongsToClass| N0001(SpecializedModel) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[specializedModel] -->|BelongsToClass| N0003(ModelType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?specializedModel
+WHERE {
+	?specializedModel rdf:type ddhub:SpecializedModel .
+	?modelType rdf:type ddhub:ModelType .
+	?specializedModel rdf:type ddhub:ModelType .
+}
+```
+This example defines a specialized model class.
 ## ModelTransparency <!-- NOUN -->
 - Display name: Model Transparency
 - Parent class: [DWISNoun](#DWISNoun)
 - Description: 
 A classification of a model with regards to its transparency or interpretability.
 - Definition set: Model
+- Examples:
+```dwis transparency
+ModelTransparency:transparency
+ModelType:modelType
+transparency BelongsToClass ModelTransparency
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[transparency] -->|BelongsToClass| N0001(ModelTransparency) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[transparency] -->|BelongsToClass| N0001(ModelTransparency) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?transparency
+WHERE {
+	?transparency rdf:type ddhub:ModelTransparency .
+	?modelType rdf:type ddhub:ModelType .
+	?transparency rdf:type ddhub:ModelTransparency .
+}
+```
+This example introduces model transparency classification.
 ## BlackBoxModel <!-- NOUN -->
 - Display name: Black Box Model
 - Parent class: [ModelTransparency](#ModelTransparency)
 - Description: 
 The internal workings of the model are unknown or not interpretable, focusing only on the input-output relationship.
 - Definition set: Model
+- Examples:
+```dwis blackBox
+BlackBoxModel:blackBoxModel
+ModelType:modelType
+blackBoxModel BelongsToClass ModelType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[blackBoxModel] -->|BelongsToClass| N0001(BlackBoxModel) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[blackBoxModel] -->|BelongsToClass| N0003(ModelType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?blackBox
+WHERE {
+	?blackBoxModel rdf:type ddhub:BlackBoxModel .
+	?modelType rdf:type ddhub:ModelType .
+	?blackBoxModel rdf:type ddhub:ModelType .
+}
+```
+This example defines a black-box model class.
 ## GrayBoxModel <!-- NOUN -->
 - Display name: Gray Box Model
 - Parent class: [ModelTransparency](#ModelTransparency)
 - Description: 
 The model combines both data-drive and mechanistic models offering a partial transparency.
 - Definition set: Model
+- Examples:
+```dwis grayBox
+GrayBoxModel:grayBoxModel
+ModelType:modelType
+grayBoxModel BelongsToClass ModelType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[grayBoxModel] -->|BelongsToClass| N0001(GrayBoxModel) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[grayBoxModel] -->|BelongsToClass| N0003(ModelType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?grayBox
+WHERE {
+	?grayBoxModel rdf:type ddhub:GrayBoxModel .
+	?modelType rdf:type ddhub:ModelType .
+	?grayBoxModel rdf:type ddhub:ModelType .
+}
+```
+This example defines a gray-box model class.
 ## WhiteBoxModel <!-- NOUN -->
 - Display name: White Box Model
 - Parent class: [ModelTransparency](#ModelTransparency)
 - Description: 
 The model is fully transparent and interpretable, with all internal mechanisms and assumptions clearly defined.
 - Definition set: Model
+- Examples:
+```dwis whiteBox
+WhiteBoxModel:whiteBoxModel
+ModelType:modelType
+whiteBoxModel BelongsToClass ModelType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[whiteBoxModel] -->|BelongsToClass| N0001(WhiteBoxModel) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[whiteBoxModel] -->|BelongsToClass| N0003(ModelType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?whiteBox
+WHERE {
+	?whiteBoxModel rdf:type ddhub:WhiteBoxModel .
+	?modelType rdf:type ddhub:ModelType .
+	?whiteBoxModel rdf:type ddhub:ModelType .
+}
+```
+This example defines a white-box model class.
 ## DataIntegrationStrategy <!-- NOUN -->
 - Display name: Data Integration Strategy
 - Parent class: [DWISNoun](#DWISNoun)
 - Description: 
 A classification of a model with regards to its strategy for integrating data.
 - Definition set: Model
+- Examples:
+```dwis integrationStrategy
+DataIntegrationStrategy:integrationStrategy
+ModelType:modelType
+integrationStrategy BelongsToClass DataIntegrationStrategy
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[integrationStrategy] -->|BelongsToClass| N0001(DataIntegrationStrategy) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[integrationStrategy] -->|BelongsToClass| N0001(DataIntegrationStrategy) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?integrationStrategy
+WHERE {
+	?integrationStrategy rdf:type ddhub:DataIntegrationStrategy .
+	?modelType rdf:type ddhub:ModelType .
+	?integrationStrategy rdf:type ddhub:DataIntegrationStrategy .
+}
+```
+This example introduces a data integration strategy classification.
 ## DataLevelIntegationModel <!-- NOUN -->
 - Display name: Data Level Integation Model
 - Parent class: [DataIntegrationStrategy](#DataIntegrationStrategy)
 - Description: 
 A model that integrates data at a low-level like direct merging, using data transforms or filtering.
 - Definition set: Model
+- Examples:
+```dwis dataLevelIntegration
+DataLevelIntegationModel:dataLevelIntegration
+ModelType:modelType
+dataLevelIntegration BelongsToClass ModelType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[dataLevelIntegration] -->|BelongsToClass| N0001(DataLevelIntegationModel) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[dataLevelIntegration] -->|BelongsToClass| N0003(ModelType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?dataLevelIntegration
+WHERE {
+	?dataLevelIntegration rdf:type ddhub:DataLevelIntegationModel .
+	?modelType rdf:type ddhub:ModelType .
+	?dataLevelIntegration rdf:type ddhub:ModelType .
+}
+```
+This example defines a data-level integration model.
 ## FeatureLevelIntegationModel <!-- NOUN -->
 - Display name: Data Level Integation Model
 - Parent class: [DataIntegrationStrategy](#DataIntegrationStrategy)
@@ -14787,6 +26114,32 @@ A model that integrates data at a low-level like direct merging, using data tran
 A model that integrates data at a medium-level like using feature extraction and merging, reducing dimensionality,
 weighting features, or correlating features.
 - Definition set: Model
+- Examples:
+```dwis featureLevelIntegration
+FeatureLevelIntegationModel:featureLevelIntegration
+ModelType:modelType
+featureLevelIntegration BelongsToClass ModelType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[featureLevelIntegration] -->|BelongsToClass| N0001(FeatureLevelIntegationModel) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[featureLevelIntegration] -->|BelongsToClass| N0003(ModelType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?featureLevelIntegration
+WHERE {
+	?featureLevelIntegration rdf:type ddhub:FeatureLevelIntegationModel .
+	?modelType rdf:type ddhub:ModelType .
+	?featureLevelIntegration rdf:type ddhub:ModelType .
+}
+```
+This example defines a feature-level integration model.
 ## DecisionLevelIntegationModel <!-- NOUN -->
 - Display name: Data Level Integation Model
 - Parent class: [DataIntegrationStrategy](#DataIntegrationStrategy)
@@ -14794,6 +26147,32 @@ weighting features, or correlating features.
 A model that integrates data at a high-level like using majority voting, ensemble methods, Bayesian decision fusion,
 Dempster-Shafer theory.
 - Definition set: Model
+- Examples:
+```dwis decisionLevelIntegration
+DecisionLevelIntegationModel:decisionLevelIntegration
+ModelType:modelType
+decisionLevelIntegration BelongsToClass ModelType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[decisionLevelIntegration] -->|BelongsToClass| N0001(DecisionLevelIntegationModel) 
+	N0002[modelType] -->|BelongsToClass| N0003(ModelType) 
+	N0000[decisionLevelIntegration] -->|BelongsToClass| N0003(ModelType) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?decisionLevelIntegration
+WHERE {
+	?decisionLevelIntegration rdf:type ddhub:DecisionLevelIntegationModel .
+	?modelType rdf:type ddhub:ModelType .
+	?decisionLevelIntegration rdf:type ddhub:ModelType .
+}
+```
+This example defines a decision-level integration model.
 ## ModelledDegreeOfFreedom <!-- NOUN -->
 - Display name: Modelled degree of freedom
 - Parent class: [DWISNoun](#DWISNoun)
@@ -14872,6 +26251,29 @@ A hydraulic model accounts for the effect of the pipe horizontal ondulation on t
 - Description: 
 The number of dimensions that are accounted by the model
 - Definition set: Model
+- Examples:
+```dwis modellingDimensions
+DrillingDataPoint:modellingDimensions
+modellingDimensions BelongsToClass ModellingDimensions
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[modellingDimensions] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[modellingDimensions] -->|BelongsToClass| N0002(ModellingDimensions) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?modellingDimensions
+WHERE {
+	?modellingDimensions rdf:type ddhub:DrillingDataPoint .
+	?modellingDimensions rdf:type ddhub:ModellingDimensions .
+}
+```
+This example links a drilling data point to the ModellingDimensions definition.
 ## OneDModelling <!-- NOUN -->
 - Display name: 1D modelling
 - Parent class: [ModellingDimensions](#ModellingDimensions)
@@ -14902,6 +26304,29 @@ A hydraulic calculation considers the fluid velocity field in a cross-section an
 - Description: 
 A characteristic of the discretization made by the model.
 - Definition set: Model
+- Examples:
+```dwis modellingDiscretization
+DrillingDataPoint:modellingDiscretization
+modellingDiscretization BelongsToClass ModellingDiscretization
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[modellingDiscretization] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[modellingDiscretization] -->|BelongsToClass| N0002(ModellingDiscretization) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?modellingDiscretization
+WHERE {
+	?modellingDiscretization rdf:type ddhub:DrillingDataPoint .
+	?modellingDiscretization rdf:type ddhub:ModellingDiscretization .
+}
+```
+This example links a drilling data point to the ModellingDiscretization definition.
 ## BoundaryDiscretization <!-- NOUN -->
 - Display name: Boundary discretization
 - Parent class: [ModellingDiscretization](#ModellingDiscretization)
@@ -14933,228 +26358,2164 @@ A transient mechanical model that is compatible with modelling axial, rotationa 
 Physical location for a signal. Refers to: 1) a reference frame (via the HasReferenceFrame relation), that works as a system of coordinates 2) an origin (of type Location) via the HasReferenceFrameOrigin relation.
  - some coordinates
 - Definition set: PhysicalLocation
+- Examples:
+```dwis location
+Location:location
+location BelongsToClass Location
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[location] -->|BelongsToClass| N0001(Location) 
+	N0000[location] -->|BelongsToClass| N0001(Location) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?location
+WHERE {
+	?location rdf:type ddhub:Location .
+	?location rdf:type ddhub:Location .
+}
+```
+This example declares the Location reference location.
 ## VerticalReferenceLocation <!-- NOUN -->
 - Display name: VerticalReferenceLocation
 - Parent class: [Location](#Location)
+- Description: 
+Reference location for VerticalReferenceLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis verticalReferenceLocation
+Location:verticalReferenceLocation
+verticalReferenceLocation BelongsToClass VerticalReferenceLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[verticalReferenceLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[verticalReferenceLocation] -->|BelongsToClass| N0002(VerticalReferenceLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?verticalReferenceLocation
+WHERE {
+	?verticalReferenceLocation rdf:type ddhub:Location .
+	?verticalReferenceLocation rdf:type ddhub:VerticalReferenceLocation .
+}
+```
+This example declares the VerticalReferenceLocation reference location.
 ## WGS84VerticalLocation <!-- NOUN -->
 - Display name: WGS84VerticalLocation
 - Parent class: [VerticalReferenceLocation](#VerticalReferenceLocation)
+- Description: 
+Reference location for WGS84VerticalLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis wGS84VerticalLocation
+Location:wGS84VerticalLocation
+wGS84VerticalLocation BelongsToClass WGS84VerticalLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wGS84VerticalLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[wGS84VerticalLocation] -->|BelongsToClass| N0002(WGS84VerticalLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wGS84VerticalLocation
+WHERE {
+	?wGS84VerticalLocation rdf:type ddhub:Location .
+	?wGS84VerticalLocation rdf:type ddhub:WGS84VerticalLocation .
+}
+```
+This example declares the WGS84VerticalLocation reference location.
 ## CasingFlangeVerticalLocation <!-- NOUN -->
 - Display name: CasingFlangeVerticalLocation
 - Parent class: [VerticalReferenceLocation](#VerticalReferenceLocation)
+- Description: 
+Reference location for CasingFlangeVerticalLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis casingFlangeVerticalLocation
+Location:casingFlangeVerticalLocation
+casingFlangeVerticalLocation BelongsToClass CasingFlangeVerticalLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[casingFlangeVerticalLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[casingFlangeVerticalLocation] -->|BelongsToClass| N0002(CasingFlangeVerticalLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?casingFlangeVerticalLocation
+WHERE {
+	?casingFlangeVerticalLocation rdf:type ddhub:Location .
+	?casingFlangeVerticalLocation rdf:type ddhub:CasingFlangeVerticalLocation .
+}
+```
+This example declares the CasingFlangeVerticalLocation reference location.
 ## CrownValveVerticalLocation <!-- NOUN -->
 - Display name: CrownValveVerticalLocation
 - Parent class: [VerticalReferenceLocation](#VerticalReferenceLocation)
+- Description: 
+Reference location for CrownValveVerticalLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis crownValveVerticalLocation
+Location:crownValveVerticalLocation
+crownValveVerticalLocation BelongsToClass CrownValveVerticalLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[crownValveVerticalLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[crownValveVerticalLocation] -->|BelongsToClass| N0002(CrownValveVerticalLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?crownValveVerticalLocation
+WHERE {
+	?crownValveVerticalLocation rdf:type ddhub:Location .
+	?crownValveVerticalLocation rdf:type ddhub:CrownValveVerticalLocation .
+}
+```
+This example declares the CrownValveVerticalLocation reference location.
 ## DerrickFloorVerticalLocation <!-- NOUN -->
 - Display name: DerrickFloorVerticalLocation
 - Parent class: [VerticalReferenceLocation](#VerticalReferenceLocation)
+- Description: 
+Reference location for DerrickFloorVerticalLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis derrickFloorVerticalLocation
+Location:derrickFloorVerticalLocation
+derrickFloorVerticalLocation BelongsToClass DerrickFloorVerticalLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[derrickFloorVerticalLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[derrickFloorVerticalLocation] -->|BelongsToClass| N0002(DerrickFloorVerticalLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?derrickFloorVerticalLocation
+WHERE {
+	?derrickFloorVerticalLocation rdf:type ddhub:Location .
+	?derrickFloorVerticalLocation rdf:type ddhub:DerrickFloorVerticalLocation .
+}
+```
+This example declares the DerrickFloorVerticalLocation reference location.
 ## KellyBushingVerticalLocation <!-- NOUN -->
 - Display name: KellyBushingVerticalLocation
 - Parent class: [VerticalReferenceLocation](#VerticalReferenceLocation)
+- Description: 
+Reference location for KellyBushingVerticalLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis kellyBushingVerticalLocation
+Location:kellyBushingVerticalLocation
+kellyBushingVerticalLocation BelongsToClass KellyBushingVerticalLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[kellyBushingVerticalLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[kellyBushingVerticalLocation] -->|BelongsToClass| N0002(KellyBushingVerticalLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?kellyBushingVerticalLocation
+WHERE {
+	?kellyBushingVerticalLocation rdf:type ddhub:Location .
+	?kellyBushingVerticalLocation rdf:type ddhub:KellyBushingVerticalLocation .
+}
+```
+This example declares the KellyBushingVerticalLocation reference location.
 ## RotaryTableVerticalLocation <!-- NOUN -->
 - Display name: RotaryTableVerticalLocation
 - Parent class: [VerticalReferenceLocation](#VerticalReferenceLocation)
+- Description: 
+Reference location for RotaryTableVerticalLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis rotaryTableVerticalLocation
+Location:rotaryTableVerticalLocation
+rotaryTableVerticalLocation BelongsToClass RotaryTableVerticalLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rotaryTableVerticalLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[rotaryTableVerticalLocation] -->|BelongsToClass| N0002(RotaryTableVerticalLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rotaryTableVerticalLocation
+WHERE {
+	?rotaryTableVerticalLocation rdf:type ddhub:Location .
+	?rotaryTableVerticalLocation rdf:type ddhub:RotaryTableVerticalLocation .
+}
+```
+This example declares the RotaryTableVerticalLocation reference location.
 ## StickUpHeightVerticalLocation <!-- NOUN -->
 - Display name: StickUpHeightVerticalLocation
 - Parent class: [VerticalReferenceLocation](#VerticalReferenceLocation)
+- Description: 
+Reference location for StickUpHeightVerticalLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis stickUpHeightVerticalLocation
+Location:stickUpHeightVerticalLocation
+stickUpHeightVerticalLocation BelongsToClass StickUpHeightVerticalLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stickUpHeightVerticalLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[stickUpHeightVerticalLocation] -->|BelongsToClass| N0002(StickUpHeightVerticalLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stickUpHeightVerticalLocation
+WHERE {
+	?stickUpHeightVerticalLocation rdf:type ddhub:Location .
+	?stickUpHeightVerticalLocation rdf:type ddhub:StickUpHeightVerticalLocation .
+}
+```
+This example declares the StickUpHeightVerticalLocation reference location.
 ## MinDrillHeightVerticalLocation <!-- NOUN -->
 - Display name: MinDrillHeightVerticalLocation
 - Parent class: [VerticalReferenceLocation](#VerticalReferenceLocation)
+- Description: 
+Reference location for MinDrillHeightVerticalLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis minDrillHeightVerticalLocation
+Location:minDrillHeightVerticalLocation
+minDrillHeightVerticalLocation BelongsToClass MinDrillHeightVerticalLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[minDrillHeightVerticalLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[minDrillHeightVerticalLocation] -->|BelongsToClass| N0002(MinDrillHeightVerticalLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?minDrillHeightVerticalLocation
+WHERE {
+	?minDrillHeightVerticalLocation rdf:type ddhub:Location .
+	?minDrillHeightVerticalLocation rdf:type ddhub:MinDrillHeightVerticalLocation .
+}
+```
+This example declares the MinDrillHeightVerticalLocation reference location.
 ## WellHeadVerticalLocation <!-- NOUN -->
 - Display name: WellHeadVerticalLocation
 - Parent class: [VerticalReferenceLocation](#VerticalReferenceLocation)
+- Description: 
+Reference location for WellHeadVerticalLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis wellHeadVerticalLocation
+Location:wellHeadVerticalLocation
+wellHeadVerticalLocation BelongsToClass WellHeadVerticalLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wellHeadVerticalLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[wellHeadVerticalLocation] -->|BelongsToClass| N0002(WellHeadVerticalLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wellHeadVerticalLocation
+WHERE {
+	?wellHeadVerticalLocation rdf:type ddhub:Location .
+	?wellHeadVerticalLocation rdf:type ddhub:WellHeadVerticalLocation .
+}
+```
+This example declares the WellHeadVerticalLocation reference location.
 ## GroundLevelVerticalLocation <!-- NOUN -->
 - Display name: GroundLevelVerticalLocation
 - Parent class: [VerticalReferenceLocation](#VerticalReferenceLocation)
+- Description: 
+Reference location for GroundLevelVerticalLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis groundLevelVerticalLocation
+Location:groundLevelVerticalLocation
+groundLevelVerticalLocation BelongsToClass GroundLevelVerticalLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[groundLevelVerticalLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[groundLevelVerticalLocation] -->|BelongsToClass| N0002(GroundLevelVerticalLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?groundLevelVerticalLocation
+WHERE {
+	?groundLevelVerticalLocation rdf:type ddhub:Location .
+	?groundLevelVerticalLocation rdf:type ddhub:GroundLevelVerticalLocation .
+}
+```
+This example declares the GroundLevelVerticalLocation reference location.
 ## SeaFloorVerticalLocation <!-- NOUN -->
 - Display name: SeaFloorVerticalLocation
 - Parent class: [VerticalReferenceLocation](#VerticalReferenceLocation)
+- Description: 
+Reference location for SeaFloorVerticalLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis seaFloorVerticalLocation
+Location:seaFloorVerticalLocation
+seaFloorVerticalLocation BelongsToClass SeaFloorVerticalLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[seaFloorVerticalLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[seaFloorVerticalLocation] -->|BelongsToClass| N0002(SeaFloorVerticalLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?seaFloorVerticalLocation
+WHERE {
+	?seaFloorVerticalLocation rdf:type ddhub:Location .
+	?seaFloorVerticalLocation rdf:type ddhub:SeaFloorVerticalLocation .
+}
+```
+This example declares the SeaFloorVerticalLocation reference location.
 ## LowestAstronomicalTideVerticalLocation <!-- NOUN -->
 - Display name: LowestAstronomicalTideVerticalLocation
 - Parent class: [VerticalReferenceLocation](#VerticalReferenceLocation)
+- Description: 
+Reference location for LowestAstronomicalTideVerticalLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis lowestAstronomicalTideVerticalLocation
+Location:lowestAstronomicalTideVerticalLocation
+lowestAstronomicalTideVerticalLocation BelongsToClass LowestAstronomicalTideVerticalLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[lowestAstronomicalTideVerticalLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[lowestAstronomicalTideVerticalLocation] -->|BelongsToClass| N0002(LowestAstronomicalTideVerticalLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?lowestAstronomicalTideVerticalLocation
+WHERE {
+	?lowestAstronomicalTideVerticalLocation rdf:type ddhub:Location .
+	?lowestAstronomicalTideVerticalLocation rdf:type ddhub:LowestAstronomicalTideVerticalLocation .
+}
+```
+This example declares the LowestAstronomicalTideVerticalLocation reference location.
 ## MeanSeaLevelVerticalLocation <!-- NOUN -->
 - Display name: MeanSeaLevelVerticalLocation
 - Parent class: [VerticalReferenceLocation](#VerticalReferenceLocation)
+- Description: 
+Reference location for MeanSeaLevelVerticalLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis meanSeaLevelVerticalLocation
+Location:meanSeaLevelVerticalLocation
+meanSeaLevelVerticalLocation BelongsToClass MeanSeaLevelVerticalLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[meanSeaLevelVerticalLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[meanSeaLevelVerticalLocation] -->|BelongsToClass| N0002(MeanSeaLevelVerticalLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?meanSeaLevelVerticalLocation
+WHERE {
+	?meanSeaLevelVerticalLocation rdf:type ddhub:Location .
+	?meanSeaLevelVerticalLocation rdf:type ddhub:MeanSeaLevelVerticalLocation .
+}
+```
+This example declares the MeanSeaLevelVerticalLocation reference location.
 ## MeanHigherHighWaterVerticalLocation <!-- NOUN -->
 - Display name: MeanHigherHighWaterVerticalLocation
 - Parent class: [VerticalReferenceLocation](#VerticalReferenceLocation)
+- Description: 
+Reference location for MeanHigherHighWaterVerticalLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis meanHigherHighWaterVerticalLocation
+Location:meanHigherHighWaterVerticalLocation
+meanHigherHighWaterVerticalLocation BelongsToClass MeanHigherHighWaterVerticalLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[meanHigherHighWaterVerticalLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[meanHigherHighWaterVerticalLocation] -->|BelongsToClass| N0002(MeanHigherHighWaterVerticalLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?meanHigherHighWaterVerticalLocation
+WHERE {
+	?meanHigherHighWaterVerticalLocation rdf:type ddhub:Location .
+	?meanHigherHighWaterVerticalLocation rdf:type ddhub:MeanHigherHighWaterVerticalLocation .
+}
+```
+This example declares the MeanHigherHighWaterVerticalLocation reference location.
 ## MeanHighWaterVerticalLocation <!-- NOUN -->
 - Display name: MeanHighWaterVerticalLocation
 - Parent class: [VerticalReferenceLocation](#VerticalReferenceLocation)
+- Description: 
+Reference location for MeanHighWaterVerticalLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis meanHighWaterVerticalLocation
+Location:meanHighWaterVerticalLocation
+meanHighWaterVerticalLocation BelongsToClass MeanHighWaterVerticalLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[meanHighWaterVerticalLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[meanHighWaterVerticalLocation] -->|BelongsToClass| N0002(MeanHighWaterVerticalLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?meanHighWaterVerticalLocation
+WHERE {
+	?meanHighWaterVerticalLocation rdf:type ddhub:Location .
+	?meanHighWaterVerticalLocation rdf:type ddhub:MeanHighWaterVerticalLocation .
+}
+```
+This example declares the MeanHighWaterVerticalLocation reference location.
 ## MeanLowerLowWaterVerticalLocation <!-- NOUN -->
 - Display name: MeanLowerLowWaterVerticalLocation
 - Parent class: [VerticalReferenceLocation](#VerticalReferenceLocation)
+- Description: 
+Reference location for MeanLowerLowWaterVerticalLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis meanLowerLowWaterVerticalLocation
+Location:meanLowerLowWaterVerticalLocation
+meanLowerLowWaterVerticalLocation BelongsToClass MeanLowerLowWaterVerticalLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[meanLowerLowWaterVerticalLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[meanLowerLowWaterVerticalLocation] -->|BelongsToClass| N0002(MeanLowerLowWaterVerticalLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?meanLowerLowWaterVerticalLocation
+WHERE {
+	?meanLowerLowWaterVerticalLocation rdf:type ddhub:Location .
+	?meanLowerLowWaterVerticalLocation rdf:type ddhub:MeanLowerLowWaterVerticalLocation .
+}
+```
+This example declares the MeanLowerLowWaterVerticalLocation reference location.
 ## MeanLowWaterVerticalLocation <!-- NOUN -->
 - Display name: MeanLowWaterVerticalLocation
 - Parent class: [VerticalReferenceLocation](#VerticalReferenceLocation)
+- Description: 
+Reference location for MeanLowWaterVerticalLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis meanLowWaterVerticalLocation
+Location:meanLowWaterVerticalLocation
+meanLowWaterVerticalLocation BelongsToClass MeanLowWaterVerticalLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[meanLowWaterVerticalLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[meanLowWaterVerticalLocation] -->|BelongsToClass| N0002(MeanLowWaterVerticalLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?meanLowWaterVerticalLocation
+WHERE {
+	?meanLowWaterVerticalLocation rdf:type ddhub:Location .
+	?meanLowWaterVerticalLocation rdf:type ddhub:MeanLowWaterVerticalLocation .
+}
+```
+This example declares the MeanLowWaterVerticalLocation reference location.
 ## MeanTideLevelVerticalLocation <!-- NOUN -->
 - Display name: MeanTideLevelVerticalLocation
 - Parent class: [VerticalReferenceLocation](#VerticalReferenceLocation)
+- Description: 
+Reference location for MeanTideLevelVerticalLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis meanTideLevelVerticalLocation
+Location:meanTideLevelVerticalLocation
+meanTideLevelVerticalLocation BelongsToClass MeanTideLevelVerticalLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[meanTideLevelVerticalLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[meanTideLevelVerticalLocation] -->|BelongsToClass| N0002(MeanTideLevelVerticalLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?meanTideLevelVerticalLocation
+WHERE {
+	?meanTideLevelVerticalLocation rdf:type ddhub:Location .
+	?meanTideLevelVerticalLocation rdf:type ddhub:MeanTideLevelVerticalLocation .
+}
+```
+This example declares the MeanTideLevelVerticalLocation reference location.
 ## KickOffVerticalLocation <!-- NOUN -->
 - Display name: KickOffVerticalLocation
 - Parent class: [VerticalReferenceLocation](#VerticalReferenceLocation)
+- Description: 
+Reference location for KickOffVerticalLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis kickOffVerticalLocation
+Location:kickOffVerticalLocation
+kickOffVerticalLocation BelongsToClass KickOffVerticalLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[kickOffVerticalLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[kickOffVerticalLocation] -->|BelongsToClass| N0002(KickOffVerticalLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?kickOffVerticalLocation
+WHERE {
+	?kickOffVerticalLocation rdf:type ddhub:Location .
+	?kickOffVerticalLocation rdf:type ddhub:KickOffVerticalLocation .
+}
+```
+This example declares the KickOffVerticalLocation reference location.
 ## PositionReferenceLocation <!-- NOUN -->
 - Display name: PositionReferenceLocation
 - Parent class: [Location](#Location)
+- Description: 
+Reference location for PositionReferenceLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis positionReferenceLocation
+Location:positionReferenceLocation
+positionReferenceLocation BelongsToClass PositionReferenceLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[positionReferenceLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[positionReferenceLocation] -->|BelongsToClass| N0002(PositionReferenceLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?positionReferenceLocation
+WHERE {
+	?positionReferenceLocation rdf:type ddhub:Location .
+	?positionReferenceLocation rdf:type ddhub:PositionReferenceLocation .
+}
+```
+This example declares the PositionReferenceLocation reference location.
 ## WGS84PositionLocation <!-- NOUN -->
 - Display name: WGS84PositionLocation
 - Parent class: [PositionReferenceLocation](#PositionReferenceLocation)
+- Description: 
+Reference location for WGS84PositionLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis wGS84PositionLocation
+Location:wGS84PositionLocation
+wGS84PositionLocation BelongsToClass WGS84PositionLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wGS84PositionLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[wGS84PositionLocation] -->|BelongsToClass| N0002(WGS84PositionLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wGS84PositionLocation
+WHERE {
+	?wGS84PositionLocation rdf:type ddhub:Location .
+	?wGS84PositionLocation rdf:type ddhub:WGS84PositionLocation .
+}
+```
+This example declares the WGS84PositionLocation reference location.
 ## WellHeadPositionLocation <!-- NOUN -->
 - Display name: WellHeadPositionLocation
 - Parent class: [PositionReferenceLocation](#PositionReferenceLocation)
+- Description: 
+Reference location for WellHeadPositionLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis wellHeadPositionLocation
+Location:wellHeadPositionLocation
+wellHeadPositionLocation BelongsToClass WellHeadPositionLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wellHeadPositionLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[wellHeadPositionLocation] -->|BelongsToClass| N0002(WellHeadPositionLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wellHeadPositionLocation
+WHERE {
+	?wellHeadPositionLocation rdf:type ddhub:Location .
+	?wellHeadPositionLocation rdf:type ddhub:WellHeadPositionLocation .
+}
+```
+This example declares the WellHeadPositionLocation reference location.
 ## ClusterPositionLocation <!-- NOUN -->
 - Display name: ClusterPositionLocation
 - Parent class: [PositionReferenceLocation](#PositionReferenceLocation)
+- Description: 
+Reference location for ClusterPositionLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis clusterPositionLocation
+Location:clusterPositionLocation
+clusterPositionLocation BelongsToClass ClusterPositionLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[clusterPositionLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[clusterPositionLocation] -->|BelongsToClass| N0002(ClusterPositionLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?clusterPositionLocation
+WHERE {
+	?clusterPositionLocation rdf:type ddhub:Location .
+	?clusterPositionLocation rdf:type ddhub:ClusterPositionLocation .
+}
+```
+This example declares the ClusterPositionLocation reference location.
 ## LeaseLinePositionLocation <!-- NOUN -->
 - Display name: LeaseLinePositionLocation
 - Parent class: [PositionReferenceLocation](#PositionReferenceLocation)
+- Description: 
+Reference location for LeaseLinePositionLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis leaseLinePositionLocation
+Location:leaseLinePositionLocation
+leaseLinePositionLocation BelongsToClass LeaseLinePositionLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[leaseLinePositionLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[leaseLinePositionLocation] -->|BelongsToClass| N0002(LeaseLinePositionLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?leaseLinePositionLocation
+WHERE {
+	?leaseLinePositionLocation rdf:type ddhub:Location .
+	?leaseLinePositionLocation rdf:type ddhub:LeaseLinePositionLocation .
+}
+```
+This example declares the LeaseLinePositionLocation reference location.
 ## AxialReferenceLocation <!-- NOUN -->
 - Display name: AxialReferenceLocation
 - Parent class: [Location](#Location)
+- Description: 
+Reference location for AxialReferenceLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis axialReferenceLocation
+Location:axialReferenceLocation
+axialReferenceLocation BelongsToClass AxialReferenceLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[axialReferenceLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[axialReferenceLocation] -->|BelongsToClass| N0002(AxialReferenceLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?axialReferenceLocation
+WHERE {
+	?axialReferenceLocation rdf:type ddhub:Location .
+	?axialReferenceLocation rdf:type ddhub:AxialReferenceLocation .
+}
+```
+This example declares the AxialReferenceLocation reference location.
 ## BottomShoulderAxialLocation <!-- NOUN -->
 - Display name: BottomShoulderAxialLocation
 - Parent class: [AxialReferenceLocation](#AxialReferenceLocation)
+- Description: 
+Reference location for BottomShoulderAxialLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis bottomShoulderAxialLocation
+Location:bottomShoulderAxialLocation
+bottomShoulderAxialLocation BelongsToClass BottomShoulderAxialLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[bottomShoulderAxialLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[bottomShoulderAxialLocation] -->|BelongsToClass| N0002(BottomShoulderAxialLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?bottomShoulderAxialLocation
+WHERE {
+	?bottomShoulderAxialLocation rdf:type ddhub:Location .
+	?bottomShoulderAxialLocation rdf:type ddhub:BottomShoulderAxialLocation .
+}
+```
+This example declares the BottomShoulderAxialLocation reference location.
 ## TopShoulderAxialLocation <!-- NOUN -->
 - Display name: TopShoulderAxialLocation
 - Parent class: [AxialReferenceLocation](#AxialReferenceLocation)
+- Description: 
+Reference location for TopShoulderAxialLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis topShoulderAxialLocation
+Location:topShoulderAxialLocation
+topShoulderAxialLocation BelongsToClass TopShoulderAxialLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[topShoulderAxialLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[topShoulderAxialLocation] -->|BelongsToClass| N0002(TopShoulderAxialLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?topShoulderAxialLocation
+WHERE {
+	?topShoulderAxialLocation rdf:type ddhub:Location .
+	?topShoulderAxialLocation rdf:type ddhub:TopShoulderAxialLocation .
+}
+```
+This example declares the TopShoulderAxialLocation reference location.
 ## AbscissaReferenceLocation <!-- NOUN -->
 - Display name: AbscissaReferenceLocation
 - Parent class: [Location](#Location)
+- Description: 
+Reference location for AbscissaReferenceLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis abscissaReferenceLocation
+Location:abscissaReferenceLocation
+abscissaReferenceLocation BelongsToClass AbscissaReferenceLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[abscissaReferenceLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[abscissaReferenceLocation] -->|BelongsToClass| N0002(AbscissaReferenceLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?abscissaReferenceLocation
+WHERE {
+	?abscissaReferenceLocation rdf:type ddhub:Location .
+	?abscissaReferenceLocation rdf:type ddhub:AbscissaReferenceLocation .
+}
+```
+This example declares the AbscissaReferenceLocation reference location.
 ## BottomOfStringReferenceLocation <!-- NOUN -->
 - Display name: BottomOfStringReferenceLocation
 - Parent class: [AbscissaReferenceLocation](#AbscissaReferenceLocation)
+- Description: 
+Reference location for BottomOfStringReferenceLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis bottomOfStringReferenceLocation
+Location:bottomOfStringReferenceLocation
+bottomOfStringReferenceLocation BelongsToClass BottomOfStringReferenceLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[bottomOfStringReferenceLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[bottomOfStringReferenceLocation] -->|BelongsToClass| N0002(BottomOfStringReferenceLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?bottomOfStringReferenceLocation
+WHERE {
+	?bottomOfStringReferenceLocation rdf:type ddhub:Location .
+	?bottomOfStringReferenceLocation rdf:type ddhub:BottomOfStringReferenceLocation .
+}
+```
+This example declares the BottomOfStringReferenceLocation reference location.
+```dwis 
+DynamicDrillingSignal:lagDepth
+PhysicalData:lagDepth#01
+lagDepth#01 BelongsToClass ContinuousDataType
+lagDepth#01 HasDynamicValue lagDepth
+lagDepth#01 IsOfMeasurableQuantity DepthDrilling
+MovingAverage:movingAverage
+lagDepth#01 IsTransformationOutput movingAverage
+CuttingsComponent:cuttings
+lagDepth#01 ConcernsAFluidComponent cuttings
+BottomOfStringReferenceLocation:bos#01
+ReturnFlowLine:returnFlowLine#01
+lagDepth#01 IsDependentOn bos#01
+lagDepth#01 IsDependentOn returnFlowLine#01
+lagDepth#01 IsHydraulicallyLocatedAt returnFlowLine#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[lagDepth] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[lagDepth#01] -->|BelongsToClass| N0003(PhysicalData) 
+	N0002[lagDepth#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[lagDepth#01] -->|HasDynamicValue| N0000((lagDepth)) 
+	N0002[lagDepth#01] -->|IsOfMeasurableQuantity| N0005((DepthDrilling)) 
+	N0006[movingAverage] -->|BelongsToClass| N0007(MovingAverage) 
+	N0002[lagDepth#01] -->|IsTransformationOutput| N0006((movingAverage)) 
+	N0008[cuttings] -->|BelongsToClass| N0009(CuttingsComponent) 
+	N0002[lagDepth#01] -->|ConcernsAFluidComponent| N0008((cuttings)) 
+	N0010[bos#01] -->|BelongsToClass| N0011(BottomOfStringReferenceLocation) 
+	N0012[returnFlowLine#01] -->|BelongsToClass| N0013(ReturnFlowLine) 
+	N0002[lagDepth#01] -->|IsDependentOn| N0010((bos#01)) 
+	N0002[lagDepth#01] -->|IsDependentOn| N0012((returnFlowLine#01)) 
+	N0002[lagDepth#01] -->|IsHydraulicallyLocatedAt| N0012((returnFlowLine#01)) 
+```
+This example defines a drilling data point as being the lag depth measured at the bottom of the drill string and dependent on the return flow line.
+## TangencyLength <!-- NOUN -->
+- Display name: Tangency length
+- Parent class: [AbscissaReferenceLocation](#AbscissaReferenceLocation)
+- Description: 
+the position along the drill-string, counted from the bit, from which we can consider that the pipes direction is tangential with the borehole direction.
+- Definition set: PhysicalLocation
+- Examples:
+```dwis tangencyLengthExample
+DrillStemMechanicalModel:stiffTorqueDragModel
+MechanicalStiffModel:stiffModel
+stiffTorqueDragModel IsOfMechanicalStiffnessType stiffModel
+DynamicDrillingSignal:tangencyLengthSignal
+DrillingDataPoint:tangencyLengthSignal_01
+tangencyLengthSignal_01 BelongsToClass ContinuousDataType
+tangencyLengthSignal_01 HasDynamicValue tangencyLengthSignal
+tangencyLengthSignal_01 IsOfMeasurableQuantity LengthDrilling
+tangencyLengthSignal_01 IsComputedBy stiffTorqueDragModel
+TangencyLength:tangencyLengthLocation
+tangencyLengthSignal_01 IsPhysicallyLocatedAt tangencyLengthLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stiffTorqueDragModel] -->|BelongsToClass| N0001(DrillStemMechanicalModel) 
+	N0002[stiffModel] -->|BelongsToClass| N0003(MechanicalStiffModel) 
+	N0000[stiffTorqueDragModel] -->|IsOfMechanicalStiffnessType| N0002((stiffModel)) 
+	N0004[tangencyLengthSignal] -->|BelongsToClass| N0005(DynamicDrillingSignal) 
+	N0006[tangencyLengthSignal_01] -->|BelongsToClass| N0007(DrillingDataPoint) 
+	N0006[tangencyLengthSignal_01] -->|BelongsToClass| N0008(ContinuousDataType) 
+	N0006[tangencyLengthSignal_01] -->|HasDynamicValue| N0004((tangencyLengthSignal)) 
+	N0006[tangencyLengthSignal_01] -->|IsOfMeasurableQuantity| N0009((LengthDrilling)) 
+	N0006[tangencyLengthSignal_01] -->|IsComputedBy| N0000((stiffTorqueDragModel)) 
+	N0010[tangencyLengthLocation] -->|BelongsToClass| N0011(TangencyLength) 
+	N0006[tangencyLengthSignal_01] -->|IsPhysicallyLocatedAt| N0010((tangencyLengthLocation)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?tangencyLengthExample
+WHERE {
+	?stiffTorqueDragModel rdf:type ddhub:DrillStemMechanicalModel .
+	?stiffModel rdf:type ddhub:MechanicalStiffModel .
+	?tangencyLengthSignal rdf:type ddhub:DynamicDrillingSignal .
+	?tangencyLengthSignal_01 rdf:type ddhub:DrillingDataPoint .
+	?tangencyLengthSignal_01 rdf:type ddhub:ContinuousDataType .
+	?tangencyLengthLocation rdf:type ddhub:TangencyLength .
+  FILTER (
+	?Attribute000 = stiffModel
+	&& 	?Attribute001 = tangencyLengthSignal
+	&& 	?Attribute002 = LengthDrilling
+	&& 	?Attribute003 = stiffTorqueDragModel
+	&& 	?Attribute004 = tangencyLengthLocation
+  )
+}
+```
+This example defines a drilling data point as being the tangency length calculated by a stiff torque and drag model.
+## RotatingDriveSystemLocation <!-- NOUN -->
+- Display name: RotatingDriveSystemLocation
+- Parent class: [AbscissaReferenceLocation](#AbscissaReferenceLocation)
+- Description: 
+Reference location for rotating drive system, i.e., a generic denomination for the top-drive,
+a power swivel, a rotary table with a kelly.
+- Definition set: PhysicalLocation
+- Examples:
+```dwis RotatingDriveSystemLocation
+DynamicDrillingSignal:surfaceTorque
+PhysicalData:surfaceTorque_01
+ContinuousDataType:surfaceTorque_01
+surfaceTorque_01 HasDynamicValue surfaceTorque
+surfaceTorque_01 IsOfMeasurableQuantity TorqueDrilling
+MovingAverage:movingAverage
+surfaceTorque_01 IsTransformationOutput movingAverage
+RotatingDriveSystemLocation:rotatingDriveSystem
+surfaceTorque_01 IsPhysicallyLocatedAt rotatingDriveSystem
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[surfaceTorque] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[surfaceTorque_01] -->|BelongsToClass| N0003(PhysicalData) 
+	N0002[surfaceTorque_01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[surfaceTorque_01] -->|HasDynamicValue| N0000((surfaceTorque)) 
+	N0002[surfaceTorque_01] -->|IsOfMeasurableQuantity| N0005((TorqueDrilling)) 
+	N0006[movingAverage] -->|BelongsToClass| N0007(MovingAverage) 
+	N0002[surfaceTorque_01] -->|IsTransformationOutput| N0006((movingAverage)) 
+	N0008[rotatingDriveSystem] -->|BelongsToClass| N0009(RotatingDriveSystemLocation) 
+	N0002[surfaceTorque_01] -->|IsPhysicallyLocatedAt| N0008((rotatingDriveSystem)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?RotatingDriveSystemLocation
+WHERE {
+	?surfaceTorque rdf:type ddhub:DynamicDrillingSignal .
+	?surfaceTorque_01 rdf:type ddhub:PhysicalData .
+	?surfaceTorque_01 rdf:type ddhub:ContinuousDataType .
+	?movingAverage rdf:type ddhub:MovingAverage .
+	?rotatingDriveSystem rdf:type ddhub:RotatingDriveSystemLocation .
+  FILTER (
+	?Attribute000 = surfaceTorque
+	&& 	?Attribute001 = TorqueDrilling
+	&& 	?Attribute002 = movingAverage
+	&& 	?Attribute003 = rotatingDriveSystem
+  )
+}
+```
+This example hows how the RotatingDriveSystemLocation is used to define a rotating drive system torque.
 ## TopOfStringReferenceLocation <!-- NOUN -->
 - Display name: TopOfStringReferenceLocation
 - Parent class: [AbscissaReferenceLocation](#AbscissaReferenceLocation)
+- Description: 
+Reference location for TopOfStringReferenceLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis topOfStringReferenceLocation
+Location:topOfStringReferenceLocation
+topOfStringReferenceLocation BelongsToClass TopOfStringReferenceLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[topOfStringReferenceLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[topOfStringReferenceLocation] -->|BelongsToClass| N0002(TopOfStringReferenceLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?topOfStringReferenceLocation
+WHERE {
+	?topOfStringReferenceLocation rdf:type ddhub:Location .
+	?topOfStringReferenceLocation rdf:type ddhub:TopOfStringReferenceLocation .
+}
+```
+This example declares the TopOfStringReferenceLocation reference location.
+```dwis surfaceROPExample
+DynamicDrillingSignal:ROP
+PhysicalData:ROP#01
+ROP#01 BelongsToClass ContinuousDataType
+ROP#01 HasDynamicValue ROP
+ROP#01 IsOfMeasurableQuantity RateOfPenetrationDrilling
+MovingAverage:movingAverage
+ROP#01 IsTransformationOutput movingAverage
+TopOfStringReferenceLocation:tos#01
+ROP#01 IsPhysicallyLocatedAt tos#01
+HoleBottomLocation:bh#01
+ROP#01 IsDependentOn bh#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ROP] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[ROP#01] -->|BelongsToClass| N0003(PhysicalData) 
+	N0002[ROP#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[ROP#01] -->|HasDynamicValue| N0000((ROP)) 
+	N0002[ROP#01] -->|IsOfMeasurableQuantity| N0005((RateOfPenetrationDrilling)) 
+	N0006[movingAverage] -->|BelongsToClass| N0007(MovingAverage) 
+	N0002[ROP#01] -->|IsTransformationOutput| N0006((movingAverage)) 
+	N0008[tos#01] -->|BelongsToClass| N0009(TopOfStringReferenceLocation) 
+	N0002[ROP#01] -->|IsPhysicallyLocatedAt| N0008((tos#01)) 
+	N0010[bh#01] -->|BelongsToClass| N0011(HoleBottomLocation) 
+	N0002[ROP#01] -->|IsDependentOn| N0010((bh#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?surfaceROPExample
+WHERE {
+	?ROP rdf:type ddhub:DynamicDrillingSignal .
+	?ROP#01 rdf:type ddhub:PhysicalData .
+	?ROP#01 rdf:type ddhub:ContinuousDataType .
+	?movingAverage rdf:type ddhub:MovingAverage .
+	?tos#01 rdf:type ddhub:TopOfStringReferenceLocation .
+	?bh#01 rdf:type ddhub:HoleBottomLocation .
+  FILTER (
+	?Attribute000 = ROP
+	&& 	?Attribute001 = RateOfPenetrationDrilling
+	&& 	?Attribute002 = movingAverage
+	&& 	?Attribute003 = tos#01
+	&& 	?Attribute004 = bh#01
+  )
+}
+```
+This example defines a drilling data point as being the surface rate of penetration measured at the top of the drill string and dependent on the hole bottom location.
 ## ToolJoint1ReferenceLocation <!-- NOUN -->
 - Display name: ToolJoint1ReferenceLocation
 - Parent class: [AbscissaReferenceLocation](#AbscissaReferenceLocation)
+- Description: 
+Reference location for ToolJoint1ReferenceLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis toolJoint1ReferenceLocation
+Location:toolJoint1ReferenceLocation
+toolJoint1ReferenceLocation BelongsToClass ToolJoint1ReferenceLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[toolJoint1ReferenceLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[toolJoint1ReferenceLocation] -->|BelongsToClass| N0002(ToolJoint1ReferenceLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?toolJoint1ReferenceLocation
+WHERE {
+	?toolJoint1ReferenceLocation rdf:type ddhub:Location .
+	?toolJoint1ReferenceLocation rdf:type ddhub:ToolJoint1ReferenceLocation .
+}
+```
+This example declares the ToolJoint1ReferenceLocation reference location.
 ## ToolJoint2ReferenceLocation <!-- NOUN -->
 - Display name: ToolJoint2ReferenceLocation
 - Parent class: [AbscissaReferenceLocation](#AbscissaReferenceLocation)
+- Description: 
+Reference location for ToolJoint2ReferenceLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis toolJoint2ReferenceLocation
+Location:toolJoint2ReferenceLocation
+toolJoint2ReferenceLocation BelongsToClass ToolJoint2ReferenceLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[toolJoint2ReferenceLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[toolJoint2ReferenceLocation] -->|BelongsToClass| N0002(ToolJoint2ReferenceLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?toolJoint2ReferenceLocation
+WHERE {
+	?toolJoint2ReferenceLocation rdf:type ddhub:Location .
+	?toolJoint2ReferenceLocation rdf:type ddhub:ToolJoint2ReferenceLocation .
+}
+```
+This example declares the ToolJoint2ReferenceLocation reference location.
 ## ToolJoint3ReferenceLocation <!-- NOUN -->
 - Display name: ToolJoint3ReferenceLocation
 - Parent class: [AbscissaReferenceLocation](#AbscissaReferenceLocation)
+- Description: 
+Reference location for ToolJoint3ReferenceLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis toolJoint3ReferenceLocation
+Location:toolJoint3ReferenceLocation
+toolJoint3ReferenceLocation BelongsToClass ToolJoint3ReferenceLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[toolJoint3ReferenceLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[toolJoint3ReferenceLocation] -->|BelongsToClass| N0002(ToolJoint3ReferenceLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?toolJoint3ReferenceLocation
+WHERE {
+	?toolJoint3ReferenceLocation rdf:type ddhub:Location .
+	?toolJoint3ReferenceLocation rdf:type ddhub:ToolJoint3ReferenceLocation .
+}
+```
+This example declares the ToolJoint3ReferenceLocation reference location.
 ## ToolJoint4ReferenceLocation <!-- NOUN -->
 - Display name: ToolJoint4ReferenceLocation
 - Parent class: [AbscissaReferenceLocation](#AbscissaReferenceLocation)
+- Description: 
+Reference location for ToolJoint4ReferenceLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis toolJoint4ReferenceLocation
+Location:toolJoint4ReferenceLocation
+toolJoint4ReferenceLocation BelongsToClass ToolJoint4ReferenceLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[toolJoint4ReferenceLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[toolJoint4ReferenceLocation] -->|BelongsToClass| N0002(ToolJoint4ReferenceLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?toolJoint4ReferenceLocation
+WHERE {
+	?toolJoint4ReferenceLocation rdf:type ddhub:Location .
+	?toolJoint4ReferenceLocation rdf:type ddhub:ToolJoint4ReferenceLocation .
+}
+```
+This example declares the ToolJoint4ReferenceLocation reference location.
 ## LastCasingShoeReferenceLocation <!-- NOUN -->
 - Display name: LastCasingShoeReferenceLocation
 - Parent class: [AbscissaReferenceLocation](#AbscissaReferenceLocation)
+- Description: 
+Reference location for LastCasingShoeReferenceLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis lastCasingShoeReferenceLocation
+Location:lastCasingShoeReferenceLocation
+lastCasingShoeReferenceLocation BelongsToClass LastCasingShoeReferenceLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[lastCasingShoeReferenceLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[lastCasingShoeReferenceLocation] -->|BelongsToClass| N0002(LastCasingShoeReferenceLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?lastCasingShoeReferenceLocation
+WHERE {
+	?lastCasingShoeReferenceLocation rdf:type ddhub:Location .
+	?lastCasingShoeReferenceLocation rdf:type ddhub:LastCasingShoeReferenceLocation .
+}
+```
+This example declares the LastCasingShoeReferenceLocation reference location.
 ## HoleBottomLocation <!-- NOUN -->
 - Display name: HoleBottomLocation
 - Parent class: [AbscissaReferenceLocation](#AbscissaReferenceLocation)
+- Description: 
+Reference location for HoleBottomLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis holeBottomLocation
+Location:holeBottomLocation
+holeBottomLocation BelongsToClass HoleBottomLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[holeBottomLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[holeBottomLocation] -->|BelongsToClass| N0002(HoleBottomLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?holeBottomLocation
+WHERE {
+	?holeBottomLocation rdf:type ddhub:Location .
+	?holeBottomLocation rdf:type ddhub:HoleBottomLocation .
+}
+```
+This example declares the HoleBottomLocation reference location.
 ## TopOfRatHoleLocation <!-- NOUN -->
 - Display name: TopOfRatHoleLocation
 - Parent class: [AbscissaReferenceLocation](#AbscissaReferenceLocation)
+- Description: 
+Reference location for TopOfRatHoleLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis topOfRatHoleLocation
+Location:topOfRatHoleLocation
+topOfRatHoleLocation BelongsToClass TopOfRatHoleLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[topOfRatHoleLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[topOfRatHoleLocation] -->|BelongsToClass| N0002(TopOfRatHoleLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?topOfRatHoleLocation
+WHERE {
+	?topOfRatHoleLocation rdf:type ddhub:Location .
+	?topOfRatHoleLocation rdf:type ddhub:TopOfRatHoleLocation .
+}
+```
+This example declares the TopOfRatHoleLocation reference location.
 ## LedgeLocation <!-- NOUN -->
 - Display name: LedgeLocation
 - Parent class: [AbscissaReferenceLocation](#AbscissaReferenceLocation)
+- Description: 
+Reference location for LedgeLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis ledgeLocation
+Location:ledgeLocation
+ledgeLocation BelongsToClass LedgeLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ledgeLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[ledgeLocation] -->|BelongsToClass| N0002(LedgeLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ledgeLocation
+WHERE {
+	?ledgeLocation rdf:type ddhub:Location .
+	?ledgeLocation rdf:type ddhub:LedgeLocation .
+}
+```
+This example declares the LedgeLocation reference location.
 ## CuttingsBedLocation <!-- NOUN -->
 - Display name: CuttingsBedLocation
 - Parent class: [AbscissaReferenceLocation](#AbscissaReferenceLocation)
+- Description: 
+Reference location for CuttingsBedLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis cuttingsBedLocation
+Location:cuttingsBedLocation
+cuttingsBedLocation BelongsToClass CuttingsBedLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[cuttingsBedLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[cuttingsBedLocation] -->|BelongsToClass| N0002(CuttingsBedLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?cuttingsBedLocation
+WHERE {
+	?cuttingsBedLocation rdf:type ddhub:Location .
+	?cuttingsBedLocation rdf:type ddhub:CuttingsBedLocation .
+}
+```
+This example declares the CuttingsBedLocation reference location.
 ## FormationFluidTransferLocation <!-- NOUN -->
 - Display name: FormationFluidTransferLocation
 - Parent class: [AbscissaReferenceLocation](#AbscissaReferenceLocation)
+- Description: 
+Reference location for FormationFluidTransferLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis formationFluidTransferLocation
+Location:formationFluidTransferLocation
+formationFluidTransferLocation BelongsToClass FormationFluidTransferLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[formationFluidTransferLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[formationFluidTransferLocation] -->|BelongsToClass| N0002(FormationFluidTransferLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?formationFluidTransferLocation
+WHERE {
+	?formationFluidTransferLocation rdf:type ddhub:Location .
+	?formationFluidTransferLocation rdf:type ddhub:FormationFluidTransferLocation .
+}
+```
+This example declares the FormationFluidTransferLocation reference location.
 ## DifferentialStickingLocation <!-- NOUN -->
 - Display name: DifferentialStickingLocation
 - Parent class: [AbscissaReferenceLocation](#AbscissaReferenceLocation)
+- Description: 
+Reference location for DifferentialStickingLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis differentialStickingLocation
+Location:differentialStickingLocation
+differentialStickingLocation BelongsToClass DifferentialStickingLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[differentialStickingLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[differentialStickingLocation] -->|BelongsToClass| N0002(DifferentialStickingLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?differentialStickingLocation
+WHERE {
+	?differentialStickingLocation rdf:type ddhub:Location .
+	?differentialStickingLocation rdf:type ddhub:DifferentialStickingLocation .
+}
+```
+This example declares the DifferentialStickingLocation reference location.
 ## FormationCollapseLocation <!-- NOUN -->
 - Display name: FormationCollapseLocation
 - Parent class: [AbscissaReferenceLocation](#AbscissaReferenceLocation)
+- Description: 
+Reference location for FormationCollapseLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis formationCollapseLocation
+Location:formationCollapseLocation
+formationCollapseLocation BelongsToClass FormationCollapseLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[formationCollapseLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[formationCollapseLocation] -->|BelongsToClass| N0002(FormationCollapseLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?formationCollapseLocation
+WHERE {
+	?formationCollapseLocation rdf:type ddhub:Location .
+	?formationCollapseLocation rdf:type ddhub:FormationCollapseLocation .
+}
+```
+This example declares the FormationCollapseLocation reference location.
 ## PipeWashoutLocation <!-- NOUN -->
 - Display name: PipeWashoutLocation
 - Parent class: [AbscissaReferenceLocation](#AbscissaReferenceLocation)
+- Description: 
+Reference location for PipeWashoutLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis pipeWashoutLocation
+Location:pipeWashoutLocation
+pipeWashoutLocation BelongsToClass PipeWashoutLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pipeWashoutLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[pipeWashoutLocation] -->|BelongsToClass| N0002(PipeWashoutLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pipeWashoutLocation
+WHERE {
+	?pipeWashoutLocation rdf:type ddhub:Location .
+	?pipeWashoutLocation rdf:type ddhub:PipeWashoutLocation .
+}
+```
+This example declares the PipeWashoutLocation reference location.
 ## FormationWashoutLocation <!-- NOUN -->
 - Display name: FormationWashoutLocation
 - Parent class: [AbscissaReferenceLocation](#AbscissaReferenceLocation)
+- Description: 
+Reference location for FormationWashoutLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis formationWashoutLocation
+Location:formationWashoutLocation
+formationWashoutLocation BelongsToClass FormationWashoutLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[formationWashoutLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[formationWashoutLocation] -->|BelongsToClass| N0002(FormationWashoutLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?formationWashoutLocation
+WHERE {
+	?formationWashoutLocation rdf:type ddhub:Location .
+	?formationWashoutLocation rdf:type ddhub:FormationWashoutLocation .
+}
+```
+This example declares the FormationWashoutLocation reference location.
 ## AngleReferenceLocation <!-- NOUN -->
 - Display name: AngleReferenceLocation
 - Parent class: [Location](#Location)
+- Description: 
+Reference location for AngleReferenceLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis angleReferenceLocation
+Location:angleReferenceLocation
+angleReferenceLocation BelongsToClass AngleReferenceLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[angleReferenceLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[angleReferenceLocation] -->|BelongsToClass| N0002(AngleReferenceLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?angleReferenceLocation
+WHERE {
+	?angleReferenceLocation rdf:type ddhub:Location .
+	?angleReferenceLocation rdf:type ddhub:AngleReferenceLocation .
+}
+```
+This example declares the AngleReferenceLocation reference location.
 ## ScribeLineAngleLocation <!-- NOUN -->
 - Display name: ScribeLineAngleLocation
 - Parent class: [AngleReferenceLocation](#AngleReferenceLocation)
+- Description: 
+Reference location for ScribeLineAngleLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis scribeLineAngleLocation
+Location:scribeLineAngleLocation
+scribeLineAngleLocation BelongsToClass ScribeLineAngleLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[scribeLineAngleLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[scribeLineAngleLocation] -->|BelongsToClass| N0002(ScribeLineAngleLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?scribeLineAngleLocation
+WHERE {
+	?scribeLineAngleLocation rdf:type ddhub:Location .
+	?scribeLineAngleLocation rdf:type ddhub:ScribeLineAngleLocation .
+}
+```
+This example declares the ScribeLineAngleLocation reference location.
 ## GravityHighSideAngleLocation <!-- NOUN -->
 - Display name: GravityHighSideAngleLocation
 - Parent class: [AngleReferenceLocation](#AngleReferenceLocation)
+- Description: 
+Reference location for GravityHighSideAngleLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis gravityHighSideAngleLocation
+Location:gravityHighSideAngleLocation
+gravityHighSideAngleLocation BelongsToClass GravityHighSideAngleLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[gravityHighSideAngleLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[gravityHighSideAngleLocation] -->|BelongsToClass| N0002(GravityHighSideAngleLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?gravityHighSideAngleLocation
+WHERE {
+	?gravityHighSideAngleLocation rdf:type ddhub:Location .
+	?gravityHighSideAngleLocation rdf:type ddhub:GravityHighSideAngleLocation .
+}
+```
+This example declares the GravityHighSideAngleLocation reference location.
 ## MagneticHighSideAngleLocation <!-- NOUN -->
 - Display name: MagneticHighSideAngleLocation
 - Parent class: [AngleReferenceLocation](#AngleReferenceLocation)
+- Description: 
+Reference location for MagneticHighSideAngleLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis magneticHighSideAngleLocation
+Location:magneticHighSideAngleLocation
+magneticHighSideAngleLocation BelongsToClass MagneticHighSideAngleLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[magneticHighSideAngleLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[magneticHighSideAngleLocation] -->|BelongsToClass| N0002(MagneticHighSideAngleLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?magneticHighSideAngleLocation
+WHERE {
+	?magneticHighSideAngleLocation rdf:type ddhub:Location .
+	?magneticHighSideAngleLocation rdf:type ddhub:MagneticHighSideAngleLocation .
+}
+```
+This example declares the MagneticHighSideAngleLocation reference location.
 ## UpperSideAngleLocation <!-- NOUN -->
 - Display name: UpperSideAngleLocation
 - Parent class: [AngleReferenceLocation](#AngleReferenceLocation)
+- Description: 
+Reference location for UpperSideAngleLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis upperSideAngleLocation
+Location:upperSideAngleLocation
+upperSideAngleLocation BelongsToClass UpperSideAngleLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[upperSideAngleLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[upperSideAngleLocation] -->|BelongsToClass| N0002(UpperSideAngleLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?upperSideAngleLocation
+WHERE {
+	?upperSideAngleLocation rdf:type ddhub:Location .
+	?upperSideAngleLocation rdf:type ddhub:UpperSideAngleLocation .
+}
+```
+This example declares the UpperSideAngleLocation reference location.
 ## AzimuthReferenceLocation <!-- NOUN -->
 - Display name: AzimuthReferenceLocation
 - Parent class: [Location](#Location)
+- Description: 
+Reference location for AzimuthReferenceLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis azimuthReferenceLocation
+Location:azimuthReferenceLocation
+azimuthReferenceLocation BelongsToClass AzimuthReferenceLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[azimuthReferenceLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[azimuthReferenceLocation] -->|BelongsToClass| N0002(AzimuthReferenceLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?azimuthReferenceLocation
+WHERE {
+	?azimuthReferenceLocation rdf:type ddhub:Location .
+	?azimuthReferenceLocation rdf:type ddhub:AzimuthReferenceLocation .
+}
+```
+This example declares the AzimuthReferenceLocation reference location.
 ## TrueNorthAzimuthLocation <!-- NOUN -->
 - Display name: TrueNorthAzimuthLocation
 - Parent class: [AzimuthReferenceLocation](#AzimuthReferenceLocation)
+- Description: 
+Reference location for TrueNorthAzimuthLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis trueNorthAzimuthLocation
+Location:trueNorthAzimuthLocation
+trueNorthAzimuthLocation BelongsToClass TrueNorthAzimuthLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[trueNorthAzimuthLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[trueNorthAzimuthLocation] -->|BelongsToClass| N0002(TrueNorthAzimuthLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?trueNorthAzimuthLocation
+WHERE {
+	?trueNorthAzimuthLocation rdf:type ddhub:Location .
+	?trueNorthAzimuthLocation rdf:type ddhub:TrueNorthAzimuthLocation .
+}
+```
+This example declares the TrueNorthAzimuthLocation reference location.
 ## MagneticNorthAzimuthLocation <!-- NOUN -->
 - Display name: MagneticNorthAzimuthLocation
 - Parent class: [AzimuthReferenceLocation](#AzimuthReferenceLocation)
+- Description: 
+Reference location for MagneticNorthAzimuthLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis magneticNorthAzimuthLocation
+Location:magneticNorthAzimuthLocation
+magneticNorthAzimuthLocation BelongsToClass MagneticNorthAzimuthLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[magneticNorthAzimuthLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[magneticNorthAzimuthLocation] -->|BelongsToClass| N0002(MagneticNorthAzimuthLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?magneticNorthAzimuthLocation
+WHERE {
+	?magneticNorthAzimuthLocation rdf:type ddhub:Location .
+	?magneticNorthAzimuthLocation rdf:type ddhub:MagneticNorthAzimuthLocation .
+}
+```
+This example declares the MagneticNorthAzimuthLocation reference location.
 ## GridNorthAzimuthLocation <!-- NOUN -->
 - Display name: GridNorthAzimuthLocation
 - Parent class: [AzimuthReferenceLocation](#AzimuthReferenceLocation)
+- Description: 
+Reference location for GridNorthAzimuthLocation.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis gridNorthAzimuthLocation
+Location:gridNorthAzimuthLocation
+gridNorthAzimuthLocation BelongsToClass GridNorthAzimuthLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[gridNorthAzimuthLocation] -->|BelongsToClass| N0001(Location) 
+	N0000[gridNorthAzimuthLocation] -->|BelongsToClass| N0002(GridNorthAzimuthLocation) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?gridNorthAzimuthLocation
+WHERE {
+	?gridNorthAzimuthLocation rdf:type ddhub:Location .
+	?gridNorthAzimuthLocation rdf:type ddhub:GridNorthAzimuthLocation .
+}
+```
+This example declares the GridNorthAzimuthLocation reference location.
+## Axis <!-- NOUN -->
+- Display name: Axis
+- Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+Represents an axis in a coordinate system
+- Definition set: PhysicalLocation
+- Examples:
+```dwis AxisExample
+Axis:axis
+ReferenceFrame:referenceFrame
+referenceFrame HasAxis axis
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[axis] -->|BelongsToClass| N0001(Axis) 
+	N0002[referenceFrame] -->|BelongsToClass| N0003(ReferenceFrame) 
+	N0002[referenceFrame] -->|HasAxis| N0000((axis)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?AxisExample
+WHERE {
+	?axis rdf:type ddhub:Axis .
+	?referenceFrame rdf:type ddhub:ReferenceFrame .
+  FILTER (
+	?Attribute000 = axis
+  )
+}
+```
+This example declares that a reference frame has an axis.
+## XAxis <!-- NOUN -->
+- Display name: XAxis
+- Parent class: [Axis](#Axis)
+- Description: 
+Represents the first axis in a coordinate system with at least one dimension
+- Definition set: PhysicalLocation
+- Examples:
+```dwis XAxisExample
+XAxis:xAxis
+ReferenceFrame:referenceFrame
+referenceFrame HasAxis xAxis
+DrillingDataPoint:xCoordinate
+xCoordinate HasReferenceFrame referenceFrame
+xCoordinate IsComponentAlongAxis xAxis
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[xAxis] -->|BelongsToClass| N0001(XAxis) 
+	N0002[referenceFrame] -->|BelongsToClass| N0003(ReferenceFrame) 
+	N0002[referenceFrame] -->|HasAxis| N0000((xAxis)) 
+	N0004[xCoordinate] -->|BelongsToClass| N0005(DrillingDataPoint) 
+	N0004[xCoordinate] -->|HasReferenceFrame| N0002((referenceFrame)) 
+	N0004[xCoordinate] -->|IsComponentAlongAxis| N0000((xAxis)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?XAxisExample
+WHERE {
+	?xAxis rdf:type ddhub:XAxis .
+	?referenceFrame rdf:type ddhub:ReferenceFrame .
+	?xCoordinate rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = xAxis
+	&& 	?Attribute001 = referenceFrame
+	&& 	?Attribute002 = xAxis
+  )
+}
+```
+This example declares that a drilling data point has a reference frame and that it is a component along the x-axis.
+```dwis MeasuredBendingMomentXExample
+DynamicDrillingSignal:OmniViewMeasuredBendingMomentX
+DirectMeasurement:OmniViewMeasuredBendingMomentX#01
+OmniViewMeasuredBendingMomentX#01 BelongsToClass ContinuousDataType
+OmniViewMeasuredBendingMomentX#01 HasDynamicValue OmniViewMeasuredBendingMomentX
+OmniViewMeasuredBendingMomentX#01 IsOfMeasurableQuantity BendingMomentDrilling
+TopSideTelemetry:topSideTelemetry
+OmniViewMeasuredBendingMomentX#01 IsTransmittedBy topSideTelemetry
+DynamicDrillingSignal:Sigma_OmniViewMeasuredBendingMomentX
+DrillingDataPoint:Sigma_OmniViewMeasuredBendingMomentX#01
+Sigma_OmniViewMeasuredBendingMomentX#01 BelongsToClass ContinuousDataType
+Sigma_OmniViewMeasuredBendingMomentX#01 IsOfMeasurableQuantity BendingMomentDrilling
+Sigma_OmniViewMeasuredBendingMomentX#01 HasDynamicValue Sigma_OmniViewMeasuredBendingMomentX
+GaussianUncertainty:OmniViewMeasuredBendingMomentXGaussianUncertainty#01
+OmniViewMeasuredBendingMomentX#01 HasUncertainty OmniViewMeasuredBendingMomentXGaussianUncertainty#01
+OmniViewMeasuredBendingMomentXGaussianUncertainty#01 HasUncertaintyMean OmniViewMeasuredBendingMomentX#01
+OmniViewMeasuredBendingMomentXGaussianUncertainty#01 HasUncertaintyStandardDeviation Sigma_OmniViewMeasuredBendingMomentX#01
+XAxis:xAxis#01
+OmniViewMeasuredBendingMomentX#01 IsComponentAlongAxis xAxis#01
+SwivelSub:SwivelSub#01
+OmniViewMeasuredBendingMomentX#01 IsMechanicallyLocatedAt SwivelSub#01
+RotatingDriveSystemLocation:rotatingDriveSystem
+OmniViewMeasuredBendingMomentX#01 IsPhysicallyLocatedAt rotatingDriveSystem
+InstrumentationCompany:Petromar#01
+OmniViewMeasuredBendingMomentX#01 IsProvidedBy Petromar#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[OmniViewMeasuredBendingMomentX] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[OmniViewMeasuredBendingMomentX#01] -->|BelongsToClass| N0003(DirectMeasurement) 
+	N0002[OmniViewMeasuredBendingMomentX#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[OmniViewMeasuredBendingMomentX#01] -->|HasDynamicValue| N0000((OmniViewMeasuredBendingMomentX)) 
+	N0002[OmniViewMeasuredBendingMomentX#01] -->|IsOfMeasurableQuantity| N0005((BendingMomentDrilling)) 
+	N0006[topSideTelemetry] -->|BelongsToClass| N0007(TopSideTelemetry) 
+	N0002[OmniViewMeasuredBendingMomentX#01] -->|IsTransmittedBy| N0006((topSideTelemetry)) 
+	N0008[Sigma_OmniViewMeasuredBendingMomentX] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0009[Sigma_OmniViewMeasuredBendingMomentX#01] -->|BelongsToClass| N0010(DrillingDataPoint) 
+	N0009[Sigma_OmniViewMeasuredBendingMomentX#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0009[Sigma_OmniViewMeasuredBendingMomentX#01] -->|IsOfMeasurableQuantity| N0005((BendingMomentDrilling)) 
+	N0009[Sigma_OmniViewMeasuredBendingMomentX#01] -->|HasDynamicValue| N0008((Sigma_OmniViewMeasuredBendingMomentX)) 
+	N0011[OmniViewMeasuredBendingMomentXGaussianUncertainty#01] -->|BelongsToClass| N0012(GaussianUncertainty) 
+	N0002[OmniViewMeasuredBendingMomentX#01] -->|HasUncertainty| N0011((OmniViewMeasuredBendingMomentXGaussianUncertainty#01)) 
+	N0011[OmniViewMeasuredBendingMomentXGaussianUncertainty#01] -->|HasUncertaintyMean| N0002((OmniViewMeasuredBendingMomentX#01)) 
+	N0011[OmniViewMeasuredBendingMomentXGaussianUncertainty#01] -->|HasUncertaintyStandardDeviation| N0009((Sigma_OmniViewMeasuredBendingMomentX#01)) 
+	N0013[xAxis#01] -->|BelongsToClass| N0014(XAxis) 
+	N0002[OmniViewMeasuredBendingMomentX#01] -->|IsComponentAlongAxis| N0013((xAxis#01)) 
+	N0015[SwivelSub#01] -->|BelongsToClass| N0016(SwivelSub) 
+	N0002[OmniViewMeasuredBendingMomentX#01] -->|IsMechanicallyLocatedAt| N0015((SwivelSub#01)) 
+	N0017[rotatingDriveSystem] -->|BelongsToClass| N0018(RotatingDriveSystemLocation) 
+	N0002[OmniViewMeasuredBendingMomentX#01] -->|IsPhysicallyLocatedAt| N0017((rotatingDriveSystem)) 
+	N0019[Petromar#01] -->|BelongsToClass| N0020(InstrumentationCompany) 
+	N0002[OmniViewMeasuredBendingMomentX#01] -->|IsProvidedBy| N0019((Petromar#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?MeasuredBendingMomentXExample
+WHERE {
+	?OmniViewMeasuredBendingMomentX rdf:type ddhub:DynamicDrillingSignal .
+	?OmniViewMeasuredBendingMomentX#01 rdf:type ddhub:DirectMeasurement .
+	?OmniViewMeasuredBendingMomentX#01 rdf:type ddhub:ContinuousDataType .
+	?topSideTelemetry rdf:type ddhub:TopSideTelemetry .
+	?Sigma_OmniViewMeasuredBendingMomentX rdf:type ddhub:DynamicDrillingSignal .
+	?Sigma_OmniViewMeasuredBendingMomentX#01 rdf:type ddhub:DrillingDataPoint .
+	?Sigma_OmniViewMeasuredBendingMomentX#01 rdf:type ddhub:ContinuousDataType .
+	?OmniViewMeasuredBendingMomentXGaussianUncertainty#01 rdf:type ddhub:GaussianUncertainty .
+	?xAxis#01 rdf:type ddhub:XAxis .
+	?SwivelSub#01 rdf:type ddhub:SwivelSub .
+	?rotatingDriveSystem rdf:type ddhub:RotatingDriveSystemLocation .
+	?Petromar#01 rdf:type ddhub:InstrumentationCompany .
+  FILTER (
+	?Attribute000 = OmniViewMeasuredBendingMomentX
+	&& 	?Attribute001 = BendingMomentDrilling
+	&& 	?Attribute002 = topSideTelemetry
+	&& 	?Attribute003 = BendingMomentDrilling
+	&& 	?Attribute004 = Sigma_OmniViewMeasuredBendingMomentX
+	&& 	?Attribute005 = OmniViewMeasuredBendingMomentXGaussianUncertainty#01
+	&& 	?Attribute006 = OmniViewMeasuredBendingMomentX#01
+	&& 	?Attribute007 = Sigma_OmniViewMeasuredBendingMomentX#01
+	&& 	?Attribute008 = xAxis#01
+	&& 	?Attribute009 = SwivelSub#01
+	&& 	?Attribute010 = rotatingDriveSystem
+	&& 	?Attribute011 = Petromar#01
+  )
+}
+```
+This example defines a drilling data point as being the x-component of the measured bending moment at the rotating drive system location.
+## YAxis <!-- NOUN -->
+- Display name: YAxis
+- Parent class: [Axis](#Axis)
+- Description: 
+Represents the second axis in a coordinate system with at least two dimensions
+- Definition set: PhysicalLocation
+- Examples:
+```dwis YAxisExample
+YAxis:yAxis
+ReferenceFrame:referenceFrame
+referenceFrame HasAxis yAxis
+DrillingDataPoint:yCoordinate
+yCoordinate HasReferenceFrame referenceFrame
+yCoordinate IsComponentAlongAxis yAxis
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[yAxis] -->|BelongsToClass| N0001(YAxis) 
+	N0002[referenceFrame] -->|BelongsToClass| N0003(ReferenceFrame) 
+	N0002[referenceFrame] -->|HasAxis| N0000((yAxis)) 
+	N0004[yCoordinate] -->|BelongsToClass| N0005(DrillingDataPoint) 
+	N0004[yCoordinate] -->|HasReferenceFrame| N0002((referenceFrame)) 
+	N0004[yCoordinate] -->|IsComponentAlongAxis| N0000((yAxis)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?YAxisExample
+WHERE {
+	?yAxis rdf:type ddhub:YAxis .
+	?referenceFrame rdf:type ddhub:ReferenceFrame .
+	?yCoordinate rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = yAxis
+	&& 	?Attribute001 = referenceFrame
+	&& 	?Attribute002 = yAxis
+  )
+}
+```
+This example declares that a drilling data point has a reference frame and that it is a component along the y-axis.
+```dwis MeasuredMagneticFieldYExample
+DynamicDrillingSignal:OmniViewMeasuredMagneticFieldY
+DirectMeasurement:OmniViewMeasuredMagneticFieldY#01
+OmniViewMeasuredMagneticFieldY#01 BelongsToClass ContinuousDataType
+OmniViewMeasuredMagneticFieldY#01 HasDynamicValue OmniViewMeasuredMagneticFieldY
+OmniViewMeasuredMagneticFieldY#01 IsOfMeasurableQuantity EarthMagneticFluxDensity
+TopSideTelemetry:topSideTelemetry
+OmniViewMeasuredMagneticFieldY#01 IsTransmittedBy topSideTelemetry
+DynamicDrillingSignal:Sigma_OmniViewMeasuredMagneticFieldY
+DrillingDataPoint:Sigma_OmniViewMeasuredMagneticFieldY#01
+Sigma_OmniViewMeasuredMagneticFieldY#01 BelongsToClass ContinuousDataType
+Sigma_OmniViewMeasuredMagneticFieldY#01 IsOfMeasurableQuantity EarthMagneticFluxDensity
+Sigma_OmniViewMeasuredMagneticFieldY#01 HasDynamicValue Sigma_OmniViewMeasuredMagneticFieldY
+GaussianUncertainty:OmniViewMeasuredMagneticFieldYGaussianUncertainty#01
+OmniViewMeasuredMagneticFieldY#01 HasUncertainty OmniViewMeasuredMagneticFieldYGaussianUncertainty#01
+OmniViewMeasuredMagneticFieldYGaussianUncertainty#01 HasUncertaintyMean OmniViewMeasuredMagneticFieldY#01
+OmniViewMeasuredMagneticFieldYGaussianUncertainty#01 HasUncertaintyStandardDeviation Sigma_OmniViewMeasuredMagneticFieldY#01
+YAxis:yAxis#01
+OmniViewMeasuredMagneticFieldY#01 IsComponentAlongAxis yAxis#01
+SwivelSub:SwivelSub#01
+OmniViewMeasuredMagneticFieldY#01 IsMechanicallyLocatedAt SwivelSub#01
+RotatingDriveSystemLocation:rotatingDriveSystem
+OmniViewMeasuredMagneticFieldY#01 IsPhysicallyLocatedAt rotatingDriveSystem
+InstrumentationCompany:Petromar#01
+OmniViewMeasuredMagneticFieldY#01 IsProvidedBy Petromar#011
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[OmniViewMeasuredMagneticFieldY] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[OmniViewMeasuredMagneticFieldY#01] -->|BelongsToClass| N0003(DirectMeasurement) 
+	N0002[OmniViewMeasuredMagneticFieldY#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[OmniViewMeasuredMagneticFieldY#01] -->|HasDynamicValue| N0000((OmniViewMeasuredMagneticFieldY)) 
+	N0002[OmniViewMeasuredMagneticFieldY#01] -->|IsOfMeasurableQuantity| N0005((EarthMagneticFluxDensity)) 
+	N0006[topSideTelemetry] -->|BelongsToClass| N0007(TopSideTelemetry) 
+	N0002[OmniViewMeasuredMagneticFieldY#01] -->|IsTransmittedBy| N0006((topSideTelemetry)) 
+	N0008[Sigma_OmniViewMeasuredMagneticFieldY] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0009[Sigma_OmniViewMeasuredMagneticFieldY#01] -->|BelongsToClass| N0010(DrillingDataPoint) 
+	N0009[Sigma_OmniViewMeasuredMagneticFieldY#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0009[Sigma_OmniViewMeasuredMagneticFieldY#01] -->|IsOfMeasurableQuantity| N0005((EarthMagneticFluxDensity)) 
+	N0009[Sigma_OmniViewMeasuredMagneticFieldY#01] -->|HasDynamicValue| N0008((Sigma_OmniViewMeasuredMagneticFieldY)) 
+	N0011[OmniViewMeasuredMagneticFieldYGaussianUncertainty#01] -->|BelongsToClass| N0012(GaussianUncertainty) 
+	N0002[OmniViewMeasuredMagneticFieldY#01] -->|HasUncertainty| N0011((OmniViewMeasuredMagneticFieldYGaussianUncertainty#01)) 
+	N0011[OmniViewMeasuredMagneticFieldYGaussianUncertainty#01] -->|HasUncertaintyMean| N0002((OmniViewMeasuredMagneticFieldY#01)) 
+	N0011[OmniViewMeasuredMagneticFieldYGaussianUncertainty#01] -->|HasUncertaintyStandardDeviation| N0009((Sigma_OmniViewMeasuredMagneticFieldY#01)) 
+	N0013[yAxis#01] -->|BelongsToClass| N0014(YAxis) 
+	N0002[OmniViewMeasuredMagneticFieldY#01] -->|IsComponentAlongAxis| N0013((yAxis#01)) 
+	N0015[SwivelSub#01] -->|BelongsToClass| N0016(SwivelSub) 
+	N0002[OmniViewMeasuredMagneticFieldY#01] -->|IsMechanicallyLocatedAt| N0015((SwivelSub#01)) 
+	N0017[rotatingDriveSystem] -->|BelongsToClass| N0018(RotatingDriveSystemLocation) 
+	N0002[OmniViewMeasuredMagneticFieldY#01] -->|IsPhysicallyLocatedAt| N0017((rotatingDriveSystem)) 
+	N0019[Petromar#01] -->|BelongsToClass| N0020(InstrumentationCompany) 
+	N0002[OmniViewMeasuredMagneticFieldY#01] -->|IsProvidedBy| N0021((Petromar#011)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?MeasuredMagneticFieldYExample
+WHERE {
+	?OmniViewMeasuredMagneticFieldY rdf:type ddhub:DynamicDrillingSignal .
+	?OmniViewMeasuredMagneticFieldY#01 rdf:type ddhub:DirectMeasurement .
+	?OmniViewMeasuredMagneticFieldY#01 rdf:type ddhub:ContinuousDataType .
+	?topSideTelemetry rdf:type ddhub:TopSideTelemetry .
+	?Sigma_OmniViewMeasuredMagneticFieldY rdf:type ddhub:DynamicDrillingSignal .
+	?Sigma_OmniViewMeasuredMagneticFieldY#01 rdf:type ddhub:DrillingDataPoint .
+	?Sigma_OmniViewMeasuredMagneticFieldY#01 rdf:type ddhub:ContinuousDataType .
+	?OmniViewMeasuredMagneticFieldYGaussianUncertainty#01 rdf:type ddhub:GaussianUncertainty .
+	?yAxis#01 rdf:type ddhub:YAxis .
+	?SwivelSub#01 rdf:type ddhub:SwivelSub .
+	?rotatingDriveSystem rdf:type ddhub:RotatingDriveSystemLocation .
+	?Petromar#01 rdf:type ddhub:InstrumentationCompany .
+  FILTER (
+	?Attribute000 = OmniViewMeasuredMagneticFieldY
+	&& 	?Attribute001 = EarthMagneticFluxDensity
+	&& 	?Attribute002 = topSideTelemetry
+	&& 	?Attribute003 = EarthMagneticFluxDensity
+	&& 	?Attribute004 = Sigma_OmniViewMeasuredMagneticFieldY
+	&& 	?Attribute005 = OmniViewMeasuredMagneticFieldYGaussianUncertainty#01
+	&& 	?Attribute006 = OmniViewMeasuredMagneticFieldY#01
+	&& 	?Attribute007 = Sigma_OmniViewMeasuredMagneticFieldY#01
+	&& 	?Attribute008 = yAxis#01
+	&& 	?Attribute009 = SwivelSub#01
+	&& 	?Attribute010 = rotatingDriveSystem
+	&& 	?Attribute011 = Petromar#011
+  )
+}
+```
+This example defines a drilling data point as being the y-component of the measured magnetic field at the rotating drive system location.
+## ZAxis <!-- NOUN -->
+- Display name: ZAxis
+- Parent class: [Axis](#Axis)
+- Description: 
+Represents the third axis in a coordinate system with at least three dimensions
+- Definition set: PhysicalLocation
+- Examples:
+```dwis ZAxisExample
+ZAxis:zAxis
+ReferenceFrame:referenceFrame
+referenceFrame HasAxis zAxis
+DrillingDataPoint:zCoordinate
+zCoordinate HasReferenceFrame referenceFrame
+zCoordinate IsComponentAlongAxis zAxis
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[zAxis] -->|BelongsToClass| N0001(ZAxis) 
+	N0002[referenceFrame] -->|BelongsToClass| N0003(ReferenceFrame) 
+	N0002[referenceFrame] -->|HasAxis| N0000((zAxis)) 
+	N0004[zCoordinate] -->|BelongsToClass| N0005(DrillingDataPoint) 
+	N0004[zCoordinate] -->|HasReferenceFrame| N0002((referenceFrame)) 
+	N0004[zCoordinate] -->|IsComponentAlongAxis| N0000((zAxis)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ZAxisExample
+WHERE {
+	?zAxis rdf:type ddhub:ZAxis .
+	?referenceFrame rdf:type ddhub:ReferenceFrame .
+	?zCoordinate rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = zAxis
+	&& 	?Attribute001 = referenceFrame
+	&& 	?Attribute002 = zAxis
+  )
+}
+```
+This example declares that a drilling data point has a reference frame and that it is a component along the z-axis.
 ## ReferenceFrame <!-- NOUN -->
 - Display name: ReferenceFrame
 - Parent class: [DWISNoun](#DWISNoun)
 - Description: 
 Represents a system of coordinates
 - Definition set: PhysicalLocation
+- Examples:
+```dwis referenceFrame
+Location:referenceFrame
+referenceFrame BelongsToClass ReferenceFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[referenceFrame] -->|BelongsToClass| N0001(Location) 
+	N0000[referenceFrame] -->|BelongsToClass| N0002(ReferenceFrame) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?referenceFrame
+WHERE {
+	?referenceFrame rdf:type ddhub:Location .
+	?referenceFrame rdf:type ddhub:ReferenceFrame .
+}
+```
+This example declares the ReferenceFrame reference location.
 ## OneDimensionalReferenceFrame <!-- NOUN -->
 - Display name: OneDimensionalReferenceFrame
 - Parent class: [ReferenceFrame](#ReferenceFrame)
@@ -15162,95 +28523,1447 @@ Represents a system of coordinates
   - PostiveUpward
     - Type: bool
     - Description: 
+- Description: 
+Reference location for OneDimensionalReferenceFrame.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis oneDimensionalReferenceFrame
+Location:oneDimensionalReferenceFrame
+oneDimensionalReferenceFrame BelongsToClass OneDimensionalReferenceFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[oneDimensionalReferenceFrame] -->|BelongsToClass| N0001(Location) 
+	N0000[oneDimensionalReferenceFrame] -->|BelongsToClass| N0002(OneDimensionalReferenceFrame) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?oneDimensionalReferenceFrame
+WHERE {
+	?oneDimensionalReferenceFrame rdf:type ddhub:Location .
+	?oneDimensionalReferenceFrame rdf:type ddhub:OneDimensionalReferenceFrame .
+}
+```
+This example declares the OneDimensionalReferenceFrame reference location.
 ## AngleReferenceFrame <!-- NOUN -->
 - Display name: AngleReferenceFrame
 - Parent class: [OneDimensionalReferenceFrame](#OneDimensionalReferenceFrame)
+- Description: 
+Reference frame for angles.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis angleReferenceFrame
+Location:angleReferenceFrame
+angleReferenceFrame BelongsToClass AngleReferenceFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[angleReferenceFrame] -->|BelongsToClass| N0001(Location) 
+	N0000[angleReferenceFrame] -->|BelongsToClass| N0002(AngleReferenceFrame) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?angleReferenceFrame
+WHERE {
+	?angleReferenceFrame rdf:type ddhub:Location .
+	?angleReferenceFrame rdf:type ddhub:AngleReferenceFrame .
+}
+```
+This example declares the AngleReferenceFrame reference location.
+## RadialReferenceFrame <!-- NOUN -->
+- Display name: Radial Reference Frame
+- Parent class: [OneDimensionalReferenceFrame](#OneDimensionalReferenceFrame)
+- Description: 
+A reference frame for radial values.
+- Definition set: PhysicalLocation
+- Examples:
+```dwis RadialReferenceFrameExample
+DrillingDataPoint:bitDiameter
+RadialReferenceFrame:radialReferenceFrame
+bitDiameter HasReferenceFrame radialReferenceFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[bitDiameter] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[radialReferenceFrame] -->|BelongsToClass| N0003(RadialReferenceFrame) 
+	N0000[bitDiameter] -->|HasReferenceFrame| N0002((radialReferenceFrame)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?RadialReferenceFrameExample
+WHERE {
+	?bitDiameter rdf:type ddhub:DrillingDataPoint .
+	?radialReferenceFrame rdf:type ddhub:RadialReferenceFrame .
+  FILTER (
+	?Attribute000 = radialReferenceFrame
+  )
+}
+```
+This example declares bit diameter that is measured in a radial reference frame.
+```dwis BitDiameterSignalExample
+DynamicDrillingSignal:BitDiameter
+PhysicalData:BitDiameter#01
+BitDiameter#01 BelongsToClass ContinuousDataType
+BitDiameter#01 HasDynamicValue BitDiameter
+BitDiameter#01 IsOfMeasurableQuantity DiameterPipeDrilling
+MovingAverage:movingAverage
+BitDiameter#01 IsTransformationOutput movingAverage
+RadialReferenceFrame:radialReferenceFrame#01
+BitDiameter#01 HasReferenceFrame radialReferenceFrame#01
+BottomOfStringReferenceLocation:bos#01
+BitDiameter#01 IsPhysicallyLocatedAt bos#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[BitDiameter] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[BitDiameter#01] -->|BelongsToClass| N0003(PhysicalData) 
+	N0002[BitDiameter#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[BitDiameter#01] -->|HasDynamicValue| N0000((BitDiameter)) 
+	N0002[BitDiameter#01] -->|IsOfMeasurableQuantity| N0005((DiameterPipeDrilling)) 
+	N0006[movingAverage] -->|BelongsToClass| N0007(MovingAverage) 
+	N0002[BitDiameter#01] -->|IsTransformationOutput| N0006((movingAverage)) 
+	N0008[radialReferenceFrame#01] -->|BelongsToClass| N0009(RadialReferenceFrame) 
+	N0002[BitDiameter#01] -->|HasReferenceFrame| N0008((radialReferenceFrame#01)) 
+	N0010[bos#01] -->|BelongsToClass| N0011(BottomOfStringReferenceLocation) 
+	N0002[BitDiameter#01] -->|IsPhysicallyLocatedAt| N0010((bos#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?BitDiameterSignalExample
+WHERE {
+	?BitDiameter rdf:type ddhub:DynamicDrillingSignal .
+	?BitDiameter#01 rdf:type ddhub:PhysicalData .
+	?BitDiameter#01 rdf:type ddhub:ContinuousDataType .
+	?movingAverage rdf:type ddhub:MovingAverage .
+	?radialReferenceFrame#01 rdf:type ddhub:RadialReferenceFrame .
+	?bos#01 rdf:type ddhub:BottomOfStringReferenceLocation .
+  FILTER (
+	?Attribute000 = BitDiameter
+	&& 	?Attribute001 = DiameterPipeDrilling
+	&& 	?Attribute002 = movingAverage
+	&& 	?Attribute003 = radialReferenceFrame#01
+	&& 	?Attribute004 = bos#01
+  )
+}
+```
+This example defines a drilling data point as being the bit diameter measured at the bottom of the drill string in a radial reference frame.
+```dwis MeasuredAccelerationRadialExample
+DynamicDrillingSignal:OmniViewMeasuredAccelerationRadial
+DirectMeasurement:OmniViewMeasuredAccelerationRadial#01
+OmniViewMeasuredAccelerationRadial#01 BelongsToClass ContinuousDataType
+OmniViewMeasuredAccelerationRadial#01 HasDynamicValue OmniViewMeasuredAccelerationRadial
+OmniViewMeasuredAccelerationRadial#01 IsOfMeasurableQuantity AccelerationDrilling
+TopSideTelemetry:topSideTelemetry
+OmniViewMeasuredAccelerationRadial#01 IsTransmittedBy topSideTelemetry
+DynamicDrillingSignal:Sigma_OmniViewMeasuredAccelerationRadial
+DrillingDataPoint:Sigma_OmniViewMeasuredAccelerationRadial#01
+Sigma_OmniViewMeasuredAccelerationRadial#01 BelongsToClass ContinuousDataType
+Sigma_OmniViewMeasuredAccelerationRadial#01 IsOfMeasurableQuantity AccelerationDrilling
+Sigma_OmniViewMeasuredAccelerationRadial#01 HasDynamicValue Sigma_OmniViewMeasuredAccelerationRadial
+GaussianUncertainty:OmniViewMeasuredAccelerationRadialGaussianUncertainty#01
+OmniViewMeasuredAccelerationRadial#01 HasUncertainty OmniViewMeasuredAccelerationRadialGaussianUncertainty#01
+OmniViewMeasuredAccelerationRadialGaussianUncertainty#01 HasUncertaintyMean OmniViewMeasuredAccelerationRadial#01
+OmniViewMeasuredAccelerationRadialGaussianUncertainty#01 HasUncertaintyStandardDeviation Sigma_OmniViewMeasuredAccelerationRadial#01
+RadialReferenceFrame:RadialReferenceFrame#01
+OmniViewMeasuredAccelerationRadial#01 HasReferenceFrame RadialReferenceFrame#01
+SwivelSub:SwivelSub#01
+OmniViewMeasuredAccelerationRadial#01 IsMechanicallyLocatedAt SwivelSub#01
+RotatingDriveSystemLocation:rotatingDriveSystem
+OmniViewMeasuredAccelerationRadial#01 IsPhysicallyLocatedAt rotatingDriveSystem
+InstrumentationCompany:Petromar#01
+OmniViewMeasuredAccelerationRadial#01 IsProvidedBy Petromar#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[OmniViewMeasuredAccelerationRadial] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[OmniViewMeasuredAccelerationRadial#01] -->|BelongsToClass| N0003(DirectMeasurement) 
+	N0002[OmniViewMeasuredAccelerationRadial#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[OmniViewMeasuredAccelerationRadial#01] -->|HasDynamicValue| N0000((OmniViewMeasuredAccelerationRadial)) 
+	N0002[OmniViewMeasuredAccelerationRadial#01] -->|IsOfMeasurableQuantity| N0005((AccelerationDrilling)) 
+	N0006[topSideTelemetry] -->|BelongsToClass| N0007(TopSideTelemetry) 
+	N0002[OmniViewMeasuredAccelerationRadial#01] -->|IsTransmittedBy| N0006((topSideTelemetry)) 
+	N0008[Sigma_OmniViewMeasuredAccelerationRadial] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0009[Sigma_OmniViewMeasuredAccelerationRadial#01] -->|BelongsToClass| N0010(DrillingDataPoint) 
+	N0009[Sigma_OmniViewMeasuredAccelerationRadial#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0009[Sigma_OmniViewMeasuredAccelerationRadial#01] -->|IsOfMeasurableQuantity| N0005((AccelerationDrilling)) 
+	N0009[Sigma_OmniViewMeasuredAccelerationRadial#01] -->|HasDynamicValue| N0008((Sigma_OmniViewMeasuredAccelerationRadial)) 
+	N0011[OmniViewMeasuredAccelerationRadialGaussianUncertainty#01] -->|BelongsToClass| N0012(GaussianUncertainty) 
+	N0002[OmniViewMeasuredAccelerationRadial#01] -->|HasUncertainty| N0011((OmniViewMeasuredAccelerationRadialGaussianUncertainty#01)) 
+	N0011[OmniViewMeasuredAccelerationRadialGaussianUncertainty#01] -->|HasUncertaintyMean| N0002((OmniViewMeasuredAccelerationRadial#01)) 
+	N0011[OmniViewMeasuredAccelerationRadialGaussianUncertainty#01] -->|HasUncertaintyStandardDeviation| N0009((Sigma_OmniViewMeasuredAccelerationRadial#01)) 
+	N0013[RadialReferenceFrame#01] -->|BelongsToClass| N0014(RadialReferenceFrame) 
+	N0002[OmniViewMeasuredAccelerationRadial#01] -->|HasReferenceFrame| N0013((RadialReferenceFrame#01)) 
+	N0015[SwivelSub#01] -->|BelongsToClass| N0016(SwivelSub) 
+	N0002[OmniViewMeasuredAccelerationRadial#01] -->|IsMechanicallyLocatedAt| N0015((SwivelSub#01)) 
+	N0017[rotatingDriveSystem] -->|BelongsToClass| N0018(RotatingDriveSystemLocation) 
+	N0002[OmniViewMeasuredAccelerationRadial#01] -->|IsPhysicallyLocatedAt| N0017((rotatingDriveSystem)) 
+	N0019[Petromar#01] -->|BelongsToClass| N0020(InstrumentationCompany) 
+	N0002[OmniViewMeasuredAccelerationRadial#01] -->|IsProvidedBy| N0019((Petromar#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?MeasuredAccelerationRadialExample
+WHERE {
+	?OmniViewMeasuredAccelerationRadial rdf:type ddhub:DynamicDrillingSignal .
+	?OmniViewMeasuredAccelerationRadial#01 rdf:type ddhub:DirectMeasurement .
+	?OmniViewMeasuredAccelerationRadial#01 rdf:type ddhub:ContinuousDataType .
+	?topSideTelemetry rdf:type ddhub:TopSideTelemetry .
+	?Sigma_OmniViewMeasuredAccelerationRadial rdf:type ddhub:DynamicDrillingSignal .
+	?Sigma_OmniViewMeasuredAccelerationRadial#01 rdf:type ddhub:DrillingDataPoint .
+	?Sigma_OmniViewMeasuredAccelerationRadial#01 rdf:type ddhub:ContinuousDataType .
+	?OmniViewMeasuredAccelerationRadialGaussianUncertainty#01 rdf:type ddhub:GaussianUncertainty .
+	?RadialReferenceFrame#01 rdf:type ddhub:RadialReferenceFrame .
+	?SwivelSub#01 rdf:type ddhub:SwivelSub .
+	?rotatingDriveSystem rdf:type ddhub:RotatingDriveSystemLocation .
+	?Petromar#01 rdf:type ddhub:InstrumentationCompany .
+  FILTER (
+	?Attribute000 = OmniViewMeasuredAccelerationRadial
+	&& 	?Attribute001 = AccelerationDrilling
+	&& 	?Attribute002 = topSideTelemetry
+	&& 	?Attribute003 = AccelerationDrilling
+	&& 	?Attribute004 = Sigma_OmniViewMeasuredAccelerationRadial
+	&& 	?Attribute005 = OmniViewMeasuredAccelerationRadialGaussianUncertainty#01
+	&& 	?Attribute006 = OmniViewMeasuredAccelerationRadial#01
+	&& 	?Attribute007 = Sigma_OmniViewMeasuredAccelerationRadial#01
+	&& 	?Attribute008 = RadialReferenceFrame#01
+	&& 	?Attribute009 = SwivelSub#01
+	&& 	?Attribute010 = rotatingDriveSystem
+	&& 	?Attribute011 = Petromar#01
+  )
+}
+```
+This example defines a drilling data point as being the radial component of the measured acceleration at the rotating drive system location.
+## TangentialReferenceFrame <!-- NOUN -->
+- Display name: Tangential Reference Frame
+- Parent class: [OneDimensionalReferenceFrame](#OneDimensionalReferenceFrame)
+- Description: 
+A reference frame for tangential values.
+- Definition set: PhysicalLocation
+- Examples:
+```dwis TangentialReferenceFrameExample
+DrillingDataPoint:tangentialAcceleration
+TangentialReferenceFrame:tangentialReferenceFrame
+tangentialAcceleration HasReferenceFrame tangentialReferenceFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[tangentialAcceleration] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[tangentialReferenceFrame] -->|BelongsToClass| N0003(TangentialReferenceFrame) 
+	N0000[tangentialAcceleration] -->|HasReferenceFrame| N0002((tangentialReferenceFrame)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?TangentialReferenceFrameExample
+WHERE {
+	?tangentialAcceleration rdf:type ddhub:DrillingDataPoint .
+	?tangentialReferenceFrame rdf:type ddhub:TangentialReferenceFrame .
+  FILTER (
+	?Attribute000 = tangentialReferenceFrame
+  )
+}
+```
+This example declares the tangentialAcceleration drilling data point is measured in a tangential reference frame.
+```dwis MeasuredAccelerationTangentialExample
+DynamicDrillingSignal:OmniViewMeasuredAccelerationTangential
+DirectMeasurement:OmniViewMeasuredAccelerationTangential#01
+OmniViewMeasuredAccelerationTangential#01 BelongsToClass ContinuousDataType
+OmniViewMeasuredAccelerationTangential#01 HasDynamicValue OmniViewMeasuredAccelerationTangential
+OmniViewMeasuredAccelerationTangential#01 IsOfMeasurableQuantity AccelerationDrilling
+TopSideTelemetry:topSideTelemetry
+OmniViewMeasuredAccelerationTangential#01 IsTransmittedBy topSideTelemetry
+DynamicDrillingSignal:Sigma_OmniViewMeasuredAccelerationTangential
+DrillingDataPoint:Sigma_OmniViewMeasuredAccelerationTangential#01
+Sigma_OmniViewMeasuredAccelerationTangential#01 BelongsToClass ContinuousDataType
+Sigma_OmniViewMeasuredAccelerationTangential#01 IsOfMeasurableQuantity AccelerationDrilling
+Sigma_OmniViewMeasuredAccelerationTangential#01 HasDynamicValue Sigma_OmniViewMeasuredAccelerationTangential
+GaussianUncertainty:OmniViewMeasuredAccelerationTangentialGaussianUncertainty#01
+OmniViewMeasuredAccelerationTangential#01 HasUncertainty OmniViewMeasuredAccelerationTangentialGaussianUncertainty#01
+OmniViewMeasuredAccelerationTangentialGaussianUncertainty#01 HasUncertaintyMean OmniViewMeasuredAccelerationTangential#01
+OmniViewMeasuredAccelerationTangentialGaussianUncertainty#01 HasUncertaintyStandardDeviation Sigma_OmniViewMeasuredAccelerationTangential#01
+TangentialReferenceFrame:TangentialReferenceFrame#01
+OmniViewMeasuredAccelerationTangential#01 HasReferenceFrame TangentialReferenceFrame#01
+SwivelSub:SwivelSub#01
+OmniViewMeasuredAccelerationTangential#01 IsMechanicallyLocatedAt SwivelSub#01
+RotatingDriveSystemLocation:rotatingDriveSystem
+OmniViewMeasuredAccelerationTangential#01 IsPhysicallyLocatedAt rotatingDriveSystem
+InstrumentationCompany:Petromar#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[OmniViewMeasuredAccelerationTangential] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[OmniViewMeasuredAccelerationTangential#01] -->|BelongsToClass| N0003(DirectMeasurement) 
+	N0002[OmniViewMeasuredAccelerationTangential#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[OmniViewMeasuredAccelerationTangential#01] -->|HasDynamicValue| N0000((OmniViewMeasuredAccelerationTangential)) 
+	N0002[OmniViewMeasuredAccelerationTangential#01] -->|IsOfMeasurableQuantity| N0005((AccelerationDrilling)) 
+	N0006[topSideTelemetry] -->|BelongsToClass| N0007(TopSideTelemetry) 
+	N0002[OmniViewMeasuredAccelerationTangential#01] -->|IsTransmittedBy| N0006((topSideTelemetry)) 
+	N0008[Sigma_OmniViewMeasuredAccelerationTangential] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0009[Sigma_OmniViewMeasuredAccelerationTangential#01] -->|BelongsToClass| N0010(DrillingDataPoint) 
+	N0009[Sigma_OmniViewMeasuredAccelerationTangential#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0009[Sigma_OmniViewMeasuredAccelerationTangential#01] -->|IsOfMeasurableQuantity| N0005((AccelerationDrilling)) 
+	N0009[Sigma_OmniViewMeasuredAccelerationTangential#01] -->|HasDynamicValue| N0008((Sigma_OmniViewMeasuredAccelerationTangential)) 
+	N0011[OmniViewMeasuredAccelerationTangentialGaussianUncertainty#01] -->|BelongsToClass| N0012(GaussianUncertainty) 
+	N0002[OmniViewMeasuredAccelerationTangential#01] -->|HasUncertainty| N0011((OmniViewMeasuredAccelerationTangentialGaussianUncertainty#01)) 
+	N0011[OmniViewMeasuredAccelerationTangentialGaussianUncertainty#01] -->|HasUncertaintyMean| N0002((OmniViewMeasuredAccelerationTangential#01)) 
+	N0011[OmniViewMeasuredAccelerationTangentialGaussianUncertainty#01] -->|HasUncertaintyStandardDeviation| N0009((Sigma_OmniViewMeasuredAccelerationTangential#01)) 
+	N0013[TangentialReferenceFrame#01] -->|BelongsToClass| N0014(TangentialReferenceFrame) 
+	N0002[OmniViewMeasuredAccelerationTangential#01] -->|HasReferenceFrame| N0013((TangentialReferenceFrame#01)) 
+	N0015[SwivelSub#01] -->|BelongsToClass| N0016(SwivelSub) 
+	N0002[OmniViewMeasuredAccelerationTangential#01] -->|IsMechanicallyLocatedAt| N0015((SwivelSub#01)) 
+	N0017[rotatingDriveSystem] -->|BelongsToClass| N0018(RotatingDriveSystemLocation) 
+	N0002[OmniViewMeasuredAccelerationTangential#01] -->|IsPhysicallyLocatedAt| N0017((rotatingDriveSystem)) 
+	N0019[Petromar#01] -->|BelongsToClass| N0020(InstrumentationCompany) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?MeasuredAccelerationTangentialExample
+WHERE {
+	?OmniViewMeasuredAccelerationTangential rdf:type ddhub:DynamicDrillingSignal .
+	?OmniViewMeasuredAccelerationTangential#01 rdf:type ddhub:DirectMeasurement .
+	?OmniViewMeasuredAccelerationTangential#01 rdf:type ddhub:ContinuousDataType .
+	?topSideTelemetry rdf:type ddhub:TopSideTelemetry .
+	?Sigma_OmniViewMeasuredAccelerationTangential rdf:type ddhub:DynamicDrillingSignal .
+	?Sigma_OmniViewMeasuredAccelerationTangential#01 rdf:type ddhub:DrillingDataPoint .
+	?Sigma_OmniViewMeasuredAccelerationTangential#01 rdf:type ddhub:ContinuousDataType .
+	?OmniViewMeasuredAccelerationTangentialGaussianUncertainty#01 rdf:type ddhub:GaussianUncertainty .
+	?TangentialReferenceFrame#01 rdf:type ddhub:TangentialReferenceFrame .
+	?SwivelSub#01 rdf:type ddhub:SwivelSub .
+	?rotatingDriveSystem rdf:type ddhub:RotatingDriveSystemLocation .
+	?Petromar#01 rdf:type ddhub:InstrumentationCompany .
+  FILTER (
+	?Attribute000 = OmniViewMeasuredAccelerationTangential
+	&& 	?Attribute001 = AccelerationDrilling
+	&& 	?Attribute002 = topSideTelemetry
+	&& 	?Attribute003 = AccelerationDrilling
+	&& 	?Attribute004 = Sigma_OmniViewMeasuredAccelerationTangential
+	&& 	?Attribute005 = OmniViewMeasuredAccelerationTangentialGaussianUncertainty#01
+	&& 	?Attribute006 = OmniViewMeasuredAccelerationTangential#01
+	&& 	?Attribute007 = Sigma_OmniViewMeasuredAccelerationTangential#01
+	&& 	?Attribute008 = TangentialReferenceFrame#01
+	&& 	?Attribute009 = SwivelSub#01
+	&& 	?Attribute010 = rotatingDriveSystem
+  )
+}
+```
+This example defines a drilling data point as being the tangential component of the measured acceleration at the rotating drive system location.
+## AxialReferenceFrame <!-- NOUN -->
+- Display name: Axial Reference Frame
+- Parent class: [OneDimensionalReferenceFrame](#OneDimensionalReferenceFrame)
+- Description: 
+A reference frame for axial values.
+- Definition set: PhysicalLocation
+- Examples:
+```dwis AxialReferenceFrameExample
+DrillingDataPoint:axialAcceleration
+AxialReferenceFrame:axialReferenceFrame
+axialAcceleration HasReferenceFrame axialReferenceFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[axialAcceleration] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[axialReferenceFrame] -->|BelongsToClass| N0003(AxialReferenceFrame) 
+	N0000[axialAcceleration] -->|HasReferenceFrame| N0002((axialReferenceFrame)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?AxialReferenceFrameExample
+WHERE {
+	?axialAcceleration rdf:type ddhub:DrillingDataPoint .
+	?axialReferenceFrame rdf:type ddhub:AxialReferenceFrame .
+  FILTER (
+	?Attribute000 = axialReferenceFrame
+  )
+}
+```
+This example declares the axialAcceleration drilling data point is measured in a axial reference frame.
+```dwis MeasuredAccelerationAxialExample
+DynamicDrillingSignal:OmniViewMeasuredAccelerationAxial
+DirectMeasurement:OmniViewMeasuredAccelerationAxial#01
+OmniViewMeasuredAccelerationAxial#01 BelongsToClass ContinuousDataType
+OmniViewMeasuredAccelerationAxial#01 HasDynamicValue OmniViewMeasuredAccelerationAxial
+OmniViewMeasuredAccelerationAxial#01 IsOfMeasurableQuantity AccelerationDrilling
+TopSideTelemetry:topSideTelemetry
+OmniViewMeasuredAccelerationAxial#01 IsTransmittedBy topSideTelemetry
+DynamicDrillingSignal:Sigma_OmniViewMeasuredAccelerationAxial
+DrillingDataPoint:Sigma_OmniViewMeasuredAccelerationAxial#01
+Sigma_OmniViewMeasuredAccelerationAxial#01 BelongsToClass ContinuousDataType
+Sigma_OmniViewMeasuredAccelerationAxial#01 IsOfMeasurableQuantity AccelerationDrilling
+Sigma_OmniViewMeasuredAccelerationAxial#01 HasDynamicValue Sigma_OmniViewMeasuredAccelerationAxial
+GaussianUncertainty:OmniViewMeasuredAccelerationAxialGaussianUncertainty#01
+OmniViewMeasuredAccelerationAxial#01 HasUncertainty OmniViewMeasuredAccelerationAxialGaussianUncertainty#01
+OmniViewMeasuredAccelerationAxialGaussianUncertainty#01 HasUncertaintyMean OmniViewMeasuredAccelerationAxial#01
+OmniViewMeasuredAccelerationAxialGaussianUncertainty#01 HasUncertaintyStandardDeviation Sigma_OmniViewMeasuredAccelerationAxial#01
+AxialReferenceFrame:AxialReferenceFrame#01
+OmniViewMeasuredAccelerationAxial#01 HasReferenceFrame AxialReferenceFrame#01
+SwivelSub:SwivelSub#01
+OmniViewMeasuredAccelerationAxial#01 IsMechanicallyLocatedAt SwivelSub#01
+RotatingDriveSystemLocation:rotatingDriveSystem
+OmniViewMeasuredAccelerationAxial#01 IsPhysicallyLocatedAt rotatingDriveSystem
+InstrumentationCompany:Petromar#01
+OmniViewMeasuredAccelerationAxial#01 IsProvidedBy Petromar#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[OmniViewMeasuredAccelerationAxial] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[OmniViewMeasuredAccelerationAxial#01] -->|BelongsToClass| N0003(DirectMeasurement) 
+	N0002[OmniViewMeasuredAccelerationAxial#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[OmniViewMeasuredAccelerationAxial#01] -->|HasDynamicValue| N0000((OmniViewMeasuredAccelerationAxial)) 
+	N0002[OmniViewMeasuredAccelerationAxial#01] -->|IsOfMeasurableQuantity| N0005((AccelerationDrilling)) 
+	N0006[topSideTelemetry] -->|BelongsToClass| N0007(TopSideTelemetry) 
+	N0002[OmniViewMeasuredAccelerationAxial#01] -->|IsTransmittedBy| N0006((topSideTelemetry)) 
+	N0008[Sigma_OmniViewMeasuredAccelerationAxial] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0009[Sigma_OmniViewMeasuredAccelerationAxial#01] -->|BelongsToClass| N0010(DrillingDataPoint) 
+	N0009[Sigma_OmniViewMeasuredAccelerationAxial#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0009[Sigma_OmniViewMeasuredAccelerationAxial#01] -->|IsOfMeasurableQuantity| N0005((AccelerationDrilling)) 
+	N0009[Sigma_OmniViewMeasuredAccelerationAxial#01] -->|HasDynamicValue| N0008((Sigma_OmniViewMeasuredAccelerationAxial)) 
+	N0011[OmniViewMeasuredAccelerationAxialGaussianUncertainty#01] -->|BelongsToClass| N0012(GaussianUncertainty) 
+	N0002[OmniViewMeasuredAccelerationAxial#01] -->|HasUncertainty| N0011((OmniViewMeasuredAccelerationAxialGaussianUncertainty#01)) 
+	N0011[OmniViewMeasuredAccelerationAxialGaussianUncertainty#01] -->|HasUncertaintyMean| N0002((OmniViewMeasuredAccelerationAxial#01)) 
+	N0011[OmniViewMeasuredAccelerationAxialGaussianUncertainty#01] -->|HasUncertaintyStandardDeviation| N0009((Sigma_OmniViewMeasuredAccelerationAxial#01)) 
+	N0013[AxialReferenceFrame#01] -->|BelongsToClass| N0014(AxialReferenceFrame) 
+	N0002[OmniViewMeasuredAccelerationAxial#01] -->|HasReferenceFrame| N0013((AxialReferenceFrame#01)) 
+	N0015[SwivelSub#01] -->|BelongsToClass| N0016(SwivelSub) 
+	N0002[OmniViewMeasuredAccelerationAxial#01] -->|IsMechanicallyLocatedAt| N0015((SwivelSub#01)) 
+	N0017[rotatingDriveSystem] -->|BelongsToClass| N0018(RotatingDriveSystemLocation) 
+	N0002[OmniViewMeasuredAccelerationAxial#01] -->|IsPhysicallyLocatedAt| N0017((rotatingDriveSystem)) 
+	N0019[Petromar#01] -->|BelongsToClass| N0020(InstrumentationCompany) 
+	N0002[OmniViewMeasuredAccelerationAxial#01] -->|IsProvidedBy| N0019((Petromar#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?MeasuredAccelerationAxialExample
+WHERE {
+	?OmniViewMeasuredAccelerationAxial rdf:type ddhub:DynamicDrillingSignal .
+	?OmniViewMeasuredAccelerationAxial#01 rdf:type ddhub:DirectMeasurement .
+	?OmniViewMeasuredAccelerationAxial#01 rdf:type ddhub:ContinuousDataType .
+	?topSideTelemetry rdf:type ddhub:TopSideTelemetry .
+	?Sigma_OmniViewMeasuredAccelerationAxial rdf:type ddhub:DynamicDrillingSignal .
+	?Sigma_OmniViewMeasuredAccelerationAxial#01 rdf:type ddhub:DrillingDataPoint .
+	?Sigma_OmniViewMeasuredAccelerationAxial#01 rdf:type ddhub:ContinuousDataType .
+	?OmniViewMeasuredAccelerationAxialGaussianUncertainty#01 rdf:type ddhub:GaussianUncertainty .
+	?AxialReferenceFrame#01 rdf:type ddhub:AxialReferenceFrame .
+	?SwivelSub#01 rdf:type ddhub:SwivelSub .
+	?rotatingDriveSystem rdf:type ddhub:RotatingDriveSystemLocation .
+	?Petromar#01 rdf:type ddhub:InstrumentationCompany .
+  FILTER (
+	?Attribute000 = OmniViewMeasuredAccelerationAxial
+	&& 	?Attribute001 = AccelerationDrilling
+	&& 	?Attribute002 = topSideTelemetry
+	&& 	?Attribute003 = AccelerationDrilling
+	&& 	?Attribute004 = Sigma_OmniViewMeasuredAccelerationAxial
+	&& 	?Attribute005 = OmniViewMeasuredAccelerationAxialGaussianUncertainty#01
+	&& 	?Attribute006 = OmniViewMeasuredAccelerationAxial#01
+	&& 	?Attribute007 = Sigma_OmniViewMeasuredAccelerationAxial#01
+	&& 	?Attribute008 = AxialReferenceFrame#01
+	&& 	?Attribute009 = SwivelSub#01
+	&& 	?Attribute010 = rotatingDriveSystem
+	&& 	?Attribute011 = Petromar#01
+  )
+}
+```
+This example defines a drilling data point as being the axial component of the measured acceleration at the rotating drive system location.
 ## OneDimensionalCartesianReferenceFrame <!-- NOUN -->
 - Display name: OneDimensionalCartesianReferenceFrame
 - Parent class: [OneDimensionalReferenceFrame](#OneDimensionalReferenceFrame)
+- Description: 
+Reference location for OneDimensionalCartesianReferenceFrame.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis oneDimensionalCartesianReferenceFrame
+Location:oneDimensionalCartesianReferenceFrame
+oneDimensionalCartesianReferenceFrame BelongsToClass OneDimensionalCartesianReferenceFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[oneDimensionalCartesianReferenceFrame] -->|BelongsToClass| N0001(Location) 
+	N0000[oneDimensionalCartesianReferenceFrame] -->|BelongsToClass| N0002(OneDimensionalCartesianReferenceFrame) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?oneDimensionalCartesianReferenceFrame
+WHERE {
+	?oneDimensionalCartesianReferenceFrame rdf:type ddhub:Location .
+	?oneDimensionalCartesianReferenceFrame rdf:type ddhub:OneDimensionalCartesianReferenceFrame .
+}
+```
+This example declares the OneDimensionalCartesianReferenceFrame reference location.
+## HorizontalDirectionFrame <!-- NOUN -->
+- Display name: HorizontalDirectionFrame
+- Parent class: [OneDimensionalCartesianReferenceFrame](#OneDimensionalCartesianReferenceFrame)
+- Description: 
+A reference frame that is horizontal but without privileged azimuthal direction.
+- Definition set: PhysicalLocation
+- Examples:
+```dwis HorizontalDirectionFrameExample
+DrillingDataPoint:horizontalLength
+HorizontalDirectionFrame:horizontalDirectionFrame
+horizontalLength HasReferenceFrame horizontalDirectionFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[horizontalLength] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[horizontalDirectionFrame] -->|BelongsToClass| N0003(HorizontalDirectionFrame) 
+	N0000[horizontalLength] -->|HasReferenceFrame| N0002((horizontalDirectionFrame)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?HorizontalDirectionFrameExample
+WHERE {
+	?horizontalLength rdf:type ddhub:DrillingDataPoint .
+	?horizontalDirectionFrame rdf:type ddhub:HorizontalDirectionFrame .
+  FILTER (
+	?Attribute000 = horizontalDirectionFrame
+  )
+}
+```
+This example declares the horizontal length is a measure of the horizontal length of something.
+## VerticalDirectionFrame <!-- NOUN -->
+- Display name: VerticalDirectionFrame
+- Parent class: [OneDimensionalCartesianReferenceFrame](#OneDimensionalCartesianReferenceFrame)
+- Description: 
+A reference frame that is vertical but without privileged upward or downward direction.
+- Definition set: PhysicalLocation
+- Examples:
+```dwis VerticalDirectionFrameExample
+DrillingDataPoint:verticalHeight
+VerticalDirectionFrame:verticalDirectionFrame
+verticalHeight HasReferenceFrame verticalDirectionFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[verticalHeight] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[verticalDirectionFrame] -->|BelongsToClass| N0003(VerticalDirectionFrame) 
+	N0000[verticalHeight] -->|HasReferenceFrame| N0002((verticalDirectionFrame)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?VerticalDirectionFrameExample
+WHERE {
+	?verticalHeight rdf:type ddhub:DrillingDataPoint .
+	?verticalDirectionFrame rdf:type ddhub:VerticalDirectionFrame .
+  FILTER (
+	?Attribute000 = verticalDirectionFrame
+  )
+}
+```
+This example declares the value vertical height is a measure of the vertical height of something.
 ## VerticalDepthFrame <!-- NOUN -->
 - Display name: VerticalDepthFrame
-- Parent class: [OneDimensionalCartesianReferenceFrame](#OneDimensionalCartesianReferenceFrame)
+- Parent class: [VerticalDirectionFrame](#VerticalDirectionFrame)
+- Description: 
+A reference frame that follows the downward vertical.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis verticalDepthFrame
+DrillingDataPoint:inclination
+VerticalDepthFrame:verticalDepthFrame
+inclination IsMeasuredFromReferenceFrame verticalDepthFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[inclination] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[verticalDepthFrame] -->|BelongsToClass| N0003(VerticalDepthFrame) 
+	N0000[inclination] -->|IsMeasuredFromReferenceFrame| N0002((verticalDepthFrame)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?verticalDepthFrame
+WHERE {
+	?inclination rdf:type ddhub:DrillingDataPoint .
+	?verticalDepthFrame rdf:type ddhub:VerticalDepthFrame .
+  FILTER (
+	?Attribute000 = verticalDepthFrame
+  )
+}
+```
+This example declares an inclination that is measured from the downward vertical.
+```dwis VerticalDepthSignalExample
+DynamicDrillingSignal:BOS_VerticalDepth
+PhysicalData:BOS_VerticalDepth#01
+BOS_VerticalDepth#01 BelongsToClass ContinuousDataType
+BOS_VerticalDepth#01 HasDynamicValue BOS_VerticalDepth
+BOS_VerticalDepth#01 IsOfMeasurableQuantity DepthDrilling
+MovingAverage:movingAverage
+BOS_VerticalDepth#01 IsTransformationOutput movingAverage
+VerticalDepthFrame:verticalDirection#01
+BOS_VerticalDepth#01 HasReferenceFrame verticalDirection#01
+BottomOfStringReferenceLocation:bos#01
+BOS_VerticalDepth#01 IsPhysicallyLocatedAt bos#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[BOS_VerticalDepth] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[BOS_VerticalDepth#01] -->|BelongsToClass| N0003(PhysicalData) 
+	N0002[BOS_VerticalDepth#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[BOS_VerticalDepth#01] -->|HasDynamicValue| N0000((BOS_VerticalDepth)) 
+	N0002[BOS_VerticalDepth#01] -->|IsOfMeasurableQuantity| N0005((DepthDrilling)) 
+	N0006[movingAverage] -->|BelongsToClass| N0007(MovingAverage) 
+	N0002[BOS_VerticalDepth#01] -->|IsTransformationOutput| N0006((movingAverage)) 
+	N0008[verticalDirection#01] -->|BelongsToClass| N0009(VerticalDepthFrame) 
+	N0002[BOS_VerticalDepth#01] -->|HasReferenceFrame| N0008((verticalDirection#01)) 
+	N0010[bos#01] -->|BelongsToClass| N0011(BottomOfStringReferenceLocation) 
+	N0002[BOS_VerticalDepth#01] -->|IsPhysicallyLocatedAt| N0010((bos#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?VerticalDepthSignalExample
+WHERE {
+	?BOS_VerticalDepth rdf:type ddhub:DynamicDrillingSignal .
+	?BOS_VerticalDepth#01 rdf:type ddhub:PhysicalData .
+	?BOS_VerticalDepth#01 rdf:type ddhub:ContinuousDataType .
+	?movingAverage rdf:type ddhub:MovingAverage .
+	?verticalDirection#01 rdf:type ddhub:VerticalDepthFrame .
+	?bos#01 rdf:type ddhub:BottomOfStringReferenceLocation .
+  FILTER (
+	?Attribute000 = BOS_VerticalDepth
+	&& 	?Attribute001 = DepthDrilling
+	&& 	?Attribute002 = movingAverage
+	&& 	?Attribute003 = verticalDirection#01
+	&& 	?Attribute004 = bos#01
+  )
+}
+```
+This example defines a drilling data point as being the vertical depth at the bottom of the drill string in a vertical depth reference frame.
+## VerticalElevationFrame <!-- NOUN -->
+- Display name: VerticalElevationFrame
+- Parent class: [VerticalDirectionFrame](#VerticalDirectionFrame)
+- Description: 
+A reference frame that follows the upward vertical.
+- Definition set: PhysicalLocation
+- Examples:
+```dwis verticalDepthFrame
+DrillingDataPoint:toolface
+VerticalElevationFrame:highSideReferenceFrame
+toolface IsMeasuredFromReferenceFrame highSideReferenceFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[toolface] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[highSideReferenceFrame] -->|BelongsToClass| N0003(VerticalElevationFrame) 
+	N0000[toolface] -->|IsMeasuredFromReferenceFrame| N0002((highSideReferenceFrame)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?verticalDepthFrame
+WHERE {
+	?toolface rdf:type ddhub:DrillingDataPoint .
+	?highSideReferenceFrame rdf:type ddhub:VerticalElevationFrame .
+  FILTER (
+	?Attribute000 = highSideReferenceFrame
+  )
+}
+```
+This example declares an inclination that is measured from the downward vertical.
+## NorthDirectionFrame <!-- NOUN -->
+- Display name: NorthDirectionFrame
+- Parent class: [HorizontalDirectionFrame](#HorizontalDirectionFrame)
+- Description: 
+A reference frame that follows the north direction.
+- Definition set: PhysicalLocation
+- Examples:
+```dwis NorthDirectionFrame
+DrillingDataPoint:azimuth
+NorthDirectionFrame:northDirectionFrame
+azimuth IsMeasuredFromReferenceFrame northDirectionFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[azimuth] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[northDirectionFrame] -->|BelongsToClass| N0003(NorthDirectionFrame) 
+	N0000[azimuth] -->|IsMeasuredFromReferenceFrame| N0002((northDirectionFrame)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?NorthDirectionFrame
+WHERE {
+	?azimuth rdf:type ddhub:DrillingDataPoint .
+	?northDirectionFrame rdf:type ddhub:NorthDirectionFrame .
+  FILTER (
+	?Attribute000 = northDirectionFrame
+  )
+}
+```
+This example declares an azimuth that is measured from the north direction.
+## EastDirectionFrame <!-- NOUN -->
+- Display name: EastDirectionFrame
+- Parent class: [HorizontalDirectionFrame](#HorizontalDirectionFrame)
+- Description: 
+A reference frame that follows the east direction.
+- Definition set: PhysicalLocation
+- Examples:
+```dwis EastDirectionFrameExample
+DrillingDataPoint:eastCoordinate
+EastDirectionFrame:eastDirectionFrame
+eastCoordinate HasReferenceFrame eastDirectionFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[eastCoordinate] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[eastDirectionFrame] -->|BelongsToClass| N0003(EastDirectionFrame) 
+	N0000[eastCoordinate] -->|HasReferenceFrame| N0002((eastDirectionFrame)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?EastDirectionFrameExample
+WHERE {
+	?eastCoordinate rdf:type ddhub:DrillingDataPoint .
+	?eastDirectionFrame rdf:type ddhub:EastDirectionFrame .
+  FILTER (
+	?Attribute000 = eastDirectionFrame
+  )
+}
+```
+This example declares an east coordinate is measured along the east direction.
+## LengthDirectionFrame <!-- NOUN -->
+- Display name: LengthDirectionFrame
+- Parent class: [OneDimensionalCartesianReferenceFrame](#OneDimensionalCartesianReferenceFrame)
+- Description: 
+A reference frame that follows the length direction.
+- Definition set: PhysicalLocation
+- Examples:
+```dwis LengthDirectionFrameExample
+DrillingDataPoint:length
+LengthDirectionFrame:lengthDirectionFrame
+length HasReferenceFrame lengthDirectionFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[length] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[lengthDirectionFrame] -->|BelongsToClass| N0003(LengthDirectionFrame) 
+	N0000[length] -->|HasReferenceFrame| N0002((lengthDirectionFrame)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?LengthDirectionFrameExample
+WHERE {
+	?length rdf:type ddhub:DrillingDataPoint .
+	?lengthDirectionFrame rdf:type ddhub:LengthDirectionFrame .
+  FILTER (
+	?Attribute000 = lengthDirectionFrame
+  )
+}
+```
+This example declares the value length is a measure of the length of something.
+## WidthDirectionFrame <!-- NOUN -->
+- Display name: WidthDirectionFrame
+- Parent class: [OneDimensionalCartesianReferenceFrame](#OneDimensionalCartesianReferenceFrame)
+- Description: 
+A reference frame that follows the width direction.
+- Definition set: PhysicalLocation
+- Examples:
+```dwis WidthDirectionFrameExample
+DrillingDataPoint:width
+WidthDirectionFrame:widthDirectionFrame
+width HasReferenceFrame widthDirectionFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[width] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[widthDirectionFrame] -->|BelongsToClass| N0003(WidthDirectionFrame) 
+	N0000[width] -->|HasReferenceFrame| N0002((widthDirectionFrame)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?WidthDirectionFrameExample
+WHERE {
+	?width rdf:type ddhub:DrillingDataPoint .
+	?widthDirectionFrame rdf:type ddhub:WidthDirectionFrame .
+  FILTER (
+	?Attribute000 = widthDirectionFrame
+  )
+}
+```
+This example declares the value width is a measure of the width of something.
+## HeightDirectionFrame <!-- NOUN -->
+- Display name: HeightDirectionFrame
+- Parent class: [OneDimensionalCartesianReferenceFrame](#OneDimensionalCartesianReferenceFrame)
+- Description: 
+A reference frame that follows the height direction.
+- Definition set: PhysicalLocation
+- Examples:
+```dwis HeightDirectionFrameExample
+DrillingDataPoint:height
+HeightDirectionFrame:heightDirectionFrame
+height HasReferenceFrame heightDirectionFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[height] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[heightDirectionFrame] -->|BelongsToClass| N0003(HeightDirectionFrame) 
+	N0000[height] -->|HasReferenceFrame| N0002((heightDirectionFrame)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?HeightDirectionFrameExample
+WHERE {
+	?height rdf:type ddhub:DrillingDataPoint .
+	?heightDirectionFrame rdf:type ddhub:HeightDirectionFrame .
+  FILTER (
+	?Attribute000 = heightDirectionFrame
+  )
+}
+```
+This example declares the value height is a measure of the height of something.
 ## OneDimensionalCurviLinearReferenceFrame <!-- NOUN -->
 - Display name: OneDimensionalCurviLinearReferenceFrame
 - Parent class: [OneDimensionalReferenceFrame](#OneDimensionalReferenceFrame)
+- Description: 
+Reference location for OneDimensionalCurviLinearReferenceFrame.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis oneDimensionalCurviLinearReferenceFrame
+DynamicDrillingSignal:BH_depth
+PhysicalData:BH_depth#01
+BH_depth#01 BelongsToClass ContinuousDataType
+BH_depth#01 HasDynamicValue BH_depth
+BH_depth#01 IsOfMeasurableQuantity DepthDrilling
+MovingAverage:movingAverage
+BH_depth#01 IsTransformationOutput movingAverage
+OneDimensionalCurviLinearReferenceFrame:curvilinearAbscissaFrame#01
+BH_depth#01 HasReferenceFrame curvilinearAbscissaFrame#01
+HoleBottomLocation:bh#01
+BH_depth#01 IsPhysicallyLocatedAt bh#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[BH_depth] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[BH_depth#01] -->|BelongsToClass| N0003(PhysicalData) 
+	N0002[BH_depth#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[BH_depth#01] -->|HasDynamicValue| N0000((BH_depth)) 
+	N0002[BH_depth#01] -->|IsOfMeasurableQuantity| N0005((DepthDrilling)) 
+	N0006[movingAverage] -->|BelongsToClass| N0007(MovingAverage) 
+	N0002[BH_depth#01] -->|IsTransformationOutput| N0006((movingAverage)) 
+	N0008[curvilinearAbscissaFrame#01] -->|BelongsToClass| N0009(OneDimensionalCurviLinearReferenceFrame) 
+	N0002[BH_depth#01] -->|HasReferenceFrame| N0008((curvilinearAbscissaFrame#01)) 
+	N0010[bh#01] -->|BelongsToClass| N0011(HoleBottomLocation) 
+	N0002[BH_depth#01] -->|IsPhysicallyLocatedAt| N0010((bh#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?oneDimensionalCurviLinearReferenceFrame
+WHERE {
+	?BH_depth rdf:type ddhub:DynamicDrillingSignal .
+	?BH_depth#01 rdf:type ddhub:PhysicalData .
+	?BH_depth#01 rdf:type ddhub:ContinuousDataType .
+	?movingAverage rdf:type ddhub:MovingAverage .
+	?curvilinearAbscissaFrame#01 rdf:type ddhub:OneDimensionalCurviLinearReferenceFrame .
+	?bh#01 rdf:type ddhub:HoleBottomLocation .
+  FILTER (
+	?Attribute000 = BH_depth
+	&& 	?Attribute001 = DepthDrilling
+	&& 	?Attribute002 = movingAverage
+	&& 	?Attribute003 = curvilinearAbscissaFrame#01
+	&& 	?Attribute004 = bh#01
+  )
+}
+```
+This example defines a drilling data point as being the hole bottom depth measured in a curvilinear abscissa reference frame.
 ## DrillStringCenterLineFrame <!-- NOUN -->
 - Display name: DrillStringCenterLineFrame
 - Parent class: [OneDimensionalCurviLinearReferenceFrame](#OneDimensionalCurviLinearReferenceFrame)
+- Description: 
+Reference location for DrillStringCenterLineFrame.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis drillStringCenterLineFrame
+Location:drillStringCenterLineFrame
+drillStringCenterLineFrame BelongsToClass DrillStringCenterLineFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillStringCenterLineFrame] -->|BelongsToClass| N0001(Location) 
+	N0000[drillStringCenterLineFrame] -->|BelongsToClass| N0002(DrillStringCenterLineFrame) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillStringCenterLineFrame
+WHERE {
+	?drillStringCenterLineFrame rdf:type ddhub:Location .
+	?drillStringCenterLineFrame rdf:type ddhub:DrillStringCenterLineFrame .
+}
+```
+This example declares the DrillStringCenterLineFrame reference location.
 ## WellboreCenterLineFrame <!-- NOUN -->
 - Display name: WellboreCenterLineFrame
 - Parent class: [OneDimensionalCurviLinearReferenceFrame](#OneDimensionalCurviLinearReferenceFrame)
+- Description: 
+Reference location for WellboreCenterLineFrame.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis wellboreCenterLineFrame
+Location:wellboreCenterLineFrame
+wellboreCenterLineFrame BelongsToClass WellboreCenterLineFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wellboreCenterLineFrame] -->|BelongsToClass| N0001(Location) 
+	N0000[wellboreCenterLineFrame] -->|BelongsToClass| N0002(WellboreCenterLineFrame) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wellboreCenterLineFrame
+WHERE {
+	?wellboreCenterLineFrame rdf:type ddhub:Location .
+	?wellboreCenterLineFrame rdf:type ddhub:WellboreCenterLineFrame .
+}
+```
+This example declares the WellboreCenterLineFrame reference location.
 ## DepthAndAngleFrame <!-- NOUN -->
 - Display name: DepthAndAngleFrame
 - Parent class: [ReferenceFrame](#ReferenceFrame)
+- Description: 
+Reference location for DepthAndAngleFrame.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis depthAndAngleFrame
+Location:depthAndAngleFrame
+depthAndAngleFrame BelongsToClass DepthAndAngleFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[depthAndAngleFrame] -->|BelongsToClass| N0001(Location) 
+	N0000[depthAndAngleFrame] -->|BelongsToClass| N0002(DepthAndAngleFrame) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?depthAndAngleFrame
+WHERE {
+	?depthAndAngleFrame rdf:type ddhub:Location .
+	?depthAndAngleFrame rdf:type ddhub:DepthAndAngleFrame .
+}
+```
+This example declares the DepthAndAngleFrame reference location.
 ## TwoDimensionalReferenceFrame <!-- NOUN -->
 - Display name: TwoDimensionalReferenceFrame
 - Parent class: [ReferenceFrame](#ReferenceFrame)
+- Description: 
+Reference location for TwoDimensionalReferenceFrame.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis twoDimensionalReferenceFrame
+Location:twoDimensionalReferenceFrame
+twoDimensionalReferenceFrame BelongsToClass TwoDimensionalReferenceFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[twoDimensionalReferenceFrame] -->|BelongsToClass| N0001(Location) 
+	N0000[twoDimensionalReferenceFrame] -->|BelongsToClass| N0002(TwoDimensionalReferenceFrame) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?twoDimensionalReferenceFrame
+WHERE {
+	?twoDimensionalReferenceFrame rdf:type ddhub:Location .
+	?twoDimensionalReferenceFrame rdf:type ddhub:TwoDimensionalReferenceFrame .
+}
+```
+This example declares the TwoDimensionalReferenceFrame reference location.
 ## CartesianTwoDimensionalReferenceFrame <!-- NOUN -->
 - Display name: CartesianTwoDimensionalReferenceFrame
 - Parent class: [TwoDimensionalReferenceFrame](#TwoDimensionalReferenceFrame)
+- Description: 
+Reference location for CartesianTwoDimensionalReferenceFrame.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis cartesianTwoDimensionalReferenceFrame
+Location:cartesianTwoDimensionalReferenceFrame
+cartesianTwoDimensionalReferenceFrame BelongsToClass CartesianTwoDimensionalReferenceFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[cartesianTwoDimensionalReferenceFrame] -->|BelongsToClass| N0001(Location) 
+	N0000[cartesianTwoDimensionalReferenceFrame] -->|BelongsToClass| N0002(CartesianTwoDimensionalReferenceFrame) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?cartesianTwoDimensionalReferenceFrame
+WHERE {
+	?cartesianTwoDimensionalReferenceFrame rdf:type ddhub:Location .
+	?cartesianTwoDimensionalReferenceFrame rdf:type ddhub:CartesianTwoDimensionalReferenceFrame .
+}
+```
+This example declares the CartesianTwoDimensionalReferenceFrame reference location.
 ## NorthEastFrame <!-- NOUN -->
 - Display name: NorthEastFrame
 - Parent class: [CartesianTwoDimensionalReferenceFrame](#CartesianTwoDimensionalReferenceFrame)
+- Description: 
+Reference location for NorthEastFrame.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis northEastFrame
+Location:northEastFrame
+northEastFrame BelongsToClass NorthEastFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[northEastFrame] -->|BelongsToClass| N0001(Location) 
+	N0000[northEastFrame] -->|BelongsToClass| N0002(NorthEastFrame) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?northEastFrame
+WHERE {
+	?northEastFrame rdf:type ddhub:Location .
+	?northEastFrame rdf:type ddhub:NorthEastFrame .
+}
+```
+This example declares the NorthEastFrame reference location.
 ## PolarReferenceFrame <!-- NOUN -->
 - Display name: PolarReferenceFrame
 - Parent class: [TwoDimensionalReferenceFrame](#TwoDimensionalReferenceFrame)
+- Description: 
+Reference location for PolarReferenceFrame.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis polarReferenceFrame
+Location:polarReferenceFrame
+polarReferenceFrame BelongsToClass PolarReferenceFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[polarReferenceFrame] -->|BelongsToClass| N0001(Location) 
+	N0000[polarReferenceFrame] -->|BelongsToClass| N0002(PolarReferenceFrame) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?polarReferenceFrame
+WHERE {
+	?polarReferenceFrame rdf:type ddhub:Location .
+	?polarReferenceFrame rdf:type ddhub:PolarReferenceFrame .
+}
+```
+This example declares the PolarReferenceFrame reference location.
 ## RiemannianManifoldTwoDimensionalReferenceFrame <!-- NOUN -->
 - Display name: RiemannianManifoldTwoDimensionalReferenceFrame
 - Parent class: [TwoDimensionalReferenceFrame](#TwoDimensionalReferenceFrame)
+- Description: 
+Reference location for RiemannianManifoldTwoDimensionalReferenceFrame.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis riemannianManifoldTwoDimensionalReferenceFrame
+Location:riemannianManifoldTwoDimensionalReferenceFrame
+riemannianManifoldTwoDimensionalReferenceFrame BelongsToClass RiemannianManifoldTwoDimensionalReferenceFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[riemannianManifoldTwoDimensionalReferenceFrame] -->|BelongsToClass| N0001(Location) 
+	N0000[riemannianManifoldTwoDimensionalReferenceFrame] -->|BelongsToClass| N0002(RiemannianManifoldTwoDimensionalReferenceFrame) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?riemannianManifoldTwoDimensionalReferenceFrame
+WHERE {
+	?riemannianManifoldTwoDimensionalReferenceFrame rdf:type ddhub:Location .
+	?riemannianManifoldTwoDimensionalReferenceFrame rdf:type ddhub:RiemannianManifoldTwoDimensionalReferenceFrame .
+}
+```
+This example declares the RiemannianManifoldTwoDimensionalReferenceFrame reference location.
 ## ThreeDimensionalReferenceFrame <!-- NOUN -->
 - Display name: ThreeDimensionalReferenceFrame
 - Parent class: [ReferenceFrame](#ReferenceFrame)
+- Description: 
+Reference location for ThreeDimensionalReferenceFrame.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis threeDimensionalReferenceFrame
+Location:threeDimensionalReferenceFrame
+threeDimensionalReferenceFrame BelongsToClass ThreeDimensionalReferenceFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[threeDimensionalReferenceFrame] -->|BelongsToClass| N0001(Location) 
+	N0000[threeDimensionalReferenceFrame] -->|BelongsToClass| N0002(ThreeDimensionalReferenceFrame) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?threeDimensionalReferenceFrame
+WHERE {
+	?threeDimensionalReferenceFrame rdf:type ddhub:Location .
+	?threeDimensionalReferenceFrame rdf:type ddhub:ThreeDimensionalReferenceFrame .
+}
+```
+This example declares the ThreeDimensionalReferenceFrame reference location.
 ## CartesianThreeDimensionalReferenceFrame <!-- NOUN -->
 - Display name: CartesianThreeDimensionalReferenceFrame
 - Parent class: [ThreeDimensionalReferenceFrame](#ThreeDimensionalReferenceFrame)
+- Description: 
+Reference location for CartesianThreeDimensionalReferenceFrame.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis cartesianThreeDimensionalReferenceFrame
+Location:cartesianThreeDimensionalReferenceFrame
+cartesianThreeDimensionalReferenceFrame BelongsToClass CartesianThreeDimensionalReferenceFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[cartesianThreeDimensionalReferenceFrame] -->|BelongsToClass| N0001(Location) 
+	N0000[cartesianThreeDimensionalReferenceFrame] -->|BelongsToClass| N0002(CartesianThreeDimensionalReferenceFrame) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?cartesianThreeDimensionalReferenceFrame
+WHERE {
+	?cartesianThreeDimensionalReferenceFrame rdf:type ddhub:Location .
+	?cartesianThreeDimensionalReferenceFrame rdf:type ddhub:CartesianThreeDimensionalReferenceFrame .
+}
+```
+This example declares the CartesianThreeDimensionalReferenceFrame reference location.
 ## NorthEastTVDFrame <!-- NOUN -->
 - Display name: NorthEastTVDFrame
 - Parent class: [CartesianThreeDimensionalReferenceFrame](#CartesianThreeDimensionalReferenceFrame)
+- Description: 
+Reference location for NorthEastTVDFrame.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis northEastTVDFrame
+Location:northEastTVDFrame
+northEastTVDFrame BelongsToClass NorthEastTVDFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[northEastTVDFrame] -->|BelongsToClass| N0001(Location) 
+	N0000[northEastTVDFrame] -->|BelongsToClass| N0002(NorthEastTVDFrame) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?northEastTVDFrame
+WHERE {
+	?northEastTVDFrame rdf:type ddhub:Location .
+	?northEastTVDFrame rdf:type ddhub:NorthEastTVDFrame .
+}
+```
+This example declares the NorthEastTVDFrame reference location.
 ## FrenetSerretReferenceFrame <!-- NOUN -->
 - Display name: FrenetSerretReferenceFrame
 - Parent class: [ThreeDimensionalReferenceFrame](#ThreeDimensionalReferenceFrame)
+- Description: 
+Reference location for FrenetSerretReferenceFrame.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis frenetSerretReferenceFrame
+Location:frenetSerretReferenceFrame
+frenetSerretReferenceFrame BelongsToClass FrenetSerretReferenceFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[frenetSerretReferenceFrame] -->|BelongsToClass| N0001(Location) 
+	N0000[frenetSerretReferenceFrame] -->|BelongsToClass| N0002(FrenetSerretReferenceFrame) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?frenetSerretReferenceFrame
+WHERE {
+	?frenetSerretReferenceFrame rdf:type ddhub:Location .
+	?frenetSerretReferenceFrame rdf:type ddhub:FrenetSerretReferenceFrame .
+}
+```
+This example declares the FrenetSerretReferenceFrame reference location.
 ## RiemannianManifoldThreeDimensionalReferenceFrame <!-- NOUN -->
 - Display name: RiemannianManifoldThreeDimensionalReferenceFrame
 - Parent class: [ThreeDimensionalReferenceFrame](#ThreeDimensionalReferenceFrame)
+- Description: 
+Reference location for RiemannianManifoldThreeDimensionalReferenceFrame.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis riemannianManifoldThreeDimensionalReferenceFrame
+Location:riemannianManifoldThreeDimensionalReferenceFrame
+riemannianManifoldThreeDimensionalReferenceFrame BelongsToClass RiemannianManifoldThreeDimensionalReferenceFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[riemannianManifoldThreeDimensionalReferenceFrame] -->|BelongsToClass| N0001(Location) 
+	N0000[riemannianManifoldThreeDimensionalReferenceFrame] -->|BelongsToClass| N0002(RiemannianManifoldThreeDimensionalReferenceFrame) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?riemannianManifoldThreeDimensionalReferenceFrame
+WHERE {
+	?riemannianManifoldThreeDimensionalReferenceFrame rdf:type ddhub:Location .
+	?riemannianManifoldThreeDimensionalReferenceFrame rdf:type ddhub:RiemannianManifoldThreeDimensionalReferenceFrame .
+}
+```
+This example declares the RiemannianManifoldThreeDimensionalReferenceFrame reference location.
 ## CylindricalReferenceFrame <!-- NOUN -->
 - Display name: CylindricalReferenceFrame
 - Parent class: [ThreeDimensionalReferenceFrame](#ThreeDimensionalReferenceFrame)
+- Description: 
+Reference location for CylindricalReferenceFrame.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis cylindricalReferenceFrame
+Location:cylindricalReferenceFrame
+cylindricalReferenceFrame BelongsToClass CylindricalReferenceFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[cylindricalReferenceFrame] -->|BelongsToClass| N0001(Location) 
+	N0000[cylindricalReferenceFrame] -->|BelongsToClass| N0002(CylindricalReferenceFrame) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?cylindricalReferenceFrame
+WHERE {
+	?cylindricalReferenceFrame rdf:type ddhub:Location .
+	?cylindricalReferenceFrame rdf:type ddhub:CylindricalReferenceFrame .
+}
+```
+This example declares the CylindricalReferenceFrame reference location.
 ## SphericalReferenceFrame <!-- NOUN -->
 - Display name: SphericalReferenceFrame
 - Parent class: [ThreeDimensionalReferenceFrame](#ThreeDimensionalReferenceFrame)
+- Description: 
+Reference location for SphericalReferenceFrame.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis sphericalReferenceFrame
+Location:sphericalReferenceFrame
+sphericalReferenceFrame BelongsToClass SphericalReferenceFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[sphericalReferenceFrame] -->|BelongsToClass| N0001(Location) 
+	N0000[sphericalReferenceFrame] -->|BelongsToClass| N0002(SphericalReferenceFrame) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?sphericalReferenceFrame
+WHERE {
+	?sphericalReferenceFrame rdf:type ddhub:Location .
+	?sphericalReferenceFrame rdf:type ddhub:SphericalReferenceFrame .
+}
+```
+This example declares the SphericalReferenceFrame reference location.
 ## FourDimensionalReferenceFrame <!-- NOUN -->
 - Display name: FourDimensionalReferenceFrame
 - Parent class: [ReferenceFrame](#ReferenceFrame)
+- Description: 
+Reference location for FourDimensionalReferenceFrame.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis fourDimensionalReferenceFrame
+Location:fourDimensionalReferenceFrame
+fourDimensionalReferenceFrame BelongsToClass FourDimensionalReferenceFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[fourDimensionalReferenceFrame] -->|BelongsToClass| N0001(Location) 
+	N0000[fourDimensionalReferenceFrame] -->|BelongsToClass| N0002(FourDimensionalReferenceFrame) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?fourDimensionalReferenceFrame
+WHERE {
+	?fourDimensionalReferenceFrame rdf:type ddhub:Location .
+	?fourDimensionalReferenceFrame rdf:type ddhub:FourDimensionalReferenceFrame .
+}
+```
+This example declares the FourDimensionalReferenceFrame reference location.
 ## CartesianFourDimensionalReferenceFrame <!-- NOUN -->
 - Display name: CartesianFourDimensionalReferenceFrame
 - Parent class: [FourDimensionalReferenceFrame](#FourDimensionalReferenceFrame)
+- Description: 
+Reference location for CartesianFourDimensionalReferenceFrame.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis cartesianFourDimensionalReferenceFrame
+Location:cartesianFourDimensionalReferenceFrame
+cartesianFourDimensionalReferenceFrame BelongsToClass CartesianFourDimensionalReferenceFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[cartesianFourDimensionalReferenceFrame] -->|BelongsToClass| N0001(Location) 
+	N0000[cartesianFourDimensionalReferenceFrame] -->|BelongsToClass| N0002(CartesianFourDimensionalReferenceFrame) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?cartesianFourDimensionalReferenceFrame
+WHERE {
+	?cartesianFourDimensionalReferenceFrame rdf:type ddhub:Location .
+	?cartesianFourDimensionalReferenceFrame rdf:type ddhub:CartesianFourDimensionalReferenceFrame .
+}
+```
+This example declares the CartesianFourDimensionalReferenceFrame reference location.
 ## RiemannianManifoldFourDimensionalReferenceFrame <!-- NOUN -->
 - Display name: RiemannianManifoldFourDimensionalReferenceFrame
 - Parent class: [FourDimensionalReferenceFrame](#FourDimensionalReferenceFrame)
+- Description: 
+Reference location for RiemannianManifoldFourDimensionalReferenceFrame.
 - Definition set: PhysicalLocation
+- Examples:
+```dwis riemannianManifoldFourDimensionalReferenceFrame
+Location:riemannianManifoldFourDimensionalReferenceFrame
+riemannianManifoldFourDimensionalReferenceFrame BelongsToClass RiemannianManifoldFourDimensionalReferenceFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[riemannianManifoldFourDimensionalReferenceFrame] -->|BelongsToClass| N0001(Location) 
+	N0000[riemannianManifoldFourDimensionalReferenceFrame] -->|BelongsToClass| N0002(RiemannianManifoldFourDimensionalReferenceFrame) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?riemannianManifoldFourDimensionalReferenceFrame
+WHERE {
+	?riemannianManifoldFourDimensionalReferenceFrame rdf:type ddhub:Location .
+	?riemannianManifoldFourDimensionalReferenceFrame rdf:type ddhub:RiemannianManifoldFourDimensionalReferenceFrame .
+}
+```
+This example declares the RiemannianManifoldFourDimensionalReferenceFrame reference location.
 ## MeasurableQuantity <!-- NOUN -->
 - Display name: MeasurableQuantity
 - Parent class: [DWISNoun](#DWISNoun)
@@ -27731,241 +42444,1714 @@ graph LR
 ## ActiveVolume <!-- NOUN -->
 - Display name: ActiveVolume
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for ActiveVolume.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis activeVolume
+DrillingDataPoint:activeVolume
+activeVolume BelongsToClass ActiveVolume
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[activeVolume] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[activeVolume] -->|BelongsToClass| N0002(ActiveVolume) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?activeVolume
+WHERE {
+	?activeVolume rdf:type ddhub:DrillingDataPoint .
+	?activeVolume rdf:type ddhub:ActiveVolume .
+}
+```
+This example assigns a drilling data point to the ActiveVolume prototype.
 ## Azimuth <!-- NOUN -->
 - Display name: Azimuth
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for Azimuth.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis azimuth
+DrillingDataPoint:azimuth
+azimuth BelongsToClass Azimuth
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[azimuth] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[azimuth] -->|BelongsToClass| N0002(Azimuth) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?azimuth
+WHERE {
+	?azimuth rdf:type ddhub:DrillingDataPoint .
+	?azimuth rdf:type ddhub:Azimuth .
+}
+```
+This example assigns a drilling data point to the Azimuth prototype.
 ## BitDepth <!-- NOUN -->
 - Display name: BitDepth
 - Parent class: [PrototypeData](#PrototypeData)
 - Description: 
 Curvilinear abscissa of the bottom of the bit, in the reference frame centered in the wellbore.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis bitDepth
+DrillingDataPoint:bitDepth
+bitDepth BelongsToClass BitDepth
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[bitDepth] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[bitDepth] -->|BelongsToClass| N0002(BitDepth) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?bitDepth
+WHERE {
+	?bitDepth rdf:type ddhub:DrillingDataPoint .
+	?bitDepth rdf:type ddhub:BitDepth .
+}
+```
+This example assigns a drilling data point to the BitDepth prototype.
 ## DensityIn <!-- NOUN -->
 - Display name: DensityIn
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for DensityIn.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis densityIn
+DrillingDataPoint:densityIn
+densityIn BelongsToClass DensityIn
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[densityIn] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[densityIn] -->|BelongsToClass| N0002(DensityIn) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?densityIn
+WHERE {
+	?densityIn rdf:type ddhub:DrillingDataPoint .
+	?densityIn rdf:type ddhub:DensityIn .
+}
+```
+This example assigns a drilling data point to the DensityIn prototype.
 ## DensityOut <!-- NOUN -->
 - Display name: DensityOut
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for DensityOut.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis densityOut
+DrillingDataPoint:densityOut
+densityOut BelongsToClass DensityOut
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[densityOut] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[densityOut] -->|BelongsToClass| N0002(DensityOut) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?densityOut
+WHERE {
+	?densityOut rdf:type ddhub:DrillingDataPoint .
+	?densityOut rdf:type ddhub:DensityOut .
+}
+```
+This example assigns a drilling data point to the DensityOut prototype.
 ## DownholeECD <!-- NOUN -->
 - Display name: DownholeECD
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for DownholeECD.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis downholeECD
+DrillingDataPoint:downholeECD
+downholeECD BelongsToClass DownholeECD
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[downholeECD] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[downholeECD] -->|BelongsToClass| N0002(DownholeECD) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?downholeECD
+WHERE {
+	?downholeECD rdf:type ddhub:DrillingDataPoint .
+	?downholeECD rdf:type ddhub:DownholeECD .
+}
+```
+This example assigns a drilling data point to the DownholeECD prototype.
 ## DownholePressure <!-- NOUN -->
 - Display name: DownholePressure
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for DownholePressure.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis downholePressure
+DrillingDataPoint:downholePressure
+downholePressure BelongsToClass DownholePressure
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[downholePressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[downholePressure] -->|BelongsToClass| N0002(DownholePressure) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?downholePressure
+WHERE {
+	?downholePressure rdf:type ddhub:DrillingDataPoint .
+	?downholePressure rdf:type ddhub:DownholePressure .
+}
+```
+This example assigns a drilling data point to the DownholePressure prototype.
 ## DownholeRPM <!-- NOUN -->
 - Display name: DownholeRPM
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for DownholeRPM.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis downholeRPM
+DrillingDataPoint:downholeRPM
+downholeRPM BelongsToClass DownholeRPM
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[downholeRPM] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[downholeRPM] -->|BelongsToClass| N0002(DownholeRPM) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?downholeRPM
+WHERE {
+	?downholeRPM rdf:type ddhub:DrillingDataPoint .
+	?downholeRPM rdf:type ddhub:DownholeRPM .
+}
+```
+This example assigns a drilling data point to the DownholeRPM prototype.
 ## DownholeTemperature <!-- NOUN -->
 - Display name: DownholeTemperature
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for DownholeTemperature.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis downholeTemperature
+DrillingDataPoint:downholeTemperature
+downholeTemperature BelongsToClass DownholeTemperature
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[downholeTemperature] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[downholeTemperature] -->|BelongsToClass| N0002(DownholeTemperature) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?downholeTemperature
+WHERE {
+	?downholeTemperature rdf:type ddhub:DrillingDataPoint .
+	?downholeTemperature rdf:type ddhub:DownholeTemperature .
+}
+```
+This example assigns a drilling data point to the DownholeTemperature prototype.
 ## DownholeTorque <!-- NOUN -->
 - Display name: DownholeTorque
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for DownholeTorque.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis downholeTorque
+DrillingDataPoint:downholeTorque
+downholeTorque BelongsToClass DownholeTorque
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[downholeTorque] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[downholeTorque] -->|BelongsToClass| N0002(DownholeTorque) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?downholeTorque
+WHERE {
+	?downholeTorque rdf:type ddhub:DrillingDataPoint .
+	?downholeTorque rdf:type ddhub:DownholeTorque .
+}
+```
+This example assigns a drilling data point to the DownholeTorque prototype.
 ## FlowRateIn <!-- NOUN -->
 - Display name: FlowRateIn
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for FlowRateIn.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis flowRateIn
+DrillingDataPoint:flowRateIn
+flowRateIn BelongsToClass FlowRateIn
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[flowRateIn] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[flowRateIn] -->|BelongsToClass| N0002(FlowRateIn) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?flowRateIn
+WHERE {
+	?flowRateIn rdf:type ddhub:DrillingDataPoint .
+	?flowRateIn rdf:type ddhub:FlowRateIn .
+}
+```
+This example assigns a drilling data point to the FlowRateIn prototype.
 ## FlowRateOut <!-- NOUN -->
 - Display name: FlowRateOut
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for FlowRateOut.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis flowRateOut
+DrillingDataPoint:flowRateOut
+flowRateOut BelongsToClass FlowRateOut
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[flowRateOut] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[flowRateOut] -->|BelongsToClass| N0002(FlowRateOut) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?flowRateOut
+WHERE {
+	?flowRateOut rdf:type ddhub:DrillingDataPoint .
+	?flowRateOut rdf:type ddhub:FlowRateOut .
+}
+```
+This example assigns a drilling data point to the FlowRateOut prototype.
 ## HoleDepth <!-- NOUN -->
 - Display name: HoleDepth
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for HoleDepth.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis holeDepth
+DrillingDataPoint:holeDepth
+holeDepth BelongsToClass HoleDepth
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[holeDepth] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[holeDepth] -->|BelongsToClass| N0002(HoleDepth) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?holeDepth
+WHERE {
+	?holeDepth rdf:type ddhub:DrillingDataPoint .
+	?holeDepth rdf:type ddhub:HoleDepth .
+}
+```
+This example assigns a drilling data point to the HoleDepth prototype.
 ## HookLoad <!-- NOUN -->
 - Display name: HookLoad
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for HookLoad.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis hookLoad
+DrillingDataPoint:hookLoad
+hookLoad BelongsToClass HookLoad
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hookLoad] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[hookLoad] -->|BelongsToClass| N0002(HookLoad) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hookLoad
+WHERE {
+	?hookLoad rdf:type ddhub:DrillingDataPoint .
+	?hookLoad rdf:type ddhub:HookLoad .
+}
+```
+This example assigns a drilling data point to the HookLoad prototype.
 ## HookPosition <!-- NOUN -->
 - Display name: HookPosition
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for HookPosition.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis hookPosition
+DrillingDataPoint:hookPosition
+hookPosition BelongsToClass HookPosition
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hookPosition] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[hookPosition] -->|BelongsToClass| N0002(HookPosition) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hookPosition
+WHERE {
+	?hookPosition rdf:type ddhub:DrillingDataPoint .
+	?hookPosition rdf:type ddhub:HookPosition .
+}
+```
+This example assigns a drilling data point to the HookPosition prototype.
 ## HookVelocity <!-- NOUN -->
 - Display name: HookVelocity
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for HookVelocity.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis hookVelocity
+DrillingDataPoint:hookVelocity
+hookVelocity BelongsToClass HookVelocity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hookVelocity] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[hookVelocity] -->|BelongsToClass| N0002(HookVelocity) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hookVelocity
+WHERE {
+	?hookVelocity rdf:type ddhub:DrillingDataPoint .
+	?hookVelocity rdf:type ddhub:HookVelocity .
+}
+```
+This example assigns a drilling data point to the HookVelocity prototype.
 ## Inclination <!-- NOUN -->
 - Display name: Inclination
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for Inclination.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis inclination
+DrillingDataPoint:inclination
+inclination BelongsToClass Inclination
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[inclination] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[inclination] -->|BelongsToClass| N0002(Inclination) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?inclination
+WHERE {
+	?inclination rdf:type ddhub:DrillingDataPoint .
+	?inclination rdf:type ddhub:Inclination .
+}
+```
+This example assigns a drilling data point to the Inclination prototype.
 ## MeasuredDepth <!-- NOUN -->
 - Display name: MeasuredDepth
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for MeasuredDepth.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis measuredDepth
+DrillingDataPoint:measuredDepth
+measuredDepth BelongsToClass MeasuredDepth
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[measuredDepth] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[measuredDepth] -->|BelongsToClass| N0002(MeasuredDepth) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?measuredDepth
+WHERE {
+	?measuredDepth rdf:type ddhub:DrillingDataPoint .
+	?measuredDepth rdf:type ddhub:MeasuredDepth .
+}
+```
+This example assigns a drilling data point to the MeasuredDepth prototype.
 ## PumpRate <!-- NOUN -->
 - Display name: PumpRate
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for PumpRate.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis pumpRate
+DrillingDataPoint:pumpRate
+pumpRate BelongsToClass PumpRate
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pumpRate] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[pumpRate] -->|BelongsToClass| N0002(PumpRate) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pumpRate
+WHERE {
+	?pumpRate rdf:type ddhub:DrillingDataPoint .
+	?pumpRate rdf:type ddhub:PumpRate .
+}
+```
+This example assigns a drilling data point to the PumpRate prototype.
 ## ROP <!-- NOUN -->
 - Display name: ROP
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for ROP.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis rOP
+DrillingDataPoint:rOP
+rOP BelongsToClass ROP
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rOP] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[rOP] -->|BelongsToClass| N0002(ROP) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rOP
+WHERE {
+	?rOP rdf:type ddhub:DrillingDataPoint .
+	?rOP rdf:type ddhub:ROP .
+}
+```
+This example assigns a drilling data point to the ROP prototype.
 ## SPP <!-- NOUN -->
 - Display name: SPP
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for SPP.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis sPP
+DrillingDataPoint:sPP
+sPP BelongsToClass SPP
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[sPP] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[sPP] -->|BelongsToClass| N0002(SPP) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?sPP
+WHERE {
+	?sPP rdf:type ddhub:DrillingDataPoint .
+	?sPP rdf:type ddhub:SPP .
+}
+```
+This example assigns a drilling data point to the SPP prototype.
 ## SurfaceRPM <!-- NOUN -->
 - Display name: SurfaceRPM
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for SurfaceRPM.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis surfaceRPM
+DrillingDataPoint:surfaceRPM
+surfaceRPM BelongsToClass SurfaceRPM
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[surfaceRPM] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[surfaceRPM] -->|BelongsToClass| N0002(SurfaceRPM) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?surfaceRPM
+WHERE {
+	?surfaceRPM rdf:type ddhub:DrillingDataPoint .
+	?surfaceRPM rdf:type ddhub:SurfaceRPM .
+}
+```
+This example assigns a drilling data point to the SurfaceRPM prototype.
 ## SurfaceTorque <!-- NOUN -->
 - Display name: SurfaceTorque
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for SurfaceTorque.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis surfaceTorque
+DrillingDataPoint:surfaceTorque
+surfaceTorque BelongsToClass SurfaceTorque
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[surfaceTorque] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[surfaceTorque] -->|BelongsToClass| N0002(SurfaceTorque) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?surfaceTorque
+WHERE {
+	?surfaceTorque rdf:type ddhub:DrillingDataPoint .
+	?surfaceTorque rdf:type ddhub:SurfaceTorque .
+}
+```
+This example assigns a drilling data point to the SurfaceTorque prototype.
 ## TemperatureIn <!-- NOUN -->
 - Display name: TemperatureIn
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for TemperatureIn.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis temperatureIn
+DrillingDataPoint:temperatureIn
+temperatureIn BelongsToClass TemperatureIn
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[temperatureIn] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[temperatureIn] -->|BelongsToClass| N0002(TemperatureIn) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?temperatureIn
+WHERE {
+	?temperatureIn rdf:type ddhub:DrillingDataPoint .
+	?temperatureIn rdf:type ddhub:TemperatureIn .
+}
+```
+This example assigns a drilling data point to the TemperatureIn prototype.
 ## TemperatureOut <!-- NOUN -->
 - Display name: TemperatureOut
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for TemperatureOut.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis temperatureOut
+DrillingDataPoint:temperatureOut
+temperatureOut BelongsToClass TemperatureOut
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[temperatureOut] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[temperatureOut] -->|BelongsToClass| N0002(TemperatureOut) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?temperatureOut
+WHERE {
+	?temperatureOut rdf:type ddhub:DrillingDataPoint .
+	?temperatureOut rdf:type ddhub:TemperatureOut .
+}
+```
+This example assigns a drilling data point to the TemperatureOut prototype.
 ## TopOfStringPosition <!-- NOUN -->
 - Display name: TopOfStringPosition
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for TopOfStringPosition.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis topOfStringPosition
+DrillingDataPoint:topOfStringPosition
+topOfStringPosition BelongsToClass TopOfStringPosition
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[topOfStringPosition] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[topOfStringPosition] -->|BelongsToClass| N0002(TopOfStringPosition) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?topOfStringPosition
+WHERE {
+	?topOfStringPosition rdf:type ddhub:DrillingDataPoint .
+	?topOfStringPosition rdf:type ddhub:TopOfStringPosition .
+}
+```
+This example assigns a drilling data point to the TopOfStringPosition prototype.
 ## WOB <!-- NOUN -->
 - Display name: WOB
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for WOB.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis wOB
+DrillingDataPoint:wOB
+wOB BelongsToClass WOB
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wOB] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[wOB] -->|BelongsToClass| N0002(WOB) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wOB
+WHERE {
+	?wOB rdf:type ddhub:DrillingDataPoint .
+	?wOB rdf:type ddhub:WOB .
+}
+```
+This example assigns a drilling data point to the WOB prototype.
 ## PorePressure <!-- NOUN -->
 - Display name: PorePressure
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for PorePressure.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis porePressure
+DrillingDataPoint:porePressure
+porePressure BelongsToClass PorePressure
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[porePressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[porePressure] -->|BelongsToClass| N0002(PorePressure) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?porePressure
+WHERE {
+	?porePressure rdf:type ddhub:DrillingDataPoint .
+	?porePressure rdf:type ddhub:PorePressure .
+}
+```
+This example assigns a drilling data point to the PorePressure prototype.
 ## PorePressureGradient <!-- NOUN -->
 - Display name: PorePressureGradient
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for PorePressureGradient.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis porePressureGradient
+DrillingDataPoint:porePressureGradient
+porePressureGradient BelongsToClass PorePressureGradient
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[porePressureGradient] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[porePressureGradient] -->|BelongsToClass| N0002(PorePressureGradient) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?porePressureGradient
+WHERE {
+	?porePressureGradient rdf:type ddhub:DrillingDataPoint .
+	?porePressureGradient rdf:type ddhub:PorePressureGradient .
+}
+```
+This example assigns a drilling data point to the PorePressureGradient prototype.
 ## FracturingPressure <!-- NOUN -->
 - Display name: FracturingPressure
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for FracturingPressure.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis fracturingPressure
+DrillingDataPoint:fracturingPressure
+fracturingPressure BelongsToClass FracturingPressure
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[fracturingPressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[fracturingPressure] -->|BelongsToClass| N0002(FracturingPressure) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?fracturingPressure
+WHERE {
+	?fracturingPressure rdf:type ddhub:DrillingDataPoint .
+	?fracturingPressure rdf:type ddhub:FracturingPressure .
+}
+```
+This example assigns a drilling data point to the FracturingPressure prototype.
 ## FracturingPressureGradient <!-- NOUN -->
 - Display name: FracturingPressureGradient
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for FracturingPressureGradient.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis fracturingPressureGradient
+DrillingDataPoint:fracturingPressureGradient
+fracturingPressureGradient BelongsToClass FracturingPressureGradient
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[fracturingPressureGradient] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[fracturingPressureGradient] -->|BelongsToClass| N0002(FracturingPressureGradient) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?fracturingPressureGradient
+WHERE {
+	?fracturingPressureGradient rdf:type ddhub:DrillingDataPoint .
+	?fracturingPressureGradient rdf:type ddhub:FracturingPressureGradient .
+}
+```
+This example assigns a drilling data point to the FracturingPressureGradient prototype.
 ## CollapsePressure <!-- NOUN -->
 - Display name: CollapsePressure
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for CollapsePressure.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis collapsePressure
+DrillingDataPoint:collapsePressure
+collapsePressure BelongsToClass CollapsePressure
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[collapsePressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[collapsePressure] -->|BelongsToClass| N0002(CollapsePressure) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?collapsePressure
+WHERE {
+	?collapsePressure rdf:type ddhub:DrillingDataPoint .
+	?collapsePressure rdf:type ddhub:CollapsePressure .
+}
+```
+This example assigns a drilling data point to the CollapsePressure prototype.
 ## CollapsePressureGradient <!-- NOUN -->
 - Display name: CollapsePressureGradient
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for CollapsePressureGradient.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis collapsePressureGradient
+DrillingDataPoint:collapsePressureGradient
+collapsePressureGradient BelongsToClass CollapsePressureGradient
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[collapsePressureGradient] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[collapsePressureGradient] -->|BelongsToClass| N0002(CollapsePressureGradient) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?collapsePressureGradient
+WHERE {
+	?collapsePressureGradient rdf:type ddhub:DrillingDataPoint .
+	?collapsePressureGradient rdf:type ddhub:CollapsePressureGradient .
+}
+```
+This example assigns a drilling data point to the CollapsePressureGradient prototype.
 ## ShearRate <!-- NOUN -->
 - Display name: Shear rate
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for Shear rate.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis shearRate
+DrillingDataPoint:shearRate
+shearRate BelongsToClass ShearRate
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[shearRate] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[shearRate] -->|BelongsToClass| N0002(ShearRate) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?shearRate
+WHERE {
+	?shearRate rdf:type ddhub:DrillingDataPoint .
+	?shearRate rdf:type ddhub:ShearRate .
+}
+```
+This example assigns a drilling data point to the Shear rate prototype.
 ## ShearStress <!-- NOUN -->
 - Display name: Shear stress
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for Shear stress.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis shearStress
+DrillingDataPoint:shearStress
+shearStress BelongsToClass ShearStress
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[shearStress] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[shearStress] -->|BelongsToClass| N0002(ShearStress) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?shearStress
+WHERE {
+	?shearStress rdf:type ddhub:DrillingDataPoint .
+	?shearStress rdf:type ddhub:ShearStress .
+}
+```
+This example assigns a drilling data point to the Shear stress prototype.
 ## MinimumHorizontalStress <!-- NOUN -->
 - Display name: MinimumHorizontalStress
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for MinimumHorizontalStress.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis minimumHorizontalStress
+DrillingDataPoint:minimumHorizontalStress
+minimumHorizontalStress BelongsToClass MinimumHorizontalStress
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[minimumHorizontalStress] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[minimumHorizontalStress] -->|BelongsToClass| N0002(MinimumHorizontalStress) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?minimumHorizontalStress
+WHERE {
+	?minimumHorizontalStress rdf:type ddhub:DrillingDataPoint .
+	?minimumHorizontalStress rdf:type ddhub:MinimumHorizontalStress .
+}
+```
+This example assigns a drilling data point to the MinimumHorizontalStress prototype.
 ## MinimumHorizontalStressGradient <!-- NOUN -->
 - Display name: MinimumHorizontalStressGradient
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for MinimumHorizontalStressGradient.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis minimumHorizontalStressGradient
+DrillingDataPoint:minimumHorizontalStressGradient
+minimumHorizontalStressGradient BelongsToClass MinimumHorizontalStressGradient
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[minimumHorizontalStressGradient] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[minimumHorizontalStressGradient] -->|BelongsToClass| N0002(MinimumHorizontalStressGradient) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?minimumHorizontalStressGradient
+WHERE {
+	?minimumHorizontalStressGradient rdf:type ddhub:DrillingDataPoint .
+	?minimumHorizontalStressGradient rdf:type ddhub:MinimumHorizontalStressGradient .
+}
+```
+This example assigns a drilling data point to the MinimumHorizontalStressGradient prototype.
 ## OverburdenPressure <!-- NOUN -->
 - Display name: OverburdenPressure
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for OverburdenPressure.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis overburdenPressure
+DrillingDataPoint:overburdenPressure
+overburdenPressure BelongsToClass OverburdenPressure
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[overburdenPressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[overburdenPressure] -->|BelongsToClass| N0002(OverburdenPressure) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?overburdenPressure
+WHERE {
+	?overburdenPressure rdf:type ddhub:DrillingDataPoint .
+	?overburdenPressure rdf:type ddhub:OverburdenPressure .
+}
+```
+This example assigns a drilling data point to the OverburdenPressure prototype.
 ## OverburdenPressureGradient <!-- NOUN -->
 - Display name: OverburdenPressureGradient
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for OverburdenPressureGradient.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis overburdenPressureGradient
+DrillingDataPoint:overburdenPressureGradient
+overburdenPressureGradient BelongsToClass OverburdenPressureGradient
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[overburdenPressureGradient] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[overburdenPressureGradient] -->|BelongsToClass| N0002(OverburdenPressureGradient) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?overburdenPressureGradient
+WHERE {
+	?overburdenPressureGradient rdf:type ddhub:DrillingDataPoint .
+	?overburdenPressureGradient rdf:type ddhub:OverburdenPressureGradient .
+}
+```
+This example assigns a drilling data point to the OverburdenPressureGradient prototype.
 ## BOPOpening <!-- NOUN -->
 - Display name: BOPOpening
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for BOPOpening.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis bOPOpening
+DrillingDataPoint:bOPOpening
+bOPOpening BelongsToClass BOPOpening
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[bOPOpening] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[bOPOpening] -->|BelongsToClass| N0002(BOPOpening) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?bOPOpening
+WHERE {
+	?bOPOpening rdf:type ddhub:DrillingDataPoint .
+	?bOPOpening rdf:type ddhub:BOPOpening .
+}
+```
+This example assigns a drilling data point to the BOPOpening prototype.
 ## BOPPressure <!-- NOUN -->
 - Display name: BOPPressure
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for BOPPressure.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis bOPPressure
+DrillingDataPoint:bOPPressure
+bOPPressure BelongsToClass BOPPressure
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[bOPPressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[bOPPressure] -->|BelongsToClass| N0002(BOPPressure) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?bOPPressure
+WHERE {
+	?bOPPressure rdf:type ddhub:DrillingDataPoint .
+	?bOPPressure rdf:type ddhub:BOPPressure .
+}
+```
+This example assigns a drilling data point to the BOPPressure prototype.
 ## MPDChokeOpening <!-- NOUN -->
 - Display name: MPDChokeOpening
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for MPDChokeOpening.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis mPDChokeOpening
+DrillingDataPoint:mPDChokeOpening
+mPDChokeOpening BelongsToClass MPDChokeOpening
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[mPDChokeOpening] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[mPDChokeOpening] -->|BelongsToClass| N0002(MPDChokeOpening) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?mPDChokeOpening
+WHERE {
+	?mPDChokeOpening rdf:type ddhub:DrillingDataPoint .
+	?mPDChokeOpening rdf:type ddhub:MPDChokeOpening .
+}
+```
+This example assigns a drilling data point to the MPDChokeOpening prototype.
 ## MPDChokePressure <!-- NOUN -->
 - Display name: MPDChokePressure
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for MPDChokePressure.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis mPDChokePressure
+DrillingDataPoint:mPDChokePressure
+mPDChokePressure BelongsToClass MPDChokePressure
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[mPDChokePressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[mPDChokePressure] -->|BelongsToClass| N0002(MPDChokePressure) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?mPDChokePressure
+WHERE {
+	?mPDChokePressure rdf:type ddhub:DrillingDataPoint .
+	?mPDChokePressure rdf:type ddhub:MPDChokePressure .
+}
+```
+This example assigns a drilling data point to the MPDChokePressure prototype.
 ## MPDPumpRate <!-- NOUN -->
 - Display name: MPDPumpRate
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for MPDPumpRate.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis mPDPumpRate
+DrillingDataPoint:mPDPumpRate
+mPDPumpRate BelongsToClass MPDPumpRate
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[mPDPumpRate] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[mPDPumpRate] -->|BelongsToClass| N0002(MPDPumpRate) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?mPDPumpRate
+WHERE {
+	?mPDPumpRate rdf:type ddhub:DrillingDataPoint .
+	?mPDPumpRate rdf:type ddhub:MPDPumpRate .
+}
+```
+This example assigns a drilling data point to the MPDPumpRate prototype.
 ## MPDPumpFlowRate <!-- NOUN -->
 - Display name: MPDPumpFlowRate
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for MPDPumpFlowRate.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis mPDPumpFlowRate
+DrillingDataPoint:mPDPumpFlowRate
+mPDPumpFlowRate BelongsToClass MPDPumpFlowRate
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[mPDPumpFlowRate] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[mPDPumpFlowRate] -->|BelongsToClass| N0002(MPDPumpFlowRate) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?mPDPumpFlowRate
+WHERE {
+	?mPDPumpFlowRate rdf:type ddhub:DrillingDataPoint .
+	?mPDPumpFlowRate rdf:type ddhub:MPDPumpFlowRate .
+}
+```
+This example assigns a drilling data point to the MPDPumpFlowRate prototype.
 ## GasFlowRate <!-- NOUN -->
 - Display name: GasFlowRate
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for GasFlowRate.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis gasFlowRate
+DrillingDataPoint:gasFlowRate
+gasFlowRate BelongsToClass GasFlowRate
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[gasFlowRate] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[gasFlowRate] -->|BelongsToClass| N0002(GasFlowRate) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?gasFlowRate
+WHERE {
+	?gasFlowRate rdf:type ddhub:DrillingDataPoint .
+	?gasFlowRate rdf:type ddhub:GasFlowRate .
+}
+```
+This example assigns a drilling data point to the GasFlowRate prototype.
 ## BackPressurePumpPressure <!-- NOUN -->
 - Display name: BackPressurePumpPressure
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for BackPressurePumpPressure.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis backPressurePumpPressure
+DrillingDataPoint:backPressurePumpPressure
+backPressurePumpPressure BelongsToClass BackPressurePumpPressure
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[backPressurePumpPressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[backPressurePumpPressure] -->|BelongsToClass| N0002(BackPressurePumpPressure) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?backPressurePumpPressure
+WHERE {
+	?backPressurePumpPressure rdf:type ddhub:DrillingDataPoint .
+	?backPressurePumpPressure rdf:type ddhub:BackPressurePumpPressure .
+}
+```
+This example assigns a drilling data point to the BackPressurePumpPressure prototype.
 ## MechanicalSpecificEnergy <!-- NOUN -->
 - Display name: Mechanical Specific Energy
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for Mechanical Specific Energy.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis mechanicalSpecificEnergy
+DrillingDataPoint:mechanicalSpecificEnergy
+mechanicalSpecificEnergy BelongsToClass MechanicalSpecificEnergy
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[mechanicalSpecificEnergy] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[mechanicalSpecificEnergy] -->|BelongsToClass| N0002(MechanicalSpecificEnergy) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?mechanicalSpecificEnergy
+WHERE {
+	?mechanicalSpecificEnergy rdf:type ddhub:DrillingDataPoint .
+	?mechanicalSpecificEnergy rdf:type ddhub:MechanicalSpecificEnergy .
+}
+```
+This example assigns a drilling data point to the Mechanical Specific Energy prototype.
 ## DownholeAxialAcceleration <!-- NOUN -->
 - Display name: Downhole Axial Acceleration
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for Downhole Axial Acceleration.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis downholeAxialAcceleration
+DrillingDataPoint:downholeAxialAcceleration
+downholeAxialAcceleration BelongsToClass DownholeAxialAcceleration
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[downholeAxialAcceleration] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[downholeAxialAcceleration] -->|BelongsToClass| N0002(DownholeAxialAcceleration) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?downholeAxialAcceleration
+WHERE {
+	?downholeAxialAcceleration rdf:type ddhub:DrillingDataPoint .
+	?downholeAxialAcceleration rdf:type ddhub:DownholeAxialAcceleration .
+}
+```
+This example assigns a drilling data point to the Downhole Axial Acceleration prototype.
 ## DownholeAngularAcceleration <!-- NOUN -->
 - Display name: Downhole Angular Acceleration
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for Downhole Angular Acceleration.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis downholeAngularAcceleration
+DrillingDataPoint:downholeAngularAcceleration
+downholeAngularAcceleration BelongsToClass DownholeAngularAcceleration
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[downholeAngularAcceleration] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[downholeAngularAcceleration] -->|BelongsToClass| N0002(DownholeAngularAcceleration) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?downholeAngularAcceleration
+WHERE {
+	?downholeAngularAcceleration rdf:type ddhub:DrillingDataPoint .
+	?downholeAngularAcceleration rdf:type ddhub:DownholeAngularAcceleration .
+}
+```
+This example assigns a drilling data point to the Downhole Angular Acceleration prototype.
 ## StickSlipSeverityIndex <!-- NOUN -->
 - Display name: Stickslip Severity Index
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for Stickslip Severity Index.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis stickSlipSeverityIndex
+DrillingDataPoint:stickSlipSeverityIndex
+stickSlipSeverityIndex BelongsToClass StickSlipSeverityIndex
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stickSlipSeverityIndex] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[stickSlipSeverityIndex] -->|BelongsToClass| N0002(StickSlipSeverityIndex) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stickSlipSeverityIndex
+WHERE {
+	?stickSlipSeverityIndex rdf:type ddhub:DrillingDataPoint .
+	?stickSlipSeverityIndex rdf:type ddhub:StickSlipSeverityIndex .
+}
+```
+This example assigns a drilling data point to the Stickslip Severity Index prototype.
 ## FrictionCoefficient <!-- NOUN -->
 - Display name: Friction coefficient
 - Parent class: [PrototypeData](#PrototypeData)
+- Description: 
+Prototype signal for Friction coefficient.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis frictionCoefficient
+DrillingDataPoint:frictionCoefficient
+frictionCoefficient BelongsToClass FrictionCoefficient
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[frictionCoefficient] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[frictionCoefficient] -->|BelongsToClass| N0002(FrictionCoefficient) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?frictionCoefficient
+WHERE {
+	?frictionCoefficient rdf:type ddhub:DrillingDataPoint .
+	?frictionCoefficient rdf:type ddhub:FrictionCoefficient .
+}
+```
+This example assigns a drilling data point to the Friction coefficient prototype.
 ## MechanicalFrictionCoefficient <!-- NOUN -->
 - Display name: Mechanical Friction coefficient
 - Parent class: [FrictionCoefficient](#FrictionCoefficient)
+- Description: 
+Prototype signal for Mechanical Friction coefficient.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis mechanicalFrictionCoefficient
+DrillingDataPoint:mechanicalFrictionCoefficient
+mechanicalFrictionCoefficient BelongsToClass MechanicalFrictionCoefficient
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[mechanicalFrictionCoefficient] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[mechanicalFrictionCoefficient] -->|BelongsToClass| N0002(MechanicalFrictionCoefficient) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?mechanicalFrictionCoefficient
+WHERE {
+	?mechanicalFrictionCoefficient rdf:type ddhub:DrillingDataPoint .
+	?mechanicalFrictionCoefficient rdf:type ddhub:MechanicalFrictionCoefficient .
+}
+```
+This example assigns a drilling data point to the Mechanical Friction coefficient prototype.
 ## StaticFrictionCoefficient <!-- NOUN -->
 - Display name: Static Friction coefficient
 - Parent class: [MechanicalFrictionCoefficient](#MechanicalFrictionCoefficient)
+- Description: 
+Prototype signal for Static Friction coefficient.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis staticFrictionCoefficient
+DrillingDataPoint:staticFrictionCoefficient
+staticFrictionCoefficient BelongsToClass StaticFrictionCoefficient
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[staticFrictionCoefficient] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[staticFrictionCoefficient] -->|BelongsToClass| N0002(StaticFrictionCoefficient) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?staticFrictionCoefficient
+WHERE {
+	?staticFrictionCoefficient rdf:type ddhub:DrillingDataPoint .
+	?staticFrictionCoefficient rdf:type ddhub:StaticFrictionCoefficient .
+}
+```
+This example assigns a drilling data point to the Static Friction coefficient prototype.
 ## KineticFrictionCoefficient <!-- NOUN -->
 - Display name: Kinetic Friction coefficient
 - Parent class: [MechanicalFrictionCoefficient](#MechanicalFrictionCoefficient)
+- Description: 
+Prototype signal for Kinetic Friction coefficient.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis kineticFrictionCoefficient
+DrillingDataPoint:kineticFrictionCoefficient
+kineticFrictionCoefficient BelongsToClass KineticFrictionCoefficient
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[kineticFrictionCoefficient] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[kineticFrictionCoefficient] -->|BelongsToClass| N0002(KineticFrictionCoefficient) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?kineticFrictionCoefficient
+WHERE {
+	?kineticFrictionCoefficient rdf:type ddhub:DrillingDataPoint .
+	?kineticFrictionCoefficient rdf:type ddhub:KineticFrictionCoefficient .
+}
+```
+This example assigns a drilling data point to the Kinetic Friction coefficient prototype.
 ## AxialFrictionCoefficient <!-- NOUN -->
 - Display name: Axial Friction coefficient
 - Parent class: [MechanicalFrictionCoefficient](#MechanicalFrictionCoefficient)
+- Description: 
+Prototype signal for Axial Friction coefficient.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis axialFrictionCoefficient
+DrillingDataPoint:axialFrictionCoefficient
+axialFrictionCoefficient BelongsToClass AxialFrictionCoefficient
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[axialFrictionCoefficient] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[axialFrictionCoefficient] -->|BelongsToClass| N0002(AxialFrictionCoefficient) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?axialFrictionCoefficient
+WHERE {
+	?axialFrictionCoefficient rdf:type ddhub:DrillingDataPoint .
+	?axialFrictionCoefficient rdf:type ddhub:AxialFrictionCoefficient .
+}
+```
+This example assigns a drilling data point to the Axial Friction coefficient prototype.
 ## RotationalFrictionCoefficient <!-- NOUN -->
 - Display name: Rotational Friction coefficient
 - Parent class: [MechanicalFrictionCoefficient](#MechanicalFrictionCoefficient)
+- Description: 
+Prototype signal for Rotational Friction coefficient.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis rotationalFrictionCoefficient
+DrillingDataPoint:rotationalFrictionCoefficient
+rotationalFrictionCoefficient BelongsToClass RotationalFrictionCoefficient
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rotationalFrictionCoefficient] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[rotationalFrictionCoefficient] -->|BelongsToClass| N0002(RotationalFrictionCoefficient) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rotationalFrictionCoefficient
+WHERE {
+	?rotationalFrictionCoefficient rdf:type ddhub:DrillingDataPoint .
+	?rotationalFrictionCoefficient rdf:type ddhub:RotationalFrictionCoefficient .
+}
+```
+This example assigns a drilling data point to the Rotational Friction coefficient prototype.
 ## HydraulicFrictionCoefficient <!-- NOUN -->
 - Display name: Hydraulic Friction coefficient
 - Parent class: [FrictionCoefficient](#FrictionCoefficient)
+- Description: 
+Prototype signal for Hydraulic Friction coefficient.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis hydraulicFrictionCoefficient
+DrillingDataPoint:hydraulicFrictionCoefficient
+hydraulicFrictionCoefficient BelongsToClass HydraulicFrictionCoefficient
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hydraulicFrictionCoefficient] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[hydraulicFrictionCoefficient] -->|BelongsToClass| N0002(HydraulicFrictionCoefficient) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hydraulicFrictionCoefficient
+WHERE {
+	?hydraulicFrictionCoefficient rdf:type ddhub:DrillingDataPoint .
+	?hydraulicFrictionCoefficient rdf:type ddhub:HydraulicFrictionCoefficient .
+}
+```
+This example assigns a drilling data point to the Hydraulic Friction coefficient prototype.
 ## AnnularHydraulicFrictionCoefficient <!-- NOUN -->
 - Display name: Annular Hydraulic Friction coefficient
 - Parent class: [HydraulicFrictionCoefficient](#HydraulicFrictionCoefficient)
+- Description: 
+Prototype signal for Annular Hydraulic Friction coefficient.
 - Definition set: SignalPrototypes
+- Examples:
+```dwis annularHydraulicFrictionCoefficient
+DrillingDataPoint:annularHydraulicFrictionCoefficient
+annularHydraulicFrictionCoefficient BelongsToClass AnnularHydraulicFrictionCoefficient
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[annularHydraulicFrictionCoefficient] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[annularHydraulicFrictionCoefficient] -->|BelongsToClass| N0002(AnnularHydraulicFrictionCoefficient) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?annularHydraulicFrictionCoefficient
+WHERE {
+	?annularHydraulicFrictionCoefficient rdf:type ddhub:DrillingDataPoint .
+	?annularHydraulicFrictionCoefficient rdf:type ddhub:AnnularHydraulicFrictionCoefficient .
+}
+```
+This example assigns a drilling data point to the Annular Hydraulic Friction coefficient prototype.
 ## Clock <!-- NOUN -->
 - Display name: Clock
 - Parent class: [DWISNoun](#DWISNoun)
@@ -27991,6 +44177,32 @@ Curvilinear abscissa of the bottom of the bit, in the reference frame centered i
 - Description: 
 Represents a clock
 - Definition set: TimeManagement
+- Examples:
+```dwis rigClock
+Clock:rigClock
+rigClock.Resolution = "0.01"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rigClock] -->|BelongsToClass| N0001(Clock) 
+	N0000[rigClock] -->|Resolution| N0002(("0.01")) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rigClock
+WHERE {
+	?rigClock rdf:type ddhub:Clock .
+	?rigClock ddhub:Resolution ?Attribute000 .
+  FILTER (
+	?Attribute000 = "0.01"
+  )
+}
+```
+This example defines a rig clock with 10 ms resolution.
 ## SynchronizationGroup <!-- NOUN -->
 - Display name: SynchronizationGroup
 - Parent class: [DWISNoun](#DWISNoun)
@@ -28001,36 +44213,221 @@ Represents a clock
   - SamplingRate
     - Type: double
     - Description: 
+- Description: 
+A group of signals that share a synchronization scheme and sampling characteristics.
 - Definition set: TimeManagement
+- Examples:
+```dwis syncGroup
+SynchronizationGroup:rigSyncGroup
+rigSyncGroup.SynchronizationDelay = "0.5"
+rigSyncGroup.SamplingRate = "10.0"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rigSyncGroup] -->|BelongsToClass| N0001(SynchronizationGroup) 
+	N0000[rigSyncGroup] -->|SynchronizationDelay| N0002(("0.5")) 
+	N0000[rigSyncGroup] -->|SamplingRate| N0003(("10.0")) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?syncGroup
+WHERE {
+	?rigSyncGroup rdf:type ddhub:SynchronizationGroup .
+	?rigSyncGroup ddhub:SynchronizationDelay ?Attribute000 .
+	?rigSyncGroup ddhub:SamplingRate ?Attribute001 .
+  FILTER (
+	?Attribute000 = "0.5"
+	&& 	?Attribute001 = "10.0"
+  )
+}
+```
+This example defines a synchronization group with 0.5 s delay and 10 Hz sampling.
 ## TimeReference <!-- NOUN -->
 - Display name: TimeReference
 - Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+Base time reference used to interpret timestamps.
 - Definition set: TimeManagement
+- Examples:
+```dwis timeRef
+TimeReference:timeRef
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[timeRef] -->|BelongsToClass| N0001(TimeReference) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?timeRef
+WHERE {
+	?timeRef rdf:type ddhub:TimeReference .
+}
+```
+This example declares a generic time reference.
 ## AbsoluteTimeReference <!-- NOUN -->
 - Display name: AbsoluteTimeReference
 - Parent class: [TimeReference](#TimeReference)
+- Description: 
+Time reference tied to an absolute standard such as UTC or GPS.
 - Definition set: TimeManagement
+- Examples:
+```dwis absoluteRef
+AbsoluteTimeReference:absoluteRef
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[absoluteRef] -->|BelongsToClass| N0001(AbsoluteTimeReference) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?absoluteRef
+WHERE {
+	?absoluteRef rdf:type ddhub:AbsoluteTimeReference .
+}
+```
+This example defines an absolute time reference.
 ## RelativeTimeReference <!-- NOUN -->
 - Display name: RelativeTimeReference
 - Parent class: [TimeReference](#TimeReference)
+- Description: 
+Time reference relative to a local origin or offset.
 - Definition set: TimeManagement
+- Examples:
+```dwis relativeRef
+RelativeTimeReference:relativeRef
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[relativeRef] -->|BelongsToClass| N0001(RelativeTimeReference) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?relativeRef
+WHERE {
+	?relativeRef rdf:type ddhub:RelativeTimeReference .
+}
+```
+This example defines a relative time reference.
 ## GPSReference <!-- NOUN -->
 - Display name: AbsoluteTimeReference
 - Parent class: [TimeReference](#TimeReference)
+- Description: 
+Time reference derived from GPS.
 - Definition set: TimeManagement
+- Examples:
+```dwis gpsRef
+GPSReference:gpsTime
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[gpsTime] -->|BelongsToClass| N0001(GPSReference) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?gpsRef
+WHERE {
+	?gpsTime rdf:type ddhub:GPSReference .
+}
+```
+This example defines a GPS time reference.
 ## UTCReference <!-- NOUN -->
 - Display name: AbsoluteTimeReference
 - Parent class: [TimeReference](#TimeReference)
+- Description: 
+Time reference based on coordinated universal time.
 - Definition set: TimeManagement
+- Examples:
+```dwis utcRef
+UTCReference:utcTime
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[utcTime] -->|BelongsToClass| N0001(UTCReference) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?utcRef
+WHERE {
+	?utcTime rdf:type ddhub:UTCReference .
+}
+```
+This example defines a UTC time reference.
 ## LocalTimeReference <!-- NOUN -->
 - Display name: LocalTimeReference
 - Parent class: [RelativeTimeReference](#RelativeTimeReference)
+- Description: 
+Time reference with respect to local clock or time zone.
 - Definition set: TimeManagement
+- Examples:
+```dwis localRef
+LocalTimeReference:localTime
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[localTime] -->|BelongsToClass| N0001(LocalTimeReference) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?localRef
+WHERE {
+	?localTime rdf:type ddhub:LocalTimeReference .
+}
+```
+This example defines a local time reference.
 ## TimeSpanReference <!-- NOUN -->
 - Display name: TimeSpanReference
 - Parent class: [RelativeTimeReference](#RelativeTimeReference)
+- Description: 
+Reference representing elapsed time from a defined event.
 - Definition set: TimeManagement
 - Examples:
+```dwis spanRef
+TimeSpanReference:elapsedSinceSpud
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[elapsedSinceSpud] -->|BelongsToClass| N0001(TimeSpanReference) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?spanRef
+WHERE {
+	?elapsedSinceSpud rdf:type ddhub:TimeSpanReference .
+}
+```
+This example defines a time span reference since spud.
   
 ## SignalUncertainty <!-- NOUN -->
 - Display name: SignalUncertainty
@@ -28039,6 +44436,28 @@ Represents a clock
 Represent the uncertainty associated to a `DrillingDataPoint`.
 - Definition set: Uncertainty
 - Examples:
+```dwis signalUncertainty
+DrillingDataPoint:signalUncertainty
+signalUncertainty BelongsToClass SignalUncertainty
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[signalUncertainty] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[signalUncertainty] -->|BelongsToClass| N0002(SignalUncertainty) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?signalUncertainty
+WHERE {
+	?signalUncertainty rdf:type ddhub:DrillingDataPoint .
+	?signalUncertainty rdf:type ddhub:SignalUncertainty .
+}
+```
+This example links a drilling data point to the SignalUncertainty definition.
 This noun is not intended to be used directly in describing a signal. However, it can be useful when formulating a query and then it serves as a generic way to check if there are facts related to uncertainty description for a `DrillingDataPoint`.
 ```dwis dataPoint
 DrillingDataPoint:dataPoint
@@ -57026,7 +73445,7 @@ WHERE {
 - Description: 
 This verb is used to describe a general dependence relationship between a `DrillingDataPoint` and something else.
 - Examples:
-```dwis DerrickFloorElevation HeaveElevation TideElevation
+```dwis IsDependentOnExample
 DerickFloorVerticalLocation:DerrickFloor
 DerivedMeasurement:DerrickFloorElevation
 Measurement:HeaveElevation
@@ -57057,7 +73476,7 @@ An example SparQL query looks like this:
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX ddhub: <http://ddhub.no/>
 PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
-SELECT ?DerrickFloorElevation, ?HeaveElevation, ?TideElevation
+SELECT ?IsDependentOnExample
 WHERE {
 	?DerrickFloor rdf:type ddhub:DerickFloorVerticalLocation .
 	?DerrickFloorElevation rdf:type ddhub:DerivedMeasurement .
@@ -57075,6 +73494,63 @@ WHERE {
 ```
 In this example, it is described that the derrick floor elevation, `DerrickFloorElevation`, 
 depends on the heave measurement, `HeaveElevation`, and the tide measurement, `TideElevation`.
+```dwis SWOBExample
+DynamicDrillingSignal:WOB
+PhysicalData:WOB#01
+WOB#01 BelongsToClass ContinuousDataType
+WOB#01 HasDynamicValue WOB
+WOB#01 IsOfMeasurableQuantity WeightOnBitDrilling
+MovingAverage:movingAverageWOB
+WOB#01 IsTransformationOutput movingAverageWOB
+TopOfStringReferenceLocation:tos#01
+WOB#01 IsPhysicallyLocatedAt tos#01
+BottomOfStringReferenceLocation:bos#01
+HoleBottomLocation:bh#01
+WOB#01 IsDependentOn bos#01
+WOB#01 IsDependentOn bh#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[WOB] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[WOB#01] -->|BelongsToClass| N0003(PhysicalData) 
+	N0002[WOB#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[WOB#01] -->|HasDynamicValue| N0000((WOB)) 
+	N0002[WOB#01] -->|IsOfMeasurableQuantity| N0005((WeightOnBitDrilling)) 
+	N0006[movingAverageWOB] -->|BelongsToClass| N0007(MovingAverage) 
+	N0002[WOB#01] -->|IsTransformationOutput| N0006((movingAverageWOB)) 
+	N0008[tos#01] -->|BelongsToClass| N0009(TopOfStringReferenceLocation) 
+	N0002[WOB#01] -->|IsPhysicallyLocatedAt| N0008((tos#01)) 
+	N0010[bos#01] -->|BelongsToClass| N0011(BottomOfStringReferenceLocation) 
+	N0012[bh#01] -->|BelongsToClass| N0013(HoleBottomLocation) 
+	N0002[WOB#01] -->|IsDependentOn| N0010((bos#01)) 
+	N0002[WOB#01] -->|IsDependentOn| N0012((bh#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?SWOBExample
+WHERE {
+	?WOB rdf:type ddhub:DynamicDrillingSignal .
+	?WOB#01 rdf:type ddhub:PhysicalData .
+	?WOB#01 rdf:type ddhub:ContinuousDataType .
+	?movingAverageWOB rdf:type ddhub:MovingAverage .
+	?tos#01 rdf:type ddhub:TopOfStringReferenceLocation .
+	?bos#01 rdf:type ddhub:BottomOfStringReferenceLocation .
+	?bh#01 rdf:type ddhub:HoleBottomLocation .
+  FILTER (
+	?Attribute000 = WOB
+	&& 	?Attribute001 = WeightOnBitDrilling
+	&& 	?Attribute002 = movingAverageWOB
+	&& 	?Attribute003 = tos#01
+	&& 	?Attribute004 = bos#01
+	&& 	?Attribute005 = bh#01
+  )
+}
+```
+In this example, it is described that the surface weight on bit drilling data point, `WOB#01`, depends on bottom of string location and hole bottom location.
 ## IsObservableFrom <!-- VERB -->
 - Display name: IsObservableFrom
 - Parent verb: [DWISVerb](#DWISVerb)
@@ -57153,6 +73629,146 @@ WHERE {
 In this example, it is described that `MeasuredDrillingFluidDensity`, which is a measurement of the measurable quantity
 `DrillingDensity` has a dependence on pressure and temperature, and that the associated measured pressure can be found
 at `MeasuredPressure`.
+```dwis FlowCurveExample
+DynamicDrillingSignal:BaraLogixAtActivePitFlowCurveAtMeasuredTP
+DirectMeasurement:BaraLogixAtActivePitFlowCurveAtMeasuredTP#01
+BaraLogixAtActivePitFlowCurveAtMeasuredTP#01 BelongsToClass JSonDataType
+BaraLogixAtActivePitFlowCurveAtMeasuredTP#01 BelongsToClass FlowCurve
+BaraLogixAtActivePitFlowCurveAtMeasuredTP#01 HasDynamicValue BaraLogixAtActivePitFlowCurveAtMeasuredTP
+TopSideTelemetry:topSideTelemetry
+BaraLogixAtActivePitFlowCurveAtMeasuredTP#01 IsTransmittedBy topSideTelemetry
+MovingAverage:MovingAverageBaraLogixAtActivePitFlowCurveAtMeasuredTP
+BaraLogixAtActivePitFlowCurveAtMeasuredTP#01 IsTransformationOutput MovingAverageBaraLogixAtActivePitFlowCurveAtMeasuredTP
+ConcentricCylindersMeasurementPrinciple:concentricCylindersMeasurementPrinciple
+BaraLogixAtActivePitFlowCurveAtMeasuredTP#01 UsesFlowMeasurementPrinciple concentricCylindersMeasurementPrinciple
+MeasurementDevice:BaraLogixAtActivePitMeasurementDevice#01
+BaraLogixAtActivePitMeasurementDevice#01 BelongsToClass HydraulicLogicalElement
+BaraLogixAtActivePitFlowCurveAtMeasuredTP#01 IsMeasuredBy BaraLogixAtActivePitMeasurementDevice#01
+ActivePitLogical:ActivePitLogical#01
+BaraLogixAtActivePitMeasurementDevice#01 IsHydraulicConnectedTo ActivePitLogical#01
+BaraLogixAtActivePitFlowCurveAtMeasuredTP#01 IsHydraulicallyLocatedAt ActivePitLogical#01
+Measurement:BaraLogixAtActivePitMeasuredTemperature#01
+BaraLogixAtActivePitMeasuredTemperature#01 BelongsToClass ContinuousDataType
+BaraLogixAtActivePitMeasuredTemperature#01 IsOfMeasurableQuantity TemperatureDrilling
+MovingAverage:MovingAverageBaraLogixAtActivePitMeasuredTemperature
+BaraLogixAtActivePitMeasuredTemperature#01 IsTransformationOutput MovingAverageBaraLogixAtActivePitMeasuredTemperature
+BaraLogixAtActivePitMeasuredTemperature#01 IsMeasuredBy BaraLogixAtActivePitMeasurementDevice#01
+BaraLogixAtActivePitMeasuredTemperature#01 IsHydraulicallyLocatedAt ActivePitLogical#01
+BaraLogixAtActivePitFlowCurveAtMeasuredTP#01 HasTemperatureReference BaraLogixAtActivePitMeasuredTemperature#01
+Measurement:BaraLogixAtActivePitMeasuredPressure#01
+BaraLogixAtActivePitMeasuredPressure#01 BelongsToClass ContinuousDataType
+BaraLogixAtActivePitMeasuredPressure#01 IsOfMeasurableQuantity PressureDrilling
+MovingAverage:MovingAverageBaraLogixAtActivePitMeasuredPressure
+BaraLogixAtActivePitMeasuredPressure#01 IsTransformationOutput MovingAverageBaraLogixAtActivePitMeasuredPressure
+BaraLogixAtActivePitMeasuredPressure#01 IsMeasuredBy BaraLogixAtActivePitMeasurementDevice#01
+BaraLogixAtActivePitMeasuredPressure#01 IsHydraulicallyLocatedAt ActivePitLogical#01
+BaraLogixAtActivePitFlowCurveAtMeasuredTP#01 HasPressureReference BaraLogixAtActivePitMeasuredPressure#01
+TopOfStringJunction:topOfStringJunction#01
+HydraulicBranch:inletHydraulicBranch#01
+topOfStringJunction#01 HasUpstreamBranch inletHydraulicBranch#01
+BaraLogixAtActivePitFlowCurveAtMeasuredTP#01 IsAssociatedToHydraulicBranch inletHydraulicBranch#01
+BaraLogixAtActivePitMeasuredTemperature#01 IsAssociatedToHydraulicBranch inletHydraulicBranch#01
+BaraLogixAtActivePitMeasuredPressure#01 IsAssociatedToHydraulicBranch inletHydraulicBranch#01
+InstrumentationCompany:Baroid#01
+BaraLogixAtActivePitFlowCurveAtMeasuredTP#01 IsProvidedBy Baroid#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[BaraLogixAtActivePitFlowCurveAtMeasuredTP] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[BaraLogixAtActivePitFlowCurveAtMeasuredTP#01] -->|BelongsToClass| N0003(DirectMeasurement) 
+	N0002[BaraLogixAtActivePitFlowCurveAtMeasuredTP#01] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[BaraLogixAtActivePitFlowCurveAtMeasuredTP#01] -->|BelongsToClass| N0005(FlowCurve) 
+	N0002[BaraLogixAtActivePitFlowCurveAtMeasuredTP#01] -->|HasDynamicValue| N0000((BaraLogixAtActivePitFlowCurveAtMeasuredTP)) 
+	N0006[topSideTelemetry] -->|BelongsToClass| N0007(TopSideTelemetry) 
+	N0002[BaraLogixAtActivePitFlowCurveAtMeasuredTP#01] -->|IsTransmittedBy| N0006((topSideTelemetry)) 
+	N0008[MovingAverageBaraLogixAtActivePitFlowCurveAtMeasuredTP] -->|BelongsToClass| N0009(MovingAverage) 
+	N0002[BaraLogixAtActivePitFlowCurveAtMeasuredTP#01] -->|IsTransformationOutput| N0008((MovingAverageBaraLogixAtActivePitFlowCurveAtMeasuredTP)) 
+	N0010[concentricCylindersMeasurementPrinciple] -->|BelongsToClass| N0011(ConcentricCylindersMeasurementPrinciple) 
+	N0002[BaraLogixAtActivePitFlowCurveAtMeasuredTP#01] -->|UsesFlowMeasurementPrinciple| N0010((concentricCylindersMeasurementPrinciple)) 
+	N0012[BaraLogixAtActivePitMeasurementDevice#01] -->|BelongsToClass| N0013(MeasurementDevice) 
+	N0012[BaraLogixAtActivePitMeasurementDevice#01] -->|BelongsToClass| N0014(HydraulicLogicalElement) 
+	N0002[BaraLogixAtActivePitFlowCurveAtMeasuredTP#01] -->|IsMeasuredBy| N0012((BaraLogixAtActivePitMeasurementDevice#01)) 
+	N0015[ActivePitLogical#01] -->|BelongsToClass| N0016(ActivePitLogical) 
+	N0012[BaraLogixAtActivePitMeasurementDevice#01] -->|IsHydraulicConnectedTo| N0015((ActivePitLogical#01)) 
+	N0002[BaraLogixAtActivePitFlowCurveAtMeasuredTP#01] -->|IsHydraulicallyLocatedAt| N0015((ActivePitLogical#01)) 
+	N0017[BaraLogixAtActivePitMeasuredTemperature#01] -->|BelongsToClass| N0018(Measurement) 
+	N0017[BaraLogixAtActivePitMeasuredTemperature#01] -->|BelongsToClass| N0019(ContinuousDataType) 
+	N0017[BaraLogixAtActivePitMeasuredTemperature#01] -->|IsOfMeasurableQuantity| N0020((TemperatureDrilling)) 
+	N0021[MovingAverageBaraLogixAtActivePitMeasuredTemperature] -->|BelongsToClass| N0009(MovingAverage) 
+	N0017[BaraLogixAtActivePitMeasuredTemperature#01] -->|IsTransformationOutput| N0021((MovingAverageBaraLogixAtActivePitMeasuredTemperature)) 
+	N0017[BaraLogixAtActivePitMeasuredTemperature#01] -->|IsMeasuredBy| N0012((BaraLogixAtActivePitMeasurementDevice#01)) 
+	N0017[BaraLogixAtActivePitMeasuredTemperature#01] -->|IsHydraulicallyLocatedAt| N0015((ActivePitLogical#01)) 
+	N0002[BaraLogixAtActivePitFlowCurveAtMeasuredTP#01] -->|HasTemperatureReference| N0017((BaraLogixAtActivePitMeasuredTemperature#01)) 
+	N0022[BaraLogixAtActivePitMeasuredPressure#01] -->|BelongsToClass| N0018(Measurement) 
+	N0022[BaraLogixAtActivePitMeasuredPressure#01] -->|BelongsToClass| N0019(ContinuousDataType) 
+	N0022[BaraLogixAtActivePitMeasuredPressure#01] -->|IsOfMeasurableQuantity| N0023((PressureDrilling)) 
+	N0024[MovingAverageBaraLogixAtActivePitMeasuredPressure] -->|BelongsToClass| N0009(MovingAverage) 
+	N0022[BaraLogixAtActivePitMeasuredPressure#01] -->|IsTransformationOutput| N0024((MovingAverageBaraLogixAtActivePitMeasuredPressure)) 
+	N0022[BaraLogixAtActivePitMeasuredPressure#01] -->|IsMeasuredBy| N0012((BaraLogixAtActivePitMeasurementDevice#01)) 
+	N0022[BaraLogixAtActivePitMeasuredPressure#01] -->|IsHydraulicallyLocatedAt| N0015((ActivePitLogical#01)) 
+	N0002[BaraLogixAtActivePitFlowCurveAtMeasuredTP#01] -->|HasPressureReference| N0022((BaraLogixAtActivePitMeasuredPressure#01)) 
+	N0025[topOfStringJunction#01] -->|BelongsToClass| N0026(TopOfStringJunction) 
+	N0027[inletHydraulicBranch#01] -->|BelongsToClass| N0028(HydraulicBranch) 
+	N0025[topOfStringJunction#01] -->|HasUpstreamBranch| N0027((inletHydraulicBranch#01)) 
+	N0002[BaraLogixAtActivePitFlowCurveAtMeasuredTP#01] -->|IsAssociatedToHydraulicBranch| N0027((inletHydraulicBranch#01)) 
+	N0017[BaraLogixAtActivePitMeasuredTemperature#01] -->|IsAssociatedToHydraulicBranch| N0027((inletHydraulicBranch#01)) 
+	N0022[BaraLogixAtActivePitMeasuredPressure#01] -->|IsAssociatedToHydraulicBranch| N0027((inletHydraulicBranch#01)) 
+	N0029[Baroid#01] -->|BelongsToClass| N0030(InstrumentationCompany) 
+	N0002[BaraLogixAtActivePitFlowCurveAtMeasuredTP#01] -->|IsProvidedBy| N0029((Baroid#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?FlowCurveExample
+WHERE {
+	?BaraLogixAtActivePitFlowCurveAtMeasuredTP rdf:type ddhub:DynamicDrillingSignal .
+	?BaraLogixAtActivePitFlowCurveAtMeasuredTP#01 rdf:type ddhub:DirectMeasurement .
+	?BaraLogixAtActivePitFlowCurveAtMeasuredTP#01 rdf:type ddhub:JSonDataType .
+	?BaraLogixAtActivePitFlowCurveAtMeasuredTP#01 rdf:type ddhub:FlowCurve .
+	?topSideTelemetry rdf:type ddhub:TopSideTelemetry .
+	?MovingAverageBaraLogixAtActivePitFlowCurveAtMeasuredTP rdf:type ddhub:MovingAverage .
+	?concentricCylindersMeasurementPrinciple rdf:type ddhub:ConcentricCylindersMeasurementPrinciple .
+	?BaraLogixAtActivePitMeasurementDevice#01 rdf:type ddhub:MeasurementDevice .
+	?BaraLogixAtActivePitMeasurementDevice#01 rdf:type ddhub:HydraulicLogicalElement .
+	?ActivePitLogical#01 rdf:type ddhub:ActivePitLogical .
+	?BaraLogixAtActivePitMeasuredTemperature#01 rdf:type ddhub:Measurement .
+	?BaraLogixAtActivePitMeasuredTemperature#01 rdf:type ddhub:ContinuousDataType .
+	?MovingAverageBaraLogixAtActivePitMeasuredTemperature rdf:type ddhub:MovingAverage .
+	?BaraLogixAtActivePitMeasuredPressure#01 rdf:type ddhub:Measurement .
+	?BaraLogixAtActivePitMeasuredPressure#01 rdf:type ddhub:ContinuousDataType .
+	?MovingAverageBaraLogixAtActivePitMeasuredPressure rdf:type ddhub:MovingAverage .
+	?topOfStringJunction#01 rdf:type ddhub:TopOfStringJunction .
+	?inletHydraulicBranch#01 rdf:type ddhub:HydraulicBranch .
+	?Baroid#01 rdf:type ddhub:InstrumentationCompany .
+  FILTER (
+	?Attribute000 = BaraLogixAtActivePitFlowCurveAtMeasuredTP
+	&& 	?Attribute001 = topSideTelemetry
+	&& 	?Attribute002 = MovingAverageBaraLogixAtActivePitFlowCurveAtMeasuredTP
+	&& 	?Attribute003 = concentricCylindersMeasurementPrinciple
+	&& 	?Attribute004 = BaraLogixAtActivePitMeasurementDevice#01
+	&& 	?Attribute005 = ActivePitLogical#01
+	&& 	?Attribute006 = ActivePitLogical#01
+	&& 	?Attribute007 = TemperatureDrilling
+	&& 	?Attribute008 = MovingAverageBaraLogixAtActivePitMeasuredTemperature
+	&& 	?Attribute009 = BaraLogixAtActivePitMeasurementDevice#01
+	&& 	?Attribute010 = ActivePitLogical#01
+	&& 	?Attribute011 = BaraLogixAtActivePitMeasuredTemperature#01
+	&& 	?Attribute012 = PressureDrilling
+	&& 	?Attribute013 = MovingAverageBaraLogixAtActivePitMeasuredPressure
+	&& 	?Attribute014 = BaraLogixAtActivePitMeasurementDevice#01
+	&& 	?Attribute015 = ActivePitLogical#01
+	&& 	?Attribute016 = BaraLogixAtActivePitMeasuredPressure#01
+	&& 	?Attribute017 = inletHydraulicBranch#01
+	&& 	?Attribute018 = inletHydraulicBranch#01
+	&& 	?Attribute019 = inletHydraulicBranch#01
+	&& 	?Attribute020 = inletHydraulicBranch#01
+	&& 	?Attribute021 = Baroid#01
+  )
+}
+```
 ## HasTemperatureReference <!-- VERB -->
 - Display name: HasTemperatureReference
 - Parent verb: [IsDependentOn](#IsDependentOn)
@@ -57206,6 +73822,170 @@ WHERE {
 In this example, it is described that `MeasuredDrillingFluidDensity`, which is a measurement of the measurable quantity
 `DrillingDensity` has a dependence on pressure and temperature, and that the associated measured temperaure can be found
 at `MeasuredTemperature`.
+```dwis DensityExample
+DynamicDrillingSignal:BaraLogixAtActivePitDensityCoriolisFlowmeter
+DerivedMeasurement:BaraLogixAtActivePitDensityCoriolisFlowmeter#01
+BaraLogixAtActivePitDensityCoriolisFlowmeter#01 BelongsToClass ContinuousDataType
+BaraLogixAtActivePitDensityCoriolisFlowmeter#01 HasDynamicValue BaraLogixAtActivePitDensityCoriolisFlowmeter
+BaraLogixAtActivePitDensityCoriolisFlowmeter#01 IsOfMeasurableQuantity MassDensityDrilling
+TopSideTelemetry:topSideTelemetry
+BaraLogixAtActivePitDensityCoriolisFlowmeter#01 IsTransmittedBy topSideTelemetry
+MovingAverage:MovingAverageBaraLogixAtActivePitDensityCoriolisFlowmeter
+BaraLogixAtActivePitDensityCoriolisFlowmeter#01 IsTransformationOutput MovingAverageBaraLogixAtActivePitDensityCoriolisFlowmeter
+DynamicDrillingSignal:Sigma_BaraLogixDensityCoriolisFlowmeter
+DrillingDataPoint:Sigma_BaraLogixDensityCoriolisFlowmeter#01
+Sigma_BaraLogixDensityCoriolisFlowmeter#01 BelongsToClass ContinuousDataType
+Sigma_BaraLogixDensityCoriolisFlowmeter#01 HasDynamicValue Sigma_BaraLogixDensityCoriolisFlowmeter
+Sigma_BaraLogixDensityCoriolisFlowmeter#01 IsOfMeasurableQuantity MassDensityDrilling
+GaussianUncertainty:GaussianUncertaintyBaraLogixAtActivePitDensityCoriolisFlowmeter#01
+BaraLogixAtActivePitDensityCoriolisFlowmeter#01 HasUncertainty GaussianUncertaintyBaraLogixAtActivePitDensityCoriolisFlowmeter#01
+GaussianUncertaintyBaraLogixAtActivePitDensityCoriolisFlowmeter#01 HasUncertaintyMean BaraLogixAtActivePitDensityCoriolisFlowmeter#01
+GaussianUncertaintyBaraLogixAtActivePitDensityCoriolisFlowmeter#01 HasUncertaintyStandardDeviation Sigma_BaraLogixDensityCoriolisFlowmeter#01
+ResonantMeasurementPrinciple:VibratingTubeCoriolisFlowmeterPrinciple
+BaraLogixAtActivePitDensityCoriolisFlowmeter#01 UsesFlowMeasurementPrinciple VibratingTubeCoriolisFlowmeterPrinciple
+MeasurementDevice:BaraLogixAtActivePitMeasurementDevice#01
+BaraLogixAtActivePitMeasurementDevice#01 BelongsToClass HydraulicLogicalElement
+BaraLogixAtActivePitMeasurementDevice#01 IsHydraulicConnectedTo ActivePitLogical#01
+BaraLogixAtActivePitDensityCoriolisFlowmeter#01 IsMeasuredBy BaraLogixAtActivePitMeasurementDevice#01
+BaraLogixAtActivePitDensityCoriolisFlowmeter#01 IsHydraulicallyLocatedAt ActivePitLogical#01
+Measurement:BaraLogixAtActivePitMeasuredTemperature#01
+BaraLogixAtActivePitMeasuredTemperature#01 BelongsToClass ContinuousDataType
+BaraLogixAtActivePitMeasuredTemperature#01 IsOfMeasurableQuantity TemperatureDrilling
+MovingAverage:MovingAverageBaraLogixAtActivePitMeasuredTemperature
+BaraLogixAtActivePitMeasuredTemperature#01 IsTransformationOutput MovingAverageBaraLogixAtActivePitMeasuredTemperature
+BaraLogixAtActivePitMeasuredTemperature#01 IsMeasuredBy BaraLogixAtActivePitMeasurementDevice#01
+BaraLogixAtActivePitMeasuredTemperature#01 IsHydraulicallyLocatedAt ActivePitLogical#01
+BaraLogixAtActivePitDensityCoriolisFlowmeter#01 HasTemperatureReference BaraLogixAtActivePitMeasuredTemperature#01
+Measurement:BaraLogixAtActivePitMeasuredPressure#01
+BaraLogixAtActivePitMeasuredPressure#01 BelongsToClass ContinuousDataType
+BaraLogixAtActivePitMeasuredPressure#01 IsOfMeasurableQuantity PressureDrilling
+MovingAverage:MovingAverageBaraLogixAtActivePitMeasuredPressure
+BaraLogixAtActivePitMeasuredPressure#01 IsTransformationOutput MovingAverageBaraLogixAtActivePitMeasuredPressure
+BaraLogixAtActivePitMeasuredPressure#01 IsMeasuredBy BaraLogixAtActivePitMeasurementDevice#01
+BaraLogixAtActivePitMeasuredPressure#01 IsHydraulicallyLocatedAt ActivePitLogical#01
+BaraLogixAtActivePitDensityCoriolisFlowmeter#01 HasPressureReference BaraLogixAtActivePitMeasuredPressure#01
+TopOfStringJunction:topOfStringJunction#01
+HydraulicBranch:inletHydraulicBranch#01
+topOfStringJunction#01 HasUpstreamBranch inletHydraulicBranch#01
+BaraLogixAtActivePitDensityCoriolisFlowmeter#01 IsAssociatedToHydraulicBranch inletHydraulicBranch#01
+BaraLogixAtActivePitMeasuredTemperature#01 IsAssociatedToHydraulicBranch inletHydraulicBranch#01
+BaraLogixAtActivePitMeasuredPressure#01 IsAssociatedToHydraulicBranch inletHydraulicBranch#01
+InstrumentationCompany:Baroid#01
+BaraLogixAtActivePitDensityCoriolisFlowmeter#01 IsProvidedBy Baroid#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[BaraLogixAtActivePitDensityCoriolisFlowmeter] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[BaraLogixAtActivePitDensityCoriolisFlowmeter#01] -->|BelongsToClass| N0003(DerivedMeasurement) 
+	N0002[BaraLogixAtActivePitDensityCoriolisFlowmeter#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[BaraLogixAtActivePitDensityCoriolisFlowmeter#01] -->|HasDynamicValue| N0000((BaraLogixAtActivePitDensityCoriolisFlowmeter)) 
+	N0002[BaraLogixAtActivePitDensityCoriolisFlowmeter#01] -->|IsOfMeasurableQuantity| N0005((MassDensityDrilling)) 
+	N0006[topSideTelemetry] -->|BelongsToClass| N0007(TopSideTelemetry) 
+	N0002[BaraLogixAtActivePitDensityCoriolisFlowmeter#01] -->|IsTransmittedBy| N0006((topSideTelemetry)) 
+	N0008[MovingAverageBaraLogixAtActivePitDensityCoriolisFlowmeter] -->|BelongsToClass| N0009(MovingAverage) 
+	N0002[BaraLogixAtActivePitDensityCoriolisFlowmeter#01] -->|IsTransformationOutput| N0008((MovingAverageBaraLogixAtActivePitDensityCoriolisFlowmeter)) 
+	N0010[Sigma_BaraLogixDensityCoriolisFlowmeter] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0011[Sigma_BaraLogixDensityCoriolisFlowmeter#01] -->|BelongsToClass| N0012(DrillingDataPoint) 
+	N0011[Sigma_BaraLogixDensityCoriolisFlowmeter#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0011[Sigma_BaraLogixDensityCoriolisFlowmeter#01] -->|HasDynamicValue| N0010((Sigma_BaraLogixDensityCoriolisFlowmeter)) 
+	N0011[Sigma_BaraLogixDensityCoriolisFlowmeter#01] -->|IsOfMeasurableQuantity| N0005((MassDensityDrilling)) 
+	N0013[GaussianUncertaintyBaraLogixAtActivePitDensityCoriolisFlowmeter#01] -->|BelongsToClass| N0014(GaussianUncertainty) 
+	N0002[BaraLogixAtActivePitDensityCoriolisFlowmeter#01] -->|HasUncertainty| N0013((GaussianUncertaintyBaraLogixAtActivePitDensityCoriolisFlowmeter#01)) 
+	N0013[GaussianUncertaintyBaraLogixAtActivePitDensityCoriolisFlowmeter#01] -->|HasUncertaintyMean| N0002((BaraLogixAtActivePitDensityCoriolisFlowmeter#01)) 
+	N0013[GaussianUncertaintyBaraLogixAtActivePitDensityCoriolisFlowmeter#01] -->|HasUncertaintyStandardDeviation| N0011((Sigma_BaraLogixDensityCoriolisFlowmeter#01)) 
+	N0015[VibratingTubeCoriolisFlowmeterPrinciple] -->|BelongsToClass| N0016(ResonantMeasurementPrinciple) 
+	N0002[BaraLogixAtActivePitDensityCoriolisFlowmeter#01] -->|UsesFlowMeasurementPrinciple| N0015((VibratingTubeCoriolisFlowmeterPrinciple)) 
+	N0017[BaraLogixAtActivePitMeasurementDevice#01] -->|BelongsToClass| N0018(MeasurementDevice) 
+	N0017[BaraLogixAtActivePitMeasurementDevice#01] -->|BelongsToClass| N0019(HydraulicLogicalElement) 
+	N0017[BaraLogixAtActivePitMeasurementDevice#01] -->|IsHydraulicConnectedTo| N0020((ActivePitLogical#01)) 
+	N0002[BaraLogixAtActivePitDensityCoriolisFlowmeter#01] -->|IsMeasuredBy| N0017((BaraLogixAtActivePitMeasurementDevice#01)) 
+	N0002[BaraLogixAtActivePitDensityCoriolisFlowmeter#01] -->|IsHydraulicallyLocatedAt| N0020((ActivePitLogical#01)) 
+	N0021[BaraLogixAtActivePitMeasuredTemperature#01] -->|BelongsToClass| N0022(Measurement) 
+	N0021[BaraLogixAtActivePitMeasuredTemperature#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0021[BaraLogixAtActivePitMeasuredTemperature#01] -->|IsOfMeasurableQuantity| N0023((TemperatureDrilling)) 
+	N0024[MovingAverageBaraLogixAtActivePitMeasuredTemperature] -->|BelongsToClass| N0009(MovingAverage) 
+	N0021[BaraLogixAtActivePitMeasuredTemperature#01] -->|IsTransformationOutput| N0024((MovingAverageBaraLogixAtActivePitMeasuredTemperature)) 
+	N0021[BaraLogixAtActivePitMeasuredTemperature#01] -->|IsMeasuredBy| N0017((BaraLogixAtActivePitMeasurementDevice#01)) 
+	N0021[BaraLogixAtActivePitMeasuredTemperature#01] -->|IsHydraulicallyLocatedAt| N0020((ActivePitLogical#01)) 
+	N0002[BaraLogixAtActivePitDensityCoriolisFlowmeter#01] -->|HasTemperatureReference| N0021((BaraLogixAtActivePitMeasuredTemperature#01)) 
+	N0025[BaraLogixAtActivePitMeasuredPressure#01] -->|BelongsToClass| N0022(Measurement) 
+	N0025[BaraLogixAtActivePitMeasuredPressure#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0025[BaraLogixAtActivePitMeasuredPressure#01] -->|IsOfMeasurableQuantity| N0026((PressureDrilling)) 
+	N0027[MovingAverageBaraLogixAtActivePitMeasuredPressure] -->|BelongsToClass| N0009(MovingAverage) 
+	N0025[BaraLogixAtActivePitMeasuredPressure#01] -->|IsTransformationOutput| N0027((MovingAverageBaraLogixAtActivePitMeasuredPressure)) 
+	N0025[BaraLogixAtActivePitMeasuredPressure#01] -->|IsMeasuredBy| N0017((BaraLogixAtActivePitMeasurementDevice#01)) 
+	N0025[BaraLogixAtActivePitMeasuredPressure#01] -->|IsHydraulicallyLocatedAt| N0020((ActivePitLogical#01)) 
+	N0002[BaraLogixAtActivePitDensityCoriolisFlowmeter#01] -->|HasPressureReference| N0025((BaraLogixAtActivePitMeasuredPressure#01)) 
+	N0028[topOfStringJunction#01] -->|BelongsToClass| N0029(TopOfStringJunction) 
+	N0030[inletHydraulicBranch#01] -->|BelongsToClass| N0031(HydraulicBranch) 
+	N0028[topOfStringJunction#01] -->|HasUpstreamBranch| N0030((inletHydraulicBranch#01)) 
+	N0002[BaraLogixAtActivePitDensityCoriolisFlowmeter#01] -->|IsAssociatedToHydraulicBranch| N0030((inletHydraulicBranch#01)) 
+	N0021[BaraLogixAtActivePitMeasuredTemperature#01] -->|IsAssociatedToHydraulicBranch| N0030((inletHydraulicBranch#01)) 
+	N0025[BaraLogixAtActivePitMeasuredPressure#01] -->|IsAssociatedToHydraulicBranch| N0030((inletHydraulicBranch#01)) 
+	N0032[Baroid#01] -->|BelongsToClass| N0033(InstrumentationCompany) 
+	N0002[BaraLogixAtActivePitDensityCoriolisFlowmeter#01] -->|IsProvidedBy| N0032((Baroid#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?DensityExample
+WHERE {
+	?BaraLogixAtActivePitDensityCoriolisFlowmeter rdf:type ddhub:DynamicDrillingSignal .
+	?BaraLogixAtActivePitDensityCoriolisFlowmeter#01 rdf:type ddhub:DerivedMeasurement .
+	?BaraLogixAtActivePitDensityCoriolisFlowmeter#01 rdf:type ddhub:ContinuousDataType .
+	?topSideTelemetry rdf:type ddhub:TopSideTelemetry .
+	?MovingAverageBaraLogixAtActivePitDensityCoriolisFlowmeter rdf:type ddhub:MovingAverage .
+	?Sigma_BaraLogixDensityCoriolisFlowmeter rdf:type ddhub:DynamicDrillingSignal .
+	?Sigma_BaraLogixDensityCoriolisFlowmeter#01 rdf:type ddhub:DrillingDataPoint .
+	?Sigma_BaraLogixDensityCoriolisFlowmeter#01 rdf:type ddhub:ContinuousDataType .
+	?GaussianUncertaintyBaraLogixAtActivePitDensityCoriolisFlowmeter#01 rdf:type ddhub:GaussianUncertainty .
+	?VibratingTubeCoriolisFlowmeterPrinciple rdf:type ddhub:ResonantMeasurementPrinciple .
+	?BaraLogixAtActivePitMeasurementDevice#01 rdf:type ddhub:MeasurementDevice .
+	?BaraLogixAtActivePitMeasurementDevice#01 rdf:type ddhub:HydraulicLogicalElement .
+	?BaraLogixAtActivePitMeasuredTemperature#01 rdf:type ddhub:Measurement .
+	?BaraLogixAtActivePitMeasuredTemperature#01 rdf:type ddhub:ContinuousDataType .
+	?MovingAverageBaraLogixAtActivePitMeasuredTemperature rdf:type ddhub:MovingAverage .
+	?BaraLogixAtActivePitMeasuredPressure#01 rdf:type ddhub:Measurement .
+	?BaraLogixAtActivePitMeasuredPressure#01 rdf:type ddhub:ContinuousDataType .
+	?MovingAverageBaraLogixAtActivePitMeasuredPressure rdf:type ddhub:MovingAverage .
+	?topOfStringJunction#01 rdf:type ddhub:TopOfStringJunction .
+	?inletHydraulicBranch#01 rdf:type ddhub:HydraulicBranch .
+	?Baroid#01 rdf:type ddhub:InstrumentationCompany .
+  FILTER (
+	?Attribute000 = BaraLogixAtActivePitDensityCoriolisFlowmeter
+	&& 	?Attribute001 = MassDensityDrilling
+	&& 	?Attribute002 = topSideTelemetry
+	&& 	?Attribute003 = MovingAverageBaraLogixAtActivePitDensityCoriolisFlowmeter
+	&& 	?Attribute004 = Sigma_BaraLogixDensityCoriolisFlowmeter
+	&& 	?Attribute005 = MassDensityDrilling
+	&& 	?Attribute006 = GaussianUncertaintyBaraLogixAtActivePitDensityCoriolisFlowmeter#01
+	&& 	?Attribute007 = BaraLogixAtActivePitDensityCoriolisFlowmeter#01
+	&& 	?Attribute008 = Sigma_BaraLogixDensityCoriolisFlowmeter#01
+	&& 	?Attribute009 = VibratingTubeCoriolisFlowmeterPrinciple
+	&& 	?Attribute010 = ActivePitLogical#01
+	&& 	?Attribute011 = BaraLogixAtActivePitMeasurementDevice#01
+	&& 	?Attribute012 = ActivePitLogical#01
+	&& 	?Attribute013 = TemperatureDrilling
+	&& 	?Attribute014 = MovingAverageBaraLogixAtActivePitMeasuredTemperature
+	&& 	?Attribute015 = BaraLogixAtActivePitMeasurementDevice#01
+	&& 	?Attribute016 = ActivePitLogical#01
+	&& 	?Attribute017 = BaraLogixAtActivePitMeasuredTemperature#01
+	&& 	?Attribute018 = PressureDrilling
+	&& 	?Attribute019 = MovingAverageBaraLogixAtActivePitMeasuredPressure
+	&& 	?Attribute020 = BaraLogixAtActivePitMeasurementDevice#01
+	&& 	?Attribute021 = ActivePitLogical#01
+	&& 	?Attribute022 = BaraLogixAtActivePitMeasuredPressure#01
+	&& 	?Attribute023 = inletHydraulicBranch#01
+	&& 	?Attribute024 = inletHydraulicBranch#01
+	&& 	?Attribute025 = inletHydraulicBranch#01
+	&& 	?Attribute026 = inletHydraulicBranch#01
+	&& 	?Attribute027 = Baroid#01
+  )
+}
+```
 ## HasElevationReference <!-- VERB -->
 - Display name: HasElevationReference
 - Parent verb: [IsDependentOn](#IsDependentOn)
@@ -57296,210 +74076,1334 @@ In this example, it is described that the standpipe pressure measurement, `Measu
 the derrick floor elevation, `DerrickFloor`, elevation and that the derrick floor elevation depends on the heave
 elevation and on the tide elevation, which in turn have an elevation reference compared to the vertical datum, which
 here is WGS84.
+## IsSubSystemOf <!-- VERB -->
+- Display name: IsSubSystemOf
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DataFlowNode](#DataFlowNode)
+- Object class: [DataFlowNode](#DataFlowNode)
+- Definition set: DataFlow
+- Description: 
+Indicates that a data flow node is part of a larger system or control structure.
+- Examples:
+```dwis IsSubSystemOfExample
+MeasurementDevice:inlineRheometer
+ModelFitter:YPLModelFitter
+YPLModelFitter IsSubSystemOf inlineRheometer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[inlineRheometer] -->|BelongsToClass| N0001(MeasurementDevice) 
+	N0002[YPLModelFitter] -->|BelongsToClass| N0003(ModelFitter) 
+	N0002[YPLModelFitter] -->|IsSubSystemOf| N0000((inlineRheometer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?IsSubSystemOfExample
+WHERE {
+	?inlineRheometer rdf:type ddhub:MeasurementDevice .
+	?YPLModelFitter rdf:type ddhub:ModelFitter .
+  FILTER (
+	?Attribute000 = inlineRheometer
+  )
+}
+```
+This example shows that the YPL model fitter is part of an inline rheometer.
 ## Controls <!-- VERB -->
 - Display name: Controls
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
+- Description: 
+Indicates that a data flow node drives or regulates another equipment or function.
+- Examples:
+```dwis hoistingControl
+Controller:hoistController
+DWISNoun:drawworks
+hoistController Controls drawworks
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hoistController] -->|BelongsToClass| N0001(Controller) 
+	N0002[drawworks] -->|BelongsToClass| N0003(DWISNoun) 
+	N0000[hoistController] -->|Controls| N0002((drawworks)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hoistingControl
+WHERE {
+	?hoistController rdf:type ddhub:Controller .
+	?drawworks rdf:type ddhub:DWISNoun .
+  FILTER (
+	?Attribute000 = drawworks
+  )
+}
+```
+This example shows a hoist controller acting on the drawworks.
 ## HasFunction <!-- VERB -->
 - Display name: Has Function
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DataFlowNode](#DataFlowNode)
 - Definition set: DataFlow
+- Description: 
+Connects a signal to the data flow node that produced it or to the function it relates to.
+- Examples:
+```dwis autodrillerFunctionSignal
+ControlSystem:dcs
+DrillingDataPoint:autodrillerStatus
+autodrillerStatus HasFunction dcs
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[dcs] -->|BelongsToClass| N0001(ControlSystem) 
+	N0002[autodrillerStatus] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[autodrillerStatus] -->|HasFunction| N0000((dcs)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?autodrillerFunctionSignal
+WHERE {
+	?dcs rdf:type ddhub:ControlSystem .
+	?autodrillerStatus rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = dcs
+  )
+}
+```
+This example links an autodriller status signal to the drilling control system providing it.
 ## IsCommandFor <!-- VERB -->
 - Display name: Is Command For
 - Parent verb: [HasFunction](#HasFunction)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
+- Description: 
+Marks a signal as a command sent to a specific node or equipment.
+- Examples:
+```dwis pumpCommand
+DrillingDataPoint:flowRateCommand
+Controller:flowController
+flowRateCommand IsCommandFor flowController
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[flowRateCommand] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[flowController] -->|BelongsToClass| N0003(Controller) 
+	N0000[flowRateCommand] -->|IsCommandFor| N0002((flowController)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pumpCommand
+WHERE {
+	?flowRateCommand rdf:type ddhub:DrillingDataPoint .
+	?flowController rdf:type ddhub:Controller .
+  FILTER (
+	?Attribute000 = flowController
+  )
+}
+```
+This example designates a flow-rate command for the flow controller.
 ## IsComputationInput <!-- VERB -->
 - Display name: Is Computation Input
 - Parent verb: [HasFunction](#HasFunction)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [ComputationUnit](#ComputationUnit)
 - Definition set: DataFlow
+- Description: 
+Indicates that a signal is used as an input by a computation unit.
+- Examples:
+```dwis computationInput
+DrillingDataPoint:standpipePressureRaw
+ComputationUnit:hydraulicsModel
+standpipePressureRaw IsComputationInput hydraulicsModel
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipePressureRaw] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[hydraulicsModel] -->|BelongsToClass| N0003(ComputationUnit) 
+	N0000[standpipePressureRaw] -->|IsComputationInput| N0002((hydraulicsModel)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?computationInput
+WHERE {
+	?standpipePressureRaw rdf:type ddhub:DrillingDataPoint .
+	?hydraulicsModel rdf:type ddhub:ComputationUnit .
+  FILTER (
+	?Attribute000 = hydraulicsModel
+  )
+}
+```
+This example shows raw standpipe pressure used by a hydraulics model.
 ## IsLimitFor <!-- VERB -->
 - Display name: Is Limit For
 - Parent verb: [HasFunction](#HasFunction)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
+- Description: 
+Declares that a signal expresses a limit relevant to a node or function.
+- Examples:
+```dwis wobLimit
+DrillingDataPoint:wobLimit
+ControllerFunction:autoDriller
+wobLimit IsLimitFor autoDriller
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wobLimit] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[autoDriller] -->|BelongsToClass| N0003(ControllerFunction) 
+	N0000[wobLimit] -->|IsLimitFor| N0002((autoDriller)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wobLimit
+WHERE {
+	?wobLimit rdf:type ddhub:DrillingDataPoint .
+	?autoDriller rdf:type ddhub:ControllerFunction .
+  FILTER (
+	?Attribute000 = autoDriller
+  )
+}
+```
+This example ties a WOB limit to the autodriller.
 ## IsMinimumLimitFor <!-- VERB -->
 - Display name: Is Minimum Limit For
 - Parent verb: [IsLimitFor](#IsLimitFor)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
+- Description: 
+Indicates that the signal represents the minimum acceptable bound for a function or equipment.
+- Examples:
+```dwis minFlowLimit
+DrillingDataPoint:minFlowRateLimit
+CirculationControlSystem:circulationDCS
+minFlowRateLimit IsMinimumLimitFor circulationDCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[minFlowRateLimit] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[circulationDCS] -->|BelongsToClass| N0003(CirculationControlSystem) 
+	N0000[minFlowRateLimit] -->|IsMinimumLimitFor| N0002((circulationDCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?minFlowLimit
+WHERE {
+	?minFlowRateLimit rdf:type ddhub:DrillingDataPoint .
+	?circulationDCS rdf:type ddhub:CirculationControlSystem .
+  FILTER (
+	?Attribute000 = circulationDCS
+  )
+}
+```
+This example sets a minimum flow-rate limit for the circulation control system.
 ## IsMaximumLimitFor <!-- VERB -->
 - Display name: Is Maximum Limit For
 - Parent verb: [IsLimitFor](#IsLimitFor)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
+- Description: 
+Indicates that the signal represents the maximum acceptable bound for a function or equipment.
+- Examples:
+```dwis maxTorqueLimit
+DrillingDataPoint:maxTorqueLimit
+RotationControlSystem:rotationDCS
+maxTorqueLimit IsMaximumLimitFor rotationDCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[maxTorqueLimit] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[rotationDCS] -->|BelongsToClass| N0003(RotationControlSystem) 
+	N0000[maxTorqueLimit] -->|IsMaximumLimitFor| N0002((rotationDCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?maxTorqueLimit
+WHERE {
+	?maxTorqueLimit rdf:type ddhub:DrillingDataPoint .
+	?rotationDCS rdf:type ddhub:RotationControlSystem .
+  FILTER (
+	?Attribute000 = rotationDCS
+  )
+}
+```
+This example sets a maximum torque limit for the rotation control system.
 ## IsCurrentStateFor <!-- VERB -->
 - Display name: Is Current State For
 - Parent verb: [HasFunction](#HasFunction)
 - Subject class: [ComputedState](#ComputedState)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
+- Description: 
+Indicates that a computed state represents the present state of a target object or process.
+- Examples:
+```dwis circulationStateInfo
+ComputedState:circulationStable
+DWISNoun:circulationProcess
+circulationStable IsCurrentStateFor circulationProcess
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[circulationStable] -->|BelongsToClass| N0001(ComputedState) 
+	N0002[circulationProcess] -->|BelongsToClass| N0003(DWISNoun) 
+	N0000[circulationStable] -->|IsCurrentStateFor| N0002((circulationProcess)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?circulationStateInfo
+WHERE {
+	?circulationStable rdf:type ddhub:ComputedState .
+	?circulationProcess rdf:type ddhub:DWISNoun .
+  FILTER (
+	?Attribute000 = circulationProcess
+  )
+}
+```
+This example declares that `circulationStable` is the current state of the circulation process.
 ## IsInformationForCurrentStateOf <!-- VERB -->
 - Display name: Is Information For Current State Of
 - Parent verb: [HasFunction](#HasFunction)
 - Subject class: [ComputedState](#ComputedState)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
+- Description: 
+Provides supporting information about the current state of an object or process.
+- Examples:
+```dwis autodrillerStatusInfo
+ComputedState:autoDrillerActivation
+ControllerFunction:autoDriller
+autoDrillerActivation IsInformationForCurrentStateOf autoDriller
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[autoDrillerActivation] -->|BelongsToClass| N0001(ComputedState) 
+	N0002[autoDriller] -->|BelongsToClass| N0003(ControllerFunction) 
+	N0000[autoDrillerActivation] -->|IsInformationForCurrentStateOf| N0002((autoDriller)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?autodrillerStatusInfo
+WHERE {
+	?autoDrillerActivation rdf:type ddhub:ComputedState .
+	?autoDriller rdf:type ddhub:ControllerFunction .
+  FILTER (
+	?Attribute000 = autoDriller
+  )
+}
+```
+This example supplies activation status for the autodriller.
 ## IsInSafeModeStateFor <!-- VERB -->
 - Display name: Is In Safe Mode State For
 - Parent verb: [IsInformationForCurrentStateOf](#IsInformationForCurrentStateOf)
 - Subject class: [ComputedState](#ComputedState)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
+- Description: 
+Indicates that the target object or process is currently in a safe or fallback mode.
+- Examples:
+```dwis safeModeState
+ComputedState:safeModeActive
+ControlSystem:dcs
+safeModeActive IsInSafeModeStateFor dcs
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[safeModeActive] -->|BelongsToClass| N0001(ComputedState) 
+	N0002[dcs] -->|BelongsToClass| N0003(ControlSystem) 
+	N0000[safeModeActive] -->|IsInSafeModeStateFor| N0002((dcs)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?safeModeState
+WHERE {
+	?safeModeActive rdf:type ddhub:ComputedState .
+	?dcs rdf:type ddhub:ControlSystem .
+  FILTER (
+	?Attribute000 = dcs
+  )
+}
+```
+This example records that the control system is in safe mode.
 ## IsSetPointFor <!-- VERB -->
 - Display name: Is Set-Point For
 - Parent verb: [HasFunction](#HasFunction)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [Controller](#Controller)
 - Definition set: DataFlow
+- Description: 
+Identifies a signal that provides a target value to a controller.
+- Examples:
+```dwis weightOnBitSetPoint
+DrillingDataPoint:wobSetPoint
+Controller:autoDrillerController
+wobSetPoint IsSetPointFor autoDrillerController
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wobSetPoint] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[autoDrillerController] -->|BelongsToClass| N0003(Controller) 
+	N0000[wobSetPoint] -->|IsSetPointFor| N0002((autoDrillerController)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?weightOnBitSetPoint
+WHERE {
+	?wobSetPoint rdf:type ddhub:DrillingDataPoint .
+	?autoDrillerController rdf:type ddhub:Controller .
+  FILTER (
+	?Attribute000 = autoDrillerController
+  )
+}
+```
+This example assigns a weight-on-bit set-point to the autodriller controller.
 ## IsSetPointRecommendationFor <!-- VERB -->
 - Display name: Is Set-Point Recommendation For
 - Parent verb: [HasFunction](#HasFunction)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [ControlSystem](#ControlSystem)
 - Definition set: DataFlow
+- Description: 
+Marks a signal as a recommended set-point produced for a control system.
+- Examples:
+```dwis recommendedFlowRate
+DrillingDataPoint:flowRateRecommendation
+CirculationControlSystem:circulationDCS
+flowRateRecommendation IsSetPointRecommendationFor circulationDCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[flowRateRecommendation] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[circulationDCS] -->|BelongsToClass| N0003(CirculationControlSystem) 
+	N0000[flowRateRecommendation] -->|IsSetPointRecommendationFor| N0002((circulationDCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?recommendedFlowRate
+WHERE {
+	?flowRateRecommendation rdf:type ddhub:DrillingDataPoint .
+	?circulationDCS rdf:type ddhub:CirculationControlSystem .
+  FILTER (
+	?Attribute000 = circulationDCS
+  )
+}
+```
+This example recommends a flow-rate set-point for the circulation control system.
 ## IsSetPointAdviceFor <!-- VERB -->
 - Display name: Is Set-Point Advice For
 - Parent verb: [HasFunction](#HasFunction)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [ControlSystem](#ControlSystem)
 - Definition set: DataFlow
+- Description: 
+Indicates an advisory set-point that may be reviewed before being applied to a control system.
+- Examples:
+```dwis advisedRotarySpeed
+DrillingDataPoint:rotarySpeedAdvice
+RotationControlSystem:rotationDCS
+rotarySpeedAdvice IsSetPointAdviceFor rotationDCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rotarySpeedAdvice] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[rotationDCS] -->|BelongsToClass| N0003(RotationControlSystem) 
+	N0000[rotarySpeedAdvice] -->|IsSetPointAdviceFor| N0002((rotationDCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?advisedRotarySpeed
+WHERE {
+	?rotarySpeedAdvice rdf:type ddhub:DrillingDataPoint .
+	?rotationDCS rdf:type ddhub:RotationControlSystem .
+  FILTER (
+	?Attribute000 = rotationDCS
+  )
+}
+```
+This example provides an advisory rotational speed for the rotation control system.
 ## IsSetPointMinimumRecommendationFor <!-- VERB -->
 - Display name: Is Set-Point Minimum Recommendation For
 - Parent verb: [HasFunction](#HasFunction)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [ControlSystem](#ControlSystem)
 - Definition set: DataFlow
+- Description: 
+Indicates a recommended minimum bound for a control system set-point.
+- Examples:
+```dwis minFlowRecommendation
+DrillingDataPoint:minFlowRecommendation
+CirculationControlSystem:circulationDCS
+minFlowRecommendation IsSetPointMinimumRecommendationFor circulationDCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[minFlowRecommendation] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[circulationDCS] -->|BelongsToClass| N0003(CirculationControlSystem) 
+	N0000[minFlowRecommendation] -->|IsSetPointMinimumRecommendationFor| N0002((circulationDCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?minFlowRecommendation
+WHERE {
+	?minFlowRecommendation rdf:type ddhub:DrillingDataPoint .
+	?circulationDCS rdf:type ddhub:CirculationControlSystem .
+  FILTER (
+	?Attribute000 = circulationDCS
+  )
+}
+```
+This example sets a recommended minimum flow for the circulation control system.
 ## IsSetPointMinimumAdviceFor <!-- VERB -->
 - Display name: Is Set-Point Minimum Advice For
 - Parent verb: [HasFunction](#HasFunction)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [ControlSystem](#ControlSystem)
 - Definition set: DataFlow
+- Description: 
+Provides an advisory minimum bound for a control system set-point.
+- Examples:
+```dwis minTorqueAdvice
+DrillingDataPoint:minTorqueAdvice
+RotationControlSystem:rotationDCS
+minTorqueAdvice IsSetPointMinimumAdviceFor rotationDCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[minTorqueAdvice] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[rotationDCS] -->|BelongsToClass| N0003(RotationControlSystem) 
+	N0000[minTorqueAdvice] -->|IsSetPointMinimumAdviceFor| N0002((rotationDCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?minTorqueAdvice
+WHERE {
+	?minTorqueAdvice rdf:type ddhub:DrillingDataPoint .
+	?rotationDCS rdf:type ddhub:RotationControlSystem .
+  FILTER (
+	?Attribute000 = rotationDCS
+  )
+}
+```
+This example advises a minimum torque limit for the rotation control system.
 ## IsSetPointMaximumRecommendationFor <!-- VERB -->
 - Display name: Is Set-Point Maximum Recommendation For
 - Parent verb: [HasFunction](#HasFunction)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [ControlSystem](#ControlSystem)
 - Definition set: DataFlow
+- Description: 
+Indicates a recommended maximum bound for a control system set-point.
+- Examples:
+```dwis maxFlowRecommendation
+DrillingDataPoint:maxFlowRecommendation
+CirculationControlSystem:circulationDCS
+maxFlowRecommendation IsSetPointMaximumRecommendationFor circulationDCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[maxFlowRecommendation] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[circulationDCS] -->|BelongsToClass| N0003(CirculationControlSystem) 
+	N0000[maxFlowRecommendation] -->|IsSetPointMaximumRecommendationFor| N0002((circulationDCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?maxFlowRecommendation
+WHERE {
+	?maxFlowRecommendation rdf:type ddhub:DrillingDataPoint .
+	?circulationDCS rdf:type ddhub:CirculationControlSystem .
+  FILTER (
+	?Attribute000 = circulationDCS
+  )
+}
+```
+This example sets a recommended maximum flow rate for the circulation control system.
 ## IsSetPointMaximumAdviceFor <!-- VERB -->
 - Display name: Is Set-Point Maximum Advice For
 - Parent verb: [HasFunction](#HasFunction)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [ControlSystem](#ControlSystem)
 - Definition set: DataFlow
+- Description: 
+Provides an advisory maximum bound for a control system set-point.
+- Examples:
+```dwis maxRotarySpeedAdvice
+DrillingDataPoint:maxRotarySpeedAdvice
+RotationControlSystem:rotationDCS
+maxRotarySpeedAdvice IsSetPointMaximumAdviceFor rotationDCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[maxRotarySpeedAdvice] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[rotationDCS] -->|BelongsToClass| N0003(RotationControlSystem) 
+	N0000[maxRotarySpeedAdvice] -->|IsSetPointMaximumAdviceFor| N0002((rotationDCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?maxRotarySpeedAdvice
+WHERE {
+	?maxRotarySpeedAdvice rdf:type ddhub:DrillingDataPoint .
+	?rotationDCS rdf:type ddhub:RotationControlSystem .
+  FILTER (
+	?Attribute000 = rotationDCS
+  )
+}
+```
+This example advises a maximum rotational speed for the rotation control system.
 ## IsTransformationInput <!-- VERB -->
 - Display name: Is Transformation Input
 - Parent verb: [HasFunction](#HasFunction)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [Transformation](#Transformation)
 - Definition set: DataFlow
+- Description: 
+Declares that a signal is used as an input to a transformation node.
+- Examples:
+```dwis hookloadToForceInput
+DrillingDataPoint:hookloadRaw
+ForceToLoadTransformation:forceToBlockLoad
+hookloadRaw IsTransformationInput forceToBlockLoad
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hookloadRaw] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[forceToBlockLoad] -->|BelongsToClass| N0003(ForceToLoadTransformation) 
+	N0000[hookloadRaw] -->|IsTransformationInput| N0002((forceToBlockLoad)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hookloadToForceInput
+WHERE {
+	?hookloadRaw rdf:type ddhub:DrillingDataPoint .
+	?forceToBlockLoad rdf:type ddhub:ForceToLoadTransformation .
+  FILTER (
+	?Attribute000 = forceToBlockLoad
+  )
+}
+```
+This example shows hookload used as input to a conversion transformation.
 ## IsBufferingInput <!-- VERB -->
 - Display name: Is Buffering Input
 - Parent verb: [IsTransformationInput](#IsTransformationInput)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [Buffering](#Buffering)
 - Definition set: DataFlow
+- Description: 
+Identifies a signal that enters a buffering stage.
+- Examples:
+```dwis bufferingInput
+DrillingDataPoint:blockHeight
+Buffering:blockHeightBuffer
+blockHeight IsBufferingInput blockHeightBuffer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[blockHeight] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[blockHeightBuffer] -->|BelongsToClass| N0003(Buffering) 
+	N0000[blockHeight] -->|IsBufferingInput| N0002((blockHeightBuffer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?bufferingInput
+WHERE {
+	?blockHeight rdf:type ddhub:DrillingDataPoint .
+	?blockHeightBuffer rdf:type ddhub:Buffering .
+  FILTER (
+	?Attribute000 = blockHeightBuffer
+  )
+}
+```
+This example shows block height entering a buffer.
 ## IsDerivationInput <!-- VERB -->
 - Display name: Is Derivation Input
 - Parent verb: [IsTransformationInput](#IsTransformationInput)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
+- Description: 
+Identifies a signal used as the basis for a derivative calculation.
+- Examples:
+```dwis derivativeInput
+DrillingDataPoint:hookloadRaw
+Derivation:hookloadDerivative
+hookloadRaw IsDerivationInput hookloadDerivative
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hookloadRaw] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[hookloadDerivative] -->|BelongsToClass| N0003(Derivation) 
+	N0000[hookloadRaw] -->|IsDerivationInput| N0002((hookloadDerivative)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?derivativeInput
+WHERE {
+	?hookloadRaw rdf:type ddhub:DrillingDataPoint .
+	?hookloadDerivative rdf:type ddhub:Derivation .
+  FILTER (
+	?Attribute000 = hookloadDerivative
+  )
+}
+```
+This example feeds hookload into a derivative computation.
 ## IsResamplingInput <!-- VERB -->
 - Display name: Is Resampling Input
 - Parent verb: [IsTransformationInput](#IsTransformationInput)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [Resampling](#Resampling)
 - Definition set: DataFlow
+- Description: 
+Marks a signal that will be resampled to a new rate.
+- Examples:
+```dwis resamplingInput
+DrillingDataPoint:hookloadRaw
+Resampling:resampleHookload
+hookloadRaw IsResamplingInput resampleHookload
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hookloadRaw] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[resampleHookload] -->|BelongsToClass| N0003(Resampling) 
+	N0000[hookloadRaw] -->|IsResamplingInput| N0002((resampleHookload)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?resamplingInput
+WHERE {
+	?hookloadRaw rdf:type ddhub:DrillingDataPoint .
+	?resampleHookload rdf:type ddhub:Resampling .
+  FILTER (
+	?Attribute000 = resampleHookload
+  )
+}
+```
+This example shows hookload as input to a resampling transformation.
 ## IsTransmissionInput <!-- VERB -->
 - Display name: Is Transmission Input
 - Parent verb: [HasFunction](#HasFunction)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [TransmissionLine](#TransmissionLine)
 - Definition set: DataFlow
+- Description: 
+Declares that a signal enters a transmission line for forwarding.
+- Examples:
+```dwis telemetryInput
+DrillingDataPoint:surfaceCommand
+TransmissionLine:surfaceToDownholeTelemetry
+surfaceCommand IsTransmissionInput surfaceToDownholeTelemetry
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[surfaceCommand] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[surfaceToDownholeTelemetry] -->|BelongsToClass| N0003(TransmissionLine) 
+	N0000[surfaceCommand] -->|IsTransmissionInput| N0002((surfaceToDownholeTelemetry)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?telemetryInput
+WHERE {
+	?surfaceCommand rdf:type ddhub:DrillingDataPoint .
+	?surfaceToDownholeTelemetry rdf:type ddhub:TransmissionLine .
+  FILTER (
+	?Attribute000 = surfaceToDownholeTelemetry
+  )
+}
+```
+This example shows a surface command entering a telemetry link.
 ## IsGeneratedBy <!-- VERB -->
 - Display name: Is Generated By
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DataFlowNode](#DataFlowNode)
 - Definition set: DataFlow
+- Description: 
+Indicates which data flow node produced a given signal.
+- Examples:
+```dwis generatedBySensor
+DrillingDataPoint:standpipePressureRaw
+MeasurementDevice:standpipePressureSensor
+standpipePressureRaw IsGeneratedBy standpipePressureSensor
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipePressureRaw] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[standpipePressureSensor] -->|BelongsToClass| N0003(MeasurementDevice) 
+	N0000[standpipePressureRaw] -->|IsGeneratedBy| N0002((standpipePressureSensor)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?generatedBySensor
+WHERE {
+	?standpipePressureRaw rdf:type ddhub:DrillingDataPoint .
+	?standpipePressureSensor rdf:type ddhub:MeasurementDevice .
+  FILTER (
+	?Attribute000 = standpipePressureSensor
+  )
+}
+```
+This example states that a standpipe pressure signal is generated by its sensor.
 ## IsComputedBy <!-- VERB -->
 - Display name: Is Computed By
 - Parent verb: [IsGeneratedBy](#IsGeneratedBy)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
+- Description: 
+Links a computed value or state to the computation unit that produced it.
+- Examples:
+```dwis computedByModel
+DrillingDataPoint:predictedStandpipePressure
+Simulator:hydraulicsSimulator
+predictedStandpipePressure IsComputedBy hydraulicsSimulator
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[predictedStandpipePressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[hydraulicsSimulator] -->|BelongsToClass| N0003(Simulator) 
+	N0000[predictedStandpipePressure] -->|IsComputedBy| N0002((hydraulicsSimulator)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?computedByModel
+WHERE {
+	?predictedStandpipePressure rdf:type ddhub:DrillingDataPoint .
+	?hydraulicsSimulator rdf:type ddhub:Simulator .
+  FILTER (
+	?Attribute000 = hydraulicsSimulator
+  )
+}
+```
+This example attributes a predicted pressure signal to a simulator.
 ## IsMeasuredBy <!-- VERB -->
 - Display name: Is Measured By
 - Parent verb: [IsGeneratedBy](#IsGeneratedBy)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
+- Description: 
+Associates a measured signal with the physical measurement device that collected it.
+- Examples:
+```dwis measuredBySensor
+DrillingDataPoint:hookloadRaw
+MeasurementDevice:hookloadSensor
+hookloadRaw IsMeasuredBy hookloadSensor
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hookloadRaw] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[hookloadSensor] -->|BelongsToClass| N0003(MeasurementDevice) 
+	N0000[hookloadRaw] -->|IsMeasuredBy| N0002((hookloadSensor)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?measuredBySensor
+WHERE {
+	?hookloadRaw rdf:type ddhub:DrillingDataPoint .
+	?hookloadSensor rdf:type ddhub:MeasurementDevice .
+  FILTER (
+	?Attribute000 = hookloadSensor
+  )
+}
+```
+This example shows hookload measured by a load-pin sensor.
 ## IsRecordedFrom <!-- VERB -->
 - Display name: Is Recorded From
 - Parent verb: [IsGeneratedBy](#IsGeneratedBy)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
+- Description: 
+Indicates that a signal was recorded from another data source or channel.
+- Examples:
+```dwis recordedFromTelemetry
+DrillingDataPoint:downholeAnnulusPressure
+TransmissionLine:surfaceToDownholeTelemetry
+downholeAnnulusPressure IsRecordedFrom surfaceToDownholeTelemetry
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[downholeAnnulusPressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[surfaceToDownholeTelemetry] -->|BelongsToClass| N0003(TransmissionLine) 
+	N0000[downholeAnnulusPressure] -->|IsRecordedFrom| N0002((surfaceToDownholeTelemetry)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?recordedFromTelemetry
+WHERE {
+	?downholeAnnulusPressure rdf:type ddhub:DrillingDataPoint .
+	?surfaceToDownholeTelemetry rdf:type ddhub:TransmissionLine .
+  FILTER (
+	?Attribute000 = surfaceToDownholeTelemetry
+  )
+}
+```
+This example records a downhole pressure signal received over telemetry.
 ## IsTransformationOutput <!-- VERB -->
 - Display name: Is Transformation Output
 - Parent verb: [IsGeneratedBy](#IsGeneratedBy)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DataFlowNode](#DataFlowNode)
 - Definition set: DataFlow
+- Description: 
+Identifies a signal as the result of a transformation node.
+- Examples:
+```dwis transformedOutput
+DrillingDataPoint:hookloadFiltered
+Filter:hookloadFilter
+hookloadFiltered IsTransformationOutput hookloadFilter
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hookloadFiltered] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[hookloadFilter] -->|BelongsToClass| N0003(Filter) 
+	N0000[hookloadFiltered] -->|IsTransformationOutput| N0002((hookloadFilter)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?transformedOutput
+WHERE {
+	?hookloadFiltered rdf:type ddhub:DrillingDataPoint .
+	?hookloadFilter rdf:type ddhub:Filter .
+  FILTER (
+	?Attribute000 = hookloadFilter
+  )
+}
+```
+This example marks the filtered hookload as the output of a filter.
+```dwis AverageShakerLoadEstimateExample
+DynamicDrillingSignal:CleanSightAverageShakerLoadEstimate
+ComputedData:CleanSightAverageShakerLoadEstimate#01
+CleanSightAverageShakerLoadEstimate#01 BelongsToClass ContinuousDataType
+CleanSightAverageShakerLoadEstimate#01 HasDynamicValue CleanSightAverageShakerLoadEstimate
+CleanSightAverageShakerLoadEstimate#01 IsOfMeasurableQuantity DimensionLessStandard
+TopSideTelemetry:topSideTelemetry
+CleanSightAverageShakerLoadEstimate#01 IsTransmittedBy topSideTelemetry
+MovingAverage:movingAverageCleanSightAverageShakerLoadEstimate
+CleanSightAverageShakerLoadEstimate#01 IsTransformationOutput movingAverageCleanSightAverageShakerLoadEstimate
+DynamicDrillingSignal:Sigma_AverageShakerLoadEstimate
+DrillingDataPoint:Sigma_AverageShakerLoadEstimate#01
+Sigma_AverageShakerLoadEstimate#01 BelongsToClass ContinuousDataType
+Sigma_AverageShakerLoadEstimate#01 IsOfMeasurableQuantity DimensionLessStandard
+Sigma_AverageShakerLoadEstimate#01 HasDynamicValue Sigma_AverageShakerLoadEstimate
+GaussianUncertainty:GaussianUncertaintyCleanSightAverageShakerLoadEstimate#01
+CleanSightAverageShakerLoadEstimate#01 HasUncertainty GaussianUncertaintyCleanSightAverageShakerLoadEstimate#01
+GaussianUncertaintyCleanSightAverageShakerLoadEstimate#01 HasUncertaintyMean CleanSightAverageShakerLoadEstimate#01
+GaussianUncertaintyCleanSightAverageShakerLoadEstimate#01 HasUncertaintyStandardDeviation Sigma_AverageShakerLoadEstimate#01
+CuttingSeparatorLogical:ShaleShakerElement#01
+DrillingLiquidType:DrillingFluid#01
+DrillingFluid#01 IsFluidTypeLocatedAt ShaleShakerElement#01
+CleanSightAverageShakerLoadEstimate#01 IsHydraulicEstimationAt ShaleShakerElement#01
+Interpreter:ImageInterpreter#01
+CleanSightAverageShakerLoadEstimate#01 IsComputedBy ImageInterpreter#01
+InstrumentationCompany:DrillDocs#01
+CleanSightAverageShakerLoadEstimate#01 IsProvidedBy DrillDocs#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CleanSightAverageShakerLoadEstimate] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[CleanSightAverageShakerLoadEstimate#01] -->|BelongsToClass| N0003(ComputedData) 
+	N0002[CleanSightAverageShakerLoadEstimate#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[CleanSightAverageShakerLoadEstimate#01] -->|HasDynamicValue| N0000((CleanSightAverageShakerLoadEstimate)) 
+	N0002[CleanSightAverageShakerLoadEstimate#01] -->|IsOfMeasurableQuantity| N0005((DimensionLessStandard)) 
+	N0006[topSideTelemetry] -->|BelongsToClass| N0007(TopSideTelemetry) 
+	N0002[CleanSightAverageShakerLoadEstimate#01] -->|IsTransmittedBy| N0006((topSideTelemetry)) 
+	N0008[movingAverageCleanSightAverageShakerLoadEstimate] -->|BelongsToClass| N0009(MovingAverage) 
+	N0002[CleanSightAverageShakerLoadEstimate#01] -->|IsTransformationOutput| N0008((movingAverageCleanSightAverageShakerLoadEstimate)) 
+	N0010[Sigma_AverageShakerLoadEstimate] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0011[Sigma_AverageShakerLoadEstimate#01] -->|BelongsToClass| N0012(DrillingDataPoint) 
+	N0011[Sigma_AverageShakerLoadEstimate#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0011[Sigma_AverageShakerLoadEstimate#01] -->|IsOfMeasurableQuantity| N0005((DimensionLessStandard)) 
+	N0011[Sigma_AverageShakerLoadEstimate#01] -->|HasDynamicValue| N0010((Sigma_AverageShakerLoadEstimate)) 
+	N0013[GaussianUncertaintyCleanSightAverageShakerLoadEstimate#01] -->|BelongsToClass| N0014(GaussianUncertainty) 
+	N0002[CleanSightAverageShakerLoadEstimate#01] -->|HasUncertainty| N0013((GaussianUncertaintyCleanSightAverageShakerLoadEstimate#01)) 
+	N0013[GaussianUncertaintyCleanSightAverageShakerLoadEstimate#01] -->|HasUncertaintyMean| N0002((CleanSightAverageShakerLoadEstimate#01)) 
+	N0013[GaussianUncertaintyCleanSightAverageShakerLoadEstimate#01] -->|HasUncertaintyStandardDeviation| N0011((Sigma_AverageShakerLoadEstimate#01)) 
+	N0015[ShaleShakerElement#01] -->|BelongsToClass| N0016(CuttingSeparatorLogical) 
+	N0017[DrillingFluid#01] -->|BelongsToClass| N0018(DrillingLiquidType) 
+	N0017[DrillingFluid#01] -->|IsFluidTypeLocatedAt| N0015((ShaleShakerElement#01)) 
+	N0002[CleanSightAverageShakerLoadEstimate#01] -->|IsHydraulicEstimationAt| N0015((ShaleShakerElement#01)) 
+	N0019[ImageInterpreter#01] -->|BelongsToClass| N0020(Interpreter) 
+	N0002[CleanSightAverageShakerLoadEstimate#01] -->|IsComputedBy| N0019((ImageInterpreter#01)) 
+	N0021[DrillDocs#01] -->|BelongsToClass| N0022(InstrumentationCompany) 
+	N0002[CleanSightAverageShakerLoadEstimate#01] -->|IsProvidedBy| N0021((DrillDocs#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?AverageShakerLoadEstimateExample
+WHERE {
+	?CleanSightAverageShakerLoadEstimate rdf:type ddhub:DynamicDrillingSignal .
+	?CleanSightAverageShakerLoadEstimate#01 rdf:type ddhub:ComputedData .
+	?CleanSightAverageShakerLoadEstimate#01 rdf:type ddhub:ContinuousDataType .
+	?topSideTelemetry rdf:type ddhub:TopSideTelemetry .
+	?movingAverageCleanSightAverageShakerLoadEstimate rdf:type ddhub:MovingAverage .
+	?Sigma_AverageShakerLoadEstimate rdf:type ddhub:DynamicDrillingSignal .
+	?Sigma_AverageShakerLoadEstimate#01 rdf:type ddhub:DrillingDataPoint .
+	?Sigma_AverageShakerLoadEstimate#01 rdf:type ddhub:ContinuousDataType .
+	?GaussianUncertaintyCleanSightAverageShakerLoadEstimate#01 rdf:type ddhub:GaussianUncertainty .
+	?ShaleShakerElement#01 rdf:type ddhub:CuttingSeparatorLogical .
+	?DrillingFluid#01 rdf:type ddhub:DrillingLiquidType .
+	?ImageInterpreter#01 rdf:type ddhub:Interpreter .
+	?DrillDocs#01 rdf:type ddhub:InstrumentationCompany .
+  FILTER (
+	?Attribute000 = CleanSightAverageShakerLoadEstimate
+	&& 	?Attribute001 = DimensionLessStandard
+	&& 	?Attribute002 = topSideTelemetry
+	&& 	?Attribute003 = movingAverageCleanSightAverageShakerLoadEstimate
+	&& 	?Attribute004 = DimensionLessStandard
+	&& 	?Attribute005 = Sigma_AverageShakerLoadEstimate
+	&& 	?Attribute006 = GaussianUncertaintyCleanSightAverageShakerLoadEstimate#01
+	&& 	?Attribute007 = CleanSightAverageShakerLoadEstimate#01
+	&& 	?Attribute008 = Sigma_AverageShakerLoadEstimate#01
+	&& 	?Attribute009 = ShaleShakerElement#01
+	&& 	?Attribute010 = ShaleShakerElement#01
+	&& 	?Attribute011 = ImageInterpreter#01
+	&& 	?Attribute012 = DrillDocs#01
+  )
+}
+```
+This example defines a moving average transformation that computes the average shaker load estimate.
 ## IsBufferingOutput <!-- VERB -->
 - Display name: Is Buffering Output
 - Parent verb: [IsTransformationOutput](#IsTransformationOutput)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [Buffering](#Buffering)
 - Definition set: DataFlow
+- Description: 
+Indicates a signal emitted after buffering.
+- Examples:
+```dwis bufferingOutput
+DrillingDataPoint:blockHeightBuffered
+Buffering:blockHeightBuffer
+blockHeightBuffered IsBufferingOutput blockHeightBuffer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[blockHeightBuffered] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[blockHeightBuffer] -->|BelongsToClass| N0003(Buffering) 
+	N0000[blockHeightBuffered] -->|IsBufferingOutput| N0002((blockHeightBuffer)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?bufferingOutput
+WHERE {
+	?blockHeightBuffered rdf:type ddhub:DrillingDataPoint .
+	?blockHeightBuffer rdf:type ddhub:Buffering .
+  FILTER (
+	?Attribute000 = blockHeightBuffer
+  )
+}
+```
+This example identifies the buffered block height signal.
 ## IsDerivedFrom <!-- VERB -->
 - Display name: Is Derived From
 - Parent verb: [IsTransformationOutput](#IsTransformationOutput)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
+- Description: 
+States that a signal is obtained by differentiating another signal.
+- Examples:
+```dwis derivedFromHookload
+DrillingDataPoint:hookloadRate
+DrillingDataPoint:hookloadRaw
+hookloadRate IsDerivedFrom hookloadRaw
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hookloadRate] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[hookloadRaw] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[hookloadRate] -->|IsDerivedFrom| N0002((hookloadRaw)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?derivedFromHookload
+WHERE {
+	?hookloadRate rdf:type ddhub:DrillingDataPoint .
+	?hookloadRaw rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = hookloadRaw
+  )
+}
+```
+This example notes that hookload rate is derived from the raw hookload.
 ## IsIntegratedFrom <!-- VERB -->
 - Display name: Is Integrated From
 - Parent verb: [IsTransformationOutput](#IsTransformationOutput)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
+- Description: 
+Indicates that a signal is obtained by integrating another signal.
+- Examples:
+```dwis integratedFromFlow
+DrillingDataPoint:pumpedVolume
+DrillingDataPoint:flowRate
+pumpedVolume IsIntegratedFrom flowRate
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pumpedVolume] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[flowRate] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[pumpedVolume] -->|IsIntegratedFrom| N0002((flowRate)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?integratedFromFlow
+WHERE {
+	?pumpedVolume rdf:type ddhub:DrillingDataPoint .
+	?flowRate rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = flowRate
+  )
+}
+```
+This example shows pumped volume integrated from flow rate.
 ## IsResampledBy <!-- VERB -->
 - Display name: Is Resampled By
 - Parent verb: [IsTransformationOutput](#IsTransformationOutput)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [Resampling](#Resampling)
 - Definition set: DataFlow
+- Description: 
+Links a resampled signal to the resampling node that produced it.
+- Examples:
+```dwis resampledHookload
+DrillingDataPoint:hookloadResampled
+Resampling:resampleHookload
+hookloadResampled IsResampledBy resampleHookload
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hookloadResampled] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[resampleHookload] -->|BelongsToClass| N0003(Resampling) 
+	N0000[hookloadResampled] -->|IsResampledBy| N0002((resampleHookload)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?resampledHookload
+WHERE {
+	?hookloadResampled rdf:type ddhub:DrillingDataPoint .
+	?resampleHookload rdf:type ddhub:Resampling .
+  FILTER (
+	?Attribute000 = resampleHookload
+  )
+}
+```
+This example ties the resampled hookload to its resampling process.
 ## IsTransmissionOutput <!-- VERB -->
 - Display name: Is Transmission Output
 - Parent verb: [IsGeneratedBy](#IsGeneratedBy)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [TransmissionLine](#TransmissionLine)
 - Definition set: DataFlow
+- Description: 
+Declares a signal as the output of a transmission line.
+- Examples:
+```dwis telemetryOutput
+DrillingDataPoint:downholeCommand
+TransmissionLine:surfaceToDownholeTelemetry
+downholeCommand IsTransmissionOutput surfaceToDownholeTelemetry
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[downholeCommand] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[surfaceToDownholeTelemetry] -->|BelongsToClass| N0003(TransmissionLine) 
+	N0000[downholeCommand] -->|IsTransmissionOutput| N0002((surfaceToDownholeTelemetry)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?telemetryOutput
+WHERE {
+	?downholeCommand rdf:type ddhub:DrillingDataPoint .
+	?surfaceToDownholeTelemetry rdf:type ddhub:TransmissionLine .
+  FILTER (
+	?Attribute000 = surfaceToDownholeTelemetry
+  )
+}
+```
+This example shows the downhole command as telemetry output.
 ## IsProcessedBy <!-- VERB -->
 - Display name: Is Processed By
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataFlow
+- Description: 
+Indicates that a signal or state is processed by a given data flow node.
+- Examples:
+```dwis processedByFilter
+DrillingDataPoint:standpipePressureRaw
+Filter:standpipeLowPass
+standpipePressureRaw IsProcessedBy standpipeLowPass
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipePressureRaw] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[standpipeLowPass] -->|BelongsToClass| N0003(Filter) 
+	N0000[standpipePressureRaw] -->|IsProcessedBy| N0002((standpipeLowPass)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?processedByFilter
+WHERE {
+	?standpipePressureRaw rdf:type ddhub:DrillingDataPoint .
+	?standpipeLowPass rdf:type ddhub:Filter .
+  FILTER (
+	?Attribute000 = standpipeLowPass
+  )
+}
+```
+This example shows standpipe pressure processed by a low-pass filter.
 ## IsProvidedBy <!-- VERB -->
 - Display name: IsProvidedBy
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DataProvider](#DataProvider)
 - Definition set: DataProviders
+- Description: 
+This verb is used to stipulate that something is provided by a data provider.
 - Examples:
 ``` dwis rigDescription_0
 DynamicDrillingSignal:rigDescription_0
@@ -57551,6 +75455,8 @@ WHERE {
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DataProvider](#DataProvider)
 - Definition set: DataProviders
+- Description: 
+This verb is used to stipulate that something is provided to a data provider.
 - Examples:
 ``` dwis rigDescription_0
 DynamicDrillingSignal:rigDescription_0
@@ -57639,114 +75545,720 @@ WHERE {
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [ValidityCondition](#ValidityCondition)
 - Definition set: DataValidity
+- Description: 
+Indicates that a data point is valid only when the referenced condition is satisfied.
+- Examples:
+```dwis downholePressureValidity
+DrillingDataPoint:downholePressure
+ValidityCondition:circulationValidity
+downholePressure IsConditionedBy circulationValidity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[downholePressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[circulationValidity] -->|BelongsToClass| N0003(ValidityCondition) 
+	N0000[downholePressure] -->|IsConditionedBy| N0002((circulationValidity)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?downholePressureValidity
+WHERE {
+	?downholePressure rdf:type ddhub:DrillingDataPoint .
+	?circulationValidity rdf:type ddhub:ValidityCondition .
+  FILTER (
+	?Attribute000 = circulationValidity
+  )
+}
+```
+This example ties downhole pressure validity to circulation being active.
 ## IsConditionInput <!-- VERB -->
 - Display name: IsConditionInput
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [ValidityCondition](#ValidityCondition)
 - Definition set: DataValidity
+- Description: 
+Declares that a signal feeds a validity condition evaluation.
+- Examples:
+```dwis conditionInputs
+DrillingDataPoint:standpipePressure
+ValidityCondition:pumpPressureCondition
+standpipePressure IsConditionInput pumpPressureCondition
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipePressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[pumpPressureCondition] -->|BelongsToClass| N0003(ValidityCondition) 
+	N0000[standpipePressure] -->|IsConditionInput| N0002((pumpPressureCondition)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?conditionInputs
+WHERE {
+	?standpipePressure rdf:type ddhub:DrillingDataPoint .
+	?pumpPressureCondition rdf:type ddhub:ValidityCondition .
+  FILTER (
+	?Attribute000 = pumpPressureCondition
+  )
+}
+```
+This example uses standpipe pressure as an input to a validity condition.
 ## IsConditionLeft <!-- VERB -->
 - Display name: IsConditionLeft
 - Parent verb: [IsConditionInput](#IsConditionInput)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataValidity
+- Description: 
+Identifies the left-hand operand of a binary validity condition.
+- Examples:
+```dwis leftOperand
+DrillingDataPoint:standpipePressure
+GT:pumpPressureCondition
+standpipePressure IsConditionLeft pumpPressureCondition
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipePressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[pumpPressureCondition] -->|BelongsToClass| N0003(GT) 
+	N0000[standpipePressure] -->|IsConditionLeft| N0002((pumpPressureCondition)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?leftOperand
+WHERE {
+	?standpipePressure rdf:type ddhub:DrillingDataPoint .
+	?pumpPressureCondition rdf:type ddhub:GT .
+  FILTER (
+	?Attribute000 = pumpPressureCondition
+  )
+}
+```
+This example sets standpipe pressure as the left operand in a greater-than condition.
 ## IsConditionRight <!-- VERB -->
 - Display name: IsConditionRight
 - Parent verb: [IsConditionInput](#IsConditionInput)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataValidity
+- Description: 
+Identifies the right-hand operand of a binary validity condition.
+- Examples:
+```dwis rightOperand
+DrillingDataPoint:pressureThreshold
+GT:pumpPressureCondition
+pressureThreshold IsConditionRight pumpPressureCondition
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pressureThreshold] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[pumpPressureCondition] -->|BelongsToClass| N0003(GT) 
+	N0000[pressureThreshold] -->|IsConditionRight| N0002((pumpPressureCondition)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rightOperand
+WHERE {
+	?pressureThreshold rdf:type ddhub:DrillingDataPoint .
+	?pumpPressureCondition rdf:type ddhub:GT .
+  FILTER (
+	?Attribute000 = pumpPressureCondition
+  )
+}
+```
+This example sets the pressure threshold as the right operand in a greater-than condition.
 ## IsValidBy <!-- VERB -->
 - Display name: IsValidBy
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: DataValidity
+- Description: 
+States that a validity condition applies to a data point or class of signals.
+- Examples:
+```dwis validityBinding
+DrillingDataPoint:downholePressure
+ValidityCondition:pumpPressureCondition
+downholePressure IsValidBy pumpPressureCondition
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[downholePressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[pumpPressureCondition] -->|BelongsToClass| N0003(ValidityCondition) 
+	N0000[downholePressure] -->|IsValidBy| N0002((pumpPressureCondition)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?validityBinding
+WHERE {
+	?downholePressure rdf:type ddhub:DrillingDataPoint .
+	?pumpPressureCondition rdf:type ddhub:ValidityCondition .
+  FILTER (
+	?Attribute000 = pumpPressureCondition
+  )
+}
+```
+This example binds the pump pressure condition as the validity constraint for downhole pressure.
 ## HasDomain <!-- VERB -->
 - Display name: HasDomain
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Definition set: DrillingDataSemantics
+- Description: 
+Declares the domain (e.g., depth or time interval) over which a data point is valid.
+- Examples:
+```dwis domainExample
+DrillingDataPoint:standpipePressure
+DrillingDataPoint:measuredDepth
+standpipePressure HasDomain measuredDepth
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipePressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[measuredDepth] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[standpipePressure] -->|HasDomain| N0002((measuredDepth)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?domainExample
+WHERE {
+	?standpipePressure rdf:type ddhub:DrillingDataPoint .
+	?measuredDepth rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = measuredDepth
+  )
+}
+```
+This example sets measured depth as the domain for standpipe pressure values.
 ## HasTimeIntervalDomain <!-- VERB -->
 - Display name: HasTimeIntervalDomain
 - Parent verb: [HasDomain](#HasDomain)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Definition set: DrillingDataSemantics
+- Description: 
+Indicates that the domain of a data point is defined over a time interval.
+- Examples:
+```dwis timeDomainExample
+DrillingDataPoint:circulationPressure
+DrillingDataPoint:circulationTimeWindow
+circulationPressure HasTimeIntervalDomain circulationTimeWindow
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[circulationPressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[circulationTimeWindow] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[circulationPressure] -->|HasTimeIntervalDomain| N0002((circulationTimeWindow)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?timeDomainExample
+WHERE {
+	?circulationPressure rdf:type ddhub:DrillingDataPoint .
+	?circulationTimeWindow rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = circulationTimeWindow
+  )
+}
+```
+This example associates circulation pressure with a time-window domain.
 ## HasValue <!-- VERB -->
 - Display name: HasValue
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DrillingSignal](#DrillingSignal)
 - Definition set: DrillingDataSemantics
+- Description: 
+Associates a data point with its stored value.
+- Examples:
+```dwis valueExample
+DrillingDataPoint:flowRate
+DrillingSignal:flowSignal
+flowRate HasValue flowSignal
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[flowRate] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[flowSignal] -->|BelongsToClass| N0003(DrillingSignal) 
+	N0000[flowRate] -->|HasValue| N0002((flowSignal)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?valueExample
+WHERE {
+	?flowRate rdf:type ddhub:DrillingDataPoint .
+	?flowSignal rdf:type ddhub:DrillingSignal .
+  FILTER (
+	?Attribute000 = flowSignal
+  )
+}
+```
+This example links flow rate to its signal payload.
 ## HasDynamicValue <!-- VERB -->
 - Display name: HasDynamicValue
 - Parent verb: [HasValue](#HasValue)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DynamicDrillingSignal](#DynamicDrillingSignal)
 - Definition set: DrillingDataSemantics
+- Description: 
+Indicates that the value is a time-varying drilling signal.
+- Examples:
+```dwis dynamicValueExample
+DrillingDataPoint:hookload
+DynamicDrillingSignal:hookloadSeries
+hookload HasDynamicValue hookloadSeries
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hookload] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[hookloadSeries] -->|BelongsToClass| N0003(DynamicDrillingSignal) 
+	N0000[hookload] -->|HasDynamicValue| N0002((hookloadSeries)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?dynamicValueExample
+WHERE {
+	?hookload rdf:type ddhub:DrillingDataPoint .
+	?hookloadSeries rdf:type ddhub:DynamicDrillingSignal .
+  FILTER (
+	?Attribute000 = hookloadSeries
+  )
+}
+```
+This example shows a hookload data point with dynamic samples.
 ## HasStaticValue <!-- VERB -->
 - Display name: HasStaticValue
 - Parent verb: [HasValue](#HasValue)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DrillingSignal](#DrillingSignal)
 - Definition set: DrillingDataSemantics
+- Description: 
+Indicates that the value is static (non time-varying).
+- Examples:
+```dwis staticValueExample
+DrillingDataPoint:pipeInnerDiameter
+DrillingSignal:pipeInnerDiameterValue
+pipeInnerDiameter HasStaticValue pipeInnerDiameterValue
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pipeInnerDiameter] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[pipeInnerDiameterValue] -->|BelongsToClass| N0003(DrillingSignal) 
+	N0000[pipeInnerDiameter] -->|HasStaticValue| N0002((pipeInnerDiameterValue)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?staticValueExample
+WHERE {
+	?pipeInnerDiameter rdf:type ddhub:DrillingDataPoint .
+	?pipeInnerDiameterValue rdf:type ddhub:DrillingSignal .
+  FILTER (
+	?Attribute000 = pipeInnerDiameterValue
+  )
+}
+```
+This example stores a static inner diameter value.
 ## IsToBeComparedWith <!-- VERB -->
 - Display name: IsToBeComparedWith
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Definition set: DrillingDataSemantics
+- Description: 
+States that two data points should be compared for validation or control.
+- Examples:
+```dwis comparisonExample
+DrillingDataPoint:standpipePressure
+DrillingDataPoint:pressureLimit
+standpipePressure IsToBeComparedWith pressureLimit
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipePressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[pressureLimit] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[standpipePressure] -->|IsToBeComparedWith| N0002((pressureLimit)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?comparisonExample
+WHERE {
+	?standpipePressure rdf:type ddhub:DrillingDataPoint .
+	?pressureLimit rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = pressureLimit
+  )
+}
+```
+This example indicates the pressure should be checked against a limit.
 ## IsToBeGreaterThan <!-- VERB -->
 - Display name: IsToBeGreaterThan
 - Parent verb: [IsToBeComparedWith](#IsToBeComparedWith)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Definition set: DrillingDataSemantics
+- Description: 
+Indicates that the subject should stay greater than the object.
+- Examples:
+```dwis greaterThanExample
+DrillingDataPoint:annularVelocity
+DrillingDataPoint:minAnnularVelocity
+annularVelocity IsToBeGreaterThan minAnnularVelocity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[annularVelocity] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[minAnnularVelocity] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[annularVelocity] -->|IsToBeGreaterThan| N0002((minAnnularVelocity)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?greaterThanExample
+WHERE {
+	?annularVelocity rdf:type ddhub:DrillingDataPoint .
+	?minAnnularVelocity rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = minAnnularVelocity
+  )
+}
+```
+This example requires annular velocity to exceed a minimum.
 ## IsToBeGreaterOrEqualThan <!-- VERB -->
 - Display name: IsToBeGreaterOrEqualThan
 - Parent verb: [IsToBeGreaterThan](#IsToBeGreaterThan)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Definition set: DrillingDataSemantics
+- Description: 
+Indicates that the subject should stay greater than or equal to the object.
+- Examples:
+```dwis greaterOrEqualExample
+DrillingDataPoint:flowRate
+DrillingDataPoint:targetFlowRate
+flowRate IsToBeGreaterOrEqualThan targetFlowRate
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[flowRate] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[targetFlowRate] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[flowRate] -->|IsToBeGreaterOrEqualThan| N0002((targetFlowRate)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?greaterOrEqualExample
+WHERE {
+	?flowRate rdf:type ddhub:DrillingDataPoint .
+	?targetFlowRate rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = targetFlowRate
+  )
+}
+```
+This example requires flow rate to meet or exceed a target.
 ## IsToBeStrictlyGreaterThan <!-- VERB -->
 - Display name: IsToBeStrictlyGreaterThan
 - Parent verb: [IsToBeGreaterThan](#IsToBeGreaterThan)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Definition set: DrillingDataSemantics
+- Description: 
+Indicates that the subject should stay strictly greater than the object.
+- Examples:
+```dwis strictlyGreaterExample
+DrillingDataPoint:standpipePressure
+DrillingDataPoint:circulationThreshold
+standpipePressure IsToBeStrictlyGreaterThan circulationThreshold
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipePressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[circulationThreshold] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[standpipePressure] -->|IsToBeStrictlyGreaterThan| N0002((circulationThreshold)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?strictlyGreaterExample
+WHERE {
+	?standpipePressure rdf:type ddhub:DrillingDataPoint .
+	?circulationThreshold rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = circulationThreshold
+  )
+}
+```
+This example enforces pressure above a circulation threshold.
 ## IsToBeSmallerThan <!-- VERB -->
 - Display name: IsToBeSmallerThan
 - Parent verb: [IsToBeComparedWith](#IsToBeComparedWith)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Definition set: DrillingDataSemantics
+- Description: 
+Indicates that the subject should stay below the object.
+- Examples:
+```dwis smallerThanExample
+DrillingDataPoint:torque
+DrillingDataPoint:torqueLimit
+torque IsToBeSmallerThan torqueLimit
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[torque] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[torqueLimit] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[torque] -->|IsToBeSmallerThan| N0002((torqueLimit)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?smallerThanExample
+WHERE {
+	?torque rdf:type ddhub:DrillingDataPoint .
+	?torqueLimit rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = torqueLimit
+  )
+}
+```
+This example requires torque to remain under a limit.
 ## IsToBeSmallerOrEqualThan <!-- VERB -->
 - Display name: IsToBeSmallerOrEqualThan
 - Parent verb: [IsToBeSmallerThan](#IsToBeSmallerThan)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Definition set: DrillingDataSemantics
+- Description: 
+Indicates that the subject should stay below or equal to the object.
+- Examples:
+```dwis smallerOrEqualExample
+DrillingDataPoint:mudWeight
+DrillingDataPoint:maxMudWeight
+mudWeight IsToBeSmallerOrEqualThan maxMudWeight
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[mudWeight] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[maxMudWeight] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[mudWeight] -->|IsToBeSmallerOrEqualThan| N0002((maxMudWeight)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?smallerOrEqualExample
+WHERE {
+	?mudWeight rdf:type ddhub:DrillingDataPoint .
+	?maxMudWeight rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = maxMudWeight
+  )
+}
+```
+This example keeps mud weight at or below a maximum.
 ## IsToBeStrictlySmallerThan <!-- VERB -->
 - Display name: IsToBeStrictlySmallerThan
 - Parent verb: [IsToBeSmallerThan](#IsToBeSmallerThan)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Definition set: DrillingDataSemantics
+- Description: 
+Indicates that the subject should stay strictly below the object.
+- Examples:
+```dwis strictlySmallerExample
+DrillingDataPoint:wellheadPressure
+DrillingDataPoint:fracPressureLimit
+wellheadPressure IsToBeStrictlySmallerThan fracPressureLimit
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wellheadPressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[fracPressureLimit] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[wellheadPressure] -->|IsToBeStrictlySmallerThan| N0002((fracPressureLimit)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?strictlySmallerExample
+WHERE {
+	?wellheadPressure rdf:type ddhub:DrillingDataPoint .
+	?fracPressureLimit rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = fracPressureLimit
+  )
+}
+```
+This example requires wellhead pressure to be strictly below the fracturing limit.
 ## IsToBeEqualTo <!-- VERB -->
 - Display name: IsToBeEqualTo
 - Parent verb: [IsToBeComparedWith](#IsToBeComparedWith)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Definition set: DrillingDataSemantics
+- Description: 
+Indicates that the subject should match the object.
+- Examples:
+```dwis equalExample
+DrillingDataPoint:rotarySpeed
+DrillingDataPoint:rotarySetPoint
+rotarySpeed IsToBeEqualTo rotarySetPoint
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rotarySpeed] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[rotarySetPoint] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[rotarySpeed] -->|IsToBeEqualTo| N0002((rotarySetPoint)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?equalExample
+WHERE {
+	?rotarySpeed rdf:type ddhub:DrillingDataPoint .
+	?rotarySetPoint rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = rotarySetPoint
+  )
+}
+```
+This example requires rotary speed to equal its set-point.
 ## IsToBeDifferentFrom <!-- VERB -->
 - Display name: IsToBeDifferentFrom
 - Parent verb: [IsToBeComparedWith](#IsToBeComparedWith)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Definition set: DrillingDataSemantics
+- Description: 
+Indicates that the subject should differ from the object.
+- Examples:
+```dwis differentFromExample
+DrillingDataPoint:selectedBitType
+DrillingDataPoint:previousBitType
+selectedBitType IsToBeDifferentFrom previousBitType
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[selectedBitType] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[previousBitType] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[selectedBitType] -->|IsToBeDifferentFrom| N0002((previousBitType)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?differentFromExample
+WHERE {
+	?selectedBitType rdf:type ddhub:DrillingDataPoint .
+	?previousBitType rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = previousBitType
+  )
+}
+```
+This example states that the selected bit type must differ from the previous one.
+## IsLocatedAtEquipment <!-- VERB -->
+- Display name: Is Located At Equipment
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [Equipment](#Equipment)
+- Definition set: DrillingDataSemantics
+- Description: 
+Indicates that the drilling data point is associated with a specific piece of equipment.
+- Examples:
+```dwis IsLocatedAtEquipmentExample
+DrillingDataPoint:measurement
+Equipment:equiment
+measurement IsLocatedAtEquipment equiment
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[measurement] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[equiment] -->|BelongsToClass| N0003(Equipment) 
+	N0000[measurement] -->|IsLocatedAtEquipment| N0002((equiment)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?IsLocatedAtEquipmentExample
+WHERE {
+	?measurement rdf:type ddhub:DrillingDataPoint .
+	?equiment rdf:type ddhub:Equipment .
+  FILTER (
+	?Attribute000 = equiment
+  )
+}
+```
+This example states that a measurement is located at specific piece of equipment.
 ## IsSubPartOf <!-- VERB -->
 - Display name: IsSubPartOf
 - Parent verb: [DWISVerb](#DWISVerb)
@@ -57761,6 +76273,34 @@ WHERE {
 - Definition set: DrillingFeature
 - Description: 
 This verb is used to indicate something accounts for a drilling management feature.
+- Examples:
+```dwis accountsForExample
+Advisor:drillingAdvisor
+DrillingManagementFeature:cuttingsTransport
+drillingAdvisor AccountsFor cuttingsTransport
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingAdvisor] -->|BelongsToClass| N0001(Advisor) 
+	N0002[cuttingsTransport] -->|BelongsToClass| N0003(DrillingManagementFeature) 
+	N0000[drillingAdvisor] -->|AccountsFor| N0002((cuttingsTransport)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?accountsForExample
+WHERE {
+	?drillingAdvisor rdf:type ddhub:Advisor .
+	?cuttingsTransport rdf:type ddhub:DrillingManagementFeature .
+  FILTER (
+	?Attribute000 = cuttingsTransport
+  )
+}
+```
+This example shows an advisor accounting for cuttings transport.
 ## IsRelatedToDrillingIncident <!-- VERB -->
 - Display name: Is Related to Drilling Incident
 - Parent verb: [DWISVerb](#DWISVerb)
@@ -58484,204 +77024,2487 @@ dat#01
 - Subject class: [DrillingSignal](#DrillingSignal)
 - Object class: [DataEndPoint](#DataEndPoint)
 - Definition set: EndPoints
+- Description: 
+Associates a drilling signal with an external endpoint that provides or receives it.
+- Examples:
+```dwis endpointAssociation
+DrillingSignal:standpipePressureSignal
+WitsMLTimeBasedLogEndPoint:witsmlLog
+standpipePressureSignal HasEndPoint witsmlLog
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipePressureSignal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[witsmlLog] -->|BelongsToClass| N0003(WitsMLTimeBasedLogEndPoint) 
+	N0000[standpipePressureSignal] -->|HasEndPoint| N0002((witsmlLog)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?endpointAssociation
+WHERE {
+	?standpipePressureSignal rdf:type ddhub:DrillingSignal .
+	?witsmlLog rdf:type ddhub:WitsMLTimeBasedLogEndPoint .
+  FILTER (
+	?Attribute000 = witsmlLog
+  )
+}
+```
+This example links the standpipe pressure signal to its WITSML endpoint.
 ## HasPressureReferenceType <!-- VERB -->
 - Display name: HasPressureReferenceType
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [PressureReference](#PressureReference)
 - Definition set: Hydraulics
+- Description: 
+Indicates the pressure reference basis used for a pressure data point.
+- Examples:
+```dwis pressureReferenceExample
+DrillingDataPoint:standpipePressure
+GaugePressureReference:gaugePressure
+standpipePressure HasPressureReferenceType gaugePressure
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipePressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[gaugePressure] -->|BelongsToClass| N0003(GaugePressureReference) 
+	N0000[standpipePressure] -->|HasPressureReferenceType| N0002((gaugePressure)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pressureReferenceExample
+WHERE {
+	?standpipePressure rdf:type ddhub:DrillingDataPoint .
+	?gaugePressure rdf:type ddhub:GaugePressureReference .
+  FILTER (
+	?Attribute000 = gaugePressure
+  )
+}
+```
+This example sets a gauge reference for standpipe pressure.
 ## EndsHydraulicBranchDecomposition <!-- VERB -->
 - Display name: EndsHydraulicBranchDecomposition
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [HydraulicBranch](#HydraulicBranch)
 - Object class: [HydraulicBranch](#HydraulicBranch)
 - Definition set: Hydraulics
+- Description: 
+Marks the terminating branch when decomposing a hydraulic path.
+- Examples:
+```dwis endBranch
+HydraulicBranch:standpipeBranch
+HydraulicBranch:openHole
+standpipeBranch EndsHydraulicBranchDecomposition openHole
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipeBranch] -->|BelongsToClass| N0001(HydraulicBranch) 
+	N0002[openHole] -->|BelongsToClass| N0001(HydraulicBranch) 
+	N0000[standpipeBranch] -->|EndsHydraulicBranchDecomposition| N0002((openHole)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?endBranch
+WHERE {
+	?standpipeBranch rdf:type ddhub:HydraulicBranch .
+	?openHole rdf:type ddhub:HydraulicBranch .
+  FILTER (
+	?Attribute000 = openHole
+  )
+}
+```
+This example declares that the standpipe branch ends at the open hole branch.
 ## IsAHydraulicRepresentationFor <!-- VERB -->
 - Display name: IsAHydraulicRepresentationFor
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [HydraulicLogicalElement](#HydraulicLogicalElement)
 - Object class: [DrillingEquipment](#DrillingEquipment)
 - Definition set: Hydraulics
+- Description: 
+Links a hydraulic element to the piece of equipment it represents.
+- Examples:
+```dwis hydraulicRepresentation
+HydraulicBranch:standpipeBranch
+DrillingEquipment:standpipe
+standpipeBranch IsAHydraulicRepresentationFor standpipe
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipeBranch] -->|BelongsToClass| N0001(HydraulicBranch) 
+	N0002[standpipe] -->|BelongsToClass| N0003(DrillingEquipment) 
+	N0000[standpipeBranch] -->|IsAHydraulicRepresentationFor| N0002((standpipe)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hydraulicRepresentation
+WHERE {
+	?standpipeBranch rdf:type ddhub:HydraulicBranch .
+	?standpipe rdf:type ddhub:DrillingEquipment .
+  FILTER (
+	?Attribute000 = standpipe
+  )
+}
+```
+This example represents a standpipe with a hydraulic branch.
+## IsASubHydraulicNetwork <!-- VERB -->
+- Display name: Is a sub-hydraulic network
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [HydraulicNetwork](#HydraulicNetwork)
+- Object class: [HydraulicNetwork](#HydraulicNetwork)
+- Definition set: Hydraulics
+- Description: 
+Declares that a hydraulic network is a sub-hydraulic network of another one.
+- Examples:
+```dwis IsASubHydraulicNetworkExample
+HydraulicNetwork:surfaceNetwork
+MPDMainFlowPath:mainFlowPath
+mainFlowPath IsASubHydraulicNetwork surfaceNetwork
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[surfaceNetwork] -->|BelongsToClass| N0001(HydraulicNetwork) 
+	N0002[mainFlowPath] -->|BelongsToClass| N0003(MPDMainFlowPath) 
+	N0002[mainFlowPath] -->|IsASubHydraulicNetwork| N0000((surfaceNetwork)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?IsASubHydraulicNetworkExample
+WHERE {
+	?surfaceNetwork rdf:type ddhub:HydraulicNetwork .
+	?mainFlowPath rdf:type ddhub:MPDMainFlowPath .
+  FILTER (
+	?Attribute000 = surfaceNetwork
+  )
+}
+```
+This example indicates that the mainFlowPath is a sub-hydraulic network of the surface network.
+## HasLogicalElementComponent <!-- VERB -->
+- Display name: Has Logical Element Component
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [HydraulicNetwork](#HydraulicNetwork)
+- Object class: [HydraulicLogicalElement](#HydraulicLogicalElement)
+- Definition set: Hydraulics
+- Description: 
+Declares that a hydraulic network has a hydraulic logical element.
+- Examples:
+```dwis HasLogicalElementComponentExample
+TopsideHydraulicNetwork:topsideHydraulicNetwork
+ActivePitLogical:ActivePitLogical
+topsideHydraulicNetwork HasLogicalElementComponent ActivePitLogical
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[topsideHydraulicNetwork] -->|BelongsToClass| N0001(TopsideHydraulicNetwork) 
+	N0002[ActivePitLogical] -->|BelongsToClass| N0002(ActivePitLogical) 
+	N0000[topsideHydraulicNetwork] -->|HasLogicalElementComponent| N0002((ActivePitLogical)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?HasLogicalElementComponentExample
+WHERE {
+	?topsideHydraulicNetwork rdf:type ddhub:TopsideHydraulicNetwork .
+	?ActivePitLogical rdf:type ddhub:ActivePitLogical .
+  FILTER (
+	?Attribute000 = ActivePitLogical
+  )
+}
+```
+This example indicates that the top side hydraulic network has a hydraulic logical component that is an active pit.
 ## HasBranchComponent <!-- VERB -->
-- Display name: HasBranchComponent
+- Display name: Has Branch Component
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [HydraulicNetwork](#HydraulicNetwork)
 - Object class: [HydraulicBranch](#HydraulicBranch)
 - Definition set: Hydraulics
+- Description: 
+Declares that a hydraulic network contains a branch.
+- Examples:
+```dwis branchComponent
+HydraulicNetwork:surfaceNetwork
+HydraulicBranch:returnLine
+surfaceNetwork HasBranchComponent returnLine
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[surfaceNetwork] -->|BelongsToClass| N0001(HydraulicNetwork) 
+	N0002[returnLine] -->|BelongsToClass| N0003(HydraulicBranch) 
+	N0000[surfaceNetwork] -->|HasBranchComponent| N0002((returnLine)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?branchComponent
+WHERE {
+	?surfaceNetwork rdf:type ddhub:HydraulicNetwork .
+	?returnLine rdf:type ddhub:HydraulicBranch .
+  FILTER (
+	?Attribute000 = returnLine
+  )
+}
+```
+This example adds a return line branch to the surface network.
 ## HasBranchCoordinateSystem <!-- VERB -->
-- Display name: HasBranchCoordinateSystem
+- Display name: Has Branch Coordinate System
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [HydraulicBranch](#HydraulicBranch)
 - Object class: [ReferenceFrame](#ReferenceFrame)
 - Definition set: Hydraulics
-## HasHydraulicState <!-- VERB -->
-- Display name: HasHydraulicState
+- Description: 
+Associates a coordinate system with a hydraulic branch.
+- Examples:
+```dwis branchCoordinates
+HydraulicBranch:annulus
+ReferenceFrame:annulusFrame
+annulus HasBranchCoordinateSystem annulusFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[annulus] -->|BelongsToClass| N0001(HydraulicBranch) 
+	N0002[annulusFrame] -->|BelongsToClass| N0003(ReferenceFrame) 
+	N0000[annulus] -->|HasBranchCoordinateSystem| N0002((annulusFrame)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?branchCoordinates
+WHERE {
+	?annulus rdf:type ddhub:HydraulicBranch .
+	?annulusFrame rdf:type ddhub:ReferenceFrame .
+  FILTER (
+	?Attribute000 = annulusFrame
+  )
+}
+```
+This example assigns a reference frame to the annulus branch.
+## IsAssociatedToHydraulicBranch <!-- VERB -->
+- Display name: Is Associated To Hydraulic Branch
 - Parent verb: [DWISVerb](#DWISVerb)
-- Subject class: [HydraulicJunction](#HydraulicJunction)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [HydraulicBranch](#HydraulicBranch)
+- Definition set: Hydraulics
+- Description: 
+Associates drilling data point to a hydraulic branch.
+- Examples:
+```dwis IsAssociatedToHydraulicBranch
+HydraulicBranch:inletToDrillstring
+DrillingDataPoint:inletPressure
+inletPressure IsAssociatedToHydraulicBranch inletToDrillstring
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[inletToDrillstring] -->|BelongsToClass| N0001(HydraulicBranch) 
+	N0002[inletPressure] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[inletPressure] -->|IsAssociatedToHydraulicBranch| N0000((inletToDrillstring)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?IsAssociatedToHydraulicBranch
+WHERE {
+	?inletToDrillstring rdf:type ddhub:HydraulicBranch .
+	?inletPressure rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = inletToDrillstring
+  )
+}
+```
+This example associates the inlet pressure data point to the inlet to drillstring branch.
+```dwis ASMAnnulusPressureExample
+DynamicDrillingSignal:BlackStreamMeasuredAnnulusPressure
+DerivedMeasurement:BlackStreamMeasuredAnnulusPressure#01
+BlackStreamMeasuredAnnulusPressure#01 BelongsToClass JSonDataType
+BlackStreamMeasuredAnnulusPressure#01 HasDynamicValue BlackStreamMeasuredAnnulusPressure
+BlackStreamMeasuredAnnulusPressure#01 IsOfMeasurableQuantity PressureDrilling
+MovingAverage:movingAverageBlackStreamMeasuredAnnulusPressure
+BlackStreamMeasuredAnnulusPressure#01 IsTransformationOutput movingAverageBlackStreamMeasuredAnnulusPressure
+WiredPipeTelemetry:wiredPipeTelemetry
+BlackStreamMeasuredAnnulusPressure#01 IsTransmittedBy wiredPipeTelemetry
+DynamicDrillingSignal:BlackStreamMeasuredAnnulusPressureUncertainty
+DrillingDataPoint:BlackStreamMeasuredAnnulusPressureUncertainty#01
+BlackStreamMeasuredAnnulusPressureUncertainty#01 BelongsToClass ContinuousDataType
+BlackStreamMeasuredAnnulusPressureUncertainty#01 IsOfMeasurableQuantity PressureDrilling
+BlackStreamMeasuredAnnulusPressureUncertainty#01 HasDynamicValue BlackStreamMeasuredAnnulusPressureUncertainty
+GaussianUncertainty:BlackStreamMeasuredAnnulusPressureGaussianUncertainty#01
+BlackStreamMeasuredAnnulusPressureGaussianUncertainty#01 HasUncertaintyStandardDeviation BlackStreamMeasuredAnnulusPressureUncertainty#01
+BlackStreamMeasuredAnnulusPressure#01 HasUncertainty BlackStreamMeasuredAnnulusPressureGaussianUncertainty#01
+AnnulusOutletJunction:annulusOutletJunction#01
+HydraulicBranch:annulusHydraulicBranch#01
+annulusOutletJunction#01 HasUpstreamBranch annulusHydraulicBranch#01
+BlackStreamMeasuredAnnulusPressure#01 IsAssociatedToHydraulicBranch annulusHydraulicBranch#01
+PipeSectionMechanicalLogicalElement:pipeSection#01
+BlackStreamMeasuredAnnulusPressure#01 IsMechanicallyLocatedAt pipeSection#01
+InstrumentationCompany:NOV#01
+BlackStreamMeasuredAnnulusPressure#01 IsProvidedBy NOV#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[BlackStreamMeasuredAnnulusPressure] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[BlackStreamMeasuredAnnulusPressure#01] -->|BelongsToClass| N0003(DerivedMeasurement) 
+	N0002[BlackStreamMeasuredAnnulusPressure#01] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[BlackStreamMeasuredAnnulusPressure#01] -->|HasDynamicValue| N0000((BlackStreamMeasuredAnnulusPressure)) 
+	N0002[BlackStreamMeasuredAnnulusPressure#01] -->|IsOfMeasurableQuantity| N0005((PressureDrilling)) 
+	N0006[movingAverageBlackStreamMeasuredAnnulusPressure] -->|BelongsToClass| N0007(MovingAverage) 
+	N0002[BlackStreamMeasuredAnnulusPressure#01] -->|IsTransformationOutput| N0006((movingAverageBlackStreamMeasuredAnnulusPressure)) 
+	N0008[wiredPipeTelemetry] -->|BelongsToClass| N0009(WiredPipeTelemetry) 
+	N0002[BlackStreamMeasuredAnnulusPressure#01] -->|IsTransmittedBy| N0008((wiredPipeTelemetry)) 
+	N0010[BlackStreamMeasuredAnnulusPressureUncertainty] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0011[BlackStreamMeasuredAnnulusPressureUncertainty#01] -->|BelongsToClass| N0012(DrillingDataPoint) 
+	N0011[BlackStreamMeasuredAnnulusPressureUncertainty#01] -->|BelongsToClass| N0013(ContinuousDataType) 
+	N0011[BlackStreamMeasuredAnnulusPressureUncertainty#01] -->|IsOfMeasurableQuantity| N0005((PressureDrilling)) 
+	N0011[BlackStreamMeasuredAnnulusPressureUncertainty#01] -->|HasDynamicValue| N0010((BlackStreamMeasuredAnnulusPressureUncertainty)) 
+	N0014[BlackStreamMeasuredAnnulusPressureGaussianUncertainty#01] -->|BelongsToClass| N0015(GaussianUncertainty) 
+	N0014[BlackStreamMeasuredAnnulusPressureGaussianUncertainty#01] -->|HasUncertaintyStandardDeviation| N0011((BlackStreamMeasuredAnnulusPressureUncertainty#01)) 
+	N0002[BlackStreamMeasuredAnnulusPressure#01] -->|HasUncertainty| N0014((BlackStreamMeasuredAnnulusPressureGaussianUncertainty#01)) 
+	N0016[annulusOutletJunction#01] -->|BelongsToClass| N0017(AnnulusOutletJunction) 
+	N0018[annulusHydraulicBranch#01] -->|BelongsToClass| N0019(HydraulicBranch) 
+	N0016[annulusOutletJunction#01] -->|HasUpstreamBranch| N0018((annulusHydraulicBranch#01)) 
+	N0002[BlackStreamMeasuredAnnulusPressure#01] -->|IsAssociatedToHydraulicBranch| N0018((annulusHydraulicBranch#01)) 
+	N0020[pipeSection#01] -->|BelongsToClass| N0021(PipeSectionMechanicalLogicalElement) 
+	N0002[BlackStreamMeasuredAnnulusPressure#01] -->|IsMechanicallyLocatedAt| N0020((pipeSection#01)) 
+	N0022[NOV#01] -->|BelongsToClass| N0023(InstrumentationCompany) 
+	N0002[BlackStreamMeasuredAnnulusPressure#01] -->|IsProvidedBy| N0022((NOV#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ASMAnnulusPressureExample
+WHERE {
+	?BlackStreamMeasuredAnnulusPressure rdf:type ddhub:DynamicDrillingSignal .
+	?BlackStreamMeasuredAnnulusPressure#01 rdf:type ddhub:DerivedMeasurement .
+	?BlackStreamMeasuredAnnulusPressure#01 rdf:type ddhub:JSonDataType .
+	?movingAverageBlackStreamMeasuredAnnulusPressure rdf:type ddhub:MovingAverage .
+	?wiredPipeTelemetry rdf:type ddhub:WiredPipeTelemetry .
+	?BlackStreamMeasuredAnnulusPressureUncertainty rdf:type ddhub:DynamicDrillingSignal .
+	?BlackStreamMeasuredAnnulusPressureUncertainty#01 rdf:type ddhub:DrillingDataPoint .
+	?BlackStreamMeasuredAnnulusPressureUncertainty#01 rdf:type ddhub:ContinuousDataType .
+	?BlackStreamMeasuredAnnulusPressureGaussianUncertainty#01 rdf:type ddhub:GaussianUncertainty .
+	?annulusOutletJunction#01 rdf:type ddhub:AnnulusOutletJunction .
+	?annulusHydraulicBranch#01 rdf:type ddhub:HydraulicBranch .
+	?pipeSection#01 rdf:type ddhub:PipeSectionMechanicalLogicalElement .
+	?NOV#01 rdf:type ddhub:InstrumentationCompany .
+  FILTER (
+	?Attribute000 = BlackStreamMeasuredAnnulusPressure
+	&& 	?Attribute001 = PressureDrilling
+	&& 	?Attribute002 = movingAverageBlackStreamMeasuredAnnulusPressure
+	&& 	?Attribute003 = wiredPipeTelemetry
+	&& 	?Attribute004 = PressureDrilling
+	&& 	?Attribute005 = BlackStreamMeasuredAnnulusPressureUncertainty
+	&& 	?Attribute006 = BlackStreamMeasuredAnnulusPressureUncertainty#01
+	&& 	?Attribute007 = BlackStreamMeasuredAnnulusPressureGaussianUncertainty#01
+	&& 	?Attribute008 = annulusHydraulicBranch#01
+	&& 	?Attribute009 = annulusHydraulicBranch#01
+	&& 	?Attribute010 = pipeSection#01
+	&& 	?Attribute011 = NOV#01
+  )
+}
+```
+This example declares a pressure signal that is measured in the annulus along the drill string.
+## HasHydraulicState <!-- VERB -->
+- Display name: Has Hydraulic State
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [HydraulicLogicalElement](#HydraulicLogicalElement)
 - Object class: [HydraulicElementState](#HydraulicElementState)
 - Definition set: Hydraulics
+- Description: 
+Indicates the current state of a hydraulic logical element.
+- Examples:
+```dwis junctionState
+HydraulicJunction:chokeJunction
+HydraulicConnectedState:connectedState
+chokeJunction HasHydraulicState connectedState
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[chokeJunction] -->|BelongsToClass| N0001(HydraulicJunction) 
+	N0002[connectedState] -->|BelongsToClass| N0003(HydraulicConnectedState) 
+	N0000[chokeJunction] -->|HasHydraulicState| N0002((connectedState)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?junctionState
+WHERE {
+	?chokeJunction rdf:type ddhub:HydraulicJunction .
+	?connectedState rdf:type ddhub:HydraulicConnectedState .
+  FILTER (
+	?Attribute000 = connectedState
+  )
+}
+```
+This example records the connection state of a junction.
 ## HasHydraulicStateValueFrom <!-- VERB -->
-- Display name: HasHydraulicStateValueFrom
+- Display name: Has Hydraulic State Value From
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: Hydraulics
+- Description: 
+Indicates that the state value is provided by another signal or computation.
+- Examples:
+```dwis stateValueSource
+HydraulicConnectedState:connectedState
+DrillingDataPoint:valveOpenFlag
+connectedState HasHydraulicStateValueFrom valveOpenFlag
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[connectedState] -->|BelongsToClass| N0001(HydraulicConnectedState) 
+	N0002[valveOpenFlag] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0000[connectedState] -->|HasHydraulicStateValueFrom| N0002((valveOpenFlag)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stateValueSource
+WHERE {
+	?connectedState rdf:type ddhub:HydraulicConnectedState .
+	?valveOpenFlag rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = valveOpenFlag
+  )
+}
+```
+This example sets a connection state value from a valve open flag.
 ## HasLeftBranchCoordinates <!-- VERB -->
-- Display name: HasLeftBranchCoordinates
+- Display name: Has Left Branch Coordinates
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [HydraulicJunction](#HydraulicJunction)
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Definition set: Hydraulics
+- Description: 
+Associates coordinate data for the left branch of a junction.
+- Examples:
+```dwis leftCoords
+HydraulicJunction:flowJunction
+DrillingDataPoint:leftBranchMD
+flowJunction HasLeftBranchCoordinates leftBranchMD
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[flowJunction] -->|BelongsToClass| N0001(HydraulicJunction) 
+	N0002[leftBranchMD] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0000[flowJunction] -->|HasLeftBranchCoordinates| N0002((leftBranchMD)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?leftCoords
+WHERE {
+	?flowJunction rdf:type ddhub:HydraulicJunction .
+	?leftBranchMD rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = leftBranchMD
+  )
+}
+```
+This example sets measured depth coordinates for the left branch.
 ## HasRightBranchCoordinates <!-- VERB -->
-- Display name: HasRightBranchCoordinates
+- Display name: Has Right Branch Coordinates
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [HydraulicJunction](#HydraulicJunction)
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Definition set: Hydraulics
+- Description: 
+Associates coordinate data for the right branch of a junction.
+- Examples:
+```dwis rightCoords
+HydraulicJunction:flowJunction
+DrillingDataPoint:rightBranchMD
+flowJunction HasRightBranchCoordinates rightBranchMD
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[flowJunction] -->|BelongsToClass| N0001(HydraulicJunction) 
+	N0002[rightBranchMD] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0000[flowJunction] -->|HasRightBranchCoordinates| N0002((rightBranchMD)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rightCoords
+WHERE {
+	?flowJunction rdf:type ddhub:HydraulicJunction .
+	?rightBranchMD rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = rightBranchMD
+  )
+}
+```
+This example sets coordinates for the right branch.
 ## IsHydraulicallyLocatedAt <!-- VERB -->
-- Display name: IsHydraulicallyLocatedAt
+- Display name: Is Hydraulically Located At
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [HydraulicLogicalElement](#HydraulicLogicalElement)
 - Definition set: Hydraulics
+- Description: 
+Places a measurement or estimation at a specific hydraulic element.
+- Examples:
+```dwis locatedAtBranch
+DrillingDataPoint:standpipePressure
+HydraulicBranch:standpipeBranch
+standpipePressure IsHydraulicallyLocatedAt standpipeBranch
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipePressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[standpipeBranch] -->|BelongsToClass| N0003(HydraulicBranch) 
+	N0000[standpipePressure] -->|IsHydraulicallyLocatedAt| N0002((standpipeBranch)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?locatedAtBranch
+WHERE {
+	?standpipePressure rdf:type ddhub:DrillingDataPoint .
+	?standpipeBranch rdf:type ddhub:HydraulicBranch .
+  FILTER (
+	?Attribute000 = standpipeBranch
+  )
+}
+```
+This example locates standpipe pressure at the standpipe branch.
 ## IsEquivalentCirculationDensityAt <!-- VERB -->
-- Display name: IsEquivalentCirculationDensityAt
+- Display name: Is Equivalent Circulation Density At
 - Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [HydraulicLogicalElement](#HydraulicLogicalElement)
 - Definition set: Hydraulics
+- Description: 
+Indicates that a data point represents ECD at a hydraulic element.
+- Examples:
+```dwis ecdAt
+DrillingDataPoint:ecd
+HydraulicLogicalElement:annulus
+ecd IsEquivalentCirculationDensityAt annulus
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ecd] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[annulus] -->|BelongsToClass| N0003(HydraulicLogicalElement) 
+	N0000[ecd] -->|IsEquivalentCirculationDensityAt| N0002((annulus)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ecdAt
+WHERE {
+	?ecd rdf:type ddhub:DrillingDataPoint .
+	?annulus rdf:type ddhub:HydraulicLogicalElement .
+  FILTER (
+	?Attribute000 = annulus
+  )
+}
+```
+This example places ECD at the annulus.
 ## IsFluidDensityAt <!-- VERB -->
-- Display name: IsFluidDensityAt
+- Display name: Is Fluid Density At
 - Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [HydraulicLogicalElement](#HydraulicLogicalElement)
 - Definition set: Hydraulics
+- Description: 
+Indicates fluid density at a hydraulic element.
+- Examples:
+```dwis densityAt
+DrillingDataPoint:fluidDensity
+HydraulicLogicalElement:standpipeBranch
+fluidDensity IsFluidDensityAt standpipeBranch
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[fluidDensity] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[standpipeBranch] -->|BelongsToClass| N0003(HydraulicLogicalElement) 
+	N0000[fluidDensity] -->|IsFluidDensityAt| N0002((standpipeBranch)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?densityAt
+WHERE {
+	?fluidDensity rdf:type ddhub:DrillingDataPoint .
+	?standpipeBranch rdf:type ddhub:HydraulicLogicalElement .
+  FILTER (
+	?Attribute000 = standpipeBranch
+  )
+}
+```
+This example assigns fluid density to the standpipe branch.
 ## IsFluidTemperatureAt <!-- VERB -->
-- Display name: IsFluidTemperatureAt
+- Display name: Is Fluid Temperature At
 - Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [HydraulicLogicalElement](#HydraulicLogicalElement)
 - Definition set: Hydraulics
+- Description: 
+Indicates fluid temperature at a hydraulic element.
+- Examples:
+```dwis temperatureAt
+DrillingDataPoint:fluidTemperature
+HydraulicLogicalElement:annulus
+fluidTemperature IsFluidTemperatureAt annulus
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[fluidTemperature] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[annulus] -->|BelongsToClass| N0003(HydraulicLogicalElement) 
+	N0000[fluidTemperature] -->|IsFluidTemperatureAt| N0002((annulus)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?temperatureAt
+WHERE {
+	?fluidTemperature rdf:type ddhub:DrillingDataPoint .
+	?annulus rdf:type ddhub:HydraulicLogicalElement .
+  FILTER (
+	?Attribute000 = annulus
+  )
+}
+```
+This example reports temperature in the annulus.
 ## IsFluidVelocityAt <!-- VERB -->
-- Display name: IsFluidVelocityAt
+- Display name: Is Fluid Velocity At
 - Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [HydraulicLogicalElement](#HydraulicLogicalElement)
 - Definition set: Hydraulics
+- Description: 
+Indicates fluid velocity at a hydraulic element.
+- Examples:
+```dwis velocityAt
+DrillingDataPoint:fluidVelocity
+HydraulicLogicalElement:dpInner
+fluidVelocity IsFluidVelocityAt dpInner
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[fluidVelocity] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[dpInner] -->|BelongsToClass| N0003(HydraulicLogicalElement) 
+	N0000[fluidVelocity] -->|IsFluidVelocityAt| N0002((dpInner)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?velocityAt
+WHERE {
+	?fluidVelocity rdf:type ddhub:DrillingDataPoint .
+	?dpInner rdf:type ddhub:HydraulicLogicalElement .
+  FILTER (
+	?Attribute000 = dpInner
+  )
+}
+```
+This example assigns fluid velocity to the drill pipe inner.
 ## IsOpeningRatioAt <!-- VERB -->
-- Display name: IsOpeningRatioAt
+- Display name: Is Opening Ratio At
 - Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [HydraulicLogicalElement](#HydraulicLogicalElement)
 - Definition set: Hydraulics
+- Description: 
+Indicates an opening ratio (e.g., choke valve) at a hydraulic element.
+- Examples:
+```dwis openingRatio
+DrillingDataPoint:chokeOpening
+HydraulicLogicalElement:chokeJunction
+chokeOpening IsOpeningRatioAt chokeJunction
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[chokeOpening] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[chokeJunction] -->|BelongsToClass| N0003(HydraulicLogicalElement) 
+	N0000[chokeOpening] -->|IsOpeningRatioAt| N0002((chokeJunction)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?openingRatio
+WHERE {
+	?chokeOpening rdf:type ddhub:DrillingDataPoint .
+	?chokeJunction rdf:type ddhub:HydraulicLogicalElement .
+  FILTER (
+	?Attribute000 = chokeJunction
+  )
+}
+```
+This example sets choke opening ratio at a junction.
 ## IsVolumeAt <!-- VERB -->
 - Display name: IsVolumeAt
-- Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
+- Parent verb: [Is Hydraulically Located At](#Is Hydraulically Located At)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
-- Object class: [Tank](#Tank)
+- Object class: [HydraulicLogicalElement](#HydraulicLogicalElement)
 - Definition set: Hydraulics
+- Description: 
+Indicates a volume measurement for a HydraulicLogicalElement.
+- Examples:
+```dwis tankVolume
+DrillingDataPoint:mudVolume
+TankLogical:mudTank
+mudVolume IsVolumeAt mudTank
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[mudVolume] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[mudTank] -->|BelongsToClass| N0003(TankLogical) 
+	N0000[mudVolume] -->|IsVolumeAt| N0002((mudTank)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?tankVolume
+WHERE {
+	?mudVolume rdf:type ddhub:DrillingDataPoint .
+	?mudTank rdf:type ddhub:TankLogical .
+  FILTER (
+	?Attribute000 = mudTank
+  )
+}
+```
+This example records mud volume in a tank.
 ## IsHydraulicEstimationAt <!-- VERB -->
-- Display name: IsHydraulicEstimationAt
+- Display name: Is Hydraulic Estimation At
 - Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [HydraulicLogicalElement](#HydraulicLogicalElement)
 - Definition set: Hydraulics
+- Description: 
+Indicates that a value is an estimated hydraulic parameter at an element.
+- Examples:
+```dwis estimatedPressureExample
+DrillingDataPoint:estimatedAnnulusPressure
+HydraulicLogicalElement:annulus
+estimatedAnnulusPressure IsHydraulicEstimationAt annulus
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[estimatedAnnulusPressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[annulus] -->|BelongsToClass| N0003(HydraulicLogicalElement) 
+	N0000[estimatedAnnulusPressure] -->|IsHydraulicEstimationAt| N0002((annulus)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?estimatedPressureExample
+WHERE {
+	?estimatedAnnulusPressure rdf:type ddhub:DrillingDataPoint .
+	?annulus rdf:type ddhub:HydraulicLogicalElement .
+  FILTER (
+	?Attribute000 = annulus
+  )
+}
+```
+This example shows an estimated annulus pressure.
+```dwis ShakerLoadEstimateExample
+DynamicDrillingSignal:CleanSightShakerLoadEstimate
+ComputedData:CleanSightShakerLoadEstimate#01
+CleanSightShakerLoadEstimate#01 BelongsToClass JSonDataType
+CleanSightShakerLoadEstimate#01 HasDynamicValue CleanSightShakerLoadEstimate
+CleanSightShakerLoadEstimate#01 IsOfMeasurableQuantity DimensionLessStandard
+TopSideTelemetry:topSideTelemetry
+CleanSightShakerLoadEstimate#01 IsTransmittedBy topSideTelemetry
+MovingAverage:movingAverageCleanSightShakerLoadEstimate
+CleanSightShakerLoadEstimate#01 IsTransformationOutput movingAverageCleanSightShakerLoadEstimate
+CuttingSeparatorLogical:ShaleShakerElement#01
+CleanSightShakerLoadEstimate#01 IsHydraulicEstimationAt ShaleShakerElement#01
+DrillingLiquidType:DrillingFluid#01
+DrillingFluid#01 IsFluidTypeLocatedAt ShaleShakerElement#01
+InstrumentationCompany:DrillDocs#01
+CleanSightShakerLoadEstimate#01 IsProvidedBy DrillDocs#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CleanSightShakerLoadEstimate] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[CleanSightShakerLoadEstimate#01] -->|BelongsToClass| N0003(ComputedData) 
+	N0002[CleanSightShakerLoadEstimate#01] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[CleanSightShakerLoadEstimate#01] -->|HasDynamicValue| N0000((CleanSightShakerLoadEstimate)) 
+	N0002[CleanSightShakerLoadEstimate#01] -->|IsOfMeasurableQuantity| N0005((DimensionLessStandard)) 
+	N0006[topSideTelemetry] -->|BelongsToClass| N0007(TopSideTelemetry) 
+	N0002[CleanSightShakerLoadEstimate#01] -->|IsTransmittedBy| N0006((topSideTelemetry)) 
+	N0008[movingAverageCleanSightShakerLoadEstimate] -->|BelongsToClass| N0009(MovingAverage) 
+	N0002[CleanSightShakerLoadEstimate#01] -->|IsTransformationOutput| N0008((movingAverageCleanSightShakerLoadEstimate)) 
+	N0010[ShaleShakerElement#01] -->|BelongsToClass| N0011(CuttingSeparatorLogical) 
+	N0002[CleanSightShakerLoadEstimate#01] -->|IsHydraulicEstimationAt| N0010((ShaleShakerElement#01)) 
+	N0012[DrillingFluid#01] -->|BelongsToClass| N0013(DrillingLiquidType) 
+	N0012[DrillingFluid#01] -->|IsFluidTypeLocatedAt| N0010((ShaleShakerElement#01)) 
+	N0014[DrillDocs#01] -->|BelongsToClass| N0015(InstrumentationCompany) 
+	N0002[CleanSightShakerLoadEstimate#01] -->|IsProvidedBy| N0014((DrillDocs#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ShakerLoadEstimateExample
+WHERE {
+	?CleanSightShakerLoadEstimate rdf:type ddhub:DynamicDrillingSignal .
+	?CleanSightShakerLoadEstimate#01 rdf:type ddhub:ComputedData .
+	?CleanSightShakerLoadEstimate#01 rdf:type ddhub:JSonDataType .
+	?topSideTelemetry rdf:type ddhub:TopSideTelemetry .
+	?movingAverageCleanSightShakerLoadEstimate rdf:type ddhub:MovingAverage .
+	?ShaleShakerElement#01 rdf:type ddhub:CuttingSeparatorLogical .
+	?DrillingFluid#01 rdf:type ddhub:DrillingLiquidType .
+	?DrillDocs#01 rdf:type ddhub:InstrumentationCompany .
+  FILTER (
+	?Attribute000 = CleanSightShakerLoadEstimate
+	&& 	?Attribute001 = DimensionLessStandard
+	&& 	?Attribute002 = topSideTelemetry
+	&& 	?Attribute003 = movingAverageCleanSightShakerLoadEstimate
+	&& 	?Attribute004 = ShaleShakerElement#01
+	&& 	?Attribute005 = ShaleShakerElement#01
+	&& 	?Attribute006 = DrillDocs#01
+  )
+}
+```
+This example declares a shaker load estimate as a hydraulic estimation at a shale shaker element.
 ## IsHydraulicMaximumAllowedRateOfChangeAt <!-- VERB -->
-- Display name: IsHydraulicMaximumAllowedRateOfChangeAt
+- Display name: Is Hydraulic Maximum Allowed Rate Of Change At
 - Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [HydraulicLogicalElement](#HydraulicLogicalElement)
 - Definition set: Hydraulics
+- Description: 
+Maximum allowable rate of change for a hydraulic parameter at an element.
+- Examples:
+```dwis maxRateOfChange
+DrillingDataPoint:maxPressureRamp
+HydraulicLogicalElement:chokeJunction
+maxPressureRamp IsHydraulicMaximumAllowedRateOfChangeAt chokeJunction
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[maxPressureRamp] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[chokeJunction] -->|BelongsToClass| N0003(HydraulicLogicalElement) 
+	N0000[maxPressureRamp] -->|IsHydraulicMaximumAllowedRateOfChangeAt| N0002((chokeJunction)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?maxRateOfChange
+WHERE {
+	?maxPressureRamp rdf:type ddhub:DrillingDataPoint .
+	?chokeJunction rdf:type ddhub:HydraulicLogicalElement .
+  FILTER (
+	?Attribute000 = chokeJunction
+  )
+}
+```
+This example sets a max pressure ramp rate at the choke.
 ## IsHydraulicMaximumAllowedValueAt <!-- VERB -->
-- Display name: IsHydraulicMaximumAllowedValueAt
+- Display name: Is Hydraulic Maximum Allowed Value At
 - Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [HydraulicLogicalElement](#HydraulicLogicalElement)
 - Definition set: Hydraulics
+- Description: 
+Maximum allowable value of a hydraulic parameter at an element.
+- Examples:
+```dwis maxAllowedPressure
+DrillingDataPoint:maxAllowedPressure
+HydraulicLogicalElement:annulus
+maxAllowedPressure IsHydraulicMaximumAllowedValueAt annulus
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[maxAllowedPressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[annulus] -->|BelongsToClass| N0003(HydraulicLogicalElement) 
+	N0000[maxAllowedPressure] -->|IsHydraulicMaximumAllowedValueAt| N0002((annulus)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?maxAllowedPressure
+WHERE {
+	?maxAllowedPressure rdf:type ddhub:DrillingDataPoint .
+	?annulus rdf:type ddhub:HydraulicLogicalElement .
+  FILTER (
+	?Attribute000 = annulus
+  )
+}
+```
+This example provides a max allowed pressure at the annulus.
 ## IsHydraulicMeasurementAt <!-- VERB -->
-- Display name: IsHydraulicMeasurementAt
+- Display name: Is Hydraulic Measurement At
 - Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [HydraulicLogicalElement](#HydraulicLogicalElement)
 - Definition set: Hydraulics
+- Description: 
+Indicates a measurement taken at a hydraulic element.
+- Examples:
+```dwis hydraulicMeasurement
+DrillingDataPoint:standpipePressure
+HydraulicLogicalElement:standpipeBranch
+standpipePressure IsHydraulicMeasurementAt standpipeBranch
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipePressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[standpipeBranch] -->|BelongsToClass| N0003(HydraulicLogicalElement) 
+	N0000[standpipePressure] -->|IsHydraulicMeasurementAt| N0002((standpipeBranch)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hydraulicMeasurement
+WHERE {
+	?standpipePressure rdf:type ddhub:DrillingDataPoint .
+	?standpipeBranch rdf:type ddhub:HydraulicLogicalElement .
+  FILTER (
+	?Attribute000 = standpipeBranch
+  )
+}
+```
+This example sets a pressure measurement location.
 ## IsMassFlowRateAt <!-- VERB -->
-- Display name: IsMassFlowRateAt
+- Display name: Is Mass Flow Rate At
 - Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [HydraulicLogicalElement](#HydraulicLogicalElement)
 - Definition set: Hydraulics
+- Description: 
+Indicates a mass flow rate value at a hydraulic element.
+- Examples:
+```dwis massFlowRate
+DrillingDataPoint:massFlowRate
+HydraulicLogicalElement:standpipeBranch
+massFlowRate IsMassFlowRateAt standpipeBranch
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[massFlowRate] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[standpipeBranch] -->|BelongsToClass| N0003(HydraulicLogicalElement) 
+	N0000[massFlowRate] -->|IsMassFlowRateAt| N0002((standpipeBranch)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?massFlowRate
+WHERE {
+	?massFlowRate rdf:type ddhub:DrillingDataPoint .
+	?standpipeBranch rdf:type ddhub:HydraulicLogicalElement .
+  FILTER (
+	?Attribute000 = standpipeBranch
+  )
+}
+```
+This example places mass flow rate at the standpipe.
 ## IsPressureAt <!-- VERB -->
-- Display name: IsPressureAt
+- Display name: Is Pressure At
 - Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [HydraulicLogicalElement](#HydraulicLogicalElement)
 - Definition set: Hydraulics
+- Description: 
+Indicates a pressure value at a hydraulic element.
+- Examples:
+```dwis pressureAt
+DrillingDataPoint:annulusPressure
+HydraulicLogicalElement:annulus
+annulusPressure IsPressureAt annulus
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[annulusPressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[annulus] -->|BelongsToClass| N0003(HydraulicLogicalElement) 
+	N0000[annulusPressure] -->|IsPressureAt| N0002((annulus)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pressureAt
+WHERE {
+	?annulusPressure rdf:type ddhub:DrillingDataPoint .
+	?annulus rdf:type ddhub:HydraulicLogicalElement .
+  FILTER (
+	?Attribute000 = annulus
+  )
+}
+```
+This example locates annulus pressure.
 ## IsPressureGradientAt <!-- VERB -->
-- Display name: IsPressureGradientAt
+- Display name: Is Pressure Gradient At
 - Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [HydraulicLogicalElement](#HydraulicLogicalElement)
 - Definition set: Hydraulics
+- Description: 
+Indicates a pressure gradient at a hydraulic element.
+- Examples:
+```dwis pressureGradient
+DrillingDataPoint:pressureGradient
+HydraulicLogicalElement:openHole
+pressureGradient IsPressureGradientAt openHole
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pressureGradient] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[openHole] -->|BelongsToClass| N0003(HydraulicLogicalElement) 
+	N0000[pressureGradient] -->|IsPressureGradientAt| N0002((openHole)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pressureGradient
+WHERE {
+	?pressureGradient rdf:type ddhub:DrillingDataPoint .
+	?openHole rdf:type ddhub:HydraulicLogicalElement .
+  FILTER (
+	?Attribute000 = openHole
+  )
+}
+```
+This example sets a pressure gradient in the open hole.
 ## IsVolumetricFlowRateAt <!-- VERB -->
-- Display name: IsVolumetricFlowRateAt
+- Display name: Is Volumetric Flow Rate At
 - Parent verb: [IsHydraulicallyLocatedAt](#IsHydraulicallyLocatedAt)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [HydraulicLogicalElement](#HydraulicLogicalElement)
 - Definition set: Hydraulics
+- Description: 
+Indicates a volumetric flow rate at a hydraulic element.
+- Examples:
+```dwis volumetricFlow
+DrillingDataPoint:flowRate
+HydraulicLogicalElement:returnLine
+flowRate IsVolumetricFlowRateAt returnLine
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[flowRate] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[returnLine] -->|BelongsToClass| N0003(HydraulicLogicalElement) 
+	N0000[flowRate] -->|IsVolumetricFlowRateAt| N0002((returnLine)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?volumetricFlow
+WHERE {
+	?flowRate rdf:type ddhub:DrillingDataPoint .
+	?returnLine rdf:type ddhub:HydraulicLogicalElement .
+  FILTER (
+	?Attribute000 = returnLine
+  )
+}
+```
+This example places flow rate at the return line.
 ## IsHydraulicConnectedTo <!-- VERB -->
-- Display name: IsHydraulicConnectedTo
+- Display name: Is Hydraulic Connected To
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [HydraulicLogicalElement](#HydraulicLogicalElement)
 - Object class: [HydraulicLogicalElement](#HydraulicLogicalElement)
 - Definition set: Hydraulics
+- Description: 
+Connects two hydraulic elements within the network.
+- Examples:
+```dwis connection
+HydraulicBranch:standpipeBranch
+HydraulicJunction:chokeJunction
+standpipeBranch IsHydraulicConnectedTo chokeJunction
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipeBranch] -->|BelongsToClass| N0001(HydraulicBranch) 
+	N0002[chokeJunction] -->|BelongsToClass| N0003(HydraulicJunction) 
+	N0000[standpipeBranch] -->|IsHydraulicConnectedTo| N0002((chokeJunction)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?connection
+WHERE {
+	?standpipeBranch rdf:type ddhub:HydraulicBranch .
+	?chokeJunction rdf:type ddhub:HydraulicJunction .
+  FILTER (
+	?Attribute000 = chokeJunction
+  )
+}
+```
+This example connects a branch to a junction.
 ## HasEndJunction <!-- VERB -->
-- Display name: HasEndJunction
+- Display name: Has End Junction
 - Parent verb: [IsHydraulicConnectedTo](#IsHydraulicConnectedTo)
 - Subject class: [HydraulicBranch](#HydraulicBranch)
 - Object class: [HydraulicJunction](#HydraulicJunction)
 - Definition set: Hydraulics
+- Description: 
+Specifies the terminal junction of a branch.
+- Examples:
+```dwis endJunction
+HydraulicBranch:returnLine
+HydraulicJunction:mudMixingJunction
+returnLine HasEndJunction mudMixingJunction
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[returnLine] -->|BelongsToClass| N0001(HydraulicBranch) 
+	N0002[mudMixingJunction] -->|BelongsToClass| N0003(HydraulicJunction) 
+	N0000[returnLine] -->|HasEndJunction| N0002((mudMixingJunction)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?endJunction
+WHERE {
+	?returnLine rdf:type ddhub:HydraulicBranch .
+	?mudMixingJunction rdf:type ddhub:HydraulicJunction .
+  FILTER (
+	?Attribute000 = mudMixingJunction
+  )
+}
+```
+This example sets the end junction of the return line.
 ## HasLeftBranch <!-- VERB -->
-- Display name: HasLeftBranch
+- Display name: Has Left Branch
 - Parent verb: [IsHydraulicConnectedTo](#IsHydraulicConnectedTo)
 - Subject class: [HydraulicJunction](#HydraulicJunction)
 - Object class: [HydraulicBranch](#HydraulicBranch)
 - Definition set: Hydraulics
+- Description: 
+Assigns the left branch connected to a junction.
+- Examples:
+```dwis leftBranch
+HydraulicJunction:flowJunction
+HydraulicBranch:standpipeBranch
+flowJunction HasLeftBranch standpipeBranch
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[flowJunction] -->|BelongsToClass| N0001(HydraulicJunction) 
+	N0002[standpipeBranch] -->|BelongsToClass| N0003(HydraulicBranch) 
+	N0000[flowJunction] -->|HasLeftBranch| N0002((standpipeBranch)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?leftBranch
+WHERE {
+	?flowJunction rdf:type ddhub:HydraulicJunction .
+	?standpipeBranch rdf:type ddhub:HydraulicBranch .
+  FILTER (
+	?Attribute000 = standpipeBranch
+  )
+}
+```
+This example sets the left branch of a junction.
 ## HasRightBranch <!-- VERB -->
-- Display name: HasRightBranch
+- Display name: Has Right Branch
 - Parent verb: [IsHydraulicConnectedTo](#IsHydraulicConnectedTo)
 - Subject class: [HydraulicJunction](#HydraulicJunction)
 - Object class: [HydraulicBranch](#HydraulicBranch)
 - Definition set: Hydraulics
+- Description: 
+Assigns the right branch connected to a junction.
+- Examples:
+```dwis rightBranch
+HydraulicJunction:flowJunction
+HydraulicBranch:returnLine
+flowJunction HasRightBranch returnLine
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[flowJunction] -->|BelongsToClass| N0001(HydraulicJunction) 
+	N0002[returnLine] -->|BelongsToClass| N0003(HydraulicBranch) 
+	N0000[flowJunction] -->|HasRightBranch| N0002((returnLine)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rightBranch
+WHERE {
+	?flowJunction rdf:type ddhub:HydraulicJunction .
+	?returnLine rdf:type ddhub:HydraulicBranch .
+  FILTER (
+	?Attribute000 = returnLine
+  )
+}
+```
+This example sets the right branch of a junction.
+## HasUpstreamBranch <!-- VERB -->
+- Display name: Has Upstream Branch
+- Parent verb: [IsHydraulicConnectedTo](#IsHydraulicConnectedTo)
+- Subject class: [HydraulicJunction](#HydraulicJunction)
+- Object class: [HydraulicBranch](#HydraulicBranch)
+- Definition set: Hydraulics
+- Description: 
+Assigns the upstream branch connected to a junction.
+- Examples:
+```dwis HasUpstreamBranchExample
+HydraulicJunction:topOfStringJunction
+HydraulicBranch:inlineBranch
+topOfStringJunction HasUpstreamBranch inlineBranch
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[topOfStringJunction] -->|BelongsToClass| N0001(HydraulicJunction) 
+	N0002[inlineBranch] -->|BelongsToClass| N0003(HydraulicBranch) 
+	N0000[topOfStringJunction] -->|HasUpstreamBranch| N0002((inlineBranch)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?HasUpstreamBranchExample
+WHERE {
+	?topOfStringJunction rdf:type ddhub:HydraulicJunction .
+	?inlineBranch rdf:type ddhub:HydraulicBranch .
+  FILTER (
+	?Attribute000 = inlineBranch
+  )
+}
+```
+This example sets the inline branch upstream of the top of string junction.
+## HasDownstreamBranch <!-- VERB -->
+- Display name: Has Downstream Branch
+- Parent verb: [IsHydraulicConnectedTo](#IsHydraulicConnectedTo)
+- Subject class: [HydraulicJunction](#HydraulicJunction)
+- Object class: [HydraulicBranch](#HydraulicBranch)
+- Definition set: Hydraulics
+- Description: 
+Assigns the downstream branch connected to a junction.
+- Examples:
+```dwis HasDownstreamBranchExample
+HydraulicJunction:annulusOutletJunction
+HydraulicBranch:returnFlowBranch
+annulusOutletJunction HasDownstreamBranch returnFlowBranch
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[annulusOutletJunction] -->|BelongsToClass| N0001(HydraulicJunction) 
+	N0002[returnFlowBranch] -->|BelongsToClass| N0003(HydraulicBranch) 
+	N0000[annulusOutletJunction] -->|HasDownstreamBranch| N0002((returnFlowBranch)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?HasDownstreamBranchExample
+WHERE {
+	?annulusOutletJunction rdf:type ddhub:HydraulicJunction .
+	?returnFlowBranch rdf:type ddhub:HydraulicBranch .
+  FILTER (
+	?Attribute000 = returnFlowBranch
+  )
+}
+```
+This example sets the return flow branch as downstream of a annulus outlet junction.
 ## HasStartJunction <!-- VERB -->
-- Display name: HasStartJunction
+- Display name: Has Start Junction
 - Parent verb: [IsHydraulicConnectedTo](#IsHydraulicConnectedTo)
 - Subject class: [HydraulicBranch](#HydraulicBranch)
 - Object class: [HydraulicJunction](#HydraulicJunction)
 - Definition set: Hydraulics
+- Description: 
+Specifies the starting junction of a branch.
+- Examples:
+```dwis startJunction
+HydraulicBranch:standpipeBranch
+HydraulicJunction:pumpDischarge
+standpipeBranch HasStartJunction pumpDischarge
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipeBranch] -->|BelongsToClass| N0001(HydraulicBranch) 
+	N0002[pumpDischarge] -->|BelongsToClass| N0003(HydraulicJunction) 
+	N0000[standpipeBranch] -->|HasStartJunction| N0002((pumpDischarge)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?startJunction
+WHERE {
+	?standpipeBranch rdf:type ddhub:HydraulicBranch .
+	?pumpDischarge rdf:type ddhub:HydraulicJunction .
+  FILTER (
+	?Attribute000 = pumpDischarge
+  )
+}
+```
+This example defines the start junction for the standpipe.
 ## StartsHydraulicBranchDecomposition <!-- VERB -->
-- Display name: StartsHydraulicBranchDecomposition
+- Display name: Starts Hydraulic Branch Decomposition
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [DWISNoun](#DWISNoun)
 - Definition set: Hydraulics
+- Description: 
+Marks the starting point when decomposing a hydraulic branch.
+- Examples:
+```dwis startBranchDecomp
+HydraulicBranch:standpipeBranch
+HydraulicBranch:dpInner
+standpipeBranch StartsHydraulicBranchDecomposition dpInner
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipeBranch] -->|BelongsToClass| N0001(HydraulicBranch) 
+	N0002[dpInner] -->|BelongsToClass| N0001(HydraulicBranch) 
+	N0000[standpipeBranch] -->|StartsHydraulicBranchDecomposition| N0002((dpInner)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?startBranchDecomp
+WHERE {
+	?standpipeBranch rdf:type ddhub:HydraulicBranch .
+	?dpInner rdf:type ddhub:HydraulicBranch .
+  FILTER (
+	?Attribute000 = dpInner
+  )
+}
+```
+This example denotes the start of a branch decomposition.
+## IsAComponentOf <!-- VERB -->
+- Display name: Is a component of
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [FluidComponent](#FluidComponent)
+- Object class: [FluidType](#FluidType)
+- Definition set: Hydraulics
+- Description: 
+Associate a fluid component with a fluid type.
+- Examples:
+```dwis IsAComponentOfExample
+DrillingLiquidType:mud
+SolidComponent:cuttings
+cuttings IsAComponentOf mud
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[mud] -->|BelongsToClass| N0001(DrillingLiquidType) 
+	N0002[cuttings] -->|BelongsToClass| N0003(SolidComponent) 
+	N0002[cuttings] -->|IsAComponentOf| N0000((mud)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?IsAComponentOfExample
+WHERE {
+	?mud rdf:type ddhub:DrillingLiquidType .
+	?cuttings rdf:type ddhub:SolidComponent .
+  FILTER (
+	?Attribute000 = mud
+  )
+}
+```
+This example ties cuttings as being a component of a drilling mud.
 ## ConcernsAFluidComponent <!-- VERB -->
-- Display name: ConcernsAFluidComponent
+- Display name: Concerns A Fluid Component
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [FluidComponent](#FluidComponent)
 - Definition set: Hydraulics
+- Description: 
+Indicates that a data point relates to a specific fluid component.
+- Examples:
+```dwis ConcernsAFluidComponentExample
+DrillingDataPoint:gasCut
+FluidComponent:gasComponent
+gasCut ConcernsAFluidComponent gasComponent
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[gasCut] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[gasComponent] -->|BelongsToClass| N0003(FluidComponent) 
+	N0000[gasCut] -->|ConcernsAFluidComponent| N0002((gasComponent)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ConcernsAFluidComponentExample
+WHERE {
+	?gasCut rdf:type ddhub:DrillingDataPoint .
+	?gasComponent rdf:type ddhub:FluidComponent .
+  FILTER (
+	?Attribute000 = gasComponent
+  )
+}
+```
+This example ties gas cut to a gas component.
+```dwis CuttingRecoveryRateExample
+DynamicDrillingSignal:CleanSightCuttingsRecoveryRate
+ComputedData:CleanSightCuttingsRecoveryRate#01
+CleanSightCuttingsRecoveryRate#01 BelongsToClass JSonDataType
+CleanSightCuttingsRecoveryRate#01 HasDynamicValue CleanSightCuttingsRecoveryRate
+CleanSightCuttingsRecoveryRate#01 IsOfMeasurableQuantity VolumetricFlowrateDrilling
+TopSideTelemetry:topSideTelemetry
+CleanSightCuttingsRecoveryRate#01 IsTransmittedBy topSideTelemetry
+MovingAverage:movingAverageCleanSightCuttingsRecoveryRate
+CleanSightCuttingsRecoveryRate#01 IsTransformationOutput movingAverageCleanSightCuttingsRecoveryRate
+CuttingSeparatorLogical:ShaleShakerElement#01
+CleanSightCuttingsRecoveryRate#01 IsHydraulicEstimationAt ShaleShakerElement#01
+DrillingLiquidType:DrillingFluid#01
+DrillingFluid#01 IsFluidTypeLocatedAt ShaleShakerElement#01
+CuttingsComponent:Cuttings#01
+Cuttings#01 IsAComponentOf DrillingFluid#01
+CleanSightCuttingsRecoveryRate#01 ConcernsAFluidComponent Cuttings#01
+InstrumentationCompany:DrillDocs#01
+CleanSightCuttingsRecoveryRate#01 IsProvidedBy DrillDocs#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CleanSightCuttingsRecoveryRate] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[CleanSightCuttingsRecoveryRate#01] -->|BelongsToClass| N0003(ComputedData) 
+	N0002[CleanSightCuttingsRecoveryRate#01] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[CleanSightCuttingsRecoveryRate#01] -->|HasDynamicValue| N0000((CleanSightCuttingsRecoveryRate)) 
+	N0002[CleanSightCuttingsRecoveryRate#01] -->|IsOfMeasurableQuantity| N0005((VolumetricFlowrateDrilling)) 
+	N0006[topSideTelemetry] -->|BelongsToClass| N0007(TopSideTelemetry) 
+	N0002[CleanSightCuttingsRecoveryRate#01] -->|IsTransmittedBy| N0006((topSideTelemetry)) 
+	N0008[movingAverageCleanSightCuttingsRecoveryRate] -->|BelongsToClass| N0009(MovingAverage) 
+	N0002[CleanSightCuttingsRecoveryRate#01] -->|IsTransformationOutput| N0008((movingAverageCleanSightCuttingsRecoveryRate)) 
+	N0010[ShaleShakerElement#01] -->|BelongsToClass| N0011(CuttingSeparatorLogical) 
+	N0002[CleanSightCuttingsRecoveryRate#01] -->|IsHydraulicEstimationAt| N0010((ShaleShakerElement#01)) 
+	N0012[DrillingFluid#01] -->|BelongsToClass| N0013(DrillingLiquidType) 
+	N0012[DrillingFluid#01] -->|IsFluidTypeLocatedAt| N0010((ShaleShakerElement#01)) 
+	N0014[Cuttings#01] -->|BelongsToClass| N0015(CuttingsComponent) 
+	N0014[Cuttings#01] -->|IsAComponentOf| N0012((DrillingFluid#01)) 
+	N0002[CleanSightCuttingsRecoveryRate#01] -->|ConcernsAFluidComponent| N0014((Cuttings#01)) 
+	N0016[DrillDocs#01] -->|BelongsToClass| N0017(InstrumentationCompany) 
+	N0002[CleanSightCuttingsRecoveryRate#01] -->|IsProvidedBy| N0016((DrillDocs#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?CuttingRecoveryRateExample
+WHERE {
+	?CleanSightCuttingsRecoveryRate rdf:type ddhub:DynamicDrillingSignal .
+	?CleanSightCuttingsRecoveryRate#01 rdf:type ddhub:ComputedData .
+	?CleanSightCuttingsRecoveryRate#01 rdf:type ddhub:JSonDataType .
+	?topSideTelemetry rdf:type ddhub:TopSideTelemetry .
+	?movingAverageCleanSightCuttingsRecoveryRate rdf:type ddhub:MovingAverage .
+	?ShaleShakerElement#01 rdf:type ddhub:CuttingSeparatorLogical .
+	?DrillingFluid#01 rdf:type ddhub:DrillingLiquidType .
+	?Cuttings#01 rdf:type ddhub:CuttingsComponent .
+	?DrillDocs#01 rdf:type ddhub:InstrumentationCompany .
+  FILTER (
+	?Attribute000 = CleanSightCuttingsRecoveryRate
+	&& 	?Attribute001 = VolumetricFlowrateDrilling
+	&& 	?Attribute002 = topSideTelemetry
+	&& 	?Attribute003 = movingAverageCleanSightCuttingsRecoveryRate
+	&& 	?Attribute004 = ShaleShakerElement#01
+	&& 	?Attribute005 = ShaleShakerElement#01
+	&& 	?Attribute006 = DrillingFluid#01
+	&& 	?Attribute007 = Cuttings#01
+	&& 	?Attribute008 = DrillDocs#01
+  )
+}
+```
+This example declares a cuttings recovery rate data point that concerns a cuttings fluid component from a drilling fluid.
 ## IsUpstreamOf <!-- VERB -->
 - Display name: Is Upstream Of
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [FluidType](#FluidType)
 - Object class: [FluidInterface](#FluidInterface)
 - Definition set: Hydraulics
+- Description: 
+Identifies a fluid type located upstream of an interface.
+- Examples:
+```dwis upstreamFluid
+FormationGasType:formationGasType
+FluidInterface:gasLiquidInterface
+formationGasType IsUpstreamOf gasLiquidInterface
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[formationGasType] -->|BelongsToClass| N0001(FormationGasType) 
+	N0002[gasLiquidInterface] -->|BelongsToClass| N0003(FluidInterface) 
+	N0000[formationGasType] -->|IsUpstreamOf| N0002((gasLiquidInterface)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?upstreamFluid
+WHERE {
+	?formationGasType rdf:type ddhub:FormationGasType .
+	?gasLiquidInterface rdf:type ddhub:FluidInterface .
+  FILTER (
+	?Attribute000 = gasLiquidInterface
+  )
+}
+```
+This example places formation gas upstream of an interface.
 ## IsDownstreamOf <!-- VERB -->
 - Display name: Is downstream of
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [FluidType](#FluidType)
 - Object class: [FluidInterface](#FluidInterface)
 - Definition set: Hydraulics
+- Description: 
+Identifies a fluid type located downstream of an interface.
+- Examples:
+```dwis downstreamFluid
+DrillingLiquidType:drillingLiquidType
+FluidInterface:gasLiquidInterface
+drillingLiquidType IsDownstreamOf gasLiquidInterface
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingLiquidType] -->|BelongsToClass| N0001(DrillingLiquidType) 
+	N0002[gasLiquidInterface] -->|BelongsToClass| N0003(FluidInterface) 
+	N0000[drillingLiquidType] -->|IsDownstreamOf| N0002((gasLiquidInterface)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?downstreamFluid
+WHERE {
+	?drillingLiquidType rdf:type ddhub:DrillingLiquidType .
+	?gasLiquidInterface rdf:type ddhub:FluidInterface .
+  FILTER (
+	?Attribute000 = gasLiquidInterface
+  )
+}
+```
+This example places drilling liquid downstream of an interface.
+## IsFluidTypeLocatedAt <!-- VERB -->
+- Display name: Is Fluid Type Located At
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [FluidType](#FluidType)
+- Object class: [HydraulicLogicalElement](#HydraulicLogicalElement)
+- Definition set: Hydraulics
+- Description: 
+Indicates that a fluid type is hydraulically located at a hydraulic logical element.
+- Examples:
+```dwis IsFluidTypeLocatedAtExample
+DrillingLiquidType:drillingLiquidType
+ActivePitLogical:ActivePitLogical
+drillingLiquidType IsFluidTypeLocatedAt ActivePitLogical
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingLiquidType] -->|BelongsToClass| N0001(DrillingLiquidType) 
+	N0002[ActivePitLogical] -->|BelongsToClass| N0002(ActivePitLogical) 
+	N0000[drillingLiquidType] -->|IsFluidTypeLocatedAt| N0002((ActivePitLogical)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?IsFluidTypeLocatedAtExample
+WHERE {
+	?drillingLiquidType rdf:type ddhub:DrillingLiquidType .
+	?ActivePitLogical rdf:type ddhub:ActivePitLogical .
+  FILTER (
+	?Attribute000 = ActivePitLogical
+  )
+}
+```
+This example places drilling liquid at the active pit.
+## IsHydraulicConditionFor <!-- VERB -->
+- Display name: is Hydraulic Condition For
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [HydraulicCondition](#HydraulicCondition)
+- Object class: [HydraulicLogicalElement](#HydraulicLogicalElement)
+- Definition set: Hydraulics
+- Description: 
+define the hydraulic condition of a hydraulic logical element.
+- Examples:
+```dwis hydraulicConditionExample
+BHAAnnular:bhaAnnulus
+HydraulicStaticCondition:static
+static IsHydraulicConditionFor bhaAnnulus 
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[bhaAnnulus] -->|BelongsToClass| N0001(BHAAnnular) 
+	N0002[static] -->|BelongsToClass| N0003(HydraulicStaticCondition) 
+	N0002[static] -->|IsHydraulicConditionFor| N0004((bhaAnnulus )) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hydraulicConditionExample
+WHERE {
+	?bhaAnnulus rdf:type ddhub:BHAAnnular .
+	?static rdf:type ddhub:HydraulicStaticCondition .
+  FILTER (
+	?Attribute000 = bhaAnnulus 
+  )
+}
+```
+This example indicates that the BHA annulus has a static hydraulic condition.
+```dwis downholeESDExample
+DynamicDrillingSignal:downholeESD
+PhysicalData:downholeESD#01
+downholeESD#01 BelongsToClass ContinuousDataType
+downholeESD#01 HasDynamicValue downholeESD
+downholeESD#01 IsOfMeasurableQuantity MassDensityDrilling
+Measurement:downholePressure#01
+downholePressure#01 BelongsToClass ContinuousDataType
+downholePressure#01 IsOfMeasurableQuantity PressureDrilling
+MovingAverage:movingAverageDownholePressure
+downholePressure#01 IsTransformationOutput movingAverageDownholePressure
+PressureToEquivalentDensityTransformation:pressureToDownholeESD
+downholePressure#01 IsTransformationInput pressureToDownholeESD
+downholeESD#01 IsTransformationOutput pressureToDownholeESD
+DownholeHydraulicNetwork:downholeNetwork
+BHAAnnular:bhaAnnulus
+downholeNetwork HasBranchComponent bhaAnnulus
+downholeESD#01 IsEquivalentCirculationDensityAt bhaAnnulus
+downholePressure#01 IsPressureAt bhaAnnulus
+HydraulicStaticCondition:static
+static IsHydraulicConditionFor bhaAnnulus
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[downholeESD] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[downholeESD#01] -->|BelongsToClass| N0003(PhysicalData) 
+	N0002[downholeESD#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[downholeESD#01] -->|HasDynamicValue| N0000((downholeESD)) 
+	N0002[downholeESD#01] -->|IsOfMeasurableQuantity| N0005((MassDensityDrilling)) 
+	N0006[downholePressure#01] -->|BelongsToClass| N0007(Measurement) 
+	N0006[downholePressure#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0006[downholePressure#01] -->|IsOfMeasurableQuantity| N0008((PressureDrilling)) 
+	N0009[movingAverageDownholePressure] -->|BelongsToClass| N0010(MovingAverage) 
+	N0006[downholePressure#01] -->|IsTransformationOutput| N0009((movingAverageDownholePressure)) 
+	N0011[pressureToDownholeESD] -->|BelongsToClass| N0012(PressureToEquivalentDensityTransformation) 
+	N0006[downholePressure#01] -->|IsTransformationInput| N0011((pressureToDownholeESD)) 
+	N0002[downholeESD#01] -->|IsTransformationOutput| N0011((pressureToDownholeESD)) 
+	N0013[downholeNetwork] -->|BelongsToClass| N0014(DownholeHydraulicNetwork) 
+	N0015[bhaAnnulus] -->|BelongsToClass| N0016(BHAAnnular) 
+	N0013[downholeNetwork] -->|HasBranchComponent| N0015((bhaAnnulus)) 
+	N0002[downholeESD#01] -->|IsEquivalentCirculationDensityAt| N0015((bhaAnnulus)) 
+	N0006[downholePressure#01] -->|IsPressureAt| N0015((bhaAnnulus)) 
+	N0017[static] -->|BelongsToClass| N0018(HydraulicStaticCondition) 
+	N0017[static] -->|IsHydraulicConditionFor| N0015((bhaAnnulus)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?downholeESDExample
+WHERE {
+	?downholeESD rdf:type ddhub:DynamicDrillingSignal .
+	?downholeESD#01 rdf:type ddhub:PhysicalData .
+	?downholeESD#01 rdf:type ddhub:ContinuousDataType .
+	?downholePressure#01 rdf:type ddhub:Measurement .
+	?downholePressure#01 rdf:type ddhub:ContinuousDataType .
+	?movingAverageDownholePressure rdf:type ddhub:MovingAverage .
+	?pressureToDownholeESD rdf:type ddhub:PressureToEquivalentDensityTransformation .
+	?downholeNetwork rdf:type ddhub:DownholeHydraulicNetwork .
+	?bhaAnnulus rdf:type ddhub:BHAAnnular .
+	?static rdf:type ddhub:HydraulicStaticCondition .
+  FILTER (
+	?Attribute000 = downholeESD
+	&& 	?Attribute001 = MassDensityDrilling
+	&& 	?Attribute002 = PressureDrilling
+	&& 	?Attribute003 = movingAverageDownholePressure
+	&& 	?Attribute004 = pressureToDownholeESD
+	&& 	?Attribute005 = pressureToDownholeESD
+	&& 	?Attribute006 = bhaAnnulus
+	&& 	?Attribute007 = bhaAnnulus
+	&& 	?Attribute008 = bhaAnnulus
+	&& 	?Attribute009 = bhaAnnulus
+  )
+}
+```
+This example declares a downhole equivalent static density signal with a static hydraulic condition at the BHA annulus.
+## HasFlowCurve <!-- VERB -->
+- Display name: Has Flow Curve
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [FluidType](#FluidType)
+- Object class: [FlowCurve](#FlowCurve)
+- Definition set: Hydraulics
+- Description: 
+Relate a fluid type to its flow curve.
+- Examples:
+```dwis HasFlowCurveExample
+DrillingLiquidType:mud
+FlowCurve:flowCurve
+mud HasFlowCurve flowCurve
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[mud] -->|BelongsToClass| N0001(DrillingLiquidType) 
+	N0002[flowCurve] -->|BelongsToClass| N0003(FlowCurve) 
+	N0000[mud] -->|HasFlowCurve| N0002((flowCurve)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?HasFlowCurveExample
+WHERE {
+	?mud rdf:type ddhub:DrillingLiquidType .
+	?flowCurve rdf:type ddhub:FlowCurve .
+  FILTER (
+	?Attribute000 = flowCurve
+  )
+}
+```
+This example states that a drilling liquid has a flow curve.
+## IsSourceFlowCurveFor <!-- VERB -->
+- Display name: Is Source Flow Curve For
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [FlowCurve](#FlowCurve)
+- Object class: [RheologicalBehavior](#RheologicalBehavior)
+- Definition set: Hydraulics
+- Description: 
+Relate a flow curve is used to estimate a rheological behavior.
+- Examples:
+```dwis IsSourceFlowCurveForExample
+FlowCurve:flowCurve
+RheologicalBehavior:rheologicalBehavior
+flowCurve IsSourceFlowCurveFor rheologicalBehavior
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[flowCurve] -->|BelongsToClass| N0001(FlowCurve) 
+	N0002[rheologicalBehavior] -->|BelongsToClass| N0003(RheologicalBehavior) 
+	N0000[flowCurve] -->|IsSourceFlowCurveFor| N0002((rheologicalBehavior)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?IsSourceFlowCurveForExample
+WHERE {
+	?flowCurve rdf:type ddhub:FlowCurve .
+	?rheologicalBehavior rdf:type ddhub:RheologicalBehavior .
+  FILTER (
+	?Attribute000 = rheologicalBehavior
+  )
+}
+```
+This example states that a flow curve is used to estimate a rheological behavior.
+## HasRheologicalBehavior <!-- VERB -->
+- Display name: Has rheological behavior
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [FluidType](#FluidType)
+- Object class: [RheologicalBehavior](#RheologicalBehavior)
+- Definition set: Hydraulics
+- Description: 
+Relate a fluid type to its rheological behavior.
+- Examples:
+```dwis HasRheologicalBehaviorExample
+DrillingLiquidType:drillingLiquidType
+RheologicalBehavior:rheologicalBehavior
+drillingLiquidType HasRheologicalBehavior rheologicalBehavior
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingLiquidType] -->|BelongsToClass| N0001(DrillingLiquidType) 
+	N0002[rheologicalBehavior] -->|BelongsToClass| N0003(RheologicalBehavior) 
+	N0000[drillingLiquidType] -->|HasRheologicalBehavior| N0002((rheologicalBehavior)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?HasRheologicalBehaviorExample
+WHERE {
+	?drillingLiquidType rdf:type ddhub:DrillingLiquidType .
+	?rheologicalBehavior rdf:type ddhub:RheologicalBehavior .
+  FILTER (
+	?Attribute000 = rheologicalBehavior
+  )
+}
+```
+This example states that a drilling liquid has a rheological behavior.
+## HasComponentRheologicalBehavior <!-- VERB -->
+- Display name: Has component rheological behavior
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [FluidComponent](#FluidComponent)
+- Object class: [RheologicalBehavior](#RheologicalBehavior)
+- Definition set: Hydraulics
+- Description: 
+Relate a fluid component to its rheological behavior.
+- Examples:
+```dwis HasComponentRheologicalBehaviorExample
+LiquidComponent:baseOil
+NewtonianFluid:baseOilRheologicalBehavior
+baseOil HasComponentRheologicalBehavior baseOilRheologicalBehavior
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[baseOil] -->|BelongsToClass| N0001(LiquidComponent) 
+	N0002[baseOilRheologicalBehavior] -->|BelongsToClass| N0003(NewtonianFluid) 
+	N0000[baseOil] -->|HasComponentRheologicalBehavior| N0002((baseOilRheologicalBehavior)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?HasComponentRheologicalBehaviorExample
+WHERE {
+	?baseOil rdf:type ddhub:LiquidComponent .
+	?baseOilRheologicalBehavior rdf:type ddhub:NewtonianFluid .
+  FILTER (
+	?Attribute000 = baseOilRheologicalBehavior
+  )
+}
+```
+This example states that a liquid component has a rheological behavior.
+## IsCalculatedUsingRheologicalHypothesis <!-- VERB -->
+- Display name: Is Calculated Using Rheological Hypothesis
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [RheologicalBehavior](#RheologicalBehavior)
+- Definition set: Hydraulics
+- Description: 
+Define that a drilling data point is calculated using a rheological behavior hypothesis.
+- Examples:
+```dwis IsCalculatedUsingRheologicalHypothesis
+NewtonianFluid:newtonianFluid
+DrillingDataPoint:shearRateAtTheWallWithNewtonianHypothesis
+shearRateAtTheWallWithNewtonianHypothesis IsCalculatedUsingRheologicalHypothesis newtonianFluid
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[newtonianFluid] -->|BelongsToClass| N0001(NewtonianFluid) 
+	N0002[shearRateAtTheWallWithNewtonianHypothesis] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[shearRateAtTheWallWithNewtonianHypothesis] -->|IsCalculatedUsingRheologicalHypothesis| N0000((newtonianFluid)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?IsCalculatedUsingRheologicalHypothesis
+WHERE {
+	?newtonianFluid rdf:type ddhub:NewtonianFluid .
+	?shearRateAtTheWallWithNewtonianHypothesis rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = newtonianFluid
+  )
+}
+```
+This example states that the shear rate at the wall is calculated using a Newtonian rheological behavior hypothesis.
+## HasPlasticViscosity <!-- VERB -->
+- Display name: Has plastic viscosity
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [RheologicalBehavior](#RheologicalBehavior)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Definition set: Hydraulics
+- Description: 
+Associate a plastic viscosity signal with a rheological behavior.
+- Examples:
+```dwis plasticViscosityExample
+BinghamPlastic:binghamPlastic
+DrillingDataPoint:PV
+binghamPlastic HasPlasticViscosity PV
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[binghamPlastic] -->|BelongsToClass| N0001(BinghamPlastic) 
+	N0002[PV] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0000[binghamPlastic] -->|HasPlasticViscosity| N0002((PV)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?plasticViscosityExample
+WHERE {
+	?binghamPlastic rdf:type ddhub:BinghamPlastic .
+	?PV rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = PV
+  )
+}
+```
+This example states that a Bingham plastic rheological behavior as a plastic viscosity defined by a drilling data point.
+```dwis PlasticViscosityInletExample
+DynamicDrillingSignal:PlasticViscosityInlet
+PhysicalData:PlasticViscosityInlet#01
+PlasticViscosityInlet#01 BelongsToClass ContinuousDataType
+PlasticViscosityInlet#01 HasDynamicValue PlasticViscosityInlet
+PlasticViscosityInlet#01 IsOfMeasurableQuantity DynamicViscosityDrilling
+MovingAverage:movingAveragePlasticViscosityInlet
+PlasticViscosityInlet#01 IsTransformationOutput movingAveragePlasticViscosityInlet
+TopOfStringJunction:topOfStringJunction#01
+HydraulicBranch:inletHydraulicBranch#01
+topOfStringJunction#01 HasUpstreamBranch inletHydraulicBranch#01
+PlasticViscosityInlet#01 IsAssociatedToHydraulicBranch inletHydraulicBranch#01
+BinghamPlastic:BinghamPlasticFluid#01
+BinghamPlasticFluid#01 HasPlasticViscosity PlasticViscosityInlet#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PlasticViscosityInlet] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[PlasticViscosityInlet#01] -->|BelongsToClass| N0003(PhysicalData) 
+	N0002[PlasticViscosityInlet#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[PlasticViscosityInlet#01] -->|HasDynamicValue| N0000((PlasticViscosityInlet)) 
+	N0002[PlasticViscosityInlet#01] -->|IsOfMeasurableQuantity| N0005((DynamicViscosityDrilling)) 
+	N0006[movingAveragePlasticViscosityInlet] -->|BelongsToClass| N0007(MovingAverage) 
+	N0002[PlasticViscosityInlet#01] -->|IsTransformationOutput| N0006((movingAveragePlasticViscosityInlet)) 
+	N0008[topOfStringJunction#01] -->|BelongsToClass| N0009(TopOfStringJunction) 
+	N0010[inletHydraulicBranch#01] -->|BelongsToClass| N0011(HydraulicBranch) 
+	N0008[topOfStringJunction#01] -->|HasUpstreamBranch| N0010((inletHydraulicBranch#01)) 
+	N0002[PlasticViscosityInlet#01] -->|IsAssociatedToHydraulicBranch| N0010((inletHydraulicBranch#01)) 
+	N0012[BinghamPlasticFluid#01] -->|BelongsToClass| N0013(BinghamPlastic) 
+	N0012[BinghamPlasticFluid#01] -->|HasPlasticViscosity| N0002((PlasticViscosityInlet#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?PlasticViscosityInletExample
+WHERE {
+	?PlasticViscosityInlet rdf:type ddhub:DynamicDrillingSignal .
+	?PlasticViscosityInlet#01 rdf:type ddhub:PhysicalData .
+	?PlasticViscosityInlet#01 rdf:type ddhub:ContinuousDataType .
+	?movingAveragePlasticViscosityInlet rdf:type ddhub:MovingAverage .
+	?topOfStringJunction#01 rdf:type ddhub:TopOfStringJunction .
+	?inletHydraulicBranch#01 rdf:type ddhub:HydraulicBranch .
+	?BinghamPlasticFluid#01 rdf:type ddhub:BinghamPlastic .
+  FILTER (
+	?Attribute000 = PlasticViscosityInlet
+	&& 	?Attribute001 = DynamicViscosityDrilling
+	&& 	?Attribute002 = movingAveragePlasticViscosityInlet
+	&& 	?Attribute003 = inletHydraulicBranch#01
+	&& 	?Attribute004 = inletHydraulicBranch#01
+	&& 	?Attribute005 = PlasticViscosityInlet#01
+  )
+}
+```
+This example declares a plastic viscosity signal at the inlet of the top of string junction associated to a Bingham plastic rheological behavior.
+## HasYieldPoint <!-- VERB -->
+- Display name: Has yield point
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [RheologicalBehavior](#RheologicalBehavior)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Definition set: Hydraulics
+- Description: 
+Associate a yield point signal with a rheological behavior.
+- Examples:
+```dwis yieldPointExample
+BinghamPlastic:binghamPlastic
+DrillingDataPoint:YP
+binghamPlastic HasYieldPoint YP
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[binghamPlastic] -->|BelongsToClass| N0001(BinghamPlastic) 
+	N0002[YP] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0000[binghamPlastic] -->|HasYieldPoint| N0002((YP)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?yieldPointExample
+WHERE {
+	?binghamPlastic rdf:type ddhub:BinghamPlastic .
+	?YP rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = YP
+  )
+}
+```
+This example states that a Bingham plastic rheological behavior as a yield point defined by a drilling data point.
+## HasPowerLawConsistencyIndex <!-- VERB -->
+- Display name: Has Power Law Consistency Index
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [RheologicalBehavior](#RheologicalBehavior)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Definition set: Hydraulics
+- Description: 
+Associate a power law consistency index signal with a rheological behavior.
+- Examples:
+```dwis powerLawConsistencyIndexExample
+PowerLaw:powerLaw
+DrillingDataPoint:K
+powerLaw HasPowerLawConsistencyIndex K
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[powerLaw] -->|BelongsToClass| N0001(PowerLaw) 
+	N0002[K] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0000[powerLaw] -->|HasPowerLawConsistencyIndex| N0002((K)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?powerLawConsistencyIndexExample
+WHERE {
+	?powerLaw rdf:type ddhub:PowerLaw .
+	?K rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = K
+  )
+}
+```
+This example states that a power law rheological behavior as a consistency index defined by a drilling data point.
+## HasYieldPowerLawConsistencyIndex <!-- VERB -->
+- Display name: Has Yield Power Law Consistency Index
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [RheologicalBehavior](#RheologicalBehavior)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Definition set: Hydraulics
+- Description: 
+Associate a yield power law consistency index signal with a rheological behavior.
+- Examples:
+```dwis yieldPowerLawConsistencyIndexExample
+YieldPowerLaw:yieldPowerLaw
+DrillingDataPoint:K
+yieldPowerLaw HasYieldPowerLawConsistencyIndex K
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[yieldPowerLaw] -->|BelongsToClass| N0001(YieldPowerLaw) 
+	N0002[K] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0000[yieldPowerLaw] -->|HasYieldPowerLawConsistencyIndex| N0002((K)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?yieldPowerLawConsistencyIndexExample
+WHERE {
+	?yieldPowerLaw rdf:type ddhub:YieldPowerLaw .
+	?K rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = K
+  )
+}
+```
+This example states that a yield power law rheological behavior as a consistency index defined by a drilling data point.
+## HasPowerLawFlowBehaviorIndex <!-- VERB -->
+- Display name: Has Power Law Flow Behavior Index
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [RheologicalBehavior](#RheologicalBehavior)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Definition set: Hydraulics
+- Description: 
+Associate a power law flow behavior index signal with a rheological behavior.
+- Examples:
+```dwis powerLawFlowBehaviorIndexExample
+PowerLaw:powerLaw
+DrillingDataPoint:n
+powerLaw HasPowerLawFlowBehaviorIndex n
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[powerLaw] -->|BelongsToClass| N0001(PowerLaw) 
+	N0002[n] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0000[powerLaw] -->|HasPowerLawFlowBehaviorIndex| N0002((n)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?powerLawFlowBehaviorIndexExample
+WHERE {
+	?powerLaw rdf:type ddhub:PowerLaw .
+	?n rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = n
+  )
+}
+```
+This example states that a power law rheological behavior as a flow behavior index defined by a drilling data point.
+## HasYieldPowerLawFlowBehaviorIndex <!-- VERB -->
+- Display name: Has Yield Power Law Flow Behavior Index
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [RheologicalBehavior](#RheologicalBehavior)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Definition set: Hydraulics
+- Description: 
+Associate a yield power law flow behavior index signal with a rheological behavior.
+- Examples:
+```dwis yieldPowerLawFlowBehaviorIndexExample
+YieldPowerLaw:yieldPowerLaw
+DrillingDataPoint:n
+yieldPowerLaw HasYieldPowerLawFlowBehaviorIndex n
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[yieldPowerLaw] -->|BelongsToClass| N0001(YieldPowerLaw) 
+	N0002[n] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0000[yieldPowerLaw] -->|HasYieldPowerLawFlowBehaviorIndex| N0002((n)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?yieldPowerLawFlowBehaviorIndexExample
+WHERE {
+	?yieldPowerLaw rdf:type ddhub:YieldPowerLaw .
+	?n rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = n
+  )
+}
+```
+This example states that a yield power law rheological behavior as a flow behavior index defined by a drilling data point.
+## HasYieldStress <!-- VERB -->
+- Display name: Has yield stress
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [RheologicalBehavior](#RheologicalBehavior)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Definition set: Hydraulics
+- Description: 
+Associate a yield stress signal with a rheological behavior.
+- Examples:
+```dwis yieldStressExample
+YieldPowerLaw:yieldPowerLaw
+DrillingDataPoint:gamma_y
+yieldPowerLaw HasYieldStress gamma_y
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[yieldPowerLaw] -->|BelongsToClass| N0001(YieldPowerLaw) 
+	N0002[gamma_y] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0000[yieldPowerLaw] -->|HasYieldStress| N0002((gamma_y)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?yieldStressExample
+WHERE {
+	?yieldPowerLaw rdf:type ddhub:YieldPowerLaw .
+	?gamma_y rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = gamma_y
+  )
+}
+```
+This example states that a yield power law rheological behavior as a yield stress defined by a drilling data point.
+## HasQuemadaReferenceShearRate <!-- VERB -->
+- Display name: Has Quemada Reference Shear Rate
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [RheologicalBehavior](#RheologicalBehavior)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Definition set: Hydraulics
+- Description: 
+Associate a reference shear rate signal with a rheological behavior.
+- Examples:
+```dwis QuemadaReferenceShearRateExample
+Quemada:quemada
+DrillingDataPoint:gamma_c
+quemada HasQuemadaReferenceShearRate gamma_c
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[quemada] -->|BelongsToClass| N0001(Quemada) 
+	N0002[gamma_c] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0000[quemada] -->|HasQuemadaReferenceShearRate| N0002((gamma_c)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?QuemadaReferenceShearRateExample
+WHERE {
+	?quemada rdf:type ddhub:Quemada .
+	?gamma_c rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = gamma_c
+  )
+}
+```
+This example states that a Quemada rheological behavior as a reference shear rate defined by a drilling data point.
+## HasQuemadaViscosityAtZeroShearRate <!-- VERB -->
+- Display name: Has Quemada Viscosity at Zero Shear Rate
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [RheologicalBehavior](#RheologicalBehavior)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Definition set: Hydraulics
+- Description: 
+Associate a viscosity at shear rate tending to zero to a signal for a rheological behavior.
+- Examples:
+```dwis HasQuemadaViscosityAtZeroShearRateExample
+Quemada:quemada
+DrillingDataPoint:etha_0
+quemada HasQuemadaViscosityAtZeroShearRate etha_0
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[quemada] -->|BelongsToClass| N0001(Quemada) 
+	N0002[etha_0] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0000[quemada] -->|HasQuemadaViscosityAtZeroShearRate| N0002((etha_0)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?HasQuemadaViscosityAtZeroShearRateExample
+WHERE {
+	?quemada rdf:type ddhub:Quemada .
+	?etha_0 rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = etha_0
+  )
+}
+```
+This example states that a Quemada rheological behavior as a viscosity at zero shear rate defined by a drilling data point.
+## HasQuemadaViscosityAtInfiniteShearRate <!-- VERB -->
+- Display name: Has Quemada Viscosity at Infinite Shear Rate
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [RheologicalBehavior](#RheologicalBehavior)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Definition set: Hydraulics
+- Description: 
+Associate a viscosity at shear rate tending to infinity to a signal for a rheological behavior.
+- Examples:
+```dwis HasQuemadaViscosityAtInfiniteShearRateExample
+Quemada:quemada
+DrillingDataPoint:etha_infinity
+quemada HasQuemadaViscosityAtInfiniteShearRate etha_infinity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[quemada] -->|BelongsToClass| N0001(Quemada) 
+	N0002[etha_infinity] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0000[quemada] -->|HasQuemadaViscosityAtInfiniteShearRate| N0002((etha_infinity)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?HasQuemadaViscosityAtInfiniteShearRateExample
+WHERE {
+	?quemada rdf:type ddhub:Quemada .
+	?etha_infinity rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = etha_infinity
+  )
+}
+```
+This example states that a Quemada rheological behavior as a viscosity at infinite shear rate defined by a drilling data point.
+## UsesMeasurementPrinciple <!-- VERB -->
+- Display name: Uses Flow Measurement Principle
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [FlowMeasurementPrinciple](#FlowMeasurementPrinciple)
+- Definition set: Hydraulics
+- Description: 
+Associate a realtime signal to its measurement principle.
+- Examples:
+```dwis UsesMeasurementPrincipleExample
+DrillingDataPoint:densitySignal
+ResonantMeasurementPrinciple:resonantMeasurementPrinciple
+densitySignal UsesFlowMeasurementPrinciple resonantMeasurementPrinciple
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[densitySignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[resonantMeasurementPrinciple] -->|BelongsToClass| N0003(ResonantMeasurementPrinciple) 
+	N0000[densitySignal] -->|UsesFlowMeasurementPrinciple| N0002((resonantMeasurementPrinciple)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?UsesMeasurementPrincipleExample
+WHERE {
+	?densitySignal rdf:type ddhub:DrillingDataPoint .
+	?resonantMeasurementPrinciple rdf:type ddhub:ResonantMeasurementPrinciple .
+  FILTER (
+	?Attribute000 = resonantMeasurementPrinciple
+  )
+}
+```
+This example states that a mass density signal uses a resonant tube or fork or cantilever measurement principle.
+## ControlsMeasurementPrinciple <!-- VERB -->
+- Display name: Controls Flow Measurement Principle
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [FlowMeasurementPrinciple](#FlowMeasurementPrinciple)
+- Definition set: Hydraulics
+- Description: 
+Associate a realtime signal to its measurement principle.
+- Examples:
+```dwis ControlsMeasurementPrincipleExample
+DrillingDataPoint:rotationalSpeedSignal
+ConcentricCylindersMeasurementPrinciple:concentricCylindersMeasurementPrinciple
+rotationalSpeedSignal ControlsFlowMeasurementPrinciple concentricCylindersMeasurementPrinciple
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rotationalSpeedSignal] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[concentricCylindersMeasurementPrinciple] -->|BelongsToClass| N0003(ConcentricCylindersMeasurementPrinciple) 
+	N0000[rotationalSpeedSignal] -->|ControlsFlowMeasurementPrinciple| N0002((concentricCylindersMeasurementPrinciple)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ControlsMeasurementPrincipleExample
+WHERE {
+	?rotationalSpeedSignal rdf:type ddhub:DrillingDataPoint .
+	?concentricCylindersMeasurementPrinciple rdf:type ddhub:ConcentricCylindersMeasurementPrinciple .
+  FILTER (
+	?Attribute000 = concentricCylindersMeasurementPrinciple
+  )
+}
+```
+This example states that a mass density signal uses a resonant tube or fork or cantilever measurement principle.
 ## IsOfMechanicalStiffnessType <!-- VERB -->
 - Display name: Is of mechanical stiffness type
 - Parent verb: [DWISVerb](#DWISVerb)
@@ -58690,72 +79513,682 @@ dat#01
 - Definition set: MechanicalModel
 - Description: 
 A relation to describe how the drill-stem mechanical model manage stiffness.
+- Examples:
+```dwis stiffnessRelationExample
+DrillStemMechanicalModel:torqueDragModel
+MechanicalStiffModel:stiffModel
+torqueDragModel IsOfMechanicalStiffnessType stiffModel
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[torqueDragModel] -->|BelongsToClass| N0001(DrillStemMechanicalModel) 
+	N0002[stiffModel] -->|BelongsToClass| N0003(MechanicalStiffModel) 
+	N0000[torqueDragModel] -->|IsOfMechanicalStiffnessType| N0002((stiffModel)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stiffnessRelationExample
+WHERE {
+	?torqueDragModel rdf:type ddhub:DrillStemMechanicalModel .
+	?stiffModel rdf:type ddhub:MechanicalStiffModel .
+  FILTER (
+	?Attribute000 = stiffModel
+  )
+}
+```
+This example links a torque and drag model to a stiff stiffness assumption.
 ## IsAMechanicalRepresentationFor <!-- VERB -->
 - Display name: IsAMechanicalRepresentationFor
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [MechanicalLogicalElement](#MechanicalLogicalElement)
 - Object class: [DrillingEquipment](#DrillingEquipment)
 - Definition set: Mechanics
+- Description: 
+Links a mechanical logical element to the equipment it represents.
+- Examples:
+```dwis mechRepresentation
+MechanicalLogicalElement:topDrive
+DrillingEquipment:topDriveEquipment
+topDrive IsAMechanicalRepresentationFor topDriveEquipment
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[topDrive] -->|BelongsToClass| N0001(MechanicalLogicalElement) 
+	N0002[topDriveEquipment] -->|BelongsToClass| N0003(DrillingEquipment) 
+	N0000[topDrive] -->|IsAMechanicalRepresentationFor| N0002((topDriveEquipment)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?mechRepresentation
+WHERE {
+	?topDrive rdf:type ddhub:MechanicalLogicalElement .
+	?topDriveEquipment rdf:type ddhub:DrillingEquipment .
+  FILTER (
+	?Attribute000 = topDriveEquipment
+  )
+}
+```
+This example maps a logical element to the top drive equipment.
 ## HasMechanicalState <!-- VERB -->
 - Display name: HasMechanicalState
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [MechanicalLogicalElement](#MechanicalLogicalElement)
 - Object class: [MechanicalElementState](#MechanicalElementState)
 - Definition set: Mechanics
+- Description: 
+Assigns a mechanical state to an element.
+- Examples:
+```dwis mechStateExample
+MechanicalLogicalElement:topDrive
+MechanicalElementState:mechanicalState
+topDrive HasMechanicalState mechanicalState
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[topDrive] -->|BelongsToClass| N0001(MechanicalLogicalElement) 
+	N0002[mechanicalState] -->|BelongsToClass| N0003(MechanicalElementState) 
+	N0000[topDrive] -->|HasMechanicalState| N0002((mechanicalState)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?mechStateExample
+WHERE {
+	?topDrive rdf:type ddhub:MechanicalLogicalElement .
+	?mechanicalState rdf:type ddhub:MechanicalElementState .
+  FILTER (
+	?Attribute000 = mechanicalState
+  )
+}
+```
+This example attaches a state to the top drive.
 ## HasMechanicalStateValueFrom <!-- VERB -->
 - Display name: HasMechanicalStateValueFrom
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [MechanicalElementState](#MechanicalElementState)
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Definition set: Mechanics
+- Description: 
+Indicates the data point providing the state value.
+- Examples:
+```dwis stateValue
+MechanicalElementState:mechanicalState
+DrillingDataPoint:topDriveStatusSignal
+mechanicalState HasMechanicalStateValueFrom topDriveStatusSignal
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[mechanicalState] -->|BelongsToClass| N0001(MechanicalElementState) 
+	N0002[topDriveStatusSignal] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0000[mechanicalState] -->|HasMechanicalStateValueFrom| N0002((topDriveStatusSignal)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stateValue
+WHERE {
+	?mechanicalState rdf:type ddhub:MechanicalElementState .
+	?topDriveStatusSignal rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = topDriveStatusSignal
+  )
+}
+```
+This example sets the state value from a status signal.
 ## IsMechanicallyConnectedTo <!-- VERB -->
 - Display name: IsMechanicallyConnectTo
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [MechanicalLogicalElement](#MechanicalLogicalElement)
 - Object class: [MechanicalLogicalElement](#MechanicalLogicalElement)
 - Definition set: Mechanics
+- Description: 
+Indicates a mechanical connection between two elements.
+- Examples:
+```dwis mechanicalConnection
+MechanicalLogicalElement:drillString
+MechanicalLogicalElement:topDrive
+drillString IsMechanicallyConnectedTo topDrive
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillString] -->|BelongsToClass| N0001(MechanicalLogicalElement) 
+	N0002[topDrive] -->|BelongsToClass| N0001(MechanicalLogicalElement) 
+	N0000[drillString] -->|IsMechanicallyConnectedTo| N0002((topDrive)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?mechanicalConnection
+WHERE {
+	?drillString rdf:type ddhub:MechanicalLogicalElement .
+	?topDrive rdf:type ddhub:MechanicalLogicalElement .
+  FILTER (
+	?Attribute000 = topDrive
+  )
+}
+```
+This example connects the drill string to the top drive.
 ## IsMechanicallyLocatedAt <!-- VERB -->
 - Display name: IsMechanicallyLocatedAt
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [MechanicalLogicalElement](#MechanicalLogicalElement)
 - Definition set: Mechanics
+- Description: 
+Places a mechanical measurement at a specific element.
+- Examples:
+```dwis IsMechanicallyLocatedAtExample
+DrillingDataPoint:torqueAtBit
+MechanicalLogicalElement:bit
+torqueAtBit IsMechanicallyLocatedAt bit
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[torqueAtBit] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[bit] -->|BelongsToClass| N0003(MechanicalLogicalElement) 
+	N0000[torqueAtBit] -->|IsMechanicallyLocatedAt| N0002((bit)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?IsMechanicallyLocatedAtExample
+WHERE {
+	?torqueAtBit rdf:type ddhub:DrillingDataPoint .
+	?bit rdf:type ddhub:MechanicalLogicalElement .
+  FILTER (
+	?Attribute000 = bit
+  )
+}
+```
+This example locates torque measurement at the bit.
+```dwis ASMInsidePressureExample
+DynamicDrillingSignal:BlackStreamMeasuredStringPressure
+DerivedMeasurement:BlackStreamMeasuredStringPressure#01
+BlackStreamMeasuredStringPressure#01 BelongsToClass JSonDataType
+BlackStreamMeasuredStringPressure#01 HasDynamicValue BlackStreamMeasuredStringPressure
+BlackStreamMeasuredStringPressure#01 IsOfMeasurableQuantity PressureDrilling
+MovingAverage:movingAverageBlackStreamMeasuredStringPressure
+BlackStreamMeasuredStringPressure#01 IsTransformationOutput movingAverageBlackStreamMeasuredStringPressure
+WiredPipeTelemetry:wiredPipeTelemetry
+BlackStreamMeasuredStringPressure#01 IsTransmittedBy wiredPipeTelemetry
+DynamicDrillingSignal:BlackStreamMeasuredStringPressureUncertainty
+DrillingDataPoint:BlackStreamMeasuredStringPressureUncertainty#01
+BlackStreamMeasuredStringPressureUncertainty#01 BelongsToClass ContinuousDataType
+BlackStreamMeasuredStringPressureUncertainty#01 IsOfMeasurableQuantity PressureDrilling
+BlackStreamMeasuredStringPressureUncertainty#01 HasDynamicValue BlackStreamMeasuredStringPressureUncertainty
+GaussianUncertainty:BlackStreamMeasuredStringPressureGaussianUncertainty#01
+BlackStreamMeasuredStringPressureGaussianUncertainty#01 HasUncertaintyStandardDeviation BlackStreamMeasuredStringPressureUncertainty#01
+BlackStreamMeasuredStringPressure#01 HasUncertainty BlackStreamMeasuredStringPressureGaussianUncertainty#01
+TopOfStringJunction:topOfStringJunction#01
+HydraulicBranch:stringHydraulicBranch#01
+topOfStringJunction#01 HasDownstreamBranch stringHydraulicBranch#01
+BlackStreamMeasuredStringPressure#01 IsAssociatedToHydraulicBranch stringHydraulicBranch#01
+PipeSectionMechanicalLogicalElement:pipeSection#01
+BlackStreamMeasuredStringPressure#01 IsMechanicallyLocatedAt pipeSection#01
+InstrumentationCompany:NOV#01
+BlackStreamMeasuredStringPressure#01 IsProvidedBy NOV#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[BlackStreamMeasuredStringPressure] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[BlackStreamMeasuredStringPressure#01] -->|BelongsToClass| N0003(DerivedMeasurement) 
+	N0002[BlackStreamMeasuredStringPressure#01] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[BlackStreamMeasuredStringPressure#01] -->|HasDynamicValue| N0000((BlackStreamMeasuredStringPressure)) 
+	N0002[BlackStreamMeasuredStringPressure#01] -->|IsOfMeasurableQuantity| N0005((PressureDrilling)) 
+	N0006[movingAverageBlackStreamMeasuredStringPressure] -->|BelongsToClass| N0007(MovingAverage) 
+	N0002[BlackStreamMeasuredStringPressure#01] -->|IsTransformationOutput| N0006((movingAverageBlackStreamMeasuredStringPressure)) 
+	N0008[wiredPipeTelemetry] -->|BelongsToClass| N0009(WiredPipeTelemetry) 
+	N0002[BlackStreamMeasuredStringPressure#01] -->|IsTransmittedBy| N0008((wiredPipeTelemetry)) 
+	N0010[BlackStreamMeasuredStringPressureUncertainty] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0011[BlackStreamMeasuredStringPressureUncertainty#01] -->|BelongsToClass| N0012(DrillingDataPoint) 
+	N0011[BlackStreamMeasuredStringPressureUncertainty#01] -->|BelongsToClass| N0013(ContinuousDataType) 
+	N0011[BlackStreamMeasuredStringPressureUncertainty#01] -->|IsOfMeasurableQuantity| N0005((PressureDrilling)) 
+	N0011[BlackStreamMeasuredStringPressureUncertainty#01] -->|HasDynamicValue| N0010((BlackStreamMeasuredStringPressureUncertainty)) 
+	N0014[BlackStreamMeasuredStringPressureGaussianUncertainty#01] -->|BelongsToClass| N0015(GaussianUncertainty) 
+	N0014[BlackStreamMeasuredStringPressureGaussianUncertainty#01] -->|HasUncertaintyStandardDeviation| N0011((BlackStreamMeasuredStringPressureUncertainty#01)) 
+	N0002[BlackStreamMeasuredStringPressure#01] -->|HasUncertainty| N0014((BlackStreamMeasuredStringPressureGaussianUncertainty#01)) 
+	N0016[topOfStringJunction#01] -->|BelongsToClass| N0017(TopOfStringJunction) 
+	N0018[stringHydraulicBranch#01] -->|BelongsToClass| N0019(HydraulicBranch) 
+	N0016[topOfStringJunction#01] -->|HasDownstreamBranch| N0018((stringHydraulicBranch#01)) 
+	N0002[BlackStreamMeasuredStringPressure#01] -->|IsAssociatedToHydraulicBranch| N0018((stringHydraulicBranch#01)) 
+	N0020[pipeSection#01] -->|BelongsToClass| N0021(PipeSectionMechanicalLogicalElement) 
+	N0002[BlackStreamMeasuredStringPressure#01] -->|IsMechanicallyLocatedAt| N0020((pipeSection#01)) 
+	N0022[NOV#01] -->|BelongsToClass| N0023(InstrumentationCompany) 
+	N0002[BlackStreamMeasuredStringPressure#01] -->|IsProvidedBy| N0022((NOV#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ASMInsidePressureExample
+WHERE {
+	?BlackStreamMeasuredStringPressure rdf:type ddhub:DynamicDrillingSignal .
+	?BlackStreamMeasuredStringPressure#01 rdf:type ddhub:DerivedMeasurement .
+	?BlackStreamMeasuredStringPressure#01 rdf:type ddhub:JSonDataType .
+	?movingAverageBlackStreamMeasuredStringPressure rdf:type ddhub:MovingAverage .
+	?wiredPipeTelemetry rdf:type ddhub:WiredPipeTelemetry .
+	?BlackStreamMeasuredStringPressureUncertainty rdf:type ddhub:DynamicDrillingSignal .
+	?BlackStreamMeasuredStringPressureUncertainty#01 rdf:type ddhub:DrillingDataPoint .
+	?BlackStreamMeasuredStringPressureUncertainty#01 rdf:type ddhub:ContinuousDataType .
+	?BlackStreamMeasuredStringPressureGaussianUncertainty#01 rdf:type ddhub:GaussianUncertainty .
+	?topOfStringJunction#01 rdf:type ddhub:TopOfStringJunction .
+	?stringHydraulicBranch#01 rdf:type ddhub:HydraulicBranch .
+	?pipeSection#01 rdf:type ddhub:PipeSectionMechanicalLogicalElement .
+	?NOV#01 rdf:type ddhub:InstrumentationCompany .
+  FILTER (
+	?Attribute000 = BlackStreamMeasuredStringPressure
+	&& 	?Attribute001 = PressureDrilling
+	&& 	?Attribute002 = movingAverageBlackStreamMeasuredStringPressure
+	&& 	?Attribute003 = wiredPipeTelemetry
+	&& 	?Attribute004 = PressureDrilling
+	&& 	?Attribute005 = BlackStreamMeasuredStringPressureUncertainty
+	&& 	?Attribute006 = BlackStreamMeasuredStringPressureUncertainty#01
+	&& 	?Attribute007 = BlackStreamMeasuredStringPressureGaussianUncertainty#01
+	&& 	?Attribute008 = stringHydraulicBranch#01
+	&& 	?Attribute009 = stringHydraulicBranch#01
+	&& 	?Attribute010 = pipeSection#01
+	&& 	?Attribute011 = NOV#01
+  )
+}
+```
+This example describes a pressure signal that is measured inside the drill string and located at the drill string element.
 ## IsForMotionType <!-- VERB -->
 - Display name: IsForMotionType
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [MotionType](#MotionType)
 - Definition set: Mechanics
+- Description: 
+Indicates that a data point relates to a specific motion type.
+- Examples:
+```dwis motionTypeSignal
+DrillingDataPoint:axialVelocity
+AxialMotionType:axialMotion
+axialVelocity IsForMotionType axialMotion
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[axialVelocity] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[axialMotion] -->|BelongsToClass| N0003(AxialMotionType) 
+	N0000[axialVelocity] -->|IsForMotionType| N0002((axialMotion)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?motionTypeSignal
+WHERE {
+	?axialVelocity rdf:type ddhub:DrillingDataPoint .
+	?axialMotion rdf:type ddhub:AxialMotionType .
+  FILTER (
+	?Attribute000 = axialMotion
+  )
+}
+```
+This example tags axial velocity with an axial motion type.
 ## HasMotionType <!-- VERB -->
 - Display name: HasMotionType
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [MechanicalLogicalElement](#MechanicalLogicalElement)
 - Object class: [MotionType](#MotionType)
 - Definition set: Mechanics
+- Description: 
+Declares the types of motion a mechanical element can exhibit or model.
+- Examples:
+```dwis elementMotionType
+MechanicalLogicalElement:drillString
+TorsionalMotionType:torsionalMotion
+drillString HasMotionType torsionalMotion
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillString] -->|BelongsToClass| N0001(MechanicalLogicalElement) 
+	N0002[torsionalMotion] -->|BelongsToClass| N0003(TorsionalMotionType) 
+	N0000[drillString] -->|HasMotionType| N0002((torsionalMotion)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?elementMotionType
+WHERE {
+	?drillString rdf:type ddhub:MechanicalLogicalElement .
+	?torsionalMotion rdf:type ddhub:TorsionalMotionType .
+  FILTER (
+	?Attribute000 = torsionalMotion
+  )
+}
+```
+This example notes torsional motion for the drill string.
 ## HasCoordinates <!-- VERB -->
 - Display name: HasCoordinates
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [Location](#Location)
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Definition set: PhysicalLocation
+- Description: 
+Reference location for HasCoordinates.
+- Examples:
+```dwis hasCoordinates
+DrillingDataPoint:bitCoordinates
+Location:bitLocation
+bitLocation HasCoordinates bitCoordinates
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[bitCoordinates] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[bitLocation] -->|BelongsToClass| N0003(Location) 
+	N0002[bitLocation] -->|HasCoordinates| N0000((bitCoordinates)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hasCoordinates
+WHERE {
+	?bitCoordinates rdf:type ddhub:DrillingDataPoint .
+	?bitLocation rdf:type ddhub:Location .
+  FILTER (
+	?Attribute000 = bitCoordinates
+  )
+}
+```
+This example ties bit location to its coordinate values.
+## HasAxis <!-- VERB -->
+- Display name: Has Axis
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [ReferenceFrame](#ReferenceFrame)
+- Object class: [Axis](#Axis)
+- Definition set: PhysicalLocation
+- Description: 
+Associate an axis with a reference frame.
+- Examples:
+```dwis HasAxis
+Axis:axis
+ReferenceFrame:referenceFrame
+referenceFrame HasAxis axis
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[axis] -->|BelongsToClass| N0001(Axis) 
+	N0002[referenceFrame] -->|BelongsToClass| N0003(ReferenceFrame) 
+	N0002[referenceFrame] -->|HasAxis| N0000((axis)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?HasAxis
+WHERE {
+	?axis rdf:type ddhub:Axis .
+	?referenceFrame rdf:type ddhub:ReferenceFrame .
+  FILTER (
+	?Attribute000 = axis
+  )
+}
+```
+This example associates an axis to a reference frame.
+## IsComponentAlongAxis <!-- VERB -->
+- Display name: Is Component Along Axis
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [Axis](#Axis)
+- Definition set: PhysicalLocation
+- Description: 
+Stipulate that a drilling data point is a component along an axis.
+- Examples:
+```dwis IsComponentAlongAxis
+XAxis:xAxis
+DrillingDataPoint:xCoordinate
+xCoordinate IsComponentAlongAxis xAxis
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[xAxis] -->|BelongsToClass| N0001(XAxis) 
+	N0002[xCoordinate] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[xCoordinate] -->|IsComponentAlongAxis| N0000((xAxis)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?IsComponentAlongAxis
+WHERE {
+	?xAxis rdf:type ddhub:XAxis .
+	?xCoordinate rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = xAxis
+  )
+}
+```
+This example states that the drilling data point xCoordinate is a component along the xAxis.
 ## HasReferenceFrame <!-- VERB -->
 - Display name: HasReferenceFrame
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [ReferenceFrame](#ReferenceFrame)
 - Definition set: PhysicalLocation
+- Description: 
+Indicates the reference frame used to express a measurement.
+- Examples:
+```dwis referenceFrameExample
+DrillingDataPoint:bitDepth
+ReferenceFrame:verticalDepthFrame
+bitDepth HasReferenceFrame verticalDepthFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[bitDepth] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[verticalDepthFrame] -->|BelongsToClass| N0003(ReferenceFrame) 
+	N0000[bitDepth] -->|HasReferenceFrame| N0002((verticalDepthFrame)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?referenceFrameExample
+WHERE {
+	?bitDepth rdf:type ddhub:DrillingDataPoint .
+	?verticalDepthFrame rdf:type ddhub:ReferenceFrame .
+  FILTER (
+	?Attribute000 = verticalDepthFrame
+  )
+}
+```
+This example sets the reference frame for bit depth.
 ## HasReferenceFrameOrigin <!-- VERB -->
 - Display name: HasReferenceFrameOrigin
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [ReferenceFrame](#ReferenceFrame)
 - Object class: [Location](#Location)
 - Definition set: PhysicalLocation
+- Description: 
+Specifies the origin location of a reference frame.
+- Examples:
+```dwis frameOrigin
+ReferenceFrame:verticalDepthFrame
+Location:kellyBushing
+verticalDepthFrame HasReferenceFrameOrigin kellyBushing
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[verticalDepthFrame] -->|BelongsToClass| N0001(ReferenceFrame) 
+	N0002[kellyBushing] -->|BelongsToClass| N0003(Location) 
+	N0000[verticalDepthFrame] -->|HasReferenceFrameOrigin| N0002((kellyBushing)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?frameOrigin
+WHERE {
+	?verticalDepthFrame rdf:type ddhub:ReferenceFrame .
+	?kellyBushing rdf:type ddhub:Location .
+  FILTER (
+	?Attribute000 = kellyBushing
+  )
+}
+```
+This example defines the kelly bushing as origin of the vertical depth frame.
 ## IsPhysicallyLocatedAt <!-- VERB -->
 - Display name: IsPhysicallyLocatedAt
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DWISNoun](#DWISNoun)
 - Object class: [Location](#Location)
 - Definition set: PhysicalLocation
+- Description: 
+Places an object at a given physical location.
+- Examples:
+```dwis physicalLocationExample
+DWISNoun:measurementSensor
+Location:standpipeLocation
+measurementSensor IsPhysicallyLocatedAt standpipeLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[measurementSensor] -->|BelongsToClass| N0001(DWISNoun) 
+	N0002[standpipeLocation] -->|BelongsToClass| N0003(Location) 
+	N0000[measurementSensor] -->|IsPhysicallyLocatedAt| N0002((standpipeLocation)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?physicalLocationExample
+WHERE {
+	?measurementSensor rdf:type ddhub:DWISNoun .
+	?standpipeLocation rdf:type ddhub:Location .
+  FILTER (
+	?Attribute000 = standpipeLocation
+  )
+}
+```
+This example places a sensor at the standpipe location.
+## IsMeasuredFromReferenceFrame <!-- VERB -->
+- Display name: IsMeasuredFromReferenceFrame
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [ReferenceFrame](#ReferenceFrame)
+- Definition set: PhysicalLocation
+- Description: 
+Indicates that the signal is measured from a given reference frame.
+- Examples:
+```dwis IsMeasuredFromReferenceFrameExample
+DrillingDataPoint:toolface
+VerticalElevationFrame:highSideReferenceFrame
+toolface IsMeasuredFromReferenceFrame highSideReferenceFrame
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[toolface] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[highSideReferenceFrame] -->|BelongsToClass| N0003(VerticalElevationFrame) 
+	N0000[toolface] -->|IsMeasuredFromReferenceFrame| N0002((highSideReferenceFrame)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?IsMeasuredFromReferenceFrameExample
+WHERE {
+	?toolface rdf:type ddhub:DrillingDataPoint .
+	?highSideReferenceFrame rdf:type ddhub:VerticalElevationFrame .
+  FILTER (
+	?Attribute000 = highSideReferenceFrame
+  )
+}
+```
+This example indicates that the toolface is measured from the high side reference frame.
+```dwis InclinationSignalExample
+DynamicDrillingSignal:BOS_Inclination
+PhysicalData:BOS_Inclination#01
+BOS_Inclination#01 BelongsToClass ContinuousDataType
+BOS_Inclination#01 HasDynamicValue BOS_Inclination
+BOS_Inclination#01 IsOfMeasurableQuantity PlaneAngleDrilling
+VerticalDepthFrame:verticalDirection#01
+BOS_Inclination#01 IsMeasuredFromReferenceFrame verticalDirection#01
+MovingAverage:movingAverage
+BOS_Inclination#01 IsTransformationOutput movingAverage
+BottomOfStringReferenceLocation:bos#01
+BOS_Inclination#01 IsPhysicallyLocatedAt bos#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[BOS_Inclination] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[BOS_Inclination#01] -->|BelongsToClass| N0003(PhysicalData) 
+	N0002[BOS_Inclination#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[BOS_Inclination#01] -->|HasDynamicValue| N0000((BOS_Inclination)) 
+	N0002[BOS_Inclination#01] -->|IsOfMeasurableQuantity| N0005((PlaneAngleDrilling)) 
+	N0006[verticalDirection#01] -->|BelongsToClass| N0007(VerticalDepthFrame) 
+	N0002[BOS_Inclination#01] -->|IsMeasuredFromReferenceFrame| N0006((verticalDirection#01)) 
+	N0008[movingAverage] -->|BelongsToClass| N0009(MovingAverage) 
+	N0002[BOS_Inclination#01] -->|IsTransformationOutput| N0008((movingAverage)) 
+	N0010[bos#01] -->|BelongsToClass| N0011(BottomOfStringReferenceLocation) 
+	N0002[BOS_Inclination#01] -->|IsPhysicallyLocatedAt| N0010((bos#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?InclinationSignalExample
+WHERE {
+	?BOS_Inclination rdf:type ddhub:DynamicDrillingSignal .
+	?BOS_Inclination#01 rdf:type ddhub:PhysicalData .
+	?BOS_Inclination#01 rdf:type ddhub:ContinuousDataType .
+	?verticalDirection#01 rdf:type ddhub:VerticalDepthFrame .
+	?movingAverage rdf:type ddhub:MovingAverage .
+	?bos#01 rdf:type ddhub:BottomOfStringReferenceLocation .
+  FILTER (
+	?Attribute000 = BOS_Inclination
+	&& 	?Attribute001 = PlaneAngleDrilling
+	&& 	?Attribute002 = verticalDirection#01
+	&& 	?Attribute003 = movingAverage
+	&& 	?Attribute004 = bos#01
+  )
+}
+```
+This example defines a drilling data point as being the inclination measured at the bottom of the drill string from the vertical depth reference frame.
 ## AssociatesMeasurableQuantity <!-- VERB -->
 - Display name: AssociatesMeasurableQuantity
 - Parent verb: [DWISVerb](#DWISVerb)
@@ -58999,54 +80432,324 @@ graph LR
 - Subject class: [Resampling](#Resampling)
 - Object class: [SynchronizationGroup](#SynchronizationGroup)
 - Definition set: TimeManagement
+- Description: 
+Associates a resampling process with a synchronization group.
+- Examples:
+```dwis resamplingSync
+Resampling:resampleHookload
+SynchronizationGroup:rigSyncGroup
+resampleHookload BelongsToSynchronizationGroup rigSyncGroup
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[resampleHookload] -->|BelongsToClass| N0001(Resampling) 
+	N0002[rigSyncGroup] -->|BelongsToClass| N0003(SynchronizationGroup) 
+	N0000[resampleHookload] -->|BelongsToSynchronizationGroup| N0002((rigSyncGroup)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?resamplingSync
+WHERE {
+	?resampleHookload rdf:type ddhub:Resampling .
+	?rigSyncGroup rdf:type ddhub:SynchronizationGroup .
+  FILTER (
+	?Attribute000 = rigSyncGroup
+  )
+}
+```
+This example ties a resampling step to the rig synchronization group.
 ## HasAcquisitionClock <!-- VERB -->
 - Display name: HasAcquisitionClock
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [Clock](#Clock)
 - Definition set: TimeManagement
+- Description: 
+Indicates which clock timestamped the acquisition of a signal.
+- Examples:
+```dwis acquisitionClock
+DrillingDataPoint:standpipePressure
+Clock:rigClock
+standpipePressure HasAcquisitionClock rigClock
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipePressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[rigClock] -->|BelongsToClass| N0003(Clock) 
+	N0000[standpipePressure] -->|HasAcquisitionClock| N0002((rigClock)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?acquisitionClock
+WHERE {
+	?standpipePressure rdf:type ddhub:DrillingDataPoint .
+	?rigClock rdf:type ddhub:Clock .
+  FILTER (
+	?Attribute000 = rigClock
+  )
+}
+```
+This example links standpipe pressure acquisition to the rig clock.
 ## HasSourceClock <!-- VERB -->
 - Display name: HasSourceClock
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [Clock](#Clock)
 - Definition set: TimeManagement
+- Description: 
+Indicates the source clock at the origin of a signal.
+- Examples:
+```dwis sourceClock
+DrillingDataPoint:downholePressure
+Clock:downholeClock
+downholePressure HasSourceClock downholeClock
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[downholePressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[downholeClock] -->|BelongsToClass| N0003(Clock) 
+	N0000[downholePressure] -->|HasSourceClock| N0002((downholeClock)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?sourceClock
+WHERE {
+	?downholePressure rdf:type ddhub:DrillingDataPoint .
+	?downholeClock rdf:type ddhub:Clock .
+  FILTER (
+	?Attribute000 = downholeClock
+  )
+}
+```
+This example connects downhole pressure to its source clock.
 ## HasSourceTime <!-- VERB -->
 - Display name: HasSourceTime
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Definition set: TimeManagement
+- Description: 
+Provides the timestamp at the source for a data point.
+- Examples:
+```dwis sourceTime
+DrillingDataPoint:downholePressure
+DrillingDataPoint:downholePressureSourceTime
+downholePressure HasSourceTime downholePressureSourceTime
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[downholePressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[downholePressureSourceTime] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[downholePressure] -->|HasSourceTime| N0002((downholePressureSourceTime)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?sourceTime
+WHERE {
+	?downholePressure rdf:type ddhub:DrillingDataPoint .
+	?downholePressureSourceTime rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = downholePressureSourceTime
+  )
+}
+```
+This example records the source time for downhole pressure.
 ## HasAcquisitionTime <!-- VERB -->
 - Display name: HasAcquisitionTime
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Definition set: TimeManagement
+- Description: 
+Provides the acquisition system timestamp for a data point.
+- Examples:
+```dwis acquisitionTime
+DrillingDataPoint:standpipePressure
+DrillingDataPoint:standpipePressureAcqTime
+standpipePressure HasAcquisitionTime standpipePressureAcqTime
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipePressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[standpipePressureAcqTime] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[standpipePressure] -->|HasAcquisitionTime| N0002((standpipePressureAcqTime)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?acquisitionTime
+WHERE {
+	?standpipePressure rdf:type ddhub:DrillingDataPoint .
+	?standpipePressureAcqTime rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = standpipePressureAcqTime
+  )
+}
+```
+This example sets the acquisition time for standpipe pressure.
 ## HasTransmissionDelay <!-- VERB -->
 - Display name: HasTransmissionDelay
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [DrillingDataPoint](#DrillingDataPoint)
 - Definition set: TimeManagement
+- Description: 
+Indicates the transmission delay associated with a data point.
+- Examples:
+```dwis transmissionDelay
+DrillingDataPoint:downholePressure
+DrillingDataPoint:downholePressureDelay
+downholePressure HasTransmissionDelay downholePressureDelay
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[downholePressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[downholePressureDelay] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[downholePressure] -->|HasTransmissionDelay| N0002((downholePressureDelay)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?transmissionDelay
+WHERE {
+	?downholePressure rdf:type ddhub:DrillingDataPoint .
+	?downholePressureDelay rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = downholePressureDelay
+  )
+}
+```
+This example records telemetry delay for downhole pressure.
 ## IsSynchronizationGroupInput <!-- VERB -->
 - Display name: IsSynchronizationGroupInput
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [SynchronizationGroup](#SynchronizationGroup)
 - Definition set: TimeManagement
+- Description: 
+Marks a signal as input to a synchronization group.
+- Examples:
+```dwis syncInput
+DrillingDataPoint:hookload
+SynchronizationGroup:rigSyncGroup
+hookload IsSynchronizationGroupInput rigSyncGroup
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hookload] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[rigSyncGroup] -->|BelongsToClass| N0003(SynchronizationGroup) 
+	N0000[hookload] -->|IsSynchronizationGroupInput| N0002((rigSyncGroup)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?syncInput
+WHERE {
+	?hookload rdf:type ddhub:DrillingDataPoint .
+	?rigSyncGroup rdf:type ddhub:SynchronizationGroup .
+  FILTER (
+	?Attribute000 = rigSyncGroup
+  )
+}
+```
+This example includes hookload as a sync group input.
 ## IsSynchronizationGroupOutput <!-- VERB -->
 - Display name: IsSynchronizationGroupOutput
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [SynchronizationGroup](#SynchronizationGroup)
 - Definition set: TimeManagement
+- Description: 
+Marks a signal as output from a synchronization group.
+- Examples:
+```dwis syncOutput
+DrillingDataPoint:resampledHookload
+SynchronizationGroup:rigSyncGroup
+resampledHookload IsSynchronizationGroupOutput rigSyncGroup
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[resampledHookload] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[rigSyncGroup] -->|BelongsToClass| N0003(SynchronizationGroup) 
+	N0000[resampledHookload] -->|IsSynchronizationGroupOutput| N0002((rigSyncGroup)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?syncOutput
+WHERE {
+	?resampledHookload rdf:type ddhub:DrillingDataPoint .
+	?rigSyncGroup rdf:type ddhub:SynchronizationGroup .
+  FILTER (
+	?Attribute000 = rigSyncGroup
+  )
+}
+```
+This example marks a resampled hookload as sync group output.
 ## HasTimeReference <!-- VERB -->
 - Display name: HasTimeReference
 - Parent verb: [DWISVerb](#DWISVerb)
 - Subject class: [DrillingDataPoint](#DrillingDataPoint)
 - Object class: [TimeReference](#TimeReference)
 - Definition set: TimeManagement
+- Description: 
+Associates a data point with the time reference used for its timestamps.
+- Examples:
+```dwis timeReference
+DrillingDataPoint:standpipePressure
+UTCReference:utcTime
+standpipePressure HasTimeReference utcTime
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[standpipePressure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[utcTime] -->|BelongsToClass| N0003(UTCReference) 
+	N0000[standpipePressure] -->|HasTimeReference| N0002((utcTime)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?timeReference
+WHERE {
+	?standpipePressure rdf:type ddhub:DrillingDataPoint .
+	?utcTime rdf:type ddhub:UTCReference .
+  FILTER (
+	?Attribute000 = utcTime
+  )
+}
+```
+This example ties standpipe pressure to UTC time reference.
 ## HasUncertainty <!-- VERB -->
 - Display name: HasUncertainty
 - Parent verb: [DWISVerb](#DWISVerb)
@@ -59106,6 +80809,112 @@ WHERE {
   )
 }
 ```
+In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is a Gaussian distribution that is described by a `Mean` value called `Mean#01` and a `StandardDeviation` value called `StdDev#01`. `Mean#01` is a live signal that is attached to `Signal#01`. Similarly `StdDev#01` is a live signal attached to `Signal#02`.
+```dwis TotalAccumulatedCuttingsRecoveryExample
+DynamicDrillingSignal:CleanSightTotalAccumulatedCuttingsRecovery
+ComputedData:CleanSightTotalAccumulatedCuttingsRecovery#01
+CleanSightTotalAccumulatedCuttingsRecovery#01 BelongsToClass ContinuousDataType
+CleanSightTotalAccumulatedCuttingsRecovery#01 HasDynamicValue CleanSightTotalAccumulatedCuttingsRecovery
+CleanSightTotalAccumulatedCuttingsRecovery#01 IsOfMeasurableQuantity VolumeDrilling
+TopSideTelemetry:topSideTelemetry
+CleanSightTotalAccumulatedCuttingsRecovery#01 IsTransmittedBy topSideTelemetry
+MovingAverage:movingAverageCleanSightTotalAccumulatedCuttingsRecovery
+CleanSightTotalAccumulatedCuttingsRecovery#01 IsTransformationOutput movingAverageCleanSightTotalAccumulatedCuttingsRecovery
+DynamicDrillingSignal:Sigma_TotalAccumulatedCuttingsRecovery
+DrillingDataPoint:Sigma_TotalAccumulatedCuttingsRecovery#01
+Sigma_TotalAccumulatedCuttingsRecovery#01 BelongsToClass ContinuousDataType
+Sigma_TotalAccumulatedCuttingsRecovery#01 IsOfMeasurableQuantity VolumeDrilling
+Sigma_TotalAccumulatedCuttingsRecovery#01 HasDynamicValue Sigma_TotalAccumulatedCuttingsRecovery
+GaussianUncertainty:GaussianUncertaintyCleanSightTotalAccumulatedCuttingsRecovery#01
+CleanSightTotalAccumulatedCuttingsRecovery#01 HasUncertainty GaussianUncertaintyCleanSightTotalAccumulatedCuttingsRecovery#01
+GaussianUncertaintyCleanSightTotalAccumulatedCuttingsRecovery#01 HasUncertaintyMean CleanSightTotalAccumulatedCuttingsRecovery#01
+GaussianUncertaintyCleanSightTotalAccumulatedCuttingsRecovery#01 HasUncertaintyStandardDeviation Sigma_TotalAccumulatedCuttingsRecovery#01
+CuttingSeparatorLogical:ShaleShakerElement#01
+DrillingLiquidType:DrillingFluid#01
+CuttingsComponent:Cuttings#01
+Cuttings#01 IsAComponentOf DrillingFluid#01
+CleanSightTotalAccumulatedCuttingsRecovery#01 ConcernsAFluidComponent Cuttings#01
+DrillingFluid#01 IsFluidTypeLocatedAt ShaleShakerElement#01
+CleanSightTotalAccumulatedCuttingsRecovery#01 IsHydraulicEstimationAt ShaleShakerElement#01
+Interpreter:ImageInterpreter#01
+CleanSightTotalAccumulatedCuttingsRecovery#01 IsComputedBy ImageInterpreter#01
+InstrumentationCompany:DrillDocs#01
+CleanSightTotalAccumulatedCuttingsRecovery#01 IsProvidedBy DrillDocs#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CleanSightTotalAccumulatedCuttingsRecovery] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[CleanSightTotalAccumulatedCuttingsRecovery#01] -->|BelongsToClass| N0003(ComputedData) 
+	N0002[CleanSightTotalAccumulatedCuttingsRecovery#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[CleanSightTotalAccumulatedCuttingsRecovery#01] -->|HasDynamicValue| N0000((CleanSightTotalAccumulatedCuttingsRecovery)) 
+	N0002[CleanSightTotalAccumulatedCuttingsRecovery#01] -->|IsOfMeasurableQuantity| N0005((VolumeDrilling)) 
+	N0006[topSideTelemetry] -->|BelongsToClass| N0007(TopSideTelemetry) 
+	N0002[CleanSightTotalAccumulatedCuttingsRecovery#01] -->|IsTransmittedBy| N0006((topSideTelemetry)) 
+	N0008[movingAverageCleanSightTotalAccumulatedCuttingsRecovery] -->|BelongsToClass| N0009(MovingAverage) 
+	N0002[CleanSightTotalAccumulatedCuttingsRecovery#01] -->|IsTransformationOutput| N0008((movingAverageCleanSightTotalAccumulatedCuttingsRecovery)) 
+	N0010[Sigma_TotalAccumulatedCuttingsRecovery] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0011[Sigma_TotalAccumulatedCuttingsRecovery#01] -->|BelongsToClass| N0012(DrillingDataPoint) 
+	N0011[Sigma_TotalAccumulatedCuttingsRecovery#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0011[Sigma_TotalAccumulatedCuttingsRecovery#01] -->|IsOfMeasurableQuantity| N0005((VolumeDrilling)) 
+	N0011[Sigma_TotalAccumulatedCuttingsRecovery#01] -->|HasDynamicValue| N0010((Sigma_TotalAccumulatedCuttingsRecovery)) 
+	N0013[GaussianUncertaintyCleanSightTotalAccumulatedCuttingsRecovery#01] -->|BelongsToClass| N0014(GaussianUncertainty) 
+	N0002[CleanSightTotalAccumulatedCuttingsRecovery#01] -->|HasUncertainty| N0013((GaussianUncertaintyCleanSightTotalAccumulatedCuttingsRecovery#01)) 
+	N0013[GaussianUncertaintyCleanSightTotalAccumulatedCuttingsRecovery#01] -->|HasUncertaintyMean| N0002((CleanSightTotalAccumulatedCuttingsRecovery#01)) 
+	N0013[GaussianUncertaintyCleanSightTotalAccumulatedCuttingsRecovery#01] -->|HasUncertaintyStandardDeviation| N0011((Sigma_TotalAccumulatedCuttingsRecovery#01)) 
+	N0015[ShaleShakerElement#01] -->|BelongsToClass| N0016(CuttingSeparatorLogical) 
+	N0017[DrillingFluid#01] -->|BelongsToClass| N0018(DrillingLiquidType) 
+	N0019[Cuttings#01] -->|BelongsToClass| N0020(CuttingsComponent) 
+	N0019[Cuttings#01] -->|IsAComponentOf| N0017((DrillingFluid#01)) 
+	N0002[CleanSightTotalAccumulatedCuttingsRecovery#01] -->|ConcernsAFluidComponent| N0019((Cuttings#01)) 
+	N0017[DrillingFluid#01] -->|IsFluidTypeLocatedAt| N0015((ShaleShakerElement#01)) 
+	N0002[CleanSightTotalAccumulatedCuttingsRecovery#01] -->|IsHydraulicEstimationAt| N0015((ShaleShakerElement#01)) 
+	N0021[ImageInterpreter#01] -->|BelongsToClass| N0022(Interpreter) 
+	N0002[CleanSightTotalAccumulatedCuttingsRecovery#01] -->|IsComputedBy| N0021((ImageInterpreter#01)) 
+	N0023[DrillDocs#01] -->|BelongsToClass| N0024(InstrumentationCompany) 
+	N0002[CleanSightTotalAccumulatedCuttingsRecovery#01] -->|IsProvidedBy| N0023((DrillDocs#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?TotalAccumulatedCuttingsRecoveryExample
+WHERE {
+	?CleanSightTotalAccumulatedCuttingsRecovery rdf:type ddhub:DynamicDrillingSignal .
+	?CleanSightTotalAccumulatedCuttingsRecovery#01 rdf:type ddhub:ComputedData .
+	?CleanSightTotalAccumulatedCuttingsRecovery#01 rdf:type ddhub:ContinuousDataType .
+	?topSideTelemetry rdf:type ddhub:TopSideTelemetry .
+	?movingAverageCleanSightTotalAccumulatedCuttingsRecovery rdf:type ddhub:MovingAverage .
+	?Sigma_TotalAccumulatedCuttingsRecovery rdf:type ddhub:DynamicDrillingSignal .
+	?Sigma_TotalAccumulatedCuttingsRecovery#01 rdf:type ddhub:DrillingDataPoint .
+	?Sigma_TotalAccumulatedCuttingsRecovery#01 rdf:type ddhub:ContinuousDataType .
+	?GaussianUncertaintyCleanSightTotalAccumulatedCuttingsRecovery#01 rdf:type ddhub:GaussianUncertainty .
+	?ShaleShakerElement#01 rdf:type ddhub:CuttingSeparatorLogical .
+	?DrillingFluid#01 rdf:type ddhub:DrillingLiquidType .
+	?Cuttings#01 rdf:type ddhub:CuttingsComponent .
+	?ImageInterpreter#01 rdf:type ddhub:Interpreter .
+	?DrillDocs#01 rdf:type ddhub:InstrumentationCompany .
+  FILTER (
+	?Attribute000 = CleanSightTotalAccumulatedCuttingsRecovery
+	&& 	?Attribute001 = VolumeDrilling
+	&& 	?Attribute002 = topSideTelemetry
+	&& 	?Attribute003 = movingAverageCleanSightTotalAccumulatedCuttingsRecovery
+	&& 	?Attribute004 = VolumeDrilling
+	&& 	?Attribute005 = Sigma_TotalAccumulatedCuttingsRecovery
+	&& 	?Attribute006 = GaussianUncertaintyCleanSightTotalAccumulatedCuttingsRecovery#01
+	&& 	?Attribute007 = CleanSightTotalAccumulatedCuttingsRecovery#01
+	&& 	?Attribute008 = Sigma_TotalAccumulatedCuttingsRecovery#01
+	&& 	?Attribute009 = DrillingFluid#01
+	&& 	?Attribute010 = Cuttings#01
+	&& 	?Attribute011 = ShaleShakerElement#01
+	&& 	?Attribute012 = ShaleShakerElement#01
+	&& 	?Attribute013 = ImageInterpreter#01
+	&& 	?Attribute014 = DrillDocs#01
+  )
+}
+```
+This example shows how to define an uncertainty for a computed drilling data point called `CleanSightTotalAccumulatedCuttingsRecovery#01`. The uncertainty is defined as a Gaussian distribution (`GaussianUncertainty#01`) with a mean value equal to the computed data point and a standard deviation defined by a live signal called `Sigma_TotalAccumulatedCuttingsRecovery`.
 ## HasUncertaintyAccuracy <!-- VERB -->
 - Display name: HasUncertaintyAccuracy
 - Parent verb: [DWISVerb](#DWISVerb)

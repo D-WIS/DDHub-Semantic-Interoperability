@@ -135,6 +135,28 @@ A drilling standard procedure advisor provides parameters for a standard procedu
 running a friction test.
 - Definition set: AdvisorySystemAdvice
 - Examples:
+```dwis drillingStandardProcedureAdvice
+DrillingDataPoint:drillingStandardProcedureAdvice
+drillingStandardProcedureAdvice BelongsToClass DrillingStandardProcedureAdvice
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingStandardProcedureAdvice] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[drillingStandardProcedureAdvice] -->|BelongsToClass| N0002(DrillingStandardProcedureAdvice) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillingStandardProcedureAdvice
+WHERE {
+	?drillingStandardProcedureAdvice rdf:type ddhub:DrillingDataPoint .
+	?drillingStandardProcedureAdvice rdf:type ddhub:DrillingStandardProcedureAdvice .
+}
+```
+This example links a drilling data point to the DrillingStandardProcedureAdvice definition.
 The circulation startup procedure defines how to start the mud pumps in order to fill the pipes, break circulation and 
 establish a suitable flowrate in the drill-stem.
 ``` dwis circulationStartupProcedureInfo
@@ -1052,6 +1074,28 @@ A drilling control advisor provides information on how to control a part of the 
 as possible to one or several desired values.
 - Definition set: AdvisorySystemAdvice
 - Examples:
+```dwis drillingControlAdvice
+DrillingDataPoint:drillingControlAdvice
+drillingControlAdvice BelongsToClass DrillingControlAdvice
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingControlAdvice] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[drillingControlAdvice] -->|BelongsToClass| N0002(DrillingControlAdvice) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillingControlAdvice
+WHERE {
+	?drillingControlAdvice rdf:type ddhub:DrillingDataPoint .
+	?drillingControlAdvice rdf:type ddhub:DrillingControlAdvice .
+}
+```
+This example links a drilling data point to the DrillingControlAdvice definition.
 A ROP management controller adjusts the parameters of the auto-driller to manage the ROP. The ROP management may concern
 potential problems with drill-string buckling, passing the bit founder point, vibration and cuttings transport.
 ``` dwis ROPManagementControllerInfo
@@ -1312,6 +1356,28 @@ A safe operating envelope (SOE) advisor provides information on the limits that 
 process to avoid possible drilling incidents.
 - Definition set: AdvisorySystemAdvice
 - Examples:
+```dwis drillingSafeOperatingEnvelopeAdvice
+DrillingDataPoint:drillingSafeOperatingEnvelopeAdvice
+drillingSafeOperatingEnvelopeAdvice BelongsToClass DrillingSafeOperatingEnvelopeAdvice
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingSafeOperatingEnvelopeAdvice] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[drillingSafeOperatingEnvelopeAdvice] -->|BelongsToClass| N0002(DrillingSafeOperatingEnvelopeAdvice) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillingSafeOperatingEnvelopeAdvice
+WHERE {
+	?drillingSafeOperatingEnvelopeAdvice rdf:type ddhub:DrillingDataPoint .
+	?drillingSafeOperatingEnvelopeAdvice rdf:type ddhub:DrillingSafeOperatingEnvelopeAdvice .
+}
+```
+This example links a drilling data point to the DrillingSafeOperatingEnvelopeAdvice definition.
 The min-max axial velocity SOE is used to limit the axial drill-strem velocity to avoid generating swab and surge 
 pressures that exceeds the geo-pressure window.
 ``` dwis minMaxAxialVelocitySOEInfo
@@ -1516,6 +1582,28 @@ and parameters to procedure that is executed when a drilling incident is detecte
 and then possibly recover from that incident.
 - Definition set: AdvisorySystemAdvice
 - Examples:
+```dwis drillingFaultDetectionIsolationAndRecoveryAdvice
+DrillingDataPoint:drillingFaultDetectionIsolationAndRecoveryAdvice
+drillingFaultDetectionIsolationAndRecoveryAdvice BelongsToClass DrillingFaultDetectionIsolationAndRecoveryAdvice
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingFaultDetectionIsolationAndRecoveryAdvice] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[drillingFaultDetectionIsolationAndRecoveryAdvice] -->|BelongsToClass| N0002(DrillingFaultDetectionIsolationAndRecoveryAdvice) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillingFaultDetectionIsolationAndRecoveryAdvice
+WHERE {
+	?drillingFaultDetectionIsolationAndRecoveryAdvice rdf:type ddhub:DrillingDataPoint .
+	?drillingFaultDetectionIsolationAndRecoveryAdvice rdf:type ddhub:DrillingFaultDetectionIsolationAndRecoveryAdvice .
+}
+```
+This example links a drilling data point to the DrillingFaultDetectionIsolationAndRecoveryAdvice definition.
 A pack-off FDIR function detects an abornormal dowhole pressure and executes a procedure to avoid fracturing the
 open hole formation and possibly continues with a procedure to remediate the cause of the pack-off and return to normal conditions.
 ``` dwis PackOffFDIRInfo

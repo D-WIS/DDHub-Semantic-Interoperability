@@ -32,7 +32,8 @@ DrillingIncident <|-- FormationWashout
 DrillingIncident <|-- OverTorque
 DrillingIncident <|-- Plugged
 Plugged <|-- PackOff
-DrillingIncident <|-- MotorStall
+DrillingIncident <|-- StallIncident
+StallIncident <|-- MotorStall
 ```
 ## DrillingIncident <!-- NOUN -->
 - Display name: Drilling Incident
@@ -41,42 +42,224 @@ DrillingIncident <|-- MotorStall
 This is the parent class for drilling incidents. A drilling incident is often detectable by an abnormal value of a process variable, i.e., a variable that is influenced
 by the drilling process.
 - Definition set: DrillingIncident
+- Examples:
+```dwis genericIncident
+DrillingIncident:incident
+DrillingDataPoint:triggerSignal
+triggerSignal IsRelatedToDrillingIncident incident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[incident] -->|BelongsToClass| N0001(DrillingIncident) 
+	N0002[triggerSignal] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[triggerSignal] -->|IsRelatedToDrillingIncident| N0000[incident] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?genericIncident
+WHERE {
+	?incident rdf:type ddhub:DrillingIncident .
+	?triggerSignal rdf:type ddhub:DrillingDataPoint .
+	?triggerSignal ddhub:IsRelatedToDrillingIncident ?incident .
+}
+```
+This example shows a generic incident associated with a trigger signal.
 ## AbnormalOscillation <!-- NOUN -->
 - Display name: Abnormal Oscillation
 - Parent class: [DrillingIncident](./DrillingIncident.md#DrillingIncident)
 - Description: 
 This Noun represents abnormal oscillations along the drill-stem.
 - Definition set: DrillingIncident
+- Examples:
+```dwis abnormalOscillation
+AbnormalOscillation:oscillationIncident
+DrillingDataPoint:vibrationSignal
+vibrationSignal IsRelatedToDrillingIncident oscillationIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[oscillationIncident] -->|BelongsToClass| N0001(AbnormalOscillation) 
+	N0002[vibrationSignal] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[vibrationSignal] -->|IsRelatedToDrillingIncident| N0000[oscillationIncident] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?abnormalOscillation
+WHERE {
+	?oscillationIncident rdf:type ddhub:AbnormalOscillation .
+	?vibrationSignal rdf:type ddhub:DrillingDataPoint .
+	?vibrationSignal ddhub:IsRelatedToDrillingIncident ?oscillationIncident .
+}
+```
+This example links an abnormal oscillation incident to a vibration signal.
 ## AbnormalAxialOscillation <!-- NOUN -->
 - Display name: Abnormal Axial Oscillation
 - Parent class: [AbnormalOscillation](./DrillingIncident.md#AbnormalOscillation)
 - Description: 
 This Noun is used to refer to abnormal axial oscillations.
 - Definition set: DrillingIncident
+- Examples:
+```dwis axialOscillation
+AbnormalAxialOscillation:axialOscillationIncident
+DrillingDataPoint:axialAcceleration
+axialAcceleration IsRelatedToDrillingIncident axialOscillationIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[axialOscillationIncident] -->|BelongsToClass| N0001(AbnormalAxialOscillation) 
+	N0002[axialAcceleration] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[axialAcceleration] -->|IsRelatedToDrillingIncident| N0000[axialOscillationIncident] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?axialOscillation
+WHERE {
+	?axialOscillationIncident rdf:type ddhub:AbnormalAxialOscillation .
+	?axialAcceleration rdf:type ddhub:DrillingDataPoint .
+	?axialAcceleration ddhub:IsRelatedToDrillingIncident ?axialOscillationIncident .
+}
+```
+This example associates axial acceleration anomalies with an axial oscillation incident.
 ## AbnormalTorsionalOscillation <!-- NOUN -->
 - Display name: Abnormal Torsional Oscillation
 - Parent class: [AbnormalOscillation](./DrillingIncident.md#AbnormalOscillation)
 - Description: 
 This Noun is used to refer to abnormal torsional oscillations.
 - Definition set: DrillingIncident
+- Examples:
+```dwis torsionalOscillation
+AbnormalTorsionalOscillation:torsionalOscillationIncident
+DrillingDataPoint:torsionalVibration
+torsionalVibration IsRelatedToDrillingIncident torsionalOscillationIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[torsionalOscillationIncident] -->|BelongsToClass| N0001(AbnormalTorsionalOscillation) 
+	N0002[torsionalVibration] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[torsionalVibration] -->|IsRelatedToDrillingIncident| N0000[torsionalOscillationIncident] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?torsionalOscillation
+WHERE {
+	?torsionalOscillationIncident rdf:type ddhub:AbnormalTorsionalOscillation .
+	?torsionalVibration rdf:type ddhub:DrillingDataPoint .
+	?torsionalVibration ddhub:IsRelatedToDrillingIncident ?torsionalOscillationIncident .
+}
+```
+This example links torsional vibration to an abnormal torsional oscillation.
 ## AbnormalLateralOscillation <!-- NOUN -->
 - Display name: Abnormal Lateral Oscillation
 - Parent class: [AbnormalOscillation](./DrillingIncident.md#AbnormalOscillation)
 - Description: 
 This Noun is used to refer to abnormal lateral oscillations.
 - Definition set: DrillingIncident
+- Examples:
+```dwis lateralOscillation
+AbnormalLateralOscillation:lateralOscillationIncident
+DrillingDataPoint:lateralAcceleration
+lateralAcceleration IsRelatedToDrillingIncident lateralOscillationIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[lateralOscillationIncident] -->|BelongsToClass| N0001(AbnormalLateralOscillation) 
+	N0002[lateralAcceleration] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[lateralAcceleration] -->|IsRelatedToDrillingIncident| N0000[lateralOscillationIncident] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?lateralOscillation
+WHERE {
+	?lateralOscillationIncident rdf:type ddhub:AbnormalLateralOscillation .
+	?lateralAcceleration rdf:type ddhub:DrillingDataPoint .
+	?lateralAcceleration ddhub:IsRelatedToDrillingIncident ?lateralOscillationIncident .
+}
+```
+This example ties lateral acceleration anomalies to a lateral oscillation incident.
 ## StickSlip <!-- NOUN -->
 - Display name: Stick-slip
 - Parent class: [AbnormalTorsionalOscillation](./DrillingIncident.md#AbnormalTorsionalOscillation)
 - Description: 
 This Noun is used to refer to stick-slips.
 - Definition set: DrillingIncident
+- Examples:
+```dwis stickSlipIncident
+StickSlip:stickSlipIncident
+DrillingDataPoint:surfaceTorque
+surfaceTorque IsRelatedToDrillingIncident stickSlipIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stickSlipIncident] -->|BelongsToClass| N0001(StickSlip) 
+	N0002[surfaceTorque] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[surfaceTorque] -->|IsRelatedToDrillingIncident| N0000[stickSlipIncident] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stickSlipIncident
+WHERE {
+	?stickSlipIncident rdf:type ddhub:StickSlip .
+	?surfaceTorque rdf:type ddhub:DrillingDataPoint .
+	?surfaceTorque ddhub:IsRelatedToDrillingIncident ?stickSlipIncident .
+}
+```
+This example shows stick-slip identified from torque variations.
 ## HFTO <!-- NOUN -->
 - Display name: High Frequency Torsional Oscillation
 - Parent class: [AbnormalTorsionalOscillation](./DrillingIncident.md#AbnormalTorsionalOscillation)
 - Description: 
 This Noun is used to refer to high frequency torsional oscillations.
 - Definition set: DrillingIncident
+- Examples:
+```dwis hftoIncident
+HFTO:hftoIncident
+DrillingDataPoint:torsionalSpectrum
+torsionalSpectrum IsRelatedToDrillingIncident hftoIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hftoIncident] -->|BelongsToClass| N0001(HFTO) 
+	N0002[torsionalSpectrum] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[torsionalSpectrum] -->|IsRelatedToDrillingIncident| N0000[hftoIncident] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hftoIncident
+WHERE {
+	?hftoIncident rdf:type ddhub:HFTO .
+	?torsionalSpectrum rdf:type ddhub:DrillingDataPoint .
+	?torsionalSpectrum ddhub:IsRelatedToDrillingIncident ?hftoIncident .
+}
+```
+This example ties a torsional spectrum to an HFTO incident.
 ## Whirling <!-- NOUN -->
 - Display name: Whirling
 - Parent class: [AbnormalLateralOscillation](./DrillingIncident.md#AbnormalLateralOscillation)
@@ -147,24 +330,128 @@ WHERE {
 - Description: 
 This Noun is used to refer to forward whirl.
 - Definition set: DrillingIncident
+- Examples:
+```dwis forwardWhirlIncident
+ForwardWhirl:forwardWhirlIncident
+DrillingDataPoint:lateralVibration
+lateralVibration IsRelatedToDrillingIncident forwardWhirlIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[forwardWhirlIncident] -->|BelongsToClass| N0001(ForwardWhirl) 
+	N0002[lateralVibration] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[lateralVibration] -->|IsRelatedToDrillingIncident| N0000[forwardWhirlIncident] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?forwardWhirlIncident
+WHERE {
+	?forwardWhirlIncident rdf:type ddhub:ForwardWhirl .
+	?lateralVibration rdf:type ddhub:DrillingDataPoint .
+	?lateralVibration ddhub:IsRelatedToDrillingIncident ?forwardWhirlIncident .
+}
+```
+This example links lateral vibration to forward whirl.
 ## BackwardWhirl <!-- NOUN -->
 - Display name: Backward Whirl
 - Parent class: [Whirling](./DrillingIncident.md#Whirling)
 - Description: 
 This Noun is used to refer to backward whirl.
 - Definition set: DrillingIncident
+- Examples:
+```dwis backwardWhirlIncident
+BackwardWhirl:backwardWhirlIncident
+DrillingDataPoint:lateralVibration
+lateralVibration IsRelatedToDrillingIncident backwardWhirlIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[backwardWhirlIncident] -->|BelongsToClass| N0001(BackwardWhirl) 
+	N0002[lateralVibration] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[lateralVibration] -->|IsRelatedToDrillingIncident| N0000[backwardWhirlIncident] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?backwardWhirlIncident
+WHERE {
+	?backwardWhirlIncident rdf:type ddhub:BackwardWhirl .
+	?lateralVibration rdf:type ddhub:DrillingDataPoint .
+	?lateralVibration ddhub:IsRelatedToDrillingIncident ?backwardWhirlIncident .
+}
+```
+This example ties vibration to backward whirl.
 ## ChaoticWhirl <!-- NOUN -->
 - Display name: Chaotic Whirl
 - Parent class: [Whirling](./DrillingIncident.md#Whirling)
 - Description: 
 This Noun is used to refer to chaotic whirl.
 - Definition set: DrillingIncident
+- Examples:
+```dwis chaoticWhirlIncident
+ChaoticWhirl:chaoticWhirlIncident
+DrillingDataPoint:lateralVibration
+lateralVibration IsRelatedToDrillingIncident chaoticWhirlIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[chaoticWhirlIncident] -->|BelongsToClass| N0001(ChaoticWhirl) 
+	N0002[lateralVibration] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[lateralVibration] -->|IsRelatedToDrillingIncident| N0000[chaoticWhirlIncident] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?chaoticWhirlIncident
+WHERE {
+	?chaoticWhirlIncident rdf:type ddhub:ChaoticWhirl .
+	?lateralVibration rdf:type ddhub:DrillingDataPoint .
+	?lateralVibration ddhub:IsRelatedToDrillingIncident ?chaoticWhirlIncident .
+}
+```
+This example links chaotic whirl to lateral vibration signatures.
 ## Shock <!-- NOUN -->
 - Display name: Shock
 - Parent class: [AbnormalLateralOscillation](./DrillingIncident.md#AbnormalLateralOscillation)
 - Description: 
 This Noun is used to refer to lateral shocks.
 - Definition set: DrillingIncident
+- Examples:
+```dwis shockIncident
+Shock:shockIncident
+DrillingDataPoint:shockSensorSignal
+shockSensorSignal IsRelatedToDrillingIncident shockIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[shockIncident] -->|BelongsToClass| N0001(Shock) 
+	N0002[shockSensorSignal] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[shockSensorSignal] -->|IsRelatedToDrillingIncident| N0000[shockIncident] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?shockIncident
+WHERE {
+	?shockIncident rdf:type ddhub:Shock .
+	?shockSensorSignal rdf:type ddhub:DrillingDataPoint .
+	?shockSensorSignal ddhub:IsRelatedToDrillingIncident ?shockIncident .
+}
+```
+This example shows a shock sensor signal tied to a shock incident.
 ## TwistOff <!-- NOUN -->
 - Display name: Twist-off
 - Parent class: [DrillingIncident](./DrillingIncident.md#DrillingIncident)
@@ -555,6 +842,32 @@ WHERE {
 - Description: 
 This Noun is used to refer to a situation during which the drill-stem is impeded to move either axially or rotationally or both.
 - Definition set: DrillingIncident
+- Examples:
+```dwis stuckPipeIncident
+StuckPipe:stuckPipeIncident
+DrillingDataPoint:hookload
+hookload IsRelatedToDrillingIncident stuckPipeIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stuckPipeIncident] -->|BelongsToClass| N0001(StuckPipe) 
+	N0002[hookload] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[hookload] -->|IsRelatedToDrillingIncident| N0000[stuckPipeIncident] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stuckPipeIncident
+WHERE {
+	?stuckPipeIncident rdf:type ddhub:StuckPipe .
+	?hookload rdf:type ddhub:DrillingDataPoint .
+	?hookload ddhub:IsRelatedToDrillingIncident ?stuckPipeIncident .
+}
+```
+This example links abnormal hookload to a stuck-pipe incident.
 ## DifferentiallyStuck <!-- NOUN -->
 - Display name: Differentially Stuck
 - Parent class: [StuckPipe](./DrillingIncident.md#StuckPipe)
@@ -689,6 +1002,32 @@ WHERE {
 - Description: 
 This Noun is used to refer to a situation during which the formation is being washed out.
 - Definition set: DrillingIncident
+- Examples:
+```dwis formationWashoutIncident
+FormationWashout:formationWashoutIncident
+DrillingDataPoint:lossCirculationIndicator
+lossCirculationIndicator IsRelatedToDrillingIncident formationWashoutIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[formationWashoutIncident] -->|BelongsToClass| N0001(FormationWashout) 
+	N0002[lossCirculationIndicator] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[lossCirculationIndicator] -->|IsRelatedToDrillingIncident| N0000[formationWashoutIncident] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?formationWashoutIncident
+WHERE {
+	?formationWashoutIncident rdf:type ddhub:FormationWashout .
+	?lossCirculationIndicator rdf:type ddhub:DrillingDataPoint .
+	?lossCirculationIndicator ddhub:IsRelatedToDrillingIncident ?formationWashoutIncident .
+}
+```
+This example ties a loss indicator to formation washout.
 ## OverTorque <!-- NOUN -->
 - Display name: Over-torque
 - Parent class: [DrillingIncident](./DrillingIncident.md#DrillingIncident)
@@ -759,6 +1098,32 @@ WHERE {
 - Description: 
 This Noun is used to refer to a situation during which the hydraulic flow-path is partially or fully blocked.
 - Definition set: DrillingIncident
+- Examples:
+```dwis pluggedIncident
+Plugged:pluggedIncident
+DrillingDataPoint:standpipePressure
+standpipePressure IsRelatedToDrillingIncident pluggedIncident
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pluggedIncident] -->|BelongsToClass| N0001(Plugged) 
+	N0002[standpipePressure] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[standpipePressure] -->|IsRelatedToDrillingIncident| N0000[pluggedIncident] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pluggedIncident
+WHERE {
+	?pluggedIncident rdf:type ddhub:Plugged .
+	?standpipePressure rdf:type ddhub:DrillingDataPoint .
+	?standpipePressure ddhub:IsRelatedToDrillingIncident ?pluggedIncident .
+}
+```
+This example relates rising standpipe pressure to a plugged condition.
 ## PackOff <!-- NOUN -->
 - Display name: Pack-off
 - Parent class: [Plugged](./DrillingIncident.md#Plugged)
@@ -823,9 +1188,73 @@ WHERE {
 	?PackOffFDIRInfo_1 ddhub:IsProvidedTo ?adviceComposer .
 }
 ```
-## MotorStall <!-- NOUN -->
+## StallIncident <!-- NOUN -->
 - Display name: Motor-stall
 - Parent class: [DrillingIncident](./DrillingIncident.md#DrillingIncident)
+- Description: 
+This Noun is used to refer to a situation during which the drill-stem rotation stalled.
+- Definition set: DrillingIncident
+- Examples:
+``` dwis motorStallFDIRInfo
+DynamicDrillingSignal:motorStallFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice:motorStallFDIRInfo_1
+motorStallFDIRInfo_1 HasDynamicValue motorStallFDIRInfo
+MotorStall:motorStallIncident
+motorStallFDIRInfo_1 IsRelatedToDrillingIncident motorStallIncident
+ServiceCompany:serviceCompany
+motorStallFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor:computationUnit
+motorStallFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction:FDIRFunction_1
+FDIRFunction_1 ManagesIncident motorStallIncident
+motorStallFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer:adviceComposer
+motorStallFDIRInfo_1 IsProvidedTo adviceComposer
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[motorStallFDIRInfo] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[motorStallFDIRInfo_1] -->|BelongsToClass| N0003(DrillingFaultDetectionIsolationAndRecoveryAdvice) 
+	N0002[motorStallFDIRInfo_1] -->|HasDynamicValue| N0000[motorStallFDIRInfo] 
+	N0004[motorStallIncident] -->|BelongsToClass| N0005(MotorStall) 
+	N0002[motorStallFDIRInfo_1] -->|IsRelatedToDrillingIncident| N0004[motorStallIncident] 
+	N0006[serviceCompany] -->|BelongsToClass| N0007(ServiceCompany) 
+	N0002[motorStallFDIRInfo_1] -->|IsProvidedBy| N0006[serviceCompany] 
+	N0008[computationUnit] -->|BelongsToClass| N0009(Advisor) 
+	N0002[motorStallFDIRInfo_1] -->|IsRecommendedBy| N0008[computationUnit] 
+	N0010[FDIRFunction_1] -->|BelongsToClass| N0011(FDIRFunction) 
+	N0010[FDIRFunction_1] -->|ManagesIncident| N0004[motorStallIncident] 
+	N0002[motorStallFDIRInfo_1] -->|IsRecommendedFor| N0010[FDIRFunction_1] 
+	N0012[adviceComposer] -->|BelongsToClass| N0013(DWISAdviceComposer) 
+	N0002[motorStallFDIRInfo_1] -->|IsProvidedTo| N0012[adviceComposer] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?motorStallFDIRInfo
+WHERE {
+	?motorStallFDIRInfo rdf:type ddhub:DynamicDrillingSignal .
+	?motorStallFDIRInfo_1 rdf:type ddhub:DrillingFaultDetectionIsolationAndRecoveryAdvice .
+	?motorStallFDIRInfo_1 ddhub:HasDynamicValue ?motorStallFDIRInfo .
+	?motorStallIncident rdf:type ddhub:MotorStall .
+	?motorStallFDIRInfo_1 ddhub:IsRelatedToDrillingIncident ?motorStallIncident .
+	?serviceCompany rdf:type ddhub:ServiceCompany .
+	?motorStallFDIRInfo_1 ddhub:IsProvidedBy ?serviceCompany .
+	?computationUnit rdf:type ddhub:Advisor .
+	?motorStallFDIRInfo_1 ddhub:IsRecommendedBy ?computationUnit .
+	?FDIRFunction_1 rdf:type ddhub:FDIRFunction .
+	?FDIRFunction_1 ddhub:ManagesIncident ?motorStallIncident .
+	?motorStallFDIRInfo_1 ddhub:IsRecommendedFor ?FDIRFunction_1 .
+	?adviceComposer rdf:type ddhub:DWISAdviceComposer .
+	?motorStallFDIRInfo_1 ddhub:IsProvidedTo ?adviceComposer .
+}
+```
+## MotorStall <!-- NOUN -->
+- Display name: Motor-stall
+- Parent class: [StallIncident](./DrillingIncident.md#StallIncident)
 - Description: 
 This Noun is used to refer to a situation during which the downhole motor is stalled.
 - Definition set: DrillingIncident

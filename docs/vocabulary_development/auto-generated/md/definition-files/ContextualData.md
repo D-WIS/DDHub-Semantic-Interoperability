@@ -50,12 +50,58 @@ WellBoreDataCharateristic <|-- Extrapolated
 - Description: 
 Contextual data are structured objects stored in a JSon string.
 - Definition set: ContextualData
+- Examples:
+```dwis contextualData
+DrillingDataPoint:contextualData
+contextualData BelongsToClass ContextualData
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[contextualData] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[contextualData] -->|BelongsToClass| N0002(ContextualData) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?contextualData
+WHERE {
+	?contextualData rdf:type ddhub:DrillingDataPoint .
+	?contextualData rdf:type ddhub:ContextualData .
+}
+```
+This example links a drilling data point to the ContextualData definition.
 ## Plan <!-- NOUN -->
 - Display name: Plan
 - Parent class: [ContextualData](./ContextualData.md#ContextualData)
 - Description: 
 A plan is a description of the actions that shall be undertaken to reach an objective
 - Definition set: ContextualData
+- Examples:
+```dwis plan
+DrillingDataPoint:plan
+plan BelongsToClass Plan
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[plan] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[plan] -->|BelongsToClass| N0002(Plan) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?plan
+WHERE {
+	?plan rdf:type ddhub:DrillingDataPoint .
+	?plan rdf:type ddhub:Plan .
+}
+```
+This example links a drilling data point to the Plan definition.
 ## OperationalPlan <!-- NOUN -->
 - Display name: Operational Plan
 - Parent class: [Plan](./ContextualData.md#Plan)
@@ -179,12 +225,58 @@ WHERE {
 - Description: 
 A rig action plan described as a hierarchical state machine (Harel chart). Such a machine is specific to a given task. The set of all available machine forms the overal rig action plan.
 - Definition set: ContextualData
+- Examples:
+```dwis hierarchicalStateMachineRigActionPlan
+DrillingDataPoint:hierarchicalStateMachineRigActionPlan
+hierarchicalStateMachineRigActionPlan BelongsToClass HierarchicalStateMachineRigActionPlan
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[hierarchicalStateMachineRigActionPlan] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[hierarchicalStateMachineRigActionPlan] -->|BelongsToClass| N0002(HierarchicalStateMachineRigActionPlan) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?hierarchicalStateMachineRigActionPlan
+WHERE {
+	?hierarchicalStateMachineRigActionPlan rdf:type ddhub:DrillingDataPoint .
+	?hierarchicalStateMachineRigActionPlan rdf:type ddhub:HierarchicalStateMachineRigActionPlan .
+}
+```
+This example links a drilling data point to the HierarchicalStateMachineRigActionPlan definition.
 ## RigActionPlanProcessingStatus <!-- NOUN -->
 - Display name: Rig Action Plan Processing Status
 - Parent class: [JSonDataType](./DrillingDataSemantics.md#JSonDataType)
 - Description: 
 The currently executed state of the rig action plan, stored in a JSon string.
 - Definition set: ContextualData
+- Examples:
+```dwis rigActionPlanProcessingStatus
+DrillingDataPoint:rigActionPlanProcessingStatus
+rigActionPlanProcessingStatus BelongsToClass RigActionPlanProcessingStatus
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rigActionPlanProcessingStatus] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[rigActionPlanProcessingStatus] -->|BelongsToClass| N0002(RigActionPlanProcessingStatus) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rigActionPlanProcessingStatus
+WHERE {
+	?rigActionPlanProcessingStatus rdf:type ddhub:DrillingDataPoint .
+	?rigActionPlanProcessingStatus rdf:type ddhub:RigActionPlanProcessingStatus .
+}
+```
+This example links a drilling data point to the RigActionPlanProcessingStatus definition.
 ## ConfigurationData <!-- NOUN -->
 - Display name: Configuration Data
 - Parent class: [ContextualData](./ContextualData.md#ContextualData)
@@ -237,6 +329,29 @@ WHERE {
 - Description: 
 An operation step is a possible element of a rig action plan.
 - Definition set: ContextualData
+- Examples:
+```dwis operationalStep
+DrillingDataPoint:operationalStep
+operationalStep BelongsToClass OperationalStep
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[operationalStep] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[operationalStep] -->|BelongsToClass| N0002(OperationalStep) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?operationalStep
+WHERE {
+	?operationalStep rdf:type ddhub:DrillingDataPoint .
+	?operationalStep rdf:type ddhub:OperationalStep .
+}
+```
+This example links a drilling data point to the OperationalStep definition.
 ## PhaseStep <!-- NOUN -->
 - Display name: Phase Step
 - Parent class: [OperationalStep](./ContextualData.md#OperationalStep)
@@ -484,6 +599,8 @@ WHERE {
 ## WellBoreData <!-- NOUN -->
 - Display name: Wellbore Data
 - Parent class: [ContextualData](./ContextualData.md#ContextualData)
+- Description: 
+Captures contextual information describing wellbore characteristics and elements.
 - Definition set: ContextualData
 - Examples:
 ``` dwis wellBoreData_0
@@ -845,6 +962,29 @@ WHERE {
 A dill-stem is a generic term for all strings that are run in a borehole. The drill-stem describes the geometrical
 and mechanical characteristics of such a string. 
 - Definition set: ContextualData
+- Examples:
+```dwis drillStemDescription
+DrillingDataPoint:drillStemDescription
+drillStemDescription BelongsToClass DrillStemDescription
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillStemDescription] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[drillStemDescription] -->|BelongsToClass| N0002(DrillStemDescription) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillStemDescription
+WHERE {
+	?drillStemDescription rdf:type ddhub:DrillingDataPoint .
+	?drillStemDescription rdf:type ddhub:DrillStemDescription .
+}
+```
+This example links a drilling data point to the DrillStemDescription definition.
 ## DrillStringDescription <!-- NOUN -->
 - Display name: Drill-string Description
 - Parent class: [DrillStemDescription](./ContextualData.md#DrillStemDescription)
@@ -1300,6 +1440,29 @@ WHERE {
 - Description: 
 This Noun is used to characterize a piece of wellbore data.
 - Definition set: ContextualData
+- Examples:
+```dwis wellBoreDataCharateristic
+DrillingDataPoint:wellBoreDataCharateristic
+wellBoreDataCharateristic BelongsToClass WellBoreDataCharateristic
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wellBoreDataCharateristic] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[wellBoreDataCharateristic] -->|BelongsToClass| N0002(WellBoreDataCharateristic) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wellBoreDataCharateristic
+WHERE {
+	?wellBoreDataCharateristic rdf:type ddhub:DrillingDataPoint .
+	?wellBoreDataCharateristic rdf:type ddhub:WellBoreDataCharateristic .
+}
+```
+This example links a drilling data point to the WellBoreDataCharateristic definition.
 ## Planned <!-- NOUN -->
 - Display name: Planned
 - Parent class: [WellBoreDataCharateristic](./ContextualData.md#WellBoreDataCharateristic)

@@ -23,6 +23,29 @@ DrillingObjective <|-- WeightTransferObjective
 - Description: 
 This is the parent class for drilling objectives.
 - Definition set: DrillingObjective
+- Examples:
+```dwis drillingObjective
+DrillingDataPoint:drillingObjective
+drillingObjective BelongsToClass DrillingObjective
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingObjective] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[drillingObjective] -->|BelongsToClass| N0002(DrillingObjective) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillingObjective
+WHERE {
+	?drillingObjective rdf:type ddhub:DrillingDataPoint .
+	?drillingObjective rdf:type ddhub:DrillingObjective .
+}
+```
+This example links a drilling data point to the DrillingObjective definition.
 ## StableAxialVelocityObjective <!-- NOUN -->
 - Display name: Stable Axial Velocity Objective
 - Parent class: [DrillingObjective](./DrillingObjective.md#DrillingObjective)
@@ -311,18 +334,87 @@ WHERE {
 - Description: 
 This Noun is used to refer to the objective of obtaining stable torque.
 - Definition set: DrillingObjective
+- Examples:
+```dwis stableTorqueObjective
+DrillingDataPoint:stableTorqueObjective
+stableTorqueObjective BelongsToClass StableTorqueObjective
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stableTorqueObjective] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[stableTorqueObjective] -->|BelongsToClass| N0002(StableTorqueObjective) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stableTorqueObjective
+WHERE {
+	?stableTorqueObjective rdf:type ddhub:DrillingDataPoint .
+	?stableTorqueObjective rdf:type ddhub:StableTorqueObjective .
+}
+```
+This example links a drilling data point to the StableTorqueObjective definition.
 ## StableDrillingObjective <!-- NOUN -->
 - Display name: Stable Drilling Objective
 - Parent class: [DrillingObjective](./DrillingObjective.md#DrillingObjective)
 - Description: 
 This Noun is used to refer to the objective of obtaining stable torque.
 - Definition set: DrillingObjective
+- Examples:
+```dwis stableDrillingObjective
+DrillingDataPoint:stableDrillingObjective
+stableDrillingObjective BelongsToClass StableDrillingObjective
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stableDrillingObjective] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[stableDrillingObjective] -->|BelongsToClass| N0002(StableDrillingObjective) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stableDrillingObjective
+WHERE {
+	?stableDrillingObjective rdf:type ddhub:DrillingDataPoint .
+	?stableDrillingObjective rdf:type ddhub:StableDrillingObjective .
+}
+```
+This example links a drilling data point to the StableDrillingObjective definition.
 ## StableFlowrateObjective <!-- NOUN -->
 - Display name: Stable Flowrate Objective
 - Parent class: [DrillingObjective](./DrillingObjective.md#DrillingObjective)
 - Description: 
 This Noun is used to refer to the objective of obtaining stable torque.
 - Definition set: DrillingObjective
+- Examples:
+```dwis stableFlowrateObjective
+DrillingDataPoint:stableFlowrateObjective
+stableFlowrateObjective BelongsToClass StableFlowrateObjective
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stableFlowrateObjective] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[stableFlowrateObjective] -->|BelongsToClass| N0002(StableFlowrateObjective) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stableFlowrateObjective
+WHERE {
+	?stableFlowrateObjective rdf:type ddhub:DrillingDataPoint .
+	?stableFlowrateObjective rdf:type ddhub:StableFlowrateObjective .
+}
+```
+This example links a drilling data point to the StableFlowrateObjective definition.
 ## StableAxialForceObjective <!-- NOUN -->
 - Display name: Stable Axial Force Objective
 - Parent class: [DrillingObjective](./DrillingObjective.md#DrillingObjective)
