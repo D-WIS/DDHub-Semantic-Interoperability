@@ -71,6 +71,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Definitions", "Definitions"
 		..\..\..\docs\vocabulary_development\definitions\DrillingProcedure.md = ..\..\..\docs\vocabulary_development\definitions\DrillingProcedure.md
 		..\..\..\docs\vocabulary_development\definitions\DWISSemantics.md = ..\..\..\docs\vocabulary_development\definitions\DWISSemantics.md
 		..\..\..\docs\vocabulary_development\definitions\EndPoints.md = ..\..\..\docs\vocabulary_development\definitions\EndPoints.md
+		HydraulicModel.md = HydraulicModel.md
 		..\..\..\docs\vocabulary_development\definitions\Hydraulics.md = ..\..\..\docs\vocabulary_development\definitions\Hydraulics.md
 		..\..\..\docs\vocabulary_development\definitions\MeasurableQuantityTypes.md = ..\..\..\docs\vocabulary_development\definitions\MeasurableQuantityTypes.md
 		..\..\..\docs\vocabulary_development\definitions\MechanicalModel.md = ..\..\..\docs\vocabulary_development\definitions\MechanicalModel.md
@@ -83,6 +84,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Definitions", "Definitions"
 		..\..\..\docs\vocabulary_development\definitions\TimeManagement.md = ..\..\..\docs\vocabulary_development\definitions\TimeManagement.md
 		..\..\..\docs\vocabulary_development\definitions\Uncertainty.md = ..\..\..\docs\vocabulary_development\definitions\Uncertainty.md
 		..\..\..\docs\vocabulary_development\definitions\UnitTypes.md = ..\..\..\docs\vocabulary_development\definitions\UnitTypes.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\docs\vocabulary_development\examples\AlongStringMeasurement.md = ..\..\..\docs\vocabulary_development\examples\AlongStringMeasurement.md
+		..\..\..\docs\vocabulary_development\examples\CuttingsFlowFromShaleShakers.md = ..\..\..\docs\vocabulary_development\examples\CuttingsFlowFromShaleShakers.md
+		..\..\..\docs\vocabulary_development\examples\InlineConcentricRheometer.md = ..\..\..\docs\vocabulary_development\examples\InlineConcentricRheometer.md
+		..\..\..\docs\vocabulary_development\examples\InlinePipeRheometerRheometer.md = ..\..\..\docs\vocabulary_development\examples\InlinePipeRheometerRheometer.md
+		..\..\..\docs\vocabulary_development\examples\InstrumentedSaverSub.md = ..\..\..\docs\vocabulary_development\examples\InstrumentedSaverSub.md
+		..\..\..\docs\vocabulary_development\examples\MechanicalSubInBHAMudPulseTelemetry.md = ..\..\..\docs\vocabulary_development\examples\MechanicalSubInBHAMudPulseTelemetry.md
+		..\..\..\docs\vocabulary_development\examples\SemanticForRetrievingStandardDrillingSignals.md = ..\..\..\docs\vocabulary_development\examples\SemanticForRetrievingStandardDrillingSignals.md
 	EndProjectSection
 EndProject
 Global
@@ -171,6 +183,7 @@ Global
 		{58E8D84D-6055-4C30-986E-CAC6B892E8ED} = {0CFDA729-1E00-47DF-A107-C10B039092DB}
 		{F80F4165-8844-4887-A8EA-D613165C1103} = {A6B119D7-8E09-4B79-9D51-4E867667EF47}
 		{6448F601-D036-4F89-AACB-0D3B783F7EC1} = {CF2537FB-A715-4093-A40E-155C61C6CF17}
+		{02EA681E-C7D8-13C7-8484-4AC65E1B71E8} = {CF2537FB-A715-4093-A40E-155C61C6CF17}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F325564A-BA5A-4860-BA83-72F0743F08F9}

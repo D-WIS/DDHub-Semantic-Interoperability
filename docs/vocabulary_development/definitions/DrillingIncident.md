@@ -9,6 +9,12 @@
 - Description: This is the parent class for drilling incidents. A drilling incident is often detectable by an abnormal value of a process variable, i.e., a variable that is influenced 
 by the drilling process.
 - Examples:
+```dwis genericIncident
+DrillingIncident:incident
+DrillingDataPoint:triggerSignal
+triggerSignal IsRelatedToDrillingIncident incident
+```
+This example shows a generic incident associated with a trigger signal.
 ## AbnormalOscillation <!-- NOUN -->
 - Display name: Abnormal Oscillation
 - Parent class: DrillingIncident
@@ -16,6 +22,12 @@ by the drilling process.
 - Specialization:
 - Description: This Noun represents abnormal oscillations along the drill-stem.
 - Examples:
+```dwis abnormalOscillation
+AbnormalOscillation:oscillationIncident
+DrillingDataPoint:vibrationSignal
+vibrationSignal IsRelatedToDrillingIncident oscillationIncident
+```
+This example links an abnormal oscillation incident to a vibration signal.
 ## AbnormalAxialOscillation <!-- NOUN -->
 - Display name: Abnormal Axial Oscillation
 - Parent class: AbnormalOscillation
@@ -23,6 +35,12 @@ by the drilling process.
 - Specialization:
 - Description: This Noun is used to refer to abnormal axial oscillations.
 - Examples:
+```dwis axialOscillation
+AbnormalAxialOscillation:axialOscillationIncident
+DrillingDataPoint:axialAcceleration
+axialAcceleration IsRelatedToDrillingIncident axialOscillationIncident
+```
+This example associates axial acceleration anomalies with an axial oscillation incident.
 ## AbnormalTorsionalOscillation <!-- NOUN -->
 - Display name: Abnormal Torsional Oscillation
 - Parent class: AbnormalOscillation
@@ -30,6 +48,12 @@ by the drilling process.
 - Specialization:
 - Description: This Noun is used to refer to abnormal torsional oscillations.
 - Examples:
+```dwis torsionalOscillation
+AbnormalTorsionalOscillation:torsionalOscillationIncident
+DrillingDataPoint:torsionalVibration
+torsionalVibration IsRelatedToDrillingIncident torsionalOscillationIncident
+```
+This example links torsional vibration to an abnormal torsional oscillation.
 ## AbnormalLateralOscillation <!-- NOUN -->
 - Display name: Abnormal Lateral Oscillation
 - Parent class: AbnormalOscillation
@@ -37,6 +61,12 @@ by the drilling process.
 - Specialization:
 - Description: This Noun is used to refer to abnormal lateral oscillations.
 - Examples:
+```dwis lateralOscillation
+AbnormalLateralOscillation:lateralOscillationIncident
+DrillingDataPoint:lateralAcceleration
+lateralAcceleration IsRelatedToDrillingIncident lateralOscillationIncident
+```
+This example ties lateral acceleration anomalies to a lateral oscillation incident.
 ## StickSlip <!-- NOUN -->
 - Display name: Stick-slip
 - Parent class: AbnormalTorsionalOscillation
@@ -44,6 +74,12 @@ by the drilling process.
 - Specialization:
 - Description: This Noun is used to refer to stick-slips.
 - Examples:
+```dwis stickSlipIncident
+StickSlip:stickSlipIncident
+DrillingDataPoint:surfaceTorque
+surfaceTorque IsRelatedToDrillingIncident stickSlipIncident
+```
+This example shows stick-slip identified from torque variations.
 ## HFTO <!-- NOUN -->
 - Display name: High Frequency Torsional Oscillation
 - Parent class: AbnormalTorsionalOscillation
@@ -51,6 +87,12 @@ by the drilling process.
 - Specialization:
 - Description: This Noun is used to refer to high frequency torsional oscillations.
 - Examples:
+```dwis hftoIncident
+HFTO:hftoIncident
+DrillingDataPoint:torsionalSpectrum
+torsionalSpectrum IsRelatedToDrillingIncident hftoIncident
+```
+This example ties a torsional spectrum to an HFTO incident.
 ## Whirling <!-- NOUN -->
 - Display name: Whirling
 - Parent class: AbnormalLateralOscillation
@@ -81,6 +123,12 @@ whirlFDIRInfo_1 IsProvidedTo adviceComposer
 - Specialization:
 - Description: This Noun is used to refer to forward whirl.
 - Examples:
+```dwis forwardWhirlIncident
+ForwardWhirl:forwardWhirlIncident
+DrillingDataPoint:lateralVibration
+lateralVibration IsRelatedToDrillingIncident forwardWhirlIncident
+```
+This example links lateral vibration to forward whirl.
 ## BackwardWhirl <!-- NOUN -->
 - Display name: Backward Whirl
 - Parent class: Whirling
@@ -88,6 +136,12 @@ whirlFDIRInfo_1 IsProvidedTo adviceComposer
 - Specialization:
 - Description: This Noun is used to refer to backward whirl.
 - Examples:
+```dwis backwardWhirlIncident
+BackwardWhirl:backwardWhirlIncident
+DrillingDataPoint:lateralVibration
+lateralVibration IsRelatedToDrillingIncident backwardWhirlIncident
+```
+This example ties vibration to backward whirl.
 ## ChaoticWhirl <!-- NOUN -->
 - Display name: Chaotic Whirl
 - Parent class: Whirling
@@ -95,6 +149,12 @@ whirlFDIRInfo_1 IsProvidedTo adviceComposer
 - Specialization:
 - Description: This Noun is used to refer to chaotic whirl.
 - Examples:
+```dwis chaoticWhirlIncident
+ChaoticWhirl:chaoticWhirlIncident
+DrillingDataPoint:lateralVibration
+lateralVibration IsRelatedToDrillingIncident chaoticWhirlIncident
+```
+This example links chaotic whirl to lateral vibration signatures.
 ## Shock <!-- NOUN -->
 - Display name: Shock
 - Parent class: AbnormalLateralOscillation
@@ -102,6 +162,12 @@ whirlFDIRInfo_1 IsProvidedTo adviceComposer
 - Specialization:
 - Description: This Noun is used to refer to lateral shocks.
 - Examples:
+```dwis shockIncident
+Shock:shockIncident
+DrillingDataPoint:shockSensorSignal
+shockSensorSignal IsRelatedToDrillingIncident shockIncident
+```
+This example shows a shock sensor signal tied to a shock incident.
 ## TwistOff <!-- NOUN -->
 - Display name: Twist-off
 - Parent class: DrillingIncident
@@ -247,6 +313,12 @@ HoleCollapseFDIRInfo_1 IsProvidedTo adviceComposer
 - Specialization:
 - Description: This Noun is used to refer to a situation during which the drill-stem is impeded to move either axially or rotationally or both.
 - Examples:
+```dwis stuckPipeIncident
+StuckPipe:stuckPipeIncident
+DrillingDataPoint:hookload
+hookload IsRelatedToDrillingIncident stuckPipeIncident
+```
+This example links abnormal hookload to a stuck-pipe incident.
 ## DifferentiallyStuck <!-- NOUN -->
 - Display name: Differentially Stuck
 - Parent class: StuckPipe
@@ -300,6 +372,12 @@ pipeWashoutFDIRInfo_1 IsProvidedTo adviceComposer
 - Specialization:
 - Description: This Noun is used to refer to a situation during which the formation is being washed out.
 - Examples:
+```dwis formationWashoutIncident
+FormationWashout:formationWashoutIncident
+DrillingDataPoint:lossCirculationIndicator
+lossCirculationIndicator IsRelatedToDrillingIncident formationWashoutIncident
+```
+This example ties a loss indicator to formation washout.
 ## OverTorque <!-- NOUN -->
 - Display name: Over-torque
 - Parent class: DrillingIncident
@@ -330,6 +408,12 @@ overtorqueFDIRInfo_1 IsProvidedTo adviceComposer
 - Specialization:
 - Description: This Noun is used to refer to a situation during which the hydraulic flow-path is partially or fully blocked.
 - Examples:
+```dwis pluggedIncident
+Plugged:pluggedIncident
+DrillingDataPoint:standpipePressure
+standpipePressure IsRelatedToDrillingIncident pluggedIncident
+```
+This example relates rising standpipe pressure to a plugged condition.
 ## PackOff <!-- NOUN -->
 - Display name: Pack-off
 - Parent class: Plugged
@@ -353,9 +437,33 @@ PackOffFDIRInfo_1 IsRecommendedFor FDIRFunction_1
 DWISAdviceComposer:adviceComposer
 PackOffFDIRInfo_1 IsProvidedTo adviceComposer
 ```
-## MotorStall <!-- NOUN -->
+## StallIncident <!-- NOUN -->
 - Display name: Motor-stall
 - Parent class: DrillingIncident
+- Attributes:
+- Specialization:
+- Description: This Noun is used to refer to a situation during which the drill-stem rotation stalled.
+- Examples:
+``` dwis motorStallFDIRInfo
+DynamicDrillingSignal:motorStallFDIRInfo
+DrillingFaultDetectionIsolationAndRecoveryAdvice:motorStallFDIRInfo_1
+motorStallFDIRInfo_1 HasDynamicValue motorStallFDIRInfo
+MotorStall:motorStallIncident
+motorStallFDIRInfo_1 IsRelatedToDrillingIncident motorStallIncident
+ServiceCompany:serviceCompany
+motorStallFDIRInfo_1 IsProvidedBy serviceCompany
+Advisor:computationUnit
+motorStallFDIRInfo_1 IsRecommendedBy computationUnit
+FDIRFunction:FDIRFunction_1
+FDIRFunction_1 ManagesIncident motorStallIncident
+motorStallFDIRInfo_1 IsRecommendedFor FDIRFunction_1
+DWISAdviceComposer:adviceComposer
+motorStallFDIRInfo_1 IsProvidedTo adviceComposer
+```
+
+## MotorStall <!-- NOUN -->
+- Display name: Motor-stall
+- Parent class: StallIncident
 - Attributes:
 - Specialization:
 - Description: This Noun is used to refer to a situation during which the downhole motor is stalled.

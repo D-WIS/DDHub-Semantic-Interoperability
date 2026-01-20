@@ -6,6 +6,11 @@
 - Parent class: DWISNoun
 - Description: Represent the uncertainty associated to a `DrillingDataPoint`. 
 - Examples:
+```dwis signalUncertainty
+DrillingDataPoint:signalUncertainty
+signalUncertainty BelongsToClass SignalUncertainty
+```
+This example links a drilling data point to the SignalUncertainty definition.
 This noun is not intended to be used directly in describing a signal. However, it can be useful when formulating a query and then it serves as a generic way to check if there are facts related to uncertainty description for a `DrillingDataPoint`.
 ```dwis dataPoint
 DrillingDataPoint:dataPoint
@@ -139,6 +144,39 @@ DynamicDrillingSignal:Signal#02
 Mean#01 HasDynamicValue Signal#01
 StdDev#01 HasDynamicValue Signal#02
 ```
+In this example, `ddp#01` is a `DrillingDataPoint` that has an uncertainty `GU#01`, which is a Gaussian distribution that is described by a `Mean` value called `Mean#01` and a `StandardDeviation` value called `StdDev#01`. `Mean#01` is a live signal that is attached to `Signal#01`. Similarly `StdDev#01` is a live signal attached to `Signal#02`.
+```dwis TotalAccumulatedCuttingsRecoveryExample
+DynamicDrillingSignal:CleanSightTotalAccumulatedCuttingsRecovery
+ComputedData:CleanSightTotalAccumulatedCuttingsRecovery#01
+CleanSightTotalAccumulatedCuttingsRecovery#01 BelongsToClass ContinuousDataType
+CleanSightTotalAccumulatedCuttingsRecovery#01 HasDynamicValue CleanSightTotalAccumulatedCuttingsRecovery
+CleanSightTotalAccumulatedCuttingsRecovery#01 IsOfMeasurableQuantity VolumeDrilling
+TopSideTelemetry:topSideTelemetry
+CleanSightTotalAccumulatedCuttingsRecovery#01 IsTransmittedBy topSideTelemetry
+MovingAverage:movingAverageCleanSightTotalAccumulatedCuttingsRecovery
+CleanSightTotalAccumulatedCuttingsRecovery#01 IsTransformationOutput movingAverageCleanSightTotalAccumulatedCuttingsRecovery
+DynamicDrillingSignal:Sigma_TotalAccumulatedCuttingsRecovery
+DrillingDataPoint:Sigma_TotalAccumulatedCuttingsRecovery#01
+Sigma_TotalAccumulatedCuttingsRecovery#01 BelongsToClass ContinuousDataType
+Sigma_TotalAccumulatedCuttingsRecovery#01 IsOfMeasurableQuantity VolumeDrilling
+Sigma_TotalAccumulatedCuttingsRecovery#01 HasDynamicValue Sigma_TotalAccumulatedCuttingsRecovery
+GaussianUncertainty:GaussianUncertaintyCleanSightTotalAccumulatedCuttingsRecovery#01
+CleanSightTotalAccumulatedCuttingsRecovery#01 HasUncertainty GaussianUncertaintyCleanSightTotalAccumulatedCuttingsRecovery#01
+GaussianUncertaintyCleanSightTotalAccumulatedCuttingsRecovery#01 HasUncertaintyMean CleanSightTotalAccumulatedCuttingsRecovery#01
+GaussianUncertaintyCleanSightTotalAccumulatedCuttingsRecovery#01 HasUncertaintyStandardDeviation Sigma_TotalAccumulatedCuttingsRecovery#01
+CuttingSeparatorLogical:ShaleShakerElement#01
+DrillingLiquidType:DrillingFluid#01
+CuttingsComponent:Cuttings#01
+Cuttings#01 IsAComponentOf DrillingFluid#01
+CleanSightTotalAccumulatedCuttingsRecovery#01 ConcernsAFluidComponent Cuttings#01
+DrillingFluid#01 IsFluidTypeLocatedAt ShaleShakerElement#01
+CleanSightTotalAccumulatedCuttingsRecovery#01 IsHydraulicEstimationAt ShaleShakerElement#01
+Interpreter:ImageInterpreter#01
+CleanSightTotalAccumulatedCuttingsRecovery#01 IsComputedBy ImageInterpreter#01
+InstrumentationCompany:DrillDocs#01
+CleanSightTotalAccumulatedCuttingsRecovery#01 IsProvidedBy DrillDocs#01
+```
+This example shows how to define an uncertainty for a computed drilling data point called `CleanSightTotalAccumulatedCuttingsRecovery#01`. The uncertainty is defined as a Gaussian distribution (`GaussianUncertainty#01`) with a mean value equal to the computed data point and a standard deviation defined by a live signal called `Sigma_TotalAccumulatedCuttingsRecovery`.
 ## HasUncertaintyAccuracy <!-- VERB -->
 - Display name: HasUncertaintyAccuracy
 - Parent verb: DWISVerb

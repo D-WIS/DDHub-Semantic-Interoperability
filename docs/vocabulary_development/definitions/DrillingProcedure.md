@@ -8,6 +8,11 @@
 - Specialization:
 - Description: This is the parent class for drilling procedures. 
 - Examples:
+```dwis drillingProcedure
+DrillingDataPoint:drillingProcedure
+drillingProcedure BelongsToClass DrillingProcedure
+```
+This example links a drilling data point to the DrillingProcedure definition.
 ## CirculationStartupProcedure <!-- NOUN -->
 - Display name: Circulation Startup Procedure
 - Parent class: DrillingProcedure

@@ -8,6 +8,11 @@
 - Specialization:
 - Description: This is the parent class for drilling limits. A limit applies typically on a desired value as controlled by a controller.
 - Examples:
+```dwis drillingLimit
+DrillingDataPoint:drillingLimit
+drillingLimit BelongsToClass DrillingLimit
+```
+This example links a drilling data point to the DrillingLimit definition.
 ## OnlyLimits <!-- NOUN -->
 - Display name: Only Limits
 - Parent class: DrillingLimit
@@ -231,6 +236,11 @@ ROPManagementControllerInfo_1 IsProvidedTo scheduler
 - Specialization:
 - Description: This Noun is used to refer to a torque limit.
 - Examples:
+```dwis torqueLimit
+DrillingDataPoint:torqueLimit
+torqueLimit BelongsToClass TorqueLimit
+```
+This example links a drilling data point to the TorqueLimit definition.
 ## AxialLoadLimit <!-- NOUN -->
 - Display name: Axial Load Limit
 - Parent class: DrillingLimit
@@ -238,6 +248,11 @@ ROPManagementControllerInfo_1 IsProvidedTo scheduler
 - Specialization:
 - Description: This Noun is used to refer to an axial load limit.
 - Examples:
+```dwis axialLoadLimit
+DrillingDataPoint:axialLoadLimit
+axialLoadLimit BelongsToClass AxialLoadLimit
+```
+This example links a drilling data point to the AxialLoadLimit definition.
 ## PressureLimit <!-- NOUN -->
 - Display name: Pressure Limit
 - Parent class: DrillingLimit
@@ -245,6 +260,11 @@ ROPManagementControllerInfo_1 IsProvidedTo scheduler
 - Specialization:
 - Description: This Noun is used to refer to an pressure limit.
 - Examples:
+```dwis pressureLimit
+DrillingDataPoint:pressureLimit
+pressureLimit BelongsToClass PressureLimit
+```
+This example links a drilling data point to the PressureLimit definition.
 ## AnnulusPressureLimit <!-- NOUN -->
 - Display name: Annulus Pressure Limit
 - Parent class: PressureLimit
@@ -252,6 +272,11 @@ ROPManagementControllerInfo_1 IsProvidedTo scheduler
 - Specialization:
 - Description: This Noun is used to refer to an annulus pressure limit.
 - Examples:
+```dwis annulusPressureLimit
+DrillingDataPoint:annulusPressureLimit
+annulusPressureLimit BelongsToClass AnnulusPressureLimit
+```
+This example links a drilling data point to the AnnulusPressureLimit definition.
 ## StringPressureLimit <!-- NOUN -->
 - Display name: String Pressure Limit
 - Parent class: PressureLimit
@@ -259,6 +284,11 @@ ROPManagementControllerInfo_1 IsProvidedTo scheduler
 - Specialization:
 - Description: This Noun is used to refer to a string pressure limit.
 - Examples:
+```dwis stringPressureLimit
+DrillingDataPoint:stringPressureLimit
+stringPressureLimit BelongsToClass StringPressureLimit
+```
+This example links a drilling data point to the StringPressureLimit definition.
 # VERBS
 ## IsRelatedToDrillingLimit <!-- VERB -->
 - Display name: Is Related to Drilling Limit

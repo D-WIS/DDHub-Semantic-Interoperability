@@ -8,17 +8,19 @@
 - Attributes:
   - ProviderName
     - Type: string
-    - Description: 
+    - Description: The name of the data provide.
 - Specialization:
 - Description: A data provider is any sources for data.
 - Examples:
+```dwis dataProvider
+DrillingDataPoint:dataProvider
+dataProvider BelongsToClass DataProvider
+```
+This example links a drilling data point to the DataProvider definition.
 ## OperatingCompany <!-- NOUN -->
 - Display name: OperatingCompany
 - Parent class: DataProvider
 - Attributes:
-  - ProviderName
-    - Type: string
-    - Description: 
 - Specialization:
 - Description: An operating company is an entity that holds the rights to explore, develop, and produce hydrocarbon resources from a particular oil or gas field or lease
 - Examples:
@@ -37,19 +39,18 @@ stratigraphyDescription_1 IsCharacterizedBy prognosed_1
 - Display name: ServiceCompany
 - Parent class: DataProvider
 - Attributes:
-  - ProviderName
-    - Type: string
-    - Description: 
 - Specialization:
 - Description: A service company is an entity that provides services during the well construction.
 - Examples:
+```dwis serviceCompany
+DrillingDataPoint:serviceCompany
+serviceCompany BelongsToClass ServiceCompany
+```
+This example links a drilling data point to the ServiceCompany definition.
 ## DirectionalServiceCompany <!-- NOUN -->
 - Display name: DirectionalServiceCompany
 - Parent class: ServiceCompany
 - Attributes:
-  - ProviderName
-    - Type: string
-    - Description: 
 - Specialization:
 - Description: A directional service company is an entity that provides services for downhole directional drilling and downhole measurements.
 - Examples:
@@ -72,9 +73,6 @@ trajectoryDescription_1 IsCharacterizedBy measured_1
 - Display name: DrillingFluidProvider
 - Parent class: ServiceCompany
 - Attributes:
-  - ProviderName
-    - Type: string
-    - Description: 
 - Specialization:
 - Description: A drilling fluid provider is a company that provides and maintains the drilling fluids during well construction.
 - Examples:
@@ -95,11 +93,26 @@ fluidDescription_1 IsCharacterizedBy measured_1
 - Display name: LoggingServiceCompany
 - Parent class: ServiceCompany
 - Attributes:
-  - ProviderName
-    - Type: string
-    - Description: 
 - Specialization:
 - Description: A logging service company is an entity that gathers measured information during well construction.
+- Examples:
+``` dwis stratigraphyDescription_0
+DynamicDrillingSignal:stratigraphyDescription_0
+StratigraphyDescription:stratigraphyDescription_1
+stratigraphyDescription_1 HasDynamicValue stratigraphyDescription_0
+LoggingServiceCompany:logginServiceCompany_1
+stratigraphyDescription_1 IsProvidedBy logginServiceCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+stratigraphyDescription_1 IsProvidedTo contextualDataBuilder_1
+Measured:measured_1
+stratigraphyDescription_1 IsCharacterizedBy measured_1
+```
+## InstrumentationCompany <!-- NOUN -->
+- Display name: Instrumentation Company
+- Parent class: ServiceCompany
+- Attributes:
+- Specialization:
+- Description: A service company providing measurement instruments and associated services.
 - Examples:
 ``` dwis stratigraphyDescription_0
 DynamicDrillingSignal:stratigraphyDescription_0
@@ -116,11 +129,8 @@ stratigraphyDescription_1 IsCharacterizedBy measured_1
 - Display name: CementingServiceCompany
 - Parent class: ServiceCompany
 - Attributes:
-  - ProviderName
-    - Type: string
-    - Description: 
-- Specialization: A cementing service company is an entity that provides the cement slurry used during cementing operations.
-- Description: 
+- Specialization: 
+- Description: A cementing service company is an entity that provides the cement slurry used during cementing operations.
 - Examples:
 ``` dwis fluidDescription_0
 DynamicDrillingSignal:fluidDescription_0
@@ -137,11 +147,8 @@ fluidDescription_1 IsCharacterizedBy measured_1
 - Display name: CompletionServiceCompany
 - Parent class: ServiceCompany
 - Attributes:
-  - ProviderName
-    - Type: string
-    - Description: 
-- Specialization: A completion service company is an entity that provides the completion equipment and fluids used during completion operations.
-- Description: 
+- Specialization: 
+- Description: A completion service company is an entity that provides the completion equipment and fluids used during completion operations.
 - Examples:
 ``` dwis fluidDescription_0
 DynamicDrillingSignal:fluidDescription_0
@@ -158,9 +165,6 @@ fluidDescription_1 IsCharacterizedBy current_1
 - Display name: DataAnalysisServiceCompany
 - Parent class: ServiceCompany
 - Attributes:
-  - ProviderName
-    - Type: string
-    - Description: 
 - Specialization:
 - Description: A data analysis service company is an entity that analyses measured data and provide new information from these measurements.
 - Examples:
@@ -184,11 +188,8 @@ PackOffFDIRInfo_1 IsProvidedTo adviceComposer
 - Display name: DrillingContractor
 - Parent class: DataProvider
 - Attributes:
-  - ProviderName
-    - Type: string
-    - Description: 
-- Specialization: A drilling contractor is a company that is primarily responsible for conducting drilling operations, including the construction and operation of drilling rigs.
-- Description: 
+- Specialization: 
+- Description: A drilling contractor is a company that is primarily responsible for conducting drilling operations, including the construction and operation of drilling rigs.
 - Examples:
 ``` dwis rigDescription_0
 DynamicDrillingSignal:rigDescription_0
@@ -205,25 +206,32 @@ rigDescription_1 IsCharacterizedBy current_1
 - Display name: DWISInternalService
 - Parent class: DataProvider
 - Attributes:
-  - ProviderName
-    - Type: string
-    - Description: 
 - Specialization:
 - Description: A DWIS internal service is an internal component of the DWIS infrastructure that generates information that can be used by any systems connected to the DWIS infrastructure.
 - Examples:
+```dwis dWISInternalService
+DrillingDataPoint:dWISInternalService
+dWISInternalService BelongsToClass DWISInternalService
+```
+This example links a drilling data point to the DWISInternalService definition.
 ## DWISBlackboard <!-- NOUN -->
 - Display name: DWIS Blackboard
 - Parent class: DWISInternalService
 - Attributes:
 - Specialization:
-- Description: 
+- Description: The DWIS blackboard is a shared data structure that allows different DWIS components to share information and coordinate their activities.
 - Examples:
+```dwis dWISBlackboard
+DrillingDataPoint:dWISBlackboard
+dWISBlackboard BelongsToClass DWISBlackboard
+```
+This example links a drilling data point to the DWISBlackboard definition.
 ## DWISDrillingProcessStateInterpreter <!-- NOUN -->
 - Display name: DWIS Drilling Process State Interpreter
 - Parent class: DWISInternalService
 - Attributes:
 - Specialization:
-- Description: 
+- Description: The DWIS Drilling Process State Interpreter is a component that analyses drilling data to determine the current state of the drilling process.
 - Examples:
 ``` dwis configurationData_0
 DynamicDrillingSignal:configurationData_0
@@ -240,7 +248,7 @@ configurationData_1 IsLimitFor microStateInterpreter_1
 - Parent class: DWISInternalService
 - Attributes:
 - Specialization:
-- Description: 
+- Description: The DWIS Advice Composer is a component that composes different drilling advices based on priorities set by the DWIS Scheduler.
 - Examples:
 ``` dwis ROPManagementControllerInfo
 DynamicDrillingSignal:ROPManagementControllerInfo
@@ -280,7 +288,7 @@ ROPManagementControllerInfo_1 IsProvidedTo scheduler
 - Parent class: DWISInternalService
 - Attributes:
 - Specialization:
-- Description: 
+- Description: The DWIS Scheduler is a component that schedules drilling activities based on the rig action plan and the current context estimated by the DWIS Microstate Interpretation engine.
 - Examples:
 ``` dwis rigActionPlan_0
 DynamicDrillingSignal:rigActionPlan_0
@@ -296,7 +304,7 @@ rigActionPlan_1 IsProvidedTo scheduler_1
 - Parent class: DWISInternalService
 - Attributes:
 - Specialization:
-- Description: 
+- Description: The DWIS Contextual Data Builder is a component that consolidates contextual data arising from multiple providers.
 - Examples:
 ``` dwis fluidDescription_0
 DynamicDrillingSignal:fluidDescription_0
@@ -314,14 +322,19 @@ fluidDescription_1 IsCharacterizedBy current_1
 - Parent class: DWISInternalService
 - Attributes:
 - Specialization:
-- Description: 
+- Description: The DWIS Logger is a component that logs all the activity on DWIS Blackboard.
 - Examples:
+```dwis dWISLogger
+DrillingDataPoint:dWISLogger
+dWISLogger BelongsToClass DWISLogger
+```
+This example links a drilling data point to the DWISLogger definition.
 ## DWISADCSInterface <!-- NOUN -->
 - Display name: DWIS ADCS Interface
 - Parent class: DWISInternalService
 - Attributes:
 - Specialization:
-- Description: 
+- Description: The DWIS ADCS interface provides access to the actual ADCS.
 - Examples:
 ``` dwis overpullUnderpullFDIRInfo
 DynamicDrillingSignal:overpullUnderpullFDIRInfo
@@ -347,7 +360,7 @@ overpullUnderpullFDIRInfo_1 IsProvidedTo ADCSInterface_1
 - Parent class: DWISInternalService
 - Attributes:
 - Specialization:
-- Description: 
+- Description: The DWIS ADCS Capability descriptor describes the actual capabilities of the true ADCS.
 - Examples:
 ``` dwis configurationData_0
 DynamicDrillingSignal:configurationData_0
@@ -362,7 +375,7 @@ configurationData_1 IsProvidedBy ADCSCapabilityDescriptor_1
 - Parent verb: DWISVerb
 - Subject class: DWISNoun
 - Object class: DataProvider
-- Description: 
+- Description: This verb is used to stipulate that something is provided by a data provider.
 - Examples:
 ``` dwis rigDescription_0
 DynamicDrillingSignal:rigDescription_0
@@ -380,7 +393,7 @@ rigDescription_1 IsCharacterizedBy current_1
 - Parent verb: DWISVerb
 - Subject class: DWISNoun
 - Object class: DataProvider
-- Description: 
+- Description: This verb is used to stipulate that something is provided to a data provider.
 - Examples: 
 ``` dwis rigDescription_0
 DynamicDrillingSignal:rigDescription_0

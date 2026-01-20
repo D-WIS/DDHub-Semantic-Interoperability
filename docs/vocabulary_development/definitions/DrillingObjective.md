@@ -8,6 +8,11 @@
 - Specialization:
 - Description: This is the parent class for drilling objectives. 
 - Examples:
+```dwis drillingObjective
+DrillingDataPoint:drillingObjective
+drillingObjective BelongsToClass DrillingObjective
+```
+This example links a drilling data point to the DrillingObjective definition.
 ## StableAxialVelocityObjective <!-- NOUN -->
 - Display name: Stable Axial Velocity Objective
 - Parent class: DrillingObjective
@@ -114,6 +119,11 @@ ROPManagementControllerInfo_1 IsProvidedTo scheduler
 - Specialization:
 - Description: This Noun is used to refer to the objective of obtaining stable torque.
 - Examples:
+```dwis stableTorqueObjective
+DrillingDataPoint:stableTorqueObjective
+stableTorqueObjective BelongsToClass StableTorqueObjective
+```
+This example links a drilling data point to the StableTorqueObjective definition.
 ## StableDrillingObjective <!-- NOUN -->
 - Display name: Stable Drilling Objective
 - Parent class: DrillingObjective
@@ -121,6 +131,11 @@ ROPManagementControllerInfo_1 IsProvidedTo scheduler
 - Specialization:
 - Description: This Noun is used to refer to the objective of obtaining stable torque.
 - Examples:
+```dwis stableDrillingObjective
+DrillingDataPoint:stableDrillingObjective
+stableDrillingObjective BelongsToClass StableDrillingObjective
+```
+This example links a drilling data point to the StableDrillingObjective definition.
 ## StableFlowrateObjective <!-- NOUN -->
 - Display name: Stable Flowrate Objective
 - Parent class: DrillingObjective
@@ -128,6 +143,11 @@ ROPManagementControllerInfo_1 IsProvidedTo scheduler
 - Specialization:
 - Description: This Noun is used to refer to the objective of obtaining stable torque.
 - Examples:
+```dwis stableFlowrateObjective
+DrillingDataPoint:stableFlowrateObjective
+stableFlowrateObjective BelongsToClass StableFlowrateObjective
+```
+This example links a drilling data point to the StableFlowrateObjective definition.
 ## StableAxialForceObjective <!-- NOUN -->
 - Display name: Stable Axial Force Objective
 - Parent class: DrillingObjective

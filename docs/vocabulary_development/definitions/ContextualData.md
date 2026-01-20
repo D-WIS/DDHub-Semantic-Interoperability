@@ -8,6 +8,11 @@
 - Specialization:
 - Description: Contextual data are structured objects stored in a JSon string.
 - Examples:
+```dwis contextualData
+DrillingDataPoint:contextualData
+contextualData BelongsToClass ContextualData
+```
+This example links a drilling data point to the ContextualData definition.
 ## Plan <!-- NOUN -->
 - Display name: Plan
 - Parent class: ContextualData
@@ -15,6 +20,11 @@
 - Specialization: 
 - Description: A plan is a description of the actions that shall be undertaken to reach an objective
 - Examples:
+```dwis plan
+DrillingDataPoint:plan
+plan BelongsToClass Plan
+```
+This example links a drilling data point to the Plan definition.
 ## OperationalPlan <!-- NOUN -->
 - Display name: Operational Plan
 - Parent class: Plan
@@ -67,6 +77,11 @@ rigActionPlan_1 IsProvidedTo scheduler_1
 - Specialization: 
 - Description: A rig action plan described as a hierarchical state machine (Harel chart). Such a machine is specific to a given task. The set of all available machine forms the overal rig action plan.
 - Examples:
+```dwis hierarchicalStateMachineRigActionPlan
+DrillingDataPoint:hierarchicalStateMachineRigActionPlan
+hierarchicalStateMachineRigActionPlan BelongsToClass HierarchicalStateMachineRigActionPlan
+```
+This example links a drilling data point to the HierarchicalStateMachineRigActionPlan definition.
 
 ## RigActionPlanProcessingStatus <!-- NOUN -->
 - Display name: Rig Action Plan Processing Status
@@ -75,6 +90,11 @@ rigActionPlan_1 IsProvidedTo scheduler_1
 - Specialization:
 - Description: The currently executed state of the rig action plan, stored in a JSon string.
 - Examples:
+```dwis rigActionPlanProcessingStatus
+DrillingDataPoint:rigActionPlanProcessingStatus
+rigActionPlanProcessingStatus BelongsToClass RigActionPlanProcessingStatus
+```
+This example links a drilling data point to the RigActionPlanProcessingStatus definition.
 
 ## ConfigurationData <!-- NOUN -->
 - Display name: Configuration Data
@@ -100,6 +120,11 @@ configurationData_1 IsLimitFor microStateInterpreter_1
 - Specialization: 
 - Description: An operation step is a possible element of a rig action plan.
 - Examples:
+```dwis operationalStep
+DrillingDataPoint:operationalStep
+operationalStep BelongsToClass OperationalStep
+```
+This example links a drilling data point to the OperationalStep definition.
 ## PhaseStep <!-- NOUN -->
 - Display name: Phase Step
 - Parent class: OperationalStep
@@ -193,7 +218,7 @@ contextStep_1 IsAContextOf taskStep_1
 - Parent class: ContextualData
 - Attributes:
 - Specialization: Wellbore data is used to describe specific elements of a wellbore.
-- Description: 
+- Description: Captures contextual information describing wellbore characteristics and elements.
 - Examples:
 ``` dwis wellBoreData_0
 DynamicDrillingSignal:wellBoreData_0
@@ -332,6 +357,11 @@ wellBoreArchitectureDescription_1 IsCharacterizedBy planned_1
 - Description: A dill-stem is a generic term for all strings that are run in a borehole. The drill-stem describes the geometrical
 and mechanical characteristics of such a string. 
 - Examples:
+```dwis drillStemDescription
+DrillingDataPoint:drillStemDescription
+drillStemDescription BelongsToClass DrillStemDescription
+```
+This example links a drilling data point to the DrillStemDescription definition.
 ## DrillStringDescription <!-- NOUN -->
 - Display name: Drill-string Description
 - Parent class: DrillStemDescription
@@ -509,6 +539,11 @@ rigDescription_1 IsCharacterizedBy current_1
 - Specialization: 
 - Description: This Noun is used to characterize a piece of wellbore data.
 - Examples:
+```dwis wellBoreDataCharateristic
+DrillingDataPoint:wellBoreDataCharateristic
+wellBoreDataCharateristic BelongsToClass WellBoreDataCharateristic
+```
+This example links a drilling data point to the WellBoreDataCharateristic definition.
 ## Planned <!-- NOUN -->
 - Display name: Planned
 - Parent class: WellBoreDataCharateristic

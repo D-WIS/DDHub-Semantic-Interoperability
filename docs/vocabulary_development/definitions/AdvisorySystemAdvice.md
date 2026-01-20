@@ -58,6 +58,11 @@ digitalTwinAdvice_1 IsProvidedTo microStateInterpreter
 - Description: A drilling standard procedure advisor provides parameters for a standard procedure like starting the mud pumps or
 running a friction test.
 - Examples:
+```dwis drillingStandardProcedureAdvice
+DrillingDataPoint:drillingStandardProcedureAdvice
+drillingStandardProcedureAdvice BelongsToClass DrillingStandardProcedureAdvice
+```
+This example links a drilling data point to the DrillingStandardProcedureAdvice definition.
 The circulation startup procedure defines how to start the mud pumps in order to fill the pipes, break circulation and 
 establish a suitable flowrate in the drill-stem.
 ``` dwis circulationStartupProcedureInfo
@@ -358,6 +363,11 @@ toolfaceOrientationProcedureInfo_1 IsProvidedTo scheduler
 - Description: A drilling control advisor provides information on how to control a part of the drilling process to stay as close
 as possible to one or several desired values.
 - Examples:
+```dwis drillingControlAdvice
+DrillingDataPoint:drillingControlAdvice
+drillingControlAdvice BelongsToClass DrillingControlAdvice
+```
+This example links a drilling data point to the DrillingControlAdvice definition.
 A ROP management controller adjusts the parameters of the auto-driller to manage the ROP. The ROP management may concern
 potential problems with drill-string buckling, passing the bit founder point, vibration and cuttings transport.
 ``` dwis ROPManagementControllerInfo
@@ -446,6 +456,11 @@ stickSlipMitigationControllerInfo_1 IsProvidedTo scheduler
 - Description: A safe operating envelope (SOE) advisor provides information on the limits that shall be used when controlling the drilling
 process to avoid possible drilling incidents.
 - Examples:
+```dwis drillingSafeOperatingEnvelopeAdvice
+DrillingDataPoint:drillingSafeOperatingEnvelopeAdvice
+drillingSafeOperatingEnvelopeAdvice BelongsToClass DrillingSafeOperatingEnvelopeAdvice
+```
+This example links a drilling data point to the DrillingSafeOperatingEnvelopeAdvice definition.
 The min-max axial velocity SOE is used to limit the axial drill-strem velocity to avoid generating swab and surge 
 pressures that exceeds the geo-pressure window.
 ``` dwis minMaxAxialVelocitySOEInfo
@@ -517,6 +532,11 @@ minMaxRotationalSpeedSOEInfo_1 IsProvidedTo scheduler
 and parameters to procedure that is executed when a drilling incident is detected in order to first to isolate the drilling incident
 and then possibly recover from that incident.
 - Examples:
+```dwis drillingFaultDetectionIsolationAndRecoveryAdvice
+DrillingDataPoint:drillingFaultDetectionIsolationAndRecoveryAdvice
+drillingFaultDetectionIsolationAndRecoveryAdvice BelongsToClass DrillingFaultDetectionIsolationAndRecoveryAdvice
+```
+This example links a drilling data point to the DrillingFaultDetectionIsolationAndRecoveryAdvice definition.
 A pack-off FDIR function detects an abornormal dowhole pressure and executes a procedure to avoid fracturing the
 open hole formation and possibly continues with a procedure to remediate the cause of the pack-off and return to normal conditions.
 ``` dwis PackOffFDIRInfo
