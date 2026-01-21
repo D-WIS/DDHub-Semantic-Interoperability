@@ -40,6 +40,11 @@
 [<img src="generated/DrillingFeature.png" width="600px">](./generated/DrillingFeature.png)
 
 ---
+[HydraulicModel.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/HydraulicModel.md)
+
+[<img src="generated/HydraulicModel.png" width="600px">](./generated/HydraulicModel.png)
+
+---
 [Quantities.md](/home/runner/work/DDHub-Semantic-Interoperability/DDHub-Semantic-Interoperability/docs/vocabulary_development/auto-generated/md/definition-files/Quantities.md)
 
 [<img src="generated/Quantities.png" width="600px">](./generated/Quantities.png)

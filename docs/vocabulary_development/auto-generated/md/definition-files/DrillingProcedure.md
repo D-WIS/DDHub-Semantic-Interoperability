@@ -30,6 +30,29 @@ DrillingProcedure <|-- ToolfaceOrientationProcedure
 - Description: 
 This is the parent class for drilling procedures.
 - Definition set: DrillingProcedure
+- Examples:
+```dwis drillingProcedure
+DrillingDataPoint:drillingProcedure
+drillingProcedure BelongsToClass DrillingProcedure
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingProcedure] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[drillingProcedure] -->|BelongsToClass| N0002(DrillingProcedure) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillingProcedure
+WHERE {
+	?drillingProcedure rdf:type ddhub:DrillingDataPoint .
+	?drillingProcedure rdf:type ddhub:DrillingProcedure .
+}
+```
+This example links a drilling data point to the DrillingProcedure definition.
 ## CirculationStartupProcedure <!-- NOUN -->
 - Display name: Circulation Startup Procedure
 - Parent class: [DrillingProcedure](./DrillingProcedure.md#DrillingProcedure)

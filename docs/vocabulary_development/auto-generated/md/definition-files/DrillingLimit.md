@@ -27,6 +27,29 @@ PressureLimit <|-- StringPressureLimit
 - Description: 
 This is the parent class for drilling limits. A limit applies typically on a desired value as controlled by a controller.
 - Definition set: DrillingLimit
+- Examples:
+```dwis drillingLimit
+DrillingDataPoint:drillingLimit
+drillingLimit BelongsToClass DrillingLimit
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[drillingLimit] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[drillingLimit] -->|BelongsToClass| N0002(DrillingLimit) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?drillingLimit
+WHERE {
+	?drillingLimit rdf:type ddhub:DrillingDataPoint .
+	?drillingLimit rdf:type ddhub:DrillingLimit .
+}
+```
+This example links a drilling data point to the DrillingLimit definition.
 ## OnlyLimits <!-- NOUN -->
 - Display name: Only Limits
 - Parent class: [DrillingLimit](./DrillingLimit.md#DrillingLimit)
@@ -646,30 +669,145 @@ WHERE {
 - Description: 
 This Noun is used to refer to a torque limit.
 - Definition set: DrillingLimit
+- Examples:
+```dwis torqueLimit
+DrillingDataPoint:torqueLimit
+torqueLimit BelongsToClass TorqueLimit
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[torqueLimit] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[torqueLimit] -->|BelongsToClass| N0002(TorqueLimit) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?torqueLimit
+WHERE {
+	?torqueLimit rdf:type ddhub:DrillingDataPoint .
+	?torqueLimit rdf:type ddhub:TorqueLimit .
+}
+```
+This example links a drilling data point to the TorqueLimit definition.
 ## AxialLoadLimit <!-- NOUN -->
 - Display name: Axial Load Limit
 - Parent class: [DrillingLimit](./DrillingLimit.md#DrillingLimit)
 - Description: 
 This Noun is used to refer to an axial load limit.
 - Definition set: DrillingLimit
+- Examples:
+```dwis axialLoadLimit
+DrillingDataPoint:axialLoadLimit
+axialLoadLimit BelongsToClass AxialLoadLimit
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[axialLoadLimit] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[axialLoadLimit] -->|BelongsToClass| N0002(AxialLoadLimit) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?axialLoadLimit
+WHERE {
+	?axialLoadLimit rdf:type ddhub:DrillingDataPoint .
+	?axialLoadLimit rdf:type ddhub:AxialLoadLimit .
+}
+```
+This example links a drilling data point to the AxialLoadLimit definition.
 ## PressureLimit <!-- NOUN -->
 - Display name: Pressure Limit
 - Parent class: [DrillingLimit](./DrillingLimit.md#DrillingLimit)
 - Description: 
 This Noun is used to refer to an pressure limit.
 - Definition set: DrillingLimit
+- Examples:
+```dwis pressureLimit
+DrillingDataPoint:pressureLimit
+pressureLimit BelongsToClass PressureLimit
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pressureLimit] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[pressureLimit] -->|BelongsToClass| N0002(PressureLimit) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pressureLimit
+WHERE {
+	?pressureLimit rdf:type ddhub:DrillingDataPoint .
+	?pressureLimit rdf:type ddhub:PressureLimit .
+}
+```
+This example links a drilling data point to the PressureLimit definition.
 ## AnnulusPressureLimit <!-- NOUN -->
 - Display name: Annulus Pressure Limit
 - Parent class: [PressureLimit](./DrillingLimit.md#PressureLimit)
 - Description: 
 This Noun is used to refer to an annulus pressure limit.
 - Definition set: DrillingLimit
+- Examples:
+```dwis annulusPressureLimit
+DrillingDataPoint:annulusPressureLimit
+annulusPressureLimit BelongsToClass AnnulusPressureLimit
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[annulusPressureLimit] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[annulusPressureLimit] -->|BelongsToClass| N0002(AnnulusPressureLimit) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?annulusPressureLimit
+WHERE {
+	?annulusPressureLimit rdf:type ddhub:DrillingDataPoint .
+	?annulusPressureLimit rdf:type ddhub:AnnulusPressureLimit .
+}
+```
+This example links a drilling data point to the AnnulusPressureLimit definition.
 ## StringPressureLimit <!-- NOUN -->
 - Display name: String Pressure Limit
 - Parent class: [PressureLimit](./DrillingLimit.md#PressureLimit)
 - Description: 
 This Noun is used to refer to a string pressure limit.
 - Definition set: DrillingLimit
+- Examples:
+```dwis stringPressureLimit
+DrillingDataPoint:stringPressureLimit
+stringPressureLimit BelongsToClass StringPressureLimit
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[stringPressureLimit] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0000[stringPressureLimit] -->|BelongsToClass| N0002(StringPressureLimit) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?stringPressureLimit
+WHERE {
+	?stringPressureLimit rdf:type ddhub:DrillingDataPoint .
+	?stringPressureLimit rdf:type ddhub:StringPressureLimit .
+}
+```
+This example links a drilling data point to the StringPressureLimit definition.
 # Verbs
 ## Class Inheritance for Verbs
 Here is a class inheritance diagram for the verbs contained in this definition set.
