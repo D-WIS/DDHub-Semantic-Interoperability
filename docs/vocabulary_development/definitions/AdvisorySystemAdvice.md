@@ -83,7 +83,6 @@ circulationStartupProcedureInfo_1 IsProvidedTo adviceComposer
 DWISScheduler:scheduler
 circulationStartupProcedureInfo_1 IsProvidedTo scheduler
 ```
-
 The circulation stop procedure defines how to stop the mud pumps in a way that limit potential bull-heading effects 
 that could result in undesired downhole pressure conditions with regards to the geo-pressure window.
 ``` dwis circulationStopProcedureInfo

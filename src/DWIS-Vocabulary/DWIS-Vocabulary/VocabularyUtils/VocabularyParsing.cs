@@ -537,9 +537,6 @@ namespace DWIS.Vocabulary.Utils
             return false;
         }
 
-
-
-
         public static bool FromFolder(string folderName, out DWISVocabulary vocabulary)
         {
             vocabulary = null;
@@ -579,9 +576,6 @@ namespace DWIS.Vocabulary.Utils
             return false;
         }
 
-
-
-
         public static void CountTags(string folderName, out int nounTagsCount, out int verbTagsCount)
         {
             var files = System.IO.Directory.GetFiles(folderName).Where(f => f.EndsWith(".md")).ToArray();
@@ -601,8 +595,6 @@ namespace DWIS.Vocabulary.Utils
             verbsTags = GetTagLines(files, VERB_TAG).Select(t => t.Replace(VERB_TAG, "").Replace("##", "").Trim());
 
         }
-
-
 
         public static bool ManageLine(string line, DWISVocabulary vocabulary, DWISInstance instance,List<NounAttribute> attributes, List<SpecializedNounAttribute> specializedAttributes,ref bool insideABlock, ref bool insideADDHubBlock, ref string[] queryArguments, bool fromMD = true)
         {

@@ -132,7 +132,7 @@ This example links a drilling data point to the OperationalStep definition.
 - Specialization: 
 - Description: A phase step is at the first level of a rig action plan.
 - Examples: 
-``` dwis rigActionPlan_0 phaseStep_0
+``` dwis rigActionPlan_0
 DynamicDrillingSignal:phaseStep_0
 PhaseStep:phaseStep_1
 phaseStep_1 HasDynamicValue phaseStep_0
@@ -148,7 +148,7 @@ rigActionPlan_1 HasOperationalStep phaseStep_1
 - Specialization: 
 - Description: An action step is at the second level of a rig action plan.
 - Examples:
-``` dwis rigActionPlan_0 phaseStep_0 actionStep_0
+``` dwis rigActionPlan_0
 DynamicDrillingSignal:actionStep_0
 ActionStep:actionStep_1
 actionStep_1 HasDynamicValue actionStep_0
@@ -168,7 +168,7 @@ actionStep_1 IsAnActionOf phaseStep_1
 - Specialization: 
 - Description: A task step is at the third level of a rig action plan.
 - Examples:
-``` dwis rigActionPlan_0 phaseStep_0 actionStep_0 taskStep_0
+``` dwis rigActionPlan_0
 DynamicDrillingSignal:taskStep_0
 TaskStep:taskStep_1
 taskStep_1 HasDynamicValue taskStep_0
@@ -192,7 +192,7 @@ taskStep_1 IsATaskOf actionStep_1
 - Specialization: 
 - Description: A context is at the fourth level of a rig action plan.
 - Examples:
-``` dwis rigActionPlan_0 phaseStep_0 actionStep_0 taskStep_0 context_0
+``` dwis rigActionPlan_0
 DynamicDrillingSignal:contextStep_0
 Context:contextStep_1
 contextStep_1 HasDynamicValue contextStep_0
@@ -671,7 +671,7 @@ trajectoryDescription_1 IsCharacterizedBy measured_1
 - Object class: OperationalStep
 - Description: this Verb is used to relate an operational step to a rig action plan.
 - Examples: 
-``` dwis rigActionPlan_0 phaseStep_0
+``` dwis rigActionPlan_0
 DynamicDrillingSignal:phaseStep_0
 PhaseStep:phaseStep_1
 phaseStep_1 HasDynamicValue phaseStep_0
@@ -687,7 +687,7 @@ rigActionPlan_1 HasOperationalStep phaseStep_1
 - Object class: PhaseStep
 - Description: this Verb is used to relate an action step to its parent phase step.
 - Examples: 
-``` dwis rigActionPlan_0 phaseStep_0 actionStep_0
+``` dwis rigActionPlan_0
 DynamicDrillingSignal:actionStep_0
 ActionStep:actionStep_1
 actionStep_1 HasDynamicValue actionStep_0
@@ -707,7 +707,7 @@ actionStep_1 IsAnActionOf phaseStep_1
 - Object class: ActionStep
 - Description: this Verb is used to relate an task step to its parent action step.
 - Examples: 
-``` dwis rigActionPlan_0 phaseStep_0 actionStep_0 taskStep_0
+``` dwis rigActionPlan_0
 DynamicDrillingSignal:taskStep_0
 TaskStep:taskStep_1
 taskStep_1 HasDynamicValue taskStep_0
@@ -731,7 +731,7 @@ taskStep_1 IsATaskOf actionStep_1
 - Object class: TaskStep
 - Description: this Verb is used to relate a context to its parent task step.
 - Examples:
-``` dwis rigActionPlan_0 phaseStep_0 actionStep_0 taskStep_0 context_0
+``` dwis rigActionPlan_0
 DynamicDrillingSignal:contextStep_0
 Context:contextStep_1
 contextStep_1 HasDynamicValue contextStep_0

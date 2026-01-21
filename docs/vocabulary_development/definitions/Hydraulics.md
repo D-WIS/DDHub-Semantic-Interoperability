@@ -1518,7 +1518,7 @@ chokeOpening IsOpeningRatioAt chokeJunction
 This example sets choke opening ratio at a junction.
 ## IsVolumeAt <!-- VERB -->
 - Display name: IsVolumeAt
-- Parent verb: Is Hydraulically Located At
+- Parent verb: IsHydraulicallyLocatedAt
 - Subject class: DrillingDataPoint
 - Object class: HydraulicLogicalElement
 - Description: Indicates a volume measurement for a HydraulicLogicalElement.

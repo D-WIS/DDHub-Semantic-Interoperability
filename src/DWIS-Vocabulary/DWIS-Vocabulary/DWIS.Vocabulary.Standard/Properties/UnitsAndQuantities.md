@@ -6672,19 +6672,19 @@
 - shockPerHour IsUnitForQuantity shockRate
 - AccelerationDrillingQuantity:accelerationDrilling
 - accelerationDrilling IsOfBaseQuantity acceleration
-- accelerationDrilling.MeaningfulPrecision = 0.001
+- accelerationDrilling.MeaningfulPrecision = 0,001
 - AngleGradientPerLengthDrillingQuantity:angleGradientPerLengthDrilling
 - angleGradientPerLengthDrilling IsOfBaseQuantity angleGradientPerLength
-- angleGradientPerLengthDrilling.MeaningfulPrecision = 0.00017453292519943296
+- angleGradientPerLengthDrilling.MeaningfulPrecision = 0,00017453292519943296
 - AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity:angleMagneticFluxDensitySurveyInstrumentDrilling
 - angleMagneticFluxDensitySurveyInstrumentDrilling IsOfBaseQuantity angleMagneticFluxDensity
 - angleMagneticFluxDensitySurveyInstrumentDrilling.MeaningfulPrecision = 1E-09
 - AngularAccelerationDrillingQuantity:angularAccelerationDrilling
 - angularAccelerationDrilling IsOfBaseQuantity angularAcceleration
-- angularAccelerationDrilling.MeaningfulPrecision = 0.01
+- angularAccelerationDrilling.MeaningfulPrecision = 0,01
 - AngularVelocityDrillingQuantity:angularVelocityDrilling
 - angularVelocityDrilling IsOfBaseQuantity angularVelocity
-- angularVelocityDrilling.MeaningfulPrecision = 0.01
+- angularVelocityDrilling.MeaningfulPrecision = 0,01
 - AngularVelocitySurveyInstrumentDrillingQuantity:angularVelocitySurveyInstrumentDrilling
 - angularVelocitySurveyInstrumentDrilling IsOfBaseQuantity angularVelocity
 - angularVelocitySurveyInstrumentDrilling.MeaningfulPrecision = 1E-07
@@ -6693,28 +6693,28 @@
 - areaDrilling.MeaningfulPrecision = 1E-06
 - AxialVelocityDrillingQuantity:axialVelocityDrilling
 - axialVelocityDrilling IsOfBaseQuantity velocity
-- axialVelocityDrilling.MeaningfulPrecision = 0.01
+- axialVelocityDrilling.MeaningfulPrecision = 0,01
 - BlockVelocityDrillingQuantity:blockVelocityDrilling
 - blockVelocityDrilling IsOfBaseQuantity velocity
-- blockVelocityDrilling.MeaningfulPrecision = 0.01
+- blockVelocityDrilling.MeaningfulPrecision = 0,01
 - CableDiameterDrillingQuantity:cableDiameterDrilling
 - cableDiameterDrilling IsOfBaseQuantity length
-- cableDiameterDrilling.MeaningfulPrecision = 0.0005
+- cableDiameterDrilling.MeaningfulPrecision = 0,0005
 - CapillaryPressureDrillingQuantity:capillaryPressureDrilling
 - capillaryPressureDrilling IsOfBaseQuantity energyDensity
-- capillaryPressureDrilling.MeaningfulPrecision = 0.1
+- capillaryPressureDrilling.MeaningfulPrecision = 0,1
 - CompressibilityDrillingQuantity:compressibilityDrilling
 - compressibilityDrilling IsOfBaseQuantity compressibility
 - compressibilityDrilling.MeaningfulPrecision = 1E-13
 - CurvatureDrillingQuantity:curvatureDrilling
 - curvatureDrilling IsOfBaseQuantity angleGradientPerLength
-- curvatureDrilling.MeaningfulPrecision = 5.817764173314432E-06
+- curvatureDrilling.MeaningfulPrecision = 5,817764173314432E-06
 - DepthDrillingQuantity:depthDrilling
 - depthDrilling IsOfBaseQuantity length
-- depthDrilling.MeaningfulPrecision = 0.001
+- depthDrilling.MeaningfulPrecision = 0,001
 - DiameterPipeDrillingQuantity:diameterPipeDrilling
 - diameterPipeDrilling IsOfBaseQuantity length
-- diameterPipeDrilling.MeaningfulPrecision = 0.0001
+- diameterPipeDrilling.MeaningfulPrecision = 0,0001
 - DiameterPoreDrillingQuantity:diameterPoreDrilling
 - diameterPoreDrilling IsOfBaseQuantity length
 - diameterPoreDrilling.MeaningfulPrecision = 1E-07
@@ -6726,100 +6726,100 @@
 - drillStringMagneticFluxDrilling.MeaningfulPrecision = 1E-07
 - DurationDrillingQuantity:durationDrilling
 - durationDrilling IsOfBaseQuantity time
-- durationDrilling.MeaningfulPrecision = 0.001
+- durationDrilling.MeaningfulPrecision = 0,001
 - DynamicViscosityDrillingQuantity:dynamicViscosityDrilling
 - dynamicViscosityDrilling IsOfBaseQuantity consistencyIndexRheology
-- dynamicViscosityDrilling.MeaningfulPrecision = 0.0001
+- dynamicViscosityDrilling.MeaningfulPrecision = 0,0001
 - ElongationGradientPerLengthDrillingQuantity:elongationGradientPerLengthDrilling
 - elongationGradientPerLengthDrilling IsOfBaseQuantity dimensionless
 - elongationGradientPerLengthDrilling.MeaningfulPrecision = 1E-05
 - EnergyDensityDrillingQuantity:energyDensityDrilling
 - energyDensityDrilling IsOfBaseQuantity energyDensity
-- energyDensityDrilling.MeaningfulPrecision = 0.01
+- energyDensityDrilling.MeaningfulPrecision = 0,01
 - FluidVelocityDrillingQuantity:fluidVelocityDrilling
 - fluidVelocityDrilling IsOfBaseQuantity velocity
-- fluidVelocityDrilling.MeaningfulPrecision = 0.01
+- fluidVelocityDrilling.MeaningfulPrecision = 0,01
 - ForceDrillingQuantity:forceDrilling
 - forceDrilling IsOfBaseQuantity force
-- forceDrilling.MeaningfulPrecision = 0.1
+- forceDrilling.MeaningfulPrecision = 0,1
 - ForceGradientPerLengthDrillingQuantity:forceGradientPerLengthDrilling
 - forceGradientPerLengthDrilling IsOfBaseQuantity forceGradientPerLength
 - forceGradientPerLengthDrilling.MeaningfulPrecision = 1
 - ForceRateOfChangeDrillingQuantity:forceRateOfChangeDrilling
 - forceRateOfChangeDrilling IsOfBaseQuantity forceRateOfChange
-- forceRateOfChangeDrilling.MeaningfulPrecision = 0.1
+- forceRateOfChangeDrilling.MeaningfulPrecision = 0,1
 - FormationResistivityDrillingQuantity:formationResistivityDrilling
 - formationResistivityDrilling IsOfBaseQuantity electricResistivity
-- formationResistivityDrilling.MeaningfulPrecision = 0.01
+- formationResistivityDrilling.MeaningfulPrecision = 0,01
 - FormationStrengthDrillingQuantity:formationStrengthDrilling
 - formationStrengthDrilling IsOfBaseQuantity energyDensity
 - formationStrengthDrilling.MeaningfulPrecision = 10000
 - GammaRayIndexDrillingQuantity:gammaRayIndexDrilling
 - gammaRayIndexDrilling IsOfBaseQuantity dimensionless
-- gammaRayIndexDrilling.MeaningfulPrecision = 0.001
+- gammaRayIndexDrilling.MeaningfulPrecision = 0,001
 - GasShowDrillingQuantity:gasShowDrilling
 - gasShowDrilling IsOfBaseQuantity dimensionless
 - gasShowDrilling.MeaningfulPrecision = 1E-07
 - GasVolumetricFlowRateDrillingQuantity:gasVolumetricFlowRateDrilling
 - gasVolumetricFlowRateDrilling IsOfBaseQuantity volumetricFlowRate
-- gasVolumetricFlowRateDrilling.MeaningfulPrecision = 0.01
+- gasVolumetricFlowRateDrilling.MeaningfulPrecision = 0,01
 - HeatTransferCoefficientDrillingQuantity:heatTransferCoefficientDrilling
 - heatTransferCoefficientDrilling IsOfBaseQuantity heatTransferCoefficient
-- heatTransferCoefficientDrilling.MeaningfulPrecision = 0.0001
+- heatTransferCoefficientDrilling.MeaningfulPrecision = 0,0001
 - HeightDrillingQuantity:heightDrilling
 - heightDrilling IsOfBaseQuantity length
-- heightDrilling.MeaningfulPrecision = 0.001
+- heightDrilling.MeaningfulPrecision = 0,001
 - HookLoadDrillingQuantity:hookLoadDrilling
 - hookLoadDrilling IsOfBaseQuantity force
 - hookLoadDrilling.MeaningfulPrecision = 1000
 - HydraulicConductivityDrillingQuantity:hydraulicConductivityDrilling
 - hydraulicConductivityDrilling IsOfBaseQuantity velocity
-- hydraulicConductivityDrilling.MeaningfulPrecision = 0.001
+- hydraulicConductivityDrilling.MeaningfulPrecision = 0,001
 - InterfacialTensionDrillingQuantity:interfacialTensionDrilling
 - interfacialTensionDrilling IsOfBaseQuantity forceGradientPerLength
-- interfacialTensionDrilling.MeaningfulPrecision = 0.0001
+- interfacialTensionDrilling.MeaningfulPrecision = 0,0001
 - IsobaricSpecificHeatCapacityDrillingQuantity:isobaricSpecificHeatCapacityDrilling
 - isobaricSpecificHeatCapacityDrilling IsOfBaseQuantity isobaricSpecificHeatCapacity
-- isobaricSpecificHeatCapacityDrilling.MeaningfulPrecision = 0.01
+- isobaricSpecificHeatCapacityDrilling.MeaningfulPrecision = 0,01
 - IsobaricSpecificHeatCapacityGradientPerTemperatureDrillingQuantity:isobaricSpecificHeatCapacityGradientPerTemperatureDrilling
 - isobaricSpecificHeatCapacityGradientPerTemperatureDrilling IsOfBaseQuantity isobaricSpecificHeatCapacityGradientPerTemperature
-- isobaricSpecificHeatCapacityGradientPerTemperatureDrilling.MeaningfulPrecision = 0.01
+- isobaricSpecificHeatCapacityGradientPerTemperatureDrilling.MeaningfulPrecision = 0,01
 - MassDensityDrillingQuantity:massDensityDrilling
 - massDensityDrilling IsOfBaseQuantity massDensity
 - massDensityDrilling.MeaningfulPrecision = 1
 - MassDensityGradientPerLengthDrillingQuantity:massDensityGradientPerLengthDrilling
 - massDensityGradientPerLengthDrilling IsOfBaseQuantity massDensityGradientPerLength
-- massDensityGradientPerLengthDrilling.MeaningfulPrecision = 0.001
+- massDensityGradientPerLengthDrilling.MeaningfulPrecision = 0,001
 - MassDensityGradientPerTemperatureDrillingQuantity:massDensityGradientPerTemperatureDrilling
 - massDensityGradientPerTemperatureDrilling IsOfBaseQuantity massDensityGradientPerTemperature
-- massDensityGradientPerTemperatureDrilling.MeaningfulPrecision = 0.001
+- massDensityGradientPerTemperatureDrilling.MeaningfulPrecision = 0,001
 - MassDensityRateOfChangeDrillingQuantity:massDensityRateOfChangeDrilling
 - massDensityRateOfChangeDrilling IsOfBaseQuantity massDensityRateOfChange
-- massDensityRateOfChangeDrilling.MeaningfulPrecision = 0.001
+- massDensityRateOfChangeDrilling.MeaningfulPrecision = 0,001
 - MassDrillingQuantity:massDrilling
 - massDrilling IsOfBaseQuantity mass
-- massDrilling.MeaningfulPrecision = 0.1
+- massDrilling.MeaningfulPrecision = 0,1
 - MassGradientPerLengthDrillingQuantity:massGradientPerLengthDrilling
 - massGradientPerLengthDrilling IsOfBaseQuantity massGradientPerLength
-- massGradientPerLengthDrilling.MeaningfulPrecision = 0.05
+- massGradientPerLengthDrilling.MeaningfulPrecision = 0,05
 - MassRateDrillingQuantity:massRateDrilling
 - massRateDrilling IsOfBaseQuantity massRate
-- massRateDrilling.MeaningfulPrecision = 0.0001
+- massRateDrilling.MeaningfulPrecision = 0,0001
 - NozzleDiameterDrillingQuantity:nozzleDiameterDrilling
 - nozzleDiameterDrilling IsOfBaseQuantity length
-- nozzleDiameterDrilling.MeaningfulPrecision = 0.0001
+- nozzleDiameterDrilling.MeaningfulPrecision = 0,0001
 - PlaneAngleDrillingQuantity:planeAngleDrilling
 - planeAngleDrilling IsOfBaseQuantity planeAngle
-- planeAngleDrilling.MeaningfulPrecision = 0.00017453292519943296
+- planeAngleDrilling.MeaningfulPrecision = 0,00017453292519943296
 - PorousMediumPermeabilityDrillingQuantity:porousMediumPermeabilityDrilling
 - porousMediumPermeabilityDrilling IsOfBaseQuantity area
 - porousMediumPermeabilityDrilling.MeaningfulPrecision = 1E-10
 - PositionDrillingQuantity:positionDrilling
 - positionDrilling IsOfBaseQuantity length
-- positionDrilling.MeaningfulPrecision = 0.01
+- positionDrilling.MeaningfulPrecision = 0,01
 - PowerDrillingQuantity:powerDrilling
 - powerDrilling IsOfBaseQuantity power
-- powerDrilling.MeaningfulPrecision = 0.1
+- powerDrilling.MeaningfulPrecision = 0,1
 - PressureDrillingQuantity:pressureDrilling
 - pressureDrilling IsOfBaseQuantity energyDensity
 - pressureDrilling.MeaningfulPrecision = 10000
@@ -6828,7 +6828,7 @@
 - pressureGradientPerLengthDrilling.MeaningfulPrecision = 10000
 - PressureLossConstantDrillingQuantity:pressureLossConstantDrilling
 - pressureLossConstantDrilling IsOfBaseQuantity pressureLossConstant
-- pressureLossConstantDrilling.MeaningfulPrecision = 0.1
+- pressureLossConstantDrilling.MeaningfulPrecision = 0,1
 - PressureRateOfChangeDrillingQuantity:pressureRateOfChangeDrilling
 - pressureRateOfChangeDrilling IsOfBaseQuantity pressureRateOfChange
 - pressureRateOfChangeDrilling.MeaningfulPrecision = 10000
@@ -6837,49 +6837,49 @@
 - randomWalkDrilling.MeaningfulPrecision = 1E-05
 - RateOfPenetrationDrillingQuantity:rateOfPenetrationDrilling
 - rateOfPenetrationDrilling IsOfBaseQuantity velocity
-- rateOfPenetrationDrilling.MeaningfulPrecision = 2.77778E-05
+- rateOfPenetrationDrilling.MeaningfulPrecision = 2,77778E-05
 - ReciprocalLengthSurveyInstrumentDrillingQuantity:reciprocalLengthSurveyInstrumentDrilling
 - reciprocalLengthSurveyInstrumentDrilling IsOfBaseQuantity imageScale
 - reciprocalLengthSurveyInstrumentDrilling.MeaningfulPrecision = 1E-08
 - RotationalFrequencyRateOfChangeDrillingQuantity:rotationalFrequencyRateOfChangeDrilling
 - rotationalFrequencyRateOfChangeDrilling IsOfBaseQuantity frequencyRateOfChange
-- rotationalFrequencyRateOfChangeDrilling.MeaningfulPrecision = 0.016666666666666666
+- rotationalFrequencyRateOfChangeDrilling.MeaningfulPrecision = 0,016666666666666666
 - StickDurationDrillingQuantity:stickDurationDrilling
 - stickDurationDrilling IsOfBaseQuantity time
-- stickDurationDrilling.MeaningfulPrecision = 0.001
+- stickDurationDrilling.MeaningfulPrecision = 0,001
 - SurfacePoreDrillingQuantity:surfacePoreDrilling
 - surfacePoreDrilling IsOfBaseQuantity area
 - surfacePoreDrilling.MeaningfulPrecision = 1E-13
 - TemperatureDrillingQuantity:temperatureDrilling
 - temperatureDrilling IsOfBaseQuantity relativeTemperature
-- temperatureDrilling.MeaningfulPrecision = 0.01
+- temperatureDrilling.MeaningfulPrecision = 0,01
 - TemperatureGradientPerLengthDrillingQuantity:temperatureGradientPerLengthDrilling
 - temperatureGradientPerLengthDrilling IsOfBaseQuantity temperatureGradientPerLength
-- temperatureGradientPerLengthDrilling.MeaningfulPrecision = 0.001
+- temperatureGradientPerLengthDrilling.MeaningfulPrecision = 0,001
 - TensionDrillingQuantity:tensionDrilling
 - tensionDrilling IsOfBaseQuantity force
 - tensionDrilling.MeaningfulPrecision = 100
 - ThermalConductivityDrillingQuantity:thermalConductivityDrilling
 - thermalConductivityDrilling IsOfBaseQuantity thermalConductivity
-- thermalConductivityDrilling.MeaningfulPrecision = 0.01
+- thermalConductivityDrilling.MeaningfulPrecision = 0,01
 - ThermalConductivityGradientPerTemperatureDrillingQuantity:thermalConductivityGradientPerTemperatureDrilling
 - thermalConductivityGradientPerTemperatureDrilling IsOfBaseQuantity thermalConductivityGradientPerTemperature
-- thermalConductivityGradientPerTemperatureDrilling.MeaningfulPrecision = 0.01
+- thermalConductivityGradientPerTemperatureDrilling.MeaningfulPrecision = 0,01
 - TorqueDrillingQuantity:torqueDrilling
 - torqueDrilling IsOfBaseQuantity energy
-- torqueDrilling.MeaningfulPrecision = 0.1
+- torqueDrilling.MeaningfulPrecision = 0,1
 - TorqueGradientPerLengthDrillingQuantity:torqueGradientPerLengthDrilling
 - torqueGradientPerLengthDrilling IsOfBaseQuantity force
 - torqueGradientPerLengthDrilling.MeaningfulPrecision = 1
 - TorqueRateOfChangeDrillingQuantity:torqueRateOfChangeDrilling
 - torqueRateOfChangeDrilling IsOfBaseQuantity power
-- torqueRateOfChangeDrilling.MeaningfulPrecision = 0.1
+- torqueRateOfChangeDrilling.MeaningfulPrecision = 0,1
 - VolumeDrillingQuantity:volumeDrilling
 - volumeDrilling IsOfBaseQuantity volume
-- volumeDrilling.MeaningfulPrecision = 0.0001
+- volumeDrilling.MeaningfulPrecision = 0,0001
 - VolumetricFlowrateDrillingQuantity:volumetricFlowrateDrilling
 - volumetricFlowrateDrilling IsOfBaseQuantity volumetricFlowRate
-- volumetricFlowrateDrilling.MeaningfulPrecision = 0.0001
+- volumetricFlowrateDrilling.MeaningfulPrecision = 0,0001
 - VolumetricFlowRateOfChangeDrillingQuantity:volumetricFlowRateOfChangeDrilling
 - volumetricFlowRateOfChangeDrilling IsOfBaseQuantity volumetricFlowRateOfChange
 - volumetricFlowRateOfChangeDrilling.MeaningfulPrecision = 1E-06

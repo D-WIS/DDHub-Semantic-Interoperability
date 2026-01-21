@@ -245,7 +245,7 @@ namespace DWIS.Vocabulary.Development.Actions
             ok = previousOK && nounTree.Count() == _vocabulary.Nouns.Count && verbTree.Count() == _vocabulary.Verbs.Count;
 
             List<string> missingInNounTree = new List<string>();
-            List<string> missingInVocabulary = new List<string>();
+            List<string> missingNounInVocabulary = new List<string>();
             foreach (var item in _vocabulary.Nouns)
             {
                 if (item != null && !string.IsNullOrEmpty(item.Name))
@@ -256,7 +256,20 @@ namespace DWIS.Vocabulary.Development.Actions
                     }
                 }  
             }
-            Missing(nounTree, _vocabulary.Nouns, missingInVocabulary);
+            Missing(nounTree, _vocabulary.Nouns, missingNounInVocabulary);
+            List<string> missingInVerbTree = new List<string>();
+            List<string> missingVerbInVocabulary = new List<string>();
+            foreach (var item in _vocabulary.Verbs)
+            {
+                if (item != null && !string.IsNullOrEmpty(item.Name))
+                {
+                    if (!Search(item.Name, verbTree))
+                    {
+                        missingInVerbTree.Add(item.Name);
+                    }
+                }
+            }
+            Missing(verbTree, _vocabulary.Verbs, missingVerbInVocabulary);
             if (previousOK && !ok)
             {
                 _logger.Log(LogLevel.Error, $"Nouns tree items: {nounTree.Count()} vs {_vocabulary.Nouns.Count})");
@@ -290,7 +303,32 @@ namespace DWIS.Vocabulary.Development.Actions
             }
             return found;
         }
-
+        private bool Search(string verb, Tree<Verb> nounTree)
+        {
+            bool found = false;
+            if (nounTree != null)
+            {
+                if (nounTree.RootItem != null && !string.IsNullOrEmpty(nounTree.RootItem.Name) && nounTree.RootItem.Name.Equals(verb))
+                {
+                    found = true;
+                }
+                else
+                {
+                    if (nounTree.Children != null)
+                    {
+                        foreach (var child in nounTree.Children)
+                        {
+                            if (Search(verb, child))
+                            {
+                                found = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            return found;
+        }
         private bool Missing(Tree<Noun> nounTree, List<Noun> nouns, List<string> missings)
         {
             if (nounTree != null)
@@ -318,6 +356,39 @@ namespace DWIS.Vocabulary.Development.Actions
                         foreach (var child in nounTree.Children)
                         {
                             Missing(child, nouns, missings);
+                        }
+                    }
+                }
+            }
+            return missings.Any();
+        }
+        private bool Missing(Tree<Verb> verbTree, List<Verb> verbs, List<string> missings)
+        {
+            if (verbTree != null)
+            {
+                if (verbTree.RootItem != null && !string.IsNullOrEmpty(verbTree.RootItem.Name))
+                {
+                    bool found = false;
+                    foreach (var noun in verbs)
+                    {
+                        if (noun != null && verbTree.RootItem.Name.Equals(noun.Name))
+                        {
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (!found)
+                    {
+                        missings.Add(verbTree.RootItem.Name);
+                    }
+                }
+                else
+                {
+                    if (verbTree.Children != null)
+                    {
+                        foreach (var child in verbTree.Children)
+                        {
+                            Missing(child, verbs, missings);
                         }
                     }
                 }
