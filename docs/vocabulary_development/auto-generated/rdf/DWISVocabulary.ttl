@@ -83,6 +83,12 @@ The SI unit for **acceleration** is: metre per second squared with the associate
 ddhub:Accelerator a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:JarringAssembly. 
+ddhub:AccountsFor a owl:ObjectProperty; 
+                  rdfs:comment """This verb is used to indicate something accounts for a drilling management feature.
+"""@EN; 
+                  rdfs:domain ddhub:DWISNoun; 
+                  rdfs:range ddhub:DrillingManagementFeature; 
+                  rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:Accumulator a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:WellControlSystem. 
@@ -206,6 +212,16 @@ ddhub:AlgebraicModel a owl:Class;
                      rdfs:comment """A model that uses algebraic equations.
 """@EN; 
                      rdfs:subClassOf ddhub:MathematicalFormulation. 
+ddhub:AllowEnablementSignalFor a owl:ObjectProperty; 
+                               rdfs:comment """This verb is used to define a `DrillingDataPoint` tells if it is allowed or not to enable or
+disable an activable function. It is expected that the `DrillingDataPoint` is a Boolean value. If the signal is true,
+then it is possible to enable or disable the function using the signal associated with `IsEnablingSignalFor`. If it is
+false, it is not allowed to enable or disable the `ActivableFunction`, meaning that the signal associated with `IsEnablingSignalFor`
+is ignored.
+"""@EN; 
+                               rdfs:domain ddhub:DrillingDataPoint; 
+                               rdfs:range ddhub:ActivableFunction; 
+                               rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:AmountSubstanceQuantity a owl:Class; 
                               rdfs:comment """The **amount of substance** refers to the quantity of entities (such as atoms, molecules, ions, or other particles) in a system.The standard unit used to measure the amount of substance is the **mole** (mol). One mole corresponds to $6.022×10^{23}$ entities (Avogadro's number) of the given substance.
 This is one of the nine fundamental dimensions in the International System of Units (SI).A fundamental quantity does not depend on any combinations of other fundamental dimensions.It is denoted $[N]$.
@@ -613,6 +629,12 @@ ddhub:Beacons a owl:Class;
 ddhub:BellNipple a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:WellControlSystem. 
+ddhub:BelongsToClass a owl:ObjectProperty; 
+                     rdfs:comment """The verb is used between a node and a Noun, i.e., a class. Semantically it can be considered as a synonym to `rdf:type`. It has been introduced to overcome limitations from OPC-UA that does not allow for multiple inheritance. Note that the same node can be in relation using `BelongsToClass` to several classes.
+"""@EN; 
+                     rdfs:domain ddhub:DWISNoun; 
+                     rdfs:range ddhub:DWISNoun; 
+                     rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:BelongsToSynchronizationGroup a owl:ObjectProperty; 
                                     rdfs:comment """Associates a resampling process with a synchronization group.
 """@EN; 
@@ -1846,6 +1868,12 @@ ddhub:ControlModel a owl:Class;
                    rdfs:comment """A model that regulate or steer a system's behavior toward a desired outcome through inputs.
 """@EN; 
                    rdfs:subClassOf ddhub:ModelingObjective. 
+ddhub:Controls a owl:ObjectProperty; 
+               rdfs:comment """Indicates that a data flow node drives or regulates another equipment or function.
+"""@EN; 
+               rdfs:domain ddhub:DWISNoun; 
+               rdfs:range ddhub:DWISNoun; 
+               rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:ControlsMeasurementPrinciple a owl:ObjectProperty; 
                                    rdfs:comment """Associate a realtime signal to its measurement principle.
 """@EN; 
@@ -4027,6 +4055,12 @@ ddhub:EndPointMapping a owl:Class;
                       rdfs:comment """Describes how a signal’s fields map to indices within an external endpoint payload.
 """@EN; 
                       rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:EndsHydraulicBranchDecomposition a owl:ObjectProperty; 
+                                       rdfs:comment """Marks the terminating branch when decomposing a hydraulic path.
+"""@EN; 
+                                       rdfs:domain ddhub:HydraulicBranch; 
+                                       rdfs:range ddhub:HydraulicBranch; 
+                                       rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:EnergyDensityDrillingQuantity a owl:Class; 
                                     rdfs:comment """Energy density is the amount of energy stored per unit volume or mass of a substance or system.
 The dimension of energy density is:
@@ -5484,30 +5518,72 @@ ddhub:HasAxis a owl:ObjectProperty;
               rdfs:domain ddhub:ReferenceFrame; 
               rdfs:range ddhub:Axis; 
               rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:HasBranchComponent a owl:ObjectProperty; 
+                         rdfs:comment """Declares that a hydraulic network contains a branch.
+"""@EN; 
+                         rdfs:domain ddhub:HydraulicNetwork; 
+                         rdfs:range ddhub:HydraulicBranch; 
+                         rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:HasBranchCoordinateSystem a owl:ObjectProperty; 
+                                rdfs:comment """Associates a coordinate system with a hydraulic branch.
+"""@EN; 
+                                rdfs:domain ddhub:HydraulicBranch; 
+                                rdfs:range ddhub:ReferenceFrame; 
+                                rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasComponentRheologicalBehavior a owl:ObjectProperty; 
                                       rdfs:comment """Relate a fluid component to its rheological behavior.
 """@EN; 
                                       rdfs:domain ddhub:FluidComponent; 
                                       rdfs:range ddhub:RheologicalBehavior; 
                                       rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:HasControlLimit a owl:ObjectProperty; 
+                      rdfs:comment """This Verb is used to indicate that a drilling data point has a control limit.
+"""@EN; 
+                      rdfs:domain ddhub:DrillingDataPoint; 
+                      rdfs:range ddhub:DrillingLimit; 
+                      rdfs:subPropertyOf ddhub:IsRelatedToDrillingLimit. 
 ddhub:HasCoordinates a owl:ObjectProperty; 
                      rdfs:comment """Reference location for HasCoordinates.
 """@EN; 
                      rdfs:domain ddhub:Location; 
                      rdfs:range ddhub:DrillingDataPoint; 
                      rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:HasDomain a owl:ObjectProperty; 
+                rdfs:comment """Declares the domain (e.g., depth or time interval) over which a data point is valid.
+"""@EN; 
+                rdfs:domain ddhub:DrillingDataPoint; 
+                rdfs:range ddhub:DrillingDataPoint; 
+                rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasDownstreamBranch a owl:ObjectProperty; 
                           rdfs:comment """Assigns the downstream branch connected to a junction.
 """@EN; 
                           rdfs:domain ddhub:HydraulicJunction; 
                           rdfs:range ddhub:HydraulicBranch; 
                           rdfs:subPropertyOf ddhub:IsHydraulicConnectedTo. 
+ddhub:HasDynamicValue a owl:ObjectProperty; 
+                      rdfs:comment """Indicates that the value is a time-varying drilling signal.
+"""@EN; 
+                      rdfs:domain ddhub:DrillingDataPoint; 
+                      rdfs:range ddhub:DynamicDrillingSignal; 
+                      rdfs:subPropertyOf ddhub:HasValue. 
+ddhub:HasElevationReference a owl:ObjectProperty; 
+                            rdfs:comment """This verb is a specialization of `IsDependentOn` and refers to the specific dependence on an elevation reference.
+"""@EN; 
+                            rdfs:domain ddhub:DrillingDataPoint; 
+                            rdfs:range ddhub:Location; 
+                            rdfs:subPropertyOf ddhub:IsDependentOn. 
 ddhub:HasEndJunction a owl:ObjectProperty; 
                      rdfs:comment """Specifies the terminal junction of a branch.
 """@EN; 
                      rdfs:domain ddhub:HydraulicBranch; 
                      rdfs:range ddhub:HydraulicJunction; 
                      rdfs:subPropertyOf ddhub:IsHydraulicConnectedTo. 
+ddhub:HasEndPoint a owl:ObjectProperty; 
+                  rdfs:comment """Associates a drilling signal with an external endpoint that provides or receives it.
+"""@EN; 
+                  rdfs:domain ddhub:DrillingSignal; 
+                  rdfs:range ddhub:DataEndPoint; 
+                  rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasFlowCurve a owl:ObjectProperty; 
                    rdfs:comment """Relate a fluid type to its flow curve.
 """@EN; 
@@ -5520,12 +5596,42 @@ ddhub:HasFullScale a owl:ObjectProperty;
                    rdfs:domain ddhub:FullScaleUncertainty; 
                    rdfs:range ddhub:DrillingDataPoint; 
                    rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:HasFunction a owl:ObjectProperty; 
+                  rdfs:comment """Connects a signal to the data flow node that produced it or to the function it relates to.
+"""@EN; 
+                  rdfs:domain ddhub:DrillingDataPoint; 
+                  rdfs:range ddhub:DataFlowNode; 
+                  rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:HasHydraulicState a owl:ObjectProperty; 
+                        rdfs:comment """Indicates the current state of a hydraulic logical element.
+"""@EN; 
+                        rdfs:domain ddhub:HydraulicLogicalElement; 
+                        rdfs:range ddhub:HydraulicElementState; 
+                        rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:HasHydraulicStateValueFrom a owl:ObjectProperty; 
+                                 rdfs:comment """Indicates that the state value is provided by another signal or computation.
+"""@EN; 
+                                 rdfs:domain ddhub:DWISNoun; 
+                                 rdfs:range ddhub:DWISNoun; 
+                                 rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasLeftBranch a owl:ObjectProperty; 
                     rdfs:comment """Assigns the left branch connected to a junction.
 """@EN; 
                     rdfs:domain ddhub:HydraulicJunction; 
                     rdfs:range ddhub:HydraulicBranch; 
                     rdfs:subPropertyOf ddhub:IsHydraulicConnectedTo. 
+ddhub:HasLeftBranchCoordinates a owl:ObjectProperty; 
+                               rdfs:comment """Associates coordinate data for the left branch of a junction.
+"""@EN; 
+                               rdfs:domain ddhub:HydraulicJunction; 
+                               rdfs:range ddhub:DrillingDataPoint; 
+                               rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:HasLogicalElementComponent a owl:ObjectProperty; 
+                                 rdfs:comment """Declares that a hydraulic network has a hydraulic logical element.
+"""@EN; 
+                                 rdfs:domain ddhub:HydraulicNetwork; 
+                                 rdfs:range ddhub:HydraulicLogicalElement; 
+                                 rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasMeasurableQuantity a owl:ObjectProperty; 
                             rdfs:comment """This `Verb` is used to define the reciprocal relationship of `IsOfBaseQuantity`, i.e., to relate
 a `Quantity` with a `MeasureableQuantity`.
@@ -5551,6 +5657,12 @@ ddhub:HasMotionType a owl:ObjectProperty;
                     rdfs:domain ddhub:MechanicalLogicalElement; 
                     rdfs:range ddhub:MotionType; 
                     rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:HasOperationalStep a owl:ObjectProperty; 
+                         rdfs:comment """this Verb is used to relate an operational step to a rig action plan.
+"""@EN; 
+                         rdfs:domain ddhub:OperationalStep; 
+                         rdfs:range ddhub:OperationalStep; 
+                         rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasPlasticViscosity a owl:ObjectProperty; 
                           rdfs:comment """Associate a plastic viscosity signal with a rheological behavior.
 """@EN; 
@@ -5569,6 +5681,18 @@ ddhub:HasPowerLawFlowBehaviorIndex a owl:ObjectProperty;
                                    rdfs:domain ddhub:RheologicalBehavior; 
                                    rdfs:range ddhub:DrillingDataPoint; 
                                    rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:HasPressureReference a owl:ObjectProperty; 
+                           rdfs:comment """This verb is a specialization of `IsDependentOn` and refers to the specific dependence on a pressure reference.
+"""@EN; 
+                           rdfs:domain ddhub:DrillingDataPoint; 
+                           rdfs:range ddhub:DrillingDataPoint; 
+                           rdfs:subPropertyOf ddhub:IsDependentOn. 
+ddhub:HasPressureReferenceType a owl:ObjectProperty; 
+                               rdfs:comment """Indicates the pressure reference basis used for a pressure data point.
+"""@EN; 
+                               rdfs:domain ddhub:DrillingDataPoint; 
+                               rdfs:range ddhub:PressureReference; 
+                               rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasProportionError a owl:ObjectProperty; 
                          rdfs:comment """This verb is used to associate a `DrillingDataPoint` as the `ProportionError` value of a `FullScaleUncertainty`
 """@EN; 
@@ -5617,6 +5741,12 @@ ddhub:HasRightBranch a owl:ObjectProperty;
                      rdfs:domain ddhub:HydraulicJunction; 
                      rdfs:range ddhub:HydraulicBranch; 
                      rdfs:subPropertyOf ddhub:IsHydraulicConnectedTo. 
+ddhub:HasRightBranchCoordinates a owl:ObjectProperty; 
+                                rdfs:comment """Associates coordinate data for the right branch of a junction.
+"""@EN; 
+                                rdfs:domain ddhub:HydraulicJunction; 
+                                rdfs:range ddhub:DrillingDataPoint; 
+                                rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasSIUnit a owl:ObjectProperty; 
                 rdfs:comment """This `verb` is used to be define a relation between a `Quantity` and a `Unit`.
 """@EN; 
@@ -5641,6 +5771,24 @@ ddhub:HasStartJunction a owl:ObjectProperty;
                        rdfs:domain ddhub:HydraulicBranch; 
                        rdfs:range ddhub:HydraulicJunction; 
                        rdfs:subPropertyOf ddhub:IsHydraulicConnectedTo. 
+ddhub:HasStaticValue a owl:ObjectProperty; 
+                     rdfs:comment """Indicates that the value is static (non time-varying).
+"""@EN; 
+                     rdfs:domain ddhub:DrillingDataPoint; 
+                     rdfs:range ddhub:DrillingSignal; 
+                     rdfs:subPropertyOf ddhub:HasValue. 
+ddhub:HasTemperatureReference a owl:ObjectProperty; 
+                              rdfs:comment """This verb is a specialization of `IsDependentOn` and refers to the specific dependence on a temperature reference.
+"""@EN; 
+                              rdfs:domain ddhub:DrillingDataPoint; 
+                              rdfs:range ddhub:DrillingDataPoint; 
+                              rdfs:subPropertyOf ddhub:IsDependentOn. 
+ddhub:HasTimeIntervalDomain a owl:ObjectProperty; 
+                            rdfs:comment """Indicates that the domain of a data point is defined over a time interval.
+"""@EN; 
+                            rdfs:domain ddhub:DrillingDataPoint; 
+                            rdfs:range ddhub:DrillingDataPoint; 
+                            rdfs:subPropertyOf ddhub:HasDomain. 
 ddhub:HasTimeReference a owl:ObjectProperty; 
                        rdfs:comment """Associates a data point with the time reference used for its timestamps.
 """@EN; 
@@ -5719,6 +5867,12 @@ ddhub:HasUpstreamBranch a owl:ObjectProperty;
                         rdfs:domain ddhub:HydraulicJunction; 
                         rdfs:range ddhub:HydraulicBranch; 
                         rdfs:subPropertyOf ddhub:IsHydraulicConnectedTo. 
+ddhub:HasValue a owl:ObjectProperty; 
+               rdfs:comment """Associates a data point with its stored value.
+"""@EN; 
+               rdfs:domain ddhub:DrillingDataPoint; 
+               rdfs:range ddhub:DrillingSignal; 
+               rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasYieldPoint a owl:ObjectProperty; 
                     rdfs:comment """Associate a yield point signal with a rheological behavior.
 """@EN; 
@@ -6102,6 +6256,24 @@ The SI unit for **image scale** is: dot per metre with the associated unit label
 ddhub:ImagingTools a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:LoggingWhileDrillingTools. 
+ddhub:ImplementsLimit a owl:ObjectProperty; 
+                      rdfs:comment """This Verb is used to indicate that a safe operating envelope function implements a drilling limit.
+"""@EN; 
+                      rdfs:domain ddhub:SOEFunction; 
+                      rdfs:range ddhub:DrillingLimit; 
+                      rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:ImplementsObjective a owl:ObjectProperty; 
+                          rdfs:comment """This Verb is used to indicate that a control function implements a drilling objective.
+"""@EN; 
+                          rdfs:domain ddhub:ControllerFunction; 
+                          rdfs:range ddhub:DrillingObjective; 
+                          rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:ImplementsProcedure a owl:ObjectProperty; 
+                          rdfs:comment """This Verb is used to indicate that a Procedure Function implements a drilling procedure.
+"""@EN; 
+                          rdfs:domain ddhub:ProcedureFunction; 
+                          rdfs:range ddhub:DrillingProcedure; 
+                          rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:Inch a owl:Class; 
            rdfs:comment """[v] = a * [SI]
 where
@@ -6649,12 +6821,82 @@ ddhub:IsAComponentOf a owl:ObjectProperty;
                      rdfs:domain ddhub:FluidComponent; 
                      rdfs:range ddhub:FluidType; 
                      rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsAContextOf a owl:ObjectProperty; 
+                   rdfs:comment """this Verb is used to relate a context to its parent task step.
+"""@EN; 
+                   rdfs:domain ddhub:Context; 
+                   rdfs:range ddhub:TaskStep; 
+                   rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsActivatedSignalFor a owl:ObjectProperty; 
+                           rdfs:comment """This verb is used to define a `DrillingDataPoint` that indicates if the `ActivableFunction` is activated or
+not. It is expected that the `DrillingDataPoint` is a Boolean value.
+"""@EN; 
+                           rdfs:domain ddhub:DrillingDataPoint; 
+                           rdfs:range ddhub:ActivableFunction; 
+                           rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsAHydraulicRepresentationFor a owl:ObjectProperty; 
+                                    rdfs:comment """Links a hydraulic element to the piece of equipment it represents.
+"""@EN; 
+                                    rdfs:domain ddhub:HydraulicLogicalElement; 
+                                    rdfs:range ddhub:DrillingEquipment; 
+                                    rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsAlarmTriggeredSignalFor a owl:ObjectProperty; 
+                                rdfs:comment """This verb is used to indicate a `DrillingDataPoint` tells whether an `FDIRFunction` has its alarm level
+being triggered or not. This signal is expected to be a Boolean value. The signal is expected to be true from the 
+moment the FDIR has triggered to the moment it has recovered from the incident, if it has a recovery procedure, or to
+the moment the control is given back to the end-user, in case of failure of the recovery procedure or at the end of 
+the isolation procedure.
+"""@EN; 
+                                rdfs:domain ddhub:DrillingDataPoint; 
+                                rdfs:range ddhub:FDIRFunction; 
+                                rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsAlertTriggeredSignalFor a owl:ObjectProperty; 
+                                rdfs:comment """This verb is used to indicate a `DrillingDataPoint` tells whether an `FDIRFunction` has its alert level
+being triggered or not. This signal is expected to be a Boolean value. The signal is expected to be true from the 
+moment the FDIR has triggered  on the alert level to the moment the signal is below the alert level.
+"""@EN; 
+                                rdfs:domain ddhub:DrillingDataPoint; 
+                                rdfs:range ddhub:FDIRFunction; 
+                                rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsAMechanicalRepresentationFor a owl:ObjectProperty; 
                                      rdfs:comment """Links a mechanical logical element to the equipment it represents.
 """@EN; 
                                      rdfs:domain ddhub:MechanicalLogicalElement; 
                                      rdfs:range ddhub:DrillingEquipment; 
                                      rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsAnActionOf a owl:ObjectProperty; 
+                   rdfs:comment """this Verb is used to relate an action step to its parent phase step.
+"""@EN; 
+                   rdfs:domain ddhub:ActionStep; 
+                   rdfs:range ddhub:PhaseStep; 
+                   rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsArmedSignalFor a owl:ObjectProperty; 
+                       rdfs:comment """This verb is used to indicate a `DrillingDataPoint` used by an `FDIRFunction` tells if the FDIR function is armed and operative.
+The signal is supposed to be a Boolean value.
+The FDIR function may be active, but the current state of the drilling process may imply that the function cannot be
+triggered. For instance, a pack-off FDIR may be active but would react only if the flow is supposed to be steady state.
+"""@EN; 
+                       rdfs:domain ddhub:DrillingDataPoint; 
+                       rdfs:range ddhub:FDIRFunction; 
+                       rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsAssociatedToHydraulicBranch a owl:ObjectProperty; 
+                                    rdfs:comment """Associates drilling data point to a hydraulic branch.
+"""@EN; 
+                                    rdfs:domain ddhub:DrillingDataPoint; 
+                                    rdfs:range ddhub:HydraulicBranch; 
+                                    rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsASubHydraulicNetwork a owl:ObjectProperty; 
+                             rdfs:comment """Declares that a hydraulic network is a sub-hydraulic network of another one.
+"""@EN; 
+                             rdfs:domain ddhub:HydraulicNetwork; 
+                             rdfs:range ddhub:HydraulicNetwork; 
+                             rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsATaskOf a owl:ObjectProperty; 
+                rdfs:comment """this Verb is used to relate an task step to its parent action step.
+"""@EN; 
+                rdfs:domain ddhub:TaskStep; 
+                rdfs:range ddhub:ActionStep; 
+                rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsAuxiliary a owl:DatatypeProperty, owl:FunctionalProperty; 
                   rdfs:comment """This attribute specifies if the function is a main or an auxilary one. A main function impacts
 substantially the drilling process while an auxiliary function does not impact or only in limited fashion the
@@ -6665,36 +6907,163 @@ are: Boost Riser Flow, Down Link from ADCS, Rock Pipe, ...
 """@EN; 
                   rdfs:domain ddhub:RunnableFunction; 
                   rdfs:range xsd:boolean. 
+ddhub:IsBufferingInput a owl:ObjectProperty; 
+                       rdfs:comment """Identifies a signal that enters a buffering stage.
+"""@EN; 
+                       rdfs:domain ddhub:DrillingDataPoint; 
+                       rdfs:range ddhub:Buffering; 
+                       rdfs:subPropertyOf ddhub:IsTransformationInput. 
+ddhub:IsBufferingOutput a owl:ObjectProperty; 
+                        rdfs:comment """Indicates a signal emitted after buffering.
+"""@EN; 
+                        rdfs:domain ddhub:DrillingDataPoint; 
+                        rdfs:range ddhub:Buffering; 
+                        rdfs:subPropertyOf ddhub:IsTransformationOutput. 
 ddhub:IsCalculatedUsingRheologicalHypothesis a owl:ObjectProperty; 
                                              rdfs:comment """Define that a drilling data point is calculated using a rheological behavior hypothesis.
 """@EN; 
                                              rdfs:domain ddhub:DrillingDataPoint; 
                                              rdfs:range ddhub:RheologicalBehavior; 
                                              rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsCharacterizedBy a owl:ObjectProperty; 
+                        rdfs:comment """this Verb is used to state some characteristics of a well bore data.
+"""@EN; 
+                        rdfs:domain ddhub:WellBoreData; 
+                        rdfs:range ddhub:WellBoreDataCharateristic; 
+                        rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsCommandFor a owl:ObjectProperty; 
+                   rdfs:comment """Marks a signal as a command sent to a specific node or equipment.
+"""@EN; 
+                   rdfs:domain ddhub:DrillingDataPoint; 
+                   rdfs:range ddhub:DWISNoun; 
+                   rdfs:subPropertyOf ddhub:HasFunction. 
 ddhub:IsComponentAlongAxis a owl:ObjectProperty; 
                            rdfs:comment """Stipulate that a drilling data point is a component along an axis.
 """@EN; 
                            rdfs:domain ddhub:DrillingDataPoint; 
                            rdfs:range ddhub:Axis; 
                            rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsComputationInput a owl:ObjectProperty; 
+                         rdfs:comment """Indicates that a signal is used as an input by a computation unit.
+"""@EN; 
+                         rdfs:domain ddhub:DrillingDataPoint; 
+                         rdfs:range ddhub:ComputationUnit; 
+                         rdfs:subPropertyOf ddhub:HasFunction. 
+ddhub:IsComputedBy a owl:ObjectProperty; 
+                   rdfs:comment """Links a computed value or state to the computation unit that produced it.
+"""@EN; 
+                   rdfs:domain ddhub:DWISNoun; 
+                   rdfs:range ddhub:DWISNoun; 
+                   rdfs:subPropertyOf ddhub:IsGeneratedBy. 
+ddhub:IsConditionedBy a owl:ObjectProperty; 
+                      rdfs:comment """Indicates that a data point is valid only when the referenced condition is satisfied.
+"""@EN; 
+                      rdfs:domain ddhub:DrillingDataPoint; 
+                      rdfs:range ddhub:ValidityCondition; 
+                      rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsConditionInput a owl:ObjectProperty; 
+                       rdfs:comment """Declares that a signal feeds a validity condition evaluation.
+"""@EN; 
+                       rdfs:domain ddhub:DrillingDataPoint; 
+                       rdfs:range ddhub:ValidityCondition; 
+                       rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsConditionLeft a owl:ObjectProperty; 
+                      rdfs:comment """Identifies the left-hand operand of a binary validity condition.
+"""@EN; 
+                      rdfs:domain ddhub:DWISNoun; 
+                      rdfs:range ddhub:DWISNoun; 
+                      rdfs:subPropertyOf ddhub:IsConditionInput. 
+ddhub:IsConditionRight a owl:ObjectProperty; 
+                       rdfs:comment """Identifies the right-hand operand of a binary validity condition.
+"""@EN; 
+                       rdfs:domain ddhub:DWISNoun; 
+                       rdfs:range ddhub:DWISNoun; 
+                       rdfs:subPropertyOf ddhub:IsConditionInput. 
+ddhub:IsCurrentStateFor a owl:ObjectProperty; 
+                        rdfs:comment """Indicates that a computed state represents the present state of a target object or process.
+"""@EN; 
+                        rdfs:domain ddhub:ComputedState; 
+                        rdfs:range ddhub:DWISNoun; 
+                        rdfs:subPropertyOf ddhub:HasFunction. 
+ddhub:IsDependentOn a owl:ObjectProperty; 
+                    rdfs:comment """This verb is used to describe a general dependence relationship between a `DrillingDataPoint` and something else.
+"""@EN; 
+                    rdfs:domain ddhub:DrillingDataPoint; 
+                    rdfs:range ddhub:DWISNoun; 
+                    rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsDerivationInput a owl:ObjectProperty; 
+                        rdfs:comment """Identifies a signal used as the basis for a derivative calculation.
+"""@EN; 
+                        rdfs:domain ddhub:DWISNoun; 
+                        rdfs:range ddhub:DWISNoun; 
+                        rdfs:subPropertyOf ddhub:IsTransformationInput. 
+ddhub:IsDerivedFrom a owl:ObjectProperty; 
+                    rdfs:comment """States that a signal is obtained by differentiating another signal.
+"""@EN; 
+                    rdfs:domain ddhub:DWISNoun; 
+                    rdfs:range ddhub:DWISNoun; 
+                    rdfs:subPropertyOf ddhub:IsTransformationOutput. 
 ddhub:IsDownstreamOf a owl:ObjectProperty; 
                      rdfs:comment """Identifies a fluid type located downstream of an interface.
 """@EN; 
                      rdfs:domain ddhub:FluidType; 
                      rdfs:range ddhub:FluidInterface; 
                      rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsEnablingSignalFor a owl:ObjectProperty; 
+                          rdfs:comment """This verb is used to define a `DrillingDataPoint` that is used to enable or disable an `ActivableFunction`.
+It is expected that the `DrillingDataPoint` is a Boolean value.
+"""@EN; 
+                          rdfs:domain ddhub:DrillingDataPoint; 
+                          rdfs:range ddhub:ActivableFunction; 
+                          rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsEquivalentCirculationDensityAt a owl:ObjectProperty; 
+                                       rdfs:comment """Indicates that a data point represents ECD at a hydraulic element.
+"""@EN; 
+                                       rdfs:domain ddhub:DrillingDataPoint; 
+                                       rdfs:range ddhub:HydraulicLogicalElement; 
+                                       rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
+ddhub:IsFeatureSignalFor a owl:ObjectProperty; 
+                         rdfs:comment """This verbs is used to indicate that a `DrillingDataPoint` describes a feature of an `ActivableFunction`
+"""@EN; 
+                         rdfs:domain ddhub:DrillingDataPoint; 
+                         rdfs:range ddhub:ActivableFunction; 
+                         rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsFluidDensityAt a owl:ObjectProperty; 
+                       rdfs:comment """Indicates fluid density at a hydraulic element.
+"""@EN; 
+                       rdfs:domain ddhub:DrillingDataPoint; 
+                       rdfs:range ddhub:HydraulicLogicalElement; 
+                       rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
+ddhub:IsFluidTemperatureAt a owl:ObjectProperty; 
+                           rdfs:comment """Indicates fluid temperature at a hydraulic element.
+"""@EN; 
+                           rdfs:domain ddhub:DrillingDataPoint; 
+                           rdfs:range ddhub:HydraulicLogicalElement; 
+                           rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 ddhub:IsFluidTypeLocatedAt a owl:ObjectProperty; 
                            rdfs:comment """Indicates that a fluid type is hydraulically located at a hydraulic logical element.
 """@EN; 
                            rdfs:domain ddhub:FluidType; 
                            rdfs:range ddhub:HydraulicLogicalElement; 
                            rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsFluidVelocityAt a owl:ObjectProperty; 
+                        rdfs:comment """Indicates fluid velocity at a hydraulic element.
+"""@EN; 
+                        rdfs:domain ddhub:DrillingDataPoint; 
+                        rdfs:range ddhub:HydraulicLogicalElement; 
+                        rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 ddhub:IsForMotionType a owl:ObjectProperty; 
                       rdfs:comment """Indicates that a data point relates to a specific motion type.
 """@EN; 
                       rdfs:domain ddhub:DrillingDataPoint; 
                       rdfs:range ddhub:MotionType; 
                       rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsGeneratedBy a owl:ObjectProperty; 
+                    rdfs:comment """Indicates which data flow node produced a given signal.
+"""@EN; 
+                    rdfs:domain ddhub:DrillingDataPoint; 
+                    rdfs:range ddhub:DataFlowNode; 
+                    rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsHydraulicallyLocatedAt a owl:ObjectProperty; 
                                rdfs:comment """Places a measurement or estimation at a specific hydraulic element.
 """@EN; 
@@ -6737,12 +7106,80 @@ ddhub:IsHydraulicMeasurementAt a owl:ObjectProperty;
                                rdfs:domain ddhub:DrillingDataPoint; 
                                rdfs:range ddhub:HydraulicLogicalElement; 
                                rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
+ddhub:IsIdlingSignalFor a owl:ObjectProperty; 
+                        rdfs:comment """This verb is used to indicate a `DrillingDataPoint` that tells if the function is in an idle state.
+A function that is idle must be enabled but does not perform any particular control on the machines. For instance, a 
+`ProcedureFunction` that has reached its terminal state or a `ControllerFunction` that cannot control anymore its 
+parameter because a limit is reached, e.g., autodriller when reaching the `MinDrillHeightVerticalLocation`, or an FDIR
+function when there are no incidents that is detected. A SOE function is in idle state, if the used set-points are
+within the limits, but if the limits are applied then the idle state is false, because the function acts on the set-points.
+"""@EN; 
+                        rdfs:domain ddhub:DrillingDataPoint; 
+                        rdfs:range ddhub:RunnableFunction; 
+                        rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsImpactDescriptionSignalFor a owl:ObjectProperty; 
+                                   rdfs:comment """This verbs is used to indicate that a `DrillingDataPoint` used by an `FDIRFunction` can be used to
+describe the impact of the function on the drilling process. This signal is supposed to be string value.
+"""@EN; 
+                                   rdfs:domain ddhub:DrillingDataPoint; 
+                                   rdfs:range ddhub:FDIRFunction; 
+                                   rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsInformationForCurrentStateOf a owl:ObjectProperty; 
+                                     rdfs:comment """Provides supporting information about the current state of an object or process.
+"""@EN; 
+                                     rdfs:domain ddhub:ComputedState; 
+                                     rdfs:range ddhub:DWISNoun; 
+                                     rdfs:subPropertyOf ddhub:HasFunction. 
+ddhub:IsInSafeModeSignalFor a owl:ObjectProperty; 
+                            rdfs:comment """This verb is used to indicate that a `DrillingDataPoint` tells whether the isolation or the recovery
+procedures have been aborted and the system has been set in safe mode. The value can only turn true when the tiggered 
+signal is true. This signal is supposed to be a boolean value.
+"""@EN; 
+                            rdfs:domain ddhub:DrillingDataPoint; 
+                            rdfs:range ddhub:FDIRFunction; 
+                            rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsInSafeModeStateFor a owl:ObjectProperty; 
+                           rdfs:comment """Indicates that the target object or process is currently in a safe or fallback mode.
+"""@EN; 
+                           rdfs:domain ddhub:ComputedState; 
+                           rdfs:range ddhub:DWISNoun; 
+                           rdfs:subPropertyOf ddhub:IsInformationForCurrentStateOf. 
+ddhub:IsIntegratedFrom a owl:ObjectProperty; 
+                       rdfs:comment """Indicates that a signal is obtained by integrating another signal.
+"""@EN; 
+                       rdfs:domain ddhub:DWISNoun; 
+                       rdfs:range ddhub:DWISNoun; 
+                       rdfs:subPropertyOf ddhub:IsTransformationOutput. 
+ddhub:IsLimitFor a owl:ObjectProperty; 
+                 rdfs:comment """Declares that a signal expresses a limit relevant to a node or function.
+"""@EN; 
+                 rdfs:domain ddhub:DrillingDataPoint; 
+                 rdfs:range ddhub:DWISNoun; 
+                 rdfs:subPropertyOf ddhub:HasFunction. 
+ddhub:IsLocatedAtEquipment a owl:ObjectProperty; 
+                           rdfs:comment """Indicates that the drilling data point is associated with a specific piece of equipment.
+"""@EN; 
+                           rdfs:domain ddhub:DrillingDataPoint; 
+                           rdfs:range ddhub:Equipment; 
+                           rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsMassFlowRateAt a owl:ObjectProperty; 
                        rdfs:comment """Indicates a mass flow rate value at a hydraulic element.
 """@EN; 
                        rdfs:domain ddhub:DrillingDataPoint; 
                        rdfs:range ddhub:HydraulicLogicalElement; 
                        rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
+ddhub:IsMaximumLimitFor a owl:ObjectProperty; 
+                        rdfs:comment """Indicates that the signal represents the maximum acceptable bound for a function or equipment.
+"""@EN; 
+                        rdfs:domain ddhub:DrillingDataPoint; 
+                        rdfs:range ddhub:DWISNoun; 
+                        rdfs:subPropertyOf ddhub:IsLimitFor. 
+ddhub:IsMeasuredBy a owl:ObjectProperty; 
+                   rdfs:comment """Associates a measured signal with the physical measurement device that collected it.
+"""@EN; 
+                   rdfs:domain ddhub:DWISNoun; 
+                   rdfs:range ddhub:DWISNoun; 
+                   rdfs:subPropertyOf ddhub:IsGeneratedBy. 
 ddhub:IsMeasuredFromReferenceFrame a owl:ObjectProperty; 
                                    rdfs:comment """Indicates that the signal is measured from a given reference frame.
 """@EN; 
@@ -6761,6 +7198,12 @@ ddhub:IsMechanicallyLocatedAt a owl:ObjectProperty;
                               rdfs:domain ddhub:DrillingDataPoint; 
                               rdfs:range ddhub:MechanicalLogicalElement; 
                               rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsMinimumLimitFor a owl:ObjectProperty; 
+                        rdfs:comment """Indicates that the signal represents the minimum acceptable bound for a function or equipment.
+"""@EN; 
+                        rdfs:domain ddhub:DrillingDataPoint; 
+                        rdfs:range ddhub:DWISNoun; 
+                        rdfs:subPropertyOf ddhub:IsLimitFor. 
 ddhub:IsobaricSpecificHeatCapacityDrillingQuantity a owl:Class; 
                                                    rdfs:comment """Isobaric specific heat capacity is the amount of heat required to raise the temperature of one unit mass of a substance by one unit of temperature at constant pressure. It indicates how much heat energy a material can store.
 The dimension of specific heat capacity is:
@@ -6791,6 +7234,14 @@ $$[L^{2}K^{-1}T^{-2}]$$.
 The SI unit for **isobaric specific heat capacity** is: joule per kilogram kelvin with the associated unit label $\\frac{J}{kg \\cdot K}$
 """@EN; 
                                            rdfs:subClassOf ddhub:Quantity. 
+ddhub:IsObservableFrom a owl:ObjectProperty; 
+                       rdfs:comment """This `Verb` means that something can be seen, detected, or noticed from a particular
+location or perspective. It implies that there is a clear view or means of perception from one point 
+to another.
+"""@EN; 
+                       rdfs:domain ddhub:DWISNoun; 
+                       rdfs:range ddhub:DrillingDataPoint; 
+                       rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsOfBaseQuantity a owl:ObjectProperty; 
                        rdfs:comment """This `Verb` is used to associate a `MeasurableQuantity` with a `Quantity`. It is the reciprocal
 relationship to `HasMeasurableQuantity`. 
@@ -6813,6 +7264,12 @@ ddhub:IsOfMechanicalStiffnessType a owl:ObjectProperty;
 ddhub:IsolationSeal a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:DrillingEquipment. 
+ddhub:IsOpeningRatioAt a owl:ObjectProperty; 
+                       rdfs:comment """Indicates an opening ratio (e.g., choke valve) at a hydraulic element.
+"""@EN; 
+                       rdfs:domain ddhub:DrillingDataPoint; 
+                       rdfs:range ddhub:HydraulicLogicalElement; 
+                       rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 ddhub:IsPhysicallyLocatedAt a owl:ObjectProperty; 
                             rdfs:comment """Places an object at a given physical location.
 """@EN; 
@@ -6831,12 +7288,137 @@ ddhub:IsPressureGradientAt a owl:ObjectProperty;
                            rdfs:domain ddhub:DrillingDataPoint; 
                            rdfs:range ddhub:HydraulicLogicalElement; 
                            rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
+ddhub:IsProcessedBy a owl:ObjectProperty; 
+                    rdfs:comment """Indicates that a signal or state is processed by a given data flow node.
+"""@EN; 
+                    rdfs:domain ddhub:DWISNoun; 
+                    rdfs:range ddhub:DWISNoun; 
+                    rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsProvidedBy a owl:ObjectProperty; 
+                   rdfs:comment """This verb is used to stipulate that something is provided by a data provider.
+"""@EN; 
+                   rdfs:domain ddhub:DWISNoun; 
+                   rdfs:range ddhub:DataProvider; 
+                   rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsProvidedTo a owl:ObjectProperty; 
+                   rdfs:comment """This verb is used to stipulate that something is provided to a data provider.
+"""@EN; 
+                   rdfs:domain ddhub:DWISNoun; 
+                   rdfs:range ddhub:DataProvider; 
+                   rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsRecommendedBy a owl:ObjectProperty; 
+                      rdfs:comment """Indicates that the AdvisorySystemAdvice is recommended by an Advisor
+"""@EN; 
+                      rdfs:domain ddhub:AdvisorySystemAdvice; 
+                      rdfs:range ddhub:ComputationUnit; 
+                      rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsRecommendedFor a owl:ObjectProperty; 
+                       rdfs:comment """Indicates that the AdvisorySystemAdvice is recommended for an ADCS Activable Function
+"""@EN; 
+                       rdfs:domain ddhub:AdvisorySystemAdvice; 
+                       rdfs:range ddhub:ActivableFunction; 
+                       rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsRecordedFrom a owl:ObjectProperty; 
+                     rdfs:comment """Indicates that a signal was recorded from another data source or channel.
+"""@EN; 
+                     rdfs:domain ddhub:DWISNoun; 
+                     rdfs:range ddhub:DWISNoun; 
+                     rdfs:subPropertyOf ddhub:IsGeneratedBy. 
+ddhub:IsRelatedToDrillingIncident a owl:ObjectProperty; 
+                                  rdfs:comment """This Verb is used to indicate that a drilling data point is related to a drilling incident.
+"""@EN; 
+                                  rdfs:domain ddhub:DrillingDataPoint; 
+                                  rdfs:range ddhub:DrillingIncident; 
+                                  rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsRelatedToDrillingLimit a owl:ObjectProperty; 
+                               rdfs:comment """This Verb is used to indicate that a drilling data point is related to a drilling incident.
+"""@EN; 
+                               rdfs:domain ddhub:DrillingDataPoint; 
+                               rdfs:range ddhub:DrillingLimit; 
+                               rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsRelatedToDrillingObjective a owl:ObjectProperty; 
+                                   rdfs:comment """This Verb is used to indicate that a drilling data point is related to a drilling objective.
+"""@EN; 
+                                   rdfs:domain ddhub:DrillingDataPoint; 
+                                   rdfs:range ddhub:DrillingObjective; 
+                                   rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsRelatedToDrillingProcedure a owl:ObjectProperty; 
+                                   rdfs:comment """This Verb is used to indicate that a drilling data point is related to a drilling procedure.
+"""@EN; 
+                                   rdfs:domain ddhub:DrillingDataPoint; 
+                                   rdfs:range ddhub:DrillingProcedure; 
+                                   rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsResampledBy a owl:ObjectProperty; 
+                    rdfs:comment """Links a resampled signal to the resampling node that produced it.
+"""@EN; 
+                    rdfs:domain ddhub:DrillingDataPoint; 
+                    rdfs:range ddhub:Resampling; 
+                    rdfs:subPropertyOf ddhub:IsTransformationOutput. 
+ddhub:IsResamplingInput a owl:ObjectProperty; 
+                        rdfs:comment """Marks a signal that will be resampled to a new rate.
+"""@EN; 
+                        rdfs:domain ddhub:DrillingDataPoint; 
+                        rdfs:range ddhub:Resampling; 
+                        rdfs:subPropertyOf ddhub:IsTransformationInput. 
+ddhub:IsSetPointAdviceFor a owl:ObjectProperty; 
+                          rdfs:comment """Indicates an advisory set-point that may be reviewed before being applied to a control system.
+"""@EN; 
+                          rdfs:domain ddhub:DrillingDataPoint; 
+                          rdfs:range ddhub:ControlSystem; 
+                          rdfs:subPropertyOf ddhub:HasFunction. 
+ddhub:IsSetPointFor a owl:ObjectProperty; 
+                    rdfs:comment """Identifies a signal that provides a target value to a controller.
+"""@EN; 
+                    rdfs:domain ddhub:DrillingDataPoint; 
+                    rdfs:range ddhub:Controller; 
+                    rdfs:subPropertyOf ddhub:HasFunction. 
+ddhub:IsSetPointMaximumAdviceFor a owl:ObjectProperty; 
+                                 rdfs:comment """Provides an advisory maximum bound for a control system set-point.
+"""@EN; 
+                                 rdfs:domain ddhub:DrillingDataPoint; 
+                                 rdfs:range ddhub:ControlSystem; 
+                                 rdfs:subPropertyOf ddhub:HasFunction. 
+ddhub:IsSetPointMaximumRecommendationFor a owl:ObjectProperty; 
+                                         rdfs:comment """Indicates a recommended maximum bound for a control system set-point.
+"""@EN; 
+                                         rdfs:domain ddhub:DrillingDataPoint; 
+                                         rdfs:range ddhub:ControlSystem; 
+                                         rdfs:subPropertyOf ddhub:HasFunction. 
+ddhub:IsSetPointMinimumAdviceFor a owl:ObjectProperty; 
+                                 rdfs:comment """Provides an advisory minimum bound for a control system set-point.
+"""@EN; 
+                                 rdfs:domain ddhub:DrillingDataPoint; 
+                                 rdfs:range ddhub:ControlSystem; 
+                                 rdfs:subPropertyOf ddhub:HasFunction. 
+ddhub:IsSetPointMinimumRecommendationFor a owl:ObjectProperty; 
+                                         rdfs:comment """Indicates a recommended minimum bound for a control system set-point.
+"""@EN; 
+                                         rdfs:domain ddhub:DrillingDataPoint; 
+                                         rdfs:range ddhub:ControlSystem; 
+                                         rdfs:subPropertyOf ddhub:HasFunction. 
+ddhub:IsSetPointRecommendationFor a owl:ObjectProperty; 
+                                  rdfs:comment """Marks a signal as a recommended set-point produced for a control system.
+"""@EN; 
+                                  rdfs:domain ddhub:DrillingDataPoint; 
+                                  rdfs:range ddhub:ControlSystem; 
+                                  rdfs:subPropertyOf ddhub:HasFunction. 
 ddhub:IsSourceFlowCurveFor a owl:ObjectProperty; 
                            rdfs:comment """Relate a flow curve is used to estimate a rheological behavior.
 """@EN; 
                            rdfs:domain ddhub:FlowCurve; 
                            rdfs:range ddhub:RheologicalBehavior; 
                            rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsSubPartOf a owl:ObjectProperty; 
+                  rdfs:comment ""@EN; 
+                  rdfs:domain ddhub:DrillingEquipment; 
+                  rdfs:range ddhub:DrillingEquipment; 
+                  rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsSubSystemOf a owl:ObjectProperty; 
+                    rdfs:comment """Indicates that a data flow node is part of a larger system or control structure.
+"""@EN; 
+                    rdfs:domain ddhub:DataFlowNode; 
+                    rdfs:range ddhub:DataFlowNode; 
+                    rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsSynchronizationGroupInput a owl:ObjectProperty; 
                                   rdfs:comment """Marks a signal as input to a synchronization group.
 """@EN; 
@@ -6849,6 +7431,90 @@ ddhub:IsSynchronizationGroupOutput a owl:ObjectProperty;
                                    rdfs:domain ddhub:DrillingDataPoint; 
                                    rdfs:range ddhub:SynchronizationGroup; 
                                    rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsToBeComparedWith a owl:ObjectProperty; 
+                         rdfs:comment """States that two data points should be compared for validation or control.
+"""@EN; 
+                         rdfs:domain ddhub:DrillingDataPoint; 
+                         rdfs:range ddhub:DrillingDataPoint; 
+                         rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsToBeDifferentFrom a owl:ObjectProperty; 
+                          rdfs:comment """Indicates that the subject should differ from the object.
+"""@EN; 
+                          rdfs:domain ddhub:DrillingDataPoint; 
+                          rdfs:range ddhub:DrillingDataPoint; 
+                          rdfs:subPropertyOf ddhub:IsToBeComparedWith. 
+ddhub:IsToBeEqualTo a owl:ObjectProperty; 
+                    rdfs:comment """Indicates that the subject should match the object.
+"""@EN; 
+                    rdfs:domain ddhub:DrillingDataPoint; 
+                    rdfs:range ddhub:DrillingDataPoint; 
+                    rdfs:subPropertyOf ddhub:IsToBeComparedWith. 
+ddhub:IsToBeGreaterOrEqualThan a owl:ObjectProperty; 
+                               rdfs:comment """Indicates that the subject should stay greater than or equal to the object.
+"""@EN; 
+                               rdfs:domain ddhub:DrillingDataPoint; 
+                               rdfs:range ddhub:DrillingDataPoint; 
+                               rdfs:subPropertyOf ddhub:IsToBeGreaterThan. 
+ddhub:IsToBeGreaterThan a owl:ObjectProperty; 
+                        rdfs:comment """Indicates that the subject should stay greater than the object.
+"""@EN; 
+                        rdfs:domain ddhub:DrillingDataPoint; 
+                        rdfs:range ddhub:DrillingDataPoint; 
+                        rdfs:subPropertyOf ddhub:IsToBeComparedWith. 
+ddhub:IsToBeSmallerOrEqualThan a owl:ObjectProperty; 
+                               rdfs:comment """Indicates that the subject should stay below or equal to the object.
+"""@EN; 
+                               rdfs:domain ddhub:DrillingDataPoint; 
+                               rdfs:range ddhub:DrillingDataPoint; 
+                               rdfs:subPropertyOf ddhub:IsToBeSmallerThan. 
+ddhub:IsToBeSmallerThan a owl:ObjectProperty; 
+                        rdfs:comment """Indicates that the subject should stay below the object.
+"""@EN; 
+                        rdfs:domain ddhub:DrillingDataPoint; 
+                        rdfs:range ddhub:DrillingDataPoint; 
+                        rdfs:subPropertyOf ddhub:IsToBeComparedWith. 
+ddhub:IsToBeStrictlyGreaterThan a owl:ObjectProperty; 
+                                rdfs:comment """Indicates that the subject should stay strictly greater than the object.
+"""@EN; 
+                                rdfs:domain ddhub:DrillingDataPoint; 
+                                rdfs:range ddhub:DrillingDataPoint; 
+                                rdfs:subPropertyOf ddhub:IsToBeGreaterThan. 
+ddhub:IsToBeStrictlySmallerThan a owl:ObjectProperty; 
+                                rdfs:comment """Indicates that the subject should stay strictly below the object.
+"""@EN; 
+                                rdfs:domain ddhub:DrillingDataPoint; 
+                                rdfs:range ddhub:DrillingDataPoint; 
+                                rdfs:subPropertyOf ddhub:IsToBeSmallerThan. 
+ddhub:IsTransformationInput a owl:ObjectProperty; 
+                            rdfs:comment """Declares that a signal is used as an input to a transformation node.
+"""@EN; 
+                            rdfs:domain ddhub:DrillingDataPoint; 
+                            rdfs:range ddhub:Transformation; 
+                            rdfs:subPropertyOf ddhub:HasFunction. 
+ddhub:IsTransformationOutput a owl:ObjectProperty; 
+                             rdfs:comment """Identifies a signal as the result of a transformation node.
+"""@EN; 
+                             rdfs:domain ddhub:DrillingDataPoint; 
+                             rdfs:range ddhub:DataFlowNode; 
+                             rdfs:subPropertyOf ddhub:IsGeneratedBy. 
+ddhub:IsTransmissionInput a owl:ObjectProperty; 
+                          rdfs:comment """Declares that a signal enters a transmission line for forwarding.
+"""@EN; 
+                          rdfs:domain ddhub:DrillingDataPoint; 
+                          rdfs:range ddhub:TransmissionLine; 
+                          rdfs:subPropertyOf ddhub:HasFunction. 
+ddhub:IsTransmissionOutput a owl:ObjectProperty; 
+                           rdfs:comment """Declares a signal as the output of a transmission line.
+"""@EN; 
+                           rdfs:domain ddhub:DrillingDataPoint; 
+                           rdfs:range ddhub:TransmissionLine; 
+                           rdfs:subPropertyOf ddhub:IsGeneratedBy. 
+ddhub:IsTransmittedBy a owl:ObjectProperty; 
+                      rdfs:comment """Expresses that a signal is transmitted by some given telemetry system
+"""@EN; 
+                      rdfs:domain ddhub:DrillingDataPoint; 
+                      rdfs:range ddhub:Telemetry; 
+                      rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsUnitForQuantity a owl:ObjectProperty; 
                         rdfs:comment """This `verb` is used to relate a `Unit` with a `Quantity`.
 """@EN; 
@@ -6861,11 +7527,39 @@ ddhub:IsUpstreamOf a owl:ObjectProperty;
                    rdfs:domain ddhub:FluidType; 
                    rdfs:range ddhub:FluidInterface; 
                    rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsUsedExtraMarginSignalFor a owl:ObjectProperty; 
+                                 rdfs:comment """This verb is used to indicate a `DrillingDataPoint` used by an `FDIRFunction` tells whether the
+extra margin signal is used or not by the FDIR function. This signal is expected to be a boolean value.
+"""@EN; 
+                                 rdfs:domain ddhub:DrillingDataPoint; 
+                                 rdfs:range ddhub:FDIRFunction; 
+                                 rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsUserControllableExtraMarginSignalFor a owl:ObjectProperty; 
+                                             rdfs:comment """This verb is used to indicate that a `DrillingDataPoint` used by an `FDIRFunction`, extends the calculated
+threshold value for the fault detection by a user-defined amount. The value of this signal is supposed to be interpreted
+in absolute value. If it is negative, then it is its magnitude that is used. This allows the end-user to increase the margin for
+detection of an incident. 
+"""@EN; 
+                                             rdfs:domain ddhub:DrillingDataPoint; 
+                                             rdfs:range ddhub:FDIRFunction; 
+                                             rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsValid a owl:DatatypeProperty, owl:FunctionalProperty; 
               rdfs:comment """
 """@EN; 
               rdfs:domain ddhub:DrillingDataPoint; 
               rdfs:range xsd:bool. 
+ddhub:IsValidBy a owl:ObjectProperty; 
+                rdfs:comment """States that a validity condition applies to a data point or class of signals.
+"""@EN; 
+                rdfs:domain ddhub:DWISNoun; 
+                rdfs:range ddhub:DWISNoun; 
+                rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsVolumeAt a owl:ObjectProperty; 
+                 rdfs:comment """Indicates a volume measurement for a HydraulicLogicalElement.
+"""@EN; 
+                 rdfs:domain ddhub:DrillingDataPoint; 
+                 rdfs:range ddhub:HydraulicLogicalElement; 
+                 rdfs:subPropertyOf ddhub:IsHydraulicallyLocatedAt. 
 ddhub:IsVolumetricFlowRateAt a owl:ObjectProperty; 
                              rdfs:comment """Indicates a volumetric flow rate at a hydraulic element.
 """@EN; 
@@ -8904,6 +9598,12 @@ ddhub:ManagedDownholePressureFeature a owl:Class;
                                      rdfs:comment """A managed downhole pressure feature indicates that something manages downhole pressure.
 """@EN; 
                                      rdfs:subClassOf ddhub:DownholePressureFeature. 
+ddhub:ManagesIncident a owl:ObjectProperty; 
+                      rdfs:comment """This Verb is used to indicate that a fault detection isolation and recovery function manages a drilling incident.
+"""@EN; 
+                      rdfs:domain ddhub:FDIRFunction; 
+                      rdfs:range ddhub:DrillingIncident; 
+                      rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:Mandrel a owl:Class; 
               rdfs:comment ""@EN; 
               rdfs:subClassOf ddhub:Connection. 

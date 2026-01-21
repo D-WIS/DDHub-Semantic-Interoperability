@@ -3317,7 +3317,7 @@ IsHydraulicallyLocatedAt <|-- IsFluidDensityAt
 IsHydraulicallyLocatedAt <|-- IsFluidTemperatureAt
 IsHydraulicallyLocatedAt <|-- IsFluidVelocityAt
 IsHydraulicallyLocatedAt <|-- IsOpeningRatioAt
-Is Hydraulically Located At <|-- IsVolumeAt
+IsHydraulicallyLocatedAt <|-- IsVolumeAt
 IsHydraulicallyLocatedAt <|-- IsHydraulicEstimationAt
 IsHydraulicallyLocatedAt <|-- IsHydraulicMaximumAllowedRateOfChangeAt
 IsHydraulicallyLocatedAt <|-- IsHydraulicMaximumAllowedValueAt
@@ -4126,7 +4126,7 @@ WHERE {
 This example sets choke opening ratio at a junction.
 ## IsVolumeAt <!-- VERB -->
 - Display name: IsVolumeAt
-- Parent verb: [Is Hydraulically Located At](./.md#Is Hydraulically Located At)
+- Parent verb: [IsHydraulicallyLocatedAt](./Hydraulics.md#IsHydraulicallyLocatedAt)
 - Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
 - Object class: [HydraulicLogicalElement](./Hydraulics.md#HydraulicLogicalElement)
 - Definition set: Hydraulics

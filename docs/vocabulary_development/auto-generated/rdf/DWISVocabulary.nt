@@ -7043,10 +7043,458 @@
 <http://ddhub.no/DWISVerb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://ddhub.no/DWISVerb> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/DWISVerb> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsEnablingSignalFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsEnablingSignalFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsEnablingSignalFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ActivableFunction> .
+<http://ddhub.no/IsEnablingSignalFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsActivatedSignalFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsActivatedSignalFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsActivatedSignalFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ActivableFunction> .
+<http://ddhub.no/IsActivatedSignalFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/AllowEnablementSignalFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/AllowEnablementSignalFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/AllowEnablementSignalFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ActivableFunction> .
+<http://ddhub.no/AllowEnablementSignalFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsIdlingSignalFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsIdlingSignalFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsIdlingSignalFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/RunnableFunction> .
+<http://ddhub.no/IsIdlingSignalFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsUserControllableExtraMarginSignalFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsUserControllableExtraMarginSignalFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsUserControllableExtraMarginSignalFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/FDIRFunction> .
+<http://ddhub.no/IsUserControllableExtraMarginSignalFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsUsedExtraMarginSignalFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsUsedExtraMarginSignalFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsUsedExtraMarginSignalFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/FDIRFunction> .
+<http://ddhub.no/IsUsedExtraMarginSignalFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsArmedSignalFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsArmedSignalFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsArmedSignalFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/FDIRFunction> .
+<http://ddhub.no/IsArmedSignalFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsAlertTriggeredSignalFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsAlertTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsAlertTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/FDIRFunction> .
+<http://ddhub.no/IsAlertTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsAlarmTriggeredSignalFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsAlarmTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsAlarmTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/FDIRFunction> .
+<http://ddhub.no/IsAlarmTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsInSafeModeSignalFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsInSafeModeSignalFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsInSafeModeSignalFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/FDIRFunction> .
+<http://ddhub.no/IsInSafeModeSignalFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsImpactDescriptionSignalFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsImpactDescriptionSignalFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsImpactDescriptionSignalFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/FDIRFunction> .
+<http://ddhub.no/IsImpactDescriptionSignalFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsFeatureSignalFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsFeatureSignalFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsFeatureSignalFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ActivableFunction> .
+<http://ddhub.no/IsFeatureSignalFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsRecommendedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsRecommendedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/AdvisorySystemAdvice> .
+<http://ddhub.no/IsRecommendedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ComputationUnit> .
+<http://ddhub.no/IsRecommendedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsRecommendedFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsRecommendedFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/AdvisorySystemAdvice> .
+<http://ddhub.no/IsRecommendedFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ActivableFunction> .
+<http://ddhub.no/IsRecommendedFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsRelatedToDrillingLimit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsRelatedToDrillingLimit> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsRelatedToDrillingLimit> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingLimit> .
+<http://ddhub.no/IsRelatedToDrillingLimit> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/HasControlLimit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/HasControlLimit> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/HasControlLimit> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingLimit> .
+<http://ddhub.no/HasControlLimit> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsRelatedToDrillingLimit> .
+<http://ddhub.no/IsCharacterizedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsCharacterizedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/WellBoreData> .
+<http://ddhub.no/IsCharacterizedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/WellBoreDataCharateristic> .
+<http://ddhub.no/IsCharacterizedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/HasOperationalStep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/HasOperationalStep> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/OperationalStep> .
+<http://ddhub.no/HasOperationalStep> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/OperationalStep> .
+<http://ddhub.no/HasOperationalStep> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsAnActionOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsAnActionOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/ActionStep> .
+<http://ddhub.no/IsAnActionOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/PhaseStep> .
+<http://ddhub.no/IsAnActionOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsATaskOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsATaskOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/TaskStep> .
+<http://ddhub.no/IsATaskOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ActionStep> .
+<http://ddhub.no/IsATaskOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsAContextOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsAContextOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/Context> .
+<http://ddhub.no/IsAContextOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/TaskStep> .
+<http://ddhub.no/IsAContextOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsDependentOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsDependentOn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsDependentOn> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsDependentOn> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/HasPressureReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/HasPressureReference> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/HasPressureReference> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/HasPressureReference> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsDependentOn> .
+<http://ddhub.no/HasTemperatureReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/HasTemperatureReference> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/HasTemperatureReference> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/HasTemperatureReference> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsDependentOn> .
+<http://ddhub.no/HasElevationReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/HasElevationReference> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/HasElevationReference> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Location> .
+<http://ddhub.no/HasElevationReference> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsDependentOn> .
+<http://ddhub.no/IsObservableFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsObservableFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsObservableFrom> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsObservableFrom> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsSubSystemOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsSubSystemOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DataFlowNode> .
+<http://ddhub.no/IsSubSystemOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DataFlowNode> .
+<http://ddhub.no/IsSubSystemOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/Controls> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/Controls> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/Controls> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/Controls> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/HasFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/HasFunction> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/HasFunction> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DataFlowNode> .
+<http://ddhub.no/HasFunction> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsCommandFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsCommandFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsCommandFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsCommandFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsComputationInput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsComputationInput> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsComputationInput> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ComputationUnit> .
+<http://ddhub.no/IsComputationInput> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsLimitFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsLimitFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsLimitFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsLimitFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsMinimumLimitFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsMinimumLimitFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsMinimumLimitFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsMinimumLimitFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsLimitFor> .
+<http://ddhub.no/IsMaximumLimitFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsMaximumLimitFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsMaximumLimitFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsMaximumLimitFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsLimitFor> .
+<http://ddhub.no/IsCurrentStateFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsCurrentStateFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/ComputedState> .
+<http://ddhub.no/IsCurrentStateFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsCurrentStateFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsInformationForCurrentStateOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsInformationForCurrentStateOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/ComputedState> .
+<http://ddhub.no/IsInformationForCurrentStateOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsInformationForCurrentStateOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsInSafeModeStateFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsInSafeModeStateFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/ComputedState> .
+<http://ddhub.no/IsInSafeModeStateFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsInSafeModeStateFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsInformationForCurrentStateOf> .
+<http://ddhub.no/IsSetPointFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsSetPointFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsSetPointFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Controller> .
+<http://ddhub.no/IsSetPointFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsSetPointRecommendationFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsSetPointRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsSetPointRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ControlSystem> .
+<http://ddhub.no/IsSetPointRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsSetPointAdviceFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsSetPointAdviceFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsSetPointAdviceFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ControlSystem> .
+<http://ddhub.no/IsSetPointAdviceFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsSetPointMinimumRecommendationFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsSetPointMinimumRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsSetPointMinimumRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ControlSystem> .
+<http://ddhub.no/IsSetPointMinimumRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsSetPointMinimumAdviceFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsSetPointMinimumAdviceFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsSetPointMinimumAdviceFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ControlSystem> .
+<http://ddhub.no/IsSetPointMinimumAdviceFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsSetPointMaximumRecommendationFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsSetPointMaximumRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsSetPointMaximumRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ControlSystem> .
+<http://ddhub.no/IsSetPointMaximumRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsSetPointMaximumAdviceFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsSetPointMaximumAdviceFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsSetPointMaximumAdviceFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ControlSystem> .
+<http://ddhub.no/IsSetPointMaximumAdviceFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsTransformationInput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsTransformationInput> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsTransformationInput> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Transformation> .
+<http://ddhub.no/IsTransformationInput> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsBufferingInput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsBufferingInput> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsBufferingInput> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Buffering> .
+<http://ddhub.no/IsBufferingInput> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsTransformationInput> .
+<http://ddhub.no/IsDerivationInput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsDerivationInput> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsDerivationInput> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsDerivationInput> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsTransformationInput> .
+<http://ddhub.no/IsResamplingInput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsResamplingInput> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsResamplingInput> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Resampling> .
+<http://ddhub.no/IsResamplingInput> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsTransformationInput> .
+<http://ddhub.no/IsTransmissionInput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsTransmissionInput> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsTransmissionInput> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/TransmissionLine> .
+<http://ddhub.no/IsTransmissionInput> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsGeneratedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DataFlowNode> .
+<http://ddhub.no/IsGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsComputedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsComputedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsComputedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsComputedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsGeneratedBy> .
+<http://ddhub.no/IsMeasuredBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsMeasuredBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsMeasuredBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsMeasuredBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsGeneratedBy> .
+<http://ddhub.no/IsRecordedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsRecordedFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsRecordedFrom> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsRecordedFrom> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsGeneratedBy> .
+<http://ddhub.no/IsTransformationOutput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsTransformationOutput> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsTransformationOutput> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DataFlowNode> .
+<http://ddhub.no/IsTransformationOutput> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsGeneratedBy> .
+<http://ddhub.no/IsBufferingOutput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsBufferingOutput> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsBufferingOutput> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Buffering> .
+<http://ddhub.no/IsBufferingOutput> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsTransformationOutput> .
+<http://ddhub.no/IsDerivedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsTransformationOutput> .
+<http://ddhub.no/IsIntegratedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsIntegratedFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsIntegratedFrom> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsIntegratedFrom> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsTransformationOutput> .
+<http://ddhub.no/IsResampledBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsResampledBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsResampledBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Resampling> .
+<http://ddhub.no/IsResampledBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsTransformationOutput> .
+<http://ddhub.no/IsTransmissionOutput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsTransmissionOutput> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsTransmissionOutput> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/TransmissionLine> .
+<http://ddhub.no/IsTransmissionOutput> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsGeneratedBy> .
+<http://ddhub.no/IsProcessedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsProcessedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsProcessedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsProcessedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsProvidedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsProvidedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsProvidedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DataProvider> .
+<http://ddhub.no/IsProvidedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsProvidedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsProvidedTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsProvidedTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DataProvider> .
+<http://ddhub.no/IsProvidedTo> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsTransmittedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsTransmittedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsTransmittedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Telemetry> .
+<http://ddhub.no/IsTransmittedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsConditionedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsConditionedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsConditionedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ValidityCondition> .
+<http://ddhub.no/IsConditionedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsConditionInput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsConditionInput> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsConditionInput> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ValidityCondition> .
+<http://ddhub.no/IsConditionInput> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsConditionLeft> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsConditionLeft> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsConditionLeft> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsConditionLeft> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsConditionInput> .
+<http://ddhub.no/IsConditionRight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsConditionRight> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsConditionRight> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsConditionRight> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsConditionInput> .
+<http://ddhub.no/IsValidBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsValidBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsValidBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsValidBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/HasDomain> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/HasDomain> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/HasDomain> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/HasDomain> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/HasTimeIntervalDomain> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/HasTimeIntervalDomain> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/HasTimeIntervalDomain> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/HasTimeIntervalDomain> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasDomain> .
+<http://ddhub.no/HasValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/HasValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/HasValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingSignal> .
+<http://ddhub.no/HasValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/HasDynamicValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/HasDynamicValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/HasDynamicValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DynamicDrillingSignal> .
+<http://ddhub.no/HasDynamicValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasValue> .
+<http://ddhub.no/HasStaticValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/HasStaticValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/HasStaticValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingSignal> .
+<http://ddhub.no/HasStaticValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasValue> .
+<http://ddhub.no/IsToBeComparedWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsToBeComparedWith> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsToBeComparedWith> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsToBeComparedWith> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsToBeGreaterThan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsToBeGreaterThan> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsToBeGreaterThan> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsToBeGreaterThan> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsToBeComparedWith> .
+<http://ddhub.no/IsToBeGreaterOrEqualThan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsToBeGreaterOrEqualThan> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsToBeGreaterOrEqualThan> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsToBeGreaterOrEqualThan> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsToBeGreaterThan> .
+<http://ddhub.no/IsToBeStrictlyGreaterThan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsToBeStrictlyGreaterThan> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsToBeStrictlyGreaterThan> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsToBeStrictlyGreaterThan> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsToBeGreaterThan> .
+<http://ddhub.no/IsToBeSmallerThan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsToBeSmallerThan> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsToBeSmallerThan> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsToBeSmallerThan> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsToBeComparedWith> .
+<http://ddhub.no/IsToBeSmallerOrEqualThan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsToBeSmallerOrEqualThan> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsToBeSmallerOrEqualThan> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsToBeSmallerOrEqualThan> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsToBeSmallerThan> .
+<http://ddhub.no/IsToBeStrictlySmallerThan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsToBeStrictlySmallerThan> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsToBeStrictlySmallerThan> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsToBeStrictlySmallerThan> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsToBeSmallerThan> .
+<http://ddhub.no/IsToBeEqualTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsToBeEqualTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsToBeEqualTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsToBeEqualTo> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsToBeComparedWith> .
+<http://ddhub.no/IsToBeDifferentFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsToBeDifferentFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsToBeDifferentFrom> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsToBeDifferentFrom> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsToBeComparedWith> .
+<http://ddhub.no/IsLocatedAtEquipment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsLocatedAtEquipment> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsLocatedAtEquipment> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Equipment> .
+<http://ddhub.no/IsLocatedAtEquipment> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsSubPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsSubPartOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingEquipment> .
+<http://ddhub.no/IsSubPartOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingEquipment> .
+<http://ddhub.no/IsSubPartOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/AccountsFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/AccountsFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/AccountsFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingManagementFeature> .
+<http://ddhub.no/AccountsFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsRelatedToDrillingIncident> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsRelatedToDrillingIncident> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsRelatedToDrillingIncident> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingIncident> .
+<http://ddhub.no/IsRelatedToDrillingIncident> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/ManagesIncident> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/ManagesIncident> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/FDIRFunction> .
+<http://ddhub.no/ManagesIncident> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingIncident> .
+<http://ddhub.no/ManagesIncident> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/ImplementsLimit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/ImplementsLimit> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/SOEFunction> .
+<http://ddhub.no/ImplementsLimit> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingLimit> .
+<http://ddhub.no/ImplementsLimit> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsRelatedToDrillingObjective> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsRelatedToDrillingObjective> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsRelatedToDrillingObjective> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingObjective> .
+<http://ddhub.no/IsRelatedToDrillingObjective> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/ImplementsObjective> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/ImplementsObjective> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/ControllerFunction> .
+<http://ddhub.no/ImplementsObjective> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingObjective> .
+<http://ddhub.no/ImplementsObjective> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsRelatedToDrillingProcedure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsRelatedToDrillingProcedure> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsRelatedToDrillingProcedure> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingProcedure> .
+<http://ddhub.no/IsRelatedToDrillingProcedure> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/ImplementsProcedure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/ImplementsProcedure> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/ProcedureFunction> .
+<http://ddhub.no/ImplementsProcedure> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingProcedure> .
+<http://ddhub.no/ImplementsProcedure> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/BelongsToClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/BelongsToClass> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/BelongsToClass> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/BelongsToClass> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/HasEndPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/HasEndPoint> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingSignal> .
+<http://ddhub.no/HasEndPoint> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DataEndPoint> .
+<http://ddhub.no/HasEndPoint> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/HasPressureReferenceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/HasPressureReferenceType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/HasPressureReferenceType> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/PressureReference> .
+<http://ddhub.no/HasPressureReferenceType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/EndsHydraulicBranchDecomposition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/EndsHydraulicBranchDecomposition> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/HydraulicBranch> .
+<http://ddhub.no/EndsHydraulicBranchDecomposition> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/HydraulicBranch> .
+<http://ddhub.no/EndsHydraulicBranchDecomposition> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsAHydraulicRepresentationFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsAHydraulicRepresentationFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/HydraulicLogicalElement> .
+<http://ddhub.no/IsAHydraulicRepresentationFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingEquipment> .
+<http://ddhub.no/IsAHydraulicRepresentationFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsASubHydraulicNetwork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsASubHydraulicNetwork> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/HydraulicNetwork> .
+<http://ddhub.no/IsASubHydraulicNetwork> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/HydraulicNetwork> .
+<http://ddhub.no/IsASubHydraulicNetwork> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/HasLogicalElementComponent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/HasLogicalElementComponent> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/HydraulicNetwork> .
+<http://ddhub.no/HasLogicalElementComponent> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/HydraulicLogicalElement> .
+<http://ddhub.no/HasLogicalElementComponent> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/HasBranchComponent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/HasBranchComponent> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/HydraulicNetwork> .
+<http://ddhub.no/HasBranchComponent> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/HydraulicBranch> .
+<http://ddhub.no/HasBranchComponent> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/HasBranchCoordinateSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/HasBranchCoordinateSystem> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/HydraulicBranch> .
+<http://ddhub.no/HasBranchCoordinateSystem> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ReferenceFrame> .
+<http://ddhub.no/HasBranchCoordinateSystem> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsAssociatedToHydraulicBranch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsAssociatedToHydraulicBranch> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsAssociatedToHydraulicBranch> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/HydraulicBranch> .
+<http://ddhub.no/IsAssociatedToHydraulicBranch> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/HasHydraulicState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/HasHydraulicState> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/HydraulicLogicalElement> .
+<http://ddhub.no/HasHydraulicState> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/HydraulicElementState> .
+<http://ddhub.no/HasHydraulicState> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/HasHydraulicStateValueFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/HasHydraulicStateValueFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/HasHydraulicStateValueFrom> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/HasHydraulicStateValueFrom> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/HasLeftBranchCoordinates> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/HasLeftBranchCoordinates> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/HydraulicJunction> .
+<http://ddhub.no/HasLeftBranchCoordinates> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/HasLeftBranchCoordinates> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/HasRightBranchCoordinates> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/HasRightBranchCoordinates> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/HydraulicJunction> .
+<http://ddhub.no/HasRightBranchCoordinates> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/HasRightBranchCoordinates> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
 <http://ddhub.no/IsHydraulicallyLocatedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://ddhub.no/IsHydraulicallyLocatedAt> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
 <http://ddhub.no/IsHydraulicallyLocatedAt> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/HydraulicLogicalElement> .
 <http://ddhub.no/IsHydraulicallyLocatedAt> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsEquivalentCirculationDensityAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsEquivalentCirculationDensityAt> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsEquivalentCirculationDensityAt> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/HydraulicLogicalElement> .
+<http://ddhub.no/IsEquivalentCirculationDensityAt> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsHydraulicallyLocatedAt> .
+<http://ddhub.no/IsFluidDensityAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsFluidDensityAt> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsFluidDensityAt> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/HydraulicLogicalElement> .
+<http://ddhub.no/IsFluidDensityAt> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsHydraulicallyLocatedAt> .
+<http://ddhub.no/IsFluidTemperatureAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsFluidTemperatureAt> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsFluidTemperatureAt> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/HydraulicLogicalElement> .
+<http://ddhub.no/IsFluidTemperatureAt> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsHydraulicallyLocatedAt> .
+<http://ddhub.no/IsFluidVelocityAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsFluidVelocityAt> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsFluidVelocityAt> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/HydraulicLogicalElement> .
+<http://ddhub.no/IsFluidVelocityAt> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsHydraulicallyLocatedAt> .
+<http://ddhub.no/IsOpeningRatioAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsOpeningRatioAt> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsOpeningRatioAt> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/HydraulicLogicalElement> .
+<http://ddhub.no/IsOpeningRatioAt> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsHydraulicallyLocatedAt> .
+<http://ddhub.no/IsVolumeAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsVolumeAt> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsVolumeAt> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/HydraulicLogicalElement> .
+<http://ddhub.no/IsVolumeAt> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsHydraulicallyLocatedAt> .
 <http://ddhub.no/IsHydraulicEstimationAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://ddhub.no/IsHydraulicEstimationAt> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
 <http://ddhub.no/IsHydraulicEstimationAt> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/HydraulicLogicalElement> .
@@ -7436,7 +7884,119 @@
 <http://ddhub.no/Accuracy> <http://www.w3.org/2000/01/rdf-schema#comment> "The standard deviation of the systematic bias component of the uncertainty of the sensor. The assumed mean value of the attached Gaussian distribution is the measured value. The value is expected to be in the same physical quantity as the sensor value.\n"@EN .
 <http://ddhub.no/Precision> <http://www.w3.org/2000/01/rdf-schema#comment> "The standard deviation of the repetitive error component of the uncertainty of the sensor. The assumed mean value of the attached Gaussian distribution is the measured value. The value is expected to be in the same physical quantity as the sensor value.\n"@EN .
 <http://ddhub.no/DWISVerb> <http://www.w3.org/2000/01/rdf-schema#comment> "This is the root class for all verbs defined in the DWIS vocabulary. It is used to define a relation between a subject, which can be of any `DWISNoun` and an object, also of any type of `DWISNoun`.\n"@EN .
+<http://ddhub.no/IsEnablingSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to define a `DrillingDataPoint` that is used to enable or disable an `ActivableFunction`.\nIt is expected that the `DrillingDataPoint` is a Boolean value.\n"@EN .
+<http://ddhub.no/IsActivatedSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to define a `DrillingDataPoint` that indicates if the `ActivableFunction` is activated or\nnot. It is expected that the `DrillingDataPoint` is a Boolean value.\n"@EN .
+<http://ddhub.no/AllowEnablementSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to define a `DrillingDataPoint` tells if it is allowed or not to enable or\ndisable an activable function. It is expected that the `DrillingDataPoint` is a Boolean value. If the signal is true,\nthen it is possible to enable or disable the function using the signal associated with `IsEnablingSignalFor`. If it is\nfalse, it is not allowed to enable or disable the `ActivableFunction`, meaning that the signal associated with `IsEnablingSignalFor`\nis ignored.\n"@EN .
+<http://ddhub.no/IsIdlingSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to indicate a `DrillingDataPoint` that tells if the function is in an idle state.\nA function that is idle must be enabled but does not perform any particular control on the machines. For instance, a \n`ProcedureFunction` that has reached its terminal state or a `ControllerFunction` that cannot control anymore its \nparameter because a limit is reached, e.g., autodriller when reaching the `MinDrillHeightVerticalLocation`, or an FDIR\nfunction when there are no incidents that is detected. A SOE function is in idle state, if the used set-points are\nwithin the limits, but if the limits are applied then the idle state is false, because the function acts on the set-points.\n"@EN .
+<http://ddhub.no/IsUserControllableExtraMarginSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to indicate that a `DrillingDataPoint` used by an `FDIRFunction`, extends the calculated\nthreshold value for the fault detection by a user-defined amount. The value of this signal is supposed to be interpreted\nin absolute value. If it is negative, then it is its magnitude that is used. This allows the end-user to increase the margin for\ndetection of an incident. \n"@EN .
+<http://ddhub.no/IsUsedExtraMarginSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to indicate a `DrillingDataPoint` used by an `FDIRFunction` tells whether the\nextra margin signal is used or not by the FDIR function. This signal is expected to be a boolean value.\n"@EN .
+<http://ddhub.no/IsArmedSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to indicate a `DrillingDataPoint` used by an `FDIRFunction` tells if the FDIR function is armed and operative.\nThe signal is supposed to be a Boolean value.\nThe FDIR function may be active, but the current state of the drilling process may imply that the function cannot be\ntriggered. For instance, a pack-off FDIR may be active but would react only if the flow is supposed to be steady state.\n"@EN .
+<http://ddhub.no/IsAlertTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to indicate a `DrillingDataPoint` tells whether an `FDIRFunction` has its alert level\nbeing triggered or not. This signal is expected to be a Boolean value. The signal is expected to be true from the \nmoment the FDIR has triggered  on the alert level to the moment the signal is below the alert level.\n"@EN .
+<http://ddhub.no/IsAlarmTriggeredSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to indicate a `DrillingDataPoint` tells whether an `FDIRFunction` has its alarm level\nbeing triggered or not. This signal is expected to be a Boolean value. The signal is expected to be true from the \nmoment the FDIR has triggered to the moment it has recovered from the incident, if it has a recovery procedure, or to\nthe moment the control is given back to the end-user, in case of failure of the recovery procedure or at the end of \nthe isolation procedure.\n"@EN .
+<http://ddhub.no/IsInSafeModeSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to indicate that a `DrillingDataPoint` tells whether the isolation or the recovery\nprocedures have been aborted and the system has been set in safe mode. The value can only turn true when the tiggered \nsignal is true. This signal is supposed to be a boolean value.\n"@EN .
+<http://ddhub.no/IsImpactDescriptionSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verbs is used to indicate that a `DrillingDataPoint` used by an `FDIRFunction` can be used to\ndescribe the impact of the function on the drilling process. This signal is supposed to be string value.\n"@EN .
+<http://ddhub.no/IsFeatureSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verbs is used to indicate that a `DrillingDataPoint` describes a feature of an `ActivableFunction`\n"@EN .
+<http://ddhub.no/IsRecommendedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the AdvisorySystemAdvice is recommended by an Advisor\n"@EN .
+<http://ddhub.no/IsRecommendedFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the AdvisorySystemAdvice is recommended for an ADCS Activable Function\n"@EN .
+<http://ddhub.no/IsRelatedToDrillingLimit> <http://www.w3.org/2000/01/rdf-schema#comment> "This Verb is used to indicate that a drilling data point is related to a drilling incident.\n"@EN .
+<http://ddhub.no/HasControlLimit> <http://www.w3.org/2000/01/rdf-schema#comment> "This Verb is used to indicate that a drilling data point has a control limit.\n"@EN .
+<http://ddhub.no/IsCharacterizedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "this Verb is used to state some characteristics of a well bore data.\n"@EN .
+<http://ddhub.no/HasOperationalStep> <http://www.w3.org/2000/01/rdf-schema#comment> "this Verb is used to relate an operational step to a rig action plan.\n"@EN .
+<http://ddhub.no/IsAnActionOf> <http://www.w3.org/2000/01/rdf-schema#comment> "this Verb is used to relate an action step to its parent phase step.\n"@EN .
+<http://ddhub.no/IsATaskOf> <http://www.w3.org/2000/01/rdf-schema#comment> "this Verb is used to relate an task step to its parent action step.\n"@EN .
+<http://ddhub.no/IsAContextOf> <http://www.w3.org/2000/01/rdf-schema#comment> "this Verb is used to relate a context to its parent task step.\n"@EN .
+<http://ddhub.no/IsDependentOn> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to describe a general dependence relationship between a `DrillingDataPoint` and something else.\n"@EN .
+<http://ddhub.no/HasPressureReference> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is a specialization of `IsDependentOn` and refers to the specific dependence on a pressure reference.\n"@EN .
+<http://ddhub.no/HasTemperatureReference> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is a specialization of `IsDependentOn` and refers to the specific dependence on a temperature reference.\n"@EN .
+<http://ddhub.no/HasElevationReference> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is a specialization of `IsDependentOn` and refers to the specific dependence on an elevation reference.\n"@EN .
+<http://ddhub.no/IsObservableFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "This `Verb` means that something can be seen, detected, or noticed from a particular\nlocation or perspective. It implies that there is a clear view or means of perception from one point \nto another.\n"@EN .
+<http://ddhub.no/IsSubSystemOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a data flow node is part of a larger system or control structure.\n"@EN .
+<http://ddhub.no/Controls> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a data flow node drives or regulates another equipment or function.\n"@EN .
+<http://ddhub.no/HasFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "Connects a signal to the data flow node that produced it or to the function it relates to.\n"@EN .
+<http://ddhub.no/IsCommandFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Marks a signal as a command sent to a specific node or equipment.\n"@EN .
+<http://ddhub.no/IsComputationInput> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a signal is used as an input by a computation unit.\n"@EN .
+<http://ddhub.no/IsLimitFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Declares that a signal expresses a limit relevant to a node or function.\n"@EN .
+<http://ddhub.no/IsMinimumLimitFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the signal represents the minimum acceptable bound for a function or equipment.\n"@EN .
+<http://ddhub.no/IsMaximumLimitFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the signal represents the maximum acceptable bound for a function or equipment.\n"@EN .
+<http://ddhub.no/IsCurrentStateFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a computed state represents the present state of a target object or process.\n"@EN .
+<http://ddhub.no/IsInformationForCurrentStateOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Provides supporting information about the current state of an object or process.\n"@EN .
+<http://ddhub.no/IsInSafeModeStateFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the target object or process is currently in a safe or fallback mode.\n"@EN .
+<http://ddhub.no/IsSetPointFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies a signal that provides a target value to a controller.\n"@EN .
+<http://ddhub.no/IsSetPointRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Marks a signal as a recommended set-point produced for a control system.\n"@EN .
+<http://ddhub.no/IsSetPointAdviceFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates an advisory set-point that may be reviewed before being applied to a control system.\n"@EN .
+<http://ddhub.no/IsSetPointMinimumRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates a recommended minimum bound for a control system set-point.\n"@EN .
+<http://ddhub.no/IsSetPointMinimumAdviceFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Provides an advisory minimum bound for a control system set-point.\n"@EN .
+<http://ddhub.no/IsSetPointMaximumRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates a recommended maximum bound for a control system set-point.\n"@EN .
+<http://ddhub.no/IsSetPointMaximumAdviceFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Provides an advisory maximum bound for a control system set-point.\n"@EN .
+<http://ddhub.no/IsTransformationInput> <http://www.w3.org/2000/01/rdf-schema#comment> "Declares that a signal is used as an input to a transformation node.\n"@EN .
+<http://ddhub.no/IsBufferingInput> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies a signal that enters a buffering stage.\n"@EN .
+<http://ddhub.no/IsDerivationInput> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies a signal used as the basis for a derivative calculation.\n"@EN .
+<http://ddhub.no/IsResamplingInput> <http://www.w3.org/2000/01/rdf-schema#comment> "Marks a signal that will be resampled to a new rate.\n"@EN .
+<http://ddhub.no/IsTransmissionInput> <http://www.w3.org/2000/01/rdf-schema#comment> "Declares that a signal enters a transmission line for forwarding.\n"@EN .
+<http://ddhub.no/IsGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates which data flow node produced a given signal.\n"@EN .
+<http://ddhub.no/IsComputedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a computed value or state to the computation unit that produced it.\n"@EN .
+<http://ddhub.no/IsMeasuredBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a measured signal with the physical measurement device that collected it.\n"@EN .
+<http://ddhub.no/IsRecordedFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a signal was recorded from another data source or channel.\n"@EN .
+<http://ddhub.no/IsTransformationOutput> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies a signal as the result of a transformation node.\n"@EN .
+<http://ddhub.no/IsBufferingOutput> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates a signal emitted after buffering.\n"@EN .
+<http://ddhub.no/IsDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "States that a signal is obtained by differentiating another signal.\n"@EN .
+<http://ddhub.no/IsIntegratedFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a signal is obtained by integrating another signal.\n"@EN .
+<http://ddhub.no/IsResampledBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a resampled signal to the resampling node that produced it.\n"@EN .
+<http://ddhub.no/IsTransmissionOutput> <http://www.w3.org/2000/01/rdf-schema#comment> "Declares a signal as the output of a transmission line.\n"@EN .
+<http://ddhub.no/IsProcessedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a signal or state is processed by a given data flow node.\n"@EN .
+<http://ddhub.no/IsProvidedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to stipulate that something is provided by a data provider.\n"@EN .
+<http://ddhub.no/IsProvidedTo> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to stipulate that something is provided to a data provider.\n"@EN .
+<http://ddhub.no/IsTransmittedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Expresses that a signal is transmitted by some given telemetry system\n"@EN .
+<http://ddhub.no/IsConditionedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a data point is valid only when the referenced condition is satisfied.\n"@EN .
+<http://ddhub.no/IsConditionInput> <http://www.w3.org/2000/01/rdf-schema#comment> "Declares that a signal feeds a validity condition evaluation.\n"@EN .
+<http://ddhub.no/IsConditionLeft> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies the left-hand operand of a binary validity condition.\n"@EN .
+<http://ddhub.no/IsConditionRight> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies the right-hand operand of a binary validity condition.\n"@EN .
+<http://ddhub.no/IsValidBy> <http://www.w3.org/2000/01/rdf-schema#comment> "States that a validity condition applies to a data point or class of signals.\n"@EN .
+<http://ddhub.no/HasDomain> <http://www.w3.org/2000/01/rdf-schema#comment> "Declares the domain (e.g., depth or time interval) over which a data point is valid.\n"@EN .
+<http://ddhub.no/HasTimeIntervalDomain> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the domain of a data point is defined over a time interval.\n"@EN .
+<http://ddhub.no/HasValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a data point with its stored value.\n"@EN .
+<http://ddhub.no/HasDynamicValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the value is a time-varying drilling signal.\n"@EN .
+<http://ddhub.no/HasStaticValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the value is static (non time-varying).\n"@EN .
+<http://ddhub.no/IsToBeComparedWith> <http://www.w3.org/2000/01/rdf-schema#comment> "States that two data points should be compared for validation or control.\n"@EN .
+<http://ddhub.no/IsToBeGreaterThan> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the subject should stay greater than the object.\n"@EN .
+<http://ddhub.no/IsToBeGreaterOrEqualThan> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the subject should stay greater than or equal to the object.\n"@EN .
+<http://ddhub.no/IsToBeStrictlyGreaterThan> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the subject should stay strictly greater than the object.\n"@EN .
+<http://ddhub.no/IsToBeSmallerThan> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the subject should stay below the object.\n"@EN .
+<http://ddhub.no/IsToBeSmallerOrEqualThan> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the subject should stay below or equal to the object.\n"@EN .
+<http://ddhub.no/IsToBeStrictlySmallerThan> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the subject should stay strictly below the object.\n"@EN .
+<http://ddhub.no/IsToBeEqualTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the subject should match the object.\n"@EN .
+<http://ddhub.no/IsToBeDifferentFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the subject should differ from the object.\n"@EN .
+<http://ddhub.no/IsLocatedAtEquipment> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the drilling data point is associated with a specific piece of equipment.\n"@EN .
+<http://ddhub.no/IsSubPartOf> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
+<http://ddhub.no/AccountsFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to indicate something accounts for a drilling management feature.\n"@EN .
+<http://ddhub.no/IsRelatedToDrillingIncident> <http://www.w3.org/2000/01/rdf-schema#comment> "This Verb is used to indicate that a drilling data point is related to a drilling incident.\n"@EN .
+<http://ddhub.no/ManagesIncident> <http://www.w3.org/2000/01/rdf-schema#comment> "This Verb is used to indicate that a fault detection isolation and recovery function manages a drilling incident.\n"@EN .
+<http://ddhub.no/ImplementsLimit> <http://www.w3.org/2000/01/rdf-schema#comment> "This Verb is used to indicate that a safe operating envelope function implements a drilling limit.\n"@EN .
+<http://ddhub.no/IsRelatedToDrillingObjective> <http://www.w3.org/2000/01/rdf-schema#comment> "This Verb is used to indicate that a drilling data point is related to a drilling objective.\n"@EN .
+<http://ddhub.no/ImplementsObjective> <http://www.w3.org/2000/01/rdf-schema#comment> "This Verb is used to indicate that a control function implements a drilling objective.\n"@EN .
+<http://ddhub.no/IsRelatedToDrillingProcedure> <http://www.w3.org/2000/01/rdf-schema#comment> "This Verb is used to indicate that a drilling data point is related to a drilling procedure.\n"@EN .
+<http://ddhub.no/ImplementsProcedure> <http://www.w3.org/2000/01/rdf-schema#comment> "This Verb is used to indicate that a Procedure Function implements a drilling procedure.\n"@EN .
+<http://ddhub.no/BelongsToClass> <http://www.w3.org/2000/01/rdf-schema#comment> "The verb is used between a node and a Noun, i.e., a class. Semantically it can be considered as a synonym to `rdf:type`. It has been introduced to overcome limitations from OPC-UA that does not allow for multiple inheritance. Note that the same node can be in relation using `BelongsToClass` to several classes.\n"@EN .
+<http://ddhub.no/HasEndPoint> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a drilling signal with an external endpoint that provides or receives it.\n"@EN .
+<http://ddhub.no/HasPressureReferenceType> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the pressure reference basis used for a pressure data point.\n"@EN .
+<http://ddhub.no/EndsHydraulicBranchDecomposition> <http://www.w3.org/2000/01/rdf-schema#comment> "Marks the terminating branch when decomposing a hydraulic path.\n"@EN .
+<http://ddhub.no/IsAHydraulicRepresentationFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a hydraulic element to the piece of equipment it represents.\n"@EN .
+<http://ddhub.no/IsASubHydraulicNetwork> <http://www.w3.org/2000/01/rdf-schema#comment> "Declares that a hydraulic network is a sub-hydraulic network of another one.\n"@EN .
+<http://ddhub.no/HasLogicalElementComponent> <http://www.w3.org/2000/01/rdf-schema#comment> "Declares that a hydraulic network has a hydraulic logical element.\n"@EN .
+<http://ddhub.no/HasBranchComponent> <http://www.w3.org/2000/01/rdf-schema#comment> "Declares that a hydraulic network contains a branch.\n"@EN .
+<http://ddhub.no/HasBranchCoordinateSystem> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a coordinate system with a hydraulic branch.\n"@EN .
+<http://ddhub.no/IsAssociatedToHydraulicBranch> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates drilling data point to a hydraulic branch.\n"@EN .
+<http://ddhub.no/HasHydraulicState> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the current state of a hydraulic logical element.\n"@EN .
+<http://ddhub.no/HasHydraulicStateValueFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the state value is provided by another signal or computation.\n"@EN .
+<http://ddhub.no/HasLeftBranchCoordinates> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates coordinate data for the left branch of a junction.\n"@EN .
+<http://ddhub.no/HasRightBranchCoordinates> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates coordinate data for the right branch of a junction.\n"@EN .
 <http://ddhub.no/IsHydraulicallyLocatedAt> <http://www.w3.org/2000/01/rdf-schema#comment> "Places a measurement or estimation at a specific hydraulic element.\n"@EN .
+<http://ddhub.no/IsEquivalentCirculationDensityAt> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a data point represents ECD at a hydraulic element.\n"@EN .
+<http://ddhub.no/IsFluidDensityAt> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates fluid density at a hydraulic element.\n"@EN .
+<http://ddhub.no/IsFluidTemperatureAt> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates fluid temperature at a hydraulic element.\n"@EN .
+<http://ddhub.no/IsFluidVelocityAt> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates fluid velocity at a hydraulic element.\n"@EN .
+<http://ddhub.no/IsOpeningRatioAt> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates an opening ratio (e.g., choke valve) at a hydraulic element.\n"@EN .
+<http://ddhub.no/IsVolumeAt> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates a volume measurement for a HydraulicLogicalElement.\n"@EN .
 <http://ddhub.no/IsHydraulicEstimationAt> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a value is an estimated hydraulic parameter at an element.\n"@EN .
 <http://ddhub.no/IsHydraulicMaximumAllowedRateOfChangeAt> <http://www.w3.org/2000/01/rdf-schema#comment> "Maximum allowable rate of change for a hydraulic parameter at an element.\n"@EN .
 <http://ddhub.no/IsHydraulicMaximumAllowedValueAt> <http://www.w3.org/2000/01/rdf-schema#comment> "Maximum allowable value of a hydraulic parameter at an element.\n"@EN .
