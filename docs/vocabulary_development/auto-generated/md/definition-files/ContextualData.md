@@ -359,7 +359,7 @@ This example links a drilling data point to the OperationalStep definition.
 A phase step is at the first level of a rig action plan.
 - Definition set: ContextualData
 - Examples:
-``` dwis rigActionPlan_0 phaseStep_0
+``` dwis rigActionPlan_0
 DynamicDrillingSignal:phaseStep_0
 PhaseStep:phaseStep_1
 phaseStep_1 HasDynamicValue phaseStep_0
@@ -384,7 +384,7 @@ An example SparQL query looks like this:
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX ddhub: <http://ddhub.no/>
 PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
-SELECT ?rigActionPlan_0, ?phaseStep_0
+SELECT ?rigActionPlan_0
 WHERE {
 	?phaseStep_0 rdf:type ddhub:DynamicDrillingSignal .
 	?phaseStep_1 rdf:type ddhub:PhaseStep .
@@ -402,7 +402,7 @@ WHERE {
 An action step is at the second level of a rig action plan.
 - Definition set: ContextualData
 - Examples:
-``` dwis rigActionPlan_0 phaseStep_0 actionStep_0
+``` dwis rigActionPlan_0
 DynamicDrillingSignal:actionStep_0
 ActionStep:actionStep_1
 actionStep_1 HasDynamicValue actionStep_0
@@ -435,7 +435,7 @@ An example SparQL query looks like this:
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX ddhub: <http://ddhub.no/>
 PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
-SELECT ?rigActionPlan_0, ?phaseStep_0, ?actionStep_0
+SELECT ?rigActionPlan_0
 WHERE {
 	?actionStep_0 rdf:type ddhub:DynamicDrillingSignal .
 	?actionStep_1 rdf:type ddhub:ActionStep .
@@ -457,7 +457,7 @@ WHERE {
 A task step is at the third level of a rig action plan.
 - Definition set: ContextualData
 - Examples:
-``` dwis rigActionPlan_0 phaseStep_0 actionStep_0 taskStep_0
+``` dwis rigActionPlan_0
 DynamicDrillingSignal:taskStep_0
 TaskStep:taskStep_1
 taskStep_1 HasDynamicValue taskStep_0
@@ -498,7 +498,7 @@ An example SparQL query looks like this:
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX ddhub: <http://ddhub.no/>
 PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
-SELECT ?rigActionPlan_0, ?phaseStep_0, ?actionStep_0, ?taskStep_0
+SELECT ?rigActionPlan_0
 WHERE {
 	?taskStep_0 rdf:type ddhub:DynamicDrillingSignal .
 	?taskStep_1 rdf:type ddhub:TaskStep .
@@ -524,7 +524,7 @@ WHERE {
 A context is at the fourth level of a rig action plan.
 - Definition set: ContextualData
 - Examples:
-``` dwis rigActionPlan_0 phaseStep_0 actionStep_0 taskStep_0 context_0
+``` dwis rigActionPlan_0
 DynamicDrillingSignal:contextStep_0
 Context:contextStep_1
 contextStep_1 HasDynamicValue contextStep_0
@@ -573,7 +573,7 @@ An example SparQL query looks like this:
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX ddhub: <http://ddhub.no/>
 PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
-SELECT ?rigActionPlan_0, ?phaseStep_0, ?actionStep_0, ?taskStep_0, ?context_0
+SELECT ?rigActionPlan_0
 WHERE {
 	?contextStep_0 rdf:type ddhub:DynamicDrillingSignal .
 	?contextStep_1 rdf:type ddhub:Context .
@@ -1812,7 +1812,7 @@ WHERE {
 - Description: 
 this Verb is used to relate an operational step to a rig action plan.
 - Examples:
-``` dwis rigActionPlan_0 phaseStep_0
+``` dwis rigActionPlan_0
 DynamicDrillingSignal:phaseStep_0
 PhaseStep:phaseStep_1
 phaseStep_1 HasDynamicValue phaseStep_0
@@ -1837,7 +1837,7 @@ An example SparQL query looks like this:
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX ddhub: <http://ddhub.no/>
 PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
-SELECT ?rigActionPlan_0, ?phaseStep_0
+SELECT ?rigActionPlan_0
 WHERE {
 	?phaseStep_0 rdf:type ddhub:DynamicDrillingSignal .
 	?phaseStep_1 rdf:type ddhub:PhaseStep .
@@ -1857,7 +1857,7 @@ WHERE {
 - Description: 
 this Verb is used to relate an action step to its parent phase step.
 - Examples:
-``` dwis rigActionPlan_0 phaseStep_0 actionStep_0
+``` dwis rigActionPlan_0
 DynamicDrillingSignal:actionStep_0
 ActionStep:actionStep_1
 actionStep_1 HasDynamicValue actionStep_0
@@ -1890,7 +1890,7 @@ An example SparQL query looks like this:
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX ddhub: <http://ddhub.no/>
 PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
-SELECT ?rigActionPlan_0, ?phaseStep_0, ?actionStep_0
+SELECT ?rigActionPlan_0
 WHERE {
 	?actionStep_0 rdf:type ddhub:DynamicDrillingSignal .
 	?actionStep_1 rdf:type ddhub:ActionStep .
@@ -1914,7 +1914,7 @@ WHERE {
 - Description: 
 this Verb is used to relate an task step to its parent action step.
 - Examples:
-``` dwis rigActionPlan_0 phaseStep_0 actionStep_0 taskStep_0
+``` dwis rigActionPlan_0
 DynamicDrillingSignal:taskStep_0
 TaskStep:taskStep_1
 taskStep_1 HasDynamicValue taskStep_0
@@ -1955,7 +1955,7 @@ An example SparQL query looks like this:
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX ddhub: <http://ddhub.no/>
 PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
-SELECT ?rigActionPlan_0, ?phaseStep_0, ?actionStep_0, ?taskStep_0
+SELECT ?rigActionPlan_0
 WHERE {
 	?taskStep_0 rdf:type ddhub:DynamicDrillingSignal .
 	?taskStep_1 rdf:type ddhub:TaskStep .
@@ -1983,7 +1983,7 @@ WHERE {
 - Description: 
 this Verb is used to relate a context to its parent task step.
 - Examples:
-``` dwis rigActionPlan_0 phaseStep_0 actionStep_0 taskStep_0 context_0
+``` dwis rigActionPlan_0
 DynamicDrillingSignal:contextStep_0
 Context:contextStep_1
 contextStep_1 HasDynamicValue contextStep_0
@@ -2032,7 +2032,7 @@ An example SparQL query looks like this:
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX ddhub: <http://ddhub.no/>
 PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
-SELECT ?rigActionPlan_0, ?phaseStep_0, ?actionStep_0, ?taskStep_0, ?context_0
+SELECT ?rigActionPlan_0
 WHERE {
 	?contextStep_0 rdf:type ddhub:DynamicDrillingSignal .
 	?contextStep_1 rdf:type ddhub:Context .
