@@ -97,6 +97,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{02
 		..\..\..\docs\vocabulary_development\examples\SemanticForRetrievingStandardDrillingSignals.md = ..\..\..\docs\vocabulary_development\examples\SemanticForRetrievingStandardDrillingSignals.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples-new", "Examples-new", "{730A5FFA-C19A-42F4-9BA1-B81528061691}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\docs\vocabulary_development\examples-new\AlongStringMeasurement.md = ..\..\..\docs\vocabulary_development\examples-new\AlongStringMeasurement.md
+		..\..\..\docs\vocabulary_development\examples-new\CuttingsFlowFromShaleShakers.md = ..\..\..\docs\vocabulary_development\examples-new\CuttingsFlowFromShaleShakers.md
+		..\..\..\docs\vocabulary_development\examples-new\InlineConcentricRheometer.md = ..\..\..\docs\vocabulary_development\examples-new\InlineConcentricRheometer.md
+		..\..\..\docs\vocabulary_development\examples-new\InlinePipeRheometerRheometer.md = ..\..\..\docs\vocabulary_development\examples-new\InlinePipeRheometerRheometer.md
+		..\..\..\docs\vocabulary_development\examples-new\InstrumentedSaverSub.md = ..\..\..\docs\vocabulary_development\examples-new\InstrumentedSaverSub.md
+		..\..\..\docs\vocabulary_development\examples-new\MechanicalSubInBHAMudPulseTelemetry.md = ..\..\..\docs\vocabulary_development\examples-new\MechanicalSubInBHAMudPulseTelemetry.md
+		..\..\..\docs\vocabulary_development\examples-new\SemanticForRetrievingStandardDrillingSignals.md = ..\..\..\docs\vocabulary_development\examples-new\SemanticForRetrievingStandardDrillingSignals.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -184,6 +195,7 @@ Global
 		{F80F4165-8844-4887-A8EA-D613165C1103} = {A6B119D7-8E09-4B79-9D51-4E867667EF47}
 		{6448F601-D036-4F89-AACB-0D3B783F7EC1} = {CF2537FB-A715-4093-A40E-155C61C6CF17}
 		{02EA681E-C7D8-13C7-8484-4AC65E1B71E8} = {CF2537FB-A715-4093-A40E-155C61C6CF17}
+		{730A5FFA-C19A-42F4-9BA1-B81528061691} = {CF2537FB-A715-4093-A40E-155C61C6CF17}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F325564A-BA5A-4860-BA83-72F0743F08F9}
