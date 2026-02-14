@@ -60,6 +60,26 @@
 <http://ddhub.no/TaskStep> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OperationalStep> .
 <http://ddhub.no/Context> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/Context> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OperationalStep> .
+<http://ddhub.no/GeodeticDatum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/GeodeticDatum> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ContextualData> .
+<http://ddhub.no/CartographicProjection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/CartographicProjection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ContextualData> .
+<http://ddhub.no/Field> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Field> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ContextualData> .
+<http://ddhub.no/Cluster> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Cluster> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ContextualData> .
+<http://ddhub.no/TargetGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/TargetGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ContextualData> .
+<http://ddhub.no/Target> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Target> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ContextualData> .
+<http://ddhub.no/Well> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Well> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ContextualData> .
+<http://ddhub.no/WellConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/WellConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ContextualData> .
+<http://ddhub.no/WellBore> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/WellBore> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ContextualData> .
+<http://ddhub.no/WellBoreConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/WellBoreConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ContextualData> .
 <http://ddhub.no/WellBoreData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/WellBoreData> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ContextualData> .
 <http://ddhub.no/TrajectoryDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -94,6 +114,8 @@
 <http://ddhub.no/StratigraphyDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/WellBoreData> .
 <http://ddhub.no/RigDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/RigDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/WellBoreData> .
+<http://ddhub.no/WellBoreArchitectureConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/WellBoreArchitectureConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ContextualData> .
 <http://ddhub.no/RigActionPlanProcessingStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/RigActionPlanProcessingStatus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/JSonDataType> .
 <http://ddhub.no/ContinuousDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -497,6 +519,12 @@
 <http://ddhub.no/CorrectedMeasurement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Measurement> .
 <http://ddhub.no/ComputedData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ComputedData> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/PhysicalData> .
+<http://ddhub.no/EstimationParameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/EstimationParameter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/CalibrationParameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/CalibrationParameter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/EstimationParameter> .
+<http://ddhub.no/CorrectionFactor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/CorrectionFactor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/EstimationParameter> .
 <http://ddhub.no/DrillingSignal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/DrillingSignal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onProperty> <http://ddhub.no/Value> .
@@ -4589,6 +4617,16 @@
 <http://ddhub.no/ActionStep> <http://www.w3.org/2000/01/rdf-schema#comment> "An action step is at the second level of a rig action plan.\n"@EN .
 <http://ddhub.no/TaskStep> <http://www.w3.org/2000/01/rdf-schema#comment> "A task step is at the third level of a rig action plan.\n"@EN .
 <http://ddhub.no/Context> <http://www.w3.org/2000/01/rdf-schema#comment> "A context is at the fourth level of a rig action plan.\n"@EN .
+<http://ddhub.no/GeodeticDatum> <http://www.w3.org/2000/01/rdf-schema#comment> "GeodeticDatum is used to describe a geodetic datum with reference to WGS84. It describes both the size of the spheroid and its translation, rotation and scaling compared to WGS84.\n"@EN .
+<http://ddhub.no/CartographicProjection> <http://www.w3.org/2000/01/rdf-schema#comment> "CartographicProjection is used to describe the projection that is used to transform geodetic coordinates in a geodetic datum to and from map coordinates.\n"@EN .
+<http://ddhub.no/Field> <http://www.w3.org/2000/01/rdf-schema#comment> "Field is used to describe a region in which some energy reserves exist.\n"@EN .
+<http://ddhub.no/Cluster> <http://www.w3.org/2000/01/rdf-schema#comment> "Cluster is used to describe a group of slots. Sometime, it is referred as a pad.\n"@EN .
+<http://ddhub.no/TargetGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "TargetGroup is used to describe meta information a group of targets, for instance whether they should be reached in sequence or from multi-laterals.\n"@EN .
+<http://ddhub.no/Target> <http://www.w3.org/2000/01/rdf-schema#comment> "Target is used to describe meta information the region in the reservoir by which a wellbore is intended to pass through.\n"@EN .
+<http://ddhub.no/Well> <http://www.w3.org/2000/01/rdf-schema#comment> "Well is used to describe meta information about the wellbores that connect a specific point at the surface of the earth and the targets in a target group.\n"@EN .
+<http://ddhub.no/WellConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "WellConcept is used to describe meta information about possibilities for a well at the planning stage.\n"@EN .
+<http://ddhub.no/WellBore> <http://www.w3.org/2000/01/rdf-schema#comment> "Wellbore is used to describe meta information about the borehole like its tie in point or which slot it starts from.\n"@EN .
+<http://ddhub.no/WellBoreConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "WellBoreConcept is used to describe meta information about the possibilities for a wellbore at the planning stage.\n"@EN .
 <http://ddhub.no/WellBoreData> <http://www.w3.org/2000/01/rdf-schema#comment> "Captures contextual information describing wellbore characteristics and elements.\n"@EN .
 <http://ddhub.no/TrajectoryDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "A trajectory contains information about the position of the wellbore.\n"@EN .
 <http://ddhub.no/FluidDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "Drilling fluid contains information about the density, rheological behavior, thermo-physical and chemical characteristics of a fluid\nused during a drilling operation.\n"@EN .
@@ -4606,6 +4644,7 @@
 <http://ddhub.no/FormationStrengthDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "The formation strength data structure describes the formation strength and internal friction angle of the formation\nencountered along the wellbore.\n"@EN .
 <http://ddhub.no/StratigraphyDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "The stratigraphy data structure describes the type of rock, the porosity, permeability and fluid saturations\nof the formation layers that are encountered along the wellbore.\n"@EN .
 <http://ddhub.no/RigDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "The rig data structure describes the characteristics of the drilling equipment and any additional equipment\nassociated with non-standard drilling methods, e.g., back-pressure MPD, dual-gradient,...\n"@EN .
+<http://ddhub.no/WellBoreArchitectureConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "WellBoreArchitectureConcept is used to describe meta information about the possibilities for the architecture of a wellbore at the planning stage.\n"@EN .
 <http://ddhub.no/RigActionPlanProcessingStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "The currently executed state of the rig action plan, stored in a JSon string.\n"@EN .
 <http://ddhub.no/ContinuousDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies that the data is continuous.\n"@EN .
 <http://ddhub.no/DateDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the data is a date.\n"@EN .
@@ -4793,6 +4832,9 @@
 <http://ddhub.no/DerivedMeasurement> <http://www.w3.org/2000/01/rdf-schema#comment> "A measurement obtained through transformation or computation rather than direct sensing.\n"@EN .
 <http://ddhub.no/CorrectedMeasurement> <http://www.w3.org/2000/01/rdf-schema#comment> "A measurement that has been corrected for bias or known offsets.\n"@EN .
 <http://ddhub.no/ComputedData> <http://www.w3.org/2000/01/rdf-schema#comment> "A physical data point generated by a computation or model rather than direct measurement.\n"@EN .
+<http://ddhub.no/EstimationParameter> <http://www.w3.org/2000/01/rdf-schema#comment> "A quantity describing the configuration or internal state of a data interpretation\nor estimation model rather than the physical drilling process.\n"@EN .
+<http://ddhub.no/CalibrationParameter> <http://www.w3.org/2000/01/rdf-schema#comment> "An estimation parameter that maps a sensor representation to a physical quantity through scaling or conversion.\n"@EN .
+<http://ddhub.no/CorrectionFactor> <http://www.w3.org/2000/01/rdf-schema#comment> "An estimation parameter used to compensate systematic bias or mismatch in a computed or measured quantity.\n"@EN .
 <http://ddhub.no/DrillingSignal> <http://www.w3.org/2000/01/rdf-schema#comment> "Data structure used to store the streaming drilling data.\n"@EN .
 <http://ddhub.no/DynamicDrillingSignal> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents a time-stamped drilling signal acquired or recorded over time.\n"@EN .
 <http://ddhub.no/Equipment> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
@@ -7375,6 +7417,22 @@
 <http://ddhub.no/IsLocatedAtEquipment> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
 <http://ddhub.no/IsLocatedAtEquipment> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Equipment> .
 <http://ddhub.no/IsLocatedAtEquipment> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/Adjusts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/Adjusts> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/EstimationParameter> .
+<http://ddhub.no/Adjusts> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/Adjusts> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/Corrects> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/Corrects> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/CorrectionFactor> .
+<http://ddhub.no/Corrects> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/Corrects> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/Adjusts> .
+<http://ddhub.no/Scales> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/Scales> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/CalibrationParameter> .
+<http://ddhub.no/Scales> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/Scales> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/Adjusts> .
+<http://ddhub.no/IsGainOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsGainOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/CalibrationParameter> .
+<http://ddhub.no/IsGainOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Transformation> .
+<http://ddhub.no/IsGainOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/Adjusts> .
 <http://ddhub.no/IsSubPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://ddhub.no/IsSubPartOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingEquipment> .
 <http://ddhub.no/IsSubPartOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DrillingEquipment> .
@@ -7967,6 +8025,10 @@
 <http://ddhub.no/IsToBeEqualTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the subject should match the object.\n"@EN .
 <http://ddhub.no/IsToBeDifferentFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the subject should differ from the object.\n"@EN .
 <http://ddhub.no/IsLocatedAtEquipment> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the drilling data point is associated with a specific piece of equipment.\n"@EN .
+<http://ddhub.no/Adjusts> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that an EstimationParameter is applied to modify the interpretation of a DrillingDataPoint.\n"@EN .
+<http://ddhub.no/Corrects> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a CorrectionFactor is applied to compensate systematic bias\nin a DrillingDataPoint during interpretation or computation.\n"@EN .
+<http://ddhub.no/Scales> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a CalibrationParameter is applied as a multiplicative factor\nwhen converting or correcting a DrillingDataPoint.\n"@EN .
+<http://ddhub.no/IsGainOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a CalibrationParameter defines the multiplicative gain used by a\nTransformation when producing its output.\n"@EN .
 <http://ddhub.no/IsSubPartOf> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
 <http://ddhub.no/AccountsFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to indicate something accounts for a drilling management feature.\n"@EN .
 <http://ddhub.no/IsRelatedToDrillingIncident> <http://www.w3.org/2000/01/rdf-schema#comment> "This Verb is used to indicate that a drilling data point is related to a drilling incident.\n"@EN .

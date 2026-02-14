@@ -162,6 +162,12 @@ ddhub:AdapterSpool a owl:Class;
 ddhub:AdjustableKickoffSub a owl:Class; 
                            rdfs:comment ""@EN; 
                            rdfs:subClassOf ddhub:DrillingEquipment. 
+ddhub:Adjusts a owl:ObjectProperty; 
+              rdfs:comment """Indicates that an EstimationParameter is applied to modify the interpretation of a DrillingDataPoint.
+"""@EN; 
+              rdfs:domain ddhub:EstimationParameter; 
+              rdfs:range ddhub:DrillingDataPoint; 
+              rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:Advice a owl:Class; 
              rdfs:comment """An advisory value or range proposed by a system or expert, typically requiring confirmation.
 """@EN; 
@@ -971,6 +977,10 @@ ddhub:CalibrationModel a owl:Class;
                        rdfs:comment """A model that focuses on adjusting parameters to improve alignment with observed data.
 """@EN; 
                        rdfs:subClassOf ddhub:ModelingObjective. 
+ddhub:CalibrationParameter a owl:Class; 
+                           rdfs:comment """An estimation parameter that maps a sensor representation to a physical quantity through scaling or conversion.
+"""@EN; 
+                           rdfs:subClassOf ddhub:EstimationParameter. 
 ddhub:Calorie a owl:Class; 
               rdfs:comment """[v] = a * [SI]
 where
@@ -1150,6 +1160,10 @@ ddhub:CartesianTwoDimensionalReferenceFrame a owl:Class;
                                             rdfs:comment """Reference location for CartesianTwoDimensionalReferenceFrame.
 """@EN; 
                                             rdfs:subClassOf ddhub:TwoDimensionalReferenceFrame. 
+ddhub:CartographicProjection a owl:Class; 
+                             rdfs:comment """CartographicProjection is used to describe the projection that is used to transform geodetic coordinates in a geodetic datum to and from map coordinates.
+"""@EN; 
+                             rdfs:subClassOf ddhub:ContextualData. 
 ddhub:CasedHoleTools a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:WirelineLoggingTools. 
@@ -1724,6 +1738,10 @@ ddhub:Clock a owl:Class;
             rdfs:comment """Represents a clock
 """@EN; 
             rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:Cluster a owl:Class; 
+              rdfs:comment """Cluster is used to describe a group of slots. Sometime, it is referred as a pad.
+"""@EN; 
+              rdfs:subClassOf ddhub:ContextualData. 
 ddhub:ClusterPositionLocation a owl:Class; 
                               rdfs:comment """Reference location for ClusterPositionLocation.
 """@EN; 
@@ -1906,6 +1924,17 @@ ddhub:CorrectedMeasurement a owl:Class;
                            rdfs:comment """A measurement that has been corrected for bias or known offsets.
 """@EN; 
                            rdfs:subClassOf ddhub:Measurement. 
+ddhub:CorrectionFactor a owl:Class; 
+                       rdfs:comment """An estimation parameter used to compensate systematic bias or mismatch in a computed or measured quantity.
+"""@EN; 
+                       rdfs:subClassOf ddhub:EstimationParameter. 
+ddhub:Corrects a owl:ObjectProperty; 
+               rdfs:comment """Indicates that a CorrectionFactor is applied to compensate systematic bias
+in a DrillingDataPoint during interpretation or computation.
+"""@EN; 
+               rdfs:domain ddhub:CorrectionFactor; 
+               rdfs:range ddhub:DrillingDataPoint; 
+               rdfs:subPropertyOf ddhub:Adjusts. 
 ddhub:CoulombPerSecond a owl:Class; 
                        rdfs:comment """[v] = a * [SI]
 where
@@ -4097,6 +4126,11 @@ ddhub:Equipment a owl:Class;
 ddhub:EquipmentTelemetry a owl:Class; 
                          rdfs:comment ""@EN; 
                          rdfs:subClassOf ddhub:LoggingEquipment. 
+ddhub:EstimationParameter a owl:Class; 
+                          rdfs:comment """A quantity describing the configuration or internal state of a data interpretation
+or estimation model rather than the physical drilling process.
+"""@EN; 
+                          rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:Estimator a owl:Class; 
                 rdfs:comment """An estimator is a computation unit that estimates unmeasured variables of a process. Its output is typically a set of ComputedData, i.e., a specialisation of DrillingDataPoint.
 """@EN; 
@@ -4228,6 +4262,10 @@ and
 Femto = 1e-15
 """@EN; 
                 rdfs:subClassOf ddhub:Unit. 
+ddhub:Field a owl:Class; 
+            rdfs:comment """Field is used to describe a region in which some energy reserves exist.
+"""@EN; 
+            rdfs:subClassOf ddhub:ContextualData. 
 ddhub:FillPipeFeature a owl:Class; 
                       rdfs:comment """A fill pipe feature indicates that something accounts for filling the pipe when there is an air gap.
 """@EN; 
@@ -5022,6 +5060,10 @@ ddhub:GenericUncertainty a owl:Class;
                          rdfs:comment """The uncertainty is represented by a `Histogram`.
 """@EN; 
                          rdfs:subClassOf ddhub:SignalUncertainty. 
+ddhub:GeodeticDatum a owl:Class; 
+                    rdfs:comment """GeodeticDatum is used to describe a geodetic datum with reference to WGS84. It describes both the size of the spheroid and its translation, rotation and scaling compared to WGS84.
+"""@EN; 
+                    rdfs:subClassOf ddhub:ContextualData. 
 ddhub:GeoPressuresDescription a owl:Class; 
                               rdfs:comment """The geo-pressure data structure describes the pore pressure, collapse pressure, min horizontal stress, fracturing pressure
 along the wellbore.
@@ -7058,6 +7100,13 @@ ddhub:IsForMotionType a owl:ObjectProperty;
                       rdfs:domain ddhub:DrillingDataPoint; 
                       rdfs:range ddhub:MotionType; 
                       rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsGainOf a owl:ObjectProperty; 
+               rdfs:comment """Indicates that a CalibrationParameter defines the multiplicative gain used by a
+Transformation when producing its output.
+"""@EN; 
+               rdfs:domain ddhub:CalibrationParameter; 
+               rdfs:range ddhub:Transformation; 
+               rdfs:subPropertyOf ddhub:Adjusts. 
 ddhub:IsGeneratedBy a owl:ObjectProperty; 
                     rdfs:comment """Indicates which data flow node produced a given signal.
 """@EN; 
@@ -15241,6 +15290,13 @@ ddhub:SandSeparatorLogical a owl:Class;
 ddhub:SandTrap a owl:Class; 
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:MudPits. 
+ddhub:Scales a owl:ObjectProperty; 
+             rdfs:comment """Indicates that a CalibrationParameter is applied as a multiplicative factor
+when converting or correcting a DrillingDataPoint.
+"""@EN; 
+             rdfs:domain ddhub:CalibrationParameter; 
+             rdfs:range ddhub:DrillingDataPoint; 
+             rdfs:subPropertyOf ddhub:Adjusts. 
 ddhub:ScandinavianMile a owl:Class; 
                        rdfs:comment """[v] = a * [SI]
 where
@@ -16192,6 +16248,14 @@ ddhub:TankLogical a owl:Class;
                   rdfs:comment """A storage element for drilling fluid within the hydraulic system.
 """@EN; 
                   rdfs:subClassOf ddhub:HydraulicLogicalElement. 
+ddhub:Target a owl:Class; 
+             rdfs:comment """Target is used to describe meta information the region in the reservoir by which a wellbore is intended to pass through.
+"""@EN; 
+             rdfs:subClassOf ddhub:ContextualData. 
+ddhub:TargetGroup a owl:Class; 
+                  rdfs:comment """TargetGroup is used to describe meta information a group of targets, for instance whether they should be reached in sequence or from multi-laterals.
+"""@EN; 
+                  rdfs:subClassOf ddhub:ContextualData. 
 ddhub:TaskStep a owl:Class; 
                rdfs:comment """A task step is at the third level of a rig action plan.
 """@EN; 
@@ -17336,6 +17400,18 @@ ddhub:WeightTransferObjective a owl:Class;
                               rdfs:comment """This Noun is used to refer to the objective of transferring weight to the bottom of the drill-stem.
 """@EN; 
                               rdfs:subClassOf ddhub:DrillingObjective. 
+ddhub:Well a owl:Class; 
+           rdfs:comment """Well is used to describe meta information about the wellbores that connect a specific point at the surface of the earth and the targets in a target group.
+"""@EN; 
+           rdfs:subClassOf ddhub:ContextualData. 
+ddhub:WellBore a owl:Class; 
+               rdfs:comment """Wellbore is used to describe meta information about the borehole like its tie in point or which slot it starts from.
+"""@EN; 
+               rdfs:subClassOf ddhub:ContextualData. 
+ddhub:WellBoreArchitectureConcept a owl:Class; 
+                                  rdfs:comment """WellBoreArchitectureConcept is used to describe meta information about the possibilities for the architecture of a wellbore at the planning stage.
+"""@EN; 
+                                  rdfs:subClassOf ddhub:ContextualData. 
 ddhub:WellboreArchitectureDescription a owl:Class; 
                                       rdfs:comment """The wellbore architecture provides information about the casings and liners in place as well as the current
 open hole configuration. Also the surface architecture, i.e., everything above the wellhead, is also described, e.g., BOP, high 
@@ -17346,6 +17422,10 @@ ddhub:WellboreCenterLineFrame a owl:Class;
                               rdfs:comment """Reference location for WellboreCenterLineFrame.
 """@EN; 
                               rdfs:subClassOf ddhub:OneDimensionalCurviLinearReferenceFrame. 
+ddhub:WellBoreConcept a owl:Class; 
+                      rdfs:comment """WellBoreConcept is used to describe meta information about the possibilities for a wellbore at the planning stage.
+"""@EN; 
+                      rdfs:subClassOf ddhub:ContextualData. 
 ddhub:WellBoreData a owl:Class; 
                    rdfs:comment """Captures contextual information describing wellbore characteristics and elements.
 """@EN; 
@@ -17364,6 +17444,10 @@ ddhub:WellboreUID a owl:DatatypeProperty, owl:FunctionalProperty;
 """@EN; 
                   rdfs:domain ddhub:WitsMLTimeBasedLogEndPoint; 
                   rdfs:range xsd:string. 
+ddhub:WellConcept a owl:Class; 
+                  rdfs:comment """WellConcept is used to describe meta information about possibilities for a well at the planning stage.
+"""@EN; 
+                  rdfs:subClassOf ddhub:ContextualData. 
 ddhub:WellcontrolStackEquipment a owl:Class; 
                                 rdfs:comment ""@EN; 
                                 rdfs:subClassOf ddhub:CoiledTubingEquipment. 

@@ -40,6 +40,9 @@ Measurement <|-- DirectMeasurement
 Measurement <|-- DerivedMeasurement
 Measurement <|-- CorrectedMeasurement
 PhysicalData <|-- ComputedData
+DWISNoun <|-- EstimationParameter
+EstimationParameter <|-- CalibrationParameter
+EstimationParameter <|-- CorrectionFactor
 DWISNoun <|-- DrillingSignal
 DrillingSignal <|-- DynamicDrillingSignal
 ```
@@ -1250,6 +1253,162 @@ WHERE {
 }
 ```
 This example shows a computed standpipe pressure from a simulator.
+## EstimationParameter <!-- NOUN -->
+- Display name: Estimation Parameter
+- Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Description: 
+A quantity describing the configuration or internal state of a data interpretation
+or estimation model rather than the physical drilling process.
+- Definition set: DrillingDataSemantics
+- Examples:
+```dwis KalmanFilterStateConfidenceExample
+DynamicDrillingSignal:KalmanFilterStateConfidence
+ComputedData:KalmanFilterStateConfidence#01
+KalmanFilterStateConfidence#01 BelongsToClass ContinuousDataType
+KalmanFilterStateConfidence#01 BelongsToClass EstimationParameter
+KalmanFilterStateConfidence#01 IsOfMeasurableQuantity DimensionLessStandard
+KalmanFilterStateConfidence#01 HasDynamicValue KalmanFilterStateConfidence
+DataAnalysisService:pitVolumeEstimator#01
+KalmanFilterStateConfidence#01 IsProvidedBy pitVolumeEstimator#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KalmanFilterStateConfidence] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[KalmanFilterStateConfidence#01] -->|BelongsToClass| N0003(ComputedData) 
+	N0002[KalmanFilterStateConfidence#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[KalmanFilterStateConfidence#01] -->|BelongsToClass| N0005(EstimationParameter) 
+	N0002[KalmanFilterStateConfidence#01] -->|IsOfMeasurableQuantity| N0006[DimensionLessStandard] 
+	N0002[KalmanFilterStateConfidence#01] -->|HasDynamicValue| N0000[KalmanFilterStateConfidence] 
+	N0007[pitVolumeEstimator#01] -->|BelongsToClass| N0008(DataAnalysisService) 
+	N0002[KalmanFilterStateConfidence#01] -->|IsProvidedBy| N0007[pitVolumeEstimator#01] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?KalmanFilterStateConfidenceExample
+WHERE {
+	?KalmanFilterStateConfidence rdf:type ddhub:DynamicDrillingSignal .
+	?KalmanFilterStateConfidence#01 rdf:type ddhub:ComputedData .
+	?KalmanFilterStateConfidence#01 rdf:type ddhub:ContinuousDataType .
+	?KalmanFilterStateConfidence#01 rdf:type ddhub:EstimationParameter .
+	?KalmanFilterStateConfidence#01 ddhub:IsOfMeasurableQuantity ?DimensionLessStandard .
+	?KalmanFilterStateConfidence#01 ddhub:HasDynamicValue ?KalmanFilterStateConfidence .
+	?pitVolumeEstimator#01 rdf:type ddhub:DataAnalysisService .
+	?KalmanFilterStateConfidence#01 ddhub:IsProvidedBy ?pitVolumeEstimator#01 .
+}
+```
+A confidence indicator describing the estimator internal state quality.
+## CalibrationParameter <!-- NOUN -->
+- Display name: Calibration Parameter
+- Parent class: [EstimationParameter](./DrillingDataSemantics.md#EstimationParameter)
+- Description: 
+An estimation parameter that maps a sensor representation to a physical quantity through scaling or conversion.
+- Definition set: DrillingDataSemantics
+- Examples:
+```dwis ReturnFlowCapacityScaleExample
+DynamicDrillingSignal:ReturnFlowCapacityScale
+ComputedData:ReturnFlowCapacityScale#01
+ReturnFlowCapacityScale#01 BelongsToClass ContinuousDataType
+ReturnFlowCapacityScale#01 BelongsToClass CalibrationParameter
+ReturnFlowCapacityScale#01 IsOfMeasurableQuantity VolumetricFlowrateDrilling
+ReturnFlowCapacityScale#01 HasDynamicValue ReturnFlowCapacityScale
+DynamicDrillingSignal:ReturnFlowProportion
+ReturnFlowCapacityScale#01 Calibrates ReturnFlowProportion
+DataAnalysisService:pitVolumeEstimator#01
+ReturnFlowCapacityScale#01 IsProvidedBy pitVolumeEstimator#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ReturnFlowCapacityScale] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[ReturnFlowCapacityScale#01] -->|BelongsToClass| N0003(ComputedData) 
+	N0002[ReturnFlowCapacityScale#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[ReturnFlowCapacityScale#01] -->|BelongsToClass| N0005(CalibrationParameter) 
+	N0002[ReturnFlowCapacityScale#01] -->|IsOfMeasurableQuantity| N0006[VolumetricFlowrateDrilling] 
+	N0002[ReturnFlowCapacityScale#01] -->|HasDynamicValue| N0000[ReturnFlowCapacityScale] 
+	N0007[ReturnFlowProportion] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[ReturnFlowCapacityScale#01] -->|Calibrates| N0007((ReturnFlowProportion)) 
+	N0008[pitVolumeEstimator#01] -->|BelongsToClass| N0009(DataAnalysisService) 
+	N0002[ReturnFlowCapacityScale#01] -->|IsProvidedBy| N0008[pitVolumeEstimator#01] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ReturnFlowCapacityScaleExample
+WHERE {
+	?ReturnFlowCapacityScale rdf:type ddhub:DynamicDrillingSignal .
+	?ReturnFlowCapacityScale#01 rdf:type ddhub:ComputedData .
+	?ReturnFlowCapacityScale#01 rdf:type ddhub:ContinuousDataType .
+	?ReturnFlowCapacityScale#01 rdf:type ddhub:CalibrationParameter .
+	?ReturnFlowCapacityScale#01 ddhub:IsOfMeasurableQuantity ?VolumetricFlowrateDrilling .
+	?ReturnFlowCapacityScale#01 ddhub:HasDynamicValue ?ReturnFlowCapacityScale .
+	?ReturnFlowProportion rdf:type ddhub:DynamicDrillingSignal .
+	?pitVolumeEstimator#01 rdf:type ddhub:DataAnalysisService .
+	?ReturnFlowCapacityScale#01 ddhub:IsProvidedBy ?pitVolumeEstimator#01 .
+  FILTER (
+	?Attribute000 = ReturnFlowProportion
+  )
+}
+```
+Scale factor converting return proportion -> volumetric flowrate.
+## CorrectionFactor <!-- NOUN -->
+- Display name: Correction Factor
+- Parent class: [EstimationParameter](./DrillingDataSemantics.md#EstimationParameter)
+- Description: 
+An estimation parameter used to compensate systematic bias or mismatch in a computed or measured quantity.
+- Definition set: DrillingDataSemantics
+- Examples:
+```dwis ReturnFlowCapacityScaleExample
+DynamicDrillingSignal:EstimatedPitVolumeFlowBias
+ComputedData:EstimatedPitVolumeFlowBias#01
+EstimatedPitVolumeFlowBias#01 BelongsToClass ContinuousDataType
+EstimatedPitVolumeFlowBias#01 BelongsToClass CorrectionFactor
+EstimatedPitVolumeFlowBias#01 IsOfMeasurableQuantity VolumetricFlowrateDrilling
+EstimatedPitVolumeFlowBias#01 HasDynamicValue EstimatedPitVolumeFlowBias
+DynamicDrillingSignal:CorrectedActiveVolume
+EstimatedPitVolumeFlowBias#01 Corrects CorrectedActiveVolume
+DataAnalysisService:pitVolumeEstimator#01
+EstimatedPitVolumeFlowBias#01 IsProvidedBy pitVolumeEstimator#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[EstimatedPitVolumeFlowBias] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|BelongsToClass| N0003(ComputedData) 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|BelongsToClass| N0005(CorrectionFactor) 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|IsOfMeasurableQuantity| N0006[VolumetricFlowrateDrilling] 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|HasDynamicValue| N0000[EstimatedPitVolumeFlowBias] 
+	N0007[CorrectedActiveVolume] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|Corrects| N0007[CorrectedActiveVolume] 
+	N0008[pitVolumeEstimator#01] -->|BelongsToClass| N0009(DataAnalysisService) 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|IsProvidedBy| N0008[pitVolumeEstimator#01] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ReturnFlowCapacityScaleExample
+WHERE {
+	?EstimatedPitVolumeFlowBias rdf:type ddhub:DynamicDrillingSignal .
+	?EstimatedPitVolumeFlowBias#01 rdf:type ddhub:ComputedData .
+	?EstimatedPitVolumeFlowBias#01 rdf:type ddhub:ContinuousDataType .
+	?EstimatedPitVolumeFlowBias#01 rdf:type ddhub:CorrectionFactor .
+	?EstimatedPitVolumeFlowBias#01 ddhub:IsOfMeasurableQuantity ?VolumetricFlowrateDrilling .
+	?EstimatedPitVolumeFlowBias#01 ddhub:HasDynamicValue ?EstimatedPitVolumeFlowBias .
+	?CorrectedActiveVolume rdf:type ddhub:DynamicDrillingSignal .
+	?EstimatedPitVolumeFlowBias#01 ddhub:Corrects ?CorrectedActiveVolume .
+	?pitVolumeEstimator#01 rdf:type ddhub:DataAnalysisService .
+	?EstimatedPitVolumeFlowBias#01 ddhub:IsProvidedBy ?pitVolumeEstimator#01 .
+}
+```
+Estimated bias used to compensate mismatch in pit volume balance.
 ## DrillingSignal <!-- NOUN -->
 - Display name: DrillingSignal
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
@@ -1351,6 +1510,10 @@ IsToBeSmallerThan <|-- IsToBeStrictlySmallerThan
 IsToBeComparedWith <|-- IsToBeEqualTo
 IsToBeComparedWith <|-- IsToBeDifferentFrom
 DWISVerb <|-- IsLocatedAtEquipment
+DWISVerb <|-- Adjusts
+Adjusts <|-- Corrects
+Adjusts <|-- Scales
+Adjusts <|-- IsGainOf
 ```
 ## Relations
 Here is a graph representing the relations that can be made with the verbs defined in this definition set.
@@ -1371,6 +1534,10 @@ DrillingDataPoint ||--o{ DrillingDataPoint : IsToBeStrictlySmallerThan
 DrillingDataPoint ||--o{ DrillingDataPoint : IsToBeEqualTo
 DrillingDataPoint ||--o{ DrillingDataPoint : IsToBeDifferentFrom
 DrillingDataPoint ||--o{ Equipment : IsLocatedAtEquipment
+EstimationParameter ||--o{ DrillingDataPoint : Adjusts
+CorrectionFactor ||--o{ DrillingDataPoint : Corrects
+CalibrationParameter ||--o{ DrillingDataPoint : Scales
+CalibrationParameter ||--o{ Transformation : IsGainOf
 ```
 ## HasDomain <!-- VERB -->
 - Display name: HasDomain
@@ -1882,3 +2049,232 @@ WHERE {
 }
 ```
 This example states that a measurement is located at specific piece of equipment.
+## Adjusts <!-- VERB -->
+- Display name: Adjusts
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [EstimationParameter](./DrillingDataSemantics.md#EstimationParameter)
+- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Definition set: DrillingDataSemantics
+- Description: 
+Indicates that an EstimationParameter is applied to modify the interpretation of a DrillingDataPoint.
+- Examples:
+```dwis CorrectsExample
+DynamicDrillingSignal:ActivePitVolumeAdjustmentParameter
+ComputedData:ActivePitVolumeAdjustmentParameter#01
+ActivePitVolumeAdjustmentParameter#01 BelongsToClass ContinuousDataType
+ActivePitVolumeAdjustmentParameter#01 BelongsToClass EstimationParameter
+ActivePitVolumeAdjustmentParameter#01 IsOfMeasurableQuantity VolumeDrilling
+ActivePitVolumeAdjustmentParameter#01 HasDynamicValue ActivePitVolumeAdjustmentParameter
+DynamicDrillingSignal:ActivePitVolume
+DerivedMeasurement:ActivePitVolume#01
+ActivePitVolume#01 BelongsToClass ContinuousDataType
+ActivePitVolume#01 IsOfMeasurableQuantity VolumeDrilling
+ActivePitVolume#01 HasDynamicValue ActivePitVolume
+ActivePitVolumeAdjustmentParameter#01 Adjusts ActivePitVolume#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ActivePitVolumeAdjustmentParameter] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[ActivePitVolumeAdjustmentParameter#01] -->|BelongsToClass| N0003(ComputedData) 
+	N0002[ActivePitVolumeAdjustmentParameter#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[ActivePitVolumeAdjustmentParameter#01] -->|BelongsToClass| N0005(EstimationParameter) 
+	N0002[ActivePitVolumeAdjustmentParameter#01] -->|IsOfMeasurableQuantity| N0006[VolumeDrilling] 
+	N0002[ActivePitVolumeAdjustmentParameter#01] -->|HasDynamicValue| N0000[ActivePitVolumeAdjustmentParameter] 
+	N0007[ActivePitVolume] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0008[ActivePitVolume#01] -->|BelongsToClass| N0009(DerivedMeasurement) 
+	N0008[ActivePitVolume#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0008[ActivePitVolume#01] -->|IsOfMeasurableQuantity| N0006[VolumeDrilling] 
+	N0008[ActivePitVolume#01] -->|HasDynamicValue| N0007[ActivePitVolume] 
+	N0002[ActivePitVolumeAdjustmentParameter#01] -->|Adjusts| N0008[ActivePitVolume#01] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?CorrectsExample
+WHERE {
+	?ActivePitVolumeAdjustmentParameter rdf:type ddhub:DynamicDrillingSignal .
+	?ActivePitVolumeAdjustmentParameter#01 rdf:type ddhub:ComputedData .
+	?ActivePitVolumeAdjustmentParameter#01 rdf:type ddhub:ContinuousDataType .
+	?ActivePitVolumeAdjustmentParameter#01 rdf:type ddhub:EstimationParameter .
+	?ActivePitVolumeAdjustmentParameter#01 ddhub:IsOfMeasurableQuantity ?VolumeDrilling .
+	?ActivePitVolumeAdjustmentParameter#01 ddhub:HasDynamicValue ?ActivePitVolumeAdjustmentParameter .
+	?ActivePitVolume rdf:type ddhub:DynamicDrillingSignal .
+	?ActivePitVolume#01 rdf:type ddhub:DerivedMeasurement .
+	?ActivePitVolume#01 rdf:type ddhub:ContinuousDataType .
+	?ActivePitVolume#01 ddhub:IsOfMeasurableQuantity ?VolumeDrilling .
+	?ActivePitVolume#01 ddhub:HasDynamicValue ?ActivePitVolume .
+	?ActivePitVolumeAdjustmentParameter#01 ddhub:Adjusts ?ActivePitVolume#01 .
+}
+```
+An estimator-produced parameter modifies how the active pit volume measurement must be interpreted, 
+without specifying whether the adjustment is additive (bias) or multiplicative (scale).
+## Corrects <!-- VERB -->
+- Display name: Corrects
+- Parent verb: [Adjusts](./DrillingDataSemantics.md#Adjusts)
+- Subject class: [CorrectionFactor](./DrillingDataSemantics.md#CorrectionFactor)
+- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Definition set: DrillingDataSemantics
+- Description: 
+Indicates that a CorrectionFactor is applied to compensate systematic bias
+in a DrillingDataPoint during interpretation or computation.
+- Examples:
+```dwis CorrectsExample
+DynamicDrillingSignal:EstimatedPitVolumeFlowBias
+ComputedData:EstimatedPitVolumeFlowBias#01
+EstimatedPitVolumeFlowBias#01 BelongsToClass ContinuousDataType
+EstimatedPitVolumeFlowBias#01 BelongsToClass CorrectionFactor
+EstimatedPitVolumeFlowBias#01 IsOfMeasurableQuantity VolumetricFlowrateDrilling
+EstimatedPitVolumeFlowBias#01 HasDynamicValue EstimatedPitVolumeFlowBias
+DynamicDrillingSignal:CorrectedActiveVolume
+DerivedMeasurement:CorrectedActiveVolume#01
+CorrectedActiveVolume#01 BelongsToClass ContinuousDataType
+CorrectedActiveVolume#01 HasDynamicValue CorrectedActiveVolume
+CorrectedActiveVolume#01 IsOfMeasurableQuantity VolumeDrilling
+EstimatedPitVolumeFlowBias#01 Corrects CorrectedActiveVolume#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[EstimatedPitVolumeFlowBias] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|BelongsToClass| N0003(ComputedData) 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|BelongsToClass| N0005(CorrectionFactor) 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|IsOfMeasurableQuantity| N0006[VolumetricFlowrateDrilling] 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|HasDynamicValue| N0000[EstimatedPitVolumeFlowBias] 
+	N0007[CorrectedActiveVolume] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0008[CorrectedActiveVolume#01] -->|BelongsToClass| N0009(DerivedMeasurement) 
+	N0008[CorrectedActiveVolume#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0008[CorrectedActiveVolume#01] -->|HasDynamicValue| N0007[CorrectedActiveVolume] 
+	N0008[CorrectedActiveVolume#01] -->|IsOfMeasurableQuantity| N0010[VolumeDrilling] 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|Corrects| N0008[CorrectedActiveVolume#01] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?CorrectsExample
+WHERE {
+	?EstimatedPitVolumeFlowBias rdf:type ddhub:DynamicDrillingSignal .
+	?EstimatedPitVolumeFlowBias#01 rdf:type ddhub:ComputedData .
+	?EstimatedPitVolumeFlowBias#01 rdf:type ddhub:ContinuousDataType .
+	?EstimatedPitVolumeFlowBias#01 rdf:type ddhub:CorrectionFactor .
+	?EstimatedPitVolumeFlowBias#01 ddhub:IsOfMeasurableQuantity ?VolumetricFlowrateDrilling .
+	?EstimatedPitVolumeFlowBias#01 ddhub:HasDynamicValue ?EstimatedPitVolumeFlowBias .
+	?CorrectedActiveVolume rdf:type ddhub:DynamicDrillingSignal .
+	?CorrectedActiveVolume#01 rdf:type ddhub:DerivedMeasurement .
+	?CorrectedActiveVolume#01 rdf:type ddhub:ContinuousDataType .
+	?CorrectedActiveVolume#01 ddhub:HasDynamicValue ?CorrectedActiveVolume .
+	?CorrectedActiveVolume#01 ddhub:IsOfMeasurableQuantity ?VolumeDrilling .
+	?EstimatedPitVolumeFlowBias#01 ddhub:Corrects ?CorrectedActiveVolume#01 .
+}
+```
+Estimated bias used to compensate mismatch in pit volume balance.
+## Scales <!-- VERB -->
+- Display name: Scales
+- Parent verb: [Adjusts](./DrillingDataSemantics.md#Adjusts)
+- Subject class: [CalibrationParameter](./DrillingDataSemantics.md#CalibrationParameter)
+- Object class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Definition set: DrillingDataSemantics
+- Description: 
+Indicates that a CalibrationParameter is applied as a multiplicative factor
+when converting or correcting a DrillingDataPoint.
+- Examples:
+```dwis ScalesExample
+DynamicDrillingSignal:ReturnFlowCapacityScale
+ComputedData:ReturnFlowCapacityScale#01
+ReturnFlowCapacityScale#01 BelongsToClass ContinuousDataType
+ReturnFlowCapacityScale#01 BelongsToClass CalibrationParameter
+ReturnFlowCapacityScale#01 IsOfMeasurableQuantity VolumetricFlowrateDrilling
+ReturnFlowCapacityScale#01 HasDynamicValue ReturnFlowCapacityScale
+DynamicDrillingSignal:ReturnFlowProportion
+DerivedMeasurement:ReturnFlowProportion#01
+ReturnFlowProportion#01 BelongsToClass ContinuousDataType
+ReturnFlowProportion#01 IsOfMeasurableQuantity DimensionLessStandard
+ReturnFlowProportion#01 HasDynamicValue ReturnFlowProportion
+ReturnFlowCapacityScale#01 Scales ReturnFlowProportion#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ReturnFlowCapacityScale] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[ReturnFlowCapacityScale#01] -->|BelongsToClass| N0003(ComputedData) 
+	N0002[ReturnFlowCapacityScale#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[ReturnFlowCapacityScale#01] -->|BelongsToClass| N0005(CalibrationParameter) 
+	N0002[ReturnFlowCapacityScale#01] -->|IsOfMeasurableQuantity| N0006[VolumetricFlowrateDrilling] 
+	N0002[ReturnFlowCapacityScale#01] -->|HasDynamicValue| N0000[ReturnFlowCapacityScale] 
+	N0007[ReturnFlowProportion] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0008[ReturnFlowProportion#01] -->|BelongsToClass| N0009(DerivedMeasurement) 
+	N0008[ReturnFlowProportion#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0008[ReturnFlowProportion#01] -->|IsOfMeasurableQuantity| N0010[DimensionLessStandard] 
+	N0008[ReturnFlowProportion#01] -->|HasDynamicValue| N0007[ReturnFlowProportion] 
+	N0002[ReturnFlowCapacityScale#01] -->|Scales| N0008[ReturnFlowProportion#01] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ScalesExample
+WHERE {
+	?ReturnFlowCapacityScale rdf:type ddhub:DynamicDrillingSignal .
+	?ReturnFlowCapacityScale#01 rdf:type ddhub:ComputedData .
+	?ReturnFlowCapacityScale#01 rdf:type ddhub:ContinuousDataType .
+	?ReturnFlowCapacityScale#01 rdf:type ddhub:CalibrationParameter .
+	?ReturnFlowCapacityScale#01 ddhub:IsOfMeasurableQuantity ?VolumetricFlowrateDrilling .
+	?ReturnFlowCapacityScale#01 ddhub:HasDynamicValue ?ReturnFlowCapacityScale .
+	?ReturnFlowProportion rdf:type ddhub:DynamicDrillingSignal .
+	?ReturnFlowProportion#01 rdf:type ddhub:DerivedMeasurement .
+	?ReturnFlowProportion#01 rdf:type ddhub:ContinuousDataType .
+	?ReturnFlowProportion#01 ddhub:IsOfMeasurableQuantity ?DimensionLessStandard .
+	?ReturnFlowProportion#01 ddhub:HasDynamicValue ?ReturnFlowProportion .
+	?ReturnFlowCapacityScale#01 ddhub:Scales ?ReturnFlowProportion#01 .
+}
+```
+A computed calibration parameter representing a volumetric flowrate scale factor is used to 
+convert a dimensionless return-flow proportion measurement into a physically interpretable flow quantity.
+## IsGainOf <!-- VERB -->
+- Display name: Is Gain Of
+- Parent verb: [Adjusts](./DrillingDataSemantics.md#Adjusts)
+- Subject class: [CalibrationParameter](./DrillingDataSemantics.md#CalibrationParameter)
+- Object class: [Transformation](./DataFlow.md#Transformation)
+- Definition set: DrillingDataSemantics
+- Description: 
+Indicates that a CalibrationParameter defines the multiplicative gain used by a
+Transformation when producing its output.
+- Examples:
+```dwis IsGainOfExample
+CalibrationParameter:ReturnFlowCapacityScale
+ReturnFlowCapacityScale#01 BelongsToClass ContinuousDataType
+ReturnFlowCapacityScale#01 HasDynamicValue ReturnFlowCapacityScale
+Transformation:ReturnFlowConversion
+ReturnFlowCapacityScale#01 IsGainOf ReturnFlowConversion
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ReturnFlowCapacityScale] -->|BelongsToClass| N0001(CalibrationParameter) 
+	N0002[ReturnFlowCapacityScale#01] -->|BelongsToClass| N0003(ContinuousDataType) 
+	N0002[ReturnFlowCapacityScale#01] -->|HasDynamicValue| N0000[ReturnFlowCapacityScale] 
+	N0004[ReturnFlowConversion] -->|BelongsToClass| N0005(Transformation) 
+	N0002[ReturnFlowCapacityScale#01] -->|IsGainOf| N0004[ReturnFlowConversion] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?IsGainOfExample
+WHERE {
+	?ReturnFlowCapacityScale rdf:type ddhub:CalibrationParameter .
+	?ReturnFlowCapacityScale#01 rdf:type ddhub:ContinuousDataType .
+	?ReturnFlowCapacityScale#01 ddhub:HasDynamicValue ?ReturnFlowCapacityScale .
+	?ReturnFlowConversion rdf:type ddhub:Transformation .
+	?ReturnFlowCapacityScale#01 ddhub:IsGainOf ?ReturnFlowConversion .
+}
+```
+A calibration parameter defines the multiplicative gain used by the return-flow conversion 
+transformation when computing its output.

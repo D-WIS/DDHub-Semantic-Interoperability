@@ -3557,6 +3557,506 @@ WHERE {
   )
 }
 ```
+## GeodeticDatum <!-- NOUN -->
+- Display name: Geodetic Datum
+- Parent class: [ContextualData](#ContextualData)
+- Description: 
+GeodeticDatum is used to describe a geodetic datum with reference to WGS84. It describes both the size of the spheroid and its translation, rotation and scaling compared to WGS84.
+- Definition set: ContextualData
+- Examples:
+``` dwis geodeticDatum_0
+DynamicDrillingSignal:geodeticDatum_0
+DrillingDataPoint: geodeticDatum_1
+geodeticDatum_1 BelongsToClass GeodeticDatum
+geodeticDatum_1 BelongsToClass JSonDataType
+geodeticDatum_1 HasDynamicValue geodeticDatum_0
+OperatingCompany:operatingCompany_1
+geodeticDatum_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+geodeticDatumData_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[geodeticDatum_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[geodeticDatum_1] -->|BelongsToClass| N0003(GeodeticDatum) 
+	N0002[geodeticDatum_1] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[geodeticDatum_1] -->|HasDynamicValue| N0000((geodeticDatum_0)) 
+	N0005[operatingCompany_1] -->|BelongsToClass| N0006(OperatingCompany) 
+	N0002[geodeticDatum_1] -->|IsProvidedBy| N0005((operatingCompany_1)) 
+	N0007[contextualDataBuilder_1] -->|BelongsToClass| N0008(DWISContextualDataBuilder) 
+	N0009[geodeticDatumData_1] -->|IsProvidedTo| N0007((contextualDataBuilder_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?geodeticDatum_0
+WHERE {
+	?geodeticDatum_0 rdf:type ddhub:DynamicDrillingSignal .
+	?geodeticDatum_1 rdf:type ddhub:GeodeticDatum .
+	?geodeticDatum_1 rdf:type ddhub:JSonDataType .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+  FILTER (
+	?Attribute000 = geodeticDatum_0
+	&& 	?Attribute001 = operatingCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+  )
+}
+```
+This example describes a signal that contains a json string that represent a geodetic datum.
+## CartographicProjection <!-- NOUN -->
+- Display name: Cartographic Projection
+- Parent class: [ContextualData](#ContextualData)
+- Description: 
+CartographicProjection is used to describe the projection that is used to transform geodetic coordinates in a geodetic datum to and from map coordinates.
+- Definition set: ContextualData
+- Examples:
+``` dwis cartographicProjection_0
+DynamicDrillingSignal:cartographicProjection_0
+DrillingDataPoint: cartographicProjection_1
+cartographicProjection_1 BelongsToClass CartographicProjection
+cartographicProjection_1 BelongsToClass JSonDataType
+cartographicProjection_1 HasDynamicValue cartographicProjection_0
+OperatingCompany:operatingCompany_1
+cartographicProjection_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+cartographicProjectionData_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[cartographicProjection_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[cartographicProjection_1] -->|BelongsToClass| N0003(CartographicProjection) 
+	N0002[cartographicProjection_1] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[cartographicProjection_1] -->|HasDynamicValue| N0000((cartographicProjection_0)) 
+	N0005[operatingCompany_1] -->|BelongsToClass| N0006(OperatingCompany) 
+	N0002[cartographicProjection_1] -->|IsProvidedBy| N0005((operatingCompany_1)) 
+	N0007[contextualDataBuilder_1] -->|BelongsToClass| N0008(DWISContextualDataBuilder) 
+	N0009[cartographicProjectionData_1] -->|IsProvidedTo| N0007((contextualDataBuilder_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?cartographicProjection_0
+WHERE {
+	?cartographicProjection_0 rdf:type ddhub:DynamicDrillingSignal .
+	?cartographicProjection_1 rdf:type ddhub:CartographicProjection .
+	?cartographicProjection_1 rdf:type ddhub:JSonDataType .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+  FILTER (
+	?Attribute000 = cartographicProjection_0
+	&& 	?Attribute001 = operatingCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+  )
+}
+```
+This example describes a signal that contains a json string that represent a cartographicProjection.
+## Field <!-- NOUN -->
+- Display name: Field
+- Parent class: [ContextualData](#ContextualData)
+- Description: 
+Field is used to describe a region in which some energy reserves exist.
+- Definition set: ContextualData
+- Examples:
+``` dwis field_0
+DynamicDrillingSignal:field_0
+DrillingDataPoint: field_1
+field_1 BelongsToClass Field
+field_1 BelongsToClass JSonDataType
+field_1 HasDynamicValue field_0
+OperatingCompany:operatingCompany_1
+field_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+fieldData_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[field_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[field_1] -->|BelongsToClass| N0003(Field) 
+	N0002[field_1] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[field_1] -->|HasDynamicValue| N0000((field_0)) 
+	N0005[operatingCompany_1] -->|BelongsToClass| N0006(OperatingCompany) 
+	N0002[field_1] -->|IsProvidedBy| N0005((operatingCompany_1)) 
+	N0007[contextualDataBuilder_1] -->|BelongsToClass| N0008(DWISContextualDataBuilder) 
+	N0009[fieldData_1] -->|IsProvidedTo| N0007((contextualDataBuilder_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?field_0
+WHERE {
+	?field_0 rdf:type ddhub:DynamicDrillingSignal .
+	?field_1 rdf:type ddhub:Field .
+	?field_1 rdf:type ddhub:JSonDataType .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+  FILTER (
+	?Attribute000 = field_0
+	&& 	?Attribute001 = operatingCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+  )
+}
+```
+This example describes a signal that contains a json string that represent a field.
+## Cluster <!-- NOUN -->
+- Display name: Cluster
+- Parent class: [ContextualData](#ContextualData)
+- Description: 
+Cluster is used to describe a group of slots. Sometime, it is referred as a pad.
+- Definition set: ContextualData
+- Examples:
+``` dwis cluster_0
+DynamicDrillingSignal:cluster_0
+DrillingDataPoint: cluster_1
+cluster_1 BelongsToClass Cluster
+cluster_1 BelongsToClass JSonDataType
+cluster_1 HasDynamicValue cluster_0
+OperatingCompany:operatingCompany_1
+cluster_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+clusterData_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[cluster_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[cluster_1] -->|BelongsToClass| N0003(Cluster) 
+	N0002[cluster_1] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[cluster_1] -->|HasDynamicValue| N0000((cluster_0)) 
+	N0005[operatingCompany_1] -->|BelongsToClass| N0006(OperatingCompany) 
+	N0002[cluster_1] -->|IsProvidedBy| N0005((operatingCompany_1)) 
+	N0007[contextualDataBuilder_1] -->|BelongsToClass| N0008(DWISContextualDataBuilder) 
+	N0009[clusterData_1] -->|IsProvidedTo| N0007((contextualDataBuilder_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?cluster_0
+WHERE {
+	?cluster_0 rdf:type ddhub:DynamicDrillingSignal .
+	?cluster_1 rdf:type ddhub:Cluster .
+	?cluster_1 rdf:type ddhub:JSonDataType .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+  FILTER (
+	?Attribute000 = cluster_0
+	&& 	?Attribute001 = operatingCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+  )
+}
+```
+This example describes a signal that contains a json string that represent a cluster.
+## TargetGroup <!-- NOUN -->
+- Display name: Target Group
+- Parent class: [ContextualData](#ContextualData)
+- Description: 
+TargetGroup is used to describe meta information a group of targets, for instance whether they should be reached in sequence or from multi-laterals.
+- Definition set: ContextualData
+- Examples:
+``` dwis targetgroup_0
+DynamicDrillingSignal:targetgroup_0
+DrillingDataPoint: targetgroup_1
+targetgroup_1 BelongsToClass TargetGroup
+targetgroup_1 BelongsToClass JSonDataType
+targetgroup_1 HasDynamicValue targetgroup_0
+OperatingCompany:operatingCompany_1
+targetgroup_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+targetgroupData_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[targetgroup_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[targetgroup_1] -->|BelongsToClass| N0003(TargetGroup) 
+	N0002[targetgroup_1] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[targetgroup_1] -->|HasDynamicValue| N0000((targetgroup_0)) 
+	N0005[operatingCompany_1] -->|BelongsToClass| N0006(OperatingCompany) 
+	N0002[targetgroup_1] -->|IsProvidedBy| N0005((operatingCompany_1)) 
+	N0007[contextualDataBuilder_1] -->|BelongsToClass| N0008(DWISContextualDataBuilder) 
+	N0009[targetgroupData_1] -->|IsProvidedTo| N0007((contextualDataBuilder_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?targetgroup_0
+WHERE {
+	?targetgroup_0 rdf:type ddhub:DynamicDrillingSignal .
+	?targetgroup_1 rdf:type ddhub:TargetGroup .
+	?targetgroup_1 rdf:type ddhub:JSonDataType .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+  FILTER (
+	?Attribute000 = targetgroup_0
+	&& 	?Attribute001 = operatingCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+  )
+}
+```
+This example describes a signal that contains a json string that represent a target group.
+## Target <!-- NOUN -->
+- Display name: Target
+- Parent class: [ContextualData](#ContextualData)
+- Description: 
+Target is used to describe meta information the region in the reservoir by which a wellbore is intended to pass through.
+- Definition set: ContextualData
+- Examples:
+``` dwis target_0
+DynamicDrillingSignal:target_0
+DrillingDataPoint: target_1
+target_1 BelongsToClass Target
+target_1 BelongsToClass JSonDataType
+target_1 HasDynamicValue target_0
+OperatingCompany:operatingCompany_1
+target_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+targetData_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[target_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[target_1] -->|BelongsToClass| N0003(Target) 
+	N0002[target_1] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[target_1] -->|HasDynamicValue| N0000((target_0)) 
+	N0005[operatingCompany_1] -->|BelongsToClass| N0006(OperatingCompany) 
+	N0002[target_1] -->|IsProvidedBy| N0005((operatingCompany_1)) 
+	N0007[contextualDataBuilder_1] -->|BelongsToClass| N0008(DWISContextualDataBuilder) 
+	N0009[targetData_1] -->|IsProvidedTo| N0007((contextualDataBuilder_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?target_0
+WHERE {
+	?target_0 rdf:type ddhub:DynamicDrillingSignal .
+	?target_1 rdf:type ddhub:Target .
+	?target_1 rdf:type ddhub:JSonDataType .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+  FILTER (
+	?Attribute000 = target_0
+	&& 	?Attribute001 = operatingCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+  )
+}
+```
+This example describes a signal that contains a json string that represent a target.
+## Well <!-- NOUN -->
+- Display name: Well
+- Parent class: [ContextualData](#ContextualData)
+- Description: 
+Well is used to describe meta information about the wellbores that connect a specific point at the surface of the earth and the targets in a target group.
+- Definition set: ContextualData
+- Examples:
+``` dwis well_0
+DynamicDrillingSignal:well_0
+DrillingDataPoint: well_1
+well_1 BelongsToClass Well
+well_1 BelongsToClass JSonDataType
+well_1 HasDynamicValue well_0
+OperatingCompany:operatingCompany_1
+well_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+wellData_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[well_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[well_1] -->|BelongsToClass| N0003(Well) 
+	N0002[well_1] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[well_1] -->|HasDynamicValue| N0000((well_0)) 
+	N0005[operatingCompany_1] -->|BelongsToClass| N0006(OperatingCompany) 
+	N0002[well_1] -->|IsProvidedBy| N0005((operatingCompany_1)) 
+	N0007[contextualDataBuilder_1] -->|BelongsToClass| N0008(DWISContextualDataBuilder) 
+	N0009[wellData_1] -->|IsProvidedTo| N0007((contextualDataBuilder_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?well_0
+WHERE {
+	?well_0 rdf:type ddhub:DynamicDrillingSignal .
+	?well_1 rdf:type ddhub:Well .
+	?well_1 rdf:type ddhub:JSonDataType .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+  FILTER (
+	?Attribute000 = well_0
+	&& 	?Attribute001 = operatingCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+  )
+}
+```
+This example describes a signal that contains a json string that represent a well.
+## WellConcept <!-- NOUN -->
+- Display name: Well Concept
+- Parent class: [ContextualData](#ContextualData)
+- Description: 
+WellConcept is used to describe meta information about possibilities for a well at the planning stage.
+- Definition set: ContextualData
+- Examples:
+``` dwis wellconcept_0
+DynamicDrillingSignal:wellconcept_0
+DrillingDataPoint: wellconcept_1
+wellconcept_1 BelongsToClass WellConcept
+wellconcept_1 BelongsToClass JSonDataType
+wellconcept_1 HasDynamicValue wellconcept_0
+OperatingCompany:operatingCompany_1
+wellconcept_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+wellconceptData_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wellconcept_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[wellconcept_1] -->|BelongsToClass| N0003(WellConcept) 
+	N0002[wellconcept_1] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[wellconcept_1] -->|HasDynamicValue| N0000((wellconcept_0)) 
+	N0005[operatingCompany_1] -->|BelongsToClass| N0006(OperatingCompany) 
+	N0002[wellconcept_1] -->|IsProvidedBy| N0005((operatingCompany_1)) 
+	N0007[contextualDataBuilder_1] -->|BelongsToClass| N0008(DWISContextualDataBuilder) 
+	N0009[wellconceptData_1] -->|IsProvidedTo| N0007((contextualDataBuilder_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wellconcept_0
+WHERE {
+	?wellconcept_0 rdf:type ddhub:DynamicDrillingSignal .
+	?wellconcept_1 rdf:type ddhub:WellConcept .
+	?wellconcept_1 rdf:type ddhub:JSonDataType .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+  FILTER (
+	?Attribute000 = wellconcept_0
+	&& 	?Attribute001 = operatingCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+  )
+}
+```
+This example describes a signal that contains a json string that represent a well concept.
+## WellBore <!-- NOUN -->
+- Display name: Wellbore
+- Parent class: [ContextualData](#ContextualData)
+- Description: 
+Wellbore is used to describe meta information about the borehole like its tie in point or which slot it starts from.
+- Definition set: ContextualData
+- Examples:
+``` dwis wellBore_0
+DynamicDrillingSignal:wellBore_0
+DrillingDataPoint: wellBore_1
+wellBore_1 BelongsToClass WellBore
+wellBore_1 BelongsToClass JSonDataType
+wellBore_1 HasDynamicValue wellBore_0
+OperatingCompany:operatingCompany_1
+wellBore_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+wellBoreData_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wellBore_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[wellBore_1] -->|BelongsToClass| N0003(WellBore) 
+	N0002[wellBore_1] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[wellBore_1] -->|HasDynamicValue| N0000((wellBore_0)) 
+	N0005[operatingCompany_1] -->|BelongsToClass| N0006(OperatingCompany) 
+	N0002[wellBore_1] -->|IsProvidedBy| N0005((operatingCompany_1)) 
+	N0007[contextualDataBuilder_1] -->|BelongsToClass| N0008(DWISContextualDataBuilder) 
+	N0009[wellBoreData_1] -->|IsProvidedTo| N0007((contextualDataBuilder_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wellBore_0
+WHERE {
+	?wellBore_0 rdf:type ddhub:DynamicDrillingSignal .
+	?wellBore_1 rdf:type ddhub:WellBore .
+	?wellBore_1 rdf:type ddhub:JSonDataType .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+  FILTER (
+	?Attribute000 = wellBore_0
+	&& 	?Attribute001 = operatingCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+  )
+}
+```
+This example describes a signal that contains a json string that represent a wellbore.
+## WellBoreConcept <!-- NOUN -->
+- Display name: WellBoreConcept
+- Parent class: [ContextualData](#ContextualData)
+- Description: 
+WellBoreConcept is used to describe meta information about the possibilities for a wellbore at the planning stage.
+- Definition set: ContextualData
+- Examples:
+``` dwis wellBoreConcept_0
+DynamicDrillingSignal:wellBoreConcept_0
+DrillingDataPoint: wellBoreConcept_1
+wellBoreConcept_1 BelongsToClass WellBoreConcept
+wellBoreConcept_1 BelongsToClass JSonDataType
+wellBoreConcept_1 HasDynamicValue wellBoreConcept_0
+OperatingCompany:operatingCompany_1
+wellBoreConcept_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+wellBoreConceptData_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wellBoreConcept_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[wellBoreConcept_1] -->|BelongsToClass| N0003(WellBoreConcept) 
+	N0002[wellBoreConcept_1] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[wellBoreConcept_1] -->|HasDynamicValue| N0000((wellBoreConcept_0)) 
+	N0005[operatingCompany_1] -->|BelongsToClass| N0006(OperatingCompany) 
+	N0002[wellBoreConcept_1] -->|IsProvidedBy| N0005((operatingCompany_1)) 
+	N0007[contextualDataBuilder_1] -->|BelongsToClass| N0008(DWISContextualDataBuilder) 
+	N0009[wellBoreConceptData_1] -->|IsProvidedTo| N0007((contextualDataBuilder_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wellBoreConcept_0
+WHERE {
+	?wellBoreConcept_0 rdf:type ddhub:DynamicDrillingSignal .
+	?wellBoreConcept_1 rdf:type ddhub:WellBoreConcept .
+	?wellBoreConcept_1 rdf:type ddhub:JSonDataType .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+  FILTER (
+	?Attribute000 = wellBoreConcept_0
+	&& 	?Attribute001 = operatingCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+  )
+}
+```
+This example describes a signal that contains a json string that represent a wellbore concept.
 ## WellBoreData <!-- NOUN -->
 - Display name: Wellbore Data
 - Parent class: [ContextualData](#ContextualData)
@@ -3877,6 +4377,56 @@ WHERE {
   )
 }
 ```
+## WellBoreArchitectureConcept <!-- NOUN -->
+- Display name: Wellbore Architecture Concept
+- Parent class: [ContextualData](#ContextualData)
+- Description: 
+WellBoreArchitectureConcept is used to describe meta information about the possibilities for the architecture of a wellbore at the planning stage.
+- Definition set: ContextualData
+- Examples:
+``` dwis wellBoreArchitectureConcept_0
+DynamicDrillingSignal:wellBoreArchitectureConcept_0
+DrillingDataPoint: wellBoreArchitectureConcept_1
+wellBoreArchitectureConcept_1 BelongsToClass WellBoreArchitectureConcept
+wellBoreArchitectureConcept_1 BelongsToClass JSonDataType
+wellBoreArchitectureConcept_1 HasDynamicValue wellBoreArchitectureConcept_0
+OperatingCompany:operatingCompany_1
+wellBoreArchitectureConcept_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+wellBoreArchitectureConceptData_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wellBoreArchitectureConcept_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[wellBoreArchitectureConcept_1] -->|BelongsToClass| N0003(WellBoreArchitectureConcept) 
+	N0002[wellBoreArchitectureConcept_1] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[wellBoreArchitectureConcept_1] -->|HasDynamicValue| N0000((wellBoreArchitectureConcept_0)) 
+	N0005[operatingCompany_1] -->|BelongsToClass| N0006(OperatingCompany) 
+	N0002[wellBoreArchitectureConcept_1] -->|IsProvidedBy| N0005((operatingCompany_1)) 
+	N0007[contextualDataBuilder_1] -->|BelongsToClass| N0008(DWISContextualDataBuilder) 
+	N0009[wellBoreArchitectureConceptData_1] -->|IsProvidedTo| N0007((contextualDataBuilder_1)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wellBoreArchitectureConcept_0
+WHERE {
+	?wellBoreArchitectureConcept_0 rdf:type ddhub:DynamicDrillingSignal .
+	?wellBoreArchitectureConcept_1 rdf:type ddhub:WellBoreArchitectureConcept .
+	?wellBoreArchitectureConcept_1 rdf:type ddhub:JSonDataType .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+  FILTER (
+	?Attribute000 = wellBoreArchitectureConcept_0
+	&& 	?Attribute001 = operatingCompany_1
+	&& 	?Attribute002 = contextualDataBuilder_1
+  )
+}
+```
+This example describes a signal that contains a json string that represent a wellbore architecture concept.
 ## WellboreArchitectureDescription <!-- NOUN -->
 - Display name: Wellbore Architecture Description
 - Parent class: [WellBoreData](#WellBoreData)
@@ -10027,6 +10577,166 @@ WHERE {
 }
 ```
 This example shows a computed standpipe pressure from a simulator.
+## EstimationParameter <!-- NOUN -->
+- Display name: Estimation Parameter
+- Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+A quantity describing the configuration or internal state of a data interpretation
+or estimation model rather than the physical drilling process.
+- Definition set: DrillingDataSemantics
+- Examples:
+```dwis KalmanFilterStateConfidenceExample
+DynamicDrillingSignal:KalmanFilterStateConfidence
+ComputedData:KalmanFilterStateConfidence#01
+KalmanFilterStateConfidence#01 BelongsToClass ContinuousDataType
+KalmanFilterStateConfidence#01 BelongsToClass EstimationParameter
+KalmanFilterStateConfidence#01 IsOfMeasurableQuantity DimensionLessStandard
+KalmanFilterStateConfidence#01 HasDynamicValue KalmanFilterStateConfidence
+DataAnalysisService:pitVolumeEstimator#01
+KalmanFilterStateConfidence#01 IsProvidedBy pitVolumeEstimator#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KalmanFilterStateConfidence] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[KalmanFilterStateConfidence#01] -->|BelongsToClass| N0003(ComputedData) 
+	N0002[KalmanFilterStateConfidence#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[KalmanFilterStateConfidence#01] -->|BelongsToClass| N0005(EstimationParameter) 
+	N0002[KalmanFilterStateConfidence#01] -->|IsOfMeasurableQuantity| N0006((DimensionLessStandard)) 
+	N0002[KalmanFilterStateConfidence#01] -->|HasDynamicValue| N0000((KalmanFilterStateConfidence)) 
+	N0007[pitVolumeEstimator#01] -->|BelongsToClass| N0008(DataAnalysisService) 
+	N0002[KalmanFilterStateConfidence#01] -->|IsProvidedBy| N0007((pitVolumeEstimator#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?KalmanFilterStateConfidenceExample
+WHERE {
+	?KalmanFilterStateConfidence rdf:type ddhub:DynamicDrillingSignal .
+	?KalmanFilterStateConfidence#01 rdf:type ddhub:ComputedData .
+	?KalmanFilterStateConfidence#01 rdf:type ddhub:ContinuousDataType .
+	?KalmanFilterStateConfidence#01 rdf:type ddhub:EstimationParameter .
+	?pitVolumeEstimator#01 rdf:type ddhub:DataAnalysisService .
+  FILTER (
+	?Attribute000 = DimensionLessStandard
+	&& 	?Attribute001 = KalmanFilterStateConfidence
+	&& 	?Attribute002 = pitVolumeEstimator#01
+  )
+}
+```
+A confidence indicator describing the estimator internal state quality.
+## CalibrationParameter <!-- NOUN -->
+- Display name: Calibration Parameter
+- Parent class: [EstimationParameter](#EstimationParameter)
+- Description: 
+An estimation parameter that maps a sensor representation to a physical quantity through scaling or conversion.
+- Definition set: DrillingDataSemantics
+- Examples:
+```dwis ReturnFlowCapacityScaleExample
+DynamicDrillingSignal:ReturnFlowCapacityScale
+ComputedData:ReturnFlowCapacityScale#01
+ReturnFlowCapacityScale#01 BelongsToClass ContinuousDataType
+ReturnFlowCapacityScale#01 BelongsToClass CalibrationParameter
+ReturnFlowCapacityScale#01 IsOfMeasurableQuantity VolumetricFlowrateDrilling
+ReturnFlowCapacityScale#01 HasDynamicValue ReturnFlowCapacityScale
+DynamicDrillingSignal:ReturnFlowProportion
+ReturnFlowCapacityScale#01 Calibrates ReturnFlowProportion
+DataAnalysisService:pitVolumeEstimator#01
+ReturnFlowCapacityScale#01 IsProvidedBy pitVolumeEstimator#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ReturnFlowCapacityScale] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[ReturnFlowCapacityScale#01] -->|BelongsToClass| N0003(ComputedData) 
+	N0002[ReturnFlowCapacityScale#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[ReturnFlowCapacityScale#01] -->|BelongsToClass| N0005(CalibrationParameter) 
+	N0002[ReturnFlowCapacityScale#01] -->|IsOfMeasurableQuantity| N0006((VolumetricFlowrateDrilling)) 
+	N0002[ReturnFlowCapacityScale#01] -->|HasDynamicValue| N0000((ReturnFlowCapacityScale)) 
+	N0007[ReturnFlowProportion] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[ReturnFlowCapacityScale#01] -->|Calibrates| N0007((ReturnFlowProportion)) 
+	N0008[pitVolumeEstimator#01] -->|BelongsToClass| N0009(DataAnalysisService) 
+	N0002[ReturnFlowCapacityScale#01] -->|IsProvidedBy| N0008((pitVolumeEstimator#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ReturnFlowCapacityScaleExample
+WHERE {
+	?ReturnFlowCapacityScale rdf:type ddhub:DynamicDrillingSignal .
+	?ReturnFlowCapacityScale#01 rdf:type ddhub:ComputedData .
+	?ReturnFlowCapacityScale#01 rdf:type ddhub:ContinuousDataType .
+	?ReturnFlowCapacityScale#01 rdf:type ddhub:CalibrationParameter .
+	?ReturnFlowProportion rdf:type ddhub:DynamicDrillingSignal .
+	?pitVolumeEstimator#01 rdf:type ddhub:DataAnalysisService .
+  FILTER (
+	?Attribute000 = VolumetricFlowrateDrilling
+	&& 	?Attribute001 = ReturnFlowCapacityScale
+	&& 	?Attribute002 = ReturnFlowProportion
+	&& 	?Attribute003 = pitVolumeEstimator#01
+  )
+}
+```
+Scale factor converting return proportion -> volumetric flowrate.
+## CorrectionFactor <!-- NOUN -->
+- Display name: Correction Factor
+- Parent class: [EstimationParameter](#EstimationParameter)
+- Description: 
+An estimation parameter used to compensate systematic bias or mismatch in a computed or measured quantity.
+- Definition set: DrillingDataSemantics
+- Examples:
+```dwis ReturnFlowCapacityScaleExample
+DynamicDrillingSignal:EstimatedPitVolumeFlowBias
+ComputedData:EstimatedPitVolumeFlowBias#01
+EstimatedPitVolumeFlowBias#01 BelongsToClass ContinuousDataType
+EstimatedPitVolumeFlowBias#01 BelongsToClass CorrectionFactor
+EstimatedPitVolumeFlowBias#01 IsOfMeasurableQuantity VolumetricFlowrateDrilling
+EstimatedPitVolumeFlowBias#01 HasDynamicValue EstimatedPitVolumeFlowBias
+DynamicDrillingSignal:CorrectedActiveVolume
+EstimatedPitVolumeFlowBias#01 Corrects CorrectedActiveVolume
+DataAnalysisService:pitVolumeEstimator#01
+EstimatedPitVolumeFlowBias#01 IsProvidedBy pitVolumeEstimator#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[EstimatedPitVolumeFlowBias] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|BelongsToClass| N0003(ComputedData) 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|BelongsToClass| N0005(CorrectionFactor) 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|IsOfMeasurableQuantity| N0006((VolumetricFlowrateDrilling)) 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|HasDynamicValue| N0000((EstimatedPitVolumeFlowBias)) 
+	N0007[CorrectedActiveVolume] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|Corrects| N0007((CorrectedActiveVolume)) 
+	N0008[pitVolumeEstimator#01] -->|BelongsToClass| N0009(DataAnalysisService) 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|IsProvidedBy| N0008((pitVolumeEstimator#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ReturnFlowCapacityScaleExample
+WHERE {
+	?EstimatedPitVolumeFlowBias rdf:type ddhub:DynamicDrillingSignal .
+	?EstimatedPitVolumeFlowBias#01 rdf:type ddhub:ComputedData .
+	?EstimatedPitVolumeFlowBias#01 rdf:type ddhub:ContinuousDataType .
+	?EstimatedPitVolumeFlowBias#01 rdf:type ddhub:CorrectionFactor .
+	?CorrectedActiveVolume rdf:type ddhub:DynamicDrillingSignal .
+	?pitVolumeEstimator#01 rdf:type ddhub:DataAnalysisService .
+  FILTER (
+	?Attribute000 = VolumetricFlowrateDrilling
+	&& 	?Attribute001 = EstimatedPitVolumeFlowBias
+	&& 	?Attribute002 = CorrectedActiveVolume
+	&& 	?Attribute003 = pitVolumeEstimator#01
+  )
+}
+```
+Estimated bias used to compensate mismatch in pit volume balance.
 ## DrillingSignal <!-- NOUN -->
 - Display name: DrillingSignal
 - Parent class: [DWISNoun](#DWISNoun)
@@ -76259,6 +76969,243 @@ WHERE {
 }
 ```
 This example states that a measurement is located at specific piece of equipment.
+## Adjusts <!-- VERB -->
+- Display name: Adjusts
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [EstimationParameter](#EstimationParameter)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Definition set: DrillingDataSemantics
+- Description: 
+Indicates that an EstimationParameter is applied to modify the interpretation of a DrillingDataPoint.
+- Examples:
+```dwis CorrectsExample
+DynamicDrillingSignal:ActivePitVolumeAdjustmentParameter
+ComputedData:ActivePitVolumeAdjustmentParameter#01
+ActivePitVolumeAdjustmentParameter#01 BelongsToClass ContinuousDataType
+ActivePitVolumeAdjustmentParameter#01 BelongsToClass EstimationParameter
+ActivePitVolumeAdjustmentParameter#01 IsOfMeasurableQuantity VolumeDrilling
+ActivePitVolumeAdjustmentParameter#01 HasDynamicValue ActivePitVolumeAdjustmentParameter
+DynamicDrillingSignal:ActivePitVolume
+DerivedMeasurement:ActivePitVolume#01
+ActivePitVolume#01 BelongsToClass ContinuousDataType
+ActivePitVolume#01 IsOfMeasurableQuantity VolumeDrilling
+ActivePitVolume#01 HasDynamicValue ActivePitVolume
+ActivePitVolumeAdjustmentParameter#01 Adjusts ActivePitVolume#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ActivePitVolumeAdjustmentParameter] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[ActivePitVolumeAdjustmentParameter#01] -->|BelongsToClass| N0003(ComputedData) 
+	N0002[ActivePitVolumeAdjustmentParameter#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[ActivePitVolumeAdjustmentParameter#01] -->|BelongsToClass| N0005(EstimationParameter) 
+	N0002[ActivePitVolumeAdjustmentParameter#01] -->|IsOfMeasurableQuantity| N0006((VolumeDrilling)) 
+	N0002[ActivePitVolumeAdjustmentParameter#01] -->|HasDynamicValue| N0000((ActivePitVolumeAdjustmentParameter)) 
+	N0007[ActivePitVolume] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0008[ActivePitVolume#01] -->|BelongsToClass| N0009(DerivedMeasurement) 
+	N0008[ActivePitVolume#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0008[ActivePitVolume#01] -->|IsOfMeasurableQuantity| N0006((VolumeDrilling)) 
+	N0008[ActivePitVolume#01] -->|HasDynamicValue| N0007((ActivePitVolume)) 
+	N0002[ActivePitVolumeAdjustmentParameter#01] -->|Adjusts| N0008((ActivePitVolume#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?CorrectsExample
+WHERE {
+	?ActivePitVolumeAdjustmentParameter rdf:type ddhub:DynamicDrillingSignal .
+	?ActivePitVolumeAdjustmentParameter#01 rdf:type ddhub:ComputedData .
+	?ActivePitVolumeAdjustmentParameter#01 rdf:type ddhub:ContinuousDataType .
+	?ActivePitVolumeAdjustmentParameter#01 rdf:type ddhub:EstimationParameter .
+	?ActivePitVolume rdf:type ddhub:DynamicDrillingSignal .
+	?ActivePitVolume#01 rdf:type ddhub:DerivedMeasurement .
+	?ActivePitVolume#01 rdf:type ddhub:ContinuousDataType .
+  FILTER (
+	?Attribute000 = VolumeDrilling
+	&& 	?Attribute001 = ActivePitVolumeAdjustmentParameter
+	&& 	?Attribute002 = VolumeDrilling
+	&& 	?Attribute003 = ActivePitVolume
+	&& 	?Attribute004 = ActivePitVolume#01
+  )
+}
+```
+An estimator-produced parameter modifies how the active pit volume measurement must be interpreted, 
+without specifying whether the adjustment is additive (bias) or multiplicative (scale).
+## Corrects <!-- VERB -->
+- Display name: Corrects
+- Parent verb: [Adjusts](#Adjusts)
+- Subject class: [CorrectionFactor](#CorrectionFactor)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Definition set: DrillingDataSemantics
+- Description: 
+Indicates that a CorrectionFactor is applied to compensate systematic bias
+in a DrillingDataPoint during interpretation or computation.
+- Examples:
+```dwis CorrectsExample
+DynamicDrillingSignal:EstimatedPitVolumeFlowBias
+ComputedData:EstimatedPitVolumeFlowBias#01
+EstimatedPitVolumeFlowBias#01 BelongsToClass ContinuousDataType
+EstimatedPitVolumeFlowBias#01 BelongsToClass CorrectionFactor
+EstimatedPitVolumeFlowBias#01 IsOfMeasurableQuantity VolumetricFlowrateDrilling
+EstimatedPitVolumeFlowBias#01 HasDynamicValue EstimatedPitVolumeFlowBias
+DynamicDrillingSignal:CorrectedActiveVolume
+DerivedMeasurement:CorrectedActiveVolume#01
+CorrectedActiveVolume#01 BelongsToClass ContinuousDataType
+CorrectedActiveVolume#01 HasDynamicValue CorrectedActiveVolume
+CorrectedActiveVolume#01 IsOfMeasurableQuantity VolumeDrilling
+EstimatedPitVolumeFlowBias#01 Corrects CorrectedActiveVolume#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[EstimatedPitVolumeFlowBias] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|BelongsToClass| N0003(ComputedData) 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|BelongsToClass| N0005(CorrectionFactor) 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|IsOfMeasurableQuantity| N0006((VolumetricFlowrateDrilling)) 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|HasDynamicValue| N0000((EstimatedPitVolumeFlowBias)) 
+	N0007[CorrectedActiveVolume] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0008[CorrectedActiveVolume#01] -->|BelongsToClass| N0009(DerivedMeasurement) 
+	N0008[CorrectedActiveVolume#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0008[CorrectedActiveVolume#01] -->|HasDynamicValue| N0007((CorrectedActiveVolume)) 
+	N0008[CorrectedActiveVolume#01] -->|IsOfMeasurableQuantity| N0010((VolumeDrilling)) 
+	N0002[EstimatedPitVolumeFlowBias#01] -->|Corrects| N0008((CorrectedActiveVolume#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?CorrectsExample
+WHERE {
+	?EstimatedPitVolumeFlowBias rdf:type ddhub:DynamicDrillingSignal .
+	?EstimatedPitVolumeFlowBias#01 rdf:type ddhub:ComputedData .
+	?EstimatedPitVolumeFlowBias#01 rdf:type ddhub:ContinuousDataType .
+	?EstimatedPitVolumeFlowBias#01 rdf:type ddhub:CorrectionFactor .
+	?CorrectedActiveVolume rdf:type ddhub:DynamicDrillingSignal .
+	?CorrectedActiveVolume#01 rdf:type ddhub:DerivedMeasurement .
+	?CorrectedActiveVolume#01 rdf:type ddhub:ContinuousDataType .
+  FILTER (
+	?Attribute000 = VolumetricFlowrateDrilling
+	&& 	?Attribute001 = EstimatedPitVolumeFlowBias
+	&& 	?Attribute002 = CorrectedActiveVolume
+	&& 	?Attribute003 = VolumeDrilling
+	&& 	?Attribute004 = CorrectedActiveVolume#01
+  )
+}
+```
+Estimated bias used to compensate mismatch in pit volume balance.
+## Scales <!-- VERB -->
+- Display name: Scales
+- Parent verb: [Adjusts](#Adjusts)
+- Subject class: [CalibrationParameter](#CalibrationParameter)
+- Object class: [DrillingDataPoint](#DrillingDataPoint)
+- Definition set: DrillingDataSemantics
+- Description: 
+Indicates that a CalibrationParameter is applied as a multiplicative factor
+when converting or correcting a DrillingDataPoint.
+- Examples:
+```dwis ScalesExample
+DynamicDrillingSignal:ReturnFlowCapacityScale
+ComputedData:ReturnFlowCapacityScale#01
+ReturnFlowCapacityScale#01 BelongsToClass ContinuousDataType
+ReturnFlowCapacityScale#01 BelongsToClass CalibrationParameter
+ReturnFlowCapacityScale#01 IsOfMeasurableQuantity VolumetricFlowrateDrilling
+ReturnFlowCapacityScale#01 HasDynamicValue ReturnFlowCapacityScale
+DynamicDrillingSignal:ReturnFlowProportion
+DerivedMeasurement:ReturnFlowProportion#01
+ReturnFlowProportion#01 BelongsToClass ContinuousDataType
+ReturnFlowProportion#01 IsOfMeasurableQuantity DimensionLessStandard
+ReturnFlowProportion#01 HasDynamicValue ReturnFlowProportion
+ReturnFlowCapacityScale#01 Scales ReturnFlowProportion#01
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ReturnFlowCapacityScale] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[ReturnFlowCapacityScale#01] -->|BelongsToClass| N0003(ComputedData) 
+	N0002[ReturnFlowCapacityScale#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0002[ReturnFlowCapacityScale#01] -->|BelongsToClass| N0005(CalibrationParameter) 
+	N0002[ReturnFlowCapacityScale#01] -->|IsOfMeasurableQuantity| N0006((VolumetricFlowrateDrilling)) 
+	N0002[ReturnFlowCapacityScale#01] -->|HasDynamicValue| N0000((ReturnFlowCapacityScale)) 
+	N0007[ReturnFlowProportion] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0008[ReturnFlowProportion#01] -->|BelongsToClass| N0009(DerivedMeasurement) 
+	N0008[ReturnFlowProportion#01] -->|BelongsToClass| N0004(ContinuousDataType) 
+	N0008[ReturnFlowProportion#01] -->|IsOfMeasurableQuantity| N0010((DimensionLessStandard)) 
+	N0008[ReturnFlowProportion#01] -->|HasDynamicValue| N0007((ReturnFlowProportion)) 
+	N0002[ReturnFlowCapacityScale#01] -->|Scales| N0008((ReturnFlowProportion#01)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?ScalesExample
+WHERE {
+	?ReturnFlowCapacityScale rdf:type ddhub:DynamicDrillingSignal .
+	?ReturnFlowCapacityScale#01 rdf:type ddhub:ComputedData .
+	?ReturnFlowCapacityScale#01 rdf:type ddhub:ContinuousDataType .
+	?ReturnFlowCapacityScale#01 rdf:type ddhub:CalibrationParameter .
+	?ReturnFlowProportion rdf:type ddhub:DynamicDrillingSignal .
+	?ReturnFlowProportion#01 rdf:type ddhub:DerivedMeasurement .
+	?ReturnFlowProportion#01 rdf:type ddhub:ContinuousDataType .
+  FILTER (
+	?Attribute000 = VolumetricFlowrateDrilling
+	&& 	?Attribute001 = ReturnFlowCapacityScale
+	&& 	?Attribute002 = DimensionLessStandard
+	&& 	?Attribute003 = ReturnFlowProportion
+	&& 	?Attribute004 = ReturnFlowProportion#01
+  )
+}
+```
+A computed calibration parameter representing a volumetric flowrate scale factor is used to 
+convert a dimensionless return-flow proportion measurement into a physically interpretable flow quantity.
+## IsGainOf <!-- VERB -->
+- Display name: Is Gain Of
+- Parent verb: [Adjusts](#Adjusts)
+- Subject class: [CalibrationParameter](#CalibrationParameter)
+- Object class: [Transformation](#Transformation)
+- Definition set: DrillingDataSemantics
+- Description: 
+Indicates that a CalibrationParameter defines the multiplicative gain used by a
+Transformation when producing its output.
+- Examples:
+```dwis IsGainOfExample
+CalibrationParameter:ReturnFlowCapacityScale
+ReturnFlowCapacityScale#01 BelongsToClass ContinuousDataType
+ReturnFlowCapacityScale#01 HasDynamicValue ReturnFlowCapacityScale
+Transformation:ReturnFlowConversion
+ReturnFlowCapacityScale#01 IsGainOf ReturnFlowConversion
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[ReturnFlowCapacityScale] -->|BelongsToClass| N0001(CalibrationParameter) 
+	N0002[ReturnFlowCapacityScale#01] -->|BelongsToClass| N0003(ContinuousDataType) 
+	N0002[ReturnFlowCapacityScale#01] -->|HasDynamicValue| N0000((ReturnFlowCapacityScale)) 
+	N0004[ReturnFlowConversion] -->|BelongsToClass| N0005(Transformation) 
+	N0002[ReturnFlowCapacityScale#01] -->|IsGainOf| N0004((ReturnFlowConversion)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?IsGainOfExample
+WHERE {
+	?ReturnFlowCapacityScale rdf:type ddhub:CalibrationParameter .
+	?ReturnFlowCapacityScale#01 rdf:type ddhub:ContinuousDataType .
+	?ReturnFlowConversion rdf:type ddhub:Transformation .
+  FILTER (
+	?Attribute000 = ReturnFlowCapacityScale
+	&& 	?Attribute001 = ReturnFlowConversion
+  )
+}
+```
+A calibration parameter defines the multiplicative gain used by the return-flow conversion 
+transformation when computing its output.
 ## IsSubPartOf <!-- VERB -->
 - Display name: IsSubPartOf
 - Parent verb: [DWISVerb](#DWISVerb)

@@ -20,12 +20,23 @@ OperationalStep <|-- PhaseStep
 OperationalStep <|-- ActionStep
 OperationalStep <|-- TaskStep
 OperationalStep <|-- Context
+ContextualData <|-- GeodeticDatum
+ContextualData <|-- CartographicProjection
+ContextualData <|-- Field
+ContextualData <|-- Cluster
+ContextualData <|-- TargetGroup
+ContextualData <|-- Target
+ContextualData <|-- Well
+ContextualData <|-- WellConcept
+ContextualData <|-- WellBore
+ContextualData <|-- WellBoreConcept
 ContextualData <|-- WellBoreData
 WellBoreData <|-- TrajectoryDescription
 WellBoreData <|-- FluidDescription
 FluidDescription <|-- DrillingFluidDescription
 FluidDescription <|-- CementFluidDescription
 FluidDescription <|-- CompletionFluidDescription
+ContextualData <|-- WellBoreArchitectureConcept
 WellBoreData <|-- WellboreArchitectureDescription
 WellBoreData <|-- DrillStemDescription
 DrillStemDescription <|-- DrillStringDescription
@@ -596,6 +607,486 @@ WHERE {
 	?contextStep_1 ddhub:IsAContextOf ?taskStep_1 .
 }
 ```
+## GeodeticDatum <!-- NOUN -->
+- Display name: Geodetic Datum
+- Parent class: [ContextualData](./ContextualData.md#ContextualData)
+- Description: 
+GeodeticDatum is used to describe a geodetic datum with reference to WGS84. It describes both the size of the spheroid and its translation, rotation and scaling compared to WGS84.
+- Definition set: ContextualData
+- Examples:
+``` dwis geodeticDatum_0
+DynamicDrillingSignal:geodeticDatum_0
+DrillingDataPoint: geodeticDatum_1
+geodeticDatum_1 BelongsToClass GeodeticDatum
+geodeticDatum_1 BelongsToClass JSonDataType
+geodeticDatum_1 HasDynamicValue geodeticDatum_0
+OperatingCompany:operatingCompany_1
+geodeticDatum_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+geodeticDatumData_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[geodeticDatum_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[geodeticDatum_1] -->|BelongsToClass| N0003(GeodeticDatum) 
+	N0002[geodeticDatum_1] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[geodeticDatum_1] -->|HasDynamicValue| N0000[geodeticDatum_0] 
+	N0005[operatingCompany_1] -->|BelongsToClass| N0006(OperatingCompany) 
+	N0002[geodeticDatum_1] -->|IsProvidedBy| N0005[operatingCompany_1] 
+	N0007[contextualDataBuilder_1] -->|BelongsToClass| N0008(DWISContextualDataBuilder) 
+	N0009[geodeticDatumData_1] -->|IsProvidedTo| N0007[contextualDataBuilder_1] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?geodeticDatum_0
+WHERE {
+	?geodeticDatum_0 rdf:type ddhub:DynamicDrillingSignal .
+	?geodeticDatum_1 rdf:type ddhub:GeodeticDatum .
+	?geodeticDatum_1 rdf:type ddhub:JSonDataType .
+	?geodeticDatum_1 ddhub:HasDynamicValue ?geodeticDatum_0 .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?geodeticDatum_1 ddhub:IsProvidedBy ?operatingCompany_1 .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?geodeticDatumData_1 ddhub:IsProvidedTo ?contextualDataBuilder_1 .
+}
+```
+This example describes a signal that contains a json string that represent a geodetic datum.
+## CartographicProjection <!-- NOUN -->
+- Display name: Cartographic Projection
+- Parent class: [ContextualData](./ContextualData.md#ContextualData)
+- Description: 
+CartographicProjection is used to describe the projection that is used to transform geodetic coordinates in a geodetic datum to and from map coordinates.
+- Definition set: ContextualData
+- Examples:
+``` dwis cartographicProjection_0
+DynamicDrillingSignal:cartographicProjection_0
+DrillingDataPoint: cartographicProjection_1
+cartographicProjection_1 BelongsToClass CartographicProjection
+cartographicProjection_1 BelongsToClass JSonDataType
+cartographicProjection_1 HasDynamicValue cartographicProjection_0
+OperatingCompany:operatingCompany_1
+cartographicProjection_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+cartographicProjectionData_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[cartographicProjection_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[cartographicProjection_1] -->|BelongsToClass| N0003(CartographicProjection) 
+	N0002[cartographicProjection_1] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[cartographicProjection_1] -->|HasDynamicValue| N0000[cartographicProjection_0] 
+	N0005[operatingCompany_1] -->|BelongsToClass| N0006(OperatingCompany) 
+	N0002[cartographicProjection_1] -->|IsProvidedBy| N0005[operatingCompany_1] 
+	N0007[contextualDataBuilder_1] -->|BelongsToClass| N0008(DWISContextualDataBuilder) 
+	N0009[cartographicProjectionData_1] -->|IsProvidedTo| N0007[contextualDataBuilder_1] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?cartographicProjection_0
+WHERE {
+	?cartographicProjection_0 rdf:type ddhub:DynamicDrillingSignal .
+	?cartographicProjection_1 rdf:type ddhub:CartographicProjection .
+	?cartographicProjection_1 rdf:type ddhub:JSonDataType .
+	?cartographicProjection_1 ddhub:HasDynamicValue ?cartographicProjection_0 .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?cartographicProjection_1 ddhub:IsProvidedBy ?operatingCompany_1 .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?cartographicProjectionData_1 ddhub:IsProvidedTo ?contextualDataBuilder_1 .
+}
+```
+This example describes a signal that contains a json string that represent a cartographicProjection.
+## Field <!-- NOUN -->
+- Display name: Field
+- Parent class: [ContextualData](./ContextualData.md#ContextualData)
+- Description: 
+Field is used to describe a region in which some energy reserves exist.
+- Definition set: ContextualData
+- Examples:
+``` dwis field_0
+DynamicDrillingSignal:field_0
+DrillingDataPoint: field_1
+field_1 BelongsToClass Field
+field_1 BelongsToClass JSonDataType
+field_1 HasDynamicValue field_0
+OperatingCompany:operatingCompany_1
+field_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+fieldData_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[field_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[field_1] -->|BelongsToClass| N0003(Field) 
+	N0002[field_1] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[field_1] -->|HasDynamicValue| N0000[field_0] 
+	N0005[operatingCompany_1] -->|BelongsToClass| N0006(OperatingCompany) 
+	N0002[field_1] -->|IsProvidedBy| N0005[operatingCompany_1] 
+	N0007[contextualDataBuilder_1] -->|BelongsToClass| N0008(DWISContextualDataBuilder) 
+	N0009[fieldData_1] -->|IsProvidedTo| N0007[contextualDataBuilder_1] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?field_0
+WHERE {
+	?field_0 rdf:type ddhub:DynamicDrillingSignal .
+	?field_1 rdf:type ddhub:Field .
+	?field_1 rdf:type ddhub:JSonDataType .
+	?field_1 ddhub:HasDynamicValue ?field_0 .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?field_1 ddhub:IsProvidedBy ?operatingCompany_1 .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?fieldData_1 ddhub:IsProvidedTo ?contextualDataBuilder_1 .
+}
+```
+This example describes a signal that contains a json string that represent a field.
+## Cluster <!-- NOUN -->
+- Display name: Cluster
+- Parent class: [ContextualData](./ContextualData.md#ContextualData)
+- Description: 
+Cluster is used to describe a group of slots. Sometime, it is referred as a pad.
+- Definition set: ContextualData
+- Examples:
+``` dwis cluster_0
+DynamicDrillingSignal:cluster_0
+DrillingDataPoint: cluster_1
+cluster_1 BelongsToClass Cluster
+cluster_1 BelongsToClass JSonDataType
+cluster_1 HasDynamicValue cluster_0
+OperatingCompany:operatingCompany_1
+cluster_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+clusterData_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[cluster_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[cluster_1] -->|BelongsToClass| N0003(Cluster) 
+	N0002[cluster_1] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[cluster_1] -->|HasDynamicValue| N0000[cluster_0] 
+	N0005[operatingCompany_1] -->|BelongsToClass| N0006(OperatingCompany) 
+	N0002[cluster_1] -->|IsProvidedBy| N0005[operatingCompany_1] 
+	N0007[contextualDataBuilder_1] -->|BelongsToClass| N0008(DWISContextualDataBuilder) 
+	N0009[clusterData_1] -->|IsProvidedTo| N0007[contextualDataBuilder_1] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?cluster_0
+WHERE {
+	?cluster_0 rdf:type ddhub:DynamicDrillingSignal .
+	?cluster_1 rdf:type ddhub:Cluster .
+	?cluster_1 rdf:type ddhub:JSonDataType .
+	?cluster_1 ddhub:HasDynamicValue ?cluster_0 .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?cluster_1 ddhub:IsProvidedBy ?operatingCompany_1 .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?clusterData_1 ddhub:IsProvidedTo ?contextualDataBuilder_1 .
+}
+```
+This example describes a signal that contains a json string that represent a cluster.
+## TargetGroup <!-- NOUN -->
+- Display name: Target Group
+- Parent class: [ContextualData](./ContextualData.md#ContextualData)
+- Description: 
+TargetGroup is used to describe meta information a group of targets, for instance whether they should be reached in sequence or from multi-laterals.
+- Definition set: ContextualData
+- Examples:
+``` dwis targetgroup_0
+DynamicDrillingSignal:targetgroup_0
+DrillingDataPoint: targetgroup_1
+targetgroup_1 BelongsToClass TargetGroup
+targetgroup_1 BelongsToClass JSonDataType
+targetgroup_1 HasDynamicValue targetgroup_0
+OperatingCompany:operatingCompany_1
+targetgroup_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+targetgroupData_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[targetgroup_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[targetgroup_1] -->|BelongsToClass| N0003(TargetGroup) 
+	N0002[targetgroup_1] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[targetgroup_1] -->|HasDynamicValue| N0000[targetgroup_0] 
+	N0005[operatingCompany_1] -->|BelongsToClass| N0006(OperatingCompany) 
+	N0002[targetgroup_1] -->|IsProvidedBy| N0005[operatingCompany_1] 
+	N0007[contextualDataBuilder_1] -->|BelongsToClass| N0008(DWISContextualDataBuilder) 
+	N0009[targetgroupData_1] -->|IsProvidedTo| N0007[contextualDataBuilder_1] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?targetgroup_0
+WHERE {
+	?targetgroup_0 rdf:type ddhub:DynamicDrillingSignal .
+	?targetgroup_1 rdf:type ddhub:TargetGroup .
+	?targetgroup_1 rdf:type ddhub:JSonDataType .
+	?targetgroup_1 ddhub:HasDynamicValue ?targetgroup_0 .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?targetgroup_1 ddhub:IsProvidedBy ?operatingCompany_1 .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?targetgroupData_1 ddhub:IsProvidedTo ?contextualDataBuilder_1 .
+}
+```
+This example describes a signal that contains a json string that represent a target group.
+## Target <!-- NOUN -->
+- Display name: Target
+- Parent class: [ContextualData](./ContextualData.md#ContextualData)
+- Description: 
+Target is used to describe meta information the region in the reservoir by which a wellbore is intended to pass through.
+- Definition set: ContextualData
+- Examples:
+``` dwis target_0
+DynamicDrillingSignal:target_0
+DrillingDataPoint: target_1
+target_1 BelongsToClass Target
+target_1 BelongsToClass JSonDataType
+target_1 HasDynamicValue target_0
+OperatingCompany:operatingCompany_1
+target_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+targetData_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[target_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[target_1] -->|BelongsToClass| N0003(Target) 
+	N0002[target_1] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[target_1] -->|HasDynamicValue| N0000[target_0] 
+	N0005[operatingCompany_1] -->|BelongsToClass| N0006(OperatingCompany) 
+	N0002[target_1] -->|IsProvidedBy| N0005[operatingCompany_1] 
+	N0007[contextualDataBuilder_1] -->|BelongsToClass| N0008(DWISContextualDataBuilder) 
+	N0009[targetData_1] -->|IsProvidedTo| N0007[contextualDataBuilder_1] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?target_0
+WHERE {
+	?target_0 rdf:type ddhub:DynamicDrillingSignal .
+	?target_1 rdf:type ddhub:Target .
+	?target_1 rdf:type ddhub:JSonDataType .
+	?target_1 ddhub:HasDynamicValue ?target_0 .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?target_1 ddhub:IsProvidedBy ?operatingCompany_1 .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?targetData_1 ddhub:IsProvidedTo ?contextualDataBuilder_1 .
+}
+```
+This example describes a signal that contains a json string that represent a target.
+## Well <!-- NOUN -->
+- Display name: Well
+- Parent class: [ContextualData](./ContextualData.md#ContextualData)
+- Description: 
+Well is used to describe meta information about the wellbores that connect a specific point at the surface of the earth and the targets in a target group.
+- Definition set: ContextualData
+- Examples:
+``` dwis well_0
+DynamicDrillingSignal:well_0
+DrillingDataPoint: well_1
+well_1 BelongsToClass Well
+well_1 BelongsToClass JSonDataType
+well_1 HasDynamicValue well_0
+OperatingCompany:operatingCompany_1
+well_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+wellData_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[well_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[well_1] -->|BelongsToClass| N0003(Well) 
+	N0002[well_1] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[well_1] -->|HasDynamicValue| N0000[well_0] 
+	N0005[operatingCompany_1] -->|BelongsToClass| N0006(OperatingCompany) 
+	N0002[well_1] -->|IsProvidedBy| N0005[operatingCompany_1] 
+	N0007[contextualDataBuilder_1] -->|BelongsToClass| N0008(DWISContextualDataBuilder) 
+	N0009[wellData_1] -->|IsProvidedTo| N0007[contextualDataBuilder_1] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?well_0
+WHERE {
+	?well_0 rdf:type ddhub:DynamicDrillingSignal .
+	?well_1 rdf:type ddhub:Well .
+	?well_1 rdf:type ddhub:JSonDataType .
+	?well_1 ddhub:HasDynamicValue ?well_0 .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?well_1 ddhub:IsProvidedBy ?operatingCompany_1 .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?wellData_1 ddhub:IsProvidedTo ?contextualDataBuilder_1 .
+}
+```
+This example describes a signal that contains a json string that represent a well.
+## WellConcept <!-- NOUN -->
+- Display name: Well Concept
+- Parent class: [ContextualData](./ContextualData.md#ContextualData)
+- Description: 
+WellConcept is used to describe meta information about possibilities for a well at the planning stage.
+- Definition set: ContextualData
+- Examples:
+``` dwis wellconcept_0
+DynamicDrillingSignal:wellconcept_0
+DrillingDataPoint: wellconcept_1
+wellconcept_1 BelongsToClass WellConcept
+wellconcept_1 BelongsToClass JSonDataType
+wellconcept_1 HasDynamicValue wellconcept_0
+OperatingCompany:operatingCompany_1
+wellconcept_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+wellconceptData_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wellconcept_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[wellconcept_1] -->|BelongsToClass| N0003(WellConcept) 
+	N0002[wellconcept_1] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[wellconcept_1] -->|HasDynamicValue| N0000[wellconcept_0] 
+	N0005[operatingCompany_1] -->|BelongsToClass| N0006(OperatingCompany) 
+	N0002[wellconcept_1] -->|IsProvidedBy| N0005[operatingCompany_1] 
+	N0007[contextualDataBuilder_1] -->|BelongsToClass| N0008(DWISContextualDataBuilder) 
+	N0009[wellconceptData_1] -->|IsProvidedTo| N0007[contextualDataBuilder_1] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wellconcept_0
+WHERE {
+	?wellconcept_0 rdf:type ddhub:DynamicDrillingSignal .
+	?wellconcept_1 rdf:type ddhub:WellConcept .
+	?wellconcept_1 rdf:type ddhub:JSonDataType .
+	?wellconcept_1 ddhub:HasDynamicValue ?wellconcept_0 .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?wellconcept_1 ddhub:IsProvidedBy ?operatingCompany_1 .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?wellconceptData_1 ddhub:IsProvidedTo ?contextualDataBuilder_1 .
+}
+```
+This example describes a signal that contains a json string that represent a well concept.
+## WellBore <!-- NOUN -->
+- Display name: Wellbore
+- Parent class: [ContextualData](./ContextualData.md#ContextualData)
+- Description: 
+Wellbore is used to describe meta information about the borehole like its tie in point or which slot it starts from.
+- Definition set: ContextualData
+- Examples:
+``` dwis wellBore_0
+DynamicDrillingSignal:wellBore_0
+DrillingDataPoint: wellBore_1
+wellBore_1 BelongsToClass WellBore
+wellBore_1 BelongsToClass JSonDataType
+wellBore_1 HasDynamicValue wellBore_0
+OperatingCompany:operatingCompany_1
+wellBore_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+wellBoreData_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wellBore_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[wellBore_1] -->|BelongsToClass| N0003(WellBore) 
+	N0002[wellBore_1] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[wellBore_1] -->|HasDynamicValue| N0000[wellBore_0] 
+	N0005[operatingCompany_1] -->|BelongsToClass| N0006(OperatingCompany) 
+	N0002[wellBore_1] -->|IsProvidedBy| N0005[operatingCompany_1] 
+	N0007[contextualDataBuilder_1] -->|BelongsToClass| N0008(DWISContextualDataBuilder) 
+	N0009[wellBoreData_1] -->|IsProvidedTo| N0007[contextualDataBuilder_1] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wellBore_0
+WHERE {
+	?wellBore_0 rdf:type ddhub:DynamicDrillingSignal .
+	?wellBore_1 rdf:type ddhub:WellBore .
+	?wellBore_1 rdf:type ddhub:JSonDataType .
+	?wellBore_1 ddhub:HasDynamicValue ?wellBore_0 .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?wellBore_1 ddhub:IsProvidedBy ?operatingCompany_1 .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?wellBoreData_1 ddhub:IsProvidedTo ?contextualDataBuilder_1 .
+}
+```
+This example describes a signal that contains a json string that represent a wellbore.
+## WellBoreConcept <!-- NOUN -->
+- Display name: WellBoreConcept
+- Parent class: [ContextualData](./ContextualData.md#ContextualData)
+- Description: 
+WellBoreConcept is used to describe meta information about the possibilities for a wellbore at the planning stage.
+- Definition set: ContextualData
+- Examples:
+``` dwis wellBoreConcept_0
+DynamicDrillingSignal:wellBoreConcept_0
+DrillingDataPoint: wellBoreConcept_1
+wellBoreConcept_1 BelongsToClass WellBoreConcept
+wellBoreConcept_1 BelongsToClass JSonDataType
+wellBoreConcept_1 HasDynamicValue wellBoreConcept_0
+OperatingCompany:operatingCompany_1
+wellBoreConcept_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+wellBoreConceptData_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wellBoreConcept_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[wellBoreConcept_1] -->|BelongsToClass| N0003(WellBoreConcept) 
+	N0002[wellBoreConcept_1] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[wellBoreConcept_1] -->|HasDynamicValue| N0000[wellBoreConcept_0] 
+	N0005[operatingCompany_1] -->|BelongsToClass| N0006(OperatingCompany) 
+	N0002[wellBoreConcept_1] -->|IsProvidedBy| N0005[operatingCompany_1] 
+	N0007[contextualDataBuilder_1] -->|BelongsToClass| N0008(DWISContextualDataBuilder) 
+	N0009[wellBoreConceptData_1] -->|IsProvidedTo| N0007[contextualDataBuilder_1] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wellBoreConcept_0
+WHERE {
+	?wellBoreConcept_0 rdf:type ddhub:DynamicDrillingSignal .
+	?wellBoreConcept_1 rdf:type ddhub:WellBoreConcept .
+	?wellBoreConcept_1 rdf:type ddhub:JSonDataType .
+	?wellBoreConcept_1 ddhub:HasDynamicValue ?wellBoreConcept_0 .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?wellBoreConcept_1 ddhub:IsProvidedBy ?operatingCompany_1 .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?wellBoreConceptData_1 ddhub:IsProvidedTo ?contextualDataBuilder_1 .
+}
+```
+This example describes a signal that contains a json string that represent a wellbore concept.
 ## WellBoreData <!-- NOUN -->
 - Display name: Wellbore Data
 - Parent class: [ContextualData](./ContextualData.md#ContextualData)
@@ -904,6 +1395,54 @@ WHERE {
 	?fluidDescription_1 ddhub:IsCharacterizedBy ?current_1 .
 }
 ```
+## WellBoreArchitectureConcept <!-- NOUN -->
+- Display name: Wellbore Architecture Concept
+- Parent class: [ContextualData](./ContextualData.md#ContextualData)
+- Description: 
+WellBoreArchitectureConcept is used to describe meta information about the possibilities for the architecture of a wellbore at the planning stage.
+- Definition set: ContextualData
+- Examples:
+``` dwis wellBoreArchitectureConcept_0
+DynamicDrillingSignal:wellBoreArchitectureConcept_0
+DrillingDataPoint: wellBoreArchitectureConcept_1
+wellBoreArchitectureConcept_1 BelongsToClass WellBoreArchitectureConcept
+wellBoreArchitectureConcept_1 BelongsToClass JSonDataType
+wellBoreArchitectureConcept_1 HasDynamicValue wellBoreArchitectureConcept_0
+OperatingCompany:operatingCompany_1
+wellBoreArchitectureConcept_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+wellBoreArchitectureConceptData_1 IsProvidedTo contextualDataBuilder_1
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wellBoreArchitectureConcept_0] -->|BelongsToClass| N0001(DynamicDrillingSignal) 
+	N0002[wellBoreArchitectureConcept_1] -->|BelongsToClass| N0003(WellBoreArchitectureConcept) 
+	N0002[wellBoreArchitectureConcept_1] -->|BelongsToClass| N0004(JSonDataType) 
+	N0002[wellBoreArchitectureConcept_1] -->|HasDynamicValue| N0000[wellBoreArchitectureConcept_0] 
+	N0005[operatingCompany_1] -->|BelongsToClass| N0006(OperatingCompany) 
+	N0002[wellBoreArchitectureConcept_1] -->|IsProvidedBy| N0005[operatingCompany_1] 
+	N0007[contextualDataBuilder_1] -->|BelongsToClass| N0008(DWISContextualDataBuilder) 
+	N0009[wellBoreArchitectureConceptData_1] -->|IsProvidedTo| N0007[contextualDataBuilder_1] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wellBoreArchitectureConcept_0
+WHERE {
+	?wellBoreArchitectureConcept_0 rdf:type ddhub:DynamicDrillingSignal .
+	?wellBoreArchitectureConcept_1 rdf:type ddhub:WellBoreArchitectureConcept .
+	?wellBoreArchitectureConcept_1 rdf:type ddhub:JSonDataType .
+	?wellBoreArchitectureConcept_1 ddhub:HasDynamicValue ?wellBoreArchitectureConcept_0 .
+	?operatingCompany_1 rdf:type ddhub:OperatingCompany .
+	?wellBoreArchitectureConcept_1 ddhub:IsProvidedBy ?operatingCompany_1 .
+	?contextualDataBuilder_1 rdf:type ddhub:DWISContextualDataBuilder .
+	?wellBoreArchitectureConceptData_1 ddhub:IsProvidedTo ?contextualDataBuilder_1 .
+}
+```
+This example describes a signal that contains a json string that represent a wellbore architecture concept.
 ## WellboreArchitectureDescription <!-- NOUN -->
 - Display name: Wellbore Architecture Description
 - Parent class: [WellBoreData](./ContextualData.md#WellBoreData)

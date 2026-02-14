@@ -296,6 +296,66 @@ and then possibly recover from that incident.
     <rdfs:comment xml:lang="EN">A context is at the fourth level of a rig action plan.
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GeodeticDatum">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ContextualData" />
+    <rdfs:comment xml:lang="EN">GeodeticDatum is used to describe a geodetic datum with reference to WGS84. It describes both the size of the spheroid and its translation, rotation and scaling compared to WGS84.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/CartographicProjection">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ContextualData" />
+    <rdfs:comment xml:lang="EN">CartographicProjection is used to describe the projection that is used to transform geodetic coordinates in a geodetic datum to and from map coordinates.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Field">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ContextualData" />
+    <rdfs:comment xml:lang="EN">Field is used to describe a region in which some energy reserves exist.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Cluster">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ContextualData" />
+    <rdfs:comment xml:lang="EN">Cluster is used to describe a group of slots. Sometime, it is referred as a pad.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TargetGroup">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ContextualData" />
+    <rdfs:comment xml:lang="EN">TargetGroup is used to describe meta information a group of targets, for instance whether they should be reached in sequence or from multi-laterals.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Target">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ContextualData" />
+    <rdfs:comment xml:lang="EN">Target is used to describe meta information the region in the reservoir by which a wellbore is intended to pass through.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Well">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ContextualData" />
+    <rdfs:comment xml:lang="EN">Well is used to describe meta information about the wellbores that connect a specific point at the surface of the earth and the targets in a target group.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/WellConcept">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ContextualData" />
+    <rdfs:comment xml:lang="EN">WellConcept is used to describe meta information about possibilities for a well at the planning stage.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/WellBore">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ContextualData" />
+    <rdfs:comment xml:lang="EN">Wellbore is used to describe meta information about the borehole like its tie in point or which slot it starts from.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/WellBoreConcept">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ContextualData" />
+    <rdfs:comment xml:lang="EN">WellBoreConcept is used to describe meta information about the possibilities for a wellbore at the planning stage.
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/WellBoreData">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/ContextualData" />
@@ -411,6 +471,12 @@ of the formation layers that are encountered along the wellbore.
     <rdfs:subClassOf rdf:resource="http://ddhub.no/WellBoreData" />
     <rdfs:comment xml:lang="EN">The rig data structure describes the characteristics of the drilling equipment and any additional equipment
 associated with non-standard drilling methods, e.g., back-pressure MPD, dual-gradient,...
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/WellBoreArchitectureConcept">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ContextualData" />
+    <rdfs:comment xml:lang="EN">WellBoreArchitectureConcept is used to describe meta information about the possibilities for the architecture of a wellbore at the planning stage.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/RigActionPlanProcessingStatus">
@@ -1539,6 +1605,25 @@ ComputedState.
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/PhysicalData" />
     <rdfs:comment xml:lang="EN">A physical data point generated by a computation or model rather than direct measurement.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/EstimationParameter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:comment xml:lang="EN">A quantity describing the configuration or internal state of a data interpretation
+or estimation model rather than the physical drilling process.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/CalibrationParameter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/EstimationParameter" />
+    <rdfs:comment xml:lang="EN">An estimation parameter that maps a sensor representation to a physical quantity through scaling or conversion.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/CorrectionFactor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/EstimationParameter" />
+    <rdfs:comment xml:lang="EN">An estimation parameter used to compensate systematic bias or mismatch in a computed or measured quantity.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DrillingSignal">
@@ -22262,6 +22347,41 @@ to another.
     <rdfs:range rdf:resource="http://ddhub.no/Equipment" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
     <rdfs:comment xml:lang="EN">Indicates that the drilling data point is associated with a specific piece of equipment.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Adjusts">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/EstimationParameter" />
+    <rdfs:range rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
+    <rdfs:comment xml:lang="EN">Indicates that an EstimationParameter is applied to modify the interpretation of a DrillingDataPoint.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Corrects">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/CorrectionFactor" />
+    <rdfs:range rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/Adjusts" />
+    <rdfs:comment xml:lang="EN">Indicates that a CorrectionFactor is applied to compensate systematic bias
+in a DrillingDataPoint during interpretation or computation.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Scales">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/CalibrationParameter" />
+    <rdfs:range rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/Adjusts" />
+    <rdfs:comment xml:lang="EN">Indicates that a CalibrationParameter is applied as a multiplicative factor
+when converting or correcting a DrillingDataPoint.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsGainOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/CalibrationParameter" />
+    <rdfs:range rdf:resource="http://ddhub.no/Transformation" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/Adjusts" />
+    <rdfs:comment xml:lang="EN">Indicates that a CalibrationParameter defines the multiplicative gain used by a
+Transformation when producing its output.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsSubPartOf">
