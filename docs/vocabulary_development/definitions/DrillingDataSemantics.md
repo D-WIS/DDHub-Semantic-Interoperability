@@ -479,6 +479,65 @@ Simulator:hydraulicsSimulator
 predictedStandpipePressure IsComputedBy hydraulicsSimulator
 ```
 This example shows a computed standpipe pressure from a simulator.
+## EstimationParameter <!-- NOUN -->
+- Display name: Estimation Parameter
+- Parent class: DWISNoun
+- Attributes:
+- Specialization:
+- Description: A quantity describing the configuration or internal state of a data interpretation 
+or estimation model rather than the physical drilling process.
+- Examples:
+```dwis KalmanFilterStateConfidenceExample
+DynamicDrillingSignal:KalmanFilterStateConfidence
+ComputedData:KalmanFilterStateConfidence#01
+KalmanFilterStateConfidence#01 BelongsToClass ContinuousDataType
+KalmanFilterStateConfidence#01 BelongsToClass EstimationParameter
+KalmanFilterStateConfidence#01 IsOfMeasurableQuantity DimensionLessStandard
+KalmanFilterStateConfidence#01 HasDynamicValue KalmanFilterStateConfidence
+DataAnalysisService:pitVolumeEstimator#01
+KalmanFilterStateConfidence#01 IsProvidedBy pitVolumeEstimator#01
+```
+A confidence indicator describing the estimator internal state quality.
+## CalibrationParameter <!-- NOUN -->
+- Display name: Calibration Parameter
+- Parent class: EstimationParameter
+- Attributes:
+- Specialization:
+- Description: An estimation parameter that maps a sensor representation to a physical quantity through scaling or conversion.
+- Examples:
+```dwis ReturnFlowCapacityScaleExample
+DynamicDrillingSignal:ReturnFlowCapacityScale
+ComputedData:ReturnFlowCapacityScale#01
+ReturnFlowCapacityScale#01 BelongsToClass ContinuousDataType
+ReturnFlowCapacityScale#01 BelongsToClass CalibrationParameter
+ReturnFlowCapacityScale#01 IsOfMeasurableQuantity VolumetricFlowrateDrilling
+ReturnFlowCapacityScale#01 HasDynamicValue ReturnFlowCapacityScale
+DynamicDrillingSignal:ReturnFlowProportion
+ReturnFlowCapacityScale#01 Calibrates ReturnFlowProportion
+DataAnalysisService:pitVolumeEstimator#01
+ReturnFlowCapacityScale#01 IsProvidedBy pitVolumeEstimator#01
+```
+Scale factor converting return proportion -> volumetric flowrate.
+## CorrectionFactor <!-- NOUN -->
+- Display name: Correction Factor
+- Parent class: EstimationParameter
+- Attributes:
+- Specialization:
+- Description: An estimation parameter used to compensate systematic bias or mismatch in a computed or measured quantity.
+- Examples:
+```dwis ReturnFlowCapacityScaleExample
+DynamicDrillingSignal:EstimatedPitVolumeFlowBias
+ComputedData:EstimatedPitVolumeFlowBias#01
+EstimatedPitVolumeFlowBias#01 BelongsToClass ContinuousDataType
+EstimatedPitVolumeFlowBias#01 BelongsToClass CorrectionFactor
+EstimatedPitVolumeFlowBias#01 IsOfMeasurableQuantity VolumetricFlowrateDrilling
+EstimatedPitVolumeFlowBias#01 HasDynamicValue EstimatedPitVolumeFlowBias
+DynamicDrillingSignal:CorrectedActiveVolume
+EstimatedPitVolumeFlowBias#01 Corrects CorrectedActiveVolume
+DataAnalysisService:pitVolumeEstimator#01
+EstimatedPitVolumeFlowBias#01 IsProvidedBy pitVolumeEstimator#01
+```
+Estimated bias used to compensate mismatch in pit volume balance.
 ## DrillingSignal <!-- NOUN -->
 - Display name: DrillingSignal
 - Parent class: DWISNoun
@@ -714,3 +773,90 @@ Equipment:equiment
 measurement IsLocatedAtEquipment equiment
 ```
 This example states that a measurement is located at specific piece of equipment.
+## Adjusts <!-- VERB -->
+- Display name: Adjusts
+- Parent verb: DWISVerb
+- Subject class: EstimationParameter
+- Object class: DrillingDataPoint
+- Description: Indicates that an EstimationParameter is applied to modify the interpretation of a DrillingDataPoint.
+- Examples:
+```dwis CorrectsExample
+DynamicDrillingSignal:ActivePitVolumeAdjustmentParameter
+ComputedData:ActivePitVolumeAdjustmentParameter#01
+ActivePitVolumeAdjustmentParameter#01 BelongsToClass ContinuousDataType
+ActivePitVolumeAdjustmentParameter#01 BelongsToClass EstimationParameter
+ActivePitVolumeAdjustmentParameter#01 IsOfMeasurableQuantity VolumeDrilling
+ActivePitVolumeAdjustmentParameter#01 HasDynamicValue ActivePitVolumeAdjustmentParameter
+DynamicDrillingSignal:ActivePitVolume
+DerivedMeasurement:ActivePitVolume#01
+ActivePitVolume#01 BelongsToClass ContinuousDataType
+ActivePitVolume#01 IsOfMeasurableQuantity VolumeDrilling
+ActivePitVolume#01 HasDynamicValue ActivePitVolume
+ActivePitVolumeAdjustmentParameter#01 Adjusts ActivePitVolume#01
+```
+An estimator-produced parameter modifies how the active pit volume measurement must be interpreted, 
+without specifying whether the adjustment is additive (bias) or multiplicative (scale).
+## Corrects <!-- VERB -->
+- Display name: Corrects
+- Parent verb: Adjusts
+- Subject class: CorrectionFactor
+- Object class: DrillingDataPoint
+- Description: Indicates that a CorrectionFactor is applied to compensate systematic bias 
+in a DrillingDataPoint during interpretation or computation.
+- Examples:
+```dwis CorrectsExample
+DynamicDrillingSignal:EstimatedPitVolumeFlowBias
+ComputedData:EstimatedPitVolumeFlowBias#01
+EstimatedPitVolumeFlowBias#01 BelongsToClass ContinuousDataType
+EstimatedPitVolumeFlowBias#01 BelongsToClass CorrectionFactor
+EstimatedPitVolumeFlowBias#01 IsOfMeasurableQuantity VolumetricFlowrateDrilling
+EstimatedPitVolumeFlowBias#01 HasDynamicValue EstimatedPitVolumeFlowBias
+DynamicDrillingSignal:CorrectedActiveVolume
+DerivedMeasurement:CorrectedActiveVolume#01
+CorrectedActiveVolume#01 BelongsToClass ContinuousDataType
+CorrectedActiveVolume#01 HasDynamicValue CorrectedActiveVolume
+CorrectedActiveVolume#01 IsOfMeasurableQuantity VolumeDrilling
+EstimatedPitVolumeFlowBias#01 Corrects CorrectedActiveVolume#01
+```
+Estimated bias used to compensate mismatch in pit volume balance.
+## Scales <!-- VERB -->
+- Display name: Scales
+- Parent verb: Adjusts
+- Subject class: CalibrationParameter
+- Object class: DrillingDataPoint
+- Description: Indicates that a CalibrationParameter is applied as a multiplicative factor 
+when converting or correcting a DrillingDataPoint.
+- Examples:
+```dwis ScalesExample
+DynamicDrillingSignal:ReturnFlowCapacityScale
+ComputedData:ReturnFlowCapacityScale#01
+ReturnFlowCapacityScale#01 BelongsToClass ContinuousDataType
+ReturnFlowCapacityScale#01 BelongsToClass CalibrationParameter
+ReturnFlowCapacityScale#01 IsOfMeasurableQuantity VolumetricFlowrateDrilling
+ReturnFlowCapacityScale#01 HasDynamicValue ReturnFlowCapacityScale
+DynamicDrillingSignal:ReturnFlowProportion
+DerivedMeasurement:ReturnFlowProportion#01
+ReturnFlowProportion#01 BelongsToClass ContinuousDataType
+ReturnFlowProportion#01 IsOfMeasurableQuantity DimensionLessStandard
+ReturnFlowProportion#01 HasDynamicValue ReturnFlowProportion
+ReturnFlowCapacityScale#01 Scales ReturnFlowProportion#01
+```
+A computed calibration parameter representing a volumetric flowrate scale factor is used to 
+convert a dimensionless return-flow proportion measurement into a physically interpretable flow quantity.
+## IsGainOf <!-- VERB -->
+- Display name: Is Gain Of
+- Parent verb: Adjusts
+- Subject class: CalibrationParameter
+- Object class: Transformation
+- Description: Indicates that a CalibrationParameter defines the multiplicative gain used by a 
+Transformation when producing its output.
+- Examples:
+```dwis IsGainOfExample
+CalibrationParameter:ReturnFlowCapacityScale
+ReturnFlowCapacityScale#01 BelongsToClass ContinuousDataType
+ReturnFlowCapacityScale#01 HasDynamicValue ReturnFlowCapacityScale
+Transformation:ReturnFlowConversion
+ReturnFlowCapacityScale#01 IsGainOf ReturnFlowConversion
+```
+A calibration parameter defines the multiplicative gain used by the return-flow conversion 
+transformation when computing its output.

@@ -213,11 +213,201 @@ actionStep_1 IsAnActionOf phaseStep_1
 taskStep_1 IsATaskOf actionStep_1
 contextStep_1 IsAContextOf taskStep_1
 ```
+## GeodeticDatum <!-- NOUN -->
+- Display name: Geodetic Datum
+- Parent class: ContextualData
+- Attributes:
+- Specialization: 
+- Description: GeodeticDatum is used to describe a geodetic datum with reference to WGS84. It describes both the size of the spheroid and its translation, rotation and scaling compared to WGS84.
+- Examples:
+``` dwis geodeticDatum_0
+DynamicDrillingSignal:geodeticDatum_0
+DrillingDataPoint: geodeticDatum_1
+geodeticDatum_1 BelongsToClass GeodeticDatum
+geodeticDatum_1 BelongsToClass JSonDataType
+geodeticDatum_1 HasDynamicValue geodeticDatum_0
+OperatingCompany:operatingCompany_1
+geodeticDatum_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+geodeticDatumData_1 IsProvidedTo contextualDataBuilder_1
+```
+This example describes a signal that contains a json string that represent a geodetic datum.
+## CartographicProjection <!-- NOUN -->
+- Display name: Cartographic Projection
+- Parent class: ContextualData
+- Attributes:
+- Specialization: 
+- Description: CartographicProjection is used to describe the projection that is used to transform geodetic coordinates in a geodetic datum to and from map coordinates.
+- Examples:
+``` dwis cartographicProjection_0
+DynamicDrillingSignal:cartographicProjection_0
+DrillingDataPoint: cartographicProjection_1
+cartographicProjection_1 BelongsToClass CartographicProjection
+cartographicProjection_1 BelongsToClass JSonDataType
+cartographicProjection_1 HasDynamicValue cartographicProjection_0
+OperatingCompany:operatingCompany_1
+cartographicProjection_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+cartographicProjectionData_1 IsProvidedTo contextualDataBuilder_1
+```
+This example describes a signal that contains a json string that represent a cartographicProjection.
+## Field <!-- NOUN -->
+- Display name: Field
+- Parent class: ContextualData
+- Attributes:
+- Specialization: 
+- Description: Field is used to describe a region in which some energy reserves exist.
+- Examples:
+``` dwis field_0
+DynamicDrillingSignal:field_0
+DrillingDataPoint: field_1
+field_1 BelongsToClass Field
+field_1 BelongsToClass JSonDataType
+field_1 HasDynamicValue field_0
+OperatingCompany:operatingCompany_1
+field_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+fieldData_1 IsProvidedTo contextualDataBuilder_1
+```
+This example describes a signal that contains a json string that represent a field.
+## Cluster <!-- NOUN -->
+- Display name: Cluster
+- Parent class: ContextualData
+- Attributes:
+- Specialization: 
+- Description: Cluster is used to describe a group of slots. Sometime, it is referred as a pad.
+- Examples:
+``` dwis cluster_0
+DynamicDrillingSignal:cluster_0
+DrillingDataPoint: cluster_1
+cluster_1 BelongsToClass Cluster
+cluster_1 BelongsToClass JSonDataType
+cluster_1 HasDynamicValue cluster_0
+OperatingCompany:operatingCompany_1
+cluster_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+clusterData_1 IsProvidedTo contextualDataBuilder_1
+```
+This example describes a signal that contains a json string that represent a cluster.
+## TargetGroup <!-- NOUN -->
+- Display name: Target Group
+- Parent class: ContextualData
+- Attributes:
+- Specialization: 
+- Description: TargetGroup is used to describe meta information a group of targets, for instance whether they should be reached in sequence or from multi-laterals.
+- Examples:
+``` dwis targetgroup_0
+DynamicDrillingSignal:targetgroup_0
+DrillingDataPoint: targetgroup_1
+targetgroup_1 BelongsToClass TargetGroup
+targetgroup_1 BelongsToClass JSonDataType
+targetgroup_1 HasDynamicValue targetgroup_0
+OperatingCompany:operatingCompany_1
+targetgroup_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+targetgroupData_1 IsProvidedTo contextualDataBuilder_1
+```
+This example describes a signal that contains a json string that represent a target group.
+## Target <!-- NOUN -->
+- Display name: Target
+- Parent class: ContextualData
+- Attributes:
+- Specialization: 
+- Description: Target is used to describe meta information the region in the reservoir by which a wellbore is intended to pass through.
+- Examples:
+``` dwis target_0
+DynamicDrillingSignal:target_0
+DrillingDataPoint: target_1
+target_1 BelongsToClass Target
+target_1 BelongsToClass JSonDataType
+target_1 HasDynamicValue target_0
+OperatingCompany:operatingCompany_1
+target_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+targetData_1 IsProvidedTo contextualDataBuilder_1
+```
+This example describes a signal that contains a json string that represent a target.
+## Well <!-- NOUN -->
+- Display name: Well
+- Parent class: ContextualData
+- Attributes:
+- Specialization: 
+- Description: Well is used to describe meta information about the wellbores that connect a specific point at the surface of the earth and the targets in a target group.
+- Examples:
+``` dwis well_0
+DynamicDrillingSignal:well_0
+DrillingDataPoint: well_1
+well_1 BelongsToClass Well
+well_1 BelongsToClass JSonDataType
+well_1 HasDynamicValue well_0
+OperatingCompany:operatingCompany_1
+well_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+wellData_1 IsProvidedTo contextualDataBuilder_1
+```
+This example describes a signal that contains a json string that represent a well.
+## WellConcept <!-- NOUN -->
+- Display name: Well Concept
+- Parent class: ContextualData
+- Attributes:
+- Specialization: 
+- Description: WellConcept is used to describe meta information about possibilities for a well at the planning stage.
+- Examples:
+``` dwis wellconcept_0
+DynamicDrillingSignal:wellconcept_0
+DrillingDataPoint: wellconcept_1
+wellconcept_1 BelongsToClass WellConcept
+wellconcept_1 BelongsToClass JSonDataType
+wellconcept_1 HasDynamicValue wellconcept_0
+OperatingCompany:operatingCompany_1
+wellconcept_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+wellconceptData_1 IsProvidedTo contextualDataBuilder_1
+```
+This example describes a signal that contains a json string that represent a well concept.
+## WellBore <!-- NOUN -->
+- Display name: Wellbore
+- Parent class: ContextualData
+- Attributes:
+- Specialization: 
+- Description: Wellbore is used to describe meta information about the borehole like its tie in point or which slot it starts from.
+- Examples:
+``` dwis wellBore_0
+DynamicDrillingSignal:wellBore_0
+DrillingDataPoint: wellBore_1
+wellBore_1 BelongsToClass WellBore
+wellBore_1 BelongsToClass JSonDataType
+wellBore_1 HasDynamicValue wellBore_0
+OperatingCompany:operatingCompany_1
+wellBore_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+wellBoreData_1 IsProvidedTo contextualDataBuilder_1
+```
+This example describes a signal that contains a json string that represent a wellbore.
+## WellBoreConcept <!-- NOUN -->
+- Display name: WellBoreConcept
+- Parent class: ContextualData
+- Attributes:
+- Specialization: 
+- Description: WellBoreConcept is used to describe meta information about the possibilities for a wellbore at the planning stage.
+- Examples:
+``` dwis wellBoreConcept_0
+DynamicDrillingSignal:wellBoreConcept_0
+DrillingDataPoint: wellBoreConcept_1
+wellBoreConcept_1 BelongsToClass WellBoreConcept
+wellBoreConcept_1 BelongsToClass JSonDataType
+wellBoreConcept_1 HasDynamicValue wellBoreConcept_0
+OperatingCompany:operatingCompany_1
+wellBoreConcept_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+wellBoreConceptData_1 IsProvidedTo contextualDataBuilder_1
+```
+This example describes a signal that contains a json string that represent a wellbore concept.
 ## WellBoreData <!-- NOUN -->
 - Display name: Wellbore Data
 - Parent class: ContextualData
 - Attributes:
-- Specialization: Wellbore data is used to describe specific elements of a wellbore.
+- Specialization: 
 - Description: Captures contextual information describing wellbore characteristics and elements.
 - Examples:
 ``` dwis wellBoreData_0
@@ -329,6 +519,25 @@ fluidDescription_1 IsProvidedTo contextualDataBuilder_1
 Current:current_1
 fluidDescription_1 IsCharacterizedBy current_1
 ```
+## WellBoreArchitectureConcept <!-- NOUN -->
+- Display name: Wellbore Architecture Concept
+- Parent class: ContextualData
+- Attributes:
+- Specialization: 
+- Description: WellBoreArchitectureConcept is used to describe meta information about the possibilities for the architecture of a wellbore at the planning stage.
+- Examples:
+``` dwis wellBoreArchitectureConcept_0
+DynamicDrillingSignal:wellBoreArchitectureConcept_0
+DrillingDataPoint: wellBoreArchitectureConcept_1
+wellBoreArchitectureConcept_1 BelongsToClass WellBoreArchitectureConcept
+wellBoreArchitectureConcept_1 BelongsToClass JSonDataType
+wellBoreArchitectureConcept_1 HasDynamicValue wellBoreArchitectureConcept_0
+OperatingCompany:operatingCompany_1
+wellBoreArchitectureConcept_1 IsProvidedBy operatingCompany_1
+DWISContextualDataBuilder:contextualDataBuilder_1
+wellBoreArchitectureConceptData_1 IsProvidedTo contextualDataBuilder_1
+```
+This example describes a signal that contains a json string that represent a wellbore architecture concept.
 ## WellboreArchitectureDescription <!-- NOUN -->
 - Display name: Wellbore Architecture Description
 - Parent class: WellBoreData
