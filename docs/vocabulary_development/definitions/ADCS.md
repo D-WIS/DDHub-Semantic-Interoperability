@@ -1,20 +1,38 @@
 - Description: this definition set refers to the various functions an ADCS implements. It is to be used for the ADCS capability description. 
 
 # NOUNS
-## ActivableFunction <!-- NOUN -->
-- Display name: ActivableFunction
+## ADCSFunction <!-- NOUN -->
+- Display name: ADCS Function
 - Parent class: DWISNoun
 - Attributes:
-- Description: An `ActivableFunction` is an ADCS function that can be activated. Here activation means that the
-function may run immediately or that it is enabled and can trigger if some conditions are respected.
+- Description: An `ADCSFunction` is a function exposed by an automated drilling control system as part of its capability
+description. ADCS functions include activable functions, such as controllers, procedures, and protections, and
+non-activable service functions that perform discrete service actions on request.
 - Examples:
 ```dwis ADCSFunction
-ActivableFunction:ADCSFunction
+ADCSFunction:ADCSFunction
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
 DCS BelongsToClass DataProvider
-ActivableFunction IsProvidedBy DCS
+ADCSFunction IsProvidedBy DCS
+```
+This example describes all `ADCSFunction` provided by the drilling control system, `DCS`. The `DCS` is
+defined as a `ControlSystem` provided by a drilling contractor.
+## ActivableFunction <!-- NOUN -->
+- Display name: ActivableFunction
+- Parent class: ADCSFunction
+- Attributes:
+- Description: An `ActivableFunction` is an ADCS function that can be activated. Here activation means that the
+function may run immediately or that it is enabled and can trigger if some conditions are respected.
+- Examples:
+```dwis activableFunction
+ActivableFunction:activableFunction
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+activableFunction IsProvidedBy DCS
 ```
 This example describes all `ActivableFunction` provided by the drilling control system, `DCS`. The `DCS` is 
 defined as a `ControlSystem` provided by a drilling contractor.
@@ -148,6 +166,69 @@ swabSurgeLimits IsProvidedBy DCS
 ```
 This example describes the `swabSurgeLimits` safe operating envelope limits to avoid detrimental swab/surge pressures in 
 the open hole section of the borehole. 
+## ServiceFunction <!-- NOUN -->
+- Display name: Service Function
+- Parent class: ADCSFunction
+- Description: A `ServiceFunction` is an `ADCSFunction` that performs a discrete service action on request. It does not
+own the drilling control loop, does not execute a finite procedure, and does not define a protective envelope. An example
+of `ServiceFunction` is a tare service that applies a requested correction factor to a measured drilling quantity.
+- Examples:
+```dwis tareService
+ServiceFunction:tareService
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+tareService IsProvidedBy DCS
+```
+This example describes a service function provided by the drilling control system, `DCS`.
+## TareServiceFunction <!-- NOUN -->
+- Display name: Tare Service Function
+- Parent class: ServiceFunction
+- Description: A `TareServiceFunction` is a `ServiceFunction` that applies a tare value as a correction factor to a
+drilling signal. The service is requested by a command and uses an associated tare value.
+- Examples:
+```dwis wobTareService
+TareServiceFunction:wobTareService
+CalibrationParameter:wobTareValue
+wobTareService IsRelatedToDrillingObjective stableWOB
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+wobTareService IsProvidedBy DCS
+```
+This example describes a tare service function provided by the drilling control system, `DCS`.
+## WeightOnBitTareServiceFunction <!-- NOUN -->
+- Display name: Weight On Bit Tare Service Function
+- Parent class: TareServiceFunction
+- Description: A `WeightOnBitTareServiceFunction` is a `TareServiceFunction` that applies a correction factor to weight
+on bit.
+- Examples:
+```dwis wobTareService
+WeightOnBitTareServiceFunction:wobTareService
+StableAxialForceObjective:stableWOB
+BottomOfStringReferenceLocation:bos
+stableWOB IsPhysicallyLocatedAt bos
+wobTareService IsRelatedToDrillingObjective stableWOB
+```
+This example describes a service function used to tare weight on bit.
+## DifferentialPressureTareServiceFunction <!-- NOUN -->
+- Display name: Differential Pressure Tare Service Function
+- Parent class: TareServiceFunction
+- Description: A `DifferentialPressureTareServiceFunction` is a `TareServiceFunction` that applies a correction factor
+to differential pressure.
+- Examples:
+```dwis differentialPressureTareService
+DifferentialPressureTareServiceFunction:differentialPressureTareService
+StablePressureObjective:stableDifferentialPressure
+PositiveDisplacementMotor:PDM
+HydraulicLogicalElement:logicalPDM
+logicalPDM IsAHydraulicRepresentationFor PDM
+stableDifferentialPressure IsHydraulicallyLocatedAt logicalPDM
+differentialPressureTareService IsRelatedToDrillingObjective stableDifferentialPressure
+```
+This example describes a service function used to tare differential pressure.
 
 # VERBS
 ## IsEnablingSignalFor <!-- VERB -->
