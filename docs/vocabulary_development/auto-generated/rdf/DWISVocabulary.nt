@@ -1,6 +1,8 @@
 <http://ddhub.no/DWISNoun> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ADCSFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ADCSFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/ActivableFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://ddhub.no/ActivableFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/ActivableFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ADCSFunction> .
 <http://ddhub.no/RunnableFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/RunnableFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ActivableFunction> .
 <http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -18,6 +20,14 @@
 <http://ddhub.no/FDIRFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ProtectionFunction> .
 <http://ddhub.no/SOEFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/SOEFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ProtectionFunction> .
+<http://ddhub.no/ServiceFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ServiceFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ADCSFunction> .
+<http://ddhub.no/TareServiceFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/TareServiceFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ServiceFunction> .
+<http://ddhub.no/WeightOnBitTareServiceFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/WeightOnBitTareServiceFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/TareServiceFunction> .
+<http://ddhub.no/DifferentialPressureTareServiceFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DifferentialPressureTareServiceFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/TareServiceFunction> .
 <http://ddhub.no/DataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/DataType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/StringDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -4589,6 +4599,7 @@
 <http://ddhub.no/MinMaxUncertainty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/MinMaxUncertainty> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/SignalUncertainty> .
 <http://ddhub.no/DWISNoun> <http://www.w3.org/2000/01/rdf-schema#comment> "Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a \"is a\" relation between the instance node and the noun. This is the root class for all the nouns defined in the DWIS vocabulary.\n"@EN .
+<http://ddhub.no/ADCSFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "An `ADCSFunction` is a function exposed by an automated drilling control system as part of its capability\ndescription. ADCS functions include activable functions, such as controllers, procedures, and protections, and\nnon-activable service functions that perform discrete service actions on request.\n"@EN .
 <http://ddhub.no/ActivableFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "An `ActivableFunction` is an ADCS function that can be activated. Here activation means that the\nfunction may run immediately or that it is enabled and can trigger if some conditions are respected.\n"@EN .
 <http://ddhub.no/RunnableFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A runnable function is a function that starts to run immediately when activated.\n"@EN .
 <http://ddhub.no/ControllerFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A `ControllerFunction` is a `RunnableFunction` that executes a feedback control loop to follow as closely\nas possible one or several desired values. A typical example of `ControllerFunction` is the `AutoDriller`. An `AutoDriller` \nfollows as closely as possible, for instance, a desired `WOB`.\n"@EN .
@@ -4596,6 +4607,10 @@
 <http://ddhub.no/ProtectionFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A `ProtectionFunction` is an `ActivableFunction`. It must be activated to have an effect, but the effect\nis to protect the drilling process, either by protecting the inputs to the drilling machines to avoid generating \na drilling incident, or to detect an abnormal drilling process state and react to the situation.\ndetected.\n"@EN .
 <http://ddhub.no/FDIRFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A `FDIRFunction` is a `ProtectionFunction` that reacts to a particular state of the drilling process. FDIR\nstands for Fault Detection, Isolation and Recovery. An FDIR protects the drilling process by looking at its outputs.\nWhen that state is detected, then an isolation procedure is run, and if successful and defined, a recovery procedure is\nthereafter executed. In case of success of the recovery procedure, the drilling process is resumed. In all other cases,\nthe system returns in manual mode, usually using the safe mode management procedure. An example of `FDIRFunction` is an\npackoff detection and reaction procedure.\n"@EN .
 <http://ddhub.no/SOEFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A `SOEFunction` is a `ProtectionFunction` that limits the commands that are send to the drilling machines\nto avoid generating a drilling incident. SOE stands for Safe Operating Envelope. A `SOEFunction` protects the inputs\nof the drilling process. An example `SOEFunction` is a swab/surge limits protection. This function limits the axial acceleration\nand speed of the drill-stem to avoid generate swabbing pressure below the maximum of the collapse and pore pressure, and\nsurging pressure above the fracturing pressure.\n"@EN .
+<http://ddhub.no/ServiceFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A `ServiceFunction` is an `ADCSFunction` that performs a discrete service action on request. It does not\nown the drilling control loop, does not execute a finite procedure, and does not define a protective envelope. An example\nof `ServiceFunction` is a tare service that applies a requested correction factor to a measured drilling quantity.\n"@EN .
+<http://ddhub.no/TareServiceFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A `TareServiceFunction` is a `ServiceFunction` that applies a tare value as a correction factor to a\ndrilling signal. The service is requested by a command and uses an associated tare value.\n"@EN .
+<http://ddhub.no/WeightOnBitTareServiceFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A `WeightOnBitTareServiceFunction` is a `TareServiceFunction` that applies a correction factor to weight\non bit.\n"@EN .
+<http://ddhub.no/DifferentialPressureTareServiceFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A `DifferentialPressureTareServiceFunction` is a `TareServiceFunction` that applies a correction factor\nto differential pressure.\n"@EN .
 <http://ddhub.no/DataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Characterizes the type of data that is stored in a signal.\n"@EN .
 <http://ddhub.no/StringDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies that the data is a string.\n"@EN .
 <http://ddhub.no/JSonDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies that the data is a string that contains the serialization in Json of an object.\n"@EN .

@@ -5,6 +5,7 @@ public static class Nouns
 {
 public enum Enum
 {
+ADCSFunction = 624983523,
 ActivableFunction = 1394680775,
 RunnableFunction = 426877387,
 ControllerFunction = 133425340,
@@ -12,6 +13,10 @@ ProcedureFunction = 1689378937,
 ProtectionFunction = 2068173382,
 FDIRFunction = 1046378197,
 SOEFunction = 135326293,
+ServiceFunction = 511626844,
+TareServiceFunction = 17586984,
+WeightOnBitTareServiceFunction = 666646641,
+DifferentialPressureTareServiceFunction = 846462238,
 AdvisorySystemAdvice = 854891140,
 DigitalTwinAdvice = 537118340,
 DrillingStandardProcedureAdvice = 1372284321,
@@ -2255,6 +2260,7 @@ GramCentimetreSquared = 1284463236,
 PoundFootSquared = 380817597,
 PoundInchSquared = 914245304
 }
+	public const string ADCSFunction = "ADCSFunction";
 	public const string ActivableFunction = "ActivableFunction";
 	public const string RunnableFunction = "RunnableFunction";
 	public const string ControllerFunction = "ControllerFunction";
@@ -2262,6 +2268,10 @@ PoundInchSquared = 914245304
 	public const string ProtectionFunction = "ProtectionFunction";
 	public const string FDIRFunction = "FDIRFunction";
 	public const string SOEFunction = "SOEFunction";
+	public const string ServiceFunction = "ServiceFunction";
+	public const string TareServiceFunction = "TareServiceFunction";
+	public const string WeightOnBitTareServiceFunction = "WeightOnBitTareServiceFunction";
+	public const string DifferentialPressureTareServiceFunction = "DifferentialPressureTareServiceFunction";
 	public const string AdvisorySystemAdvice = "AdvisorySystemAdvice";
 	public const string DigitalTwinAdvice = "DigitalTwinAdvice";
 	public const string DrillingStandardProcedureAdvice = "DrillingStandardProcedureAdvice";

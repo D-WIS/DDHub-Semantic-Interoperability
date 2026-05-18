@@ -134,7 +134,7 @@ ddhub:ActivableFunction a owl:Class;
                         rdfs:comment """An `ActivableFunction` is an ADCS function that can be activated. Here activation means that the
 function may run immediately or that it is enabled and can trigger if some conditions are respected.
 """@EN; 
-                        rdfs:subClassOf ddhub:DWISNoun. 
+                        rdfs:subClassOf ddhub:ADCSFunction. 
 ddhub:ActivationState a owl:Class; 
                       rdfs:comment """Indicates that a procedure or function is currently activated and executing its logic.
 """@EN; 
@@ -159,6 +159,12 @@ ddhub:ActiveVolume a owl:Class;
 ddhub:AdapterSpool a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:WellControlSystem. 
+ddhub:ADCSFunction a owl:Class; 
+                   rdfs:comment """An `ADCSFunction` is a function exposed by an automated drilling control system as part of its capability
+description. ADCS functions include activable functions, such as controllers, procedures, and protections, and
+non-activable service functions that perform discrete service actions on request.
+"""@EN; 
+                   rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:AdjustableKickoffSub a owl:Class; 
                            rdfs:comment ""@EN; 
                            rdfs:subClassOf ddhub:DrillingEquipment. 
@@ -3345,6 +3351,11 @@ ddhub:DifferentialPressureMeasurementPrinciple a owl:Class;
                                                rdfs:comment """Describes that a differential pressure measurement principle is used to perform a measurement.
 """@EN; 
                                                rdfs:subClassOf ddhub:FlowMeasurementPrinciple. 
+ddhub:DifferentialPressureTareServiceFunction a owl:Class; 
+                                              rdfs:comment """A `DifferentialPressureTareServiceFunction` is a `TareServiceFunction` that applies a correction factor
+to differential pressure.
+"""@EN; 
+                                              rdfs:subClassOf ddhub:TareServiceFunction. 
 ddhub:DifferentialStickingLocation a owl:Class; 
                                    rdfs:comment """Reference location for DifferentialStickingLocation.
 """@EN; 
@@ -15343,6 +15354,12 @@ ddhub:ServiceCompany a owl:Class;
                      rdfs:comment """A service company is an entity that provides services during the well construction.
 """@EN; 
                      rdfs:subClassOf ddhub:DataProvider. 
+ddhub:ServiceFunction a owl:Class; 
+                      rdfs:comment """A `ServiceFunction` is an `ADCSFunction` that performs a discrete service action on request. It does not
+own the drilling control loop, does not execute a finite procedure, and does not define a protective envelope. An example
+of `ServiceFunction` is a tare service that applies a requested correction factor to a measured drilling quantity.
+"""@EN; 
+                      rdfs:subClassOf ddhub:ADCSFunction. 
 ddhub:SetPoint a owl:Class; 
                rdfs:comment """A process data point intended to serve as a target value for control.
 """@EN; 
@@ -16248,6 +16265,11 @@ ddhub:TankLogical a owl:Class;
                   rdfs:comment """A storage element for drilling fluid within the hydraulic system.
 """@EN; 
                   rdfs:subClassOf ddhub:HydraulicLogicalElement. 
+ddhub:TareServiceFunction a owl:Class; 
+                          rdfs:comment """A `TareServiceFunction` is a `ServiceFunction` that applies a tare value as a correction factor to a
+drilling signal. The service is requested by a command and uses an associated tare value.
+"""@EN; 
+                          rdfs:subClassOf ddhub:ServiceFunction. 
 ddhub:Target a owl:Class; 
              rdfs:comment """Target is used to describe meta information the region in the reservoir by which a wellbore is intended to pass through.
 """@EN; 
@@ -17396,6 +17418,11 @@ The SI unit for **force** is: newton with the associated unit label $N$
 The meaningful precision of weight on bit in the drilling context is typically: 100 N
 """@EN; 
                                   rdfs:subClassOf ddhub:MeasurableQuantity. 
+ddhub:WeightOnBitTareServiceFunction a owl:Class; 
+                                     rdfs:comment """A `WeightOnBitTareServiceFunction` is a `TareServiceFunction` that applies a correction factor to weight
+on bit.
+"""@EN; 
+                                     rdfs:subClassOf ddhub:TareServiceFunction. 
 ddhub:WeightTransferObjective a owl:Class; 
                               rdfs:comment """This Noun is used to refer to the objective of transferring weight to the bottom of the drill-stem.
 """@EN; 
