@@ -111,31 +111,32 @@ this category contains the nouns and verbs required to describe the various type
 
 ## UnitTypes<!-- DEFINITION SET HEADER -->
 # Nouns
-## ActivableFunction <!-- NOUN -->
-- Display name: ActivableFunction
+## ADCSFunction <!-- NOUN -->
+- Display name: ADCS Function
 - Parent class: [DWISNoun](#DWISNoun)
 - Description: 
-An `ActivableFunction` is an ADCS function that can be activated. Here activation means that the
-function may run immediately or that it is enabled and can trigger if some conditions are respected.
+An `ADCSFunction` is a function exposed by an automated drilling control system as part of its capability
+description. ADCS functions include activable functions, such as controllers, procedures, and protections, and
+non-activable service functions that perform discrete service actions on request.
 - Definition set: ADCS
 - Examples:
 ```dwis ADCSFunction
-ActivableFunction:ADCSFunction
+ADCSFunction:ADCSFunction
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
 DCS BelongsToClass DataProvider
-ActivableFunction IsProvidedBy DCS
+ADCSFunction IsProvidedBy DCS
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ADCSFunction] -->|BelongsToClass| N0001(ActivableFunction) 
-	N0002[DCS] -->|BelongsToClass| N0003(ControlSystem) 
-	N0004[Contractor] -->|BelongsToClass| N0005(DrillingContractor) 
-	N0002[DCS] -->|IsProvidedBy| N0004((Contractor)) 
-	N0002[DCS] -->|BelongsToClass| N0006(DataProvider) 
-	N0001[ActivableFunction] -->|IsProvidedBy| N0002((DCS)) 
+	N0000[ADCSFunction] -->|BelongsToClass| N0000(ADCSFunction) 
+	N0001[DCS] -->|BelongsToClass| N0002(ControlSystem) 
+	N0003[Contractor] -->|BelongsToClass| N0004(DrillingContractor) 
+	N0001[DCS] -->|IsProvidedBy| N0003((Contractor)) 
+	N0001[DCS] -->|BelongsToClass| N0005(DataProvider) 
+	N0000[ADCSFunction] -->|IsProvidedBy| N0001((DCS)) 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -144,7 +145,52 @@ PREFIX ddhub: <http://ddhub.no/>
 PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?ADCSFunction
 WHERE {
-	?ADCSFunction rdf:type ddhub:ActivableFunction .
+	?ADCSFunction rdf:type ddhub:ADCSFunction .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS rdf:type ddhub:DataProvider .
+  FILTER (
+	?Attribute000 = Contractor
+	&& 	?Attribute001 = DCS
+  )
+}
+```
+This example describes all `ADCSFunction` provided by the drilling control system, `DCS`. The `DCS` is
+defined as a `ControlSystem` provided by a drilling contractor.
+## ActivableFunction <!-- NOUN -->
+- Display name: ActivableFunction
+- Parent class: [ADCSFunction](#ADCSFunction)
+- Description: 
+An `ActivableFunction` is an ADCS function that can be activated. Here activation means that the
+function may run immediately or that it is enabled and can trigger if some conditions are respected.
+- Definition set: ADCS
+- Examples:
+```dwis activableFunction
+ActivableFunction:activableFunction
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+activableFunction IsProvidedBy DCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[activableFunction] -->|BelongsToClass| N0001(ActivableFunction) 
+	N0002[DCS] -->|BelongsToClass| N0003(ControlSystem) 
+	N0004[Contractor] -->|BelongsToClass| N0005(DrillingContractor) 
+	N0002[DCS] -->|IsProvidedBy| N0004((Contractor)) 
+	N0002[DCS] -->|BelongsToClass| N0006(DataProvider) 
+	N0000[activableFunction] -->|IsProvidedBy| N0002((DCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?activableFunction
+WHERE {
+	?activableFunction rdf:type ddhub:ActivableFunction .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
 	?DCS rdf:type ddhub:DataProvider .
@@ -485,6 +531,189 @@ WHERE {
 ```
 This example describes the `swabSurgeLimits` safe operating envelope limits to avoid detrimental swab/surge pressures in 
 the open hole section of the borehole. 
+## ServiceFunction <!-- NOUN -->
+- Display name: Service Function
+- Parent class: [ADCSFunction](#ADCSFunction)
+- Description: 
+A `ServiceFunction` is an `ADCSFunction` that performs a discrete service action on request. It does not
+own the drilling control loop, does not execute a finite procedure, and does not define a protective envelope. An example
+of `ServiceFunction` is a tare service that applies a requested correction factor to a measured drilling quantity.
+- Definition set: ADCS
+- Examples:
+```dwis tareService
+ServiceFunction:tareService
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+tareService IsProvidedBy DCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[tareService] -->|BelongsToClass| N0001(ServiceFunction) 
+	N0002[DCS] -->|BelongsToClass| N0003(ControlSystem) 
+	N0004[Contractor] -->|BelongsToClass| N0005(DrillingContractor) 
+	N0002[DCS] -->|IsProvidedBy| N0004((Contractor)) 
+	N0002[DCS] -->|BelongsToClass| N0006(DataProvider) 
+	N0000[tareService] -->|IsProvidedBy| N0002((DCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?tareService
+WHERE {
+	?tareService rdf:type ddhub:ServiceFunction .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS rdf:type ddhub:DataProvider .
+  FILTER (
+	?Attribute000 = Contractor
+	&& 	?Attribute001 = DCS
+  )
+}
+```
+This example describes a service function provided by the drilling control system, `DCS`.
+## TareServiceFunction <!-- NOUN -->
+- Display name: Tare Service Function
+- Parent class: [ServiceFunction](#ServiceFunction)
+- Description: 
+A `TareServiceFunction` is a `ServiceFunction` that applies a tare value as a correction factor to a
+drilling signal. The service is requested by a command and uses an associated tare value.
+- Definition set: ADCS
+- Examples:
+```dwis wobTareService
+TareServiceFunction:wobTareService
+CalibrationParameter:wobTareValue
+wobTareService IsRelatedToDrillingObjective stableWOB
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+wobTareService IsProvidedBy DCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wobTareService] -->|BelongsToClass| N0001(TareServiceFunction) 
+	N0002[wobTareValue] -->|BelongsToClass| N0003(CalibrationParameter) 
+	N0000[wobTareService] -->|IsRelatedToDrillingObjective| N0004((stableWOB)) 
+	N0005[DCS] -->|BelongsToClass| N0006(ControlSystem) 
+	N0007[Contractor] -->|BelongsToClass| N0008(DrillingContractor) 
+	N0005[DCS] -->|IsProvidedBy| N0007((Contractor)) 
+	N0005[DCS] -->|BelongsToClass| N0009(DataProvider) 
+	N0000[wobTareService] -->|IsProvidedBy| N0005((DCS)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wobTareService
+WHERE {
+	?wobTareService rdf:type ddhub:TareServiceFunction .
+	?wobTareValue rdf:type ddhub:CalibrationParameter .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS rdf:type ddhub:DataProvider .
+  FILTER (
+	?Attribute000 = stableWOB
+	&& 	?Attribute001 = Contractor
+	&& 	?Attribute002 = DCS
+  )
+}
+```
+This example describes a tare service function provided by the drilling control system, `DCS`.
+## WeightOnBitTareServiceFunction <!-- NOUN -->
+- Display name: Weight On Bit Tare Service Function
+- Parent class: [TareServiceFunction](#TareServiceFunction)
+- Description: 
+A `WeightOnBitTareServiceFunction` is a `TareServiceFunction` that applies a correction factor to weight
+on bit.
+- Definition set: ADCS
+- Examples:
+```dwis wobTareService
+WeightOnBitTareServiceFunction:wobTareService
+StableAxialForceObjective:stableWOB
+BottomOfStringReferenceLocation:bos
+stableWOB IsPhysicallyLocatedAt bos
+wobTareService IsRelatedToDrillingObjective stableWOB
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wobTareService] -->|BelongsToClass| N0001(WeightOnBitTareServiceFunction) 
+	N0002[stableWOB] -->|BelongsToClass| N0003(StableAxialForceObjective) 
+	N0004[bos] -->|BelongsToClass| N0005(BottomOfStringReferenceLocation) 
+	N0002[stableWOB] -->|IsPhysicallyLocatedAt| N0004((bos)) 
+	N0000[wobTareService] -->|IsRelatedToDrillingObjective| N0002((stableWOB)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wobTareService
+WHERE {
+	?wobTareService rdf:type ddhub:WeightOnBitTareServiceFunction .
+	?stableWOB rdf:type ddhub:StableAxialForceObjective .
+	?bos rdf:type ddhub:BottomOfStringReferenceLocation .
+  FILTER (
+	?Attribute000 = bos
+	&& 	?Attribute001 = stableWOB
+  )
+}
+```
+This example describes a service function used to tare weight on bit.
+## DifferentialPressureTareServiceFunction <!-- NOUN -->
+- Display name: Differential Pressure Tare Service Function
+- Parent class: [TareServiceFunction](#TareServiceFunction)
+- Description: 
+A `DifferentialPressureTareServiceFunction` is a `TareServiceFunction` that applies a correction factor
+to differential pressure.
+- Definition set: ADCS
+- Examples:
+```dwis differentialPressureTareService
+DifferentialPressureTareServiceFunction:differentialPressureTareService
+StablePressureObjective:stableDifferentialPressure
+PositiveDisplacementMotor:PDM
+HydraulicLogicalElement:logicalPDM
+logicalPDM IsAHydraulicRepresentationFor PDM
+stableDifferentialPressure IsHydraulicallyLocatedAt logicalPDM
+differentialPressureTareService IsRelatedToDrillingObjective stableDifferentialPressure
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[differentialPressureTareService] -->|BelongsToClass| N0001(DifferentialPressureTareServiceFunction) 
+	N0002[stableDifferentialPressure] -->|BelongsToClass| N0003(StablePressureObjective) 
+	N0004[PDM] -->|BelongsToClass| N0005(PositiveDisplacementMotor) 
+	N0006[logicalPDM] -->|BelongsToClass| N0007(HydraulicLogicalElement) 
+	N0006[logicalPDM] -->|IsAHydraulicRepresentationFor| N0004((PDM)) 
+	N0002[stableDifferentialPressure] -->|IsHydraulicallyLocatedAt| N0006((logicalPDM)) 
+	N0000[differentialPressureTareService] -->|IsRelatedToDrillingObjective| N0002((stableDifferentialPressure)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?differentialPressureTareService
+WHERE {
+	?differentialPressureTareService rdf:type ddhub:DifferentialPressureTareServiceFunction .
+	?stableDifferentialPressure rdf:type ddhub:StablePressureObjective .
+	?PDM rdf:type ddhub:PositiveDisplacementMotor .
+	?logicalPDM rdf:type ddhub:HydraulicLogicalElement .
+  FILTER (
+	?Attribute000 = PDM
+	&& 	?Attribute001 = logicalPDM
+	&& 	?Attribute002 = stableDifferentialPressure
+  )
+}
+```
+This example describes a service function used to tare differential pressure.
 ## AdvisorySystemAdvice <!-- NOUN -->
 - Display name: Advisory System Advice
 - Parent class: [JSonDataType](#JSonDataType)

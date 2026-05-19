@@ -5,9 +5,17 @@
     <rdfs:comment xml:lang="EN">Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a "is a" relation between the instance node and the noun. This is the root class for all the nouns defined in the DWIS vocabulary.
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ActivableFunction">
+  <rdf:Description rdf:about="http://ddhub.no/ADCSFunction">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:comment xml:lang="EN">An `ADCSFunction` is a function exposed by an automated drilling control system as part of its capability
+description. ADCS functions include activable functions, such as controllers, procedures, and protections, and
+non-activable service functions that perform discrete service actions on request.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ActivableFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ADCSFunction" />
     <rdfs:comment xml:lang="EN">An `ActivableFunction` is an ADCS function that can be activated. Here activation means that the
 function may run immediately or that it is enabled and can trigger if some conditions are respected.
 </rdfs:comment>
@@ -160,6 +168,35 @@ to avoid generating a drilling incident. SOE stands for Safe Operating Envelope.
 of the drilling process. An example `SOEFunction` is a swab/surge limits protection. This function limits the axial acceleration
 and speed of the drill-stem to avoid generate swabbing pressure below the maximum of the collapse and pore pressure, and
 surging pressure above the fracturing pressure.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ServiceFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ADCSFunction" />
+    <rdfs:comment xml:lang="EN">A `ServiceFunction` is an `ADCSFunction` that performs a discrete service action on request. It does not
+own the drilling control loop, does not execute a finite procedure, and does not define a protective envelope. An example
+of `ServiceFunction` is a tare service that applies a requested correction factor to a measured drilling quantity.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TareServiceFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ServiceFunction" />
+    <rdfs:comment xml:lang="EN">A `TareServiceFunction` is a `ServiceFunction` that applies a tare value as a correction factor to a
+drilling signal. The service is requested by a command and uses an associated tare value.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/WeightOnBitTareServiceFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/TareServiceFunction" />
+    <rdfs:comment xml:lang="EN">A `WeightOnBitTareServiceFunction` is a `TareServiceFunction` that applies a correction factor to weight
+on bit.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DifferentialPressureTareServiceFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/TareServiceFunction" />
+    <rdfs:comment xml:lang="EN">A `DifferentialPressureTareServiceFunction` is a `TareServiceFunction` that applies a correction factor
+to differential pressure.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DataType">
