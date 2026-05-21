@@ -229,8 +229,128 @@ stableDifferentialPressure IsHydraulicallyLocatedAt logicalPDM
 differentialPressureTareService IsRelatedToDrillingObjective stableDifferentialPressure
 ```
 This example describes a service function used to tare differential pressure.
+## TuningServiceFunction <!-- NOUN -->
+- Display name: Tuning Service Function
+- Parent class: ServiceFunction
+- Description: A `TuningServiceFunction` is a `ServiceFunction` that applies tuning parameters to an ADCS function or
+to a control loop used by an ADCS function. The service is requested by a command and uses associated tuning parameter
+values.
+- Examples:
+```dwis tuningService
+TuningServiceFunction:tuningService
+ControllerFunction:autoDriller
+tuningService IsTuningServiceFor autoDriller
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+tuningService IsProvidedBy DCS
+```
+This example describes a tuning service function provided by the drilling control system, `DCS`.
+## AutoDrillerGainsTuningServiceFunction <!-- NOUN -->
+- Display name: Auto Driller Gains Tuning Service Function
+- Parent class: TuningServiceFunction
+- Description: An `AutoDrillerGainsTuningServiceFunction` is a `TuningServiceFunction` that applies gain tuning
+parameters to the auto-driller control loops.
+- Examples:
+```dwis autoDrillerGainsTuningService
+AutoDrillerGainsTuningServiceFunction:autoDrillerGainsTuningService
+ControllerFunction:autoDriller
+autoDrillerGainsTuningService IsTuningServiceFor autoDriller
+```
+This example describes a service function used to tune auto-driller gains.
+## PIDTuningParameter <!-- NOUN -->
+- Display name: PID Tuning Parameter
+- Parent class: CalibrationParameter
+- Description: A `PIDTuningParameter` is a calibration parameter that contains proportional, integral, derivative, or
+time-constant values used to tune a controller.
+- Examples:
+```dwis pidTuningParameter
+PIDTuningParameter:pidTuningParameter
+ControllerFunction:autoDriller
+pidTuningParameter IsTuningParameterFor autoDriller
+```
+This example describes a PID tuning parameter for the auto-driller.
+## AutoDrillerWOBGainsTuningParameter <!-- NOUN -->
+- Display name: Auto Driller WOB Gains Tuning Parameter
+- Parent class: PIDTuningParameter
+- Description: An `AutoDrillerWOBGainsTuningParameter` is a `PIDTuningParameter` used to tune the weight-on-bit
+control loop of an auto-driller.
+- Examples:
+```dwis wobGainsTuningParameter
+AutoDrillerWOBGainsTuningParameter:wobGainsTuningParameter
+ControllerFunction:autoDriller
+wobGainsTuningParameter IsTuningParameterFor autoDriller
+```
+This example describes WOB gain tuning parameters for the auto-driller.
+## AutoDrillerTorqueGainsTuningParameter <!-- NOUN -->
+- Display name: Auto Driller Torque Gains Tuning Parameter
+- Parent class: PIDTuningParameter
+- Description: An `AutoDrillerTorqueGainsTuningParameter` is a `PIDTuningParameter` used to tune the torque control loop
+of an auto-driller.
+- Examples:
+```dwis torqueGainsTuningParameter
+AutoDrillerTorqueGainsTuningParameter:torqueGainsTuningParameter
+ControllerFunction:autoDriller
+torqueGainsTuningParameter IsTuningParameterFor autoDriller
+```
+This example describes torque gain tuning parameters for the auto-driller.
+## AutoDrillerDifferentialPressureGainsTuningParameter <!-- NOUN -->
+- Display name: Auto Driller Differential Pressure Gains Tuning Parameter
+- Parent class: PIDTuningParameter
+- Description: An `AutoDrillerDifferentialPressureGainsTuningParameter` is a `PIDTuningParameter` used to tune the
+differential-pressure control loop of an auto-driller.
+- Examples:
+```dwis differentialPressureGainsTuningParameter
+AutoDrillerDifferentialPressureGainsTuningParameter:differentialPressureGainsTuningParameter
+ControllerFunction:autoDriller
+differentialPressureGainsTuningParameter IsTuningParameterFor autoDriller
+```
+This example describes differential-pressure gain tuning parameters for the auto-driller.
 
 # VERBS
+## IsTuningServiceFor <!-- VERB -->
+- Display name: Is Tuning Service For
+- Parent verb: DWISVerb
+- Subject class: TuningServiceFunction
+- Object class: ADCSFunction
+- Description: This verb indicates that a tuning service applies tuning parameters to an ADCS function or to one of its
+control loops.
+- Examples:
+```dwis autoDrillerTuningService
+AutoDrillerGainsTuningServiceFunction:autoDrillerGainsTuningService
+ControllerFunction:autoDriller
+autoDrillerGainsTuningService IsTuningServiceFor autoDriller
+```
+This example states that the service tunes the auto-driller.
+## IsTuningParameterFor <!-- VERB -->
+- Display name: Is Tuning Parameter For
+- Parent verb: DWISVerb
+- Subject class: PIDTuningParameter
+- Object class: ADCSFunction
+- Description: This verb indicates that a tuning parameter is intended to tune an ADCS function or one of its control
+loops.
+- Examples:
+```dwis wobTuningParameter
+AutoDrillerWOBGainsTuningParameter:wobGainsTuningParameter
+ControllerFunction:autoDriller
+wobGainsTuningParameter IsTuningParameterFor autoDriller
+```
+This example states that the WOB gains are tuning parameters for the auto-driller.
+## IsTuningRequestFor <!-- VERB -->
+- Display name: Is Tuning Request For
+- Parent verb: IsCommandFor
+- Subject class: DrillingDataPoint
+- Object class: PIDTuningParameter
+- Description: This verb indicates that a command or recommendation signal carries a request to apply a tuning
+parameter.
+- Examples:
+```dwis wobTuningRequest
+Command:wobGainsTuningRequest
+AutoDrillerWOBGainsTuningParameter:wobGainsTuningParameter
+wobGainsTuningRequest IsTuningRequestFor wobGainsTuningParameter
+```
+This example states that the command signal requests a WOB gain tuning parameter change.
 ## IsEnablingSignalFor <!-- VERB -->
 - Display name: Is Enabling Signal For
 - Parent verb: DWISVerb
