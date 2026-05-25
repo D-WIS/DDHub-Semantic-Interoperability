@@ -819,8 +819,12 @@
 ## HeaveCompensationSystem <!-- NOUN -->
 - Display name: Heave Compensation System
 - Parent class: MarineSystem
-- Description:
+- Description: A marine system that reduces or compensates vertical rig motion caused by heave, for example by controlling the drawworks or a crown-mounted compensator.
 - Examples:
+```dwis heaveCompensationSystem
+HeaveCompensationSystem:heaveCompensationSystem
+```
+This example declares a heave compensation system.
 ## DrillFloorSystems <!-- NOUN -->
 - Display name: Drill Floor Systems
 - Parent class: RigEquipment

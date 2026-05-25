@@ -1099,6 +1099,20 @@ VerticalElevationFrame:highSideReferenceFrame
 toolface IsMeasuredFromReferenceFrame highSideReferenceFrame
 ```
 This example declares an inclination that is measured from the downward vertical.
+## MeanSeaLevelReferenceFrame <!-- NOUN -->
+- Display name: MeanSeaLevelReferenceFrame
+- Parent class: VerticalElevationFrame
+- Attributes:
+- Specialization:
+- Description: A vertical elevation reference frame whose origin is mean sea level and whose positive direction is upward.
+- Examples:
+```dwis meanSeaLevelReferenceFrame
+MeanSeaLevelReferenceFrame:meanSeaLevelFrame
+Location:meanSeaLevelVerticalLocation
+meanSeaLevelVerticalLocation BelongsToClass MeanSeaLevelVerticalLocation
+meanSeaLevelFrame HasReferenceFrameOrigin meanSeaLevelVerticalLocation
+```
+This example declares a vertical elevation reference frame relative to mean sea level.
 ## NorthDirectionFrame <!-- NOUN -->
 - Display name: NorthDirectionFrame
 - Parent class: HorizontalDirectionFrame

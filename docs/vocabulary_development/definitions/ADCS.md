@@ -81,6 +81,124 @@ autoDriller IsProvidedBy DCS
 ```
 This example describes the auto driller provided by the drilling control system, `DCS`. The `DCS` is 
 defined as a `ControlSystem` provided by a drilling contractor. It is a main function and its purpose is to `Drill`.
+## SoftSpeedController <!-- NOUN -->
+- Display name: SoftSpeed Controller
+- Parent class: ControllerFunction
+- Description: A `SoftSpeedController` is a controller function that mitigates drill-string torsional stick-slip by
+filtering surface rotation control action around the drill-string natural torsional resonance frequency to damp
+torsional oscillations and stabilize the downhole rotational velocity.
+- Examples:
+```dwis softSpeedController
+SoftSpeedController:softSpeedController
+StableRotationalVelocityObjective:stableBitRPM
+BottomOfStringReferenceLocation:bos
+stableBitRPM IsPhysicallyLocatedAt bos
+softSpeedController ImplementsObjective stableBitRPM
+DrillStringTorsionalResonanceFilteringControlStrategy:resonanceFiltering
+softSpeedController ImplementsControlStrategy resonanceFiltering
+```
+This example describes a SoftSpeed controller that uses drill-string torsional resonance filtering to stabilize
+downhole rotational velocity.
+## SoftTorqueController <!-- NOUN -->
+- Display name: SoftTorque Controller
+- Parent class: ControllerFunction
+- Description: A `SoftTorqueController` is a controller function that mitigates drill-string torsional stick-slip by
+filtering or shaping the surface rotation drive torque response around the drill-string natural torsional resonance
+frequency to damp torsional oscillations.
+- Examples:
+```dwis softTorqueController
+SoftTorqueController:softTorqueController
+StableRotationalVelocityObjective:stableBitRPM
+BottomOfStringReferenceLocation:bos
+stableBitRPM IsPhysicallyLocatedAt bos
+softTorqueController ImplementsObjective stableBitRPM
+DrillStringTorsionalResonanceFilteringControlStrategy:resonanceFiltering
+softTorqueController ImplementsControlStrategy resonanceFiltering
+```
+This example describes a SoftTorque controller that uses drill-string torsional resonance filtering to damp torsional
+oscillations.
+## ImpedanceMatchingController <!-- NOUN -->
+- Display name: Impedance Matching Controller
+- Parent class: ControllerFunction
+- Description: An `ImpedanceMatchingController` is a controller function that mitigates drill-string torsional
+oscillations by adapting the dynamic interaction between the surface rotation drive and the drill string.
+- Examples:
+```dwis impedanceMatchingController
+ImpedanceMatchingController:impedanceMatchingController
+StableRotationalVelocityObjective:stableBitRPM
+BottomOfStringReferenceLocation:bos
+stableBitRPM IsPhysicallyLocatedAt bos
+impedanceMatchingController ImplementsObjective stableBitRPM
+RotationalImpedanceMatchingControlStrategy:rotationalImpedanceMatching
+impedanceMatchingController ImplementsControlStrategy rotationalImpedanceMatching
+```
+This example describes an impedance-matching controller used to stabilize downhole rotational velocity.
+## PipeRockingController <!-- NOUN -->
+- Display name: Pipe Rocking Controller
+- Parent class: ControllerFunction
+- Description: A `PipeRockingController` is a controller function that alternates top-of-string rotation over a limited
+angular interval to orient or maintain the toolface of a downhole motor.
+- Examples:
+```dwis pipeRockingController
+PipeRockingController:pipeRockingController
+PipeRockingControlStrategy:pipeRockingStrategy
+ToolfaceOrientationProcedure:toolfaceOrientation
+pipeRockingController ImplementsControlStrategy pipeRockingStrategy
+pipeRockingController ImplementsProcedure toolfaceOrientation
+```
+This example describes a pipe-rocking controller used for toolface orientation.
+## ControlStrategy <!-- NOUN -->
+- Display name: Control Strategy
+- Parent class: DWISNoun
+- Description: A `ControlStrategy` is a named control approach or algorithmic principle used by a controller function
+to achieve its control objectives.
+- Examples:
+```dwis controlStrategy
+ControlStrategy:controlStrategy
+ControllerFunction:controller
+controller ImplementsControlStrategy controlStrategy
+```
+This example states that a controller implements a control strategy.
+## DrillStringTorsionalResonanceFilteringControlStrategy <!-- NOUN -->
+- Display name: Drill String Torsional Resonance Filtering Control Strategy
+- Parent class: ControlStrategy
+- Description: A `DrillStringTorsionalResonanceFilteringControlStrategy` is a control strategy that filters or shapes
+surface rotation control action around the drill-string natural torsional resonance frequency to damp torsional
+oscillations and reduce stick-slip.
+- Examples:
+```dwis resonanceFiltering
+DrillStringTorsionalResonanceFilteringControlStrategy:resonanceFiltering
+SoftSpeedController:softSpeedController
+softSpeedController ImplementsControlStrategy resonanceFiltering
+```
+This example states that a SoftSpeed controller uses drill-string torsional resonance filtering.
+## RotationalImpedanceMatchingControlStrategy <!-- NOUN -->
+- Display name: Rotational Impedance Matching Control Strategy
+- Parent class: ControlStrategy
+- Description: A `RotationalImpedanceMatchingControlStrategy` is a control strategy that adapts the dynamic interaction
+between the surface rotation drive and the drill string to damp torsional oscillations by reducing reflection or
+amplification of torsional energy.
+- Examples:
+```dwis rotationalImpedanceMatching
+RotationalImpedanceMatchingControlStrategy:rotationalImpedanceMatching
+ImpedanceMatchingController:impedanceMatchingController
+impedanceMatchingController ImplementsControlStrategy rotationalImpedanceMatching
+```
+This example states that an impedance-matching controller uses rotational impedance matching.
+## PipeRockingControlStrategy <!-- NOUN -->
+- Display name: Pipe Rocking Control Strategy
+- Parent class: ControlStrategy
+- Description: A `PipeRockingControlStrategy` is a control strategy that alternates top-of-string rotation over a
+limited angular interval to orient or maintain the toolface of a downhole motor without continuous full rotation.
+- Examples:
+```dwis pipeRockingStrategy
+PipeRockingControlStrategy:pipeRockingStrategy
+PipeRockingController:pipeRocking
+ToolfaceOrientationProcedure:toolfaceOrientation
+pipeRocking ImplementsControlStrategy pipeRockingStrategy
+pipeRocking ImplementsProcedure toolfaceOrientation
+```
+This example states that a pipe-rocking controller uses a pipe-rocking strategy for toolface orientation.
 ## ProcedureFunction  <!-- NOUN -->
 - Display name: Procedure Function
 - Parent class: RunnableFunction
@@ -309,6 +427,20 @@ differentialPressureGainsTuningParameter IsTuningParameterFor autoDriller
 This example describes differential-pressure gain tuning parameters for the auto-driller.
 
 # VERBS
+## ImplementsControlStrategy <!-- VERB -->
+- Display name: Implements Control Strategy
+- Parent verb: DWISVerb
+- Subject class: ControllerFunction
+- Object class: ControlStrategy
+- Description: This verb indicates that a controller function uses a named control strategy to implement one or more of
+its control objectives.
+- Examples:
+```dwis softSpeedControlStrategy
+SoftSpeedController:softSpeedController
+DrillStringTorsionalResonanceFilteringControlStrategy:resonanceFiltering
+softSpeedController ImplementsControlStrategy resonanceFiltering
+```
+This example states that the SoftSpeed controller uses a drill-string torsional resonance filtering control strategy.
 ## IsTuningServiceFor <!-- VERB -->
 - Display name: Is Tuning Service For
 - Parent verb: DWISVerb

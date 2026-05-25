@@ -688,6 +688,24 @@ InstrumentationCompany:DrillDocs#01
 CleanSightMaxCavingSize#01 IsProvidedBy DrillDocs#01
 ```
 This example defines a moving max transformation that computes the maximum caving size from shaker load measurements.
+## PeakToPeak <!-- NOUN -->
+- Display name: Peak To Peak
+- Parent class: Filter
+- Attributes:
+- Specialization:
+- Description: Computes the difference between the maximum and minimum values of an input signal over a specified window.
+- Examples:
+```dwis heavePeakToPeak
+PeakToPeak:heavePeakToPeak
+TimeWindow:heavePeakToPeakWindow
+heavePeakToPeakWindow.Duration = "20.0"
+DrillingDataPoint:heavePosition
+DrillingDataPoint:heavePeakToPeakAmplitude
+heavePosition IsTransformationInput heavePeakToPeak
+heavePeakToPeakAmplitude IsTransformationOutput heavePeakToPeak
+heavePeakToPeak HasTimeWindow heavePeakToPeakWindow
+```
+This example computes the peak-to-peak amplitude of heave position over a time window.
 ## MovingDistribution <!-- NOUN -->
 - Display name: Moving Distribution
 - Parent class: Filter
@@ -1080,6 +1098,45 @@ ControlSystem:dcs
 safeModeActive IsInSafeModeStateFor dcs
 ```
 This example records that the control system is in safe mode.
+## IsCompensationMethodFor <!-- VERB -->
+- Display name: Is Compensation Method For
+- Parent verb: HasFunction
+- Subject class: DrillingDataPoint
+- Object class: DWISNoun
+- Description: Identifies an enumerated signal that states which mechanism or method is used by a compensation system.
+- Examples:
+```dwis heaveCompensationMethod
+DrillingDataPoint:heaveCompensationMethod
+HeaveCompensationSystem:heaveCompensationSystem
+heaveCompensationMethod IsCompensationMethodFor heaveCompensationSystem
+```
+This example states that a signal reports the method currently used by a heave compensation system.
+## IsActivationStateFor <!-- VERB -->
+- Display name: Is Activation State For
+- Parent verb: HasFunction
+- Subject class: DrillingDataPoint
+- Object class: DWISNoun
+- Description: Identifies an enumerated signal that reports the actual activation state of a system or function.
+- Examples:
+```dwis heaveCompensationState
+DrillingDataPoint:heaveCompensationState
+HeaveCompensationSystem:heaveCompensationSystem
+heaveCompensationState IsActivationStateFor heaveCompensationSystem
+```
+This example states that a signal reports whether a heave compensation system is active, inactive, failed, or in an unknown state.
+## IsTargetActivationStateFor <!-- VERB -->
+- Display name: Is Target Activation State For
+- Parent verb: IsActivationStateFor
+- Subject class: DrillingDataPoint
+- Object class: DWISNoun
+- Description: Identifies an enumerated signal that reports the intended, requested, or target activation state of a system or function.
+- Examples:
+```dwis heaveCompensationStateTarget
+DrillingDataPoint:heaveCompensationStateTarget
+HeaveCompensationSystem:heaveCompensationSystem
+heaveCompensationStateTarget IsTargetActivationStateFor heaveCompensationSystem
+```
+This example states that a signal reports the target activation state of a heave compensation system.
 ## IsSetPointFor <!-- VERB -->
 - Display name: Is Set-Point For
 - Parent verb: HasFunction
@@ -1223,6 +1280,20 @@ Resampling:resampleHookload
 hookloadRaw IsResamplingInput resampleHookload
 ```
 This example shows hookload as input to a resampling transformation.
+## HasTimeWindow <!-- VERB -->
+- Display name: Has Time Window
+- Parent verb: DWISVerb
+- Subject class: Transformation
+- Object class: TimeWindow
+- Description: Associates a transformation with the time duration over which its input samples are evaluated.
+- Examples:
+```dwis heavePeakToPeakWindowExample
+PeakToPeak:heavePeakToPeak
+TimeWindow:heavePeakToPeakWindow
+heavePeakToPeakWindow.Duration = "20.0"
+heavePeakToPeak HasTimeWindow heavePeakToPeakWindow
+```
+This example states that the peak-to-peak heave calculation is evaluated over a 20 second window.
 ## IsTransmissionInput <!-- VERB -->
 - Display name: Is Transmission Input
 - Parent verb: HasFunction
