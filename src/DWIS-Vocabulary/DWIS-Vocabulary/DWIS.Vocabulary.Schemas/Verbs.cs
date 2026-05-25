@@ -5,6 +5,7 @@ public static class Verbs
 {
 public enum Enum
 {
+ImplementsControlStrategy = 291174778,
 IsTuningServiceFor = 402498435,
 IsTuningParameterFor = 938591651,
 IsTuningRequestFor = 747001811,
@@ -44,6 +45,9 @@ IsMaximumLimitFor = 1908407450,
 IsCurrentStateFor = 1823888719,
 IsInformationForCurrentStateOf = 76507908,
 IsInSafeModeStateFor = 1859559459,
+IsCompensationMethodFor = 1083848133,
+IsActivationStateFor = 1173919232,
+IsTargetActivationStateFor = 662986488,
 IsSetPointFor = 1310941472,
 IsSetPointRecommendationFor = 67358738,
 IsSetPointAdviceFor = 1169797708,
@@ -55,6 +59,7 @@ IsTransformationInput = 2047569715,
 IsBufferingInput = 221037521,
 IsDerivationInput = 2115923890,
 IsResamplingInput = 1177636674,
+HasTimeWindow = 1538070499,
 IsTransmissionInput = 1785737051,
 IsGeneratedBy = 1158506360,
 IsComputedBy = 636145701,
@@ -209,6 +214,7 @@ HasProportionError = 1747291041,
 HasFullScale = 1519713409,
 HasUncertaintyHistogram = 17573535
 }
+	public const string ImplementsControlStrategy = "ImplementsControlStrategy";
 	public const string IsTuningServiceFor = "IsTuningServiceFor";
 	public const string IsTuningParameterFor = "IsTuningParameterFor";
 	public const string IsTuningRequestFor = "IsTuningRequestFor";
@@ -248,6 +254,9 @@ HasUncertaintyHistogram = 17573535
 	public const string IsCurrentStateFor = "IsCurrentStateFor";
 	public const string IsInformationForCurrentStateOf = "IsInformationForCurrentStateOf";
 	public const string IsInSafeModeStateFor = "IsInSafeModeStateFor";
+	public const string IsCompensationMethodFor = "IsCompensationMethodFor";
+	public const string IsActivationStateFor = "IsActivationStateFor";
+	public const string IsTargetActivationStateFor = "IsTargetActivationStateFor";
 	public const string IsSetPointFor = "IsSetPointFor";
 	public const string IsSetPointRecommendationFor = "IsSetPointRecommendationFor";
 	public const string IsSetPointAdviceFor = "IsSetPointAdviceFor";
@@ -259,6 +268,7 @@ HasUncertaintyHistogram = 17573535
 	public const string IsBufferingInput = "IsBufferingInput";
 	public const string IsDerivationInput = "IsDerivationInput";
 	public const string IsResamplingInput = "IsResamplingInput";
+	public const string HasTimeWindow = "HasTimeWindow";
 	public const string IsTransmissionInput = "IsTransmissionInput";
 	public const string IsGeneratedBy = "IsGeneratedBy";
 	public const string IsComputedBy = "IsComputedBy";

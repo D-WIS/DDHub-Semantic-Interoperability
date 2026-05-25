@@ -319,6 +319,340 @@ WHERE {
 ```
 This example describes the auto driller provided by the drilling control system, `DCS`. The `DCS` is 
 defined as a `ControlSystem` provided by a drilling contractor. It is a main function and its purpose is to `Drill`.
+## SoftSpeedController <!-- NOUN -->
+- Display name: SoftSpeed Controller
+- Parent class: [ControllerFunction](#ControllerFunction)
+- Description: 
+A `SoftSpeedController` is a controller function that mitigates drill-string torsional stick-slip by
+filtering surface rotation control action around the drill-string natural torsional resonance frequency to damp
+torsional oscillations and stabilize the downhole rotational velocity.
+- Definition set: ADCS
+- Examples:
+```dwis softSpeedController
+SoftSpeedController:softSpeedController
+StableRotationalVelocityObjective:stableBitRPM
+BottomOfStringReferenceLocation:bos
+stableBitRPM IsPhysicallyLocatedAt bos
+softSpeedController ImplementsObjective stableBitRPM
+DrillStringTorsionalResonanceFilteringControlStrategy:resonanceFiltering
+softSpeedController ImplementsControlStrategy resonanceFiltering
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[softSpeedController] -->|BelongsToClass| N0001(SoftSpeedController) 
+	N0002[stableBitRPM] -->|BelongsToClass| N0003(StableRotationalVelocityObjective) 
+	N0004[bos] -->|BelongsToClass| N0005(BottomOfStringReferenceLocation) 
+	N0002[stableBitRPM] -->|IsPhysicallyLocatedAt| N0004((bos)) 
+	N0000[softSpeedController] -->|ImplementsObjective| N0002((stableBitRPM)) 
+	N0006[resonanceFiltering] -->|BelongsToClass| N0007(DrillStringTorsionalResonanceFilteringControlStrategy) 
+	N0000[softSpeedController] -->|ImplementsControlStrategy| N0006((resonanceFiltering)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?softSpeedController
+WHERE {
+	?softSpeedController rdf:type ddhub:SoftSpeedController .
+	?stableBitRPM rdf:type ddhub:StableRotationalVelocityObjective .
+	?bos rdf:type ddhub:BottomOfStringReferenceLocation .
+	?resonanceFiltering rdf:type ddhub:DrillStringTorsionalResonanceFilteringControlStrategy .
+  FILTER (
+	?Attribute000 = bos
+	&& 	?Attribute001 = stableBitRPM
+	&& 	?Attribute002 = resonanceFiltering
+  )
+}
+```
+This example describes a SoftSpeed controller that uses drill-string torsional resonance filtering to stabilize
+downhole rotational velocity.
+## SoftTorqueController <!-- NOUN -->
+- Display name: SoftTorque Controller
+- Parent class: [ControllerFunction](#ControllerFunction)
+- Description: 
+A `SoftTorqueController` is a controller function that mitigates drill-string torsional stick-slip by
+filtering or shaping the surface rotation drive torque response around the drill-string natural torsional resonance
+frequency to damp torsional oscillations.
+- Definition set: ADCS
+- Examples:
+```dwis softTorqueController
+SoftTorqueController:softTorqueController
+StableRotationalVelocityObjective:stableBitRPM
+BottomOfStringReferenceLocation:bos
+stableBitRPM IsPhysicallyLocatedAt bos
+softTorqueController ImplementsObjective stableBitRPM
+DrillStringTorsionalResonanceFilteringControlStrategy:resonanceFiltering
+softTorqueController ImplementsControlStrategy resonanceFiltering
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[softTorqueController] -->|BelongsToClass| N0001(SoftTorqueController) 
+	N0002[stableBitRPM] -->|BelongsToClass| N0003(StableRotationalVelocityObjective) 
+	N0004[bos] -->|BelongsToClass| N0005(BottomOfStringReferenceLocation) 
+	N0002[stableBitRPM] -->|IsPhysicallyLocatedAt| N0004((bos)) 
+	N0000[softTorqueController] -->|ImplementsObjective| N0002((stableBitRPM)) 
+	N0006[resonanceFiltering] -->|BelongsToClass| N0007(DrillStringTorsionalResonanceFilteringControlStrategy) 
+	N0000[softTorqueController] -->|ImplementsControlStrategy| N0006((resonanceFiltering)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?softTorqueController
+WHERE {
+	?softTorqueController rdf:type ddhub:SoftTorqueController .
+	?stableBitRPM rdf:type ddhub:StableRotationalVelocityObjective .
+	?bos rdf:type ddhub:BottomOfStringReferenceLocation .
+	?resonanceFiltering rdf:type ddhub:DrillStringTorsionalResonanceFilteringControlStrategy .
+  FILTER (
+	?Attribute000 = bos
+	&& 	?Attribute001 = stableBitRPM
+	&& 	?Attribute002 = resonanceFiltering
+  )
+}
+```
+This example describes a SoftTorque controller that uses drill-string torsional resonance filtering to damp torsional
+oscillations.
+## ImpedanceMatchingController <!-- NOUN -->
+- Display name: Impedance Matching Controller
+- Parent class: [ControllerFunction](#ControllerFunction)
+- Description: 
+An `ImpedanceMatchingController` is a controller function that mitigates drill-string torsional
+oscillations by adapting the dynamic interaction between the surface rotation drive and the drill string.
+- Definition set: ADCS
+- Examples:
+```dwis impedanceMatchingController
+ImpedanceMatchingController:impedanceMatchingController
+StableRotationalVelocityObjective:stableBitRPM
+BottomOfStringReferenceLocation:bos
+stableBitRPM IsPhysicallyLocatedAt bos
+impedanceMatchingController ImplementsObjective stableBitRPM
+RotationalImpedanceMatchingControlStrategy:rotationalImpedanceMatching
+impedanceMatchingController ImplementsControlStrategy rotationalImpedanceMatching
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[impedanceMatchingController] -->|BelongsToClass| N0001(ImpedanceMatchingController) 
+	N0002[stableBitRPM] -->|BelongsToClass| N0003(StableRotationalVelocityObjective) 
+	N0004[bos] -->|BelongsToClass| N0005(BottomOfStringReferenceLocation) 
+	N0002[stableBitRPM] -->|IsPhysicallyLocatedAt| N0004((bos)) 
+	N0000[impedanceMatchingController] -->|ImplementsObjective| N0002((stableBitRPM)) 
+	N0006[rotationalImpedanceMatching] -->|BelongsToClass| N0007(RotationalImpedanceMatchingControlStrategy) 
+	N0000[impedanceMatchingController] -->|ImplementsControlStrategy| N0006((rotationalImpedanceMatching)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?impedanceMatchingController
+WHERE {
+	?impedanceMatchingController rdf:type ddhub:ImpedanceMatchingController .
+	?stableBitRPM rdf:type ddhub:StableRotationalVelocityObjective .
+	?bos rdf:type ddhub:BottomOfStringReferenceLocation .
+	?rotationalImpedanceMatching rdf:type ddhub:RotationalImpedanceMatchingControlStrategy .
+  FILTER (
+	?Attribute000 = bos
+	&& 	?Attribute001 = stableBitRPM
+	&& 	?Attribute002 = rotationalImpedanceMatching
+  )
+}
+```
+This example describes an impedance-matching controller used to stabilize downhole rotational velocity.
+## PipeRockingController <!-- NOUN -->
+- Display name: Pipe Rocking Controller
+- Parent class: [ControllerFunction](#ControllerFunction)
+- Description: 
+A `PipeRockingController` is a controller function that alternates top-of-string rotation over a limited
+angular interval to orient or maintain the toolface of a downhole motor.
+- Definition set: ADCS
+- Examples:
+```dwis pipeRockingController
+PipeRockingController:pipeRockingController
+PipeRockingControlStrategy:pipeRockingStrategy
+ToolfaceOrientationProcedure:toolfaceOrientation
+pipeRockingController ImplementsControlStrategy pipeRockingStrategy
+pipeRockingController ImplementsProcedure toolfaceOrientation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pipeRockingController] -->|BelongsToClass| N0001(PipeRockingController) 
+	N0002[pipeRockingStrategy] -->|BelongsToClass| N0003(PipeRockingControlStrategy) 
+	N0004[toolfaceOrientation] -->|BelongsToClass| N0005(ToolfaceOrientationProcedure) 
+	N0000[pipeRockingController] -->|ImplementsControlStrategy| N0002((pipeRockingStrategy)) 
+	N0000[pipeRockingController] -->|ImplementsProcedure| N0004((toolfaceOrientation)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pipeRockingController
+WHERE {
+	?pipeRockingController rdf:type ddhub:PipeRockingController .
+	?pipeRockingStrategy rdf:type ddhub:PipeRockingControlStrategy .
+	?toolfaceOrientation rdf:type ddhub:ToolfaceOrientationProcedure .
+  FILTER (
+	?Attribute000 = pipeRockingStrategy
+	&& 	?Attribute001 = toolfaceOrientation
+  )
+}
+```
+This example describes a pipe-rocking controller used for toolface orientation.
+## ControlStrategy <!-- NOUN -->
+- Display name: Control Strategy
+- Parent class: [DWISNoun](#DWISNoun)
+- Description: 
+A `ControlStrategy` is a named control approach or algorithmic principle used by a controller function
+to achieve its control objectives.
+- Definition set: ADCS
+- Examples:
+```dwis controlStrategy
+ControlStrategy:controlStrategy
+ControllerFunction:controller
+controller ImplementsControlStrategy controlStrategy
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[controlStrategy] -->|BelongsToClass| N0001(ControlStrategy) 
+	N0002[controller] -->|BelongsToClass| N0003(ControllerFunction) 
+	N0002[controller] -->|ImplementsControlStrategy| N0000((controlStrategy)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?controlStrategy
+WHERE {
+	?controlStrategy rdf:type ddhub:ControlStrategy .
+	?controller rdf:type ddhub:ControllerFunction .
+  FILTER (
+	?Attribute000 = controlStrategy
+  )
+}
+```
+This example states that a controller implements a control strategy.
+## DrillStringTorsionalResonanceFilteringControlStrategy <!-- NOUN -->
+- Display name: Drill String Torsional Resonance Filtering Control Strategy
+- Parent class: [ControlStrategy](#ControlStrategy)
+- Description: 
+A `DrillStringTorsionalResonanceFilteringControlStrategy` is a control strategy that filters or shapes
+surface rotation control action around the drill-string natural torsional resonance frequency to damp torsional
+oscillations and reduce stick-slip.
+- Definition set: ADCS
+- Examples:
+```dwis resonanceFiltering
+DrillStringTorsionalResonanceFilteringControlStrategy:resonanceFiltering
+SoftSpeedController:softSpeedController
+softSpeedController ImplementsControlStrategy resonanceFiltering
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[resonanceFiltering] -->|BelongsToClass| N0001(DrillStringTorsionalResonanceFilteringControlStrategy) 
+	N0002[softSpeedController] -->|BelongsToClass| N0003(SoftSpeedController) 
+	N0002[softSpeedController] -->|ImplementsControlStrategy| N0000((resonanceFiltering)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?resonanceFiltering
+WHERE {
+	?resonanceFiltering rdf:type ddhub:DrillStringTorsionalResonanceFilteringControlStrategy .
+	?softSpeedController rdf:type ddhub:SoftSpeedController .
+  FILTER (
+	?Attribute000 = resonanceFiltering
+  )
+}
+```
+This example states that a SoftSpeed controller uses drill-string torsional resonance filtering.
+## RotationalImpedanceMatchingControlStrategy <!-- NOUN -->
+- Display name: Rotational Impedance Matching Control Strategy
+- Parent class: [ControlStrategy](#ControlStrategy)
+- Description: 
+A `RotationalImpedanceMatchingControlStrategy` is a control strategy that adapts the dynamic interaction
+between the surface rotation drive and the drill string to damp torsional oscillations by reducing reflection or
+amplification of torsional energy.
+- Definition set: ADCS
+- Examples:
+```dwis rotationalImpedanceMatching
+RotationalImpedanceMatchingControlStrategy:rotationalImpedanceMatching
+ImpedanceMatchingController:impedanceMatchingController
+impedanceMatchingController ImplementsControlStrategy rotationalImpedanceMatching
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rotationalImpedanceMatching] -->|BelongsToClass| N0001(RotationalImpedanceMatchingControlStrategy) 
+	N0002[impedanceMatchingController] -->|BelongsToClass| N0003(ImpedanceMatchingController) 
+	N0002[impedanceMatchingController] -->|ImplementsControlStrategy| N0000((rotationalImpedanceMatching)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rotationalImpedanceMatching
+WHERE {
+	?rotationalImpedanceMatching rdf:type ddhub:RotationalImpedanceMatchingControlStrategy .
+	?impedanceMatchingController rdf:type ddhub:ImpedanceMatchingController .
+  FILTER (
+	?Attribute000 = rotationalImpedanceMatching
+  )
+}
+```
+This example states that an impedance-matching controller uses rotational impedance matching.
+## PipeRockingControlStrategy <!-- NOUN -->
+- Display name: Pipe Rocking Control Strategy
+- Parent class: [ControlStrategy](#ControlStrategy)
+- Description: 
+A `PipeRockingControlStrategy` is a control strategy that alternates top-of-string rotation over a
+limited angular interval to orient or maintain the toolface of a downhole motor without continuous full rotation.
+- Definition set: ADCS
+- Examples:
+```dwis pipeRockingStrategy
+PipeRockingControlStrategy:pipeRockingStrategy
+PipeRockingController:pipeRocking
+ToolfaceOrientationProcedure:toolfaceOrientation
+pipeRocking ImplementsControlStrategy pipeRockingStrategy
+pipeRocking ImplementsProcedure toolfaceOrientation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pipeRockingStrategy] -->|BelongsToClass| N0001(PipeRockingControlStrategy) 
+	N0002[pipeRocking] -->|BelongsToClass| N0003(PipeRockingController) 
+	N0004[toolfaceOrientation] -->|BelongsToClass| N0005(ToolfaceOrientationProcedure) 
+	N0002[pipeRocking] -->|ImplementsControlStrategy| N0000((pipeRockingStrategy)) 
+	N0002[pipeRocking] -->|ImplementsProcedure| N0004((toolfaceOrientation)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pipeRockingStrategy
+WHERE {
+	?pipeRockingStrategy rdf:type ddhub:PipeRockingControlStrategy .
+	?pipeRocking rdf:type ddhub:PipeRockingController .
+	?toolfaceOrientation rdf:type ddhub:ToolfaceOrientationProcedure .
+  FILTER (
+	?Attribute000 = pipeRockingStrategy
+	&& 	?Attribute001 = toolfaceOrientation
+  )
+}
+```
+This example states that a pipe-rocking controller uses a pipe-rocking strategy for toolface orientation.
 ## ProcedureFunction <!-- NOUN -->
 - Display name: Procedure Function
 - Parent class: [RunnableFunction](#RunnableFunction)
@@ -7560,6 +7894,56 @@ WHERE {
 }
 ```
 This example defines a moving max transformation that computes the maximum caving size from shaker load measurements.
+## PeakToPeak <!-- NOUN -->
+- Display name: Peak To Peak
+- Parent class: [Filter](#Filter)
+- Description: 
+Computes the difference between the maximum and minimum values of an input signal over a specified window.
+- Definition set: DataFlow
+- Examples:
+```dwis heavePeakToPeak
+PeakToPeak:heavePeakToPeak
+TimeWindow:heavePeakToPeakWindow
+heavePeakToPeakWindow.Duration = "20.0"
+DrillingDataPoint:heavePosition
+DrillingDataPoint:heavePeakToPeakAmplitude
+heavePosition IsTransformationInput heavePeakToPeak
+heavePeakToPeakAmplitude IsTransformationOutput heavePeakToPeak
+heavePeakToPeak HasTimeWindow heavePeakToPeakWindow
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[heavePeakToPeak] -->|BelongsToClass| N0001(PeakToPeak) 
+	N0002[heavePeakToPeakWindow] -->|BelongsToClass| N0003(TimeWindow) 
+	N0002[heavePeakToPeakWindow] -->|Duration| N0004(("20.0")) 
+	N0005[heavePosition] -->|BelongsToClass| N0006(DrillingDataPoint) 
+	N0007[heavePeakToPeakAmplitude] -->|BelongsToClass| N0006(DrillingDataPoint) 
+	N0005[heavePosition] -->|IsTransformationInput| N0000((heavePeakToPeak)) 
+	N0007[heavePeakToPeakAmplitude] -->|IsTransformationOutput| N0000((heavePeakToPeak)) 
+	N0000[heavePeakToPeak] -->|HasTimeWindow| N0002((heavePeakToPeakWindow)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?heavePeakToPeak
+WHERE {
+	?heavePeakToPeak rdf:type ddhub:PeakToPeak .
+	?heavePeakToPeakWindow rdf:type ddhub:TimeWindow .
+	?heavePeakToPeakWindow ddhub:Duration ?Attribute000 .
+	?heavePosition rdf:type ddhub:DrillingDataPoint .
+	?heavePeakToPeakAmplitude rdf:type ddhub:DrillingDataPoint .
+  FILTER (
+	?Attribute000 = "20.0"
+	&& 	?Attribute001 = heavePeakToPeak
+	&& 	?Attribute002 = heavePeakToPeak
+	&& 	?Attribute003 = heavePeakToPeakWindow
+  )
+}
+```
+This example computes the peak-to-peak amplitude of heave position over a time window.
 ## MovingDistribution <!-- NOUN -->
 - Display name: Moving Distribution
 - Parent class: [Filter](#Filter)
@@ -33617,6 +34001,43 @@ WHERE {
 }
 ```
 This example declares an inclination that is measured from the downward vertical.
+## MeanSeaLevelReferenceFrame <!-- NOUN -->
+- Display name: MeanSeaLevelReferenceFrame
+- Parent class: [VerticalElevationFrame](#VerticalElevationFrame)
+- Description: 
+A vertical elevation reference frame whose origin is mean sea level and whose positive direction is upward.
+- Definition set: PhysicalLocation
+- Examples:
+```dwis meanSeaLevelReferenceFrame
+MeanSeaLevelReferenceFrame:meanSeaLevelFrame
+Location:meanSeaLevelVerticalLocation
+meanSeaLevelVerticalLocation BelongsToClass MeanSeaLevelVerticalLocation
+meanSeaLevelFrame HasReferenceFrameOrigin meanSeaLevelVerticalLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[meanSeaLevelFrame] -->|BelongsToClass| N0001(MeanSeaLevelReferenceFrame) 
+	N0002[meanSeaLevelVerticalLocation] -->|BelongsToClass| N0003(Location) 
+	N0002[meanSeaLevelVerticalLocation] -->|BelongsToClass| N0004(MeanSeaLevelVerticalLocation) 
+	N0000[meanSeaLevelFrame] -->|HasReferenceFrameOrigin| N0002((meanSeaLevelVerticalLocation)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?meanSeaLevelReferenceFrame
+WHERE {
+	?meanSeaLevelFrame rdf:type ddhub:MeanSeaLevelReferenceFrame .
+	?meanSeaLevelVerticalLocation rdf:type ddhub:Location .
+	?meanSeaLevelVerticalLocation rdf:type ddhub:MeanSeaLevelVerticalLocation .
+  FILTER (
+	?Attribute000 = meanSeaLevelVerticalLocation
+  )
+}
+```
+This example declares a vertical elevation reference frame relative to mean sea level.
 ## NorthDirectionFrame <!-- NOUN -->
 - Display name: NorthDirectionFrame
 - Parent class: [HorizontalDirectionFrame](#HorizontalDirectionFrame)
@@ -48295,10 +48716,11 @@ WHERE {
 ```
 This example assigns a drilling data point to the Downhole Angular Acceleration prototype.
 ## StickSlipSeverityIndex <!-- NOUN -->
-- Display name: Stickslip Severity Index
+- Display name: Stick-Slip Severity Index
 - Parent class: [PrototypeData](#PrototypeData)
 - Description: 
-Prototype signal for Stickslip Severity Index.
+Prototype signal for a dimensionless index that quantifies the current severity of drill-string
+torsional stick-slip oscillations.
 - Definition set: SignalPrototypes
 - Examples:
 ```dwis stickSlipSeverityIndex
@@ -48322,7 +48744,7 @@ WHERE {
 	?stickSlipSeverityIndex rdf:type ddhub:StickSlipSeverityIndex .
 }
 ```
-This example assigns a drilling data point to the Stickslip Severity Index prototype.
+This example assigns a drilling data point to the Stick-Slip Severity Index prototype.
 ## FrictionCoefficient <!-- NOUN -->
 - Display name: Friction coefficient
 - Parent class: [PrototypeData](#PrototypeData)
@@ -48831,6 +49253,42 @@ WHERE {
 }
 ```
 This example defines a time span reference since spud.
+## TimeWindow <!-- NOUN -->
+- Display name: Time Window
+- Parent class: [TimeSpanReference](#TimeSpanReference)
+- Attributes:
+  - Duration
+    - Type: double
+    - Description: The length of the time window in seconds.
+- Description: 
+A time duration over which samples are selected or evaluated by a transformation.
+- Definition set: TimeManagement
+- Examples:
+```dwis tenSecondWindow
+TimeWindow:tenSecondWindow
+tenSecondWindow.Duration = "10.0"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[tenSecondWindow] -->|BelongsToClass| N0001(TimeWindow) 
+	N0000[tenSecondWindow] -->|Duration| N0002(("10.0")) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?tenSecondWindow
+WHERE {
+	?tenSecondWindow rdf:type ddhub:TimeWindow .
+	?tenSecondWindow ddhub:Duration ?Attribute000 .
+  FILTER (
+	?Attribute000 = "10.0"
+  )
+}
+```
+This example defines a ten second time window.
   
 ## SignalUncertainty <!-- NOUN -->
 - Display name: SignalUncertainty
@@ -76453,6 +76911,43 @@ graph LR
 	N0000[PoundInchSquared_1] -->|Symbol| N0003(("lb.in²")) 
 ```
 # Verbs
+## ImplementsControlStrategy <!-- VERB -->
+- Display name: Implements Control Strategy
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [ControllerFunction](#ControllerFunction)
+- Object class: [ControlStrategy](#ControlStrategy)
+- Definition set: ADCS
+- Description: 
+This verb indicates that a controller function uses a named control strategy to implement one or more of
+its control objectives.
+- Examples:
+```dwis softSpeedControlStrategy
+SoftSpeedController:softSpeedController
+DrillStringTorsionalResonanceFilteringControlStrategy:resonanceFiltering
+softSpeedController ImplementsControlStrategy resonanceFiltering
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[softSpeedController] -->|BelongsToClass| N0001(SoftSpeedController) 
+	N0002[resonanceFiltering] -->|BelongsToClass| N0003(DrillStringTorsionalResonanceFilteringControlStrategy) 
+	N0000[softSpeedController] -->|ImplementsControlStrategy| N0002((resonanceFiltering)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?softSpeedControlStrategy
+WHERE {
+	?softSpeedController rdf:type ddhub:SoftSpeedController .
+	?resonanceFiltering rdf:type ddhub:DrillStringTorsionalResonanceFilteringControlStrategy .
+  FILTER (
+	?Attribute000 = resonanceFiltering
+  )
+}
+```
+This example states that the SoftSpeed controller uses a drill-string torsional resonance filtering control strategy.
 ## IsTuningServiceFor <!-- VERB -->
 - Display name: Is Tuning Service For
 - Parent verb: [DWISVerb](#DWISVerb)
@@ -78986,6 +79481,114 @@ WHERE {
 }
 ```
 This example records that the control system is in safe mode.
+## IsCompensationMethodFor <!-- VERB -->
+- Display name: Is Compensation Method For
+- Parent verb: [HasFunction](#HasFunction)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DWISNoun](#DWISNoun)
+- Definition set: DataFlow
+- Description: 
+Identifies an enumerated signal that states which mechanism or method is used by a compensation system.
+- Examples:
+```dwis heaveCompensationMethod
+DrillingDataPoint:heaveCompensationMethod
+HeaveCompensationSystem:heaveCompensationSystem
+heaveCompensationMethod IsCompensationMethodFor heaveCompensationSystem
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[heaveCompensationMethod] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[heaveCompensationSystem] -->|BelongsToClass| N0003(HeaveCompensationSystem) 
+	N0000[heaveCompensationMethod] -->|IsCompensationMethodFor| N0002((heaveCompensationSystem)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?heaveCompensationMethod
+WHERE {
+	?heaveCompensationMethod rdf:type ddhub:DrillingDataPoint .
+	?heaveCompensationSystem rdf:type ddhub:HeaveCompensationSystem .
+  FILTER (
+	?Attribute000 = heaveCompensationSystem
+  )
+}
+```
+This example states that a signal reports the method currently used by a heave compensation system.
+## IsActivationStateFor <!-- VERB -->
+- Display name: Is Activation State For
+- Parent verb: [HasFunction](#HasFunction)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DWISNoun](#DWISNoun)
+- Definition set: DataFlow
+- Description: 
+Identifies an enumerated signal that reports the actual activation state of a system or function.
+- Examples:
+```dwis heaveCompensationState
+DrillingDataPoint:heaveCompensationState
+HeaveCompensationSystem:heaveCompensationSystem
+heaveCompensationState IsActivationStateFor heaveCompensationSystem
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[heaveCompensationState] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[heaveCompensationSystem] -->|BelongsToClass| N0003(HeaveCompensationSystem) 
+	N0000[heaveCompensationState] -->|IsActivationStateFor| N0002((heaveCompensationSystem)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?heaveCompensationState
+WHERE {
+	?heaveCompensationState rdf:type ddhub:DrillingDataPoint .
+	?heaveCompensationSystem rdf:type ddhub:HeaveCompensationSystem .
+  FILTER (
+	?Attribute000 = heaveCompensationSystem
+  )
+}
+```
+This example states that a signal reports whether a heave compensation system is active, inactive, failed, or in an unknown state.
+## IsTargetActivationStateFor <!-- VERB -->
+- Display name: Is Target Activation State For
+- Parent verb: [IsActivationStateFor](#IsActivationStateFor)
+- Subject class: [DrillingDataPoint](#DrillingDataPoint)
+- Object class: [DWISNoun](#DWISNoun)
+- Definition set: DataFlow
+- Description: 
+Identifies an enumerated signal that reports the intended, requested, or target activation state of a system or function.
+- Examples:
+```dwis heaveCompensationStateTarget
+DrillingDataPoint:heaveCompensationStateTarget
+HeaveCompensationSystem:heaveCompensationSystem
+heaveCompensationStateTarget IsTargetActivationStateFor heaveCompensationSystem
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[heaveCompensationStateTarget] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[heaveCompensationSystem] -->|BelongsToClass| N0003(HeaveCompensationSystem) 
+	N0000[heaveCompensationStateTarget] -->|IsTargetActivationStateFor| N0002((heaveCompensationSystem)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?heaveCompensationStateTarget
+WHERE {
+	?heaveCompensationStateTarget rdf:type ddhub:DrillingDataPoint .
+	?heaveCompensationSystem rdf:type ddhub:HeaveCompensationSystem .
+  FILTER (
+	?Attribute000 = heaveCompensationSystem
+  )
+}
+```
+This example states that a signal reports the target activation state of a heave compensation system.
 ## IsSetPointFor <!-- VERB -->
 - Display name: Is Set-Point For
 - Parent verb: [HasFunction](#HasFunction)
@@ -79382,6 +79985,46 @@ WHERE {
 }
 ```
 This example shows hookload as input to a resampling transformation.
+## HasTimeWindow <!-- VERB -->
+- Display name: Has Time Window
+- Parent verb: [DWISVerb](#DWISVerb)
+- Subject class: [Transformation](#Transformation)
+- Object class: [TimeWindow](#TimeWindow)
+- Definition set: DataFlow
+- Description: 
+Associates a transformation with the time duration over which its input samples are evaluated.
+- Examples:
+```dwis heavePeakToPeakWindowExample
+PeakToPeak:heavePeakToPeak
+TimeWindow:heavePeakToPeakWindow
+heavePeakToPeakWindow.Duration = "20.0"
+heavePeakToPeak HasTimeWindow heavePeakToPeakWindow
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[heavePeakToPeak] -->|BelongsToClass| N0001(PeakToPeak) 
+	N0002[heavePeakToPeakWindow] -->|BelongsToClass| N0003(TimeWindow) 
+	N0002[heavePeakToPeakWindow] -->|Duration| N0004(("20.0")) 
+	N0000[heavePeakToPeak] -->|HasTimeWindow| N0002((heavePeakToPeakWindow)) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?heavePeakToPeakWindowExample
+WHERE {
+	?heavePeakToPeak rdf:type ddhub:PeakToPeak .
+	?heavePeakToPeakWindow rdf:type ddhub:TimeWindow .
+	?heavePeakToPeakWindow ddhub:Duration ?Attribute000 .
+  FILTER (
+	?Attribute000 = "20.0"
+	&& 	?Attribute001 = heavePeakToPeakWindow
+  )
+}
+```
+This example states that the peak-to-peak heave calculation is evaluated over a 20 second window.
 ## IsTransmissionInput <!-- VERB -->
 - Display name: Is Transmission Input
 - Parent verb: [HasFunction](#HasFunction)

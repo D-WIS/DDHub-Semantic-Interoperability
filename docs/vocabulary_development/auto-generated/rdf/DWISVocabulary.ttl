@@ -1992,6 +1992,11 @@ ddhub:ControlsMeasurementPrinciple a owl:ObjectProperty;
                                    rdfs:domain ddhub:DrillingDataPoint; 
                                    rdfs:range ddhub:FlowMeasurementPrinciple; 
                                    rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:ControlStrategy a owl:Class; 
+                      rdfs:comment """A `ControlStrategy` is a named control approach or algorithmic principle used by a controller function
+to achieve its control objectives.
+"""@EN; 
+                      rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:ControlSystem a owl:Class; 
                     rdfs:comment """A collection of controllers, logic, and I/O that supervises a portion of the drilling process.
 """@EN; 
@@ -3931,12 +3936,23 @@ ddhub:DrillStringMechanicalLogicalElement a owl:Class;
                                           rdfs:comment """Abstract mechanical representation of a drill-string, i.e., a drill-stem that is used during a drilling operation.
 """@EN; 
                                           rdfs:subClassOf ddhub:DrillStemMechanicalLogicalElement. 
+ddhub:DrillStringTorsionalResonanceFilteringControlStrategy a owl:Class; 
+                                                            rdfs:comment """A `DrillStringTorsionalResonanceFilteringControlStrategy` is a control strategy that filters or shapes
+surface rotation control action around the drill-string natural torsional resonance frequency to damp torsional
+oscillations and reduce stick-slip.
+"""@EN; 
+                                                            rdfs:subClassOf ddhub:ControlStrategy. 
 ddhub:DrillWater a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:DrillingFluid. 
 ddhub:DualActing a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:Action. 
+ddhub:Duration a owl:DatatypeProperty, owl:FunctionalProperty; 
+               rdfs:comment """The length of the time window in seconds.
+"""@EN; 
+               rdfs:domain ddhub:TimeWindow; 
+               rdfs:range xsd:double. 
 ddhub:DurationDrillingQuantity a owl:Class; 
                                rdfs:comment """Time is a continuous, measurable progression in which events occur, from the past through the present to the future.
 The dimension of time is:
@@ -3973,8 +3989,8 @@ ddhub:DWISAdviceComposer a owl:Class;
 """@EN; 
                          rdfs:subClassOf ddhub:DWISInternalService. 
 ddhub:DWISAttributeCardinalityRestriction a owl:Class, owl:Restriction; 
-                                          owl:onClass ddhub:RunnableFunction, ddhub:Advisor, ddhub:BandPassFilter, ddhub:HighPassFilter, ddhub:LowPassFilter, ddhub:NumberOfSampleMovingAverage, ddhub:TimeWindowMovingAverage, ddhub:Buffering, ddhub:NumberOfItemsRangeExtraction, ddhub:TimeWindowRangeExtraction, ddhub:Resampling, ddhub:DataProvider, ddhub:Telemetry, ddhub:DrillingDataPoint, ddhub:DrillingSignal, ddhub:DynamicDrillingSignal, ddhub:DataEndPoint, ddhub:WitsMLTimeBasedLogEndPoint, ddhub:EndPointMapping, ddhub:HydraulicConnectedState, ddhub:HydraulicJunction, ddhub:MeasurableQuantity, ddhub:MechanicalElementState, ddhub:OneDimensionalReferenceFrame, ddhub:Quantity, ddhub:Unit, ddhub:Clock, ddhub:SynchronizationGroup, ddhub:FullScaleUncertainty, ddhub:SensorUncertainty; 
-                                          owl:onProperty ddhub:IsAuxiliary, ddhub:AdviceType, ddhub:MinFrequency, ddhub:MaxFrequency, ddhub:CutOffFrequency, ddhub:NumberOfSamples, ddhub:TimeWindow, ddhub:BufferingInterval, ddhub:NumberOfItems, ddhub:ResamplingRate, ddhub:ResamplingDelay, ddhub:Validity, ddhub:ProviderName, ddhub:NumberOfRepeaters, ddhub:DistanceBetweenRepeaters, ddhub:AverageDelayByRepeater, ddhub:IsValid, ddhub:Value, ddhub:TimeStampAtSource, ddhub:TimeStampAcquisition, ddhub:EndPointDescription, ddhub:WellUID, ddhub:WellName, ddhub:WellboreUID, ddhub:WellboreName, ddhub:LogUID, ddhub:LogName, ddhub:Mnemonic, ddhub:FixedIndices, ddhub:ValuesIndices, ddhub:MeasurementIndex, ddhub:LeftToRight, ddhub:RightToLeft, ddhub:MeaningfulPrecision, ddhub:PostiveUpward, ddhub:L, ddhub:M, ddhub:T, ddhub:I, ddhub:ThT, ddhub:N, ddhub:J, ddhub:Theta, ddhub:Omega, ddhub:SIUnit, ddhub:Symbol, ddhub:ConversionFactorA, ddhub:ConversionFactorB, ddhub:LeapSeconds, ddhub:Stratum, ddhub:NetworkSynchronizationLatencyAverage, ddhub:NetworkSynchronizationLatencyStandardDeviation, ddhub:Resolution, ddhub:MaximumFluctuations, ddhub:SynchronizationDelay, ddhub:SamplingRate, ddhub:FullScale, ddhub:ProportionError, ddhub:Accuracy, ddhub:Precision; 
+                                          owl:onClass ddhub:RunnableFunction, ddhub:Advisor, ddhub:BandPassFilter, ddhub:HighPassFilter, ddhub:LowPassFilter, ddhub:NumberOfSampleMovingAverage, ddhub:TimeWindowMovingAverage, ddhub:Buffering, ddhub:NumberOfItemsRangeExtraction, ddhub:TimeWindowRangeExtraction, ddhub:Resampling, ddhub:DataProvider, ddhub:Telemetry, ddhub:DrillingDataPoint, ddhub:DrillingSignal, ddhub:DynamicDrillingSignal, ddhub:DataEndPoint, ddhub:WitsMLTimeBasedLogEndPoint, ddhub:EndPointMapping, ddhub:HydraulicConnectedState, ddhub:HydraulicJunction, ddhub:MeasurableQuantity, ddhub:MechanicalElementState, ddhub:OneDimensionalReferenceFrame, ddhub:Quantity, ddhub:Unit, ddhub:Clock, ddhub:SynchronizationGroup, ddhub:TimeWindow, ddhub:FullScaleUncertainty, ddhub:SensorUncertainty; 
+                                          owl:onProperty ddhub:IsAuxiliary, ddhub:AdviceType, ddhub:MinFrequency, ddhub:MaxFrequency, ddhub:CutOffFrequency, ddhub:NumberOfSamples, ddhub:TimeWindow, ddhub:BufferingInterval, ddhub:NumberOfItems, ddhub:ResamplingRate, ddhub:ResamplingDelay, ddhub:Validity, ddhub:ProviderName, ddhub:NumberOfRepeaters, ddhub:DistanceBetweenRepeaters, ddhub:AverageDelayByRepeater, ddhub:IsValid, ddhub:Value, ddhub:TimeStampAtSource, ddhub:TimeStampAcquisition, ddhub:EndPointDescription, ddhub:WellUID, ddhub:WellName, ddhub:WellboreUID, ddhub:WellboreName, ddhub:LogUID, ddhub:LogName, ddhub:Mnemonic, ddhub:FixedIndices, ddhub:ValuesIndices, ddhub:MeasurementIndex, ddhub:LeftToRight, ddhub:RightToLeft, ddhub:MeaningfulPrecision, ddhub:PostiveUpward, ddhub:L, ddhub:M, ddhub:T, ddhub:I, ddhub:ThT, ddhub:N, ddhub:J, ddhub:Theta, ddhub:Omega, ddhub:SIUnit, ddhub:Symbol, ddhub:ConversionFactorA, ddhub:ConversionFactorB, ddhub:LeapSeconds, ddhub:Stratum, ddhub:NetworkSynchronizationLatencyAverage, ddhub:NetworkSynchronizationLatencyStandardDeviation, ddhub:Resolution, ddhub:MaximumFluctuations, ddhub:SynchronizationDelay, ddhub:SamplingRate, ddhub:Duration, ddhub:FullScale, ddhub:ProportionError, ddhub:Accuracy, ddhub:Precision; 
                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger. 
 ddhub:DWISBlackboard a owl:Class; 
                      rdfs:comment """The DWIS blackboard is a shared data structure that allows different DWIS components to share information and coordinate their activities.
@@ -6036,6 +6052,12 @@ ddhub:HasTimeReference a owl:ObjectProperty;
                        rdfs:domain ddhub:DrillingDataPoint; 
                        rdfs:range ddhub:TimeReference; 
                        rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:HasTimeWindow a owl:ObjectProperty; 
+                    rdfs:comment """Associates a transformation with the time duration over which its input samples are evaluated.
+"""@EN; 
+                    rdfs:domain ddhub:Transformation; 
+                    rdfs:range ddhub:TimeWindow; 
+                    rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasTransmissionDelay a owl:ObjectProperty; 
                            rdfs:comment """Indicates the transmission delay associated with a data point.
 """@EN; 
@@ -6517,6 +6539,18 @@ The SI unit for **image scale** is: dot per metre with the associated unit label
 ddhub:ImagingTools a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:LoggingWhileDrillingTools. 
+ddhub:ImpedanceMatchingController a owl:Class; 
+                                  rdfs:comment """An `ImpedanceMatchingController` is a controller function that mitigates drill-string torsional
+oscillations by adapting the dynamic interaction between the surface rotation drive and the drill string.
+"""@EN; 
+                                  rdfs:subClassOf ddhub:ControllerFunction. 
+ddhub:ImplementsControlStrategy a owl:ObjectProperty; 
+                                rdfs:comment """This verb indicates that a controller function uses a named control strategy to implement one or more of
+its control objectives.
+"""@EN; 
+                                rdfs:domain ddhub:ControllerFunction; 
+                                rdfs:range ddhub:ControlStrategy; 
+                                rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:ImplementsLimit a owl:ObjectProperty; 
                       rdfs:comment """This Verb is used to indicate that a safe operating envelope function implements a drilling limit.
 """@EN; 
@@ -7103,6 +7137,12 @@ not. It is expected that the `DrillingDataPoint` is a Boolean value.
                            rdfs:domain ddhub:DrillingDataPoint; 
                            rdfs:range ddhub:ActivableFunction; 
                            rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsActivationStateFor a owl:ObjectProperty; 
+                           rdfs:comment """Identifies an enumerated signal that reports the actual activation state of a system or function.
+"""@EN; 
+                           rdfs:domain ddhub:DrillingDataPoint; 
+                           rdfs:range ddhub:DWISNoun; 
+                           rdfs:subPropertyOf ddhub:HasFunction. 
 ddhub:IsAHydraulicRepresentationFor a owl:ObjectProperty; 
                                     rdfs:comment """Links a hydraulic element to the piece of equipment it represents.
 """@EN; 
@@ -7206,6 +7246,12 @@ ddhub:IsCommandFor a owl:ObjectProperty;
                    rdfs:domain ddhub:DrillingDataPoint; 
                    rdfs:range ddhub:DWISNoun; 
                    rdfs:subPropertyOf ddhub:HasFunction. 
+ddhub:IsCompensationMethodFor a owl:ObjectProperty; 
+                              rdfs:comment """Identifies an enumerated signal that states which mechanism or method is used by a compensation system.
+"""@EN; 
+                              rdfs:domain ddhub:DrillingDataPoint; 
+                              rdfs:range ddhub:DWISNoun; 
+                              rdfs:subPropertyOf ddhub:HasFunction. 
 ddhub:IsComponentAlongAxis a owl:ObjectProperty; 
                            rdfs:comment """Stipulate that a drilling data point is a component along an axis.
 """@EN; 
@@ -7707,6 +7753,12 @@ ddhub:IsSynchronizationGroupOutput a owl:ObjectProperty;
                                    rdfs:domain ddhub:DrillingDataPoint; 
                                    rdfs:range ddhub:SynchronizationGroup; 
                                    rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsTargetActivationStateFor a owl:ObjectProperty; 
+                                 rdfs:comment """Identifies an enumerated signal that reports the intended, requested, or target activation state of a system or function.
+"""@EN; 
+                                 rdfs:domain ddhub:DrillingDataPoint; 
+                                 rdfs:range ddhub:DWISNoun; 
+                                 rdfs:subPropertyOf ddhub:IsActivationStateFor. 
 ddhub:IsToBeComparedWith a owl:ObjectProperty; 
                          rdfs:comment """States that two data points should be compared for validation or control.
 """@EN; 
@@ -10110,6 +10162,10 @@ ddhub:MeanLowWaterVerticalLocation a owl:Class;
                                    rdfs:comment """Reference location for MeanLowWaterVerticalLocation.
 """@EN; 
                                    rdfs:subClassOf ddhub:VerticalReferenceLocation. 
+ddhub:MeanSeaLevelReferenceFrame a owl:Class; 
+                                 rdfs:comment """A vertical elevation reference frame whose origin is mean sea level and whose positive direction is upward.
+"""@EN; 
+                                 rdfs:subClassOf ddhub:VerticalElevationFrame. 
 ddhub:MeanSeaLevelVerticalLocation a owl:Class; 
                                    rdfs:comment """Reference location for MeanSeaLevelVerticalLocation.
 """@EN; 
@@ -12871,6 +12927,10 @@ ddhub:Pdc a owl:Class;
 ddhub:PdcCore a owl:Class; 
               rdfs:comment ""@EN; 
               rdfs:subClassOf ddhub:FixedCutter. 
+ddhub:PeakToPeak a owl:Class; 
+                 rdfs:comment """Computes the difference between the maximum and minimum values of an input signal over a specified window.
+"""@EN; 
+                 rdfs:subClassOf ddhub:Filter. 
 ddhub:Peloton a owl:Class; 
               rdfs:comment """A well operations data-management software company active in WellView, SiteView, well lifecycle data, drilling reports, and operations reporting.
 """@EN; 
@@ -13041,6 +13101,16 @@ ddhub:Pipe a owl:Class;
 ddhub:PipeRam a owl:Class; 
               rdfs:comment ""@EN; 
               rdfs:subClassOf ddhub:BopElement. 
+ddhub:PipeRockingController a owl:Class; 
+                            rdfs:comment """A `PipeRockingController` is a controller function that alternates top-of-string rotation over a limited
+angular interval to orient or maintain the toolface of a downhole motor.
+"""@EN; 
+                            rdfs:subClassOf ddhub:ControllerFunction. 
+ddhub:PipeRockingControlStrategy a owl:Class; 
+                                 rdfs:comment """A `PipeRockingControlStrategy` is a control strategy that alternates top-of-string rotation over a
+limited angular interval to orient or maintain the toolface of a downhole motor without continuous full rotation.
+"""@EN; 
+                                 rdfs:subClassOf ddhub:ControlStrategy. 
 ddhub:PipeSectionMechanicalLogicalElement a owl:Class; 
                                           rdfs:comment """Abstract mechanical representation of the pipe section of a drill-stem. The pipe section contains drill-pipe,
 heavy-weight drill-pipe, jar, accelerator and other similar components.
@@ -15582,6 +15652,12 @@ ddhub:RotationalFrictionCoefficient a owl:Class;
                                     rdfs:comment """Prototype signal for Rotational Friction coefficient.
 """@EN; 
                                     rdfs:subClassOf ddhub:MechanicalFrictionCoefficient. 
+ddhub:RotationalImpedanceMatchingControlStrategy a owl:Class; 
+                                                 rdfs:comment """A `RotationalImpedanceMatchingControlStrategy` is a control strategy that adapts the dynamic interaction
+between the surface rotation drive and the drill string to damp torsional oscillations by reducing reflection or
+amplification of torsional energy.
+"""@EN; 
+                                                 rdfs:subClassOf ddhub:ControlStrategy. 
 ddhub:RotationalModelling a owl:Class; 
                           rdfs:comment """The model accounts for the rotational movement of some parts of the physical system.
 """@EN; 
@@ -15936,6 +16012,18 @@ and speed of the drill-stem to avoid generate swabbing pressure below the maximu
 surging pressure above the fracturing pressure.
 """@EN; 
                   rdfs:subClassOf ddhub:ProtectionFunction. 
+ddhub:SoftSpeedController a owl:Class; 
+                          rdfs:comment """A `SoftSpeedController` is a controller function that mitigates drill-string torsional stick-slip by
+filtering surface rotation control action around the drill-string natural torsional resonance frequency to damp
+torsional oscillations and stabilize the downhole rotational velocity.
+"""@EN; 
+                          rdfs:subClassOf ddhub:ControllerFunction. 
+ddhub:SoftTorqueController a owl:Class; 
+                           rdfs:comment """A `SoftTorqueController` is a controller function that mitigates drill-string torsional stick-slip by
+filtering or shaping the surface rotation drive torque response around the drill-string natural torsional resonance
+frequency to damp torsional oscillations.
+"""@EN; 
+                           rdfs:subClassOf ddhub:ControllerFunction. 
 ddhub:SolarMass a owl:Class; 
                 rdfs:comment """[v] = a * [SI]
 where
@@ -16374,7 +16462,8 @@ ddhub:StickSlip a owl:Class;
 """@EN; 
                 rdfs:subClassOf ddhub:AbnormalTorsionalOscillation. 
 ddhub:StickSlipSeverityIndex a owl:Class; 
-                             rdfs:comment """Prototype signal for Stickslip Severity Index.
+                             rdfs:comment """Prototype signal for a dimensionless index that quantifies the current severity of drill-string
+torsional stick-slip oscillations.
 """@EN; 
                              rdfs:subClassOf ddhub:PrototypeData. 
 ddhub:StickUpHeightVerticalLocation a owl:Class; 
@@ -17017,11 +17106,13 @@ ddhub:TimeStampAtSource a owl:DatatypeProperty, owl:FunctionalProperty;
 """@EN; 
                         rdfs:domain ddhub:DynamicDrillingSignal; 
                         rdfs:range xsd:datetime. 
-ddhub:TimeWindow a owl:DatatypeProperty, owl:FunctionalProperty; 
-                 rdfs:comment """
+ddhub:TimeWindow a owl:Class, owl:DatatypeProperty, owl:FunctionalProperty; 
+                 rdfs:comment """A time duration over which samples are selected or evaluated by a transformation.
+"""@EN, """
 """@EN; 
                  rdfs:domain ddhub:TimeWindowMovingAverage, ddhub:TimeWindowRangeExtraction; 
-                 rdfs:range xsd:double. 
+                 rdfs:range xsd:double; 
+                 rdfs:subClassOf ddhub:TimeSpanReference. 
 ddhub:TimeWindowMovingAverage a owl:Class; 
                               rdfs:comment """Moving average defined by a time duration window.
 """@EN; 

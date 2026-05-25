@@ -16,6 +16,7 @@ TimeReference <|-- GPSReference
 TimeReference <|-- UTCReference
 RelativeTimeReference <|-- LocalTimeReference
 RelativeTimeReference <|-- TimeSpanReference
+TimeSpanReference <|-- TimeWindow
 ```
 ## Clock <!-- NOUN -->
 - Display name: Clock
@@ -293,6 +294,42 @@ WHERE {
 }
 ```
 This example defines a time span reference since spud.
+## TimeWindow <!-- NOUN -->
+- Display name: Time Window
+- Parent class: [TimeSpanReference](./TimeManagement.md#TimeSpanReference)
+- Attributes:
+  - Duration
+    - Type: double
+    - Description: The length of the time window in seconds.
+- Description: 
+A time duration over which samples are selected or evaluated by a transformation.
+- Definition set: TimeManagement
+- Examples:
+```dwis tenSecondWindow
+TimeWindow:tenSecondWindow
+tenSecondWindow.Duration = "10.0"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[tenSecondWindow] -->|BelongsToClass| N0001(TimeWindow) 
+	N0000[tenSecondWindow] -->|Duration| N0002(("10.0")) 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?tenSecondWindow
+WHERE {
+	?tenSecondWindow rdf:type ddhub:TimeWindow .
+	?tenSecondWindow ddhub:Duration ?Attribute000 .
+  FILTER (
+	?Attribute000 = "10.0"
+  )
+}
+```
+This example defines a ten second time window.
   
 # Verbs
 ## Class Inheritance for Verbs

@@ -114,6 +114,8 @@ function may run immediately or that it is enabled and can trigger if some condi
     <owl:onProperty rdf:resource="http://ddhub.no/SynchronizationDelay" />
     <owl:onClass rdf:resource="http://ddhub.no/SynchronizationGroup" />
     <owl:onProperty rdf:resource="http://ddhub.no/SamplingRate" />
+    <owl:onProperty rdf:resource="http://ddhub.no/Duration" />
+    <owl:onClass rdf:resource="http://ddhub.no/TimeWindow" />
     <owl:onProperty rdf:resource="http://ddhub.no/FullScale" />
     <owl:onClass rdf:resource="http://ddhub.no/FullScaleUncertainty" />
     <owl:onProperty rdf:resource="http://ddhub.no/ProportionError" />
@@ -127,6 +129,36 @@ function may run immediately or that it is enabled and can trigger if some condi
     <rdfs:comment xml:lang="EN">A `ControllerFunction` is a `RunnableFunction` that executes a feedback control loop to follow as closely
 as possible one or several desired values. A typical example of `ControllerFunction` is the `AutoDriller`. An `AutoDriller` 
 follows as closely as possible, for instance, a desired `WOB`.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SoftSpeedController">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ControllerFunction" />
+    <rdfs:comment xml:lang="EN">A `SoftSpeedController` is a controller function that mitigates drill-string torsional stick-slip by
+filtering surface rotation control action around the drill-string natural torsional resonance frequency to damp
+torsional oscillations and stabilize the downhole rotational velocity.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SoftTorqueController">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ControllerFunction" />
+    <rdfs:comment xml:lang="EN">A `SoftTorqueController` is a controller function that mitigates drill-string torsional stick-slip by
+filtering or shaping the surface rotation drive torque response around the drill-string natural torsional resonance
+frequency to damp torsional oscillations.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ImpedanceMatchingController">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ControllerFunction" />
+    <rdfs:comment xml:lang="EN">An `ImpedanceMatchingController` is a controller function that mitigates drill-string torsional
+oscillations by adapting the dynamic interaction between the surface rotation drive and the drill string.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PipeRockingController">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ControllerFunction" />
+    <rdfs:comment xml:lang="EN">A `PipeRockingController` is a controller function that alternates top-of-string rotation over a limited
+angular interval to orient or maintain the toolface of a downhole motor.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ProcedureFunction">
@@ -212,6 +244,36 @@ values.
     <rdfs:subClassOf rdf:resource="http://ddhub.no/TuningServiceFunction" />
     <rdfs:comment xml:lang="EN">An `AutoDrillerGainsTuningServiceFunction` is a `TuningServiceFunction` that applies gain tuning
 parameters to the auto-driller control loops.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ControlStrategy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:comment xml:lang="EN">A `ControlStrategy` is a named control approach or algorithmic principle used by a controller function
+to achieve its control objectives.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillStringTorsionalResonanceFilteringControlStrategy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ControlStrategy" />
+    <rdfs:comment xml:lang="EN">A `DrillStringTorsionalResonanceFilteringControlStrategy` is a control strategy that filters or shapes
+surface rotation control action around the drill-string natural torsional resonance frequency to damp torsional
+oscillations and reduce stick-slip.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RotationalImpedanceMatchingControlStrategy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ControlStrategy" />
+    <rdfs:comment xml:lang="EN">A `RotationalImpedanceMatchingControlStrategy` is a control strategy that adapts the dynamic interaction
+between the surface rotation drive and the drill string to damp torsional oscillations by reducing reflection or
+amplification of torsional energy.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PipeRockingControlStrategy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ControlStrategy" />
+    <rdfs:comment xml:lang="EN">A `PipeRockingControlStrategy` is a control strategy that alternates top-of-string rotation over a
+limited angular interval to orient or maintain the toolface of a downhole motor without continuous full rotation.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/EstimationParameter">
@@ -936,6 +998,12 @@ ComputedState.
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Filter" />
     <rdfs:comment xml:lang="EN">Tracks the maximum value within a sliding window.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PeakToPeak">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Filter" />
+    <rdfs:comment xml:lang="EN">Computes the difference between the maximum and minimum values of an input signal over a specified window.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/MovingDistribution">
@@ -2117,7 +2185,8 @@ ComputedState.
   <rdf:Description rdf:about="http://ddhub.no/StickSlipSeverityIndex">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
-    <rdfs:comment xml:lang="EN">Prototype signal for Stickslip Severity Index.
+    <rdfs:comment xml:lang="EN">Prototype signal for a dimensionless index that quantifies the current severity of drill-string
+torsional stick-slip oscillations.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/FrictionCoefficient">
@@ -8131,6 +8200,12 @@ a power swivel, a rotary table with a kelly.
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/VerticalDirectionFrame" />
     <rdfs:comment xml:lang="EN">A reference frame that follows the upward vertical.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MeanSeaLevelReferenceFrame">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/VerticalElevationFrame" />
+    <rdfs:comment xml:lang="EN">A vertical elevation reference frame whose origin is mean sea level and whose positive direction is upward.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/LengthDirectionFrame">
@@ -21768,6 +21843,19 @@ Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
     <rdfs:comment xml:lang="EN">Reference representing elapsed time from a defined event.
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TimeWindow">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/TimeSpanReference" />
+    <rdfs:comment xml:lang="EN">A time duration over which samples are selected or evaluated by a transformation.
+</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/TimeWindowMovingAverage" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
+    <rdfs:domain rdf:resource="http://ddhub.no/TimeWindowRangeExtraction" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/GPSReference">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/TimeReference" />
@@ -21867,15 +21955,6 @@ are: Boost Riser Flow, Down Link from ADCS, Rock Pipe, ...
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/NumberOfSampleMovingAverage" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/TimeWindow">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/TimeWindowMovingAverage" />
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
-    <rdfs:domain rdf:resource="http://ddhub.no/TimeWindowRangeExtraction" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -22285,6 +22364,14 @@ ConvertedValue = ConversionFactorA + SIValue * ConversionFactorB
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Duration">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/TimeWindow" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
+    <rdfs:comment xml:lang="EN">The length of the time window in seconds.
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/FullScale">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
@@ -22322,6 +22409,15 @@ ConvertedValue = ConversionFactorA + SIValue * ConversionFactorB
     <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
     <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
     <rdfs:comment xml:lang="EN">This is the root class for all verbs defined in the DWIS vocabulary. It is used to define a relation between a subject, which can be of any `DWISNoun` and an object, also of any type of `DWISNoun`.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ImplementsControlStrategy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/ControllerFunction" />
+    <rdfs:range rdf:resource="http://ddhub.no/ControlStrategy" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
+    <rdfs:comment xml:lang="EN">This verb indicates that a controller function uses a named control strategy to implement one or more of
+its control objectives.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsTuningServiceFor">
@@ -22421,6 +22517,30 @@ parameter.
     <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsInformationForCurrentStateOf" />
     <rdfs:comment xml:lang="EN">Indicates that the target object or process is currently in a safe or fallback mode.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsCompensationMethodFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
+    <rdfs:comment xml:lang="EN">Identifies an enumerated signal that states which mechanism or method is used by a compensation system.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsActivationStateFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
+    <rdfs:comment xml:lang="EN">Identifies an enumerated signal that reports the actual activation state of a system or function.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsTargetActivationStateFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsActivationStateFor" />
+    <rdfs:comment xml:lang="EN">Identifies an enumerated signal that reports the intended, requested, or target activation state of a system or function.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsSetPointFor">
@@ -22770,6 +22890,14 @@ to another.
     <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
     <rdfs:comment xml:lang="EN">Indicates that a data flow node drives or regulates another equipment or function.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HasTimeWindow">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/Transformation" />
+    <rdfs:range rdf:resource="http://ddhub.no/TimeWindow" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
+    <rdfs:comment xml:lang="EN">Associates a transformation with the time duration over which its input samples are evaluated.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsGeneratedBy">
