@@ -5,6 +5,9 @@ public static class Verbs
 {
 public enum Enum
 {
+IsTuningServiceFor = 402498435,
+IsTuningParameterFor = 938591651,
+IsTuningRequestFor = 747001811,
 IsEnablingSignalFor = 1160708128,
 IsActivatedSignalFor = 1570145478,
 AllowEnablementSignalFor = 247029459,
@@ -206,6 +209,9 @@ HasProportionError = 1747291041,
 HasFullScale = 1519713409,
 HasUncertaintyHistogram = 17573535
 }
+	public const string IsTuningServiceFor = "IsTuningServiceFor";
+	public const string IsTuningParameterFor = "IsTuningParameterFor";
+	public const string IsTuningRequestFor = "IsTuningRequestFor";
 	public const string IsEnablingSignalFor = "IsEnablingSignalFor";
 	public const string IsActivatedSignalFor = "IsActivatedSignalFor";
 	public const string AllowEnablementSignalFor = "AllowEnablementSignalFor";

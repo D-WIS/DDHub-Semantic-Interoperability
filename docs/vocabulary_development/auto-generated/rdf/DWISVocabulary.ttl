@@ -451,6 +451,26 @@ and
 Atto = 1e-18
 """@EN; 
                rdfs:subClassOf ddhub:Unit. 
+ddhub:AutoDrillerDifferentialPressureGainsTuningParameter a owl:Class; 
+                                                          rdfs:comment """An `AutoDrillerDifferentialPressureGainsTuningParameter` is a `PIDTuningParameter` used to tune the
+differential-pressure control loop of an auto-driller.
+"""@EN; 
+                                                          rdfs:subClassOf ddhub:PIDTuningParameter. 
+ddhub:AutoDrillerGainsTuningServiceFunction a owl:Class; 
+                                            rdfs:comment """An `AutoDrillerGainsTuningServiceFunction` is a `TuningServiceFunction` that applies gain tuning
+parameters to the auto-driller control loops.
+"""@EN; 
+                                            rdfs:subClassOf ddhub:TuningServiceFunction. 
+ddhub:AutoDrillerTorqueGainsTuningParameter a owl:Class; 
+                                            rdfs:comment """An `AutoDrillerTorqueGainsTuningParameter` is a `PIDTuningParameter` used to tune the torque control loop
+of an auto-driller.
+"""@EN; 
+                                            rdfs:subClassOf ddhub:PIDTuningParameter. 
+ddhub:AutoDrillerWOBGainsTuningParameter a owl:Class; 
+                                         rdfs:comment """An `AutoDrillerWOBGainsTuningParameter` is a `PIDTuningParameter` used to tune the weight-on-bit
+control loop of an auto-driller.
+"""@EN; 
+                                         rdfs:subClassOf ddhub:PIDTuningParameter. 
 ddhub:AverageDelayByRepeater a owl:DatatypeProperty, owl:FunctionalProperty; 
                              rdfs:comment """The average delay caused by each repeater. The physical quantity is Time and the unit is second.
 """@EN; 
@@ -7771,6 +7791,27 @@ ddhub:IsTransmittedBy a owl:ObjectProperty;
                       rdfs:domain ddhub:DrillingDataPoint; 
                       rdfs:range ddhub:Telemetry; 
                       rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsTuningParameterFor a owl:ObjectProperty; 
+                           rdfs:comment """This verb indicates that a tuning parameter is intended to tune an ADCS function or one of its control
+loops.
+"""@EN; 
+                           rdfs:domain ddhub:PIDTuningParameter; 
+                           rdfs:range ddhub:ADCSFunction; 
+                           rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsTuningRequestFor a owl:ObjectProperty; 
+                         rdfs:comment """This verb indicates that a command or recommendation signal carries a request to apply a tuning
+parameter.
+"""@EN; 
+                         rdfs:domain ddhub:DrillingDataPoint; 
+                         rdfs:range ddhub:PIDTuningParameter; 
+                         rdfs:subPropertyOf ddhub:IsCommandFor. 
+ddhub:IsTuningServiceFor a owl:ObjectProperty; 
+                         rdfs:comment """This verb indicates that a tuning service applies tuning parameters to an ADCS function or to one of its
+control loops.
+"""@EN; 
+                         rdfs:domain ddhub:TuningServiceFunction; 
+                         rdfs:range ddhub:ADCSFunction; 
+                         rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsUnitForQuantity a owl:ObjectProperty; 
                         rdfs:comment """This `verb` is used to relate a `Unit` with a `Quantity`.
 """@EN; 
@@ -12976,6 +13017,11 @@ and
 Pico = 1e-12
 """@EN; 
                rdfs:subClassOf ddhub:Unit. 
+ddhub:PIDTuningParameter a owl:Class; 
+                         rdfs:comment """A `PIDTuningParameter` is a calibration parameter that contains proportional, integral, derivative, or
+time-constant values used to tune a controller.
+"""@EN; 
+                         rdfs:subClassOf ddhub:CalibrationParameter. 
 ddhub:Pin a owl:Class; 
           rdfs:comment ""@EN; 
           rdfs:subClassOf ddhub:Connection. 
@@ -17273,6 +17319,12 @@ ddhub:TubularConnection a owl:Class;
 ddhub:Tubulars a owl:Class; 
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:Equipment. 
+ddhub:TuningServiceFunction a owl:Class; 
+                            rdfs:comment """A `TuningServiceFunction` is a `ServiceFunction` that applies tuning parameters to an ADCS function or
+to a control loop used by an ADCS function. The service is requested by a command and uses associated tuning parameter
+values.
+"""@EN; 
+                            rdfs:subClassOf ddhub:ServiceFunction. 
 ddhub:TurbineMotor a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:DownholeMotor. 

@@ -19,6 +19,12 @@ ADCSFunction <|-- ServiceFunction
 ServiceFunction <|-- TareServiceFunction
 TareServiceFunction <|-- WeightOnBitTareServiceFunction
 TareServiceFunction <|-- DifferentialPressureTareServiceFunction
+ServiceFunction <|-- TuningServiceFunction
+TuningServiceFunction <|-- AutoDrillerGainsTuningServiceFunction
+CalibrationParameter <|-- PIDTuningParameter
+PIDTuningParameter <|-- AutoDrillerWOBGainsTuningParameter
+PIDTuningParameter <|-- AutoDrillerTorqueGainsTuningParameter
+PIDTuningParameter <|-- AutoDrillerDifferentialPressureGainsTuningParameter
 ```
 ## ADCSFunction <!-- NOUN -->
 - Display name: ADCS Function
@@ -605,11 +611,228 @@ WHERE {
 }
 ```
 This example describes a service function used to tare differential pressure.
+## TuningServiceFunction <!-- NOUN -->
+- Display name: Tuning Service Function
+- Parent class: [ServiceFunction](./ADCS.md#ServiceFunction)
+- Description: 
+A `TuningServiceFunction` is a `ServiceFunction` that applies tuning parameters to an ADCS function or
+to a control loop used by an ADCS function. The service is requested by a command and uses associated tuning parameter
+values.
+- Definition set: ADCS
+- Examples:
+```dwis tuningService
+TuningServiceFunction:tuningService
+ControllerFunction:autoDriller
+tuningService IsTuningServiceFor autoDriller
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+tuningService IsProvidedBy DCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[tuningService] -->|BelongsToClass| N0001(TuningServiceFunction) 
+	N0002[autoDriller] -->|BelongsToClass| N0003(ControllerFunction) 
+	N0000[tuningService] -->|IsTuningServiceFor| N0002[autoDriller] 
+	N0004[DCS] -->|BelongsToClass| N0005(ControlSystem) 
+	N0006[Contractor] -->|BelongsToClass| N0007(DrillingContractor) 
+	N0004[DCS] -->|IsProvidedBy| N0006[Contractor] 
+	N0004[DCS] -->|BelongsToClass| N0008(DataProvider) 
+	N0000[tuningService] -->|IsProvidedBy| N0004[DCS] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?tuningService
+WHERE {
+	?tuningService rdf:type ddhub:TuningServiceFunction .
+	?autoDriller rdf:type ddhub:ControllerFunction .
+	?tuningService ddhub:IsTuningServiceFor ?autoDriller .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS ddhub:IsProvidedBy ?Contractor .
+	?DCS rdf:type ddhub:DataProvider .
+	?tuningService ddhub:IsProvidedBy ?DCS .
+}
+```
+This example describes a tuning service function provided by the drilling control system, `DCS`.
+## AutoDrillerGainsTuningServiceFunction <!-- NOUN -->
+- Display name: Auto Driller Gains Tuning Service Function
+- Parent class: [TuningServiceFunction](./ADCS.md#TuningServiceFunction)
+- Description: 
+An `AutoDrillerGainsTuningServiceFunction` is a `TuningServiceFunction` that applies gain tuning
+parameters to the auto-driller control loops.
+- Definition set: ADCS
+- Examples:
+```dwis autoDrillerGainsTuningService
+AutoDrillerGainsTuningServiceFunction:autoDrillerGainsTuningService
+ControllerFunction:autoDriller
+autoDrillerGainsTuningService IsTuningServiceFor autoDriller
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[autoDrillerGainsTuningService] -->|BelongsToClass| N0001(AutoDrillerGainsTuningServiceFunction) 
+	N0002[autoDriller] -->|BelongsToClass| N0003(ControllerFunction) 
+	N0000[autoDrillerGainsTuningService] -->|IsTuningServiceFor| N0002[autoDriller] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?autoDrillerGainsTuningService
+WHERE {
+	?autoDrillerGainsTuningService rdf:type ddhub:AutoDrillerGainsTuningServiceFunction .
+	?autoDriller rdf:type ddhub:ControllerFunction .
+	?autoDrillerGainsTuningService ddhub:IsTuningServiceFor ?autoDriller .
+}
+```
+This example describes a service function used to tune auto-driller gains.
+## PIDTuningParameter <!-- NOUN -->
+- Display name: PID Tuning Parameter
+- Parent class: [CalibrationParameter](./DrillingDataSemantics.md#CalibrationParameter)
+- Description: 
+A `PIDTuningParameter` is a calibration parameter that contains proportional, integral, derivative, or
+time-constant values used to tune a controller.
+- Definition set: ADCS
+- Examples:
+```dwis pidTuningParameter
+PIDTuningParameter:pidTuningParameter
+ControllerFunction:autoDriller
+pidTuningParameter IsTuningParameterFor autoDriller
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pidTuningParameter] -->|BelongsToClass| N0001(PIDTuningParameter) 
+	N0002[autoDriller] -->|BelongsToClass| N0003(ControllerFunction) 
+	N0000[pidTuningParameter] -->|IsTuningParameterFor| N0002[autoDriller] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pidTuningParameter
+WHERE {
+	?pidTuningParameter rdf:type ddhub:PIDTuningParameter .
+	?autoDriller rdf:type ddhub:ControllerFunction .
+	?pidTuningParameter ddhub:IsTuningParameterFor ?autoDriller .
+}
+```
+This example describes a PID tuning parameter for the auto-driller.
+## AutoDrillerWOBGainsTuningParameter <!-- NOUN -->
+- Display name: Auto Driller WOB Gains Tuning Parameter
+- Parent class: [PIDTuningParameter](./ADCS.md#PIDTuningParameter)
+- Description: 
+An `AutoDrillerWOBGainsTuningParameter` is a `PIDTuningParameter` used to tune the weight-on-bit
+control loop of an auto-driller.
+- Definition set: ADCS
+- Examples:
+```dwis wobGainsTuningParameter
+AutoDrillerWOBGainsTuningParameter:wobGainsTuningParameter
+ControllerFunction:autoDriller
+wobGainsTuningParameter IsTuningParameterFor autoDriller
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wobGainsTuningParameter] -->|BelongsToClass| N0001(AutoDrillerWOBGainsTuningParameter) 
+	N0002[autoDriller] -->|BelongsToClass| N0003(ControllerFunction) 
+	N0000[wobGainsTuningParameter] -->|IsTuningParameterFor| N0002[autoDriller] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wobGainsTuningParameter
+WHERE {
+	?wobGainsTuningParameter rdf:type ddhub:AutoDrillerWOBGainsTuningParameter .
+	?autoDriller rdf:type ddhub:ControllerFunction .
+	?wobGainsTuningParameter ddhub:IsTuningParameterFor ?autoDriller .
+}
+```
+This example describes WOB gain tuning parameters for the auto-driller.
+## AutoDrillerTorqueGainsTuningParameter <!-- NOUN -->
+- Display name: Auto Driller Torque Gains Tuning Parameter
+- Parent class: [PIDTuningParameter](./ADCS.md#PIDTuningParameter)
+- Description: 
+An `AutoDrillerTorqueGainsTuningParameter` is a `PIDTuningParameter` used to tune the torque control loop
+of an auto-driller.
+- Definition set: ADCS
+- Examples:
+```dwis torqueGainsTuningParameter
+AutoDrillerTorqueGainsTuningParameter:torqueGainsTuningParameter
+ControllerFunction:autoDriller
+torqueGainsTuningParameter IsTuningParameterFor autoDriller
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[torqueGainsTuningParameter] -->|BelongsToClass| N0001(AutoDrillerTorqueGainsTuningParameter) 
+	N0002[autoDriller] -->|BelongsToClass| N0003(ControllerFunction) 
+	N0000[torqueGainsTuningParameter] -->|IsTuningParameterFor| N0002[autoDriller] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?torqueGainsTuningParameter
+WHERE {
+	?torqueGainsTuningParameter rdf:type ddhub:AutoDrillerTorqueGainsTuningParameter .
+	?autoDriller rdf:type ddhub:ControllerFunction .
+	?torqueGainsTuningParameter ddhub:IsTuningParameterFor ?autoDriller .
+}
+```
+This example describes torque gain tuning parameters for the auto-driller.
+## AutoDrillerDifferentialPressureGainsTuningParameter <!-- NOUN -->
+- Display name: Auto Driller Differential Pressure Gains Tuning Parameter
+- Parent class: [PIDTuningParameter](./ADCS.md#PIDTuningParameter)
+- Description: 
+An `AutoDrillerDifferentialPressureGainsTuningParameter` is a `PIDTuningParameter` used to tune the
+differential-pressure control loop of an auto-driller.
+- Definition set: ADCS
+- Examples:
+```dwis differentialPressureGainsTuningParameter
+AutoDrillerDifferentialPressureGainsTuningParameter:differentialPressureGainsTuningParameter
+ControllerFunction:autoDriller
+differentialPressureGainsTuningParameter IsTuningParameterFor autoDriller
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[differentialPressureGainsTuningParameter] -->|BelongsToClass| N0001(AutoDrillerDifferentialPressureGainsTuningParameter) 
+	N0002[autoDriller] -->|BelongsToClass| N0003(ControllerFunction) 
+	N0000[differentialPressureGainsTuningParameter] -->|IsTuningParameterFor| N0002[autoDriller] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?differentialPressureGainsTuningParameter
+WHERE {
+	?differentialPressureGainsTuningParameter rdf:type ddhub:AutoDrillerDifferentialPressureGainsTuningParameter .
+	?autoDriller rdf:type ddhub:ControllerFunction .
+	?differentialPressureGainsTuningParameter ddhub:IsTuningParameterFor ?autoDriller .
+}
+```
+This example describes differential-pressure gain tuning parameters for the auto-driller.
 # Verbs
 ## Class Inheritance for Verbs
 Here is a class inheritance diagram for the verbs contained in this definition set.
 ```mermaid
 classDiagram
+DWISVerb <|-- IsTuningServiceFor
+DWISVerb <|-- IsTuningParameterFor
+IsCommandFor <|-- IsTuningRequestFor
 DWISVerb <|-- IsEnablingSignalFor
 DWISVerb <|-- IsActivatedSignalFor
 DWISVerb <|-- AllowEnablementSignalFor
@@ -627,6 +850,9 @@ DWISVerb <|-- IsFeatureSignalFor
 Here is a graph representing the relations that can be made with the verbs defined in this definition set.
 ```mermaid
 erDiagram
+TuningServiceFunction ||--o{ ADCSFunction : IsTuningServiceFor
+PIDTuningParameter ||--o{ ADCSFunction : IsTuningParameterFor
+DrillingDataPoint ||--o{ PIDTuningParameter : IsTuningRequestFor
 DrillingDataPoint ||--o{ ActivableFunction : IsEnablingSignalFor
 DrillingDataPoint ||--o{ ActivableFunction : IsActivatedSignalFor
 DrillingDataPoint ||--o{ ActivableFunction : AllowEnablementSignalFor
@@ -640,6 +866,111 @@ DrillingDataPoint ||--o{ FDIRFunction : IsInSafeModeSignalFor
 DrillingDataPoint ||--o{ FDIRFunction : IsImpactDescriptionSignalFor
 DrillingDataPoint ||--o{ ActivableFunction : IsFeatureSignalFor
 ```
+## IsTuningServiceFor <!-- VERB -->
+- Display name: Is Tuning Service For
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [TuningServiceFunction](./ADCS.md#TuningServiceFunction)
+- Object class: [ADCSFunction](./ADCS.md#ADCSFunction)
+- Definition set: ADCS
+- Description: 
+This verb indicates that a tuning service applies tuning parameters to an ADCS function or to one of its
+control loops.
+- Examples:
+```dwis autoDrillerTuningService
+AutoDrillerGainsTuningServiceFunction:autoDrillerGainsTuningService
+ControllerFunction:autoDriller
+autoDrillerGainsTuningService IsTuningServiceFor autoDriller
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[autoDrillerGainsTuningService] -->|BelongsToClass| N0001(AutoDrillerGainsTuningServiceFunction) 
+	N0002[autoDriller] -->|BelongsToClass| N0003(ControllerFunction) 
+	N0000[autoDrillerGainsTuningService] -->|IsTuningServiceFor| N0002[autoDriller] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?autoDrillerTuningService
+WHERE {
+	?autoDrillerGainsTuningService rdf:type ddhub:AutoDrillerGainsTuningServiceFunction .
+	?autoDriller rdf:type ddhub:ControllerFunction .
+	?autoDrillerGainsTuningService ddhub:IsTuningServiceFor ?autoDriller .
+}
+```
+This example states that the service tunes the auto-driller.
+## IsTuningParameterFor <!-- VERB -->
+- Display name: Is Tuning Parameter For
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [PIDTuningParameter](./ADCS.md#PIDTuningParameter)
+- Object class: [ADCSFunction](./ADCS.md#ADCSFunction)
+- Definition set: ADCS
+- Description: 
+This verb indicates that a tuning parameter is intended to tune an ADCS function or one of its control
+loops.
+- Examples:
+```dwis wobTuningParameter
+AutoDrillerWOBGainsTuningParameter:wobGainsTuningParameter
+ControllerFunction:autoDriller
+wobGainsTuningParameter IsTuningParameterFor autoDriller
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wobGainsTuningParameter] -->|BelongsToClass| N0001(AutoDrillerWOBGainsTuningParameter) 
+	N0002[autoDriller] -->|BelongsToClass| N0003(ControllerFunction) 
+	N0000[wobGainsTuningParameter] -->|IsTuningParameterFor| N0002[autoDriller] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wobTuningParameter
+WHERE {
+	?wobGainsTuningParameter rdf:type ddhub:AutoDrillerWOBGainsTuningParameter .
+	?autoDriller rdf:type ddhub:ControllerFunction .
+	?wobGainsTuningParameter ddhub:IsTuningParameterFor ?autoDriller .
+}
+```
+This example states that the WOB gains are tuning parameters for the auto-driller.
+## IsTuningRequestFor <!-- VERB -->
+- Display name: Is Tuning Request For
+- Parent verb: [IsCommandFor](./DataFlow.md#IsCommandFor)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [PIDTuningParameter](./ADCS.md#PIDTuningParameter)
+- Definition set: ADCS
+- Description: 
+This verb indicates that a command or recommendation signal carries a request to apply a tuning
+parameter.
+- Examples:
+```dwis wobTuningRequest
+Command:wobGainsTuningRequest
+AutoDrillerWOBGainsTuningParameter:wobGainsTuningParameter
+wobGainsTuningRequest IsTuningRequestFor wobGainsTuningParameter
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wobGainsTuningRequest] -->|BelongsToClass| N0001(Command) 
+	N0002[wobGainsTuningParameter] -->|BelongsToClass| N0003(AutoDrillerWOBGainsTuningParameter) 
+	N0000[wobGainsTuningRequest] -->|IsTuningRequestFor| N0002[wobGainsTuningParameter] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wobTuningRequest
+WHERE {
+	?wobGainsTuningRequest rdf:type ddhub:Command .
+	?wobGainsTuningParameter rdf:type ddhub:AutoDrillerWOBGainsTuningParameter .
+	?wobGainsTuningRequest ddhub:IsTuningRequestFor ?wobGainsTuningParameter .
+}
+```
+This example states that the command signal requests a WOB gain tuning parameter change.
 ## IsEnablingSignalFor <!-- VERB -->
 - Display name: Is Enabling Signal For
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
