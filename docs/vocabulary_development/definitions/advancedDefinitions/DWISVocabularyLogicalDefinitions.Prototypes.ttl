@@ -1,0 +1,75 @@
+@prefix ddhub: <http://ddhub.no/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@base <http://ddhub.no/>.
+
+<http://ddhub.no/DWISVocabularyLogicalDefinitions.Prototypes> a owl:Ontology;
+    rdfs:label "DWIS Vocabulary Logical Definitions — Prototypes"^^xsd:string;
+    rdfs:comment "OWL logical definitions for PrototypeData subclasses and physical data characterisation."@EN;
+    owl:imports <http://ddhub.no/DWISVocabulary>.
+
+#################################################################
+#    Disjoint class declarations
+#################################################################
+
+# Computed results and direct measurements are distinct categories of physical data.
+ddhub:ComputedData owl:disjointWith ddhub:Measurement.
+
+# All direct subclasses of PrototypeData are mutually disjoint.
+[] a owl:AllDisjointClasses;
+    owl:members (
+        ddhub:ActiveVolume
+        ddhub:Azimuth
+        ddhub:BackPressurePumpPressure
+        ddhub:BitDepth
+        ddhub:BOPOpening
+        ddhub:BOPPressure
+        ddhub:CollapsePressure
+        ddhub:CollapsePressureGradient
+        ddhub:DensityIn
+        ddhub:DensityOut
+        ddhub:DownholeAngularAcceleration
+        ddhub:DownholeAxialAcceleration
+        ddhub:DownholeECD
+        ddhub:DownholePressure
+        ddhub:DownholeRPM
+        ddhub:DownholeTemperature
+        ddhub:DownholeTorque
+        ddhub:FlowRateIn
+        ddhub:FlowRateOut
+        ddhub:FracturingPressure
+        ddhub:FracturingPressureGradient
+        ddhub:FrictionCoefficient
+        ddhub:GasFlowRate
+        ddhub:HoleDepth
+        ddhub:HookLoad
+        ddhub:HookPosition
+        ddhub:HookVelocity
+        ddhub:Inclination
+        ddhub:MeasuredDepth
+        ddhub:MechanicalSpecificEnergy
+        ddhub:MinimumHorizontalStress
+        ddhub:MinimumHorizontalStressGradient
+        ddhub:MPDChokeOpening
+        ddhub:MPDChokePressure
+        ddhub:MPDPumpFlowRate
+        ddhub:MPDPumpRate
+        ddhub:OverburdenPressure
+        ddhub:OverburdenPressureGradient
+        ddhub:PorePressure
+        ddhub:PorePressureGradient
+        ddhub:PumpRate
+        ddhub:ROP
+        ddhub:ShearRate
+        ddhub:ShearStress
+        ddhub:SPP
+        ddhub:StickSlipSeverityIndex
+        ddhub:SurfaceRPM
+        ddhub:SurfaceTorque
+        ddhub:TemperatureIn
+        ddhub:TemperatureOut
+        ddhub:TopOfStringPosition
+        ddhub:WOB
+    ).

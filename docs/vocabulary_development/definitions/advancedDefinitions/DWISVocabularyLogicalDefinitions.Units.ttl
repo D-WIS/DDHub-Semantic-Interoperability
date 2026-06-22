@@ -1,0 +1,103 @@
+@prefix ddhub: <http://ddhub.no/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@base <http://ddhub.no/>.
+
+<http://ddhub.no/DWISVocabularyLogicalDefinitions.Units> a owl:Ontology;
+    rdfs:label "DWIS Vocabulary Logical Definitions — Units"^^xsd:string;
+    rdfs:comment "OWL logical definitions for Quantity, MeasurableQuantity, Unit, MeasurableQuantityUnitAssociation, and UnitSystem."@EN;
+    owl:imports <http://ddhub.no/DWISVocabulary>.
+
+#################################################################
+#    Property characteristics
+#################################################################
+
+# Each MeasurableQuantityUnitAssociation links to at most one MeasurableQuantity.
+ddhub:AssociatesMeasurableQuantity a owl:FunctionalProperty.
+
+# Each MeasurableQuantityUnitAssociation links to at most one Unit.
+ddhub:AssociatesUnit a owl:FunctionalProperty.
+
+# IsOfBaseQuantity and HasMeasurableQuantity are reciprocal, as stated in their comments.
+ddhub:IsOfBaseQuantity owl:inverseOf ddhub:HasMeasurableQuantity.
+
+#################################################################
+#    Necessary conditions (rdfs:subClassOf restrictions)
+#################################################################
+
+# Every MeasurableQuantity must be grounded in at least one base Quantity.
+ddhub:MeasurableQuantity rdfs:subClassOf [
+    a owl:Restriction;
+    owl:onProperty ddhub:IsOfBaseQuantity;
+    owl:someValuesFrom ddhub:Quantity
+].
+
+# Every MeasurableQuantityUnitAssociation must reference at least one MeasurableQuantity.
+ddhub:MeasurableQuantityUnitAssociation rdfs:subClassOf [
+    a owl:Restriction;
+    owl:onProperty ddhub:AssociatesMeasurableQuantity;
+    owl:someValuesFrom ddhub:MeasurableQuantity
+].
+
+# Every MeasurableQuantityUnitAssociation must reference at least one Unit.
+ddhub:MeasurableQuantityUnitAssociation rdfs:subClassOf [
+    a owl:Restriction;
+    owl:onProperty ddhub:AssociatesUnit;
+    owl:someValuesFrom ddhub:Unit
+].
+
+# Every UnitSystem must contain at least one MeasurableQuantityUnitAssociation.
+ddhub:UnitSystem rdfs:subClassOf [
+    a owl:Restriction;
+    owl:onProperty ddhub:HasUnitAssociation;
+    owl:someValuesFrom ddhub:MeasurableQuantityUnitAssociation
+].
+
+# Every DrillingSignal must carry a unit of measure.
+ddhub:DrillingSignal rdfs:subClassOf [
+    a owl:Restriction;
+    owl:onProperty ddhub:HasUnitOfMeasure;
+    owl:someValuesFrom ddhub:Unit
+].
+
+#################################################################
+#    Necessary and sufficient conditions (owl:equivalentClass)
+#################################################################
+
+# A MeasurableQuantityUnitAssociation is completely defined as a DWISNoun that binds
+# exactly one MeasurableQuantity and exactly one Unit.
+ddhub:MeasurableQuantityUnitAssociation owl:equivalentClass [
+    a owl:Class;
+    owl:intersectionOf (
+        ddhub:DWISNoun
+        [
+            a owl:Restriction;
+            owl:onProperty ddhub:AssociatesMeasurableQuantity;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+            owl:onClass ddhub:MeasurableQuantity
+        ]
+        [
+            a owl:Restriction;
+            owl:onProperty ddhub:AssociatesUnit;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+            owl:onClass ddhub:Unit
+        ]
+    )
+].
+
+#################################################################
+#    Disjoint class declarations
+#################################################################
+
+# Quantity (abstract physical concept) and MeasurableQuantity (context-specific measurable
+# form of a Quantity) are distinct, non-overlapping categories.
+ddhub:Quantity owl:disjointWith ddhub:MeasurableQuantity.
+
+# Quantity (what is measured) and Unit (how it is measured) are distinct categories.
+ddhub:Quantity owl:disjointWith ddhub:Unit.
+
+# MeasurableQuantity and Unit are distinct: one characterises the observable,
+# the other the measurement scale.
+ddhub:MeasurableQuantity owl:disjointWith ddhub:Unit.

@@ -1,0 +1,265 @@
+@prefix ddhub: <http://ddhub.no/>.
+@prefix sh:    <http://www.w3.org/ns/shacl#>.
+@prefix owl:   <http://www.w3.org/2002/07/owl#>.
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#>.
+@prefix dwissh: <http://ddhub.no/shapes/>.
+@base <http://ddhub.no/>.
+
+<http://ddhub.no/DWISVocabularyShapes> a owl:Ontology;
+    rdfs:label "DWIS Vocabulary SHACL Shapes"^^xsd:string;
+    rdfs:comment """SHACL shapes for the DWIS vocabulary.
+
+Two kinds of shapes are provided:
+
+  1. Structural shapes (sh:targetClass present) — validated automatically against
+     every instance of the target class.
+
+  2. Signal motives (no sh:targetClass) — reusable pattern templates.  Activate
+     them for a specific class by adding  sh:node <motive>  to a class-level shape.
+     Example:
+         dwissh:MySPPShape a sh:NodeShape ;
+             sh:targetClass ddhub:SPP ;
+             sh:node dwissh:HydraulicSignalMotive .
+"""@EN.
+
+#################################################################
+#    1. Structural shapes
+#################################################################
+
+dwissh:MeasurableQuantityUnitAssociationShape
+    a sh:NodeShape ;
+    sh:targetClass ddhub:MeasurableQuantityUnitAssociation ;
+    rdfs:label "MeasurableQuantityUnitAssociation shape"@EN ;
+    rdfs:comment "Every MeasurableQuantityUnitAssociation must bind exactly one MeasurableQuantity and exactly one Unit."@EN ;
+    sh:property [
+        sh:path    ddhub:AssociatesMeasurableQuantity ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class   ddhub:MeasurableQuantity ;
+        sh:message "A MeasurableQuantityUnitAssociation must have exactly one AssociatesMeasurableQuantity."@EN
+    ] ;
+    sh:property [
+        sh:path    ddhub:AssociatesUnit ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class   ddhub:Unit ;
+        sh:message "A MeasurableQuantityUnitAssociation must have exactly one AssociatesUnit."@EN
+    ] .
+
+dwissh:UnitSystemShape
+    a sh:NodeShape ;
+    sh:targetClass ddhub:UnitSystem ;
+    rdfs:label "UnitSystem shape"@EN ;
+    rdfs:comment "Every UnitSystem must contain at least one MeasurableQuantityUnitAssociation."@EN ;
+    sh:property [
+        sh:path    ddhub:HasUnitAssociation ;
+        sh:minCount 1 ;
+        sh:class   ddhub:MeasurableQuantityUnitAssociation ;
+        sh:message "A UnitSystem must have at least one HasUnitAssociation."@EN
+    ] .
+
+dwissh:DrillingSignalShape
+    a sh:NodeShape ;
+    sh:targetClass ddhub:DrillingSignal ;
+    rdfs:label "DrillingSignal shape"@EN ;
+    rdfs:comment "Every DrillingSignal must carry exactly one unit of measure."@EN ;
+    sh:property [
+        sh:path    ddhub:HasUnitOfMeasure ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class   ddhub:Unit ;
+        sh:message "A DrillingSignal must have exactly one HasUnitOfMeasure."@EN
+    ] .
+
+#################################################################
+#    2. Signal motives
+#    No sh:targetClass — activate via  sh:node <motive>  in a
+#    class-specific shape.
+#################################################################
+
+# ── BasicSignalMotive ───────────────────────────────────────────
+# Minimal pattern for any transmitted DrillingDataPoint:
+#   • one MeasurableQuantity
+#   • at least one Telemetry system
+#   • at least one DataProvider
+dwissh:BasicSignalMotive
+    a sh:NodeShape ;
+    rdfs:label "Basic signal motive"@EN ;
+    rdfs:comment "Minimal motive: a DrillingDataPoint linked to a measurable quantity, a telemetry system and a data provider."@EN ;
+    sh:property [
+        sh:path    ddhub:IsOfMeasurableQuantity ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class   ddhub:MeasurableQuantity ;
+        sh:message "A signal must reference exactly one MeasurableQuantity via IsOfMeasurableQuantity."@EN
+    ] ;
+    sh:property [
+        sh:path    ddhub:IsTransmittedBy ;
+        sh:minCount 1 ;
+        sh:class   ddhub:Telemetry ;
+        sh:message "A signal must be transmitted by at least one Telemetry system."@EN
+    ] ;
+    sh:property [
+        sh:path    ddhub:IsProvidedBy ;
+        sh:minCount 1 ;
+        sh:class   ddhub:DataProvider ;
+        sh:message "A signal must be provided by at least one DataProvider."@EN
+    ] .
+
+# ── HydraulicSignalMotive ───────────────────────────────────────
+# Surface measurement placed inside the hydraulic circuit
+# (e.g. standpipe pressure, flow-rate in/out, ECD).
+dwissh:HydraulicSignalMotive
+    a sh:NodeShape ;
+    rdfs:label "Hydraulic signal motive"@EN ;
+    rdfs:comment "Motive for a DrillingDataPoint placed at a hydraulic element (e.g. SPP, flow rates)."@EN ;
+    sh:node dwissh:BasicSignalMotive ;
+    sh:property [
+        sh:path    ddhub:IsHydraulicallyLocatedAt ;
+        sh:minCount 1 ;
+        sh:class   ddhub:HydraulicLogicalElement ;
+        sh:message "A hydraulic signal must be located at at least one HydraulicLogicalElement."@EN
+    ] .
+
+# ── MechanicalSignalMotive ──────────────────────────────────────
+# Measurement placed at a mechanical element
+# (e.g. hook load, surface torque, WOB).
+dwissh:MechanicalSignalMotive
+    a sh:NodeShape ;
+    rdfs:label "Mechanical signal motive"@EN ;
+    rdfs:comment "Motive for a DrillingDataPoint placed at a mechanical element (e.g. hook load, surface torque)."@EN ;
+    sh:node dwissh:BasicSignalMotive ;
+    sh:property [
+        sh:path    ddhub:IsMechanicallyLocatedAt ;
+        sh:minCount 1 ;
+        sh:class   ddhub:MechanicalLogicalElement ;
+        sh:message "A mechanical signal must be located at at least one MechanicalLogicalElement."@EN
+    ] .
+
+# ── DownholeSignalMotive ────────────────────────────────────────
+# Signal measured or estimated downhole and transmitted through
+# a downhole telemetry channel (e.g. LWD resistivity, downhole pressure).
+dwissh:DownholeSignalMotive
+    a sh:NodeShape ;
+    rdfs:label "Downhole signal motive"@EN ;
+    rdfs:comment "Motive for a downhole DrillingDataPoint: physically located and transmitted by downhole telemetry."@EN ;
+    sh:node dwissh:BasicSignalMotive ;
+    sh:property [
+        sh:path    ddhub:IsPhysicallyLocatedAt ;
+        sh:minCount 1 ;
+        sh:class   ddhub:Location ;
+        sh:message "A downhole signal must be physically located at at least one Location."@EN
+    ] .
+
+# ── ProcessedSignalMotive ───────────────────────────────────────
+# Signal that passes through a processing step before delivery
+# (e.g. moving-average filter, spike removal).
+dwissh:ProcessedSignalMotive
+    a sh:NodeShape ;
+    rdfs:label "Processed signal motive"@EN ;
+    rdfs:comment "Motive for a DrillingDataPoint that passes through at least one processing node (e.g. TimeWindowMovingAverage)."@EN ;
+    sh:node dwissh:BasicSignalMotive ;
+    sh:property [
+        sh:path    ddhub:IsProcessedBy ;
+        sh:minCount 1 ;
+        sh:message "A processed signal must reference at least one processing node via IsProcessedBy."@EN
+    ] .
+
+# ── DerivedSignalMotive ─────────────────────────────────────────
+# Signal obtained by differentiating another signal
+# (e.g. hook velocity derived from hook position).
+dwissh:DerivedSignalMotive
+    a sh:NodeShape ;
+    rdfs:label "Derived signal motive"@EN ;
+    rdfs:comment "Motive for a DrillingDataPoint that is the output of a Derivation (e.g. velocity from position)."@EN ;
+    sh:property [
+        sh:path    ddhub:IsOfMeasurableQuantity ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class   ddhub:MeasurableQuantity ;
+        sh:message "A derived signal must reference exactly one MeasurableQuantity."@EN
+    ] ;
+    sh:property [
+        sh:path    ddhub:IsDerivedFrom ;
+        sh:minCount 1 ;
+        sh:class   ddhub:Derivation ;
+        sh:message "A derived signal must reference at least one Derivation node via IsDerivedFrom."@EN
+    ] .
+
+# ── TransformedSignalMotive ─────────────────────────────────────
+# Signal that is the output of a general Transformation
+# (e.g. computed ECD, unit conversion, coordinate change).
+dwissh:TransformedSignalMotive
+    a sh:NodeShape ;
+    rdfs:label "Transformed signal motive"@EN ;
+    rdfs:comment "Motive for a DrillingDataPoint produced by a Transformation node (e.g. computed ECD, DirectTransformation)."@EN ;
+    sh:property [
+        sh:path    ddhub:IsOfMeasurableQuantity ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class   ddhub:MeasurableQuantity ;
+        sh:message "A transformed signal must reference exactly one MeasurableQuantity."@EN
+    ] ;
+    sh:property [
+        sh:path    ddhub:IsTransformationOutput ;
+        sh:minCount 1 ;
+        sh:class   ddhub:Transformation ;
+        sh:message "A transformed signal must be the output of at least one Transformation via IsTransformationOutput."@EN
+    ] .
+
+# ── ReferenceFrameMotive ────────────────────────────────────────
+# A ReferenceFrame must declare where its origin is.
+dwissh:ReferenceFrameMotive
+    a sh:NodeShape ;
+    rdfs:label "ReferenceFrame motive"@EN ;
+    rdfs:comment "Motive for a ReferenceFrame: it must have at least one origin Location."@EN ;
+    sh:property [
+        sh:path    ddhub:HasReferenceFrameOrigin ;
+        sh:minCount 1 ;
+        sh:class   ddhub:Location ;
+        sh:message "A ReferenceFrame must declare its origin via HasReferenceFrameOrigin."@EN
+    ] .
+
+# ── LocationMotive ──────────────────────────────────────────────
+# A Location has:
+#   • coordinates   — at least one DrillingDataPoint via HasCoordinates
+#   • a reference frame — directly via HasReferenceFrame → ReferenceFrame
+#     (that ReferenceFrame must satisfy ReferenceFrameMotive, i.e. have an origin)
+dwissh:LocationMotive
+    a sh:NodeShape ;
+    rdfs:label "Location motive"@EN ;
+    rdfs:comment "Motive for a Location: has coordinates and a ReferenceFrame with an origin."@EN ;
+    sh:property [
+        sh:path    ddhub:HasCoordinates ;
+        sh:minCount 1 ;
+        sh:class   ddhub:DrillingDataPoint ;
+        sh:message "A Location must have at least one coordinate DrillingDataPoint via HasCoordinates."@EN
+    ] ;
+    sh:property [
+        sh:path    ddhub:HasReferenceFrame ;
+        sh:minCount 1 ;
+        sh:class   ddhub:ReferenceFrame ;
+        sh:node    dwissh:ReferenceFrameMotive ;
+        sh:message "A Location must reference at least one ReferenceFrame via HasReferenceFrame."@EN
+    ] .
+
+# ── LocatedSignalMotive ─────────────────────────────────────────
+# A DrillingDataPoint that carries a full location description:
+#   DrillingDataPoint
+#     IsPhysicallyLocatedAt → Location
+#       HasCoordinates → DrillingDataPoint (coordinate)
+#       HasReferenceFrame → ReferenceFrame
+#         HasReferenceFrameOrigin → Location
+dwissh:LocatedSignalMotive
+    a sh:NodeShape ;
+    rdfs:label "Located signal motive"@EN ;
+    rdfs:comment "Motive for a DrillingDataPoint that has a fully described Location (coordinates + ReferenceFrame with origin)."@EN ;
+    sh:property [
+        sh:path    ddhub:IsPhysicallyLocatedAt ;
+        sh:minCount 1 ;
+        sh:class   ddhub:Location ;
+        sh:node    dwissh:LocationMotive ;
+        sh:message "A located signal must reference at least one Location via IsPhysicallyLocatedAt."@EN
+    ] .
