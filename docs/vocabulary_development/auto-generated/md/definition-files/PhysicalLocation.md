@@ -79,6 +79,7 @@ OneDimensionalCartesianReferenceFrame <|-- HorizontalDirectionFrame
 OneDimensionalCartesianReferenceFrame <|-- VerticalDirectionFrame
 VerticalDirectionFrame <|-- VerticalDepthFrame
 VerticalDirectionFrame <|-- VerticalElevationFrame
+VerticalElevationFrame <|-- MeanSeaLevelReferenceFrame
 HorizontalDirectionFrame <|-- NorthDirectionFrame
 HorizontalDirectionFrame <|-- EastDirectionFrame
 OneDimensionalCartesianReferenceFrame <|-- LengthDirectionFrame
@@ -2925,6 +2926,41 @@ WHERE {
 }
 ```
 This example declares an inclination that is measured from the downward vertical.
+## MeanSeaLevelReferenceFrame <!-- NOUN -->
+- Display name: MeanSeaLevelReferenceFrame
+- Parent class: [VerticalElevationFrame](./PhysicalLocation.md#VerticalElevationFrame)
+- Description: 
+A vertical elevation reference frame whose origin is mean sea level and whose positive direction is upward.
+- Definition set: PhysicalLocation
+- Examples:
+```dwis meanSeaLevelReferenceFrame
+MeanSeaLevelReferenceFrame:meanSeaLevelFrame
+Location:meanSeaLevelVerticalLocation
+meanSeaLevelVerticalLocation BelongsToClass MeanSeaLevelVerticalLocation
+meanSeaLevelFrame HasReferenceFrameOrigin meanSeaLevelVerticalLocation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[meanSeaLevelFrame] -->|BelongsToClass| N0001(MeanSeaLevelReferenceFrame) 
+	N0002[meanSeaLevelVerticalLocation] -->|BelongsToClass| N0003(Location) 
+	N0002[meanSeaLevelVerticalLocation] -->|BelongsToClass| N0004(MeanSeaLevelVerticalLocation) 
+	N0000[meanSeaLevelFrame] -->|HasReferenceFrameOrigin| N0002[meanSeaLevelVerticalLocation] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?meanSeaLevelReferenceFrame
+WHERE {
+	?meanSeaLevelFrame rdf:type ddhub:MeanSeaLevelReferenceFrame .
+	?meanSeaLevelVerticalLocation rdf:type ddhub:Location .
+	?meanSeaLevelVerticalLocation rdf:type ddhub:MeanSeaLevelVerticalLocation .
+	?meanSeaLevelFrame ddhub:HasReferenceFrameOrigin ?meanSeaLevelVerticalLocation .
+}
+```
+This example declares a vertical elevation reference frame relative to mean sea level.
 ## NorthDirectionFrame <!-- NOUN -->
 - Display name: NorthDirectionFrame
 - Parent class: [HorizontalDirectionFrame](./PhysicalLocation.md#HorizontalDirectionFrame)

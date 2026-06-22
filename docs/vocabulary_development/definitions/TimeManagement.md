@@ -127,6 +127,21 @@ This example defines a local time reference.
 TimeSpanReference:elapsedSinceSpud
 ```
 This example defines a time span reference since spud.
+## TimeWindow <!-- NOUN -->
+- Display name: Time Window
+- Parent class: TimeSpanReference
+- Attributes:
+  - Duration
+    - Type: double
+    - Description: The length of the time window in seconds.
+- Specialization:
+- Description: A time duration over which samples are selected or evaluated by a transformation.
+- Examples:
+```dwis tenSecondWindow
+TimeWindow:tenSecondWindow
+tenSecondWindow.Duration = "10.0"
+```
+This example defines a ten second time window.
   
 # VERBS
 ## BelongsToSynchronizationGroup <!-- VERB -->

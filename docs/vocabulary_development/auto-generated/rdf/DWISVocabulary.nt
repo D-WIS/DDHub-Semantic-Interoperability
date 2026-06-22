@@ -1,6 +1,8 @@
 <http://ddhub.no/DWISNoun> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ADCSFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ADCSFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/ActivableFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://ddhub.no/ActivableFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/ActivableFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ADCSFunction> .
 <http://ddhub.no/RunnableFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/RunnableFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ActivableFunction> .
 <http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -10,6 +12,14 @@
 <http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onClass> <http://ddhub.no/RunnableFunction> .
 <http://ddhub.no/ControllerFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ControllerFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/RunnableFunction> .
+<http://ddhub.no/SoftSpeedController> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/SoftSpeedController> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ControllerFunction> .
+<http://ddhub.no/SoftTorqueController> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/SoftTorqueController> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ControllerFunction> .
+<http://ddhub.no/ImpedanceMatchingController> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ImpedanceMatchingController> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ControllerFunction> .
+<http://ddhub.no/PipeRockingController> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/PipeRockingController> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ControllerFunction> .
 <http://ddhub.no/ProcedureFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ProcedureFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/RunnableFunction> .
 <http://ddhub.no/ProtectionFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -18,6 +28,40 @@
 <http://ddhub.no/FDIRFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ProtectionFunction> .
 <http://ddhub.no/SOEFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/SOEFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ProtectionFunction> .
+<http://ddhub.no/ServiceFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ServiceFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ADCSFunction> .
+<http://ddhub.no/TareServiceFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/TareServiceFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ServiceFunction> .
+<http://ddhub.no/WeightOnBitTareServiceFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/WeightOnBitTareServiceFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/TareServiceFunction> .
+<http://ddhub.no/DifferentialPressureTareServiceFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DifferentialPressureTareServiceFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/TareServiceFunction> .
+<http://ddhub.no/TuningServiceFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/TuningServiceFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ServiceFunction> .
+<http://ddhub.no/AutoDrillerGainsTuningServiceFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/AutoDrillerGainsTuningServiceFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/TuningServiceFunction> .
+<http://ddhub.no/ControlStrategy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ControlStrategy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/DrillStringTorsionalResonanceFilteringControlStrategy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillStringTorsionalResonanceFilteringControlStrategy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ControlStrategy> .
+<http://ddhub.no/RotationalImpedanceMatchingControlStrategy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/RotationalImpedanceMatchingControlStrategy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ControlStrategy> .
+<http://ddhub.no/PipeRockingControlStrategy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/PipeRockingControlStrategy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ControlStrategy> .
+<http://ddhub.no/EstimationParameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/EstimationParameter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/CalibrationParameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/CalibrationParameter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/EstimationParameter> .
+<http://ddhub.no/PIDTuningParameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/PIDTuningParameter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/CalibrationParameter> .
+<http://ddhub.no/AutoDrillerWOBGainsTuningParameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/AutoDrillerWOBGainsTuningParameter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/PIDTuningParameter> .
+<http://ddhub.no/AutoDrillerTorqueGainsTuningParameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/AutoDrillerTorqueGainsTuningParameter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/PIDTuningParameter> .
+<http://ddhub.no/AutoDrillerDifferentialPressureGainsTuningParameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/AutoDrillerDifferentialPressureGainsTuningParameter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/PIDTuningParameter> .
+<http://ddhub.no/CorrectionFactor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/CorrectionFactor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/EstimationParameter> .
 <http://ddhub.no/DataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/DataType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/StringDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -246,6 +290,8 @@
 <http://ddhub.no/MovingMin> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Filter> .
 <http://ddhub.no/MovingMax> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/MovingMax> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Filter> .
+<http://ddhub.no/PeakToPeak> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/PeakToPeak> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Filter> .
 <http://ddhub.no/MovingDistribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/MovingDistribution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Filter> .
 <http://ddhub.no/TimeBasedTransformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -283,6 +329,42 @@
 <http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onClass> <http://ddhub.no/DataProvider> .
 <http://ddhub.no/OperatingCompany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/OperatingCompany> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DataProvider> .
+<http://ddhub.no/Equinor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Equinor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OperatingCompany> .
+<http://ddhub.no/AkerBP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/AkerBP> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OperatingCompany> .
+<http://ddhub.no/TotalEnergies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/TotalEnergies> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OperatingCompany> .
+<http://ddhub.no/BP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/BP> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OperatingCompany> .
+<http://ddhub.no/Shell> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Shell> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OperatingCompany> .
+<http://ddhub.no/ExxonMobil> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ExxonMobil> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OperatingCompany> .
+<http://ddhub.no/Chevron> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Chevron> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OperatingCompany> .
+<http://ddhub.no/ADNOC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ADNOC> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OperatingCompany> .
+<http://ddhub.no/SaudiAramco> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/SaudiAramco> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OperatingCompany> .
+<http://ddhub.no/Petrobras> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Petrobras> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OperatingCompany> .
+<http://ddhub.no/ConocoPhillips> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ConocoPhillips> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OperatingCompany> .
+<http://ddhub.no/Eni> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Eni> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OperatingCompany> .
+<http://ddhub.no/Repsol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Repsol> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OperatingCompany> .
+<http://ddhub.no/OMV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/OMV> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OperatingCompany> .
+<http://ddhub.no/Petronas> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Petronas> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OperatingCompany> .
+<http://ddhub.no/QatarEnergy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/QatarEnergy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OperatingCompany> .
+<http://ddhub.no/WoodsideEnergy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/WoodsideEnergy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OperatingCompany> .
+<http://ddhub.no/HarbourEnergy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/HarbourEnergy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OperatingCompany> .
 <http://ddhub.no/ServiceCompany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ServiceCompany> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DataProvider> .
 <http://ddhub.no/DirectionalServiceCompany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -291,16 +373,100 @@
 <http://ddhub.no/DrillingFluidProvider> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ServiceCompany> .
 <http://ddhub.no/LoggingServiceCompany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/LoggingServiceCompany> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ServiceCompany> .
+<http://ddhub.no/MudLoggingCompany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/MudLoggingCompany> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/LoggingServiceCompany> .
+<http://ddhub.no/Geolog> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Geolog> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/MudLoggingCompany> .
+<http://ddhub.no/GeoDataLogging> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/GeoDataLogging> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/MudLoggingCompany> .
+<http://ddhub.no/Exlog> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Exlog> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/MudLoggingCompany> .
+<http://ddhub.no/NationalRegionalMudLoggingCompany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/NationalRegionalMudLoggingCompany> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/MudLoggingCompany> .
 <http://ddhub.no/InstrumentationCompany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/InstrumentationCompany> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ServiceCompany> .
+<http://ddhub.no/DownholeMeasurementDynamicsCompany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DownholeMeasurementDynamicsCompany> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/InstrumentationCompany> .
+<http://ddhub.no/WellID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/WellID> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownholeMeasurementDynamicsCompany> .
+<http://ddhub.no/Tomax> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Tomax> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownholeMeasurementDynamicsCompany> .
+<http://ddhub.no/APSTechnology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/APSTechnology> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownholeMeasurementDynamicsCompany> .
+<http://ddhub.no/ScientificDrilling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ScientificDrilling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownholeMeasurementDynamicsCompany> .
+<http://ddhub.no/Gyrodata> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Gyrodata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownholeMeasurementDynamicsCompany> .
+<http://ddhub.no/PhoenixTechnologyServices> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/PhoenixTechnologyServices> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownholeMeasurementDynamicsCompany> .
+<http://ddhub.no/CathedralEnergyServices> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/CathedralEnergyServices> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownholeMeasurementDynamicsCompany> .
+<http://ddhub.no/EnteqTechnologies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/EnteqTechnologies> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DownholeMeasurementDynamicsCompany> .
 <http://ddhub.no/CementingServiceCompany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/CementingServiceCompany> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ServiceCompany> .
 <http://ddhub.no/CompletionServiceCompany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/CompletionServiceCompany> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ServiceCompany> .
 <http://ddhub.no/DataAnalysisServiceCompany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/DataAnalysisServiceCompany> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ServiceCompany> .
+<http://ddhub.no/DrillingAnalyticsAutomationCompany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillingAnalyticsAutomationCompany> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DataAnalysisServiceCompany> .
+<http://ddhub.no/Sekal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Sekal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingAnalyticsAutomationCompany> .
+<http://ddhub.no/Exebenus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Exebenus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingAnalyticsAutomationCompany> .
+<http://ddhub.no/Corva> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Corva> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingAnalyticsAutomationCompany> .
+<http://ddhub.no/TDEGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/TDEGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingAnalyticsAutomationCompany> .
+<http://ddhub.no/PrimeDrillingIDP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/PrimeDrillingIDP> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingAnalyticsAutomationCompany> .
+<http://ddhub.no/Drill2Frac> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Drill2Frac> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingAnalyticsAutomationCompany> .
+<http://ddhub.no/Rogii> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Rogii> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingAnalyticsAutomationCompany> .
+<http://ddhub.no/AIQ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/AIQ> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingAnalyticsAutomationCompany> .
+<http://ddhub.no/IntegratedOilfieldServiceCompany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/IntegratedOilfieldServiceCompany> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/ServiceCompany> .
+<http://ddhub.no/SLB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/SLB> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/IntegratedOilfieldServiceCompany> .
+<http://ddhub.no/Halliburton> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Halliburton> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/IntegratedOilfieldServiceCompany> .
+<http://ddhub.no/BakerHughes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/BakerHughes> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/IntegratedOilfieldServiceCompany> .
+<http://ddhub.no/Weatherford> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Weatherford> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/IntegratedOilfieldServiceCompany> .
+<http://ddhub.no/NOV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/NOV> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/IntegratedOilfieldServiceCompany> .
 <http://ddhub.no/DrillingContractor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/DrillingContractor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DataProvider> .
+<http://ddhub.no/Nabors> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Nabors> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingContractor> .
+<http://ddhub.no/HelmerichPayne> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/HelmerichPayne> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingContractor> .
+<http://ddhub.no/PattersonUTI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/PattersonUTI> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingContractor> .
+<http://ddhub.no/Transocean> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Transocean> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingContractor> .
+<http://ddhub.no/Seadrill> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Seadrill> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingContractor> .
+<http://ddhub.no/OdfjellDrilling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/OdfjellDrilling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingContractor> .
+<http://ddhub.no/Valaris> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Valaris> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingContractor> .
+<http://ddhub.no/Noble> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Noble> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingContractor> .
+<http://ddhub.no/KCADeutag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/KCADeutag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingContractor> .
+<http://ddhub.no/Saipem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Saipem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingContractor> .
+<http://ddhub.no/COSL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/COSL> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingContractor> .
+<http://ddhub.no/MaerskDrilling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/MaerskDrilling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingContractor> .
+<http://ddhub.no/ADNOCDrilling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ADNOCDrilling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingContractor> .
 <http://ddhub.no/DWISInternalService> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/DWISInternalService> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DataProvider> .
 <http://ddhub.no/DWISBlackboard> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -319,6 +485,82 @@
 <http://ddhub.no/DWISADCSInterface> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISInternalService> .
 <http://ddhub.no/DWISADCSCapabilityDescriptor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/DWISADCSCapabilityDescriptor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISInternalService> .
+<http://ddhub.no/DrillingDataEcosystemOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillingDataEcosystemOrganization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DataProvider> .
+<http://ddhub.no/EnergyDataStandardsOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/EnergyDataStandardsOrganization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingDataEcosystemOrganization> .
+<http://ddhub.no/DrillingIndustryOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DrillingIndustryOrganization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/EnergyDataStandardsOrganization> .
+<http://ddhub.no/DWIS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/DWIS> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingIndustryOrganization> .
+<http://ddhub.no/IADC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/IADC> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingIndustryOrganization> .
+<http://ddhub.no/SPEDSATS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/SPEDSATS> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DrillingIndustryOrganization> .
+<http://ddhub.no/Energistics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Energistics> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/EnergyDataStandardsOrganization> .
+<http://ddhub.no/OSDUForum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/OSDUForum> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/EnergyDataStandardsOrganization> .
+<http://ddhub.no/OpenGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/OpenGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/EnergyDataStandardsOrganization> .
+<http://ddhub.no/OPCFoundation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/OPCFoundation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/EnergyDataStandardsOrganization> .
+<http://ddhub.no/RealTimeDrillingDataInfrastructureCompany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/RealTimeDrillingDataInfrastructureCompany> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DataProvider> .
+<http://ddhub.no/Petrolink> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Petrolink> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/RealTimeDrillingDataInfrastructureCompany> .
+<http://ddhub.no/KongsbergDigital> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/KongsbergDigital> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/RealTimeDrillingDataInfrastructureCompany> .
+<http://ddhub.no/Pason> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Pason> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/RealTimeDrillingDataInfrastructureCompany> .
+<http://ddhub.no/IndependentDataServices> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/IndependentDataServices> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/RealTimeDrillingDataInfrastructureCompany> .
+<http://ddhub.no/WellPlanningReportingSoftwareCompany> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/WellPlanningReportingSoftwareCompany> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DataProvider> .
+<http://ddhub.no/Peloton> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Peloton> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/WellPlanningReportingSoftwareCompany> .
+<http://ddhub.no/QuorumSoftware> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/QuorumSoftware> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/WellPlanningReportingSoftwareCompany> .
+<http://ddhub.no/ProWellPlan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/ProWellPlan> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/WellPlanningReportingSoftwareCompany> .
+<http://ddhub.no/RigEquipmentOEM> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/RigEquipmentOEM> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DataProvider> .
+<http://ddhub.no/RigControlSystemProvider> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/RigControlSystemProvider> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/RigEquipmentOEM> .
+<http://ddhub.no/HMH> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/HMH> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/RigControlSystemProvider> .
+<http://ddhub.no/Canrig> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Canrig> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/RigControlSystemProvider> .
+<http://ddhub.no/Huisman> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Huisman> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/RigEquipmentOEM> .
+<http://ddhub.no/Drillmec> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Drillmec> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/RigEquipmentOEM> .
+<http://ddhub.no/SLBCameron> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/SLBCameron> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/RigEquipmentOEM> .
+<http://ddhub.no/AkerSolutions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/AkerSolutions> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/RigEquipmentOEM> .
+<http://ddhub.no/Drillform> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Drillform> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/RigEquipmentOEM> .
+<http://ddhub.no/CloudEnergyDataPlatformProvider> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/CloudEnergyDataPlatformProvider> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DataProvider> .
+<http://ddhub.no/Cognite> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Cognite> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/CloudEnergyDataPlatformProvider> .
+<http://ddhub.no/AVEVA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/AVEVA> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/CloudEnergyDataPlatformProvider> .
+<http://ddhub.no/AspenTech> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/AspenTech> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/CloudEnergyDataPlatformProvider> .
+<http://ddhub.no/Emerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Emerson> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/CloudEnergyDataPlatformProvider> .
+<http://ddhub.no/Honeywell> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Honeywell> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/CloudEnergyDataPlatformProvider> .
+<http://ddhub.no/Siemens> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/Siemens> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/CloudEnergyDataPlatformProvider> .
+<http://ddhub.no/MicrosoftAzure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/MicrosoftAzure> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/CloudEnergyDataPlatformProvider> .
+<http://ddhub.no/AWS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/AWS> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/CloudEnergyDataPlatformProvider> .
+<http://ddhub.no/GoogleCloud> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/GoogleCloud> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/CloudEnergyDataPlatformProvider> .
 <http://ddhub.no/Telemetry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/Telemetry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onProperty> <http://ddhub.no/NumberOfRepeaters> .
@@ -519,12 +761,6 @@
 <http://ddhub.no/CorrectedMeasurement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/Measurement> .
 <http://ddhub.no/ComputedData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/ComputedData> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/PhysicalData> .
-<http://ddhub.no/EstimationParameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://ddhub.no/EstimationParameter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
-<http://ddhub.no/CalibrationParameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://ddhub.no/CalibrationParameter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/EstimationParameter> .
-<http://ddhub.no/CorrectionFactor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://ddhub.no/CorrectionFactor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/EstimationParameter> .
 <http://ddhub.no/DrillingSignal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/DrillingSignal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onProperty> <http://ddhub.no/Value> .
@@ -2363,6 +2599,8 @@
 <http://ddhub.no/VerticalDepthFrame> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/VerticalDirectionFrame> .
 <http://ddhub.no/VerticalElevationFrame> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/VerticalElevationFrame> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/VerticalDirectionFrame> .
+<http://ddhub.no/MeanSeaLevelReferenceFrame> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/MeanSeaLevelReferenceFrame> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/VerticalElevationFrame> .
 <http://ddhub.no/LengthDirectionFrame> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/LengthDirectionFrame> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/OneDimensionalCartesianReferenceFrame> .
 <http://ddhub.no/WidthDirectionFrame> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -4566,6 +4804,10 @@
 <http://ddhub.no/LocalTimeReference> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/RelativeTimeReference> .
 <http://ddhub.no/TimeSpanReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/TimeSpanReference> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/RelativeTimeReference> .
+<http://ddhub.no/TimeWindow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ddhub.no/TimeWindow> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/TimeSpanReference> .
+<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onProperty> <http://ddhub.no/Duration> .
+<http://ddhub.no/DWISAttributeCardinalityRestriction> <http://www.w3.org/2002/07/owl#onClass> <http://ddhub.no/TimeWindow> .
 <http://ddhub.no/GPSReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/GPSReference> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/TimeReference> .
 <http://ddhub.no/UTCReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -4589,13 +4831,35 @@
 <http://ddhub.no/MinMaxUncertainty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ddhub.no/MinMaxUncertainty> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ddhub.no/SignalUncertainty> .
 <http://ddhub.no/DWISNoun> <http://www.w3.org/2000/01/rdf-schema#comment> "Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a \"is a\" relation between the instance node and the noun. This is the root class for all the nouns defined in the DWIS vocabulary.\n"@EN .
+<http://ddhub.no/ADCSFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "An `ADCSFunction` is a function exposed by an automated drilling control system as part of its capability\ndescription. ADCS functions include activable functions, such as controllers, procedures, and protections, and\nnon-activable service functions that perform discrete service actions on request.\n"@EN .
 <http://ddhub.no/ActivableFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "An `ActivableFunction` is an ADCS function that can be activated. Here activation means that the\nfunction may run immediately or that it is enabled and can trigger if some conditions are respected.\n"@EN .
 <http://ddhub.no/RunnableFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A runnable function is a function that starts to run immediately when activated.\n"@EN .
 <http://ddhub.no/ControllerFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A `ControllerFunction` is a `RunnableFunction` that executes a feedback control loop to follow as closely\nas possible one or several desired values. A typical example of `ControllerFunction` is the `AutoDriller`. An `AutoDriller` \nfollows as closely as possible, for instance, a desired `WOB`.\n"@EN .
+<http://ddhub.no/SoftSpeedController> <http://www.w3.org/2000/01/rdf-schema#comment> "A `SoftSpeedController` is a controller function that mitigates drill-string torsional stick-slip by\nfiltering surface rotation control action around the drill-string natural torsional resonance frequency to damp\ntorsional oscillations and stabilize the downhole rotational velocity.\n"@EN .
+<http://ddhub.no/SoftTorqueController> <http://www.w3.org/2000/01/rdf-schema#comment> "A `SoftTorqueController` is a controller function that mitigates drill-string torsional stick-slip by\nfiltering or shaping the surface rotation drive torque response around the drill-string natural torsional resonance\nfrequency to damp torsional oscillations.\n"@EN .
+<http://ddhub.no/ImpedanceMatchingController> <http://www.w3.org/2000/01/rdf-schema#comment> "An `ImpedanceMatchingController` is a controller function that mitigates drill-string torsional\noscillations by adapting the dynamic interaction between the surface rotation drive and the drill string.\n"@EN .
+<http://ddhub.no/PipeRockingController> <http://www.w3.org/2000/01/rdf-schema#comment> "A `PipeRockingController` is a controller function that alternates top-of-string rotation over a limited\nangular interval to orient or maintain the toolface of a downhole motor.\n"@EN .
 <http://ddhub.no/ProcedureFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A `ProcedureFunction` is a `RunnableFunction` that executes a finites state automaton, i.e., a graph of\ntransitions between states. It should be noted that a `ProcedureFunction` may use control algorithms while being in one\nstate or when transiting from state to state. An example of `ProcedureFunction` is a friction test. A friction test has\nat least three states: rotation off bottom, pick-up without rotation, slack-off without rotation. The transitions \nbetween the different states may depend on the implementation. Each of those states uses a controller, one that controls\nthe rotational speed and one that controls the axial speed.\n"@EN .
 <http://ddhub.no/ProtectionFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A `ProtectionFunction` is an `ActivableFunction`. It must be activated to have an effect, but the effect\nis to protect the drilling process, either by protecting the inputs to the drilling machines to avoid generating \na drilling incident, or to detect an abnormal drilling process state and react to the situation.\ndetected.\n"@EN .
 <http://ddhub.no/FDIRFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A `FDIRFunction` is a `ProtectionFunction` that reacts to a particular state of the drilling process. FDIR\nstands for Fault Detection, Isolation and Recovery. An FDIR protects the drilling process by looking at its outputs.\nWhen that state is detected, then an isolation procedure is run, and if successful and defined, a recovery procedure is\nthereafter executed. In case of success of the recovery procedure, the drilling process is resumed. In all other cases,\nthe system returns in manual mode, usually using the safe mode management procedure. An example of `FDIRFunction` is an\npackoff detection and reaction procedure.\n"@EN .
 <http://ddhub.no/SOEFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A `SOEFunction` is a `ProtectionFunction` that limits the commands that are send to the drilling machines\nto avoid generating a drilling incident. SOE stands for Safe Operating Envelope. A `SOEFunction` protects the inputs\nof the drilling process. An example `SOEFunction` is a swab/surge limits protection. This function limits the axial acceleration\nand speed of the drill-stem to avoid generate swabbing pressure below the maximum of the collapse and pore pressure, and\nsurging pressure above the fracturing pressure.\n"@EN .
+<http://ddhub.no/ServiceFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A `ServiceFunction` is an `ADCSFunction` that performs a discrete service action on request. It does not\nown the drilling control loop, does not execute a finite procedure, and does not define a protective envelope. An example\nof `ServiceFunction` is a tare service that applies a requested correction factor to a measured drilling quantity.\n"@EN .
+<http://ddhub.no/TareServiceFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A `TareServiceFunction` is a `ServiceFunction` that applies a tare value as a correction factor to a\ndrilling signal. The service is requested by a command and uses an associated tare value.\n"@EN .
+<http://ddhub.no/WeightOnBitTareServiceFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A `WeightOnBitTareServiceFunction` is a `TareServiceFunction` that applies a correction factor to weight\non bit.\n"@EN .
+<http://ddhub.no/DifferentialPressureTareServiceFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A `DifferentialPressureTareServiceFunction` is a `TareServiceFunction` that applies a correction factor\nto differential pressure.\n"@EN .
+<http://ddhub.no/TuningServiceFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A `TuningServiceFunction` is a `ServiceFunction` that applies tuning parameters to an ADCS function or\nto a control loop used by an ADCS function. The service is requested by a command and uses associated tuning parameter\nvalues.\n"@EN .
+<http://ddhub.no/AutoDrillerGainsTuningServiceFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "An `AutoDrillerGainsTuningServiceFunction` is a `TuningServiceFunction` that applies gain tuning\nparameters to the auto-driller control loops.\n"@EN .
+<http://ddhub.no/ControlStrategy> <http://www.w3.org/2000/01/rdf-schema#comment> "A `ControlStrategy` is a named control approach or algorithmic principle used by a controller function\nto achieve its control objectives.\n"@EN .
+<http://ddhub.no/DrillStringTorsionalResonanceFilteringControlStrategy> <http://www.w3.org/2000/01/rdf-schema#comment> "A `DrillStringTorsionalResonanceFilteringControlStrategy` is a control strategy that filters or shapes\nsurface rotation control action around the drill-string natural torsional resonance frequency to damp torsional\noscillations and reduce stick-slip.\n"@EN .
+<http://ddhub.no/RotationalImpedanceMatchingControlStrategy> <http://www.w3.org/2000/01/rdf-schema#comment> "A `RotationalImpedanceMatchingControlStrategy` is a control strategy that adapts the dynamic interaction\nbetween the surface rotation drive and the drill string to damp torsional oscillations by reducing reflection or\namplification of torsional energy.\n"@EN .
+<http://ddhub.no/PipeRockingControlStrategy> <http://www.w3.org/2000/01/rdf-schema#comment> "A `PipeRockingControlStrategy` is a control strategy that alternates top-of-string rotation over a\nlimited angular interval to orient or maintain the toolface of a downhole motor without continuous full rotation.\n"@EN .
+<http://ddhub.no/EstimationParameter> <http://www.w3.org/2000/01/rdf-schema#comment> "A quantity describing the configuration or internal state of a data interpretation\nor estimation model rather than the physical drilling process.\n"@EN .
+<http://ddhub.no/CalibrationParameter> <http://www.w3.org/2000/01/rdf-schema#comment> "An estimation parameter that maps a sensor representation to a physical quantity through scaling or conversion.\n"@EN .
+<http://ddhub.no/PIDTuningParameter> <http://www.w3.org/2000/01/rdf-schema#comment> "A `PIDTuningParameter` is a calibration parameter that contains proportional, integral, derivative, or\ntime-constant values used to tune a controller.\n"@EN .
+<http://ddhub.no/AutoDrillerWOBGainsTuningParameter> <http://www.w3.org/2000/01/rdf-schema#comment> "An `AutoDrillerWOBGainsTuningParameter` is a `PIDTuningParameter` used to tune the weight-on-bit\ncontrol loop of an auto-driller.\n"@EN .
+<http://ddhub.no/AutoDrillerTorqueGainsTuningParameter> <http://www.w3.org/2000/01/rdf-schema#comment> "An `AutoDrillerTorqueGainsTuningParameter` is a `PIDTuningParameter` used to tune the torque control loop\nof an auto-driller.\n"@EN .
+<http://ddhub.no/AutoDrillerDifferentialPressureGainsTuningParameter> <http://www.w3.org/2000/01/rdf-schema#comment> "An `AutoDrillerDifferentialPressureGainsTuningParameter` is a `PIDTuningParameter` used to tune the\ndifferential-pressure control loop of an auto-driller.\n"@EN .
+<http://ddhub.no/CorrectionFactor> <http://www.w3.org/2000/01/rdf-schema#comment> "An estimation parameter used to compensate systematic bias or mismatch in a computed or measured quantity.\n"@EN .
 <http://ddhub.no/DataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Characterizes the type of data that is stored in a signal.\n"@EN .
 <http://ddhub.no/StringDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies that the data is a string.\n"@EN .
 <http://ddhub.no/JSonDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies that the data is a string that contains the serialization in Json of an object.\n"@EN .
@@ -4704,6 +4968,7 @@
 <http://ddhub.no/MovingStandardDeviation> <http://www.w3.org/2000/01/rdf-schema#comment> "Computes the rolling standard deviation of an input signal.\n"@EN .
 <http://ddhub.no/MovingMin> <http://www.w3.org/2000/01/rdf-schema#comment> "Tracks the minimum value within a sliding window.\n"@EN .
 <http://ddhub.no/MovingMax> <http://www.w3.org/2000/01/rdf-schema#comment> "Tracks the maximum value within a sliding window.\n"@EN .
+<http://ddhub.no/PeakToPeak> <http://www.w3.org/2000/01/rdf-schema#comment> "Computes the difference between the maximum and minimum values of an input signal over a specified window.\n"@EN .
 <http://ddhub.no/MovingDistribution> <http://www.w3.org/2000/01/rdf-schema#comment> "Tracks the distribution of a value within a sliding window.\n"@EN .
 <http://ddhub.no/TimeBasedTransformation> <http://www.w3.org/2000/01/rdf-schema#comment> "Transformations that apply only to time series: time derivations, time integration, averaging...\n"@EN .
 <http://ddhub.no/Buffering> <http://www.w3.org/2000/01/rdf-schema#comment> "Stores a time slice of data before forwarding it, often to align or batch records.\n"@EN .
@@ -4717,15 +4982,75 @@
 <http://ddhub.no/UserInterface> <http://www.w3.org/2000/01/rdf-schema#comment> "The human-machine interface through which operators view data and enter commands.\n"@EN .
 <http://ddhub.no/DataProvider> <http://www.w3.org/2000/01/rdf-schema#comment> "A data provider is any sources for data.\n"@EN .
 <http://ddhub.no/OperatingCompany> <http://www.w3.org/2000/01/rdf-schema#comment> "An operating company is an entity that holds the rights to explore, develop, and produce hydrocarbon resources from a particular oil or gas field or lease\n"@EN .
+<http://ddhub.no/Equinor> <http://www.w3.org/2000/01/rdf-schema#comment> "An operating company active in automated drilling, real-time operations, drilling data, and the Norwegian Continental Shelf digital drilling ecosystem.\n"@EN .
+<http://ddhub.no/AkerBP> <http://www.w3.org/2000/01/rdf-schema#comment> "An operating company active in digitalized drilling operations, automation, drilling data, and vendor-integrated workflows.\n"@EN .
+<http://ddhub.no/TotalEnergies> <http://www.w3.org/2000/01/rdf-schema#comment> "An operating company active in real-time monitoring, drilling assistance, SmartRoom-style operations, and drilling data workflows.\n"@EN .
+<http://ddhub.no/BP> <http://www.w3.org/2000/01/rdf-schema#comment> "An operating company active in real-time drilling decision support, digital wells, AI, and operational analytics.\n"@EN .
+<http://ddhub.no/Shell> <http://www.w3.org/2000/01/rdf-schema#comment> "An operating company active in digital wells, remote operations, drilling data integration, and operational analytics.\n"@EN .
+<http://ddhub.no/ExxonMobil> <http://www.w3.org/2000/01/rdf-schema#comment> "An operating company active in automated well placement, closed-loop drilling, real-time optimization, and digital drilling workflows.\n"@EN .
+<http://ddhub.no/Chevron> <http://www.w3.org/2000/01/rdf-schema#comment> "An operating company active in edge analytics, digital drilling, remote operations, and AI workflows.\n"@EN .
+<http://ddhub.no/ADNOC> <http://www.w3.org/2000/01/rdf-schema#comment> "An operating company active in AI-based ROP optimization, drilling automation, digital drilling programs, and operator-side drilling data workflows.\n"@EN .
+<http://ddhub.no/SaudiAramco> <http://www.w3.org/2000/01/rdf-schema#comment> "An operating company active in drilling automation, real-time operations, AI, and digital oilfield programs.\n"@EN .
+<http://ddhub.no/Petrobras> <http://www.w3.org/2000/01/rdf-schema#comment> "An operating company active in offshore drilling data, pre-salt operations, digital drilling, and real-time support.\n"@EN .
+<http://ddhub.no/ConocoPhillips> <http://www.w3.org/2000/01/rdf-schema#comment> "An operating company active in unconventional drilling optimization and real-time operations.\n"@EN .
+<http://ddhub.no/Eni> <http://www.w3.org/2000/01/rdf-schema#comment> "An operating company active in digital upstream, drilling optimization, and operational analytics.\n"@EN .
+<http://ddhub.no/Repsol> <http://www.w3.org/2000/01/rdf-schema#comment> "An operating company active in digital upstream and drilling or well analytics.\n"@EN .
+<http://ddhub.no/OMV> <http://www.w3.org/2000/01/rdf-schema#comment> "An operating company active in digital well operations and real-time drilling workflows.\n"@EN .
+<http://ddhub.no/Petronas> <http://www.w3.org/2000/01/rdf-schema#comment> "An operating company active in real-time operations, drilling analytics, and digital oilfield workflows.\n"@EN .
+<http://ddhub.no/QatarEnergy> <http://www.w3.org/2000/01/rdf-schema#comment> "An operating company active in large-scale drilling operations and vendor-integrated data workflows.\n"@EN .
+<http://ddhub.no/WoodsideEnergy> <http://www.w3.org/2000/01/rdf-schema#comment> "An operating company active in offshore digital drilling, remote operations, and operational data platforms.\n"@EN .
+<http://ddhub.no/HarbourEnergy> <http://www.w3.org/2000/01/rdf-schema#comment> "An operating company active in operator-side drilling and well data workflows and performance workflows.\n"@EN .
 <http://ddhub.no/ServiceCompany> <http://www.w3.org/2000/01/rdf-schema#comment> "A service company is an entity that provides services during the well construction.\n"@EN .
 <http://ddhub.no/DirectionalServiceCompany> <http://www.w3.org/2000/01/rdf-schema#comment> "A directional service company is an entity that provides services for downhole directional drilling and downhole measurements.\n"@EN .
 <http://ddhub.no/DrillingFluidProvider> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling fluid provider is a company that provides and maintains the drilling fluids during well construction.\n"@EN .
 <http://ddhub.no/LoggingServiceCompany> <http://www.w3.org/2000/01/rdf-schema#comment> "A logging service company is an entity that gathers measured information during well construction.\n"@EN .
+<http://ddhub.no/MudLoggingCompany> <http://www.w3.org/2000/01/rdf-schema#comment> "A company that provides mud logging, surface logging, gas logging, wellsite geology, and structured wellsite drilling data.\n"@EN .
+<http://ddhub.no/Geolog> <http://www.w3.org/2000/01/rdf-schema#comment> "A mud logging and surface logging company active in GeoWITSML, wellsite data aggregation, geology data, and drilling operational data.\n"@EN .
+<http://ddhub.no/GeoDataLogging> <http://www.w3.org/2000/01/rdf-schema#comment> "A surface data acquisition and drilling monitoring company active in rig data acquisition and WITS, WITSML, OPC, and Modbus integration.\n"@EN .
+<http://ddhub.no/Exlog> <http://www.w3.org/2000/01/rdf-schema#comment> "A mud logging and wellsite geology company active in wellsite drilling data, gas logging, lithology, and drilling parameters.\n"@EN .
+<http://ddhub.no/NationalRegionalMudLoggingCompany> <http://www.w3.org/2000/01/rdf-schema#comment> "A local or regional mud logging company that captures wellsite data, gas logs, lithology, and drilling parameters.\n"@EN .
 <http://ddhub.no/InstrumentationCompany> <http://www.w3.org/2000/01/rdf-schema#comment> "A service company providing measurement instruments and associated services.\n"@EN .
+<http://ddhub.no/DownholeMeasurementDynamicsCompany> <http://www.w3.org/2000/01/rdf-schema#comment> "A company that generates or interprets downhole drilling data such as MWD/LWD, survey, pressure, vibration, drilling dynamics, BHA behavior, stick-slip, torque/drag, and drilling dysfunction measurements.\n"@EN .
+<http://ddhub.no/WellID> <http://www.w3.org/2000/01/rdf-schema#comment> "A downhole measurement company active in high-frequency downhole pressure and drilling-dynamics measurements, drilling intelligence, borehole stability, dysfunction detection, and bit/drillstring insight.\n"@EN .
+<http://ddhub.no/Tomax> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling dynamics and downhole regulation company active in anti stick-slip technology, bit loading stabilization, and stick-slip mitigation.\n"@EN .
+<http://ddhub.no/APSTechnology> <http://www.w3.org/2000/01/rdf-schema#comment> "A downhole technology company active in MWD/LWD technology, drilling dynamics, and downhole data.\n"@EN .
+<http://ddhub.no/ScientificDrilling> <http://www.w3.org/2000/01/rdf-schema#comment> "A directional drilling and measurement company active in MWD, survey, wellbore placement, and directional drilling data.\n"@EN .
+<http://ddhub.no/Gyrodata> <http://www.w3.org/2000/01/rdf-schema#comment> "A gyro survey and wellbore positioning company active in survey data and wellbore placement data.\n"@EN .
+<http://ddhub.no/PhoenixTechnologyServices> <http://www.w3.org/2000/01/rdf-schema#comment> "A directional drilling and MWD company active in drilling performance data and wellbore placement data.\n"@EN .
+<http://ddhub.no/CathedralEnergyServices> <http://www.w3.org/2000/01/rdf-schema#comment> "A directional drilling and MWD company active in drilling optimization data and wellbore placement workflows.\n"@EN .
+<http://ddhub.no/EnteqTechnologies> <http://www.w3.org/2000/01/rdf-schema#comment> "A downhole technology company active in MWD/LWD technology and downhole drilling data.\n"@EN .
 <http://ddhub.no/CementingServiceCompany> <http://www.w3.org/2000/01/rdf-schema#comment> "A cementing service company is an entity that provides the cement slurry used during cementing operations.\n"@EN .
 <http://ddhub.no/CompletionServiceCompany> <http://www.w3.org/2000/01/rdf-schema#comment> "A completion service company is an entity that provides the completion equipment and fluids used during completion operations.\n"@EN .
 <http://ddhub.no/DataAnalysisServiceCompany> <http://www.w3.org/2000/01/rdf-schema#comment> "A data analysis service company is an entity that analyses measured data and provide new information from these measurements.\n"@EN .
+<http://ddhub.no/DrillingAnalyticsAutomationCompany> <http://www.w3.org/2000/01/rdf-schema#comment> "A company that provides drilling analytics, AI, automation, advisory, dysfunction detection, ROP optimization, risk prediction, or real-time decision-support services.\n"@EN .
+<http://ddhub.no/Sekal> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling automation and advisory company active in DrillScene, DrillTronics, real-time diagnostics, drilling automation, and drilling advisory workflows.\n"@EN .
+<http://ddhub.no/Exebenus> <http://www.w3.org/2000/01/rdf-schema#comment> "A predictive drilling AI company active in stuck-pipe prediction, ROP optimization, vibration and dysfunction detection, and real-time drilling recommendations.\n"@EN .
+<http://ddhub.no/Corva> <http://www.w3.org/2000/01/rdf-schema#comment> "A cloud drilling analytics platform company active in real-time drilling applications, drilling optimization, and operational analytics.\n"@EN .
+<http://ddhub.no/TDEGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling analytics company active in rig-state detection, performance analytics, benchmarking, and automated reporting.\n"@EN .
+<http://ddhub.no/PrimeDrillingIDP> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling-data analytics and drilling-performance platform provider active in real-time drilling-data analysis and performance workflows.\n"@EN .
+<http://ddhub.no/Drill2Frac> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling analytics company active in drilling-data-derived dysfunction detection and completion or fracture-treatment optimization.\n"@EN .
+<http://ddhub.no/Rogii> <http://www.w3.org/2000/01/rdf-schema#comment> "A geosteering and well-placement software company active in real-time geosteering data workflows.\n"@EN .
+<http://ddhub.no/AIQ> <http://www.w3.org/2000/01/rdf-schema#comment> "An AI and analytics company associated with ADNOC digital workflows, relevant to AI-based drilling optimization and digital oilfield data.\n"@EN .
+<http://ddhub.no/IntegratedOilfieldServiceCompany> <http://www.w3.org/2000/01/rdf-schema#comment> "A broad oilfield service company that may provide drilling services, directional drilling, MWD/LWD, real-time operations, drilling optimization, drilling automation, software, and data infrastructure.\n"@EN .
+<http://ddhub.no/SLB> <http://www.w3.org/2000/01/rdf-schema#comment> "An integrated oilfield service company active in real-time drilling data services, drilling optimization, MWD/LWD, drilling engineering workflows, and digital well-construction platforms such as Delfi.\n"@EN .
+<http://ddhub.no/Halliburton> <http://www.w3.org/2000/01/rdf-schema#comment> "An integrated oilfield service company active in drilling data, Landmark/iEnergy, DecisionSpace, LOGIX automation, Sperry Drilling, MWD/LWD, drilling optimization, and real-time operations.\n"@EN .
+<http://ddhub.no/BakerHughes> <http://www.w3.org/2000/01/rdf-schema#comment> "An integrated oilfield service company active in real-time drilling optimization, well planning, MWD/LWD, drilling engineering software, downhole data, and surface drilling-data workflows.\n"@EN .
+<http://ddhub.no/Weatherford> <http://www.w3.org/2000/01/rdf-schema#comment> "An oilfield service company active in drilling analytics, managed pressure drilling data, MWD/LWD, real-time drilling optimization, drilling dynamics, and wellbore placement data.\n"@EN .
+<http://ddhub.no/NOV> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling equipment, automation, and data company active in NOVOS, Max drilling automation, rig equipment integration, IntelliServ wired drill pipe, and rig-control data workflows.\n"@EN .
 <http://ddhub.no/DrillingContractor> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling contractor is a company that is primarily responsible for conducting drilling operations, including the construction and operation of drilling rigs.\n"@EN .
+<http://ddhub.no/Nabors> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling contractor and rig-data platform provider active in RigCLOUD, SmartROS, drilling automation, edge/cloud rig data, and performance analytics.\n"@EN .
+<http://ddhub.no/HelmerichPayne> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling contractor active in FlexRig, rig automation, performance optimization, well planning, and digital drilling workflows.\n"@EN .
+<http://ddhub.no/PattersonUTI> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling contractor active in rig operations, directional drilling, and drilling performance data.\n"@EN .
+<http://ddhub.no/Transocean> <http://www.w3.org/2000/01/rdf-schema#comment> "An offshore drilling contractor active in offshore drilling data, rig automation, and performance monitoring.\n"@EN .
+<http://ddhub.no/Seadrill> <http://www.w3.org/2000/01/rdf-schema#comment> "An offshore drilling contractor active in offshore rig data, digital operations, and performance monitoring.\n"@EN .
+<http://ddhub.no/OdfjellDrilling> <http://www.w3.org/2000/01/rdf-schema#comment> "An offshore drilling contractor active in offshore drilling, digitalized operations, and performance monitoring.\n"@EN .
+<http://ddhub.no/Valaris> <http://www.w3.org/2000/01/rdf-schema#comment> "An offshore drilling contractor active in offshore rig data and performance systems.\n"@EN .
+<http://ddhub.no/Noble> <http://www.w3.org/2000/01/rdf-schema#comment> "An offshore drilling contractor active in rig data, automation, performance systems, and offshore drilling workflows.\n"@EN .
+<http://ddhub.no/KCADeutag> <http://www.w3.org/2000/01/rdf-schema#comment> "A land and offshore drilling contractor active in digital rig performance and monitoring.\n"@EN .
+<http://ddhub.no/Saipem> <http://www.w3.org/2000/01/rdf-schema#comment> "An offshore drilling contractor and engineering company active in offshore drilling data and digital operations.\n"@EN .
+<http://ddhub.no/COSL> <http://www.w3.org/2000/01/rdf-schema#comment> "An offshore drilling contractor active in offshore rig data and operational data workflows.\n"@EN .
+<http://ddhub.no/MaerskDrilling> <http://www.w3.org/2000/01/rdf-schema#comment> "A legacy offshore drilling contractor organization relevant to offshore rig digitalization and performance data, now associated with Noble through merger history.\n"@EN .
+<http://ddhub.no/ADNOCDrilling> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling contractor associated with ADNOC, active in drilling operations, automation, rig data, and digital drilling workflows.\n"@EN .
 <http://ddhub.no/DWISInternalService> <http://www.w3.org/2000/01/rdf-schema#comment> "A DWIS internal service is an internal component of the DWIS infrastructure that generates information that can be used by any systems connected to the DWIS infrastructure.\n"@EN .
 <http://ddhub.no/DWISBlackboard> <http://www.w3.org/2000/01/rdf-schema#comment> "The DWIS blackboard is a shared data structure that allows different DWIS components to share information and coordinate their activities.\n"@EN .
 <http://ddhub.no/DWISDrillingProcessStateInterpreter> <http://www.w3.org/2000/01/rdf-schema#comment> "The DWIS Drilling Process State Interpreter is a component that analyses drilling data to determine the current state of the drilling process.\n"@EN .
@@ -4735,6 +5060,44 @@
 <http://ddhub.no/DWISLogger> <http://www.w3.org/2000/01/rdf-schema#comment> "The DWIS Logger is a component that logs all the activity on DWIS Blackboard.\n"@EN .
 <http://ddhub.no/DWISADCSInterface> <http://www.w3.org/2000/01/rdf-schema#comment> "The DWIS ADCS interface provides access to the actual ADCS.\n"@EN .
 <http://ddhub.no/DWISADCSCapabilityDescriptor> <http://www.w3.org/2000/01/rdf-schema#comment> "The DWIS ADCS Capability descriptor describes the actual capabilities of the true ADCS.\n"@EN .
+<http://ddhub.no/DrillingDataEcosystemOrganization> <http://www.w3.org/2000/01/rdf-schema#comment> "An organization that generates, owns, processes, transmits, standardizes, analyzes, visualizes, or consumes drilling and well-construction data.\n"@EN .
+<http://ddhub.no/EnergyDataStandardsOrganization> <http://www.w3.org/2000/01/rdf-schema#comment> "An organization or consortium that defines standards, interoperability specifications, data models, or industry practices relevant to drilling and well data.\n"@EN .
+<http://ddhub.no/DrillingIndustryOrganization> <http://www.w3.org/2000/01/rdf-schema#comment> "An industry association, technical community, or standards group focused on drilling contractors, drilling automation, well construction, interoperability, reporting, or operational practices.\n"@EN .
+<http://ddhub.no/DWIS> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling and wells interoperability initiative focused on semantic data models and digital interoperability for drilling and well construction.\n"@EN .
+<http://ddhub.no/IADC> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling contractor industry organization relevant to drilling contractor standards, reporting, and operational frameworks.\n"@EN .
+<http://ddhub.no/SPEDSATS> <http://www.w3.org/2000/01/rdf-schema#comment> "A SPE drilling systems advancement technical community relevant to drilling automation, data, controls, and interoperability discussions.\n"@EN .
+<http://ddhub.no/Energistics> <http://www.w3.org/2000/01/rdf-schema#comment> "An energy data standards organization associated with WITSML, PRODML, and RESQML standards.\n"@EN .
+<http://ddhub.no/OSDUForum> <http://www.w3.org/2000/01/rdf-schema#comment> "An Open Group forum defining subsurface and energy data platform standards relevant to drilling and well data reuse.\n"@EN .
+<http://ddhub.no/OpenGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "A standards organization associated with open technology standards and the OSDU Forum for energy data platforms.\n"@EN .
+<http://ddhub.no/OPCFoundation> <http://www.w3.org/2000/01/rdf-schema#comment> "A standards organization responsible for OPC UA industrial interoperability, relevant for rig equipment, automation, and operational drilling data.\n"@EN .
+<http://ddhub.no/RealTimeDrillingDataInfrastructureCompany> <http://www.w3.org/2000/01/rdf-schema#comment> "A company that provides drilling-data acquisition, aggregation, transmission, WITS/WITSML services, visualization, storage, remote collaboration, or operational data delivery.\n"@EN .
+<http://ddhub.no/Petrolink> <http://www.w3.org/2000/01/rdf-schema#comment> "A real-time drilling-data infrastructure company active in WITSML, PetroVue, rig-to-office data transmission, data aggregation, and remote visualization.\n"@EN .
+<http://ddhub.no/KongsbergDigital> <http://www.w3.org/2000/01/rdf-schema#comment> "A digital technology company active in SiteCom, real-time operations, drilling and well data aggregation, visualization, and remote collaboration workflows.\n"@EN .
+<http://ddhub.no/Pason> <http://www.w3.org/2000/01/rdf-schema#comment> "A rigsite drilling-data acquisition company active in electronic drilling recorders, DataLink, DataHub, DataMart, WITSML delivery, and rigsite operational data.\n"@EN .
+<http://ddhub.no/IndependentDataServices> <http://www.w3.org/2000/01/rdf-schema#comment> "A drilling-data and reporting company active in DataNet, daily drilling reports, WITSML workflows, automated reporting, and operations data capture.\n"@EN .
+<http://ddhub.no/WellPlanningReportingSoftwareCompany> <http://www.w3.org/2000/01/rdf-schema#comment> "A company that provides well planning, drilling engineering workflows, drilling reports, daily operations reporting, lessons learned, or well lifecycle data-management software.\n"@EN .
+<http://ddhub.no/Peloton> <http://www.w3.org/2000/01/rdf-schema#comment> "A well operations data-management software company active in WellView, SiteView, well lifecycle data, drilling reports, and operations reporting.\n"@EN .
+<http://ddhub.no/QuorumSoftware> <http://www.w3.org/2000/01/rdf-schema#comment> "A software company active in upstream operations data, reporting, well operations, planning data management, and production data workflows.\n"@EN .
+<http://ddhub.no/ProWellPlan> <http://www.w3.org/2000/01/rdf-schema#comment> "A well planning and drilling/completions operations software company that structures spreadsheet and fragmented well data into data-driven workflows and automation.\n"@EN .
+<http://ddhub.no/RigEquipmentOEM> <http://www.w3.org/2000/01/rdf-schema#comment> "An original equipment manufacturer or equipment supplier whose rig equipment, controls, automation, or pipe-handling systems generate or consume drilling operational data.\n"@EN .
+<http://ddhub.no/RigControlSystemProvider> <http://www.w3.org/2000/01/rdf-schema#comment> "A rig equipment or automation provider that supplies control systems, drilling automation, rig sequencing, advisory control interfaces, or equipment-generated drilling data.\n"@EN .
+<http://ddhub.no/HMH> <http://www.w3.org/2000/01/rdf-schema#comment> "A rig equipment, control-system, and drilling automation company active in DEAL, CADS, drillersAssist, DrillView, DrillPerform, digital services, and equipment-generated drilling data.\n"@EN .
+<http://ddhub.no/Canrig> <http://www.w3.org/2000/01/rdf-schema#comment> "A rig equipment and automation company associated with Nabors, active in top drives, rig equipment, automation, and control-system data.\n"@EN .
+<http://ddhub.no/Huisman> <http://www.w3.org/2000/01/rdf-schema#comment> "A rig equipment and automated drilling systems provider active in equipment data and rig automation.\n"@EN .
+<http://ddhub.no/Drillmec> <http://www.w3.org/2000/01/rdf-schema#comment> "A rig equipment and drilling automation provider active in equipment data and drilling control workflows.\n"@EN .
+<http://ddhub.no/SLBCameron> <http://www.w3.org/2000/01/rdf-schema#comment> "A pressure control and drilling equipment business associated with SLB, active in equipment data and pressure-control workflows.\n"@EN .
+<http://ddhub.no/AkerSolutions> <http://www.w3.org/2000/01/rdf-schema#comment> "An engineering and equipment company relevant to drilling equipment and control-system lineage, including MHWirth legacy technologies now associated with HMH.\n"@EN .
+<http://ddhub.no/Drillform> <http://www.w3.org/2000/01/rdf-schema#comment> "A provider of automated drilling tools and pipe-handling equipment, relevant to rig automation and equipment-generated data.\n"@EN .
+<http://ddhub.no/CloudEnergyDataPlatformProvider> <http://www.w3.org/2000/01/rdf-schema#comment> "A cloud or industrial data-platform provider that supports energy data lakes, edge/IoT, historians, contextualization, analytics, AI/ML, or operational data infrastructure used with drilling data.\n"@EN .
+<http://ddhub.no/Cognite> <http://www.w3.org/2000/01/rdf-schema#comment> "An industrial data platform company active in data contextualization and integration of drilling, rig, and operational data into broader industrial data platforms.\n"@EN .
+<http://ddhub.no/AVEVA> <http://www.w3.org/2000/01/rdf-schema#comment> "An industrial software and operational data infrastructure company active in time-series historian, industrial information management, and operational data systems including OSIsoft PI technology.\n"@EN .
+<http://ddhub.no/AspenTech> <http://www.w3.org/2000/01/rdf-schema#comment> "An industrial software company active in industrial analytics and operational data platforms relevant to drilling and upstream operational data.\n"@EN .
+<http://ddhub.no/Emerson> <http://www.w3.org/2000/01/rdf-schema#comment> "An industrial automation company active in control systems, historians, instrumentation, and operational data infrastructure relevant to drilling and rig data.\n"@EN .
+<http://ddhub.no/Honeywell> <http://www.w3.org/2000/01/rdf-schema#comment> "An industrial automation and control company active in control systems, historians, and operational data infrastructure relevant to drilling and rig operations.\n"@EN .
+<http://ddhub.no/Siemens> <http://www.w3.org/2000/01/rdf-schema#comment> "An industrial automation and digital infrastructure company active in controls, edge systems, industrial data infrastructure, and automation relevant to rig operations.\n"@EN .
+<http://ddhub.no/MicrosoftAzure> <http://www.w3.org/2000/01/rdf-schema#comment> "A cloud platform provider relevant to energy data workflows, Microsoft Energy Data Services, data lakes, edge/IoT, analytics, and AI/ML.\n"@EN .
+<http://ddhub.no/AWS> <http://www.w3.org/2000/01/rdf-schema#comment> "A cloud platform provider relevant to energy data lakes, edge/IoT, cloud analytics, AI/ML, and drilling data infrastructure.\n"@EN .
+<http://ddhub.no/GoogleCloud> <http://www.w3.org/2000/01/rdf-schema#comment> "A cloud platform provider relevant to cloud analytics, AI/ML, data platforms, and energy data workflows.\n"@EN .
 <http://ddhub.no/Telemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "Technology used for transferring the data from its main origin.\n"@EN .
 <http://ddhub.no/DownHoleTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "Technology that allows transfer of downhole data to the surface.\n"@EN .
 <http://ddhub.no/MudPulseTelemetry> <http://www.w3.org/2000/01/rdf-schema#comment> "A method that allows transfer of downhole data to the surface via pressure pulses sent through the drilling fluid.\n"@EN .
@@ -4802,7 +5165,7 @@
 <http://ddhub.no/MechanicalSpecificEnergy> <http://www.w3.org/2000/01/rdf-schema#comment> "Prototype signal for Mechanical Specific Energy.\n"@EN .
 <http://ddhub.no/DownholeAxialAcceleration> <http://www.w3.org/2000/01/rdf-schema#comment> "Prototype signal for Downhole Axial Acceleration.\n"@EN .
 <http://ddhub.no/DownholeAngularAcceleration> <http://www.w3.org/2000/01/rdf-schema#comment> "Prototype signal for Downhole Angular Acceleration.\n"@EN .
-<http://ddhub.no/StickSlipSeverityIndex> <http://www.w3.org/2000/01/rdf-schema#comment> "Prototype signal for Stickslip Severity Index.\n"@EN .
+<http://ddhub.no/StickSlipSeverityIndex> <http://www.w3.org/2000/01/rdf-schema#comment> "Prototype signal for a dimensionless index that quantifies the current severity of drill-string\ntorsional stick-slip oscillations.\n"@EN .
 <http://ddhub.no/FrictionCoefficient> <http://www.w3.org/2000/01/rdf-schema#comment> "Prototype signal for Friction coefficient.\n"@EN .
 <http://ddhub.no/MechanicalFrictionCoefficient> <http://www.w3.org/2000/01/rdf-schema#comment> "Prototype signal for Mechanical Friction coefficient.\n"@EN .
 <http://ddhub.no/StaticFrictionCoefficient> <http://www.w3.org/2000/01/rdf-schema#comment> "Prototype signal for Static Friction coefficient.\n"@EN .
@@ -4832,9 +5195,6 @@
 <http://ddhub.no/DerivedMeasurement> <http://www.w3.org/2000/01/rdf-schema#comment> "A measurement obtained through transformation or computation rather than direct sensing.\n"@EN .
 <http://ddhub.no/CorrectedMeasurement> <http://www.w3.org/2000/01/rdf-schema#comment> "A measurement that has been corrected for bias or known offsets.\n"@EN .
 <http://ddhub.no/ComputedData> <http://www.w3.org/2000/01/rdf-schema#comment> "A physical data point generated by a computation or model rather than direct measurement.\n"@EN .
-<http://ddhub.no/EstimationParameter> <http://www.w3.org/2000/01/rdf-schema#comment> "A quantity describing the configuration or internal state of a data interpretation\nor estimation model rather than the physical drilling process.\n"@EN .
-<http://ddhub.no/CalibrationParameter> <http://www.w3.org/2000/01/rdf-schema#comment> "An estimation parameter that maps a sensor representation to a physical quantity through scaling or conversion.\n"@EN .
-<http://ddhub.no/CorrectionFactor> <http://www.w3.org/2000/01/rdf-schema#comment> "An estimation parameter used to compensate systematic bias or mismatch in a computed or measured quantity.\n"@EN .
 <http://ddhub.no/DrillingSignal> <http://www.w3.org/2000/01/rdf-schema#comment> "Data structure used to store the streaming drilling data.\n"@EN .
 <http://ddhub.no/DynamicDrillingSignal> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents a time-stamped drilling signal acquired or recorded over time.\n"@EN .
 <http://ddhub.no/Equipment> <http://www.w3.org/2000/01/rdf-schema#comment> ""@EN .
@@ -5740,6 +6100,7 @@
 <http://ddhub.no/VerticalDirectionFrame> <http://www.w3.org/2000/01/rdf-schema#comment> "A reference frame that is vertical but without privileged upward or downward direction.\n"@EN .
 <http://ddhub.no/VerticalDepthFrame> <http://www.w3.org/2000/01/rdf-schema#comment> "A reference frame that follows the downward vertical.\n"@EN .
 <http://ddhub.no/VerticalElevationFrame> <http://www.w3.org/2000/01/rdf-schema#comment> "A reference frame that follows the upward vertical.\n"@EN .
+<http://ddhub.no/MeanSeaLevelReferenceFrame> <http://www.w3.org/2000/01/rdf-schema#comment> "A vertical elevation reference frame whose origin is mean sea level and whose positive direction is upward.\n"@EN .
 <http://ddhub.no/LengthDirectionFrame> <http://www.w3.org/2000/01/rdf-schema#comment> "A reference frame that follows the length direction.\n"@EN .
 <http://ddhub.no/WidthDirectionFrame> <http://www.w3.org/2000/01/rdf-schema#comment> "A reference frame that follows the width direction.\n"@EN .
 <http://ddhub.no/HeightDirectionFrame> <http://www.w3.org/2000/01/rdf-schema#comment> "A reference frame that follows the height direction.\n"@EN .
@@ -6829,6 +7190,7 @@
 <http://ddhub.no/RelativeTimeReference> <http://www.w3.org/2000/01/rdf-schema#comment> "Time reference relative to a local origin or offset.\n"@EN .
 <http://ddhub.no/LocalTimeReference> <http://www.w3.org/2000/01/rdf-schema#comment> "Time reference with respect to local clock or time zone.\n"@EN .
 <http://ddhub.no/TimeSpanReference> <http://www.w3.org/2000/01/rdf-schema#comment> "Reference representing elapsed time from a defined event.\n"@EN .
+<http://ddhub.no/TimeWindow> <http://www.w3.org/2000/01/rdf-schema#comment> "A time duration over which samples are selected or evaluated by a transformation.\n"@EN .
 <http://ddhub.no/GPSReference> <http://www.w3.org/2000/01/rdf-schema#comment> "Time reference derived from GPS.\n"@EN .
 <http://ddhub.no/UTCReference> <http://www.w3.org/2000/01/rdf-schema#comment> "Time reference based on coordinated universal time.\n"@EN .
 <http://ddhub.no/SignalUncertainty> <http://www.w3.org/2000/01/rdf-schema#comment> "Represent the uncertainty associated to a `DrillingDataPoint`.\n"@EN .
@@ -7066,6 +7428,10 @@
 <http://ddhub.no/SamplingRate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <http://ddhub.no/SamplingRate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/SynchronizationGroup> .
 <http://ddhub.no/SamplingRate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<http://ddhub.no/Duration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ddhub.no/Duration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ddhub.no/Duration> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/TimeWindow> .
+<http://ddhub.no/Duration> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
 <http://ddhub.no/FullScale> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://ddhub.no/FullScale> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <http://ddhub.no/FullScale> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/FullScaleUncertainty> .
@@ -7085,6 +7451,118 @@
 <http://ddhub.no/DWISVerb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://ddhub.no/DWISVerb> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/DWISVerb> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/ImplementsControlStrategy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/ImplementsControlStrategy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/ControllerFunction> .
+<http://ddhub.no/ImplementsControlStrategy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ControlStrategy> .
+<http://ddhub.no/ImplementsControlStrategy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsTuningServiceFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsTuningServiceFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/TuningServiceFunction> .
+<http://ddhub.no/IsTuningServiceFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ADCSFunction> .
+<http://ddhub.no/IsTuningServiceFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsTuningParameterFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsTuningParameterFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/PIDTuningParameter> .
+<http://ddhub.no/IsTuningParameterFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ADCSFunction> .
+<http://ddhub.no/IsTuningParameterFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/HasFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/HasFunction> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/HasFunction> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DataFlowNode> .
+<http://ddhub.no/HasFunction> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
+<http://ddhub.no/IsCommandFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsCommandFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsCommandFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsCommandFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsTuningRequestFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsTuningRequestFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsTuningRequestFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/PIDTuningParameter> .
+<http://ddhub.no/IsTuningRequestFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsCommandFor> .
+<http://ddhub.no/IsComputationInput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsComputationInput> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsComputationInput> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ComputationUnit> .
+<http://ddhub.no/IsComputationInput> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsLimitFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsLimitFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsLimitFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsLimitFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsMinimumLimitFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsMinimumLimitFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsMinimumLimitFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsMinimumLimitFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsLimitFor> .
+<http://ddhub.no/IsMaximumLimitFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsMaximumLimitFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsMaximumLimitFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsMaximumLimitFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsLimitFor> .
+<http://ddhub.no/IsCurrentStateFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsCurrentStateFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/ComputedState> .
+<http://ddhub.no/IsCurrentStateFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsCurrentStateFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsInformationForCurrentStateOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsInformationForCurrentStateOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/ComputedState> .
+<http://ddhub.no/IsInformationForCurrentStateOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsInformationForCurrentStateOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsInSafeModeStateFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsInSafeModeStateFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/ComputedState> .
+<http://ddhub.no/IsInSafeModeStateFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsInSafeModeStateFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsInformationForCurrentStateOf> .
+<http://ddhub.no/IsCompensationMethodFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsCompensationMethodFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsCompensationMethodFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsCompensationMethodFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsActivationStateFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsActivationStateFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsActivationStateFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsActivationStateFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsTargetActivationStateFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsTargetActivationStateFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsTargetActivationStateFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsTargetActivationStateFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsActivationStateFor> .
+<http://ddhub.no/IsSetPointFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsSetPointFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsSetPointFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Controller> .
+<http://ddhub.no/IsSetPointFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsSetPointRecommendationFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsSetPointRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsSetPointRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ControlSystem> .
+<http://ddhub.no/IsSetPointRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsSetPointAdviceFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsSetPointAdviceFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsSetPointAdviceFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ControlSystem> .
+<http://ddhub.no/IsSetPointAdviceFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsSetPointMinimumRecommendationFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsSetPointMinimumRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsSetPointMinimumRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ControlSystem> .
+<http://ddhub.no/IsSetPointMinimumRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsSetPointMinimumAdviceFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsSetPointMinimumAdviceFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsSetPointMinimumAdviceFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ControlSystem> .
+<http://ddhub.no/IsSetPointMinimumAdviceFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsSetPointMaximumRecommendationFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsSetPointMaximumRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsSetPointMaximumRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ControlSystem> .
+<http://ddhub.no/IsSetPointMaximumRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsSetPointMaximumAdviceFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsSetPointMaximumAdviceFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsSetPointMaximumAdviceFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ControlSystem> .
+<http://ddhub.no/IsSetPointMaximumAdviceFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsTransformationInput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsTransformationInput> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsTransformationInput> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Transformation> .
+<http://ddhub.no/IsTransformationInput> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/IsBufferingInput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsBufferingInput> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsBufferingInput> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Buffering> .
+<http://ddhub.no/IsBufferingInput> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsTransformationInput> .
+<http://ddhub.no/IsDerivationInput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsDerivationInput> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsDerivationInput> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
+<http://ddhub.no/IsDerivationInput> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsTransformationInput> .
+<http://ddhub.no/IsResamplingInput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsResamplingInput> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsResamplingInput> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Resampling> .
+<http://ddhub.no/IsResamplingInput> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsTransformationInput> .
+<http://ddhub.no/IsTransmissionInput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/IsTransmissionInput> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
+<http://ddhub.no/IsTransmissionInput> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/TransmissionLine> .
+<http://ddhub.no/IsTransmissionInput> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
 <http://ddhub.no/IsEnablingSignalFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://ddhub.no/IsEnablingSignalFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
 <http://ddhub.no/IsEnablingSignalFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ActivableFunction> .
@@ -7197,90 +7675,10 @@
 <http://ddhub.no/Controls> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/Controls> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
 <http://ddhub.no/Controls> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
-<http://ddhub.no/HasFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/HasFunction> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/HasFunction> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DataFlowNode> .
-<http://ddhub.no/HasFunction> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
-<http://ddhub.no/IsCommandFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsCommandFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/IsCommandFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
-<http://ddhub.no/IsCommandFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
-<http://ddhub.no/IsComputationInput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsComputationInput> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/IsComputationInput> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ComputationUnit> .
-<http://ddhub.no/IsComputationInput> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
-<http://ddhub.no/IsLimitFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsLimitFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/IsLimitFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
-<http://ddhub.no/IsLimitFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
-<http://ddhub.no/IsMinimumLimitFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsMinimumLimitFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/IsMinimumLimitFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
-<http://ddhub.no/IsMinimumLimitFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsLimitFor> .
-<http://ddhub.no/IsMaximumLimitFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsMaximumLimitFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/IsMaximumLimitFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
-<http://ddhub.no/IsMaximumLimitFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsLimitFor> .
-<http://ddhub.no/IsCurrentStateFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsCurrentStateFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/ComputedState> .
-<http://ddhub.no/IsCurrentStateFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
-<http://ddhub.no/IsCurrentStateFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
-<http://ddhub.no/IsInformationForCurrentStateOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsInformationForCurrentStateOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/ComputedState> .
-<http://ddhub.no/IsInformationForCurrentStateOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
-<http://ddhub.no/IsInformationForCurrentStateOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
-<http://ddhub.no/IsInSafeModeStateFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsInSafeModeStateFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/ComputedState> .
-<http://ddhub.no/IsInSafeModeStateFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
-<http://ddhub.no/IsInSafeModeStateFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsInformationForCurrentStateOf> .
-<http://ddhub.no/IsSetPointFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsSetPointFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/IsSetPointFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Controller> .
-<http://ddhub.no/IsSetPointFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
-<http://ddhub.no/IsSetPointRecommendationFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsSetPointRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/IsSetPointRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ControlSystem> .
-<http://ddhub.no/IsSetPointRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
-<http://ddhub.no/IsSetPointAdviceFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsSetPointAdviceFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/IsSetPointAdviceFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ControlSystem> .
-<http://ddhub.no/IsSetPointAdviceFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
-<http://ddhub.no/IsSetPointMinimumRecommendationFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsSetPointMinimumRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/IsSetPointMinimumRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ControlSystem> .
-<http://ddhub.no/IsSetPointMinimumRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
-<http://ddhub.no/IsSetPointMinimumAdviceFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsSetPointMinimumAdviceFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/IsSetPointMinimumAdviceFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ControlSystem> .
-<http://ddhub.no/IsSetPointMinimumAdviceFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
-<http://ddhub.no/IsSetPointMaximumRecommendationFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsSetPointMaximumRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/IsSetPointMaximumRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ControlSystem> .
-<http://ddhub.no/IsSetPointMaximumRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
-<http://ddhub.no/IsSetPointMaximumAdviceFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsSetPointMaximumAdviceFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/IsSetPointMaximumAdviceFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/ControlSystem> .
-<http://ddhub.no/IsSetPointMaximumAdviceFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
-<http://ddhub.no/IsTransformationInput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsTransformationInput> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/IsTransformationInput> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Transformation> .
-<http://ddhub.no/IsTransformationInput> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
-<http://ddhub.no/IsBufferingInput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsBufferingInput> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/IsBufferingInput> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Buffering> .
-<http://ddhub.no/IsBufferingInput> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsTransformationInput> .
-<http://ddhub.no/IsDerivationInput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsDerivationInput> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DWISNoun> .
-<http://ddhub.no/IsDerivationInput> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DWISNoun> .
-<http://ddhub.no/IsDerivationInput> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsTransformationInput> .
-<http://ddhub.no/IsResamplingInput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsResamplingInput> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/IsResamplingInput> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/Resampling> .
-<http://ddhub.no/IsResamplingInput> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/IsTransformationInput> .
-<http://ddhub.no/IsTransmissionInput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://ddhub.no/IsTransmissionInput> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
-<http://ddhub.no/IsTransmissionInput> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/TransmissionLine> .
-<http://ddhub.no/IsTransmissionInput> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/HasFunction> .
+<http://ddhub.no/HasTimeWindow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ddhub.no/HasTimeWindow> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/Transformation> .
+<http://ddhub.no/HasTimeWindow> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/TimeWindow> .
+<http://ddhub.no/HasTimeWindow> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ddhub.no/DWISVerb> .
 <http://ddhub.no/IsGeneratedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://ddhub.no/IsGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ddhub.no/DrillingDataPoint> .
 <http://ddhub.no/IsGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ddhub.no/DataFlowNode> .
@@ -7937,11 +8335,40 @@
 <http://ddhub.no/MaximumFluctuations> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
 <http://ddhub.no/SynchronizationDelay> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
 <http://ddhub.no/SamplingRate> <http://www.w3.org/2000/01/rdf-schema#comment> "\n"@EN .
+<http://ddhub.no/Duration> <http://www.w3.org/2000/01/rdf-schema#comment> "The length of the time window in seconds.\n"@EN .
 <http://ddhub.no/FullScale> <http://www.w3.org/2000/01/rdf-schema#comment> "The total range of measurement of the signal, i.e., $\\left| max - min \\right|$. The value is expected to be in the same physical quantity as the sensor value.\n"@EN .
 <http://ddhub.no/ProportionError> <http://www.w3.org/2000/01/rdf-schema#comment> "The proportion error on the signal. The value is expected to be a dimensionless physical quantity between 0 and 1 in SI unit. This proportion is applied to the `Fullscale` to obtain the standard deviation of the Gaussian probability distribution that describes the uncertainty of the signal. The mean value of that Gaussian distribution is the signal value.\n"@EN .
 <http://ddhub.no/Accuracy> <http://www.w3.org/2000/01/rdf-schema#comment> "The standard deviation of the systematic bias component of the uncertainty of the sensor. The assumed mean value of the attached Gaussian distribution is the measured value. The value is expected to be in the same physical quantity as the sensor value.\n"@EN .
 <http://ddhub.no/Precision> <http://www.w3.org/2000/01/rdf-schema#comment> "The standard deviation of the repetitive error component of the uncertainty of the sensor. The assumed mean value of the attached Gaussian distribution is the measured value. The value is expected to be in the same physical quantity as the sensor value.\n"@EN .
 <http://ddhub.no/DWISVerb> <http://www.w3.org/2000/01/rdf-schema#comment> "This is the root class for all verbs defined in the DWIS vocabulary. It is used to define a relation between a subject, which can be of any `DWISNoun` and an object, also of any type of `DWISNoun`.\n"@EN .
+<http://ddhub.no/ImplementsControlStrategy> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb indicates that a controller function uses a named control strategy to implement one or more of\nits control objectives.\n"@EN .
+<http://ddhub.no/IsTuningServiceFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb indicates that a tuning service applies tuning parameters to an ADCS function or to one of its\ncontrol loops.\n"@EN .
+<http://ddhub.no/IsTuningParameterFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb indicates that a tuning parameter is intended to tune an ADCS function or one of its control\nloops.\n"@EN .
+<http://ddhub.no/HasFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "Connects a signal to the data flow node that produced it or to the function it relates to.\n"@EN .
+<http://ddhub.no/IsCommandFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Marks a signal as a command sent to a specific node or equipment.\n"@EN .
+<http://ddhub.no/IsTuningRequestFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb indicates that a command or recommendation signal carries a request to apply a tuning\nparameter.\n"@EN .
+<http://ddhub.no/IsComputationInput> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a signal is used as an input by a computation unit.\n"@EN .
+<http://ddhub.no/IsLimitFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Declares that a signal expresses a limit relevant to a node or function.\n"@EN .
+<http://ddhub.no/IsMinimumLimitFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the signal represents the minimum acceptable bound for a function or equipment.\n"@EN .
+<http://ddhub.no/IsMaximumLimitFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the signal represents the maximum acceptable bound for a function or equipment.\n"@EN .
+<http://ddhub.no/IsCurrentStateFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a computed state represents the present state of a target object or process.\n"@EN .
+<http://ddhub.no/IsInformationForCurrentStateOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Provides supporting information about the current state of an object or process.\n"@EN .
+<http://ddhub.no/IsInSafeModeStateFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the target object or process is currently in a safe or fallback mode.\n"@EN .
+<http://ddhub.no/IsCompensationMethodFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies an enumerated signal that states which mechanism or method is used by a compensation system.\n"@EN .
+<http://ddhub.no/IsActivationStateFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies an enumerated signal that reports the actual activation state of a system or function.\n"@EN .
+<http://ddhub.no/IsTargetActivationStateFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies an enumerated signal that reports the intended, requested, or target activation state of a system or function.\n"@EN .
+<http://ddhub.no/IsSetPointFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies a signal that provides a target value to a controller.\n"@EN .
+<http://ddhub.no/IsSetPointRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Marks a signal as a recommended set-point produced for a control system.\n"@EN .
+<http://ddhub.no/IsSetPointAdviceFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates an advisory set-point that may be reviewed before being applied to a control system.\n"@EN .
+<http://ddhub.no/IsSetPointMinimumRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates a recommended minimum bound for a control system set-point.\n"@EN .
+<http://ddhub.no/IsSetPointMinimumAdviceFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Provides an advisory minimum bound for a control system set-point.\n"@EN .
+<http://ddhub.no/IsSetPointMaximumRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates a recommended maximum bound for a control system set-point.\n"@EN .
+<http://ddhub.no/IsSetPointMaximumAdviceFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Provides an advisory maximum bound for a control system set-point.\n"@EN .
+<http://ddhub.no/IsTransformationInput> <http://www.w3.org/2000/01/rdf-schema#comment> "Declares that a signal is used as an input to a transformation node.\n"@EN .
+<http://ddhub.no/IsBufferingInput> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies a signal that enters a buffering stage.\n"@EN .
+<http://ddhub.no/IsDerivationInput> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies a signal used as the basis for a derivative calculation.\n"@EN .
+<http://ddhub.no/IsResamplingInput> <http://www.w3.org/2000/01/rdf-schema#comment> "Marks a signal that will be resampled to a new rate.\n"@EN .
+<http://ddhub.no/IsTransmissionInput> <http://www.w3.org/2000/01/rdf-schema#comment> "Declares that a signal enters a transmission line for forwarding.\n"@EN .
 <http://ddhub.no/IsEnablingSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to define a `DrillingDataPoint` that is used to enable or disable an `ActivableFunction`.\nIt is expected that the `DrillingDataPoint` is a Boolean value.\n"@EN .
 <http://ddhub.no/IsActivatedSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to define a `DrillingDataPoint` that indicates if the `ActivableFunction` is activated or\nnot. It is expected that the `DrillingDataPoint` is a Boolean value.\n"@EN .
 <http://ddhub.no/AllowEnablementSignalFor> <http://www.w3.org/2000/01/rdf-schema#comment> "This verb is used to define a `DrillingDataPoint` tells if it is allowed or not to enable or\ndisable an activable function. It is expected that the `DrillingDataPoint` is a Boolean value. If the signal is true,\nthen it is possible to enable or disable the function using the signal associated with `IsEnablingSignalFor`. If it is\nfalse, it is not allowed to enable or disable the `ActivableFunction`, meaning that the signal associated with `IsEnablingSignalFor`\nis ignored.\n"@EN .
@@ -7970,27 +8397,7 @@
 <http://ddhub.no/IsObservableFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "This `Verb` means that something can be seen, detected, or noticed from a particular\nlocation or perspective. It implies that there is a clear view or means of perception from one point \nto another.\n"@EN .
 <http://ddhub.no/IsSubSystemOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a data flow node is part of a larger system or control structure.\n"@EN .
 <http://ddhub.no/Controls> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a data flow node drives or regulates another equipment or function.\n"@EN .
-<http://ddhub.no/HasFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "Connects a signal to the data flow node that produced it or to the function it relates to.\n"@EN .
-<http://ddhub.no/IsCommandFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Marks a signal as a command sent to a specific node or equipment.\n"@EN .
-<http://ddhub.no/IsComputationInput> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a signal is used as an input by a computation unit.\n"@EN .
-<http://ddhub.no/IsLimitFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Declares that a signal expresses a limit relevant to a node or function.\n"@EN .
-<http://ddhub.no/IsMinimumLimitFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the signal represents the minimum acceptable bound for a function or equipment.\n"@EN .
-<http://ddhub.no/IsMaximumLimitFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the signal represents the maximum acceptable bound for a function or equipment.\n"@EN .
-<http://ddhub.no/IsCurrentStateFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a computed state represents the present state of a target object or process.\n"@EN .
-<http://ddhub.no/IsInformationForCurrentStateOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Provides supporting information about the current state of an object or process.\n"@EN .
-<http://ddhub.no/IsInSafeModeStateFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the target object or process is currently in a safe or fallback mode.\n"@EN .
-<http://ddhub.no/IsSetPointFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies a signal that provides a target value to a controller.\n"@EN .
-<http://ddhub.no/IsSetPointRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Marks a signal as a recommended set-point produced for a control system.\n"@EN .
-<http://ddhub.no/IsSetPointAdviceFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates an advisory set-point that may be reviewed before being applied to a control system.\n"@EN .
-<http://ddhub.no/IsSetPointMinimumRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates a recommended minimum bound for a control system set-point.\n"@EN .
-<http://ddhub.no/IsSetPointMinimumAdviceFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Provides an advisory minimum bound for a control system set-point.\n"@EN .
-<http://ddhub.no/IsSetPointMaximumRecommendationFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates a recommended maximum bound for a control system set-point.\n"@EN .
-<http://ddhub.no/IsSetPointMaximumAdviceFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Provides an advisory maximum bound for a control system set-point.\n"@EN .
-<http://ddhub.no/IsTransformationInput> <http://www.w3.org/2000/01/rdf-schema#comment> "Declares that a signal is used as an input to a transformation node.\n"@EN .
-<http://ddhub.no/IsBufferingInput> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies a signal that enters a buffering stage.\n"@EN .
-<http://ddhub.no/IsDerivationInput> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies a signal used as the basis for a derivative calculation.\n"@EN .
-<http://ddhub.no/IsResamplingInput> <http://www.w3.org/2000/01/rdf-schema#comment> "Marks a signal that will be resampled to a new rate.\n"@EN .
-<http://ddhub.no/IsTransmissionInput> <http://www.w3.org/2000/01/rdf-schema#comment> "Declares that a signal enters a transmission line for forwarding.\n"@EN .
+<http://ddhub.no/HasTimeWindow> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a transformation with the time duration over which its input samples are evaluated.\n"@EN .
 <http://ddhub.no/IsGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates which data flow node produced a given signal.\n"@EN .
 <http://ddhub.no/IsComputedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a computed value or state to the computation unit that produced it.\n"@EN .
 <http://ddhub.no/IsMeasuredBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a measured signal with the physical measurement device that collected it.\n"@EN .

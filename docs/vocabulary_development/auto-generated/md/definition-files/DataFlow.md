@@ -50,6 +50,7 @@ Filter <|-- MovingAverage
 Filter <|-- MovingStandardDeviation
 Filter <|-- MovingMin
 Filter <|-- MovingMax
+Filter <|-- PeakToPeak
 Filter <|-- MovingDistribution
 MovingAverage <|-- NumberOfSampleMovingAverage
 MovingAverage <|-- TimeWindowMovingAverage
@@ -1809,6 +1810,56 @@ WHERE {
 }
 ```
 This example defines a moving max transformation that computes the maximum caving size from shaker load measurements.
+## PeakToPeak <!-- NOUN -->
+- Display name: Peak To Peak
+- Parent class: [Filter](./DataFlow.md#Filter)
+- Description: 
+Computes the difference between the maximum and minimum values of an input signal over a specified window.
+- Definition set: DataFlow
+- Examples:
+```dwis heavePeakToPeak
+PeakToPeak:heavePeakToPeak
+TimeWindow:heavePeakToPeakWindow
+heavePeakToPeakWindow.Duration = "20.0"
+DrillingDataPoint:heavePosition
+DrillingDataPoint:heavePeakToPeakAmplitude
+heavePosition IsTransformationInput heavePeakToPeak
+heavePeakToPeakAmplitude IsTransformationOutput heavePeakToPeak
+heavePeakToPeak HasTimeWindow heavePeakToPeakWindow
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[heavePeakToPeak] -->|BelongsToClass| N0001(PeakToPeak) 
+	N0002[heavePeakToPeakWindow] -->|BelongsToClass| N0003(TimeWindow) 
+	N0002[heavePeakToPeakWindow] -->|Duration| N0004(("20.0")) 
+	N0005[heavePosition] -->|BelongsToClass| N0006(DrillingDataPoint) 
+	N0007[heavePeakToPeakAmplitude] -->|BelongsToClass| N0006(DrillingDataPoint) 
+	N0005[heavePosition] -->|IsTransformationInput| N0000[heavePeakToPeak] 
+	N0007[heavePeakToPeakAmplitude] -->|IsTransformationOutput| N0000[heavePeakToPeak] 
+	N0000[heavePeakToPeak] -->|HasTimeWindow| N0002[heavePeakToPeakWindow] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?heavePeakToPeak
+WHERE {
+	?heavePeakToPeak rdf:type ddhub:PeakToPeak .
+	?heavePeakToPeakWindow rdf:type ddhub:TimeWindow .
+	?heavePeakToPeakWindow ddhub:Duration ?Attribute000 .
+	?heavePosition rdf:type ddhub:DrillingDataPoint .
+	?heavePeakToPeakAmplitude rdf:type ddhub:DrillingDataPoint .
+	?heavePosition ddhub:IsTransformationInput ?heavePeakToPeak .
+	?heavePeakToPeakAmplitude ddhub:IsTransformationOutput ?heavePeakToPeak .
+	?heavePeakToPeak ddhub:HasTimeWindow ?heavePeakToPeakWindow .
+  FILTER (
+	?Attribute000 = "20.0"
+  )
+}
+```
+This example computes the peak-to-peak amplitude of heave position over a time window.
 ## MovingDistribution <!-- NOUN -->
 - Display name: Moving Distribution
 - Parent class: [Filter](./DataFlow.md#Filter)
@@ -2456,6 +2507,9 @@ IsLimitFor <|-- IsMaximumLimitFor
 HasFunction <|-- IsCurrentStateFor
 HasFunction <|-- IsInformationForCurrentStateOf
 IsInformationForCurrentStateOf <|-- IsInSafeModeStateFor
+HasFunction <|-- IsCompensationMethodFor
+HasFunction <|-- IsActivationStateFor
+IsActivationStateFor <|-- IsTargetActivationStateFor
 HasFunction <|-- IsSetPointFor
 HasFunction <|-- IsSetPointRecommendationFor
 HasFunction <|-- IsSetPointAdviceFor
@@ -2467,6 +2521,7 @@ HasFunction <|-- IsTransformationInput
 IsTransformationInput <|-- IsBufferingInput
 IsTransformationInput <|-- IsDerivationInput
 IsTransformationInput <|-- IsResamplingInput
+DWISVerb <|-- HasTimeWindow
 HasFunction <|-- IsTransmissionInput
 DWISVerb <|-- IsGeneratedBy
 IsGeneratedBy <|-- IsComputedBy
@@ -2495,6 +2550,9 @@ DrillingDataPoint ||--o{ DWISNoun : IsMaximumLimitFor
 ComputedState ||--o{ DWISNoun : IsCurrentStateFor
 ComputedState ||--o{ DWISNoun : IsInformationForCurrentStateOf
 ComputedState ||--o{ DWISNoun : IsInSafeModeStateFor
+DrillingDataPoint ||--o{ DWISNoun : IsCompensationMethodFor
+DrillingDataPoint ||--o{ DWISNoun : IsActivationStateFor
+DrillingDataPoint ||--o{ DWISNoun : IsTargetActivationStateFor
 DrillingDataPoint ||--o{ Controller : IsSetPointFor
 DrillingDataPoint ||--o{ ControlSystem : IsSetPointRecommendationFor
 DrillingDataPoint ||--o{ ControlSystem : IsSetPointAdviceFor
@@ -2506,6 +2564,7 @@ DrillingDataPoint ||--o{ Transformation : IsTransformationInput
 DrillingDataPoint ||--o{ Buffering : IsBufferingInput
 DWISNoun ||--o{ DWISNoun : IsDerivationInput
 DrillingDataPoint ||--o{ Resampling : IsResamplingInput
+Transformation ||--o{ TimeWindow : HasTimeWindow
 DrillingDataPoint ||--o{ TransmissionLine : IsTransmissionInput
 DrillingDataPoint ||--o{ DataFlowNode : IsGeneratedBy
 DWISNoun ||--o{ DWISNoun : IsComputedBy
@@ -2893,6 +2952,108 @@ WHERE {
 }
 ```
 This example records that the control system is in safe mode.
+## IsCompensationMethodFor <!-- VERB -->
+- Display name: Is Compensation Method For
+- Parent verb: [HasFunction](./DataFlow.md#HasFunction)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Definition set: DataFlow
+- Description: 
+Identifies an enumerated signal that states which mechanism or method is used by a compensation system.
+- Examples:
+```dwis heaveCompensationMethod
+DrillingDataPoint:heaveCompensationMethod
+HeaveCompensationSystem:heaveCompensationSystem
+heaveCompensationMethod IsCompensationMethodFor heaveCompensationSystem
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[heaveCompensationMethod] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[heaveCompensationSystem] -->|BelongsToClass| N0003(HeaveCompensationSystem) 
+	N0000[heaveCompensationMethod] -->|IsCompensationMethodFor| N0002[heaveCompensationSystem] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?heaveCompensationMethod
+WHERE {
+	?heaveCompensationMethod rdf:type ddhub:DrillingDataPoint .
+	?heaveCompensationSystem rdf:type ddhub:HeaveCompensationSystem .
+	?heaveCompensationMethod ddhub:IsCompensationMethodFor ?heaveCompensationSystem .
+}
+```
+This example states that a signal reports the method currently used by a heave compensation system.
+## IsActivationStateFor <!-- VERB -->
+- Display name: Is Activation State For
+- Parent verb: [HasFunction](./DataFlow.md#HasFunction)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Definition set: DataFlow
+- Description: 
+Identifies an enumerated signal that reports the actual activation state of a system or function.
+- Examples:
+```dwis heaveCompensationState
+DrillingDataPoint:heaveCompensationState
+HeaveCompensationSystem:heaveCompensationSystem
+heaveCompensationState IsActivationStateFor heaveCompensationSystem
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[heaveCompensationState] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[heaveCompensationSystem] -->|BelongsToClass| N0003(HeaveCompensationSystem) 
+	N0000[heaveCompensationState] -->|IsActivationStateFor| N0002[heaveCompensationSystem] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?heaveCompensationState
+WHERE {
+	?heaveCompensationState rdf:type ddhub:DrillingDataPoint .
+	?heaveCompensationSystem rdf:type ddhub:HeaveCompensationSystem .
+	?heaveCompensationState ddhub:IsActivationStateFor ?heaveCompensationSystem .
+}
+```
+This example states that a signal reports whether a heave compensation system is active, inactive, failed, or in an unknown state.
+## IsTargetActivationStateFor <!-- VERB -->
+- Display name: Is Target Activation State For
+- Parent verb: [IsActivationStateFor](./DataFlow.md#IsActivationStateFor)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Definition set: DataFlow
+- Description: 
+Identifies an enumerated signal that reports the intended, requested, or target activation state of a system or function.
+- Examples:
+```dwis heaveCompensationStateTarget
+DrillingDataPoint:heaveCompensationStateTarget
+HeaveCompensationSystem:heaveCompensationSystem
+heaveCompensationStateTarget IsTargetActivationStateFor heaveCompensationSystem
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[heaveCompensationStateTarget] -->|BelongsToClass| N0001(DrillingDataPoint) 
+	N0002[heaveCompensationSystem] -->|BelongsToClass| N0003(HeaveCompensationSystem) 
+	N0000[heaveCompensationStateTarget] -->|IsTargetActivationStateFor| N0002[heaveCompensationSystem] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?heaveCompensationStateTarget
+WHERE {
+	?heaveCompensationStateTarget rdf:type ddhub:DrillingDataPoint .
+	?heaveCompensationSystem rdf:type ddhub:HeaveCompensationSystem .
+	?heaveCompensationStateTarget ddhub:IsTargetActivationStateFor ?heaveCompensationSystem .
+}
+```
+This example states that a signal reports the target activation state of a heave compensation system.
 ## IsSetPointFor <!-- VERB -->
 - Display name: Is Set-Point For
 - Parent verb: [HasFunction](./DataFlow.md#HasFunction)
@@ -3267,6 +3428,46 @@ WHERE {
 }
 ```
 This example shows hookload as input to a resampling transformation.
+## HasTimeWindow <!-- VERB -->
+- Display name: Has Time Window
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [Transformation](./DataFlow.md#Transformation)
+- Object class: [TimeWindow](./TimeManagement.md#TimeWindow)
+- Definition set: DataFlow
+- Description: 
+Associates a transformation with the time duration over which its input samples are evaluated.
+- Examples:
+```dwis heavePeakToPeakWindowExample
+PeakToPeak:heavePeakToPeak
+TimeWindow:heavePeakToPeakWindow
+heavePeakToPeakWindow.Duration = "20.0"
+heavePeakToPeak HasTimeWindow heavePeakToPeakWindow
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[heavePeakToPeak] -->|BelongsToClass| N0001(PeakToPeak) 
+	N0002[heavePeakToPeakWindow] -->|BelongsToClass| N0003(TimeWindow) 
+	N0002[heavePeakToPeakWindow] -->|Duration| N0004(("20.0")) 
+	N0000[heavePeakToPeak] -->|HasTimeWindow| N0002[heavePeakToPeakWindow] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?heavePeakToPeakWindowExample
+WHERE {
+	?heavePeakToPeak rdf:type ddhub:PeakToPeak .
+	?heavePeakToPeakWindow rdf:type ddhub:TimeWindow .
+	?heavePeakToPeakWindow ddhub:Duration ?Attribute000 .
+	?heavePeakToPeak ddhub:HasTimeWindow ?heavePeakToPeakWindow .
+  FILTER (
+	?Attribute000 = "20.0"
+  )
+}
+```
+This example states that the peak-to-peak heave calculation is evaluated over a 20 second window.
 ## IsTransmissionInput <!-- VERB -->
 - Display name: Is Transmission Input
 - Parent verb: [HasFunction](./DataFlow.md#HasFunction)

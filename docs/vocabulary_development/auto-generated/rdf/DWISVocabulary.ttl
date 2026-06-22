@@ -134,7 +134,7 @@ ddhub:ActivableFunction a owl:Class;
                         rdfs:comment """An `ActivableFunction` is an ADCS function that can be activated. Here activation means that the
 function may run immediately or that it is enabled and can trigger if some conditions are respected.
 """@EN; 
-                        rdfs:subClassOf ddhub:DWISNoun. 
+                        rdfs:subClassOf ddhub:ADCSFunction. 
 ddhub:ActivationState a owl:Class; 
                       rdfs:comment """Indicates that a procedure or function is currently activated and executing its logic.
 """@EN; 
@@ -159,6 +159,12 @@ ddhub:ActiveVolume a owl:Class;
 ddhub:AdapterSpool a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:WellControlSystem. 
+ddhub:ADCSFunction a owl:Class; 
+                   rdfs:comment """An `ADCSFunction` is a function exposed by an automated drilling control system as part of its capability
+description. ADCS functions include activable functions, such as controllers, procedures, and protections, and
+non-activable service functions that perform discrete service actions on request.
+"""@EN; 
+                   rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:AdjustableKickoffSub a owl:Class; 
                            rdfs:comment ""@EN; 
                            rdfs:subClassOf ddhub:DrillingEquipment. 
@@ -168,6 +174,14 @@ ddhub:Adjusts a owl:ObjectProperty;
               rdfs:domain ddhub:EstimationParameter; 
               rdfs:range ddhub:DrillingDataPoint; 
               rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:ADNOC a owl:Class; 
+            rdfs:comment """An operating company active in AI-based ROP optimization, drilling automation, digital drilling programs, and operator-side drilling data workflows.
+"""@EN; 
+            rdfs:subClassOf ddhub:OperatingCompany. 
+ddhub:ADNOCDrilling a owl:Class; 
+                    rdfs:comment """A drilling contractor associated with ADNOC, active in drilling operations, automation, rig data, and digital drilling workflows.
+"""@EN; 
+                    rdfs:subClassOf ddhub:DrillingContractor. 
 ddhub:Advice a owl:Class; 
              rdfs:comment """An advisory value or range proposed by a system or expert, typically requiring confirmation.
 """@EN; 
@@ -206,6 +220,10 @@ ddhub:Aggregation a owl:Class;
                   rdfs:comment """Combines several input signals into a single representative value such as an average or sum.
 """@EN; 
                   rdfs:subClassOf ddhub:DirectTransformation. 
+ddhub:AIQ a owl:Class; 
+          rdfs:comment """An AI and analytics company associated with ADNOC digital workflows, relevant to AI-based drilling optimization and digital oilfield data.
+"""@EN; 
+          rdfs:subClassOf ddhub:DrillingAnalyticsAutomationCompany. 
 ddhub:AirGapInStringFeature a owl:Class; 
                             rdfs:comment """An air gap in string feature is a characteristic about a model that accounts for the possible air gap at the top of the liquid column in the string.
 """@EN; 
@@ -214,6 +232,14 @@ ddhub:AirType a owl:Class;
               rdfs:comment """A symbolic representation of air when encountered in a hydraulic system.
 """@EN; 
               rdfs:subClassOf ddhub:GasType. 
+ddhub:AkerBP a owl:Class; 
+             rdfs:comment """An operating company active in digitalized drilling operations, automation, drilling data, and vendor-integrated workflows.
+"""@EN; 
+             rdfs:subClassOf ddhub:OperatingCompany. 
+ddhub:AkerSolutions a owl:Class; 
+                    rdfs:comment """An engineering and equipment company relevant to drilling equipment and control-system lineage, including MHWirth legacy technologies now associated with HMH.
+"""@EN; 
+                    rdfs:subClassOf ddhub:RigEquipmentOEM. 
 ddhub:AlgebraicModel a owl:Class; 
                      rdfs:comment """A model that uses algebraic equations.
 """@EN; 
@@ -338,6 +364,10 @@ ddhub:AnnulusPressureLimit a owl:Class;
                            rdfs:comment """This Noun is used to refer to an annulus pressure limit.
 """@EN; 
                            rdfs:subClassOf ddhub:PressureLimit. 
+ddhub:APSTechnology a owl:Class; 
+                    rdfs:comment """A downhole technology company active in MWD/LWD technology, drilling dynamics, and downhole data.
+"""@EN; 
+                    rdfs:subClassOf ddhub:DownholeMeasurementDynamicsCompany. 
 ddhub:ArcMinute a owl:Class; 
                 rdfs:comment """[v] = a * [SI]
 where
@@ -373,6 +403,10 @@ $$[L^{2}]$$.
 The SI unit for **area** is: square metre with the associated unit label $m^{2}$
 """@EN; 
                    rdfs:subClassOf ddhub:Quantity. 
+ddhub:AspenTech a owl:Class; 
+                rdfs:comment """An industrial software company active in industrial analytics and operational data platforms relevant to drilling and upstream operational data.
+"""@EN; 
+                rdfs:subClassOf ddhub:CloudEnergyDataPlatformProvider. 
 ddhub:AssociatesMeasurableQuantity a owl:ObjectProperty; 
                                    rdfs:comment """This `Verb` is typically used when defining a `UnitSystem`. It allows to associate a
 `MeasurableQuantityUnitAssociation` with a `MeasurableQuantity`.
@@ -417,11 +451,39 @@ and
 Atto = 1e-18
 """@EN; 
                rdfs:subClassOf ddhub:Unit. 
+ddhub:AutoDrillerDifferentialPressureGainsTuningParameter a owl:Class; 
+                                                          rdfs:comment """An `AutoDrillerDifferentialPressureGainsTuningParameter` is a `PIDTuningParameter` used to tune the
+differential-pressure control loop of an auto-driller.
+"""@EN; 
+                                                          rdfs:subClassOf ddhub:PIDTuningParameter. 
+ddhub:AutoDrillerGainsTuningServiceFunction a owl:Class; 
+                                            rdfs:comment """An `AutoDrillerGainsTuningServiceFunction` is a `TuningServiceFunction` that applies gain tuning
+parameters to the auto-driller control loops.
+"""@EN; 
+                                            rdfs:subClassOf ddhub:TuningServiceFunction. 
+ddhub:AutoDrillerTorqueGainsTuningParameter a owl:Class; 
+                                            rdfs:comment """An `AutoDrillerTorqueGainsTuningParameter` is a `PIDTuningParameter` used to tune the torque control loop
+of an auto-driller.
+"""@EN; 
+                                            rdfs:subClassOf ddhub:PIDTuningParameter. 
+ddhub:AutoDrillerWOBGainsTuningParameter a owl:Class; 
+                                         rdfs:comment """An `AutoDrillerWOBGainsTuningParameter` is a `PIDTuningParameter` used to tune the weight-on-bit
+control loop of an auto-driller.
+"""@EN; 
+                                         rdfs:subClassOf ddhub:PIDTuningParameter. 
 ddhub:AverageDelayByRepeater a owl:DatatypeProperty, owl:FunctionalProperty; 
                              rdfs:comment """The average delay caused by each repeater. The physical quantity is Time and the unit is second.
 """@EN; 
                              rdfs:domain ddhub:Telemetry; 
                              rdfs:range xsd:double. 
+ddhub:AVEVA a owl:Class; 
+            rdfs:comment """An industrial software and operational data infrastructure company active in time-series historian, industrial information management, and operational data systems including OSIsoft PI technology.
+"""@EN; 
+            rdfs:subClassOf ddhub:CloudEnergyDataPlatformProvider. 
+ddhub:AWS a owl:Class; 
+          rdfs:comment """A cloud platform provider relevant to energy data lakes, edge/IoT, cloud analytics, AI/ML, and drilling data infrastructure.
+"""@EN; 
+          rdfs:subClassOf ddhub:CloudEnergyDataPlatformProvider. 
 ddhub:AxialFrictionCoefficient a owl:Class; 
                                rdfs:comment """Prototype signal for Axial Friction coefficient.
 """@EN; 
@@ -484,6 +546,10 @@ ddhub:BackwardWhirl a owl:Class;
                     rdfs:comment """This Noun is used to refer to backward whirl.
 """@EN; 
                     rdfs:subClassOf ddhub:Whirling. 
+ddhub:BakerHughes a owl:Class; 
+                  rdfs:comment """An integrated oilfield service company active in real-time drilling optimization, well planning, MWD/LWD, drilling engineering software, downhole data, and surface drilling-data workflows.
+"""@EN; 
+                  rdfs:subClassOf ddhub:IntegratedOilfieldServiceCompany. 
 ddhub:BallastSystem a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:MarineSystem. 
@@ -773,6 +839,10 @@ ddhub:Box a owl:Class;
 ddhub:Boxbox a owl:Class; 
              rdfs:comment ""@EN; 
              rdfs:subClassOf ddhub:TubularConfiguration. 
+ddhub:BP a owl:Class; 
+         rdfs:comment """An operating company active in real-time drilling decision support, digital wells, AI, and operational analytics.
+"""@EN; 
+         rdfs:subClassOf ddhub:OperatingCompany. 
 ddhub:BritishThermalUnit a owl:Class; 
                          rdfs:comment """[v] = a * [SI]
 where
@@ -1130,6 +1200,10 @@ ddhub:Candela a owl:Class;
               rdfs:comment """No conversion necessary as the unit choice is SI
 """@EN; 
               rdfs:subClassOf ddhub:Unit. 
+ddhub:Canrig a owl:Class; 
+             rdfs:comment """A rig equipment and automation company associated with Nabors, active in top drives, rig equipment, automation, and control-system data.
+"""@EN; 
+             rdfs:subClassOf ddhub:RigControlSystemProvider. 
 ddhub:CapillaryPressureDrillingQuantity a owl:Class; 
                                         rdfs:comment """Pressure is the force applied per unit area on a surface.
 The dimension of pressure is:
@@ -1219,6 +1293,10 @@ ddhub:CasingTongs a owl:Class;
 ddhub:Casingwhiledrilling a owl:Class; 
                           rdfs:comment ""@EN; 
                           rdfs:subClassOf ddhub:DrillingEquipment. 
+ddhub:CathedralEnergyServices a owl:Class; 
+                              rdfs:comment """A directional drilling and MWD company active in drilling optimization data and wellbore placement workflows.
+"""@EN; 
+                              rdfs:subClassOf ddhub:DownholeMeasurementDynamicsCompany. 
 ddhub:CavingsComponent a owl:Class; 
                        rdfs:comment """Larger rock fragments (cavings) originating from unstable formations.
 """@EN; 
@@ -1687,6 +1765,10 @@ ddhub:ChaoticWhirl a owl:Class;
 ddhub:ChemicalTank a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:MudPits. 
+ddhub:Chevron a owl:Class; 
+              rdfs:comment """An operating company active in edge analytics, digital drilling, remote operations, and AI workflows.
+"""@EN; 
+              rdfs:subClassOf ddhub:OperatingCompany. 
 ddhub:ChokeLine a owl:Class; 
                 rdfs:comment ""@EN; 
                 rdfs:subClassOf ddhub:WellControlSystem. 
@@ -1738,6 +1820,10 @@ ddhub:Clock a owl:Class;
             rdfs:comment """Represents a clock
 """@EN; 
             rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:CloudEnergyDataPlatformProvider a owl:Class; 
+                                      rdfs:comment """A cloud or industrial data-platform provider that supports energy data lakes, edge/IoT, historians, contextualization, analytics, AI/ML, or operational data infrastructure used with drilling data.
+"""@EN; 
+                                      rdfs:subClassOf ddhub:DataProvider. 
 ddhub:Cluster a owl:Class; 
               rdfs:comment """Cluster is used to describe a group of slots. Sometime, it is referred as a pad.
 """@EN; 
@@ -1746,6 +1832,10 @@ ddhub:ClusterPositionLocation a owl:Class;
                               rdfs:comment """Reference location for ClusterPositionLocation.
 """@EN; 
                               rdfs:subClassOf ddhub:PositionReferenceLocation. 
+ddhub:Cognite a owl:Class; 
+              rdfs:comment """An industrial data platform company active in data contextualization and integration of drilling, rig, and operational data into broader industrial data platforms.
+"""@EN; 
+              rdfs:subClassOf ddhub:CloudEnergyDataPlatformProvider. 
 ddhub:CoiledTubingEquipment a owl:Class; 
                             rdfs:comment ""@EN; 
                             rdfs:subClassOf ddhub:Equipment. 
@@ -1836,6 +1926,10 @@ ddhub:Connection a owl:Class;
 ddhub:ConnectionWelded a owl:Class; 
                        rdfs:comment ""@EN; 
                        rdfs:subClassOf ddhub:Connection. 
+ddhub:ConocoPhillips a owl:Class; 
+                     rdfs:comment """An operating company active in unconventional drilling optimization and real-time operations.
+"""@EN; 
+                     rdfs:subClassOf ddhub:OperatingCompany. 
 ddhub:ConsistencyIndexRheologyQuantity a owl:Class; 
                                        rdfs:comment """Dynamic viscosity is a measure of a fluid's resistance to shear or flow when a force is applied. It quantifies how thick or thin the fluid is.
 The dimension of dynamic viscosity is:
@@ -1898,6 +1992,11 @@ ddhub:ControlsMeasurementPrinciple a owl:ObjectProperty;
                                    rdfs:domain ddhub:DrillingDataPoint; 
                                    rdfs:range ddhub:FlowMeasurementPrinciple; 
                                    rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:ControlStrategy a owl:Class; 
+                      rdfs:comment """A `ControlStrategy` is a named control approach or algorithmic principle used by a controller function
+to achieve its control objectives.
+"""@EN; 
+                      rdfs:subClassOf ddhub:DWISNoun. 
 ddhub:ControlSystem a owl:Class; 
                     rdfs:comment """A collection of controllers, logic, and I/O that supervises a portion of the drilling process.
 """@EN; 
@@ -1935,6 +2034,14 @@ in a DrillingDataPoint during interpretation or computation.
                rdfs:domain ddhub:CorrectionFactor; 
                rdfs:range ddhub:DrillingDataPoint; 
                rdfs:subPropertyOf ddhub:Adjusts. 
+ddhub:Corva a owl:Class; 
+            rdfs:comment """A cloud drilling analytics platform company active in real-time drilling applications, drilling optimization, and operational analytics.
+"""@EN; 
+            rdfs:subClassOf ddhub:DrillingAnalyticsAutomationCompany. 
+ddhub:COSL a owl:Class; 
+           rdfs:comment """An offshore drilling contractor active in offshore rig data and operational data workflows.
+"""@EN; 
+           rdfs:subClassOf ddhub:DrillingContractor. 
 ddhub:CoulombPerSecond a owl:Class; 
                        rdfs:comment """[v] = a * [SI]
 where
@@ -3345,6 +3452,11 @@ ddhub:DifferentialPressureMeasurementPrinciple a owl:Class;
                                                rdfs:comment """Describes that a differential pressure measurement principle is used to perform a measurement.
 """@EN; 
                                                rdfs:subClassOf ddhub:FlowMeasurementPrinciple. 
+ddhub:DifferentialPressureTareServiceFunction a owl:Class; 
+                                              rdfs:comment """A `DifferentialPressureTareServiceFunction` is a `TareServiceFunction` that applies a correction factor
+to differential pressure.
+"""@EN; 
+                                              rdfs:subClassOf ddhub:TareServiceFunction. 
 ddhub:DifferentialStickingLocation a owl:Class; 
                                    rdfs:comment """Reference location for DifferentialStickingLocation.
 """@EN; 
@@ -3484,6 +3596,10 @@ ddhub:DownholeHydraulicNetwork a owl:Class;
                                rdfs:comment """Hydraulic network representing downhole flow paths.
 """@EN; 
                                rdfs:subClassOf ddhub:HydraulicNetwork. 
+ddhub:DownholeMeasurementDynamicsCompany a owl:Class; 
+                                         rdfs:comment """A company that generates or interprets downhole drilling data such as MWD/LWD, survey, pressure, vibration, drilling dynamics, BHA behavior, stick-slip, torque/drag, and drilling dysfunction measurements.
+"""@EN; 
+                                         rdfs:subClassOf ddhub:InstrumentationCompany. 
 ddhub:DownholeMotor a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:DrillingEquipment. 
@@ -3522,6 +3638,10 @@ the rotary steerable system.
 ddhub:Drawworks a owl:Class; 
                 rdfs:comment ""@EN; 
                 rdfs:subClassOf ddhub:HoistingSystem. 
+ddhub:Drill2Frac a owl:Class; 
+                 rdfs:comment """A drilling analytics company active in drilling-data-derived dysfunction detection and completion or fracture-treatment optimization.
+"""@EN; 
+                 rdfs:subClassOf ddhub:DrillingAnalyticsAutomationCompany. 
 ddhub:DrillCollars a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:DrillString. 
@@ -3540,6 +3660,14 @@ ddhub:DrillFloorSubstructure a owl:Class;
 ddhub:DrillFloorSystems a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:RigEquipment. 
+ddhub:Drillform a owl:Class; 
+                rdfs:comment """A provider of automated drilling tools and pipe-handling equipment, relevant to rig automation and equipment-generated data.
+"""@EN; 
+                rdfs:subClassOf ddhub:RigEquipmentOEM. 
+ddhub:DrillingAnalyticsAutomationCompany a owl:Class; 
+                                         rdfs:comment """A company that provides drilling analytics, AI, automation, advisory, dysfunction detection, ROP optimization, risk prediction, or real-time decision-support services.
+"""@EN; 
+                                         rdfs:subClassOf ddhub:DataAnalysisServiceCompany. 
 ddhub:DrillingBit a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:DrillstemTerminator. 
@@ -3552,6 +3680,10 @@ ddhub:DrillingControlAdvice a owl:Class;
 as possible to one or several desired values.
 """@EN; 
                             rdfs:subClassOf ddhub:AdvisorySystemAdvice. 
+ddhub:DrillingDataEcosystemOrganization a owl:Class; 
+                                        rdfs:comment """An organization that generates, owns, processes, transmits, standardizes, analyzes, visualizes, or consumes drilling and well-construction data.
+"""@EN; 
+                                        rdfs:subClassOf ddhub:DataProvider. 
 ddhub:DrillingDataPoint a owl:Class; 
                         rdfs:comment """Main type of DDHub data. Represents a drilling signal. Can be a dynamic signal (linked to a ValueNode) or a static parameter.
 """@EN; 
@@ -3615,6 +3747,10 @@ ddhub:DrillingIncident a owl:Class;
 by the drilling process.
 """@EN; 
                        rdfs:subClassOf ddhub:DWISNoun. 
+ddhub:DrillingIndustryOrganization a owl:Class; 
+                                   rdfs:comment """An industry association, technical community, or standards group focused on drilling contractors, drilling automation, well construction, interoperability, reporting, or operational practices.
+"""@EN; 
+                                   rdfs:subClassOf ddhub:EnergyDataStandardsOrganization. 
 ddhub:DrillingLimit a owl:Class; 
                     rdfs:comment """This is the parent class for drilling limits. A limit applies typically on a desired value as controlled by a controller.
 """@EN; 
@@ -3667,6 +3803,10 @@ ddhub:DrillLine a owl:Class;
 ddhub:DrillLineFastener a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:HoistingSystem. 
+ddhub:Drillmec a owl:Class; 
+               rdfs:comment """A rig equipment and drilling automation provider active in equipment data and drilling control workflows.
+"""@EN; 
+               rdfs:subClassOf ddhub:RigEquipmentOEM. 
 ddhub:DrillPipe a owl:Class; 
                 rdfs:comment ""@EN; 
                 rdfs:subClassOf ddhub:DrillString. 
@@ -3796,12 +3936,23 @@ ddhub:DrillStringMechanicalLogicalElement a owl:Class;
                                           rdfs:comment """Abstract mechanical representation of a drill-string, i.e., a drill-stem that is used during a drilling operation.
 """@EN; 
                                           rdfs:subClassOf ddhub:DrillStemMechanicalLogicalElement. 
+ddhub:DrillStringTorsionalResonanceFilteringControlStrategy a owl:Class; 
+                                                            rdfs:comment """A `DrillStringTorsionalResonanceFilteringControlStrategy` is a control strategy that filters or shapes
+surface rotation control action around the drill-string natural torsional resonance frequency to damp torsional
+oscillations and reduce stick-slip.
+"""@EN; 
+                                                            rdfs:subClassOf ddhub:ControlStrategy. 
 ddhub:DrillWater a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:DrillingFluid. 
 ddhub:DualActing a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:Action. 
+ddhub:Duration a owl:DatatypeProperty, owl:FunctionalProperty; 
+               rdfs:comment """The length of the time window in seconds.
+"""@EN; 
+               rdfs:domain ddhub:TimeWindow; 
+               rdfs:range xsd:double. 
 ddhub:DurationDrillingQuantity a owl:Class; 
                                rdfs:comment """Time is a continuous, measurable progression in which events occur, from the past through the present to the future.
 The dimension of time is:
@@ -3821,6 +3972,10 @@ DVGWCandle = 1.162 * Hefnerkerze reference: https://fr.wikipedia.org/wiki/Bougie
 Hefnerkerze = 0.92 reference: https://en.wikipedia.org/wiki/Hefner_lamp
 """@EN; 
                  rdfs:subClassOf ddhub:Unit. 
+ddhub:DWIS a owl:Class; 
+           rdfs:comment """A drilling and wells interoperability initiative focused on semantic data models and digital interoperability for drilling and well construction.
+"""@EN; 
+           rdfs:subClassOf ddhub:DrillingIndustryOrganization. 
 ddhub:DWISADCSCapabilityDescriptor a owl:Class; 
                                    rdfs:comment """The DWIS ADCS Capability descriptor describes the actual capabilities of the true ADCS.
 """@EN; 
@@ -3834,8 +3989,8 @@ ddhub:DWISAdviceComposer a owl:Class;
 """@EN; 
                          rdfs:subClassOf ddhub:DWISInternalService. 
 ddhub:DWISAttributeCardinalityRestriction a owl:Class, owl:Restriction; 
-                                          owl:onClass ddhub:RunnableFunction, ddhub:Advisor, ddhub:BandPassFilter, ddhub:HighPassFilter, ddhub:LowPassFilter, ddhub:NumberOfSampleMovingAverage, ddhub:TimeWindowMovingAverage, ddhub:Buffering, ddhub:NumberOfItemsRangeExtraction, ddhub:TimeWindowRangeExtraction, ddhub:Resampling, ddhub:DataProvider, ddhub:Telemetry, ddhub:DrillingDataPoint, ddhub:DrillingSignal, ddhub:DynamicDrillingSignal, ddhub:DataEndPoint, ddhub:WitsMLTimeBasedLogEndPoint, ddhub:EndPointMapping, ddhub:HydraulicConnectedState, ddhub:HydraulicJunction, ddhub:MeasurableQuantity, ddhub:MechanicalElementState, ddhub:OneDimensionalReferenceFrame, ddhub:Quantity, ddhub:Unit, ddhub:Clock, ddhub:SynchronizationGroup, ddhub:FullScaleUncertainty, ddhub:SensorUncertainty; 
-                                          owl:onProperty ddhub:IsAuxiliary, ddhub:AdviceType, ddhub:MinFrequency, ddhub:MaxFrequency, ddhub:CutOffFrequency, ddhub:NumberOfSamples, ddhub:TimeWindow, ddhub:BufferingInterval, ddhub:NumberOfItems, ddhub:ResamplingRate, ddhub:ResamplingDelay, ddhub:Validity, ddhub:ProviderName, ddhub:NumberOfRepeaters, ddhub:DistanceBetweenRepeaters, ddhub:AverageDelayByRepeater, ddhub:IsValid, ddhub:Value, ddhub:TimeStampAtSource, ddhub:TimeStampAcquisition, ddhub:EndPointDescription, ddhub:WellUID, ddhub:WellName, ddhub:WellboreUID, ddhub:WellboreName, ddhub:LogUID, ddhub:LogName, ddhub:Mnemonic, ddhub:FixedIndices, ddhub:ValuesIndices, ddhub:MeasurementIndex, ddhub:LeftToRight, ddhub:RightToLeft, ddhub:MeaningfulPrecision, ddhub:PostiveUpward, ddhub:L, ddhub:M, ddhub:T, ddhub:I, ddhub:ThT, ddhub:N, ddhub:J, ddhub:Theta, ddhub:Omega, ddhub:SIUnit, ddhub:Symbol, ddhub:ConversionFactorA, ddhub:ConversionFactorB, ddhub:LeapSeconds, ddhub:Stratum, ddhub:NetworkSynchronizationLatencyAverage, ddhub:NetworkSynchronizationLatencyStandardDeviation, ddhub:Resolution, ddhub:MaximumFluctuations, ddhub:SynchronizationDelay, ddhub:SamplingRate, ddhub:FullScale, ddhub:ProportionError, ddhub:Accuracy, ddhub:Precision; 
+                                          owl:onClass ddhub:RunnableFunction, ddhub:Advisor, ddhub:BandPassFilter, ddhub:HighPassFilter, ddhub:LowPassFilter, ddhub:NumberOfSampleMovingAverage, ddhub:TimeWindowMovingAverage, ddhub:Buffering, ddhub:NumberOfItemsRangeExtraction, ddhub:TimeWindowRangeExtraction, ddhub:Resampling, ddhub:DataProvider, ddhub:Telemetry, ddhub:DrillingDataPoint, ddhub:DrillingSignal, ddhub:DynamicDrillingSignal, ddhub:DataEndPoint, ddhub:WitsMLTimeBasedLogEndPoint, ddhub:EndPointMapping, ddhub:HydraulicConnectedState, ddhub:HydraulicJunction, ddhub:MeasurableQuantity, ddhub:MechanicalElementState, ddhub:OneDimensionalReferenceFrame, ddhub:Quantity, ddhub:Unit, ddhub:Clock, ddhub:SynchronizationGroup, ddhub:TimeWindow, ddhub:FullScaleUncertainty, ddhub:SensorUncertainty; 
+                                          owl:onProperty ddhub:IsAuxiliary, ddhub:AdviceType, ddhub:MinFrequency, ddhub:MaxFrequency, ddhub:CutOffFrequency, ddhub:NumberOfSamples, ddhub:TimeWindow, ddhub:BufferingInterval, ddhub:NumberOfItems, ddhub:ResamplingRate, ddhub:ResamplingDelay, ddhub:Validity, ddhub:ProviderName, ddhub:NumberOfRepeaters, ddhub:DistanceBetweenRepeaters, ddhub:AverageDelayByRepeater, ddhub:IsValid, ddhub:Value, ddhub:TimeStampAtSource, ddhub:TimeStampAcquisition, ddhub:EndPointDescription, ddhub:WellUID, ddhub:WellName, ddhub:WellboreUID, ddhub:WellboreName, ddhub:LogUID, ddhub:LogName, ddhub:Mnemonic, ddhub:FixedIndices, ddhub:ValuesIndices, ddhub:MeasurementIndex, ddhub:LeftToRight, ddhub:RightToLeft, ddhub:MeaningfulPrecision, ddhub:PostiveUpward, ddhub:L, ddhub:M, ddhub:T, ddhub:I, ddhub:ThT, ddhub:N, ddhub:J, ddhub:Theta, ddhub:Omega, ddhub:SIUnit, ddhub:Symbol, ddhub:ConversionFactorA, ddhub:ConversionFactorB, ddhub:LeapSeconds, ddhub:Stratum, ddhub:NetworkSynchronizationLatencyAverage, ddhub:NetworkSynchronizationLatencyStandardDeviation, ddhub:Resolution, ddhub:MaximumFluctuations, ddhub:SynchronizationDelay, ddhub:SamplingRate, ddhub:Duration, ddhub:FullScale, ddhub:ProportionError, ddhub:Accuracy, ddhub:Precision; 
                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger. 
 ddhub:DWISBlackboard a owl:Class; 
                      rdfs:comment """The DWIS blackboard is a shared data structure that allows different DWIS components to share information and coordinate their activities.
@@ -4063,6 +4218,10 @@ It is dimensionless.
 The SI unit for **elongation gradient per length** is: metre per metre with the associated unit label $\\frac{m}{m}$
 """@EN; 
                                           rdfs:subClassOf ddhub:Quantity. 
+ddhub:Emerson a owl:Class; 
+              rdfs:comment """An industrial automation company active in control systems, historians, instrumentation, and operational data infrastructure relevant to drilling and rig data.
+"""@EN; 
+              rdfs:subClassOf ddhub:CloudEnergyDataPlatformProvider. 
 ddhub:EmpiricalModel a owl:Class; 
                      rdfs:comment """A model that heavily rely on data without using explicitly physical laws.
 """@EN; 
@@ -4090,6 +4249,14 @@ ddhub:EndsHydraulicBranchDecomposition a owl:ObjectProperty;
                                        rdfs:domain ddhub:HydraulicBranch; 
                                        rdfs:range ddhub:HydraulicBranch; 
                                        rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:Energistics a owl:Class; 
+                  rdfs:comment """An energy data standards organization associated with WITSML, PRODML, and RESQML standards.
+"""@EN; 
+                  rdfs:subClassOf ddhub:EnergyDataStandardsOrganization. 
+ddhub:EnergyDataStandardsOrganization a owl:Class; 
+                                      rdfs:comment """An organization or consortium that defines standards, interoperability specifications, data models, or industry practices relevant to drilling and well data.
+"""@EN; 
+                                      rdfs:subClassOf ddhub:DrillingDataEcosystemOrganization. 
 ddhub:EnergyDensityDrillingQuantity a owl:Class; 
                                     rdfs:comment """Energy density is the amount of energy stored per unit volume or mass of a substance or system.
 The dimension of energy density is:
@@ -4112,6 +4279,14 @@ $$[L^{2}MT^{-2}]$$.
 The SI unit for **energy** is: joule with the associated unit label $J$
 """@EN; 
                      rdfs:subClassOf ddhub:Quantity. 
+ddhub:Eni a owl:Class; 
+          rdfs:comment """An operating company active in digital upstream, drilling optimization, and operational analytics.
+"""@EN; 
+          rdfs:subClassOf ddhub:OperatingCompany. 
+ddhub:EnteqTechnologies a owl:Class; 
+                        rdfs:comment """A downhole technology company active in MWD/LWD technology and downhole drilling data.
+"""@EN; 
+                        rdfs:subClassOf ddhub:DownholeMeasurementDynamicsCompany. 
 ddhub:EnumerationDataType a owl:Class; 
                           rdfs:comment """Indicates that the data is an enumeration.
 """@EN; 
@@ -4120,6 +4295,10 @@ ddhub:EQ a owl:Class;
          rdfs:comment """A condition that is true when its left and right inputs are equal.
 """@EN; 
          rdfs:subClassOf ddhub:ValidityCondition. 
+ddhub:Equinor a owl:Class; 
+              rdfs:comment """An operating company active in automated drilling, real-time operations, drilling data, and the Norwegian Continental Shelf digital drilling ecosystem.
+"""@EN; 
+              rdfs:subClassOf ddhub:OperatingCompany. 
 ddhub:Equipment a owl:Class; 
                 rdfs:comment ""@EN; 
                 rdfs:subClassOf ddhub:DWISNoun. 
@@ -4145,6 +4324,14 @@ and
 Exa = 1e18
 """@EN; 
               rdfs:subClassOf ddhub:Unit. 
+ddhub:Exebenus a owl:Class; 
+               rdfs:comment """A predictive drilling AI company active in stuck-pipe prediction, ROP optimization, vibration and dysfunction detection, and real-time drilling recommendations.
+"""@EN; 
+               rdfs:subClassOf ddhub:DrillingAnalyticsAutomationCompany. 
+ddhub:Exlog a owl:Class; 
+            rdfs:comment """A mud logging and wellsite geology company active in wellsite drilling data, gas logging, lithology, and drilling parameters.
+"""@EN; 
+            rdfs:subClassOf ddhub:MudLoggingCompany. 
 ddhub:ExpandableReamers a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:Reamers. 
@@ -4159,6 +4346,10 @@ ddhub:Extrapolated a owl:Class;
 positions that have not been measured/observed yet.
 """@EN; 
                    rdfs:subClassOf ddhub:WellBoreDataCharateristic. 
+ddhub:ExxonMobil a owl:Class; 
+                 rdfs:comment """An operating company active in automated well placement, closed-loop drilling, real-time optimization, and digital drilling workflows.
+"""@EN; 
+                 rdfs:subClassOf ddhub:OperatingCompany. 
 ddhub:Fahrenheit a owl:Class; 
                  rdfs:comment """[v] = a * [SI] + b
 where
@@ -5060,10 +5251,18 @@ ddhub:GenericUncertainty a owl:Class;
                          rdfs:comment """The uncertainty is represented by a `Histogram`.
 """@EN; 
                          rdfs:subClassOf ddhub:SignalUncertainty. 
+ddhub:GeoDataLogging a owl:Class; 
+                     rdfs:comment """A surface data acquisition and drilling monitoring company active in rig data acquisition and WITS, WITSML, OPC, and Modbus integration.
+"""@EN; 
+                     rdfs:subClassOf ddhub:MudLoggingCompany. 
 ddhub:GeodeticDatum a owl:Class; 
                     rdfs:comment """GeodeticDatum is used to describe a geodetic datum with reference to WGS84. It describes both the size of the spheroid and its translation, rotation and scaling compared to WGS84.
 """@EN; 
                     rdfs:subClassOf ddhub:ContextualData. 
+ddhub:Geolog a owl:Class; 
+             rdfs:comment """A mud logging and surface logging company active in GeoWITSML, wellsite data aggregation, geology data, and drilling operational data.
+"""@EN; 
+             rdfs:subClassOf ddhub:MudLoggingCompany. 
 ddhub:GeoPressuresDescription a owl:Class; 
                               rdfs:comment """The geo-pressure data structure describes the pore pressure, collapse pressure, min horizontal stress, fracturing pressure
 along the wellbore.
@@ -5324,6 +5523,10 @@ and
 Grad = 200.0 / System.Math.PI
 """@EN; 
           rdfs:subClassOf ddhub:Unit. 
+ddhub:GoogleCloud a owl:Class; 
+                  rdfs:comment """A cloud platform provider relevant to cloud analytics, AI/ML, data platforms, and energy data workflows.
+"""@EN; 
+                  rdfs:subClassOf ddhub:CloudEnergyDataPlatformProvider. 
 ddhub:Gooseneck a owl:Class; 
                 rdfs:comment ""@EN; 
                 rdfs:subClassOf ddhub:MudLines. 
@@ -5525,6 +5728,14 @@ ddhub:GT a owl:Class;
          rdfs:comment """A condition that is true when the left input is greater than the right input.
 """@EN; 
          rdfs:subClassOf ddhub:ValidityCondition. 
+ddhub:Gyrodata a owl:Class; 
+               rdfs:comment """A gyro survey and wellbore positioning company active in survey data and wellbore placement data.
+"""@EN; 
+               rdfs:subClassOf ddhub:DownholeMeasurementDynamicsCompany. 
+ddhub:Halliburton a owl:Class; 
+                  rdfs:comment """An integrated oilfield service company active in drilling data, Landmark/iEnergy, DecisionSpace, LOGIX automation, Sperry Drilling, MWD/LWD, drilling optimization, and real-time operations.
+"""@EN; 
+                  rdfs:subClassOf ddhub:IntegratedOilfieldServiceCompany. 
 ddhub:HammerAssembly a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:DrillingEquipment. 
@@ -5542,6 +5753,10 @@ Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
 ddhub:Hangers a owl:Class; 
               rdfs:comment ""@EN; 
               rdfs:subClassOf ddhub:CasingEquipment. 
+ddhub:HarbourEnergy a owl:Class; 
+                    rdfs:comment """An operating company active in operator-side drilling and well data workflows and performance workflows.
+"""@EN; 
+                    rdfs:subClassOf ddhub:OperatingCompany. 
 ddhub:HasAcquisitionClock a owl:ObjectProperty; 
                           rdfs:comment """Indicates which clock timestamped the acquisition of a signal.
 """@EN; 
@@ -5837,6 +6052,12 @@ ddhub:HasTimeReference a owl:ObjectProperty;
                        rdfs:domain ddhub:DrillingDataPoint; 
                        rdfs:range ddhub:TimeReference; 
                        rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:HasTimeWindow a owl:ObjectProperty; 
+                    rdfs:comment """Associates a transformation with the time duration over which its input samples are evaluated.
+"""@EN; 
+                    rdfs:domain ddhub:Transformation; 
+                    rdfs:range ddhub:TimeWindow; 
+                    rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:HasTransmissionDelay a owl:ObjectProperty; 
                            rdfs:comment """Indicates the transmission delay associated with a data point.
 """@EN; 
@@ -6030,6 +6251,10 @@ The SI unit for **length** is: metre with the associated unit label $m$
 The meaningful precision of height in the drilling context is typically: 0.001 m
 """@EN; 
                              rdfs:subClassOf ddhub:MeasurableQuantity. 
+ddhub:HelmerichPayne a owl:Class; 
+                     rdfs:comment """A drilling contractor active in FlexRig, rig automation, performance optimization, well planning, and digital drilling workflows.
+"""@EN; 
+                     rdfs:subClassOf ddhub:DrillingContractor. 
 ddhub:Hertz a owl:Class; 
             rdfs:comment """No conversion necessary as the unit choice is SI
 """@EN; 
@@ -6107,6 +6332,10 @@ ddhub:HighPassFilter a owl:Class;
 ddhub:HighPressureRiser a owl:Class; 
                         rdfs:comment ""@EN; 
                         rdfs:subClassOf ddhub:SurfaceRiser. 
+ddhub:HMH a owl:Class; 
+          rdfs:comment """A rig equipment, control-system, and drilling automation company active in DEAL, CADS, drillersAssist, DrillView, DrillPerform, digital services, and equipment-generated drilling data.
+"""@EN; 
+          rdfs:subClassOf ddhub:RigControlSystemProvider. 
 ddhub:HoistingControlSystem a owl:Class; 
                             rdfs:comment """A control system focused on hoisting equipment such as the drawworks and blocks.
 """@EN; 
@@ -6138,6 +6367,10 @@ ddhub:HoleOpeningFeature a owl:Class;
                          rdfs:comment """An hole opening feature indicates that something accounts for opening the borehole diameter.
 """@EN; 
                          rdfs:subClassOf ddhub:OnBottomDrillingFeature. 
+ddhub:Honeywell a owl:Class; 
+                rdfs:comment """An industrial automation and control company active in control systems, historians, and operational data infrastructure relevant to drilling and rig operations.
+"""@EN; 
+                rdfs:subClassOf ddhub:CloudEnergyDataPlatformProvider. 
 ddhub:Hook a owl:Class; 
            rdfs:comment ""@EN; 
            rdfs:subClassOf ddhub:HoistingSystem. 
@@ -6180,6 +6413,10 @@ Hour = 60.0 * Minute
 Minute = 60.0
 """@EN; 
            rdfs:subClassOf ddhub:Unit. 
+ddhub:Huisman a owl:Class; 
+              rdfs:comment """A rig equipment and automated drilling systems provider active in equipment data and rig automation.
+"""@EN; 
+              rdfs:subClassOf ddhub:RigEquipmentOEM. 
 ddhub:HundredWeights a owl:Class; 
                      rdfs:comment """[v] = a * [SI]
 where
@@ -6277,6 +6514,10 @@ SI Unit: Ampere (A)
 """@EN; 
         rdfs:domain ddhub:Quantity; 
         rdfs:range xsd:double. 
+ddhub:IADC a owl:Class; 
+           rdfs:comment """A drilling contractor industry organization relevant to drilling contractor standards, reporting, and operational frameworks.
+"""@EN; 
+           rdfs:subClassOf ddhub:DrillingIndustryOrganization. 
 ddhub:Ibop a owl:Class; 
            rdfs:comment ""@EN; 
            rdfs:subClassOf ddhub:WellControlSystem. 
@@ -6298,6 +6539,18 @@ The SI unit for **image scale** is: dot per metre with the associated unit label
 ddhub:ImagingTools a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:LoggingWhileDrillingTools. 
+ddhub:ImpedanceMatchingController a owl:Class; 
+                                  rdfs:comment """An `ImpedanceMatchingController` is a controller function that mitigates drill-string torsional
+oscillations by adapting the dynamic interaction between the surface rotation drive and the drill string.
+"""@EN; 
+                                  rdfs:subClassOf ddhub:ControllerFunction. 
+ddhub:ImplementsControlStrategy a owl:ObjectProperty; 
+                                rdfs:comment """This verb indicates that a controller function uses a named control strategy to implement one or more of
+its control objectives.
+"""@EN; 
+                                rdfs:domain ddhub:ControllerFunction; 
+                                rdfs:range ddhub:ControlStrategy; 
+                                rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:ImplementsLimit a owl:ObjectProperty; 
                       rdfs:comment """This Verb is used to indicate that a safe operating envelope function implements a drilling limit.
 """@EN; 
@@ -6734,6 +6987,10 @@ ddhub:Inclination a owl:Class;
                   rdfs:comment """Prototype signal for Inclination.
 """@EN; 
                   rdfs:subClassOf ddhub:PrototypeData. 
+ddhub:IndependentDataServices a owl:Class; 
+                              rdfs:comment """A drilling-data and reporting company active in DataNet, daily drilling reports, WITSML workflows, automated reporting, and operations data capture.
+"""@EN; 
+                              rdfs:subClassOf ddhub:RealTimeDrillingDataInfrastructureCompany. 
 ddhub:InductionCouplingDownholeTelemetry a owl:Class; 
                                          rdfs:comment """A method that allows transfer of downhole data to the surface via induction coupling between pipes along the drill-string.
 """@EN; 
@@ -6768,6 +7025,10 @@ ddhub:IntegralModel a owl:Class;
                     rdfs:comment """A model that uses integral equations.
 """@EN; 
                     rdfs:subClassOf ddhub:MathematicalFormulation. 
+ddhub:IntegratedOilfieldServiceCompany a owl:Class; 
+                                       rdfs:comment """A broad oilfield service company that may provide drilling services, directional drilling, MWD/LWD, real-time operations, drilling optimization, drilling automation, software, and data infrastructure.
+"""@EN; 
+                                       rdfs:subClassOf ddhub:ServiceCompany. 
 ddhub:Integration a owl:Class; 
                   rdfs:comment """Integrates a time series over time.
 """@EN; 
@@ -6876,6 +7137,12 @@ not. It is expected that the `DrillingDataPoint` is a Boolean value.
                            rdfs:domain ddhub:DrillingDataPoint; 
                            rdfs:range ddhub:ActivableFunction; 
                            rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsActivationStateFor a owl:ObjectProperty; 
+                           rdfs:comment """Identifies an enumerated signal that reports the actual activation state of a system or function.
+"""@EN; 
+                           rdfs:domain ddhub:DrillingDataPoint; 
+                           rdfs:range ddhub:DWISNoun; 
+                           rdfs:subPropertyOf ddhub:HasFunction. 
 ddhub:IsAHydraulicRepresentationFor a owl:ObjectProperty; 
                                     rdfs:comment """Links a hydraulic element to the piece of equipment it represents.
 """@EN; 
@@ -6979,6 +7246,12 @@ ddhub:IsCommandFor a owl:ObjectProperty;
                    rdfs:domain ddhub:DrillingDataPoint; 
                    rdfs:range ddhub:DWISNoun; 
                    rdfs:subPropertyOf ddhub:HasFunction. 
+ddhub:IsCompensationMethodFor a owl:ObjectProperty; 
+                              rdfs:comment """Identifies an enumerated signal that states which mechanism or method is used by a compensation system.
+"""@EN; 
+                              rdfs:domain ddhub:DrillingDataPoint; 
+                              rdfs:range ddhub:DWISNoun; 
+                              rdfs:subPropertyOf ddhub:HasFunction. 
 ddhub:IsComponentAlongAxis a owl:ObjectProperty; 
                            rdfs:comment """Stipulate that a drilling data point is a component along an axis.
 """@EN; 
@@ -7480,6 +7753,12 @@ ddhub:IsSynchronizationGroupOutput a owl:ObjectProperty;
                                    rdfs:domain ddhub:DrillingDataPoint; 
                                    rdfs:range ddhub:SynchronizationGroup; 
                                    rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsTargetActivationStateFor a owl:ObjectProperty; 
+                                 rdfs:comment """Identifies an enumerated signal that reports the intended, requested, or target activation state of a system or function.
+"""@EN; 
+                                 rdfs:domain ddhub:DrillingDataPoint; 
+                                 rdfs:range ddhub:DWISNoun; 
+                                 rdfs:subPropertyOf ddhub:IsActivationStateFor. 
 ddhub:IsToBeComparedWith a owl:ObjectProperty; 
                          rdfs:comment """States that two data points should be compared for validation or control.
 """@EN; 
@@ -7564,6 +7843,27 @@ ddhub:IsTransmittedBy a owl:ObjectProperty;
                       rdfs:domain ddhub:DrillingDataPoint; 
                       rdfs:range ddhub:Telemetry; 
                       rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsTuningParameterFor a owl:ObjectProperty; 
+                           rdfs:comment """This verb indicates that a tuning parameter is intended to tune an ADCS function or one of its control
+loops.
+"""@EN; 
+                           rdfs:domain ddhub:PIDTuningParameter; 
+                           rdfs:range ddhub:ADCSFunction; 
+                           rdfs:subPropertyOf ddhub:DWISVerb. 
+ddhub:IsTuningRequestFor a owl:ObjectProperty; 
+                         rdfs:comment """This verb indicates that a command or recommendation signal carries a request to apply a tuning
+parameter.
+"""@EN; 
+                         rdfs:domain ddhub:DrillingDataPoint; 
+                         rdfs:range ddhub:PIDTuningParameter; 
+                         rdfs:subPropertyOf ddhub:IsCommandFor. 
+ddhub:IsTuningServiceFor a owl:ObjectProperty; 
+                         rdfs:comment """This verb indicates that a tuning service applies tuning parameters to an ADCS function or to one of its
+control loops.
+"""@EN; 
+                         rdfs:domain ddhub:TuningServiceFunction; 
+                         rdfs:range ddhub:ADCSFunction; 
+                         rdfs:subPropertyOf ddhub:DWISVerb. 
 ddhub:IsUnitForQuantity a owl:ObjectProperty; 
                         rdfs:comment """This `verb` is used to relate a `Unit` with a `Quantity`.
 """@EN; 
@@ -7755,6 +8055,10 @@ ddhub:JSonDataType a owl:Class;
 ddhub:JunkBasket a owl:Class; 
                  rdfs:comment ""@EN; 
                  rdfs:subClassOf ddhub:FishingTools. 
+ddhub:KCADeutag a owl:Class; 
+                rdfs:comment """A land and offshore drilling contractor active in digital rig performance and monitoring.
+"""@EN; 
+                rdfs:subClassOf ddhub:DrillingContractor. 
 ddhub:Kelly a owl:Class; 
             rdfs:comment ""@EN; 
             rdfs:subClassOf ddhub:RotaryTable. 
@@ -9273,6 +9577,10 @@ Hour = 60.0 * Minute
 Minute = 60.0
 """@EN; 
                     rdfs:subClassOf ddhub:Unit. 
+ddhub:KongsbergDigital a owl:Class; 
+                       rdfs:comment """A digital technology company active in SiteCom, real-time operations, drilling and well data aggregation, visualization, and remote collaboration workflows.
+"""@EN; 
+                       rdfs:subClassOf ddhub:RealTimeDrillingDataInfrastructureCompany. 
 ddhub:L a owl:DatatypeProperty, owl:FunctionalProperty; 
         rdfs:comment """Length exponent.
 SI Unit: metre (m)
@@ -9606,6 +9914,10 @@ SI Unit: Kilogram (kg)
 """@EN; 
         rdfs:domain ddhub:Quantity; 
         rdfs:range xsd:double. 
+ddhub:MaerskDrilling a owl:Class; 
+                     rdfs:comment """A legacy offshore drilling contractor organization relevant to offshore rig digitalization and performance data, now associated with Noble through merger history.
+"""@EN; 
+                     rdfs:subClassOf ddhub:DrillingContractor. 
 ddhub:MagneticFluxDensityQuantity a owl:Class; 
                                   rdfs:comment """Magnetic flux density is the measure of the strength of a magnetic field per unit area through which the magnetic flux passes. It indicates how concentrated the magnetic field is.
 The dimension of magnetic flux density is:
@@ -9850,6 +10162,10 @@ ddhub:MeanLowWaterVerticalLocation a owl:Class;
                                    rdfs:comment """Reference location for MeanLowWaterVerticalLocation.
 """@EN; 
                                    rdfs:subClassOf ddhub:VerticalReferenceLocation. 
+ddhub:MeanSeaLevelReferenceFrame a owl:Class; 
+                                 rdfs:comment """A vertical elevation reference frame whose origin is mean sea level and whose positive direction is upward.
+"""@EN; 
+                                 rdfs:subClassOf ddhub:VerticalElevationFrame. 
 ddhub:MeanSeaLevelVerticalLocation a owl:Class; 
                                    rdfs:comment """Reference location for MeanSeaLevelVerticalLocation.
 """@EN; 
@@ -10552,6 +10868,10 @@ and
 Micro = 1e-6
 """@EN; 
                   rdfs:subClassOf ddhub:Unit. 
+ddhub:MicrosoftAzure a owl:Class; 
+                     rdfs:comment """A cloud platform provider relevant to energy data workflows, Microsoft Energy Data Services, data lakes, edge/IoT, analytics, and AI/ML.
+"""@EN; 
+                     rdfs:subClassOf ddhub:CloudEnergyDataPlatformProvider. 
 ddhub:Microtesla a owl:Class; 
                  rdfs:comment """[v] = a * [SI]
 where
@@ -11548,6 +11868,10 @@ ddhub:MudLines a owl:Class;
 ddhub:MudLineSystem a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:MarineSystem. 
+ddhub:MudLoggingCompany a owl:Class; 
+                        rdfs:comment """A company that provides mud logging, surface logging, gas logging, wellsite geology, and structured wellsite drilling data.
+"""@EN; 
+                        rdfs:subClassOf ddhub:LoggingServiceCompany. 
 ddhub:MudLoggingEquipment a owl:Class; 
                           rdfs:comment ""@EN; 
                           rdfs:subClassOf ddhub:RigEquipment. 
@@ -11583,6 +11907,10 @@ SI Unit: Mole (N)
 """@EN; 
         rdfs:domain ddhub:Quantity; 
         rdfs:range xsd:double. 
+ddhub:Nabors a owl:Class; 
+             rdfs:comment """A drilling contractor and rig-data platform provider active in RigCLOUD, SmartROS, drilling automation, edge/cloud rig data, and performance analytics.
+"""@EN; 
+             rdfs:subClassOf ddhub:DrillingContractor. 
 ddhub:Nanoampere a owl:Class; 
                  rdfs:comment """[v] = a * [SI]
 where
@@ -11685,6 +12013,10 @@ and
 Nano = 1e-9
 """@EN; 
                rdfs:subClassOf ddhub:Unit. 
+ddhub:NationalRegionalMudLoggingCompany a owl:Class; 
+                                        rdfs:comment """A local or regional mud logging company that captures wellsite data, gas logs, lithology, and drilling parameters.
+"""@EN; 
+                                        rdfs:subClassOf ddhub:MudLoggingCompany. 
 ddhub:NearBit a owl:Class; 
               rdfs:comment ""@EN; 
               rdfs:subClassOf ddhub:Stabilizers. 
@@ -12319,6 +12651,10 @@ and
 Milli = 0.001
 """@EN; 
                                          rdfs:subClassOf ddhub:Unit. 
+ddhub:Noble a owl:Class; 
+            rdfs:comment """An offshore drilling contractor active in rig data, automation, performance systems, and offshore drilling workflows.
+"""@EN; 
+            rdfs:subClassOf ddhub:DrillingContractor. 
 ddhub:Nonmagnetic a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:Stabilizers. 
@@ -12349,6 +12685,10 @@ ddhub:NorthEastTVDFrame a owl:Class;
                         rdfs:comment """Reference location for NorthEastTVDFrame.
 """@EN; 
                         rdfs:subClassOf ddhub:CartesianThreeDimensionalReferenceFrame. 
+ddhub:NOV a owl:Class; 
+          rdfs:comment """A drilling equipment, automation, and data company active in NOVOS, Max drilling automation, rig equipment integration, IntelliServ wired drill pipe, and rig-control data workflows.
+"""@EN; 
+          rdfs:subClassOf ddhub:IntegratedOilfieldServiceCompany. 
 ddhub:NozzleDiameterDrillingQuantity a owl:Class; 
                                      rdfs:comment """Length is a measure of distance.
 The dimension of length is:
@@ -12392,6 +12732,10 @@ where
 a = 4.0/PI, i.e., 1.2732395447351628
 """@EN; 
              rdfs:subClassOf ddhub:Unit. 
+ddhub:OdfjellDrilling a owl:Class; 
+                      rdfs:comment """An offshore drilling contractor active in offshore drilling, digitalized operations, and performance monitoring.
+"""@EN; 
+                      rdfs:subClassOf ddhub:DrillingContractor. 
 ddhub:OhmMetre a owl:Class; 
                rdfs:comment """No conversion necessary as the unit choice is SI
 """@EN; 
@@ -12408,6 +12752,10 @@ SI Unit: steradian (sr)
 """@EN; 
             rdfs:domain ddhub:Quantity; 
             rdfs:range xsd:double. 
+ddhub:OMV a owl:Class; 
+          rdfs:comment """An operating company active in digital well operations and real-time drilling workflows.
+"""@EN; 
+          rdfs:subClassOf ddhub:OperatingCompany. 
 ddhub:OnBottomDrillingFeature a owl:Class; 
                               rdfs:comment """An on bottom drilling feature indicates that something accounts for on bottom drilling.
 """@EN; 
@@ -12432,10 +12780,18 @@ ddhub:OnlyLimits a owl:Class;
                  rdfs:comment """This noun states that something works with only limits, for example excluding the relation to set-points, etc.
 """@EN; 
                  rdfs:subClassOf ddhub:DrillingLimit. 
+ddhub:OPCFoundation a owl:Class; 
+                    rdfs:comment """A standards organization responsible for OPC UA industrial interoperability, relevant for rig equipment, automation, and operational drilling data.
+"""@EN; 
+                    rdfs:subClassOf ddhub:EnergyDataStandardsOrganization. 
 ddhub:OpenChannel a owl:Class; 
                   rdfs:comment """A branch representing an open-channel flow path.
 """@EN; 
                   rdfs:subClassOf ddhub:HydraulicBranch. 
+ddhub:OpenGroup a owl:Class; 
+                rdfs:comment """A standards organization associated with open technology standards and the OSDU Forum for energy data platforms.
+"""@EN; 
+                rdfs:subClassOf ddhub:EnergyDataStandardsOrganization. 
 ddhub:OpenHole a owl:Class; 
                rdfs:comment """Flow path within the uncased borehole section.
 """@EN; 
@@ -12463,6 +12819,10 @@ ddhub:OrdinaryDifferentialEquationModel a owl:Class;
                                         rdfs:comment """A model that uses ordinary differential equations.
 """@EN; 
                                         rdfs:subClassOf ddhub:MathematicalFormulation. 
+ddhub:OSDUForum a owl:Class; 
+                rdfs:comment """An Open Group forum defining subsurface and energy data platform standards relevant to drilling and well data reuse.
+"""@EN; 
+                rdfs:subClassOf ddhub:EnergyDataStandardsOrganization. 
 ddhub:Ounce a owl:Class; 
             rdfs:comment """[v] = a * [SI]
 where
@@ -12553,12 +12913,28 @@ ddhub:PascalSecond a owl:Class;
                    rdfs:comment """No conversion necessary as the unit choice is SI
 """@EN; 
                    rdfs:subClassOf ddhub:Unit. 
+ddhub:Pason a owl:Class; 
+            rdfs:comment """A rigsite drilling-data acquisition company active in electronic drilling recorders, DataLink, DataHub, DataMart, WITSML delivery, and rigsite operational data.
+"""@EN; 
+            rdfs:subClassOf ddhub:RealTimeDrillingDataInfrastructureCompany. 
+ddhub:PattersonUTI a owl:Class; 
+                   rdfs:comment """A drilling contractor active in rig operations, directional drilling, and drilling performance data.
+"""@EN; 
+                   rdfs:subClassOf ddhub:DrillingContractor. 
 ddhub:Pdc a owl:Class; 
           rdfs:comment ""@EN; 
           rdfs:subClassOf ddhub:FixedCutter. 
 ddhub:PdcCore a owl:Class; 
               rdfs:comment ""@EN; 
               rdfs:subClassOf ddhub:FixedCutter. 
+ddhub:PeakToPeak a owl:Class; 
+                 rdfs:comment """Computes the difference between the maximum and minimum values of an input signal over a specified window.
+"""@EN; 
+                 rdfs:subClassOf ddhub:Filter. 
+ddhub:Peloton a owl:Class; 
+              rdfs:comment """A well operations data-management software company active in WellView, SiteView, well lifecycle data, drilling reports, and operations reporting.
+"""@EN; 
+              rdfs:subClassOf ddhub:WellPlanningReportingSoftwareCompany. 
 ddhub:Percent a owl:Class; 
               rdfs:comment """[v] = a * [SI]
 where
@@ -12595,10 +12971,26 @@ and
 Peta = 1e15
 """@EN; 
                rdfs:subClassOf ddhub:Unit. 
+ddhub:Petrobras a owl:Class; 
+                rdfs:comment """An operating company active in offshore drilling data, pre-salt operations, digital drilling, and real-time support.
+"""@EN; 
+                rdfs:subClassOf ddhub:OperatingCompany. 
+ddhub:Petrolink a owl:Class; 
+                rdfs:comment """A real-time drilling-data infrastructure company active in WITSML, PetroVue, rig-to-office data transmission, data aggregation, and remote visualization.
+"""@EN; 
+                rdfs:subClassOf ddhub:RealTimeDrillingDataInfrastructureCompany. 
+ddhub:Petronas a owl:Class; 
+               rdfs:comment """An operating company active in real-time operations, drilling analytics, and digital oilfield workflows.
+"""@EN; 
+               rdfs:subClassOf ddhub:OperatingCompany. 
 ddhub:PhaseStep a owl:Class; 
                 rdfs:comment """A phase step is at the first level of a rig action plan.
 """@EN; 
                 rdfs:subClassOf ddhub:OperationalStep. 
+ddhub:PhoenixTechnologyServices a owl:Class; 
+                                rdfs:comment """A directional drilling and MWD company active in drilling performance data and wellbore placement data.
+"""@EN; 
+                                rdfs:subClassOf ddhub:DownholeMeasurementDynamicsCompany. 
 ddhub:PhysicalData a owl:Class; 
                    rdfs:comment """Represents a physical quantity measured or computed from the drilling system.
 """@EN; 
@@ -12685,6 +13077,11 @@ and
 Pico = 1e-12
 """@EN; 
                rdfs:subClassOf ddhub:Unit. 
+ddhub:PIDTuningParameter a owl:Class; 
+                         rdfs:comment """A `PIDTuningParameter` is a calibration parameter that contains proportional, integral, derivative, or
+time-constant values used to tune a controller.
+"""@EN; 
+                         rdfs:subClassOf ddhub:CalibrationParameter. 
 ddhub:Pin a owl:Class; 
           rdfs:comment ""@EN; 
           rdfs:subClassOf ddhub:Connection. 
@@ -12704,6 +13101,16 @@ ddhub:Pipe a owl:Class;
 ddhub:PipeRam a owl:Class; 
               rdfs:comment ""@EN; 
               rdfs:subClassOf ddhub:BopElement. 
+ddhub:PipeRockingController a owl:Class; 
+                            rdfs:comment """A `PipeRockingController` is a controller function that alternates top-of-string rotation over a limited
+angular interval to orient or maintain the toolface of a downhole motor.
+"""@EN; 
+                            rdfs:subClassOf ddhub:ControllerFunction. 
+ddhub:PipeRockingControlStrategy a owl:Class; 
+                                 rdfs:comment """A `PipeRockingControlStrategy` is a control strategy that alternates top-of-string rotation over a
+limited angular interval to orient or maintain the toolface of a downhole motor without continuous full rotation.
+"""@EN; 
+                                 rdfs:subClassOf ddhub:ControlStrategy. 
 ddhub:PipeSectionMechanicalLogicalElement a owl:Class; 
                                           rdfs:comment """Abstract mechanical representation of the pipe section of a drill-stem. The pipe section contains drill-pipe,
 heavy-weight drill-pipe, jar, accelerator and other similar components.
@@ -13869,6 +14276,10 @@ ddhub:PressureToForceTransformation a owl:Class;
                                     rdfs:comment """Converts pressure over an area into a resulting force signal.
 """@EN; 
                                     rdfs:subClassOf ddhub:DirectTransformation. 
+ddhub:PrimeDrillingIDP a owl:Class; 
+                       rdfs:comment """A drilling-data analytics and drilling-performance platform provider active in real-time drilling-data analysis and performance workflows.
+"""@EN; 
+                       rdfs:subClassOf ddhub:DrillingAnalyticsAutomationCompany. 
 ddhub:ProceduralState a owl:Class; 
                       rdfs:comment """Describes the active state within a finite-state procedure such as startup, shutdown, or test sequences.
 """@EN; 
@@ -13949,6 +14360,10 @@ ddhub:ProviderName a owl:DatatypeProperty, owl:FunctionalProperty;
 """@EN; 
                    rdfs:domain ddhub:DataProvider; 
                    rdfs:range xsd:string. 
+ddhub:ProWellPlan a owl:Class; 
+                  rdfs:comment """A well planning and drilling/completions operations software company that structures spreadsheet and fragmented well data into data-driven workflows and automation.
+"""@EN; 
+                  rdfs:subClassOf ddhub:WellPlanningReportingSoftwareCompany. 
 ddhub:Psi a owl:Class; 
           rdfs:comment """[v] = a * [SI]
 where
@@ -14008,6 +14423,10 @@ ddhub:Pushthebit a owl:Class;
 ddhub:PwdPressure a owl:Class; 
                   rdfs:comment ""@EN; 
                   rdfs:subClassOf ddhub:MeasurementWhileDrillingTools. 
+ddhub:QatarEnergy a owl:Class; 
+                  rdfs:comment """An operating company active in large-scale drilling operations and vendor-integrated data workflows.
+"""@EN; 
+                  rdfs:subClassOf ddhub:OperatingCompany. 
 ddhub:Quadrant a owl:Class; 
                rdfs:comment """[v] = a * [SI]
 where
@@ -14053,6 +14472,10 @@ at low and high shear rates that tend to constant viscosity values.
 ddhub:Quill a owl:Class; 
             rdfs:comment ""@EN; 
             rdfs:subClassOf ddhub:TopDrive. 
+ddhub:QuorumSoftware a owl:Class; 
+                     rdfs:comment """A software company active in upstream operations data, reporting, well operations, planning data management, and production data workflows.
+"""@EN; 
+                     rdfs:subClassOf ddhub:WellPlanningReportingSoftwareCompany. 
 ddhub:RackAndPinionHoistingSystem a owl:Class; 
                                   rdfs:comment ""@EN; 
                                   rdfs:subClassOf ddhub:HoistingSystem. 
@@ -14600,6 +15023,10 @@ The SI unit for **velocity** is: metre per second with the associated unit label
 The meaningful precision of rate of penetration in the drilling context is typically: 2.77778E-05 m/min
 """@EN; 
                                         rdfs:subClassOf ddhub:MeasurableQuantity. 
+ddhub:RealTimeDrillingDataInfrastructureCompany a owl:Class; 
+                                                rdfs:comment """A company that provides drilling-data acquisition, aggregation, transmission, WITS/WITSML services, visualization, storage, remote collaboration, or operational data delivery.
+"""@EN; 
+                                                rdfs:subClassOf ddhub:DataProvider. 
 ddhub:Reamers a owl:Class; 
               rdfs:comment ""@EN; 
               rdfs:subClassOf ddhub:DrillingEquipment. 
@@ -14993,6 +15420,10 @@ ddhub:RelativeTimeReference a owl:Class;
                             rdfs:comment """Time reference relative to a local origin or offset.
 """@EN; 
                             rdfs:subClassOf ddhub:TimeReference. 
+ddhub:Repsol a owl:Class; 
+             rdfs:comment """An operating company active in digital upstream and drilling or well analytics.
+"""@EN; 
+             rdfs:subClassOf ddhub:OperatingCompany. 
 ddhub:Resampling a owl:Class; 
                  rdfs:comment """Adjusts the sampling rate of a signal and can annotate the validity of the resampled points.
 """@EN; 
@@ -15106,6 +15537,10 @@ ddhub:RigChokeControlSystem a owl:Class;
                             rdfs:comment """A control system dedicated to surface choke management for well control operations.
 """@EN; 
                             rdfs:subClassOf ddhub:ControlSystem. 
+ddhub:RigControlSystemProvider a owl:Class; 
+                               rdfs:comment """A rig equipment or automation provider that supplies control systems, drilling automation, rig sequencing, advisory control interfaces, or equipment-generated drilling data.
+"""@EN; 
+                               rdfs:subClassOf ddhub:RigEquipmentOEM. 
 ddhub:RigDescription a owl:Class; 
                      rdfs:comment """The rig data structure describes the characteristics of the drilling equipment and any additional equipment
 associated with non-standard drilling methods, e.g., back-pressure MPD, dual-gradient,...
@@ -15114,6 +15549,10 @@ associated with non-standard drilling methods, e.g., back-pressure MPD, dual-gra
 ddhub:RigEquipment a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:Equipment. 
+ddhub:RigEquipmentOEM a owl:Class; 
+                      rdfs:comment """An original equipment manufacturer or equipment supplier whose rig equipment, controls, automation, or pipe-handling systems generate or consume drilling operational data.
+"""@EN; 
+                      rdfs:subClassOf ddhub:DataProvider. 
 ddhub:RigFloor a owl:Class; 
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:DrillFloorStructure. 
@@ -15131,6 +15570,10 @@ ddhub:RiserRecoilSystem a owl:Class;
 ddhub:RiserTensioners a owl:Class; 
                       rdfs:comment ""@EN; 
                       rdfs:subClassOf ddhub:MarineSystem. 
+ddhub:Rogii a owl:Class; 
+            rdfs:comment """A geosteering and well-placement software company active in real-time geosteering data workflows.
+"""@EN; 
+            rdfs:subClassOf ddhub:DrillingAnalyticsAutomationCompany. 
 ddhub:RollerReamers a owl:Class; 
                     rdfs:comment ""@EN; 
                     rdfs:subClassOf ddhub:Reamers. 
@@ -15209,6 +15652,12 @@ ddhub:RotationalFrictionCoefficient a owl:Class;
                                     rdfs:comment """Prototype signal for Rotational Friction coefficient.
 """@EN; 
                                     rdfs:subClassOf ddhub:MechanicalFrictionCoefficient. 
+ddhub:RotationalImpedanceMatchingControlStrategy a owl:Class; 
+                                                 rdfs:comment """A `RotationalImpedanceMatchingControlStrategy` is a control strategy that adapts the dynamic interaction
+between the surface rotation drive and the drill string to damp torsional oscillations by reducing reflection or
+amplification of torsional energy.
+"""@EN; 
+                                                 rdfs:subClassOf ddhub:ControlStrategy. 
 ddhub:RotationalModelling a owl:Class; 
                           rdfs:comment """The model accounts for the rotational movement of some parts of the physical system.
 """@EN; 
@@ -15278,6 +15727,10 @@ ddhub:SafetyClamps a owl:Class;
 ddhub:SafetyEquipment a owl:Class; 
                       rdfs:comment ""@EN; 
                       rdfs:subClassOf ddhub:RigEquipment. 
+ddhub:Saipem a owl:Class; 
+             rdfs:comment """An offshore drilling contractor and engineering company active in offshore drilling data and digital operations.
+"""@EN; 
+             rdfs:subClassOf ddhub:DrillingContractor. 
 ddhub:SamplingRate a owl:DatatypeProperty, owl:FunctionalProperty; 
                    rdfs:comment """
 """@EN; 
@@ -15290,6 +15743,10 @@ ddhub:SandSeparatorLogical a owl:Class;
 ddhub:SandTrap a owl:Class; 
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:MudPits. 
+ddhub:SaudiAramco a owl:Class; 
+                  rdfs:comment """An operating company active in drilling automation, real-time operations, AI, and digital oilfield programs.
+"""@EN; 
+                  rdfs:subClassOf ddhub:OperatingCompany. 
 ddhub:Scales a owl:ObjectProperty; 
              rdfs:comment """Indicates that a CalibrationParameter is applied as a multiplicative factor
 when converting or correcting a DrillingDataPoint.
@@ -15307,6 +15764,10 @@ and
 ScandinavianMile = 10000.0
 """@EN; 
                        rdfs:subClassOf ddhub:Unit. 
+ddhub:ScientificDrilling a owl:Class; 
+                         rdfs:comment """A directional drilling and measurement company active in MWD, survey, wellbore placement, and directional drilling data.
+"""@EN; 
+                         rdfs:subClassOf ddhub:DownholeMeasurementDynamicsCompany. 
 ddhub:ScreenString a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:Tubulars. 
@@ -15314,6 +15775,10 @@ ddhub:ScribeLineAngleLocation a owl:Class;
                               rdfs:comment """Reference location for ScribeLineAngleLocation.
 """@EN; 
                               rdfs:subClassOf ddhub:AngleReferenceLocation. 
+ddhub:Seadrill a owl:Class; 
+               rdfs:comment """An offshore drilling contractor active in offshore rig data, digital operations, and performance monitoring.
+"""@EN; 
+               rdfs:subClassOf ddhub:DrillingContractor. 
 ddhub:SeaFloorVerticalLocation a owl:Class; 
                                rdfs:comment """Reference location for SeaFloorVerticalLocation.
 """@EN; 
@@ -15325,6 +15790,10 @@ ddhub:Second a owl:Class;
              rdfs:comment """No conversion necessary as the unit choice is SI
 """@EN; 
              rdfs:subClassOf ddhub:Unit. 
+ddhub:Sekal a owl:Class; 
+            rdfs:comment """A drilling automation and advisory company active in DrillScene, DrillTronics, real-time diagnostics, drilling automation, and drilling advisory workflows.
+"""@EN; 
+            rdfs:subClassOf ddhub:DrillingAnalyticsAutomationCompany. 
 ddhub:Selfsealingthreaded a owl:Class; 
                           rdfs:comment ""@EN; 
                           rdfs:subClassOf ddhub:Connection. 
@@ -15343,6 +15812,12 @@ ddhub:ServiceCompany a owl:Class;
                      rdfs:comment """A service company is an entity that provides services during the well construction.
 """@EN; 
                      rdfs:subClassOf ddhub:DataProvider. 
+ddhub:ServiceFunction a owl:Class; 
+                      rdfs:comment """A `ServiceFunction` is an `ADCSFunction` that performs a discrete service action on request. It does not
+own the drilling control loop, does not execute a finite procedure, and does not define a protective envelope. An example
+of `ServiceFunction` is a tare service that applies a requested correction factor to a measured drilling quantity.
+"""@EN; 
+                      rdfs:subClassOf ddhub:ADCSFunction. 
 ddhub:SetPoint a owl:Class; 
                rdfs:comment """A process data point intended to serve as a target value for control.
 """@EN; 
@@ -15394,6 +15869,10 @@ ddhub:ShearStress a owl:Class;
                   rdfs:comment """Prototype signal for Shear stress.
 """@EN; 
                   rdfs:subClassOf ddhub:PrototypeData. 
+ddhub:Shell a owl:Class; 
+            rdfs:comment """An operating company active in digital wells, remote operations, drilling data integration, and operational analytics.
+"""@EN; 
+            rdfs:subClassOf ddhub:OperatingCompany. 
 ddhub:Shock a owl:Class; 
             rdfs:comment """This Noun is used to refer to lateral shocks.
 """@EN; 
@@ -15448,6 +15927,10 @@ ddhub:ShoeTrackMechanicalLogicalElement a owl:Class;
 ddhub:ShortDc a owl:Class; 
               rdfs:comment ""@EN; 
               rdfs:subClassOf ddhub:DrillString. 
+ddhub:Siemens a owl:Class; 
+              rdfs:comment """An industrial automation and digital infrastructure company active in controls, edge systems, industrial data infrastructure, and automation relevant to rig operations.
+"""@EN; 
+              rdfs:subClassOf ddhub:CloudEnergyDataPlatformProvider. 
 ddhub:SiemensVolt a owl:Class; 
                   rdfs:comment """[v] = a * [SI]
 where
@@ -15492,6 +15975,14 @@ ddhub:SIUnit a owl:DatatypeProperty, owl:FunctionalProperty;
 ddhub:SlantDerrick a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:Derrick. 
+ddhub:SLB a owl:Class; 
+          rdfs:comment """An integrated oilfield service company active in real-time drilling data services, drilling optimization, MWD/LWD, drilling engineering workflows, and digital well-construction platforms such as Delfi.
+"""@EN; 
+          rdfs:subClassOf ddhub:IntegratedOilfieldServiceCompany. 
+ddhub:SLBCameron a owl:Class; 
+                 rdfs:comment """A pressure control and drilling equipment business associated with SLB, active in equipment data and pressure-control workflows.
+"""@EN; 
+                 rdfs:subClassOf ddhub:RigEquipmentOEM. 
 ddhub:Sleeve a owl:Class; 
              rdfs:comment ""@EN; 
              rdfs:subClassOf ddhub:BladeType. 
@@ -15521,6 +16012,18 @@ and speed of the drill-stem to avoid generate swabbing pressure below the maximu
 surging pressure above the fracturing pressure.
 """@EN; 
                   rdfs:subClassOf ddhub:ProtectionFunction. 
+ddhub:SoftSpeedController a owl:Class; 
+                          rdfs:comment """A `SoftSpeedController` is a controller function that mitigates drill-string torsional stick-slip by
+filtering surface rotation control action around the drill-string natural torsional resonance frequency to damp
+torsional oscillations and stabilize the downhole rotational velocity.
+"""@EN; 
+                          rdfs:subClassOf ddhub:ControllerFunction. 
+ddhub:SoftTorqueController a owl:Class; 
+                           rdfs:comment """A `SoftTorqueController` is a controller function that mitigates drill-string torsional stick-slip by
+filtering or shaping the surface rotation drive torque response around the drill-string natural torsional resonance
+frequency to damp torsional oscillations.
+"""@EN; 
+                           rdfs:subClassOf ddhub:ControllerFunction. 
 ddhub:SolarMass a owl:Class; 
                 rdfs:comment """[v] = a * [SI]
 where
@@ -15667,6 +16170,10 @@ and
 WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
 """@EN; 
                                rdfs:subClassOf ddhub:Unit. 
+ddhub:SPEDSATS a owl:Class; 
+               rdfs:comment """A SPE drilling systems advancement technical community relevant to drilling automation, data, controls, and interoperability discussions.
+"""@EN; 
+               rdfs:subClassOf ddhub:DrillingIndustryOrganization. 
 ddhub:SphericalReferenceFrame a owl:Class; 
                               rdfs:comment """Reference location for SphericalReferenceFrame.
 """@EN; 
@@ -15955,7 +16462,8 @@ ddhub:StickSlip a owl:Class;
 """@EN; 
                 rdfs:subClassOf ddhub:AbnormalTorsionalOscillation. 
 ddhub:StickSlipSeverityIndex a owl:Class; 
-                             rdfs:comment """Prototype signal for Stickslip Severity Index.
+                             rdfs:comment """Prototype signal for a dimensionless index that quantifies the current severity of drill-string
+torsional stick-slip oscillations.
 """@EN; 
                              rdfs:subClassOf ddhub:PrototypeData. 
 ddhub:StickUpHeightVerticalLocation a owl:Class; 
@@ -16248,6 +16756,11 @@ ddhub:TankLogical a owl:Class;
                   rdfs:comment """A storage element for drilling fluid within the hydraulic system.
 """@EN; 
                   rdfs:subClassOf ddhub:HydraulicLogicalElement. 
+ddhub:TareServiceFunction a owl:Class; 
+                          rdfs:comment """A `TareServiceFunction` is a `ServiceFunction` that applies a tare value as a correction factor to a
+drilling signal. The service is requested by a command and uses an associated tare value.
+"""@EN; 
+                          rdfs:subClassOf ddhub:ServiceFunction. 
 ddhub:Target a owl:Class; 
              rdfs:comment """Target is used to describe meta information the region in the reservoir by which a wellbore is intended to pass through.
 """@EN; 
@@ -16260,6 +16773,10 @@ ddhub:TaskStep a owl:Class;
                rdfs:comment """A task step is at the third level of a rig action plan.
 """@EN; 
                rdfs:subClassOf ddhub:OperationalStep. 
+ddhub:TDEGroup a owl:Class; 
+               rdfs:comment """A drilling analytics company active in rig-state detection, performance analytics, benchmarking, and automated reporting.
+"""@EN; 
+               rdfs:subClassOf ddhub:DrillingAnalyticsAutomationCompany. 
 ddhub:Telemetry a owl:Class; 
                 rdfs:comment """Technology used for transferring the data from its main origin.
 """@EN; 
@@ -16589,11 +17106,13 @@ ddhub:TimeStampAtSource a owl:DatatypeProperty, owl:FunctionalProperty;
 """@EN; 
                         rdfs:domain ddhub:DynamicDrillingSignal; 
                         rdfs:range xsd:datetime. 
-ddhub:TimeWindow a owl:DatatypeProperty, owl:FunctionalProperty; 
-                 rdfs:comment """
+ddhub:TimeWindow a owl:Class, owl:DatatypeProperty, owl:FunctionalProperty; 
+                 rdfs:comment """A time duration over which samples are selected or evaluated by a transformation.
+"""@EN, """
 """@EN; 
                  rdfs:domain ddhub:TimeWindowMovingAverage, ddhub:TimeWindowRangeExtraction; 
-                 rdfs:range xsd:double. 
+                 rdfs:range xsd:double; 
+                 rdfs:subClassOf ddhub:TimeSpanReference. 
 ddhub:TimeWindowMovingAverage a owl:Class; 
                               rdfs:comment """Moving average defined by a time duration window.
 """@EN; 
@@ -16602,6 +17121,10 @@ ddhub:TimeWindowRangeExtraction a owl:Class;
                                 rdfs:comment """Extracts samples from a signal over a defined time window.
 """@EN; 
                                 rdfs:subClassOf ddhub:RangeExtraction. 
+ddhub:Tomax a owl:Class; 
+            rdfs:comment """A drilling dynamics and downhole regulation company active in anti stick-slip technology, bit loading stabilization, and stick-slip mitigation.
+"""@EN; 
+            rdfs:subClassOf ddhub:DownholeMeasurementDynamicsCompany. 
 ddhub:TonneForce a owl:Class; 
                  rdfs:comment """[v] = a * [SI]
 where
@@ -16820,6 +17343,10 @@ ddhub:TorsionalMotionType a owl:Class;
                           rdfs:comment """Rotational motion around the axis.
 """@EN; 
                           rdfs:subClassOf ddhub:MotionType. 
+ddhub:TotalEnergies a owl:Class; 
+                    rdfs:comment """An operating company active in real-time monitoring, drilling assistance, SmartRoom-style operations, and drilling data workflows.
+"""@EN; 
+                    rdfs:subClassOf ddhub:OperatingCompany. 
 ddhub:TrajectoryDescription a owl:Class; 
                             rdfs:comment """A trajectory contains information about the position of the wellbore.
 """@EN; 
@@ -16840,6 +17367,10 @@ ddhub:TransmissionLine a owl:Class;
                        rdfs:comment """Represents telemetry or wiring that forwards a signal, potentially with delay or duplication.
 """@EN; 
                        rdfs:subClassOf ddhub:DataFlowNode. 
+ddhub:Transocean a owl:Class; 
+                 rdfs:comment """An offshore drilling contractor active in offshore drilling data, rig automation, and performance monitoring.
+"""@EN; 
+                 rdfs:subClassOf ddhub:DrillingContractor. 
 ddhub:TravellingBlock a owl:Class; 
                       rdfs:comment ""@EN; 
                       rdfs:subClassOf ddhub:MechanicalBlock. 
@@ -16879,6 +17410,12 @@ ddhub:TubularConnection a owl:Class;
 ddhub:Tubulars a owl:Class; 
                rdfs:comment ""@EN; 
                rdfs:subClassOf ddhub:Equipment. 
+ddhub:TuningServiceFunction a owl:Class; 
+                            rdfs:comment """A `TuningServiceFunction` is a `ServiceFunction` that applies tuning parameters to an ADCS function or
+to a control loop used by an ADCS function. The service is requested by a command and uses associated tuning parameter
+values.
+"""@EN; 
+                            rdfs:subClassOf ddhub:ServiceFunction. 
 ddhub:TurbineMotor a owl:Class; 
                    rdfs:comment ""@EN; 
                    rdfs:subClassOf ddhub:DownholeMotor. 
@@ -17173,6 +17710,10 @@ ddhub:UTCReference a owl:Class;
 ddhub:VacuumDegasser a owl:Class; 
                      rdfs:comment ""@EN; 
                      rdfs:subClassOf ddhub:Degasser. 
+ddhub:Valaris a owl:Class; 
+              rdfs:comment """An offshore drilling contractor active in offshore rig data and performance systems.
+"""@EN; 
+              rdfs:subClassOf ddhub:DrillingContractor. 
 ddhub:Validity a owl:DatatypeProperty, owl:FunctionalProperty; 
                rdfs:comment """
 """@EN; 
@@ -17351,6 +17892,10 @@ $$[L^{-1}]$$.
 The SI unit for **wave number** is: reciprocal metre with the associated unit label $\\frac{1}{m}$
 """@EN; 
                          rdfs:subClassOf ddhub:Quantity. 
+ddhub:Weatherford a owl:Class; 
+                  rdfs:comment """An oilfield service company active in drilling analytics, managed pressure drilling data, MWD/LWD, real-time drilling optimization, drilling dynamics, and wellbore placement data.
+"""@EN; 
+                  rdfs:subClassOf ddhub:IntegratedOilfieldServiceCompany. 
 ddhub:Weber a owl:Class; 
             rdfs:comment """No conversion necessary as the unit choice is SI
 """@EN; 
@@ -17396,6 +17941,11 @@ The SI unit for **force** is: newton with the associated unit label $N$
 The meaningful precision of weight on bit in the drilling context is typically: 100 N
 """@EN; 
                                   rdfs:subClassOf ddhub:MeasurableQuantity. 
+ddhub:WeightOnBitTareServiceFunction a owl:Class; 
+                                     rdfs:comment """A `WeightOnBitTareServiceFunction` is a `TareServiceFunction` that applies a correction factor to weight
+on bit.
+"""@EN; 
+                                     rdfs:subClassOf ddhub:TareServiceFunction. 
 ddhub:WeightTransferObjective a owl:Class; 
                               rdfs:comment """This Noun is used to refer to the objective of transferring weight to the bottom of the drill-stem.
 """@EN; 
@@ -17465,11 +18015,19 @@ ddhub:WellHeadVerticalLocation a owl:Class;
 ddhub:WellheadXmasTree a owl:Class; 
                        rdfs:comment ""@EN; 
                        rdfs:subClassOf ddhub:WellControlSystem. 
+ddhub:WellID a owl:Class; 
+             rdfs:comment """A downhole measurement company active in high-frequency downhole pressure and drilling-dynamics measurements, drilling intelligence, borehole stability, dysfunction detection, and bit/drillstring insight.
+"""@EN; 
+             rdfs:subClassOf ddhub:DownholeMeasurementDynamicsCompany. 
 ddhub:WellName a owl:DatatypeProperty, owl:FunctionalProperty; 
                rdfs:comment """
 """@EN; 
                rdfs:domain ddhub:WitsMLTimeBasedLogEndPoint; 
                rdfs:range xsd:string. 
+ddhub:WellPlanningReportingSoftwareCompany a owl:Class; 
+                                           rdfs:comment """A company that provides well planning, drilling engineering workflows, drilling reports, daily operations reporting, lessons learned, or well lifecycle data-management software.
+"""@EN; 
+                                           rdfs:subClassOf ddhub:DataProvider. 
 ddhub:WellTestingEquipment a owl:Class; 
                            rdfs:comment ""@EN; 
                            rdfs:subClassOf ddhub:RigEquipment. 
@@ -17544,6 +18102,10 @@ ddhub:WOBLimit a owl:Class;
                rdfs:comment """This Noun is used to refer to a weight on bit limit.
 """@EN; 
                rdfs:subClassOf ddhub:DrillingLimit. 
+ddhub:WoodsideEnergy a owl:Class; 
+                     rdfs:comment """An operating company active in offshore digital drilling, remote operations, and operational data platforms.
+"""@EN; 
+                     rdfs:subClassOf ddhub:OperatingCompany. 
 ddhub:XAxis a owl:Class; 
             rdfs:comment """Represents the first axis in a coordinate system with at least one dimension
 """@EN; 

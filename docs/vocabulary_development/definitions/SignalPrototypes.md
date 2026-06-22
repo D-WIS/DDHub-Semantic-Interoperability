@@ -602,17 +602,18 @@ downholeAngularAcceleration BelongsToClass DownholeAngularAcceleration
 ```
 This example assigns a drilling data point to the Downhole Angular Acceleration prototype.
 ## StickSlipSeverityIndex <!-- NOUN -->
-- Display name: Stickslip Severity Index
+- Display name: Stick-Slip Severity Index
 - Parent class: PrototypeData
 - Attributes:
 - Specialization:
-- Description: Prototype signal for Stickslip Severity Index.
+- Description: Prototype signal for a dimensionless index that quantifies the current severity of drill-string
+torsional stick-slip oscillations.
 - Examples:
 ```dwis stickSlipSeverityIndex
 DrillingDataPoint:stickSlipSeverityIndex
 stickSlipSeverityIndex BelongsToClass StickSlipSeverityIndex
 ```
-This example assigns a drilling data point to the Stickslip Severity Index prototype.
+This example assigns a drilling data point to the Stick-Slip Severity Index prototype.
 ## FrictionCoefficient <!-- NOUN -->
 - Display name: Friction coefficient
 - Parent class: PrototypeData

@@ -1,20 +1,38 @@
 - Description: this definition set refers to the various functions an ADCS implements. It is to be used for the ADCS capability description. 
 
 # NOUNS
-## ActivableFunction <!-- NOUN -->
-- Display name: ActivableFunction
+## ADCSFunction <!-- NOUN -->
+- Display name: ADCS Function
 - Parent class: DWISNoun
 - Attributes:
-- Description: An `ActivableFunction` is an ADCS function that can be activated. Here activation means that the
-function may run immediately or that it is enabled and can trigger if some conditions are respected.
+- Description: An `ADCSFunction` is a function exposed by an automated drilling control system as part of its capability
+description. ADCS functions include activable functions, such as controllers, procedures, and protections, and
+non-activable service functions that perform discrete service actions on request.
 - Examples:
 ```dwis ADCSFunction
-ActivableFunction:ADCSFunction
+ADCSFunction:ADCSFunction
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
 DCS BelongsToClass DataProvider
-ActivableFunction IsProvidedBy DCS
+ADCSFunction IsProvidedBy DCS
+```
+This example describes all `ADCSFunction` provided by the drilling control system, `DCS`. The `DCS` is
+defined as a `ControlSystem` provided by a drilling contractor.
+## ActivableFunction <!-- NOUN -->
+- Display name: ActivableFunction
+- Parent class: ADCSFunction
+- Attributes:
+- Description: An `ActivableFunction` is an ADCS function that can be activated. Here activation means that the
+function may run immediately or that it is enabled and can trigger if some conditions are respected.
+- Examples:
+```dwis activableFunction
+ActivableFunction:activableFunction
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+activableFunction IsProvidedBy DCS
 ```
 This example describes all `ActivableFunction` provided by the drilling control system, `DCS`. The `DCS` is 
 defined as a `ControlSystem` provided by a drilling contractor.
@@ -63,6 +81,124 @@ autoDriller IsProvidedBy DCS
 ```
 This example describes the auto driller provided by the drilling control system, `DCS`. The `DCS` is 
 defined as a `ControlSystem` provided by a drilling contractor. It is a main function and its purpose is to `Drill`.
+## SoftSpeedController <!-- NOUN -->
+- Display name: SoftSpeed Controller
+- Parent class: ControllerFunction
+- Description: A `SoftSpeedController` is a controller function that mitigates drill-string torsional stick-slip by
+filtering surface rotation control action around the drill-string natural torsional resonance frequency to damp
+torsional oscillations and stabilize the downhole rotational velocity.
+- Examples:
+```dwis softSpeedController
+SoftSpeedController:softSpeedController
+StableRotationalVelocityObjective:stableBitRPM
+BottomOfStringReferenceLocation:bos
+stableBitRPM IsPhysicallyLocatedAt bos
+softSpeedController ImplementsObjective stableBitRPM
+DrillStringTorsionalResonanceFilteringControlStrategy:resonanceFiltering
+softSpeedController ImplementsControlStrategy resonanceFiltering
+```
+This example describes a SoftSpeed controller that uses drill-string torsional resonance filtering to stabilize
+downhole rotational velocity.
+## SoftTorqueController <!-- NOUN -->
+- Display name: SoftTorque Controller
+- Parent class: ControllerFunction
+- Description: A `SoftTorqueController` is a controller function that mitigates drill-string torsional stick-slip by
+filtering or shaping the surface rotation drive torque response around the drill-string natural torsional resonance
+frequency to damp torsional oscillations.
+- Examples:
+```dwis softTorqueController
+SoftTorqueController:softTorqueController
+StableRotationalVelocityObjective:stableBitRPM
+BottomOfStringReferenceLocation:bos
+stableBitRPM IsPhysicallyLocatedAt bos
+softTorqueController ImplementsObjective stableBitRPM
+DrillStringTorsionalResonanceFilteringControlStrategy:resonanceFiltering
+softTorqueController ImplementsControlStrategy resonanceFiltering
+```
+This example describes a SoftTorque controller that uses drill-string torsional resonance filtering to damp torsional
+oscillations.
+## ImpedanceMatchingController <!-- NOUN -->
+- Display name: Impedance Matching Controller
+- Parent class: ControllerFunction
+- Description: An `ImpedanceMatchingController` is a controller function that mitigates drill-string torsional
+oscillations by adapting the dynamic interaction between the surface rotation drive and the drill string.
+- Examples:
+```dwis impedanceMatchingController
+ImpedanceMatchingController:impedanceMatchingController
+StableRotationalVelocityObjective:stableBitRPM
+BottomOfStringReferenceLocation:bos
+stableBitRPM IsPhysicallyLocatedAt bos
+impedanceMatchingController ImplementsObjective stableBitRPM
+RotationalImpedanceMatchingControlStrategy:rotationalImpedanceMatching
+impedanceMatchingController ImplementsControlStrategy rotationalImpedanceMatching
+```
+This example describes an impedance-matching controller used to stabilize downhole rotational velocity.
+## PipeRockingController <!-- NOUN -->
+- Display name: Pipe Rocking Controller
+- Parent class: ControllerFunction
+- Description: A `PipeRockingController` is a controller function that alternates top-of-string rotation over a limited
+angular interval to orient or maintain the toolface of a downhole motor.
+- Examples:
+```dwis pipeRockingController
+PipeRockingController:pipeRockingController
+PipeRockingControlStrategy:pipeRockingStrategy
+ToolfaceOrientationProcedure:toolfaceOrientation
+pipeRockingController ImplementsControlStrategy pipeRockingStrategy
+pipeRockingController ImplementsProcedure toolfaceOrientation
+```
+This example describes a pipe-rocking controller used for toolface orientation.
+## ControlStrategy <!-- NOUN -->
+- Display name: Control Strategy
+- Parent class: DWISNoun
+- Description: A `ControlStrategy` is a named control approach or algorithmic principle used by a controller function
+to achieve its control objectives.
+- Examples:
+```dwis controlStrategy
+ControlStrategy:controlStrategy
+ControllerFunction:controller
+controller ImplementsControlStrategy controlStrategy
+```
+This example states that a controller implements a control strategy.
+## DrillStringTorsionalResonanceFilteringControlStrategy <!-- NOUN -->
+- Display name: Drill String Torsional Resonance Filtering Control Strategy
+- Parent class: ControlStrategy
+- Description: A `DrillStringTorsionalResonanceFilteringControlStrategy` is a control strategy that filters or shapes
+surface rotation control action around the drill-string natural torsional resonance frequency to damp torsional
+oscillations and reduce stick-slip.
+- Examples:
+```dwis resonanceFiltering
+DrillStringTorsionalResonanceFilteringControlStrategy:resonanceFiltering
+SoftSpeedController:softSpeedController
+softSpeedController ImplementsControlStrategy resonanceFiltering
+```
+This example states that a SoftSpeed controller uses drill-string torsional resonance filtering.
+## RotationalImpedanceMatchingControlStrategy <!-- NOUN -->
+- Display name: Rotational Impedance Matching Control Strategy
+- Parent class: ControlStrategy
+- Description: A `RotationalImpedanceMatchingControlStrategy` is a control strategy that adapts the dynamic interaction
+between the surface rotation drive and the drill string to damp torsional oscillations by reducing reflection or
+amplification of torsional energy.
+- Examples:
+```dwis rotationalImpedanceMatching
+RotationalImpedanceMatchingControlStrategy:rotationalImpedanceMatching
+ImpedanceMatchingController:impedanceMatchingController
+impedanceMatchingController ImplementsControlStrategy rotationalImpedanceMatching
+```
+This example states that an impedance-matching controller uses rotational impedance matching.
+## PipeRockingControlStrategy <!-- NOUN -->
+- Display name: Pipe Rocking Control Strategy
+- Parent class: ControlStrategy
+- Description: A `PipeRockingControlStrategy` is a control strategy that alternates top-of-string rotation over a
+limited angular interval to orient or maintain the toolface of a downhole motor without continuous full rotation.
+- Examples:
+```dwis pipeRockingStrategy
+PipeRockingControlStrategy:pipeRockingStrategy
+PipeRockingController:pipeRocking
+ToolfaceOrientationProcedure:toolfaceOrientation
+pipeRocking ImplementsControlStrategy pipeRockingStrategy
+pipeRocking ImplementsProcedure toolfaceOrientation
+```
+This example states that a pipe-rocking controller uses a pipe-rocking strategy for toolface orientation.
 ## ProcedureFunction  <!-- NOUN -->
 - Display name: Procedure Function
 - Parent class: RunnableFunction
@@ -148,8 +284,205 @@ swabSurgeLimits IsProvidedBy DCS
 ```
 This example describes the `swabSurgeLimits` safe operating envelope limits to avoid detrimental swab/surge pressures in 
 the open hole section of the borehole. 
+## ServiceFunction <!-- NOUN -->
+- Display name: Service Function
+- Parent class: ADCSFunction
+- Description: A `ServiceFunction` is an `ADCSFunction` that performs a discrete service action on request. It does not
+own the drilling control loop, does not execute a finite procedure, and does not define a protective envelope. An example
+of `ServiceFunction` is a tare service that applies a requested correction factor to a measured drilling quantity.
+- Examples:
+```dwis tareService
+ServiceFunction:tareService
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+tareService IsProvidedBy DCS
+```
+This example describes a service function provided by the drilling control system, `DCS`.
+## TareServiceFunction <!-- NOUN -->
+- Display name: Tare Service Function
+- Parent class: ServiceFunction
+- Description: A `TareServiceFunction` is a `ServiceFunction` that applies a tare value as a correction factor to a
+drilling signal. The service is requested by a command and uses an associated tare value.
+- Examples:
+```dwis wobTareService
+TareServiceFunction:wobTareService
+CalibrationParameter:wobTareValue
+wobTareService IsRelatedToDrillingObjective stableWOB
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+wobTareService IsProvidedBy DCS
+```
+This example describes a tare service function provided by the drilling control system, `DCS`.
+## WeightOnBitTareServiceFunction <!-- NOUN -->
+- Display name: Weight On Bit Tare Service Function
+- Parent class: TareServiceFunction
+- Description: A `WeightOnBitTareServiceFunction` is a `TareServiceFunction` that applies a correction factor to weight
+on bit.
+- Examples:
+```dwis wobTareService
+WeightOnBitTareServiceFunction:wobTareService
+StableAxialForceObjective:stableWOB
+BottomOfStringReferenceLocation:bos
+stableWOB IsPhysicallyLocatedAt bos
+wobTareService IsRelatedToDrillingObjective stableWOB
+```
+This example describes a service function used to tare weight on bit.
+## DifferentialPressureTareServiceFunction <!-- NOUN -->
+- Display name: Differential Pressure Tare Service Function
+- Parent class: TareServiceFunction
+- Description: A `DifferentialPressureTareServiceFunction` is a `TareServiceFunction` that applies a correction factor
+to differential pressure.
+- Examples:
+```dwis differentialPressureTareService
+DifferentialPressureTareServiceFunction:differentialPressureTareService
+StablePressureObjective:stableDifferentialPressure
+PositiveDisplacementMotor:PDM
+HydraulicLogicalElement:logicalPDM
+logicalPDM IsAHydraulicRepresentationFor PDM
+stableDifferentialPressure IsHydraulicallyLocatedAt logicalPDM
+differentialPressureTareService IsRelatedToDrillingObjective stableDifferentialPressure
+```
+This example describes a service function used to tare differential pressure.
+## TuningServiceFunction <!-- NOUN -->
+- Display name: Tuning Service Function
+- Parent class: ServiceFunction
+- Description: A `TuningServiceFunction` is a `ServiceFunction` that applies tuning parameters to an ADCS function or
+to a control loop used by an ADCS function. The service is requested by a command and uses associated tuning parameter
+values.
+- Examples:
+```dwis tuningService
+TuningServiceFunction:tuningService
+ControllerFunction:autoDriller
+tuningService IsTuningServiceFor autoDriller
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+tuningService IsProvidedBy DCS
+```
+This example describes a tuning service function provided by the drilling control system, `DCS`.
+## AutoDrillerGainsTuningServiceFunction <!-- NOUN -->
+- Display name: Auto Driller Gains Tuning Service Function
+- Parent class: TuningServiceFunction
+- Description: An `AutoDrillerGainsTuningServiceFunction` is a `TuningServiceFunction` that applies gain tuning
+parameters to the auto-driller control loops.
+- Examples:
+```dwis autoDrillerGainsTuningService
+AutoDrillerGainsTuningServiceFunction:autoDrillerGainsTuningService
+ControllerFunction:autoDriller
+autoDrillerGainsTuningService IsTuningServiceFor autoDriller
+```
+This example describes a service function used to tune auto-driller gains.
+## PIDTuningParameter <!-- NOUN -->
+- Display name: PID Tuning Parameter
+- Parent class: CalibrationParameter
+- Description: A `PIDTuningParameter` is a calibration parameter that contains proportional, integral, derivative, or
+time-constant values used to tune a controller.
+- Examples:
+```dwis pidTuningParameter
+PIDTuningParameter:pidTuningParameter
+ControllerFunction:autoDriller
+pidTuningParameter IsTuningParameterFor autoDriller
+```
+This example describes a PID tuning parameter for the auto-driller.
+## AutoDrillerWOBGainsTuningParameter <!-- NOUN -->
+- Display name: Auto Driller WOB Gains Tuning Parameter
+- Parent class: PIDTuningParameter
+- Description: An `AutoDrillerWOBGainsTuningParameter` is a `PIDTuningParameter` used to tune the weight-on-bit
+control loop of an auto-driller.
+- Examples:
+```dwis wobGainsTuningParameter
+AutoDrillerWOBGainsTuningParameter:wobGainsTuningParameter
+ControllerFunction:autoDriller
+wobGainsTuningParameter IsTuningParameterFor autoDriller
+```
+This example describes WOB gain tuning parameters for the auto-driller.
+## AutoDrillerTorqueGainsTuningParameter <!-- NOUN -->
+- Display name: Auto Driller Torque Gains Tuning Parameter
+- Parent class: PIDTuningParameter
+- Description: An `AutoDrillerTorqueGainsTuningParameter` is a `PIDTuningParameter` used to tune the torque control loop
+of an auto-driller.
+- Examples:
+```dwis torqueGainsTuningParameter
+AutoDrillerTorqueGainsTuningParameter:torqueGainsTuningParameter
+ControllerFunction:autoDriller
+torqueGainsTuningParameter IsTuningParameterFor autoDriller
+```
+This example describes torque gain tuning parameters for the auto-driller.
+## AutoDrillerDifferentialPressureGainsTuningParameter <!-- NOUN -->
+- Display name: Auto Driller Differential Pressure Gains Tuning Parameter
+- Parent class: PIDTuningParameter
+- Description: An `AutoDrillerDifferentialPressureGainsTuningParameter` is a `PIDTuningParameter` used to tune the
+differential-pressure control loop of an auto-driller.
+- Examples:
+```dwis differentialPressureGainsTuningParameter
+AutoDrillerDifferentialPressureGainsTuningParameter:differentialPressureGainsTuningParameter
+ControllerFunction:autoDriller
+differentialPressureGainsTuningParameter IsTuningParameterFor autoDriller
+```
+This example describes differential-pressure gain tuning parameters for the auto-driller.
 
 # VERBS
+## ImplementsControlStrategy <!-- VERB -->
+- Display name: Implements Control Strategy
+- Parent verb: DWISVerb
+- Subject class: ControllerFunction
+- Object class: ControlStrategy
+- Description: This verb indicates that a controller function uses a named control strategy to implement one or more of
+its control objectives.
+- Examples:
+```dwis softSpeedControlStrategy
+SoftSpeedController:softSpeedController
+DrillStringTorsionalResonanceFilteringControlStrategy:resonanceFiltering
+softSpeedController ImplementsControlStrategy resonanceFiltering
+```
+This example states that the SoftSpeed controller uses a drill-string torsional resonance filtering control strategy.
+## IsTuningServiceFor <!-- VERB -->
+- Display name: Is Tuning Service For
+- Parent verb: DWISVerb
+- Subject class: TuningServiceFunction
+- Object class: ADCSFunction
+- Description: This verb indicates that a tuning service applies tuning parameters to an ADCS function or to one of its
+control loops.
+- Examples:
+```dwis autoDrillerTuningService
+AutoDrillerGainsTuningServiceFunction:autoDrillerGainsTuningService
+ControllerFunction:autoDriller
+autoDrillerGainsTuningService IsTuningServiceFor autoDriller
+```
+This example states that the service tunes the auto-driller.
+## IsTuningParameterFor <!-- VERB -->
+- Display name: Is Tuning Parameter For
+- Parent verb: DWISVerb
+- Subject class: PIDTuningParameter
+- Object class: ADCSFunction
+- Description: This verb indicates that a tuning parameter is intended to tune an ADCS function or one of its control
+loops.
+- Examples:
+```dwis wobTuningParameter
+AutoDrillerWOBGainsTuningParameter:wobGainsTuningParameter
+ControllerFunction:autoDriller
+wobGainsTuningParameter IsTuningParameterFor autoDriller
+```
+This example states that the WOB gains are tuning parameters for the auto-driller.
+## IsTuningRequestFor <!-- VERB -->
+- Display name: Is Tuning Request For
+- Parent verb: IsCommandFor
+- Subject class: DrillingDataPoint
+- Object class: PIDTuningParameter
+- Description: This verb indicates that a command or recommendation signal carries a request to apply a tuning
+parameter.
+- Examples:
+```dwis wobTuningRequest
+Command:wobGainsTuningRequest
+AutoDrillerWOBGainsTuningParameter:wobGainsTuningParameter
+wobGainsTuningRequest IsTuningRequestFor wobGainsTuningParameter
+```
+This example states that the command signal requests a WOB gain tuning parameter change.
 ## IsEnablingSignalFor <!-- VERB -->
 - Display name: Is Enabling Signal For
 - Parent verb: DWISVerb

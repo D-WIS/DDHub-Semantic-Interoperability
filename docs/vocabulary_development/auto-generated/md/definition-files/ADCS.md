@@ -7,39 +7,59 @@ this definition set refers to the various functions an ADCS implements. It is to
 Here is a class inheritance diagram for the nouns contained in this definition set.
 ```mermaid
 classDiagram
-DWISNoun <|-- ActivableFunction
+DWISNoun <|-- ADCSFunction
+ADCSFunction <|-- ActivableFunction
 ActivableFunction <|-- RunnableFunction
 RunnableFunction <|-- ControllerFunction
+ControllerFunction <|-- SoftSpeedController
+ControllerFunction <|-- SoftTorqueController
+ControllerFunction <|-- ImpedanceMatchingController
+ControllerFunction <|-- PipeRockingController
+DWISNoun <|-- ControlStrategy
+ControlStrategy <|-- DrillStringTorsionalResonanceFilteringControlStrategy
+ControlStrategy <|-- RotationalImpedanceMatchingControlStrategy
+ControlStrategy <|-- PipeRockingControlStrategy
 RunnableFunction <|-- ProcedureFunction
 ActivableFunction <|-- ProtectionFunction
 ProtectionFunction <|-- FDIRFunction
 ProtectionFunction <|-- SOEFunction
+ADCSFunction <|-- ServiceFunction
+ServiceFunction <|-- TareServiceFunction
+TareServiceFunction <|-- WeightOnBitTareServiceFunction
+TareServiceFunction <|-- DifferentialPressureTareServiceFunction
+ServiceFunction <|-- TuningServiceFunction
+TuningServiceFunction <|-- AutoDrillerGainsTuningServiceFunction
+CalibrationParameter <|-- PIDTuningParameter
+PIDTuningParameter <|-- AutoDrillerWOBGainsTuningParameter
+PIDTuningParameter <|-- AutoDrillerTorqueGainsTuningParameter
+PIDTuningParameter <|-- AutoDrillerDifferentialPressureGainsTuningParameter
 ```
-## ActivableFunction <!-- NOUN -->
-- Display name: ActivableFunction
+## ADCSFunction <!-- NOUN -->
+- Display name: ADCS Function
 - Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
 - Description: 
-An `ActivableFunction` is an ADCS function that can be activated. Here activation means that the
-function may run immediately or that it is enabled and can trigger if some conditions are respected.
+An `ADCSFunction` is a function exposed by an automated drilling control system as part of its capability
+description. ADCS functions include activable functions, such as controllers, procedures, and protections, and
+non-activable service functions that perform discrete service actions on request.
 - Definition set: ADCS
 - Examples:
 ```dwis ADCSFunction
-ActivableFunction:ADCSFunction
+ADCSFunction:ADCSFunction
 ControlSystem:DCS
 DrillingContractor:Contractor
 DCS IsProvidedBy Contractor
 DCS BelongsToClass DataProvider
-ActivableFunction IsProvidedBy DCS
+ADCSFunction IsProvidedBy DCS
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
-	N0000[ADCSFunction] -->|BelongsToClass| N0001(ActivableFunction) 
-	N0002[DCS] -->|BelongsToClass| N0003(ControlSystem) 
-	N0004[Contractor] -->|BelongsToClass| N0005(DrillingContractor) 
-	N0002[DCS] -->|IsProvidedBy| N0004[Contractor] 
-	N0002[DCS] -->|BelongsToClass| N0006(DataProvider) 
-	N0001[ActivableFunction] -->|IsProvidedBy| N0002[DCS] 
+	N0000[ADCSFunction] -->|BelongsToClass| N0000(ADCSFunction) 
+	N0001[DCS] -->|BelongsToClass| N0002(ControlSystem) 
+	N0003[Contractor] -->|BelongsToClass| N0004(DrillingContractor) 
+	N0001[DCS] -->|IsProvidedBy| N0003[Contractor] 
+	N0001[DCS] -->|BelongsToClass| N0005(DataProvider) 
+	N0000[ADCSFunction] -->|IsProvidedBy| N0001[DCS] 
 ```
 An example SparQL query looks like this:
 ```sparql
@@ -48,12 +68,55 @@ PREFIX ddhub: <http://ddhub.no/>
 PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
 SELECT ?ADCSFunction
 WHERE {
-	?ADCSFunction rdf:type ddhub:ActivableFunction .
+	?ADCSFunction rdf:type ddhub:ADCSFunction .
 	?DCS rdf:type ddhub:ControlSystem .
 	?Contractor rdf:type ddhub:DrillingContractor .
 	?DCS ddhub:IsProvidedBy ?Contractor .
 	?DCS rdf:type ddhub:DataProvider .
-	?ActivableFunction ddhub:IsProvidedBy ?DCS .
+	?ADCSFunction ddhub:IsProvidedBy ?DCS .
+}
+```
+This example describes all `ADCSFunction` provided by the drilling control system, `DCS`. The `DCS` is
+defined as a `ControlSystem` provided by a drilling contractor.
+## ActivableFunction <!-- NOUN -->
+- Display name: ActivableFunction
+- Parent class: [ADCSFunction](./ADCS.md#ADCSFunction)
+- Description: 
+An `ActivableFunction` is an ADCS function that can be activated. Here activation means that the
+function may run immediately or that it is enabled and can trigger if some conditions are respected.
+- Definition set: ADCS
+- Examples:
+```dwis activableFunction
+ActivableFunction:activableFunction
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+activableFunction IsProvidedBy DCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[activableFunction] -->|BelongsToClass| N0001(ActivableFunction) 
+	N0002[DCS] -->|BelongsToClass| N0003(ControlSystem) 
+	N0004[Contractor] -->|BelongsToClass| N0005(DrillingContractor) 
+	N0002[DCS] -->|IsProvidedBy| N0004[Contractor] 
+	N0002[DCS] -->|BelongsToClass| N0006(DataProvider) 
+	N0000[activableFunction] -->|IsProvidedBy| N0002[DCS] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?activableFunction
+WHERE {
+	?activableFunction rdf:type ddhub:ActivableFunction .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS ddhub:IsProvidedBy ?Contractor .
+	?DCS rdf:type ddhub:DataProvider .
+	?activableFunction ddhub:IsProvidedBy ?DCS .
 }
 ```
 This example describes all `ActivableFunction` provided by the drilling control system, `DCS`. The `DCS` is 
@@ -171,6 +234,324 @@ WHERE {
 ```
 This example describes the auto driller provided by the drilling control system, `DCS`. The `DCS` is 
 defined as a `ControlSystem` provided by a drilling contractor. It is a main function and its purpose is to `Drill`.
+## SoftSpeedController <!-- NOUN -->
+- Display name: SoftSpeed Controller
+- Parent class: [ControllerFunction](./ADCS.md#ControllerFunction)
+- Description: 
+A `SoftSpeedController` is a controller function that mitigates drill-string torsional stick-slip by
+filtering surface rotation control action around the drill-string natural torsional resonance frequency to damp
+torsional oscillations and stabilize the downhole rotational velocity.
+- Definition set: ADCS
+- Examples:
+```dwis softSpeedController
+SoftSpeedController:softSpeedController
+StableRotationalVelocityObjective:stableBitRPM
+BottomOfStringReferenceLocation:bos
+stableBitRPM IsPhysicallyLocatedAt bos
+softSpeedController ImplementsObjective stableBitRPM
+DrillStringTorsionalResonanceFilteringControlStrategy:resonanceFiltering
+softSpeedController ImplementsControlStrategy resonanceFiltering
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[softSpeedController] -->|BelongsToClass| N0001(SoftSpeedController) 
+	N0002[stableBitRPM] -->|BelongsToClass| N0003(StableRotationalVelocityObjective) 
+	N0004[bos] -->|BelongsToClass| N0005(BottomOfStringReferenceLocation) 
+	N0002[stableBitRPM] -->|IsPhysicallyLocatedAt| N0004[bos] 
+	N0000[softSpeedController] -->|ImplementsObjective| N0002[stableBitRPM] 
+	N0006[resonanceFiltering] -->|BelongsToClass| N0007(DrillStringTorsionalResonanceFilteringControlStrategy) 
+	N0000[softSpeedController] -->|ImplementsControlStrategy| N0006[resonanceFiltering] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?softSpeedController
+WHERE {
+	?softSpeedController rdf:type ddhub:SoftSpeedController .
+	?stableBitRPM rdf:type ddhub:StableRotationalVelocityObjective .
+	?bos rdf:type ddhub:BottomOfStringReferenceLocation .
+	?stableBitRPM ddhub:IsPhysicallyLocatedAt ?bos .
+	?softSpeedController ddhub:ImplementsObjective ?stableBitRPM .
+	?resonanceFiltering rdf:type ddhub:DrillStringTorsionalResonanceFilteringControlStrategy .
+	?softSpeedController ddhub:ImplementsControlStrategy ?resonanceFiltering .
+}
+```
+This example describes a SoftSpeed controller that uses drill-string torsional resonance filtering to stabilize
+downhole rotational velocity.
+## SoftTorqueController <!-- NOUN -->
+- Display name: SoftTorque Controller
+- Parent class: [ControllerFunction](./ADCS.md#ControllerFunction)
+- Description: 
+A `SoftTorqueController` is a controller function that mitigates drill-string torsional stick-slip by
+filtering or shaping the surface rotation drive torque response around the drill-string natural torsional resonance
+frequency to damp torsional oscillations.
+- Definition set: ADCS
+- Examples:
+```dwis softTorqueController
+SoftTorqueController:softTorqueController
+StableRotationalVelocityObjective:stableBitRPM
+BottomOfStringReferenceLocation:bos
+stableBitRPM IsPhysicallyLocatedAt bos
+softTorqueController ImplementsObjective stableBitRPM
+DrillStringTorsionalResonanceFilteringControlStrategy:resonanceFiltering
+softTorqueController ImplementsControlStrategy resonanceFiltering
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[softTorqueController] -->|BelongsToClass| N0001(SoftTorqueController) 
+	N0002[stableBitRPM] -->|BelongsToClass| N0003(StableRotationalVelocityObjective) 
+	N0004[bos] -->|BelongsToClass| N0005(BottomOfStringReferenceLocation) 
+	N0002[stableBitRPM] -->|IsPhysicallyLocatedAt| N0004[bos] 
+	N0000[softTorqueController] -->|ImplementsObjective| N0002[stableBitRPM] 
+	N0006[resonanceFiltering] -->|BelongsToClass| N0007(DrillStringTorsionalResonanceFilteringControlStrategy) 
+	N0000[softTorqueController] -->|ImplementsControlStrategy| N0006[resonanceFiltering] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?softTorqueController
+WHERE {
+	?softTorqueController rdf:type ddhub:SoftTorqueController .
+	?stableBitRPM rdf:type ddhub:StableRotationalVelocityObjective .
+	?bos rdf:type ddhub:BottomOfStringReferenceLocation .
+	?stableBitRPM ddhub:IsPhysicallyLocatedAt ?bos .
+	?softTorqueController ddhub:ImplementsObjective ?stableBitRPM .
+	?resonanceFiltering rdf:type ddhub:DrillStringTorsionalResonanceFilteringControlStrategy .
+	?softTorqueController ddhub:ImplementsControlStrategy ?resonanceFiltering .
+}
+```
+This example describes a SoftTorque controller that uses drill-string torsional resonance filtering to damp torsional
+oscillations.
+## ImpedanceMatchingController <!-- NOUN -->
+- Display name: Impedance Matching Controller
+- Parent class: [ControllerFunction](./ADCS.md#ControllerFunction)
+- Description: 
+An `ImpedanceMatchingController` is a controller function that mitigates drill-string torsional
+oscillations by adapting the dynamic interaction between the surface rotation drive and the drill string.
+- Definition set: ADCS
+- Examples:
+```dwis impedanceMatchingController
+ImpedanceMatchingController:impedanceMatchingController
+StableRotationalVelocityObjective:stableBitRPM
+BottomOfStringReferenceLocation:bos
+stableBitRPM IsPhysicallyLocatedAt bos
+impedanceMatchingController ImplementsObjective stableBitRPM
+RotationalImpedanceMatchingControlStrategy:rotationalImpedanceMatching
+impedanceMatchingController ImplementsControlStrategy rotationalImpedanceMatching
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[impedanceMatchingController] -->|BelongsToClass| N0001(ImpedanceMatchingController) 
+	N0002[stableBitRPM] -->|BelongsToClass| N0003(StableRotationalVelocityObjective) 
+	N0004[bos] -->|BelongsToClass| N0005(BottomOfStringReferenceLocation) 
+	N0002[stableBitRPM] -->|IsPhysicallyLocatedAt| N0004[bos] 
+	N0000[impedanceMatchingController] -->|ImplementsObjective| N0002[stableBitRPM] 
+	N0006[rotationalImpedanceMatching] -->|BelongsToClass| N0007(RotationalImpedanceMatchingControlStrategy) 
+	N0000[impedanceMatchingController] -->|ImplementsControlStrategy| N0006[rotationalImpedanceMatching] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?impedanceMatchingController
+WHERE {
+	?impedanceMatchingController rdf:type ddhub:ImpedanceMatchingController .
+	?stableBitRPM rdf:type ddhub:StableRotationalVelocityObjective .
+	?bos rdf:type ddhub:BottomOfStringReferenceLocation .
+	?stableBitRPM ddhub:IsPhysicallyLocatedAt ?bos .
+	?impedanceMatchingController ddhub:ImplementsObjective ?stableBitRPM .
+	?rotationalImpedanceMatching rdf:type ddhub:RotationalImpedanceMatchingControlStrategy .
+	?impedanceMatchingController ddhub:ImplementsControlStrategy ?rotationalImpedanceMatching .
+}
+```
+This example describes an impedance-matching controller used to stabilize downhole rotational velocity.
+## PipeRockingController <!-- NOUN -->
+- Display name: Pipe Rocking Controller
+- Parent class: [ControllerFunction](./ADCS.md#ControllerFunction)
+- Description: 
+A `PipeRockingController` is a controller function that alternates top-of-string rotation over a limited
+angular interval to orient or maintain the toolface of a downhole motor.
+- Definition set: ADCS
+- Examples:
+```dwis pipeRockingController
+PipeRockingController:pipeRockingController
+PipeRockingControlStrategy:pipeRockingStrategy
+ToolfaceOrientationProcedure:toolfaceOrientation
+pipeRockingController ImplementsControlStrategy pipeRockingStrategy
+pipeRockingController ImplementsProcedure toolfaceOrientation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pipeRockingController] -->|BelongsToClass| N0001(PipeRockingController) 
+	N0002[pipeRockingStrategy] -->|BelongsToClass| N0003(PipeRockingControlStrategy) 
+	N0004[toolfaceOrientation] -->|BelongsToClass| N0005(ToolfaceOrientationProcedure) 
+	N0000[pipeRockingController] -->|ImplementsControlStrategy| N0002[pipeRockingStrategy] 
+	N0000[pipeRockingController] -->|ImplementsProcedure| N0004[toolfaceOrientation] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pipeRockingController
+WHERE {
+	?pipeRockingController rdf:type ddhub:PipeRockingController .
+	?pipeRockingStrategy rdf:type ddhub:PipeRockingControlStrategy .
+	?toolfaceOrientation rdf:type ddhub:ToolfaceOrientationProcedure .
+	?pipeRockingController ddhub:ImplementsControlStrategy ?pipeRockingStrategy .
+	?pipeRockingController ddhub:ImplementsProcedure ?toolfaceOrientation .
+}
+```
+This example describes a pipe-rocking controller used for toolface orientation.
+## ControlStrategy <!-- NOUN -->
+- Display name: Control Strategy
+- Parent class: [DWISNoun](./DWISSemantics.md#DWISNoun)
+- Description: 
+A `ControlStrategy` is a named control approach or algorithmic principle used by a controller function
+to achieve its control objectives.
+- Definition set: ADCS
+- Examples:
+```dwis controlStrategy
+ControlStrategy:controlStrategy
+ControllerFunction:controller
+controller ImplementsControlStrategy controlStrategy
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[controlStrategy] -->|BelongsToClass| N0001(ControlStrategy) 
+	N0002[controller] -->|BelongsToClass| N0003(ControllerFunction) 
+	N0002[controller] -->|ImplementsControlStrategy| N0000[controlStrategy] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?controlStrategy
+WHERE {
+	?controlStrategy rdf:type ddhub:ControlStrategy .
+	?controller rdf:type ddhub:ControllerFunction .
+	?controller ddhub:ImplementsControlStrategy ?controlStrategy .
+}
+```
+This example states that a controller implements a control strategy.
+## DrillStringTorsionalResonanceFilteringControlStrategy <!-- NOUN -->
+- Display name: Drill String Torsional Resonance Filtering Control Strategy
+- Parent class: [ControlStrategy](./ADCS.md#ControlStrategy)
+- Description: 
+A `DrillStringTorsionalResonanceFilteringControlStrategy` is a control strategy that filters or shapes
+surface rotation control action around the drill-string natural torsional resonance frequency to damp torsional
+oscillations and reduce stick-slip.
+- Definition set: ADCS
+- Examples:
+```dwis resonanceFiltering
+DrillStringTorsionalResonanceFilteringControlStrategy:resonanceFiltering
+SoftSpeedController:softSpeedController
+softSpeedController ImplementsControlStrategy resonanceFiltering
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[resonanceFiltering] -->|BelongsToClass| N0001(DrillStringTorsionalResonanceFilteringControlStrategy) 
+	N0002[softSpeedController] -->|BelongsToClass| N0003(SoftSpeedController) 
+	N0002[softSpeedController] -->|ImplementsControlStrategy| N0000[resonanceFiltering] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?resonanceFiltering
+WHERE {
+	?resonanceFiltering rdf:type ddhub:DrillStringTorsionalResonanceFilteringControlStrategy .
+	?softSpeedController rdf:type ddhub:SoftSpeedController .
+	?softSpeedController ddhub:ImplementsControlStrategy ?resonanceFiltering .
+}
+```
+This example states that a SoftSpeed controller uses drill-string torsional resonance filtering.
+## RotationalImpedanceMatchingControlStrategy <!-- NOUN -->
+- Display name: Rotational Impedance Matching Control Strategy
+- Parent class: [ControlStrategy](./ADCS.md#ControlStrategy)
+- Description: 
+A `RotationalImpedanceMatchingControlStrategy` is a control strategy that adapts the dynamic interaction
+between the surface rotation drive and the drill string to damp torsional oscillations by reducing reflection or
+amplification of torsional energy.
+- Definition set: ADCS
+- Examples:
+```dwis rotationalImpedanceMatching
+RotationalImpedanceMatchingControlStrategy:rotationalImpedanceMatching
+ImpedanceMatchingController:impedanceMatchingController
+impedanceMatchingController ImplementsControlStrategy rotationalImpedanceMatching
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[rotationalImpedanceMatching] -->|BelongsToClass| N0001(RotationalImpedanceMatchingControlStrategy) 
+	N0002[impedanceMatchingController] -->|BelongsToClass| N0003(ImpedanceMatchingController) 
+	N0002[impedanceMatchingController] -->|ImplementsControlStrategy| N0000[rotationalImpedanceMatching] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?rotationalImpedanceMatching
+WHERE {
+	?rotationalImpedanceMatching rdf:type ddhub:RotationalImpedanceMatchingControlStrategy .
+	?impedanceMatchingController rdf:type ddhub:ImpedanceMatchingController .
+	?impedanceMatchingController ddhub:ImplementsControlStrategy ?rotationalImpedanceMatching .
+}
+```
+This example states that an impedance-matching controller uses rotational impedance matching.
+## PipeRockingControlStrategy <!-- NOUN -->
+- Display name: Pipe Rocking Control Strategy
+- Parent class: [ControlStrategy](./ADCS.md#ControlStrategy)
+- Description: 
+A `PipeRockingControlStrategy` is a control strategy that alternates top-of-string rotation over a
+limited angular interval to orient or maintain the toolface of a downhole motor without continuous full rotation.
+- Definition set: ADCS
+- Examples:
+```dwis pipeRockingStrategy
+PipeRockingControlStrategy:pipeRockingStrategy
+PipeRockingController:pipeRocking
+ToolfaceOrientationProcedure:toolfaceOrientation
+pipeRocking ImplementsControlStrategy pipeRockingStrategy
+pipeRocking ImplementsProcedure toolfaceOrientation
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pipeRockingStrategy] -->|BelongsToClass| N0001(PipeRockingControlStrategy) 
+	N0002[pipeRocking] -->|BelongsToClass| N0003(PipeRockingController) 
+	N0004[toolfaceOrientation] -->|BelongsToClass| N0005(ToolfaceOrientationProcedure) 
+	N0002[pipeRocking] -->|ImplementsControlStrategy| N0000[pipeRockingStrategy] 
+	N0002[pipeRocking] -->|ImplementsProcedure| N0004[toolfaceOrientation] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pipeRockingStrategy
+WHERE {
+	?pipeRockingStrategy rdf:type ddhub:PipeRockingControlStrategy .
+	?pipeRocking rdf:type ddhub:PipeRockingController .
+	?toolfaceOrientation rdf:type ddhub:ToolfaceOrientationProcedure .
+	?pipeRocking ddhub:ImplementsControlStrategy ?pipeRockingStrategy .
+	?pipeRocking ddhub:ImplementsProcedure ?toolfaceOrientation .
+}
+```
+This example states that a pipe-rocking controller uses a pipe-rocking strategy for toolface orientation.
 ## ProcedureFunction <!-- NOUN -->
 - Display name: Procedure Function
 - Parent class: [RunnableFunction](./ADCS.md#RunnableFunction)
@@ -381,11 +762,404 @@ WHERE {
 ```
 This example describes the `swabSurgeLimits` safe operating envelope limits to avoid detrimental swab/surge pressures in 
 the open hole section of the borehole. 
+## ServiceFunction <!-- NOUN -->
+- Display name: Service Function
+- Parent class: [ADCSFunction](./ADCS.md#ADCSFunction)
+- Description: 
+A `ServiceFunction` is an `ADCSFunction` that performs a discrete service action on request. It does not
+own the drilling control loop, does not execute a finite procedure, and does not define a protective envelope. An example
+of `ServiceFunction` is a tare service that applies a requested correction factor to a measured drilling quantity.
+- Definition set: ADCS
+- Examples:
+```dwis tareService
+ServiceFunction:tareService
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+tareService IsProvidedBy DCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[tareService] -->|BelongsToClass| N0001(ServiceFunction) 
+	N0002[DCS] -->|BelongsToClass| N0003(ControlSystem) 
+	N0004[Contractor] -->|BelongsToClass| N0005(DrillingContractor) 
+	N0002[DCS] -->|IsProvidedBy| N0004[Contractor] 
+	N0002[DCS] -->|BelongsToClass| N0006(DataProvider) 
+	N0000[tareService] -->|IsProvidedBy| N0002[DCS] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?tareService
+WHERE {
+	?tareService rdf:type ddhub:ServiceFunction .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS ddhub:IsProvidedBy ?Contractor .
+	?DCS rdf:type ddhub:DataProvider .
+	?tareService ddhub:IsProvidedBy ?DCS .
+}
+```
+This example describes a service function provided by the drilling control system, `DCS`.
+## TareServiceFunction <!-- NOUN -->
+- Display name: Tare Service Function
+- Parent class: [ServiceFunction](./ADCS.md#ServiceFunction)
+- Description: 
+A `TareServiceFunction` is a `ServiceFunction` that applies a tare value as a correction factor to a
+drilling signal. The service is requested by a command and uses an associated tare value.
+- Definition set: ADCS
+- Examples:
+```dwis wobTareService
+TareServiceFunction:wobTareService
+CalibrationParameter:wobTareValue
+wobTareService IsRelatedToDrillingObjective stableWOB
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+wobTareService IsProvidedBy DCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wobTareService] -->|BelongsToClass| N0001(TareServiceFunction) 
+	N0002[wobTareValue] -->|BelongsToClass| N0003(CalibrationParameter) 
+	N0000[wobTareService] -->|IsRelatedToDrillingObjective| N0004[stableWOB] 
+	N0005[DCS] -->|BelongsToClass| N0006(ControlSystem) 
+	N0007[Contractor] -->|BelongsToClass| N0008(DrillingContractor) 
+	N0005[DCS] -->|IsProvidedBy| N0007[Contractor] 
+	N0005[DCS] -->|BelongsToClass| N0009(DataProvider) 
+	N0000[wobTareService] -->|IsProvidedBy| N0005[DCS] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wobTareService
+WHERE {
+	?wobTareService rdf:type ddhub:TareServiceFunction .
+	?wobTareValue rdf:type ddhub:CalibrationParameter .
+	?wobTareService ddhub:IsRelatedToDrillingObjective ?stableWOB .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS ddhub:IsProvidedBy ?Contractor .
+	?DCS rdf:type ddhub:DataProvider .
+	?wobTareService ddhub:IsProvidedBy ?DCS .
+}
+```
+This example describes a tare service function provided by the drilling control system, `DCS`.
+## WeightOnBitTareServiceFunction <!-- NOUN -->
+- Display name: Weight On Bit Tare Service Function
+- Parent class: [TareServiceFunction](./ADCS.md#TareServiceFunction)
+- Description: 
+A `WeightOnBitTareServiceFunction` is a `TareServiceFunction` that applies a correction factor to weight
+on bit.
+- Definition set: ADCS
+- Examples:
+```dwis wobTareService
+WeightOnBitTareServiceFunction:wobTareService
+StableAxialForceObjective:stableWOB
+BottomOfStringReferenceLocation:bos
+stableWOB IsPhysicallyLocatedAt bos
+wobTareService IsRelatedToDrillingObjective stableWOB
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wobTareService] -->|BelongsToClass| N0001(WeightOnBitTareServiceFunction) 
+	N0002[stableWOB] -->|BelongsToClass| N0003(StableAxialForceObjective) 
+	N0004[bos] -->|BelongsToClass| N0005(BottomOfStringReferenceLocation) 
+	N0002[stableWOB] -->|IsPhysicallyLocatedAt| N0004[bos] 
+	N0000[wobTareService] -->|IsRelatedToDrillingObjective| N0002[stableWOB] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wobTareService
+WHERE {
+	?wobTareService rdf:type ddhub:WeightOnBitTareServiceFunction .
+	?stableWOB rdf:type ddhub:StableAxialForceObjective .
+	?bos rdf:type ddhub:BottomOfStringReferenceLocation .
+	?stableWOB ddhub:IsPhysicallyLocatedAt ?bos .
+	?wobTareService ddhub:IsRelatedToDrillingObjective ?stableWOB .
+}
+```
+This example describes a service function used to tare weight on bit.
+## DifferentialPressureTareServiceFunction <!-- NOUN -->
+- Display name: Differential Pressure Tare Service Function
+- Parent class: [TareServiceFunction](./ADCS.md#TareServiceFunction)
+- Description: 
+A `DifferentialPressureTareServiceFunction` is a `TareServiceFunction` that applies a correction factor
+to differential pressure.
+- Definition set: ADCS
+- Examples:
+```dwis differentialPressureTareService
+DifferentialPressureTareServiceFunction:differentialPressureTareService
+StablePressureObjective:stableDifferentialPressure
+PositiveDisplacementMotor:PDM
+HydraulicLogicalElement:logicalPDM
+logicalPDM IsAHydraulicRepresentationFor PDM
+stableDifferentialPressure IsHydraulicallyLocatedAt logicalPDM
+differentialPressureTareService IsRelatedToDrillingObjective stableDifferentialPressure
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[differentialPressureTareService] -->|BelongsToClass| N0001(DifferentialPressureTareServiceFunction) 
+	N0002[stableDifferentialPressure] -->|BelongsToClass| N0003(StablePressureObjective) 
+	N0004[PDM] -->|BelongsToClass| N0005(PositiveDisplacementMotor) 
+	N0006[logicalPDM] -->|BelongsToClass| N0007(HydraulicLogicalElement) 
+	N0006[logicalPDM] -->|IsAHydraulicRepresentationFor| N0004[PDM] 
+	N0002[stableDifferentialPressure] -->|IsHydraulicallyLocatedAt| N0006[logicalPDM] 
+	N0000[differentialPressureTareService] -->|IsRelatedToDrillingObjective| N0002[stableDifferentialPressure] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?differentialPressureTareService
+WHERE {
+	?differentialPressureTareService rdf:type ddhub:DifferentialPressureTareServiceFunction .
+	?stableDifferentialPressure rdf:type ddhub:StablePressureObjective .
+	?PDM rdf:type ddhub:PositiveDisplacementMotor .
+	?logicalPDM rdf:type ddhub:HydraulicLogicalElement .
+	?logicalPDM ddhub:IsAHydraulicRepresentationFor ?PDM .
+	?stableDifferentialPressure ddhub:IsHydraulicallyLocatedAt ?logicalPDM .
+	?differentialPressureTareService ddhub:IsRelatedToDrillingObjective ?stableDifferentialPressure .
+}
+```
+This example describes a service function used to tare differential pressure.
+## TuningServiceFunction <!-- NOUN -->
+- Display name: Tuning Service Function
+- Parent class: [ServiceFunction](./ADCS.md#ServiceFunction)
+- Description: 
+A `TuningServiceFunction` is a `ServiceFunction` that applies tuning parameters to an ADCS function or
+to a control loop used by an ADCS function. The service is requested by a command and uses associated tuning parameter
+values.
+- Definition set: ADCS
+- Examples:
+```dwis tuningService
+TuningServiceFunction:tuningService
+ControllerFunction:autoDriller
+tuningService IsTuningServiceFor autoDriller
+ControlSystem:DCS
+DrillingContractor:Contractor
+DCS IsProvidedBy Contractor
+DCS BelongsToClass DataProvider
+tuningService IsProvidedBy DCS
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[tuningService] -->|BelongsToClass| N0001(TuningServiceFunction) 
+	N0002[autoDriller] -->|BelongsToClass| N0003(ControllerFunction) 
+	N0000[tuningService] -->|IsTuningServiceFor| N0002[autoDriller] 
+	N0004[DCS] -->|BelongsToClass| N0005(ControlSystem) 
+	N0006[Contractor] -->|BelongsToClass| N0007(DrillingContractor) 
+	N0004[DCS] -->|IsProvidedBy| N0006[Contractor] 
+	N0004[DCS] -->|BelongsToClass| N0008(DataProvider) 
+	N0000[tuningService] -->|IsProvidedBy| N0004[DCS] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?tuningService
+WHERE {
+	?tuningService rdf:type ddhub:TuningServiceFunction .
+	?autoDriller rdf:type ddhub:ControllerFunction .
+	?tuningService ddhub:IsTuningServiceFor ?autoDriller .
+	?DCS rdf:type ddhub:ControlSystem .
+	?Contractor rdf:type ddhub:DrillingContractor .
+	?DCS ddhub:IsProvidedBy ?Contractor .
+	?DCS rdf:type ddhub:DataProvider .
+	?tuningService ddhub:IsProvidedBy ?DCS .
+}
+```
+This example describes a tuning service function provided by the drilling control system, `DCS`.
+## AutoDrillerGainsTuningServiceFunction <!-- NOUN -->
+- Display name: Auto Driller Gains Tuning Service Function
+- Parent class: [TuningServiceFunction](./ADCS.md#TuningServiceFunction)
+- Description: 
+An `AutoDrillerGainsTuningServiceFunction` is a `TuningServiceFunction` that applies gain tuning
+parameters to the auto-driller control loops.
+- Definition set: ADCS
+- Examples:
+```dwis autoDrillerGainsTuningService
+AutoDrillerGainsTuningServiceFunction:autoDrillerGainsTuningService
+ControllerFunction:autoDriller
+autoDrillerGainsTuningService IsTuningServiceFor autoDriller
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[autoDrillerGainsTuningService] -->|BelongsToClass| N0001(AutoDrillerGainsTuningServiceFunction) 
+	N0002[autoDriller] -->|BelongsToClass| N0003(ControllerFunction) 
+	N0000[autoDrillerGainsTuningService] -->|IsTuningServiceFor| N0002[autoDriller] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?autoDrillerGainsTuningService
+WHERE {
+	?autoDrillerGainsTuningService rdf:type ddhub:AutoDrillerGainsTuningServiceFunction .
+	?autoDriller rdf:type ddhub:ControllerFunction .
+	?autoDrillerGainsTuningService ddhub:IsTuningServiceFor ?autoDriller .
+}
+```
+This example describes a service function used to tune auto-driller gains.
+## PIDTuningParameter <!-- NOUN -->
+- Display name: PID Tuning Parameter
+- Parent class: [CalibrationParameter](./DrillingDataSemantics.md#CalibrationParameter)
+- Description: 
+A `PIDTuningParameter` is a calibration parameter that contains proportional, integral, derivative, or
+time-constant values used to tune a controller.
+- Definition set: ADCS
+- Examples:
+```dwis pidTuningParameter
+PIDTuningParameter:pidTuningParameter
+ControllerFunction:autoDriller
+pidTuningParameter IsTuningParameterFor autoDriller
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[pidTuningParameter] -->|BelongsToClass| N0001(PIDTuningParameter) 
+	N0002[autoDriller] -->|BelongsToClass| N0003(ControllerFunction) 
+	N0000[pidTuningParameter] -->|IsTuningParameterFor| N0002[autoDriller] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?pidTuningParameter
+WHERE {
+	?pidTuningParameter rdf:type ddhub:PIDTuningParameter .
+	?autoDriller rdf:type ddhub:ControllerFunction .
+	?pidTuningParameter ddhub:IsTuningParameterFor ?autoDriller .
+}
+```
+This example describes a PID tuning parameter for the auto-driller.
+## AutoDrillerWOBGainsTuningParameter <!-- NOUN -->
+- Display name: Auto Driller WOB Gains Tuning Parameter
+- Parent class: [PIDTuningParameter](./ADCS.md#PIDTuningParameter)
+- Description: 
+An `AutoDrillerWOBGainsTuningParameter` is a `PIDTuningParameter` used to tune the weight-on-bit
+control loop of an auto-driller.
+- Definition set: ADCS
+- Examples:
+```dwis wobGainsTuningParameter
+AutoDrillerWOBGainsTuningParameter:wobGainsTuningParameter
+ControllerFunction:autoDriller
+wobGainsTuningParameter IsTuningParameterFor autoDriller
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wobGainsTuningParameter] -->|BelongsToClass| N0001(AutoDrillerWOBGainsTuningParameter) 
+	N0002[autoDriller] -->|BelongsToClass| N0003(ControllerFunction) 
+	N0000[wobGainsTuningParameter] -->|IsTuningParameterFor| N0002[autoDriller] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wobGainsTuningParameter
+WHERE {
+	?wobGainsTuningParameter rdf:type ddhub:AutoDrillerWOBGainsTuningParameter .
+	?autoDriller rdf:type ddhub:ControllerFunction .
+	?wobGainsTuningParameter ddhub:IsTuningParameterFor ?autoDriller .
+}
+```
+This example describes WOB gain tuning parameters for the auto-driller.
+## AutoDrillerTorqueGainsTuningParameter <!-- NOUN -->
+- Display name: Auto Driller Torque Gains Tuning Parameter
+- Parent class: [PIDTuningParameter](./ADCS.md#PIDTuningParameter)
+- Description: 
+An `AutoDrillerTorqueGainsTuningParameter` is a `PIDTuningParameter` used to tune the torque control loop
+of an auto-driller.
+- Definition set: ADCS
+- Examples:
+```dwis torqueGainsTuningParameter
+AutoDrillerTorqueGainsTuningParameter:torqueGainsTuningParameter
+ControllerFunction:autoDriller
+torqueGainsTuningParameter IsTuningParameterFor autoDriller
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[torqueGainsTuningParameter] -->|BelongsToClass| N0001(AutoDrillerTorqueGainsTuningParameter) 
+	N0002[autoDriller] -->|BelongsToClass| N0003(ControllerFunction) 
+	N0000[torqueGainsTuningParameter] -->|IsTuningParameterFor| N0002[autoDriller] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?torqueGainsTuningParameter
+WHERE {
+	?torqueGainsTuningParameter rdf:type ddhub:AutoDrillerTorqueGainsTuningParameter .
+	?autoDriller rdf:type ddhub:ControllerFunction .
+	?torqueGainsTuningParameter ddhub:IsTuningParameterFor ?autoDriller .
+}
+```
+This example describes torque gain tuning parameters for the auto-driller.
+## AutoDrillerDifferentialPressureGainsTuningParameter <!-- NOUN -->
+- Display name: Auto Driller Differential Pressure Gains Tuning Parameter
+- Parent class: [PIDTuningParameter](./ADCS.md#PIDTuningParameter)
+- Description: 
+An `AutoDrillerDifferentialPressureGainsTuningParameter` is a `PIDTuningParameter` used to tune the
+differential-pressure control loop of an auto-driller.
+- Definition set: ADCS
+- Examples:
+```dwis differentialPressureGainsTuningParameter
+AutoDrillerDifferentialPressureGainsTuningParameter:differentialPressureGainsTuningParameter
+ControllerFunction:autoDriller
+differentialPressureGainsTuningParameter IsTuningParameterFor autoDriller
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[differentialPressureGainsTuningParameter] -->|BelongsToClass| N0001(AutoDrillerDifferentialPressureGainsTuningParameter) 
+	N0002[autoDriller] -->|BelongsToClass| N0003(ControllerFunction) 
+	N0000[differentialPressureGainsTuningParameter] -->|IsTuningParameterFor| N0002[autoDriller] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?differentialPressureGainsTuningParameter
+WHERE {
+	?differentialPressureGainsTuningParameter rdf:type ddhub:AutoDrillerDifferentialPressureGainsTuningParameter .
+	?autoDriller rdf:type ddhub:ControllerFunction .
+	?differentialPressureGainsTuningParameter ddhub:IsTuningParameterFor ?autoDriller .
+}
+```
+This example describes differential-pressure gain tuning parameters for the auto-driller.
 # Verbs
 ## Class Inheritance for Verbs
 Here is a class inheritance diagram for the verbs contained in this definition set.
 ```mermaid
 classDiagram
+DWISVerb <|-- ImplementsControlStrategy
+DWISVerb <|-- IsTuningServiceFor
+DWISVerb <|-- IsTuningParameterFor
+IsCommandFor <|-- IsTuningRequestFor
 DWISVerb <|-- IsEnablingSignalFor
 DWISVerb <|-- IsActivatedSignalFor
 DWISVerb <|-- AllowEnablementSignalFor
@@ -403,6 +1177,10 @@ DWISVerb <|-- IsFeatureSignalFor
 Here is a graph representing the relations that can be made with the verbs defined in this definition set.
 ```mermaid
 erDiagram
+ControllerFunction ||--o{ ControlStrategy : ImplementsControlStrategy
+TuningServiceFunction ||--o{ ADCSFunction : IsTuningServiceFor
+PIDTuningParameter ||--o{ ADCSFunction : IsTuningParameterFor
+DrillingDataPoint ||--o{ PIDTuningParameter : IsTuningRequestFor
 DrillingDataPoint ||--o{ ActivableFunction : IsEnablingSignalFor
 DrillingDataPoint ||--o{ ActivableFunction : IsActivatedSignalFor
 DrillingDataPoint ||--o{ ActivableFunction : AllowEnablementSignalFor
@@ -416,6 +1194,146 @@ DrillingDataPoint ||--o{ FDIRFunction : IsInSafeModeSignalFor
 DrillingDataPoint ||--o{ FDIRFunction : IsImpactDescriptionSignalFor
 DrillingDataPoint ||--o{ ActivableFunction : IsFeatureSignalFor
 ```
+## ImplementsControlStrategy <!-- VERB -->
+- Display name: Implements Control Strategy
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [ControllerFunction](./ADCS.md#ControllerFunction)
+- Object class: [ControlStrategy](./ADCS.md#ControlStrategy)
+- Definition set: ADCS
+- Description: 
+This verb indicates that a controller function uses a named control strategy to implement one or more of
+its control objectives.
+- Examples:
+```dwis softSpeedControlStrategy
+SoftSpeedController:softSpeedController
+DrillStringTorsionalResonanceFilteringControlStrategy:resonanceFiltering
+softSpeedController ImplementsControlStrategy resonanceFiltering
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[softSpeedController] -->|BelongsToClass| N0001(SoftSpeedController) 
+	N0002[resonanceFiltering] -->|BelongsToClass| N0003(DrillStringTorsionalResonanceFilteringControlStrategy) 
+	N0000[softSpeedController] -->|ImplementsControlStrategy| N0002[resonanceFiltering] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?softSpeedControlStrategy
+WHERE {
+	?softSpeedController rdf:type ddhub:SoftSpeedController .
+	?resonanceFiltering rdf:type ddhub:DrillStringTorsionalResonanceFilteringControlStrategy .
+	?softSpeedController ddhub:ImplementsControlStrategy ?resonanceFiltering .
+}
+```
+This example states that the SoftSpeed controller uses a drill-string torsional resonance filtering control strategy.
+## IsTuningServiceFor <!-- VERB -->
+- Display name: Is Tuning Service For
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [TuningServiceFunction](./ADCS.md#TuningServiceFunction)
+- Object class: [ADCSFunction](./ADCS.md#ADCSFunction)
+- Definition set: ADCS
+- Description: 
+This verb indicates that a tuning service applies tuning parameters to an ADCS function or to one of its
+control loops.
+- Examples:
+```dwis autoDrillerTuningService
+AutoDrillerGainsTuningServiceFunction:autoDrillerGainsTuningService
+ControllerFunction:autoDriller
+autoDrillerGainsTuningService IsTuningServiceFor autoDriller
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[autoDrillerGainsTuningService] -->|BelongsToClass| N0001(AutoDrillerGainsTuningServiceFunction) 
+	N0002[autoDriller] -->|BelongsToClass| N0003(ControllerFunction) 
+	N0000[autoDrillerGainsTuningService] -->|IsTuningServiceFor| N0002[autoDriller] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?autoDrillerTuningService
+WHERE {
+	?autoDrillerGainsTuningService rdf:type ddhub:AutoDrillerGainsTuningServiceFunction .
+	?autoDriller rdf:type ddhub:ControllerFunction .
+	?autoDrillerGainsTuningService ddhub:IsTuningServiceFor ?autoDriller .
+}
+```
+This example states that the service tunes the auto-driller.
+## IsTuningParameterFor <!-- VERB -->
+- Display name: Is Tuning Parameter For
+- Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)
+- Subject class: [PIDTuningParameter](./ADCS.md#PIDTuningParameter)
+- Object class: [ADCSFunction](./ADCS.md#ADCSFunction)
+- Definition set: ADCS
+- Description: 
+This verb indicates that a tuning parameter is intended to tune an ADCS function or one of its control
+loops.
+- Examples:
+```dwis wobTuningParameter
+AutoDrillerWOBGainsTuningParameter:wobGainsTuningParameter
+ControllerFunction:autoDriller
+wobGainsTuningParameter IsTuningParameterFor autoDriller
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wobGainsTuningParameter] -->|BelongsToClass| N0001(AutoDrillerWOBGainsTuningParameter) 
+	N0002[autoDriller] -->|BelongsToClass| N0003(ControllerFunction) 
+	N0000[wobGainsTuningParameter] -->|IsTuningParameterFor| N0002[autoDriller] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wobTuningParameter
+WHERE {
+	?wobGainsTuningParameter rdf:type ddhub:AutoDrillerWOBGainsTuningParameter .
+	?autoDriller rdf:type ddhub:ControllerFunction .
+	?wobGainsTuningParameter ddhub:IsTuningParameterFor ?autoDriller .
+}
+```
+This example states that the WOB gains are tuning parameters for the auto-driller.
+## IsTuningRequestFor <!-- VERB -->
+- Display name: Is Tuning Request For
+- Parent verb: [IsCommandFor](./DataFlow.md#IsCommandFor)
+- Subject class: [DrillingDataPoint](./DrillingDataSemantics.md#DrillingDataPoint)
+- Object class: [PIDTuningParameter](./ADCS.md#PIDTuningParameter)
+- Definition set: ADCS
+- Description: 
+This verb indicates that a command or recommendation signal carries a request to apply a tuning
+parameter.
+- Examples:
+```dwis wobTuningRequest
+Command:wobGainsTuningRequest
+AutoDrillerWOBGainsTuningParameter:wobGainsTuningParameter
+wobGainsTuningRequest IsTuningRequestFor wobGainsTuningParameter
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[wobGainsTuningRequest] -->|BelongsToClass| N0001(Command) 
+	N0002[wobGainsTuningParameter] -->|BelongsToClass| N0003(AutoDrillerWOBGainsTuningParameter) 
+	N0000[wobGainsTuningRequest] -->|IsTuningRequestFor| N0002[wobGainsTuningParameter] 
+```
+An example SparQL query looks like this:
+```sparql
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ddhub: <http://ddhub.no/>
+PREFIX quantity: <http://ddhub.no/UnitAndQuantity>
+SELECT ?wobTuningRequest
+WHERE {
+	?wobGainsTuningRequest rdf:type ddhub:Command .
+	?wobGainsTuningParameter rdf:type ddhub:AutoDrillerWOBGainsTuningParameter .
+	?wobGainsTuningRequest ddhub:IsTuningRequestFor ?wobGainsTuningParameter .
+}
+```
+This example states that the command signal requests a WOB gain tuning parameter change.
 ## IsEnablingSignalFor <!-- VERB -->
 - Display name: Is Enabling Signal For
 - Parent verb: [DWISVerb](./DWISSemantics.md#DWISVerb)

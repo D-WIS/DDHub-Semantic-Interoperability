@@ -5,9 +5,17 @@
     <rdfs:comment xml:lang="EN">Nouns refer to the nature of a node in the graph. Implicitely a noun refers to a "is a" relation between the instance node and the noun. This is the root class for all the nouns defined in the DWIS vocabulary.
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/ActivableFunction">
+  <rdf:Description rdf:about="http://ddhub.no/ADCSFunction">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:comment xml:lang="EN">An `ADCSFunction` is a function exposed by an automated drilling control system as part of its capability
+description. ADCS functions include activable functions, such as controllers, procedures, and protections, and
+non-activable service functions that perform discrete service actions on request.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ActivableFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ADCSFunction" />
     <rdfs:comment xml:lang="EN">An `ActivableFunction` is an ADCS function that can be activated. Here activation means that the
 function may run immediately or that it is enabled and can trigger if some conditions are respected.
 </rdfs:comment>
@@ -106,6 +114,8 @@ function may run immediately or that it is enabled and can trigger if some condi
     <owl:onProperty rdf:resource="http://ddhub.no/SynchronizationDelay" />
     <owl:onClass rdf:resource="http://ddhub.no/SynchronizationGroup" />
     <owl:onProperty rdf:resource="http://ddhub.no/SamplingRate" />
+    <owl:onProperty rdf:resource="http://ddhub.no/Duration" />
+    <owl:onClass rdf:resource="http://ddhub.no/TimeWindow" />
     <owl:onProperty rdf:resource="http://ddhub.no/FullScale" />
     <owl:onClass rdf:resource="http://ddhub.no/FullScaleUncertainty" />
     <owl:onProperty rdf:resource="http://ddhub.no/ProportionError" />
@@ -119,6 +129,36 @@ function may run immediately or that it is enabled and can trigger if some condi
     <rdfs:comment xml:lang="EN">A `ControllerFunction` is a `RunnableFunction` that executes a feedback control loop to follow as closely
 as possible one or several desired values. A typical example of `ControllerFunction` is the `AutoDriller`. An `AutoDriller` 
 follows as closely as possible, for instance, a desired `WOB`.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SoftSpeedController">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ControllerFunction" />
+    <rdfs:comment xml:lang="EN">A `SoftSpeedController` is a controller function that mitigates drill-string torsional stick-slip by
+filtering surface rotation control action around the drill-string natural torsional resonance frequency to damp
+torsional oscillations and stabilize the downhole rotational velocity.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SoftTorqueController">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ControllerFunction" />
+    <rdfs:comment xml:lang="EN">A `SoftTorqueController` is a controller function that mitigates drill-string torsional stick-slip by
+filtering or shaping the surface rotation drive torque response around the drill-string natural torsional resonance
+frequency to damp torsional oscillations.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ImpedanceMatchingController">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ControllerFunction" />
+    <rdfs:comment xml:lang="EN">An `ImpedanceMatchingController` is a controller function that mitigates drill-string torsional
+oscillations by adapting the dynamic interaction between the surface rotation drive and the drill string.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PipeRockingController">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ControllerFunction" />
+    <rdfs:comment xml:lang="EN">A `PipeRockingController` is a controller function that alternates top-of-string rotation over a limited
+angular interval to orient or maintain the toolface of a downhole motor.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ProcedureFunction">
@@ -160,6 +200,127 @@ to avoid generating a drilling incident. SOE stands for Safe Operating Envelope.
 of the drilling process. An example `SOEFunction` is a swab/surge limits protection. This function limits the axial acceleration
 and speed of the drill-stem to avoid generate swabbing pressure below the maximum of the collapse and pore pressure, and
 surging pressure above the fracturing pressure.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ServiceFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ADCSFunction" />
+    <rdfs:comment xml:lang="EN">A `ServiceFunction` is an `ADCSFunction` that performs a discrete service action on request. It does not
+own the drilling control loop, does not execute a finite procedure, and does not define a protective envelope. An example
+of `ServiceFunction` is a tare service that applies a requested correction factor to a measured drilling quantity.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TareServiceFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ServiceFunction" />
+    <rdfs:comment xml:lang="EN">A `TareServiceFunction` is a `ServiceFunction` that applies a tare value as a correction factor to a
+drilling signal. The service is requested by a command and uses an associated tare value.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/WeightOnBitTareServiceFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/TareServiceFunction" />
+    <rdfs:comment xml:lang="EN">A `WeightOnBitTareServiceFunction` is a `TareServiceFunction` that applies a correction factor to weight
+on bit.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DifferentialPressureTareServiceFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/TareServiceFunction" />
+    <rdfs:comment xml:lang="EN">A `DifferentialPressureTareServiceFunction` is a `TareServiceFunction` that applies a correction factor
+to differential pressure.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TuningServiceFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ServiceFunction" />
+    <rdfs:comment xml:lang="EN">A `TuningServiceFunction` is a `ServiceFunction` that applies tuning parameters to an ADCS function or
+to a control loop used by an ADCS function. The service is requested by a command and uses associated tuning parameter
+values.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AutoDrillerGainsTuningServiceFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/TuningServiceFunction" />
+    <rdfs:comment xml:lang="EN">An `AutoDrillerGainsTuningServiceFunction` is a `TuningServiceFunction` that applies gain tuning
+parameters to the auto-driller control loops.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ControlStrategy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:comment xml:lang="EN">A `ControlStrategy` is a named control approach or algorithmic principle used by a controller function
+to achieve its control objectives.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillStringTorsionalResonanceFilteringControlStrategy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ControlStrategy" />
+    <rdfs:comment xml:lang="EN">A `DrillStringTorsionalResonanceFilteringControlStrategy` is a control strategy that filters or shapes
+surface rotation control action around the drill-string natural torsional resonance frequency to damp torsional
+oscillations and reduce stick-slip.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RotationalImpedanceMatchingControlStrategy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ControlStrategy" />
+    <rdfs:comment xml:lang="EN">A `RotationalImpedanceMatchingControlStrategy` is a control strategy that adapts the dynamic interaction
+between the surface rotation drive and the drill string to damp torsional oscillations by reducing reflection or
+amplification of torsional energy.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PipeRockingControlStrategy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ControlStrategy" />
+    <rdfs:comment xml:lang="EN">A `PipeRockingControlStrategy` is a control strategy that alternates top-of-string rotation over a
+limited angular interval to orient or maintain the toolface of a downhole motor without continuous full rotation.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/EstimationParameter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:comment xml:lang="EN">A quantity describing the configuration or internal state of a data interpretation
+or estimation model rather than the physical drilling process.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/CalibrationParameter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/EstimationParameter" />
+    <rdfs:comment xml:lang="EN">An estimation parameter that maps a sensor representation to a physical quantity through scaling or conversion.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PIDTuningParameter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CalibrationParameter" />
+    <rdfs:comment xml:lang="EN">A `PIDTuningParameter` is a calibration parameter that contains proportional, integral, derivative, or
+time-constant values used to tune a controller.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AutoDrillerWOBGainsTuningParameter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PIDTuningParameter" />
+    <rdfs:comment xml:lang="EN">An `AutoDrillerWOBGainsTuningParameter` is a `PIDTuningParameter` used to tune the weight-on-bit
+control loop of an auto-driller.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AutoDrillerTorqueGainsTuningParameter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PIDTuningParameter" />
+    <rdfs:comment xml:lang="EN">An `AutoDrillerTorqueGainsTuningParameter` is a `PIDTuningParameter` used to tune the torque control loop
+of an auto-driller.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AutoDrillerDifferentialPressureGainsTuningParameter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/PIDTuningParameter" />
+    <rdfs:comment xml:lang="EN">An `AutoDrillerDifferentialPressureGainsTuningParameter` is a `PIDTuningParameter` used to tune the
+differential-pressure control loop of an auto-driller.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/CorrectionFactor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/EstimationParameter" />
+    <rdfs:comment xml:lang="EN">An estimation parameter used to compensate systematic bias or mismatch in a computed or measured quantity.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DataType">
@@ -839,6 +1000,12 @@ ComputedState.
     <rdfs:comment xml:lang="EN">Tracks the maximum value within a sliding window.
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PeakToPeak">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/Filter" />
+    <rdfs:comment xml:lang="EN">Computes the difference between the maximum and minimum values of an input signal over a specified window.
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/MovingDistribution">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/Filter" />
@@ -917,6 +1084,114 @@ ComputedState.
     <rdfs:comment xml:lang="EN">An operating company is an entity that holds the rights to explore, develop, and produce hydrocarbon resources from a particular oil or gas field or lease
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Equinor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/OperatingCompany" />
+    <rdfs:comment xml:lang="EN">An operating company active in automated drilling, real-time operations, drilling data, and the Norwegian Continental Shelf digital drilling ecosystem.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AkerBP">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/OperatingCompany" />
+    <rdfs:comment xml:lang="EN">An operating company active in digitalized drilling operations, automation, drilling data, and vendor-integrated workflows.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TotalEnergies">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/OperatingCompany" />
+    <rdfs:comment xml:lang="EN">An operating company active in real-time monitoring, drilling assistance, SmartRoom-style operations, and drilling data workflows.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/BP">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/OperatingCompany" />
+    <rdfs:comment xml:lang="EN">An operating company active in real-time drilling decision support, digital wells, AI, and operational analytics.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Shell">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/OperatingCompany" />
+    <rdfs:comment xml:lang="EN">An operating company active in digital wells, remote operations, drilling data integration, and operational analytics.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ExxonMobil">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/OperatingCompany" />
+    <rdfs:comment xml:lang="EN">An operating company active in automated well placement, closed-loop drilling, real-time optimization, and digital drilling workflows.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Chevron">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/OperatingCompany" />
+    <rdfs:comment xml:lang="EN">An operating company active in edge analytics, digital drilling, remote operations, and AI workflows.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ADNOC">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/OperatingCompany" />
+    <rdfs:comment xml:lang="EN">An operating company active in AI-based ROP optimization, drilling automation, digital drilling programs, and operator-side drilling data workflows.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SaudiAramco">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/OperatingCompany" />
+    <rdfs:comment xml:lang="EN">An operating company active in drilling automation, real-time operations, AI, and digital oilfield programs.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Petrobras">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/OperatingCompany" />
+    <rdfs:comment xml:lang="EN">An operating company active in offshore drilling data, pre-salt operations, digital drilling, and real-time support.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ConocoPhillips">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/OperatingCompany" />
+    <rdfs:comment xml:lang="EN">An operating company active in unconventional drilling optimization and real-time operations.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Eni">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/OperatingCompany" />
+    <rdfs:comment xml:lang="EN">An operating company active in digital upstream, drilling optimization, and operational analytics.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Repsol">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/OperatingCompany" />
+    <rdfs:comment xml:lang="EN">An operating company active in digital upstream and drilling or well analytics.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/OMV">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/OperatingCompany" />
+    <rdfs:comment xml:lang="EN">An operating company active in digital well operations and real-time drilling workflows.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Petronas">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/OperatingCompany" />
+    <rdfs:comment xml:lang="EN">An operating company active in real-time operations, drilling analytics, and digital oilfield workflows.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/QatarEnergy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/OperatingCompany" />
+    <rdfs:comment xml:lang="EN">An operating company active in large-scale drilling operations and vendor-integrated data workflows.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/WoodsideEnergy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/OperatingCompany" />
+    <rdfs:comment xml:lang="EN">An operating company active in offshore digital drilling, remote operations, and operational data platforms.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HarbourEnergy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/OperatingCompany" />
+    <rdfs:comment xml:lang="EN">An operating company active in operator-side drilling and well data workflows and performance workflows.
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/ServiceCompany">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DataProvider" />
@@ -941,10 +1216,94 @@ ComputedState.
     <rdfs:comment xml:lang="EN">A logging service company is an entity that gathers measured information during well construction.
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MudLoggingCompany">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/LoggingServiceCompany" />
+    <rdfs:comment xml:lang="EN">A company that provides mud logging, surface logging, gas logging, wellsite geology, and structured wellsite drilling data.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Geolog">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudLoggingCompany" />
+    <rdfs:comment xml:lang="EN">A mud logging and surface logging company active in GeoWITSML, wellsite data aggregation, geology data, and drilling operational data.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GeoDataLogging">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudLoggingCompany" />
+    <rdfs:comment xml:lang="EN">A surface data acquisition and drilling monitoring company active in rig data acquisition and WITS, WITSML, OPC, and Modbus integration.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Exlog">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudLoggingCompany" />
+    <rdfs:comment xml:lang="EN">A mud logging and wellsite geology company active in wellsite drilling data, gas logging, lithology, and drilling parameters.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/NationalRegionalMudLoggingCompany">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/MudLoggingCompany" />
+    <rdfs:comment xml:lang="EN">A local or regional mud logging company that captures wellsite data, gas logs, lithology, and drilling parameters.
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/InstrumentationCompany">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/ServiceCompany" />
     <rdfs:comment xml:lang="EN">A service company providing measurement instruments and associated services.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DownholeMeasurementDynamicsCompany">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/InstrumentationCompany" />
+    <rdfs:comment xml:lang="EN">A company that generates or interprets downhole drilling data such as MWD/LWD, survey, pressure, vibration, drilling dynamics, BHA behavior, stick-slip, torque/drag, and drilling dysfunction measurements.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/WellID">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DownholeMeasurementDynamicsCompany" />
+    <rdfs:comment xml:lang="EN">A downhole measurement company active in high-frequency downhole pressure and drilling-dynamics measurements, drilling intelligence, borehole stability, dysfunction detection, and bit/drillstring insight.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Tomax">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DownholeMeasurementDynamicsCompany" />
+    <rdfs:comment xml:lang="EN">A drilling dynamics and downhole regulation company active in anti stick-slip technology, bit loading stabilization, and stick-slip mitigation.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/APSTechnology">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DownholeMeasurementDynamicsCompany" />
+    <rdfs:comment xml:lang="EN">A downhole technology company active in MWD/LWD technology, drilling dynamics, and downhole data.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ScientificDrilling">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DownholeMeasurementDynamicsCompany" />
+    <rdfs:comment xml:lang="EN">A directional drilling and measurement company active in MWD, survey, wellbore placement, and directional drilling data.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Gyrodata">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DownholeMeasurementDynamicsCompany" />
+    <rdfs:comment xml:lang="EN">A gyro survey and wellbore positioning company active in survey data and wellbore placement data.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PhoenixTechnologyServices">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DownholeMeasurementDynamicsCompany" />
+    <rdfs:comment xml:lang="EN">A directional drilling and MWD company active in drilling performance data and wellbore placement data.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/CathedralEnergyServices">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DownholeMeasurementDynamicsCompany" />
+    <rdfs:comment xml:lang="EN">A directional drilling and MWD company active in drilling optimization data and wellbore placement workflows.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/EnteqTechnologies">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DownholeMeasurementDynamicsCompany" />
+    <rdfs:comment xml:lang="EN">A downhole technology company active in MWD/LWD technology and downhole drilling data.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/CementingServiceCompany">
@@ -965,10 +1324,178 @@ ComputedState.
     <rdfs:comment xml:lang="EN">A data analysis service company is an entity that analyses measured data and provide new information from these measurements.
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingAnalyticsAutomationCompany">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DataAnalysisServiceCompany" />
+    <rdfs:comment xml:lang="EN">A company that provides drilling analytics, AI, automation, advisory, dysfunction detection, ROP optimization, risk prediction, or real-time decision-support services.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Sekal">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingAnalyticsAutomationCompany" />
+    <rdfs:comment xml:lang="EN">A drilling automation and advisory company active in DrillScene, DrillTronics, real-time diagnostics, drilling automation, and drilling advisory workflows.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Exebenus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingAnalyticsAutomationCompany" />
+    <rdfs:comment xml:lang="EN">A predictive drilling AI company active in stuck-pipe prediction, ROP optimization, vibration and dysfunction detection, and real-time drilling recommendations.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Corva">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingAnalyticsAutomationCompany" />
+    <rdfs:comment xml:lang="EN">A cloud drilling analytics platform company active in real-time drilling applications, drilling optimization, and operational analytics.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TDEGroup">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingAnalyticsAutomationCompany" />
+    <rdfs:comment xml:lang="EN">A drilling analytics company active in rig-state detection, performance analytics, benchmarking, and automated reporting.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PrimeDrillingIDP">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingAnalyticsAutomationCompany" />
+    <rdfs:comment xml:lang="EN">A drilling-data analytics and drilling-performance platform provider active in real-time drilling-data analysis and performance workflows.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Drill2Frac">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingAnalyticsAutomationCompany" />
+    <rdfs:comment xml:lang="EN">A drilling analytics company active in drilling-data-derived dysfunction detection and completion or fracture-treatment optimization.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Rogii">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingAnalyticsAutomationCompany" />
+    <rdfs:comment xml:lang="EN">A geosteering and well-placement software company active in real-time geosteering data workflows.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AIQ">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingAnalyticsAutomationCompany" />
+    <rdfs:comment xml:lang="EN">An AI and analytics company associated with ADNOC digital workflows, relevant to AI-based drilling optimization and digital oilfield data.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IntegratedOilfieldServiceCompany">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/ServiceCompany" />
+    <rdfs:comment xml:lang="EN">A broad oilfield service company that may provide drilling services, directional drilling, MWD/LWD, real-time operations, drilling optimization, drilling automation, software, and data infrastructure.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SLB">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/IntegratedOilfieldServiceCompany" />
+    <rdfs:comment xml:lang="EN">An integrated oilfield service company active in real-time drilling data services, drilling optimization, MWD/LWD, drilling engineering workflows, and digital well-construction platforms such as Delfi.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Halliburton">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/IntegratedOilfieldServiceCompany" />
+    <rdfs:comment xml:lang="EN">An integrated oilfield service company active in drilling data, Landmark/iEnergy, DecisionSpace, LOGIX automation, Sperry Drilling, MWD/LWD, drilling optimization, and real-time operations.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/BakerHughes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/IntegratedOilfieldServiceCompany" />
+    <rdfs:comment xml:lang="EN">An integrated oilfield service company active in real-time drilling optimization, well planning, MWD/LWD, drilling engineering software, downhole data, and surface drilling-data workflows.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Weatherford">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/IntegratedOilfieldServiceCompany" />
+    <rdfs:comment xml:lang="EN">An oilfield service company active in drilling analytics, managed pressure drilling data, MWD/LWD, real-time drilling optimization, drilling dynamics, and wellbore placement data.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/NOV">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/IntegratedOilfieldServiceCompany" />
+    <rdfs:comment xml:lang="EN">A drilling equipment, automation, and data company active in NOVOS, Max drilling automation, rig equipment integration, IntelliServ wired drill pipe, and rig-control data workflows.
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DrillingContractor">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DataProvider" />
     <rdfs:comment xml:lang="EN">A drilling contractor is a company that is primarily responsible for conducting drilling operations, including the construction and operation of drilling rigs.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Nabors">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingContractor" />
+    <rdfs:comment xml:lang="EN">A drilling contractor and rig-data platform provider active in RigCLOUD, SmartROS, drilling automation, edge/cloud rig data, and performance analytics.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HelmerichPayne">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingContractor" />
+    <rdfs:comment xml:lang="EN">A drilling contractor active in FlexRig, rig automation, performance optimization, well planning, and digital drilling workflows.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/PattersonUTI">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingContractor" />
+    <rdfs:comment xml:lang="EN">A drilling contractor active in rig operations, directional drilling, and drilling performance data.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Transocean">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingContractor" />
+    <rdfs:comment xml:lang="EN">An offshore drilling contractor active in offshore drilling data, rig automation, and performance monitoring.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Seadrill">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingContractor" />
+    <rdfs:comment xml:lang="EN">An offshore drilling contractor active in offshore rig data, digital operations, and performance monitoring.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/OdfjellDrilling">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingContractor" />
+    <rdfs:comment xml:lang="EN">An offshore drilling contractor active in offshore drilling, digitalized operations, and performance monitoring.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Valaris">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingContractor" />
+    <rdfs:comment xml:lang="EN">An offshore drilling contractor active in offshore rig data and performance systems.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Noble">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingContractor" />
+    <rdfs:comment xml:lang="EN">An offshore drilling contractor active in rig data, automation, performance systems, and offshore drilling workflows.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/KCADeutag">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingContractor" />
+    <rdfs:comment xml:lang="EN">A land and offshore drilling contractor active in digital rig performance and monitoring.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Saipem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingContractor" />
+    <rdfs:comment xml:lang="EN">An offshore drilling contractor and engineering company active in offshore drilling data and digital operations.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/COSL">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingContractor" />
+    <rdfs:comment xml:lang="EN">An offshore drilling contractor active in offshore rig data and operational data workflows.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MaerskDrilling">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingContractor" />
+    <rdfs:comment xml:lang="EN">A legacy offshore drilling contractor organization relevant to offshore rig digitalization and performance data, now associated with Noble through merger history.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ADNOCDrilling">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingContractor" />
+    <rdfs:comment xml:lang="EN">A drilling contractor associated with ADNOC, active in drilling operations, automation, rig data, and digital drilling workflows.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DWISInternalService">
@@ -1023,6 +1550,234 @@ ComputedState.
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISInternalService" />
     <rdfs:comment xml:lang="EN">The DWIS ADCS Capability descriptor describes the actual capabilities of the true ADCS.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingDataEcosystemOrganization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DataProvider" />
+    <rdfs:comment xml:lang="EN">An organization that generates, owns, processes, transmits, standardizes, analyzes, visualizes, or consumes drilling and well-construction data.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/EnergyDataStandardsOrganization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingDataEcosystemOrganization" />
+    <rdfs:comment xml:lang="EN">An organization or consortium that defines standards, interoperability specifications, data models, or industry practices relevant to drilling and well data.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DrillingIndustryOrganization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/EnergyDataStandardsOrganization" />
+    <rdfs:comment xml:lang="EN">An industry association, technical community, or standards group focused on drilling contractors, drilling automation, well construction, interoperability, reporting, or operational practices.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/DWIS">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingIndustryOrganization" />
+    <rdfs:comment xml:lang="EN">A drilling and wells interoperability initiative focused on semantic data models and digital interoperability for drilling and well construction.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IADC">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingIndustryOrganization" />
+    <rdfs:comment xml:lang="EN">A drilling contractor industry organization relevant to drilling contractor standards, reporting, and operational frameworks.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SPEDSATS">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DrillingIndustryOrganization" />
+    <rdfs:comment xml:lang="EN">A SPE drilling systems advancement technical community relevant to drilling automation, data, controls, and interoperability discussions.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Energistics">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/EnergyDataStandardsOrganization" />
+    <rdfs:comment xml:lang="EN">An energy data standards organization associated with WITSML, PRODML, and RESQML standards.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/OSDUForum">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/EnergyDataStandardsOrganization" />
+    <rdfs:comment xml:lang="EN">An Open Group forum defining subsurface and energy data platform standards relevant to drilling and well data reuse.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/OpenGroup">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/EnergyDataStandardsOrganization" />
+    <rdfs:comment xml:lang="EN">A standards organization associated with open technology standards and the OSDU Forum for energy data platforms.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/OPCFoundation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/EnergyDataStandardsOrganization" />
+    <rdfs:comment xml:lang="EN">A standards organization responsible for OPC UA industrial interoperability, relevant for rig equipment, automation, and operational drilling data.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RealTimeDrillingDataInfrastructureCompany">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DataProvider" />
+    <rdfs:comment xml:lang="EN">A company that provides drilling-data acquisition, aggregation, transmission, WITS/WITSML services, visualization, storage, remote collaboration, or operational data delivery.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Petrolink">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/RealTimeDrillingDataInfrastructureCompany" />
+    <rdfs:comment xml:lang="EN">A real-time drilling-data infrastructure company active in WITSML, PetroVue, rig-to-office data transmission, data aggregation, and remote visualization.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/KongsbergDigital">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/RealTimeDrillingDataInfrastructureCompany" />
+    <rdfs:comment xml:lang="EN">A digital technology company active in SiteCom, real-time operations, drilling and well data aggregation, visualization, and remote collaboration workflows.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Pason">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/RealTimeDrillingDataInfrastructureCompany" />
+    <rdfs:comment xml:lang="EN">A rigsite drilling-data acquisition company active in electronic drilling recorders, DataLink, DataHub, DataMart, WITSML delivery, and rigsite operational data.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IndependentDataServices">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/RealTimeDrillingDataInfrastructureCompany" />
+    <rdfs:comment xml:lang="EN">A drilling-data and reporting company active in DataNet, daily drilling reports, WITSML workflows, automated reporting, and operations data capture.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/WellPlanningReportingSoftwareCompany">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DataProvider" />
+    <rdfs:comment xml:lang="EN">A company that provides well planning, drilling engineering workflows, drilling reports, daily operations reporting, lessons learned, or well lifecycle data-management software.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Peloton">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/WellPlanningReportingSoftwareCompany" />
+    <rdfs:comment xml:lang="EN">A well operations data-management software company active in WellView, SiteView, well lifecycle data, drilling reports, and operations reporting.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/QuorumSoftware">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/WellPlanningReportingSoftwareCompany" />
+    <rdfs:comment xml:lang="EN">A software company active in upstream operations data, reporting, well operations, planning data management, and production data workflows.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ProWellPlan">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/WellPlanningReportingSoftwareCompany" />
+    <rdfs:comment xml:lang="EN">A well planning and drilling/completions operations software company that structures spreadsheet and fragmented well data into data-driven workflows and automation.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RigEquipmentOEM">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DataProvider" />
+    <rdfs:comment xml:lang="EN">An original equipment manufacturer or equipment supplier whose rig equipment, controls, automation, or pipe-handling systems generate or consume drilling operational data.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/RigControlSystemProvider">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/RigEquipmentOEM" />
+    <rdfs:comment xml:lang="EN">A rig equipment or automation provider that supplies control systems, drilling automation, rig sequencing, advisory control interfaces, or equipment-generated drilling data.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HMH">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/RigControlSystemProvider" />
+    <rdfs:comment xml:lang="EN">A rig equipment, control-system, and drilling automation company active in DEAL, CADS, drillersAssist, DrillView, DrillPerform, digital services, and equipment-generated drilling data.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Canrig">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/RigControlSystemProvider" />
+    <rdfs:comment xml:lang="EN">A rig equipment and automation company associated with Nabors, active in top drives, rig equipment, automation, and control-system data.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Huisman">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/RigEquipmentOEM" />
+    <rdfs:comment xml:lang="EN">A rig equipment and automated drilling systems provider active in equipment data and rig automation.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Drillmec">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/RigEquipmentOEM" />
+    <rdfs:comment xml:lang="EN">A rig equipment and drilling automation provider active in equipment data and drilling control workflows.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/SLBCameron">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/RigEquipmentOEM" />
+    <rdfs:comment xml:lang="EN">A pressure control and drilling equipment business associated with SLB, active in equipment data and pressure-control workflows.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AkerSolutions">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/RigEquipmentOEM" />
+    <rdfs:comment xml:lang="EN">An engineering and equipment company relevant to drilling equipment and control-system lineage, including MHWirth legacy technologies now associated with HMH.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Drillform">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/RigEquipmentOEM" />
+    <rdfs:comment xml:lang="EN">A provider of automated drilling tools and pipe-handling equipment, relevant to rig automation and equipment-generated data.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/CloudEnergyDataPlatformProvider">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/DataProvider" />
+    <rdfs:comment xml:lang="EN">A cloud or industrial data-platform provider that supports energy data lakes, edge/IoT, historians, contextualization, analytics, AI/ML, or operational data infrastructure used with drilling data.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Cognite">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CloudEnergyDataPlatformProvider" />
+    <rdfs:comment xml:lang="EN">An industrial data platform company active in data contextualization and integration of drilling, rig, and operational data into broader industrial data platforms.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AVEVA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CloudEnergyDataPlatformProvider" />
+    <rdfs:comment xml:lang="EN">An industrial software and operational data infrastructure company active in time-series historian, industrial information management, and operational data systems including OSIsoft PI technology.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AspenTech">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CloudEnergyDataPlatformProvider" />
+    <rdfs:comment xml:lang="EN">An industrial software company active in industrial analytics and operational data platforms relevant to drilling and upstream operational data.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Emerson">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CloudEnergyDataPlatformProvider" />
+    <rdfs:comment xml:lang="EN">An industrial automation company active in control systems, historians, instrumentation, and operational data infrastructure relevant to drilling and rig data.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Honeywell">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CloudEnergyDataPlatformProvider" />
+    <rdfs:comment xml:lang="EN">An industrial automation and control company active in control systems, historians, and operational data infrastructure relevant to drilling and rig operations.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Siemens">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CloudEnergyDataPlatformProvider" />
+    <rdfs:comment xml:lang="EN">An industrial automation and digital infrastructure company active in controls, edge systems, industrial data infrastructure, and automation relevant to rig operations.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MicrosoftAzure">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CloudEnergyDataPlatformProvider" />
+    <rdfs:comment xml:lang="EN">A cloud platform provider relevant to energy data workflows, Microsoft Energy Data Services, data lakes, edge/IoT, analytics, and AI/ML.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/AWS">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CloudEnergyDataPlatformProvider" />
+    <rdfs:comment xml:lang="EN">A cloud platform provider relevant to energy data lakes, edge/IoT, cloud analytics, AI/ML, and drilling data infrastructure.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/GoogleCloud">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/CloudEnergyDataPlatformProvider" />
+    <rdfs:comment xml:lang="EN">A cloud platform provider relevant to cloud analytics, AI/ML, data platforms, and energy data workflows.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/Telemetry">
@@ -1430,7 +2185,8 @@ ComputedState.
   <rdf:Description rdf:about="http://ddhub.no/StickSlipSeverityIndex">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/PrototypeData" />
-    <rdfs:comment xml:lang="EN">Prototype signal for Stickslip Severity Index.
+    <rdfs:comment xml:lang="EN">Prototype signal for a dimensionless index that quantifies the current severity of drill-string
+torsional stick-slip oscillations.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/FrictionCoefficient">
@@ -1605,25 +2361,6 @@ ComputedState.
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/PhysicalData" />
     <rdfs:comment xml:lang="EN">A physical data point generated by a computation or model rather than direct measurement.
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/EstimationParameter">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:comment xml:lang="EN">A quantity describing the configuration or internal state of a data interpretation
-or estimation model rather than the physical drilling process.
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/CalibrationParameter">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/EstimationParameter" />
-    <rdfs:comment xml:lang="EN">An estimation parameter that maps a sensor representation to a physical quantity through scaling or conversion.
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/CorrectionFactor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
-    <rdfs:subClassOf rdf:resource="http://ddhub.no/EstimationParameter" />
-    <rdfs:comment xml:lang="EN">An estimation parameter used to compensate systematic bias or mismatch in a computed or measured quantity.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/DrillingSignal">
@@ -7463,6 +8200,12 @@ a power swivel, a rotary table with a kelly.
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/VerticalDirectionFrame" />
     <rdfs:comment xml:lang="EN">A reference frame that follows the upward vertical.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/MeanSeaLevelReferenceFrame">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/VerticalElevationFrame" />
+    <rdfs:comment xml:lang="EN">A vertical elevation reference frame whose origin is mean sea level and whose positive direction is upward.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/LengthDirectionFrame">
@@ -21100,6 +21843,19 @@ Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
     <rdfs:comment xml:lang="EN">Reference representing elapsed time from a defined event.
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/TimeWindow">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="http://ddhub.no/TimeSpanReference" />
+    <rdfs:comment xml:lang="EN">A time duration over which samples are selected or evaluated by a transformation.
+</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/TimeWindowMovingAverage" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
+    <rdfs:domain rdf:resource="http://ddhub.no/TimeWindowRangeExtraction" />
+    <rdfs:comment xml:lang="EN">
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/GPSReference">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
     <rdfs:subClassOf rdf:resource="http://ddhub.no/TimeReference" />
@@ -21199,15 +21955,6 @@ are: Boost Riser Flow, Down Link from ADCS, Rock Pipe, ...
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
     <rdfs:domain rdf:resource="http://ddhub.no/NumberOfSampleMovingAverage" />
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int" />
-    <rdfs:comment xml:lang="EN">
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/TimeWindow">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/TimeWindowMovingAverage" />
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
-    <rdfs:domain rdf:resource="http://ddhub.no/TimeWindowRangeExtraction" />
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
@@ -21617,6 +22364,14 @@ ConvertedValue = ConversionFactorA + SIValue * ConversionFactorB
     <rdfs:comment xml:lang="EN">
 </rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/Duration">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/TimeWindow" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double" />
+    <rdfs:comment xml:lang="EN">The length of the time window in seconds.
+</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/FullScale">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
@@ -21654,6 +22409,234 @@ ConvertedValue = ConversionFactorA + SIValue * ConversionFactorB
     <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
     <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
     <rdfs:comment xml:lang="EN">This is the root class for all verbs defined in the DWIS vocabulary. It is used to define a relation between a subject, which can be of any `DWISNoun` and an object, also of any type of `DWISNoun`.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/ImplementsControlStrategy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/ControllerFunction" />
+    <rdfs:range rdf:resource="http://ddhub.no/ControlStrategy" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
+    <rdfs:comment xml:lang="EN">This verb indicates that a controller function uses a named control strategy to implement one or more of
+its control objectives.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsTuningServiceFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/TuningServiceFunction" />
+    <rdfs:range rdf:resource="http://ddhub.no/ADCSFunction" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
+    <rdfs:comment xml:lang="EN">This verb indicates that a tuning service applies tuning parameters to an ADCS function or to one of its
+control loops.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsTuningParameterFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/PIDTuningParameter" />
+    <rdfs:range rdf:resource="http://ddhub.no/ADCSFunction" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
+    <rdfs:comment xml:lang="EN">This verb indicates that a tuning parameter is intended to tune an ADCS function or one of its control
+loops.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/HasFunction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/DataFlowNode" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
+    <rdfs:comment xml:lang="EN">Connects a signal to the data flow node that produced it or to the function it relates to.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsCommandFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
+    <rdfs:comment xml:lang="EN">Marks a signal as a command sent to a specific node or equipment.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsTuningRequestFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/PIDTuningParameter" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsCommandFor" />
+    <rdfs:comment xml:lang="EN">This verb indicates that a command or recommendation signal carries a request to apply a tuning
+parameter.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsComputationInput">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/ComputationUnit" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
+    <rdfs:comment xml:lang="EN">Indicates that a signal is used as an input by a computation unit.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsLimitFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
+    <rdfs:comment xml:lang="EN">Declares that a signal expresses a limit relevant to a node or function.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsMinimumLimitFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsLimitFor" />
+    <rdfs:comment xml:lang="EN">Indicates that the signal represents the minimum acceptable bound for a function or equipment.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsMaximumLimitFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsLimitFor" />
+    <rdfs:comment xml:lang="EN">Indicates that the signal represents the maximum acceptable bound for a function or equipment.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsCurrentStateFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/ComputedState" />
+    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
+    <rdfs:comment xml:lang="EN">Indicates that a computed state represents the present state of a target object or process.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsInformationForCurrentStateOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/ComputedState" />
+    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
+    <rdfs:comment xml:lang="EN">Provides supporting information about the current state of an object or process.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsInSafeModeStateFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/ComputedState" />
+    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsInformationForCurrentStateOf" />
+    <rdfs:comment xml:lang="EN">Indicates that the target object or process is currently in a safe or fallback mode.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsCompensationMethodFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
+    <rdfs:comment xml:lang="EN">Identifies an enumerated signal that states which mechanism or method is used by a compensation system.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsActivationStateFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
+    <rdfs:comment xml:lang="EN">Identifies an enumerated signal that reports the actual activation state of a system or function.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsTargetActivationStateFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsActivationStateFor" />
+    <rdfs:comment xml:lang="EN">Identifies an enumerated signal that reports the intended, requested, or target activation state of a system or function.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsSetPointFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/Controller" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
+    <rdfs:comment xml:lang="EN">Identifies a signal that provides a target value to a controller.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsSetPointRecommendationFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/ControlSystem" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
+    <rdfs:comment xml:lang="EN">Marks a signal as a recommended set-point produced for a control system.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsSetPointAdviceFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/ControlSystem" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
+    <rdfs:comment xml:lang="EN">Indicates an advisory set-point that may be reviewed before being applied to a control system.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsSetPointMinimumRecommendationFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/ControlSystem" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
+    <rdfs:comment xml:lang="EN">Indicates a recommended minimum bound for a control system set-point.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsSetPointMinimumAdviceFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/ControlSystem" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
+    <rdfs:comment xml:lang="EN">Provides an advisory minimum bound for a control system set-point.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsSetPointMaximumRecommendationFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/ControlSystem" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
+    <rdfs:comment xml:lang="EN">Indicates a recommended maximum bound for a control system set-point.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsSetPointMaximumAdviceFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/ControlSystem" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
+    <rdfs:comment xml:lang="EN">Provides an advisory maximum bound for a control system set-point.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsTransformationInput">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/Transformation" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
+    <rdfs:comment xml:lang="EN">Declares that a signal is used as an input to a transformation node.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsBufferingInput">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/Buffering" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsTransformationInput" />
+    <rdfs:comment xml:lang="EN">Identifies a signal that enters a buffering stage.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsDerivationInput">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsTransformationInput" />
+    <rdfs:comment xml:lang="EN">Identifies a signal used as the basis for a derivative calculation.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsResamplingInput">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/Resampling" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsTransformationInput" />
+    <rdfs:comment xml:lang="EN">Marks a signal that will be resampled to a new rate.
+</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ddhub.no/IsTransmissionInput">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
+    <rdfs:range rdf:resource="http://ddhub.no/TransmissionLine" />
+    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
+    <rdfs:comment xml:lang="EN">Declares that a signal enters a transmission line for forwarding.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsEnablingSignalFor">
@@ -21909,172 +22892,12 @@ to another.
     <rdfs:comment xml:lang="EN">Indicates that a data flow node drives or regulates another equipment or function.
 </rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/HasFunction">
+  <rdf:Description rdf:about="http://ddhub.no/HasTimeWindow">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://ddhub.no/DataFlowNode" />
+    <rdfs:domain rdf:resource="http://ddhub.no/Transformation" />
+    <rdfs:range rdf:resource="http://ddhub.no/TimeWindow" />
     <rdfs:subPropertyOf rdf:resource="http://ddhub.no/DWISVerb" />
-    <rdfs:comment xml:lang="EN">Connects a signal to the data flow node that produced it or to the function it relates to.
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsCommandFor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
-    <rdfs:comment xml:lang="EN">Marks a signal as a command sent to a specific node or equipment.
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsComputationInput">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://ddhub.no/ComputationUnit" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
-    <rdfs:comment xml:lang="EN">Indicates that a signal is used as an input by a computation unit.
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsLimitFor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
-    <rdfs:comment xml:lang="EN">Declares that a signal expresses a limit relevant to a node or function.
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsMinimumLimitFor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsLimitFor" />
-    <rdfs:comment xml:lang="EN">Indicates that the signal represents the minimum acceptable bound for a function or equipment.
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsMaximumLimitFor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsLimitFor" />
-    <rdfs:comment xml:lang="EN">Indicates that the signal represents the maximum acceptable bound for a function or equipment.
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsCurrentStateFor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/ComputedState" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
-    <rdfs:comment xml:lang="EN">Indicates that a computed state represents the present state of a target object or process.
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsInformationForCurrentStateOf">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/ComputedState" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
-    <rdfs:comment xml:lang="EN">Provides supporting information about the current state of an object or process.
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsInSafeModeStateFor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/ComputedState" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsInformationForCurrentStateOf" />
-    <rdfs:comment xml:lang="EN">Indicates that the target object or process is currently in a safe or fallback mode.
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsSetPointFor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://ddhub.no/Controller" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
-    <rdfs:comment xml:lang="EN">Identifies a signal that provides a target value to a controller.
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsSetPointRecommendationFor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://ddhub.no/ControlSystem" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
-    <rdfs:comment xml:lang="EN">Marks a signal as a recommended set-point produced for a control system.
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsSetPointAdviceFor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://ddhub.no/ControlSystem" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
-    <rdfs:comment xml:lang="EN">Indicates an advisory set-point that may be reviewed before being applied to a control system.
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsSetPointMinimumRecommendationFor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://ddhub.no/ControlSystem" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
-    <rdfs:comment xml:lang="EN">Indicates a recommended minimum bound for a control system set-point.
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsSetPointMinimumAdviceFor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://ddhub.no/ControlSystem" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
-    <rdfs:comment xml:lang="EN">Provides an advisory minimum bound for a control system set-point.
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsSetPointMaximumRecommendationFor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://ddhub.no/ControlSystem" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
-    <rdfs:comment xml:lang="EN">Indicates a recommended maximum bound for a control system set-point.
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsSetPointMaximumAdviceFor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://ddhub.no/ControlSystem" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
-    <rdfs:comment xml:lang="EN">Provides an advisory maximum bound for a control system set-point.
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsTransformationInput">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://ddhub.no/Transformation" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
-    <rdfs:comment xml:lang="EN">Declares that a signal is used as an input to a transformation node.
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsBufferingInput">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://ddhub.no/Buffering" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsTransformationInput" />
-    <rdfs:comment xml:lang="EN">Identifies a signal that enters a buffering stage.
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsDerivationInput">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:range rdf:resource="http://ddhub.no/DWISNoun" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsTransformationInput" />
-    <rdfs:comment xml:lang="EN">Identifies a signal used as the basis for a derivative calculation.
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsResamplingInput">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://ddhub.no/Resampling" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/IsTransformationInput" />
-    <rdfs:comment xml:lang="EN">Marks a signal that will be resampled to a new rate.
-</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ddhub.no/IsTransmissionInput">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
-    <rdfs:domain rdf:resource="http://ddhub.no/DrillingDataPoint" />
-    <rdfs:range rdf:resource="http://ddhub.no/TransmissionLine" />
-    <rdfs:subPropertyOf rdf:resource="http://ddhub.no/HasFunction" />
-    <rdfs:comment xml:lang="EN">Declares that a signal enters a transmission line for forwarding.
+    <rdfs:comment xml:lang="EN">Associates a transformation with the time duration over which its input samples are evaluated.
 </rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://ddhub.no/IsGeneratedBy">
