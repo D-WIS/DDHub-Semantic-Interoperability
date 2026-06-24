@@ -6728,7 +6728,7 @@
 - durationDrilling IsOfBaseQuantity time
 - durationDrilling.MeaningfulPrecision = 0.001
 - DynamicViscosityDrillingQuantity:dynamicViscosityDrilling
-- dynamicViscosityDrilling IsOfBaseQuantity consistencyIndexRheology
+- dynamicViscosityDrilling IsOfBaseQuantity dynamicViscosity
 - dynamicViscosityDrilling.MeaningfulPrecision = 0.0001
 - ElongationGradientPerLengthDrillingQuantity:elongationGradientPerLengthDrilling
 - elongationGradientPerLengthDrilling IsOfBaseQuantity dimensionless
