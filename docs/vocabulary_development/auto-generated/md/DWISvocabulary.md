@@ -23473,6 +23473,64 @@ graph LR
 	N0002[ShockRate_DataPoint] -->|IsOfMeasurableQuantity| N0004((ShockRateQuantity)) 
 	N0000[ShockRate_Signal] -->|HasUnitOfMeasure| N0005((Hertz)) 
 ```
+## PlaneAngleGeodesicQuantity <!-- NOUN -->
+- Display name: PlaneAngleGeodesic
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1.5696123057604772E-10
+- Description: 
+A plane angle is the angle formed between two intersecting lines or planes in a two-dimensional or three-dimensional space.
+The dimension of plane angle is:
+$$[{\theta}]$$.
+The SI unit for **plane angle** is: radian with the associated unit label $rad$
+The meaningful precision of a geodesic plane angle is typically: 1.5696123057604772E-10 rad
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:PlaneAngleGeodesic_Signal
+DrillingDataPoint:PlaneAngleGeodesic_DataPoint
+PlaneAngleGeodesic_DataPoint HasValue PlaneAngleGeodesic_Signal
+PlaneAngleGeodesic_DataPoint IsOfMeasurableQuantity PlaneAngleGeodesicQuantity
+PlaneAngleGeodesic_Signal HasUnitOfMeasure Radian
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PlaneAngleGeodesic_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[PlaneAngleGeodesic_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[PlaneAngleGeodesic_DataPoint] -->|HasValue| N0000((PlaneAngleGeodesic_Signal)) 
+	N0002[PlaneAngleGeodesic_DataPoint] -->|IsOfMeasurableQuantity| N0004((PlaneAngleGeodesicQuantity)) 
+	N0000[PlaneAngleGeodesic_Signal] -->|HasUnitOfMeasure| N0005((Radian)) 
+```
+## PlaneAngleStandardQuantity <!-- NOUN -->
+- Display name: PlaneAngleStandard
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.00017453292519943296
+- Description: 
+A plane angle is the angle formed between two intersecting lines or planes in a two-dimensional or three-dimensional space.
+The dimension of plane angle is:
+$$[{\theta}]$$.
+The SI unit for **plane angle** is: radian with the associated unit label $rad$
+The meaningful precision of a standard plane angle is typically: 0.00017453292519943296 rad
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:PlaneAngleStandard_Signal
+DrillingDataPoint:PlaneAngleStandard_DataPoint
+PlaneAngleStandard_DataPoint HasValue PlaneAngleStandard_Signal
+PlaneAngleStandard_DataPoint IsOfMeasurableQuantity PlaneAngleStandardQuantity
+PlaneAngleStandard_Signal HasUnitOfMeasure Radian
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PlaneAngleStandard_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[PlaneAngleStandard_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[PlaneAngleStandard_DataPoint] -->|HasValue| N0000((PlaneAngleStandard_Signal)) 
+	N0002[PlaneAngleStandard_DataPoint] -->|IsOfMeasurableQuantity| N0004((PlaneAngleStandardQuantity)) 
+	N0000[PlaneAngleStandard_Signal] -->|HasUnitOfMeasure| N0005((Radian)) 
+```
 ## AccelerationDrillingQuantity <!-- NOUN -->
 - Display name: AccelerationDrilling
 - Parent class: [MeasurableQuantity](#MeasurableQuantity)
@@ -23708,6 +23766,36 @@ graph LR
 	N0002[AxialVelocityDrilling_DataPoint] -->|HasValue| N0000((AxialVelocityDrilling_Signal)) 
 	N0002[AxialVelocityDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((AxialVelocityDrillingQuantity)) 
 	N0000[AxialVelocityDrilling_Signal] -->|HasUnitOfMeasure| N0005((MetrePerSecond)) 
+```
+## BendingMomentDrillingQuantity <!-- NOUN -->
+- Display name: BendingMomentDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.1
+- Description: 
+A bending moment is the internal mechanical moment at a given cross-section of a structure that causes it to bend, 
+equal to the resultant of forces acting at a distance from that section and producing curvature rather than rotation.
+The dimension of bending moment is:
+$$[L^{2}MT^{-2}]$$.
+The SI unit for **bending moment** is: newton metre with the associated unit label $N \cdot m$
+The meaningful precision of bending moment in the drilling context is typically: 0.1 N•m
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:BendingMomentDrilling_Signal
+DrillingDataPoint:BendingMomentDrilling_DataPoint
+BendingMomentDrilling_DataPoint HasValue BendingMomentDrilling_Signal
+BendingMomentDrilling_DataPoint IsOfMeasurableQuantity BendingMomentDrillingQuantity
+BendingMomentDrilling_Signal HasUnitOfMeasure NewtonMetre
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[BendingMomentDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[BendingMomentDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[BendingMomentDrilling_DataPoint] -->|HasValue| N0000((BendingMomentDrilling_Signal)) 
+	N0002[BendingMomentDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((BendingMomentDrillingQuantity)) 
+	N0000[BendingMomentDrilling_Signal] -->|HasUnitOfMeasure| N0005((NewtonMetre)) 
 ```
 ## BlockVelocityDrillingQuantity <!-- NOUN -->
 - Display name: BlockVelocityDrilling
@@ -25545,7 +25633,7 @@ graph LR
 The moment of inertia is is a measure of an object's resistance to changes in its rotation rate. It is the rotational analog of mass for linear motion. The moment of inertia depends on the mass distribution of an object and the axis of rotation.
 The dimension of moment of inertia is:
 $$[L^{2}M]$$.
-The SI unit for **moment of inertia** is: kilogram metre squared with the associated unit label $kg \cdot m^{2}}$
+The SI unit for **moment of inertia** is: kilogram metre squared with the associated unit label $kg \cdot m^{2}$
 The meaningful precision of the moment of inertia in the drilling context is typically: 1E-11 N
 - Definition set: MeasurableQuantityTypes
 - Examples:
@@ -25598,13 +25686,13 @@ graph LR
 - Display name: MomentOfAreaDrilling
 - Parent class: [MeasurableQuantity](#MeasurableQuantity)
 - Specialization:
-  - MeaningfulPrecision = 1E-16
+  - MeaningfulPrecision = 1E-10
 - Description: 
 A moment of area is a geometrical property of an area which reflects how its points are distributed with regard to an arbitrary axis. It is used in the study of beam bending and deflection in structural engineering.
 The dimension of moment of area is:
 $$[L^{4}]$$.
 The SI unit for **moment of area** is: metres to the fourth power with the associated unit label $m^{4}$
-The meaningful precision of the moment of area in the drilling context is typically: 1E-16 N
+The meaningful precision of the moment of area in the drilling context is typically: 1E-10 N
 - Definition set: MeasurableQuantityTypes
 - Examples:
 ``` dwis
@@ -25622,6 +25710,209 @@ graph LR
 	N0002[MomentOfAreaDrilling_DataPoint] -->|HasValue| N0000((MomentOfAreaDrilling_Signal)) 
 	N0002[MomentOfAreaDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((MomentOfAreaDrillingQuantity)) 
 	N0000[MomentOfAreaDrilling_Signal] -->|HasUnitOfMeasure| N0005((MetresToTheFourthPower)) 
+```
+## TotalFlowAreaDrillingQuantity <!-- NOUN -->
+- Display name: TotalFlowAreaDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-06
+- Description: 
+Area is the measure of the extent of a surface or the size of a two-dimensional shape.
+The dimension of area is:
+$$[L^{2}]$$.
+The SI unit for **area** is: square metre with the associated unit label $m^{2}$
+The meaningful precision of total flow area in the drilling context is typically: 1E-06 m²
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:TotalFlowAreaDrilling_Signal
+DrillingDataPoint:TotalFlowAreaDrilling_DataPoint
+TotalFlowAreaDrilling_DataPoint HasValue TotalFlowAreaDrilling_Signal
+TotalFlowAreaDrilling_DataPoint IsOfMeasurableQuantity TotalFlowAreaDrillingQuantity
+TotalFlowAreaDrilling_Signal HasUnitOfMeasure SquareMetre
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[TotalFlowAreaDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[TotalFlowAreaDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[TotalFlowAreaDrilling_DataPoint] -->|HasValue| N0000((TotalFlowAreaDrilling_Signal)) 
+	N0002[TotalFlowAreaDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((TotalFlowAreaDrillingQuantity)) 
+	N0000[TotalFlowAreaDrilling_Signal] -->|HasUnitOfMeasure| N0005((SquareMetre)) 
+```
+## MassDensityGradientPerPressureDrillingQuantity <!-- NOUN -->
+- Display name: MassDensityGradientPerPressureDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-09
+- Description: 
+A mass density gradient per pressure is the first derivative of a mass density compared to pressure: $\frac{d\rho}{dp}$, where $\rho$ is a mass density and $p$ is pressure.
+The dimension of mass density gradient per pressure is:
+$$[T^{2}L^{-2}]$$.
+The SI unit for **mass density gradient per pressure** is: kilogram per cubic metre per pascal with the associated unit label $\frac{\frac{kg}{m^{3}}}{Pa}$
+The meaningful precision of mass density gradient per pressure in the drilling context is typically: 1E-09 kg/m³/m
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:MassDensityGradientPerPressureDrilling_Signal
+DrillingDataPoint:MassDensityGradientPerPressureDrilling_DataPoint
+MassDensityGradientPerPressureDrilling_DataPoint HasValue MassDensityGradientPerPressureDrilling_Signal
+MassDensityGradientPerPressureDrilling_DataPoint IsOfMeasurableQuantity MassDensityGradientPerPressureDrillingQuantity
+MassDensityGradientPerPressureDrilling_Signal HasUnitOfMeasure KilogramPerCubicMetrePerPascal
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MassDensityGradientPerPressureDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[MassDensityGradientPerPressureDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[MassDensityGradientPerPressureDrilling_DataPoint] -->|HasValue| N0000((MassDensityGradientPerPressureDrilling_Signal)) 
+	N0002[MassDensityGradientPerPressureDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((MassDensityGradientPerPressureDrillingQuantity)) 
+	N0000[MassDensityGradientPerPressureDrilling_Signal] -->|HasUnitOfMeasure| N0005((KilogramPerCubicMetrePerPascal)) 
+```
+## MassDensityGradientPerPressureSquaredDrillingQuantity <!-- NOUN -->
+- Display name: MassDensityGradientPerPressureSquaredDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-18
+- Description: 
+A mass density gradient per pressure squared is the second derivative of a mass density compared to pressure: $\frac{d^{2}\rho}{dp^{2}}$, where $\rho$ is a mass density and $p$ is pressure.
+The dimension of mass density gradient per pressure squared is:
+$$[T^{4}M^{-1}L^{-1}]$$.
+The SI unit for **mass density gradient per pressure squared** is: kilogram per cubic metre per pascal squared with the associated unit label $\frac{\frac{kg}{m^{3}}}{Pa^{2}}$
+The meaningful precision of mass density gradient per pressure squared in the drilling context is typically: 1E-18 kg/m³/m
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:MassDensityGradientPerPressureSquaredDrilling_Signal
+DrillingDataPoint:MassDensityGradientPerPressureSquaredDrilling_DataPoint
+MassDensityGradientPerPressureSquaredDrilling_DataPoint HasValue MassDensityGradientPerPressureSquaredDrilling_Signal
+MassDensityGradientPerPressureSquaredDrilling_DataPoint IsOfMeasurableQuantity MassDensityGradientPerPressureSquaredDrillingQuantity
+MassDensityGradientPerPressureSquaredDrilling_Signal HasUnitOfMeasure KilogramPerCubicMetrePerPascalSquared
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MassDensityGradientPerPressureSquaredDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[MassDensityGradientPerPressureSquaredDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[MassDensityGradientPerPressureSquaredDrilling_DataPoint] -->|HasValue| N0000((MassDensityGradientPerPressureSquaredDrilling_Signal)) 
+	N0002[MassDensityGradientPerPressureSquaredDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((MassDensityGradientPerPressureSquaredDrillingQuantity)) 
+	N0000[MassDensityGradientPerPressureSquaredDrilling_Signal] -->|HasUnitOfMeasure| N0005((KilogramPerCubicMetrePerPascalSquared)) 
+```
+## MassDensityGradientPerPressureSquaredTemperatureDrillingQuantity <!-- NOUN -->
+- Display name: MassDensityGradientPerPressureSquaredTemperatureDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-20
+- Description: 
+A mass density gradient per pressure squared is the second derivative of a mass density compared to pressure: $\frac{d^{2}\rho}{dp^{2}}$, where $\rho$ is a mass density and $p$ is pressure.
+The dimension of mass density gradient per pressure squared is:
+$$[T^{4}L^{-1}M^{-1}K^{-1}]$$.
+The SI unit for **mass density gradient per pressure squared** is: kilogram per cubic metre per pascal squared kelvin with the associated unit label $\frac{\frac{kg}{m^{3}}}{Pa^{2} \cdot K}$
+The meaningful precision of mass density gradient per pressure squared and temperature in the drilling context is typically: 1E-20 kg/m³/m
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:MassDensityGradientPerPressureSquaredTemperatureDrilling_Signal
+DrillingDataPoint:MassDensityGradientPerPressureSquaredTemperatureDrilling_DataPoint
+MassDensityGradientPerPressureSquaredTemperatureDrilling_DataPoint HasValue MassDensityGradientPerPressureSquaredTemperatureDrilling_Signal
+MassDensityGradientPerPressureSquaredTemperatureDrilling_DataPoint IsOfMeasurableQuantity MassDensityGradientPerPressureSquaredTemperatureDrillingQuantity
+MassDensityGradientPerPressureSquaredTemperatureDrilling_Signal HasUnitOfMeasure KilogramPerCubicMetrePerPascalSquaredKelvin
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MassDensityGradientPerPressureSquaredTemperatureDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[MassDensityGradientPerPressureSquaredTemperatureDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[MassDensityGradientPerPressureSquaredTemperatureDrilling_DataPoint] -->|HasValue| N0000((MassDensityGradientPerPressureSquaredTemperatureDrilling_Signal)) 
+	N0002[MassDensityGradientPerPressureSquaredTemperatureDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((MassDensityGradientPerPressureSquaredTemperatureDrillingQuantity)) 
+	N0000[MassDensityGradientPerPressureSquaredTemperatureDrilling_Signal] -->|HasUnitOfMeasure| N0005((KilogramPerCubicMetrePerPascalSquaredKelvin)) 
+```
+## MassDensityGradientPerPressureTemperatureDrillingQuantity <!-- NOUN -->
+- Display name: MassDensityGradientPerPressureTemperatureDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-11
+- Description: 
+A mass density gradient per pressure and temperature is the second derivative of a mass density compared to pressure and temperature: $\frac{d^{2}\rho}{dpdT}$, where $\rho$ is a mass density, $p$ is pressure and $T$ is the temperature.
+The dimension of mass density gradient per pressure and temperature is:
+$$[T^{2}K^{-1}L^{-2}]$$.
+The SI unit for **mass density gradient per pressure and temperature** is: kilogram per cubic metre per pascal kelvin with the associated unit label $\frac{\frac{kg}{m^{3}}}{Pa \cdot K}$
+The meaningful precision of mass density gradient per pressure and temperature in the drilling context is typically: 1E-11 kg/m³/m
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:MassDensityGradientPerPressureTemperatureDrilling_Signal
+DrillingDataPoint:MassDensityGradientPerPressureTemperatureDrilling_DataPoint
+MassDensityGradientPerPressureTemperatureDrilling_DataPoint HasValue MassDensityGradientPerPressureTemperatureDrilling_Signal
+MassDensityGradientPerPressureTemperatureDrilling_DataPoint IsOfMeasurableQuantity MassDensityGradientPerPressureTemperatureDrillingQuantity
+MassDensityGradientPerPressureTemperatureDrilling_Signal HasUnitOfMeasure KilogramPerCubicMetrePerPascalKelvin
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MassDensityGradientPerPressureTemperatureDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[MassDensityGradientPerPressureTemperatureDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[MassDensityGradientPerPressureTemperatureDrilling_DataPoint] -->|HasValue| N0000((MassDensityGradientPerPressureTemperatureDrilling_Signal)) 
+	N0002[MassDensityGradientPerPressureTemperatureDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((MassDensityGradientPerPressureTemperatureDrillingQuantity)) 
+	N0000[MassDensityGradientPerPressureTemperatureDrilling_Signal] -->|HasUnitOfMeasure| N0005((KilogramPerCubicMetrePerPascalKelvin)) 
+```
+## SpecificVolumeDrillingQuantity <!-- NOUN -->
+- Display name: SpecificVolumeDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-06
+- Description: 
+Specific volume is the volume occupied by a unit mass of a substance, equal to the reciprocal of its density.
+The dimension of specific volume is:
+$$[L^{3}M^{-1}]$$.
+The SI unit for **specific volume** is: cubic metre per kilogram with the associated unit label $\frac{m^{3}}{kg}$
+The meaningful precision of specific volume in the drilling context is typically: 1E-06 kg/m³
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:SpecificVolumeDrilling_Signal
+DrillingDataPoint:SpecificVolumeDrilling_DataPoint
+SpecificVolumeDrilling_DataPoint HasValue SpecificVolumeDrilling_Signal
+SpecificVolumeDrilling_DataPoint IsOfMeasurableQuantity SpecificVolumeDrillingQuantity
+SpecificVolumeDrilling_Signal HasUnitOfMeasure CubicMetrePerKilogram
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificVolumeDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[SpecificVolumeDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[SpecificVolumeDrilling_DataPoint] -->|HasValue| N0000((SpecificVolumeDrilling_Signal)) 
+	N0002[SpecificVolumeDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((SpecificVolumeDrillingQuantity)) 
+	N0000[SpecificVolumeDrilling_Signal] -->|HasUnitOfMeasure| N0005((CubicMetrePerKilogram)) 
+```
+## SpecificVolumeSquaredDrillingQuantity <!-- NOUN -->
+- Display name: SpecificVolumeSquaredDrilling
+- Parent class: [MeasurableQuantity](#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-12
+- Description: 
+Specific volume squared is the square of the specific volume.
+The dimension of specific volume squared is:
+$$[L^{6}M^{-2}]$$.
+The SI unit for **specific volume squared** is: cubic metre squared per kilogram squared with the associated unit label $\frac{m^{6}}{kg^{2}}$
+The meaningful precision of specific volume squared in the drilling context is typically: 1E-12 kg/m³
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:SpecificVolumeSquaredDrilling_Signal
+DrillingDataPoint:SpecificVolumeSquaredDrilling_DataPoint
+SpecificVolumeSquaredDrilling_DataPoint HasValue SpecificVolumeSquaredDrilling_Signal
+SpecificVolumeSquaredDrilling_DataPoint IsOfMeasurableQuantity SpecificVolumeSquaredDrillingQuantity
+SpecificVolumeSquaredDrilling_Signal HasUnitOfMeasure CubicMetreSquaredPerKilogramSquared
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificVolumeSquaredDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[SpecificVolumeSquaredDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[SpecificVolumeSquaredDrilling_DataPoint] -->|HasValue| N0000((SpecificVolumeSquaredDrilling_Signal)) 
+	N0002[SpecificVolumeSquaredDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004((SpecificVolumeSquaredDrillingQuantity)) 
+	N0000[SpecificVolumeSquaredDrilling_Signal] -->|HasUnitOfMeasure| N0005((CubicMetreSquaredPerKilogramSquared)) 
 ```
 ## DrillStemMechanicalModel <!-- NOUN -->
 - Display name: Drill-stem mechanical model
@@ -36443,6 +36734,137 @@ graph LR
 	N0041[SquareMile] -->|Symbol| N0043(("mi²")) 
 	N0041[SquareMile] -->|IsUnitForQuantity| N0000((AreaQuantity)) 
 ```
+## BendingMomentQuantity <!-- NOUN -->
+- Display name: BendingMoment
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 2
+  - M = 1
+  - T = -2
+- Description: 
+A bending moment is the internal mechanical moment at a given cross-section of a structure that causes it to bend, 
+equal to the resultant of forces acting at a distance from that section and producing curvature rather than rotation.
+The dimension of bending moment is:
+$$[L^{2}MT^{-2}]$$.
+The SI unit for **bending moment** is: newton metre with the associated unit label $N \cdot m$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:BendingMomentQuantity
+BendingMomentQuantity.L = 2
+BendingMomentQuantity.M = 1
+BendingMomentQuantity.T = -2
+Unit:NewtonMetre
+NewtonMetre.ConversionFactorA = 0
+NewtonMetre.ConversionFactorB = 1
+NewtonMetre.Symbol = "N•m"
+NewtonMetre IsUnitForQuantity BendingMomentQuantity
+BendingMomentQuantity HasSIUnit NewtonMetre
+Unit:DecanewtonMetre
+DecanewtonMetre.ConversionFactorA = 0
+DecanewtonMetre.ConversionFactorB = 0.1
+DecanewtonMetre.Symbol = "daN•m"
+DecanewtonMetre IsUnitForQuantity BendingMomentQuantity
+Unit:KilogramForceMetre
+KilogramForceMetre.ConversionFactorA = 0
+KilogramForceMetre.ConversionFactorB = 0.10197162129779283
+KilogramForceMetre.Symbol = "kgf•m"
+KilogramForceMetre IsUnitForQuantity BendingMomentQuantity
+Unit:KilonewtonMetre
+KilonewtonMetre.ConversionFactorA = 0
+KilonewtonMetre.ConversionFactorB = 0.001
+KilonewtonMetre.Symbol = "kN•m"
+KilonewtonMetre IsUnitForQuantity BendingMomentQuantity
+Unit:FootPound
+FootPound.ConversionFactorA = 0
+FootPound.ConversionFactorB = 0.7375621492772655
+FootPound.Symbol = "ft•lbf"
+FootPound IsUnitForQuantity BendingMomentQuantity
+Unit:KilofootPound
+KilofootPound.ConversionFactorA = 0
+KilofootPound.ConversionFactorB = 0.0007375621492772656
+KilofootPound.Symbol = "kft•lbf"
+KilofootPound IsUnitForQuantity BendingMomentQuantity
+Unit:NewtonDecimetre
+NewtonDecimetre.ConversionFactorA = 0
+NewtonDecimetre.ConversionFactorB = 10
+NewtonDecimetre.Symbol = "N•dm"
+NewtonDecimetre IsUnitForQuantity BendingMomentQuantity
+Unit:NewtonCentimetre
+NewtonCentimetre.ConversionFactorA = 0
+NewtonCentimetre.ConversionFactorB = 100
+NewtonCentimetre.Symbol = "N•cm"
+NewtonCentimetre IsUnitForQuantity BendingMomentQuantity
+Unit:NewtonMillimetre
+NewtonMillimetre.ConversionFactorA = 0
+NewtonMillimetre.ConversionFactorB = 1000
+NewtonMillimetre.Symbol = "N•mm"
+NewtonMillimetre IsUnitForQuantity BendingMomentQuantity
+Unit:InchPound
+InchPound.ConversionFactorA = 0
+InchPound.ConversionFactorB = 8.850745791327185
+InchPound.Symbol = "in•lbf"
+InchPound IsUnitForQuantity BendingMomentQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[BendingMomentQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[BendingMomentQuantity] -->|L| N0002(("2")) 
+	N0000[BendingMomentQuantity] -->|M| N0003(("1")) 
+	N0000[BendingMomentQuantity] -->|T| N0004(("-2")) 
+	N0005[NewtonMetre] -->|BelongsToClass| N0006(Unit) 
+	N0005[NewtonMetre] -->|ConversionFactorA| N0007(("0")) 
+	N0005[NewtonMetre] -->|ConversionFactorB| N0003(("1")) 
+	N0005[NewtonMetre] -->|Symbol| N0008(("N•m")) 
+	N0005[NewtonMetre] -->|IsUnitForQuantity| N0000((BendingMomentQuantity)) 
+	N0000[BendingMomentQuantity] -->|HasSIUnit| N0005((NewtonMetre)) 
+	N0009[DecanewtonMetre] -->|BelongsToClass| N0006(Unit) 
+	N0009[DecanewtonMetre] -->|ConversionFactorA| N0007(("0")) 
+	N0009[DecanewtonMetre] -->|ConversionFactorB| N0010(("0.1")) 
+	N0009[DecanewtonMetre] -->|Symbol| N0011(("daN•m")) 
+	N0009[DecanewtonMetre] -->|IsUnitForQuantity| N0000((BendingMomentQuantity)) 
+	N0012[KilogramForceMetre] -->|BelongsToClass| N0006(Unit) 
+	N0012[KilogramForceMetre] -->|ConversionFactorA| N0007(("0")) 
+	N0012[KilogramForceMetre] -->|ConversionFactorB| N0013(("0.10197162129779283")) 
+	N0012[KilogramForceMetre] -->|Symbol| N0014(("kgf•m")) 
+	N0012[KilogramForceMetre] -->|IsUnitForQuantity| N0000((BendingMomentQuantity)) 
+	N0015[KilonewtonMetre] -->|BelongsToClass| N0006(Unit) 
+	N0015[KilonewtonMetre] -->|ConversionFactorA| N0007(("0")) 
+	N0015[KilonewtonMetre] -->|ConversionFactorB| N0016(("0.001")) 
+	N0015[KilonewtonMetre] -->|Symbol| N0017(("kN•m")) 
+	N0015[KilonewtonMetre] -->|IsUnitForQuantity| N0000((BendingMomentQuantity)) 
+	N0018[FootPound] -->|BelongsToClass| N0006(Unit) 
+	N0018[FootPound] -->|ConversionFactorA| N0007(("0")) 
+	N0018[FootPound] -->|ConversionFactorB| N0019(("0.7375621492772655")) 
+	N0018[FootPound] -->|Symbol| N0020(("ft•lbf")) 
+	N0018[FootPound] -->|IsUnitForQuantity| N0000((BendingMomentQuantity)) 
+	N0021[KilofootPound] -->|BelongsToClass| N0006(Unit) 
+	N0021[KilofootPound] -->|ConversionFactorA| N0007(("0")) 
+	N0021[KilofootPound] -->|ConversionFactorB| N0022(("0.0007375621492772656")) 
+	N0021[KilofootPound] -->|Symbol| N0023(("kft•lbf")) 
+	N0021[KilofootPound] -->|IsUnitForQuantity| N0000((BendingMomentQuantity)) 
+	N0024[NewtonDecimetre] -->|BelongsToClass| N0006(Unit) 
+	N0024[NewtonDecimetre] -->|ConversionFactorA| N0007(("0")) 
+	N0024[NewtonDecimetre] -->|ConversionFactorB| N0025(("10")) 
+	N0024[NewtonDecimetre] -->|Symbol| N0026(("N•dm")) 
+	N0024[NewtonDecimetre] -->|IsUnitForQuantity| N0000((BendingMomentQuantity)) 
+	N0027[NewtonCentimetre] -->|BelongsToClass| N0006(Unit) 
+	N0027[NewtonCentimetre] -->|ConversionFactorA| N0007(("0")) 
+	N0027[NewtonCentimetre] -->|ConversionFactorB| N0028(("100")) 
+	N0027[NewtonCentimetre] -->|Symbol| N0029(("N•cm")) 
+	N0027[NewtonCentimetre] -->|IsUnitForQuantity| N0000((BendingMomentQuantity)) 
+	N0030[NewtonMillimetre] -->|BelongsToClass| N0006(Unit) 
+	N0030[NewtonMillimetre] -->|ConversionFactorA| N0007(("0")) 
+	N0030[NewtonMillimetre] -->|ConversionFactorB| N0031(("1000")) 
+	N0030[NewtonMillimetre] -->|Symbol| N0032(("N•mm")) 
+	N0030[NewtonMillimetre] -->|IsUnitForQuantity| N0000((BendingMomentQuantity)) 
+	N0033[InchPound] -->|BelongsToClass| N0006(Unit) 
+	N0033[InchPound] -->|ConversionFactorA| N0007(("0")) 
+	N0033[InchPound] -->|ConversionFactorB| N0034(("8.850745791327185")) 
+	N0033[InchPound] -->|Symbol| N0035(("in•lbf")) 
+	N0033[InchPound] -->|IsUnitForQuantity| N0000((BendingMomentQuantity)) 
+```
 ## CompressibilityQuantity <!-- NOUN -->
 - Display name: Compressibility
 - Parent class: [Quantity](#Quantity)
@@ -38691,7 +39113,7 @@ GramPerCubicMetre.Symbol = "g/m³"
 GramPerCubicMetre IsUnitForQuantity MassDensityQuantity
 Unit:SpecificGravity
 SpecificGravity.ConversionFactorA = 0
-SpecificGravity.ConversionFactorB = 999.972
+SpecificGravity.ConversionFactorB = 0.001000028000784022
 SpecificGravity.Symbol = "s.g."
 SpecificGravity IsUnitForQuantity MassDensityQuantity
 Unit:GramPerCubicCentimetre
@@ -38744,7 +39166,7 @@ graph LR
 	N0008[GramPerCubicMetre] -->|IsUnitForQuantity| N0000((MassDensityQuantity)) 
 	N0011[SpecificGravity] -->|BelongsToClass| N0005(Unit) 
 	N0011[SpecificGravity] -->|ConversionFactorA| N0006(("0")) 
-	N0011[SpecificGravity] -->|ConversionFactorB| N0012(("999.972")) 
+	N0011[SpecificGravity] -->|ConversionFactorB| N0012(("0.001000028000784022")) 
 	N0011[SpecificGravity] -->|Symbol| N0013(("s.g.")) 
 	N0011[SpecificGravity] -->|IsUnitForQuantity| N0000((MassDensityQuantity)) 
 	N0014[GramPerCubicCentimetre] -->|BelongsToClass| N0005(Unit) 
@@ -46930,7 +47352,7 @@ graph LR
 The moment of inertia is is a measure of an object's resistance to changes in its rotation rate. It is the rotational analog of mass for linear motion. The moment of inertia depends on the mass distribution of an object and the axis of rotation.
 The dimension of moment of inertia is:
 $$[L^{2}M]$$.
-The SI unit for **moment of inertia** is: kilogram metre squared with the associated unit label $kg \cdot m^{2}}$
+The SI unit for **moment of inertia** is: kilogram metre squared with the associated unit label $kg \cdot m^{2}$
 - Definition set: QuantityTypes
 - Examples:
 ``` dwis
@@ -46992,6 +47414,3240 @@ graph LR
 	N0014[PoundInchSquared] -->|Symbol| N0016(("lb.in²")) 
 	N0014[PoundInchSquared] -->|IsUnitForQuantity| N0000((MomentOfInertiaQuantity)) 
 	N0000[MomentOfInertiaQuantity] -->|HasSIUnit| N0014((PoundInchSquared)) 
+```
+## SpecificVolumeQuantity <!-- NOUN -->
+- Display name: SpecificVolume
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 3
+  - M = -1
+- Description: 
+Specific volume is the volume occupied by a unit mass of a substance, equal to the reciprocal of its density.
+The dimension of specific volume is:
+$$[L^{3}M^{-1}]$$.
+The SI unit for **specific volume** is: cubic metre per kilogram with the associated unit label $\frac{m^{3}}{kg}$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:SpecificVolumeQuantity
+SpecificVolumeQuantity.L = 3
+SpecificVolumeQuantity.M = -1
+Unit:CubicMetrePerKilogram
+CubicMetrePerKilogram.ConversionFactorA = 0
+CubicMetrePerKilogram.ConversionFactorB = 1
+CubicMetrePerKilogram.Symbol = "m³/kg"
+CubicMetrePerKilogram IsUnitForQuantity SpecificVolumeQuantity
+SpecificVolumeQuantity HasSIUnit CubicMetrePerKilogram
+Unit:CubicMetrePerGram
+CubicMetrePerGram.ConversionFactorA = 0
+CubicMetrePerGram.ConversionFactorB = 0.001
+CubicMetrePerGram.Symbol = "m³/g"
+CubicMetrePerGram IsUnitForQuantity SpecificVolumeQuantity
+Unit:CubicDecimetrePerGram
+CubicDecimetrePerGram.ConversionFactorA = 0
+CubicDecimetrePerGram.ConversionFactorB = 0.9999999999999998
+CubicDecimetrePerGram.Symbol = "dm³/g"
+CubicDecimetrePerGram IsUnitForQuantity SpecificVolumeQuantity
+Unit:LitrePerGram
+LitrePerGram.ConversionFactorA = 0
+LitrePerGram.ConversionFactorB = 1
+LitrePerGram.Symbol = "L/g"
+LitrePerGram IsUnitForQuantity SpecificVolumeQuantity
+Unit:DecilitrePerGram
+DecilitrePerGram.ConversionFactorA = 0
+DecilitrePerGram.ConversionFactorB = 10
+DecilitrePerGram.Symbol = "dL/g"
+DecilitrePerGram IsUnitForQuantity SpecificVolumeQuantity
+Unit:CentilitrePerGram
+CentilitrePerGram.ConversionFactorA = 0
+CentilitrePerGram.ConversionFactorB = 100
+CentilitrePerGram.Symbol = "cL/g"
+CentilitrePerGram IsUnitForQuantity SpecificVolumeQuantity
+Unit:MillilitrePerGram
+MillilitrePerGram.ConversionFactorA = 0
+MillilitrePerGram.ConversionFactorB = 1000.0000000000001
+MillilitrePerGram.Symbol = "mL/g"
+MillilitrePerGram IsUnitForQuantity SpecificVolumeQuantity
+Unit:CubicCentimetrePerGram
+CubicCentimetrePerGram.ConversionFactorA = 0
+CubicCentimetrePerGram.ConversionFactorB = 999.9999999999999
+CubicCentimetrePerGram.Symbol = "cm³/g"
+CubicCentimetrePerGram IsUnitForQuantity SpecificVolumeQuantity
+Unit:CubicMillimetrePerGram
+CubicMillimetrePerGram.ConversionFactorA = 0
+CubicMillimetrePerGram.ConversionFactorB = 1000000
+CubicMillimetrePerGram.Symbol = "mm³/g"
+CubicMillimetrePerGram IsUnitForQuantity SpecificVolumeQuantity
+Unit:LitrePerKilogram
+LitrePerKilogram.ConversionFactorA = 0
+LitrePerKilogram.ConversionFactorB = 1000
+LitrePerKilogram.Symbol = "L/kg"
+LitrePerKilogram IsUnitForQuantity SpecificVolumeQuantity
+Unit:DecilitrePerKilogram
+DecilitrePerKilogram.ConversionFactorA = 0
+DecilitrePerKilogram.ConversionFactorB = 10000
+DecilitrePerKilogram.Symbol = "dL/kg"
+DecilitrePerKilogram IsUnitForQuantity SpecificVolumeQuantity
+Unit:CentilitrePerKilogram
+CentilitrePerKilogram.ConversionFactorA = 0
+CentilitrePerKilogram.ConversionFactorB = 99999.99999999999
+CentilitrePerKilogram.Symbol = "cL/kg"
+CentilitrePerKilogram IsUnitForQuantity SpecificVolumeQuantity
+Unit:MillilitrePerKilogram
+MillilitrePerKilogram.ConversionFactorA = 0
+MillilitrePerKilogram.ConversionFactorB = 1000000
+MillilitrePerKilogram.Symbol = "mL/kg"
+MillilitrePerKilogram IsUnitForQuantity SpecificVolumeQuantity
+Unit:CubicCentimetrePerKilogram
+CubicCentimetrePerKilogram.ConversionFactorA = 0
+CubicCentimetrePerKilogram.ConversionFactorB = 999999.9999999999
+CubicCentimetrePerKilogram.Symbol = "cm³/kg"
+CubicCentimetrePerKilogram IsUnitForQuantity SpecificVolumeQuantity
+Unit:CubicMillimetrePerKilogram
+CubicMillimetrePerKilogram.ConversionFactorA = 0
+CubicMillimetrePerKilogram.ConversionFactorB = 999999999.9999999
+CubicMillimetrePerKilogram.Symbol = "mm³/kg"
+CubicMillimetrePerKilogram IsUnitForQuantity SpecificVolumeQuantity
+Unit:CubicYardPerPound
+CubicYardPerPound.ConversionFactorA = 0
+CubicYardPerPound.ConversionFactorB = 0.5932764212577832
+CubicYardPerPound.Symbol = "yd³/lb"
+CubicYardPerPound IsUnitForQuantity SpecificVolumeQuantity
+Unit:CubicFeetPerPound
+CubicFeetPerPound.ConversionFactorA = 0
+CubicFeetPerPound.ConversionFactorB = 16.018463373960145
+CubicFeetPerPound.Symbol = "ft³/lb"
+CubicFeetPerPound IsUnitForQuantity SpecificVolumeQuantity
+Unit:CubicInchesPerPound
+CubicInchesPerPound.ConversionFactorA = 0
+CubicInchesPerPound.ConversionFactorB = 27679.904710203125
+CubicInchesPerPound.Symbol = "in³/lb"
+CubicInchesPerPound IsUnitForQuantity SpecificVolumeQuantity
+Unit:CubicYardPerOunce
+CubicYardPerOunce.ConversionFactorA = 0
+CubicYardPerOunce.ConversionFactorB = 0.03707977632861145
+CubicYardPerOunce.Symbol = "yd³/oz"
+CubicYardPerOunce IsUnitForQuantity SpecificVolumeQuantity
+Unit:CubicFeetPerOunce
+CubicFeetPerOunce.ConversionFactorA = 0
+CubicFeetPerOunce.ConversionFactorB = 1.001153960872509
+CubicFeetPerOunce.Symbol = "ft³/oz"
+CubicFeetPerOunce IsUnitForQuantity SpecificVolumeQuantity
+Unit:CubicInchesPerOunce
+CubicInchesPerOunce.ConversionFactorA = 0
+CubicInchesPerOunce.ConversionFactorB = 1729.9940443876953
+CubicInchesPerOunce.Symbol = "in³/oz"
+CubicInchesPerOunce IsUnitForQuantity SpecificVolumeQuantity
+Unit:GallonUkPerOunce
+GallonUkPerOunce.ConversionFactorA = 0
+GallonUkPerOunce.ConversionFactorB = 6.236023291443856
+GallonUkPerOunce.Symbol = "galUK/oz"
+GallonUkPerOunce IsUnitForQuantity SpecificVolumeQuantity
+Unit:GallonUsPerOunce
+GallonUsPerOunce.ConversionFactorA = 0
+GallonUsPerOunce.ConversionFactorB = 7.48915170730604
+GallonUsPerOunce.Symbol = "galUS/oz"
+GallonUsPerOunce IsUnitForQuantity SpecificVolumeQuantity
+Unit:GallonUkPerPound
+GallonUkPerPound.ConversionFactorA = 0
+GallonUkPerPound.ConversionFactorB = 99.7763726631017
+GallonUkPerPound.Symbol = "galUK/lb"
+GallonUkPerPound IsUnitForQuantity SpecificVolumeQuantity
+Unit:GallonUsPerPound
+GallonUsPerPound.ConversionFactorA = 0
+GallonUsPerPound.ConversionFactorB = 119.82642731689664
+GallonUsPerPound.Symbol = "galUS/lb"
+GallonUsPerPound IsUnitForQuantity SpecificVolumeQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificVolumeQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[SpecificVolumeQuantity] -->|L| N0002(("3")) 
+	N0000[SpecificVolumeQuantity] -->|M| N0003(("-1")) 
+	N0004[CubicMetrePerKilogram] -->|BelongsToClass| N0005(Unit) 
+	N0004[CubicMetrePerKilogram] -->|ConversionFactorA| N0006(("0")) 
+	N0004[CubicMetrePerKilogram] -->|ConversionFactorB| N0007(("1")) 
+	N0004[CubicMetrePerKilogram] -->|Symbol| N0008(("m³/kg")) 
+	N0004[CubicMetrePerKilogram] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+	N0000[SpecificVolumeQuantity] -->|HasSIUnit| N0004((CubicMetrePerKilogram)) 
+	N0009[CubicMetrePerGram] -->|BelongsToClass| N0005(Unit) 
+	N0009[CubicMetrePerGram] -->|ConversionFactorA| N0006(("0")) 
+	N0009[CubicMetrePerGram] -->|ConversionFactorB| N0010(("0.001")) 
+	N0009[CubicMetrePerGram] -->|Symbol| N0011(("m³/g")) 
+	N0009[CubicMetrePerGram] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+	N0012[CubicDecimetrePerGram] -->|BelongsToClass| N0005(Unit) 
+	N0012[CubicDecimetrePerGram] -->|ConversionFactorA| N0006(("0")) 
+	N0012[CubicDecimetrePerGram] -->|ConversionFactorB| N0013(("0.9999999999999998")) 
+	N0012[CubicDecimetrePerGram] -->|Symbol| N0014(("dm³/g")) 
+	N0012[CubicDecimetrePerGram] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+	N0015[LitrePerGram] -->|BelongsToClass| N0005(Unit) 
+	N0015[LitrePerGram] -->|ConversionFactorA| N0006(("0")) 
+	N0015[LitrePerGram] -->|ConversionFactorB| N0007(("1")) 
+	N0015[LitrePerGram] -->|Symbol| N0016(("L/g")) 
+	N0015[LitrePerGram] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+	N0017[DecilitrePerGram] -->|BelongsToClass| N0005(Unit) 
+	N0017[DecilitrePerGram] -->|ConversionFactorA| N0006(("0")) 
+	N0017[DecilitrePerGram] -->|ConversionFactorB| N0018(("10")) 
+	N0017[DecilitrePerGram] -->|Symbol| N0019(("dL/g")) 
+	N0017[DecilitrePerGram] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+	N0020[CentilitrePerGram] -->|BelongsToClass| N0005(Unit) 
+	N0020[CentilitrePerGram] -->|ConversionFactorA| N0006(("0")) 
+	N0020[CentilitrePerGram] -->|ConversionFactorB| N0021(("100")) 
+	N0020[CentilitrePerGram] -->|Symbol| N0022(("cL/g")) 
+	N0020[CentilitrePerGram] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+	N0023[MillilitrePerGram] -->|BelongsToClass| N0005(Unit) 
+	N0023[MillilitrePerGram] -->|ConversionFactorA| N0006(("0")) 
+	N0023[MillilitrePerGram] -->|ConversionFactorB| N0024(("1000.0000000000001")) 
+	N0023[MillilitrePerGram] -->|Symbol| N0025(("mL/g")) 
+	N0023[MillilitrePerGram] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+	N0026[CubicCentimetrePerGram] -->|BelongsToClass| N0005(Unit) 
+	N0026[CubicCentimetrePerGram] -->|ConversionFactorA| N0006(("0")) 
+	N0026[CubicCentimetrePerGram] -->|ConversionFactorB| N0027(("999.9999999999999")) 
+	N0026[CubicCentimetrePerGram] -->|Symbol| N0028(("cm³/g")) 
+	N0026[CubicCentimetrePerGram] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+	N0029[CubicMillimetrePerGram] -->|BelongsToClass| N0005(Unit) 
+	N0029[CubicMillimetrePerGram] -->|ConversionFactorA| N0006(("0")) 
+	N0029[CubicMillimetrePerGram] -->|ConversionFactorB| N0030(("1000000")) 
+	N0029[CubicMillimetrePerGram] -->|Symbol| N0031(("mm³/g")) 
+	N0029[CubicMillimetrePerGram] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+	N0032[LitrePerKilogram] -->|BelongsToClass| N0005(Unit) 
+	N0032[LitrePerKilogram] -->|ConversionFactorA| N0006(("0")) 
+	N0032[LitrePerKilogram] -->|ConversionFactorB| N0033(("1000")) 
+	N0032[LitrePerKilogram] -->|Symbol| N0034(("L/kg")) 
+	N0032[LitrePerKilogram] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+	N0035[DecilitrePerKilogram] -->|BelongsToClass| N0005(Unit) 
+	N0035[DecilitrePerKilogram] -->|ConversionFactorA| N0006(("0")) 
+	N0035[DecilitrePerKilogram] -->|ConversionFactorB| N0036(("10000")) 
+	N0035[DecilitrePerKilogram] -->|Symbol| N0037(("dL/kg")) 
+	N0035[DecilitrePerKilogram] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+	N0038[CentilitrePerKilogram] -->|BelongsToClass| N0005(Unit) 
+	N0038[CentilitrePerKilogram] -->|ConversionFactorA| N0006(("0")) 
+	N0038[CentilitrePerKilogram] -->|ConversionFactorB| N0039(("99999.99999999999")) 
+	N0038[CentilitrePerKilogram] -->|Symbol| N0040(("cL/kg")) 
+	N0038[CentilitrePerKilogram] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+	N0041[MillilitrePerKilogram] -->|BelongsToClass| N0005(Unit) 
+	N0041[MillilitrePerKilogram] -->|ConversionFactorA| N0006(("0")) 
+	N0041[MillilitrePerKilogram] -->|ConversionFactorB| N0030(("1000000")) 
+	N0041[MillilitrePerKilogram] -->|Symbol| N0042(("mL/kg")) 
+	N0041[MillilitrePerKilogram] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+	N0043[CubicCentimetrePerKilogram] -->|BelongsToClass| N0005(Unit) 
+	N0043[CubicCentimetrePerKilogram] -->|ConversionFactorA| N0006(("0")) 
+	N0043[CubicCentimetrePerKilogram] -->|ConversionFactorB| N0044(("999999.9999999999")) 
+	N0043[CubicCentimetrePerKilogram] -->|Symbol| N0045(("cm³/kg")) 
+	N0043[CubicCentimetrePerKilogram] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+	N0046[CubicMillimetrePerKilogram] -->|BelongsToClass| N0005(Unit) 
+	N0046[CubicMillimetrePerKilogram] -->|ConversionFactorA| N0006(("0")) 
+	N0046[CubicMillimetrePerKilogram] -->|ConversionFactorB| N0047(("999999999.9999999")) 
+	N0046[CubicMillimetrePerKilogram] -->|Symbol| N0048(("mm³/kg")) 
+	N0046[CubicMillimetrePerKilogram] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+	N0049[CubicYardPerPound] -->|BelongsToClass| N0005(Unit) 
+	N0049[CubicYardPerPound] -->|ConversionFactorA| N0006(("0")) 
+	N0049[CubicYardPerPound] -->|ConversionFactorB| N0050(("0.5932764212577832")) 
+	N0049[CubicYardPerPound] -->|Symbol| N0051(("yd³/lb")) 
+	N0049[CubicYardPerPound] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+	N0052[CubicFeetPerPound] -->|BelongsToClass| N0005(Unit) 
+	N0052[CubicFeetPerPound] -->|ConversionFactorA| N0006(("0")) 
+	N0052[CubicFeetPerPound] -->|ConversionFactorB| N0053(("16.018463373960145")) 
+	N0052[CubicFeetPerPound] -->|Symbol| N0054(("ft³/lb")) 
+	N0052[CubicFeetPerPound] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+	N0055[CubicInchesPerPound] -->|BelongsToClass| N0005(Unit) 
+	N0055[CubicInchesPerPound] -->|ConversionFactorA| N0006(("0")) 
+	N0055[CubicInchesPerPound] -->|ConversionFactorB| N0056(("27679.904710203125")) 
+	N0055[CubicInchesPerPound] -->|Symbol| N0057(("in³/lb")) 
+	N0055[CubicInchesPerPound] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+	N0058[CubicYardPerOunce] -->|BelongsToClass| N0005(Unit) 
+	N0058[CubicYardPerOunce] -->|ConversionFactorA| N0006(("0")) 
+	N0058[CubicYardPerOunce] -->|ConversionFactorB| N0059(("0.03707977632861145")) 
+	N0058[CubicYardPerOunce] -->|Symbol| N0060(("yd³/oz")) 
+	N0058[CubicYardPerOunce] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+	N0061[CubicFeetPerOunce] -->|BelongsToClass| N0005(Unit) 
+	N0061[CubicFeetPerOunce] -->|ConversionFactorA| N0006(("0")) 
+	N0061[CubicFeetPerOunce] -->|ConversionFactorB| N0062(("1.001153960872509")) 
+	N0061[CubicFeetPerOunce] -->|Symbol| N0063(("ft³/oz")) 
+	N0061[CubicFeetPerOunce] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+	N0064[CubicInchesPerOunce] -->|BelongsToClass| N0005(Unit) 
+	N0064[CubicInchesPerOunce] -->|ConversionFactorA| N0006(("0")) 
+	N0064[CubicInchesPerOunce] -->|ConversionFactorB| N0065(("1729.9940443876953")) 
+	N0064[CubicInchesPerOunce] -->|Symbol| N0066(("in³/oz")) 
+	N0064[CubicInchesPerOunce] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+	N0067[GallonUkPerOunce] -->|BelongsToClass| N0005(Unit) 
+	N0067[GallonUkPerOunce] -->|ConversionFactorA| N0006(("0")) 
+	N0067[GallonUkPerOunce] -->|ConversionFactorB| N0068(("6.236023291443856")) 
+	N0067[GallonUkPerOunce] -->|Symbol| N0069(("galUK/oz")) 
+	N0067[GallonUkPerOunce] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+	N0070[GallonUsPerOunce] -->|BelongsToClass| N0005(Unit) 
+	N0070[GallonUsPerOunce] -->|ConversionFactorA| N0006(("0")) 
+	N0070[GallonUsPerOunce] -->|ConversionFactorB| N0071(("7.48915170730604")) 
+	N0070[GallonUsPerOunce] -->|Symbol| N0072(("galUS/oz")) 
+	N0070[GallonUsPerOunce] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+	N0073[GallonUkPerPound] -->|BelongsToClass| N0005(Unit) 
+	N0073[GallonUkPerPound] -->|ConversionFactorA| N0006(("0")) 
+	N0073[GallonUkPerPound] -->|ConversionFactorB| N0074(("99.7763726631017")) 
+	N0073[GallonUkPerPound] -->|Symbol| N0075(("galUK/lb")) 
+	N0073[GallonUkPerPound] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+	N0076[GallonUsPerPound] -->|BelongsToClass| N0005(Unit) 
+	N0076[GallonUsPerPound] -->|ConversionFactorA| N0006(("0")) 
+	N0076[GallonUsPerPound] -->|ConversionFactorB| N0077(("119.82642731689664")) 
+	N0076[GallonUsPerPound] -->|Symbol| N0078(("galUS/lb")) 
+	N0076[GallonUsPerPound] -->|IsUnitForQuantity| N0000((SpecificVolumeQuantity)) 
+```
+## SpecificVolumeSquaredQuantity <!-- NOUN -->
+- Display name: SpecificVolumeSquared
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = 6
+  - M = -2
+- Description: 
+Specific volume squared is the square of the specific volume.
+The dimension of specific volume squared is:
+$$[L^{6}M^{-2}]$$.
+The SI unit for **specific volume squared** is: cubic metre squared per kilogram squared with the associated unit label $\frac{m^{6}}{kg^{2}}$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:SpecificVolumeSquaredQuantity
+SpecificVolumeSquaredQuantity.L = 6
+SpecificVolumeSquaredQuantity.M = -2
+Unit:CubicMetreSquaredPerKilogramSquared
+CubicMetreSquaredPerKilogramSquared.ConversionFactorA = 0
+CubicMetreSquaredPerKilogramSquared.ConversionFactorB = 1
+CubicMetreSquaredPerKilogramSquared.Symbol = "m⁶/kg²"
+CubicMetreSquaredPerKilogramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+SpecificVolumeSquaredQuantity HasSIUnit CubicMetreSquaredPerKilogramSquared
+Unit:CubicMetreSquaredPerGramSquared
+CubicMetreSquaredPerGramSquared.ConversionFactorA = 0
+CubicMetreSquaredPerGramSquared.ConversionFactorB = 1E-06
+CubicMetreSquaredPerGramSquared.Symbol = "m⁶/g²"
+CubicMetreSquaredPerGramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CubicDecimetreSquaredPerGramSquared
+CubicDecimetreSquaredPerGramSquared.ConversionFactorA = 0
+CubicDecimetreSquaredPerGramSquared.ConversionFactorB = 0.9999999999999996
+CubicDecimetreSquaredPerGramSquared.Symbol = "dm⁶/g²"
+CubicDecimetreSquaredPerGramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:LitreSquaredPerGramSquared
+LitreSquaredPerGramSquared.ConversionFactorA = 0
+LitreSquaredPerGramSquared.ConversionFactorB = 1
+LitreSquaredPerGramSquared.Symbol = "L²/g²"
+LitreSquaredPerGramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:DecilitreSquaredPerGramSquared
+DecilitreSquaredPerGramSquared.ConversionFactorA = 0
+DecilitreSquaredPerGramSquared.ConversionFactorB = 99.99999999999997
+DecilitreSquaredPerGramSquared.Symbol = "dL²/g²"
+DecilitreSquaredPerGramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CentilitreSquaredPerGramSquared
+CentilitreSquaredPerGramSquared.ConversionFactorA = 0
+CentilitreSquaredPerGramSquared.ConversionFactorB = 10000
+CentilitreSquaredPerGramSquared.Symbol = "cL²/g²"
+CentilitreSquaredPerGramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:MillilitreSquaredPerGramSquared
+MillilitreSquaredPerGramSquared.ConversionFactorA = 0
+MillilitreSquaredPerGramSquared.ConversionFactorB = 999999.9999999998
+MillilitreSquaredPerGramSquared.Symbol = "mL²/g²"
+MillilitreSquaredPerGramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CubicCentimetreSquaredPerGramSquared
+CubicCentimetreSquaredPerGramSquared.ConversionFactorA = 0
+CubicCentimetreSquaredPerGramSquared.ConversionFactorB = 999999.9999999998
+CubicCentimetreSquaredPerGramSquared.Symbol = "cm⁶/g²"
+CubicCentimetreSquaredPerGramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CubicMillimetreSquaredPerGramSquared
+CubicMillimetreSquaredPerGramSquared.ConversionFactorA = 0
+CubicMillimetreSquaredPerGramSquared.ConversionFactorB = 999999999999.9996
+CubicMillimetreSquaredPerGramSquared.Symbol = "mm⁶/g²"
+CubicMillimetreSquaredPerGramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:LitreSquaredPerKilogramSquared
+LitreSquaredPerKilogramSquared.ConversionFactorA = 0
+LitreSquaredPerKilogramSquared.ConversionFactorB = 1000000
+LitreSquaredPerKilogramSquared.Symbol = "L²/kg²"
+LitreSquaredPerKilogramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:DecilitreSquaredPerKilogramSquared
+DecilitreSquaredPerKilogramSquared.ConversionFactorA = 0
+DecilitreSquaredPerKilogramSquared.ConversionFactorB = 99999999.99999999
+DecilitreSquaredPerKilogramSquared.Symbol = "dL²/kg²"
+DecilitreSquaredPerKilogramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CentilitreSquaredPerKilogramSquared
+CentilitreSquaredPerKilogramSquared.ConversionFactorA = 0
+CentilitreSquaredPerKilogramSquared.ConversionFactorB = 10000000000
+CentilitreSquaredPerKilogramSquared.Symbol = "cL²/kg²"
+CentilitreSquaredPerKilogramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:MillilitreSquaredPerKilogramSquared
+MillilitreSquaredPerKilogramSquared.ConversionFactorA = 0
+MillilitreSquaredPerKilogramSquared.ConversionFactorB = 999999999999.9999
+MillilitreSquaredPerKilogramSquared.Symbol = "mL²/kg²"
+MillilitreSquaredPerKilogramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CubicCentimetreSquaredPerKilogramSquared
+CubicCentimetreSquaredPerKilogramSquared.ConversionFactorA = 0
+CubicCentimetreSquaredPerKilogramSquared.ConversionFactorB = 999999999999.9999
+CubicCentimetreSquaredPerKilogramSquared.Symbol = "cm⁶/kg²"
+CubicCentimetreSquaredPerKilogramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CubicMillimetreSquaredPerKilogramSquared
+CubicMillimetreSquaredPerKilogramSquared.ConversionFactorA = 0
+CubicMillimetreSquaredPerKilogramSquared.ConversionFactorB = 9.999999999999997E+17
+CubicMillimetreSquaredPerKilogramSquared.Symbol = "mm⁶/kg²"
+CubicMillimetreSquaredPerKilogramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CubicYardSquaredPerPoundSquared
+CubicYardSquaredPerPoundSquared.ConversionFactorA = 0
+CubicYardSquaredPerPoundSquared.ConversionFactorB = 0.3519769120204426
+CubicYardSquaredPerPoundSquared.Symbol = "yd⁶/lb²"
+CubicYardSquaredPerPoundSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CubicFeetSquaredPerPoundSquared
+CubicFeetSquaredPerPoundSquared.ConversionFactorA = 0
+CubicFeetSquaredPerPoundSquared.ConversionFactorB = 256.5911688629027
+CubicFeetSquaredPerPoundSquared.Symbol = "ft⁶/lb²"
+CubicFeetSquaredPerPoundSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CubicInchesSquaredPerPoundSquared
+CubicInchesSquaredPerPoundSquared.ConversionFactorA = 0
+CubicInchesSquaredPerPoundSquared.ConversionFactorB = 766177124.7659252
+CubicInchesSquaredPerPoundSquared.Symbol = "in⁶/lb²"
+CubicInchesSquaredPerPoundSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CubicYardSquaredPerOunceSquared
+CubicYardSquaredPerOunceSquared.ConversionFactorA = 0
+CubicYardSquaredPerOunceSquared.ConversionFactorB = 0.001374909812579854
+CubicYardSquaredPerOunceSquared.Symbol = "yd⁶/oz²"
+CubicYardSquaredPerOunceSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CubicFeetSquaredPerOunceSquared
+CubicFeetSquaredPerOunceSquared.ConversionFactorA = 0
+CubicFeetSquaredPerOunceSquared.ConversionFactorB = 1.0023092533707136
+CubicFeetSquaredPerOunceSquared.Symbol = "ft⁶/oz²"
+CubicFeetSquaredPerOunceSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CubicInchesSquaredPerOunceSquared
+CubicInchesSquaredPerOunceSquared.ConversionFactorA = 0
+CubicInchesSquaredPerOunceSquared.ConversionFactorB = 2992879.393616895
+CubicInchesSquaredPerOunceSquared.Symbol = "in⁶/oz²"
+CubicInchesSquaredPerOunceSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:GallonUkSquaredPerOunceSquared
+GallonUkSquaredPerOunceSquared.ConversionFactorA = 0
+GallonUkSquaredPerOunceSquared.ConversionFactorB = 38.88798649143027
+GallonUkSquaredPerOunceSquared.Symbol = "galUK²/oz²"
+GallonUkSquaredPerOunceSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:GallonUsSquaredPerOunceSquared
+GallonUsSquaredPerOunceSquared.ConversionFactorA = 0
+GallonUsSquaredPerOunceSquared.ConversionFactorB = 56.087393295044976
+GallonUsSquaredPerOunceSquared.Symbol = "galUS²/oz²"
+GallonUsSquaredPerOunceSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:GallonUkSquaredPerPoundSquared
+GallonUkSquaredPerPoundSquared.ConversionFactorA = 0
+GallonUkSquaredPerPoundSquared.ConversionFactorB = 9955.324541806149
+GallonUkSquaredPerPoundSquared.Symbol = "galUK²/lb²"
+GallonUkSquaredPerPoundSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:GallonUsSquaredPerPoundSquared
+GallonUsSquaredPerPoundSquared.ConversionFactorA = 0
+GallonUsSquaredPerPoundSquared.ConversionFactorB = 14358.372683531514
+GallonUsSquaredPerPoundSquared.Symbol = "galUS²/lb²"
+GallonUsSquaredPerPoundSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificVolumeSquaredQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[SpecificVolumeSquaredQuantity] -->|L| N0002(("6")) 
+	N0000[SpecificVolumeSquaredQuantity] -->|M| N0003(("-2")) 
+	N0004[CubicMetreSquaredPerKilogramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0004[CubicMetreSquaredPerKilogramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0004[CubicMetreSquaredPerKilogramSquared] -->|ConversionFactorB| N0007(("1")) 
+	N0004[CubicMetreSquaredPerKilogramSquared] -->|Symbol| N0008(("m⁶/kg²")) 
+	N0004[CubicMetreSquaredPerKilogramSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+	N0000[SpecificVolumeSquaredQuantity] -->|HasSIUnit| N0004((CubicMetreSquaredPerKilogramSquared)) 
+	N0009[CubicMetreSquaredPerGramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0009[CubicMetreSquaredPerGramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0009[CubicMetreSquaredPerGramSquared] -->|ConversionFactorB| N0010(("1E-06")) 
+	N0009[CubicMetreSquaredPerGramSquared] -->|Symbol| N0011(("m⁶/g²")) 
+	N0009[CubicMetreSquaredPerGramSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+	N0012[CubicDecimetreSquaredPerGramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0012[CubicDecimetreSquaredPerGramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0012[CubicDecimetreSquaredPerGramSquared] -->|ConversionFactorB| N0013(("0.9999999999999996")) 
+	N0012[CubicDecimetreSquaredPerGramSquared] -->|Symbol| N0014(("dm⁶/g²")) 
+	N0012[CubicDecimetreSquaredPerGramSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+	N0015[LitreSquaredPerGramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0015[LitreSquaredPerGramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0015[LitreSquaredPerGramSquared] -->|ConversionFactorB| N0007(("1")) 
+	N0015[LitreSquaredPerGramSquared] -->|Symbol| N0016(("L²/g²")) 
+	N0015[LitreSquaredPerGramSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+	N0017[DecilitreSquaredPerGramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0017[DecilitreSquaredPerGramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0017[DecilitreSquaredPerGramSquared] -->|ConversionFactorB| N0018(("99.99999999999997")) 
+	N0017[DecilitreSquaredPerGramSquared] -->|Symbol| N0019(("dL²/g²")) 
+	N0017[DecilitreSquaredPerGramSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+	N0020[CentilitreSquaredPerGramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0020[CentilitreSquaredPerGramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0020[CentilitreSquaredPerGramSquared] -->|ConversionFactorB| N0021(("10000")) 
+	N0020[CentilitreSquaredPerGramSquared] -->|Symbol| N0022(("cL²/g²")) 
+	N0020[CentilitreSquaredPerGramSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+	N0023[MillilitreSquaredPerGramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0023[MillilitreSquaredPerGramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0023[MillilitreSquaredPerGramSquared] -->|ConversionFactorB| N0024(("999999.9999999998")) 
+	N0023[MillilitreSquaredPerGramSquared] -->|Symbol| N0025(("mL²/g²")) 
+	N0023[MillilitreSquaredPerGramSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+	N0026[CubicCentimetreSquaredPerGramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0026[CubicCentimetreSquaredPerGramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0026[CubicCentimetreSquaredPerGramSquared] -->|ConversionFactorB| N0024(("999999.9999999998")) 
+	N0026[CubicCentimetreSquaredPerGramSquared] -->|Symbol| N0027(("cm⁶/g²")) 
+	N0026[CubicCentimetreSquaredPerGramSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+	N0028[CubicMillimetreSquaredPerGramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0028[CubicMillimetreSquaredPerGramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0028[CubicMillimetreSquaredPerGramSquared] -->|ConversionFactorB| N0029(("999999999999.9996")) 
+	N0028[CubicMillimetreSquaredPerGramSquared] -->|Symbol| N0030(("mm⁶/g²")) 
+	N0028[CubicMillimetreSquaredPerGramSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+	N0031[LitreSquaredPerKilogramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0031[LitreSquaredPerKilogramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0031[LitreSquaredPerKilogramSquared] -->|ConversionFactorB| N0032(("1000000")) 
+	N0031[LitreSquaredPerKilogramSquared] -->|Symbol| N0033(("L²/kg²")) 
+	N0031[LitreSquaredPerKilogramSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+	N0034[DecilitreSquaredPerKilogramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0034[DecilitreSquaredPerKilogramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0034[DecilitreSquaredPerKilogramSquared] -->|ConversionFactorB| N0035(("99999999.99999999")) 
+	N0034[DecilitreSquaredPerKilogramSquared] -->|Symbol| N0036(("dL²/kg²")) 
+	N0034[DecilitreSquaredPerKilogramSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+	N0037[CentilitreSquaredPerKilogramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0037[CentilitreSquaredPerKilogramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0037[CentilitreSquaredPerKilogramSquared] -->|ConversionFactorB| N0038(("10000000000")) 
+	N0037[CentilitreSquaredPerKilogramSquared] -->|Symbol| N0039(("cL²/kg²")) 
+	N0037[CentilitreSquaredPerKilogramSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+	N0040[MillilitreSquaredPerKilogramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0040[MillilitreSquaredPerKilogramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0040[MillilitreSquaredPerKilogramSquared] -->|ConversionFactorB| N0041(("999999999999.9999")) 
+	N0040[MillilitreSquaredPerKilogramSquared] -->|Symbol| N0042(("mL²/kg²")) 
+	N0040[MillilitreSquaredPerKilogramSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+	N0043[CubicCentimetreSquaredPerKilogramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0043[CubicCentimetreSquaredPerKilogramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0043[CubicCentimetreSquaredPerKilogramSquared] -->|ConversionFactorB| N0041(("999999999999.9999")) 
+	N0043[CubicCentimetreSquaredPerKilogramSquared] -->|Symbol| N0044(("cm⁶/kg²")) 
+	N0043[CubicCentimetreSquaredPerKilogramSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+	N0045[CubicMillimetreSquaredPerKilogramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0045[CubicMillimetreSquaredPerKilogramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0045[CubicMillimetreSquaredPerKilogramSquared] -->|ConversionFactorB| N0046(("9.999999999999997E+17")) 
+	N0045[CubicMillimetreSquaredPerKilogramSquared] -->|Symbol| N0047(("mm⁶/kg²")) 
+	N0045[CubicMillimetreSquaredPerKilogramSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+	N0048[CubicYardSquaredPerPoundSquared] -->|BelongsToClass| N0005(Unit) 
+	N0048[CubicYardSquaredPerPoundSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0048[CubicYardSquaredPerPoundSquared] -->|ConversionFactorB| N0049(("0.3519769120204426")) 
+	N0048[CubicYardSquaredPerPoundSquared] -->|Symbol| N0050(("yd⁶/lb²")) 
+	N0048[CubicYardSquaredPerPoundSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+	N0051[CubicFeetSquaredPerPoundSquared] -->|BelongsToClass| N0005(Unit) 
+	N0051[CubicFeetSquaredPerPoundSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0051[CubicFeetSquaredPerPoundSquared] -->|ConversionFactorB| N0052(("256.5911688629027")) 
+	N0051[CubicFeetSquaredPerPoundSquared] -->|Symbol| N0053(("ft⁶/lb²")) 
+	N0051[CubicFeetSquaredPerPoundSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+	N0054[CubicInchesSquaredPerPoundSquared] -->|BelongsToClass| N0005(Unit) 
+	N0054[CubicInchesSquaredPerPoundSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0054[CubicInchesSquaredPerPoundSquared] -->|ConversionFactorB| N0055(("766177124.7659252")) 
+	N0054[CubicInchesSquaredPerPoundSquared] -->|Symbol| N0056(("in⁶/lb²")) 
+	N0054[CubicInchesSquaredPerPoundSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+	N0057[CubicYardSquaredPerOunceSquared] -->|BelongsToClass| N0005(Unit) 
+	N0057[CubicYardSquaredPerOunceSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0057[CubicYardSquaredPerOunceSquared] -->|ConversionFactorB| N0058(("0.001374909812579854")) 
+	N0057[CubicYardSquaredPerOunceSquared] -->|Symbol| N0059(("yd⁶/oz²")) 
+	N0057[CubicYardSquaredPerOunceSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+	N0060[CubicFeetSquaredPerOunceSquared] -->|BelongsToClass| N0005(Unit) 
+	N0060[CubicFeetSquaredPerOunceSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0060[CubicFeetSquaredPerOunceSquared] -->|ConversionFactorB| N0061(("1.0023092533707136")) 
+	N0060[CubicFeetSquaredPerOunceSquared] -->|Symbol| N0062(("ft⁶/oz²")) 
+	N0060[CubicFeetSquaredPerOunceSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+	N0063[CubicInchesSquaredPerOunceSquared] -->|BelongsToClass| N0005(Unit) 
+	N0063[CubicInchesSquaredPerOunceSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0063[CubicInchesSquaredPerOunceSquared] -->|ConversionFactorB| N0064(("2992879.393616895")) 
+	N0063[CubicInchesSquaredPerOunceSquared] -->|Symbol| N0065(("in⁶/oz²")) 
+	N0063[CubicInchesSquaredPerOunceSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+	N0066[GallonUkSquaredPerOunceSquared] -->|BelongsToClass| N0005(Unit) 
+	N0066[GallonUkSquaredPerOunceSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0066[GallonUkSquaredPerOunceSquared] -->|ConversionFactorB| N0067(("38.88798649143027")) 
+	N0066[GallonUkSquaredPerOunceSquared] -->|Symbol| N0068(("galUK²/oz²")) 
+	N0066[GallonUkSquaredPerOunceSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+	N0069[GallonUsSquaredPerOunceSquared] -->|BelongsToClass| N0005(Unit) 
+	N0069[GallonUsSquaredPerOunceSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0069[GallonUsSquaredPerOunceSquared] -->|ConversionFactorB| N0070(("56.087393295044976")) 
+	N0069[GallonUsSquaredPerOunceSquared] -->|Symbol| N0071(("galUS²/oz²")) 
+	N0069[GallonUsSquaredPerOunceSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+	N0072[GallonUkSquaredPerPoundSquared] -->|BelongsToClass| N0005(Unit) 
+	N0072[GallonUkSquaredPerPoundSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0072[GallonUkSquaredPerPoundSquared] -->|ConversionFactorB| N0073(("9955.324541806149")) 
+	N0072[GallonUkSquaredPerPoundSquared] -->|Symbol| N0074(("galUK²/lb²")) 
+	N0072[GallonUkSquaredPerPoundSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+	N0075[GallonUsSquaredPerPoundSquared] -->|BelongsToClass| N0005(Unit) 
+	N0075[GallonUsSquaredPerPoundSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0075[GallonUsSquaredPerPoundSquared] -->|ConversionFactorB| N0076(("14358.372683531514")) 
+	N0075[GallonUsSquaredPerPoundSquared] -->|Symbol| N0077(("galUS²/lb²")) 
+	N0075[GallonUsSquaredPerPoundSquared] -->|IsUnitForQuantity| N0000((SpecificVolumeSquaredQuantity)) 
+```
+## MassDensityGradientPerPressureQuantity <!-- NOUN -->
+- Display name: MassDensityGradientPerPressure
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = -2
+  - T = 2
+- Description: 
+A mass density gradient per pressure is the first derivative of a mass density compared to pressure: $\frac{d\rho}{dp}$, where $\rho$ is a mass density and $p$ is pressure.
+The dimension of mass density gradient per pressure is:
+$$[T^{2}L^{-2}]$$.
+The SI unit for **mass density gradient per pressure** is: kilogram per cubic metre per pascal with the associated unit label $\frac{\frac{kg}{m^{3}}}{Pa}$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:MassDensityGradientPerPressureQuantity
+MassDensityGradientPerPressureQuantity.L = -2
+MassDensityGradientPerPressureQuantity.T = 2
+Unit:KilogramPerCubicMetrePerPascal
+KilogramPerCubicMetrePerPascal.ConversionFactorA = 0
+KilogramPerCubicMetrePerPascal.ConversionFactorB = 1
+KilogramPerCubicMetrePerPascal.Symbol = "kg/m³/Pa"
+KilogramPerCubicMetrePerPascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+MassDensityGradientPerPressureQuantity HasSIUnit KilogramPerCubicMetrePerPascal
+Unit:SpecificGravityPerPascal
+SpecificGravityPerPascal.ConversionFactorA = 0
+SpecificGravityPerPascal.ConversionFactorB = 0.001000028000784022
+SpecificGravityPerPascal.Symbol = "sg/Pa"
+SpecificGravityPerPascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:GramPerCubicCentimetrePerPascal
+GramPerCubicCentimetrePerPascal.ConversionFactorA = 0
+GramPerCubicCentimetrePerPascal.ConversionFactorB = 0.0010000000000000002
+GramPerCubicCentimetrePerPascal.Symbol = "g/cm³/Pa"
+GramPerCubicCentimetrePerPascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerGallonUkPerPascal
+PoundPerGallonUkPerPascal.ConversionFactorA = 0
+PoundPerGallonUkPerPascal.ConversionFactorB = 0.010022412854960501
+PoundPerGallonUkPerPascal.Symbol = "ppgUK/Pa"
+PoundPerGallonUkPerPascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerGallonUsPerPascal
+PoundPerGallonUsPerPascal.ConversionFactorA = 0
+PoundPerGallonUsPerPascal.ConversionFactorB = 0.00834540445201933
+PoundPerGallonUsPerPascal.Symbol = "ppgUS/Pa"
+PoundPerGallonUsPerPascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicFootPerPascal
+PoundPerCubicFootPerPascal.ConversionFactorA = 0
+PoundPerCubicFootPerPascal.ConversionFactorB = 0.06242796057614459
+PoundPerCubicFootPerPascal.Symbol = "lb/ft³/Pa"
+PoundPerCubicFootPerPascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicInchPerPascal
+PoundPerCubicInchPerPascal.ConversionFactorA = 0
+PoundPerCubicInchPerPascal.ConversionFactorB = 3.612729200008369E-05
+PoundPerCubicInchPerPascal.Symbol = "lb/in³/Pa"
+PoundPerCubicInchPerPascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicYardPerPascal
+PoundPerCubicYardPerPascal.ConversionFactorA = 0
+PoundPerCubicYardPerPascal.ConversionFactorB = 1.6855549355559039
+PoundPerCubicYardPerPascal.Symbol = "lb/yd³/Pa"
+PoundPerCubicYardPerPascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:KilogramPerCubicMetrePerBar
+KilogramPerCubicMetrePerBar.ConversionFactorA = 0
+KilogramPerCubicMetrePerBar.ConversionFactorB = 100000
+KilogramPerCubicMetrePerBar.Symbol = "kg/m³/bar"
+KilogramPerCubicMetrePerBar IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:SpecificGravityPerBar
+SpecificGravityPerBar.ConversionFactorA = 0
+SpecificGravityPerBar.ConversionFactorB = 100.0028000784022
+SpecificGravityPerBar.Symbol = "sg/bar"
+SpecificGravityPerBar IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:GramPerCubicCentimetrePerBar
+GramPerCubicCentimetrePerBar.ConversionFactorA = 0
+GramPerCubicCentimetrePerBar.ConversionFactorB = 100.00000000000001
+GramPerCubicCentimetrePerBar.Symbol = "g/cm³/bar"
+GramPerCubicCentimetrePerBar IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerGallonUkPerBar
+PoundPerGallonUkPerBar.ConversionFactorA = 0
+PoundPerGallonUkPerBar.ConversionFactorB = 1002.2412854960501
+PoundPerGallonUkPerBar.Symbol = "ppgUK/bar"
+PoundPerGallonUkPerBar IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerGallonUsPerBar
+PoundPerGallonUsPerBar.ConversionFactorA = 0
+PoundPerGallonUsPerBar.ConversionFactorB = 834.540445201933
+PoundPerGallonUsPerBar.Symbol = "ppgUS/bar"
+PoundPerGallonUsPerBar IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicFootPerBar
+PoundPerCubicFootPerBar.ConversionFactorA = 0
+PoundPerCubicFootPerBar.ConversionFactorB = 6242.79605761446
+PoundPerCubicFootPerBar.Symbol = "lb/ft³/bar"
+PoundPerCubicFootPerBar IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicInchPerBar
+PoundPerCubicInchPerBar.ConversionFactorA = 0
+PoundPerCubicInchPerBar.ConversionFactorB = 3.6127292000083684
+PoundPerCubicInchPerBar.Symbol = "lb/in³/bar"
+PoundPerCubicInchPerBar IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicYardPerBar
+PoundPerCubicYardPerBar.ConversionFactorA = 0
+PoundPerCubicYardPerBar.ConversionFactorB = 168555.49355559036
+PoundPerCubicYardPerBar.Symbol = "lb/yd³/bar"
+PoundPerCubicYardPerBar IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:KilogramPerCubicMetrePerMegapascal
+KilogramPerCubicMetrePerMegapascal.ConversionFactorA = 0
+KilogramPerCubicMetrePerMegapascal.ConversionFactorB = 1000000
+KilogramPerCubicMetrePerMegapascal.Symbol = "kg/m³/MPa"
+KilogramPerCubicMetrePerMegapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:SpecificGravityPerMegapascal
+SpecificGravityPerMegapascal.ConversionFactorA = 0
+SpecificGravityPerMegapascal.ConversionFactorB = 1000.028000784022
+SpecificGravityPerMegapascal.Symbol = "sg/MPa"
+SpecificGravityPerMegapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:GramPerCubicCentimetrePerMegapascal
+GramPerCubicCentimetrePerMegapascal.ConversionFactorA = 0
+GramPerCubicCentimetrePerMegapascal.ConversionFactorB = 1000.0000000000002
+GramPerCubicCentimetrePerMegapascal.Symbol = "g/cm³/MPa"
+GramPerCubicCentimetrePerMegapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerGallonUkPerMegapascal
+PoundPerGallonUkPerMegapascal.ConversionFactorA = 0
+PoundPerGallonUkPerMegapascal.ConversionFactorB = 10022.412854960501
+PoundPerGallonUkPerMegapascal.Symbol = "ppgUK/MPa"
+PoundPerGallonUkPerMegapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerGallonUsPerMegapascal
+PoundPerGallonUsPerMegapascal.ConversionFactorA = 0
+PoundPerGallonUsPerMegapascal.ConversionFactorB = 8345.404452019331
+PoundPerGallonUsPerMegapascal.Symbol = "ppgUS/MPa"
+PoundPerGallonUsPerMegapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicFootPerMegapascal
+PoundPerCubicFootPerMegapascal.ConversionFactorA = 0
+PoundPerCubicFootPerMegapascal.ConversionFactorB = 62427.960576144586
+PoundPerCubicFootPerMegapascal.Symbol = "lb/ft³/MPa"
+PoundPerCubicFootPerMegapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicInchPerMegapascal
+PoundPerCubicInchPerMegapascal.ConversionFactorA = 0
+PoundPerCubicInchPerMegapascal.ConversionFactorB = 36.127292000083685
+PoundPerCubicInchPerMegapascal.Symbol = "lb/in³/MPa"
+PoundPerCubicInchPerMegapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicYardPerMegapascal
+PoundPerCubicYardPerMegapascal.ConversionFactorA = 0
+PoundPerCubicYardPerMegapascal.ConversionFactorB = 1685554.9355559037
+PoundPerCubicYardPerMegapascal.Symbol = "lb/yd³/MPa"
+PoundPerCubicYardPerMegapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:KilogramPerCubicMetrePerGigapascal
+KilogramPerCubicMetrePerGigapascal.ConversionFactorA = 0
+KilogramPerCubicMetrePerGigapascal.ConversionFactorB = 1000000000
+KilogramPerCubicMetrePerGigapascal.Symbol = "kg/m³/GPa"
+KilogramPerCubicMetrePerGigapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:SpecificGravityPerGigapascal
+SpecificGravityPerGigapascal.ConversionFactorA = 0
+SpecificGravityPerGigapascal.ConversionFactorB = 1000028.0007840219
+SpecificGravityPerGigapascal.Symbol = "sg/GPa"
+SpecificGravityPerGigapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:GramPerCubicCentimetrePerGigapascal
+GramPerCubicCentimetrePerGigapascal.ConversionFactorA = 0
+GramPerCubicCentimetrePerGigapascal.ConversionFactorB = 1000000.0000000001
+GramPerCubicCentimetrePerGigapascal.Symbol = "g/cm³/GPa"
+GramPerCubicCentimetrePerGigapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerGallonUkPerGigapascal
+PoundPerGallonUkPerGigapascal.ConversionFactorA = 0
+PoundPerGallonUkPerGigapascal.ConversionFactorB = 10022412.854960501
+PoundPerGallonUkPerGigapascal.Symbol = "ppgUK/GPa"
+PoundPerGallonUkPerGigapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerGallonUsPerGigapascal
+PoundPerGallonUsPerGigapascal.ConversionFactorA = 0
+PoundPerGallonUsPerGigapascal.ConversionFactorB = 8345404.45201933
+PoundPerGallonUsPerGigapascal.Symbol = "ppgUS/GPa"
+PoundPerGallonUsPerGigapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicFootPerGigapascal
+PoundPerCubicFootPerGigapascal.ConversionFactorA = 0
+PoundPerCubicFootPerGigapascal.ConversionFactorB = 62427960.57614458
+PoundPerCubicFootPerGigapascal.Symbol = "lb/ft³/GPa"
+PoundPerCubicFootPerGigapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicInchPerGigapascal
+PoundPerCubicInchPerGigapascal.ConversionFactorA = 0
+PoundPerCubicInchPerGigapascal.ConversionFactorB = 36127.29200008368
+PoundPerCubicInchPerGigapascal.Symbol = "lb/in³/GPa"
+PoundPerCubicInchPerGigapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicYardPerGigapascal
+PoundPerCubicYardPerGigapascal.ConversionFactorA = 0
+PoundPerCubicYardPerGigapascal.ConversionFactorB = 1685554935.555904
+PoundPerCubicYardPerGigapascal.Symbol = "lb/yd³/GPa"
+PoundPerCubicYardPerGigapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:KilogramPerCubicMetrePerPoundPerSquareInch
+KilogramPerCubicMetrePerPoundPerSquareInch.ConversionFactorA = 0
+KilogramPerCubicMetrePerPoundPerSquareInch.ConversionFactorB = 6894.757293168361
+KilogramPerCubicMetrePerPoundPerSquareInch.Symbol = "kg/m³/psi"
+KilogramPerCubicMetrePerPoundPerSquareInch IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:SpecificGravityPerPoundPerSquareInch
+SpecificGravityPerPoundPerSquareInch.ConversionFactorA = 0
+SpecificGravityPerPoundPerSquareInch.ConversionFactorB = 6.894950351778211
+SpecificGravityPerPoundPerSquareInch.Symbol = "sg/psi"
+SpecificGravityPerPoundPerSquareInch IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:GramPerCubicCentimetrePerPoundPerSquareInch
+GramPerCubicCentimetrePerPoundPerSquareInch.ConversionFactorA = 0
+GramPerCubicCentimetrePerPoundPerSquareInch.ConversionFactorB = 6.894757293168362
+GramPerCubicCentimetrePerPoundPerSquareInch.Symbol = "g/cm³/psi"
+GramPerCubicCentimetrePerPoundPerSquareInch IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerGallonUkPerPoundPerSquareInch
+PoundPerGallonUkPerPoundPerSquareInch.ConversionFactorA = 0
+PoundPerGallonUkPerPoundPerSquareInch.ConversionFactorB = 69.10210412688325
+PoundPerGallonUkPerPoundPerSquareInch.Symbol = "ppgUK/psi"
+PoundPerGallonUkPerPoundPerSquareInch IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerGallonUsPerPoundPerSquareInch
+PoundPerGallonUsPerPoundPerSquareInch.ConversionFactorA = 0
+PoundPerGallonUsPerPoundPerSquareInch.ConversionFactorB = 57.53953820999999
+PoundPerGallonUsPerPoundPerSquareInch.Symbol = "ppgUS/psi"
+PoundPerGallonUsPerPoundPerSquareInch IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicFootPerPoundPerSquareInch
+PoundPerCubicFootPerPoundPerSquareInch.ConversionFactorA = 0
+PoundPerCubicFootPerPoundPerSquareInch.ConversionFactorB = 430.4256364799998
+PoundPerCubicFootPerPoundPerSquareInch.Symbol = "lb/ft³/psi"
+PoundPerCubicFootPerPoundPerSquareInch IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicInchPerPoundPerSquareInch
+PoundPerCubicInchPerPoundPerSquareInch.ConversionFactorA = 0
+PoundPerCubicInchPerPoundPerSquareInch.ConversionFactorB = 0.24908890999999994
+PoundPerCubicInchPerPoundPerSquareInch.Symbol = "lb/in³/psi"
+PoundPerCubicInchPerPoundPerSquareInch IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicYardPerPoundPerSquareInch
+PoundPerCubicYardPerPoundPerSquareInch.ConversionFactorA = 0
+PoundPerCubicYardPerPoundPerSquareInch.ConversionFactorB = 11621.492184959992
+PoundPerCubicYardPerPoundPerSquareInch.Symbol = "lb/yd³/psi"
+PoundPerCubicYardPerPoundPerSquareInch IsUnitForQuantity MassDensityGradientPerPressureQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MassDensityGradientPerPressureQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[MassDensityGradientPerPressureQuantity] -->|L| N0002(("-2")) 
+	N0000[MassDensityGradientPerPressureQuantity] -->|T| N0003(("2")) 
+	N0004[KilogramPerCubicMetrePerPascal] -->|BelongsToClass| N0005(Unit) 
+	N0004[KilogramPerCubicMetrePerPascal] -->|ConversionFactorA| N0006(("0")) 
+	N0004[KilogramPerCubicMetrePerPascal] -->|ConversionFactorB| N0007(("1")) 
+	N0004[KilogramPerCubicMetrePerPascal] -->|Symbol| N0008(("kg/m³/Pa")) 
+	N0004[KilogramPerCubicMetrePerPascal] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0000[MassDensityGradientPerPressureQuantity] -->|HasSIUnit| N0004((KilogramPerCubicMetrePerPascal)) 
+	N0009[SpecificGravityPerPascal] -->|BelongsToClass| N0005(Unit) 
+	N0009[SpecificGravityPerPascal] -->|ConversionFactorA| N0006(("0")) 
+	N0009[SpecificGravityPerPascal] -->|ConversionFactorB| N0010(("0.001000028000784022")) 
+	N0009[SpecificGravityPerPascal] -->|Symbol| N0011(("sg/Pa")) 
+	N0009[SpecificGravityPerPascal] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0012[GramPerCubicCentimetrePerPascal] -->|BelongsToClass| N0005(Unit) 
+	N0012[GramPerCubicCentimetrePerPascal] -->|ConversionFactorA| N0006(("0")) 
+	N0012[GramPerCubicCentimetrePerPascal] -->|ConversionFactorB| N0013(("0.0010000000000000002")) 
+	N0012[GramPerCubicCentimetrePerPascal] -->|Symbol| N0014(("g/cm³/Pa")) 
+	N0012[GramPerCubicCentimetrePerPascal] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0015[PoundPerGallonUkPerPascal] -->|BelongsToClass| N0005(Unit) 
+	N0015[PoundPerGallonUkPerPascal] -->|ConversionFactorA| N0006(("0")) 
+	N0015[PoundPerGallonUkPerPascal] -->|ConversionFactorB| N0016(("0.010022412854960501")) 
+	N0015[PoundPerGallonUkPerPascal] -->|Symbol| N0017(("ppgUK/Pa")) 
+	N0015[PoundPerGallonUkPerPascal] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0018[PoundPerGallonUsPerPascal] -->|BelongsToClass| N0005(Unit) 
+	N0018[PoundPerGallonUsPerPascal] -->|ConversionFactorA| N0006(("0")) 
+	N0018[PoundPerGallonUsPerPascal] -->|ConversionFactorB| N0019(("0.00834540445201933")) 
+	N0018[PoundPerGallonUsPerPascal] -->|Symbol| N0020(("ppgUS/Pa")) 
+	N0018[PoundPerGallonUsPerPascal] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0021[PoundPerCubicFootPerPascal] -->|BelongsToClass| N0005(Unit) 
+	N0021[PoundPerCubicFootPerPascal] -->|ConversionFactorA| N0006(("0")) 
+	N0021[PoundPerCubicFootPerPascal] -->|ConversionFactorB| N0022(("0.06242796057614459")) 
+	N0021[PoundPerCubicFootPerPascal] -->|Symbol| N0023(("lb/ft³/Pa")) 
+	N0021[PoundPerCubicFootPerPascal] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0024[PoundPerCubicInchPerPascal] -->|BelongsToClass| N0005(Unit) 
+	N0024[PoundPerCubicInchPerPascal] -->|ConversionFactorA| N0006(("0")) 
+	N0024[PoundPerCubicInchPerPascal] -->|ConversionFactorB| N0025(("3.612729200008369E-05")) 
+	N0024[PoundPerCubicInchPerPascal] -->|Symbol| N0026(("lb/in³/Pa")) 
+	N0024[PoundPerCubicInchPerPascal] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0027[PoundPerCubicYardPerPascal] -->|BelongsToClass| N0005(Unit) 
+	N0027[PoundPerCubicYardPerPascal] -->|ConversionFactorA| N0006(("0")) 
+	N0027[PoundPerCubicYardPerPascal] -->|ConversionFactorB| N0028(("1.6855549355559039")) 
+	N0027[PoundPerCubicYardPerPascal] -->|Symbol| N0029(("lb/yd³/Pa")) 
+	N0027[PoundPerCubicYardPerPascal] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0030[KilogramPerCubicMetrePerBar] -->|BelongsToClass| N0005(Unit) 
+	N0030[KilogramPerCubicMetrePerBar] -->|ConversionFactorA| N0006(("0")) 
+	N0030[KilogramPerCubicMetrePerBar] -->|ConversionFactorB| N0031(("100000")) 
+	N0030[KilogramPerCubicMetrePerBar] -->|Symbol| N0032(("kg/m³/bar")) 
+	N0030[KilogramPerCubicMetrePerBar] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0033[SpecificGravityPerBar] -->|BelongsToClass| N0005(Unit) 
+	N0033[SpecificGravityPerBar] -->|ConversionFactorA| N0006(("0")) 
+	N0033[SpecificGravityPerBar] -->|ConversionFactorB| N0034(("100.0028000784022")) 
+	N0033[SpecificGravityPerBar] -->|Symbol| N0035(("sg/bar")) 
+	N0033[SpecificGravityPerBar] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0036[GramPerCubicCentimetrePerBar] -->|BelongsToClass| N0005(Unit) 
+	N0036[GramPerCubicCentimetrePerBar] -->|ConversionFactorA| N0006(("0")) 
+	N0036[GramPerCubicCentimetrePerBar] -->|ConversionFactorB| N0037(("100.00000000000001")) 
+	N0036[GramPerCubicCentimetrePerBar] -->|Symbol| N0038(("g/cm³/bar")) 
+	N0036[GramPerCubicCentimetrePerBar] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0039[PoundPerGallonUkPerBar] -->|BelongsToClass| N0005(Unit) 
+	N0039[PoundPerGallonUkPerBar] -->|ConversionFactorA| N0006(("0")) 
+	N0039[PoundPerGallonUkPerBar] -->|ConversionFactorB| N0040(("1002.2412854960501")) 
+	N0039[PoundPerGallonUkPerBar] -->|Symbol| N0041(("ppgUK/bar")) 
+	N0039[PoundPerGallonUkPerBar] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0042[PoundPerGallonUsPerBar] -->|BelongsToClass| N0005(Unit) 
+	N0042[PoundPerGallonUsPerBar] -->|ConversionFactorA| N0006(("0")) 
+	N0042[PoundPerGallonUsPerBar] -->|ConversionFactorB| N0043(("834.540445201933")) 
+	N0042[PoundPerGallonUsPerBar] -->|Symbol| N0044(("ppgUS/bar")) 
+	N0042[PoundPerGallonUsPerBar] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0045[PoundPerCubicFootPerBar] -->|BelongsToClass| N0005(Unit) 
+	N0045[PoundPerCubicFootPerBar] -->|ConversionFactorA| N0006(("0")) 
+	N0045[PoundPerCubicFootPerBar] -->|ConversionFactorB| N0046(("6242.79605761446")) 
+	N0045[PoundPerCubicFootPerBar] -->|Symbol| N0047(("lb/ft³/bar")) 
+	N0045[PoundPerCubicFootPerBar] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0048[PoundPerCubicInchPerBar] -->|BelongsToClass| N0005(Unit) 
+	N0048[PoundPerCubicInchPerBar] -->|ConversionFactorA| N0006(("0")) 
+	N0048[PoundPerCubicInchPerBar] -->|ConversionFactorB| N0049(("3.6127292000083684")) 
+	N0048[PoundPerCubicInchPerBar] -->|Symbol| N0050(("lb/in³/bar")) 
+	N0048[PoundPerCubicInchPerBar] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0051[PoundPerCubicYardPerBar] -->|BelongsToClass| N0005(Unit) 
+	N0051[PoundPerCubicYardPerBar] -->|ConversionFactorA| N0006(("0")) 
+	N0051[PoundPerCubicYardPerBar] -->|ConversionFactorB| N0052(("168555.49355559036")) 
+	N0051[PoundPerCubicYardPerBar] -->|Symbol| N0053(("lb/yd³/bar")) 
+	N0051[PoundPerCubicYardPerBar] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0054[KilogramPerCubicMetrePerMegapascal] -->|BelongsToClass| N0005(Unit) 
+	N0054[KilogramPerCubicMetrePerMegapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0054[KilogramPerCubicMetrePerMegapascal] -->|ConversionFactorB| N0055(("1000000")) 
+	N0054[KilogramPerCubicMetrePerMegapascal] -->|Symbol| N0056(("kg/m³/MPa")) 
+	N0054[KilogramPerCubicMetrePerMegapascal] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0057[SpecificGravityPerMegapascal] -->|BelongsToClass| N0005(Unit) 
+	N0057[SpecificGravityPerMegapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0057[SpecificGravityPerMegapascal] -->|ConversionFactorB| N0058(("1000.028000784022")) 
+	N0057[SpecificGravityPerMegapascal] -->|Symbol| N0059(("sg/MPa")) 
+	N0057[SpecificGravityPerMegapascal] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0060[GramPerCubicCentimetrePerMegapascal] -->|BelongsToClass| N0005(Unit) 
+	N0060[GramPerCubicCentimetrePerMegapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0060[GramPerCubicCentimetrePerMegapascal] -->|ConversionFactorB| N0061(("1000.0000000000002")) 
+	N0060[GramPerCubicCentimetrePerMegapascal] -->|Symbol| N0062(("g/cm³/MPa")) 
+	N0060[GramPerCubicCentimetrePerMegapascal] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0063[PoundPerGallonUkPerMegapascal] -->|BelongsToClass| N0005(Unit) 
+	N0063[PoundPerGallonUkPerMegapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0063[PoundPerGallonUkPerMegapascal] -->|ConversionFactorB| N0064(("10022.412854960501")) 
+	N0063[PoundPerGallonUkPerMegapascal] -->|Symbol| N0065(("ppgUK/MPa")) 
+	N0063[PoundPerGallonUkPerMegapascal] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0066[PoundPerGallonUsPerMegapascal] -->|BelongsToClass| N0005(Unit) 
+	N0066[PoundPerGallonUsPerMegapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0066[PoundPerGallonUsPerMegapascal] -->|ConversionFactorB| N0067(("8345.404452019331")) 
+	N0066[PoundPerGallonUsPerMegapascal] -->|Symbol| N0068(("ppgUS/MPa")) 
+	N0066[PoundPerGallonUsPerMegapascal] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0069[PoundPerCubicFootPerMegapascal] -->|BelongsToClass| N0005(Unit) 
+	N0069[PoundPerCubicFootPerMegapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0069[PoundPerCubicFootPerMegapascal] -->|ConversionFactorB| N0070(("62427.960576144586")) 
+	N0069[PoundPerCubicFootPerMegapascal] -->|Symbol| N0071(("lb/ft³/MPa")) 
+	N0069[PoundPerCubicFootPerMegapascal] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0072[PoundPerCubicInchPerMegapascal] -->|BelongsToClass| N0005(Unit) 
+	N0072[PoundPerCubicInchPerMegapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0072[PoundPerCubicInchPerMegapascal] -->|ConversionFactorB| N0073(("36.127292000083685")) 
+	N0072[PoundPerCubicInchPerMegapascal] -->|Symbol| N0074(("lb/in³/MPa")) 
+	N0072[PoundPerCubicInchPerMegapascal] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0075[PoundPerCubicYardPerMegapascal] -->|BelongsToClass| N0005(Unit) 
+	N0075[PoundPerCubicYardPerMegapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0075[PoundPerCubicYardPerMegapascal] -->|ConversionFactorB| N0076(("1685554.9355559037")) 
+	N0075[PoundPerCubicYardPerMegapascal] -->|Symbol| N0077(("lb/yd³/MPa")) 
+	N0075[PoundPerCubicYardPerMegapascal] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0078[KilogramPerCubicMetrePerGigapascal] -->|BelongsToClass| N0005(Unit) 
+	N0078[KilogramPerCubicMetrePerGigapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0078[KilogramPerCubicMetrePerGigapascal] -->|ConversionFactorB| N0079(("1000000000")) 
+	N0078[KilogramPerCubicMetrePerGigapascal] -->|Symbol| N0080(("kg/m³/GPa")) 
+	N0078[KilogramPerCubicMetrePerGigapascal] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0081[SpecificGravityPerGigapascal] -->|BelongsToClass| N0005(Unit) 
+	N0081[SpecificGravityPerGigapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0081[SpecificGravityPerGigapascal] -->|ConversionFactorB| N0082(("1000028.0007840219")) 
+	N0081[SpecificGravityPerGigapascal] -->|Symbol| N0083(("sg/GPa")) 
+	N0081[SpecificGravityPerGigapascal] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0084[GramPerCubicCentimetrePerGigapascal] -->|BelongsToClass| N0005(Unit) 
+	N0084[GramPerCubicCentimetrePerGigapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0084[GramPerCubicCentimetrePerGigapascal] -->|ConversionFactorB| N0085(("1000000.0000000001")) 
+	N0084[GramPerCubicCentimetrePerGigapascal] -->|Symbol| N0086(("g/cm³/GPa")) 
+	N0084[GramPerCubicCentimetrePerGigapascal] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0087[PoundPerGallonUkPerGigapascal] -->|BelongsToClass| N0005(Unit) 
+	N0087[PoundPerGallonUkPerGigapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0087[PoundPerGallonUkPerGigapascal] -->|ConversionFactorB| N0088(("10022412.854960501")) 
+	N0087[PoundPerGallonUkPerGigapascal] -->|Symbol| N0089(("ppgUK/GPa")) 
+	N0087[PoundPerGallonUkPerGigapascal] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0090[PoundPerGallonUsPerGigapascal] -->|BelongsToClass| N0005(Unit) 
+	N0090[PoundPerGallonUsPerGigapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0090[PoundPerGallonUsPerGigapascal] -->|ConversionFactorB| N0091(("8345404.45201933")) 
+	N0090[PoundPerGallonUsPerGigapascal] -->|Symbol| N0092(("ppgUS/GPa")) 
+	N0090[PoundPerGallonUsPerGigapascal] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0093[PoundPerCubicFootPerGigapascal] -->|BelongsToClass| N0005(Unit) 
+	N0093[PoundPerCubicFootPerGigapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0093[PoundPerCubicFootPerGigapascal] -->|ConversionFactorB| N0094(("62427960.57614458")) 
+	N0093[PoundPerCubicFootPerGigapascal] -->|Symbol| N0095(("lb/ft³/GPa")) 
+	N0093[PoundPerCubicFootPerGigapascal] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0096[PoundPerCubicInchPerGigapascal] -->|BelongsToClass| N0005(Unit) 
+	N0096[PoundPerCubicInchPerGigapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0096[PoundPerCubicInchPerGigapascal] -->|ConversionFactorB| N0097(("36127.29200008368")) 
+	N0096[PoundPerCubicInchPerGigapascal] -->|Symbol| N0098(("lb/in³/GPa")) 
+	N0096[PoundPerCubicInchPerGigapascal] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0099[PoundPerCubicYardPerGigapascal] -->|BelongsToClass| N0005(Unit) 
+	N0099[PoundPerCubicYardPerGigapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0099[PoundPerCubicYardPerGigapascal] -->|ConversionFactorB| N0100(("1685554935.555904")) 
+	N0099[PoundPerCubicYardPerGigapascal] -->|Symbol| N0101(("lb/yd³/GPa")) 
+	N0099[PoundPerCubicYardPerGigapascal] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInch] -->|BelongsToClass| N0005(Unit) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInch] -->|ConversionFactorA| N0006(("0")) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInch] -->|ConversionFactorB| N0103(("6894.757293168361")) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInch] -->|Symbol| N0104(("kg/m³/psi")) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInch] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0105[SpecificGravityPerPoundPerSquareInch] -->|BelongsToClass| N0005(Unit) 
+	N0105[SpecificGravityPerPoundPerSquareInch] -->|ConversionFactorA| N0006(("0")) 
+	N0105[SpecificGravityPerPoundPerSquareInch] -->|ConversionFactorB| N0106(("6.894950351778211")) 
+	N0105[SpecificGravityPerPoundPerSquareInch] -->|Symbol| N0107(("sg/psi")) 
+	N0105[SpecificGravityPerPoundPerSquareInch] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInch] -->|BelongsToClass| N0005(Unit) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInch] -->|ConversionFactorA| N0006(("0")) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInch] -->|ConversionFactorB| N0109(("6.894757293168362")) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInch] -->|Symbol| N0110(("g/cm³/psi")) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInch] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInch] -->|BelongsToClass| N0005(Unit) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInch] -->|ConversionFactorA| N0006(("0")) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInch] -->|ConversionFactorB| N0112(("69.10210412688325")) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInch] -->|Symbol| N0113(("ppgUK/psi")) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInch] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInch] -->|BelongsToClass| N0005(Unit) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInch] -->|ConversionFactorA| N0006(("0")) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInch] -->|ConversionFactorB| N0115(("57.53953820999999")) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInch] -->|Symbol| N0116(("ppgUS/psi")) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInch] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInch] -->|BelongsToClass| N0005(Unit) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInch] -->|ConversionFactorA| N0006(("0")) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInch] -->|ConversionFactorB| N0118(("430.4256364799998")) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInch] -->|Symbol| N0119(("lb/ft³/psi")) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInch] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInch] -->|BelongsToClass| N0005(Unit) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInch] -->|ConversionFactorA| N0006(("0")) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInch] -->|ConversionFactorB| N0121(("0.24908890999999994")) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInch] -->|Symbol| N0122(("lb/in³/psi")) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInch] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInch] -->|BelongsToClass| N0005(Unit) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInch] -->|ConversionFactorA| N0006(("0")) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInch] -->|ConversionFactorB| N0124(("11621.492184959992")) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInch] -->|Symbol| N0125(("lb/yd³/psi")) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInch] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureQuantity)) 
+```
+## MassDensityGradientPerPressureSquaredQuantity <!-- NOUN -->
+- Display name: MassDensityGradientPerPressureSquared
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = -1
+  - M = -1
+  - T = 4
+- Description: 
+A mass density gradient per pressure squared is the second derivative of a mass density compared to pressure: $\frac{d^{2}\rho}{dp^{2}}$, where $\rho$ is a mass density and $p$ is pressure.
+The dimension of mass density gradient per pressure squared is:
+$$[T^{4}M^{-1}L^{-1}]$$.
+The SI unit for **mass density gradient per pressure squared** is: kilogram per cubic metre per pascal squared with the associated unit label $\frac{\frac{kg}{m^{3}}}{Pa^{2}}$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:MassDensityGradientPerPressureSquaredQuantity
+MassDensityGradientPerPressureSquaredQuantity.L = -1
+MassDensityGradientPerPressureSquaredQuantity.M = -1
+MassDensityGradientPerPressureSquaredQuantity.T = 4
+Unit:KilogramPerCubicMetrePerPascalSquared
+KilogramPerCubicMetrePerPascalSquared.ConversionFactorA = 0
+KilogramPerCubicMetrePerPascalSquared.ConversionFactorB = 1
+KilogramPerCubicMetrePerPascalSquared.Symbol = "kg/m³/Pa²"
+KilogramPerCubicMetrePerPascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+MassDensityGradientPerPressureSquaredQuantity HasSIUnit KilogramPerCubicMetrePerPascalSquared
+Unit:SpecificGravityPerPascalSquared
+SpecificGravityPerPascalSquared.ConversionFactorA = 0
+SpecificGravityPerPascalSquared.ConversionFactorB = 0.001000028000784022
+SpecificGravityPerPascalSquared.Symbol = "sg/Pa²"
+SpecificGravityPerPascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:GramPerCubicCentimetrePerPascalSquared
+GramPerCubicCentimetrePerPascalSquared.ConversionFactorA = 0
+GramPerCubicCentimetrePerPascalSquared.ConversionFactorB = 0.0010000000000000002
+GramPerCubicCentimetrePerPascalSquared.Symbol = "g/cm³/Pa²"
+GramPerCubicCentimetrePerPascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerGallonUkPerPascalSquared
+PoundPerGallonUkPerPascalSquared.ConversionFactorA = 0
+PoundPerGallonUkPerPascalSquared.ConversionFactorB = 0.010022412854960501
+PoundPerGallonUkPerPascalSquared.Symbol = "ppgUK/Pa²"
+PoundPerGallonUkPerPascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerGallonUsPerPascalSquared
+PoundPerGallonUsPerPascalSquared.ConversionFactorA = 0
+PoundPerGallonUsPerPascalSquared.ConversionFactorB = 0.00834540445201933
+PoundPerGallonUsPerPascalSquared.Symbol = "ppgUS/Pa²"
+PoundPerGallonUsPerPascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicFootPerPascalSquared
+PoundPerCubicFootPerPascalSquared.ConversionFactorA = 0
+PoundPerCubicFootPerPascalSquared.ConversionFactorB = 0.06242796057614459
+PoundPerCubicFootPerPascalSquared.Symbol = "lb/ft³/Pa²"
+PoundPerCubicFootPerPascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicInchPerPascalSquared
+PoundPerCubicInchPerPascalSquared.ConversionFactorA = 0
+PoundPerCubicInchPerPascalSquared.ConversionFactorB = 3.612729200008369E-05
+PoundPerCubicInchPerPascalSquared.Symbol = "lb/in³/Pa²"
+PoundPerCubicInchPerPascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicYardPerPascalSquared
+PoundPerCubicYardPerPascalSquared.ConversionFactorA = 0
+PoundPerCubicYardPerPascalSquared.ConversionFactorB = 1.6855549355559039
+PoundPerCubicYardPerPascalSquared.Symbol = "lb/yd³/Pa²"
+PoundPerCubicYardPerPascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:KilogramPerCubicMetrePerBarSquared
+KilogramPerCubicMetrePerBarSquared.ConversionFactorA = 0
+KilogramPerCubicMetrePerBarSquared.ConversionFactorB = 10000000000
+KilogramPerCubicMetrePerBarSquared.Symbol = "kg/m³/bar²"
+KilogramPerCubicMetrePerBarSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:SpecificGravityPerBarSquared
+SpecificGravityPerBarSquared.ConversionFactorA = 0
+SpecificGravityPerBarSquared.ConversionFactorB = 10000280.00784022
+SpecificGravityPerBarSquared.Symbol = "sg/bar²"
+SpecificGravityPerBarSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:GramPerCubicCentimetrePerBarSquared
+GramPerCubicCentimetrePerBarSquared.ConversionFactorA = 0
+GramPerCubicCentimetrePerBarSquared.ConversionFactorB = 10000000.000000002
+GramPerCubicCentimetrePerBarSquared.Symbol = "g/cm³/bar²"
+GramPerCubicCentimetrePerBarSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerGallonUkPerBarSquared
+PoundPerGallonUkPerBarSquared.ConversionFactorA = 0
+PoundPerGallonUkPerBarSquared.ConversionFactorB = 100224128.54960501
+PoundPerGallonUkPerBarSquared.Symbol = "ppgUK/bar²"
+PoundPerGallonUkPerBarSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerGallonUsPerBarSquared
+PoundPerGallonUsPerBarSquared.ConversionFactorA = 0
+PoundPerGallonUsPerBarSquared.ConversionFactorB = 83454044.52019331
+PoundPerGallonUsPerBarSquared.Symbol = "ppgUS/bar²"
+PoundPerGallonUsPerBarSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicFootPerBarSquared
+PoundPerCubicFootPerBarSquared.ConversionFactorA = 0
+PoundPerCubicFootPerBarSquared.ConversionFactorB = 624279605.7614459
+PoundPerCubicFootPerBarSquared.Symbol = "lb/ft³/bar²"
+PoundPerCubicFootPerBarSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicInchPerBarSquared
+PoundPerCubicInchPerBarSquared.ConversionFactorA = 0
+PoundPerCubicInchPerBarSquared.ConversionFactorB = 361272.9200008369
+PoundPerCubicInchPerBarSquared.Symbol = "lb/in³/bar²"
+PoundPerCubicInchPerBarSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicYardPerBarSquared
+PoundPerCubicYardPerBarSquared.ConversionFactorA = 0
+PoundPerCubicYardPerBarSquared.ConversionFactorB = 16855549355.559038
+PoundPerCubicYardPerBarSquared.Symbol = "lb/yd³/bar²"
+PoundPerCubicYardPerBarSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:KilogramPerCubicMetrePerMegapascalSquared
+KilogramPerCubicMetrePerMegapascalSquared.ConversionFactorA = 0
+KilogramPerCubicMetrePerMegapascalSquared.ConversionFactorB = 1000000000000
+KilogramPerCubicMetrePerMegapascalSquared.Symbol = "kg/m³/MPa²"
+KilogramPerCubicMetrePerMegapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:SpecificGravityPerMegapascalSquared
+SpecificGravityPerMegapascalSquared.ConversionFactorA = 0
+SpecificGravityPerMegapascalSquared.ConversionFactorB = 1000028000.784022
+SpecificGravityPerMegapascalSquared.Symbol = "sg/MPa²"
+SpecificGravityPerMegapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:GramPerCubicCentimetrePerMegapascalSquared
+GramPerCubicCentimetrePerMegapascalSquared.ConversionFactorA = 0
+GramPerCubicCentimetrePerMegapascalSquared.ConversionFactorB = 1000000000.0000002
+GramPerCubicCentimetrePerMegapascalSquared.Symbol = "g/cm³/MPa²"
+GramPerCubicCentimetrePerMegapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerGallonUkPerMegapascalSquared
+PoundPerGallonUkPerMegapascalSquared.ConversionFactorA = 0
+PoundPerGallonUkPerMegapascalSquared.ConversionFactorB = 10022412854.9605
+PoundPerGallonUkPerMegapascalSquared.Symbol = "ppgUK/MPa²"
+PoundPerGallonUkPerMegapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerGallonUsPerMegapascalSquared
+PoundPerGallonUsPerMegapascalSquared.ConversionFactorA = 0
+PoundPerGallonUsPerMegapascalSquared.ConversionFactorB = 8345404452.019331
+PoundPerGallonUsPerMegapascalSquared.Symbol = "ppgUS/MPa²"
+PoundPerGallonUsPerMegapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicFootPerMegapascalSquared
+PoundPerCubicFootPerMegapascalSquared.ConversionFactorA = 0
+PoundPerCubicFootPerMegapascalSquared.ConversionFactorB = 62427960576.14459
+PoundPerCubicFootPerMegapascalSquared.Symbol = "lb/ft³/MPa²"
+PoundPerCubicFootPerMegapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicInchPerMegapascalSquared
+PoundPerCubicInchPerMegapascalSquared.ConversionFactorA = 0
+PoundPerCubicInchPerMegapascalSquared.ConversionFactorB = 36127292.000083685
+PoundPerCubicInchPerMegapascalSquared.Symbol = "lb/in³/MPa²"
+PoundPerCubicInchPerMegapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicYardPerMegapascalSquared
+PoundPerCubicYardPerMegapascalSquared.ConversionFactorA = 0
+PoundPerCubicYardPerMegapascalSquared.ConversionFactorB = 1685554935555.9036
+PoundPerCubicYardPerMegapascalSquared.Symbol = "lb/yd³/MPa²"
+PoundPerCubicYardPerMegapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:KilogramPerCubicMetrePerGigapascalSquared
+KilogramPerCubicMetrePerGigapascalSquared.ConversionFactorA = 0
+KilogramPerCubicMetrePerGigapascalSquared.ConversionFactorB = 1E+18
+KilogramPerCubicMetrePerGigapascalSquared.Symbol = "kg/m³/GPa²"
+KilogramPerCubicMetrePerGigapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:SpecificGravityPerGigapascalSquared
+SpecificGravityPerGigapascalSquared.ConversionFactorA = 0
+SpecificGravityPerGigapascalSquared.ConversionFactorB = 1000028000784021.9
+SpecificGravityPerGigapascalSquared.Symbol = "sg/GPa²"
+SpecificGravityPerGigapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:GramPerCubicCentimetrePerGigapascalSquared
+GramPerCubicCentimetrePerGigapascalSquared.ConversionFactorA = 0
+GramPerCubicCentimetrePerGigapascalSquared.ConversionFactorB = 1000000000000000.1
+GramPerCubicCentimetrePerGigapascalSquared.Symbol = "g/cm³/GPa²"
+GramPerCubicCentimetrePerGigapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerGallonUkPerGigapascalSquared
+PoundPerGallonUkPerGigapascalSquared.ConversionFactorA = 0
+PoundPerGallonUkPerGigapascalSquared.ConversionFactorB = 10022412854960500
+PoundPerGallonUkPerGigapascalSquared.Symbol = "ppgUK/GPa²"
+PoundPerGallonUkPerGigapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerGallonUsPerGigapascalSquared
+PoundPerGallonUsPerGigapascalSquared.ConversionFactorA = 0
+PoundPerGallonUsPerGigapascalSquared.ConversionFactorB = 8345404452019330
+PoundPerGallonUsPerGigapascalSquared.Symbol = "ppgUS/GPa²"
+PoundPerGallonUsPerGigapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicFootPerGigapascalSquared
+PoundPerCubicFootPerGigapascalSquared.ConversionFactorA = 0
+PoundPerCubicFootPerGigapascalSquared.ConversionFactorB = 62427960576144584
+PoundPerCubicFootPerGigapascalSquared.Symbol = "lb/ft³/GPa²"
+PoundPerCubicFootPerGigapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicInchPerGigapascalSquared
+PoundPerCubicInchPerGigapascalSquared.ConversionFactorA = 0
+PoundPerCubicInchPerGigapascalSquared.ConversionFactorB = 36127292000083.68
+PoundPerCubicInchPerGigapascalSquared.Symbol = "lb/in³/GPa²"
+PoundPerCubicInchPerGigapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicYardPerGigapascalSquared
+PoundPerCubicYardPerGigapascalSquared.ConversionFactorA = 0
+PoundPerCubicYardPerGigapascalSquared.ConversionFactorB = 1.685554935555904E+18
+PoundPerCubicYardPerGigapascalSquared.Symbol = "lb/yd³/GPa²"
+PoundPerCubicYardPerGigapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:KilogramPerCubicMetrePerPoundPerSquareInchSquared
+KilogramPerCubicMetrePerPoundPerSquareInchSquared.ConversionFactorA = 0
+KilogramPerCubicMetrePerPoundPerSquareInchSquared.ConversionFactorB = 47537678.1316983
+KilogramPerCubicMetrePerPoundPerSquareInchSquared.Symbol = "kg/m³/psi²"
+KilogramPerCubicMetrePerPoundPerSquareInchSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:SpecificGravityPerPoundPerSquareInchSquared
+SpecificGravityPerPoundPerSquareInchSquared.ConversionFactorA = 0
+SpecificGravityPerPoundPerSquareInchSquared.ConversionFactorB = 47539.00922395657
+SpecificGravityPerPoundPerSquareInchSquared.Symbol = "sg/psi²"
+SpecificGravityPerPoundPerSquareInchSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:GramPerCubicCentimetrePerPoundPerSquareInchSquared
+GramPerCubicCentimetrePerPoundPerSquareInchSquared.ConversionFactorA = 0
+GramPerCubicCentimetrePerPoundPerSquareInchSquared.ConversionFactorB = 47537.6781316983
+GramPerCubicCentimetrePerPoundPerSquareInchSquared.Symbol = "g/cm³/psi²"
+GramPerCubicCentimetrePerPoundPerSquareInchSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerGallonUkPerPoundPerSquareInchSquared
+PoundPerGallonUkPerPoundPerSquareInchSquared.ConversionFactorA = 0
+PoundPerGallonUkPerPoundPerSquareInchSquared.ConversionFactorB = 476442.2364021077
+PoundPerGallonUkPerPoundPerSquareInchSquared.Symbol = "ppgUK/psi²"
+PoundPerGallonUkPerPoundPerSquareInchSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerGallonUsPerPoundPerSquareInchSquared
+PoundPerGallonUsPerPoundPerSquareInchSquared.ConversionFactorA = 0
+PoundPerGallonUsPerPoundPerSquareInchSquared.ConversionFactorB = 396721.15071893705
+PoundPerGallonUsPerPoundPerSquareInchSquared.Symbol = "ppgUS/psi²"
+PoundPerGallonUsPerPoundPerSquareInchSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicFootPerPoundPerSquareInchSquared
+PoundPerCubicFootPerPoundPerSquareInchSquared.ConversionFactorA = 0
+PoundPerCubicFootPerPoundPerSquareInchSquared.ConversionFactorB = 2967680.2962871124
+PoundPerCubicFootPerPoundPerSquareInchSquared.Symbol = "lb/ft³/psi²"
+PoundPerCubicFootPerPoundPerSquareInchSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicInchPerPoundPerSquareInchSquared
+PoundPerCubicInchPerPoundPerSquareInchSquared.ConversionFactorA = 0
+PoundPerCubicInchPerPoundPerSquareInchSquared.ConversionFactorB = 1717.4075788698572
+PoundPerCubicInchPerPoundPerSquareInchSquared.Symbol = "lb/in³/psi²"
+PoundPerCubicInchPerPoundPerSquareInchSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicYardPerPoundPerSquareInchSquared
+PoundPerCubicYardPerPoundPerSquareInchSquared.ConversionFactorA = 0
+PoundPerCubicYardPerPoundPerSquareInchSquared.ConversionFactorB = 80127367.99975201
+PoundPerCubicYardPerPoundPerSquareInchSquared.Symbol = "lb/yd³/psi²"
+PoundPerCubicYardPerPoundPerSquareInchSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MassDensityGradientPerPressureSquaredQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[MassDensityGradientPerPressureSquaredQuantity] -->|L| N0002(("-1")) 
+	N0000[MassDensityGradientPerPressureSquaredQuantity] -->|M| N0002(("-1")) 
+	N0000[MassDensityGradientPerPressureSquaredQuantity] -->|T| N0003(("4")) 
+	N0004[KilogramPerCubicMetrePerPascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0004[KilogramPerCubicMetrePerPascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0004[KilogramPerCubicMetrePerPascalSquared] -->|ConversionFactorB| N0007(("1")) 
+	N0004[KilogramPerCubicMetrePerPascalSquared] -->|Symbol| N0008(("kg/m³/Pa²")) 
+	N0004[KilogramPerCubicMetrePerPascalSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0000[MassDensityGradientPerPressureSquaredQuantity] -->|HasSIUnit| N0004((KilogramPerCubicMetrePerPascalSquared)) 
+	N0009[SpecificGravityPerPascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0009[SpecificGravityPerPascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0009[SpecificGravityPerPascalSquared] -->|ConversionFactorB| N0010(("0.001000028000784022")) 
+	N0009[SpecificGravityPerPascalSquared] -->|Symbol| N0011(("sg/Pa²")) 
+	N0009[SpecificGravityPerPascalSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0012[GramPerCubicCentimetrePerPascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0012[GramPerCubicCentimetrePerPascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0012[GramPerCubicCentimetrePerPascalSquared] -->|ConversionFactorB| N0013(("0.0010000000000000002")) 
+	N0012[GramPerCubicCentimetrePerPascalSquared] -->|Symbol| N0014(("g/cm³/Pa²")) 
+	N0012[GramPerCubicCentimetrePerPascalSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0015[PoundPerGallonUkPerPascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0015[PoundPerGallonUkPerPascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0015[PoundPerGallonUkPerPascalSquared] -->|ConversionFactorB| N0016(("0.010022412854960501")) 
+	N0015[PoundPerGallonUkPerPascalSquared] -->|Symbol| N0017(("ppgUK/Pa²")) 
+	N0015[PoundPerGallonUkPerPascalSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0018[PoundPerGallonUsPerPascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0018[PoundPerGallonUsPerPascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0018[PoundPerGallonUsPerPascalSquared] -->|ConversionFactorB| N0019(("0.00834540445201933")) 
+	N0018[PoundPerGallonUsPerPascalSquared] -->|Symbol| N0020(("ppgUS/Pa²")) 
+	N0018[PoundPerGallonUsPerPascalSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0021[PoundPerCubicFootPerPascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0021[PoundPerCubicFootPerPascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0021[PoundPerCubicFootPerPascalSquared] -->|ConversionFactorB| N0022(("0.06242796057614459")) 
+	N0021[PoundPerCubicFootPerPascalSquared] -->|Symbol| N0023(("lb/ft³/Pa²")) 
+	N0021[PoundPerCubicFootPerPascalSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0024[PoundPerCubicInchPerPascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0024[PoundPerCubicInchPerPascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0024[PoundPerCubicInchPerPascalSquared] -->|ConversionFactorB| N0025(("3.612729200008369E-05")) 
+	N0024[PoundPerCubicInchPerPascalSquared] -->|Symbol| N0026(("lb/in³/Pa²")) 
+	N0024[PoundPerCubicInchPerPascalSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0027[PoundPerCubicYardPerPascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0027[PoundPerCubicYardPerPascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0027[PoundPerCubicYardPerPascalSquared] -->|ConversionFactorB| N0028(("1.6855549355559039")) 
+	N0027[PoundPerCubicYardPerPascalSquared] -->|Symbol| N0029(("lb/yd³/Pa²")) 
+	N0027[PoundPerCubicYardPerPascalSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0030[KilogramPerCubicMetrePerBarSquared] -->|BelongsToClass| N0005(Unit) 
+	N0030[KilogramPerCubicMetrePerBarSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0030[KilogramPerCubicMetrePerBarSquared] -->|ConversionFactorB| N0031(("10000000000")) 
+	N0030[KilogramPerCubicMetrePerBarSquared] -->|Symbol| N0032(("kg/m³/bar²")) 
+	N0030[KilogramPerCubicMetrePerBarSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0033[SpecificGravityPerBarSquared] -->|BelongsToClass| N0005(Unit) 
+	N0033[SpecificGravityPerBarSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0033[SpecificGravityPerBarSquared] -->|ConversionFactorB| N0034(("10000280.00784022")) 
+	N0033[SpecificGravityPerBarSquared] -->|Symbol| N0035(("sg/bar²")) 
+	N0033[SpecificGravityPerBarSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0036[GramPerCubicCentimetrePerBarSquared] -->|BelongsToClass| N0005(Unit) 
+	N0036[GramPerCubicCentimetrePerBarSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0036[GramPerCubicCentimetrePerBarSquared] -->|ConversionFactorB| N0037(("10000000.000000002")) 
+	N0036[GramPerCubicCentimetrePerBarSquared] -->|Symbol| N0038(("g/cm³/bar²")) 
+	N0036[GramPerCubicCentimetrePerBarSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0039[PoundPerGallonUkPerBarSquared] -->|BelongsToClass| N0005(Unit) 
+	N0039[PoundPerGallonUkPerBarSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0039[PoundPerGallonUkPerBarSquared] -->|ConversionFactorB| N0040(("100224128.54960501")) 
+	N0039[PoundPerGallonUkPerBarSquared] -->|Symbol| N0041(("ppgUK/bar²")) 
+	N0039[PoundPerGallonUkPerBarSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0042[PoundPerGallonUsPerBarSquared] -->|BelongsToClass| N0005(Unit) 
+	N0042[PoundPerGallonUsPerBarSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0042[PoundPerGallonUsPerBarSquared] -->|ConversionFactorB| N0043(("83454044.52019331")) 
+	N0042[PoundPerGallonUsPerBarSquared] -->|Symbol| N0044(("ppgUS/bar²")) 
+	N0042[PoundPerGallonUsPerBarSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0045[PoundPerCubicFootPerBarSquared] -->|BelongsToClass| N0005(Unit) 
+	N0045[PoundPerCubicFootPerBarSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0045[PoundPerCubicFootPerBarSquared] -->|ConversionFactorB| N0046(("624279605.7614459")) 
+	N0045[PoundPerCubicFootPerBarSquared] -->|Symbol| N0047(("lb/ft³/bar²")) 
+	N0045[PoundPerCubicFootPerBarSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0048[PoundPerCubicInchPerBarSquared] -->|BelongsToClass| N0005(Unit) 
+	N0048[PoundPerCubicInchPerBarSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0048[PoundPerCubicInchPerBarSquared] -->|ConversionFactorB| N0049(("361272.9200008369")) 
+	N0048[PoundPerCubicInchPerBarSquared] -->|Symbol| N0050(("lb/in³/bar²")) 
+	N0048[PoundPerCubicInchPerBarSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0051[PoundPerCubicYardPerBarSquared] -->|BelongsToClass| N0005(Unit) 
+	N0051[PoundPerCubicYardPerBarSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0051[PoundPerCubicYardPerBarSquared] -->|ConversionFactorB| N0052(("16855549355.559038")) 
+	N0051[PoundPerCubicYardPerBarSquared] -->|Symbol| N0053(("lb/yd³/bar²")) 
+	N0051[PoundPerCubicYardPerBarSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0054[KilogramPerCubicMetrePerMegapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0054[KilogramPerCubicMetrePerMegapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0054[KilogramPerCubicMetrePerMegapascalSquared] -->|ConversionFactorB| N0055(("1000000000000")) 
+	N0054[KilogramPerCubicMetrePerMegapascalSquared] -->|Symbol| N0056(("kg/m³/MPa²")) 
+	N0054[KilogramPerCubicMetrePerMegapascalSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0057[SpecificGravityPerMegapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0057[SpecificGravityPerMegapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0057[SpecificGravityPerMegapascalSquared] -->|ConversionFactorB| N0058(("1000028000.784022")) 
+	N0057[SpecificGravityPerMegapascalSquared] -->|Symbol| N0059(("sg/MPa²")) 
+	N0057[SpecificGravityPerMegapascalSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0060[GramPerCubicCentimetrePerMegapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0060[GramPerCubicCentimetrePerMegapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0060[GramPerCubicCentimetrePerMegapascalSquared] -->|ConversionFactorB| N0061(("1000000000.0000002")) 
+	N0060[GramPerCubicCentimetrePerMegapascalSquared] -->|Symbol| N0062(("g/cm³/MPa²")) 
+	N0060[GramPerCubicCentimetrePerMegapascalSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0063[PoundPerGallonUkPerMegapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0063[PoundPerGallonUkPerMegapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0063[PoundPerGallonUkPerMegapascalSquared] -->|ConversionFactorB| N0064(("10022412854.9605")) 
+	N0063[PoundPerGallonUkPerMegapascalSquared] -->|Symbol| N0065(("ppgUK/MPa²")) 
+	N0063[PoundPerGallonUkPerMegapascalSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0066[PoundPerGallonUsPerMegapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0066[PoundPerGallonUsPerMegapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0066[PoundPerGallonUsPerMegapascalSquared] -->|ConversionFactorB| N0067(("8345404452.019331")) 
+	N0066[PoundPerGallonUsPerMegapascalSquared] -->|Symbol| N0068(("ppgUS/MPa²")) 
+	N0066[PoundPerGallonUsPerMegapascalSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0069[PoundPerCubicFootPerMegapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0069[PoundPerCubicFootPerMegapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0069[PoundPerCubicFootPerMegapascalSquared] -->|ConversionFactorB| N0070(("62427960576.14459")) 
+	N0069[PoundPerCubicFootPerMegapascalSquared] -->|Symbol| N0071(("lb/ft³/MPa²")) 
+	N0069[PoundPerCubicFootPerMegapascalSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0072[PoundPerCubicInchPerMegapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0072[PoundPerCubicInchPerMegapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0072[PoundPerCubicInchPerMegapascalSquared] -->|ConversionFactorB| N0073(("36127292.000083685")) 
+	N0072[PoundPerCubicInchPerMegapascalSquared] -->|Symbol| N0074(("lb/in³/MPa²")) 
+	N0072[PoundPerCubicInchPerMegapascalSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0075[PoundPerCubicYardPerMegapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0075[PoundPerCubicYardPerMegapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0075[PoundPerCubicYardPerMegapascalSquared] -->|ConversionFactorB| N0076(("1685554935555.9036")) 
+	N0075[PoundPerCubicYardPerMegapascalSquared] -->|Symbol| N0077(("lb/yd³/MPa²")) 
+	N0075[PoundPerCubicYardPerMegapascalSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0078[KilogramPerCubicMetrePerGigapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0078[KilogramPerCubicMetrePerGigapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0078[KilogramPerCubicMetrePerGigapascalSquared] -->|ConversionFactorB| N0079(("1E+18")) 
+	N0078[KilogramPerCubicMetrePerGigapascalSquared] -->|Symbol| N0080(("kg/m³/GPa²")) 
+	N0078[KilogramPerCubicMetrePerGigapascalSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0081[SpecificGravityPerGigapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0081[SpecificGravityPerGigapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0081[SpecificGravityPerGigapascalSquared] -->|ConversionFactorB| N0082(("1000028000784021.9")) 
+	N0081[SpecificGravityPerGigapascalSquared] -->|Symbol| N0083(("sg/GPa²")) 
+	N0081[SpecificGravityPerGigapascalSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0084[GramPerCubicCentimetrePerGigapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0084[GramPerCubicCentimetrePerGigapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0084[GramPerCubicCentimetrePerGigapascalSquared] -->|ConversionFactorB| N0085(("1000000000000000.1")) 
+	N0084[GramPerCubicCentimetrePerGigapascalSquared] -->|Symbol| N0086(("g/cm³/GPa²")) 
+	N0084[GramPerCubicCentimetrePerGigapascalSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0087[PoundPerGallonUkPerGigapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0087[PoundPerGallonUkPerGigapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0087[PoundPerGallonUkPerGigapascalSquared] -->|ConversionFactorB| N0088(("10022412854960500")) 
+	N0087[PoundPerGallonUkPerGigapascalSquared] -->|Symbol| N0089(("ppgUK/GPa²")) 
+	N0087[PoundPerGallonUkPerGigapascalSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0090[PoundPerGallonUsPerGigapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0090[PoundPerGallonUsPerGigapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0090[PoundPerGallonUsPerGigapascalSquared] -->|ConversionFactorB| N0091(("8345404452019330")) 
+	N0090[PoundPerGallonUsPerGigapascalSquared] -->|Symbol| N0092(("ppgUS/GPa²")) 
+	N0090[PoundPerGallonUsPerGigapascalSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0093[PoundPerCubicFootPerGigapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0093[PoundPerCubicFootPerGigapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0093[PoundPerCubicFootPerGigapascalSquared] -->|ConversionFactorB| N0094(("62427960576144584")) 
+	N0093[PoundPerCubicFootPerGigapascalSquared] -->|Symbol| N0095(("lb/ft³/GPa²")) 
+	N0093[PoundPerCubicFootPerGigapascalSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0096[PoundPerCubicInchPerGigapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0096[PoundPerCubicInchPerGigapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0096[PoundPerCubicInchPerGigapascalSquared] -->|ConversionFactorB| N0097(("36127292000083.68")) 
+	N0096[PoundPerCubicInchPerGigapascalSquared] -->|Symbol| N0098(("lb/in³/GPa²")) 
+	N0096[PoundPerCubicInchPerGigapascalSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0099[PoundPerCubicYardPerGigapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0099[PoundPerCubicYardPerGigapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0099[PoundPerCubicYardPerGigapascalSquared] -->|ConversionFactorB| N0100(("1.685554935555904E+18")) 
+	N0099[PoundPerCubicYardPerGigapascalSquared] -->|Symbol| N0101(("lb/yd³/GPa²")) 
+	N0099[PoundPerCubicYardPerGigapascalSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInchSquared] -->|BelongsToClass| N0005(Unit) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInchSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInchSquared] -->|ConversionFactorB| N0103(("47537678.1316983")) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInchSquared] -->|Symbol| N0104(("kg/m³/psi²")) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInchSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0105[SpecificGravityPerPoundPerSquareInchSquared] -->|BelongsToClass| N0005(Unit) 
+	N0105[SpecificGravityPerPoundPerSquareInchSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0105[SpecificGravityPerPoundPerSquareInchSquared] -->|ConversionFactorB| N0106(("47539.00922395657")) 
+	N0105[SpecificGravityPerPoundPerSquareInchSquared] -->|Symbol| N0107(("sg/psi²")) 
+	N0105[SpecificGravityPerPoundPerSquareInchSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInchSquared] -->|BelongsToClass| N0005(Unit) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInchSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInchSquared] -->|ConversionFactorB| N0109(("47537.6781316983")) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInchSquared] -->|Symbol| N0110(("g/cm³/psi²")) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInchSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInchSquared] -->|BelongsToClass| N0005(Unit) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInchSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInchSquared] -->|ConversionFactorB| N0112(("476442.2364021077")) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInchSquared] -->|Symbol| N0113(("ppgUK/psi²")) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInchSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInchSquared] -->|BelongsToClass| N0005(Unit) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInchSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInchSquared] -->|ConversionFactorB| N0115(("396721.15071893705")) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInchSquared] -->|Symbol| N0116(("ppgUS/psi²")) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInchSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInchSquared] -->|BelongsToClass| N0005(Unit) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInchSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInchSquared] -->|ConversionFactorB| N0118(("2967680.2962871124")) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInchSquared] -->|Symbol| N0119(("lb/ft³/psi²")) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInchSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInchSquared] -->|BelongsToClass| N0005(Unit) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInchSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInchSquared] -->|ConversionFactorB| N0121(("1717.4075788698572")) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInchSquared] -->|Symbol| N0122(("lb/in³/psi²")) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInchSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInchSquared] -->|BelongsToClass| N0005(Unit) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInchSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInchSquared] -->|ConversionFactorB| N0124(("80127367.99975201")) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInchSquared] -->|Symbol| N0125(("lb/yd³/psi²")) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInchSquared] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredQuantity)) 
+```
+## MassDensityGradientPerPressureTemperatureQuantity <!-- NOUN -->
+- Display name: MassDensityGradientPerPressureTemperature
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = -2
+  - T = 2
+  - ThT = -1
+- Description: 
+A mass density gradient per pressure and temperature is the second derivative of a mass density compared to pressure and temperature: $\frac{d^{2}\rho}{dpdT}$, where $\rho$ is a mass density, $p$ is pressure and $T$ is the temperature.
+The dimension of mass density gradient per pressure and temperature is:
+$$[T^{2}K^{-1}L^{-2}]$$.
+The SI unit for **mass density gradient per pressure and temperature** is: kilogram per cubic metre per pascal kelvin with the associated unit label $\frac{\frac{kg}{m^{3}}}{Pa \cdot K}$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:MassDensityGradientPerPressureTemperatureQuantity
+MassDensityGradientPerPressureTemperatureQuantity.L = -2
+MassDensityGradientPerPressureTemperatureQuantity.T = 2
+MassDensityGradientPerPressureTemperatureQuantity.ThT = -1
+Unit:KilogramPerCubicMetrePerPascalKelvin
+KilogramPerCubicMetrePerPascalKelvin.ConversionFactorA = 0
+KilogramPerCubicMetrePerPascalKelvin.ConversionFactorB = 1
+KilogramPerCubicMetrePerPascalKelvin.Symbol = "kg/m³/(Pa•K)"
+KilogramPerCubicMetrePerPascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+MassDensityGradientPerPressureTemperatureQuantity HasSIUnit KilogramPerCubicMetrePerPascalKelvin
+Unit:SpecificGravityPerPascalKelvin
+SpecificGravityPerPascalKelvin.ConversionFactorA = 0
+SpecificGravityPerPascalKelvin.ConversionFactorB = 0.001000028000784022
+SpecificGravityPerPascalKelvin.Symbol = "sg/(Pa•K)"
+SpecificGravityPerPascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:GramPerCubicCentimetrePerPascalKelvin
+GramPerCubicCentimetrePerPascalKelvin.ConversionFactorA = 0
+GramPerCubicCentimetrePerPascalKelvin.ConversionFactorB = 0.0010000000000000002
+GramPerCubicCentimetrePerPascalKelvin.Symbol = "g/cm³/(Pa•K)"
+GramPerCubicCentimetrePerPascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUkPerPascalKelvin
+PoundPerGallonUkPerPascalKelvin.ConversionFactorA = 0
+PoundPerGallonUkPerPascalKelvin.ConversionFactorB = 0.010022412854960501
+PoundPerGallonUkPerPascalKelvin.Symbol = "ppgUK/(Pa•K)"
+PoundPerGallonUkPerPascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUsPerPascalKelvin
+PoundPerGallonUsPerPascalKelvin.ConversionFactorA = 0
+PoundPerGallonUsPerPascalKelvin.ConversionFactorB = 0.00834540445201933
+PoundPerGallonUsPerPascalKelvin.Symbol = "ppgUS/(Pa•K)"
+PoundPerGallonUsPerPascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicFootPerPascalKelvin
+PoundPerCubicFootPerPascalKelvin.ConversionFactorA = 0
+PoundPerCubicFootPerPascalKelvin.ConversionFactorB = 0.06242796057614459
+PoundPerCubicFootPerPascalKelvin.Symbol = "lb/ft³/(Pa•K)"
+PoundPerCubicFootPerPascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicInchPerPascalKelvin
+PoundPerCubicInchPerPascalKelvin.ConversionFactorA = 0
+PoundPerCubicInchPerPascalKelvin.ConversionFactorB = 3.612729200008369E-05
+PoundPerCubicInchPerPascalKelvin.Symbol = "lb/in³/(Pa•K)"
+PoundPerCubicInchPerPascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicYardPerPascalKelvin
+PoundPerCubicYardPerPascalKelvin.ConversionFactorA = 0
+PoundPerCubicYardPerPascalKelvin.ConversionFactorB = 1.6855549355559039
+PoundPerCubicYardPerPascalKelvin.Symbol = "lb/yd³/(Pa•K)"
+PoundPerCubicYardPerPascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:KilogramPerCubicMetrePerBarKelvin
+KilogramPerCubicMetrePerBarKelvin.ConversionFactorA = 0
+KilogramPerCubicMetrePerBarKelvin.ConversionFactorB = 100000
+KilogramPerCubicMetrePerBarKelvin.Symbol = "kg/m³/(bar•K)"
+KilogramPerCubicMetrePerBarKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:SpecificGravityPerBarKelvin
+SpecificGravityPerBarKelvin.ConversionFactorA = 0
+SpecificGravityPerBarKelvin.ConversionFactorB = 100.0028000784022
+SpecificGravityPerBarKelvin.Symbol = "sg/(bar•K)"
+SpecificGravityPerBarKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:GramPerCubicCentimetrePerBarKelvin
+GramPerCubicCentimetrePerBarKelvin.ConversionFactorA = 0
+GramPerCubicCentimetrePerBarKelvin.ConversionFactorB = 100.00000000000001
+GramPerCubicCentimetrePerBarKelvin.Symbol = "g/cm³/(bar•K)"
+GramPerCubicCentimetrePerBarKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUkPerBarKelvin
+PoundPerGallonUkPerBarKelvin.ConversionFactorA = 0
+PoundPerGallonUkPerBarKelvin.ConversionFactorB = 1002.2412854960501
+PoundPerGallonUkPerBarKelvin.Symbol = "ppgUK/(bar•K)"
+PoundPerGallonUkPerBarKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUsPerBarKelvin
+PoundPerGallonUsPerBarKelvin.ConversionFactorA = 0
+PoundPerGallonUsPerBarKelvin.ConversionFactorB = 834.540445201933
+PoundPerGallonUsPerBarKelvin.Symbol = "ppgUS/(bar•K)"
+PoundPerGallonUsPerBarKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicFootPerBarKelvin
+PoundPerCubicFootPerBarKelvin.ConversionFactorA = 0
+PoundPerCubicFootPerBarKelvin.ConversionFactorB = 6242.79605761446
+PoundPerCubicFootPerBarKelvin.Symbol = "lb/ft³/(bar•K)"
+PoundPerCubicFootPerBarKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicInchPerBarKelvin
+PoundPerCubicInchPerBarKelvin.ConversionFactorA = 0
+PoundPerCubicInchPerBarKelvin.ConversionFactorB = 3.6127292000083684
+PoundPerCubicInchPerBarKelvin.Symbol = "lb/in³/(bar•K)"
+PoundPerCubicInchPerBarKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicYardPerBarKelvin
+PoundPerCubicYardPerBarKelvin.ConversionFactorA = 0
+PoundPerCubicYardPerBarKelvin.ConversionFactorB = 168555.49355559036
+PoundPerCubicYardPerBarKelvin.Symbol = "lb/yd³/(bar•K)"
+PoundPerCubicYardPerBarKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:KilogramPerCubicMetrePerMegapascalKelvin
+KilogramPerCubicMetrePerMegapascalKelvin.ConversionFactorA = 0
+KilogramPerCubicMetrePerMegapascalKelvin.ConversionFactorB = 1000000
+KilogramPerCubicMetrePerMegapascalKelvin.Symbol = "kg/m³/(MPa•K)"
+KilogramPerCubicMetrePerMegapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:SpecificGravityPerMegapascalKelvin
+SpecificGravityPerMegapascalKelvin.ConversionFactorA = 0
+SpecificGravityPerMegapascalKelvin.ConversionFactorB = 1000.028000784022
+SpecificGravityPerMegapascalKelvin.Symbol = "sg/(MPa•K)"
+SpecificGravityPerMegapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:GramPerCubicCentimetrePerMegapascalKelvin
+GramPerCubicCentimetrePerMegapascalKelvin.ConversionFactorA = 0
+GramPerCubicCentimetrePerMegapascalKelvin.ConversionFactorB = 1000.0000000000002
+GramPerCubicCentimetrePerMegapascalKelvin.Symbol = "g/cm³/(MPa•K)"
+GramPerCubicCentimetrePerMegapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUkPerMegapascalKelvin
+PoundPerGallonUkPerMegapascalKelvin.ConversionFactorA = 0
+PoundPerGallonUkPerMegapascalKelvin.ConversionFactorB = 10022.412854960501
+PoundPerGallonUkPerMegapascalKelvin.Symbol = "ppgUK/(MPa•K)"
+PoundPerGallonUkPerMegapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUsPerMegapascalKelvin
+PoundPerGallonUsPerMegapascalKelvin.ConversionFactorA = 0
+PoundPerGallonUsPerMegapascalKelvin.ConversionFactorB = 8345.404452019331
+PoundPerGallonUsPerMegapascalKelvin.Symbol = "ppgUS/(MPa•K)"
+PoundPerGallonUsPerMegapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicFootPerMegapascalKelvin
+PoundPerCubicFootPerMegapascalKelvin.ConversionFactorA = 0
+PoundPerCubicFootPerMegapascalKelvin.ConversionFactorB = 62427.960576144586
+PoundPerCubicFootPerMegapascalKelvin.Symbol = "lb/ft³/(MPa•K)"
+PoundPerCubicFootPerMegapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicInchPerMegapascalKelvin
+PoundPerCubicInchPerMegapascalKelvin.ConversionFactorA = 0
+PoundPerCubicInchPerMegapascalKelvin.ConversionFactorB = 36.127292000083685
+PoundPerCubicInchPerMegapascalKelvin.Symbol = "lb/in³/(MPa•K)"
+PoundPerCubicInchPerMegapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicYardPerMegapascalKelvin
+PoundPerCubicYardPerMegapascalKelvin.ConversionFactorA = 0
+PoundPerCubicYardPerMegapascalKelvin.ConversionFactorB = 1685554.9355559037
+PoundPerCubicYardPerMegapascalKelvin.Symbol = "lb/yd³/(MPa•K)"
+PoundPerCubicYardPerMegapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:KilogramPerCubicMetrePerGigapascalKelvin
+KilogramPerCubicMetrePerGigapascalKelvin.ConversionFactorA = 0
+KilogramPerCubicMetrePerGigapascalKelvin.ConversionFactorB = 1000000000
+KilogramPerCubicMetrePerGigapascalKelvin.Symbol = "kg/m³/(GPa•K)"
+KilogramPerCubicMetrePerGigapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:SpecificGravityPerGigapascalKelvin
+SpecificGravityPerGigapascalKelvin.ConversionFactorA = 0
+SpecificGravityPerGigapascalKelvin.ConversionFactorB = 1000028.0007840219
+SpecificGravityPerGigapascalKelvin.Symbol = "sg/(GPa•K)"
+SpecificGravityPerGigapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:GramPerCubicCentimetrePerGigapascalKelvin
+GramPerCubicCentimetrePerGigapascalKelvin.ConversionFactorA = 0
+GramPerCubicCentimetrePerGigapascalKelvin.ConversionFactorB = 1000000.0000000001
+GramPerCubicCentimetrePerGigapascalKelvin.Symbol = "g/cm³/(GPa•K)"
+GramPerCubicCentimetrePerGigapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUkPerGigapascalKelvin
+PoundPerGallonUkPerGigapascalKelvin.ConversionFactorA = 0
+PoundPerGallonUkPerGigapascalKelvin.ConversionFactorB = 10022412.854960501
+PoundPerGallonUkPerGigapascalKelvin.Symbol = "ppgUK/(GPa•K)"
+PoundPerGallonUkPerGigapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUsPerGigapascalKelvin
+PoundPerGallonUsPerGigapascalKelvin.ConversionFactorA = 0
+PoundPerGallonUsPerGigapascalKelvin.ConversionFactorB = 8345404.45201933
+PoundPerGallonUsPerGigapascalKelvin.Symbol = "ppgUS/(GPa•K)"
+PoundPerGallonUsPerGigapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicFootPerGigapascalKelvin
+PoundPerCubicFootPerGigapascalKelvin.ConversionFactorA = 0
+PoundPerCubicFootPerGigapascalKelvin.ConversionFactorB = 62427960.57614458
+PoundPerCubicFootPerGigapascalKelvin.Symbol = "lb/ft³/(GPa•K)"
+PoundPerCubicFootPerGigapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicInchPerGigapascalKelvin
+PoundPerCubicInchPerGigapascalKelvin.ConversionFactorA = 0
+PoundPerCubicInchPerGigapascalKelvin.ConversionFactorB = 36127.29200008368
+PoundPerCubicInchPerGigapascalKelvin.Symbol = "lb/in³/(GPa•K)"
+PoundPerCubicInchPerGigapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicYardPerGigapascalKelvin
+PoundPerCubicYardPerGigapascalKelvin.ConversionFactorA = 0
+PoundPerCubicYardPerGigapascalKelvin.ConversionFactorB = 1685554935.555904
+PoundPerCubicYardPerGigapascalKelvin.Symbol = "lb/yd³/(GPa•K)"
+PoundPerCubicYardPerGigapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:KilogramPerCubicMetrePerPoundPerSquareInchKelvin
+KilogramPerCubicMetrePerPoundPerSquareInchKelvin.ConversionFactorA = 0
+KilogramPerCubicMetrePerPoundPerSquareInchKelvin.ConversionFactorB = 6894.757293168361
+KilogramPerCubicMetrePerPoundPerSquareInchKelvin.Symbol = "kg/m³/(psi•K)"
+KilogramPerCubicMetrePerPoundPerSquareInchKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:SpecificGravityPerPoundPerSquareInchKelvin
+SpecificGravityPerPoundPerSquareInchKelvin.ConversionFactorA = 0
+SpecificGravityPerPoundPerSquareInchKelvin.ConversionFactorB = 6.894950351778211
+SpecificGravityPerPoundPerSquareInchKelvin.Symbol = "sg/(psi•K)"
+SpecificGravityPerPoundPerSquareInchKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:GramPerCubicCentimetrePerPoundPerSquareInchKelvin
+GramPerCubicCentimetrePerPoundPerSquareInchKelvin.ConversionFactorA = 0
+GramPerCubicCentimetrePerPoundPerSquareInchKelvin.ConversionFactorB = 6.894757293168362
+GramPerCubicCentimetrePerPoundPerSquareInchKelvin.Symbol = "g/cm³/(psi•K)"
+GramPerCubicCentimetrePerPoundPerSquareInchKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUkPerPoundPerSquareInchKelvin
+PoundPerGallonUkPerPoundPerSquareInchKelvin.ConversionFactorA = 0
+PoundPerGallonUkPerPoundPerSquareInchKelvin.ConversionFactorB = 69.10210412688325
+PoundPerGallonUkPerPoundPerSquareInchKelvin.Symbol = "ppgUK/(psi•K)"
+PoundPerGallonUkPerPoundPerSquareInchKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUsPerPoundPerSquareInchKelvin
+PoundPerGallonUsPerPoundPerSquareInchKelvin.ConversionFactorA = 0
+PoundPerGallonUsPerPoundPerSquareInchKelvin.ConversionFactorB = 57.53953820999999
+PoundPerGallonUsPerPoundPerSquareInchKelvin.Symbol = "ppgUS/(psi•K)"
+PoundPerGallonUsPerPoundPerSquareInchKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicFootPerPoundPerSquareInchKelvin
+PoundPerCubicFootPerPoundPerSquareInchKelvin.ConversionFactorA = 0
+PoundPerCubicFootPerPoundPerSquareInchKelvin.ConversionFactorB = 430.4256364799998
+PoundPerCubicFootPerPoundPerSquareInchKelvin.Symbol = "lb/ft³/(psi•K)"
+PoundPerCubicFootPerPoundPerSquareInchKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicInchPerPoundPerSquareInchKelvin
+PoundPerCubicInchPerPoundPerSquareInchKelvin.ConversionFactorA = 0
+PoundPerCubicInchPerPoundPerSquareInchKelvin.ConversionFactorB = 0.24908890999999994
+PoundPerCubicInchPerPoundPerSquareInchKelvin.Symbol = "lb/in³/(psi•K)"
+PoundPerCubicInchPerPoundPerSquareInchKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicYardPerPoundPerSquareInchKelvin
+PoundPerCubicYardPerPoundPerSquareInchKelvin.ConversionFactorA = 0
+PoundPerCubicYardPerPoundPerSquareInchKelvin.ConversionFactorB = 11621.492184959992
+PoundPerCubicYardPerPoundPerSquareInchKelvin.Symbol = "lb/yd³/(psi•K)"
+PoundPerCubicYardPerPoundPerSquareInchKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:KilogramPerCubicMetrePerPascalCelsius
+KilogramPerCubicMetrePerPascalCelsius.ConversionFactorA = 0
+KilogramPerCubicMetrePerPascalCelsius.ConversionFactorB = 1
+KilogramPerCubicMetrePerPascalCelsius.Symbol = "kg/m³/(Pa•°C)"
+KilogramPerCubicMetrePerPascalCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:SpecificGravityPerPascalCelsius
+SpecificGravityPerPascalCelsius.ConversionFactorA = 0
+SpecificGravityPerPascalCelsius.ConversionFactorB = 0.001000028000784022
+SpecificGravityPerPascalCelsius.Symbol = "sg/(Pa•°C)"
+SpecificGravityPerPascalCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:GramPerCubicCentimetrePerPascalCelsius
+GramPerCubicCentimetrePerPascalCelsius.ConversionFactorA = 0
+GramPerCubicCentimetrePerPascalCelsius.ConversionFactorB = 0.0010000000000000002
+GramPerCubicCentimetrePerPascalCelsius.Symbol = "g/cm³/(Pa•°C)"
+GramPerCubicCentimetrePerPascalCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUkPerPascalCelsius
+PoundPerGallonUkPerPascalCelsius.ConversionFactorA = 0
+PoundPerGallonUkPerPascalCelsius.ConversionFactorB = 0.010022412854960501
+PoundPerGallonUkPerPascalCelsius.Symbol = "ppgUK/(Pa•°C)"
+PoundPerGallonUkPerPascalCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUsPerPascalCelsius
+PoundPerGallonUsPerPascalCelsius.ConversionFactorA = 0
+PoundPerGallonUsPerPascalCelsius.ConversionFactorB = 0.00834540445201933
+PoundPerGallonUsPerPascalCelsius.Symbol = "ppgUS/(Pa•°C)"
+PoundPerGallonUsPerPascalCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicFootPerPascalCelsius
+PoundPerCubicFootPerPascalCelsius.ConversionFactorA = 0
+PoundPerCubicFootPerPascalCelsius.ConversionFactorB = 0.06242796057614459
+PoundPerCubicFootPerPascalCelsius.Symbol = "lb/ft³/(Pa•°C)"
+PoundPerCubicFootPerPascalCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicInchPerPascalCelsius
+PoundPerCubicInchPerPascalCelsius.ConversionFactorA = 0
+PoundPerCubicInchPerPascalCelsius.ConversionFactorB = 3.612729200008369E-05
+PoundPerCubicInchPerPascalCelsius.Symbol = "lb/in³/(Pa•°C)"
+PoundPerCubicInchPerPascalCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicYardPerPascalCelsius
+PoundPerCubicYardPerPascalCelsius.ConversionFactorA = 0
+PoundPerCubicYardPerPascalCelsius.ConversionFactorB = 1.6855549355559039
+PoundPerCubicYardPerPascalCelsius.Symbol = "lb/yd³/(Pa•°C)"
+PoundPerCubicYardPerPascalCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:KilogramPerCubicMetrePerBarCelsius
+KilogramPerCubicMetrePerBarCelsius.ConversionFactorA = 0
+KilogramPerCubicMetrePerBarCelsius.ConversionFactorB = 100000
+KilogramPerCubicMetrePerBarCelsius.Symbol = "kg/m³/(bar•°C)"
+KilogramPerCubicMetrePerBarCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:SpecificGravityPerBarCelsius
+SpecificGravityPerBarCelsius.ConversionFactorA = 0
+SpecificGravityPerBarCelsius.ConversionFactorB = 100.0028000784022
+SpecificGravityPerBarCelsius.Symbol = "sg/(bar•°C)"
+SpecificGravityPerBarCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:GramPerCubicCentimetrePerBarCelsius
+GramPerCubicCentimetrePerBarCelsius.ConversionFactorA = 0
+GramPerCubicCentimetrePerBarCelsius.ConversionFactorB = 100.00000000000001
+GramPerCubicCentimetrePerBarCelsius.Symbol = "g/cm³/(bar•°C)"
+GramPerCubicCentimetrePerBarCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUkPerBarCelsius
+PoundPerGallonUkPerBarCelsius.ConversionFactorA = 0
+PoundPerGallonUkPerBarCelsius.ConversionFactorB = 1002.2412854960501
+PoundPerGallonUkPerBarCelsius.Symbol = "ppgUK/(bar•°C)"
+PoundPerGallonUkPerBarCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUsPerBarCelsius
+PoundPerGallonUsPerBarCelsius.ConversionFactorA = 0
+PoundPerGallonUsPerBarCelsius.ConversionFactorB = 834.540445201933
+PoundPerGallonUsPerBarCelsius.Symbol = "ppgUS/(bar•°C)"
+PoundPerGallonUsPerBarCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicFootPerBarCelsius
+PoundPerCubicFootPerBarCelsius.ConversionFactorA = 0
+PoundPerCubicFootPerBarCelsius.ConversionFactorB = 6242.79605761446
+PoundPerCubicFootPerBarCelsius.Symbol = "lb/ft³/(bar•°C)"
+PoundPerCubicFootPerBarCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicInchPerBarCelsius
+PoundPerCubicInchPerBarCelsius.ConversionFactorA = 0
+PoundPerCubicInchPerBarCelsius.ConversionFactorB = 3.6127292000083684
+PoundPerCubicInchPerBarCelsius.Symbol = "lb/in³/(bar•°C)"
+PoundPerCubicInchPerBarCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicYardPerBarCelsius
+PoundPerCubicYardPerBarCelsius.ConversionFactorA = 0
+PoundPerCubicYardPerBarCelsius.ConversionFactorB = 168555.49355559036
+PoundPerCubicYardPerBarCelsius.Symbol = "lb/yd³/(bar•°C)"
+PoundPerCubicYardPerBarCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:KilogramPerCubicMetrePerPoundPerSquareInchCelsius
+KilogramPerCubicMetrePerPoundPerSquareInchCelsius.ConversionFactorA = 0
+KilogramPerCubicMetrePerPoundPerSquareInchCelsius.ConversionFactorB = 6894.757293168361
+KilogramPerCubicMetrePerPoundPerSquareInchCelsius.Symbol = "kg/m³/(psi•°C)"
+KilogramPerCubicMetrePerPoundPerSquareInchCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:SpecificGravityPerPoundPerSquareInchCelsius
+SpecificGravityPerPoundPerSquareInchCelsius.ConversionFactorA = 0
+SpecificGravityPerPoundPerSquareInchCelsius.ConversionFactorB = 6.894950351778211
+SpecificGravityPerPoundPerSquareInchCelsius.Symbol = "sg/(psi•°C)"
+SpecificGravityPerPoundPerSquareInchCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:GramPerCubicCentimetrePerPoundPerSquareInchCelsius
+GramPerCubicCentimetrePerPoundPerSquareInchCelsius.ConversionFactorA = 0
+GramPerCubicCentimetrePerPoundPerSquareInchCelsius.ConversionFactorB = 6.894757293168362
+GramPerCubicCentimetrePerPoundPerSquareInchCelsius.Symbol = "g/cm³/(psi•°C)"
+GramPerCubicCentimetrePerPoundPerSquareInchCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUkPerPoundPerSquareInchCelsius
+PoundPerGallonUkPerPoundPerSquareInchCelsius.ConversionFactorA = 0
+PoundPerGallonUkPerPoundPerSquareInchCelsius.ConversionFactorB = 69.10210412688325
+PoundPerGallonUkPerPoundPerSquareInchCelsius.Symbol = "ppgUK/(psi•°C)"
+PoundPerGallonUkPerPoundPerSquareInchCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUsPerPoundPerSquareInchCelsius
+PoundPerGallonUsPerPoundPerSquareInchCelsius.ConversionFactorA = 0
+PoundPerGallonUsPerPoundPerSquareInchCelsius.ConversionFactorB = 57.53953820999999
+PoundPerGallonUsPerPoundPerSquareInchCelsius.Symbol = "ppgUS/(psi•°C)"
+PoundPerGallonUsPerPoundPerSquareInchCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicFootPerPoundPerSquareInchCelsius
+PoundPerCubicFootPerPoundPerSquareInchCelsius.ConversionFactorA = 0
+PoundPerCubicFootPerPoundPerSquareInchCelsius.ConversionFactorB = 430.4256364799998
+PoundPerCubicFootPerPoundPerSquareInchCelsius.Symbol = "lb/ft³/(psi•°C)"
+PoundPerCubicFootPerPoundPerSquareInchCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicInchPerPoundPerSquareInchCelsius
+PoundPerCubicInchPerPoundPerSquareInchCelsius.ConversionFactorA = 0
+PoundPerCubicInchPerPoundPerSquareInchCelsius.ConversionFactorB = 0.24908890999999994
+PoundPerCubicInchPerPoundPerSquareInchCelsius.Symbol = "lb/in³/(psi•°C)"
+PoundPerCubicInchPerPoundPerSquareInchCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicYardPerPoundPerSquareInchCelsius
+PoundPerCubicYardPerPoundPerSquareInchCelsius.ConversionFactorA = 0
+PoundPerCubicYardPerPoundPerSquareInchCelsius.ConversionFactorB = 11621.492184959992
+PoundPerCubicYardPerPoundPerSquareInchCelsius.Symbol = "lb/yd³/(psi•°C)"
+PoundPerCubicYardPerPoundPerSquareInchCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:KilogramPerCubicMetrePerPascalFahrenheit
+KilogramPerCubicMetrePerPascalFahrenheit.ConversionFactorA = 0
+KilogramPerCubicMetrePerPascalFahrenheit.ConversionFactorB = 0.5555555555555556
+KilogramPerCubicMetrePerPascalFahrenheit.Symbol = "kg/m³/(Pa•°F)"
+KilogramPerCubicMetrePerPascalFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:SpecificGravityPerPascalFahrenheit
+SpecificGravityPerPascalFahrenheit.ConversionFactorA = 0
+SpecificGravityPerPascalFahrenheit.ConversionFactorB = 0.0005555711115466789
+SpecificGravityPerPascalFahrenheit.Symbol = "sg/(Pa•°F)"
+SpecificGravityPerPascalFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:GramPerCubicCentimetrePerPascalFahrenheit
+GramPerCubicCentimetrePerPascalFahrenheit.ConversionFactorA = 0
+GramPerCubicCentimetrePerPascalFahrenheit.ConversionFactorB = 0.0005555555555555557
+GramPerCubicCentimetrePerPascalFahrenheit.Symbol = "g/cm³/(Pa•°F)"
+GramPerCubicCentimetrePerPascalFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUkPerPascalFahrenheit
+PoundPerGallonUkPerPascalFahrenheit.ConversionFactorA = 0
+PoundPerGallonUkPerPascalFahrenheit.ConversionFactorB = 0.005568007141644723
+PoundPerGallonUkPerPascalFahrenheit.Symbol = "ppgUK/(Pa•°F)"
+PoundPerGallonUkPerPascalFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUsPerPascalFahrenheit
+PoundPerGallonUsPerPascalFahrenheit.ConversionFactorA = 0
+PoundPerGallonUsPerPascalFahrenheit.ConversionFactorB = 0.004636335806677406
+PoundPerGallonUsPerPascalFahrenheit.Symbol = "ppgUS/(Pa•°F)"
+PoundPerGallonUsPerPascalFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicFootPerPascalFahrenheit
+PoundPerCubicFootPerPascalFahrenheit.ConversionFactorA = 0
+PoundPerCubicFootPerPascalFahrenheit.ConversionFactorB = 0.03468220032008033
+PoundPerCubicFootPerPascalFahrenheit.Symbol = "lb/ft³/(Pa•°F)"
+PoundPerCubicFootPerPascalFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicInchPerPascalFahrenheit
+PoundPerCubicInchPerPascalFahrenheit.ConversionFactorA = 0
+PoundPerCubicInchPerPascalFahrenheit.ConversionFactorB = 2.0070717777824268E-05
+PoundPerCubicInchPerPascalFahrenheit.Symbol = "lb/in³/(Pa•°F)"
+PoundPerCubicInchPerPascalFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicYardPerPascalFahrenheit
+PoundPerCubicYardPerPascalFahrenheit.ConversionFactorA = 0
+PoundPerCubicYardPerPascalFahrenheit.ConversionFactorB = 0.9364194086421688
+PoundPerCubicYardPerPascalFahrenheit.Symbol = "lb/yd³/(Pa•°F)"
+PoundPerCubicYardPerPascalFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:KilogramPerCubicMetrePerBarFahrenheit
+KilogramPerCubicMetrePerBarFahrenheit.ConversionFactorA = 0
+KilogramPerCubicMetrePerBarFahrenheit.ConversionFactorB = 55555.555555555555
+KilogramPerCubicMetrePerBarFahrenheit.Symbol = "kg/m³/(bar•°F)"
+KilogramPerCubicMetrePerBarFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:SpecificGravityPerBarFahrenheit
+SpecificGravityPerBarFahrenheit.ConversionFactorA = 0
+SpecificGravityPerBarFahrenheit.ConversionFactorB = 55.55711115466789
+SpecificGravityPerBarFahrenheit.Symbol = "sg/(bar•°F)"
+SpecificGravityPerBarFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:GramPerCubicCentimetrePerBarFahrenheit
+GramPerCubicCentimetrePerBarFahrenheit.ConversionFactorA = 0
+GramPerCubicCentimetrePerBarFahrenheit.ConversionFactorB = 55.555555555555564
+GramPerCubicCentimetrePerBarFahrenheit.Symbol = "g/cm³/(bar•°F)"
+GramPerCubicCentimetrePerBarFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUkPerBarFahrenheit
+PoundPerGallonUkPerBarFahrenheit.ConversionFactorA = 0
+PoundPerGallonUkPerBarFahrenheit.ConversionFactorB = 556.8007141644723
+PoundPerGallonUkPerBarFahrenheit.Symbol = "ppgUK/(bar•°F)"
+PoundPerGallonUkPerBarFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUsPerBarFahrenheit
+PoundPerGallonUsPerBarFahrenheit.ConversionFactorA = 0
+PoundPerGallonUsPerBarFahrenheit.ConversionFactorB = 463.63358066774066
+PoundPerGallonUsPerBarFahrenheit.Symbol = "ppgUS/(bar•°F)"
+PoundPerGallonUsPerBarFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicFootPerBarFahrenheit
+PoundPerCubicFootPerBarFahrenheit.ConversionFactorA = 0
+PoundPerCubicFootPerBarFahrenheit.ConversionFactorB = 3468.2200320080333
+PoundPerCubicFootPerBarFahrenheit.Symbol = "lb/ft³/(bar•°F)"
+PoundPerCubicFootPerBarFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicInchPerBarFahrenheit
+PoundPerCubicInchPerBarFahrenheit.ConversionFactorA = 0
+PoundPerCubicInchPerBarFahrenheit.ConversionFactorB = 2.007071777782427
+PoundPerCubicInchPerBarFahrenheit.Symbol = "lb/in³/(bar•°F)"
+PoundPerCubicInchPerBarFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicYardPerBarFahrenheit
+PoundPerCubicYardPerBarFahrenheit.ConversionFactorA = 0
+PoundPerCubicYardPerBarFahrenheit.ConversionFactorB = 93641.94086421687
+PoundPerCubicYardPerBarFahrenheit.Symbol = "lb/yd³/(bar•°F)"
+PoundPerCubicYardPerBarFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit
+KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit.ConversionFactorA = 0
+KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit.ConversionFactorB = 3830.420718426867
+KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit.Symbol = "kg/m³/(psi•°F)"
+KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:SpecificGravityPerPoundPerSquareInchFahrenheit
+SpecificGravityPerPoundPerSquareInchFahrenheit.ConversionFactorA = 0
+SpecificGravityPerPoundPerSquareInchFahrenheit.ConversionFactorB = 3.8305279732101174
+SpecificGravityPerPoundPerSquareInchFahrenheit.Symbol = "sg/(psi•°F)"
+SpecificGravityPerPoundPerSquareInchFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit
+GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit.ConversionFactorA = 0
+GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit.ConversionFactorB = 3.8304207184268675
+GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit.Symbol = "g/cm³/(psi•°F)"
+GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUkPerPoundPerSquareInchFahrenheit
+PoundPerGallonUkPerPoundPerSquareInchFahrenheit.ConversionFactorA = 0
+PoundPerGallonUkPerPoundPerSquareInchFahrenheit.ConversionFactorB = 38.39005784826847
+PoundPerGallonUkPerPoundPerSquareInchFahrenheit.Symbol = "ppgUK/(psi•°F)"
+PoundPerGallonUkPerPoundPerSquareInchFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUsPerPoundPerSquareInchFahrenheit
+PoundPerGallonUsPerPoundPerSquareInchFahrenheit.ConversionFactorA = 0
+PoundPerGallonUsPerPoundPerSquareInchFahrenheit.ConversionFactorB = 31.966410116666665
+PoundPerGallonUsPerPoundPerSquareInchFahrenheit.Symbol = "ppgUS/(psi•°F)"
+PoundPerGallonUsPerPoundPerSquareInchFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicFootPerPoundPerSquareInchFahrenheit
+PoundPerCubicFootPerPoundPerSquareInchFahrenheit.ConversionFactorA = 0
+PoundPerCubicFootPerPoundPerSquareInchFahrenheit.ConversionFactorB = 239.1253535999999
+PoundPerCubicFootPerPoundPerSquareInchFahrenheit.Symbol = "lb/ft³/(psi•°F)"
+PoundPerCubicFootPerPoundPerSquareInchFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicInchPerPoundPerSquareInchFahrenheit
+PoundPerCubicInchPerPoundPerSquareInchFahrenheit.ConversionFactorA = 0
+PoundPerCubicInchPerPoundPerSquareInchFahrenheit.ConversionFactorB = 0.13838272777777774
+PoundPerCubicInchPerPoundPerSquareInchFahrenheit.Symbol = "lb/in³/(psi•°F)"
+PoundPerCubicInchPerPoundPerSquareInchFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicYardPerPoundPerSquareInchFahrenheit
+PoundPerCubicYardPerPoundPerSquareInchFahrenheit.ConversionFactorA = 0
+PoundPerCubicYardPerPoundPerSquareInchFahrenheit.ConversionFactorB = 6456.384547199997
+PoundPerCubicYardPerPoundPerSquareInchFahrenheit.Symbol = "lb/yd³/(psi•°F)"
+PoundPerCubicYardPerPoundPerSquareInchFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MassDensityGradientPerPressureTemperatureQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[MassDensityGradientPerPressureTemperatureQuantity] -->|L| N0002(("-2")) 
+	N0000[MassDensityGradientPerPressureTemperatureQuantity] -->|T| N0003(("2")) 
+	N0000[MassDensityGradientPerPressureTemperatureQuantity] -->|ThT| N0004(("-1")) 
+	N0005[KilogramPerCubicMetrePerPascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0005[KilogramPerCubicMetrePerPascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0005[KilogramPerCubicMetrePerPascalKelvin] -->|ConversionFactorB| N0008(("1")) 
+	N0005[KilogramPerCubicMetrePerPascalKelvin] -->|Symbol| N0009(("kg/m³/(Pa•K)")) 
+	N0005[KilogramPerCubicMetrePerPascalKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0000[MassDensityGradientPerPressureTemperatureQuantity] -->|HasSIUnit| N0005((KilogramPerCubicMetrePerPascalKelvin)) 
+	N0010[SpecificGravityPerPascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0010[SpecificGravityPerPascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0010[SpecificGravityPerPascalKelvin] -->|ConversionFactorB| N0011(("0.001000028000784022")) 
+	N0010[SpecificGravityPerPascalKelvin] -->|Symbol| N0012(("sg/(Pa•K)")) 
+	N0010[SpecificGravityPerPascalKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0013[GramPerCubicCentimetrePerPascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0013[GramPerCubicCentimetrePerPascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0013[GramPerCubicCentimetrePerPascalKelvin] -->|ConversionFactorB| N0014(("0.0010000000000000002")) 
+	N0013[GramPerCubicCentimetrePerPascalKelvin] -->|Symbol| N0015(("g/cm³/(Pa•K)")) 
+	N0013[GramPerCubicCentimetrePerPascalKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0016[PoundPerGallonUkPerPascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0016[PoundPerGallonUkPerPascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0016[PoundPerGallonUkPerPascalKelvin] -->|ConversionFactorB| N0017(("0.010022412854960501")) 
+	N0016[PoundPerGallonUkPerPascalKelvin] -->|Symbol| N0018(("ppgUK/(Pa•K)")) 
+	N0016[PoundPerGallonUkPerPascalKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0019[PoundPerGallonUsPerPascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0019[PoundPerGallonUsPerPascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0019[PoundPerGallonUsPerPascalKelvin] -->|ConversionFactorB| N0020(("0.00834540445201933")) 
+	N0019[PoundPerGallonUsPerPascalKelvin] -->|Symbol| N0021(("ppgUS/(Pa•K)")) 
+	N0019[PoundPerGallonUsPerPascalKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0022[PoundPerCubicFootPerPascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0022[PoundPerCubicFootPerPascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0022[PoundPerCubicFootPerPascalKelvin] -->|ConversionFactorB| N0023(("0.06242796057614459")) 
+	N0022[PoundPerCubicFootPerPascalKelvin] -->|Symbol| N0024(("lb/ft³/(Pa•K)")) 
+	N0022[PoundPerCubicFootPerPascalKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0025[PoundPerCubicInchPerPascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0025[PoundPerCubicInchPerPascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0025[PoundPerCubicInchPerPascalKelvin] -->|ConversionFactorB| N0026(("3.612729200008369E-05")) 
+	N0025[PoundPerCubicInchPerPascalKelvin] -->|Symbol| N0027(("lb/in³/(Pa•K)")) 
+	N0025[PoundPerCubicInchPerPascalKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0028[PoundPerCubicYardPerPascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0028[PoundPerCubicYardPerPascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0028[PoundPerCubicYardPerPascalKelvin] -->|ConversionFactorB| N0029(("1.6855549355559039")) 
+	N0028[PoundPerCubicYardPerPascalKelvin] -->|Symbol| N0030(("lb/yd³/(Pa•K)")) 
+	N0028[PoundPerCubicYardPerPascalKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0031[KilogramPerCubicMetrePerBarKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0031[KilogramPerCubicMetrePerBarKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0031[KilogramPerCubicMetrePerBarKelvin] -->|ConversionFactorB| N0032(("100000")) 
+	N0031[KilogramPerCubicMetrePerBarKelvin] -->|Symbol| N0033(("kg/m³/(bar•K)")) 
+	N0031[KilogramPerCubicMetrePerBarKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0034[SpecificGravityPerBarKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0034[SpecificGravityPerBarKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0034[SpecificGravityPerBarKelvin] -->|ConversionFactorB| N0035(("100.0028000784022")) 
+	N0034[SpecificGravityPerBarKelvin] -->|Symbol| N0036(("sg/(bar•K)")) 
+	N0034[SpecificGravityPerBarKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0037[GramPerCubicCentimetrePerBarKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0037[GramPerCubicCentimetrePerBarKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0037[GramPerCubicCentimetrePerBarKelvin] -->|ConversionFactorB| N0038(("100.00000000000001")) 
+	N0037[GramPerCubicCentimetrePerBarKelvin] -->|Symbol| N0039(("g/cm³/(bar•K)")) 
+	N0037[GramPerCubicCentimetrePerBarKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0040[PoundPerGallonUkPerBarKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0040[PoundPerGallonUkPerBarKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0040[PoundPerGallonUkPerBarKelvin] -->|ConversionFactorB| N0041(("1002.2412854960501")) 
+	N0040[PoundPerGallonUkPerBarKelvin] -->|Symbol| N0042(("ppgUK/(bar•K)")) 
+	N0040[PoundPerGallonUkPerBarKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0043[PoundPerGallonUsPerBarKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0043[PoundPerGallonUsPerBarKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0043[PoundPerGallonUsPerBarKelvin] -->|ConversionFactorB| N0044(("834.540445201933")) 
+	N0043[PoundPerGallonUsPerBarKelvin] -->|Symbol| N0045(("ppgUS/(bar•K)")) 
+	N0043[PoundPerGallonUsPerBarKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0046[PoundPerCubicFootPerBarKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0046[PoundPerCubicFootPerBarKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0046[PoundPerCubicFootPerBarKelvin] -->|ConversionFactorB| N0047(("6242.79605761446")) 
+	N0046[PoundPerCubicFootPerBarKelvin] -->|Symbol| N0048(("lb/ft³/(bar•K)")) 
+	N0046[PoundPerCubicFootPerBarKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0049[PoundPerCubicInchPerBarKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0049[PoundPerCubicInchPerBarKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0049[PoundPerCubicInchPerBarKelvin] -->|ConversionFactorB| N0050(("3.6127292000083684")) 
+	N0049[PoundPerCubicInchPerBarKelvin] -->|Symbol| N0051(("lb/in³/(bar•K)")) 
+	N0049[PoundPerCubicInchPerBarKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0052[PoundPerCubicYardPerBarKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0052[PoundPerCubicYardPerBarKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0052[PoundPerCubicYardPerBarKelvin] -->|ConversionFactorB| N0053(("168555.49355559036")) 
+	N0052[PoundPerCubicYardPerBarKelvin] -->|Symbol| N0054(("lb/yd³/(bar•K)")) 
+	N0052[PoundPerCubicYardPerBarKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0055[KilogramPerCubicMetrePerMegapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0055[KilogramPerCubicMetrePerMegapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0055[KilogramPerCubicMetrePerMegapascalKelvin] -->|ConversionFactorB| N0056(("1000000")) 
+	N0055[KilogramPerCubicMetrePerMegapascalKelvin] -->|Symbol| N0057(("kg/m³/(MPa•K)")) 
+	N0055[KilogramPerCubicMetrePerMegapascalKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0058[SpecificGravityPerMegapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0058[SpecificGravityPerMegapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0058[SpecificGravityPerMegapascalKelvin] -->|ConversionFactorB| N0059(("1000.028000784022")) 
+	N0058[SpecificGravityPerMegapascalKelvin] -->|Symbol| N0060(("sg/(MPa•K)")) 
+	N0058[SpecificGravityPerMegapascalKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0061[GramPerCubicCentimetrePerMegapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0061[GramPerCubicCentimetrePerMegapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0061[GramPerCubicCentimetrePerMegapascalKelvin] -->|ConversionFactorB| N0062(("1000.0000000000002")) 
+	N0061[GramPerCubicCentimetrePerMegapascalKelvin] -->|Symbol| N0063(("g/cm³/(MPa•K)")) 
+	N0061[GramPerCubicCentimetrePerMegapascalKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0064[PoundPerGallonUkPerMegapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0064[PoundPerGallonUkPerMegapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0064[PoundPerGallonUkPerMegapascalKelvin] -->|ConversionFactorB| N0065(("10022.412854960501")) 
+	N0064[PoundPerGallonUkPerMegapascalKelvin] -->|Symbol| N0066(("ppgUK/(MPa•K)")) 
+	N0064[PoundPerGallonUkPerMegapascalKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0067[PoundPerGallonUsPerMegapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0067[PoundPerGallonUsPerMegapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0067[PoundPerGallonUsPerMegapascalKelvin] -->|ConversionFactorB| N0068(("8345.404452019331")) 
+	N0067[PoundPerGallonUsPerMegapascalKelvin] -->|Symbol| N0069(("ppgUS/(MPa•K)")) 
+	N0067[PoundPerGallonUsPerMegapascalKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0070[PoundPerCubicFootPerMegapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0070[PoundPerCubicFootPerMegapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0070[PoundPerCubicFootPerMegapascalKelvin] -->|ConversionFactorB| N0071(("62427.960576144586")) 
+	N0070[PoundPerCubicFootPerMegapascalKelvin] -->|Symbol| N0072(("lb/ft³/(MPa•K)")) 
+	N0070[PoundPerCubicFootPerMegapascalKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0073[PoundPerCubicInchPerMegapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0073[PoundPerCubicInchPerMegapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0073[PoundPerCubicInchPerMegapascalKelvin] -->|ConversionFactorB| N0074(("36.127292000083685")) 
+	N0073[PoundPerCubicInchPerMegapascalKelvin] -->|Symbol| N0075(("lb/in³/(MPa•K)")) 
+	N0073[PoundPerCubicInchPerMegapascalKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0076[PoundPerCubicYardPerMegapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0076[PoundPerCubicYardPerMegapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0076[PoundPerCubicYardPerMegapascalKelvin] -->|ConversionFactorB| N0077(("1685554.9355559037")) 
+	N0076[PoundPerCubicYardPerMegapascalKelvin] -->|Symbol| N0078(("lb/yd³/(MPa•K)")) 
+	N0076[PoundPerCubicYardPerMegapascalKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0079[KilogramPerCubicMetrePerGigapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0079[KilogramPerCubicMetrePerGigapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0079[KilogramPerCubicMetrePerGigapascalKelvin] -->|ConversionFactorB| N0080(("1000000000")) 
+	N0079[KilogramPerCubicMetrePerGigapascalKelvin] -->|Symbol| N0081(("kg/m³/(GPa•K)")) 
+	N0079[KilogramPerCubicMetrePerGigapascalKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0082[SpecificGravityPerGigapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0082[SpecificGravityPerGigapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0082[SpecificGravityPerGigapascalKelvin] -->|ConversionFactorB| N0083(("1000028.0007840219")) 
+	N0082[SpecificGravityPerGigapascalKelvin] -->|Symbol| N0084(("sg/(GPa•K)")) 
+	N0082[SpecificGravityPerGigapascalKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0085[GramPerCubicCentimetrePerGigapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0085[GramPerCubicCentimetrePerGigapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0085[GramPerCubicCentimetrePerGigapascalKelvin] -->|ConversionFactorB| N0086(("1000000.0000000001")) 
+	N0085[GramPerCubicCentimetrePerGigapascalKelvin] -->|Symbol| N0087(("g/cm³/(GPa•K)")) 
+	N0085[GramPerCubicCentimetrePerGigapascalKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0088[PoundPerGallonUkPerGigapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0088[PoundPerGallonUkPerGigapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0088[PoundPerGallonUkPerGigapascalKelvin] -->|ConversionFactorB| N0089(("10022412.854960501")) 
+	N0088[PoundPerGallonUkPerGigapascalKelvin] -->|Symbol| N0090(("ppgUK/(GPa•K)")) 
+	N0088[PoundPerGallonUkPerGigapascalKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0091[PoundPerGallonUsPerGigapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0091[PoundPerGallonUsPerGigapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0091[PoundPerGallonUsPerGigapascalKelvin] -->|ConversionFactorB| N0092(("8345404.45201933")) 
+	N0091[PoundPerGallonUsPerGigapascalKelvin] -->|Symbol| N0093(("ppgUS/(GPa•K)")) 
+	N0091[PoundPerGallonUsPerGigapascalKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0094[PoundPerCubicFootPerGigapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0094[PoundPerCubicFootPerGigapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0094[PoundPerCubicFootPerGigapascalKelvin] -->|ConversionFactorB| N0095(("62427960.57614458")) 
+	N0094[PoundPerCubicFootPerGigapascalKelvin] -->|Symbol| N0096(("lb/ft³/(GPa•K)")) 
+	N0094[PoundPerCubicFootPerGigapascalKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0097[PoundPerCubicInchPerGigapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0097[PoundPerCubicInchPerGigapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0097[PoundPerCubicInchPerGigapascalKelvin] -->|ConversionFactorB| N0098(("36127.29200008368")) 
+	N0097[PoundPerCubicInchPerGigapascalKelvin] -->|Symbol| N0099(("lb/in³/(GPa•K)")) 
+	N0097[PoundPerCubicInchPerGigapascalKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0100[PoundPerCubicYardPerGigapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0100[PoundPerCubicYardPerGigapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0100[PoundPerCubicYardPerGigapascalKelvin] -->|ConversionFactorB| N0101(("1685554935.555904")) 
+	N0100[PoundPerCubicYardPerGigapascalKelvin] -->|Symbol| N0102(("lb/yd³/(GPa•K)")) 
+	N0100[PoundPerCubicYardPerGigapascalKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0103[KilogramPerCubicMetrePerPoundPerSquareInchKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0103[KilogramPerCubicMetrePerPoundPerSquareInchKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0103[KilogramPerCubicMetrePerPoundPerSquareInchKelvin] -->|ConversionFactorB| N0104(("6894.757293168361")) 
+	N0103[KilogramPerCubicMetrePerPoundPerSquareInchKelvin] -->|Symbol| N0105(("kg/m³/(psi•K)")) 
+	N0103[KilogramPerCubicMetrePerPoundPerSquareInchKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0106[SpecificGravityPerPoundPerSquareInchKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0106[SpecificGravityPerPoundPerSquareInchKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0106[SpecificGravityPerPoundPerSquareInchKelvin] -->|ConversionFactorB| N0107(("6.894950351778211")) 
+	N0106[SpecificGravityPerPoundPerSquareInchKelvin] -->|Symbol| N0108(("sg/(psi•K)")) 
+	N0106[SpecificGravityPerPoundPerSquareInchKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0109[GramPerCubicCentimetrePerPoundPerSquareInchKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0109[GramPerCubicCentimetrePerPoundPerSquareInchKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0109[GramPerCubicCentimetrePerPoundPerSquareInchKelvin] -->|ConversionFactorB| N0110(("6.894757293168362")) 
+	N0109[GramPerCubicCentimetrePerPoundPerSquareInchKelvin] -->|Symbol| N0111(("g/cm³/(psi•K)")) 
+	N0109[GramPerCubicCentimetrePerPoundPerSquareInchKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0112[PoundPerGallonUkPerPoundPerSquareInchKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0112[PoundPerGallonUkPerPoundPerSquareInchKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0112[PoundPerGallonUkPerPoundPerSquareInchKelvin] -->|ConversionFactorB| N0113(("69.10210412688325")) 
+	N0112[PoundPerGallonUkPerPoundPerSquareInchKelvin] -->|Symbol| N0114(("ppgUK/(psi•K)")) 
+	N0112[PoundPerGallonUkPerPoundPerSquareInchKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0115[PoundPerGallonUsPerPoundPerSquareInchKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0115[PoundPerGallonUsPerPoundPerSquareInchKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0115[PoundPerGallonUsPerPoundPerSquareInchKelvin] -->|ConversionFactorB| N0116(("57.53953820999999")) 
+	N0115[PoundPerGallonUsPerPoundPerSquareInchKelvin] -->|Symbol| N0117(("ppgUS/(psi•K)")) 
+	N0115[PoundPerGallonUsPerPoundPerSquareInchKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0118[PoundPerCubicFootPerPoundPerSquareInchKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0118[PoundPerCubicFootPerPoundPerSquareInchKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0118[PoundPerCubicFootPerPoundPerSquareInchKelvin] -->|ConversionFactorB| N0119(("430.4256364799998")) 
+	N0118[PoundPerCubicFootPerPoundPerSquareInchKelvin] -->|Symbol| N0120(("lb/ft³/(psi•K)")) 
+	N0118[PoundPerCubicFootPerPoundPerSquareInchKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0121[PoundPerCubicInchPerPoundPerSquareInchKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0121[PoundPerCubicInchPerPoundPerSquareInchKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0121[PoundPerCubicInchPerPoundPerSquareInchKelvin] -->|ConversionFactorB| N0122(("0.24908890999999994")) 
+	N0121[PoundPerCubicInchPerPoundPerSquareInchKelvin] -->|Symbol| N0123(("lb/in³/(psi•K)")) 
+	N0121[PoundPerCubicInchPerPoundPerSquareInchKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0124[PoundPerCubicYardPerPoundPerSquareInchKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0124[PoundPerCubicYardPerPoundPerSquareInchKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0124[PoundPerCubicYardPerPoundPerSquareInchKelvin] -->|ConversionFactorB| N0125(("11621.492184959992")) 
+	N0124[PoundPerCubicYardPerPoundPerSquareInchKelvin] -->|Symbol| N0126(("lb/yd³/(psi•K)")) 
+	N0124[PoundPerCubicYardPerPoundPerSquareInchKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0127[KilogramPerCubicMetrePerPascalCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0127[KilogramPerCubicMetrePerPascalCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0127[KilogramPerCubicMetrePerPascalCelsius] -->|ConversionFactorB| N0008(("1")) 
+	N0127[KilogramPerCubicMetrePerPascalCelsius] -->|Symbol| N0128(("kg/m³/(Pa•°C)")) 
+	N0127[KilogramPerCubicMetrePerPascalCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0129[SpecificGravityPerPascalCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0129[SpecificGravityPerPascalCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0129[SpecificGravityPerPascalCelsius] -->|ConversionFactorB| N0011(("0.001000028000784022")) 
+	N0129[SpecificGravityPerPascalCelsius] -->|Symbol| N0130(("sg/(Pa•°C)")) 
+	N0129[SpecificGravityPerPascalCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0131[GramPerCubicCentimetrePerPascalCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0131[GramPerCubicCentimetrePerPascalCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0131[GramPerCubicCentimetrePerPascalCelsius] -->|ConversionFactorB| N0014(("0.0010000000000000002")) 
+	N0131[GramPerCubicCentimetrePerPascalCelsius] -->|Symbol| N0132(("g/cm³/(Pa•°C)")) 
+	N0131[GramPerCubicCentimetrePerPascalCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0133[PoundPerGallonUkPerPascalCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0133[PoundPerGallonUkPerPascalCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0133[PoundPerGallonUkPerPascalCelsius] -->|ConversionFactorB| N0017(("0.010022412854960501")) 
+	N0133[PoundPerGallonUkPerPascalCelsius] -->|Symbol| N0134(("ppgUK/(Pa•°C)")) 
+	N0133[PoundPerGallonUkPerPascalCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0135[PoundPerGallonUsPerPascalCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0135[PoundPerGallonUsPerPascalCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0135[PoundPerGallonUsPerPascalCelsius] -->|ConversionFactorB| N0020(("0.00834540445201933")) 
+	N0135[PoundPerGallonUsPerPascalCelsius] -->|Symbol| N0136(("ppgUS/(Pa•°C)")) 
+	N0135[PoundPerGallonUsPerPascalCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0137[PoundPerCubicFootPerPascalCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0137[PoundPerCubicFootPerPascalCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0137[PoundPerCubicFootPerPascalCelsius] -->|ConversionFactorB| N0023(("0.06242796057614459")) 
+	N0137[PoundPerCubicFootPerPascalCelsius] -->|Symbol| N0138(("lb/ft³/(Pa•°C)")) 
+	N0137[PoundPerCubicFootPerPascalCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0139[PoundPerCubicInchPerPascalCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0139[PoundPerCubicInchPerPascalCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0139[PoundPerCubicInchPerPascalCelsius] -->|ConversionFactorB| N0026(("3.612729200008369E-05")) 
+	N0139[PoundPerCubicInchPerPascalCelsius] -->|Symbol| N0140(("lb/in³/(Pa•°C)")) 
+	N0139[PoundPerCubicInchPerPascalCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0141[PoundPerCubicYardPerPascalCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0141[PoundPerCubicYardPerPascalCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0141[PoundPerCubicYardPerPascalCelsius] -->|ConversionFactorB| N0029(("1.6855549355559039")) 
+	N0141[PoundPerCubicYardPerPascalCelsius] -->|Symbol| N0142(("lb/yd³/(Pa•°C)")) 
+	N0141[PoundPerCubicYardPerPascalCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0143[KilogramPerCubicMetrePerBarCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0143[KilogramPerCubicMetrePerBarCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0143[KilogramPerCubicMetrePerBarCelsius] -->|ConversionFactorB| N0032(("100000")) 
+	N0143[KilogramPerCubicMetrePerBarCelsius] -->|Symbol| N0144(("kg/m³/(bar•°C)")) 
+	N0143[KilogramPerCubicMetrePerBarCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0145[SpecificGravityPerBarCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0145[SpecificGravityPerBarCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0145[SpecificGravityPerBarCelsius] -->|ConversionFactorB| N0035(("100.0028000784022")) 
+	N0145[SpecificGravityPerBarCelsius] -->|Symbol| N0146(("sg/(bar•°C)")) 
+	N0145[SpecificGravityPerBarCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0147[GramPerCubicCentimetrePerBarCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0147[GramPerCubicCentimetrePerBarCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0147[GramPerCubicCentimetrePerBarCelsius] -->|ConversionFactorB| N0038(("100.00000000000001")) 
+	N0147[GramPerCubicCentimetrePerBarCelsius] -->|Symbol| N0148(("g/cm³/(bar•°C)")) 
+	N0147[GramPerCubicCentimetrePerBarCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0149[PoundPerGallonUkPerBarCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0149[PoundPerGallonUkPerBarCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0149[PoundPerGallonUkPerBarCelsius] -->|ConversionFactorB| N0041(("1002.2412854960501")) 
+	N0149[PoundPerGallonUkPerBarCelsius] -->|Symbol| N0150(("ppgUK/(bar•°C)")) 
+	N0149[PoundPerGallonUkPerBarCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0151[PoundPerGallonUsPerBarCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0151[PoundPerGallonUsPerBarCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0151[PoundPerGallonUsPerBarCelsius] -->|ConversionFactorB| N0044(("834.540445201933")) 
+	N0151[PoundPerGallonUsPerBarCelsius] -->|Symbol| N0152(("ppgUS/(bar•°C)")) 
+	N0151[PoundPerGallonUsPerBarCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0153[PoundPerCubicFootPerBarCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0153[PoundPerCubicFootPerBarCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0153[PoundPerCubicFootPerBarCelsius] -->|ConversionFactorB| N0047(("6242.79605761446")) 
+	N0153[PoundPerCubicFootPerBarCelsius] -->|Symbol| N0154(("lb/ft³/(bar•°C)")) 
+	N0153[PoundPerCubicFootPerBarCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0155[PoundPerCubicInchPerBarCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0155[PoundPerCubicInchPerBarCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0155[PoundPerCubicInchPerBarCelsius] -->|ConversionFactorB| N0050(("3.6127292000083684")) 
+	N0155[PoundPerCubicInchPerBarCelsius] -->|Symbol| N0156(("lb/in³/(bar•°C)")) 
+	N0155[PoundPerCubicInchPerBarCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0157[PoundPerCubicYardPerBarCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0157[PoundPerCubicYardPerBarCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0157[PoundPerCubicYardPerBarCelsius] -->|ConversionFactorB| N0053(("168555.49355559036")) 
+	N0157[PoundPerCubicYardPerBarCelsius] -->|Symbol| N0158(("lb/yd³/(bar•°C)")) 
+	N0157[PoundPerCubicYardPerBarCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0159[KilogramPerCubicMetrePerPoundPerSquareInchCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0159[KilogramPerCubicMetrePerPoundPerSquareInchCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0159[KilogramPerCubicMetrePerPoundPerSquareInchCelsius] -->|ConversionFactorB| N0104(("6894.757293168361")) 
+	N0159[KilogramPerCubicMetrePerPoundPerSquareInchCelsius] -->|Symbol| N0160(("kg/m³/(psi•°C)")) 
+	N0159[KilogramPerCubicMetrePerPoundPerSquareInchCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0161[SpecificGravityPerPoundPerSquareInchCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0161[SpecificGravityPerPoundPerSquareInchCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0161[SpecificGravityPerPoundPerSquareInchCelsius] -->|ConversionFactorB| N0107(("6.894950351778211")) 
+	N0161[SpecificGravityPerPoundPerSquareInchCelsius] -->|Symbol| N0162(("sg/(psi•°C)")) 
+	N0161[SpecificGravityPerPoundPerSquareInchCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0163[GramPerCubicCentimetrePerPoundPerSquareInchCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0163[GramPerCubicCentimetrePerPoundPerSquareInchCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0163[GramPerCubicCentimetrePerPoundPerSquareInchCelsius] -->|ConversionFactorB| N0110(("6.894757293168362")) 
+	N0163[GramPerCubicCentimetrePerPoundPerSquareInchCelsius] -->|Symbol| N0164(("g/cm³/(psi•°C)")) 
+	N0163[GramPerCubicCentimetrePerPoundPerSquareInchCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0165[PoundPerGallonUkPerPoundPerSquareInchCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0165[PoundPerGallonUkPerPoundPerSquareInchCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0165[PoundPerGallonUkPerPoundPerSquareInchCelsius] -->|ConversionFactorB| N0113(("69.10210412688325")) 
+	N0165[PoundPerGallonUkPerPoundPerSquareInchCelsius] -->|Symbol| N0166(("ppgUK/(psi•°C)")) 
+	N0165[PoundPerGallonUkPerPoundPerSquareInchCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0167[PoundPerGallonUsPerPoundPerSquareInchCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0167[PoundPerGallonUsPerPoundPerSquareInchCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0167[PoundPerGallonUsPerPoundPerSquareInchCelsius] -->|ConversionFactorB| N0116(("57.53953820999999")) 
+	N0167[PoundPerGallonUsPerPoundPerSquareInchCelsius] -->|Symbol| N0168(("ppgUS/(psi•°C)")) 
+	N0167[PoundPerGallonUsPerPoundPerSquareInchCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0169[PoundPerCubicFootPerPoundPerSquareInchCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0169[PoundPerCubicFootPerPoundPerSquareInchCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0169[PoundPerCubicFootPerPoundPerSquareInchCelsius] -->|ConversionFactorB| N0119(("430.4256364799998")) 
+	N0169[PoundPerCubicFootPerPoundPerSquareInchCelsius] -->|Symbol| N0170(("lb/ft³/(psi•°C)")) 
+	N0169[PoundPerCubicFootPerPoundPerSquareInchCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0171[PoundPerCubicInchPerPoundPerSquareInchCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0171[PoundPerCubicInchPerPoundPerSquareInchCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0171[PoundPerCubicInchPerPoundPerSquareInchCelsius] -->|ConversionFactorB| N0122(("0.24908890999999994")) 
+	N0171[PoundPerCubicInchPerPoundPerSquareInchCelsius] -->|Symbol| N0172(("lb/in³/(psi•°C)")) 
+	N0171[PoundPerCubicInchPerPoundPerSquareInchCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0173[PoundPerCubicYardPerPoundPerSquareInchCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0173[PoundPerCubicYardPerPoundPerSquareInchCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0173[PoundPerCubicYardPerPoundPerSquareInchCelsius] -->|ConversionFactorB| N0125(("11621.492184959992")) 
+	N0173[PoundPerCubicYardPerPoundPerSquareInchCelsius] -->|Symbol| N0174(("lb/yd³/(psi•°C)")) 
+	N0173[PoundPerCubicYardPerPoundPerSquareInchCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0175[KilogramPerCubicMetrePerPascalFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0175[KilogramPerCubicMetrePerPascalFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0175[KilogramPerCubicMetrePerPascalFahrenheit] -->|ConversionFactorB| N0176(("0.5555555555555556")) 
+	N0175[KilogramPerCubicMetrePerPascalFahrenheit] -->|Symbol| N0177(("kg/m³/(Pa•°F)")) 
+	N0175[KilogramPerCubicMetrePerPascalFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0178[SpecificGravityPerPascalFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0178[SpecificGravityPerPascalFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0178[SpecificGravityPerPascalFahrenheit] -->|ConversionFactorB| N0179(("0.0005555711115466789")) 
+	N0178[SpecificGravityPerPascalFahrenheit] -->|Symbol| N0180(("sg/(Pa•°F)")) 
+	N0178[SpecificGravityPerPascalFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0181[GramPerCubicCentimetrePerPascalFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0181[GramPerCubicCentimetrePerPascalFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0181[GramPerCubicCentimetrePerPascalFahrenheit] -->|ConversionFactorB| N0182(("0.0005555555555555557")) 
+	N0181[GramPerCubicCentimetrePerPascalFahrenheit] -->|Symbol| N0183(("g/cm³/(Pa•°F)")) 
+	N0181[GramPerCubicCentimetrePerPascalFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0184[PoundPerGallonUkPerPascalFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0184[PoundPerGallonUkPerPascalFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0184[PoundPerGallonUkPerPascalFahrenheit] -->|ConversionFactorB| N0185(("0.005568007141644723")) 
+	N0184[PoundPerGallonUkPerPascalFahrenheit] -->|Symbol| N0186(("ppgUK/(Pa•°F)")) 
+	N0184[PoundPerGallonUkPerPascalFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0187[PoundPerGallonUsPerPascalFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0187[PoundPerGallonUsPerPascalFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0187[PoundPerGallonUsPerPascalFahrenheit] -->|ConversionFactorB| N0188(("0.004636335806677406")) 
+	N0187[PoundPerGallonUsPerPascalFahrenheit] -->|Symbol| N0189(("ppgUS/(Pa•°F)")) 
+	N0187[PoundPerGallonUsPerPascalFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0190[PoundPerCubicFootPerPascalFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0190[PoundPerCubicFootPerPascalFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0190[PoundPerCubicFootPerPascalFahrenheit] -->|ConversionFactorB| N0191(("0.03468220032008033")) 
+	N0190[PoundPerCubicFootPerPascalFahrenheit] -->|Symbol| N0192(("lb/ft³/(Pa•°F)")) 
+	N0190[PoundPerCubicFootPerPascalFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0193[PoundPerCubicInchPerPascalFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0193[PoundPerCubicInchPerPascalFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0193[PoundPerCubicInchPerPascalFahrenheit] -->|ConversionFactorB| N0194(("2.0070717777824268E-05")) 
+	N0193[PoundPerCubicInchPerPascalFahrenheit] -->|Symbol| N0195(("lb/in³/(Pa•°F)")) 
+	N0193[PoundPerCubicInchPerPascalFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0196[PoundPerCubicYardPerPascalFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0196[PoundPerCubicYardPerPascalFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0196[PoundPerCubicYardPerPascalFahrenheit] -->|ConversionFactorB| N0197(("0.9364194086421688")) 
+	N0196[PoundPerCubicYardPerPascalFahrenheit] -->|Symbol| N0198(("lb/yd³/(Pa•°F)")) 
+	N0196[PoundPerCubicYardPerPascalFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0199[KilogramPerCubicMetrePerBarFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0199[KilogramPerCubicMetrePerBarFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0199[KilogramPerCubicMetrePerBarFahrenheit] -->|ConversionFactorB| N0200(("55555.555555555555")) 
+	N0199[KilogramPerCubicMetrePerBarFahrenheit] -->|Symbol| N0201(("kg/m³/(bar•°F)")) 
+	N0199[KilogramPerCubicMetrePerBarFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0202[SpecificGravityPerBarFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0202[SpecificGravityPerBarFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0202[SpecificGravityPerBarFahrenheit] -->|ConversionFactorB| N0203(("55.55711115466789")) 
+	N0202[SpecificGravityPerBarFahrenheit] -->|Symbol| N0204(("sg/(bar•°F)")) 
+	N0202[SpecificGravityPerBarFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0205[GramPerCubicCentimetrePerBarFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0205[GramPerCubicCentimetrePerBarFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0205[GramPerCubicCentimetrePerBarFahrenheit] -->|ConversionFactorB| N0206(("55.555555555555564")) 
+	N0205[GramPerCubicCentimetrePerBarFahrenheit] -->|Symbol| N0207(("g/cm³/(bar•°F)")) 
+	N0205[GramPerCubicCentimetrePerBarFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0208[PoundPerGallonUkPerBarFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0208[PoundPerGallonUkPerBarFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0208[PoundPerGallonUkPerBarFahrenheit] -->|ConversionFactorB| N0209(("556.8007141644723")) 
+	N0208[PoundPerGallonUkPerBarFahrenheit] -->|Symbol| N0210(("ppgUK/(bar•°F)")) 
+	N0208[PoundPerGallonUkPerBarFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0211[PoundPerGallonUsPerBarFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0211[PoundPerGallonUsPerBarFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0211[PoundPerGallonUsPerBarFahrenheit] -->|ConversionFactorB| N0212(("463.63358066774066")) 
+	N0211[PoundPerGallonUsPerBarFahrenheit] -->|Symbol| N0213(("ppgUS/(bar•°F)")) 
+	N0211[PoundPerGallonUsPerBarFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0214[PoundPerCubicFootPerBarFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0214[PoundPerCubicFootPerBarFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0214[PoundPerCubicFootPerBarFahrenheit] -->|ConversionFactorB| N0215(("3468.2200320080333")) 
+	N0214[PoundPerCubicFootPerBarFahrenheit] -->|Symbol| N0216(("lb/ft³/(bar•°F)")) 
+	N0214[PoundPerCubicFootPerBarFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0217[PoundPerCubicInchPerBarFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0217[PoundPerCubicInchPerBarFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0217[PoundPerCubicInchPerBarFahrenheit] -->|ConversionFactorB| N0218(("2.007071777782427")) 
+	N0217[PoundPerCubicInchPerBarFahrenheit] -->|Symbol| N0219(("lb/in³/(bar•°F)")) 
+	N0217[PoundPerCubicInchPerBarFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0220[PoundPerCubicYardPerBarFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0220[PoundPerCubicYardPerBarFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0220[PoundPerCubicYardPerBarFahrenheit] -->|ConversionFactorB| N0221(("93641.94086421687")) 
+	N0220[PoundPerCubicYardPerBarFahrenheit] -->|Symbol| N0222(("lb/yd³/(bar•°F)")) 
+	N0220[PoundPerCubicYardPerBarFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0223[KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0223[KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0223[KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit] -->|ConversionFactorB| N0224(("3830.420718426867")) 
+	N0223[KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit] -->|Symbol| N0225(("kg/m³/(psi•°F)")) 
+	N0223[KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0226[SpecificGravityPerPoundPerSquareInchFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0226[SpecificGravityPerPoundPerSquareInchFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0226[SpecificGravityPerPoundPerSquareInchFahrenheit] -->|ConversionFactorB| N0227(("3.8305279732101174")) 
+	N0226[SpecificGravityPerPoundPerSquareInchFahrenheit] -->|Symbol| N0228(("sg/(psi•°F)")) 
+	N0226[SpecificGravityPerPoundPerSquareInchFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0229[GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0229[GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0229[GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit] -->|ConversionFactorB| N0230(("3.8304207184268675")) 
+	N0229[GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit] -->|Symbol| N0231(("g/cm³/(psi•°F)")) 
+	N0229[GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0232[PoundPerGallonUkPerPoundPerSquareInchFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0232[PoundPerGallonUkPerPoundPerSquareInchFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0232[PoundPerGallonUkPerPoundPerSquareInchFahrenheit] -->|ConversionFactorB| N0233(("38.39005784826847")) 
+	N0232[PoundPerGallonUkPerPoundPerSquareInchFahrenheit] -->|Symbol| N0234(("ppgUK/(psi•°F)")) 
+	N0232[PoundPerGallonUkPerPoundPerSquareInchFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0235[PoundPerGallonUsPerPoundPerSquareInchFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0235[PoundPerGallonUsPerPoundPerSquareInchFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0235[PoundPerGallonUsPerPoundPerSquareInchFahrenheit] -->|ConversionFactorB| N0236(("31.966410116666665")) 
+	N0235[PoundPerGallonUsPerPoundPerSquareInchFahrenheit] -->|Symbol| N0237(("ppgUS/(psi•°F)")) 
+	N0235[PoundPerGallonUsPerPoundPerSquareInchFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0238[PoundPerCubicFootPerPoundPerSquareInchFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0238[PoundPerCubicFootPerPoundPerSquareInchFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0238[PoundPerCubicFootPerPoundPerSquareInchFahrenheit] -->|ConversionFactorB| N0239(("239.1253535999999")) 
+	N0238[PoundPerCubicFootPerPoundPerSquareInchFahrenheit] -->|Symbol| N0240(("lb/ft³/(psi•°F)")) 
+	N0238[PoundPerCubicFootPerPoundPerSquareInchFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0241[PoundPerCubicInchPerPoundPerSquareInchFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0241[PoundPerCubicInchPerPoundPerSquareInchFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0241[PoundPerCubicInchPerPoundPerSquareInchFahrenheit] -->|ConversionFactorB| N0242(("0.13838272777777774")) 
+	N0241[PoundPerCubicInchPerPoundPerSquareInchFahrenheit] -->|Symbol| N0243(("lb/in³/(psi•°F)")) 
+	N0241[PoundPerCubicInchPerPoundPerSquareInchFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+	N0244[PoundPerCubicYardPerPoundPerSquareInchFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0244[PoundPerCubicYardPerPoundPerSquareInchFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0244[PoundPerCubicYardPerPoundPerSquareInchFahrenheit] -->|ConversionFactorB| N0245(("6456.384547199997")) 
+	N0244[PoundPerCubicYardPerPoundPerSquareInchFahrenheit] -->|Symbol| N0246(("lb/yd³/(psi•°F)")) 
+	N0244[PoundPerCubicYardPerPoundPerSquareInchFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureTemperatureQuantity)) 
+```
+## MassDensityGradientPerPressureSquaredTemperatureQuantity <!-- NOUN -->
+- Display name: MassDensityGradientPerPressureSquaredTemperature
+- Parent class: [Quantity](#Quantity)
+- Specialization:
+  - L = -1
+  - M = -1
+  - T = 4
+  - ThT = -1
+- Description: 
+A mass density gradient per pressure squared is the second derivative of a mass density compared to pressure: $\frac{d^{2}\rho}{dp^{2}}$, where $\rho$ is a mass density and $p$ is pressure.
+The dimension of mass density gradient per pressure squared is:
+$$[T^{4}L^{-1}M^{-1}K^{-1}]$$.
+The SI unit for **mass density gradient per pressure squared** is: kilogram per cubic metre per pascal squared kelvin with the associated unit label $\frac{\frac{kg}{m^{3}}}{Pa^{2} \cdot K}$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:MassDensityGradientPerPressureSquaredTemperatureQuantity
+MassDensityGradientPerPressureSquaredTemperatureQuantity.L = -1
+MassDensityGradientPerPressureSquaredTemperatureQuantity.M = -1
+MassDensityGradientPerPressureSquaredTemperatureQuantity.T = 4
+MassDensityGradientPerPressureSquaredTemperatureQuantity.ThT = -1
+Unit:KilogramPerCubicMetrePerPascalSquaredKelvin
+KilogramPerCubicMetrePerPascalSquaredKelvin.ConversionFactorA = 0
+KilogramPerCubicMetrePerPascalSquaredKelvin.ConversionFactorB = 1
+KilogramPerCubicMetrePerPascalSquaredKelvin.Symbol = "kg/m³/(Pa²•K)"
+KilogramPerCubicMetrePerPascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+MassDensityGradientPerPressureSquaredTemperatureQuantity HasSIUnit KilogramPerCubicMetrePerPascalSquaredKelvin
+Unit:SpecificGravityPerPascalSquaredKelvin
+SpecificGravityPerPascalSquaredKelvin.ConversionFactorA = 0
+SpecificGravityPerPascalSquaredKelvin.ConversionFactorB = 0.001000028000784022
+SpecificGravityPerPascalSquaredKelvin.Symbol = "sg/(Pa²•K)"
+SpecificGravityPerPascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:GramPerCubicCentimetrePerPascalSquaredKelvin
+GramPerCubicCentimetrePerPascalSquaredKelvin.ConversionFactorA = 0
+GramPerCubicCentimetrePerPascalSquaredKelvin.ConversionFactorB = 0.0010000000000000002
+GramPerCubicCentimetrePerPascalSquaredKelvin.Symbol = "g/cm³/(Pa²•K)"
+GramPerCubicCentimetrePerPascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUkPerPascalSquaredKelvin
+PoundPerGallonUkPerPascalSquaredKelvin.ConversionFactorA = 0
+PoundPerGallonUkPerPascalSquaredKelvin.ConversionFactorB = 0.010022412854960501
+PoundPerGallonUkPerPascalSquaredKelvin.Symbol = "ppgUK/(Pa²•K)"
+PoundPerGallonUkPerPascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUsPerPascalSquaredKelvin
+PoundPerGallonUsPerPascalSquaredKelvin.ConversionFactorA = 0
+PoundPerGallonUsPerPascalSquaredKelvin.ConversionFactorB = 0.00834540445201933
+PoundPerGallonUsPerPascalSquaredKelvin.Symbol = "ppgUS/(Pa²•K)"
+PoundPerGallonUsPerPascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicFootPerPascalSquaredKelvin
+PoundPerCubicFootPerPascalSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicFootPerPascalSquaredKelvin.ConversionFactorB = 0.06242796057614459
+PoundPerCubicFootPerPascalSquaredKelvin.Symbol = "lb/ft³/(Pa²•K)"
+PoundPerCubicFootPerPascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicInchPerPascalSquaredKelvin
+PoundPerCubicInchPerPascalSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicInchPerPascalSquaredKelvin.ConversionFactorB = 3.612729200008369E-05
+PoundPerCubicInchPerPascalSquaredKelvin.Symbol = "lb/in³/(Pa²•K)"
+PoundPerCubicInchPerPascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicYardPerPascalSquaredKelvin
+PoundPerCubicYardPerPascalSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicYardPerPascalSquaredKelvin.ConversionFactorB = 1.6855549355559039
+PoundPerCubicYardPerPascalSquaredKelvin.Symbol = "lb/yd³/(Pa²•K)"
+PoundPerCubicYardPerPascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:KilogramPerCubicMetrePerBarSquaredKelvin
+KilogramPerCubicMetrePerBarSquaredKelvin.ConversionFactorA = 0
+KilogramPerCubicMetrePerBarSquaredKelvin.ConversionFactorB = 10000000000
+KilogramPerCubicMetrePerBarSquaredKelvin.Symbol = "kg/m³/(bar²•K)"
+KilogramPerCubicMetrePerBarSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:SpecificGravityPerBarSquaredKelvin
+SpecificGravityPerBarSquaredKelvin.ConversionFactorA = 0
+SpecificGravityPerBarSquaredKelvin.ConversionFactorB = 10000280.00784022
+SpecificGravityPerBarSquaredKelvin.Symbol = "sg/(bar²•K)"
+SpecificGravityPerBarSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:GramPerCubicCentimetrePerBarSquaredKelvin
+GramPerCubicCentimetrePerBarSquaredKelvin.ConversionFactorA = 0
+GramPerCubicCentimetrePerBarSquaredKelvin.ConversionFactorB = 10000000.000000002
+GramPerCubicCentimetrePerBarSquaredKelvin.Symbol = "g/cm³/(bar²•K)"
+GramPerCubicCentimetrePerBarSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUkPerBarSquaredKelvin
+PoundPerGallonUkPerBarSquaredKelvin.ConversionFactorA = 0
+PoundPerGallonUkPerBarSquaredKelvin.ConversionFactorB = 100224128.54960501
+PoundPerGallonUkPerBarSquaredKelvin.Symbol = "ppgUK/(bar²•K)"
+PoundPerGallonUkPerBarSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUsPerBarSquaredKelvin
+PoundPerGallonUsPerBarSquaredKelvin.ConversionFactorA = 0
+PoundPerGallonUsPerBarSquaredKelvin.ConversionFactorB = 83454044.52019331
+PoundPerGallonUsPerBarSquaredKelvin.Symbol = "ppgUS/(bar²•K)"
+PoundPerGallonUsPerBarSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicFootPerBarSquaredKelvin
+PoundPerCubicFootPerBarSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicFootPerBarSquaredKelvin.ConversionFactorB = 624279605.7614459
+PoundPerCubicFootPerBarSquaredKelvin.Symbol = "lb/ft³/(bar²•K)"
+PoundPerCubicFootPerBarSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicInchPerBarSquaredKelvin
+PoundPerCubicInchPerBarSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicInchPerBarSquaredKelvin.ConversionFactorB = 361272.9200008369
+PoundPerCubicInchPerBarSquaredKelvin.Symbol = "lb/in³/(bar²•K)"
+PoundPerCubicInchPerBarSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicYardPerBarSquaredKelvin
+PoundPerCubicYardPerBarSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicYardPerBarSquaredKelvin.ConversionFactorB = 16855549355.559038
+PoundPerCubicYardPerBarSquaredKelvin.Symbol = "lb/yd³/(bar²•K)"
+PoundPerCubicYardPerBarSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:KilogramPerCubicMetrePerMegapascalSquaredKelvin
+KilogramPerCubicMetrePerMegapascalSquaredKelvin.ConversionFactorA = 0
+KilogramPerCubicMetrePerMegapascalSquaredKelvin.ConversionFactorB = 1000000000000
+KilogramPerCubicMetrePerMegapascalSquaredKelvin.Symbol = "kg/m³/(MPa²•K)"
+KilogramPerCubicMetrePerMegapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:SpecificGravityPerMegapascalSquaredKelvin
+SpecificGravityPerMegapascalSquaredKelvin.ConversionFactorA = 0
+SpecificGravityPerMegapascalSquaredKelvin.ConversionFactorB = 1000028000.784022
+SpecificGravityPerMegapascalSquaredKelvin.Symbol = "sg/(MPa²•K)"
+SpecificGravityPerMegapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:GramPerCubicCentimetrePerMegapascalSquaredKelvin
+GramPerCubicCentimetrePerMegapascalSquaredKelvin.ConversionFactorA = 0
+GramPerCubicCentimetrePerMegapascalSquaredKelvin.ConversionFactorB = 1000000000.0000002
+GramPerCubicCentimetrePerMegapascalSquaredKelvin.Symbol = "g/cm³/(MPa²•K)"
+GramPerCubicCentimetrePerMegapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUkPerMegapascalSquaredKelvin
+PoundPerGallonUkPerMegapascalSquaredKelvin.ConversionFactorA = 0
+PoundPerGallonUkPerMegapascalSquaredKelvin.ConversionFactorB = 10022412854.9605
+PoundPerGallonUkPerMegapascalSquaredKelvin.Symbol = "ppgUK/(MPa²•K)"
+PoundPerGallonUkPerMegapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUsPerMegapascalSquaredKelvin
+PoundPerGallonUsPerMegapascalSquaredKelvin.ConversionFactorA = 0
+PoundPerGallonUsPerMegapascalSquaredKelvin.ConversionFactorB = 8345404452.019331
+PoundPerGallonUsPerMegapascalSquaredKelvin.Symbol = "ppgUS/(MPa²•K)"
+PoundPerGallonUsPerMegapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicFootPerMegapascalSquaredKelvin
+PoundPerCubicFootPerMegapascalSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicFootPerMegapascalSquaredKelvin.ConversionFactorB = 62427960576.14459
+PoundPerCubicFootPerMegapascalSquaredKelvin.Symbol = "lb/ft³/(MPa²•K)"
+PoundPerCubicFootPerMegapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicInchPerMegapascalSquaredKelvin
+PoundPerCubicInchPerMegapascalSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicInchPerMegapascalSquaredKelvin.ConversionFactorB = 36127292.000083685
+PoundPerCubicInchPerMegapascalSquaredKelvin.Symbol = "lb/in³/(MPa²•K)"
+PoundPerCubicInchPerMegapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicYardPerMegapascalSquaredKelvin
+PoundPerCubicYardPerMegapascalSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicYardPerMegapascalSquaredKelvin.ConversionFactorB = 1685554935555.9036
+PoundPerCubicYardPerMegapascalSquaredKelvin.Symbol = "lb/yd³/(MPa²•K)"
+PoundPerCubicYardPerMegapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:KilogramPerCubicMetrePerGigapascalSquaredKelvin
+KilogramPerCubicMetrePerGigapascalSquaredKelvin.ConversionFactorA = 0
+KilogramPerCubicMetrePerGigapascalSquaredKelvin.ConversionFactorB = 1E+18
+KilogramPerCubicMetrePerGigapascalSquaredKelvin.Symbol = "kg/m³/(GPa²•K)"
+KilogramPerCubicMetrePerGigapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:SpecificGravityPerGigapascalSquaredKelvin
+SpecificGravityPerGigapascalSquaredKelvin.ConversionFactorA = 0
+SpecificGravityPerGigapascalSquaredKelvin.ConversionFactorB = 1000028000784021.9
+SpecificGravityPerGigapascalSquaredKelvin.Symbol = "sg/(GPa²•K)"
+SpecificGravityPerGigapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:GramPerCubicCentimetrePerGigapascalSquaredKelvin
+GramPerCubicCentimetrePerGigapascalSquaredKelvin.ConversionFactorA = 0
+GramPerCubicCentimetrePerGigapascalSquaredKelvin.ConversionFactorB = 1000000000000000.1
+GramPerCubicCentimetrePerGigapascalSquaredKelvin.Symbol = "g/cm³/(GPa²•K)"
+GramPerCubicCentimetrePerGigapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUkPerGigapascalSquaredKelvin
+PoundPerGallonUkPerGigapascalSquaredKelvin.ConversionFactorA = 0
+PoundPerGallonUkPerGigapascalSquaredKelvin.ConversionFactorB = 10022412854960500
+PoundPerGallonUkPerGigapascalSquaredKelvin.Symbol = "ppgUK/(GPa²•K)"
+PoundPerGallonUkPerGigapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUsPerGigapascalSquaredKelvin
+PoundPerGallonUsPerGigapascalSquaredKelvin.ConversionFactorA = 0
+PoundPerGallonUsPerGigapascalSquaredKelvin.ConversionFactorB = 8345404452019330
+PoundPerGallonUsPerGigapascalSquaredKelvin.Symbol = "ppgUS/(GPa²•K)"
+PoundPerGallonUsPerGigapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicFootPerGigapascalSquaredKelvin
+PoundPerCubicFootPerGigapascalSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicFootPerGigapascalSquaredKelvin.ConversionFactorB = 62427960576144584
+PoundPerCubicFootPerGigapascalSquaredKelvin.Symbol = "lb/ft³/(GPa²•K)"
+PoundPerCubicFootPerGigapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicInchPerGigapascalSquaredKelvin
+PoundPerCubicInchPerGigapascalSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicInchPerGigapascalSquaredKelvin.ConversionFactorB = 36127292000083.68
+PoundPerCubicInchPerGigapascalSquaredKelvin.Symbol = "lb/in³/(GPa²•K)"
+PoundPerCubicInchPerGigapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicYardPerGigapascalSquaredKelvin
+PoundPerCubicYardPerGigapascalSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicYardPerGigapascalSquaredKelvin.ConversionFactorB = 1.685554935555904E+18
+PoundPerCubicYardPerGigapascalSquaredKelvin.Symbol = "lb/yd³/(GPa²•K)"
+PoundPerCubicYardPerGigapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin.ConversionFactorA = 0
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin.ConversionFactorB = 47537678.1316983
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin.Symbol = "kg/m³/(psi²•K)"
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:SpecificGravityPerPoundPerSquareInchSquaredKelvin
+SpecificGravityPerPoundPerSquareInchSquaredKelvin.ConversionFactorA = 0
+SpecificGravityPerPoundPerSquareInchSquaredKelvin.ConversionFactorB = 47539.00922395657
+SpecificGravityPerPoundPerSquareInchSquaredKelvin.Symbol = "sg/(psi²•K)"
+SpecificGravityPerPoundPerSquareInchSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin.ConversionFactorA = 0
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin.ConversionFactorB = 47537.6781316983
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin.Symbol = "g/cm³/(psi²•K)"
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin
+PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin.ConversionFactorA = 0
+PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin.ConversionFactorB = 476442.2364021077
+PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin.Symbol = "ppgUK/(psi²•K)"
+PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin
+PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin.ConversionFactorA = 0
+PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin.ConversionFactorB = 396721.15071893705
+PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin.Symbol = "ppgUS/(psi²•K)"
+PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin
+PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin.ConversionFactorB = 2967680.2962871124
+PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin.Symbol = "lb/ft³/(psi²•K)"
+PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin
+PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin.ConversionFactorB = 1717.4075788698572
+PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin.Symbol = "lb/in³/(psi²•K)"
+PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin
+PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin.ConversionFactorB = 80127367.99975201
+PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin.Symbol = "lb/yd³/(psi²•K)"
+PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:KilogramPerCubicMetrePerPascalSquaredCelsius
+KilogramPerCubicMetrePerPascalSquaredCelsius.ConversionFactorA = 0
+KilogramPerCubicMetrePerPascalSquaredCelsius.ConversionFactorB = 1
+KilogramPerCubicMetrePerPascalSquaredCelsius.Symbol = "kg/m³/(Pa²•°C)"
+KilogramPerCubicMetrePerPascalSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:SpecificGravityPerPascalSquaredCelsius
+SpecificGravityPerPascalSquaredCelsius.ConversionFactorA = 0
+SpecificGravityPerPascalSquaredCelsius.ConversionFactorB = 0.001000028000784022
+SpecificGravityPerPascalSquaredCelsius.Symbol = "sg/(Pa²•°C)"
+SpecificGravityPerPascalSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:GramPerCubicCentimetrePerPascalSquaredCelsius
+GramPerCubicCentimetrePerPascalSquaredCelsius.ConversionFactorA = 0
+GramPerCubicCentimetrePerPascalSquaredCelsius.ConversionFactorB = 0.0010000000000000002
+GramPerCubicCentimetrePerPascalSquaredCelsius.Symbol = "g/cm³/(Pa²•°C)"
+GramPerCubicCentimetrePerPascalSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUkPerPascalSquaredCelsius
+PoundPerGallonUkPerPascalSquaredCelsius.ConversionFactorA = 0
+PoundPerGallonUkPerPascalSquaredCelsius.ConversionFactorB = 0.010022412854960501
+PoundPerGallonUkPerPascalSquaredCelsius.Symbol = "ppgUK/(Pa²•°C)"
+PoundPerGallonUkPerPascalSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUsPerPascalSquaredCelsius
+PoundPerGallonUsPerPascalSquaredCelsius.ConversionFactorA = 0
+PoundPerGallonUsPerPascalSquaredCelsius.ConversionFactorB = 0.00834540445201933
+PoundPerGallonUsPerPascalSquaredCelsius.Symbol = "ppgUS/(Pa²•°C)"
+PoundPerGallonUsPerPascalSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicFootPerPascalSquaredCelsius
+PoundPerCubicFootPerPascalSquaredCelsius.ConversionFactorA = 0
+PoundPerCubicFootPerPascalSquaredCelsius.ConversionFactorB = 0.06242796057614459
+PoundPerCubicFootPerPascalSquaredCelsius.Symbol = "lb/ft³/(Pa²•°C)"
+PoundPerCubicFootPerPascalSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicInchPerPascalSquaredCelsius
+PoundPerCubicInchPerPascalSquaredCelsius.ConversionFactorA = 0
+PoundPerCubicInchPerPascalSquaredCelsius.ConversionFactorB = 3.612729200008369E-05
+PoundPerCubicInchPerPascalSquaredCelsius.Symbol = "lb/in³/(Pa²•°C)"
+PoundPerCubicInchPerPascalSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicYardPerPascalSquaredCelsius
+PoundPerCubicYardPerPascalSquaredCelsius.ConversionFactorA = 0
+PoundPerCubicYardPerPascalSquaredCelsius.ConversionFactorB = 1.6855549355559039
+PoundPerCubicYardPerPascalSquaredCelsius.Symbol = "lb/yd³/(Pa²•°C)"
+PoundPerCubicYardPerPascalSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:KilogramPerCubicMetrePerBarSquaredCelsius
+KilogramPerCubicMetrePerBarSquaredCelsius.ConversionFactorA = 0
+KilogramPerCubicMetrePerBarSquaredCelsius.ConversionFactorB = 10000000000
+KilogramPerCubicMetrePerBarSquaredCelsius.Symbol = "kg/m³/(bar²•°C)"
+KilogramPerCubicMetrePerBarSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:SpecificGravityPerBarSquaredCelsius
+SpecificGravityPerBarSquaredCelsius.ConversionFactorA = 0
+SpecificGravityPerBarSquaredCelsius.ConversionFactorB = 10000280.00784022
+SpecificGravityPerBarSquaredCelsius.Symbol = "sg/(bar²•°C)"
+SpecificGravityPerBarSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:GramPerCubicCentimetrePerBarSquaredCelsius
+GramPerCubicCentimetrePerBarSquaredCelsius.ConversionFactorA = 0
+GramPerCubicCentimetrePerBarSquaredCelsius.ConversionFactorB = 10000000.000000002
+GramPerCubicCentimetrePerBarSquaredCelsius.Symbol = "g/cm³/(bar²•°C)"
+GramPerCubicCentimetrePerBarSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUkPerBarSquaredCelsius
+PoundPerGallonUkPerBarSquaredCelsius.ConversionFactorA = 0
+PoundPerGallonUkPerBarSquaredCelsius.ConversionFactorB = 100224128.54960501
+PoundPerGallonUkPerBarSquaredCelsius.Symbol = "ppgUK/(bar²•°C)"
+PoundPerGallonUkPerBarSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUsPerBarSquaredCelsius
+PoundPerGallonUsPerBarSquaredCelsius.ConversionFactorA = 0
+PoundPerGallonUsPerBarSquaredCelsius.ConversionFactorB = 83454044.52019331
+PoundPerGallonUsPerBarSquaredCelsius.Symbol = "ppgUS/(bar²•°C)"
+PoundPerGallonUsPerBarSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicFootPerBarSquaredCelsius
+PoundPerCubicFootPerBarSquaredCelsius.ConversionFactorA = 0
+PoundPerCubicFootPerBarSquaredCelsius.ConversionFactorB = 624279605.7614459
+PoundPerCubicFootPerBarSquaredCelsius.Symbol = "lb/ft³/(bar²•°C)"
+PoundPerCubicFootPerBarSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicInchPerBarSquaredCelsius
+PoundPerCubicInchPerBarSquaredCelsius.ConversionFactorA = 0
+PoundPerCubicInchPerBarSquaredCelsius.ConversionFactorB = 361272.9200008369
+PoundPerCubicInchPerBarSquaredCelsius.Symbol = "lb/in³/(bar²•°C)"
+PoundPerCubicInchPerBarSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicYardPerBarSquaredCelsius
+PoundPerCubicYardPerBarSquaredCelsius.ConversionFactorA = 0
+PoundPerCubicYardPerBarSquaredCelsius.ConversionFactorB = 16855549355.559038
+PoundPerCubicYardPerBarSquaredCelsius.Symbol = "lb/yd³/(bar²•°C)"
+PoundPerCubicYardPerBarSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius.ConversionFactorA = 0
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius.ConversionFactorB = 47537678.1316983
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius.Symbol = "kg/m³/(psi²•°C)"
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:SpecificGravityPerPoundPerSquareInchSquaredCelsius
+SpecificGravityPerPoundPerSquareInchSquaredCelsius.ConversionFactorA = 0
+SpecificGravityPerPoundPerSquareInchSquaredCelsius.ConversionFactorB = 47539.00922395657
+SpecificGravityPerPoundPerSquareInchSquaredCelsius.Symbol = "sg/(psi²•°C)"
+SpecificGravityPerPoundPerSquareInchSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius.ConversionFactorA = 0
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius.ConversionFactorB = 47537.6781316983
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius.Symbol = "g/cm³/(psi²•°C)"
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius
+PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius.ConversionFactorA = 0
+PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius.ConversionFactorB = 476442.2364021077
+PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius.Symbol = "ppgUK/(psi²•°C)"
+PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius
+PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius.ConversionFactorA = 0
+PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius.ConversionFactorB = 396721.15071893705
+PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius.Symbol = "ppgUS/(psi²•°C)"
+PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius
+PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius.ConversionFactorA = 0
+PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius.ConversionFactorB = 2967680.2962871124
+PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius.Symbol = "lb/ft³/(psi²•°C)"
+PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius
+PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius.ConversionFactorA = 0
+PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius.ConversionFactorB = 1717.4075788698572
+PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius.Symbol = "lb/in³/(psi²•°C)"
+PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius
+PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius.ConversionFactorA = 0
+PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius.ConversionFactorB = 80127367.99975201
+PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius.Symbol = "lb/yd³/(psi²•°C)"
+PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:KilogramPerCubicMetrePerPascalSquaredFahrenheit
+KilogramPerCubicMetrePerPascalSquaredFahrenheit.ConversionFactorA = 0
+KilogramPerCubicMetrePerPascalSquaredFahrenheit.ConversionFactorB = 0.5555555555555556
+KilogramPerCubicMetrePerPascalSquaredFahrenheit.Symbol = "kg/m³/(Pa²•°F)"
+KilogramPerCubicMetrePerPascalSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:SpecificGravityPerPascalSquaredFahrenheit
+SpecificGravityPerPascalSquaredFahrenheit.ConversionFactorA = 0
+SpecificGravityPerPascalSquaredFahrenheit.ConversionFactorB = 0.0005555711115466789
+SpecificGravityPerPascalSquaredFahrenheit.Symbol = "sg/(Pa²•°F)"
+SpecificGravityPerPascalSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:GramPerCubicCentimetrePerPascalSquaredFahrenheit
+GramPerCubicCentimetrePerPascalSquaredFahrenheit.ConversionFactorA = 0
+GramPerCubicCentimetrePerPascalSquaredFahrenheit.ConversionFactorB = 0.0005555555555555557
+GramPerCubicCentimetrePerPascalSquaredFahrenheit.Symbol = "g/cm³/(Pa²•°F)"
+GramPerCubicCentimetrePerPascalSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUkPerPascalSquaredFahrenheit
+PoundPerGallonUkPerPascalSquaredFahrenheit.ConversionFactorA = 0
+PoundPerGallonUkPerPascalSquaredFahrenheit.ConversionFactorB = 0.005568007141644723
+PoundPerGallonUkPerPascalSquaredFahrenheit.Symbol = "ppgUK/(Pa²•°F)"
+PoundPerGallonUkPerPascalSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUsPerPascalSquaredFahrenheit
+PoundPerGallonUsPerPascalSquaredFahrenheit.ConversionFactorA = 0
+PoundPerGallonUsPerPascalSquaredFahrenheit.ConversionFactorB = 0.004636335806677406
+PoundPerGallonUsPerPascalSquaredFahrenheit.Symbol = "ppgUS/(Pa²•°F)"
+PoundPerGallonUsPerPascalSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicFootPerPascalSquaredFahrenheit
+PoundPerCubicFootPerPascalSquaredFahrenheit.ConversionFactorA = 0
+PoundPerCubicFootPerPascalSquaredFahrenheit.ConversionFactorB = 0.03468220032008033
+PoundPerCubicFootPerPascalSquaredFahrenheit.Symbol = "lb/ft³/(Pa²•°F)"
+PoundPerCubicFootPerPascalSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicInchPerPascalSquaredFahrenheit
+PoundPerCubicInchPerPascalSquaredFahrenheit.ConversionFactorA = 0
+PoundPerCubicInchPerPascalSquaredFahrenheit.ConversionFactorB = 2.0070717777824268E-05
+PoundPerCubicInchPerPascalSquaredFahrenheit.Symbol = "lb/in³/(Pa²•°F)"
+PoundPerCubicInchPerPascalSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicYardPerPascalSquaredFahrenheit
+PoundPerCubicYardPerPascalSquaredFahrenheit.ConversionFactorA = 0
+PoundPerCubicYardPerPascalSquaredFahrenheit.ConversionFactorB = 0.9364194086421688
+PoundPerCubicYardPerPascalSquaredFahrenheit.Symbol = "lb/yd³/(Pa²•°F)"
+PoundPerCubicYardPerPascalSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:KilogramPerCubicMetrePerBarSquaredFahrenheit
+KilogramPerCubicMetrePerBarSquaredFahrenheit.ConversionFactorA = 0
+KilogramPerCubicMetrePerBarSquaredFahrenheit.ConversionFactorB = 5555555555.555555
+KilogramPerCubicMetrePerBarSquaredFahrenheit.Symbol = "kg/m³/(bar²•°F)"
+KilogramPerCubicMetrePerBarSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:SpecificGravityPerBarSquaredFahrenheit
+SpecificGravityPerBarSquaredFahrenheit.ConversionFactorA = 0
+SpecificGravityPerBarSquaredFahrenheit.ConversionFactorB = 5555711.115466789
+SpecificGravityPerBarSquaredFahrenheit.Symbol = "sg/(bar²•°F)"
+SpecificGravityPerBarSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:GramPerCubicCentimetrePerBarSquaredFahrenheit
+GramPerCubicCentimetrePerBarSquaredFahrenheit.ConversionFactorA = 0
+GramPerCubicCentimetrePerBarSquaredFahrenheit.ConversionFactorB = 5555555.555555557
+GramPerCubicCentimetrePerBarSquaredFahrenheit.Symbol = "g/cm³/(bar²•°F)"
+GramPerCubicCentimetrePerBarSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUkPerBarSquaredFahrenheit
+PoundPerGallonUkPerBarSquaredFahrenheit.ConversionFactorA = 0
+PoundPerGallonUkPerBarSquaredFahrenheit.ConversionFactorB = 55680071.41644723
+PoundPerGallonUkPerBarSquaredFahrenheit.Symbol = "ppgUK/(bar²•°F)"
+PoundPerGallonUkPerBarSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUsPerBarSquaredFahrenheit
+PoundPerGallonUsPerBarSquaredFahrenheit.ConversionFactorA = 0
+PoundPerGallonUsPerBarSquaredFahrenheit.ConversionFactorB = 46363358.06677406
+PoundPerGallonUsPerBarSquaredFahrenheit.Symbol = "ppgUS/(bar²•°F)"
+PoundPerGallonUsPerBarSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicFootPerBarSquaredFahrenheit
+PoundPerCubicFootPerBarSquaredFahrenheit.ConversionFactorA = 0
+PoundPerCubicFootPerBarSquaredFahrenheit.ConversionFactorB = 346822003.2008033
+PoundPerCubicFootPerBarSquaredFahrenheit.Symbol = "lb/ft³/(bar²•°F)"
+PoundPerCubicFootPerBarSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicInchPerBarSquaredFahrenheit
+PoundPerCubicInchPerBarSquaredFahrenheit.ConversionFactorA = 0
+PoundPerCubicInchPerBarSquaredFahrenheit.ConversionFactorB = 200707.1777782427
+PoundPerCubicInchPerBarSquaredFahrenheit.Symbol = "lb/in³/(bar²•°F)"
+PoundPerCubicInchPerBarSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicYardPerBarSquaredFahrenheit
+PoundPerCubicYardPerBarSquaredFahrenheit.ConversionFactorA = 0
+PoundPerCubicYardPerBarSquaredFahrenheit.ConversionFactorB = 9364194086.421688
+PoundPerCubicYardPerBarSquaredFahrenheit.Symbol = "lb/yd³/(bar²•°F)"
+PoundPerCubicYardPerBarSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit.ConversionFactorA = 0
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit.ConversionFactorB = 26409821.184276838
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit.Symbol = "kg/m³/(psi²•°F)"
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:SpecificGravityPerPoundPerSquareInchSquaredFahrenheit
+SpecificGravityPerPoundPerSquareInchSquaredFahrenheit.ConversionFactorA = 0
+SpecificGravityPerPoundPerSquareInchSquaredFahrenheit.ConversionFactorB = 26410.560679975875
+SpecificGravityPerPoundPerSquareInchSquaredFahrenheit.Symbol = "sg/(psi²•°F)"
+SpecificGravityPerPoundPerSquareInchSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit.ConversionFactorA = 0
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit.ConversionFactorB = 26409.82118427684
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit.Symbol = "g/cm³/(psi²•°F)"
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit
+PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit.ConversionFactorA = 0
+PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit.ConversionFactorB = 264690.1313345043
+PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit.Symbol = "ppgUK/(psi²•°F)"
+PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit
+PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit.ConversionFactorA = 0
+PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit.ConversionFactorB = 220400.63928829838
+PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit.Symbol = "ppgUS/(psi²•°F)"
+PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit
+PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit.ConversionFactorA = 0
+PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit.ConversionFactorB = 1648711.2757150626
+PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit.Symbol = "lb/ft³/(psi²•°F)"
+PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit
+PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit.ConversionFactorA = 0
+PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit.ConversionFactorB = 954.1153215943651
+PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit.Symbol = "lb/in³/(psi²•°F)"
+PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit
+PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit.ConversionFactorA = 0
+PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit.ConversionFactorB = 44515204.44430668
+PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit.Symbol = "lb/yd³/(psi²•°F)"
+PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] -->|L| N0002(("-1")) 
+	N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] -->|M| N0002(("-1")) 
+	N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] -->|T| N0003(("4")) 
+	N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] -->|ThT| N0002(("-1")) 
+	N0004[KilogramPerCubicMetrePerPascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0004[KilogramPerCubicMetrePerPascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0004[KilogramPerCubicMetrePerPascalSquaredKelvin] -->|ConversionFactorB| N0007(("1")) 
+	N0004[KilogramPerCubicMetrePerPascalSquaredKelvin] -->|Symbol| N0008(("kg/m³/(Pa²•K)")) 
+	N0004[KilogramPerCubicMetrePerPascalSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] -->|HasSIUnit| N0004((KilogramPerCubicMetrePerPascalSquaredKelvin)) 
+	N0009[SpecificGravityPerPascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0009[SpecificGravityPerPascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0009[SpecificGravityPerPascalSquaredKelvin] -->|ConversionFactorB| N0010(("0.001000028000784022")) 
+	N0009[SpecificGravityPerPascalSquaredKelvin] -->|Symbol| N0011(("sg/(Pa²•K)")) 
+	N0009[SpecificGravityPerPascalSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0012[GramPerCubicCentimetrePerPascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0012[GramPerCubicCentimetrePerPascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0012[GramPerCubicCentimetrePerPascalSquaredKelvin] -->|ConversionFactorB| N0013(("0.0010000000000000002")) 
+	N0012[GramPerCubicCentimetrePerPascalSquaredKelvin] -->|Symbol| N0014(("g/cm³/(Pa²•K)")) 
+	N0012[GramPerCubicCentimetrePerPascalSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0015[PoundPerGallonUkPerPascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0015[PoundPerGallonUkPerPascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0015[PoundPerGallonUkPerPascalSquaredKelvin] -->|ConversionFactorB| N0016(("0.010022412854960501")) 
+	N0015[PoundPerGallonUkPerPascalSquaredKelvin] -->|Symbol| N0017(("ppgUK/(Pa²•K)")) 
+	N0015[PoundPerGallonUkPerPascalSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0018[PoundPerGallonUsPerPascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0018[PoundPerGallonUsPerPascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0018[PoundPerGallonUsPerPascalSquaredKelvin] -->|ConversionFactorB| N0019(("0.00834540445201933")) 
+	N0018[PoundPerGallonUsPerPascalSquaredKelvin] -->|Symbol| N0020(("ppgUS/(Pa²•K)")) 
+	N0018[PoundPerGallonUsPerPascalSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0021[PoundPerCubicFootPerPascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0021[PoundPerCubicFootPerPascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0021[PoundPerCubicFootPerPascalSquaredKelvin] -->|ConversionFactorB| N0022(("0.06242796057614459")) 
+	N0021[PoundPerCubicFootPerPascalSquaredKelvin] -->|Symbol| N0023(("lb/ft³/(Pa²•K)")) 
+	N0021[PoundPerCubicFootPerPascalSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0024[PoundPerCubicInchPerPascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0024[PoundPerCubicInchPerPascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0024[PoundPerCubicInchPerPascalSquaredKelvin] -->|ConversionFactorB| N0025(("3.612729200008369E-05")) 
+	N0024[PoundPerCubicInchPerPascalSquaredKelvin] -->|Symbol| N0026(("lb/in³/(Pa²•K)")) 
+	N0024[PoundPerCubicInchPerPascalSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0027[PoundPerCubicYardPerPascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0027[PoundPerCubicYardPerPascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0027[PoundPerCubicYardPerPascalSquaredKelvin] -->|ConversionFactorB| N0028(("1.6855549355559039")) 
+	N0027[PoundPerCubicYardPerPascalSquaredKelvin] -->|Symbol| N0029(("lb/yd³/(Pa²•K)")) 
+	N0027[PoundPerCubicYardPerPascalSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0030[KilogramPerCubicMetrePerBarSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0030[KilogramPerCubicMetrePerBarSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0030[KilogramPerCubicMetrePerBarSquaredKelvin] -->|ConversionFactorB| N0031(("10000000000")) 
+	N0030[KilogramPerCubicMetrePerBarSquaredKelvin] -->|Symbol| N0032(("kg/m³/(bar²•K)")) 
+	N0030[KilogramPerCubicMetrePerBarSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0033[SpecificGravityPerBarSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0033[SpecificGravityPerBarSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0033[SpecificGravityPerBarSquaredKelvin] -->|ConversionFactorB| N0034(("10000280.00784022")) 
+	N0033[SpecificGravityPerBarSquaredKelvin] -->|Symbol| N0035(("sg/(bar²•K)")) 
+	N0033[SpecificGravityPerBarSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0036[GramPerCubicCentimetrePerBarSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0036[GramPerCubicCentimetrePerBarSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0036[GramPerCubicCentimetrePerBarSquaredKelvin] -->|ConversionFactorB| N0037(("10000000.000000002")) 
+	N0036[GramPerCubicCentimetrePerBarSquaredKelvin] -->|Symbol| N0038(("g/cm³/(bar²•K)")) 
+	N0036[GramPerCubicCentimetrePerBarSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0039[PoundPerGallonUkPerBarSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0039[PoundPerGallonUkPerBarSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0039[PoundPerGallonUkPerBarSquaredKelvin] -->|ConversionFactorB| N0040(("100224128.54960501")) 
+	N0039[PoundPerGallonUkPerBarSquaredKelvin] -->|Symbol| N0041(("ppgUK/(bar²•K)")) 
+	N0039[PoundPerGallonUkPerBarSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0042[PoundPerGallonUsPerBarSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0042[PoundPerGallonUsPerBarSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0042[PoundPerGallonUsPerBarSquaredKelvin] -->|ConversionFactorB| N0043(("83454044.52019331")) 
+	N0042[PoundPerGallonUsPerBarSquaredKelvin] -->|Symbol| N0044(("ppgUS/(bar²•K)")) 
+	N0042[PoundPerGallonUsPerBarSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0045[PoundPerCubicFootPerBarSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0045[PoundPerCubicFootPerBarSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0045[PoundPerCubicFootPerBarSquaredKelvin] -->|ConversionFactorB| N0046(("624279605.7614459")) 
+	N0045[PoundPerCubicFootPerBarSquaredKelvin] -->|Symbol| N0047(("lb/ft³/(bar²•K)")) 
+	N0045[PoundPerCubicFootPerBarSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0048[PoundPerCubicInchPerBarSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0048[PoundPerCubicInchPerBarSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0048[PoundPerCubicInchPerBarSquaredKelvin] -->|ConversionFactorB| N0049(("361272.9200008369")) 
+	N0048[PoundPerCubicInchPerBarSquaredKelvin] -->|Symbol| N0050(("lb/in³/(bar²•K)")) 
+	N0048[PoundPerCubicInchPerBarSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0051[PoundPerCubicYardPerBarSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0051[PoundPerCubicYardPerBarSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0051[PoundPerCubicYardPerBarSquaredKelvin] -->|ConversionFactorB| N0052(("16855549355.559038")) 
+	N0051[PoundPerCubicYardPerBarSquaredKelvin] -->|Symbol| N0053(("lb/yd³/(bar²•K)")) 
+	N0051[PoundPerCubicYardPerBarSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0054[KilogramPerCubicMetrePerMegapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0054[KilogramPerCubicMetrePerMegapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0054[KilogramPerCubicMetrePerMegapascalSquaredKelvin] -->|ConversionFactorB| N0055(("1000000000000")) 
+	N0054[KilogramPerCubicMetrePerMegapascalSquaredKelvin] -->|Symbol| N0056(("kg/m³/(MPa²•K)")) 
+	N0054[KilogramPerCubicMetrePerMegapascalSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0057[SpecificGravityPerMegapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0057[SpecificGravityPerMegapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0057[SpecificGravityPerMegapascalSquaredKelvin] -->|ConversionFactorB| N0058(("1000028000.784022")) 
+	N0057[SpecificGravityPerMegapascalSquaredKelvin] -->|Symbol| N0059(("sg/(MPa²•K)")) 
+	N0057[SpecificGravityPerMegapascalSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0060[GramPerCubicCentimetrePerMegapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0060[GramPerCubicCentimetrePerMegapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0060[GramPerCubicCentimetrePerMegapascalSquaredKelvin] -->|ConversionFactorB| N0061(("1000000000.0000002")) 
+	N0060[GramPerCubicCentimetrePerMegapascalSquaredKelvin] -->|Symbol| N0062(("g/cm³/(MPa²•K)")) 
+	N0060[GramPerCubicCentimetrePerMegapascalSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0063[PoundPerGallonUkPerMegapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0063[PoundPerGallonUkPerMegapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0063[PoundPerGallonUkPerMegapascalSquaredKelvin] -->|ConversionFactorB| N0064(("10022412854.9605")) 
+	N0063[PoundPerGallonUkPerMegapascalSquaredKelvin] -->|Symbol| N0065(("ppgUK/(MPa²•K)")) 
+	N0063[PoundPerGallonUkPerMegapascalSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0066[PoundPerGallonUsPerMegapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0066[PoundPerGallonUsPerMegapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0066[PoundPerGallonUsPerMegapascalSquaredKelvin] -->|ConversionFactorB| N0067(("8345404452.019331")) 
+	N0066[PoundPerGallonUsPerMegapascalSquaredKelvin] -->|Symbol| N0068(("ppgUS/(MPa²•K)")) 
+	N0066[PoundPerGallonUsPerMegapascalSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0069[PoundPerCubicFootPerMegapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0069[PoundPerCubicFootPerMegapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0069[PoundPerCubicFootPerMegapascalSquaredKelvin] -->|ConversionFactorB| N0070(("62427960576.14459")) 
+	N0069[PoundPerCubicFootPerMegapascalSquaredKelvin] -->|Symbol| N0071(("lb/ft³/(MPa²•K)")) 
+	N0069[PoundPerCubicFootPerMegapascalSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0072[PoundPerCubicInchPerMegapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0072[PoundPerCubicInchPerMegapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0072[PoundPerCubicInchPerMegapascalSquaredKelvin] -->|ConversionFactorB| N0073(("36127292.000083685")) 
+	N0072[PoundPerCubicInchPerMegapascalSquaredKelvin] -->|Symbol| N0074(("lb/in³/(MPa²•K)")) 
+	N0072[PoundPerCubicInchPerMegapascalSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0075[PoundPerCubicYardPerMegapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0075[PoundPerCubicYardPerMegapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0075[PoundPerCubicYardPerMegapascalSquaredKelvin] -->|ConversionFactorB| N0076(("1685554935555.9036")) 
+	N0075[PoundPerCubicYardPerMegapascalSquaredKelvin] -->|Symbol| N0077(("lb/yd³/(MPa²•K)")) 
+	N0075[PoundPerCubicYardPerMegapascalSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0078[KilogramPerCubicMetrePerGigapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0078[KilogramPerCubicMetrePerGigapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0078[KilogramPerCubicMetrePerGigapascalSquaredKelvin] -->|ConversionFactorB| N0079(("1E+18")) 
+	N0078[KilogramPerCubicMetrePerGigapascalSquaredKelvin] -->|Symbol| N0080(("kg/m³/(GPa²•K)")) 
+	N0078[KilogramPerCubicMetrePerGigapascalSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0081[SpecificGravityPerGigapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0081[SpecificGravityPerGigapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0081[SpecificGravityPerGigapascalSquaredKelvin] -->|ConversionFactorB| N0082(("1000028000784021.9")) 
+	N0081[SpecificGravityPerGigapascalSquaredKelvin] -->|Symbol| N0083(("sg/(GPa²•K)")) 
+	N0081[SpecificGravityPerGigapascalSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0084[GramPerCubicCentimetrePerGigapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0084[GramPerCubicCentimetrePerGigapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0084[GramPerCubicCentimetrePerGigapascalSquaredKelvin] -->|ConversionFactorB| N0085(("1000000000000000.1")) 
+	N0084[GramPerCubicCentimetrePerGigapascalSquaredKelvin] -->|Symbol| N0086(("g/cm³/(GPa²•K)")) 
+	N0084[GramPerCubicCentimetrePerGigapascalSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0087[PoundPerGallonUkPerGigapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0087[PoundPerGallonUkPerGigapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0087[PoundPerGallonUkPerGigapascalSquaredKelvin] -->|ConversionFactorB| N0088(("10022412854960500")) 
+	N0087[PoundPerGallonUkPerGigapascalSquaredKelvin] -->|Symbol| N0089(("ppgUK/(GPa²•K)")) 
+	N0087[PoundPerGallonUkPerGigapascalSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0090[PoundPerGallonUsPerGigapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0090[PoundPerGallonUsPerGigapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0090[PoundPerGallonUsPerGigapascalSquaredKelvin] -->|ConversionFactorB| N0091(("8345404452019330")) 
+	N0090[PoundPerGallonUsPerGigapascalSquaredKelvin] -->|Symbol| N0092(("ppgUS/(GPa²•K)")) 
+	N0090[PoundPerGallonUsPerGigapascalSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0093[PoundPerCubicFootPerGigapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0093[PoundPerCubicFootPerGigapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0093[PoundPerCubicFootPerGigapascalSquaredKelvin] -->|ConversionFactorB| N0094(("62427960576144584")) 
+	N0093[PoundPerCubicFootPerGigapascalSquaredKelvin] -->|Symbol| N0095(("lb/ft³/(GPa²•K)")) 
+	N0093[PoundPerCubicFootPerGigapascalSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0096[PoundPerCubicInchPerGigapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0096[PoundPerCubicInchPerGigapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0096[PoundPerCubicInchPerGigapascalSquaredKelvin] -->|ConversionFactorB| N0097(("36127292000083.68")) 
+	N0096[PoundPerCubicInchPerGigapascalSquaredKelvin] -->|Symbol| N0098(("lb/in³/(GPa²•K)")) 
+	N0096[PoundPerCubicInchPerGigapascalSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0099[PoundPerCubicYardPerGigapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0099[PoundPerCubicYardPerGigapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0099[PoundPerCubicYardPerGigapascalSquaredKelvin] -->|ConversionFactorB| N0100(("1.685554935555904E+18")) 
+	N0099[PoundPerCubicYardPerGigapascalSquaredKelvin] -->|Symbol| N0101(("lb/yd³/(GPa²•K)")) 
+	N0099[PoundPerCubicYardPerGigapascalSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorB| N0103(("47537678.1316983")) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin] -->|Symbol| N0104(("kg/m³/(psi²•K)")) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0105[SpecificGravityPerPoundPerSquareInchSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0105[SpecificGravityPerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0105[SpecificGravityPerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorB| N0106(("47539.00922395657")) 
+	N0105[SpecificGravityPerPoundPerSquareInchSquaredKelvin] -->|Symbol| N0107(("sg/(psi²•K)")) 
+	N0105[SpecificGravityPerPoundPerSquareInchSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorB| N0109(("47537.6781316983")) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin] -->|Symbol| N0110(("g/cm³/(psi²•K)")) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorB| N0112(("476442.2364021077")) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin] -->|Symbol| N0113(("ppgUK/(psi²•K)")) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorB| N0115(("396721.15071893705")) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin] -->|Symbol| N0116(("ppgUS/(psi²•K)")) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorB| N0118(("2967680.2962871124")) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin] -->|Symbol| N0119(("lb/ft³/(psi²•K)")) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorB| N0121(("1717.4075788698572")) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin] -->|Symbol| N0122(("lb/in³/(psi²•K)")) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorB| N0124(("80127367.99975201")) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin] -->|Symbol| N0125(("lb/yd³/(psi²•K)")) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0126[KilogramPerCubicMetrePerPascalSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0126[KilogramPerCubicMetrePerPascalSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0126[KilogramPerCubicMetrePerPascalSquaredCelsius] -->|ConversionFactorB| N0007(("1")) 
+	N0126[KilogramPerCubicMetrePerPascalSquaredCelsius] -->|Symbol| N0127(("kg/m³/(Pa²•°C)")) 
+	N0126[KilogramPerCubicMetrePerPascalSquaredCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0128[SpecificGravityPerPascalSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0128[SpecificGravityPerPascalSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0128[SpecificGravityPerPascalSquaredCelsius] -->|ConversionFactorB| N0010(("0.001000028000784022")) 
+	N0128[SpecificGravityPerPascalSquaredCelsius] -->|Symbol| N0129(("sg/(Pa²•°C)")) 
+	N0128[SpecificGravityPerPascalSquaredCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0130[GramPerCubicCentimetrePerPascalSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0130[GramPerCubicCentimetrePerPascalSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0130[GramPerCubicCentimetrePerPascalSquaredCelsius] -->|ConversionFactorB| N0013(("0.0010000000000000002")) 
+	N0130[GramPerCubicCentimetrePerPascalSquaredCelsius] -->|Symbol| N0131(("g/cm³/(Pa²•°C)")) 
+	N0130[GramPerCubicCentimetrePerPascalSquaredCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0132[PoundPerGallonUkPerPascalSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0132[PoundPerGallonUkPerPascalSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0132[PoundPerGallonUkPerPascalSquaredCelsius] -->|ConversionFactorB| N0016(("0.010022412854960501")) 
+	N0132[PoundPerGallonUkPerPascalSquaredCelsius] -->|Symbol| N0133(("ppgUK/(Pa²•°C)")) 
+	N0132[PoundPerGallonUkPerPascalSquaredCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0134[PoundPerGallonUsPerPascalSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0134[PoundPerGallonUsPerPascalSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0134[PoundPerGallonUsPerPascalSquaredCelsius] -->|ConversionFactorB| N0019(("0.00834540445201933")) 
+	N0134[PoundPerGallonUsPerPascalSquaredCelsius] -->|Symbol| N0135(("ppgUS/(Pa²•°C)")) 
+	N0134[PoundPerGallonUsPerPascalSquaredCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0136[PoundPerCubicFootPerPascalSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0136[PoundPerCubicFootPerPascalSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0136[PoundPerCubicFootPerPascalSquaredCelsius] -->|ConversionFactorB| N0022(("0.06242796057614459")) 
+	N0136[PoundPerCubicFootPerPascalSquaredCelsius] -->|Symbol| N0137(("lb/ft³/(Pa²•°C)")) 
+	N0136[PoundPerCubicFootPerPascalSquaredCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0138[PoundPerCubicInchPerPascalSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0138[PoundPerCubicInchPerPascalSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0138[PoundPerCubicInchPerPascalSquaredCelsius] -->|ConversionFactorB| N0025(("3.612729200008369E-05")) 
+	N0138[PoundPerCubicInchPerPascalSquaredCelsius] -->|Symbol| N0139(("lb/in³/(Pa²•°C)")) 
+	N0138[PoundPerCubicInchPerPascalSquaredCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0140[PoundPerCubicYardPerPascalSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0140[PoundPerCubicYardPerPascalSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0140[PoundPerCubicYardPerPascalSquaredCelsius] -->|ConversionFactorB| N0028(("1.6855549355559039")) 
+	N0140[PoundPerCubicYardPerPascalSquaredCelsius] -->|Symbol| N0141(("lb/yd³/(Pa²•°C)")) 
+	N0140[PoundPerCubicYardPerPascalSquaredCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0142[KilogramPerCubicMetrePerBarSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0142[KilogramPerCubicMetrePerBarSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0142[KilogramPerCubicMetrePerBarSquaredCelsius] -->|ConversionFactorB| N0031(("10000000000")) 
+	N0142[KilogramPerCubicMetrePerBarSquaredCelsius] -->|Symbol| N0143(("kg/m³/(bar²•°C)")) 
+	N0142[KilogramPerCubicMetrePerBarSquaredCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0144[SpecificGravityPerBarSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0144[SpecificGravityPerBarSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0144[SpecificGravityPerBarSquaredCelsius] -->|ConversionFactorB| N0034(("10000280.00784022")) 
+	N0144[SpecificGravityPerBarSquaredCelsius] -->|Symbol| N0145(("sg/(bar²•°C)")) 
+	N0144[SpecificGravityPerBarSquaredCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0146[GramPerCubicCentimetrePerBarSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0146[GramPerCubicCentimetrePerBarSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0146[GramPerCubicCentimetrePerBarSquaredCelsius] -->|ConversionFactorB| N0037(("10000000.000000002")) 
+	N0146[GramPerCubicCentimetrePerBarSquaredCelsius] -->|Symbol| N0147(("g/cm³/(bar²•°C)")) 
+	N0146[GramPerCubicCentimetrePerBarSquaredCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0148[PoundPerGallonUkPerBarSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0148[PoundPerGallonUkPerBarSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0148[PoundPerGallonUkPerBarSquaredCelsius] -->|ConversionFactorB| N0040(("100224128.54960501")) 
+	N0148[PoundPerGallonUkPerBarSquaredCelsius] -->|Symbol| N0149(("ppgUK/(bar²•°C)")) 
+	N0148[PoundPerGallonUkPerBarSquaredCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0150[PoundPerGallonUsPerBarSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0150[PoundPerGallonUsPerBarSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0150[PoundPerGallonUsPerBarSquaredCelsius] -->|ConversionFactorB| N0043(("83454044.52019331")) 
+	N0150[PoundPerGallonUsPerBarSquaredCelsius] -->|Symbol| N0151(("ppgUS/(bar²•°C)")) 
+	N0150[PoundPerGallonUsPerBarSquaredCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0152[PoundPerCubicFootPerBarSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0152[PoundPerCubicFootPerBarSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0152[PoundPerCubicFootPerBarSquaredCelsius] -->|ConversionFactorB| N0046(("624279605.7614459")) 
+	N0152[PoundPerCubicFootPerBarSquaredCelsius] -->|Symbol| N0153(("lb/ft³/(bar²•°C)")) 
+	N0152[PoundPerCubicFootPerBarSquaredCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0154[PoundPerCubicInchPerBarSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0154[PoundPerCubicInchPerBarSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0154[PoundPerCubicInchPerBarSquaredCelsius] -->|ConversionFactorB| N0049(("361272.9200008369")) 
+	N0154[PoundPerCubicInchPerBarSquaredCelsius] -->|Symbol| N0155(("lb/in³/(bar²•°C)")) 
+	N0154[PoundPerCubicInchPerBarSquaredCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0156[PoundPerCubicYardPerBarSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0156[PoundPerCubicYardPerBarSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0156[PoundPerCubicYardPerBarSquaredCelsius] -->|ConversionFactorB| N0052(("16855549355.559038")) 
+	N0156[PoundPerCubicYardPerBarSquaredCelsius] -->|Symbol| N0157(("lb/yd³/(bar²•°C)")) 
+	N0156[PoundPerCubicYardPerBarSquaredCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0158[KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0158[KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0158[KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorB| N0103(("47537678.1316983")) 
+	N0158[KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius] -->|Symbol| N0159(("kg/m³/(psi²•°C)")) 
+	N0158[KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0160[SpecificGravityPerPoundPerSquareInchSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0160[SpecificGravityPerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0160[SpecificGravityPerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorB| N0106(("47539.00922395657")) 
+	N0160[SpecificGravityPerPoundPerSquareInchSquaredCelsius] -->|Symbol| N0161(("sg/(psi²•°C)")) 
+	N0160[SpecificGravityPerPoundPerSquareInchSquaredCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0162[GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0162[GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0162[GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorB| N0109(("47537.6781316983")) 
+	N0162[GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius] -->|Symbol| N0163(("g/cm³/(psi²•°C)")) 
+	N0162[GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0164[PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0164[PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0164[PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorB| N0112(("476442.2364021077")) 
+	N0164[PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius] -->|Symbol| N0165(("ppgUK/(psi²•°C)")) 
+	N0164[PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0166[PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0166[PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0166[PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorB| N0115(("396721.15071893705")) 
+	N0166[PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius] -->|Symbol| N0167(("ppgUS/(psi²•°C)")) 
+	N0166[PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0168[PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0168[PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0168[PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorB| N0118(("2967680.2962871124")) 
+	N0168[PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius] -->|Symbol| N0169(("lb/ft³/(psi²•°C)")) 
+	N0168[PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0170[PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0170[PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0170[PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorB| N0121(("1717.4075788698572")) 
+	N0170[PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius] -->|Symbol| N0171(("lb/in³/(psi²•°C)")) 
+	N0170[PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0172[PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0172[PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0172[PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorB| N0124(("80127367.99975201")) 
+	N0172[PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius] -->|Symbol| N0173(("lb/yd³/(psi²•°C)")) 
+	N0172[PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0174[KilogramPerCubicMetrePerPascalSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0174[KilogramPerCubicMetrePerPascalSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0174[KilogramPerCubicMetrePerPascalSquaredFahrenheit] -->|ConversionFactorB| N0175(("0.5555555555555556")) 
+	N0174[KilogramPerCubicMetrePerPascalSquaredFahrenheit] -->|Symbol| N0176(("kg/m³/(Pa²•°F)")) 
+	N0174[KilogramPerCubicMetrePerPascalSquaredFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0177[SpecificGravityPerPascalSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0177[SpecificGravityPerPascalSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0177[SpecificGravityPerPascalSquaredFahrenheit] -->|ConversionFactorB| N0178(("0.0005555711115466789")) 
+	N0177[SpecificGravityPerPascalSquaredFahrenheit] -->|Symbol| N0179(("sg/(Pa²•°F)")) 
+	N0177[SpecificGravityPerPascalSquaredFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0180[GramPerCubicCentimetrePerPascalSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0180[GramPerCubicCentimetrePerPascalSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0180[GramPerCubicCentimetrePerPascalSquaredFahrenheit] -->|ConversionFactorB| N0181(("0.0005555555555555557")) 
+	N0180[GramPerCubicCentimetrePerPascalSquaredFahrenheit] -->|Symbol| N0182(("g/cm³/(Pa²•°F)")) 
+	N0180[GramPerCubicCentimetrePerPascalSquaredFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0183[PoundPerGallonUkPerPascalSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0183[PoundPerGallonUkPerPascalSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0183[PoundPerGallonUkPerPascalSquaredFahrenheit] -->|ConversionFactorB| N0184(("0.005568007141644723")) 
+	N0183[PoundPerGallonUkPerPascalSquaredFahrenheit] -->|Symbol| N0185(("ppgUK/(Pa²•°F)")) 
+	N0183[PoundPerGallonUkPerPascalSquaredFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0186[PoundPerGallonUsPerPascalSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0186[PoundPerGallonUsPerPascalSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0186[PoundPerGallonUsPerPascalSquaredFahrenheit] -->|ConversionFactorB| N0187(("0.004636335806677406")) 
+	N0186[PoundPerGallonUsPerPascalSquaredFahrenheit] -->|Symbol| N0188(("ppgUS/(Pa²•°F)")) 
+	N0186[PoundPerGallonUsPerPascalSquaredFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0189[PoundPerCubicFootPerPascalSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0189[PoundPerCubicFootPerPascalSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0189[PoundPerCubicFootPerPascalSquaredFahrenheit] -->|ConversionFactorB| N0190(("0.03468220032008033")) 
+	N0189[PoundPerCubicFootPerPascalSquaredFahrenheit] -->|Symbol| N0191(("lb/ft³/(Pa²•°F)")) 
+	N0189[PoundPerCubicFootPerPascalSquaredFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0192[PoundPerCubicInchPerPascalSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0192[PoundPerCubicInchPerPascalSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0192[PoundPerCubicInchPerPascalSquaredFahrenheit] -->|ConversionFactorB| N0193(("2.0070717777824268E-05")) 
+	N0192[PoundPerCubicInchPerPascalSquaredFahrenheit] -->|Symbol| N0194(("lb/in³/(Pa²•°F)")) 
+	N0192[PoundPerCubicInchPerPascalSquaredFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0195[PoundPerCubicYardPerPascalSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0195[PoundPerCubicYardPerPascalSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0195[PoundPerCubicYardPerPascalSquaredFahrenheit] -->|ConversionFactorB| N0196(("0.9364194086421688")) 
+	N0195[PoundPerCubicYardPerPascalSquaredFahrenheit] -->|Symbol| N0197(("lb/yd³/(Pa²•°F)")) 
+	N0195[PoundPerCubicYardPerPascalSquaredFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0198[KilogramPerCubicMetrePerBarSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0198[KilogramPerCubicMetrePerBarSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0198[KilogramPerCubicMetrePerBarSquaredFahrenheit] -->|ConversionFactorB| N0199(("5555555555.555555")) 
+	N0198[KilogramPerCubicMetrePerBarSquaredFahrenheit] -->|Symbol| N0200(("kg/m³/(bar²•°F)")) 
+	N0198[KilogramPerCubicMetrePerBarSquaredFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0201[SpecificGravityPerBarSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0201[SpecificGravityPerBarSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0201[SpecificGravityPerBarSquaredFahrenheit] -->|ConversionFactorB| N0202(("5555711.115466789")) 
+	N0201[SpecificGravityPerBarSquaredFahrenheit] -->|Symbol| N0203(("sg/(bar²•°F)")) 
+	N0201[SpecificGravityPerBarSquaredFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0204[GramPerCubicCentimetrePerBarSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0204[GramPerCubicCentimetrePerBarSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0204[GramPerCubicCentimetrePerBarSquaredFahrenheit] -->|ConversionFactorB| N0205(("5555555.555555557")) 
+	N0204[GramPerCubicCentimetrePerBarSquaredFahrenheit] -->|Symbol| N0206(("g/cm³/(bar²•°F)")) 
+	N0204[GramPerCubicCentimetrePerBarSquaredFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0207[PoundPerGallonUkPerBarSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0207[PoundPerGallonUkPerBarSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0207[PoundPerGallonUkPerBarSquaredFahrenheit] -->|ConversionFactorB| N0208(("55680071.41644723")) 
+	N0207[PoundPerGallonUkPerBarSquaredFahrenheit] -->|Symbol| N0209(("ppgUK/(bar²•°F)")) 
+	N0207[PoundPerGallonUkPerBarSquaredFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0210[PoundPerGallonUsPerBarSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0210[PoundPerGallonUsPerBarSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0210[PoundPerGallonUsPerBarSquaredFahrenheit] -->|ConversionFactorB| N0211(("46363358.06677406")) 
+	N0210[PoundPerGallonUsPerBarSquaredFahrenheit] -->|Symbol| N0212(("ppgUS/(bar²•°F)")) 
+	N0210[PoundPerGallonUsPerBarSquaredFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0213[PoundPerCubicFootPerBarSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0213[PoundPerCubicFootPerBarSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0213[PoundPerCubicFootPerBarSquaredFahrenheit] -->|ConversionFactorB| N0214(("346822003.2008033")) 
+	N0213[PoundPerCubicFootPerBarSquaredFahrenheit] -->|Symbol| N0215(("lb/ft³/(bar²•°F)")) 
+	N0213[PoundPerCubicFootPerBarSquaredFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0216[PoundPerCubicInchPerBarSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0216[PoundPerCubicInchPerBarSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0216[PoundPerCubicInchPerBarSquaredFahrenheit] -->|ConversionFactorB| N0217(("200707.1777782427")) 
+	N0216[PoundPerCubicInchPerBarSquaredFahrenheit] -->|Symbol| N0218(("lb/in³/(bar²•°F)")) 
+	N0216[PoundPerCubicInchPerBarSquaredFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0219[PoundPerCubicYardPerBarSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0219[PoundPerCubicYardPerBarSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0219[PoundPerCubicYardPerBarSquaredFahrenheit] -->|ConversionFactorB| N0220(("9364194086.421688")) 
+	N0219[PoundPerCubicYardPerBarSquaredFahrenheit] -->|Symbol| N0221(("lb/yd³/(bar²•°F)")) 
+	N0219[PoundPerCubicYardPerBarSquaredFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0222[KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0222[KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0222[KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorB| N0223(("26409821.184276838")) 
+	N0222[KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit] -->|Symbol| N0224(("kg/m³/(psi²•°F)")) 
+	N0222[KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0225[SpecificGravityPerPoundPerSquareInchSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0225[SpecificGravityPerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0225[SpecificGravityPerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorB| N0226(("26410.560679975875")) 
+	N0225[SpecificGravityPerPoundPerSquareInchSquaredFahrenheit] -->|Symbol| N0227(("sg/(psi²•°F)")) 
+	N0225[SpecificGravityPerPoundPerSquareInchSquaredFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0228[GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0228[GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0228[GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorB| N0229(("26409.82118427684")) 
+	N0228[GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit] -->|Symbol| N0230(("g/cm³/(psi²•°F)")) 
+	N0228[GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0231[PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0231[PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0231[PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorB| N0232(("264690.1313345043")) 
+	N0231[PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit] -->|Symbol| N0233(("ppgUK/(psi²•°F)")) 
+	N0231[PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0234[PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0234[PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0234[PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorB| N0235(("220400.63928829838")) 
+	N0234[PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit] -->|Symbol| N0236(("ppgUS/(psi²•°F)")) 
+	N0234[PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0237[PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0237[PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0237[PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorB| N0238(("1648711.2757150626")) 
+	N0237[PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit] -->|Symbol| N0239(("lb/ft³/(psi²•°F)")) 
+	N0237[PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0240[PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0240[PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0240[PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorB| N0241(("954.1153215943651")) 
+	N0240[PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit] -->|Symbol| N0242(("lb/in³/(psi²•°F)")) 
+	N0240[PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
+	N0243[PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0243[PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0243[PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorB| N0244(("44515204.44430668")) 
+	N0243[PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit] -->|Symbol| N0245(("lb/yd³/(psi²•°F)")) 
+	N0243[PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit] -->|IsUnitForQuantity| N0000((MassDensityGradientPerPressureSquaredTemperatureQuantity)) 
 ```
 ## HydraulicConductivityQuantity <!-- NOUN -->
 - Display name: HydraulicConductivity
@@ -52981,6 +56637,279 @@ graph LR
 	N0000[SquareMile_1] -->|ConversionFactorB| N0002(("3.861021585424459E-07")) 
 	N0000[SquareMile_1] -->|Symbol| N0003(("mi²")) 
 ```
+## NewtonMetre <!-- NOUN -->
+- Display name: newton metre
+- Parent class: [Unit](#Unit)
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonMetre:NewtonMetre_1
+NewtonMetre_1.Symbol = "N•m"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonMetre_1] -->|BelongsToClass| N0001(NewtonMetre) 
+	N0000[NewtonMetre_1] -->|Symbol| N0002(("N•m")) 
+```
+## DecanewtonMetre <!-- NOUN -->
+- Display name: decanewton metre
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.1
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in decanewton metre
+[SI] is the value in SI
+a = 1.0/(Deca), i.e., 0.1
+and
+Deca = 10.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+DecanewtonMetre:DecanewtonMetre_1
+DecanewtonMetre_1.ConversionFactorB = "0.1"
+DecanewtonMetre_1.Symbol = "daN•m"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[DecanewtonMetre_1] -->|BelongsToClass| N0001(DecanewtonMetre) 
+	N0000[DecanewtonMetre_1] -->|ConversionFactorB| N0002(("0.1")) 
+	N0000[DecanewtonMetre_1] -->|Symbol| N0003(("daN•m")) 
+```
+## KilogramForceMetre <!-- NOUN -->
+- Display name: kilogram force metre
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.10197162129779283
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram force metre
+[SI] is the value in SI
+a = 1.0/ KilogramForce, i.e., 0.10197162129779283
+and
+KilogramForce = 1.0 * G reference: https://en.wikipedia.org/wiki/Kilogram-force
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramForceMetre:KilogramForceMetre_1
+KilogramForceMetre_1.ConversionFactorB = "0.10197162129779283"
+KilogramForceMetre_1.Symbol = "kgf•m"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramForceMetre_1] -->|BelongsToClass| N0001(KilogramForceMetre) 
+	N0000[KilogramForceMetre_1] -->|ConversionFactorB| N0002(("0.10197162129779283")) 
+	N0000[KilogramForceMetre_1] -->|Symbol| N0003(("kgf•m")) 
+```
+## KilonewtonMetre <!-- NOUN -->
+- Display name: kilonewton metre
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.001
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilonewton metre
+[SI] is the value in SI
+a = 1.0/Kilo, i.e., 0.001
+and
+Kilo = 1000.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilonewtonMetre:KilonewtonMetre_1
+KilonewtonMetre_1.ConversionFactorB = "0.001"
+KilonewtonMetre_1.Symbol = "kN•m"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilonewtonMetre_1] -->|BelongsToClass| N0001(KilonewtonMetre) 
+	N0000[KilonewtonMetre_1] -->|ConversionFactorB| N0002(("0.001")) 
+	N0000[KilonewtonMetre_1] -->|Symbol| N0003(("kN•m")) 
+```
+## FootPound <!-- NOUN -->
+- Display name: foot pound
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.7375621492772655
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in foot pound
+[SI] is the value in SI
+a = 1.0/(Foot*PoundForce), i.e., 0.7375621492772655
+and
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+FootPound:FootPound_1
+FootPound_1.ConversionFactorB = "0.7375621492772655"
+FootPound_1.Symbol = "ft•lbf"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[FootPound_1] -->|BelongsToClass| N0001(FootPound) 
+	N0000[FootPound_1] -->|ConversionFactorB| N0002(("0.7375621492772655")) 
+	N0000[FootPound_1] -->|Symbol| N0003(("ft•lbf")) 
+```
+## KilofootPound <!-- NOUN -->
+- Display name: kilofoot pound
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0007375621492772656
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilofoot pound
+[SI] is the value in SI
+a = 1.0/(Kilo*Foot*PoundForce), i.e., 0.0007375621492772656
+and
+Kilo = 1000.0
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilofootPound:KilofootPound_1
+KilofootPound_1.ConversionFactorB = "0.0007375621492772656"
+KilofootPound_1.Symbol = "kft•lbf"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilofootPound_1] -->|BelongsToClass| N0001(KilofootPound) 
+	N0000[KilofootPound_1] -->|ConversionFactorB| N0002(("0.0007375621492772656")) 
+	N0000[KilofootPound_1] -->|Symbol| N0003(("kft•lbf")) 
+```
+## NewtonDecimetre <!-- NOUN -->
+- Display name: newton decimetre
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 10
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in newton decimetre
+[SI] is the value in SI
+a = 1.0/Deci, i.e., 10
+and
+Deci = 0.1
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonDecimetre:NewtonDecimetre_1
+NewtonDecimetre_1.ConversionFactorB = "10"
+NewtonDecimetre_1.Symbol = "N•dm"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonDecimetre_1] -->|BelongsToClass| N0001(NewtonDecimetre) 
+	N0000[NewtonDecimetre_1] -->|ConversionFactorB| N0002(("10")) 
+	N0000[NewtonDecimetre_1] -->|Symbol| N0003(("N•dm")) 
+```
+## NewtonCentimetre <!-- NOUN -->
+- Display name: newton centimetre
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 100
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in newton centimetre
+[SI] is the value in SI
+a = 1.0/Centi, i.e., 100
+and
+Centi = 0.01
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonCentimetre:NewtonCentimetre_1
+NewtonCentimetre_1.ConversionFactorB = "100"
+NewtonCentimetre_1.Symbol = "N•cm"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonCentimetre_1] -->|BelongsToClass| N0001(NewtonCentimetre) 
+	N0000[NewtonCentimetre_1] -->|ConversionFactorB| N0002(("100")) 
+	N0000[NewtonCentimetre_1] -->|Symbol| N0003(("N•cm")) 
+```
+## NewtonMillimetre <!-- NOUN -->
+- Display name: newton millimetre
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in newton millimetre
+[SI] is the value in SI
+a = 1.0/Milli, i.e., 1000
+and
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+NewtonMillimetre:NewtonMillimetre_1
+NewtonMillimetre_1.ConversionFactorB = "1000"
+NewtonMillimetre_1.Symbol = "N•mm"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[NewtonMillimetre_1] -->|BelongsToClass| N0001(NewtonMillimetre) 
+	N0000[NewtonMillimetre_1] -->|ConversionFactorB| N0002(("1000")) 
+	N0000[NewtonMillimetre_1] -->|Symbol| N0003(("N•mm")) 
+```
+## InchPound <!-- NOUN -->
+- Display name: inch pound
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 8.850745791327185
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in inch pound
+[SI] is the value in SI
+a = 1.0/(PoundForce*Inch), i.e., 8.850745791327185
+and
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+InchPound:InchPound_1
+InchPound_1.ConversionFactorB = "8.850745791327185"
+InchPound_1.Symbol = "in•lbf"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[InchPound_1] -->|BelongsToClass| N0001(InchPound) 
+	N0000[InchPound_1] -->|ConversionFactorB| N0002(("8.850745791327185")) 
+	N0000[InchPound_1] -->|Symbol| N0003(("in•lbf")) 
+```
 ## InversePascal <!-- NOUN -->
 - Display name: inverse pascal
 - Parent class: [Unit](#Unit)
@@ -58328,13 +62257,13 @@ graph LR
 - Display name: specific gravity
 - Parent class: [Unit](#Unit)
 - Specialization:
-  - ConversionFactorB = 999.972
+  - ConversionFactorB = 0.001000028000784022
 - Description: 
 [v] = a * [SI]
 where
 [v] is the value in specific gravity
 [SI] is the value in SI
-a = 1.0/SpecificGavity4degC, i.e., 999.972
+a = SpecificGavity4degC, i.e., 0.001000028000784022
 and
 SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
 WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
@@ -58342,14 +62271,14 @@ WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relati
 - Examples:
 ``` dwis
 SpecificGravity:SpecificGravity_1
-SpecificGravity_1.ConversionFactorB = "999.972"
+SpecificGravity_1.ConversionFactorB = "0.001000028000784022"
 SpecificGravity_1.Symbol = "s.g."
 ```
 An example semantic graph looks like as follow:
 ```mermaid
 graph LR
 	N0000[SpecificGravity_1] -->|BelongsToClass| N0001(SpecificGravity) 
-	N0000[SpecificGravity_1] -->|ConversionFactorB| N0002(("999.972")) 
+	N0000[SpecificGravity_1] -->|ConversionFactorB| N0002(("0.001000028000784022")) 
 	N0000[SpecificGravity_1] -->|Symbol| N0003(("s.g.")) 
 ```
 ## GramPerCubicCentimetre <!-- NOUN -->
@@ -68581,279 +72510,6 @@ graph LR
 	N0000[InchPoundPerInch_1] -->|ConversionFactorB| N0002(("0.2248089430997105")) 
 	N0000[InchPoundPerInch_1] -->|Symbol| N0003(("in•lbf/in")) 
 ```
-## NewtonMetre <!-- NOUN -->
-- Display name: newton metre
-- Parent class: [Unit](#Unit)
-- Description: 
-No conversion necessary as the unit choice is SI
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-NewtonMetre:NewtonMetre_1
-NewtonMetre_1.Symbol = "N•m"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[NewtonMetre_1] -->|BelongsToClass| N0001(NewtonMetre) 
-	N0000[NewtonMetre_1] -->|Symbol| N0002(("N•m")) 
-```
-## DecanewtonMetre <!-- NOUN -->
-- Display name: decanewton metre
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.1
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in decanewton metre
-[SI] is the value in SI
-a = 1.0/(Deca), i.e., 0.1
-and
-Deca = 10.0
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-DecanewtonMetre:DecanewtonMetre_1
-DecanewtonMetre_1.ConversionFactorB = "0.1"
-DecanewtonMetre_1.Symbol = "daN•m"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[DecanewtonMetre_1] -->|BelongsToClass| N0001(DecanewtonMetre) 
-	N0000[DecanewtonMetre_1] -->|ConversionFactorB| N0002(("0.1")) 
-	N0000[DecanewtonMetre_1] -->|Symbol| N0003(("daN•m")) 
-```
-## KilogramForceMetre <!-- NOUN -->
-- Display name: kilogram force metre
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.10197162129779283
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in kilogram force metre
-[SI] is the value in SI
-a = 1.0/ KilogramForce, i.e., 0.10197162129779283
-and
-KilogramForce = 1.0 * G reference: https://en.wikipedia.org/wiki/Kilogram-force
-G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-KilogramForceMetre:KilogramForceMetre_1
-KilogramForceMetre_1.ConversionFactorB = "0.10197162129779283"
-KilogramForceMetre_1.Symbol = "kgf•m"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[KilogramForceMetre_1] -->|BelongsToClass| N0001(KilogramForceMetre) 
-	N0000[KilogramForceMetre_1] -->|ConversionFactorB| N0002(("0.10197162129779283")) 
-	N0000[KilogramForceMetre_1] -->|Symbol| N0003(("kgf•m")) 
-```
-## KilonewtonMetre <!-- NOUN -->
-- Display name: kilonewton metre
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.001
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in kilonewton metre
-[SI] is the value in SI
-a = 1.0/Kilo, i.e., 0.001
-and
-Kilo = 1000.0
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-KilonewtonMetre:KilonewtonMetre_1
-KilonewtonMetre_1.ConversionFactorB = "0.001"
-KilonewtonMetre_1.Symbol = "kN•m"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[KilonewtonMetre_1] -->|BelongsToClass| N0001(KilonewtonMetre) 
-	N0000[KilonewtonMetre_1] -->|ConversionFactorB| N0002(("0.001")) 
-	N0000[KilonewtonMetre_1] -->|Symbol| N0003(("kN•m")) 
-```
-## FootPound <!-- NOUN -->
-- Display name: foot pound
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.7375621492772655
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in foot pound
-[SI] is the value in SI
-a = 1.0/(Foot*PoundForce), i.e., 0.7375621492772655
-and
-Foot = 12.0 * Inch
-PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-FootPound:FootPound_1
-FootPound_1.ConversionFactorB = "0.7375621492772655"
-FootPound_1.Symbol = "ft•lbf"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[FootPound_1] -->|BelongsToClass| N0001(FootPound) 
-	N0000[FootPound_1] -->|ConversionFactorB| N0002(("0.7375621492772655")) 
-	N0000[FootPound_1] -->|Symbol| N0003(("ft•lbf")) 
-```
-## KilofootPound <!-- NOUN -->
-- Display name: kilofoot pound
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 0.0007375621492772656
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in kilofoot pound
-[SI] is the value in SI
-a = 1.0/(Kilo*Foot*PoundForce), i.e., 0.0007375621492772656
-and
-Kilo = 1000.0
-Foot = 12.0 * Inch
-PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-KilofootPound:KilofootPound_1
-KilofootPound_1.ConversionFactorB = "0.0007375621492772656"
-KilofootPound_1.Symbol = "kft•lbf"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[KilofootPound_1] -->|BelongsToClass| N0001(KilofootPound) 
-	N0000[KilofootPound_1] -->|ConversionFactorB| N0002(("0.0007375621492772656")) 
-	N0000[KilofootPound_1] -->|Symbol| N0003(("kft•lbf")) 
-```
-## NewtonDecimetre <!-- NOUN -->
-- Display name: newton decimetre
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 10
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in newton decimetre
-[SI] is the value in SI
-a = 1.0/Deci, i.e., 10
-and
-Deci = 0.1
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-NewtonDecimetre:NewtonDecimetre_1
-NewtonDecimetre_1.ConversionFactorB = "10"
-NewtonDecimetre_1.Symbol = "N•dm"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[NewtonDecimetre_1] -->|BelongsToClass| N0001(NewtonDecimetre) 
-	N0000[NewtonDecimetre_1] -->|ConversionFactorB| N0002(("10")) 
-	N0000[NewtonDecimetre_1] -->|Symbol| N0003(("N•dm")) 
-```
-## NewtonCentimetre <!-- NOUN -->
-- Display name: newton centimetre
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 100
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in newton centimetre
-[SI] is the value in SI
-a = 1.0/Centi, i.e., 100
-and
-Centi = 0.01
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-NewtonCentimetre:NewtonCentimetre_1
-NewtonCentimetre_1.ConversionFactorB = "100"
-NewtonCentimetre_1.Symbol = "N•cm"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[NewtonCentimetre_1] -->|BelongsToClass| N0001(NewtonCentimetre) 
-	N0000[NewtonCentimetre_1] -->|ConversionFactorB| N0002(("100")) 
-	N0000[NewtonCentimetre_1] -->|Symbol| N0003(("N•cm")) 
-```
-## NewtonMillimetre <!-- NOUN -->
-- Display name: newton millimetre
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 1000
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in newton millimetre
-[SI] is the value in SI
-a = 1.0/Milli, i.e., 1000
-and
-Milli = 0.001
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-NewtonMillimetre:NewtonMillimetre_1
-NewtonMillimetre_1.ConversionFactorB = "1000"
-NewtonMillimetre_1.Symbol = "N•mm"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[NewtonMillimetre_1] -->|BelongsToClass| N0001(NewtonMillimetre) 
-	N0000[NewtonMillimetre_1] -->|ConversionFactorB| N0002(("1000")) 
-	N0000[NewtonMillimetre_1] -->|Symbol| N0003(("N•mm")) 
-```
-## InchPound <!-- NOUN -->
-- Display name: inch pound
-- Parent class: [Unit](#Unit)
-- Specialization:
-  - ConversionFactorB = 8.850745791327185
-- Description: 
-[v] = a * [SI]
-where
-[v] is the value in inch pound
-[SI] is the value in SI
-a = 1.0/(PoundForce*Inch), i.e., 8.850745791327185
-and
-PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
-Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
-Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
-G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
-- Definition set: UnitTypes
-- Examples:
-``` dwis
-InchPound:InchPound_1
-InchPound_1.ConversionFactorB = "8.850745791327185"
-InchPound_1.Symbol = "in•lbf"
-```
-An example semantic graph looks like as follow:
-```mermaid
-graph LR
-	N0000[InchPound_1] -->|BelongsToClass| N0001(InchPound) 
-	N0000[InchPound_1] -->|ConversionFactorB| N0002(("8.850745791327185")) 
-	N0000[InchPound_1] -->|Symbol| N0003(("in•lbf")) 
-```
 ## MetrePerSecond <!-- NOUN -->
 - Display name: metre per second
 - Parent class: [Unit](#Unit)
@@ -76909,6 +80565,9036 @@ graph LR
 	N0000[PoundInchSquared_1] -->|BelongsToClass| N0001(PoundInchSquared) 
 	N0000[PoundInchSquared_1] -->|ConversionFactorB| N0002(("3417.171898209399")) 
 	N0000[PoundInchSquared_1] -->|Symbol| N0003(("lb.in²")) 
+```
+## CubicMetrePerKilogram <!-- NOUN -->
+- Display name: cubic metre per kilogram
+- Parent class: [Unit](#Unit)
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicMetrePerKilogram:CubicMetrePerKilogram_1
+CubicMetrePerKilogram_1.Symbol = "m³/kg"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicMetrePerKilogram_1] -->|BelongsToClass| N0001(CubicMetrePerKilogram) 
+	N0000[CubicMetrePerKilogram_1] -->|Symbol| N0002(("m³/kg")) 
+```
+## CubicMetrePerGram <!-- NOUN -->
+- Display name: cubic metre per gram
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.001
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in cubic metre per gram
+[SI] is the value in SI
+a = Milli/1.0, i.e., 0.001
+and
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicMetrePerGram:CubicMetrePerGram_1
+CubicMetrePerGram_1.ConversionFactorB = "0.001"
+CubicMetrePerGram_1.Symbol = "m³/g"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicMetrePerGram_1] -->|BelongsToClass| N0001(CubicMetrePerGram) 
+	N0000[CubicMetrePerGram_1] -->|ConversionFactorB| N0002(("0.001")) 
+	N0000[CubicMetrePerGram_1] -->|Symbol| N0003(("m³/g")) 
+```
+## CubicDecimetrePerGram <!-- NOUN -->
+- Display name: cubic decimetre per gram
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.9999999999999998
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in cubic decimetre per gram
+[SI] is the value in SI
+a = Milli/(Deci*Deci*Deci), i.e., 0.9999999999999998
+and
+Milli = 0.001
+Deci = 0.1
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicDecimetrePerGram:CubicDecimetrePerGram_1
+CubicDecimetrePerGram_1.ConversionFactorB = "0.9999999999999998"
+CubicDecimetrePerGram_1.Symbol = "dm³/g"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicDecimetrePerGram_1] -->|BelongsToClass| N0001(CubicDecimetrePerGram) 
+	N0000[CubicDecimetrePerGram_1] -->|ConversionFactorB| N0002(("0.9999999999999998")) 
+	N0000[CubicDecimetrePerGram_1] -->|Symbol| N0003(("dm³/g")) 
+```
+## LitrePerGram <!-- NOUN -->
+- Display name: litre per gram
+- Parent class: [Unit](#Unit)
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in litre per gram
+[SI] is the value in SI
+a = Milli/Litre, i.e., 1
+and
+Milli = 0.001
+Litre = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+LitrePerGram:LitrePerGram_1
+LitrePerGram_1.Symbol = "L/g"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[LitrePerGram_1] -->|BelongsToClass| N0001(LitrePerGram) 
+	N0000[LitrePerGram_1] -->|Symbol| N0002(("L/g")) 
+```
+## DecilitrePerGram <!-- NOUN -->
+- Display name: decilitre per gram
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 10
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in decilitre per gram
+[SI] is the value in SI
+a = Milli/(Litre*Deci), i.e., 10
+and
+Milli = 0.001
+Litre = 0.001
+Deci = 0.1
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+DecilitrePerGram:DecilitrePerGram_1
+DecilitrePerGram_1.ConversionFactorB = "10"
+DecilitrePerGram_1.Symbol = "dL/g"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[DecilitrePerGram_1] -->|BelongsToClass| N0001(DecilitrePerGram) 
+	N0000[DecilitrePerGram_1] -->|ConversionFactorB| N0002(("10")) 
+	N0000[DecilitrePerGram_1] -->|Symbol| N0003(("dL/g")) 
+```
+## CentilitrePerGram <!-- NOUN -->
+- Display name: centilitre per gram
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 100
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in centilitre per gram
+[SI] is the value in SI
+a = Milli/(Litre*Centi), i.e., 100
+and
+Milli = 0.001
+Litre = 0.001
+Centi = 0.01
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CentilitrePerGram:CentilitrePerGram_1
+CentilitrePerGram_1.ConversionFactorB = "100"
+CentilitrePerGram_1.Symbol = "cL/g"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CentilitrePerGram_1] -->|BelongsToClass| N0001(CentilitrePerGram) 
+	N0000[CentilitrePerGram_1] -->|ConversionFactorB| N0002(("100")) 
+	N0000[CentilitrePerGram_1] -->|Symbol| N0003(("cL/g")) 
+```
+## MillilitrePerGram <!-- NOUN -->
+- Display name: millilitre per gram
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000.0000000000001
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in millilitre per gram
+[SI] is the value in SI
+a = Milli/(Litre*Milli), i.e., 1000.0000000000001
+and
+Milli = 0.001
+Litre = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MillilitrePerGram:MillilitrePerGram_1
+MillilitrePerGram_1.ConversionFactorB = "1000.0000000000001"
+MillilitrePerGram_1.Symbol = "mL/g"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MillilitrePerGram_1] -->|BelongsToClass| N0001(MillilitrePerGram) 
+	N0000[MillilitrePerGram_1] -->|ConversionFactorB| N0002(("1000.0000000000001")) 
+	N0000[MillilitrePerGram_1] -->|Symbol| N0003(("mL/g")) 
+```
+## CubicCentimetrePerGram <!-- NOUN -->
+- Display name: cubic centimetre per gram
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 999.9999999999999
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in cubic centimetre per gram
+[SI] is the value in SI
+a = Milli/(Centi*Centi*Centi), i.e., 999.9999999999999
+and
+Milli = 0.001
+Centi = 0.01
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicCentimetrePerGram:CubicCentimetrePerGram_1
+CubicCentimetrePerGram_1.ConversionFactorB = "999.9999999999999"
+CubicCentimetrePerGram_1.Symbol = "cm³/g"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicCentimetrePerGram_1] -->|BelongsToClass| N0001(CubicCentimetrePerGram) 
+	N0000[CubicCentimetrePerGram_1] -->|ConversionFactorB| N0002(("999.9999999999999")) 
+	N0000[CubicCentimetrePerGram_1] -->|Symbol| N0003(("cm³/g")) 
+```
+## CubicMillimetrePerGram <!-- NOUN -->
+- Display name: cubic millimetre per gram
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in cubic millimetre per gram
+[SI] is the value in SI
+a = Milli/(Milli*Milli*Milli), i.e., 1000000
+and
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicMillimetrePerGram:CubicMillimetrePerGram_1
+CubicMillimetrePerGram_1.ConversionFactorB = "1000000"
+CubicMillimetrePerGram_1.Symbol = "mm³/g"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicMillimetrePerGram_1] -->|BelongsToClass| N0001(CubicMillimetrePerGram) 
+	N0000[CubicMillimetrePerGram_1] -->|ConversionFactorB| N0002(("1000000")) 
+	N0000[CubicMillimetrePerGram_1] -->|Symbol| N0003(("mm³/g")) 
+```
+## LitrePerKilogram <!-- NOUN -->
+- Display name: litre per kilogram
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in litre per kilogram
+[SI] is the value in SI
+a = 1.0/Litre, i.e., 1000
+and
+Litre = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+LitrePerKilogram:LitrePerKilogram_1
+LitrePerKilogram_1.ConversionFactorB = "1000"
+LitrePerKilogram_1.Symbol = "L/kg"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[LitrePerKilogram_1] -->|BelongsToClass| N0001(LitrePerKilogram) 
+	N0000[LitrePerKilogram_1] -->|ConversionFactorB| N0002(("1000")) 
+	N0000[LitrePerKilogram_1] -->|Symbol| N0003(("L/kg")) 
+```
+## DecilitrePerKilogram <!-- NOUN -->
+- Display name: decilitre per kilogram
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 10000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in decilitre per kilogram
+[SI] is the value in SI
+a = 1.0/(Litre*Deci), i.e., 10000
+and
+Litre = 0.001
+Deci = 0.1
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+DecilitrePerKilogram:DecilitrePerKilogram_1
+DecilitrePerKilogram_1.ConversionFactorB = "10000"
+DecilitrePerKilogram_1.Symbol = "dL/kg"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[DecilitrePerKilogram_1] -->|BelongsToClass| N0001(DecilitrePerKilogram) 
+	N0000[DecilitrePerKilogram_1] -->|ConversionFactorB| N0002(("10000")) 
+	N0000[DecilitrePerKilogram_1] -->|Symbol| N0003(("dL/kg")) 
+```
+## CentilitrePerKilogram <!-- NOUN -->
+- Display name: centilitre per kilogram
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 99999.99999999999
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in centilitre per kilogram
+[SI] is the value in SI
+a = 1.0/(Litre*Centi), i.e., 99999.99999999999
+and
+Litre = 0.001
+Centi = 0.01
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CentilitrePerKilogram:CentilitrePerKilogram_1
+CentilitrePerKilogram_1.ConversionFactorB = "99999.99999999999"
+CentilitrePerKilogram_1.Symbol = "cL/kg"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CentilitrePerKilogram_1] -->|BelongsToClass| N0001(CentilitrePerKilogram) 
+	N0000[CentilitrePerKilogram_1] -->|ConversionFactorB| N0002(("99999.99999999999")) 
+	N0000[CentilitrePerKilogram_1] -->|Symbol| N0003(("cL/kg")) 
+```
+## MillilitrePerKilogram <!-- NOUN -->
+- Display name: millilitre per kilogram
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in millilitre per kilogram
+[SI] is the value in SI
+a = 1.0/(Litre*Milli), i.e., 1000000
+and
+Litre = 0.001
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MillilitrePerKilogram:MillilitrePerKilogram_1
+MillilitrePerKilogram_1.ConversionFactorB = "1000000"
+MillilitrePerKilogram_1.Symbol = "mL/kg"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MillilitrePerKilogram_1] -->|BelongsToClass| N0001(MillilitrePerKilogram) 
+	N0000[MillilitrePerKilogram_1] -->|ConversionFactorB| N0002(("1000000")) 
+	N0000[MillilitrePerKilogram_1] -->|Symbol| N0003(("mL/kg")) 
+```
+## CubicCentimetrePerKilogram <!-- NOUN -->
+- Display name: cubic centimetre per kilogram
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 999999.9999999999
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in cubic centimetre per kilogram
+[SI] is the value in SI
+a = 1.0/(Centi*Centi*Centi), i.e., 999999.9999999999
+and
+Centi = 0.01
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicCentimetrePerKilogram:CubicCentimetrePerKilogram_1
+CubicCentimetrePerKilogram_1.ConversionFactorB = "999999.9999999999"
+CubicCentimetrePerKilogram_1.Symbol = "cm³/kg"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicCentimetrePerKilogram_1] -->|BelongsToClass| N0001(CubicCentimetrePerKilogram) 
+	N0000[CubicCentimetrePerKilogram_1] -->|ConversionFactorB| N0002(("999999.9999999999")) 
+	N0000[CubicCentimetrePerKilogram_1] -->|Symbol| N0003(("cm³/kg")) 
+```
+## CubicMillimetrePerKilogram <!-- NOUN -->
+- Display name: cubic millimetre per kilogram
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 999999999.9999999
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in cubic millimetre per kilogram
+[SI] is the value in SI
+a = 1.0/(Milli*Milli*Milli), i.e., 999999999.9999999
+and
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicMillimetrePerKilogram:CubicMillimetrePerKilogram_1
+CubicMillimetrePerKilogram_1.ConversionFactorB = "999999999.9999999"
+CubicMillimetrePerKilogram_1.Symbol = "mm³/kg"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicMillimetrePerKilogram_1] -->|BelongsToClass| N0001(CubicMillimetrePerKilogram) 
+	N0000[CubicMillimetrePerKilogram_1] -->|ConversionFactorB| N0002(("999999999.9999999")) 
+	N0000[CubicMillimetrePerKilogram_1] -->|Symbol| N0003(("mm³/kg")) 
+```
+## CubicYardPerPound <!-- NOUN -->
+- Display name: cubic yard per pound
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.5932764212577832
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in cubic yard per pound
+[SI] is the value in SI
+a = Pound/(Yard*Yard*Yard), i.e., 0.5932764212577832
+and
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Yard = 3.0 * Foot
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicYardPerPound:CubicYardPerPound_1
+CubicYardPerPound_1.ConversionFactorB = "0.5932764212577832"
+CubicYardPerPound_1.Symbol = "yd³/lb"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicYardPerPound_1] -->|BelongsToClass| N0001(CubicYardPerPound) 
+	N0000[CubicYardPerPound_1] -->|ConversionFactorB| N0002(("0.5932764212577832")) 
+	N0000[CubicYardPerPound_1] -->|Symbol| N0003(("yd³/lb")) 
+```
+## CubicFeetPerPound <!-- NOUN -->
+- Display name: cubic feet per pound
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 16.018463373960145
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in cubic feet per pound
+[SI] is the value in SI
+a = Pound/(Foot*Foot*Foot), i.e., 16.018463373960145
+and
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicFeetPerPound:CubicFeetPerPound_1
+CubicFeetPerPound_1.ConversionFactorB = "16.018463373960145"
+CubicFeetPerPound_1.Symbol = "ft³/lb"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicFeetPerPound_1] -->|BelongsToClass| N0001(CubicFeetPerPound) 
+	N0000[CubicFeetPerPound_1] -->|ConversionFactorB| N0002(("16.018463373960145")) 
+	N0000[CubicFeetPerPound_1] -->|Symbol| N0003(("ft³/lb")) 
+```
+## CubicInchesPerPound <!-- NOUN -->
+- Display name: cubic inches per pound
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 27679.904710203125
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in cubic inches per pound
+[SI] is the value in SI
+a = Pound/(Inch*Inch*Inch), i.e., 27679.904710203125
+and
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicInchesPerPound:CubicInchesPerPound_1
+CubicInchesPerPound_1.ConversionFactorB = "27679.904710203125"
+CubicInchesPerPound_1.Symbol = "in³/lb"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicInchesPerPound_1] -->|BelongsToClass| N0001(CubicInchesPerPound) 
+	N0000[CubicInchesPerPound_1] -->|ConversionFactorB| N0002(("27679.904710203125")) 
+	N0000[CubicInchesPerPound_1] -->|Symbol| N0003(("in³/lb")) 
+```
+## CubicYardPerOunce <!-- NOUN -->
+- Display name: cubic yard per ounce
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.03707977632861145
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in cubic yard per ounce
+[SI] is the value in SI
+a = Ounce/(Yard*Yard*Yard), i.e., 0.03707977632861145
+and
+Ounce = (1.0 / 16.0) * Pound reference: https://en.wikipedia.org/wiki/Ounce
+Yard = 3.0 * Foot
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicYardPerOunce:CubicYardPerOunce_1
+CubicYardPerOunce_1.ConversionFactorB = "0.03707977632861145"
+CubicYardPerOunce_1.Symbol = "yd³/oz"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicYardPerOunce_1] -->|BelongsToClass| N0001(CubicYardPerOunce) 
+	N0000[CubicYardPerOunce_1] -->|ConversionFactorB| N0002(("0.03707977632861145")) 
+	N0000[CubicYardPerOunce_1] -->|Symbol| N0003(("yd³/oz")) 
+```
+## CubicFeetPerOunce <!-- NOUN -->
+- Display name: cubic feet per ounce
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1.001153960872509
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in cubic feet per ounce
+[SI] is the value in SI
+a = Ounce/(Foot*Foot*Foot), i.e., 1.001153960872509
+and
+Ounce = (1.0 / 16.0) * Pound reference: https://en.wikipedia.org/wiki/Ounce
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicFeetPerOunce:CubicFeetPerOunce_1
+CubicFeetPerOunce_1.ConversionFactorB = "1.001153960872509"
+CubicFeetPerOunce_1.Symbol = "ft³/oz"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicFeetPerOunce_1] -->|BelongsToClass| N0001(CubicFeetPerOunce) 
+	N0000[CubicFeetPerOunce_1] -->|ConversionFactorB| N0002(("1.001153960872509")) 
+	N0000[CubicFeetPerOunce_1] -->|Symbol| N0003(("ft³/oz")) 
+```
+## CubicInchesPerOunce <!-- NOUN -->
+- Display name: cubic inches per ounce
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1729.9940443876953
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in cubic inches per ounce
+[SI] is the value in SI
+a = Ounce/(Inch*Inch*Inch), i.e., 1729.9940443876953
+and
+Ounce = (1.0 / 16.0) * Pound reference: https://en.wikipedia.org/wiki/Ounce
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicInchesPerOunce:CubicInchesPerOunce_1
+CubicInchesPerOunce_1.ConversionFactorB = "1729.9940443876953"
+CubicInchesPerOunce_1.Symbol = "in³/oz"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicInchesPerOunce_1] -->|BelongsToClass| N0001(CubicInchesPerOunce) 
+	N0000[CubicInchesPerOunce_1] -->|ConversionFactorB| N0002(("1729.9940443876953")) 
+	N0000[CubicInchesPerOunce_1] -->|Symbol| N0003(("in³/oz")) 
+```
+## GallonUkPerOunce <!-- NOUN -->
+- Display name: gallon UK per ounce
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 6.236023291443856
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gallon UK per ounce
+[SI] is the value in SI
+a = Ounce/GallonUK, i.e., 6.236023291443856
+and
+Ounce = (1.0 / 16.0) * Pound reference: https://en.wikipedia.org/wiki/Ounce
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GallonUkPerOunce:GallonUkPerOunce_1
+GallonUkPerOunce_1.ConversionFactorB = "6.236023291443856"
+GallonUkPerOunce_1.Symbol = "galUK/oz"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GallonUkPerOunce_1] -->|BelongsToClass| N0001(GallonUkPerOunce) 
+	N0000[GallonUkPerOunce_1] -->|ConversionFactorB| N0002(("6.236023291443856")) 
+	N0000[GallonUkPerOunce_1] -->|Symbol| N0003(("galUK/oz")) 
+```
+## GallonUsPerOunce <!-- NOUN -->
+- Display name: gallon US per ounce
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 7.48915170730604
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gallon US per ounce
+[SI] is the value in SI
+a = Ounce/GallonUS, i.e., 7.48915170730604
+and
+Ounce = (1.0 / 16.0) * Pound reference: https://en.wikipedia.org/wiki/Ounce
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GallonUsPerOunce:GallonUsPerOunce_1
+GallonUsPerOunce_1.ConversionFactorB = "7.48915170730604"
+GallonUsPerOunce_1.Symbol = "galUS/oz"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GallonUsPerOunce_1] -->|BelongsToClass| N0001(GallonUsPerOunce) 
+	N0000[GallonUsPerOunce_1] -->|ConversionFactorB| N0002(("7.48915170730604")) 
+	N0000[GallonUsPerOunce_1] -->|Symbol| N0003(("galUS/oz")) 
+```
+## GallonUkPerPound <!-- NOUN -->
+- Display name: gallon UK per pound
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 99.7763726631017
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gallon UK per pound
+[SI] is the value in SI
+a = Pound/GallonUK, i.e., 99.7763726631017
+and
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GallonUkPerPound:GallonUkPerPound_1
+GallonUkPerPound_1.ConversionFactorB = "99.7763726631017"
+GallonUkPerPound_1.Symbol = "galUK/lb"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GallonUkPerPound_1] -->|BelongsToClass| N0001(GallonUkPerPound) 
+	N0000[GallonUkPerPound_1] -->|ConversionFactorB| N0002(("99.7763726631017")) 
+	N0000[GallonUkPerPound_1] -->|Symbol| N0003(("galUK/lb")) 
+```
+## GallonUsPerPound <!-- NOUN -->
+- Display name: gallon US per pound
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 119.82642731689664
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gallon US per pound
+[SI] is the value in SI
+a = Pound/GallonUS, i.e., 119.82642731689664
+and
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GallonUsPerPound:GallonUsPerPound_1
+GallonUsPerPound_1.ConversionFactorB = "119.82642731689664"
+GallonUsPerPound_1.Symbol = "galUS/lb"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GallonUsPerPound_1] -->|BelongsToClass| N0001(GallonUsPerPound) 
+	N0000[GallonUsPerPound_1] -->|ConversionFactorB| N0002(("119.82642731689664")) 
+	N0000[GallonUsPerPound_1] -->|Symbol| N0003(("galUS/lb")) 
+```
+## CubicMetreSquaredPerKilogramSquared <!-- NOUN -->
+- Display name: cubic metre squared per kilogram squared
+- Parent class: [Unit](#Unit)
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicMetreSquaredPerKilogramSquared:CubicMetreSquaredPerKilogramSquared_1
+CubicMetreSquaredPerKilogramSquared_1.Symbol = "m⁶/kg²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicMetreSquaredPerKilogramSquared_1] -->|BelongsToClass| N0001(CubicMetreSquaredPerKilogramSquared) 
+	N0000[CubicMetreSquaredPerKilogramSquared_1] -->|Symbol| N0002(("m⁶/kg²")) 
+```
+## CubicMetreSquaredPerGramSquared <!-- NOUN -->
+- Display name: cubic metre squared per gram squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1E-06
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in cubic metre squared per gram squared
+[SI] is the value in SI
+a = Milli*Milli/1.0, i.e., 1E-06
+and
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicMetreSquaredPerGramSquared:CubicMetreSquaredPerGramSquared_1
+CubicMetreSquaredPerGramSquared_1.ConversionFactorB = "1E-06"
+CubicMetreSquaredPerGramSquared_1.Symbol = "m⁶/g²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicMetreSquaredPerGramSquared_1] -->|BelongsToClass| N0001(CubicMetreSquaredPerGramSquared) 
+	N0000[CubicMetreSquaredPerGramSquared_1] -->|ConversionFactorB| N0002(("1E-06")) 
+	N0000[CubicMetreSquaredPerGramSquared_1] -->|Symbol| N0003(("m⁶/g²")) 
+```
+## CubicDecimetreSquaredPerGramSquared <!-- NOUN -->
+- Display name: cubic decimetre squared per gram squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.9999999999999996
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in cubic decimetre squared per gram squared
+[SI] is the value in SI
+a = Milli*Milli/(Deci*Deci*Deci*Deci*Deci*Deci), i.e., 0.9999999999999996
+and
+Milli = 0.001
+Deci = 0.1
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicDecimetreSquaredPerGramSquared:CubicDecimetreSquaredPerGramSquared_1
+CubicDecimetreSquaredPerGramSquared_1.ConversionFactorB = "0.9999999999999996"
+CubicDecimetreSquaredPerGramSquared_1.Symbol = "dm⁶/g²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicDecimetreSquaredPerGramSquared_1] -->|BelongsToClass| N0001(CubicDecimetreSquaredPerGramSquared) 
+	N0000[CubicDecimetreSquaredPerGramSquared_1] -->|ConversionFactorB| N0002(("0.9999999999999996")) 
+	N0000[CubicDecimetreSquaredPerGramSquared_1] -->|Symbol| N0003(("dm⁶/g²")) 
+```
+## LitreSquaredPerGramSquared <!-- NOUN -->
+- Display name: litre squared per gram squared
+- Parent class: [Unit](#Unit)
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in litre squared per gram squared
+[SI] is the value in SI
+a = Milli*Milli/(Litre*Litre), i.e., 1
+and
+Milli = 0.001
+Litre = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+LitreSquaredPerGramSquared:LitreSquaredPerGramSquared_1
+LitreSquaredPerGramSquared_1.Symbol = "L²/g²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[LitreSquaredPerGramSquared_1] -->|BelongsToClass| N0001(LitreSquaredPerGramSquared) 
+	N0000[LitreSquaredPerGramSquared_1] -->|Symbol| N0002(("L²/g²")) 
+```
+## DecilitreSquaredPerGramSquared <!-- NOUN -->
+- Display name: decilitre squared per gram squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 99.99999999999997
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in decilitre squared per gram squared
+[SI] is the value in SI
+a = Milli*Milli/(Litre*Deci*Litre*Deci), i.e., 99.99999999999997
+and
+Milli = 0.001
+Litre = 0.001
+Deci = 0.1
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+DecilitreSquaredPerGramSquared:DecilitreSquaredPerGramSquared_1
+DecilitreSquaredPerGramSquared_1.ConversionFactorB = "99.99999999999997"
+DecilitreSquaredPerGramSquared_1.Symbol = "dL²/g²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[DecilitreSquaredPerGramSquared_1] -->|BelongsToClass| N0001(DecilitreSquaredPerGramSquared) 
+	N0000[DecilitreSquaredPerGramSquared_1] -->|ConversionFactorB| N0002(("99.99999999999997")) 
+	N0000[DecilitreSquaredPerGramSquared_1] -->|Symbol| N0003(("dL²/g²")) 
+```
+## CentilitreSquaredPerGramSquared <!-- NOUN -->
+- Display name: centilitre squared per gram squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 10000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in centilitre squared per gram squared
+[SI] is the value in SI
+a = Milli*Milli/(Litre*Centi*Litre*Centi), i.e., 10000
+and
+Milli = 0.001
+Litre = 0.001
+Centi = 0.01
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CentilitreSquaredPerGramSquared:CentilitreSquaredPerGramSquared_1
+CentilitreSquaredPerGramSquared_1.ConversionFactorB = "10000"
+CentilitreSquaredPerGramSquared_1.Symbol = "cL²/g²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CentilitreSquaredPerGramSquared_1] -->|BelongsToClass| N0001(CentilitreSquaredPerGramSquared) 
+	N0000[CentilitreSquaredPerGramSquared_1] -->|ConversionFactorB| N0002(("10000")) 
+	N0000[CentilitreSquaredPerGramSquared_1] -->|Symbol| N0003(("cL²/g²")) 
+```
+## MillilitreSquaredPerGramSquared <!-- NOUN -->
+- Display name: millilitre squared per gram squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 999999.9999999998
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in millilitre squared per gram squared
+[SI] is the value in SI
+a = Milli*Milli/(Litre*Milli*Litre*Milli), i.e., 999999.9999999998
+and
+Milli = 0.001
+Litre = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MillilitreSquaredPerGramSquared:MillilitreSquaredPerGramSquared_1
+MillilitreSquaredPerGramSquared_1.ConversionFactorB = "999999.9999999998"
+MillilitreSquaredPerGramSquared_1.Symbol = "mL²/g²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MillilitreSquaredPerGramSquared_1] -->|BelongsToClass| N0001(MillilitreSquaredPerGramSquared) 
+	N0000[MillilitreSquaredPerGramSquared_1] -->|ConversionFactorB| N0002(("999999.9999999998")) 
+	N0000[MillilitreSquaredPerGramSquared_1] -->|Symbol| N0003(("mL²/g²")) 
+```
+## CubicCentimetreSquaredPerGramSquared <!-- NOUN -->
+- Display name: cubic centimetre squared per gram squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 999999.9999999998
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in cubic centimetre squared per gram squared
+[SI] is the value in SI
+a = Milli*Milli/(Centi*Centi*Centi*Centi*Centi*Centi), i.e., 999999.9999999998
+and
+Milli = 0.001
+Centi = 0.01
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicCentimetreSquaredPerGramSquared:CubicCentimetreSquaredPerGramSquared_1
+CubicCentimetreSquaredPerGramSquared_1.ConversionFactorB = "999999.9999999998"
+CubicCentimetreSquaredPerGramSquared_1.Symbol = "cm⁶/g²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicCentimetreSquaredPerGramSquared_1] -->|BelongsToClass| N0001(CubicCentimetreSquaredPerGramSquared) 
+	N0000[CubicCentimetreSquaredPerGramSquared_1] -->|ConversionFactorB| N0002(("999999.9999999998")) 
+	N0000[CubicCentimetreSquaredPerGramSquared_1] -->|Symbol| N0003(("cm⁶/g²")) 
+```
+## CubicMillimetreSquaredPerGramSquared <!-- NOUN -->
+- Display name: cubic millimetre squared per gram squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 999999999999.9996
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in cubic millimetre squared per gram squared
+[SI] is the value in SI
+a = Milli*Milli/(Milli*Milli*Milli*Milli*Milli*Milli), i.e., 999999999999.9996
+and
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicMillimetreSquaredPerGramSquared:CubicMillimetreSquaredPerGramSquared_1
+CubicMillimetreSquaredPerGramSquared_1.ConversionFactorB = "999999999999.9996"
+CubicMillimetreSquaredPerGramSquared_1.Symbol = "mm⁶/g²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicMillimetreSquaredPerGramSquared_1] -->|BelongsToClass| N0001(CubicMillimetreSquaredPerGramSquared) 
+	N0000[CubicMillimetreSquaredPerGramSquared_1] -->|ConversionFactorB| N0002(("999999999999.9996")) 
+	N0000[CubicMillimetreSquaredPerGramSquared_1] -->|Symbol| N0003(("mm⁶/g²")) 
+```
+## LitreSquaredPerKilogramSquared <!-- NOUN -->
+- Display name: litre squared per kilogram squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in litre squared per kilogram squared
+[SI] is the value in SI
+a = 1.0/(Litre*Litre), i.e., 1000000
+and
+Litre = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+LitreSquaredPerKilogramSquared:LitreSquaredPerKilogramSquared_1
+LitreSquaredPerKilogramSquared_1.ConversionFactorB = "1000000"
+LitreSquaredPerKilogramSquared_1.Symbol = "L²/kg²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[LitreSquaredPerKilogramSquared_1] -->|BelongsToClass| N0001(LitreSquaredPerKilogramSquared) 
+	N0000[LitreSquaredPerKilogramSquared_1] -->|ConversionFactorB| N0002(("1000000")) 
+	N0000[LitreSquaredPerKilogramSquared_1] -->|Symbol| N0003(("L²/kg²")) 
+```
+## DecilitreSquaredPerKilogramSquared <!-- NOUN -->
+- Display name: decilitre squared per kilogram squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 99999999.99999999
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in decilitre squared per kilogram squared
+[SI] is the value in SI
+a = 1.0/(Litre*Deci*Litre*Deci), i.e., 99999999.99999999
+and
+Litre = 0.001
+Deci = 0.1
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+DecilitreSquaredPerKilogramSquared:DecilitreSquaredPerKilogramSquared_1
+DecilitreSquaredPerKilogramSquared_1.ConversionFactorB = "99999999.99999999"
+DecilitreSquaredPerKilogramSquared_1.Symbol = "dL²/kg²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[DecilitreSquaredPerKilogramSquared_1] -->|BelongsToClass| N0001(DecilitreSquaredPerKilogramSquared) 
+	N0000[DecilitreSquaredPerKilogramSquared_1] -->|ConversionFactorB| N0002(("99999999.99999999")) 
+	N0000[DecilitreSquaredPerKilogramSquared_1] -->|Symbol| N0003(("dL²/kg²")) 
+```
+## CentilitreSquaredPerKilogramSquared <!-- NOUN -->
+- Display name: centilitre squared per kilogram squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 10000000000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in centilitre squared per kilogram squared
+[SI] is the value in SI
+a = 1.0/(Litre*Centi*Litre*Centi), i.e., 10000000000
+and
+Litre = 0.001
+Centi = 0.01
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CentilitreSquaredPerKilogramSquared:CentilitreSquaredPerKilogramSquared_1
+CentilitreSquaredPerKilogramSquared_1.ConversionFactorB = "10000000000"
+CentilitreSquaredPerKilogramSquared_1.Symbol = "cL²/kg²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CentilitreSquaredPerKilogramSquared_1] -->|BelongsToClass| N0001(CentilitreSquaredPerKilogramSquared) 
+	N0000[CentilitreSquaredPerKilogramSquared_1] -->|ConversionFactorB| N0002(("10000000000")) 
+	N0000[CentilitreSquaredPerKilogramSquared_1] -->|Symbol| N0003(("cL²/kg²")) 
+```
+## MillilitreSquaredPerKilogramSquared <!-- NOUN -->
+- Display name: millilitre squared per kilogram squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 999999999999.9999
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in millilitre squared per kilogram squared
+[SI] is the value in SI
+a = 1.0/(Litre*Milli*Litre*Milli), i.e., 999999999999.9999
+and
+Litre = 0.001
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+MillilitreSquaredPerKilogramSquared:MillilitreSquaredPerKilogramSquared_1
+MillilitreSquaredPerKilogramSquared_1.ConversionFactorB = "999999999999.9999"
+MillilitreSquaredPerKilogramSquared_1.Symbol = "mL²/kg²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MillilitreSquaredPerKilogramSquared_1] -->|BelongsToClass| N0001(MillilitreSquaredPerKilogramSquared) 
+	N0000[MillilitreSquaredPerKilogramSquared_1] -->|ConversionFactorB| N0002(("999999999999.9999")) 
+	N0000[MillilitreSquaredPerKilogramSquared_1] -->|Symbol| N0003(("mL²/kg²")) 
+```
+## CubicCentimetreSquaredPerKilogramSquared <!-- NOUN -->
+- Display name: cubic centimetre squared per kilogram squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 999999999999.9999
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in cubic centimetre squared per kilogram squared
+[SI] is the value in SI
+a = 1.0/(Centi*Centi*Centi*Centi*Centi*Centi), i.e., 999999999999.9999
+and
+Centi = 0.01
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicCentimetreSquaredPerKilogramSquared:CubicCentimetreSquaredPerKilogramSquared_1
+CubicCentimetreSquaredPerKilogramSquared_1.ConversionFactorB = "999999999999.9999"
+CubicCentimetreSquaredPerKilogramSquared_1.Symbol = "cm⁶/kg²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicCentimetreSquaredPerKilogramSquared_1] -->|BelongsToClass| N0001(CubicCentimetreSquaredPerKilogramSquared) 
+	N0000[CubicCentimetreSquaredPerKilogramSquared_1] -->|ConversionFactorB| N0002(("999999999999.9999")) 
+	N0000[CubicCentimetreSquaredPerKilogramSquared_1] -->|Symbol| N0003(("cm⁶/kg²")) 
+```
+## CubicMillimetreSquaredPerKilogramSquared <!-- NOUN -->
+- Display name: cubic millimetre squared per kilogram squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 9.999999999999997E+17
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in cubic millimetre squared per kilogram squared
+[SI] is the value in SI
+a = 1.0/(Milli*Milli*Milli*Milli*Milli*Milli), i.e., 9.999999999999997E+17
+and
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicMillimetreSquaredPerKilogramSquared:CubicMillimetreSquaredPerKilogramSquared_1
+CubicMillimetreSquaredPerKilogramSquared_1.ConversionFactorB = "9.999999999999997E+17"
+CubicMillimetreSquaredPerKilogramSquared_1.Symbol = "mm⁶/kg²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicMillimetreSquaredPerKilogramSquared_1] -->|BelongsToClass| N0001(CubicMillimetreSquaredPerKilogramSquared) 
+	N0000[CubicMillimetreSquaredPerKilogramSquared_1] -->|ConversionFactorB| N0002(("9.999999999999997E+17")) 
+	N0000[CubicMillimetreSquaredPerKilogramSquared_1] -->|Symbol| N0003(("mm⁶/kg²")) 
+```
+## CubicYardSquaredPerPoundSquared <!-- NOUN -->
+- Display name: cubic yard squared per pound squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.3519769120204426
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in cubic yard squared per pound squared
+[SI] is the value in SI
+a = Pound*Pound/(Yard*Yard*Yard*Yard*Yard*Yard), i.e., 0.3519769120204426
+and
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Yard = 3.0 * Foot
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicYardSquaredPerPoundSquared:CubicYardSquaredPerPoundSquared_1
+CubicYardSquaredPerPoundSquared_1.ConversionFactorB = "0.3519769120204426"
+CubicYardSquaredPerPoundSquared_1.Symbol = "yd⁶/lb²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicYardSquaredPerPoundSquared_1] -->|BelongsToClass| N0001(CubicYardSquaredPerPoundSquared) 
+	N0000[CubicYardSquaredPerPoundSquared_1] -->|ConversionFactorB| N0002(("0.3519769120204426")) 
+	N0000[CubicYardSquaredPerPoundSquared_1] -->|Symbol| N0003(("yd⁶/lb²")) 
+```
+## CubicFeetSquaredPerPoundSquared <!-- NOUN -->
+- Display name: cubic feet squared per pound squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 256.5911688629027
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in cubic feet squared per pound squared
+[SI] is the value in SI
+a = Pound*Pound/(Foot*Foot*Foot*Foot*Foot*Foot), i.e., 256.5911688629027
+and
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicFeetSquaredPerPoundSquared:CubicFeetSquaredPerPoundSquared_1
+CubicFeetSquaredPerPoundSquared_1.ConversionFactorB = "256.5911688629027"
+CubicFeetSquaredPerPoundSquared_1.Symbol = "ft⁶/lb²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicFeetSquaredPerPoundSquared_1] -->|BelongsToClass| N0001(CubicFeetSquaredPerPoundSquared) 
+	N0000[CubicFeetSquaredPerPoundSquared_1] -->|ConversionFactorB| N0002(("256.5911688629027")) 
+	N0000[CubicFeetSquaredPerPoundSquared_1] -->|Symbol| N0003(("ft⁶/lb²")) 
+```
+## CubicInchesSquaredPerPoundSquared <!-- NOUN -->
+- Display name: cubic inches squared per pound squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 766177124.7659252
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in cubic inches squared per pound squared
+[SI] is the value in SI
+a = Pound*Pound/(Inch*Inch*Inch*Inch*Inch*Inch), i.e., 766177124.7659252
+and
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicInchesSquaredPerPoundSquared:CubicInchesSquaredPerPoundSquared_1
+CubicInchesSquaredPerPoundSquared_1.ConversionFactorB = "766177124.7659252"
+CubicInchesSquaredPerPoundSquared_1.Symbol = "in⁶/lb²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicInchesSquaredPerPoundSquared_1] -->|BelongsToClass| N0001(CubicInchesSquaredPerPoundSquared) 
+	N0000[CubicInchesSquaredPerPoundSquared_1] -->|ConversionFactorB| N0002(("766177124.7659252")) 
+	N0000[CubicInchesSquaredPerPoundSquared_1] -->|Symbol| N0003(("in⁶/lb²")) 
+```
+## CubicYardSquaredPerOunceSquared <!-- NOUN -->
+- Display name: cubic yard squared per ounce squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.001374909812579854
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in cubic yard squared per ounce squared
+[SI] is the value in SI
+a = Ounce*Ounce/(Yard*Yard*Yard*Yard*Yard*Yard), i.e., 0.001374909812579854
+and
+Ounce = (1.0 / 16.0) * Pound reference: https://en.wikipedia.org/wiki/Ounce
+Yard = 3.0 * Foot
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicYardSquaredPerOunceSquared:CubicYardSquaredPerOunceSquared_1
+CubicYardSquaredPerOunceSquared_1.ConversionFactorB = "0.001374909812579854"
+CubicYardSquaredPerOunceSquared_1.Symbol = "yd⁶/oz²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicYardSquaredPerOunceSquared_1] -->|BelongsToClass| N0001(CubicYardSquaredPerOunceSquared) 
+	N0000[CubicYardSquaredPerOunceSquared_1] -->|ConversionFactorB| N0002(("0.001374909812579854")) 
+	N0000[CubicYardSquaredPerOunceSquared_1] -->|Symbol| N0003(("yd⁶/oz²")) 
+```
+## CubicFeetSquaredPerOunceSquared <!-- NOUN -->
+- Display name: cubic feet squared per ounce squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1.0023092533707136
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in cubic feet squared per ounce squared
+[SI] is the value in SI
+a = Ounce*Ounce/(Foot*Foot*Foot*Foot*Foot*Foot), i.e., 1.0023092533707136
+and
+Ounce = (1.0 / 16.0) * Pound reference: https://en.wikipedia.org/wiki/Ounce
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicFeetSquaredPerOunceSquared:CubicFeetSquaredPerOunceSquared_1
+CubicFeetSquaredPerOunceSquared_1.ConversionFactorB = "1.0023092533707136"
+CubicFeetSquaredPerOunceSquared_1.Symbol = "ft⁶/oz²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicFeetSquaredPerOunceSquared_1] -->|BelongsToClass| N0001(CubicFeetSquaredPerOunceSquared) 
+	N0000[CubicFeetSquaredPerOunceSquared_1] -->|ConversionFactorB| N0002(("1.0023092533707136")) 
+	N0000[CubicFeetSquaredPerOunceSquared_1] -->|Symbol| N0003(("ft⁶/oz²")) 
+```
+## CubicInchesSquaredPerOunceSquared <!-- NOUN -->
+- Display name: cubic inches squared per ounce squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 2992879.393616895
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in cubic inches squared per ounce squared
+[SI] is the value in SI
+a = Ounce*Ounce/(Inch*Inch*Inch*Inch*Inch*Inch), i.e., 2992879.393616895
+and
+Ounce = (1.0 / 16.0) * Pound reference: https://en.wikipedia.org/wiki/Ounce
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+CubicInchesSquaredPerOunceSquared:CubicInchesSquaredPerOunceSquared_1
+CubicInchesSquaredPerOunceSquared_1.ConversionFactorB = "2992879.393616895"
+CubicInchesSquaredPerOunceSquared_1.Symbol = "in⁶/oz²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[CubicInchesSquaredPerOunceSquared_1] -->|BelongsToClass| N0001(CubicInchesSquaredPerOunceSquared) 
+	N0000[CubicInchesSquaredPerOunceSquared_1] -->|ConversionFactorB| N0002(("2992879.393616895")) 
+	N0000[CubicInchesSquaredPerOunceSquared_1] -->|Symbol| N0003(("in⁶/oz²")) 
+```
+## GallonUkSquaredPerOunceSquared <!-- NOUN -->
+- Display name: gallon UK squared per ounce squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 38.88798649143027
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gallon UK squared per ounce squared
+[SI] is the value in SI
+a = Ounce*Ounce/(GallonUK*GallonUK), i.e., 38.88798649143027
+and
+Ounce = (1.0 / 16.0) * Pound reference: https://en.wikipedia.org/wiki/Ounce
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GallonUkSquaredPerOunceSquared:GallonUkSquaredPerOunceSquared_1
+GallonUkSquaredPerOunceSquared_1.ConversionFactorB = "38.88798649143027"
+GallonUkSquaredPerOunceSquared_1.Symbol = "galUK²/oz²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GallonUkSquaredPerOunceSquared_1] -->|BelongsToClass| N0001(GallonUkSquaredPerOunceSquared) 
+	N0000[GallonUkSquaredPerOunceSquared_1] -->|ConversionFactorB| N0002(("38.88798649143027")) 
+	N0000[GallonUkSquaredPerOunceSquared_1] -->|Symbol| N0003(("galUK²/oz²")) 
+```
+## GallonUsSquaredPerOunceSquared <!-- NOUN -->
+- Display name: gallon US squared per ounce squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 56.087393295044976
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gallon US squared per ounce squared
+[SI] is the value in SI
+a = Ounce*Ounce/(GallonUS*GallonUS), i.e., 56.087393295044976
+and
+Ounce = (1.0 / 16.0) * Pound reference: https://en.wikipedia.org/wiki/Ounce
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GallonUsSquaredPerOunceSquared:GallonUsSquaredPerOunceSquared_1
+GallonUsSquaredPerOunceSquared_1.ConversionFactorB = "56.087393295044976"
+GallonUsSquaredPerOunceSquared_1.Symbol = "galUS²/oz²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GallonUsSquaredPerOunceSquared_1] -->|BelongsToClass| N0001(GallonUsSquaredPerOunceSquared) 
+	N0000[GallonUsSquaredPerOunceSquared_1] -->|ConversionFactorB| N0002(("56.087393295044976")) 
+	N0000[GallonUsSquaredPerOunceSquared_1] -->|Symbol| N0003(("galUS²/oz²")) 
+```
+## GallonUkSquaredPerPoundSquared <!-- NOUN -->
+- Display name: gallon UK squared per pound squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 9955.324541806149
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gallon UK squared per pound squared
+[SI] is the value in SI
+a = Pound*Pound/(GallonUK*GallonUK), i.e., 9955.324541806149
+and
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GallonUkSquaredPerPoundSquared:GallonUkSquaredPerPoundSquared_1
+GallonUkSquaredPerPoundSquared_1.ConversionFactorB = "9955.324541806149"
+GallonUkSquaredPerPoundSquared_1.Symbol = "galUK²/lb²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GallonUkSquaredPerPoundSquared_1] -->|BelongsToClass| N0001(GallonUkSquaredPerPoundSquared) 
+	N0000[GallonUkSquaredPerPoundSquared_1] -->|ConversionFactorB| N0002(("9955.324541806149")) 
+	N0000[GallonUkSquaredPerPoundSquared_1] -->|Symbol| N0003(("galUK²/lb²")) 
+```
+## GallonUsSquaredPerPoundSquared <!-- NOUN -->
+- Display name: gallon US squared per pound squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 14358.372683531514
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gallon US squared per pound squared
+[SI] is the value in SI
+a = Pound*Pound/(GallonUS*GallonUS), i.e., 14358.372683531514
+and
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GallonUsSquaredPerPoundSquared:GallonUsSquaredPerPoundSquared_1
+GallonUsSquaredPerPoundSquared_1.ConversionFactorB = "14358.372683531514"
+GallonUsSquaredPerPoundSquared_1.Symbol = "galUS²/lb²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GallonUsSquaredPerPoundSquared_1] -->|BelongsToClass| N0001(GallonUsSquaredPerPoundSquared) 
+	N0000[GallonUsSquaredPerPoundSquared_1] -->|ConversionFactorB| N0002(("14358.372683531514")) 
+	N0000[GallonUsSquaredPerPoundSquared_1] -->|Symbol| N0003(("galUS²/lb²")) 
+```
+## KilogramPerCubicMetrePerPascal <!-- NOUN -->
+- Display name: kilogram per cubic metre per pascal
+- Parent class: [Unit](#Unit)
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerPascal:KilogramPerCubicMetrePerPascal_1
+KilogramPerCubicMetrePerPascal_1.Symbol = "kg/m³/Pa"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerPascal_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerPascal) 
+	N0000[KilogramPerCubicMetrePerPascal_1] -->|Symbol| N0002(("kg/m³/Pa")) 
+```
+## SpecificGravityPerPascal <!-- NOUN -->
+- Display name: specific gravity per pascal
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.001000028000784022
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per pascal
+[SI] is the value in SI
+a = SpecificGavity4degC, i.e., 0.001000028000784022
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerPascal:SpecificGravityPerPascal_1
+SpecificGravityPerPascal_1.ConversionFactorB = "0.001000028000784022"
+SpecificGravityPerPascal_1.Symbol = "sg/Pa"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerPascal_1] -->|BelongsToClass| N0001(SpecificGravityPerPascal) 
+	N0000[SpecificGravityPerPascal_1] -->|ConversionFactorB| N0002(("0.001000028000784022")) 
+	N0000[SpecificGravityPerPascal_1] -->|Symbol| N0003(("sg/Pa")) 
+```
+## GramPerCubicCentimetrePerPascal <!-- NOUN -->
+- Display name: gram per cubic centimetre per pascal
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0010000000000000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per pascal
+[SI] is the value in SI
+a = Centi*Centi*Centi/Milli, i.e., 0.0010000000000000002
+and
+Centi = 0.01
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerPascal:GramPerCubicCentimetrePerPascal_1
+GramPerCubicCentimetrePerPascal_1.ConversionFactorB = "0.0010000000000000002"
+GramPerCubicCentimetrePerPascal_1.Symbol = "g/cm³/Pa"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerPascal_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerPascal) 
+	N0000[GramPerCubicCentimetrePerPascal_1] -->|ConversionFactorB| N0002(("0.0010000000000000002")) 
+	N0000[GramPerCubicCentimetrePerPascal_1] -->|Symbol| N0003(("g/cm³/Pa")) 
+```
+## PoundPerGallonUkPerPascal <!-- NOUN -->
+- Display name: pound per gallon (UK) per pascal
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.010022412854960501
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per pascal
+[SI] is the value in SI
+a = GallonUK/Pound, i.e., 0.010022412854960501
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerPascal:PoundPerGallonUkPerPascal_1
+PoundPerGallonUkPerPascal_1.ConversionFactorB = "0.010022412854960501"
+PoundPerGallonUkPerPascal_1.Symbol = "ppgUK/Pa"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerPascal_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerPascal) 
+	N0000[PoundPerGallonUkPerPascal_1] -->|ConversionFactorB| N0002(("0.010022412854960501")) 
+	N0000[PoundPerGallonUkPerPascal_1] -->|Symbol| N0003(("ppgUK/Pa")) 
+```
+## PoundPerGallonUsPerPascal <!-- NOUN -->
+- Display name: pound per gallon (US) per pascal
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.00834540445201933
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per pascal
+[SI] is the value in SI
+a = GallonUS/Pound, i.e., 0.00834540445201933
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerPascal:PoundPerGallonUsPerPascal_1
+PoundPerGallonUsPerPascal_1.ConversionFactorB = "0.00834540445201933"
+PoundPerGallonUsPerPascal_1.Symbol = "ppgUS/Pa"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerPascal_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerPascal) 
+	N0000[PoundPerGallonUsPerPascal_1] -->|ConversionFactorB| N0002(("0.00834540445201933")) 
+	N0000[PoundPerGallonUsPerPascal_1] -->|Symbol| N0003(("ppgUS/Pa")) 
+```
+## PoundPerCubicFootPerPascal <!-- NOUN -->
+- Display name: pound per cubic foot per pascal
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.06242796057614459
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per pascal
+[SI] is the value in SI
+a = Foot*Foot*Foot/Pound, i.e., 0.06242796057614459
+and
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerPascal:PoundPerCubicFootPerPascal_1
+PoundPerCubicFootPerPascal_1.ConversionFactorB = "0.06242796057614459"
+PoundPerCubicFootPerPascal_1.Symbol = "lb/ft³/Pa"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerPascal_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerPascal) 
+	N0000[PoundPerCubicFootPerPascal_1] -->|ConversionFactorB| N0002(("0.06242796057614459")) 
+	N0000[PoundPerCubicFootPerPascal_1] -->|Symbol| N0003(("lb/ft³/Pa")) 
+```
+## PoundPerCubicInchPerPascal <!-- NOUN -->
+- Display name: pound per cubic inch per pascal
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 3.612729200008369E-05
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per pascal
+[SI] is the value in SI
+a = Inch*Inch*Inch/Pound, i.e., 3.612729200008369E-05
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerPascal:PoundPerCubicInchPerPascal_1
+PoundPerCubicInchPerPascal_1.ConversionFactorB = "3.612729200008369E-05"
+PoundPerCubicInchPerPascal_1.Symbol = "lb/in³/Pa"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerPascal_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerPascal) 
+	N0000[PoundPerCubicInchPerPascal_1] -->|ConversionFactorB| N0002(("3.612729200008369E-05")) 
+	N0000[PoundPerCubicInchPerPascal_1] -->|Symbol| N0003(("lb/in³/Pa")) 
+```
+## PoundPerCubicYardPerPascal <!-- NOUN -->
+- Display name: pound per cubic yard per pascal
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1.6855549355559039
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per pascal
+[SI] is the value in SI
+a = Yard*Yard*Yard/Pound, i.e., 1.6855549355559039
+and
+Yard = 3.0 * Foot
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerPascal:PoundPerCubicYardPerPascal_1
+PoundPerCubicYardPerPascal_1.ConversionFactorB = "1.6855549355559039"
+PoundPerCubicYardPerPascal_1.Symbol = "lb/yd³/Pa"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerPascal_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerPascal) 
+	N0000[PoundPerCubicYardPerPascal_1] -->|ConversionFactorB| N0002(("1.6855549355559039")) 
+	N0000[PoundPerCubicYardPerPascal_1] -->|Symbol| N0003(("lb/yd³/Pa")) 
+```
+## KilogramPerCubicMetrePerBar <!-- NOUN -->
+- Display name: kilogram per cubic metre per bar
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 100000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per bar
+[SI] is the value in SI
+a = Bar/Unit, i.e., 100000
+and
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerBar:KilogramPerCubicMetrePerBar_1
+KilogramPerCubicMetrePerBar_1.ConversionFactorB = "100000"
+KilogramPerCubicMetrePerBar_1.Symbol = "kg/m³/bar"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerBar_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerBar) 
+	N0000[KilogramPerCubicMetrePerBar_1] -->|ConversionFactorB| N0002(("100000")) 
+	N0000[KilogramPerCubicMetrePerBar_1] -->|Symbol| N0003(("kg/m³/bar")) 
+```
+## SpecificGravityPerBar <!-- NOUN -->
+- Display name: specific gravity per bar
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 100.0028000784022
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per bar
+[SI] is the value in SI
+a = SpecificGavity4degC*Bar, i.e., 100.0028000784022
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerBar:SpecificGravityPerBar_1
+SpecificGravityPerBar_1.ConversionFactorB = "100.0028000784022"
+SpecificGravityPerBar_1.Symbol = "sg/bar"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerBar_1] -->|BelongsToClass| N0001(SpecificGravityPerBar) 
+	N0000[SpecificGravityPerBar_1] -->|ConversionFactorB| N0002(("100.0028000784022")) 
+	N0000[SpecificGravityPerBar_1] -->|Symbol| N0003(("sg/bar")) 
+```
+## GramPerCubicCentimetrePerBar <!-- NOUN -->
+- Display name: gram per cubic centimetre per bar
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 100.00000000000001
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per bar
+[SI] is the value in SI
+a = Centi*Centi*Centi*Bar/Milli, i.e., 100.00000000000001
+and
+Centi = 0.01
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerBar:GramPerCubicCentimetrePerBar_1
+GramPerCubicCentimetrePerBar_1.ConversionFactorB = "100.00000000000001"
+GramPerCubicCentimetrePerBar_1.Symbol = "g/cm³/bar"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerBar_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerBar) 
+	N0000[GramPerCubicCentimetrePerBar_1] -->|ConversionFactorB| N0002(("100.00000000000001")) 
+	N0000[GramPerCubicCentimetrePerBar_1] -->|Symbol| N0003(("g/cm³/bar")) 
+```
+## PoundPerGallonUkPerBar <!-- NOUN -->
+- Display name: pound per gallon (UK) per bar
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1002.2412854960501
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per bar
+[SI] is the value in SI
+a = GallonUK*Bar/Pound, i.e., 1002.2412854960501
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerBar:PoundPerGallonUkPerBar_1
+PoundPerGallonUkPerBar_1.ConversionFactorB = "1002.2412854960501"
+PoundPerGallonUkPerBar_1.Symbol = "ppgUK/bar"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerBar_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerBar) 
+	N0000[PoundPerGallonUkPerBar_1] -->|ConversionFactorB| N0002(("1002.2412854960501")) 
+	N0000[PoundPerGallonUkPerBar_1] -->|Symbol| N0003(("ppgUK/bar")) 
+```
+## PoundPerGallonUsPerBar <!-- NOUN -->
+- Display name: pound per gallon (US) per bar
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 834.540445201933
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per bar
+[SI] is the value in SI
+a = GallonUS*Bar/Pound, i.e., 834.540445201933
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerBar:PoundPerGallonUsPerBar_1
+PoundPerGallonUsPerBar_1.ConversionFactorB = "834.540445201933"
+PoundPerGallonUsPerBar_1.Symbol = "ppgUS/bar"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerBar_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerBar) 
+	N0000[PoundPerGallonUsPerBar_1] -->|ConversionFactorB| N0002(("834.540445201933")) 
+	N0000[PoundPerGallonUsPerBar_1] -->|Symbol| N0003(("ppgUS/bar")) 
+```
+## PoundPerCubicFootPerBar <!-- NOUN -->
+- Display name: pound per cubic foot per bar
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 6242.79605761446
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per bar
+[SI] is the value in SI
+a = Foot*Foot*Foot*Bar/Pound, i.e., 6242.79605761446
+and
+Foot = 12.0 * Inch
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerBar:PoundPerCubicFootPerBar_1
+PoundPerCubicFootPerBar_1.ConversionFactorB = "6242.79605761446"
+PoundPerCubicFootPerBar_1.Symbol = "lb/ft³/bar"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerBar_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerBar) 
+	N0000[PoundPerCubicFootPerBar_1] -->|ConversionFactorB| N0002(("6242.79605761446")) 
+	N0000[PoundPerCubicFootPerBar_1] -->|Symbol| N0003(("lb/ft³/bar")) 
+```
+## PoundPerCubicInchPerBar <!-- NOUN -->
+- Display name: pound per cubic inch per bar
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 3.6127292000083684
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per bar
+[SI] is the value in SI
+a = Inch*Inch*Inch*Bar/Pound, i.e., 3.6127292000083684
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerBar:PoundPerCubicInchPerBar_1
+PoundPerCubicInchPerBar_1.ConversionFactorB = "3.6127292000083684"
+PoundPerCubicInchPerBar_1.Symbol = "lb/in³/bar"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerBar_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerBar) 
+	N0000[PoundPerCubicInchPerBar_1] -->|ConversionFactorB| N0002(("3.6127292000083684")) 
+	N0000[PoundPerCubicInchPerBar_1] -->|Symbol| N0003(("lb/in³/bar")) 
+```
+## PoundPerCubicYardPerBar <!-- NOUN -->
+- Display name: pound per cubic yard per bar
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 168555.49355559036
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per bar
+[SI] is the value in SI
+a = Yard*Yard*Yard*Bar/Pound, i.e., 168555.49355559036
+and
+Yard = 3.0 * Foot
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerBar:PoundPerCubicYardPerBar_1
+PoundPerCubicYardPerBar_1.ConversionFactorB = "168555.49355559036"
+PoundPerCubicYardPerBar_1.Symbol = "lb/yd³/bar"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerBar_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerBar) 
+	N0000[PoundPerCubicYardPerBar_1] -->|ConversionFactorB| N0002(("168555.49355559036")) 
+	N0000[PoundPerCubicYardPerBar_1] -->|Symbol| N0003(("lb/yd³/bar")) 
+```
+## KilogramPerCubicMetrePerMegapascal <!-- NOUN -->
+- Display name: kilogram per cubic metre per megapascal
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per megapascal
+[SI] is the value in SI
+a = Mega/Unit, i.e., 1000000
+and
+Mega = 1e6
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerMegapascal:KilogramPerCubicMetrePerMegapascal_1
+KilogramPerCubicMetrePerMegapascal_1.ConversionFactorB = "1000000"
+KilogramPerCubicMetrePerMegapascal_1.Symbol = "kg/m³/MPa"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerMegapascal_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerMegapascal) 
+	N0000[KilogramPerCubicMetrePerMegapascal_1] -->|ConversionFactorB| N0002(("1000000")) 
+	N0000[KilogramPerCubicMetrePerMegapascal_1] -->|Symbol| N0003(("kg/m³/MPa")) 
+```
+## SpecificGravityPerMegapascal <!-- NOUN -->
+- Display name: specific gravity per megapascal
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000.028000784022
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per megapascal
+[SI] is the value in SI
+a = SpecificGavity4degC*Mega, i.e., 1000.028000784022
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+Mega = 1e6
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerMegapascal:SpecificGravityPerMegapascal_1
+SpecificGravityPerMegapascal_1.ConversionFactorB = "1000.028000784022"
+SpecificGravityPerMegapascal_1.Symbol = "sg/MPa"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerMegapascal_1] -->|BelongsToClass| N0001(SpecificGravityPerMegapascal) 
+	N0000[SpecificGravityPerMegapascal_1] -->|ConversionFactorB| N0002(("1000.028000784022")) 
+	N0000[SpecificGravityPerMegapascal_1] -->|Symbol| N0003(("sg/MPa")) 
+```
+## GramPerCubicCentimetrePerMegapascal <!-- NOUN -->
+- Display name: gram per cubic centimetre per megapascal
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000.0000000000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per megapascal
+[SI] is the value in SI
+a = Centi*Centi*Centi*Mega/Milli, i.e., 1000.0000000000002
+and
+Centi = 0.01
+Mega = 1e6
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerMegapascal:GramPerCubicCentimetrePerMegapascal_1
+GramPerCubicCentimetrePerMegapascal_1.ConversionFactorB = "1000.0000000000002"
+GramPerCubicCentimetrePerMegapascal_1.Symbol = "g/cm³/MPa"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerMegapascal_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerMegapascal) 
+	N0000[GramPerCubicCentimetrePerMegapascal_1] -->|ConversionFactorB| N0002(("1000.0000000000002")) 
+	N0000[GramPerCubicCentimetrePerMegapascal_1] -->|Symbol| N0003(("g/cm³/MPa")) 
+```
+## PoundPerGallonUkPerMegapascal <!-- NOUN -->
+- Display name: pound per gallon (UK) per megapascal
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 10022.412854960501
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per megapascal
+[SI] is the value in SI
+a = GallonUK*Mega/Pound, i.e., 10022.412854960501
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Mega = 1e6
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerMegapascal:PoundPerGallonUkPerMegapascal_1
+PoundPerGallonUkPerMegapascal_1.ConversionFactorB = "10022.412854960501"
+PoundPerGallonUkPerMegapascal_1.Symbol = "ppgUK/MPa"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerMegapascal_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerMegapascal) 
+	N0000[PoundPerGallonUkPerMegapascal_1] -->|ConversionFactorB| N0002(("10022.412854960501")) 
+	N0000[PoundPerGallonUkPerMegapascal_1] -->|Symbol| N0003(("ppgUK/MPa")) 
+```
+## PoundPerGallonUsPerMegapascal <!-- NOUN -->
+- Display name: pound per gallon (US) per megapascal
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 8345.404452019331
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per megapascal
+[SI] is the value in SI
+a = GallonUS*Mega/Pound, i.e., 8345.404452019331
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Mega = 1e6
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerMegapascal:PoundPerGallonUsPerMegapascal_1
+PoundPerGallonUsPerMegapascal_1.ConversionFactorB = "8345.404452019331"
+PoundPerGallonUsPerMegapascal_1.Symbol = "ppgUS/MPa"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerMegapascal_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerMegapascal) 
+	N0000[PoundPerGallonUsPerMegapascal_1] -->|ConversionFactorB| N0002(("8345.404452019331")) 
+	N0000[PoundPerGallonUsPerMegapascal_1] -->|Symbol| N0003(("ppgUS/MPa")) 
+```
+## PoundPerCubicFootPerMegapascal <!-- NOUN -->
+- Display name: pound per cubic foot per megapascal
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 62427.960576144586
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per megapascal
+[SI] is the value in SI
+a = Foot*Foot*Foot*Mega/Pound, i.e., 62427.960576144586
+and
+Foot = 12.0 * Inch
+Mega = 1e6
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerMegapascal:PoundPerCubicFootPerMegapascal_1
+PoundPerCubicFootPerMegapascal_1.ConversionFactorB = "62427.960576144586"
+PoundPerCubicFootPerMegapascal_1.Symbol = "lb/ft³/MPa"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerMegapascal_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerMegapascal) 
+	N0000[PoundPerCubicFootPerMegapascal_1] -->|ConversionFactorB| N0002(("62427.960576144586")) 
+	N0000[PoundPerCubicFootPerMegapascal_1] -->|Symbol| N0003(("lb/ft³/MPa")) 
+```
+## PoundPerCubicInchPerMegapascal <!-- NOUN -->
+- Display name: pound per cubic inch per megapascal
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 36.127292000083685
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per megapascal
+[SI] is the value in SI
+a = Inch*Inch*Inch*Mega/Pound, i.e., 36.127292000083685
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Mega = 1e6
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerMegapascal:PoundPerCubicInchPerMegapascal_1
+PoundPerCubicInchPerMegapascal_1.ConversionFactorB = "36.127292000083685"
+PoundPerCubicInchPerMegapascal_1.Symbol = "lb/in³/MPa"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerMegapascal_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerMegapascal) 
+	N0000[PoundPerCubicInchPerMegapascal_1] -->|ConversionFactorB| N0002(("36.127292000083685")) 
+	N0000[PoundPerCubicInchPerMegapascal_1] -->|Symbol| N0003(("lb/in³/MPa")) 
+```
+## PoundPerCubicYardPerMegapascal <!-- NOUN -->
+- Display name: pound per cubic yard per megapascal
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1685554.9355559037
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per megapascal
+[SI] is the value in SI
+a = Yard*Yard*Yard*Mega/Pound, i.e., 1685554.9355559037
+and
+Yard = 3.0 * Foot
+Mega = 1e6
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerMegapascal:PoundPerCubicYardPerMegapascal_1
+PoundPerCubicYardPerMegapascal_1.ConversionFactorB = "1685554.9355559037"
+PoundPerCubicYardPerMegapascal_1.Symbol = "lb/yd³/MPa"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerMegapascal_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerMegapascal) 
+	N0000[PoundPerCubicYardPerMegapascal_1] -->|ConversionFactorB| N0002(("1685554.9355559037")) 
+	N0000[PoundPerCubicYardPerMegapascal_1] -->|Symbol| N0003(("lb/yd³/MPa")) 
+```
+## KilogramPerCubicMetrePerGigapascal <!-- NOUN -->
+- Display name: kilogram per cubic metre per gigapascal
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000000000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per gigapascal
+[SI] is the value in SI
+a = Giga/Unit, i.e., 1000000000
+and
+Giga = 1e9
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerGigapascal:KilogramPerCubicMetrePerGigapascal_1
+KilogramPerCubicMetrePerGigapascal_1.ConversionFactorB = "1000000000"
+KilogramPerCubicMetrePerGigapascal_1.Symbol = "kg/m³/GPa"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerGigapascal_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerGigapascal) 
+	N0000[KilogramPerCubicMetrePerGigapascal_1] -->|ConversionFactorB| N0002(("1000000000")) 
+	N0000[KilogramPerCubicMetrePerGigapascal_1] -->|Symbol| N0003(("kg/m³/GPa")) 
+```
+## SpecificGravityPerGigapascal <!-- NOUN -->
+- Display name: specific gravity per gigapascal
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000028.0007840219
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per gigapascal
+[SI] is the value in SI
+a = SpecificGavity4degC*Giga, i.e., 1000028.0007840219
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+Giga = 1e9
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerGigapascal:SpecificGravityPerGigapascal_1
+SpecificGravityPerGigapascal_1.ConversionFactorB = "1000028.0007840219"
+SpecificGravityPerGigapascal_1.Symbol = "sg/GPa"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerGigapascal_1] -->|BelongsToClass| N0001(SpecificGravityPerGigapascal) 
+	N0000[SpecificGravityPerGigapascal_1] -->|ConversionFactorB| N0002(("1000028.0007840219")) 
+	N0000[SpecificGravityPerGigapascal_1] -->|Symbol| N0003(("sg/GPa")) 
+```
+## GramPerCubicCentimetrePerGigapascal <!-- NOUN -->
+- Display name: gram per cubic centimetre per gigapascal
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000000.0000000001
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per gigapascal
+[SI] is the value in SI
+a = Centi*Centi*Centi*Giga/Milli, i.e., 1000000.0000000001
+and
+Centi = 0.01
+Giga = 1e9
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerGigapascal:GramPerCubicCentimetrePerGigapascal_1
+GramPerCubicCentimetrePerGigapascal_1.ConversionFactorB = "1000000.0000000001"
+GramPerCubicCentimetrePerGigapascal_1.Symbol = "g/cm³/GPa"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerGigapascal_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerGigapascal) 
+	N0000[GramPerCubicCentimetrePerGigapascal_1] -->|ConversionFactorB| N0002(("1000000.0000000001")) 
+	N0000[GramPerCubicCentimetrePerGigapascal_1] -->|Symbol| N0003(("g/cm³/GPa")) 
+```
+## PoundPerGallonUkPerGigapascal <!-- NOUN -->
+- Display name: pound per gallon (UK) per gigapascal
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 10022412.854960501
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per gigapascal
+[SI] is the value in SI
+a = GallonUK*Giga/Pound, i.e., 10022412.854960501
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Giga = 1e9
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerGigapascal:PoundPerGallonUkPerGigapascal_1
+PoundPerGallonUkPerGigapascal_1.ConversionFactorB = "10022412.854960501"
+PoundPerGallonUkPerGigapascal_1.Symbol = "ppgUK/GPa"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerGigapascal_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerGigapascal) 
+	N0000[PoundPerGallonUkPerGigapascal_1] -->|ConversionFactorB| N0002(("10022412.854960501")) 
+	N0000[PoundPerGallonUkPerGigapascal_1] -->|Symbol| N0003(("ppgUK/GPa")) 
+```
+## PoundPerGallonUsPerGigapascal <!-- NOUN -->
+- Display name: pound per gallon (US) per gigapascal
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 8345404.45201933
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per gigapascal
+[SI] is the value in SI
+a = GallonUS*Giga/Pound, i.e., 8345404.45201933
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Giga = 1e9
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerGigapascal:PoundPerGallonUsPerGigapascal_1
+PoundPerGallonUsPerGigapascal_1.ConversionFactorB = "8345404.45201933"
+PoundPerGallonUsPerGigapascal_1.Symbol = "ppgUS/GPa"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerGigapascal_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerGigapascal) 
+	N0000[PoundPerGallonUsPerGigapascal_1] -->|ConversionFactorB| N0002(("8345404.45201933")) 
+	N0000[PoundPerGallonUsPerGigapascal_1] -->|Symbol| N0003(("ppgUS/GPa")) 
+```
+## PoundPerCubicFootPerGigapascal <!-- NOUN -->
+- Display name: pound per cubic foot per gigapascal
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 62427960.57614458
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per gigapascal
+[SI] is the value in SI
+a = Foot*Foot*Foot*Giga/Pound, i.e., 62427960.57614458
+and
+Foot = 12.0 * Inch
+Giga = 1e9
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerGigapascal:PoundPerCubicFootPerGigapascal_1
+PoundPerCubicFootPerGigapascal_1.ConversionFactorB = "62427960.57614458"
+PoundPerCubicFootPerGigapascal_1.Symbol = "lb/ft³/GPa"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerGigapascal_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerGigapascal) 
+	N0000[PoundPerCubicFootPerGigapascal_1] -->|ConversionFactorB| N0002(("62427960.57614458")) 
+	N0000[PoundPerCubicFootPerGigapascal_1] -->|Symbol| N0003(("lb/ft³/GPa")) 
+```
+## PoundPerCubicInchPerGigapascal <!-- NOUN -->
+- Display name: pound per cubic inch per gigapascal
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 36127.29200008368
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per gigapascal
+[SI] is the value in SI
+a = Inch*Inch*Inch*Giga/Pound, i.e., 36127.29200008368
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Giga = 1e9
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerGigapascal:PoundPerCubicInchPerGigapascal_1
+PoundPerCubicInchPerGigapascal_1.ConversionFactorB = "36127.29200008368"
+PoundPerCubicInchPerGigapascal_1.Symbol = "lb/in³/GPa"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerGigapascal_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerGigapascal) 
+	N0000[PoundPerCubicInchPerGigapascal_1] -->|ConversionFactorB| N0002(("36127.29200008368")) 
+	N0000[PoundPerCubicInchPerGigapascal_1] -->|Symbol| N0003(("lb/in³/GPa")) 
+```
+## PoundPerCubicYardPerGigapascal <!-- NOUN -->
+- Display name: pound per cubic yard per gigapascal
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1685554935.555904
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per gigapascal
+[SI] is the value in SI
+a = Yard*Yard*Yard*Giga/Pound, i.e., 1685554935.555904
+and
+Yard = 3.0 * Foot
+Giga = 1e9
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerGigapascal:PoundPerCubicYardPerGigapascal_1
+PoundPerCubicYardPerGigapascal_1.ConversionFactorB = "1685554935.555904"
+PoundPerCubicYardPerGigapascal_1.Symbol = "lb/yd³/GPa"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerGigapascal_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerGigapascal) 
+	N0000[PoundPerCubicYardPerGigapascal_1] -->|ConversionFactorB| N0002(("1685554935.555904")) 
+	N0000[PoundPerCubicYardPerGigapascal_1] -->|Symbol| N0003(("lb/yd³/GPa")) 
+```
+## KilogramPerCubicMetrePerPoundPerSquareInch <!-- NOUN -->
+- Display name: kilogram per cubic metre per pound per square inch
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 6894.757293168361
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per pound per square inch
+[SI] is the value in SI
+a = PSI/Unit, i.e., 6894.757293168361
+and
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Unit = 1.0
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerPoundPerSquareInch:KilogramPerCubicMetrePerPoundPerSquareInch_1
+KilogramPerCubicMetrePerPoundPerSquareInch_1.ConversionFactorB = "6894.757293168361"
+KilogramPerCubicMetrePerPoundPerSquareInch_1.Symbol = "kg/m³/psi"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerPoundPerSquareInch_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerPoundPerSquareInch) 
+	N0000[KilogramPerCubicMetrePerPoundPerSquareInch_1] -->|ConversionFactorB| N0002(("6894.757293168361")) 
+	N0000[KilogramPerCubicMetrePerPoundPerSquareInch_1] -->|Symbol| N0003(("kg/m³/psi")) 
+```
+## SpecificGravityPerPoundPerSquareInch <!-- NOUN -->
+- Display name: specific gravity per pound per square inch
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 6.894950351778211
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per pound per square inch
+[SI] is the value in SI
+a = SpecificGavity4degC*PSI, i.e., 6.894950351778211
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerPoundPerSquareInch:SpecificGravityPerPoundPerSquareInch_1
+SpecificGravityPerPoundPerSquareInch_1.ConversionFactorB = "6.894950351778211"
+SpecificGravityPerPoundPerSquareInch_1.Symbol = "sg/psi"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerPoundPerSquareInch_1] -->|BelongsToClass| N0001(SpecificGravityPerPoundPerSquareInch) 
+	N0000[SpecificGravityPerPoundPerSquareInch_1] -->|ConversionFactorB| N0002(("6.894950351778211")) 
+	N0000[SpecificGravityPerPoundPerSquareInch_1] -->|Symbol| N0003(("sg/psi")) 
+```
+## GramPerCubicCentimetrePerPoundPerSquareInch <!-- NOUN -->
+- Display name: gram per cubic centimetre per pound per square inch
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 6.894757293168362
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per pound per square inch
+[SI] is the value in SI
+a = Centi*Centi*Centi*PSI/Milli, i.e., 6.894757293168362
+and
+Centi = 0.01
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Milli = 0.001
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerPoundPerSquareInch:GramPerCubicCentimetrePerPoundPerSquareInch_1
+GramPerCubicCentimetrePerPoundPerSquareInch_1.ConversionFactorB = "6.894757293168362"
+GramPerCubicCentimetrePerPoundPerSquareInch_1.Symbol = "g/cm³/psi"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerPoundPerSquareInch_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerPoundPerSquareInch) 
+	N0000[GramPerCubicCentimetrePerPoundPerSquareInch_1] -->|ConversionFactorB| N0002(("6.894757293168362")) 
+	N0000[GramPerCubicCentimetrePerPoundPerSquareInch_1] -->|Symbol| N0003(("g/cm³/psi")) 
+```
+## PoundPerGallonUkPerPoundPerSquareInch <!-- NOUN -->
+- Display name: pound per gallon (UK) per pound per square inch
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 69.10210412688325
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per pound per square inch
+[SI] is the value in SI
+a = GallonUK*PSI/Pound, i.e., 69.10210412688325
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerPoundPerSquareInch:PoundPerGallonUkPerPoundPerSquareInch_1
+PoundPerGallonUkPerPoundPerSquareInch_1.ConversionFactorB = "69.10210412688325"
+PoundPerGallonUkPerPoundPerSquareInch_1.Symbol = "ppgUK/psi"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerPoundPerSquareInch_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerPoundPerSquareInch) 
+	N0000[PoundPerGallonUkPerPoundPerSquareInch_1] -->|ConversionFactorB| N0002(("69.10210412688325")) 
+	N0000[PoundPerGallonUkPerPoundPerSquareInch_1] -->|Symbol| N0003(("ppgUK/psi")) 
+```
+## PoundPerGallonUsPerPoundPerSquareInch <!-- NOUN -->
+- Display name: pound per gallon (US) per pound per square inch
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 57.53953820999999
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per pound per square inch
+[SI] is the value in SI
+a = GallonUS*PSI/Pound, i.e., 57.53953820999999
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerPoundPerSquareInch:PoundPerGallonUsPerPoundPerSquareInch_1
+PoundPerGallonUsPerPoundPerSquareInch_1.ConversionFactorB = "57.53953820999999"
+PoundPerGallonUsPerPoundPerSquareInch_1.Symbol = "ppgUS/psi"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerPoundPerSquareInch_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerPoundPerSquareInch) 
+	N0000[PoundPerGallonUsPerPoundPerSquareInch_1] -->|ConversionFactorB| N0002(("57.53953820999999")) 
+	N0000[PoundPerGallonUsPerPoundPerSquareInch_1] -->|Symbol| N0003(("ppgUS/psi")) 
+```
+## PoundPerCubicFootPerPoundPerSquareInch <!-- NOUN -->
+- Display name: pound per cubic foot per pound per square inch
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 430.4256364799998
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per pound per square inch
+[SI] is the value in SI
+a = Foot*Foot*Foot*PSI/Pound, i.e., 430.4256364799998
+and
+Foot = 12.0 * Inch
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerPoundPerSquareInch:PoundPerCubicFootPerPoundPerSquareInch_1
+PoundPerCubicFootPerPoundPerSquareInch_1.ConversionFactorB = "430.4256364799998"
+PoundPerCubicFootPerPoundPerSquareInch_1.Symbol = "lb/ft³/psi"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerPoundPerSquareInch_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerPoundPerSquareInch) 
+	N0000[PoundPerCubicFootPerPoundPerSquareInch_1] -->|ConversionFactorB| N0002(("430.4256364799998")) 
+	N0000[PoundPerCubicFootPerPoundPerSquareInch_1] -->|Symbol| N0003(("lb/ft³/psi")) 
+```
+## PoundPerCubicInchPerPoundPerSquareInch <!-- NOUN -->
+- Display name: pound per cubic inch per pound per square inch
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.24908890999999994
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per pound per square inch
+[SI] is the value in SI
+a = Inch*Inch*Inch*PSI/Pound, i.e., 0.24908890999999994
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerPoundPerSquareInch:PoundPerCubicInchPerPoundPerSquareInch_1
+PoundPerCubicInchPerPoundPerSquareInch_1.ConversionFactorB = "0.24908890999999994"
+PoundPerCubicInchPerPoundPerSquareInch_1.Symbol = "lb/in³/psi"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerPoundPerSquareInch_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerPoundPerSquareInch) 
+	N0000[PoundPerCubicInchPerPoundPerSquareInch_1] -->|ConversionFactorB| N0002(("0.24908890999999994")) 
+	N0000[PoundPerCubicInchPerPoundPerSquareInch_1] -->|Symbol| N0003(("lb/in³/psi")) 
+```
+## PoundPerCubicYardPerPoundPerSquareInch <!-- NOUN -->
+- Display name: pound per cubic yard per pound per square inch
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 11621.492184959992
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per pound per square inch
+[SI] is the value in SI
+a = Yard*Yard*Yard*PSI/Pound, i.e., 11621.492184959992
+and
+Yard = 3.0 * Foot
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerPoundPerSquareInch:PoundPerCubicYardPerPoundPerSquareInch_1
+PoundPerCubicYardPerPoundPerSquareInch_1.ConversionFactorB = "11621.492184959992"
+PoundPerCubicYardPerPoundPerSquareInch_1.Symbol = "lb/yd³/psi"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerPoundPerSquareInch_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerPoundPerSquareInch) 
+	N0000[PoundPerCubicYardPerPoundPerSquareInch_1] -->|ConversionFactorB| N0002(("11621.492184959992")) 
+	N0000[PoundPerCubicYardPerPoundPerSquareInch_1] -->|Symbol| N0003(("lb/yd³/psi")) 
+```
+## KilogramPerCubicMetrePerPascalSquared <!-- NOUN -->
+- Display name: kilogram per cubic metre per pascal squared
+- Parent class: [Unit](#Unit)
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerPascalSquared:KilogramPerCubicMetrePerPascalSquared_1
+KilogramPerCubicMetrePerPascalSquared_1.Symbol = "kg/m³/Pa²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerPascalSquared_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerPascalSquared) 
+	N0000[KilogramPerCubicMetrePerPascalSquared_1] -->|Symbol| N0002(("kg/m³/Pa²")) 
+```
+## SpecificGravityPerPascalSquared <!-- NOUN -->
+- Display name: specific gravity per pascal squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.001000028000784022
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per pascal squared
+[SI] is the value in SI
+a = SpecificGavity4degC, i.e., 0.001000028000784022
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerPascalSquared:SpecificGravityPerPascalSquared_1
+SpecificGravityPerPascalSquared_1.ConversionFactorB = "0.001000028000784022"
+SpecificGravityPerPascalSquared_1.Symbol = "sg/Pa²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerPascalSquared_1] -->|BelongsToClass| N0001(SpecificGravityPerPascalSquared) 
+	N0000[SpecificGravityPerPascalSquared_1] -->|ConversionFactorB| N0002(("0.001000028000784022")) 
+	N0000[SpecificGravityPerPascalSquared_1] -->|Symbol| N0003(("sg/Pa²")) 
+```
+## GramPerCubicCentimetrePerPascalSquared <!-- NOUN -->
+- Display name: gram per cubic centimetre per pascal squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0010000000000000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per pascal squared
+[SI] is the value in SI
+a = Centi*Centi*Centi/Milli, i.e., 0.0010000000000000002
+and
+Centi = 0.01
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerPascalSquared:GramPerCubicCentimetrePerPascalSquared_1
+GramPerCubicCentimetrePerPascalSquared_1.ConversionFactorB = "0.0010000000000000002"
+GramPerCubicCentimetrePerPascalSquared_1.Symbol = "g/cm³/Pa²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerPascalSquared_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerPascalSquared) 
+	N0000[GramPerCubicCentimetrePerPascalSquared_1] -->|ConversionFactorB| N0002(("0.0010000000000000002")) 
+	N0000[GramPerCubicCentimetrePerPascalSquared_1] -->|Symbol| N0003(("g/cm³/Pa²")) 
+```
+## PoundPerGallonUkPerPascalSquared <!-- NOUN -->
+- Display name: pound per gallon (UK) per pascal squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.010022412854960501
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per pascal squared
+[SI] is the value in SI
+a = GallonUK/Pound, i.e., 0.010022412854960501
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerPascalSquared:PoundPerGallonUkPerPascalSquared_1
+PoundPerGallonUkPerPascalSquared_1.ConversionFactorB = "0.010022412854960501"
+PoundPerGallonUkPerPascalSquared_1.Symbol = "ppgUK/Pa²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerPascalSquared_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerPascalSquared) 
+	N0000[PoundPerGallonUkPerPascalSquared_1] -->|ConversionFactorB| N0002(("0.010022412854960501")) 
+	N0000[PoundPerGallonUkPerPascalSquared_1] -->|Symbol| N0003(("ppgUK/Pa²")) 
+```
+## PoundPerGallonUsPerPascalSquared <!-- NOUN -->
+- Display name: pound per gallon (US) per pascal squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.00834540445201933
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per pascal squared
+[SI] is the value in SI
+a = GallonUS/Pound, i.e., 0.00834540445201933
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerPascalSquared:PoundPerGallonUsPerPascalSquared_1
+PoundPerGallonUsPerPascalSquared_1.ConversionFactorB = "0.00834540445201933"
+PoundPerGallonUsPerPascalSquared_1.Symbol = "ppgUS/Pa²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerPascalSquared_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerPascalSquared) 
+	N0000[PoundPerGallonUsPerPascalSquared_1] -->|ConversionFactorB| N0002(("0.00834540445201933")) 
+	N0000[PoundPerGallonUsPerPascalSquared_1] -->|Symbol| N0003(("ppgUS/Pa²")) 
+```
+## PoundPerCubicFootPerPascalSquared <!-- NOUN -->
+- Display name: pound per cubic foot per pascal squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.06242796057614459
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per pascal squared
+[SI] is the value in SI
+a = Foot*Foot*Foot/Pound, i.e., 0.06242796057614459
+and
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerPascalSquared:PoundPerCubicFootPerPascalSquared_1
+PoundPerCubicFootPerPascalSquared_1.ConversionFactorB = "0.06242796057614459"
+PoundPerCubicFootPerPascalSquared_1.Symbol = "lb/ft³/Pa²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerPascalSquared_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerPascalSquared) 
+	N0000[PoundPerCubicFootPerPascalSquared_1] -->|ConversionFactorB| N0002(("0.06242796057614459")) 
+	N0000[PoundPerCubicFootPerPascalSquared_1] -->|Symbol| N0003(("lb/ft³/Pa²")) 
+```
+## PoundPerCubicInchPerPascalSquared <!-- NOUN -->
+- Display name: pound per cubic inch per pascal squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 3.612729200008369E-05
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per pascal squared
+[SI] is the value in SI
+a = Inch*Inch*Inch/Pound, i.e., 3.612729200008369E-05
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerPascalSquared:PoundPerCubicInchPerPascalSquared_1
+PoundPerCubicInchPerPascalSquared_1.ConversionFactorB = "3.612729200008369E-05"
+PoundPerCubicInchPerPascalSquared_1.Symbol = "lb/in³/Pa²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerPascalSquared_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerPascalSquared) 
+	N0000[PoundPerCubicInchPerPascalSquared_1] -->|ConversionFactorB| N0002(("3.612729200008369E-05")) 
+	N0000[PoundPerCubicInchPerPascalSquared_1] -->|Symbol| N0003(("lb/in³/Pa²")) 
+```
+## PoundPerCubicYardPerPascalSquared <!-- NOUN -->
+- Display name: pound per cubic yard per pascal squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1.6855549355559039
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per pascal squared
+[SI] is the value in SI
+a = Yard*Yard*Yard/Pound, i.e., 1.6855549355559039
+and
+Yard = 3.0 * Foot
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerPascalSquared:PoundPerCubicYardPerPascalSquared_1
+PoundPerCubicYardPerPascalSquared_1.ConversionFactorB = "1.6855549355559039"
+PoundPerCubicYardPerPascalSquared_1.Symbol = "lb/yd³/Pa²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerPascalSquared_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerPascalSquared) 
+	N0000[PoundPerCubicYardPerPascalSquared_1] -->|ConversionFactorB| N0002(("1.6855549355559039")) 
+	N0000[PoundPerCubicYardPerPascalSquared_1] -->|Symbol| N0003(("lb/yd³/Pa²")) 
+```
+## KilogramPerCubicMetrePerBarSquared <!-- NOUN -->
+- Display name: kilogram per cubic metre per bar squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 10000000000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per bar squared
+[SI] is the value in SI
+a = Bar*Bar/Unit, i.e., 10000000000
+and
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerBarSquared:KilogramPerCubicMetrePerBarSquared_1
+KilogramPerCubicMetrePerBarSquared_1.ConversionFactorB = "10000000000"
+KilogramPerCubicMetrePerBarSquared_1.Symbol = "kg/m³/bar²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerBarSquared_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerBarSquared) 
+	N0000[KilogramPerCubicMetrePerBarSquared_1] -->|ConversionFactorB| N0002(("10000000000")) 
+	N0000[KilogramPerCubicMetrePerBarSquared_1] -->|Symbol| N0003(("kg/m³/bar²")) 
+```
+## SpecificGravityPerBarSquared <!-- NOUN -->
+- Display name: specific gravity per bar squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 10000280.00784022
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per bar squared
+[SI] is the value in SI
+a = SpecificGavity4degC*Bar*Bar, i.e., 10000280.00784022
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerBarSquared:SpecificGravityPerBarSquared_1
+SpecificGravityPerBarSquared_1.ConversionFactorB = "10000280.00784022"
+SpecificGravityPerBarSquared_1.Symbol = "sg/bar²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerBarSquared_1] -->|BelongsToClass| N0001(SpecificGravityPerBarSquared) 
+	N0000[SpecificGravityPerBarSquared_1] -->|ConversionFactorB| N0002(("10000280.00784022")) 
+	N0000[SpecificGravityPerBarSquared_1] -->|Symbol| N0003(("sg/bar²")) 
+```
+## GramPerCubicCentimetrePerBarSquared <!-- NOUN -->
+- Display name: gram per cubic centimetre per bar squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 10000000.000000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per bar squared
+[SI] is the value in SI
+a = Centi*Centi*Centi*Bar*Bar/Milli, i.e., 10000000.000000002
+and
+Centi = 0.01
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerBarSquared:GramPerCubicCentimetrePerBarSquared_1
+GramPerCubicCentimetrePerBarSquared_1.ConversionFactorB = "10000000.000000002"
+GramPerCubicCentimetrePerBarSquared_1.Symbol = "g/cm³/bar²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerBarSquared_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerBarSquared) 
+	N0000[GramPerCubicCentimetrePerBarSquared_1] -->|ConversionFactorB| N0002(("10000000.000000002")) 
+	N0000[GramPerCubicCentimetrePerBarSquared_1] -->|Symbol| N0003(("g/cm³/bar²")) 
+```
+## PoundPerGallonUkPerBarSquared <!-- NOUN -->
+- Display name: pound per gallon (UK) per bar squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 100224128.54960501
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per bar squared
+[SI] is the value in SI
+a = GallonUK*Bar*Bar/Pound, i.e., 100224128.54960501
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerBarSquared:PoundPerGallonUkPerBarSquared_1
+PoundPerGallonUkPerBarSquared_1.ConversionFactorB = "100224128.54960501"
+PoundPerGallonUkPerBarSquared_1.Symbol = "ppgUK/bar²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerBarSquared_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerBarSquared) 
+	N0000[PoundPerGallonUkPerBarSquared_1] -->|ConversionFactorB| N0002(("100224128.54960501")) 
+	N0000[PoundPerGallonUkPerBarSquared_1] -->|Symbol| N0003(("ppgUK/bar²")) 
+```
+## PoundPerGallonUsPerBarSquared <!-- NOUN -->
+- Display name: pound per gallon (US) per bar squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 83454044.52019331
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per bar squared
+[SI] is the value in SI
+a = GallonUS*Bar*Bar/Pound, i.e., 83454044.52019331
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerBarSquared:PoundPerGallonUsPerBarSquared_1
+PoundPerGallonUsPerBarSquared_1.ConversionFactorB = "83454044.52019331"
+PoundPerGallonUsPerBarSquared_1.Symbol = "ppgUS/bar²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerBarSquared_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerBarSquared) 
+	N0000[PoundPerGallonUsPerBarSquared_1] -->|ConversionFactorB| N0002(("83454044.52019331")) 
+	N0000[PoundPerGallonUsPerBarSquared_1] -->|Symbol| N0003(("ppgUS/bar²")) 
+```
+## PoundPerCubicFootPerBarSquared <!-- NOUN -->
+- Display name: pound per cubic foot per bar squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 624279605.7614459
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per bar squared
+[SI] is the value in SI
+a = Foot*Foot*Foot*Bar*Bar/Pound, i.e., 624279605.7614459
+and
+Foot = 12.0 * Inch
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerBarSquared:PoundPerCubicFootPerBarSquared_1
+PoundPerCubicFootPerBarSquared_1.ConversionFactorB = "624279605.7614459"
+PoundPerCubicFootPerBarSquared_1.Symbol = "lb/ft³/bar²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerBarSquared_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerBarSquared) 
+	N0000[PoundPerCubicFootPerBarSquared_1] -->|ConversionFactorB| N0002(("624279605.7614459")) 
+	N0000[PoundPerCubicFootPerBarSquared_1] -->|Symbol| N0003(("lb/ft³/bar²")) 
+```
+## PoundPerCubicInchPerBarSquared <!-- NOUN -->
+- Display name: pound per cubic inch per bar squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 361272.9200008369
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per bar squared
+[SI] is the value in SI
+a = Inch*Inch*Inch*Bar*Bar/Pound, i.e., 361272.9200008369
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerBarSquared:PoundPerCubicInchPerBarSquared_1
+PoundPerCubicInchPerBarSquared_1.ConversionFactorB = "361272.9200008369"
+PoundPerCubicInchPerBarSquared_1.Symbol = "lb/in³/bar²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerBarSquared_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerBarSquared) 
+	N0000[PoundPerCubicInchPerBarSquared_1] -->|ConversionFactorB| N0002(("361272.9200008369")) 
+	N0000[PoundPerCubicInchPerBarSquared_1] -->|Symbol| N0003(("lb/in³/bar²")) 
+```
+## PoundPerCubicYardPerBarSquared <!-- NOUN -->
+- Display name: pound per cubic yard per bar squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 16855549355.559038
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per bar squared
+[SI] is the value in SI
+a = Yard*Yard*Yard*Bar*Bar/Pound, i.e., 16855549355.559038
+and
+Yard = 3.0 * Foot
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerBarSquared:PoundPerCubicYardPerBarSquared_1
+PoundPerCubicYardPerBarSquared_1.ConversionFactorB = "16855549355.559038"
+PoundPerCubicYardPerBarSquared_1.Symbol = "lb/yd³/bar²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerBarSquared_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerBarSquared) 
+	N0000[PoundPerCubicYardPerBarSquared_1] -->|ConversionFactorB| N0002(("16855549355.559038")) 
+	N0000[PoundPerCubicYardPerBarSquared_1] -->|Symbol| N0003(("lb/yd³/bar²")) 
+```
+## KilogramPerCubicMetrePerMegapascalSquared <!-- NOUN -->
+- Display name: kilogram per cubic metre per megapascal squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000000000000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per megapascal squared
+[SI] is the value in SI
+a = Mega*Mega/Unit, i.e., 1000000000000
+and
+Mega = 1e6
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerMegapascalSquared:KilogramPerCubicMetrePerMegapascalSquared_1
+KilogramPerCubicMetrePerMegapascalSquared_1.ConversionFactorB = "1000000000000"
+KilogramPerCubicMetrePerMegapascalSquared_1.Symbol = "kg/m³/MPa²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerMegapascalSquared_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerMegapascalSquared) 
+	N0000[KilogramPerCubicMetrePerMegapascalSquared_1] -->|ConversionFactorB| N0002(("1000000000000")) 
+	N0000[KilogramPerCubicMetrePerMegapascalSquared_1] -->|Symbol| N0003(("kg/m³/MPa²")) 
+```
+## SpecificGravityPerMegapascalSquared <!-- NOUN -->
+- Display name: specific gravity per megapascal squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000028000.784022
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per megapascal squared
+[SI] is the value in SI
+a = SpecificGavity4degC*Mega*Mega, i.e., 1000028000.784022
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+Mega = 1e6
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerMegapascalSquared:SpecificGravityPerMegapascalSquared_1
+SpecificGravityPerMegapascalSquared_1.ConversionFactorB = "1000028000.784022"
+SpecificGravityPerMegapascalSquared_1.Symbol = "sg/MPa²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerMegapascalSquared_1] -->|BelongsToClass| N0001(SpecificGravityPerMegapascalSquared) 
+	N0000[SpecificGravityPerMegapascalSquared_1] -->|ConversionFactorB| N0002(("1000028000.784022")) 
+	N0000[SpecificGravityPerMegapascalSquared_1] -->|Symbol| N0003(("sg/MPa²")) 
+```
+## GramPerCubicCentimetrePerMegapascalSquared <!-- NOUN -->
+- Display name: gram per cubic centimetre per megapascal squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000000000.0000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per megapascal squared
+[SI] is the value in SI
+a = Centi*Centi*Centi*Mega*Mega/Milli, i.e., 1000000000.0000002
+and
+Centi = 0.01
+Mega = 1e6
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerMegapascalSquared:GramPerCubicCentimetrePerMegapascalSquared_1
+GramPerCubicCentimetrePerMegapascalSquared_1.ConversionFactorB = "1000000000.0000002"
+GramPerCubicCentimetrePerMegapascalSquared_1.Symbol = "g/cm³/MPa²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerMegapascalSquared_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerMegapascalSquared) 
+	N0000[GramPerCubicCentimetrePerMegapascalSquared_1] -->|ConversionFactorB| N0002(("1000000000.0000002")) 
+	N0000[GramPerCubicCentimetrePerMegapascalSquared_1] -->|Symbol| N0003(("g/cm³/MPa²")) 
+```
+## PoundPerGallonUkPerMegapascalSquared <!-- NOUN -->
+- Display name: pound per gallon (UK) per megapascal squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 10022412854.9605
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per megapascal squared
+[SI] is the value in SI
+a = GallonUK*Mega*Mega/Pound, i.e., 10022412854.9605
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Mega = 1e6
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerMegapascalSquared:PoundPerGallonUkPerMegapascalSquared_1
+PoundPerGallonUkPerMegapascalSquared_1.ConversionFactorB = "10022412854.9605"
+PoundPerGallonUkPerMegapascalSquared_1.Symbol = "ppgUK/MPa²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerMegapascalSquared_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerMegapascalSquared) 
+	N0000[PoundPerGallonUkPerMegapascalSquared_1] -->|ConversionFactorB| N0002(("10022412854.9605")) 
+	N0000[PoundPerGallonUkPerMegapascalSquared_1] -->|Symbol| N0003(("ppgUK/MPa²")) 
+```
+## PoundPerGallonUsPerMegapascalSquared <!-- NOUN -->
+- Display name: pound per gallon (US) per megapascal squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 8345404452.019331
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per megapascal squared
+[SI] is the value in SI
+a = GallonUS*Mega*Mega/Pound, i.e., 8345404452.019331
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Mega = 1e6
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerMegapascalSquared:PoundPerGallonUsPerMegapascalSquared_1
+PoundPerGallonUsPerMegapascalSquared_1.ConversionFactorB = "8345404452.019331"
+PoundPerGallonUsPerMegapascalSquared_1.Symbol = "ppgUS/MPa²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerMegapascalSquared_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerMegapascalSquared) 
+	N0000[PoundPerGallonUsPerMegapascalSquared_1] -->|ConversionFactorB| N0002(("8345404452.019331")) 
+	N0000[PoundPerGallonUsPerMegapascalSquared_1] -->|Symbol| N0003(("ppgUS/MPa²")) 
+```
+## PoundPerCubicFootPerMegapascalSquared <!-- NOUN -->
+- Display name: pound per cubic foot per megapascal squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 62427960576.14459
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per megapascal squared
+[SI] is the value in SI
+a = Foot*Foot*Foot*Mega*Mega/Pound, i.e., 62427960576.14459
+and
+Foot = 12.0 * Inch
+Mega = 1e6
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerMegapascalSquared:PoundPerCubicFootPerMegapascalSquared_1
+PoundPerCubicFootPerMegapascalSquared_1.ConversionFactorB = "62427960576.14459"
+PoundPerCubicFootPerMegapascalSquared_1.Symbol = "lb/ft³/MPa²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerMegapascalSquared_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerMegapascalSquared) 
+	N0000[PoundPerCubicFootPerMegapascalSquared_1] -->|ConversionFactorB| N0002(("62427960576.14459")) 
+	N0000[PoundPerCubicFootPerMegapascalSquared_1] -->|Symbol| N0003(("lb/ft³/MPa²")) 
+```
+## PoundPerCubicInchPerMegapascalSquared <!-- NOUN -->
+- Display name: pound per cubic inch per megapascal squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 36127292.000083685
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per megapascal squared
+[SI] is the value in SI
+a = Inch*Inch*Inch*Mega*Mega/Pound, i.e., 36127292.000083685
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Mega = 1e6
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerMegapascalSquared:PoundPerCubicInchPerMegapascalSquared_1
+PoundPerCubicInchPerMegapascalSquared_1.ConversionFactorB = "36127292.000083685"
+PoundPerCubicInchPerMegapascalSquared_1.Symbol = "lb/in³/MPa²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerMegapascalSquared_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerMegapascalSquared) 
+	N0000[PoundPerCubicInchPerMegapascalSquared_1] -->|ConversionFactorB| N0002(("36127292.000083685")) 
+	N0000[PoundPerCubicInchPerMegapascalSquared_1] -->|Symbol| N0003(("lb/in³/MPa²")) 
+```
+## PoundPerCubicYardPerMegapascalSquared <!-- NOUN -->
+- Display name: pound per cubic yard per megapascal squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1685554935555.9036
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per megapascal squared
+[SI] is the value in SI
+a = Yard*Yard*Yard*Mega*Mega/Pound, i.e., 1685554935555.9036
+and
+Yard = 3.0 * Foot
+Mega = 1e6
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerMegapascalSquared:PoundPerCubicYardPerMegapascalSquared_1
+PoundPerCubicYardPerMegapascalSquared_1.ConversionFactorB = "1685554935555.9036"
+PoundPerCubicYardPerMegapascalSquared_1.Symbol = "lb/yd³/MPa²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerMegapascalSquared_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerMegapascalSquared) 
+	N0000[PoundPerCubicYardPerMegapascalSquared_1] -->|ConversionFactorB| N0002(("1685554935555.9036")) 
+	N0000[PoundPerCubicYardPerMegapascalSquared_1] -->|Symbol| N0003(("lb/yd³/MPa²")) 
+```
+## KilogramPerCubicMetrePerGigapascalSquared <!-- NOUN -->
+- Display name: kilogram per cubic metre per gigapascal squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1E+18
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per gigapascal squared
+[SI] is the value in SI
+a = Giga*Giga/Unit, i.e., 1E+18
+and
+Giga = 1e9
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerGigapascalSquared:KilogramPerCubicMetrePerGigapascalSquared_1
+KilogramPerCubicMetrePerGigapascalSquared_1.ConversionFactorB = "1E+18"
+KilogramPerCubicMetrePerGigapascalSquared_1.Symbol = "kg/m³/GPa²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerGigapascalSquared_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerGigapascalSquared) 
+	N0000[KilogramPerCubicMetrePerGigapascalSquared_1] -->|ConversionFactorB| N0002(("1E+18")) 
+	N0000[KilogramPerCubicMetrePerGigapascalSquared_1] -->|Symbol| N0003(("kg/m³/GPa²")) 
+```
+## SpecificGravityPerGigapascalSquared <!-- NOUN -->
+- Display name: specific gravity per gigapascal squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000028000784021.9
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per gigapascal squared
+[SI] is the value in SI
+a = SpecificGavity4degC*Giga*Giga, i.e., 1000028000784021.9
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+Giga = 1e9
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerGigapascalSquared:SpecificGravityPerGigapascalSquared_1
+SpecificGravityPerGigapascalSquared_1.ConversionFactorB = "1000028000784021.9"
+SpecificGravityPerGigapascalSquared_1.Symbol = "sg/GPa²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerGigapascalSquared_1] -->|BelongsToClass| N0001(SpecificGravityPerGigapascalSquared) 
+	N0000[SpecificGravityPerGigapascalSquared_1] -->|ConversionFactorB| N0002(("1000028000784021.9")) 
+	N0000[SpecificGravityPerGigapascalSquared_1] -->|Symbol| N0003(("sg/GPa²")) 
+```
+## GramPerCubicCentimetrePerGigapascalSquared <!-- NOUN -->
+- Display name: gram per cubic centimetre per gigapascal squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000000000000000.1
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per gigapascal squared
+[SI] is the value in SI
+a = Centi*Centi*Centi*Giga*Giga/Milli, i.e., 1000000000000000.1
+and
+Centi = 0.01
+Giga = 1e9
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerGigapascalSquared:GramPerCubicCentimetrePerGigapascalSquared_1
+GramPerCubicCentimetrePerGigapascalSquared_1.ConversionFactorB = "1000000000000000.1"
+GramPerCubicCentimetrePerGigapascalSquared_1.Symbol = "g/cm³/GPa²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerGigapascalSquared_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerGigapascalSquared) 
+	N0000[GramPerCubicCentimetrePerGigapascalSquared_1] -->|ConversionFactorB| N0002(("1000000000000000.1")) 
+	N0000[GramPerCubicCentimetrePerGigapascalSquared_1] -->|Symbol| N0003(("g/cm³/GPa²")) 
+```
+## PoundPerGallonUkPerGigapascalSquared <!-- NOUN -->
+- Display name: pound per gallon (UK) per gigapascal squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 10022412854960500
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per gigapascal squared
+[SI] is the value in SI
+a = GallonUK*Giga*Giga/Pound, i.e., 10022412854960500
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Giga = 1e9
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerGigapascalSquared:PoundPerGallonUkPerGigapascalSquared_1
+PoundPerGallonUkPerGigapascalSquared_1.ConversionFactorB = "10022412854960500"
+PoundPerGallonUkPerGigapascalSquared_1.Symbol = "ppgUK/GPa²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerGigapascalSquared_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerGigapascalSquared) 
+	N0000[PoundPerGallonUkPerGigapascalSquared_1] -->|ConversionFactorB| N0002(("10022412854960500")) 
+	N0000[PoundPerGallonUkPerGigapascalSquared_1] -->|Symbol| N0003(("ppgUK/GPa²")) 
+```
+## PoundPerGallonUsPerGigapascalSquared <!-- NOUN -->
+- Display name: pound per gallon (US) per gigapascal squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 8345404452019330
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per gigapascal squared
+[SI] is the value in SI
+a = GallonUS*Giga*Giga/Pound, i.e., 8345404452019330
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Giga = 1e9
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerGigapascalSquared:PoundPerGallonUsPerGigapascalSquared_1
+PoundPerGallonUsPerGigapascalSquared_1.ConversionFactorB = "8345404452019330"
+PoundPerGallonUsPerGigapascalSquared_1.Symbol = "ppgUS/GPa²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerGigapascalSquared_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerGigapascalSquared) 
+	N0000[PoundPerGallonUsPerGigapascalSquared_1] -->|ConversionFactorB| N0002(("8345404452019330")) 
+	N0000[PoundPerGallonUsPerGigapascalSquared_1] -->|Symbol| N0003(("ppgUS/GPa²")) 
+```
+## PoundPerCubicFootPerGigapascalSquared <!-- NOUN -->
+- Display name: pound per cubic foot per gigapascal squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 62427960576144584
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per gigapascal squared
+[SI] is the value in SI
+a = Foot*Foot*Foot*Giga*Giga/Pound, i.e., 62427960576144584
+and
+Foot = 12.0 * Inch
+Giga = 1e9
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerGigapascalSquared:PoundPerCubicFootPerGigapascalSquared_1
+PoundPerCubicFootPerGigapascalSquared_1.ConversionFactorB = "62427960576144584"
+PoundPerCubicFootPerGigapascalSquared_1.Symbol = "lb/ft³/GPa²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerGigapascalSquared_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerGigapascalSquared) 
+	N0000[PoundPerCubicFootPerGigapascalSquared_1] -->|ConversionFactorB| N0002(("62427960576144584")) 
+	N0000[PoundPerCubicFootPerGigapascalSquared_1] -->|Symbol| N0003(("lb/ft³/GPa²")) 
+```
+## PoundPerCubicInchPerGigapascalSquared <!-- NOUN -->
+- Display name: pound per cubic inch per gigapascal squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 36127292000083.68
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per gigapascal squared
+[SI] is the value in SI
+a = Inch*Inch*Inch*Giga*Giga/Pound, i.e., 36127292000083.68
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Giga = 1e9
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerGigapascalSquared:PoundPerCubicInchPerGigapascalSquared_1
+PoundPerCubicInchPerGigapascalSquared_1.ConversionFactorB = "36127292000083.68"
+PoundPerCubicInchPerGigapascalSquared_1.Symbol = "lb/in³/GPa²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerGigapascalSquared_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerGigapascalSquared) 
+	N0000[PoundPerCubicInchPerGigapascalSquared_1] -->|ConversionFactorB| N0002(("36127292000083.68")) 
+	N0000[PoundPerCubicInchPerGigapascalSquared_1] -->|Symbol| N0003(("lb/in³/GPa²")) 
+```
+## PoundPerCubicYardPerGigapascalSquared <!-- NOUN -->
+- Display name: pound per cubic yard per gigapascal squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1.685554935555904E+18
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per gigapascal squared
+[SI] is the value in SI
+a = Yard*Yard*Yard*Giga*Giga/Pound, i.e., 1.685554935555904E+18
+and
+Yard = 3.0 * Foot
+Giga = 1e9
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerGigapascalSquared:PoundPerCubicYardPerGigapascalSquared_1
+PoundPerCubicYardPerGigapascalSquared_1.ConversionFactorB = "1.685554935555904E+18"
+PoundPerCubicYardPerGigapascalSquared_1.Symbol = "lb/yd³/GPa²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerGigapascalSquared_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerGigapascalSquared) 
+	N0000[PoundPerCubicYardPerGigapascalSquared_1] -->|ConversionFactorB| N0002(("1.685554935555904E+18")) 
+	N0000[PoundPerCubicYardPerGigapascalSquared_1] -->|Symbol| N0003(("lb/yd³/GPa²")) 
+```
+## KilogramPerCubicMetrePerPoundPerSquareInchSquared <!-- NOUN -->
+- Display name: kilogram per cubic metre per pound per square inch squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 47537678.1316983
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per pound per square inch squared
+[SI] is the value in SI
+a = PSI*PSI/Unit, i.e., 47537678.1316983
+and
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Unit = 1.0
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerPoundPerSquareInchSquared:KilogramPerCubicMetrePerPoundPerSquareInchSquared_1
+KilogramPerCubicMetrePerPoundPerSquareInchSquared_1.ConversionFactorB = "47537678.1316983"
+KilogramPerCubicMetrePerPoundPerSquareInchSquared_1.Symbol = "kg/m³/psi²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerPoundPerSquareInchSquared_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerPoundPerSquareInchSquared) 
+	N0000[KilogramPerCubicMetrePerPoundPerSquareInchSquared_1] -->|ConversionFactorB| N0002(("47537678.1316983")) 
+	N0000[KilogramPerCubicMetrePerPoundPerSquareInchSquared_1] -->|Symbol| N0003(("kg/m³/psi²")) 
+```
+## SpecificGravityPerPoundPerSquareInchSquared <!-- NOUN -->
+- Display name: specific gravity per pound per square inch squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 47539.00922395657
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per pound per square inch squared
+[SI] is the value in SI
+a = SpecificGavity4degC*PSI*PSI, i.e., 47539.00922395657
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerPoundPerSquareInchSquared:SpecificGravityPerPoundPerSquareInchSquared_1
+SpecificGravityPerPoundPerSquareInchSquared_1.ConversionFactorB = "47539.00922395657"
+SpecificGravityPerPoundPerSquareInchSquared_1.Symbol = "sg/psi²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerPoundPerSquareInchSquared_1] -->|BelongsToClass| N0001(SpecificGravityPerPoundPerSquareInchSquared) 
+	N0000[SpecificGravityPerPoundPerSquareInchSquared_1] -->|ConversionFactorB| N0002(("47539.00922395657")) 
+	N0000[SpecificGravityPerPoundPerSquareInchSquared_1] -->|Symbol| N0003(("sg/psi²")) 
+```
+## GramPerCubicCentimetrePerPoundPerSquareInchSquared <!-- NOUN -->
+- Display name: gram per cubic centimetre per pound per square inch squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 47537.6781316983
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per pound per square inch squared
+[SI] is the value in SI
+a = Centi*Centi*Centi*PSI*PSI/Milli, i.e., 47537.6781316983
+and
+Centi = 0.01
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Milli = 0.001
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerPoundPerSquareInchSquared:GramPerCubicCentimetrePerPoundPerSquareInchSquared_1
+GramPerCubicCentimetrePerPoundPerSquareInchSquared_1.ConversionFactorB = "47537.6781316983"
+GramPerCubicCentimetrePerPoundPerSquareInchSquared_1.Symbol = "g/cm³/psi²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerPoundPerSquareInchSquared_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerPoundPerSquareInchSquared) 
+	N0000[GramPerCubicCentimetrePerPoundPerSquareInchSquared_1] -->|ConversionFactorB| N0002(("47537.6781316983")) 
+	N0000[GramPerCubicCentimetrePerPoundPerSquareInchSquared_1] -->|Symbol| N0003(("g/cm³/psi²")) 
+```
+## PoundPerGallonUkPerPoundPerSquareInchSquared <!-- NOUN -->
+- Display name: pound per gallon (UK) per pound per square inch squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 476442.2364021077
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per pound per square inch squared
+[SI] is the value in SI
+a = GallonUK*PSI*PSI/Pound, i.e., 476442.2364021077
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerPoundPerSquareInchSquared:PoundPerGallonUkPerPoundPerSquareInchSquared_1
+PoundPerGallonUkPerPoundPerSquareInchSquared_1.ConversionFactorB = "476442.2364021077"
+PoundPerGallonUkPerPoundPerSquareInchSquared_1.Symbol = "ppgUK/psi²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerPoundPerSquareInchSquared_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerPoundPerSquareInchSquared) 
+	N0000[PoundPerGallonUkPerPoundPerSquareInchSquared_1] -->|ConversionFactorB| N0002(("476442.2364021077")) 
+	N0000[PoundPerGallonUkPerPoundPerSquareInchSquared_1] -->|Symbol| N0003(("ppgUK/psi²")) 
+```
+## PoundPerGallonUsPerPoundPerSquareInchSquared <!-- NOUN -->
+- Display name: pound per gallon (US) per pound per square inch squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 396721.15071893705
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per pound per square inch squared
+[SI] is the value in SI
+a = GallonUS*PSI*PSI/Pound, i.e., 396721.15071893705
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerPoundPerSquareInchSquared:PoundPerGallonUsPerPoundPerSquareInchSquared_1
+PoundPerGallonUsPerPoundPerSquareInchSquared_1.ConversionFactorB = "396721.15071893705"
+PoundPerGallonUsPerPoundPerSquareInchSquared_1.Symbol = "ppgUS/psi²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerPoundPerSquareInchSquared_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerPoundPerSquareInchSquared) 
+	N0000[PoundPerGallonUsPerPoundPerSquareInchSquared_1] -->|ConversionFactorB| N0002(("396721.15071893705")) 
+	N0000[PoundPerGallonUsPerPoundPerSquareInchSquared_1] -->|Symbol| N0003(("ppgUS/psi²")) 
+```
+## PoundPerCubicFootPerPoundPerSquareInchSquared <!-- NOUN -->
+- Display name: pound per cubic foot per pound per square inch squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 2967680.2962871124
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per pound per square inch squared
+[SI] is the value in SI
+a = Foot*Foot*Foot*PSI*PSI/Pound, i.e., 2967680.2962871124
+and
+Foot = 12.0 * Inch
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerPoundPerSquareInchSquared:PoundPerCubicFootPerPoundPerSquareInchSquared_1
+PoundPerCubicFootPerPoundPerSquareInchSquared_1.ConversionFactorB = "2967680.2962871124"
+PoundPerCubicFootPerPoundPerSquareInchSquared_1.Symbol = "lb/ft³/psi²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerPoundPerSquareInchSquared_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerPoundPerSquareInchSquared) 
+	N0000[PoundPerCubicFootPerPoundPerSquareInchSquared_1] -->|ConversionFactorB| N0002(("2967680.2962871124")) 
+	N0000[PoundPerCubicFootPerPoundPerSquareInchSquared_1] -->|Symbol| N0003(("lb/ft³/psi²")) 
+```
+## PoundPerCubicInchPerPoundPerSquareInchSquared <!-- NOUN -->
+- Display name: pound per cubic inch per pound per square inch squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1717.4075788698572
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per pound per square inch squared
+[SI] is the value in SI
+a = Inch*Inch*Inch*PSI*PSI/Pound, i.e., 1717.4075788698572
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerPoundPerSquareInchSquared:PoundPerCubicInchPerPoundPerSquareInchSquared_1
+PoundPerCubicInchPerPoundPerSquareInchSquared_1.ConversionFactorB = "1717.4075788698572"
+PoundPerCubicInchPerPoundPerSquareInchSquared_1.Symbol = "lb/in³/psi²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerPoundPerSquareInchSquared_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerPoundPerSquareInchSquared) 
+	N0000[PoundPerCubicInchPerPoundPerSquareInchSquared_1] -->|ConversionFactorB| N0002(("1717.4075788698572")) 
+	N0000[PoundPerCubicInchPerPoundPerSquareInchSquared_1] -->|Symbol| N0003(("lb/in³/psi²")) 
+```
+## PoundPerCubicYardPerPoundPerSquareInchSquared <!-- NOUN -->
+- Display name: pound per cubic yard per pound per square inch squared
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 80127367.99975201
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per pound per square inch squared
+[SI] is the value in SI
+a = Yard*Yard*Yard*PSI*PSI/Pound, i.e., 80127367.99975201
+and
+Yard = 3.0 * Foot
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerPoundPerSquareInchSquared:PoundPerCubicYardPerPoundPerSquareInchSquared_1
+PoundPerCubicYardPerPoundPerSquareInchSquared_1.ConversionFactorB = "80127367.99975201"
+PoundPerCubicYardPerPoundPerSquareInchSquared_1.Symbol = "lb/yd³/psi²"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerPoundPerSquareInchSquared_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerPoundPerSquareInchSquared) 
+	N0000[PoundPerCubicYardPerPoundPerSquareInchSquared_1] -->|ConversionFactorB| N0002(("80127367.99975201")) 
+	N0000[PoundPerCubicYardPerPoundPerSquareInchSquared_1] -->|Symbol| N0003(("lb/yd³/psi²")) 
+```
+## KilogramPerCubicMetrePerPascalKelvin <!-- NOUN -->
+- Display name: kilogram per cubic metre per pascal kelvin
+- Parent class: [Unit](#Unit)
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerPascalKelvin:KilogramPerCubicMetrePerPascalKelvin_1
+KilogramPerCubicMetrePerPascalKelvin_1.Symbol = "kg/m³/(Pa•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerPascalKelvin_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerPascalKelvin) 
+	N0000[KilogramPerCubicMetrePerPascalKelvin_1] -->|Symbol| N0002(("kg/m³/(Pa•K)")) 
+```
+## SpecificGravityPerPascalKelvin <!-- NOUN -->
+- Display name: specific gravity per pascal kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.001000028000784022
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per pascal kelvin
+[SI] is the value in SI
+a = SpecificGavity4degC, i.e., 0.001000028000784022
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerPascalKelvin:SpecificGravityPerPascalKelvin_1
+SpecificGravityPerPascalKelvin_1.ConversionFactorB = "0.001000028000784022"
+SpecificGravityPerPascalKelvin_1.Symbol = "sg/(Pa•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerPascalKelvin_1] -->|BelongsToClass| N0001(SpecificGravityPerPascalKelvin) 
+	N0000[SpecificGravityPerPascalKelvin_1] -->|ConversionFactorB| N0002(("0.001000028000784022")) 
+	N0000[SpecificGravityPerPascalKelvin_1] -->|Symbol| N0003(("sg/(Pa•K)")) 
+```
+## GramPerCubicCentimetrePerPascalKelvin <!-- NOUN -->
+- Display name: gram per cubic centimetre per pascal kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0010000000000000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per pascal kelvin
+[SI] is the value in SI
+a = Centi*Centi*Centi/Milli, i.e., 0.0010000000000000002
+and
+Centi = 0.01
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerPascalKelvin:GramPerCubicCentimetrePerPascalKelvin_1
+GramPerCubicCentimetrePerPascalKelvin_1.ConversionFactorB = "0.0010000000000000002"
+GramPerCubicCentimetrePerPascalKelvin_1.Symbol = "g/cm³/(Pa•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerPascalKelvin_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerPascalKelvin) 
+	N0000[GramPerCubicCentimetrePerPascalKelvin_1] -->|ConversionFactorB| N0002(("0.0010000000000000002")) 
+	N0000[GramPerCubicCentimetrePerPascalKelvin_1] -->|Symbol| N0003(("g/cm³/(Pa•K)")) 
+```
+## PoundPerGallonUkPerPascalKelvin <!-- NOUN -->
+- Display name: pound per gallon (UK) per pascal kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.010022412854960501
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per pascal kelvin
+[SI] is the value in SI
+a = GallonUK/Pound, i.e., 0.010022412854960501
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerPascalKelvin:PoundPerGallonUkPerPascalKelvin_1
+PoundPerGallonUkPerPascalKelvin_1.ConversionFactorB = "0.010022412854960501"
+PoundPerGallonUkPerPascalKelvin_1.Symbol = "ppgUK/(Pa•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerPascalKelvin_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerPascalKelvin) 
+	N0000[PoundPerGallonUkPerPascalKelvin_1] -->|ConversionFactorB| N0002(("0.010022412854960501")) 
+	N0000[PoundPerGallonUkPerPascalKelvin_1] -->|Symbol| N0003(("ppgUK/(Pa•K)")) 
+```
+## PoundPerGallonUsPerPascalKelvin <!-- NOUN -->
+- Display name: pound per gallon (US) per pascal kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.00834540445201933
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per pascal kelvin
+[SI] is the value in SI
+a = GallonUS/Pound, i.e., 0.00834540445201933
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerPascalKelvin:PoundPerGallonUsPerPascalKelvin_1
+PoundPerGallonUsPerPascalKelvin_1.ConversionFactorB = "0.00834540445201933"
+PoundPerGallonUsPerPascalKelvin_1.Symbol = "ppgUS/(Pa•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerPascalKelvin_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerPascalKelvin) 
+	N0000[PoundPerGallonUsPerPascalKelvin_1] -->|ConversionFactorB| N0002(("0.00834540445201933")) 
+	N0000[PoundPerGallonUsPerPascalKelvin_1] -->|Symbol| N0003(("ppgUS/(Pa•K)")) 
+```
+## PoundPerCubicFootPerPascalKelvin <!-- NOUN -->
+- Display name: pound per cubic foot per pascal kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.06242796057614459
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per pascal kelvin
+[SI] is the value in SI
+a = Foot*Foot*Foot/Pound, i.e., 0.06242796057614459
+and
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerPascalKelvin:PoundPerCubicFootPerPascalKelvin_1
+PoundPerCubicFootPerPascalKelvin_1.ConversionFactorB = "0.06242796057614459"
+PoundPerCubicFootPerPascalKelvin_1.Symbol = "lb/ft³/(Pa•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerPascalKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerPascalKelvin) 
+	N0000[PoundPerCubicFootPerPascalKelvin_1] -->|ConversionFactorB| N0002(("0.06242796057614459")) 
+	N0000[PoundPerCubicFootPerPascalKelvin_1] -->|Symbol| N0003(("lb/ft³/(Pa•K)")) 
+```
+## PoundPerCubicInchPerPascalKelvin <!-- NOUN -->
+- Display name: pound per cubic inch per pascal kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 3.612729200008369E-05
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per pascal kelvin
+[SI] is the value in SI
+a = Inch*Inch*Inch/Pound, i.e., 3.612729200008369E-05
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerPascalKelvin:PoundPerCubicInchPerPascalKelvin_1
+PoundPerCubicInchPerPascalKelvin_1.ConversionFactorB = "3.612729200008369E-05"
+PoundPerCubicInchPerPascalKelvin_1.Symbol = "lb/in³/(Pa•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerPascalKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerPascalKelvin) 
+	N0000[PoundPerCubicInchPerPascalKelvin_1] -->|ConversionFactorB| N0002(("3.612729200008369E-05")) 
+	N0000[PoundPerCubicInchPerPascalKelvin_1] -->|Symbol| N0003(("lb/in³/(Pa•K)")) 
+```
+## PoundPerCubicYardPerPascalKelvin <!-- NOUN -->
+- Display name: pound per cubic yard per pascal kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1.6855549355559039
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per pascal kelvin
+[SI] is the value in SI
+a = Yard*Yard*Yard/Pound, i.e., 1.6855549355559039
+and
+Yard = 3.0 * Foot
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerPascalKelvin:PoundPerCubicYardPerPascalKelvin_1
+PoundPerCubicYardPerPascalKelvin_1.ConversionFactorB = "1.6855549355559039"
+PoundPerCubicYardPerPascalKelvin_1.Symbol = "lb/yd³/(Pa•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerPascalKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerPascalKelvin) 
+	N0000[PoundPerCubicYardPerPascalKelvin_1] -->|ConversionFactorB| N0002(("1.6855549355559039")) 
+	N0000[PoundPerCubicYardPerPascalKelvin_1] -->|Symbol| N0003(("lb/yd³/(Pa•K)")) 
+```
+## KilogramPerCubicMetrePerBarKelvin <!-- NOUN -->
+- Display name: kilogram per cubic metre per bar kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 100000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per bar kelvin
+[SI] is the value in SI
+a = Bar/Unit, i.e., 100000
+and
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerBarKelvin:KilogramPerCubicMetrePerBarKelvin_1
+KilogramPerCubicMetrePerBarKelvin_1.ConversionFactorB = "100000"
+KilogramPerCubicMetrePerBarKelvin_1.Symbol = "kg/m³/(bar•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerBarKelvin_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerBarKelvin) 
+	N0000[KilogramPerCubicMetrePerBarKelvin_1] -->|ConversionFactorB| N0002(("100000")) 
+	N0000[KilogramPerCubicMetrePerBarKelvin_1] -->|Symbol| N0003(("kg/m³/(bar•K)")) 
+```
+## SpecificGravityPerBarKelvin <!-- NOUN -->
+- Display name: specific gravity per bar kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 100.0028000784022
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per bar kelvin
+[SI] is the value in SI
+a = SpecificGavity4degC*Bar, i.e., 100.0028000784022
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerBarKelvin:SpecificGravityPerBarKelvin_1
+SpecificGravityPerBarKelvin_1.ConversionFactorB = "100.0028000784022"
+SpecificGravityPerBarKelvin_1.Symbol = "sg/(bar•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerBarKelvin_1] -->|BelongsToClass| N0001(SpecificGravityPerBarKelvin) 
+	N0000[SpecificGravityPerBarKelvin_1] -->|ConversionFactorB| N0002(("100.0028000784022")) 
+	N0000[SpecificGravityPerBarKelvin_1] -->|Symbol| N0003(("sg/(bar•K)")) 
+```
+## GramPerCubicCentimetrePerBarKelvin <!-- NOUN -->
+- Display name: gram per cubic centimetre per bar kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 100.00000000000001
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per bar kelvin
+[SI] is the value in SI
+a = Centi*Centi*Centi*Bar/Milli, i.e., 100.00000000000001
+and
+Centi = 0.01
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerBarKelvin:GramPerCubicCentimetrePerBarKelvin_1
+GramPerCubicCentimetrePerBarKelvin_1.ConversionFactorB = "100.00000000000001"
+GramPerCubicCentimetrePerBarKelvin_1.Symbol = "g/cm³/(bar•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerBarKelvin_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerBarKelvin) 
+	N0000[GramPerCubicCentimetrePerBarKelvin_1] -->|ConversionFactorB| N0002(("100.00000000000001")) 
+	N0000[GramPerCubicCentimetrePerBarKelvin_1] -->|Symbol| N0003(("g/cm³/(bar•K)")) 
+```
+## PoundPerGallonUkPerBarKelvin <!-- NOUN -->
+- Display name: pound per gallon (UK) per bar kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1002.2412854960501
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per bar kelvin
+[SI] is the value in SI
+a = GallonUK*Bar/Pound, i.e., 1002.2412854960501
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerBarKelvin:PoundPerGallonUkPerBarKelvin_1
+PoundPerGallonUkPerBarKelvin_1.ConversionFactorB = "1002.2412854960501"
+PoundPerGallonUkPerBarKelvin_1.Symbol = "ppgUK/(bar•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerBarKelvin_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerBarKelvin) 
+	N0000[PoundPerGallonUkPerBarKelvin_1] -->|ConversionFactorB| N0002(("1002.2412854960501")) 
+	N0000[PoundPerGallonUkPerBarKelvin_1] -->|Symbol| N0003(("ppgUK/(bar•K)")) 
+```
+## PoundPerGallonUsPerBarKelvin <!-- NOUN -->
+- Display name: pound per gallon (US) per bar kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 834.540445201933
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per bar kelvin
+[SI] is the value in SI
+a = GallonUS*Bar/Pound, i.e., 834.540445201933
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerBarKelvin:PoundPerGallonUsPerBarKelvin_1
+PoundPerGallonUsPerBarKelvin_1.ConversionFactorB = "834.540445201933"
+PoundPerGallonUsPerBarKelvin_1.Symbol = "ppgUS/(bar•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerBarKelvin_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerBarKelvin) 
+	N0000[PoundPerGallonUsPerBarKelvin_1] -->|ConversionFactorB| N0002(("834.540445201933")) 
+	N0000[PoundPerGallonUsPerBarKelvin_1] -->|Symbol| N0003(("ppgUS/(bar•K)")) 
+```
+## PoundPerCubicFootPerBarKelvin <!-- NOUN -->
+- Display name: pound per cubic foot per bar kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 6242.79605761446
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per bar kelvin
+[SI] is the value in SI
+a = Foot*Foot*Foot*Bar/Pound, i.e., 6242.79605761446
+and
+Foot = 12.0 * Inch
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerBarKelvin:PoundPerCubicFootPerBarKelvin_1
+PoundPerCubicFootPerBarKelvin_1.ConversionFactorB = "6242.79605761446"
+PoundPerCubicFootPerBarKelvin_1.Symbol = "lb/ft³/(bar•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerBarKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerBarKelvin) 
+	N0000[PoundPerCubicFootPerBarKelvin_1] -->|ConversionFactorB| N0002(("6242.79605761446")) 
+	N0000[PoundPerCubicFootPerBarKelvin_1] -->|Symbol| N0003(("lb/ft³/(bar•K)")) 
+```
+## PoundPerCubicInchPerBarKelvin <!-- NOUN -->
+- Display name: pound per cubic inch per bar kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 3.6127292000083684
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per bar kelvin
+[SI] is the value in SI
+a = Inch*Inch*Inch*Bar/Pound, i.e., 3.6127292000083684
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerBarKelvin:PoundPerCubicInchPerBarKelvin_1
+PoundPerCubicInchPerBarKelvin_1.ConversionFactorB = "3.6127292000083684"
+PoundPerCubicInchPerBarKelvin_1.Symbol = "lb/in³/(bar•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerBarKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerBarKelvin) 
+	N0000[PoundPerCubicInchPerBarKelvin_1] -->|ConversionFactorB| N0002(("3.6127292000083684")) 
+	N0000[PoundPerCubicInchPerBarKelvin_1] -->|Symbol| N0003(("lb/in³/(bar•K)")) 
+```
+## PoundPerCubicYardPerBarKelvin <!-- NOUN -->
+- Display name: pound per cubic yard per bar kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 168555.49355559036
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per bar kelvin
+[SI] is the value in SI
+a = Yard*Yard*Yard*Bar/Pound, i.e., 168555.49355559036
+and
+Yard = 3.0 * Foot
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerBarKelvin:PoundPerCubicYardPerBarKelvin_1
+PoundPerCubicYardPerBarKelvin_1.ConversionFactorB = "168555.49355559036"
+PoundPerCubicYardPerBarKelvin_1.Symbol = "lb/yd³/(bar•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerBarKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerBarKelvin) 
+	N0000[PoundPerCubicYardPerBarKelvin_1] -->|ConversionFactorB| N0002(("168555.49355559036")) 
+	N0000[PoundPerCubicYardPerBarKelvin_1] -->|Symbol| N0003(("lb/yd³/(bar•K)")) 
+```
+## KilogramPerCubicMetrePerMegapascalKelvin <!-- NOUN -->
+- Display name: kilogram per cubic metre per megapascal kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per megapascal kelvin
+[SI] is the value in SI
+a = Mega/Unit, i.e., 1000000
+and
+Mega = 1e6
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerMegapascalKelvin:KilogramPerCubicMetrePerMegapascalKelvin_1
+KilogramPerCubicMetrePerMegapascalKelvin_1.ConversionFactorB = "1000000"
+KilogramPerCubicMetrePerMegapascalKelvin_1.Symbol = "kg/m³/(MPa•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerMegapascalKelvin_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerMegapascalKelvin) 
+	N0000[KilogramPerCubicMetrePerMegapascalKelvin_1] -->|ConversionFactorB| N0002(("1000000")) 
+	N0000[KilogramPerCubicMetrePerMegapascalKelvin_1] -->|Symbol| N0003(("kg/m³/(MPa•K)")) 
+```
+## SpecificGravityPerMegapascalKelvin <!-- NOUN -->
+- Display name: specific gravity per megapascal kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000.028000784022
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per megapascal kelvin
+[SI] is the value in SI
+a = SpecificGavity4degC*Mega, i.e., 1000.028000784022
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+Mega = 1e6
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerMegapascalKelvin:SpecificGravityPerMegapascalKelvin_1
+SpecificGravityPerMegapascalKelvin_1.ConversionFactorB = "1000.028000784022"
+SpecificGravityPerMegapascalKelvin_1.Symbol = "sg/(MPa•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerMegapascalKelvin_1] -->|BelongsToClass| N0001(SpecificGravityPerMegapascalKelvin) 
+	N0000[SpecificGravityPerMegapascalKelvin_1] -->|ConversionFactorB| N0002(("1000.028000784022")) 
+	N0000[SpecificGravityPerMegapascalKelvin_1] -->|Symbol| N0003(("sg/(MPa•K)")) 
+```
+## GramPerCubicCentimetrePerMegapascalKelvin <!-- NOUN -->
+- Display name: gram per cubic centimetre per megapascal kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000.0000000000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per megapascal kelvin
+[SI] is the value in SI
+a = Centi*Centi*Centi*Mega/Milli, i.e., 1000.0000000000002
+and
+Centi = 0.01
+Mega = 1e6
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerMegapascalKelvin:GramPerCubicCentimetrePerMegapascalKelvin_1
+GramPerCubicCentimetrePerMegapascalKelvin_1.ConversionFactorB = "1000.0000000000002"
+GramPerCubicCentimetrePerMegapascalKelvin_1.Symbol = "g/cm³/(MPa•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerMegapascalKelvin_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerMegapascalKelvin) 
+	N0000[GramPerCubicCentimetrePerMegapascalKelvin_1] -->|ConversionFactorB| N0002(("1000.0000000000002")) 
+	N0000[GramPerCubicCentimetrePerMegapascalKelvin_1] -->|Symbol| N0003(("g/cm³/(MPa•K)")) 
+```
+## PoundPerGallonUkPerMegapascalKelvin <!-- NOUN -->
+- Display name: pound per gallon (UK) per megapascal kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 10022.412854960501
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per megapascal kelvin
+[SI] is the value in SI
+a = GallonUK*Mega/Pound, i.e., 10022.412854960501
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Mega = 1e6
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerMegapascalKelvin:PoundPerGallonUkPerMegapascalKelvin_1
+PoundPerGallonUkPerMegapascalKelvin_1.ConversionFactorB = "10022.412854960501"
+PoundPerGallonUkPerMegapascalKelvin_1.Symbol = "ppgUK/(MPa•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerMegapascalKelvin_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerMegapascalKelvin) 
+	N0000[PoundPerGallonUkPerMegapascalKelvin_1] -->|ConversionFactorB| N0002(("10022.412854960501")) 
+	N0000[PoundPerGallonUkPerMegapascalKelvin_1] -->|Symbol| N0003(("ppgUK/(MPa•K)")) 
+```
+## PoundPerGallonUsPerMegapascalKelvin <!-- NOUN -->
+- Display name: pound per gallon (US) per megapascal kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 8345.404452019331
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per megapascal kelvin
+[SI] is the value in SI
+a = GallonUS*Mega/Pound, i.e., 8345.404452019331
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Mega = 1e6
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerMegapascalKelvin:PoundPerGallonUsPerMegapascalKelvin_1
+PoundPerGallonUsPerMegapascalKelvin_1.ConversionFactorB = "8345.404452019331"
+PoundPerGallonUsPerMegapascalKelvin_1.Symbol = "ppgUS/(MPa•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerMegapascalKelvin_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerMegapascalKelvin) 
+	N0000[PoundPerGallonUsPerMegapascalKelvin_1] -->|ConversionFactorB| N0002(("8345.404452019331")) 
+	N0000[PoundPerGallonUsPerMegapascalKelvin_1] -->|Symbol| N0003(("ppgUS/(MPa•K)")) 
+```
+## PoundPerCubicFootPerMegapascalKelvin <!-- NOUN -->
+- Display name: pound per cubic foot per megapascal kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 62427.960576144586
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per megapascal kelvin
+[SI] is the value in SI
+a = Foot*Foot*Foot*Mega/Pound, i.e., 62427.960576144586
+and
+Foot = 12.0 * Inch
+Mega = 1e6
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerMegapascalKelvin:PoundPerCubicFootPerMegapascalKelvin_1
+PoundPerCubicFootPerMegapascalKelvin_1.ConversionFactorB = "62427.960576144586"
+PoundPerCubicFootPerMegapascalKelvin_1.Symbol = "lb/ft³/(MPa•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerMegapascalKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerMegapascalKelvin) 
+	N0000[PoundPerCubicFootPerMegapascalKelvin_1] -->|ConversionFactorB| N0002(("62427.960576144586")) 
+	N0000[PoundPerCubicFootPerMegapascalKelvin_1] -->|Symbol| N0003(("lb/ft³/(MPa•K)")) 
+```
+## PoundPerCubicInchPerMegapascalKelvin <!-- NOUN -->
+- Display name: pound per cubic inch per megapascal kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 36.127292000083685
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per megapascal kelvin
+[SI] is the value in SI
+a = Inch*Inch*Inch*Mega/Pound, i.e., 36.127292000083685
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Mega = 1e6
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerMegapascalKelvin:PoundPerCubicInchPerMegapascalKelvin_1
+PoundPerCubicInchPerMegapascalKelvin_1.ConversionFactorB = "36.127292000083685"
+PoundPerCubicInchPerMegapascalKelvin_1.Symbol = "lb/in³/(MPa•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerMegapascalKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerMegapascalKelvin) 
+	N0000[PoundPerCubicInchPerMegapascalKelvin_1] -->|ConversionFactorB| N0002(("36.127292000083685")) 
+	N0000[PoundPerCubicInchPerMegapascalKelvin_1] -->|Symbol| N0003(("lb/in³/(MPa•K)")) 
+```
+## PoundPerCubicYardPerMegapascalKelvin <!-- NOUN -->
+- Display name: pound per cubic yard per megapascal kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1685554.9355559037
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per megapascal kelvin
+[SI] is the value in SI
+a = Yard*Yard*Yard*Mega/Pound, i.e., 1685554.9355559037
+and
+Yard = 3.0 * Foot
+Mega = 1e6
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerMegapascalKelvin:PoundPerCubicYardPerMegapascalKelvin_1
+PoundPerCubicYardPerMegapascalKelvin_1.ConversionFactorB = "1685554.9355559037"
+PoundPerCubicYardPerMegapascalKelvin_1.Symbol = "lb/yd³/(MPa•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerMegapascalKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerMegapascalKelvin) 
+	N0000[PoundPerCubicYardPerMegapascalKelvin_1] -->|ConversionFactorB| N0002(("1685554.9355559037")) 
+	N0000[PoundPerCubicYardPerMegapascalKelvin_1] -->|Symbol| N0003(("lb/yd³/(MPa•K)")) 
+```
+## KilogramPerCubicMetrePerGigapascalKelvin <!-- NOUN -->
+- Display name: kilogram per cubic metre per gigapascal kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000000000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per gigapascal kelvin
+[SI] is the value in SI
+a = Giga/Unit, i.e., 1000000000
+and
+Giga = 1e9
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerGigapascalKelvin:KilogramPerCubicMetrePerGigapascalKelvin_1
+KilogramPerCubicMetrePerGigapascalKelvin_1.ConversionFactorB = "1000000000"
+KilogramPerCubicMetrePerGigapascalKelvin_1.Symbol = "kg/m³/(GPa•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerGigapascalKelvin_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerGigapascalKelvin) 
+	N0000[KilogramPerCubicMetrePerGigapascalKelvin_1] -->|ConversionFactorB| N0002(("1000000000")) 
+	N0000[KilogramPerCubicMetrePerGigapascalKelvin_1] -->|Symbol| N0003(("kg/m³/(GPa•K)")) 
+```
+## SpecificGravityPerGigapascalKelvin <!-- NOUN -->
+- Display name: specific gravity per gigapascal kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000028.0007840219
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per gigapascal kelvin
+[SI] is the value in SI
+a = SpecificGavity4degC*Giga, i.e., 1000028.0007840219
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+Giga = 1e9
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerGigapascalKelvin:SpecificGravityPerGigapascalKelvin_1
+SpecificGravityPerGigapascalKelvin_1.ConversionFactorB = "1000028.0007840219"
+SpecificGravityPerGigapascalKelvin_1.Symbol = "sg/(GPa•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerGigapascalKelvin_1] -->|BelongsToClass| N0001(SpecificGravityPerGigapascalKelvin) 
+	N0000[SpecificGravityPerGigapascalKelvin_1] -->|ConversionFactorB| N0002(("1000028.0007840219")) 
+	N0000[SpecificGravityPerGigapascalKelvin_1] -->|Symbol| N0003(("sg/(GPa•K)")) 
+```
+## GramPerCubicCentimetrePerGigapascalKelvin <!-- NOUN -->
+- Display name: gram per cubic centimetre per gigapascal kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000000.0000000001
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per gigapascal kelvin
+[SI] is the value in SI
+a = Centi*Centi*Centi*Giga/Milli, i.e., 1000000.0000000001
+and
+Centi = 0.01
+Giga = 1e9
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerGigapascalKelvin:GramPerCubicCentimetrePerGigapascalKelvin_1
+GramPerCubicCentimetrePerGigapascalKelvin_1.ConversionFactorB = "1000000.0000000001"
+GramPerCubicCentimetrePerGigapascalKelvin_1.Symbol = "g/cm³/(GPa•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerGigapascalKelvin_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerGigapascalKelvin) 
+	N0000[GramPerCubicCentimetrePerGigapascalKelvin_1] -->|ConversionFactorB| N0002(("1000000.0000000001")) 
+	N0000[GramPerCubicCentimetrePerGigapascalKelvin_1] -->|Symbol| N0003(("g/cm³/(GPa•K)")) 
+```
+## PoundPerGallonUkPerGigapascalKelvin <!-- NOUN -->
+- Display name: pound per gallon (UK) per gigapascal kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 10022412.854960501
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per gigapascal kelvin
+[SI] is the value in SI
+a = GallonUK*Giga/Pound, i.e., 10022412.854960501
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Giga = 1e9
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerGigapascalKelvin:PoundPerGallonUkPerGigapascalKelvin_1
+PoundPerGallonUkPerGigapascalKelvin_1.ConversionFactorB = "10022412.854960501"
+PoundPerGallonUkPerGigapascalKelvin_1.Symbol = "ppgUK/(GPa•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerGigapascalKelvin_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerGigapascalKelvin) 
+	N0000[PoundPerGallonUkPerGigapascalKelvin_1] -->|ConversionFactorB| N0002(("10022412.854960501")) 
+	N0000[PoundPerGallonUkPerGigapascalKelvin_1] -->|Symbol| N0003(("ppgUK/(GPa•K)")) 
+```
+## PoundPerGallonUsPerGigapascalKelvin <!-- NOUN -->
+- Display name: pound per gallon (US) per gigapascal kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 8345404.45201933
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per gigapascal kelvin
+[SI] is the value in SI
+a = GallonUS*Giga/Pound, i.e., 8345404.45201933
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Giga = 1e9
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerGigapascalKelvin:PoundPerGallonUsPerGigapascalKelvin_1
+PoundPerGallonUsPerGigapascalKelvin_1.ConversionFactorB = "8345404.45201933"
+PoundPerGallonUsPerGigapascalKelvin_1.Symbol = "ppgUS/(GPa•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerGigapascalKelvin_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerGigapascalKelvin) 
+	N0000[PoundPerGallonUsPerGigapascalKelvin_1] -->|ConversionFactorB| N0002(("8345404.45201933")) 
+	N0000[PoundPerGallonUsPerGigapascalKelvin_1] -->|Symbol| N0003(("ppgUS/(GPa•K)")) 
+```
+## PoundPerCubicFootPerGigapascalKelvin <!-- NOUN -->
+- Display name: pound per cubic foot per gigapascal kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 62427960.57614458
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per gigapascal kelvin
+[SI] is the value in SI
+a = Foot*Foot*Foot*Giga/Pound, i.e., 62427960.57614458
+and
+Foot = 12.0 * Inch
+Giga = 1e9
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerGigapascalKelvin:PoundPerCubicFootPerGigapascalKelvin_1
+PoundPerCubicFootPerGigapascalKelvin_1.ConversionFactorB = "62427960.57614458"
+PoundPerCubicFootPerGigapascalKelvin_1.Symbol = "lb/ft³/(GPa•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerGigapascalKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerGigapascalKelvin) 
+	N0000[PoundPerCubicFootPerGigapascalKelvin_1] -->|ConversionFactorB| N0002(("62427960.57614458")) 
+	N0000[PoundPerCubicFootPerGigapascalKelvin_1] -->|Symbol| N0003(("lb/ft³/(GPa•K)")) 
+```
+## PoundPerCubicInchPerGigapascalKelvin <!-- NOUN -->
+- Display name: pound per cubic inch per gigapascal kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 36127.29200008368
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per gigapascal kelvin
+[SI] is the value in SI
+a = Inch*Inch*Inch*Giga/Pound, i.e., 36127.29200008368
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Giga = 1e9
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerGigapascalKelvin:PoundPerCubicInchPerGigapascalKelvin_1
+PoundPerCubicInchPerGigapascalKelvin_1.ConversionFactorB = "36127.29200008368"
+PoundPerCubicInchPerGigapascalKelvin_1.Symbol = "lb/in³/(GPa•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerGigapascalKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerGigapascalKelvin) 
+	N0000[PoundPerCubicInchPerGigapascalKelvin_1] -->|ConversionFactorB| N0002(("36127.29200008368")) 
+	N0000[PoundPerCubicInchPerGigapascalKelvin_1] -->|Symbol| N0003(("lb/in³/(GPa•K)")) 
+```
+## PoundPerCubicYardPerGigapascalKelvin <!-- NOUN -->
+- Display name: pound per cubic yard per gigapascal kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1685554935.555904
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per gigapascal kelvin
+[SI] is the value in SI
+a = Yard*Yard*Yard*Giga/Pound, i.e., 1685554935.555904
+and
+Yard = 3.0 * Foot
+Giga = 1e9
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerGigapascalKelvin:PoundPerCubicYardPerGigapascalKelvin_1
+PoundPerCubicYardPerGigapascalKelvin_1.ConversionFactorB = "1685554935.555904"
+PoundPerCubicYardPerGigapascalKelvin_1.Symbol = "lb/yd³/(GPa•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerGigapascalKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerGigapascalKelvin) 
+	N0000[PoundPerCubicYardPerGigapascalKelvin_1] -->|ConversionFactorB| N0002(("1685554935.555904")) 
+	N0000[PoundPerCubicYardPerGigapascalKelvin_1] -->|Symbol| N0003(("lb/yd³/(GPa•K)")) 
+```
+## KilogramPerCubicMetrePerPoundPerSquareInchKelvin <!-- NOUN -->
+- Display name: kilogram per cubic metre per pound per square inch kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 6894.757293168361
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per pound per square inch kelvin
+[SI] is the value in SI
+a = PSI/Unit, i.e., 6894.757293168361
+and
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Unit = 1.0
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerPoundPerSquareInchKelvin:KilogramPerCubicMetrePerPoundPerSquareInchKelvin_1
+KilogramPerCubicMetrePerPoundPerSquareInchKelvin_1.ConversionFactorB = "6894.757293168361"
+KilogramPerCubicMetrePerPoundPerSquareInchKelvin_1.Symbol = "kg/m³/(psi•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerPoundPerSquareInchKelvin_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerPoundPerSquareInchKelvin) 
+	N0000[KilogramPerCubicMetrePerPoundPerSquareInchKelvin_1] -->|ConversionFactorB| N0002(("6894.757293168361")) 
+	N0000[KilogramPerCubicMetrePerPoundPerSquareInchKelvin_1] -->|Symbol| N0003(("kg/m³/(psi•K)")) 
+```
+## SpecificGravityPerPoundPerSquareInchKelvin <!-- NOUN -->
+- Display name: specific gravity per pound per square inch kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 6.894950351778211
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per pound per square inch kelvin
+[SI] is the value in SI
+a = SpecificGavity4degC*PSI, i.e., 6.894950351778211
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerPoundPerSquareInchKelvin:SpecificGravityPerPoundPerSquareInchKelvin_1
+SpecificGravityPerPoundPerSquareInchKelvin_1.ConversionFactorB = "6.894950351778211"
+SpecificGravityPerPoundPerSquareInchKelvin_1.Symbol = "sg/(psi•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerPoundPerSquareInchKelvin_1] -->|BelongsToClass| N0001(SpecificGravityPerPoundPerSquareInchKelvin) 
+	N0000[SpecificGravityPerPoundPerSquareInchKelvin_1] -->|ConversionFactorB| N0002(("6.894950351778211")) 
+	N0000[SpecificGravityPerPoundPerSquareInchKelvin_1] -->|Symbol| N0003(("sg/(psi•K)")) 
+```
+## GramPerCubicCentimetrePerPoundPerSquareInchKelvin <!-- NOUN -->
+- Display name: gram per cubic centimetre per pound per square inch kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 6.894757293168362
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per pound per square inch kelvin
+[SI] is the value in SI
+a = Centi*Centi*Centi*PSI/Milli, i.e., 6.894757293168362
+and
+Centi = 0.01
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Milli = 0.001
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerPoundPerSquareInchKelvin:GramPerCubicCentimetrePerPoundPerSquareInchKelvin_1
+GramPerCubicCentimetrePerPoundPerSquareInchKelvin_1.ConversionFactorB = "6.894757293168362"
+GramPerCubicCentimetrePerPoundPerSquareInchKelvin_1.Symbol = "g/cm³/(psi•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerPoundPerSquareInchKelvin_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerPoundPerSquareInchKelvin) 
+	N0000[GramPerCubicCentimetrePerPoundPerSquareInchKelvin_1] -->|ConversionFactorB| N0002(("6.894757293168362")) 
+	N0000[GramPerCubicCentimetrePerPoundPerSquareInchKelvin_1] -->|Symbol| N0003(("g/cm³/(psi•K)")) 
+```
+## PoundPerGallonUkPerPoundPerSquareInchKelvin <!-- NOUN -->
+- Display name: pound per gallon (UK) per pound per square inch kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 69.10210412688325
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per pound per square inch kelvin
+[SI] is the value in SI
+a = GallonUK*PSI/Pound, i.e., 69.10210412688325
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerPoundPerSquareInchKelvin:PoundPerGallonUkPerPoundPerSquareInchKelvin_1
+PoundPerGallonUkPerPoundPerSquareInchKelvin_1.ConversionFactorB = "69.10210412688325"
+PoundPerGallonUkPerPoundPerSquareInchKelvin_1.Symbol = "ppgUK/(psi•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerPoundPerSquareInchKelvin_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerPoundPerSquareInchKelvin) 
+	N0000[PoundPerGallonUkPerPoundPerSquareInchKelvin_1] -->|ConversionFactorB| N0002(("69.10210412688325")) 
+	N0000[PoundPerGallonUkPerPoundPerSquareInchKelvin_1] -->|Symbol| N0003(("ppgUK/(psi•K)")) 
+```
+## PoundPerGallonUsPerPoundPerSquareInchKelvin <!-- NOUN -->
+- Display name: pound per gallon (US) per pound per square inch kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 57.53953820999999
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per pound per square inch kelvin
+[SI] is the value in SI
+a = GallonUS*PSI/Pound, i.e., 57.53953820999999
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerPoundPerSquareInchKelvin:PoundPerGallonUsPerPoundPerSquareInchKelvin_1
+PoundPerGallonUsPerPoundPerSquareInchKelvin_1.ConversionFactorB = "57.53953820999999"
+PoundPerGallonUsPerPoundPerSquareInchKelvin_1.Symbol = "ppgUS/(psi•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerPoundPerSquareInchKelvin_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerPoundPerSquareInchKelvin) 
+	N0000[PoundPerGallonUsPerPoundPerSquareInchKelvin_1] -->|ConversionFactorB| N0002(("57.53953820999999")) 
+	N0000[PoundPerGallonUsPerPoundPerSquareInchKelvin_1] -->|Symbol| N0003(("ppgUS/(psi•K)")) 
+```
+## PoundPerCubicFootPerPoundPerSquareInchKelvin <!-- NOUN -->
+- Display name: pound per cubic foot per pound per square inch kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 430.4256364799998
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per pound per square inch kelvin
+[SI] is the value in SI
+a = Foot*Foot*Foot*PSI/Pound, i.e., 430.4256364799998
+and
+Foot = 12.0 * Inch
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerPoundPerSquareInchKelvin:PoundPerCubicFootPerPoundPerSquareInchKelvin_1
+PoundPerCubicFootPerPoundPerSquareInchKelvin_1.ConversionFactorB = "430.4256364799998"
+PoundPerCubicFootPerPoundPerSquareInchKelvin_1.Symbol = "lb/ft³/(psi•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerPoundPerSquareInchKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerPoundPerSquareInchKelvin) 
+	N0000[PoundPerCubicFootPerPoundPerSquareInchKelvin_1] -->|ConversionFactorB| N0002(("430.4256364799998")) 
+	N0000[PoundPerCubicFootPerPoundPerSquareInchKelvin_1] -->|Symbol| N0003(("lb/ft³/(psi•K)")) 
+```
+## PoundPerCubicInchPerPoundPerSquareInchKelvin <!-- NOUN -->
+- Display name: pound per cubic inch per pound per square inch kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.24908890999999994
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per pound per square inch kelvin
+[SI] is the value in SI
+a = Inch*Inch*Inch*PSI/Pound, i.e., 0.24908890999999994
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerPoundPerSquareInchKelvin:PoundPerCubicInchPerPoundPerSquareInchKelvin_1
+PoundPerCubicInchPerPoundPerSquareInchKelvin_1.ConversionFactorB = "0.24908890999999994"
+PoundPerCubicInchPerPoundPerSquareInchKelvin_1.Symbol = "lb/in³/(psi•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerPoundPerSquareInchKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerPoundPerSquareInchKelvin) 
+	N0000[PoundPerCubicInchPerPoundPerSquareInchKelvin_1] -->|ConversionFactorB| N0002(("0.24908890999999994")) 
+	N0000[PoundPerCubicInchPerPoundPerSquareInchKelvin_1] -->|Symbol| N0003(("lb/in³/(psi•K)")) 
+```
+## PoundPerCubicYardPerPoundPerSquareInchKelvin <!-- NOUN -->
+- Display name: pound per cubic yard per pound per square inch kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 11621.492184959992
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per pound per square inch kelvin
+[SI] is the value in SI
+a = Yard*Yard*Yard*PSI/Pound, i.e., 11621.492184959992
+and
+Yard = 3.0 * Foot
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerPoundPerSquareInchKelvin:PoundPerCubicYardPerPoundPerSquareInchKelvin_1
+PoundPerCubicYardPerPoundPerSquareInchKelvin_1.ConversionFactorB = "11621.492184959992"
+PoundPerCubicYardPerPoundPerSquareInchKelvin_1.Symbol = "lb/yd³/(psi•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerPoundPerSquareInchKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerPoundPerSquareInchKelvin) 
+	N0000[PoundPerCubicYardPerPoundPerSquareInchKelvin_1] -->|ConversionFactorB| N0002(("11621.492184959992")) 
+	N0000[PoundPerCubicYardPerPoundPerSquareInchKelvin_1] -->|Symbol| N0003(("lb/yd³/(psi•K)")) 
+```
+## KilogramPerCubicMetrePerPascalCelsius <!-- NOUN -->
+- Display name: kilogram per cubic metre per pascal celsius
+- Parent class: [Unit](#Unit)
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per pascal celsius
+[SI] is the value in SI
+a = 1.0/Unit, i.e., 1
+and
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerPascalCelsius:KilogramPerCubicMetrePerPascalCelsius_1
+KilogramPerCubicMetrePerPascalCelsius_1.Symbol = "kg/m³/(Pa•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerPascalCelsius_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerPascalCelsius) 
+	N0000[KilogramPerCubicMetrePerPascalCelsius_1] -->|Symbol| N0002(("kg/m³/(Pa•°C)")) 
+```
+## SpecificGravityPerPascalCelsius <!-- NOUN -->
+- Display name: specific gravity per pascal celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.001000028000784022
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per pascal celsius
+[SI] is the value in SI
+a = SpecificGavity4degC, i.e., 0.001000028000784022
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerPascalCelsius:SpecificGravityPerPascalCelsius_1
+SpecificGravityPerPascalCelsius_1.ConversionFactorB = "0.001000028000784022"
+SpecificGravityPerPascalCelsius_1.Symbol = "sg/(Pa•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerPascalCelsius_1] -->|BelongsToClass| N0001(SpecificGravityPerPascalCelsius) 
+	N0000[SpecificGravityPerPascalCelsius_1] -->|ConversionFactorB| N0002(("0.001000028000784022")) 
+	N0000[SpecificGravityPerPascalCelsius_1] -->|Symbol| N0003(("sg/(Pa•°C)")) 
+```
+## GramPerCubicCentimetrePerPascalCelsius <!-- NOUN -->
+- Display name: gram per cubic centimetre per pascal celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0010000000000000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per pascal celsius
+[SI] is the value in SI
+a = Centi*Centi*Centi/Milli, i.e., 0.0010000000000000002
+and
+Centi = 0.01
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerPascalCelsius:GramPerCubicCentimetrePerPascalCelsius_1
+GramPerCubicCentimetrePerPascalCelsius_1.ConversionFactorB = "0.0010000000000000002"
+GramPerCubicCentimetrePerPascalCelsius_1.Symbol = "g/cm³/(Pa•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerPascalCelsius_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerPascalCelsius) 
+	N0000[GramPerCubicCentimetrePerPascalCelsius_1] -->|ConversionFactorB| N0002(("0.0010000000000000002")) 
+	N0000[GramPerCubicCentimetrePerPascalCelsius_1] -->|Symbol| N0003(("g/cm³/(Pa•°C)")) 
+```
+## PoundPerGallonUkPerPascalCelsius <!-- NOUN -->
+- Display name: pound per gallon (UK) per pascal celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.010022412854960501
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per pascal celsius
+[SI] is the value in SI
+a = GallonUK/Pound, i.e., 0.010022412854960501
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerPascalCelsius:PoundPerGallonUkPerPascalCelsius_1
+PoundPerGallonUkPerPascalCelsius_1.ConversionFactorB = "0.010022412854960501"
+PoundPerGallonUkPerPascalCelsius_1.Symbol = "ppgUK/(Pa•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerPascalCelsius_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerPascalCelsius) 
+	N0000[PoundPerGallonUkPerPascalCelsius_1] -->|ConversionFactorB| N0002(("0.010022412854960501")) 
+	N0000[PoundPerGallonUkPerPascalCelsius_1] -->|Symbol| N0003(("ppgUK/(Pa•°C)")) 
+```
+## PoundPerGallonUsPerPascalCelsius <!-- NOUN -->
+- Display name: pound per gallon (US) per pascal celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.00834540445201933
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per pascal celsius
+[SI] is the value in SI
+a = GallonUS/Pound, i.e., 0.00834540445201933
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerPascalCelsius:PoundPerGallonUsPerPascalCelsius_1
+PoundPerGallonUsPerPascalCelsius_1.ConversionFactorB = "0.00834540445201933"
+PoundPerGallonUsPerPascalCelsius_1.Symbol = "ppgUS/(Pa•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerPascalCelsius_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerPascalCelsius) 
+	N0000[PoundPerGallonUsPerPascalCelsius_1] -->|ConversionFactorB| N0002(("0.00834540445201933")) 
+	N0000[PoundPerGallonUsPerPascalCelsius_1] -->|Symbol| N0003(("ppgUS/(Pa•°C)")) 
+```
+## PoundPerCubicFootPerPascalCelsius <!-- NOUN -->
+- Display name: pound per cubic foot per pascal celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.06242796057614459
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per pascal celsius
+[SI] is the value in SI
+a = Foot*Foot*Foot/Pound, i.e., 0.06242796057614459
+and
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerPascalCelsius:PoundPerCubicFootPerPascalCelsius_1
+PoundPerCubicFootPerPascalCelsius_1.ConversionFactorB = "0.06242796057614459"
+PoundPerCubicFootPerPascalCelsius_1.Symbol = "lb/ft³/(Pa•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerPascalCelsius_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerPascalCelsius) 
+	N0000[PoundPerCubicFootPerPascalCelsius_1] -->|ConversionFactorB| N0002(("0.06242796057614459")) 
+	N0000[PoundPerCubicFootPerPascalCelsius_1] -->|Symbol| N0003(("lb/ft³/(Pa•°C)")) 
+```
+## PoundPerCubicInchPerPascalCelsius <!-- NOUN -->
+- Display name: pound per cubic inch per pascal celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 3.612729200008369E-05
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per pascal celsius
+[SI] is the value in SI
+a = Inch*Inch*Inch/Pound, i.e., 3.612729200008369E-05
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerPascalCelsius:PoundPerCubicInchPerPascalCelsius_1
+PoundPerCubicInchPerPascalCelsius_1.ConversionFactorB = "3.612729200008369E-05"
+PoundPerCubicInchPerPascalCelsius_1.Symbol = "lb/in³/(Pa•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerPascalCelsius_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerPascalCelsius) 
+	N0000[PoundPerCubicInchPerPascalCelsius_1] -->|ConversionFactorB| N0002(("3.612729200008369E-05")) 
+	N0000[PoundPerCubicInchPerPascalCelsius_1] -->|Symbol| N0003(("lb/in³/(Pa•°C)")) 
+```
+## PoundPerCubicYardPerPascalCelsius <!-- NOUN -->
+- Display name: pound per cubic yard per pascal celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1.6855549355559039
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per pascal celsius
+[SI] is the value in SI
+a = Yard*Yard*Yard/Pound, i.e., 1.6855549355559039
+and
+Yard = 3.0 * Foot
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerPascalCelsius:PoundPerCubicYardPerPascalCelsius_1
+PoundPerCubicYardPerPascalCelsius_1.ConversionFactorB = "1.6855549355559039"
+PoundPerCubicYardPerPascalCelsius_1.Symbol = "lb/yd³/(Pa•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerPascalCelsius_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerPascalCelsius) 
+	N0000[PoundPerCubicYardPerPascalCelsius_1] -->|ConversionFactorB| N0002(("1.6855549355559039")) 
+	N0000[PoundPerCubicYardPerPascalCelsius_1] -->|Symbol| N0003(("lb/yd³/(Pa•°C)")) 
+```
+## KilogramPerCubicMetrePerBarCelsius <!-- NOUN -->
+- Display name: kilogram per cubic metre per bar celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 100000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per bar celsius
+[SI] is the value in SI
+a = Bar/Unit, i.e., 100000
+and
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerBarCelsius:KilogramPerCubicMetrePerBarCelsius_1
+KilogramPerCubicMetrePerBarCelsius_1.ConversionFactorB = "100000"
+KilogramPerCubicMetrePerBarCelsius_1.Symbol = "kg/m³/(bar•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerBarCelsius_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerBarCelsius) 
+	N0000[KilogramPerCubicMetrePerBarCelsius_1] -->|ConversionFactorB| N0002(("100000")) 
+	N0000[KilogramPerCubicMetrePerBarCelsius_1] -->|Symbol| N0003(("kg/m³/(bar•°C)")) 
+```
+## SpecificGravityPerBarCelsius <!-- NOUN -->
+- Display name: specific gravity per bar celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 100.0028000784022
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per bar celsius
+[SI] is the value in SI
+a = SpecificGavity4degC*Bar, i.e., 100.0028000784022
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerBarCelsius:SpecificGravityPerBarCelsius_1
+SpecificGravityPerBarCelsius_1.ConversionFactorB = "100.0028000784022"
+SpecificGravityPerBarCelsius_1.Symbol = "sg/(bar•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerBarCelsius_1] -->|BelongsToClass| N0001(SpecificGravityPerBarCelsius) 
+	N0000[SpecificGravityPerBarCelsius_1] -->|ConversionFactorB| N0002(("100.0028000784022")) 
+	N0000[SpecificGravityPerBarCelsius_1] -->|Symbol| N0003(("sg/(bar•°C)")) 
+```
+## GramPerCubicCentimetrePerBarCelsius <!-- NOUN -->
+- Display name: gram per cubic centimetre per bar celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 100.00000000000001
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per bar celsius
+[SI] is the value in SI
+a = Centi*Centi*Centi*Bar/Milli, i.e., 100.00000000000001
+and
+Centi = 0.01
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerBarCelsius:GramPerCubicCentimetrePerBarCelsius_1
+GramPerCubicCentimetrePerBarCelsius_1.ConversionFactorB = "100.00000000000001"
+GramPerCubicCentimetrePerBarCelsius_1.Symbol = "g/cm³/(bar•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerBarCelsius_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerBarCelsius) 
+	N0000[GramPerCubicCentimetrePerBarCelsius_1] -->|ConversionFactorB| N0002(("100.00000000000001")) 
+	N0000[GramPerCubicCentimetrePerBarCelsius_1] -->|Symbol| N0003(("g/cm³/(bar•°C)")) 
+```
+## PoundPerGallonUkPerBarCelsius <!-- NOUN -->
+- Display name: pound per gallon (UK) per bar celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1002.2412854960501
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per bar celsius
+[SI] is the value in SI
+a = GallonUK*Bar/Pound, i.e., 1002.2412854960501
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerBarCelsius:PoundPerGallonUkPerBarCelsius_1
+PoundPerGallonUkPerBarCelsius_1.ConversionFactorB = "1002.2412854960501"
+PoundPerGallonUkPerBarCelsius_1.Symbol = "ppgUK/(bar•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerBarCelsius_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerBarCelsius) 
+	N0000[PoundPerGallonUkPerBarCelsius_1] -->|ConversionFactorB| N0002(("1002.2412854960501")) 
+	N0000[PoundPerGallonUkPerBarCelsius_1] -->|Symbol| N0003(("ppgUK/(bar•°C)")) 
+```
+## PoundPerGallonUsPerBarCelsius <!-- NOUN -->
+- Display name: pound per gallon (US) per bar celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 834.540445201933
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per bar celsius
+[SI] is the value in SI
+a = GallonUS*Bar/Pound, i.e., 834.540445201933
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerBarCelsius:PoundPerGallonUsPerBarCelsius_1
+PoundPerGallonUsPerBarCelsius_1.ConversionFactorB = "834.540445201933"
+PoundPerGallonUsPerBarCelsius_1.Symbol = "ppgUS/(bar•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerBarCelsius_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerBarCelsius) 
+	N0000[PoundPerGallonUsPerBarCelsius_1] -->|ConversionFactorB| N0002(("834.540445201933")) 
+	N0000[PoundPerGallonUsPerBarCelsius_1] -->|Symbol| N0003(("ppgUS/(bar•°C)")) 
+```
+## PoundPerCubicFootPerBarCelsius <!-- NOUN -->
+- Display name: pound per cubic foot per bar celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 6242.79605761446
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per bar celsius
+[SI] is the value in SI
+a = Foot*Foot*Foot*Bar/Pound, i.e., 6242.79605761446
+and
+Foot = 12.0 * Inch
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerBarCelsius:PoundPerCubicFootPerBarCelsius_1
+PoundPerCubicFootPerBarCelsius_1.ConversionFactorB = "6242.79605761446"
+PoundPerCubicFootPerBarCelsius_1.Symbol = "lb/ft³/(bar•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerBarCelsius_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerBarCelsius) 
+	N0000[PoundPerCubicFootPerBarCelsius_1] -->|ConversionFactorB| N0002(("6242.79605761446")) 
+	N0000[PoundPerCubicFootPerBarCelsius_1] -->|Symbol| N0003(("lb/ft³/(bar•°C)")) 
+```
+## PoundPerCubicInchPerBarCelsius <!-- NOUN -->
+- Display name: pound per cubic inch per bar celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 3.6127292000083684
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per bar celsius
+[SI] is the value in SI
+a = Inch*Inch*Inch*Bar/Pound, i.e., 3.6127292000083684
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerBarCelsius:PoundPerCubicInchPerBarCelsius_1
+PoundPerCubicInchPerBarCelsius_1.ConversionFactorB = "3.6127292000083684"
+PoundPerCubicInchPerBarCelsius_1.Symbol = "lb/in³/(bar•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerBarCelsius_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerBarCelsius) 
+	N0000[PoundPerCubicInchPerBarCelsius_1] -->|ConversionFactorB| N0002(("3.6127292000083684")) 
+	N0000[PoundPerCubicInchPerBarCelsius_1] -->|Symbol| N0003(("lb/in³/(bar•°C)")) 
+```
+## PoundPerCubicYardPerBarCelsius <!-- NOUN -->
+- Display name: pound per cubic yard per bar celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 168555.49355559036
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per bar celsius
+[SI] is the value in SI
+a = Yard*Yard*Yard*Bar/Pound, i.e., 168555.49355559036
+and
+Yard = 3.0 * Foot
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerBarCelsius:PoundPerCubicYardPerBarCelsius_1
+PoundPerCubicYardPerBarCelsius_1.ConversionFactorB = "168555.49355559036"
+PoundPerCubicYardPerBarCelsius_1.Symbol = "lb/yd³/(bar•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerBarCelsius_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerBarCelsius) 
+	N0000[PoundPerCubicYardPerBarCelsius_1] -->|ConversionFactorB| N0002(("168555.49355559036")) 
+	N0000[PoundPerCubicYardPerBarCelsius_1] -->|Symbol| N0003(("lb/yd³/(bar•°C)")) 
+```
+## KilogramPerCubicMetrePerPoundPerSquareInchCelsius <!-- NOUN -->
+- Display name: kilogram per cubic metre per pound per square inch celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 6894.757293168361
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per pound per square inch celsius
+[SI] is the value in SI
+a = PSI/Unit, i.e., 6894.757293168361
+and
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Unit = 1.0
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerPoundPerSquareInchCelsius:KilogramPerCubicMetrePerPoundPerSquareInchCelsius_1
+KilogramPerCubicMetrePerPoundPerSquareInchCelsius_1.ConversionFactorB = "6894.757293168361"
+KilogramPerCubicMetrePerPoundPerSquareInchCelsius_1.Symbol = "kg/m³/(psi•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerPoundPerSquareInchCelsius_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerPoundPerSquareInchCelsius) 
+	N0000[KilogramPerCubicMetrePerPoundPerSquareInchCelsius_1] -->|ConversionFactorB| N0002(("6894.757293168361")) 
+	N0000[KilogramPerCubicMetrePerPoundPerSquareInchCelsius_1] -->|Symbol| N0003(("kg/m³/(psi•°C)")) 
+```
+## SpecificGravityPerPoundPerSquareInchCelsius <!-- NOUN -->
+- Display name: specific gravity per pound per square inch celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 6.894950351778211
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per pound per square inch celsius
+[SI] is the value in SI
+a = SpecificGavity4degC*PSI, i.e., 6.894950351778211
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerPoundPerSquareInchCelsius:SpecificGravityPerPoundPerSquareInchCelsius_1
+SpecificGravityPerPoundPerSquareInchCelsius_1.ConversionFactorB = "6.894950351778211"
+SpecificGravityPerPoundPerSquareInchCelsius_1.Symbol = "sg/(psi•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerPoundPerSquareInchCelsius_1] -->|BelongsToClass| N0001(SpecificGravityPerPoundPerSquareInchCelsius) 
+	N0000[SpecificGravityPerPoundPerSquareInchCelsius_1] -->|ConversionFactorB| N0002(("6.894950351778211")) 
+	N0000[SpecificGravityPerPoundPerSquareInchCelsius_1] -->|Symbol| N0003(("sg/(psi•°C)")) 
+```
+## GramPerCubicCentimetrePerPoundPerSquareInchCelsius <!-- NOUN -->
+- Display name: gram per cubic centimetre per pound per square inch celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 6.894757293168362
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per pound per square inch celsius
+[SI] is the value in SI
+a = Centi*Centi*Centi*PSI/Milli, i.e., 6.894757293168362
+and
+Centi = 0.01
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Milli = 0.001
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerPoundPerSquareInchCelsius:GramPerCubicCentimetrePerPoundPerSquareInchCelsius_1
+GramPerCubicCentimetrePerPoundPerSquareInchCelsius_1.ConversionFactorB = "6.894757293168362"
+GramPerCubicCentimetrePerPoundPerSquareInchCelsius_1.Symbol = "g/cm³/(psi•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerPoundPerSquareInchCelsius_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerPoundPerSquareInchCelsius) 
+	N0000[GramPerCubicCentimetrePerPoundPerSquareInchCelsius_1] -->|ConversionFactorB| N0002(("6.894757293168362")) 
+	N0000[GramPerCubicCentimetrePerPoundPerSquareInchCelsius_1] -->|Symbol| N0003(("g/cm³/(psi•°C)")) 
+```
+## PoundPerGallonUkPerPoundPerSquareInchCelsius <!-- NOUN -->
+- Display name: pound per gallon (UK) per pound per square inch celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 69.10210412688325
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per pound per square inch celsius
+[SI] is the value in SI
+a = GallonUK*PSI/Pound, i.e., 69.10210412688325
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerPoundPerSquareInchCelsius:PoundPerGallonUkPerPoundPerSquareInchCelsius_1
+PoundPerGallonUkPerPoundPerSquareInchCelsius_1.ConversionFactorB = "69.10210412688325"
+PoundPerGallonUkPerPoundPerSquareInchCelsius_1.Symbol = "ppgUK/(psi•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerPoundPerSquareInchCelsius_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerPoundPerSquareInchCelsius) 
+	N0000[PoundPerGallonUkPerPoundPerSquareInchCelsius_1] -->|ConversionFactorB| N0002(("69.10210412688325")) 
+	N0000[PoundPerGallonUkPerPoundPerSquareInchCelsius_1] -->|Symbol| N0003(("ppgUK/(psi•°C)")) 
+```
+## PoundPerGallonUsPerPoundPerSquareInchCelsius <!-- NOUN -->
+- Display name: pound per gallon (US) per pound per square inch celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 57.53953820999999
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per pound per square inch celsius
+[SI] is the value in SI
+a = GallonUS*PSI/Pound, i.e., 57.53953820999999
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerPoundPerSquareInchCelsius:PoundPerGallonUsPerPoundPerSquareInchCelsius_1
+PoundPerGallonUsPerPoundPerSquareInchCelsius_1.ConversionFactorB = "57.53953820999999"
+PoundPerGallonUsPerPoundPerSquareInchCelsius_1.Symbol = "ppgUS/(psi•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerPoundPerSquareInchCelsius_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerPoundPerSquareInchCelsius) 
+	N0000[PoundPerGallonUsPerPoundPerSquareInchCelsius_1] -->|ConversionFactorB| N0002(("57.53953820999999")) 
+	N0000[PoundPerGallonUsPerPoundPerSquareInchCelsius_1] -->|Symbol| N0003(("ppgUS/(psi•°C)")) 
+```
+## PoundPerCubicFootPerPoundPerSquareInchCelsius <!-- NOUN -->
+- Display name: pound per cubic foot per pound per square inch celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 430.4256364799998
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per pound per square inch celsius
+[SI] is the value in SI
+a = Foot*Foot*Foot*PSI/Pound, i.e., 430.4256364799998
+and
+Foot = 12.0 * Inch
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerPoundPerSquareInchCelsius:PoundPerCubicFootPerPoundPerSquareInchCelsius_1
+PoundPerCubicFootPerPoundPerSquareInchCelsius_1.ConversionFactorB = "430.4256364799998"
+PoundPerCubicFootPerPoundPerSquareInchCelsius_1.Symbol = "lb/ft³/(psi•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerPoundPerSquareInchCelsius_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerPoundPerSquareInchCelsius) 
+	N0000[PoundPerCubicFootPerPoundPerSquareInchCelsius_1] -->|ConversionFactorB| N0002(("430.4256364799998")) 
+	N0000[PoundPerCubicFootPerPoundPerSquareInchCelsius_1] -->|Symbol| N0003(("lb/ft³/(psi•°C)")) 
+```
+## PoundPerCubicInchPerPoundPerSquareInchCelsius <!-- NOUN -->
+- Display name: pound per cubic inch per pound per square inch celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.24908890999999994
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per pound per square inch celsius
+[SI] is the value in SI
+a = Inch*Inch*Inch*PSI/Pound, i.e., 0.24908890999999994
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerPoundPerSquareInchCelsius:PoundPerCubicInchPerPoundPerSquareInchCelsius_1
+PoundPerCubicInchPerPoundPerSquareInchCelsius_1.ConversionFactorB = "0.24908890999999994"
+PoundPerCubicInchPerPoundPerSquareInchCelsius_1.Symbol = "lb/in³/(psi•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerPoundPerSquareInchCelsius_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerPoundPerSquareInchCelsius) 
+	N0000[PoundPerCubicInchPerPoundPerSquareInchCelsius_1] -->|ConversionFactorB| N0002(("0.24908890999999994")) 
+	N0000[PoundPerCubicInchPerPoundPerSquareInchCelsius_1] -->|Symbol| N0003(("lb/in³/(psi•°C)")) 
+```
+## PoundPerCubicYardPerPoundPerSquareInchCelsius <!-- NOUN -->
+- Display name: pound per cubic yard per pound per square inch celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 11621.492184959992
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per pound per square inch celsius
+[SI] is the value in SI
+a = Yard*Yard*Yard*PSI/Pound, i.e., 11621.492184959992
+and
+Yard = 3.0 * Foot
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerPoundPerSquareInchCelsius:PoundPerCubicYardPerPoundPerSquareInchCelsius_1
+PoundPerCubicYardPerPoundPerSquareInchCelsius_1.ConversionFactorB = "11621.492184959992"
+PoundPerCubicYardPerPoundPerSquareInchCelsius_1.Symbol = "lb/yd³/(psi•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerPoundPerSquareInchCelsius_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerPoundPerSquareInchCelsius) 
+	N0000[PoundPerCubicYardPerPoundPerSquareInchCelsius_1] -->|ConversionFactorB| N0002(("11621.492184959992")) 
+	N0000[PoundPerCubicYardPerPoundPerSquareInchCelsius_1] -->|Symbol| N0003(("lb/yd³/(psi•°C)")) 
+```
+## KilogramPerCubicMetrePerPascalFahrenheit <!-- NOUN -->
+- Display name: kilogram per cubic metre per pascal fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.5555555555555556
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per pascal fahrenheit
+[SI] is the value in SI
+a = FahrenheitSlope/Unit, i.e., 0.5555555555555556
+and
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerPascalFahrenheit:KilogramPerCubicMetrePerPascalFahrenheit_1
+KilogramPerCubicMetrePerPascalFahrenheit_1.ConversionFactorB = "0.5555555555555556"
+KilogramPerCubicMetrePerPascalFahrenheit_1.Symbol = "kg/m³/(Pa•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerPascalFahrenheit_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerPascalFahrenheit) 
+	N0000[KilogramPerCubicMetrePerPascalFahrenheit_1] -->|ConversionFactorB| N0002(("0.5555555555555556")) 
+	N0000[KilogramPerCubicMetrePerPascalFahrenheit_1] -->|Symbol| N0003(("kg/m³/(Pa•°F)")) 
+```
+## SpecificGravityPerPascalFahrenheit <!-- NOUN -->
+- Display name: specific gravity per pascal fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0005555711115466789
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per pascal fahrenheit
+[SI] is the value in SI
+a = SpecificGavity4degC*FahrenheitSlope, i.e., 0.0005555711115466789
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerPascalFahrenheit:SpecificGravityPerPascalFahrenheit_1
+SpecificGravityPerPascalFahrenheit_1.ConversionFactorB = "0.0005555711115466789"
+SpecificGravityPerPascalFahrenheit_1.Symbol = "sg/(Pa•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerPascalFahrenheit_1] -->|BelongsToClass| N0001(SpecificGravityPerPascalFahrenheit) 
+	N0000[SpecificGravityPerPascalFahrenheit_1] -->|ConversionFactorB| N0002(("0.0005555711115466789")) 
+	N0000[SpecificGravityPerPascalFahrenheit_1] -->|Symbol| N0003(("sg/(Pa•°F)")) 
+```
+## GramPerCubicCentimetrePerPascalFahrenheit <!-- NOUN -->
+- Display name: gram per cubic centimetre per pascal fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0005555555555555557
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per pascal fahrenheit
+[SI] is the value in SI
+a = Centi*Centi*Centi*FahrenheitSlope/Milli, i.e., 0.0005555555555555557
+and
+Centi = 0.01
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerPascalFahrenheit:GramPerCubicCentimetrePerPascalFahrenheit_1
+GramPerCubicCentimetrePerPascalFahrenheit_1.ConversionFactorB = "0.0005555555555555557"
+GramPerCubicCentimetrePerPascalFahrenheit_1.Symbol = "g/cm³/(Pa•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerPascalFahrenheit_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerPascalFahrenheit) 
+	N0000[GramPerCubicCentimetrePerPascalFahrenheit_1] -->|ConversionFactorB| N0002(("0.0005555555555555557")) 
+	N0000[GramPerCubicCentimetrePerPascalFahrenheit_1] -->|Symbol| N0003(("g/cm³/(Pa•°F)")) 
+```
+## PoundPerGallonUkPerPascalFahrenheit <!-- NOUN -->
+- Display name: pound per gallon (UK) per pascal fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.005568007141644723
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per pascal fahrenheit
+[SI] is the value in SI
+a = GallonUK*FahrenheitSlope/Pound, i.e., 0.005568007141644723
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerPascalFahrenheit:PoundPerGallonUkPerPascalFahrenheit_1
+PoundPerGallonUkPerPascalFahrenheit_1.ConversionFactorB = "0.005568007141644723"
+PoundPerGallonUkPerPascalFahrenheit_1.Symbol = "ppgUK/(Pa•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerPascalFahrenheit_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerPascalFahrenheit) 
+	N0000[PoundPerGallonUkPerPascalFahrenheit_1] -->|ConversionFactorB| N0002(("0.005568007141644723")) 
+	N0000[PoundPerGallonUkPerPascalFahrenheit_1] -->|Symbol| N0003(("ppgUK/(Pa•°F)")) 
+```
+## PoundPerGallonUsPerPascalFahrenheit <!-- NOUN -->
+- Display name: pound per gallon (US) per pascal fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.004636335806677406
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per pascal fahrenheit
+[SI] is the value in SI
+a = GallonUS*FahrenheitSlope/Pound, i.e., 0.004636335806677406
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerPascalFahrenheit:PoundPerGallonUsPerPascalFahrenheit_1
+PoundPerGallonUsPerPascalFahrenheit_1.ConversionFactorB = "0.004636335806677406"
+PoundPerGallonUsPerPascalFahrenheit_1.Symbol = "ppgUS/(Pa•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerPascalFahrenheit_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerPascalFahrenheit) 
+	N0000[PoundPerGallonUsPerPascalFahrenheit_1] -->|ConversionFactorB| N0002(("0.004636335806677406")) 
+	N0000[PoundPerGallonUsPerPascalFahrenheit_1] -->|Symbol| N0003(("ppgUS/(Pa•°F)")) 
+```
+## PoundPerCubicFootPerPascalFahrenheit <!-- NOUN -->
+- Display name: pound per cubic foot per pascal fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.03468220032008033
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per pascal fahrenheit
+[SI] is the value in SI
+a = Foot*Foot*Foot*FahrenheitSlope/Pound, i.e., 0.03468220032008033
+and
+Foot = 12.0 * Inch
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerPascalFahrenheit:PoundPerCubicFootPerPascalFahrenheit_1
+PoundPerCubicFootPerPascalFahrenheit_1.ConversionFactorB = "0.03468220032008033"
+PoundPerCubicFootPerPascalFahrenheit_1.Symbol = "lb/ft³/(Pa•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerPascalFahrenheit_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerPascalFahrenheit) 
+	N0000[PoundPerCubicFootPerPascalFahrenheit_1] -->|ConversionFactorB| N0002(("0.03468220032008033")) 
+	N0000[PoundPerCubicFootPerPascalFahrenheit_1] -->|Symbol| N0003(("lb/ft³/(Pa•°F)")) 
+```
+## PoundPerCubicInchPerPascalFahrenheit <!-- NOUN -->
+- Display name: pound per cubic inch per pascal fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 2.0070717777824268E-05
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per pascal fahrenheit
+[SI] is the value in SI
+a = Inch*Inch*Inch*FahrenheitSlope/Pound, i.e., 2.0070717777824268E-05
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerPascalFahrenheit:PoundPerCubicInchPerPascalFahrenheit_1
+PoundPerCubicInchPerPascalFahrenheit_1.ConversionFactorB = "2.0070717777824268E-05"
+PoundPerCubicInchPerPascalFahrenheit_1.Symbol = "lb/in³/(Pa•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerPascalFahrenheit_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerPascalFahrenheit) 
+	N0000[PoundPerCubicInchPerPascalFahrenheit_1] -->|ConversionFactorB| N0002(("2.0070717777824268E-05")) 
+	N0000[PoundPerCubicInchPerPascalFahrenheit_1] -->|Symbol| N0003(("lb/in³/(Pa•°F)")) 
+```
+## PoundPerCubicYardPerPascalFahrenheit <!-- NOUN -->
+- Display name: pound per cubic yard per pascal fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.9364194086421688
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per pascal fahrenheit
+[SI] is the value in SI
+a = Yard*Yard*Yard*FahrenheitSlope/Pound, i.e., 0.9364194086421688
+and
+Yard = 3.0 * Foot
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerPascalFahrenheit:PoundPerCubicYardPerPascalFahrenheit_1
+PoundPerCubicYardPerPascalFahrenheit_1.ConversionFactorB = "0.9364194086421688"
+PoundPerCubicYardPerPascalFahrenheit_1.Symbol = "lb/yd³/(Pa•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerPascalFahrenheit_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerPascalFahrenheit) 
+	N0000[PoundPerCubicYardPerPascalFahrenheit_1] -->|ConversionFactorB| N0002(("0.9364194086421688")) 
+	N0000[PoundPerCubicYardPerPascalFahrenheit_1] -->|Symbol| N0003(("lb/yd³/(Pa•°F)")) 
+```
+## KilogramPerCubicMetrePerBarFahrenheit <!-- NOUN -->
+- Display name: kilogram per cubic metre per bar fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 55555.555555555555
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per bar fahrenheit
+[SI] is the value in SI
+a = Bar*FahrenheitSlope/Unit, i.e., 55555.555555555555
+and
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerBarFahrenheit:KilogramPerCubicMetrePerBarFahrenheit_1
+KilogramPerCubicMetrePerBarFahrenheit_1.ConversionFactorB = "55555.555555555555"
+KilogramPerCubicMetrePerBarFahrenheit_1.Symbol = "kg/m³/(bar•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerBarFahrenheit_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerBarFahrenheit) 
+	N0000[KilogramPerCubicMetrePerBarFahrenheit_1] -->|ConversionFactorB| N0002(("55555.555555555555")) 
+	N0000[KilogramPerCubicMetrePerBarFahrenheit_1] -->|Symbol| N0003(("kg/m³/(bar•°F)")) 
+```
+## SpecificGravityPerBarFahrenheit <!-- NOUN -->
+- Display name: specific gravity per bar fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 55.55711115466789
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per bar fahrenheit
+[SI] is the value in SI
+a = SpecificGavity4degC*Bar*FahrenheitSlope, i.e., 55.55711115466789
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerBarFahrenheit:SpecificGravityPerBarFahrenheit_1
+SpecificGravityPerBarFahrenheit_1.ConversionFactorB = "55.55711115466789"
+SpecificGravityPerBarFahrenheit_1.Symbol = "sg/(bar•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerBarFahrenheit_1] -->|BelongsToClass| N0001(SpecificGravityPerBarFahrenheit) 
+	N0000[SpecificGravityPerBarFahrenheit_1] -->|ConversionFactorB| N0002(("55.55711115466789")) 
+	N0000[SpecificGravityPerBarFahrenheit_1] -->|Symbol| N0003(("sg/(bar•°F)")) 
+```
+## GramPerCubicCentimetrePerBarFahrenheit <!-- NOUN -->
+- Display name: gram per cubic centimetre per bar fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 55.555555555555564
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per bar fahrenheit
+[SI] is the value in SI
+a = Centi*Centi*Centi*Bar*FahrenheitSlope/Milli, i.e., 55.555555555555564
+and
+Centi = 0.01
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerBarFahrenheit:GramPerCubicCentimetrePerBarFahrenheit_1
+GramPerCubicCentimetrePerBarFahrenheit_1.ConversionFactorB = "55.555555555555564"
+GramPerCubicCentimetrePerBarFahrenheit_1.Symbol = "g/cm³/(bar•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerBarFahrenheit_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerBarFahrenheit) 
+	N0000[GramPerCubicCentimetrePerBarFahrenheit_1] -->|ConversionFactorB| N0002(("55.555555555555564")) 
+	N0000[GramPerCubicCentimetrePerBarFahrenheit_1] -->|Symbol| N0003(("g/cm³/(bar•°F)")) 
+```
+## PoundPerGallonUkPerBarFahrenheit <!-- NOUN -->
+- Display name: pound per gallon (UK) per bar fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 556.8007141644723
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per bar fahrenheit
+[SI] is the value in SI
+a = GallonUK*Bar*FahrenheitSlope/Pound, i.e., 556.8007141644723
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerBarFahrenheit:PoundPerGallonUkPerBarFahrenheit_1
+PoundPerGallonUkPerBarFahrenheit_1.ConversionFactorB = "556.8007141644723"
+PoundPerGallonUkPerBarFahrenheit_1.Symbol = "ppgUK/(bar•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerBarFahrenheit_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerBarFahrenheit) 
+	N0000[PoundPerGallonUkPerBarFahrenheit_1] -->|ConversionFactorB| N0002(("556.8007141644723")) 
+	N0000[PoundPerGallonUkPerBarFahrenheit_1] -->|Symbol| N0003(("ppgUK/(bar•°F)")) 
+```
+## PoundPerGallonUsPerBarFahrenheit <!-- NOUN -->
+- Display name: pound per gallon (US) per bar fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 463.63358066774066
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per bar fahrenheit
+[SI] is the value in SI
+a = GallonUS*Bar*FahrenheitSlope/Pound, i.e., 463.63358066774066
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerBarFahrenheit:PoundPerGallonUsPerBarFahrenheit_1
+PoundPerGallonUsPerBarFahrenheit_1.ConversionFactorB = "463.63358066774066"
+PoundPerGallonUsPerBarFahrenheit_1.Symbol = "ppgUS/(bar•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerBarFahrenheit_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerBarFahrenheit) 
+	N0000[PoundPerGallonUsPerBarFahrenheit_1] -->|ConversionFactorB| N0002(("463.63358066774066")) 
+	N0000[PoundPerGallonUsPerBarFahrenheit_1] -->|Symbol| N0003(("ppgUS/(bar•°F)")) 
+```
+## PoundPerCubicFootPerBarFahrenheit <!-- NOUN -->
+- Display name: pound per cubic foot per bar fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 3468.2200320080333
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per bar fahrenheit
+[SI] is the value in SI
+a = Foot*Foot*Foot*Bar*FahrenheitSlope/Pound, i.e., 3468.2200320080333
+and
+Foot = 12.0 * Inch
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerBarFahrenheit:PoundPerCubicFootPerBarFahrenheit_1
+PoundPerCubicFootPerBarFahrenheit_1.ConversionFactorB = "3468.2200320080333"
+PoundPerCubicFootPerBarFahrenheit_1.Symbol = "lb/ft³/(bar•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerBarFahrenheit_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerBarFahrenheit) 
+	N0000[PoundPerCubicFootPerBarFahrenheit_1] -->|ConversionFactorB| N0002(("3468.2200320080333")) 
+	N0000[PoundPerCubicFootPerBarFahrenheit_1] -->|Symbol| N0003(("lb/ft³/(bar•°F)")) 
+```
+## PoundPerCubicInchPerBarFahrenheit <!-- NOUN -->
+- Display name: pound per cubic inch per bar fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 2.007071777782427
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per bar fahrenheit
+[SI] is the value in SI
+a = Inch*Inch*Inch*Bar*FahrenheitSlope/Pound, i.e., 2.007071777782427
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerBarFahrenheit:PoundPerCubicInchPerBarFahrenheit_1
+PoundPerCubicInchPerBarFahrenheit_1.ConversionFactorB = "2.007071777782427"
+PoundPerCubicInchPerBarFahrenheit_1.Symbol = "lb/in³/(bar•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerBarFahrenheit_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerBarFahrenheit) 
+	N0000[PoundPerCubicInchPerBarFahrenheit_1] -->|ConversionFactorB| N0002(("2.007071777782427")) 
+	N0000[PoundPerCubicInchPerBarFahrenheit_1] -->|Symbol| N0003(("lb/in³/(bar•°F)")) 
+```
+## PoundPerCubicYardPerBarFahrenheit <!-- NOUN -->
+- Display name: pound per cubic yard per bar fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 93641.94086421687
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per bar fahrenheit
+[SI] is the value in SI
+a = Yard*Yard*Yard*Bar*FahrenheitSlope/Pound, i.e., 93641.94086421687
+and
+Yard = 3.0 * Foot
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerBarFahrenheit:PoundPerCubicYardPerBarFahrenheit_1
+PoundPerCubicYardPerBarFahrenheit_1.ConversionFactorB = "93641.94086421687"
+PoundPerCubicYardPerBarFahrenheit_1.Symbol = "lb/yd³/(bar•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerBarFahrenheit_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerBarFahrenheit) 
+	N0000[PoundPerCubicYardPerBarFahrenheit_1] -->|ConversionFactorB| N0002(("93641.94086421687")) 
+	N0000[PoundPerCubicYardPerBarFahrenheit_1] -->|Symbol| N0003(("lb/yd³/(bar•°F)")) 
+```
+## KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit <!-- NOUN -->
+- Display name: kilogram per cubic metre per pound per square inch fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 3830.420718426867
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per pound per square inch fahrenheit
+[SI] is the value in SI
+a = PSI*FahrenheitSlope/Unit, i.e., 3830.420718426867
+and
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Unit = 1.0
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit:KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit_1
+KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit_1.ConversionFactorB = "3830.420718426867"
+KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit_1.Symbol = "kg/m³/(psi•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit) 
+	N0000[KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit_1] -->|ConversionFactorB| N0002(("3830.420718426867")) 
+	N0000[KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit_1] -->|Symbol| N0003(("kg/m³/(psi•°F)")) 
+```
+## SpecificGravityPerPoundPerSquareInchFahrenheit <!-- NOUN -->
+- Display name: specific gravity per pound per square inch fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 3.8305279732101174
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per pound per square inch fahrenheit
+[SI] is the value in SI
+a = SpecificGavity4degC*PSI*FahrenheitSlope, i.e., 3.8305279732101174
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerPoundPerSquareInchFahrenheit:SpecificGravityPerPoundPerSquareInchFahrenheit_1
+SpecificGravityPerPoundPerSquareInchFahrenheit_1.ConversionFactorB = "3.8305279732101174"
+SpecificGravityPerPoundPerSquareInchFahrenheit_1.Symbol = "sg/(psi•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerPoundPerSquareInchFahrenheit_1] -->|BelongsToClass| N0001(SpecificGravityPerPoundPerSquareInchFahrenheit) 
+	N0000[SpecificGravityPerPoundPerSquareInchFahrenheit_1] -->|ConversionFactorB| N0002(("3.8305279732101174")) 
+	N0000[SpecificGravityPerPoundPerSquareInchFahrenheit_1] -->|Symbol| N0003(("sg/(psi•°F)")) 
+```
+## GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit <!-- NOUN -->
+- Display name: gram per cubic centimetre per pound per square inch fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 3.8304207184268675
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per pound per square inch fahrenheit
+[SI] is the value in SI
+a = Centi*Centi*Centi*PSI*FahrenheitSlope/Milli, i.e., 3.8304207184268675
+and
+Centi = 0.01
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Milli = 0.001
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit:GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit_1
+GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit_1.ConversionFactorB = "3.8304207184268675"
+GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit_1.Symbol = "g/cm³/(psi•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit) 
+	N0000[GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit_1] -->|ConversionFactorB| N0002(("3.8304207184268675")) 
+	N0000[GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit_1] -->|Symbol| N0003(("g/cm³/(psi•°F)")) 
+```
+## PoundPerGallonUkPerPoundPerSquareInchFahrenheit <!-- NOUN -->
+- Display name: pound per gallon (UK) per pound per square inch fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 38.39005784826847
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per pound per square inch fahrenheit
+[SI] is the value in SI
+a = GallonUK*PSI*FahrenheitSlope/Pound, i.e., 38.39005784826847
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerPoundPerSquareInchFahrenheit:PoundPerGallonUkPerPoundPerSquareInchFahrenheit_1
+PoundPerGallonUkPerPoundPerSquareInchFahrenheit_1.ConversionFactorB = "38.39005784826847"
+PoundPerGallonUkPerPoundPerSquareInchFahrenheit_1.Symbol = "ppgUK/(psi•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerPoundPerSquareInchFahrenheit_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerPoundPerSquareInchFahrenheit) 
+	N0000[PoundPerGallonUkPerPoundPerSquareInchFahrenheit_1] -->|ConversionFactorB| N0002(("38.39005784826847")) 
+	N0000[PoundPerGallonUkPerPoundPerSquareInchFahrenheit_1] -->|Symbol| N0003(("ppgUK/(psi•°F)")) 
+```
+## PoundPerGallonUsPerPoundPerSquareInchFahrenheit <!-- NOUN -->
+- Display name: pound per gallon (US) per pound per square inch fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 31.966410116666665
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per pound per square inch fahrenheit
+[SI] is the value in SI
+a = GallonUS*PSI*FahrenheitSlope/Pound, i.e., 31.966410116666665
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerPoundPerSquareInchFahrenheit:PoundPerGallonUsPerPoundPerSquareInchFahrenheit_1
+PoundPerGallonUsPerPoundPerSquareInchFahrenheit_1.ConversionFactorB = "31.966410116666665"
+PoundPerGallonUsPerPoundPerSquareInchFahrenheit_1.Symbol = "ppgUS/(psi•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerPoundPerSquareInchFahrenheit_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerPoundPerSquareInchFahrenheit) 
+	N0000[PoundPerGallonUsPerPoundPerSquareInchFahrenheit_1] -->|ConversionFactorB| N0002(("31.966410116666665")) 
+	N0000[PoundPerGallonUsPerPoundPerSquareInchFahrenheit_1] -->|Symbol| N0003(("ppgUS/(psi•°F)")) 
+```
+## PoundPerCubicFootPerPoundPerSquareInchFahrenheit <!-- NOUN -->
+- Display name: pound per cubic foot per pound per square inch fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 239.1253535999999
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per pound per square inch fahrenheit
+[SI] is the value in SI
+a = Foot*Foot*Foot*PSI*FahrenheitSlope/Pound, i.e., 239.1253535999999
+and
+Foot = 12.0 * Inch
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerPoundPerSquareInchFahrenheit:PoundPerCubicFootPerPoundPerSquareInchFahrenheit_1
+PoundPerCubicFootPerPoundPerSquareInchFahrenheit_1.ConversionFactorB = "239.1253535999999"
+PoundPerCubicFootPerPoundPerSquareInchFahrenheit_1.Symbol = "lb/ft³/(psi•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerPoundPerSquareInchFahrenheit_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerPoundPerSquareInchFahrenheit) 
+	N0000[PoundPerCubicFootPerPoundPerSquareInchFahrenheit_1] -->|ConversionFactorB| N0002(("239.1253535999999")) 
+	N0000[PoundPerCubicFootPerPoundPerSquareInchFahrenheit_1] -->|Symbol| N0003(("lb/ft³/(psi•°F)")) 
+```
+## PoundPerCubicInchPerPoundPerSquareInchFahrenheit <!-- NOUN -->
+- Display name: pound per cubic inch per pound per square inch fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.13838272777777774
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per pound per square inch fahrenheit
+[SI] is the value in SI
+a = Inch*Inch*Inch*PSI*FahrenheitSlope/Pound, i.e., 0.13838272777777774
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerPoundPerSquareInchFahrenheit:PoundPerCubicInchPerPoundPerSquareInchFahrenheit_1
+PoundPerCubicInchPerPoundPerSquareInchFahrenheit_1.ConversionFactorB = "0.13838272777777774"
+PoundPerCubicInchPerPoundPerSquareInchFahrenheit_1.Symbol = "lb/in³/(psi•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerPoundPerSquareInchFahrenheit_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerPoundPerSquareInchFahrenheit) 
+	N0000[PoundPerCubicInchPerPoundPerSquareInchFahrenheit_1] -->|ConversionFactorB| N0002(("0.13838272777777774")) 
+	N0000[PoundPerCubicInchPerPoundPerSquareInchFahrenheit_1] -->|Symbol| N0003(("lb/in³/(psi•°F)")) 
+```
+## PoundPerCubicYardPerPoundPerSquareInchFahrenheit <!-- NOUN -->
+- Display name: pound per cubic yard per pound per square inch fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 6456.384547199997
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per pound per square inch fahrenheit
+[SI] is the value in SI
+a = Yard*Yard*Yard*PSI*FahrenheitSlope/Pound, i.e., 6456.384547199997
+and
+Yard = 3.0 * Foot
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerPoundPerSquareInchFahrenheit:PoundPerCubicYardPerPoundPerSquareInchFahrenheit_1
+PoundPerCubicYardPerPoundPerSquareInchFahrenheit_1.ConversionFactorB = "6456.384547199997"
+PoundPerCubicYardPerPoundPerSquareInchFahrenheit_1.Symbol = "lb/yd³/(psi•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerPoundPerSquareInchFahrenheit_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerPoundPerSquareInchFahrenheit) 
+	N0000[PoundPerCubicYardPerPoundPerSquareInchFahrenheit_1] -->|ConversionFactorB| N0002(("6456.384547199997")) 
+	N0000[PoundPerCubicYardPerPoundPerSquareInchFahrenheit_1] -->|Symbol| N0003(("lb/yd³/(psi•°F)")) 
+```
+## KilogramPerCubicMetrePerPascalSquaredKelvin <!-- NOUN -->
+- Display name: kilogram per cubic metre per pascal squared kelvin
+- Parent class: [Unit](#Unit)
+- Description: 
+No conversion necessary as the unit choice is SI
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerPascalSquaredKelvin:KilogramPerCubicMetrePerPascalSquaredKelvin_1
+KilogramPerCubicMetrePerPascalSquaredKelvin_1.Symbol = "kg/m³/(Pa²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerPascalSquaredKelvin_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerPascalSquaredKelvin) 
+	N0000[KilogramPerCubicMetrePerPascalSquaredKelvin_1] -->|Symbol| N0002(("kg/m³/(Pa²•K)")) 
+```
+## SpecificGravityPerPascalSquaredKelvin <!-- NOUN -->
+- Display name: specific gravity per pascal squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.001000028000784022
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per pascal squared kelvin
+[SI] is the value in SI
+a = SpecificGavity4degC, i.e., 0.001000028000784022
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerPascalSquaredKelvin:SpecificGravityPerPascalSquaredKelvin_1
+SpecificGravityPerPascalSquaredKelvin_1.ConversionFactorB = "0.001000028000784022"
+SpecificGravityPerPascalSquaredKelvin_1.Symbol = "sg/(Pa²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerPascalSquaredKelvin_1] -->|BelongsToClass| N0001(SpecificGravityPerPascalSquaredKelvin) 
+	N0000[SpecificGravityPerPascalSquaredKelvin_1] -->|ConversionFactorB| N0002(("0.001000028000784022")) 
+	N0000[SpecificGravityPerPascalSquaredKelvin_1] -->|Symbol| N0003(("sg/(Pa²•K)")) 
+```
+## GramPerCubicCentimetrePerPascalSquaredKelvin <!-- NOUN -->
+- Display name: gram per cubic centimetre per pascal squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0010000000000000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per pascal squared kelvin
+[SI] is the value in SI
+a = Centi*Centi*Centi/Milli, i.e., 0.0010000000000000002
+and
+Centi = 0.01
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerPascalSquaredKelvin:GramPerCubicCentimetrePerPascalSquaredKelvin_1
+GramPerCubicCentimetrePerPascalSquaredKelvin_1.ConversionFactorB = "0.0010000000000000002"
+GramPerCubicCentimetrePerPascalSquaredKelvin_1.Symbol = "g/cm³/(Pa²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerPascalSquaredKelvin_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerPascalSquaredKelvin) 
+	N0000[GramPerCubicCentimetrePerPascalSquaredKelvin_1] -->|ConversionFactorB| N0002(("0.0010000000000000002")) 
+	N0000[GramPerCubicCentimetrePerPascalSquaredKelvin_1] -->|Symbol| N0003(("g/cm³/(Pa²•K)")) 
+```
+## PoundPerGallonUkPerPascalSquaredKelvin <!-- NOUN -->
+- Display name: pound per gallon (UK) per pascal squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.010022412854960501
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per pascal squared kelvin
+[SI] is the value in SI
+a = GallonUK/Pound, i.e., 0.010022412854960501
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerPascalSquaredKelvin:PoundPerGallonUkPerPascalSquaredKelvin_1
+PoundPerGallonUkPerPascalSquaredKelvin_1.ConversionFactorB = "0.010022412854960501"
+PoundPerGallonUkPerPascalSquaredKelvin_1.Symbol = "ppgUK/(Pa²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerPascalSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerPascalSquaredKelvin) 
+	N0000[PoundPerGallonUkPerPascalSquaredKelvin_1] -->|ConversionFactorB| N0002(("0.010022412854960501")) 
+	N0000[PoundPerGallonUkPerPascalSquaredKelvin_1] -->|Symbol| N0003(("ppgUK/(Pa²•K)")) 
+```
+## PoundPerGallonUsPerPascalSquaredKelvin <!-- NOUN -->
+- Display name: pound per gallon (US) per pascal squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.00834540445201933
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per pascal squared kelvin
+[SI] is the value in SI
+a = GallonUS/Pound, i.e., 0.00834540445201933
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerPascalSquaredKelvin:PoundPerGallonUsPerPascalSquaredKelvin_1
+PoundPerGallonUsPerPascalSquaredKelvin_1.ConversionFactorB = "0.00834540445201933"
+PoundPerGallonUsPerPascalSquaredKelvin_1.Symbol = "ppgUS/(Pa²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerPascalSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerPascalSquaredKelvin) 
+	N0000[PoundPerGallonUsPerPascalSquaredKelvin_1] -->|ConversionFactorB| N0002(("0.00834540445201933")) 
+	N0000[PoundPerGallonUsPerPascalSquaredKelvin_1] -->|Symbol| N0003(("ppgUS/(Pa²•K)")) 
+```
+## PoundPerCubicFootPerPascalSquaredKelvin <!-- NOUN -->
+- Display name: pound per cubic foot per pascal squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.06242796057614459
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per pascal squared kelvin
+[SI] is the value in SI
+a = Foot*Foot*Foot/Pound, i.e., 0.06242796057614459
+and
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerPascalSquaredKelvin:PoundPerCubicFootPerPascalSquaredKelvin_1
+PoundPerCubicFootPerPascalSquaredKelvin_1.ConversionFactorB = "0.06242796057614459"
+PoundPerCubicFootPerPascalSquaredKelvin_1.Symbol = "lb/ft³/(Pa²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerPascalSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerPascalSquaredKelvin) 
+	N0000[PoundPerCubicFootPerPascalSquaredKelvin_1] -->|ConversionFactorB| N0002(("0.06242796057614459")) 
+	N0000[PoundPerCubicFootPerPascalSquaredKelvin_1] -->|Symbol| N0003(("lb/ft³/(Pa²•K)")) 
+```
+## PoundPerCubicInchPerPascalSquaredKelvin <!-- NOUN -->
+- Display name: pound per cubic inch per pascal squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 3.612729200008369E-05
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per pascal squared kelvin
+[SI] is the value in SI
+a = Inch*Inch*Inch/Pound, i.e., 3.612729200008369E-05
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerPascalSquaredKelvin:PoundPerCubicInchPerPascalSquaredKelvin_1
+PoundPerCubicInchPerPascalSquaredKelvin_1.ConversionFactorB = "3.612729200008369E-05"
+PoundPerCubicInchPerPascalSquaredKelvin_1.Symbol = "lb/in³/(Pa²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerPascalSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerPascalSquaredKelvin) 
+	N0000[PoundPerCubicInchPerPascalSquaredKelvin_1] -->|ConversionFactorB| N0002(("3.612729200008369E-05")) 
+	N0000[PoundPerCubicInchPerPascalSquaredKelvin_1] -->|Symbol| N0003(("lb/in³/(Pa²•K)")) 
+```
+## PoundPerCubicYardPerPascalSquaredKelvin <!-- NOUN -->
+- Display name: pound per cubic yard per pascal squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1.6855549355559039
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per pascal squared kelvin
+[SI] is the value in SI
+a = Yard*Yard*Yard/Pound, i.e., 1.6855549355559039
+and
+Yard = 3.0 * Foot
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerPascalSquaredKelvin:PoundPerCubicYardPerPascalSquaredKelvin_1
+PoundPerCubicYardPerPascalSquaredKelvin_1.ConversionFactorB = "1.6855549355559039"
+PoundPerCubicYardPerPascalSquaredKelvin_1.Symbol = "lb/yd³/(Pa²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerPascalSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerPascalSquaredKelvin) 
+	N0000[PoundPerCubicYardPerPascalSquaredKelvin_1] -->|ConversionFactorB| N0002(("1.6855549355559039")) 
+	N0000[PoundPerCubicYardPerPascalSquaredKelvin_1] -->|Symbol| N0003(("lb/yd³/(Pa²•K)")) 
+```
+## KilogramPerCubicMetrePerBarSquaredKelvin <!-- NOUN -->
+- Display name: kilogram per cubic metre per bar squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 10000000000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per bar squared kelvin
+[SI] is the value in SI
+a = Bar*Bar/Unit, i.e., 10000000000
+and
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerBarSquaredKelvin:KilogramPerCubicMetrePerBarSquaredKelvin_1
+KilogramPerCubicMetrePerBarSquaredKelvin_1.ConversionFactorB = "10000000000"
+KilogramPerCubicMetrePerBarSquaredKelvin_1.Symbol = "kg/m³/(bar²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerBarSquaredKelvin_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerBarSquaredKelvin) 
+	N0000[KilogramPerCubicMetrePerBarSquaredKelvin_1] -->|ConversionFactorB| N0002(("10000000000")) 
+	N0000[KilogramPerCubicMetrePerBarSquaredKelvin_1] -->|Symbol| N0003(("kg/m³/(bar²•K)")) 
+```
+## SpecificGravityPerBarSquaredKelvin <!-- NOUN -->
+- Display name: specific gravity per bar squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 10000280.00784022
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per bar squared kelvin
+[SI] is the value in SI
+a = SpecificGavity4degC*Bar*Bar, i.e., 10000280.00784022
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerBarSquaredKelvin:SpecificGravityPerBarSquaredKelvin_1
+SpecificGravityPerBarSquaredKelvin_1.ConversionFactorB = "10000280.00784022"
+SpecificGravityPerBarSquaredKelvin_1.Symbol = "sg/(bar²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerBarSquaredKelvin_1] -->|BelongsToClass| N0001(SpecificGravityPerBarSquaredKelvin) 
+	N0000[SpecificGravityPerBarSquaredKelvin_1] -->|ConversionFactorB| N0002(("10000280.00784022")) 
+	N0000[SpecificGravityPerBarSquaredKelvin_1] -->|Symbol| N0003(("sg/(bar²•K)")) 
+```
+## GramPerCubicCentimetrePerBarSquaredKelvin <!-- NOUN -->
+- Display name: gram per cubic centimetre per bar squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 10000000.000000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per bar squared kelvin
+[SI] is the value in SI
+a = Centi*Centi*Centi*Bar*Bar/Milli, i.e., 10000000.000000002
+and
+Centi = 0.01
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerBarSquaredKelvin:GramPerCubicCentimetrePerBarSquaredKelvin_1
+GramPerCubicCentimetrePerBarSquaredKelvin_1.ConversionFactorB = "10000000.000000002"
+GramPerCubicCentimetrePerBarSquaredKelvin_1.Symbol = "g/cm³/(bar²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerBarSquaredKelvin_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerBarSquaredKelvin) 
+	N0000[GramPerCubicCentimetrePerBarSquaredKelvin_1] -->|ConversionFactorB| N0002(("10000000.000000002")) 
+	N0000[GramPerCubicCentimetrePerBarSquaredKelvin_1] -->|Symbol| N0003(("g/cm³/(bar²•K)")) 
+```
+## PoundPerGallonUkPerBarSquaredKelvin <!-- NOUN -->
+- Display name: pound per gallon (UK) per bar squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 100224128.54960501
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per bar squared kelvin
+[SI] is the value in SI
+a = GallonUK*Bar*Bar/Pound, i.e., 100224128.54960501
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerBarSquaredKelvin:PoundPerGallonUkPerBarSquaredKelvin_1
+PoundPerGallonUkPerBarSquaredKelvin_1.ConversionFactorB = "100224128.54960501"
+PoundPerGallonUkPerBarSquaredKelvin_1.Symbol = "ppgUK/(bar²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerBarSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerBarSquaredKelvin) 
+	N0000[PoundPerGallonUkPerBarSquaredKelvin_1] -->|ConversionFactorB| N0002(("100224128.54960501")) 
+	N0000[PoundPerGallonUkPerBarSquaredKelvin_1] -->|Symbol| N0003(("ppgUK/(bar²•K)")) 
+```
+## PoundPerGallonUsPerBarSquaredKelvin <!-- NOUN -->
+- Display name: pound per gallon (US) per bar squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 83454044.52019331
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per bar squared kelvin
+[SI] is the value in SI
+a = GallonUS*Bar*Bar/Pound, i.e., 83454044.52019331
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerBarSquaredKelvin:PoundPerGallonUsPerBarSquaredKelvin_1
+PoundPerGallonUsPerBarSquaredKelvin_1.ConversionFactorB = "83454044.52019331"
+PoundPerGallonUsPerBarSquaredKelvin_1.Symbol = "ppgUS/(bar²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerBarSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerBarSquaredKelvin) 
+	N0000[PoundPerGallonUsPerBarSquaredKelvin_1] -->|ConversionFactorB| N0002(("83454044.52019331")) 
+	N0000[PoundPerGallonUsPerBarSquaredKelvin_1] -->|Symbol| N0003(("ppgUS/(bar²•K)")) 
+```
+## PoundPerCubicFootPerBarSquaredKelvin <!-- NOUN -->
+- Display name: pound per cubic foot per bar squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 624279605.7614459
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per bar squared kelvin
+[SI] is the value in SI
+a = Foot*Foot*Foot*Bar*Bar/Pound, i.e., 624279605.7614459
+and
+Foot = 12.0 * Inch
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerBarSquaredKelvin:PoundPerCubicFootPerBarSquaredKelvin_1
+PoundPerCubicFootPerBarSquaredKelvin_1.ConversionFactorB = "624279605.7614459"
+PoundPerCubicFootPerBarSquaredKelvin_1.Symbol = "lb/ft³/(bar²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerBarSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerBarSquaredKelvin) 
+	N0000[PoundPerCubicFootPerBarSquaredKelvin_1] -->|ConversionFactorB| N0002(("624279605.7614459")) 
+	N0000[PoundPerCubicFootPerBarSquaredKelvin_1] -->|Symbol| N0003(("lb/ft³/(bar²•K)")) 
+```
+## PoundPerCubicInchPerBarSquaredKelvin <!-- NOUN -->
+- Display name: pound per cubic inch per bar squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 361272.9200008369
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per bar squared kelvin
+[SI] is the value in SI
+a = Inch*Inch*Inch*Bar*Bar/Pound, i.e., 361272.9200008369
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerBarSquaredKelvin:PoundPerCubicInchPerBarSquaredKelvin_1
+PoundPerCubicInchPerBarSquaredKelvin_1.ConversionFactorB = "361272.9200008369"
+PoundPerCubicInchPerBarSquaredKelvin_1.Symbol = "lb/in³/(bar²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerBarSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerBarSquaredKelvin) 
+	N0000[PoundPerCubicInchPerBarSquaredKelvin_1] -->|ConversionFactorB| N0002(("361272.9200008369")) 
+	N0000[PoundPerCubicInchPerBarSquaredKelvin_1] -->|Symbol| N0003(("lb/in³/(bar²•K)")) 
+```
+## PoundPerCubicYardPerBarSquaredKelvin <!-- NOUN -->
+- Display name: pound per cubic yard per bar squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 16855549355.559038
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per bar squared kelvin
+[SI] is the value in SI
+a = Yard*Yard*Yard*Bar*Bar/Pound, i.e., 16855549355.559038
+and
+Yard = 3.0 * Foot
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerBarSquaredKelvin:PoundPerCubicYardPerBarSquaredKelvin_1
+PoundPerCubicYardPerBarSquaredKelvin_1.ConversionFactorB = "16855549355.559038"
+PoundPerCubicYardPerBarSquaredKelvin_1.Symbol = "lb/yd³/(bar²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerBarSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerBarSquaredKelvin) 
+	N0000[PoundPerCubicYardPerBarSquaredKelvin_1] -->|ConversionFactorB| N0002(("16855549355.559038")) 
+	N0000[PoundPerCubicYardPerBarSquaredKelvin_1] -->|Symbol| N0003(("lb/yd³/(bar²•K)")) 
+```
+## KilogramPerCubicMetrePerMegapascalSquaredKelvin <!-- NOUN -->
+- Display name: kilogram per cubic metre per megapascal squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000000000000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per megapascal squared kelvin
+[SI] is the value in SI
+a = Mega*Mega/Unit, i.e., 1000000000000
+and
+Mega = 1e6
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerMegapascalSquaredKelvin:KilogramPerCubicMetrePerMegapascalSquaredKelvin_1
+KilogramPerCubicMetrePerMegapascalSquaredKelvin_1.ConversionFactorB = "1000000000000"
+KilogramPerCubicMetrePerMegapascalSquaredKelvin_1.Symbol = "kg/m³/(MPa²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerMegapascalSquaredKelvin_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerMegapascalSquaredKelvin) 
+	N0000[KilogramPerCubicMetrePerMegapascalSquaredKelvin_1] -->|ConversionFactorB| N0002(("1000000000000")) 
+	N0000[KilogramPerCubicMetrePerMegapascalSquaredKelvin_1] -->|Symbol| N0003(("kg/m³/(MPa²•K)")) 
+```
+## SpecificGravityPerMegapascalSquaredKelvin <!-- NOUN -->
+- Display name: specific gravity per megapascal squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000028000.784022
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per megapascal squared kelvin
+[SI] is the value in SI
+a = SpecificGavity4degC*Mega*Mega, i.e., 1000028000.784022
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+Mega = 1e6
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerMegapascalSquaredKelvin:SpecificGravityPerMegapascalSquaredKelvin_1
+SpecificGravityPerMegapascalSquaredKelvin_1.ConversionFactorB = "1000028000.784022"
+SpecificGravityPerMegapascalSquaredKelvin_1.Symbol = "sg/(MPa²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerMegapascalSquaredKelvin_1] -->|BelongsToClass| N0001(SpecificGravityPerMegapascalSquaredKelvin) 
+	N0000[SpecificGravityPerMegapascalSquaredKelvin_1] -->|ConversionFactorB| N0002(("1000028000.784022")) 
+	N0000[SpecificGravityPerMegapascalSquaredKelvin_1] -->|Symbol| N0003(("sg/(MPa²•K)")) 
+```
+## GramPerCubicCentimetrePerMegapascalSquaredKelvin <!-- NOUN -->
+- Display name: gram per cubic centimetre per megapascal squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000000000.0000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per megapascal squared kelvin
+[SI] is the value in SI
+a = Centi*Centi*Centi*Mega*Mega/Milli, i.e., 1000000000.0000002
+and
+Centi = 0.01
+Mega = 1e6
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerMegapascalSquaredKelvin:GramPerCubicCentimetrePerMegapascalSquaredKelvin_1
+GramPerCubicCentimetrePerMegapascalSquaredKelvin_1.ConversionFactorB = "1000000000.0000002"
+GramPerCubicCentimetrePerMegapascalSquaredKelvin_1.Symbol = "g/cm³/(MPa²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerMegapascalSquaredKelvin_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerMegapascalSquaredKelvin) 
+	N0000[GramPerCubicCentimetrePerMegapascalSquaredKelvin_1] -->|ConversionFactorB| N0002(("1000000000.0000002")) 
+	N0000[GramPerCubicCentimetrePerMegapascalSquaredKelvin_1] -->|Symbol| N0003(("g/cm³/(MPa²•K)")) 
+```
+## PoundPerGallonUkPerMegapascalSquaredKelvin <!-- NOUN -->
+- Display name: pound per gallon (UK) per megapascal squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 10022412854.9605
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per megapascal squared kelvin
+[SI] is the value in SI
+a = GallonUK*Mega*Mega/Pound, i.e., 10022412854.9605
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Mega = 1e6
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerMegapascalSquaredKelvin:PoundPerGallonUkPerMegapascalSquaredKelvin_1
+PoundPerGallonUkPerMegapascalSquaredKelvin_1.ConversionFactorB = "10022412854.9605"
+PoundPerGallonUkPerMegapascalSquaredKelvin_1.Symbol = "ppgUK/(MPa²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerMegapascalSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerMegapascalSquaredKelvin) 
+	N0000[PoundPerGallonUkPerMegapascalSquaredKelvin_1] -->|ConversionFactorB| N0002(("10022412854.9605")) 
+	N0000[PoundPerGallonUkPerMegapascalSquaredKelvin_1] -->|Symbol| N0003(("ppgUK/(MPa²•K)")) 
+```
+## PoundPerGallonUsPerMegapascalSquaredKelvin <!-- NOUN -->
+- Display name: pound per gallon (US) per megapascal squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 8345404452.019331
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per megapascal squared kelvin
+[SI] is the value in SI
+a = GallonUS*Mega*Mega/Pound, i.e., 8345404452.019331
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Mega = 1e6
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerMegapascalSquaredKelvin:PoundPerGallonUsPerMegapascalSquaredKelvin_1
+PoundPerGallonUsPerMegapascalSquaredKelvin_1.ConversionFactorB = "8345404452.019331"
+PoundPerGallonUsPerMegapascalSquaredKelvin_1.Symbol = "ppgUS/(MPa²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerMegapascalSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerMegapascalSquaredKelvin) 
+	N0000[PoundPerGallonUsPerMegapascalSquaredKelvin_1] -->|ConversionFactorB| N0002(("8345404452.019331")) 
+	N0000[PoundPerGallonUsPerMegapascalSquaredKelvin_1] -->|Symbol| N0003(("ppgUS/(MPa²•K)")) 
+```
+## PoundPerCubicFootPerMegapascalSquaredKelvin <!-- NOUN -->
+- Display name: pound per cubic foot per megapascal squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 62427960576.14459
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per megapascal squared kelvin
+[SI] is the value in SI
+a = Foot*Foot*Foot*Mega*Mega/Pound, i.e., 62427960576.14459
+and
+Foot = 12.0 * Inch
+Mega = 1e6
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerMegapascalSquaredKelvin:PoundPerCubicFootPerMegapascalSquaredKelvin_1
+PoundPerCubicFootPerMegapascalSquaredKelvin_1.ConversionFactorB = "62427960576.14459"
+PoundPerCubicFootPerMegapascalSquaredKelvin_1.Symbol = "lb/ft³/(MPa²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerMegapascalSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerMegapascalSquaredKelvin) 
+	N0000[PoundPerCubicFootPerMegapascalSquaredKelvin_1] -->|ConversionFactorB| N0002(("62427960576.14459")) 
+	N0000[PoundPerCubicFootPerMegapascalSquaredKelvin_1] -->|Symbol| N0003(("lb/ft³/(MPa²•K)")) 
+```
+## PoundPerCubicInchPerMegapascalSquaredKelvin <!-- NOUN -->
+- Display name: pound per cubic inch per megapascal squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 36127292.000083685
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per megapascal squared kelvin
+[SI] is the value in SI
+a = Inch*Inch*Inch*Mega*Mega/Pound, i.e., 36127292.000083685
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Mega = 1e6
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerMegapascalSquaredKelvin:PoundPerCubicInchPerMegapascalSquaredKelvin_1
+PoundPerCubicInchPerMegapascalSquaredKelvin_1.ConversionFactorB = "36127292.000083685"
+PoundPerCubicInchPerMegapascalSquaredKelvin_1.Symbol = "lb/in³/(MPa²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerMegapascalSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerMegapascalSquaredKelvin) 
+	N0000[PoundPerCubicInchPerMegapascalSquaredKelvin_1] -->|ConversionFactorB| N0002(("36127292.000083685")) 
+	N0000[PoundPerCubicInchPerMegapascalSquaredKelvin_1] -->|Symbol| N0003(("lb/in³/(MPa²•K)")) 
+```
+## PoundPerCubicYardPerMegapascalSquaredKelvin <!-- NOUN -->
+- Display name: pound per cubic yard per megapascal squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1685554935555.9036
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per megapascal squared kelvin
+[SI] is the value in SI
+a = Yard*Yard*Yard*Mega*Mega/Pound, i.e., 1685554935555.9036
+and
+Yard = 3.0 * Foot
+Mega = 1e6
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerMegapascalSquaredKelvin:PoundPerCubicYardPerMegapascalSquaredKelvin_1
+PoundPerCubicYardPerMegapascalSquaredKelvin_1.ConversionFactorB = "1685554935555.9036"
+PoundPerCubicYardPerMegapascalSquaredKelvin_1.Symbol = "lb/yd³/(MPa²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerMegapascalSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerMegapascalSquaredKelvin) 
+	N0000[PoundPerCubicYardPerMegapascalSquaredKelvin_1] -->|ConversionFactorB| N0002(("1685554935555.9036")) 
+	N0000[PoundPerCubicYardPerMegapascalSquaredKelvin_1] -->|Symbol| N0003(("lb/yd³/(MPa²•K)")) 
+```
+## KilogramPerCubicMetrePerGigapascalSquaredKelvin <!-- NOUN -->
+- Display name: kilogram per cubic metre per gigapascal squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1E+18
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per gigapascal squared kelvin
+[SI] is the value in SI
+a = Giga*Giga/Unit, i.e., 1E+18
+and
+Giga = 1e9
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerGigapascalSquaredKelvin:KilogramPerCubicMetrePerGigapascalSquaredKelvin_1
+KilogramPerCubicMetrePerGigapascalSquaredKelvin_1.ConversionFactorB = "1E+18"
+KilogramPerCubicMetrePerGigapascalSquaredKelvin_1.Symbol = "kg/m³/(GPa²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerGigapascalSquaredKelvin_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerGigapascalSquaredKelvin) 
+	N0000[KilogramPerCubicMetrePerGigapascalSquaredKelvin_1] -->|ConversionFactorB| N0002(("1E+18")) 
+	N0000[KilogramPerCubicMetrePerGigapascalSquaredKelvin_1] -->|Symbol| N0003(("kg/m³/(GPa²•K)")) 
+```
+## SpecificGravityPerGigapascalSquaredKelvin <!-- NOUN -->
+- Display name: specific gravity per gigapascal squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000028000784021.9
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per gigapascal squared kelvin
+[SI] is the value in SI
+a = SpecificGavity4degC*Giga*Giga, i.e., 1000028000784021.9
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+Giga = 1e9
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerGigapascalSquaredKelvin:SpecificGravityPerGigapascalSquaredKelvin_1
+SpecificGravityPerGigapascalSquaredKelvin_1.ConversionFactorB = "1000028000784021.9"
+SpecificGravityPerGigapascalSquaredKelvin_1.Symbol = "sg/(GPa²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerGigapascalSquaredKelvin_1] -->|BelongsToClass| N0001(SpecificGravityPerGigapascalSquaredKelvin) 
+	N0000[SpecificGravityPerGigapascalSquaredKelvin_1] -->|ConversionFactorB| N0002(("1000028000784021.9")) 
+	N0000[SpecificGravityPerGigapascalSquaredKelvin_1] -->|Symbol| N0003(("sg/(GPa²•K)")) 
+```
+## GramPerCubicCentimetrePerGigapascalSquaredKelvin <!-- NOUN -->
+- Display name: gram per cubic centimetre per gigapascal squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1000000000000000.1
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per gigapascal squared kelvin
+[SI] is the value in SI
+a = Centi*Centi*Centi*Giga*Giga/Milli, i.e., 1000000000000000.1
+and
+Centi = 0.01
+Giga = 1e9
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerGigapascalSquaredKelvin:GramPerCubicCentimetrePerGigapascalSquaredKelvin_1
+GramPerCubicCentimetrePerGigapascalSquaredKelvin_1.ConversionFactorB = "1000000000000000.1"
+GramPerCubicCentimetrePerGigapascalSquaredKelvin_1.Symbol = "g/cm³/(GPa²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerGigapascalSquaredKelvin_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerGigapascalSquaredKelvin) 
+	N0000[GramPerCubicCentimetrePerGigapascalSquaredKelvin_1] -->|ConversionFactorB| N0002(("1000000000000000.1")) 
+	N0000[GramPerCubicCentimetrePerGigapascalSquaredKelvin_1] -->|Symbol| N0003(("g/cm³/(GPa²•K)")) 
+```
+## PoundPerGallonUkPerGigapascalSquaredKelvin <!-- NOUN -->
+- Display name: pound per gallon (UK) per gigapascal squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 10022412854960500
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per gigapascal squared kelvin
+[SI] is the value in SI
+a = GallonUK*Giga*Giga/Pound, i.e., 10022412854960500
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Giga = 1e9
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerGigapascalSquaredKelvin:PoundPerGallonUkPerGigapascalSquaredKelvin_1
+PoundPerGallonUkPerGigapascalSquaredKelvin_1.ConversionFactorB = "10022412854960500"
+PoundPerGallonUkPerGigapascalSquaredKelvin_1.Symbol = "ppgUK/(GPa²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerGigapascalSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerGigapascalSquaredKelvin) 
+	N0000[PoundPerGallonUkPerGigapascalSquaredKelvin_1] -->|ConversionFactorB| N0002(("10022412854960500")) 
+	N0000[PoundPerGallonUkPerGigapascalSquaredKelvin_1] -->|Symbol| N0003(("ppgUK/(GPa²•K)")) 
+```
+## PoundPerGallonUsPerGigapascalSquaredKelvin <!-- NOUN -->
+- Display name: pound per gallon (US) per gigapascal squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 8345404452019330
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per gigapascal squared kelvin
+[SI] is the value in SI
+a = GallonUS*Giga*Giga/Pound, i.e., 8345404452019330
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Giga = 1e9
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerGigapascalSquaredKelvin:PoundPerGallonUsPerGigapascalSquaredKelvin_1
+PoundPerGallonUsPerGigapascalSquaredKelvin_1.ConversionFactorB = "8345404452019330"
+PoundPerGallonUsPerGigapascalSquaredKelvin_1.Symbol = "ppgUS/(GPa²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerGigapascalSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerGigapascalSquaredKelvin) 
+	N0000[PoundPerGallonUsPerGigapascalSquaredKelvin_1] -->|ConversionFactorB| N0002(("8345404452019330")) 
+	N0000[PoundPerGallonUsPerGigapascalSquaredKelvin_1] -->|Symbol| N0003(("ppgUS/(GPa²•K)")) 
+```
+## PoundPerCubicFootPerGigapascalSquaredKelvin <!-- NOUN -->
+- Display name: pound per cubic foot per gigapascal squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 62427960576144584
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per gigapascal squared kelvin
+[SI] is the value in SI
+a = Foot*Foot*Foot*Giga*Giga/Pound, i.e., 62427960576144584
+and
+Foot = 12.0 * Inch
+Giga = 1e9
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerGigapascalSquaredKelvin:PoundPerCubicFootPerGigapascalSquaredKelvin_1
+PoundPerCubicFootPerGigapascalSquaredKelvin_1.ConversionFactorB = "62427960576144584"
+PoundPerCubicFootPerGigapascalSquaredKelvin_1.Symbol = "lb/ft³/(GPa²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerGigapascalSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerGigapascalSquaredKelvin) 
+	N0000[PoundPerCubicFootPerGigapascalSquaredKelvin_1] -->|ConversionFactorB| N0002(("62427960576144584")) 
+	N0000[PoundPerCubicFootPerGigapascalSquaredKelvin_1] -->|Symbol| N0003(("lb/ft³/(GPa²•K)")) 
+```
+## PoundPerCubicInchPerGigapascalSquaredKelvin <!-- NOUN -->
+- Display name: pound per cubic inch per gigapascal squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 36127292000083.68
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per gigapascal squared kelvin
+[SI] is the value in SI
+a = Inch*Inch*Inch*Giga*Giga/Pound, i.e., 36127292000083.68
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Giga = 1e9
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerGigapascalSquaredKelvin:PoundPerCubicInchPerGigapascalSquaredKelvin_1
+PoundPerCubicInchPerGigapascalSquaredKelvin_1.ConversionFactorB = "36127292000083.68"
+PoundPerCubicInchPerGigapascalSquaredKelvin_1.Symbol = "lb/in³/(GPa²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerGigapascalSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerGigapascalSquaredKelvin) 
+	N0000[PoundPerCubicInchPerGigapascalSquaredKelvin_1] -->|ConversionFactorB| N0002(("36127292000083.68")) 
+	N0000[PoundPerCubicInchPerGigapascalSquaredKelvin_1] -->|Symbol| N0003(("lb/in³/(GPa²•K)")) 
+```
+## PoundPerCubicYardPerGigapascalSquaredKelvin <!-- NOUN -->
+- Display name: pound per cubic yard per gigapascal squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1.685554935555904E+18
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per gigapascal squared kelvin
+[SI] is the value in SI
+a = Yard*Yard*Yard*Giga*Giga/Pound, i.e., 1.685554935555904E+18
+and
+Yard = 3.0 * Foot
+Giga = 1e9
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerGigapascalSquaredKelvin:PoundPerCubicYardPerGigapascalSquaredKelvin_1
+PoundPerCubicYardPerGigapascalSquaredKelvin_1.ConversionFactorB = "1.685554935555904E+18"
+PoundPerCubicYardPerGigapascalSquaredKelvin_1.Symbol = "lb/yd³/(GPa²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerGigapascalSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerGigapascalSquaredKelvin) 
+	N0000[PoundPerCubicYardPerGigapascalSquaredKelvin_1] -->|ConversionFactorB| N0002(("1.685554935555904E+18")) 
+	N0000[PoundPerCubicYardPerGigapascalSquaredKelvin_1] -->|Symbol| N0003(("lb/yd³/(GPa²•K)")) 
+```
+## KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin <!-- NOUN -->
+- Display name: kilogram per cubic metre per pound per square inch squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 47537678.1316983
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per pound per square inch squared kelvin
+[SI] is the value in SI
+a = PSI*PSI/Unit, i.e., 47537678.1316983
+and
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Unit = 1.0
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin:KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin_1
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin_1.ConversionFactorB = "47537678.1316983"
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin_1.Symbol = "kg/m³/(psi²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin) 
+	N0000[KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin_1] -->|ConversionFactorB| N0002(("47537678.1316983")) 
+	N0000[KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin_1] -->|Symbol| N0003(("kg/m³/(psi²•K)")) 
+```
+## SpecificGravityPerPoundPerSquareInchSquaredKelvin <!-- NOUN -->
+- Display name: specific gravity per pound per square inch squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 47539.00922395657
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per pound per square inch squared kelvin
+[SI] is the value in SI
+a = SpecificGavity4degC*PSI*PSI, i.e., 47539.00922395657
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerPoundPerSquareInchSquaredKelvin:SpecificGravityPerPoundPerSquareInchSquaredKelvin_1
+SpecificGravityPerPoundPerSquareInchSquaredKelvin_1.ConversionFactorB = "47539.00922395657"
+SpecificGravityPerPoundPerSquareInchSquaredKelvin_1.Symbol = "sg/(psi²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerPoundPerSquareInchSquaredKelvin_1] -->|BelongsToClass| N0001(SpecificGravityPerPoundPerSquareInchSquaredKelvin) 
+	N0000[SpecificGravityPerPoundPerSquareInchSquaredKelvin_1] -->|ConversionFactorB| N0002(("47539.00922395657")) 
+	N0000[SpecificGravityPerPoundPerSquareInchSquaredKelvin_1] -->|Symbol| N0003(("sg/(psi²•K)")) 
+```
+## GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin <!-- NOUN -->
+- Display name: gram per cubic centimetre per pound per square inch squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 47537.6781316983
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per pound per square inch squared kelvin
+[SI] is the value in SI
+a = Centi*Centi*Centi*PSI*PSI/Milli, i.e., 47537.6781316983
+and
+Centi = 0.01
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Milli = 0.001
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin:GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin_1
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin_1.ConversionFactorB = "47537.6781316983"
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin_1.Symbol = "g/cm³/(psi²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin) 
+	N0000[GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin_1] -->|ConversionFactorB| N0002(("47537.6781316983")) 
+	N0000[GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin_1] -->|Symbol| N0003(("g/cm³/(psi²•K)")) 
+```
+## PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin <!-- NOUN -->
+- Display name: pound per gallon (UK) per pound per square inch squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 476442.2364021077
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per pound per square inch squared kelvin
+[SI] is the value in SI
+a = GallonUK*PSI*PSI/Pound, i.e., 476442.2364021077
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin:PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin_1
+PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin_1.ConversionFactorB = "476442.2364021077"
+PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin_1.Symbol = "ppgUK/(psi²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin) 
+	N0000[PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin_1] -->|ConversionFactorB| N0002(("476442.2364021077")) 
+	N0000[PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin_1] -->|Symbol| N0003(("ppgUK/(psi²•K)")) 
+```
+## PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin <!-- NOUN -->
+- Display name: pound per gallon (US) per pound per square inch squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 396721.15071893705
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per pound per square inch squared kelvin
+[SI] is the value in SI
+a = GallonUS*PSI*PSI/Pound, i.e., 396721.15071893705
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin:PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin_1
+PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin_1.ConversionFactorB = "396721.15071893705"
+PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin_1.Symbol = "ppgUS/(psi²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin) 
+	N0000[PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin_1] -->|ConversionFactorB| N0002(("396721.15071893705")) 
+	N0000[PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin_1] -->|Symbol| N0003(("ppgUS/(psi²•K)")) 
+```
+## PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin <!-- NOUN -->
+- Display name: pound per cubic foot per pound per square inch squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 2967680.2962871124
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per pound per square inch squared kelvin
+[SI] is the value in SI
+a = Foot*Foot*Foot*PSI*PSI/Pound, i.e., 2967680.2962871124
+and
+Foot = 12.0 * Inch
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin:PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin_1
+PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin_1.ConversionFactorB = "2967680.2962871124"
+PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin_1.Symbol = "lb/ft³/(psi²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin) 
+	N0000[PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin_1] -->|ConversionFactorB| N0002(("2967680.2962871124")) 
+	N0000[PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin_1] -->|Symbol| N0003(("lb/ft³/(psi²•K)")) 
+```
+## PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin <!-- NOUN -->
+- Display name: pound per cubic inch per pound per square inch squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1717.4075788698572
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per pound per square inch squared kelvin
+[SI] is the value in SI
+a = Inch*Inch*Inch*PSI*PSI/Pound, i.e., 1717.4075788698572
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin:PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin_1
+PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin_1.ConversionFactorB = "1717.4075788698572"
+PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin_1.Symbol = "lb/in³/(psi²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin) 
+	N0000[PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin_1] -->|ConversionFactorB| N0002(("1717.4075788698572")) 
+	N0000[PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin_1] -->|Symbol| N0003(("lb/in³/(psi²•K)")) 
+```
+## PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin <!-- NOUN -->
+- Display name: pound per cubic yard per pound per square inch squared kelvin
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 80127367.99975201
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per pound per square inch squared kelvin
+[SI] is the value in SI
+a = Yard*Yard*Yard*PSI*PSI/Pound, i.e., 80127367.99975201
+and
+Yard = 3.0 * Foot
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin:PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin_1
+PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin_1.ConversionFactorB = "80127367.99975201"
+PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin_1.Symbol = "lb/yd³/(psi²•K)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin) 
+	N0000[PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin_1] -->|ConversionFactorB| N0002(("80127367.99975201")) 
+	N0000[PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin_1] -->|Symbol| N0003(("lb/yd³/(psi²•K)")) 
+```
+## KilogramPerCubicMetrePerPascalSquaredCelsius <!-- NOUN -->
+- Display name: kilogram per cubic metre per pascal squared celsius
+- Parent class: [Unit](#Unit)
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per pascal squared celsius
+[SI] is the value in SI
+a = 1.0/Unit, i.e., 1
+and
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerPascalSquaredCelsius:KilogramPerCubicMetrePerPascalSquaredCelsius_1
+KilogramPerCubicMetrePerPascalSquaredCelsius_1.Symbol = "kg/m³/(Pa²•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerPascalSquaredCelsius_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerPascalSquaredCelsius) 
+	N0000[KilogramPerCubicMetrePerPascalSquaredCelsius_1] -->|Symbol| N0002(("kg/m³/(Pa²•°C)")) 
+```
+## SpecificGravityPerPascalSquaredCelsius <!-- NOUN -->
+- Display name: specific gravity per pascal squared celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.001000028000784022
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per pascal squared celsius
+[SI] is the value in SI
+a = SpecificGavity4degC, i.e., 0.001000028000784022
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerPascalSquaredCelsius:SpecificGravityPerPascalSquaredCelsius_1
+SpecificGravityPerPascalSquaredCelsius_1.ConversionFactorB = "0.001000028000784022"
+SpecificGravityPerPascalSquaredCelsius_1.Symbol = "sg/(Pa²•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerPascalSquaredCelsius_1] -->|BelongsToClass| N0001(SpecificGravityPerPascalSquaredCelsius) 
+	N0000[SpecificGravityPerPascalSquaredCelsius_1] -->|ConversionFactorB| N0002(("0.001000028000784022")) 
+	N0000[SpecificGravityPerPascalSquaredCelsius_1] -->|Symbol| N0003(("sg/(Pa²•°C)")) 
+```
+## GramPerCubicCentimetrePerPascalSquaredCelsius <!-- NOUN -->
+- Display name: gram per cubic centimetre per pascal squared celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0010000000000000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per pascal squared celsius
+[SI] is the value in SI
+a = Centi*Centi*Centi/Milli, i.e., 0.0010000000000000002
+and
+Centi = 0.01
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerPascalSquaredCelsius:GramPerCubicCentimetrePerPascalSquaredCelsius_1
+GramPerCubicCentimetrePerPascalSquaredCelsius_1.ConversionFactorB = "0.0010000000000000002"
+GramPerCubicCentimetrePerPascalSquaredCelsius_1.Symbol = "g/cm³/(Pa²•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerPascalSquaredCelsius_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerPascalSquaredCelsius) 
+	N0000[GramPerCubicCentimetrePerPascalSquaredCelsius_1] -->|ConversionFactorB| N0002(("0.0010000000000000002")) 
+	N0000[GramPerCubicCentimetrePerPascalSquaredCelsius_1] -->|Symbol| N0003(("g/cm³/(Pa²•°C)")) 
+```
+## PoundPerGallonUkPerPascalSquaredCelsius <!-- NOUN -->
+- Display name: pound per gallon (UK) per pascal squared celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.010022412854960501
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per pascal squared celsius
+[SI] is the value in SI
+a = GallonUK/Pound, i.e., 0.010022412854960501
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerPascalSquaredCelsius:PoundPerGallonUkPerPascalSquaredCelsius_1
+PoundPerGallonUkPerPascalSquaredCelsius_1.ConversionFactorB = "0.010022412854960501"
+PoundPerGallonUkPerPascalSquaredCelsius_1.Symbol = "ppgUK/(Pa²•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerPascalSquaredCelsius_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerPascalSquaredCelsius) 
+	N0000[PoundPerGallonUkPerPascalSquaredCelsius_1] -->|ConversionFactorB| N0002(("0.010022412854960501")) 
+	N0000[PoundPerGallonUkPerPascalSquaredCelsius_1] -->|Symbol| N0003(("ppgUK/(Pa²•°C)")) 
+```
+## PoundPerGallonUsPerPascalSquaredCelsius <!-- NOUN -->
+- Display name: pound per gallon (US) per pascal squared celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.00834540445201933
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per pascal squared celsius
+[SI] is the value in SI
+a = GallonUS/Pound, i.e., 0.00834540445201933
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerPascalSquaredCelsius:PoundPerGallonUsPerPascalSquaredCelsius_1
+PoundPerGallonUsPerPascalSquaredCelsius_1.ConversionFactorB = "0.00834540445201933"
+PoundPerGallonUsPerPascalSquaredCelsius_1.Symbol = "ppgUS/(Pa²•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerPascalSquaredCelsius_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerPascalSquaredCelsius) 
+	N0000[PoundPerGallonUsPerPascalSquaredCelsius_1] -->|ConversionFactorB| N0002(("0.00834540445201933")) 
+	N0000[PoundPerGallonUsPerPascalSquaredCelsius_1] -->|Symbol| N0003(("ppgUS/(Pa²•°C)")) 
+```
+## PoundPerCubicFootPerPascalSquaredCelsius <!-- NOUN -->
+- Display name: pound per cubic foot per pascal squared celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.06242796057614459
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per pascal squared celsius
+[SI] is the value in SI
+a = Foot*Foot*Foot/Pound, i.e., 0.06242796057614459
+and
+Foot = 12.0 * Inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerPascalSquaredCelsius:PoundPerCubicFootPerPascalSquaredCelsius_1
+PoundPerCubicFootPerPascalSquaredCelsius_1.ConversionFactorB = "0.06242796057614459"
+PoundPerCubicFootPerPascalSquaredCelsius_1.Symbol = "lb/ft³/(Pa²•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerPascalSquaredCelsius_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerPascalSquaredCelsius) 
+	N0000[PoundPerCubicFootPerPascalSquaredCelsius_1] -->|ConversionFactorB| N0002(("0.06242796057614459")) 
+	N0000[PoundPerCubicFootPerPascalSquaredCelsius_1] -->|Symbol| N0003(("lb/ft³/(Pa²•°C)")) 
+```
+## PoundPerCubicInchPerPascalSquaredCelsius <!-- NOUN -->
+- Display name: pound per cubic inch per pascal squared celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 3.612729200008369E-05
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per pascal squared celsius
+[SI] is the value in SI
+a = Inch*Inch*Inch/Pound, i.e., 3.612729200008369E-05
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerPascalSquaredCelsius:PoundPerCubicInchPerPascalSquaredCelsius_1
+PoundPerCubicInchPerPascalSquaredCelsius_1.ConversionFactorB = "3.612729200008369E-05"
+PoundPerCubicInchPerPascalSquaredCelsius_1.Symbol = "lb/in³/(Pa²•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerPascalSquaredCelsius_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerPascalSquaredCelsius) 
+	N0000[PoundPerCubicInchPerPascalSquaredCelsius_1] -->|ConversionFactorB| N0002(("3.612729200008369E-05")) 
+	N0000[PoundPerCubicInchPerPascalSquaredCelsius_1] -->|Symbol| N0003(("lb/in³/(Pa²•°C)")) 
+```
+## PoundPerCubicYardPerPascalSquaredCelsius <!-- NOUN -->
+- Display name: pound per cubic yard per pascal squared celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1.6855549355559039
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per pascal squared celsius
+[SI] is the value in SI
+a = Yard*Yard*Yard/Pound, i.e., 1.6855549355559039
+and
+Yard = 3.0 * Foot
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerPascalSquaredCelsius:PoundPerCubicYardPerPascalSquaredCelsius_1
+PoundPerCubicYardPerPascalSquaredCelsius_1.ConversionFactorB = "1.6855549355559039"
+PoundPerCubicYardPerPascalSquaredCelsius_1.Symbol = "lb/yd³/(Pa²•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerPascalSquaredCelsius_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerPascalSquaredCelsius) 
+	N0000[PoundPerCubicYardPerPascalSquaredCelsius_1] -->|ConversionFactorB| N0002(("1.6855549355559039")) 
+	N0000[PoundPerCubicYardPerPascalSquaredCelsius_1] -->|Symbol| N0003(("lb/yd³/(Pa²•°C)")) 
+```
+## KilogramPerCubicMetrePerBarSquaredCelsius <!-- NOUN -->
+- Display name: kilogram per cubic metre per bar squared celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 10000000000
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per bar squared celsius
+[SI] is the value in SI
+a = Bar*Bar/Unit, i.e., 10000000000
+and
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerBarSquaredCelsius:KilogramPerCubicMetrePerBarSquaredCelsius_1
+KilogramPerCubicMetrePerBarSquaredCelsius_1.ConversionFactorB = "10000000000"
+KilogramPerCubicMetrePerBarSquaredCelsius_1.Symbol = "kg/m³/(bar²•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerBarSquaredCelsius_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerBarSquaredCelsius) 
+	N0000[KilogramPerCubicMetrePerBarSquaredCelsius_1] -->|ConversionFactorB| N0002(("10000000000")) 
+	N0000[KilogramPerCubicMetrePerBarSquaredCelsius_1] -->|Symbol| N0003(("kg/m³/(bar²•°C)")) 
+```
+## SpecificGravityPerBarSquaredCelsius <!-- NOUN -->
+- Display name: specific gravity per bar squared celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 10000280.00784022
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per bar squared celsius
+[SI] is the value in SI
+a = SpecificGavity4degC*Bar*Bar, i.e., 10000280.00784022
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerBarSquaredCelsius:SpecificGravityPerBarSquaredCelsius_1
+SpecificGravityPerBarSquaredCelsius_1.ConversionFactorB = "10000280.00784022"
+SpecificGravityPerBarSquaredCelsius_1.Symbol = "sg/(bar²•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerBarSquaredCelsius_1] -->|BelongsToClass| N0001(SpecificGravityPerBarSquaredCelsius) 
+	N0000[SpecificGravityPerBarSquaredCelsius_1] -->|ConversionFactorB| N0002(("10000280.00784022")) 
+	N0000[SpecificGravityPerBarSquaredCelsius_1] -->|Symbol| N0003(("sg/(bar²•°C)")) 
+```
+## GramPerCubicCentimetrePerBarSquaredCelsius <!-- NOUN -->
+- Display name: gram per cubic centimetre per bar squared celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 10000000.000000002
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per bar squared celsius
+[SI] is the value in SI
+a = Centi*Centi*Centi*Bar*Bar/Milli, i.e., 10000000.000000002
+and
+Centi = 0.01
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerBarSquaredCelsius:GramPerCubicCentimetrePerBarSquaredCelsius_1
+GramPerCubicCentimetrePerBarSquaredCelsius_1.ConversionFactorB = "10000000.000000002"
+GramPerCubicCentimetrePerBarSquaredCelsius_1.Symbol = "g/cm³/(bar²•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerBarSquaredCelsius_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerBarSquaredCelsius) 
+	N0000[GramPerCubicCentimetrePerBarSquaredCelsius_1] -->|ConversionFactorB| N0002(("10000000.000000002")) 
+	N0000[GramPerCubicCentimetrePerBarSquaredCelsius_1] -->|Symbol| N0003(("g/cm³/(bar²•°C)")) 
+```
+## PoundPerGallonUkPerBarSquaredCelsius <!-- NOUN -->
+- Display name: pound per gallon (UK) per bar squared celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 100224128.54960501
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per bar squared celsius
+[SI] is the value in SI
+a = GallonUK*Bar*Bar/Pound, i.e., 100224128.54960501
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerBarSquaredCelsius:PoundPerGallonUkPerBarSquaredCelsius_1
+PoundPerGallonUkPerBarSquaredCelsius_1.ConversionFactorB = "100224128.54960501"
+PoundPerGallonUkPerBarSquaredCelsius_1.Symbol = "ppgUK/(bar²•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerBarSquaredCelsius_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerBarSquaredCelsius) 
+	N0000[PoundPerGallonUkPerBarSquaredCelsius_1] -->|ConversionFactorB| N0002(("100224128.54960501")) 
+	N0000[PoundPerGallonUkPerBarSquaredCelsius_1] -->|Symbol| N0003(("ppgUK/(bar²•°C)")) 
+```
+## PoundPerGallonUsPerBarSquaredCelsius <!-- NOUN -->
+- Display name: pound per gallon (US) per bar squared celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 83454044.52019331
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per bar squared celsius
+[SI] is the value in SI
+a = GallonUS*Bar*Bar/Pound, i.e., 83454044.52019331
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerBarSquaredCelsius:PoundPerGallonUsPerBarSquaredCelsius_1
+PoundPerGallonUsPerBarSquaredCelsius_1.ConversionFactorB = "83454044.52019331"
+PoundPerGallonUsPerBarSquaredCelsius_1.Symbol = "ppgUS/(bar²•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerBarSquaredCelsius_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerBarSquaredCelsius) 
+	N0000[PoundPerGallonUsPerBarSquaredCelsius_1] -->|ConversionFactorB| N0002(("83454044.52019331")) 
+	N0000[PoundPerGallonUsPerBarSquaredCelsius_1] -->|Symbol| N0003(("ppgUS/(bar²•°C)")) 
+```
+## PoundPerCubicFootPerBarSquaredCelsius <!-- NOUN -->
+- Display name: pound per cubic foot per bar squared celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 624279605.7614459
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per bar squared celsius
+[SI] is the value in SI
+a = Foot*Foot*Foot*Bar*Bar/Pound, i.e., 624279605.7614459
+and
+Foot = 12.0 * Inch
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerBarSquaredCelsius:PoundPerCubicFootPerBarSquaredCelsius_1
+PoundPerCubicFootPerBarSquaredCelsius_1.ConversionFactorB = "624279605.7614459"
+PoundPerCubicFootPerBarSquaredCelsius_1.Symbol = "lb/ft³/(bar²•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerBarSquaredCelsius_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerBarSquaredCelsius) 
+	N0000[PoundPerCubicFootPerBarSquaredCelsius_1] -->|ConversionFactorB| N0002(("624279605.7614459")) 
+	N0000[PoundPerCubicFootPerBarSquaredCelsius_1] -->|Symbol| N0003(("lb/ft³/(bar²•°C)")) 
+```
+## PoundPerCubicInchPerBarSquaredCelsius <!-- NOUN -->
+- Display name: pound per cubic inch per bar squared celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 361272.9200008369
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per bar squared celsius
+[SI] is the value in SI
+a = Inch*Inch*Inch*Bar*Bar/Pound, i.e., 361272.9200008369
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerBarSquaredCelsius:PoundPerCubicInchPerBarSquaredCelsius_1
+PoundPerCubicInchPerBarSquaredCelsius_1.ConversionFactorB = "361272.9200008369"
+PoundPerCubicInchPerBarSquaredCelsius_1.Symbol = "lb/in³/(bar²•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerBarSquaredCelsius_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerBarSquaredCelsius) 
+	N0000[PoundPerCubicInchPerBarSquaredCelsius_1] -->|ConversionFactorB| N0002(("361272.9200008369")) 
+	N0000[PoundPerCubicInchPerBarSquaredCelsius_1] -->|Symbol| N0003(("lb/in³/(bar²•°C)")) 
+```
+## PoundPerCubicYardPerBarSquaredCelsius <!-- NOUN -->
+- Display name: pound per cubic yard per bar squared celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 16855549355.559038
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per bar squared celsius
+[SI] is the value in SI
+a = Yard*Yard*Yard*Bar*Bar/Pound, i.e., 16855549355.559038
+and
+Yard = 3.0 * Foot
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerBarSquaredCelsius:PoundPerCubicYardPerBarSquaredCelsius_1
+PoundPerCubicYardPerBarSquaredCelsius_1.ConversionFactorB = "16855549355.559038"
+PoundPerCubicYardPerBarSquaredCelsius_1.Symbol = "lb/yd³/(bar²•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerBarSquaredCelsius_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerBarSquaredCelsius) 
+	N0000[PoundPerCubicYardPerBarSquaredCelsius_1] -->|ConversionFactorB| N0002(("16855549355.559038")) 
+	N0000[PoundPerCubicYardPerBarSquaredCelsius_1] -->|Symbol| N0003(("lb/yd³/(bar²•°C)")) 
+```
+## KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius <!-- NOUN -->
+- Display name: kilogram per cubic metre per pound per square inch squared celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 47537678.1316983
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per pound per square inch squared celsius
+[SI] is the value in SI
+a = PSI*PSI/Unit, i.e., 47537678.1316983
+and
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Unit = 1.0
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius:KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius_1
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius_1.ConversionFactorB = "47537678.1316983"
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius_1.Symbol = "kg/m³/(psi²•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius) 
+	N0000[KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius_1] -->|ConversionFactorB| N0002(("47537678.1316983")) 
+	N0000[KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius_1] -->|Symbol| N0003(("kg/m³/(psi²•°C)")) 
+```
+## SpecificGravityPerPoundPerSquareInchSquaredCelsius <!-- NOUN -->
+- Display name: specific gravity per pound per square inch squared celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 47539.00922395657
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per pound per square inch squared celsius
+[SI] is the value in SI
+a = SpecificGavity4degC*PSI*PSI, i.e., 47539.00922395657
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerPoundPerSquareInchSquaredCelsius:SpecificGravityPerPoundPerSquareInchSquaredCelsius_1
+SpecificGravityPerPoundPerSquareInchSquaredCelsius_1.ConversionFactorB = "47539.00922395657"
+SpecificGravityPerPoundPerSquareInchSquaredCelsius_1.Symbol = "sg/(psi²•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerPoundPerSquareInchSquaredCelsius_1] -->|BelongsToClass| N0001(SpecificGravityPerPoundPerSquareInchSquaredCelsius) 
+	N0000[SpecificGravityPerPoundPerSquareInchSquaredCelsius_1] -->|ConversionFactorB| N0002(("47539.00922395657")) 
+	N0000[SpecificGravityPerPoundPerSquareInchSquaredCelsius_1] -->|Symbol| N0003(("sg/(psi²•°C)")) 
+```
+## GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius <!-- NOUN -->
+- Display name: gram per cubic centimetre per pound per square inch squared celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 47537.6781316983
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per pound per square inch squared celsius
+[SI] is the value in SI
+a = Centi*Centi*Centi*PSI*PSI/Milli, i.e., 47537.6781316983
+and
+Centi = 0.01
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Milli = 0.001
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius:GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius_1
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius_1.ConversionFactorB = "47537.6781316983"
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius_1.Symbol = "g/cm³/(psi²•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius) 
+	N0000[GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius_1] -->|ConversionFactorB| N0002(("47537.6781316983")) 
+	N0000[GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius_1] -->|Symbol| N0003(("g/cm³/(psi²•°C)")) 
+```
+## PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius <!-- NOUN -->
+- Display name: pound per gallon (UK) per pound per square inch squared celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 476442.2364021077
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per pound per square inch squared celsius
+[SI] is the value in SI
+a = GallonUK*PSI*PSI/Pound, i.e., 476442.2364021077
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius:PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius_1
+PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius_1.ConversionFactorB = "476442.2364021077"
+PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius_1.Symbol = "ppgUK/(psi²•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius) 
+	N0000[PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius_1] -->|ConversionFactorB| N0002(("476442.2364021077")) 
+	N0000[PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius_1] -->|Symbol| N0003(("ppgUK/(psi²•°C)")) 
+```
+## PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius <!-- NOUN -->
+- Display name: pound per gallon (US) per pound per square inch squared celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 396721.15071893705
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per pound per square inch squared celsius
+[SI] is the value in SI
+a = GallonUS*PSI*PSI/Pound, i.e., 396721.15071893705
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius:PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius_1
+PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius_1.ConversionFactorB = "396721.15071893705"
+PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius_1.Symbol = "ppgUS/(psi²•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius) 
+	N0000[PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius_1] -->|ConversionFactorB| N0002(("396721.15071893705")) 
+	N0000[PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius_1] -->|Symbol| N0003(("ppgUS/(psi²•°C)")) 
+```
+## PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius <!-- NOUN -->
+- Display name: pound per cubic foot per pound per square inch squared celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 2967680.2962871124
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per pound per square inch squared celsius
+[SI] is the value in SI
+a = Foot*Foot*Foot*PSI*PSI/Pound, i.e., 2967680.2962871124
+and
+Foot = 12.0 * Inch
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius:PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius_1
+PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius_1.ConversionFactorB = "2967680.2962871124"
+PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius_1.Symbol = "lb/ft³/(psi²•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius) 
+	N0000[PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius_1] -->|ConversionFactorB| N0002(("2967680.2962871124")) 
+	N0000[PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius_1] -->|Symbol| N0003(("lb/ft³/(psi²•°C)")) 
+```
+## PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius <!-- NOUN -->
+- Display name: pound per cubic inch per pound per square inch squared celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1717.4075788698572
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per pound per square inch squared celsius
+[SI] is the value in SI
+a = Inch*Inch*Inch*PSI*PSI/Pound, i.e., 1717.4075788698572
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius:PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius_1
+PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius_1.ConversionFactorB = "1717.4075788698572"
+PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius_1.Symbol = "lb/in³/(psi²•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius) 
+	N0000[PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius_1] -->|ConversionFactorB| N0002(("1717.4075788698572")) 
+	N0000[PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius_1] -->|Symbol| N0003(("lb/in³/(psi²•°C)")) 
+```
+## PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius <!-- NOUN -->
+- Display name: pound per cubic yard per pound per square inch squared celsius
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 80127367.99975201
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per pound per square inch squared celsius
+[SI] is the value in SI
+a = Yard*Yard*Yard*PSI*PSI/Pound, i.e., 80127367.99975201
+and
+Yard = 3.0 * Foot
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius:PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius_1
+PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius_1.ConversionFactorB = "80127367.99975201"
+PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius_1.Symbol = "lb/yd³/(psi²•°C)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius) 
+	N0000[PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius_1] -->|ConversionFactorB| N0002(("80127367.99975201")) 
+	N0000[PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius_1] -->|Symbol| N0003(("lb/yd³/(psi²•°C)")) 
+```
+## KilogramPerCubicMetrePerPascalSquaredFahrenheit <!-- NOUN -->
+- Display name: kilogram per cubic metre per pascal squared fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.5555555555555556
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per pascal squared fahrenheit
+[SI] is the value in SI
+a = FahrenheitSlope/Unit, i.e., 0.5555555555555556
+and
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerPascalSquaredFahrenheit:KilogramPerCubicMetrePerPascalSquaredFahrenheit_1
+KilogramPerCubicMetrePerPascalSquaredFahrenheit_1.ConversionFactorB = "0.5555555555555556"
+KilogramPerCubicMetrePerPascalSquaredFahrenheit_1.Symbol = "kg/m³/(Pa²•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerPascalSquaredFahrenheit_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerPascalSquaredFahrenheit) 
+	N0000[KilogramPerCubicMetrePerPascalSquaredFahrenheit_1] -->|ConversionFactorB| N0002(("0.5555555555555556")) 
+	N0000[KilogramPerCubicMetrePerPascalSquaredFahrenheit_1] -->|Symbol| N0003(("kg/m³/(Pa²•°F)")) 
+```
+## SpecificGravityPerPascalSquaredFahrenheit <!-- NOUN -->
+- Display name: specific gravity per pascal squared fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0005555711115466789
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per pascal squared fahrenheit
+[SI] is the value in SI
+a = SpecificGavity4degC*FahrenheitSlope, i.e., 0.0005555711115466789
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerPascalSquaredFahrenheit:SpecificGravityPerPascalSquaredFahrenheit_1
+SpecificGravityPerPascalSquaredFahrenheit_1.ConversionFactorB = "0.0005555711115466789"
+SpecificGravityPerPascalSquaredFahrenheit_1.Symbol = "sg/(Pa²•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerPascalSquaredFahrenheit_1] -->|BelongsToClass| N0001(SpecificGravityPerPascalSquaredFahrenheit) 
+	N0000[SpecificGravityPerPascalSquaredFahrenheit_1] -->|ConversionFactorB| N0002(("0.0005555711115466789")) 
+	N0000[SpecificGravityPerPascalSquaredFahrenheit_1] -->|Symbol| N0003(("sg/(Pa²•°F)")) 
+```
+## GramPerCubicCentimetrePerPascalSquaredFahrenheit <!-- NOUN -->
+- Display name: gram per cubic centimetre per pascal squared fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.0005555555555555557
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per pascal squared fahrenheit
+[SI] is the value in SI
+a = Centi*Centi*Centi*FahrenheitSlope/Milli, i.e., 0.0005555555555555557
+and
+Centi = 0.01
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerPascalSquaredFahrenheit:GramPerCubicCentimetrePerPascalSquaredFahrenheit_1
+GramPerCubicCentimetrePerPascalSquaredFahrenheit_1.ConversionFactorB = "0.0005555555555555557"
+GramPerCubicCentimetrePerPascalSquaredFahrenheit_1.Symbol = "g/cm³/(Pa²•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerPascalSquaredFahrenheit_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerPascalSquaredFahrenheit) 
+	N0000[GramPerCubicCentimetrePerPascalSquaredFahrenheit_1] -->|ConversionFactorB| N0002(("0.0005555555555555557")) 
+	N0000[GramPerCubicCentimetrePerPascalSquaredFahrenheit_1] -->|Symbol| N0003(("g/cm³/(Pa²•°F)")) 
+```
+## PoundPerGallonUkPerPascalSquaredFahrenheit <!-- NOUN -->
+- Display name: pound per gallon (UK) per pascal squared fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.005568007141644723
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per pascal squared fahrenheit
+[SI] is the value in SI
+a = GallonUK*FahrenheitSlope/Pound, i.e., 0.005568007141644723
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerPascalSquaredFahrenheit:PoundPerGallonUkPerPascalSquaredFahrenheit_1
+PoundPerGallonUkPerPascalSquaredFahrenheit_1.ConversionFactorB = "0.005568007141644723"
+PoundPerGallonUkPerPascalSquaredFahrenheit_1.Symbol = "ppgUK/(Pa²•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerPascalSquaredFahrenheit_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerPascalSquaredFahrenheit) 
+	N0000[PoundPerGallonUkPerPascalSquaredFahrenheit_1] -->|ConversionFactorB| N0002(("0.005568007141644723")) 
+	N0000[PoundPerGallonUkPerPascalSquaredFahrenheit_1] -->|Symbol| N0003(("ppgUK/(Pa²•°F)")) 
+```
+## PoundPerGallonUsPerPascalSquaredFahrenheit <!-- NOUN -->
+- Display name: pound per gallon (US) per pascal squared fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.004636335806677406
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per pascal squared fahrenheit
+[SI] is the value in SI
+a = GallonUS*FahrenheitSlope/Pound, i.e., 0.004636335806677406
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerPascalSquaredFahrenheit:PoundPerGallonUsPerPascalSquaredFahrenheit_1
+PoundPerGallonUsPerPascalSquaredFahrenheit_1.ConversionFactorB = "0.004636335806677406"
+PoundPerGallonUsPerPascalSquaredFahrenheit_1.Symbol = "ppgUS/(Pa²•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerPascalSquaredFahrenheit_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerPascalSquaredFahrenheit) 
+	N0000[PoundPerGallonUsPerPascalSquaredFahrenheit_1] -->|ConversionFactorB| N0002(("0.004636335806677406")) 
+	N0000[PoundPerGallonUsPerPascalSquaredFahrenheit_1] -->|Symbol| N0003(("ppgUS/(Pa²•°F)")) 
+```
+## PoundPerCubicFootPerPascalSquaredFahrenheit <!-- NOUN -->
+- Display name: pound per cubic foot per pascal squared fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.03468220032008033
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per pascal squared fahrenheit
+[SI] is the value in SI
+a = Foot*Foot*Foot*FahrenheitSlope/Pound, i.e., 0.03468220032008033
+and
+Foot = 12.0 * Inch
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerPascalSquaredFahrenheit:PoundPerCubicFootPerPascalSquaredFahrenheit_1
+PoundPerCubicFootPerPascalSquaredFahrenheit_1.ConversionFactorB = "0.03468220032008033"
+PoundPerCubicFootPerPascalSquaredFahrenheit_1.Symbol = "lb/ft³/(Pa²•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerPascalSquaredFahrenheit_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerPascalSquaredFahrenheit) 
+	N0000[PoundPerCubicFootPerPascalSquaredFahrenheit_1] -->|ConversionFactorB| N0002(("0.03468220032008033")) 
+	N0000[PoundPerCubicFootPerPascalSquaredFahrenheit_1] -->|Symbol| N0003(("lb/ft³/(Pa²•°F)")) 
+```
+## PoundPerCubicInchPerPascalSquaredFahrenheit <!-- NOUN -->
+- Display name: pound per cubic inch per pascal squared fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 2.0070717777824268E-05
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per pascal squared fahrenheit
+[SI] is the value in SI
+a = Inch*Inch*Inch*FahrenheitSlope/Pound, i.e., 2.0070717777824268E-05
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerPascalSquaredFahrenheit:PoundPerCubicInchPerPascalSquaredFahrenheit_1
+PoundPerCubicInchPerPascalSquaredFahrenheit_1.ConversionFactorB = "2.0070717777824268E-05"
+PoundPerCubicInchPerPascalSquaredFahrenheit_1.Symbol = "lb/in³/(Pa²•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerPascalSquaredFahrenheit_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerPascalSquaredFahrenheit) 
+	N0000[PoundPerCubicInchPerPascalSquaredFahrenheit_1] -->|ConversionFactorB| N0002(("2.0070717777824268E-05")) 
+	N0000[PoundPerCubicInchPerPascalSquaredFahrenheit_1] -->|Symbol| N0003(("lb/in³/(Pa²•°F)")) 
+```
+## PoundPerCubicYardPerPascalSquaredFahrenheit <!-- NOUN -->
+- Display name: pound per cubic yard per pascal squared fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 0.9364194086421688
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per pascal squared fahrenheit
+[SI] is the value in SI
+a = Yard*Yard*Yard*FahrenheitSlope/Pound, i.e., 0.9364194086421688
+and
+Yard = 3.0 * Foot
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerPascalSquaredFahrenheit:PoundPerCubicYardPerPascalSquaredFahrenheit_1
+PoundPerCubicYardPerPascalSquaredFahrenheit_1.ConversionFactorB = "0.9364194086421688"
+PoundPerCubicYardPerPascalSquaredFahrenheit_1.Symbol = "lb/yd³/(Pa²•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerPascalSquaredFahrenheit_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerPascalSquaredFahrenheit) 
+	N0000[PoundPerCubicYardPerPascalSquaredFahrenheit_1] -->|ConversionFactorB| N0002(("0.9364194086421688")) 
+	N0000[PoundPerCubicYardPerPascalSquaredFahrenheit_1] -->|Symbol| N0003(("lb/yd³/(Pa²•°F)")) 
+```
+## KilogramPerCubicMetrePerBarSquaredFahrenheit <!-- NOUN -->
+- Display name: kilogram per cubic metre per bar squared fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 5555555555.555555
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per bar squared fahrenheit
+[SI] is the value in SI
+a = Bar*Bar*FahrenheitSlope/Unit, i.e., 5555555555.555555
+and
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Unit = 1.0
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerBarSquaredFahrenheit:KilogramPerCubicMetrePerBarSquaredFahrenheit_1
+KilogramPerCubicMetrePerBarSquaredFahrenheit_1.ConversionFactorB = "5555555555.555555"
+KilogramPerCubicMetrePerBarSquaredFahrenheit_1.Symbol = "kg/m³/(bar²•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerBarSquaredFahrenheit_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerBarSquaredFahrenheit) 
+	N0000[KilogramPerCubicMetrePerBarSquaredFahrenheit_1] -->|ConversionFactorB| N0002(("5555555555.555555")) 
+	N0000[KilogramPerCubicMetrePerBarSquaredFahrenheit_1] -->|Symbol| N0003(("kg/m³/(bar²•°F)")) 
+```
+## SpecificGravityPerBarSquaredFahrenheit <!-- NOUN -->
+- Display name: specific gravity per bar squared fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 5555711.115466789
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per bar squared fahrenheit
+[SI] is the value in SI
+a = SpecificGavity4degC*Bar*Bar*FahrenheitSlope, i.e., 5555711.115466789
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerBarSquaredFahrenheit:SpecificGravityPerBarSquaredFahrenheit_1
+SpecificGravityPerBarSquaredFahrenheit_1.ConversionFactorB = "5555711.115466789"
+SpecificGravityPerBarSquaredFahrenheit_1.Symbol = "sg/(bar²•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerBarSquaredFahrenheit_1] -->|BelongsToClass| N0001(SpecificGravityPerBarSquaredFahrenheit) 
+	N0000[SpecificGravityPerBarSquaredFahrenheit_1] -->|ConversionFactorB| N0002(("5555711.115466789")) 
+	N0000[SpecificGravityPerBarSquaredFahrenheit_1] -->|Symbol| N0003(("sg/(bar²•°F)")) 
+```
+## GramPerCubicCentimetrePerBarSquaredFahrenheit <!-- NOUN -->
+- Display name: gram per cubic centimetre per bar squared fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 5555555.555555557
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per bar squared fahrenheit
+[SI] is the value in SI
+a = Centi*Centi*Centi*Bar*Bar*FahrenheitSlope/Milli, i.e., 5555555.555555557
+and
+Centi = 0.01
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Milli = 0.001
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerBarSquaredFahrenheit:GramPerCubicCentimetrePerBarSquaredFahrenheit_1
+GramPerCubicCentimetrePerBarSquaredFahrenheit_1.ConversionFactorB = "5555555.555555557"
+GramPerCubicCentimetrePerBarSquaredFahrenheit_1.Symbol = "g/cm³/(bar²•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerBarSquaredFahrenheit_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerBarSquaredFahrenheit) 
+	N0000[GramPerCubicCentimetrePerBarSquaredFahrenheit_1] -->|ConversionFactorB| N0002(("5555555.555555557")) 
+	N0000[GramPerCubicCentimetrePerBarSquaredFahrenheit_1] -->|Symbol| N0003(("g/cm³/(bar²•°F)")) 
+```
+## PoundPerGallonUkPerBarSquaredFahrenheit <!-- NOUN -->
+- Display name: pound per gallon (UK) per bar squared fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 55680071.41644723
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per bar squared fahrenheit
+[SI] is the value in SI
+a = GallonUK*Bar*Bar*FahrenheitSlope/Pound, i.e., 55680071.41644723
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerBarSquaredFahrenheit:PoundPerGallonUkPerBarSquaredFahrenheit_1
+PoundPerGallonUkPerBarSquaredFahrenheit_1.ConversionFactorB = "55680071.41644723"
+PoundPerGallonUkPerBarSquaredFahrenheit_1.Symbol = "ppgUK/(bar²•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerBarSquaredFahrenheit_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerBarSquaredFahrenheit) 
+	N0000[PoundPerGallonUkPerBarSquaredFahrenheit_1] -->|ConversionFactorB| N0002(("55680071.41644723")) 
+	N0000[PoundPerGallonUkPerBarSquaredFahrenheit_1] -->|Symbol| N0003(("ppgUK/(bar²•°F)")) 
+```
+## PoundPerGallonUsPerBarSquaredFahrenheit <!-- NOUN -->
+- Display name: pound per gallon (US) per bar squared fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 46363358.06677406
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per bar squared fahrenheit
+[SI] is the value in SI
+a = GallonUS*Bar*Bar*FahrenheitSlope/Pound, i.e., 46363358.06677406
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerBarSquaredFahrenheit:PoundPerGallonUsPerBarSquaredFahrenheit_1
+PoundPerGallonUsPerBarSquaredFahrenheit_1.ConversionFactorB = "46363358.06677406"
+PoundPerGallonUsPerBarSquaredFahrenheit_1.Symbol = "ppgUS/(bar²•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerBarSquaredFahrenheit_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerBarSquaredFahrenheit) 
+	N0000[PoundPerGallonUsPerBarSquaredFahrenheit_1] -->|ConversionFactorB| N0002(("46363358.06677406")) 
+	N0000[PoundPerGallonUsPerBarSquaredFahrenheit_1] -->|Symbol| N0003(("ppgUS/(bar²•°F)")) 
+```
+## PoundPerCubicFootPerBarSquaredFahrenheit <!-- NOUN -->
+- Display name: pound per cubic foot per bar squared fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 346822003.2008033
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per bar squared fahrenheit
+[SI] is the value in SI
+a = Foot*Foot*Foot*Bar*Bar*FahrenheitSlope/Pound, i.e., 346822003.2008033
+and
+Foot = 12.0 * Inch
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerBarSquaredFahrenheit:PoundPerCubicFootPerBarSquaredFahrenheit_1
+PoundPerCubicFootPerBarSquaredFahrenheit_1.ConversionFactorB = "346822003.2008033"
+PoundPerCubicFootPerBarSquaredFahrenheit_1.Symbol = "lb/ft³/(bar²•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerBarSquaredFahrenheit_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerBarSquaredFahrenheit) 
+	N0000[PoundPerCubicFootPerBarSquaredFahrenheit_1] -->|ConversionFactorB| N0002(("346822003.2008033")) 
+	N0000[PoundPerCubicFootPerBarSquaredFahrenheit_1] -->|Symbol| N0003(("lb/ft³/(bar²•°F)")) 
+```
+## PoundPerCubicInchPerBarSquaredFahrenheit <!-- NOUN -->
+- Display name: pound per cubic inch per bar squared fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 200707.1777782427
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per bar squared fahrenheit
+[SI] is the value in SI
+a = Inch*Inch*Inch*Bar*Bar*FahrenheitSlope/Pound, i.e., 200707.1777782427
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerBarSquaredFahrenheit:PoundPerCubicInchPerBarSquaredFahrenheit_1
+PoundPerCubicInchPerBarSquaredFahrenheit_1.ConversionFactorB = "200707.1777782427"
+PoundPerCubicInchPerBarSquaredFahrenheit_1.Symbol = "lb/in³/(bar²•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerBarSquaredFahrenheit_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerBarSquaredFahrenheit) 
+	N0000[PoundPerCubicInchPerBarSquaredFahrenheit_1] -->|ConversionFactorB| N0002(("200707.1777782427")) 
+	N0000[PoundPerCubicInchPerBarSquaredFahrenheit_1] -->|Symbol| N0003(("lb/in³/(bar²•°F)")) 
+```
+## PoundPerCubicYardPerBarSquaredFahrenheit <!-- NOUN -->
+- Display name: pound per cubic yard per bar squared fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 9364194086.421688
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per bar squared fahrenheit
+[SI] is the value in SI
+a = Yard*Yard*Yard*Bar*Bar*FahrenheitSlope/Pound, i.e., 9364194086.421688
+and
+Yard = 3.0 * Foot
+Bar = 1e5 reference: https://en.wikipedia.org/wiki/Bar_(unit)
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerBarSquaredFahrenheit:PoundPerCubicYardPerBarSquaredFahrenheit_1
+PoundPerCubicYardPerBarSquaredFahrenheit_1.ConversionFactorB = "9364194086.421688"
+PoundPerCubicYardPerBarSquaredFahrenheit_1.Symbol = "lb/yd³/(bar²•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerBarSquaredFahrenheit_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerBarSquaredFahrenheit) 
+	N0000[PoundPerCubicYardPerBarSquaredFahrenheit_1] -->|ConversionFactorB| N0002(("9364194086.421688")) 
+	N0000[PoundPerCubicYardPerBarSquaredFahrenheit_1] -->|Symbol| N0003(("lb/yd³/(bar²•°F)")) 
+```
+## KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit <!-- NOUN -->
+- Display name: kilogram per cubic metre per pound per square inch squared fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 26409821.184276838
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in kilogram per cubic metre per pound per square inch squared fahrenheit
+[SI] is the value in SI
+a = PSI*PSI*FahrenheitSlope/Unit, i.e., 26409821.184276838
+and
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Unit = 1.0
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit:KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit_1
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit_1.ConversionFactorB = "26409821.184276838"
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit_1.Symbol = "kg/m³/(psi²•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit_1] -->|BelongsToClass| N0001(KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit) 
+	N0000[KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit_1] -->|ConversionFactorB| N0002(("26409821.184276838")) 
+	N0000[KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit_1] -->|Symbol| N0003(("kg/m³/(psi²•°F)")) 
+```
+## SpecificGravityPerPoundPerSquareInchSquaredFahrenheit <!-- NOUN -->
+- Display name: specific gravity per pound per square inch squared fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 26410.560679975875
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in specific gravity per pound per square inch squared fahrenheit
+[SI] is the value in SI
+a = SpecificGavity4degC*PSI*PSI*FahrenheitSlope, i.e., 26410.560679975875
+and
+SpecificGavity4degC = 1.0 / WaterDensity4degC1Atm
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+WaterDensity4degC1Atm = 999.9720 reference: https://en.wikipedia.org/wiki/Relative_density
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+SpecificGravityPerPoundPerSquareInchSquaredFahrenheit:SpecificGravityPerPoundPerSquareInchSquaredFahrenheit_1
+SpecificGravityPerPoundPerSquareInchSquaredFahrenheit_1.ConversionFactorB = "26410.560679975875"
+SpecificGravityPerPoundPerSquareInchSquaredFahrenheit_1.Symbol = "sg/(psi²•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificGravityPerPoundPerSquareInchSquaredFahrenheit_1] -->|BelongsToClass| N0001(SpecificGravityPerPoundPerSquareInchSquaredFahrenheit) 
+	N0000[SpecificGravityPerPoundPerSquareInchSquaredFahrenheit_1] -->|ConversionFactorB| N0002(("26410.560679975875")) 
+	N0000[SpecificGravityPerPoundPerSquareInchSquaredFahrenheit_1] -->|Symbol| N0003(("sg/(psi²•°F)")) 
+```
+## GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit <!-- NOUN -->
+- Display name: gram per cubic centimetre per pound per square inch squared fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 26409.82118427684
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in gram per cubic centimetre per pound per square inch squared fahrenheit
+[SI] is the value in SI
+a = Centi*Centi*Centi*PSI*PSI*FahrenheitSlope/Milli, i.e., 26409.82118427684
+and
+Centi = 0.01
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Milli = 0.001
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit:GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit_1
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit_1.ConversionFactorB = "26409.82118427684"
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit_1.Symbol = "g/cm³/(psi²•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit_1] -->|BelongsToClass| N0001(GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit) 
+	N0000[GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit_1] -->|ConversionFactorB| N0002(("26409.82118427684")) 
+	N0000[GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit_1] -->|Symbol| N0003(("g/cm³/(psi²•°F)")) 
+```
+## PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit <!-- NOUN -->
+- Display name: pound per gallon (UK) per pound per square inch squared fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 264690.1313345043
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (UK) per pound per square inch squared fahrenheit
+[SI] is the value in SI
+a = GallonUK*PSI*PSI*FahrenheitSlope/Pound, i.e., 264690.1313345043
+and
+GallonUK = 4.54609e-3 reference: https://en.wikipedia.org/wiki/Gallon
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit:PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit_1
+PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit_1.ConversionFactorB = "264690.1313345043"
+PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit_1.Symbol = "ppgUK/(psi²•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit_1] -->|BelongsToClass| N0001(PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit) 
+	N0000[PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit_1] -->|ConversionFactorB| N0002(("264690.1313345043")) 
+	N0000[PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit_1] -->|Symbol| N0003(("ppgUK/(psi²•°F)")) 
+```
+## PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit <!-- NOUN -->
+- Display name: pound per gallon (US) per pound per square inch squared fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 220400.63928829838
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per gallon (US) per pound per square inch squared fahrenheit
+[SI] is the value in SI
+a = GallonUS*PSI*PSI*FahrenheitSlope/Pound, i.e., 220400.63928829838
+and
+GallonUS = 231.0 * Inch * Inch * Inch reference: https://en.wikipedia.org/wiki/Gallon
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit:PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit_1
+PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit_1.ConversionFactorB = "220400.63928829838"
+PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit_1.Symbol = "ppgUS/(psi²•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit_1] -->|BelongsToClass| N0001(PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit) 
+	N0000[PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit_1] -->|ConversionFactorB| N0002(("220400.63928829838")) 
+	N0000[PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit_1] -->|Symbol| N0003(("ppgUS/(psi²•°F)")) 
+```
+## PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit <!-- NOUN -->
+- Display name: pound per cubic foot per pound per square inch squared fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 1648711.2757150626
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic foot per pound per square inch squared fahrenheit
+[SI] is the value in SI
+a = Foot*Foot*Foot*PSI*PSI*FahrenheitSlope/Pound, i.e., 1648711.2757150626
+and
+Foot = 12.0 * Inch
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit:PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit_1
+PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit_1.ConversionFactorB = "1648711.2757150626"
+PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit_1.Symbol = "lb/ft³/(psi²•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit_1] -->|BelongsToClass| N0001(PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit) 
+	N0000[PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit_1] -->|ConversionFactorB| N0002(("1648711.2757150626")) 
+	N0000[PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit_1] -->|Symbol| N0003(("lb/ft³/(psi²•°F)")) 
+```
+## PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit <!-- NOUN -->
+- Display name: pound per cubic inch per pound per square inch squared fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 954.1153215943651
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic inch per pound per square inch squared fahrenheit
+[SI] is the value in SI
+a = Inch*Inch*Inch*PSI*PSI*FahrenheitSlope/Pound, i.e., 954.1153215943651
+and
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit:PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit_1
+PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit_1.ConversionFactorB = "954.1153215943651"
+PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit_1.Symbol = "lb/in³/(psi²•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit_1] -->|BelongsToClass| N0001(PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit) 
+	N0000[PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit_1] -->|ConversionFactorB| N0002(("954.1153215943651")) 
+	N0000[PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit_1] -->|Symbol| N0003(("lb/in³/(psi²•°F)")) 
+```
+## PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit <!-- NOUN -->
+- Display name: pound per cubic yard per pound per square inch squared fahrenheit
+- Parent class: [Unit](#Unit)
+- Specialization:
+  - ConversionFactorB = 44515204.44430668
+- Description: 
+[v] = a * [SI]
+where
+[v] is the value in pound per cubic yard per pound per square inch squared fahrenheit
+[SI] is the value in SI
+a = Yard*Yard*Yard*PSI*PSI*FahrenheitSlope/Pound, i.e., 44515204.44430668
+and
+Yard = 3.0 * Foot
+PSI = PoundForce / (Inch * Inch) reference: https://en.wikipedia.org/wiki/Pound_per_square_inch
+FahrenheitSlope = 5.0 / 9.0 reference: https://nn.wikipedia.org/wiki/Fahrenheit
+Pound = 0.45359237 reference: https://en.wikipedia.org/wiki/Pound_(mass)
+Foot = 12.0 * Inch
+PoundForce = Pound * G reference: https://en.wikipedia.org/wiki/Pound_(force)
+Inch = 0.0254 reference: https://www.nist.gov/pml/owm/si-units-length
+G = 9.80665 reference: https://en.wikipedia.org/wiki/Gravity_of_Earth
+- Definition set: UnitTypes
+- Examples:
+``` dwis
+PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit:PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit_1
+PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit_1.ConversionFactorB = "44515204.44430668"
+PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit_1.Symbol = "lb/yd³/(psi²•°F)"
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit_1] -->|BelongsToClass| N0001(PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit) 
+	N0000[PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit_1] -->|ConversionFactorB| N0002(("44515204.44430668")) 
+	N0000[PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit_1] -->|Symbol| N0003(("lb/yd³/(psi²•°F)")) 
 ```
 # Verbs
 ## ImplementsControlStrategy <!-- VERB -->

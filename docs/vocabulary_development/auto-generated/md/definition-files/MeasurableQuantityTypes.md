@@ -24,6 +24,8 @@ MeasurableQuantity <|-- ProportionSmallQuantity
 MeasurableQuantity <|-- PorosityQuantity
 MeasurableQuantity <|-- StrokeFrequencyQuantity
 MeasurableQuantity <|-- ShockRateQuantity
+MeasurableQuantity <|-- PlaneAngleGeodesicQuantity
+MeasurableQuantity <|-- PlaneAngleStandardQuantity
 MeasurableQuantity <|-- AccelerationDrillingQuantity
 MeasurableQuantity <|-- AngleGradientPerLengthDrillingQuantity
 MeasurableQuantity <|-- AngleMagneticFluxDensitySurveyInstrumentDrillingQuantity
@@ -32,6 +34,7 @@ MeasurableQuantity <|-- AngularVelocityDrillingQuantity
 MeasurableQuantity <|-- AngularVelocitySurveyInstrumentDrillingQuantity
 MeasurableQuantity <|-- AreaDrillingQuantity
 MeasurableQuantity <|-- AxialVelocityDrillingQuantity
+MeasurableQuantity <|-- BendingMomentDrillingQuantity
 MeasurableQuantity <|-- BlockVelocityDrillingQuantity
 MeasurableQuantity <|-- CableDiameterDrillingQuantity
 MeasurableQuantity <|-- CapillaryPressureDrillingQuantity
@@ -98,6 +101,13 @@ MeasurableQuantity <|-- VolumetricFlowRateOfChangeDrillingQuantity
 MeasurableQuantity <|-- MomentOfInertiaDrillingQuantity
 MeasurableQuantity <|-- WeightOnBitDrillingQuantity
 MeasurableQuantity <|-- MomentOfAreaDrillingQuantity
+MeasurableQuantity <|-- TotalFlowAreaDrillingQuantity
+MeasurableQuantity <|-- MassDensityGradientPerPressureDrillingQuantity
+MeasurableQuantity <|-- MassDensityGradientPerPressureSquaredDrillingQuantity
+MeasurableQuantity <|-- MassDensityGradientPerPressureSquaredTemperatureDrillingQuantity
+MeasurableQuantity <|-- MassDensityGradientPerPressureTemperatureDrillingQuantity
+MeasurableQuantity <|-- SpecificVolumeDrillingQuantity
+MeasurableQuantity <|-- SpecificVolumeSquaredDrillingQuantity
 ```
 ## ConsistencyIndexRheologyQuantity <!-- NOUN -->
 - Display name: ConsistencyIndexRheology
@@ -665,6 +675,64 @@ graph LR
 	N0002[ShockRate_DataPoint] -->|IsOfMeasurableQuantity| N0004[ShockRateQuantity] 
 	N0000[ShockRate_Signal] -->|HasUnitOfMeasure| N0005[Hertz] 
 ```
+## PlaneAngleGeodesicQuantity <!-- NOUN -->
+- Display name: PlaneAngleGeodesic
+- Parent class: [MeasurableQuantity](./Quantities.md#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1.5696123057604772E-10
+- Description: 
+A plane angle is the angle formed between two intersecting lines or planes in a two-dimensional or three-dimensional space.
+The dimension of plane angle is:
+$$[{\theta}]$$.
+The SI unit for **plane angle** is: radian with the associated unit label $rad$
+The meaningful precision of a geodesic plane angle is typically: 1.5696123057604772E-10 rad
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:PlaneAngleGeodesic_Signal
+DrillingDataPoint:PlaneAngleGeodesic_DataPoint
+PlaneAngleGeodesic_DataPoint HasValue PlaneAngleGeodesic_Signal
+PlaneAngleGeodesic_DataPoint IsOfMeasurableQuantity PlaneAngleGeodesicQuantity
+PlaneAngleGeodesic_Signal HasUnitOfMeasure Radian
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PlaneAngleGeodesic_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[PlaneAngleGeodesic_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[PlaneAngleGeodesic_DataPoint] -->|HasValue| N0000[PlaneAngleGeodesic_Signal] 
+	N0002[PlaneAngleGeodesic_DataPoint] -->|IsOfMeasurableQuantity| N0004[PlaneAngleGeodesicQuantity] 
+	N0000[PlaneAngleGeodesic_Signal] -->|HasUnitOfMeasure| N0005[Radian] 
+```
+## PlaneAngleStandardQuantity <!-- NOUN -->
+- Display name: PlaneAngleStandard
+- Parent class: [MeasurableQuantity](./Quantities.md#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.00017453292519943296
+- Description: 
+A plane angle is the angle formed between two intersecting lines or planes in a two-dimensional or three-dimensional space.
+The dimension of plane angle is:
+$$[{\theta}]$$.
+The SI unit for **plane angle** is: radian with the associated unit label $rad$
+The meaningful precision of a standard plane angle is typically: 0.00017453292519943296 rad
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:PlaneAngleStandard_Signal
+DrillingDataPoint:PlaneAngleStandard_DataPoint
+PlaneAngleStandard_DataPoint HasValue PlaneAngleStandard_Signal
+PlaneAngleStandard_DataPoint IsOfMeasurableQuantity PlaneAngleStandardQuantity
+PlaneAngleStandard_Signal HasUnitOfMeasure Radian
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[PlaneAngleStandard_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[PlaneAngleStandard_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[PlaneAngleStandard_DataPoint] -->|HasValue| N0000[PlaneAngleStandard_Signal] 
+	N0002[PlaneAngleStandard_DataPoint] -->|IsOfMeasurableQuantity| N0004[PlaneAngleStandardQuantity] 
+	N0000[PlaneAngleStandard_Signal] -->|HasUnitOfMeasure| N0005[Radian] 
+```
 ## AccelerationDrillingQuantity <!-- NOUN -->
 - Display name: AccelerationDrilling
 - Parent class: [MeasurableQuantity](./Quantities.md#MeasurableQuantity)
@@ -900,6 +968,36 @@ graph LR
 	N0002[AxialVelocityDrilling_DataPoint] -->|HasValue| N0000[AxialVelocityDrilling_Signal] 
 	N0002[AxialVelocityDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004[AxialVelocityDrillingQuantity] 
 	N0000[AxialVelocityDrilling_Signal] -->|HasUnitOfMeasure| N0005[MetrePerSecond] 
+```
+## BendingMomentDrillingQuantity <!-- NOUN -->
+- Display name: BendingMomentDrilling
+- Parent class: [MeasurableQuantity](./Quantities.md#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 0.1
+- Description: 
+A bending moment is the internal mechanical moment at a given cross-section of a structure that causes it to bend, 
+equal to the resultant of forces acting at a distance from that section and producing curvature rather than rotation.
+The dimension of bending moment is:
+$$[L^{2}MT^{-2}]$$.
+The SI unit for **bending moment** is: newton metre with the associated unit label $N \cdot m$
+The meaningful precision of bending moment in the drilling context is typically: 0.1 N•m
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:BendingMomentDrilling_Signal
+DrillingDataPoint:BendingMomentDrilling_DataPoint
+BendingMomentDrilling_DataPoint HasValue BendingMomentDrilling_Signal
+BendingMomentDrilling_DataPoint IsOfMeasurableQuantity BendingMomentDrillingQuantity
+BendingMomentDrilling_Signal HasUnitOfMeasure NewtonMetre
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[BendingMomentDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[BendingMomentDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[BendingMomentDrilling_DataPoint] -->|HasValue| N0000[BendingMomentDrilling_Signal] 
+	N0002[BendingMomentDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004[BendingMomentDrillingQuantity] 
+	N0000[BendingMomentDrilling_Signal] -->|HasUnitOfMeasure| N0005[NewtonMetre] 
 ```
 ## BlockVelocityDrillingQuantity <!-- NOUN -->
 - Display name: BlockVelocityDrilling
@@ -2737,7 +2835,7 @@ graph LR
 The moment of inertia is is a measure of an object's resistance to changes in its rotation rate. It is the rotational analog of mass for linear motion. The moment of inertia depends on the mass distribution of an object and the axis of rotation.
 The dimension of moment of inertia is:
 $$[L^{2}M]$$.
-The SI unit for **moment of inertia** is: kilogram metre squared with the associated unit label $kg \cdot m^{2}}$
+The SI unit for **moment of inertia** is: kilogram metre squared with the associated unit label $kg \cdot m^{2}$
 The meaningful precision of the moment of inertia in the drilling context is typically: 1E-11 N
 - Definition set: MeasurableQuantityTypes
 - Examples:
@@ -2790,13 +2888,13 @@ graph LR
 - Display name: MomentOfAreaDrilling
 - Parent class: [MeasurableQuantity](./Quantities.md#MeasurableQuantity)
 - Specialization:
-  - MeaningfulPrecision = 1E-16
+  - MeaningfulPrecision = 1E-10
 - Description: 
 A moment of area is a geometrical property of an area which reflects how its points are distributed with regard to an arbitrary axis. It is used in the study of beam bending and deflection in structural engineering.
 The dimension of moment of area is:
 $$[L^{4}]$$.
 The SI unit for **moment of area** is: metres to the fourth power with the associated unit label $m^{4}$
-The meaningful precision of the moment of area in the drilling context is typically: 1E-16 N
+The meaningful precision of the moment of area in the drilling context is typically: 1E-10 N
 - Definition set: MeasurableQuantityTypes
 - Examples:
 ``` dwis
@@ -2814,5 +2912,208 @@ graph LR
 	N0002[MomentOfAreaDrilling_DataPoint] -->|HasValue| N0000[MomentOfAreaDrilling_Signal] 
 	N0002[MomentOfAreaDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004[MomentOfAreaDrillingQuantity] 
 	N0000[MomentOfAreaDrilling_Signal] -->|HasUnitOfMeasure| N0005[MetresToTheFourthPower] 
+```
+## TotalFlowAreaDrillingQuantity <!-- NOUN -->
+- Display name: TotalFlowAreaDrilling
+- Parent class: [MeasurableQuantity](./Quantities.md#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-06
+- Description: 
+Area is the measure of the extent of a surface or the size of a two-dimensional shape.
+The dimension of area is:
+$$[L^{2}]$$.
+The SI unit for **area** is: square metre with the associated unit label $m^{2}$
+The meaningful precision of total flow area in the drilling context is typically: 1E-06 m²
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:TotalFlowAreaDrilling_Signal
+DrillingDataPoint:TotalFlowAreaDrilling_DataPoint
+TotalFlowAreaDrilling_DataPoint HasValue TotalFlowAreaDrilling_Signal
+TotalFlowAreaDrilling_DataPoint IsOfMeasurableQuantity TotalFlowAreaDrillingQuantity
+TotalFlowAreaDrilling_Signal HasUnitOfMeasure SquareMetre
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[TotalFlowAreaDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[TotalFlowAreaDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[TotalFlowAreaDrilling_DataPoint] -->|HasValue| N0000[TotalFlowAreaDrilling_Signal] 
+	N0002[TotalFlowAreaDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004[TotalFlowAreaDrillingQuantity] 
+	N0000[TotalFlowAreaDrilling_Signal] -->|HasUnitOfMeasure| N0005[SquareMetre] 
+```
+## MassDensityGradientPerPressureDrillingQuantity <!-- NOUN -->
+- Display name: MassDensityGradientPerPressureDrilling
+- Parent class: [MeasurableQuantity](./Quantities.md#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-09
+- Description: 
+A mass density gradient per pressure is the first derivative of a mass density compared to pressure: $\frac{d\rho}{dp}$, where $\rho$ is a mass density and $p$ is pressure.
+The dimension of mass density gradient per pressure is:
+$$[T^{2}L^{-2}]$$.
+The SI unit for **mass density gradient per pressure** is: kilogram per cubic metre per pascal with the associated unit label $\frac{\frac{kg}{m^{3}}}{Pa}$
+The meaningful precision of mass density gradient per pressure in the drilling context is typically: 1E-09 kg/m³/m
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:MassDensityGradientPerPressureDrilling_Signal
+DrillingDataPoint:MassDensityGradientPerPressureDrilling_DataPoint
+MassDensityGradientPerPressureDrilling_DataPoint HasValue MassDensityGradientPerPressureDrilling_Signal
+MassDensityGradientPerPressureDrilling_DataPoint IsOfMeasurableQuantity MassDensityGradientPerPressureDrillingQuantity
+MassDensityGradientPerPressureDrilling_Signal HasUnitOfMeasure KilogramPerCubicMetrePerPascal
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MassDensityGradientPerPressureDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[MassDensityGradientPerPressureDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[MassDensityGradientPerPressureDrilling_DataPoint] -->|HasValue| N0000[MassDensityGradientPerPressureDrilling_Signal] 
+	N0002[MassDensityGradientPerPressureDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004[MassDensityGradientPerPressureDrillingQuantity] 
+	N0000[MassDensityGradientPerPressureDrilling_Signal] -->|HasUnitOfMeasure| N0005[KilogramPerCubicMetrePerPascal] 
+```
+## MassDensityGradientPerPressureSquaredDrillingQuantity <!-- NOUN -->
+- Display name: MassDensityGradientPerPressureSquaredDrilling
+- Parent class: [MeasurableQuantity](./Quantities.md#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-18
+- Description: 
+A mass density gradient per pressure squared is the second derivative of a mass density compared to pressure: $\frac{d^{2}\rho}{dp^{2}}$, where $\rho$ is a mass density and $p$ is pressure.
+The dimension of mass density gradient per pressure squared is:
+$$[T^{4}M^{-1}L^{-1}]$$.
+The SI unit for **mass density gradient per pressure squared** is: kilogram per cubic metre per pascal squared with the associated unit label $\frac{\frac{kg}{m^{3}}}{Pa^{2}}$
+The meaningful precision of mass density gradient per pressure squared in the drilling context is typically: 1E-18 kg/m³/m
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:MassDensityGradientPerPressureSquaredDrilling_Signal
+DrillingDataPoint:MassDensityGradientPerPressureSquaredDrilling_DataPoint
+MassDensityGradientPerPressureSquaredDrilling_DataPoint HasValue MassDensityGradientPerPressureSquaredDrilling_Signal
+MassDensityGradientPerPressureSquaredDrilling_DataPoint IsOfMeasurableQuantity MassDensityGradientPerPressureSquaredDrillingQuantity
+MassDensityGradientPerPressureSquaredDrilling_Signal HasUnitOfMeasure KilogramPerCubicMetrePerPascalSquared
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MassDensityGradientPerPressureSquaredDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[MassDensityGradientPerPressureSquaredDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[MassDensityGradientPerPressureSquaredDrilling_DataPoint] -->|HasValue| N0000[MassDensityGradientPerPressureSquaredDrilling_Signal] 
+	N0002[MassDensityGradientPerPressureSquaredDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004[MassDensityGradientPerPressureSquaredDrillingQuantity] 
+	N0000[MassDensityGradientPerPressureSquaredDrilling_Signal] -->|HasUnitOfMeasure| N0005[KilogramPerCubicMetrePerPascalSquared] 
+```
+## MassDensityGradientPerPressureSquaredTemperatureDrillingQuantity <!-- NOUN -->
+- Display name: MassDensityGradientPerPressureSquaredTemperatureDrilling
+- Parent class: [MeasurableQuantity](./Quantities.md#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-20
+- Description: 
+A mass density gradient per pressure squared is the second derivative of a mass density compared to pressure: $\frac{d^{2}\rho}{dp^{2}}$, where $\rho$ is a mass density and $p$ is pressure.
+The dimension of mass density gradient per pressure squared is:
+$$[T^{4}L^{-1}M^{-1}K^{-1}]$$.
+The SI unit for **mass density gradient per pressure squared** is: kilogram per cubic metre per pascal squared kelvin with the associated unit label $\frac{\frac{kg}{m^{3}}}{Pa^{2} \cdot K}$
+The meaningful precision of mass density gradient per pressure squared and temperature in the drilling context is typically: 1E-20 kg/m³/m
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:MassDensityGradientPerPressureSquaredTemperatureDrilling_Signal
+DrillingDataPoint:MassDensityGradientPerPressureSquaredTemperatureDrilling_DataPoint
+MassDensityGradientPerPressureSquaredTemperatureDrilling_DataPoint HasValue MassDensityGradientPerPressureSquaredTemperatureDrilling_Signal
+MassDensityGradientPerPressureSquaredTemperatureDrilling_DataPoint IsOfMeasurableQuantity MassDensityGradientPerPressureSquaredTemperatureDrillingQuantity
+MassDensityGradientPerPressureSquaredTemperatureDrilling_Signal HasUnitOfMeasure KilogramPerCubicMetrePerPascalSquaredKelvin
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MassDensityGradientPerPressureSquaredTemperatureDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[MassDensityGradientPerPressureSquaredTemperatureDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[MassDensityGradientPerPressureSquaredTemperatureDrilling_DataPoint] -->|HasValue| N0000[MassDensityGradientPerPressureSquaredTemperatureDrilling_Signal] 
+	N0002[MassDensityGradientPerPressureSquaredTemperatureDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004[MassDensityGradientPerPressureSquaredTemperatureDrillingQuantity] 
+	N0000[MassDensityGradientPerPressureSquaredTemperatureDrilling_Signal] -->|HasUnitOfMeasure| N0005[KilogramPerCubicMetrePerPascalSquaredKelvin] 
+```
+## MassDensityGradientPerPressureTemperatureDrillingQuantity <!-- NOUN -->
+- Display name: MassDensityGradientPerPressureTemperatureDrilling
+- Parent class: [MeasurableQuantity](./Quantities.md#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-11
+- Description: 
+A mass density gradient per pressure and temperature is the second derivative of a mass density compared to pressure and temperature: $\frac{d^{2}\rho}{dpdT}$, where $\rho$ is a mass density, $p$ is pressure and $T$ is the temperature.
+The dimension of mass density gradient per pressure and temperature is:
+$$[T^{2}K^{-1}L^{-2}]$$.
+The SI unit for **mass density gradient per pressure and temperature** is: kilogram per cubic metre per pascal kelvin with the associated unit label $\frac{\frac{kg}{m^{3}}}{Pa \cdot K}$
+The meaningful precision of mass density gradient per pressure and temperature in the drilling context is typically: 1E-11 kg/m³/m
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:MassDensityGradientPerPressureTemperatureDrilling_Signal
+DrillingDataPoint:MassDensityGradientPerPressureTemperatureDrilling_DataPoint
+MassDensityGradientPerPressureTemperatureDrilling_DataPoint HasValue MassDensityGradientPerPressureTemperatureDrilling_Signal
+MassDensityGradientPerPressureTemperatureDrilling_DataPoint IsOfMeasurableQuantity MassDensityGradientPerPressureTemperatureDrillingQuantity
+MassDensityGradientPerPressureTemperatureDrilling_Signal HasUnitOfMeasure KilogramPerCubicMetrePerPascalKelvin
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MassDensityGradientPerPressureTemperatureDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[MassDensityGradientPerPressureTemperatureDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[MassDensityGradientPerPressureTemperatureDrilling_DataPoint] -->|HasValue| N0000[MassDensityGradientPerPressureTemperatureDrilling_Signal] 
+	N0002[MassDensityGradientPerPressureTemperatureDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004[MassDensityGradientPerPressureTemperatureDrillingQuantity] 
+	N0000[MassDensityGradientPerPressureTemperatureDrilling_Signal] -->|HasUnitOfMeasure| N0005[KilogramPerCubicMetrePerPascalKelvin] 
+```
+## SpecificVolumeDrillingQuantity <!-- NOUN -->
+- Display name: SpecificVolumeDrilling
+- Parent class: [MeasurableQuantity](./Quantities.md#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-06
+- Description: 
+Specific volume is the volume occupied by a unit mass of a substance, equal to the reciprocal of its density.
+The dimension of specific volume is:
+$$[L^{3}M^{-1}]$$.
+The SI unit for **specific volume** is: cubic metre per kilogram with the associated unit label $\frac{m^{3}}{kg}$
+The meaningful precision of specific volume in the drilling context is typically: 1E-06 kg/m³
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:SpecificVolumeDrilling_Signal
+DrillingDataPoint:SpecificVolumeDrilling_DataPoint
+SpecificVolumeDrilling_DataPoint HasValue SpecificVolumeDrilling_Signal
+SpecificVolumeDrilling_DataPoint IsOfMeasurableQuantity SpecificVolumeDrillingQuantity
+SpecificVolumeDrilling_Signal HasUnitOfMeasure CubicMetrePerKilogram
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificVolumeDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[SpecificVolumeDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[SpecificVolumeDrilling_DataPoint] -->|HasValue| N0000[SpecificVolumeDrilling_Signal] 
+	N0002[SpecificVolumeDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004[SpecificVolumeDrillingQuantity] 
+	N0000[SpecificVolumeDrilling_Signal] -->|HasUnitOfMeasure| N0005[CubicMetrePerKilogram] 
+```
+## SpecificVolumeSquaredDrillingQuantity <!-- NOUN -->
+- Display name: SpecificVolumeSquaredDrilling
+- Parent class: [MeasurableQuantity](./Quantities.md#MeasurableQuantity)
+- Specialization:
+  - MeaningfulPrecision = 1E-12
+- Description: 
+Specific volume squared is the square of the specific volume.
+The dimension of specific volume squared is:
+$$[L^{6}M^{-2}]$$.
+The SI unit for **specific volume squared** is: cubic metre squared per kilogram squared with the associated unit label $\frac{m^{6}}{kg^{2}}$
+The meaningful precision of specific volume squared in the drilling context is typically: 1E-12 kg/m³
+- Definition set: MeasurableQuantityTypes
+- Examples:
+``` dwis
+DrillingSignal:SpecificVolumeSquaredDrilling_Signal
+DrillingDataPoint:SpecificVolumeSquaredDrilling_DataPoint
+SpecificVolumeSquaredDrilling_DataPoint HasValue SpecificVolumeSquaredDrilling_Signal
+SpecificVolumeSquaredDrilling_DataPoint IsOfMeasurableQuantity SpecificVolumeSquaredDrillingQuantity
+SpecificVolumeSquaredDrilling_Signal HasUnitOfMeasure CubicMetreSquaredPerKilogramSquared
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificVolumeSquaredDrilling_Signal] -->|BelongsToClass| N0001(DrillingSignal) 
+	N0002[SpecificVolumeSquaredDrilling_DataPoint] -->|BelongsToClass| N0003(DrillingDataPoint) 
+	N0002[SpecificVolumeSquaredDrilling_DataPoint] -->|HasValue| N0000[SpecificVolumeSquaredDrilling_Signal] 
+	N0002[SpecificVolumeSquaredDrilling_DataPoint] -->|IsOfMeasurableQuantity| N0004[SpecificVolumeSquaredDrillingQuantity] 
+	N0000[SpecificVolumeSquaredDrilling_Signal] -->|HasUnitOfMeasure| N0005[CubicMetreSquaredPerKilogramSquared] 
 ```
 # Verbs

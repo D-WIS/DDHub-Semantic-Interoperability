@@ -11,6 +11,7 @@ Quantity <|-- AngleMagneticFluxDensityQuantity
 Quantity <|-- AngularAccelerationQuantity
 Quantity <|-- AngularVelocityQuantity
 Quantity <|-- AreaQuantity
+Quantity <|-- BendingMomentQuantity
 Quantity <|-- CompressibilityQuantity
 Quantity <|-- CurvatureQuantity
 Quantity <|-- DimensionlessQuantity
@@ -69,6 +70,12 @@ Quantity <|-- PressureRateOfChangeQuantity
 Quantity <|-- TorqueRateOfChangeQuantity
 Quantity <|-- MomentOfAreaQuantity
 Quantity <|-- MomentOfInertiaQuantity
+Quantity <|-- SpecificVolumeQuantity
+Quantity <|-- SpecificVolumeSquaredQuantity
+Quantity <|-- MassDensityGradientPerPressureQuantity
+Quantity <|-- MassDensityGradientPerPressureSquaredQuantity
+Quantity <|-- MassDensityGradientPerPressureTemperatureQuantity
+Quantity <|-- MassDensityGradientPerPressureSquaredTemperatureQuantity
 Quantity <|-- HydraulicConductivityQuantity
 Quantity <|-- RotationalFrequencyRateOfChangeQuantity
 Quantity <|-- TensionQuantity
@@ -1476,6 +1483,137 @@ graph LR
 	N0041[SquareMile] -->|ConversionFactorB| N0042(("3.861021585424459E-07")) 
 	N0041[SquareMile] -->|Symbol| N0043(("mi²")) 
 	N0041[SquareMile] -->|IsUnitForQuantity| N0000[AreaQuantity] 
+```
+## BendingMomentQuantity <!-- NOUN -->
+- Display name: BendingMoment
+- Parent class: [Quantity](./Quantities.md#Quantity)
+- Specialization:
+  - L = 2
+  - M = 1
+  - T = -2
+- Description: 
+A bending moment is the internal mechanical moment at a given cross-section of a structure that causes it to bend, 
+equal to the resultant of forces acting at a distance from that section and producing curvature rather than rotation.
+The dimension of bending moment is:
+$$[L^{2}MT^{-2}]$$.
+The SI unit for **bending moment** is: newton metre with the associated unit label $N \cdot m$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:BendingMomentQuantity
+BendingMomentQuantity.L = 2
+BendingMomentQuantity.M = 1
+BendingMomentQuantity.T = -2
+Unit:NewtonMetre
+NewtonMetre.ConversionFactorA = 0
+NewtonMetre.ConversionFactorB = 1
+NewtonMetre.Symbol = "N•m"
+NewtonMetre IsUnitForQuantity BendingMomentQuantity
+BendingMomentQuantity HasSIUnit NewtonMetre
+Unit:DecanewtonMetre
+DecanewtonMetre.ConversionFactorA = 0
+DecanewtonMetre.ConversionFactorB = 0.1
+DecanewtonMetre.Symbol = "daN•m"
+DecanewtonMetre IsUnitForQuantity BendingMomentQuantity
+Unit:KilogramForceMetre
+KilogramForceMetre.ConversionFactorA = 0
+KilogramForceMetre.ConversionFactorB = 0.10197162129779283
+KilogramForceMetre.Symbol = "kgf•m"
+KilogramForceMetre IsUnitForQuantity BendingMomentQuantity
+Unit:KilonewtonMetre
+KilonewtonMetre.ConversionFactorA = 0
+KilonewtonMetre.ConversionFactorB = 0.001
+KilonewtonMetre.Symbol = "kN•m"
+KilonewtonMetre IsUnitForQuantity BendingMomentQuantity
+Unit:FootPound
+FootPound.ConversionFactorA = 0
+FootPound.ConversionFactorB = 0.7375621492772655
+FootPound.Symbol = "ft•lbf"
+FootPound IsUnitForQuantity BendingMomentQuantity
+Unit:KilofootPound
+KilofootPound.ConversionFactorA = 0
+KilofootPound.ConversionFactorB = 0.0007375621492772656
+KilofootPound.Symbol = "kft•lbf"
+KilofootPound IsUnitForQuantity BendingMomentQuantity
+Unit:NewtonDecimetre
+NewtonDecimetre.ConversionFactorA = 0
+NewtonDecimetre.ConversionFactorB = 10
+NewtonDecimetre.Symbol = "N•dm"
+NewtonDecimetre IsUnitForQuantity BendingMomentQuantity
+Unit:NewtonCentimetre
+NewtonCentimetre.ConversionFactorA = 0
+NewtonCentimetre.ConversionFactorB = 100
+NewtonCentimetre.Symbol = "N•cm"
+NewtonCentimetre IsUnitForQuantity BendingMomentQuantity
+Unit:NewtonMillimetre
+NewtonMillimetre.ConversionFactorA = 0
+NewtonMillimetre.ConversionFactorB = 1000
+NewtonMillimetre.Symbol = "N•mm"
+NewtonMillimetre IsUnitForQuantity BendingMomentQuantity
+Unit:InchPound
+InchPound.ConversionFactorA = 0
+InchPound.ConversionFactorB = 8.850745791327185
+InchPound.Symbol = "in•lbf"
+InchPound IsUnitForQuantity BendingMomentQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[BendingMomentQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[BendingMomentQuantity] -->|L| N0002(("2")) 
+	N0000[BendingMomentQuantity] -->|M| N0003(("1")) 
+	N0000[BendingMomentQuantity] -->|T| N0004(("-2")) 
+	N0005[NewtonMetre] -->|BelongsToClass| N0006(Unit) 
+	N0005[NewtonMetre] -->|ConversionFactorA| N0007(("0")) 
+	N0005[NewtonMetre] -->|ConversionFactorB| N0003(("1")) 
+	N0005[NewtonMetre] -->|Symbol| N0008(("N•m")) 
+	N0005[NewtonMetre] -->|IsUnitForQuantity| N0000[BendingMomentQuantity] 
+	N0000[BendingMomentQuantity] -->|HasSIUnit| N0005[NewtonMetre] 
+	N0009[DecanewtonMetre] -->|BelongsToClass| N0006(Unit) 
+	N0009[DecanewtonMetre] -->|ConversionFactorA| N0007(("0")) 
+	N0009[DecanewtonMetre] -->|ConversionFactorB| N0010(("0.1")) 
+	N0009[DecanewtonMetre] -->|Symbol| N0011(("daN•m")) 
+	N0009[DecanewtonMetre] -->|IsUnitForQuantity| N0000[BendingMomentQuantity] 
+	N0012[KilogramForceMetre] -->|BelongsToClass| N0006(Unit) 
+	N0012[KilogramForceMetre] -->|ConversionFactorA| N0007(("0")) 
+	N0012[KilogramForceMetre] -->|ConversionFactorB| N0013(("0.10197162129779283")) 
+	N0012[KilogramForceMetre] -->|Symbol| N0014(("kgf•m")) 
+	N0012[KilogramForceMetre] -->|IsUnitForQuantity| N0000[BendingMomentQuantity] 
+	N0015[KilonewtonMetre] -->|BelongsToClass| N0006(Unit) 
+	N0015[KilonewtonMetre] -->|ConversionFactorA| N0007(("0")) 
+	N0015[KilonewtonMetre] -->|ConversionFactorB| N0016(("0.001")) 
+	N0015[KilonewtonMetre] -->|Symbol| N0017(("kN•m")) 
+	N0015[KilonewtonMetre] -->|IsUnitForQuantity| N0000[BendingMomentQuantity] 
+	N0018[FootPound] -->|BelongsToClass| N0006(Unit) 
+	N0018[FootPound] -->|ConversionFactorA| N0007(("0")) 
+	N0018[FootPound] -->|ConversionFactorB| N0019(("0.7375621492772655")) 
+	N0018[FootPound] -->|Symbol| N0020(("ft•lbf")) 
+	N0018[FootPound] -->|IsUnitForQuantity| N0000[BendingMomentQuantity] 
+	N0021[KilofootPound] -->|BelongsToClass| N0006(Unit) 
+	N0021[KilofootPound] -->|ConversionFactorA| N0007(("0")) 
+	N0021[KilofootPound] -->|ConversionFactorB| N0022(("0.0007375621492772656")) 
+	N0021[KilofootPound] -->|Symbol| N0023(("kft•lbf")) 
+	N0021[KilofootPound] -->|IsUnitForQuantity| N0000[BendingMomentQuantity] 
+	N0024[NewtonDecimetre] -->|BelongsToClass| N0006(Unit) 
+	N0024[NewtonDecimetre] -->|ConversionFactorA| N0007(("0")) 
+	N0024[NewtonDecimetre] -->|ConversionFactorB| N0025(("10")) 
+	N0024[NewtonDecimetre] -->|Symbol| N0026(("N•dm")) 
+	N0024[NewtonDecimetre] -->|IsUnitForQuantity| N0000[BendingMomentQuantity] 
+	N0027[NewtonCentimetre] -->|BelongsToClass| N0006(Unit) 
+	N0027[NewtonCentimetre] -->|ConversionFactorA| N0007(("0")) 
+	N0027[NewtonCentimetre] -->|ConversionFactorB| N0028(("100")) 
+	N0027[NewtonCentimetre] -->|Symbol| N0029(("N•cm")) 
+	N0027[NewtonCentimetre] -->|IsUnitForQuantity| N0000[BendingMomentQuantity] 
+	N0030[NewtonMillimetre] -->|BelongsToClass| N0006(Unit) 
+	N0030[NewtonMillimetre] -->|ConversionFactorA| N0007(("0")) 
+	N0030[NewtonMillimetre] -->|ConversionFactorB| N0031(("1000")) 
+	N0030[NewtonMillimetre] -->|Symbol| N0032(("N•mm")) 
+	N0030[NewtonMillimetre] -->|IsUnitForQuantity| N0000[BendingMomentQuantity] 
+	N0033[InchPound] -->|BelongsToClass| N0006(Unit) 
+	N0033[InchPound] -->|ConversionFactorA| N0007(("0")) 
+	N0033[InchPound] -->|ConversionFactorB| N0034(("8.850745791327185")) 
+	N0033[InchPound] -->|Symbol| N0035(("in•lbf")) 
+	N0033[InchPound] -->|IsUnitForQuantity| N0000[BendingMomentQuantity] 
 ```
 ## CompressibilityQuantity <!-- NOUN -->
 - Display name: Compressibility
@@ -3725,7 +3863,7 @@ GramPerCubicMetre.Symbol = "g/m³"
 GramPerCubicMetre IsUnitForQuantity MassDensityQuantity
 Unit:SpecificGravity
 SpecificGravity.ConversionFactorA = 0
-SpecificGravity.ConversionFactorB = 999.972
+SpecificGravity.ConversionFactorB = 0.001000028000784022
 SpecificGravity.Symbol = "s.g."
 SpecificGravity IsUnitForQuantity MassDensityQuantity
 Unit:GramPerCubicCentimetre
@@ -3778,7 +3916,7 @@ graph LR
 	N0008[GramPerCubicMetre] -->|IsUnitForQuantity| N0000[MassDensityQuantity] 
 	N0011[SpecificGravity] -->|BelongsToClass| N0005(Unit) 
 	N0011[SpecificGravity] -->|ConversionFactorA| N0006(("0")) 
-	N0011[SpecificGravity] -->|ConversionFactorB| N0012(("999.972")) 
+	N0011[SpecificGravity] -->|ConversionFactorB| N0012(("0.001000028000784022")) 
 	N0011[SpecificGravity] -->|Symbol| N0013(("s.g.")) 
 	N0011[SpecificGravity] -->|IsUnitForQuantity| N0000[MassDensityQuantity] 
 	N0014[GramPerCubicCentimetre] -->|BelongsToClass| N0005(Unit) 
@@ -11964,7 +12102,7 @@ graph LR
 The moment of inertia is is a measure of an object's resistance to changes in its rotation rate. It is the rotational analog of mass for linear motion. The moment of inertia depends on the mass distribution of an object and the axis of rotation.
 The dimension of moment of inertia is:
 $$[L^{2}M]$$.
-The SI unit for **moment of inertia** is: kilogram metre squared with the associated unit label $kg \cdot m^{2}}$
+The SI unit for **moment of inertia** is: kilogram metre squared with the associated unit label $kg \cdot m^{2}$
 - Definition set: QuantityTypes
 - Examples:
 ``` dwis
@@ -12026,6 +12164,3240 @@ graph LR
 	N0014[PoundInchSquared] -->|Symbol| N0016(("lb.in²")) 
 	N0014[PoundInchSquared] -->|IsUnitForQuantity| N0000[MomentOfInertiaQuantity] 
 	N0000[MomentOfInertiaQuantity] -->|HasSIUnit| N0014[PoundInchSquared] 
+```
+## SpecificVolumeQuantity <!-- NOUN -->
+- Display name: SpecificVolume
+- Parent class: [Quantity](./Quantities.md#Quantity)
+- Specialization:
+  - L = 3
+  - M = -1
+- Description: 
+Specific volume is the volume occupied by a unit mass of a substance, equal to the reciprocal of its density.
+The dimension of specific volume is:
+$$[L^{3}M^{-1}]$$.
+The SI unit for **specific volume** is: cubic metre per kilogram with the associated unit label $\frac{m^{3}}{kg}$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:SpecificVolumeQuantity
+SpecificVolumeQuantity.L = 3
+SpecificVolumeQuantity.M = -1
+Unit:CubicMetrePerKilogram
+CubicMetrePerKilogram.ConversionFactorA = 0
+CubicMetrePerKilogram.ConversionFactorB = 1
+CubicMetrePerKilogram.Symbol = "m³/kg"
+CubicMetrePerKilogram IsUnitForQuantity SpecificVolumeQuantity
+SpecificVolumeQuantity HasSIUnit CubicMetrePerKilogram
+Unit:CubicMetrePerGram
+CubicMetrePerGram.ConversionFactorA = 0
+CubicMetrePerGram.ConversionFactorB = 0.001
+CubicMetrePerGram.Symbol = "m³/g"
+CubicMetrePerGram IsUnitForQuantity SpecificVolumeQuantity
+Unit:CubicDecimetrePerGram
+CubicDecimetrePerGram.ConversionFactorA = 0
+CubicDecimetrePerGram.ConversionFactorB = 0.9999999999999998
+CubicDecimetrePerGram.Symbol = "dm³/g"
+CubicDecimetrePerGram IsUnitForQuantity SpecificVolumeQuantity
+Unit:LitrePerGram
+LitrePerGram.ConversionFactorA = 0
+LitrePerGram.ConversionFactorB = 1
+LitrePerGram.Symbol = "L/g"
+LitrePerGram IsUnitForQuantity SpecificVolumeQuantity
+Unit:DecilitrePerGram
+DecilitrePerGram.ConversionFactorA = 0
+DecilitrePerGram.ConversionFactorB = 10
+DecilitrePerGram.Symbol = "dL/g"
+DecilitrePerGram IsUnitForQuantity SpecificVolumeQuantity
+Unit:CentilitrePerGram
+CentilitrePerGram.ConversionFactorA = 0
+CentilitrePerGram.ConversionFactorB = 100
+CentilitrePerGram.Symbol = "cL/g"
+CentilitrePerGram IsUnitForQuantity SpecificVolumeQuantity
+Unit:MillilitrePerGram
+MillilitrePerGram.ConversionFactorA = 0
+MillilitrePerGram.ConversionFactorB = 1000.0000000000001
+MillilitrePerGram.Symbol = "mL/g"
+MillilitrePerGram IsUnitForQuantity SpecificVolumeQuantity
+Unit:CubicCentimetrePerGram
+CubicCentimetrePerGram.ConversionFactorA = 0
+CubicCentimetrePerGram.ConversionFactorB = 999.9999999999999
+CubicCentimetrePerGram.Symbol = "cm³/g"
+CubicCentimetrePerGram IsUnitForQuantity SpecificVolumeQuantity
+Unit:CubicMillimetrePerGram
+CubicMillimetrePerGram.ConversionFactorA = 0
+CubicMillimetrePerGram.ConversionFactorB = 1000000
+CubicMillimetrePerGram.Symbol = "mm³/g"
+CubicMillimetrePerGram IsUnitForQuantity SpecificVolumeQuantity
+Unit:LitrePerKilogram
+LitrePerKilogram.ConversionFactorA = 0
+LitrePerKilogram.ConversionFactorB = 1000
+LitrePerKilogram.Symbol = "L/kg"
+LitrePerKilogram IsUnitForQuantity SpecificVolumeQuantity
+Unit:DecilitrePerKilogram
+DecilitrePerKilogram.ConversionFactorA = 0
+DecilitrePerKilogram.ConversionFactorB = 10000
+DecilitrePerKilogram.Symbol = "dL/kg"
+DecilitrePerKilogram IsUnitForQuantity SpecificVolumeQuantity
+Unit:CentilitrePerKilogram
+CentilitrePerKilogram.ConversionFactorA = 0
+CentilitrePerKilogram.ConversionFactorB = 99999.99999999999
+CentilitrePerKilogram.Symbol = "cL/kg"
+CentilitrePerKilogram IsUnitForQuantity SpecificVolumeQuantity
+Unit:MillilitrePerKilogram
+MillilitrePerKilogram.ConversionFactorA = 0
+MillilitrePerKilogram.ConversionFactorB = 1000000
+MillilitrePerKilogram.Symbol = "mL/kg"
+MillilitrePerKilogram IsUnitForQuantity SpecificVolumeQuantity
+Unit:CubicCentimetrePerKilogram
+CubicCentimetrePerKilogram.ConversionFactorA = 0
+CubicCentimetrePerKilogram.ConversionFactorB = 999999.9999999999
+CubicCentimetrePerKilogram.Symbol = "cm³/kg"
+CubicCentimetrePerKilogram IsUnitForQuantity SpecificVolumeQuantity
+Unit:CubicMillimetrePerKilogram
+CubicMillimetrePerKilogram.ConversionFactorA = 0
+CubicMillimetrePerKilogram.ConversionFactorB = 999999999.9999999
+CubicMillimetrePerKilogram.Symbol = "mm³/kg"
+CubicMillimetrePerKilogram IsUnitForQuantity SpecificVolumeQuantity
+Unit:CubicYardPerPound
+CubicYardPerPound.ConversionFactorA = 0
+CubicYardPerPound.ConversionFactorB = 0.5932764212577832
+CubicYardPerPound.Symbol = "yd³/lb"
+CubicYardPerPound IsUnitForQuantity SpecificVolumeQuantity
+Unit:CubicFeetPerPound
+CubicFeetPerPound.ConversionFactorA = 0
+CubicFeetPerPound.ConversionFactorB = 16.018463373960145
+CubicFeetPerPound.Symbol = "ft³/lb"
+CubicFeetPerPound IsUnitForQuantity SpecificVolumeQuantity
+Unit:CubicInchesPerPound
+CubicInchesPerPound.ConversionFactorA = 0
+CubicInchesPerPound.ConversionFactorB = 27679.904710203125
+CubicInchesPerPound.Symbol = "in³/lb"
+CubicInchesPerPound IsUnitForQuantity SpecificVolumeQuantity
+Unit:CubicYardPerOunce
+CubicYardPerOunce.ConversionFactorA = 0
+CubicYardPerOunce.ConversionFactorB = 0.03707977632861145
+CubicYardPerOunce.Symbol = "yd³/oz"
+CubicYardPerOunce IsUnitForQuantity SpecificVolumeQuantity
+Unit:CubicFeetPerOunce
+CubicFeetPerOunce.ConversionFactorA = 0
+CubicFeetPerOunce.ConversionFactorB = 1.001153960872509
+CubicFeetPerOunce.Symbol = "ft³/oz"
+CubicFeetPerOunce IsUnitForQuantity SpecificVolumeQuantity
+Unit:CubicInchesPerOunce
+CubicInchesPerOunce.ConversionFactorA = 0
+CubicInchesPerOunce.ConversionFactorB = 1729.9940443876953
+CubicInchesPerOunce.Symbol = "in³/oz"
+CubicInchesPerOunce IsUnitForQuantity SpecificVolumeQuantity
+Unit:GallonUkPerOunce
+GallonUkPerOunce.ConversionFactorA = 0
+GallonUkPerOunce.ConversionFactorB = 6.236023291443856
+GallonUkPerOunce.Symbol = "galUK/oz"
+GallonUkPerOunce IsUnitForQuantity SpecificVolumeQuantity
+Unit:GallonUsPerOunce
+GallonUsPerOunce.ConversionFactorA = 0
+GallonUsPerOunce.ConversionFactorB = 7.48915170730604
+GallonUsPerOunce.Symbol = "galUS/oz"
+GallonUsPerOunce IsUnitForQuantity SpecificVolumeQuantity
+Unit:GallonUkPerPound
+GallonUkPerPound.ConversionFactorA = 0
+GallonUkPerPound.ConversionFactorB = 99.7763726631017
+GallonUkPerPound.Symbol = "galUK/lb"
+GallonUkPerPound IsUnitForQuantity SpecificVolumeQuantity
+Unit:GallonUsPerPound
+GallonUsPerPound.ConversionFactorA = 0
+GallonUsPerPound.ConversionFactorB = 119.82642731689664
+GallonUsPerPound.Symbol = "galUS/lb"
+GallonUsPerPound IsUnitForQuantity SpecificVolumeQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificVolumeQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[SpecificVolumeQuantity] -->|L| N0002(("3")) 
+	N0000[SpecificVolumeQuantity] -->|M| N0003(("-1")) 
+	N0004[CubicMetrePerKilogram] -->|BelongsToClass| N0005(Unit) 
+	N0004[CubicMetrePerKilogram] -->|ConversionFactorA| N0006(("0")) 
+	N0004[CubicMetrePerKilogram] -->|ConversionFactorB| N0007(("1")) 
+	N0004[CubicMetrePerKilogram] -->|Symbol| N0008(("m³/kg")) 
+	N0004[CubicMetrePerKilogram] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+	N0000[SpecificVolumeQuantity] -->|HasSIUnit| N0004[CubicMetrePerKilogram] 
+	N0009[CubicMetrePerGram] -->|BelongsToClass| N0005(Unit) 
+	N0009[CubicMetrePerGram] -->|ConversionFactorA| N0006(("0")) 
+	N0009[CubicMetrePerGram] -->|ConversionFactorB| N0010(("0.001")) 
+	N0009[CubicMetrePerGram] -->|Symbol| N0011(("m³/g")) 
+	N0009[CubicMetrePerGram] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+	N0012[CubicDecimetrePerGram] -->|BelongsToClass| N0005(Unit) 
+	N0012[CubicDecimetrePerGram] -->|ConversionFactorA| N0006(("0")) 
+	N0012[CubicDecimetrePerGram] -->|ConversionFactorB| N0013(("0.9999999999999998")) 
+	N0012[CubicDecimetrePerGram] -->|Symbol| N0014(("dm³/g")) 
+	N0012[CubicDecimetrePerGram] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+	N0015[LitrePerGram] -->|BelongsToClass| N0005(Unit) 
+	N0015[LitrePerGram] -->|ConversionFactorA| N0006(("0")) 
+	N0015[LitrePerGram] -->|ConversionFactorB| N0007(("1")) 
+	N0015[LitrePerGram] -->|Symbol| N0016(("L/g")) 
+	N0015[LitrePerGram] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+	N0017[DecilitrePerGram] -->|BelongsToClass| N0005(Unit) 
+	N0017[DecilitrePerGram] -->|ConversionFactorA| N0006(("0")) 
+	N0017[DecilitrePerGram] -->|ConversionFactorB| N0018(("10")) 
+	N0017[DecilitrePerGram] -->|Symbol| N0019(("dL/g")) 
+	N0017[DecilitrePerGram] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+	N0020[CentilitrePerGram] -->|BelongsToClass| N0005(Unit) 
+	N0020[CentilitrePerGram] -->|ConversionFactorA| N0006(("0")) 
+	N0020[CentilitrePerGram] -->|ConversionFactorB| N0021(("100")) 
+	N0020[CentilitrePerGram] -->|Symbol| N0022(("cL/g")) 
+	N0020[CentilitrePerGram] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+	N0023[MillilitrePerGram] -->|BelongsToClass| N0005(Unit) 
+	N0023[MillilitrePerGram] -->|ConversionFactorA| N0006(("0")) 
+	N0023[MillilitrePerGram] -->|ConversionFactorB| N0024(("1000.0000000000001")) 
+	N0023[MillilitrePerGram] -->|Symbol| N0025(("mL/g")) 
+	N0023[MillilitrePerGram] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+	N0026[CubicCentimetrePerGram] -->|BelongsToClass| N0005(Unit) 
+	N0026[CubicCentimetrePerGram] -->|ConversionFactorA| N0006(("0")) 
+	N0026[CubicCentimetrePerGram] -->|ConversionFactorB| N0027(("999.9999999999999")) 
+	N0026[CubicCentimetrePerGram] -->|Symbol| N0028(("cm³/g")) 
+	N0026[CubicCentimetrePerGram] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+	N0029[CubicMillimetrePerGram] -->|BelongsToClass| N0005(Unit) 
+	N0029[CubicMillimetrePerGram] -->|ConversionFactorA| N0006(("0")) 
+	N0029[CubicMillimetrePerGram] -->|ConversionFactorB| N0030(("1000000")) 
+	N0029[CubicMillimetrePerGram] -->|Symbol| N0031(("mm³/g")) 
+	N0029[CubicMillimetrePerGram] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+	N0032[LitrePerKilogram] -->|BelongsToClass| N0005(Unit) 
+	N0032[LitrePerKilogram] -->|ConversionFactorA| N0006(("0")) 
+	N0032[LitrePerKilogram] -->|ConversionFactorB| N0033(("1000")) 
+	N0032[LitrePerKilogram] -->|Symbol| N0034(("L/kg")) 
+	N0032[LitrePerKilogram] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+	N0035[DecilitrePerKilogram] -->|BelongsToClass| N0005(Unit) 
+	N0035[DecilitrePerKilogram] -->|ConversionFactorA| N0006(("0")) 
+	N0035[DecilitrePerKilogram] -->|ConversionFactorB| N0036(("10000")) 
+	N0035[DecilitrePerKilogram] -->|Symbol| N0037(("dL/kg")) 
+	N0035[DecilitrePerKilogram] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+	N0038[CentilitrePerKilogram] -->|BelongsToClass| N0005(Unit) 
+	N0038[CentilitrePerKilogram] -->|ConversionFactorA| N0006(("0")) 
+	N0038[CentilitrePerKilogram] -->|ConversionFactorB| N0039(("99999.99999999999")) 
+	N0038[CentilitrePerKilogram] -->|Symbol| N0040(("cL/kg")) 
+	N0038[CentilitrePerKilogram] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+	N0041[MillilitrePerKilogram] -->|BelongsToClass| N0005(Unit) 
+	N0041[MillilitrePerKilogram] -->|ConversionFactorA| N0006(("0")) 
+	N0041[MillilitrePerKilogram] -->|ConversionFactorB| N0030(("1000000")) 
+	N0041[MillilitrePerKilogram] -->|Symbol| N0042(("mL/kg")) 
+	N0041[MillilitrePerKilogram] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+	N0043[CubicCentimetrePerKilogram] -->|BelongsToClass| N0005(Unit) 
+	N0043[CubicCentimetrePerKilogram] -->|ConversionFactorA| N0006(("0")) 
+	N0043[CubicCentimetrePerKilogram] -->|ConversionFactorB| N0044(("999999.9999999999")) 
+	N0043[CubicCentimetrePerKilogram] -->|Symbol| N0045(("cm³/kg")) 
+	N0043[CubicCentimetrePerKilogram] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+	N0046[CubicMillimetrePerKilogram] -->|BelongsToClass| N0005(Unit) 
+	N0046[CubicMillimetrePerKilogram] -->|ConversionFactorA| N0006(("0")) 
+	N0046[CubicMillimetrePerKilogram] -->|ConversionFactorB| N0047(("999999999.9999999")) 
+	N0046[CubicMillimetrePerKilogram] -->|Symbol| N0048(("mm³/kg")) 
+	N0046[CubicMillimetrePerKilogram] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+	N0049[CubicYardPerPound] -->|BelongsToClass| N0005(Unit) 
+	N0049[CubicYardPerPound] -->|ConversionFactorA| N0006(("0")) 
+	N0049[CubicYardPerPound] -->|ConversionFactorB| N0050(("0.5932764212577832")) 
+	N0049[CubicYardPerPound] -->|Symbol| N0051(("yd³/lb")) 
+	N0049[CubicYardPerPound] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+	N0052[CubicFeetPerPound] -->|BelongsToClass| N0005(Unit) 
+	N0052[CubicFeetPerPound] -->|ConversionFactorA| N0006(("0")) 
+	N0052[CubicFeetPerPound] -->|ConversionFactorB| N0053(("16.018463373960145")) 
+	N0052[CubicFeetPerPound] -->|Symbol| N0054(("ft³/lb")) 
+	N0052[CubicFeetPerPound] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+	N0055[CubicInchesPerPound] -->|BelongsToClass| N0005(Unit) 
+	N0055[CubicInchesPerPound] -->|ConversionFactorA| N0006(("0")) 
+	N0055[CubicInchesPerPound] -->|ConversionFactorB| N0056(("27679.904710203125")) 
+	N0055[CubicInchesPerPound] -->|Symbol| N0057(("in³/lb")) 
+	N0055[CubicInchesPerPound] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+	N0058[CubicYardPerOunce] -->|BelongsToClass| N0005(Unit) 
+	N0058[CubicYardPerOunce] -->|ConversionFactorA| N0006(("0")) 
+	N0058[CubicYardPerOunce] -->|ConversionFactorB| N0059(("0.03707977632861145")) 
+	N0058[CubicYardPerOunce] -->|Symbol| N0060(("yd³/oz")) 
+	N0058[CubicYardPerOunce] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+	N0061[CubicFeetPerOunce] -->|BelongsToClass| N0005(Unit) 
+	N0061[CubicFeetPerOunce] -->|ConversionFactorA| N0006(("0")) 
+	N0061[CubicFeetPerOunce] -->|ConversionFactorB| N0062(("1.001153960872509")) 
+	N0061[CubicFeetPerOunce] -->|Symbol| N0063(("ft³/oz")) 
+	N0061[CubicFeetPerOunce] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+	N0064[CubicInchesPerOunce] -->|BelongsToClass| N0005(Unit) 
+	N0064[CubicInchesPerOunce] -->|ConversionFactorA| N0006(("0")) 
+	N0064[CubicInchesPerOunce] -->|ConversionFactorB| N0065(("1729.9940443876953")) 
+	N0064[CubicInchesPerOunce] -->|Symbol| N0066(("in³/oz")) 
+	N0064[CubicInchesPerOunce] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+	N0067[GallonUkPerOunce] -->|BelongsToClass| N0005(Unit) 
+	N0067[GallonUkPerOunce] -->|ConversionFactorA| N0006(("0")) 
+	N0067[GallonUkPerOunce] -->|ConversionFactorB| N0068(("6.236023291443856")) 
+	N0067[GallonUkPerOunce] -->|Symbol| N0069(("galUK/oz")) 
+	N0067[GallonUkPerOunce] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+	N0070[GallonUsPerOunce] -->|BelongsToClass| N0005(Unit) 
+	N0070[GallonUsPerOunce] -->|ConversionFactorA| N0006(("0")) 
+	N0070[GallonUsPerOunce] -->|ConversionFactorB| N0071(("7.48915170730604")) 
+	N0070[GallonUsPerOunce] -->|Symbol| N0072(("galUS/oz")) 
+	N0070[GallonUsPerOunce] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+	N0073[GallonUkPerPound] -->|BelongsToClass| N0005(Unit) 
+	N0073[GallonUkPerPound] -->|ConversionFactorA| N0006(("0")) 
+	N0073[GallonUkPerPound] -->|ConversionFactorB| N0074(("99.7763726631017")) 
+	N0073[GallonUkPerPound] -->|Symbol| N0075(("galUK/lb")) 
+	N0073[GallonUkPerPound] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+	N0076[GallonUsPerPound] -->|BelongsToClass| N0005(Unit) 
+	N0076[GallonUsPerPound] -->|ConversionFactorA| N0006(("0")) 
+	N0076[GallonUsPerPound] -->|ConversionFactorB| N0077(("119.82642731689664")) 
+	N0076[GallonUsPerPound] -->|Symbol| N0078(("galUS/lb")) 
+	N0076[GallonUsPerPound] -->|IsUnitForQuantity| N0000[SpecificVolumeQuantity] 
+```
+## SpecificVolumeSquaredQuantity <!-- NOUN -->
+- Display name: SpecificVolumeSquared
+- Parent class: [Quantity](./Quantities.md#Quantity)
+- Specialization:
+  - L = 6
+  - M = -2
+- Description: 
+Specific volume squared is the square of the specific volume.
+The dimension of specific volume squared is:
+$$[L^{6}M^{-2}]$$.
+The SI unit for **specific volume squared** is: cubic metre squared per kilogram squared with the associated unit label $\frac{m^{6}}{kg^{2}}$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:SpecificVolumeSquaredQuantity
+SpecificVolumeSquaredQuantity.L = 6
+SpecificVolumeSquaredQuantity.M = -2
+Unit:CubicMetreSquaredPerKilogramSquared
+CubicMetreSquaredPerKilogramSquared.ConversionFactorA = 0
+CubicMetreSquaredPerKilogramSquared.ConversionFactorB = 1
+CubicMetreSquaredPerKilogramSquared.Symbol = "m⁶/kg²"
+CubicMetreSquaredPerKilogramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+SpecificVolumeSquaredQuantity HasSIUnit CubicMetreSquaredPerKilogramSquared
+Unit:CubicMetreSquaredPerGramSquared
+CubicMetreSquaredPerGramSquared.ConversionFactorA = 0
+CubicMetreSquaredPerGramSquared.ConversionFactorB = 1E-06
+CubicMetreSquaredPerGramSquared.Symbol = "m⁶/g²"
+CubicMetreSquaredPerGramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CubicDecimetreSquaredPerGramSquared
+CubicDecimetreSquaredPerGramSquared.ConversionFactorA = 0
+CubicDecimetreSquaredPerGramSquared.ConversionFactorB = 0.9999999999999996
+CubicDecimetreSquaredPerGramSquared.Symbol = "dm⁶/g²"
+CubicDecimetreSquaredPerGramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:LitreSquaredPerGramSquared
+LitreSquaredPerGramSquared.ConversionFactorA = 0
+LitreSquaredPerGramSquared.ConversionFactorB = 1
+LitreSquaredPerGramSquared.Symbol = "L²/g²"
+LitreSquaredPerGramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:DecilitreSquaredPerGramSquared
+DecilitreSquaredPerGramSquared.ConversionFactorA = 0
+DecilitreSquaredPerGramSquared.ConversionFactorB = 99.99999999999997
+DecilitreSquaredPerGramSquared.Symbol = "dL²/g²"
+DecilitreSquaredPerGramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CentilitreSquaredPerGramSquared
+CentilitreSquaredPerGramSquared.ConversionFactorA = 0
+CentilitreSquaredPerGramSquared.ConversionFactorB = 10000
+CentilitreSquaredPerGramSquared.Symbol = "cL²/g²"
+CentilitreSquaredPerGramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:MillilitreSquaredPerGramSquared
+MillilitreSquaredPerGramSquared.ConversionFactorA = 0
+MillilitreSquaredPerGramSquared.ConversionFactorB = 999999.9999999998
+MillilitreSquaredPerGramSquared.Symbol = "mL²/g²"
+MillilitreSquaredPerGramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CubicCentimetreSquaredPerGramSquared
+CubicCentimetreSquaredPerGramSquared.ConversionFactorA = 0
+CubicCentimetreSquaredPerGramSquared.ConversionFactorB = 999999.9999999998
+CubicCentimetreSquaredPerGramSquared.Symbol = "cm⁶/g²"
+CubicCentimetreSquaredPerGramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CubicMillimetreSquaredPerGramSquared
+CubicMillimetreSquaredPerGramSquared.ConversionFactorA = 0
+CubicMillimetreSquaredPerGramSquared.ConversionFactorB = 999999999999.9996
+CubicMillimetreSquaredPerGramSquared.Symbol = "mm⁶/g²"
+CubicMillimetreSquaredPerGramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:LitreSquaredPerKilogramSquared
+LitreSquaredPerKilogramSquared.ConversionFactorA = 0
+LitreSquaredPerKilogramSquared.ConversionFactorB = 1000000
+LitreSquaredPerKilogramSquared.Symbol = "L²/kg²"
+LitreSquaredPerKilogramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:DecilitreSquaredPerKilogramSquared
+DecilitreSquaredPerKilogramSquared.ConversionFactorA = 0
+DecilitreSquaredPerKilogramSquared.ConversionFactorB = 99999999.99999999
+DecilitreSquaredPerKilogramSquared.Symbol = "dL²/kg²"
+DecilitreSquaredPerKilogramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CentilitreSquaredPerKilogramSquared
+CentilitreSquaredPerKilogramSquared.ConversionFactorA = 0
+CentilitreSquaredPerKilogramSquared.ConversionFactorB = 10000000000
+CentilitreSquaredPerKilogramSquared.Symbol = "cL²/kg²"
+CentilitreSquaredPerKilogramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:MillilitreSquaredPerKilogramSquared
+MillilitreSquaredPerKilogramSquared.ConversionFactorA = 0
+MillilitreSquaredPerKilogramSquared.ConversionFactorB = 999999999999.9999
+MillilitreSquaredPerKilogramSquared.Symbol = "mL²/kg²"
+MillilitreSquaredPerKilogramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CubicCentimetreSquaredPerKilogramSquared
+CubicCentimetreSquaredPerKilogramSquared.ConversionFactorA = 0
+CubicCentimetreSquaredPerKilogramSquared.ConversionFactorB = 999999999999.9999
+CubicCentimetreSquaredPerKilogramSquared.Symbol = "cm⁶/kg²"
+CubicCentimetreSquaredPerKilogramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CubicMillimetreSquaredPerKilogramSquared
+CubicMillimetreSquaredPerKilogramSquared.ConversionFactorA = 0
+CubicMillimetreSquaredPerKilogramSquared.ConversionFactorB = 9.999999999999997E+17
+CubicMillimetreSquaredPerKilogramSquared.Symbol = "mm⁶/kg²"
+CubicMillimetreSquaredPerKilogramSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CubicYardSquaredPerPoundSquared
+CubicYardSquaredPerPoundSquared.ConversionFactorA = 0
+CubicYardSquaredPerPoundSquared.ConversionFactorB = 0.3519769120204426
+CubicYardSquaredPerPoundSquared.Symbol = "yd⁶/lb²"
+CubicYardSquaredPerPoundSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CubicFeetSquaredPerPoundSquared
+CubicFeetSquaredPerPoundSquared.ConversionFactorA = 0
+CubicFeetSquaredPerPoundSquared.ConversionFactorB = 256.5911688629027
+CubicFeetSquaredPerPoundSquared.Symbol = "ft⁶/lb²"
+CubicFeetSquaredPerPoundSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CubicInchesSquaredPerPoundSquared
+CubicInchesSquaredPerPoundSquared.ConversionFactorA = 0
+CubicInchesSquaredPerPoundSquared.ConversionFactorB = 766177124.7659252
+CubicInchesSquaredPerPoundSquared.Symbol = "in⁶/lb²"
+CubicInchesSquaredPerPoundSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CubicYardSquaredPerOunceSquared
+CubicYardSquaredPerOunceSquared.ConversionFactorA = 0
+CubicYardSquaredPerOunceSquared.ConversionFactorB = 0.001374909812579854
+CubicYardSquaredPerOunceSquared.Symbol = "yd⁶/oz²"
+CubicYardSquaredPerOunceSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CubicFeetSquaredPerOunceSquared
+CubicFeetSquaredPerOunceSquared.ConversionFactorA = 0
+CubicFeetSquaredPerOunceSquared.ConversionFactorB = 1.0023092533707136
+CubicFeetSquaredPerOunceSquared.Symbol = "ft⁶/oz²"
+CubicFeetSquaredPerOunceSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:CubicInchesSquaredPerOunceSquared
+CubicInchesSquaredPerOunceSquared.ConversionFactorA = 0
+CubicInchesSquaredPerOunceSquared.ConversionFactorB = 2992879.393616895
+CubicInchesSquaredPerOunceSquared.Symbol = "in⁶/oz²"
+CubicInchesSquaredPerOunceSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:GallonUkSquaredPerOunceSquared
+GallonUkSquaredPerOunceSquared.ConversionFactorA = 0
+GallonUkSquaredPerOunceSquared.ConversionFactorB = 38.88798649143027
+GallonUkSquaredPerOunceSquared.Symbol = "galUK²/oz²"
+GallonUkSquaredPerOunceSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:GallonUsSquaredPerOunceSquared
+GallonUsSquaredPerOunceSquared.ConversionFactorA = 0
+GallonUsSquaredPerOunceSquared.ConversionFactorB = 56.087393295044976
+GallonUsSquaredPerOunceSquared.Symbol = "galUS²/oz²"
+GallonUsSquaredPerOunceSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:GallonUkSquaredPerPoundSquared
+GallonUkSquaredPerPoundSquared.ConversionFactorA = 0
+GallonUkSquaredPerPoundSquared.ConversionFactorB = 9955.324541806149
+GallonUkSquaredPerPoundSquared.Symbol = "galUK²/lb²"
+GallonUkSquaredPerPoundSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+Unit:GallonUsSquaredPerPoundSquared
+GallonUsSquaredPerPoundSquared.ConversionFactorA = 0
+GallonUsSquaredPerPoundSquared.ConversionFactorB = 14358.372683531514
+GallonUsSquaredPerPoundSquared.Symbol = "galUS²/lb²"
+GallonUsSquaredPerPoundSquared IsUnitForQuantity SpecificVolumeSquaredQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[SpecificVolumeSquaredQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[SpecificVolumeSquaredQuantity] -->|L| N0002(("6")) 
+	N0000[SpecificVolumeSquaredQuantity] -->|M| N0003(("-2")) 
+	N0004[CubicMetreSquaredPerKilogramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0004[CubicMetreSquaredPerKilogramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0004[CubicMetreSquaredPerKilogramSquared] -->|ConversionFactorB| N0007(("1")) 
+	N0004[CubicMetreSquaredPerKilogramSquared] -->|Symbol| N0008(("m⁶/kg²")) 
+	N0004[CubicMetreSquaredPerKilogramSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+	N0000[SpecificVolumeSquaredQuantity] -->|HasSIUnit| N0004[CubicMetreSquaredPerKilogramSquared] 
+	N0009[CubicMetreSquaredPerGramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0009[CubicMetreSquaredPerGramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0009[CubicMetreSquaredPerGramSquared] -->|ConversionFactorB| N0010(("1E-06")) 
+	N0009[CubicMetreSquaredPerGramSquared] -->|Symbol| N0011(("m⁶/g²")) 
+	N0009[CubicMetreSquaredPerGramSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+	N0012[CubicDecimetreSquaredPerGramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0012[CubicDecimetreSquaredPerGramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0012[CubicDecimetreSquaredPerGramSquared] -->|ConversionFactorB| N0013(("0.9999999999999996")) 
+	N0012[CubicDecimetreSquaredPerGramSquared] -->|Symbol| N0014(("dm⁶/g²")) 
+	N0012[CubicDecimetreSquaredPerGramSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+	N0015[LitreSquaredPerGramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0015[LitreSquaredPerGramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0015[LitreSquaredPerGramSquared] -->|ConversionFactorB| N0007(("1")) 
+	N0015[LitreSquaredPerGramSquared] -->|Symbol| N0016(("L²/g²")) 
+	N0015[LitreSquaredPerGramSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+	N0017[DecilitreSquaredPerGramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0017[DecilitreSquaredPerGramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0017[DecilitreSquaredPerGramSquared] -->|ConversionFactorB| N0018(("99.99999999999997")) 
+	N0017[DecilitreSquaredPerGramSquared] -->|Symbol| N0019(("dL²/g²")) 
+	N0017[DecilitreSquaredPerGramSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+	N0020[CentilitreSquaredPerGramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0020[CentilitreSquaredPerGramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0020[CentilitreSquaredPerGramSquared] -->|ConversionFactorB| N0021(("10000")) 
+	N0020[CentilitreSquaredPerGramSquared] -->|Symbol| N0022(("cL²/g²")) 
+	N0020[CentilitreSquaredPerGramSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+	N0023[MillilitreSquaredPerGramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0023[MillilitreSquaredPerGramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0023[MillilitreSquaredPerGramSquared] -->|ConversionFactorB| N0024(("999999.9999999998")) 
+	N0023[MillilitreSquaredPerGramSquared] -->|Symbol| N0025(("mL²/g²")) 
+	N0023[MillilitreSquaredPerGramSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+	N0026[CubicCentimetreSquaredPerGramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0026[CubicCentimetreSquaredPerGramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0026[CubicCentimetreSquaredPerGramSquared] -->|ConversionFactorB| N0024(("999999.9999999998")) 
+	N0026[CubicCentimetreSquaredPerGramSquared] -->|Symbol| N0027(("cm⁶/g²")) 
+	N0026[CubicCentimetreSquaredPerGramSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+	N0028[CubicMillimetreSquaredPerGramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0028[CubicMillimetreSquaredPerGramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0028[CubicMillimetreSquaredPerGramSquared] -->|ConversionFactorB| N0029(("999999999999.9996")) 
+	N0028[CubicMillimetreSquaredPerGramSquared] -->|Symbol| N0030(("mm⁶/g²")) 
+	N0028[CubicMillimetreSquaredPerGramSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+	N0031[LitreSquaredPerKilogramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0031[LitreSquaredPerKilogramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0031[LitreSquaredPerKilogramSquared] -->|ConversionFactorB| N0032(("1000000")) 
+	N0031[LitreSquaredPerKilogramSquared] -->|Symbol| N0033(("L²/kg²")) 
+	N0031[LitreSquaredPerKilogramSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+	N0034[DecilitreSquaredPerKilogramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0034[DecilitreSquaredPerKilogramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0034[DecilitreSquaredPerKilogramSquared] -->|ConversionFactorB| N0035(("99999999.99999999")) 
+	N0034[DecilitreSquaredPerKilogramSquared] -->|Symbol| N0036(("dL²/kg²")) 
+	N0034[DecilitreSquaredPerKilogramSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+	N0037[CentilitreSquaredPerKilogramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0037[CentilitreSquaredPerKilogramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0037[CentilitreSquaredPerKilogramSquared] -->|ConversionFactorB| N0038(("10000000000")) 
+	N0037[CentilitreSquaredPerKilogramSquared] -->|Symbol| N0039(("cL²/kg²")) 
+	N0037[CentilitreSquaredPerKilogramSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+	N0040[MillilitreSquaredPerKilogramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0040[MillilitreSquaredPerKilogramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0040[MillilitreSquaredPerKilogramSquared] -->|ConversionFactorB| N0041(("999999999999.9999")) 
+	N0040[MillilitreSquaredPerKilogramSquared] -->|Symbol| N0042(("mL²/kg²")) 
+	N0040[MillilitreSquaredPerKilogramSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+	N0043[CubicCentimetreSquaredPerKilogramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0043[CubicCentimetreSquaredPerKilogramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0043[CubicCentimetreSquaredPerKilogramSquared] -->|ConversionFactorB| N0041(("999999999999.9999")) 
+	N0043[CubicCentimetreSquaredPerKilogramSquared] -->|Symbol| N0044(("cm⁶/kg²")) 
+	N0043[CubicCentimetreSquaredPerKilogramSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+	N0045[CubicMillimetreSquaredPerKilogramSquared] -->|BelongsToClass| N0005(Unit) 
+	N0045[CubicMillimetreSquaredPerKilogramSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0045[CubicMillimetreSquaredPerKilogramSquared] -->|ConversionFactorB| N0046(("9.999999999999997E+17")) 
+	N0045[CubicMillimetreSquaredPerKilogramSquared] -->|Symbol| N0047(("mm⁶/kg²")) 
+	N0045[CubicMillimetreSquaredPerKilogramSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+	N0048[CubicYardSquaredPerPoundSquared] -->|BelongsToClass| N0005(Unit) 
+	N0048[CubicYardSquaredPerPoundSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0048[CubicYardSquaredPerPoundSquared] -->|ConversionFactorB| N0049(("0.3519769120204426")) 
+	N0048[CubicYardSquaredPerPoundSquared] -->|Symbol| N0050(("yd⁶/lb²")) 
+	N0048[CubicYardSquaredPerPoundSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+	N0051[CubicFeetSquaredPerPoundSquared] -->|BelongsToClass| N0005(Unit) 
+	N0051[CubicFeetSquaredPerPoundSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0051[CubicFeetSquaredPerPoundSquared] -->|ConversionFactorB| N0052(("256.5911688629027")) 
+	N0051[CubicFeetSquaredPerPoundSquared] -->|Symbol| N0053(("ft⁶/lb²")) 
+	N0051[CubicFeetSquaredPerPoundSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+	N0054[CubicInchesSquaredPerPoundSquared] -->|BelongsToClass| N0005(Unit) 
+	N0054[CubicInchesSquaredPerPoundSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0054[CubicInchesSquaredPerPoundSquared] -->|ConversionFactorB| N0055(("766177124.7659252")) 
+	N0054[CubicInchesSquaredPerPoundSquared] -->|Symbol| N0056(("in⁶/lb²")) 
+	N0054[CubicInchesSquaredPerPoundSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+	N0057[CubicYardSquaredPerOunceSquared] -->|BelongsToClass| N0005(Unit) 
+	N0057[CubicYardSquaredPerOunceSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0057[CubicYardSquaredPerOunceSquared] -->|ConversionFactorB| N0058(("0.001374909812579854")) 
+	N0057[CubicYardSquaredPerOunceSquared] -->|Symbol| N0059(("yd⁶/oz²")) 
+	N0057[CubicYardSquaredPerOunceSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+	N0060[CubicFeetSquaredPerOunceSquared] -->|BelongsToClass| N0005(Unit) 
+	N0060[CubicFeetSquaredPerOunceSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0060[CubicFeetSquaredPerOunceSquared] -->|ConversionFactorB| N0061(("1.0023092533707136")) 
+	N0060[CubicFeetSquaredPerOunceSquared] -->|Symbol| N0062(("ft⁶/oz²")) 
+	N0060[CubicFeetSquaredPerOunceSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+	N0063[CubicInchesSquaredPerOunceSquared] -->|BelongsToClass| N0005(Unit) 
+	N0063[CubicInchesSquaredPerOunceSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0063[CubicInchesSquaredPerOunceSquared] -->|ConversionFactorB| N0064(("2992879.393616895")) 
+	N0063[CubicInchesSquaredPerOunceSquared] -->|Symbol| N0065(("in⁶/oz²")) 
+	N0063[CubicInchesSquaredPerOunceSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+	N0066[GallonUkSquaredPerOunceSquared] -->|BelongsToClass| N0005(Unit) 
+	N0066[GallonUkSquaredPerOunceSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0066[GallonUkSquaredPerOunceSquared] -->|ConversionFactorB| N0067(("38.88798649143027")) 
+	N0066[GallonUkSquaredPerOunceSquared] -->|Symbol| N0068(("galUK²/oz²")) 
+	N0066[GallonUkSquaredPerOunceSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+	N0069[GallonUsSquaredPerOunceSquared] -->|BelongsToClass| N0005(Unit) 
+	N0069[GallonUsSquaredPerOunceSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0069[GallonUsSquaredPerOunceSquared] -->|ConversionFactorB| N0070(("56.087393295044976")) 
+	N0069[GallonUsSquaredPerOunceSquared] -->|Symbol| N0071(("galUS²/oz²")) 
+	N0069[GallonUsSquaredPerOunceSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+	N0072[GallonUkSquaredPerPoundSquared] -->|BelongsToClass| N0005(Unit) 
+	N0072[GallonUkSquaredPerPoundSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0072[GallonUkSquaredPerPoundSquared] -->|ConversionFactorB| N0073(("9955.324541806149")) 
+	N0072[GallonUkSquaredPerPoundSquared] -->|Symbol| N0074(("galUK²/lb²")) 
+	N0072[GallonUkSquaredPerPoundSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+	N0075[GallonUsSquaredPerPoundSquared] -->|BelongsToClass| N0005(Unit) 
+	N0075[GallonUsSquaredPerPoundSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0075[GallonUsSquaredPerPoundSquared] -->|ConversionFactorB| N0076(("14358.372683531514")) 
+	N0075[GallonUsSquaredPerPoundSquared] -->|Symbol| N0077(("galUS²/lb²")) 
+	N0075[GallonUsSquaredPerPoundSquared] -->|IsUnitForQuantity| N0000[SpecificVolumeSquaredQuantity] 
+```
+## MassDensityGradientPerPressureQuantity <!-- NOUN -->
+- Display name: MassDensityGradientPerPressure
+- Parent class: [Quantity](./Quantities.md#Quantity)
+- Specialization:
+  - L = -2
+  - T = 2
+- Description: 
+A mass density gradient per pressure is the first derivative of a mass density compared to pressure: $\frac{d\rho}{dp}$, where $\rho$ is a mass density and $p$ is pressure.
+The dimension of mass density gradient per pressure is:
+$$[T^{2}L^{-2}]$$.
+The SI unit for **mass density gradient per pressure** is: kilogram per cubic metre per pascal with the associated unit label $\frac{\frac{kg}{m^{3}}}{Pa}$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:MassDensityGradientPerPressureQuantity
+MassDensityGradientPerPressureQuantity.L = -2
+MassDensityGradientPerPressureQuantity.T = 2
+Unit:KilogramPerCubicMetrePerPascal
+KilogramPerCubicMetrePerPascal.ConversionFactorA = 0
+KilogramPerCubicMetrePerPascal.ConversionFactorB = 1
+KilogramPerCubicMetrePerPascal.Symbol = "kg/m³/Pa"
+KilogramPerCubicMetrePerPascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+MassDensityGradientPerPressureQuantity HasSIUnit KilogramPerCubicMetrePerPascal
+Unit:SpecificGravityPerPascal
+SpecificGravityPerPascal.ConversionFactorA = 0
+SpecificGravityPerPascal.ConversionFactorB = 0.001000028000784022
+SpecificGravityPerPascal.Symbol = "sg/Pa"
+SpecificGravityPerPascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:GramPerCubicCentimetrePerPascal
+GramPerCubicCentimetrePerPascal.ConversionFactorA = 0
+GramPerCubicCentimetrePerPascal.ConversionFactorB = 0.0010000000000000002
+GramPerCubicCentimetrePerPascal.Symbol = "g/cm³/Pa"
+GramPerCubicCentimetrePerPascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerGallonUkPerPascal
+PoundPerGallonUkPerPascal.ConversionFactorA = 0
+PoundPerGallonUkPerPascal.ConversionFactorB = 0.010022412854960501
+PoundPerGallonUkPerPascal.Symbol = "ppgUK/Pa"
+PoundPerGallonUkPerPascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerGallonUsPerPascal
+PoundPerGallonUsPerPascal.ConversionFactorA = 0
+PoundPerGallonUsPerPascal.ConversionFactorB = 0.00834540445201933
+PoundPerGallonUsPerPascal.Symbol = "ppgUS/Pa"
+PoundPerGallonUsPerPascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicFootPerPascal
+PoundPerCubicFootPerPascal.ConversionFactorA = 0
+PoundPerCubicFootPerPascal.ConversionFactorB = 0.06242796057614459
+PoundPerCubicFootPerPascal.Symbol = "lb/ft³/Pa"
+PoundPerCubicFootPerPascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicInchPerPascal
+PoundPerCubicInchPerPascal.ConversionFactorA = 0
+PoundPerCubicInchPerPascal.ConversionFactorB = 3.612729200008369E-05
+PoundPerCubicInchPerPascal.Symbol = "lb/in³/Pa"
+PoundPerCubicInchPerPascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicYardPerPascal
+PoundPerCubicYardPerPascal.ConversionFactorA = 0
+PoundPerCubicYardPerPascal.ConversionFactorB = 1.6855549355559039
+PoundPerCubicYardPerPascal.Symbol = "lb/yd³/Pa"
+PoundPerCubicYardPerPascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:KilogramPerCubicMetrePerBar
+KilogramPerCubicMetrePerBar.ConversionFactorA = 0
+KilogramPerCubicMetrePerBar.ConversionFactorB = 100000
+KilogramPerCubicMetrePerBar.Symbol = "kg/m³/bar"
+KilogramPerCubicMetrePerBar IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:SpecificGravityPerBar
+SpecificGravityPerBar.ConversionFactorA = 0
+SpecificGravityPerBar.ConversionFactorB = 100.0028000784022
+SpecificGravityPerBar.Symbol = "sg/bar"
+SpecificGravityPerBar IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:GramPerCubicCentimetrePerBar
+GramPerCubicCentimetrePerBar.ConversionFactorA = 0
+GramPerCubicCentimetrePerBar.ConversionFactorB = 100.00000000000001
+GramPerCubicCentimetrePerBar.Symbol = "g/cm³/bar"
+GramPerCubicCentimetrePerBar IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerGallonUkPerBar
+PoundPerGallonUkPerBar.ConversionFactorA = 0
+PoundPerGallonUkPerBar.ConversionFactorB = 1002.2412854960501
+PoundPerGallonUkPerBar.Symbol = "ppgUK/bar"
+PoundPerGallonUkPerBar IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerGallonUsPerBar
+PoundPerGallonUsPerBar.ConversionFactorA = 0
+PoundPerGallonUsPerBar.ConversionFactorB = 834.540445201933
+PoundPerGallonUsPerBar.Symbol = "ppgUS/bar"
+PoundPerGallonUsPerBar IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicFootPerBar
+PoundPerCubicFootPerBar.ConversionFactorA = 0
+PoundPerCubicFootPerBar.ConversionFactorB = 6242.79605761446
+PoundPerCubicFootPerBar.Symbol = "lb/ft³/bar"
+PoundPerCubicFootPerBar IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicInchPerBar
+PoundPerCubicInchPerBar.ConversionFactorA = 0
+PoundPerCubicInchPerBar.ConversionFactorB = 3.6127292000083684
+PoundPerCubicInchPerBar.Symbol = "lb/in³/bar"
+PoundPerCubicInchPerBar IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicYardPerBar
+PoundPerCubicYardPerBar.ConversionFactorA = 0
+PoundPerCubicYardPerBar.ConversionFactorB = 168555.49355559036
+PoundPerCubicYardPerBar.Symbol = "lb/yd³/bar"
+PoundPerCubicYardPerBar IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:KilogramPerCubicMetrePerMegapascal
+KilogramPerCubicMetrePerMegapascal.ConversionFactorA = 0
+KilogramPerCubicMetrePerMegapascal.ConversionFactorB = 1000000
+KilogramPerCubicMetrePerMegapascal.Symbol = "kg/m³/MPa"
+KilogramPerCubicMetrePerMegapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:SpecificGravityPerMegapascal
+SpecificGravityPerMegapascal.ConversionFactorA = 0
+SpecificGravityPerMegapascal.ConversionFactorB = 1000.028000784022
+SpecificGravityPerMegapascal.Symbol = "sg/MPa"
+SpecificGravityPerMegapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:GramPerCubicCentimetrePerMegapascal
+GramPerCubicCentimetrePerMegapascal.ConversionFactorA = 0
+GramPerCubicCentimetrePerMegapascal.ConversionFactorB = 1000.0000000000002
+GramPerCubicCentimetrePerMegapascal.Symbol = "g/cm³/MPa"
+GramPerCubicCentimetrePerMegapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerGallonUkPerMegapascal
+PoundPerGallonUkPerMegapascal.ConversionFactorA = 0
+PoundPerGallonUkPerMegapascal.ConversionFactorB = 10022.412854960501
+PoundPerGallonUkPerMegapascal.Symbol = "ppgUK/MPa"
+PoundPerGallonUkPerMegapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerGallonUsPerMegapascal
+PoundPerGallonUsPerMegapascal.ConversionFactorA = 0
+PoundPerGallonUsPerMegapascal.ConversionFactorB = 8345.404452019331
+PoundPerGallonUsPerMegapascal.Symbol = "ppgUS/MPa"
+PoundPerGallonUsPerMegapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicFootPerMegapascal
+PoundPerCubicFootPerMegapascal.ConversionFactorA = 0
+PoundPerCubicFootPerMegapascal.ConversionFactorB = 62427.960576144586
+PoundPerCubicFootPerMegapascal.Symbol = "lb/ft³/MPa"
+PoundPerCubicFootPerMegapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicInchPerMegapascal
+PoundPerCubicInchPerMegapascal.ConversionFactorA = 0
+PoundPerCubicInchPerMegapascal.ConversionFactorB = 36.127292000083685
+PoundPerCubicInchPerMegapascal.Symbol = "lb/in³/MPa"
+PoundPerCubicInchPerMegapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicYardPerMegapascal
+PoundPerCubicYardPerMegapascal.ConversionFactorA = 0
+PoundPerCubicYardPerMegapascal.ConversionFactorB = 1685554.9355559037
+PoundPerCubicYardPerMegapascal.Symbol = "lb/yd³/MPa"
+PoundPerCubicYardPerMegapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:KilogramPerCubicMetrePerGigapascal
+KilogramPerCubicMetrePerGigapascal.ConversionFactorA = 0
+KilogramPerCubicMetrePerGigapascal.ConversionFactorB = 1000000000
+KilogramPerCubicMetrePerGigapascal.Symbol = "kg/m³/GPa"
+KilogramPerCubicMetrePerGigapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:SpecificGravityPerGigapascal
+SpecificGravityPerGigapascal.ConversionFactorA = 0
+SpecificGravityPerGigapascal.ConversionFactorB = 1000028.0007840219
+SpecificGravityPerGigapascal.Symbol = "sg/GPa"
+SpecificGravityPerGigapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:GramPerCubicCentimetrePerGigapascal
+GramPerCubicCentimetrePerGigapascal.ConversionFactorA = 0
+GramPerCubicCentimetrePerGigapascal.ConversionFactorB = 1000000.0000000001
+GramPerCubicCentimetrePerGigapascal.Symbol = "g/cm³/GPa"
+GramPerCubicCentimetrePerGigapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerGallonUkPerGigapascal
+PoundPerGallonUkPerGigapascal.ConversionFactorA = 0
+PoundPerGallonUkPerGigapascal.ConversionFactorB = 10022412.854960501
+PoundPerGallonUkPerGigapascal.Symbol = "ppgUK/GPa"
+PoundPerGallonUkPerGigapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerGallonUsPerGigapascal
+PoundPerGallonUsPerGigapascal.ConversionFactorA = 0
+PoundPerGallonUsPerGigapascal.ConversionFactorB = 8345404.45201933
+PoundPerGallonUsPerGigapascal.Symbol = "ppgUS/GPa"
+PoundPerGallonUsPerGigapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicFootPerGigapascal
+PoundPerCubicFootPerGigapascal.ConversionFactorA = 0
+PoundPerCubicFootPerGigapascal.ConversionFactorB = 62427960.57614458
+PoundPerCubicFootPerGigapascal.Symbol = "lb/ft³/GPa"
+PoundPerCubicFootPerGigapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicInchPerGigapascal
+PoundPerCubicInchPerGigapascal.ConversionFactorA = 0
+PoundPerCubicInchPerGigapascal.ConversionFactorB = 36127.29200008368
+PoundPerCubicInchPerGigapascal.Symbol = "lb/in³/GPa"
+PoundPerCubicInchPerGigapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicYardPerGigapascal
+PoundPerCubicYardPerGigapascal.ConversionFactorA = 0
+PoundPerCubicYardPerGigapascal.ConversionFactorB = 1685554935.555904
+PoundPerCubicYardPerGigapascal.Symbol = "lb/yd³/GPa"
+PoundPerCubicYardPerGigapascal IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:KilogramPerCubicMetrePerPoundPerSquareInch
+KilogramPerCubicMetrePerPoundPerSquareInch.ConversionFactorA = 0
+KilogramPerCubicMetrePerPoundPerSquareInch.ConversionFactorB = 6894.757293168361
+KilogramPerCubicMetrePerPoundPerSquareInch.Symbol = "kg/m³/psi"
+KilogramPerCubicMetrePerPoundPerSquareInch IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:SpecificGravityPerPoundPerSquareInch
+SpecificGravityPerPoundPerSquareInch.ConversionFactorA = 0
+SpecificGravityPerPoundPerSquareInch.ConversionFactorB = 6.894950351778211
+SpecificGravityPerPoundPerSquareInch.Symbol = "sg/psi"
+SpecificGravityPerPoundPerSquareInch IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:GramPerCubicCentimetrePerPoundPerSquareInch
+GramPerCubicCentimetrePerPoundPerSquareInch.ConversionFactorA = 0
+GramPerCubicCentimetrePerPoundPerSquareInch.ConversionFactorB = 6.894757293168362
+GramPerCubicCentimetrePerPoundPerSquareInch.Symbol = "g/cm³/psi"
+GramPerCubicCentimetrePerPoundPerSquareInch IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerGallonUkPerPoundPerSquareInch
+PoundPerGallonUkPerPoundPerSquareInch.ConversionFactorA = 0
+PoundPerGallonUkPerPoundPerSquareInch.ConversionFactorB = 69.10210412688325
+PoundPerGallonUkPerPoundPerSquareInch.Symbol = "ppgUK/psi"
+PoundPerGallonUkPerPoundPerSquareInch IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerGallonUsPerPoundPerSquareInch
+PoundPerGallonUsPerPoundPerSquareInch.ConversionFactorA = 0
+PoundPerGallonUsPerPoundPerSquareInch.ConversionFactorB = 57.53953820999999
+PoundPerGallonUsPerPoundPerSquareInch.Symbol = "ppgUS/psi"
+PoundPerGallonUsPerPoundPerSquareInch IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicFootPerPoundPerSquareInch
+PoundPerCubicFootPerPoundPerSquareInch.ConversionFactorA = 0
+PoundPerCubicFootPerPoundPerSquareInch.ConversionFactorB = 430.4256364799998
+PoundPerCubicFootPerPoundPerSquareInch.Symbol = "lb/ft³/psi"
+PoundPerCubicFootPerPoundPerSquareInch IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicInchPerPoundPerSquareInch
+PoundPerCubicInchPerPoundPerSquareInch.ConversionFactorA = 0
+PoundPerCubicInchPerPoundPerSquareInch.ConversionFactorB = 0.24908890999999994
+PoundPerCubicInchPerPoundPerSquareInch.Symbol = "lb/in³/psi"
+PoundPerCubicInchPerPoundPerSquareInch IsUnitForQuantity MassDensityGradientPerPressureQuantity
+Unit:PoundPerCubicYardPerPoundPerSquareInch
+PoundPerCubicYardPerPoundPerSquareInch.ConversionFactorA = 0
+PoundPerCubicYardPerPoundPerSquareInch.ConversionFactorB = 11621.492184959992
+PoundPerCubicYardPerPoundPerSquareInch.Symbol = "lb/yd³/psi"
+PoundPerCubicYardPerPoundPerSquareInch IsUnitForQuantity MassDensityGradientPerPressureQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MassDensityGradientPerPressureQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[MassDensityGradientPerPressureQuantity] -->|L| N0002(("-2")) 
+	N0000[MassDensityGradientPerPressureQuantity] -->|T| N0003(("2")) 
+	N0004[KilogramPerCubicMetrePerPascal] -->|BelongsToClass| N0005(Unit) 
+	N0004[KilogramPerCubicMetrePerPascal] -->|ConversionFactorA| N0006(("0")) 
+	N0004[KilogramPerCubicMetrePerPascal] -->|ConversionFactorB| N0007(("1")) 
+	N0004[KilogramPerCubicMetrePerPascal] -->|Symbol| N0008(("kg/m³/Pa")) 
+	N0004[KilogramPerCubicMetrePerPascal] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0000[MassDensityGradientPerPressureQuantity] -->|HasSIUnit| N0004[KilogramPerCubicMetrePerPascal] 
+	N0009[SpecificGravityPerPascal] -->|BelongsToClass| N0005(Unit) 
+	N0009[SpecificGravityPerPascal] -->|ConversionFactorA| N0006(("0")) 
+	N0009[SpecificGravityPerPascal] -->|ConversionFactorB| N0010(("0.001000028000784022")) 
+	N0009[SpecificGravityPerPascal] -->|Symbol| N0011(("sg/Pa")) 
+	N0009[SpecificGravityPerPascal] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0012[GramPerCubicCentimetrePerPascal] -->|BelongsToClass| N0005(Unit) 
+	N0012[GramPerCubicCentimetrePerPascal] -->|ConversionFactorA| N0006(("0")) 
+	N0012[GramPerCubicCentimetrePerPascal] -->|ConversionFactorB| N0013(("0.0010000000000000002")) 
+	N0012[GramPerCubicCentimetrePerPascal] -->|Symbol| N0014(("g/cm³/Pa")) 
+	N0012[GramPerCubicCentimetrePerPascal] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0015[PoundPerGallonUkPerPascal] -->|BelongsToClass| N0005(Unit) 
+	N0015[PoundPerGallonUkPerPascal] -->|ConversionFactorA| N0006(("0")) 
+	N0015[PoundPerGallonUkPerPascal] -->|ConversionFactorB| N0016(("0.010022412854960501")) 
+	N0015[PoundPerGallonUkPerPascal] -->|Symbol| N0017(("ppgUK/Pa")) 
+	N0015[PoundPerGallonUkPerPascal] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0018[PoundPerGallonUsPerPascal] -->|BelongsToClass| N0005(Unit) 
+	N0018[PoundPerGallonUsPerPascal] -->|ConversionFactorA| N0006(("0")) 
+	N0018[PoundPerGallonUsPerPascal] -->|ConversionFactorB| N0019(("0.00834540445201933")) 
+	N0018[PoundPerGallonUsPerPascal] -->|Symbol| N0020(("ppgUS/Pa")) 
+	N0018[PoundPerGallonUsPerPascal] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0021[PoundPerCubicFootPerPascal] -->|BelongsToClass| N0005(Unit) 
+	N0021[PoundPerCubicFootPerPascal] -->|ConversionFactorA| N0006(("0")) 
+	N0021[PoundPerCubicFootPerPascal] -->|ConversionFactorB| N0022(("0.06242796057614459")) 
+	N0021[PoundPerCubicFootPerPascal] -->|Symbol| N0023(("lb/ft³/Pa")) 
+	N0021[PoundPerCubicFootPerPascal] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0024[PoundPerCubicInchPerPascal] -->|BelongsToClass| N0005(Unit) 
+	N0024[PoundPerCubicInchPerPascal] -->|ConversionFactorA| N0006(("0")) 
+	N0024[PoundPerCubicInchPerPascal] -->|ConversionFactorB| N0025(("3.612729200008369E-05")) 
+	N0024[PoundPerCubicInchPerPascal] -->|Symbol| N0026(("lb/in³/Pa")) 
+	N0024[PoundPerCubicInchPerPascal] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0027[PoundPerCubicYardPerPascal] -->|BelongsToClass| N0005(Unit) 
+	N0027[PoundPerCubicYardPerPascal] -->|ConversionFactorA| N0006(("0")) 
+	N0027[PoundPerCubicYardPerPascal] -->|ConversionFactorB| N0028(("1.6855549355559039")) 
+	N0027[PoundPerCubicYardPerPascal] -->|Symbol| N0029(("lb/yd³/Pa")) 
+	N0027[PoundPerCubicYardPerPascal] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0030[KilogramPerCubicMetrePerBar] -->|BelongsToClass| N0005(Unit) 
+	N0030[KilogramPerCubicMetrePerBar] -->|ConversionFactorA| N0006(("0")) 
+	N0030[KilogramPerCubicMetrePerBar] -->|ConversionFactorB| N0031(("100000")) 
+	N0030[KilogramPerCubicMetrePerBar] -->|Symbol| N0032(("kg/m³/bar")) 
+	N0030[KilogramPerCubicMetrePerBar] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0033[SpecificGravityPerBar] -->|BelongsToClass| N0005(Unit) 
+	N0033[SpecificGravityPerBar] -->|ConversionFactorA| N0006(("0")) 
+	N0033[SpecificGravityPerBar] -->|ConversionFactorB| N0034(("100.0028000784022")) 
+	N0033[SpecificGravityPerBar] -->|Symbol| N0035(("sg/bar")) 
+	N0033[SpecificGravityPerBar] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0036[GramPerCubicCentimetrePerBar] -->|BelongsToClass| N0005(Unit) 
+	N0036[GramPerCubicCentimetrePerBar] -->|ConversionFactorA| N0006(("0")) 
+	N0036[GramPerCubicCentimetrePerBar] -->|ConversionFactorB| N0037(("100.00000000000001")) 
+	N0036[GramPerCubicCentimetrePerBar] -->|Symbol| N0038(("g/cm³/bar")) 
+	N0036[GramPerCubicCentimetrePerBar] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0039[PoundPerGallonUkPerBar] -->|BelongsToClass| N0005(Unit) 
+	N0039[PoundPerGallonUkPerBar] -->|ConversionFactorA| N0006(("0")) 
+	N0039[PoundPerGallonUkPerBar] -->|ConversionFactorB| N0040(("1002.2412854960501")) 
+	N0039[PoundPerGallonUkPerBar] -->|Symbol| N0041(("ppgUK/bar")) 
+	N0039[PoundPerGallonUkPerBar] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0042[PoundPerGallonUsPerBar] -->|BelongsToClass| N0005(Unit) 
+	N0042[PoundPerGallonUsPerBar] -->|ConversionFactorA| N0006(("0")) 
+	N0042[PoundPerGallonUsPerBar] -->|ConversionFactorB| N0043(("834.540445201933")) 
+	N0042[PoundPerGallonUsPerBar] -->|Symbol| N0044(("ppgUS/bar")) 
+	N0042[PoundPerGallonUsPerBar] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0045[PoundPerCubicFootPerBar] -->|BelongsToClass| N0005(Unit) 
+	N0045[PoundPerCubicFootPerBar] -->|ConversionFactorA| N0006(("0")) 
+	N0045[PoundPerCubicFootPerBar] -->|ConversionFactorB| N0046(("6242.79605761446")) 
+	N0045[PoundPerCubicFootPerBar] -->|Symbol| N0047(("lb/ft³/bar")) 
+	N0045[PoundPerCubicFootPerBar] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0048[PoundPerCubicInchPerBar] -->|BelongsToClass| N0005(Unit) 
+	N0048[PoundPerCubicInchPerBar] -->|ConversionFactorA| N0006(("0")) 
+	N0048[PoundPerCubicInchPerBar] -->|ConversionFactorB| N0049(("3.6127292000083684")) 
+	N0048[PoundPerCubicInchPerBar] -->|Symbol| N0050(("lb/in³/bar")) 
+	N0048[PoundPerCubicInchPerBar] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0051[PoundPerCubicYardPerBar] -->|BelongsToClass| N0005(Unit) 
+	N0051[PoundPerCubicYardPerBar] -->|ConversionFactorA| N0006(("0")) 
+	N0051[PoundPerCubicYardPerBar] -->|ConversionFactorB| N0052(("168555.49355559036")) 
+	N0051[PoundPerCubicYardPerBar] -->|Symbol| N0053(("lb/yd³/bar")) 
+	N0051[PoundPerCubicYardPerBar] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0054[KilogramPerCubicMetrePerMegapascal] -->|BelongsToClass| N0005(Unit) 
+	N0054[KilogramPerCubicMetrePerMegapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0054[KilogramPerCubicMetrePerMegapascal] -->|ConversionFactorB| N0055(("1000000")) 
+	N0054[KilogramPerCubicMetrePerMegapascal] -->|Symbol| N0056(("kg/m³/MPa")) 
+	N0054[KilogramPerCubicMetrePerMegapascal] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0057[SpecificGravityPerMegapascal] -->|BelongsToClass| N0005(Unit) 
+	N0057[SpecificGravityPerMegapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0057[SpecificGravityPerMegapascal] -->|ConversionFactorB| N0058(("1000.028000784022")) 
+	N0057[SpecificGravityPerMegapascal] -->|Symbol| N0059(("sg/MPa")) 
+	N0057[SpecificGravityPerMegapascal] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0060[GramPerCubicCentimetrePerMegapascal] -->|BelongsToClass| N0005(Unit) 
+	N0060[GramPerCubicCentimetrePerMegapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0060[GramPerCubicCentimetrePerMegapascal] -->|ConversionFactorB| N0061(("1000.0000000000002")) 
+	N0060[GramPerCubicCentimetrePerMegapascal] -->|Symbol| N0062(("g/cm³/MPa")) 
+	N0060[GramPerCubicCentimetrePerMegapascal] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0063[PoundPerGallonUkPerMegapascal] -->|BelongsToClass| N0005(Unit) 
+	N0063[PoundPerGallonUkPerMegapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0063[PoundPerGallonUkPerMegapascal] -->|ConversionFactorB| N0064(("10022.412854960501")) 
+	N0063[PoundPerGallonUkPerMegapascal] -->|Symbol| N0065(("ppgUK/MPa")) 
+	N0063[PoundPerGallonUkPerMegapascal] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0066[PoundPerGallonUsPerMegapascal] -->|BelongsToClass| N0005(Unit) 
+	N0066[PoundPerGallonUsPerMegapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0066[PoundPerGallonUsPerMegapascal] -->|ConversionFactorB| N0067(("8345.404452019331")) 
+	N0066[PoundPerGallonUsPerMegapascal] -->|Symbol| N0068(("ppgUS/MPa")) 
+	N0066[PoundPerGallonUsPerMegapascal] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0069[PoundPerCubicFootPerMegapascal] -->|BelongsToClass| N0005(Unit) 
+	N0069[PoundPerCubicFootPerMegapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0069[PoundPerCubicFootPerMegapascal] -->|ConversionFactorB| N0070(("62427.960576144586")) 
+	N0069[PoundPerCubicFootPerMegapascal] -->|Symbol| N0071(("lb/ft³/MPa")) 
+	N0069[PoundPerCubicFootPerMegapascal] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0072[PoundPerCubicInchPerMegapascal] -->|BelongsToClass| N0005(Unit) 
+	N0072[PoundPerCubicInchPerMegapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0072[PoundPerCubicInchPerMegapascal] -->|ConversionFactorB| N0073(("36.127292000083685")) 
+	N0072[PoundPerCubicInchPerMegapascal] -->|Symbol| N0074(("lb/in³/MPa")) 
+	N0072[PoundPerCubicInchPerMegapascal] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0075[PoundPerCubicYardPerMegapascal] -->|BelongsToClass| N0005(Unit) 
+	N0075[PoundPerCubicYardPerMegapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0075[PoundPerCubicYardPerMegapascal] -->|ConversionFactorB| N0076(("1685554.9355559037")) 
+	N0075[PoundPerCubicYardPerMegapascal] -->|Symbol| N0077(("lb/yd³/MPa")) 
+	N0075[PoundPerCubicYardPerMegapascal] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0078[KilogramPerCubicMetrePerGigapascal] -->|BelongsToClass| N0005(Unit) 
+	N0078[KilogramPerCubicMetrePerGigapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0078[KilogramPerCubicMetrePerGigapascal] -->|ConversionFactorB| N0079(("1000000000")) 
+	N0078[KilogramPerCubicMetrePerGigapascal] -->|Symbol| N0080(("kg/m³/GPa")) 
+	N0078[KilogramPerCubicMetrePerGigapascal] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0081[SpecificGravityPerGigapascal] -->|BelongsToClass| N0005(Unit) 
+	N0081[SpecificGravityPerGigapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0081[SpecificGravityPerGigapascal] -->|ConversionFactorB| N0082(("1000028.0007840219")) 
+	N0081[SpecificGravityPerGigapascal] -->|Symbol| N0083(("sg/GPa")) 
+	N0081[SpecificGravityPerGigapascal] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0084[GramPerCubicCentimetrePerGigapascal] -->|BelongsToClass| N0005(Unit) 
+	N0084[GramPerCubicCentimetrePerGigapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0084[GramPerCubicCentimetrePerGigapascal] -->|ConversionFactorB| N0085(("1000000.0000000001")) 
+	N0084[GramPerCubicCentimetrePerGigapascal] -->|Symbol| N0086(("g/cm³/GPa")) 
+	N0084[GramPerCubicCentimetrePerGigapascal] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0087[PoundPerGallonUkPerGigapascal] -->|BelongsToClass| N0005(Unit) 
+	N0087[PoundPerGallonUkPerGigapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0087[PoundPerGallonUkPerGigapascal] -->|ConversionFactorB| N0088(("10022412.854960501")) 
+	N0087[PoundPerGallonUkPerGigapascal] -->|Symbol| N0089(("ppgUK/GPa")) 
+	N0087[PoundPerGallonUkPerGigapascal] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0090[PoundPerGallonUsPerGigapascal] -->|BelongsToClass| N0005(Unit) 
+	N0090[PoundPerGallonUsPerGigapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0090[PoundPerGallonUsPerGigapascal] -->|ConversionFactorB| N0091(("8345404.45201933")) 
+	N0090[PoundPerGallonUsPerGigapascal] -->|Symbol| N0092(("ppgUS/GPa")) 
+	N0090[PoundPerGallonUsPerGigapascal] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0093[PoundPerCubicFootPerGigapascal] -->|BelongsToClass| N0005(Unit) 
+	N0093[PoundPerCubicFootPerGigapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0093[PoundPerCubicFootPerGigapascal] -->|ConversionFactorB| N0094(("62427960.57614458")) 
+	N0093[PoundPerCubicFootPerGigapascal] -->|Symbol| N0095(("lb/ft³/GPa")) 
+	N0093[PoundPerCubicFootPerGigapascal] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0096[PoundPerCubicInchPerGigapascal] -->|BelongsToClass| N0005(Unit) 
+	N0096[PoundPerCubicInchPerGigapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0096[PoundPerCubicInchPerGigapascal] -->|ConversionFactorB| N0097(("36127.29200008368")) 
+	N0096[PoundPerCubicInchPerGigapascal] -->|Symbol| N0098(("lb/in³/GPa")) 
+	N0096[PoundPerCubicInchPerGigapascal] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0099[PoundPerCubicYardPerGigapascal] -->|BelongsToClass| N0005(Unit) 
+	N0099[PoundPerCubicYardPerGigapascal] -->|ConversionFactorA| N0006(("0")) 
+	N0099[PoundPerCubicYardPerGigapascal] -->|ConversionFactorB| N0100(("1685554935.555904")) 
+	N0099[PoundPerCubicYardPerGigapascal] -->|Symbol| N0101(("lb/yd³/GPa")) 
+	N0099[PoundPerCubicYardPerGigapascal] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInch] -->|BelongsToClass| N0005(Unit) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInch] -->|ConversionFactorA| N0006(("0")) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInch] -->|ConversionFactorB| N0103(("6894.757293168361")) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInch] -->|Symbol| N0104(("kg/m³/psi")) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInch] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0105[SpecificGravityPerPoundPerSquareInch] -->|BelongsToClass| N0005(Unit) 
+	N0105[SpecificGravityPerPoundPerSquareInch] -->|ConversionFactorA| N0006(("0")) 
+	N0105[SpecificGravityPerPoundPerSquareInch] -->|ConversionFactorB| N0106(("6.894950351778211")) 
+	N0105[SpecificGravityPerPoundPerSquareInch] -->|Symbol| N0107(("sg/psi")) 
+	N0105[SpecificGravityPerPoundPerSquareInch] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInch] -->|BelongsToClass| N0005(Unit) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInch] -->|ConversionFactorA| N0006(("0")) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInch] -->|ConversionFactorB| N0109(("6.894757293168362")) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInch] -->|Symbol| N0110(("g/cm³/psi")) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInch] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0111[PoundPerGallonUkPerPoundPerSquareInch] -->|BelongsToClass| N0005(Unit) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInch] -->|ConversionFactorA| N0006(("0")) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInch] -->|ConversionFactorB| N0112(("69.10210412688325")) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInch] -->|Symbol| N0113(("ppgUK/psi")) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInch] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0114[PoundPerGallonUsPerPoundPerSquareInch] -->|BelongsToClass| N0005(Unit) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInch] -->|ConversionFactorA| N0006(("0")) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInch] -->|ConversionFactorB| N0115(("57.53953820999999")) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInch] -->|Symbol| N0116(("ppgUS/psi")) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInch] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0117[PoundPerCubicFootPerPoundPerSquareInch] -->|BelongsToClass| N0005(Unit) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInch] -->|ConversionFactorA| N0006(("0")) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInch] -->|ConversionFactorB| N0118(("430.4256364799998")) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInch] -->|Symbol| N0119(("lb/ft³/psi")) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInch] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0120[PoundPerCubicInchPerPoundPerSquareInch] -->|BelongsToClass| N0005(Unit) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInch] -->|ConversionFactorA| N0006(("0")) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInch] -->|ConversionFactorB| N0121(("0.24908890999999994")) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInch] -->|Symbol| N0122(("lb/in³/psi")) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInch] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+	N0123[PoundPerCubicYardPerPoundPerSquareInch] -->|BelongsToClass| N0005(Unit) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInch] -->|ConversionFactorA| N0006(("0")) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInch] -->|ConversionFactorB| N0124(("11621.492184959992")) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInch] -->|Symbol| N0125(("lb/yd³/psi")) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInch] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureQuantity] 
+```
+## MassDensityGradientPerPressureSquaredQuantity <!-- NOUN -->
+- Display name: MassDensityGradientPerPressureSquared
+- Parent class: [Quantity](./Quantities.md#Quantity)
+- Specialization:
+  - L = -1
+  - M = -1
+  - T = 4
+- Description: 
+A mass density gradient per pressure squared is the second derivative of a mass density compared to pressure: $\frac{d^{2}\rho}{dp^{2}}$, where $\rho$ is a mass density and $p$ is pressure.
+The dimension of mass density gradient per pressure squared is:
+$$[T^{4}M^{-1}L^{-1}]$$.
+The SI unit for **mass density gradient per pressure squared** is: kilogram per cubic metre per pascal squared with the associated unit label $\frac{\frac{kg}{m^{3}}}{Pa^{2}}$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:MassDensityGradientPerPressureSquaredQuantity
+MassDensityGradientPerPressureSquaredQuantity.L = -1
+MassDensityGradientPerPressureSquaredQuantity.M = -1
+MassDensityGradientPerPressureSquaredQuantity.T = 4
+Unit:KilogramPerCubicMetrePerPascalSquared
+KilogramPerCubicMetrePerPascalSquared.ConversionFactorA = 0
+KilogramPerCubicMetrePerPascalSquared.ConversionFactorB = 1
+KilogramPerCubicMetrePerPascalSquared.Symbol = "kg/m³/Pa²"
+KilogramPerCubicMetrePerPascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+MassDensityGradientPerPressureSquaredQuantity HasSIUnit KilogramPerCubicMetrePerPascalSquared
+Unit:SpecificGravityPerPascalSquared
+SpecificGravityPerPascalSquared.ConversionFactorA = 0
+SpecificGravityPerPascalSquared.ConversionFactorB = 0.001000028000784022
+SpecificGravityPerPascalSquared.Symbol = "sg/Pa²"
+SpecificGravityPerPascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:GramPerCubicCentimetrePerPascalSquared
+GramPerCubicCentimetrePerPascalSquared.ConversionFactorA = 0
+GramPerCubicCentimetrePerPascalSquared.ConversionFactorB = 0.0010000000000000002
+GramPerCubicCentimetrePerPascalSquared.Symbol = "g/cm³/Pa²"
+GramPerCubicCentimetrePerPascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerGallonUkPerPascalSquared
+PoundPerGallonUkPerPascalSquared.ConversionFactorA = 0
+PoundPerGallonUkPerPascalSquared.ConversionFactorB = 0.010022412854960501
+PoundPerGallonUkPerPascalSquared.Symbol = "ppgUK/Pa²"
+PoundPerGallonUkPerPascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerGallonUsPerPascalSquared
+PoundPerGallonUsPerPascalSquared.ConversionFactorA = 0
+PoundPerGallonUsPerPascalSquared.ConversionFactorB = 0.00834540445201933
+PoundPerGallonUsPerPascalSquared.Symbol = "ppgUS/Pa²"
+PoundPerGallonUsPerPascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicFootPerPascalSquared
+PoundPerCubicFootPerPascalSquared.ConversionFactorA = 0
+PoundPerCubicFootPerPascalSquared.ConversionFactorB = 0.06242796057614459
+PoundPerCubicFootPerPascalSquared.Symbol = "lb/ft³/Pa²"
+PoundPerCubicFootPerPascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicInchPerPascalSquared
+PoundPerCubicInchPerPascalSquared.ConversionFactorA = 0
+PoundPerCubicInchPerPascalSquared.ConversionFactorB = 3.612729200008369E-05
+PoundPerCubicInchPerPascalSquared.Symbol = "lb/in³/Pa²"
+PoundPerCubicInchPerPascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicYardPerPascalSquared
+PoundPerCubicYardPerPascalSquared.ConversionFactorA = 0
+PoundPerCubicYardPerPascalSquared.ConversionFactorB = 1.6855549355559039
+PoundPerCubicYardPerPascalSquared.Symbol = "lb/yd³/Pa²"
+PoundPerCubicYardPerPascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:KilogramPerCubicMetrePerBarSquared
+KilogramPerCubicMetrePerBarSquared.ConversionFactorA = 0
+KilogramPerCubicMetrePerBarSquared.ConversionFactorB = 10000000000
+KilogramPerCubicMetrePerBarSquared.Symbol = "kg/m³/bar²"
+KilogramPerCubicMetrePerBarSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:SpecificGravityPerBarSquared
+SpecificGravityPerBarSquared.ConversionFactorA = 0
+SpecificGravityPerBarSquared.ConversionFactorB = 10000280.00784022
+SpecificGravityPerBarSquared.Symbol = "sg/bar²"
+SpecificGravityPerBarSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:GramPerCubicCentimetrePerBarSquared
+GramPerCubicCentimetrePerBarSquared.ConversionFactorA = 0
+GramPerCubicCentimetrePerBarSquared.ConversionFactorB = 10000000.000000002
+GramPerCubicCentimetrePerBarSquared.Symbol = "g/cm³/bar²"
+GramPerCubicCentimetrePerBarSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerGallonUkPerBarSquared
+PoundPerGallonUkPerBarSquared.ConversionFactorA = 0
+PoundPerGallonUkPerBarSquared.ConversionFactorB = 100224128.54960501
+PoundPerGallonUkPerBarSquared.Symbol = "ppgUK/bar²"
+PoundPerGallonUkPerBarSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerGallonUsPerBarSquared
+PoundPerGallonUsPerBarSquared.ConversionFactorA = 0
+PoundPerGallonUsPerBarSquared.ConversionFactorB = 83454044.52019331
+PoundPerGallonUsPerBarSquared.Symbol = "ppgUS/bar²"
+PoundPerGallonUsPerBarSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicFootPerBarSquared
+PoundPerCubicFootPerBarSquared.ConversionFactorA = 0
+PoundPerCubicFootPerBarSquared.ConversionFactorB = 624279605.7614459
+PoundPerCubicFootPerBarSquared.Symbol = "lb/ft³/bar²"
+PoundPerCubicFootPerBarSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicInchPerBarSquared
+PoundPerCubicInchPerBarSquared.ConversionFactorA = 0
+PoundPerCubicInchPerBarSquared.ConversionFactorB = 361272.9200008369
+PoundPerCubicInchPerBarSquared.Symbol = "lb/in³/bar²"
+PoundPerCubicInchPerBarSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicYardPerBarSquared
+PoundPerCubicYardPerBarSquared.ConversionFactorA = 0
+PoundPerCubicYardPerBarSquared.ConversionFactorB = 16855549355.559038
+PoundPerCubicYardPerBarSquared.Symbol = "lb/yd³/bar²"
+PoundPerCubicYardPerBarSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:KilogramPerCubicMetrePerMegapascalSquared
+KilogramPerCubicMetrePerMegapascalSquared.ConversionFactorA = 0
+KilogramPerCubicMetrePerMegapascalSquared.ConversionFactorB = 1000000000000
+KilogramPerCubicMetrePerMegapascalSquared.Symbol = "kg/m³/MPa²"
+KilogramPerCubicMetrePerMegapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:SpecificGravityPerMegapascalSquared
+SpecificGravityPerMegapascalSquared.ConversionFactorA = 0
+SpecificGravityPerMegapascalSquared.ConversionFactorB = 1000028000.784022
+SpecificGravityPerMegapascalSquared.Symbol = "sg/MPa²"
+SpecificGravityPerMegapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:GramPerCubicCentimetrePerMegapascalSquared
+GramPerCubicCentimetrePerMegapascalSquared.ConversionFactorA = 0
+GramPerCubicCentimetrePerMegapascalSquared.ConversionFactorB = 1000000000.0000002
+GramPerCubicCentimetrePerMegapascalSquared.Symbol = "g/cm³/MPa²"
+GramPerCubicCentimetrePerMegapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerGallonUkPerMegapascalSquared
+PoundPerGallonUkPerMegapascalSquared.ConversionFactorA = 0
+PoundPerGallonUkPerMegapascalSquared.ConversionFactorB = 10022412854.9605
+PoundPerGallonUkPerMegapascalSquared.Symbol = "ppgUK/MPa²"
+PoundPerGallonUkPerMegapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerGallonUsPerMegapascalSquared
+PoundPerGallonUsPerMegapascalSquared.ConversionFactorA = 0
+PoundPerGallonUsPerMegapascalSquared.ConversionFactorB = 8345404452.019331
+PoundPerGallonUsPerMegapascalSquared.Symbol = "ppgUS/MPa²"
+PoundPerGallonUsPerMegapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicFootPerMegapascalSquared
+PoundPerCubicFootPerMegapascalSquared.ConversionFactorA = 0
+PoundPerCubicFootPerMegapascalSquared.ConversionFactorB = 62427960576.14459
+PoundPerCubicFootPerMegapascalSquared.Symbol = "lb/ft³/MPa²"
+PoundPerCubicFootPerMegapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicInchPerMegapascalSquared
+PoundPerCubicInchPerMegapascalSquared.ConversionFactorA = 0
+PoundPerCubicInchPerMegapascalSquared.ConversionFactorB = 36127292.000083685
+PoundPerCubicInchPerMegapascalSquared.Symbol = "lb/in³/MPa²"
+PoundPerCubicInchPerMegapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicYardPerMegapascalSquared
+PoundPerCubicYardPerMegapascalSquared.ConversionFactorA = 0
+PoundPerCubicYardPerMegapascalSquared.ConversionFactorB = 1685554935555.9036
+PoundPerCubicYardPerMegapascalSquared.Symbol = "lb/yd³/MPa²"
+PoundPerCubicYardPerMegapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:KilogramPerCubicMetrePerGigapascalSquared
+KilogramPerCubicMetrePerGigapascalSquared.ConversionFactorA = 0
+KilogramPerCubicMetrePerGigapascalSquared.ConversionFactorB = 1E+18
+KilogramPerCubicMetrePerGigapascalSquared.Symbol = "kg/m³/GPa²"
+KilogramPerCubicMetrePerGigapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:SpecificGravityPerGigapascalSquared
+SpecificGravityPerGigapascalSquared.ConversionFactorA = 0
+SpecificGravityPerGigapascalSquared.ConversionFactorB = 1000028000784021.9
+SpecificGravityPerGigapascalSquared.Symbol = "sg/GPa²"
+SpecificGravityPerGigapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:GramPerCubicCentimetrePerGigapascalSquared
+GramPerCubicCentimetrePerGigapascalSquared.ConversionFactorA = 0
+GramPerCubicCentimetrePerGigapascalSquared.ConversionFactorB = 1000000000000000.1
+GramPerCubicCentimetrePerGigapascalSquared.Symbol = "g/cm³/GPa²"
+GramPerCubicCentimetrePerGigapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerGallonUkPerGigapascalSquared
+PoundPerGallonUkPerGigapascalSquared.ConversionFactorA = 0
+PoundPerGallonUkPerGigapascalSquared.ConversionFactorB = 10022412854960500
+PoundPerGallonUkPerGigapascalSquared.Symbol = "ppgUK/GPa²"
+PoundPerGallonUkPerGigapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerGallonUsPerGigapascalSquared
+PoundPerGallonUsPerGigapascalSquared.ConversionFactorA = 0
+PoundPerGallonUsPerGigapascalSquared.ConversionFactorB = 8345404452019330
+PoundPerGallonUsPerGigapascalSquared.Symbol = "ppgUS/GPa²"
+PoundPerGallonUsPerGigapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicFootPerGigapascalSquared
+PoundPerCubicFootPerGigapascalSquared.ConversionFactorA = 0
+PoundPerCubicFootPerGigapascalSquared.ConversionFactorB = 62427960576144584
+PoundPerCubicFootPerGigapascalSquared.Symbol = "lb/ft³/GPa²"
+PoundPerCubicFootPerGigapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicInchPerGigapascalSquared
+PoundPerCubicInchPerGigapascalSquared.ConversionFactorA = 0
+PoundPerCubicInchPerGigapascalSquared.ConversionFactorB = 36127292000083.68
+PoundPerCubicInchPerGigapascalSquared.Symbol = "lb/in³/GPa²"
+PoundPerCubicInchPerGigapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicYardPerGigapascalSquared
+PoundPerCubicYardPerGigapascalSquared.ConversionFactorA = 0
+PoundPerCubicYardPerGigapascalSquared.ConversionFactorB = 1.685554935555904E+18
+PoundPerCubicYardPerGigapascalSquared.Symbol = "lb/yd³/GPa²"
+PoundPerCubicYardPerGigapascalSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:KilogramPerCubicMetrePerPoundPerSquareInchSquared
+KilogramPerCubicMetrePerPoundPerSquareInchSquared.ConversionFactorA = 0
+KilogramPerCubicMetrePerPoundPerSquareInchSquared.ConversionFactorB = 47537678.1316983
+KilogramPerCubicMetrePerPoundPerSquareInchSquared.Symbol = "kg/m³/psi²"
+KilogramPerCubicMetrePerPoundPerSquareInchSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:SpecificGravityPerPoundPerSquareInchSquared
+SpecificGravityPerPoundPerSquareInchSquared.ConversionFactorA = 0
+SpecificGravityPerPoundPerSquareInchSquared.ConversionFactorB = 47539.00922395657
+SpecificGravityPerPoundPerSquareInchSquared.Symbol = "sg/psi²"
+SpecificGravityPerPoundPerSquareInchSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:GramPerCubicCentimetrePerPoundPerSquareInchSquared
+GramPerCubicCentimetrePerPoundPerSquareInchSquared.ConversionFactorA = 0
+GramPerCubicCentimetrePerPoundPerSquareInchSquared.ConversionFactorB = 47537.6781316983
+GramPerCubicCentimetrePerPoundPerSquareInchSquared.Symbol = "g/cm³/psi²"
+GramPerCubicCentimetrePerPoundPerSquareInchSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerGallonUkPerPoundPerSquareInchSquared
+PoundPerGallonUkPerPoundPerSquareInchSquared.ConversionFactorA = 0
+PoundPerGallonUkPerPoundPerSquareInchSquared.ConversionFactorB = 476442.2364021077
+PoundPerGallonUkPerPoundPerSquareInchSquared.Symbol = "ppgUK/psi²"
+PoundPerGallonUkPerPoundPerSquareInchSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerGallonUsPerPoundPerSquareInchSquared
+PoundPerGallonUsPerPoundPerSquareInchSquared.ConversionFactorA = 0
+PoundPerGallonUsPerPoundPerSquareInchSquared.ConversionFactorB = 396721.15071893705
+PoundPerGallonUsPerPoundPerSquareInchSquared.Symbol = "ppgUS/psi²"
+PoundPerGallonUsPerPoundPerSquareInchSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicFootPerPoundPerSquareInchSquared
+PoundPerCubicFootPerPoundPerSquareInchSquared.ConversionFactorA = 0
+PoundPerCubicFootPerPoundPerSquareInchSquared.ConversionFactorB = 2967680.2962871124
+PoundPerCubicFootPerPoundPerSquareInchSquared.Symbol = "lb/ft³/psi²"
+PoundPerCubicFootPerPoundPerSquareInchSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicInchPerPoundPerSquareInchSquared
+PoundPerCubicInchPerPoundPerSquareInchSquared.ConversionFactorA = 0
+PoundPerCubicInchPerPoundPerSquareInchSquared.ConversionFactorB = 1717.4075788698572
+PoundPerCubicInchPerPoundPerSquareInchSquared.Symbol = "lb/in³/psi²"
+PoundPerCubicInchPerPoundPerSquareInchSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+Unit:PoundPerCubicYardPerPoundPerSquareInchSquared
+PoundPerCubicYardPerPoundPerSquareInchSquared.ConversionFactorA = 0
+PoundPerCubicYardPerPoundPerSquareInchSquared.ConversionFactorB = 80127367.99975201
+PoundPerCubicYardPerPoundPerSquareInchSquared.Symbol = "lb/yd³/psi²"
+PoundPerCubicYardPerPoundPerSquareInchSquared IsUnitForQuantity MassDensityGradientPerPressureSquaredQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MassDensityGradientPerPressureSquaredQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[MassDensityGradientPerPressureSquaredQuantity] -->|L| N0002(("-1")) 
+	N0000[MassDensityGradientPerPressureSquaredQuantity] -->|M| N0002(("-1")) 
+	N0000[MassDensityGradientPerPressureSquaredQuantity] -->|T| N0003(("4")) 
+	N0004[KilogramPerCubicMetrePerPascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0004[KilogramPerCubicMetrePerPascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0004[KilogramPerCubicMetrePerPascalSquared] -->|ConversionFactorB| N0007(("1")) 
+	N0004[KilogramPerCubicMetrePerPascalSquared] -->|Symbol| N0008(("kg/m³/Pa²")) 
+	N0004[KilogramPerCubicMetrePerPascalSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0000[MassDensityGradientPerPressureSquaredQuantity] -->|HasSIUnit| N0004[KilogramPerCubicMetrePerPascalSquared] 
+	N0009[SpecificGravityPerPascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0009[SpecificGravityPerPascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0009[SpecificGravityPerPascalSquared] -->|ConversionFactorB| N0010(("0.001000028000784022")) 
+	N0009[SpecificGravityPerPascalSquared] -->|Symbol| N0011(("sg/Pa²")) 
+	N0009[SpecificGravityPerPascalSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0012[GramPerCubicCentimetrePerPascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0012[GramPerCubicCentimetrePerPascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0012[GramPerCubicCentimetrePerPascalSquared] -->|ConversionFactorB| N0013(("0.0010000000000000002")) 
+	N0012[GramPerCubicCentimetrePerPascalSquared] -->|Symbol| N0014(("g/cm³/Pa²")) 
+	N0012[GramPerCubicCentimetrePerPascalSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0015[PoundPerGallonUkPerPascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0015[PoundPerGallonUkPerPascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0015[PoundPerGallonUkPerPascalSquared] -->|ConversionFactorB| N0016(("0.010022412854960501")) 
+	N0015[PoundPerGallonUkPerPascalSquared] -->|Symbol| N0017(("ppgUK/Pa²")) 
+	N0015[PoundPerGallonUkPerPascalSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0018[PoundPerGallonUsPerPascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0018[PoundPerGallonUsPerPascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0018[PoundPerGallonUsPerPascalSquared] -->|ConversionFactorB| N0019(("0.00834540445201933")) 
+	N0018[PoundPerGallonUsPerPascalSquared] -->|Symbol| N0020(("ppgUS/Pa²")) 
+	N0018[PoundPerGallonUsPerPascalSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0021[PoundPerCubicFootPerPascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0021[PoundPerCubicFootPerPascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0021[PoundPerCubicFootPerPascalSquared] -->|ConversionFactorB| N0022(("0.06242796057614459")) 
+	N0021[PoundPerCubicFootPerPascalSquared] -->|Symbol| N0023(("lb/ft³/Pa²")) 
+	N0021[PoundPerCubicFootPerPascalSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0024[PoundPerCubicInchPerPascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0024[PoundPerCubicInchPerPascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0024[PoundPerCubicInchPerPascalSquared] -->|ConversionFactorB| N0025(("3.612729200008369E-05")) 
+	N0024[PoundPerCubicInchPerPascalSquared] -->|Symbol| N0026(("lb/in³/Pa²")) 
+	N0024[PoundPerCubicInchPerPascalSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0027[PoundPerCubicYardPerPascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0027[PoundPerCubicYardPerPascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0027[PoundPerCubicYardPerPascalSquared] -->|ConversionFactorB| N0028(("1.6855549355559039")) 
+	N0027[PoundPerCubicYardPerPascalSquared] -->|Symbol| N0029(("lb/yd³/Pa²")) 
+	N0027[PoundPerCubicYardPerPascalSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0030[KilogramPerCubicMetrePerBarSquared] -->|BelongsToClass| N0005(Unit) 
+	N0030[KilogramPerCubicMetrePerBarSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0030[KilogramPerCubicMetrePerBarSquared] -->|ConversionFactorB| N0031(("10000000000")) 
+	N0030[KilogramPerCubicMetrePerBarSquared] -->|Symbol| N0032(("kg/m³/bar²")) 
+	N0030[KilogramPerCubicMetrePerBarSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0033[SpecificGravityPerBarSquared] -->|BelongsToClass| N0005(Unit) 
+	N0033[SpecificGravityPerBarSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0033[SpecificGravityPerBarSquared] -->|ConversionFactorB| N0034(("10000280.00784022")) 
+	N0033[SpecificGravityPerBarSquared] -->|Symbol| N0035(("sg/bar²")) 
+	N0033[SpecificGravityPerBarSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0036[GramPerCubicCentimetrePerBarSquared] -->|BelongsToClass| N0005(Unit) 
+	N0036[GramPerCubicCentimetrePerBarSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0036[GramPerCubicCentimetrePerBarSquared] -->|ConversionFactorB| N0037(("10000000.000000002")) 
+	N0036[GramPerCubicCentimetrePerBarSquared] -->|Symbol| N0038(("g/cm³/bar²")) 
+	N0036[GramPerCubicCentimetrePerBarSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0039[PoundPerGallonUkPerBarSquared] -->|BelongsToClass| N0005(Unit) 
+	N0039[PoundPerGallonUkPerBarSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0039[PoundPerGallonUkPerBarSquared] -->|ConversionFactorB| N0040(("100224128.54960501")) 
+	N0039[PoundPerGallonUkPerBarSquared] -->|Symbol| N0041(("ppgUK/bar²")) 
+	N0039[PoundPerGallonUkPerBarSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0042[PoundPerGallonUsPerBarSquared] -->|BelongsToClass| N0005(Unit) 
+	N0042[PoundPerGallonUsPerBarSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0042[PoundPerGallonUsPerBarSquared] -->|ConversionFactorB| N0043(("83454044.52019331")) 
+	N0042[PoundPerGallonUsPerBarSquared] -->|Symbol| N0044(("ppgUS/bar²")) 
+	N0042[PoundPerGallonUsPerBarSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0045[PoundPerCubicFootPerBarSquared] -->|BelongsToClass| N0005(Unit) 
+	N0045[PoundPerCubicFootPerBarSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0045[PoundPerCubicFootPerBarSquared] -->|ConversionFactorB| N0046(("624279605.7614459")) 
+	N0045[PoundPerCubicFootPerBarSquared] -->|Symbol| N0047(("lb/ft³/bar²")) 
+	N0045[PoundPerCubicFootPerBarSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0048[PoundPerCubicInchPerBarSquared] -->|BelongsToClass| N0005(Unit) 
+	N0048[PoundPerCubicInchPerBarSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0048[PoundPerCubicInchPerBarSquared] -->|ConversionFactorB| N0049(("361272.9200008369")) 
+	N0048[PoundPerCubicInchPerBarSquared] -->|Symbol| N0050(("lb/in³/bar²")) 
+	N0048[PoundPerCubicInchPerBarSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0051[PoundPerCubicYardPerBarSquared] -->|BelongsToClass| N0005(Unit) 
+	N0051[PoundPerCubicYardPerBarSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0051[PoundPerCubicYardPerBarSquared] -->|ConversionFactorB| N0052(("16855549355.559038")) 
+	N0051[PoundPerCubicYardPerBarSquared] -->|Symbol| N0053(("lb/yd³/bar²")) 
+	N0051[PoundPerCubicYardPerBarSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0054[KilogramPerCubicMetrePerMegapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0054[KilogramPerCubicMetrePerMegapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0054[KilogramPerCubicMetrePerMegapascalSquared] -->|ConversionFactorB| N0055(("1000000000000")) 
+	N0054[KilogramPerCubicMetrePerMegapascalSquared] -->|Symbol| N0056(("kg/m³/MPa²")) 
+	N0054[KilogramPerCubicMetrePerMegapascalSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0057[SpecificGravityPerMegapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0057[SpecificGravityPerMegapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0057[SpecificGravityPerMegapascalSquared] -->|ConversionFactorB| N0058(("1000028000.784022")) 
+	N0057[SpecificGravityPerMegapascalSquared] -->|Symbol| N0059(("sg/MPa²")) 
+	N0057[SpecificGravityPerMegapascalSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0060[GramPerCubicCentimetrePerMegapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0060[GramPerCubicCentimetrePerMegapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0060[GramPerCubicCentimetrePerMegapascalSquared] -->|ConversionFactorB| N0061(("1000000000.0000002")) 
+	N0060[GramPerCubicCentimetrePerMegapascalSquared] -->|Symbol| N0062(("g/cm³/MPa²")) 
+	N0060[GramPerCubicCentimetrePerMegapascalSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0063[PoundPerGallonUkPerMegapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0063[PoundPerGallonUkPerMegapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0063[PoundPerGallonUkPerMegapascalSquared] -->|ConversionFactorB| N0064(("10022412854.9605")) 
+	N0063[PoundPerGallonUkPerMegapascalSquared] -->|Symbol| N0065(("ppgUK/MPa²")) 
+	N0063[PoundPerGallonUkPerMegapascalSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0066[PoundPerGallonUsPerMegapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0066[PoundPerGallonUsPerMegapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0066[PoundPerGallonUsPerMegapascalSquared] -->|ConversionFactorB| N0067(("8345404452.019331")) 
+	N0066[PoundPerGallonUsPerMegapascalSquared] -->|Symbol| N0068(("ppgUS/MPa²")) 
+	N0066[PoundPerGallonUsPerMegapascalSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0069[PoundPerCubicFootPerMegapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0069[PoundPerCubicFootPerMegapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0069[PoundPerCubicFootPerMegapascalSquared] -->|ConversionFactorB| N0070(("62427960576.14459")) 
+	N0069[PoundPerCubicFootPerMegapascalSquared] -->|Symbol| N0071(("lb/ft³/MPa²")) 
+	N0069[PoundPerCubicFootPerMegapascalSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0072[PoundPerCubicInchPerMegapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0072[PoundPerCubicInchPerMegapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0072[PoundPerCubicInchPerMegapascalSquared] -->|ConversionFactorB| N0073(("36127292.000083685")) 
+	N0072[PoundPerCubicInchPerMegapascalSquared] -->|Symbol| N0074(("lb/in³/MPa²")) 
+	N0072[PoundPerCubicInchPerMegapascalSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0075[PoundPerCubicYardPerMegapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0075[PoundPerCubicYardPerMegapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0075[PoundPerCubicYardPerMegapascalSquared] -->|ConversionFactorB| N0076(("1685554935555.9036")) 
+	N0075[PoundPerCubicYardPerMegapascalSquared] -->|Symbol| N0077(("lb/yd³/MPa²")) 
+	N0075[PoundPerCubicYardPerMegapascalSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0078[KilogramPerCubicMetrePerGigapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0078[KilogramPerCubicMetrePerGigapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0078[KilogramPerCubicMetrePerGigapascalSquared] -->|ConversionFactorB| N0079(("1E+18")) 
+	N0078[KilogramPerCubicMetrePerGigapascalSquared] -->|Symbol| N0080(("kg/m³/GPa²")) 
+	N0078[KilogramPerCubicMetrePerGigapascalSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0081[SpecificGravityPerGigapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0081[SpecificGravityPerGigapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0081[SpecificGravityPerGigapascalSquared] -->|ConversionFactorB| N0082(("1000028000784021.9")) 
+	N0081[SpecificGravityPerGigapascalSquared] -->|Symbol| N0083(("sg/GPa²")) 
+	N0081[SpecificGravityPerGigapascalSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0084[GramPerCubicCentimetrePerGigapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0084[GramPerCubicCentimetrePerGigapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0084[GramPerCubicCentimetrePerGigapascalSquared] -->|ConversionFactorB| N0085(("1000000000000000.1")) 
+	N0084[GramPerCubicCentimetrePerGigapascalSquared] -->|Symbol| N0086(("g/cm³/GPa²")) 
+	N0084[GramPerCubicCentimetrePerGigapascalSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0087[PoundPerGallonUkPerGigapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0087[PoundPerGallonUkPerGigapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0087[PoundPerGallonUkPerGigapascalSquared] -->|ConversionFactorB| N0088(("10022412854960500")) 
+	N0087[PoundPerGallonUkPerGigapascalSquared] -->|Symbol| N0089(("ppgUK/GPa²")) 
+	N0087[PoundPerGallonUkPerGigapascalSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0090[PoundPerGallonUsPerGigapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0090[PoundPerGallonUsPerGigapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0090[PoundPerGallonUsPerGigapascalSquared] -->|ConversionFactorB| N0091(("8345404452019330")) 
+	N0090[PoundPerGallonUsPerGigapascalSquared] -->|Symbol| N0092(("ppgUS/GPa²")) 
+	N0090[PoundPerGallonUsPerGigapascalSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0093[PoundPerCubicFootPerGigapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0093[PoundPerCubicFootPerGigapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0093[PoundPerCubicFootPerGigapascalSquared] -->|ConversionFactorB| N0094(("62427960576144584")) 
+	N0093[PoundPerCubicFootPerGigapascalSquared] -->|Symbol| N0095(("lb/ft³/GPa²")) 
+	N0093[PoundPerCubicFootPerGigapascalSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0096[PoundPerCubicInchPerGigapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0096[PoundPerCubicInchPerGigapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0096[PoundPerCubicInchPerGigapascalSquared] -->|ConversionFactorB| N0097(("36127292000083.68")) 
+	N0096[PoundPerCubicInchPerGigapascalSquared] -->|Symbol| N0098(("lb/in³/GPa²")) 
+	N0096[PoundPerCubicInchPerGigapascalSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0099[PoundPerCubicYardPerGigapascalSquared] -->|BelongsToClass| N0005(Unit) 
+	N0099[PoundPerCubicYardPerGigapascalSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0099[PoundPerCubicYardPerGigapascalSquared] -->|ConversionFactorB| N0100(("1.685554935555904E+18")) 
+	N0099[PoundPerCubicYardPerGigapascalSquared] -->|Symbol| N0101(("lb/yd³/GPa²")) 
+	N0099[PoundPerCubicYardPerGigapascalSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInchSquared] -->|BelongsToClass| N0005(Unit) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInchSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInchSquared] -->|ConversionFactorB| N0103(("47537678.1316983")) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInchSquared] -->|Symbol| N0104(("kg/m³/psi²")) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInchSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0105[SpecificGravityPerPoundPerSquareInchSquared] -->|BelongsToClass| N0005(Unit) 
+	N0105[SpecificGravityPerPoundPerSquareInchSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0105[SpecificGravityPerPoundPerSquareInchSquared] -->|ConversionFactorB| N0106(("47539.00922395657")) 
+	N0105[SpecificGravityPerPoundPerSquareInchSquared] -->|Symbol| N0107(("sg/psi²")) 
+	N0105[SpecificGravityPerPoundPerSquareInchSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInchSquared] -->|BelongsToClass| N0005(Unit) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInchSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInchSquared] -->|ConversionFactorB| N0109(("47537.6781316983")) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInchSquared] -->|Symbol| N0110(("g/cm³/psi²")) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInchSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0111[PoundPerGallonUkPerPoundPerSquareInchSquared] -->|BelongsToClass| N0005(Unit) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInchSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInchSquared] -->|ConversionFactorB| N0112(("476442.2364021077")) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInchSquared] -->|Symbol| N0113(("ppgUK/psi²")) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInchSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0114[PoundPerGallonUsPerPoundPerSquareInchSquared] -->|BelongsToClass| N0005(Unit) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInchSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInchSquared] -->|ConversionFactorB| N0115(("396721.15071893705")) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInchSquared] -->|Symbol| N0116(("ppgUS/psi²")) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInchSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0117[PoundPerCubicFootPerPoundPerSquareInchSquared] -->|BelongsToClass| N0005(Unit) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInchSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInchSquared] -->|ConversionFactorB| N0118(("2967680.2962871124")) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInchSquared] -->|Symbol| N0119(("lb/ft³/psi²")) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInchSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0120[PoundPerCubicInchPerPoundPerSquareInchSquared] -->|BelongsToClass| N0005(Unit) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInchSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInchSquared] -->|ConversionFactorB| N0121(("1717.4075788698572")) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInchSquared] -->|Symbol| N0122(("lb/in³/psi²")) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInchSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+	N0123[PoundPerCubicYardPerPoundPerSquareInchSquared] -->|BelongsToClass| N0005(Unit) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInchSquared] -->|ConversionFactorA| N0006(("0")) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInchSquared] -->|ConversionFactorB| N0124(("80127367.99975201")) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInchSquared] -->|Symbol| N0125(("lb/yd³/psi²")) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInchSquared] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredQuantity] 
+```
+## MassDensityGradientPerPressureTemperatureQuantity <!-- NOUN -->
+- Display name: MassDensityGradientPerPressureTemperature
+- Parent class: [Quantity](./Quantities.md#Quantity)
+- Specialization:
+  - L = -2
+  - T = 2
+  - ThT = -1
+- Description: 
+A mass density gradient per pressure and temperature is the second derivative of a mass density compared to pressure and temperature: $\frac{d^{2}\rho}{dpdT}$, where $\rho$ is a mass density, $p$ is pressure and $T$ is the temperature.
+The dimension of mass density gradient per pressure and temperature is:
+$$[T^{2}K^{-1}L^{-2}]$$.
+The SI unit for **mass density gradient per pressure and temperature** is: kilogram per cubic metre per pascal kelvin with the associated unit label $\frac{\frac{kg}{m^{3}}}{Pa \cdot K}$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:MassDensityGradientPerPressureTemperatureQuantity
+MassDensityGradientPerPressureTemperatureQuantity.L = -2
+MassDensityGradientPerPressureTemperatureQuantity.T = 2
+MassDensityGradientPerPressureTemperatureQuantity.ThT = -1
+Unit:KilogramPerCubicMetrePerPascalKelvin
+KilogramPerCubicMetrePerPascalKelvin.ConversionFactorA = 0
+KilogramPerCubicMetrePerPascalKelvin.ConversionFactorB = 1
+KilogramPerCubicMetrePerPascalKelvin.Symbol = "kg/m³/(Pa•K)"
+KilogramPerCubicMetrePerPascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+MassDensityGradientPerPressureTemperatureQuantity HasSIUnit KilogramPerCubicMetrePerPascalKelvin
+Unit:SpecificGravityPerPascalKelvin
+SpecificGravityPerPascalKelvin.ConversionFactorA = 0
+SpecificGravityPerPascalKelvin.ConversionFactorB = 0.001000028000784022
+SpecificGravityPerPascalKelvin.Symbol = "sg/(Pa•K)"
+SpecificGravityPerPascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:GramPerCubicCentimetrePerPascalKelvin
+GramPerCubicCentimetrePerPascalKelvin.ConversionFactorA = 0
+GramPerCubicCentimetrePerPascalKelvin.ConversionFactorB = 0.0010000000000000002
+GramPerCubicCentimetrePerPascalKelvin.Symbol = "g/cm³/(Pa•K)"
+GramPerCubicCentimetrePerPascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUkPerPascalKelvin
+PoundPerGallonUkPerPascalKelvin.ConversionFactorA = 0
+PoundPerGallonUkPerPascalKelvin.ConversionFactorB = 0.010022412854960501
+PoundPerGallonUkPerPascalKelvin.Symbol = "ppgUK/(Pa•K)"
+PoundPerGallonUkPerPascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUsPerPascalKelvin
+PoundPerGallonUsPerPascalKelvin.ConversionFactorA = 0
+PoundPerGallonUsPerPascalKelvin.ConversionFactorB = 0.00834540445201933
+PoundPerGallonUsPerPascalKelvin.Symbol = "ppgUS/(Pa•K)"
+PoundPerGallonUsPerPascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicFootPerPascalKelvin
+PoundPerCubicFootPerPascalKelvin.ConversionFactorA = 0
+PoundPerCubicFootPerPascalKelvin.ConversionFactorB = 0.06242796057614459
+PoundPerCubicFootPerPascalKelvin.Symbol = "lb/ft³/(Pa•K)"
+PoundPerCubicFootPerPascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicInchPerPascalKelvin
+PoundPerCubicInchPerPascalKelvin.ConversionFactorA = 0
+PoundPerCubicInchPerPascalKelvin.ConversionFactorB = 3.612729200008369E-05
+PoundPerCubicInchPerPascalKelvin.Symbol = "lb/in³/(Pa•K)"
+PoundPerCubicInchPerPascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicYardPerPascalKelvin
+PoundPerCubicYardPerPascalKelvin.ConversionFactorA = 0
+PoundPerCubicYardPerPascalKelvin.ConversionFactorB = 1.6855549355559039
+PoundPerCubicYardPerPascalKelvin.Symbol = "lb/yd³/(Pa•K)"
+PoundPerCubicYardPerPascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:KilogramPerCubicMetrePerBarKelvin
+KilogramPerCubicMetrePerBarKelvin.ConversionFactorA = 0
+KilogramPerCubicMetrePerBarKelvin.ConversionFactorB = 100000
+KilogramPerCubicMetrePerBarKelvin.Symbol = "kg/m³/(bar•K)"
+KilogramPerCubicMetrePerBarKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:SpecificGravityPerBarKelvin
+SpecificGravityPerBarKelvin.ConversionFactorA = 0
+SpecificGravityPerBarKelvin.ConversionFactorB = 100.0028000784022
+SpecificGravityPerBarKelvin.Symbol = "sg/(bar•K)"
+SpecificGravityPerBarKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:GramPerCubicCentimetrePerBarKelvin
+GramPerCubicCentimetrePerBarKelvin.ConversionFactorA = 0
+GramPerCubicCentimetrePerBarKelvin.ConversionFactorB = 100.00000000000001
+GramPerCubicCentimetrePerBarKelvin.Symbol = "g/cm³/(bar•K)"
+GramPerCubicCentimetrePerBarKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUkPerBarKelvin
+PoundPerGallonUkPerBarKelvin.ConversionFactorA = 0
+PoundPerGallonUkPerBarKelvin.ConversionFactorB = 1002.2412854960501
+PoundPerGallonUkPerBarKelvin.Symbol = "ppgUK/(bar•K)"
+PoundPerGallonUkPerBarKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUsPerBarKelvin
+PoundPerGallonUsPerBarKelvin.ConversionFactorA = 0
+PoundPerGallonUsPerBarKelvin.ConversionFactorB = 834.540445201933
+PoundPerGallonUsPerBarKelvin.Symbol = "ppgUS/(bar•K)"
+PoundPerGallonUsPerBarKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicFootPerBarKelvin
+PoundPerCubicFootPerBarKelvin.ConversionFactorA = 0
+PoundPerCubicFootPerBarKelvin.ConversionFactorB = 6242.79605761446
+PoundPerCubicFootPerBarKelvin.Symbol = "lb/ft³/(bar•K)"
+PoundPerCubicFootPerBarKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicInchPerBarKelvin
+PoundPerCubicInchPerBarKelvin.ConversionFactorA = 0
+PoundPerCubicInchPerBarKelvin.ConversionFactorB = 3.6127292000083684
+PoundPerCubicInchPerBarKelvin.Symbol = "lb/in³/(bar•K)"
+PoundPerCubicInchPerBarKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicYardPerBarKelvin
+PoundPerCubicYardPerBarKelvin.ConversionFactorA = 0
+PoundPerCubicYardPerBarKelvin.ConversionFactorB = 168555.49355559036
+PoundPerCubicYardPerBarKelvin.Symbol = "lb/yd³/(bar•K)"
+PoundPerCubicYardPerBarKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:KilogramPerCubicMetrePerMegapascalKelvin
+KilogramPerCubicMetrePerMegapascalKelvin.ConversionFactorA = 0
+KilogramPerCubicMetrePerMegapascalKelvin.ConversionFactorB = 1000000
+KilogramPerCubicMetrePerMegapascalKelvin.Symbol = "kg/m³/(MPa•K)"
+KilogramPerCubicMetrePerMegapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:SpecificGravityPerMegapascalKelvin
+SpecificGravityPerMegapascalKelvin.ConversionFactorA = 0
+SpecificGravityPerMegapascalKelvin.ConversionFactorB = 1000.028000784022
+SpecificGravityPerMegapascalKelvin.Symbol = "sg/(MPa•K)"
+SpecificGravityPerMegapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:GramPerCubicCentimetrePerMegapascalKelvin
+GramPerCubicCentimetrePerMegapascalKelvin.ConversionFactorA = 0
+GramPerCubicCentimetrePerMegapascalKelvin.ConversionFactorB = 1000.0000000000002
+GramPerCubicCentimetrePerMegapascalKelvin.Symbol = "g/cm³/(MPa•K)"
+GramPerCubicCentimetrePerMegapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUkPerMegapascalKelvin
+PoundPerGallonUkPerMegapascalKelvin.ConversionFactorA = 0
+PoundPerGallonUkPerMegapascalKelvin.ConversionFactorB = 10022.412854960501
+PoundPerGallonUkPerMegapascalKelvin.Symbol = "ppgUK/(MPa•K)"
+PoundPerGallonUkPerMegapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUsPerMegapascalKelvin
+PoundPerGallonUsPerMegapascalKelvin.ConversionFactorA = 0
+PoundPerGallonUsPerMegapascalKelvin.ConversionFactorB = 8345.404452019331
+PoundPerGallonUsPerMegapascalKelvin.Symbol = "ppgUS/(MPa•K)"
+PoundPerGallonUsPerMegapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicFootPerMegapascalKelvin
+PoundPerCubicFootPerMegapascalKelvin.ConversionFactorA = 0
+PoundPerCubicFootPerMegapascalKelvin.ConversionFactorB = 62427.960576144586
+PoundPerCubicFootPerMegapascalKelvin.Symbol = "lb/ft³/(MPa•K)"
+PoundPerCubicFootPerMegapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicInchPerMegapascalKelvin
+PoundPerCubicInchPerMegapascalKelvin.ConversionFactorA = 0
+PoundPerCubicInchPerMegapascalKelvin.ConversionFactorB = 36.127292000083685
+PoundPerCubicInchPerMegapascalKelvin.Symbol = "lb/in³/(MPa•K)"
+PoundPerCubicInchPerMegapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicYardPerMegapascalKelvin
+PoundPerCubicYardPerMegapascalKelvin.ConversionFactorA = 0
+PoundPerCubicYardPerMegapascalKelvin.ConversionFactorB = 1685554.9355559037
+PoundPerCubicYardPerMegapascalKelvin.Symbol = "lb/yd³/(MPa•K)"
+PoundPerCubicYardPerMegapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:KilogramPerCubicMetrePerGigapascalKelvin
+KilogramPerCubicMetrePerGigapascalKelvin.ConversionFactorA = 0
+KilogramPerCubicMetrePerGigapascalKelvin.ConversionFactorB = 1000000000
+KilogramPerCubicMetrePerGigapascalKelvin.Symbol = "kg/m³/(GPa•K)"
+KilogramPerCubicMetrePerGigapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:SpecificGravityPerGigapascalKelvin
+SpecificGravityPerGigapascalKelvin.ConversionFactorA = 0
+SpecificGravityPerGigapascalKelvin.ConversionFactorB = 1000028.0007840219
+SpecificGravityPerGigapascalKelvin.Symbol = "sg/(GPa•K)"
+SpecificGravityPerGigapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:GramPerCubicCentimetrePerGigapascalKelvin
+GramPerCubicCentimetrePerGigapascalKelvin.ConversionFactorA = 0
+GramPerCubicCentimetrePerGigapascalKelvin.ConversionFactorB = 1000000.0000000001
+GramPerCubicCentimetrePerGigapascalKelvin.Symbol = "g/cm³/(GPa•K)"
+GramPerCubicCentimetrePerGigapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUkPerGigapascalKelvin
+PoundPerGallonUkPerGigapascalKelvin.ConversionFactorA = 0
+PoundPerGallonUkPerGigapascalKelvin.ConversionFactorB = 10022412.854960501
+PoundPerGallonUkPerGigapascalKelvin.Symbol = "ppgUK/(GPa•K)"
+PoundPerGallonUkPerGigapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUsPerGigapascalKelvin
+PoundPerGallonUsPerGigapascalKelvin.ConversionFactorA = 0
+PoundPerGallonUsPerGigapascalKelvin.ConversionFactorB = 8345404.45201933
+PoundPerGallonUsPerGigapascalKelvin.Symbol = "ppgUS/(GPa•K)"
+PoundPerGallonUsPerGigapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicFootPerGigapascalKelvin
+PoundPerCubicFootPerGigapascalKelvin.ConversionFactorA = 0
+PoundPerCubicFootPerGigapascalKelvin.ConversionFactorB = 62427960.57614458
+PoundPerCubicFootPerGigapascalKelvin.Symbol = "lb/ft³/(GPa•K)"
+PoundPerCubicFootPerGigapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicInchPerGigapascalKelvin
+PoundPerCubicInchPerGigapascalKelvin.ConversionFactorA = 0
+PoundPerCubicInchPerGigapascalKelvin.ConversionFactorB = 36127.29200008368
+PoundPerCubicInchPerGigapascalKelvin.Symbol = "lb/in³/(GPa•K)"
+PoundPerCubicInchPerGigapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicYardPerGigapascalKelvin
+PoundPerCubicYardPerGigapascalKelvin.ConversionFactorA = 0
+PoundPerCubicYardPerGigapascalKelvin.ConversionFactorB = 1685554935.555904
+PoundPerCubicYardPerGigapascalKelvin.Symbol = "lb/yd³/(GPa•K)"
+PoundPerCubicYardPerGigapascalKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:KilogramPerCubicMetrePerPoundPerSquareInchKelvin
+KilogramPerCubicMetrePerPoundPerSquareInchKelvin.ConversionFactorA = 0
+KilogramPerCubicMetrePerPoundPerSquareInchKelvin.ConversionFactorB = 6894.757293168361
+KilogramPerCubicMetrePerPoundPerSquareInchKelvin.Symbol = "kg/m³/(psi•K)"
+KilogramPerCubicMetrePerPoundPerSquareInchKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:SpecificGravityPerPoundPerSquareInchKelvin
+SpecificGravityPerPoundPerSquareInchKelvin.ConversionFactorA = 0
+SpecificGravityPerPoundPerSquareInchKelvin.ConversionFactorB = 6.894950351778211
+SpecificGravityPerPoundPerSquareInchKelvin.Symbol = "sg/(psi•K)"
+SpecificGravityPerPoundPerSquareInchKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:GramPerCubicCentimetrePerPoundPerSquareInchKelvin
+GramPerCubicCentimetrePerPoundPerSquareInchKelvin.ConversionFactorA = 0
+GramPerCubicCentimetrePerPoundPerSquareInchKelvin.ConversionFactorB = 6.894757293168362
+GramPerCubicCentimetrePerPoundPerSquareInchKelvin.Symbol = "g/cm³/(psi•K)"
+GramPerCubicCentimetrePerPoundPerSquareInchKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUkPerPoundPerSquareInchKelvin
+PoundPerGallonUkPerPoundPerSquareInchKelvin.ConversionFactorA = 0
+PoundPerGallonUkPerPoundPerSquareInchKelvin.ConversionFactorB = 69.10210412688325
+PoundPerGallonUkPerPoundPerSquareInchKelvin.Symbol = "ppgUK/(psi•K)"
+PoundPerGallonUkPerPoundPerSquareInchKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUsPerPoundPerSquareInchKelvin
+PoundPerGallonUsPerPoundPerSquareInchKelvin.ConversionFactorA = 0
+PoundPerGallonUsPerPoundPerSquareInchKelvin.ConversionFactorB = 57.53953820999999
+PoundPerGallonUsPerPoundPerSquareInchKelvin.Symbol = "ppgUS/(psi•K)"
+PoundPerGallonUsPerPoundPerSquareInchKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicFootPerPoundPerSquareInchKelvin
+PoundPerCubicFootPerPoundPerSquareInchKelvin.ConversionFactorA = 0
+PoundPerCubicFootPerPoundPerSquareInchKelvin.ConversionFactorB = 430.4256364799998
+PoundPerCubicFootPerPoundPerSquareInchKelvin.Symbol = "lb/ft³/(psi•K)"
+PoundPerCubicFootPerPoundPerSquareInchKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicInchPerPoundPerSquareInchKelvin
+PoundPerCubicInchPerPoundPerSquareInchKelvin.ConversionFactorA = 0
+PoundPerCubicInchPerPoundPerSquareInchKelvin.ConversionFactorB = 0.24908890999999994
+PoundPerCubicInchPerPoundPerSquareInchKelvin.Symbol = "lb/in³/(psi•K)"
+PoundPerCubicInchPerPoundPerSquareInchKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicYardPerPoundPerSquareInchKelvin
+PoundPerCubicYardPerPoundPerSquareInchKelvin.ConversionFactorA = 0
+PoundPerCubicYardPerPoundPerSquareInchKelvin.ConversionFactorB = 11621.492184959992
+PoundPerCubicYardPerPoundPerSquareInchKelvin.Symbol = "lb/yd³/(psi•K)"
+PoundPerCubicYardPerPoundPerSquareInchKelvin IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:KilogramPerCubicMetrePerPascalCelsius
+KilogramPerCubicMetrePerPascalCelsius.ConversionFactorA = 0
+KilogramPerCubicMetrePerPascalCelsius.ConversionFactorB = 1
+KilogramPerCubicMetrePerPascalCelsius.Symbol = "kg/m³/(Pa•°C)"
+KilogramPerCubicMetrePerPascalCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:SpecificGravityPerPascalCelsius
+SpecificGravityPerPascalCelsius.ConversionFactorA = 0
+SpecificGravityPerPascalCelsius.ConversionFactorB = 0.001000028000784022
+SpecificGravityPerPascalCelsius.Symbol = "sg/(Pa•°C)"
+SpecificGravityPerPascalCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:GramPerCubicCentimetrePerPascalCelsius
+GramPerCubicCentimetrePerPascalCelsius.ConversionFactorA = 0
+GramPerCubicCentimetrePerPascalCelsius.ConversionFactorB = 0.0010000000000000002
+GramPerCubicCentimetrePerPascalCelsius.Symbol = "g/cm³/(Pa•°C)"
+GramPerCubicCentimetrePerPascalCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUkPerPascalCelsius
+PoundPerGallonUkPerPascalCelsius.ConversionFactorA = 0
+PoundPerGallonUkPerPascalCelsius.ConversionFactorB = 0.010022412854960501
+PoundPerGallonUkPerPascalCelsius.Symbol = "ppgUK/(Pa•°C)"
+PoundPerGallonUkPerPascalCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUsPerPascalCelsius
+PoundPerGallonUsPerPascalCelsius.ConversionFactorA = 0
+PoundPerGallonUsPerPascalCelsius.ConversionFactorB = 0.00834540445201933
+PoundPerGallonUsPerPascalCelsius.Symbol = "ppgUS/(Pa•°C)"
+PoundPerGallonUsPerPascalCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicFootPerPascalCelsius
+PoundPerCubicFootPerPascalCelsius.ConversionFactorA = 0
+PoundPerCubicFootPerPascalCelsius.ConversionFactorB = 0.06242796057614459
+PoundPerCubicFootPerPascalCelsius.Symbol = "lb/ft³/(Pa•°C)"
+PoundPerCubicFootPerPascalCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicInchPerPascalCelsius
+PoundPerCubicInchPerPascalCelsius.ConversionFactorA = 0
+PoundPerCubicInchPerPascalCelsius.ConversionFactorB = 3.612729200008369E-05
+PoundPerCubicInchPerPascalCelsius.Symbol = "lb/in³/(Pa•°C)"
+PoundPerCubicInchPerPascalCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicYardPerPascalCelsius
+PoundPerCubicYardPerPascalCelsius.ConversionFactorA = 0
+PoundPerCubicYardPerPascalCelsius.ConversionFactorB = 1.6855549355559039
+PoundPerCubicYardPerPascalCelsius.Symbol = "lb/yd³/(Pa•°C)"
+PoundPerCubicYardPerPascalCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:KilogramPerCubicMetrePerBarCelsius
+KilogramPerCubicMetrePerBarCelsius.ConversionFactorA = 0
+KilogramPerCubicMetrePerBarCelsius.ConversionFactorB = 100000
+KilogramPerCubicMetrePerBarCelsius.Symbol = "kg/m³/(bar•°C)"
+KilogramPerCubicMetrePerBarCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:SpecificGravityPerBarCelsius
+SpecificGravityPerBarCelsius.ConversionFactorA = 0
+SpecificGravityPerBarCelsius.ConversionFactorB = 100.0028000784022
+SpecificGravityPerBarCelsius.Symbol = "sg/(bar•°C)"
+SpecificGravityPerBarCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:GramPerCubicCentimetrePerBarCelsius
+GramPerCubicCentimetrePerBarCelsius.ConversionFactorA = 0
+GramPerCubicCentimetrePerBarCelsius.ConversionFactorB = 100.00000000000001
+GramPerCubicCentimetrePerBarCelsius.Symbol = "g/cm³/(bar•°C)"
+GramPerCubicCentimetrePerBarCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUkPerBarCelsius
+PoundPerGallonUkPerBarCelsius.ConversionFactorA = 0
+PoundPerGallonUkPerBarCelsius.ConversionFactorB = 1002.2412854960501
+PoundPerGallonUkPerBarCelsius.Symbol = "ppgUK/(bar•°C)"
+PoundPerGallonUkPerBarCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUsPerBarCelsius
+PoundPerGallonUsPerBarCelsius.ConversionFactorA = 0
+PoundPerGallonUsPerBarCelsius.ConversionFactorB = 834.540445201933
+PoundPerGallonUsPerBarCelsius.Symbol = "ppgUS/(bar•°C)"
+PoundPerGallonUsPerBarCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicFootPerBarCelsius
+PoundPerCubicFootPerBarCelsius.ConversionFactorA = 0
+PoundPerCubicFootPerBarCelsius.ConversionFactorB = 6242.79605761446
+PoundPerCubicFootPerBarCelsius.Symbol = "lb/ft³/(bar•°C)"
+PoundPerCubicFootPerBarCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicInchPerBarCelsius
+PoundPerCubicInchPerBarCelsius.ConversionFactorA = 0
+PoundPerCubicInchPerBarCelsius.ConversionFactorB = 3.6127292000083684
+PoundPerCubicInchPerBarCelsius.Symbol = "lb/in³/(bar•°C)"
+PoundPerCubicInchPerBarCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicYardPerBarCelsius
+PoundPerCubicYardPerBarCelsius.ConversionFactorA = 0
+PoundPerCubicYardPerBarCelsius.ConversionFactorB = 168555.49355559036
+PoundPerCubicYardPerBarCelsius.Symbol = "lb/yd³/(bar•°C)"
+PoundPerCubicYardPerBarCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:KilogramPerCubicMetrePerPoundPerSquareInchCelsius
+KilogramPerCubicMetrePerPoundPerSquareInchCelsius.ConversionFactorA = 0
+KilogramPerCubicMetrePerPoundPerSquareInchCelsius.ConversionFactorB = 6894.757293168361
+KilogramPerCubicMetrePerPoundPerSquareInchCelsius.Symbol = "kg/m³/(psi•°C)"
+KilogramPerCubicMetrePerPoundPerSquareInchCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:SpecificGravityPerPoundPerSquareInchCelsius
+SpecificGravityPerPoundPerSquareInchCelsius.ConversionFactorA = 0
+SpecificGravityPerPoundPerSquareInchCelsius.ConversionFactorB = 6.894950351778211
+SpecificGravityPerPoundPerSquareInchCelsius.Symbol = "sg/(psi•°C)"
+SpecificGravityPerPoundPerSquareInchCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:GramPerCubicCentimetrePerPoundPerSquareInchCelsius
+GramPerCubicCentimetrePerPoundPerSquareInchCelsius.ConversionFactorA = 0
+GramPerCubicCentimetrePerPoundPerSquareInchCelsius.ConversionFactorB = 6.894757293168362
+GramPerCubicCentimetrePerPoundPerSquareInchCelsius.Symbol = "g/cm³/(psi•°C)"
+GramPerCubicCentimetrePerPoundPerSquareInchCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUkPerPoundPerSquareInchCelsius
+PoundPerGallonUkPerPoundPerSquareInchCelsius.ConversionFactorA = 0
+PoundPerGallonUkPerPoundPerSquareInchCelsius.ConversionFactorB = 69.10210412688325
+PoundPerGallonUkPerPoundPerSquareInchCelsius.Symbol = "ppgUK/(psi•°C)"
+PoundPerGallonUkPerPoundPerSquareInchCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUsPerPoundPerSquareInchCelsius
+PoundPerGallonUsPerPoundPerSquareInchCelsius.ConversionFactorA = 0
+PoundPerGallonUsPerPoundPerSquareInchCelsius.ConversionFactorB = 57.53953820999999
+PoundPerGallonUsPerPoundPerSquareInchCelsius.Symbol = "ppgUS/(psi•°C)"
+PoundPerGallonUsPerPoundPerSquareInchCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicFootPerPoundPerSquareInchCelsius
+PoundPerCubicFootPerPoundPerSquareInchCelsius.ConversionFactorA = 0
+PoundPerCubicFootPerPoundPerSquareInchCelsius.ConversionFactorB = 430.4256364799998
+PoundPerCubicFootPerPoundPerSquareInchCelsius.Symbol = "lb/ft³/(psi•°C)"
+PoundPerCubicFootPerPoundPerSquareInchCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicInchPerPoundPerSquareInchCelsius
+PoundPerCubicInchPerPoundPerSquareInchCelsius.ConversionFactorA = 0
+PoundPerCubicInchPerPoundPerSquareInchCelsius.ConversionFactorB = 0.24908890999999994
+PoundPerCubicInchPerPoundPerSquareInchCelsius.Symbol = "lb/in³/(psi•°C)"
+PoundPerCubicInchPerPoundPerSquareInchCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicYardPerPoundPerSquareInchCelsius
+PoundPerCubicYardPerPoundPerSquareInchCelsius.ConversionFactorA = 0
+PoundPerCubicYardPerPoundPerSquareInchCelsius.ConversionFactorB = 11621.492184959992
+PoundPerCubicYardPerPoundPerSquareInchCelsius.Symbol = "lb/yd³/(psi•°C)"
+PoundPerCubicYardPerPoundPerSquareInchCelsius IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:KilogramPerCubicMetrePerPascalFahrenheit
+KilogramPerCubicMetrePerPascalFahrenheit.ConversionFactorA = 0
+KilogramPerCubicMetrePerPascalFahrenheit.ConversionFactorB = 0.5555555555555556
+KilogramPerCubicMetrePerPascalFahrenheit.Symbol = "kg/m³/(Pa•°F)"
+KilogramPerCubicMetrePerPascalFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:SpecificGravityPerPascalFahrenheit
+SpecificGravityPerPascalFahrenheit.ConversionFactorA = 0
+SpecificGravityPerPascalFahrenheit.ConversionFactorB = 0.0005555711115466789
+SpecificGravityPerPascalFahrenheit.Symbol = "sg/(Pa•°F)"
+SpecificGravityPerPascalFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:GramPerCubicCentimetrePerPascalFahrenheit
+GramPerCubicCentimetrePerPascalFahrenheit.ConversionFactorA = 0
+GramPerCubicCentimetrePerPascalFahrenheit.ConversionFactorB = 0.0005555555555555557
+GramPerCubicCentimetrePerPascalFahrenheit.Symbol = "g/cm³/(Pa•°F)"
+GramPerCubicCentimetrePerPascalFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUkPerPascalFahrenheit
+PoundPerGallonUkPerPascalFahrenheit.ConversionFactorA = 0
+PoundPerGallonUkPerPascalFahrenheit.ConversionFactorB = 0.005568007141644723
+PoundPerGallonUkPerPascalFahrenheit.Symbol = "ppgUK/(Pa•°F)"
+PoundPerGallonUkPerPascalFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUsPerPascalFahrenheit
+PoundPerGallonUsPerPascalFahrenheit.ConversionFactorA = 0
+PoundPerGallonUsPerPascalFahrenheit.ConversionFactorB = 0.004636335806677406
+PoundPerGallonUsPerPascalFahrenheit.Symbol = "ppgUS/(Pa•°F)"
+PoundPerGallonUsPerPascalFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicFootPerPascalFahrenheit
+PoundPerCubicFootPerPascalFahrenheit.ConversionFactorA = 0
+PoundPerCubicFootPerPascalFahrenheit.ConversionFactorB = 0.03468220032008033
+PoundPerCubicFootPerPascalFahrenheit.Symbol = "lb/ft³/(Pa•°F)"
+PoundPerCubicFootPerPascalFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicInchPerPascalFahrenheit
+PoundPerCubicInchPerPascalFahrenheit.ConversionFactorA = 0
+PoundPerCubicInchPerPascalFahrenheit.ConversionFactorB = 2.0070717777824268E-05
+PoundPerCubicInchPerPascalFahrenheit.Symbol = "lb/in³/(Pa•°F)"
+PoundPerCubicInchPerPascalFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicYardPerPascalFahrenheit
+PoundPerCubicYardPerPascalFahrenheit.ConversionFactorA = 0
+PoundPerCubicYardPerPascalFahrenheit.ConversionFactorB = 0.9364194086421688
+PoundPerCubicYardPerPascalFahrenheit.Symbol = "lb/yd³/(Pa•°F)"
+PoundPerCubicYardPerPascalFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:KilogramPerCubicMetrePerBarFahrenheit
+KilogramPerCubicMetrePerBarFahrenheit.ConversionFactorA = 0
+KilogramPerCubicMetrePerBarFahrenheit.ConversionFactorB = 55555.555555555555
+KilogramPerCubicMetrePerBarFahrenheit.Symbol = "kg/m³/(bar•°F)"
+KilogramPerCubicMetrePerBarFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:SpecificGravityPerBarFahrenheit
+SpecificGravityPerBarFahrenheit.ConversionFactorA = 0
+SpecificGravityPerBarFahrenheit.ConversionFactorB = 55.55711115466789
+SpecificGravityPerBarFahrenheit.Symbol = "sg/(bar•°F)"
+SpecificGravityPerBarFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:GramPerCubicCentimetrePerBarFahrenheit
+GramPerCubicCentimetrePerBarFahrenheit.ConversionFactorA = 0
+GramPerCubicCentimetrePerBarFahrenheit.ConversionFactorB = 55.555555555555564
+GramPerCubicCentimetrePerBarFahrenheit.Symbol = "g/cm³/(bar•°F)"
+GramPerCubicCentimetrePerBarFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUkPerBarFahrenheit
+PoundPerGallonUkPerBarFahrenheit.ConversionFactorA = 0
+PoundPerGallonUkPerBarFahrenheit.ConversionFactorB = 556.8007141644723
+PoundPerGallonUkPerBarFahrenheit.Symbol = "ppgUK/(bar•°F)"
+PoundPerGallonUkPerBarFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUsPerBarFahrenheit
+PoundPerGallonUsPerBarFahrenheit.ConversionFactorA = 0
+PoundPerGallonUsPerBarFahrenheit.ConversionFactorB = 463.63358066774066
+PoundPerGallonUsPerBarFahrenheit.Symbol = "ppgUS/(bar•°F)"
+PoundPerGallonUsPerBarFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicFootPerBarFahrenheit
+PoundPerCubicFootPerBarFahrenheit.ConversionFactorA = 0
+PoundPerCubicFootPerBarFahrenheit.ConversionFactorB = 3468.2200320080333
+PoundPerCubicFootPerBarFahrenheit.Symbol = "lb/ft³/(bar•°F)"
+PoundPerCubicFootPerBarFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicInchPerBarFahrenheit
+PoundPerCubicInchPerBarFahrenheit.ConversionFactorA = 0
+PoundPerCubicInchPerBarFahrenheit.ConversionFactorB = 2.007071777782427
+PoundPerCubicInchPerBarFahrenheit.Symbol = "lb/in³/(bar•°F)"
+PoundPerCubicInchPerBarFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicYardPerBarFahrenheit
+PoundPerCubicYardPerBarFahrenheit.ConversionFactorA = 0
+PoundPerCubicYardPerBarFahrenheit.ConversionFactorB = 93641.94086421687
+PoundPerCubicYardPerBarFahrenheit.Symbol = "lb/yd³/(bar•°F)"
+PoundPerCubicYardPerBarFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit
+KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit.ConversionFactorA = 0
+KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit.ConversionFactorB = 3830.420718426867
+KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit.Symbol = "kg/m³/(psi•°F)"
+KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:SpecificGravityPerPoundPerSquareInchFahrenheit
+SpecificGravityPerPoundPerSquareInchFahrenheit.ConversionFactorA = 0
+SpecificGravityPerPoundPerSquareInchFahrenheit.ConversionFactorB = 3.8305279732101174
+SpecificGravityPerPoundPerSquareInchFahrenheit.Symbol = "sg/(psi•°F)"
+SpecificGravityPerPoundPerSquareInchFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit
+GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit.ConversionFactorA = 0
+GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit.ConversionFactorB = 3.8304207184268675
+GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit.Symbol = "g/cm³/(psi•°F)"
+GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUkPerPoundPerSquareInchFahrenheit
+PoundPerGallonUkPerPoundPerSquareInchFahrenheit.ConversionFactorA = 0
+PoundPerGallonUkPerPoundPerSquareInchFahrenheit.ConversionFactorB = 38.39005784826847
+PoundPerGallonUkPerPoundPerSquareInchFahrenheit.Symbol = "ppgUK/(psi•°F)"
+PoundPerGallonUkPerPoundPerSquareInchFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerGallonUsPerPoundPerSquareInchFahrenheit
+PoundPerGallonUsPerPoundPerSquareInchFahrenheit.ConversionFactorA = 0
+PoundPerGallonUsPerPoundPerSquareInchFahrenheit.ConversionFactorB = 31.966410116666665
+PoundPerGallonUsPerPoundPerSquareInchFahrenheit.Symbol = "ppgUS/(psi•°F)"
+PoundPerGallonUsPerPoundPerSquareInchFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicFootPerPoundPerSquareInchFahrenheit
+PoundPerCubicFootPerPoundPerSquareInchFahrenheit.ConversionFactorA = 0
+PoundPerCubicFootPerPoundPerSquareInchFahrenheit.ConversionFactorB = 239.1253535999999
+PoundPerCubicFootPerPoundPerSquareInchFahrenheit.Symbol = "lb/ft³/(psi•°F)"
+PoundPerCubicFootPerPoundPerSquareInchFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicInchPerPoundPerSquareInchFahrenheit
+PoundPerCubicInchPerPoundPerSquareInchFahrenheit.ConversionFactorA = 0
+PoundPerCubicInchPerPoundPerSquareInchFahrenheit.ConversionFactorB = 0.13838272777777774
+PoundPerCubicInchPerPoundPerSquareInchFahrenheit.Symbol = "lb/in³/(psi•°F)"
+PoundPerCubicInchPerPoundPerSquareInchFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+Unit:PoundPerCubicYardPerPoundPerSquareInchFahrenheit
+PoundPerCubicYardPerPoundPerSquareInchFahrenheit.ConversionFactorA = 0
+PoundPerCubicYardPerPoundPerSquareInchFahrenheit.ConversionFactorB = 6456.384547199997
+PoundPerCubicYardPerPoundPerSquareInchFahrenheit.Symbol = "lb/yd³/(psi•°F)"
+PoundPerCubicYardPerPoundPerSquareInchFahrenheit IsUnitForQuantity MassDensityGradientPerPressureTemperatureQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MassDensityGradientPerPressureTemperatureQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[MassDensityGradientPerPressureTemperatureQuantity] -->|L| N0002(("-2")) 
+	N0000[MassDensityGradientPerPressureTemperatureQuantity] -->|T| N0003(("2")) 
+	N0000[MassDensityGradientPerPressureTemperatureQuantity] -->|ThT| N0004(("-1")) 
+	N0005[KilogramPerCubicMetrePerPascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0005[KilogramPerCubicMetrePerPascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0005[KilogramPerCubicMetrePerPascalKelvin] -->|ConversionFactorB| N0008(("1")) 
+	N0005[KilogramPerCubicMetrePerPascalKelvin] -->|Symbol| N0009(("kg/m³/(Pa•K)")) 
+	N0005[KilogramPerCubicMetrePerPascalKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0000[MassDensityGradientPerPressureTemperatureQuantity] -->|HasSIUnit| N0005[KilogramPerCubicMetrePerPascalKelvin] 
+	N0010[SpecificGravityPerPascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0010[SpecificGravityPerPascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0010[SpecificGravityPerPascalKelvin] -->|ConversionFactorB| N0011(("0.001000028000784022")) 
+	N0010[SpecificGravityPerPascalKelvin] -->|Symbol| N0012(("sg/(Pa•K)")) 
+	N0010[SpecificGravityPerPascalKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0013[GramPerCubicCentimetrePerPascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0013[GramPerCubicCentimetrePerPascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0013[GramPerCubicCentimetrePerPascalKelvin] -->|ConversionFactorB| N0014(("0.0010000000000000002")) 
+	N0013[GramPerCubicCentimetrePerPascalKelvin] -->|Symbol| N0015(("g/cm³/(Pa•K)")) 
+	N0013[GramPerCubicCentimetrePerPascalKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0016[PoundPerGallonUkPerPascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0016[PoundPerGallonUkPerPascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0016[PoundPerGallonUkPerPascalKelvin] -->|ConversionFactorB| N0017(("0.010022412854960501")) 
+	N0016[PoundPerGallonUkPerPascalKelvin] -->|Symbol| N0018(("ppgUK/(Pa•K)")) 
+	N0016[PoundPerGallonUkPerPascalKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0019[PoundPerGallonUsPerPascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0019[PoundPerGallonUsPerPascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0019[PoundPerGallonUsPerPascalKelvin] -->|ConversionFactorB| N0020(("0.00834540445201933")) 
+	N0019[PoundPerGallonUsPerPascalKelvin] -->|Symbol| N0021(("ppgUS/(Pa•K)")) 
+	N0019[PoundPerGallonUsPerPascalKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0022[PoundPerCubicFootPerPascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0022[PoundPerCubicFootPerPascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0022[PoundPerCubicFootPerPascalKelvin] -->|ConversionFactorB| N0023(("0.06242796057614459")) 
+	N0022[PoundPerCubicFootPerPascalKelvin] -->|Symbol| N0024(("lb/ft³/(Pa•K)")) 
+	N0022[PoundPerCubicFootPerPascalKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0025[PoundPerCubicInchPerPascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0025[PoundPerCubicInchPerPascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0025[PoundPerCubicInchPerPascalKelvin] -->|ConversionFactorB| N0026(("3.612729200008369E-05")) 
+	N0025[PoundPerCubicInchPerPascalKelvin] -->|Symbol| N0027(("lb/in³/(Pa•K)")) 
+	N0025[PoundPerCubicInchPerPascalKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0028[PoundPerCubicYardPerPascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0028[PoundPerCubicYardPerPascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0028[PoundPerCubicYardPerPascalKelvin] -->|ConversionFactorB| N0029(("1.6855549355559039")) 
+	N0028[PoundPerCubicYardPerPascalKelvin] -->|Symbol| N0030(("lb/yd³/(Pa•K)")) 
+	N0028[PoundPerCubicYardPerPascalKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0031[KilogramPerCubicMetrePerBarKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0031[KilogramPerCubicMetrePerBarKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0031[KilogramPerCubicMetrePerBarKelvin] -->|ConversionFactorB| N0032(("100000")) 
+	N0031[KilogramPerCubicMetrePerBarKelvin] -->|Symbol| N0033(("kg/m³/(bar•K)")) 
+	N0031[KilogramPerCubicMetrePerBarKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0034[SpecificGravityPerBarKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0034[SpecificGravityPerBarKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0034[SpecificGravityPerBarKelvin] -->|ConversionFactorB| N0035(("100.0028000784022")) 
+	N0034[SpecificGravityPerBarKelvin] -->|Symbol| N0036(("sg/(bar•K)")) 
+	N0034[SpecificGravityPerBarKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0037[GramPerCubicCentimetrePerBarKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0037[GramPerCubicCentimetrePerBarKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0037[GramPerCubicCentimetrePerBarKelvin] -->|ConversionFactorB| N0038(("100.00000000000001")) 
+	N0037[GramPerCubicCentimetrePerBarKelvin] -->|Symbol| N0039(("g/cm³/(bar•K)")) 
+	N0037[GramPerCubicCentimetrePerBarKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0040[PoundPerGallonUkPerBarKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0040[PoundPerGallonUkPerBarKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0040[PoundPerGallonUkPerBarKelvin] -->|ConversionFactorB| N0041(("1002.2412854960501")) 
+	N0040[PoundPerGallonUkPerBarKelvin] -->|Symbol| N0042(("ppgUK/(bar•K)")) 
+	N0040[PoundPerGallonUkPerBarKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0043[PoundPerGallonUsPerBarKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0043[PoundPerGallonUsPerBarKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0043[PoundPerGallonUsPerBarKelvin] -->|ConversionFactorB| N0044(("834.540445201933")) 
+	N0043[PoundPerGallonUsPerBarKelvin] -->|Symbol| N0045(("ppgUS/(bar•K)")) 
+	N0043[PoundPerGallonUsPerBarKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0046[PoundPerCubicFootPerBarKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0046[PoundPerCubicFootPerBarKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0046[PoundPerCubicFootPerBarKelvin] -->|ConversionFactorB| N0047(("6242.79605761446")) 
+	N0046[PoundPerCubicFootPerBarKelvin] -->|Symbol| N0048(("lb/ft³/(bar•K)")) 
+	N0046[PoundPerCubicFootPerBarKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0049[PoundPerCubicInchPerBarKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0049[PoundPerCubicInchPerBarKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0049[PoundPerCubicInchPerBarKelvin] -->|ConversionFactorB| N0050(("3.6127292000083684")) 
+	N0049[PoundPerCubicInchPerBarKelvin] -->|Symbol| N0051(("lb/in³/(bar•K)")) 
+	N0049[PoundPerCubicInchPerBarKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0052[PoundPerCubicYardPerBarKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0052[PoundPerCubicYardPerBarKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0052[PoundPerCubicYardPerBarKelvin] -->|ConversionFactorB| N0053(("168555.49355559036")) 
+	N0052[PoundPerCubicYardPerBarKelvin] -->|Symbol| N0054(("lb/yd³/(bar•K)")) 
+	N0052[PoundPerCubicYardPerBarKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0055[KilogramPerCubicMetrePerMegapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0055[KilogramPerCubicMetrePerMegapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0055[KilogramPerCubicMetrePerMegapascalKelvin] -->|ConversionFactorB| N0056(("1000000")) 
+	N0055[KilogramPerCubicMetrePerMegapascalKelvin] -->|Symbol| N0057(("kg/m³/(MPa•K)")) 
+	N0055[KilogramPerCubicMetrePerMegapascalKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0058[SpecificGravityPerMegapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0058[SpecificGravityPerMegapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0058[SpecificGravityPerMegapascalKelvin] -->|ConversionFactorB| N0059(("1000.028000784022")) 
+	N0058[SpecificGravityPerMegapascalKelvin] -->|Symbol| N0060(("sg/(MPa•K)")) 
+	N0058[SpecificGravityPerMegapascalKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0061[GramPerCubicCentimetrePerMegapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0061[GramPerCubicCentimetrePerMegapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0061[GramPerCubicCentimetrePerMegapascalKelvin] -->|ConversionFactorB| N0062(("1000.0000000000002")) 
+	N0061[GramPerCubicCentimetrePerMegapascalKelvin] -->|Symbol| N0063(("g/cm³/(MPa•K)")) 
+	N0061[GramPerCubicCentimetrePerMegapascalKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0064[PoundPerGallonUkPerMegapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0064[PoundPerGallonUkPerMegapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0064[PoundPerGallonUkPerMegapascalKelvin] -->|ConversionFactorB| N0065(("10022.412854960501")) 
+	N0064[PoundPerGallonUkPerMegapascalKelvin] -->|Symbol| N0066(("ppgUK/(MPa•K)")) 
+	N0064[PoundPerGallonUkPerMegapascalKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0067[PoundPerGallonUsPerMegapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0067[PoundPerGallonUsPerMegapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0067[PoundPerGallonUsPerMegapascalKelvin] -->|ConversionFactorB| N0068(("8345.404452019331")) 
+	N0067[PoundPerGallonUsPerMegapascalKelvin] -->|Symbol| N0069(("ppgUS/(MPa•K)")) 
+	N0067[PoundPerGallonUsPerMegapascalKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0070[PoundPerCubicFootPerMegapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0070[PoundPerCubicFootPerMegapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0070[PoundPerCubicFootPerMegapascalKelvin] -->|ConversionFactorB| N0071(("62427.960576144586")) 
+	N0070[PoundPerCubicFootPerMegapascalKelvin] -->|Symbol| N0072(("lb/ft³/(MPa•K)")) 
+	N0070[PoundPerCubicFootPerMegapascalKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0073[PoundPerCubicInchPerMegapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0073[PoundPerCubicInchPerMegapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0073[PoundPerCubicInchPerMegapascalKelvin] -->|ConversionFactorB| N0074(("36.127292000083685")) 
+	N0073[PoundPerCubicInchPerMegapascalKelvin] -->|Symbol| N0075(("lb/in³/(MPa•K)")) 
+	N0073[PoundPerCubicInchPerMegapascalKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0076[PoundPerCubicYardPerMegapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0076[PoundPerCubicYardPerMegapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0076[PoundPerCubicYardPerMegapascalKelvin] -->|ConversionFactorB| N0077(("1685554.9355559037")) 
+	N0076[PoundPerCubicYardPerMegapascalKelvin] -->|Symbol| N0078(("lb/yd³/(MPa•K)")) 
+	N0076[PoundPerCubicYardPerMegapascalKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0079[KilogramPerCubicMetrePerGigapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0079[KilogramPerCubicMetrePerGigapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0079[KilogramPerCubicMetrePerGigapascalKelvin] -->|ConversionFactorB| N0080(("1000000000")) 
+	N0079[KilogramPerCubicMetrePerGigapascalKelvin] -->|Symbol| N0081(("kg/m³/(GPa•K)")) 
+	N0079[KilogramPerCubicMetrePerGigapascalKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0082[SpecificGravityPerGigapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0082[SpecificGravityPerGigapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0082[SpecificGravityPerGigapascalKelvin] -->|ConversionFactorB| N0083(("1000028.0007840219")) 
+	N0082[SpecificGravityPerGigapascalKelvin] -->|Symbol| N0084(("sg/(GPa•K)")) 
+	N0082[SpecificGravityPerGigapascalKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0085[GramPerCubicCentimetrePerGigapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0085[GramPerCubicCentimetrePerGigapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0085[GramPerCubicCentimetrePerGigapascalKelvin] -->|ConversionFactorB| N0086(("1000000.0000000001")) 
+	N0085[GramPerCubicCentimetrePerGigapascalKelvin] -->|Symbol| N0087(("g/cm³/(GPa•K)")) 
+	N0085[GramPerCubicCentimetrePerGigapascalKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0088[PoundPerGallonUkPerGigapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0088[PoundPerGallonUkPerGigapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0088[PoundPerGallonUkPerGigapascalKelvin] -->|ConversionFactorB| N0089(("10022412.854960501")) 
+	N0088[PoundPerGallonUkPerGigapascalKelvin] -->|Symbol| N0090(("ppgUK/(GPa•K)")) 
+	N0088[PoundPerGallonUkPerGigapascalKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0091[PoundPerGallonUsPerGigapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0091[PoundPerGallonUsPerGigapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0091[PoundPerGallonUsPerGigapascalKelvin] -->|ConversionFactorB| N0092(("8345404.45201933")) 
+	N0091[PoundPerGallonUsPerGigapascalKelvin] -->|Symbol| N0093(("ppgUS/(GPa•K)")) 
+	N0091[PoundPerGallonUsPerGigapascalKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0094[PoundPerCubicFootPerGigapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0094[PoundPerCubicFootPerGigapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0094[PoundPerCubicFootPerGigapascalKelvin] -->|ConversionFactorB| N0095(("62427960.57614458")) 
+	N0094[PoundPerCubicFootPerGigapascalKelvin] -->|Symbol| N0096(("lb/ft³/(GPa•K)")) 
+	N0094[PoundPerCubicFootPerGigapascalKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0097[PoundPerCubicInchPerGigapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0097[PoundPerCubicInchPerGigapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0097[PoundPerCubicInchPerGigapascalKelvin] -->|ConversionFactorB| N0098(("36127.29200008368")) 
+	N0097[PoundPerCubicInchPerGigapascalKelvin] -->|Symbol| N0099(("lb/in³/(GPa•K)")) 
+	N0097[PoundPerCubicInchPerGigapascalKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0100[PoundPerCubicYardPerGigapascalKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0100[PoundPerCubicYardPerGigapascalKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0100[PoundPerCubicYardPerGigapascalKelvin] -->|ConversionFactorB| N0101(("1685554935.555904")) 
+	N0100[PoundPerCubicYardPerGigapascalKelvin] -->|Symbol| N0102(("lb/yd³/(GPa•K)")) 
+	N0100[PoundPerCubicYardPerGigapascalKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0103[KilogramPerCubicMetrePerPoundPerSquareInchKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0103[KilogramPerCubicMetrePerPoundPerSquareInchKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0103[KilogramPerCubicMetrePerPoundPerSquareInchKelvin] -->|ConversionFactorB| N0104(("6894.757293168361")) 
+	N0103[KilogramPerCubicMetrePerPoundPerSquareInchKelvin] -->|Symbol| N0105(("kg/m³/(psi•K)")) 
+	N0103[KilogramPerCubicMetrePerPoundPerSquareInchKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0106[SpecificGravityPerPoundPerSquareInchKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0106[SpecificGravityPerPoundPerSquareInchKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0106[SpecificGravityPerPoundPerSquareInchKelvin] -->|ConversionFactorB| N0107(("6.894950351778211")) 
+	N0106[SpecificGravityPerPoundPerSquareInchKelvin] -->|Symbol| N0108(("sg/(psi•K)")) 
+	N0106[SpecificGravityPerPoundPerSquareInchKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0109[GramPerCubicCentimetrePerPoundPerSquareInchKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0109[GramPerCubicCentimetrePerPoundPerSquareInchKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0109[GramPerCubicCentimetrePerPoundPerSquareInchKelvin] -->|ConversionFactorB| N0110(("6.894757293168362")) 
+	N0109[GramPerCubicCentimetrePerPoundPerSquareInchKelvin] -->|Symbol| N0111(("g/cm³/(psi•K)")) 
+	N0109[GramPerCubicCentimetrePerPoundPerSquareInchKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0112[PoundPerGallonUkPerPoundPerSquareInchKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0112[PoundPerGallonUkPerPoundPerSquareInchKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0112[PoundPerGallonUkPerPoundPerSquareInchKelvin] -->|ConversionFactorB| N0113(("69.10210412688325")) 
+	N0112[PoundPerGallonUkPerPoundPerSquareInchKelvin] -->|Symbol| N0114(("ppgUK/(psi•K)")) 
+	N0112[PoundPerGallonUkPerPoundPerSquareInchKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0115[PoundPerGallonUsPerPoundPerSquareInchKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0115[PoundPerGallonUsPerPoundPerSquareInchKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0115[PoundPerGallonUsPerPoundPerSquareInchKelvin] -->|ConversionFactorB| N0116(("57.53953820999999")) 
+	N0115[PoundPerGallonUsPerPoundPerSquareInchKelvin] -->|Symbol| N0117(("ppgUS/(psi•K)")) 
+	N0115[PoundPerGallonUsPerPoundPerSquareInchKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0118[PoundPerCubicFootPerPoundPerSquareInchKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0118[PoundPerCubicFootPerPoundPerSquareInchKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0118[PoundPerCubicFootPerPoundPerSquareInchKelvin] -->|ConversionFactorB| N0119(("430.4256364799998")) 
+	N0118[PoundPerCubicFootPerPoundPerSquareInchKelvin] -->|Symbol| N0120(("lb/ft³/(psi•K)")) 
+	N0118[PoundPerCubicFootPerPoundPerSquareInchKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0121[PoundPerCubicInchPerPoundPerSquareInchKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0121[PoundPerCubicInchPerPoundPerSquareInchKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0121[PoundPerCubicInchPerPoundPerSquareInchKelvin] -->|ConversionFactorB| N0122(("0.24908890999999994")) 
+	N0121[PoundPerCubicInchPerPoundPerSquareInchKelvin] -->|Symbol| N0123(("lb/in³/(psi•K)")) 
+	N0121[PoundPerCubicInchPerPoundPerSquareInchKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0124[PoundPerCubicYardPerPoundPerSquareInchKelvin] -->|BelongsToClass| N0006(Unit) 
+	N0124[PoundPerCubicYardPerPoundPerSquareInchKelvin] -->|ConversionFactorA| N0007(("0")) 
+	N0124[PoundPerCubicYardPerPoundPerSquareInchKelvin] -->|ConversionFactorB| N0125(("11621.492184959992")) 
+	N0124[PoundPerCubicYardPerPoundPerSquareInchKelvin] -->|Symbol| N0126(("lb/yd³/(psi•K)")) 
+	N0124[PoundPerCubicYardPerPoundPerSquareInchKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0127[KilogramPerCubicMetrePerPascalCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0127[KilogramPerCubicMetrePerPascalCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0127[KilogramPerCubicMetrePerPascalCelsius] -->|ConversionFactorB| N0008(("1")) 
+	N0127[KilogramPerCubicMetrePerPascalCelsius] -->|Symbol| N0128(("kg/m³/(Pa•°C)")) 
+	N0127[KilogramPerCubicMetrePerPascalCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0129[SpecificGravityPerPascalCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0129[SpecificGravityPerPascalCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0129[SpecificGravityPerPascalCelsius] -->|ConversionFactorB| N0011(("0.001000028000784022")) 
+	N0129[SpecificGravityPerPascalCelsius] -->|Symbol| N0130(("sg/(Pa•°C)")) 
+	N0129[SpecificGravityPerPascalCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0131[GramPerCubicCentimetrePerPascalCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0131[GramPerCubicCentimetrePerPascalCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0131[GramPerCubicCentimetrePerPascalCelsius] -->|ConversionFactorB| N0014(("0.0010000000000000002")) 
+	N0131[GramPerCubicCentimetrePerPascalCelsius] -->|Symbol| N0132(("g/cm³/(Pa•°C)")) 
+	N0131[GramPerCubicCentimetrePerPascalCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0133[PoundPerGallonUkPerPascalCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0133[PoundPerGallonUkPerPascalCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0133[PoundPerGallonUkPerPascalCelsius] -->|ConversionFactorB| N0017(("0.010022412854960501")) 
+	N0133[PoundPerGallonUkPerPascalCelsius] -->|Symbol| N0134(("ppgUK/(Pa•°C)")) 
+	N0133[PoundPerGallonUkPerPascalCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0135[PoundPerGallonUsPerPascalCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0135[PoundPerGallonUsPerPascalCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0135[PoundPerGallonUsPerPascalCelsius] -->|ConversionFactorB| N0020(("0.00834540445201933")) 
+	N0135[PoundPerGallonUsPerPascalCelsius] -->|Symbol| N0136(("ppgUS/(Pa•°C)")) 
+	N0135[PoundPerGallonUsPerPascalCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0137[PoundPerCubicFootPerPascalCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0137[PoundPerCubicFootPerPascalCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0137[PoundPerCubicFootPerPascalCelsius] -->|ConversionFactorB| N0023(("0.06242796057614459")) 
+	N0137[PoundPerCubicFootPerPascalCelsius] -->|Symbol| N0138(("lb/ft³/(Pa•°C)")) 
+	N0137[PoundPerCubicFootPerPascalCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0139[PoundPerCubicInchPerPascalCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0139[PoundPerCubicInchPerPascalCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0139[PoundPerCubicInchPerPascalCelsius] -->|ConversionFactorB| N0026(("3.612729200008369E-05")) 
+	N0139[PoundPerCubicInchPerPascalCelsius] -->|Symbol| N0140(("lb/in³/(Pa•°C)")) 
+	N0139[PoundPerCubicInchPerPascalCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0141[PoundPerCubicYardPerPascalCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0141[PoundPerCubicYardPerPascalCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0141[PoundPerCubicYardPerPascalCelsius] -->|ConversionFactorB| N0029(("1.6855549355559039")) 
+	N0141[PoundPerCubicYardPerPascalCelsius] -->|Symbol| N0142(("lb/yd³/(Pa•°C)")) 
+	N0141[PoundPerCubicYardPerPascalCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0143[KilogramPerCubicMetrePerBarCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0143[KilogramPerCubicMetrePerBarCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0143[KilogramPerCubicMetrePerBarCelsius] -->|ConversionFactorB| N0032(("100000")) 
+	N0143[KilogramPerCubicMetrePerBarCelsius] -->|Symbol| N0144(("kg/m³/(bar•°C)")) 
+	N0143[KilogramPerCubicMetrePerBarCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0145[SpecificGravityPerBarCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0145[SpecificGravityPerBarCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0145[SpecificGravityPerBarCelsius] -->|ConversionFactorB| N0035(("100.0028000784022")) 
+	N0145[SpecificGravityPerBarCelsius] -->|Symbol| N0146(("sg/(bar•°C)")) 
+	N0145[SpecificGravityPerBarCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0147[GramPerCubicCentimetrePerBarCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0147[GramPerCubicCentimetrePerBarCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0147[GramPerCubicCentimetrePerBarCelsius] -->|ConversionFactorB| N0038(("100.00000000000001")) 
+	N0147[GramPerCubicCentimetrePerBarCelsius] -->|Symbol| N0148(("g/cm³/(bar•°C)")) 
+	N0147[GramPerCubicCentimetrePerBarCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0149[PoundPerGallonUkPerBarCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0149[PoundPerGallonUkPerBarCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0149[PoundPerGallonUkPerBarCelsius] -->|ConversionFactorB| N0041(("1002.2412854960501")) 
+	N0149[PoundPerGallonUkPerBarCelsius] -->|Symbol| N0150(("ppgUK/(bar•°C)")) 
+	N0149[PoundPerGallonUkPerBarCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0151[PoundPerGallonUsPerBarCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0151[PoundPerGallonUsPerBarCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0151[PoundPerGallonUsPerBarCelsius] -->|ConversionFactorB| N0044(("834.540445201933")) 
+	N0151[PoundPerGallonUsPerBarCelsius] -->|Symbol| N0152(("ppgUS/(bar•°C)")) 
+	N0151[PoundPerGallonUsPerBarCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0153[PoundPerCubicFootPerBarCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0153[PoundPerCubicFootPerBarCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0153[PoundPerCubicFootPerBarCelsius] -->|ConversionFactorB| N0047(("6242.79605761446")) 
+	N0153[PoundPerCubicFootPerBarCelsius] -->|Symbol| N0154(("lb/ft³/(bar•°C)")) 
+	N0153[PoundPerCubicFootPerBarCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0155[PoundPerCubicInchPerBarCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0155[PoundPerCubicInchPerBarCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0155[PoundPerCubicInchPerBarCelsius] -->|ConversionFactorB| N0050(("3.6127292000083684")) 
+	N0155[PoundPerCubicInchPerBarCelsius] -->|Symbol| N0156(("lb/in³/(bar•°C)")) 
+	N0155[PoundPerCubicInchPerBarCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0157[PoundPerCubicYardPerBarCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0157[PoundPerCubicYardPerBarCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0157[PoundPerCubicYardPerBarCelsius] -->|ConversionFactorB| N0053(("168555.49355559036")) 
+	N0157[PoundPerCubicYardPerBarCelsius] -->|Symbol| N0158(("lb/yd³/(bar•°C)")) 
+	N0157[PoundPerCubicYardPerBarCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0159[KilogramPerCubicMetrePerPoundPerSquareInchCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0159[KilogramPerCubicMetrePerPoundPerSquareInchCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0159[KilogramPerCubicMetrePerPoundPerSquareInchCelsius] -->|ConversionFactorB| N0104(("6894.757293168361")) 
+	N0159[KilogramPerCubicMetrePerPoundPerSquareInchCelsius] -->|Symbol| N0160(("kg/m³/(psi•°C)")) 
+	N0159[KilogramPerCubicMetrePerPoundPerSquareInchCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0161[SpecificGravityPerPoundPerSquareInchCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0161[SpecificGravityPerPoundPerSquareInchCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0161[SpecificGravityPerPoundPerSquareInchCelsius] -->|ConversionFactorB| N0107(("6.894950351778211")) 
+	N0161[SpecificGravityPerPoundPerSquareInchCelsius] -->|Symbol| N0162(("sg/(psi•°C)")) 
+	N0161[SpecificGravityPerPoundPerSquareInchCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0163[GramPerCubicCentimetrePerPoundPerSquareInchCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0163[GramPerCubicCentimetrePerPoundPerSquareInchCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0163[GramPerCubicCentimetrePerPoundPerSquareInchCelsius] -->|ConversionFactorB| N0110(("6.894757293168362")) 
+	N0163[GramPerCubicCentimetrePerPoundPerSquareInchCelsius] -->|Symbol| N0164(("g/cm³/(psi•°C)")) 
+	N0163[GramPerCubicCentimetrePerPoundPerSquareInchCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0165[PoundPerGallonUkPerPoundPerSquareInchCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0165[PoundPerGallonUkPerPoundPerSquareInchCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0165[PoundPerGallonUkPerPoundPerSquareInchCelsius] -->|ConversionFactorB| N0113(("69.10210412688325")) 
+	N0165[PoundPerGallonUkPerPoundPerSquareInchCelsius] -->|Symbol| N0166(("ppgUK/(psi•°C)")) 
+	N0165[PoundPerGallonUkPerPoundPerSquareInchCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0167[PoundPerGallonUsPerPoundPerSquareInchCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0167[PoundPerGallonUsPerPoundPerSquareInchCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0167[PoundPerGallonUsPerPoundPerSquareInchCelsius] -->|ConversionFactorB| N0116(("57.53953820999999")) 
+	N0167[PoundPerGallonUsPerPoundPerSquareInchCelsius] -->|Symbol| N0168(("ppgUS/(psi•°C)")) 
+	N0167[PoundPerGallonUsPerPoundPerSquareInchCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0169[PoundPerCubicFootPerPoundPerSquareInchCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0169[PoundPerCubicFootPerPoundPerSquareInchCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0169[PoundPerCubicFootPerPoundPerSquareInchCelsius] -->|ConversionFactorB| N0119(("430.4256364799998")) 
+	N0169[PoundPerCubicFootPerPoundPerSquareInchCelsius] -->|Symbol| N0170(("lb/ft³/(psi•°C)")) 
+	N0169[PoundPerCubicFootPerPoundPerSquareInchCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0171[PoundPerCubicInchPerPoundPerSquareInchCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0171[PoundPerCubicInchPerPoundPerSquareInchCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0171[PoundPerCubicInchPerPoundPerSquareInchCelsius] -->|ConversionFactorB| N0122(("0.24908890999999994")) 
+	N0171[PoundPerCubicInchPerPoundPerSquareInchCelsius] -->|Symbol| N0172(("lb/in³/(psi•°C)")) 
+	N0171[PoundPerCubicInchPerPoundPerSquareInchCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0173[PoundPerCubicYardPerPoundPerSquareInchCelsius] -->|BelongsToClass| N0006(Unit) 
+	N0173[PoundPerCubicYardPerPoundPerSquareInchCelsius] -->|ConversionFactorA| N0007(("0")) 
+	N0173[PoundPerCubicYardPerPoundPerSquareInchCelsius] -->|ConversionFactorB| N0125(("11621.492184959992")) 
+	N0173[PoundPerCubicYardPerPoundPerSquareInchCelsius] -->|Symbol| N0174(("lb/yd³/(psi•°C)")) 
+	N0173[PoundPerCubicYardPerPoundPerSquareInchCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0175[KilogramPerCubicMetrePerPascalFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0175[KilogramPerCubicMetrePerPascalFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0175[KilogramPerCubicMetrePerPascalFahrenheit] -->|ConversionFactorB| N0176(("0.5555555555555556")) 
+	N0175[KilogramPerCubicMetrePerPascalFahrenheit] -->|Symbol| N0177(("kg/m³/(Pa•°F)")) 
+	N0175[KilogramPerCubicMetrePerPascalFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0178[SpecificGravityPerPascalFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0178[SpecificGravityPerPascalFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0178[SpecificGravityPerPascalFahrenheit] -->|ConversionFactorB| N0179(("0.0005555711115466789")) 
+	N0178[SpecificGravityPerPascalFahrenheit] -->|Symbol| N0180(("sg/(Pa•°F)")) 
+	N0178[SpecificGravityPerPascalFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0181[GramPerCubicCentimetrePerPascalFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0181[GramPerCubicCentimetrePerPascalFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0181[GramPerCubicCentimetrePerPascalFahrenheit] -->|ConversionFactorB| N0182(("0.0005555555555555557")) 
+	N0181[GramPerCubicCentimetrePerPascalFahrenheit] -->|Symbol| N0183(("g/cm³/(Pa•°F)")) 
+	N0181[GramPerCubicCentimetrePerPascalFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0184[PoundPerGallonUkPerPascalFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0184[PoundPerGallonUkPerPascalFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0184[PoundPerGallonUkPerPascalFahrenheit] -->|ConversionFactorB| N0185(("0.005568007141644723")) 
+	N0184[PoundPerGallonUkPerPascalFahrenheit] -->|Symbol| N0186(("ppgUK/(Pa•°F)")) 
+	N0184[PoundPerGallonUkPerPascalFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0187[PoundPerGallonUsPerPascalFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0187[PoundPerGallonUsPerPascalFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0187[PoundPerGallonUsPerPascalFahrenheit] -->|ConversionFactorB| N0188(("0.004636335806677406")) 
+	N0187[PoundPerGallonUsPerPascalFahrenheit] -->|Symbol| N0189(("ppgUS/(Pa•°F)")) 
+	N0187[PoundPerGallonUsPerPascalFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0190[PoundPerCubicFootPerPascalFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0190[PoundPerCubicFootPerPascalFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0190[PoundPerCubicFootPerPascalFahrenheit] -->|ConversionFactorB| N0191(("0.03468220032008033")) 
+	N0190[PoundPerCubicFootPerPascalFahrenheit] -->|Symbol| N0192(("lb/ft³/(Pa•°F)")) 
+	N0190[PoundPerCubicFootPerPascalFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0193[PoundPerCubicInchPerPascalFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0193[PoundPerCubicInchPerPascalFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0193[PoundPerCubicInchPerPascalFahrenheit] -->|ConversionFactorB| N0194(("2.0070717777824268E-05")) 
+	N0193[PoundPerCubicInchPerPascalFahrenheit] -->|Symbol| N0195(("lb/in³/(Pa•°F)")) 
+	N0193[PoundPerCubicInchPerPascalFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0196[PoundPerCubicYardPerPascalFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0196[PoundPerCubicYardPerPascalFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0196[PoundPerCubicYardPerPascalFahrenheit] -->|ConversionFactorB| N0197(("0.9364194086421688")) 
+	N0196[PoundPerCubicYardPerPascalFahrenheit] -->|Symbol| N0198(("lb/yd³/(Pa•°F)")) 
+	N0196[PoundPerCubicYardPerPascalFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0199[KilogramPerCubicMetrePerBarFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0199[KilogramPerCubicMetrePerBarFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0199[KilogramPerCubicMetrePerBarFahrenheit] -->|ConversionFactorB| N0200(("55555.555555555555")) 
+	N0199[KilogramPerCubicMetrePerBarFahrenheit] -->|Symbol| N0201(("kg/m³/(bar•°F)")) 
+	N0199[KilogramPerCubicMetrePerBarFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0202[SpecificGravityPerBarFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0202[SpecificGravityPerBarFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0202[SpecificGravityPerBarFahrenheit] -->|ConversionFactorB| N0203(("55.55711115466789")) 
+	N0202[SpecificGravityPerBarFahrenheit] -->|Symbol| N0204(("sg/(bar•°F)")) 
+	N0202[SpecificGravityPerBarFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0205[GramPerCubicCentimetrePerBarFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0205[GramPerCubicCentimetrePerBarFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0205[GramPerCubicCentimetrePerBarFahrenheit] -->|ConversionFactorB| N0206(("55.555555555555564")) 
+	N0205[GramPerCubicCentimetrePerBarFahrenheit] -->|Symbol| N0207(("g/cm³/(bar•°F)")) 
+	N0205[GramPerCubicCentimetrePerBarFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0208[PoundPerGallonUkPerBarFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0208[PoundPerGallonUkPerBarFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0208[PoundPerGallonUkPerBarFahrenheit] -->|ConversionFactorB| N0209(("556.8007141644723")) 
+	N0208[PoundPerGallonUkPerBarFahrenheit] -->|Symbol| N0210(("ppgUK/(bar•°F)")) 
+	N0208[PoundPerGallonUkPerBarFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0211[PoundPerGallonUsPerBarFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0211[PoundPerGallonUsPerBarFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0211[PoundPerGallonUsPerBarFahrenheit] -->|ConversionFactorB| N0212(("463.63358066774066")) 
+	N0211[PoundPerGallonUsPerBarFahrenheit] -->|Symbol| N0213(("ppgUS/(bar•°F)")) 
+	N0211[PoundPerGallonUsPerBarFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0214[PoundPerCubicFootPerBarFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0214[PoundPerCubicFootPerBarFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0214[PoundPerCubicFootPerBarFahrenheit] -->|ConversionFactorB| N0215(("3468.2200320080333")) 
+	N0214[PoundPerCubicFootPerBarFahrenheit] -->|Symbol| N0216(("lb/ft³/(bar•°F)")) 
+	N0214[PoundPerCubicFootPerBarFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0217[PoundPerCubicInchPerBarFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0217[PoundPerCubicInchPerBarFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0217[PoundPerCubicInchPerBarFahrenheit] -->|ConversionFactorB| N0218(("2.007071777782427")) 
+	N0217[PoundPerCubicInchPerBarFahrenheit] -->|Symbol| N0219(("lb/in³/(bar•°F)")) 
+	N0217[PoundPerCubicInchPerBarFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0220[PoundPerCubicYardPerBarFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0220[PoundPerCubicYardPerBarFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0220[PoundPerCubicYardPerBarFahrenheit] -->|ConversionFactorB| N0221(("93641.94086421687")) 
+	N0220[PoundPerCubicYardPerBarFahrenheit] -->|Symbol| N0222(("lb/yd³/(bar•°F)")) 
+	N0220[PoundPerCubicYardPerBarFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0223[KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0223[KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0223[KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit] -->|ConversionFactorB| N0224(("3830.420718426867")) 
+	N0223[KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit] -->|Symbol| N0225(("kg/m³/(psi•°F)")) 
+	N0223[KilogramPerCubicMetrePerPoundPerSquareInchFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0226[SpecificGravityPerPoundPerSquareInchFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0226[SpecificGravityPerPoundPerSquareInchFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0226[SpecificGravityPerPoundPerSquareInchFahrenheit] -->|ConversionFactorB| N0227(("3.8305279732101174")) 
+	N0226[SpecificGravityPerPoundPerSquareInchFahrenheit] -->|Symbol| N0228(("sg/(psi•°F)")) 
+	N0226[SpecificGravityPerPoundPerSquareInchFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0229[GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0229[GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0229[GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit] -->|ConversionFactorB| N0230(("3.8304207184268675")) 
+	N0229[GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit] -->|Symbol| N0231(("g/cm³/(psi•°F)")) 
+	N0229[GramPerCubicCentimetrePerPoundPerSquareInchFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0232[PoundPerGallonUkPerPoundPerSquareInchFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0232[PoundPerGallonUkPerPoundPerSquareInchFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0232[PoundPerGallonUkPerPoundPerSquareInchFahrenheit] -->|ConversionFactorB| N0233(("38.39005784826847")) 
+	N0232[PoundPerGallonUkPerPoundPerSquareInchFahrenheit] -->|Symbol| N0234(("ppgUK/(psi•°F)")) 
+	N0232[PoundPerGallonUkPerPoundPerSquareInchFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0235[PoundPerGallonUsPerPoundPerSquareInchFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0235[PoundPerGallonUsPerPoundPerSquareInchFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0235[PoundPerGallonUsPerPoundPerSquareInchFahrenheit] -->|ConversionFactorB| N0236(("31.966410116666665")) 
+	N0235[PoundPerGallonUsPerPoundPerSquareInchFahrenheit] -->|Symbol| N0237(("ppgUS/(psi•°F)")) 
+	N0235[PoundPerGallonUsPerPoundPerSquareInchFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0238[PoundPerCubicFootPerPoundPerSquareInchFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0238[PoundPerCubicFootPerPoundPerSquareInchFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0238[PoundPerCubicFootPerPoundPerSquareInchFahrenheit] -->|ConversionFactorB| N0239(("239.1253535999999")) 
+	N0238[PoundPerCubicFootPerPoundPerSquareInchFahrenheit] -->|Symbol| N0240(("lb/ft³/(psi•°F)")) 
+	N0238[PoundPerCubicFootPerPoundPerSquareInchFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0241[PoundPerCubicInchPerPoundPerSquareInchFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0241[PoundPerCubicInchPerPoundPerSquareInchFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0241[PoundPerCubicInchPerPoundPerSquareInchFahrenheit] -->|ConversionFactorB| N0242(("0.13838272777777774")) 
+	N0241[PoundPerCubicInchPerPoundPerSquareInchFahrenheit] -->|Symbol| N0243(("lb/in³/(psi•°F)")) 
+	N0241[PoundPerCubicInchPerPoundPerSquareInchFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+	N0244[PoundPerCubicYardPerPoundPerSquareInchFahrenheit] -->|BelongsToClass| N0006(Unit) 
+	N0244[PoundPerCubicYardPerPoundPerSquareInchFahrenheit] -->|ConversionFactorA| N0007(("0")) 
+	N0244[PoundPerCubicYardPerPoundPerSquareInchFahrenheit] -->|ConversionFactorB| N0245(("6456.384547199997")) 
+	N0244[PoundPerCubicYardPerPoundPerSquareInchFahrenheit] -->|Symbol| N0246(("lb/yd³/(psi•°F)")) 
+	N0244[PoundPerCubicYardPerPoundPerSquareInchFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureTemperatureQuantity] 
+```
+## MassDensityGradientPerPressureSquaredTemperatureQuantity <!-- NOUN -->
+- Display name: MassDensityGradientPerPressureSquaredTemperature
+- Parent class: [Quantity](./Quantities.md#Quantity)
+- Specialization:
+  - L = -1
+  - M = -1
+  - T = 4
+  - ThT = -1
+- Description: 
+A mass density gradient per pressure squared is the second derivative of a mass density compared to pressure: $\frac{d^{2}\rho}{dp^{2}}$, where $\rho$ is a mass density and $p$ is pressure.
+The dimension of mass density gradient per pressure squared is:
+$$[T^{4}L^{-1}M^{-1}K^{-1}]$$.
+The SI unit for **mass density gradient per pressure squared** is: kilogram per cubic metre per pascal squared kelvin with the associated unit label $\frac{\frac{kg}{m^{3}}}{Pa^{2} \cdot K}$
+- Definition set: QuantityTypes
+- Examples:
+``` dwis
+Quantity:MassDensityGradientPerPressureSquaredTemperatureQuantity
+MassDensityGradientPerPressureSquaredTemperatureQuantity.L = -1
+MassDensityGradientPerPressureSquaredTemperatureQuantity.M = -1
+MassDensityGradientPerPressureSquaredTemperatureQuantity.T = 4
+MassDensityGradientPerPressureSquaredTemperatureQuantity.ThT = -1
+Unit:KilogramPerCubicMetrePerPascalSquaredKelvin
+KilogramPerCubicMetrePerPascalSquaredKelvin.ConversionFactorA = 0
+KilogramPerCubicMetrePerPascalSquaredKelvin.ConversionFactorB = 1
+KilogramPerCubicMetrePerPascalSquaredKelvin.Symbol = "kg/m³/(Pa²•K)"
+KilogramPerCubicMetrePerPascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+MassDensityGradientPerPressureSquaredTemperatureQuantity HasSIUnit KilogramPerCubicMetrePerPascalSquaredKelvin
+Unit:SpecificGravityPerPascalSquaredKelvin
+SpecificGravityPerPascalSquaredKelvin.ConversionFactorA = 0
+SpecificGravityPerPascalSquaredKelvin.ConversionFactorB = 0.001000028000784022
+SpecificGravityPerPascalSquaredKelvin.Symbol = "sg/(Pa²•K)"
+SpecificGravityPerPascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:GramPerCubicCentimetrePerPascalSquaredKelvin
+GramPerCubicCentimetrePerPascalSquaredKelvin.ConversionFactorA = 0
+GramPerCubicCentimetrePerPascalSquaredKelvin.ConversionFactorB = 0.0010000000000000002
+GramPerCubicCentimetrePerPascalSquaredKelvin.Symbol = "g/cm³/(Pa²•K)"
+GramPerCubicCentimetrePerPascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUkPerPascalSquaredKelvin
+PoundPerGallonUkPerPascalSquaredKelvin.ConversionFactorA = 0
+PoundPerGallonUkPerPascalSquaredKelvin.ConversionFactorB = 0.010022412854960501
+PoundPerGallonUkPerPascalSquaredKelvin.Symbol = "ppgUK/(Pa²•K)"
+PoundPerGallonUkPerPascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUsPerPascalSquaredKelvin
+PoundPerGallonUsPerPascalSquaredKelvin.ConversionFactorA = 0
+PoundPerGallonUsPerPascalSquaredKelvin.ConversionFactorB = 0.00834540445201933
+PoundPerGallonUsPerPascalSquaredKelvin.Symbol = "ppgUS/(Pa²•K)"
+PoundPerGallonUsPerPascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicFootPerPascalSquaredKelvin
+PoundPerCubicFootPerPascalSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicFootPerPascalSquaredKelvin.ConversionFactorB = 0.06242796057614459
+PoundPerCubicFootPerPascalSquaredKelvin.Symbol = "lb/ft³/(Pa²•K)"
+PoundPerCubicFootPerPascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicInchPerPascalSquaredKelvin
+PoundPerCubicInchPerPascalSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicInchPerPascalSquaredKelvin.ConversionFactorB = 3.612729200008369E-05
+PoundPerCubicInchPerPascalSquaredKelvin.Symbol = "lb/in³/(Pa²•K)"
+PoundPerCubicInchPerPascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicYardPerPascalSquaredKelvin
+PoundPerCubicYardPerPascalSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicYardPerPascalSquaredKelvin.ConversionFactorB = 1.6855549355559039
+PoundPerCubicYardPerPascalSquaredKelvin.Symbol = "lb/yd³/(Pa²•K)"
+PoundPerCubicYardPerPascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:KilogramPerCubicMetrePerBarSquaredKelvin
+KilogramPerCubicMetrePerBarSquaredKelvin.ConversionFactorA = 0
+KilogramPerCubicMetrePerBarSquaredKelvin.ConversionFactorB = 10000000000
+KilogramPerCubicMetrePerBarSquaredKelvin.Symbol = "kg/m³/(bar²•K)"
+KilogramPerCubicMetrePerBarSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:SpecificGravityPerBarSquaredKelvin
+SpecificGravityPerBarSquaredKelvin.ConversionFactorA = 0
+SpecificGravityPerBarSquaredKelvin.ConversionFactorB = 10000280.00784022
+SpecificGravityPerBarSquaredKelvin.Symbol = "sg/(bar²•K)"
+SpecificGravityPerBarSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:GramPerCubicCentimetrePerBarSquaredKelvin
+GramPerCubicCentimetrePerBarSquaredKelvin.ConversionFactorA = 0
+GramPerCubicCentimetrePerBarSquaredKelvin.ConversionFactorB = 10000000.000000002
+GramPerCubicCentimetrePerBarSquaredKelvin.Symbol = "g/cm³/(bar²•K)"
+GramPerCubicCentimetrePerBarSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUkPerBarSquaredKelvin
+PoundPerGallonUkPerBarSquaredKelvin.ConversionFactorA = 0
+PoundPerGallonUkPerBarSquaredKelvin.ConversionFactorB = 100224128.54960501
+PoundPerGallonUkPerBarSquaredKelvin.Symbol = "ppgUK/(bar²•K)"
+PoundPerGallonUkPerBarSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUsPerBarSquaredKelvin
+PoundPerGallonUsPerBarSquaredKelvin.ConversionFactorA = 0
+PoundPerGallonUsPerBarSquaredKelvin.ConversionFactorB = 83454044.52019331
+PoundPerGallonUsPerBarSquaredKelvin.Symbol = "ppgUS/(bar²•K)"
+PoundPerGallonUsPerBarSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicFootPerBarSquaredKelvin
+PoundPerCubicFootPerBarSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicFootPerBarSquaredKelvin.ConversionFactorB = 624279605.7614459
+PoundPerCubicFootPerBarSquaredKelvin.Symbol = "lb/ft³/(bar²•K)"
+PoundPerCubicFootPerBarSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicInchPerBarSquaredKelvin
+PoundPerCubicInchPerBarSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicInchPerBarSquaredKelvin.ConversionFactorB = 361272.9200008369
+PoundPerCubicInchPerBarSquaredKelvin.Symbol = "lb/in³/(bar²•K)"
+PoundPerCubicInchPerBarSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicYardPerBarSquaredKelvin
+PoundPerCubicYardPerBarSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicYardPerBarSquaredKelvin.ConversionFactorB = 16855549355.559038
+PoundPerCubicYardPerBarSquaredKelvin.Symbol = "lb/yd³/(bar²•K)"
+PoundPerCubicYardPerBarSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:KilogramPerCubicMetrePerMegapascalSquaredKelvin
+KilogramPerCubicMetrePerMegapascalSquaredKelvin.ConversionFactorA = 0
+KilogramPerCubicMetrePerMegapascalSquaredKelvin.ConversionFactorB = 1000000000000
+KilogramPerCubicMetrePerMegapascalSquaredKelvin.Symbol = "kg/m³/(MPa²•K)"
+KilogramPerCubicMetrePerMegapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:SpecificGravityPerMegapascalSquaredKelvin
+SpecificGravityPerMegapascalSquaredKelvin.ConversionFactorA = 0
+SpecificGravityPerMegapascalSquaredKelvin.ConversionFactorB = 1000028000.784022
+SpecificGravityPerMegapascalSquaredKelvin.Symbol = "sg/(MPa²•K)"
+SpecificGravityPerMegapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:GramPerCubicCentimetrePerMegapascalSquaredKelvin
+GramPerCubicCentimetrePerMegapascalSquaredKelvin.ConversionFactorA = 0
+GramPerCubicCentimetrePerMegapascalSquaredKelvin.ConversionFactorB = 1000000000.0000002
+GramPerCubicCentimetrePerMegapascalSquaredKelvin.Symbol = "g/cm³/(MPa²•K)"
+GramPerCubicCentimetrePerMegapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUkPerMegapascalSquaredKelvin
+PoundPerGallonUkPerMegapascalSquaredKelvin.ConversionFactorA = 0
+PoundPerGallonUkPerMegapascalSquaredKelvin.ConversionFactorB = 10022412854.9605
+PoundPerGallonUkPerMegapascalSquaredKelvin.Symbol = "ppgUK/(MPa²•K)"
+PoundPerGallonUkPerMegapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUsPerMegapascalSquaredKelvin
+PoundPerGallonUsPerMegapascalSquaredKelvin.ConversionFactorA = 0
+PoundPerGallonUsPerMegapascalSquaredKelvin.ConversionFactorB = 8345404452.019331
+PoundPerGallonUsPerMegapascalSquaredKelvin.Symbol = "ppgUS/(MPa²•K)"
+PoundPerGallonUsPerMegapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicFootPerMegapascalSquaredKelvin
+PoundPerCubicFootPerMegapascalSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicFootPerMegapascalSquaredKelvin.ConversionFactorB = 62427960576.14459
+PoundPerCubicFootPerMegapascalSquaredKelvin.Symbol = "lb/ft³/(MPa²•K)"
+PoundPerCubicFootPerMegapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicInchPerMegapascalSquaredKelvin
+PoundPerCubicInchPerMegapascalSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicInchPerMegapascalSquaredKelvin.ConversionFactorB = 36127292.000083685
+PoundPerCubicInchPerMegapascalSquaredKelvin.Symbol = "lb/in³/(MPa²•K)"
+PoundPerCubicInchPerMegapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicYardPerMegapascalSquaredKelvin
+PoundPerCubicYardPerMegapascalSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicYardPerMegapascalSquaredKelvin.ConversionFactorB = 1685554935555.9036
+PoundPerCubicYardPerMegapascalSquaredKelvin.Symbol = "lb/yd³/(MPa²•K)"
+PoundPerCubicYardPerMegapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:KilogramPerCubicMetrePerGigapascalSquaredKelvin
+KilogramPerCubicMetrePerGigapascalSquaredKelvin.ConversionFactorA = 0
+KilogramPerCubicMetrePerGigapascalSquaredKelvin.ConversionFactorB = 1E+18
+KilogramPerCubicMetrePerGigapascalSquaredKelvin.Symbol = "kg/m³/(GPa²•K)"
+KilogramPerCubicMetrePerGigapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:SpecificGravityPerGigapascalSquaredKelvin
+SpecificGravityPerGigapascalSquaredKelvin.ConversionFactorA = 0
+SpecificGravityPerGigapascalSquaredKelvin.ConversionFactorB = 1000028000784021.9
+SpecificGravityPerGigapascalSquaredKelvin.Symbol = "sg/(GPa²•K)"
+SpecificGravityPerGigapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:GramPerCubicCentimetrePerGigapascalSquaredKelvin
+GramPerCubicCentimetrePerGigapascalSquaredKelvin.ConversionFactorA = 0
+GramPerCubicCentimetrePerGigapascalSquaredKelvin.ConversionFactorB = 1000000000000000.1
+GramPerCubicCentimetrePerGigapascalSquaredKelvin.Symbol = "g/cm³/(GPa²•K)"
+GramPerCubicCentimetrePerGigapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUkPerGigapascalSquaredKelvin
+PoundPerGallonUkPerGigapascalSquaredKelvin.ConversionFactorA = 0
+PoundPerGallonUkPerGigapascalSquaredKelvin.ConversionFactorB = 10022412854960500
+PoundPerGallonUkPerGigapascalSquaredKelvin.Symbol = "ppgUK/(GPa²•K)"
+PoundPerGallonUkPerGigapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUsPerGigapascalSquaredKelvin
+PoundPerGallonUsPerGigapascalSquaredKelvin.ConversionFactorA = 0
+PoundPerGallonUsPerGigapascalSquaredKelvin.ConversionFactorB = 8345404452019330
+PoundPerGallonUsPerGigapascalSquaredKelvin.Symbol = "ppgUS/(GPa²•K)"
+PoundPerGallonUsPerGigapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicFootPerGigapascalSquaredKelvin
+PoundPerCubicFootPerGigapascalSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicFootPerGigapascalSquaredKelvin.ConversionFactorB = 62427960576144584
+PoundPerCubicFootPerGigapascalSquaredKelvin.Symbol = "lb/ft³/(GPa²•K)"
+PoundPerCubicFootPerGigapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicInchPerGigapascalSquaredKelvin
+PoundPerCubicInchPerGigapascalSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicInchPerGigapascalSquaredKelvin.ConversionFactorB = 36127292000083.68
+PoundPerCubicInchPerGigapascalSquaredKelvin.Symbol = "lb/in³/(GPa²•K)"
+PoundPerCubicInchPerGigapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicYardPerGigapascalSquaredKelvin
+PoundPerCubicYardPerGigapascalSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicYardPerGigapascalSquaredKelvin.ConversionFactorB = 1.685554935555904E+18
+PoundPerCubicYardPerGigapascalSquaredKelvin.Symbol = "lb/yd³/(GPa²•K)"
+PoundPerCubicYardPerGigapascalSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin.ConversionFactorA = 0
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin.ConversionFactorB = 47537678.1316983
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin.Symbol = "kg/m³/(psi²•K)"
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:SpecificGravityPerPoundPerSquareInchSquaredKelvin
+SpecificGravityPerPoundPerSquareInchSquaredKelvin.ConversionFactorA = 0
+SpecificGravityPerPoundPerSquareInchSquaredKelvin.ConversionFactorB = 47539.00922395657
+SpecificGravityPerPoundPerSquareInchSquaredKelvin.Symbol = "sg/(psi²•K)"
+SpecificGravityPerPoundPerSquareInchSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin.ConversionFactorA = 0
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin.ConversionFactorB = 47537.6781316983
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin.Symbol = "g/cm³/(psi²•K)"
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin
+PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin.ConversionFactorA = 0
+PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin.ConversionFactorB = 476442.2364021077
+PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin.Symbol = "ppgUK/(psi²•K)"
+PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin
+PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin.ConversionFactorA = 0
+PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin.ConversionFactorB = 396721.15071893705
+PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin.Symbol = "ppgUS/(psi²•K)"
+PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin
+PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin.ConversionFactorB = 2967680.2962871124
+PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin.Symbol = "lb/ft³/(psi²•K)"
+PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin
+PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin.ConversionFactorB = 1717.4075788698572
+PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin.Symbol = "lb/in³/(psi²•K)"
+PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin
+PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin.ConversionFactorA = 0
+PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin.ConversionFactorB = 80127367.99975201
+PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin.Symbol = "lb/yd³/(psi²•K)"
+PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:KilogramPerCubicMetrePerPascalSquaredCelsius
+KilogramPerCubicMetrePerPascalSquaredCelsius.ConversionFactorA = 0
+KilogramPerCubicMetrePerPascalSquaredCelsius.ConversionFactorB = 1
+KilogramPerCubicMetrePerPascalSquaredCelsius.Symbol = "kg/m³/(Pa²•°C)"
+KilogramPerCubicMetrePerPascalSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:SpecificGravityPerPascalSquaredCelsius
+SpecificGravityPerPascalSquaredCelsius.ConversionFactorA = 0
+SpecificGravityPerPascalSquaredCelsius.ConversionFactorB = 0.001000028000784022
+SpecificGravityPerPascalSquaredCelsius.Symbol = "sg/(Pa²•°C)"
+SpecificGravityPerPascalSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:GramPerCubicCentimetrePerPascalSquaredCelsius
+GramPerCubicCentimetrePerPascalSquaredCelsius.ConversionFactorA = 0
+GramPerCubicCentimetrePerPascalSquaredCelsius.ConversionFactorB = 0.0010000000000000002
+GramPerCubicCentimetrePerPascalSquaredCelsius.Symbol = "g/cm³/(Pa²•°C)"
+GramPerCubicCentimetrePerPascalSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUkPerPascalSquaredCelsius
+PoundPerGallonUkPerPascalSquaredCelsius.ConversionFactorA = 0
+PoundPerGallonUkPerPascalSquaredCelsius.ConversionFactorB = 0.010022412854960501
+PoundPerGallonUkPerPascalSquaredCelsius.Symbol = "ppgUK/(Pa²•°C)"
+PoundPerGallonUkPerPascalSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUsPerPascalSquaredCelsius
+PoundPerGallonUsPerPascalSquaredCelsius.ConversionFactorA = 0
+PoundPerGallonUsPerPascalSquaredCelsius.ConversionFactorB = 0.00834540445201933
+PoundPerGallonUsPerPascalSquaredCelsius.Symbol = "ppgUS/(Pa²•°C)"
+PoundPerGallonUsPerPascalSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicFootPerPascalSquaredCelsius
+PoundPerCubicFootPerPascalSquaredCelsius.ConversionFactorA = 0
+PoundPerCubicFootPerPascalSquaredCelsius.ConversionFactorB = 0.06242796057614459
+PoundPerCubicFootPerPascalSquaredCelsius.Symbol = "lb/ft³/(Pa²•°C)"
+PoundPerCubicFootPerPascalSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicInchPerPascalSquaredCelsius
+PoundPerCubicInchPerPascalSquaredCelsius.ConversionFactorA = 0
+PoundPerCubicInchPerPascalSquaredCelsius.ConversionFactorB = 3.612729200008369E-05
+PoundPerCubicInchPerPascalSquaredCelsius.Symbol = "lb/in³/(Pa²•°C)"
+PoundPerCubicInchPerPascalSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicYardPerPascalSquaredCelsius
+PoundPerCubicYardPerPascalSquaredCelsius.ConversionFactorA = 0
+PoundPerCubicYardPerPascalSquaredCelsius.ConversionFactorB = 1.6855549355559039
+PoundPerCubicYardPerPascalSquaredCelsius.Symbol = "lb/yd³/(Pa²•°C)"
+PoundPerCubicYardPerPascalSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:KilogramPerCubicMetrePerBarSquaredCelsius
+KilogramPerCubicMetrePerBarSquaredCelsius.ConversionFactorA = 0
+KilogramPerCubicMetrePerBarSquaredCelsius.ConversionFactorB = 10000000000
+KilogramPerCubicMetrePerBarSquaredCelsius.Symbol = "kg/m³/(bar²•°C)"
+KilogramPerCubicMetrePerBarSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:SpecificGravityPerBarSquaredCelsius
+SpecificGravityPerBarSquaredCelsius.ConversionFactorA = 0
+SpecificGravityPerBarSquaredCelsius.ConversionFactorB = 10000280.00784022
+SpecificGravityPerBarSquaredCelsius.Symbol = "sg/(bar²•°C)"
+SpecificGravityPerBarSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:GramPerCubicCentimetrePerBarSquaredCelsius
+GramPerCubicCentimetrePerBarSquaredCelsius.ConversionFactorA = 0
+GramPerCubicCentimetrePerBarSquaredCelsius.ConversionFactorB = 10000000.000000002
+GramPerCubicCentimetrePerBarSquaredCelsius.Symbol = "g/cm³/(bar²•°C)"
+GramPerCubicCentimetrePerBarSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUkPerBarSquaredCelsius
+PoundPerGallonUkPerBarSquaredCelsius.ConversionFactorA = 0
+PoundPerGallonUkPerBarSquaredCelsius.ConversionFactorB = 100224128.54960501
+PoundPerGallonUkPerBarSquaredCelsius.Symbol = "ppgUK/(bar²•°C)"
+PoundPerGallonUkPerBarSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUsPerBarSquaredCelsius
+PoundPerGallonUsPerBarSquaredCelsius.ConversionFactorA = 0
+PoundPerGallonUsPerBarSquaredCelsius.ConversionFactorB = 83454044.52019331
+PoundPerGallonUsPerBarSquaredCelsius.Symbol = "ppgUS/(bar²•°C)"
+PoundPerGallonUsPerBarSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicFootPerBarSquaredCelsius
+PoundPerCubicFootPerBarSquaredCelsius.ConversionFactorA = 0
+PoundPerCubicFootPerBarSquaredCelsius.ConversionFactorB = 624279605.7614459
+PoundPerCubicFootPerBarSquaredCelsius.Symbol = "lb/ft³/(bar²•°C)"
+PoundPerCubicFootPerBarSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicInchPerBarSquaredCelsius
+PoundPerCubicInchPerBarSquaredCelsius.ConversionFactorA = 0
+PoundPerCubicInchPerBarSquaredCelsius.ConversionFactorB = 361272.9200008369
+PoundPerCubicInchPerBarSquaredCelsius.Symbol = "lb/in³/(bar²•°C)"
+PoundPerCubicInchPerBarSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicYardPerBarSquaredCelsius
+PoundPerCubicYardPerBarSquaredCelsius.ConversionFactorA = 0
+PoundPerCubicYardPerBarSquaredCelsius.ConversionFactorB = 16855549355.559038
+PoundPerCubicYardPerBarSquaredCelsius.Symbol = "lb/yd³/(bar²•°C)"
+PoundPerCubicYardPerBarSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius.ConversionFactorA = 0
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius.ConversionFactorB = 47537678.1316983
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius.Symbol = "kg/m³/(psi²•°C)"
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:SpecificGravityPerPoundPerSquareInchSquaredCelsius
+SpecificGravityPerPoundPerSquareInchSquaredCelsius.ConversionFactorA = 0
+SpecificGravityPerPoundPerSquareInchSquaredCelsius.ConversionFactorB = 47539.00922395657
+SpecificGravityPerPoundPerSquareInchSquaredCelsius.Symbol = "sg/(psi²•°C)"
+SpecificGravityPerPoundPerSquareInchSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius.ConversionFactorA = 0
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius.ConversionFactorB = 47537.6781316983
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius.Symbol = "g/cm³/(psi²•°C)"
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius
+PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius.ConversionFactorA = 0
+PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius.ConversionFactorB = 476442.2364021077
+PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius.Symbol = "ppgUK/(psi²•°C)"
+PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius
+PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius.ConversionFactorA = 0
+PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius.ConversionFactorB = 396721.15071893705
+PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius.Symbol = "ppgUS/(psi²•°C)"
+PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius
+PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius.ConversionFactorA = 0
+PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius.ConversionFactorB = 2967680.2962871124
+PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius.Symbol = "lb/ft³/(psi²•°C)"
+PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius
+PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius.ConversionFactorA = 0
+PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius.ConversionFactorB = 1717.4075788698572
+PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius.Symbol = "lb/in³/(psi²•°C)"
+PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius
+PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius.ConversionFactorA = 0
+PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius.ConversionFactorB = 80127367.99975201
+PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius.Symbol = "lb/yd³/(psi²•°C)"
+PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:KilogramPerCubicMetrePerPascalSquaredFahrenheit
+KilogramPerCubicMetrePerPascalSquaredFahrenheit.ConversionFactorA = 0
+KilogramPerCubicMetrePerPascalSquaredFahrenheit.ConversionFactorB = 0.5555555555555556
+KilogramPerCubicMetrePerPascalSquaredFahrenheit.Symbol = "kg/m³/(Pa²•°F)"
+KilogramPerCubicMetrePerPascalSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:SpecificGravityPerPascalSquaredFahrenheit
+SpecificGravityPerPascalSquaredFahrenheit.ConversionFactorA = 0
+SpecificGravityPerPascalSquaredFahrenheit.ConversionFactorB = 0.0005555711115466789
+SpecificGravityPerPascalSquaredFahrenheit.Symbol = "sg/(Pa²•°F)"
+SpecificGravityPerPascalSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:GramPerCubicCentimetrePerPascalSquaredFahrenheit
+GramPerCubicCentimetrePerPascalSquaredFahrenheit.ConversionFactorA = 0
+GramPerCubicCentimetrePerPascalSquaredFahrenheit.ConversionFactorB = 0.0005555555555555557
+GramPerCubicCentimetrePerPascalSquaredFahrenheit.Symbol = "g/cm³/(Pa²•°F)"
+GramPerCubicCentimetrePerPascalSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUkPerPascalSquaredFahrenheit
+PoundPerGallonUkPerPascalSquaredFahrenheit.ConversionFactorA = 0
+PoundPerGallonUkPerPascalSquaredFahrenheit.ConversionFactorB = 0.005568007141644723
+PoundPerGallonUkPerPascalSquaredFahrenheit.Symbol = "ppgUK/(Pa²•°F)"
+PoundPerGallonUkPerPascalSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUsPerPascalSquaredFahrenheit
+PoundPerGallonUsPerPascalSquaredFahrenheit.ConversionFactorA = 0
+PoundPerGallonUsPerPascalSquaredFahrenheit.ConversionFactorB = 0.004636335806677406
+PoundPerGallonUsPerPascalSquaredFahrenheit.Symbol = "ppgUS/(Pa²•°F)"
+PoundPerGallonUsPerPascalSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicFootPerPascalSquaredFahrenheit
+PoundPerCubicFootPerPascalSquaredFahrenheit.ConversionFactorA = 0
+PoundPerCubicFootPerPascalSquaredFahrenheit.ConversionFactorB = 0.03468220032008033
+PoundPerCubicFootPerPascalSquaredFahrenheit.Symbol = "lb/ft³/(Pa²•°F)"
+PoundPerCubicFootPerPascalSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicInchPerPascalSquaredFahrenheit
+PoundPerCubicInchPerPascalSquaredFahrenheit.ConversionFactorA = 0
+PoundPerCubicInchPerPascalSquaredFahrenheit.ConversionFactorB = 2.0070717777824268E-05
+PoundPerCubicInchPerPascalSquaredFahrenheit.Symbol = "lb/in³/(Pa²•°F)"
+PoundPerCubicInchPerPascalSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicYardPerPascalSquaredFahrenheit
+PoundPerCubicYardPerPascalSquaredFahrenheit.ConversionFactorA = 0
+PoundPerCubicYardPerPascalSquaredFahrenheit.ConversionFactorB = 0.9364194086421688
+PoundPerCubicYardPerPascalSquaredFahrenheit.Symbol = "lb/yd³/(Pa²•°F)"
+PoundPerCubicYardPerPascalSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:KilogramPerCubicMetrePerBarSquaredFahrenheit
+KilogramPerCubicMetrePerBarSquaredFahrenheit.ConversionFactorA = 0
+KilogramPerCubicMetrePerBarSquaredFahrenheit.ConversionFactorB = 5555555555.555555
+KilogramPerCubicMetrePerBarSquaredFahrenheit.Symbol = "kg/m³/(bar²•°F)"
+KilogramPerCubicMetrePerBarSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:SpecificGravityPerBarSquaredFahrenheit
+SpecificGravityPerBarSquaredFahrenheit.ConversionFactorA = 0
+SpecificGravityPerBarSquaredFahrenheit.ConversionFactorB = 5555711.115466789
+SpecificGravityPerBarSquaredFahrenheit.Symbol = "sg/(bar²•°F)"
+SpecificGravityPerBarSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:GramPerCubicCentimetrePerBarSquaredFahrenheit
+GramPerCubicCentimetrePerBarSquaredFahrenheit.ConversionFactorA = 0
+GramPerCubicCentimetrePerBarSquaredFahrenheit.ConversionFactorB = 5555555.555555557
+GramPerCubicCentimetrePerBarSquaredFahrenheit.Symbol = "g/cm³/(bar²•°F)"
+GramPerCubicCentimetrePerBarSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUkPerBarSquaredFahrenheit
+PoundPerGallonUkPerBarSquaredFahrenheit.ConversionFactorA = 0
+PoundPerGallonUkPerBarSquaredFahrenheit.ConversionFactorB = 55680071.41644723
+PoundPerGallonUkPerBarSquaredFahrenheit.Symbol = "ppgUK/(bar²•°F)"
+PoundPerGallonUkPerBarSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUsPerBarSquaredFahrenheit
+PoundPerGallonUsPerBarSquaredFahrenheit.ConversionFactorA = 0
+PoundPerGallonUsPerBarSquaredFahrenheit.ConversionFactorB = 46363358.06677406
+PoundPerGallonUsPerBarSquaredFahrenheit.Symbol = "ppgUS/(bar²•°F)"
+PoundPerGallonUsPerBarSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicFootPerBarSquaredFahrenheit
+PoundPerCubicFootPerBarSquaredFahrenheit.ConversionFactorA = 0
+PoundPerCubicFootPerBarSquaredFahrenheit.ConversionFactorB = 346822003.2008033
+PoundPerCubicFootPerBarSquaredFahrenheit.Symbol = "lb/ft³/(bar²•°F)"
+PoundPerCubicFootPerBarSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicInchPerBarSquaredFahrenheit
+PoundPerCubicInchPerBarSquaredFahrenheit.ConversionFactorA = 0
+PoundPerCubicInchPerBarSquaredFahrenheit.ConversionFactorB = 200707.1777782427
+PoundPerCubicInchPerBarSquaredFahrenheit.Symbol = "lb/in³/(bar²•°F)"
+PoundPerCubicInchPerBarSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicYardPerBarSquaredFahrenheit
+PoundPerCubicYardPerBarSquaredFahrenheit.ConversionFactorA = 0
+PoundPerCubicYardPerBarSquaredFahrenheit.ConversionFactorB = 9364194086.421688
+PoundPerCubicYardPerBarSquaredFahrenheit.Symbol = "lb/yd³/(bar²•°F)"
+PoundPerCubicYardPerBarSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit.ConversionFactorA = 0
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit.ConversionFactorB = 26409821.184276838
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit.Symbol = "kg/m³/(psi²•°F)"
+KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:SpecificGravityPerPoundPerSquareInchSquaredFahrenheit
+SpecificGravityPerPoundPerSquareInchSquaredFahrenheit.ConversionFactorA = 0
+SpecificGravityPerPoundPerSquareInchSquaredFahrenheit.ConversionFactorB = 26410.560679975875
+SpecificGravityPerPoundPerSquareInchSquaredFahrenheit.Symbol = "sg/(psi²•°F)"
+SpecificGravityPerPoundPerSquareInchSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit.ConversionFactorA = 0
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit.ConversionFactorB = 26409.82118427684
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit.Symbol = "g/cm³/(psi²•°F)"
+GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit
+PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit.ConversionFactorA = 0
+PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit.ConversionFactorB = 264690.1313345043
+PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit.Symbol = "ppgUK/(psi²•°F)"
+PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit
+PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit.ConversionFactorA = 0
+PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit.ConversionFactorB = 220400.63928829838
+PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit.Symbol = "ppgUS/(psi²•°F)"
+PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit
+PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit.ConversionFactorA = 0
+PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit.ConversionFactorB = 1648711.2757150626
+PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit.Symbol = "lb/ft³/(psi²•°F)"
+PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit
+PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit.ConversionFactorA = 0
+PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit.ConversionFactorB = 954.1153215943651
+PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit.Symbol = "lb/in³/(psi²•°F)"
+PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+Unit:PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit
+PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit.ConversionFactorA = 0
+PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit.ConversionFactorB = 44515204.44430668
+PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit.Symbol = "lb/yd³/(psi²•°F)"
+PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit IsUnitForQuantity MassDensityGradientPerPressureSquaredTemperatureQuantity
+```
+An example semantic graph looks like as follow:
+```mermaid
+graph LR
+	N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] -->|BelongsToClass| N0001(Quantity) 
+	N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] -->|L| N0002(("-1")) 
+	N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] -->|M| N0002(("-1")) 
+	N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] -->|T| N0003(("4")) 
+	N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] -->|ThT| N0002(("-1")) 
+	N0004[KilogramPerCubicMetrePerPascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0004[KilogramPerCubicMetrePerPascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0004[KilogramPerCubicMetrePerPascalSquaredKelvin] -->|ConversionFactorB| N0007(("1")) 
+	N0004[KilogramPerCubicMetrePerPascalSquaredKelvin] -->|Symbol| N0008(("kg/m³/(Pa²•K)")) 
+	N0004[KilogramPerCubicMetrePerPascalSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] -->|HasSIUnit| N0004[KilogramPerCubicMetrePerPascalSquaredKelvin] 
+	N0009[SpecificGravityPerPascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0009[SpecificGravityPerPascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0009[SpecificGravityPerPascalSquaredKelvin] -->|ConversionFactorB| N0010(("0.001000028000784022")) 
+	N0009[SpecificGravityPerPascalSquaredKelvin] -->|Symbol| N0011(("sg/(Pa²•K)")) 
+	N0009[SpecificGravityPerPascalSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0012[GramPerCubicCentimetrePerPascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0012[GramPerCubicCentimetrePerPascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0012[GramPerCubicCentimetrePerPascalSquaredKelvin] -->|ConversionFactorB| N0013(("0.0010000000000000002")) 
+	N0012[GramPerCubicCentimetrePerPascalSquaredKelvin] -->|Symbol| N0014(("g/cm³/(Pa²•K)")) 
+	N0012[GramPerCubicCentimetrePerPascalSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0015[PoundPerGallonUkPerPascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0015[PoundPerGallonUkPerPascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0015[PoundPerGallonUkPerPascalSquaredKelvin] -->|ConversionFactorB| N0016(("0.010022412854960501")) 
+	N0015[PoundPerGallonUkPerPascalSquaredKelvin] -->|Symbol| N0017(("ppgUK/(Pa²•K)")) 
+	N0015[PoundPerGallonUkPerPascalSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0018[PoundPerGallonUsPerPascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0018[PoundPerGallonUsPerPascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0018[PoundPerGallonUsPerPascalSquaredKelvin] -->|ConversionFactorB| N0019(("0.00834540445201933")) 
+	N0018[PoundPerGallonUsPerPascalSquaredKelvin] -->|Symbol| N0020(("ppgUS/(Pa²•K)")) 
+	N0018[PoundPerGallonUsPerPascalSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0021[PoundPerCubicFootPerPascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0021[PoundPerCubicFootPerPascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0021[PoundPerCubicFootPerPascalSquaredKelvin] -->|ConversionFactorB| N0022(("0.06242796057614459")) 
+	N0021[PoundPerCubicFootPerPascalSquaredKelvin] -->|Symbol| N0023(("lb/ft³/(Pa²•K)")) 
+	N0021[PoundPerCubicFootPerPascalSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0024[PoundPerCubicInchPerPascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0024[PoundPerCubicInchPerPascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0024[PoundPerCubicInchPerPascalSquaredKelvin] -->|ConversionFactorB| N0025(("3.612729200008369E-05")) 
+	N0024[PoundPerCubicInchPerPascalSquaredKelvin] -->|Symbol| N0026(("lb/in³/(Pa²•K)")) 
+	N0024[PoundPerCubicInchPerPascalSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0027[PoundPerCubicYardPerPascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0027[PoundPerCubicYardPerPascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0027[PoundPerCubicYardPerPascalSquaredKelvin] -->|ConversionFactorB| N0028(("1.6855549355559039")) 
+	N0027[PoundPerCubicYardPerPascalSquaredKelvin] -->|Symbol| N0029(("lb/yd³/(Pa²•K)")) 
+	N0027[PoundPerCubicYardPerPascalSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0030[KilogramPerCubicMetrePerBarSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0030[KilogramPerCubicMetrePerBarSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0030[KilogramPerCubicMetrePerBarSquaredKelvin] -->|ConversionFactorB| N0031(("10000000000")) 
+	N0030[KilogramPerCubicMetrePerBarSquaredKelvin] -->|Symbol| N0032(("kg/m³/(bar²•K)")) 
+	N0030[KilogramPerCubicMetrePerBarSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0033[SpecificGravityPerBarSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0033[SpecificGravityPerBarSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0033[SpecificGravityPerBarSquaredKelvin] -->|ConversionFactorB| N0034(("10000280.00784022")) 
+	N0033[SpecificGravityPerBarSquaredKelvin] -->|Symbol| N0035(("sg/(bar²•K)")) 
+	N0033[SpecificGravityPerBarSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0036[GramPerCubicCentimetrePerBarSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0036[GramPerCubicCentimetrePerBarSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0036[GramPerCubicCentimetrePerBarSquaredKelvin] -->|ConversionFactorB| N0037(("10000000.000000002")) 
+	N0036[GramPerCubicCentimetrePerBarSquaredKelvin] -->|Symbol| N0038(("g/cm³/(bar²•K)")) 
+	N0036[GramPerCubicCentimetrePerBarSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0039[PoundPerGallonUkPerBarSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0039[PoundPerGallonUkPerBarSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0039[PoundPerGallonUkPerBarSquaredKelvin] -->|ConversionFactorB| N0040(("100224128.54960501")) 
+	N0039[PoundPerGallonUkPerBarSquaredKelvin] -->|Symbol| N0041(("ppgUK/(bar²•K)")) 
+	N0039[PoundPerGallonUkPerBarSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0042[PoundPerGallonUsPerBarSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0042[PoundPerGallonUsPerBarSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0042[PoundPerGallonUsPerBarSquaredKelvin] -->|ConversionFactorB| N0043(("83454044.52019331")) 
+	N0042[PoundPerGallonUsPerBarSquaredKelvin] -->|Symbol| N0044(("ppgUS/(bar²•K)")) 
+	N0042[PoundPerGallonUsPerBarSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0045[PoundPerCubicFootPerBarSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0045[PoundPerCubicFootPerBarSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0045[PoundPerCubicFootPerBarSquaredKelvin] -->|ConversionFactorB| N0046(("624279605.7614459")) 
+	N0045[PoundPerCubicFootPerBarSquaredKelvin] -->|Symbol| N0047(("lb/ft³/(bar²•K)")) 
+	N0045[PoundPerCubicFootPerBarSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0048[PoundPerCubicInchPerBarSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0048[PoundPerCubicInchPerBarSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0048[PoundPerCubicInchPerBarSquaredKelvin] -->|ConversionFactorB| N0049(("361272.9200008369")) 
+	N0048[PoundPerCubicInchPerBarSquaredKelvin] -->|Symbol| N0050(("lb/in³/(bar²•K)")) 
+	N0048[PoundPerCubicInchPerBarSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0051[PoundPerCubicYardPerBarSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0051[PoundPerCubicYardPerBarSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0051[PoundPerCubicYardPerBarSquaredKelvin] -->|ConversionFactorB| N0052(("16855549355.559038")) 
+	N0051[PoundPerCubicYardPerBarSquaredKelvin] -->|Symbol| N0053(("lb/yd³/(bar²•K)")) 
+	N0051[PoundPerCubicYardPerBarSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0054[KilogramPerCubicMetrePerMegapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0054[KilogramPerCubicMetrePerMegapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0054[KilogramPerCubicMetrePerMegapascalSquaredKelvin] -->|ConversionFactorB| N0055(("1000000000000")) 
+	N0054[KilogramPerCubicMetrePerMegapascalSquaredKelvin] -->|Symbol| N0056(("kg/m³/(MPa²•K)")) 
+	N0054[KilogramPerCubicMetrePerMegapascalSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0057[SpecificGravityPerMegapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0057[SpecificGravityPerMegapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0057[SpecificGravityPerMegapascalSquaredKelvin] -->|ConversionFactorB| N0058(("1000028000.784022")) 
+	N0057[SpecificGravityPerMegapascalSquaredKelvin] -->|Symbol| N0059(("sg/(MPa²•K)")) 
+	N0057[SpecificGravityPerMegapascalSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0060[GramPerCubicCentimetrePerMegapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0060[GramPerCubicCentimetrePerMegapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0060[GramPerCubicCentimetrePerMegapascalSquaredKelvin] -->|ConversionFactorB| N0061(("1000000000.0000002")) 
+	N0060[GramPerCubicCentimetrePerMegapascalSquaredKelvin] -->|Symbol| N0062(("g/cm³/(MPa²•K)")) 
+	N0060[GramPerCubicCentimetrePerMegapascalSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0063[PoundPerGallonUkPerMegapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0063[PoundPerGallonUkPerMegapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0063[PoundPerGallonUkPerMegapascalSquaredKelvin] -->|ConversionFactorB| N0064(("10022412854.9605")) 
+	N0063[PoundPerGallonUkPerMegapascalSquaredKelvin] -->|Symbol| N0065(("ppgUK/(MPa²•K)")) 
+	N0063[PoundPerGallonUkPerMegapascalSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0066[PoundPerGallonUsPerMegapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0066[PoundPerGallonUsPerMegapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0066[PoundPerGallonUsPerMegapascalSquaredKelvin] -->|ConversionFactorB| N0067(("8345404452.019331")) 
+	N0066[PoundPerGallonUsPerMegapascalSquaredKelvin] -->|Symbol| N0068(("ppgUS/(MPa²•K)")) 
+	N0066[PoundPerGallonUsPerMegapascalSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0069[PoundPerCubicFootPerMegapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0069[PoundPerCubicFootPerMegapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0069[PoundPerCubicFootPerMegapascalSquaredKelvin] -->|ConversionFactorB| N0070(("62427960576.14459")) 
+	N0069[PoundPerCubicFootPerMegapascalSquaredKelvin] -->|Symbol| N0071(("lb/ft³/(MPa²•K)")) 
+	N0069[PoundPerCubicFootPerMegapascalSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0072[PoundPerCubicInchPerMegapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0072[PoundPerCubicInchPerMegapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0072[PoundPerCubicInchPerMegapascalSquaredKelvin] -->|ConversionFactorB| N0073(("36127292.000083685")) 
+	N0072[PoundPerCubicInchPerMegapascalSquaredKelvin] -->|Symbol| N0074(("lb/in³/(MPa²•K)")) 
+	N0072[PoundPerCubicInchPerMegapascalSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0075[PoundPerCubicYardPerMegapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0075[PoundPerCubicYardPerMegapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0075[PoundPerCubicYardPerMegapascalSquaredKelvin] -->|ConversionFactorB| N0076(("1685554935555.9036")) 
+	N0075[PoundPerCubicYardPerMegapascalSquaredKelvin] -->|Symbol| N0077(("lb/yd³/(MPa²•K)")) 
+	N0075[PoundPerCubicYardPerMegapascalSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0078[KilogramPerCubicMetrePerGigapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0078[KilogramPerCubicMetrePerGigapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0078[KilogramPerCubicMetrePerGigapascalSquaredKelvin] -->|ConversionFactorB| N0079(("1E+18")) 
+	N0078[KilogramPerCubicMetrePerGigapascalSquaredKelvin] -->|Symbol| N0080(("kg/m³/(GPa²•K)")) 
+	N0078[KilogramPerCubicMetrePerGigapascalSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0081[SpecificGravityPerGigapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0081[SpecificGravityPerGigapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0081[SpecificGravityPerGigapascalSquaredKelvin] -->|ConversionFactorB| N0082(("1000028000784021.9")) 
+	N0081[SpecificGravityPerGigapascalSquaredKelvin] -->|Symbol| N0083(("sg/(GPa²•K)")) 
+	N0081[SpecificGravityPerGigapascalSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0084[GramPerCubicCentimetrePerGigapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0084[GramPerCubicCentimetrePerGigapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0084[GramPerCubicCentimetrePerGigapascalSquaredKelvin] -->|ConversionFactorB| N0085(("1000000000000000.1")) 
+	N0084[GramPerCubicCentimetrePerGigapascalSquaredKelvin] -->|Symbol| N0086(("g/cm³/(GPa²•K)")) 
+	N0084[GramPerCubicCentimetrePerGigapascalSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0087[PoundPerGallonUkPerGigapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0087[PoundPerGallonUkPerGigapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0087[PoundPerGallonUkPerGigapascalSquaredKelvin] -->|ConversionFactorB| N0088(("10022412854960500")) 
+	N0087[PoundPerGallonUkPerGigapascalSquaredKelvin] -->|Symbol| N0089(("ppgUK/(GPa²•K)")) 
+	N0087[PoundPerGallonUkPerGigapascalSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0090[PoundPerGallonUsPerGigapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0090[PoundPerGallonUsPerGigapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0090[PoundPerGallonUsPerGigapascalSquaredKelvin] -->|ConversionFactorB| N0091(("8345404452019330")) 
+	N0090[PoundPerGallonUsPerGigapascalSquaredKelvin] -->|Symbol| N0092(("ppgUS/(GPa²•K)")) 
+	N0090[PoundPerGallonUsPerGigapascalSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0093[PoundPerCubicFootPerGigapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0093[PoundPerCubicFootPerGigapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0093[PoundPerCubicFootPerGigapascalSquaredKelvin] -->|ConversionFactorB| N0094(("62427960576144584")) 
+	N0093[PoundPerCubicFootPerGigapascalSquaredKelvin] -->|Symbol| N0095(("lb/ft³/(GPa²•K)")) 
+	N0093[PoundPerCubicFootPerGigapascalSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0096[PoundPerCubicInchPerGigapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0096[PoundPerCubicInchPerGigapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0096[PoundPerCubicInchPerGigapascalSquaredKelvin] -->|ConversionFactorB| N0097(("36127292000083.68")) 
+	N0096[PoundPerCubicInchPerGigapascalSquaredKelvin] -->|Symbol| N0098(("lb/in³/(GPa²•K)")) 
+	N0096[PoundPerCubicInchPerGigapascalSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0099[PoundPerCubicYardPerGigapascalSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0099[PoundPerCubicYardPerGigapascalSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0099[PoundPerCubicYardPerGigapascalSquaredKelvin] -->|ConversionFactorB| N0100(("1.685554935555904E+18")) 
+	N0099[PoundPerCubicYardPerGigapascalSquaredKelvin] -->|Symbol| N0101(("lb/yd³/(GPa²•K)")) 
+	N0099[PoundPerCubicYardPerGigapascalSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorB| N0103(("47537678.1316983")) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin] -->|Symbol| N0104(("kg/m³/(psi²•K)")) 
+	N0102[KilogramPerCubicMetrePerPoundPerSquareInchSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0105[SpecificGravityPerPoundPerSquareInchSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0105[SpecificGravityPerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0105[SpecificGravityPerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorB| N0106(("47539.00922395657")) 
+	N0105[SpecificGravityPerPoundPerSquareInchSquaredKelvin] -->|Symbol| N0107(("sg/(psi²•K)")) 
+	N0105[SpecificGravityPerPoundPerSquareInchSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorB| N0109(("47537.6781316983")) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin] -->|Symbol| N0110(("g/cm³/(psi²•K)")) 
+	N0108[GramPerCubicCentimetrePerPoundPerSquareInchSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0111[PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorB| N0112(("476442.2364021077")) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin] -->|Symbol| N0113(("ppgUK/(psi²•K)")) 
+	N0111[PoundPerGallonUkPerPoundPerSquareInchSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0114[PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorB| N0115(("396721.15071893705")) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin] -->|Symbol| N0116(("ppgUS/(psi²•K)")) 
+	N0114[PoundPerGallonUsPerPoundPerSquareInchSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0117[PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorB| N0118(("2967680.2962871124")) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin] -->|Symbol| N0119(("lb/ft³/(psi²•K)")) 
+	N0117[PoundPerCubicFootPerPoundPerSquareInchSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0120[PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorB| N0121(("1717.4075788698572")) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin] -->|Symbol| N0122(("lb/in³/(psi²•K)")) 
+	N0120[PoundPerCubicInchPerPoundPerSquareInchSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0123[PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin] -->|BelongsToClass| N0005(Unit) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorA| N0006(("0")) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin] -->|ConversionFactorB| N0124(("80127367.99975201")) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin] -->|Symbol| N0125(("lb/yd³/(psi²•K)")) 
+	N0123[PoundPerCubicYardPerPoundPerSquareInchSquaredKelvin] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0126[KilogramPerCubicMetrePerPascalSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0126[KilogramPerCubicMetrePerPascalSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0126[KilogramPerCubicMetrePerPascalSquaredCelsius] -->|ConversionFactorB| N0007(("1")) 
+	N0126[KilogramPerCubicMetrePerPascalSquaredCelsius] -->|Symbol| N0127(("kg/m³/(Pa²•°C)")) 
+	N0126[KilogramPerCubicMetrePerPascalSquaredCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0128[SpecificGravityPerPascalSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0128[SpecificGravityPerPascalSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0128[SpecificGravityPerPascalSquaredCelsius] -->|ConversionFactorB| N0010(("0.001000028000784022")) 
+	N0128[SpecificGravityPerPascalSquaredCelsius] -->|Symbol| N0129(("sg/(Pa²•°C)")) 
+	N0128[SpecificGravityPerPascalSquaredCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0130[GramPerCubicCentimetrePerPascalSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0130[GramPerCubicCentimetrePerPascalSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0130[GramPerCubicCentimetrePerPascalSquaredCelsius] -->|ConversionFactorB| N0013(("0.0010000000000000002")) 
+	N0130[GramPerCubicCentimetrePerPascalSquaredCelsius] -->|Symbol| N0131(("g/cm³/(Pa²•°C)")) 
+	N0130[GramPerCubicCentimetrePerPascalSquaredCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0132[PoundPerGallonUkPerPascalSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0132[PoundPerGallonUkPerPascalSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0132[PoundPerGallonUkPerPascalSquaredCelsius] -->|ConversionFactorB| N0016(("0.010022412854960501")) 
+	N0132[PoundPerGallonUkPerPascalSquaredCelsius] -->|Symbol| N0133(("ppgUK/(Pa²•°C)")) 
+	N0132[PoundPerGallonUkPerPascalSquaredCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0134[PoundPerGallonUsPerPascalSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0134[PoundPerGallonUsPerPascalSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0134[PoundPerGallonUsPerPascalSquaredCelsius] -->|ConversionFactorB| N0019(("0.00834540445201933")) 
+	N0134[PoundPerGallonUsPerPascalSquaredCelsius] -->|Symbol| N0135(("ppgUS/(Pa²•°C)")) 
+	N0134[PoundPerGallonUsPerPascalSquaredCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0136[PoundPerCubicFootPerPascalSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0136[PoundPerCubicFootPerPascalSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0136[PoundPerCubicFootPerPascalSquaredCelsius] -->|ConversionFactorB| N0022(("0.06242796057614459")) 
+	N0136[PoundPerCubicFootPerPascalSquaredCelsius] -->|Symbol| N0137(("lb/ft³/(Pa²•°C)")) 
+	N0136[PoundPerCubicFootPerPascalSquaredCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0138[PoundPerCubicInchPerPascalSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0138[PoundPerCubicInchPerPascalSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0138[PoundPerCubicInchPerPascalSquaredCelsius] -->|ConversionFactorB| N0025(("3.612729200008369E-05")) 
+	N0138[PoundPerCubicInchPerPascalSquaredCelsius] -->|Symbol| N0139(("lb/in³/(Pa²•°C)")) 
+	N0138[PoundPerCubicInchPerPascalSquaredCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0140[PoundPerCubicYardPerPascalSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0140[PoundPerCubicYardPerPascalSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0140[PoundPerCubicYardPerPascalSquaredCelsius] -->|ConversionFactorB| N0028(("1.6855549355559039")) 
+	N0140[PoundPerCubicYardPerPascalSquaredCelsius] -->|Symbol| N0141(("lb/yd³/(Pa²•°C)")) 
+	N0140[PoundPerCubicYardPerPascalSquaredCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0142[KilogramPerCubicMetrePerBarSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0142[KilogramPerCubicMetrePerBarSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0142[KilogramPerCubicMetrePerBarSquaredCelsius] -->|ConversionFactorB| N0031(("10000000000")) 
+	N0142[KilogramPerCubicMetrePerBarSquaredCelsius] -->|Symbol| N0143(("kg/m³/(bar²•°C)")) 
+	N0142[KilogramPerCubicMetrePerBarSquaredCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0144[SpecificGravityPerBarSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0144[SpecificGravityPerBarSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0144[SpecificGravityPerBarSquaredCelsius] -->|ConversionFactorB| N0034(("10000280.00784022")) 
+	N0144[SpecificGravityPerBarSquaredCelsius] -->|Symbol| N0145(("sg/(bar²•°C)")) 
+	N0144[SpecificGravityPerBarSquaredCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0146[GramPerCubicCentimetrePerBarSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0146[GramPerCubicCentimetrePerBarSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0146[GramPerCubicCentimetrePerBarSquaredCelsius] -->|ConversionFactorB| N0037(("10000000.000000002")) 
+	N0146[GramPerCubicCentimetrePerBarSquaredCelsius] -->|Symbol| N0147(("g/cm³/(bar²•°C)")) 
+	N0146[GramPerCubicCentimetrePerBarSquaredCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0148[PoundPerGallonUkPerBarSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0148[PoundPerGallonUkPerBarSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0148[PoundPerGallonUkPerBarSquaredCelsius] -->|ConversionFactorB| N0040(("100224128.54960501")) 
+	N0148[PoundPerGallonUkPerBarSquaredCelsius] -->|Symbol| N0149(("ppgUK/(bar²•°C)")) 
+	N0148[PoundPerGallonUkPerBarSquaredCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0150[PoundPerGallonUsPerBarSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0150[PoundPerGallonUsPerBarSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0150[PoundPerGallonUsPerBarSquaredCelsius] -->|ConversionFactorB| N0043(("83454044.52019331")) 
+	N0150[PoundPerGallonUsPerBarSquaredCelsius] -->|Symbol| N0151(("ppgUS/(bar²•°C)")) 
+	N0150[PoundPerGallonUsPerBarSquaredCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0152[PoundPerCubicFootPerBarSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0152[PoundPerCubicFootPerBarSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0152[PoundPerCubicFootPerBarSquaredCelsius] -->|ConversionFactorB| N0046(("624279605.7614459")) 
+	N0152[PoundPerCubicFootPerBarSquaredCelsius] -->|Symbol| N0153(("lb/ft³/(bar²•°C)")) 
+	N0152[PoundPerCubicFootPerBarSquaredCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0154[PoundPerCubicInchPerBarSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0154[PoundPerCubicInchPerBarSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0154[PoundPerCubicInchPerBarSquaredCelsius] -->|ConversionFactorB| N0049(("361272.9200008369")) 
+	N0154[PoundPerCubicInchPerBarSquaredCelsius] -->|Symbol| N0155(("lb/in³/(bar²•°C)")) 
+	N0154[PoundPerCubicInchPerBarSquaredCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0156[PoundPerCubicYardPerBarSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0156[PoundPerCubicYardPerBarSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0156[PoundPerCubicYardPerBarSquaredCelsius] -->|ConversionFactorB| N0052(("16855549355.559038")) 
+	N0156[PoundPerCubicYardPerBarSquaredCelsius] -->|Symbol| N0157(("lb/yd³/(bar²•°C)")) 
+	N0156[PoundPerCubicYardPerBarSquaredCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0158[KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0158[KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0158[KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorB| N0103(("47537678.1316983")) 
+	N0158[KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius] -->|Symbol| N0159(("kg/m³/(psi²•°C)")) 
+	N0158[KilogramPerCubicMetrePerPoundPerSquareInchSquaredCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0160[SpecificGravityPerPoundPerSquareInchSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0160[SpecificGravityPerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0160[SpecificGravityPerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorB| N0106(("47539.00922395657")) 
+	N0160[SpecificGravityPerPoundPerSquareInchSquaredCelsius] -->|Symbol| N0161(("sg/(psi²•°C)")) 
+	N0160[SpecificGravityPerPoundPerSquareInchSquaredCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0162[GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0162[GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0162[GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorB| N0109(("47537.6781316983")) 
+	N0162[GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius] -->|Symbol| N0163(("g/cm³/(psi²•°C)")) 
+	N0162[GramPerCubicCentimetrePerPoundPerSquareInchSquaredCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0164[PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0164[PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0164[PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorB| N0112(("476442.2364021077")) 
+	N0164[PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius] -->|Symbol| N0165(("ppgUK/(psi²•°C)")) 
+	N0164[PoundPerGallonUkPerPoundPerSquareInchSquaredCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0166[PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0166[PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0166[PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorB| N0115(("396721.15071893705")) 
+	N0166[PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius] -->|Symbol| N0167(("ppgUS/(psi²•°C)")) 
+	N0166[PoundPerGallonUsPerPoundPerSquareInchSquaredCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0168[PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0168[PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0168[PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorB| N0118(("2967680.2962871124")) 
+	N0168[PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius] -->|Symbol| N0169(("lb/ft³/(psi²•°C)")) 
+	N0168[PoundPerCubicFootPerPoundPerSquareInchSquaredCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0170[PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0170[PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0170[PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorB| N0121(("1717.4075788698572")) 
+	N0170[PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius] -->|Symbol| N0171(("lb/in³/(psi²•°C)")) 
+	N0170[PoundPerCubicInchPerPoundPerSquareInchSquaredCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0172[PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius] -->|BelongsToClass| N0005(Unit) 
+	N0172[PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorA| N0006(("0")) 
+	N0172[PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius] -->|ConversionFactorB| N0124(("80127367.99975201")) 
+	N0172[PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius] -->|Symbol| N0173(("lb/yd³/(psi²•°C)")) 
+	N0172[PoundPerCubicYardPerPoundPerSquareInchSquaredCelsius] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0174[KilogramPerCubicMetrePerPascalSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0174[KilogramPerCubicMetrePerPascalSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0174[KilogramPerCubicMetrePerPascalSquaredFahrenheit] -->|ConversionFactorB| N0175(("0.5555555555555556")) 
+	N0174[KilogramPerCubicMetrePerPascalSquaredFahrenheit] -->|Symbol| N0176(("kg/m³/(Pa²•°F)")) 
+	N0174[KilogramPerCubicMetrePerPascalSquaredFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0177[SpecificGravityPerPascalSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0177[SpecificGravityPerPascalSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0177[SpecificGravityPerPascalSquaredFahrenheit] -->|ConversionFactorB| N0178(("0.0005555711115466789")) 
+	N0177[SpecificGravityPerPascalSquaredFahrenheit] -->|Symbol| N0179(("sg/(Pa²•°F)")) 
+	N0177[SpecificGravityPerPascalSquaredFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0180[GramPerCubicCentimetrePerPascalSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0180[GramPerCubicCentimetrePerPascalSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0180[GramPerCubicCentimetrePerPascalSquaredFahrenheit] -->|ConversionFactorB| N0181(("0.0005555555555555557")) 
+	N0180[GramPerCubicCentimetrePerPascalSquaredFahrenheit] -->|Symbol| N0182(("g/cm³/(Pa²•°F)")) 
+	N0180[GramPerCubicCentimetrePerPascalSquaredFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0183[PoundPerGallonUkPerPascalSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0183[PoundPerGallonUkPerPascalSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0183[PoundPerGallonUkPerPascalSquaredFahrenheit] -->|ConversionFactorB| N0184(("0.005568007141644723")) 
+	N0183[PoundPerGallonUkPerPascalSquaredFahrenheit] -->|Symbol| N0185(("ppgUK/(Pa²•°F)")) 
+	N0183[PoundPerGallonUkPerPascalSquaredFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0186[PoundPerGallonUsPerPascalSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0186[PoundPerGallonUsPerPascalSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0186[PoundPerGallonUsPerPascalSquaredFahrenheit] -->|ConversionFactorB| N0187(("0.004636335806677406")) 
+	N0186[PoundPerGallonUsPerPascalSquaredFahrenheit] -->|Symbol| N0188(("ppgUS/(Pa²•°F)")) 
+	N0186[PoundPerGallonUsPerPascalSquaredFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0189[PoundPerCubicFootPerPascalSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0189[PoundPerCubicFootPerPascalSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0189[PoundPerCubicFootPerPascalSquaredFahrenheit] -->|ConversionFactorB| N0190(("0.03468220032008033")) 
+	N0189[PoundPerCubicFootPerPascalSquaredFahrenheit] -->|Symbol| N0191(("lb/ft³/(Pa²•°F)")) 
+	N0189[PoundPerCubicFootPerPascalSquaredFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0192[PoundPerCubicInchPerPascalSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0192[PoundPerCubicInchPerPascalSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0192[PoundPerCubicInchPerPascalSquaredFahrenheit] -->|ConversionFactorB| N0193(("2.0070717777824268E-05")) 
+	N0192[PoundPerCubicInchPerPascalSquaredFahrenheit] -->|Symbol| N0194(("lb/in³/(Pa²•°F)")) 
+	N0192[PoundPerCubicInchPerPascalSquaredFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0195[PoundPerCubicYardPerPascalSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0195[PoundPerCubicYardPerPascalSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0195[PoundPerCubicYardPerPascalSquaredFahrenheit] -->|ConversionFactorB| N0196(("0.9364194086421688")) 
+	N0195[PoundPerCubicYardPerPascalSquaredFahrenheit] -->|Symbol| N0197(("lb/yd³/(Pa²•°F)")) 
+	N0195[PoundPerCubicYardPerPascalSquaredFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0198[KilogramPerCubicMetrePerBarSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0198[KilogramPerCubicMetrePerBarSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0198[KilogramPerCubicMetrePerBarSquaredFahrenheit] -->|ConversionFactorB| N0199(("5555555555.555555")) 
+	N0198[KilogramPerCubicMetrePerBarSquaredFahrenheit] -->|Symbol| N0200(("kg/m³/(bar²•°F)")) 
+	N0198[KilogramPerCubicMetrePerBarSquaredFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0201[SpecificGravityPerBarSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0201[SpecificGravityPerBarSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0201[SpecificGravityPerBarSquaredFahrenheit] -->|ConversionFactorB| N0202(("5555711.115466789")) 
+	N0201[SpecificGravityPerBarSquaredFahrenheit] -->|Symbol| N0203(("sg/(bar²•°F)")) 
+	N0201[SpecificGravityPerBarSquaredFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0204[GramPerCubicCentimetrePerBarSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0204[GramPerCubicCentimetrePerBarSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0204[GramPerCubicCentimetrePerBarSquaredFahrenheit] -->|ConversionFactorB| N0205(("5555555.555555557")) 
+	N0204[GramPerCubicCentimetrePerBarSquaredFahrenheit] -->|Symbol| N0206(("g/cm³/(bar²•°F)")) 
+	N0204[GramPerCubicCentimetrePerBarSquaredFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0207[PoundPerGallonUkPerBarSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0207[PoundPerGallonUkPerBarSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0207[PoundPerGallonUkPerBarSquaredFahrenheit] -->|ConversionFactorB| N0208(("55680071.41644723")) 
+	N0207[PoundPerGallonUkPerBarSquaredFahrenheit] -->|Symbol| N0209(("ppgUK/(bar²•°F)")) 
+	N0207[PoundPerGallonUkPerBarSquaredFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0210[PoundPerGallonUsPerBarSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0210[PoundPerGallonUsPerBarSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0210[PoundPerGallonUsPerBarSquaredFahrenheit] -->|ConversionFactorB| N0211(("46363358.06677406")) 
+	N0210[PoundPerGallonUsPerBarSquaredFahrenheit] -->|Symbol| N0212(("ppgUS/(bar²•°F)")) 
+	N0210[PoundPerGallonUsPerBarSquaredFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0213[PoundPerCubicFootPerBarSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0213[PoundPerCubicFootPerBarSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0213[PoundPerCubicFootPerBarSquaredFahrenheit] -->|ConversionFactorB| N0214(("346822003.2008033")) 
+	N0213[PoundPerCubicFootPerBarSquaredFahrenheit] -->|Symbol| N0215(("lb/ft³/(bar²•°F)")) 
+	N0213[PoundPerCubicFootPerBarSquaredFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0216[PoundPerCubicInchPerBarSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0216[PoundPerCubicInchPerBarSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0216[PoundPerCubicInchPerBarSquaredFahrenheit] -->|ConversionFactorB| N0217(("200707.1777782427")) 
+	N0216[PoundPerCubicInchPerBarSquaredFahrenheit] -->|Symbol| N0218(("lb/in³/(bar²•°F)")) 
+	N0216[PoundPerCubicInchPerBarSquaredFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0219[PoundPerCubicYardPerBarSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0219[PoundPerCubicYardPerBarSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0219[PoundPerCubicYardPerBarSquaredFahrenheit] -->|ConversionFactorB| N0220(("9364194086.421688")) 
+	N0219[PoundPerCubicYardPerBarSquaredFahrenheit] -->|Symbol| N0221(("lb/yd³/(bar²•°F)")) 
+	N0219[PoundPerCubicYardPerBarSquaredFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0222[KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0222[KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0222[KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorB| N0223(("26409821.184276838")) 
+	N0222[KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit] -->|Symbol| N0224(("kg/m³/(psi²•°F)")) 
+	N0222[KilogramPerCubicMetrePerPoundPerSquareInchSquaredFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0225[SpecificGravityPerPoundPerSquareInchSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0225[SpecificGravityPerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0225[SpecificGravityPerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorB| N0226(("26410.560679975875")) 
+	N0225[SpecificGravityPerPoundPerSquareInchSquaredFahrenheit] -->|Symbol| N0227(("sg/(psi²•°F)")) 
+	N0225[SpecificGravityPerPoundPerSquareInchSquaredFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0228[GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0228[GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0228[GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorB| N0229(("26409.82118427684")) 
+	N0228[GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit] -->|Symbol| N0230(("g/cm³/(psi²•°F)")) 
+	N0228[GramPerCubicCentimetrePerPoundPerSquareInchSquaredFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0231[PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0231[PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0231[PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorB| N0232(("264690.1313345043")) 
+	N0231[PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit] -->|Symbol| N0233(("ppgUK/(psi²•°F)")) 
+	N0231[PoundPerGallonUkPerPoundPerSquareInchSquaredFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0234[PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0234[PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0234[PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorB| N0235(("220400.63928829838")) 
+	N0234[PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit] -->|Symbol| N0236(("ppgUS/(psi²•°F)")) 
+	N0234[PoundPerGallonUsPerPoundPerSquareInchSquaredFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0237[PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0237[PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0237[PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorB| N0238(("1648711.2757150626")) 
+	N0237[PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit] -->|Symbol| N0239(("lb/ft³/(psi²•°F)")) 
+	N0237[PoundPerCubicFootPerPoundPerSquareInchSquaredFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0240[PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0240[PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0240[PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorB| N0241(("954.1153215943651")) 
+	N0240[PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit] -->|Symbol| N0242(("lb/in³/(psi²•°F)")) 
+	N0240[PoundPerCubicInchPerPoundPerSquareInchSquaredFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
+	N0243[PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit] -->|BelongsToClass| N0005(Unit) 
+	N0243[PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorA| N0006(("0")) 
+	N0243[PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit] -->|ConversionFactorB| N0244(("44515204.44430668")) 
+	N0243[PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit] -->|Symbol| N0245(("lb/yd³/(psi²•°F)")) 
+	N0243[PoundPerCubicYardPerPoundPerSquareInchSquaredFahrenheit] -->|IsUnitForQuantity| N0000[MassDensityGradientPerPressureSquaredTemperatureQuantity] 
 ```
 ## HydraulicConductivityQuantity <!-- NOUN -->
 - Display name: HydraulicConductivity
