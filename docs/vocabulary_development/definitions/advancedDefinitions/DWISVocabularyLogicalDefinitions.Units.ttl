@@ -21,7 +21,67 @@ ddhub:AssociatesMeasurableQuantity a owl:FunctionalProperty.
 ddhub:AssociatesUnit a owl:FunctionalProperty.
 
 # IsOfBaseQuantity and HasMeasurableQuantity are reciprocal, as stated in their comments.
-ddhub:IsOfBaseQuantity owl:inverseOf ddhub:HasMeasurableQuantity.
+#ddhub:IsOfBaseQuantity owl:inverseOf ddhub:HasMeasurableQuantity.
+
+# Sub-property of IsUnitForQuantity restricted to MeasurableQuantity values.
+# Used in chain axioms to guard that the intermediate or final node is a MeasurableQuantity,
+# and to avoid the self-referential chain  IsUnitForQuantity ∘ IsOfBaseQuantity ⊆ IsUnitForQuantity.
+ddhub:IsUnitForMeasurableQuantity rdfs:subPropertyOf ddhub:IsUnitForQuantity ;
+    rdfs:domain ddhub:Unit ;
+    rdfs:range  ddhub:MeasurableQuantity .
+
+# Named union class reused as the domain of the SI dimensional exponent properties.
+ddhub:QuantityOrMeasurableQuantity a owl:Class;
+    owl:unionOf ( ddhub:Quantity ddhub:MeasurableQuantity ).
+
+# The domain of each SI dimensional exponent property is the union of Quantity and
+# MeasurableQuantity, because both carry dimensional exponents in this vocabulary.
+ddhub:L     rdfs:domain ddhub:QuantityOrMeasurableQuantity.
+ddhub:M     rdfs:domain ddhub:QuantityOrMeasurableQuantity.
+ddhub:T     rdfs:domain ddhub:QuantityOrMeasurableQuantity.
+ddhub:I     rdfs:domain ddhub:QuantityOrMeasurableQuantity.
+ddhub:ThT   rdfs:domain ddhub:QuantityOrMeasurableQuantity.
+ddhub:N     rdfs:domain ddhub:QuantityOrMeasurableQuantity.
+ddhub:J     rdfs:domain ddhub:QuantityOrMeasurableQuantity.
+ddhub:Theta rdfs:domain ddhub:QuantityOrMeasurableQuantity.
+ddhub:Omega rdfs:domain ddhub:QuantityOrMeasurableQuantity.
+
+# The range of IsUnitForQuantity is the union of Quantity and MeasurableQuantity,
+# because a unit can be directly associated with either a base Quantity or a
+# context-specific MeasurableQuantity.
+# NOTE: DWISVocabulary.ttl already declares  rdfs:range ddhub:Quantity.  In strict OWL
+# semantics multiple range axioms are intersected, so that original axiom would need to
+# be widened to the union for this to take full effect.  Additionally, the
+# Quantity owl:disjointWith MeasurableQuantity axiom below may need to be revisited if
+# a reasoner propagates range inference onto MeasurableQuantity values.
+ddhub:IsUnitForQuantity rdfs:range [
+    a owl:Class;
+    owl:unionOf ( ddhub:Quantity ddhub:MeasurableQuantity )
+].
+
+# If a Unit IsUnitForMeasurableQuantity a MeasurableQuantity, and that MeasurableQuantity
+# IsOfBaseQuantity a Quantity, then the Unit IsUnitForQuantity that Quantity.
+# Chain: Unit —[IsUnitForMeasurableQuantity]→ MQ —[IsOfBaseQuantity]→ Q
+#        ⊆  Unit —[IsUnitForQuantity]→ Q
+# Using IsUnitForMeasurableQuantity (range: MeasurableQuantity) avoids the self-referential
+# chain rejected by some OWL libraries, and guards that the intermediate node is a MQ.
+ddhub:IsUnitForQuantity owl:propertyChainAxiom (
+    ddhub:IsUnitForMeasurableQuantity
+    ddhub:IsOfBaseQuantity
+).
+
+# If a DrillingDataPoint HasValue a DrillingSignal, and that DrillingSignal
+# HasUnitOfMeasure a Unit, and that Unit IsUnitForMeasurableQuantity a MeasurableQuantity,
+# then the DrillingDataPoint IsOfMeasurableQuantity that MeasurableQuantity.
+# Chain: DDP —[HasValue]→ DS —[HasUnitOfMeasure]→ U —[IsUnitForMeasurableQuantity]→ MQ
+#        ⊆  DDP —[IsOfMeasurableQuantity]→ MQ
+# The last step uses IsUnitForMeasurableQuantity so the chain only fires when
+# the unit is linked to a MeasurableQuantity, not a plain Quantity.
+ddhub:IsOfMeasurableQuantity owl:propertyChainAxiom (
+    ddhub:HasValue
+    ddhub:HasUnitOfMeasure
+    ddhub:IsUnitForMeasurableQuantity
+).
 
 #################################################################
 #    Necessary conditions (rdfs:subClassOf restrictions)
@@ -86,6 +146,37 @@ ddhub:MeasurableQuantityUnitAssociation owl:equivalentClass [
         ]
     )
 ].
+
+#################################################################
+#    Key axioms
+#################################################################
+
+# Two Quantity individuals that have identical SI dimensional exponents are the same
+# individual.  The nine exponents cover all SI base dimensions:
+#   L (length/m), M (mass/kg), T (time/s), I (electric current/A),
+#   ThT (temperature/K), N (amount of substance/mol), J (luminous intensity/cd),
+#   Theta (plane angle/rad), Omega (solid angle/sr).
+ddhub:Quantity owl:hasKey (
+    ddhub:L
+    ddhub:M
+    ddhub:T
+    ddhub:I
+    ddhub:ThT
+    ddhub:N
+    ddhub:J
+    ddhub:Theta
+    ddhub:Omega
+).
+
+# Two Unit individuals that are units for the same base Quantity and share the same
+# ConversionFactorA and ConversionFactorB are the same individual.
+# (ConversionFactorA is the additive offset, ConversionFactorB the multiplicative scale
+#  in: ConvertedValue = ConversionFactorA + SIValue * ConversionFactorB.)
+ddhub:Unit owl:hasKey (
+    ddhub:IsUnitForQuantity
+    ddhub:ConversionFactorA
+    ddhub:ConversionFactorB
+).
 
 #################################################################
 #    Disjoint class declarations
