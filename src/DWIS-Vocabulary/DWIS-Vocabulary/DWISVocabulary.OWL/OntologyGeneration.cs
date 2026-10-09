@@ -40,7 +40,21 @@ namespace DWIS.Vocabulary.OWL
             ontology.Annotate(RDFVocabulary.OWL.VERSION_IRI, new RDFTypedLiteral(iri, RDFModelEnums.RDFDatatypes.XSD_ANYURI));
 
 
-            AddClass(nounTree, null, ontology);
+            // Collect same-name attributes before declaring their global property.
+            var datatypeProperties = new Dictionary<string, DatatypePropertyDeclaration>(StringComparer.Ordinal);
+            AddClass(nounTree, null, ontology, datatypeProperties);
+            // Declare once: multiple domains/ranges default to OR, not RDFS AND.
+            foreach (var property in datatypeProperties)
+            {
+                ontology.Model.PropertyModel.DeclareDatatypeProperty(
+                    new RDFResource(DDHubPrefix + property.Key),
+                    new OWLOntologyDatatypePropertyBehavior
+                    {
+                        Domain = GetUnionResource(property.Value.Domains, RDFVocabulary.OWL.CLASS, ontology),
+                        Range = GetUnionResource(property.Value.Ranges, RDFVocabulary.RDFS.DATATYPE, ontology),
+                        Functional = true
+                    });
+            }
             AddVerb(verbTree, null, ontology);
 
             return ontology;
@@ -57,16 +71,250 @@ namespace DWIS.Vocabulary.OWL
 
         public static void WriteOntology(OWLOntology ontology, string fileName, bool includeModel = true)
         {           
-            ontology.ToRDFGraph().ToFile(RDFModelEnums.RDFFormats.Turtle, fileName + ".ttl");
-            ontology.ToRDFGraph().ToFile(RDFModelEnums.RDFFormats.NTriples, fileName + ".nt");
-            ontology.ToRDFGraph().ToFile(RDFModelEnums.RDFFormats.RdfXml, fileName + ".xml");
+            // Reuse the same graph; only Turtle needs custom display formatting.
+            var graph = ontology.ToRDFGraph();
+            WriteCompactTurtle(graph, fileName + ".ttl");
+            graph.ToFile(RDFModelEnums.RDFFormats.NTriples, fileName + ".nt");
+            graph.ToFile(RDFModelEnums.RDFFormats.RdfXml, fileName + ".xml");
+        }
+
+        // RDFSharp's standard Turtle export is semantically correct, but writes unions
+        // and their RDF lists as separate statements with random blank-node IDs.
+        // This writer displays eligible unions inline in the owning property's block:
+        // rdfs:domain [ a owl:Class ; owl:unionOf (ddhub:HighPassFilter ddhub:LowPassFilter) ].
+        // Shared, named, or unsupported expressions retain the standard RDF form.
+        // RDFSharp still serializes ordinary statements and escapes literal values;
+        // this method combines those blocks with inline unions and writes the file once.
+        // GetOntology already establishes the union semantics before serialization.
+        // This is formatting only: it neither decides AND/OR nor repairs exported RDF.
+        private static void WriteCompactTurtle(RDFGraph graph, string fileName)
+        {
+            // Inline collection triples instead of printing them separately.
+            var inline = new Dictionary<string, string>(StringComparer.Ordinal);
+            var expressionTriples = new HashSet<string>(StringComparer.Ordinal);
+            foreach (var triple in graph.Where(triple =>
+                triple.Predicate.Equals(RDFVocabulary.RDFS.DOMAIN)
+                || triple.Predicate.Equals(RDFVocabulary.RDFS.RANGE)))
+            {
+                if (!TryFormatUnion(graph, (RDFResource)triple.Object, out string expression, out var consumed))
+                {
+                    continue;
+                }
+                inline.Add(triple.ToString(), expression);
+                expressionTriples.UnionWith(consumed.Select(item => item.ToString()));
+            }
+
+            var prefixes = new HashSet<string>(StringComparer.Ordinal);
+            var document = new System.Text.StringBuilder();
+            // Keep the serializer's subject order and each property's own block.
+            foreach (var subject in graph.Where(triple => !expressionTriples.Contains(triple.ToString()))
+                .GroupBy(triple => triple.Subject.ToString(), StringComparer.Ordinal)
+                .OrderBy(group => group.Key))
+            {
+                var ordinary = new RDFGraph();
+                var expressions = new List<string>();
+                foreach (var triple in subject)
+                {
+                    if (inline.TryGetValue(triple.ToString(), out string expression))
+                    {
+                        expressions.Add(FormatTurtleResource((RDFResource)triple.Predicate) + " " + expression);
+                    }
+                    else
+                    {
+                        ordinary.AddTriple(triple);
+                    }
+                }
+
+                // Let RDFSharp escape ordinary terms and literals.
+                using var stream = new System.IO.MemoryStream();
+                ordinary.ToStream(RDFModelEnums.RDFFormats.Turtle, stream);
+                using var reader = new System.IO.StringReader(
+                    System.Text.Encoding.UTF8.GetString(stream.ToArray()).TrimStart('\uFEFF'));
+                // Emit shared prefix/base declarations only once.
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    if (line.StartsWith("@prefix ", StringComparison.Ordinal))
+                    {
+                        prefixes.Add(line.TrimEnd());
+                    }
+                    else if (line.StartsWith("@base ", StringComparison.Ordinal))
+                    {
+                        prefixes.Add(line.TrimEnd());
+                    }
+                    else if (!string.IsNullOrWhiteSpace(line))
+                    {
+                        break;
+                    }
+                }
+                string block = line == null ? string.Empty : line + Environment.NewLine + reader.ReadToEnd();
+                if (expressions.Count > 0)
+                {
+                    // Extend this subject block with its inline domain/range.
+                    string subjectName = FormatTurtleResource((RDFResource)subject.First().Subject);
+                    block = block.TrimEnd();
+                    block = block.Length == 0 ? subjectName + " "
+                        : block.Substring(0, block.Length - 1).TrimEnd() + ";" + Environment.NewLine
+                            + new string(' ', subjectName.Length + 1);
+                    block += string.Join(";" + Environment.NewLine + new string(' ', subjectName.Length + 1), expressions) + ".";
+                }
+                if (expressions.Count > 0)
+                {
+                    document.AppendLine(block);
+                }
+                else
+                {
+                    document.Append(block);
+                }
+            }
+            // Write the complete document once; never append a repair section.
+            System.IO.File.WriteAllText(fileName, string.Join(Environment.NewLine, prefixes)
+                + Environment.NewLine + Environment.NewLine + document);
+        }
+
+        // Format an existing union as [ a ... ; owl:unionOf ( ... ) ].
+        private static bool TryFormatUnion(RDFGraph graph, RDFResource union,
+            out string expression, out List<RDFTriple> consumed)
+        {
+            expression = null;
+            consumed = new List<RDFTriple>();
+            // Shared or named nodes must retain their identity.
+            if (!union.ToString().StartsWith("bnode:", StringComparison.Ordinal)
+                || graph.SelectTriplesByObject(union).TriplesCount != 1)
+            {
+                return false;
+            }
+            // Leave annotated or unsupported expressions in standard RDF form.
+            var declarations = graph.SelectTriplesBySubject(union).ToList();
+            if (declarations.Count != 2)
+            {
+                return false;
+            }
+            var type = declarations.FirstOrDefault(item => item.Predicate.Equals(RDFVocabulary.RDF.TYPE));
+            var definition = declarations.FirstOrDefault(item => item.Predicate.Equals(RDFVocabulary.OWL.UNION_OF));
+            if (type == null || definition == null
+                || !(type.Object.Equals(RDFVocabulary.OWL.CLASS) || type.Object.Equals(RDFVocabulary.RDFS.DATATYPE)))
+            {
+                return false;
+            }
+            consumed.AddRange(declarations);
+            var members = new List<string>();
+            var visited = new HashSet<string>(StringComparer.Ordinal);
+            var node = (RDFResource)definition.Object;
+            // Follow an unshared, acyclic RDF list of named members.
+            while (!node.Equals(RDFVocabulary.RDF.NIL))
+            {
+                if (!node.ToString().StartsWith("bnode:", StringComparison.Ordinal)
+                    || !visited.Add(node.ToString()) || graph.SelectTriplesByObject(node).TriplesCount != 1)
+                {
+                    return false;
+                }
+                var links = graph.SelectTriplesBySubject(node).ToList();
+                var first = links.FirstOrDefault(item => item.Predicate.Equals(RDFVocabulary.RDF.FIRST));
+                var rest = links.FirstOrDefault(item => item.Predicate.Equals(RDFVocabulary.RDF.REST));
+                if (links.Count != 2 || first?.Object is not RDFResource member
+                    || rest?.Object is not RDFResource next || member.ToString().StartsWith("bnode:", StringComparison.Ordinal))
+                {
+                    return false;
+                }
+                consumed.AddRange(links);
+                members.Add(FormatTurtleResource(member));
+                node = next;
+            }
+            expression = $"[ a {FormatTurtleResource((RDFResource)type.Object)} ; owl:unionOf ( {string.Join(" ", members)} ) ]";
+            return true;
+        }
+
+        // Display known IRIs as prefixed names; this does not change their identity.
+        private static string FormatTurtleResource(RDFResource resource)
+        {
+            string iri = resource.ToString();
+            foreach (var (prefix, namespaceIri) in new[]
+            {
+                ("ddhub", DDHubPrefix),
+                ("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#"),
+                ("rdfs", "http://www.w3.org/2000/01/rdf-schema#"),
+                ("owl", "http://www.w3.org/2002/07/owl#"),
+                ("xsd", "http://www.w3.org/2001/XMLSchema#")
+            })
+            {
+                if (iri.StartsWith(namespaceIri, StringComparison.Ordinal))
+                {
+                    string localName = iri.Substring(namespaceIri.Length);
+                    // Use a conservative subset of valid Turtle local names.
+                    if (System.Text.RegularExpressions.Regex.IsMatch(localName, @"^[A-Za-z_][A-Za-z0-9_]*$"))
+                    {
+                        return prefix + ":" + localName;
+                    }
+                }
+            }
+            // Keep a full IRI when safe abbreviation is unavailable.
+            return "<" + iri + ">";
         }
         public static RDFResource GetBaseTypeResource(string type)
         {
-            return new RDFResource("http://www.w3.org/2001/XMLSchema#" + type.ToLower());
+            // Ad hoc fix for a few special cases: bool/boolean, DateTime, int[]/intArray, and object.
+            // This is not a complete datatype mapping; other types retain the existing XSD fallback.
+            string normalizedType = type.Trim().ToLowerInvariant();
+            return normalizedType switch
+            {
+                "bool" or "boolean" => new RDFResource("http://www.w3.org/2001/XMLSchema#boolean"),
+                "datetime" => new RDFResource("http://www.w3.org/2001/XMLSchema#dateTime"),
+                "int[]" or "intarray" => new RDFResource(DDHubPrefix + "intArray"),
+                "object" => new RDFResource(DDHubPrefix + "object"),
+                _ => new RDFResource("http://www.w3.org/2001/XMLSchema#" + normalizedType)
+            };
         }
 
-        private static void AddClass(Tree<Noun> currentTree, RDFResource parent, OWLOntology ontology)
+        // Track distinct domain/range members while attributes are added.
+        private sealed class DatatypePropertyDeclaration
+        {
+            public List<RDFResource> Domains { get; } = new List<RDFResource>();
+            public List<RDFResource> Ranges { get; } = new List<RDFResource>();
+
+            public void Add(RDFResource domain, RDFResource range)
+            {
+                // No source operator exists: new distinct members default to OR.
+                if (!Domains.Any(member => member.Equals(domain))) Domains.Add(domain);
+                if (!Ranges.Any(member => member.Equals(range))) Ranges.Add(range);
+            }
+
+        }
+
+        // Build OR semantics in the ontology graph, before serialization.
+        private static RDFResource GetUnionResource(List<RDFResource> members, RDFResource type, OWLOntology ontology)
+        {
+            // A single member needs no union wrapper.
+            if (members.Count == 1)
+            {
+                return members[0];
+            }
+
+            // Datatype unions must be rdfs:Datatype, rather than owl:Class.
+            var union = new RDFResource();
+            var collection = new RDFCollection(RDFModelEnums.RDFItemTypes.Resource);
+            foreach (var member in members)
+            {
+                collection.AddItem(member);
+            }
+            // RDFSharp lacks a datatype-union API; store the RDF statements directly.
+            var model = ontology.Model.ClassModel;
+            model.AnnotateClass(union, RDFVocabulary.RDF.TYPE, type);
+            model.AnnotateClass(union, RDFVocabulary.OWL.UNION_OF, collection.ReificationSubject);
+            foreach (var triple in collection.ReifyCollection())
+            {
+                if (!triple.Predicate.Equals(RDFVocabulary.RDF.TYPE))
+                {
+                    // Omit redundant rdf:List types for compact collection syntax.
+                    model.AnnotateClass((RDFResource)triple.Subject, (RDFResource)triple.Predicate, (RDFResource)triple.Object);
+                }
+            }
+            return union;
+        }
+
+        // Share the attribute accumulator throughout class traversal.
+        private static void AddClass(Tree<Noun> currentTree, RDFResource parent, OWLOntology ontology,
+            Dictionary<string, DatatypePropertyDeclaration> datatypeProperties)
         {
             RDFResource current = new RDFResource( DDHubPrefix + currentTree.RootItem.Name);
             ontology.Model.ClassModel.DeclareClass(current);
@@ -89,7 +337,13 @@ namespace DWIS.Vocabulary.OWL
                 foreach (var attribute in currentTree.RootItem.NounAttributes)
                 {
                     RDFResource propertyResource = new RDFResource(DDHubPrefix + attribute.Name);
-                    ontology.Model.PropertyModel.DeclareDatatypeProperty(propertyResource, new OWLOntologyDatatypePropertyBehavior() {  Domain = current, Range = GetBaseTypeResource(attribute.Type), Functional = true });
+                    // Accumulate alternatives instead of adding multiple RDFS declarations.
+                    if (!datatypeProperties.TryGetValue(attribute.Name, out var property))
+                    {
+                        property = new DatatypePropertyDeclaration();
+                        datatypeProperties.Add(attribute.Name, property);
+                    }
+                    property.Add(current, GetBaseTypeResource(attribute.Type));
 
                     ontology.Model.ClassModel.DeclareMinMaxQualifiedCardinalityRestriction(AttributeCardinalityRestriction, propertyResource, 1, 1, current);
 
@@ -109,7 +363,8 @@ namespace DWIS.Vocabulary.OWL
             {
                 foreach (var child in currentTree.Children)
                 {
-                    AddClass(child, current, ontology);
+                    // Same-name attributes across child classes share one property.
+                    AddClass(child, current, ontology, datatypeProperties);
                 }
             }
         }
