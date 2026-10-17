@@ -27,7 +27,7 @@ increment package versions internally; the existing Build and pack step owns tha
 
 ## NuGet Trusted Publishing
 
-The workflow authenticates with `NuGet/login@v1`, using `${{ vars.nuget_user }}` and
+The workflow authenticates with `NuGet/login@v1`, using `${{ secrets.NUGET_USER }}` and
 job permission `id-token: write`. The push step consumes the short-lived login output
 through an environment variable. The previous `NUGET_SECRET_API` secret is no longer
 referenced. The NuGet.org trust policy must match the repository, workflow filename

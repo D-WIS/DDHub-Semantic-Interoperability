@@ -56,7 +56,7 @@ skips fenced blocks. It does not depend on a previously published vocabulary pac
 
 The vocabulary-generation workflow runs verification before committing generated
 files and publishing packages. NuGet authentication uses `NuGet/login@v1`, GitHub OIDC
-(`id-token: write`) and the repository variable `nuget_user`. Configure the NuGet.org
+(`id-token: write`) and the repository secret `NUGET_USER`. Configure the NuGet.org
 Trusted Publishing policy for this repository and `vocabulary-generation.yml`, plus
 any environment restriction configured there. The username is the NuGet profile name,
 not an email address. No long-lived NuGet API-key secret is used. The generated-file
